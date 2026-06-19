@@ -26,6 +26,8 @@ data/sources/
 data/acupoints/361.json
 data/herbs/formulas.json
 data/herbs/formula_categories.json
+data/herbs/high_yield_formula_seeds.json
+data/herbs/formula_safety_flags.json
 data/evidence/
 data/pathology/
 ```
@@ -61,9 +63,13 @@ Formula category structure is seeded in:
 ```text
 data/herbs/formula_categories.json
 data/herbs/formulas.json
+data/herbs/high_yield_formula_seeds.json
+data/herbs/formula_safety_flags.json
 ```
 
 Individual formula pages should not be public until each formula has composition, pattern indications, contraindications, herb-drug cautions, fertility/pregnancy review where relevant, source URLs, and `public_ready` status.
+
+The current high-yield formula records are draft seeds only. They are useful for private study, NCCAOM organization, and future page planning, but should not be published as clinical instructions.
 
 ## Source Policy
 

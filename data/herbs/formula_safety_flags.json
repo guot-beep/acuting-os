@@ -1,0 +1,114 @@
+{
+  "dataset": "Formula safety flags",
+  "status": "structure_seed",
+  "updated": "2026-06-19",
+  "purpose": "Normalize safety flags used by formula records so AcuTing OS can later connect formulas to medications, pregnancy/fertility workflows, red flags, and SOAP note checks.",
+  "public_rule": "Safety flags are screening prompts, not medical advice. Any public content must use conservative wording and cite professional sources.",
+  "flags": [
+    {
+      "id": "pregnancy_review",
+      "label_en": "Pregnancy review",
+      "label_zh": "孕期審核",
+      "meaning": "Requires professional review before use during pregnancy, suspected pregnancy, or fertility treatment cycles.",
+      "linked_workflows": ["fertility", "ivf_iui", "ob_gyn"]
+    },
+    {
+      "id": "pregnancy_caution",
+      "label_en": "Pregnancy caution",
+      "label_zh": "孕期慎用",
+      "meaning": "Potentially inappropriate in pregnancy unless specifically supervised by a qualified clinician.",
+      "linked_workflows": ["fertility", "ivf_iui", "ob_gyn"]
+    },
+    {
+      "id": "fertility_medication_review",
+      "label_en": "Fertility medication review",
+      "label_zh": "生殖用藥審核",
+      "meaning": "Review timing and safety with IUI/IVF medications such as gonadotropins, ovulation triggers, progesterone, estrogen, or anticoagulant protocols.",
+      "linked_workflows": ["fertility", "ivf", "iui", "cycle_tracking"]
+    },
+    {
+      "id": "anticoagulant_review",
+      "label_en": "Anticoagulant / bleeding review",
+      "label_zh": "抗凝與出血風險審核",
+      "meaning": "Review if the patient uses anticoagulants, antiplatelets, has bleeding disorders, heavy bleeding, or surgery/procedure timing.",
+      "linked_workflows": ["medications", "surgery", "ob_gyn", "bleeding"]
+    },
+    {
+      "id": "bleeding_review",
+      "label_en": "Bleeding review",
+      "label_zh": "出血審核",
+      "meaning": "Requires assessment of abnormal bleeding, heavy menses, pregnancy bleeding, anemia, or urgent referral red flags.",
+      "linked_workflows": ["ob_gyn", "fertility", "urgent_referral"]
+    },
+    {
+      "id": "hypertension_review",
+      "label_en": "Hypertension / cardiovascular review",
+      "label_zh": "高血壓與心血管審核",
+      "meaning": "Review cardiovascular history, stimulant-like herbs, blood pressure, palpitations, and related medications.",
+      "linked_workflows": ["western_medications", "cardiology", "red_flags"]
+    },
+    {
+      "id": "cardiac_review",
+      "label_en": "Cardiac review",
+      "label_zh": "心臟病史審核",
+      "meaning": "Review palpitations, arrhythmia, chest pain, cardiac diagnosis, and medication interactions.",
+      "linked_workflows": ["western_medications", "cardiology", "urgent_referral"]
+    },
+    {
+      "id": "sedative_medication_review",
+      "label_en": "Sedative medication review",
+      "label_zh": "鎮靜安眠藥審核",
+      "meaning": "Review use of sedatives, sleep medications, psychiatric medications, alcohol, and drowsiness risk.",
+      "linked_workflows": ["western_medications", "mental_health", "sleep"]
+    },
+    {
+      "id": "psychiatric_red_flags",
+      "label_en": "Psychiatric red flags",
+      "label_zh": "精神心理紅旗",
+      "meaning": "Screen for suicidal ideation, mania, psychosis, severe anxiety, severe insomnia, or urgent safety needs.",
+      "linked_workflows": ["mental_health", "urgent_referral"]
+    },
+    {
+      "id": "respiratory_red_flags",
+      "label_en": "Respiratory red flags",
+      "label_zh": "呼吸紅旗",
+      "meaning": "Screen for shortness of breath, chest pain, high fever, low oxygen, severe asthma, pneumonia concerns, or urgent symptoms.",
+      "linked_workflows": ["urgent_referral", "pulmonary"]
+    },
+    {
+      "id": "gi_red_flags",
+      "label_en": "GI red flags",
+      "label_zh": "消化道紅旗",
+      "meaning": "Screen for severe abdominal pain, persistent vomiting, blood in stool, dehydration, weight loss, or urgent symptoms.",
+      "linked_workflows": ["urgent_referral", "digestive"]
+    },
+    {
+      "id": "kidney_disease_review",
+      "label_en": "Kidney disease review",
+      "label_zh": "腎臟疾病審核",
+      "meaning": "Review kidney disease history, edema, urinary symptoms, kidney labs when available, and medication interactions.",
+      "linked_workflows": ["western_medications", "renal", "edema"]
+    },
+    {
+      "id": "liver_disease_review",
+      "label_en": "Liver disease review",
+      "label_zh": "肝膽疾病審核",
+      "meaning": "Review liver disease, hepatitis history, abnormal liver enzymes, alcohol use, hepatotoxic medications, and herb safety.",
+      "linked_workflows": ["western_medications", "hepatic", "digestive"]
+    },
+    {
+      "id": "cloying_digestive_effect",
+      "label_en": "Cloying / digestive burden",
+      "label_zh": "滋膩礙胃審核",
+      "meaning": "Review bloating, nausea, poor appetite, loose stools, dampness, or digestive weakness when using rich tonics.",
+      "linked_workflows": ["digestive", "tonification"]
+    },
+    {
+      "id": "not_for_self_treatment",
+      "label_en": "Not for self-treatment",
+      "label_zh": "不適合自行使用",
+      "meaning": "Formula category requires professional supervision or modern medical diagnosis before use.",
+      "linked_workflows": ["public_safety", "urgent_referral"]
+    }
+  ]
+}

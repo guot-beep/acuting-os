@@ -1,6 +1,6 @@
 {
   "dataset": "Herbal formulas",
-  "status": "schema_ready_category_layer_seeded",
+  "status": "schema_ready_category_and_high_yield_seeded",
   "purpose": "Bilingual formula layer for AcuTing OS. Records should connect formulas to patterns, western conditions, acupoints, single herbs, medications, case notes, and future public Learn articles.",
   "content_policy": {
     "private_study": "Chinese websites may be used as topic maps and structural references.",
@@ -92,11 +92,1297 @@
       "name_en": "Warm the Interior"
     }
   ],
-  "records": [],
+  "records": [
+    {
+      "id": "formula.gui_zhi_tang",
+      "name_zh": "桂枝湯",
+      "name_en": "Cinnamon Twig Decoction",
+      "pinyin": "Gui Zhi Tang",
+      "category_id": "formula_category.release_exterior",
+      "category_en": "Release the Exterior",
+      "study_tags": [
+        "taiyang_wind_strike",
+        "ying_wei_disharmony",
+        "exterior_deficiency"
+      ],
+      "pattern_focus_en": [
+        "Exterior deficiency pattern",
+        "Disharmony of ying and wei"
+      ],
+      "condition_links": [
+        "common_cold_pattern_support",
+        "sweating_pattern_review"
+      ],
+      "safety_flags": [
+        "sweating",
+        "febrile_illness",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "sweating",
+        "febrile_illness",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "sweating",
+        "febrile_illness",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "common_cold_pattern_support",
+        "sweating_pattern_review"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.ma_huang_tang",
+      "name_zh": "麻黃湯",
+      "name_en": "Ephedra Decoction",
+      "pinyin": "Ma Huang Tang",
+      "category_id": "formula_category.release_exterior",
+      "category_en": "Release the Exterior",
+      "study_tags": [
+        "taiyang_cold_damage",
+        "exterior_excess",
+        "wheezing_pattern"
+      ],
+      "pattern_focus_en": [
+        "Exterior excess cold pattern",
+        "Absence of sweating with cold signs"
+      ],
+      "condition_links": [
+        "common_cold_pattern_support",
+        "respiratory_pattern_support"
+      ],
+      "safety_flags": [
+        "hypertension_review",
+        "cardiac_review",
+        "stimulant_medication_review",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "hypertension_review",
+        "cardiac_review",
+        "stimulant_medication_review",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "hypertension_review",
+        "cardiac_review",
+        "stimulant_medication_review",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "common_cold_pattern_support",
+        "respiratory_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.yin_qiao_san",
+      "name_zh": "銀翹散",
+      "name_en": "Honeysuckle and Forsythia Powder",
+      "pinyin": "Yin Qiao San",
+      "category_id": "formula_category.release_exterior",
+      "category_en": "Release the Exterior",
+      "study_tags": [
+        "wind_heat",
+        "sore_throat",
+        "early_warm_disease"
+      ],
+      "pattern_focus_en": [
+        "Early-stage wind-heat pattern"
+      ],
+      "condition_links": [
+        "upper_respiratory_pattern_support",
+        "sore_throat_pattern_support"
+      ],
+      "safety_flags": [
+        "febrile_illness",
+        "infection_review",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "febrile_illness",
+        "infection_review",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "febrile_illness",
+        "infection_review",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "upper_respiratory_pattern_support",
+        "sore_throat_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.sang_ju_yin",
+      "name_zh": "桑菊飲",
+      "name_en": "Mulberry Leaf and Chrysanthemum Drink",
+      "pinyin": "Sang Ju Yin",
+      "category_id": "formula_category.release_exterior",
+      "category_en": "Release the Exterior",
+      "study_tags": [
+        "wind_heat",
+        "cough",
+        "lung_heat"
+      ],
+      "pattern_focus_en": [
+        "Mild wind-heat affecting the lung"
+      ],
+      "condition_links": [
+        "cough_pattern_support",
+        "upper_respiratory_pattern_support"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags",
+        "febrile_illness",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "respiratory_red_flags",
+        "febrile_illness",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "respiratory_red_flags",
+        "febrile_illness",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "cough_pattern_support",
+        "upper_respiratory_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.xiao_chai_hu_tang",
+      "name_zh": "小柴胡湯",
+      "name_en": "Minor Bupleurum Decoction",
+      "pinyin": "Xiao Chai Hu Tang",
+      "category_id": "formula_category.harmonize",
+      "category_en": "Harmonize",
+      "study_tags": [
+        "shaoyang",
+        "alternating_chills_fever",
+        "liver_gallbladder"
+      ],
+      "pattern_focus_en": [
+        "Shaoyang pattern"
+      ],
+      "condition_links": [
+        "digestive_pattern_support",
+        "liver_gallbladder_pattern_support"
+      ],
+      "safety_flags": [
+        "liver_disease_review",
+        "medication_review",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "liver_disease_review",
+        "medication_review",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "liver_disease_review",
+        "medication_review",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "digestive_pattern_support",
+        "liver_gallbladder_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.xiao_yao_san",
+      "name_zh": "逍遙散",
+      "name_en": "Free and Easy Wanderer Powder",
+      "pinyin": "Xiao Yao San",
+      "category_id": "formula_category.harmonize",
+      "category_en": "Harmonize",
+      "study_tags": [
+        "liver_qi_stagnation",
+        "spleen_deficiency",
+        "gynecology"
+      ],
+      "pattern_focus_en": [
+        "Liver qi stagnation with spleen deficiency"
+      ],
+      "condition_links": [
+        "pms_pattern_support",
+        "stress_digestive_pattern_support",
+        "fertility_pattern_support"
+      ],
+      "safety_flags": [
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "pms_pattern_support",
+        "stress_digestive_pattern_support",
+        "fertility_pattern_support"
+      ],
+      "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.jia_wei_xiao_yao_san",
+      "name_zh": "加味逍遙散",
+      "name_en": "Augmented Free and Easy Wanderer Powder",
+      "pinyin": "Jia Wei Xiao Yao San",
+      "category_id": "formula_category.harmonize",
+      "category_en": "Harmonize",
+      "study_tags": [
+        "liver_qi_stagnation",
+        "heat",
+        "gynecology"
+      ],
+      "pattern_focus_en": [
+        "Liver qi stagnation with heat signs"
+      ],
+      "condition_links": [
+        "pms_pattern_support",
+        "menopause_pattern_support",
+        "stress_heat_pattern_support"
+      ],
+      "safety_flags": [
+        "pregnancy_review",
+        "medication_review",
+        "cold_digestive_weakness"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "pregnancy_review",
+        "medication_review",
+        "cold_digestive_weakness"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "pregnancy_review",
+        "medication_review",
+        "cold_digestive_weakness"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "pms_pattern_support",
+        "menopause_pattern_support",
+        "stress_heat_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.si_jun_zi_tang",
+      "name_zh": "四君子湯",
+      "name_en": "Four Gentlemen Decoction",
+      "pinyin": "Si Jun Zi Tang",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "qi_deficiency",
+        "spleen_qi_deficiency"
+      ],
+      "pattern_focus_en": [
+        "Spleen qi deficiency"
+      ],
+      "condition_links": [
+        "fatigue_pattern_support",
+        "digestive_deficiency_pattern_support"
+      ],
+      "safety_flags": [
+        "cloying_digestive_effect",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "cloying_digestive_effect",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "cloying_digestive_effect",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "fatigue_pattern_support",
+        "digestive_deficiency_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.liu_jun_zi_tang",
+      "name_zh": "六君子湯",
+      "name_en": "Six Gentlemen Decoction",
+      "pinyin": "Liu Jun Zi Tang",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "qi_deficiency",
+        "phlegm_damp",
+        "digestive"
+      ],
+      "pattern_focus_en": [
+        "Spleen qi deficiency with phlegm-damp"
+      ],
+      "condition_links": [
+        "digestive_deficiency_pattern_support",
+        "phlegm_damp_pattern_support"
+      ],
+      "safety_flags": [
+        "cloying_digestive_effect",
+        "phlegm_pattern_review",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "cloying_digestive_effect",
+        "phlegm_pattern_review",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "cloying_digestive_effect",
+        "phlegm_pattern_review",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "digestive_deficiency_pattern_support",
+        "phlegm_damp_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.bu_zhong_yi_qi_tang",
+      "name_zh": "補中益氣湯",
+      "name_en": "Tonify the Middle and Augment the Qi Decoction",
+      "pinyin": "Bu Zhong Yi Qi Tang",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "qi_deficiency",
+        "sinking_qi",
+        "middle_jiao"
+      ],
+      "pattern_focus_en": [
+        "Middle qi deficiency with sinking qi"
+      ],
+      "condition_links": [
+        "fatigue_pattern_support",
+        "prolapse_pattern_support",
+        "digestive_deficiency_pattern_support"
+      ],
+      "safety_flags": [
+        "hypertension_review",
+        "heat_signs",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "hypertension_review",
+        "heat_signs",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "hypertension_review",
+        "heat_signs",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "fatigue_pattern_support",
+        "prolapse_pattern_support",
+        "digestive_deficiency_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.gui_pi_tang",
+      "name_zh": "歸脾湯",
+      "name_en": "Restore the Spleen Decoction",
+      "pinyin": "Gui Pi Tang",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "qi_blood_deficiency",
+        "heart_spleen_deficiency",
+        "sleep"
+      ],
+      "pattern_focus_en": [
+        "Heart and spleen deficiency"
+      ],
+      "condition_links": [
+        "insomnia_pattern_support",
+        "palpitations_pattern_support",
+        "fatigue_pattern_support",
+        "gynecology_pattern_support"
+      ],
+      "safety_flags": [
+        "sedative_medication_review",
+        "bleeding_review",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "sedative_medication_review",
+        "bleeding_review",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "sedative_medication_review",
+        "bleeding_review",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "insomnia_pattern_support",
+        "palpitations_pattern_support",
+        "fatigue_pattern_support",
+        "gynecology_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.si_wu_tang",
+      "name_zh": "四物湯",
+      "name_en": "Four-Substance Decoction",
+      "pinyin": "Si Wu Tang",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "blood_deficiency",
+        "gynecology",
+        "menstrual"
+      ],
+      "pattern_focus_en": [
+        "Blood deficiency"
+      ],
+      "condition_links": [
+        "menstrual_pattern_support",
+        "fertility_pattern_support",
+        "blood_deficiency_pattern_support"
+      ],
+      "safety_flags": [
+        "pregnancy_review",
+        "bleeding_review",
+        "anticoagulant_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "pregnancy_review",
+        "bleeding_review",
+        "anticoagulant_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "pregnancy_review",
+        "bleeding_review",
+        "anticoagulant_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "menstrual_pattern_support",
+        "fertility_pattern_support",
+        "blood_deficiency_pattern_support"
+      ],
+      "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.ba_zhen_tang",
+      "name_zh": "八珍湯",
+      "name_en": "Eight-Treasure Decoction",
+      "pinyin": "Ba Zhen Tang",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "qi_blood_deficiency",
+        "post_illness",
+        "gynecology"
+      ],
+      "pattern_focus_en": [
+        "Qi and blood deficiency"
+      ],
+      "condition_links": [
+        "fatigue_pattern_support",
+        "postpartum_pattern_support",
+        "fertility_pattern_support"
+      ],
+      "safety_flags": [
+        "pregnancy_review",
+        "bleeding_review",
+        "cloying_digestive_effect"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "pregnancy_review",
+        "bleeding_review",
+        "cloying_digestive_effect"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "pregnancy_review",
+        "bleeding_review",
+        "cloying_digestive_effect"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "fatigue_pattern_support",
+        "postpartum_pattern_support",
+        "fertility_pattern_support"
+      ],
+      "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.liu_wei_di_huang_wan",
+      "name_zh": "六味地黃丸",
+      "name_en": "Six-Ingredient Pill with Rehmannia",
+      "pinyin": "Liu Wei Di Huang Wan",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "kidney_yin_deficiency",
+        "yin_deficiency"
+      ],
+      "pattern_focus_en": [
+        "Kidney yin deficiency"
+      ],
+      "condition_links": [
+        "menopause_pattern_support",
+        "fertility_pattern_support",
+        "yin_deficiency_pattern_support"
+      ],
+      "safety_flags": [
+        "cloying_digestive_effect",
+        "kidney_disease_review",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "cloying_digestive_effect",
+        "kidney_disease_review",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "cloying_digestive_effect",
+        "kidney_disease_review",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "menopause_pattern_support",
+        "fertility_pattern_support",
+        "yin_deficiency_pattern_support"
+      ],
+      "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.jin_gui_shen_qi_wan",
+      "name_zh": "金匱腎氣丸",
+      "name_en": "Kidney Qi Pill from the Golden Cabinet",
+      "pinyin": "Jin Gui Shen Qi Wan",
+      "category_id": "formula_category.tonify",
+      "category_en": "Tonify",
+      "study_tags": [
+        "kidney_yang_deficiency",
+        "water_metabolism"
+      ],
+      "pattern_focus_en": [
+        "Kidney yang deficiency"
+      ],
+      "condition_links": [
+        "urinary_pattern_support",
+        "edema_pattern_support",
+        "fertility_pattern_support"
+      ],
+      "safety_flags": [
+        "heat_signs",
+        "kidney_disease_review",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "heat_signs",
+        "kidney_disease_review",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "heat_signs",
+        "kidney_disease_review",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "urinary_pattern_support",
+        "edema_pattern_support",
+        "fertility_pattern_support"
+      ],
+      "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.tian_wang_bu_xin_dan",
+      "name_zh": "天王補心丹",
+      "name_en": "Emperor of Heaven's Special Pill to Tonify the Heart",
+      "pinyin": "Tian Wang Bu Xin Dan",
+      "category_id": "formula_category.calm_spirit",
+      "category_en": "Calm the Spirit",
+      "study_tags": [
+        "heart_yin_deficiency",
+        "insomnia",
+        "shen"
+      ],
+      "pattern_focus_en": [
+        "Heart yin and blood deficiency with spirit disturbance"
+      ],
+      "condition_links": [
+        "insomnia_pattern_support",
+        "anxiety_pattern_support",
+        "palpitations_pattern_support"
+      ],
+      "safety_flags": [
+        "sedative_medication_review",
+        "psychiatric_red_flags",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "sedative_medication_review",
+        "psychiatric_red_flags",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "sedative_medication_review",
+        "psychiatric_red_flags",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "insomnia_pattern_support",
+        "anxiety_pattern_support",
+        "palpitations_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.long_dan_xie_gan_tang",
+      "name_zh": "龍膽瀉肝湯",
+      "name_en": "Gentiana Decoction to Drain the Liver",
+      "pinyin": "Long Dan Xie Gan Tang",
+      "category_id": "formula_category.clear_heat",
+      "category_en": "Clear Heat",
+      "study_tags": [
+        "liver_gallbladder_fire",
+        "damp_heat",
+        "lower_jiao"
+      ],
+      "pattern_focus_en": [
+        "Liver/gallbladder excess heat or damp-heat"
+      ],
+      "condition_links": [
+        "urinary_pattern_support",
+        "gynecology_damp_heat_pattern_support",
+        "liver_gallbladder_pattern_support"
+      ],
+      "safety_flags": [
+        "cold_digestive_weakness",
+        "liver_disease_review",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "cold_digestive_weakness",
+        "liver_disease_review",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "cold_digestive_weakness",
+        "liver_disease_review",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "urinary_pattern_support",
+        "gynecology_damp_heat_pattern_support",
+        "liver_gallbladder_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.ban_xia_xie_xin_tang",
+      "name_zh": "半夏瀉心湯",
+      "name_en": "Pinellia Decoction to Drain the Epigastrium",
+      "pinyin": "Ban Xia Xie Xin Tang",
+      "category_id": "formula_category.harmonize",
+      "category_en": "Harmonize",
+      "study_tags": [
+        "hot_cold_complex",
+        "epigastric_focal_distention",
+        "digestive"
+      ],
+      "pattern_focus_en": [
+        "Mixed hot-cold digestive pattern"
+      ],
+      "condition_links": [
+        "digestive_pattern_support",
+        "nausea_pattern_support",
+        "reflux_pattern_support"
+      ],
+      "safety_flags": [
+        "gi_red_flags",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "gi_red_flags",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "gi_red_flags",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "digestive_pattern_support",
+        "nausea_pattern_support",
+        "reflux_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.er_chen_tang",
+      "name_zh": "二陳湯",
+      "name_en": "Two-Cured Decoction",
+      "pinyin": "Er Chen Tang",
+      "category_id": "formula_category.transform_phlegm",
+      "category_en": "Transform Phlegm",
+      "study_tags": [
+        "phlegm_damp",
+        "spleen",
+        "nausea"
+      ],
+      "pattern_focus_en": [
+        "Phlegm-damp pattern"
+      ],
+      "condition_links": [
+        "cough_phlegm_pattern_support",
+        "nausea_pattern_support",
+        "dizziness_pattern_support"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "respiratory_red_flags",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "respiratory_red_flags",
+        "pregnancy_review",
+        "medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "cough_phlegm_pattern_support",
+        "nausea_pattern_support",
+        "dizziness_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.ping_wei_san",
+      "name_zh": "平胃散",
+      "name_en": "Calm the Stomach Powder",
+      "pinyin": "Ping Wei San",
+      "category_id": "formula_category.drain_damp",
+      "category_en": "Dispel Dampness",
+      "study_tags": [
+        "damp_stagnation",
+        "middle_jiao",
+        "digestive"
+      ],
+      "pattern_focus_en": [
+        "Damp stagnation in the middle jiao"
+      ],
+      "condition_links": [
+        "bloating_pattern_support",
+        "digestive_damp_pattern_support"
+      ],
+      "safety_flags": [
+        "dryness_review",
+        "gi_red_flags",
+        "pregnancy_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "dryness_review",
+        "gi_red_flags",
+        "pregnancy_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "dryness_review",
+        "gi_red_flags",
+        "pregnancy_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "bloating_pattern_support",
+        "digestive_damp_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.wen_jing_tang",
+      "name_zh": "溫經湯",
+      "name_en": "Warm the Menses Decoction",
+      "pinyin": "Wen Jing Tang",
+      "category_id": "formula_category.regulate_blood",
+      "category_en": "Regulate Blood",
+      "study_tags": [
+        "gynecology",
+        "cold",
+        "blood_stasis",
+        "deficiency_heat"
+      ],
+      "pattern_focus_en": [
+        "Cold and blood stasis in the womb with deficiency signs"
+      ],
+      "condition_links": [
+        "menstrual_pattern_support",
+        "fertility_pattern_support",
+        "ivf_iui_review"
+      ],
+      "safety_flags": [
+        "pregnancy_review",
+        "bleeding_review",
+        "anticoagulant_review",
+        "fertility_medication_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "pregnancy_review",
+        "bleeding_review",
+        "anticoagulant_review",
+        "fertility_medication_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "pregnancy_review",
+        "bleeding_review",
+        "anticoagulant_review",
+        "fertility_medication_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "menstrual_pattern_support",
+        "fertility_pattern_support",
+        "ivf_iui_review"
+      ],
+      "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.tao_hong_si_wu_tang",
+      "name_zh": "桃紅四物湯",
+      "name_en": "Peach Kernel and Safflower Four-Substance Decoction",
+      "pinyin": "Tao Hong Si Wu Tang",
+      "category_id": "formula_category.regulate_blood",
+      "category_en": "Regulate Blood",
+      "study_tags": [
+        "blood_stasis",
+        "gynecology",
+        "menstrual_pain"
+      ],
+      "pattern_focus_en": [
+        "Blood deficiency with blood stasis"
+      ],
+      "condition_links": [
+        "dysmenorrhea_pattern_support",
+        "blood_stasis_pattern_support"
+      ],
+      "safety_flags": [
+        "pregnancy_caution",
+        "anticoagulant_review",
+        "bleeding_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "pregnancy_caution",
+        "anticoagulant_review",
+        "bleeding_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "pregnancy_caution",
+        "anticoagulant_review",
+        "bleeding_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "dysmenorrhea_pattern_support",
+        "blood_stasis_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    },
+    {
+      "id": "formula.xue_fu_zhu_yu_tang",
+      "name_zh": "血府逐瘀湯",
+      "name_en": "Drive Out Stasis in the Mansion of Blood Decoction",
+      "pinyin": "Xue Fu Zhu Yu Tang",
+      "category_id": "formula_category.regulate_blood",
+      "category_en": "Regulate Blood",
+      "study_tags": [
+        "blood_stasis",
+        "chest",
+        "qi_stagnation"
+      ],
+      "pattern_focus_en": [
+        "Blood stasis in the chest with qi stagnation"
+      ],
+      "condition_links": [
+        "chest_discomfort_pattern_support",
+        "headache_pattern_support",
+        "menstrual_pattern_support"
+      ],
+      "safety_flags": [
+        "chest_pain_red_flag",
+        "anticoagulant_review",
+        "pregnancy_caution",
+        "bleeding_review"
+      ],
+      "nccaom_high_yield": true,
+      "review_status": "draft",
+      "public_safe": false,
+      "source_urls": [],
+      "source_type": "draft_seed_pending_source_review",
+      "last_reviewed": "",
+      "composition": [],
+      "actions_en": [],
+      "actions_zh": [],
+      "modifications_en": [],
+      "modifications_zh": [],
+      "contraindications_en": [
+        "chest_pain_red_flag",
+        "anticoagulant_review",
+        "pregnancy_caution",
+        "bleeding_review"
+      ],
+      "contraindications_zh": [],
+      "herb_drug_cautions": [
+        "chest_pain_red_flag",
+        "anticoagulant_review",
+        "pregnancy_caution",
+        "bleeding_review"
+      ],
+      "acupoint_links": [],
+      "western_condition_links": [
+        "chest_discomfort_pattern_support",
+        "headache_pattern_support",
+        "menstrual_pattern_support"
+      ],
+      "fertility_notes": "",
+      "clinical_pearls": []
+    }
+  ],
   "category_source": "data/herbs/formula_categories.json",
   "next_steps": [
-    "Import top board-relevant formulas as draft records.",
-    "Link each formula to TCM patterns, western conditions, acupuncture points, and medication cautions.",
-    "Mark each formula with review_status and public_safe before public use."
-  ]
+    "Source-check composition and classical source for each high-yield formula.",
+    "Add herb roles, actions, pattern indications, contraindications, and herb-drug cautions.",
+    "Prioritize fertility-related formulas for IVF/IUI coordination review.",
+    "Mark formulas public_ready only after professional source and safety review.",
+    "Use formula_safety_flags.json as the shared safety vocabulary for cases, medications, fertility workflows, and public articles."
+  ],
+  "seed_source": "data/herbs/high_yield_formula_seeds.json",
+  "safety_flag_source": "data/herbs/formula_safety_flags.json"
 }

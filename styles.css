@@ -1909,6 +1909,28 @@ button:hover,
   line-height: 1.45;
 }
 
+.formula-progress-strip {
+  background: #fff8eb;
+  border: 1px solid #ead8b7;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.82rem;
+  padding: 0.78rem;
+}
+
+.formula-progress-strip span {
+  color: #5d421b;
+  line-height: 1.35;
+}
+
+.formula-progress-strip strong {
+  color: #7a5414;
+  font-size: 1.18rem;
+  margin-right: 0.18rem;
+}
+
 .public-system-grid {
   display: grid;
   gap: 0.72rem;
@@ -2424,6 +2446,7 @@ footer {
   .tung-zone-grid,
   .formula-category-grid,
   .formula-safety-strip,
+  .formula-progress-strip,
   .patient-action-grid,
   .source-grid {
     grid-template-columns: 1fr;
