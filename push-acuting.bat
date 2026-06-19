@@ -2,9 +2,6 @@
 setlocal
 
 set "SCRIPT=%~dp0push-acuting.ps1"
-if not exist "%SCRIPT%" (
-  set "SCRIPT=C:\Users\guoti\OneDrive\Documents\Acedemy 學習資料\acupuncture-point-app\push-acuting.ps1"
-)
 
 if not exist "%SCRIPT%" (
   echo Could not find push-acuting.ps1.

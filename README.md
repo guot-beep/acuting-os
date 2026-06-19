@@ -29,6 +29,14 @@ It will:
 
 If you press Enter without typing a message, it uses a timestamped default message.
 
+Do not copy `push-acuting.bat` alone to Desktop. If you want a Desktop button, double-click this once from the project folder:
+
+```text
+create-desktop-push-shortcut.bat
+```
+
+It creates a Desktop shortcut that points back to the correct project folder and keeps `push-acuting.ps1` available.
+
 
 這是一個可直接在瀏覽器使用的本地 HTML 小工具，也是 AcuTing OS 的第一階段。短期目標是建立專業中英雙語針灸穴位資料庫；長期目標是整合 Acupuncture、Herbal formulas、Pathology、NCCAOM、Bastyr、Clinical Pearls、Social Media Ideas 與 Personal Notes。
 
