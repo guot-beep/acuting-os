@@ -11,6 +11,24 @@
 
 Deployment notes: `DEPLOYMENT.md`
 
+## One-Click GitHub Sync
+
+After editing AcuTing OS, double-click:
+
+```text
+push-acuting.bat
+```
+
+It will:
+
+1. Check local changes.
+2. Ask for a commit message.
+3. Run `git add -A`.
+4. Create a commit.
+5. Push to GitHub.
+
+If you press Enter without typing a message, it uses a timestamped default message.
+
 
 這是一個可直接在瀏覽器使用的本地 HTML 小工具，也是 AcuTing OS 的第一階段。短期目標是建立專業中英雙語針灸穴位資料庫；長期目標是整合 Acupuncture、Herbal formulas、Pathology、NCCAOM、Bastyr、Clinical Pearls、Social Media Ideas 與 Personal Notes。
 
