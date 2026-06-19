@@ -1,5 +1,18 @@
 @echo off
 setlocal
-cd /d "%~dp0"
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0push-acuting.ps1"
+
+set "SCRIPT=%~dp0push-acuting.ps1"
+if not exist "%SCRIPT%" (
+  set "SCRIPT=C:\Users\guoti\OneDrive\Documents\Acedemy 學習資料\acupuncture-point-app\push-acuting.ps1"
+)
+
+if not exist "%SCRIPT%" (
+  echo Could not find push-acuting.ps1.
+  echo Please run push-acuting.bat from the acupuncture-point-app folder,
+  echo or create a shortcut instead of copying the bat file.
+  pause
+  exit /b 1
+)
+
+powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT%"
 pause
