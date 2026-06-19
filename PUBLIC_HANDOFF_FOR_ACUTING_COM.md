@@ -30,6 +30,7 @@ data/herbs/high_yield_formula_seeds.json
 data/herbs/formula_safety_flags.json
 data/evidence/
 data/pathology/
+data/clinical_cases/fertility_workflow_seed.json
 ```
 
 Key architecture file:
@@ -70,6 +71,15 @@ data/herbs/formula_safety_flags.json
 Individual formula pages should not be public until each formula has composition, pattern indications, contraindications, herb-drug cautions, fertility/pregnancy review where relevant, source URLs, and `public_ready` status.
 
 The current high-yield formula records are draft seeds only. They are useful for private study, NCCAOM organization, and future page planning, but should not be published as clinical instructions.
+
+Fertility workflow data is private-clinical scaffolding:
+
+```text
+data/clinical_cases/fertility_workflow_seed.json
+data/medications/western_medications.json
+```
+
+Do not publish fertility workflows as treatment protocols. Public content may discuss general education only after source review, conservative safety wording, and removal of private clinical documentation assumptions.
 
 ## Source Policy
 

@@ -54,6 +54,9 @@
 3. Add Western medications as a separate English-first layer in `data/medications/`.
 4. Build herb-drug and acupuncture-medication caution links only after source validation.
 5. Build fertility workflow links first, because infertility care often needs acupuncture, herbs, Western diagnosis, Western medication, cycle timing, IUI/IVF coordination, and contraindication tracking.
+   - Fertility workflow seed is in `data/clinical_cases/fertility_workflow_seed.json`.
+   - Fertility-related medication records are seeded in `data/medications/western_medications.json`.
+   - Workflow links include PCOS/ovulation induction, IUI, IVF stimulation/retrieval, and embryo transfer/luteal support.
 6. Add Bastyr notes, personal notes, and social media ideas as separate personal layers.
 
 ## Phase 6: Clinical Case Notebook

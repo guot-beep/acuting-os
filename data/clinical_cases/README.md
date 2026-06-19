@@ -40,6 +40,24 @@ Structured tables such as `visit_acupuncture`, `visit_formulas`, `visit_western_
 
 Use `patient_code` instead of full legal name. Avoid storing full date of birth, address, phone, email, insurance ID, or other identifying details unless the system is later upgraded with proper privacy and security controls.
 
+## Fertility Workflow
+
+The fertility workflow seed lives in:
+
+```text
+fertility_workflow_seed.json
+```
+
+It connects PCOS/ovulation induction, IUI, IVF stimulation/retrieval, and embryo transfer/luteal support workflows to:
+
+- Cycle phase tracking.
+- Western medication context.
+- TCM pattern watchlists.
+- Acupoint and formula seed links.
+- Safety flags such as possible pregnancy, anticoagulant use, clinic herb restrictions, and ovarian hyperstimulation warning signs.
+
+This is a documentation scaffold only. Fertility medication timing, stimulation protocols, retrieval/transfer planning, pregnancy management, and emergency concerns must follow the fertility clinic or supervising clinician.
+
 ## Recommended Workflow
 
 1. Create a `patient_code`.

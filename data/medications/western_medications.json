@@ -1,13 +1,16 @@
 {
   "dataset": "Western medications",
-  "status": "schema_seed_for_review",
+  "status": "fertility_medication_seed_for_review",
   "records": [
     {
       "id": "med.letrozole",
       "generic_name_en": "Letrozole",
       "brand_names_en": [],
       "drug_class_en": "Aromatase inhibitor",
-      "common_uses_en": ["Ovulation induction context", "Other uses require biomedical context"],
+      "common_uses_en": [
+        "Ovulation induction context",
+        "Other uses require biomedical context"
+      ],
       "fertility_use_en": "Often appears in ovulation induction workflows. Exact timing, dose, monitoring, and contraindications must follow the prescribing clinician.",
       "major_contraindications_en": [],
       "common_adverse_effects_en": [],
@@ -22,7 +25,9 @@
       "generic_name_en": "Clomiphene citrate",
       "brand_names_en": [],
       "drug_class_en": "Selective estrogen receptor modulator",
-      "common_uses_en": ["Ovulation induction context"],
+      "common_uses_en": [
+        "Ovulation induction context"
+      ],
       "fertility_use_en": "Used in ovulation induction workflows. Exact protocol must follow the prescribing clinician.",
       "major_contraindications_en": [],
       "common_adverse_effects_en": [],
@@ -37,7 +42,11 @@
       "generic_name_en": "Metformin",
       "brand_names_en": [],
       "drug_class_en": "Biguanide antihyperglycemic",
-      "common_uses_en": ["Type 2 diabetes context", "Insulin resistance context", "PCOS context when prescribed"],
+      "common_uses_en": [
+        "Type 2 diabetes context",
+        "Insulin resistance context",
+        "PCOS context when prescribed"
+      ],
       "fertility_use_en": "May appear in PCOS or insulin resistance workflows depending on biomedical assessment.",
       "major_contraindications_en": [],
       "common_adverse_effects_en": [],
@@ -46,6 +55,164 @@
       "pregnancy_lactation_note_en": "Requires clinician guidance.",
       "source_notes": "Placeholder for future professional-source validation.",
       "updated_at": "2026-06-15"
+    },
+    {
+      "id": "med.progesterone",
+      "generic_name_en": "Progesterone",
+      "brand_names_en": [],
+      "drug_class_en": "Progestogen / luteal support medication",
+      "common_uses_en": [
+        "Luteal phase support context",
+        "Embryo transfer support context when prescribed"
+      ],
+      "fertility_use_en": "Commonly appears in luteal support or embryo-transfer workflows. Route, dose, timing, and duration must follow the fertility clinic.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review sedating, hormone-active, blood-moving, or pregnancy-related formulas before combining.",
+      "acupuncture_caution_en": "Document cycle phase, transfer/IUI timing if relevant, bleeding or cramping, mood, sleep, and clinic restrictions.",
+      "pregnancy_lactation_note_en": "Requires prescribing clinician guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.estradiol",
+      "generic_name_en": "Estradiol",
+      "brand_names_en": [],
+      "drug_class_en": "Estrogen hormone medication",
+      "common_uses_en": [
+        "Endometrial preparation context",
+        "Hormone replacement or fertility protocol context when prescribed"
+      ],
+      "fertility_use_en": "May appear in embryo-transfer preparation or hormone support workflows. Protocol details must follow the fertility clinic.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review hormone-active herbs/formulas and clotting-risk context before combining.",
+      "acupuncture_caution_en": "Document medication timing, bleeding, headaches, breast tenderness, mood, and clinic instructions.",
+      "pregnancy_lactation_note_en": "Requires prescribing clinician guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.follitropin_alfa",
+      "generic_name_en": "Follitropin alfa",
+      "brand_names_en": [],
+      "drug_class_en": "Follicle-stimulating hormone (FSH) gonadotropin",
+      "common_uses_en": [
+        "Ovarian stimulation context"
+      ],
+      "fertility_use_en": "May appear in IUI or IVF stimulation protocols. Monitoring and dose changes must be managed by the fertility clinic.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review formulas affecting bleeding, fluid retention, abdominal symptoms, or ovarian stimulation context.",
+      "acupuncture_caution_en": "Document stimulation day, monitoring reports if shared, abdominal bloating/pain, rapid weight change, shortness of breath, and OHSS warning signs.",
+      "pregnancy_lactation_note_en": "Requires fertility clinic guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.menotropins",
+      "generic_name_en": "Menotropins",
+      "brand_names_en": [],
+      "drug_class_en": "Human menopausal gonadotropin (hMG)",
+      "common_uses_en": [
+        "Ovarian stimulation context"
+      ],
+      "fertility_use_en": "May appear in IUI or IVF stimulation protocols under clinic monitoring.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review formulas in the context of ovarian response, bloating, fluid shifts, and bleeding risk.",
+      "acupuncture_caution_en": "Document monitoring, stimulation day, pelvic pain, bloating, rapid weight change, shortness of breath, and clinic restrictions.",
+      "pregnancy_lactation_note_en": "Requires fertility clinic guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.ganirelix",
+      "generic_name_en": "Ganirelix",
+      "brand_names_en": [],
+      "drug_class_en": "GnRH antagonist",
+      "common_uses_en": [
+        "Prevention of premature LH surge in controlled ovarian stimulation context"
+      ],
+      "fertility_use_en": "May appear in IVF stimulation cycles. Exact timing must follow fertility clinic instructions.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review with fertility clinic restrictions and stimulation protocol timing.",
+      "acupuncture_caution_en": "Document stimulation day, trigger planning if known, symptoms, and clinic instructions.",
+      "pregnancy_lactation_note_en": "Requires fertility clinic guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.leuprolide",
+      "generic_name_en": "Leuprolide",
+      "brand_names_en": [],
+      "drug_class_en": "GnRH agonist",
+      "common_uses_en": [
+        "Downregulation or trigger context in fertility protocols",
+        "Other uses require biomedical context"
+      ],
+      "fertility_use_en": "May appear in IVF protocols as suppression or trigger depending on clinic plan.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review hormone-active herbs/formulas and protocol timing with clinic restrictions.",
+      "acupuncture_caution_en": "Document protocol phase, medication timing if shared, mood, sleep, headaches, hot flashes, and clinic instructions.",
+      "pregnancy_lactation_note_en": "Requires fertility clinic guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.human_chorionic_gonadotropin",
+      "generic_name_en": "Human chorionic gonadotropin",
+      "brand_names_en": [],
+      "drug_class_en": "hCG trigger / gonadotropin",
+      "common_uses_en": [
+        "Ovulation trigger context",
+        "Final oocyte maturation trigger context"
+      ],
+      "fertility_use_en": "May appear as trigger medication before timed intercourse, IUI, or retrieval. Timing must follow clinic instructions exactly.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review with OHSS risk, pelvic pain, bloating, and clinic restrictions.",
+      "acupuncture_caution_en": "Document trigger timing if shared, IUI/retrieval timing, abdominal symptoms, bleeding, and urgent warning signs.",
+      "pregnancy_lactation_note_en": "Requires fertility clinic guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.low_dose_aspirin",
+      "generic_name_en": "Low-dose aspirin",
+      "brand_names_en": [],
+      "drug_class_en": "Antiplatelet medication",
+      "common_uses_en": [
+        "Selected fertility, obstetric, cardiovascular, or clotting-risk contexts when prescribed"
+      ],
+      "fertility_use_en": "May appear in fertility or recurrent loss protocols depending on clinician assessment.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Flag blood-moving herbs/formulas and bleeding risk for review.",
+      "acupuncture_caution_en": "Document bruising, bleeding, anticoagulant/antiplatelet use, procedure timing, and prescribing instructions.",
+      "pregnancy_lactation_note_en": "Requires prescribing clinician guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
+    },
+    {
+      "id": "med.enoxaparin",
+      "generic_name_en": "Enoxaparin",
+      "brand_names_en": [],
+      "drug_class_en": "Low molecular weight heparin anticoagulant",
+      "common_uses_en": [
+        "Anticoagulation context when prescribed"
+      ],
+      "fertility_use_en": "May appear in selected fertility, recurrent loss, or clotting-risk protocols when prescribed.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Flag blood-moving herbs/formulas, bleeding risk, bruising, and needling intensity for review.",
+      "acupuncture_caution_en": "Document anticoagulant use, bruising, bleeding, injection sites, needling technique caution, and prescribing instructions.",
+      "pregnancy_lactation_note_en": "Requires prescribing clinician guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-19"
     }
-  ]
+  ],
+  "review_rule": "Medication records are for documentation and safety prompts only. Verify against prescribing clinician instructions and official sources before clinical or public use."
 }

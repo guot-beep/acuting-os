@@ -1,0 +1,106 @@
+{
+  "dataset": "Fertility workflow seed",
+  "status": "clinical_structure_seed_not_medical_advice",
+  "updated": "2026-06-19",
+  "purpose": "Create a structured fertility workflow map linking biomedical fertility care, TCM pattern tracking, acupuncture points, formulas, Western medications, safety flags, and SOAP notes.",
+  "privacy_rule": "Use de-identified patient codes only. Do not store full legal names, full dates of birth, phone numbers, addresses, insurance IDs, or fertility clinic portal documents.",
+  "clinical_boundary": "This is for documentation, study, and safety screening. Medication timing, stimulation protocols, retrieval/transfer plans, and pregnancy management must follow the prescribing fertility clinic or supervising clinician.",
+  "workflows": [
+    {
+      "id": "fertility.workflow.pcos_ovulation_induction",
+      "name_en": "PCOS / Ovulation Induction Support",
+      "name_zh": "多囊卵巢 / 排卵誘導輔助紀錄",
+      "western_condition_links": ["western_condition.pcos", "western_condition.anovulation", "western_condition.insulin_resistance"],
+      "common_medication_links": ["med.letrozole", "med.clomiphene_citrate", "med.metformin", "med.progesterone"],
+      "cycle_phases_to_track": ["baseline", "menses", "follicular", "ovulation_window", "luteal", "pregnancy_test_window"],
+      "tcm_pattern_watchlist": ["liver_qi_stagnation", "spleen_qi_deficiency", "kidney_deficiency", "phlegm_damp", "blood_stasis", "damp_heat"],
+      "acupoint_seed_links": ["SP6", "CV4", "CV6", "ST36", "SP9", "LR3", "KI3", "BL23", "BL20", "PC6"],
+      "formula_seed_links": ["formula.xiao_yao_san", "formula.jia_wei_xiao_yao_san", "formula.liu_wei_di_huang_wan", "formula.jin_gui_shen_qi_wan", "formula.wen_jing_tang"],
+      "safety_flags": ["possible_pregnancy", "fertility_medication_review", "pregnancy_review", "ovarian_hyperstimulation_warning_signs", "new_western_medication"],
+      "soap_prompts": [
+        "Cycle day and last menstrual period context",
+        "Medication start/stop dates if patient reports them",
+        "LH surge or ovulation predictor kit result if used",
+        "Ultrasound or follicle monitoring note if patient reports it",
+        "Pregnancy test timing",
+        "Bleeding, pelvic pain, mood, sleep, digestion, stress, and adverse reactions"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "fertility.workflow.iui_cycle",
+      "name_en": "IUI Cycle Support",
+      "name_zh": "人工授精 IUI 週期輔助紀錄",
+      "western_condition_links": ["western_condition.unexplained_infertility", "western_condition.male_factor_context", "western_condition.ovulatory_factor_context"],
+      "common_medication_links": ["med.letrozole", "med.clomiphene_citrate", "med.follitropin_alfa", "med.human_chorionic_gonadotropin", "med.progesterone"],
+      "cycle_phases_to_track": ["baseline", "stimulation", "monitoring", "trigger_window", "iui_day", "luteal_support", "two_week_wait", "pregnancy_test_window"],
+      "tcm_pattern_watchlist": ["kidney_deficiency", "liver_qi_stagnation", "blood_stasis", "spleen_qi_deficiency", "phlegm_damp"],
+      "acupoint_seed_links": ["CV4", "CV6", "SP6", "ST36", "LR3", "KI3", "BL23", "PC6", "HT7"],
+      "formula_seed_links": ["formula.si_wu_tang", "formula.ba_zhen_tang", "formula.gui_pi_tang", "formula.wen_jing_tang", "formula.xiao_yao_san"],
+      "safety_flags": ["fertility_medication_review", "pregnancy_review", "possible_pregnancy", "clinic_herb_restriction", "new_western_medication"],
+      "soap_prompts": [
+        "IUI date or estimated timing",
+        "Trigger shot timing if reported",
+        "Luteal support medication if prescribed",
+        "Clinic restrictions about herbs, supplements, acupuncture timing, or heat therapy",
+        "Two-week-wait symptoms and emotional support needs"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "fertility.workflow.ivf_stimulation",
+      "name_en": "IVF Stimulation and Retrieval Support",
+      "name_zh": "試管 IVF 促排與取卵週期輔助紀錄",
+      "western_condition_links": ["western_condition.ivf_cycle", "western_condition.diminished_ovarian_reserve", "western_condition.endometriosis_context", "western_condition.pcos"],
+      "common_medication_links": ["med.follitropin_alfa", "med.menotropins", "med.ganirelix", "med.leuprolide", "med.human_chorionic_gonadotropin", "med.progesterone"],
+      "cycle_phases_to_track": ["baseline", "stimulation", "monitoring", "trigger_window", "retrieval_day", "post_retrieval", "transfer_prep", "luteal_support"],
+      "tcm_pattern_watchlist": ["kidney_deficiency", "blood_stasis", "liver_qi_stagnation", "spleen_qi_deficiency", "phlegm_damp", "yin_deficiency"],
+      "acupoint_seed_links": ["ST36", "SP6", "CV4", "CV6", "KI3", "BL23", "LR3", "PC6", "DU20"],
+      "formula_seed_links": ["formula.ba_zhen_tang", "formula.si_wu_tang", "formula.liu_wei_di_huang_wan", "formula.wen_jing_tang", "formula.xiao_yao_san"],
+      "safety_flags": ["fertility_medication_review", "clinic_herb_restriction", "ovarian_hyperstimulation_warning_signs", "anticoagulant_review", "post_procedure_review"],
+      "soap_prompts": [
+        "Stimulation day and medication classes if patient reports them",
+        "Follicle count/size and lining notes only if patient reports clinic results",
+        "Trigger timing and retrieval date if known",
+        "Post-retrieval pain, bloating, shortness of breath, rapid weight change, bleeding, fever, or urgent symptoms",
+        "Clinic instructions about herbs, supplements, acupuncture, heat, exercise, and intercourse"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "fertility.workflow.embryo_transfer_luteal",
+      "name_en": "Embryo Transfer / Luteal Phase Support",
+      "name_zh": "胚胎植入 / 黃體期輔助紀錄",
+      "western_condition_links": ["western_condition.embryo_transfer", "western_condition.luteal_support", "western_condition.recurrent_pregnancy_loss_context"],
+      "common_medication_links": ["med.progesterone", "med.estradiol", "med.low_dose_aspirin", "med.enoxaparin"],
+      "cycle_phases_to_track": ["transfer_prep", "transfer_day", "post_transfer", "two_week_wait", "pregnancy_test_window", "early_pregnancy_if_confirmed"],
+      "tcm_pattern_watchlist": ["kidney_deficiency", "spleen_qi_deficiency", "blood_deficiency", "liver_qi_stagnation", "blood_stasis"],
+      "acupoint_seed_links": ["ST36", "PC6", "HT7", "DU20", "CV4", "CV6", "KI3", "BL23"],
+      "formula_seed_links": ["formula.gui_pi_tang", "formula.ba_zhen_tang", "formula.liu_wei_di_huang_wan", "formula.jin_gui_shen_qi_wan"],
+      "safety_flags": ["possible_pregnancy", "pregnancy_review", "anticoagulant_review", "bleeding_review", "clinic_herb_restriction"],
+      "soap_prompts": [
+        "Transfer date and embryo context only if patient chooses to share",
+        "Progesterone, estrogen, aspirin, anticoagulant, or other prescribed support if patient reports it",
+        "Bleeding, cramping, pelvic pain, fever, shortness of breath, severe anxiety, or urgent symptoms",
+        "Clinic restrictions about herbs, acupuncture points, moxa, heat therapy, and supplements",
+        "Emotional support and sleep tracking during two-week wait"
+      ],
+      "review_status": "draft"
+    }
+  ],
+  "cycle_phase_vocabulary": [
+    { "id": "baseline", "label_en": "Baseline", "label_zh": "基礎期/週期起始", "track": ["Cycle day", "Bleeding", "Baseline symptoms", "Clinic labs/ultrasound if reported"] },
+    { "id": "menses", "label_en": "Menses", "label_zh": "月經期", "track": ["Bleeding volume", "Clots", "Pain", "Color", "Energy", "Mood"] },
+    { "id": "follicular", "label_en": "Follicular phase", "label_zh": "濾泡期", "track": ["Cervical mucus", "Follicle monitoring if reported", "Energy", "Stress", "Sleep"] },
+    { "id": "ovulation_window", "label_en": "Ovulation window", "label_zh": "排卵窗", "track": ["LH surge", "Ovulation pain", "Timed intercourse/IUI date if applicable", "Cervical mucus"] },
+    { "id": "luteal", "label_en": "Luteal phase", "label_zh": "黃體期", "track": ["PMS", "Breast tenderness", "Basal body temperature pattern", "Progesterone support if prescribed"] },
+    { "id": "two_week_wait", "label_en": "Two-week wait", "label_zh": "等待驗孕期", "track": ["Mood", "Sleep", "Bleeding/cramping", "Medication support", "Clinic restrictions"] }
+  ],
+  "source_review_targets": [
+    "ASRM / ReproductiveFacts patient education",
+    "Fertility clinic medication instructions from the patient's own clinic",
+    "FDA labels or official medication references",
+    "NCCIH herb safety pages",
+    "Professional Chinese herbal medicine and acupuncture references"
+  ]
+}

@@ -1719,6 +1719,7 @@ button:hover,
 .public-architecture,
 .tung-zone-section,
 .patient-system,
+.fertility-section,
 .formula-section,
 .learn-section,
 .source-section {
@@ -1747,6 +1748,13 @@ button:hover,
 
 .patient-system {
   border-top: 4px solid var(--clay);
+}
+
+.fertility-section {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 252, 251, 0.94)),
+    #fff;
+  border-top: 4px solid #5d7f8a;
 }
 
 .formula-section {
@@ -2118,6 +2126,67 @@ button:hover,
   color: #6d4a13;
 }
 
+.fertility-workflow-grid {
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.fertility-card {
+  background: #fbfcfb;
+  border: 1px solid #d8e5e4;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.36rem;
+  min-height: 154px;
+  padding: 0.92rem;
+}
+
+.fertility-card span {
+  color: #38636b;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.fertility-card strong {
+  color: #172629;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.fertility-card small {
+  color: var(--muted);
+  line-height: 1.48;
+}
+
+.fertility-link-grid {
+  display: grid;
+  gap: 0.68rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 0.82rem;
+}
+
+.fertility-link-grid div {
+  background: #f8faf8;
+  border: 1px solid #d8e5e4;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.14rem;
+  padding: 0.78rem;
+}
+
+.fertility-link-grid strong {
+  color: #38636b;
+  font-size: 1.12rem;
+}
+
+.fertility-link-grid span {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
 .source-grid {
   display: grid;
   gap: 0.72rem;
@@ -2447,6 +2516,8 @@ footer {
   .formula-category-grid,
   .formula-safety-strip,
   .formula-progress-strip,
+  .fertility-workflow-grid,
+  .fertility-link-grid,
   .patient-action-grid,
   .source-grid {
     grid-template-columns: 1fr;
