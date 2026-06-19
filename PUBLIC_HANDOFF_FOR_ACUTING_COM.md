@@ -21,6 +21,7 @@ These are the most relevant files/folders for public English site planning:
 
 ```text
 data/learn/
+data/tung/
 data/sources/
 data/acupoints/361.json
 data/herbs/formulas.json
@@ -44,6 +45,15 @@ The public site should eventually support:
 - Special Methods.
 - Herbal Formulas.
 - Conditions, Evidence, and Safety.
+
+Master Tung structure is seeded in:
+
+```text
+data/tung/schema.json
+data/tung/zones.json
+```
+
+This is structure-only. Do not publish individual Tung point pages until each record is rewritten, source-checked, and marked `public_ready`.
 
 ## Source Policy
 
@@ -78,4 +88,3 @@ public_ready
 ```
 
 Only `public_ready` content should be copied to the final public site.
-

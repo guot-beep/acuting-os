@@ -112,4 +112,8 @@
    - Tung points by zone, reaction area, clinical use, and technique.
    - Auricular points by anatomy, function, name, and code.
    - Formulas by category, pattern, condition, safety flag, and herb-drug caution.
-7. Future UI goal: split the app into `AcuTing OS` private workspace and `AcuTing Learn` public-facing English website preview.
+7. Use `data/tung/` for Master Tung content:
+   - `schema.json` defines Tung point fields.
+   - `zones.json` defines 11, 22, 33, 44, 55, 66, 77, 88, 99, 1010, DT, and VT zone browsing.
+   - Tung point content remains structure-only until source review.
+8. Future UI goal: split the app into `AcuTing OS` private workspace and `AcuTing Learn` public-facing English website preview.

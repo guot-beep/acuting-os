@@ -1,0 +1,126 @@
+{
+  "dataset": "Master Tung zones",
+  "status": "structure_seed",
+  "updated": "2026-06-19",
+  "source_reference": {
+    "name": "Master Tung's Acupuncture / eLotus CORE",
+    "url": "https://www.mastertungacupuncture.org/",
+    "use": "Public navigation and zone taxonomy reference only. Do not copy full point articles."
+  },
+  "zones": [
+    {
+      "code": "11",
+      "name_en": "Fingers",
+      "name_zh": "手指",
+      "body_region_en": "Hand digits",
+      "body_region_zh": "手指部",
+      "public_slug": "tung-11-fingers",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "22",
+      "name_en": "Hands",
+      "name_zh": "手部",
+      "body_region_en": "Palm and dorsum of hand",
+      "body_region_zh": "手掌與手背",
+      "public_slug": "tung-22-hands",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "33",
+      "name_en": "Forearms",
+      "name_zh": "前臂",
+      "body_region_en": "Forearm",
+      "body_region_zh": "前臂部",
+      "public_slug": "tung-33-forearms",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "44",
+      "name_en": "Upper Arms",
+      "name_zh": "上臂",
+      "body_region_en": "Upper arm",
+      "body_region_zh": "上臂部",
+      "public_slug": "tung-44-upper-arms",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "55",
+      "name_en": "Soles",
+      "name_zh": "足底",
+      "body_region_en": "Sole of foot",
+      "body_region_zh": "足底部",
+      "public_slug": "tung-55-soles",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "66",
+      "name_en": "Top of Feet",
+      "name_zh": "足背",
+      "body_region_en": "Dorsum of foot",
+      "body_region_zh": "足背部",
+      "public_slug": "tung-66-top-of-feet",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "77",
+      "name_en": "Lower Legs",
+      "name_zh": "小腿",
+      "body_region_en": "Lower leg",
+      "body_region_zh": "小腿部",
+      "public_slug": "tung-77-lower-legs",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "88",
+      "name_en": "Thighs",
+      "name_zh": "大腿",
+      "body_region_en": "Thigh",
+      "body_region_zh": "大腿部",
+      "public_slug": "tung-88-thighs",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "99",
+      "name_en": "Ears",
+      "name_zh": "耳部",
+      "body_region_en": "Ear",
+      "body_region_zh": "耳部",
+      "public_slug": "tung-99-ears",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "1010",
+      "name_en": "Head",
+      "name_zh": "頭部",
+      "body_region_en": "Head and face",
+      "body_region_zh": "頭面部",
+      "public_slug": "tung-1010-head",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "DT",
+      "name_en": "Dorsal Torso",
+      "name_zh": "背部軀幹",
+      "body_region_en": "Back and dorsal torso",
+      "body_region_zh": "背部與後側軀幹",
+      "public_slug": "tung-dt-dorsal-torso",
+      "review_status": "structure_only"
+    },
+    {
+      "code": "VT",
+      "name_en": "Ventral Torso",
+      "name_zh": "胸腹軀幹",
+      "body_region_en": "Chest, abdomen, and ventral torso",
+      "body_region_zh": "胸腹與前側軀幹",
+      "public_slug": "tung-vt-ventral-torso",
+      "review_status": "structure_only"
+    }
+  ],
+  "next_steps": [
+    "Add starter Tung point records only after source review.",
+    "Add reaction-area vocabulary.",
+    "Add Dao Ma combination schema.",
+    "Keep Tung content separate from standard 361 points in UI and data."
+  ]
+}

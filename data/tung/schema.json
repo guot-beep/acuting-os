@@ -1,0 +1,53 @@
+{
+  "dataset": "Master Tung point schema",
+  "status": "structure_seed",
+  "updated": "2026-06-19",
+  "purpose": "Store Master Tung point records separately from standard 361 acupuncture points. This keeps Tung zones, reaction areas, Dao Ma combinations, and clinical indications searchable without mixing them into WHO-standard point codes.",
+  "content_policy": {
+    "private_study": "Use professional references, class notes, and web sources for learning and structure.",
+    "public_ready": "Rewrite in original English, cite sources, mark review status, and avoid copying full point pages or premium course material.",
+    "clinical_safety": "Needling, bloodletting, Dao Ma combinations, and reaction-area interpretation require professional training and source review before clinical use."
+  },
+  "record_template": {
+    "id": "tung.11.01",
+    "system": "master_tung",
+    "code": "",
+    "zone_code": "11",
+    "zone_en": "Fingers",
+    "zone_zh": "手指",
+    "name_en": "",
+    "name_zh": "",
+    "pinyin": "",
+    "location_en": "",
+    "location_zh": "",
+    "reaction_areas": [],
+    "dao_ma_group": "",
+    "traditional_functions_en": [],
+    "traditional_functions_zh": [],
+    "indications_en": [],
+    "indications_zh": [],
+    "needling": {
+      "depth": "",
+      "angle": "",
+      "technique": "",
+      "bloodletting": false,
+      "moxibustion": ""
+    },
+    "contraindications": [],
+    "safety_notes": [],
+    "related_standard_points": [],
+    "related_conditions": [],
+    "nccaom_relevance": false,
+    "source_urls": [],
+    "last_reviewed": "",
+    "review_status": "draft",
+    "public_safe": false
+  },
+  "review_status_values": [
+    "draft",
+    "translated",
+    "source_checked",
+    "clinically_reviewed",
+    "public_ready"
+  ]
+}
