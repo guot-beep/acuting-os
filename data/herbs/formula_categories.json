@@ -1,0 +1,151 @@
+{
+  "dataset": "Herbal formula categories",
+  "status": "structure_seed",
+  "updated": "2026-06-19",
+  "purpose": "Create a browse layer for classical formulas before importing individual formula records. Categories support NCCAOM study, clinical lookup, public English articles, condition links, and herb-drug safety review.",
+  "content_policy": {
+    "private_study": "Use Chinese and English references as study maps.",
+    "public_ready": "Rewrite in original English, cite sources, and verify formula claims against professional formula texts and safety sources.",
+    "safety": "Formula use must be tied to pattern differentiation, contraindications, pregnancy/lactation cautions, medication interactions, and referral flags."
+  },
+  "categories": [
+    {
+      "id": "formula_category.release_exterior",
+      "name_en": "Release the Exterior",
+      "name_zh": "解表劑",
+      "clinical_focus_en": "Exterior wind-cold, wind-heat, and early-stage externally contracted patterns.",
+      "safety_flags": ["sweating", "febrile illness", "pregnancy_review"]
+    },
+    {
+      "id": "formula_category.clear_heat",
+      "name_en": "Clear Heat",
+      "name_zh": "清熱劑",
+      "clinical_focus_en": "Heat, fire toxin, damp-heat, ying/blood heat, and deficiency heat patterns.",
+      "safety_flags": ["cold_digestive_weakness", "pregnancy_review", "medication_review"]
+    },
+    {
+      "id": "formula_category.drain_downward",
+      "name_en": "Drain Downward",
+      "name_zh": "瀉下劑",
+      "clinical_focus_en": "Constipation, excess accumulation, and downward-draining strategies.",
+      "safety_flags": ["pregnancy_caution", "elderly_caution", "dehydration_risk"]
+    },
+    {
+      "id": "formula_category.harmonize",
+      "name_en": "Harmonize",
+      "name_zh": "和解劑",
+      "clinical_focus_en": "Shaoyang, liver-spleen disharmony, digestive disharmony, and mixed hot-cold patterns.",
+      "safety_flags": ["pattern_specific", "medication_review"]
+    },
+    {
+      "id": "formula_category.treat_dryness",
+      "name_en": "Treat Dryness",
+      "name_zh": "治燥劑",
+      "clinical_focus_en": "External or internal dryness affecting the lung, skin, throat, intestines, or fluids.",
+      "safety_flags": ["fluid_status", "chronic_condition_review"]
+    },
+    {
+      "id": "formula_category.warm_interior",
+      "name_en": "Warm the Interior",
+      "name_zh": "溫裡劑",
+      "clinical_focus_en": "Interior cold, yang deficiency, cold pain, and collapse-type patterns.",
+      "safety_flags": ["heat_signs", "hypertension_review", "pregnancy_review"]
+    },
+    {
+      "id": "formula_category.tonify",
+      "name_en": "Tonify",
+      "name_zh": "補益劑",
+      "clinical_focus_en": "Qi, blood, yin, yang, essence, and chronic deficiency patterns.",
+      "safety_flags": ["cloying_digestive_effect", "autoimmune_review", "oncology_review"]
+    },
+    {
+      "id": "formula_category.stabilize_bind",
+      "name_en": "Stabilize and Bind",
+      "name_zh": "固澀劑",
+      "clinical_focus_en": "Leakage patterns such as sweating, diarrhea, urinary leakage, seminal emission, and uterine bleeding after excess has been ruled out.",
+      "safety_flags": ["do_not_trap_pathogen", "bleeding_review", "infection_review"]
+    },
+    {
+      "id": "formula_category.calm_spirit",
+      "name_en": "Calm the Spirit",
+      "name_zh": "安神劑",
+      "clinical_focus_en": "Insomnia, palpitations, anxiety patterns, irritability, and spirit disturbance.",
+      "safety_flags": ["psychiatric_red_flags", "sedative_medication_review"]
+    },
+    {
+      "id": "formula_category.open_orifices",
+      "name_en": "Open the Orifices",
+      "name_zh": "開竅劑",
+      "clinical_focus_en": "Emergency or severe spirit-clouding patterns; public content must remain conservative.",
+      "safety_flags": ["urgent_referral", "not_for_self_treatment", "professional_supervision"]
+    },
+    {
+      "id": "formula_category.regulate_qi",
+      "name_en": "Regulate Qi",
+      "name_zh": "理氣劑",
+      "clinical_focus_en": "Qi stagnation, rebellious qi, chest/epigastric constraint, nausea, belching, and emotional constraint patterns.",
+      "safety_flags": ["pregnancy_review", "gi_red_flags"]
+    },
+    {
+      "id": "formula_category.regulate_blood",
+      "name_en": "Regulate Blood",
+      "name_zh": "理血劑",
+      "clinical_focus_en": "Blood stasis, bleeding patterns, menstrual pain, trauma, masses, and circulation-related pattern links.",
+      "safety_flags": ["anticoagulant_review", "pregnancy_caution", "bleeding_review"]
+    },
+    {
+      "id": "formula_category.extinguish_wind",
+      "name_en": "Extinguish Wind",
+      "name_zh": "治風劑",
+      "clinical_focus_en": "Internal wind, tremor, dizziness, spasms, and wind-related neurological pattern support.",
+      "safety_flags": ["neurological_red_flags", "urgent_referral"]
+    },
+    {
+      "id": "formula_category.transform_phlegm",
+      "name_en": "Transform Phlegm",
+      "name_zh": "祛痰劑",
+      "clinical_focus_en": "Phlegm-damp, phlegm-heat, nodules, cough with phlegm, nausea, dizziness, and phlegm misting the mind.",
+      "safety_flags": ["respiratory_red_flags", "pregnancy_review", "medication_review"]
+    },
+    {
+      "id": "formula_category.drain_damp",
+      "name_en": "Dispel Dampness",
+      "name_zh": "祛濕劑",
+      "clinical_focus_en": "Dampness, edema, urinary difficulty, damp-heat, wind-damp, and water metabolism patterns.",
+      "safety_flags": ["kidney_disease_review", "diuretic_medication_review", "pregnancy_review"]
+    },
+    {
+      "id": "formula_category.reduce_food_stagnation",
+      "name_en": "Reduce Food Stagnation",
+      "name_zh": "消食劑",
+      "clinical_focus_en": "Food accumulation, bloating, belching, reflux patterns, and pediatric digestive stagnation.",
+      "safety_flags": ["gi_red_flags", "pediatric_review"]
+    },
+    {
+      "id": "formula_category.expulse_parasites",
+      "name_en": "Expel Parasites",
+      "name_zh": "驅蟲劑",
+      "clinical_focus_en": "Parasite-related traditional categories; public content should defer to modern diagnosis and medical care.",
+      "safety_flags": ["medical_diagnosis_required", "not_for_self_treatment"]
+    },
+    {
+      "id": "formula_category.external_use",
+      "name_en": "External Use",
+      "name_zh": "外用劑",
+      "clinical_focus_en": "Topical washes, plasters, soaks, and external applications.",
+      "safety_flags": ["skin_allergy", "open_wound_review", "infection_review"]
+    }
+  ],
+  "public_article_sections": [
+    "Formula overview",
+    "Category and source classic",
+    "Composition and roles",
+    "Traditional actions",
+    "Pattern indications",
+    "Common modifications",
+    "Contraindications and safety",
+    "Herb-drug and fertility/IVF cautions",
+    "Related acupuncture points",
+    "Sources and review status"
+  ]
+}

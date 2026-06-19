@@ -25,6 +25,7 @@ data/tung/
 data/sources/
 data/acupoints/361.json
 data/herbs/formulas.json
+data/herbs/formula_categories.json
 data/evidence/
 data/pathology/
 ```
@@ -54,6 +55,15 @@ data/tung/zones.json
 ```
 
 This is structure-only. Do not publish individual Tung point pages until each record is rewritten, source-checked, and marked `public_ready`.
+
+Formula category structure is seeded in:
+
+```text
+data/herbs/formula_categories.json
+data/herbs/formulas.json
+```
+
+Individual formula pages should not be public until each formula has composition, pattern indications, contraindications, herb-drug cautions, fertility/pregnancy review where relevant, source URLs, and `public_ready` status.
 
 ## Source Policy
 

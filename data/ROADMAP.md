@@ -42,6 +42,8 @@
 ## Phase 5: Herbs, Pathology, Western Medicine, and Personal OS
 
 1. Add single herbs and formulas after acupuncture core stabilizes.
+   - Formula browse categories are seeded in `data/herbs/formula_categories.json`.
+   - Next formula content batch: top board/clinic formulas as draft records, linked to patterns, conditions, acupoints, medications, and safety flags.
 2. Keep Eastern and Western pathology separate:
    - `western_conditions`: biomedical diagnoses and clinical problems.
    - `eastern_diseases`: traditional disease names.

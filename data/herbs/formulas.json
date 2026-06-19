@@ -1,6 +1,6 @@
 {
   "dataset": "Herbal formulas",
-  "status": "schema_ready_content_pending",
+  "status": "schema_ready_category_layer_seeded",
   "purpose": "Bilingual formula layer for AcuTing OS. Records should connect formulas to patterns, western conditions, acupoints, single herbs, medications, case notes, and future public Learn articles.",
   "content_policy": {
     "private_study": "Chinese websites may be used as topic maps and structural references.",
@@ -92,5 +92,11 @@
       "name_en": "Warm the Interior"
     }
   ],
-  "records": []
+  "records": [],
+  "category_source": "data/herbs/formula_categories.json",
+  "next_steps": [
+    "Import top board-relevant formulas as draft records.",
+    "Link each formula to TCM patterns, western conditions, acupuncture points, and medication cautions.",
+    "Mark each formula with review_status and public_safe before public use."
+  ]
 }
