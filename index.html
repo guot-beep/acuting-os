@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AcuTing OS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-block">
+        <p class="eyebrow">AcuTing OS</p>
+        <h1>AcuTing OS 中醫學習系統</h1>
+        <p class="top-subtitle">Clinical notebook · Acupuncture atlas · Bilingual knowledge graph</p>
+      </div>
+      <nav class="top-nav" aria-label="主要工作區">
+        <a href="#contentLibrary">Library</a>
+        <a href="#patientSystem">Records</a>
+        <a href="#caseWorkspace">Cases</a>
+        <a href="#acupointDirectory">Acupuncture</a>
+        <a href="#auricularLibrary">Auricular</a>
+        <a href="#pathologyLibrary">Pathology</a>
+        <a href="#formulaLibrary">Formulas</a>
+        <a href="#billingLibrary">Billing</a>
+        <a href="#sourceSection">Sources</a>
+        <a href="#publicArchitecture">Public Learn</a>
+      </nav>
+      <div class="top-actions">
+        <button id="exportBtn" class="ghost" type="button">匯出 JSON</button>
+        <button id="modeBilingualBtn" class="ghost active" type="button">中英版</button>
+        <button id="modeEnglishBtn" class="ghost" type="button">Public EN</button>
+        <label class="ghost file-label">
+          匯入 JSON
+          <input id="importFile" type="file" accept="application/json" />
+        </label>
+        <button id="resetBtn" class="danger" type="button">還原範例</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="os-dashboard home-hero" aria-label="AcuTing OS 模組與進度">
+        <div class="os-intro">
+          <p class="eyebrow">Private Clinical Workspace</p>
+          <h2>查資料、寫 SOAP、建立自己的臨床知識庫</h2>
+          <p>先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。</p>
+          <div class="hero-search">
+            <input id="homeSearch" type="search" placeholder="快速搜尋：SP6、PCOS、不孕、痰濕、Letrozole..." />
+            <button id="homeSearchBtn" type="button">搜尋</button>
+          </div>
+          <div class="hot-links" aria-label="常用入口">
+            <a href="#caseWorkspace">新增病例</a>
+            <a href="#acupointDirectory">穴位查詢</a>
+            <a href="#pathologyAnchor">病症對照</a>
+            <a href="#billingAnchor">Coding 檢查</a>
+          </div>
+        </div>
+        <div class="library-strip" aria-label="AcuTing OS content library">
+          <a class="library-chip active" href="#acupointDirectory"><span>針灸</span><strong>Acupuncture</strong><small id="acupunctureProgress">載入中</small></a>
+          <a class="library-chip" href="#formulaLibrary"><span>方劑</span><strong>Formulas</strong><small>方義、組成、證型、加減</small></a>
+          <a class="library-chip" href="#pathologyLibrary"><span>病症</span><strong>Conditions</strong><small>中西醫病症對照</small></a>
+          <a class="library-chip clinical" href="#patientSystem"><span>病歷</span><strong>Patient Records</strong><small id="caseProgress">SOAP 與療程紀錄</small></a>
+        </div>
+        <div class="os-status-grid">
+          <div class="status-card"><span id="standardCount">--</span><small>已建標準經穴 / 361</small></div>
+          <div class="status-card"><span id="missingCount">--</span><small>尚缺標準經穴</small></div>
+          <div class="status-card"><span id="caseCount">--</span><small>本機病例紀錄</small></div>
+          <div class="status-card warning"><span>圖像</span><small>暫用開放來源圖，待正式 atlas</small></div>
+        </div>
+      </section>
+
+      <section class="content-library" id="contentLibrary" aria-label="AcuTing OS 內容資料庫">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Content Library</p>
+            <h2>中英文資料庫入口</h2>
+            <p>依照公開中醫知識庫的瀏覽邏輯重新整理，但內容會改寫、翻譯，並逐步用 WHO、NCCAOM、英文解剖與臨床證據來源交叉審核。</p>
+          </div>
+          <span class="data-pill">私用版先建骨架</span>
+        </div>
+        <div class="library-grid">
+          <a class="library-card primary" href="#acupointDirectory" data-library-search="LU1">
+            <span>Acupuncture / 針灸穴位</span>
+            <strong>十二經穴、奇經八脈、董氏奇穴</strong>
+            <small>中英文定位、功效、主治、證型、解剖、手法禁忌與外部權威來源連結。</small>
+          </a>
+          <a class="library-card" id="auricularLibrary" href="#acupointDirectory" data-library-search="耳穴">
+            <span>Auricular / 耳穴</span>
+            <strong>耳廓分區、國際代碼、耳穴定位</strong>
+            <small>耳輪、耳舟、對耳輪、三角窩、耳甲、耳屏、耳垂等中英文解剖。</small>
+          </a>
+          <a class="library-card" id="formulaLibrary" href="#formulaSection">
+            <span>Formulas / 方劑</span>
+            <strong>方名、組成、方義、證型與加減</strong>
+            <small>之後可連到中藥、病症、西藥、孕產與不孕症療程配合。</small>
+          </a>
+          <a class="library-card" id="pathologyLibrary" href="#caseWorkspace" data-library-search="PCOS">
+            <span>Conditions / 病症</span>
+            <strong>Western diagnosis × TCM patterns</strong>
+            <small>西醫病名、相關中醫病機、常用配穴、方劑、轉診紅旗與證據等級。</small>
+          </a>
+          <a class="library-card patient-card" href="#patientSystem">
+            <span>Patient Records / 我的病歷</span>
+            <strong>病例登入、SOAP note、療程追蹤</strong>
+            <small>記錄主訴、舌脈、辨證、用針、方藥、頻率、療效變化與保險文件準備。</small>
+          </a>
+          <a class="library-card" id="billingLibrary" href="#caseWorkspace">
+            <span>Billing / 保險</span>
+            <strong>Coding-ready documentation</strong>
+            <small>先建立正式紀錄框架，以後再練 CPT/ICD-10 與上報邏輯。</small>
+          </a>
+          <a class="library-card" id="learnLibrary" href="#learnSection">
+            <span>Learn / 英文網站</span>
+            <strong>AcuTing Learn 公開文章層</strong>
+            <small>把私人知識庫整理成可審核、可引用、可外放的英文教育內容。</small>
+          </a>
+        </div>
+      </section>
+
+      <section class="public-architecture" id="publicArchitecture" aria-label="Public AcuTing Learn architecture">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Public Learn Architecture</p>
+            <h2>AcuTing Learn 公開版內容架構</h2>
+            <p>參考 eLotus / Master Tung 的專業分類方式，把公開版拆成不同針灸系統與中藥方劑資料層。這一層只放可公開、已改寫、已對照英文權威來源的內容；私人筆記、Bastyr 課堂資料、病例紀錄仍留在 AcuTing OS 私人區。</p>
+          </div>
+          <span class="data-pill">public-ready roadmap</span>
+        </div>
+        <div class="public-system-grid">
+          <a class="public-system-card" href="#acupointDirectory" data-library-search="LU1">
+            <span>Traditional Acupuncture</span>
+            <strong>十二經、奇經八脈、經外奇穴</strong>
+            <small>依 channel、body region、special category、clinical topic 瀏覽。公開版定位以 WHO-style standards 為核心，英文安全語言對照 NCCIH/NCCAOM。</small>
+          </a>
+          <a class="public-system-card tung" href="#acupointDirectory" data-library-search="Tung">
+            <span>Master Tung</span>
+            <strong>董氏奇穴 / Tung Points</strong>
+            <small>參考 Master Tung 網站的 by zone 架構：11 fingers、22 hands、33 forearms、44 upper arms、55 soles、66 feet、77 lower legs、88 thighs、99 ears、1010 head、DT/VT torso。</small>
+          </a>
+          <a class="public-system-card auricular" href="#acupointDirectory" data-library-search="耳穴">
+            <span>Auricular</span>
+            <strong>耳穴與耳廓解剖分區</strong>
+            <small>依 antihelix、tragus、concha、helix、scapha、triangular fossa、earlobe 等英文解剖分區整理，保留國際代碼與功能分類。</small>
+          </a>
+          <a class="public-system-card method" href="#learnSection">
+            <span>Special Methods</span>
+            <strong>Balance Method、腹針、腕踝針、頭皮針</strong>
+            <small>先做架構與術語表，不急著寫療效宣稱；每個方法都需要來源、適應症邊界、禁忌與培訓要求。</small>
+          </a>
+          <a class="public-system-card formula" href="#formulaSection">
+            <span>Herbal Formulas</span>
+            <strong>方劑、單味藥、證型與西藥交互</strong>
+            <small>方名、組成、方義、主治證型、加減、禁忌、herb-drug cautions、fertility/IVF/IUI timing，以英文 public review 狀態分級。</small>
+          </a>
+          <a class="public-system-card evidence" href="#learnSection">
+            <span>Evidence & Safety</span>
+            <strong>病症文章、證據等級、轉診紅旗</strong>
+            <small>每篇公開文章連到 western condition、TCM pattern、acupuncture plan、formula options、medication cautions、PubMed/Cochrane/NCCIH safety notes。</small>
+          </a>
+        </div>
+        <div class="public-workflow">
+          <strong>Public mode rule</strong>
+          <span>中文網站與私人資料可當主題地圖；公開英文頁面必須改寫、標來源、分清 evidence vs tradition、加入安全限制，並避免直接複製完整文章。</span>
+        </div>
+      </section>
+
+      <section class="patient-system" id="patientSystem" aria-label="我的病歷系統">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Patient Record System</p>
+            <h2>我的病歷系統 / Clinical Charting</h2>
+            <p>這一區是你未來臨床每天會用的入口：先用去識別化 patient code 建病例，再用 SOAP note 追蹤每次治療、用針、方藥、頻率、變化與保險文件需要的紀錄。</p>
+          </div>
+          <span class="data-pill">私用病例資料</span>
+        </div>
+        <div class="patient-action-grid">
+          <a class="patient-action-card" href="#caseWorkspace" id="patientNewCaseLink">
+            <span class="card-icon">CH</span>
+            <strong>新增病例</strong>
+            <small>建立 patient code、主訴、西醫診斷、中醫病名、辨證與治療目標。</small>
+          </a>
+          <a class="patient-action-card" href="#caseWorkspace" id="patientSoapLink">
+            <span class="card-icon">SO</span>
+            <strong>新增 SOAP</strong>
+            <small>每次看診記錄 S/O/A/P、用穴、手法、方藥、西藥、療效與下次計畫。</small>
+          </a>
+          <a class="patient-action-card" href="#caseWorkspace">
+            <span class="card-icon">TR</span>
+            <strong>療程追蹤</strong>
+            <small>追蹤疼痛量表、週期、睡眠、情緒、消化、不孕療程節點與客觀變化。</small>
+          </a>
+          <a class="patient-action-card" href="#billingLibrary">
+            <span class="card-icon">BI</span>
+            <strong>保險紀錄準備</strong>
+            <small>保留 coding-ready documentation 概念：診斷、醫療必要性、治療內容與反應。</small>
+          </a>
+        </div>
+        <div class="patient-note">
+          <strong>病歷安全原則</strong>
+          <span>目前請只輸入去識別化資料：patient code，不放完整姓名、完整生日、電話、地址、保險號碼或任何可直接辨識身分的資訊。</span>
+        </div>
+      </section>
+
+      <section class="formula-section" id="formulaSection" aria-label="方劑資料庫">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Formula Layer</p>
+            <h2>方劑資料庫 / Herbal Formulas</h2>
+            <p>先建立像穴位卡片一樣的欄位：方名、英文名、組成、功效、主治證型、加減、禁忌、相關穴位與西藥注意。</p>
+          </div>
+          <span class="data-pill">下一階段填內容</span>
+        </div>
+        <div class="formula-preview-grid">
+          <article class="formula-preview-card">
+            <span>Schema</span>
+            <strong>每張方劑卡要能連回病症與病例</strong>
+            <small>Formula → pattern → condition → points → herbs → medication cautions → SOAP note。</small>
+          </article>
+          <article class="formula-preview-card">
+            <span>Example workflow</span>
+            <strong>不孕症 / Fertility coordination</strong>
+            <small>PCOS、IVF/IUI 週期、西藥、針灸頻率、方藥禁忌與追蹤指標要放同一條知識鏈。</small>
+          </article>
+          <article class="formula-preview-card">
+            <span>Review status</span>
+            <strong>草稿、已翻譯、已對照、已臨床審核</strong>
+            <small>每筆內容都保留來源、最後審核日期與是否適合公開。</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="learn-section" id="learnSection" aria-label="AcuTing Learn 英文內容層">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">AcuTing Learn</p>
+            <h2>未來英文網站內容層</h2>
+            <p>中文網站可作主題地圖與分類參考；正式內容會改寫成英文，並用 WHO/NCCAOM/NCCIH/PubMed/解剖來源對照，避免只是一份翻譯稿。</p>
+          </div>
+          <span class="data-pill">English-ready</span>
+        </div>
+      </section>
+
+      <section class="source-section" id="sourceSection" aria-label="資料來源 Sources">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Sources</p>
+            <h2>資料來源 / Bilingual References</h2>
+            <p>每筆穴位資料會逐步標註英文與中文來源；正式定位仍以 WHO/教材為核心，網路資料作快速查找、翻譯對照與欄位補強。</p>
+          </div>
+          <span class="data-pill">source-aware</span>
+        </div>
+        <div class="source-grid">
+          <a class="source-card" href="https://www.acupoints.org/" target="_blank" rel="noreferrer">
+            <span>English</span>
+            <strong>AcuPoints.org</strong>
+            <small>英文穴位與經絡頁面，用於英文名稱、基本定位、經絡瀏覽與快速對照。</small>
+          </a>
+          <a class="source-card" href="https://cloudtcm.com/acupoint" target="_blank" rel="noreferrer">
+            <span>中文</span>
+            <strong>雲端中醫穴道資料庫</strong>
+            <small>中文穴名、經絡、位置、主治功效與穴位分類，用於中文資料補強與欄位對照。</small>
+          </a>
+          <a class="source-card" href="https://www.mastertungacupuncture.org/" target="_blank" rel="noreferrer">
+            <span>English architecture</span>
+            <strong>Master Tung / eLotus CORE</strong>
+            <small>作為 public 版專業架構參考：Tung by zone、TCM channels、auricular anatomy、special methods。內容需改寫並交叉審核。</small>
+          </a>
+          <article class="source-card core">
+            <span>Core Standard</span>
+            <strong>WHO / Manual / School Notes</strong>
+            <small>定位、骨度分寸、手法禁忌與專業安全判斷仍需回到標準教材與臨床訓練。</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-workspace" id="caseWorkspace" aria-label="Clinical Cases 病例紀錄">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Clinical Case Notebook</p>
+            <h2>病例紀錄 / SOAP Notes</h2>
+          </div>
+          <span class="data-pill">本機去識別化紀錄</span>
+        </div>
+        <div class="case-toolbar">
+          <input id="caseSearch" type="search" placeholder="搜尋 patient code、case、病名、證型、用穴、方藥..." />
+          <button id="newCaseBtn" type="button">新增病例</button>
+          <button id="newSoapBtn" class="ghost" type="button">新增 SOAP</button>
+          <button id="exportCasesBtn" class="ghost" type="button">匯出病例</button>
+          <label class="ghost file-label">
+            匯入病例
+            <input id="importCasesFile" type="file" accept="application/json" />
+          </label>
+        </div>
+        <div class="case-grid">
+          <aside class="case-list-panel">
+            <div class="mini-head">
+              <strong>病例列表</strong>
+              <small id="caseResultCount">0 cases</small>
+            </div>
+            <div id="caseList" class="case-list"></div>
+          </aside>
+          <section class="case-detail-panel" id="caseDetail"></section>
+        </div>
+        <p class="note">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
+      </section>
+
+      <section class="acupoint-directory-hero" id="acupointDirectory" aria-label="穴道大全">
+        <div>
+          <p class="eyebrow">Acupuncture Directory</p>
+          <h2>穴道大全 / Acupoint Directory</h2>
+          <p>收錄常用穴位，包含取穴方法、主治病症、針刺深度、常用配穴與中英文資料來源。現在先以資料庫卡片與文章頁為主，不再內嵌自製或不精準圖片。</p>
+        </div>
+        <div class="directory-mode-note">
+          <strong id="directoryTotal">--</strong>
+          <span>個穴道</span>
+          <small>中英學習版 / Public English 版可切換</small>
+        </div>
+      </section>
+
+      <section class="directory-layout" aria-label="穴道大全分類瀏覽">
+        <aside class="directory-sidebar" aria-label="穴道分類">
+          <section class="directory-filter-box">
+            <h3>經絡分類</h3>
+            <div id="meridianCategoryList" class="directory-filter-list"></div>
+          </section>
+          <section class="directory-filter-box">
+            <h3>身體部位</h3>
+            <div id="regionCategoryList" class="directory-filter-list"></div>
+          </section>
+          <section class="directory-filter-box">
+            <h3>常用臨床主題</h3>
+            <div id="topicCategoryList" class="directory-filter-list"></div>
+          </section>
+        </aside>
+
+        <div class="directory-main">
+          <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Acupuncture Layer</p>
+                <h2>穴位資料庫</h2>
+              </div>
+              <span class="data-pill">分類 + 搜尋</span>
+            </div>
+            <div class="search-row">
+              <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型..." />
+              <button id="addBtn" type="button">新增穴位</button>
+            </div>
+            <div class="filters">
+              <select id="meridianFilter" aria-label="經絡">
+                <option value="">全部經絡</option>
+              </select>
+              <select id="regionFilter" aria-label="部位">
+                <option value="">全部部位</option>
+              </select>
+              <select id="patternFilter" aria-label="證型">
+                <option value="">全部證型</option>
+              </select>
+            </div>
+            <p id="resultCount" class="count"></p>
+          </section>
+
+          <section class="content-grid acupoint-browser">
+            <section class="details-panel" aria-live="polite">
+              <article id="detailCard" class="detail-card"></article>
+              <div id="cards" class="cards" aria-label="穴位列表"></div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="editDialog">
+      <form id="pointForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="dialogTitle">新增穴位</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeDialog" aria-label="關閉">×</button>
+        </div>
+        <div class="form-grid">
+          <label>代碼 Code<input name="code" required placeholder="LI4" /></label>
+          <label>國標/國際代碼<input name="standardCode" placeholder="AT4" /></label>
+          <label>中文名<input name="nameZh" required placeholder="合谷" /></label>
+          <label>英文名<input name="nameEn" required placeholder="Joining Valley" /></label>
+          <label>拼音 Pinyin<input name="pinyin" placeholder="Hegu" /></label>
+          <label class="wide">別名 Aliases<textarea name="aliases" rows="2" placeholder="以逗號分隔"></textarea></label>
+          <label class="wide">標準區域 Standard region<input name="standardRegion" placeholder="對耳屏區8穴 / Antitragus region, 8 points" /></label>
+          <label class="wide">標準分區 Standard zone<input name="standardZone" placeholder="對耳屏4區 / Antitragus Zone 4" /></label>
+          <label>經絡 Meridian<input name="meridian" required placeholder="Large Intestine / 大腸經" /></label>
+          <label>部位 Region<input name="region" required placeholder="手部" /></label>
+          <label class="wide">位置 Location<textarea name="location" required rows="2"></textarea></label>
+          <label class="wide">英文定位 English location<textarea name="locationEn" rows="2"></textarea></label>
+          <label class="wide">解剖名詞 Anatomy terms<textarea name="anatomy" rows="2" placeholder="中文=English，每行一組"></textarea></label>
+          <label class="wide">功效 Functions<textarea name="functions" rows="2"></textarea></label>
+          <label class="wide">英文功效 English functions<textarea name="functionsEn" rows="2"></textarea></label>
+          <label class="wide">適用證型 Patterns<textarea name="patterns" rows="2" placeholder="以逗號分隔"></textarea></label>
+          <label class="wide">英文證型 English patterns<textarea name="patternsEn" rows="2" placeholder="以逗號分隔"></textarea></label>
+          <label class="wide">醫學/證據提醒 Evidence note<textarea name="evidence" rows="2"></textarea></label>
+          <label class="wide">手法建議 Technique notes<textarea name="techniqueNotes" rows="4" placeholder="例：針刺深度、角度/方向、補瀉、艾灸、禁忌與禁止操作。"></textarea></label>
+          <label class="wide">資料來源 Reference URLs<textarea name="sources" rows="2" placeholder="每行一個網址"></textarea></label>
+          <label class="wide">注意事項 Cautions<textarea name="cautions" rows="2"></textarea></label>
+          <label>X 座標<input name="x" type="number" min="0" max="360" required /></label>
+          <label>Y 座標<input name="y" type="number" min="0" max="620" required /></label>
+        </div>
+        <div class="dialog-actions">
+          <button id="deleteBtn" class="danger" type="button">刪除</button>
+          <span></span>
+          <button class="ghost" type="button" id="cancelBtn">取消</button>
+          <button type="submit">儲存</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="caseDialog">
+      <form id="caseForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="caseDialogTitle">新增病例</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeCaseDialog" aria-label="關閉">×</button>
+        </div>
+        <div class="form-grid">
+          <label>Patient code<input name="patientCode" required placeholder="P-2026-001" /></label>
+          <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
+          <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
+          <label>狀態 Status<select name="status"><option value="active">active</option><option value="paused">paused</option><option value="closed">closed</option></select></label>
+          <label>開始日期<input name="startDate" type="date" /></label>
+          <label>出生年 Birth year<input name="birthYear" type="number" min="1900" max="2100" placeholder="1992" /></label>
+          <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2"></textarea></label>
+          <label class="wide">西醫病名 Western conditions<textarea name="westernConditions" rows="2" placeholder="PCOS, unexplained infertility"></textarea></label>
+          <label class="wide">中醫病名 Eastern diseases<textarea name="easternDiseases" rows="2" placeholder="不孕、月經後期"></textarea></label>
+          <label class="wide">證型 TCM patterns<textarea name="tcmPatterns" rows="2" placeholder="痰濕阻滯、肝氣鬱結"></textarea></label>
+          <label class="wide">安全提醒 Safety flags<textarea name="safetyFlags" rows="2" placeholder="possible pregnancy, anticoagulant use, heavy bleeding"></textarea></label>
+          <label class="wide">摘要 Summary<textarea name="summary" rows="3"></textarea></label>
+        </div>
+        <div class="dialog-actions">
+          <button id="deleteCaseBtn" class="danger" type="button">刪除病例</button>
+          <span></span>
+          <button class="ghost" type="button" id="cancelCaseBtn">取消</button>
+          <button type="submit">儲存病例</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="soapDialog">
+      <form id="soapForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="soapDialogTitle">新增 SOAP Note</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉">×</button>
+        </div>
+        <div class="form-grid soap-form-grid">
+          <label>Visit date<input name="visitDate" type="date" /></label>
+          <label>Visit #<input name="visitNumber" type="number" min="1" /></label>
+          <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
+          <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
+
+          <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
+          <label class="wide soap-section">O - Objective<textarea name="objective" rows="4" placeholder="望診、舌、脈、觸診、ROM、labs/imaging"></textarea></label>
+          <label class="wide soap-section">A - Assessment<textarea name="assessment" rows="4" placeholder="西醫病名、中醫病名、證型、診斷、治則、安全判斷"></textarea></label>
+          <label class="wide soap-section">P - Plan<textarea name="plan" rows="5" placeholder="針灸治法、穴位、手法、留針、艾灸/電針、方藥、西藥背景、homecare、follow-up"></textarea></label>
+
+          <label class="wide">用穴 Acupuncture points<textarea name="pointsUsed" rows="2" placeholder="SP6 bilateral, ST36 bilateral, LR3 bilateral"></textarea></label>
+          <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
+          <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
+          <label class="wide">方劑/中藥 Formula & herbs<textarea name="formulaHerbs" rows="2"></textarea></label>
+          <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
+          <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
+          <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
+        </div>
+        <div class="dialog-actions">
+          <button id="deleteSoapBtn" class="danger" type="button">刪除 SOAP</button>
+          <span></span>
+          <button class="ghost" type="button" id="cancelSoapBtn">取消</button>
+          <button type="submit">儲存 SOAP</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer>
+      <strong>學習用途：</strong>本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。
+      核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

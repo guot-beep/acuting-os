@@ -1,0 +1,17 @@
+{
+  "dataset": "Pathology and disease pattern layer",
+  "status": "clinical_graph_scaffold",
+  "architecture": {
+    "western_conditions": "Biomedical diagnoses and clinical problems, stored separately from TCM categories.",
+    "eastern_diseases": "Traditional disease names such as infertility, amenorrhea, dysmenorrhea, delayed menstruation.",
+    "tcm_patterns": "Pattern differentiation layer such as Kidney deficiency, Liver qi stagnation, Phlegm-damp obstruction, Blood stasis.",
+    "western_medications": "English-first medication and drug class layer for future herb-drug and acupuncture safety checks.",
+    "relation_tables": "Overlap is handled through explicit links, not by merging Western and Eastern concepts into one table."
+  },
+  "files": {
+    "design_notes": "data/pathology/README.md",
+    "sql_schema": "data/pathology/schema.sql",
+    "seed": "data/pathology/clinical_graph_seed.json"
+  },
+  "records": []
+}

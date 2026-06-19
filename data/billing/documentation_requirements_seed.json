@@ -1,0 +1,42 @@
+{
+  "dataset": "Billing documentation requirements seed",
+  "status": "starter_set_for_training",
+  "records": [
+    {
+      "id": "doc_req.chief_complaint",
+      "requirement_name": "Chief complaint",
+      "applies_to": "SOAP note",
+      "requirement_text": "The visit note should clearly state why the patient is being seen."
+    },
+    {
+      "id": "doc_req.medical_necessity",
+      "requirement_name": "Medical necessity support",
+      "applies_to": "Assessment and plan",
+      "requirement_text": "Assessment should connect symptoms, diagnosis, functional limitation, or clinical problem to the treatment plan."
+    },
+    {
+      "id": "doc_req.services_rendered",
+      "requirement_name": "Services rendered",
+      "applies_to": "Plan and treatment record",
+      "requirement_text": "Document what was performed, such as acupuncture points, technique, retention time, adjunct therapies, and patient response when relevant."
+    },
+    {
+      "id": "doc_req.diagnosis_code_support",
+      "requirement_name": "Diagnosis code support",
+      "applies_to": "Billing draft",
+      "requirement_text": "Each proposed diagnosis code should be supported by the clinical note or referenced patient-reported medical record."
+    },
+    {
+      "id": "doc_req.procedure_code_support",
+      "requirement_name": "Procedure code support",
+      "applies_to": "Billing draft",
+      "requirement_text": "Each proposed procedure/service code should be supported by documented services, units, time, modifiers, or payer requirements when applicable."
+    },
+    {
+      "id": "doc_req.safety_review",
+      "requirement_name": "Safety and contraindication review",
+      "applies_to": "SOAP note",
+      "requirement_text": "Document relevant safety review such as pregnancy, anticoagulants, infection, red flags, or referral needs."
+    }
+  ]
+}

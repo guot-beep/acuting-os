@@ -1,0 +1,51 @@
+{
+  "dataset": "Western medications",
+  "status": "schema_seed_for_review",
+  "records": [
+    {
+      "id": "med.letrozole",
+      "generic_name_en": "Letrozole",
+      "brand_names_en": [],
+      "drug_class_en": "Aromatase inhibitor",
+      "common_uses_en": ["Ovulation induction context", "Other uses require biomedical context"],
+      "fertility_use_en": "Often appears in ovulation induction workflows. Exact timing, dose, monitoring, and contraindications must follow the prescribing clinician.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review before combining with hormone-active herbs or fertility formulas.",
+      "acupuncture_caution_en": "Track cycle day, medication timing, follicle monitoring, and symptoms. Avoid making pregnancy assumptions.",
+      "pregnancy_lactation_note_en": "Requires clinician guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-15"
+    },
+    {
+      "id": "med.clomiphene_citrate",
+      "generic_name_en": "Clomiphene citrate",
+      "brand_names_en": [],
+      "drug_class_en": "Selective estrogen receptor modulator",
+      "common_uses_en": ["Ovulation induction context"],
+      "fertility_use_en": "Used in ovulation induction workflows. Exact protocol must follow the prescribing clinician.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Review before combining with hormone-active herbs or fertility formulas.",
+      "acupuncture_caution_en": "Document cycle day, medication timing, monitoring findings if provided, and symptoms.",
+      "pregnancy_lactation_note_en": "Requires clinician guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-15"
+    },
+    {
+      "id": "med.metformin",
+      "generic_name_en": "Metformin",
+      "brand_names_en": [],
+      "drug_class_en": "Biguanide antihyperglycemic",
+      "common_uses_en": ["Type 2 diabetes context", "Insulin resistance context", "PCOS context when prescribed"],
+      "fertility_use_en": "May appear in PCOS or insulin resistance workflows depending on biomedical assessment.",
+      "major_contraindications_en": [],
+      "common_adverse_effects_en": [],
+      "herb_interaction_watch_en": "Flag glucose-lowering herbs or formulas for hypoglycemia and GI tolerance review.",
+      "acupuncture_caution_en": "Track appetite, digestion, blood sugar-related symptoms, and medication tolerance.",
+      "pregnancy_lactation_note_en": "Requires clinician guidance.",
+      "source_notes": "Placeholder for future professional-source validation.",
+      "updated_at": "2026-06-15"
+    }
+  ]
+}

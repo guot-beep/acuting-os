@@ -1,0 +1,43 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Runtime / dependencies
+node_modules/
+.parcel-cache/
+.vite/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Private exports and backups
+exports/
+backups/
+private/
+patient_exports/
+case_exports/
+*.bak
+*.tmp
+
+# Keep personal clinical data out of GitHub.
+data/clinical_cases/local/
+data/clinical_cases/private/
+data/clinical_cases/exports/

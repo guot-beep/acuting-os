@@ -1,0 +1,64 @@
+{
+  "dataset": "Billing and insurance coding training template",
+  "status": "framework_only_not_for_submission",
+  "disclaimer": "This is a documentation and coding learning scaffold, not billing, legal, or reimbursement advice. Codes and payer rules must be validated against current official sources and clinic policy.",
+  "visit_billing_draft": {
+    "id": "billing.visit_demo_001",
+    "visit_id": "visit.demo_001.001",
+    "payer_profile_id": "",
+    "claim_status": "draft",
+    "place_of_service": "",
+    "rendering_provider": "",
+    "supervising_provider": "",
+    "medical_necessity_summary": "",
+    "diagnosis_codes": [
+      {
+        "code": "",
+        "description_en": "",
+        "linked_western_condition_id": "",
+        "documentation_support": "Where in SOAP note is this supported?"
+      }
+    ],
+    "procedure_codes": [
+      {
+        "code": "",
+        "description_en": "",
+        "units": null,
+        "modifiers": "",
+        "diagnosis_pointers": "",
+        "service_minutes": null,
+        "body_regions_or_points": "",
+        "documentation_support": "Where in SOAP note is the service documented?"
+      }
+    ],
+    "documentation_checklist": [
+      {
+        "requirement": "Chief complaint documented",
+        "status": "unchecked",
+        "evidence_in_note": ""
+      },
+      {
+        "requirement": "Assessment supports medical necessity",
+        "status": "unchecked",
+        "evidence_in_note": ""
+      },
+      {
+        "requirement": "Treatment plan and services documented",
+        "status": "unchecked",
+        "evidence_in_note": ""
+      },
+      {
+        "requirement": "Time/units/modifiers reviewed when applicable",
+        "status": "unchecked",
+        "evidence_in_note": ""
+      },
+      {
+        "requirement": "Contraindications and safety reviewed",
+        "status": "unchecked",
+        "evidence_in_note": ""
+      }
+    ],
+    "missing_items": [],
+    "supervisor_notes": ""
+  }
+}

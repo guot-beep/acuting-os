@@ -1,0 +1,45 @@
+{
+  "dataset": "AcuTing acupoint directory taxonomy",
+  "updated": "2026-06-18",
+  "purpose": "Define the browse structure for the Acupoint Directory so users can navigate by channel, body region, and common clinical topic instead of relying only on search.",
+  "browse_layers": [
+    {
+      "id": "channel",
+      "label_zh": "經絡分類",
+      "label_en": "Channel",
+      "source_field": "meridian",
+      "use_case": "NCCAOM review, channel-based study, and classical organization."
+    },
+    {
+      "id": "body_region",
+      "label_zh": "身體部位",
+      "label_en": "Body Region",
+      "groups": [
+        "head_face",
+        "chest_abdomen",
+        "back",
+        "upper_limb",
+        "lower_limb",
+        "auricular"
+      ],
+      "use_case": "Fast clinical lookup by anatomical area and point-location study."
+    },
+    {
+      "id": "clinical_topic",
+      "label_zh": "常用臨床主題",
+      "label_en": "Clinical Topic",
+      "groups": [
+        "pain",
+        "head_face",
+        "digestive",
+        "respiratory",
+        "fertility_gyn",
+        "shen_sleep",
+        "tonify"
+      ],
+      "use_case": "Bridge acupoints to patterns, conditions, formulas, case notes, and future treatment plans."
+    }
+  ],
+  "content_import_rule": "Chinese and English websites may inform field structure and topic mapping, but AcuTing records should be rewritten, translated, and cross-checked before being marked source_checked or public_ready.",
+  "mobile_rule": "Directory filters must collapse above the card list on narrow screens and remain touch-friendly."
+}

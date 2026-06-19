@@ -1,0 +1,191 @@
+{
+  "project": "AcuTing OS",
+  "purpose": "Track source authority, intended use, licensing notes, and extraction targets before importing content into the app.",
+  "updated": "2026-06-16",
+  "source_hierarchy": {
+    "A_acupoints": "Point identity, locations, channel metadata, needling cautions, and school notes.",
+    "B_anatomy": "Muscles, bones, nerves, vessels, regional images, and safety landmarks.",
+    "C_us_official": "Exam requirements, patient-facing safety language, and biomedical context.",
+    "D_clinical_evidence": "Systematic reviews, PubMed literature, evidence summaries, and uncertainty notes."
+  },
+  "sources": [
+    {
+      "id": "manual_of_acupuncture",
+      "name": "A Manual of Acupuncture",
+      "layer": "acupoints_textbook",
+      "source_group": "A_acupoints",
+      "authority": 5,
+      "access_type": "paper_or_paid_reference",
+      "primary_use": ["point functions", "indications", "needling cautions", "clinical commentary", "point categories"],
+      "fields_to_extract": ["code", "point_name", "location_notes", "actions", "indications", "needling", "cautions", "commentary"],
+      "notes": "Use as a professional textbook reference. Do not reproduce long copyrighted passages; summarize and cite page/location in personal notes."
+    },
+    {
+      "id": "who_standard_locations",
+      "name": "WHO Standard Acupuncture Point Locations in the Western Pacific Region",
+      "layer": "authority_core",
+      "source_group": "A_acupoints",
+      "authority": 5,
+      "primary_use": ["361 points", "standard locations", "international codes", "cun measurements", "bony landmarks"],
+      "fields_to_extract": ["code", "english_name", "pinyin", "chinese_name", "channel", "location_en", "cun_measurement", "landmarks"],
+      "notes": "Use as the core reference for standard point location. Preserve citations and avoid verbatim long copying."
+    },
+    {
+      "id": "acupoints_org",
+      "name": "AcuPoints.org",
+      "url": "https://www.acupoints.org/",
+      "layer": "english_acupoint_web_reference",
+      "source_group": "A_acupoints",
+      "language": "en",
+      "authority": 3,
+      "primary_use": ["English point pages", "meridian browsing", "point names", "basic location phrasing"],
+      "fields_to_extract": ["code", "english_name", "meridian", "location_en", "basic_indications", "source_url"],
+      "notes": "Use as an English web reference and quick cross-check. Standard location wording should still be verified against WHO/textbook sources before marking public-ready."
+    },
+    {
+      "id": "cloudtcm_acupoint",
+      "name": "CloudTCM acupoint database / 雲端中醫穴道資料庫",
+      "url": "https://cloudtcm.com/acupoint",
+      "layer": "chinese_acupoint_web_reference",
+      "source_group": "A_acupoints",
+      "language": "zh-Hant",
+      "authority": 3,
+      "primary_use": ["Chinese point names", "channel browsing", "point location", "functions", "indications", "point categories"],
+      "fields_to_extract": ["code", "chinese_name", "channel_zh", "location_zh", "functions_zh", "indications_zh", "point_category", "source_url"],
+      "notes": "Use as a Chinese topic and field reference. Rewrite and cross-check against WHO/textbook/professional sources before public-facing use."
+    },
+    {
+      "id": "mastertung_elotus_core",
+      "name": "Master Tung's Acupuncture / eLotus CORE",
+      "url": "https://www.mastertungacupuncture.org/",
+      "layer": "acupuncture_system_architecture",
+      "source_group": "A_acupoints",
+      "language": "en",
+      "authority": 4,
+      "primary_use": ["public navigation model", "Master Tung zone taxonomy", "Tung distinctions", "auricular anatomy browse model", "special acupuncture system categories"],
+      "fields_to_extract": ["system", "zone_code", "zone_name", "point_code", "point_name", "browse_category", "source_url"],
+      "notes": "Use as a professional English architecture reference for public AcuTing Learn. Do not copy full point articles or premium/course content. Public pages must be rewritten and checked against professional sources."
+    },
+    {
+      "id": "bastyr_materials",
+      "name": "Bastyr course materials and clinic teaching notes",
+      "layer": "school_clinic",
+      "source_group": "A_acupoints",
+      "authority": 4,
+      "access_type": "private_school_material",
+      "primary_use": ["class emphasis", "clinic workflow", "SOAP expectations", "point combinations", "exam preparation"],
+      "fields_to_extract": ["course", "topic", "clinical_pearl", "contraindication", "soap_requirement", "nccaom_relevance"],
+      "notes": "Use for personal study and clinic workflow only unless permission allows public reuse. Keep separate from public AcuTing Learn content."
+    },
+    {
+      "id": "teachmeanatomy",
+      "name": "TeachMeAnatomy",
+      "layer": "anatomy",
+      "source_group": "B_anatomy",
+      "authority": 5,
+      "primary_use": ["muscles", "nerves", "vessels", "danger zones", "regional anatomy"],
+      "fields_to_extract": ["region", "muscles", "bones", "nerves", "vessels", "clinical_risks"],
+      "notes": "Use for anatomy mapping and safety reasoning. Summarize in original wording."
+    },
+    {
+      "id": "kenhub",
+      "name": "Kenhub",
+      "layer": "anatomy_reference",
+      "source_group": "B_anatomy",
+      "authority": 5,
+      "primary_use": ["visual anatomy", "English terminology", "muscles", "bones", "nerves", "vessels"],
+      "fields_to_extract": ["muscles", "bones", "nerves", "vessels", "image_reference_notes"],
+      "notes": "Reference only. Do not scrape whole site or copy image/text wholesale."
+    },
+    {
+      "id": "visible_body",
+      "name": "Visible Body",
+      "layer": "anatomy_visual_reference",
+      "source_group": "B_anatomy",
+      "authority": 5,
+      "access_type": "paid_or_institutional_reference",
+      "primary_use": ["3D anatomy orientation", "muscle layers", "nerves", "vessels", "regional relationships"],
+      "fields_to_extract": ["region", "structure_name_en", "relationship_notes", "visual_reference_notes"],
+      "notes": "Use for learning and orientation. Do not copy proprietary images or 3D assets into the public app without permission."
+    },
+    {
+      "id": "radiopaedia",
+      "name": "Radiopaedia",
+      "layer": "clinical_imaging",
+      "source_group": "B_anatomy",
+      "authority": 4,
+      "primary_use": ["cross-sectional anatomy", "CT", "MRI", "regional clinical anatomy"],
+      "fields_to_extract": ["region", "imaging_plane", "anatomical_structures", "clinical_relevance"],
+      "notes": "Use for advanced clinical/imaging orientation, not primary point location."
+    },
+    {
+      "id": "nccaom_content_outline",
+      "name": "NCCAOM Content Outline",
+      "layer": "board_exam",
+      "source_group": "C_us_official",
+      "authority": 5,
+      "primary_use": ["board focus", "high yield topics", "exam pearls", "quiz mode"],
+      "fields_to_extract": ["domain", "task", "competency", "high_yield", "quiz_tags"],
+      "notes": "Must be checked against the latest official NCCAOM outline before exam-oriented imports."
+    },
+    {
+      "id": "nccih",
+      "name": "National Center for Complementary and Integrative Health",
+      "layer": "us_official_safety",
+      "source_group": "C_us_official",
+      "authority": 5,
+      "primary_use": ["patient-facing safety language", "acupuncture overview", "herb safety", "condition cautions"],
+      "fields_to_extract": ["topic", "safety_summary", "contraindications", "patient_guidance", "source_url"],
+      "notes": "Use for conservative public-facing safety wording in AcuTing Learn."
+    },
+    {
+      "id": "pubmed",
+      "name": "PubMed",
+      "layer": "biomedical_literature_index",
+      "source_group": "C_us_official",
+      "authority": 5,
+      "primary_use": ["biomedical literature search", "systematic reviews", "clinical trials", "case reports"],
+      "fields_to_extract": ["pmid", "title", "authors", "journal", "year", "study_type", "condition", "summary_note"],
+      "notes": "Use as the main biomedical literature index. Summaries must distinguish study type and evidence strength."
+    },
+    {
+      "id": "evidence_based_acupuncture",
+      "name": "Evidence Based Acupuncture",
+      "layer": "evidence",
+      "source_group": "D_clinical_evidence",
+      "authority": 4,
+      "primary_use": ["condition evidence", "systematic reviews", "clinical use"],
+      "fields_to_extract": ["condition", "evidence_level", "summary", "review_type", "clinical_use"],
+      "notes": "Evidence summaries should include uncertainty and avoid overstating efficacy."
+    },
+    {
+      "id": "cochrane_reviews",
+      "name": "Cochrane Reviews",
+      "layer": "systematic_reviews",
+      "source_group": "D_clinical_evidence",
+      "authority": 5,
+      "primary_use": ["systematic review evidence", "benefit/harm balance", "certainty of evidence"],
+      "fields_to_extract": ["condition", "intervention", "comparison", "outcome", "certainty", "review_conclusion", "year"],
+      "notes": "Use for high-level evidence summaries. Avoid overclaiming when certainty is low or evidence is mixed."
+    },
+    {
+      "id": "pubmed_systematic_reviews",
+      "name": "PubMed systematic reviews",
+      "layer": "clinical_evidence",
+      "source_group": "D_clinical_evidence",
+      "authority": 5,
+      "primary_use": ["systematic reviews", "meta-analyses", "condition-level evidence", "research gaps"],
+      "fields_to_extract": ["pmid", "condition", "intervention", "review_type", "outcomes", "limitations", "summary"],
+      "notes": "Use PubMed filters for systematic reviews/meta-analyses; record limitations and date searched."
+    },
+    {
+      "id": "american_dragon",
+      "name": "American Dragon",
+      "layer": "herbs_formulas",
+      "authority": 3,
+      "primary_use": ["herbs", "formulas", "bilingual notes", "TCM education"],
+      "fields_to_extract": ["herb", "formula", "actions", "indications", "contraindications"],
+      "notes": "Useful bilingual reference, but not sole authority."
+    }
+  ]
+}

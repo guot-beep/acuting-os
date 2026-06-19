@@ -1,0 +1,159 @@
+{
+  "dataset": "Clinical case template",
+  "status": "template",
+  "privacy_note": "Use de-identified patient_code. Avoid full name, full DOB, address, phone, email, insurance ID, or other direct identifiers unless proper privacy controls are added later.",
+  "patient": {
+    "id": "patient.demo_001",
+    "patient_code": "P-YYYY-001",
+    "display_label": "De-identified patient label",
+    "birth_year": null,
+    "sex_at_birth": "",
+    "gender_identity": "",
+    "pronouns": "",
+    "occupation_context": "",
+    "privacy_level": "deidentified"
+  },
+  "case": {
+    "id": "case.demo_001.infertility",
+    "patient_id": "patient.demo_001",
+    "case_title": "Infertility support",
+    "case_category": "fertility",
+    "status": "active",
+    "start_date": "",
+    "primary_goal_zh": "備孕/不孕調理",
+    "primary_goal_en": "Fertility support",
+    "summary_zh": "",
+    "summary_en": ""
+  },
+  "baseline": {
+    "intake_date": "",
+    "chief_complaint_zh": "",
+    "chief_complaint_en": "",
+    "history_present_illness": "",
+    "biomedical_history": "",
+    "tcm_history": "",
+    "menstrual_history": {
+      "cycle_length": "",
+      "bleeding_days": "",
+      "flow": "",
+      "clots": "",
+      "pain": "",
+      "pms": "",
+      "last_menstrual_period": ""
+    },
+    "fertility_history": {
+      "trying_to_conceive_duration": "",
+      "known_western_diagnoses": [],
+      "prior_pregnancies": "",
+      "prior_losses": "",
+      "iui_ivf_history": "",
+      "partner_factor_notes": "",
+      "labs_imaging_notes": ""
+    },
+    "sleep_energy_mood": "",
+    "digestion_bowel_urination": "",
+    "pain_notes": "",
+    "lifestyle_notes": "",
+    "red_flags": [],
+    "consent_scope": ""
+  },
+  "case_links": {
+    "western_conditions": [],
+    "eastern_diseases": [],
+    "tcm_patterns": [],
+    "western_medications_current": [],
+    "safety_flags": []
+  },
+  "visit_template": {
+    "id": "visit.demo_001.001",
+    "visit_number": 1,
+    "visit_date": "",
+    "cycle_day": null,
+    "cycle_phase": "",
+    "fertility_phase": "",
+    "soap": {
+      "S_subjective": {
+        "chief_complaint": "",
+        "change_since_last_visit": "",
+        "pain_sleep_energy_mood": "",
+        "digestion_bowel_urination": "",
+        "menstrual_fertility_update": "",
+        "western_medication_supplement_update": "",
+        "red_flags_screen": ""
+      },
+      "O_objective": {
+        "observation": "",
+        "tongue_zh": "",
+        "pulse_zh": "",
+        "palpation": "",
+        "rom_orthopedic": "",
+        "labs_imaging_patient_reported": ""
+      },
+      "A_assessment": {
+        "western_condition_ids": [],
+        "eastern_disease_ids": [],
+        "tcm_pattern_ids": [],
+        "tcm_diagnosis_text": "",
+        "treatment_principle_zh": "",
+        "progress_note": "",
+        "safety_assessment": ""
+      },
+      "P_plan": {
+        "acupuncture_principle": "",
+        "needling_notes": "",
+        "formula_herb_notes": "",
+        "western_medication_context": "",
+        "patient_instructions": "",
+        "follow_up": "",
+        "referral_or_supervisor_question": ""
+      }
+    },
+    "acupuncture": [
+      {
+        "acupoint_code": "",
+        "side": "",
+        "needle_depth": "",
+        "angle_direction": "",
+        "technique": "",
+        "retention_minutes": null,
+        "moxa": "",
+        "e_stim": "",
+        "response_notes": ""
+      }
+    ],
+    "formulas": [
+      {
+        "formula_id": "",
+        "formula_name_text": "",
+        "dosage_text": "",
+        "frequency_text": "",
+        "duration_days": null,
+        "modifications": "",
+        "caution_notes": ""
+      }
+    ],
+    "western_medications": [
+      {
+        "medication_id": "",
+        "medication_name_text": "",
+        "dose_text": "",
+        "frequency_text": "",
+        "prescribing_context": "",
+        "interaction_watch_notes": ""
+      }
+    ],
+    "outcomes": [
+      {
+        "metric_name": "sleep",
+        "metric_category": "symptom",
+        "value_text": "",
+        "value_number": null,
+        "unit": "",
+        "direction": "",
+        "notes": ""
+      }
+    ],
+    "next_follow_up": "",
+    "safety_flags": []
+  }
+}

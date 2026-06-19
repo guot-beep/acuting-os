@@ -1,0 +1,44 @@
+{
+  "dataset": "AcuTing publication modes",
+  "updated": "2026-06-16",
+  "modes": [
+    {
+      "id": "bilingual_private",
+      "label_zh": "中英文私用版",
+      "label_en": "Private Bilingual Mode",
+      "purpose": "NCCAOM study, clinic preparation, bilingual notes, and personal knowledge graph building.",
+      "allowed_source_types": [
+        "WHO / professional textbook",
+        "AcuPoints.org English point reference",
+        "CloudTCM Chinese point reference",
+        "Bastyr notes",
+        "school notes",
+        "personal clinical notes"
+      ],
+      "display_rule": "Show Chinese and English terminology together. Chinese sources may guide structure and Chinese notes."
+    },
+    {
+      "id": "english_public",
+      "label_zh": "全英文公開版",
+      "label_en": "Public English Mode",
+      "purpose": "Future clinic-facing or public education website.",
+      "allowed_source_types": [
+        "WHO-style acupuncture standards",
+        "professional English acupuncture texts when permission-safe",
+        "NCCAOM outline for exam framing",
+        "NCCIH / NIH safety language",
+        "PubMed / Cochrane / systematic reviews",
+        "professional anatomy references"
+      ],
+      "restricted_source_types": [
+        "Chinese web articles as direct public citations",
+        "private school handouts",
+        "personal patient notes",
+        "unreviewed generated translations"
+      ],
+      "display_rule": "Show English-only content, use English/official/peer-reviewed sources, and keep Chinese web sources out of public-facing citations unless rewritten and independently verified."
+    }
+  ],
+  "visual_policy": "Do not embed self-made or imprecise acupoint images. Prefer external source links until reviewed atlas assets exist.",
+  "mobile_policy": "All directory, article, and charting views must collapse to one-column mobile layouts."
+}

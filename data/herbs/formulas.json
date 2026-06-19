@@ -1,0 +1,96 @@
+{
+  "dataset": "Herbal formulas",
+  "status": "schema_ready_content_pending",
+  "purpose": "Bilingual formula layer for AcuTing OS. Records should connect formulas to patterns, western conditions, acupoints, single herbs, medications, case notes, and future public Learn articles.",
+  "content_policy": {
+    "private_study": "Chinese websites may be used as topic maps and structural references.",
+    "publish_ready": "Rewrite and translate in original English, then cross-check with professional English sources before public use.",
+    "required_review_fields": [
+      "source_urls",
+      "source_type",
+      "last_reviewed",
+      "review_status",
+      "public_safe"
+    ]
+  },
+  "schema": {
+    "id": "formula.xiao_yao_san",
+    "name_zh": "逍遙散",
+    "name_en": "Free and Easy Wanderer Powder",
+    "pinyin": "Xiao Yao San",
+    "category_zh": "和解劑",
+    "category_en": "Harmonizing formulas",
+    "source_classic": "",
+    "composition": [
+      {
+        "herb_zh": "",
+        "herb_en": "",
+        "pinyin": "",
+        "role_zh": "君/臣/佐/使",
+        "role_en": "chief/deputy/assistant/envoy",
+        "dose_range": ""
+      }
+    ],
+    "actions_zh": [],
+    "actions_en": [],
+    "pattern_indications_zh": [],
+    "pattern_indications_en": [],
+    "western_condition_links": [],
+    "acupoint_links": [],
+    "modifications_zh": [],
+    "modifications_en": [],
+    "contraindications_zh": [],
+    "contraindications_en": [],
+    "herb_drug_cautions": [],
+    "fertility_notes": "",
+    "clinical_pearls": [],
+    "nccaom_high_yield": false,
+    "source_urls": [],
+    "last_reviewed": "",
+    "review_status": "draft",
+    "public_safe": false
+  },
+  "starter_categories": [
+    {
+      "id": "formula_category.release_exterior",
+      "name_zh": "解表劑",
+      "name_en": "Release the Exterior"
+    },
+    {
+      "id": "formula_category.clear_heat",
+      "name_zh": "清熱劑",
+      "name_en": "Clear Heat"
+    },
+    {
+      "id": "formula_category.tonify",
+      "name_zh": "補益劑",
+      "name_en": "Tonify"
+    },
+    {
+      "id": "formula_category.regulate_qi",
+      "name_zh": "理氣劑",
+      "name_en": "Regulate Qi"
+    },
+    {
+      "id": "formula_category.invigorate_blood",
+      "name_zh": "理血劑",
+      "name_en": "Regulate Blood"
+    },
+    {
+      "id": "formula_category.harmonize",
+      "name_zh": "和解劑",
+      "name_en": "Harmonize"
+    },
+    {
+      "id": "formula_category.drain_damp",
+      "name_zh": "祛濕劑",
+      "name_en": "Dispel Dampness"
+    },
+    {
+      "id": "formula_category.warm_interior",
+      "name_zh": "溫裡劑",
+      "name_en": "Warm the Interior"
+    }
+  ],
+  "records": []
+}

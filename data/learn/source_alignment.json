@@ -1,0 +1,38 @@
+{
+  "dataset": "AcuTing Learn source alignment",
+  "status": "starter",
+  "records": [
+    {
+      "source_name": "YicangMed",
+      "url": "https://yicangmed.com/",
+      "role": "content architecture inspiration",
+      "use_policy": "Do not copy full articles. Use categories and page-field ideas only, then rewrite and cross-check."
+    },
+    {
+      "source_name": "Master Tung's Acupuncture / eLotus CORE",
+      "url": "https://www.mastertungacupuncture.org/",
+      "role": "professional acupuncture systems architecture inspiration",
+      "use_policy": "Use navigation structure, system taxonomy, Tung zone model, auricular anatomy browse ideas, and source links as references. Do not copy full point pages or premium/course content into public pages."
+    },
+    {
+      "source_name": "WHO Standard Acupuncture Point Locations",
+      "role": "point code and location validation",
+      "use_policy": "Use for canonical point location and anatomical landmark validation."
+    },
+    {
+      "source_name": "NCCAOM Content Outline",
+      "role": "exam relevance",
+      "use_policy": "Use for board-focused tags and study mode."
+    },
+    {
+      "source_name": "NCCIH / NIH patient-facing acupuncture information",
+      "role": "English safety language",
+      "use_policy": "Use for conservative public-facing safety wording and referral caution."
+    },
+    {
+      "source_name": "Evidence Based Acupuncture",
+      "role": "condition-level evidence summaries",
+      "use_policy": "Use for evidence context; avoid overstating claims."
+    }
+  ]
+}

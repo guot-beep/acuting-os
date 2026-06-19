@@ -1,0 +1,43 @@
+{
+  "dataset": "AcuTing acupoint bilingual source map",
+  "updated": "2026-06-16",
+  "purpose": "Define the default bilingual source pairing used when adding or reviewing acupoint records.",
+  "default_pairing": {
+    "english_web_reference": {
+      "id": "acupoints_org",
+      "name": "AcuPoints.org",
+      "url": "https://www.acupoints.org/",
+      "use_for": [
+        "English point page lookup",
+        "English location phrasing draft",
+        "meridian browsing",
+        "basic point name cross-check"
+      ]
+    },
+    "chinese_web_reference": {
+      "id": "cloudtcm_acupoint",
+      "name": "雲端中醫穴道資料庫",
+      "url": "https://cloudtcm.com/acupoint",
+      "use_for": [
+        "中文穴名",
+        "中文位置",
+        "主治功效",
+        "歸屬經絡",
+        "穴位特性與分類"
+      ]
+    },
+    "core_standard_reference": {
+      "id": "who_standard_locations",
+      "name": "WHO Standard Acupuncture Point Locations",
+      "use_for": [
+        "standard code",
+        "standard location",
+        "cun measurement",
+        "anatomical landmarks"
+      ]
+    }
+  },
+  "review_rule": "A point can be marked source_checked only after the English location, Chinese location, code, channel, and safety notes have been cross-checked against the core standard or professional textbook source.",
+  "display_rule": "In each acupoint article page, use external source buttons instead of embedding imprecise locally generated point images. Show AcuPoints.org as English source, CloudTCM as 中文來源, and WHO/textbook materials as Core standard when available.",
+  "visual_rule": "Do not force a self-made point image unless an accurate, reviewed atlas asset exists. Prefer linking to external reference pages or source images for visual lookup."
+}

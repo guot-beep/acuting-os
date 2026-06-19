@@ -1,0 +1,78 @@
+{
+  "dataset": "Sample de-identified case",
+  "status": "example_not_real_patient",
+  "patient": {
+    "id": "patient.sample_001",
+    "patient_code": "P-2026-001",
+    "display_label": "Sample fertility case",
+    "birth_year": 1992,
+    "sex_at_birth": "female",
+    "privacy_level": "deidentified"
+  },
+  "case": {
+    "id": "case.sample_001.fertility",
+    "patient_id": "patient.sample_001",
+    "case_title": "PCOS fertility support",
+    "case_category": "fertility",
+    "status": "active",
+    "primary_goal_zh": "調經助孕，配合西醫促排流程",
+    "primary_goal_en": "Regulate cycle and support fertility alongside biomedical ovulation induction"
+  },
+  "case_links": {
+    "western_conditions": ["western_condition.pcos"],
+    "eastern_diseases": ["eastern_disease.infertility", "eastern_disease.delayed_menstruation"],
+    "tcm_patterns": ["pattern.phlegm_damp_obstruction", "pattern.liver_qi_stagnation"],
+    "western_medications_current": ["med.letrozole"]
+  },
+  "visits": [
+    {
+      "id": "visit.sample_001.001",
+      "visit_number": 1,
+      "visit_date": "2026-06-15",
+      "cycle_day": 5,
+      "cycle_phase": "follicular",
+      "fertility_phase": "ovulation_induction",
+      "subjective_changes": "Template example only.",
+      "assessment_zh": "痰濕阻滯為主，兼肝鬱。",
+      "plan_zh": "健脾化濕，疏肝調經；配合西醫促排時間線。",
+      "acupuncture": [
+        {
+          "acupoint_code": "SP6",
+          "side": "bilateral",
+          "technique": "gentle regulation",
+          "retention_minutes": 25
+        },
+        {
+          "acupoint_code": "ST36",
+          "side": "bilateral",
+          "technique": "tonify Spleen qi",
+          "retention_minutes": 25
+        },
+        {
+          "acupoint_code": "LR3",
+          "side": "bilateral",
+          "technique": "move Liver qi",
+          "retention_minutes": 25
+        }
+      ],
+      "western_medications": [
+        {
+          "medication_id": "med.letrozole",
+          "medication_name_text": "Letrozole",
+          "prescribing_context": "Patient-reported ovulation induction medication.",
+          "interaction_watch_notes": "Review herb plan before combining with fertility medication."
+        }
+      ],
+      "outcomes": [
+        {
+          "metric_name": "stress_level",
+          "metric_category": "symptom",
+          "value_number": 7,
+          "unit": "0-10",
+          "notes": "Baseline example."
+        }
+      ],
+      "safety_flags": ["possible_pregnancy_check_each_visit", "new_medication_check"]
+    }
+  ]
+}

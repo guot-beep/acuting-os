@@ -1,0 +1,106 @@
+{
+  "dataset": "AcuTing Learn public knowledge architecture",
+  "status": "structure_seed",
+  "updated": "2026-06-18",
+  "purpose": "Define the public-facing English site architecture for acupuncture, Master Tung points, auricular medicine, herbal formulas, conditions, evidence, and safety. This layer is separate from private case notes and school/private study notes.",
+  "public_content_rule": {
+    "allowed_reference_use": [
+      "Use external websites for navigation structure, topic discovery, terminology checks, and source links.",
+      "Rewrite public explanations in original English.",
+      "Cross-check point locations, safety, and clinical claims against authoritative English or official sources before marking public_ready."
+    ],
+    "not_allowed_for_public": [
+      "Do not copy full articles into public pages.",
+      "Do not reuse proprietary images or paywalled course content without permission.",
+      "Do not present personal clinic notes, identifiable case data, or private school notes as public content."
+    ]
+  },
+  "systems": [
+    {
+      "id": "system.traditional_acupuncture",
+      "title_en": "Traditional Acupuncture",
+      "title_zh": "傳統針灸",
+      "public_slug": "acupuncture",
+      "browse_modes": ["by_channel", "by_body_region", "by_point_category", "by_clinical_topic", "by_safety_flag"],
+      "entity_types": ["standard_acupoint", "extra_point", "extraordinary_channel"],
+      "source_priority": ["WHO Standard Acupuncture Point Locations", "A Manual of Acupuncture", "AcuPoints.org", "NCCAOM Content Outline", "NCCIH"]
+    },
+    {
+      "id": "system.master_tung",
+      "title_en": "Master Tung's Acupuncture",
+      "title_zh": "董氏奇穴",
+      "public_slug": "master-tung",
+      "browse_modes": ["by_zone", "by_reaction_area", "by_clinical_use", "by_technique"],
+      "entity_types": ["tung_point", "tung_point_group", "reaction_area", "dao_ma_group"],
+      "zone_model": [
+        { "code": "11", "label_en": "Fingers", "label_zh": "手指" },
+        { "code": "22", "label_en": "Hands", "label_zh": "手掌/手背" },
+        { "code": "33", "label_en": "Forearms", "label_zh": "前臂" },
+        { "code": "44", "label_en": "Upper Arms", "label_zh": "上臂" },
+        { "code": "55", "label_en": "Soles", "label_zh": "足底" },
+        { "code": "66", "label_en": "Top of Feet", "label_zh": "足背" },
+        { "code": "77", "label_en": "Lower Legs", "label_zh": "小腿" },
+        { "code": "88", "label_en": "Thighs", "label_zh": "大腿" },
+        { "code": "99", "label_en": "Ears", "label_zh": "耳部" },
+        { "code": "1010", "label_en": "Head", "label_zh": "頭面" },
+        { "code": "DT", "label_en": "Dorsal Torso", "label_zh": "背部軀幹" },
+        { "code": "VT", "label_en": "Ventral Torso", "label_zh": "胸腹軀幹" }
+      ],
+      "source_priority": ["MasterTungAcupuncture.org / eLotus CORE as structure reference", "Master Tung textbooks or course notes with permission", "professional English clinical references"]
+    },
+    {
+      "id": "system.auricular",
+      "title_en": "Auricular Medicine",
+      "title_zh": "耳穴",
+      "public_slug": "auricular",
+      "browse_modes": ["by_name", "by_ear_anatomy", "by_function", "by_code"],
+      "entity_types": ["auricular_point", "ear_anatomy_region", "auricular_protocol"],
+      "anatomy_regions_en": ["Antihelix", "Antitragus", "Cavum Concha", "Cymba Concha", "Earlobe", "Helix", "Helix Crus", "Intertragic Notch", "Posterior Ear", "Scapha", "Triangular Fossa", "Tragus"],
+      "source_priority": ["WHO/WPRO auricular standards where available", "professional auricular texts", "LCH/eLotus structure reference", "user-provided auricular sources"]
+    },
+    {
+      "id": "system.herbal_formulas",
+      "title_en": "Herbal Formulas",
+      "title_zh": "方劑",
+      "public_slug": "formulas",
+      "browse_modes": ["by_category", "by_pattern", "by_condition", "by_safety_flag", "by_herb_drug_caution"],
+      "entity_types": ["formula", "single_herb", "formula_category", "modification"],
+      "source_priority": ["professional formulas textbooks", "American Dragon as bilingual reference", "NCCAOM Content Outline", "NCCIH herb safety", "PubMed/Cochrane for condition claims"]
+    },
+    {
+      "id": "system.conditions_evidence",
+      "title_en": "Conditions, Evidence, and Safety",
+      "title_zh": "病症、證據與安全",
+      "public_slug": "conditions",
+      "browse_modes": ["by_western_condition", "by_tcm_pattern", "by_life_stage", "by_red_flag", "by_evidence_level"],
+      "entity_types": ["western_condition", "tcm_pattern", "eastern_disease", "evidence_summary", "safety_warning"],
+      "source_priority": ["NCCIH", "PubMed", "Cochrane Reviews", "Evidence Based Acupuncture", "NCCAOM Content Outline"]
+    }
+  ],
+  "article_template": {
+    "id": "",
+    "public_slug": "",
+    "mode": "public_english",
+    "title_en": "",
+    "summary_en": "",
+    "entity_links": [],
+    "sections": [
+      "Overview",
+      "Location or Definition",
+      "Traditional Functions",
+      "Common Indications",
+      "Safety and Contraindications",
+      "Clinical Notes",
+      "Evidence Notes",
+      "Sources"
+    ],
+    "required_fields": ["source_urls", "last_reviewed", "review_status", "public_safe", "medical_disclaimer"],
+    "review_status_values": ["draft", "translated", "source_checked", "clinically_reviewed", "public_ready"]
+  },
+  "next_build_tasks": [
+    "Create Tung point schema and seed zone categories.",
+    "Add public source registry entries for MasterTungAcupuncture.org and eLotus CORE.",
+    "Add formula browse categories to the front-end.",
+    "Start one public-ready sample article for a high-yield point such as SP6 or LI4."
+  ]
+}

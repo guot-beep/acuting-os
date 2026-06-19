@@ -1,0 +1,53 @@
+{
+  "dataset": "AcuTing patient record system map",
+  "status": "interface_connected",
+  "purpose": "Define how the private patient record system connects clinical notes, treatments, formulas, medications, outcomes, and future billing documentation.",
+  "privacy_rule": "Use de-identified patient codes only. Do not store full names, full dates of birth, phone numbers, addresses, insurance IDs, or other direct identifiers in this local study app.",
+  "modules": [
+    {
+      "id": "patient_records.case_intake",
+      "title_zh": "新增病例",
+      "title_en": "Case Intake",
+      "description": "Create patient code, case title, chief complaint, western conditions, TCM disease categories, patterns, safety flags, and treatment goals.",
+      "current_ui_anchor": "#caseWorkspace",
+      "storage": "localStorage clinicalCases"
+    },
+    {
+      "id": "patient_records.soap_note",
+      "title_zh": "SOAP Note",
+      "title_en": "SOAP Note",
+      "description": "Document subjective, objective, assessment, plan, points used, technique, formula/herbs, western medications, outcomes, and follow-up.",
+      "current_ui_anchor": "#caseWorkspace",
+      "storage": "localStorage clinicalCases[].soapNotes"
+    },
+    {
+      "id": "patient_records.treatment_tracking",
+      "title_zh": "療程追蹤",
+      "title_en": "Treatment Tracking",
+      "description": "Track visit number, treatment frequency, retention time, symptom scores, fertility cycle phase, cycle day, functional changes, and response over time.",
+      "future_links": [
+        "data/clinical_cases/outcome_metrics.json",
+        "data/pathology/clinical_graph_seed.json",
+        "data/herbs/formulas.json",
+        "data/acupoints/361.json"
+      ]
+    },
+    {
+      "id": "patient_records.billing_ready_documentation",
+      "title_zh": "保險紀錄準備",
+      "title_en": "Billing-ready Documentation",
+      "description": "Keep future CPT/ICD-10 training in mind by preserving diagnosis, medical necessity, treatment performed, patient response, and plan.",
+      "future_links": [
+        "data/billing/schema.sql",
+        "data/billing/documentation_requirements_seed.json"
+      ]
+    }
+  ],
+  "next_modeling_tasks": [
+    "Add visit-level outcome scale templates for pain, sleep, digestion, mood, menstrual cycle, and fertility treatment.",
+    "Add case-type templates for infertility, pain, stress/anxiety, digestive disorders, dermatology, and sleep.",
+    "Connect SOAP point names to acupoint records by code.",
+    "Connect formula/herb text to formula and herb records.",
+    "Add a billing checklist panel after the SOAP note is saved."
+  ]
+}

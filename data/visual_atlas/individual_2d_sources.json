@@ -1,0 +1,103 @@
+{
+  "dataset": "Individual fixed 2D atlas source candidates",
+  "status": "research_in_progress",
+  "updated": "2026-06-15",
+  "goal": "Find non-login, stable, license-clear 2D anatomical images for region-specific acupoint maps beyond the whole-body view.",
+  "source_priority": [
+    {
+      "id": "wikimedia_human_regions",
+      "name": "Wikimedia/Wikipedia human anatomical regions",
+      "url": "https://en.wikipedia.org/wiki/List_of_human_anatomical_regions",
+      "login_required": false,
+      "license_status": "open Wikimedia-hosted media; verify each file page before local download",
+      "best_for": ["whole_body_front", "whole_body_back", "head_face_overview", "limb_overview"],
+      "current_use": "Used by the app as the whole-body 2D anatomical reference."
+    },
+    {
+      "id": "wikimedia_auriculotherapy_model",
+      "name": "Pontos de auriculoterapia.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Pontos_de_auriculoterapia.jpg",
+      "login_required": false,
+      "license_status": "Wikimedia Commons file page lists free licenses; keep attribution",
+      "best_for": ["auricular_points"],
+      "current_use": "Used by the app for the auricular-point view."
+    },
+    {
+      "id": "anatomography_bodyparts3d",
+      "name": "Anatomography / BodyParts3D",
+      "url": "https://en.wikipedia.org/wiki/Anatomography",
+      "login_required": false,
+      "license_status": "CC-BY-SA 2.1-ja according to project summary; verify generated image attribution requirements",
+      "best_for": ["head_face", "neck", "thorax", "abdomen", "back", "upper_limb", "lower_limb", "hand", "foot"],
+      "current_use": "Candidate for generating consistent fixed 2D regional maps."
+    },
+    {
+      "id": "wikimedia_grays_anatomy",
+      "name": "Gray's Anatomy plates on Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/Category:Gray%27s_Anatomy_plates",
+      "login_required": false,
+      "license_status": "Many Gray's Anatomy 1918 plates are public-domain, but verify each file page.",
+      "best_for": ["hand", "foot", "face", "neck", "back", "thorax", "abdomen", "muscles", "bones", "nerves", "vessels"],
+      "current_use": "Candidate reference layer; not yet integrated."
+    }
+  ],
+  "needed_region_maps": [
+    {
+      "region_id": "head_face",
+      "label_zh": "頭面",
+      "label_en": "Head and Face",
+      "preferred_source": "anatomography_bodyparts3d",
+      "backup_source": "wikimedia_grays_anatomy",
+      "status": "needs_image_selection"
+    },
+    {
+      "region_id": "hand_wrist",
+      "label_zh": "手腕",
+      "label_en": "Hand and Wrist",
+      "preferred_source": "wikimedia_grays_anatomy",
+      "backup_source": "anatomography_bodyparts3d",
+      "status": "needs_image_selection"
+    },
+    {
+      "region_id": "forearm_elbow",
+      "label_zh": "前臂肘部",
+      "label_en": "Forearm and Elbow",
+      "preferred_source": "anatomography_bodyparts3d",
+      "backup_source": "wikimedia_grays_anatomy",
+      "status": "needs_image_selection"
+    },
+    {
+      "region_id": "foot_ankle",
+      "label_zh": "足踝",
+      "label_en": "Foot and Ankle",
+      "preferred_source": "wikimedia_grays_anatomy",
+      "backup_source": "anatomography_bodyparts3d",
+      "status": "needs_image_selection"
+    },
+    {
+      "region_id": "lower_limb",
+      "label_zh": "下肢",
+      "label_en": "Lower Limb",
+      "preferred_source": "anatomography_bodyparts3d",
+      "backup_source": "wikimedia_grays_anatomy",
+      "status": "needs_image_selection"
+    },
+    {
+      "region_id": "chest_abdomen",
+      "label_zh": "胸腹",
+      "label_en": "Chest and Abdomen",
+      "preferred_source": "anatomography_bodyparts3d",
+      "backup_source": "wikimedia_grays_anatomy",
+      "status": "needs_image_selection"
+    },
+    {
+      "region_id": "back_lumbar_sacrum",
+      "label_zh": "背腰骶",
+      "label_en": "Back, Lumbar, and Sacrum",
+      "preferred_source": "anatomography_bodyparts3d",
+      "backup_source": "wikimedia_grays_anatomy",
+      "status": "needs_image_selection"
+    }
+  ],
+  "implementation_note": "Add a future Fixed 2D Atlas view that lets users choose one region map, then overlays acupoint anchors for that region. Each image should store source URL, license, attribution, and coordinate calibration."
+}

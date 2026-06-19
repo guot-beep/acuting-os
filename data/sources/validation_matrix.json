@@ -1,0 +1,56 @@
+{
+  "dataset": "AcuTing source validation matrix",
+  "updated": "2026-06-16",
+  "purpose": "Define which source group should validate each type of field before content becomes public or clinically trusted.",
+  "field_groups": [
+    {
+      "field_group": "acupoint_identity_location",
+      "fields": ["code", "name_en", "name_zh", "pinyin", "channel", "location_en", "location_zh", "cun_measurement", "landmarks"],
+      "primary_sources": ["who_standard_locations"],
+      "secondary_sources": ["manual_of_acupuncture", "bastyr_materials"],
+      "public_ready_rule": "WHO-style location must be checked before public release."
+    },
+    {
+      "field_group": "acupoint_actions_indications",
+      "fields": ["functions_en", "functions_zh", "indications_en", "indications_zh", "patterns"],
+      "primary_sources": ["manual_of_acupuncture"],
+      "secondary_sources": ["bastyr_materials", "nccaom_content_outline"],
+      "public_ready_rule": "Rewrite in original bilingual wording; cite textbook or teaching source internally."
+    },
+    {
+      "field_group": "needling_safety",
+      "fields": ["needle_depth", "angle_direction", "moxa", "contraindications", "danger_zones", "pregnancy_cautions"],
+      "primary_sources": ["manual_of_acupuncture", "who_standard_locations"],
+      "secondary_sources": ["teachmeanatomy", "kenhub", "visible_body", "nccih"],
+      "public_ready_rule": "Safety language must be conservative and cannot imply self-needling."
+    },
+    {
+      "field_group": "anatomy",
+      "fields": ["muscles", "bones", "nerves", "vessels", "regional_relationships"],
+      "primary_sources": ["teachmeanatomy", "kenhub", "visible_body"],
+      "secondary_sources": ["radiopaedia"],
+      "public_ready_rule": "Use English anatomical terminology; do not copy proprietary images/assets."
+    },
+    {
+      "field_group": "nccaom_study",
+      "fields": ["high_yield", "exam_tags", "board_focus", "quiz_prompts"],
+      "primary_sources": ["nccaom_content_outline"],
+      "secondary_sources": ["bastyr_materials"],
+      "public_ready_rule": "Mark as board-study aid, not official NCCAOM content."
+    },
+    {
+      "field_group": "condition_evidence",
+      "fields": ["condition_summary", "evidence_level", "systematic_review_summary", "clinical_uncertainty"],
+      "primary_sources": ["cochrane_reviews", "pubmed_systematic_reviews", "pubmed"],
+      "secondary_sources": ["evidence_based_acupuncture", "nccih"],
+      "public_ready_rule": "State uncertainty and avoid treatment guarantees."
+    },
+    {
+      "field_group": "patient_facing_safety",
+      "fields": ["red_flags", "referral_notes", "pregnancy_note", "drug_interaction_warning"],
+      "primary_sources": ["nccih", "pubmed", "cochrane_reviews"],
+      "secondary_sources": ["manual_of_acupuncture", "bastyr_materials"],
+      "public_ready_rule": "Use plain English and include referral guidance for red flags."
+    }
+  ]
+}

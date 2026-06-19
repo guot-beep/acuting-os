@@ -1,0 +1,41 @@
+{
+  "schema_name": "AcuTing OS Acupoint Schema",
+  "version": "0.1.0",
+  "record_type": "acupoint",
+  "required_fields": ["code", "chinese", "pinyin", "english", "channel_zh", "channel_en", "location_en"],
+  "fields": {
+    "code": "International point code, e.g. LI4",
+    "chinese": "Chinese point name, e.g. 合谷",
+    "pinyin": "Pinyin, e.g. He Gu",
+    "english": "English point name, e.g. Joining Valley",
+    "channel_zh": "Chinese channel name",
+    "channel_en": "English channel name",
+    "location_zh": "Chinese location",
+    "location_en": "English standard location",
+    "cun_measurement": "Cun measurements and proportional body measurement notes",
+    "landmarks": "Bony, muscular, tendon, vessel, or surface landmarks",
+    "functions_zh": "Traditional functions in Chinese",
+    "functions_en": "Traditional functions in English",
+    "indications_zh": "Chinese indications/patterns",
+    "indications_en": "English indications/patterns",
+    "muscles": "Anatomical muscles near the point",
+    "bones": "Bones or bony landmarks",
+    "nerves": "Relevant nerves",
+    "vessels": "Relevant arteries/veins",
+    "contraindications": "General contraindications",
+    "technique_notes": "Frontend-friendly technique note combining depth, angle, method, tonification/sedation, moxa, and forbidden actions.",
+    "needling": {
+      "depth": "Needling depth, e.g. 0.3-0.5 cun",
+      "angle": "Perpendicular, oblique, transverse, direction",
+      "method": "Technique notes and deqi",
+      "tonification_sedation": "Tonification/sedation guidance",
+      "moxibustion": "Moxa guidance",
+      "forbidden_actions": "Forbidden actions and hard safety stops"
+    },
+    "danger": "Danger zone notes such as pneumothorax, organ/vessel/nerve risk",
+    "nccaom_high_yield": "Board-relevant pearls",
+    "clinical_pearls": "Practical clinical notes",
+    "evidence": "Evidence notes by condition",
+    "sources": "Source ids and URLs"
+  }
+}

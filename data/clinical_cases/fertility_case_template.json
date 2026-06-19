@@ -1,0 +1,85 @@
+{
+  "dataset": "Fertility case template",
+  "status": "template",
+  "case_focus": "Infertility / reproductive medicine support",
+  "timeline_sections": [
+    {
+      "phase": "Initial biomedical workup",
+      "track": [
+        "Western diagnosis or working diagnosis",
+        "Ovulation status",
+        "Cycle length and bleeding pattern",
+        "Semen analysis context if available",
+        "Tubal patency context if available",
+        "Uterine cavity or imaging context if available",
+        "Thyroid, prolactin, metabolic, ovarian reserve notes if available",
+        "Red flags and referral needs"
+      ]
+    },
+    {
+      "phase": "TCM assessment",
+      "track": [
+        "Eastern disease category",
+        "Primary TCM pattern",
+        "Secondary TCM pattern",
+        "Tongue",
+        "Pulse",
+        "Cycle phase signs",
+        "Sleep, stress, digestion, temperature, pain"
+      ]
+    },
+    {
+      "phase": "Treatment cycle",
+      "track": [
+        "Cycle day",
+        "Fertility phase",
+        "Western medication timing",
+        "Acupuncture points",
+        "Needling method",
+        "Formula and modifications",
+        "Herb-drug caution check",
+        "Response before next visit"
+      ]
+    },
+    {
+      "phase": "IUI/IVF coordination",
+      "track": [
+        "Stimulation start",
+        "Monitoring notes",
+        "Trigger timing",
+        "Retrieval or IUI date",
+        "Transfer date",
+        "Luteal support",
+        "Two-week wait notes",
+        "Clinic restrictions about herbs/acupuncture"
+      ]
+    }
+  ],
+  "suggested_outcome_metrics": [
+    "cycle_length",
+    "bleeding_days",
+    "pain_score",
+    "pms_score",
+    "sleep_quality",
+    "stress_level",
+    "basal_body_temperature_pattern",
+    "lh_surge",
+    "ovulation_confirmed",
+    "follicle_count_or_size_if_reported",
+    "endometrial_lining_if_reported",
+    "pregnancy_test_result",
+    "adverse_reaction"
+  ],
+  "safety_flags_to_check_each_visit": [
+    "possible_pregnancy",
+    "heavy_bleeding",
+    "severe_pelvic_pain",
+    "fever_or_infection",
+    "anticoagulant_use",
+    "ivf_clinic_herb_restriction",
+    "ovarian_hyperstimulation_warning_signs",
+    "new_western_medication",
+    "allergic_reaction",
+    "mental_health_crisis"
+  ]
+}

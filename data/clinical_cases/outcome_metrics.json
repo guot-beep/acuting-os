@@ -1,0 +1,90 @@
+{
+  "dataset": "Clinical outcome metrics",
+  "status": "starter_set",
+  "records": [
+    {
+      "id": "metric.pain_score",
+      "name": "pain_score",
+      "category": "symptom",
+      "unit": "0-10",
+      "direction_good": "decrease"
+    },
+    {
+      "id": "metric.sleep_quality",
+      "name": "sleep_quality",
+      "category": "symptom",
+      "unit": "0-10",
+      "direction_good": "increase"
+    },
+    {
+      "id": "metric.stress_level",
+      "name": "stress_level",
+      "category": "symptom",
+      "unit": "0-10",
+      "direction_good": "decrease"
+    },
+    {
+      "id": "metric.energy_level",
+      "name": "energy_level",
+      "category": "symptom",
+      "unit": "0-10",
+      "direction_good": "increase"
+    },
+    {
+      "id": "metric.cycle_length",
+      "name": "cycle_length",
+      "category": "fertility",
+      "unit": "days",
+      "direction_good": "individualized"
+    },
+    {
+      "id": "metric.bleeding_days",
+      "name": "bleeding_days",
+      "category": "fertility",
+      "unit": "days",
+      "direction_good": "individualized"
+    },
+    {
+      "id": "metric.ovulation_confirmed",
+      "name": "ovulation_confirmed",
+      "category": "fertility",
+      "unit": "yes/no/unknown",
+      "direction_good": "yes"
+    },
+    {
+      "id": "metric.lh_surge",
+      "name": "lh_surge",
+      "category": "fertility",
+      "unit": "positive/negative/unknown",
+      "direction_good": "contextual"
+    },
+    {
+      "id": "metric.bbt_pattern",
+      "name": "basal_body_temperature_pattern",
+      "category": "fertility",
+      "unit": "text",
+      "direction_good": "contextual"
+    },
+    {
+      "id": "metric.endometrial_lining",
+      "name": "endometrial_lining",
+      "category": "fertility",
+      "unit": "mm",
+      "direction_good": "contextual"
+    },
+    {
+      "id": "metric.follicle_size",
+      "name": "follicle_size",
+      "category": "fertility",
+      "unit": "mm",
+      "direction_good": "contextual"
+    },
+    {
+      "id": "metric.adverse_reaction",
+      "name": "adverse_reaction",
+      "category": "safety",
+      "unit": "text",
+      "direction_good": "none"
+    }
+  ]
+}

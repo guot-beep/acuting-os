@@ -1,0 +1,112 @@
+{
+  "dataset": "AcuTing Learn content architecture seed",
+  "status": "structure_seed",
+  "inspiration": {
+    "site": "YicangMed",
+    "url": "https://yicangmed.com/",
+    "used_for": "Navigation and content-category inspiration only. Do not copy articles wholesale.",
+    "related_sites": [
+      {
+        "site": "Master Tung's Acupuncture / eLotus CORE",
+        "url": "https://www.mastertungacupuncture.org/",
+        "used_for": "Professional public architecture reference for acupuncture systems, Tung zones, auricular anatomy browsing, and special methods. Do not copy full articles."
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "learn.category.acupuncture",
+      "slug": "acupuncture",
+      "title_en": "Acupuncture",
+      "title_zh": "針灸穴位",
+      "description_en": "Point locations, functions, indications, safety, and bilingual terminology."
+    },
+    {
+      "id": "learn.category.master_tung",
+      "slug": "master-tung",
+      "title_en": "Master Tung's Acupuncture",
+      "title_zh": "????",
+      "description_en": "Tung point zones, point groups, reaction areas, Dao Ma combinations, clinical indications, and safety notes."
+    },
+    {
+      "id": "learn.category.auricular",
+      "slug": "auricular",
+      "title_en": "Auricular Medicine",
+      "title_zh": "耳穴",
+      "description_en": "Auricular anatomy, point maps, indications, and safety notes."
+    },
+    {
+      "id": "learn.category.herbs",
+      "slug": "herbs",
+      "title_en": "Chinese Herbs",
+      "title_zh": "中藥材",
+      "description_en": "Single herbs, categories, actions, cautions, and herb-drug review flags."
+    },
+    {
+      "id": "learn.category.formulas",
+      "slug": "formulas",
+      "title_en": "Herbal Formulas",
+      "title_zh": "方劑",
+      "description_en": "Classical formulas, pattern indications, modifications, and safety."
+    },
+    {
+      "id": "learn.category.conditions",
+      "slug": "conditions",
+      "title_en": "Conditions",
+      "title_zh": "病症查詢",
+      "description_en": "Western conditions mapped to TCM disease categories, patterns, acupuncture, formulas, and referral red flags."
+    },
+    {
+      "id": "learn.category.interactions",
+      "slug": "interactions",
+      "title_en": "East-West Interactions",
+      "title_zh": "中西交互",
+      "description_en": "Herb-drug, acupuncture-medication, pregnancy, anticoagulant, and fertility-treatment cautions."
+    },
+    {
+      "id": "learn.category.nccaom",
+      "slug": "nccaom",
+      "title_en": "NCCAOM Study",
+      "title_zh": "考試學習",
+      "description_en": "Board-focused summaries, high-yield patterns, point categories, and quizzes."
+    }
+  ],
+  "starter_public_articles": [
+    {
+      "id": "learn.article.sp6",
+      "category_id": "learn.category.acupuncture",
+      "slug": "sp6-sanyinjiao",
+      "title_en": "SP6 Sanyinjiao: Three Yin Intersection",
+      "title_zh": "SP6 三陰交",
+      "review_status": "draft",
+      "entity_links": [
+        {
+          "entity_type": "acupoint",
+          "entity_id": "SP6"
+        }
+      ]
+    },
+    {
+      "id": "learn.article.pcos",
+      "category_id": "learn.category.conditions",
+      "slug": "pcos-tcm-acupuncture-herbs",
+      "title_en": "PCOS: TCM Patterns, Acupuncture, Herbs, and Medication Coordination",
+      "title_zh": "多囊卵巢症候群：中醫辨證、針灸、中藥與西醫配合",
+      "review_status": "draft",
+      "entity_links": [
+        {
+          "entity_type": "western_condition",
+          "entity_id": "western_condition.pcos"
+        }
+      ]
+    }
+  ],
+  "translation_policy": [
+    "Use Chinese sites as topic maps and field inspiration.",
+    "Rewrite explanations in original English.",
+    "Cross-check point locations with WHO-style standards.",
+    "Cross-check exam emphasis with NCCAOM outline.",
+    "Cross-check patient safety language with English professional/medical sources.",
+    "Keep source URLs and review dates on every public article."
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "dataset": "AcuTing OS clinical graph seed",
+  "status": "schema_seed_for_review",
+  "design": {
+    "principle": "Separate Western diagnoses, Eastern disease names, TCM patterns, medications, acupuncture strategies, herbal strategies, and cautions. Connect overlap through relation records.",
+    "reason": "One biomedical disease can connect to many TCM disease categories and patterns, and one TCM pattern can appear in many biomedical diseases."
+  },
+  "western_conditions": [
+    {
+      "id": "western_condition.pcos",
+      "name_en": "Polycystic Ovary Syndrome",
+      "name_zh": "多囊卵巢症候群",
+      "category": "reproductive_endocrinology",
+      "fertility_relevance": true,
+      "summary_zh": "西醫診斷層，之後可連接月經不規則、不孕、胰島素阻抗、高雄激素表現與促排卵流程。",
+      "summary_en": "Biomedical diagnosis layer. Later links may include irregular menstruation, infertility, insulin resistance, hyperandrogenism, and ovulation induction workflow.",
+      "red_flags_zh": "異常大量出血、懷孕可能、劇烈腹痛、快速體重變化或代謝異常需醫療評估。",
+      "red_flags_en": "Heavy abnormal bleeding, possible pregnancy, severe pelvic pain, rapid weight change, or metabolic abnormalities require medical evaluation."
+    },
+    {
+      "id": "western_condition.unexplained_infertility",
+      "name_en": "Unexplained Infertility",
+      "name_zh": "不明原因不孕",
+      "category": "reproductive_medicine",
+      "fertility_relevance": true,
+      "summary_zh": "用於連接排卵、精液、輸卵管、子宮腔等檢查未明顯異常但仍未孕的流程。",
+      "summary_en": "Used for cases where ovulation, semen analysis, tubal patency, and uterine cavity evaluation do not reveal a clear cause."
+    }
+  ],
+  "eastern_diseases": [
+    {
+      "id": "eastern_disease.infertility",
+      "name_zh": "不孕",
+      "pinyin": "Bu Yun",
+      "name_en": "Infertility",
+      "classical_category": "gynecology"
+    },
+    {
+      "id": "eastern_disease.delayed_menstruation",
+      "name_zh": "月經後期",
+      "pinyin": "Yue Jing Hou Qi",
+      "name_en": "Delayed Menstruation",
+      "classical_category": "gynecology"
+    },
+    {
+      "id": "eastern_disease.amenorrhea",
+      "name_zh": "閉經",
+      "pinyin": "Bi Jing",
+      "name_en": "Amenorrhea",
+      "classical_category": "gynecology"
+    }
+  ],
+  "tcm_patterns": [
+    {
+      "id": "pattern.kidney_deficiency",
+      "name_zh": "腎虛",
+      "pinyin": "Shen Xu",
+      "name_en": "Kidney Deficiency",
+      "pattern_family": "deficiency",
+      "treatment_principle_zh": "補腎調衝任",
+      "treatment_principle_en": "Tonify the Kidney and regulate the Chong and Ren vessels"
+    },
+    {
+      "id": "pattern.liver_qi_stagnation",
+      "name_zh": "肝氣鬱結",
+      "pinyin": "Gan Qi Yu Jie",
+      "name_en": "Liver Qi Stagnation",
+      "pattern_family": "qi_stagnation",
+      "treatment_principle_zh": "疏肝理氣，調經助孕",
+      "treatment_principle_en": "Soothe the Liver, move qi, regulate menstruation, and support conception"
+    },
+    {
+      "id": "pattern.phlegm_damp_obstruction",
+      "name_zh": "痰濕阻滯",
+      "pinyin": "Tan Shi Zu Zhi",
+      "name_en": "Phlegm-Damp Obstruction",
+      "pattern_family": "damp_phlegm",
+      "treatment_principle_zh": "健脾化濕，祛痰通絡",
+      "treatment_principle_en": "Strengthen the Spleen, transform dampness, resolve phlegm, and open the channels"
+    },
+    {
+      "id": "pattern.blood_stasis",
+      "name_zh": "血瘀",
+      "pinyin": "Xue Yu",
+      "name_en": "Blood Stasis",
+      "pattern_family": "stasis",
+      "treatment_principle_zh": "活血化瘀，調衝任",
+      "treatment_principle_en": "Invigorate blood, transform stasis, and regulate the Chong and Ren vessels"
+    }
+  ],
+  "western_medication_classes": [
+    {
+      "id": "med_class.letrozole",
+      "generic_name_en": "Letrozole",
+      "drug_class_en": "Aromatase inhibitor",
+      "fertility_use_en": "Often used in ovulation induction contexts; details require clinician-specific protocol validation.",
+      "herb_interaction_watch_en": "Flag for review before combining with hormone-active herbs or fertility formulas."
+    },
+    {
+      "id": "med_class.clomiphene",
+      "generic_name_en": "Clomiphene citrate",
+      "drug_class_en": "Selective estrogen receptor modulator",
+      "fertility_use_en": "Used in ovulation induction contexts; details require clinician-specific protocol validation.",
+      "herb_interaction_watch_en": "Flag for review before combining with hormone-active herbs or fertility formulas."
+    },
+    {
+      "id": "med_class.metformin",
+      "generic_name_en": "Metformin",
+      "drug_class_en": "Biguanide antihyperglycemic",
+      "fertility_use_en": "May appear in PCOS or insulin resistance contexts; use depends on biomedical assessment.",
+      "herb_interaction_watch_en": "Watch glucose-lowering herb combinations and hypoglycemia risk."
+    }
+  ],
+  "links": {
+    "western_to_eastern": [
+      {
+        "western_condition_id": "western_condition.pcos",
+        "eastern_disease_id": "eastern_disease.infertility",
+        "relationship_type": "may_present_as"
+      },
+      {
+        "western_condition_id": "western_condition.pcos",
+        "eastern_disease_id": "eastern_disease.delayed_menstruation",
+        "relationship_type": "may_present_as"
+      },
+      {
+        "western_condition_id": "western_condition.pcos",
+        "eastern_disease_id": "eastern_disease.amenorrhea",
+        "relationship_type": "may_present_as"
+      }
+    ],
+    "western_to_patterns": [
+      {
+        "western_condition_id": "western_condition.pcos",
+        "pattern_id": "pattern.phlegm_damp_obstruction",
+        "relevance": "common"
+      },
+      {
+        "western_condition_id": "western_condition.pcos",
+        "pattern_id": "pattern.kidney_deficiency",
+        "relevance": "common"
+      },
+      {
+        "western_condition_id": "western_condition.pcos",
+        "pattern_id": "pattern.liver_qi_stagnation",
+        "relevance": "possible"
+      },
+      {
+        "western_condition_id": "western_condition.pcos",
+        "pattern_id": "pattern.blood_stasis",
+        "relevance": "possible"
+      }
+    ]
+  },
+  "fertility_workflow_template": [
+    {
+      "step_order": 1,
+      "phase_en": "Biomedical workup",
+      "phase_zh": "西醫檢查期",
+      "biomedical_goal_en": "Clarify ovulation, ovarian reserve, semen factors, tubal patency, uterine cavity, thyroid/prolactin/metabolic context as appropriate.",
+      "tcm_goal_zh": "辨病與辨證分開記錄，不急著套單一證型。",
+      "acupuncture_role_en": "Support stress regulation, cycle tracking, pain/sleep support where appropriate.",
+      "herbal_role_en": "Avoid formula selection until pregnancy status, medication plan, and red flags are clarified."
+    },
+    {
+      "step_order": 2,
+      "phase_en": "Ovulation induction or cycle support",
+      "phase_zh": "促排或週期支持期",
+      "biomedical_goal_en": "Coordinate with prescribed medication timing and monitoring plan.",
+      "tcm_goal_zh": "依週期與證型調整補腎、疏肝、化痰濕、活血等方向。",
+      "acupuncture_role_en": "Track cycle day, symptoms, medication use, and avoid unsafe assumptions.",
+      "herbal_role_en": "Flag herb-drug interaction review before combining formulas with fertility medications."
+    },
+    {
+      "step_order": 3,
+      "phase_en": "IUI/IVF coordination",
+      "phase_zh": "IUI/IVF 配合期",
+      "biomedical_goal_en": "Align supportive care with retrieval, transfer, luteal support, and clinic restrictions.",
+      "tcm_goal_zh": "以安全、減壓、睡眠、消化與疼痛支持為主，避免干擾西醫療程。",
+      "acupuncture_role_en": "Document timing relative to retrieval/transfer and clinic instructions.",
+      "herbal_role_en": "Use extra caution; many clinics restrict herbs during stimulation, transfer, or early pregnancy."
+    }
+  ]
+}

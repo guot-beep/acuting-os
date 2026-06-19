@@ -1,0 +1,73 @@
+{
+  "dataset": "AcuTing content migration workflow",
+  "status": "active_guideline",
+  "goal": "Use Chinese TCM archive-style websites as navigation and topic references, then build an original bilingual AcuTing OS knowledge base that can later support an English public site.",
+  "workflow": [
+    {
+      "step": 1,
+      "name": "Capture structure",
+      "description": "Record the category, article title, topic order, and fields without copying full article prose.",
+      "output": "topic_map"
+    },
+    {
+      "step": 2,
+      "name": "Create bilingual entity record",
+      "description": "Create or update the linked entity: acupoint, auricular point, formula, herb, condition, medication, or clinical pearl.",
+      "output": "database_record"
+    },
+    {
+      "step": 3,
+      "name": "Rewrite Chinese study note",
+      "description": "Summarize the key ideas in original Traditional Chinese language suitable for your study use.",
+      "output": "zh_original_note"
+    },
+    {
+      "step": 4,
+      "name": "Translate and professionalize English",
+      "description": "Write natural clinical English and standardize terminology with WHO/NCCAOM/anatomy/evidence sources.",
+      "output": "en_professional_note"
+    },
+    {
+      "step": 5,
+      "name": "Cross-check",
+      "description": "Verify locations, claims, safety, contraindications, and terminology against the source hierarchy.",
+      "output": "review_status"
+    },
+    {
+      "step": 6,
+      "name": "Connect graph",
+      "description": "Link the content to related points, formulas, patterns, western conditions, medications, SOAP templates, and Learn articles.",
+      "output": "knowledge_graph_links"
+    }
+  ],
+  "review_status_values": [
+    "draft",
+    "translated",
+    "source_checked",
+    "clinically_reviewed",
+    "public_ready"
+  ],
+  "do_not_copy_wholesale": true,
+  "source_priority": [
+    "WHO Standard Acupuncture Point Locations",
+    "Manual of Acupuncture or school-approved materials",
+    "NCCAOM Content Outline",
+    "NCCIH and other professional patient-safety sources",
+    "PubMed/Cochrane/systematic reviews",
+    "TeachMeAnatomy/Kenhub/Visible Body/Radiopaedia for anatomy"
+  ],
+  "next_batches": [
+    {
+      "batch": "acupuncture_bl61_bl67",
+      "reason": "Finish Bladder channel coverage before moving to Kidney channel."
+    },
+    {
+      "batch": "formula_top_20",
+      "reason": "Start with high-yield board and clinic formulas, then connect to patterns and conditions."
+    },
+    {
+      "batch": "fertility_condition_map",
+      "reason": "Build PCOS, infertility, IVF/IUI support, endometriosis, dysmenorrhea, and medication coordination links."
+    }
+  ]
+}

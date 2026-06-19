@@ -1,0 +1,104 @@
+{
+  "dataset": "TCM SOAP note template",
+  "status": "template",
+  "privacy_note": "Use de-identified patient_code. Avoid direct identifiers unless proper privacy controls are added later.",
+  "soap_note": {
+    "id": "soap.visit_demo_001",
+    "visit_id": "visit.demo_001.001",
+    "S_subjective": {
+      "chief_complaint": "",
+      "symptom_updates": "",
+      "pain_sleep_energy_mood": {
+        "pain_score": "",
+        "sleep": "",
+        "energy": "",
+        "mood_stress": ""
+      },
+      "digestion_bowel_urination": "",
+      "menstrual_fertility_update": {
+        "lmp": "",
+        "cycle_day": null,
+        "cycle_phase": "",
+        "fertility_phase": "",
+        "bleeding_flow": "",
+        "pain_cramps": "",
+        "cervical_mucus": "",
+        "lh_bbt_or_monitoring": "",
+        "iui_ivf_update": ""
+      },
+      "medication_supplement_update": {
+        "new_western_medications": [],
+        "current_western_medications": [],
+        "supplements": [],
+        "herbs_taken_since_last_visit": "",
+        "adverse_reactions": ""
+      },
+      "red_flags_screen": {
+        "possible_pregnancy": "",
+        "heavy_bleeding": "",
+        "severe_pain": "",
+        "fever_or_infection": "",
+        "neurological_symptoms": "",
+        "urgent_referral_needed": ""
+      }
+    },
+    "O_objective": {
+      "observation": "",
+      "tongue_zh": "",
+      "tongue_en": "",
+      "pulse_zh": "",
+      "pulse_en": "",
+      "palpation": "",
+      "rom_orthopedic": "",
+      "abdomen_or_channel_findings": "",
+      "labs_imaging_patient_reported": ""
+    },
+    "A_assessment": {
+      "western_condition_ids": [],
+      "eastern_disease_ids": [],
+      "tcm_pattern_ids": [],
+      "tcm_diagnosis_text": "",
+      "treatment_principle_zh": "",
+      "treatment_principle_en": "",
+      "progress_note": "",
+      "clinical_reasoning": "",
+      "safety_assessment": ""
+    },
+    "P_plan": {
+      "acupuncture_principle": "",
+      "acupuncture_points": [
+        {
+          "code": "",
+          "side": "",
+          "technique": "",
+          "retention_minutes": null,
+          "reason": ""
+        }
+      ],
+      "needling_notes": "",
+      "moxa_e_stim_notes": "",
+      "formula_herb_notes": [
+        {
+          "formula_or_herb": "",
+          "dose_frequency_duration": "",
+          "modifications": "",
+          "cautions": ""
+        }
+      ],
+      "western_medication_context": "",
+      "patient_instructions": "",
+      "homecare_lifestyle": "",
+      "follow_up": "",
+      "referral_or_supervisor_question": "",
+      "safety_cautions": ""
+    },
+    "billing_readiness": {
+      "not_for_submission": true,
+      "possible_diagnosis_code_questions": [],
+      "possible_service_code_questions": [],
+      "medical_necessity_supported": "",
+      "documentation_missing": [],
+      "needs_supervisor_or_billing_review": true
+    }
+  }
+}
