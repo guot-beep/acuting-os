@@ -36,6 +36,23 @@ Each visit should be charted first as a TCM-oriented SOAP note:
 
 Structured tables such as `visit_acupuncture`, `visit_formulas`, `visit_western_medications`, and `visit_outcomes` should support the SOAP note, not replace it.
 
+## Structured Links
+
+Each SOAP note should keep readable clinical text and also store link fields for search and future reporting:
+
+- `workflowLink`: fertility or specialty workflow, such as PCOS ovulation induction, IUI, IVF stimulation, transfer/luteal support.
+- `cyclePhase`: menses, follicular, ovulation window, luteal, two-week wait, stimulation, retrieval, transfer, or pregnancy support.
+- `westernConditionLinks`: related Western conditions.
+- `easternDiseaseLinks`: related TCM disease categories.
+- `tcmPatternLinks`: pattern IDs used for treatment reasoning.
+- `safetyFlagLinks`: pregnancy, anticoagulants, severe pain, fever, abnormal bleeding, IVF clinic restrictions, or other cautions.
+- `acupointLinks`: point codes used in that visit.
+- `formulaLinks`: formula records used or considered.
+- `medicationLinks`: Western medications active during the same period.
+- `outcomeMetricLinks`: measurable changes such as pain score, sleep quality, lining measurement, cycle day, LH surge, or symptom score.
+
+This makes the clinical notebook searchable across patient timeline, acupoints, formulas, Western medication context, and safety flags.
+
 ## Privacy Rule
 
 Use `patient_code` instead of full legal name. Avoid storing full date of birth, address, phone, email, insurance ID, or other identifying details unless the system is later upgraded with proper privacy and security controls.

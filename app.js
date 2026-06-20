@@ -6922,20 +6922,40 @@ function normalizeSoapNote(value) {
     visitNumber: value.visitNumber ? Number(value.visitNumber) : "",
     cycleDay: value.cycleDay ? Number(value.cycleDay) : "",
     fertilityPhase: String(value.fertilityPhase || ""),
+    workflowLink: String(value.workflowLink || ""),
+    cyclePhase: String(value.cyclePhase || ""),
+    westernConditionLinks: normalizeStringList(value.westernConditionLinks),
+    easternDiseaseLinks: normalizeStringList(value.easternDiseaseLinks),
+    tcmPatternLinks: normalizeStringList(value.tcmPatternLinks),
+    safetyFlagLinks: normalizeStringList(value.safetyFlagLinks),
     subjective: String(value.subjective || ""),
     objective: String(value.objective || ""),
     assessment: String(value.assessment || ""),
     plan: String(value.plan || ""),
     pointsUsed: String(value.pointsUsed || ""),
+    acupointLinks: normalizeStringList(value.acupointLinks),
     retentionMinutes: value.retentionMinutes ? Number(value.retentionMinutes) : "",
     technique: String(value.technique || ""),
     formulaHerbs: String(value.formulaHerbs || ""),
+    formulaLinks: normalizeStringList(value.formulaLinks),
     westernMeds: String(value.westernMeds || ""),
+    medicationLinks: normalizeStringList(value.medicationLinks),
     outcomes: String(value.outcomes || ""),
+    outcomeMetricLinks: normalizeStringList(value.outcomeMetricLinks),
     followUp: String(value.followUp || ""),
     createdAt: String(value.createdAt || new Date().toISOString()),
     updatedAt: String(value.updatedAt || new Date().toISOString())
   };
+}
+
+function normalizeStringList(value) {
+  if (Array.isArray(value)) return value.map((item) => String(item).trim()).filter(Boolean);
+  return splitList(String(value || ""));
+}
+
+function formatNoteList(value, fallback = "未連結") {
+  const list = normalizeStringList(value);
+  return list.length ? list.join("、") : fallback;
 }
 
 function createId(prefix) {
@@ -6987,7 +7007,29 @@ function getFilteredClinicalCases() {
       ...item.easternDiseases,
       ...item.tcmPatterns,
       ...item.safetyFlags,
-      ...item.soapNotes.flatMap((note) => [note.subjective, note.objective, note.assessment, note.plan, note.pointsUsed, note.formulaHerbs, note.westernMeds, note.outcomes])
+      ...item.soapNotes.flatMap((note) => [
+        note.workflowLink,
+        note.cyclePhase,
+        note.fertilityPhase,
+        note.subjective,
+        note.objective,
+        note.assessment,
+        note.plan,
+        note.pointsUsed,
+        note.formulaHerbs,
+        note.westernMeds,
+        note.outcomes,
+        note.followUp,
+        note.technique,
+        ...note.westernConditionLinks,
+        ...note.easternDiseaseLinks,
+        ...note.tcmPatternLinks,
+        ...note.safetyFlagLinks,
+        ...note.acupointLinks,
+        ...note.formulaLinks,
+        ...note.medicationLinks,
+        ...note.outcomeMetricLinks
+      ])
     ].join(" ").toLowerCase();
     return haystack.includes(query);
   });
@@ -7059,12 +7101,18 @@ function renderCaseTags(item) {
 
 function renderSoapNoteCard(note) {
   const title = note.visitNumber ? `Visit ${note.visitNumber}` : "SOAP Note";
+  const linkedRecords = [
+    ...note.acupointLinks,
+    ...note.formulaLinks,
+    ...note.medicationLinks,
+    ...note.outcomeMetricLinks
+  ];
   return `
     <article class="soap-note">
       <div class="timeline-head">
         <h4>${escapeHtml(title)}</h4>
         <div class="case-actions">
-          <small class="timeline-date">${escapeHtml([note.visitDate, note.fertilityPhase, note.cycleDay ? `CD${note.cycleDay}` : ""].filter(Boolean).join(" · "))}</small>
+          <small class="timeline-date">${escapeHtml([note.visitDate, note.fertilityPhase, note.cyclePhase, note.workflowLink, note.cycleDay ? `CD${note.cycleDay}` : ""].filter(Boolean).join(" · "))}</small>
           <button class="ghost" type="button" data-edit-soap="${escapeAttribute(note.id)}">編輯</button>
         </div>
       </div>
@@ -7078,6 +7126,13 @@ function renderSoapNoteCard(note) {
         <div><small>Points</small><span>${escapeHtml(note.pointsUsed || "未填")}</span></div>
         <div><small>Formula / Herbs</small><span>${escapeHtml(note.formulaHerbs || "未填")}</span></div>
         <div><small>Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
+      </div>
+      <div class="soap-link-grid">
+        <div><small>Western links</small><span>${escapeHtml(formatNoteList(note.westernConditionLinks))}</span></div>
+        <div><small>TCM disease links</small><span>${escapeHtml(formatNoteList(note.easternDiseaseLinks))}</span></div>
+        <div><small>Pattern links</small><span>${escapeHtml(formatNoteList(note.tcmPatternLinks))}</span></div>
+        <div><small>Safety links</small><span>${escapeHtml(formatNoteList(note.safetyFlagLinks))}</span></div>
+        <div class="wide"><small>Treatment record links</small><span>${escapeHtml(formatNoteList(linkedRecords))}</span></div>
       </div>
     </article>
   `;
@@ -7196,22 +7251,32 @@ function openSoapEditor(note = null) {
     visitNumber: activeCase.soapNotes.length + 1,
     cycleDay: "",
     fertilityPhase: "",
+    workflowLink: "",
+    cyclePhase: "",
+    westernConditionLinks: [],
+    easternDiseaseLinks: [],
+    tcmPatternLinks: [],
+    safetyFlagLinks: [],
     subjective: "",
     objective: "",
     assessment: "",
     plan: "",
     pointsUsed: "",
+    acupointLinks: [],
     retentionMinutes: "",
     technique: "",
     formulaHerbs: "",
+    formulaLinks: [],
     westernMeds: "",
+    medicationLinks: [],
     outcomes: "",
+    outcomeMetricLinks: [],
     followUp: ""
   };
   const data = { ...fallback, ...(note || {}) };
   Object.entries(data).forEach(([key, value]) => {
     if (!soapForm.elements[key]) return;
-    soapForm.elements[key].value = value;
+    soapForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
   soapDialog.showModal();
 }
@@ -7230,16 +7295,26 @@ function saveSoapFromForm(event) {
     visitNumber: data.visitNumber,
     cycleDay: data.cycleDay,
     fertilityPhase: data.fertilityPhase.trim(),
+    workflowLink: data.workflowLink.trim(),
+    cyclePhase: data.cyclePhase.trim(),
+    westernConditionLinks: splitList(data.westernConditionLinks),
+    easternDiseaseLinks: splitList(data.easternDiseaseLinks),
+    tcmPatternLinks: splitList(data.tcmPatternLinks),
+    safetyFlagLinks: splitList(data.safetyFlagLinks),
     subjective: data.subjective.trim(),
     objective: data.objective.trim(),
     assessment: data.assessment.trim(),
     plan: data.plan.trim(),
     pointsUsed: data.pointsUsed.trim(),
+    acupointLinks: splitList(data.acupointLinks),
     retentionMinutes: data.retentionMinutes,
     technique: data.technique.trim(),
     formulaHerbs: data.formulaHerbs.trim(),
+    formulaLinks: splitList(data.formulaLinks),
     westernMeds: data.westernMeds.trim(),
+    medicationLinks: splitList(data.medicationLinks),
     outcomes: data.outcomes.trim(),
+    outcomeMetricLinks: splitList(data.outcomeMetricLinks),
     followUp: data.followUp.trim(),
     createdAt: current?.createdAt || now,
     updatedAt: now

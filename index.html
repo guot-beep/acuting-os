@@ -579,6 +579,12 @@
           <label>Visit #<input name="visitNumber" type="number" min="1" /></label>
           <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
           <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
+          <label>Workflow link<input name="workflowLink" placeholder="fertility.workflow.pcos_ovulation_induction" /></label>
+          <label>Cycle phase<input name="cyclePhase" placeholder="menses / follicular / ovulation / luteal" /></label>
+          <label class="wide">Western condition links<textarea name="westernConditionLinks" rows="2" placeholder="condition.pcos, condition.unexplained_infertility"></textarea></label>
+          <label class="wide">Eastern disease / pattern links<textarea name="easternDiseaseLinks" rows="2" placeholder="disease.infertility, disease.irregular_menstruation"></textarea></label>
+          <label class="wide">TCM pattern links<textarea name="tcmPatternLinks" rows="2" placeholder="pattern.kidney_deficiency, pattern.phlegm_damp"></textarea></label>
+          <label class="wide">Safety flag links<textarea name="safetyFlagLinks" rows="2" placeholder="safety.possible_pregnancy, safety.anticoagulant_use"></textarea></label>
 
           <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
           <label class="wide soap-section">O - Objective<textarea name="objective" rows="4" placeholder="望診、舌、脈、觸診、ROM、labs/imaging"></textarea></label>
@@ -586,11 +592,15 @@
           <label class="wide soap-section">P - Plan<textarea name="plan" rows="5" placeholder="針灸治法、穴位、手法、留針、艾灸/電針、方藥、西藥背景、homecare、follow-up"></textarea></label>
 
           <label class="wide">用穴 Acupuncture points<textarea name="pointsUsed" rows="2" placeholder="SP6 bilateral, ST36 bilateral, LR3 bilateral"></textarea></label>
+          <label class="wide">Acupoint record links<textarea name="acupointLinks" rows="2" placeholder="SP6, ST36, LR3, CV4"></textarea></label>
           <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
           <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
           <label class="wide">方劑/中藥 Formula & herbs<textarea name="formulaHerbs" rows="2"></textarea></label>
+          <label class="wide">Formula record links<textarea name="formulaLinks" rows="2" placeholder="formula.xiao_yao_san, formula.gui_pi_tang"></textarea></label>
           <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
+          <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="med.letrozole, med.progesterone"></textarea></label>
           <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
+          <label class="wide">Outcome metric links<textarea name="outcomeMetricLinks" rows="2" placeholder="sleep_quality +2, pain_score 7->4, lining_mm 8"></textarea></label>
           <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
         </div>
         <div class="dialog-actions">

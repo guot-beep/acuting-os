@@ -2390,6 +2390,35 @@ textarea:focus {
   background: #fbfcfb;
 }
 
+.soap-link-grid {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0.75rem;
+}
+
+.soap-link-grid div {
+  background: #f8faf8;
+  border: 1px solid #e3e9e7;
+  border-radius: 7px;
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.58rem;
+}
+
+.soap-link-grid small {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.soap-link-grid span {
+  color: #1d3438;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
 .content-grid {
   grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
 }
@@ -2632,6 +2661,7 @@ footer {
   .case-grid,
   .point-study-layout,
   .soap-grid,
+  .soap-link-grid,
   .clinical-mini-grid,
   .info-grid,
   .form-grid {
