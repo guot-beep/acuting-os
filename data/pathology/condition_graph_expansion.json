@@ -1,0 +1,178 @@
+{
+  "dataset": "Condition graph expansion",
+  "status": "draft_seed_not_medical_advice",
+  "updated": "2026-06-20",
+  "purpose": "Expand the AcuTing OS pathology layer with fertility-focused Western conditions, Eastern disease categories, TCM patterns, clinical links, safety flags, and documentation prompts.",
+  "review_rule": "This is a clinical documentation and study graph. It is not a diagnosis or treatment protocol. Public or clinical use requires professional source review.",
+  "western_conditions": [
+    {
+      "id": "western_condition.pcos",
+      "name_en": "Polycystic Ovary Syndrome",
+      "name_zh": "多囊卵巢症候群",
+      "category": "reproductive_endocrinology",
+      "fertility_relevance": true,
+      "common_documentation_topics": ["irregular_cycles", "anovulation", "hyperandrogenism_context", "insulin_resistance_context", "ovulation_induction"],
+      "medication_links": ["med.letrozole", "med.clomiphene_citrate", "med.metformin", "med.progesterone"],
+      "workflow_links": ["fertility.workflow.pcos_ovulation_induction"],
+      "red_flags_en": ["heavy abnormal bleeding", "possible pregnancy", "severe pelvic pain", "rapid weight change", "metabolic red flags"],
+      "review_status": "draft"
+    },
+    {
+      "id": "western_condition.anovulation",
+      "name_en": "Anovulation",
+      "name_zh": "無排卵",
+      "category": "reproductive_endocrinology",
+      "fertility_relevance": true,
+      "common_documentation_topics": ["cycle_length", "LH_surge_tracking", "basal_body_temperature", "ovulation_induction", "progesterone_timing"],
+      "medication_links": ["med.letrozole", "med.clomiphene_citrate", "med.human_chorionic_gonadotropin", "med.progesterone"],
+      "workflow_links": ["fertility.workflow.pcos_ovulation_induction", "fertility.workflow.iui_cycle"],
+      "red_flags_en": ["possible pregnancy", "severe pelvic pain", "heavy bleeding"],
+      "review_status": "draft"
+    },
+    {
+      "id": "western_condition.unexplained_infertility",
+      "name_en": "Unexplained Infertility",
+      "name_zh": "不明原因不孕",
+      "category": "reproductive_medicine",
+      "fertility_relevance": true,
+      "common_documentation_topics": ["ovulation_context", "semen_analysis_context", "tubal_patency_context", "uterine_cavity_context", "IUI_or_IVF_planning"],
+      "medication_links": ["med.letrozole", "med.clomiphene_citrate", "med.follitropin_alfa", "med.human_chorionic_gonadotropin", "med.progesterone"],
+      "workflow_links": ["fertility.workflow.iui_cycle", "fertility.workflow.ivf_stimulation"],
+      "red_flags_en": ["possible pregnancy", "acute pelvic pain", "abnormal bleeding"],
+      "review_status": "draft"
+    },
+    {
+      "id": "western_condition.endometriosis_context",
+      "name_en": "Endometriosis Context",
+      "name_zh": "子宮內膜異位症相關情境",
+      "category": "gynecology_reproductive_medicine",
+      "fertility_relevance": true,
+      "common_documentation_topics": ["dysmenorrhea", "pelvic_pain", "dyspareunia_context", "laparoscopy_or_imaging_context_if_reported", "IVF_planning"],
+      "medication_links": ["med.leuprolide", "med.progesterone", "med.low_dose_aspirin"],
+      "workflow_links": ["fertility.workflow.ivf_stimulation"],
+      "red_flags_en": ["severe pelvic pain", "acute abdomen", "heavy bleeding", "fever"],
+      "review_status": "draft"
+    },
+    {
+      "id": "western_condition.diminished_ovarian_reserve",
+      "name_en": "Diminished Ovarian Reserve",
+      "name_zh": "卵巢儲備功能下降",
+      "category": "reproductive_endocrinology",
+      "fertility_relevance": true,
+      "common_documentation_topics": ["AMH_or_AFC_context_if_reported", "age_context", "IVF_stimulation_context", "cycle_pattern", "emotional_support"],
+      "medication_links": ["med.follitropin_alfa", "med.menotropins", "med.ganirelix", "med.leuprolide", "med.human_chorionic_gonadotropin"],
+      "workflow_links": ["fertility.workflow.ivf_stimulation"],
+      "red_flags_en": ["procedure-related symptoms", "severe pelvic pain", "OHSS warning signs if stimulated"],
+      "review_status": "draft"
+    },
+    {
+      "id": "western_condition.recurrent_pregnancy_loss_context",
+      "name_en": "Recurrent Pregnancy Loss Context",
+      "name_zh": "反覆流產相關情境",
+      "category": "reproductive_medicine_obstetrics",
+      "fertility_relevance": true,
+      "common_documentation_topics": ["loss_history_if_patient_shares", "anticoagulant_or_aspirin_context", "luteal_support", "early_pregnancy_monitoring_context", "emotional_support"],
+      "medication_links": ["med.progesterone", "med.low_dose_aspirin", "med.enoxaparin"],
+      "workflow_links": ["fertility.workflow.embryo_transfer_luteal"],
+      "red_flags_en": ["pregnancy bleeding", "severe abdominal pain", "ectopic pregnancy concern", "mental health crisis"],
+      "review_status": "draft"
+    }
+  ],
+  "eastern_diseases": [
+    { "id": "eastern_disease.infertility", "name_zh": "不孕", "pinyin": "Bu Yun", "name_en": "Infertility", "classical_category": "gynecology" },
+    { "id": "eastern_disease.irregular_menstruation", "name_zh": "月經不調", "pinyin": "Yue Jing Bu Tiao", "name_en": "Irregular Menstruation", "classical_category": "gynecology" },
+    { "id": "eastern_disease.delayed_menstruation", "name_zh": "月經後期", "pinyin": "Yue Jing Hou Qi", "name_en": "Delayed Menstruation", "classical_category": "gynecology" },
+    { "id": "eastern_disease.amenorrhea", "name_zh": "閉經", "pinyin": "Bi Jing", "name_en": "Amenorrhea", "classical_category": "gynecology" },
+    { "id": "eastern_disease.dysmenorrhea", "name_zh": "痛經", "pinyin": "Tong Jing", "name_en": "Dysmenorrhea", "classical_category": "gynecology" },
+    { "id": "eastern_disease.threatened_miscarriage_context", "name_zh": "胎漏胎動不安相關情境", "pinyin": "Tai Lou / Tai Dong Bu An", "name_en": "Threatened Miscarriage Context", "classical_category": "obstetrics" }
+  ],
+  "tcm_patterns": [
+    {
+      "id": "pattern.kidney_deficiency",
+      "name_zh": "腎虛",
+      "pinyin": "Shen Xu",
+      "name_en": "Kidney Deficiency",
+      "pattern_family": "deficiency",
+      "treatment_principle_en": "Tonify the Kidney and regulate the Chong and Ren vessels",
+      "seed_acupoints": ["KI3", "BL23", "CV4", "CV6", "SP6", "ST36"],
+      "seed_formulas": ["formula.liu_wei_di_huang_wan", "formula.jin_gui_shen_qi_wan", "formula.ba_zhen_tang"]
+    },
+    {
+      "id": "pattern.liver_qi_stagnation",
+      "name_zh": "肝氣鬱結",
+      "pinyin": "Gan Qi Yu Jie",
+      "name_en": "Liver Qi Stagnation",
+      "pattern_family": "qi_stagnation",
+      "treatment_principle_en": "Soothe the Liver, move qi, and regulate menstruation",
+      "seed_acupoints": ["LR3", "PC6", "SP6", "CV6", "DU20"],
+      "seed_formulas": ["formula.xiao_yao_san", "formula.jia_wei_xiao_yao_san"]
+    },
+    {
+      "id": "pattern.phlegm_damp",
+      "name_zh": "痰濕",
+      "pinyin": "Tan Shi",
+      "name_en": "Phlegm-Damp",
+      "pattern_family": "damp_phlegm",
+      "treatment_principle_en": "Strengthen the Spleen, transform dampness, resolve phlegm",
+      "seed_acupoints": ["ST36", "SP9", "SP6", "CV12", "ST40"],
+      "seed_formulas": ["formula.er_chen_tang", "formula.liu_jun_zi_tang", "formula.ping_wei_san"]
+    },
+    {
+      "id": "pattern.blood_stasis",
+      "name_zh": "血瘀",
+      "pinyin": "Xue Yu",
+      "name_en": "Blood Stasis",
+      "pattern_family": "stasis",
+      "treatment_principle_en": "Invigorate blood, transform stasis, and regulate the Chong and Ren vessels",
+      "seed_acupoints": ["SP6", "SP10", "LR3", "BL17", "CV4"],
+      "seed_formulas": ["formula.tao_hong_si_wu_tang", "formula.xue_fu_zhu_yu_tang", "formula.wen_jing_tang"]
+    },
+    {
+      "id": "pattern.spleen_qi_deficiency",
+      "name_zh": "脾氣虛",
+      "pinyin": "Pi Qi Xu",
+      "name_en": "Spleen Qi Deficiency",
+      "pattern_family": "deficiency",
+      "treatment_principle_en": "Tonify Spleen qi and support transformation and transportation",
+      "seed_acupoints": ["ST36", "SP6", "CV12", "BL20", "BL21"],
+      "seed_formulas": ["formula.si_jun_zi_tang", "formula.liu_jun_zi_tang", "formula.bu_zhong_yi_qi_tang"]
+    }
+  ],
+  "links": {
+    "western_to_eastern": [
+      ["western_condition.pcos", "eastern_disease.infertility"],
+      ["western_condition.pcos", "eastern_disease.irregular_menstruation"],
+      ["western_condition.pcos", "eastern_disease.delayed_menstruation"],
+      ["western_condition.pcos", "eastern_disease.amenorrhea"],
+      ["western_condition.anovulation", "eastern_disease.infertility"],
+      ["western_condition.anovulation", "eastern_disease.irregular_menstruation"],
+      ["western_condition.unexplained_infertility", "eastern_disease.infertility"],
+      ["western_condition.endometriosis_context", "eastern_disease.dysmenorrhea"],
+      ["western_condition.endometriosis_context", "eastern_disease.infertility"],
+      ["western_condition.diminished_ovarian_reserve", "eastern_disease.infertility"],
+      ["western_condition.recurrent_pregnancy_loss_context", "eastern_disease.threatened_miscarriage_context"]
+    ],
+    "western_to_patterns": [
+      ["western_condition.pcos", "pattern.phlegm_damp"],
+      ["western_condition.pcos", "pattern.liver_qi_stagnation"],
+      ["western_condition.pcos", "pattern.kidney_deficiency"],
+      ["western_condition.pcos", "pattern.blood_stasis"],
+      ["western_condition.anovulation", "pattern.kidney_deficiency"],
+      ["western_condition.anovulation", "pattern.liver_qi_stagnation"],
+      ["western_condition.unexplained_infertility", "pattern.kidney_deficiency"],
+      ["western_condition.unexplained_infertility", "pattern.liver_qi_stagnation"],
+      ["western_condition.unexplained_infertility", "pattern.blood_stasis"],
+      ["western_condition.endometriosis_context", "pattern.blood_stasis"],
+      ["western_condition.endometriosis_context", "pattern.liver_qi_stagnation"],
+      ["western_condition.diminished_ovarian_reserve", "pattern.kidney_deficiency"],
+      ["western_condition.recurrent_pregnancy_loss_context", "pattern.kidney_deficiency"],
+      ["western_condition.recurrent_pregnancy_loss_context", "pattern.spleen_qi_deficiency"]
+    ]
+  },
+  "documentation_prompts": [
+    "Record Western diagnosis only if reported by the patient or documented by the clinic.",
+    "Record TCM disease and pattern as clinical reasoning, not as a replacement for biomedical diagnosis.",
+    "Connect each visit to cycle day, phase, medications, symptoms, tongue, pulse, treatment, response, and safety flags.",
+    "Use red flags to guide referral or communication with supervising clinician."
+  ]
+}

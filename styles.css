@@ -1721,6 +1721,7 @@ button:hover,
 .patient-system,
 .fertility-section,
 .formula-section,
+.condition-graph-section,
 .learn-section,
 .source-section {
   background: rgba(255, 255, 255, 0.92);
@@ -1759,6 +1760,13 @@ button:hover,
 
 .formula-section {
   border-top: 4px solid var(--gold);
+}
+
+.condition-graph-section {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(249, 250, 248, 0.95)),
+    #fff;
+  border-top: 4px solid #4e7467;
 }
 
 .learn-section {
@@ -1937,6 +1945,60 @@ button:hover,
   color: #7a5414;
   font-size: 1.18rem;
   margin-right: 0.18rem;
+}
+
+.condition-graph-grid {
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.condition-card {
+  background: #fbfcfb;
+  border: 1px solid #dfe9e5;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.36rem;
+  min-height: 150px;
+  padding: 0.9rem;
+}
+
+.condition-card span {
+  color: #315f52;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.condition-card strong {
+  color: #172629;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.condition-card small {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.condition-warning {
+  background: #f8faf8;
+  border: 1px solid #dfe9e5;
+  border-radius: 8px;
+  color: #2d4b46;
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 0.82rem;
+  padding: 0.82rem;
+}
+
+.condition-warning strong {
+  color: #315f52;
+}
+
+.condition-warning span {
+  line-height: 1.5;
 }
 
 .public-system-grid {
@@ -2518,6 +2580,7 @@ footer {
   .formula-progress-strip,
   .fertility-workflow-grid,
   .fertility-link-grid,
+  .condition-graph-grid,
   .patient-action-grid,
   .source-grid {
     grid-template-columns: 1fr;

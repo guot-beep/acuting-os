@@ -321,6 +321,43 @@
         </div>
       </section>
 
+      <section class="condition-graph-section" id="conditionGraph" aria-label="Condition knowledge graph">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Condition Graph</p>
+            <h2>中西醫病症對照 / Conditions Database</h2>
+            <p>這一層把西醫病名、傳統病名、TCM 證型、常見用藥、穴位、方劑與安全旗標分開存，再用關聯連起來。這樣不會把 PCOS 直接等同於某一個證型，也方便日後病例搜尋。</p>
+          </div>
+          <span class="data-pill">relationship database</span>
+        </div>
+        <div class="condition-graph-grid">
+          <article class="condition-card">
+            <span>Western</span>
+            <strong>6 fertility-related conditions</strong>
+            <small>PCOS, anovulation, unexplained infertility, endometriosis context, diminished ovarian reserve, recurrent pregnancy loss context.</small>
+          </article>
+          <article class="condition-card">
+            <span>Eastern</span>
+            <strong>6 traditional disease categories</strong>
+            <small>Infertility, irregular menstruation, delayed menstruation, amenorrhea, dysmenorrhea, threatened miscarriage context.</small>
+          </article>
+          <article class="condition-card">
+            <span>Patterns</span>
+            <strong>5 TCM pattern families</strong>
+            <small>Kidney deficiency, Liver qi stagnation, Phlegm-damp, Blood stasis, Spleen qi deficiency.</small>
+          </article>
+          <article class="condition-card">
+            <span>Links</span>
+            <strong>Clinical graph relations</strong>
+            <small>Conditions connect to patterns, acupuncture seeds, formula seeds, medication context, fertility workflow, and red flags.</small>
+          </article>
+        </div>
+        <div class="condition-warning">
+          <strong>Graph rule</strong>
+          <span>西醫診斷、傳統病名、證型不是一對一翻譯；AcuTing 用 relation records 表示「可能相關」，每次病例仍要依實際 SOAP 與臨床辨證判斷。</span>
+        </div>
+      </section>
+
       <section class="learn-section" id="learnSection" aria-label="AcuTing Learn 英文內容層">
         <div class="section-heading">
           <div>

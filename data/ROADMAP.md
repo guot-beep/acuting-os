@@ -51,6 +51,8 @@
    - `eastern_diseases`: traditional disease names.
    - `tcm_patterns`: syndrome differentiation.
    - Relation tables connect overlap.
+   - Fertility condition graph expansion is seeded in `data/pathology/condition_graph_expansion.json`.
+   - `data/pathology/conditions.json` now syncs fertility-related Western conditions, Eastern disease categories, TCM pattern links, medication links, workflow links, and red flags.
 3. Add Western medications as a separate English-first layer in `data/medications/`.
 4. Build herb-drug and acupuncture-medication caution links only after source validation.
 5. Build fertility workflow links first, because infertility care often needs acupuncture, herbs, Western diagnosis, Western medication, cycle timing, IUI/IVF coordination, and contraindication tracking.

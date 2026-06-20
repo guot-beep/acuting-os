@@ -30,6 +30,7 @@ data/herbs/high_yield_formula_seeds.json
 data/herbs/formula_safety_flags.json
 data/evidence/
 data/pathology/
+data/pathology/condition_graph_expansion.json
 data/clinical_cases/fertility_workflow_seed.json
 ```
 
@@ -80,6 +81,15 @@ data/medications/western_medications.json
 ```
 
 Do not publish fertility workflows as treatment protocols. Public content may discuss general education only after source review, conservative safety wording, and removal of private clinical documentation assumptions.
+
+Condition graph data is also draft scaffolding:
+
+```text
+data/pathology/conditions.json
+data/pathology/condition_graph_expansion.json
+```
+
+Use it to understand relationships among Western conditions, Eastern disease categories, TCM patterns, formulas, acupuncture seeds, medications, and safety flags. Public pages must avoid one-to-one diagnosis translation and must state that pattern differentiation is individualized.
 
 ## Source Policy
 
