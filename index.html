@@ -21,6 +21,7 @@
         <a href="#auricularLibrary">Auricular</a>
         <a href="#pathologyLibrary">Pathology</a>
         <a href="#formulaLibrary">Formulas</a>
+        <a href="#databaseHealth">Health</a>
         <a href="#billingLibrary">Billing</a>
         <a href="#sourceSection">Sources</a>
         <a href="#publicArchitecture">Public Learn</a>
@@ -113,6 +114,56 @@
             <strong>AcuTing Learn 公開文章層</strong>
             <small>把私人知識庫整理成可審核、可引用、可外放的英文教育內容。</small>
           </a>
+        </div>
+      </section>
+
+      <section class="database-health" id="databaseHealth" aria-label="Database health and completion tracking">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Database Health</p>
+            <h2>資料庫完整度追蹤 / Completion Dashboard</h2>
+            <p>把 361 標準經穴、耳穴、董氏奇穴、方劑、病症、病例欄位分開追蹤。這一區用來決定每天最該補哪一批資料，而不是靠感覺亂補。</p>
+          </div>
+          <span class="data-pill" id="auditGeneratedOn">audit</span>
+        </div>
+        <div class="health-summary-grid">
+          <article class="health-summary-card">
+            <span id="healthStandardCount">--</span>
+            <strong>Standard points present</strong>
+            <small>WHO/NCCAOM 14-channel 361 layer</small>
+          </article>
+          <article class="health-summary-card warning">
+            <span id="healthMissingCount">--</span>
+            <strong>Missing standard points</strong>
+            <small id="healthNextBatch">Next batch: --</small>
+          </article>
+          <article class="health-summary-card">
+            <span id="healthCompletionPercent">--</span>
+            <strong>Completion</strong>
+            <small>Visible local database coverage</small>
+          </article>
+          <article class="health-summary-card">
+            <span>0</span>
+            <strong>Images embedded</strong>
+            <small>Images intentionally removed; use source links first</small>
+          </article>
+        </div>
+        <div class="health-progress-panel">
+          <div class="mini-heading">
+            <strong>Channel Completion / 經絡完整度</strong>
+            <span>綠色代表已完整；黃色代表下一批補資料的優先區。先補缺漏多的 KI、PC、TE、GB、LR、CV、GV。</span>
+          </div>
+          <div class="health-channel-list" id="healthChannelList"></div>
+        </div>
+        <div class="health-action-grid">
+          <div>
+            <strong>Next content task</strong>
+            <span id="healthNextTask">依缺口表建立下一批穴位草稿。</span>
+          </div>
+          <div>
+            <strong>Public-ready rule</strong>
+            <span>新增內容先標 draft，定位、英文、安全與來源交叉確認後才標 source_checked / public_ready。</span>
+          </div>
         </div>
       </section>
 

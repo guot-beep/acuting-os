@@ -2,6 +2,28 @@ const STORAGE_KEY = "acupoint-atlas-v1";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 
+const standardChannelAudit = {
+  generatedOn: "2026-06-16",
+  expectedTotal: 361,
+  nextRecommendedBatch: "KI1-KI27",
+  channels: [
+    { code: "LU", name: "Lung", expected: 11 },
+    { code: "LI", name: "Large Intestine", expected: 20 },
+    { code: "ST", name: "Stomach", expected: 45 },
+    { code: "SP", name: "Spleen", expected: 21 },
+    { code: "HT", name: "Heart", expected: 9 },
+    { code: "SI", name: "Small Intestine", expected: 19 },
+    { code: "BL", name: "Bladder", expected: 67 },
+    { code: "KI", name: "Kidney", expected: 27 },
+    { code: "PC", name: "Pericardium", expected: 9 },
+    { code: "TE", name: "Triple Energizer", expected: 23 },
+    { code: "GB", name: "Gallbladder", expected: 44 },
+    { code: "LR", name: "Liver", expected: 14 },
+    { code: "CV", name: "Conception Vessel", expected: 24 },
+    { code: "GV", name: "Governing Vessel", expected: 28 }
+  ]
+};
+
 const starterPoints = [
   {
     code: "LI4",
@@ -5161,6 +5183,13 @@ const missingCountEl = document.querySelector("#missingCount");
 const acupunctureProgressEl = document.querySelector("#acupunctureProgress");
 const caseProgressEl = document.querySelector("#caseProgress");
 const caseCountEl = document.querySelector("#caseCount");
+const auditGeneratedOnEl = document.querySelector("#auditGeneratedOn");
+const healthStandardCountEl = document.querySelector("#healthStandardCount");
+const healthMissingCountEl = document.querySelector("#healthMissingCount");
+const healthCompletionPercentEl = document.querySelector("#healthCompletionPercent");
+const healthNextBatchEl = document.querySelector("#healthNextBatch");
+const healthNextTaskEl = document.querySelector("#healthNextTask");
+const healthChannelListEl = document.querySelector("#healthChannelList");
 const directoryTotalEl = document.querySelector("#directoryTotal");
 const caseSearch = document.querySelector("#caseSearch");
 const homeSearch = document.querySelector("#homeSearch");
@@ -5456,6 +5485,7 @@ function render() {
   updateContentModeUI();
   hydrateFilters();
   renderOsStatus();
+  renderDatabaseHealth();
   renderClinicalCases();
   renderDirectoryFilters();
   const filtered = getFilteredPoints();
@@ -5472,13 +5502,64 @@ function render() {
 }
 
 function renderOsStatus() {
-  const standardCount = points.filter(isStandardChannelPoint).length;
-  const missingCount = Math.max(0, 361 - standardCount);
+  const audit = getStandardPointAudit();
+  const standardCount = audit.presentTotal;
+  const missingCount = audit.missingTotal;
   standardCountEl.textContent = String(standardCount);
   missingCountEl.textContent = String(missingCount);
-  acupunctureProgressEl.textContent = `${standardCount}/361 標準經穴`;
+  acupunctureProgressEl.textContent = `${standardCount}/${standardChannelAudit.expectedTotal} 標準經穴`;
   caseCountEl.textContent = String(clinicalCases.length);
   caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
+}
+
+function renderDatabaseHealth() {
+  const audit = getStandardPointAudit();
+  if (auditGeneratedOnEl) auditGeneratedOnEl.textContent = `audit ${standardChannelAudit.generatedOn}`;
+  if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
+  if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);
+  if (healthCompletionPercentEl) healthCompletionPercentEl.textContent = `${audit.completionPercent}%`;
+  if (healthNextBatchEl) healthNextBatchEl.textContent = `Next batch: ${standardChannelAudit.nextRecommendedBatch}`;
+  if (healthNextTaskEl) {
+    const next = audit.channels.find((item) => item.missing > 0);
+    healthNextTaskEl.textContent = next
+      ? `先補 ${next.code} ${next.name}：缺 ${next.missing} / ${next.expected} 個穴位。`
+      : "361 標準經穴已完整，下一步改做來源審核與英文 public-ready。";
+  }
+  if (!healthChannelListEl) return;
+  healthChannelListEl.innerHTML = audit.channels.map((item) => {
+    const status = item.missing === 0 ? "complete" : item.percent >= 50 ? "partial" : "priority";
+    return `
+      <article class="health-channel-row ${status}">
+        <div>
+          <strong>${escapeHtml(item.code)}</strong>
+          <span>${escapeHtml(item.name)}</span>
+        </div>
+        <div class="health-bar" aria-label="${escapeAttribute(item.code)} completion">
+          <i style="width: ${item.percent}%"></i>
+        </div>
+        <small>${item.present}/${item.expected} · missing ${item.missing}</small>
+      </article>
+    `;
+  }).join("");
+}
+
+function getStandardPointAudit() {
+  const standardCodes = new Set(points.filter(isStandardChannelPoint).map((point) => point.code));
+  const channels = standardChannelAudit.channels.map((channel) => {
+    const present = Array.from(standardCodes).filter((code) => channelCodeFromPointCode(code) === channel.code).length;
+    const missing = Math.max(0, channel.expected - present);
+    const percent = Math.min(100, Math.round((present / channel.expected) * 100));
+    return { ...channel, present, missing, percent };
+  });
+  const presentTotal = channels.reduce((sum, item) => sum + item.present, 0);
+  const missingTotal = Math.max(0, standardChannelAudit.expectedTotal - presentTotal);
+  const completionPercent = Math.min(100, Math.round((presentTotal / standardChannelAudit.expectedTotal) * 100));
+  return { channels, presentTotal, missingTotal, completionPercent };
+}
+
+function channelCodeFromPointCode(code) {
+  const match = String(code || "").match(/^[A-Z]+/);
+  return match ? match[0] : "";
 }
 
 function isStandardChannelPoint(point) {
