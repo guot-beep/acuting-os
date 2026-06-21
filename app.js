@@ -71,6 +71,35 @@ const standardPointPlaceholders = standardChannelAudit.channels.flatMap((channel
   Array.from({ length: channel.expected }, (_, index) => standardPointPlaceholder(`${channel.code}${index + 1}`))
 );
 
+const tungIndexRecords = globalThis.ACUTING_TUNG_INDEX?.points || [];
+
+function tungIndexPoint(record) {
+  return {
+    code: record.code,
+    standardCode: record.display_code,
+    nameZh: record.name_zh || record.name_en,
+    nameEn: record.name_en,
+    pinyin: record.pinyin || record.name_en,
+    meridian: `Master Tung / 董氏奇穴`,
+    region: `${record.zone_zh || record.zone_en} · ${record.region_zh || record.region_en}`,
+    location: record.location_zh || "待依專業來源補入。",
+    locationEn: record.location_en || "Pending source review.",
+    cunMeasurement: "Pending source review.",
+    functions: (record.traditional_functions_zh || ["待補"]).join("、"),
+    functionsEn: record.traditional_functions_en || ["Pending source review"],
+    patterns: record.indications_zh || ["待補"],
+    patternsEn: record.indications_en || ["Pending source review"],
+    evidence: "Master Tung index-only record created from the public eLotus/Master Tung navigation list. Location, indications, Dao Ma grouping, needling and safety remain pending source review.",
+    cautions: (record.contraindications || []).join(" ") || "Index-only draft. Do not use clinically until source-checked.",
+    reviewStatus: record.review_status || "index_only",
+    sources: record.source_urls || ["https://www.mastertungacupuncture.org/"],
+    x: record.x || 180,
+    y: record.y || 320
+  };
+}
+
+const tungPointIndex = tungIndexRecords.map(tungIndexPoint);
+
 const starterPoints = [
   {
     code: "LI4",
@@ -5663,7 +5692,7 @@ const auricularPoints = [
 ];
 
 const sourceByCode = Object.fromEntries(
-  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints)])]
+  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints, tungPointIndex)])]
     .map((code) => [code, ["https://www.acupoints.org/", "https://cloudtcm.com/acupoint"]])
 );
 
@@ -5671,7 +5700,7 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints));
+const defaultPoints = enrichPoints(mergeByCode(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints, tungPointIndex));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";
@@ -6137,7 +6166,11 @@ function channelCodeFromPointCode(code) {
 }
 
 function isStandardChannelPoint(point) {
-  return !isAuricularPoint(point) && !String(point.meridian || "").includes("Extra Point") && !String(point.code || "").startsWith("EX-");
+  return Boolean(channelPrefixMeta[channelCodeFromPointCode(point.code)])
+    && !isAuricularPoint(point)
+    && !String(point.meridian || "").includes("Extra Point")
+    && !String(point.meridian || "").includes("Master Tung")
+    && !String(point.code || "").startsWith("EX-");
 }
 
 function isReviewedStandardChannelPoint(point) {
