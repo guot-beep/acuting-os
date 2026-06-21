@@ -965,7 +965,8 @@ footer {
   align-items: start;
   display: grid;
   gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) 250px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  min-width: 0;
 }
 
 .point-article {
@@ -983,6 +984,7 @@ footer {
   overflow: hidden;
   padding: 1.2rem;
   position: relative;
+  min-width: 0;
 }
 
 .hero-watermark {
@@ -1000,8 +1002,13 @@ footer {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+  min-width: 0;
   position: relative;
   z-index: 1;
+}
+
+.point-hero-top > div:first-child {
+  min-width: 0;
 }
 
 .hero-badges {
@@ -1024,17 +1031,20 @@ footer {
   font-size: 2.2rem;
   line-height: 1.08;
   margin-bottom: 0.35rem;
+  overflow-wrap: anywhere;
 }
 
 .point-hero-card p {
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .hero-actions {
   display: grid;
   gap: 0.45rem;
   justify-items: end;
+  max-width: 150px;
 }
 
 .hero-actions a,
@@ -1074,7 +1084,7 @@ footer {
 .hero-fact-grid {
   display: grid;
   gap: 0.7rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   margin-top: 1.35rem;
   position: relative;
   z-index: 1;
@@ -1087,6 +1097,7 @@ footer {
   display: grid;
   gap: 0.28rem;
   min-height: 112px;
+  min-width: 0;
   padding: 0.75rem;
 }
 
@@ -1100,6 +1111,7 @@ footer {
   color: #fff;
   font-size: 1rem;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .hero-fact-grid small {
@@ -1185,6 +1197,7 @@ button.pairing-row:hover {
 .point-sidebar {
   display: grid;
   gap: 0.85rem;
+  min-width: 0;
   position: sticky;
   top: 98px;
 }
@@ -1194,6 +1207,7 @@ button.pairing-row:hover {
   border: 1px solid #dfece4;
   border-radius: 8px;
   padding: 0.9rem;
+  min-width: 0;
 }
 
 .sidebar-box h3 {
@@ -1213,6 +1227,7 @@ button.pairing-row:hover {
   display: flex;
   gap: 0.5rem;
   justify-content: space-between;
+  min-width: 0;
   padding: 0.58rem 0;
   text-align: left;
   width: 100%;
@@ -1228,12 +1243,16 @@ button.pairing-row:hover {
 
 .sidebar-box strong {
   color: #8c4c70;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .sidebar-box span,
 .sidebar-box p {
   color: #6f8078;
   font-size: 0.86rem;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 .empty-detail {
@@ -2607,11 +2626,39 @@ footer {
   .os-dashboard {
     grid-template-columns: 1fr;
   }
+
+  .point-study-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .point-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    position: static;
+  }
+
+  .hero-actions {
+    max-width: none;
+  }
 }
 
 @media (max-width: 860px) {
   .hero-search {
     display: grid;
+  }
+
+  .point-hero-top {
+    display: grid;
+  }
+
+  .hero-actions {
+    justify-items: stretch;
+    width: 100%;
+  }
+
+  .hero-edit-btn,
+  .hero-actions a {
+    width: 100%;
   }
 }
 
@@ -2833,6 +2880,7 @@ footer {
 
   .point-sidebar {
     position: static;
+    grid-template-columns: 1fr;
   }
 
   .point-hero-top {
