@@ -2,8 +2,8 @@
   "generated_on": "2026-06-16",
   "scope": "WHO/NCCAOM standard 14-channel 361 acupoints only; auricular and extra points tracked separately.",
   "total_expected": 361,
-  "total_present": 210,
-  "total_missing": 151,
+  "total_present": 235,
+  "total_missing": 126,
   "channels": {
     "LU": {
       "expected_count": 11,
@@ -255,17 +255,15 @@
     },
     "KI": {
       "expected_count": 27,
-      "present_count": 2,
-      "missing_count": 25,
+      "present_count": 27,
+      "missing_count": 0,
       "present": [
-        "KI3",
-        "KI6"
-      ],
-      "missing": [
         "KI1",
         "KI2",
+        "KI3",
         "KI4",
         "KI5",
+        "KI6",
         "KI7",
         "KI8",
         "KI9",
@@ -287,7 +285,8 @@
         "KI25",
         "KI26",
         "KI27"
-      ]
+      ],
+      "missing": []
     },
     "PC": {
       "expected_count": 9,
@@ -490,5 +489,5 @@
     "EX-HN3",
     "EX-HN5"
   ],
-  "next_recommended_batch": "KI1-KI27"
+  "next_recommended_batch": "PC1-PC9"
 }
