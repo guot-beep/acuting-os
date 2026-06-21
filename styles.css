@@ -1048,6 +1048,7 @@ footer {
 }
 
 .hero-actions a,
+.hero-copy-btn,
 .hero-edit-btn {
   background: #d49f32;
   border: 0;
@@ -1072,12 +1073,20 @@ footer {
   box-shadow: none;
 }
 
+.hero-copy-btn {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+
 .hero-actions a:hover,
+.hero-copy-btn:hover,
 .hero-edit-btn:hover {
   background: #bf8828;
 }
 
-.hero-actions a.chinese:hover {
+.hero-actions a.chinese:hover,
+.hero-copy-btn:hover {
   background: rgba(255, 255, 255, 0.24);
 }
 
@@ -2657,6 +2666,7 @@ footer {
   }
 
   .hero-edit-btn,
+  .hero-copy-btn,
   .hero-actions a {
     width: 100%;
   }

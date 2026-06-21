@@ -24,6 +24,53 @@ const standardChannelAudit = {
   ]
 };
 
+const channelPrefixMeta = {
+  LU: { meridian: "Lung / 肺經", region: "待補", x: 100, y: 200 },
+  LI: { meridian: "Large Intestine / 大腸經", region: "待補", x: 80, y: 250 },
+  ST: { meridian: "Stomach / 胃經", region: "待補", x: 220, y: 320 },
+  SP: { meridian: "Spleen / 脾經", region: "待補", x: 140, y: 440 },
+  HT: { meridian: "Heart / 心經", region: "待補", x: 82, y: 260 },
+  SI: { meridian: "Small Intestine / 小腸經", region: "待補", x: 68, y: 270 },
+  BL: { meridian: "Bladder / 膀胱經", region: "待補", x: 150, y: 360 },
+  KI: { meridian: "Kidney / 腎經", region: "待補", x: 150, y: 430 },
+  PC: { meridian: "Pericardium / 心包經", region: "待補", x: 58, y: 250 },
+  TE: { meridian: "Triple Energizer / 三焦經", region: "待補", x: 64, y: 250 },
+  GB: { meridian: "Gallbladder / 膽經", region: "待補", x: 228, y: 320 },
+  LR: { meridian: "Liver / 肝經", region: "待補", x: 230, y: 540 },
+  CV: { meridian: "Conception Vessel / 任脈", region: "前正中線", x: 180, y: 330 },
+  GV: { meridian: "Governing Vessel / 督脈", region: "後正中線", x: 180, y: 220 }
+};
+
+function standardPointPlaceholder(code) {
+  const prefix = channelCodeFromPointCode(code);
+  const meta = channelPrefixMeta[prefix] || { meridian: "Standard Channel / 標準經穴", region: "待補", x: 180, y: 320 };
+  return {
+    code,
+    nameZh: code,
+    nameEn: code,
+    pinyin: code,
+    meridian: meta.meridian,
+    region: meta.region,
+    location: "待依 WHO Standard Acupuncture Point Locations 與專業教材補入。",
+    locationEn: "Pending source review against WHO Standard Acupuncture Point Locations and professional textbooks.",
+    cunMeasurement: "Pending source review.",
+    functions: "待補。",
+    functionsEn: ["Pending source review"],
+    patterns: ["待補"],
+    patternsEn: ["Pending source review"],
+    evidence: "Placeholder page created so every standard channel point has an individual AcuTing OS record. Do not use as a clinical location until source_checked.",
+    cautions: "Draft placeholder. Needling depth, angle, contraindications, and anatomical safety notes are pending professional source review.",
+    reviewStatus: "placeholder",
+    sources: standardPointSources(code),
+    x: meta.x,
+    y: meta.y
+  };
+}
+
+const standardPointPlaceholders = standardChannelAudit.channels.flatMap((channel) =>
+  Array.from({ length: channel.expected }, (_, index) => standardPointPlaceholder(`${channel.code}${index + 1}`))
+);
+
 const starterPoints = [
   {
     code: "LI4",
@@ -5616,7 +5663,7 @@ const auricularPoints = [
 ];
 
 const sourceByCode = Object.fromEntries(
-  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints)])]
+  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints)])]
     .map((code) => [code, ["https://www.acupoints.org/", "https://cloudtcm.com/acupoint"]])
 );
 
@@ -5624,7 +5671,7 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints));
+const defaultPoints = enrichPoints(mergeByCode(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";
@@ -5633,6 +5680,7 @@ let clinicalCases = loadClinicalCases();
 let selectedCaseId = clinicalCases[0]?.id || "";
 let editingCaseId = null;
 let editingSoapId = null;
+let isSyncingPointHash = false;
 
 const searchInput = document.querySelector("#searchInput");
 const meridianFilter = document.querySelector("#meridianFilter");
@@ -5813,6 +5861,7 @@ soapForm.addEventListener("submit", saveSoapFromForm);
 deleteCaseBtn.addEventListener("click", deleteCurrentCase);
 deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
 caseSearch.addEventListener("input", renderClinicalCases);
+window.addEventListener("hashchange", handlePointHashChange);
 
 [searchInput, meridianFilter, regionFilter, patternFilter].forEach((el) => {
   el.addEventListener("input", () => {
@@ -5822,6 +5871,7 @@ caseSearch.addEventListener("input", renderClinicalCases);
   });
 });
 
+applyPointHash();
 render();
 
 function setContentMode(mode) {
@@ -5895,6 +5945,33 @@ function runHomeSearch() {
   searchInput.value = query;
   document.querySelector("#acupointDirectory").scrollIntoView({ behavior: "smooth", block: "start" });
   render();
+}
+
+function pointHash(code) {
+  return `#point/${encodeURIComponent(code)}`;
+}
+
+function codeFromPointHash() {
+  const match = window.location.hash.match(/^#point\/(.+)$/);
+  return match ? decodeURIComponent(match[1]) : "";
+}
+
+function applyPointHash() {
+  const code = codeFromPointHash();
+  if (!code) return false;
+  const point = points.find((item) => item.code.toLowerCase() === code.toLowerCase());
+  if (!point) return false;
+  selectedCode = point.code;
+  searchInput.value = point.code;
+  if (isAuricularPoint(point)) modelView = "ear";
+  return true;
+}
+
+function handlePointHashChange() {
+  if (isSyncingPointHash) return;
+  if (!applyPointHash()) return;
+  render();
+  document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function loadClinicalCases() {
@@ -6041,7 +6118,7 @@ function renderDatabaseHealth() {
 }
 
 function getStandardPointAudit() {
-  const standardCodes = new Set(points.filter(isStandardChannelPoint).map((point) => point.code));
+  const standardCodes = new Set(points.filter(isReviewedStandardChannelPoint).map((point) => point.code));
   const channels = standardChannelAudit.channels.map((channel) => {
     const present = Array.from(standardCodes).filter((code) => channelCodeFromPointCode(code) === channel.code).length;
     const missing = Math.max(0, channel.expected - present);
@@ -6061,6 +6138,10 @@ function channelCodeFromPointCode(code) {
 
 function isStandardChannelPoint(point) {
   return !isAuricularPoint(point) && !String(point.meridian || "").includes("Extra Point") && !String(point.code || "").startsWith("EX-");
+}
+
+function isReviewedStandardChannelPoint(point) {
+  return isStandardChannelPoint(point) && point.reviewStatus !== "placeholder";
 }
 
 function hydrateFilters() {
@@ -7127,6 +7208,7 @@ function renderDetail(point) {
             </div>
             <div class="hero-actions">
               ${sourceLinks.map((link) => `<a class="${escapeAttribute(link.kind)}" href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
+              <button class="hero-copy-btn" type="button" id="copyPointLinkBtn">${contentMode === "english" ? "Copy page link" : "複製分頁連結"}</button>
               <button class="hero-edit-btn" type="button" id="editBtn">${contentMode === "english" ? "Edit" : "編輯資料"}</button>
             </div>
           </div>
@@ -7161,6 +7243,7 @@ function renderDetail(point) {
     </div>
   `;
   document.querySelector("#editBtn").addEventListener("click", () => openEditor(point));
+  document.querySelector("#copyPointLinkBtn")?.addEventListener("click", () => copyPointLink(point));
   detailCard.querySelectorAll("[data-related-point]").forEach((button) => {
     button.addEventListener("click", () => selectPoint(button.dataset.relatedPoint));
   });
@@ -7174,6 +7257,21 @@ function heroFact(title, value, detail) {
       <small>${escapeHtml(detail || "")}</small>
     </article>
   `;
+}
+
+function copyPointLink(point) {
+  const url = `${window.location.origin}${window.location.pathname}${pointHash(point.code)}`;
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      const button = document.querySelector("#copyPointLinkBtn");
+      if (!button) return;
+      const original = button.textContent;
+      button.textContent = contentMode === "english" ? "Copied" : "已複製";
+      setTimeout(() => { button.textContent = original; }, 1200);
+    }).catch(() => alert(url));
+    return;
+  }
+  alert(url);
 }
 
 function studySection(title, body, tone = "book") {
@@ -7726,6 +7824,11 @@ function selectPoint(code) {
   if (selected && isAuricularPoint(selected)) {
     modelView = "ear";
     updateViewTabs();
+  }
+  if (selected && window.location.hash !== pointHash(selected.code)) {
+    isSyncingPointHash = true;
+    window.location.hash = pointHash(selected.code);
+    isSyncingPointHash = false;
   }
   render();
   detailCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
