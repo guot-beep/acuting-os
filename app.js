@@ -5385,7 +5385,30 @@ function runHomeSearch() {
       ...item.westernConditions,
       ...item.easternDiseases,
       ...item.tcmPatterns,
-      ...item.soapNotes.flatMap((note) => [note.subjective, note.assessment, note.pointsUsed, note.formulaHerbs, note.westernMeds])
+      ...item.safetyFlags,
+      ...item.soapNotes.flatMap((note) => [
+        note.workflowLink,
+        note.cyclePhase,
+        note.fertilityPhase,
+        note.subjective,
+        note.objective,
+        note.assessment,
+        note.plan,
+        note.pointsUsed,
+        note.formulaHerbs,
+        note.westernMeds,
+        note.outcomes,
+        note.followUp,
+        note.technique,
+        ...note.westernConditionLinks,
+        ...note.easternDiseaseLinks,
+        ...note.tcmPatternLinks,
+        ...note.safetyFlagLinks,
+        ...note.acupointLinks,
+        ...note.formulaLinks,
+        ...note.medicationLinks,
+        ...note.outcomeMetricLinks
+      ])
     ].join(" ").toLowerCase();
     return haystack.includes(query.toLowerCase());
   });
