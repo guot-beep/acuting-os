@@ -100,6 +100,53 @@ function tungIndexPoint(record) {
 
 const tungPointIndex = tungIndexRecords.map(tungIndexPoint);
 
+const auricularGb93 = globalThis.ACUTING_AURICULAR_GB93 || {};
+const auricularGb93Records = auricularGb93.points || [];
+const auricularGb93Zones = auricularGb93.zones || {};
+
+const auricularZonePositions = {
+  HX: { x: 166, y: 72 },
+  AH: { x: 134, y: 168 },
+  SC: { x: 92, y: 180 },
+  TF: { x: 142, y: 126 },
+  TG: { x: 224, y: 238 },
+  AT: { x: 174, y: 296 },
+  CO: { x: 158, y: 246 },
+  LO: { x: 170, y: 418 }
+};
+
+function auricularGb93Point(record) {
+  const zone = auricularGb93Zones[record.zone] || {};
+  const position = auricularZonePositions[record.zone] || { x: 178, y: 250 };
+  const zoneLabelZh = zone.zh || record.zone || "耳廓";
+  const zoneLabelEn = zone.en || record.zone || "Auricle";
+  return {
+    code: record.code,
+    standardCode: record.code,
+    nameZh: record.name_zh || record.code,
+    nameEn: record.name_en || record.code,
+    pinyin: record.code,
+    meridian: "Auricular / 耳穴",
+    region: "耳穴",
+    standardRegion: `${zoneLabelZh} / ${zoneLabelEn}`,
+    location: record.location_zh || `GB93 耳穴索引：${zoneLabelZh}區。待依專業來源補入精確定位。`,
+    locationEn: record.location_en || `GB93 auricular index: ${zoneLabelEn}. Precise location pending source review.`,
+    cunMeasurement: "Auricular regional point. Cun measurement is not used.",
+    functions: (record.indications_zh || ["待校對"]).join("、"),
+    functionsEn: record.indications_en || ["Pending source review"],
+    patterns: record.indications_zh || ["待校對"],
+    patternsEn: record.indications_en || ["Pending source review"],
+    evidence: "GB/T 13734-2008 auricular index scaffold. Use this page as a navigation placeholder until location, indications, needling method and cautions are source-checked.",
+    cautions: "Index-only draft. Do not use clinically until source-checked against auricular acupuncture references.",
+    reviewStatus: record.review_status || "index_only",
+    sources: record.source_urls || auricularGb93.sources || [],
+    x: record.x || position.x,
+    y: record.y || position.y
+  };
+}
+
+const auricularGb93Index = auricularGb93Records.map(auricularGb93Point);
+
 const starterPoints = [
   {
     code: "LI4",
@@ -5692,7 +5739,7 @@ const auricularPoints = [
 ];
 
 const sourceByCode = Object.fromEntries(
-  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints, tungPointIndex)])]
+  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularGb93Index, auricularPoints, tungPointIndex)])]
     .map((code) => [code, ["https://www.acupoints.org/", "https://cloudtcm.com/acupoint"]])
 );
 
@@ -5700,7 +5747,7 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularPoints, tungPointIndex));
+const defaultPoints = enrichPoints(mergeByCode(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularGb93Index, auricularPoints, tungPointIndex));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";
@@ -7082,7 +7129,10 @@ function projectEarPoint(point) {
 }
 
 function isAuricularPoint(point) {
-  return point.meridian === "Auricular / 耳穴" || point.region === "耳穴" || point.code.startsWith("EAR-") || /^A[A-Z]\d+/i.test(point.code);
+  return point.meridian === "Auricular / 耳穴"
+    || point.region === "耳穴"
+    || point.code.startsWith("EAR-")
+    || /^(HX|AH|SC|TF|TG|AT|CO|LO)\d+/i.test(point.code);
 }
 
 function projectBackPoint(point) {
