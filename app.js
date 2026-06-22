@@ -5892,7 +5892,8 @@ const directoryTopics = [
   { id: "tonify", zh: "補虛扶正", en: "Tonification", keywords: ["虛", "補", "氣血", "扶正", "tonify", "deficiency", "qi", "blood"] },
   { id: "needs_review", zh: "待校對資料", en: "Needs Review", match: (point) => point.reviewStatus === "placeholder" || point.reviewStatus === "index_only" },
   { id: "tung_index", zh: "董氏奇穴索引", en: "Master Tung Index", match: (point) => String(point.meridian || "").includes("Master Tung") },
-  { id: "auricular_index", zh: "耳穴索引", en: "Auricular Index", match: (point) => isAuricularPoint(point) }
+  { id: "auricular_index", zh: "耳穴索引", en: "Auricular Index", match: (point) => isAuricularPoint(point) },
+  { id: "missing_visual", zh: "缺圖像連結", en: "Missing Visual Link", match: (point) => normalizeVisualLinks(point.visualLinks || []).length === 0 }
 ];
 
 const earAnatomyLabelData = [
