@@ -2156,7 +2156,7 @@ button:hover,
 .health-summary-grid {
   display: grid;
   gap: 0.72rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 }
 
 .health-summary-card {
@@ -2193,7 +2193,7 @@ button:hover,
 .health-quality-grid {
   display: grid;
   gap: 0.72rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   margin-top: 0.8rem;
 }
 

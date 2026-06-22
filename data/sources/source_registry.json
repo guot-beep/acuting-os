@@ -67,6 +67,30 @@
       "notes": "Use as a professional English architecture reference for public AcuTing Learn. Do not copy full point articles or premium/course content. Public pages must be rewritten and checked against professional sources."
     },
     {
+      "id": "acupun_gb93_auricular_visual",
+      "name": "GB93 auricular point visual reference",
+      "url": "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4",
+      "layer": "auricular_visual_reference",
+      "source_group": "A_acupoints",
+      "language": "zh-Hant",
+      "authority": 3,
+      "primary_use": ["auricular point code lookup", "external visual reference links", "auricular regional orientation"],
+      "fields_to_extract": ["point_code", "chinese_name", "auricular_region", "visual_source_url"],
+      "notes": "Use as external visual links only. Do not download or embed images. Cross-check point names, regions, and indications before marking source_checked."
+    },
+    {
+      "id": "a_hospital_auricular_overview",
+      "name": "A+ 醫學百科耳針療法",
+      "url": "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95",
+      "layer": "auricular_chinese_overview",
+      "source_group": "A_acupoints",
+      "language": "zh-Hant",
+      "authority": 3,
+      "primary_use": ["auricular overview", "Chinese auricular terminology", "ear region organization", "external source links"],
+      "fields_to_extract": ["ear_region", "point_name_zh", "overview_note", "source_url"],
+      "notes": "Use for Chinese comparison and broad auricular organization. Not a sole clinical authority."
+    },
+    {
       "id": "bastyr_materials",
       "name": "Bastyr course materials and clinic teaching notes",
       "layer": "school_clinic",

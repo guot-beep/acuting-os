@@ -5850,6 +5850,7 @@ const healthReviewedStandardEl = document.querySelector("#healthReviewedStandard
 const healthPlaceholderStandardEl = document.querySelector("#healthPlaceholderStandard");
 const healthTungIndexEl = document.querySelector("#healthTungIndex");
 const healthAuricularIndexEl = document.querySelector("#healthAuricularIndex");
+const healthVisualCoverageEl = document.querySelector("#healthVisualCoverage");
 const directoryTotalEl = document.querySelector("#directoryTotal");
 const caseSearch = document.querySelector("#caseSearch");
 const homeSearch = document.querySelector("#homeSearch");
@@ -6283,6 +6284,7 @@ function renderDatabaseHealth() {
   if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.placeholderStandard);
   if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
   if (healthAuricularIndexEl) healthAuricularIndexEl.textContent = String(quality.auricular);
+  if (healthVisualCoverageEl) healthVisualCoverageEl.textContent = `${quality.visualLinked}/${quality.total}`;
   if (healthNextBatchEl) healthNextBatchEl.textContent = `Next batch: ${standardChannelAudit.nextRecommendedBatch}`;
   if (healthNextTaskEl) {
     const next = audit.channels.find((item) => item.missing > 0);
@@ -6310,11 +6312,14 @@ function renderDatabaseHealth() {
 
 function getDataQualityAudit() {
   const standard = points.filter(isStandardChannelPoint);
+  const visualLinked = points.filter((point) => normalizeVisualLinks(point.visualLinks || []).length > 0).length;
   return {
+    total: points.length,
     reviewedStandard: standard.filter((point) => point.reviewStatus !== "placeholder").length,
     placeholderStandard: standard.filter((point) => point.reviewStatus === "placeholder").length,
     tungIndex: points.filter((point) => String(point.meridian || "").includes("Master Tung")).length,
-    auricular: points.filter(isAuricularPoint).length
+    auricular: points.filter(isAuricularPoint).length,
+    visualLinked
   };
 }
 
