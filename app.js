@@ -62,6 +62,7 @@ function standardPointPlaceholder(code) {
     cautions: "Draft placeholder. Needling depth, angle, contraindications, and anatomical safety notes are pending professional source review.",
     reviewStatus: "placeholder",
     sources: standardPointSources(code),
+    visualLinks: standardPointVisualLinks(code),
     x: meta.x,
     y: meta.y
   };
@@ -93,6 +94,7 @@ function tungIndexPoint(record) {
     cautions: (record.contraindications || []).join(" ") || "Index-only draft. Do not use clinically until source-checked.",
     reviewStatus: record.review_status || "index_only",
     sources: record.source_urls || ["https://www.mastertungacupuncture.org/"],
+    visualLinks: tungPointVisualLinks(record),
     x: record.x || 180,
     y: record.y || 320
   };
@@ -140,6 +142,7 @@ function auricularGb93Point(record) {
     cautions: "Index-only draft. Do not use clinically until source-checked against auricular acupuncture references.",
     reviewStatus: record.review_status || "index_only",
     sources: record.source_urls || auricularGb93.sources || [],
+    visualLinks: auricularPointVisualLinks(record.code),
     x: record.x || position.x,
     y: record.y || position.y
   };
@@ -1381,6 +1384,61 @@ const largeIntestineMeridianExpansion = [
 
 function standardPointSources(code) {
   return [`https://www.acupoints.org/${String(code).toLowerCase()}-acupuncture-point/`, "https://cloudtcm.com/acupoint"];
+}
+
+function standardPointVisualLinks(code) {
+  const normalized = String(code || "").toLowerCase();
+  return [
+    {
+      labelZh: "AcuPoints 英文定位圖",
+      labelEn: "AcuPoints location image",
+      url: `https://www.acupoints.org/${normalized}-acupuncture-point/`,
+      source: "AcuPoints.org"
+    },
+    {
+      labelZh: "CloudTCM 中文穴位圖",
+      labelEn: "CloudTCM Chinese point page",
+      url: "https://cloudtcm.com/acupoint",
+      source: "CloudTCM"
+    }
+  ];
+}
+
+function auricularPointVisualLinks(code) {
+  const normalized = String(code || "").toUpperCase();
+  const links = [
+    {
+      labelZh: "GB93 耳穴定位圖",
+      labelEn: "GB93 auricular point image",
+      url: `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(normalized)}`,
+      source: "acupun.site"
+    },
+    {
+      labelZh: "耳針療法總覽圖",
+      labelEn: "Auricular therapy overview",
+      url: "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95",
+      source: "A+醫學百科"
+    }
+  ];
+  return links;
+}
+
+function tungPointVisualLinks(record = {}) {
+  const searchTerm = record.name_en || record.display_code || record.code || "Master Tung acupuncture";
+  return [
+    {
+      labelZh: "eLotus / Master Tung 圖文搜尋",
+      labelEn: "eLotus / Master Tung visual search",
+      url: `https://www.mastertungacupuncture.org/?s=${encodeURIComponent(searchTerm)}`,
+      source: "MasterTungAcupuncture.org"
+    },
+    {
+      labelZh: "Master Tung 穴位資料庫",
+      labelEn: "Master Tung point database",
+      url: "https://www.mastertungacupuncture.org/",
+      source: "MasterTungAcupuncture.org"
+    }
+  ];
 }
 
 const stomachMeridianExpansion = [
@@ -6096,7 +6154,52 @@ function enrichPoint(point) {
   const patternsEn = point.patternsEn?.length ? point.patternsEn : (point.patterns || []).map((pattern) => patternEnglishMap[pattern] || "");
   const baseSources = point.sources?.length ? point.sources : sourceByCode[point.code] || [];
   const sources = isAuricularPoint(point) ? [...new Set([...baseSources, ...auricularSupplementSources])] : baseSources;
-  return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources };
+  const visualLinks = normalizeVisualLinks(point.visualLinks?.length ? point.visualLinks : defaultVisualLinks(point));
+  return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources, visualLinks };
+}
+
+function defaultVisualLinks(point) {
+  if (isAuricularPoint(point)) return auricularPointVisualLinks(point.standardCode || point.code);
+  if (String(point.meridian || "").includes("Master Tung")) {
+    return tungPointVisualLinks({ name_en: point.nameEn, display_code: point.standardCode || point.code, code: point.code });
+  }
+  if (isStandardChannelPoint(point)) return standardPointVisualLinks(point.code);
+  return (point.sources || []).map((url) => ({
+    labelZh: "外部圖像/來源頁",
+    labelEn: "External visual/source page",
+    url,
+    source: safeHostname(url)
+  }));
+}
+
+function normalizeVisualLinks(links = []) {
+  return links
+    .map((link) => {
+      if (!link) return null;
+      if (typeof link === "string") {
+        return {
+          labelZh: "外部圖像/來源頁",
+          labelEn: "External visual/source page",
+          url: link,
+          source: safeHostname(link)
+        };
+      }
+      return {
+        labelZh: String(link.labelZh || link.label || "外部圖像/來源頁"),
+        labelEn: String(link.labelEn || link.label || "External visual/source page"),
+        url: String(link.url || ""),
+        source: String(link.source || safeHostname(link.url || ""))
+      };
+    })
+    .filter((link) => link?.url);
+}
+
+function safeHostname(url) {
+  try {
+    return new URL(url, window.location.href).hostname || "external";
+  } catch {
+    return "external";
+  }
 }
 
 function anatomyFromText(point) {
@@ -6405,6 +6508,7 @@ function getFilteredPoints() {
       ...(point.patternsEn || []),
       ...(point.aliases || []),
       ...(point.anatomy || []).flatMap((item) => [item.zh, item.en]),
+      ...(point.visualLinks || []).flatMap((item) => [item.labelZh, item.labelEn, item.url, item.source]),
       ...(point.sources || [])
     ].join(" ").toLowerCase();
 
@@ -7328,6 +7432,7 @@ function renderDetail(point) {
 
         ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
+        ${visualLinksSection(point)}
         ${studySection(contentMode === "english" ? "Indications" : "主治病症", indicationArticle(point), "target")}
         ${pairingSection(pairings)}
         ${studySection(contentMode === "english" ? "Needling and Moxibustion" : "針刺與艾灸", needlingArticle(point), "needle")}
@@ -7389,6 +7494,28 @@ function studySection(title, body, tone = "book") {
   `;
 }
 
+function visualLinksSection(point) {
+  const links = normalizeVisualLinks(point.visualLinks || []);
+  const title = contentMode === "english" ? "Visual References" : "圖像參考";
+  if (!links.length) return studySection(title, contentMode === "english" ? "No visual reference links yet." : "尚未建立外部圖像連結。", "visual");
+  return `
+    <section class="study-section visual">
+      <h3>${escapeHtml(sectionIcon("visual"))} ${escapeHtml(title)}</h3>
+      <div class="visual-link-grid">
+        ${links.map((link) => `
+          <a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">
+            <strong>${escapeHtml(contentMode === "english" ? link.labelEn : link.labelZh)}</strong>
+            <span>${escapeHtml(link.source || safeHostname(link.url))}</span>
+          </a>
+        `).join("")}
+      </div>
+      <p class="visual-note">${contentMode === "english"
+        ? "External diagrams open in a new tab. Use them as visual references and verify against professional sources before clinical use."
+        : "外部圖會在新分頁開啟。先作定位參考，臨床使用仍要對照專業教材與安全規範。"}</p>
+    </section>
+  `;
+}
+
 function pairingSection(pairings) {
   const title = contentMode === "english" ? "Common Pairings" : "常用配穴";
   if (!pairings.length) return studySection(title, contentMode === "english" ? "Pairings are pending professional source review." : "待依臨床來源補入常用配穴、功效與適應證。", "link");
@@ -7445,6 +7572,19 @@ function heroSubtitle(point) {
 
 function externalPointLinks(point) {
   const sources = point.sources || [];
+  const visualLinks = normalizeVisualLinks(point.visualLinks || []);
+  if (isAuricularPoint(point)) {
+    const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
+    return contentMode === "english"
+      ? [{ label: "Visual source", url: primary, kind: "english" }]
+      : [{ label: "耳穴圖源", url: primary, kind: "english" }];
+  }
+  if (String(point.meridian || "").includes("Master Tung")) {
+    const primary = visualLinks[0]?.url || sources[0] || "https://www.mastertungacupuncture.org/";
+    return contentMode === "english"
+      ? [{ label: "eLotus source", url: primary, kind: "english" }]
+      : [{ label: "董氏圖源", url: primary, kind: "english" }];
+  }
   const english = sources.find((source) => source.includes("acupoints.org")) || `https://www.acupoints.org/${String(point.code).toLowerCase()}-acupuncture-point/`;
   const chinese = sources.find((source) => source.includes("cloudtcm.com")) || "https://cloudtcm.com/acupoint";
   if (contentMode === "english") {
@@ -7584,6 +7724,7 @@ function sectionIcon(tone) {
     location: "Location",
     target: "Indications",
     link: "Pairings",
+    visual: "Images",
     needle: "Needling",
     research: "Evidence",
     warning: "Cautions",
@@ -7593,6 +7734,7 @@ function sectionIcon(tone) {
     location: "取穴方法",
     target: "主治病症",
     link: "常用配穴",
+    visual: "圖像參考",
     needle: "針刺與艾灸",
     research: "現代研究",
     warning: "注意事項",
@@ -8193,6 +8335,7 @@ function openEditor(point = null) {
     moxibustion: "",
     forbiddenActions: "",
     image: "",
+    visualLinks: [],
     sources: [],
     cautions: "",
     x: 180,
@@ -8205,6 +8348,7 @@ function openEditor(point = null) {
   Object.entries(data).forEach(([key, value]) => {
     if (!form.elements[key]) return;
     if (key === "anatomy") form.elements[key].value = formatAnatomy(value);
+    else if (key === "visualLinks") form.elements[key].value = normalizeVisualLinks(value).map((item) => item.url).join("\n");
     else if (key === "sources") form.elements[key].value = value.join("\n");
     else form.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
@@ -8241,6 +8385,7 @@ function saveFromForm(event) {
     moxibustion: (data.moxibustion || "").trim(),
     forbiddenActions: (data.forbiddenActions || "").trim(),
     image: String(data.image || "").trim(),
+    visualLinks: splitLines(data.visualLinks),
     sources: splitLines(data.sources),
     cautions: data.cautions.trim(),
     x: Number(data.x),
@@ -8341,6 +8486,7 @@ function normalizePoint(point) {
     moxibustion: String(point.moxibustion || ""),
     forbiddenActions: String(point.forbiddenActions || ""),
     image: String(point.image || ""),
+    visualLinks: normalizeVisualLinks(point.visualLinks || []),
     sources: Array.isArray(point.sources) ? point.sources.map(String) : splitLines(String(point.sources || "")),
     cautions: String(point.cautions || ""),
     x: Number(point.x || 180),

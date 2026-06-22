@@ -1203,6 +1203,46 @@ button.pairing-row:hover {
   background: #fff7fb;
 }
 
+.visual-link-grid {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.visual-link-grid a {
+  background: #fbfcfb;
+  border: 1px solid #dfe8e3;
+  border-left: 4px solid #d49f32;
+  border-radius: 8px;
+  color: #213b32;
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+.visual-link-grid a:hover {
+  background: #fff8eb;
+  border-color: #ead8b7;
+}
+
+.visual-link-grid strong {
+  color: #315e40;
+  line-height: 1.35;
+}
+
+.visual-link-grid span,
+.visual-note {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.42;
+}
+
+.visual-note {
+  margin: 0;
+}
+
 .point-sidebar {
   display: grid;
   gap: 0.85rem;
