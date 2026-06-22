@@ -5851,6 +5851,9 @@ const healthPlaceholderStandardEl = document.querySelector("#healthPlaceholderSt
 const healthTungIndexEl = document.querySelector("#healthTungIndex");
 const healthAuricularIndexEl = document.querySelector("#healthAuricularIndex");
 const healthVisualCoverageEl = document.querySelector("#healthVisualCoverage");
+const healthMissingEnglishLocationEl = document.querySelector("#healthMissingEnglishLocation");
+const healthMissingTechniqueEl = document.querySelector("#healthMissingTechnique");
+const healthMissingSafetyEl = document.querySelector("#healthMissingSafety");
 const directoryTotalEl = document.querySelector("#directoryTotal");
 const caseSearch = document.querySelector("#caseSearch");
 const homeSearch = document.querySelector("#homeSearch");
@@ -5893,6 +5896,11 @@ const directoryTopics = [
   { id: "needs_review", zh: "待校對資料", en: "Needs Review", match: (point) => point.reviewStatus === "placeholder" || point.reviewStatus === "index_only" },
   { id: "tung_index", zh: "董氏奇穴索引", en: "Master Tung Index", match: (point) => String(point.meridian || "").includes("Master Tung") },
   { id: "auricular_index", zh: "耳穴索引", en: "Auricular Index", match: (point) => isAuricularPoint(point) },
+  { id: "missing_english_location", zh: "缺英文定位", en: "Missing English Location", match: (point) => isPendingContent(point.locationEn) },
+  { id: "missing_technique", zh: "缺針刺手法", en: "Missing Needling", match: (point) => isMissingTechnique(point) },
+  { id: "missing_safety", zh: "缺禁忌安全", en: "Missing Safety", match: (point) => isPendingContent(point.cautions) },
+  { id: "missing_indications", zh: "缺主治功效", en: "Missing Indications", match: (point) => isMissingIndications(point) },
+  { id: "missing_sources", zh: "缺資料來源", en: "Missing Sources", match: (point) => !(point.sources || []).length },
   { id: "missing_visual", zh: "缺圖像連結", en: "Missing Visual Link", match: (point) => normalizeVisualLinks(point.visualLinks || []).length === 0 }
 ];
 
@@ -6286,6 +6294,9 @@ function renderDatabaseHealth() {
   if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
   if (healthAuricularIndexEl) healthAuricularIndexEl.textContent = String(quality.auricular);
   if (healthVisualCoverageEl) healthVisualCoverageEl.textContent = `${quality.visualLinked}/${quality.total}`;
+  if (healthMissingEnglishLocationEl) healthMissingEnglishLocationEl.textContent = String(quality.missingEnglishLocation);
+  if (healthMissingTechniqueEl) healthMissingTechniqueEl.textContent = String(quality.missingTechnique);
+  if (healthMissingSafetyEl) healthMissingSafetyEl.textContent = String(quality.missingSafety);
   if (healthNextBatchEl) healthNextBatchEl.textContent = `Next batch: ${standardChannelAudit.nextRecommendedBatch}`;
   if (healthNextTaskEl) {
     const next = audit.channels.find((item) => item.missing > 0);
@@ -6320,7 +6331,10 @@ function getDataQualityAudit() {
     placeholderStandard: standard.filter((point) => point.reviewStatus === "placeholder").length,
     tungIndex: points.filter((point) => String(point.meridian || "").includes("Master Tung")).length,
     auricular: points.filter(isAuricularPoint).length,
-    visualLinked
+    visualLinked,
+    missingEnglishLocation: points.filter((point) => isPendingContent(point.locationEn)).length,
+    missingTechnique: points.filter(isMissingTechnique).length,
+    missingSafety: points.filter((point) => isPendingContent(point.cautions)).length
   };
 }
 
@@ -6551,6 +6565,30 @@ function pointMatchesTopic(point, topicId) {
     ...(point.patternsEn || [])
   ].join(" ").toLowerCase();
   return topic.keywords.some((keyword) => haystack.includes(String(keyword).toLowerCase()));
+}
+
+function isPendingContent(value) {
+  const text = String(value || "").trim();
+  if (!text) return true;
+  return /pending|待補|待校對|待依|source review|index-only|placeholder|not yet/i.test(text);
+}
+
+function isMissingTechnique(point) {
+  return [
+    point.techniqueNotes,
+    point.needlingDepth,
+    point.needlingAngle,
+    point.needlingMethod,
+    point.tonificationSedation,
+    point.moxibustion,
+    point.forbiddenActions
+  ].every(isPendingContent);
+}
+
+function isMissingIndications(point) {
+  const functionsMissing = isPendingContent(point.functions) && isPendingContent(point.functionsEn);
+  const patternText = [...(point.patterns || []), ...(point.patternsEn || [])].join(" ");
+  return functionsMissing || isPendingContent(patternText);
 }
 
 function renderMap(filtered) {
