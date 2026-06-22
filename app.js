@@ -5788,6 +5788,10 @@ const healthCompletionPercentEl = document.querySelector("#healthCompletionPerce
 const healthNextBatchEl = document.querySelector("#healthNextBatch");
 const healthNextTaskEl = document.querySelector("#healthNextTask");
 const healthChannelListEl = document.querySelector("#healthChannelList");
+const healthReviewedStandardEl = document.querySelector("#healthReviewedStandard");
+const healthPlaceholderStandardEl = document.querySelector("#healthPlaceholderStandard");
+const healthTungIndexEl = document.querySelector("#healthTungIndex");
+const healthAuricularIndexEl = document.querySelector("#healthAuricularIndex");
 const directoryTotalEl = document.querySelector("#directoryTotal");
 const caseSearch = document.querySelector("#caseSearch");
 const homeSearch = document.querySelector("#homeSearch");
@@ -6164,10 +6168,15 @@ function renderOsStatus() {
 
 function renderDatabaseHealth() {
   const audit = getStandardPointAudit();
+  const quality = getDataQualityAudit();
   if (auditGeneratedOnEl) auditGeneratedOnEl.textContent = `audit ${standardChannelAudit.generatedOn}`;
   if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
   if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);
   if (healthCompletionPercentEl) healthCompletionPercentEl.textContent = `${audit.completionPercent}%`;
+  if (healthReviewedStandardEl) healthReviewedStandardEl.textContent = String(quality.reviewedStandard);
+  if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.placeholderStandard);
+  if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
+  if (healthAuricularIndexEl) healthAuricularIndexEl.textContent = String(quality.auricular);
   if (healthNextBatchEl) healthNextBatchEl.textContent = `Next batch: ${standardChannelAudit.nextRecommendedBatch}`;
   if (healthNextTaskEl) {
     const next = audit.channels.find((item) => item.missing > 0);
@@ -6191,6 +6200,16 @@ function renderDatabaseHealth() {
       </article>
     `;
   }).join("");
+}
+
+function getDataQualityAudit() {
+  const standard = points.filter(isStandardChannelPoint);
+  return {
+    reviewedStandard: standard.filter((point) => point.reviewStatus !== "placeholder").length,
+    placeholderStandard: standard.filter((point) => point.reviewStatus === "placeholder").length,
+    tungIndex: points.filter((point) => String(point.meridian || "").includes("Master Tung")).length,
+    auricular: points.filter(isAuricularPoint).length
+  };
 }
 
 function getStandardPointAudit() {

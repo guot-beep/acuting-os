@@ -2150,6 +2150,39 @@ button:hover,
   line-height: 1.42;
 }
 
+.health-quality-grid {
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 0.8rem;
+}
+
+.health-quality-grid article {
+  background: #fbfcfb;
+  border: 1px solid #dfe8e3;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 0.82rem;
+}
+
+.health-quality-grid span {
+  color: #8c4c70;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.health-quality-grid strong {
+  color: #213b32;
+  font-size: 0.92rem;
+}
+
+.health-quality-grid small {
+  color: var(--muted);
+  line-height: 1.35;
+}
+
 .health-progress-panel {
   background: #f8faf8;
   border: 1px solid #dfe9e5;
@@ -2800,6 +2833,7 @@ footer {
   .library-strip,
   .library-grid,
   .health-summary-grid,
+  .health-quality-grid,
   .health-channel-list,
   .health-action-grid,
   .formula-preview-grid,
