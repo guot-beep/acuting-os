@@ -5830,7 +5830,10 @@ const directoryTopics = [
   { id: "respiratory", zh: "肺系呼吸", en: "Respiratory", keywords: ["咳", "喘", "肺", "鼻塞", "cough", "wheezing", "lung", "asthma", "nasal"] },
   { id: "fertility_gyn", zh: "婦科與生殖", en: "Fertility & Gynecology", keywords: ["月經", "不孕", "子宮", "帶下", "pregnancy", "fertility", "menstrual", "uterus", "gynecology"] },
   { id: "shen_sleep", zh: "神志睡眠", en: "Shen & Sleep", keywords: ["失眠", "神", "心悸", "焦慮", "sleep", "insomnia", "anxiety", "spirit", "palpitation"] },
-  { id: "tonify", zh: "補虛扶正", en: "Tonification", keywords: ["虛", "補", "氣血", "扶正", "tonify", "deficiency", "qi", "blood"] }
+  { id: "tonify", zh: "補虛扶正", en: "Tonification", keywords: ["虛", "補", "氣血", "扶正", "tonify", "deficiency", "qi", "blood"] },
+  { id: "needs_review", zh: "待校對資料", en: "Needs Review", match: (point) => point.reviewStatus === "placeholder" || point.reviewStatus === "index_only" },
+  { id: "tung_index", zh: "董氏奇穴索引", en: "Master Tung Index", match: (point) => String(point.meridian || "").includes("Master Tung") },
+  { id: "auricular_index", zh: "耳穴索引", en: "Auricular Index", match: (point) => isAuricularPoint(point) }
 ];
 
 const earAnatomyLabelData = [
@@ -6423,6 +6426,7 @@ function pointMatchesRegionGroup(point, groupId) {
 function pointMatchesTopic(point, topicId) {
   const topic = directoryTopics.find((item) => item.id === topicId);
   if (!topic) return true;
+  if (topic.match) return topic.match(point);
   const haystack = [
     point.nameZh,
     point.nameEn,
