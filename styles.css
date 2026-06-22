@@ -965,7 +965,7 @@ footer {
   align-items: start;
   display: grid;
   gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+  grid-template-columns: 1fr;
   min-width: 0;
 }
 
@@ -1206,9 +1206,9 @@ button.pairing-row:hover {
 .point-sidebar {
   display: grid;
   gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   min-width: 0;
-  position: sticky;
-  top: 98px;
+  position: static;
 }
 
 .sidebar-box {
@@ -2621,6 +2621,18 @@ footer {
   margin: 0 auto;
 }
 
+@media (min-width: 1280px) {
+  .point-study-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  }
+
+  .point-sidebar {
+    grid-template-columns: 1fr;
+    position: sticky;
+    top: 98px;
+  }
+}
+
 @media (max-width: 1040px) {
   .topbar {
     align-items: start;
@@ -2634,16 +2646,6 @@ footer {
 
   .os-dashboard {
     grid-template-columns: 1fr;
-  }
-
-  .point-study-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .point-sidebar {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    position: static;
   }
 
   .hero-actions {
