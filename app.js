@@ -5850,6 +5850,7 @@ const healthReviewedStandardEl = document.querySelector("#healthReviewedStandard
 const healthPlaceholderStandardEl = document.querySelector("#healthPlaceholderStandard");
 const healthTungIndexEl = document.querySelector("#healthTungIndex");
 const healthAuricularIndexEl = document.querySelector("#healthAuricularIndex");
+const healthAuricularGb93CoverageEl = document.querySelector("#healthAuricularGb93Coverage");
 const healthVisualCoverageEl = document.querySelector("#healthVisualCoverage");
 const healthMissingEnglishLocationEl = document.querySelector("#healthMissingEnglishLocation");
 const healthMissingTechniqueEl = document.querySelector("#healthMissingTechnique");
@@ -5896,6 +5897,7 @@ const directoryTopics = [
   { id: "needs_review", zh: "待校對資料", en: "Needs Review", match: (point) => point.reviewStatus === "placeholder" || point.reviewStatus === "index_only" },
   { id: "tung_index", zh: "董氏奇穴索引", en: "Master Tung Index", match: (point) => String(point.meridian || "").includes("Master Tung") },
   { id: "auricular_index", zh: "耳穴索引", en: "Auricular Index", match: (point) => isAuricularPoint(point) },
+  { id: "auricular_gb93_draft", zh: "GB93待校對", en: "GB93 Drafts", match: (point) => /^(HX|AH|SC|TF|TG|AT|CO|LO)\d+/i.test(point.code) && point.reviewStatus !== "source_checked" },
   { id: "missing_english_location", zh: "缺英文定位", en: "Missing English Location", match: (point) => isPendingContent(point.locationEn) },
   { id: "missing_technique", zh: "缺針刺手法", en: "Missing Needling", match: (point) => isMissingTechnique(point) },
   { id: "missing_safety", zh: "缺禁忌安全", en: "Missing Safety", match: (point) => isPendingContent(point.cautions) },
@@ -6293,6 +6295,7 @@ function renderDatabaseHealth() {
   if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.placeholderStandard);
   if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
   if (healthAuricularIndexEl) healthAuricularIndexEl.textContent = String(quality.auricular);
+  if (healthAuricularGb93CoverageEl) healthAuricularGb93CoverageEl.textContent = `${quality.auricularGb93Indexed}/${quality.auricularGb93Expected}`;
   if (healthVisualCoverageEl) healthVisualCoverageEl.textContent = `${quality.visualLinked}/${quality.total}`;
   if (healthMissingEnglishLocationEl) healthMissingEnglishLocationEl.textContent = String(quality.missingEnglishLocation);
   if (healthMissingTechniqueEl) healthMissingTechniqueEl.textContent = String(quality.missingTechnique);
@@ -6331,6 +6334,8 @@ function getDataQualityAudit() {
     placeholderStandard: standard.filter((point) => point.reviewStatus === "placeholder").length,
     tungIndex: points.filter((point) => String(point.meridian || "").includes("Master Tung")).length,
     auricular: points.filter(isAuricularPoint).length,
+    auricularGb93Indexed: auricularGb93Records.length,
+    auricularGb93Expected: Number(auricularGb93.expected_total || 93),
     visualLinked,
     missingEnglishLocation: points.filter((point) => isPendingContent(point.locationEn)).length,
     missingTechnique: points.filter(isMissingTechnique).length,

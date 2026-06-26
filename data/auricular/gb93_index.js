@@ -2,6 +2,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
   "schema": "acuting.auricular.gb93.index.v1",
   "generated_on": "2026-06-21",
   "status": "index_scaffold",
+  "expected_total": 93,
+  "current_indexed": 10,
   "sources": [
     "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4",
     "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
