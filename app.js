@@ -105,6 +105,8 @@ const tungPointIndex = tungIndexRecords.map(tungIndexPoint);
 const auricularGb93 = globalThis.ACUTING_AURICULAR_GB93 || {};
 const auricularGb93Records = auricularGb93.points || [];
 const auricularGb93Zones = auricularGb93.zones || {};
+const auricularGb93Worklist = globalThis.ACUTING_AURICULAR_GB93_WORKLIST || {};
+const auricularGb93NextBatch = auricularGb93Worklist.next_batch || [];
 
 const auricularZonePositions = {
   HX: { x: 166, y: 72 },
@@ -5846,11 +5848,13 @@ const healthCompletionPercentEl = document.querySelector("#healthCompletionPerce
 const healthNextBatchEl = document.querySelector("#healthNextBatch");
 const healthNextTaskEl = document.querySelector("#healthNextTask");
 const healthChannelListEl = document.querySelector("#healthChannelList");
+const gb93NextBatchTextEl = document.querySelector("#gb93NextBatchText");
 const healthReviewedStandardEl = document.querySelector("#healthReviewedStandard");
 const healthPlaceholderStandardEl = document.querySelector("#healthPlaceholderStandard");
 const healthTungIndexEl = document.querySelector("#healthTungIndex");
 const healthAuricularIndexEl = document.querySelector("#healthAuricularIndex");
 const healthAuricularGb93CoverageEl = document.querySelector("#healthAuricularGb93Coverage");
+const healthGb93WorklistEl = document.querySelector("#healthGb93Worklist");
 const healthVisualCoverageEl = document.querySelector("#healthVisualCoverage");
 const healthMissingEnglishLocationEl = document.querySelector("#healthMissingEnglishLocation");
 const healthMissingTechniqueEl = document.querySelector("#healthMissingTechnique");
@@ -6296,11 +6300,18 @@ function renderDatabaseHealth() {
   if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
   if (healthAuricularIndexEl) healthAuricularIndexEl.textContent = String(quality.auricular);
   if (healthAuricularGb93CoverageEl) healthAuricularGb93CoverageEl.textContent = `${quality.auricularGb93Indexed}/${quality.auricularGb93Expected}`;
+  if (healthGb93WorklistEl) healthGb93WorklistEl.textContent = `${quality.gb93WorklistCount} queued`;
   if (healthVisualCoverageEl) healthVisualCoverageEl.textContent = `${quality.visualLinked}/${quality.total}`;
   if (healthMissingEnglishLocationEl) healthMissingEnglishLocationEl.textContent = String(quality.missingEnglishLocation);
   if (healthMissingTechniqueEl) healthMissingTechniqueEl.textContent = String(quality.missingTechnique);
   if (healthMissingSafetyEl) healthMissingSafetyEl.textContent = String(quality.missingSafety);
   if (healthNextBatchEl) healthNextBatchEl.textContent = `Next batch: ${standardChannelAudit.nextRecommendedBatch}`;
+  if (gb93NextBatchTextEl) {
+    const preview = auricularGb93NextBatch.slice(0, 12).map((item) => item.candidate_code).join(", ");
+    gb93NextBatchTextEl.textContent = preview
+      ? `先查證 ${preview}${auricularGb93NextBatch.length > 12 ? " ..." : ""}，確認名稱、耳區、圖源後再升級為 index record。`
+      : "目前沒有 GB93 候選清單。";
+  }
   if (healthNextTaskEl) {
     const next = audit.channels.find((item) => item.missing > 0);
     healthNextTaskEl.textContent = next
@@ -6336,6 +6347,7 @@ function getDataQualityAudit() {
     auricular: points.filter(isAuricularPoint).length,
     auricularGb93Indexed: auricularGb93Records.length,
     auricularGb93Expected: Number(auricularGb93.expected_total || 93),
+    gb93WorklistCount: auricularGb93NextBatch.length,
     visualLinked,
     missingEnglishLocation: points.filter((point) => isPendingContent(point.locationEn)).length,
     missingTechnique: points.filter(isMissingTechnique).length,

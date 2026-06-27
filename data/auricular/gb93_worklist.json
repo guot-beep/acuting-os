@@ -1,0 +1,40 @@
+{
+  "schema": "acuting.auricular.gb93.worklist.v1",
+  "generated_on": "2026-06-27",
+  "status": "verification_worklist",
+  "expected_total": 93,
+  "current_indexed": 10,
+  "next_target_indexed": 30,
+  "use_policy": "Candidate codes are not clinical point records. Promote a candidate into gb93_index only after the code, Chinese name, English name, auricular region, and visual source URL are checked.",
+  "sources_to_check": [
+    "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4",
+    "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
+  ],
+  "next_batch": [
+    { "candidate_code": "AT1", "zone": "AT", "status": "candidate_to_verify" },
+    { "candidate_code": "AT2", "zone": "AT", "status": "candidate_to_verify" },
+    { "candidate_code": "AT3", "zone": "AT", "status": "candidate_to_verify" },
+    { "candidate_code": "SC1", "zone": "SC", "status": "candidate_to_verify" },
+    { "candidate_code": "SC2", "zone": "SC", "status": "candidate_to_verify" },
+    { "candidate_code": "SC3", "zone": "SC", "status": "candidate_to_verify" },
+    { "candidate_code": "SC4", "zone": "SC", "status": "candidate_to_verify" },
+    { "candidate_code": "SC5", "zone": "SC", "status": "candidate_to_verify" },
+    { "candidate_code": "CO1", "zone": "CO", "status": "candidate_to_verify" },
+    { "candidate_code": "CO2", "zone": "CO", "status": "candidate_to_verify" },
+    { "candidate_code": "CO3", "zone": "CO", "status": "candidate_to_verify" },
+    { "candidate_code": "HX1", "zone": "HX", "status": "candidate_to_verify" },
+    { "candidate_code": "HX2", "zone": "HX", "status": "candidate_to_verify" },
+    { "candidate_code": "HX3", "zone": "HX", "status": "candidate_to_verify" },
+    { "candidate_code": "HX4", "zone": "HX", "status": "candidate_to_verify" },
+    { "candidate_code": "HX5", "zone": "HX", "status": "candidate_to_verify" },
+    { "candidate_code": "HX6", "zone": "HX", "status": "candidate_to_verify" },
+    { "candidate_code": "HX7", "zone": "HX", "status": "candidate_to_verify" },
+    { "candidate_code": "AH1", "zone": "AH", "status": "candidate_to_verify" },
+    { "candidate_code": "TF1", "zone": "TF", "status": "candidate_to_verify" },
+    { "candidate_code": "TF2", "zone": "TF", "status": "candidate_to_verify" },
+    { "candidate_code": "TF3", "zone": "TF", "status": "candidate_to_verify" },
+    { "candidate_code": "TG1", "zone": "TG", "status": "candidate_to_verify" },
+    { "candidate_code": "TG2", "zone": "TG", "status": "candidate_to_verify" },
+    { "candidate_code": "TG3", "zone": "TG", "status": "candidate_to_verify" }
+  ]
+}
