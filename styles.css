@@ -2318,6 +2318,50 @@ button:hover,
   line-height: 1.48;
 }
 
+.gb93-worklist-panel {
+  background: #fbfcfb;
+  border: 1px solid #dfe9e5;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.72rem;
+  margin-top: 0.82rem;
+  padding: 0.9rem;
+}
+
+.gb93-candidate-grid {
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+}
+
+.gb93-candidate-grid a {
+  background: #fff;
+  border: 1px solid #dfe8e3;
+  border-radius: 8px;
+  color: #213b32;
+  display: grid;
+  gap: 0.1rem;
+  min-height: 58px;
+  padding: 0.56rem;
+  text-decoration: none;
+}
+
+.gb93-candidate-grid a:hover {
+  background: #fff8eb;
+  border-color: #e4c37b;
+}
+
+.gb93-candidate-grid strong {
+  color: #8c4c70;
+  font-size: 0.95rem;
+}
+
+.gb93-candidate-grid span,
+.gb93-candidate-grid p {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 .tung-zone-grid {
   display: grid;
   gap: 0.68rem;

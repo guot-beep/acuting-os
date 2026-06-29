@@ -5849,6 +5849,7 @@ const healthNextBatchEl = document.querySelector("#healthNextBatch");
 const healthNextTaskEl = document.querySelector("#healthNextTask");
 const healthChannelListEl = document.querySelector("#healthChannelList");
 const gb93NextBatchTextEl = document.querySelector("#gb93NextBatchText");
+const gb93CandidateGridEl = document.querySelector("#gb93CandidateGrid");
 const healthReviewedStandardEl = document.querySelector("#healthReviewedStandard");
 const healthPlaceholderStandardEl = document.querySelector("#healthPlaceholderStandard");
 const healthTungIndexEl = document.querySelector("#healthTungIndex");
@@ -6312,6 +6313,14 @@ function renderDatabaseHealth() {
       ? `先查證 ${preview}${auricularGb93NextBatch.length > 12 ? " ..." : ""}，確認名稱、耳區、圖源後再升級為 index record。`
       : "目前沒有 GB93 候選清單。";
   }
+  if (gb93CandidateGridEl) {
+    gb93CandidateGridEl.innerHTML = auricularGb93NextBatch.map((item) => `
+      <a href="${escapeAttribute(gb93CandidateUrl(item.candidate_code))}" target="_blank" rel="noreferrer">
+        <strong>${escapeHtml(item.candidate_code)}</strong>
+        <span>${escapeHtml(item.zone || "GB93")}</span>
+      </a>
+    `).join("") || `<p>目前沒有 GB93 候選清單。</p>`;
+  }
   if (healthNextTaskEl) {
     const next = audit.channels.find((item) => item.missing > 0);
     healthNextTaskEl.textContent = next
@@ -6334,6 +6343,10 @@ function renderDatabaseHealth() {
       </article>
     `;
   }).join("");
+}
+
+function gb93CandidateUrl(code) {
+  return `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(String(code || "").toUpperCase())}`;
 }
 
 function getDataQualityAudit() {
