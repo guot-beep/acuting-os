@@ -1892,10 +1892,67 @@ button:hover,
 .source-section:target,
 .case-workspace:target,
 .search-panel:target,
-.directory-layout:target {
+.directory-layout:target,
+.formula-preview-grid:target,
+.formula-category-panel:target,
+.formula-safety-strip:target,
+.formula-progress-strip:target,
+.condition-graph-grid:target,
+.condition-warning:target,
+.case-toolbar:target,
+.case-list-panel:target,
+.case-detail-panel:target {
   border-color: rgba(199, 146, 42, 0.78);
   box-shadow: 0 0 0 4px rgba(199, 146, 42, 0.16), var(--shadow-soft);
   transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.section-quicknav {
+  align-items: center;
+  background: #f7faf8;
+  border: 1px solid #dfe9e5;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.2rem 0 0.9rem;
+  padding: 0.55rem;
+}
+
+.section-quicknav a {
+  background: #fff;
+  border: 1px solid #d7e6dc;
+  border-radius: 999px;
+  color: #315e40;
+  font-size: 0.82rem;
+  font-weight: 900;
+  min-height: 32px;
+  padding: 0.36rem 0.68rem;
+  text-decoration: none;
+}
+
+.section-quicknav a:hover {
+  background: #edf8f3;
+  border-color: rgba(13, 111, 105, 0.28);
+}
+
+.inline-anchor {
+  display: block;
+  height: 0;
+  position: relative;
+  scroll-margin-top: 104px;
+}
+
+#formulaSchema,
+#formulaCategories,
+#formulaSafety,
+#formulaProgress,
+#conditionLayers,
+#conditionGraphRule,
+#caseToolbar,
+#caseListPanel,
+#caseDetail {
+  scroll-margin-top: 104px;
 }
 
 .content-library {
@@ -3127,6 +3184,16 @@ footer {
   .mini-heading {
     align-items: start;
     display: grid;
+  }
+
+  .section-quicknav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-quicknav a {
+    border-radius: 8px;
+    text-align: center;
   }
 
   .os-module {

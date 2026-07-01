@@ -377,7 +377,13 @@
           </div>
           <span class="data-pill">下一階段填內容</span>
         </div>
-        <div class="formula-preview-grid">
+        <nav class="section-quicknav" aria-label="Formula section quick navigation">
+          <a href="#formulaSchema">Schema</a>
+          <a href="#formulaCategories">Categories</a>
+          <a href="#formulaSafety">Safety</a>
+          <a href="#formulaProgress">Progress</a>
+        </nav>
+        <div class="formula-preview-grid" id="formulaSchema">
           <article class="formula-preview-card">
             <span>Schema</span>
             <strong>每張方劑卡要能連回病症與病例</strong>
@@ -394,7 +400,7 @@
             <small>每筆內容都保留來源、最後審核日期與是否適合公開。</small>
           </article>
         </div>
-        <div class="formula-category-panel" aria-label="Formula category browse">
+        <div class="formula-category-panel" id="formulaCategories" aria-label="Formula category browse">
           <div class="mini-heading">
             <strong>Formula Categories / 方劑分類</strong>
             <span>先依類別建立入口，之後逐方補入組成、方義、證型、加減、安全與 public review 狀態。</span>
@@ -414,11 +420,11 @@
             <article class="formula-category-card"><span>消食</span><strong>Reduce Food Stagnation</strong><small>Food accumulation, bloating, reflux, pediatric digestive review.</small></article>
           </div>
         </div>
-        <div class="formula-safety-strip">
+        <div class="formula-safety-strip" id="formulaSafety">
           <div><strong>Public formula rule</strong><span>公開英文版不可只列「功效」，必須同時列 pattern indication、contraindications、herb-drug cautions、pregnancy/fertility review。</span></div>
           <div><strong>Clinic rule</strong><span>病例紀錄裡的方劑使用要連回 SOAP note、用藥、西醫診斷、療程日期與症狀變化。</span></div>
         </div>
-        <div class="formula-progress-strip">
+        <div class="formula-progress-strip" id="formulaProgress">
           <span><strong>23</strong> draft high-yield formulas seeded</span>
           <span><strong>18</strong> formula categories</span>
           <span><strong>15</strong> safety flags for medication, pregnancy, fertility, and red-flag review</span>
@@ -435,7 +441,13 @@
           </div>
           <span class="data-pill">relationship database</span>
         </div>
-        <div class="condition-graph-grid">
+        <nav class="section-quicknav" aria-label="Condition graph quick navigation">
+          <a href="#conditionLayers">Layers</a>
+          <a href="#conditionGraphRule">Graph Rule</a>
+          <a href="#fertilityWorkflow">Fertility Workflow</a>
+          <a href="#caseWorkspace">Case Notes</a>
+        </nav>
+        <div class="condition-graph-grid" id="conditionLayers">
           <article class="condition-card">
             <span>Western</span>
             <strong>6 fertility-related conditions</strong>
@@ -457,7 +469,7 @@
             <small>Conditions connect to patterns, acupuncture seeds, formula seeds, medication context, fertility workflow, and red flags.</small>
           </article>
         </div>
-        <div class="condition-warning">
+        <div class="condition-warning" id="conditionGraphRule">
           <strong>Graph rule</strong>
           <span>西醫診斷、傳統病名、證型不是一對一翻譯；AcuTing 用 relation records 表示「可能相關」，每次病例仍要依實際 SOAP 與臨床辨證判斷。</span>
         </div>
@@ -483,13 +495,21 @@
           </div>
           <span class="data-pill">source-aware</span>
         </div>
+        <nav class="section-quicknav" aria-label="Source registry quick navigation">
+          <a href="#sourceEnglish">English</a>
+          <a href="#sourceChinese">Chinese</a>
+          <a href="#sourceAuricular">Auricular</a>
+          <a href="#sourceCore">Core Standards</a>
+        </nav>
         <div class="source-grid">
           <a class="source-card" href="https://www.acupoints.org/" target="_blank" rel="noreferrer">
+            <span id="sourceEnglish" class="inline-anchor"></span>
             <span>English</span>
             <strong>AcuPoints.org</strong>
             <small>英文穴位與經絡頁面，用於英文名稱、基本定位、經絡瀏覽與快速對照。</small>
           </a>
           <a class="source-card" href="https://cloudtcm.com/acupoint" target="_blank" rel="noreferrer">
+            <span id="sourceChinese" class="inline-anchor"></span>
             <span>中文</span>
             <strong>雲端中醫穴道資料庫</strong>
             <small>中文穴名、經絡、位置、主治功效與穴位分類，用於中文資料補強與欄位對照。</small>
@@ -500,6 +520,7 @@
             <small>作為 public 版專業架構參考：Tung by zone、TCM channels、auricular anatomy、special methods。內容需改寫並交叉審核。</small>
           </a>
           <a class="source-card" href="https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4" target="_blank" rel="noreferrer">
+            <span id="sourceAuricular" class="inline-anchor"></span>
             <span>Auricular visual</span>
             <strong>GB93 耳穴定位圖</strong>
             <small>耳穴個別定位圖與國際代碼入口。AcuTing 只放外部圖源連結，不下載或嵌入圖片。</small>
@@ -510,6 +531,7 @@
             <small>耳穴分區、常用耳針療法與總覽圖參考。用於中文對照與索引，不作臨床唯一來源。</small>
           </a>
           <article class="source-card core">
+            <span id="sourceCore" class="inline-anchor"></span>
             <span>Core Standard</span>
             <strong>WHO / Manual / School Notes</strong>
             <small>定位、骨度分寸、手法禁忌與專業安全判斷仍需回到標準教材與臨床訓練。</small>
@@ -525,7 +547,13 @@
           </div>
           <span class="data-pill">本機去識別化紀錄</span>
         </div>
-        <div class="case-toolbar">
+        <nav class="section-quicknav" aria-label="Clinical case workspace quick navigation">
+          <a href="#caseToolbar">Actions</a>
+          <a href="#caseListPanel">Case List</a>
+          <a href="#caseDetail">Selected Case</a>
+          <a href="#billingSection">Billing Scaffold</a>
+        </nav>
+        <div class="case-toolbar" id="caseToolbar">
           <input id="caseSearch" type="search" placeholder="搜尋 patient code、case、病名、證型、用穴、方藥..." />
           <button id="newCaseBtn" type="button">新增病例</button>
           <button id="newSoapBtn" class="ghost" type="button">新增 SOAP</button>
@@ -536,7 +564,7 @@
           </label>
         </div>
         <div class="case-grid">
-          <aside class="case-list-panel">
+          <aside class="case-list-panel" id="caseListPanel">
             <div class="mini-head">
               <strong>病例列表</strong>
               <small id="caseResultCount">0 cases</small>

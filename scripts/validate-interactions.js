@@ -85,6 +85,31 @@ if (missingTargetContextHooks.length) {
   fail("Hash-jump destinations must provide visible target context and top offset.", missingTargetContextHooks);
 }
 
+const requiredQuicknavTargets = [
+  "formulaSchema",
+  "formulaCategories",
+  "formulaSafety",
+  "formulaProgress",
+  "conditionLayers",
+  "conditionGraphRule",
+  "sourceEnglish",
+  "sourceChinese",
+  "sourceAuricular",
+  "sourceCore",
+  "caseToolbar",
+  "caseListPanel",
+  "caseDetail"
+];
+const missingQuicknavTargets = requiredQuicknavTargets.filter((id) => !ids.has(id));
+if (missingQuicknavTargets.length) {
+  fail("Dense modules must expose precise quick-navigation anchors.", missingQuicknavTargets);
+}
+
+const sectionQuicknavCount = matches(/class="section-quicknav"/g).length;
+if (sectionQuicknavCount < 4) {
+  fail("Formula, Condition, Sources, and Case Workspace should each have a section quicknav.", [`found ${sectionQuicknavCount}`]);
+}
+
 const requiredPointDetailHooks = [
   "function isPointDetailMode",
   "function clearPointDetailHash",

@@ -25,6 +25,30 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Dense module quick-navigation.
+
+Changes:
+- Added precise `section-quicknav` anchors for Formula, Condition Graph, Source Registry, and Case Workspace.
+- Formula now has direct anchors for Schema, Categories, Safety, and Progress.
+- Condition Graph now has direct anchors for Layers, Graph Rule, Fertility Workflow, and Case Notes.
+- Source Registry now has direct anchors for English, Chinese, Auricular, and Core Standards source groups.
+- Case Workspace now has direct anchors for Actions, Case List, Selected Case, and Billing Scaffold.
+- Added shared quicknav styling and mobile two-column behavior.
+- Extended target highlighting and scroll offset to sub-sections, not only top-level sections.
+- Updated `scripts/validate-interactions.js` to require dense-module quicknav anchors and at least four `section-quicknav` blocks.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed with 51 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+
+Commit:
+- This entry is part of the commit that adds dense module quick-navigation.
+
+Next:
+- Continue auditing acupoint-specific controls and list/detail transitions, especially whether every point card action clearly opens an individual point page and can return to the directory.
+
+### 2026-07-01
+
 Scope: Hash-jump destination context and stale duplicate CSS cleanup.
 
 Changes:
