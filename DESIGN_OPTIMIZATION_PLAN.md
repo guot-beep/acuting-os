@@ -175,6 +175,10 @@ Automated checks:
 - `data-directory-topic-link` topic audit.
 - Action-card handler audit.
 
+Implementation:
+- Run `scripts/validate-interactions.js` after navigation, card, filter, patient action, or acupoint detail-page changes.
+- Treat failures as blockers before committing UI/navigation changes.
+
 ### Method 3: Knowledge Schema Audit
 
 Use for database quality.
@@ -232,7 +236,7 @@ Tasks:
 - Finish card/action contract audit for all clickable cards.
 - Add visible active filter labels.
 - Add a simpler top navigation structure.
-- Add automated local validation script.
+- Maintain and run `scripts/validate-interactions.js` after every interaction change.
 
 ### Phase 2: Professional Knowledge Browser
 
@@ -288,4 +292,3 @@ Tasks:
 - External visual links are preferred over generated diagrams.
 - Mobile layout is required, not optional.
 - Every optimization session updates `PROJECT_LOG.md`.
-

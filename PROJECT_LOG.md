@@ -25,6 +25,26 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Interaction contract validation script.
+
+Changes:
+- Added `scripts/validate-interactions.js` as a reusable local audit for fake buttons, broken hash links, invalid directory shortcuts, missing patient action-card handlers, removed duplicate section IDs, and acupoint detail-page hooks.
+- Documented the validation command in `README.md`.
+- Updated `DESIGN_OPTIMIZATION_PLAN.md` to reference the concrete validation script.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed.
+- Interaction audit result: 35 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+
+Commit:
+- This entry is part of the commit that adds the interaction validation script.
+
+Next:
+- Add the interaction audit to future update workflow before every UI/navigation commit.
+
+### 2026-07-01
+
 Scope: Product design critique and optimization plan.
 
 Changes:

@@ -11,6 +11,22 @@
 
 Deployment notes: `DEPLOYMENT.md`
 
+## Local Validation
+
+Run the interaction contract audit after navigation, card, filter, or acupoint page changes:
+
+```powershell
+& "C:\Users\guoti\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" scripts/validate-interactions.js
+```
+
+This audit checks:
+
+- Internal `#section` links point to real IDs.
+- `data-directory-topic-link` shortcuts map to real directory topics.
+- Patient action cards pointing to `#caseWorkspace` have JS handlers.
+- Removed duplicate planning sections are not accidentally reintroduced.
+- Individual acupoint page hooks are still present.
+
 ## One-Click GitHub Sync
 
 After editing AcuTing OS, double-click:
