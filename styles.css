@@ -244,6 +244,7 @@ h1 {
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
   padding: 1rem;
+  scroll-margin-top: 96px;
 }
 
 .case-workspace {
@@ -253,6 +254,7 @@ h1 {
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
   padding: 1rem;
+  scroll-margin-top: 96px;
 }
 
 .case-toolbar {
@@ -1861,10 +1863,8 @@ button:hover,
 }
 
 .content-library,
-.public-architecture,
 .system-roadmap,
 .database-health,
-.tung-zone-section,
 .patient-system,
 .billing-section,
 .fertility-section,
@@ -1877,17 +1877,29 @@ button:hover,
   border-radius: 8px;
   box-shadow: var(--shadow-soft);
   padding: 1rem;
+  scroll-margin-top: 96px;
+}
+
+.content-library:target,
+.system-roadmap:target,
+.database-health:target,
+.patient-system:target,
+.billing-section:target,
+.fertility-section:target,
+.formula-section:target,
+.condition-graph-section:target,
+.learn-section:target,
+.source-section:target,
+.case-workspace:target,
+.search-panel:target,
+.directory-layout:target {
+  border-color: rgba(199, 146, 42, 0.78);
+  box-shadow: 0 0 0 4px rgba(199, 146, 42, 0.16), var(--shadow-soft);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .content-library {
   border-top: 4px solid var(--plum);
-}
-
-.public-architecture {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 247, 0.94)),
-    #fff;
-  border-top: 4px solid #315f52;
 }
 
 .system-roadmap {
@@ -1940,11 +1952,6 @@ button:hover,
 .database-health {
   background: #fff;
   border-top: 4px solid #456f77;
-}
-
-.tung-zone-section {
-  background: #fff;
-  border-top: 4px solid #7c3d62;
 }
 
 .patient-system {

@@ -25,6 +25,26 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Hash-jump destination context and stale duplicate CSS cleanup.
+
+Changes:
+- Added visible `:target` highlighting for major section destinations so card/hash jumps provide clear visual feedback.
+- Added `scroll-margin-top` to major sections, the acupoint search panel, and the clinical case workspace so section headings are not hidden by sticky navigation after jumps.
+- Removed stale CSS for the deleted duplicate `public-architecture` and `tung-zone-section` planning sections.
+- Updated `scripts/validate-interactions.js` to require target-context CSS, scroll offset support, and absence of the old duplicate section classes.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed with 35 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+
+Commit:
+- This entry is part of the commit that adds hash-jump destination context.
+
+Next:
+- Continue checking whether dense modules need a more precise sub-navigation layer, especially Formula, Condition Graph, Source Registry, and Case Workspace.
+
+### 2026-07-01
+
 Scope: Dynamic main module active state.
 
 Changes:

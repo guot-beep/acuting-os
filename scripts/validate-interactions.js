@@ -4,6 +4,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const js = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
 
 const failures = [];
 const warnings = [];
@@ -62,9 +63,26 @@ if (resurrectedSections.length) {
   fail("Removed duplicate planning sections should not be reintroduced.", resurrectedSections);
 }
 
+const removedSectionClasses = ["public-architecture", "tung-zone-section"];
+const resurrectedSectionClasses = removedSectionClasses.filter((className) => html.includes(className) || css.includes(className));
+if (resurrectedSectionClasses.length) {
+  fail("Removed duplicate planning section classes should not remain in markup or CSS.", resurrectedSectionClasses);
+}
+
 const stalePlanningLinks = matches(/href="#(publicArchitecture|tungZoneSection)"/g).map((match) => match[0]);
 if (stalePlanningLinks.length) {
   fail("Links to removed planning sections must be updated to #systemRoadmap or a real module.", stalePlanningLinks);
+}
+
+const requiredTargetContextHooks = [
+  ":target",
+  "scroll-margin-top",
+  ".case-workspace:target",
+  ".search-panel:target"
+];
+const missingTargetContextHooks = requiredTargetContextHooks.filter((hook) => !css.includes(hook));
+if (missingTargetContextHooks.length) {
+  fail("Hash-jump destinations must provide visible target context and top offset.", missingTargetContextHooks);
 }
 
 const requiredPointDetailHooks = [
