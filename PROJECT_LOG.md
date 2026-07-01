@@ -25,6 +25,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Product design critique and optimization plan.
+
+Changes:
+- Added `DESIGN_OPTIMIZATION_PLAN.md` as the long-term design and architecture direction for AcuTing OS.
+- Defined current UX, information architecture, visual hierarchy, mobile, bilingual/public-mode, and content-status problems.
+- Added Codex-specific optimization methods: product design audit loop, interaction contract audit, knowledge schema audit, content-mode separation, and mobile-first regression pass.
+
+Validation:
+- Product Design user-context preflight was run; no saved Product Design context exists yet.
+- This was a planning/documentation update, not an implementation change.
+
+Commit:
+- This entry is part of the commit that adds the design optimization plan.
+
+Next:
+- Turn the interaction contract audit into a reusable local validation script so fake buttons and broken shortcuts are caught automatically.
+
+### 2026-07-01
+
 Scope: Patient action-card behavior cleanup.
 
 Changes:
