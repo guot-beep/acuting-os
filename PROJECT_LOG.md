@@ -25,6 +25,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Dynamic main module active state.
+
+Changes:
+- Removed the hard-coded `active` state from the AcuTing OS top module chips.
+- Added dynamic module navigation state derived from the current URL hash.
+- Point pages and acupoint workspace now highlight Acupuncture; case workspace highlights Patient Records; fertility workflow maps to Conditions.
+- Added `aria-current="page"` to the active module chip for clearer navigation semantics.
+- Updated `scripts/validate-interactions.js` to fail if module chips hard-code active state or lose the dynamic active-state hooks.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed with 35 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+
+Commit:
+- This entry is part of the commit that fixes dynamic module navigation state.
+
+Next:
+- Continue the interaction audit by checking secondary module cards and plain hash jumps for visible section context, especially dense sections where a jump alone can feel like a broken or fake action.
+
+### 2026-07-01
+
 Scope: Visible acupoint filter state.
 
 Changes:

@@ -5837,6 +5837,7 @@ const modelReset = document.querySelector("#modelReset");
 const viewTabs = [...document.querySelectorAll(".view-tab")];
 const resultCount = document.querySelector("#resultCount");
 const activeFilterSummaryEl = document.querySelector("#activeFilterSummary");
+const moduleNavLinks = [...document.querySelectorAll(".library-strip .library-chip")];
 const selectedCodeEl = document.querySelector("#selectedCode");
 const standardCountEl = document.querySelector("#standardCount");
 const missingCountEl = document.querySelector("#missingCount");
@@ -6057,6 +6058,24 @@ function updateContentModeUI() {
   document.querySelector("#modeEnglishBtn")?.classList.toggle("active", contentMode === "english");
 }
 
+function activeModuleTarget() {
+  const hash = window.location.hash || "#contentLibrary";
+  if (hash.startsWith("#point/") || hash === "#acupunctureWorkspace") return "#acupointDirectory";
+  if (hash === "#caseWorkspace") return "#patientSystem";
+  if (hash === "#fertilityWorkflow") return "#conditionGraph";
+  return hash;
+}
+
+function updateModuleNavigation() {
+  const activeTarget = activeModuleTarget();
+  moduleNavLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === activeTarget;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+}
+
 function loadPoints() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (!saved) return defaultPoints;
@@ -6275,6 +6294,7 @@ function persist() {
 
 function render() {
   updateContentModeUI();
+  updateModuleNavigation();
   hydrateFilters();
   renderOsStatus();
   renderDatabaseHealth();

@@ -90,6 +90,21 @@ if (missingFilterStateHooks.length) {
   fail("Acupoint directory filters must expose visible, clearable active-filter state.", missingFilterStateHooks);
 }
 
+const staticActiveModuleChips = matches(/<a class="[^"]*\blibrary-chip\b[^"]*\bactive\b[^"]*"/g).map((match) => match[0]);
+if (staticActiveModuleChips.length) {
+  fail("Module navigation chips must not hard-code active state; app.js should derive active state from the current hash.", staticActiveModuleChips);
+}
+
+const requiredModuleNavigationHooks = [
+  "function updateModuleNavigation",
+  "function activeModuleTarget",
+  "aria-current"
+];
+const missingModuleNavigationHooks = requiredModuleNavigationHooks.filter((hook) => !js.includes(hook));
+if (missingModuleNavigationHooks.length) {
+  fail("Main module chips must have dynamic active-state handling.", missingModuleNavigationHooks);
+}
+
 const clickableCards = matches(/<a class="([^"]*(?:library-card|roadmap-card|patient-action-card)[^"]*)" href="#([^"]+)"/g)
   .map((match) => ({ className: match[1], target: match[2] }));
 const suspiciousCards = clickableCards.filter((card) => {
