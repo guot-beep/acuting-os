@@ -25,6 +25,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Visible acupoint filter state.
+
+Changes:
+- Added an `activeFilterSummary` area under the acupoint search filters.
+- The directory now shows active search, channel, region, pattern, body-group, and topic filters as clearable chips.
+- Added a clear-all control so topic shortcuts such as Auricular Index and Master Tung Index are visible and reversible.
+- Added mobile styling so filter chips wrap into readable full-width rows on small screens.
+- Updated `scripts/validate-interactions.js` to require the visible active-filter UI and clear-filter hooks.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed with 35 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+
+Commit:
+- `430c19f Show active acupoint filters`
+
+Next:
+- Continue reducing fake or unclear interactions by auditing remaining clickable cards for visible state changes, especially module cards that apply hidden filters or jump to dense sections.
+
+### 2026-07-01
+
 Scope: Push workflow validation gate.
 
 Changes:
