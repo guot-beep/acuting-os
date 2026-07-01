@@ -2334,6 +2334,23 @@ button:hover,
   grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
 }
 
+.gb93-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.gb93-checklist span {
+  background: #eef8f4;
+  border: 1px solid #d4e7dd;
+  border-radius: 999px;
+  color: #315e40;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 0.34rem 0.52rem;
+}
+
 .gb93-candidate-grid a {
   background: #fff;
   border: 1px solid #dfe8e3;

@@ -5849,6 +5849,7 @@ const healthNextBatchEl = document.querySelector("#healthNextBatch");
 const healthNextTaskEl = document.querySelector("#healthNextTask");
 const healthChannelListEl = document.querySelector("#healthChannelList");
 const gb93NextBatchTextEl = document.querySelector("#gb93NextBatchText");
+const gb93PromotionChecklistEl = document.querySelector("#gb93PromotionChecklist");
 const gb93CandidateGridEl = document.querySelector("#gb93CandidateGrid");
 const healthReviewedStandardEl = document.querySelector("#healthReviewedStandard");
 const healthPlaceholderStandardEl = document.querySelector("#healthPlaceholderStandard");
@@ -6321,6 +6322,10 @@ function renderDatabaseHealth() {
       </a>
     `).join("") || `<p>目前沒有 GB93 候選清單。</p>`;
   }
+  if (gb93PromotionChecklistEl) {
+    const checklist = auricularGb93Worklist.promotion_checklist || [];
+    gb93PromotionChecklistEl.innerHTML = checklist.map((item) => `<span>${escapeHtml(formatGb93ChecklistItem(item))}</span>`).join("");
+  }
   if (healthNextTaskEl) {
     const next = audit.channels.find((item) => item.missing > 0);
     healthNextTaskEl.textContent = next
@@ -6347,6 +6352,18 @@ function renderDatabaseHealth() {
 
 function gb93CandidateUrl(code) {
   return `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(String(code || "").toUpperCase())}`;
+}
+
+function formatGb93ChecklistItem(item) {
+  const labels = {
+    code_confirmed: "代碼已確認",
+    chinese_name_confirmed: "中文名已確認",
+    english_name_or_translation_added: "英文名/翻譯已補",
+    auricular_zone_confirmed: "耳區已確認",
+    visual_source_url_checked: "圖源 URL 已檢查",
+    review_status_kept_index_only_until_clinical_details_are_checked: "臨床細節未查前維持 index_only"
+  };
+  return labels[item] || item;
 }
 
 function getDataQualityAudit() {

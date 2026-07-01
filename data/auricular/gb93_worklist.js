@@ -6,6 +6,14 @@ globalThis.ACUTING_AURICULAR_GB93_WORKLIST = {
   "current_indexed": 10,
   "next_target_indexed": 30,
   "use_policy": "Candidate codes are not clinical point records. Promote a candidate into gb93_index only after the code, Chinese name, English name, auricular region, and visual source URL are checked.",
+  "promotion_checklist": [
+    "code_confirmed",
+    "chinese_name_confirmed",
+    "english_name_or_translation_added",
+    "auricular_zone_confirmed",
+    "visual_source_url_checked",
+    "review_status_kept_index_only_until_clinical_details_are_checked"
+  ],
   "sources_to_check": [
     "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4",
     "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
