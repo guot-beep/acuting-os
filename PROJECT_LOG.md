@@ -25,6 +25,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Push workflow validation gate.
+
+Changes:
+- Updated `push-acuting.ps1` so the desktop/GitHub sync workflow runs validation before staging, committing, and pushing.
+- Added Node.js discovery for the bundled Codex runtime Node first, then PATH `node`.
+- The push workflow now runs `node --check app.js` and `scripts/validate-interactions.js`.
+- Updated `README.md` to document the validation gate.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed with 35 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+- `push-acuting.ps1` PowerShell parse check passed.
+
+Commit:
+- This entry is part of the commit that adds the push validation gate.
+
+Next:
+- Continue UI quality work by adding visible active-filter labels in the acupoint directory.
+
+### 2026-07-01
+
 Scope: Interaction contract validation script.
 
 Changes:

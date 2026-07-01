@@ -27,6 +27,29 @@ if (-not $git) {
   exit 1
 }
 
+$nodeCandidates = @(
+  "C:\Users\guoti\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe",
+  "node"
+)
+
+$node = $null
+foreach ($candidate in $nodeCandidates) {
+  try {
+    $version = & $candidate --version 2>$null
+    if ($LASTEXITCODE -eq 0 -and $version) {
+      $node = $candidate
+      break
+    }
+  } catch {
+    continue
+  }
+}
+
+if (-not $node) {
+  Write-Host "Node.js was not found. Cannot run AcuTing validation before push." -ForegroundColor Red
+  exit 1
+}
+
 $safePath = ($repo -replace "\\", "/")
 & $git config --global --add safe.directory $safePath | Out-Null
 
@@ -66,6 +89,20 @@ $message = Read-Host "Commit message (press Enter for default)"
 if ([string]::IsNullOrWhiteSpace($message)) {
   $stamp = Get-Date -Format "yyyy-MM-dd HH:mm"
   $message = "Update AcuTing OS $stamp"
+}
+
+Write-Host ""
+Write-Host "Running AcuTing validation..." -ForegroundColor Cyan
+& $node --check "app.js"
+if ($LASTEXITCODE -ne 0) {
+  Write-Host "Validation failed: app.js has a syntax error. Push stopped." -ForegroundColor Red
+  exit $LASTEXITCODE
+}
+
+& $node "scripts/validate-interactions.js"
+if ($LASTEXITCODE -ne 0) {
+  Write-Host "Validation failed: interaction audit did not pass. Push stopped." -ForegroundColor Red
+  exit $LASTEXITCODE
 }
 
 Write-Host ""

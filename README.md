@@ -39,11 +39,16 @@ It will:
 
 1. Check local changes.
 2. Ask for a commit message.
-3. Run `git add -A`.
-4. Create a commit.
-5. Push to GitHub.
+3. Run AcuTing validation:
+   - `app.js` syntax check.
+   - `scripts/validate-interactions.js` interaction contract audit.
+4. Run `git add -A`.
+5. Create a commit.
+6. Push to GitHub.
 
 If you press Enter without typing a message, it uses a timestamped default message.
+
+If validation fails, the push stops before committing.
 
 Do not copy `push-acuting.bat` alone to Desktop. If you want a Desktop button, double-click this once from the project folder:
 
