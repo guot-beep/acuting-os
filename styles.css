@@ -1785,6 +1785,7 @@ button:hover,
 
 .content-library,
 .public-architecture,
+.system-roadmap,
 .database-health,
 .tung-zone-section,
 .patient-system,
@@ -1810,6 +1811,53 @@ button:hover,
     linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 247, 0.94)),
     #fff;
   border-top: 4px solid #315f52;
+}
+
+.system-roadmap {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 247, 0.94)),
+    #fff;
+  border-top: 4px solid #315f52;
+}
+
+.roadmap-grid {
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roadmap-card {
+  background: #fbfcfb;
+  border: 1px solid #e3e9e7;
+  border-radius: 8px;
+  color: inherit;
+  display: grid;
+  gap: 0.36rem;
+  min-height: 132px;
+  padding: 0.9rem;
+  text-decoration: none;
+}
+
+.roadmap-card:hover {
+  border-color: rgba(13, 111, 105, 0.3);
+  box-shadow: 0 12px 24px rgba(13, 111, 105, 0.08);
+}
+
+.roadmap-card span {
+  color: var(--accent-dark);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.roadmap-card strong {
+  color: #172629;
+  line-height: 1.35;
+}
+
+.roadmap-card small {
+  color: var(--muted);
+  line-height: 1.48;
 }
 
 .database-health {
@@ -2972,6 +3020,7 @@ footer {
 
   .library-strip,
   .library-grid,
+  .roadmap-grid,
   .health-summary-grid,
   .health-quality-grid,
   .health-channel-list,

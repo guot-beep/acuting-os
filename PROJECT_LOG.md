@@ -25,6 +25,28 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Duplicate architecture reduction.
+
+Changes:
+- Removed the top-level `Public Learn` navigation item so planning content no longer competes with daily working modules.
+- Replaced the large `Public Architecture` and `Master Tung Zone` sections with one compact `systemRoadmap` planning section.
+- Kept Roadmap links functional: Public Learn, Master Tung filter, Auricular filter, Formulas, Conditions, and Sources.
+- Added `roadmap-card` styling and responsive behavior.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- Internal hash-link audit passed: 35 internal links resolve to existing IDs.
+- Directory-topic shortcut audit passed: `auricular_index` and `tung_index` resolve to known JS topic IDs.
+- Confirmed old `publicArchitecture` and `tungZoneSection` IDs are no longer present.
+
+Commit:
+- This entry is part of the commit that reduces duplicate homepage architecture.
+
+Next:
+- Audit visible text encoding and card hierarchy. Several strings still display as mojibake in PowerShell output; browser rendering should be checked directly before making broad text edits.
+
+### 2026-07-01
+
 Scope: Homepage and module-entry cleanup.
 
 Changes:
