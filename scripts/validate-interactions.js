@@ -162,6 +162,20 @@ if (missingPointCardHooks.length) {
   fail("Acupoint cards must behave and read as real point-page actions.", missingPointCardHooks);
 }
 
+const requiredRelatedPointHooks = [
+  "function relatedPointButton",
+  "related-point-action",
+  "related-point-open",
+  "pairing-action-label",
+  "data-related-point",
+  "Open point page",
+  "開啟單穴頁"
+];
+const missingRelatedPointHooks = requiredRelatedPointHooks.filter((hook) => !html.includes(hook) && !js.includes(hook) && !css.includes(hook));
+if (missingRelatedPointHooks.length) {
+  fail("Related-point controls must clearly navigate to another single-point page.", missingRelatedPointHooks);
+}
+
 const clickableCards = matches(/<a class="([^"]*(?:library-card|roadmap-card|patient-action-card)[^"]*)" href="#([^"]+)"/g)
   .map((match) => ({ className: match[1], target: match[2] }));
 const suspiciousCards = clickableCards.filter((card) => {

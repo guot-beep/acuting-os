@@ -1352,9 +1352,10 @@ button.pairing-row:hover {
   border-bottom: 1px solid #e3eee8;
   border-radius: 0;
   color: inherit;
-  display: flex;
+  display: grid;
   gap: 0.5rem;
-  justify-content: space-between;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
   min-width: 0;
   padding: 0.58rem 0;
   text-align: left;
@@ -1369,6 +1370,12 @@ button.pairing-row:hover {
   background: #f8fbf9;
 }
 
+.related-point-main {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
 .sidebar-box strong {
   color: #8c4c70;
   min-width: 0;
@@ -1376,11 +1383,24 @@ button.pairing-row:hover {
 }
 
 .sidebar-box span,
+.sidebar-box small,
 .sidebar-box p {
   color: #6f8078;
   font-size: 0.86rem;
   overflow-wrap: anywhere;
-  text-align: right;
+}
+
+.related-point-open,
+.pairing-action-label {
+  background: #edf8f3;
+  border: 1px solid #d7e6dc;
+  border-radius: 999px;
+  color: #315e40;
+  font-size: 0.76rem;
+  font-weight: 900;
+  padding: 0.2rem 0.48rem;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .empty-detail {

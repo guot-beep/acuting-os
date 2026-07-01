@@ -7691,11 +7691,11 @@ function renderDetail(point) {
       <aside class="point-sidebar" aria-label="相關穴道與常用配穴">
         <section class="sidebar-box">
           <h3>${contentMode === "english" ? "Related Points" : "相關穴道"}</h3>
-          ${related.map((item) => `<button type="button" data-related-point="${escapeAttribute(item.code)}"><strong>${escapeHtml(contentMode === "english" ? item.nameEn : item.nameZh)}</strong><span>${escapeHtml(item.code)}</span></button>`).join("") || `<p>${contentMode === "english" ? "No related points yet." : "尚未建立相關穴道。"}</p>`}
+          ${related.map((item) => relatedPointButton(item, item.code)).join("") || `<p>${contentMode === "english" ? "No related points yet." : "尚未建立相關穴道。"}</p>`}
         </section>
         <section class="sidebar-box">
           <h3>${contentMode === "english" ? "Common Pairings" : "常用配穴"}</h3>
-          ${pairings.map((item) => `<button type="button" data-related-point="${escapeAttribute(item.code)}"><strong>${escapeHtml(contentMode === "english" ? item.nameEn : item.nameZh)}</strong><span>${escapeHtml(sharedPatternLabel(point, item))}</span></button>`).join("") || `<p>${contentMode === "english" ? "Pairings pending." : "待補常用配穴。"}</p>`}
+          ${pairings.map((item) => relatedPointButton(item, sharedPatternLabel(point, item))).join("") || `<p>${contentMode === "english" ? "Pairings pending." : "待補常用配穴。"}</p>`}
         </section>
       </aside>
     </div>
@@ -7712,6 +7712,20 @@ function renderDetail(point) {
   detailCard.querySelectorAll("[data-related-point]").forEach((button) => {
     button.addEventListener("click", () => selectPoint(button.dataset.relatedPoint));
   });
+}
+
+function relatedPointButton(item, meta) {
+  const label = contentMode === "english" ? item.nameEn : item.nameZh;
+  const actionLabel = contentMode === "english" ? "Open point page" : "開啟單穴頁";
+  return `
+    <button type="button" class="related-point-action" data-related-point="${escapeAttribute(item.code)}" aria-label="${escapeAttribute(`${actionLabel}: ${label} ${item.code}`)}">
+      <span class="related-point-main">
+        <strong>${escapeHtml(label)}</strong>
+        <small>${escapeHtml(meta || item.code)}</small>
+      </span>
+      <span class="related-point-open">${escapeHtml(actionLabel)}</span>
+    </button>
+  `;
 }
 
 function heroFact(title, value, detail) {
@@ -7777,12 +7791,12 @@ function pairingSection(pairings) {
     <section class="study-section link">
       <h3>${escapeHtml(sectionIcon("link"))} ${escapeHtml(title)}</h3>
       <div class="pairing-table" role="table" aria-label="${escapeAttribute(title)}">
-        <div class="pairing-row head" role="row"><span>${contentMode === "english" ? "Point" : "配穴"}</span><span>${contentMode === "english" ? "Possible Use" : "可能用途"}</span><span>${contentMode === "english" ? "Linked Pattern" : "連結證型"}</span></div>
+        <div class="pairing-row head" role="row"><span>${contentMode === "english" ? "Point" : "配穴"}</span><span>${contentMode === "english" ? "Possible Use" : "可能用途"}</span><span>${contentMode === "english" ? "Action" : "動作"}</span></div>
         ${pairings.map((item) => `
-          <button class="pairing-row" type="button" data-related-point="${escapeAttribute(item.code)}" role="row">
+          <button class="pairing-row" type="button" data-related-point="${escapeAttribute(item.code)}" role="row" aria-label="${escapeAttribute(`${contentMode === "english" ? "Open point page" : "開啟單穴頁"}: ${contentMode === "english" ? item.nameEn : item.nameZh} ${item.code}`)}">
             <span>${escapeHtml(contentMode === "english" ? item.nameEn : item.nameZh)} ${escapeHtml(item.code)}</span>
             <span>${escapeHtml(contentMode === "english" ? primaryFunctionEn(item) : primaryFunction(item))}</span>
-            <span>${escapeHtml(sharedPatternLabel(points.find((p) => p.code === selectedCode) || item, item))}</span>
+            <span class="pairing-action-label">${contentMode === "english" ? "Open point page" : "開啟單穴頁"}</span>
           </button>
         `).join("")}
       </div>

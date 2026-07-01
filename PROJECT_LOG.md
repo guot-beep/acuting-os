@@ -25,6 +25,28 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Related-point navigation clarity.
+
+Changes:
+- Reworked single-point sidebar related-point and common-pairing buttons through a shared `relatedPointButton()` helper.
+- Added visible `Open point page / 開啟單穴頁` labels to related-point controls so they read as navigation, not static lists.
+- Added `aria-label` text to related-point and pairing-row controls describing the target point page.
+- Updated the common pairing table action column from `Linked Pattern` to an explicit `Action` column.
+- Added styling for `related-point-action`, `related-point-main`, `related-point-open`, and `pairing-action-label`.
+- Updated `scripts/validate-interactions.js` to require related-point navigation labels, helper usage, and action styling hooks.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed with 51 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+
+Commit:
+- This entry is part of the commit that clarifies related-point navigation.
+
+Next:
+- Continue auditing remaining edit/copy buttons on the point detail page, especially whether copy-link feedback and edit actions are clear enough for private vs public data workflows.
+
+### 2026-07-01
+
 Scope: Acupoint card action clarity.
 
 Changes:
