@@ -79,6 +79,17 @@ if (missingPointHooks.length) {
   fail("Individual acupoint page hooks must remain present.", missingPointHooks);
 }
 
+const requiredFilterStateHooks = [
+  "activeFilterSummary",
+  "function renderActiveFilterSummary",
+  "function clearActiveFilter",
+  "data-clear-filter"
+];
+const missingFilterStateHooks = requiredFilterStateHooks.filter((hook) => !html.includes(hook) && !js.includes(hook));
+if (missingFilterStateHooks.length) {
+  fail("Acupoint directory filters must expose visible, clearable active-filter state.", missingFilterStateHooks);
+}
+
 const clickableCards = matches(/<a class="([^"]*(?:library-card|roadmap-card|patient-action-card)[^"]*)" href="#([^"]+)"/g)
   .map((match) => ({ className: match[1], target: match[2] }));
 const suspiciousCards = clickableCards.filter((card) => {

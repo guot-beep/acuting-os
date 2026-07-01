@@ -5836,6 +5836,7 @@ const modelRotate = document.querySelector("#modelRotate");
 const modelReset = document.querySelector("#modelReset");
 const viewTabs = [...document.querySelectorAll(".view-tab")];
 const resultCount = document.querySelector("#resultCount");
+const activeFilterSummaryEl = document.querySelector("#activeFilterSummary");
 const selectedCodeEl = document.querySelector("#selectedCode");
 const standardCountEl = document.querySelector("#standardCount");
 const missingCountEl = document.querySelector("#missingCount");
@@ -6286,6 +6287,7 @@ function render() {
   }
   renderMap(filtered);
   renderCards(filtered);
+  renderActiveFilterSummary(filtered);
   document.body.classList.toggle("point-detail-mode", detailMode);
   if (cardsEl) cardsEl.hidden = detailMode;
   if (detailCard) detailCard.hidden = !detailMode;
@@ -6295,6 +6297,91 @@ function render() {
   resultCount.textContent = contentMode === "english"
     ? `Showing ${filtered.length} / ${points.length} acupoints`
     : `目前顯示 ${filtered.length} / ${points.length} 個穴位`;
+}
+
+function labelForDirectoryValue(collection, value) {
+  const item = collection.find((entry) => entry.id === value);
+  if (!item) return value;
+  return contentMode === "english" ? item.en : item.zh;
+}
+
+function getActiveFilterChips() {
+  const chips = [];
+  const query = searchInput?.value.trim() || "";
+  if (query) {
+    chips.push({ kind: "search", label: contentMode === "english" ? "Search" : "搜尋", value: query });
+  }
+  if (meridianFilter?.value) {
+    chips.push({ kind: "meridian", label: contentMode === "english" ? "Channel" : "經絡", value: meridianFilter.value });
+  }
+  if (regionFilter?.value) {
+    chips.push({ kind: "region", label: contentMode === "english" ? "Region" : "部位", value: regionFilter.value });
+  }
+  if (patternFilter?.value) {
+    chips.push({ kind: "pattern", label: contentMode === "english" ? "Pattern" : "證型", value: patternFilter.value });
+  }
+  if (directoryRegionGroup) {
+    chips.push({
+      kind: "regionGroup",
+      label: contentMode === "english" ? "Body group" : "身體分類",
+      value: labelForDirectoryValue(directoryRegionGroups, directoryRegionGroup)
+    });
+  }
+  if (directoryTopic) {
+    chips.push({
+      kind: "topic",
+      label: contentMode === "english" ? "Topic" : "主題",
+      value: labelForDirectoryValue(directoryTopics, directoryTopic)
+    });
+  }
+  return chips;
+}
+
+function renderActiveFilterSummary(filtered) {
+  if (!activeFilterSummaryEl) return;
+  const chips = getActiveFilterChips();
+  if (!chips.length) {
+    activeFilterSummaryEl.innerHTML = `
+      <span class="active-filter-empty">${contentMode === "english" ? "No active filters." : "目前未套用篩選。"}</span>
+    `;
+    return;
+  }
+
+  const summaryLabel = contentMode === "english"
+    ? `Active filters, ${filtered.length} results`
+    : `目前篩選，${filtered.length} 筆結果`;
+  const clearAllLabel = contentMode === "english" ? "Clear all" : "清除全部";
+  const removeLabel = contentMode === "english" ? "Remove filter" : "移除篩選";
+  activeFilterSummaryEl.innerHTML = `
+    <div class="active-filter-header">
+      <strong>${escapeHtml(summaryLabel)}</strong>
+      <button class="clear-all-filters" type="button" data-clear-filter="all">${escapeHtml(clearAllLabel)}</button>
+    </div>
+    <div class="active-filter-list">
+      ${chips.map((chip) => `
+        <span class="active-filter-chip">
+          <span>${escapeHtml(chip.label)}: ${escapeHtml(chip.value)}</span>
+          <button type="button" data-clear-filter="${escapeAttribute(chip.kind)}" aria-label="${escapeAttribute(`${removeLabel}: ${chip.label} ${chip.value}`)}">×</button>
+        </span>
+      `).join("")}
+    </div>
+  `;
+  activeFilterSummaryEl.querySelectorAll("[data-clear-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      clearActiveFilter(button.dataset.clearFilter || "");
+      clearPointDetailHash();
+      render();
+    });
+  });
+}
+
+function clearActiveFilter(kind) {
+  if (kind === "all" || kind === "search") searchInput.value = "";
+  if (kind === "all" || kind === "meridian") meridianFilter.value = "";
+  if (kind === "all" || kind === "region") regionFilter.value = "";
+  if (kind === "all" || kind === "pattern") patternFilter.value = "";
+  if (kind === "all" || kind === "regionGroup") directoryRegionGroup = "";
+  if (kind === "all" || kind === "topic") directoryTopic = "";
 }
 
 function isPointDetailMode() {
