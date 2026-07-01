@@ -5971,12 +5971,15 @@ document.querySelector("#homeSearchBtn").addEventListener("click", runHomeSearch
 homeSearch.addEventListener("keydown", (event) => {
   if (event.key === "Enter") runHomeSearch();
 });
-document.querySelectorAll("[data-library-search]").forEach((link) => {
+document.querySelectorAll("[data-directory-topic-link]").forEach((link) => {
   link.addEventListener("click", () => {
-    const query = link.dataset.librarySearch || "";
-    if (!query) return;
-    homeSearch.value = query;
-    searchInput.value = query;
+    const topic = link.dataset.directoryTopicLink || "";
+    if (!topic) return;
+    clearPointDetailHash();
+    directoryTopic = topic;
+    if (patternFilter) patternFilter.value = "";
+    if (regionFilter) regionFilter.value = "";
+    if (searchInput) searchInput.value = "";
     render();
   });
 });
@@ -6292,6 +6295,13 @@ function isPointDetailMode() {
   return /^#point\/.+/.test(window.location.hash);
 }
 
+function clearPointDetailHash() {
+  if (!window.location.hash.startsWith("#point/")) return;
+  isSyncingPointHash = true;
+  window.location.hash = "#acupointDirectory";
+  isSyncingPointHash = false;
+}
+
 function renderOsStatus() {
   const audit = getStandardPointAudit();
   const standardCount = audit.presentTotal;
@@ -6538,11 +6548,7 @@ function bindDirectoryButtons(scope) {
         directoryTopic = value;
         patternFilter.value = "";
       }
-      if (window.location.hash.startsWith("#point/")) {
-        isSyncingPointHash = true;
-        window.location.hash = "#acupointDirectory";
-        isSyncingPointHash = false;
-      }
+      clearPointDetailHash();
       render();
       document.querySelector("#acupunctureWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
     });

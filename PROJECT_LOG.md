@@ -25,6 +25,29 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Homepage and module-entry cleanup.
+
+Changes:
+- Replaced vague/fake module links with direct module targets for Formulas, Conditions, Billing, and Billing quick access.
+- Added a real `billingSection` with documentation workflow cards instead of sending Billing links to a hidden/self-referential anchor.
+- Converted Auricular and Master Tung entry cards into true directory-topic shortcuts using `data-directory-topic-link`.
+- Removed the obsolete `data-library-search` shortcut handler after all related HTML shortcuts were removed.
+- Kept acupoint detail-mode cleanup centralized through `clearPointDetailHash()`.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- Internal hash-link audit passed: 36 internal hash links resolve to existing IDs.
+- Confirmed no remaining `data-library-search` shortcuts and no stale `#formulaLibrary` or `#pathologyLibrary` links.
+- Confirmed `billingSection` exists and directory-topic shortcuts are registered for `auricular_index` and `tung_index`.
+
+Commit:
+- This entry is part of the commit that cleans homepage/module navigation.
+
+Next:
+- Continue by auditing the visible wording and card hierarchy: remove or merge modules that duplicate the same purpose, especially Content Library vs Public Architecture vs Tung Zone.
+
+### 2026-07-01
+
 Scope: Acupoint navigation and layout bug fix.
 
 Changes:

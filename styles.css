@@ -1788,6 +1788,7 @@ button:hover,
 .database-health,
 .tung-zone-section,
 .patient-system,
+.billing-section,
 .fertility-section,
 .formula-section,
 .condition-graph-section,
@@ -1823,6 +1824,44 @@ button:hover,
 
 .patient-system {
   border-top: 4px solid var(--clay);
+}
+
+.billing-section {
+  background: #fff;
+  border-top: 4px solid #456f77;
+}
+
+.billing-grid {
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.billing-grid article {
+  background: #fbfcfb;
+  border: 1px solid #dfe8e3;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.36rem;
+  min-height: 150px;
+  padding: 0.92rem;
+}
+
+.billing-grid span {
+  color: #38636b;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.billing-grid strong {
+  color: #172629;
+  line-height: 1.35;
+}
+
+.billing-grid small {
+  color: var(--muted);
+  line-height: 1.48;
 }
 
 .fertility-section {
@@ -2947,6 +2986,7 @@ footer {
   .fertility-link-grid,
   .condition-graph-grid,
   .patient-action-grid,
+  .billing-grid,
   .source-grid {
     grid-template-columns: 1fr;
   }

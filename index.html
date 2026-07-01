@@ -18,11 +18,11 @@
         <a href="#patientSystem">Records</a>
         <a href="#caseWorkspace">Cases</a>
         <a href="#acupointDirectory">Acupuncture</a>
-        <a href="#acupointDirectory" data-library-search="耳穴">Auricular</a>
+        <a href="#acupointDirectory" data-directory-topic-link="auricular_index">Auricular</a>
         <a href="#conditionGraph">Pathology</a>
         <a href="#formulaSection">Formulas</a>
         <a href="#databaseHealth">Health</a>
-        <a href="#billingAnchor">Billing</a>
+        <a href="#billingSection">Billing</a>
         <a href="#sourceSection">Sources</a>
         <a href="#publicArchitecture">Public Learn</a>
       </nav>
@@ -52,13 +52,13 @@
             <a href="#caseWorkspace">新增病例</a>
             <a href="#acupointDirectory">穴位查詢</a>
             <a href="#pathologyAnchor">病症對照</a>
-            <a href="#billingAnchor">Coding 檢查</a>
+            <a href="#billingSection">Coding 檢查</a>
           </div>
         </div>
         <div class="library-strip" aria-label="AcuTing OS content library">
           <a class="library-chip active" href="#acupointDirectory"><span>針灸</span><strong>Acupuncture</strong><small id="acupunctureProgress">載入中</small></a>
-          <a class="library-chip" href="#formulaLibrary"><span>方劑</span><strong>Formulas</strong><small>方義、組成、證型、加減</small></a>
-          <a class="library-chip" href="#pathologyLibrary"><span>病症</span><strong>Conditions</strong><small>中西醫病症對照</small></a>
+          <a class="library-chip" href="#formulaSection"><span>方劑</span><strong>Formulas</strong><small>方義、組成、證型、加減</small></a>
+          <a class="library-chip" href="#conditionGraph"><span>病症</span><strong>Conditions</strong><small>中西醫病症對照</small></a>
           <a class="library-chip clinical" href="#patientSystem"><span>病歷</span><strong>Patient Records</strong><small id="caseProgress">SOAP 與療程紀錄</small></a>
         </div>
         <div class="os-status-grid">
@@ -79,12 +79,12 @@
           <span class="data-pill">私用版先建骨架</span>
         </div>
         <div class="library-grid">
-          <a class="library-card primary" href="#acupointDirectory" data-library-search="LU1">
+          <a class="library-card primary" href="#acupointDirectory">
             <span>Acupuncture / 針灸穴位</span>
             <strong>十二經穴、奇經八脈、董氏奇穴</strong>
             <small>中英文定位、功效、主治、證型、解剖、手法禁忌與外部權威來源連結。</small>
           </a>
-          <a class="library-card" id="auricularLibrary" href="#acupointDirectory" data-library-search="耳穴">
+          <a class="library-card" id="auricularLibrary" href="#acupointDirectory" data-directory-topic-link="auricular_index">
             <span>Auricular / 耳穴</span>
             <strong>耳廓分區、國際代碼、耳穴定位</strong>
             <small>耳輪、耳舟、對耳輪、三角窩、耳甲、耳屏、耳垂等中英文解剖。</small>
@@ -94,7 +94,7 @@
             <strong>方名、組成、方義、證型與加減</strong>
             <small>之後可連到中藥、病症、西藥、孕產與不孕症療程配合。</small>
           </a>
-          <a class="library-card" id="pathologyLibrary" href="#caseWorkspace" data-library-search="PCOS">
+          <a class="library-card" id="pathologyLibrary" href="#conditionGraph">
             <span>Conditions / 病症</span>
             <strong>Western diagnosis × TCM patterns</strong>
             <small>西醫病名、相關中醫病機、常用配穴、方劑、轉診紅旗與證據等級。</small>
@@ -104,7 +104,7 @@
             <strong>病例登入、SOAP note、療程追蹤</strong>
             <small>記錄主訴、舌脈、辨證、用針、方藥、頻率、療效變化與保險文件準備。</small>
           </a>
-          <a class="library-card" id="billingLibrary" href="#billingAnchor">
+          <a class="library-card" id="billingLibrary" href="#billingSection">
             <span>Billing / 保險</span>
             <strong>Coding-ready documentation</strong>
             <small>先建立正式紀錄框架，以後再練 CPT/ICD-10 與上報邏輯。</small>
@@ -241,17 +241,17 @@
           <span class="data-pill">public-ready roadmap</span>
         </div>
         <div class="public-system-grid">
-          <a class="public-system-card" href="#acupointDirectory" data-library-search="LU1">
+          <a class="public-system-card" href="#acupointDirectory">
             <span>Traditional Acupuncture</span>
             <strong>十二經、奇經八脈、經外奇穴</strong>
             <small>依 channel、body region、special category、clinical topic 瀏覽。公開版定位以 WHO-style standards 為核心，英文安全語言對照 NCCIH/NCCAOM。</small>
           </a>
-          <a class="public-system-card tung" href="#acupointDirectory" data-library-search="Tung">
+          <a class="public-system-card tung" href="#acupointDirectory" data-directory-topic-link="tung_index">
             <span>Master Tung</span>
             <strong>董氏奇穴 / Tung Points</strong>
             <small>參考 Master Tung 網站的 by zone 架構：11 fingers、22 hands、33 forearms、44 upper arms、55 soles、66 feet、77 lower legs、88 thighs、99 ears、1010 head、DT/VT torso。</small>
           </a>
-          <a class="public-system-card auricular" href="#acupointDirectory" data-library-search="耳穴">
+          <a class="public-system-card auricular" href="#acupointDirectory" data-directory-topic-link="auricular_index">
             <span>Auricular</span>
             <strong>耳穴與耳廓解剖分區</strong>
             <small>依 antihelix、tragus、concha、helix、scapha、triangular fossa、earlobe 等英文解剖分區整理，保留國際代碼與功能分類。</small>
@@ -329,7 +329,7 @@
             <small>追蹤疼痛量表、週期、睡眠、情緒、消化、不孕療程節點與客觀變化。</small>
           </a>
           <span id="billingAnchor" class="anchor-target" aria-hidden="true"></span>
-          <a class="patient-action-card" href="#billingAnchor">
+          <a class="patient-action-card" href="#billingSection">
             <span class="card-icon">BI</span>
             <strong>保險紀錄準備</strong>
             <small>保留 coding-ready documentation 概念：診斷、醫療必要性、治療內容與反應。</small>
@@ -338,6 +338,24 @@
         <div class="patient-note">
           <strong>病歷安全原則</strong>
           <span>目前請只輸入去識別化資料：patient code，不放完整姓名、完整生日、電話、地址、保險號碼或任何可直接辨識身分的資訊。</span>
+        </div>
+      </section>
+
+
+      <section class="billing-section" id="billingSection" aria-label="Billing documentation workflow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Billing Documentation</p>
+            <h2>Insurance documentation / Coding-ready Notes</h2>
+            <p>This workspace does not submit claims. It prepares charting structure for future insurance practice: diagnosis context, medical necessity, treatment details, response, follow-up plan, and safety notes.</p>
+          </div>
+          <span class="data-pill">documentation scaffold</span>
+        </div>
+        <div class="billing-grid">
+          <article><span>SOAP</span><strong>Subjective / Objective / Assessment / Plan</strong><small>Every visit should connect treatment choices back to a chart note, not only a point list.</small></article>
+          <article><span>Diagnosis</span><strong>Western condition + TCM pattern</strong><small>Keep biomedical diagnosis, traditional disease name, and TCM pattern separate for future ICD-10 and treatment logic.</small></article>
+          <article><span>Treatment</span><strong>Points, method, time, response</strong><small>Track points, technique, retention, moxa/e-stim, patient response, and next plan.</small></article>
+          <article><span>Safety</span><strong>Privacy and red flags</strong><small>Do not publish real patient data on GitHub Pages. Real billing needs HIPAA/EHR and clinic workflow review.</small></article>
         </div>
       </section>
 
