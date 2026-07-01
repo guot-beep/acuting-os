@@ -3,7 +3,7 @@ globalThis.ACUTING_AURICULAR_GB93 = {
   "generated_on": "2026-06-21",
   "status": "index_scaffold",
   "expected_total": 93,
-  "current_indexed": 10,
+  "current_indexed": 13,
   "sources": [
     "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4",
     "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
@@ -30,6 +30,42 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "indications_zh": ["疼痛", "失眠", "神經系統調節", "內分泌調節"],
       "indications_en": ["pain", "insomnia", "nervous system regulation", "endocrine regulation"],
       "source_urls": ["https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"]
+    },
+    {
+      "code": "AT1",
+      "name_zh": "額",
+      "name_en": "Forehead",
+      "pinyin": "e",
+      "aliases_zh": ["對耳屏1區"],
+      "zone": "AT",
+      "review_status": "index_only",
+      "location_zh": "位於對耳屏外側面的前下部，對應對耳屏1區。",
+      "location_en": "On the anteroinferior part of the lateral antitragus, corresponding to Antitragus Zone 1.",
+      "source_urls": ["https://acupun.site/point_list_Ear93GB.aspx?pointId=AT1"]
+    },
+    {
+      "code": "AT2",
+      "name_zh": "顳",
+      "name_en": "Temple",
+      "pinyin": "nie",
+      "aliases_zh": ["暈點", "太陽", "對耳屏2區"],
+      "zone": "AT",
+      "review_status": "index_only",
+      "location_zh": "位於對耳屏外側面的中部，對應對耳屏2區。",
+      "location_en": "On the middle part of the lateral antitragus, corresponding to Antitragus Zone 2.",
+      "source_urls": ["https://acupun.site/point_list_Ear93GB.aspx?pointId=AT2"]
+    },
+    {
+      "code": "AT3",
+      "name_zh": "枕",
+      "name_en": "Occiput",
+      "pinyin": "zhen",
+      "aliases_zh": ["遺尿點", "對耳屏3區"],
+      "zone": "AT",
+      "review_status": "index_only",
+      "location_zh": "位於對耳屏外側面的後部，對應對耳屏3區。",
+      "location_en": "On the posterior part of the lateral antitragus, corresponding to Antitragus Zone 3.",
+      "source_urls": ["https://acupun.site/point_list_Ear93GB.aspx?pointId=AT3"]
     },
     { "code": "SC6", "name_zh": "待校對", "name_en": "Pending verification", "zone": "SC", "review_status": "index_only", "source_urls": ["https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"] },
     { "code": "CO4", "name_zh": "待校對", "name_en": "Pending verification", "zone": "CO", "review_status": "index_only", "source_urls": ["https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"] },

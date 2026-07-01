@@ -3,7 +3,7 @@
   "generated_on": "2026-06-27",
   "status": "verification_worklist",
   "expected_total": 93,
-  "current_indexed": 10,
+  "current_indexed": 13,
   "next_target_indexed": 30,
   "use_policy": "Candidate codes are not clinical point records. Promote a candidate into gb93_index only after the code, Chinese name, English name, auricular region, and visual source URL are checked.",
   "promotion_checklist": [
@@ -19,9 +19,6 @@
     "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
   ],
   "next_batch": [
-    { "candidate_code": "AT1", "zone": "AT", "status": "candidate_to_verify" },
-    { "candidate_code": "AT2", "zone": "AT", "status": "candidate_to_verify" },
-    { "candidate_code": "AT3", "zone": "AT", "status": "candidate_to_verify" },
     { "candidate_code": "SC1", "zone": "SC", "status": "candidate_to_verify" },
     { "candidate_code": "SC2", "zone": "SC", "status": "candidate_to_verify" },
     { "candidate_code": "SC3", "zone": "SC", "status": "candidate_to_verify" },
