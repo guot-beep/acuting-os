@@ -25,6 +25,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Acupoint card action clarity.
+
+Changes:
+- Converted rendered acupoint cards from visually clickable articles into explicit point-page actions with `role="button"`, `data-point-card`, and bilingual `aria-label` text.
+- Added a visible card action row: `Open point page / 開啟單穴頁`, with the point code shown as the action target.
+- Improved keyboard support by preventing Space key page-scroll while opening the point page.
+- Added focus-visible styling so keyboard users can see the active acupoint card target.
+- Updated `scripts/validate-interactions.js` to require point-card action semantics, visible action text, keyboard handling, and focus styling.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- `scripts/validate-interactions.js` passed with 51 internal hash links, 4 directory-topic shortcuts, 3 patient case actions, 12 clickable cards, 0 warnings, 0 failures.
+
+Commit:
+- This entry is part of the commit that clarifies acupoint card actions.
+
+Next:
+- Continue auditing the acupoint detail page sidebars and related-point buttons so those controls clearly show that they navigate to another single-point page.
+
+### 2026-07-01
+
 Scope: Dense module quick-navigation.
 
 Changes:

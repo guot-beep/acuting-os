@@ -7585,7 +7585,15 @@ function renderCards(filtered) {
   filtered.forEach((point) => {
     const card = document.createElement("article");
     card.className = `card ${point.code === selectedCode ? "active" : ""}`;
+    card.setAttribute("role", "button");
     card.tabIndex = 0;
+    card.setAttribute("data-point-card", point.code);
+    card.setAttribute(
+      "aria-label",
+      contentMode === "english"
+        ? `Open acupoint page for ${point.nameEn} ${point.code}`
+        : `開啟 ${point.nameZh} ${point.code} 單穴頁`
+    );
     card.innerHTML = `
       <div class="card-head">
         <div>
@@ -7596,10 +7604,17 @@ function renderCards(filtered) {
       </div>
       <p>${escapeHtml(contentMode === "english" ? (point.locationEn || point.location) : point.location)}</p>
       <div class="tag-row">${cardTags(point).map(tag).join("")}</div>
+      <div class="card-action-row">
+        <span>${contentMode === "english" ? "Open point page" : "開啟單穴頁"}</span>
+        <small>${escapeHtml(point.code)}</small>
+      </div>
     `;
     card.addEventListener("click", () => selectPoint(point.code));
     card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") selectPoint(point.code);
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        selectPoint(point.code);
+      }
     });
     cardsEl.append(card);
   });

@@ -148,6 +148,20 @@ if (missingModuleNavigationHooks.length) {
   fail("Main module chips must have dynamic active-state handling.", missingModuleNavigationHooks);
 }
 
+const requiredPointCardHooks = [
+  "data-point-card",
+  "role\", \"button\"",
+  "Open point page",
+  "開啟單穴頁",
+  "event.preventDefault();",
+  ".card-action-row",
+  ".card:focus-visible"
+];
+const missingPointCardHooks = requiredPointCardHooks.filter((hook) => !html.includes(hook) && !js.includes(hook) && !css.includes(hook));
+if (missingPointCardHooks.length) {
+  fail("Acupoint cards must behave and read as real point-page actions.", missingPointCardHooks);
+}
+
 const clickableCards = matches(/<a class="([^"]*(?:library-card|roadmap-card|patient-action-card)[^"]*)" href="#([^"]+)"/g)
   .map((match) => ({ className: match[1], target: match[2] }));
 const suspiciousCards = clickableCards.filter((card) => {
