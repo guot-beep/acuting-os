@@ -25,6 +25,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: GitHub Pages preparation.
+
+Changes:
+- Added `.nojekyll` so GitHub Pages serves AcuTing OS as a static app without Jekyll processing.
+- Updated `DEPLOYMENT.md` with the expected Pages URL and exact GitHub Pages settings.
+
+Validation:
+- Confirmed the repo root contains `index.html`.
+- Confirmed local repository is connected to `https://github.com/guot-beep/acuting-os.git`.
+- GitHub CLI is not installed in this environment, so Pages must be enabled from GitHub Settings unless another authenticated tool is added later.
+
+Commit:
+- This entry is part of the commit that prepares GitHub Pages.
+
+Next:
+- Enable GitHub Pages in GitHub: Settings > Pages > Deploy from branch > main > root.
+
+### 2026-07-01
+
 Scope: Persistent project log workflow.
 
 Changes:

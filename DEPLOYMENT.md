@@ -54,6 +54,29 @@ GitHub Pages can host static HTML/CSS/JS from a repository. Private repository s
 
 Do not put real patient data on GitHub Pages.
 
+Current project repository:
+
+```text
+https://github.com/guot-beep/acuting-os
+```
+
+Expected GitHub Pages project URL after Pages is enabled:
+
+```text
+https://guot-beep.github.io/acuting-os/
+```
+
+Recommended GitHub Pages settings:
+
+```text
+Settings > Pages
+Build and deployment: Deploy from a branch
+Branch: main
+Folder: / (root)
+```
+
+This repo includes a `.nojekyll` marker so GitHub Pages serves the static app files directly.
+
 ## Static App Entry
 
 Main page:
@@ -79,4 +102,3 @@ No build step is required right now.
 3. Use the staging URL on phone for study and data lookup.
 4. Keep AcuTing Learn public English content separate from private AcuTing OS clinical notes.
 5. Hand public-ready content to the acuting.com / Claude-managed workflow only after source review.
-
