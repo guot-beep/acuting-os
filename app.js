@@ -6129,7 +6129,10 @@ function applyPointHash() {
 
 function handlePointHashChange() {
   if (isSyncingPointHash) return;
-  if (!applyPointHash()) return;
+  if (!applyPointHash()) {
+    render();
+    return;
+  }
   render();
   document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -6268,16 +6271,25 @@ function render() {
   renderClinicalCases();
   renderDirectoryFilters();
   const filtered = getFilteredPoints();
+  const detailMode = isPointDetailMode();
   if (!filtered.some((point) => point.code === selectedCode)) {
     selectedCode = filtered[0]?.code || points[0]?.code || "";
   }
   renderMap(filtered);
   renderCards(filtered);
-  renderDetail(points.find((point) => point.code === selectedCode));
+  document.body.classList.toggle("point-detail-mode", detailMode);
+  if (cardsEl) cardsEl.hidden = detailMode;
+  if (detailCard) detailCard.hidden = !detailMode;
+  if (detailMode) renderDetail(points.find((point) => point.code === selectedCode));
+  else if (detailCard) detailCard.innerHTML = "";
   if (directoryTotalEl) directoryTotalEl.textContent = String(points.length);
   resultCount.textContent = contentMode === "english"
     ? `Showing ${filtered.length} / ${points.length} acupoints`
     : `目前顯示 ${filtered.length} / ${points.length} 個穴位`;
+}
+
+function isPointDetailMode() {
+  return /^#point\/.+/.test(window.location.hash);
 }
 
 function renderOsStatus() {
@@ -6525,6 +6537,11 @@ function bindDirectoryButtons(scope) {
       if (action === "topic") {
         directoryTopic = value;
         patternFilter.value = "";
+      }
+      if (window.location.hash.startsWith("#point/")) {
+        isSyncingPointHash = true;
+        window.location.hash = "#acupointDirectory";
+        isSyncingPointHash = false;
       }
       render();
       document.querySelector("#acupunctureWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -7495,6 +7512,10 @@ function renderDetail(point) {
   const sourceLinks = externalPointLinks(point);
   detailCard.innerHTML = `
     <nav class="point-breadcrumb" aria-label="breadcrumb">${escapeHtml(breadcrumbText(point))}</nav>
+    <div class="point-page-toolbar">
+      <button class="ghost" type="button" id="backToDirectoryBtn">${contentMode === "english" ? "Back to acupoint list" : "返回穴位列表"}</button>
+      <span>${escapeHtml(point.code)} ${escapeHtml(contentMode === "english" ? point.nameEn : point.nameZh)}</span>
+    </div>
     <div class="point-study-layout">
       <main class="point-article">
         <section class="point-hero-card">
@@ -7545,6 +7566,13 @@ function renderDetail(point) {
       </aside>
     </div>
   `;
+  document.querySelector("#backToDirectoryBtn")?.addEventListener("click", () => {
+    isSyncingPointHash = true;
+    window.location.hash = "#acupointDirectory";
+    isSyncingPointHash = false;
+    render();
+    document.querySelector("#acupointDirectory")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   document.querySelector("#editBtn").addEventListener("click", () => openEditor(point));
   document.querySelector("#copyPointLinkBtn")?.addEventListener("click", () => copyPointLink(point));
   detailCard.querySelectorAll("[data-related-point]").forEach((button) => {

@@ -25,6 +25,30 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Acupoint navigation and layout bug fix.
+
+Changes:
+- Split the acupoint area into two explicit states: directory/list mode and individual point article mode.
+- Individual point pages now appear only when the URL uses `#point/{code}`.
+- Added a back-to-directory control on individual acupoint pages.
+- Fixed hash navigation so leaving a point page returns the UI to list mode.
+- Updated top navigation targets so Auricular filters the acupoint directory, Pathology goes to the condition graph, Formulas goes to the formula section, and Billing goes to a real documentation anchor.
+- Added missing `pathologyAnchor` and `billingAnchor` targets.
+- Adjusted desktop and mobile CSS to reduce top navigation overflow and prevent point sidebars from overlapping article content.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- Internal hash-link audit passed: all non-point hash links resolve to existing page IDs.
+- Playwright package was available, but browser executable was not installed, so screenshot automation could not run in this environment.
+
+Commit:
+- This entry is part of the commit that fixes acupoint navigation and layout reliability.
+
+Next:
+- Continue reducing duplicate content architecture: audit each homepage/library card and decide whether it should be a real module, a filter shortcut, or removed.
+
+### 2026-07-01
+
 Scope: GitHub Pages preparation.
 
 Changes:

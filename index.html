@@ -18,11 +18,11 @@
         <a href="#patientSystem">Records</a>
         <a href="#caseWorkspace">Cases</a>
         <a href="#acupointDirectory">Acupuncture</a>
-        <a href="#auricularLibrary">Auricular</a>
-        <a href="#pathologyLibrary">Pathology</a>
-        <a href="#formulaLibrary">Formulas</a>
+        <a href="#acupointDirectory" data-library-search="耳穴">Auricular</a>
+        <a href="#conditionGraph">Pathology</a>
+        <a href="#formulaSection">Formulas</a>
         <a href="#databaseHealth">Health</a>
-        <a href="#billingLibrary">Billing</a>
+        <a href="#billingAnchor">Billing</a>
         <a href="#sourceSection">Sources</a>
         <a href="#publicArchitecture">Public Learn</a>
       </nav>
@@ -104,7 +104,7 @@
             <strong>病例登入、SOAP note、療程追蹤</strong>
             <small>記錄主訴、舌脈、辨證、用針、方藥、頻率、療效變化與保險文件準備。</small>
           </a>
-          <a class="library-card" id="billingLibrary" href="#caseWorkspace">
+          <a class="library-card" id="billingLibrary" href="#billingAnchor">
             <span>Billing / 保險</span>
             <strong>Coding-ready documentation</strong>
             <small>先建立正式紀錄框架，以後再練 CPT/ICD-10 與上報邏輯。</small>
@@ -328,7 +328,8 @@
             <strong>療程追蹤</strong>
             <small>追蹤疼痛量表、週期、睡眠、情緒、消化、不孕療程節點與客觀變化。</small>
           </a>
-          <a class="patient-action-card" href="#billingLibrary">
+          <span id="billingAnchor" class="anchor-target" aria-hidden="true"></span>
+          <a class="patient-action-card" href="#billingAnchor">
             <span class="card-icon">BI</span>
             <strong>保險紀錄準備</strong>
             <small>保留 coding-ready documentation 概念：診斷、醫療必要性、治療內容與反應。</small>
@@ -436,6 +437,7 @@
         </div>
       </section>
 
+      <span id="pathologyAnchor" class="anchor-target" aria-hidden="true"></span>
       <section class="condition-graph-section" id="conditionGraph" aria-label="Condition knowledge graph">
         <div class="section-heading">
           <div>
