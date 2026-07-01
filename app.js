@@ -5995,6 +5995,12 @@ document.querySelector("#patientSoapLink")?.addEventListener("click", (event) =>
   document.querySelector("#caseWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
   openSoapEditor();
 });
+document.querySelector("#patientTrackLink")?.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (caseSearch) caseSearch.value = "";
+  renderClinicalCases();
+  document.querySelector("#caseWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
+});
 document.querySelector("#exportCasesBtn").addEventListener("click", exportClinicalCases);
 document.querySelector("#importCasesFile").addEventListener("change", importClinicalCases);
 document.querySelector("#closeCaseDialog").addEventListener("click", () => caseDialog.close());

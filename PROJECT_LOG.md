@@ -25,6 +25,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: Patient action-card behavior cleanup.
+
+Changes:
+- Converted the Patient Record `Treatment Tracking` card from a plain `#caseWorkspace` jump into a handled action via `patientTrackLink`.
+- The tracking card now clears case search, refreshes the case list, and scrolls to the clinical case workspace.
+- Added a validation audit that flags patient action cards pointing to `#caseWorkspace` without a matching JS handler.
+
+Validation:
+- `app.js` syntax check passed with Node.
+- Internal hash-link audit passed: 35 internal links resolve to existing IDs.
+- Directory-topic shortcut audit passed for `auricular_index` and `tung_index`.
+- Patient action-card audit passed: `patientNewCaseLink`, `patientSoapLink`, and `patientTrackLink` all have handlers.
+
+Commit:
+- This entry is part of the commit that removes the remaining fake patient tracking action.
+
+Next:
+- Audit remaining non-patient cards and decide whether each card is a true navigation action, a true filter action, or should be downgraded to a non-clickable information card.
+
+### 2026-07-01
+
 Scope: Duplicate architecture reduction.
 
 Changes:
