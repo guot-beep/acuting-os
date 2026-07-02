@@ -39,7 +39,7 @@ Validation:
 - JSON parse check passed for `data/**/*.json`.
 
 Commit:
-- `092090a`
+- `91e88eb`
 
 Next:
 - Connect the formula relationship layer into the UI as source-aware formula detail prompts, then expand the clinical graph with missing pattern IDs such as qi deficiency, blood deficiency, yin deficiency, yang deficiency, damp-heat, and heart-spleen deficiency.
