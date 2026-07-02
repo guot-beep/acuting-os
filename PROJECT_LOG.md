@@ -506,6 +506,27 @@ Commit:
 Next:
 - Increase coverage beyond `10/93` through source-verified promotion.
 
+### 2026-07-02
+
+Scope: Phase 1 rebuild - data liberation + workspace shell (Claude Cowork).
+
+Changes:
+- Froze pre-migration app into `legacy/`.
+- Extracted all 15 embedded datasets from app.js into `data/acupoints/embedded/` and `data/auricular/embedded/` (256 standard + 29 auricular records + 4 i18n maps).
+- New pipeline: `scripts/build-data.js` builds `data/generated/app_data.js`; app.js now reads `globalThis.ACUTING_APP_DATA` (8,785 -> 3,266 lines).
+- New top navigation: 6 workspaces (Home/Lookup/Cases/Quality/Sources/Learn) with `js/router.js`; all legacy anchors and `#point/` deep links still work.
+- New docs: REBUILD_PLAN, DATA_MIGRATION_MAP, REBUILD_HANDOFF, VALIDATION_LOG under `docs/`.
+
+Validation:
+- `validate-data.js`: defaultPoints 681, deep-equal legacy vs current PASS, no duplicate codes.
+- jsdom smoke test 11/11 PASS.
+
+Known issue:
+- `.git/index` corrupted by sandbox git over OneDrive mount. Fix commands in docs/REBUILD_HANDOFF.md §15. Working tree and GitHub history intact.
+
+Next:
+- Codex: REBUILD_PLAN Phase 2 (361.json unification first, field map before merge).
+
 ### Earlier Project State Summary
 
 Completed before this log file:

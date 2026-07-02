@@ -13,13 +13,17 @@
         <h1>AcuTing OS 中醫學習系統</h1>
         <p class="top-subtitle">Clinical notebook · Acupuncture atlas · Bilingual knowledge graph</p>
       </div>
-      <nav class="top-nav workspace-nav" aria-label="主要工作區">
-        <a href="#ws/home" data-ws="home">首頁 Home</a>
-        <a href="#ws/lookup" data-ws="lookup">查詢 Lookup</a>
-        <a href="#ws/cases" data-ws="cases">病例 Cases</a>
-        <a href="#ws/quality" data-ws="quality">品質 Quality</a>
-        <a href="#ws/sources" data-ws="sources">來源 Sources</a>
-        <a href="#ws/learn" data-ws="learn">公開 Learn</a>
+      <nav class="top-nav" aria-label="主要工作區">
+        <a href="#contentLibrary">Library</a>
+        <a href="#patientSystem">Records</a>
+        <a href="#caseWorkspace">Cases</a>
+        <a href="#acupointDirectory">Acupuncture</a>
+        <a href="#acupointDirectory" data-directory-topic-link="auricular_index">Auricular</a>
+        <a href="#conditionGraph">Pathology</a>
+        <a href="#formulaSection">Formulas</a>
+        <a href="#databaseHealth">Health</a>
+        <a href="#billingSection">Billing</a>
+        <a href="#sourceSection">Sources</a>
       </nav>
       <div class="top-actions">
         <button id="exportBtn" class="ghost" type="button">匯出 JSON</button>
@@ -34,7 +38,7 @@
     </header>
 
     <main class="layout">
-      <section class="os-dashboard home-hero" data-workspace="home" aria-label="AcuTing OS 模組與進度">
+      <section class="os-dashboard home-hero" aria-label="AcuTing OS 模組與進度">
         <div class="os-intro">
           <p class="eyebrow">Private Clinical Workspace</p>
           <h2>查資料、寫 SOAP、建立自己的臨床知識庫</h2>
@@ -64,7 +68,7 @@
         </div>
       </section>
 
-      <section class="content-library" data-workspace="home" id="contentLibrary" aria-label="AcuTing OS 內容資料庫">
+      <section class="content-library" id="contentLibrary" aria-label="AcuTing OS 內容資料庫">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Content Library</p>
@@ -112,7 +116,7 @@
         </div>
       </section>
 
-      <section class="database-health" data-workspace="quality" id="databaseHealth" aria-label="Database health and completion tracking">
+      <section class="database-health" id="databaseHealth" aria-label="Database health and completion tracking">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Database Health</p>
@@ -226,7 +230,7 @@
         </div>
       </section>
 
-      <section class="system-roadmap" data-workspace="home" id="systemRoadmap" aria-label="AcuTing OS roadmap and secondary systems">
+      <section class="system-roadmap" id="systemRoadmap" aria-label="AcuTing OS roadmap and secondary systems">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Roadmap</p>
@@ -269,7 +273,7 @@
         </div>
       </section>
 
-      <section class="patient-system" data-workspace="cases" id="patientSystem" aria-label="我的病歷系統">
+      <section class="patient-system" id="patientSystem" aria-label="我的病歷系統">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Patient Record System</p>
@@ -308,7 +312,7 @@
       </section>
 
 
-      <section class="billing-section" data-workspace="cases" id="billingSection" aria-label="Billing documentation workflow">
+      <section class="billing-section" id="billingSection" aria-label="Billing documentation workflow">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Billing Documentation</p>
@@ -325,7 +329,7 @@
         </div>
       </section>
 
-      <section class="fertility-section" data-workspace="cases" id="fertilityWorkflow" aria-label="Fertility clinical workflow">
+      <section class="fertility-section" id="fertilityWorkflow" aria-label="Fertility clinical workflow">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Fertility Workflow</p>
@@ -364,7 +368,7 @@
         </div>
       </section>
 
-      <section class="formula-section" data-workspace="lookup" id="formulaSection" aria-label="方劑資料庫">
+      <section class="formula-section" id="formulaSection" aria-label="方劑資料庫">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Formula Layer</p>
@@ -428,7 +432,7 @@
       </section>
 
       <span id="pathologyAnchor" class="anchor-target" aria-hidden="true"></span>
-      <section class="condition-graph-section" data-workspace="lookup" id="conditionGraph" aria-label="Condition knowledge graph">
+      <section class="condition-graph-section" id="conditionGraph" aria-label="Condition knowledge graph">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Condition Graph</p>
@@ -471,7 +475,7 @@
         </div>
       </section>
 
-      <section class="learn-section" data-workspace="learn" id="learnSection" aria-label="AcuTing Learn 英文內容層">
+      <section class="learn-section" id="learnSection" aria-label="AcuTing Learn 英文內容層">
         <div class="section-heading">
           <div>
             <p class="eyebrow">AcuTing Learn</p>
@@ -482,7 +486,7 @@
         </div>
       </section>
 
-      <section class="source-section" data-workspace="sources" id="sourceSection" aria-label="資料來源 Sources">
+      <section class="source-section" id="sourceSection" aria-label="資料來源 Sources">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Sources</p>
@@ -535,7 +539,7 @@
         </div>
       </section>
 
-      <section class="case-workspace" data-workspace="cases" id="caseWorkspace" aria-label="Clinical Cases 病例紀錄">
+      <section class="case-workspace" id="caseWorkspace" aria-label="Clinical Cases 病例紀錄">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Clinical Case Notebook</p>
@@ -572,7 +576,7 @@
         <p class="note">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
       </section>
 
-      <section class="acupoint-directory-hero" data-workspace="lookup" id="acupointDirectory" aria-label="穴道大全">
+      <section class="acupoint-directory-hero" id="acupointDirectory" aria-label="穴道大全">
         <div>
           <p class="eyebrow">Acupuncture Directory</p>
           <h2>穴道大全 / Acupoint Directory</h2>
@@ -585,7 +589,7 @@
         </div>
       </section>
 
-      <section class="directory-layout" data-workspace="lookup" id="directoryLayout" aria-label="穴道大全分類瀏覽">
+      <section class="directory-layout" aria-label="穴道大全分類瀏覽">
         <aside class="directory-sidebar" aria-label="穴道分類">
           <section class="directory-filter-box">
             <h3>經絡分類</h3>
@@ -758,11 +762,9 @@
       核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。
     </footer>
 
-    <script src="data/generated/app_data.js"></script>
     <script src="data/tung/point_index.js"></script>
     <script src="data/auricular/gb93_index.js"></script>
     <script src="data/auricular/gb93_worklist.js"></script>
     <script src="app.js"></script>
-    <script src="js/router.js"></script>
   </body>
 </html>

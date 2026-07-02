@@ -28,11 +28,25 @@ function matches(pattern, text = html) {
 const ids = new Set(matches(/id="([^"]+)"/g).map((match) => match[1]));
 const hrefs = matches(/href="#([^"]+)"/g)
   .map((match) => match[1])
-  .filter((target) => target && !target.startsWith("point/"));
+  .filter((target) => target && !target.startsWith("point/") && !target.startsWith("ws/"));
 
 const missingHashTargets = unique(hrefs.filter((target) => !ids.has(target)));
 if (missingHashTargets.length) {
   fail("Internal hash links must point to existing IDs.", missingHashTargets);
+}
+
+const workspaceRoutes = matches(/href="#(ws\/[^"]+)"/g).map((match) => match[1]);
+if (workspaceRoutes.length) {
+  const routerPath = path.join(root, "js", "router.js");
+  if (!fs.existsSync(routerPath)) {
+    fail("Workspace routes require js/router.js.", workspaceRoutes);
+  } else {
+    const routerJs = fs.readFileSync(routerPath, "utf8");
+    const missingRouterHooks = ["#ws/", "data-workspace"].filter((hook) => !routerJs.includes(hook));
+    if (missingRouterHooks.length) {
+      fail("Workspace router must understand #ws routes and data-workspace sections.", missingRouterHooks);
+    }
+  }
 }
 
 const topicLinks = matches(/data-directory-topic-link="([^"]+)"/g).map((match) => match[1]);

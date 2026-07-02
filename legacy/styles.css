@@ -3577,20 +3577,3 @@ body.point-detail-mode .point-sidebar {
     grid-template-columns: 1fr;
   }
 }
-
-/* ============================================================
-   Workspace router (js/router.js) — appended by rebuild Phase 1
-   ============================================================ */
-section[data-workspace][hidden] {
-  display: none !important;
-}
-
-.workspace-nav a {
-  white-space: nowrap;
-}
-
-.workspace-nav a.active {
-  background: var(--accent, #4a5d4a);
-  color: #fff;
-  border-radius: 999px;
-}
