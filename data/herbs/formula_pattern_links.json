@@ -1,0 +1,418 @@
+{
+  "dataset": "AcuTing OS formula-pattern relationship links",
+  "status": "draft_relationship_index",
+  "updated": "2026-07-02",
+  "purpose": "Connect high-yield formula records to TCM pattern families, Western condition contexts, acupoint seed links, safety prompts, fertility workflow checkpoints, and future SOAP fields.",
+  "clinical_authority_notice": "Draft study and data-model layer only. These records are not clinical prescriptions and are not public-ready until source-checked against professional formula references and clinician review.",
+  "public_policy": {
+    "public_safe_default": false,
+    "public_use_requirement": "Before public use, verify formula actions, composition, contraindications, and medication interactions against authoritative English-language sources and replace draft notes with cited summaries."
+  },
+  "schema": {
+    "formula_id": "Must match data/herbs/formulas.json records[].id.",
+    "pattern_ids": "Must match data/pathology/clinical_graph_seed.json tcm_patterns[].id.",
+    "western_condition_ids": "Optional IDs from the clinical graph when the link is relevant.",
+    "western_context_tags": "Search tags for future pathology or medication graph expansion.",
+    "acupoint_seed_codes": "Draft acupuncture seed links for study/search only. Must match available acupoint codes.",
+    "safety_flag_ids": "Must match data/herbs/formula_safety_flags.json flags[].id.",
+    "fertility_workflow_links": "Draft workflow hooks for future fertility-cycle support.",
+    "soap_link_fields": "Future case/SOAP fields that can store this relationship.",
+    "review_status": "draft_index until source-checked.",
+    "source_status": "needs_professional_source_review until citations are attached."
+  },
+  "records": [
+    {
+      "formula_id": "formula.xiao_yao_san",
+      "pattern_ids": [
+        "pattern.liver_qi_stagnation"
+      ],
+      "western_condition_ids": [
+        "western_condition.unexplained_infertility"
+      ],
+      "western_context_tags": [
+        "pms_context",
+        "stress_related_digestive_symptoms",
+        "cycle_irregularity_context",
+        "fertility_support_review"
+      ],
+      "acupoint_seed_codes": [
+        "LR3",
+        "SP6",
+        "PC6",
+        "ST36"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "fertility_medication_review"
+      ],
+      "fertility_workflow_links": [
+        "fertility.general_cycle_support_review",
+        "fertility.luteal_phase_symptom_review"
+      ],
+      "soap_link_fields": [
+        "tcmPatternLinks",
+        "formulaLinks",
+        "cyclePhase",
+        "medicationReview"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for liver qi stagnation study workflows; verify indications, modifications, and timing before clinical use."
+    },
+    {
+      "formula_id": "formula.gui_pi_tang",
+      "pattern_ids": [],
+      "western_condition_ids": [
+        "western_condition.unexplained_infertility"
+      ],
+      "western_context_tags": [
+        "insomnia_context",
+        "palpitation_context",
+        "fatigue_context",
+        "menstrual_irregularity_context"
+      ],
+      "acupoint_seed_codes": [
+        "HT7",
+        "SP6",
+        "ST36",
+        "BL20"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "sedative_medication_review",
+        "bleeding_review"
+      ],
+      "fertility_workflow_links": [
+        "fertility.sleep_stress_review",
+        "fertility.bleeding_pattern_review"
+      ],
+      "soap_link_fields": [
+        "sleep",
+        "stress",
+        "bleedingPattern",
+        "formulaLinks"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for heart-spleen or qi-blood deficiency study workflows; add graph pattern IDs after those patterns are formally added."
+    },
+    {
+      "formula_id": "formula.si_wu_tang",
+      "pattern_ids": [],
+      "western_condition_ids": [
+        "western_condition.unexplained_infertility"
+      ],
+      "western_context_tags": [
+        "blood_deficiency_context",
+        "menstrual_irregularity_context",
+        "fatigue_context",
+        "post_bleeding_recovery_context"
+      ],
+      "acupoint_seed_codes": [
+        "SP6",
+        "ST36",
+        "BL17"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "bleeding_review",
+        "anticoagulant_review"
+      ],
+      "fertility_workflow_links": [
+        "fertility.menstrual_volume_review",
+        "fertility.luteal_phase_support_review"
+      ],
+      "soap_link_fields": [
+        "menstrualHistory",
+        "bleedingPattern",
+        "formulaLinks",
+        "medicationReview"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for blood deficiency-style study workflows; verify with formula sources and patient bleeding risk."
+    },
+    {
+      "formula_id": "formula.liu_wei_di_huang_wan",
+      "pattern_ids": [
+        "pattern.kidney_deficiency"
+      ],
+      "western_condition_ids": [
+        "western_condition.pcos",
+        "western_condition.unexplained_infertility"
+      ],
+      "western_context_tags": [
+        "yin_deficiency_context",
+        "menopause_context",
+        "fertility_support_review",
+        "metabolic_context_review"
+      ],
+      "acupoint_seed_codes": [
+        "KI3",
+        "SP6",
+        "CV4",
+        "BL23"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "kidney_disease_review",
+        "cloying_digestive_effect"
+      ],
+      "fertility_workflow_links": [
+        "fertility.kidney_deficiency_review",
+        "fertility.baseline_constitution_review"
+      ],
+      "soap_link_fields": [
+        "constitution",
+        "fertilityHistory",
+        "formulaLinks",
+        "digestiveTolerance"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for kidney deficiency and yin-deficiency contexts; verify exact pattern differentiation before use."
+    },
+    {
+      "formula_id": "formula.jin_gui_shen_qi_wan",
+      "pattern_ids": [
+        "pattern.kidney_deficiency"
+      ],
+      "western_condition_ids": [
+        "western_condition.unexplained_infertility"
+      ],
+      "western_context_tags": [
+        "yang_deficiency_context",
+        "cold_intolerance_context",
+        "urinary_context",
+        "fertility_support_review"
+      ],
+      "acupoint_seed_codes": [
+        "KI3",
+        "CV4",
+        "GV14",
+        "BL23"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "kidney_disease_review",
+        "hypertension_review"
+      ],
+      "fertility_workflow_links": [
+        "fertility.kidney_yang_review",
+        "fertility.baseline_constitution_review"
+      ],
+      "soap_link_fields": [
+        "constitution",
+        "urinarySymptoms",
+        "formulaLinks",
+        "medicationReview"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for kidney yang-style study workflows; verify warming strategy, blood pressure, and medication context."
+    },
+    {
+      "formula_id": "formula.wen_jing_tang",
+      "pattern_ids": [
+        "pattern.blood_stasis"
+      ],
+      "western_condition_ids": [
+        "western_condition.unexplained_infertility"
+      ],
+      "western_context_tags": [
+        "dysmenorrhea_context",
+        "cold_pain_context",
+        "cycle_irregularity_context",
+        "fertility_support_review"
+      ],
+      "acupoint_seed_codes": [
+        "SP6",
+        "CV4",
+        "ST29",
+        "LR3"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "fertility_medication_review",
+        "anticoagulant_review",
+        "bleeding_review"
+      ],
+      "fertility_workflow_links": [
+        "fertility.menstrual_pain_review",
+        "fertility.iui_ivf_medication_timing_review"
+      ],
+      "soap_link_fields": [
+        "cyclePhase",
+        "painPattern",
+        "bleedingPattern",
+        "medicationReview"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for gynecology and blood stasis/cold-style study workflows; requires source and medication-timing review."
+    },
+    {
+      "formula_id": "formula.tao_hong_si_wu_tang",
+      "pattern_ids": [
+        "pattern.blood_stasis"
+      ],
+      "western_condition_ids": [],
+      "western_context_tags": [
+        "dysmenorrhea_context",
+        "blood_stasis_context",
+        "pelvic_pain_context",
+        "bleeding_risk_review"
+      ],
+      "acupoint_seed_codes": [
+        "SP6",
+        "LR3",
+        "BL17",
+        "SP10"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_caution",
+        "anticoagulant_review",
+        "bleeding_review"
+      ],
+      "fertility_workflow_links": [
+        "fertility.bleeding_pattern_review",
+        "fertility.medication_timing_review"
+      ],
+      "soap_link_fields": [
+        "painPattern",
+        "bleedingPattern",
+        "formulaLinks",
+        "medicationReview"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for blood-moving study workflows; do not expose as public clinical guidance until contraindications are source-checked."
+    },
+    {
+      "formula_id": "formula.er_chen_tang",
+      "pattern_ids": [
+        "pattern.phlegm_damp_obstruction"
+      ],
+      "western_condition_ids": [
+        "western_condition.pcos"
+      ],
+      "western_context_tags": [
+        "phlegm_damp_context",
+        "nausea_context",
+        "cough_context",
+        "metabolic_context_review"
+      ],
+      "acupoint_seed_codes": [
+        "ST40",
+        "PC6",
+        "ST36",
+        "SP9"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "gi_red_flags",
+        "respiratory_red_flags"
+      ],
+      "fertility_workflow_links": [
+        "fertility.phlegm_damp_review",
+        "fertility.digestive_tolerance_review"
+      ],
+      "soap_link_fields": [
+        "digestiveSymptoms",
+        "respiratorySymptoms",
+        "formulaLinks",
+        "redFlagScreen"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for phlegm-damp study workflows; verify indications and respiratory red flags before use."
+    },
+    {
+      "formula_id": "formula.long_dan_xie_gan_tang",
+      "pattern_ids": [],
+      "western_condition_ids": [],
+      "western_context_tags": [
+        "damp_heat_context",
+        "urinary_symptom_context",
+        "gynecology_infection_rule_out",
+        "liver_gallbladder_context"
+      ],
+      "acupoint_seed_codes": [
+        "LR3",
+        "GB34",
+        "SP9",
+        "CV4"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "liver_disease_review",
+        "kidney_disease_review",
+        "not_for_self_treatment"
+      ],
+      "fertility_workflow_links": [
+        "fertility.infection_rule_out_review",
+        "fertility.urinary_symptom_referral_review"
+      ],
+      "soap_link_fields": [
+        "urinarySymptoms",
+        "infectionScreen",
+        "redFlagScreen",
+        "formulaLinks"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for damp-heat contexts; requires medical red-flag screening and source review before clinical/public use."
+    },
+    {
+      "formula_id": "formula.bu_zhong_yi_qi_tang",
+      "pattern_ids": [],
+      "western_condition_ids": [],
+      "western_context_tags": [
+        "qi_deficiency_context",
+        "fatigue_context",
+        "prolapse_context",
+        "digestive_weakness_context"
+      ],
+      "acupoint_seed_codes": [
+        "ST36",
+        "CV6",
+        "GV20",
+        "SP6"
+      ],
+      "safety_flag_ids": [
+        "pregnancy_review",
+        "hypertension_review",
+        "not_for_self_treatment"
+      ],
+      "fertility_workflow_links": [
+        "fertility.energy_baseline_review",
+        "fertility.digestive_tolerance_review"
+      ],
+      "soap_link_fields": [
+        "energyLevel",
+        "digestiveSymptoms",
+        "formulaLinks",
+        "vitalsReview"
+      ],
+      "review_status": "draft_index",
+      "source_status": "needs_professional_source_review",
+      "public_safe": false,
+      "notes": "Relationship seed for qi-deficiency and sinking-qi style study workflows; verify heat signs, blood pressure, and differential diagnosis."
+    }
+  ],
+  "next_steps": [
+    "Add formal graph pattern IDs for qi deficiency, blood deficiency, yin deficiency, yang deficiency, damp-heat, and heart-spleen deficiency.",
+    "Attach source citations from professional formula references before public release.",
+    "Render these relationships inside formula detail pages and patient SOAP note suggestion panels only as review prompts.",
+    "Extend the same structure to single herbs after the formula layer is stable."
+  ]
+}

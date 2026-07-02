@@ -23,6 +23,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-02
+
+Scope: Formula-pattern relationship layer.
+
+Changes:
+- Added `data/herbs/formula_pattern_links.json` as a draft relationship index connecting high-yield formulas to TCM pattern IDs, Western condition contexts, acupoint seed codes, safety flags, fertility workflow hooks, and future SOAP fields.
+- Added `scripts/validate-herbal-links.js` to check formula IDs, graph IDs, safety flags, acupoint codes, review status, source status, and draft public-safety rules.
+- Kept all new relationship records as `draft_index`, `needs_professional_source_review`, and `public_safe: false` so they are study/search structure only, not clinical authority or public-ready content.
+
+Validation:
+- `scripts/validate-herbal-links.js` passed: 10 draft formula relationship records.
+- `scripts/validate-interactions.js` passed.
+- `app.js` syntax check passed.
+- JSON parse check passed for `data/**/*.json`.
+
+Commit:
+- `092090a`
+
+Next:
+- Connect the formula relationship layer into the UI as source-aware formula detail prompts, then expand the clinical graph with missing pattern IDs such as qi deficiency, blood deficiency, yin deficiency, yang deficiency, damp-heat, and heart-spleen deficiency.
+
 ### 2026-07-01
 
 Scope: System architecture audit.
