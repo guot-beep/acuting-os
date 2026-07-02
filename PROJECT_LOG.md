@@ -25,6 +25,28 @@ Use this file as the first-read context before each daily optimization session. 
 
 ### 2026-07-01
 
+Scope: System architecture audit.
+
+Changes:
+- Added `ARCHITECTURE_AUDIT.md` as the system-level architecture decision map for AcuTing OS.
+- Identified the core issue: multiple valid products are currently sharing one visual hierarchy.
+- Defined the recommended product layers: Lookup, Clinical, Quality, and Public.
+- Classified current sections into keep/change decisions.
+- Defined interaction rules, data entities, relationship model, content status model, mobile architecture, and staged rebuild strategy.
+- Established that future work should reduce one-page sprawl before adding more content.
+
+Validation:
+- Documentation-only update.
+- Confirmed existing `DESIGN_OPTIMIZATION_PLAN.md` remains focused on UX/design workflow, while `ARCHITECTURE_AUDIT.md` covers product/system structure.
+
+Commit:
+- This entry is part of the commit that adds the system architecture audit.
+
+Next:
+- Start applying the architecture map by grouping the visible UI mentally and then in code into `Lookup`, `Clinical`, `Quality`, and `Public` zones.
+
+### 2026-07-01
+
 Scope: Related-point navigation clarity.
 
 Changes:
