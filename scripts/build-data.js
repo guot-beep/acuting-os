@@ -52,3 +52,39 @@ const counts = Object.fromEntries(
 );
 console.log("Built data/generated/app_data.js");
 console.log(JSON.stringify(counts, null, 2));
+
+// ---- Knowledge bundle (formulas / conditions / sources / audit) ----------
+const knowledge = {
+  formulas: JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/formulas.json"), "utf8")),
+  conditions: JSON.parse(fs.readFileSync(path.join(ROOT, "data/pathology/conditions.json"), "utf8")),
+  sources: JSON.parse(fs.readFileSync(path.join(ROOT, "data/sources/source_registry.json"), "utf8")),
+  audit: JSON.parse(fs.readFileSync(path.join(ROOT, "data/audits/missing_report.json"), "utf8")),
+};
+const kBanner = `// GENERATED FILE - DO NOT EDIT.
+// Built by scripts/build-data.js on ${new Date().toISOString()}
+// Source of truth: data/herbs/formulas.json, data/pathology/conditions.json,
+//                  data/sources/source_registry.json, data/audits/missing_report.json
+`;
+fs.writeFileSync(
+  path.join(ROOT, "data/generated/knowledge_data.js"),
+  kBanner + "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n"
+);
+console.log("Built data/generated/knowledge_data.js");
+console.log(JSON.stringify({
+  formulas: knowledge.formulas.records.length,
+  conditions: knowledge.conditions.records.length,
+  eastern: knowledge.conditions.eastern_diseases.length,
+  patterns: knowledge.conditions.tcm_patterns.length,
+  sources: knowledge.sources.sources.length,
+  audit_missing: knowledge.audit.total_missing,
+}));
+
+// ---- CloudTCM per-point map (code -> numeric page id + image filename) -----
+const cloudtcm = JSON.parse(fs.readFileSync(path.join(ROOT, "data/sources/cloudtcm_point_map.json"), "utf8"));
+fs.writeFileSync(
+  path.join(ROOT, "data/generated/cloudtcm_map.js"),
+  "// GENERATED FILE - DO NOT EDIT. Built by scripts/build-data.js\n" +
+  "// Source: data/sources/cloudtcm_point_map.json\n" +
+  "globalThis.ACUTING_CLOUDTCM_MAP = " + JSON.stringify(cloudtcm.points) + ";\n"
+);
+console.log("Built data/generated/cloudtcm_map.js (" + Object.keys(cloudtcm.points).length + " points)");

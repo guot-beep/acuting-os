@@ -50,7 +50,11 @@
     }
     if (hash.startsWith("#point/")) {
       activate("lookup");
-      return; // app.js scrolls to the detail card
+      requestAnimationFrame(() => {
+        const detail = document.getElementById("detailCard");
+        if (detail) detail.scrollIntoView({ block: "start" });
+      });
+      return;
     }
     if (hash.length > 1) {
       const id = decodeURIComponent(hash.slice(1));

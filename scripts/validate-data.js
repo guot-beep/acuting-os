@@ -82,21 +82,32 @@ if (legacy.length !== current.length) {
   console.log(`OK: defaultPoints count identical (${current.length})`);
 }
 
-const a = JSON.stringify(legacy);
-const b = JSON.stringify(current);
+// `sources` and `visualLinks` are reference-URL fields that we intentionally
+// improve over time (e.g. per-point CloudTCM search instead of a generic
+// directory link). Exclude them from the deep-equal so this gate still
+// protects the clinical fields (location, functions, patterns, cautions...)
+// against accidental data loss, without flagging deliberate URL upgrades.
+const IGNORED_FIELDS = ["sources", "visualLinks"];
+function stripForCompare(point) {
+  const clone = { ...point };
+  for (const f of IGNORED_FIELDS) delete clone[f];
+  return clone;
+}
+const a = JSON.stringify(legacy.map(stripForCompare));
+const b = JSON.stringify(current.map(stripForCompare));
 if (a === b) {
-  console.log("OK: defaultPoints deep-equal between legacy and current app");
+  console.log("OK: defaultPoints deep-equal between legacy and current app (excluding reference-URL fields)");
 } else {
-  const byCode = new Map(legacy.map((p) => [p.code, p]));
+  const byCode = new Map(legacy.map((p) => [p.code, stripForCompare(p)]));
   let diffs = 0;
   for (const p of current) {
     const q = byCode.get(p.code);
-    if (!q || JSON.stringify(p) !== JSON.stringify(q)) {
+    if (!q || JSON.stringify(stripForCompare(p)) !== JSON.stringify(q)) {
       if (diffs < 5) console.error("  diff at code: " + p.code);
       diffs++;
     }
   }
-  fail(`defaultPoints differ (${diffs} records affected)`);
+  fail(`defaultPoints clinical fields differ (${diffs} records affected)`);
 }
 
 const codes = current.map((p) => p.code);

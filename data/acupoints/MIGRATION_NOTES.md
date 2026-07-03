@@ -82,3 +82,62 @@ Completed the Bladder channel foot segment and re-synced `data/acupoints/361.jso
 - Missing standard-channel acupoints now tracked in `data/audits/missing_report.json`: 151 remaining.
 - Current Bladder channel coverage: 67 of 67.
 - Next recommended standard channel batch: KI1-KI27.
+
+## 2026-07-02 Phase 2 planning
+
+Codex started Phase 2 with schema planning only. No acupoint records were merged
+or edited in this step.
+
+Current state after Phase 1 data liberation:
+
+- Runtime app data now comes from `data/acupoints/embedded/*.json`, then
+  `scripts/build-data.js` generates `data/generated/app_data.js`.
+- `data/acupoints/361.json` remains a canonical candidate, but is not yet the
+  runtime source of truth.
+- Embedded runtime acupoint data currently has 237 unique codes.
+- Of those, 235 are standard-channel codes.
+- `361.json` currently has 210 records.
+- The 25 embedded standard-channel records missing from `361.json` are:
+  KI1, KI2, KI4-KI27.
+
+Canonical direction:
+
+- `361.json` should become the canonical standard-channel acupoint file.
+- The merge must preserve both existing 361 structured fields and current app UI
+  fields such as `region`, `visualLinks`, `x`, `y`, and `cautions`.
+- Full field mapping and validation rules are recorded in
+  `docs/DATA_MIGRATION_MAP.md`.
+
+Important:
+
+- Do not manually merge records into `361.json` without a script and validation.
+- Do not overwrite populated structured fields in `361.json` with weaker app
+  fields unless the decision is documented.
+- The current app must continue to produce 681 `defaultPoints` after any schema
+  migration or generated adapter change.
+
+## 2026-07-02/03 361 merge applied
+
+Codex generated and Ting approved a scripted merge preview, then applied it to
+`data/acupoints/361.json`.
+
+- Script: `scripts/merge-361-preview.js`
+- Diff summary: `docs/361_MERGE_DIFF_SUMMARY.md`
+- Full preview artifact: `docs/361_MERGE_PREVIEW.json`
+- Previous 361 count: 210
+- New 361 count: 235
+- Added records: KI1, KI2, KI4, KI5, KI7-KI27
+- Existing KI records preserved: KI3, KI6
+- Removed records: 0
+- Duplicate codes after merge: 0
+- Question-mark placeholder fields repaired from embedded data: 39
+- Non-empty overwrite candidates left unapplied: 23
+
+Validation after apply:
+
+- `scripts/validate-data.js`: PASS, 681 defaultPoints deep-equal, no duplicate point codes.
+- `scripts/validate-interactions.js`: PASS, 0 failures.
+
+Runtime note: the app still consumes embedded JSON through generated app data.
+Do not migrate runtime consumption to `361.json` until a generated adapter exists
+and passes the same validation gates.

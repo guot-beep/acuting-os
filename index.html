@@ -113,6 +113,7 @@
       </section>
 
       <section class="database-health" data-workspace="quality" id="databaseHealth" aria-label="Database health and completion tracking">
+        <div id="auditFileStrip" class="k-records"></div>
         <div class="section-heading">
           <div>
             <p class="eyebrow">Database Health</p>
@@ -374,6 +375,7 @@
           <span class="data-pill">下一階段填內容</span>
         </div>
         <nav class="section-quicknav" aria-label="Formula section quick navigation">
+          <a href="#formulaRecords">Records</a>
           <a href="#formulaSchema">Schema</a>
           <a href="#formulaCategories">Categories</a>
           <a href="#formulaSafety">Safety</a>
@@ -420,6 +422,7 @@
           <div><strong>Public formula rule</strong><span>公開英文版不可只列「功效」，必須同時列 pattern indication、contraindications、herb-drug cautions、pregnancy/fertility review。</span></div>
           <div><strong>Clinic rule</strong><span>病例紀錄裡的方劑使用要連回 SOAP note、用藥、西醫診斷、療程日期與症狀變化。</span></div>
         </div>
+        <div id="formulaRecords" class="k-records" aria-label="Formula records"></div>
         <div class="formula-progress-strip" id="formulaProgress">
           <span><strong>23</strong> draft high-yield formulas seeded</span>
           <span><strong>18</strong> formula categories</span>
@@ -465,6 +468,7 @@
             <small>Conditions connect to patterns, acupuncture seeds, formula seeds, medication context, fertility workflow, and red flags.</small>
           </article>
         </div>
+        <div id="conditionRecords" class="k-records" aria-label="Condition records"></div>
         <div class="condition-warning" id="conditionGraphRule">
           <strong>Graph rule</strong>
           <span>西醫診斷、傳統病名、證型不是一對一翻譯；AcuTing 用 relation records 表示「可能相關」，每次病例仍要依實際 SOAP 與臨床辨證判斷。</span>
@@ -533,6 +537,7 @@
             <small>定位、骨度分寸、手法禁忌與專業安全判斷仍需回到標準教材與臨床訓練。</small>
           </article>
         </div>
+        <div id="sourceRegistry" class="k-records" aria-label="Source registry"></div>
       </section>
 
       <section class="case-workspace" data-workspace="cases" id="caseWorkspace" aria-label="Clinical Cases 病例紀錄">
@@ -692,13 +697,22 @@
           <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
           <label>狀態 Status<select name="status"><option value="active">active</option><option value="paused">paused</option><option value="closed">closed</option></select></label>
           <label>開始日期<input name="startDate" type="date" /></label>
-          <label>出生年 Birth year<input name="birthYear" type="number" min="1900" max="2100" placeholder="1992" /></label>
-          <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2"></textarea></label>
+          <label>出生年月 Birth (year-month)<input name="birthYearMonth" type="month" min="1900-01" max="2100-12" /></label>
+          <label>性別 Sex<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
+          <label>職業 Occupation<input name="occupation" placeholder="選填" /></label>
+          <label class="wide">就診目標 Goals（病人想改善什麼）<input name="goals" placeholder="想改善睡眠 / 助孕 / 減痛…" /></label>
+          <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2" placeholder="主要不適 + 病程長短"></textarea></label>
+          <label class="wide">現病史 History of present illness<textarea name="historyPresent" rows="3" placeholder="發病時間、經過、誘因、加重/緩解因素、伴隨症狀"></textarea></label>
+          <label class="wide">既往史 Past medical history<textarea name="pastHistory" rows="2" placeholder="慢性病、手術、家族史"></textarea></label>
+          <label class="wide">月經/婦科史 Menstrual & OB-Gyn<textarea name="menstrualObHistory" rows="2" placeholder="初經、週期天數、經量/經色/血塊、經痛、LMP、孕產 G_P_、避孕方式"></textarea></label>
+          <label class="wide">生活習慣 Lifestyle<textarea name="lifestyle" rows="2" placeholder="睡眠、飲食、壓力、運動、菸酒、咖啡因"></textarea></label>
+          <label>過敏 Allergies<input name="allergies" placeholder="藥物 / 食物 / 暈針" /></label>
+          <label>目前用藥 Current meds<input name="currentMeds" placeholder="西藥 / 補充品" /></label>
           <label class="wide">西醫病名 Western conditions<textarea name="westernConditions" rows="2" placeholder="PCOS, unexplained infertility"></textarea></label>
           <label class="wide">中醫病名 Eastern diseases<textarea name="easternDiseases" rows="2" placeholder="不孕、月經後期"></textarea></label>
-          <label class="wide">證型 TCM patterns<textarea name="tcmPatterns" rows="2" placeholder="痰濕阻滯、肝氣鬱結"></textarea></label>
-          <label class="wide">安全提醒 Safety flags<textarea name="safetyFlags" rows="2" placeholder="possible pregnancy, anticoagulant use, heavy bleeding"></textarea></label>
-          <label class="wide">摘要 Summary<textarea name="summary" rows="3"></textarea></label>
+          <label class="wide">目前主證型 Working pattern（摘要，每次看診可再細分）<textarea name="tcmPatterns" rows="2" placeholder="痰濕阻滯、肝氣鬱結"></textarea></label>
+          <label class="wide">安全提醒 Safety flags<textarea name="safetyFlags" rows="2" placeholder="possible pregnancy, anticoagulant use, heavy bleeding, needle syncope"></textarea></label>
+          <label class="wide">摘要 Summary<textarea name="summary" rows="2"></textarea></label>
         </div>
         <div class="dialog-actions">
           <button id="deleteCaseBtn" class="danger" type="button">刪除病例</button>
@@ -728,20 +742,29 @@
           <label class="wide">Safety flag links<textarea name="safetyFlagLinks" rows="2" placeholder="safety.possible_pregnancy, safety.anticoagulant_use"></textarea></label>
 
           <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
-          <label class="wide soap-section">O - Objective<textarea name="objective" rows="4" placeholder="望診、舌、脈、觸診、ROM、labs/imaging"></textarea></label>
-          <label class="wide soap-section">A - Assessment<textarea name="assessment" rows="4" placeholder="西醫病名、中醫病名、證型、診斷、治則、安全判斷"></textarea></label>
-          <label class="wide soap-section">P - Plan<textarea name="plan" rows="5" placeholder="針灸治法、穴位、手法、留針、艾灸/電針、方藥、西藥背景、homecare、follow-up"></textarea></label>
+          <label class="wide soap-section">O - Objective 望聞切<textarea name="objective" rows="3" placeholder="神色形態、望診、觸診、ROM、生命徵象、labs/imaging"></textarea></label>
+          <label>舌質 Tongue body<input name="tongueBody" placeholder="淡紅 / 紅 / 淡白 / 紫暗；胖大 / 齒痕 / 裂紋" /></label>
+          <label>舌苔 Tongue coating<input name="tongueCoating" placeholder="薄白 / 黃膩 / 少苔 / 無苔" /></label>
+          <label class="wide">脈象 Pulse<input name="pulse" placeholder="浮沉遲數 / 弦滑細澀…（可分左右寸關尺）" /></label>
+          <label class="wide">生命徵象 Vitals<input name="vitals" placeholder="BP 120/80、HR 72、身高/體重、體溫（選填）" /></label>
+          <label class="wide soap-section">A - Assessment 辨證<textarea name="assessment" rows="2" placeholder="四診合參、西醫診斷、安全判斷"></textarea></label>
+          <label class="wide">證型 TCM pattern（本次）<input name="tcmPattern" placeholder="肝鬱脾虛、腎陰虛…" /></label>
+          <label class="wide">病機 Pathomechanism<textarea name="pathomechanism" rows="2" placeholder="為什麼會這樣：如肝失疏泄，橫逆犯脾"></textarea></label>
+          <label class="wide soap-section">P - Plan 治法處方<textarea name="plan" rows="3" placeholder="整體治療計畫、homecare"></textarea></label>
+          <label class="wide">治法 Treatment principle<input name="treatmentPrinciple" placeholder="疏肝健脾、滋陰降火…" /></label>
 
           <label class="wide">用穴 Acupuncture points<textarea name="pointsUsed" rows="2" placeholder="SP6 bilateral, ST36 bilateral, LR3 bilateral"></textarea></label>
           <label class="wide">Acupoint record links<textarea name="acupointLinks" rows="2" placeholder="SP6, ST36, LR3, CV4"></textarea></label>
           <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
           <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
+          <label class="wide">治療手法 Modalities<input name="modalities" placeholder="艾灸 moxa / 電針 e-stim / 拔罐 cupping / 刮痧 gua sha / 推拿 tuina" /></label>
           <label class="wide">方劑/中藥 Formula & herbs<textarea name="formulaHerbs" rows="2"></textarea></label>
           <label class="wide">Formula record links<textarea name="formulaLinks" rows="2" placeholder="formula.xiao_yao_san, formula.gui_pi_tang"></textarea></label>
           <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
           <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="med.letrozole, med.progesterone"></textarea></label>
           <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
           <label class="wide">Outcome metric links<textarea name="outcomeMetricLinks" rows="2" placeholder="sleep_quality +2, pain_score 7->4, lining_mm 8"></textarea></label>
+          <label class="wide">醫囑 Advice（生活/飲食/運動）<textarea name="advice" rows="2" placeholder="作息、飲食宜忌、運動、情緒調攝"></textarea></label>
           <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
         </div>
         <div class="dialog-actions">
@@ -759,10 +782,13 @@
     </footer>
 
     <script src="data/generated/app_data.js"></script>
+    <script src="data/generated/knowledge_data.js"></script>
+    <script src="data/generated/cloudtcm_map.js"></script>
     <script src="data/tung/point_index.js"></script>
     <script src="data/auricular/gb93_index.js"></script>
     <script src="data/auricular/gb93_worklist.js"></script>
     <script src="app.js"></script>
     <script src="js/router.js"></script>
+    <script src="js/knowledge.js"></script>
   </body>
 </html>

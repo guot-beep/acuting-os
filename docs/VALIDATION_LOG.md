@@ -42,3 +42,17 @@ Result:
 - Interaction audit: 0 failures, 0 warnings.
 - Data validation: 681 default points deep-equal between legacy and current app;
   no duplicate point codes.
+
+## 2026-07-02 -- Phase 2 starter documentation
+
+Scope:
+- Documentation only. No runtime code, generated files, or acupoint records were
+  changed.
+
+Commands:
+- `node scripts/validate-data.js` -> PASS
+- `node scripts/validate-interactions.js` -> PASS
+
+Result:
+- 681 default points remain deep-equal between legacy and current app.
+- Interaction audit remains clean.

@@ -23,6 +23,43 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-03 — Rebuild sprint (Claude Cowork + Codex, relayed by Ting)
+
+Scope: Phase 1 data liberation, workspace shell, brand UI, search fixes, migration off
+OneDrive, Phase 2 wiring, CloudTCM direct-link map, formula canon shortlist, TCM case/SOAP
+restructure. Multi-session; see docs/REBUILD_HANDOFF.md Sessions 1–12.
+
+Key changes (all validated):
+- Data liberation: app.js 8,785→~3,300 lines; embedded data → data/**/embedded/*.json →
+  scripts/build-data.js → data/generated/{app_data,knowledge_data,cloudtcm_map}.js.
+- Workspace shell: js/router.js (Home/Lookup/Cases/Quality/Sources/Learn); brand-warm styles.css.
+- Search: home + directory search open exact-match single point directly; data-load guard banner.
+- Migration: repo moved OneDrive → C:\Projects\acupuncture-point-app (OneDrive copy archived).
+- Phase 2: js/knowledge.js renders formulas/conditions/sources/audit from JSON.
+- 361 merge (Codex): data/acupoints/361.json 210→235; docs/361_MERGE_DIFF_SUMMARY.md.
+- CloudTCM: data/sources/cloudtcm_point_map.json (361 code→id+image); 中文來源 now直連
+  cloudtcm.com/acupoint/{id}; image → media.cloudtcm.uk/acupoint-s/{img}.jpg.
+- Formula canon (Codex): data/herbs/formula_canon_shortlist.json (115, all draft);
+  rules in docs/FORMULA_SCHEMA_RULES.md.
+- Case/SOAP (Claude): TCM-shaped intake — case層(sex/birthYearMonth/occupation/goals/HPI/PMH/
+  menstrualObHistory/lifestyle/allergies/currentMeds) + visit層(tongueBody/tongueCoating/pulse/
+  vitals/tcmPattern/pathomechanism/treatmentPrinciple/modalities/advice). Backward-compatible.
+- Source strategy: docs/TCM_SOURCE_REGISTRY.md (tiered authoritative sources + dataset-first workflow);
+  docs/DATASET_SHORTLIST.md reviewed (no dataset imported yet).
+
+Validation (Codex-confirmed): app.js syntax PASS; validate-data.js PASS (681 deep-equal excl.
+reference-URL fields); validate-herbal-links.js PASS; validate-interactions.js PASS (0 failures);
+62 JSON files parse PASS.
+
+Commit: pending — to be committed on Ting's Windows machine by Codex (Claude does not run git
+in the sandbox mount). See commit command in this session's chat.
+
+Next: (1) commit the working tree as one coherent batch; (2) Codex Friday task — pathology graph,
+western medications, fertility workflows, clinical decision relation-validation layer;
+(3) Claude backlog — make case point/formula links clickable → jump to knowledge base.
+
+
+
 ### 2026-07-02
 
 Scope: Formula-pattern relationship layer.

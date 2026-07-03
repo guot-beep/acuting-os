@@ -2,6 +2,18 @@ const STORAGE_KEY = "acupoint-atlas-v1";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 
+// Data-load guard: the app is data-driven; if the generated data file did not
+// load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
+// silently degrading to placeholder-only content.
+(function dataLoadGuard() {
+  if (globalThis.ACUTING_APP_DATA) return;
+  const banner = document.createElement("div");
+  banner.className = "data-missing-banner";
+  banner.textContent = "⚠ 資料檔未載入：data/generated/app_data.js 沒有被讀到，穴位內容會大量缺失。請確認專案檔案已完整同步到本機後按 Ctrl+F5 重新整理。";
+  document.body.prepend(banner);
+})();
+
+
 const standardChannelAudit = {
   generatedOn: "2026-06-16",
   expectedTotal: 361,
@@ -515,6 +527,17 @@ deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
 caseSearch.addEventListener("input", renderClinicalCases);
 window.addEventListener("hashchange", handlePointHashChange);
 
+searchInput?.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter") return;
+  const q = searchInput.value.trim();
+  if (!q) return;
+  const exact = findExactPoint(q);
+  if (exact) { selectPoint(exact.code); return; }
+  render();
+  const matches = getFilteredPoints();
+  if (matches.length === 1) selectPoint(matches[0].code);
+});
+
 [searchInput, meridianFilter, regionFilter, patternFilter].forEach((el) => {
   el.addEventListener("input", () => {
     if (el === regionFilter) directoryRegionGroup = "";
@@ -568,6 +591,28 @@ function loadPoints() {
   }
 }
 
+function findExactPoint(query) {
+  const q = String(query || "").trim().toLowerCase();
+  if (!q) return null;
+  return points.find((point) => {
+    const code = String(point.code || "").toLowerCase();
+    const nameZh = String(point.nameZh || "").toLowerCase();
+    const nameEn = String(point.nameEn || "").toLowerCase();
+    const pinyin = String(point.pinyin || "").toLowerCase().replace(/\s+/g, "");
+    return code === q || nameZh === q || nameEn === q || pinyin === q.replace(/\s+/g, "");
+  }) || null;
+}
+
+function goToSection(id) {
+  const target = "#" + id;
+  if (window.location.hash === target) {
+    // Same hash: hashchange will not fire, so nudge the router manually.
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+  } else {
+    window.location.hash = target;
+  }
+}
+
 function runHomeSearch() {
   const query = homeSearch.value.trim();
   if (!query) return;
@@ -608,13 +653,49 @@ function runHomeSearch() {
   });
   if (caseHit) {
     caseSearch.value = query;
-    document.querySelector("#caseWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
     renderClinicalCases();
+    goToSection("caseWorkspace");
+    return;
+  }
+  // Exact code / name / pinyin match → open that point's single page directly.
+  const exact = findExactPoint(query);
+  if (exact) {
+    searchInput.value = query;
+    selectPoint(exact.code);
     return;
   }
   searchInput.value = query;
-  document.querySelector("#acupointDirectory").scrollIntoView({ behavior: "smooth", block: "start" });
   render();
+  // If the query still resolves to exactly one acupoint, open it directly.
+  const matches = getFilteredPoints();
+  if (matches.length === 1) {
+    selectPoint(matches[0].code);
+    return;
+  }
+  goToSection("acupointDirectory");
+}
+
+function cloudtcmEntry(point) {
+  const map = globalThis.ACUTING_CLOUDTCM_MAP || {};
+  return map[String(point?.code || "").toUpperCase()] || null;
+}
+
+function chinesePointReference(point) {
+  // Direct CloudTCM point page via the verified code->id map (data/sources/
+  // cloudtcm_point_map.json, 361 standard points). Falls back to a precise
+  // CloudTCM name search only if the point is not in the map (e.g. auricular).
+  const entry = cloudtcmEntry(point);
+  if (entry?.id) return "https://cloudtcm.com/acupoint/" + entry.id;
+  const name = String(point?.nameZh || "").trim();
+  const code = String(point?.code || "").trim();
+  const q = [name, code, "穴"].filter(Boolean).join(" ") + " site:cloudtcm.com";
+  return "https://www.google.com/search?q=" + encodeURIComponent(q);
+}
+
+function cloudtcmImage(point) {
+  const entry = cloudtcmEntry(point);
+  // Thumbnails (acupoint-s) are the confirmed-existing images used by CloudTCM.
+  return entry?.img ? "https://media.cloudtcm.uk/acupoint-s/" + entry.img + ".jpg" : "";
 }
 
 function pointHash(code) {
@@ -687,7 +768,18 @@ function enrichPoint(point) {
   const baseSources = point.sources?.length ? point.sources : sourceByCode[point.code] || [];
   const sources = isAuricularPoint(point) ? [...new Set([...baseSources, ...auricularSupplementSources])] : baseSources;
   const visualLinks = normalizeVisualLinks(point.visualLinks?.length ? point.visualLinks : defaultVisualLinks(point));
-  return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources, visualLinks };
+  // Replace the old generic CloudTCM directory URL with a reliable per-point
+  // Chinese reference (CloudTCM has no derivable per-point URL).
+  const GENERIC_CLOUDTCM = "https://cloudtcm.com/acupoint";
+  const chineseRef = chinesePointReference(point);
+  const fixedSources = sources.map((u) => (u === GENERIC_CLOUDTCM ? chineseRef : u));
+  const cloudImg = cloudtcmImage(point);
+  const fixedVisualLinks = visualLinks.map((link) => {
+    if (link.url !== GENERIC_CLOUDTCM) return link;
+    // Prefer the actual point image; fall back to the point page reference.
+    return { ...link, url: cloudImg || chineseRef };
+  });
+  return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources: fixedSources, visualLinks: fixedVisualLinks };
 }
 
 function defaultVisualLinks(point) {
@@ -2335,7 +2427,11 @@ function externalPointLinks(point) {
       : [{ label: "董氏圖源", url: primary, kind: "english" }];
   }
   const english = sources.find((source) => source.includes("acupoints.org")) || `https://www.acupoints.org/${String(point.code).toLowerCase()}-acupuncture-point/`;
-  const chinese = sources.find((source) => source.includes("cloudtcm.com")) || "https://cloudtcm.com/acupoint";
+  // Only trust a stored CloudTCM URL if it uses the real numeric-id page
+  // (cloudtcm.com/acupoint/123). Slug-style ones like /acupoint/bl61 are
+  // fabricated and 404, so fall back to a reliable name search.
+  const storedChinese = sources.find((source) => /cloudtcm\.com\/acupoint\/\d+/.test(source));
+  const chinese = storedChinese || chinesePointReference(point);
   if (contentMode === "english") {
     return [
       { label: "English source", url: english, kind: "english" },
@@ -2576,7 +2672,17 @@ function normalizeClinicalCase(value) {
     status: String(value.status || "active"),
     startDate: String(value.startDate || ""),
     birthYear: value.birthYear ? Number(value.birthYear) : "",
+    birthYearMonth: String(value.birthYearMonth || ""),
+    sex: String(value.sex || ""),
+    occupation: String(value.occupation || ""),
+    goals: String(value.goals || ""),
     chiefComplaint: String(value.chiefComplaint || ""),
+    historyPresent: String(value.historyPresent || ""),
+    pastHistory: String(value.pastHistory || ""),
+    allergies: String(value.allergies || ""),
+    currentMeds: String(value.currentMeds || ""),
+    menstrualObHistory: String(value.menstrualObHistory || ""),
+    lifestyle: String(value.lifestyle || ""),
     westernConditions: Array.isArray(value.westernConditions) ? value.westernConditions.map(String) : splitList(String(value.westernConditions || "")),
     easternDiseases: Array.isArray(value.easternDiseases) ? value.easternDiseases.map(String) : splitList(String(value.easternDiseases || "")),
     tcmPatterns: Array.isArray(value.tcmPatterns) ? value.tcmPatterns.map(String) : splitList(String(value.tcmPatterns || "")),
@@ -2597,6 +2703,15 @@ function normalizeSoapNote(value) {
     fertilityPhase: String(value.fertilityPhase || ""),
     workflowLink: String(value.workflowLink || ""),
     cyclePhase: String(value.cyclePhase || ""),
+    tongueBody: String(value.tongueBody || ""),
+    tongueCoating: String(value.tongueCoating || ""),
+    pulse: String(value.pulse || ""),
+    vitals: String(value.vitals || ""),
+    tcmPattern: String(value.tcmPattern || ""),
+    pathomechanism: String(value.pathomechanism || ""),
+    treatmentPrinciple: String(value.treatmentPrinciple || ""),
+    modalities: String(value.modalities || ""),
+    advice: String(value.advice || ""),
     westernConditionLinks: normalizeStringList(value.westernConditionLinks),
     easternDiseaseLinks: normalizeStringList(value.easternDiseaseLinks),
     tcmPatternLinks: normalizeStringList(value.tcmPatternLinks),
@@ -2740,9 +2855,17 @@ function renderClinicalCaseDetail(item) {
       </div>
     </div>
     <div class="clinical-mini-grid">
-      <div><small>Chief complaint</small><span>${escapeHtml(item.chiefComplaint || "尚未填寫")}</span></div>
-      <div><small>Western</small><span>${escapeHtml(item.westernConditions.join("、") || "尚未連結")}</span></div>
-      <div><small>TCM Patterns</small><span>${escapeHtml(item.tcmPatterns.join("、") || "尚未辨證")}</span></div>
+      <div><small>主訴 Chief complaint</small><span>${escapeHtml(item.chiefComplaint || "尚未填寫")}</span></div>
+      <div><small>基本 Demographics</small><span>${escapeHtml([item.sex, (item.birthYearMonth || (item.birthYear ? String(item.birthYear) : "")), item.occupation].filter(Boolean).join(" · ") || "—")}</span></div>
+      <div><small>目前主證型 Working pattern</small><span>${escapeHtml(item.tcmPatterns.join("、") || "尚未辨證")}</span></div>
+      <div><small>就診目標 Goals</small><span>${escapeHtml(item.goals || "—")}</span></div>
+      <div><small>現病史 HPI</small><span>${escapeHtml(item.historyPresent || "—")}</span></div>
+      <div><small>既往史 PMH</small><span>${escapeHtml(item.pastHistory || "—")}</span></div>
+      <div><small>月經/婦科史 OB-Gyn</small><span>${escapeHtml(item.menstrualObHistory || "—")}</span></div>
+      <div><small>生活習慣 Lifestyle</small><span>${escapeHtml(item.lifestyle || "—")}</span></div>
+      <div><small>過敏 Allergies</small><span>${escapeHtml(item.allergies || "—")}</span></div>
+      <div><small>目前用藥 Meds</small><span>${escapeHtml(item.currentMeds || "—")}</span></div>
+      <div><small>Western Dx</small><span>${escapeHtml(item.westernConditions.join("、") || "—")}</span></div>
     </div>
     ${renderCaseTags(item)}
     <div class="timeline-head">
@@ -2795,10 +2918,24 @@ function renderSoapNoteCard(note) {
         ${soapBlock("A", note.assessment)}
         ${soapBlock("P", note.plan)}
       </div>
+      ${(note.tongueBody || note.tongueCoating || note.pulse) ? `
+      <div class="tcm-dx-row">
+        <div><small>舌質 Tongue body</small><span>${escapeHtml(note.tongueBody || "—")}</span></div>
+        <div><small>舌苔 Coating</small><span>${escapeHtml(note.tongueCoating || "—")}</span></div>
+        <div><small>脈象 Pulse</small><span>${escapeHtml(note.pulse || "—")}</span></div>
+      </div>` : ""}
+      ${(note.tcmPattern || note.pathomechanism || note.treatmentPrinciple) ? `
+      <div class="tcm-dx-row">
+        <div><small>證型 Pattern</small><span>${escapeHtml(note.tcmPattern || "—")}</span></div>
+        <div><small>病機 Pathomechanism</small><span>${escapeHtml(note.pathomechanism || "—")}</span></div>
+        <div><small>治法 Tx principle</small><span>${escapeHtml(note.treatmentPrinciple || "—")}</span></div>
+      </div>` : ""}
       <div class="clinical-mini-grid">
-        <div><small>Points</small><span>${escapeHtml(note.pointsUsed || "未填")}</span></div>
-        <div><small>Formula / Herbs</small><span>${escapeHtml(note.formulaHerbs || "未填")}</span></div>
-        <div><small>Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
+        <div><small>用穴 Points</small><span>${escapeHtml(note.pointsUsed || "未填")}</span></div>
+        <div><small>手法 Modalities</small><span>${escapeHtml([note.technique, note.modalities].filter(Boolean).join(" · ") || "未填")}</span></div>
+        <div><small>方藥 Formula / Herbs</small><span>${escapeHtml(note.formulaHerbs || "未填")}</span></div>
+        <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
+        <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
       </div>
       <div class="soap-link-grid">
         <div><small>Western links</small><span>${escapeHtml(formatNoteList(note.westernConditionLinks))}</span></div>
@@ -2828,7 +2965,9 @@ function selectPoint(code) {
     isSyncingPointHash = false;
   }
   render();
-  detailCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  // Detail view now stands alone (see .point-detail-mode CSS); jump to the
+  // top so the point's own header/breadcrumb is what the user lands on.
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function openCaseEditor(item = null) {
@@ -2842,7 +2981,17 @@ function openCaseEditor(item = null) {
     status: "active",
     startDate: new Date().toISOString().slice(0, 10),
     birthYear: "",
+    birthYearMonth: "",
+    sex: "",
+    occupation: "",
+    goals: "",
     chiefComplaint: "",
+    historyPresent: "",
+    pastHistory: "",
+    allergies: "",
+    currentMeds: "",
+    menstrualObHistory: "",
+    lifestyle: "",
     westernConditions: [],
     easternDiseases: [],
     tcmPatterns: [],
@@ -2870,8 +3019,18 @@ function saveCaseFromForm(event) {
     caseCategory: data.caseCategory.trim(),
     status: data.status,
     startDate: data.startDate,
-    birthYear: data.birthYear,
+    birthYearMonth: (data.birthYearMonth || "").trim(),
+    birthYear: (data.birthYearMonth ? Number(String(data.birthYearMonth).slice(0, 4)) : data.birthYear),
+    sex: (data.sex || "").trim(),
+    occupation: (data.occupation || "").trim(),
+    goals: (data.goals || "").trim(),
     chiefComplaint: data.chiefComplaint.trim(),
+    historyPresent: (data.historyPresent || "").trim(),
+    pastHistory: (data.pastHistory || "").trim(),
+    allergies: (data.allergies || "").trim(),
+    currentMeds: (data.currentMeds || "").trim(),
+    menstrualObHistory: (data.menstrualObHistory || "").trim(),
+    lifestyle: (data.lifestyle || "").trim(),
     westernConditions: splitList(data.westernConditions),
     easternDiseases: splitList(data.easternDiseases),
     tcmPatterns: splitList(data.tcmPatterns),
@@ -2931,6 +3090,15 @@ function openSoapEditor(note = null) {
     fertilityPhase: "",
     workflowLink: "",
     cyclePhase: "",
+    tongueBody: "",
+    tongueCoating: "",
+    pulse: "",
+    vitals: "",
+    tcmPattern: "",
+    pathomechanism: "",
+    treatmentPrinciple: "",
+    modalities: "",
+    advice: "",
     westernConditionLinks: [],
     easternDiseaseLinks: [],
     tcmPatternLinks: [],
@@ -2975,6 +3143,15 @@ function saveSoapFromForm(event) {
     fertilityPhase: data.fertilityPhase.trim(),
     workflowLink: data.workflowLink.trim(),
     cyclePhase: data.cyclePhase.trim(),
+    tongueBody: (data.tongueBody || "").trim(),
+    tongueCoating: (data.tongueCoating || "").trim(),
+    pulse: (data.pulse || "").trim(),
+    vitals: (data.vitals || "").trim(),
+    tcmPattern: (data.tcmPattern || "").trim(),
+    pathomechanism: (data.pathomechanism || "").trim(),
+    treatmentPrinciple: (data.treatmentPrinciple || "").trim(),
+    modalities: (data.modalities || "").trim(),
+    advice: (data.advice || "").trim(),
     westernConditionLinks: splitList(data.westernConditionLinks),
     easternDiseaseLinks: splitList(data.easternDiseaseLinks),
     tcmPatternLinks: splitList(data.tcmPatternLinks),

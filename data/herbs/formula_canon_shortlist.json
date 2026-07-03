@@ -1,0 +1,2220 @@
+{
+  "dataset": "AcuTing OS formula canon shortlist",
+  "status": "draft_shortlist_pending_ting_review",
+  "updated": "2026-07-03",
+  "purpose": "NCCAOM-oriented formula skeleton list for Ting's personal study and future private clinic use. This file is a shortlist only; it does not contain formula content, claims, composition, indications, or dosage.",
+  "review_rule": "Every record starts as draft. English-track content must later be checked against Bensky Formulas & Strategies / Materia Medica, Deadman where relevant, and NCCAOM terminology before source_checked. Chinese-track content may use CloudTCM formula pages and Wanfang as draft depth notes only.",
+  "records": [
+    {
+      "name_zh": "桂枝湯",
+      "name_en": "Cinnamon Twig Decoction",
+      "pinyin": "Gui Zhi Tang",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ma_huang_tang",
+        "formula.jiu_wei_qiang_huo_tang",
+        "formula.xiao_qing_long_tang",
+        "formula.bai_du_san"
+      ],
+      "comparison_group": "exterior_wind_cold",
+      "clinical_use_note": "",
+      "id": "formula.gui_zhi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "麻黃湯",
+      "name_en": "Ephedra Decoction",
+      "pinyin": "Ma Huang Tang",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.gui_zhi_tang",
+        "formula.jiu_wei_qiang_huo_tang",
+        "formula.xiao_qing_long_tang",
+        "formula.bai_du_san"
+      ],
+      "comparison_group": "exterior_wind_cold",
+      "clinical_use_note": "",
+      "id": "formula.ma_huang_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "九味羌活湯",
+      "name_en": "Nine-Herb Decoction with Notopterygium",
+      "pinyin": "Jiu Wei Qiang Huo Tang",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Bensky F&S: Release the Exterior; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.gui_zhi_tang",
+        "formula.ma_huang_tang",
+        "formula.xiao_qing_long_tang",
+        "formula.bai_du_san"
+      ],
+      "comparison_group": "exterior_wind_cold",
+      "clinical_use_note": "",
+      "id": "formula.jiu_wei_qiang_huo_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "小青龍湯",
+      "name_en": "Minor Blue-Green Dragon Decoction",
+      "pinyin": "Xiao Qing Long Tang",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Bensky F&S: Release the Exterior; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.gui_zhi_tang",
+        "formula.ma_huang_tang",
+        "formula.jiu_wei_qiang_huo_tang",
+        "formula.bai_du_san"
+      ],
+      "comparison_group": "exterior_wind_cold",
+      "clinical_use_note": "",
+      "id": "formula.xiao_qing_long_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "銀翹散",
+      "name_en": "Honeysuckle and Forsythia Powder",
+      "pinyin": "Yin Qiao San",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.sang_ju_yin",
+        "formula.ma_xing_shi_gan_tang"
+      ],
+      "comparison_group": "exterior_wind_heat",
+      "clinical_use_note": "",
+      "id": "formula.yin_qiao_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "桑菊飲",
+      "name_en": "Mulberry Leaf and Chrysanthemum Drink",
+      "pinyin": "Sang Ju Yin",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.yin_qiao_san",
+        "formula.ma_xing_shi_gan_tang"
+      ],
+      "comparison_group": "exterior_wind_heat",
+      "clinical_use_note": "",
+      "id": "formula.sang_ju_yin",
+      "tier": "core"
+    },
+    {
+      "name_zh": "麻杏石甘湯",
+      "name_en": "Ephedra, Apricot Kernel, Gypsum, and Licorice Decoction",
+      "pinyin": "Ma Xing Shi Gan Tang",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Bensky F&S: Release the Exterior; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.yin_qiao_san",
+        "formula.sang_ju_yin"
+      ],
+      "comparison_group": "exterior_wind_heat",
+      "clinical_use_note": "",
+      "id": "formula.ma_xing_shi_gan_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "敗毒散",
+      "name_en": "Overcome Pathogenic Influences Powder",
+      "pinyin": "Bai Du San",
+      "category": "解表劑 / Release the Exterior",
+      "source_hint": "Bensky F&S: Release the Exterior; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.gui_zhi_tang",
+        "formula.ma_huang_tang",
+        "formula.jiu_wei_qiang_huo_tang",
+        "formula.xiao_qing_long_tang"
+      ],
+      "comparison_group": "exterior_wind_cold",
+      "clinical_use_note": "",
+      "id": "formula.bai_du_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "白虎湯",
+      "name_en": "White Tiger Decoction",
+      "pinyin": "Bai Hu Tang",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zhu_ye_shi_gao_tang",
+        "formula.qing_ying_tang",
+        "formula.xi_jiao_di_huang_tang",
+        "formula.qing_hao_bie_jia_tang"
+      ],
+      "comparison_group": "heat_qi_ying_blood",
+      "clinical_use_note": "",
+      "id": "formula.bai_hu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "竹葉石膏湯",
+      "name_en": "Lophatherus and Gypsum Decoction",
+      "pinyin": "Zhu Ye Shi Gao Tang",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.bai_hu_tang",
+        "formula.qing_ying_tang",
+        "formula.xi_jiao_di_huang_tang",
+        "formula.qing_hao_bie_jia_tang"
+      ],
+      "comparison_group": "heat_qi_ying_blood",
+      "clinical_use_note": "",
+      "id": "formula.zhu_ye_shi_gao_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "清營湯",
+      "name_en": "Clear the Nutritive Level Decoction",
+      "pinyin": "Qing Ying Tang",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.bai_hu_tang",
+        "formula.zhu_ye_shi_gao_tang",
+        "formula.xi_jiao_di_huang_tang",
+        "formula.qing_hao_bie_jia_tang"
+      ],
+      "comparison_group": "heat_qi_ying_blood",
+      "clinical_use_note": "",
+      "id": "formula.qing_ying_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "犀角地黃湯",
+      "name_en": "Rhinoceros Horn and Rehmannia Decoction",
+      "pinyin": "Xi Jiao Di Huang Tang",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; modern substitution review required",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.bai_hu_tang",
+        "formula.zhu_ye_shi_gao_tang",
+        "formula.qing_ying_tang",
+        "formula.qing_hao_bie_jia_tang"
+      ],
+      "comparison_group": "heat_qi_ying_blood",
+      "clinical_use_note": "",
+      "id": "formula.xi_jiao_di_huang_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "黃連解毒湯",
+      "name_en": "Coptis Decoction to Relieve Toxicity",
+      "pinyin": "Huang Lian Jie Du Tang",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.pu_ji_xiao_du_yin",
+        "formula.dao_chi_san",
+        "formula.qing_wei_san",
+        "formula.yu_nu_jian"
+      ],
+      "comparison_group": "heat_toxin_fire",
+      "clinical_use_note": "",
+      "id": "formula.huang_lian_jie_du_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "普濟消毒飲",
+      "name_en": "Universal Benefit Decoction to Eliminate Toxin",
+      "pinyin": "Pu Ji Xiao Du Yin",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.huang_lian_jie_du_tang",
+        "formula.dao_chi_san",
+        "formula.qing_wei_san",
+        "formula.yu_nu_jian"
+      ],
+      "comparison_group": "heat_toxin_fire",
+      "clinical_use_note": "",
+      "id": "formula.pu_ji_xiao_du_yin",
+      "tier": "core"
+    },
+    {
+      "name_zh": "龍膽瀉肝湯",
+      "name_en": "Gentiana Decoction to Drain the Liver",
+      "pinyin": "Long Dan Xie Gan Tang",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Clear Heat; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zuo_jin_wan"
+      ],
+      "comparison_group": "liver_gallbladder_damp_heat",
+      "clinical_use_note": "",
+      "id": "formula.long_dan_xie_gan_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "左金丸",
+      "name_en": "Left Metal Pill",
+      "pinyin": "Zuo Jin Wan",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.long_dan_xie_gan_tang"
+      ],
+      "comparison_group": "liver_gallbladder_damp_heat",
+      "clinical_use_note": "",
+      "id": "formula.zuo_jin_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "導赤散",
+      "name_en": "Guide Out the Red Powder",
+      "pinyin": "Dao Chi San",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.huang_lian_jie_du_tang",
+        "formula.pu_ji_xiao_du_yin",
+        "formula.qing_wei_san",
+        "formula.yu_nu_jian"
+      ],
+      "comparison_group": "heat_toxin_fire",
+      "clinical_use_note": "",
+      "id": "formula.dao_chi_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "清胃散",
+      "name_en": "Clear the Stomach Powder",
+      "pinyin": "Qing Wei San",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.huang_lian_jie_du_tang",
+        "formula.pu_ji_xiao_du_yin",
+        "formula.dao_chi_san",
+        "formula.yu_nu_jian"
+      ],
+      "comparison_group": "heat_toxin_fire",
+      "clinical_use_note": "",
+      "id": "formula.qing_wei_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "玉女煎",
+      "name_en": "Jade Woman Decoction",
+      "pinyin": "Yu Nu Jian",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.huang_lian_jie_du_tang",
+        "formula.pu_ji_xiao_du_yin",
+        "formula.dao_chi_san",
+        "formula.qing_wei_san"
+      ],
+      "comparison_group": "heat_toxin_fire",
+      "clinical_use_note": "",
+      "id": "formula.yu_nu_jian",
+      "tier": "core"
+    },
+    {
+      "name_zh": "青蒿鱉甲湯",
+      "name_en": "Artemisia Annua and Soft-Shelled Turtle Shell Decoction",
+      "pinyin": "Qing Hao Bie Jia Tang",
+      "category": "清熱劑 / Clear Heat",
+      "source_hint": "Bensky F&S: Clear Heat; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.bai_hu_tang",
+        "formula.zhu_ye_shi_gao_tang",
+        "formula.qing_ying_tang",
+        "formula.xi_jiao_di_huang_tang"
+      ],
+      "comparison_group": "heat_qi_ying_blood",
+      "clinical_use_note": "",
+      "id": "formula.qing_hao_bie_jia_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "大承氣湯",
+      "name_en": "Major Order the Qi Decoction",
+      "pinyin": "Da Cheng Qi Tang",
+      "category": "瀉下劑 / Drain Downward",
+      "source_hint": "Bensky F&S: Drain Downward; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xiao_cheng_qi_tang",
+        "formula.tiao_wei_cheng_qi_tang",
+        "formula.ma_zi_ren_wan"
+      ],
+      "comparison_group": "drain_downward",
+      "clinical_use_note": "",
+      "id": "formula.da_cheng_qi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "小承氣湯",
+      "name_en": "Minor Order the Qi Decoction",
+      "pinyin": "Xiao Cheng Qi Tang",
+      "category": "瀉下劑 / Drain Downward",
+      "source_hint": "Bensky F&S: Drain Downward; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.da_cheng_qi_tang",
+        "formula.tiao_wei_cheng_qi_tang",
+        "formula.ma_zi_ren_wan"
+      ],
+      "comparison_group": "drain_downward",
+      "clinical_use_note": "",
+      "id": "formula.xiao_cheng_qi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "調胃承氣湯",
+      "name_en": "Regulate the Stomach and Order the Qi Decoction",
+      "pinyin": "Tiao Wei Cheng Qi Tang",
+      "category": "瀉下劑 / Drain Downward",
+      "source_hint": "Bensky F&S: Drain Downward; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.da_cheng_qi_tang",
+        "formula.xiao_cheng_qi_tang",
+        "formula.ma_zi_ren_wan"
+      ],
+      "comparison_group": "drain_downward",
+      "clinical_use_note": "",
+      "id": "formula.tiao_wei_cheng_qi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "麻子仁丸",
+      "name_en": "Hemp Seed Pill",
+      "pinyin": "Ma Zi Ren Wan",
+      "category": "瀉下劑 / Drain Downward",
+      "source_hint": "Bensky F&S: Drain Downward; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.da_cheng_qi_tang",
+        "formula.xiao_cheng_qi_tang",
+        "formula.tiao_wei_cheng_qi_tang"
+      ],
+      "comparison_group": "drain_downward",
+      "clinical_use_note": "",
+      "id": "formula.ma_zi_ren_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "小柴胡湯",
+      "name_en": "Minor Bupleurum Decoction",
+      "pinyin": "Xiao Chai Hu Tang",
+      "category": "和解劑 / Harmonize",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.da_chai_hu_tang",
+        "formula.ban_xia_xie_xin_tang"
+      ],
+      "comparison_group": "shaoyang_harmonize",
+      "clinical_use_note": "",
+      "id": "formula.xiao_chai_hu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "大柴胡湯",
+      "name_en": "Major Bupleurum Decoction",
+      "pinyin": "Da Chai Hu Tang",
+      "category": "和解劑 / Harmonize",
+      "source_hint": "Bensky F&S: Harmonize; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xiao_chai_hu_tang",
+        "formula.ban_xia_xie_xin_tang"
+      ],
+      "comparison_group": "shaoyang_harmonize",
+      "clinical_use_note": "",
+      "id": "formula.da_chai_hu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "四逆散",
+      "name_en": "Frigid Extremities Powder",
+      "pinyin": "Si Ni San",
+      "category": "和解劑 / Harmonize",
+      "source_hint": "Bensky F&S: Harmonize; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xiao_yao_san",
+        "formula.jia_wei_xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.yue_ju_wan",
+        "formula.chai_hu_shu_gan_san"
+      ],
+      "comparison_group": "liver_spleen",
+      "clinical_use_note": "",
+      "id": "formula.si_ni_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "逍遙散",
+      "name_en": "Free and Easy Wanderer Powder",
+      "pinyin": "Xiao Yao San",
+      "category": "和解劑 / Harmonize",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_ni_san",
+        "formula.jia_wei_xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.yue_ju_wan",
+        "formula.chai_hu_shu_gan_san"
+      ],
+      "comparison_group": "liver_spleen",
+      "clinical_use_note": "",
+      "id": "formula.xiao_yao_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "加味逍遙散",
+      "name_en": "Augmented Free and Easy Wanderer Powder",
+      "pinyin": "Jia Wei Xiao Yao San",
+      "category": "和解劑 / Harmonize",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_ni_san",
+        "formula.xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.yue_ju_wan",
+        "formula.chai_hu_shu_gan_san"
+      ],
+      "comparison_group": "liver_spleen",
+      "clinical_use_note": "",
+      "id": "formula.jia_wei_xiao_yao_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "半夏瀉心湯",
+      "name_en": "Pinellia Decoction to Drain the Epigastrium",
+      "pinyin": "Ban Xia Xie Xin Tang",
+      "category": "和解劑 / Harmonize",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xiao_chai_hu_tang",
+        "formula.da_chai_hu_tang"
+      ],
+      "comparison_group": "shaoyang_harmonize",
+      "clinical_use_note": "",
+      "id": "formula.ban_xia_xie_xin_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "痛瀉要方",
+      "name_en": "Important Formula for Painful Diarrhea",
+      "pinyin": "Tong Xie Yao Fang",
+      "category": "和解劑 / Harmonize",
+      "source_hint": "Bensky F&S: Harmonize; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_ni_san",
+        "formula.xiao_yao_san",
+        "formula.jia_wei_xiao_yao_san",
+        "formula.yue_ju_wan",
+        "formula.chai_hu_shu_gan_san"
+      ],
+      "comparison_group": "liver_spleen",
+      "clinical_use_note": "",
+      "id": "formula.tong_xie_yao_fang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "杏蘇散",
+      "name_en": "Apricot Kernel and Perilla Leaf Powder",
+      "pinyin": "Xing Su San",
+      "category": "治燥劑 / Treat Dryness",
+      "source_hint": "Bensky F&S: Treat Dryness; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.qing_zao_jiu_fei_tang",
+        "formula.mai_men_dong_tang",
+        "formula.bai_he_gu_jin_tang"
+      ],
+      "comparison_group": "dryness_lung",
+      "clinical_use_note": "",
+      "id": "formula.xing_su_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "清燥救肺湯",
+      "name_en": "Eliminate Dryness and Rescue the Lungs Decoction",
+      "pinyin": "Qing Zao Jiu Fei Tang",
+      "category": "治燥劑 / Treat Dryness",
+      "source_hint": "Bensky F&S: Treat Dryness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xing_su_san",
+        "formula.mai_men_dong_tang",
+        "formula.bai_he_gu_jin_tang"
+      ],
+      "comparison_group": "dryness_lung",
+      "clinical_use_note": "",
+      "id": "formula.qing_zao_jiu_fei_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "麥門冬湯",
+      "name_en": "Ophiopogonis Decoction",
+      "pinyin": "Mai Men Dong Tang",
+      "category": "治燥劑 / Treat Dryness",
+      "source_hint": "Bensky F&S: Treat Dryness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xing_su_san",
+        "formula.qing_zao_jiu_fei_tang",
+        "formula.bai_he_gu_jin_tang"
+      ],
+      "comparison_group": "dryness_lung",
+      "clinical_use_note": "",
+      "id": "formula.mai_men_dong_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "百合固金湯",
+      "name_en": "Lily Bulb Decoction to Preserve the Metal",
+      "pinyin": "Bai He Gu Jin Tang",
+      "category": "治燥劑 / Treat Dryness",
+      "source_hint": "Bensky F&S: Treat Dryness; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xing_su_san",
+        "formula.qing_zao_jiu_fei_tang",
+        "formula.mai_men_dong_tang"
+      ],
+      "comparison_group": "dryness_lung",
+      "clinical_use_note": "",
+      "id": "formula.bai_he_gu_jin_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "理中丸",
+      "name_en": "Regulate the Middle Pill",
+      "pinyin": "Li Zhong Wan",
+      "category": "溫裡劑 / Warm the Interior",
+      "source_hint": "Bensky F&S: Warm the Interior; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xiao_jian_zhong_tang",
+        "formula.wu_zhu_yu_tang"
+      ],
+      "comparison_group": "warm_interior_middle",
+      "clinical_use_note": "",
+      "id": "formula.li_zhong_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "小建中湯",
+      "name_en": "Minor Construct the Middle Decoction",
+      "pinyin": "Xiao Jian Zhong Tang",
+      "category": "溫裡劑 / Warm the Interior",
+      "source_hint": "Bensky F&S: Warm the Interior; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.li_zhong_wan",
+        "formula.wu_zhu_yu_tang"
+      ],
+      "comparison_group": "warm_interior_middle",
+      "clinical_use_note": "",
+      "id": "formula.xiao_jian_zhong_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "吳茱萸湯",
+      "name_en": "Evodia Decoction",
+      "pinyin": "Wu Zhu Yu Tang",
+      "category": "溫裡劑 / Warm the Interior",
+      "source_hint": "Bensky F&S: Warm the Interior; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.li_zhong_wan",
+        "formula.xiao_jian_zhong_tang"
+      ],
+      "comparison_group": "warm_interior_middle",
+      "clinical_use_note": "",
+      "id": "formula.wu_zhu_yu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "四逆湯",
+      "name_en": "Frigid Extremities Decoction",
+      "pinyin": "Si Ni Tang",
+      "category": "溫裡劑 / Warm the Interior",
+      "source_hint": "Bensky F&S: Warm the Interior; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.dang_gui_si_ni_tang"
+      ],
+      "comparison_group": "rescue_yang_warm_channels",
+      "clinical_use_note": "",
+      "id": "formula.si_ni_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "當歸四逆湯",
+      "name_en": "Dang Gui Decoction for Frigid Extremities",
+      "pinyin": "Dang Gui Si Ni Tang",
+      "category": "溫裡劑 / Warm the Interior",
+      "source_hint": "Bensky F&S: Warm the Interior; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_ni_tang"
+      ],
+      "comparison_group": "rescue_yang_warm_channels",
+      "clinical_use_note": "",
+      "id": "formula.dang_gui_si_ni_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "四君子湯",
+      "name_en": "Four Gentlemen Decoction",
+      "pinyin": "Si Jun Zi Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.liu_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.sheng_mai_san",
+        "formula.yu_ping_feng_san"
+      ],
+      "comparison_group": "qi_tonify",
+      "clinical_use_note": "",
+      "id": "formula.si_jun_zi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "六君子湯",
+      "name_en": "Six Gentlemen Decoction",
+      "pinyin": "Liu Jun Zi Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.sheng_mai_san",
+        "formula.yu_ping_feng_san"
+      ],
+      "comparison_group": "qi_tonify",
+      "clinical_use_note": "",
+      "id": "formula.liu_jun_zi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "參苓白朮散",
+      "name_en": "Ginseng, Poria, and Atractylodes Macrocephala Powder",
+      "pinyin": "Shen Ling Bai Zhu San",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_jun_zi_tang",
+        "formula.liu_jun_zi_tang",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.sheng_mai_san",
+        "formula.yu_ping_feng_san"
+      ],
+      "comparison_group": "qi_tonify",
+      "clinical_use_note": "",
+      "id": "formula.shen_ling_bai_zhu_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "補中益氣湯",
+      "name_en": "Tonify the Middle and Augment the Qi Decoction",
+      "pinyin": "Bu Zhong Yi Qi Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_jun_zi_tang",
+        "formula.liu_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san",
+        "formula.sheng_mai_san",
+        "formula.yu_ping_feng_san"
+      ],
+      "comparison_group": "qi_tonify",
+      "clinical_use_note": "",
+      "id": "formula.bu_zhong_yi_qi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "生脈散",
+      "name_en": "Generate the Pulse Powder",
+      "pinyin": "Sheng Mai San",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_jun_zi_tang",
+        "formula.liu_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.yu_ping_feng_san"
+      ],
+      "comparison_group": "qi_tonify",
+      "clinical_use_note": "",
+      "id": "formula.sheng_mai_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "玉屏風散",
+      "name_en": "Jade Windscreen Powder",
+      "pinyin": "Yu Ping Feng San",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_jun_zi_tang",
+        "formula.liu_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.sheng_mai_san"
+      ],
+      "comparison_group": "qi_tonify",
+      "clinical_use_note": "",
+      "id": "formula.yu_ping_feng_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "四物湯",
+      "name_en": "Four-Substance Decoction",
+      "pinyin": "Si Wu Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.dang_gui_bu_xue_tang"
+      ],
+      "comparison_group": "blood_tonify",
+      "clinical_use_note": "",
+      "id": "formula.si_wu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "當歸補血湯",
+      "name_en": "Dang Gui Decoction to Tonify the Blood",
+      "pinyin": "Dang Gui Bu Xue Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_wu_tang"
+      ],
+      "comparison_group": "blood_tonify",
+      "clinical_use_note": "",
+      "id": "formula.dang_gui_bu_xue_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "歸脾湯",
+      "name_en": "Restore the Spleen Decoction",
+      "pinyin": "Gui Pi Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ba_zhen_tang",
+        "formula.zhi_gan_cao_tang"
+      ],
+      "comparison_group": "qi_blood_tonify",
+      "clinical_use_note": "",
+      "id": "formula.gui_pi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "八珍湯",
+      "name_en": "Eight-Treasure Decoction",
+      "pinyin": "Ba Zhen Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.gui_pi_tang",
+        "formula.zhi_gan_cao_tang"
+      ],
+      "comparison_group": "qi_blood_tonify",
+      "clinical_use_note": "",
+      "id": "formula.ba_zhen_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "炙甘草湯",
+      "name_en": "Honey-Fried Licorice Decoction",
+      "pinyin": "Zhi Gan Cao Tang",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.gui_pi_tang",
+        "formula.ba_zhen_tang"
+      ],
+      "comparison_group": "qi_blood_tonify",
+      "clinical_use_note": "",
+      "id": "formula.zhi_gan_cao_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "六味地黃丸",
+      "name_en": "Six-Ingredient Pill with Rehmannia",
+      "pinyin": "Liu Wei Di Huang Wan",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zuo_gui_wan",
+        "formula.yi_guan_jian"
+      ],
+      "comparison_group": "yin_tonify",
+      "clinical_use_note": "",
+      "id": "formula.liu_wei_di_huang_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "左歸丸",
+      "name_en": "Restore the Left Kidney Pill",
+      "pinyin": "Zuo Gui Wan",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.liu_wei_di_huang_wan",
+        "formula.yi_guan_jian"
+      ],
+      "comparison_group": "yin_tonify",
+      "clinical_use_note": "",
+      "id": "formula.zuo_gui_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "一貫煎",
+      "name_en": "Linking Decoction",
+      "pinyin": "Yi Guan Jian",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.liu_wei_di_huang_wan",
+        "formula.zuo_gui_wan"
+      ],
+      "comparison_group": "yin_tonify",
+      "clinical_use_note": "",
+      "id": "formula.yi_guan_jian",
+      "tier": "core"
+    },
+    {
+      "name_zh": "金匱腎氣丸",
+      "name_en": "Kidney Qi Pill from the Golden Cabinet",
+      "pinyin": "Jin Gui Shen Qi Wan",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.you_gui_wan"
+      ],
+      "comparison_group": "yang_tonify",
+      "clinical_use_note": "",
+      "id": "formula.jin_gui_shen_qi_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "右歸丸",
+      "name_en": "Restore the Right Kidney Pill",
+      "pinyin": "You Gui Wan",
+      "category": "補益劑 / Tonify",
+      "source_hint": "Bensky F&S: Tonify; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.jin_gui_shen_qi_wan"
+      ],
+      "comparison_group": "yang_tonify",
+      "clinical_use_note": "",
+      "id": "formula.you_gui_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "牡蠣散",
+      "name_en": "Oyster Shell Powder",
+      "pinyin": "Mu Li San",
+      "category": "固澀劑 / Stabilize and Bind",
+      "source_hint": "Bensky F&S: Stabilize and Bind; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zhen_ren_yang_zang_tang",
+        "formula.si_shen_wan",
+        "formula.gu_chong_tang",
+        "formula.wan_dai_tang"
+      ],
+      "comparison_group": "stabilize_bind",
+      "clinical_use_note": "",
+      "id": "formula.mu_li_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "真人養臟湯",
+      "name_en": "True Man's Decoction to Nourish the Organs",
+      "pinyin": "Zhen Ren Yang Zang Tang",
+      "category": "固澀劑 / Stabilize and Bind",
+      "source_hint": "Bensky F&S: Stabilize and Bind; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.mu_li_san",
+        "formula.si_shen_wan",
+        "formula.gu_chong_tang",
+        "formula.wan_dai_tang"
+      ],
+      "comparison_group": "stabilize_bind",
+      "clinical_use_note": "",
+      "id": "formula.zhen_ren_yang_zang_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "四神丸",
+      "name_en": "Four-Miracle Pill",
+      "pinyin": "Si Shen Wan",
+      "category": "固澀劑 / Stabilize and Bind",
+      "source_hint": "Bensky F&S: Stabilize and Bind; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.mu_li_san",
+        "formula.zhen_ren_yang_zang_tang",
+        "formula.gu_chong_tang",
+        "formula.wan_dai_tang"
+      ],
+      "comparison_group": "stabilize_bind",
+      "clinical_use_note": "",
+      "id": "formula.si_shen_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "固沖湯",
+      "name_en": "Stabilize Gushing Decoction",
+      "pinyin": "Gu Chong Tang",
+      "category": "固澀劑 / Stabilize and Bind",
+      "source_hint": "Bensky F&S: Stabilize and Bind; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.mu_li_san",
+        "formula.zhen_ren_yang_zang_tang",
+        "formula.si_shen_wan",
+        "formula.wan_dai_tang"
+      ],
+      "comparison_group": "stabilize_bind",
+      "clinical_use_note": "",
+      "id": "formula.gu_chong_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "完帶湯",
+      "name_en": "End Discharge Decoction",
+      "pinyin": "Wan Dai Tang",
+      "category": "固澀劑 / Stabilize and Bind",
+      "source_hint": "Bensky F&S: Stabilize and Bind; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.mu_li_san",
+        "formula.zhen_ren_yang_zang_tang",
+        "formula.si_shen_wan",
+        "formula.gu_chong_tang"
+      ],
+      "comparison_group": "stabilize_bind",
+      "clinical_use_note": "",
+      "id": "formula.wan_dai_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "酸棗仁湯",
+      "name_en": "Sour Jujube Decoction",
+      "pinyin": "Suan Zao Ren Tang",
+      "category": "安神劑 / Calm the Spirit",
+      "source_hint": "Bensky F&S: Calm the Spirit; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.tian_wang_bu_xin_dan",
+        "formula.gan_mai_da_zao_tang",
+        "formula.huang_lian_e_jiao_tang"
+      ],
+      "comparison_group": "calm_spirit",
+      "clinical_use_note": "",
+      "id": "formula.suan_zao_ren_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "天王補心丹",
+      "name_en": "Emperor of Heaven's Special Pill to Tonify the Heart",
+      "pinyin": "Tian Wang Bu Xin Dan",
+      "category": "安神劑 / Calm the Spirit",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Calm the Spirit; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.suan_zao_ren_tang",
+        "formula.gan_mai_da_zao_tang",
+        "formula.huang_lian_e_jiao_tang"
+      ],
+      "comparison_group": "calm_spirit",
+      "clinical_use_note": "",
+      "id": "formula.tian_wang_bu_xin_dan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "甘麥大棗湯",
+      "name_en": "Licorice, Wheat, and Jujube Decoction",
+      "pinyin": "Gan Mai Da Zao Tang",
+      "category": "安神劑 / Calm the Spirit",
+      "source_hint": "Bensky F&S: Calm the Spirit; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.suan_zao_ren_tang",
+        "formula.tian_wang_bu_xin_dan",
+        "formula.huang_lian_e_jiao_tang"
+      ],
+      "comparison_group": "calm_spirit",
+      "clinical_use_note": "",
+      "id": "formula.gan_mai_da_zao_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "黃連阿膠湯",
+      "name_en": "Coptis and Ass-Hide Gelatin Decoction",
+      "pinyin": "Huang Lian E Jiao Tang",
+      "category": "安神劑 / Calm the Spirit",
+      "source_hint": "Bensky F&S: Calm the Spirit; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.suan_zao_ren_tang",
+        "formula.tian_wang_bu_xin_dan",
+        "formula.gan_mai_da_zao_tang"
+      ],
+      "comparison_group": "calm_spirit",
+      "clinical_use_note": "",
+      "id": "formula.huang_lian_e_jiao_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "安宮牛黃丸",
+      "name_en": "Calm the Palace Pill with Cattle Gallstone",
+      "pinyin": "An Gong Niu Huang Wan",
+      "category": "開竅劑 / Open the Orifices",
+      "source_hint": "Bensky F&S: Open the Orifices; emergency/professional-use wording required",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zhi_bao_dan",
+        "formula.su_he_xiang_wan"
+      ],
+      "comparison_group": "open_orifices",
+      "clinical_use_note": "",
+      "id": "formula.an_gong_niu_huang_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "至寶丹",
+      "name_en": "Greatest Treasure Special Pill",
+      "pinyin": "Zhi Bao Dan",
+      "category": "開竅劑 / Open the Orifices",
+      "source_hint": "Bensky F&S: Open the Orifices; emergency/professional-use wording required",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan",
+        "formula.su_he_xiang_wan"
+      ],
+      "comparison_group": "open_orifices",
+      "clinical_use_note": "",
+      "id": "formula.zhi_bao_dan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "蘇合香丸",
+      "name_en": "Liquid Styrax Pill",
+      "pinyin": "Su He Xiang Wan",
+      "category": "開竅劑 / Open the Orifices",
+      "source_hint": "Bensky F&S: Open the Orifices; emergency/professional-use wording required",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan",
+        "formula.zhi_bao_dan"
+      ],
+      "comparison_group": "open_orifices",
+      "clinical_use_note": "",
+      "id": "formula.su_he_xiang_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "越鞠丸",
+      "name_en": "Escape Restraint Pill",
+      "pinyin": "Yue Ju Wan",
+      "category": "理氣劑 / Regulate Qi",
+      "source_hint": "Bensky F&S: Regulate Qi; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_ni_san",
+        "formula.xiao_yao_san",
+        "formula.jia_wei_xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.chai_hu_shu_gan_san"
+      ],
+      "comparison_group": "liver_spleen",
+      "clinical_use_note": "",
+      "id": "formula.yue_ju_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "柴胡疏肝散",
+      "name_en": "Bupleurum Powder to Spread the Liver",
+      "pinyin": "Chai Hu Shu Gan San",
+      "category": "理氣劑 / Regulate Qi",
+      "source_hint": "Bensky F&S: Regulate Qi; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.si_ni_san",
+        "formula.xiao_yao_san",
+        "formula.jia_wei_xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.yue_ju_wan"
+      ],
+      "comparison_group": "liver_spleen",
+      "clinical_use_note": "",
+      "id": "formula.chai_hu_shu_gan_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "半夏厚朴湯",
+      "name_en": "Pinellia and Magnolia Bark Decoction",
+      "pinyin": "Ban Xia Hou Po Tang",
+      "category": "理氣劑 / Regulate Qi",
+      "source_hint": "Bensky F&S: Regulate Qi; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zhi_shi_xie_bai_gui_zhi_tang",
+        "formula.su_zi_jiang_qi_tang",
+        "formula.ding_chuan_tang",
+        "formula.xuan_fu_dai_zhe_tang"
+      ],
+      "comparison_group": "qi_regulation",
+      "clinical_use_note": "",
+      "id": "formula.ban_xia_hou_po_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "枳實薤白桂枝湯",
+      "name_en": "Unripe Bitter Orange, Chinese Chive, and Cinnamon Twig Decoction",
+      "pinyin": "Zhi Shi Xie Bai Gui Zhi Tang",
+      "category": "理氣劑 / Regulate Qi",
+      "source_hint": "Bensky F&S: Regulate Qi; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ban_xia_hou_po_tang",
+        "formula.su_zi_jiang_qi_tang",
+        "formula.ding_chuan_tang",
+        "formula.xuan_fu_dai_zhe_tang"
+      ],
+      "comparison_group": "qi_regulation",
+      "clinical_use_note": "",
+      "id": "formula.zhi_shi_xie_bai_gui_zhi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "蘇子降氣湯",
+      "name_en": "Perilla Fruit Decoction for Directing Qi Downward",
+      "pinyin": "Su Zi Jiang Qi Tang",
+      "category": "理氣劑 / Regulate Qi",
+      "source_hint": "Bensky F&S: Regulate Qi; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ban_xia_hou_po_tang",
+        "formula.zhi_shi_xie_bai_gui_zhi_tang",
+        "formula.ding_chuan_tang",
+        "formula.xuan_fu_dai_zhe_tang"
+      ],
+      "comparison_group": "qi_regulation",
+      "clinical_use_note": "",
+      "id": "formula.su_zi_jiang_qi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "定喘湯",
+      "name_en": "Arrest Wheezing Decoction",
+      "pinyin": "Ding Chuan Tang",
+      "category": "理氣劑 / Regulate Qi",
+      "source_hint": "Bensky F&S: Regulate Qi; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ban_xia_hou_po_tang",
+        "formula.zhi_shi_xie_bai_gui_zhi_tang",
+        "formula.su_zi_jiang_qi_tang",
+        "formula.xuan_fu_dai_zhe_tang"
+      ],
+      "comparison_group": "qi_regulation",
+      "clinical_use_note": "",
+      "id": "formula.ding_chuan_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "旋覆代赭湯",
+      "name_en": "Inula and Hematite Decoction",
+      "pinyin": "Xuan Fu Dai Zhe Tang",
+      "category": "理氣劑 / Regulate Qi",
+      "source_hint": "Bensky F&S: Regulate Qi; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ban_xia_hou_po_tang",
+        "formula.zhi_shi_xie_bai_gui_zhi_tang",
+        "formula.su_zi_jiang_qi_tang",
+        "formula.ding_chuan_tang"
+      ],
+      "comparison_group": "qi_regulation",
+      "clinical_use_note": "",
+      "id": "formula.xuan_fu_dai_zhe_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "桃核承氣湯",
+      "name_en": "Peach Pit Decoction to Order the Qi",
+      "pinyin": "Tao He Cheng Qi Tang",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.bu_yang_huan_wu_tang",
+        "formula.shi_xiao_san",
+        "formula.gui_zhi_fu_ling_wan",
+        "formula.tao_hong_si_wu_tang"
+      ],
+      "comparison_group": "blood_stasis",
+      "clinical_use_note": "",
+      "id": "formula.tao_he_cheng_qi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "血府逐瘀湯",
+      "name_en": "Drive Out Stasis in the Mansion of Blood Decoction",
+      "pinyin": "Xue Fu Zhu Yu Tang",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Regulate Blood; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.tao_he_cheng_qi_tang",
+        "formula.bu_yang_huan_wu_tang",
+        "formula.shi_xiao_san",
+        "formula.gui_zhi_fu_ling_wan",
+        "formula.tao_hong_si_wu_tang"
+      ],
+      "comparison_group": "blood_stasis",
+      "clinical_use_note": "",
+      "id": "formula.xue_fu_zhu_yu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "補陽還五湯",
+      "name_en": "Tonify the Yang to Restore Five Decoction",
+      "pinyin": "Bu Yang Huan Wu Tang",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.tao_he_cheng_qi_tang",
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.shi_xiao_san",
+        "formula.gui_zhi_fu_ling_wan",
+        "formula.tao_hong_si_wu_tang"
+      ],
+      "comparison_group": "blood_stasis",
+      "clinical_use_note": "",
+      "id": "formula.bu_yang_huan_wu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "溫經湯",
+      "name_en": "Warm the Menses Decoction",
+      "pinyin": "Wen Jing Tang",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Regulate Blood; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.sheng_hua_tang"
+      ],
+      "comparison_group": "gynecology_blood",
+      "clinical_use_note": "",
+      "id": "formula.wen_jing_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "生化湯",
+      "name_en": "Generation and Transformation Decoction",
+      "pinyin": "Sheng Hua Tang",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; gynecology/postpartum safety wording required",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.wen_jing_tang"
+      ],
+      "comparison_group": "gynecology_blood",
+      "clinical_use_note": "",
+      "id": "formula.sheng_hua_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "失笑散",
+      "name_en": "Sudden Smile Powder",
+      "pinyin": "Shi Xiao San",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.tao_he_cheng_qi_tang",
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.bu_yang_huan_wu_tang",
+        "formula.gui_zhi_fu_ling_wan",
+        "formula.tao_hong_si_wu_tang"
+      ],
+      "comparison_group": "blood_stasis",
+      "clinical_use_note": "",
+      "id": "formula.shi_xiao_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "桂枝茯苓丸",
+      "name_en": "Cinnamon Twig and Poria Pill",
+      "pinyin": "Gui Zhi Fu Ling Wan",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; gynecology safety wording required",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.tao_he_cheng_qi_tang",
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.bu_yang_huan_wu_tang",
+        "formula.shi_xiao_san",
+        "formula.tao_hong_si_wu_tang"
+      ],
+      "comparison_group": "blood_stasis",
+      "clinical_use_note": "",
+      "id": "formula.gui_zhi_fu_ling_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "桃紅四物湯",
+      "name_en": "Peach Kernel and Safflower Four-Substance Decoction",
+      "pinyin": "Tao Hong Si Wu Tang",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Regulate Blood; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.tao_he_cheng_qi_tang",
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.bu_yang_huan_wu_tang",
+        "formula.shi_xiao_san",
+        "formula.gui_zhi_fu_ling_wan"
+      ],
+      "comparison_group": "blood_stasis",
+      "clinical_use_note": "",
+      "id": "formula.tao_hong_si_wu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "十灰散",
+      "name_en": "Ten Partially-Charred Substances Powder",
+      "pinyin": "Shi Hui San",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.huai_hua_san",
+        "formula.huang_tu_tang"
+      ],
+      "comparison_group": "bleeding",
+      "clinical_use_note": "",
+      "id": "formula.shi_hui_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "槐花散",
+      "name_en": "Sophora Japonica Flower Powder",
+      "pinyin": "Huai Hua San",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.shi_hui_san",
+        "formula.huang_tu_tang"
+      ],
+      "comparison_group": "bleeding",
+      "clinical_use_note": "",
+      "id": "formula.huai_hua_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "黃土湯",
+      "name_en": "Yellow Earth Decoction",
+      "pinyin": "Huang Tu Tang",
+      "category": "理血劑 / Regulate Blood",
+      "source_hint": "Bensky F&S: Regulate Blood; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.shi_hui_san",
+        "formula.huai_hua_san"
+      ],
+      "comparison_group": "bleeding",
+      "clinical_use_note": "",
+      "id": "formula.huang_tu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "川芎茶調散",
+      "name_en": "Ligusticum Chuanxiong Powder to be Taken with Green Tea",
+      "pinyin": "Chuan Xiong Cha Tiao San",
+      "category": "治風劑 / Expel or Extinguish Wind",
+      "source_hint": "Bensky F&S: Expel Wind; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.xiao_feng_san",
+        "formula.qian_zheng_san"
+      ],
+      "comparison_group": "wind_external_skin",
+      "clinical_use_note": "",
+      "id": "formula.chuan_xiong_cha_tiao_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "消風散",
+      "name_en": "Eliminate Wind Powder",
+      "pinyin": "Xiao Feng San",
+      "category": "治風劑 / Expel or Extinguish Wind",
+      "source_hint": "Bensky F&S: Expel Wind; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.chuan_xiong_cha_tiao_san",
+        "formula.qian_zheng_san"
+      ],
+      "comparison_group": "wind_external_skin",
+      "clinical_use_note": "",
+      "id": "formula.xiao_feng_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "牽正散",
+      "name_en": "Lead to Symmetry Powder",
+      "pinyin": "Qian Zheng San",
+      "category": "治風劑 / Expel or Extinguish Wind",
+      "source_hint": "Bensky F&S: Expel Wind; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.chuan_xiong_cha_tiao_san",
+        "formula.xiao_feng_san"
+      ],
+      "comparison_group": "wind_external_skin",
+      "clinical_use_note": "",
+      "id": "formula.qian_zheng_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "羚角鉤藤湯",
+      "name_en": "Antelope Horn and Uncaria Decoction",
+      "pinyin": "Ling Jiao Gou Teng Tang",
+      "category": "治風劑 / Expel or Extinguish Wind",
+      "source_hint": "Bensky F&S: Extinguish Wind; modern substitution review required",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zhen_gan_xi_feng_tang",
+        "formula.tian_ma_gou_teng_yin",
+        "formula.da_ding_feng_zhu"
+      ],
+      "comparison_group": "internal_wind",
+      "clinical_use_note": "",
+      "id": "formula.ling_jiao_gou_teng_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "鎮肝熄風湯",
+      "name_en": "Sedate the Liver and Extinguish Wind Decoction",
+      "pinyin": "Zhen Gan Xi Feng Tang",
+      "category": "治風劑 / Expel or Extinguish Wind",
+      "source_hint": "Bensky F&S: Extinguish Wind; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ling_jiao_gou_teng_tang",
+        "formula.tian_ma_gou_teng_yin",
+        "formula.da_ding_feng_zhu"
+      ],
+      "comparison_group": "internal_wind",
+      "clinical_use_note": "",
+      "id": "formula.zhen_gan_xi_feng_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "天麻鉤藤飲",
+      "name_en": "Gastrodia and Uncaria Decoction",
+      "pinyin": "Tian Ma Gou Teng Yin",
+      "category": "治風劑 / Expel or Extinguish Wind",
+      "source_hint": "Bensky F&S: Extinguish Wind; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ling_jiao_gou_teng_tang",
+        "formula.zhen_gan_xi_feng_tang",
+        "formula.da_ding_feng_zhu"
+      ],
+      "comparison_group": "internal_wind",
+      "clinical_use_note": "",
+      "id": "formula.tian_ma_gou_teng_yin",
+      "tier": "core"
+    },
+    {
+      "name_zh": "大定風珠",
+      "name_en": "Major Arrest Wind Pearl",
+      "pinyin": "Da Ding Feng Zhu",
+      "category": "治風劑 / Expel or Extinguish Wind",
+      "source_hint": "Bensky F&S: Extinguish Wind; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ling_jiao_gou_teng_tang",
+        "formula.zhen_gan_xi_feng_tang",
+        "formula.tian_ma_gou_teng_yin"
+      ],
+      "comparison_group": "internal_wind",
+      "clinical_use_note": "",
+      "id": "formula.da_ding_feng_zhu",
+      "tier": "core"
+    },
+    {
+      "name_zh": "二陳湯",
+      "name_en": "Two-Cured Decoction",
+      "pinyin": "Er Chen Tang",
+      "category": "祛痰劑 / Transform Phlegm",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Transform Phlegm; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.wen_dan_tang",
+        "formula.qing_qi_hua_tan_wan",
+        "formula.xiao_xian_xiong_tang",
+        "formula.bei_mu_gua_lou_san",
+        "formula.ban_xia_bai_zhu_tian_ma_tang"
+      ],
+      "comparison_group": "phlegm_damp",
+      "clinical_use_note": "",
+      "id": "formula.er_chen_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "溫膽湯",
+      "name_en": "Warm the Gallbladder Decoction",
+      "pinyin": "Wen Dan Tang",
+      "category": "祛痰劑 / Transform Phlegm",
+      "source_hint": "Bensky F&S: Transform Phlegm; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.er_chen_tang",
+        "formula.qing_qi_hua_tan_wan",
+        "formula.xiao_xian_xiong_tang",
+        "formula.bei_mu_gua_lou_san",
+        "formula.ban_xia_bai_zhu_tian_ma_tang"
+      ],
+      "comparison_group": "phlegm_damp",
+      "clinical_use_note": "",
+      "id": "formula.wen_dan_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "清氣化痰丸",
+      "name_en": "Clear the Qi and Transform Phlegm Pill",
+      "pinyin": "Qing Qi Hua Tan Wan",
+      "category": "祛痰劑 / Transform Phlegm",
+      "source_hint": "Bensky F&S: Transform Phlegm; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.er_chen_tang",
+        "formula.wen_dan_tang",
+        "formula.xiao_xian_xiong_tang",
+        "formula.bei_mu_gua_lou_san",
+        "formula.ban_xia_bai_zhu_tian_ma_tang"
+      ],
+      "comparison_group": "phlegm_damp",
+      "clinical_use_note": "",
+      "id": "formula.qing_qi_hua_tan_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "小陷胸湯",
+      "name_en": "Minor Decoction for Pathogens Stuck in the Chest",
+      "pinyin": "Xiao Xian Xiong Tang",
+      "category": "祛痰劑 / Transform Phlegm",
+      "source_hint": "Bensky F&S: Transform Phlegm; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.er_chen_tang",
+        "formula.wen_dan_tang",
+        "formula.qing_qi_hua_tan_wan",
+        "formula.bei_mu_gua_lou_san",
+        "formula.ban_xia_bai_zhu_tian_ma_tang"
+      ],
+      "comparison_group": "phlegm_damp",
+      "clinical_use_note": "",
+      "id": "formula.xiao_xian_xiong_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "貝母瓜蔞散",
+      "name_en": "Fritillaria and Trichosanthes Fruit Powder",
+      "pinyin": "Bei Mu Gua Lou San",
+      "category": "祛痰劑 / Transform Phlegm",
+      "source_hint": "Bensky F&S: Transform Phlegm; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.er_chen_tang",
+        "formula.wen_dan_tang",
+        "formula.qing_qi_hua_tan_wan",
+        "formula.xiao_xian_xiong_tang",
+        "formula.ban_xia_bai_zhu_tian_ma_tang"
+      ],
+      "comparison_group": "phlegm_damp",
+      "clinical_use_note": "",
+      "id": "formula.bei_mu_gua_lou_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "半夏白朮天麻湯",
+      "name_en": "Pinellia, Atractylodes Macrocephala, and Gastrodia Decoction",
+      "pinyin": "Ban Xia Bai Zhu Tian Ma Tang",
+      "category": "祛痰劑 / Transform Phlegm",
+      "source_hint": "Bensky F&S: Transform Phlegm; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.er_chen_tang",
+        "formula.wen_dan_tang",
+        "formula.qing_qi_hua_tan_wan",
+        "formula.xiao_xian_xiong_tang",
+        "formula.bei_mu_gua_lou_san"
+      ],
+      "comparison_group": "phlegm_damp",
+      "clinical_use_note": "",
+      "id": "formula.ban_xia_bai_zhu_tian_ma_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "平胃散",
+      "name_en": "Calm the Stomach Powder",
+      "pinyin": "Ping Wei San",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Existing AcuTing seed; Bensky F&S: Dispel Dampness; CloudTCM /formula lookup pending",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.huo_xiang_zheng_qi_san"
+      ],
+      "comparison_group": "damp_middle_jiao",
+      "clinical_use_note": "",
+      "id": "formula.ping_wei_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "藿香正氣散",
+      "name_en": "Agastache Powder to Rectify the Qi",
+      "pinyin": "Huo Xiang Zheng Qi San",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.ping_wei_san"
+      ],
+      "comparison_group": "damp_middle_jiao",
+      "clinical_use_note": "",
+      "id": "formula.huo_xiang_zheng_qi_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "茵陳蒿湯",
+      "name_en": "Virgate Wormwood Decoction",
+      "pinyin": "Yin Chen Hao Tang",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.san_ren_tang",
+        "formula.gan_lu_xiao_du_dan",
+        "formula.lian_po_yin",
+        "formula.ba_zheng_san"
+      ],
+      "comparison_group": "damp_heat",
+      "clinical_use_note": "",
+      "id": "formula.yin_chen_hao_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "三仁湯",
+      "name_en": "Three-Nut Decoction",
+      "pinyin": "San Ren Tang",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.yin_chen_hao_tang",
+        "formula.gan_lu_xiao_du_dan",
+        "formula.lian_po_yin",
+        "formula.ba_zheng_san"
+      ],
+      "comparison_group": "damp_heat",
+      "clinical_use_note": "",
+      "id": "formula.san_ren_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "甘露消毒丹",
+      "name_en": "Sweet Dew Special Pill to Eliminate Toxin",
+      "pinyin": "Gan Lu Xiao Du Dan",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.yin_chen_hao_tang",
+        "formula.san_ren_tang",
+        "formula.lian_po_yin",
+        "formula.ba_zheng_san"
+      ],
+      "comparison_group": "damp_heat",
+      "clinical_use_note": "",
+      "id": "formula.gan_lu_xiao_du_dan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "連朴飲",
+      "name_en": "Coptis and Magnolia Bark Decoction",
+      "pinyin": "Lian Po Yin",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.yin_chen_hao_tang",
+        "formula.san_ren_tang",
+        "formula.gan_lu_xiao_du_dan",
+        "formula.ba_zheng_san"
+      ],
+      "comparison_group": "damp_heat",
+      "clinical_use_note": "",
+      "id": "formula.lian_po_yin",
+      "tier": "core"
+    },
+    {
+      "name_zh": "八正散",
+      "name_en": "Eight-Herb Powder for Rectification",
+      "pinyin": "Ba Zheng San",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.yin_chen_hao_tang",
+        "formula.san_ren_tang",
+        "formula.gan_lu_xiao_du_dan",
+        "formula.lian_po_yin"
+      ],
+      "comparison_group": "damp_heat",
+      "clinical_use_note": "",
+      "id": "formula.ba_zheng_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "五苓散",
+      "name_en": "Five-Ingredient Powder with Poria",
+      "pinyin": "Wu Ling San",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.zhu_ling_tang",
+        "formula.fang_ji_huang_qi_tang",
+        "formula.zhen_wu_tang",
+        "formula.shi_pi_san"
+      ],
+      "comparison_group": "damp_water",
+      "clinical_use_note": "",
+      "id": "formula.wu_ling_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "豬苓湯",
+      "name_en": "Polyporus Decoction",
+      "pinyin": "Zhu Ling Tang",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.fang_ji_huang_qi_tang",
+        "formula.zhen_wu_tang",
+        "formula.shi_pi_san"
+      ],
+      "comparison_group": "damp_water",
+      "clinical_use_note": "",
+      "id": "formula.zhu_ling_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "防己黃耆湯",
+      "name_en": "Stephania and Astragalus Decoction",
+      "pinyin": "Fang Ji Huang Qi Tang",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.zhen_wu_tang",
+        "formula.shi_pi_san"
+      ],
+      "comparison_group": "damp_water",
+      "clinical_use_note": "",
+      "id": "formula.fang_ji_huang_qi_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "真武湯",
+      "name_en": "True Warrior Decoction",
+      "pinyin": "Zhen Wu Tang",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.fang_ji_huang_qi_tang",
+        "formula.shi_pi_san"
+      ],
+      "comparison_group": "damp_water",
+      "clinical_use_note": "",
+      "id": "formula.zhen_wu_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "實脾散",
+      "name_en": "Bolster the Spleen Powder",
+      "pinyin": "Shi Pi San",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.fang_ji_huang_qi_tang",
+        "formula.zhen_wu_tang"
+      ],
+      "comparison_group": "damp_water",
+      "clinical_use_note": "",
+      "id": "formula.shi_pi_san",
+      "tier": "core"
+    },
+    {
+      "name_zh": "獨活寄生湯",
+      "name_en": "Angelica Pubescens and Taxillus Decoction",
+      "pinyin": "Du Huo Ji Sheng Tang",
+      "category": "祛濕劑 / Dispel Dampness",
+      "source_hint": "Bensky F&S: Dispel Dampness; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [],
+      "comparison_group": "wind_damp_bi",
+      "clinical_use_note": "",
+      "id": "formula.du_huo_ji_sheng_tang",
+      "tier": "core"
+    },
+    {
+      "name_zh": "保和丸",
+      "name_en": "Preserve Harmony Pill",
+      "pinyin": "Bao He Wan",
+      "category": "消食劑 / Reduce Food Stagnation",
+      "source_hint": "Bensky F&S: Reduce Food Stagnation; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.jian_pi_wan"
+      ],
+      "comparison_group": "food_stagnation",
+      "clinical_use_note": "",
+      "id": "formula.bao_he_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "健脾丸",
+      "name_en": "Strengthen the Spleen Pill",
+      "pinyin": "Jian Pi Wan",
+      "category": "消食劑 / Reduce Food Stagnation",
+      "source_hint": "Bensky F&S: Reduce Food Stagnation; expanded NCCAOM candidate",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [
+        "formula.bao_he_wan"
+      ],
+      "comparison_group": "food_stagnation",
+      "clinical_use_note": "",
+      "id": "formula.jian_pi_wan",
+      "tier": "core"
+    },
+    {
+      "name_zh": "烏梅丸",
+      "name_en": "Mume Pill",
+      "pinyin": "Wu Mei Wan",
+      "category": "驅蟲劑 / Expel Parasites",
+      "source_hint": "Bensky F&S: Expel Parasites; add to AcuTing formulas after Ting approval",
+      "review_status": "draft",
+      "modern_clinical_use_tags": [],
+      "related_conditions": [],
+      "related_formulas": [],
+      "comparison_group": "parasites_jueyin",
+      "clinical_use_note": "",
+      "id": "formula.wu_mei_wan",
+      "tier": "core"
+    }
+  ],
+  "schema_note": "Formula ids and tier were added before content fill. Related formulas must reference stable id values. Existing 115 records are core; future additions can be expanded.",
+  "comparison_group_note": "Comparison groups are study/differentiation clusters only. They do not imply automatic substitution or clinical equivalence.",
+  "related_formulas_note": "related_formulas are generated from comparison_group for study comparison only. They do not imply substitution, equivalence, or clinical recommendation."
+}

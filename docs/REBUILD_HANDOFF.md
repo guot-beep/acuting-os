@@ -1,110 +1,723 @@
-# REBUILD HANDOFF — for Codex
+# REBUILD HANDOFF — Session 12 (2026-07-03, Claude)：病例欄位補強
 
-Session: 2026-07-02 (Claude Cowork). Read this top-to-bottom before touching code.
+## 目標
+依 Ting 要求補病歷欄位（出生年月、婦科史、生活習慣、目標、生命徵象、治療手法）。
+
+## 修改（只動 app.js + index.html）
+- 病人夾層新增：birthYearMonth（type=month，年+月無日）、goals、menstrualObHistory、lifestyle。
+  （sex/occupation/historyPresent/pastHistory/allergies/currentMeds 前一 session 已加）
+- 看診層新增：vitals（生命徵象）、modalities（治療手法：艾灸/電針/拔罐/刮痧/推拿）。
+- normalizeClinicalCase / normalizeSoapNote / open*Editor / save*FromForm / render 全部同步。
+- birthYear 由 birthYearMonth 自動導出（向後相容）。
+
+## 驗證
+- node --check app.js PASS
+- jsdom：新欄位存在 + 建案例/SOAP + 渲染 → 全過（13/13）
+- validate-data.js 681 deep-equal PASS、validate-interactions.js 0 failures
+
+## 未完成 / 下一步（Claude）
+- 病例內穴位/方劑連結做成可點擊 → 跳知識庫（連接資料庫研究病例）。
+
+## 給 Codex
+勿改 app.js case/soap 區塊與 index.html caseDialog/soapDialog。
+
+---
+
+# REBUILD HANDOFF — Session 11 (2026-07-03, Claude)：病例表單改成中醫結構
+
+## 目標
+病例登入不符合中醫慣例（缺舌脈證治、案例夾與看診層混淆）。依 docs/TCM_CASE_SPEC.md 重構表單。
+
+## 修改檔案（只動這兩個 + CSS，未碰 data/herbs/ 或 Codex 檔）
+- app.js：normalizeClinicalCase 加 sex/occupation/historyPresent/pastHistory/allergies/currentMeds；
+  normalizeSoapNote 加 tongueBody/tongueCoating/pulse/tcmPattern/pathomechanism/treatmentPrinciple/advice；
+  openCaseEditor/openSoapEditor fallback、saveCaseFromForm/saveSoapFromForm、renderClinicalCaseDetail、
+  renderSoapNoteCard 全部同步。
+- index.html：caseDialog 加基本資料+現病史+既往史+過敏+用藥；soapDialog 加結構化舌質/舌苔/脈象、
+  本次證型、病機、治法、醫囑。
+- styles.css：.tcm-dx-row（舌脈證顯示列）。
+
+## 原則
+- 案例夾（穩定）與看診（每次變）分層；舌脈證放看診層。
+- 全部欄位向後相容（default ""），舊病例 localStorage(acuting-clinical-cases-v1) 照常載入。
+
+## 驗證
+- node --check app.js PASS
+- jsdom：13 新欄位存在、建案例+SOAP、舌脈治法正確渲染 → 全過
+- validate-data.js PASS（681 deep-equal）、validate-interactions.js 0 failures
+- CSS 大括號平衡
+
+## 未完成 / 下一步
+- 「新病人初診」合併流程（建案例+第一診一次做）尚未做，屬 UX polish。
+- 病例內穴位/方劑連結尚未可點擊（連知識庫）— 下一步高價值項。
+
+## 給 Codex
+勿改 app.js 的 case/soap 區塊與 index.html 的 caseDialog/soapDialog。你的方劑 canon 工作不受影響。
+
+---
+
+# REBUILD HANDOFF — Session 14 (2026-07-03, Codex case/SOAP flow review)
 
 ## 1. 這次目標
-Phase 1「資料解放 + 工作區外殼」：把 app.js 內嵌的知識資料抽到 data/、建立
-JSON→app 的單向管線、首頁改成 6 個工作區導航。app 行為需與舊版完全一致。
+回應 Ting 對「新增病例 → 新增 SOAP」流程不順的疑問。只做文件化審查與設計建議，
+不改 app、不改 localStorage schema、不輸入病例資料。
 
 ## 2. 修改了哪些檔案
-- 新增 `legacy/` (index.html, app.js, styles.css, README.md) — 舊版凍結快照
-- 新增 `scripts/extract-embedded-data.js`
-- 新增 `scripts/build-data.js`
-- 新增 `scripts/validate-data.js`
-- 新增 `data/acupoints/embedded/` 11 個 JSON（10 資料檔 + i18n_maps.json）
-- 新增 `data/auricular/embedded/auricular_points.json`
-- 新增 `data/generated/app_data.js`（機器產生）
-- 修改 `app.js`（8,785 → 3,266 行）
-- 修改 `index.html`（導航、data-workspace 屬性、script 標籤）
-- 修改 `styles.css`（檔尾附加 workspace 規則）
-- 新增 `js/router.js`
-- 新增 `docs/`（REBUILD_PLAN, DATA_MIGRATION_MAP, REBUILD_HANDOFF, VALIDATION_LOG）
+- `docs/CASE_SOAP_FLOW_REVIEW.md`（新）
+- `docs/REBUILD_HANDOFF.md`（本節）
 
 ## 3. 每個檔案改了什麼
-- `app.js`：15 個資料 const（starterPoints、professionalPoints、8 條經絡
-  expansion、auricularPoints、4 個英文對照 map）從字面量改為
-  `globalThis.ACUTING_APP_DATA?.<name> || fallback`。其他程式碼一行未動。
-- `index.html`：(a) top-nav 從 10 連結改為 6 工作區連結（#ws/home 等）；
-  (b) 14 個第一層 section 加 `data-workspace` 屬性；(c) directory-layout 補
-  `id="directoryLayout"`；(d) 新增 `<script src="data/generated/app_data.js">`
-  於 tung/auricular 之前、`<script src="js/router.js">` 於 app.js 之後。
-- `styles.css`：檔尾新增 `section[data-workspace][hidden]` 隱藏規則與
-  `.workspace-nav a.active` 樣式。
+- `CASE_SOAP_FLOW_REVIEW.md`：整理現有 Case layer / SOAP layer 欄位，說明哪些資料該放病例，
+  哪些該放每次 SOAP，並提出未來低風險 UI 分段建議。
+- `REBUILD_HANDOFF.md`：記錄本次 review 與 validation。
 
 ## 4. 為什麼這樣改
-- 消滅「資料鎖在 408KB app.js」的單點風險；資料改動不再需要動程式碼。
-- 靜態站不能 fetch 本地 JSON，所以用 build 腳本把 JSON 包成 generated .js。
-- Router 用「隱藏非當前工作區」而不是重寫 DOM，因此 app.js 的所有
-  querySelector 都照常命中，風險最低。
+Ting 還沒有大量輸入真實病例，現在最適合先釐清流程。文件確認目前「先建病例、再掛 SOAP」
+的邏輯是正確的；真正需要改善的是表單 UX：欄位分段、helper text、Case vs Visit 的心理模型。
 
-## 5. 有沒有移動、刪除、重新命名任何資料
-- 沒有刪除任何資料檔。app.js 內的資料是「搬家」：字面量移除前先抽成 JSON，
-  並以逐字節 deep-equal 驗證合併結果一致（見 §11）。
-- 舊三檔完整複製於 `legacy/`。
+## 5. 資料內容變動
+無。未修改任何病例資料、模板 JSON、app runtime 或 localStorage schema。
 
-## 6. 有沒有改 data schema 或欄位名稱
-- 沒有。embedded JSON 保留 app 原始欄位（nameZh/nameEn/location/...）。
-- 361.json 的 schema 差異與統一計畫寫在 docs/DATA_MIGRATION_MAP.md 末段。
+## 6. Schema / 欄位變動
+無。
 
-## 7. 舊資料如何被保留或遷移
-- 抽取方式：`scripts/extract-embedded-data.js` 在 stub 瀏覽器環境中「執行」
-  legacy/app.js，捕捉評估後的陣列（含字面量內呼叫 helper 產生的
-  sources/visualLinks），寫成 JSON。非手抄，零遺漏。
-- localStorage 使用者資料（兩把 key：acupoint-atlas-v1、
-  acuting-clinical-cases-v1）完全未動，新舊 app 共用。
+## 7. Review 結論
+- Case = 穩定 baseline / patient timeline / case-wide diagnosis-pattern-safety links。
+- SOAP = 每次 visit 的 S/O/A/P、舌脈、本次辨證、用穴、方藥、用藥背景、outcomes、follow-up。
+- `Case title` 應是短標籤，不是完整摘要。
+- `Category` 應是 routing tag，不是診斷。
+- `Summary` 應是 case-wide snapshot，不應存每次 visit 更新。
+- 現有 SOAP 已是 TCM-oriented SOAP；問題主要是表單太長、未分段、advanced link fields 太早出現。
 
-## 8. 有沒有新增 generated files
-- `data/generated/app_data.js`（265KB）。規則：**永遠不要手改**，改 JSON 後
-  跑 `node scripts/build-data.js` 重新產生。
+## 8. Generated files / scripts
+未執行 `scripts/build-data.js`，未修改 `data/generated/*`。
 
-## 9. 有沒有新增 scripts
-- `extract-embedded-data.js`（一次性遷移工具，可重跑，只讀 legacy/app.js）
-- `build-data.js`（日常：JSON → generated）
-- `validate-data.js`（日常：驗證 legacy 與現行 app 資料等價 + 重複 code 檢查）
+## 9. Protected areas
+未修改受保護區：
+`app.js` CloudTCM/search/enrichPoint/selectPoint 段、`js/router.js`, `js/knowledge.js`,
+`styles.css` point-detail-mode、`data/generated/*`,
+`data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS。
 
-## 10. 跑了哪些 validation / test
-1. `node --check app.js`、`node --check js/router.js`
-2. `node scripts/validate-data.js`
-3. jsdom 全頁 smoke test（模擬瀏覽器載入全部 script，測工作區切換、
-   #point/LU5 深連結、舊錨點 #caseWorkspace、卡片渲染）
+## 10. Validation
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
 
-## 11. Validation 結果
-- defaultPoints 數量一致：681；**deep-equal 通過（與舊版逐字節相同）**
-- 無重複 point code
-- smoke test 11/11 通過（詳見 docs/VALIDATION_LOG.md）
+## 11. 操作紀錄
+讀 `index.html` case/SOAP dialog 欄位、`app.js` normalize/render/save 流程、
+`data/clinical_cases/case_template.json`、`soap_note_template.json`、
+`README.md` 與 `patient_record_system_map.json` 後寫 review。
 
-## 12. 目前還沒完成什麼
-- git index 損壞待修（見 §15，Ting 手動一分鐘）
-- 小型 UI 設定仍在 app.js（channel audit、taxonomy、ear anchors）→ Phase 2
-- tung/auricular 的手寫 .js 雙檔尚未改為 generated → Phase 2
-- formulas/conditions/sources/audits JSON 尚未接進畫面 → Phase 2
-- 361.json schema 統一 → Phase 2（先寫欄位對照表）
+## 12. 未完成
+尚未改 UI。尚未分段 case dialog / SOAP dialog。尚未建立 migration。
 
-## 13. 接手先看哪幾個檔案
-1. `docs/REBUILD_PLAN.md`（總計畫與 Phase 2 任務清單）
-2. `docs/DATA_MIGRATION_MAP.md`（哪個檔案是最新事實）
-3. `scripts/build-data.js`（管線規則）
-4. `js/router.js` + index.html 的 nav 區塊
-5. `app.js` 開頭 200 行（看 globalThis.ACUTING_APP_DATA 的接法）
+## 13. 接手先看
+先看 `docs/CASE_SOAP_FLOW_REVIEW.md`。若要改 UI，照 Immediate Recommendation：
+保留現有 storage fields，只重排與加 helper text。
 
-## 14. 下一步建議
-按 REBUILD_PLAN Phase 2 順序做，第 1 項（361.json 統一）動手前先在
-DATA_MIGRATION_MAP.md 寫欄位對照表給 Ting 確認。
+## 14. 下一步
+建議下一個低風險 UI phase：
+1. Case dialog 分成 Identity / Background / Presenting Problem / Diagnosis Links / Summary。
+2. SOAP dialog 分成 Visit Context / S / O / A / P / Advanced Links。
+3. 不改 localStorage schema，只改表單順序與說明。
 
-## 15. 風險或需要人工檢查的地方
-- **git 修復（Ting 在 Windows PowerShell 執行）**：
-  ```powershell
-  cd "C:\Users\guoti\OneDrive\Documents\Acedemy 學習資料\acupuncture-point-app"
-  del .git\index.lock, .git\HEAD.lock, .git\objects\maintenance.lock -ErrorAction SilentlyContinue
-  del .git\index
-  git reset
-  git status   # 應顯示今天的新檔案為未暫存變更
-  git add -A
-  git commit -m "Phase 1: data liberation + workspace shell"
-  ```
-  起因：沙盒透過 OneDrive 掛載跑 git 造成 index 損壞。**工作檔與 GitHub 歷史無損。**
-  之後 git 操作一律在 Ting 電腦上做，agent 不要在掛載資料夾跑 git。
-- **Ting 待辦（5 分鐘）**：開啟 app 按「匯出 JSON」+「Export cases」備份
-  localStorage 使用者資料。
-- 人工檢查：真實瀏覽器開 index.html 點一輪 6 個工作區 + 搜尋 + 病例表單。
-- OneDrive 同步延遲：agent 寫檔後立即讀可能讀到殘缺內容，重試即可。
+## 15. 風險
+低。這次 docs-only。真正 UI 改動前需再確認，並保留現有 localStorage 相容性。
+
+---
+
+# REBUILD HANDOFF — Session 13 (2026-07-03, Codex formula related formulas)
+
+## 1. 這次目標
+依 `comparison_group` 自動填 `related_formulas`，讓方劑可以互相比較與學習鑑別。
+不填現代病、不填臨床內容、不做替代或療效宣稱。
+
+## 2. 修改了哪些檔案
+- `data/herbs/formula_canon_shortlist.json`
+- `docs/FORMULA_CANON_RULES.md`
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `formula_canon_shortlist.json`：115 筆依同一 `comparison_group` 產生
+  `related_formulas`。共 370 個 related formula links。
+- `FORMULA_CANON_RULES.md`：補上 related_formulas 的規則：同組比較、非自動替代。
+
+## 4. 為什麼這樣改
+Ting 想要「某方不適合或沒有時，related formula 可以幫助」。這次先建立學習比較網，
+未來填內容時可以顯示同組相似方，協助考試鑑別與臨床思考。
+
+## 5. 資料內容變動
+只新增方劑 id 之間的 related links；沒有填 composition/actions/indications/modern disease tags。
+
+## 6. Schema / 欄位變動
+無新增欄位；使用既有 `related_formulas`。
+
+## 7. Review status
+全部仍是 `draft`。`related_formulas` 是 study comparison graph，不是 source_checked content。
+
+## 8. Generated files / scripts
+未執行 `scripts/build-data.js`，未修改 `data/generated/*`。
+
+## 9. Protected areas
+未修改受保護區：
+`app.js` CloudTCM/search/enrichPoint/selectPoint 段、`js/router.js`, `js/knowledge.js`,
+`styles.css` point-detail-mode、`data/generated/*`,
+`data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS。
+
+## 10. Validation
+- related formula graph check：115 records，bad links 0，self links 0，cross-group links 0
+- empty related lists：2 (`formula.du_huo_ji_sheng_tang`, `formula.wu_mei_wan`)
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
+
+## 11. 操作紀錄
+用 Node parser 依 group 產生 peers；同一 `comparison_group` 的其他方劑都列入 related。
+單方組保留空 list，等 expanded 方補進來。
+
+## 12. 未完成
+尚未填 `modern_clinical_use_tags` / `related_conditions`。
+尚未填方劑雙軌內容。
+
+## 13. 接手先看
+看 `docs/FORMULA_CANON_RULES.md` 的 related_formulas 段。
+注意 related formulas 不等於臨床替代。
+
+## 14. 下一步
+下一個安全步可選：
+1. 先填 `modern_clinical_use_tags` 的 controlled vocabulary 文件，不填到資料；
+2. 或開始為現有 23 筆填 CloudTCM formula id/source hints，仍不填內容。
+
+## 15. 風險
+低。只建立 study comparison graph，不影響 runtime。
+
+---
+
+# REBUILD HANDOFF — Session 12 (2026-07-03, Codex formula comparison groups)
+
+## 1. 這次目標
+依上一節規則，先為 115 筆方劑 shortlist 填 `comparison_group`，支援之後考試鑑別、
+related formulas 與學習比較。不填臨床內容、不填現代病 tags。
+
+## 2. 修改了哪些檔案
+- `data/herbs/formula_canon_shortlist.json`
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `formula_canon_shortlist.json`：115 筆每筆填入一個 `comparison_group`。
+  共 32 個學習鑑別群組，例如 `exterior_wind_cold`, `liver_spleen`,
+  `qi_tonify`, `blood_stasis`, `phlegm_damp`, `damp_water`。
+- 新增 `comparison_group_note`，明確說明這只是學習/鑑別群組，不代表自動替代或臨床等價。
+
+## 4. 為什麼這樣改
+Ting 需要方劑之間能互相比較。先把比較群組定好，後續才可以安全產生
+`related_formulas`，並支援「某方不適合或沒有時，看相近方」的學習流程。
+
+## 5. 資料內容變動
+只填 comparison group，不填組成、功用、主治、禁忌、現代臨床運用或病症連結。
+
+## 6. Schema / 欄位變動
+無新增欄位；使用 Session 10 已建立的 `comparison_group`。
+
+## 7. Review status
+全部仍是 `review_status: "draft"`。comparison group 是學習結構，不是 source_checked 內容。
+
+## 8. Generated files / scripts
+未執行 `scripts/build-data.js`，未修改 `data/generated/*`。
+
+## 9. Protected areas
+未修改受保護區：
+`app.js` CloudTCM/search/enrichPoint/selectPoint 段、`js/router.js`, `js/knowledge.js`,
+`styles.css` point-detail-mode、`data/generated/*`,
+`data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS。
+
+## 10. Validation
+- comparison group check：115 records，32 groups，missing 0，bad slug 0
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
+
+## 11. 操作紀錄
+用 Node parser 結構化寫入 groups，避免 JSON 手改錯誤。
+分組依 Bensky-style 學生鑑別主題，而不是按現代病療效。
+
+## 12. 未完成
+尚未填 `related_formulas`。下一步可由 `comparison_group` 自動產生 group-internal related formulas，
+但仍需保留「比較參考，不是替代」語意。
+
+## 13. 接手先看
+看 `formula_canon_shortlist.json` 的 `comparison_group` 統計；特別注意單一組：
+`wind_damp_bi` 和 `parasites_jueyin` 目前各 1 筆，之後 expanded 方可補強。
+
+## 14. 下一步
+建議先依 `comparison_group` 產生 `related_formulas`，仍不填現代病或臨床內容。
+
+## 15. 風險
+低。只填學習分組，不影響 app runtime。
+
+---
+
+# REBUILD HANDOFF — Session 11 (2026-07-03, Codex formula id/tier/rules)
+
+## 1. 這次目標
+接收 Claude 死機前的審查結論，先把方劑 shortlist 的穩定識別與後續填寫規則定好：
+每方新增 stable `id` 與 `tier`，並建立方劑雙軌內容規則文件。
+
+## 2. 修改了哪些檔案
+- `data/herbs/formula_canon_shortlist.json`
+- `docs/FORMULA_CANON_RULES.md`（新）
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `formula_canon_shortlist.json`：115 筆每筆新增 `id: "formula.<pinyin_snake>"`
+  與 `tier: "core"`。`related_formulas` 以後要引用這些 stable ids。
+- `FORMULA_CANON_RULES.md`：新增雙軌內容、保守措辭、modern tags、
+  related conditions、related formulas、comparison_group 命名規則。
+
+## 4. 為什麼這樣改
+Claude 審查認為 115 筆範圍適合當 core，後續新增再用 expanded。
+在填內容前先定 id/tier/詞彙規則，可避免 related formulas 和搜尋連結之後重工。
+
+## 5. 資料內容變動
+沒有填方劑內容，沒有新增臨床宣稱。只補識別欄位和規則文件。
+
+## 6. Schema / 欄位變動
+Shortlist staging schema 新增：
+- `id`
+- `tier`
+
+## 7. Review status
+115 筆仍全部 `review_status: "draft"`。`tier: "core"` 不代表 source_checked。
+
+## 8. Generated files / scripts
+未執行 `scripts/build-data.js`，未修改 `data/generated/*`。
+
+## 9. Protected areas
+未修改受保護區：
+`app.js` CloudTCM/search/enrichPoint/selectPoint 段、`js/router.js`, `js/knowledge.js`,
+`styles.css` point-detail-mode、`data/generated/*`,
+`data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS。
+
+## 10. Validation
+- ID/tier check：115 records，duplicate ids 0，bad ids 0
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
+
+## 11. 操作紀錄
+用 Node parser 依 pinyin 產生 `formula.<pinyin_snake>` id；全部設 `tier:"core"`。
+再把 Claude 的規則整理成 `docs/FORMULA_CANON_RULES.md`。
+
+## 12. 未完成
+尚未填 comparison_group 值；尚未填 modern_clinical_use_tags / related_conditions /
+related_formulas；尚未填雙軌內容。
+
+## 13. 接手先看
+先看 `docs/FORMULA_CANON_RULES.md`，再看 `data/herbs/formula_canon_shortlist.json`。
+
+## 14. 下一步
+建議先填 comparison_group，仍不填臨床內容。完成後再從現有 23 筆開始填雙軌內容。
+
+## 15. 風險
+低。只補 stable ids/tier 與規則，不影響 runtime。
+
+---
+
+# REBUILD HANDOFF — Session 10 (2026-07-03, Codex formula search scaffolding)
+
+## 1. 這次目標
+依 Ting 補充需求，讓方劑 canon shortlist 未來可以支援「現代病/症狀搜尋 → 方劑」與
+「某方不適合或沒有時 → related formulas 比較」。本次只補空欄位，不填內容。
+
+## 2. 修改了哪些檔案
+- `data/herbs/formula_canon_shortlist.json`
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `formula_canon_shortlist.json`：每筆 115 方新增空欄位：
+  `modern_clinical_use_tags`, `related_conditions`, `related_formulas`,
+  `comparison_group`, `clinical_use_note`。
+- `REBUILD_HANDOFF.md`：記錄本次資料設計補強。
+
+## 4. 為什麼這樣改
+Ting 學方劑時需要現代臨床運用作為搜尋入口；未來輸入 PCOS、IBS、insomnia、
+PMS、GERD、URI、dysmenorrhea 等現代病名或臨床情境時，可以連到相關方劑。
+`related_formulas` 也能支援考試比較與臨床替代思考，但不代表自動替代。
+
+## 5. 資料內容變動
+沒有填任何現代病、症狀、方劑關聯或臨床宣稱。所有新增欄位都是空陣列或空字串。
+
+## 6. Schema / 欄位變動
+Shortlist staging schema 新增：
+- `modern_clinical_use_tags: []`
+- `related_conditions: []`
+- `related_formulas: []`
+- `comparison_group: ""`
+- `clinical_use_note: ""`
+
+## 7. Review status
+全部仍是 `draft`。這些欄位只是未來填資料的位置，不是 source_checked 內容。
+
+## 8. Generated files / scripts
+未執行 `scripts/build-data.js`，未修改 `data/generated/*`。
+
+## 9. Protected areas
+未修改受保護區：
+`app.js` CloudTCM/search/enrichPoint/selectPoint 段、`js/router.js`, `js/knowledge.js`,
+`styles.css` point-detail-mode、`data/generated/*`,
+`data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS。
+
+## 10. Validation
+- JSON scaffold check：115 records，新增欄位缺漏 0
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
+
+## 11. 操作紀錄
+用 Node parser 結構化補欄位，避免手改 JSON 格式錯誤。未做任何內容填充。
+
+## 12. 未完成
+尚未填 `modern_clinical_use_tags` / `related_conditions` / `related_formulas`。
+尚未建立 comparison groups，例如逍遙散/加味逍遙散/柴胡疏肝散。
+
+## 13. 接手先看
+看 `formula_canon_shortlist.json` 任一筆，確認新增欄位是否符合未來搜尋與比較需求。
+
+## 14. 下一步
+等 Ting/Claude 確認 shortlist 範圍與欄位後，再分批填 modern clinical use tags 與 related formulas。
+填寫時仍須保守措辭：臨床參考情境，不寫「治療某病」。
+
+## 15. 風險
+低。只補空欄位，不影響 app runtime。
+
+---
+
+# REBUILD HANDOFF — Session 9 (2026-07-03, Codex formula canon shortlist)
+
+## 1. 這次目標
+依 Ting 的「方劑內容任務 — 雙軌，個人學習用途」第一步，只建立方劑骨架清單：
+`data/herbs/formula_canon_shortlist.json`。不填組成、功用、主治、禁忌內容；
+不抓內容；不改 app runtime；等待 Ting 確認清單後才進第二步。
+
+## 2. 修改了哪些檔案
+- `data/herbs/formula_canon_shortlist.json`（新）
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `formula_canon_shortlist.json`：新增 115 筆 NCCAOM-oriented 方劑候選骨架。
+  每筆只含 `name_zh`, `name_en`, `pinyin`, `category`, `source_hint`, `review_status`。
+- `REBUILD_HANDOFF.md`：記錄本次 shortlist 任務、驗證與下一步。
+
+## 4. 為什麼這樣改
+先把 Ting 要的高頻方 canon 範圍定下來，之後才能逐方做雙軌內容：
+英文層對 Bensky / Deadman / NCCAOM 用語，中文層用 CloudTCM / 萬方作 draft 深度理解。
+
+## 5. 資料內容變動
+新增 shortlist file，但沒有修改既有 `data/herbs/formulas.json` 或其他現有方劑內容。
+現有 23 筆已納入 shortlist；另外補入常見 Bensky/NCCAOM 範圍候選方。
+
+## 6. Schema / 欄位變動
+無正式 schema 變動。shortlist 是 staging/canon planning file，不被 app runtime 讀取。
+
+## 7. Review status
+全部 `review_status: "draft"`。尚未 source_checked，尚未代表臨床或考試最終正確內容。
+
+## 8. Generated files / scripts
+未執行 `scripts/build-data.js`，未修改 `data/generated/*`。
+原因：本次新增檔不在 build-data 管線中，且 Ting 指定受保護區包含 generated files。
+
+## 9. Protected areas
+未修改受保護區：
+`app.js` CloudTCM/search/enrichPoint/selectPoint 段、`js/router.js`, `js/knowledge.js`,
+`styles.css` point-detail-mode、`data/generated/*`,
+`data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS。
+
+## 10. Validation
+- JSON integrity check：115 records，duplicate names 0，missing required fields 0
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
+
+## 11. 操作紀錄
+先讀現有 `data/herbs/formulas.json` 23 筆與 `data/herbs/high_yield_formula_seeds.json`。
+去重後建立 shortlist，source_hint 以 Bensky F&S category / existing AcuTing seed 為主；
+CloudTCM formula id 留待第二步查表補入。
+
+## 12. 未完成
+尚未填任何方劑內容。尚未查 CloudTCM formula id。尚未做 Bensky/Deadman 實質核對。
+
+## 13. 接手先看
+先看 `data/herbs/formula_canon_shortlist.json`，確認 115 筆是否太多、太少，
+或是否要分成 `core` / `expanded` 批次。
+
+## 14. 下一步
+等 Ting 確認 shortlist。第二步才逐方補雙軌內容：
+英文層 source_checked；中文層 draft；兩層並存且保守措辭。
+
+## 15. 風險
+低。這次只新增 staging shortlist，不影響 app、不影響既有方劑資料。
+主要風險是 shortlist 範圍可能需要 Ting/Claude 調整，所以目前全部 draft。
+
+---
+
+# REBUILD HANDOFF — Session 8 (2026-07-03, Claude)：CloudTCM 直連對照表 + 來源登記
+
+## 完成
+- 建立 `data/sources/cloudtcm_point_map.json`：361 標準穴 code→CloudTCM 數字ID + 圖片檔名。
+  來源：CloudTCM Next.js `/_next/data/{buildId}/meridian/{n}.json` 的 Acupoint_List（瀏覽器抓取）。
+  代碼別名已轉換：SJ→TE、LV→LR、REN→CV、DU→GV。
+- `scripts/build-data.js`：多產出 `data/generated/cloudtcm_map.js`（globalThis.ACUTING_CLOUDTCM_MAP）。
+- `index.html`：載入 cloudtcm_map.js。
+- `app.js`：
+  - chinesePointReference：優先用對照表直連 `cloudtcm.com/acupoint/{id}`（不在表內才 fallback 名稱搜尋）。
+  - 新增 cloudtcmEntry / cloudtcmImage helper。
+  - enrichPoint：CloudTCM 視覺連結改指向實際圖片 `media.cloudtcm.uk/acupoint-s/{img}.jpg`。
+- `docs/TCM_SOURCE_REGISTRY.md`：Ting 提供的權威來源分級總表（穴位/方劑/中藥/病症/開源專案），
+  日後擴建知識內容的指定參考來源。
+
+## 驗證
+- jsdom：8 穴（PC6/SP6/LU2/TE5/LR3/CV17/GV20/BL67）中文來源皆直連正確 /acupoint/{id} + 圖片連結 → 17/17 PASS
+- validate-data.js：681、臨床欄位 deep-equal、無重複 → PASS
+- validate-interactions.js：0 failures
+
+## 給 Codex（不要動）
+app.js 的 chinesePointReference / cloudtcmEntry / cloudtcmImage / enrichPoint CloudTCM 段、
+build-data.js 的 cloudtcm 段、data/generated/*、data/sources/cloudtcm_point_map.json。
+若 CloudTCM buildId 改版導致連結失效，重抓方式記在 TCM_SOURCE_REGISTRY.md 末段。
+
+---
+
+# REBUILD HANDOFF — Session 7 (2026-07-03, Claude)：搜尋直達單穴 + 中文來源連結
+
+## 目標
+(a) 搜尋一個穴位直接進單穴頁，不要中間卡片層；(b) 修「中文來源」連到通用目錄而非該穴。
+
+## 修改檔案
+- `app.js`：
+  - runHomeSearch + searchInput(Enter)：精確比對 code/中文名/英文名/pinyin →
+    直接 selectPoint 進單穴頁；模糊唯一結果也直接開。
+    新增 helper findExactPoint()。
+  - 新增 chinesePointReference(point)：用「中文名 + code + 穴 site:cloudtcm.com」
+    組 Google 精準搜尋，對每個穴位都可靠。
+  - getSourceButtons：中文來源改用 chinesePointReference；只有真正的
+    數字 ID CloudTCM 頁（/acupoint/\d+）才採用 stored 值。
+  - enrichPoint：把殘留的通用 "https://cloudtcm.com/acupoint" 一律換成
+    chinesePointReference（sources 與 visualLinks 兩處）。
+  - selectPoint：捲到頁頂（配合單穴模式）。
+- `styles.css`：point-detail-mode 隱藏 hero / formula / condition / map。
+- `scripts/validate-data.js`：deep-equal 排除 sources / visualLinks 兩個
+  reference-URL 欄位（這些是刻意會演進的，非臨床資料）。
+
+## 為什麼不用 Codex 提的 media.cloudtcm.uk/{CODE}.jpg
+瀏覽器實測：PC6.jpg 有圖(500×600)，但 SP6/LI4/sp6/SP06 全無 → 涵蓋不完整，
+硬套會產生大量破圖。CloudTCM 單穴頁用不可推導的數字 ID，站內 /search 不存在。
+故改用「中文名精準站內搜尋」＝每穴都可靠、一鍵到該穴中文頁（含圖）。
+
+## 驗證
+- jsdom：搜尋直達（sp6/SP6/內關/neiguan/三陰交/PC6/LU9 + 目錄框 Enter）→ 全過
+- jsdom：9 經絡穴位單穴模式 + 中文來源連結乾淨 → 全過
+- validate-data.js：count 681、臨床欄位 deep-equal、無重複 → PASS
+- validate-interactions.js：0 failures
+
+## 給 Codex
+- 不要動 app.js 的 findExactPoint / chinesePointReference / enrichPoint 的
+  CloudTCM 處理 / selectPoint / runHomeSearch，也不要動 styles.css 的
+  point-detail-mode 與 validate-data 的 IGNORED_FIELDS。
+- 若要做「真正的 CloudTCM 單穴數字 ID 對照表」是有價值的後續（需逐穴人工驗證），
+  但屬 data 任務、非本次範圍。
+
+---
+
+# REBUILD HANDOFF — Session 6 (2026-07-03, Claude)：單穴頁 UX 修正
+
+## 目標
+修正全站性問題：點任一穴位進單穴頁後，上方仍殘留大標題 hero、方劑區、病症區，
+使用者要長距離往下捲才看到穴位內容。
+
+## 修改檔案（只動這兩個）
+- `app.js`：selectPoint() 的 `detailCard.scrollIntoView(block:"nearest")`
+  改為 `window.scrollTo({top:0})`，因為單穴模式下 detail 已是頁面唯一內容。
+- `styles.css`：檔尾新增 `body.point-detail-mode` 規則，隱藏
+  `.acupoint-directory-hero`、`.formula-section`、`.condition-graph-section`、`.map-panel`。
+
+## 為什麼
+單穴模式（body.point-detail-mode）原本只隱藏 sidebar 與 search-panel，
+但 lookup 工作區還含 hero + formula + condition 三個 section 排在 detail 之上。
+
+## 驗證
+- jsdom：9 個跨經絡穴位（PC6/LU5/SP6/BL67/KI27/GB44/LR14/GV1/AT1）
+  進單穴模式皆正確、list 隱藏、返回可還原 → 12/12 PASS
+- validate-data.js：681 deep-equal、無重複 PASS
+- validate-interactions.js：0 failures
+
+## 給 Codex
+不要動 app.js 的 selectPoint 與 styles.css 檔尾的 point-detail-mode 區塊。
+你的下一步（361→app schema adapter）不受影響，可繼續。
+
+---
+
+# REBUILD HANDOFF — Session 7 (2026-07-03, dataset shortlist direction reset)
+
+## 1. 這次目標
+依 Ting 新指令覆蓋前一輪「逐頁爬網站蒸餾」方向，改成先讀
+`docs/TCM_SOURCE_REGISTRY.md` F 段，從 `Mengqi97/chinese-medical-dataset`
+README 做資料集 shortlist。只產出 `docs/DATASET_SHORTLIST.md`，不下載、不匯入、
+不改任何現有 data records。
+
+## 2. 修改了哪些檔案
+- `docs/DATASET_SHORTLIST.md`（新）
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `DATASET_SHORTLIST.md`：列出 TCM-NER、TCM-QG、QASystemOnMedicalGraph、
+  Huatuo KG QA、CMB、QABasedOnMedicalKnowledgeGraph、家庭常見疾病 KG 的用途、
+  格式、授權狀態、適合/不適合的 AcuTing 區域與建議。
+- `REBUILD_HANDOFF.md`：記錄方向修正與本次只做 shortlist。
+
+## 4. 為什麼這樣改
+新的資料策略是「資料集打底 → 機構庫核對 → agent 補洞」。這比逐頁爬單一網站安全，
+也更適合後續 FOM/ACPL/CH/BIOM 四科知識擴建。
+
+## 5. 資料內容變動
+沒有匯入或修改任何既有 `data/**` records。前一方向產生的未完成暫存檔
+`data/herbs/hkbu_formula_extract_preview.json` 與 `scripts/fetch-hkbu-formula-preview.js`
+已清掉，避免把被覆蓋的流程留下來。
+
+## 6. Schema / 欄位變動
+無。
+
+## 7. Shortlist 重點
+- 中藥/中成藥：優先看 TCM-NER；Tianchi 授權需確認。
+- FOM/CH study prompts：TCM-QG 可用於題庫/學習提示，不作 canonical truth。
+- 病症/BIOM：QASystemOnMedicalGraph / Huatuo KG QA 可做 draft condition graph seeds。
+- 方劑：Mengqi README 本身不足以建立 classical formula canon；需另核對「中醫方劑知識庫」來源與授權。
+- 穴位/ACPL：Mengqi README 沒找到直接適合的穴位資料集；仍走 WHO/manual/institutional route。
+
+## 8. Generated files / scripts
+未執行 build-data，未改 `data/generated/*`。
+
+## 9. Protected areas
+未修改受保護區：`app.js` CloudTCM/search 段、`js/router.js`, `js/knowledge.js`,
+`styles.css` point-detail-mode、`data/sources/cloudtcm_point_map.json`,
+`scripts/validate-data.js` IGNORED_FIELDS。
+
+## 10. Validation
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
+
+## 11. 操作紀錄
+讀本地 `docs/TCM_SOURCE_REGISTRY.md` F 段；查 Mengqi97 README 與上游資料頁；
+只寫 docs shortlist。沒有下載資料集，沒有建立 `data/imports/`。
+
+## 12. 未完成
+等待 Ting 確認 shortlist。確認前不下載、不匯入、不轉換資料。
+
+## 13. 接手先看
+先看 `docs/DATASET_SHORTLIST.md` 的 Quick Recommendation 和 Category Mapping。
+授權不清的項目不要下載。
+
+## 14. 下一步
+Ting 選定資料集後，先確認 license/terms，再建立 `data/imports/README.md` 與 raw import manifest；
+下載原始檔後仍只標 draft，不升 source_checked。
+
+## 15. 風險
+低。這次是 docs-only planning。主要風險是部分上游資料授權不清，所以已明確標註需要 Ting 確認。
+
+---
+
+# REBUILD HANDOFF — Session 6 (2026-07-03, Codex source registry batch 1)
+
+## 1. 這次目標
+只執行知識擴建批次第 1 項：把 `docs/TCM_SOURCE_REGISTRY.md` 的分級權威來源登記到
+`data/sources/source_registry.json`，讓 Sources 工作區能顯示權威分層。完成後停下來等 Ting 確認。
+
+## 2. 修改了哪些檔案
+- `data/sources/source_registry.json`
+- `data/generated/app_data.js`（由 `scripts/build-data.js` 產生）
+- `data/generated/knowledge_data.js`（由 `scripts/build-data.js` 產生）
+- `data/generated/cloudtcm_map.js`（由 `scripts/build-data.js` 產生）
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `source_registry.json`：來源數從 19 筆增加到 33 筆；補入 TCM registry 分級來源，
+  並為所有來源補齊 `url`, `tier`, `language`, `category`, `review_status`,
+  `primary_use` 等欄位。
+- `knowledge_data.js`：重新打包 Sources，現在 `sources` count 為 33。
+- `app_data.js` / `cloudtcm_map.js`：build-data 同步重產；未手改。
+
+## 4. 為什麼這樣改
+之後擴充方劑、病症、穴位臨床欄位時，需要先有可查詢的來源權威分層。
+這次先把來源層級落地，不直接蒸餾醫療內容，避免未核對就寫入實質知識。
+
+## 5. 資料內容變動
+新增/補強的 TCM source categories：
+- 穴位：WHO, acupoints.org, CloudTCM, 再探當代針灸大成數位典藏
+- 方劑：香港浸大方劑圖像庫、高醫中藥處方集
+- 中藥/藥理：萬方/中醫藥知識庫、中醫藥數據庫檢索系統、TCMIP、TCMSP、HERB、SymMap、TCMIO、香港中藥材標準
+- 病症：SFU Library TCM Knowledge Base、中國醫學網/台灣中醫醫學網
+
+## 6. Schema / 欄位變動
+沒有改正式 schema 檔；但 `source_registry.json` 的 source records 現在統一帶有：
+`name`, `url`, `tier`, `language`, `category`, `primary_use[]`, `review_status`。
+Tier 統計：A=13, A-=11, B=8, C=1。
+
+## 7. Review status
+已能確認為既有或清楚來源登記的項目標 `source_checked`；URL/access 尚需人工確認的
+項目標 `draft`，避免後續內容抽取時誤認為已完成來源核對。
+
+## 8. Generated files / scripts
+依 Ting 指示，改 data 後執行 `scripts/build-data.js`。
+沒有手改 `data/generated/*`；沒有修改 `scripts/validate-data.js` 的 IGNORED_FIELDS。
+
+## 9. Protected areas
+未修改受保護區：
+`app.js` CloudTCM/search/selection 相關段落、`styles.css` point-detail-mode、
+`js/router.js`, `js/knowledge.js`, `data/sources/cloudtcm_point_map.json`。
+
+## 10. Validation
+- `scripts/build-data.js`：PASS；knowledge sources count = 33
+- JSON completeness check：33 sources，missing required display fields = 0
+- `scripts/validate-data.js`：PASS，681 defaultPoints deep-equal（excluding reference-URL fields），無 duplicate point codes
+- `scripts/validate-interactions.js`：PASS，0 failures
+
+## 11. 操作紀錄
+先讀 `docs/TCM_SOURCE_REGISTRY.md` 與既有 `source_registry.json`。
+用 JSON parser 結構化更新資料，避免手動 JSON 逗號/格式錯誤。
+跑 build-data 與兩個 validation，全綠後才更新本 handoff。
+
+## 12. 未完成
+本批次只完成第 1 項。尚未開始：
+- 第 2 項：香港浸大方劑圖像庫擴充 23 筆方劑
+- 第 3 項：SFU TCM KB 擴充 pathology condition relation records
+- 第 4 項：235 標準穴 needling / moxa / contraindications
+
+## 13. 接手先看
+先看 `data/sources/source_registry.json` 的新增 tier/category 欄位與 `review_status`。
+URL 為空或 `draft` 的來源，下一步抽取內容前要先人工/瀏覽器核對 access 與正確入口。
+
+## 14. 下一步
+等待 Ting 確認第 1 項。確認後再做第 2 項：以香港浸大方劑圖像庫為主來源，
+逐方擴充 `data/herbs/formulas.json`，每方保留 sources、標 review_status，
+且不得過度醫療宣稱。
+
+## 15. 風險
+低。這次只改來源登記和 generated bundle，不改 UI 行為、不改 runtime search。
+主要風險是部分 registry 網站 URL/access 尚需確認，所以已標 `draft`，避免誤用。
+
+---
+
+# REBUILD HANDOFF — Session 5 (2026-07-02/03, Codex + Ting approval)
+
+## 1. 這次目標
+完成 361 canonical merge 的批准後套用：把 embedded app acupoint records 安全合併進
+`data/acupoints/361.json`，同時保留可審核 diff summary 與 validation 紀錄。
+
+## 2. 修改了哪些檔案
+- `scripts/merge-361-preview.js`（新：產生 merge preview，可在批准後套用）
+- `data/acupoints/361.json`（已批准套用：210 → 235 筆）
+- `docs/361_MERGE_DIFF_SUMMARY.md`（新：diff summary，已標記 approved/applied）
+- `docs/361_MERGE_PREVIEW.json`（新：完整 preview artifact）
+- `docs/DATA_MIGRATION_MAP.md`（更新 361 merge 狀態）
+- `data/acupoints/MIGRATION_NOTES.md`（記錄 361 merge）
+- `docs/REBUILD_HANDOFF.md`（本節）
+
+## 3. 每個檔案改了什麼
+- `scripts/merge-361-preview.js`：讀取 embedded acupoint JSON 與既有 361，先產生 preview；
+  預設不覆寫。Ting 批准後用 `--apply-approved` 套用。
+- `data/acupoints/361.json`：新增 25 筆 Kidney channel records：
+  KI1, KI2, KI4, KI5, KI7-KI27。KI3、KI6 原本已存在並保留。
+- `docs/361_MERGE_DIFF_SUMMARY.md`：記錄新增、刪除、欄位填補、placeholder 修復、

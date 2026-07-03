@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap");
+
 :root {
   color-scheme: light;
   --ink: #202427;
@@ -3594,3 +3596,298 @@ section[data-workspace][hidden] {
   color: #fff;
   border-radius: 999px;
 }
+
+/* ==================================================================
+   AcuTing Brand Theme v2 — 品牌溫潤風 (appended 2026-07-02, Claude)
+   Palette: ivory / warm beige / sage / deep brown / muted gold /
+   soft terracotta. Overrides the cool teal theme above via cascade.
+   To revert: delete everything from this banner to end of file.
+   ================================================================== */
+
+:root {
+  --ink: #33291f;
+  --muted: #7d7160;
+  --line: #e5dcc9;
+  --paper: #f6f1e7;
+  --panel: #fffdf8;
+  --accent: #6f7f58;
+  --accent-dark: #515f3e;
+  --warn: #b0563c;
+  --gold: #b98b44;
+  --plum: #9a6a55;
+  --clay: #b0563c;
+  --green-soft: #eef0e2;
+  --blue-soft: #f2ecdd;
+  --shadow: 0 14px 40px rgba(74, 60, 38, 0.1);
+  --shadow-soft: 0 4px 18px rgba(74, 60, 38, 0.07);
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #f1ebdd 0, #f7f2e8 300px, var(--paper) 100%);
+  color: var(--ink);
+}
+
+/* --- Typography: serif voice for brand & headings ----------------- */
+h1, h2, h3,
+.brand-block h1,
+.os-intro h2,
+.section-heading h2,
+.detail-card h2,
+.library-chip strong {
+  font-family: "Noto Serif TC", "Noto Sans TC", serif;
+  letter-spacing: 0.01em;
+}
+
+.topbar h1 { color: #3a2f22; }
+.top-subtitle { color: var(--muted); }
+
+.os-intro h2,
+.section-heading h2 { color: #3a2f22; }
+
+.eyebrow {
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* --- Top bar & workspace navigation -------------------------------- */
+.topbar {
+  background: rgba(250, 246, 238, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(74, 60, 38, 0.05);
+}
+
+.top-nav a {
+  border-bottom: 0;
+  border-radius: 999px;
+  color: #5c503f;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+}
+
+.top-nav a:hover {
+  background: var(--green-soft);
+  color: var(--accent-dark);
+}
+
+.workspace-nav a.active {
+  background: var(--accent);
+  color: #fffdf8;
+}
+
+/* --- Buttons & inputs ----------------------------------------------- */
+button, .file-label {
+  border-radius: 9px;
+  font-weight: 600;
+}
+
+.ghost {
+  background: #efe9da;
+  color: #5c503f;
+}
+.ghost:hover { background: #e6ddc8; }
+.ghost.active { background: var(--accent); color: #fffdf8; }
+
+.danger { background: #f3e2da; color: var(--warn); }
+.danger:hover { background: #ecd2c5; }
+
+input, select, textarea {
+  background: #fffdf8;
+  border-color: #ddd3bd;
+  border-radius: 9px;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(111, 127, 88, 0.75);
+  outline-color: rgba(111, 127, 88, 0.35);
+}
+
+.case-toolbar, .search-row {
+  background: #f8f4ea;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+/* --- Cards, chips, panels ------------------------------------------- */
+.home-hero,
+.os-modules,
+.os-status-grid > *,
+.search-panel,
+.map-panel,
+.detail-card,
+.case-workspace,
+.case-detail-panel {
+  background: var(--panel);
+  border-color: var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.library-chip,
+.library-card,
+.formula-preview-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.library-chip:hover,
+.library-card:hover,
+.formula-preview-card:hover {
+  border-color: #cfc4a6;
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.library-chip span,
+.library-card span,
+.formula-preview-card span { color: var(--gold); }
+
+.library-chip.active {
+  background: var(--green-soft);
+  border-color: rgba(111, 127, 88, 0.4);
+}
+
+.library-chip.clinical {
+  background: #fbf3e2;
+  border-color: #e8d8b4;
+}
+
+.data-pill {
+  background: #f7efdc;
+  border-color: #e8d8b4;
+  color: #7c5a22;
+  border-radius: 999px;
+}
+
+/* --- Section quicknav pills ----------------------------------------- */
+.section-quicknav a {
+  background: #f2ecdd;
+  border-radius: 999px;
+  color: #5c503f;
+}
+.section-quicknav a:hover {
+  background: var(--green-soft);
+  color: var(--accent-dark);
+}
+
+/* --- Tables & dialogs ------------------------------------------------ */
+table, th, td { border-color: var(--line); }
+th { color: #5c503f; }
+
+dialog {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+dialog::backdrop { background: rgba(58, 47, 34, 0.35); }
+
+/* --- Links ----------------------------------------------------------- */
+a { color: var(--accent-dark); }
+.top-nav a, .library-chip, .library-card { text-decoration: none; }
+
+/* --- Scrollbar (subtle, warm) ---------------------------------------- */
+* { scrollbar-color: #d8ccb0 transparent; }
+
+/* --- Knowledge records (js/knowledge.js) + data guard ----------------- */
+.data-missing-banner {
+  background: #b0563c;
+  color: #fffdf8;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.k-records { margin-top: 1rem; }
+
+.k-filter {
+  border: 1px solid #ddd3bd;
+  border-radius: 9px;
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.55rem 0.75rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.k-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.k-grid-wide { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+.k-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 0.8rem 0.9rem;
+}
+.k-card header {
+  align-items: baseline;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.k-card header strong {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.02rem;
+}
+.k-card header strong small { color: var(--muted); font-weight: 400; }
+.k-en { color: #5c503f; margin: 0.15rem 0; }
+.k-meta { color: var(--muted); font-size: 0.82rem; margin: 0.2rem 0; }
+.k-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.35rem 0 0; }
+.k-tag {
+  background: var(--green-soft);
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-size: 0.74rem;
+  padding: 0.12rem 0.55rem;
+}
+.k-flags { color: var(--warn); font-size: 0.78rem; margin: 0.4rem 0 0; }
+.k-status {
+  background: #f2ecdd;
+  border-radius: 999px;
+  color: #7c5a22;
+  font-size: 0.72rem;
+  padding: 0.12rem 0.55rem;
+  white-space: nowrap;
+}
+.k-status-draft { background: #f7efdc; }
+.k-status-fertility { background: #f3e2da; color: var(--warn); }
+.k-missing { color: var(--warn); font-weight: 600; }
+
+/* --- Single-point detail: show ONLY the point, hide the rest ---------
+   (appended 2026-07-03) Fixes: selecting a point left the big directory
+   hero, formula, and condition sections stacked above the detail, forcing
+   a long scroll. In point-detail-mode we collapse the lookup workspace to
+   just the detail card. --------------------------------------------------- */
+body.point-detail-mode .acupoint-directory-hero,
+body.point-detail-mode .formula-section,
+body.point-detail-mode .condition-graph-section,
+body.point-detail-mode .map-panel {
+  display: none;
+}
+
+/* --- Clinical case: TCM four-diagnosis row (tongue/pulse/pattern) ------- */
+.tcm-dx-row {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0.5rem 0;
+}
+.tcm-dx-row > div {
+  background: #f7efdc;
+  border: 1px solid #e8d8b4;
+  border-radius: 10px;
+  padding: 0.45rem 0.6rem;
+}
+.tcm-dx-row small { color: #7c5a22; display: block; font-size: 0.72rem; }
+.tcm-dx-row span { color: var(--ink); font-size: 0.9rem; }
+@media (max-width: 640px) { .tcm-dx-row { grid-template-columns: 1fr; } }

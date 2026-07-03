@@ -46,3 +46,34 @@ hash link to target an element ID.
 - Ting should still manually export browser localStorage data from the app:
   acupoint JSON and clinical cases JSON.
 - Do not commit private clinical exports if they contain identifiable data.
+
+## Phase 2 Starter -- Schema Planning Only
+
+Goal:
+- Start Phase 2 without touching search/runtime code while another agent is
+  debugging search.
+- Define the 361.json schema unification map before any merge script or record
+  edits.
+
+Files changed:
+- `docs/DATA_MIGRATION_MAP.md`
+- `data/acupoints/MIGRATION_NOTES.md`
+
+What changed:
+- Added current acupoint data counts:
+  - embedded unique codes: 237
+  - embedded standard-channel codes: 235
+  - current 361.json records: 210
+  - embedded standard codes missing from 361.json: 25
+- Identified missing 361 records: KI1, KI2, KI4-KI27.
+- Added explicit embedded-app-schema to canonical-361-schema field map.
+- Added merge precedence and validation requirements.
+
+Validation:
+- `node scripts/validate-data.js` -- PASS
+- `node scripts/validate-interactions.js` -- PASS
+
+Important:
+- No data records were merged.
+- No generated files were rebuilt.
+- No runtime/search/UI code was changed.

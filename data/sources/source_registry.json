@@ -1,7 +1,7 @@
 {
   "project": "AcuTing OS",
   "purpose": "Track source authority, intended use, licensing notes, and extraction targets before importing content into the app.",
-  "updated": "2026-06-16",
+  "updated": "2026-07-03",
   "source_hierarchy": {
     "A_acupoints": "Point identity, locations, channel metadata, needling cautions, and school notes.",
     "B_anatomy": "Muscles, bones, nerves, vessels, regional images, and safety landmarks.",
@@ -16,9 +16,31 @@
       "source_group": "A_acupoints",
       "authority": 5,
       "access_type": "paper_or_paid_reference",
-      "primary_use": ["point functions", "indications", "needling cautions", "clinical commentary", "point categories"],
-      "fields_to_extract": ["code", "point_name", "location_notes", "actions", "indications", "needling", "cautions", "commentary"],
-      "notes": "Use as a professional textbook reference. Do not reproduce long copyrighted passages; summarize and cite page/location in personal notes."
+      "primary_use": [
+        "point functions",
+        "indications",
+        "needling cautions",
+        "clinical commentary",
+        "point categories"
+      ],
+      "fields_to_extract": [
+        "code",
+        "point_name",
+        "location_notes",
+        "actions",
+        "indications",
+        "needling",
+        "cautions",
+        "commentary"
+      ],
+      "notes": "Use as a professional textbook reference. Do not reproduce long copyrighted passages; summarize and cite page/location in personal notes.",
+      "url": "",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "who_standard_locations",
@@ -26,9 +48,31 @@
       "layer": "authority_core",
       "source_group": "A_acupoints",
       "authority": 5,
-      "primary_use": ["361 points", "standard locations", "international codes", "cun measurements", "bony landmarks"],
-      "fields_to_extract": ["code", "english_name", "pinyin", "chinese_name", "channel", "location_en", "cun_measurement", "landmarks"],
-      "notes": "Use as the core reference for standard point location. Preserve citations and avoid verbatim long copying."
+      "primary_use": [
+        "361 standard points",
+        "standard point locations",
+        "international code/name cross-check",
+        "cun measurements",
+        "anatomical landmarks"
+      ],
+      "fields_to_extract": [
+        "code",
+        "english_name",
+        "pinyin",
+        "chinese_name",
+        "channel",
+        "location_en",
+        "cun_measurement",
+        "landmarks"
+      ],
+      "notes": "Use as official standard layer. Specific WHO publication URL still needs exact local/manual verification before extracting text.",
+      "url": "https://iris.who.int/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "acupoints_org",
@@ -38,9 +82,26 @@
       "source_group": "A_acupoints",
       "language": "en",
       "authority": 3,
-      "primary_use": ["English point pages", "meridian browsing", "point names", "basic location phrasing"],
-      "fields_to_extract": ["code", "english_name", "meridian", "location_en", "basic_indications", "source_url"],
-      "notes": "Use as an English web reference and quick cross-check. Standard location wording should still be verified against WHO/textbook sources before marking public-ready."
+      "primary_use": [
+        "English point pages",
+        "meridian browsing",
+        "point names",
+        "basic location phrasing"
+      ],
+      "fields_to_extract": [
+        "code",
+        "english_name",
+        "meridian",
+        "location_en",
+        "basic_indications",
+        "source_url"
+      ],
+      "notes": "Use as an English web reference and quick cross-check. Standard location wording should still be verified against WHO/textbook sources before marking public-ready.",
+      "tier": "B",
+      "category": [
+        "??"
+      ],
+      "review_status": "source_checked"
     },
     {
       "id": "cloudtcm_acupoint",
@@ -50,9 +111,31 @@
       "source_group": "A_acupoints",
       "language": "zh-Hant",
       "authority": 3,
-      "primary_use": ["Chinese point names", "channel browsing", "point location", "functions", "indications", "point categories"],
-      "fields_to_extract": ["code", "chinese_name", "channel_zh", "location_zh", "functions_zh", "indications_zh", "point_category", "source_url"],
-      "notes": "Use as a Chinese topic and field reference. Rewrite and cross-check against WHO/textbook/professional sources before public-facing use."
+      "primary_use": [
+        "Chinese point names",
+        "channel browsing",
+        "point location",
+        "functions",
+        "indications",
+        "point categories"
+      ],
+      "fields_to_extract": [
+        "code",
+        "chinese_name",
+        "channel_zh",
+        "location_zh",
+        "functions_zh",
+        "indications_zh",
+        "point_category",
+        "source_url"
+      ],
+      "notes": "Use as a Chinese topic and field reference. Rewrite and cross-check against WHO/textbook/professional sources before public-facing use.",
+      "tier": "B",
+      "category": [
+        "??",
+        "??"
+      ],
+      "review_status": "source_checked"
     },
     {
       "id": "mastertung_elotus_core",
@@ -62,9 +145,28 @@
       "source_group": "A_acupoints",
       "language": "en",
       "authority": 4,
-      "primary_use": ["public navigation model", "Master Tung zone taxonomy", "Tung distinctions", "auricular anatomy browse model", "special acupuncture system categories"],
-      "fields_to_extract": ["system", "zone_code", "zone_name", "point_code", "point_name", "browse_category", "source_url"],
-      "notes": "Use as a professional English architecture reference for public AcuTing Learn. Do not copy full point articles or premium/course content. Public pages must be rewritten and checked against professional sources."
+      "primary_use": [
+        "public navigation model",
+        "Master Tung zone taxonomy",
+        "Tung distinctions",
+        "auricular anatomy browse model",
+        "special acupuncture system categories"
+      ],
+      "fields_to_extract": [
+        "system",
+        "zone_code",
+        "zone_name",
+        "point_code",
+        "point_name",
+        "browse_category",
+        "source_url"
+      ],
+      "notes": "Use as a professional English architecture reference for public AcuTing Learn. Do not copy full point articles or premium/course content. Public pages must be rewritten and checked against professional sources.",
+      "tier": "A-",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "acupun_gb93_auricular_visual",
@@ -74,9 +176,23 @@
       "source_group": "A_acupoints",
       "language": "zh-Hant",
       "authority": 3,
-      "primary_use": ["auricular point code lookup", "external visual reference links", "auricular regional orientation"],
-      "fields_to_extract": ["point_code", "chinese_name", "auricular_region", "visual_source_url"],
-      "notes": "Use as external visual links only. Do not download or embed images. Cross-check point names, regions, and indications before marking source_checked."
+      "primary_use": [
+        "auricular point code lookup",
+        "external visual reference links",
+        "auricular regional orientation"
+      ],
+      "fields_to_extract": [
+        "point_code",
+        "chinese_name",
+        "auricular_region",
+        "visual_source_url"
+      ],
+      "notes": "Use as external visual links only. Do not download or embed images. Cross-check point names, regions, and indications before marking source_checked.",
+      "tier": "B",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "a_hospital_auricular_overview",
@@ -86,9 +202,24 @@
       "source_group": "A_acupoints",
       "language": "zh-Hant",
       "authority": 3,
-      "primary_use": ["auricular overview", "Chinese auricular terminology", "ear region organization", "external source links"],
-      "fields_to_extract": ["ear_region", "point_name_zh", "overview_note", "source_url"],
-      "notes": "Use for Chinese comparison and broad auricular organization. Not a sole clinical authority."
+      "primary_use": [
+        "auricular overview",
+        "Chinese auricular terminology",
+        "ear region organization",
+        "external source links"
+      ],
+      "fields_to_extract": [
+        "ear_region",
+        "point_name_zh",
+        "overview_note",
+        "source_url"
+      ],
+      "notes": "Use for Chinese comparison and broad auricular organization. Not a sole clinical authority.",
+      "tier": "B",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "bastyr_materials",
@@ -97,9 +228,31 @@
       "source_group": "A_acupoints",
       "authority": 4,
       "access_type": "private_school_material",
-      "primary_use": ["class emphasis", "clinic workflow", "SOAP expectations", "point combinations", "exam preparation"],
-      "fields_to_extract": ["course", "topic", "clinical_pearl", "contraindication", "soap_requirement", "nccaom_relevance"],
-      "notes": "Use for personal study and clinic workflow only unless permission allows public reuse. Keep separate from public AcuTing Learn content."
+      "primary_use": [
+        "class emphasis",
+        "clinic workflow",
+        "SOAP expectations",
+        "point combinations",
+        "exam preparation"
+      ],
+      "fields_to_extract": [
+        "course",
+        "topic",
+        "clinical_pearl",
+        "contraindication",
+        "soap_requirement",
+        "nccaom_relevance"
+      ],
+      "notes": "Use for personal study and clinic workflow only unless permission allows public reuse. Keep separate from public AcuTing Learn content.",
+      "url": "",
+      "tier": "A-",
+      "language": "en",
+      "category": [
+        "??",
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "teachmeanatomy",
@@ -107,9 +260,29 @@
       "layer": "anatomy",
       "source_group": "B_anatomy",
       "authority": 5,
-      "primary_use": ["muscles", "nerves", "vessels", "danger zones", "regional anatomy"],
-      "fields_to_extract": ["region", "muscles", "bones", "nerves", "vessels", "clinical_risks"],
-      "notes": "Use for anatomy mapping and safety reasoning. Summarize in original wording."
+      "primary_use": [
+        "muscles",
+        "nerves",
+        "vessels",
+        "danger zones",
+        "regional anatomy"
+      ],
+      "fields_to_extract": [
+        "region",
+        "muscles",
+        "bones",
+        "nerves",
+        "vessels",
+        "clinical_risks"
+      ],
+      "notes": "Use for anatomy mapping and safety reasoning. Summarize in original wording.",
+      "url": "https://teachmeanatomy.info/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "kenhub",
@@ -117,9 +290,29 @@
       "layer": "anatomy_reference",
       "source_group": "B_anatomy",
       "authority": 5,
-      "primary_use": ["visual anatomy", "English terminology", "muscles", "bones", "nerves", "vessels"],
-      "fields_to_extract": ["muscles", "bones", "nerves", "vessels", "image_reference_notes"],
-      "notes": "Reference only. Do not scrape whole site or copy image/text wholesale."
+      "primary_use": [
+        "visual anatomy",
+        "English terminology",
+        "muscles",
+        "bones",
+        "nerves",
+        "vessels"
+      ],
+      "fields_to_extract": [
+        "muscles",
+        "bones",
+        "nerves",
+        "vessels",
+        "image_reference_notes"
+      ],
+      "notes": "Reference only. Do not scrape whole site or copy image/text wholesale.",
+      "url": "https://www.kenhub.com/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "visible_body",
@@ -128,9 +321,27 @@
       "source_group": "B_anatomy",
       "authority": 5,
       "access_type": "paid_or_institutional_reference",
-      "primary_use": ["3D anatomy orientation", "muscle layers", "nerves", "vessels", "regional relationships"],
-      "fields_to_extract": ["region", "structure_name_en", "relationship_notes", "visual_reference_notes"],
-      "notes": "Use for learning and orientation. Do not copy proprietary images or 3D assets into the public app without permission."
+      "primary_use": [
+        "3D anatomy orientation",
+        "muscle layers",
+        "nerves",
+        "vessels",
+        "regional relationships"
+      ],
+      "fields_to_extract": [
+        "region",
+        "structure_name_en",
+        "relationship_notes",
+        "visual_reference_notes"
+      ],
+      "notes": "Use for learning and orientation. Do not copy proprietary images or 3D assets into the public app without permission.",
+      "url": "https://www.visiblebody.com/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "radiopaedia",
@@ -138,9 +349,26 @@
       "layer": "clinical_imaging",
       "source_group": "B_anatomy",
       "authority": 4,
-      "primary_use": ["cross-sectional anatomy", "CT", "MRI", "regional clinical anatomy"],
-      "fields_to_extract": ["region", "imaging_plane", "anatomical_structures", "clinical_relevance"],
-      "notes": "Use for advanced clinical/imaging orientation, not primary point location."
+      "primary_use": [
+        "cross-sectional anatomy",
+        "CT",
+        "MRI",
+        "regional clinical anatomy"
+      ],
+      "fields_to_extract": [
+        "region",
+        "imaging_plane",
+        "anatomical_structures",
+        "clinical_relevance"
+      ],
+      "notes": "Use for advanced clinical/imaging orientation, not primary point location.",
+      "url": "https://radiopaedia.org/",
+      "tier": "A-",
+      "language": "en",
+      "category": [
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "nccaom_content_outline",
@@ -148,9 +376,30 @@
       "layer": "board_exam",
       "source_group": "C_us_official",
       "authority": 5,
-      "primary_use": ["board focus", "high yield topics", "exam pearls", "quiz mode"],
-      "fields_to_extract": ["domain", "task", "competency", "high_yield", "quiz_tags"],
-      "notes": "Must be checked against the latest official NCCAOM outline before exam-oriented imports."
+      "primary_use": [
+        "board focus",
+        "high yield topics",
+        "exam pearls",
+        "quiz mode"
+      ],
+      "fields_to_extract": [
+        "domain",
+        "task",
+        "competency",
+        "high_yield",
+        "quiz_tags"
+      ],
+      "notes": "Must be checked against the latest official NCCAOM outline before exam-oriented imports.",
+      "url": "https://www.nccaom.org/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??",
+        "??",
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "nccih",
@@ -158,9 +407,28 @@
       "layer": "us_official_safety",
       "source_group": "C_us_official",
       "authority": 5,
-      "primary_use": ["patient-facing safety language", "acupuncture overview", "herb safety", "condition cautions"],
-      "fields_to_extract": ["topic", "safety_summary", "contraindications", "patient_guidance", "source_url"],
-      "notes": "Use for conservative public-facing safety wording in AcuTing Learn."
+      "primary_use": [
+        "patient-facing safety language",
+        "acupuncture overview",
+        "herb safety",
+        "condition cautions"
+      ],
+      "fields_to_extract": [
+        "topic",
+        "safety_summary",
+        "contraindications",
+        "patient_guidance",
+        "source_url"
+      ],
+      "notes": "Use for conservative public-facing safety wording in AcuTing Learn.",
+      "url": "https://www.nccih.nih.gov/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "pubmed",
@@ -168,9 +436,33 @@
       "layer": "biomedical_literature_index",
       "source_group": "C_us_official",
       "authority": 5,
-      "primary_use": ["biomedical literature search", "systematic reviews", "clinical trials", "case reports"],
-      "fields_to_extract": ["pmid", "title", "authors", "journal", "year", "study_type", "condition", "summary_note"],
-      "notes": "Use as the main biomedical literature index. Summaries must distinguish study type and evidence strength."
+      "primary_use": [
+        "biomedical literature search",
+        "systematic reviews",
+        "clinical trials",
+        "case reports"
+      ],
+      "fields_to_extract": [
+        "pmid",
+        "title",
+        "authors",
+        "journal",
+        "year",
+        "study_type",
+        "condition",
+        "summary_note"
+      ],
+      "notes": "Use as the main biomedical literature index. Summaries must distinguish study type and evidence strength.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??",
+        "??",
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "evidence_based_acupuncture",
@@ -178,9 +470,27 @@
       "layer": "evidence",
       "source_group": "D_clinical_evidence",
       "authority": 4,
-      "primary_use": ["condition evidence", "systematic reviews", "clinical use"],
-      "fields_to_extract": ["condition", "evidence_level", "summary", "review_type", "clinical_use"],
-      "notes": "Evidence summaries should include uncertainty and avoid overstating efficacy."
+      "primary_use": [
+        "condition evidence",
+        "systematic reviews",
+        "clinical use"
+      ],
+      "fields_to_extract": [
+        "condition",
+        "evidence_level",
+        "summary",
+        "review_type",
+        "clinical_use"
+      ],
+      "notes": "Evidence summaries should include uncertainty and avoid overstating efficacy.",
+      "url": "https://www.evidencebasedacupuncture.org/",
+      "tier": "A-",
+      "language": "en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "cochrane_reviews",
@@ -188,9 +498,31 @@
       "layer": "systematic_reviews",
       "source_group": "D_clinical_evidence",
       "authority": 5,
-      "primary_use": ["systematic review evidence", "benefit/harm balance", "certainty of evidence"],
-      "fields_to_extract": ["condition", "intervention", "comparison", "outcome", "certainty", "review_conclusion", "year"],
-      "notes": "Use for high-level evidence summaries. Avoid overclaiming when certainty is low or evidence is mixed."
+      "primary_use": [
+        "systematic review evidence",
+        "benefit/harm balance",
+        "certainty of evidence"
+      ],
+      "fields_to_extract": [
+        "condition",
+        "intervention",
+        "comparison",
+        "outcome",
+        "certainty",
+        "review_conclusion",
+        "year"
+      ],
+      "notes": "Use for high-level evidence summaries. Avoid overclaiming when certainty is low or evidence is mixed.",
+      "url": "https://www.cochranelibrary.com/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??",
+        "??",
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "pubmed_systematic_reviews",
@@ -198,18 +530,486 @@
       "layer": "clinical_evidence",
       "source_group": "D_clinical_evidence",
       "authority": 5,
-      "primary_use": ["systematic reviews", "meta-analyses", "condition-level evidence", "research gaps"],
-      "fields_to_extract": ["pmid", "condition", "intervention", "review_type", "outcomes", "limitations", "summary"],
-      "notes": "Use PubMed filters for systematic reviews/meta-analyses; record limitations and date searched."
+      "primary_use": [
+        "systematic reviews",
+        "meta-analyses",
+        "condition-level evidence",
+        "research gaps"
+      ],
+      "fields_to_extract": [
+        "pmid",
+        "condition",
+        "intervention",
+        "review_type",
+        "outcomes",
+        "limitations",
+        "summary"
+      ],
+      "notes": "Use PubMed filters for systematic reviews/meta-analyses; record limitations and date searched.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??",
+        "??",
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
     },
     {
       "id": "american_dragon",
       "name": "American Dragon",
       "layer": "herbs_formulas",
       "authority": 3,
-      "primary_use": ["herbs", "formulas", "bilingual notes", "TCM education"],
-      "fields_to_extract": ["herb", "formula", "actions", "indications", "contraindications"],
-      "notes": "Useful bilingual reference, but not sole authority."
+      "primary_use": [
+        "herbs",
+        "formulas",
+        "bilingual notes",
+        "TCM education"
+      ],
+      "fields_to_extract": [
+        "herb",
+        "formula",
+        "actions",
+        "indications",
+        "contraindications"
+      ],
+      "notes": "Useful bilingual reference, but not sole authority.",
+      "url": "https://www.americandragon.com/",
+      "tier": "B",
+      "language": "en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "who_standard_nomenclature",
+      "name": "WHO Standard Acupuncture Nomenclature",
+      "url": "https://iris.who.int/",
+      "layer": "official_acupoint_standard",
+      "source_group": "TCM_A_acupoints",
+      "tier": "A",
+      "language": "en",
+      "category": [
+        "??"
+      ],
+      "authority": 5,
+      "review_status": "draft",
+      "primary_use": [
+        "361 standard point names",
+        "channel nomenclature",
+        "international code/name cross-check"
+      ],
+      "fields_to_extract": [
+        "code",
+        "english_name",
+        "pinyin",
+        "chinese_name",
+        "channel"
+      ],
+      "notes": "Official standard for point identity and naming. Exact WHO publication URL should be verified before extraction."
+    },
+    {
+      "id": "contemporary_acupuncture_archive",
+      "name": "????????????",
+      "url": "",
+      "layer": "acupoint_teaching_archive",
+      "source_group": "TCM_A_acupoints",
+      "tier": "B",
+      "language": "zh-Hant",
+      "category": [
+        "??"
+      ],
+      "authority": 3,
+      "review_status": "draft",
+      "primary_use": [
+        "????",
+        "????",
+        "????",
+        "3D orientation"
+      ],
+      "fields_to_extract": [
+        "point_code",
+        "point_name_zh",
+        "teaching_note",
+        "media_reference_url"
+      ],
+      "notes": "Teaching/digital archive source listed in docs/TCM_SOURCE_REGISTRY.md. URL needs manual verification before use."
+    },
+    {
+      "id": "hkbu_cmfid",
+      "name": "???????????????????",
+      "url": "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+      "layer": "formula_academic_database",
+      "source_group": "TCM_B_formulas",
+      "tier": "A-",
+      "language": "zh-Hant/en",
+      "category": [
+        "??"
+      ],
+      "authority": 4,
+      "review_status": "source_checked",
+      "primary_use": [
+        "formula composition",
+        "formula actions",
+        "indications",
+        "usage",
+        "pathomechanism",
+        "clinical application",
+        "classical source"
+      ],
+      "fields_to_extract": [
+        "formula_name_zh",
+        "formula_name_en",
+        "ingredients",
+        "actions",
+        "indications",
+        "usage",
+        "pathomechanism",
+        "applications",
+        "classical_source",
+        "source_url"
+      ],
+      "notes": "Primary academic source for formula expansion. Summarize in original AcuTing wording and cite source URL."
+    },
+    {
+      "id": "kmuh_herbal_formula_collection",
+      "name": "???????",
+      "url": "",
+      "layer": "clinical_formula_reference",
+      "source_group": "TCM_B_formulas",
+      "tier": "B",
+      "language": "zh-Hant",
+      "category": [
+        "??"
+      ],
+      "authority": 3,
+      "review_status": "draft",
+      "primary_use": [
+        "????",
+        "??????",
+        "formula cross-check"
+      ],
+      "fields_to_extract": [
+        "formula_name_zh",
+        "ingredients",
+        "clinical_use_note",
+        "source_url"
+      ],
+      "notes": "Practical clinical formula reference listed by Ting. URL needs manual verification before extraction."
+    },
+    {
+      "id": "wanfang_tcm_knowledge",
+      "name": "????? / ??????",
+      "url": "",
+      "layer": "tcm_literature_database",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "A",
+      "language": "zh-Hans",
+      "category": [
+        "??",
+        "??",
+        "??",
+        "??"
+      ],
+      "authority": 5,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "??",
+        "??",
+        "???",
+        "??",
+        "??"
+      ],
+      "fields_to_extract": [
+        "topic",
+        "literature_note",
+        "formula_or_herb_relation",
+        "condition_relation",
+        "source_url"
+      ],
+      "notes": "High-authority literature/database layer from source registry. Access and URL need manual verification."
+    },
+    {
+      "id": "cckf_tcm_database",
+      "name": "??????????????????, cckf.org?",
+      "url": "https://www.cckf.org/",
+      "layer": "tcm_cross_database_search",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "A",
+      "language": "zh-Hans",
+      "category": [
+        "??",
+        "??",
+        "??"
+      ],
+      "authority": 5,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "????",
+        "??",
+        "??",
+        "????",
+        "????"
+      ],
+      "fields_to_extract": [
+        "topic",
+        "standard_reference",
+        "diagnosis_treatment_note",
+        "herb_or_formula_relation",
+        "source_url"
+      ],
+      "notes": "National/academy database layer. Exact endpoint and access should be verified before extraction."
+    },
+    {
+      "id": "tcmip",
+      "name": "TCMIP ?????????",
+      "url": "http://www.tcmip.cn/",
+      "layer": "integrated_pharmacology_platform",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "A-",
+      "language": "zh-Hans/en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "authority": 4,
+      "review_status": "draft",
+      "primary_use": [
+        "????",
+        "??",
+        "??????",
+        "????"
+      ],
+      "fields_to_extract": [
+        "herb",
+        "compound",
+        "target",
+        "disease_relation",
+        "network_pharmacology_note",
+        "source_url"
+      ],
+      "notes": "Use for modern pharmacology/network relation notes only; do not turn target relations into clinical claims."
+    },
+    {
+      "id": "tcmsp",
+      "name": "TCMSP Traditional Chinese Medicine Systems Pharmacology Database",
+      "url": "https://old.tcmsp-e.com/tcmsp.php",
+      "layer": "systems_pharmacology_database",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "A-",
+      "language": "en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "authority": 4,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "??",
+        "ADME",
+        "????"
+      ],
+      "fields_to_extract": [
+        "herb",
+        "compound",
+        "target",
+        "adme",
+        "disease_relation",
+        "source_url"
+      ],
+      "notes": "Use for systems pharmacology cross-checks only; avoid clinical overclaiming."
+    },
+    {
+      "id": "herb_database",
+      "name": "HERB database",
+      "url": "http://herb.ac.cn/",
+      "layer": "herb_target_disease_database",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "A-",
+      "language": "en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "authority": 4,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "??",
+        "??",
+        "??",
+        "????"
+      ],
+      "fields_to_extract": [
+        "herb",
+        "compound",
+        "target",
+        "symptom",
+        "disease_relation",
+        "source_url"
+      ],
+      "notes": "Use for herb-compound-target relation lookup; not a clinical efficacy source by itself."
+    },
+    {
+      "id": "symmap",
+      "name": "SymMap",
+      "url": "https://www.symmap.org/",
+      "layer": "symptom_herb_target_database",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "A-",
+      "language": "en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "authority": 4,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "??",
+        "??",
+        "??",
+        "????"
+      ],
+      "fields_to_extract": [
+        "herb",
+        "symptom",
+        "compound",
+        "target",
+        "disease_relation",
+        "source_url"
+      ],
+      "notes": "Use for symptom-herb-target relationship research; do not imply treatment certainty."
+    },
+    {
+      "id": "tcmio",
+      "name": "TCMIO",
+      "url": "http://tcmio.xielab.net/",
+      "layer": "tcm_intelligent_ontology_database",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "A-",
+      "language": "en",
+      "category": [
+        "??",
+        "??"
+      ],
+      "authority": 4,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "??",
+        "??",
+        "??",
+        "????"
+      ],
+      "fields_to_extract": [
+        "herb",
+        "compound",
+        "target",
+        "symptom",
+        "disease_relation",
+        "source_url"
+      ],
+      "notes": "Use for ontology/relation exploration and cross-checking, not standalone clinical guidance."
+    },
+    {
+      "id": "hkcmms",
+      "name": "???????????",
+      "url": "https://www.cmro.gov.hk/html/eng/useful_information/hkcmms/cmmlist.html",
+      "layer": "materia_medica_standard_lookup",
+      "source_group": "TCM_C_herbs_pharmacology",
+      "tier": "C",
+      "language": "zh-Hant/en",
+      "category": [
+        "??"
+      ],
+      "authority": 2,
+      "review_status": "source_checked",
+      "primary_use": [
+        "????",
+        "??",
+        "??",
+        "identification cross-check"
+      ],
+      "fields_to_extract": [
+        "herb_name",
+        "standard_name",
+        "identity_note",
+        "quality_standard_reference",
+        "source_url"
+      ],
+      "notes": "Standards lookup source. Use for identity/quality reference rather than formula indications."
+    },
+    {
+      "id": "sfu_tcm_knowledge_base",
+      "name": "SFU Library TCM Knowledge Base",
+      "url": "",
+      "layer": "condition_formula_herb_knowledge_base",
+      "source_group": "TCM_D_conditions",
+      "tier": "A-",
+      "language": "en/zh",
+      "category": [
+        "??",
+        "??",
+        "??"
+      ],
+      "authority": 4,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "??",
+        "??",
+        "???",
+        "??",
+        "????",
+        "cross-query relations"
+      ],
+      "fields_to_extract": [
+        "condition",
+        "traditional_disease_name",
+        "pattern",
+        "treatment_principle",
+        "formula_relation",
+        "herb_relation",
+        "source_url"
+      ],
+      "notes": "Primary source planned for condition relation records. URL/access needs manual verification before extraction."
+    },
+    {
+      "id": "china_taiwan_tcm_web_references",
+      "name": "????? / ???????",
+      "url": "",
+      "layer": "classics_practical_condition_reference",
+      "source_group": "TCM_D_conditions",
+      "tier": "B",
+      "language": "zh-Hant/zh-Hans",
+      "category": [
+        "??"
+      ],
+      "authority": 3,
+      "review_status": "draft",
+      "primary_use": [
+        "??",
+        "??",
+        "??",
+        "????",
+        "condition terminology cross-check"
+      ],
+      "fields_to_extract": [
+        "condition",
+        "classic_quote_reference",
+        "traditional_term",
+        "source_url"
+      ],
+      "notes": "Practical/classics reference layer; use only after higher-tier source cross-check."
     }
-  ]
+  ],
+  "tcm_registry_note": "Tier/category fields were added from docs/TCM_SOURCE_REGISTRY.md. A=official or national/major database, A-=university or major academic database, B=practical/clinical lookup, C=standards/reference utility. Draft URL values need manual verification before source extraction."
 }
