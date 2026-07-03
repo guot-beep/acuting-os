@@ -1,3 +1,68 @@
+# REBUILD HANDOFF - Session 15 (2026-07-03, Codex Friday relation validation layer)
+
+## 1. Goal
+Build the formal relation-validation layer for the pathology graph, western medications, fertility workflows, and clinical decision links. This is cross-reference integrity work, not a treatment-plan expansion.
+
+## 2. Files changed
+- `scripts/validate-relations.js` (new)
+- `data/clinical_cases/clinical_decision_links.json` (new)
+- `data/pathology/conditions.json`
+- `data/pathology/condition_graph_expansion.json`
+- `data/clinical_cases/fertility_workflow_seed.json`
+- `PROJECT_LOG.md`
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed in each file
+- `validate-relations.js`: checks that western condition, TCM pattern, formula, western medication, acupoint, fertility workflow/review prompt, safety flag, and related formula IDs exist; broken links exit 1; success prints a count summary.
+- `clinical_decision_links.json`: registers 17 fertility review-prompt IDs used by formula-pattern links.
+- `conditions.json` / `condition_graph_expansion.json`: added 6 fertility-related western documentation-context nodes and 3 TCM pattern review-prompt nodes with conservative relationships.
+- `fertility_workflow_seed.json`: normalized `DU20` to the existing acupoint code `GV20`.
+- `PROJECT_LOG.md` / `REBUILD_HANDOFF.md`: recorded this task, validation, and handoff notes.
+
+## 4. Why this changed
+Friday's task was to make database links stable before future search or UI work connects modern conditions, formulas, patterns, medications, acupoints, and fertility workflows by ID instead of loose text.
+
+## 5. Data content changes
+New content is relationship structure and review-prompt registry data only. All new content remains draft / source-review pending / not medical advice. No efficacy claim, treatment protocol, or TCM-pattern replacement for biomedical diagnosis was added.
+
+## 6. Schema / field changes
+No runtime schema was changed. The new validator reads existing relation fields such as `medication_links`, `workflow_links`, `related_eastern_diseases`, `related_tcm_patterns`, `seed_acupoints`, `seed_formulas`, `formula_id`, `pattern_ids`, `western_condition_ids`, `acupoint_seed_codes`, `fertility_workflow_links`, and `related_formulas`.
+
+## 7. Review status
+All added or strengthened relation data remains `draft`, `draft_relation_registry_not_medical_advice`, or `source-review pending`. Nothing was upgraded to `source_checked`.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js` case/soap/cloudtcm/search logic, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, or `scripts/validate-data.js` IGNORED_FIELDS.
+
+## 10. Validation
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `data/**/*.json` parse check: PASS, 63 JSON files
+
+## 11. Relation validator summary
+`validate-relations.js` checked: 12 western conditions, 6 eastern diseases, 9 TCM patterns, 115 formulas, 12 western medications, 237 acupoint codes, 21 fertility workflow/review prompt IDs.
+
+Checked links: 149 acupoint links, 69 formula links, 105 medication links, 28 pattern links, 370 related formula links, 31 safety flag links, 21 western condition links, 68 western-to-eastern links, 98 western-to-pattern links, 50 workflow links.
+
+## 12. Not completed
+No source review was performed and no UI display was added. `clinical_graph_seed.json` remains an older seed reference file; the validator only uses it for existing seed ID collection and validation.
+
+## 13. Next reader should inspect
+Start with `scripts/validate-relations.js` and `data/clinical_cases/clinical_decision_links.json`. After adding any condition / pattern / formula / medication / acupoint / workflow link, run the relation validator.
+
+## 14. Next step
+Before exposing these links in the UI, design the display language as related documentation context only. Another safe next batch is adding western-medication relationship metadata, still as draft.
+
+## 15. Risk
+Low to medium. This adds data relationships and a validator without touching app logic. `conditions.json` and `condition_graph_expansion.json` were structurally rewritten, so their diffs are larger. JSON parse and all four validators passed.
+
+---
+
 # REBUILD HANDOFF — Session 12 (2026-07-03, Claude)：病例欄位補強
 
 ## 目標

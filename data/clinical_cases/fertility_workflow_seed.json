@@ -55,7 +55,7 @@
       "common_medication_links": ["med.follitropin_alfa", "med.menotropins", "med.ganirelix", "med.leuprolide", "med.human_chorionic_gonadotropin", "med.progesterone"],
       "cycle_phases_to_track": ["baseline", "stimulation", "monitoring", "trigger_window", "retrieval_day", "post_retrieval", "transfer_prep", "luteal_support"],
       "tcm_pattern_watchlist": ["kidney_deficiency", "blood_stasis", "liver_qi_stagnation", "spleen_qi_deficiency", "phlegm_damp", "yin_deficiency"],
-      "acupoint_seed_links": ["ST36", "SP6", "CV4", "CV6", "KI3", "BL23", "LR3", "PC6", "DU20"],
+      "acupoint_seed_links": ["ST36", "SP6", "CV4", "CV6", "KI3", "BL23", "LR3", "PC6", "GV20"],
       "formula_seed_links": ["formula.ba_zhen_tang", "formula.si_wu_tang", "formula.liu_wei_di_huang_wan", "formula.wen_jing_tang", "formula.xiao_yao_san"],
       "safety_flags": ["fertility_medication_review", "clinic_herb_restriction", "ovarian_hyperstimulation_warning_signs", "anticoagulant_review", "post_procedure_review"],
       "soap_prompts": [
@@ -75,7 +75,7 @@
       "common_medication_links": ["med.progesterone", "med.estradiol", "med.low_dose_aspirin", "med.enoxaparin"],
       "cycle_phases_to_track": ["transfer_prep", "transfer_day", "post_transfer", "two_week_wait", "pregnancy_test_window", "early_pregnancy_if_confirmed"],
       "tcm_pattern_watchlist": ["kidney_deficiency", "spleen_qi_deficiency", "blood_deficiency", "liver_qi_stagnation", "blood_stasis"],
-      "acupoint_seed_links": ["ST36", "PC6", "HT7", "DU20", "CV4", "CV6", "KI3", "BL23"],
+      "acupoint_seed_links": ["ST36", "PC6", "HT7", "GV20", "CV4", "CV6", "KI3", "BL23"],
       "formula_seed_links": ["formula.gui_pi_tang", "formula.ba_zhen_tang", "formula.liu_wei_di_huang_wan", "formula.jin_gui_shen_qi_wan"],
       "safety_flags": ["possible_pregnancy", "pregnancy_review", "anticoagulant_review", "bleeding_review", "clinic_herb_restriction"],
       "soap_prompts": [

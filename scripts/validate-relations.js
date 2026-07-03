@@ -1,0 +1,320 @@
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.resolve(__dirname, "..");
+
+function readJson(relativePath) {
+  const fullPath = path.join(ROOT, relativePath);
+  try {
+    return JSON.parse(fs.readFileSync(fullPath, "utf8"));
+  } catch (error) {
+    throw new Error(`${relativePath}: ${error.message}`);
+  }
+}
+
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function addId(set, id, source, errors, prefix) {
+  if (typeof id !== "string" || !id.trim()) {
+    errors.push(`${source}: missing id`);
+    return;
+  }
+  if (prefix && !id.startsWith(prefix)) {
+    errors.push(`${source}: id "${id}" must start with "${prefix}"`);
+    return;
+  }
+  set.add(id);
+}
+
+function checkRef(set, id, source, errors) {
+  if (typeof id !== "string" || !id.trim()) {
+    errors.push(`${source}: empty reference`);
+    return false;
+  }
+  if (!set.has(id)) {
+    errors.push(`${source}: missing reference "${id}"`);
+    return false;
+  }
+  return true;
+}
+
+function collectPathologyGraph(graph, sourceName, sets, errors) {
+  asArray(graph.records).forEach((record, index) => {
+    addId(sets.westernConditions, record.id, `${sourceName}.records[${index}]`, errors, "western_condition.");
+  });
+
+  asArray(graph.western_conditions).forEach((record, index) => {
+    addId(sets.westernConditions, record.id, `${sourceName}.western_conditions[${index}]`, errors, "western_condition.");
+  });
+
+  asArray(graph.eastern_diseases).forEach((record, index) => {
+    addId(sets.easternDiseases, record.id, `${sourceName}.eastern_diseases[${index}]`, errors, "eastern_disease.");
+  });
+
+  asArray(graph.tcm_patterns).forEach((record, index) => {
+    addId(sets.patterns, record.id, `${sourceName}.tcm_patterns[${index}]`, errors, "pattern.");
+  });
+}
+
+function collectAcupoints(filePath, set) {
+  const data = readJson(filePath);
+  const points = Array.isArray(data) ? data : asArray(data.points);
+  points.forEach((point) => {
+    if (typeof point.code === "string" && point.code.trim()) {
+      set.add(point.code);
+    }
+  });
+}
+
+function collectClinicalDecisionLinks(filePath, sets, errors) {
+  if (!fs.existsSync(path.join(ROOT, filePath))) return;
+  const data = readJson(filePath);
+  asArray(data.records).forEach((record, index) => {
+    addId(sets.workflows, record.id, `${filePath}.records[${index}]`, errors);
+  });
+}
+
+function collectFormulaIds(set, errors) {
+  const formulas = readJson("data/herbs/formulas.json");
+  asArray(formulas.records).forEach((record, index) => {
+    addId(set, record.id, `data/herbs/formulas.json.records[${index}]`, errors, "formula.");
+  });
+
+  const shortlist = readJson("data/herbs/formula_canon_shortlist.json");
+  asArray(shortlist.records).forEach((record, index) => {
+    if (typeof record.id === "string" && record.id.trim()) {
+      set.add(record.id);
+      if (!record.id.startsWith("formula.")) {
+        errors.push(`data/herbs/formula_canon_shortlist.json.records[${index}]: id "${record.id}" must start with "formula."`);
+      }
+    }
+  });
+}
+
+function validatePathologyGraph(graph, sourceName, sets, counters, errors) {
+  const westernRecords = asArray(graph.records).concat(asArray(graph.western_conditions));
+
+  westernRecords.forEach((record, index) => {
+    const base = `${sourceName}.western[${index}]`;
+    asArray(record.medication_links).forEach((id) => {
+      counters.medicationLinks += 1;
+      checkRef(sets.medications, id, `${base}.medication_links`, errors);
+    });
+    asArray(record.workflow_links).forEach((id) => {
+      counters.workflowLinks += 1;
+      checkRef(sets.workflows, id, `${base}.workflow_links`, errors);
+    });
+    asArray(record.related_eastern_diseases).forEach((id) => {
+      counters.westernEasternLinks += 1;
+      checkRef(sets.easternDiseases, id, `${base}.related_eastern_diseases`, errors);
+    });
+    asArray(record.related_tcm_patterns).forEach((id) => {
+      counters.westernPatternLinks += 1;
+      checkRef(sets.patterns, id, `${base}.related_tcm_patterns`, errors);
+    });
+  });
+
+  asArray(graph.tcm_patterns).forEach((record, index) => {
+    const base = `${sourceName}.tcm_patterns[${index}]`;
+    asArray(record.seed_acupoints).forEach((code) => {
+      counters.acupointLinks += 1;
+      checkRef(sets.acupoints, code, `${base}.seed_acupoints`, errors);
+    });
+    asArray(record.seed_formulas).forEach((id) => {
+      counters.formulaLinks += 1;
+      checkRef(sets.formulas, id, `${base}.seed_formulas`, errors);
+    });
+  });
+
+  const relationLinks = graph.relation_links || graph.links || {};
+  asArray(relationLinks.western_to_eastern).forEach((link, index) => {
+    const westernId = Array.isArray(link) ? link[0] : link.western_condition_id;
+    const easternId = Array.isArray(link) ? link[1] : link.eastern_disease_id;
+    counters.westernEasternLinks += 1;
+    checkRef(sets.westernConditions, westernId, `${sourceName}.western_to_eastern[${index}].western`, errors);
+    checkRef(sets.easternDiseases, easternId, `${sourceName}.western_to_eastern[${index}].eastern`, errors);
+  });
+
+  asArray(relationLinks.western_to_patterns).forEach((link, index) => {
+    const westernId = Array.isArray(link) ? link[0] : link.western_condition_id;
+    const patternId = Array.isArray(link) ? link[1] : link.pattern_id;
+    counters.westernPatternLinks += 1;
+    checkRef(sets.westernConditions, westernId, `${sourceName}.western_to_patterns[${index}].western`, errors);
+    checkRef(sets.patterns, patternId, `${sourceName}.western_to_patterns[${index}].pattern`, errors);
+  });
+}
+
+function validateFormulaPatternLinks(sets, counters, errors) {
+  const links = readJson("data/herbs/formula_pattern_links.json");
+  const safety = readJson("data/herbs/formula_safety_flags.json");
+  const safetyIds = new Set(asArray(safety.flags).map((flag) => flag.id).filter(Boolean));
+
+  asArray(links.records).forEach((record, index) => {
+    const base = `data/herbs/formula_pattern_links.json.records[${index}]`;
+    counters.formulaLinks += 1;
+    checkRef(sets.formulas, record.formula_id, `${base}.formula_id`, errors);
+
+    asArray(record.pattern_ids).forEach((id) => {
+      counters.patternLinks += 1;
+      checkRef(sets.patterns, id, `${base}.pattern_ids`, errors);
+    });
+    asArray(record.western_condition_ids).forEach((id) => {
+      counters.westernConditionLinks += 1;
+      checkRef(sets.westernConditions, id, `${base}.western_condition_ids`, errors);
+    });
+    asArray(record.acupoint_seed_codes).forEach((code) => {
+      counters.acupointLinks += 1;
+      checkRef(sets.acupoints, code, `${base}.acupoint_seed_codes`, errors);
+    });
+    asArray(record.fertility_workflow_links).forEach((id) => {
+      counters.workflowLinks += 1;
+      checkRef(sets.workflows, id, `${base}.fertility_workflow_links`, errors);
+    });
+    asArray(record.safety_flag_ids).forEach((id) => {
+      counters.safetyFlagLinks += 1;
+      checkRef(safetyIds, id, `${base}.safety_flag_ids`, errors);
+    });
+
+    if (record.review_status !== "draft_index") {
+      errors.push(`${base}.review_status: expected "draft_index"`);
+    }
+    if (record.source_status !== "needs_professional_source_review") {
+      errors.push(`${base}.source_status: expected "needs_professional_source_review"`);
+    }
+    if (record.public_safe !== false) {
+      errors.push(`${base}.public_safe: expected false`);
+    }
+  });
+}
+
+function validateFormulaCanon(sets, counters, errors) {
+  const shortlist = readJson("data/herbs/formula_canon_shortlist.json");
+  asArray(shortlist.records).forEach((record, index) => {
+    const base = `data/herbs/formula_canon_shortlist.json.records[${index}]`;
+    asArray(record.related_formulas).forEach((id) => {
+      counters.relatedFormulaLinks += 1;
+      checkRef(sets.formulas, id, `${base}.related_formulas`, errors);
+      if (id === record.id) {
+        errors.push(`${base}.related_formulas: self link "${id}"`);
+      }
+    });
+  });
+}
+
+function validateWorkflows(workflowFile, sets, counters, errors) {
+  const data = readJson(workflowFile);
+  asArray(data.workflows).forEach((workflow, index) => {
+    const base = `${workflowFile}.workflows[${index}]`;
+    asArray(workflow.western_condition_links).forEach((id) => {
+      counters.westernConditionLinks += 1;
+      checkRef(sets.westernConditions, id, `${base}.western_condition_links`, errors);
+    });
+    asArray(workflow.common_medication_links).forEach((id) => {
+      counters.medicationLinks += 1;
+      checkRef(sets.medications, id, `${base}.common_medication_links`, errors);
+    });
+    asArray(workflow.tcm_pattern_watchlist).forEach((id) => {
+      const normalized = id.startsWith("pattern.") ? id : `pattern.${id}`;
+      counters.patternLinks += 1;
+      checkRef(sets.patterns, normalized, `${base}.tcm_pattern_watchlist`, errors);
+    });
+    asArray(workflow.acupoint_seed_links).forEach((code) => {
+      counters.acupointLinks += 1;
+      checkRef(sets.acupoints, code, `${base}.acupoint_seed_links`, errors);
+    });
+    asArray(workflow.formula_seed_links).forEach((id) => {
+      counters.formulaLinks += 1;
+      checkRef(sets.formulas, id, `${base}.formula_seed_links`, errors);
+    });
+  });
+}
+
+function main() {
+  const errors = [];
+  const counters = {
+    acupointLinks: 0,
+    formulaLinks: 0,
+    medicationLinks: 0,
+    patternLinks: 0,
+    relatedFormulaLinks: 0,
+    safetyFlagLinks: 0,
+    westernConditionLinks: 0,
+    westernEasternLinks: 0,
+    westernPatternLinks: 0,
+    workflowLinks: 0
+  };
+
+  const sets = {
+    acupoints: new Set(),
+    easternDiseases: new Set(),
+    formulas: new Set(),
+    medications: new Set(),
+    patterns: new Set(),
+    westernConditions: new Set(),
+    workflows: new Set()
+  };
+
+  collectAcupoints("data/acupoints/361.json", sets.acupoints);
+  [
+    "data/acupoints/embedded/starter_points.json",
+    "data/acupoints/embedded/professional_points.json",
+    "data/acupoints/embedded/meridian_bl.json",
+    "data/acupoints/embedded/meridian_ht.json",
+    "data/acupoints/embedded/meridian_ki.json",
+    "data/acupoints/embedded/meridian_li.json",
+    "data/acupoints/embedded/meridian_lu.json",
+    "data/acupoints/embedded/meridian_si.json",
+    "data/acupoints/embedded/meridian_sp.json",
+    "data/acupoints/embedded/meridian_st.json"
+  ].forEach((filePath) => collectAcupoints(filePath, sets.acupoints));
+
+  collectFormulaIds(sets.formulas, errors);
+
+  const medications = readJson("data/medications/western_medications.json");
+  asArray(medications.records).forEach((record, index) => {
+    addId(sets.medications, record.id, `data/medications/western_medications.json.records[${index}]`, errors, "med.");
+  });
+
+  const workflows = readJson("data/clinical_cases/fertility_workflow_seed.json");
+  asArray(workflows.workflows).forEach((workflow, index) => {
+    addId(sets.workflows, workflow.id, `data/clinical_cases/fertility_workflow_seed.json.workflows[${index}]`, errors, "fertility.workflow.");
+  });
+  collectClinicalDecisionLinks("data/clinical_cases/clinical_decision_links.json", sets, errors);
+
+  const pathologyFiles = [
+    "data/pathology/conditions.json",
+    "data/pathology/condition_graph_expansion.json",
+    "data/pathology/clinical_graph_seed.json"
+  ];
+  const pathologyGraphs = pathologyFiles.map((filePath) => [filePath, readJson(filePath)]);
+  pathologyGraphs.forEach(([filePath, graph]) => collectPathologyGraph(graph, filePath, sets, errors));
+
+  pathologyGraphs.forEach(([filePath, graph]) => validatePathologyGraph(graph, filePath, sets, counters, errors));
+  validateFormulaPatternLinks(sets, counters, errors);
+  validateFormulaCanon(sets, counters, errors);
+  validateWorkflows("data/clinical_cases/fertility_workflow_seed.json", sets, counters, errors);
+
+  if (errors.length) {
+    console.error("Relation validation failed:");
+    errors.forEach((error) => console.error(`- ${error}`));
+    process.exit(1);
+  }
+
+  console.log("Relation validation passed.");
+  console.log(JSON.stringify({
+    ids: {
+      western_conditions: sets.westernConditions.size,
+      eastern_diseases: sets.easternDiseases.size,
+      tcm_patterns: sets.patterns.size,
+      formulas: sets.formulas.size,
+      western_medications: sets.medications.size,
+      acupoints: sets.acupoints.size,
+      fertility_workflows: sets.workflows.size
+    },
+    checked_links: counters
+  }, null, 2));
+}
+
+main();

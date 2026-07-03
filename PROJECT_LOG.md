@@ -23,6 +23,34 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-03 — Friday relation validation layer
+
+Scope: pathology graph, western medications, fertility workflows, clinical decision links.
+
+Changes:
+- Added `scripts/validate-relations.js` to verify ID cross-references across Western conditions, TCM patterns, formulas, western medications, acupoints, fertility workflows, formula relationship links, and clinical decision review prompts.
+- Added `data/clinical_cases/clinical_decision_links.json` as a draft registry for 17 fertility review-prompt IDs used by formula-pattern links.
+- Expanded `data/pathology/conditions.json` and `data/pathology/condition_graph_expansion.json` with draft documentation-context nodes for fertility workflow references: insulin resistance, male-factor context, ovulatory-factor context, IVF cycle, embryo transfer, luteal support, damp-heat, yin deficiency, and blood deficiency.
+- Normalized `DU20` references to the existing acupoint code `GV20`.
+
+Safety wording:
+- All new relationship content remains `draft`, `source-review pending`, `public_safe: false`, and framed as documentation context / review prompt only.
+- No treatment protocol, diagnosis substitution, or efficacy claim was added.
+
+Validation:
+- `scripts/validate-data.js` PASS.
+- `scripts/validate-interactions.js` PASS.
+- `scripts/validate-herbal-links.js` PASS.
+- `scripts/validate-relations.js` PASS: 12 western conditions, 9 TCM patterns, 115 formulas, 12 western medications, 237 acupoint codes, 21 fertility workflow/review prompt IDs, 989 checked links.
+- `data/**/*.json` parse check PASS: 63 JSON files.
+
+Commit:
+- pending in this session.
+
+Next:
+- Use the relation validator as the required guard before adding more pathology, medication, formula, acupoint, or fertility workflow links.
+- If future source review upgrades any relationship from draft, attach citations before changing status.
+
 ### 2026-07-03 — Rebuild sprint (Claude Cowork + Codex, relayed by Ting)
 
 Scope: Phase 1 data liberation, workspace shell, brand UI, search fixes, migration off

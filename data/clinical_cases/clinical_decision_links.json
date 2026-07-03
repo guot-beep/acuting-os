@@ -1,0 +1,179 @@
+{
+  "dataset": "AcuTing OS clinical decision links",
+  "status": "draft_relation_registry_not_medical_advice",
+  "updated": "2026-07-03",
+  "purpose": "Register fertility review-prompt IDs used by formula, pathology, medication, acupoint, and SOAP relationship layers.",
+  "clinical_boundary": "These IDs are documentation and study prompts only. They do not recommend treatment, replace biomedical diagnosis, or imply formula substitution.",
+  "records": [
+    {
+      "id": "fertility.baseline_constitution_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.bleeding_pattern_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.digestive_tolerance_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.energy_baseline_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.general_cycle_support_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.infection_rule_out_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.iui_ivf_medication_timing_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.kidney_deficiency_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.kidney_yang_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.luteal_phase_support_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.luteal_phase_symptom_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.medication_timing_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.menstrual_pain_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.menstrual_volume_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.phlegm_damp_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.sleep_stress_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    },
+    {
+      "id": "fertility.urinary_symptom_referral_review",
+      "type": "review_prompt",
+      "relationship_scope": "associated documentation context",
+      "parent_domain": "fertility",
+      "wording_rule": "Use as a review prompt only; not a treatment protocol, diagnosis, or efficacy claim.",
+      "review_status": "draft",
+      "source_status": "source-review pending",
+      "public_safe": false
+    }
+  ]
+}
