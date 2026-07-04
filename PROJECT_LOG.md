@@ -23,6 +23,33 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-03 — Dataset foundation staging
+
+Scope: first dataset-first import foundation for formulas and future TCM knowledge expansion.
+
+Changes:
+- Added `data/imports/README.md` with raw import rules.
+- Added `data/imports/import_manifest.json` to track source URLs, license/access status, download status, and intended AcuTing targets before any raw import.
+- Added `data/herbs/formula_import_staging.json` as the safe formula staging layer: existing 23 formulas as the pilot batch, 115 formula canon records as the expansion target, and merge requirements.
+
+Safety wording:
+- No raw dataset was downloaded.
+- No canonical formula content was overwritten.
+- All future imported content defaults to `draft` / `dataset_import_pending_review`.
+- Modern clinical use and related conditions remain search/study context only, not treatment claims.
+
+Validation:
+- `scripts/validate-data.js` PASS.
+- `scripts/validate-interactions.js` PASS.
+- `scripts/validate-herbal-links.js` PASS.
+- `scripts/validate-relations.js` PASS.
+- `data/**/*.json` parse check PASS: 65 JSON files.
+
+Next:
+- Confirm the exact formula knowledge-base source URL and terms before any raw download.
+- If approved, add raw files under `data/imports/<source>/` and record hashes in `import_manifest.json`.
+- Transform into staging first; do not merge into `data/herbs/formulas.json` until Ting approves a diff summary.
+
 ### 2026-07-03 — Friday relation validation layer
 
 Scope: pathology graph, western medications, fertility workflows, clinical decision links.

@@ -1,0 +1,116 @@
+{
+  "dataset": "AcuTing OS formula import staging",
+  "status": "staging_only_no_content_imported",
+  "updated": "2026-07-03",
+  "purpose": "Prepare a safe staging layer for future formula dataset import without overwriting data/herbs/formulas.json.",
+  "scope": {
+    "first_pass": "Use existing 23 AcuTing formulas as the pilot batch.",
+    "second_pass": "Use data/herbs/formula_canon_shortlist.json 115 core records as the NCCAOM-oriented expansion target.",
+    "excluded_for_now": "No bulk 80k formula database import until source URL, license/access terms, field quality, and merge rules are reviewed."
+  },
+  "review_policy": {
+    "default_review_status": "draft",
+    "default_source_status": "dataset_import_pending_review",
+    "source_checked_rule": "English-track formula facts require Bensky/Formulas & Strategies or Ting-approved school source review before source_checked. Chinese-track depth notes remain draft unless institution/textbook checked.",
+    "clinical_use_rule": "Modern clinical use tags and related conditions are search and study context only. They are not treatment claims, formula substitutions, or diagnosis replacements."
+  },
+  "target_fields": {
+    "stable_identity": [
+      "id",
+      "name_zh",
+      "name_en",
+      "pinyin",
+      "category_id",
+      "category_en",
+      "tier"
+    ],
+    "future_content_fields": [
+      "source_classic",
+      "composition",
+      "actions_zh",
+      "actions_en",
+      "pattern_indications_zh",
+      "pattern_indications_en",
+      "modifications_zh",
+      "modifications_en",
+      "contraindications_zh",
+      "contraindications_en"
+    ],
+    "search_relation_fields": [
+      "modern_clinical_use_tags",
+      "related_conditions",
+      "related_formulas",
+      "western_condition_links",
+      "tcm_pattern_links",
+      "acupoint_links",
+      "herb_drug_cautions",
+      "fertility_notes"
+    ],
+    "review_fields": [
+      "source_urls",
+      "source_type",
+      "source_status",
+      "last_reviewed",
+      "review_status",
+      "public_safe"
+    ]
+  },
+  "pilot_records": [
+    "formula.gui_zhi_tang",
+    "formula.ma_huang_tang",
+    "formula.yin_qiao_san",
+    "formula.sang_ju_yin",
+    "formula.xiao_chai_hu_tang",
+    "formula.xiao_yao_san",
+    "formula.jia_wei_xiao_yao_san",
+    "formula.si_jun_zi_tang",
+    "formula.liu_jun_zi_tang",
+    "formula.bu_zhong_yi_qi_tang",
+    "formula.gui_pi_tang",
+    "formula.si_wu_tang",
+    "formula.ba_zhen_tang",
+    "formula.liu_wei_di_huang_wan",
+    "formula.jin_gui_shen_qi_wan",
+    "formula.tian_wang_bu_xin_dan",
+    "formula.long_dan_xie_gan_tang",
+    "formula.ban_xia_xie_xin_tang",
+    "formula.er_chen_tang",
+    "formula.ping_wei_san",
+    "formula.wen_jing_tang",
+    "formula.tao_hong_si_wu_tang",
+    "formula.xue_fu_zhu_yu_tang"
+  ],
+  "expansion_target": {
+    "source_file": "data/herbs/formula_canon_shortlist.json",
+    "target_count": 115,
+    "tier_rule": "core records first; expanded records only after Ting approves scope.",
+    "content_rule": "Do not fill imported clinical content directly into canonical records. Stage, validate, review, then merge."
+  },
+  "candidate_sources": [
+    {
+      "source_id": "source.formula_knowledge_base.pending",
+      "role": "possible bulk formula foundation",
+      "status": "blocked_until_source_and_license_confirmed"
+    },
+    {
+      "source_id": "source.institution.hkbu_formula_images",
+      "role": "institutional cross-check",
+      "status": "manual_review_source"
+    },
+    {
+      "source_id": "source.tianchi.tcm_qg",
+      "role": "study prompt vocabulary only",
+      "status": "terms_pending_ting_review"
+    }
+  ],
+  "staging_records": [],
+  "merge_requirements": [
+    "Run node scripts/validate-data.js.",
+    "Run node scripts/validate-interactions.js.",
+    "Run node scripts/validate-herbal-links.js.",
+    "Run node scripts/validate-relations.js.",
+    "Run JSON parse check for data/**/*.json.",
+    "Update docs/REBUILD_HANDOFF.md before merging into canonical formula files."
+  ]
+}
+

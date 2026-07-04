@@ -1,3 +1,63 @@
+# REBUILD HANDOFF - Session 16 (2026-07-03, Codex dataset foundation staging)
+
+## 1. Goal
+Start the dataset-first expansion workflow after Ting approval: create `data/imports`, an import manifest, and formula staging without overwriting canonical data.
+
+## 2. Files changed
+- `data/imports/README.md` (new)
+- `data/imports/import_manifest.json` (new)
+- `data/herbs/formula_import_staging.json` (new)
+- `PROJECT_LOG.md`
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- `data/imports/README.md`: defines raw import rules and states that no raw dataset files have been downloaded yet.
+- `import_manifest.json`: records candidate source IDs, URLs, license/access status, download status, target area, and safety policy.
+- `formula_import_staging.json`: defines the safe formula staging layer: existing 23 formulas as the pilot batch, 115 formula canon records as expansion target, target fields, review rules, and merge requirements.
+- `PROJECT_LOG.md` / `REBUILD_HANDOFF.md`: records the staging task and validation.
+
+## 4. Why this changed
+Ting approved moving from manual page-by-page distillation to the safer workflow: dataset foundation first, institution/textbook review second, agent gap-filling last.
+
+## 5. Data content changes
+No production formula content was imported. No existing formula record was changed. New files are staging/manifest only.
+
+## 6. Schema / field changes
+No runtime schema change. The staging file defines future target fields only; it does not change `data/herbs/formulas.json`.
+
+## 7. Review status
+All future imported material defaults to `draft` and `dataset_import_pending_review`. Nothing is `source_checked`.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, or `scripts/validate-data.js` IGNORED_FIELDS.
+
+## 10. Validation
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `data/**/*.json` parse check: PASS, 65 JSON files
+
+## 11. Source / license status
+No raw downloads yet. `import_manifest.json` marks Mengqi97 as an index source, Tianchi TCM-NER / TCM-QG terms as pending Ting review, and the bulk formula knowledge-base candidate as blocked until exact source URL and terms are confirmed.
+
+## 12. Not completed
+No dataset was downloaded. No formula content was transformed into staging records. No merge into canonical formula files.
+
+## 13. Next reader should inspect
+Start with `data/imports/import_manifest.json` and `data/herbs/formula_import_staging.json`.
+
+## 14. Next step
+Confirm exact formula knowledge-base source URL and license/access terms. After approval, place raw files under `data/imports/<source>/`, record file hashes, and generate staging records only.
+
+## 15. Risk
+Low. This is staging-only and does not affect runtime data. Main risk is future licensing/source ambiguity, so raw download is intentionally blocked until reviewed.
+
+---
+
 # REBUILD HANDOFF - Session 15 (2026-07-03, Codex Friday relation validation layer)
 
 ## 1. Goal

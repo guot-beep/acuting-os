@@ -1,0 +1,121 @@
+{
+  "dataset": "AcuTing OS import manifest",
+  "status": "staging_manifest_no_raw_downloads",
+  "updated": "2026-07-03",
+  "purpose": "Track external datasets before any raw download, transformation, or merge into AcuTing OS.",
+  "import_policy": {
+    "sequence": [
+      "dataset foundation",
+      "institution or textbook source review",
+      "agent gap filling"
+    ],
+    "default_review_status": "draft",
+    "source_checked_rule": "Do not mark source_checked until checked against institutional databases, professional textbooks, WHO/official standards, or Ting-approved school materials.",
+    "medical_claim_rule": "Use conservative wording such as related documentation context, associated with, traditional pattern relationship, or review prompt. Do not state efficacy or replacement of biomedical diagnosis."
+  },
+  "protected_targets": [
+    "data/generated/*",
+    "data/sources/cloudtcm_point_map.json",
+    "app.js protected case/soap/cloudtcm/search logic",
+    "js/router.js",
+    "js/knowledge.js",
+    "styles.css point-detail-mode"
+  ],
+  "sources": [
+    {
+      "id": "source.github.mengqi97_chinese_medical_dataset",
+      "name": "Mengqi97/chinese-medical-dataset",
+      "url": "https://github.com/Mengqi97/chinese-medical-dataset",
+      "source_type": "dataset_index",
+      "best_for": [
+        "dataset discovery",
+        "format notes",
+        "download link triage"
+      ],
+      "license_status": "index_repository_public_license_not_confirmed_for_each_upstream_dataset",
+      "download_status": "not_downloaded",
+      "notes": "Use as an index only. Each upstream dataset needs its own license and access review."
+    },
+    {
+      "id": "source.tianchi.tcm_ner",
+      "name": "TCM-NER Chinese medicine package-insert entity recognition dataset",
+      "url": "https://tianchi.aliyun.com/dataset/86819",
+      "source_type": "structured_dataset_candidate",
+      "best_for": [
+        "herb terminology",
+        "Chinese patent medicine vocabulary",
+        "symptom and contraindication wording"
+      ],
+      "license_status": "terms_pending_ting_review",
+      "download_status": "not_downloaded",
+      "target_area": [
+        "herbs",
+        "formula safety vocabulary",
+        "study prompts"
+      ],
+      "notes": "Not a formula canon source. Keep any future import draft and do not treat as clinical truth."
+    },
+    {
+      "id": "source.tianchi.tcm_qg",
+      "name": "TCM-QG Chinese medicine literature question generation dataset",
+      "url": "https://tianchi.aliyun.com/dataset/86895",
+      "source_type": "study_text_dataset_candidate",
+      "best_for": [
+        "FOM study prompts",
+        "formula and herb learning questions",
+        "terminology extraction"
+      ],
+      "license_status": "terms_pending_ting_review",
+      "download_status": "not_downloaded",
+      "target_area": [
+        "learn",
+        "study prompts",
+        "draft glossary"
+      ],
+      "notes": "Useful for learning tools, not canonical formula composition or indications."
+    },
+    {
+      "id": "source.formula_knowledge_base.pending",
+      "name": "Chinese formula knowledge-base candidate",
+      "url": "",
+      "source_type": "formula_dataset_candidate",
+      "best_for": [
+        "formula names",
+        "source classics",
+        "composition",
+        "actions",
+        "contraindications"
+      ],
+      "license_status": "source_url_and_terms_pending",
+      "download_status": "not_downloaded",
+      "target_area": [
+        "formula_import_staging"
+      ],
+      "notes": "Needed before bulk formula import. Do not import formula content until source URL, access terms, and field quality are confirmed."
+    },
+    {
+      "id": "source.institution.hkbu_formula_images",
+      "name": "HKBU Chinese Medicine Formulae Images Database",
+      "url": "https://libproject.hkbu.edu.hk/was40/search?channelid=47953",
+      "source_type": "institutional_review_source",
+      "best_for": [
+        "formula composition review",
+        "actions and indications review",
+        "source classic verification"
+      ],
+      "license_status": "online_reference_manual_review",
+      "download_status": "not_downloaded",
+      "target_area": [
+        "formula source review"
+      ],
+      "notes": "Use for cross-checking and citations, not bulk scraping."
+    }
+  ],
+  "raw_downloads": [],
+  "next_steps": [
+    "Confirm formula knowledge-base source URL and terms before downloading.",
+    "If Ting approves Tianchi terms, create a raw subfolder under data/imports/ and record file hashes.",
+    "Keep formula content in data/herbs/formula_import_staging.json until Ting approves merge rules."
+  ]
+}
+
