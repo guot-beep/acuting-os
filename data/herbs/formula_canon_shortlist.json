@@ -12,8 +12,14 @@
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "common_cold",
+        "uri",
+        "sweating_pattern"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency"
+      ],
       "related_formulas": [
         "formula.ma_huang_tang",
         "formula.jiu_wei_qiang_huo_tang",
@@ -21,9 +27,10 @@
         "formula.bai_du_san"
       ],
       "comparison_group": "exterior_wind_cold",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.gui_zhi_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "麻黃湯",
@@ -32,7 +39,12 @@
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
+      "modern_clinical_use_tags": [
+        "common_cold",
+        "uri",
+        "cough",
+        "wheezing_context"
+      ],
       "related_conditions": [],
       "related_formulas": [
         "formula.gui_zhi_tang",
@@ -41,9 +53,10 @@
         "formula.bai_du_san"
       ],
       "comparison_group": "exterior_wind_cold",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.ma_huang_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "九味羌活湯",
@@ -92,16 +105,22 @@
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
+      "modern_clinical_use_tags": [
+        "common_cold",
+        "uri",
+        "sore_throat",
+        "fever_context"
+      ],
       "related_conditions": [],
       "related_formulas": [
         "formula.sang_ju_yin",
         "formula.ma_xing_shi_gan_tang"
       ],
       "comparison_group": "exterior_wind_heat",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.yin_qiao_san",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "桑菊飲",
@@ -110,16 +129,22 @@
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
+      "modern_clinical_use_tags": [
+        "cough",
+        "uri",
+        "common_cold",
+        "allergic_rhinitis"
+      ],
       "related_conditions": [],
       "related_formulas": [
         "formula.yin_qiao_san",
         "formula.ma_xing_shi_gan_tang"
       ],
       "comparison_group": "exterior_wind_heat",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.sang_ju_yin",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "麻杏石甘湯",
@@ -286,15 +311,24 @@
       "category": "清熱劑 / Clear Heat",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Clear Heat; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "urinary_symptoms",
+        "eczema",
+        "headache",
+        "genital_itching",
+        "damp_heat_context"
+      ],
+      "related_conditions": [
+        "pattern.damp_heat"
+      ],
       "related_formulas": [
         "formula.zuo_jin_wan"
       ],
       "comparison_group": "liver_gallbladder_damp_heat",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.long_dan_xie_gan_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "左金丸",
@@ -476,16 +510,22 @@
       "category": "和解劑 / Harmonize",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
+      "modern_clinical_use_tags": [
+        "nausea",
+        "appetite_loss",
+        "rib_side_discomfort",
+        "fever_context"
+      ],
       "related_conditions": [],
       "related_formulas": [
         "formula.da_chai_hu_tang",
         "formula.ban_xia_xie_xin_tang"
       ],
       "comparison_group": "shaoyang_harmonize",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.xiao_chai_hu_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "大柴胡湯",
@@ -533,8 +573,20 @@
       "category": "和解劑 / Harmonize",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "pms",
+        "ibs",
+        "anxiety",
+        "depression",
+        "infertility",
+        "irregular_menstruation"
+      ],
+      "related_conditions": [
+        "western_condition.unexplained_infertility",
+        "eastern_disease.irregular_menstruation",
+        "pattern.liver_qi_stagnation",
+        "pattern.spleen_qi_deficiency"
+      ],
       "related_formulas": [
         "formula.si_ni_san",
         "formula.jia_wei_xiao_yao_san",
@@ -543,9 +595,10 @@
         "formula.chai_hu_shu_gan_san"
       ],
       "comparison_group": "liver_spleen",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.xiao_yao_san",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "加味逍遙散",
@@ -554,8 +607,17 @@
       "category": "和解劑 / Harmonize",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "pms",
+        "menopause",
+        "anxiety",
+        "insomnia",
+        "irregular_menstruation"
+      ],
+      "related_conditions": [
+        "eastern_disease.irregular_menstruation",
+        "pattern.liver_qi_stagnation"
+      ],
       "related_formulas": [
         "formula.si_ni_san",
         "formula.xiao_yao_san",
@@ -564,9 +626,10 @@
         "formula.chai_hu_shu_gan_san"
       ],
       "comparison_group": "liver_spleen",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.jia_wei_xiao_yao_san",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "半夏瀉心湯",
@@ -575,16 +638,23 @@
       "category": "和解劑 / Harmonize",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Harmonize; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
+      "modern_clinical_use_tags": [
+        "gerd",
+        "nausea",
+        "diarrhea",
+        "ibs",
+        "bloating"
+      ],
       "related_conditions": [],
       "related_formulas": [
         "formula.xiao_chai_hu_tang",
         "formula.da_chai_hu_tang"
       ],
       "comparison_group": "shaoyang_harmonize",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.ban_xia_xie_xin_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "痛瀉要方",
@@ -778,8 +848,14 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "poor_appetite",
+        "loose_stools"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency"
+      ],
       "related_formulas": [
         "formula.liu_jun_zi_tang",
         "formula.shen_ling_bai_zhu_san",
@@ -788,9 +864,10 @@
         "formula.yu_ping_feng_san"
       ],
       "comparison_group": "qi_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.si_jun_zi_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "六君子湯",
@@ -799,8 +876,17 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "nausea",
+        "cough",
+        "bloating",
+        "phlegm"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.phlegm_damp"
+      ],
       "related_formulas": [
         "formula.si_jun_zi_tang",
         "formula.shen_ling_bai_zhu_san",
@@ -809,9 +895,10 @@
         "formula.yu_ping_feng_san"
       ],
       "comparison_group": "qi_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.liu_jun_zi_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "參苓白朮散",
@@ -841,8 +928,15 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "prolapse_context",
+        "loose_stools",
+        "post_illness_fatigue"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency"
+      ],
       "related_formulas": [
         "formula.si_jun_zi_tang",
         "formula.liu_jun_zi_tang",
@@ -851,9 +945,10 @@
         "formula.yu_ping_feng_san"
       ],
       "comparison_group": "qi_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.bu_zhong_yi_qi_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "生脈散",
@@ -904,15 +999,27 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "dysmenorrhea",
+        "amenorrhea",
+        "irregular_menstruation",
+        "infertility",
+        "fatigue"
+      ],
+      "related_conditions": [
+        "eastern_disease.irregular_menstruation",
+        "eastern_disease.amenorrhea",
+        "eastern_disease.infertility",
+        "pattern.blood_deficiency"
+      ],
       "related_formulas": [
         "formula.dang_gui_bu_xue_tang"
       ],
       "comparison_group": "blood_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.si_wu_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "當歸補血湯",
@@ -938,16 +1045,27 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "insomnia",
+        "anxiety",
+        "palpitations",
+        "chronic_fatigue",
+        "abnormal_bleeding"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_deficiency",
+        "western_condition.unexplained_infertility"
+      ],
       "related_formulas": [
         "formula.ba_zhen_tang",
         "formula.zhi_gan_cao_tang"
       ],
       "comparison_group": "qi_blood_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.gui_pi_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "八珍湯",
@@ -956,16 +1074,26 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "anemia_context",
+        "infertility",
+        "post_illness_fatigue"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_deficiency",
+        "western_condition.unexplained_infertility"
+      ],
       "related_formulas": [
         "formula.gui_pi_tang",
         "formula.zhi_gan_cao_tang"
       ],
       "comparison_group": "qi_blood_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.ba_zhen_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "炙甘草湯",
@@ -992,16 +1120,28 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "menopause",
+        "insomnia",
+        "infertility",
+        "dizziness",
+        "low_back_soreness"
+      ],
+      "related_conditions": [
+        "pattern.kidney_deficiency",
+        "pattern.yin_deficiency",
+        "western_condition.diminished_ovarian_reserve",
+        "western_condition.unexplained_infertility"
+      ],
       "related_formulas": [
         "formula.zuo_gui_wan",
         "formula.yi_guan_jian"
       ],
       "comparison_group": "yin_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.liu_wei_di_huang_wan",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "左歸丸",
@@ -1046,15 +1186,25 @@
       "category": "補益劑 / Tonify",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Tonify; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "infertility",
+        "urinary_frequency",
+        "edema",
+        "low_back_soreness",
+        "cold_intolerance"
+      ],
+      "related_conditions": [
+        "pattern.kidney_deficiency",
+        "western_condition.unexplained_infertility"
+      ],
       "related_formulas": [
         "formula.you_gui_wan"
       ],
       "comparison_group": "yang_tonify",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.jin_gui_shen_qi_wan",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "右歸丸",
@@ -1199,17 +1349,27 @@
       "category": "安神劑 / Calm the Spirit",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Calm the Spirit; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "insomnia",
+        "anxiety",
+        "palpitations",
+        "depression",
+        "menopause"
+      ],
+      "related_conditions": [
+        "pattern.yin_deficiency",
+        "pattern.blood_deficiency"
+      ],
       "related_formulas": [
         "formula.suan_zao_ren_tang",
         "formula.gan_mai_da_zao_tang",
         "formula.huang_lian_e_jiao_tang"
       ],
       "comparison_group": "calm_spirit",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.tian_wang_bu_xin_dan",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "甘麥大棗湯",
@@ -1473,8 +1633,16 @@
       "category": "理血劑 / Regulate Blood",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Regulate Blood; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "chest_pain_context",
+        "headache",
+        "dysmenorrhea",
+        "blood_stasis_pain"
+      ],
+      "related_conditions": [
+        "pattern.blood_stasis",
+        "eastern_disease.dysmenorrhea"
+      ],
       "related_formulas": [
         "formula.tao_he_cheng_qi_tang",
         "formula.bu_yang_huan_wu_tang",
@@ -1483,9 +1651,10 @@
         "formula.tao_hong_si_wu_tang"
       ],
       "comparison_group": "blood_stasis",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.xue_fu_zhu_yu_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "補陽還五湯",
@@ -1515,15 +1684,29 @@
       "category": "理血劑 / Regulate Blood",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Regulate Blood; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "dysmenorrhea",
+        "infertility",
+        "amenorrhea",
+        "irregular_menstruation",
+        "cold_pain_context"
+      ],
+      "related_conditions": [
+        "eastern_disease.dysmenorrhea",
+        "eastern_disease.infertility",
+        "eastern_disease.amenorrhea",
+        "eastern_disease.irregular_menstruation",
+        "pattern.blood_stasis",
+        "pattern.blood_deficiency"
+      ],
       "related_formulas": [
         "formula.sheng_hua_tang"
       ],
       "comparison_group": "gynecology_blood",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.wen_jing_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "生化湯",
@@ -1591,8 +1774,19 @@
       "category": "理血劑 / Regulate Blood",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Regulate Blood; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "dysmenorrhea",
+        "amenorrhea",
+        "irregular_menstruation",
+        "blood_stasis_pain"
+      ],
+      "related_conditions": [
+        "eastern_disease.dysmenorrhea",
+        "eastern_disease.amenorrhea",
+        "eastern_disease.irregular_menstruation",
+        "pattern.blood_stasis",
+        "pattern.blood_deficiency"
+      ],
       "related_formulas": [
         "formula.tao_he_cheng_qi_tang",
         "formula.xue_fu_zhu_yu_tang",
@@ -1601,9 +1795,10 @@
         "formula.gui_zhi_fu_ling_wan"
       ],
       "comparison_group": "blood_stasis",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.tao_hong_si_wu_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "十灰散",
@@ -1796,8 +1991,16 @@
       "category": "祛痰劑 / Transform Phlegm",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Transform Phlegm; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "cough",
+        "nausea",
+        "phlegm",
+        "dizziness",
+        "bloating"
+      ],
+      "related_conditions": [
+        "pattern.phlegm_damp"
+      ],
       "related_formulas": [
         "formula.wen_dan_tang",
         "formula.qing_qi_hua_tan_wan",
@@ -1806,9 +2009,10 @@
         "formula.ban_xia_bai_zhu_tian_ma_tang"
       ],
       "comparison_group": "phlegm_damp",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.er_chen_tang",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "溫膽湯",
@@ -1922,15 +2126,25 @@
       "category": "祛濕劑 / Dispel Dampness",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Dispel Dampness; CloudTCM /formula lookup pending",
       "review_status": "draft",
-      "modern_clinical_use_tags": [],
-      "related_conditions": [],
+      "modern_clinical_use_tags": [
+        "bloating",
+        "nausea",
+        "diarrhea",
+        "dyspepsia",
+        "poor_appetite"
+      ],
+      "related_conditions": [
+        "pattern.phlegm_damp",
+        "pattern.spleen_qi_deficiency"
+      ],
       "related_formulas": [
         "formula.huo_xiang_zheng_qi_san"
       ],
       "comparison_group": "damp_middle_jiao",
-      "clinical_use_note": "",
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "id": "formula.ping_wei_san",
-      "tier": "core"
+      "tier": "core",
+      "source_status": "bensky_review_pending_chinese_source_draft"
     },
     {
       "name_zh": "藿香正氣散",

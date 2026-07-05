@@ -1,3 +1,73 @@
+# REBUILD HANDOFF - Session 17 (2026-07-04, Codex 23 formula draft dual-track fill)
+
+## 1. Goal
+Follow `docs/FORMULA_SCHEMA_RULES.md`: first confirm the 115-formula shortlist has stable IDs, `tier: "core"`, and `comparison_group`; then fill only the existing 23 formulas as a pilot.
+
+## 2. Files changed
+- `data/herbs/formula_canon_shortlist.json`
+- `data/herbs/formulas.json`
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- Confirmed all 115 shortlist records already have `id`, `tier: "core"`, and `comparison_group`; no mechanical fixes were needed.
+- Added draft dual-track content to the 23 existing canonical formula records: composition pinyin list, actions, pattern indications, common modifications, contraindications, modern clinical use tags, related condition IDs, and separate `english_exam_track` / `chinese_depth_track` objects.
+- Added matching `modern_clinical_use_tags`, `related_conditions`, `clinical_use_note`, and source status to the corresponding 23 shortlist records.
+
+## 4. Source status correction
+Ting asked for Bensky source_checked English exam content, but no local Bensky text or Ting-approved school notes were available in this session. Therefore the 23 records were not marked `source_checked`.
+
+All 23 remain:
+- `review_status: "draft"`
+- `source_status: "bensky_review_pending_chinese_source_draft"`
+- `english_exam_track.source_status: "bensky_review_pending"`
+- `chinese_depth_track.source_status: "chinese_source_draft_hkbu_cloudtcm_review_pending"`
+
+## 5. Data content changes
+The 23 formula pilot now has search/study tags for modern contexts such as `pms`, `ibs`, `insomnia`, `dysmenorrhea`, `infertility`, `gerd`, `cough`, `chronic_fatigue`, and related ID links where existing condition/pattern IDs were available.
+
+## 6. Schema / field changes
+Added fields to formula records only:
+- `modern_clinical_use_tags`
+- `related_conditions`
+- `pattern_indications_en`
+- `pattern_indications_zh`
+- `source_status`
+- `english_exam_track`
+- `chinese_depth_track`
+
+## 7. Review status
+No formula was upgraded to `source_checked`. The content is a draft pilot for Ting review, not publish-ready and not clinical advice.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, or `scripts/validate-data.js` IGNORED_FIELDS.
+
+## 10. Validation
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `data/**/*.json` parse check: PASS, 65 JSON files
+
+## 11. Pilot list for Ting review
+The 23 filled pilot formulas are: Gui Zhi Tang, Ma Huang Tang, Yin Qiao San, Sang Ju Yin, Xiao Chai Hu Tang, Xiao Yao San, Jia Wei Xiao Yao San, Si Jun Zi Tang, Liu Jun Zi Tang, Bu Zhong Yi Qi Tang, Gui Pi Tang, Si Wu Tang, Ba Zhen Tang, Liu Wei Di Huang Wan, Jin Gui Shen Qi Wan, Tian Wang Bu Xin Dan, Long Dan Xie Gan Tang, Ban Xia Xie Xin Tang, Er Chen Tang, Ping Wei San, Wen Jing Tang, Tao Hong Si Wu Tang, Xue Fu Zhu Yu Tang.
+
+## 12. Not completed
+No Bensky source verification was performed. CloudTCM/HKBU individual formula page verification still needs a follow-up pass before any `source_checked` upgrade.
+
+## 13. Next reader should inspect
+Start with the 23 records in `data/herbs/formulas.json` and compare `english_exam_track` against Bensky/Formulas & Strategies or Ting-approved notes.
+
+## 14. Next step
+Ting reviews the 23 tags/related condition links. After approval, either (a) provide Bensky/school source material for source checking, or (b) expand draft tags to the remaining 92 core formulas without upgrading source status.
+
+## 15. Risk
+Medium. This adds draft educational formula content, so source status must remain visible. The main safety control is that no record is marked source_checked and wording is conservative.
+
+---
+
 # REBUILD HANDOFF - Session 16 (2026-07-03, Codex dataset foundation staging)
 
 ## 1. Goal

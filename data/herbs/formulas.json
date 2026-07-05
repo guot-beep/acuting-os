@@ -121,20 +121,78 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "sweating",
-        "febrile_illness",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gui Zhi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Shao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Da Zao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Release the exterior",
+        "Harmonize ying and wei"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Add Ge Gen for stiff neck/upper back pattern context",
+        "Add Hou Po and Xing Ren when wheezing pattern is discussed in classical modifications"
+      ],
+      "modifications_zh": [
+        "??????????????",
+        "??????????????"
+      ],
+      "contraindications_en": [
+        "Use caution with high fever or warm disease pattern context",
+        "Review sweating, dehydration, pregnancy, and medication context"
+      ],
+      "contraindications_zh": [
+        "??????????????",
+        "??????????????????"
+      ],
       "herb_drug_cautions": [
         "sweating",
         "febrile_illness",
@@ -146,7 +204,52 @@
         "sweating_pattern_review"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Exterior deficiency pattern with wind-cold presentation",
+        "Taiyang wind-strike pattern with sweating and aversion to wind"
+      ],
+      "pattern_indications_zh": [
+        "???????",
+        "???????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "common_cold",
+        "uri",
+        "sweating_pattern"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Release the exterior",
+          "Harmonize ying and wei"
+        ],
+        "pattern_indications_en": [
+          "Exterior deficiency pattern with wind-cold presentation",
+          "Taiyang wind-strike pattern with sweating and aversion to wind"
+        ],
+        "modifications_en": [
+          "Add Ge Gen for stiff neck/upper back pattern context",
+          "Add Hou Po and Xing Ren when wheezing pattern is discussed in classical modifications"
+        ],
+        "contraindications_en": [
+          "Use caution with high fever or warm disease pattern context",
+          "Review sweating, dehydration, pregnancy, and medication context"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "????????????????????????????????",
+        "zhu_zhi_zh": "???????????????????"
+      }
     },
     {
       "id": "formula.ma_huang_tang",
@@ -177,21 +280,69 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "hypertension_review",
-        "cardiac_review",
-        "stimulant_medication_review",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ma Huang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gui Zhi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Xing Ren",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Release exterior cold",
+        "Promote sweating",
+        "Diffuse Lung qi and calm wheezing pattern"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Differentiate from Gui Zhi Tang when sweating is present",
+        "Review Ma Huang safety in cardiovascular or stimulant-sensitive contexts"
+      ],
+      "modifications_zh": [
+        "????????????",
+        "??????????????????"
+      ],
+      "contraindications_en": [
+        "Pregnancy, hypertension, palpitations, insomnia, stimulant medication, or profuse sweating require review"
+      ],
+      "contraindications_zh": [
+        "?????????????????????????"
+      ],
       "herb_drug_cautions": [
         "hypertension_review",
         "cardiac_review",
@@ -204,7 +355,51 @@
         "respiratory_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Exterior excess wind-cold pattern with absence of sweating",
+        "Cough/wheezing pattern context with exterior cold signs"
+      ],
+      "pattern_indications_zh": [
+        "???????",
+        "?????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "common_cold",
+        "uri",
+        "cough",
+        "wheezing_context"
+      ],
+      "related_conditions": [],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Release exterior cold",
+          "Promote sweating",
+          "Diffuse Lung qi and calm wheezing pattern"
+        ],
+        "pattern_indications_en": [
+          "Exterior excess wind-cold pattern with absence of sweating",
+          "Cough/wheezing pattern context with exterior cold signs"
+        ],
+        "modifications_en": [
+          "Differentiate from Gui Zhi Tang when sweating is present",
+          "Review Ma Huang safety in cardiovascular or stimulant-sensitive contexts"
+        ],
+        "contraindications_en": [
+          "Pregnancy, hypertension, palpitations, insomnia, stimulant medication, or profuse sweating require review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????",
+        "zhu_zhi_zh": "?????????????????"
+      }
     },
     {
       "id": "formula.yin_qiao_san",
@@ -233,20 +428,116 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "febrile_illness",
-        "infection_review",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Jin Yin Hua",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Lian Qiao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Jing Jie",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dan Dou Chi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Niu Bang Zi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bo He",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Jie Geng",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhu Ye",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Lu Gen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Release wind-heat",
+        "Clear heat and support throat pattern differentiation"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Differentiate from Sang Ju Yin when cough is the leading presentation",
+        "Review fever red flags and infectious-disease referral context"
+      ],
+      "modifications_zh": [
+        "???????????",
+        "??????????/????"
+      ],
+      "contraindications_en": [
+        "Not for unreviewed severe infection, high fever, dehydration, or pediatric red flags"
+      ],
+      "contraindications_zh": [
+        "?????????????????????????"
+      ],
       "herb_drug_cautions": [
         "febrile_illness",
         "infection_review",
@@ -258,7 +549,48 @@
         "sore_throat_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Early-stage wind-heat pattern with fever, mild aversion to wind, sore throat context"
+      ],
+      "pattern_indications_zh": [
+        "??????",
+        "???????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "common_cold",
+        "uri",
+        "sore_throat",
+        "fever_context"
+      ],
+      "related_conditions": [],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Release wind-heat",
+          "Clear heat and support throat pattern differentiation"
+        ],
+        "pattern_indications_en": [
+          "Early-stage wind-heat pattern with fever, mild aversion to wind, sore throat context"
+        ],
+        "modifications_en": [
+          "Differentiate from Sang Ju Yin when cough is the leading presentation",
+          "Review fever red flags and infectious-disease referral context"
+        ],
+        "contraindications_en": [
+          "Not for unreviewed severe infection, high fever, dehydration, or pediatric red flags"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "???????????????????????????????????",
+        "zhu_zhi_zh": "???????????????????"
+      }
     },
     {
       "id": "formula.sang_ju_yin",
@@ -287,20 +619,100 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "respiratory_red_flags",
-        "febrile_illness",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sang Ye",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ju Hua",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Xing Ren",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Lian Qiao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bo He",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Jie Geng",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Lu Gen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Release wind-heat",
+        "Diffuse Lung qi and support cough pattern differentiation"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Yin Qiao San when throat/heat signs dominate",
+        "Review persistent cough, dyspnea, fever, or pneumonia red flags"
+      ],
+      "modifications_zh": [
+        "??????????????",
+        "??????????????????"
+      ],
+      "contraindications_en": [
+        "Persistent or severe respiratory symptoms require medical review"
+      ],
+      "contraindications_zh": [
+        "???????????????"
+      ],
       "herb_drug_cautions": [
         "respiratory_red_flags",
         "febrile_illness",
@@ -312,7 +724,47 @@
         "upper_respiratory_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Wind-heat cough pattern with mild exterior signs"
+      ],
+      "pattern_indications_zh": [
+        "??????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "cough",
+        "uri",
+        "common_cold",
+        "allergic_rhinitis"
+      ],
+      "related_conditions": [],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Release wind-heat",
+          "Diffuse Lung qi and support cough pattern differentiation"
+        ],
+        "pattern_indications_en": [
+          "Wind-heat cough pattern with mild exterior signs"
+        ],
+        "modifications_en": [
+          "Compare with Yin Qiao San when throat/heat signs dominate",
+          "Review persistent cough, dyspnea, fever, or pneumonia red flags"
+        ],
+        "contraindications_en": [
+          "Persistent or severe respiratory symptoms require medical review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????????",
+        "zhu_zhi_zh": "?????????????????"
+      }
     },
     {
       "id": "formula.xiao_chai_hu_tang",
@@ -341,20 +793,91 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "liver_disease_review",
-        "medication_review",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chai Hu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Huang Qin",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ban Xia",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ren Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Da Zao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Harmonize shaoyang",
+        "Support pivot-pattern differentiation"
+      ],
+      "actions_zh": [
+        "????"
+      ],
+      "modifications_en": [
+        "Differentiate from Da Chai Hu Tang when interior excess signs are present",
+        "Review liver/gallbladder or febrile red flags"
+      ],
+      "modifications_zh": [
+        "???????????",
+        "????????????"
+      ],
+      "contraindications_en": [
+        "Unexplained fever, severe abdominal pain, jaundice, or acute infection requires medical review"
+      ],
+      "contraindications_zh": [
+        "??????????????????????"
+      ],
       "herb_drug_cautions": [
         "liver_disease_review",
         "medication_review",
@@ -366,7 +889,47 @@
         "liver_gallbladder_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Shaoyang pattern context with alternating chills and fever, chest/rib-side discomfort, poor appetite, nausea"
+      ],
+      "pattern_indications_zh": [
+        "??????????????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "nausea",
+        "appetite_loss",
+        "rib_side_discomfort",
+        "fever_context"
+      ],
+      "related_conditions": [],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Harmonize shaoyang",
+          "Support pivot-pattern differentiation"
+        ],
+        "pattern_indications_en": [
+          "Shaoyang pattern context with alternating chills and fever, chest/rib-side discomfort, poor appetite, nausea"
+        ],
+        "modifications_en": [
+          "Differentiate from Da Chai Hu Tang when interior excess signs are present",
+          "Review liver/gallbladder or febrile red flags"
+        ],
+        "contraindications_en": [
+          "Unexplained fever, severe abdominal pain, jaundice, or acute infection requires medical review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????????????????",
+        "zhu_zhi_zh": "??????????????"
+      }
     },
     {
       "id": "formula.xiao_yao_san",
@@ -395,19 +958,101 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "pregnancy_review",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chai Hu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Shao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Zhu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Fu Ling",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bo He",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Soothe Liver qi",
+        "Strengthen Spleen",
+        "Nourish blood"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Jia Wei Xiao Yao San when heat signs are prominent",
+        "Differentiate from Chai Hu Shu Gan San when qi stagnation pain dominates"
+      ],
+      "modifications_zh": [
+        "?????????????",
+        "???????????????"
+      ],
+      "contraindications_en": [
+        "Review pregnancy, fertility medication timing, mood red flags, and herb-drug context"
+      ],
+      "contraindications_zh": [
+        "????????????????????"
+      ],
       "herb_drug_cautions": [
         "pregnancy_review",
         "medication_review"
@@ -419,7 +1064,55 @@
         "fertility_pattern_support"
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Liver qi stagnation with blood deficiency and Spleen deficiency pattern context"
+      ],
+      "pattern_indications_zh": [
+        "??????????"
+      ],
+      "modern_clinical_use_tags": [
+        "pms",
+        "ibs",
+        "anxiety",
+        "depression",
+        "infertility",
+        "irregular_menstruation"
+      ],
+      "related_conditions": [
+        "western_condition.unexplained_infertility",
+        "eastern_disease.irregular_menstruation",
+        "pattern.liver_qi_stagnation",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Soothe Liver qi",
+          "Strengthen Spleen",
+          "Nourish blood"
+        ],
+        "pattern_indications_en": [
+          "Liver qi stagnation with blood deficiency and Spleen deficiency pattern context"
+        ],
+        "modifications_en": [
+          "Compare with Jia Wei Xiao Yao San when heat signs are prominent",
+          "Differentiate from Chai Hu Shu Gan San when qi stagnation pain dominates"
+        ],
+        "contraindications_en": [
+          "Review pregnancy, fertility medication timing, mood red flags, and herb-drug context"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "?????????????????????????????????????",
+        "zhu_zhi_zh": "??????????????????????????"
+      }
     },
     {
       "id": "formula.jia_wei_xiao_yao_san",
@@ -449,20 +1142,61 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "pregnancy_review",
-        "medication_review",
-        "cold_digestive_weakness"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Xiao Yao San base",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Mu Dan Pi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Zi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Soothe Liver qi",
+        "Clear constrained heat",
+        "Strengthen Spleen and nourish blood pattern context"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Xiao Yao San when heat signs are absent",
+        "Review bleeding, pregnancy, and fertility contexts"
+      ],
+      "modifications_zh": [
+        "????????????",
+        "?????????????"
+      ],
+      "contraindications_en": [
+        "Review pregnancy, heavy bleeding, medication context, and severe mood symptoms"
+      ],
+      "contraindications_zh": [
+        "??????????????????????"
+      ],
       "herb_drug_cautions": [
         "pregnancy_review",
         "medication_review",
@@ -475,7 +1209,52 @@
         "stress_heat_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Liver qi stagnation with heat signs in the Xiao Yao San pattern family"
+      ],
+      "pattern_indications_zh": [
+        "?????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "pms",
+        "menopause",
+        "anxiety",
+        "insomnia",
+        "irregular_menstruation"
+      ],
+      "related_conditions": [
+        "eastern_disease.irregular_menstruation",
+        "pattern.liver_qi_stagnation"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Soothe Liver qi",
+          "Clear constrained heat",
+          "Strengthen Spleen and nourish blood pattern context"
+        ],
+        "pattern_indications_en": [
+          "Liver qi stagnation with heat signs in the Xiao Yao San pattern family"
+        ],
+        "modifications_en": [
+          "Compare with Xiao Yao San when heat signs are absent",
+          "Review bleeding, pregnancy, and fertility contexts"
+        ],
+        "contraindications_en": [
+          "Review pregnancy, heavy bleeding, medication context, and severe mood symptoms"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????",
+        "zhu_zhi_zh": "?????????????????"
+      }
     },
     {
       "id": "formula.si_jun_zi_tang",
@@ -502,19 +1281,67 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "cloying_digestive_effect",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ren Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Zhu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Fu Ling",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Tonify qi",
+        "Strengthen Spleen"
+      ],
+      "actions_zh": [
+        "????"
+      ],
+      "modifications_en": [
+        "Base formula for Liu Jun Zi Tang and related qi-tonifying comparisons",
+        "Review damp/phlegm signs before choosing variants"
+      ],
+      "modifications_zh": [
+        "????????????",
+        "????????????"
+      ],
+      "contraindications_en": [
+        "Review cloying/digestive tolerance and acute excess patterns"
+      ],
+      "contraindications_zh": [
+        "??????????????????"
+      ],
       "herb_drug_cautions": [
         "cloying_digestive_effect",
         "medication_review"
@@ -525,7 +1352,48 @@
         "digestive_deficiency_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Spleen qi deficiency pattern context with fatigue, low appetite, loose stool tendency"
+      ],
+      "pattern_indications_zh": [
+        "???????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "poor_appetite",
+        "loose_stools"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Tonify qi",
+          "Strengthen Spleen"
+        ],
+        "pattern_indications_en": [
+          "Spleen qi deficiency pattern context with fatigue, low appetite, loose stool tendency"
+        ],
+        "modifications_en": [
+          "Base formula for Liu Jun Zi Tang and related qi-tonifying comparisons",
+          "Review damp/phlegm signs before choosing variants"
+        ],
+        "contraindications_en": [
+          "Review cloying/digestive tolerance and acute excess patterns"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????",
+        "zhu_zhi_zh": "????????????????"
+      }
     },
     {
       "id": "formula.liu_jun_zi_tang",
@@ -554,20 +1422,62 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "cloying_digestive_effect",
-        "phlegm_pattern_review",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Si Jun Zi Tang base",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chen Pi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ban Xia",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Tonify Spleen qi",
+        "Transform phlegm",
+        "Regulate qi"
+      ],
+      "actions_zh": [
+        "????",
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Si Jun Zi Tang when phlegm/nausea signs are absent",
+        "Review cough/phlegm or digestive pattern context"
+      ],
+      "modifications_zh": [
+        "?????????????",
+        "??????????"
+      ],
+      "contraindications_en": [
+        "Review dryness, pregnancy, and medication context when using phlegm-transforming herbs"
+      ],
+      "contraindications_zh": [
+        "?????????????"
+      ],
       "herb_drug_cautions": [
         "cloying_digestive_effect",
         "phlegm_pattern_review",
@@ -579,7 +1489,52 @@
         "phlegm_damp_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Spleen qi deficiency with phlegm-damp and qi stagnation context"
+      ],
+      "pattern_indications_zh": [
+        "?????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "nausea",
+        "cough",
+        "bloating",
+        "phlegm"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.phlegm_damp"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Tonify Spleen qi",
+          "Transform phlegm",
+          "Regulate qi"
+        ],
+        "pattern_indications_en": [
+          "Spleen qi deficiency with phlegm-damp and qi stagnation context"
+        ],
+        "modifications_en": [
+          "Compare with Si Jun Zi Tang when phlegm/nausea signs are absent",
+          "Review cough/phlegm or digestive pattern context"
+        ],
+        "contraindications_en": [
+          "Review dryness, pregnancy, and medication context when using phlegm-transforming herbs"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "???????????????????????",
+        "zhu_zhi_zh": "???????????????"
+      }
     },
     {
       "id": "formula.bu_zhong_yi_qi_tang",
@@ -609,20 +1564,101 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "hypertension_review",
-        "heat_signs",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Huang Qi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ren Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Zhu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chen Pi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Ma",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chai Hu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Tonify middle qi",
+        "Raise yang",
+        "Support sinking qi pattern context"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Si Jun Zi Tang for simple qi deficiency",
+        "Review fever, infection, hypertension, and pregnancy contexts"
+      ],
+      "modifications_zh": [
+        "????????????",
+        "??????????????"
+      ],
+      "contraindications_en": [
+        "Use caution with uncontrolled hypertension, acute infection, or unreviewed bleeding/prolapse context"
+      ],
+      "contraindications_zh": [
+        "???????????????????????"
+      ],
       "herb_drug_cautions": [
         "hypertension_review",
         "heat_signs",
@@ -635,7 +1671,50 @@
         "digestive_deficiency_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Spleen/Stomach qi deficiency with sinking qi pattern context"
+      ],
+      "pattern_indications_zh": [
+        "?????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "prolapse_context",
+        "loose_stools",
+        "post_illness_fatigue"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Tonify middle qi",
+          "Raise yang",
+          "Support sinking qi pattern context"
+        ],
+        "pattern_indications_en": [
+          "Spleen/Stomach qi deficiency with sinking qi pattern context"
+        ],
+        "modifications_en": [
+          "Compare with Si Jun Zi Tang for simple qi deficiency",
+          "Review fever, infection, hypertension, and pregnancy contexts"
+        ],
+        "contraindications_en": [
+          "Use caution with uncontrolled hypertension, acute infection, or unreviewed bleeding/prolapse context"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????????????",
+        "zhu_zhi_zh": "????????????????"
+      }
     },
     {
       "id": "formula.gui_pi_tang",
@@ -666,20 +1745,134 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "sedative_medication_review",
-        "bleeding_review",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ren Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Huang Qi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Zhu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Fu Ling",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Suan Zao Ren",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Long Yan Rou",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Yuan Zhi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Mu Xiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Da Zao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Tonify qi and blood",
+        "Strengthen Spleen",
+        "Nourish Heart",
+        "Support bleeding-pattern documentation context"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Ba Zhen Tang for general qi-blood deficiency",
+        "Review anticoagulants, bleeding, sedatives, and pregnancy"
+      ],
+      "modifications_zh": [
+        "????????????",
+        "???????????????"
+      ],
+      "contraindications_en": [
+        "Review bleeding disorders, anticoagulants, sedating medications, and pregnancy/fertility context"
+      ],
+      "contraindications_zh": [
+        "???????????????????????"
+      ],
       "herb_drug_cautions": [
         "sedative_medication_review",
         "bleeding_review",
@@ -693,7 +1886,54 @@
         "gynecology_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Heart-Spleen deficiency pattern context with insomnia, palpitations, fatigue, poor memory, or bleeding tendency"
+      ],
+      "pattern_indications_zh": [
+        "??????????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "insomnia",
+        "anxiety",
+        "palpitations",
+        "chronic_fatigue",
+        "abnormal_bleeding"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_deficiency",
+        "western_condition.unexplained_infertility"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Tonify qi and blood",
+          "Strengthen Spleen",
+          "Nourish Heart",
+          "Support bleeding-pattern documentation context"
+        ],
+        "pattern_indications_en": [
+          "Heart-Spleen deficiency pattern context with insomnia, palpitations, fatigue, poor memory, or bleeding tendency"
+        ],
+        "modifications_en": [
+          "Compare with Ba Zhen Tang for general qi-blood deficiency",
+          "Review anticoagulants, bleeding, sedatives, and pregnancy"
+        ],
+        "contraindications_en": [
+          "Review bleeding disorders, anticoagulants, sedating medications, and pregnancy/fertility context"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????",
+        "zhu_zhi_zh": "???????????????????????????"
+      }
     },
     {
       "id": "formula.si_wu_tang",
@@ -723,20 +1963,67 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "pregnancy_review",
-        "bleeding_review",
-        "anticoagulant_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Shu Di Huang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Shao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chuan Xiong",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Tonify blood",
+        "Regulate blood"
+      ],
+      "actions_zh": [
+        "????"
+      ],
+      "modifications_en": [
+        "Base for many gynecologic blood formulas",
+        "Review blood stasis, pregnancy, anticoagulants, and bleeding pattern"
+      ],
+      "modifications_zh": [
+        "???????????",
+        "????????????????"
+      ],
+      "contraindications_en": [
+        "Review heavy bleeding, anticoagulant use, pregnancy, and digestive tolerance"
+      ],
+      "contraindications_zh": [
+        "???????????????????"
+      ],
       "herb_drug_cautions": [
         "pregnancy_review",
         "bleeding_review",
@@ -749,7 +2036,53 @@
         "blood_deficiency_pattern_support"
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Blood deficiency and blood regulation pattern context, especially gynecologic study context"
+      ],
+      "pattern_indications_zh": [
+        "????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "dysmenorrhea",
+        "amenorrhea",
+        "irregular_menstruation",
+        "infertility",
+        "fatigue"
+      ],
+      "related_conditions": [
+        "eastern_disease.irregular_menstruation",
+        "eastern_disease.amenorrhea",
+        "eastern_disease.infertility",
+        "pattern.blood_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Tonify blood",
+          "Regulate blood"
+        ],
+        "pattern_indications_en": [
+          "Blood deficiency and blood regulation pattern context, especially gynecologic study context"
+        ],
+        "modifications_en": [
+          "Base for many gynecologic blood formulas",
+          "Review blood stasis, pregnancy, anticoagulants, and bleeding pattern"
+        ],
+        "contraindications_en": [
+          "Review heavy bleeding, anticoagulant use, pregnancy, and digestive tolerance"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "?????????????????????????????",
+        "zhu_zhi_zh": "???????????????????"
+      }
     },
     {
       "id": "formula.ba_zhen_tang",
@@ -779,20 +2112,50 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "pregnancy_review",
-        "bleeding_review",
-        "cloying_digestive_effect"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Si Jun Zi Tang base",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Si Wu Tang base",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Tonify qi and blood"
+      ],
+      "actions_zh": [
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Gui Pi Tang when Heart-Spleen insomnia/palpitations dominate",
+        "Review pregnancy, bleeding, and digestive tolerance"
+      ],
+      "modifications_zh": [
+        "?????????????????",
+        "?????????????"
+      ],
+      "contraindications_en": [
+        "Review acute excess patterns, heavy bleeding, anticoagulants, and fertility medication timing"
+      ],
+      "contraindications_zh": [
+        "???????????????????????"
+      ],
       "herb_drug_cautions": [
         "pregnancy_review",
         "bleeding_review",
@@ -805,7 +2168,50 @@
         "fertility_pattern_support"
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Qi and blood deficiency pattern context"
+      ],
+      "pattern_indications_zh": [
+        "????????"
+      ],
+      "modern_clinical_use_tags": [
+        "chronic_fatigue",
+        "anemia_context",
+        "infertility",
+        "post_illness_fatigue"
+      ],
+      "related_conditions": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_deficiency",
+        "western_condition.unexplained_infertility"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Tonify qi and blood"
+        ],
+        "pattern_indications_en": [
+          "Qi and blood deficiency pattern context"
+        ],
+        "modifications_en": [
+          "Compare with Gui Pi Tang when Heart-Spleen insomnia/palpitations dominate",
+          "Review pregnancy, bleeding, and digestive tolerance"
+        ],
+        "contraindications_en": [
+          "Review acute excess patterns, heavy bleeding, anticoagulants, and fertility medication timing"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????",
+        "zhu_zhi_zh": "?????????????????"
+      }
     },
     {
       "id": "formula.liu_wei_di_huang_wan",
@@ -834,20 +2240,82 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "cloying_digestive_effect",
-        "kidney_disease_review",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Shu Di Huang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Shan Zhu Yu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Shan Yao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ze Xie",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Mu Dan Pi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Fu Ling",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Nourish Kidney and Liver yin"
+      ],
+      "actions_zh": [
+        "?????"
+      ],
+      "modifications_en": [
+        "Compare with Zuo Gui Wan for stronger yin deficiency study context",
+        "Review cloying digestive effect and renal/medication context"
+      ],
+      "modifications_zh": [
+        "???????????",
+        "???????/???????"
+      ],
+      "contraindications_en": [
+        "Review loose stools, dampness, pregnancy/fertility medication context, and kidney disease"
+      ],
+      "contraindications_zh": [
+        "????????/????????????"
+      ],
       "herb_drug_cautions": [
         "cloying_digestive_effect",
         "kidney_disease_review",
@@ -860,7 +2328,52 @@
         "yin_deficiency_pattern_support"
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Kidney/Liver yin deficiency pattern context"
+      ],
+      "pattern_indications_zh": [
+        "????????"
+      ],
+      "modern_clinical_use_tags": [
+        "menopause",
+        "insomnia",
+        "infertility",
+        "dizziness",
+        "low_back_soreness"
+      ],
+      "related_conditions": [
+        "pattern.kidney_deficiency",
+        "pattern.yin_deficiency",
+        "western_condition.diminished_ovarian_reserve",
+        "western_condition.unexplained_infertility"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Nourish Kidney and Liver yin"
+        ],
+        "pattern_indications_en": [
+          "Kidney/Liver yin deficiency pattern context"
+        ],
+        "modifications_en": [
+          "Compare with Zuo Gui Wan for stronger yin deficiency study context",
+          "Review cloying digestive effect and renal/medication context"
+        ],
+        "contraindications_en": [
+          "Review loose stools, dampness, pregnancy/fertility medication context, and kidney disease"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????????????????",
+        "zhu_zhi_zh": "?????????????????????????"
+      }
     },
     {
       "id": "formula.jin_gui_shen_qi_wan",
@@ -890,21 +2403,60 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "heat_signs",
-        "kidney_disease_review",
-        "pregnancy_review",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Liu Wei Di Huang Wan base",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Fu Zi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gui Zhi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Warm and tonify Kidney yang",
+        "Support water metabolism pattern context"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Liu Wei Di Huang Wan for yin deficiency pattern",
+        "Review hypertension, pregnancy, cardiac, and kidney disease context"
+      ],
+      "modifications_zh": [
+        "?????????????",
+        "?????????????????"
+      ],
+      "contraindications_en": [
+        "Review heat signs, hypertension, pregnancy, cardiac disease, kidney disease, and medication context"
+      ],
+      "contraindications_zh": [
+        "????????????????????"
+      ],
       "herb_drug_cautions": [
         "heat_signs",
         "kidney_disease_review",
@@ -918,7 +2470,51 @@
         "fertility_pattern_support"
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Kidney yang deficiency pattern context with cold, low back soreness, urinary or edema context"
+      ],
+      "pattern_indications_zh": [
+        "???????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "infertility",
+        "urinary_frequency",
+        "edema",
+        "low_back_soreness",
+        "cold_intolerance"
+      ],
+      "related_conditions": [
+        "pattern.kidney_deficiency",
+        "western_condition.unexplained_infertility"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Warm and tonify Kidney yang",
+          "Support water metabolism pattern context"
+        ],
+        "pattern_indications_en": [
+          "Kidney yang deficiency pattern context with cold, low back soreness, urinary or edema context"
+        ],
+        "modifications_en": [
+          "Compare with Liu Wei Di Huang Wan for yin deficiency pattern",
+          "Review hypertension, pregnancy, cardiac, and kidney disease context"
+        ],
+        "contraindications_en": [
+          "Review heat signs, hypertension, pregnancy, cardiac disease, kidney disease, and medication context"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "???????????????????????",
+        "zhu_zhi_zh": "??????????????????"
+      }
     },
     {
       "id": "formula.tian_wang_bu_xin_dan",
@@ -948,20 +2544,141 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "sedative_medication_review",
-        "psychiatric_red_flags",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Xuan Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Mai Men Dong",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Tian Men Dong",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dan Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ren Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Fu Ling",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Wu Wei Zi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Yuan Zhi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Suan Zao Ren",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Zi Ren",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Jie Geng",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Nourish yin",
+        "Tonify blood",
+        "Calm spirit"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Suan Zao Ren Tang for Liver blood/yin sleep context",
+        "Review psychiatric red flags and sedative medications"
+      ],
+      "modifications_zh": [
+        "?????????????",
+        "?????????????"
+      ],
+      "contraindications_en": [
+        "Review severe depression, suicidality, mania, sedatives, pregnancy, and digestive tolerance"
+      ],
+      "contraindications_zh": [
+        "???????????????????????????"
+      ],
       "herb_drug_cautions": [
         "sedative_medication_review",
         "psychiatric_red_flags",
@@ -974,7 +2691,52 @@
         "palpitations_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Heart-Kidney yin/blood deficiency pattern context with insomnia, palpitations, anxiety, dry mouth"
+      ],
+      "pattern_indications_zh": [
+        "????????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "insomnia",
+        "anxiety",
+        "palpitations",
+        "depression",
+        "menopause"
+      ],
+      "related_conditions": [
+        "pattern.yin_deficiency",
+        "pattern.blood_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Nourish yin",
+          "Tonify blood",
+          "Calm spirit"
+        ],
+        "pattern_indications_en": [
+          "Heart-Kidney yin/blood deficiency pattern context with insomnia, palpitations, anxiety, dry mouth"
+        ],
+        "modifications_en": [
+          "Compare with Suan Zao Ren Tang for Liver blood/yin sleep context",
+          "Review psychiatric red flags and sedative medications"
+        ],
+        "contraindications_en": [
+          "Review severe depression, suicidality, mania, sedatives, pregnancy, and digestive tolerance"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "?????????????????????????",
+        "zhu_zhi_zh": "??????????????????????"
+      }
     },
     {
       "id": "formula.long_dan_xie_gan_tang",
@@ -1005,21 +2767,114 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "cold_digestive_weakness",
-        "liver_disease_review",
-        "pregnancy_review",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Long Dan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Huang Qin",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Zi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ze Xie",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Mu Tong",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Che Qian Zi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chai Hu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Clear Liver/Gallbladder excess heat",
+        "Drain damp-heat from lower burner pattern context"
+      ],
+      "actions_zh": [
+        "??????",
+        "??????"
+      ],
+      "modifications_en": [
+        "Review infection rule-out, urinary/genital symptoms, pregnancy, liver disease, and medication context"
+      ],
+      "modifications_zh": [
+        "??/??????????????????"
+      ],
+      "contraindications_en": [
+        "Not for self-treatment of suspected infection, severe pain, fever, pregnancy bleeding, or liver disease without review"
+      ],
+      "contraindications_zh": [
+        "????????????????????????????"
+      ],
       "herb_drug_cautions": [
         "cold_digestive_weakness",
         "liver_disease_review",
@@ -1033,7 +2888,49 @@
         "liver_gallbladder_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Liver/Gallbladder damp-heat or excess heat pattern context"
+      ],
+      "pattern_indications_zh": [
+        "?????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "urinary_symptoms",
+        "eczema",
+        "headache",
+        "genital_itching",
+        "damp_heat_context"
+      ],
+      "related_conditions": [
+        "pattern.damp_heat"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Clear Liver/Gallbladder excess heat",
+          "Drain damp-heat from lower burner pattern context"
+        ],
+        "pattern_indications_en": [
+          "Liver/Gallbladder damp-heat or excess heat pattern context"
+        ],
+        "modifications_en": [
+          "Review infection rule-out, urinary/genital symptoms, pregnancy, liver disease, and medication context"
+        ],
+        "contraindications_en": [
+          "Not for self-treatment of suspected infection, severe pain, fever, pregnancy bleeding, or liver disease without review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "????????????????????????????????????????????",
+        "zhu_zhi_zh": "??????????????????"
+      }
     },
     {
       "id": "formula.ban_xia_xie_xin_tang",
@@ -1063,20 +2960,94 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "gi_red_flags",
-        "pregnancy_review",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ban Xia",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Huang Qin",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Huang Lian",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gan Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ren Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Da Zao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Harmonize Stomach and Intestines",
+        "Disperse focal distention",
+        "Balance cold and heat pattern context"
+      ],
+      "actions_zh": [
+        "????",
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Xiao Chai Hu Tang in shaoyang/digestive overlap",
+        "Review GI red flags"
+      ],
+      "modifications_zh": [
+        "??????????????",
+        "??????????"
+      ],
+      "contraindications_en": [
+        "Severe abdominal pain, blood in stool, persistent vomiting, dehydration, or weight loss requires medical review"
+      ],
+      "contraindications_zh": [
+        "?????????????????????????"
+      ],
       "herb_drug_cautions": [
         "gi_red_flags",
         "pregnancy_review",
@@ -1089,7 +3060,49 @@
         "reflux_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Mixed cold-heat focal distention pattern with epigastric fullness, nausea, borborygmus, or diarrhea context"
+      ],
+      "pattern_indications_zh": [
+        "????????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "gerd",
+        "nausea",
+        "diarrhea",
+        "ibs",
+        "bloating"
+      ],
+      "related_conditions": [],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Harmonize Stomach and Intestines",
+          "Disperse focal distention",
+          "Balance cold and heat pattern context"
+        ],
+        "pattern_indications_en": [
+          "Mixed cold-heat focal distention pattern with epigastric fullness, nausea, borborygmus, or diarrhea context"
+        ],
+        "modifications_en": [
+          "Compare with Xiao Chai Hu Tang in shaoyang/digestive overlap",
+          "Review GI red flags"
+        ],
+        "contraindications_en": [
+          "Severe abdominal pain, blood in stool, persistent vomiting, dehydration, or weight loss requires medical review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "????????????????????????????????",
+        "zhu_zhi_zh": "???????????????????"
+      }
     },
     {
       "id": "formula.er_chen_tang",
@@ -1119,20 +3132,85 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "respiratory_red_flags",
-        "pregnancy_review",
-        "medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ban Xia",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chen Pi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Fu Ling",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Wu Mei",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Dry dampness",
+        "Transform phlegm",
+        "Regulate qi and harmonize middle"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Base formula for phlegm-damp comparisons such as Wen Dan Tang",
+        "Review persistent cough and respiratory red flags"
+      ],
+      "modifications_zh": [
+        "????????????",
+        "??????????"
+      ],
+      "contraindications_en": [
+        "Dry cough without phlegm, hemoptysis, dyspnea, high fever, or pregnancy requires review"
+      ],
+      "contraindications_zh": [
+        "???????????????????"
+      ],
       "herb_drug_cautions": [
         "respiratory_red_flags",
         "pregnancy_review",
@@ -1145,7 +3223,51 @@
         "dizziness_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Phlegm-damp pattern context with cough, nausea, chest/epigastric fullness, dizziness, or slippery pulse pattern"
+      ],
+      "pattern_indications_zh": [
+        "???????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "cough",
+        "nausea",
+        "phlegm",
+        "dizziness",
+        "bloating"
+      ],
+      "related_conditions": [
+        "pattern.phlegm_damp"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Dry dampness",
+          "Transform phlegm",
+          "Regulate qi and harmonize middle"
+        ],
+        "pattern_indications_en": [
+          "Phlegm-damp pattern context with cough, nausea, chest/epigastric fullness, dizziness, or slippery pulse pattern"
+        ],
+        "modifications_en": [
+          "Base formula for phlegm-damp comparisons such as Wen Dan Tang",
+          "Review persistent cough and respiratory red flags"
+        ],
+        "contraindications_en": [
+          "Dry cough without phlegm, hemoptysis, dyspnea, high fever, or pregnancy requires review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "?????????????????????????????",
+        "zhu_zhi_zh": "??????????????"
+      }
     },
     {
       "id": "formula.ping_wei_san",
@@ -1174,20 +3296,85 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "dryness_review",
-        "gi_red_flags",
-        "pregnancy_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Cang Zhu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Hou Po",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chen Pi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Da Zao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Dry dampness",
+        "Move qi",
+        "Harmonize Stomach"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Er Chen Tang when phlegm is prominent",
+        "Review dehydration, pregnancy, and acute GI red flags"
+      ],
+      "modifications_zh": [
+        "???????????",
+        "???????????????"
+      ],
+      "contraindications_en": [
+        "Yin deficiency dryness, severe abdominal pain, persistent vomiting, dehydration, or pregnancy requires review"
+      ],
+      "contraindications_zh": [
+        "???????????????????????"
+      ],
       "herb_drug_cautions": [
         "dryness_review",
         "gi_red_flags",
@@ -1199,7 +3386,52 @@
         "digestive_damp_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Dampness obstructing middle burner pattern context with fullness, poor appetite, heavy sensation, loose stool tendency"
+      ],
+      "pattern_indications_zh": [
+        "??????????????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "bloating",
+        "nausea",
+        "diarrhea",
+        "dyspepsia",
+        "poor_appetite"
+      ],
+      "related_conditions": [
+        "pattern.phlegm_damp",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Dry dampness",
+          "Move qi",
+          "Harmonize Stomach"
+        ],
+        "pattern_indications_en": [
+          "Dampness obstructing middle burner pattern context with fullness, poor appetite, heavy sensation, loose stool tendency"
+        ],
+        "modifications_en": [
+          "Compare with Er Chen Tang when phlegm is prominent",
+          "Review dehydration, pregnancy, and acute GI red flags"
+        ],
+        "contraindications_en": [
+          "Yin deficiency dryness, severe abdominal pain, persistent vomiting, dehydration, or pregnancy requires review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "??????????????????????????????????",
+        "zhu_zhi_zh": "???????????????????"
+      }
     },
     {
       "id": "formula.wen_jing_tang",
@@ -1231,21 +3463,133 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "pregnancy_review",
-        "bleeding_review",
-        "anticoagulant_review",
-        "fertility_medication_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Wu Zhu Yu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gui Zhi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chuan Xiong",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Bai Shao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "E Jiao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Mai Men Dong",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Mu Dan Pi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ren Shen",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Jiang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Ban Xia",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Warm the channels",
+        "Nourish blood",
+        "Dispel stasis",
+        "Regulate menstruation pattern context"
+      ],
+      "actions_zh": [
+        "????",
+        "????",
+        "??"
+      ],
+      "modifications_en": [
+        "Review pregnancy possibility, bleeding pattern, fertility medication timing, and anticoagulants"
+      ],
+      "modifications_zh": [
+        "???????????????????????"
+      ],
+      "contraindications_en": [
+        "Pregnancy, heavy bleeding, anticoagulants, fever/infection, or unclear pelvic pain requires review"
+      ],
+      "contraindications_zh": [
+        "????????????????????????"
+      ],
       "herb_drug_cautions": [
         "pregnancy_review",
         "bleeding_review",
@@ -1259,7 +3603,56 @@
         "ivf_iui_review"
       ],
       "fertility_notes": "Needs fertility/IVF/IUI medication timing review before clinical or public use.",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Chong/Ren deficiency-cold with blood stasis pattern context in gynecologic study"
+      ],
+      "pattern_indications_zh": [
+        "???????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "dysmenorrhea",
+        "infertility",
+        "amenorrhea",
+        "irregular_menstruation",
+        "cold_pain_context"
+      ],
+      "related_conditions": [
+        "eastern_disease.dysmenorrhea",
+        "eastern_disease.infertility",
+        "eastern_disease.amenorrhea",
+        "eastern_disease.irregular_menstruation",
+        "pattern.blood_stasis",
+        "pattern.blood_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Warm the channels",
+          "Nourish blood",
+          "Dispel stasis",
+          "Regulate menstruation pattern context"
+        ],
+        "pattern_indications_en": [
+          "Chong/Ren deficiency-cold with blood stasis pattern context in gynecologic study"
+        ],
+        "modifications_en": [
+          "Review pregnancy possibility, bleeding pattern, fertility medication timing, and anticoagulants"
+        ],
+        "contraindications_en": [
+          "Pregnancy, heavy bleeding, anticoagulants, fever/infection, or unclear pelvic pain requires review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "?????????????????????????",
+        "zhu_zhi_zh": "???????????????????????"
+      }
     },
     {
       "id": "formula.tao_hong_si_wu_tang",
@@ -1288,20 +3681,60 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "pregnancy_caution",
-        "anticoagulant_review",
-        "bleeding_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Si Wu Tang base",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Tao Ren",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Hong Hua",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Tonify and regulate blood",
+        "Invigorate blood and dispel stasis"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Xue Fu Zhu Yu Tang for upper/chest blood stasis context",
+        "Review pregnancy and bleeding risk"
+      ],
+      "modifications_zh": [
+        "??????????????",
+        "??????????"
+      ],
+      "contraindications_en": [
+        "Pregnancy, heavy bleeding, anticoagulants, surgery/procedure timing, or anemia requires review"
+      ],
+      "contraindications_zh": [
+        "???????????????????????"
+      ],
       "herb_drug_cautions": [
         "pregnancy_caution",
         "anticoagulant_review",
@@ -1313,7 +3746,53 @@
         "blood_stasis_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Blood deficiency with blood stasis pattern context"
+      ],
+      "pattern_indications_zh": [
+        "?????????"
+      ],
+      "modern_clinical_use_tags": [
+        "dysmenorrhea",
+        "amenorrhea",
+        "irregular_menstruation",
+        "blood_stasis_pain"
+      ],
+      "related_conditions": [
+        "eastern_disease.dysmenorrhea",
+        "eastern_disease.amenorrhea",
+        "eastern_disease.irregular_menstruation",
+        "pattern.blood_stasis",
+        "pattern.blood_deficiency"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Tonify and regulate blood",
+          "Invigorate blood and dispel stasis"
+        ],
+        "pattern_indications_en": [
+          "Blood deficiency with blood stasis pattern context"
+        ],
+        "modifications_en": [
+          "Compare with Xue Fu Zhu Yu Tang for upper/chest blood stasis context",
+          "Review pregnancy and bleeding risk"
+        ],
+        "contraindications_en": [
+          "Pregnancy, heavy bleeding, anticoagulants, surgery/procedure timing, or anemia requires review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "???????????????????",
+        "zhu_zhi_zh": "???????????????????"
+      }
     },
     {
       "id": "formula.xue_fu_zhu_yu_tang",
@@ -1344,21 +3823,125 @@
       "nccaom_high_yield": true,
       "review_status": "draft",
       "public_safe": false,
-      "source_urls": [],
-      "source_type": "draft_seed_pending_source_review",
-      "last_reviewed": "",
-      "composition": [],
-      "actions_en": [],
-      "actions_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [
-        "chest_pain_red_flag",
-        "anticoagulant_review",
-        "pregnancy_caution",
-        "bleeding_review"
+      "source_urls": [
+        "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
+        "https://cloudtcm.com/formula"
       ],
-      "contraindications_zh": [],
+      "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+      "last_reviewed": "",
+      "composition": [
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Tao Ren",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Hong Hua",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Dang Gui",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chuan Xiong",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chi Shao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Niu Xi",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Jie Geng",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Chai Hu",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Zhi Ke",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        },
+        {
+          "herb_zh": "",
+          "herb_en": "",
+          "pinyin": "Gan Cao",
+          "role_zh": "",
+          "role_en": "",
+          "dose_range": ""
+        }
+      ],
+      "actions_en": [
+        "Invigorate blood",
+        "Dispel stasis",
+        "Move qi and relieve constraint pattern context"
+      ],
+      "actions_zh": [
+        "????",
+        "????"
+      ],
+      "modifications_en": [
+        "Compare with Tao Hong Si Wu Tang for gynecologic blood deficiency/stasis context",
+        "Review cardiovascular red flags and anticoagulants"
+      ],
+      "modifications_zh": [
+        "???????????????",
+        "????????????"
+      ],
+      "contraindications_en": [
+        "Chest pain, stroke-like symptoms, pregnancy, anticoagulants, heavy bleeding, or surgery timing requires medical review"
+      ],
+      "contraindications_zh": [
+        "?????????????????????????????"
+      ],
       "herb_drug_cautions": [
         "chest_pain_red_flag",
         "anticoagulant_review",
@@ -1372,7 +3955,51 @@
         "menstrual_pattern_support"
       ],
       "fertility_notes": "",
-      "clinical_pearls": []
+      "clinical_pearls": [],
+      "pattern_indications_en": [
+        "Blood stasis in the chest/upper body pattern context with qi constraint overlap"
+      ],
+      "pattern_indications_zh": [
+        "?????????????"
+      ],
+      "modern_clinical_use_tags": [
+        "chest_pain_context",
+        "headache",
+        "dysmenorrhea",
+        "blood_stasis_pain"
+      ],
+      "related_conditions": [
+        "pattern.blood_stasis",
+        "eastern_disease.dysmenorrhea"
+      ],
+      "source_status": "bensky_review_pending_chinese_source_draft",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "source_note": "Exam-track structure drafted from standard formula study conventions; verify against Bensky Formulas & Strategies before source_checked.",
+        "actions_en": [
+          "Invigorate blood",
+          "Dispel stasis",
+          "Move qi and relieve constraint pattern context"
+        ],
+        "pattern_indications_en": [
+          "Blood stasis in the chest/upper body pattern context with qi constraint overlap"
+        ],
+        "modifications_en": [
+          "Compare with Tao Hong Si Wu Tang for gynecologic blood deficiency/stasis context",
+          "Review cardiovascular red flags and anticoagulants"
+        ],
+        "contraindications_en": [
+          "Chest pain, stroke-like symptoms, pregnancy, anticoagulants, heavy bleeding, or surgery timing requires medical review"
+        ]
+      },
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "source_note": "Chinese-depth notes are draft study summaries intended for cross-check against HKBU/CloudTCM and Ting-approved materials.",
+        "fang_yi_zh": "????????????????????????????????????????????",
+        "zhu_zhi_zh": "??????????????????????"
+      }
     }
   ],
   "category_source": "data/herbs/formula_categories.json",
