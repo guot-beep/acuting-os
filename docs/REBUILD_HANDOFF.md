@@ -1,3 +1,282 @@
+# REBUILD HANDOFF - Session 21 (2026-07-05, Codex herb canon validation layer)
+
+## 1. Goal
+Continue safely while Ting/Claude are unavailable by strengthening the single-herb draft layer without changing protected runtime code or promoting any draft content.
+
+## 2. Files changed
+- `scripts/validate-herb-canon.js` (new)
+- `docs/REBUILD_HANDOFF.md`
+- `data/herbs/herb_canon_shortlist.json` remains the active draft data file from Sessions 19-20
+
+## 3. What changed
+- Added a dedicated herb canon validator for `data/herbs/herb_canon_shortlist.json`.
+- The validator checks required top-level fields, required per-herb fields, ID format, duplicate IDs, likely mojibake, pending UTF-8 repair markers, draft-only review status, English/Chinese track structure, non-empty draft arrays, safety flags, and `related_formulas` links against `formula_canon_shortlist.json`.
+- The validator intentionally fails if any staging record is promoted beyond `draft` before source review.
+
+## 4. Why this changed
+The existing validators passed, but none of them specifically protected the new 202-herb shortlist from future missing fields, broken formula links, accidental `source_checked` promotion, or Windows encoding damage. This adds a guardrail before more Materia Medica content is added.
+
+## 5. Data content changes
+No herb facts were changed in this session. This session added validation coverage only.
+
+## 6. Source status / accuracy guardrail
+All herb records remain draft/source-review pending. No Bensky, CloudTCM, or institutional Chinese source verification was performed in this session.
+
+## 7. Schema / field changes
+No runtime schema changed. This is a script-level validator for the staging shortlist.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, or `scripts/validate-data.js` IGNORED_FIELDS.
+
+## 10. Validation
+- `scripts/validate-herb-canon.js`: PASS
+  - herbs: 202
+  - categories: 34
+  - related formula links checked: 407
+  - safety flags checked: 409
+  - modern-use tags checked: 587
+  - warnings: 0
+  - failures: 0
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `data/**/*.json` parse check: PASS, 66 JSON files
+
+## 11. Completed categories
+No new herb categories were filled in this session; all 202 herbs were already draft-filled in Session 20.
+
+## 12. Not completed
+- The new validator is not yet wired into any one-click script or README command list.
+- Herb content remains draft and source-review pending.
+
+## 13. Next reader should inspect
+Review `scripts/validate-herb-canon.js` and decide whether it should become part of the standard validation checklist after every herb-data edit.
+
+## 14. Next step
+Recommended next step: run `node scripts/validate-herb-canon.js` after all future edits to `data/herbs/herb_canon_shortlist.json`, then select a small high-yield herb subset for real source-checking.
+
+## 15. Risk
+Low. This adds a read-only validation script and does not affect app runtime.
+
+---
+
+# REBUILD HANDOFF - Session 20 (2026-07-04, Codex single herb full draft fill)
+
+## 1. Goal
+Continue the CH / Materia Medica autonomous batch: repair the 32 pending Chinese-name/category records, then fill the remaining single-herb shortlist records with conservative draft study scaffolding. No commit was made.
+
+## 2. Files changed
+- `data/herbs/herb_canon_shortlist.json`
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- Repaired all 32 records previously marked `pending_utf8_repair` / `pending_chinese_label_repair`.
+- Removed the pending repair markers after standard Chinese names and Chinese category labels were restored.
+- Filled the remaining 127 skeleton-only records with draft study fields.
+- Current file status:
+  - Total herbs: 202
+  - English draft track: 202
+  - Chinese draft track: 202
+  - `source_checked`: 0
+  - Pending UTF-8 repair markers: 0
+  - Broken `related_formulas` links: 0
+
+## 4. Why this changed
+Ting wants the single-herb layer to become useful for CH study and future formula/herb/search connections. This batch turns the whole 202-herb shortlist into a complete draft scaffold while keeping source verification honest.
+
+## 5. Data content changes
+- Filled draft `properties_taste_temp`, `functions`, `clinical_use_note`, `modern_use_tags`, `related_formulas`, and `safety_flags` for the previously empty records.
+- Added conservative `english_exam_track` and `chinese_depth_track` objects for all remaining records.
+- Added safety review flags for pregnancy, toxicity, anticoagulants, active bleeding, urgent red flags, dose/preparation, incompatibility, dehydration/electrolyte review, and related contexts where appropriate.
+
+## 6. Source status / accuracy guardrail
+No Bensky text, CloudTCM herb page text, or institutional herb monograph was directly verified in this session. Therefore every record remains draft:
+- Main record: `review_status: "draft"`
+- English track: `source_status: "bensky_review_pending"`
+- Chinese track: `source_status: "cloudtcm_or_institution_review_pending"`
+
+Modern tags and clinical notes are documentation/search context only. They are not treatment claims.
+
+## 7. Schema / field changes
+No runtime schema changed. `data/herbs/single_herbs.json` remains unchanged; this work is still a canon shortlist/staging file.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`. A temporary one-off fill script was used and then removed before handoff.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, or `scripts/validate-data.js` IGNORED_FIELDS.
+
+## 10. Validation
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `data/**/*.json` parse check: PASS, 66 JSON files
+- Single-herb self-check: PASS, 202/202 English tracks, 202/202 Chinese tracks, 0 source_checked, 0 pending UTF-8 repairs, 0 broken formula links
+
+## 11. Completed categories
+The file now has draft scaffolding across all 34 category labels represented in the 202-herb shortlist, including wind-damp, dampness, drain dampness, warm interior, regulate qi, food stagnation, parasites, bleeding, blood stasis, phlegm/cough/wheeze, open orifices, extinguish wind, calm spirit, tonify qi/blood/yin/yang, stabilize/bind, and downward-directing herbs/minerals.
+
+## 12. Not completed
+- No herb has been source-checked against Bensky yet.
+- No CloudTCM or institutional Chinese herb source has been directly cross-checked yet.
+- Draft content is category-level scaffolding, not final monograph-quality herb detail.
+- Dosage ranges were intentionally not added.
+
+## 13. Next reader should inspect
+Review `data/herbs/herb_canon_shortlist.json` for:
+- repaired Chinese names/categories,
+- safety flags,
+- related formula links,
+- whether category-level draft wording is useful enough for Ting's study workflow.
+
+## 14. Next step
+Recommended next step: select 20 to 30 highest-yield herbs from formulas Ting is actively studying, then source-check those against Bensky and CloudTCM/institutional Chinese sources one by one before promoting any record beyond draft.
+
+## 15. Risk
+Medium. The file is internally consistent and validators pass, but content remains draft and source-review pending. It should support search/study scaffolding, not canonical clinical use.
+
+---
+
+# REBUILD HANDOFF - Session 19 (2026-07-04, Codex single herb 1-hour draft batch)
+
+## 1. Goal
+Run Ting's autonomous CH / Materia Medica batch: expand the single-herb canon shortlist and draft-fill the first five priority categories without touching protected runtime areas or existing formal data files.
+
+## 2. Files changed
+- `data/herbs/herb_canon_shortlist.json`
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- Expanded the single-herb shortlist from 170 to 202 draft records.
+- Filled draft dual-track study fields for 75 herbs across the first five requested categories:
+  - Release Exterior: 21 herbs
+  - Clear Heat: 23 herbs
+  - Tonify Qi: 9 herbs
+  - Tonify Blood: 7 herbs
+  - Invigorate Blood: 15 herbs
+- Added draft `english_exam_track` and `chinese_depth_track` objects where content was filled.
+- Added draft functions, properties/taste/temp, conservative modern use tags, clinical notes, related formula IDs where appropriate, and safety flags where needed.
+
+## 4. Why this changed
+`data/herbs/single_herbs.json` is still empty, while CH / Materia Medica is a core NCCAOM study area and is needed to connect formulas, safety, and future search. This gives Ting a reviewable draft base without changing runtime data.
+
+## 5. Source status / accuracy guardrail
+Ting requested Bensky-checked English content, but no local Bensky source text was available to verify against. Therefore Codex did not mark any herb as `source_checked`.
+
+Current status:
+- Total records: 202
+- Draft-filled records: 75
+- `source_checked` records: 0
+- English track status: `bensky_review_pending`
+- Chinese track status: `cloudtcm_or_institution_review_pending`
+
+## 6. Data content changes
+The 75 filled herbs have conservative study wording only. Modern-use tags are search/support tags, not efficacy claims. Chinese-depth notes remain draft pending CloudTCM or institutional-source review.
+
+## 7. Schema / field changes
+No runtime schema changed. This is still a new shortlist/staging file only; `data/herbs/single_herbs.json` remains unchanged.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, or `scripts/validate-data.js` IGNORED_FIELDS.
+
+## 10. Validation
+- Category batch validation after Release Exterior: PASS
+- Category batch validation after Clear Heat: PASS
+- Final validation after Tonify Qi, Tonify Blood, and Invigorate Blood: PASS
+- UTF-8 repair check: PASS, no literal `?` corruption remains
+- `data/**/*.json` parse check: PASS, 66 JSON files
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+
+## 11. Shortlist scope
+The 202 records cover the main NCCAOM/Bensky-style Materia Medica categories: release exterior, clear heat, drain downward, dispel wind-damp, transform dampness, drain dampness, warm interior, regulate qi, relieve food stagnation, expel parasites, stop bleeding, invigorate blood, transform phlegm/stop cough, calm spirit, open orifices, extinguish wind, tonify qi/blood/yin/yang, stabilize/bind, and selected minerals/topical substances.
+
+## 12. Not completed
+- 127 herbs remain skeleton-only.
+- No record is Bensky source-verified yet.
+- No CloudTCM/institutional Chinese-source verification has been completed yet.
+- 32 expanded records have `chinese_name_status: "pending_utf8_repair"` and `category_status: "pending_chinese_label_repair"` because a Windows console encoding issue damaged Chinese labels during expansion; their IDs and English categories were preserved.
+
+## 13. Next reader should inspect
+Start with `data/herbs/herb_canon_shortlist.json`, especially the 75 filled records and the 32 records marked for Chinese-label repair.
+
+## 14. Next step
+Ting should review whether the 202-herb scope is acceptable, then either:
+- repair the 32 pending Chinese labels first, or
+- continue content filling for the next categories while keeping all records draft until Bensky/CloudTCM/institutional verification is available.
+
+## 15. Risk
+Medium-low. Runtime data is untouched, but the new shortlist contains draft educational content and 32 records need Chinese-label repair before study use.
+
+---
+
+# REBUILD HANDOFF - Session 18 (2026-07-04, Codex single herb canon shortlist)
+
+## 1. Goal
+Start a clean CH / Materia Medica block without touching the formula review work: create a single-herb skeleton shortlist for Ting review before filling content.
+
+## 2. Files changed
+- `data/herbs/herb_canon_shortlist.json` (new)
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- Added 170 draft single-herb skeleton records.
+- Each record includes: `id`, `name_zh`, `name_en`, `pinyin`, `category`, `channels_entered`, `source_hint`, `review_status`, `properties_taste_temp`, `functions`, `related_formulas`, `safety_flags`, `clinical_use_note`, and `modern_use_tags`.
+- Empty content fields were intentionally left empty: `properties_taste_temp`, `functions`, `clinical_use_note`, `modern_use_tags`.
+
+## 4. Why this changed
+`data/herbs/single_herbs.json` is still empty, but single herbs are a core NCCAOM CH / Materia Medica study area and the foundation of formula understanding. This mirrors the successful formula workflow: skeleton first, Ting review second, content later.
+
+## 5. Data content changes
+No single-herb functions, indications, dosages, modern clinical claims, or source_checked content were added. This is only a draft scope/category/channel skeleton.
+
+## 6. Schema / field changes
+No runtime schema changed. This is a new shortlist file only; `data/herbs/single_herbs.json` remains unchanged.
+
+## 7. Review status
+All 170 records are `review_status: "draft"`. Nothing is `source_checked`.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, or `scripts/validate-data.js` IGNORED_FIELDS.
+
+## 10. Validation
+- Skeleton field check: PASS, 170 records, missing required skeleton fields 0
+- `data/**/*.json` parse check: PASS, 66 JSON files
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+
+## 11. Shortlist scope
+The 170 records cover the main Bensky/NCCAOM-style categories: release exterior, clear heat, drain downward, dispel wind-damp, transform dampness, drain dampness, warm interior, regulate qi, relieve food stagnation, stop bleeding, invigorate blood, transform phlegm/stop cough, open orifices, extinguish wind, tonify qi/blood/yin/yang, calm spirit, stabilize/bind, and downward-directing minerals/herbs.
+
+## 12. Not completed
+No functions, properties/taste/temp, dosage, detailed safety, or modern use tags were filled. No CloudTCM herb IDs were mapped yet.
+
+## 13. Next reader should inspect
+Start with `data/herbs/herb_canon_shortlist.json` and review whether the 170-herb scope/category/channel skeleton matches Ting's NCCAOM study priority.
+
+## 14. Next step
+After Ting approves the scope, fill a smaller pilot group first (for example 20 high-yield herbs that appear in the 23 formula pilot), using English Bensky/source-checked track only if source material is available and Chinese CloudTCM/institutional notes as draft.
+
+## 15. Risk
+Low. This is a new draft shortlist only and does not affect runtime data. Category/channel entries should still be reviewed before content filling.
+
+---
+
 # REBUILD HANDOFF - Session 17 (2026-07-04, Codex 23 formula draft dual-track fill)
 
 ## 1. Goal
