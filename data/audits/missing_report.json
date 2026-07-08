@@ -1,9 +1,9 @@
 {
-  "generated_on": "2026-06-16",
+  "generated_on": "2026-07-08",
   "scope": "WHO/NCCAOM standard 14-channel 361 acupoints only; auricular and extra points tracked separately.",
   "total_expected": 361,
-  "total_present": 235,
-  "total_missing": 126,
+  "total_present": 361,
+  "total_missing": 0,
   "channels": {
     "LU": {
       "expected_count": 11,
@@ -290,34 +290,31 @@
     },
     "PC": {
       "expected_count": 9,
-      "present_count": 1,
-      "missing_count": 8,
+      "present_count": 9,
+      "missing_count": 0,
       "present": [
-        "PC6"
-      ],
-      "missing": [
         "PC1",
         "PC2",
         "PC3",
         "PC4",
         "PC5",
+        "PC6",
         "PC7",
         "PC8",
         "PC9"
-      ]
+      ],
+      "missing": []
     },
     "TE": {
       "expected_count": 23,
-      "present_count": 1,
-      "missing_count": 22,
+      "present_count": 23,
+      "missing_count": 0,
       "present": [
-        "TE5"
-      ],
-      "missing": [
         "TE1",
         "TE2",
         "TE3",
         "TE4",
+        "TE5",
         "TE6",
         "TE7",
         "TE8",
@@ -336,20 +333,14 @@
         "TE21",
         "TE22",
         "TE23"
-      ]
+      ],
+      "missing": []
     },
     "GB": {
       "expected_count": 44,
-      "present_count": 5,
-      "missing_count": 39,
+      "present_count": 44,
+      "missing_count": 0,
       "present": [
-        "GB20",
-        "GB21",
-        "GB30",
-        "GB34",
-        "GB39"
-      ],
-      "missing": [
         "GB1",
         "GB2",
         "GB3",
@@ -369,6 +360,8 @@
         "GB17",
         "GB18",
         "GB19",
+        "GB20",
+        "GB21",
         "GB22",
         "GB23",
         "GB24",
@@ -377,31 +370,32 @@
         "GB27",
         "GB28",
         "GB29",
+        "GB30",
         "GB31",
         "GB32",
         "GB33",
+        "GB34",
         "GB35",
         "GB36",
         "GB37",
         "GB38",
+        "GB39",
         "GB40",
         "GB41",
         "GB42",
         "GB43",
         "GB44"
-      ]
+      ],
+      "missing": []
     },
     "LR": {
       "expected_count": 14,
-      "present_count": 2,
-      "missing_count": 12,
+      "present_count": 14,
+      "missing_count": 0,
       "present": [
-        "LR3",
-        "LR14"
-      ],
-      "missing": [
         "LR1",
         "LR2",
+        "LR3",
         "LR4",
         "LR5",
         "LR6",
@@ -411,33 +405,33 @@
         "LR10",
         "LR11",
         "LR12",
-        "LR13"
-      ]
+        "LR13",
+        "LR14"
+      ],
+      "missing": []
     },
     "CV": {
       "expected_count": 24,
-      "present_count": 4,
-      "missing_count": 20,
+      "present_count": 24,
+      "missing_count": 0,
       "present": [
-        "CV4",
-        "CV6",
-        "CV12",
-        "CV17"
-      ],
-      "missing": [
         "CV1",
         "CV2",
         "CV3",
+        "CV4",
         "CV5",
+        "CV6",
         "CV7",
         "CV8",
         "CV9",
         "CV10",
         "CV11",
+        "CV12",
         "CV13",
         "CV14",
         "CV15",
         "CV16",
+        "CV17",
         "CV18",
         "CV19",
         "CV20",
@@ -445,18 +439,14 @@
         "CV22",
         "CV23",
         "CV24"
-      ]
+      ],
+      "missing": []
     },
     "GV": {
       "expected_count": 28,
-      "present_count": 3,
-      "missing_count": 25,
+      "present_count": 28,
+      "missing_count": 0,
       "present": [
-        "GV14",
-        "GV20",
-        "GV26"
-      ],
-      "missing": [
         "GV1",
         "GV2",
         "GV3",
@@ -470,24 +460,28 @@
         "GV11",
         "GV12",
         "GV13",
+        "GV14",
         "GV15",
         "GV16",
         "GV17",
         "GV18",
         "GV19",
+        "GV20",
         "GV21",
         "GV22",
         "GV23",
         "GV24",
         "GV25",
+        "GV26",
         "GV27",
         "GV28"
-      ]
+      ],
+      "missing": []
     }
   },
   "excluded_from_361_layer": [
     "EX-HN3",
     "EX-HN5"
   ],
-  "next_recommended_batch": "PC1-PC9"
+  "next_recommended_batch": "361 layer complete — next: per-record source verification (draft → source_checked)"
 }

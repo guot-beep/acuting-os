@@ -23,6 +23,59 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-08 — 361 layer complete: 126 missing points filled as model drafts (Claude)
+
+Scope: Ting approved fast content filling using the established source
+registry. Since the sandbox network policy blocks direct fetching of the
+registry sites (403 on acupoints.org / acupun.site / cloudtcm.com), Claude
+filled the 126 missing standard points as conservative model-knowledge
+drafts — the same accepted pattern as the herb (202) and formula (23)
+draft fills — for later cross-checking against CloudTCM (D1-D3) and WHO SAPL.
+
+Changes:
+- New `data/imports/model_draft/{pc_lr_te,cv_gv,gb}_draft.json`: 126 records
+  (PC8, LR12, TE22, CV20, GV25, GB39) with bilingual location, functions,
+  indications, needling reference, and contraindications. High-risk points
+  carry explicit danger notes (CV22 天突 trachea/aortic arch; GV15 啞門 +
+  GV16 風府 medulla; CV8 神闕 needling contraindicated; chest/flank points
+  pneumothorax warnings; GV1 rectum; LR12 femoral artery; LR13/GB24/GB25
+  organ depth).
+- New `scripts/insert-361-drafts.js`: add-only inserter (existing records
+  never modified; aborts on duplicate codes), auto-fills per-point sources
+  (acupoints.org + CloudTCM direct link from the point map), stamps every
+  record review_status "draft" / source_status
+  "model_draft_pending_source_review", writes docs/361_DRAFT_FILL_SUMMARY.md,
+  regenerates data/audits/missing_report.json.
+- Applied: data/acupoints/361.json 235 → 361 records (0 modified, 0 removed).
+- missing_report.json now 361/361 present; ran scripts/build-data.js so the
+  Quality audit strip shows 361/361 · 缺 0 (browser-verified).
+
+Known visible discrepancy (intentional, documented): the LIVE dashboard
+counters still show 235/361 because the app runtime reads
+data/acupoints/embedded/*.json, not 361.json. The audit strip (361/361)
+counts the canonical layer. The runtime adapter that makes 361.json the
+single rendered source is the next Claude-owned task — until then the 126
+new drafts are reviewable in 361.json but not yet visible as point pages.
+
+Validation:
+- insert dry-run before apply: 126 to insert, 0 skipped, no duplicates.
+- After apply: validate-data (681 deep-equal — runtime untouched),
+  validate-interactions, validate-relations, validate-herbal-links,
+  validate-herb-canon all PASS; 69 data JSON files parse OK.
+
+Accuracy guardrail: all 126 records are study drafts from model knowledge.
+None is source_checked. Verification path: CloudTCM import cross-check
+(CODEX_TASK_QUEUE D1-D3) → WHO SAPL location verification → per-record
+promotion. Needling fields are study reference only, not operating
+instructions.
+
+Next:
+1. (Claude) Runtime adapter: render 361.json content in the app so the new
+   drafts become usable point pages — includes retiring/adapting the legacy
+   deep-equal gate in validate-data.js with Ting's approval.
+2. (Codex/Ting machine) D1-D2 CloudTCM fetch + distill to cross-check the
+   Chinese layer of these drafts.
+
 ### 2026-07-08 — Bulk content pipeline: CloudTCM 361-point import scripts (Claude)
 
 Scope: Ting asked how to distill point/formula page content from the
