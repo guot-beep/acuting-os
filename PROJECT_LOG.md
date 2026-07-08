@@ -23,6 +23,86 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-08 — Claude Cowork sync check (status audit, no code/data changes)
+
+Scope: Claude Cowork rejoined after several days of Codex-only sessions on Ting's
+machine. This entry is a read-only audit of what actually changed since the
+last `DATA_MIGRATION_MAP.md` / `REBUILD_PLAN.md` update (2026-07-02), so both
+agents share the same status before any new work is assigned. No files other
+than this log entry were touched.
+
+Reviewed: AGENTS.md, git log/status, docs/REBUILD_HANDOFF.md (Sessions 7–21),
+docs/REBUILD_PLAN.md, docs/DATA_MIGRATION_MAP.md, docs/VALIDATION_LOG.md,
+docs/SESSION3_FINAL_STATUS.md, docs/CODEX_FOLLOWUP_2026-07-02.md,
+docs/361_MERGE_DIFF_SUMMARY.md, docs/MIGRATION_OFF_ONEDRIVE.md, and direct
+inspection of `data/acupoints/361.json`, `data/herbs/formulas.json`,
+`data/herbs/formula_canon_shortlist.json`, `data/herbs/herb_canon_shortlist.json`.
+
+Findings — completed since 2026-07-02:
+- 361.json standard-point merge is DONE and applied, not pending. Ting approved
+  `docs/361_MERGE_DIFF_SUMMARY.md`; `scripts/merge-361-preview.js --apply-approved`
+  ran; `data/acupoints/361.json` is 210→235 records, 0 removed, 23 documented
+  conflict fields left as-is. `validate-data.js` (681 deep-equal) and
+  `validate-interactions.js` passed after apply. Runtime still reads
+  `data/acupoints/embedded/*.json` via `app_data.js` — 361.json is merged but
+  not yet wired as the runtime source (documented next step, not done).
+- Formula/herb draft content buildout (Sessions 9–21, 07-03→07-07): 115-record
+  `data/herbs/formula_canon_shortlist.json` (ids/tier/comparison_group/
+  related_formulas graph complete, 23/115 filled with dual-track draft
+  content); 202-record `data/herbs/herb_canon_shortlist.json` (all 202
+  draft-filled, 0 `source_checked`). New validators added
+  (`validate-herb-canon.js`, `validate-relations.js`, `validate-herbal-links.js`).
+  Confirmed by direct read: neither shortlist file is wired into the UI —
+  the app's live Formula section reads the separate, smaller
+  `data/herbs/formulas.json` (23 records, wired by Claude on 07-02 via
+  `js/knowledge.js` / `data/generated/knowledge_data.js`). The two shortlists
+  are a parallel, not-yet-connected content-staging track.
+- docs/CASE_SOAP_FLOW_REVIEW.md (Session 14): docs-only review of case/SOAP
+  form UX, no schema or code change.
+
+Findings — still in progress / not started:
+- `REBUILD_PLAN.md` Phase 2 items untouched since 07-02: moving remaining
+  configs (`standardChannelAudit`, `channelPrefixMeta`, `directoryRegionGroups`,
+  etc.) out of app.js into data/; generating `data/tung/point_index.js` and
+  `data/auricular/gb93_*.js` from their `.json` source instead of hand-maintaining
+  twins. `DATA_MIGRATION_MAP.md` still marks both as "UNCHANGED — Phase 2."
+  No git history on `data/tung/` or `data/auricular/` since 07-02.
+  `DATA_MIGRATION_MAP.md` itself has not been updated since 07-02, so it no
+  longer reflects the herb/formula shortlist work.
+- 92/115 formula_canon_shortlist records are still skeleton-only (name/
+  category/source_hint, no content).
+- No herb or formula record has been source-checked against Bensky/CloudTCM
+  yet; all new content remains `draft`.
+
+Risk note (not a rule violation, but a repeat-risk pattern): Session 19
+batch-expansion of `herb_canon_shortlist.json` corrupted Chinese labels on 32
+records via a Windows console encoding issue (`pending_utf8_repair` /
+`pending_chinese_label_repair`); Session 20 repaired them before any promotion
+past `draft`. No data was lost or silently overwritten, but this is the same
+failure mode as the earlier OneDrive corruption (`docs/MIGRATION_OFF_ONEDRIVE.md`)
+— local Windows console/sync environment corrupting Chinese text during
+large batch edits. Worth a standing guard (e.g. a UTF-8 spot-check step)
+before any future large batch content fill, not just after.
+
+No hard-rule violations found: no data files deleted, no fields removed
+without a migration note, no private/public content mixing, nothing pushed
+without documentation. Working tree is clean; local branch matches
+`origin/main` at `33bc8a4` — no unexplained uncommitted changes.
+
+Validation: none run this session (read-only audit; ran ad hoc `node -e`
+record-count checks against `formulas.json` / `formula_canon_shortlist.json`
+/ `herb_canon_shortlist.json` to confirm the wiring gap above, no files
+modified).
+
+Commit: pending.
+
+Next: Ting to review this entry, then Claude will propose a Codex/Claude work
+split for the next phase (candidates: (a) reconcile REBUILD_PLAN.md Phase 2
+against actual state, (b) decide whether to keep expanding herb/formula
+shortlists or wire the existing 23-formula content deeper first, (c) pick up
+the stalled Tung/GB93 codegen and app.js config extraction). No implementation
+starts until Ting approves the split.
+
 ### 2026-07-03 — Dataset foundation staging
 
 Scope: first dataset-first import foundation for formulas and future TCM knowledge expansion.
