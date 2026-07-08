@@ -103,6 +103,14 @@ shortlists or wire the existing 23-formula content deeper first, (c) pick up
 the stalled Tung/GB93 codegen and app.js config extraction). No implementation
 starts until Ting approves the split.
 
+Follow-up same day: Ting asked for the work split to be written down while
+Codex is low on tokens. Added `docs/CODEX_TASK_QUEUE.md` (self-contained,
+token-cheap task specs A1–C3 with approval gates; Claude-owned items listed
+separately) and updated REBUILD_PLAN.md Phase 2 with per-item ✅/⬜ status plus
+a Phase 2.5 note for the shortlist staging work. Standing decision recorded:
+wire existing draft content into the UI before creating new draft-content
+files. Ting dispatches tasks to Codex by ID when he has budget.
+
 ### 2026-07-03 — Dataset foundation staging
 
 Scope: first dataset-first import foundation for formulas and future TCM knowledge expansion.
