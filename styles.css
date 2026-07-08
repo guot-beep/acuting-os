@@ -468,6 +468,18 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.note-term-link {
+  color: #1f6f64;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+
+.note-term-link:hover,
+.note-term-link:focus-visible {
+  color: #14524a;
+  text-decoration-style: solid;
+}
+
 .section-heading {
   align-items: center;
   display: flex;

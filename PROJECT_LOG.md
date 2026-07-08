@@ -23,6 +23,60 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-08 — Claude UI scan + three fixes (dashboard count bug, heading dup, SOAP keyword links)
+
+Scope: full browser walkthrough (desktop 1280px + mobile 390px, headless
+Chromium screenshots of every workspace) followed by three approved fixes.
+
+Findings from the scan:
+- HIGH: home + Quality dashboards showed 0/361 standard points, 0% completion,
+  0/N on every channel — contradicting the static audit strip (235/361) on the
+  same page. Root cause: `mergeByCode` spreads real records over placeholders,
+  but real data records carry no `reviewStatus` field, so the placeholder's
+  `reviewStatus: "placeholder"` survives the merge and
+  `isReviewedStandardChannelPoint` rejected all 681 points. Bug existed in
+  legacy app.js too (not a rebuild regression).
+- LOW: point detail section headings rendered doubled ("基本介紹 基本介紹")
+  because `studySection` printed `sectionIcon(tone)` + `title`, which resolve
+  to the same string.
+- SOAP notes' 用穴/方藥 were plain escaped text — the case↔knowledge-base
+  keyword link (long-standing Claude backlog item) did not exist yet.
+- Positive: mobile 390px has zero horizontal overflow; point pages, routing,
+  search, CloudTCM direct links, and the 23 formula cards all render correctly.
+
+Changes (app.js + styles.css only; no data files touched):
+- `isPlaceholderStandardRecord(point)` content-based check (reviewStatus
+  "placeholder" AND nameZh === code); `isReviewedStandardChannelPoint` and
+  `getDataQualityAudit`'s reviewed/placeholder counts now use it. Data itself
+  is unchanged, so validate-data deep-equal still passes. Dashboards now show
+  235/361 present, 126 placeholders, 65% — matching missing_report.json.
+- `studySection` / visual-links / pairing section h3s print the title once;
+  removed the now-unused `sectionIcon()`.
+- New `linkifyPointsUsed` / `linkifyFormulaHerbs` in the SOAP card renderer:
+  用穴 tokens matching a point code, Chinese name, or pinyin become
+  `#point/{code}` links; 方藥 tokens matching a formulas.json record (name_zh
+  / pinyin / name_en) link to `#formulaSection`. Unmatched terms stay plain
+  text (honest contract — only records that exist in the knowledge base get
+  links). New `.note-term-link` style in styles.css (dotted underline).
+
+Validation:
+- `node --check app.js` PASS; validate-data (681 deep-equal), 
+  validate-interactions, validate-relations, validate-herbal-links all PASS.
+- Playwright end-to-end: 6/6 PASS — home count 235, quality 235/361 · 65% ·
+  126 placeholders, no duplicated headings on #point/LI4, 用穴 "LI4, 太衝,
+  GB20, 太陽" all linkified, "Gui Zhi Tang" linkified (天麻鉤藤飲 correctly
+  NOT linked — not in the 23-record formulas.json yet), clicking LI4 lands on
+  the point page.
+
+For Codex: `sectionIcon()` was removed from app.js; `isPlaceholderStandardRecord`
+is the new placeholder test — reuse it instead of checking `reviewStatus`
+directly. The SOAP linkify helpers live next to `renderSoapNoteCard`; do not
+modify them (Claude-owned case/SOAP area, per standing rules).
+
+Next (Claude backlog): case dialog / SOAP dialog segmentation per
+docs/CASE_SOAP_FLOW_REVIEW.md; Cases workspace layout — move the working
+notebook above the explainer/scaffold sections.
+
 ### 2026-07-08 — Claude Cowork sync check (status audit, no code/data changes)
 
 Scope: Claude Cowork rejoined after several days of Codex-only sessions on Ting's
