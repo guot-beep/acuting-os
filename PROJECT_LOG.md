@@ -23,6 +23,53 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-08 — Bulk content pipeline: CloudTCM 361-point import scripts (Claude)
+
+Scope: Ting asked how to distill point/formula page content from the
+recommended sources faster than channel-by-channel manual work, using public
+GitHub resources or APIs where possible.
+
+Research result:
+- No open dataset exists with study-grade bilingual 361-point TEXT content.
+  Public "acupoint datasets" (AcuSim, FAcupoint, MetaAcuPoint, TARA) are
+  computer-vision image-localization sets. The Mengqi97 dataset index has no
+  acupoint text source (confirms the 07-03 DATASET_SHORTLIST finding).
+- Formula-side open repos are network-pharmacology/KG projects, not
+  textbook-grade content. Public-domain classics (傷寒論 etc., via ctext.org
+  or the TCM-Ancient-Books corpus) can seed classical compositions later.
+- Fastest bulk channel is already half-built in this repo: CloudTCM's Next.js
+  data endpoint + the existing data/sources/cloudtcm_point_map.json
+  (361 code→id, Session 8).
+
+Changes:
+- New `scripts/fetch-cloudtcm-points.js`: resumable, rate-limited (600 ms)
+  fetcher for all 361 point pages → raw JSON under
+  data/imports/cloudtcm/points/ + fetch_manifest.json. Must run on Ting's
+  machine (cloud sandbox cannot reach cloudtcm.com). Probes buildId
+  automatically per the re-fetch notes in TCM_SOURCE_REGISTRY.md.
+- New `scripts/transform-cloudtcm-points.js`: distills raw JSON →
+  data/imports/cloudtcm/staging_points.json (every record draft /
+  cloudtcm_import_pending_review with source_url) + coverage_report.json.
+  Has --inspect mode because the exact pageProps shape is unknown until the
+  first real fetch; FIELD_CANDIDATES is designed to be tightened after
+  inspection.
+- docs/CODEX_TASK_QUEUE.md: new Track D (D1 fetch → D2 distill → D3 gated
+  merge into 361.json mirroring the proven merge-361-preview pattern → D4
+  formulas), with the license/usage rule stated: raw imports are private
+  study staging only, per-record source URLs kept, nothing goes public
+  without rewrite + WHO/authorized verification. English content has no
+  legal bulk source (Deadman/Bensky copyrighted); bulk speed applies to the
+  Chinese layer, English stays channel-by-channel against WHO SAPL.
+- Suggested execution order updated: D1→D2 first (biggest coverage win:
+  126 missing points gain Chinese content; 645 missing-needling and 138
+  missing-safety records get fill candidates).
+
+Validation: both new scripts pass node --check; transform script correctly
+refuses to run without raw files. No data or runtime files touched.
+
+Next: Ting runs D1 probe (`node scripts/fetch-cloudtcm-points.js --limit 5`)
+on her machine, or dispatches D1+D2 to Codex. D3 merge stays approval-gated.
+
 ### 2026-07-08 — Claude UI scan + three fixes (dashboard count bug, heading dup, SOAP keyword links)
 
 Scope: full browser walkthrough (desktop 1280px + mobile 390px, headless

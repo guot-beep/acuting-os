@@ -221,6 +221,75 @@ first (encoding guard) since these are large Chinese-text batches.
 
 ---
 
+## Track D — Bulk content pipeline (fastest path to complete 361 + formulas)
+
+Background (research finding, Claude 2026-07-08): there is NO ready-made open
+dataset with study-grade bilingual content for the 361 points — public
+"acupoint datasets" (AcuSim, FAcupoint, MetaAcuPoint) are computer-vision
+image-localization sets, and the Mengqi97 index has no acupoint text source.
+The fastest bulk channel is one we already half-built: CloudTCM's Next.js data
+endpoint, with all 361 code→id mappings already in
+`data/sources/cloudtcm_point_map.json` (Session 8).
+
+License / usage rule for this track (Ting acknowledged when dispatching D1):
+CloudTCM text is theirs. Raw imports stay under `data/imports/` as PRIVATE
+study staging with per-record `source_url`; AcuTing OS stays private; nothing
+imported may go into Learn/public content without full rewrite + verification
+against WHO/authorized sources. Same policy as the existing GB93/CloudTCM use.
+
+### D1. Fetch 361 CloudTCM point pages  **[RUN ON TING'S MACHINE]**
+
+`node scripts/fetch-cloudtcm-points.js --limit 5` first (probe run), inspect
+one raw file, then run without --limit for all 361. The script is resumable,
+rate-limited (600 ms), probes the current buildId automatically, writes raw
+JSON to `data/imports/cloudtcm/points/` and a fetch manifest. The cloud
+sandbox cannot reach cloudtcm.com — this must run locally.
+Done when: fetch_manifest.json shows 361/361 (or failures listed for review).
+Risk: low. Writes only under data/imports/.
+
+### D2. Distill raw → staging + coverage report
+
+`node scripts/transform-cloudtcm-points.js --inspect LU1` to see the real
+JSON shape, tighten FIELD_CANDIDATES in the script if coverage is poor, then
+run the full transform. Output: `staging_points.json` (all records draft /
+cloudtcm_import_pending_review) + `coverage_report.json`.
+Done when: field coverage report shows location/indications/technique filled
+for the large majority; unmatched files investigated.
+Risk: low. Still staging-only.
+
+### D3. Merge staging into 361.json  **[GATE — mirror the 361 KI merge]**
+
+Write `scripts/merge-cloudtcm-preview.js` following the proven
+merge-361-preview pattern: field map (staging zh fields → 361 schema
+`location_zh` / `functions_zh` / `indications_zh` / `needling` /
+`contraindications`), never overwrite non-empty canonical values (report them
+as conflict candidates instead), produce DIFF SUMMARY doc, **stop for Ting's
+approval**, apply only with --apply-approved. After apply: 126 missing points
+gain Chinese draft content; existing 235 gain missing needling/safety fields.
+Then run the full validator suite + rebuild generated data.
+Risk: medium. Data merge — the gate + diff summary is mandatory.
+
+### D4. Formula bulk fill (after B1/B2 formula reconciliation)
+
+Two channels, in order:
+1. CloudTCM formula pages — same Next.js endpoint approach; first probe how
+   /formula pages are structured, build a formula_id map like the point map
+   (the 115-shortlist `source_hint` fields already say "CloudTCM /formula
+   lookup pending").
+2. Public-domain classics for original compositions (傷寒論/金匱要略/溫病條辨
+   original text is public domain): ctext.org API or the TCM-Ancient-Books
+   GitHub corpus can seed `composition` + classical indications for the
+   classical subset of the 115. Modern-textbook actions/contraindications
+   still need Bensky/CloudTCM review (C1).
+Risk: medium-low. All output draft + staged.
+
+### English-content note (no bulk source exists)
+
+There is no legally bulk-importable English source: Deadman and Bensky are
+copyrighted, WHO SAPL is a PDF for verification (tier-1 authority, hand-check
+per batch, can be marked source_checked when verified). English fills stay
+channel-by-channel (C3 style) — bulk speed applies to the Chinese layer.
+
 ## Claude-owned items (do NOT assign to Codex)
 
 These involve high-risk app.js surgery or architecture calls:
@@ -234,5 +303,6 @@ These involve high-risk app.js surgery or architecture calls:
 
 ## Suggested order when Ting says "just pick the next thing"
 
-A1 → A2 → B1 (gate) → B2 → B3 → A4 → A3 (gate) → C2 → C3. C1 whenever source
-material becomes available — it can interleave.
+D1 → D2 (bulk Chinese content is the biggest coverage win) → A1 → A2 →
+D3 (gate) → B1 (gate) → B2 → B3 → D4 → A4 → A3 (gate) → C2 → C3. C1 whenever
+source material becomes available — it can interleave.
