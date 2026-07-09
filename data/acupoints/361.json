@@ -4432,7 +4432,7 @@
   "contraindications": [
    "腋動脈與神經叢附近，避免深刺和強刺激；局部淋巴結腫大需先評估。"
   ],
-  "needling": "",
+  "needling": "避開腋動脈，直刺 0.3-0.5 寸；不作大幅提插。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4449,7 +4449,8 @@
   "ui_map": {
    "x": 118,
    "y": 150
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT2",
@@ -4489,7 +4490,7 @@
   "contraindications": [
    "避開明顯血管；上臂腫脹、紅熱或神經症狀需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-0.8 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4506,7 +4507,8 @@
   "ui_map": {
    "x": 112,
    "y": 194
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT3",
@@ -4548,7 +4550,7 @@
   "contraindications": [
    "尺神經附近，避免強烈放射痛；肘部外傷或麻木需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4565,7 +4567,8 @@
   "ui_map": {
    "x": 112,
    "y": 246
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT4",
@@ -4607,7 +4610,7 @@
   "contraindications": [
    "腕前臂神經血管密集，避免深刺與強刺激。"
   ],
-  "needling": "",
+  "needling": "避開尺動脈與尺神經，直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4624,7 +4627,8 @@
   "ui_map": {
    "x": 302,
    "y": 260
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT5",
@@ -4666,7 +4670,7 @@
   "contraindications": [
    "腕部神經血管密集，避免深刺；突發失語需急症評估。"
   ],
-  "needling": "",
+  "needling": "避開尺動脈與尺神經，直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4683,7 +4687,8 @@
   "ui_map": {
    "x": 303,
    "y": 270
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT6",
@@ -4725,7 +4730,7 @@
   "contraindications": [
    "腕部淺刺為主；出血症狀需醫療評估，不可僅靠穴位處理。"
   ],
-  "needling": "",
+  "needling": "避開尺動脈，直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4742,7 +4747,8 @@
   "ui_map": {
    "x": 304,
    "y": 278
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT7",
@@ -4752,12 +4758,14 @@
   "channel_zh": "心經",
   "channel_en": "Heart",
   "location_zh": "腕橫紋尺側端，尺側腕屈肌腱橈側凹陷處。",
-  "location_en": "",
+  "location_en": "At the ulnar end of the palmar wrist crease, in the depression radial to the tendon of flexor carpi ulnaris, at the radial side of the pisiform bone.",
   "cun_measurement": "",
   "functions_zh": [
    "寧心安神，養心定悸。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Calms the heart and spirit. Shu-stream, earth and yuan-source point of the heart channel."
+  ],
   "indications_zh": [
    "心悸",
    "失眠",
@@ -4765,7 +4773,13 @@
    "心血不足",
    "心神不寧"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Insomnia",
+   "Palpitations",
+   "Poor memory",
+   "Anxiety and mania",
+   "Cardiac region pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4773,7 +4787,7 @@
   "contraindications": [
    "腕部神經血管密集，操作宜輕柔準確。"
   ],
-  "needling": "",
+  "needling": "避開尺動脈，直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4787,7 +4801,8 @@
   "ui_map": {
    "x": 304,
    "y": 286
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT8",
@@ -4828,7 +4843,7 @@
   "contraindications": [
    "手掌傷口、感染或神經卡壓症狀時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸；掌部針感較強。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4845,7 +4860,8 @@
   "ui_map": {
    "x": 310,
    "y": 304
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT9",
@@ -4886,7 +4902,7 @@
   "contraindications": [
    "指尖刺絡需專業訓練；凝血異常、抗凝藥或感染風險者避免自行操作。"
   ],
-  "needling": "",
+  "needling": "淺刺 0.1 寸，或點刺出血。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4903,7 +4919,8 @@
   "ui_map": {
    "x": 316,
    "y": 318
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "KI3",
@@ -6415,12 +6432,14 @@
   "channel_zh": "肺經",
   "channel_en": "Lung",
   "location_zh": "前胸外上方，第 1 肋間隙附近，前正中線旁開約 6 寸。",
-  "location_en": "",
+  "location_en": "On the anterior chest wall, in the 1st intercostal space, 6 cun lateral to the anterior midline, 1 cun inferior to LU2.",
   "cun_measurement": "",
   "functions_zh": [
    "宣肺降氣，止咳平喘，寬胸理氣。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Diffuses and downbears lung qi, stops cough and wheezing. Front-mu point of the lung."
+  ],
   "indications_zh": [
    "肺氣不宣",
    "咳嗽",
@@ -6428,7 +6447,12 @@
    "胸悶",
    "痰濁阻肺"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Cough",
+   "Asthma",
+   "Chest pain and oppression",
+   "Shoulder and back pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -6436,7 +6460,7 @@
   "contraindications": [
    "胸肺區需避免深刺，氣胸風險需由受訓專業人員評估。"
   ],
-  "needling": "",
+  "needling": "向外斜刺或平刺 0.5-0.8 寸；不可向內深刺 — 深部為肺臟，有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6450,7 +6474,8 @@
   "ui_map": {
    "x": 138,
    "y": 150
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU2",
@@ -6489,7 +6514,7 @@
   "contraindications": [
    "胸肺區避免深刺，需注意氣胸風險。"
   ],
-  "needling": "",
+  "needling": "向外斜刺 0.5-0.8 寸；不可向內深刺 — 深部為肺臟，有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6520,7 +6545,8 @@
   "ui_map": {
    "x": 132,
    "y": 132
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU3",
@@ -6559,7 +6585,7 @@
   "contraindications": [
    "上臂內側血管神經較多，操作需避開明顯血管與神經敏感區。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6590,7 +6616,8 @@
   "ui_map": {
    "x": 94,
    "y": 172
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU4",
@@ -6629,7 +6656,7 @@
   "contraindications": [
    "局部酸麻放散過強時需調整刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6660,7 +6687,8 @@
   "ui_map": {
    "x": 90,
    "y": 190
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU5",
@@ -6670,12 +6698,14 @@
   "channel_zh": "肺經",
   "channel_en": "Lung",
   "location_zh": "肘橫紋上，肱二頭肌腱橈側凹陷處。",
-  "location_en": "",
+  "location_en": "On the cubital crease, in the depression lateral to the biceps brachii tendon.",
   "cun_measurement": "",
   "functions_zh": [
    "清肺熱，降逆氣，舒筋止痛。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Clears lung heat, downbears counterflow qi. He-sea and water point of the lung channel."
+  ],
   "indications_zh": [
    "肺熱咳嗽",
    "喘咳",
@@ -6683,7 +6713,13 @@
    "肘臂痛",
    "痰熱壅肺"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Cough",
+   "Hemoptysis",
+   "Sore throat",
+   "Afternoon tidal fever",
+   "Elbow and arm spasm"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -6691,7 +6727,7 @@
   "contraindications": [
    "肘窩血管神經較多，避免粗暴刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.8-1.2 寸，或點刺出血；避開肱動脈分支。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6705,7 +6741,8 @@
   "ui_map": {
    "x": 82,
    "y": 212
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU6",
@@ -6744,7 +6781,7 @@
   "contraindications": [
    "咯血、呼吸困難或大量出血需立即就醫，不可只依靠穴位處理。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6775,7 +6812,8 @@
   "ui_map": {
    "x": 76,
    "y": 236
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU7",
@@ -6785,12 +6823,14 @@
   "channel_zh": "肺經",
   "channel_en": "Lung",
   "location_zh": "腕橫紋上 1.5 寸，橈骨莖突上方凹陷處。",
-  "location_en": "",
+  "location_en": "Proximal to the radial styloid process, 1.5 cun proximal to the wrist crease, between brachioradialis and abductor pollicis longus tendons.",
   "cun_measurement": "",
   "functions_zh": [
    "宣肺解表，通調任脈，利咽止咳。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Diffuses the lung, releases the exterior, benefits the head and neck. Luo-connecting point; confluent point of the Conception Vessel."
+  ],
   "indications_zh": [
    "外感咳嗽",
    "鼻塞",
@@ -6798,7 +6838,12 @@
    "頭項強痛",
    "肺氣不宣"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Cough",
+   "Headache and neck stiffness",
+   "Facial paralysis",
+   "Wrist weakness and pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -6806,7 +6851,7 @@
   "contraindications": [
    "避免深刺傷及局部血管神經。"
   ],
-  "needling": "",
+  "needling": "向肘部斜刺或平刺 0.5-0.8 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6820,7 +6865,8 @@
   "ui_map": {
    "x": 72,
    "y": 232
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU8",
@@ -6859,7 +6905,7 @@
   "contraindications": [
    "靠近橈動脈，避免直接強刺激搏動處。"
   ],
-  "needling": "",
+  "needling": "避開橈動脈，直刺 0.1-0.3 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6890,7 +6936,8 @@
   "ui_map": {
    "x": 68,
    "y": 270
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU9",
@@ -6900,12 +6947,14 @@
   "channel_zh": "肺經",
   "channel_en": "Lung",
   "location_zh": "腕掌側橫紋橈側，橈動脈搏動處附近。",
-  "location_en": "",
+  "location_en": "At the radial end of the palmar wrist crease, in the depression between the radial styloid and the scaphoid, radial to the radial artery.",
   "cun_measurement": "",
   "functions_zh": [
    "補肺益氣，化痰止咳，通脈。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Supplements lung qi, transforms phlegm, promotes the vessels. Shu-stream, yuan-source point; hui-meeting of the vessels."
+  ],
   "indications_zh": [
    "肺氣虛",
    "久咳",
@@ -6913,7 +6962,12 @@
    "脈弱",
    "痰飲"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Cough",
+   "Asthma",
+   "Weak pulse conditions",
+   "Wrist pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -6921,7 +6975,7 @@
   "contraindications": [
    "避開橈動脈，勿強刺激搏動處。"
   ],
-  "needling": "",
+  "needling": "避開橈動脈，直刺 0.2-0.3 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6935,7 +6989,8 @@
   "ui_map": {
    "x": 66,
    "y": 286
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU10",
@@ -6974,7 +7029,7 @@
   "contraindications": [
    "局部皮膚破損或感染時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-0.8 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7005,7 +7060,8 @@
   "ui_map": {
    "x": 58,
    "y": 318
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU11",
@@ -7044,7 +7100,7 @@
   "contraindications": [
    "昏迷、抽搐、高熱或呼吸困難應立即急救；刺血類操作需專業訓練與無菌觀念。"
   ],
-  "needling": "",
+  "needling": "淺刺 0.1 寸，或三稜針點刺出血。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7075,7 +7131,8 @@
   "ui_map": {
    "x": 50,
    "y": 340
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "PC6",

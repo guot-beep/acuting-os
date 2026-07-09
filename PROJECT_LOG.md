@@ -23,6 +23,30 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-09 — CloudTCM links to full pages; enrichment pipeline + LU/HT batch (Claude)
+
+1. Visual links: Ting reported the CloudTCM thumbnails (media.cloudtcm.uk/
+   acupoint-s/*.jpg) are too small to study from (e.g. LU2 雲門). enrichPoint
+   now links visual references to the full point page
+   (cloudtcm.com/acupoint/{id}) for all 361 mapped points, and upgrades any
+   previously-stored thumbnail URLs to the page. cloudtcmImage() replaced by
+   cloudtcmPageUrl(). Browser-verified on LU2 → /acupoint/162.
+2. Point hero titles were made Chinese-first earlier today (h2 always 中文,
+   subtitle pinyin · English · code, both content modes).
+3. Field enrichment for existing records: new fill-empty-only pipeline
+   `scripts/apply-361-enrichment.js` (only needling/location_en/functions_en/
+   indications_en/contraindications; never overwrites non-empty values;
+   conflicts reported; appends to 361_DRAFT_FILL_SUMMARY.md). Worked example
+   batch `enrichment/lu_ht_enrichment.json` applied: 35 fields across 20
+   records (LU1-11, HT1-9 needling; LU1/5/7/9 + HT7 EN triples). All drafts
+   pending source review.
+4. Remaining ~150 records (BL 60, KI 27, SP 21, SI 19, small remainders)
+   handed to Codex as CODEX_TASK_QUEUE.md D5 with exact gap-count command,
+   file format, safety rules (胸背穴氣胸警告必寫), and batch order.
+
+Validation: app.js syntax + validate-data (681 deep-equal) +
+validate-interactions + validate-relations PASS after both changes.
+
 ### 2026-07-08 — 361 layer complete: 126 missing points filled as model drafts (Claude)
 
 Scope: Ting approved fast content filling using the established source

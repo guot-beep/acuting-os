@@ -692,10 +692,10 @@ function chinesePointReference(point) {
   return "https://www.google.com/search?q=" + encodeURIComponent(q);
 }
 
-function cloudtcmImage(point) {
+function cloudtcmPageUrl(point) {
   const entry = cloudtcmEntry(point);
-  // Thumbnails (acupoint-s) are the confirmed-existing images used by CloudTCM.
-  return entry?.img ? "https://media.cloudtcm.uk/acupoint-s/" + entry.img + ".jpg" : "";
+  // Full point page — thumbnails (media.cloudtcm.uk/acupoint-s) are too small to study from.
+  return entry?.id ? "https://cloudtcm.com/acupoint/" + entry.id : "";
 }
 
 function pointHash(code) {
@@ -773,11 +773,13 @@ function enrichPoint(point) {
   const GENERIC_CLOUDTCM = "https://cloudtcm.com/acupoint";
   const chineseRef = chinesePointReference(point);
   const fixedSources = sources.map((u) => (u === GENERIC_CLOUDTCM ? chineseRef : u));
-  const cloudImg = cloudtcmImage(point);
+  const cloudtcmPage = cloudtcmPageUrl(point);
   const fixedVisualLinks = visualLinks.map((link) => {
-    if (link.url !== GENERIC_CLOUDTCM) return link;
-    // Prefer the actual point image; fall back to the point page reference.
-    return { ...link, url: cloudImg || chineseRef };
+    // Link to the full CloudTCM point page (Ting: thumbnails are too small);
+    // also upgrade any previously-stored thumbnail URLs to the page.
+    if (link.url === GENERIC_CLOUDTCM) return { ...link, url: cloudtcmPage || chineseRef };
+    if (link.url.startsWith("https://media.cloudtcm.uk/")) return { ...link, url: cloudtcmPage || chineseRef };
+    return link;
   });
   return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources: fixedSources, visualLinks: fixedVisualLinks };
 }

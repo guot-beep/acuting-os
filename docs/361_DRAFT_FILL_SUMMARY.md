@@ -33,3 +33,13 @@ cross-checks the Chinese layer; WHO SAPL verifies locations; only then may
 records be promoted past draft. High-risk points (CV22 天突, GV15 啞門,
 GV16 風府, chest/back points) carry explicit danger notes and must be
 independently verified before any clinical reference use.
+
+---
+
+## Enrichment fill — 2026-07-09T02:50:00.622Z
+
+- Batch files: lu_ht_enrichment.json
+- Fields filled (empty-only): 35 across 20 records — {"needling":20,"location_en":5,"functions_en":5,"indications_en":5}
+- Conflicts skipped (existing values untouched): 0
+- Codes: LU1, LU2, LU3, LU4, LU5, LU6, LU7, LU8, LU9, LU10, LU11, HT1, HT2, HT3, HT4, HT5, HT6, HT7, HT8, HT9
+- All fills are model drafts pending source review (CloudTCM D1-D3 cross-check + WHO SAPL).

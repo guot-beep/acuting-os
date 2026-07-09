@@ -283,6 +283,31 @@ Two channels, in order:
    still need Bensky/CloudTCM review (C1).
 Risk: medium-low. All output draft + staged.
 
+### D5. Fill remaining empty needling / EN fields on existing 361.json records
+
+Status 2026-07-09: Claude built the fill-empty-only pipeline and completed
+LU + HT as the worked example (35 fields on 20 records). Remaining gaps
+(check live with the gap command below): ~150 records missing `needling`,
+~35 missing the EN triple, concentrated in BL(60), KI(27), SP(21), SI(19),
+then small remainders in ST/GB/CV/GV/LI/LR/PC/TE.
+
+How to work (one channel batch per session):
+1. Count current gaps:
+   `node -e "const db=require('./data/acupoints/361.json');const e=v=>!v||(Array.isArray(v)&&!v.length);db.filter(p=>/^BL/.test(p.code)).forEach(p=>{const m=['needling','location_en','functions_en','indications_en'].filter(f=>e(p[f]));if(m.length)console.log(p.code,p.chinese,m.join(','))})"`
+2. Write `data/imports/model_draft/enrichment/<channel>_enrichment.json`
+   copying the exact format of `enrichment/lu_ht_enrichment.json` (only the
+   five allowed fields; only for codes/fields the gap command listed).
+   Content rules: conservative textbook needling depths/angles with vessel/
+   nerve/organ avoidance notes; chest/back points MUST carry 氣胸 warnings
+   (BL11-BL30 paraspinal: 斜刺, no deep perpendicular insertion over the
+   thorax); EN text follows WHO SAPL terminology style like the LU examples.
+3. `node scripts/apply-361-enrichment.js` (dry run) — confirm 0 conflicts,
+   then `--apply`. The script only fills empty fields and never overwrites.
+4. Run the standard validators. Handoff with the fill counts.
+
+Batch order: BL → KI → SP → SI → the small remainders in one final batch.
+Risk: low-medium. Data adds only; the apply script enforces no-overwrite.
+
 ### English-content note (no bulk source exists)
 
 There is no legally bulk-importable English source: Deadman and Bensky are
