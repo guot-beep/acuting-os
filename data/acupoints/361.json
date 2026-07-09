@@ -39,7 +39,7 @@
   "contraindications": [
    "眼周高風險穴，嚴禁自行針刺；需專業訓練並注意眼球與血管。"
   ],
-  "needling": "",
+  "needling": "閉目，沿眶緣緩慢直刺或略向內上方刺 0.3-0.5 寸；不可提插捻轉過強，避開眼球。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -56,7 +56,8 @@
   "ui_map": {
    "x": 174,
    "y": 60
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL2",
@@ -98,7 +99,7 @@
   "contraindications": [
    "眼眶附近宜淺刺或按揉；外傷、感染、視力突變需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向下或橫刺 0.3-0.5 寸；避開眼球，局部不宜強刺激。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -115,7 +116,8 @@
   "ui_map": {
    "x": 172,
    "y": 52
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL3",
@@ -156,7 +158,7 @@
   "contraindications": [
    "頭皮局部感染或外傷時避開。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -173,7 +175,8 @@
   "ui_map": {
    "x": 166,
    "y": 42
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL4",
@@ -214,7 +217,7 @@
   "contraindications": [
    "頭皮外傷、感染或出血傾向者需謹慎。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -231,7 +234,8 @@
   "ui_map": {
    "x": 154,
    "y": 44
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL5",
@@ -271,7 +275,7 @@
   "contraindications": [
    "兒童、癲癇或神志症狀需由專業者評估。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -288,7 +292,8 @@
   "ui_map": {
    "x": 166,
    "y": 34
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL6",
@@ -330,7 +335,7 @@
   "contraindications": [
    "頭皮局部病變或外傷時避開。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -347,7 +352,8 @@
   "ui_map": {
    "x": 166,
    "y": 24
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL7",
@@ -388,7 +394,7 @@
   "contraindications": [
    "慢性鼻竇症狀需辨別感染、過敏與結構性問題。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -405,7 +411,8 @@
   "ui_map": {
    "x": 166,
    "y": 18
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL8",
@@ -447,7 +454,7 @@
   "contraindications": [
    "突發頭暈、神志改變、抽搐或視覺異常需急症評估。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -464,7 +471,8 @@
   "ui_map": {
    "x": 166,
    "y": 14
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL9",
@@ -505,7 +513,7 @@
   "contraindications": [
    "枕部外傷、劇烈頭痛或神經症狀需先醫療評估。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -522,7 +530,8 @@
   "ui_map": {
    "x": 166,
    "y": 72
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL10",
@@ -532,12 +541,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "後髮際上約 0.5 寸，斜方肌外側凹陷處。",
-  "location_en": "",
+  "location_en": "On the posterior aspect of the neck, in the depression on the lateral aspect of trapezius, 1.3 cun lateral to the midpoint of the posterior hairline.",
   "cun_measurement": "",
   "functions_zh": [
    "舒項強，清頭目，安神。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Dispels wind and clears the head, benefits the neck and sensory orifices."
+  ],
   "indications_zh": [
    "頸項強痛",
    "頭痛",
@@ -545,7 +556,13 @@
    "鼻塞",
    "失眠"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Dizziness",
+   "Neck stiffness",
+   "Nasal obstruction",
+   "Sore throat"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -553,7 +570,7 @@
   "contraindications": [
    "頸項部位深刺有風險，需專業操作。"
   ],
-  "needling": "",
+  "needling": "直刺或向下斜刺 0.5-0.8 寸；深部近延髓區，禁深刺與強刺激。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -567,7 +584,8 @@
   "ui_map": {
    "x": 206,
    "y": 104
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL11",
@@ -609,7 +627,7 @@
   "contraindications": [
    "近肺尖區域，避免深刺；呼吸症狀或胸背劇痛需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -626,7 +644,8 @@
   "ui_map": {
    "x": 148,
    "y": 116
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL12",
@@ -668,7 +687,7 @@
   "contraindications": [
    "上背近肺區域需注意深度；發熱咳喘嚴重或呼吸困難需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -685,7 +704,8 @@
   "ui_map": {
    "x": 148,
    "y": 126
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL13",
@@ -695,12 +715,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "第 3 胸椎棘突下，旁開 1.5 寸。",
-  "location_en": "",
+  "location_en": "On the upper back, 1.5 cun lateral to the lower border of the spinous process of the 3rd thoracic vertebra.",
   "cun_measurement": "",
   "functions_zh": [
    "宣肺理氣，止咳平喘，解表。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates lung qi, releases the exterior, stops cough and wheezing. Back-shu point of the lung."
+  ],
   "indications_zh": [
    "咳嗽",
    "喘證",
@@ -708,7 +730,13 @@
    "外感",
    "盜汗"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Cough",
+   "Asthma",
+   "Chest oppression",
+   "Nasal congestion",
+   "Back pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -716,7 +744,7 @@
   "contraindications": [
    "胸背區避免過深刺激，氣胸風險需專業評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -730,7 +758,8 @@
   "ui_map": {
    "x": 215,
    "y": 180
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL14",
@@ -771,7 +800,7 @@
   "contraindications": [
    "胸背近肺區域避免深刺；胸痛或心律異常需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -788,7 +817,8 @@
   "ui_map": {
    "x": 148,
    "y": 146
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL15",
@@ -830,7 +860,7 @@
   "contraindications": [
    "胸痛、心律不整或自傷風險需立即醫療處理；背部針刺避免深刺。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -847,7 +877,8 @@
   "ui_map": {
    "x": 148,
    "y": 156
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL16",
@@ -888,7 +919,7 @@
   "contraindications": [
    "背胸區避免深刺；不明胸腹痛需先排除急症。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -905,7 +936,8 @@
   "ui_map": {
    "x": 148,
    "y": 166
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL17",
@@ -915,12 +947,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "第 7 胸椎棘突下，旁開 1.5 寸。",
-  "location_en": "",
+  "location_en": "On the upper back, 1.5 cun lateral to the lower border of the spinous process of the 7th thoracic vertebra.",
   "cun_measurement": "",
   "functions_zh": [
    "活血化瘀，寬胸和胃。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates blood and diaphragm, harmonizes qi counterflow. Hui-meeting point of blood."
+  ],
   "indications_zh": [
    "血瘀",
    "胸脅痛",
@@ -928,7 +962,13 @@
    "嘔吐",
    "皮膚血熱"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Vomiting",
+   "Hiccup",
+   "Chest and hypochondriac pain",
+   "Hematemesis",
+   "Night sweating"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -936,7 +976,7 @@
   "contraindications": [
    "胸背部深刺風險需由專業人員控制。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -950,7 +990,8 @@
   "ui_map": {
    "x": 215,
    "y": 230
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL18",
@@ -992,7 +1033,7 @@
   "contraindications": [
    "肝膽區疼痛、黃疸、視覺急變需醫療評估；背部避免深刺。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1009,7 +1050,8 @@
   "ui_map": {
    "x": 148,
    "y": 190
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL19",
@@ -1051,7 +1093,7 @@
   "contraindications": [
    "黃疸、劇烈右上腹痛或發熱需醫療評估；背部避免深刺。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1068,7 +1110,8 @@
   "ui_map": {
    "x": 148,
    "y": 200
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL20",
@@ -1078,12 +1121,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "第 11 胸椎棘突下，旁開 1.5 寸。",
-  "location_en": "",
+  "location_en": "On the back, 1.5 cun lateral to the lower border of the spinous process of the 11th thoracic vertebra.",
   "cun_measurement": "",
   "functions_zh": [
    "健脾化濕，益氣統血。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Strengthens the spleen, transforms dampness, harmonizes the middle. Back-shu point of the spleen."
+  ],
   "indications_zh": [
    "脾氣虛",
    "食少",
@@ -1091,7 +1136,14 @@
    "泄瀉",
    "水濕內停"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Abdominal distension",
+   "Diarrhea",
+   "Vomiting",
+   "Poor appetite",
+   "Edema",
+   "Jaundice"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -1099,7 +1151,7 @@
   "contraindications": [
    "背部局部感染、骨折或不明痛點需先評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1113,7 +1165,8 @@
   "ui_map": {
    "x": 215,
    "y": 285
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL21",
@@ -1155,7 +1208,7 @@
   "contraindications": [
    "劇烈腹痛、嘔血黑便或持續嘔吐需醫療評估；背部避免深刺。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1172,7 +1225,8 @@
   "ui_map": {
    "x": 148,
    "y": 220
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL22",
@@ -1214,7 +1268,7 @@
   "contraindications": [
    "水腫、尿少或腎病疑慮需醫療評估；腰背操作注意深度。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1231,7 +1285,8 @@
   "ui_map": {
    "x": 148,
    "y": 232
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL23",
@@ -1241,12 +1296,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "第 2 腰椎棘突下，旁開 1.5 寸。",
-  "location_en": "",
+  "location_en": "On the lumbar region, 1.5 cun lateral to the lower border of the spinous process of the 2nd lumbar vertebra.",
   "cun_measurement": "",
   "functions_zh": [
    "補腎壯腰，益精助陽，利水。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Tonifies kidney qi and essence, benefits the lumbar region. Back-shu point of the kidney."
+  ],
   "indications_zh": [
    "腎虛腰痛",
    "耳鳴",
@@ -1254,7 +1311,14 @@
    "水腫",
    "腎陽不足"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Low back pain",
+   "Knee weakness",
+   "Dizziness",
+   "Tinnitus",
+   "Edema",
+   "Reproductive and urinary pattern complaints"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -1262,7 +1326,7 @@
   "contraindications": [
    "背部深刺需專業訓練，避開腎區風險。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-1 寸；腰背深刺需避開腎臟區，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1276,7 +1340,8 @@
   "ui_map": {
    "x": 210,
    "y": 345
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL24",
@@ -1317,7 +1382,7 @@
   "contraindications": [
    "急性腰傷、神經壓迫或大小便失控需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1334,7 +1399,8 @@
   "ui_map": {
    "x": 148,
    "y": 258
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL25",
@@ -1344,12 +1410,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "第 4 腰椎棘突下，旁開 1.5 寸。",
-  "location_en": "",
+  "location_en": "On the lumbar region, 1.5 cun lateral to the lower border of the spinous process of the 4th lumbar vertebra.",
   "cun_measurement": "",
   "functions_zh": [
    "調理腸腑，理氣止痛。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates the intestines, resolves dampness, benefits the lumbar region. Back-shu point of the large intestine."
+  ],
   "indications_zh": [
    "腰痛",
    "便秘",
@@ -1357,7 +1425,13 @@
    "腹脹",
    "腸腑氣滯"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Abdominal pain",
+   "Diarrhea",
+   "Constipation",
+   "Low back pain",
+   "Sciatica pattern pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -1365,7 +1439,7 @@
   "contraindications": [
    "急性腰痛伴發燒、麻木無力或大小便異常需先就醫。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1379,7 +1453,8 @@
   "ui_map": {
    "x": 214,
    "y": 382
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL26",
@@ -1420,7 +1495,7 @@
   "contraindications": [
    "腰椎外傷、放射痛或馬尾症狀需立即醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1437,7 +1512,8 @@
   "ui_map": {
    "x": 148,
    "y": 284
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL27",
@@ -1479,7 +1555,7 @@
   "contraindications": [
    "骶部操作需辨識骶後孔；孕期與局部感染需專業評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1496,7 +1572,8 @@
   "ui_map": {
    "x": 148,
    "y": 300
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL28",
@@ -1538,7 +1615,7 @@
   "contraindications": [
    "尿痛發熱、血尿、腎盂腎炎疑慮需醫療評估；骶部針刺需專業。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1555,7 +1632,8 @@
   "ui_map": {
    "x": 148,
    "y": 314
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL29",
@@ -1595,7 +1673,7 @@
   "contraindications": [
    "下肢麻木無力、大小便異常或嚴重放射痛需先醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1612,7 +1690,8 @@
   "ui_map": {
    "x": 148,
    "y": 326
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL30",
@@ -1653,7 +1732,7 @@
   "contraindications": [
    "孕期、感染、異常出血或泌尿生殖急症需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1670,7 +1749,8 @@
   "ui_map": {
    "x": 148,
    "y": 338
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL31",
@@ -1712,7 +1792,7 @@
   "contraindications": [
    "骶孔操作需專業定位；孕期或骨盆急性症狀需評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1729,7 +1809,8 @@
   "ui_map": {
    "x": 156,
    "y": 300
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL32",
@@ -1739,12 +1820,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "第 2 骶後孔處。",
-  "location_en": "",
+  "location_en": "In the sacral region, in the second posterior sacral foramen.",
   "cun_measurement": "",
   "functions_zh": [
    "調經止痛，通利下焦，舒腰骶。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates the lower jiao, benefits urination and menstruation, strengthens the lumbar region and legs."
+  ],
   "indications_zh": [
    "痛經",
    "月經不調",
@@ -1752,7 +1835,14 @@
    "小便不利",
    "下焦寒濕"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Low back pain",
+   "Dysmenorrhea",
+   "Irregular menstruation",
+   "Leukorrhea",
+   "Difficult urination",
+   "Constipation"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -1760,7 +1850,7 @@
   "contraindications": [
    "妊娠、骨盆腔急性發炎或不明出血需避免自行處理。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1774,7 +1864,8 @@
   "ui_map": {
    "x": 205,
    "y": 412
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL33",
@@ -1816,7 +1907,7 @@
   "contraindications": [
    "骶孔操作需專業定位；孕期或急性骨盆症狀需評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1833,7 +1924,8 @@
   "ui_map": {
    "x": 156,
    "y": 326
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL34",
@@ -1874,7 +1966,7 @@
   "contraindications": [
    "骶部感染、孕期、異常出血或急性疼痛需專業評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1891,7 +1983,8 @@
   "ui_map": {
    "x": 156,
    "y": 338
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL35",
@@ -1932,7 +2025,7 @@
   "contraindications": [
    "局部私密區域需專業、衛生與同意；感染、出血或腫塊需醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.8-1.2 寸；避開直腸，局部深刺需謹慎。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -1949,7 +2042,8 @@
   "ui_map": {
    "x": 154,
    "y": 356
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL36",
@@ -1988,7 +2082,7 @@
   "contraindications": [
    "臀部深層神經血管需注意；急性放射痛或肌力下降需醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-2 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2005,7 +2099,8 @@
   "ui_map": {
    "x": 170,
    "y": 380
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL37",
@@ -2044,7 +2139,7 @@
   "contraindications": [
    "深部坐骨神經附近，避免強刺激；神經缺損需醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-2 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2061,7 +2156,8 @@
   "ui_map": {
    "x": 176,
    "y": 420
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL38",
@@ -2101,7 +2197,7 @@
   "contraindications": [
    "膕窩附近血管神經密集，避免深刺。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2118,7 +2214,8 @@
   "ui_map": {
    "x": 180,
    "y": 462
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL39",
@@ -2160,7 +2257,7 @@
   "contraindications": [
    "膕窩血管神經密集，不宜深刺；下肢紅腫熱痛需排除血栓或感染。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2177,7 +2274,8 @@
   "ui_map": {
    "x": 190,
    "y": 472
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL40",
@@ -2187,12 +2285,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "膕橫紋中點。",
-  "location_en": "",
+  "location_en": "At the midpoint of the transverse crease of the popliteal fossa, between the tendons of biceps femoris and semitendinosus.",
   "cun_measurement": "",
   "functions_zh": [
    "舒筋通絡，清熱涼血，利腰背。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Benefits the lumbar region and knees, clears summerheat, cools blood, resolves dampness. He-sea point of the bladder channel."
+  ],
   "indications_zh": [
    "腰背痛",
    "膝痛",
@@ -2200,7 +2300,14 @@
    "暑熱",
    "血熱"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Low back pain",
+   "Knee pain",
+   "Leg paralysis",
+   "Abdominal pain",
+   "Vomiting and diarrhea",
+   "Skin disorders"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -2208,7 +2315,7 @@
   "contraindications": [
    "膕窩血管神經豐富，針刺需非常審慎。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸，或點刺出血；避開膕動脈與膕靜脈。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2222,7 +2329,8 @@
   "ui_map": {
    "x": 150,
    "y": 438
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL41",
@@ -2261,7 +2369,7 @@
   "contraindications": [
    "上背近肺區域，避免深刺；胸背劇痛或呼吸症狀需先醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2278,7 +2386,8 @@
   "ui_map": {
    "x": 126,
    "y": 126
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL42",
@@ -2320,7 +2429,7 @@
   "contraindications": [
    "胸背區避免深刺；氣喘急性發作、胸痛或呼吸困難需立即就醫。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2337,7 +2446,8 @@
   "ui_map": {
    "x": 126,
    "y": 136
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL43",
@@ -2379,7 +2489,7 @@
   "contraindications": [
    "近肺區域需斜刺或淺刺，避免深刺；嚴重虛弱或不明體重下降需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2396,7 +2506,8 @@
   "ui_map": {
    "x": 126,
    "y": 146
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL44",
@@ -2437,7 +2548,7 @@
   "contraindications": [
    "胸痛、心律不整或自傷風險需醫療評估；背部避免深刺。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2454,7 +2565,8 @@
   "ui_map": {
    "x": 126,
    "y": 156
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL45",
@@ -2496,7 +2608,7 @@
   "contraindications": [
    "背胸區需注意深度；發熱寒戰或呼吸困難需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2513,7 +2625,8 @@
   "ui_map": {
    "x": 126,
    "y": 166
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL46",
@@ -2555,7 +2668,7 @@
   "contraindications": [
    "吞嚥困難、胸痛或持續嘔吐需醫療評估；背部避免深刺。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2572,7 +2685,8 @@
   "ui_map": {
    "x": 126,
    "y": 178
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL47",
@@ -2613,7 +2727,7 @@
   "contraindications": [
    "黃疸、劇烈右上腹痛或情緒危機需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2630,7 +2744,8 @@
   "ui_map": {
    "x": 126,
    "y": 190
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL48",
@@ -2671,7 +2786,7 @@
   "contraindications": [
    "黃疸、發熱或劇烈腹痛需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2688,7 +2803,8 @@
   "ui_map": {
    "x": 126,
    "y": 200
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL49",
@@ -2730,7 +2846,7 @@
   "contraindications": [
    "慢性消化症狀伴體重下降、黑便或劇痛需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2747,7 +2863,8 @@
   "ui_map": {
    "x": 126,
    "y": 212
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL50",
@@ -2788,7 +2905,7 @@
   "contraindications": [
    "劇烈腹痛、嘔血、黑便或持續嘔吐需醫療評估。"
   ],
-  "needling": "",
+  "needling": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2805,7 +2922,8 @@
   "ui_map": {
    "x": 126,
    "y": 220
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL51",
@@ -2846,7 +2964,7 @@
   "contraindications": [
    "不明腹痛或腰痛伴神經症狀需先醫療評估。"
   ],
-  "needling": "",
+  "needling": "斜刺 0.5-1 寸；腰背部深刺需謹慎。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2863,7 +2981,8 @@
   "ui_map": {
    "x": 126,
    "y": 232
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL52",
@@ -2905,7 +3024,7 @@
   "contraindications": [
    "腎病、泌尿感染、神經壓迫或劇烈腰痛需醫療評估。"
   ],
-  "needling": "",
+  "needling": "斜刺 0.5-1 寸；腰背部深刺需避開腎臟區。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2922,7 +3041,8 @@
   "ui_map": {
    "x": 126,
    "y": 246
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL53",
@@ -2963,7 +3083,7 @@
   "contraindications": [
    "骶臀深部操作需熟悉解剖；急性放射痛或大小便異常需醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -2980,7 +3100,8 @@
   "ui_map": {
    "x": 126,
    "y": 314
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL54",
@@ -3022,7 +3143,7 @@
   "contraindications": [
    "深部坐骨神經附近，需專業操作；急性神經缺損需醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1.5-2 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3039,7 +3160,8 @@
   "ui_map": {
    "x": 128,
    "y": 344
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL55",
@@ -3080,7 +3202,7 @@
   "contraindications": [
    "小腿紅腫熱痛需排除血栓或感染；避免深刺血管區。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3097,7 +3219,8 @@
   "ui_map": {
    "x": 182,
    "y": 496
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL56",
@@ -3139,7 +3262,7 @@
   "contraindications": [
    "急性小腿腫痛、外傷或疑似血栓需先醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3156,7 +3279,8 @@
   "ui_map": {
    "x": 184,
    "y": 522
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL57",
@@ -3198,7 +3322,7 @@
   "contraindications": [
    "小腿急性腫痛、紅熱或深壓痛需排除血栓；避免自行強刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 1-2 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3215,7 +3339,8 @@
   "ui_map": {
    "x": 186,
    "y": 544
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL58",
@@ -3257,7 +3382,7 @@
   "contraindications": [
    "小腿外側疼痛伴麻木或腫脹需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3274,7 +3399,8 @@
   "ui_map": {
    "x": 196,
    "y": 560
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL59",
@@ -3316,7 +3442,7 @@
   "contraindications": [
    "踝上外傷、腫痛或神經症狀需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3333,7 +3459,8 @@
   "ui_map": {
    "x": 198,
    "y": 580
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL60",
@@ -3343,12 +3470,14 @@
   "channel_zh": "膀胱經",
   "channel_en": "Bladder",
   "location_zh": "外踝尖與跟腱之間凹陷處。",
-  "location_en": "",
+  "location_en": "Posterior to the lateral malleolus, in the depression between the prominence of the lateral malleolus and the calcaneal tendon.",
   "cun_measurement": "",
   "functions_zh": [
    "舒筋活絡，清頭目，利腰背。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Clears heat, benefits the head, neck, lumbar region and ankle. Jing-river point of the bladder channel."
+  ],
   "indications_zh": [
    "腰背痛",
    "頭痛",
@@ -3356,7 +3485,13 @@
    "頸項強痛",
    "經絡阻滯"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Neck stiffness",
+   "Low back pain",
+   "Ankle pain",
+   "Difficult labor study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -3364,7 +3499,7 @@
   "contraindications": [
    "孕期慎用；踝部腫脹明顯或傷口感染時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用或禁用，避開局部血管神經。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3378,7 +3513,8 @@
   "ui_map": {
    "x": 246,
    "y": 566
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "BL61",
@@ -3860,12 +3996,14 @@
   "channel_zh": "任脈",
   "channel_en": "Conception Vessel",
   "location_zh": "前正中線，臍下 3 寸。",
-  "location_en": "",
+  "location_en": "On the lower abdomen, 3 cun inferior to the centre of the umbilicus, on the anterior median line.",
   "cun_measurement": "",
   "functions_zh": [
    "補益元氣，溫腎固本，調經。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Tonifies original qi, nourishes kidney yin and yang, regulates the lower jiao."
+  ],
   "indications_zh": [
    "腎陽虛",
    "元氣不足",
@@ -3873,7 +4011,14 @@
    "不孕",
    "下焦虛寒"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Abdominal pain",
+   "Diarrhea",
+   "Irregular menstruation",
+   "Dysuria",
+   "Enuresis",
+   "Reproductive pattern complaints"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -3881,7 +4026,7 @@
   "contraindications": [
    "孕期、腹部急症或不明出血需避免自行刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用或禁用，膀胱充盈時禁深刺。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3895,7 +4040,8 @@
   "ui_map": {
    "x": 180,
    "y": 350
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "CV6",
@@ -3905,12 +4051,14 @@
   "channel_zh": "任脈",
   "channel_en": "Conception Vessel",
   "location_zh": "前正中線，臍下 1.5 寸。",
-  "location_en": "",
+  "location_en": "On the lower abdomen, 1.5 cun inferior to the centre of the umbilicus, on the anterior median line.",
   "cun_measurement": "",
   "functions_zh": [
    "補益元氣，溫陽固脫，調理下焦。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Tonifies qi, regulates qi movement, benefits the lower jiao."
+  ],
   "indications_zh": [
    "氣虛",
    "陽虛",
@@ -3918,7 +4066,13 @@
    "月經不調",
    "虛勞"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Abdominal pain",
+   "Diarrhea",
+   "Constipation",
+   "Irregular menstruation",
+   "Fatigue pattern context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -3926,7 +4080,7 @@
   "contraindications": [
    "孕期與腹部不明疼痛應先諮詢專業人員。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用，腹部深刺需謹慎。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3940,7 +4094,8 @@
   "ui_map": {
    "x": 180,
    "y": 326
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "CV12",
@@ -3950,12 +4105,14 @@
   "channel_zh": "任脈",
   "channel_en": "Conception Vessel",
   "location_zh": "前正中線，臍上 4 寸。",
-  "location_en": "",
+  "location_en": "On the upper abdomen, 4 cun superior to the centre of the umbilicus, on the anterior median line.",
   "cun_measurement": "",
   "functions_zh": [
    "和胃健脾，降逆止嘔，消食導滯。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Harmonizes the stomach, fortifies the spleen, resolves dampness. Front-mu point of the stomach."
+  ],
   "indications_zh": [
    "胃脘痛",
    "食滯",
@@ -3963,7 +4120,13 @@
    "脾胃虛弱",
    "腹脹"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Epigastric pain",
+   "Vomiting",
+   "Nausea",
+   "Abdominal distension",
+   "Poor appetite"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -3971,7 +4134,7 @@
   "contraindications": [
    "飽食、妊娠或腹部急症需審慎。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；上腹部深刺需避開腹腔與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -3985,7 +4148,8 @@
   "ui_map": {
    "x": 180,
    "y": 240
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "CV17",
@@ -3995,12 +4159,14 @@
   "channel_zh": "任脈",
   "channel_en": "Conception Vessel",
   "location_zh": "前正中線，第 4 肋間隙，兩乳頭連線中點。",
-  "location_en": "",
+  "location_en": "On the anterior thoracic region, at the same level as the 4th intercostal space, on the anterior median line.",
   "cun_measurement": "",
   "functions_zh": [
    "寬胸理氣，降逆平喘，通乳。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates qi and unbinds the chest, benefits breathing. Front-mu point of the pericardium and hui-meeting point of qi."
+  ],
   "indications_zh": [
    "胸悶",
    "氣逆",
@@ -4008,7 +4174,13 @@
    "乳汁不下",
    "焦慮胸悶"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Chest oppression",
+   "Asthma",
+   "Cough",
+   "Hiccup",
+   "Insufficient lactation study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4016,7 +4188,7 @@
   "contraindications": [
    "胸痛、呼吸困難、冒冷汗等症狀需立即就醫。"
   ],
-  "needling": "",
+  "needling": "平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4030,7 +4202,8 @@
   "ui_map": {
    "x": 180,
    "y": 190
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GB20",
@@ -4040,12 +4213,14 @@
   "channel_zh": "膽經",
   "channel_en": "Gallbladder",
   "location_zh": "枕骨下，胸鎖乳突肌與斜方肌上端之間凹陷處。",
-  "location_en": "",
+  "location_en": "On the anterior aspect of the neck, inferior to the occipital bone, in the depression between sternocleidomastoid and trapezius.",
   "cun_measurement": "",
   "functions_zh": [
    "疏風清熱，明目醒腦，舒緩頭項。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Dispels wind, clears the head, benefits the eyes and ears, relaxes the sinews."
+  ],
   "indications_zh": [
    "風邪頭痛",
    "眩暈",
@@ -4053,7 +4228,13 @@
    "頸項強痛",
    "少陽證"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Dizziness",
+   "Neck stiffness",
+   "Red painful eyes",
+   "Tinnitus"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4061,7 +4242,7 @@
   "contraindications": [
    "針刺方向與深度需由受訓者操作，避免危險深刺。"
   ],
-  "needling": "",
+  "needling": "向鼻尖方向斜刺 0.5-1 寸；禁向內上深刺，避開延髓區。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4075,7 +4256,8 @@
   "ui_map": {
    "x": 150,
    "y": 98
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GB21",
@@ -4085,12 +4267,14 @@
   "channel_zh": "膽經",
   "channel_en": "Gallbladder",
   "location_zh": "肩上，乳頭直上與大椎連線中點附近。",
-  "location_en": "",
+  "location_en": "On the shoulder girdle, in the depression between the anterior border of trapezius and the superior border of the clavicle, midway between GV14 and the acromion.",
   "cun_measurement": "",
   "functions_zh": [
    "舒肩項，降逆，通絡。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates qi, benefits the shoulders and neck, promotes descending. Meeting point of gallbladder and several channels."
+  ],
   "indications_zh": [
    "肩頸痛",
    "乳癰",
@@ -4098,7 +4282,13 @@
    "氣機上逆",
    "產後乳少"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Shoulder pain",
+   "Neck stiffness",
+   "Headache",
+   "Difficult labor study context",
+   "Insufficient lactation study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4106,7 +4296,7 @@
   "contraindications": [
    "孕期禁慎用；避免深刺以降低氣胸風險。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸或向外斜刺；不可深刺，肩井深刺有氣胸風險，孕期慎用或禁用。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4120,7 +4310,8 @@
   "ui_map": {
    "x": 236,
    "y": 130
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GB30",
@@ -4130,12 +4321,14 @@
   "channel_zh": "膽經",
   "channel_en": "Gallbladder",
   "location_zh": "股骨大轉子與骶管裂孔連線外 1/3 與內 2/3 交點附近。",
-  "location_en": "",
+  "location_en": "On the buttock, at the junction of the lateral third and medial two-thirds of the line connecting the greater trochanter with the sacral hiatus.",
   "cun_measurement": "",
   "functions_zh": [
    "舒筋活絡，利腰腿，祛風濕。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Benefits the hip and leg, activates the channel, dispels wind-damp."
+  ],
   "indications_zh": [
    "坐骨神經痛",
    "髖痛",
@@ -4143,7 +4336,12 @@
    "腰腿痛",
    "風寒濕痹"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Hip pain",
+   "Sciatica pattern pain",
+   "Leg paralysis",
+   "Low back pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4151,7 +4349,7 @@
   "contraindications": [
    "深部臀區需熟悉解剖，避免坐骨神經過強刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 1.5-3 寸；避開坐骨神經，深刺需掌握方向。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4165,7 +4363,8 @@
   "ui_map": {
    "x": 230,
    "y": 374
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GB34",
@@ -4175,12 +4374,14 @@
   "channel_zh": "膽經",
   "channel_en": "Gallbladder",
   "location_zh": "腓骨頭前下方凹陷處。",
-  "location_en": "",
+  "location_en": "On the fibular aspect of the leg, in the depression anterior and distal to the head of the fibula.",
   "cun_measurement": "",
   "functions_zh": [
    "疏肝利膽，舒筋活絡。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Benefits the sinews and joints, spreads liver qi, clears damp-heat. He-sea point and hui-meeting point of sinews."
+  ],
   "indications_zh": [
    "筋脈拘急",
    "脅肋痛",
@@ -4188,7 +4389,13 @@
    "下肢痹痛",
    "肝膽氣滯"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Knee pain",
+   "Leg pain",
+   "Hypochondriac pain",
+   "Bitter taste",
+   "Vomiting"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4196,7 +4403,7 @@
   "contraindications": [
    "避免刺激腓總神經過強。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4210,7 +4417,8 @@
   "ui_map": {
    "x": 236,
    "y": 450
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GB39",
@@ -4220,12 +4428,14 @@
   "channel_zh": "膽經",
   "channel_en": "Gallbladder",
   "location_zh": "外踝尖上 3 寸，腓骨前緣。",
-  "location_en": "",
+  "location_en": "On the fibular aspect of the leg, 3 cun proximal to the prominence of the lateral malleolus, anterior to the fibula.",
   "cun_measurement": "",
   "functions_zh": [
    "益髓強骨，舒筋活絡。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Benefits marrow, sinews and bones, clears gallbladder heat. Hui-meeting point of marrow."
+  ],
   "indications_zh": [
    "頸項強痛",
    "下肢痹痛",
@@ -4233,7 +4443,12 @@
    "偏癱",
    "踝痛"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Neck stiffness",
+   "Hemiplegia study context",
+   "Leg pain",
+   "Ankle pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4241,7 +4456,7 @@
   "contraindications": [
    "避免刺激腓骨附近神經造成放電樣疼痛。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4255,7 +4470,8 @@
   "ui_map": {
    "x": 240,
    "y": 532
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GV14",
@@ -4265,12 +4481,14 @@
   "channel_zh": "督脈",
   "channel_en": "Governing Vessel",
   "location_zh": "第 7 頸椎棘突下凹陷處。",
-  "location_en": "",
+  "location_en": "On the posterior median line, in the depression inferior to the spinous process of the 7th cervical vertebra.",
   "cun_measurement": "",
   "functions_zh": [
    "清熱解表，振奮陽氣，舒項背。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Clears heat, releases the exterior, regulates yang qi."
+  ],
   "indications_zh": [
    "外感發熱",
    "項背強痛",
@@ -4278,7 +4496,13 @@
    "瘧疾往來寒熱",
    "風熱"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Fever",
+   "Neck stiffness",
+   "Cough",
+   "Asthma",
+   "Back pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4286,7 +4510,7 @@
   "contraindications": [
    "頸胸交界處避免深刺，脊柱疾病者需審慎。"
   ],
-  "needling": "",
+  "needling": "向下斜刺 0.5-1 寸；不可向上深刺。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4300,7 +4524,8 @@
   "ui_map": {
    "x": 180,
    "y": 126
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GV20",
@@ -4310,12 +4535,14 @@
   "channel_zh": "督脈",
   "channel_en": "Governing Vessel",
   "location_zh": "頭頂正中線，兩耳尖連線與前後正中線交會處。",
-  "location_en": "",
+  "location_en": "On the head, 5 cun superior to the anterior hairline, on the anterior median line.",
   "cun_measurement": "",
   "functions_zh": [
    "醒神開竅，升陽舉陷，安神定志。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Raises yang, clears the head, calms the spirit."
+  ],
   "indications_zh": [
    "頭暈",
    "神志不清",
@@ -4323,7 +4550,13 @@
    "失眠",
    "焦慮"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Dizziness",
+   "Prolapse study context",
+   "Insomnia",
+   "Poor memory"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4331,7 +4564,7 @@
   "contraindications": [
    "嬰幼兒囟門未閉或頭皮病變時需避免。"
   ],
-  "needling": "",
+  "needling": "沿頭皮平刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4345,7 +4578,8 @@
   "ui_map": {
    "x": 180,
    "y": 30
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "GV26",
@@ -4355,12 +4589,14 @@
   "channel_zh": "督脈",
   "channel_en": "Governing Vessel",
   "location_zh": "人中溝上 1/3 與中 1/3 交點。",
-  "location_en": "",
+  "location_en": "On the face, at the junction of the upper one third and lower two thirds of the philtrum midline.",
   "cun_measurement": "",
   "functions_zh": [
    "醒神開竅，急救回陽，清熱息風。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Restores consciousness, benefits the lumbar spine, regulates the Governing Vessel."
+  ],
   "indications_zh": [
    "昏厥",
    "中暑",
@@ -4368,7 +4604,12 @@
    "抽搐",
    "急性腰扭傷"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Syncope study context",
+   "Acute lumbar sprain study context",
+   "Facial swelling",
+   "Mental-emotional emergency study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -4376,7 +4617,7 @@
   "contraindications": [
    "意識不清、抽搐、胸痛或中風徵象時應立即呼叫急救。"
   ],
-  "needling": "",
+  "needling": "向上斜刺 0.3-0.5 寸；面部針感較強。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4390,7 +4631,8 @@
   "ui_map": {
    "x": 180,
    "y": 78
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "HT1",
@@ -4962,7 +5204,7 @@
   "contraindications": [
    "局部靜脈曲張明顯者須審慎。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸；避開脛後動脈與神經。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -4979,7 +5221,8 @@
   "ui_map": {
    "x": 132,
    "y": 568
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "KI6",
@@ -5022,7 +5265,7 @@
   "contraindications": [
    "足踝感染、傷口或循環不良需避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -5039,7 +5282,8 @@
   "ui_map": {
    "x": 136,
    "y": 578
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LI1",
@@ -5251,12 +5495,14 @@
   "channel_zh": "大腸經",
   "channel_en": "Large Intestine",
   "location_zh": "手背，第 2 掌骨橈側中點附近；常以拇指、食指併攏時肌肉隆起最高處作參考。",
-  "location_en": "",
+  "location_en": "On the dorsum of the hand, radial to the midpoint of the second metacarpal bone.",
   "cun_measurement": "",
   "functions_zh": [
    "疏風解表，清熱止痛，調理面口與頭項。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates defensive qi, releases the exterior, benefits the face and sensory orifices. Yuan-source point of the large intestine channel."
+  ],
   "indications_zh": [
    "風寒表證",
    "風熱表證",
@@ -5264,7 +5510,13 @@
    "牙痛",
    "氣滯疼痛"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Toothache",
+   "Facial paralysis",
+   "Sore throat",
+   "Common cold pattern context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -5272,7 +5524,7 @@
   "contraindications": [
    "孕期慎用或避免強刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用或禁用。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -5286,7 +5538,8 @@
   "ui_map": {
    "x": 70,
    "y": 284
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LI5",
@@ -5704,12 +5957,14 @@
   "channel_zh": "大腸經",
   "channel_en": "Large Intestine",
   "location_zh": "屈肘時，肘橫紋外側端與肱骨外上髁連線中點。",
-  "location_en": "",
+  "location_en": "On the lateral aspect of the elbow, at the midpoint of the line connecting LU5 with the lateral epicondyle of the humerus.",
   "cun_measurement": "",
   "functions_zh": [
    "清熱，祛風止癢，通絡止痛。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Clears heat, cools blood, resolves dampness, regulates qi and blood. He-sea point of the large intestine channel."
+  ],
   "indications_zh": [
    "熱證",
    "皮膚瘙癢",
@@ -5717,7 +5972,13 @@
    "高熱",
    "風熱"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Fever",
+   "Sore throat",
+   "Elbow pain",
+   "Skin disorders",
+   "Hypertension study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -5725,7 +5986,7 @@
   "contraindications": [
    "肘部發炎或腫脹時避免刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -5739,7 +6000,8 @@
   "ui_map": {
    "x": 292,
    "y": 214
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LI12",
@@ -6297,12 +6559,14 @@
   "channel_zh": "大腸經",
   "channel_en": "Large Intestine",
   "location_zh": "鼻翼外緣中點旁，鼻唇溝中。",
-  "location_en": "",
+  "location_en": "On the face, in the nasolabial sulcus, level with the midpoint of the lateral border of the ala nasi.",
   "cun_measurement": "",
   "functions_zh": [
    "通鼻竅，散風熱，清面部。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Opens the nasal passages, disperses wind and heat."
+  ],
   "indications_zh": [
    "鼻塞",
    "鼻炎",
@@ -6310,7 +6574,12 @@
    "風熱犯肺",
    "嗅覺不利"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Nasal obstruction",
+   "Rhinitis pattern context",
+   "Epistaxis",
+   "Facial paralysis"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -6318,7 +6587,7 @@
   "contraindications": [
    "面部皮膚感染、酒糟或急性發炎時避開。"
   ],
-  "needling": "",
+  "needling": "向鼻翼方向斜刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6332,7 +6601,8 @@
   "ui_map": {
    "x": 166,
    "y": 72
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LR3",
@@ -6342,12 +6612,14 @@
   "channel_zh": "肝經",
   "channel_en": "Liver",
   "location_zh": "足背，第 1、2 跖骨間隙後方凹陷處。",
-  "location_en": "",
+  "location_en": "On the dorsum of the foot, in the depression distal to the junction of the 1st and 2nd metatarsal bones.",
   "cun_measurement": "",
   "functions_zh": [
    "疏肝理氣，平肝息風，清利下焦。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Spreads liver qi, subdues liver yang, extinguishes wind, nourishes liver blood and yin. Shu-stream and yuan-source point of the liver channel."
+  ],
   "indications_zh": [
    "肝氣鬱結",
    "頭痛眩暈",
@@ -6355,7 +6627,14 @@
    "情志鬱悶",
    "肝陽上亢"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Dizziness",
+   "Irregular menstruation",
+   "Hypochondriac pain",
+   "Insomnia",
+   "Foot pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -6363,7 +6642,7 @@
   "contraindications": [
    "局部腫痛或傷口時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6377,7 +6656,8 @@
   "ui_map": {
    "x": 236,
    "y": 590
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LR14",
@@ -6387,12 +6667,14 @@
   "channel_zh": "肝經",
   "channel_en": "Liver",
   "location_zh": "乳頭直下，第 6 肋間隙，前正中線旁開約 4 寸。",
-  "location_en": "",
+  "location_en": "On the anterior thoracic region, in the 6th intercostal space, 4 cun lateral to the anterior median line.",
   "cun_measurement": "",
   "functions_zh": [
    "疏肝理氣，和胃降逆，寬胸脅。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Spreads liver qi, harmonizes the stomach, unbinds the chest. Front-mu point of the liver."
+  ],
   "indications_zh": [
    "肝氣鬱結",
    "胸脅脹痛",
@@ -6400,7 +6682,13 @@
    "呃逆",
    "情志鬱悶"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Hypochondriac pain",
+   "Chest oppression",
+   "Abdominal distension",
+   "Vomiting",
+   "Mastitis study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -6408,7 +6696,7 @@
   "contraindications": [
    "胸脅部避免深刺，胸痛、呼吸困難時應立即就醫。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -6422,7 +6710,8 @@
   "ui_map": {
    "x": 132,
    "y": 222
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "LU1",
@@ -7142,12 +7431,14 @@
   "channel_zh": "心包經",
   "channel_en": "Pericardium",
   "location_zh": "腕橫紋上 2 寸，掌長肌腱與橈側腕屈肌腱之間。",
-  "location_en": "",
+  "location_en": "On the anterior aspect of the forearm, between palmaris longus and flexor carpi radialis tendons, 2 cun proximal to the palmar wrist crease.",
   "cun_measurement": "",
   "functions_zh": [
    "寬胸理氣，和胃降逆，寧心安神。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates the heart and calms the spirit, harmonizes the stomach and downbears counterflow. Luo-connecting point and confluent point of the Yin Linking Vessel."
+  ],
   "indications_zh": [
    "胸悶",
    "心悸",
@@ -7155,7 +7446,14 @@
    "胃氣上逆",
    "焦慮失眠"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Palpitations",
+   "Chest pain",
+   "Nausea",
+   "Vomiting",
+   "Insomnia",
+   "Wrist pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -7163,7 +7461,7 @@
   "contraindications": [
    "局部皮膚破損或感染時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；避開正中神經，針感可向手掌放散。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7177,7 +7475,8 @@
   "ui_map": {
    "x": 55,
    "y": 250
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI1",
@@ -7219,7 +7518,7 @@
   "contraindications": [
    "指尖刺絡需專業訓練；凝血異常、抗凝藥或感染風險者避免自行操作。"
   ],
-  "needling": "",
+  "needling": "淺刺 0.1 寸，或點刺出血。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7236,7 +7535,8 @@
   "ui_map": {
    "x": 320,
    "y": 320
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI2",
@@ -7278,7 +7578,7 @@
   "contraindications": [
    "手部傷口、感染或急性扭傷時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.2-0.3 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7295,7 +7595,8 @@
   "ui_map": {
    "x": 314,
    "y": 310
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI3",
@@ -7305,12 +7606,14 @@
   "channel_zh": "小腸經",
   "channel_en": "Small Intestine",
   "location_zh": "握拳時，第 5 掌指關節尺側後方赤白肉際處。",
-  "location_en": "",
+  "location_en": "On the ulnar side of the hand, proximal to the head of the 5th metacarpal bone, at the end of the proximal transverse crease when the hand is loosely clenched.",
   "cun_measurement": "",
   "functions_zh": [
    "舒項背，通督脈，清心安神。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Benefits the occiput, neck and back, clears wind and heat. Shu-stream point and confluent point of the Governing Vessel."
+  ],
   "indications_zh": [
    "頸項強痛",
    "腰背痛",
@@ -7318,7 +7621,13 @@
    "癲癇",
    "盜汗"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Neck stiffness",
+   "Low back pain",
+   "Epilepsy study context",
+   "Pain of the fingers and elbow"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -7326,7 +7635,7 @@
   "contraindications": [
    "手部急性扭傷、傷口或感染時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7340,7 +7649,8 @@
   "ui_map": {
    "x": 302,
    "y": 302
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI4",
@@ -7382,7 +7692,7 @@
   "contraindications": [
    "腕部神經血管密集，局部腫痛或骨折疑慮需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7399,7 +7709,8 @@
   "ui_map": {
    "x": 306,
    "y": 296
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI5",
@@ -7441,7 +7752,7 @@
   "contraindications": [
    "腕尺側疼痛、麻木或外傷時先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7458,7 +7769,8 @@
   "ui_map": {
    "x": 304,
    "y": 286
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI6",
@@ -7500,7 +7812,7 @@
   "contraindications": [
    "急性外傷、骨折疑慮或神經症狀需先醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-0.8 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7517,7 +7829,8 @@
   "ui_map": {
    "x": 302,
    "y": 270
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI7",
@@ -7559,7 +7872,7 @@
   "contraindications": [
    "前臂外傷、感染或不明麻木需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7576,7 +7889,8 @@
   "ui_map": {
    "x": 300,
    "y": 244
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI8",
@@ -7618,7 +7932,7 @@
   "contraindications": [
    "尺神經附近，避免強烈電擊樣刺激；肘部麻木需評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；避開尺神經。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7635,7 +7949,8 @@
   "ui_map": {
    "x": 300,
    "y": 222
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI9",
@@ -7674,7 +7989,7 @@
   "contraindications": [
    "肩部急性外傷、撕裂或紅腫熱痛需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.8-1.2 寸；肩後部深刺需謹慎。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7691,7 +8006,8 @@
   "ui_map": {
    "x": 106,
    "y": 148
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI10",
@@ -7730,7 +8046,7 @@
   "contraindications": [
    "肩胛區深部操作需熟悉解剖；急性肩傷先評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.8-1.2 寸；肩胛區深刺需謹慎。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7747,7 +8063,8 @@
   "ui_map": {
    "x": 98,
    "y": 132
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI11",
@@ -7789,7 +8106,7 @@
   "contraindications": [
    "肩胛區避免過深向胸腔方向操作；外傷或腫塊需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.5-1 寸；肩胛背部深刺需防胸腔穿刺與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7806,7 +8123,8 @@
   "ui_map": {
    "x": 104,
    "y": 166
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI12",
@@ -7845,7 +8163,7 @@
   "contraindications": [
    "肩胛區需注意深度與方向；急性肩袖損傷需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.5-1 寸；肩胛上部深刺需防胸腔穿刺與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7862,7 +8180,8 @@
   "ui_map": {
    "x": 104,
    "y": 126
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI13",
@@ -7901,7 +8220,7 @@
   "contraindications": [
    "肩背區不宜盲目深刺；神經症狀或外傷需評估。"
   ],
-  "needling": "",
+  "needling": "斜刺 0.5-0.8 寸；肩胛上部深刺需防胸腔穿刺與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7918,7 +8237,8 @@
   "ui_map": {
    "x": 122,
    "y": 126
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI14",
@@ -7957,7 +8277,7 @@
   "contraindications": [
    "上背部近肺尖區域需注意角度與深度，避免深刺。"
   ],
-  "needling": "",
+  "needling": "斜刺 0.5-0.8 寸；上背部深刺需防胸腔穿刺與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -7974,7 +8294,8 @@
   "ui_map": {
    "x": 126,
    "y": 116
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI15",
@@ -8013,7 +8334,7 @@
   "contraindications": [
    "近肺尖，需斜刺淺刺並避免深刺；呼吸困難需急症評估。"
   ],
-  "needling": "",
+  "needling": "斜刺 0.5-0.8 寸；上背部深刺需防胸腔穿刺與氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8030,7 +8351,8 @@
   "ui_map": {
    "x": 132,
    "y": 108
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI16",
@@ -8071,7 +8393,7 @@
   "contraindications": [
    "頸部血管神經密集，需專業操作；頸部腫塊或眩暈症狀需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；頸部針刺需避開頸動脈、頸靜脈與神經。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8088,7 +8410,8 @@
   "ui_map": {
    "x": 198,
    "y": 104
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI17",
@@ -8129,7 +8452,7 @@
   "contraindications": [
    "頸動脈附近，避免深刺；頸部腫塊、吞嚥困難或感染需醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；頸部針刺需避開頸動脈、頸靜脈與神經。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8146,7 +8469,8 @@
   "ui_map": {
    "x": 204,
    "y": 96
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI18",
@@ -8188,7 +8512,7 @@
   "contraindications": [
    "面部淺刺，避開眼眶；急性面癱、腫脹感染或視覺症狀需醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺或斜刺 0.3-0.5 寸；避開眼眶與面部血管。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8205,7 +8529,8 @@
   "ui_map": {
    "x": 192,
    "y": 78
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SI19",
@@ -8247,7 +8572,7 @@
   "contraindications": [
    "張口取穴，面神經與耳前血管附近需輕柔；急性耳痛發熱需醫療評估。"
   ],
-  "needling": "",
+  "needling": "張口取穴，直刺 0.5-1 寸；避開顳淺動脈與外耳道深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8264,7 +8589,8 @@
   "ui_map": {
    "x": 214,
    "y": 78
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP1",
@@ -8306,7 +8632,7 @@
   "contraindications": [
    "足趾感染、糖尿病足、凝血異常或抗凝藥使用者避免自行刺絡。"
   ],
-  "needling": "",
+  "needling": "淺刺 0.1 寸，或點刺出血。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8323,7 +8649,8 @@
   "ui_map": {
    "x": 142,
    "y": 614
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP2",
@@ -8365,7 +8692,7 @@
   "contraindications": [
    "足部傷口、感染、痛風急性發作或糖尿病足風險者避免自行刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8382,7 +8709,8 @@
   "ui_map": {
    "x": 144,
    "y": 604
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP3",
@@ -8423,7 +8751,7 @@
   "contraindications": [
    "足內側局部腫痛、傷口或感染時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-0.8 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8440,7 +8768,8 @@
   "ui_map": {
    "x": 146,
    "y": 594
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP4",
@@ -8484,7 +8813,7 @@
   "contraindications": [
    "孕期或腹痛出血等情況需由合格醫師辨證，不宜自行強刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8501,7 +8830,8 @@
   "ui_map": {
    "x": 148,
    "y": 584
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP5",
@@ -8542,7 +8872,7 @@
   "contraindications": [
    "踝部急性扭傷、骨折疑慮或感染時先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8559,7 +8889,8 @@
   "ui_map": {
    "x": 150,
    "y": 572
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP6",
@@ -8604,7 +8935,7 @@
   "contraindications": [
    "孕期禁用或慎用強刺激，尤其未經專業評估不可自行針刺。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸；孕期慎用或禁用，避開脛後血管神經束。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8621,7 +8952,8 @@
   "ui_map": {
    "x": 138,
    "y": 540
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP7",
@@ -8662,7 +8994,7 @@
   "contraindications": [
    "下肢不明腫脹、紅熱痛或疑似血栓需先就醫。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸；避開脛後血管神經束。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8679,7 +9011,8 @@
   "ui_map": {
    "x": 137,
    "y": 514
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP8",
@@ -8721,7 +9054,7 @@
   "contraindications": [
    "劇烈腹痛、異常出血或疑似急腹症需先醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8738,7 +9071,8 @@
   "ui_map": {
    "x": 136,
    "y": 480
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP9",
@@ -8748,12 +9082,14 @@
   "channel_zh": "脾經",
   "channel_en": "Spleen",
   "location_zh": "脛骨內側髁下緣與脛骨內側緣之間凹陷處。",
-  "location_en": "",
+  "location_en": "On the tibial aspect of the leg, in the depression between the inferior border of the medial condyle of the tibia and the medial border of the tibia.",
   "cun_measurement": "",
   "functions_zh": [
    "健脾利濕，通利下焦。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Strengthens the spleen, resolves dampness, benefits the lower jiao. He-sea point of the spleen channel."
+  ],
   "indications_zh": [
    "脾虛濕盛",
    "水腫",
@@ -8761,7 +9097,13 @@
    "腹瀉",
    "膝痛"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Abdominal distension",
+   "Diarrhea",
+   "Edema",
+   "Difficult urination",
+   "Knee pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -8769,7 +9111,7 @@
   "contraindications": [
    "膝內側疼痛或腫脹明顯時需先評估原因。"
   ],
-  "needling": "",
+  "needling": "直刺 1-2 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8783,7 +9125,8 @@
   "ui_map": {
    "x": 136,
    "y": 446
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP10",
@@ -8793,12 +9136,14 @@
   "channel_zh": "脾經",
   "channel_en": "Spleen",
   "location_zh": "髕底內上方約 2 寸，股內側肌隆起處。",
-  "location_en": "",
+  "location_en": "On the anteromedial aspect of the thigh, on the bulge of the vastus medialis muscle, 2 cun superior to the medial end of the base of the patella.",
   "cun_measurement": "",
   "functions_zh": [
    "活血化瘀，涼血止癢，調經。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Invigorates and cools blood, regulates menstruation, benefits the skin."
+  ],
   "indications_zh": [
    "血瘀",
    "血熱",
@@ -8806,7 +9151,13 @@
    "月經不調",
    "膝痛"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Irregular menstruation",
+   "Dysmenorrhea",
+   "Urticaria",
+   "Eczema",
+   "Medial thigh pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -8814,7 +9165,7 @@
   "contraindications": [
    "不明原因陰道出血、凝血異常或抗凝藥使用者需謹慎。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8828,7 +9179,8 @@
   "ui_map": {
    "x": 135,
    "y": 402
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP11",
@@ -8867,7 +9219,7 @@
   "contraindications": [
    "避開股動脈搏動；腹股溝腫塊、血管病變或不明疼痛需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸；避開股動脈。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8884,7 +9236,8 @@
   "ui_map": {
    "x": 134,
    "y": 372
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP12",
@@ -8925,7 +9278,7 @@
   "contraindications": [
    "重要血管區，避開股動脈；孕期、腹股溝腫塊或血管病變需專業操作。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；避開股動脈與股靜脈。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -8942,7 +9295,8 @@
   "ui_map": {
    "x": 142,
    "y": 332
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP13",
@@ -8983,7 +9337,7 @@
   "contraindications": [
    "孕期、腹部腫塊、急腹症或術後疤痕區需避開或專業評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；下腹部深刺需謹慎，孕期慎用。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9000,7 +9354,8 @@
   "ui_map": {
    "x": 122,
    "y": 322
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP14",
@@ -9042,7 +9397,7 @@
   "contraindications": [
    "急性腹痛、腹部腫塊、孕期或術後區域需先評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；腹部深刺需避開腹腔與腹膜。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9059,7 +9414,8 @@
   "ui_map": {
    "x": 124,
    "y": 300
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP15",
@@ -9100,7 +9456,7 @@
   "contraindications": [
    "孕期、急腹症、腹主動脈瘤風險或腹部手術近期史需專業評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.8-1.2 寸；腹部深刺需避開腹腔與腹膜。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9117,7 +9473,8 @@
   "ui_map": {
    "x": 126,
    "y": 286
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP16",
@@ -9159,7 +9516,7 @@
   "contraindications": [
    "不明上腹痛、胸痛、黑便或劇烈嘔吐需先排除急症。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9176,7 +9533,8 @@
   "ui_map": {
    "x": 126,
    "y": 252
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP17",
@@ -9218,7 +9576,7 @@
   "contraindications": [
    "胸肋區需淺刺斜刺，避免深刺；胸痛、呼吸困難需先急症評估。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9235,7 +9593,8 @@
   "ui_map": {
    "x": 106,
    "y": 216
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP18",
@@ -9277,7 +9636,7 @@
   "contraindications": [
    "乳房腫塊、紅腫熱痛或哺乳感染需先醫療評估；胸部避免深刺。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9294,7 +9653,8 @@
   "ui_map": {
    "x": 106,
    "y": 202
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP19",
@@ -9334,7 +9694,7 @@
   "contraindications": [
    "胸部穴位避免深刺；氣喘急性發作或胸痛需先急症處理。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9351,7 +9711,8 @@
   "ui_map": {
    "x": 108,
    "y": 188
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP20",
@@ -9391,7 +9752,7 @@
   "contraindications": [
    "胸部避免深刺；呼吸困難、胸痛或疑似心肺急症需立即就醫。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9408,7 +9769,8 @@
   "ui_map": {
    "x": 110,
    "y": 174
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "SP21",
@@ -9450,7 +9812,7 @@
   "contraindications": [
    "側胸部避免深刺；肋骨外傷、胸痛或呼吸困難需先排除急症。"
   ],
-  "needling": "",
+  "needling": "沿胸側壁斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -9467,7 +9829,8 @@
   "ui_map": {
    "x": 98,
    "y": 226
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "ST1",
@@ -11081,12 +11444,14 @@
   "channel_zh": "胃經",
   "channel_en": "Stomach",
   "location_zh": "臍中旁開 2 寸。",
-  "location_en": "",
+  "location_en": "On the abdomen, 2 cun lateral to the centre of the umbilicus.",
   "cun_measurement": "",
   "functions_zh": [
    "調理腸腑，行氣導滯，止瀉通便。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Regulates the intestines, resolves dampness, regulates qi. Front-mu point of the large intestine."
+  ],
   "indications_zh": [
    "腹痛",
    "腹瀉",
@@ -11094,7 +11459,13 @@
    "食積",
    "腸腑氣滯"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Abdominal pain",
+   "Diarrhea",
+   "Constipation",
+   "Dysentery",
+   "Irregular menstruation study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -11102,7 +11473,7 @@
   "contraindications": [
    "妊娠、腹部急症、腫瘤或術後狀態需先諮詢醫療人員。"
   ],
-  "needling": "",
+  "needling": "直刺 0.8-1.2 寸；孕期慎用，腹部深刺需避開腹腔與腹膜。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -11116,7 +11487,8 @@
   "ui_map": {
    "x": 206,
    "y": 292
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "ST26",
@@ -11794,12 +12166,14 @@
   "channel_zh": "胃經",
   "channel_en": "Stomach",
   "location_zh": "犢鼻下 3 寸，脛骨前嵴外一橫指處。",
-  "location_en": "",
+  "location_en": "On the anterior aspect of the leg, 3 cun inferior to ST35, one finger-breadth lateral to the anterior crest of the tibia.",
   "cun_measurement": "",
   "functions_zh": [
    "健脾和胃，扶正培元，通經活絡。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Harmonizes the stomach, strengthens the spleen, tonifies qi and blood. He-sea point of the stomach channel."
+  ],
   "indications_zh": [
    "脾胃虛弱",
    "胃痛",
@@ -11807,7 +12181,13 @@
    "泄瀉",
    "氣血不足"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Epigastric pain",
+   "Vomiting",
+   "Diarrhea",
+   "Fatigue pattern context",
+   "Knee pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -11815,7 +12195,7 @@
   "contraindications": [
    "糖尿病或循環不良者需注意局部照護。"
   ],
-  "needling": "",
+  "needling": "直刺 1-2 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -11829,7 +12209,8 @@
   "ui_map": {
    "x": 222,
    "y": 475
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "ST37",
@@ -12037,12 +12418,14 @@
   "channel_zh": "胃經",
   "channel_en": "Stomach",
   "location_zh": "外踝尖上 8 寸，脛骨前嵴外約 2 橫指處。",
-  "location_en": "",
+  "location_en": "On the anterior aspect of the leg, 8 cun superior to the lateral malleolus, lateral to the anterior crest of the tibia.",
   "cun_measurement": "",
   "functions_zh": [
    "化痰降濁，和胃寧神。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Transforms phlegm, harmonizes the stomach, clears the spirit. Luo-connecting point of the stomach channel."
+  ],
   "indications_zh": [
    "痰濕",
    "痰熱",
@@ -12050,7 +12433,12 @@
    "胸悶",
    "胃氣不和"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Cough with phlegm",
+   "Dizziness",
+   "Mania study context",
+   "Leg pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -12058,7 +12446,7 @@
   "contraindications": [
    "局部靜脈曲張或皮膚病變時避開。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12072,7 +12460,8 @@
   "ui_map": {
    "x": 236,
    "y": 510
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "ST41",
@@ -12284,12 +12673,14 @@
   "channel_zh": "胃經",
   "channel_en": "Stomach",
   "location_zh": "足背第 2、3 趾間，趾蹼緣後方赤白肉際處。",
-  "location_en": "",
+  "location_en": "On the dorsum of the foot, between the 2nd and 3rd toes, proximal to the web margin.",
   "cun_measurement": "",
   "functions_zh": [
    "清胃熱，止痛，和腸胃。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Clears stomach heat, regulates the intestines, reduces swelling and pain. Ying-spring point of the stomach channel."
+  ],
   "indications_zh": [
    "胃火牙痛",
    "咽喉腫痛",
@@ -12297,7 +12688,13 @@
    "腹痛",
    "熱結腸胃"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Toothache",
+   "Sore throat",
+   "Abdominal pain",
+   "Diarrhea",
+   "Dorsum foot pain"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -12305,7 +12702,7 @@
   "contraindications": [
    "足部傷口、感染或糖尿病足風險者需避免自行刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12319,7 +12716,8 @@
   "ui_map": {
    "x": 246,
    "y": 600
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "ST45",
@@ -12395,12 +12793,14 @@
   "channel_zh": "三焦經",
   "channel_en": "Triple Energizer",
   "location_zh": "腕背橫紋上 2 寸，橈骨與尺骨之間。",
-  "location_en": "",
+  "location_en": "On the posterior aspect of the forearm, 2 cun proximal to the dorsal wrist crease, between the radius and ulna.",
   "cun_measurement": "",
   "functions_zh": [
    "解表清熱，通少陽，利耳目。"
   ],
-  "functions_en": [],
+  "functions_en": [
+   "Releases the exterior, benefits the head and ears, clears channel heat. Luo-connecting point and confluent point of the Yang Linking Vessel."
+  ],
   "indications_zh": [
    "外感發熱",
    "偏頭痛",
@@ -12408,7 +12808,13 @@
    "脅痛",
    "上肢痹痛"
   ],
-  "indications_en": [],
+  "indications_en": [
+   "Headache",
+   "Tinnitus",
+   "Deafness",
+   "Pain of the shoulder, arm and wrist",
+   "Febrile disease study context"
+  ],
   "muscles": [],
   "bones": [],
   "nerves": [],
@@ -12416,7 +12822,7 @@
   "contraindications": [
    "前臂局部神經血管疼痛或麻木時避免強刺激。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12430,7 +12836,8 @@
   "ui_map": {
    "x": 290,
    "y": 252
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12440,7 +12847,7 @@
   "contraindications": [
    "足底疼痛敏感；糖尿病足、周邊循環不良、傷口或感染者避免局部刺激。急性昏厥或神志異常須先急救處置。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；足底針感較強，避開局部感染或潰瘍區。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12489,7 +12896,8 @@
   "ui_map": {
    "x": 138,
    "y": 610
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12499,7 +12907,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12547,7 +12955,8 @@
   "ui_map": {
    "x": 132,
    "y": 588
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12557,7 +12966,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸；避開脛後動脈與神經。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12606,7 +13015,8 @@
   "ui_map": {
    "x": 124,
    "y": 572
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12616,7 +13026,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.3-0.5 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12665,7 +13075,8 @@
   "ui_map": {
    "x": 124,
    "y": 586
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12675,7 +13086,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；避開脛後血管神經束。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12724,7 +13135,8 @@
   "ui_map": {
    "x": 132,
    "y": 536
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12734,7 +13146,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；避開脛後血管神經束。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12783,7 +13195,8 @@
   "ui_map": {
    "x": 144,
    "y": 536
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12793,7 +13206,7 @@
   "contraindications": [
    "孕期相關用途須由合格臨床人員監督；精神急症、嚴重嘔吐或劇烈腹痛須先醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12842,7 +13255,8 @@
   "ui_map": {
    "x": 142,
    "y": 498
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12852,7 +13266,7 @@
   "contraindications": [
    "膕窩附近血管神經密集，需避免深刺或粗暴操作；膝部腫脹、血栓疑慮或感染須先醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 1-1.5 寸；避開膕窩血管神經。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12901,7 +13315,8 @@
   "ui_map": {
    "x": 142,
    "y": 446
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12911,7 +13326,7 @@
   "contraindications": [
    "下腹部、孕期、術後、腫塊、急腹症或不明原因疼痛需專業評估；避免深刺傷及膀胱或腹腔結構。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -12959,7 +13374,8 @@
   "ui_map": {
    "x": 174,
    "y": 392
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -12969,7 +13385,7 @@
   "contraindications": [
    "孕期、IUI/IVF 週期、下腹痛、出血或術後狀態需主管臨床人員評估；避免深刺。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13017,7 +13433,8 @@
   "ui_map": {
    "x": 174,
    "y": 372
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13027,7 +13444,7 @@
   "contraindications": [
    "下腹部高安全需求；孕期、可能懷孕、婦科急症、急腹症或不明出血須先醫療評估。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13076,7 +13493,8 @@
   "ui_map": {
    "x": 174,
    "y": 352
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13086,7 +13504,7 @@
   "contraindications": [
    "孕期、產後出血、急腹症、嚴重腹痛或不明原因腹部腫塊須醫療評估；避免深刺。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13135,7 +13553,8 @@
   "ui_map": {
    "x": 174,
    "y": 332
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13145,7 +13564,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與腹膜。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13194,7 +13613,8 @@
   "ui_map": {
    "x": 174,
    "y": 312
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13204,7 +13624,7 @@
   "contraindications": [
    "臍周感染、腹部急症、術後或不明腹痛避免自行刺激；深刺需謹慎。"
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；腹部深刺需避開腹腔與腹膜。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13253,7 +13673,8 @@
   "ui_map": {
    "x": 174,
    "y": 292
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13263,7 +13684,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；腹部深刺需避開腹腔與腹膜。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13312,7 +13733,8 @@
   "ui_map": {
    "x": 174,
    "y": 252
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13322,7 +13744,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13371,7 +13793,8 @@
   "ui_map": {
    "x": 174,
    "y": 232
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13381,7 +13804,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13430,7 +13853,8 @@
   "ui_map": {
    "x": 174,
    "y": 212
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13440,7 +13864,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13489,7 +13913,8 @@
   "ui_map": {
    "x": 174,
    "y": 192
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13499,7 +13924,7 @@
   "contraindications": [
    "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision."
   ],
-  "needling": "",
+  "needling": "斜刺或平刺 0.5-0.8 寸；近肋弓與上腹部，深刺需謹慎。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13548,7 +13973,8 @@
   "ui_map": {
    "x": 174,
    "y": 172
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13558,7 +13984,7 @@
   "contraindications": [
    "胸部穴位有氣胸風險；嚴禁深刺或自行針刺。胸痛、呼吸困難或心肺症狀須先醫療評估。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13608,7 +14034,8 @@
   "ui_map": {
    "x": 152,
    "y": 166
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13618,7 +14045,7 @@
   "contraindications": [
    "胸部穴位有氣胸與心肺風險；只可由受訓臨床人員操作，避免深刺。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13668,7 +14095,8 @@
   "ui_map": {
    "x": 152,
    "y": 146
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13678,7 +14106,7 @@
   "contraindications": [
    "胸部穴位需嚴格安全審核；避免深刺，心肺症狀先轉醫療評估。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13727,7 +14155,8 @@
   "ui_map": {
    "x": 152,
    "y": 126
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13737,7 +14166,7 @@
   "contraindications": [
    "胸部穴位有氣胸風險；哮喘急性發作、胸痛、呼吸困難須先醫療處置。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13786,7 +14215,8 @@
   "ui_map": {
    "x": 152,
    "y": 106
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13796,7 +14226,7 @@
   "contraindications": [
    "胸上部穴位鄰近肺尖及大血管區域；避免深刺，自覺胸痛或呼吸困難需急診/醫療評估。"
   ],
-  "needling": "",
+  "needling": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13845,7 +14275,8 @@
   "ui_map": {
    "x": 152,
    "y": 86
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "muscles": [],
@@ -13855,7 +14286,7 @@
   "contraindications": [
    "鎖骨下胸部高風險區，嚴禁深刺；需注意氣胸、血管與肺尖風險。胸痛、喘、呼吸困難須先醫療評估。"
   ],
-  "needling": "",
+  "needling": "沿鎖骨下方斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
   "danger": [],
   "nccaom_high_yield": [],
   "clinical_pearls": [],
@@ -13905,7 +14336,8 @@
   "ui_map": {
    "x": 152,
    "y": 70
-  }
+  },
+  "enrichment_status": "model_draft_pending_source_review"
  },
  {
   "code": "CV1",

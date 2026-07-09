@@ -1,3 +1,157 @@
+# REBUILD HANDOFF - Session 23 (2026-07-08, D5 remaining needling/EN batches complete)
+
+## 1. Goal
+Continue D5 after BL and complete the remaining fill-empty-only batches: KI, SP, SI, and the final small remainders.
+
+## 2. Files changed
+- `data/acupoints/361.json`
+- `data/imports/model_draft/enrichment/applied/bl_enrichment.json`
+- `data/imports/model_draft/enrichment/applied/ki_enrichment.json`
+- `data/imports/model_draft/enrichment/applied/sp_enrichment.json`
+- `data/imports/model_draft/enrichment/applied/si_enrichment.json`
+- `data/imports/model_draft/enrichment/applied/final_tail_enrichment.json`
+- `docs/361_DRAFT_FILL_SUMMARY.md`
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- Archived applied enrichment batches under `data/imports/model_draft/enrichment/applied/` so future dry-runs do not re-read already-applied batches and report expected conflicts.
+- KI batch filled 27 empty fields across 27 records:
+  - `needling`: 27
+- SP batch filled 27 empty fields across 21 records:
+  - `needling`: 21
+  - `location_en`: 2
+  - `functions_en`: 2
+  - `indications_en`: 2
+- SI batch filled 22 empty fields across 19 records:
+  - `needling`: 19
+  - `location_en`: 1
+  - `functions_en`: 1
+  - `indications_en`: 1
+- Final tail batch filled 127 empty fields across 43 records:
+  - `needling`: 43
+  - `location_en`: 28
+  - `functions_en`: 28
+  - `indications_en`: 28
+
+## 4. Why this changed
+D5 aims to close the remaining empty needling and English field gaps in existing `361.json` records using the safe no-overwrite enrichment pipeline.
+
+## 5. Data content changes
+Added draft needling/safety text and selected English study fields only. Existing non-empty fields were not overwritten.
+
+## 6. Source status / accuracy guardrail
+All fills remain `model_draft_pending_source_review` and are pending CloudTCM D1-D3 plus WHO SAPL review. No record was promoted to source-checked.
+
+## 7. Schema / field changes
+No schema changed. The apply script only fills allowed fields and adds `enrichment_status` to touched records.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not hand-edit `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- KI dry-run: PASS, 27 fillable fields, 0 conflicts; apply PASS.
+- SP dry-run: PASS, 27 fillable fields, 0 conflicts; apply PASS.
+- SI dry-run: PASS, 22 fillable fields, 0 conflicts; apply PASS.
+- Final tail dry-run: PASS, 127 fillable fields, 0 conflicts; apply PASS.
+- Final D5 gap check: PASS, 0 remaining gaps for `needling`, `location_en`, `functions_en`, `indications_en` across all 361 records.
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `data/**/*.json` parse check: PASS, 71 JSON files
+
+## 11. Completed batch
+D5 is complete for BL, KI, SP, SI, and the remaining tail records.
+
+## 12. Not completed
+No source-check promotion was done. These are draft fills only.
+
+## 13. Next reader should inspect
+Inspect `docs/361_DRAFT_FILL_SUMMARY.md` and the applied batch files under `data/imports/model_draft/enrichment/applied/`.
+
+## 14. Next step
+Recommended next step: decide whether to run `scripts/build-data.js` in a separate approved session if the runtime/generated data should reflect the updated `361.json`.
+
+## 15. Risk
+Low-medium. The fill-empty-only script reported 0 conflicts for every batch and D5 gaps are closed, but needling and English content remain draft pending authoritative review.
+
+---
+
+# REBUILD HANDOFF - Session 22 (2026-07-08, D5 BL needling/EN fill)
+
+## 1. Goal
+Run Codex Task Queue D5 for the BL channel only: fill remaining empty `needling` and selected English fields in existing `data/acupoints/361.json` records using the fill-empty-only enrichment pipeline.
+
+## 2. Files changed
+- `docs/CODEX_TASK_QUEUE.md` (copied from Claude branch so the task queue exists locally)
+- `scripts/apply-361-enrichment.js` (copied from Claude branch so the D5 pipeline exists locally)
+- `data/imports/model_draft/enrichment/bl_enrichment.json` (new BL batch)
+- `data/acupoints/361.json`
+- `docs/361_DRAFT_FILL_SUMMARY.md`
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- Ran the D5 BL gap command before writing the batch.
+- Added BL-only enrichment records for the exact fields listed by the gap command.
+- Filled 87 empty fields across 60 BL records:
+  - `needling`: 60
+  - `location_en`: 9
+  - `functions_en`: 9
+  - `indications_en`: 9
+- BL10, BL13, BL17, BL20, BL23, BL25, BL32, BL40, and BL60 received the missing EN triple.
+- BL11-BL30 first-line back-shu region entries include oblique needling wording and pneumothorax warning language as required by D5.
+- Each touched 361 record received `enrichment_status: "model_draft_pending_source_review"` from the apply script.
+
+## 4. Why this changed
+D5 is the safe, fill-empty-only path to complete missing needling and English fields in the canonical 361 file without overwriting existing values.
+
+## 5. Data content changes
+Added draft needling/safety text and selected English study fields only. Existing non-empty fields were not overwritten.
+
+## 6. Source status / accuracy guardrail
+All BL fills are model drafts pending source review against CloudTCM D1-D3 and WHO SAPL. No record was promoted to `source_checked`.
+
+## 7. Schema / field changes
+No schema changed. The apply script only writes allowed fields and `enrichment_status` when a record receives a fill.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not hand-edit `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- D5 BL dry-run: PASS, 87 fillable fields across 60 records, 0 conflicts.
+- D5 BL apply: PASS, 87 fields filled across 60 records.
+- Post-apply BL gap check: PASS, no remaining BL gaps for `needling`, `location_en`, `functions_en`, `indications_en`.
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `data/**/*.json` parse check: PASS, 67 JSON files
+
+## 11. Completed batch
+BL channel D5 batch is complete.
+
+## 12. Not completed
+D5 remaining channel batches are still pending: KI, SP, SI, then small remainders.
+
+## 13. Next reader should inspect
+Inspect `data/imports/model_draft/enrichment/bl_enrichment.json`, `docs/361_DRAFT_FILL_SUMMARY.md`, and a few BL records in `data/acupoints/361.json`, especially BL11-BL30 needling safety wording.
+
+## 14. Next step
+Run the same D5 workflow for KI next: gap command with `^KI`, write `ki_enrichment.json`, dry-run confirm 0 conflicts, apply, validate, and handoff as a separate session.
+
+## 15. Risk
+Low-medium. The apply script enforces fill-empty-only and reported no conflicts, but needling text remains draft pending authoritative source review.
+
+---
+
 # REBUILD HANDOFF - Session 21 (2026-07-05, Codex herb canon validation layer)
 
 ## 1. Goal
