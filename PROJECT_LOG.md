@@ -23,6 +23,33 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-09 — Codex D5 verified + merged; 361-point data layer COMPLETE (Claude)
+
+Codex pushed D5 (fba37ac) onto the OLD main, so his 361.json had only 235
+records — a plain merge would have lost the 126 new points. Resolution:
+kept this branch's 361-record file and re-ran Codex's five batch files
+(bl/ki/sp/si/final_tail) through apply-361-enrichment.js. Result: 255
+fields filled across 150 records; needling / location_en / functions_en
+gaps are now ZERO across all 361 records. Spot-check BL13 肺俞 shows the
+required pneumothorax wording. All validators PASS. Merge commit bad8beb
+pushed to the claude/acuting-os-rebuild-analysis-u0e82n branch (PR #1).
+
+IMPORTANT for Ting/Codex: main is now BEHIND PR #1 and Codex's local main
+is diverged. Do NOT let Codex keep committing to main — next steps:
+1. Ting merges PR #1 on GitHub (it contains everything: 361 complete layer,
+   all fixes, Codex's D5 via re-apply).
+2. On the local machine: git checkout main && git pull (gets the merged
+   result). Codex resumes from CODEX_TASK_QUEUE.md — safe next tasks:
+   D1+D2 (CloudTCM fetch, local machine only), A1 (encoding guard),
+   A2 (migration map sync), B1 (formula merge preview, gated).
+3. Claude-owned next task (needs a fresh session): RUNTIME ADAPTER — make
+   the app render data/acupoints/361.json so the completed layer becomes
+   visible point pages (home counter still reads the old embedded layer,
+   shows 235). Includes retiring the legacy deep-equal gate in
+   validate-data.js with Ting's approval. Everything needed is in this log,
+   CODEX_TASK_QUEUE.md, and 361_DRAFT_FILL_SUMMARY.md.
+
+
 ### 2026-07-09 — CloudTCM links to full pages; enrichment pipeline + LU/HT batch (Claude)
 
 1. Visual links: Ting reported the CloudTCM thumbnails (media.cloudtcm.uk/
