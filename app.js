@@ -2202,7 +2202,9 @@ function renderCards(filtered) {
 }
 
 function pointTitle(point) {
-  return contentMode === "english" ? `${point.nameEn} (${point.code})` : `${point.nameZh} ${point.nameEn}`;
+  // 中文名永遠在最前；英文名跟在後面（代碼另有 code-pill 顯示）。
+  if (!point.nameZh || point.nameZh === point.nameEn) return `${point.nameEn}`;
+  return `${point.nameZh} ${point.nameEn}`;
 }
 
 function pointSubtitle(point) {
@@ -2229,19 +2231,19 @@ function renderDetail(point) {
     <nav class="point-breadcrumb" aria-label="breadcrumb">${escapeHtml(breadcrumbText(point))}</nav>
     <div class="point-page-toolbar">
       <button class="ghost" type="button" id="backToDirectoryBtn">${contentMode === "english" ? "Back to acupoint list" : "返回穴位列表"}</button>
-      <span>${escapeHtml(point.code)} ${escapeHtml(contentMode === "english" ? point.nameEn : point.nameZh)}</span>
+      <span>${escapeHtml(point.code)} ${escapeHtml(point.nameZh || point.nameEn)}</span>
     </div>
     <div class="point-study-layout">
       <main class="point-article">
         <section class="point-hero-card">
-          <div class="hero-watermark">${escapeHtml((contentMode === "english" ? point.nameEn : point.nameZh).slice(0, 1))}</div>
+          <div class="hero-watermark">${escapeHtml((point.nameZh || point.nameEn).slice(0, 1))}</div>
           <div class="point-hero-top">
             <div>
               <div class="hero-badges">
                 <span>${escapeHtml(contentMode === "english" ? shortMeridianEn(point) : shortMeridian(point))}</span>
                 <span>${escapeHtml(point.code)}</span>
               </div>
-              <h2>${escapeHtml(contentMode === "english" ? point.nameEn : point.nameZh)}</h2>
+              <h2>${escapeHtml(point.nameZh || point.nameEn)}</h2>
               <p>${escapeHtml(heroSubtitle(point))}</p>
             </div>
             <div class="hero-actions">
@@ -2415,8 +2417,10 @@ function breadcrumbText(point) {
 }
 
 function heroSubtitle(point) {
-  if (contentMode === "english") return `${point.pinyin} · ${point.code} · ${primaryFunctionEn(point)}`;
-  return `${point.pinyin} · ${point.nameEn} · ${primaryFunction(point)}`;
+  // 中文大標題在上（renderDetail 的 h2）；副標題固定放拼音、英文名、國際代碼。
+  const base = [point.pinyin, point.nameEn, point.code].filter(Boolean).join(" · ");
+  const fn = contentMode === "english" ? primaryFunctionEn(point) : primaryFunction(point);
+  return fn && !isPendingContent(fn) ? `${base} · ${fn}` : base;
 }
 
 function externalPointLinks(point) {
