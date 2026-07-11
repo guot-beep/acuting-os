@@ -1,4 +1,4 @@
-# CloudTCM D3 Review Strategy
+# CloudTCM D3 Review Strategy (unified: Claude fact-conflicts + Codex risk-region triage)
 
 Generated: 2026-07-11 (Claude). Status: REVIEW ONLY — nothing applied to 361.json.
 Per Ting's instruction: FILL=0, no --apply-approved; this document classifies the
@@ -61,3 +61,26 @@ Both are handled by the classifier; keep in mind when reading raw text.
 4. functions/indications: 維持 draft reference，不動。
 
 Nothing proceeds until Ting picks options. 到此為止。
+
+---
+
+# 附錄:Codex 平行審查(區域式風險普查)
+
+Codex 於同日以「風險關鍵詞/區域」角度做了平行分類(scripts/analyze-cloudtcm-diffs.js):
+high 553 / medium 15 / low 189 / reference-only 696。其中 needling high 322、
+location high 193 — 這是「凡涉及風險區或安全詞就標高」的寬鬆網,適合當普查底冊。
+
+配套工作表:
+- docs/CLOUDTCM_REVIEW_BATCH_A1_CRITICAL_SAFETY.md — 107 個明確高風險區穴位
+  (眼面、頸/延髓、胸背氣胸、腹部/孕期/臟器深度、常見孕期慎用穴)的首輪安全工作表。
+- docs/CLOUDTCM_REVIEW_BATCH_A_SAFETY.md — 較寬的 Batch A。
+- docs/CLOUDTCM_CANONICAL_ENCODING_FINDINGS.md — 亂碼調查(16 欄,已全數修復:
+  3 欄 Codex 依 Ting 批准修復、13 欄 Claude 重寫為草稿,見 scripts/repair-mojibake-bl.js)。
+
+## 兩套視角如何合用(統一審查路徑)
+
+1. 第一輪(~24 筆):本文件 §A 定位寸數衝突(15)+ §B 深度不相交(9)— 事實打架,必裁決。
+2. 第二輪(~51 筆):§C 方式衝突(25)+ §D 缺安全語(26)— 安全措辭補強。
+3. 第三輪(抽查):Codex Batch A1 的 107 風險區穴位,對照本文件 §E/§F 抽核。
+4. 批次選項:272 筆定位「措辭較詳」可另行批准成批採用 CloudTCM 文字。
+5. functions/indications 維持 draft reference,不進 canonical(兩邊結論一致)。

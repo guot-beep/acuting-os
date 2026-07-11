@@ -1,3 +1,292 @@
+# REBUILD HANDOFF - Session 28 (2026-07-10, BL61-BL67 approved encoding repair apply)
+
+## 1. Goal
+Apply only the 3 BL61-BL67 encoding repair items approved by Ting from the preview batch. Do not bulk merge CloudTCM and do not reconstruct study-note fields.
+
+## 2. Files changed
+- `data/acupoints/361.json`
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Repaired BL61 `location_zh`.
+- Repaired BL67 `location_zh`.
+- Repaired BL67 `contraindications`.
+- Left the remaining 13 damaged fields unchanged because they are `clinical_pearls`, `danger`, or similar study-note/safety-note fields requiring manual rewrite/removal decision.
+
+## 4. Why this changed
+Ting approved the preview's 3 concise repairs. These were small canonical data repairs, not a CloudTCM bulk merge.
+
+## 5. Data content changes
+Canonical `data/acupoints/361.json` changed only in the 3 approved fields.
+
+## 6. Source status / accuracy guardrail
+No `source_checked` status changed. The repaired text remains conservative study data and should still be reviewed against preferred authoritative sources during later D3/D4 safety review.
+
+## 7. Schema / field changes
+No schema changed.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+
+## 11. Triage results
+- Approved repairs applied: 3
+- Damaged fields still requiring manual review: 13
+
+## 12. Not completed
+No `clinical_pearls`, `danger`, or BL67 `needling.technique` reconstruction was attempted.
+
+## 13. Next reader should inspect
+Read:
+- `docs/BL61_BL67_ENCODING_REPAIR_PREVIEW.md`
+- `docs/CLOUDTCM_CANONICAL_ENCODING_FINDINGS.md`
+
+## 14. Next step
+Run validators, then decide whether to create a dedicated commit for D3 review docs plus the 3 approved canonical repairs.
+
+## 15. Risk
+Low. Three small approved field repairs only; no bulk source merge.
+
+---
+
+# REBUILD HANDOFF - Session 27 (2026-07-10, BL61-BL67 encoding repair preview)
+
+## 1. Goal
+Continue after Batch A safety review by preparing a gated repair preview for the BL61-BL67 canonical fields that contain literal `????` encoding damage. Do not modify `data/acupoints/361.json`.
+
+## 2. Files changed
+- `scripts/preview-bl61-bl67-encoding-repair.js` (new)
+- `docs/BL61_BL67_ENCODING_REPAIR_PREVIEW.md` (new)
+- `docs/BL61_BL67_ENCODING_REPAIR_PREVIEW.json` (new)
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Added a read-only preview script for BL61-BL67 encoding damage.
+- Generated a repair preview separating:
+  - 3 proposed concise repairs that could be applied after Ting approval,
+  - 13 study-note fields that need manual rewrite/removal decision.
+- Proposed repairs:
+  - BL61 `location_zh`
+  - BL67 `location_zh`
+  - BL67 `contraindications`
+- Manual review fields are mostly `clinical_pearls` and `danger`, which should not be blindly replaced with CloudTCM prose.
+
+## 4. Why this changed
+Literal `????` strings are unreadable canonical data and should be handled before deeper source-review work. This preview gives Ting a tiny gated repair target without bulk applying CloudTCM content.
+
+## 5. Data content changes
+No canonical data changed. This is a preview only.
+
+## 6. Source status / accuracy guardrail
+CloudTCM staging was used only as one reference for proposing concise repair candidates. No source_checked status was changed.
+
+## 7. Schema / field changes
+No schema changed.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- `node --check scripts/preview-bl61-bl67-encoding-repair.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- UTF-8 doc spot-check: PASS
+
+## 11. Triage results
+- Affected codes: BL61, BL62, BL63, BL64, BL65, BL66, BL67
+- Proposed concise repairs: 3
+- Needs manual rewrite/removal decision: 13
+
+## 12. Not completed
+No repair was applied. No `clinical_pearls` or `danger` text was reconstructed.
+
+## 13. Next reader should inspect
+Read:
+- `docs/BL61_BL67_ENCODING_REPAIR_PREVIEW.md`
+- `docs/BL61_BL67_ENCODING_REPAIR_PREVIEW.json`
+- `docs/CLOUDTCM_CANONICAL_ENCODING_FINDINGS.md`
+
+## 14. Next step
+If Ting approves, apply only the 3 proposed repairs first, then separately decide what to do with the 13 unreadable study-note fields.
+
+## 15. Risk
+Low. This is preview-only and does not alter canonical data.
+
+---
+
+# REBUILD HANDOFF - Session 26 (2026-07-10, D3 Batch A safety review worksheet)
+
+## 1. Goal
+Continue D3 review without applying any merge. Build a smaller safety-focused review batch from the CloudTCM DIFFER set and document a newly found canonical encoding issue.
+
+## 2. Files changed
+- `scripts/build-cloudtcm-safety-review-batch.js` (new)
+- `scripts/report-361-encoding-findings.js` (new)
+- `docs/CLOUDTCM_REVIEW_BATCH_A_SAFETY.md` (new)
+- `docs/CLOUDTCM_REVIEW_BATCH_A_SAFETY.json` (new)
+- `docs/CLOUDTCM_REVIEW_BATCH_A1_CRITICAL_SAFETY.md` (new)
+- `docs/CLOUDTCM_REVIEW_BATCH_A1_CRITICAL_SAFETY.json` (new)
+- `docs/CLOUDTCM_CANONICAL_ENCODING_FINDINGS.md` (new)
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Generated broad Batch A safety review worksheet from D3 preview.
+- Generated narrower Batch A1 critical safety subset excluding broad keyword-only matches.
+- A1 focuses on explicit high-risk regions:
+  - eye / face,
+  - neck / medulla-adjacent,
+  - chest / back / pneumothorax,
+  - abdomen / pregnancy / bladder / kidney / organ-depth,
+  - common pregnancy caution points.
+- A1 includes 107 unique point codes for first-pass safety review.
+- Discovered canonical encoding damage in `data/acupoints/361.json`: 16 damaged string fields containing literal question marks across BL61-BL67.
+- Wrote `docs/CLOUDTCM_CANONICAL_ENCODING_FINDINGS.md` as a finding only; no canonical data was repaired.
+
+## 4. Why this changed
+The previous D3 review strategy showed 553 high-risk triage items. Batch A/A1 makes the work actionable by narrowing the first review pass to safety-sensitive point groups.
+
+## 5. Data content changes
+No canonical data changed. No CloudTCM text was merged into `data/acupoints/361.json`.
+
+## 6. Source status / accuracy guardrail
+All new files are review worksheets. They do not decide source truth and do not approve merge. CloudTCM remains private study staging/reference only.
+
+## 7. Schema / field changes
+No schema changed.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- `node --check scripts/build-cloudtcm-safety-review-batch.js`: PASS
+- `node --check scripts/report-361-encoding-findings.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- UTF-8 doc spot-check: PASS for new docs
+
+## 11. Triage results
+- Broad Batch A:
+  - safety-related diff items: 576
+  - unique point codes: 335
+- Focused Batch A1:
+  - unique point codes: 107
+  - chest/back/pneumothorax region: 44
+  - abdomen/pregnancy/organ-depth region: 42
+  - eye/face region: 9
+  - neck/head-risk region: 8
+  - common pregnancy caution points: 8
+- Canonical encoding findings:
+  - damaged fields: 16
+  - affected codes: BL61, BL62, BL63, BL64, BL65, BL66, BL67
+
+## 12. Not completed
+No source-review decisions were applied. No BL61-BL67 repair was applied.
+
+## 13. Next reader should inspect
+Read:
+- `docs/CLOUDTCM_REVIEW_BATCH_A1_CRITICAL_SAFETY.md`
+- `docs/CLOUDTCM_CANONICAL_ENCODING_FINDINGS.md`
+- `docs/CLOUDTCM_HIGH_RISK_DIFFS.md`
+
+## 14. Next step
+Recommended next step: decide whether to first repair BL61-BL67 encoding damage in a tiny gated patch, or start A1 safety review point-by-point.
+
+## 15. Risk
+Low. This is docs-only plus read-only helper scripts; no canonical data was changed.
+
+---
+
+# REBUILD HANDOFF - Session 25 (2026-07-10, D3 CloudTCM review strategy docs)
+
+## 1. Goal
+Continue after Ting approved moving past the D3 preview, but do not apply any merge. Convert the large CloudTCM DIFFER set into a safer human-review strategy and high-risk triage document.
+
+## 2. Files changed
+- `scripts/analyze-cloudtcm-diffs.js` (new helper script)
+- `docs/CLOUDTCM_REVIEW_STRATEGY.md` (new)
+- `docs/CLOUDTCM_HIGH_RISK_DIFFS.md` (new)
+- `docs/REBUILD_HANDOFF.md`
+
+## 3. What changed
+- Added a read-only analyzer for `docs/CLOUDTCM_MERGE_PREVIEW.json`.
+- Generated a review strategy document explaining why `--apply-approved` should not be run yet: D3 preview has `FILL = 0`, so there are no empty canonical fields to fill.
+- Generated a high-risk diff triage document that highlights differences involving:
+  - needling depth / direction,
+  - location numeric landmarks,
+  - safety wording such as pneumothorax, eye, neck vessel, pregnancy, bleeding, organ-depth cautions,
+  - contraindication wording differences.
+
+## 4. Why this changed
+The D3 preview contains 1453 DIFFER items. Applying would not write anything because there are no fill candidates, and bulk replacement would be unsafe. The next useful step is source-review triage, not merge.
+
+## 5. Data content changes
+No canonical data changed. No CloudTCM text was merged into `data/acupoints/361.json`.
+
+## 6. Source status / accuracy guardrail
+CloudTCM remains private study staging/reference only. The new documents do not decide which source is correct; they only prioritize human review.
+
+## 7. Schema / field changes
+No schema changed.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- `node --check scripts/analyze-cloudtcm-diffs.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+
+## 11. Triage results
+- Total DIFFER records: 1453
+- High-risk triage items: 553
+- Medium-risk triage items: 15
+- Low-risk wording differences: 189
+- Reference-only prose differences: 696
+
+By field:
+- `location_zh`: high 193, medium 10, low 157
+- `needling`: high 322, low 32
+- `functions_zh`: reference 348
+- `indications_zh`: reference 348
+- `contraindications`: high 38, medium 5
+
+## 12. Not completed
+No review decisions were applied. No source_checked upgrade was performed.
+
+## 13. Next reader should inspect
+Read:
+- `docs/CLOUDTCM_REVIEW_STRATEGY.md`
+- `docs/CLOUDTCM_HIGH_RISK_DIFFS.md`
+- `docs/CLOUDTCM_MERGE_PREVIEW.json`
+
+## 14. Next step
+Recommended next step: choose a small human-review batch, for example eye/neck/chest/abdomen safety points or BL back-shu points, then decide point-by-point whether current canonical text, CloudTCM text, or a rewritten verified note should be kept.
+
+## 15. Risk
+Low. This is docs-only plus a read-only analysis helper; no canonical data was changed.
+
+---
+
 # REBUILD HANDOFF - Session 24 (2026-07-10, D1-D2 CloudTCM point import staging)
 
 ## 1. Goal
