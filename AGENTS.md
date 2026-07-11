@@ -81,6 +81,37 @@ When editing:
 - Do not deploy or push unless explicitly approved.
 - Run `node scripts/validate-interactions.js` after navigation, filter, card, or acupoint-detail changes.
 
+## Codex / Claude Repo Handoff Protocol
+
+Use the GitHub repo as the shared mailbox between Codex, Claude, and Ting. Ting should make decisions and approve gates, not act as a manual copy/paste relay for routine handoffs.
+
+At the start of each meaningful Codex session:
+
+1. Check `git status`.
+2. Read `PROJECT_LOG.md`, `docs/CODEX_TASK_QUEUE.md`, and `docs/CODEX_HANDOFF.md` if present.
+3. Confirm protected/frozen areas from the latest task instructions before editing.
+
+At the end of every meaningful Codex task:
+
+1. Leave the working tree clean.
+2. Either commit and push the completed coherent change, or create a clearly named stash such as `git stash push -m "b2-formula-wip"` if the work is intentionally not ready to commit.
+3. Do not leave uncommitted changes hanging in the working tree.
+4. Update `docs/CODEX_HANDOFF.md` with a concise machine-readable/latest-first report for Claude.
+5. Continue to give Ting a brief final summary, including a pasteable "給 Claude 的話", but the repo handoff is the source of truth.
+
+`docs/CODEX_HANDOFF.md` entries should include:
+
+- date/time and agent
+- branch and commit hash, or named stash
+- task ID / title
+- files changed
+- validation run and results
+- protected areas explicitly not touched
+- known risks / manual checks needed
+- next recommended action
+
+Claude's morning review may read `docs/CODEX_HANDOFF.md`, validate the pushed commit, and write the next task back into `docs/CODEX_TASK_QUEUE.md`. Codex should then pull, read the queue, and continue from the repo state instead of relying on Ting to relay every detail.
+
 ## Refactor Rules
 
 This project may need systematic refactoring over time because `index.html`, `app.js`, and `styles.css` may grow too large.
