@@ -1,0 +1,7595 @@
+{
+  "generated": "2026-07-11T01:07:20.573Z",
+  "policy": "Review worksheet only. Do not bulk apply. CloudTCM remains private study staging; decisions require human/source review.",
+  "total_items": 576,
+  "total_codes": 335,
+  "groups": [
+    {
+      "code": "GB21",
+      "chinese": "肩井",
+      "regions": [
+        "chest-back-pneumothorax",
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "肩上，乳頭直上與大椎連線中點附近。",
+          "cloudtcm": "肩上，前直乳中，當大椎與肩峰端連線的中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:孕",
+            "safety_term_diff:禁",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.3-0.5 寸或向外斜刺；不可深刺，肩井深刺有氣胸風險，孕期慎用或禁用。",
+          "cloudtcm": "刺0.3～0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:肺",
+            "safety_term_diff:孕",
+            "safety_term_diff:禁",
+            "safety_term_diff:不可"
+          ],
+          "current": "孕期禁慎用；避免深刺以降低氣胸風險。",
+          "cloudtcm": "深部正當肺尖，慎不可深刺，以防刺傷肺尖造成氣胸"
+        }
+      ]
+    },
+    {
+      "code": "KI12",
+      "chinese": "大赫",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，臍下 4 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍下4寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
+          "cloudtcm": "直刺0.5-1寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱",
+            "safety_term_diff:出血",
+            "safety_term_diff:深刺"
+          ],
+          "current": "孕期、IUI/IVF 週期、下腹痛、出血或術後狀態需主管臨床人員評估；避免深刺。",
+          "cloudtcm": "針刺之前應排空膀胱，以免刺傷膀胱"
+        }
+      ]
+    },
+    {
+      "code": "LI4",
+      "chinese": "合谷",
+      "regions": [
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "手背，第 2 掌骨橈側中點附近；常以拇指、食指併攏時肌肉隆起最高處作參考。",
+          "cloudtcm": "手背第一、二掌骨之間，約當第二掌骨橈側中點處。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:孕",
+            "safety_term_diff:動脈",
+            "safety_term_diff:靜脈",
+            "safety_term_diff:出血",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺",
+            "safety_term_diff:面"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用或禁用。",
+          "cloudtcm": "直刺0.5~1.0寸，局部酸脹，可擴散至肘、肩、面部\n深刺2.0~3.0寸，透勞宮或後溪時，出現手掌酸麻並向指端放散。針刺時針尖不宜偏向腕側，以免刺破手背靜脈網和掌深動脈而引起出血。此穴提插幅度不宜過大，以免傷及血管引起血腫\n《針灸大成》：針三分, 留六呼, 灸三壯。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:禁",
+            "safety_term_diff:不可",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "孕期慎用或避免強刺激。",
+          "cloudtcm": "孕婦禁針，以免因行氣動血而流產或滑胎。婦人妊娠可瀉不可補，補即墮胎。\n合谷穴為手陽明經穴位，具有行氣活血之功效，體質較差的病人不宜給予較強的刺激。"
+        }
+      ]
+    },
+    {
+      "code": "BL13",
+      "chinese": "肺俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "第 3 胸椎棘突下，旁開 1.5 寸。",
+          "cloudtcm": "背部第三胸椎棘突下（身柱）旁開1.5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:肺",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "胸背區避免過深刺激，氣胸風險需專業評估。",
+          "cloudtcm": "肺俞穴為背俞穴，不可深刺，以免傷及肺臟。"
+        }
+      ]
+    },
+    {
+      "code": "KI22",
+      "chinese": "步廊",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，第 5 肋間隙，前正中線旁開 2 寸。",
+          "cloudtcm": "第五肋間隙，前正中線旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:肺",
+            "safety_term_diff:不可"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
+          "cloudtcm": "斜刺或平刺0.3～0.5寸，注意：穴位左方當心臟，右方位於肺下部及肝上部，故不宜深刺，以免傷及心、肺，造成氣胸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:肺",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:禁",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "胸部穴位有氣胸風險；嚴禁深刺或自行針刺。胸痛、呼吸困難或心肺症狀須先醫療評估。",
+          "cloudtcm": "不可深剌、免傷內臟；可灸。"
+        }
+      ]
+    },
+    {
+      "code": "ST2",
+      "chinese": "四白",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "目正視，瞳孔直下，眶下孔凹陷處。",
+          "cloudtcm": "在面部，瞳孔直下，當眶下孔凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:眼",
+            "safety_term_diff:深刺",
+            "safety_term_diff:面"
+          ],
+          "current": "面部淺層操作；避免向眼球方向深刺。",
+          "cloudtcm": "直刺0.2～0.4寸，不宜灸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:眼",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺",
+            "safety_term_diff:面"
+          ],
+          "current": "急性眼疾或面部感染時避開。",
+          "cloudtcm": "不可深刺"
+        }
+      ]
+    },
+    {
+      "code": "BL10",
+      "chinese": "天柱",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "後髮際上約 0.5 寸，斜方肌外側凹陷處。",
+          "cloudtcm": "項後髮際，斜方肌外緣凹陷處，當後髮際正中旁開1.3寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:延髓",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "直刺或向下斜刺 0.5-0.8 寸；深部近延髓區，禁深刺與強刺激。",
+          "cloudtcm": "橫刺0.5-0.8寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:頸",
+            "safety_term_diff:延髓",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "頸項部位深刺有風險，需專業操作。",
+          "cloudtcm": "不可向上斜刺，以防造成延髓損傷"
+        }
+      ]
+    },
+    {
+      "code": "BL11",
+      "chinese": "大杼",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 1 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "背部第一胸椎棘突下（陶道）旁開1.5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "橫刺0.5-0.7寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:肺",
+            "safety_term_diff:不可"
+          ],
+          "current": "近肺尖區域，避免深刺；呼吸症狀或胸背劇痛需醫療評估。",
+          "cloudtcm": "本經位於背部，不可垂直深刺以免傷及內部重要臟器。"
+        }
+      ]
+    },
+    {
+      "code": "BL47",
+      "chinese": "魂門",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 9 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "背部第9胸椎棘突下（筋縮）旁開3寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:腹",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "黃疸、劇烈右上腹痛或情緒危機需醫療評估。",
+          "cloudtcm": "不可深刺，以防氣胸"
+        }
+      ]
+    },
+    {
+      "code": "ST13",
+      "chinese": "氣戶",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "鎖骨下緣，前正中線旁開約 4 寸。",
+          "cloudtcm": "胸部，鎖骨中點下緣凹陷處，距前正中線4寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "胸部慎深刺；方向與深度需依專業來源。",
+          "cloudtcm": "沿肋間隙向外斜刺0.3～0.5寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "胸痛或呼吸困難需先排除急症。",
+          "cloudtcm": "不可深刺，以防氣胸"
+        }
+      ]
+    },
+    {
+      "code": "ST14",
+      "chinese": "庫房",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "第 1 肋間隙，前正中線旁開約 4 寸。",
+          "cloudtcm": "胸部前正中線旁開4寸，第一肋間隙凹陷處。與華蓋相平，約當鎖骨中點下緣（氣戶）與乳頭（乳中）連線的上1/4折點"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺"
+          ],
+          "current": "胸部禁不當深刺；待專業來源補操作。",
+          "cloudtcm": "沿肋間隙向外斜刺0.3～0.5寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "胸痛、咳血或呼吸困難需就醫。",
+          "cloudtcm": "此穴道不宜深刺"
+        }
+      ]
+    },
+    {
+      "code": "ST16",
+      "chinese": "膺窗",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "第 3 肋間隙，前正中線旁開約 4 寸。",
+          "cloudtcm": "胸部前正中線旁開4寸，第3肋間隙凹陷處，乳頭上方"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸"
+          ],
+          "current": "胸乳區慎刺；待專業來源補操作細節。",
+          "cloudtcm": "沿肋間隙向外斜刺0.3～0.5寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "乳房腫塊、不明分泌物或感染需就醫。",
+          "cloudtcm": "不可深刺，以防引起氣胸"
+        }
+      ]
+    },
+    {
+      "code": "ST26",
+      "chinese": "外陵",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下腹部，臍下 1 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "下腹部，臍中下1寸（陰交）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:膀胱"
+          ],
+          "current": "下腹部操作需考慮妊娠、膀胱與腹腔安全。",
+          "cloudtcm": "直刺1～1.5寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:孕",
+            "safety_term_diff:禁"
+          ],
+          "current": "妊娠、不明下腹痛或急腹症需醫療評估。",
+          "cloudtcm": "孕婦禁灸"
+        }
+      ]
+    },
+    {
+      "code": "BL1",
+      "chinese": "睛明",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:眼",
+            "safety_term_diff:眶",
+            "safety_term_diff:面"
+          ],
+          "current": "目內眥內上方凹陷處。",
+          "cloudtcm": "面部，目內眥角稍上方凹陷處，當上瞼部眼眶內側緣與眼球之間空隙部"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:出血",
+            "safety_term_diff:禁",
+            "safety_term_diff:不可"
+          ],
+          "current": "閉目，沿眶緣緩慢直刺或略向內上方刺 0.3-0.5 寸；不可提插捻轉過強，避開眼球。",
+          "cloudtcm": "囑患者閉目，醫者左手輕推眼球想外側固定，右手緩慢進針，緊靠眶緣直刺0.5&mdash;1寸，不捻轉提插。局部酸脹，針感可擴散至眼球及周圍。出針時注意用棉球按壓針孔片刻，避免造成內出血。禁灸。"
+        }
+      ]
+    },
+    {
+      "code": "BL50",
+      "chinese": "胃倉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 12 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "位於人體的背部，當第12胸椎棘突下，旁開3寸。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "劇烈腹痛、嘔血、黑便或持續嘔吐需醫療評估。",
+          "cloudtcm": "不可深刺，以防損傷內臟"
+        }
+      ]
+    },
+    {
+      "code": "LU1",
+      "chinese": "中府",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "前胸外上方，第 1 肋間隙附近，前正中線旁開約 6 寸。",
+          "cloudtcm": "在胸前壁之外上部，第一肋間隙外側，距任脈六寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:禁"
+          ],
+          "current": "向外斜刺或平刺 0.5-0.8 寸；不可向內深刺 — 深部為肺臟，有氣胸風險。",
+          "cloudtcm": "直刺0.3～0.5寸，局部酸脹\n向外斜刺0.5-0.8寸，局部酸脹，針感可向前胸及上肢放散。不可向內側深刺，以免傷及肺臟。\n《素問·刺禁論》：刺膺中陷中肺，為喘逆仰息。\n《針灸大成》：針三分，留五呼，灸五壯。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "胸肺區需避免深刺，氣胸風險需由受訓專業人員評估。",
+          "cloudtcm": "不可向內側深刺，以防傷及肺臟\n中府穴下方肌肉偏薄，日常保健不要使太大力道，稍稍施力按揉1-2分鐘，亦可進行輕輕敲打或拍打。"
+        }
+      ]
+    },
+    {
+      "code": "SP20",
+      "chinese": "周榮",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸外側部，第 2 肋間隙，前正中線旁開 6 寸。",
+          "cloudtcm": "胸外側部，前正中線旁開6寸，第2肋間隙凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
+          "cloudtcm": "沿肋間隙橫刺0.3～0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "胸部避免深刺；呼吸困難、胸痛或疑似心肺急症需立即就醫。",
+          "cloudtcm": "內有肺臟，不可深刺，以防造成氣胸"
+        }
+      ]
+    },
+    {
+      "code": "ST1",
+      "chinese": "承泣",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "目正視，瞳孔直下，眼球與眶下緣之間。",
+          "cloudtcm": "目正視，瞳孔直下，當眶下緣與眼球之間"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:眼",
+            "safety_term_diff:眶",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺"
+          ],
+          "current": "眼周危險區，禁止粗暴深刺；需由受訓專業人員依眼眶解剖操作。",
+          "cloudtcm": "直刺0.3～0.7寸；不宜灸。緩慢進針，不宜提插"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:眼"
+          ],
+          "current": "眼外傷、急性視力下降、劇烈眼痛或感染需立即就醫。",
+          "cloudtcm": "不做大幅度捻轉"
+        }
+      ]
+    },
+    {
+      "code": "ST12",
+      "chinese": "缺盆",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "鎖骨上窩中央，前正中線旁開約 4 寸。",
+          "cloudtcm": "鎖骨上窩中央，距前正中線4寸。當鎖骨中點上方，胸鎖乳突肌鎖骨頭外側凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:肺"
+          ],
+          "current": "高風險禁深刺區；需專業來源逐字核對操作。",
+          "cloudtcm": "直刺或斜刺0.3～0.5寸。穴下為肺尖，禁深刺、搗刺。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "氣胸風險區；胸痛、呼吸困難不可自行處理。",
+          "cloudtcm": "避開血管，不可深刺"
+        }
+      ]
+    },
+    {
+      "code": "ST5",
+      "chinese": "大迎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:動脈",
+            "safety_term_diff:面"
+          ],
+          "current": "下頜角前方，咬肌前緣，面動脈搏動處附近。",
+          "cloudtcm": "下頷骨上，下頷角下1.3寸，咬肌附著部的前緣"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:強刺激",
+            "safety_term_diff:面"
+          ],
+          "current": "避開面動脈搏動處強刺激。",
+          "cloudtcm": "避開動脈，直刺0.2～0.4寸，或斜刺0.5～1寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "牙源性感染、蜂窩組織炎或張口困難加重需就醫。",
+          "cloudtcm": "避開動脈"
+        }
+      ]
+    },
+    {
+      "code": "ST9",
+      "chinese": "人迎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "喉結旁開約 1.5 寸，胸鎖乳突肌前緣，頸總動脈搏動處。",
+          "cloudtcm": "頸部結喉旁，胸鎖乳突肌前緣，頸總動脈搏動處。當結喉旁1.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺"
+          ],
+          "current": "頸動脈搏動處禁止深刺或強壓；需專業訓練。",
+          "cloudtcm": "避開頸總動脈，直刺0.2～0.4寸。不宜灸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:頸",
+            "safety_term_diff:胸",
+            "safety_term_diff:神經"
+          ],
+          "current": "頸動脈疾病、暈厥、胸痛、神經症狀或血壓危象需醫療處理。",
+          "cloudtcm": "避開動脈"
+        }
+      ]
+    },
+    {
+      "code": "BL23",
+      "chinese": "腎俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:腎",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-1 寸；腰背深刺需避開腎臟區，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:深刺"
+          ],
+          "current": "背部深刺需專業訓練，避開腎區風險。",
+          "cloudtcm": "腎俞穴是不能重敲擊的。特別是有腎病，腎積水的患者，如果敲擊會加重病情！"
+        }
+      ]
+    },
+    {
+      "code": "GV16",
+      "chinese": "風府",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:頸"
+          ],
+          "current": "頸後區，後髮際正中直上 1 寸，枕外隆凸直下，兩側斜方肌之間凹陷中。",
+          "cloudtcm": "正坐，頭微前傾，後正中線上，入髮際上1寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:禁",
+            "safety_term_diff:不可"
+          ],
+          "current": "高風險操作：正坐位頭微前傾，向下頜方向緩慢刺入 0.5-1 寸；嚴禁向上深刺 — 深部為延髓。",
+          "cloudtcm": "直刺0.5～0.8寸。不可深刺，深部接近延髓，必須嚴格掌握針刺的角度與深度"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:不可"
+          ],
+          "current": "深部為延髓，操作規範同啞門；須由受訓臨床人員執行。",
+          "cloudtcm": "針尖不可向上過深，以免刺入枕骨大孔，誤傷延髓。"
+        }
+      ]
+    },
+    {
+      "code": "GV25",
+      "chinese": "素髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "面部，鼻尖正中央。",
+          "cloudtcm": "鼻尖正中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:出血"
+          ],
+          "current": "向上斜刺 0.3-0.5 寸，或點刺出血；不灸。",
+          "cloudtcm": "直刺0.2～0.3寸。或點刺放血。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:出血",
+            "safety_term_diff:禁"
+          ],
+          "current": "傳統不灸；局部感染時避開。",
+          "cloudtcm": "禁灸，針刺方法一般斜刺0，3～0，5寸，或三棱針點刺出血，向上斜刺0，3～0，5寸，或點刺出血，艾灸方法不灸。"
+        }
+      ]
+    },
+    {
+      "code": "SP19",
+      "chinese": "胸鄉",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸外側部，第 3 肋間隙，前正中線旁開 6 寸。",
+          "cloudtcm": "胸外側部，前正中線旁開6寸，第3肋間隙凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
+          "cloudtcm": "沿肋間隙橫刺0.3～0.5寸。不可深刺"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:肺",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "胸部穴位避免深刺；氣喘急性發作或胸痛需先急症處理。",
+          "cloudtcm": "內有肺臟，不可直刺，深刺，以防氣胸"
+        }
+      ]
+    },
+    {
+      "code": "SP21",
+      "chinese": "大包",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "側胸部，第 6 肋間隙，腋中線上。",
+          "cloudtcm": "側胸部，腋窩頂點（極泉）與第11肋游離端下方（章門）連線的中點"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸"
+          ],
+          "current": "沿胸側壁斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
+          "cloudtcm": "沿肋間隙橫刺0.3～0.5寸。不可深刺"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:肺",
+            "safety_term_diff:禁"
+          ],
+          "current": "側胸部避免深刺；肋骨外傷、胸痛或呼吸困難需先排除急症。",
+          "cloudtcm": "嚴禁深刺，以防刺傷肺臟"
+        }
+      ]
+    },
+    {
+      "code": "ST11",
+      "chinese": "氣舍",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:頸"
+          ],
+          "current": "鎖骨上緣，胸鎖乳突肌胸骨頭與鎖骨頭之間凹陷處。",
+          "cloudtcm": "頸部，鎖骨內側端上緣，胸鎖乳突肌的胸骨頭與鎖骨頭之間凹陷處；當鎖骨上小窩中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:肺",
+            "safety_term_diff:動脈",
+            "safety_term_diff:禁",
+            "safety_term_diff:不可"
+          ],
+          "current": "鎖骨上危險區，禁止不當深刺；需專業訓練。",
+          "cloudtcm": "直刺0.3～0.5寸。本經氣捨至乳根諸穴深部有大動脈及肺、肝等重要臟器，不可深刺。"
+        }
+      ]
+    },
+    {
+      "code": "ST20",
+      "chinese": "承滿",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，臍上 5 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "上腹部，臍中上5寸（上脘）旁開2寸處，當不容下1寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:孕"
+          ],
+          "current": "腹部操作需依體型、孕期與臟器位置判斷。",
+          "cloudtcm": "直刺0.5～0.8寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:禁"
+          ],
+          "current": "急性腹痛、妊娠或不明腫塊需評估。",
+          "cloudtcm": "過飽者禁針，肝大者慎針或禁針，不宜做大幅度提插。"
+        }
+      ]
+    },
+    {
+      "code": "BL12",
+      "chinese": "風門",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 2 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "背部第二胸椎棘突下旁開1.5寸處，約與肩胛骨上角相平"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL14",
+      "chinese": "厥陰俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 4 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "背部第四胸椎棘突下旁開1.5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL15",
+      "chinese": "心俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 5 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "心俞穴位於第五胸椎棘突、旁開1.5寸。取穴時一般可以采用正坐或俯臥姿勢。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL16",
+      "chinese": "督俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 6 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "背部第六胸椎棘突下（靈台）旁開1.5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL17",
+      "chinese": "膈俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "第 7 胸椎棘突下，旁開 1.5 寸。",
+          "cloudtcm": "背部第七胸椎棘突下（至陽）旁開1.5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL2",
+      "chinese": "攢竹",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "眉頭凹陷處，眶上切跡附近。",
+          "cloudtcm": "面部眉頭陷中，當眶上切跡處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:眼",
+            "safety_term_diff:出血",
+            "safety_term_diff:禁",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "向下或橫刺 0.3-0.5 寸；避開眼球，局部不宜強刺激。",
+          "cloudtcm": "橫刺0.3-0.5寸，或用三稜針點刺出血。禁灸。"
+        }
+      ]
+    },
+    {
+      "code": "BL25",
+      "chinese": "大腸俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:腎",
+            "safety_term_diff:深刺"
+          ],
+          "current": "急性腰痛伴發燒、麻木無力或大小便異常需先就醫。",
+          "cloudtcm": "大腸俞深部近於腎臟，故不能深刺"
+        }
+      ]
+    },
+    {
+      "code": "BL40",
+      "chinese": "委中",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:動脈",
+            "safety_term_diff:靜脈"
+          ],
+          "current": "直刺 1-1.5 寸，或點刺出血；避開膕動脈與膕靜脈。",
+          "cloudtcm": "直刺0.5-1寸，或用三稜針點刺出血。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:腎",
+            "safety_term_diff:神經",
+            "safety_term_diff:出血"
+          ],
+          "current": "膕窩血管神經豐富，針刺需非常審慎。",
+          "cloudtcm": "因為房勞過度、腎虛虧損所導致的腰痛，不適合點刺本穴出血，會讓經脈更虛弱。"
+        }
+      ]
+    },
+    {
+      "code": "BL43",
+      "chinese": "膏肓",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 4 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "背部第四胸椎棘突下旁開3寸，內與厥陰俞相平"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV14",
+      "chinese": "巨闕",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，前正中線上，臍中上 6 寸。",
+          "cloudtcm": "前正中線上，臍上6寸；或胸劍聯合下2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向下斜刺 0.3-0.6 寸；不可深刺、不可向上斜刺 — 深部為肝左葉與心包。",
+          "cloudtcm": "直刺0.3～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "KI11",
+      "chinese": "橫骨",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，臍下 5 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍下5寸，恥骨聯合上際，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI13",
+      "chinese": "氣穴",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，臍下 3 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍下3寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI14",
+      "chinese": "四滿",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，臍下 2 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍下2寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與膀胱。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI15",
+      "chinese": "中注",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，臍下 1 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍下1寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:腹膜",
+            "safety_term_diff:孕",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用，下腹部深刺需避開腹腔與腹膜。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI23",
+      "chinese": "神封",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，第 4 肋間隙，前正中線旁開 2 寸。",
+          "cloudtcm": "第四肋間隙，前正中線旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI24",
+      "chinese": "靈墟",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，第 3 肋間隙，前正中線旁開 2 寸。",
+          "cloudtcm": "第三肋間隙，前正中線旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI25",
+      "chinese": "神藏",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，第 2 肋間隙，前正中線旁開 2 寸。",
+          "cloudtcm": "第二肋間隙，前正中線旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI26",
+      "chinese": "彧中",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，第 1 肋間隙，前正中線旁開 2 寸。",
+          "cloudtcm": "第一肋間隙，前正中線旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI27",
+      "chinese": "俞府",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，鎖骨下緣，前正中線旁開 2 寸。",
+          "cloudtcm": "鎖骨下緣，前正中線旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿鎖骨下方斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LI18",
+      "chinese": "扶突",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頸外側，喉結旁開約 3 寸，胸鎖乳突肌胸骨頭與鎖骨頭之間附近。",
+          "cloudtcm": "頸外側部，結喉旁，胸鎖乳突肌的前、後緣之間"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:頸",
+            "safety_term_diff:動脈",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺"
+          ],
+          "current": "待依專業來源補入；頸動脈區禁止粗暴按壓或深刺，需專業訓練。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "LR14",
+      "chinese": "期門",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "乳頭直下，第 6 肋間隙，前正中線旁開約 4 寸。",
+          "cloudtcm": "胸部，乳頭直下，第6肋間隙凹陷處，距前正中線4寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SI16",
+      "chinese": "天窗",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:頸"
+          ],
+          "current": "頸外側，胸鎖乳突肌後緣，喉結旁開約 3 寸。",
+          "cloudtcm": "扶突穴後，在胸鎖乳突肌的後緣，約喉結旁開3.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:頸",
+            "safety_term_diff:動脈",
+            "safety_term_diff:靜脈",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.5-1 寸；頸部針刺需避開頸動脈、頸靜脈與神經。",
+          "cloudtcm": "直刺0.3～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "SI18",
+      "chinese": "顴髎",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "面部，目外眥直下，顴骨下緣凹陷處。",
+          "cloudtcm": "目外眥直下，顴骨下緣凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:眼",
+            "safety_term_diff:眶",
+            "safety_term_diff:面"
+          ],
+          "current": "直刺或斜刺 0.3-0.5 寸；避開眼眶與面部血管。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "SP14",
+      "chinese": "腹結",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下腹部，臍下 1.3 寸，前正中線旁開 4 寸。",
+          "cloudtcm": "下腹部，大橫下1.3寸，距前正中線4寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:腹膜",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；腹部深刺需避開腹腔與腹膜。",
+          "cloudtcm": "直刺或斜刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP15",
+      "chinese": "大橫",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "腹部，臍中旁開 4 寸。",
+          "cloudtcm": "腹中部，距臍中4寸，腹直肌外緣凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:腹膜",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.8-1.2 寸；腹部深刺需避開腹腔與腹膜。",
+          "cloudtcm": "直刺或斜刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP18",
+      "chinese": "天溪",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸外側部，第 4 肋間隙，前正中線旁開 6 寸。",
+          "cloudtcm": "胸外側部，乳頭外旁2寸，當第4肋間隙凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
+          "cloudtcm": "沿肋間隙橫刺0.3～0.5寸，不可深刺"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:肺",
+            "safety_term_diff:氣胸"
+          ],
+          "current": "乳房腫塊、紅腫熱痛或哺乳感染需先醫療評估；胸部避免深刺。",
+          "cloudtcm": "內有肺臟，切勿深刺，以防氣胸"
+        }
+      ]
+    },
+    {
+      "code": "SP6",
+      "chinese": "三陰交",
+      "regions": [
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "小腿內側，內踝尖上 3 寸，脛骨內側緣後方。",
+          "cloudtcm": "小腿內側，足內踝尖上3寸，脛骨內側緣後方凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經",
+            "safety_term_diff:禁"
+          ],
+          "current": "直刺 1-1.5 寸；孕期慎用或禁用，避開脛後血管神經束。",
+          "cloudtcm": "直刺0.5～1.5寸。孕婦慎用"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:不可",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "孕期禁用或慎用強刺激，尤其未經專業評估不可自行針刺。",
+          "cloudtcm": "孕婦禁針或灸"
+        }
+      ]
+    },
+    {
+      "code": "ST10",
+      "chinese": "水突",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頸部，ST9 與 ST11 連線中點，胸鎖乳突肌前緣附近。",
+          "cloudtcm": "頸部，人迎與氣舍連線的中點；當胸鎖乳突肌前緣，與甲狀軟骨下緣相平處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:頸"
+          ],
+          "current": "頸部慎刺；待專業來源補深度方向。",
+          "cloudtcm": "直刺0.3～0.5寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:動脈",
+            "safety_term_diff:深刺"
+          ],
+          "current": "頸部腫塊、吞嚥困難或呼吸困難需就醫。",
+          "cloudtcm": "不宜深刺，以免傷及頸總動脈和頸外動脈分支"
+        }
+      ]
+    },
+    {
+      "code": "ST25",
+      "chinese": "天樞",
+      "regions": [
+        "abdomen-pregnancy-organ-depth",
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "臍中旁開 2 寸。",
+          "cloudtcm": "腹中部，臍中旁2寸，腹直肌中。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:腹膜",
+            "safety_term_diff:孕",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.8-1.2 寸；孕期慎用，腹部深刺需避開腹腔與腹膜。",
+          "cloudtcm": "直刺0.8～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "ST30",
+      "chinese": "氣衝",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "腹股溝上方，恥骨聯合上緣旁開約 2 寸，股動脈搏動附近。",
+          "cloudtcm": "腹股溝稍上方，臍中下5寸（曲骨）旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:動脈",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺"
+          ],
+          "current": "靠近股動脈，禁止粗暴深刺或強壓搏動處。",
+          "cloudtcm": "直刺0.8～1.2寸。"
+        }
+      ]
+    },
+    {
+      "code": "BL18",
+      "chinese": "肝俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 9 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "背部第九胸椎棘突下（筋縮）旁開1.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL19",
+      "chinese": "膽俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 10 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "背部第十胸椎棘突下（中樞）旁開1.5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL20",
+      "chinese": "脾俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "第 11 胸椎棘突下，旁開 1.5 寸。",
+          "cloudtcm": "在背部，當第11胸椎棘突下，旁開1.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL21",
+      "chinese": "胃俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 12 胸椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "位於背部，當第12胸椎棘突下，旁開1.5寸。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
+          "cloudtcm": "斜刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "BL22",
+      "chinese": "三焦俞",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "腰部，第 1 腰椎棘突下，後正中線旁開 1.5 寸。",
+          "cloudtcm": "腰部第一腰椎棘突下（懸樞）旁開1.5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "CV12",
+      "chinese": "中脘",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "前正中線，臍上 4 寸。",
+          "cloudtcm": "前正中線上，臍上4寸；或臍與胸劍聯合連線的中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；上腹部深刺需避開腹腔與臟器深部結構。",
+          "cloudtcm": "直刺0.5～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "CV15",
+      "chinese": "鳩尾",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，前正中線上，胸劍結合部下 1 寸。",
+          "cloudtcm": "前正中線上，臍上7寸；或劍突下，胸劍聯合下1 ​​寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向下斜刺 0.3-0.6 寸；不可深刺與向上刺。",
+          "cloudtcm": "向下斜刺0.4～0.6寸"
+        }
+      ]
+    },
+    {
+      "code": "CV17",
+      "chinese": "膻中",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "前正中線，第 4 肋間隙，兩乳頭連線中點。",
+          "cloudtcm": "前正中線上，平第四肋間隙；或兩乳頭連線與前正中線的交點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV4",
+      "chinese": "關元",
+      "regions": [
+        "abdomen-pregnancy-organ-depth",
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "前正中線，臍下 3 寸。",
+          "cloudtcm": "前正中線上，臍下3寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用或禁用，膀胱充盈時禁深刺。",
+          "cloudtcm": "直刺0.8～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "GB20",
+      "chinese": "風池",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "枕骨下，胸鎖乳突肌與斜方肌上端之間凹陷處。",
+          "cloudtcm": "項部枕骨下，斜方肌上部外緣與胸鎖乳突肌上端後緣之間凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:延髓",
+            "safety_term_diff:禁",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向鼻尖方向斜刺 0.5-1 寸；禁向內上深刺，避開延髓區。",
+          "cloudtcm": "向鼻尖方向針0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "GB22",
+      "chinese": "淵腋",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "側胸部，舉臂，腋中線上，第 4 肋間隙中。",
+          "cloudtcm": "舉臂，腋中線上，第四肋間隙"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間斜刺或平刺 0.5-0.8 寸；不可深刺。",
+          "cloudtcm": "斜刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB23",
+      "chinese": "輒筋",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "側胸部，淵腋（GB22）前 1 寸，平乳頭，第 4 肋間隙中。",
+          "cloudtcm": "淵腋穴前1寸，第四肋間隙"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間斜刺或平刺 0.5-0.8 寸；不可深刺。",
+          "cloudtcm": "斜刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB25",
+      "chinese": "京門",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "側腰部，第 12 肋游離端下際。",
+          "cloudtcm": "側腰部，第十二肋游離端下方凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腎",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "斜刺 0.5-0.8 寸；不可深刺 — 深部為腎臟。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV1",
+      "chinese": "長強",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "會陰區，尾骨下方，尾骨端與肛門連線的中點處。",
+          "cloudtcm": "跪伏或胸膝位，當尾骨尖端與肛門連線的中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:直腸",
+            "safety_term_diff:面"
+          ],
+          "current": "緊靠尾骨前面、與骶骨平行斜刺 0.5-1 寸；不可刺穿直腸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV15",
+      "chinese": "啞門",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:頸"
+          ],
+          "current": "頸後區，後髮際正中直上 0.5 寸，第 2 頸椎棘突上際凹陷中。",
+          "cloudtcm": "正坐，頭微前傾，後正中線上，入髮際上0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:禁",
+            "safety_term_diff:不可"
+          ],
+          "current": "高風險操作：正坐位頭微前傾，向下頜方向緩慢刺入 0.5-1 寸；嚴禁向上深刺 — 深部為延髓。傳統列為禁灸穴。",
+          "cloudtcm": "直刺0.5～0.8寸。不可向上斜刺或深刺，深部接近延髓，必須嚴格掌握針刺的角度與深度"
+        }
+      ]
+    },
+    {
+      "code": "KI16",
+      "chinese": "肓俞",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "腹部，臍中旁開 0.5 寸。",
+          "cloudtcm": "臍旁0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:腹膜",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；腹部深刺需避開腹腔與腹膜。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI17",
+      "chinese": "商曲",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，臍上 2 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍上2寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:腹膜",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；腹部深刺需避開腹腔與腹膜。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI21",
+      "chinese": "幽門",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，臍上 6 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍上6寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:不可"
+          ],
+          "current": "斜刺或平刺 0.5-0.8 寸；近肋弓與上腹部，深刺需謹慎。",
+          "cloudtcm": "直刺0.3～0.7寸，局部有酸沈感，可擴散至胃脘部。注意：幽門穴深部左側有胃，右側有肝，不可深刺，以免傷及肝臟"
+        }
+      ]
+    },
+    {
+      "code": "LU2",
+      "chinese": "雲門",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "前胸外上方，鎖骨外端下方凹陷中，前正中線旁開約 6 寸。",
+          "cloudtcm": "在鎖骨外端下方凹陷中，距任脈六寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸"
+          ],
+          "current": "向外斜刺 0.5-0.8 寸；不可向內深刺 — 深部為肺臟，有氣胸風險。",
+          "cloudtcm": "向外斜刺0.5-0.8寸。不可向內側深刺，以免傷及肺臟。\n《針灸大成》：「《素注》針七分,《銅人》針三分,灸五壯」"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:不可"
+          ],
+          "current": "胸肺區避免深刺，需注意氣胸風險。",
+          "cloudtcm": "不可向內側深刺，以防傷及肺臟，造成氣胸\n《針灸甲乙經》：刺太深，令人逆息，不能食"
+        }
+      ]
+    },
+    {
+      "code": "SI13",
+      "chinese": "曲垣",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "肩胛部，岡上窩內側端，臑俞與第 2 胸椎棘突連線中點。",
+          "cloudtcm": "肩胛骨岡上窩內側端，在臑俞穴與第2胸椎棘突連線的中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "斜刺 0.5-0.8 寸；肩胛上部深刺需防胸腔穿刺與氣胸風險。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SI15",
+      "chinese": "肩中俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 7 頸椎棘突下，後正中線旁開 2 寸。",
+          "cloudtcm": "第7頸椎棘突下旁開2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "斜刺 0.5-0.8 寸；上背部深刺需防胸腔穿刺與氣胸風險。",
+          "cloudtcm": "直刺0.3～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "SI17",
+      "chinese": "天容",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下頜角後方，胸鎖乳突肌前緣凹陷處。",
+          "cloudtcm": "在下頜角的後方，胸鎖乳突肌的前緣凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:頸",
+            "safety_term_diff:動脈",
+            "safety_term_diff:靜脈",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.5-1 寸；頸部針刺需避開頸動脈、頸靜脈與神經。",
+          "cloudtcm": "直刺0.5～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "SP11",
+      "chinese": "箕門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:動脈",
+            "safety_term_diff:禁"
+          ],
+          "current": "直刺 1-1.5 寸；避開股動脈。",
+          "cloudtcm": "直刺0.5～1.5寸。禁直接灸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:禁"
+          ],
+          "current": "避開股動脈搏動；腹股溝腫塊、血管病變或不明疼痛需先評估。",
+          "cloudtcm": "避開動脈，《黃帝內經素問·刺禁論》：「刺陰股中大脈，血出不止」"
+        }
+      ]
+    },
+    {
+      "code": "SP12",
+      "chinese": "衝門",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "腹股溝外側，距恥骨聯合上緣外 3.5 寸，股動脈外側。",
+          "cloudtcm": "腹股溝外側，距恥骨聯合上緣中點（曲骨）3.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:靜脈",
+            "safety_term_diff:禁"
+          ],
+          "current": "直刺 0.5-1 寸；避開股動脈與股靜脈。",
+          "cloudtcm": "避開股動脈，刺入1～2寸。禁用直接灸"
+        }
+      ]
+    },
+    {
+      "code": "SP13",
+      "chinese": "府舍",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下腹部，臍下 4 寸，前正中線旁開 4 寸。",
+          "cloudtcm": "人體的在下腹部，當臍中下4寸，沖門上方0.7寸，距前正中線4寸處。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:孕",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；下腹部深刺需謹慎，孕期慎用。",
+          "cloudtcm": "直刺或斜刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP16",
+      "chinese": "腹哀",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，臍上 3 寸，前正中線旁開 4 寸。",
+          "cloudtcm": "上腹部，臍中上3寸（建里）旁開前正線4寸處，當大橫上3寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
+          "cloudtcm": "直刺或斜刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP17",
+      "chinese": "食竇",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸外側部，第 5 肋間隙，前正中線旁開 6 寸。",
+          "cloudtcm": "胸外側部，前正中線旁開6寸，第5肋間隙凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。",
+          "cloudtcm": "沿肋間隙橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "ST15",
+      "chinese": "屋翳",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "第 2 肋間隙，前正中線旁開約 4 寸。",
+          "cloudtcm": "胸部前正中線旁開4寸，第二肋間隙凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "胸部慎深刺；乳房病變需先醫療評估。",
+          "cloudtcm": "沿肋間隙向外斜刺0.3～0.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST18",
+      "chinese": "乳根",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "第 5 肋間隙，乳頭直下，前正中線旁開約 4 寸。",
+          "cloudtcm": "胸部，乳頭直下，乳房根部，前中線旁開4寸，第5肋間隙凹陷處，當胸大肌下緣溝中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "胸部慎刺，避免不當深刺。",
+          "cloudtcm": "沿肋間隙向外斜刺0.3～0.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST28",
+      "chinese": "水道",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下腹部，臍下 3 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "下腹部，臍中下3寸（關元）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱"
+          ],
+          "current": "下腹部與膀胱區需確認排尿狀態與孕期風險。",
+          "cloudtcm": "直刺0.8～1.2寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST3",
+      "chinese": "巨髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "鼻翼下緣平線與瞳孔直下線交會處。",
+          "cloudtcm": "位於人體的面部，瞳孔直下，平鼻翼下緣處，當鼻唇溝外側"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:神經",
+            "safety_term_diff:面"
+          ],
+          "current": "面部淺層操作；注意局部血管與神經。",
+          "cloudtcm": "直刺0.3～0.6寸"
+        }
+      ]
+    },
+    {
+      "code": "ST42",
+      "chinese": "衝陽",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "足背最高處，足背動脈搏動處附近。",
+          "cloudtcm": "足背最高處，拇長伸肌腱與趾長伸肌腱之間，足背動脈搏動處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "避開足背動脈搏動處強刺激。",
+          "cloudtcm": "避開動脈直刺0.3～0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "糖尿病足、足部感染、血管病變或傷口需避免自行刺激。",
+          "cloudtcm": "避開動脈"
+        }
+      ]
+    },
+    {
+      "code": "ST7",
+      "chinese": "下關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:耳",
+            "safety_term_diff:面"
+          ],
+          "current": "顴弓下緣，下頜骨髁突前方凹陷處，閉口取穴。",
+          "cloudtcm": "在面部耳前方，當顴弓與下頜切跡所形成的凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:深刺"
+          ],
+          "current": "顳顎關節附近操作需避免粗暴深刺或強按。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL41",
+      "chinese": "附分",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 2 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "背部第二胸椎棘突下旁開3寸，當肩胛骨上角內緣凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL42",
+      "chinese": "魄戶",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 3 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "背部第三胸椎棘突下（身柱）旁開3寸，當肩胛岡內側端旁凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL44",
+      "chinese": "神堂",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 5 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "背部第5胸椎棘突下（神道）旁開3寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL45",
+      "chinese": "譩譆",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 6 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "位於人體的背部，當第六胸椎棘突下，旁開3寸。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL46",
+      "chinese": "膈關",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 7 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "背部第7胸椎棘突下（至陽）旁開3寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；胸背部深刺需防氣胸。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL48",
+      "chinese": "陽綱",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 10 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "位於人體的背部，當第10胸椎棘突下，旁開3寸。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL49",
+      "chinese": "意舍",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 11 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "位於人體的背部，當第11胸椎棘突下，旁開3寸。"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.5-0.8 寸；背部深刺需謹慎，注意臟器與氣胸風險。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV2",
+      "chinese": "曲骨",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，前正中線上，恥骨聯合上緣中點處。",
+          "cloudtcm": "前正中線上，臍下5寸，當恥骨聯合上緣中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:孕",
+            "safety_term_diff:膀胱",
+            "safety_term_diff:禁"
+          ],
+          "current": "直刺 0.5-1 寸；針前排空膀胱。",
+          "cloudtcm": "直刺0.5～1寸。孕婦禁針"
+        }
+      ]
+    },
+    {
+      "code": "CV22",
+      "chinese": "天突",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:頸"
+          ],
+          "current": "頸前區，胸骨上窩中央，前正中線上。",
+          "cloudtcm": "胸骨上窩正中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:不可"
+          ],
+          "current": "高風險操作：先直刺 0.2 寸，再將針尖轉向下方，緊貼胸骨柄後緣、氣管前緣緩慢刺入 0.5-1 寸；不可偏斜、不可過深。初學者以淺刺或指壓替代。",
+          "cloudtcm": "先直刺0.2～0.3寸，當針尖超過胸骨柄內緣後，針尖向下，沿胸骨柄後緣，氣管前緣緩慢向下刺入0.5～1寸，局部酸脹，咽喉發緊似有阻塞感，起針後即消失，不留針"
+        }
+      ]
+    },
+    {
+      "code": "CV6",
+      "chinese": "氣海",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "前正中線，臍下 1.5 寸。",
+          "cloudtcm": "前正中線上，臍下1.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:孕",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用，腹部深刺需謹慎。",
+          "cloudtcm": "直刺0.8～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "GB24",
+      "chinese": "日月",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，乳頭直下，第 7 肋間隙中（前正中線旁開 4 寸）。",
+          "cloudtcm": "脇肋部，乳頭直下，第七肋間隙凹陷處，距腹正中線4寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "沿肋間斜刺或平刺 0.5-0.8 寸；不可深刺 — 深部為肝膽。",
+          "cloudtcm": "斜刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI18",
+      "chinese": "石關",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，臍上 3 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍上3寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI19",
+      "chinese": "陰都",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，臍上 4 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍上4寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI20",
+      "chinese": "腹通谷",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，臍上 5 寸，前正中線旁開 0.5 寸。",
+          "cloudtcm": "臍上5寸，前正中線旁開0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:腹腔",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-1 寸；上腹部深刺需謹慎，避開腹腔與臟器深部結構。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "LI10",
+      "chinese": "手三里",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂背橈側，曲池 LI11 下約 2 寸，陽谿 LI5 與曲池 LI11 連線上。",
+          "cloudtcm": "前臂背面橈側，肘橫紋下2寸處，當陽溪與曲池連線上，曲池下2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "待依專業來源補入；局部痠脹可為常見得氣感，需避免過強刺激。",
+          "cloudtcm": "直刺0.8～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "LI13",
+      "chinese": "手五里",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "待依專業來源補入；上臂外側需注意局部神經血管與刺激量。",
+          "cloudtcm": "直刺0.8～1寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "不明腫塊、感染或淋巴結腫大需醫療評估。",
+          "cloudtcm": "避開動脈"
+        }
+      ]
+    },
+    {
+      "code": "LI17",
+      "chinese": "天鼎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頸外側，扶突 LI18 下方約 1 寸，胸鎖乳突肌後緣附近。",
+          "cloudtcm": "頸外側部，胸鎖乳突肌後緣，當結喉旁，扶突與缺盆連線的中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:頸",
+            "safety_term_diff:神經"
+          ],
+          "current": "待依專業來源補入；頸部靠近大血管、神經與氣管，需嚴格安全角度與深度。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LR12",
+      "chinese": "急脈",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "腹股溝區，恥骨聯合下緣中點旁開 2.5 寸，股動脈搏動處外側。",
+          "cloudtcm": "腹股溝部，恥骨結節外側，氣衝外下方，股動脈搏動處，距前正中線二寸五分"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-0.8 寸，必須避開股動脈；傳統多灸少針。",
+          "cloudtcm": "避開動脈直刺0.3～0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:孕",
+            "safety_term_diff:不可"
+          ],
+          "current": "緊鄰股動脈，針刺須先觸清搏動位置並避開；孕婦慎用。",
+          "cloudtcm": "避開動脈血管，《黃帝內經素問·氣府論》王冰註謂，「可灸而不可刺」。"
+        }
+      ]
+    },
+    {
+      "code": "LU8",
+      "chinese": "經渠",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "前臂掌側橈側，橈骨莖突與橈動脈之間凹陷，腕橫紋上約 1 寸。",
+          "cloudtcm": "腕橫紋上一寸，在橈動脈橈側凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:動脈"
+          ],
+          "current": "避開橈動脈，直刺 0.1-0.3 寸。",
+          "cloudtcm": "直刺0.3-0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:強刺激"
+          ],
+          "current": "靠近橈動脈，避免直接強刺激搏動處。",
+          "cloudtcm": "避開橈動脈"
+        }
+      ]
+    },
+    {
+      "code": "LU9",
+      "chinese": "太淵",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "腕掌側橫紋橈側，橈動脈搏動處附近。",
+          "cloudtcm": "掌後腕橫紋橈側端，橈動脈橈側凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:動脈"
+          ],
+          "current": "避開橈動脈，直刺 0.2-0.3 寸。",
+          "cloudtcm": "直刺0.3-0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:強刺激"
+          ],
+          "current": "避開橈動脈，勿強刺激搏動處。",
+          "cloudtcm": "避開橈動脈"
+        }
+      ]
+    },
+    {
+      "code": "PC1",
+      "chinese": "天池",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸部，第 4 肋間隙，乳頭外側 1 寸（前正中線旁開 5 寸）。",
+          "cloudtcm": "胸部乳頭外側1寸，前正中線旁開5寸，當第4肋間隙凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:不可"
+          ],
+          "current": "沿肋間斜刺或平刺 0.3-0.5 寸；胸壁穴位不可深刺。",
+          "cloudtcm": "斜刺0.2～0.4寸，不宜深刺，以免造成氣胸"
+        }
+      ]
+    },
+    {
+      "code": "SI11",
+      "chinese": "天宗",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "肩胛部，肩胛岡中點與肩胛骨下角連線上 1/3 與下 2/3 交點凹陷處。",
+          "cloudtcm": "肩胛部，岡下窩中央凹陷處，與第4胸椎相平"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺或斜刺 0.5-1 寸；肩胛背部深刺需防胸腔穿刺與氣胸風險。",
+          "cloudtcm": "直刺或斜刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "SI12",
+      "chinese": "秉風",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺或斜刺 0.5-1 寸；肩胛上部深刺需防胸腔穿刺與氣胸風險。",
+          "cloudtcm": "直刺0.5～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "SI19",
+      "chinese": "聽宮",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "面部，耳屏前，下頜骨髁狀突後方，張口時凹陷處。",
+          "cloudtcm": "耳屏前，下頜骨髁狀突的後方，張口時呈凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:動脈",
+            "safety_term_diff:耳"
+          ],
+          "current": "張口取穴，直刺 0.5-1 寸；避開顳淺動脈與外耳道深部結構。",
+          "cloudtcm": "張口，直刺 l～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "ST19",
+      "chinese": "不容",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，臍上 6 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "上腹部，臍中上6寸（巨闕）旁開2寸，當肋弓下緣凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:禁"
+          ],
+          "current": "腹部深度需依體型與臟器位置保守評估。",
+          "cloudtcm": "直刺0.5～0.8寸。過飽者禁針，肝大者慎針或禁針，不宜做大幅度提插。"
+        }
+      ]
+    },
+    {
+      "code": "ST21",
+      "chinese": "梁門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，臍上 4 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "上腹部，臍中上4寸（中脘）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:禁"
+          ],
+          "current": "腹部深度需依體型與安全來源。",
+          "cloudtcm": "直刺0.5～0.8寸。過飽者禁針，肝大者慎針或禁針，不宜做大幅度提插。"
+        }
+      ]
+    },
+    {
+      "code": "ST22",
+      "chinese": "關門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，臍上 3 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "上腹部，臍中上3寸（建里）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:孕"
+          ],
+          "current": "腹部操作需避開急腹症與孕期風險。",
+          "cloudtcm": "直刺0.5～0.8寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST27",
+      "chinese": "大巨",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下腹部，臍下 2 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "下腹部，臍中下2寸（石門）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:孕"
+          ],
+          "current": "下腹部深度需依體型與臟器位置；孕期慎用。",
+          "cloudtcm": "直刺0.8～1.2寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST29",
+      "chinese": "歸來",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下腹部，臍下 4 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "下腹部，臍中下4寸（中極）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹",
+            "safety_term_diff:孕"
+          ],
+          "current": "下腹部慎刺；孕期或疑似妊娠需避免自行刺激。",
+          "cloudtcm": "直刺0.8～1.2寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST34",
+      "chinese": "梁丘",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "大腿前外側，髕底外側端上 2 寸。",
+          "cloudtcm": "大腿前面，屈膝，髂前上棘與髕底外側端的連線上，髕底上2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹"
+          ],
+          "current": "待依專業來源補入；急性胃痛需辨別急腹症。",
+          "cloudtcm": "直刺1～1.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST37",
+      "chinese": "上巨虛",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:眼"
+          ],
+          "current": "小腿前外側，犢鼻 ST35 下 6 寸，脛骨前嵴外一橫指。",
+          "cloudtcm": "小腿前外側，外膝眼（犢鼻）下6寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "待依專業來源補深度；小腿前外側需避開骨膜過強刺激。",
+          "cloudtcm": "直刺1～1.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST4",
+      "chinese": "地倉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "口角旁開約 0.4 寸。",
+          "cloudtcm": "在面部，口角外側，上直對瞳孔"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:面"
+          ],
+          "current": "常作面部局部淺層操作；需避開感染與皮膚病灶。",
+          "cloudtcm": "斜刺或平刺0.5&mdash;0.8寸，向頰車穴透刺"
+        }
+      ]
+    },
+    {
+      "code": "TE16",
+      "chinese": "天牖",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:頸"
+          ],
+          "current": "頸部，胸鎖乳突肌後緣，約平下頜角處。",
+          "cloudtcm": "乳突後下方，胸鎖乳突肌後緣，平下頜角處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:深刺",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "直刺 0.5-0.8 寸，避免深刺與強刺激。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL24",
+      "chinese": "氣海俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL26",
+      "chinese": "關元俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL27",
+      "chinese": "小腸俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL28",
+      "chinese": "膀胱俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL29",
+      "chinese": "中膂俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL30",
+      "chinese": "白環俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL36",
+      "chinese": "承扶",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "臀橫紋中點。",
+          "cloudtcm": "大腿後面，臀下橫紋的中點"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "直刺 1-2 寸。",
+          "cloudtcm": "斜刺1-1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL55",
+      "chinese": "合陽",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:面"
+          ],
+          "current": "小腿後側，委中下 2 寸，腓腸肌兩肌腹之間。",
+          "cloudtcm": "小腿後面，膕橫紋正中（委中）下2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.7-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL60",
+      "chinese": "崑崙",
+      "regions": [
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "外踝尖與跟腱之間凹陷處。",
+          "cloudtcm": "足部外踝後方，當外踝尖與跟腱之間凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:孕",
+            "safety_term_diff:神經",
+            "safety_term_diff:禁"
+          ],
+          "current": "直刺 0.5-1 寸；孕期慎用或禁用，避開局部血管神經。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL61",
+      "chinese": "僕參",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "???????????? BL60 ?????????????",
+          "cloudtcm": "足外側部，外踝後下方，崑崙直下2寸，跟部外側面赤白肉際處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "[object Object]",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB1",
+      "chinese": "瞳子髎",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:眶",
+            "safety_term_diff:面"
+          ],
+          "current": "面部，目外眥外側 0.5 寸凹陷中。",
+          "cloudtcm": "目外眥外側0.5寸，眶骨外緣凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺或斜刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB28",
+      "chinese": "維道",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，髂前上棘的前下方 0.5 寸（五樞前下）。",
+          "cloudtcm": "五樞穴前下方0.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 0.8-1.2 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV14",
+      "chinese": "大椎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "第 7 頸椎棘突下凹陷處。",
+          "cloudtcm": "後正中線上，第七頸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向下斜刺 0.5-1 寸；不可向上深刺。",
+          "cloudtcm": "向上斜刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV6",
+      "chinese": "脊中",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背區，第 11 胸椎棘突下凹陷中，後正中線上。",
+          "cloudtcm": "後正中線上，第十一胸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV7",
+      "chinese": "中樞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背區，第 10 胸椎棘突下凹陷中，後正中線上。",
+          "cloudtcm": "後正中線上，第十胸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV8",
+      "chinese": "筋縮",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背區，第 9 胸椎棘突下凹陷中，後正中線上。",
+          "cloudtcm": "後正中線上，第九胸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "HT4",
+      "chinese": "靈道",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂前內側，腕掌側遠端橫紋上 1.5 寸，尺側腕屈肌腱橈側。",
+          "cloudtcm": "前臂掌側面，腕橫紋（神門）上1.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:動脈",
+            "safety_term_diff:神經"
+          ],
+          "current": "避開尺動脈與尺神經，直刺 0.3-0.5 寸。",
+          "cloudtcm": "直刺0.3─0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "HT5",
+      "chinese": "通里",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂前內側，腕掌側遠端橫紋上 1 寸，尺側腕屈肌腱橈側。",
+          "cloudtcm": "前臂掌側面，腕橫紋（神門）上1寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:動脈",
+            "safety_term_diff:神經"
+          ],
+          "current": "避開尺動脈與尺神經，直刺 0.3-0.5 寸。",
+          "cloudtcm": "直刺0.3─0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI8",
+      "chinese": "交信",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "太谿上 2 寸，復溜前方，脛骨內側緣後方。",
+          "cloudtcm": "小腿內側面，太溪直上2寸，脛骨內側緣後方凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.5-1 寸；避開脛後血管神經束。",
+          "cloudtcm": "直刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "KI9",
+      "chinese": "築賓",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹",
+            "safety_term_diff:面"
+          ],
+          "current": "太谿上 5 寸，腓腸肌內側肌腹下方。",
+          "cloudtcm": "小腿內側面，內踝尖上5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "LI1",
+      "chinese": "商陽",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:出血",
+            "safety_term_diff:強刺激"
+          ],
+          "current": "待依 WHO/專業教材補入；井穴刺血或強刺激需專業訓練與無菌觀念。",
+          "cloudtcm": "淺刺0.1寸，或點刺出血。\n針0.1─0.2寸，針尖向近側刺入出血，針感疼痛"
+        }
+      ]
+    },
+    {
+      "code": "LI19",
+      "chinese": "口禾髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:禁",
+            "safety_term_diff:面"
+          ],
+          "current": "待依專業來源補入；面部淺層操作需注意局部血管與皮膚狀態。",
+          "cloudtcm": "向上斜刺0.2～0.3寸。禁灸"
+        }
+      ]
+    },
+    {
+      "code": "LI20",
+      "chinese": "迎香",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "鼻翼外緣中點旁，鼻唇溝中。",
+          "cloudtcm": "面部，鼻翼外緣中點旁鼻唇溝中凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "向鼻翼方向斜刺 0.3-0.5 寸。",
+          "cloudtcm": "直刺或向上斜刺0.2～0.5寸；不宜灸"
+        }
+      ]
+    },
+    {
+      "code": "LI5",
+      "chinese": "陽谿",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:動脈",
+            "safety_term_diff:深刺"
+          ],
+          "current": "待依專業來源補入；解剖鼻煙窩鄰近橈動脈分支與肌腱，需避免粗暴深刺。",
+          "cloudtcm": "直刺0.5-0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "LI8",
+      "chinese": "下廉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:頸",
+            "safety_term_diff:神經"
+          ],
+          "current": "待依專業來源補入；上肢神經放射痛需先評估頸椎或周邊神經問題。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "LR10",
+      "chinese": "足五里",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "大腿內側，氣衝（ST30）直下 3 寸，動脈搏動處內側，長收肌前緣。",
+          "cloudtcm": "大腿內側根部，恥骨結節下方，當氣衝直下3寸，長收肌外緣凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:靜脈"
+          ],
+          "current": "直刺 0.5-0.8 寸；避開股動、靜脈。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "LR13",
+      "chinese": "章門",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "側腹部，第 11 肋游離端下際。",
+          "cloudtcm": "側腹部第十一肋游離端下方"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "斜刺 0.5-0.8 寸；不可深刺 — 右側深部為肝，左側深部為脾。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "LR5",
+      "chinese": "蠡溝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "小腿內側，內踝尖上 5 寸，脛骨內側面中央。",
+          "cloudtcm": "小腿內側，內踝尖上五寸，脛骨內側面中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:面"
+          ],
+          "current": "平刺 0.5-0.8 寸（骨面上沿皮刺）。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SI14",
+      "chinese": "肩外俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背部，第 1 胸椎棘突下，後正中線旁開 3 寸。",
+          "cloudtcm": "第1胸椎棘突下旁開3寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:胸",
+            "safety_term_diff:氣胸",
+            "safety_term_diff:深刺"
+          ],
+          "current": "斜刺 0.5-0.8 寸；上背部深刺需防胸腔穿刺與氣胸風險。",
+          "cloudtcm": "斜刺0.5-0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "SI7",
+      "chinese": "支正",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂背尺側，腕背橫紋上 5 寸，尺骨與尺側腕屈肌之間。",
+          "cloudtcm": "前臂背面尺側，小海與陽谷的連線上，腕背橫紋上5寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺或斜刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "ST23",
+      "chinese": "太乙",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，臍上 2 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "上腹部，臍中上2寸（下脘）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹"
+          ],
+          "current": "腹部操作需保守評估深度。",
+          "cloudtcm": "直刺0.5～0.8寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST24",
+      "chinese": "滑肉門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上腹部，臍上 1 寸，前正中線旁開 2 寸。",
+          "cloudtcm": "上腹部，臍中上1寸（水分）旁開2寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:腹"
+          ],
+          "current": "腹部慎刺，待專業來源補深度。",
+          "cloudtcm": "直刺0.8～1.2寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST31",
+      "chinese": "髀關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "大腿前外側，髂前上棘與髕底外側端連線上，股直肌與闊筋膜張肌之間。",
+          "cloudtcm": "大腿前面，髂前上棘與髕底外側端的連線上"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "大腿肌肉層深度需依體型與專業來源。",
+          "cloudtcm": "直刺0.8～1.2寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST38",
+      "chinese": "條口",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:眼"
+          ],
+          "current": "小腿前外側，犢鼻 ST35 下 8 寸，脛骨前嵴外一橫指。",
+          "cloudtcm": "小腿前外側，外膝眼（犢鼻）下8寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "待依專業來源補入；遠端配肩痛需配合整體診斷。",
+          "cloudtcm": "直刺1～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "ST39",
+      "chinese": "下巨虛",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:眼"
+          ],
+          "current": "小腿前外側，犢鼻 ST35 下 9 寸，脛骨前嵴外一橫指。",
+          "cloudtcm": "小腿前外側，外膝眼（犢鼻）下9寸，脛骨前緣外一橫指（中指）處，當上巨虛直下3寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "待依專業來源補入。",
+          "cloudtcm": "直刺1～1.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "TE15",
+      "chinese": "天髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:肺",
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 0.5-0.8 寸；不可向前下深刺 — 肺尖在其深部。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "TE17",
+      "chinese": "翳風",
+      "regions": [
+        "neck-head-risk"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "耳垂後方，乳突與下頜角之間的凹陷中。",
+          "cloudtcm": "耳垂後耳根部，顳骨乳突與下頜骨下頜支後緣間凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經",
+            "safety_term_diff:面"
+          ],
+          "current": "直刺 0.8-1 寸；深部有面神經幹與血管，避免粗暴提插。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "TE23",
+      "chinese": "絲竹空",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "面部，眉梢凹陷處。",
+          "cloudtcm": "面部眉梢後凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:禁"
+          ],
+          "current": "平刺 0.5-1 寸；傳統列為禁灸穴。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL35",
+      "chinese": "會陽",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:深刺",
+            "safety_term_diff:直腸"
+          ],
+          "current": "直刺 0.8-1.2 寸；避開直腸，局部深刺需謹慎。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL38",
+      "chinese": "浮郄",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "膕橫紋上 1 寸，股二頭肌腱內側。",
+          "cloudtcm": "大腿後面，膕橫紋上1寸，股二頭肌內側緣凹陷處，當委陽內上方1寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL5",
+      "chinese": "五處",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3-0.5寸"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:不可"
+          ],
+          "current": "兒童、癲癇或神志症狀需由專業者評估。",
+          "cloudtcm": "本穴經書列為不可灸，是因為本穴的氣血空虛即為正常態，若施以火灸，則穴內地部的水濕氣化充斥穴內，穴內正常的空虛態即被破壞，故不可灸。"
+        }
+      ]
+    },
+    {
+      "code": "BL52",
+      "chinese": "志室",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:腎",
+            "safety_term_diff:深刺"
+          ],
+          "current": "斜刺 0.5-1 寸；腰背部深刺需避開腎臟區。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL56",
+      "chinese": "承筋",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "小腿後側，腓腸肌肌腹中央，委中與承山連線上。",
+          "cloudtcm": "小腿後面，委中下5寸，腓腸肌肌腹中央"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL57",
+      "chinese": "承山",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "小腿後側，腓腸肌兩肌腹下方交角處，伸直小腿或足跟上提時呈凹陷。",
+          "cloudtcm": "小腿後面正中，委中下8寸，腓腸肌肌腹下"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-2 寸。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL58",
+      "chinese": "飛揚",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "小腿後外側，崑崙上 7 寸，腓腸肌外側下緣。",
+          "cloudtcm": "小腿後面，外踝後（崑崙）直上7寸，當承山外下方1寸凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.7-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL59",
+      "chinese": "跗陽",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "小腿後外側，崑崙上 3 寸。",
+          "cloudtcm": "小腿後面，外踝後（崑崙）直上3寸凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL67",
+      "chinese": "至陰",
+      "regions": [
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "??????????? 0.1 ???",
+          "cloudtcm": "足小趾末節外側，距趾甲角1分處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "[object Object]",
+          "cloudtcm": "淺刺0.1寸"
+        }
+      ]
+    },
+    {
+      "code": "CV10",
+      "chinese": "下脘",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，前正中線上，臍中上 2 寸。",
+          "cloudtcm": "前正中線上，臍上2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "CV11",
+      "chinese": "建里",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，前正中線上，臍中上 3 寸。",
+          "cloudtcm": "前正中線上，臍上3寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "CV13",
+      "chinese": "上脘",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，前正中線上，臍中上 5 寸。",
+          "cloudtcm": "前正中線上，臍上5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "CV18",
+      "chinese": "玉堂",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，前正中線上，平第 3 肋間。",
+          "cloudtcm": "前正中線上，平第三肋間隙"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV19",
+      "chinese": "紫宮",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "胸部，前正中線上，平第 2 肋間。",
+          "cloudtcm": "前正中線上，平第二肋間隙"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV23",
+      "chinese": "廉泉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:頸"
+          ],
+          "current": "頸前區，喉結上方，舌骨上緣凹陷中，前正中線上。",
+          "cloudtcm": "微仰頭，在喉結上方，當舌骨體上緣的中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:深刺"
+          ],
+          "current": "向舌根方向斜刺 0.5-0.8 寸，不留針過深過久。",
+          "cloudtcm": "向舌根斜刺0.5～0.8寸，或將針退至皮下，再向左向右兩側針刺，局部酸脹，舌根及咽喉部發緊。不留針或淺部留針。不宜深刺。注意：不能久留針，防因吞咽動作而折針。"
+        }
+      ]
+    },
+    {
+      "code": "CV24",
+      "chinese": "承漿",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "面部，頦唇溝正中凹陷處。",
+          "cloudtcm": "頦唇溝的正中凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "斜刺 0.3-0.5 寸。",
+          "cloudtcm": "斜刺0.2～0.3寸"
+        }
+      ]
+    },
+    {
+      "code": "CV3",
+      "chinese": "中極",
+      "regions": [
+        "abdomen-pregnancy-organ-depth",
+        "pregnancy-caution-common"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，前正中線上，臍中下 4 寸。",
+          "cloudtcm": "前正中線上，臍下4寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:膀胱"
+          ],
+          "current": "直刺 0.5-1 寸；針前排空膀胱。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "CV7",
+      "chinese": "陰交",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，前正中線上，臍中下 1 寸。",
+          "cloudtcm": "前正中線上，臍下1寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.8～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "CV8",
+      "chinese": "神闕",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "腹中部，臍中央。",
+          "cloudtcm": "臍窩中央"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [],
+          "current": "禁針；宜灸（常用隔鹽灸、隔薑灸）。",
+          "cloudtcm": "禁針"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [],
+          "current": "禁針。臍部感染或皮膚破損時禁灸。",
+          "cloudtcm": "禁針，只用灸法"
+        }
+      ]
+    },
+    {
+      "code": "GB10",
+      "chinese": "浮白",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭部，耳後乳突的後上方，天衝（GB9）與完骨（GB12）弧形連線的上 1/3 與下 2/3 交點處。",
+          "cloudtcm": "耳根上緣向後入髮際橫量1寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB11",
+      "chinese": "頭竅陰",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭部，耳後乳突的後上方，天衝（GB9）與完骨（GB12）弧形連線的上 2/3 與下 1/3 交點處。",
+          "cloudtcm": "頭部耳後乳突基部後上方凹陷處，當天衝與完骨所連弧形連線的下1/3折點"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB2",
+      "chinese": "聽會",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "面部，耳屏間切跡前方，下頜骨髁突後緣，張口呈凹陷處。",
+          "cloudtcm": "耳屏間切跡前，下頜骨髁狀突後緣，張口有孔"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "張口，直刺 0.5-0.8 寸。",
+          "cloudtcm": "直刺0.5～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "GB30",
+      "chinese": "環跳",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 1.5-3 寸；避開坐骨神經，深刺需掌握方向。",
+          "cloudtcm": "直刺1.5～2.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB31",
+      "chinese": "風市",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "大腿外側部中線上，膕橫紋上 7 寸；直立垂手時，中指尖所指凹陷處。",
+          "cloudtcm": "股外側面正中線上，膕橫紋(膝中)上七寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.7～1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "GB34",
+      "chinese": "陽陵泉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.8～1.2寸\n直刺或斜向下刺1～1.5寸，深刺可達3.5-4.5寸，透陰陵泉(注意從脛骨後方刺，避免骨折)，局部酸脹，有麻電感向下放散。"
+        }
+      ]
+    },
+    {
+      "code": "GB36",
+      "chinese": "外丘",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "小腿外側，外踝尖上 7 寸，腓骨前緣。",
+          "cloudtcm": "小腿外側面，外踝尖上七寸，腓骨前緣凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "GB7",
+      "chinese": "曲鬢",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭部，耳前鬢角髮際後緣的垂線與耳尖水平線的交點處。",
+          "cloudtcm": "耳前鬢髮後緣直上，平角孫穴"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB8",
+      "chinese": "率谷",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭部，耳尖直上，入髮際 1.5 寸。",
+          "cloudtcm": "耳尖直上，入髮際1.5寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB9",
+      "chinese": "天衝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭部，耳根後緣直上，入髮際 2 寸（率谷後約 0.5 寸）。",
+          "cloudtcm": "耳根後緣直上，入髮際2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV10",
+      "chinese": "靈台",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背區，第 6 胸椎棘突下凹陷中，後正中線上。",
+          "cloudtcm": "後正中線上，第六胸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "向上斜刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV11",
+      "chinese": "神道",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背區，第 5 胸椎棘突下凹陷中，後正中線上。",
+          "cloudtcm": "後正中線上，第五胸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "向上斜刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV12",
+      "chinese": "身柱",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上背區，第 3 胸椎棘突下凹陷中，後正中線上。",
+          "cloudtcm": "後正中線上，第三胸椎棘突下凹陷中；約與兩側肩胛岡高點相平"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "向上斜刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV13",
+      "chinese": "陶道",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "上背區，第 1 胸椎棘突下凹陷中，後正中線上。",
+          "cloudtcm": "後正中線上，第一胸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "向上斜刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV20",
+      "chinese": "百會",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭頂正中線，兩耳尖連線與前後正中線交會處。",
+          "cloudtcm": "後髮際正中直上7寸；或當頭部正中線與兩耳尖連線的交點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.5-1 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV22",
+      "chinese": "囟會",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:禁"
+          ],
+          "current": "平刺 0.3-0.5 寸；嬰幼兒囟門未閉者禁刺。",
+          "cloudtcm": "橫刺0.3～0.5寸。"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [],
+          "current": "嬰幼兒囟門未閉禁刺。",
+          "cloudtcm": "小兒禁針"
+        }
+      ]
+    },
+    {
+      "code": "GV23",
+      "chinese": "上星",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:禁"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸，或用三稜針點刺放血。小兒禁針"
+        }
+      ]
+    },
+    {
+      "code": "GV27",
+      "chinese": "兌端",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "面部，上唇結節的中點（上唇尖端，皮膚與唇紅移行處）。",
+          "cloudtcm": "上唇正中的尖端，紅唇與皮膚交接處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "斜刺 0.2-0.3 寸。",
+          "cloudtcm": "直刺0.2～0.3寸。"
+        }
+      ]
+    },
+    {
+      "code": "GV9",
+      "chinese": "至陽",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "背區，第 7 胸椎棘突下凹陷中，後正中線上（約平肩胛下角）。",
+          "cloudtcm": "後正中線上，第七胸椎棘突下凹陷中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:不可",
+            "safety_term_diff:深刺"
+          ],
+          "current": "向上斜刺 0.5-1 寸；不可深刺。",
+          "cloudtcm": "向上斜刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "LI15",
+      "chinese": "肩髃",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:深刺"
+          ],
+          "current": "待依專業來源補入；肩部深度與方向需避免不當深刺並考慮局部滑囊、肌腱與關節狀態。",
+          "cloudtcm": "直刺或向下斜刺0.8～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LI16",
+      "chinese": "巨骨",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:胸"
+          ],
+          "current": "待依專業來源補入；肩上部與鎖骨附近不可粗暴深刺。",
+          "cloudtcm": "直刺0.4～0.6寸，不可深刺，否則可刺入胸腔"
+        }
+      ]
+    },
+    {
+      "code": "LI6",
+      "chinese": "偏歷",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "待依專業來源補入；依局部肌腱、血管與神經走向調整角度。",
+          "cloudtcm": "直刺0.3～0.5寸，斜刺1寸"
+        }
+      ]
+    },
+    {
+      "code": "LI7",
+      "chinese": "溫溜",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "待依專業來源補入；急性腫痛需先分辨感染、外傷或神經血管問題。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "LI9",
+      "chinese": "上廉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "待依專業來源補入；手麻無力需排除神經壓迫或血管問題。",
+          "cloudtcm": "直刺0.8～1寸"
+        }
+      ]
+    },
+    {
+      "code": "LR6",
+      "chinese": "中都",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "小腿內側，內踝尖上 7 寸，脛骨內側面中央。",
+          "cloudtcm": "小腿內側面，內踝尖直上七寸，脛骨內側面中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "PC3",
+      "chinese": "曲澤",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:動脈",
+            "safety_term_diff:出血"
+          ],
+          "current": "直刺 0.8-1 寸，或三稜針點刺出血；避開肱動脈。",
+          "cloudtcm": "直刺0.5～0.7寸，或用三稜針點刺放血"
+        }
+      ]
+    },
+    {
+      "code": "SI10",
+      "chinese": "臑俞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺或斜刺 0.8-1.2 寸；肩胛區深刺需謹慎。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "SI6",
+      "chinese": "養老",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂背尺側，尺骨小頭近端橈側凹陷處。",
+          "cloudtcm": "前臂背面尺側，尺骨小頭近端橈側凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-0.8 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SI9",
+      "chinese": "肩貞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:深刺"
+          ],
+          "current": "直刺或斜刺 0.8-1.2 寸；肩後部深刺需謹慎。",
+          "cloudtcm": "直刺 1-1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "ST17",
+      "chinese": "乳中",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:胸"
+          ],
+          "current": "乳頭中央。",
+          "cloudtcm": "胸部，乳頭正中"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:不可"
+          ],
+          "current": "禁刺禁灸。",
+          "cloudtcm": "禁針灸。《針灸甲乙經》：「乳中，禁不可刺灸」"
+        }
+      ]
+    },
+    {
+      "code": "ST32",
+      "chinese": "伏兔",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "大腿前面，髕底外側端上 6 寸，股直肌上。",
+          "cloudtcm": "大腿前面，髂前上棘與髕底外側端的連線上，髕底上6寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "股四頭肌區操作需依肌肉厚度與刺激量。",
+          "cloudtcm": "直刺1～2寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST33",
+      "chinese": "陰市",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "大腿前面，髕底外側端上 3 寸，股直肌上。",
+          "cloudtcm": "大腿前面，髂前上棘與髕底外側端連線上，髕底上3寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "待依專業來源補深度與手法。",
+          "cloudtcm": "直刺1～1.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST41",
+      "chinese": "解谿",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "踝前肌腱與血管神經附近，需注意角度與深度。",
+          "cloudtcm": "直刺0.5～1寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST45",
+      "chinese": "厲兌",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff",
+            "safety_term_diff:出血"
+          ],
+          "current": "井穴刺血類操作需專業訓練與無菌觀念。",
+          "cloudtcm": "淺刺0.1寸。或點刺出血。"
+        }
+      ]
+    },
+    {
+      "code": "TE10",
+      "chinese": "天井",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "肘後區，肘尖（鷹嘴）上 1 寸凹陷中。",
+          "cloudtcm": "上臂伸側面，屈肘時肘尖直上一寸凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "TE13",
+      "chinese": "臑會",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "臂後區，肩峰角下 3 寸，三角肌後下緣。",
+          "cloudtcm": "上臂伸側面，肘尖與肩髎的連線上，肩髎下三寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "TE21",
+      "chinese": "耳門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "耳區，耳屏上切跡與下頜骨髁突之間，張口呈凹陷處。",
+          "cloudtcm": "耳屏上切跡前，下頜骨髁狀突後緣，張口有孔"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "張口，直刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "TE22",
+      "chinese": "耳和髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭側部，鬢髮後緣，耳廓根前方，顳淺動脈的後緣。",
+          "cloudtcm": "鬢髮後際，平耳廓根前，當顳淺動脈後緣"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "避開顳淺動脈，斜刺或平刺 0.3-0.5 寸。",
+          "cloudtcm": "避開動脈，斜刺0.1～0.3寸"
+        }
+      ]
+    },
+    {
+      "code": "TE6",
+      "chinese": "支溝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂後區，腕背側遠端橫紋上 3 寸，尺骨與橈骨間隙中點。",
+          "cloudtcm": "前臂伸側面腕背橫紋後三寸，尺骨與橈骨之間，當陽池與肘尖的連線上"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.8～1.2寸\n《針灸甲乙經》提到：「支溝者，火也。在腕後三寸&hellip;&hellip;刺入二分，留七呼，灸三壯。」\n《經絡腧穴學》中取使用直刺，刺入深度為 0.5～1 寸。"
+        }
+      ]
+    },
+    {
+      "code": "BL51",
+      "chinese": "肓門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:深刺"
+          ],
+          "current": "斜刺 0.5-1 寸；腰背部深刺需謹慎。",
+          "cloudtcm": "斜刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL53",
+      "chinese": "胞肓",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL62",
+      "chinese": "申脈",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "[object Object]",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL63",
+      "chinese": "金門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "[object Object]",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL64",
+      "chinese": "京骨",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "[object Object]",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL65",
+      "chinese": "束骨",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "[object Object]",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL66",
+      "chinese": "足通谷",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "[object Object]",
+          "cloudtcm": "直刺0.2-0.3寸"
+        }
+      ]
+    },
+    {
+      "code": "CV16",
+      "chinese": "中庭",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸部，前正中線上，胸劍結合中點處（平第 5 肋間）。",
+          "cloudtcm": "胸劍聯合的中點處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV20",
+      "chinese": "華蓋",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸部，前正中線上，平第 1 肋間。",
+          "cloudtcm": "前正中線上，胸骨角的中點處，平第一肋間隙"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV21",
+      "chinese": "璇璣",
+      "regions": [
+        "chest-back-pneumothorax"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "胸部，前正中線上，胸骨上窩中央下 1 寸。",
+          "cloudtcm": "前正中線上，胸骨柄的中央處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "CV5",
+      "chinese": "石門",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "下腹部，前正中線上，臍中下 2 寸。",
+          "cloudtcm": "前正中線上，臍下2寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "CV9",
+      "chinese": "水分",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:腹"
+          ],
+          "current": "上腹部，前正中線上，臍中上 1 寸。",
+          "cloudtcm": "前正中線上，臍上1寸"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [],
+          "current": "直刺 0.5-1 寸；水病傳統多用灸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GB12",
+      "chinese": "完骨",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭部，耳後乳突的後下方凹陷中。",
+          "cloudtcm": "耳後，乳突後下方凹陷處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "斜刺 0.5-0.8 寸。",
+          "cloudtcm": "斜刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB13",
+      "chinese": "本神",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB19",
+      "chinese": "腦空",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB26",
+      "chinese": "帶脈",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "側腹部，第 11 肋游離端直下，平臍處。",
+          "cloudtcm": "側腹部第十一肋游離端(章門)直下一寸八分"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "GB27",
+      "chinese": "五樞",
+      "regions": [
+        "abdomen-pregnancy-organ-depth"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "下腹部，髂前上棘內側，平臍下 3 寸處。",
+          "cloudtcm": "側腹，髂前上棘前0.5寸，約平臍下3寸處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1.2 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GB3",
+      "chinese": "上關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [],
+          "current": "直刺 0.3-0.5 寸，不宜深刺。",
+          "cloudtcm": "直刺0.3～0.5寸，不宜深刺"
+        },
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:深刺"
+          ],
+          "current": "不宜深刺。",
+          "cloudtcm": "針刺方法一般直刺0，3～0，5寸，不宜過深，否則會引起張口困難"
+        }
+      ]
+    },
+    {
+      "code": "GB4",
+      "chinese": "頷厭",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB44",
+      "chinese": "足竅陰",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:出血"
+          ],
+          "current": "淺刺 0.1 寸，或點刺出血。",
+          "cloudtcm": "淺刺0.1寸"
+        }
+      ]
+    },
+    {
+      "code": "GB5",
+      "chinese": "懸顱",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB6",
+      "chinese": "懸釐",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV17",
+      "chinese": "腦戶",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV18",
+      "chinese": "強間",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV19",
+      "chinese": "後頂",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "平刺 0.5-0.8 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV21",
+      "chinese": "前頂",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:禁"
+          ],
+          "current": "平刺 0.3-0.5 寸；嬰幼兒囟門未閉者禁刺。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV26",
+      "chinese": "水溝",
+      "regions": [
+        "eye-face"
+      ],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "人中溝上 1/3 與中 1/3 交點。",
+          "cloudtcm": "在人中溝的上1／3與下2／3交界處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "向上斜刺 0.3-0.5 寸；面部針感較強。",
+          "cloudtcm": "向上斜刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV28",
+      "chinese": "齦交",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:出血"
+          ],
+          "current": "向上斜刺 0.2-0.3 寸，或點刺出血。",
+          "cloudtcm": "向上斜刺0.1～0.2寸。或點刺放血。"
+        }
+      ]
+    },
+    {
+      "code": "HT1",
+      "chinese": "極泉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "腋窩中央，腋動脈搏動處。",
+          "cloudtcm": "腋窩頂點，腋動脈搏動處，舉臂開腋取之"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "避開腋動脈，直刺 0.3-0.5 寸；不作大幅提插。",
+          "cloudtcm": "避開腋動脈，直刺或斜刺0.3─0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI10",
+      "chinese": "陰谷",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 1-1.5 寸；避開膕窩血管神經。",
+          "cloudtcm": "直刺0.8-1寸"
+        }
+      ]
+    },
+    {
+      "code": "KI3",
+      "chinese": "太谿",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:動脈",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.3-0.5 寸；避開脛後動脈與神經。",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI4",
+      "chinese": "大鐘",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:動脈",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.3-0.5 寸；避開脛後動脈與神經。",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "KI7",
+      "chinese": "復溜",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.5-1 寸；避開脛後血管神經束。",
+          "cloudtcm": "直刺0.5-0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "LI11",
+      "chinese": "曲池",
+      "regions": [],
+      "fields": [
+        {
+          "field": "contraindications",
+          "safety_flags": [
+            "safety_term_diff:孕",
+            "safety_term_diff:禁"
+          ],
+          "current": "肘部發炎或腫脹時避免刺激。",
+          "cloudtcm": "按摩曲池穴容易造成流產，孕婦禁用。"
+        }
+      ]
+    },
+    {
+      "code": "LI12",
+      "chinese": "肘髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "待依專業來源補入；肘外側局部炎症明顯時刺激需保守。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "LI14",
+      "chinese": "臂臑",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "待依專業來源補入；三角肌區刺激需依肌肉厚度與個體差異調整。",
+          "cloudtcm": "直刺或向上斜刺0.8～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LI2",
+      "chinese": "二間",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "待依專業來源補入；手指局部皮膚破損、感染時避開。",
+          "cloudtcm": "直刺0.2～0.4寸。"
+        }
+      ]
+    },
+    {
+      "code": "LI3",
+      "chinese": "三間",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "待依專業來源補入；靠近掌骨與局部小血管，需注意角度與刺激量。",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LR1",
+      "chinese": "大敦",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff",
+            "safety_term_diff:出血"
+          ],
+          "current": "斜刺 0.1-0.2 寸，或點刺出血；疝氣、崩漏傳統多用灸。",
+          "cloudtcm": "淺刺0.1～0.2寸"
+        }
+      ]
+    },
+    {
+      "code": "LR2",
+      "chinese": "行間",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 0.5-0.8 寸。",
+          "cloudtcm": "斜刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LU11",
+      "chinese": "少商",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "淺刺 0.1 寸，或三稜針點刺出血。",
+          "cloudtcm": "直刺0.1寸，或向腕平刺0.2-0.3寸，或用三棱針點刺出血"
+        }
+      ]
+    },
+    {
+      "code": "LU3",
+      "chinese": "天府",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:禁"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.3-0.5寸。\n《針灸大成》：禁灸，針四分，留七呼。"
+        }
+      ]
+    },
+    {
+      "code": "LU5",
+      "chinese": "尺澤",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:動脈"
+          ],
+          "current": "直刺 0.8-1.2 寸，或點刺出血；避開肱動脈分支。",
+          "cloudtcm": "直刺0.5-0.8寸，或點刺放血。直刺0.8─1.2寸，或點刺出血。\n《針灸大成》：針三分，留三呼，灸五壯。"
+        }
+      ]
+    },
+    {
+      "code": "LU7",
+      "chinese": "列缺",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "向肘部斜刺或平刺 0.5-0.8 寸。",
+          "cloudtcm": "沿皮刺0.3-0.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "PC6",
+      "chinese": "內關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.5-1 寸；避開正中神經，針感可向手掌放散。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "SI8",
+      "chinese": "小海",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.5-1 寸；避開尺神經。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP7",
+      "chinese": "漏谷",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 1-1.5 寸；避開脛後血管神經束。",
+          "cloudtcm": "直刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "ST35",
+      "chinese": "犢鼻",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "膝關節周圍操作需注意關節腔、感染與腫脹狀態。",
+          "cloudtcm": "針尖略向內側斜刺0.8～1.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST43",
+      "chinese": "陷谷",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "足背局部操作需避開血管與感染病灶。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "ST6",
+      "chinese": "頰車",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "咬肌區操作需依肌肉厚度與疼痛敏感度調整。",
+          "cloudtcm": "直刺0.3～0.5寸。或向地倉方向斜刺、平刺1～1.5寸。"
+        }
+      ]
+    },
+    {
+      "code": "ST8",
+      "chinese": "頭維",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff",
+            "direction_diff"
+          ],
+          "current": "頭皮部位多作淺層或平刺類操作，待專業來源補深度方向。",
+          "cloudtcm": "向下平刺0.5～1寸。不宜灸。"
+        }
+      ]
+    },
+    {
+      "code": "TE18",
+      "chinese": "瘈脈",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "耳後乳突中央，角孫（TE20）至翳風（TE17）沿耳輪弧形連線的下 1/3 與上 2/3 交點。",
+          "cloudtcm": "耳後，當翳風穴與角孫穴沿耳輪連線的下1／3與上2／3交界處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸，或點刺出血。",
+          "cloudtcm": "橫刺0.3～0.5寸，或用三稜針點刺出血。"
+        }
+      ]
+    },
+    {
+      "code": "TE19",
+      "chinese": "顱息",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "耳後，角孫（TE20）至翳風（TE17）弧形連線的上 1/3 與下 2/3 交點。",
+          "cloudtcm": "耳後，當翳風穴與角孫穴沿耳輪連線的上1／3與下2／3交界處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "TE20",
+      "chinese": "角孫",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [],
+          "current": "頭部，折耳向前，耳尖直上入髮際處。",
+          "cloudtcm": "當耳尖髮際處"
+        },
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸；痄腮傳統常用燈心草灸（燈火灸）。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL3",
+      "chinese": "眉衝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL31",
+      "chinese": "上髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL32",
+      "chinese": "次髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL33",
+      "chinese": "中髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL34",
+      "chinese": "下髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。",
+          "cloudtcm": "直刺0.8-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "BL37",
+      "chinese": "殷門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "大腿後側，承扶與委中連線上，承扶下 6 寸。",
+          "cloudtcm": "大腿後面，臀下橫紋中點（承扶）下6寸，股二頭肌與半腱肌之間凹陷處，當承扶與委中的連線上。"
+        }
+      ]
+    },
+    {
+      "code": "BL39",
+      "chinese": "委陽",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "BL4",
+      "chinese": "曲差",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL6",
+      "chinese": "承光",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL7",
+      "chinese": "通天",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL8",
+      "chinese": "絡卻",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "BL9",
+      "chinese": "玉枕",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "沿頭皮平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB14",
+      "chinese": "陽白",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸（常向下透魚腰）。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB15",
+      "chinese": "頭臨泣",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB16",
+      "chinese": "目窗",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB17",
+      "chinese": "正營",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB18",
+      "chinese": "承靈",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB29",
+      "chinese": "居髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GB32",
+      "chinese": "中瀆",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.7～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GB33",
+      "chinese": "膝陽關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GB35",
+      "chinese": "陽交",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "GB37",
+      "chinese": "光明",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.7～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GB38",
+      "chinese": "陽輔",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "GB39",
+      "chinese": "懸鐘",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GB43",
+      "chinese": "俠溪",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或斜刺 0.3-0.5 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "GV24",
+      "chinese": "神庭",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "平刺 0.3-0.5 寸。",
+          "cloudtcm": "橫刺0.3～0.5寸，或點刺放血。"
+        }
+      ]
+    },
+    {
+      "code": "GV3",
+      "chinese": "腰陽關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或向上斜刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV4",
+      "chinese": "命門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或向上斜刺 0.5-1 寸；常配灸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "GV5",
+      "chinese": "懸樞",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺或向上斜刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "HT2",
+      "chinese": "青靈",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-0.8 寸。",
+          "cloudtcm": "直刺0.5─1寸"
+        }
+      ]
+    },
+    {
+      "code": "HT6",
+      "chinese": "陰郄",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "避開尺動脈，直刺 0.3-0.5 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "HT7",
+      "chinese": "神門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:動脈"
+          ],
+          "current": "避開尺動脈，直刺 0.3-0.5 寸。",
+          "cloudtcm": "直刺或在尺側腕屈肌腱的橈側緣刺入0.3～0.5寸，或向靈道作透刺。不宜直接灸，"
+        }
+      ]
+    },
+    {
+      "code": "HT8",
+      "chinese": "少府",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "手掌，第 4、5 掌骨之間，握拳時小指尖所指處。",
+          "cloudtcm": "手掌面，第4、5掌骨之間，掌遠紋中"
+        }
+      ]
+    },
+    {
+      "code": "HT9",
+      "chinese": "少衝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "淺刺 0.1 寸，或點刺出血。",
+          "cloudtcm": "淺刺0.2～0.3寸或點刺出血"
+        }
+      ]
+    },
+    {
+      "code": "KI1",
+      "chinese": "湧泉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸；足底針感較強，避開局部感染或潰瘍區。",
+          "cloudtcm": "直刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LR11",
+      "chinese": "陰廉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸；避開股血管。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "LR3",
+      "chinese": "太衝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LR4",
+      "chinese": "中封",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-0.8 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "LR7",
+      "chinese": "膝關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "LR8",
+      "chinese": "曲泉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5～0.8寸"
+        }
+      ]
+    },
+    {
+      "code": "LR9",
+      "chinese": "陰包",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "LU10",
+      "chinese": "魚際",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-0.8 寸。",
+          "cloudtcm": "直刺0.5-1寸"
+        }
+      ]
+    },
+    {
+      "code": "LU6",
+      "chinese": "孔最",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.5-1.2寸"
+        }
+      ]
+    },
+    {
+      "code": "PC2",
+      "chinese": "天泉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-0.8 寸。",
+          "cloudtcm": "直刺0.5～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "PC7",
+      "chinese": "大陵",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:神經"
+          ],
+          "current": "直刺 0.3-0.5 寸；正中神經位於其深部，出現觸電感即停止進針調整方向。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "PC9",
+      "chinese": "中衝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "safety_term_diff:出血"
+          ],
+          "current": "淺刺 0.1 寸，或三稜針點刺出血。",
+          "cloudtcm": "淺刺0.1寸，或用三稜針點刺放血"
+        }
+      ]
+    },
+    {
+      "code": "SI2",
+      "chinese": "前谷",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.2-0.3 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP1",
+      "chinese": "隱白",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "淺刺 0.1 寸，或點刺出血。",
+          "cloudtcm": "淺刺0.2～0.3寸，或點刺出血"
+        }
+      ]
+    },
+    {
+      "code": "SP10",
+      "chinese": "血海",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP3",
+      "chinese": "太白",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-0.8 寸。",
+          "cloudtcm": "直刺0.5～1寸"
+        }
+      ]
+    },
+    {
+      "code": "SP8",
+      "chinese": "地機",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-1.5 寸。",
+          "cloudtcm": "直刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "SP9",
+      "chinese": "陰陵泉",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 1-2 寸。",
+          "cloudtcm": "直刺0.5～1.5寸"
+        }
+      ]
+    },
+    {
+      "code": "ST36",
+      "chinese": "足三里",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:眼"
+          ],
+          "current": "犢鼻下 3 寸，脛骨前嵴外一橫指處。",
+          "cloudtcm": "小腿前外側，外膝眼（犢鼻）下3寸，脛骨前緣外一橫指（中指）處，脛骨前肌中"
+        }
+      ]
+    },
+    {
+      "code": "TE11",
+      "chinese": "清冷淵",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.5-1 寸。",
+          "cloudtcm": "直刺0.3～0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "TE12",
+      "chinese": "消濼",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1 寸。",
+          "cloudtcm": "直刺0.5～0.7寸"
+        }
+      ]
+    },
+    {
+      "code": "TE14",
+      "chinese": "肩髎",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "depth_diff"
+          ],
+          "current": "直刺 0.8-1.2 寸（向極泉方向）。",
+          "cloudtcm": "直刺0.7～1寸"
+        }
+      ]
+    },
+    {
+      "code": "TE2",
+      "chinese": "液門",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [
+            "direction_diff"
+          ],
+          "current": "直刺 0.3-0.5 寸。",
+          "cloudtcm": "向掌骨間淺刺0.3-0.5寸"
+        }
+      ]
+    },
+    {
+      "code": "TE5",
+      "chinese": "外關",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "腕背橫紋上 2 寸，橈骨與尺骨之間。",
+          "cloudtcm": "前臂伸側面腕背橫紋後二寸，尺骨與橈骨之間，當陽池與肘尖的連線上"
+        }
+      ]
+    },
+    {
+      "code": "TE8",
+      "chinese": "三陽絡",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂後區，腕背側遠端橫紋上 4 寸，尺骨與橈骨間隙中點。",
+          "cloudtcm": "前臂伸側面，腕背橫紋後四寸，尺骨與橈骨之間"
+        }
+      ]
+    },
+    {
+      "code": "TE9",
+      "chinese": "四瀆",
+      "regions": [],
+      "fields": [
+        {
+          "field": "location_zh",
+          "safety_flags": [
+            "safety_term_diff:面"
+          ],
+          "current": "前臂後區，肘尖（鷹嘴）下 5 寸，尺骨與橈骨間隙中點。",
+          "cloudtcm": "前臂伸側面肘尖前五寸，尺、橈骨之間"
+        }
+      ]
+    },
+    {
+      "code": "TE1",
+      "chinese": "關衝",
+      "regions": [],
+      "fields": [
+        {
+          "field": "needling",
+          "safety_flags": [],
+          "current": "淺刺 0.1 寸，或點刺出血。",
+          "cloudtcm": "淺刺0.1寸，局部脹痛；或用三稜針點刺出血。"
+        }
+      ]
+    }
+  ]
+}

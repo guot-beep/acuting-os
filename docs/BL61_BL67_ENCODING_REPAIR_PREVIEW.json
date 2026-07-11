@@ -1,0 +1,322 @@
+{
+  "generated": "2026-07-11T05:41:20.340Z",
+  "policy": "Preview only. Does not modify canonical data. Proposed repairs require Ting approval before apply.",
+  "affected_codes": [
+    "BL61",
+    "BL62",
+    "BL63",
+    "BL64",
+    "BL65",
+    "BL66",
+    "BL67"
+  ],
+  "proposed_repairs": 3,
+  "needs_manual_rewrite": 13,
+  "records": [
+    {
+      "code": "BL61",
+      "chinese": "僕參",
+      "pinyin": "Pucan",
+      "english": "Subservient Visitor",
+      "damaged_fields": 3,
+      "proposed_repairs": [
+        {
+          "field": "location_zh",
+          "current": "???????????? BL60 ?????????????",
+          "proposed": "足外側，外踝後下方，崑崙（BL60）直下 2 寸，跟部外側赤白肉際處。",
+          "basis": "concise rewrite using CloudTCM staging as one reference; still pending Ting/source review"
+        }
+      ],
+      "needs_manual_rewrite": [
+        {
+          "field": "clinical_pearls",
+          "current": [
+            "?????????????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，外踝後下方，崑崙直下2寸，跟部外側面赤白肉際處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "僕參。僕參者奴僕參拜也。僕參名意指膀胱經的水濕之氣在此有少部分吸熱上行。本穴所在為膀胱經，穴內物質為寒濕水氣，水為主，火為僕，穴外傳來的火熱之氣僅能使較少部分的水濕之氣氣化上行於天，火熱之氣相對於本穴的寒濕水氣來說就如奴僕一般，故名僕參。\n安邪。安，安定也。邪，邪氣也。安邪名意指穴內的火熱之為弱小之勢。本穴物質為寒濕水氣，穴外傳入穴內的火熱之氣是為邪氣，但穴外傳入的火熱之氣不足以改變穴內氣血的寒濕之性，故名安邪。安耶、安邦名意與安邪同。",
+            "source_url": "https://cloudtcm.com/acupoint/365"
+          }
+        },
+        {
+          "field": "danger",
+          "current": [
+            "??????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，外踝後下方，崑崙直下2寸，跟部外側面赤白肉際處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "僕參。僕參者奴僕參拜也。僕參名意指膀胱經的水濕之氣在此有少部分吸熱上行。本穴所在為膀胱經，穴內物質為寒濕水氣，水為主，火為僕，穴外傳來的火熱之氣僅能使較少部分的水濕之氣氣化上行於天，火熱之氣相對於本穴的寒濕水氣來說就如奴僕一般，故名僕參。\n安邪。安，安定也。邪，邪氣也。安邪名意指穴內的火熱之為弱小之勢。本穴物質為寒濕水氣，穴外傳入穴內的火熱之氣是為邪氣，但穴外傳入的火熱之氣不足以改變穴內氣血的寒濕之性，故名安邪。安耶、安邦名意與安邪同。",
+            "source_url": "https://cloudtcm.com/acupoint/365"
+          }
+        }
+      ],
+      "cloudtcm_reference": {
+        "source_url": "https://cloudtcm.com/acupoint/365",
+        "location_zh": "足外側部，外踝後下方，崑崙直下2寸，跟部外側面赤白肉際處",
+        "technique_zh": "直刺0.3-0.5寸",
+        "description_zh": "僕參。僕參者奴僕參拜也。僕參名意指膀胱經的水濕之氣在此有少部分吸熱上行。本穴所在為膀胱經，穴內物質為寒濕水氣，水為主，火為僕，穴外傳來的火熱之氣僅能使較少部分的水濕之氣氣化上行於天，火熱之氣相對於本穴的寒濕水氣來說就如奴僕一般，故名僕參。\n安邪。安，安定也。邪，邪氣也。安邪名意指穴內的火熱之為弱小之勢。本穴物質為寒濕水氣，穴外傳入穴內的火熱之氣是為邪氣，但穴外傳入的火熱之氣不足以改變穴內氣血的寒濕之性，故名安邪。安耶、安邦名意與安邪同。"
+      }
+    },
+    {
+      "code": "BL62",
+      "chinese": "申脈",
+      "pinyin": "Shenmai",
+      "english": "Extending Vessel",
+      "damaged_fields": 2,
+      "proposed_repairs": [],
+      "needs_manual_rewrite": [
+        {
+          "field": "clinical_pearls",
+          "current": [
+            "????????????? SI3 ???????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，外踝直下方凹陷處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "膀胱經氣血在此變為涼濕之性。",
+            "source_url": "https://cloudtcm.com/acupoint/366"
+          }
+        },
+        {
+          "field": "danger",
+          "current": [
+            "????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，外踝直下方凹陷處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "膀胱經氣血在此變為涼濕之性。",
+            "source_url": "https://cloudtcm.com/acupoint/366"
+          }
+        }
+      ],
+      "cloudtcm_reference": {
+        "source_url": "https://cloudtcm.com/acupoint/366",
+        "location_zh": "足外側部，外踝直下方凹陷處",
+        "technique_zh": "直刺0.3-0.5寸",
+        "description_zh": "膀胱經氣血在此變為涼濕之性。"
+      }
+    },
+    {
+      "code": "BL63",
+      "chinese": "金門",
+      "pinyin": "Jinmen",
+      "english": "Golden Gate",
+      "damaged_fields": 2,
+      "proposed_repairs": [],
+      "needs_manual_rewrite": [
+        {
+          "field": "clinical_pearls",
+          "current": [
+            "????????????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，外踝前緣直下，骰骨下緣凹陷處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "膀胱經氣血在此變為溫熱之性。金門。金，肺性之氣也。門，出入的門戶也。金門名意指膀胱經氣血在此變為溫熱之性。本穴物質為膀胱經下部經脈上行的陽氣，性溫熱，與肺金之氣同性，故名金門。",
+            "source_url": "https://cloudtcm.com/acupoint/367"
+          }
+        },
+        {
+          "field": "danger",
+          "current": [
+            "???????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，外踝前緣直下，骰骨下緣凹陷處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "膀胱經氣血在此變為溫熱之性。金門。金，肺性之氣也。門，出入的門戶也。金門名意指膀胱經氣血在此變為溫熱之性。本穴物質為膀胱經下部經脈上行的陽氣，性溫熱，與肺金之氣同性，故名金門。",
+            "source_url": "https://cloudtcm.com/acupoint/367"
+          }
+        }
+      ],
+      "cloudtcm_reference": {
+        "source_url": "https://cloudtcm.com/acupoint/367",
+        "location_zh": "足外側部，外踝前緣直下，骰骨下緣凹陷處",
+        "technique_zh": "直刺0.3-0.5寸",
+        "description_zh": "膀胱經氣血在此變為溫熱之性。金門。金，肺性之氣也。門，出入的門戶也。金門名意指膀胱經氣血在此變為溫熱之性。本穴物質為膀胱經下部經脈上行的陽氣，性溫熱，與肺金之氣同性，故名金門。"
+      }
+    },
+    {
+      "code": "BL64",
+      "chinese": "京骨",
+      "pinyin": "Jinggu",
+      "english": "Metatarsal Tuberosity",
+      "damaged_fields": 1,
+      "proposed_repairs": [],
+      "needs_manual_rewrite": [
+        {
+          "field": "clinical_pearls",
+          "current": [
+            "????????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，第5跖骨粗隆下方赤白肉際處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "膀胱經的濕冷水濕在此聚集。「京骨」。京，古指人工築起的高丘或圓形的大穀倉也。骨，水也。京骨名意指膀胱經的濕冷水氣在此聚集。本穴物質為膀胱經吸熱蒸升的水濕之氣，性寒涼，在本穴為聚集之狀，如同儲存穀物的大倉，故名京骨。本穴為膀胱經原穴。",
+            "source_url": "https://cloudtcm.com/acupoint/368"
+          }
+        }
+      ],
+      "cloudtcm_reference": {
+        "source_url": "https://cloudtcm.com/acupoint/368",
+        "location_zh": "足外側部，第5跖骨粗隆下方赤白肉際處",
+        "technique_zh": "直刺0.3-0.5寸",
+        "description_zh": "膀胱經的濕冷水濕在此聚集。「京骨」。京，古指人工築起的高丘或圓形的大穀倉也。骨，水也。京骨名意指膀胱經的濕冷水氣在此聚集。本穴物質為膀胱經吸熱蒸升的水濕之氣，性寒涼，在本穴為聚集之狀，如同儲存穀物的大倉，故名京骨。本穴為膀胱經原穴。"
+      }
+    },
+    {
+      "code": "BL65",
+      "chinese": "束骨",
+      "pinyin": "Shugu",
+      "english": "Metatarsal Head",
+      "damaged_fields": 2,
+      "proposed_repairs": [],
+      "needs_manual_rewrite": [
+        {
+          "field": "clinical_pearls",
+          "current": [
+            "???????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，足小趾本節（第5跖趾關節）後方赤白肉際凹陷處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "束，捆也、束縛也。骨，水也。束骨名意指膀胱經的寒濕水氣在此聚集不能上行。本穴物質為膀胱經上部經脈下行的寒濕水氣和下部經脈上行的陽氣，二氣交會後聚集穴內既不能升亦不能降，如被束縛一般，故名束骨。",
+            "source_url": "https://cloudtcm.com/acupoint/369"
+          }
+        },
+        {
+          "field": "danger",
+          "current": [
+            "???????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，足小趾本節（第5跖趾關節）後方赤白肉際凹陷處",
+            "technique_zh": "直刺0.3-0.5寸",
+            "description_zh": "束，捆也、束縛也。骨，水也。束骨名意指膀胱經的寒濕水氣在此聚集不能上行。本穴物質為膀胱經上部經脈下行的寒濕水氣和下部經脈上行的陽氣，二氣交會後聚集穴內既不能升亦不能降，如被束縛一般，故名束骨。",
+            "source_url": "https://cloudtcm.com/acupoint/369"
+          }
+        }
+      ],
+      "cloudtcm_reference": {
+        "source_url": "https://cloudtcm.com/acupoint/369",
+        "location_zh": "足外側部，足小趾本節（第5跖趾關節）後方赤白肉際凹陷處",
+        "technique_zh": "直刺0.3-0.5寸",
+        "description_zh": "束，捆也、束縛也。骨，水也。束骨名意指膀胱經的寒濕水氣在此聚集不能上行。本穴物質為膀胱經上部經脈下行的寒濕水氣和下部經脈上行的陽氣，二氣交會後聚集穴內既不能升亦不能降，如被束縛一般，故名束骨。"
+      }
+    },
+    {
+      "code": "BL66",
+      "chinese": "足通谷",
+      "pinyin": "Zutonggu",
+      "english": "Foot Valley Passage",
+      "damaged_fields": 2,
+      "proposed_repairs": [],
+      "needs_manual_rewrite": [
+        {
+          "field": "clinical_pearls",
+          "current": [
+            "??????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，足小趾本節（第5跖趾關節）前方赤白肉際凹陷處。",
+            "technique_zh": "直刺0.2-0.3寸",
+            "description_zh": "通，通道、通行也。谷，肉之大會也，兩山中間的空曠之處也。該穴名意指膀光經經氣在此冷降歸地。本穴物質一為膀胱經上部經脈下行的寒濕水氣，二為至陰穴上傳於此的天部濕熱水氣，二氣交會後的運行變化主要是散熱縮合冷降，冷降之水循膀胱經回流至陰穴，故名。",
+            "source_url": "https://cloudtcm.com/acupoint/370"
+          }
+        },
+        {
+          "field": "danger",
+          "current": [
+            "????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足外側部，足小趾本節（第5跖趾關節）前方赤白肉際凹陷處。",
+            "technique_zh": "直刺0.2-0.3寸",
+            "description_zh": "通，通道、通行也。谷，肉之大會也，兩山中間的空曠之處也。該穴名意指膀光經經氣在此冷降歸地。本穴物質一為膀胱經上部經脈下行的寒濕水氣，二為至陰穴上傳於此的天部濕熱水氣，二氣交會後的運行變化主要是散熱縮合冷降，冷降之水循膀胱經回流至陰穴，故名。",
+            "source_url": "https://cloudtcm.com/acupoint/370"
+          }
+        }
+      ],
+      "cloudtcm_reference": {
+        "source_url": "https://cloudtcm.com/acupoint/370",
+        "location_zh": "足外側部，足小趾本節（第5跖趾關節）前方赤白肉際凹陷處。",
+        "technique_zh": "直刺0.2-0.3寸",
+        "description_zh": "通，通道、通行也。谷，肉之大會也，兩山中間的空曠之處也。該穴名意指膀光經經氣在此冷降歸地。本穴物質一為膀胱經上部經脈下行的寒濕水氣，二為至陰穴上傳於此的天部濕熱水氣，二氣交會後的運行變化主要是散熱縮合冷降，冷降之水循膀胱經回流至陰穴，故名。"
+      }
+    },
+    {
+      "code": "BL67",
+      "chinese": "至陰",
+      "pinyin": "Zhiyin",
+      "english": "Reaching Yin",
+      "damaged_fields": 4,
+      "proposed_repairs": [
+        {
+          "field": "location_zh",
+          "current": "??????????? 0.1 ???",
+          "proposed": "足小趾末節外側，距趾甲角 0.1 寸處。",
+          "basis": "concise rewrite using CloudTCM staging as one reference; still pending Ting/source review"
+        },
+        {
+          "field": "contraindications",
+          "current": [
+            "?????????????????????/?????????"
+          ],
+          "proposed": [
+            "孕期慎用或禁用強刺激；胎位調整相關用法需由受訓專業人員評估。"
+          ],
+          "basis": "concise rewrite using CloudTCM staging as one reference; still pending Ting/source review"
+        }
+      ],
+      "needs_manual_rewrite": [
+        {
+          "field": "clinical_pearls",
+          "current": [
+            "???????????????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足小趾末節外側，距趾甲角1分處",
+            "technique_zh": "淺刺0.1寸",
+            "description_zh": "至陰。至，極也。陰，寒也，水也。至陰名意指體內膀胱經的寒濕水氣由此外輸體表。本穴物質為來自體內膀胱經的寒濕水氣，它位於人體的最下部，是人體寒濕水氣到達的極寒之地，故名至陰。",
+            "source_url": "https://cloudtcm.com/acupoint/371"
+          }
+        },
+        {
+          "field": "danger",
+          "current": [
+            "?????????????????????"
+          ],
+          "note": "No direct safe replacement proposed. This is a study-note field and should be rewritten or removed after Ting review.",
+          "cloudtcm_reference": {
+            "location_zh": "足小趾末節外側，距趾甲角1分處",
+            "technique_zh": "淺刺0.1寸",
+            "description_zh": "至陰。至，極也。陰，寒也，水也。至陰名意指體內膀胱經的寒濕水氣由此外輸體表。本穴物質為來自體內膀胱經的寒濕水氣，它位於人體的最下部，是人體寒濕水氣到達的極寒之地，故名至陰。",
+            "source_url": "https://cloudtcm.com/acupoint/371"
+          }
+        }
+      ],
+      "cloudtcm_reference": {
+        "source_url": "https://cloudtcm.com/acupoint/371",
+        "location_zh": "足小趾末節外側，距趾甲角1分處",
+        "technique_zh": "淺刺0.1寸",
+        "description_zh": "至陰。至，極也。陰，寒也，水也。至陰名意指體內膀胱經的寒濕水氣由此外輸體表。本穴物質為來自體內膀胱經的寒濕水氣，它位於人體的最下部，是人體寒濕水氣到達的極寒之地，故名至陰。"
+      }
+    }
+  ]
+}

@@ -23,6 +23,26 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-10 - BL61-BL67 encoding repair preview (Codex)
+
+Prepared a gated preview for the canonical BL61-BL67 fields that contain literal question-mark encoding damage. Added scripts/preview-bl61-bl67-encoding-repair.js and generated docs/BL61_BL67_ENCODING_REPAIR_PREVIEW.md/json. The preview proposes 3 concise repairs (BL61 location_zh, BL67 location_zh, BL67 contraindications) and leaves 13 clinical_pearls/danger-style fields for manual rewrite or removal decision. No canonical data changed.
+
+Validation: node --check preview script, validate-data, validate-interactions, and UTF-8 doc spot-check PASS. Next step is Ting approval before applying any repair to data/acupoints/361.json.
+
+Update after Ting approval: applied only the 3 approved concise repairs to data/acupoints/361.json. The remaining 13 damaged study-note/safety-note fields were intentionally left unchanged for manual review.
+
+### 2026-07-10 - D3 Batch A safety review worksheet (Codex)
+
+Continued D3 review without applying any merge. Added scripts/build-cloudtcm-safety-review-batch.js and generated broad Batch A plus focused Batch A1 safety worksheets. Batch A1 has 107 explicit high-risk region point codes covering eye/face, neck/head risk, chest/back pneumothorax, abdomen/pregnancy/organ-depth, and common pregnancy caution points. Also added scripts/report-361-encoding-findings.js and docs/CLOUDTCM_CANONICAL_ENCODING_FINDINGS.md after finding 16 literal-question-mark damaged fields in canonical 361.json across BL61-BL67. No canonical data changed.
+
+Validation: node --check for both scripts, validate-data, validate-interactions, and UTF-8 doc spot-check PASS.
+
+### 2026-07-10 - D3 CloudTCM review strategy docs (Codex)
+
+After D3 preview showed FILL=0 for every field, Codex did not apply any merge. Added scripts/analyze-cloudtcm-diffs.js and generated docs/CLOUDTCM_REVIEW_STRATEGY.md plus docs/CLOUDTCM_HIGH_RISK_DIFFS.md. Triage result: 1453 DIFFER items total; 553 high-risk, 15 medium-risk, 189 low wording differences, 696 reference-only prose differences. Recommended next step is small human-review batches, not bulk apply.
+
+Validation: node --check analyze script, validate-data, and validate-interactions PASS. No canonical data changed.
+
 ### 2026-07-10 - D1-D2 CloudTCM acupoint private staging (Codex)
 
 Pulled local main to a8cdb21, then ran CODEX_TASK_QUEUE D1-D2. Probe fetch (--limit 5) succeeded, then full CloudTCM fetch completed with 361/361 raw JSON files and 0 failures under data/imports/cloudtcm/points/. Updated scripts/transform-cloudtcm-points.js to match the real Next.js shape (pageProps.pageData) and preserve canonical codes (LU1) while storing CloudTCM padded codes (LU01) as cloudtcm_code.
