@@ -153,3 +153,55 @@ Validation after apply:
 Runtime status:
 - The app still consumes `data/acupoints/embedded/*.json` through `data/generated/app_data.js`.
 - Do not switch runtime to `361.json` until a generated adapter is written and validated.
+
+## Formula merge preview plan -- Codex 2026-07-11
+
+Scope:
+- Preview only. Do not overwrite `data/herbs/formulas.json`.
+- Target after Ting approval: one rendered canonical formula file, `data/herbs/formulas.json`.
+- Current app-rendered formula source remains `data/herbs/formulas.json` with 23 content-bearing records.
+- `data/herbs/formula_canon_shortlist.json` remains the 115-record planning/canon source until an approved apply step.
+
+Preview outputs:
+- `scripts/merge-formulas-preview.js`
+- `docs/FORMULA_MERGE_PREVIEW.json`
+- `docs/FORMULA_MERGE_DIFF_SUMMARY.md`
+
+Current counts from preview:
+
+| Dataset / result | Count | Notes |
+|---|---:|---|
+| `data/herbs/formulas.json` | 23 | Content-bearing records currently rendered by the app. |
+| `data/herbs/formula_canon_shortlist.json` | 115 | Draft canon planning records, not rendered by the app. |
+| Overlap by `id` | 23 | All current app-rendered formulas are present in the shortlist. |
+| Formula-only records | 0 | No rendered formula is missing from the shortlist. |
+| Shortlist-only records | 92 | Proposed as draft skeleton additions after approval. |
+| Projected merged total | 115 | No apply yet. |
+| Identity conflicts | 0 | `id`, `name_zh`, `name_en`, `pinyin` all align for overlaps. |
+
+Field map from formula shortlist to rendered formula target:
+
+| Shortlist field | Target field in `formulas.json` | Decision |
+|---|---|---|
+| `id` | `id` | Primary key; must match; no auto-change on conflict. |
+| `name_zh` | `name_zh` | Identity field; must match; no auto-change on conflict. |
+| `name_en` | `name_en` | Identity field; must match; no auto-change on conflict. |
+| `pinyin` | `pinyin` | Identity field; must match; no auto-change on conflict. |
+| `category` | `category` | Add shortlist category while preserving existing `category_id` and `category_en`. |
+| `tier` | `tier` | Add to all records; current shortlist records are `core`. |
+| `source_hint` | `source_hint` | Add planning/source hint from shortlist. |
+| `comparison_group` | `comparison_group` | Add study comparison group from shortlist. |
+| `related_formulas` | `related_formulas` | Add from shortlist after approval; ID references only. |
+| `modern_clinical_use_tags` | `modern_clinical_use_tags` | Already present in the 23 rendered records; preview currently shows no differences. Review before future overwrites. |
+| `related_conditions` | `related_conditions` | Already present in the 23 rendered records; preview currently shows no differences. ID references only. |
+| `clinical_use_note` | `clinical_use_note` | Add conservative clinical-context note from shortlist. |
+| `english_exam_track` | `english_exam_track` | Preserve existing formulas.json content-bearing field; skeleton additions get draft empty track. |
+| `chinese_depth_track` | `chinese_depth_track` | Preserve existing formulas.json content-bearing field; skeleton additions get draft empty track. |
+| content fields | existing formulas.json fields | Preserve existing 23 content (`actions`, `composition`, indications, modifications, contraindications, sources, safety notes). Skeleton additions remain empty draft content. |
+
+Recommended apply policy after Ting approval:
+1. Preserve all content-bearing fields already present in `data/herbs/formulas.json` for the 23 overlap records.
+2. Add missing planning fields from the shortlist (`tier`, `category`, `source_hint`, `comparison_group`, `related_formulas`, `clinical_use_note`).
+3. Add the 92 shortlist-only records as compact `review_status: "draft"` skeletons.
+4. Do not upgrade any record to `source_checked` during merge.
+5. Keep modern clinical tags and related condition links conservative; they are search/context links, not claims.

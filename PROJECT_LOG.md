@@ -23,6 +23,22 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-11 - B2 formula merge applied + Lookup rendering (Codex)
+
+After Ting approved continuing directly from B1, applied the formula merge using `scripts/merge-formulas-preview.js --apply-approved`. `data/herbs/formulas.json` now has 115 records: the original 23 content-bearing drafts preserved plus 92 draft skeleton additions from `formula_canon_shortlist.json`. No records were upgraded to `source_checked`; skeletons are source-review pending. Ran `scripts/build-data.js`, updating `data/generated/knowledge_data.js` so Lookup receives 115 formula records.
+
+Updated `js/knowledge.js` formula rendering so the 23 content-bearing records remain full cards while skeleton-only formulas render as compact draft rows. Added formula search and category filter, and updated the formula progress strip. Added B2 validation details to `docs/VALIDATION_LOG.md`. Did not touch `data/acupoints/361.json`, `docs/CLOUDTCM_*`, or the encoding backlog.
+
+Validation: node --check merge script, node --check js/knowledge.js, build-data, validate-data, validate-interactions, validate-relations, validate-herbal-links, and validate-herb-canon PASS.
+
+### 2026-07-11 - B1 formula merge preview, no apply (Codex)
+
+Completed CODEX_TASK_QUEUE B1 as preview-only work. Added scripts/merge-formulas-preview.js and generated docs/FORMULA_MERGE_PREVIEW.json plus docs/FORMULA_MERGE_DIFF_SUMMARY.md. The preview compares data/herbs/formulas.json (23 rendered/content-bearing records) with data/herbs/formula_canon_shortlist.json (115 draft canon records). Results: 23/23 overlap matched by id, 0 formula-only records, 92 shortlist-only formulas proposed as draft skeleton additions, projected merged total 115, 0 duplicate ids, 0 identity conflicts, 138 missing planning fields to fill from shortlist, 0 changed/conflicting overlap fields.
+
+Updated docs/DATA_MIGRATION_MAP.md with the formula field map and recommended apply policy. No data file was modified; data/herbs/formulas.json was not changed. Stopped for Ting review before any apply.
+
+Validation: node --check scripts/merge-formulas-preview.js, validate-data, validate-interactions, validate-relations, validate-herbal-links, and validate-herb-canon PASS. validate-encoding runtime remains an expected backlog failure and was not used as a blocker.
+
 ### 2026-07-11 - A1/A2 encoding guard + migration map sync (Codex)
 
 Pulled latest main to 0259258 after Claude's D3 merge. Added scripts/validate-encoding.js as a read-only UTF-8 / mojibake guard for data/**/*.json, updated README.md and docs/CODEX_TASK_QUEUE.md to list it with validation, and wrote docs/ENCODING_VALIDATION_FINDINGS.md from the latest main scan. The scan checked 439 JSON files and found 798 existing findings: formulas.json 367, herb_canon_shortlist.json 202, source_registry.json 123, CloudTCM imports/staging replacement-character findings, pathology JSON 30, 361.json 7 remaining BL technique strings, and learn seed 2. No data was auto-fixed.

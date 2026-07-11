@@ -1,3 +1,175 @@
+# REBUILD HANDOFF - Session 33 (2026-07-11, B2 formula merge + Lookup rendering)
+
+## 1. Goal
+After Ting approved continuing directly from B1, apply the formula merge and make 115 formulas visible/searchable in the Lookup workspace. Do not touch `data/acupoints/361.json`, `docs/CLOUDTCM_*`, or the encoding backlog.
+
+## 2. Files changed
+- `data/herbs/formulas.json`
+- `data/generated/app_data.js`
+- `data/generated/knowledge_data.js`
+- `scripts/merge-formulas-preview.js`
+- `js/knowledge.js`
+- `styles.css`
+- `index.html`
+- `docs/VALIDATION_LOG.md`
+- `docs/DATA_MIGRATION_MAP.md`
+- `docs/FORMULA_MERGE_PREVIEW.json`
+- `docs/FORMULA_MERGE_DIFF_SUMMARY.md`
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Extended `scripts/merge-formulas-preview.js` with `--apply-approved`.
+- Applied the approved formula merge:
+  - preserved 23 content-bearing records,
+  - added 92 draft skeleton records,
+  - kept all records draft/source-review pending.
+- Ran `scripts/build-data.js`, updating `data/generated/knowledge_data.js` to 115 formulas.
+- Updated Lookup formula rendering:
+  - 23 content-bearing records render as full cards,
+  - 92 skeleton-only records render as compact draft rows,
+  - formula search covers id, zh/en name, pinyin, category, comparison group, and modern tags,
+  - added category filter.
+- Updated static formula progress text.
+- Added validation entry to `docs/VALIDATION_LOG.md`.
+
+## 4. Why this changed
+The previous formula layer split made 92 approved core formula skeletons invisible in the app. This merges the planning layer into the rendered formula source while keeping draft status honest.
+
+## 5. Data content changes
+`data/herbs/formulas.json` now has:
+- 115 records total,
+- 23 content-bearing records,
+- 92 draft skeleton records,
+- 0 duplicate IDs.
+
+No formula content was source-checked or clinically upgraded.
+
+## 6. Source status / accuracy guardrail
+All added skeleton records remain `review_status: "draft"` and `source_status: "source_review_pending"`. UI labels them as study reference / source-review pending.
+
+## 7. Schema / field changes
+Merged formula records now include planning fields such as `tier`, `category`, `source_hint`, `comparison_group`, `related_formulas`, and `clinical_use_note`. Existing content fields were preserved.
+
+## 8. Generated files / scripts
+- Ran `scripts/build-data.js`.
+- `data/generated/app_data.js` and `data/generated/knowledge_data.js` were refreshed by the build script.
+- `data/generated/knowledge_data.js` updated from the canonical formula file.
+- No hand edit to `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `styles.css` point-detail-mode, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, `legacy/`, `data/acupoints/361.json`, or `docs/CLOUDTCM_*`.
+
+## 10. Validation
+- `node --check scripts/merge-formulas-preview.js`: PASS
+- `node --check js/knowledge.js`: PASS
+- `scripts/build-data.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+
+## 11. Triage results
+Formula data check:
+- records: 115
+- content-bearing: 23
+- skeletons: 92
+- duplicate ids: 0
+
+## 12. Not completed
+No formula content filling, no source-checking, no encoding backlog repair, no commit.
+
+## 13. Next reader should inspect
+Read:
+- `data/herbs/formulas.json`
+- `js/knowledge.js`
+- `docs/FORMULA_MERGE_DIFF_SUMMARY.md`
+- `docs/VALIDATION_LOG.md`
+
+## 14. Next step
+Claude/Ting should review the 115-formula Lookup behavior and decide whether to commit B1+B2 together or ask for UI refinements first.
+
+## 15. Risk
+Medium-low. Data merge was scripted and validated; UI change is additive but should be manually checked in browser.
+
+---
+
+# REBUILD HANDOFF - Session 32 (2026-07-11, B1 formula merge preview)
+
+## 1. Goal
+Complete CODEX_TASK_QUEUE B1: create a formula reconciliation preview between `data/herbs/formulas.json` and `data/herbs/formula_canon_shortlist.json`. Preview only; do not apply or modify formula data.
+
+## 2. Files changed
+- `scripts/merge-formulas-preview.js` (new)
+- `docs/FORMULA_MERGE_PREVIEW.json` (new)
+- `docs/FORMULA_MERGE_DIFF_SUMMARY.md` (new)
+- `docs/DATA_MIGRATION_MAP.md`
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Added a preview script for formula merge planning.
+- Generated a machine-readable preview and human-readable diff summary.
+- Added the formula field map to `docs/DATA_MIGRATION_MAP.md`.
+- Recommended target remains one rendered canonical formula file: `data/herbs/formulas.json`, but no apply was done.
+
+## 4. Why this changed
+The app currently renders 23 formula records from `data/herbs/formulas.json`, while `data/herbs/formula_canon_shortlist.json` has 115 canon-planning records. B1 prevents these from diverging by creating a gated merge plan before any data overwrite.
+
+## 5. Data content changes
+No data content changed. `data/herbs/formulas.json` was not modified.
+
+## 6. Source status / accuracy guardrail
+No source status changed. Draft skeleton additions remain draft in preview only. No formula was upgraded to `source_checked`.
+
+## 7. Schema / field changes
+No schema changed. Preview recommends adding planning fields after approval: `tier`, `category`, `source_hint`, `comparison_group`, `related_formulas`, and `clinical_use_note`.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, `legacy/`, `data/acupoints/361.json`, or `docs/CLOUDTCM_*`.
+
+## 10. Validation
+- `node --check scripts/merge-formulas-preview.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-encoding.js`: not used as blocker; known backlog remains documented.
+
+## 11. Triage results
+- `formulas.json`: 23 records
+- `formula_canon_shortlist.json`: 115 records
+- Overlap by `id`: 23
+- Formula-only records: 0
+- Shortlist-only proposed draft skeleton additions: 92
+- Projected merged total: 115
+- Duplicate ids: 0
+- Identity conflicts: 0
+- Overlap planning fields to fill from shortlist: 138
+- Changed/conflicting overlap fields: 0
+
+## 12. Not completed
+No apply step. No formula data merge. No UI rendering change. No encoding backlog repair.
+
+## 13. Next reader should inspect
+Read:
+- `docs/FORMULA_MERGE_DIFF_SUMMARY.md`
+- `docs/FORMULA_MERGE_PREVIEW.json`
+- `scripts/merge-formulas-preview.js`
+
+## 14. Next step
+Ting reviews B1 preview. If approved later, B2 should apply the merge and render 115 formulas in Lookup. Do not combine approval/apply into this session.
+
+## 15. Risk
+Low. Preview-only, no data mutation.
+
+---
+
 # REBUILD HANDOFF - Session 31 (2026-07-11, A1/A2 encoding guard + migration map sync)
 
 ## 1. Goal

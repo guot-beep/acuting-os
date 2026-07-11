@@ -32,6 +32,93 @@
   const formulaHost = el("formulaRecords");
   if (formulaHost) {
     const records = K.formulas.records || [];
+    if (records.length > 24) {
+      const hasContent = (f) => [
+        f.actions_en,
+        f.actions_zh,
+        f.composition,
+        f.pattern_indications_en,
+        f.pattern_indications_zh,
+        f.contraindications_en,
+        f.contraindications_zh
+      ].some((value) => Array.isArray(value) ? value.length > 0 : Boolean(value));
+      const categoryLabel = (f) => f.category || f.category_en || f.category_id || "uncategorized";
+      const categories = [...new Set(records.map(categoryLabel).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+      const renderEnhanced = (list) => list.map((f) => {
+        const contentReady = hasContent(f);
+        const meta = [
+          categoryLabel(f),
+          f.tier ? `tier: ${f.tier}` : "",
+          f.comparison_group ? `group: ${f.comparison_group}` : "",
+          f.nccaom_high_yield ? "NCCAOM high-yield" : ""
+        ].filter(Boolean).join(" · ");
+        const searchTags = (f.modern_clinical_use_tags || []).slice(0, 5);
+        if (!contentReady) {
+          return `
+            <article class="k-row k-formula-skeleton">
+              <div>
+                <strong>${esc(f.name_zh)} <small>${esc(f.pinyin)}</small></strong>
+                <p class="k-en">${esc(f.name_en)}</p>
+                <p class="k-meta">${esc(meta)} · draft content pending</p>
+              </div>
+              <div class="k-row-side">
+                ${statusPill(f.review_status)}
+                <p class="k-tags">${searchTags.map(tag).join("")}</p>
+              </div>
+            </article>`;
+        }
+        return `
+          <article class="k-card">
+            <header>
+              <strong>${esc(f.name_zh)} <small>${esc(f.pinyin)}</small></strong>
+              ${statusPill(f.review_status)}
+            </header>
+            <p class="k-en">${esc(f.name_en)}</p>
+            <p class="k-meta">${esc(meta)}</p>
+            <p class="k-tags">${[...(f.pattern_focus_en || []), ...searchTags].slice(0, 8).map(tag).join("")}</p>
+            ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(esc).join(" · ")}</p>` : ""}
+          </article>`;
+      }).join("");
+
+      const box = document.createElement("div");
+      box.innerHTML = `
+        <div class="mini-heading">
+          <strong>Formula Records (${records.length})</strong>
+          <span>Source: data/herbs/formulas.json · draft/source-review pending · study reference only.</span>
+        </div>
+        <div class="k-toolbar">
+          <input type="search" id="formulaFilter" placeholder="Search formula, pinyin, category, modern tag..." class="k-filter" />
+          <select id="formulaCategoryFilter" class="k-filter">
+            <option value="">All categories</option>
+            ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
+          </select>
+        </div>
+        <div class="k-grid" id="formulaGrid">${renderEnhanced(records)}</div>`;
+      formulaHost.appendChild(box);
+
+      const updateFormulaGrid = () => {
+        const q = el("formulaFilter").value.trim().toLowerCase();
+        const category = el("formulaCategoryFilter").value;
+        const hit = records.filter((f) => {
+          const categoryHit = !category || categoryLabel(f) === category;
+          const text = [
+            f.id,
+            f.name_zh,
+            f.name_en,
+            f.pinyin,
+            f.category,
+            f.category_en,
+            f.comparison_group,
+            ...(f.study_tags || []),
+            ...(f.modern_clinical_use_tags || [])
+          ].join(" ").toLowerCase();
+          return categoryHit && (!q || text.includes(q));
+        });
+        el("formulaGrid").innerHTML = renderEnhanced(hit) || '<p class="k-missing">No matching formulas.</p>';
+      };
+      el("formulaFilter").addEventListener("input", updateFormulaGrid);
+      el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
+    } else {
     const render = (list) => list.map((f) => `
       <article class="k-card">
         <header>
@@ -64,6 +151,8 @@
       el("formulaGrid").innerHTML = render(hit) || '<p class="k-missing">沒有符合的方劑。</p>';
     });
   }
+
+    }
 
   // ---- Conditions ----------------------------------------------------------
   const condHost = el("conditionRecords");

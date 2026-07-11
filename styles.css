@@ -3874,6 +3874,44 @@ a { color: var(--accent-dark); }
 .k-status-draft { background: #f7efdc; }
 .k-status-fertility { background: #f3e2da; color: var(--warn); }
 .k-missing { color: var(--warn); font-weight: 600; }
+.k-toolbar {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.42fr);
+  margin-bottom: 0.78rem;
+}
+.k-row {
+  align-items: start;
+  background: #fbfcfb;
+  border: 1px solid #e1e8e4;
+  border-radius: 8px;
+  display: grid;
+  gap: 0.75rem;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) minmax(9rem, 0.3fr);
+  padding: 0.78rem 0.86rem;
+}
+.k-row strong {
+  color: var(--ink);
+}
+.k-row-side {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: end;
+}
+.k-formula-skeleton {
+  background: #fffdf8;
+  border-color: #eadfcb;
+}
+@media (max-width: 760px) {
+  .k-toolbar,
+  .k-row {
+    grid-template-columns: 1fr;
+  }
+  .k-row-side {
+    justify-items: start;
+  }
+}
 
 /* --- Single-point detail: show ONLY the point, hide the rest ---------
    (appended 2026-07-03) Fixes: selecting a point left the big directory

@@ -1,5 +1,28 @@
 # Validation Log
 
+## 2026-07-11 -- B2 formula merge + Lookup rendering
+
+Scope:
+- Applied approved formula merge into `data/herbs/formulas.json`.
+- Preserved 23 content-bearing formula records.
+- Added 92 draft skeleton formula records from `formula_canon_shortlist.json`.
+- Rebuilt `data/generated/knowledge_data.js`.
+- Updated Lookup formula renderer to show 115 formulas with search, category filter, and compact draft skeleton rows.
+
+Commands:
+- `node --check scripts/merge-formulas-preview.js` -> PASS
+- `node --check js/knowledge.js` -> PASS
+- `node scripts/build-data.js` -> PASS (`knowledge_data.js` formulas: 115)
+- `node scripts/validate-data.js` -> PASS
+- `node scripts/validate-interactions.js` -> PASS
+- `node scripts/validate-relations.js` -> PASS
+- `node scripts/validate-herbal-links.js` -> PASS
+- `node scripts/validate-herb-canon.js` -> PASS
+
+Result:
+- `data/herbs/formulas.json`: 115 records, 23 content-bearing, 92 draft skeletons, 0 duplicate IDs.
+- `validate-encoding` remains an expected backlog failure and was not used as a blocker.
+
 ## 2026-07-02 — Phase 1 (Claude)
 
 Commands:
