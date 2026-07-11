@@ -23,6 +23,30 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-11 - D3 review strategy: DIFFER classification, no apply (Claude)
+
+Per Ting's gate instruction (FILL=0, no --apply-approved), classified all
+1,453 DIFFER items from docs/CLOUDTCM_MERGE_PREVIEW.json by extracting and
+comparing facts (cun numbers incl. Chinese numerals and range dashes,
+insertion method, depth-range overlap, safety keywords, risk zones).
+
+Results — location_zh (360): 15 numeric conflicts, 73 landmark-low-overlap,
+272 wording-only. needling (354): 25 method conflicts, 9 disjoint depth
+ranges (e.g. GB39 ours 1-1.5cun vs CloudTCM 0.3-0.5cun), 26 missing-safety
+(CloudTCM has a safety phrase ours lacks), 84 risk-zone wording-only, 211
+low-risk wording. functions/indications: draft reference only, not merged.
+
+Outputs: docs/CLOUDTCM_REVIEW_STRATEGY.md (method, counts, approval options)
+and docs/CLOUDTCM_HIGH_RISK_DIFFS.md (queues A-F with side-by-side text).
+Notable: several location "conflicts" are different reference systems for
+the same spot (CV15 胸劍結合下1寸 vs 臍上7寸); CloudTCM text quirks (OCR
+"l" for "1" in SI19, box-dash ranges in HT2) are handled.
+
+STOPPED here for Ting's review. No change to 361.json. Next: Ting picks
+per-queue decisions (A/B/C adjudicate per record; D approve append of
+missing safety phrases; wording-only 272 may be batch-adopted separately).
+
+
 ### 2026-07-10 - D1-D2 CloudTCM acupoint private staging (Codex)
 
 Pulled local main to a8cdb21, then ran CODEX_TASK_QUEUE D1-D2. Probe fetch (--limit 5) succeeded, then full CloudTCM fetch completed with 361/361 raw JSON files and 0 failures under data/imports/cloudtcm/points/. Updated scripts/transform-cloudtcm-points.js to match the real Next.js shape (pageProps.pageData) and preserve canonical codes (LU1) while storing CloudTCM padded codes (LU01) as cloudtcm_code.
