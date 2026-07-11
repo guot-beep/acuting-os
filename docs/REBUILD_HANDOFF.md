@@ -1,3 +1,80 @@
+# REBUILD HANDOFF - Session 31 (2026-07-11, A1/A2 encoding guard + migration map sync)
+
+## 1. Goal
+After pulling `origin/main` to `0259258`, complete A1 and A2 from `docs/CODEX_TASK_QUEUE.md`. Keep `data/acupoints/361.json` and `docs/CLOUDTCM_*` frozen pending Ting §A/§B decisions.
+
+## 2. Files changed
+- `scripts/validate-encoding.js` (new)
+- `docs/ENCODING_VALIDATION_FINDINGS.md` (new)
+- `README.md`
+- `docs/CODEX_TASK_QUEUE.md`
+- `docs/DATA_MIGRATION_MAP.md`
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Added a read-only encoding validator for `data/**/*.json`.
+- Validator reports:
+  - strings made of question marks,
+  - dense question-mark damage,
+  - replacement characters,
+  - Chinese-labeled fields without CJK characters.
+- Added `--summary-only` mode for compact triage output.
+- Added the validator to README and task queue validation lists.
+- Wrote current findings to `docs/ENCODING_VALIDATION_FINDINGS.md`.
+- Updated `docs/DATA_MIGRATION_MAP.md` with current formula, herb, import, pathology, medication, and clinical workflow authority/staging status.
+
+## 4. Why this changed
+The BL61-BL67 mojibake incident showed the project needs an automated encoding guard. The migration map also needed to reflect newer draft/staging files so nobody mistakes staging data for app-rendered canonical data.
+
+## 5. Data content changes
+No data content changed.
+
+## 6. Source status / accuracy guardrail
+No source status changed. The encoding validator reports only and does not infer or repair clinical content.
+
+## 7. Schema / field changes
+No schema changed.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, `legacy/`, `data/acupoints/361.json`, or `docs/CLOUDTCM_*`.
+
+## 10. Validation
+- `node --check scripts/validate-encoding.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-encoding.js --summary-only`: FAIL by design on existing backlog
+
+## 11. Triage results
+First encoding scan after `0259258`:
+- Files checked: 439
+- Findings: 798
+- By type: question_mark_only 325, chinese_field_without_cjk 403, question_mark_damage 8, replacement_character 62
+- Main affected files: `data/herbs/formulas.json`, `data/herbs/herb_canon_shortlist.json`, `data/sources/source_registry.json`, `data/imports/cloudtcm/*`, `data/pathology/*`, `data/acupoints/361.json`, `data/learn/content_architecture_seed.json`.
+
+## 12. Not completed
+No data repairs were attempted. `validate-encoding.js` is not yet a green gate because existing data has known findings.
+
+## 13. Next reader should inspect
+Read:
+- `docs/ENCODING_VALIDATION_FINDINGS.md`
+- `scripts/validate-encoding.js`
+- `docs/DATA_MIGRATION_MAP.md`
+
+## 14. Next step
+Choose whether to repair small encoding backlogs first (`data/sources/source_registry.json`, pathology names) or add an explicit known-issues allowlist so the validator can become a green regression gate while repairs proceed.
+
+## 15. Risk
+Low. Validator/docs only; no data mutation.
+
+---
+
 # REBUILD HANDOFF - Session 28 (2026-07-10, BL61-BL67 approved encoding repair apply)
 
 ## 1. Goal

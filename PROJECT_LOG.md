@@ -23,6 +23,14 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-11 - A1/A2 encoding guard + migration map sync (Codex)
+
+Pulled latest main to 0259258 after Claude's D3 merge. Added scripts/validate-encoding.js as a read-only UTF-8 / mojibake guard for data/**/*.json, updated README.md and docs/CODEX_TASK_QUEUE.md to list it with validation, and wrote docs/ENCODING_VALIDATION_FINDINGS.md from the latest main scan. The scan checked 439 JSON files and found 798 existing findings: formulas.json 367, herb_canon_shortlist.json 202, source_registry.json 123, CloudTCM imports/staging replacement-character findings, pathology JSON 30, 361.json 7 remaining BL technique strings, and learn seed 2. No data was auto-fixed.
+
+Completed A2 docs sync by updating docs/DATA_MIGRATION_MAP.md with newer formula/herb/import/pathology/medication/clinical workflow layers and their status as rendered, draft, staging, or not wired. Did not modify data/acupoints/361.json or docs/CLOUDTCM_*.
+
+Validation: validate-encoding syntax PASS; validate-data, validate-interactions, validate-relations, validate-herbal-links, and validate-herb-canon PASS. validate-encoding runtime intentionally FAILS on the existing backlog until repaired or allowlisted.
+
 ### 2026-07-11 - D3 review strategy: DIFFER classification, no apply (Claude)
 
 Per Ting's gate instruction (FILL=0, no --apply-approved), classified all
