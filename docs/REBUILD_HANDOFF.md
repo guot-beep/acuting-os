@@ -1,3 +1,93 @@
+# REBUILD HANDOFF - Session 24 (2026-07-10, D1-D2 CloudTCM point import staging)
+
+## 1. Goal
+Run CODEX_TASK_QUEUE D1 + D2 on local main after pulling the merged `a8cdb21`: fetch all 361 CloudTCM acupoint raw pages into private staging, then distill them into a draft staging file and coverage report. Do not merge into `data/acupoints/361.json`.
+
+## 2. Files changed
+- `scripts/transform-cloudtcm-points.js`
+- `data/imports/cloudtcm/points/*.json` (361 raw private staging files)
+- `data/imports/cloudtcm/fetch_manifest.json`
+- `data/imports/cloudtcm/staging_points.json`
+- `data/imports/cloudtcm/coverage_report.json`
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Confirmed local `main` was updated to commit `a8cdb21`.
+- Ran D1 probe: `node scripts/fetch-cloudtcm-points.js --limit 5`; result 5/361 raw files, 0 failures.
+- Inspected `LU1` raw JSON and found CloudTCM data under `pageProps.pageData`.
+- Updated `scripts/transform-cloudtcm-points.js` field candidates for CloudTCM's real keys: `AcuNameCH`, `AcuNameEN`, `AcuCode`, `Location`, `Detail`, `Acumethod`, `Caution`, `NameIntroCH`.
+- Added HTML-to-text cleanup in transform output.
+- Preserved canonical file-based point code (`LU1`) and stored CloudTCM's padded code (`LU01`) as `cloudtcm_code`.
+- Ran full D1 fetch: 361/361 raw point JSON files present, 0 failures.
+- Ran full D2 transform: 361 staging records written.
+
+## 4. Why this changed
+D1-D2 are the staging-only bulk import steps before the gated D3 merge preview. They create private raw and distilled CloudTCM staging data without altering canonical acupoint data or runtime generated files.
+
+## 5. Data content changes
+No canonical data was changed. All imported CloudTCM text remains under `data/imports/cloudtcm/` as private draft staging.
+
+## 6. Source status / accuracy guardrail
+All staged records are:
+- `review_status: "draft"`
+- `source_status: "cloudtcm_import_pending_review"`
+- per-record `source_url`
+
+CloudTCM text is private study staging only and must not be republished. D3 must be a separate approval-gated merge preview before any canonical data change.
+
+## 7. Schema / field changes
+No runtime schema changed. Transform output includes `cloudtcm_id` and `cloudtcm_code` while preserving the canonical `code`.
+
+## 8. Generated files / scripts
+Did not run `scripts/build-data.js`. Did not modify `data/generated/*`.
+
+## 9. Protected areas
+Did not modify protected areas: `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/generated/*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- D1 probe fetch: PASS, 5/361, 0 failures.
+- D1 full fetch: PASS, 361/361 raw files present, 0 failures.
+- D2 transform: PASS, 361 staged records, 0 unmatched files.
+- Coverage:
+  - `name_zh`: 361/361
+  - `pinyin`: 361/361
+  - `name_en`: 361/361
+  - `code`: 361/361
+  - `location_zh`: 361/361
+  - `technique_zh`: 361/361
+  - `description_zh`: 361/361
+  - `functions_zh`: 348/361
+  - `indications_zh`: 348/361
+  - `cautions_zh`: 44/361
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `data/**/*.json` parse check: PASS, 439 JSON files
+
+## 11. Completed batch
+D1 and D2 are complete.
+
+## 12. Not completed
+D3 merge into `data/acupoints/361.json` was not started. It remains gated and must produce a preview/diff summary for Ting approval before apply.
+
+## 13. Next reader should inspect
+Inspect:
+- `data/imports/cloudtcm/fetch_manifest.json`
+- `data/imports/cloudtcm/coverage_report.json`
+- `data/imports/cloudtcm/staging_points.json`
+- `scripts/transform-cloudtcm-points.js`
+
+## 14. Next step
+Recommended next step: D3 gated preview only. Write `scripts/merge-cloudtcm-preview.js`, map staging zh fields into the 361 schema, never overwrite non-empty canonical values, produce a diff summary, and stop for Ting approval.
+
+## 15. Risk
+Low. This is staging-only and validators pass. Content risk remains because CloudTCM text is not yet reviewed or authorized for public use.
+
+---
+
 # REBUILD HANDOFF - Session 23 (2026-07-08, D5 remaining needling/EN batches complete)
 
 ## 1. Goal

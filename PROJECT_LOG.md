@@ -23,6 +23,14 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-10 - D1-D2 CloudTCM acupoint private staging (Codex)
+
+Pulled local main to a8cdb21, then ran CODEX_TASK_QUEUE D1-D2. Probe fetch (--limit 5) succeeded, then full CloudTCM fetch completed with 361/361 raw JSON files and 0 failures under data/imports/cloudtcm/points/. Updated scripts/transform-cloudtcm-points.js to match the real Next.js shape (pageProps.pageData) and preserve canonical codes (LU1) while storing CloudTCM padded codes (LU01) as cloudtcm_code.
+
+D2 output: staging_points.json has 361 draft records; coverage is 361/361 for names, location, technique, and description, 348/361 for functions and indications, 44/361 for cautions, 0 unmatched raw files. This is private study staging only; no canonical data or generated runtime data was changed. D3 remains gated: preview/diff summary first, no apply without Ting approval.
+
+Validation: validate-data, validate-interactions, validate-relations, validate-herbal-links, validate-herb-canon, and JSON parse check all PASS.
+
 ### 2026-07-09 — Codex D5 verified + merged; 361-point data layer COMPLETE (Claude)
 
 Codex pushed D5 (fba37ac) onto the OLD main, so his 361.json had only 235

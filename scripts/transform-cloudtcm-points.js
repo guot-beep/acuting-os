@@ -34,18 +34,37 @@ const REPORT_FILE = path.join(ROOT, "data", "imports", "cloudtcm", "coverage_rep
 
 // Likely key names per target field. Extend after --inspect on real data.
 const FIELD_CANDIDATES = {
-  name_zh: ["name", "name_zh", "chinese_name", "title", "acupoint_name"],
-  pinyin: ["pinyin", "name_pinyin", "romanization"],
-  name_en: ["name_en", "english_name", "english"],
-  code: ["code", "point_code", "abbr", "number"],
+  name_zh: ["AcuNameCH", "name", "name_zh", "chinese_name", "title", "acupoint_name"],
+  pinyin: ["AcuNameEN", "pinyin", "name_pinyin", "romanization"],
+  name_en: ["AcuNameEN", "name_en", "english_name", "english"],
+  code: ["AcuCode", "code", "point_code", "abbr", "number"],
   meridian_zh: ["meridian", "meridian_name", "channel", "meridian_zh"],
-  location_zh: ["location", "position", "locate", "location_zh", "anatomy_location"],
-  functions_zh: ["effect", "function", "functions", "efficacy", "action"],
-  indications_zh: ["indication", "indications", "main_treatment", "treats", "symptom"],
-  technique_zh: ["method", "operation", "manipulation", "needling", "technique", "acupuncture_method"],
-  cautions_zh: ["caution", "cautions", "contraindication", "warning", "notice"],
-  description_zh: ["description", "detail", "content", "intro"]
+  location_zh: ["Location", "location", "position", "locate", "location_zh", "anatomy_location"],
+  functions_zh: ["Detail", "effect", "function", "functions", "efficacy", "action"],
+  indications_zh: ["DiseaseCategory_JSON", "Detail", "indication", "indications", "main_treatment", "treats", "symptom"],
+  technique_zh: ["Acumethod", "method", "operation", "manipulation", "needling", "technique", "acupuncture_method"],
+  cautions_zh: ["Caution", "caution", "cautions", "contraindication", "warning", "notice"],
+  description_zh: ["NameIntroCH", "Detail", "description", "detail", "content", "intro"]
 };
+
+function cleanText(value) {
+  return String(value)
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(p|li|h\d|div|ol|ul)>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&middot;/g, "·")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, "\"")
+    .replace(/&#39;/g, "'")
+    .replace(/\s+\n/g, "\n")
+    .replace(/\n\s+/g, "\n")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
 
 function findPointObject(node, depth = 0) {
   if (!node || typeof node !== "object" || depth > 6) return null;
@@ -67,8 +86,8 @@ function pick(obj, candidates) {
   for (const key of candidates) {
     const value = obj[key];
     if (value == null) continue;
-    if (typeof value === "string" && value.trim()) return value.trim();
-    if (Array.isArray(value) && value.length) return value.map((v) => String(v).trim()).filter(Boolean);
+    if (typeof value === "string" && cleanText(value)) return cleanText(value);
+    if (Array.isArray(value) && value.length) return value.map((v) => cleanText(typeof v === "object" ? JSON.stringify(v) : v)).filter(Boolean);
     if (typeof value === "number") return String(value);
   }
   return "";
@@ -113,6 +132,7 @@ function main() {
 
     const record = {
       code,
+      cloudtcm_id: map[code] ? map[code].id : "",
       review_status: "draft",
       source_status: "cloudtcm_import_pending_review",
       source_url: map[code] ? `https://cloudtcm.com/acupoint/${map[code].id}` : "",
@@ -120,7 +140,8 @@ function main() {
     };
     for (const [field, candidates] of Object.entries(FIELD_CANDIDATES)) {
       const value = pick(pointObj, candidates);
-      record[field] = value;
+      if (field === "code") record.cloudtcm_code = value;
+      else record[field] = value;
       if (value && String(value).length) coverage[field] = (coverage[field] || 0) + 1;
     }
     staged.push(record);
