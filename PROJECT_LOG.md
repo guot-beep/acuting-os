@@ -23,6 +23,29 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-11 - D3 review strategy: DIFFER classification, no apply (Claude)
+
+Per Ting's gate instruction (FILL=0, no --apply-approved), classified all
+1,453 DIFFER items from docs/CLOUDTCM_MERGE_PREVIEW.json by extracting and
+comparing facts (cun numbers incl. Chinese numerals and range dashes,
+insertion method, depth-range overlap, safety keywords, risk zones).
+
+Results — location_zh (360): 15 numeric conflicts, 73 landmark-low-overlap,
+272 wording-only. needling (354): 25 method conflicts, 9 disjoint depth
+ranges (e.g. GB39 ours 1-1.5cun vs CloudTCM 0.3-0.5cun), 26 missing-safety
+(CloudTCM has a safety phrase ours lacks), 84 risk-zone wording-only, 211
+low-risk wording. functions/indications: draft reference only, not merged.
+
+Outputs: docs/CLOUDTCM_REVIEW_STRATEGY.md (method, counts, approval options)
+and docs/CLOUDTCM_HIGH_RISK_DIFFS.md (queues A-F with side-by-side text).
+Notable: several location "conflicts" are different reference systems for
+the same spot (CV15 胸劍結合下1寸 vs 臍上7寸); CloudTCM text quirks (OCR
+"l" for "1" in SI19, box-dash ranges in HT2) are handled.
+
+STOPPED here for Ting's review. No change to 361.json. Next: Ting picks
+per-queue decisions (A/B/C adjudicate per record; D approve append of
+missing safety phrases; wording-only 272 may be batch-adopted separately).
+
 ### 2026-07-10 - BL61-BL67 encoding repair preview (Codex)
 
 Prepared a gated preview for the canonical BL61-BL67 fields that contain literal question-mark encoding damage. Added scripts/preview-bl61-bl67-encoding-repair.js and generated docs/BL61_BL67_ENCODING_REPAIR_PREVIEW.md/json. The preview proposes 3 concise repairs (BL61 location_zh, BL67 location_zh, BL67 contraindications) and leaves 13 clinical_pearls/danger-style fields for manual rewrite or removal decision. No canonical data changed.

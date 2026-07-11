@@ -1,1237 +1,413 @@
-# CloudTCM High-Risk Diffs
-
-Generated: 2026-07-11T01:01:12.417Z
-
-This file is a triage aid. It does not decide which source is correct. It highlights records where numeric landmarks, needling depth/direction, or safety wording differ.
-
-## Summary
-
-- Total DIFFER records: 1453
-- High-risk triage items: 553
-- Medium-risk triage items: 15
-- Reference-only prose differences: 696
-
-## Needling High-Risk Sample
-
-### BL1 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.3,0.5 vs CloudTCM 0.5,1
-- direction differs: current 直刺,向內 vs CloudTCM 直刺
-- CloudTCM has safety terms not in current: 禁,出血
-- current has safety terms not in CloudTCM: 不可
-
-Current:
-> 閉目，沿眶緣緩慢直刺或略向內上方刺 0.3-0.5 寸；不可提插捻轉過強，避開眼球。
-
-CloudTCM:
-> 囑患者閉目，醫者左手輕推眼球想外側固定，右手緩慢進針，緊靠眶緣直刺0.5&mdash;1寸，不捻轉提插。局部酸脹，針感可擴散至眼球及周圍。出針時注意用棉球按壓針孔片刻，避免造成內出血。禁灸。
-
-### BL10 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 直刺,斜刺,向下 vs CloudTCM 橫刺
-- current has safety terms not in CloudTCM: 延髓,禁,深刺
-
-Current:
-> 直刺或向下斜刺 0.5-0.8 寸；深部近延髓區，禁深刺與強刺激。
-
-CloudTCM:
-> 橫刺0.5-0.8寸
-
-### BL11 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 橫刺
-- current has safety terms not in CloudTCM: 氣胸,不可,深刺
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
-
-CloudTCM:
-> 橫刺0.5-0.7寸
-
-### BL12 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可,深刺
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL13 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可,深刺
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL14 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可,深刺
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL15 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可,深刺
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL16 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可,深刺
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL17 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可,深刺
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL18 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL19 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL2 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 橫刺,向下 vs CloudTCM 橫刺,點刺
-- CloudTCM has safety terms not in current: 禁,出血
-- current has safety terms not in CloudTCM: 眼球
-
-Current:
-> 向下或橫刺 0.3-0.5 寸；避開眼球，局部不宜強刺激。
-
-CloudTCM:
-> 橫刺0.3-0.5寸，或用三稜針點刺出血。禁灸。
-
-### BL20 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL21 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,0.7
-- direction differs: current 直刺,斜刺 vs CloudTCM 斜刺
-- current has safety terms not in CloudTCM: 氣胸,不可
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。
-
-CloudTCM:
-> 斜刺0.5-0.7寸
-
-### BL22 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,0.8 vs CloudTCM 0.5,1
-- direction differs: current 直刺,斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,不可
-
-Current:
-> 向脊柱方向斜刺 0.5-0.8 寸；背部不可深直刺，需注意氣胸風險與臟器深部結構。
-
-CloudTCM:
-> 直刺0.5-1寸
-
-### BL23 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.5,1 vs CloudTCM 0.8,1.2
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺,腎
-
-Current:
-> 向脊柱方向斜刺 0.5-1 寸；腰背深刺需避開腎臟區，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL24 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺
-
-Current:
-> 向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL25 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺
-
-Current:
-> 向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL26 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺
-
-Current:
-> 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL27 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺
-
-Current:
-> 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL28 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺
-
-Current:
-> 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL29 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺
-
-Current:
-> 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL3 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 平刺 vs CloudTCM 橫刺
-
-Current:
-> 沿頭皮平刺 0.3-0.5 寸。
-
-CloudTCM:
-> 橫刺0.3-0.5寸
-
-### BL30 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 斜刺 vs CloudTCM 直刺
-- current has safety terms not in CloudTCM: 氣胸,深刺
-
-Current:
-> 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL31 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 直刺,斜刺 vs CloudTCM 直刺
-
-Current:
-> 直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL32 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 直刺,斜刺 vs CloudTCM 直刺
-
-Current:
-> 直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL33 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 直刺,斜刺 vs CloudTCM 直刺
-
-Current:
-> 直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL34 - needling
-
-Risk: high
-
-Reasons:
-- direction differs: current 直刺,斜刺 vs CloudTCM 直刺
-
-Current:
-> 直刺或斜刺 0.8-1.2 寸；針刺骶後孔需掌握方向與深度。
-
-CloudTCM:
-> 直刺0.8-1.2寸
-
-### BL35 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 0.8,1.2 vs CloudTCM 0.5,1
-- current has safety terms not in CloudTCM: 深刺
-
-Current:
-> 直刺 0.8-1.2 寸；避開直腸，局部深刺需謹慎。
-
-CloudTCM:
-> 直刺0.5-1寸
-
-### BL36 - needling
-
-Risk: high
-
-Reasons:
-- depth/number differs: current 1,2 vs CloudTCM 1,1.5
-- direction differs: current 直刺 vs CloudTCM 斜刺
-
-Current:
-> 直刺 1-2 寸。
-
-CloudTCM:
-> 斜刺1-1.5寸
-
-
-## Location High-Risk Sample
-
-### BL10 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 0.5 vs CloudTCM 1.3
-- CloudTCM adds anatomy landmarks: 旁開
-
-Current:
-> 後髮際上約 0.5 寸，斜方肌外側凹陷處。
-
-CloudTCM:
-> 項後髮際，斜方肌外緣凹陷處，當後髮際正中旁開1.3寸
-
-### BL11 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 1,1.5 vs CloudTCM 1.5
-
-Current:
-> 背部，第 1 胸椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 背部第一胸椎棘突下（陶道）旁開1.5寸處
-
-### BL12 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 2,1.5 vs CloudTCM 1.5
-
-Current:
-> 背部，第 2 胸椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 背部第二胸椎棘突下旁開1.5寸處，約與肩胛骨上角相平
-
-### BL13 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 3,1.5 vs CloudTCM 1.5
-
-Current:
-> 第 3 胸椎棘突下，旁開 1.5 寸。
-
-CloudTCM:
-> 背部第三胸椎棘突下（身柱）旁開1.5寸處
-
-### BL14 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 4,1.5 vs CloudTCM 1.5
-
-Current:
-> 背部，第 4 胸椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 背部第四胸椎棘突下旁開1.5寸處
-
-### BL15 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 5,1.5 vs CloudTCM 1.5
-
-Current:
-> 背部，第 5 胸椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 心俞穴位於第五胸椎棘突、旁開1.5寸。取穴時一般可以采用正坐或俯臥姿勢。
-
-### BL16 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 6,1.5 vs CloudTCM 1.5
-
-Current:
-> 背部，第 6 胸椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 背部第六胸椎棘突下（靈台）旁開1.5寸處
-
-### BL17 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 7,1.5 vs CloudTCM 1.5
-
-Current:
-> 第 7 胸椎棘突下，旁開 1.5 寸。
-
-CloudTCM:
-> 背部第七胸椎棘突下（至陽）旁開1.5寸處
-
-### BL18 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 9,1.5 vs CloudTCM 1.5
-
-Current:
-> 背部，第 9 胸椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 背部第九胸椎棘突下（筋縮）旁開1.5寸
-
-### BL19 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 10,1.5 vs CloudTCM 1.5
-
-Current:
-> 背部，第 10 胸椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 背部第十胸椎棘突下（中樞）旁開1.5寸處
-
-### BL22 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 1,1.5 vs CloudTCM 1.5
-
-Current:
-> 腰部，第 1 腰椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 腰部第一腰椎棘突下（懸樞）旁開1.5寸處
-
-### BL23 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 2,1.5 vs CloudTCM 1.5
-
-Current:
-> 第 2 腰椎棘突下，旁開 1.5 寸。
-
-CloudTCM:
-> 腰部第二腰椎棘突下（命門）旁開1.5寸處，約與肋弓緣下端相平
-
-### BL24 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 3,1.5 vs CloudTCM 1.5
-
-Current:
-> 腰部，第 3 腰椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 背部第三腰椎棘突下旁開1.5寸處
-
-### BL25 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 4,1.5 vs CloudTCM 1.5
-
-Current:
-> 第 4 腰椎棘突下，旁開 1.5 寸。
-
-CloudTCM:
-> 腰部第四腰椎棘突下（腰陽關）旁開1.5寸處
-
-### BL26 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 5,1.5 vs CloudTCM 1.5
-
-Current:
-> 腰部，第 5 腰椎棘突下，後正中線旁開 1.5 寸。
-
-CloudTCM:
-> 腰部第五腰椎棘突下旁開1.5寸處
-
-### BL27 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 1,1.5 vs CloudTCM 1.5
-
-Current:
-> 骶部，第 1 骶後孔平，正中骶嵴旁開 1.5 寸。
-
-CloudTCM:
-> 位於骶部，當骶正中嵴旁1.5寸，平第一骶後孔。
-
-### BL28 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 2,1.5 vs CloudTCM 1.5
-
-Current:
-> 骶部，第 2 骶後孔平，正中骶嵴旁開 1.5 寸。
-
-CloudTCM:
-> 骶部骶正中嵴旁開1.5寸，與第二骶後孔相平處
-
-### BL29 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 3,1.5 vs CloudTCM 1.5
-
-Current:
-> 骶部，第 3 骶後孔平，正中骶嵴旁開 1.5 寸。
-
-CloudTCM:
-> 位於骶部，當骶正中嵴旁1.5寸，平第三骶後孔。
-
-### BL3 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 0.5,1.5 vs CloudTCM 0.5,5
-
-Current:
-> 頭部，前髮際上 0.5 寸，神庭旁開 1.5 寸。
-
-CloudTCM:
-> 位於人體的頭部，當攢竹穴直上入髮際0.5寸，神庭穴與曲差穴連線之間。攢竹直上入前髮際5分處
-
-### BL30 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 4,1.5 vs CloudTCM 1.5
-
-Current:
-> 骶部，第 4 骶後孔平，正中骶嵴旁開 1.5 寸。
-
-CloudTCM:
-> 骶部骶正中嵴旁開1.5寸，與第四骶後孔相平處，當下髎外方
-
-### BL31 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 1 vs CloudTCM -
-
-Current:
-> 骶部，第 1 骶後孔中。
-
-CloudTCM:
-> 骶部後正中線與髂後上棘間凹陷處，適對第一骶後孔
-
-### BL32 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 2 vs CloudTCM 1
-
-Current:
-> 第 2 骶後孔處。
-
-CloudTCM:
-> 骶部，髂後上棘內下方1寸許，適對第二骶後孔凹陷處
-
-### BL35 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 0.5 vs CloudTCM 5
-- CloudTCM adds anatomy landmarks: 骶
-
-Current:
-> 尾骨端旁開 0.5 寸。
-
-CloudTCM:
-> 骶部尾骨端旁開5分凹陷處，當長強外上方
-
-### BL38 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 1 vs CloudTCM 1,1
-
-Current:
-> 膕橫紋上 1 寸，股二頭肌腱內側。
-
-CloudTCM:
-> 大腿後面，膕橫紋上1寸，股二頭肌內側緣凹陷處，當委陽內上方1寸
-
-### BL4 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 0.5,3 vs CloudTCM 5,1.5
-
-Current:
-> 頭部，前髮際上 0.5 寸，神庭旁開 3 寸。
-
-CloudTCM:
-> 頭部前髮際正中直上5分（神庭）旁開1.5寸處
-
-### BL41 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 2,3 vs CloudTCM 3
-
-Current:
-> 背部，第 2 胸椎棘突下，後正中線旁開 3 寸。
-
-CloudTCM:
-> 背部第二胸椎棘突下旁開3寸，當肩胛骨上角內緣凹陷處
-
-### BL42 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 3,3 vs CloudTCM 3
-
-Current:
-> 背部，第 3 胸椎棘突下，後正中線旁開 3 寸。
-
-CloudTCM:
-> 背部第三胸椎棘突下（身柱）旁開3寸，當肩胛岡內側端旁凹陷處
-
-### BL43 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 4,3 vs CloudTCM 3
-
-Current:
-> 背部，第 4 胸椎棘突下，後正中線旁開 3 寸。
-
-CloudTCM:
-> 背部第四胸椎棘突下旁開3寸，內與厥陰俞相平
-
-### BL45 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 6,3 vs CloudTCM 3
-
-Current:
-> 背部，第 6 胸椎棘突下，後正中線旁開 3 寸。
-
-CloudTCM:
-> 位於人體的背部，當第六胸椎棘突下，旁開3寸。
-
-### BL5 - location_zh
-
-Risk: high
-
-Reasons:
-- location number differs: current 1,1.5 vs CloudTCM 1,1.5,0.5
-
-Current:
-> 頭部，前髮際上 1 寸，神庭旁開 1.5 寸。
-
-CloudTCM:
-> 位於頭部，在前髮際正中直上1寸，旁開1.5寸。曲差穴上0.5寸。
-
-
-## Contraindication High-Risk Sample
-
-### BL10 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 深刺 vs CloudTCM 延髓,不可
-
-Current:
-> 頸項部位深刺有風險，需專業操作。
-
-CloudTCM:
-> 不可向上斜刺，以防造成延髓損傷
-
-### BL11 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 肺,深刺 vs CloudTCM 不可,深刺
-
-Current:
-> 近肺尖區域，避免深刺；呼吸症狀或胸背劇痛需醫療評估。
-
-CloudTCM:
-> 本經位於背部，不可垂直深刺以免傷及內部重要臟器。
-
-### BL13 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 氣胸,深刺 vs CloudTCM 肺,不可,深刺
-
-Current:
-> 胸背區避免過深刺激，氣胸風險需專業評估。
-
-CloudTCM:
-> 肺俞穴為背俞穴，不可深刺，以免傷及肺臟。
-
-### BL23 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 深刺,腎 vs CloudTCM 腎
-
-Current:
-> 背部深刺需專業訓練，避開腎區風險。
-
-CloudTCM:
-> 腎俞穴是不能重敲擊的。特別是有腎病，腎積水的患者，如果敲擊會加重病情！
-
-### BL25 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 深刺,腎
-
-Current:
-> 急性腰痛伴發燒、麻木無力或大小便異常需先就醫。
-
-CloudTCM:
-> 大腸俞深部近於腎臟，故不能深刺
-
-### BL40 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 神經 vs CloudTCM 出血,腎
-
-Current:
-> 膕窩血管神經豐富，針刺需非常審慎。
-
-CloudTCM:
-> 因為房勞過度、腎虛虧損所導致的腰痛，不適合點刺本穴出血，會讓經脈更虛弱。
-
-### BL47 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 氣胸,不可,深刺
-
-Current:
-> 黃疸、劇烈右上腹痛或情緒危機需醫療評估。
-
-CloudTCM:
-> 不可深刺，以防氣胸
-
-### BL5 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 不可
-
-Current:
-> 兒童、癲癇或神志症狀需由專業者評估。
-
-CloudTCM:
-> 本穴經書列為不可灸，是因為本穴的氣血空虛即為正常態，若施以火灸，則穴內地部的水濕氣化充斥穴內，穴內正常的空虛態即被破壞，故不可灸。
-
-### BL50 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 不可,深刺
-
-Current:
-> 劇烈腹痛、嘔血、黑便或持續嘔吐需醫療評估。
-
-CloudTCM:
-> 不可深刺，以防損傷內臟
-
-### GB21 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 氣胸,孕,禁,深刺 vs CloudTCM 氣胸,肺,不可,深刺
-
-Current:
-> 孕期禁慎用；避免深刺以降低氣胸風險。
-
-CloudTCM:
-> 深部正當肺尖，慎不可深刺，以防刺傷肺尖造成氣胸
-
-### GB3 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 深刺 vs CloudTCM -
-
-Current:
-> 不宜深刺。
-
-CloudTCM:
-> 針刺方法一般直刺0，3～0，5寸，不宜過深，否則會引起張口困難
-
-### GV16 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 延髓 vs CloudTCM 延髓,不可
-
-Current:
-> 深部為延髓，操作規範同啞門；須由受訓臨床人員執行。
-
-CloudTCM:
-> 針尖不可向上過深，以免刺入枕骨大孔，誤傷延髓。
-
-### GV25 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 禁,出血
-
-Current:
-> 傳統不灸；局部感染時避開。
-
-CloudTCM:
-> 禁灸，針刺方法一般斜刺0，3～0，5寸，或三棱針點刺出血，向上斜刺0，3～0，5寸，或點刺出血，艾灸方法不灸。
-
-### KI12 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 孕,深刺,出血 vs CloudTCM 膀胱
-
-Current:
-> 孕期、IUI/IVF 週期、下腹痛、出血或術後狀態需主管臨床人員評估；避免深刺。
-
-CloudTCM:
-> 針刺之前應排空膀胱，以免刺傷膀胱
-
-### KI22 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 氣胸,肺,禁,深刺 vs CloudTCM 不可
-
-Current:
-> 胸部穴位有氣胸風險；嚴禁深刺或自行針刺。胸痛、呼吸困難或心肺症狀須先醫療評估。
-
-CloudTCM:
-> 不可深剌、免傷內臟；可灸。
-
-### LI11 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 孕,禁
-
-Current:
-> 肘部發炎或腫脹時避免刺激。
-
-CloudTCM:
-> 按摩曲池穴容易造成流產，孕婦禁用。
-
-### LI13 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 動脈
-
-Current:
-> 不明腫塊、感染或淋巴結腫大需醫療評估。
-
-CloudTCM:
-> 避開動脈
-
-### LI4 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 孕 vs CloudTCM 孕,禁,不可
-
-Current:
-> 孕期慎用或避免強刺激。
-
-CloudTCM:
-> 孕婦禁針，以免因行氣動血而流產或滑胎。婦人妊娠可瀉不可補，補即墮胎。
-合谷穴為手陽明經穴位，具有行氣活血之功效，體質較差的病人不宜給予較強的刺激。
-
-### LR12 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 動脈,孕 vs CloudTCM 動脈,不可
-
-Current:
-> 緊鄰股動脈，針刺須先觸清搏動位置並避開；孕婦慎用。
-
-CloudTCM:
-> 避開動脈血管，《黃帝內經素問·氣府論》王冰註謂，「可灸而不可刺」。
-
-### LU1 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 氣胸,肺,深刺 vs CloudTCM 肺,不可,深刺
-
-Current:
-> 胸肺區需避免深刺，氣胸風險需由受訓專業人員評估。
-
-CloudTCM:
-> 不可向內側深刺，以防傷及肺臟
-中府穴下方肌肉偏薄，日常保健不要使太大力道，稍稍施力按揉1-2分鐘，亦可進行輕輕敲打或拍打。
-
-### LU2 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 氣胸,肺,深刺 vs CloudTCM 氣胸,肺,不可,深刺
-
-Current:
-> 胸肺區避免深刺，需注意氣胸風險。
-
-CloudTCM:
-> 不可向內側深刺，以防傷及肺臟，造成氣胸
-《針灸甲乙經》：刺太深，令人逆息，不能食
-
-### SP11 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 動脈 vs CloudTCM 動脈,禁
-
-Current:
-> 避開股動脈搏動；腹股溝腫塊、血管病變或不明疼痛需先評估。
-
-CloudTCM:
-> 避開動脈，《黃帝內經素問·刺禁論》：「刺陰股中大脈，血出不止」
-
-### SP18 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 深刺 vs CloudTCM 氣胸,肺,深刺
-
-Current:
-> 乳房腫塊、紅腫熱痛或哺乳感染需先醫療評估；胸部避免深刺。
-
-CloudTCM:
-> 內有肺臟，切勿深刺，以防氣胸
-
-### SP19 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 深刺 vs CloudTCM 氣胸,肺,不可,深刺
-
-Current:
-> 胸部穴位避免深刺；氣喘急性發作或胸痛需先急症處理。
-
-CloudTCM:
-> 內有肺臟，不可直刺，深刺，以防氣胸
-
-### SP20 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 肺,深刺 vs CloudTCM 氣胸,肺,不可,深刺
-
-Current:
-> 胸部避免深刺；呼吸困難、胸痛或疑似心肺急症需立即就醫。
-
-CloudTCM:
-> 內有肺臟，不可深刺，以防造成氣胸
-
-### SP21 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 深刺 vs CloudTCM 肺,禁,深刺
-
-Current:
-> 側胸部避免深刺；肋骨外傷、胸痛或呼吸困難需先排除急症。
-
-CloudTCM:
-> 嚴禁深刺，以防刺傷肺臟
-
-### SP6 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 孕,禁,不可 vs CloudTCM 孕,禁
-
-Current:
-> 孕期禁用或慎用強刺激，尤其未經專業評估不可自行針刺。
-
-CloudTCM:
-> 孕婦禁針或灸
-
-### ST10 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 動脈,深刺
-
-Current:
-> 頸部腫塊、吞嚥困難或呼吸困難需就醫。
-
-CloudTCM:
-> 不宜深刺，以免傷及頸總動脈和頸外動脈分支
-
-### ST12 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current 氣胸,不可 vs CloudTCM 不可,深刺
-
-Current:
-> 氣胸風險區；胸痛、呼吸困難不可自行處理。
-
-CloudTCM:
-> 避開血管，不可深刺
-
-### ST13 - contraindications
-
-Risk: high
-
-Reasons:
-- safety wording differs: current - vs CloudTCM 氣胸,不可,深刺
-
-Current:
-> 胸痛或呼吸困難需先排除急症。
-
-CloudTCM:
-> 不可深刺，以防氣胸
-
+# CloudTCM High-Risk Diffs (D3 review queues)
+
+Generated: 2026-07-11. Companion to CLOUDTCM_REVIEW_STRATEGY.md.
+每筆的裁決選項：保留現有 / 採 CloudTCM / 需查 WHO・教材。
+
+## §A 定位寸數衝突（15 筆）
+
+- **BL10**（我方 [0.5] 寸 vs CloudTCM [1.3] 寸）
+  - 現有: 後髮際上約 0.5 寸，斜方肌外側凹陷處。
+  - CloudTCM: 項後髮際，斜方肌外緣凹陷處，當後髮際正中旁開1.3寸
+- **BL4**（我方 [0.5,3] 寸 vs CloudTCM [1.5] 寸）
+  - 現有: 頭部，前髮際上 0.5 寸，神庭旁開 3 寸。
+  - CloudTCM: 頭部前髮際正中直上5分（神庭）旁開1.5寸處
+- **CV15**（我方 [1] 寸 vs CloudTCM [7] 寸）
+  - 現有: 上腹部，前正中線上，胸劍結合部下 1 寸。
+  - CloudTCM: 前正中線上，臍上7寸；或劍突下，胸劍聯合下1 ​​寸
+- **GB16**（我方 [1.5] 寸 vs CloudTCM [1] 寸）
+  - 現有: 頭部，瞳孔直上，前髮際上 1.5 寸。
+  - CloudTCM: 目正視，瞳孔與風池穴連線上，頭臨泣穴後1寸
+- **GB17**（我方 [2.5] 寸 vs CloudTCM [1] 寸）
+  - 現有: 頭部，瞳孔直上，前髮際上 2.5 寸。
+  - CloudTCM: 目正視，瞳孔與風池穴連線上，目窗穴後1寸
+- **GB18**（我方 [4] 寸 vs CloudTCM [1.5] 寸）
+  - 現有: 頭部，瞳孔直上，前髮際上 4 寸。
+  - CloudTCM: 目正視，瞳孔與風池穴連線上，正營穴後1.5寸
+- **GV22**（我方 [2,3] 寸 vs CloudTCM [1.5,2] 寸）
+  - 現有: 頭部，前髮際正中直上 2 寸（百會前 3 寸）。
+  - CloudTCM: 前頂穴前1.5寸；或額前部髮際正中直上2寸
+- **LR12**（我方 [2.5] 寸 vs CloudTCM [2] 寸）
+  - 現有: 腹股溝區，恥骨聯合下緣中點旁開 2.5 寸，股動脈搏動處外側。
+  - CloudTCM: 腹股溝部，恥骨結節外側，氣衝外下方，股動脈搏動處，距前正中線二寸五分
+- **LU4**（我方 [4,5] 寸 vs CloudTCM [1] 寸）
+  - 現有: 上臂內側，肱二頭肌橈側緣，腋前紋頭下約 4 寸，肘橫紋上約 5 寸。
+  - CloudTCM: 在上臂內側，天府下一寸，當肱二頭肌橈側
+- **LU7**（我方 [1.5] 寸 vs CloudTCM [1] 寸）
+  - 現有: 腕橫紋上 1.5 寸，橈骨莖突上方凹陷處。
+  - CloudTCM: 橈骨莖突(Styloid P.)上方，腕橫紋上一寸五分，或兩手虎口交叉，一手食指按在橈骨莖突上，指間下凹陷中是穴
+- **SI16**（我方 [3] 寸 vs CloudTCM [3.5] 寸）
+  - 現有: 頸外側，胸鎖乳突肌後緣，喉結旁開約 3 寸。
+  - CloudTCM: 扶突穴後，在胸鎖乳突肌的後緣，約喉結旁開3.5寸
+- **SP11**（我方 [8] 寸 vs CloudTCM [6] 寸）
+  - 現有: 大腿內側，髕底上 8 寸，股內側肌與縫匠肌之間。
+  - CloudTCM: 大腿內側，血海上6寸
+- **SP18**（我方 [6] 寸 vs CloudTCM [2] 寸）
+  - 現有: 胸外側部，第 4 肋間隙，前正中線旁開 6 寸。
+  - CloudTCM: 胸外側部，乳頭外旁2寸，當第4肋間隙凹陷處
+- **TE12**（我方 [5] 寸 vs CloudTCM [3] 寸）
+  - 現有: 臂後區，清冷淵與臑會連線的中點（肘尖上 5 寸）。
+  - CloudTCM: 肩髎穴與天井穴連線上，清冷淵穴上3寸
+- **TE7**（我方 [3] 寸 vs CloudTCM [1] 寸）
+  - 現有: 前臂後區，腕背側遠端橫紋上 3 寸，尺骨橈側緣。
+  - CloudTCM: 支溝穴尺側約1寸，當尺骨橈側緣
+
+## §B 針刺深度範圍不相交（9 筆）
+
+- **GB38**（我方 0.8-1 寸 vs CloudTCM 0.5-0.7 寸）
+  - 現有: 直刺 0.8-1 寸。
+  - CloudTCM: 直刺0.5～0.7寸
+- **GB39**（我方 1-1.5 寸 vs CloudTCM 0.3-0.5 寸）
+  - 現有: 直刺 1-1.5 寸。
+  - CloudTCM: 直刺0.3～0.5寸
+- **HT9**（我方 0.1-0.1 寸 vs CloudTCM 0.2-0.3 寸）
+  - 現有: 淺刺 0.1 寸，或點刺出血。
+  - CloudTCM: 淺刺0.2～0.3寸或點刺出血
+- **LR8**（我方 1-1.5 寸 vs CloudTCM 0.5-0.8 寸）
+  - 現有: 直刺 1-1.5 寸。
+  - CloudTCM: 直刺0.5～0.8寸
+- **LR9**（我方 1-1.5 寸 vs CloudTCM 0.5-0.7 寸）
+  - 現有: 直刺 1-1.5 寸。
+  - CloudTCM: 直刺0.5～0.7寸
+- **PC3**（我方 0.8-1 寸 vs CloudTCM 0.5-0.7 寸）
+  - 現有: 直刺 0.8-1 寸，或三稜針點刺出血；避開肱動脈。
+  - CloudTCM: 直刺0.5～0.7寸，或用三稜針點刺放血
+- **SI19**（我方 0.5-1 寸 vs CloudTCM 1.5-1.5 寸）
+  - 現有: 張口取穴，直刺 0.5-1 寸；避開顳淺動脈與外耳道深部結構。
+  - CloudTCM: 張口，直刺 l～1.5寸
+- **SP1**（我方 0.1-0.1 寸 vs CloudTCM 0.2-0.3 寸）
+  - 現有: 淺刺 0.1 寸，或點刺出血。
+  - CloudTCM: 淺刺0.2～0.3寸，或點刺出血
+- **TE12**（我方 0.8-1 寸 vs CloudTCM 0.5-0.7 寸）
+  - 現有: 直刺 0.8-1 寸。
+  - CloudTCM: 直刺0.5～0.7寸
+
+## §C 進針方式衝突（25 筆）
+
+- **BL10**（頸項）
+  - 現有: 直刺或向下斜刺 0.5-0.8 寸；深部近延髓區，禁深刺與強刺激。
+  - CloudTCM: 橫刺0.5-0.8寸
+- **BL11**（胸背腰(氣胸/臟器)）
+  - 現有: 向脊柱方向斜刺 0.5-0.8 寸；不可深直刺，胸背部深刺有氣胸風險。
+  - CloudTCM: 橫刺0.5-0.7寸
+- **BL23**（胸背腰(氣胸/臟器)）
+  - 現有: 向脊柱方向斜刺 0.5-1 寸；腰背深刺需避開腎臟區，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL24**（胸背腰(氣胸/臟器)）
+  - 現有: 向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL25**（胸背腰(氣胸/臟器)）
+  - 現有: 向脊柱方向斜刺 0.8-1.2 寸；腰背深刺需避開深部臟器，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL26**（胸背腰(氣胸/臟器)）
+  - 現有: 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL27**
+  - 現有: 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL28**
+  - 現有: 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL29**
+  - 現有: 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL30**
+  - 現有: 向脊柱方向斜刺 0.8-1.2 寸；腰骶部深刺需避開深部臟器，並注意背部深刺氣胸風險。
+  - CloudTCM: 直刺0.8-1.2寸
+- **BL36**
+  - 現有: 直刺 1-2 寸。
+  - CloudTCM: 斜刺1-1.5寸
+- **BL52**（胸背腰(氣胸/臟器)）
+  - 現有: 斜刺 0.5-1 寸；腰背部深刺需避開腎臟區。
+  - CloudTCM: 直刺0.5-1寸
+- **CV14**（胸背腰(氣胸/臟器)）
+  - 現有: 向下斜刺 0.3-0.6 寸；不可深刺、不可向上斜刺 — 深部為肝左葉與心包。
+  - CloudTCM: 直刺0.3～0.8寸
+- **GB25**（胸背腰(氣胸/臟器)）
+  - 現有: 斜刺 0.5-0.8 寸；不可深刺 — 深部為腎臟。
+  - CloudTCM: 直刺0.3～0.5寸
+- **GV1**
+  - 現有: 緊靠尾骨前面、與骶骨平行斜刺 0.5-1 寸；不可刺穿直腸。
+  - CloudTCM: 直刺0.5～1寸
+- **GV25**
+  - 現有: 向上斜刺 0.3-0.5 寸，或點刺出血；不灸。
+  - CloudTCM: 直刺0.2～0.3寸。或點刺放血。
+- **GV27**
+  - 現有: 斜刺 0.2-0.3 寸。
+  - CloudTCM: 直刺0.2～0.3寸。
+- **GV6**（胸背腰(氣胸/臟器)）
+  - 現有: 向上斜刺 0.5-1 寸；不可深刺。
+  - CloudTCM: 直刺0.5～1寸
+- **GV7**（胸背腰(氣胸/臟器)）
+  - 現有: 向上斜刺 0.5-1 寸；不可深刺。
+  - CloudTCM: 直刺0.5～1寸
+- **GV8**（胸背腰(氣胸/臟器)）
+  - 現有: 向上斜刺 0.5-1 寸；不可深刺。
+  - CloudTCM: 直刺0.5～1寸
+- **KI21**
+  - 現有: 斜刺或平刺 0.5-0.8 寸；近肋弓與上腹部，深刺需謹慎。
+  - CloudTCM: 直刺0.3～0.7寸，局部有酸沈感，可擴散至胃脘部。注意：幽門穴深部左側有胃，右側有肝，不可深刺，以免傷及肝臟
+- **LR13**（胸背腰(氣胸/臟器)）
+  - 現有: 斜刺 0.5-0.8 寸；不可深刺 — 右側深部為肝，左側深部為脾。
+  - CloudTCM: 直刺0.5～0.8寸
+- **SI13**
+  - 現有: 斜刺 0.5-0.8 寸；肩胛上部深刺需防胸腔穿刺與氣胸風險。
+  - CloudTCM: 直刺0.3～0.5寸
+- **SI15**（胸背腰(氣胸/臟器)）
+  - 現有: 斜刺 0.5-0.8 寸；上背部深刺需防胸腔穿刺與氣胸風險。
+  - CloudTCM: 直刺0.3～0.7寸
+- **TE21**
+  - 現有: 張口，直刺 0.5-0.8 寸。
+  - CloudTCM: 橫刺0.3～0.5寸
+
+## §D CloudTCM 有安全語、我方缺（26 筆）
+
+- **BL1**（眼部） 缺: 禁灸
+  - 現有: 閉目，沿眶緣緩慢直刺或略向內上方刺 0.3-0.5 寸；不可提插捻轉過強，避開眼球。
+  - CloudTCM: 囑患者閉目，醫者左手輕推眼球想外側固定，右手緩慢進針，緊靠眶緣直刺0.5&mdash;1寸，不捻轉提插。局部酸脹，針感可擴散至眼球及周圍。出針時注意用棉球按壓針孔片刻，避免造成內出血。禁灸。
+- **BL2** 缺: 禁灸
+  - 現有: 向下或橫刺 0.3-0.5 寸；避開眼球，局部不宜強刺激。
+  - CloudTCM: 橫刺0.3-0.5寸，或用三稜針點刺出血。禁灸。
+- **CV2** 缺: 禁針、孕
+  - 現有: 直刺 0.5-1 寸；針前排空膀胱。
+  - CloudTCM: 直刺0.5～1寸。孕婦禁針
+- **CV23**（頸項） 缺: 深刺警告
+  - 現有: 向舌根方向斜刺 0.5-0.8 寸，不留針過深過久。
+  - CloudTCM: 向舌根斜刺0.5～0.8寸，或將針退至皮下，再向左向右兩側針刺，局部酸脹，舌根及咽喉部發緊。不留針或淺部留針。不宜深刺。注意：不能久留針，防因吞咽動作而折針。
+- **GV16**（頸項） 缺: 深刺警告
+  - 現有: 高風險操作：正坐位頭微前傾，向下頜方向緩慢刺入 0.5-1 寸；嚴禁向上深刺 — 深部為延髓。
+  - CloudTCM: 直刺0.5～0.8寸。不可深刺，深部接近延髓，必須嚴格掌握針刺的角度與深度
+- **GV23** 缺: 禁針
+  - 現有: 平刺 0.5-0.8 寸。
+  - CloudTCM: 橫刺0.3～0.5寸，或用三稜針點刺放血。小兒禁針
+- **KI21** 缺: 深刺警告
+  - 現有: 斜刺或平刺 0.5-0.8 寸；近肋弓與上腹部，深刺需謹慎。
+  - CloudTCM: 直刺0.3～0.7寸，局部有酸沈感，可擴散至胃脘部。注意：幽門穴深部左側有胃，右側有肝，不可深刺，以免傷及肝臟
+- **KI22**（胸背腰(氣胸/臟器)） 缺: 深刺警告
+  - 現有: 沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸部深刺有氣胸風險。
+  - CloudTCM: 斜刺或平刺0.3～0.5寸，注意：穴位左方當心臟，右方位於肺下部及肝上部，故不宜深刺，以免傷及心、肺，造成氣胸
+- **LI16** 缺: 深刺警告
+  - 現有: 待依專業來源補入；肩上部與鎖骨附近不可粗暴深刺。
+  - CloudTCM: 直刺0.4～0.6寸，不可深刺，否則可刺入胸腔
+- **LI19** 缺: 禁灸
+  - 現有: 待依專業來源補入；面部淺層操作需注意局部血管與皮膚狀態。
+  - CloudTCM: 向上斜刺0.2～0.3寸。禁灸
+- **LI20** 缺: 禁灸
+  - 現有: 向鼻翼方向斜刺 0.3-0.5 寸。
+  - CloudTCM: 直刺或向上斜刺0.2～0.5寸；不宜灸
+- **LI4**（孕期慎用穴） 缺: 動脈
+  - 現有: 直刺 0.5-1 寸；孕期慎用或禁用。
+  - CloudTCM: 直刺0.5~1.0寸，局部酸脹，可擴散至肘、肩、面部
+深刺2.0~3.0寸，透勞宮或後溪時，出現手掌酸麻並向指端放散。針刺時針尖不宜偏向腕側，以免刺破手背靜脈網和掌深動脈而引起出血。此穴提插幅度不宜過大，以免傷及血管引起血腫
+《針灸大成》：針三分, 留六呼, 灸三壯。
+- **LU3** 缺: 禁灸
+  - 現有: 直刺 0.5-1 寸。
+  - CloudTCM: 直刺0.3-0.5寸。
+《針灸大成》：禁灸，針四分，留七呼。
+- **PC1**（胸背腰(氣胸/臟器)） 缺: 氣胸/肺
+  - 現有: 沿肋間斜刺或平刺 0.3-0.5 寸；胸壁穴位不可深刺。
+  - CloudTCM: 斜刺0.2～0.4寸，不宜深刺，以免造成氣胸
+- **SP18**（胸背腰(氣胸/臟器)） 缺: 深刺警告
+  - 現有: 沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。
+  - CloudTCM: 沿肋間隙橫刺0.3～0.5寸，不可深刺
+- **SP19**（胸背腰(氣胸/臟器)） 缺: 深刺警告
+  - 現有: 沿肋間隙斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。
+  - CloudTCM: 沿肋間隙橫刺0.3～0.5寸。不可深刺
+- **SP21**（胸背腰(氣胸/臟器)） 缺: 深刺警告
+  - 現有: 沿胸側壁斜刺或平刺 0.3-0.5 寸；不可深直刺，胸脅部深刺有氣胸風險。
+  - CloudTCM: 沿肋間隙橫刺0.3～0.5寸。不可深刺
+- **ST1**（眼部） 缺: 禁灸
+  - 現有: 眼周危險區，禁止粗暴深刺；需由受訓專業人員依眼眶解剖操作。
+  - CloudTCM: 直刺0.3～0.7寸；不宜灸。緩慢進針，不宜提插
+- **ST11**（胸背腰(氣胸/臟器)） 缺: 氣胸/肺、動脈、深刺警告
+  - 現有: 鎖骨上危險區，禁止不當深刺；需專業訓練。
+  - CloudTCM: 直刺0.3～0.5寸。本經氣捨至乳根諸穴深部有大動脈及肺、肝等重要臟器，不可深刺。
+- **ST12**（胸背腰(氣胸/臟器)） 缺: 氣胸/肺
+  - 現有: 高風險禁深刺區；需專業來源逐字核對操作。
+  - CloudTCM: 直刺或斜刺0.3～0.5寸。穴下為肺尖，禁深刺、搗刺。
+- **ST17**（胸背腰(氣胸/臟器)） 缺: 禁針
+  - 現有: 禁刺禁灸。
+  - CloudTCM: 禁針灸。《針灸甲乙經》：「乳中，禁不可刺灸」
+- **ST19** 缺: 禁針
+  - 現有: 腹部深度需依體型與臟器位置保守評估。
+  - CloudTCM: 直刺0.5～0.8寸。過飽者禁針，肝大者慎針或禁針，不宜做大幅度提插。
+- **ST2** 缺: 禁灸
+  - 現有: 面部淺層操作；避免向眼球方向深刺。
+  - CloudTCM: 直刺0.2～0.4寸，不宜灸
+- **ST21** 缺: 禁針
+  - 現有: 腹部深度需依體型與安全來源。
+  - CloudTCM: 直刺0.5～0.8寸。過飽者禁針，肝大者慎針或禁針，不宜做大幅度提插。
+- **ST8** 缺: 禁灸
+  - 現有: 頭皮部位多作淺層或平刺類操作，待專業來源補深度方向。
+  - CloudTCM: 向下平刺0.5～1寸。不宜灸。
+- **ST9**（頸項） 缺: 禁灸
+  - 現有: 頸動脈搏動處禁止深刺或強壓；需專業訓練。
+  - CloudTCM: 避開頸總動脈，直刺0.2～0.4寸。不宜灸
+
+## §E 風險區、僅措辭差異（84 筆 — 抽查即可）
+
+- BL12（胸背腰(氣胸/臟器)）
+- BL13（胸背腰(氣胸/臟器)）
+- BL14（胸背腰(氣胸/臟器)）
+- BL15（胸背腰(氣胸/臟器)）
+- BL16（胸背腰(氣胸/臟器)）
+- BL17（胸背腰(氣胸/臟器)）
+- BL18（胸背腰(氣胸/臟器)）
+- BL19（胸背腰(氣胸/臟器)）
+- BL20（胸背腰(氣胸/臟器)）
+- BL21（胸背腰(氣胸/臟器)）
+- BL22（胸背腰(氣胸/臟器)）
+- BL41（胸背腰(氣胸/臟器)）
+- BL42（胸背腰(氣胸/臟器)）
+- BL43（胸背腰(氣胸/臟器)）
+- BL44（胸背腰(氣胸/臟器)）
+- BL45（胸背腰(氣胸/臟器)）
+- BL46（胸背腰(氣胸/臟器)）
+- BL47（胸背腰(氣胸/臟器)）
+- BL48（胸背腰(氣胸/臟器)）
+- BL49（胸背腰(氣胸/臟器)）
+- BL50（胸背腰(氣胸/臟器)）
+- BL51（胸背腰(氣胸/臟器)）
+- BL60（孕期慎用穴）
+- BL67（孕期慎用穴）
+- CV15（胸背腰(氣胸/臟器)）
+- CV16（胸背腰(氣胸/臟器)）
+- CV17（胸背腰(氣胸/臟器)）
+- CV18（胸背腰(氣胸/臟器)）
+- CV19（胸背腰(氣胸/臟器)）
+- CV20（胸背腰(氣胸/臟器)）
+- CV21（胸背腰(氣胸/臟器)）
+- CV22（頸項、胸背腰(氣胸/臟器)）
+- CV3（孕期慎用穴）
+- CV4（孕期慎用穴）
+- CV5（孕期慎用穴）
+- CV6（孕期慎用穴）
+- CV7（孕期慎用穴）
+- GB1（眼部）
+- GB20（頸項）
+- GB21（頸項、孕期慎用穴）
+- GB22（胸背腰(氣胸/臟器)）
+- GB23（胸背腰(氣胸/臟器)）
+- GB24（胸背腰(氣胸/臟器)）
+- GB41（胸背腰(氣胸/臟器)）
+- GB42（胸背腰(氣胸/臟器)）
+- GV10（胸背腰(氣胸/臟器)）
+- GV11（胸背腰(氣胸/臟器)）
+- GV12（胸背腰(氣胸/臟器)）
+- GV13（胸背腰(氣胸/臟器)）
+- GV14（胸背腰(氣胸/臟器)）
+- GV15（頸項）
+- GV3（胸背腰(氣胸/臟器)）
+- GV4（胸背腰(氣胸/臟器)）
+- GV5（胸背腰(氣胸/臟器)）
+- GV9（胸背腰(氣胸/臟器)）
+- KI23（胸背腰(氣胸/臟器)）
+- KI24（胸背腰(氣胸/臟器)）
+- KI25（胸背腰(氣胸/臟器)）
+- KI26（胸背腰(氣胸/臟器)）
+- KI27（胸背腰(氣胸/臟器)）
+- LI17（頸項）
+- LI18（頸項）
+- LR14（胸背腰(氣胸/臟器)）
+- LR2（胸背腰(氣胸/臟器)）
+- LU1（胸背腰(氣胸/臟器)）
+- LU2（胸背腰(氣胸/臟器)）
+- SI14（胸背腰(氣胸/臟器)）
+- SI16（頸項）
+- SI17（頸項）
+- SP17（胸背腰(氣胸/臟器)）
+- SP20（胸背腰(氣胸/臟器)）
+- SP4（孕期慎用穴）
+- SP6（孕期慎用穴）
+- ST10（頸項）
+- ST13（胸背腰(氣胸/臟器)）
+- ST14（胸背腰(氣胸/臟器)）
+- ST15（胸背腰(氣胸/臟器)）
+- ST16（胸背腰(氣胸/臟器)）
+- ST18（胸背腰(氣胸/臟器)）
+- ST25（孕期慎用穴）
+- TE16（頸項）
+- TE2（胸背腰(氣胸/臟器)）
+- TE23（眼部）
+- TE3（胸背腰(氣胸/臟器)）
+
+## §F 定位地標重疊低（73 筆 — 第二優先）
+
+- **BL2** 現有:「眉頭凹陷處，眶上切跡附近。」/ CloudTCM:「面部眉頭陷中，當眶上切跡處」
+- **BL27** 現有:「骶部，第 1 骶後孔平，正中骶嵴旁開 1.5 寸。」/ CloudTCM:「位於骶部，當骶正中嵴旁1.5寸，平第一骶後孔。」
+- **BL29** 現有:「骶部，第 3 骶後孔平，正中骶嵴旁開 1.5 寸。」/ CloudTCM:「位於骶部，當骶正中嵴旁1.5寸，平第三骶後孔。」
+- **BL3** 現有:「頭部，前髮際上 0.5 寸，神庭旁開 1.5 寸。」/ CloudTCM:「位於人體的頭部，當攢竹穴直上入髮際0.5寸，神庭穴與曲差穴連線之間。攢竹直上入前髮際5分處」
+- **BL31** 現有:「骶部，第 1 骶後孔中。」/ CloudTCM:「骶部後正中線與髂後上棘間凹陷處，適對第一骶後孔」
+- **BL32** 現有:「第 2 骶後孔處。」/ CloudTCM:「骶部，髂後上棘內下方1寸許，適對第二骶後孔凹陷處」
+- **BL33** 現有:「骶部，第 3 骶後孔中。」/ CloudTCM:「位於骶部，當次髎下內方，適對第3骶後孔處。」
+- **BL34** 現有:「骶部，第 4 骶後孔中。」/ CloudTCM:「位於骶部，當中髎下內方，適對第4骶後孔處。」
+- **BL37** 現有:「大腿後側，承扶與委中連線上，承扶下 6 寸。」/ CloudTCM:「大腿後面，臀下橫紋中點（承扶）下6寸，股二頭肌與半腱肌之間凹陷處，當承扶與委中的連線上。」
+- **BL55** 現有:「小腿後側，委中下 2 寸，腓腸肌兩肌腹之間。」/ CloudTCM:「小腿後面，膕橫紋正中（委中）下2寸」
+- **BL58** 現有:「小腿後外側，崑崙上 7 寸，腓腸肌外側下緣。」/ CloudTCM:「小腿後面，外踝後（崑崙）直上7寸，當承山外下方1寸凹陷處」
+- **BL59** 現有:「小腿後外側，崑崙上 3 寸。」/ CloudTCM:「小腿後面，外踝後（崑崙）直上3寸凹陷處」
+- **BL61** 現有:「???????????? BL60 ?????????????」/ CloudTCM:「足外側部，外踝後下方，崑崙直下2寸，跟部外側面赤白肉際處」
+- **BL67** 現有:「??????????? 0.1 ???」/ CloudTCM:「足小趾末節外側，距趾甲角1分處」
+- **BL7** 現有:「頭部，前髮際上 4 寸，前正中線旁開 1.5 寸。」/ CloudTCM:「在頭部，當前發際正中直上4寸，旁開1.5寸。」
+- **CV8** 現有:「腹中部，臍中央。」/ CloudTCM:「臍窩中央」
+- **GB10** 現有:「頭部，耳後乳突的後上方，天衝（GB9）與完骨（GB12）弧形連線的上 1/3 與下 2/3 交點處。」/ CloudTCM:「耳根上緣向後入髮際橫量1寸」
+- **GB14** 現有:「頭部，瞳孔直上，眉上 1 寸。」/ CloudTCM:「前額部，瞳孔直上，眉上一寸凹陷處」
+- **GB28** 現有:「下腹部，髂前上棘的前下方 0.5 寸（五樞前下）。」/ CloudTCM:「五樞穴前下方0.5寸」
+- **GB3** 現有:「頭部，顴弓上緣中央凹陷中（下關 ST7 直上）。」/ CloudTCM:「下關穴直上，顴弓上緣」
+- **GB30** 現有:「股骨大轉子與骶管裂孔連線外 1/3 與內 2/3 交點附近。」/ CloudTCM:「臀部，股骨大轉子後上方凹陷處」
+- **GB4** 現有:「頭部，頭維（ST8）至曲鬢（GB7）弧形連線的上 1/4 與下 3/4 交點處。」/ CloudTCM:「頭維穴與曲鬢穴弧形連線的上1／4與下3／4交界處」
+- **GB5** 現有:「頭部，頭維（ST8）至曲鬢（GB7）弧形連線的中點處。」/ CloudTCM:「頭維穴與曲鬢穴弧形連線的中點」
+- **GB6** 現有:「頭部，頭維（ST8）至曲鬢（GB7）弧形連線的上 3/4 與下 1/4 交點處。」/ CloudTCM:「頭維穴與曲鬢穴弧形連線的下1／4與上3／4交界處」
+- **GV15** 現有:「頸後區，後髮際正中直上 0.5 寸，第 2 頸椎棘突上際凹陷中。」/ CloudTCM:「正坐，頭微前傾，後正中線上，入髮際上0.5寸」
+- **GV16** 現有:「頸後區，後髮際正中直上 1 寸，枕外隆凸直下，兩側斜方肌之間凹陷中。」/ CloudTCM:「正坐，頭微前傾，後正中線上，入髮際上1寸」
+- **GV18** 現有:「頭部，後髮際正中直上 4 寸（腦戶上 1.5 寸）。」/ CloudTCM:「腦戶穴直上1.5寸；或當風府穴與百會穴連線的中點處」
+- **GV19** 現有:「頭部，百會（GV20）後 1.5 寸。」/ CloudTCM:「強間穴直上1.5寸；或百會穴直後1.5寸」
+- **GV2** 現有:「骶區，正對骶管裂孔，後正中線上。」/ CloudTCM:「正當骶管裂孔處」
+- **GV21** 現有:「頭部，百會（GV20）前 1.5 寸（前髮際正中直上 3.5 寸）。」/ CloudTCM:「百會穴前1.5寸；或額前部髮際正中直上3.5寸處」
+- **GV23** 現有:「頭部，前髮際正中直上 1 寸。」/ CloudTCM:「囟會穴前1寸；或額前部髮際正中直上1寸」
+- **GV24** 現有:「頭部，前髮際正中直上 0.5 寸。」/ CloudTCM:「額前部髮際正中直上0.5寸」
+- **GV25** 現有:「面部，鼻尖正中央。」/ CloudTCM:「鼻尖正中」
+- **GV26** 現有:「人中溝上 1/3 與中 1/3 交點。」/ CloudTCM:「在人中溝的上1／3與下2／3交界處」
+- **GV27** 現有:「面部，上唇結節的中點（上唇尖端，皮膚與唇紅移行處）。」/ CloudTCM:「上唇正中的尖端，紅唇與皮膚交接處」
+- **GV28** 現有:「口腔內，上唇繫帶與上齒齦的相接處。」/ CloudTCM:「上唇繫帶與齒齦連接處」
+- **HT1** 現有:「腋窩中央，腋動脈搏動處。」/ CloudTCM:「腋窩頂點，腋動脈搏動處，舉臂開腋取之」
+- **HT9** 現有:「小指末節橈側，指甲根角旁約 0.1 寸。」/ CloudTCM:「手小指末節橈側，距指甲角1分處」
+- **KI1** 現有:「足底，屈趾時足心前部凹陷處，約在足底前 1/3 與後 2/3 交界附近。」/ CloudTCM:「足底部，卷足時足前部凹陷處」
+- **KI16** 現有:「腹部，臍中旁開 0.5 寸。」/ CloudTCM:「臍旁0.5寸」
+- **KI9** 現有:「太谿上 5 寸，腓腸肌內側肌腹下方。」/ CloudTCM:「小腿內側面，內踝尖上5寸」
+- **LI1** 現有:「食指橈側，距指甲角約 0.1 寸。」/ CloudTCM:「食指橈側，指甲角後一分許」
+- **LI10** 現有:「前臂背橈側，曲池 LI11 下約 2 寸，陽谿 LI5 與曲池 LI11 連線上。」/ CloudTCM:「前臂背面橈側，肘橫紋下2寸處，當陽溪與曲池連線上，曲池下2寸」
+- **LI2** 現有:「食指橈側，第 2 掌指關節前下方赤白肉際處。」/ CloudTCM:「微握拳,當第二掌骨關節前橈側赤白肉際中」
+- **LI6** 現有:「前臂背橈側，陽谿 LI5 與曲池 LI11 連線上，腕橫紋上約 3 寸。」/ CloudTCM:「側腕屈肘，在陽谿與曲池的連線上，陽谿上三寸處」
+- **LI7** 現有:「前臂背橈側，陽谿 LI5 與曲池 LI11 連線上，腕橫紋上約 5 寸。」/ CloudTCM:「側腕屈肘，在陽谿與曲池的連線上，陽谿上五寸處」
+- **LI8** 現有:「前臂背橈側，曲池 LI11 下約 4 寸，陽谿 LI5 與曲池 LI11 連線上。」/ CloudTCM:「在陽谿與曲池的連線上，曲池下四寸處」
+- **LI9** 現有:「前臂背橈側，曲池 LI11 下約 3 寸，陽谿 LI5 與曲池 LI11 連線上。」/ CloudTCM:「在陽谿與曲池的連線上，曲池下三寸處」
+- **LR11** 現有:「大腿內側，氣衝（ST30）直下 2 寸。」/ CloudTCM:「大腿內側根部，氣衝直下二寸，當恥骨結節下方，長收肌外緣凹陷處」
+- **LR4** 現有:「內踝前 1 寸，脛骨前肌腱內側緣凹陷中（商丘與解溪連線之間）。」/ CloudTCM:「內踝前兩筋之中」
+- **PC9** 現有:「中指末端最高點（中指尖端中央）。」/ CloudTCM:「手中指末節尖端中央，距指甲游離緣約1分許」
+- **SI1** 現有:「小指末節尺側，指甲根角旁約 0.1 寸。」/ CloudTCM:「小指末節尺側，距指甲角1分處」
+- **SI2** 現有:「手尺側，微握拳，第 5 掌指關節前方赤白肉際處。」/ CloudTCM:「小指尺側，小指本節（第5掌指關節）前方赤白肉際處」
+- **SI3** 現有:「握拳時，第 5 掌指關節尺側後方赤白肉際處。」/ CloudTCM:「微握拳，向掌側合谷方向直刺0.5～1寸」
+- **SI9** 現有:「肩關節後下方，臂內收時腋後紋頭上 1 寸。」/ CloudTCM:「臂內收，腋後紋頭上l寸」
+- **SP8** 現有:「小腿內側，陰陵泉下 3 寸，脛骨內側緣後方。」/ CloudTCM:「小腿內側，陰陵泉下3寸，當陰陵泉與內踝尖的連線上」
+- **ST17** 現有:「乳頭中央。」/ CloudTCM:「胸部，乳頭正中」
+- **ST2** 現有:「目正視，瞳孔直下，眶下孔凹陷處。」/ CloudTCM:「在面部，瞳孔直下，當眶下孔凹陷處」
+- **ST25** 現有:「臍中旁開 2 寸。」/ CloudTCM:「腹中部，臍中旁2寸，腹直肌中。」
+- **ST32** 現有:「大腿前面，髕底外側端上 6 寸，股直肌上。」/ CloudTCM:「大腿前面，髂前上棘與髕底外側端的連線上，髕底上6寸處」
+- **ST33** 現有:「大腿前面，髕底外側端上 3 寸，股直肌上。」/ CloudTCM:「大腿前面，髂前上棘與髕底外側端連線上，髕底上3寸處」
+- **ST34** 現有:「大腿前外側，髕底外側端上 2 寸。」/ CloudTCM:「大腿前面，屈膝，髂前上棘與髕底外側端的連線上，髕底上2寸處」
+- **ST4** 現有:「口角旁開約 0.4 寸。」/ CloudTCM:「在面部，口角外側，上直對瞳孔」
+- **ST40** 現有:「外踝尖上 8 寸，脛骨前嵴外約 2 橫指處。」/ CloudTCM:「小腿前外側，外踝尖上8寸」
+- **ST42** 現有:「足背最高處，足背動脈搏動處附近。」/ CloudTCM:「足背最高處，拇長伸肌腱與趾長伸肌腱之間，足背動脈搏動處」
+- **ST45** 現有:「第 2 趾外側，距趾甲角約 0.1 寸。」/ CloudTCM:「足二趾之端」
+- **ST7** 現有:「顴弓下緣，下頜骨髁突前方凹陷處，閉口取穴。」/ CloudTCM:「在面部耳前方，當顴弓與下頜切跡所形成的凹陷中」
+- **ST8** 現有:「額角髮際上約 0.5 寸，頭正中線旁約 4.5 寸。」/ CloudTCM:「在頭側部，當額角發際上0.5寸，頭正中線旁4.5寸」
+- **TE1** 現有:「無名指末節尺側，指甲角旁開 0.1 寸。」/ CloudTCM:「手環指末節尺側，距指甲角1分處」
+- **TE11** 現有:「臂後區，肘尖上 2 寸（天井上 1 寸）。」/ CloudTCM:「屈肘，天井穴上1寸」
+- **TE13** 現有:「臂後區，肩峰角下 3 寸，三角肌後下緣。」/ CloudTCM:「上臂伸側面，肘尖與肩髎的連線上，肩髎下三寸」
+- **TE18** 現有:「耳後乳突中央，角孫（TE20）至翳風（TE17）沿耳輪弧形連線的下 1/3 與上 2/3 交點。」/ CloudTCM:「耳後，當翳風穴與角孫穴沿耳輪連線的下1／3與上2／3交界處」
+- **TE19** 現有:「耳後，角孫（TE20）至翳風（TE17）弧形連線的上 1/3 與下 2/3 交點。」/ CloudTCM:「耳後，當翳風穴與角孫穴沿耳輪連線的上1／3與下2／3交界處」
+
+---
+
+註:本文件是「事實衝突」佇列(兩邊內容實際打架的項目)。區域式的安全普查工作表
+(107 個高風險區穴位)見 docs/CLOUDTCM_REVIEW_BATCH_A1_CRITICAL_SAFETY.md(Codex 產出),
+兩者互補:先裁決本檔 §A/§B,再用 Batch A1 抽查。
