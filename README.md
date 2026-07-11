@@ -42,6 +42,7 @@ It will:
 3. Run AcuTing validation:
    - `app.js` syntax check.
    - `scripts/validate-interactions.js` interaction contract audit.
+   - `scripts/validate-encoding.js` UTF-8 / mojibake data guard.
 4. Run `git add -A`.
 5. Create a commit.
 6. Push to GitHub.

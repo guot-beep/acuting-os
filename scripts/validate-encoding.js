@@ -1,0 +1,148 @@
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.resolve(__dirname, "..");
+const DATA_ROOT = path.join(ROOT, "data");
+const CJK_RE = /[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/;
+const REPLACEMENT_RE = /\uFFFD|ï¿½/;
+const QUESTION_ONLY_RE = /^\?{2,}$/;
+const QUESTION_DAMAGE_RE = /\?{3,}/;
+const CHINESE_FIELD_RE = /(^|_)(zh|chinese)$/i;
+
+function listJsonFiles(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...listJsonFiles(fullPath));
+    } else if (entry.isFile() && entry.name.endsWith(".json")) {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+function jsonPath(parentPath, key) {
+  if (typeof key === "number") return `${parentPath}[${key}]`;
+  if (/^[A-Za-z_$][A-Za-z0-9_$]*$/.test(key)) return `${parentPath}.${key}`;
+  return `${parentPath}[${JSON.stringify(key)}]`;
+}
+
+function isChineseField(key) {
+  return key === "nameZh" || key === "chinese" || CHINESE_FIELD_RE.test(key);
+}
+
+function inspectValue(value, context, issues) {
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (QUESTION_ONLY_RE.test(trimmed)) {
+      issues.push({
+        type: "question_mark_only",
+        file: context.file,
+        path: context.path,
+        value
+      });
+    } else if (QUESTION_DAMAGE_RE.test(trimmed)) {
+      issues.push({
+        type: "question_mark_damage",
+        file: context.file,
+        path: context.path,
+        value
+      });
+    }
+
+    if (REPLACEMENT_RE.test(value)) {
+      issues.push({
+        type: "replacement_character",
+        file: context.file,
+        path: context.path,
+        value
+      });
+    }
+
+    if (context.key && isChineseField(context.key) && trimmed.length > 3 && !CJK_RE.test(trimmed)) {
+      issues.push({
+        type: "chinese_field_without_cjk",
+        file: context.file,
+        path: context.path,
+        value
+      });
+    }
+    return;
+  }
+
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => {
+      inspectValue(item, {
+        file: context.file,
+        path: jsonPath(context.path, index),
+        key: context.key
+      }, issues);
+    });
+    return;
+  }
+
+  if (value && typeof value === "object") {
+    for (const [key, item] of Object.entries(value)) {
+      inspectValue(item, {
+        file: context.file,
+        path: jsonPath(context.path, key),
+        key
+      }, issues);
+    }
+  }
+}
+
+function main() {
+  const issues = [];
+  const files = listJsonFiles(DATA_ROOT);
+  const summaryOnly = process.argv.includes("--summary-only");
+
+  for (const fullPath of files) {
+    const relativePath = path.relative(ROOT, fullPath).replace(/\\/g, "/");
+    let data;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf8"));
+    } catch (error) {
+      issues.push({
+        type: "json_parse_error",
+        file: relativePath,
+        path: "$",
+        value: error.message
+      });
+      continue;
+    }
+
+    inspectValue(data, { file: relativePath, path: "$", key: "" }, issues);
+  }
+
+  const summary = {
+    files_checked: files.length,
+    issues: issues.length,
+    by_type: issues.reduce((counts, issue) => {
+      counts[issue.type] = (counts[issue.type] || 0) + 1;
+      return counts;
+    }, {}),
+    by_file: issues.reduce((counts, issue) => {
+      counts[issue.file] = (counts[issue.file] || 0) + 1;
+      return counts;
+    }, {})
+  };
+
+  if (issues.length > 0) {
+    console.error("Encoding validation failed.");
+    console.error(JSON.stringify(summary, null, 2));
+    if (!summaryOnly) {
+      issues.forEach((issue) => {
+        console.error(`${issue.file} ${issue.path} [${issue.type}]: ${JSON.stringify(issue.value)}`);
+      });
+    }
+    process.exit(1);
+  }
+
+  console.log("Encoding validation passed.");
+  console.log(JSON.stringify(summary, null, 2));
+}
+
+main();
