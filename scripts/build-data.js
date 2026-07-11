@@ -56,14 +56,16 @@ console.log(JSON.stringify(counts, null, 2));
 // ---- Knowledge bundle (formulas / conditions / sources / audit) ----------
 const knowledge = {
   formulas: JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/formulas.json"), "utf8")),
+  herbs: JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/herb_canon_shortlist.json"), "utf8")),
   conditions: JSON.parse(fs.readFileSync(path.join(ROOT, "data/pathology/conditions.json"), "utf8")),
   sources: JSON.parse(fs.readFileSync(path.join(ROOT, "data/sources/source_registry.json"), "utf8")),
   audit: JSON.parse(fs.readFileSync(path.join(ROOT, "data/audits/missing_report.json"), "utf8")),
 };
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}
-// Source of truth: data/herbs/formulas.json, data/pathology/conditions.json,
-//                  data/sources/source_registry.json, data/audits/missing_report.json
+// Source of truth: data/herbs/formulas.json, data/herbs/herb_canon_shortlist.json,
+//                  data/pathology/conditions.json, data/sources/source_registry.json,
+//                  data/audits/missing_report.json
 `;
 fs.writeFileSync(
   path.join(ROOT, "data/generated/knowledge_data.js"),
@@ -72,6 +74,7 @@ fs.writeFileSync(
 console.log("Built data/generated/knowledge_data.js");
 console.log(JSON.stringify({
   formulas: knowledge.formulas.records.length,
+  herbs: knowledge.herbs.records.length,
   conditions: knowledge.conditions.records.length,
   eastern: knowledge.conditions.eastern_diseases.length,
   patterns: knowledge.conditions.tcm_patterns.length,

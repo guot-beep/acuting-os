@@ -3903,6 +3903,20 @@ a { color: var(--accent-dark); }
   background: #fffdf8;
   border-color: #eadfcb;
 }
+.k-herb-card {
+  border-color: #dce6dc;
+}
+.k-link-chip {
+  background: #eef4ef;
+  border: 1px solid #dce6dc;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  display: inline-block;
+  font-size: 0.72rem;
+  margin: 0.12rem 0.15rem 0 0;
+  padding: 0.08rem 0.45rem;
+  white-space: nowrap;
+}
 @media (max-width: 760px) {
   .k-toolbar,
   .k-row {

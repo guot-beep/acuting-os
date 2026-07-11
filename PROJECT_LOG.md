@@ -23,6 +23,14 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-11 - B3 herbs Lookup wiring (Codex)
+
+Completed CODEX_TASK_QUEUE B3 as additive UI/data wiring. Added `data/herbs/herb_canon_shortlist.json` to `scripts/build-data.js`, so `data/generated/knowledge_data.js` now carries 202 draft herb records. Added a Lookup herbs section in `index.html`, and updated `js/knowledge.js` to render herb records with search, category filtering, draft status, channels, modern-use tags, safety flags, and related formula ID chips. Added small chip/card styling in `styles.css`.
+
+No herb content was source-checked or upgraded. Every herb record remains draft/source-review pending and is displayed as study reference only. Did not touch `data/acupoints/361.json`, `docs/CLOUDTCM_*`, or the encoding backlog.
+
+Validation: node --check build-data, node --check js/knowledge.js, build-data, validate-data, validate-interactions, validate-relations, validate-herbal-links, and validate-herb-canon PASS. validate-encoding still reports the known 798-item backlog and was not used as a blocker.
+
 ### 2026-07-11 - B2 formula merge applied + Lookup rendering (Codex)
 
 After Ting approved continuing directly from B1, applied the formula merge using `scripts/merge-formulas-preview.js --apply-approved`. `data/herbs/formulas.json` now has 115 records: the original 23 content-bearing drafts preserved plus 92 draft skeleton additions from `formula_canon_shortlist.json`. No records were upgraded to `source_checked`; skeletons are source-review pending. Ran `scripts/build-data.js`, updating `data/generated/knowledge_data.js` so Lookup receives 115 formula records.

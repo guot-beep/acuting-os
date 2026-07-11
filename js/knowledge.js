@@ -21,7 +21,7 @@
   }
 
   if (!K) {
-    ["formulaRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
+    ["formulaRecords", "herbRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
       const host = el(id);
       if (host) host.innerHTML = '<p class="k-missing">⚠ knowledge_data.js 未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
     });
@@ -153,6 +153,71 @@
   }
 
     }
+
+  // ---- Herbs ---------------------------------------------------------------
+  const herbHost = el("herbRecords");
+  if (herbHost) {
+    const herbs = (K.herbs && K.herbs.records) || [];
+    const herbCategory = (h) => h.category || "uncategorized";
+    const categories = [...new Set(herbs.map(herbCategory).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const renderHerbs = (list) => list.map((h) => {
+      const formulaLinks = (h.related_formulas || []).slice(0, 5);
+      const modernTags = (h.modern_use_tags || []).slice(0, 5);
+      const safetyFlags = (h.safety_flags || []).slice(0, 4);
+      return `
+        <article class="k-card k-herb-card">
+          <header>
+            <strong>${esc(h.name_zh)} <small>${esc(h.pinyin)}</small></strong>
+            ${statusPill(h.review_status)}
+          </header>
+          <p class="k-en">${esc(h.name_en)}</p>
+          <p class="k-meta">${esc(herbCategory(h))}</p>
+          <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
+          <p class="k-tags">${modernTags.map(tag).join("")}</p>
+          ${formulaLinks.length ? `<p class="k-meta">Related formulas: ${formulaLinks.map((id) => `<span class="k-link-chip">${esc(id)}</span>`).join(" ")}</p>` : ""}
+          ${safetyFlags.length ? `<p class="k-flags">Review: ${safetyFlags.map(esc).join(" Â· ")}</p>` : ""}
+          <p class="k-meta">draft - source review pending - study reference only</p>
+        </article>`;
+    }).join("");
+
+    herbHost.innerHTML = `
+      <div class="mini-heading">
+        <strong>Herb Records (${herbs.length})</strong>
+        <span>Source: data/herbs/herb_canon_shortlist.json Â· draft/source-review pending Â· study reference only.</span>
+      </div>
+      <div class="k-toolbar">
+        <input type="search" id="herbFilter" placeholder="Search herb, pinyin, category, tag, related formula..." class="k-filter" />
+        <select id="herbCategoryFilter" class="k-filter">
+          <option value="">All categories</option>
+          ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
+        </select>
+      </div>
+      <div class="k-grid" id="herbGrid">${renderHerbs(herbs)}</div>`;
+
+    const updateHerbGrid = () => {
+      const q = el("herbFilter").value.trim().toLowerCase();
+      const category = el("herbCategoryFilter").value;
+      const hit = herbs.filter((h) => {
+        const categoryHit = !category || herbCategory(h) === category;
+        const text = [
+          h.id,
+          h.name_zh,
+          h.name_en,
+          h.pinyin,
+          h.category,
+          ...(h.channels_entered || []),
+          ...(h.functions || []),
+          ...(h.related_formulas || []),
+          ...(h.safety_flags || []),
+          ...(h.modern_use_tags || [])
+        ].join(" ").toLowerCase();
+        return categoryHit && (!q || text.includes(q));
+      });
+      el("herbGrid").innerHTML = renderHerbs(hit) || '<p class="k-missing">No matching herbs.</p>';
+    };
+    el("herbFilter").addEventListener("input", updateHerbGrid);
+    el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
+  }
 
   // ---- Conditions ----------------------------------------------------------
   const condHost = el("conditionRecords");

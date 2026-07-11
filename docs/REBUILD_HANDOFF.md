@@ -1,3 +1,84 @@
+# REBUILD HANDOFF - Session 34 (2026-07-11, B3 herbs Lookup wiring)
+
+## 1. Goal
+Complete CODEX_TASK_QUEUE B3: make the existing 202-record herb canon shortlist visible/searchable in the Lookup workspace without filling new content or changing source status.
+
+## 2. Files changed
+- `scripts/build-data.js`
+- `data/generated/app_data.js`
+- `data/generated/knowledge_data.js`
+- `index.html`
+- `js/knowledge.js`
+- `styles.css`
+- `docs/VALIDATION_LOG.md`
+- `docs/REBUILD_HANDOFF.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Added `data/herbs/herb_canon_shortlist.json` to the generated knowledge bundle as `ACUTING_KNOWLEDGE.herbs`.
+- Added a Lookup Herbs / Materia Medica section.
+- Added herb rendering with:
+  - search by id, zh/en name, pinyin, category, channel, functions, modern tags, safety flags, and related formulas,
+  - category filter,
+  - draft/source-review pending status display,
+  - safety flag snippets,
+  - related formula ID chips.
+- Added small CSS for herb cards and related formula chips.
+
+## 4. Why this changed
+The 202 herb records already existed but were invisible in the app. This follows the current "wiring beats writing" rule: make draft content searchable before creating more content.
+
+## 5. Data content changes
+No herb content changed. No source status was upgraded.
+
+## 6. Source status / accuracy guardrail
+All herb records remain draft/source-review pending and are rendered as study reference only.
+
+## 7. Schema / field changes
+No source JSON schema changed. The generated knowledge bundle now includes `herbs`.
+
+## 8. Generated files / scripts
+- Ran `scripts/build-data.js`.
+- `data/generated/knowledge_data.js` now reports `herbs: 202`.
+- `data/generated/*` was refreshed by the build script only, not hand-edited.
+
+## 9. Protected areas
+Did not modify `app.js`, `js/router.js`, `styles.css` point-detail-mode, `data/acupoints/361.json`, `docs/CLOUDTCM_*`, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- `node --check scripts/build-data.js`: PASS
+- `node --check js/knowledge.js`: PASS
+- `scripts/build-data.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 798 known findings.
+
+## 11. Triage results
+- Herbs rendered: 202
+- Herb categories: 34
+- Related formula links in herb canon: 407
+- Safety flags in herb canon: 409
+
+## 12. Not completed
+No browser screenshot/manual visual QA yet. No herb source-checking. No encoding repair.
+
+## 13. Next reader should inspect
+Read:
+- `index.html` herb section
+- `js/knowledge.js` Herbs renderer
+- `data/generated/knowledge_data.js` generated `herbs` payload
+
+## 14. Next step
+Manual browser spot-check: open Lookup -> Herbs, search by pinyin/category/related formula, and confirm draft status is visible on every herb card. If accepted, commit this B3 batch.
+
+## 15. Risk
+Medium-low. Additive UI and generated data wiring only; no source data mutation. Main risk is visual density from 202 cards, mitigated by search/filter.
+
+---
+
 # REBUILD HANDOFF - Session 33 (2026-07-11, B2 formula merge + Lookup rendering)
 
 ## 1. Goal

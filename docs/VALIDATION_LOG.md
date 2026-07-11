@@ -1,5 +1,28 @@
 # Validation Log
 
+## 2026-07-11 -- B3 herbs Lookup wiring
+
+Scope:
+- Added `data/herbs/herb_canon_shortlist.json` to the generated knowledge bundle.
+- Added a Lookup herbs section for 202 draft Materia Medica records.
+- Added herb search, category filter, draft status display, safety flags, modern-use tags, and related formula ID chips.
+- Kept all herb records draft/source-review pending; no source status was upgraded.
+
+Commands:
+- `node --check scripts/build-data.js` -> PASS
+- `node --check js/knowledge.js` -> PASS
+- `node scripts/build-data.js` -> PASS (`knowledge_data.js` herbs: 202)
+- `node scripts/validate-data.js` -> PASS
+- `node scripts/validate-interactions.js` -> PASS
+- `node scripts/validate-relations.js` -> PASS
+- `node scripts/validate-herbal-links.js` -> PASS
+- `node scripts/validate-herb-canon.js` -> PASS
+- `node scripts/validate-encoding.js` -> expected backlog FAIL, 798 existing findings.
+
+Result:
+- Lookup now renders the 202-record herb draft canon.
+- `validate-encoding` remains an expected backlog failure and was not used as a blocker.
+
 ## 2026-07-11 -- B2 formula merge + Lookup rendering
 
 Scope:
