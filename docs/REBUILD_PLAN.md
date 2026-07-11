@@ -46,23 +46,39 @@ Never edit `data/generated/*` by hand. Never re-embed data into app.js.
 - See docs/REBUILD_HANDOFF.md for details.
 
 ### Phase 2 — Structure & real data wiring (Codex)
+
+Status updated 2026-07-08 (Claude audit). Per-item state:
+
 1. Unify acupoint schema: merge `data/acupoints/embedded/*.json` into
    `data/acupoints/361.json` as the single canonical acupoint file
    (see docs/DATA_MIGRATION_MAP.md; keep field-mapping notes in
    data/acupoints/MIGRATION_NOTES.md).
+   ✅ MERGE DONE 2026-07-03 (235 records, docs/361_MERGE_DIFF_SUMMARY.md).
+   ⬜ Runtime still reads embedded/*.json — adapter switch is Claude-owned.
 2. Move remaining small configs out of app.js: `standardChannelAudit`,
    `channelPrefixMeta`, `directoryRegionGroups`, `directoryTopics`,
    `earPointAnchors`, `earAnatomyLabelData`, `auricularZonePositions`
-   → data/ + build-data.js.
+   → data/ + build-data.js.  ⬜ NOT STARTED → docs/CODEX_TASK_QUEUE.md A4.
 3. Generate `data/tung/point_index.js` and `data/auricular/gb93_*.js` from their
    .json files inside build-data.js, then delete the hand-maintained .js copies
    (requires Ting's approval before deleting).
+   ⬜ NOT STARTED → docs/CODEX_TASK_QUEUE.md A3.
 4. Wire `data/herbs/formulas.json` (23 records) into formulaSection as a real
    searchable list; replace scaffold HTML with an honest empty/partial state.
-5. Wire `data/pathology/conditions.json` (6 records) into conditionGraph.
-6. Wire `data/sources/source_registry.json` (19 sources) into sourceSection.
-7. Quality workspace reads `data/audits/missing_report.json` live.
-8. Home dashboard: trim to search + module launcher + next-task card.
+   ✅ DONE 2026-07-02 (js/knowledge.js). Superseded by the formula
+   reconciliation plan (23 vs 115-record shortlist) → CODEX_TASK_QUEUE B1/B2.
+5. Wire `data/pathology/conditions.json` (6 records) into conditionGraph. ✅ DONE 2026-07-02.
+6. Wire `data/sources/source_registry.json` (19 sources) into sourceSection. ✅ DONE 2026-07-02.
+7. Quality workspace reads `data/audits/missing_report.json` live. ✅ DONE 2026-07-02 (auditFileStrip).
+8. Home dashboard: trim to search + module launcher + next-task card. ⬜ NOT STARTED.
+
+### Phase 2.5 — Content staging created outside this plan (Codex, 07-03→07-07)
+
+`data/herbs/formula_canon_shortlist.json` (115, 23 filled),
+`data/herbs/herb_canon_shortlist.json` (202, all draft-filled),
+relation/herb validators, `data/imports/` staging. None of it is wired into
+the UI yet. Standing decision (2026-07-08): no new draft-content files until
+existing ones render in the app — see docs/CODEX_TASK_QUEUE.md Track B.
 
 ### Phase 3 — Professional pages & public split (Codex, after Phase 2)
 1. Formula / condition detail pages (like point detail pages).

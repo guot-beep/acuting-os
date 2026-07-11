@@ -1,0 +1,27 @@
+{
+  "dataset": "Enrichment batch: LU + HT (worked example for the fill-empty-only workflow)",
+  "policy": "Model-knowledge drafts. Fill EMPTY fields only via scripts/apply-361-enrichment.js. Needling text is study reference, not operating instructions. All content pending source review against CloudTCM (D1-D3) and WHO SAPL.",
+  "created": "2026-07-09",
+  "records": [
+    {"code":"LU1","needling":"向外斜刺或平刺 0.5-0.8 寸；不可向內深刺 — 深部為肺臟，有氣胸風險。","location_en":"On the anterior chest wall, in the 1st intercostal space, 6 cun lateral to the anterior midline, 1 cun inferior to LU2.","functions_en":["Diffuses and downbears lung qi, stops cough and wheezing. Front-mu point of the lung."],"indications_en":["Cough","Asthma","Chest pain and oppression","Shoulder and back pain"]},
+    {"code":"LU2","needling":"向外斜刺 0.5-0.8 寸；不可向內深刺 — 深部為肺臟，有氣胸風險。"},
+    {"code":"LU3","needling":"直刺 0.5-1 寸。"},
+    {"code":"LU4","needling":"直刺 0.5-1 寸。"},
+    {"code":"LU5","needling":"直刺 0.8-1.2 寸，或點刺出血；避開肱動脈分支。","location_en":"On the cubital crease, in the depression lateral to the biceps brachii tendon.","functions_en":["Clears lung heat, downbears counterflow qi. He-sea and water point of the lung channel."],"indications_en":["Cough","Hemoptysis","Sore throat","Afternoon tidal fever","Elbow and arm spasm"]},
+    {"code":"LU6","needling":"直刺 0.5-1 寸。"},
+    {"code":"LU7","needling":"向肘部斜刺或平刺 0.5-0.8 寸。","location_en":"Proximal to the radial styloid process, 1.5 cun proximal to the wrist crease, between brachioradialis and abductor pollicis longus tendons.","functions_en":["Diffuses the lung, releases the exterior, benefits the head and neck. Luo-connecting point; confluent point of the Conception Vessel."],"indications_en":["Cough","Headache and neck stiffness","Facial paralysis","Wrist weakness and pain"]},
+    {"code":"LU8","needling":"避開橈動脈，直刺 0.1-0.3 寸。"},
+    {"code":"LU9","needling":"避開橈動脈，直刺 0.2-0.3 寸。","location_en":"At the radial end of the palmar wrist crease, in the depression between the radial styloid and the scaphoid, radial to the radial artery.","functions_en":["Supplements lung qi, transforms phlegm, promotes the vessels. Shu-stream, yuan-source point; hui-meeting of the vessels."],"indications_en":["Cough","Asthma","Weak pulse conditions","Wrist pain"]},
+    {"code":"LU10","needling":"直刺 0.5-0.8 寸。"},
+    {"code":"LU11","needling":"淺刺 0.1 寸，或三稜針點刺出血。"},
+    {"code":"HT1","needling":"避開腋動脈，直刺 0.3-0.5 寸；不作大幅提插。"},
+    {"code":"HT2","needling":"直刺 0.5-0.8 寸。"},
+    {"code":"HT3","needling":"直刺 0.5-1 寸。"},
+    {"code":"HT4","needling":"避開尺動脈與尺神經，直刺 0.3-0.5 寸。"},
+    {"code":"HT5","needling":"避開尺動脈與尺神經，直刺 0.3-0.5 寸。"},
+    {"code":"HT6","needling":"避開尺動脈，直刺 0.3-0.5 寸。"},
+    {"code":"HT7","needling":"避開尺動脈，直刺 0.3-0.5 寸。","location_en":"At the ulnar end of the palmar wrist crease, in the depression radial to the tendon of flexor carpi ulnaris, at the radial side of the pisiform bone.","functions_en":["Calms the heart and spirit. Shu-stream, earth and yuan-source point of the heart channel."],"indications_en":["Insomnia","Palpitations","Poor memory","Anxiety and mania","Cardiac region pain"]},
+    {"code":"HT8","needling":"直刺 0.3-0.5 寸；掌部針感較強。"},
+    {"code":"HT9","needling":"淺刺 0.1 寸，或點刺出血。"}
+  ]
+}

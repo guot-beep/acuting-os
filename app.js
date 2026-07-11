@@ -692,10 +692,10 @@ function chinesePointReference(point) {
   return "https://www.google.com/search?q=" + encodeURIComponent(q);
 }
 
-function cloudtcmImage(point) {
+function cloudtcmPageUrl(point) {
   const entry = cloudtcmEntry(point);
-  // Thumbnails (acupoint-s) are the confirmed-existing images used by CloudTCM.
-  return entry?.img ? "https://media.cloudtcm.uk/acupoint-s/" + entry.img + ".jpg" : "";
+  // Full point page — thumbnails (media.cloudtcm.uk/acupoint-s) are too small to study from.
+  return entry?.id ? "https://cloudtcm.com/acupoint/" + entry.id : "";
 }
 
 function pointHash(code) {
@@ -773,11 +773,13 @@ function enrichPoint(point) {
   const GENERIC_CLOUDTCM = "https://cloudtcm.com/acupoint";
   const chineseRef = chinesePointReference(point);
   const fixedSources = sources.map((u) => (u === GENERIC_CLOUDTCM ? chineseRef : u));
-  const cloudImg = cloudtcmImage(point);
+  const cloudtcmPage = cloudtcmPageUrl(point);
   const fixedVisualLinks = visualLinks.map((link) => {
-    if (link.url !== GENERIC_CLOUDTCM) return link;
-    // Prefer the actual point image; fall back to the point page reference.
-    return { ...link, url: cloudImg || chineseRef };
+    // Link to the full CloudTCM point page (Ting: thumbnails are too small);
+    // also upgrade any previously-stored thumbnail URLs to the page.
+    if (link.url === GENERIC_CLOUDTCM) return { ...link, url: cloudtcmPage || chineseRef };
+    if (link.url.startsWith("https://media.cloudtcm.uk/")) return { ...link, url: cloudtcmPage || chineseRef };
+    return link;
   });
   return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources: fixedSources, visualLinks: fixedVisualLinks };
 }
@@ -1080,8 +1082,8 @@ function getDataQualityAudit() {
   const visualLinked = points.filter((point) => normalizeVisualLinks(point.visualLinks || []).length > 0).length;
   return {
     total: points.length,
-    reviewedStandard: standard.filter((point) => point.reviewStatus !== "placeholder").length,
-    placeholderStandard: standard.filter((point) => point.reviewStatus === "placeholder").length,
+    reviewedStandard: standard.filter((point) => !isPlaceholderStandardRecord(point)).length,
+    placeholderStandard: standard.filter(isPlaceholderStandardRecord).length,
     tungIndex: points.filter((point) => String(point.meridian || "").includes("Master Tung")).length,
     auricular: points.filter(isAuricularPoint).length,
     auricularGb93Indexed: auricularGb93Records.length,
@@ -1121,8 +1123,16 @@ function isStandardChannelPoint(point) {
     && !String(point.code || "").startsWith("EX-");
 }
 
+function isPlaceholderStandardRecord(point) {
+  // mergeByCode spreads real records over placeholders, but real records carry
+  // no reviewStatus field, so the placeholder's reviewStatus survives the merge.
+  // A record is only a true placeholder when its content is still the stub
+  // (nameZh was seeded with the point code itself).
+  return point.reviewStatus === "placeholder" && point.nameZh === point.code;
+}
+
 function isReviewedStandardChannelPoint(point) {
-  return isStandardChannelPoint(point) && point.reviewStatus !== "placeholder";
+  return isStandardChannelPoint(point) && !isPlaceholderStandardRecord(point);
 }
 
 function hydrateFilters() {
@@ -2194,7 +2204,9 @@ function renderCards(filtered) {
 }
 
 function pointTitle(point) {
-  return contentMode === "english" ? `${point.nameEn} (${point.code})` : `${point.nameZh} ${point.nameEn}`;
+  // 中文名永遠在最前；英文名跟在後面（代碼另有 code-pill 顯示）。
+  if (!point.nameZh || point.nameZh === point.nameEn) return `${point.nameEn}`;
+  return `${point.nameZh} ${point.nameEn}`;
 }
 
 function pointSubtitle(point) {
@@ -2221,19 +2233,19 @@ function renderDetail(point) {
     <nav class="point-breadcrumb" aria-label="breadcrumb">${escapeHtml(breadcrumbText(point))}</nav>
     <div class="point-page-toolbar">
       <button class="ghost" type="button" id="backToDirectoryBtn">${contentMode === "english" ? "Back to acupoint list" : "返回穴位列表"}</button>
-      <span>${escapeHtml(point.code)} ${escapeHtml(contentMode === "english" ? point.nameEn : point.nameZh)}</span>
+      <span>${escapeHtml(point.code)} ${escapeHtml(point.nameZh || point.nameEn)}</span>
     </div>
     <div class="point-study-layout">
       <main class="point-article">
         <section class="point-hero-card">
-          <div class="hero-watermark">${escapeHtml((contentMode === "english" ? point.nameEn : point.nameZh).slice(0, 1))}</div>
+          <div class="hero-watermark">${escapeHtml((point.nameZh || point.nameEn).slice(0, 1))}</div>
           <div class="point-hero-top">
             <div>
               <div class="hero-badges">
                 <span>${escapeHtml(contentMode === "english" ? shortMeridianEn(point) : shortMeridian(point))}</span>
                 <span>${escapeHtml(point.code)}</span>
               </div>
-              <h2>${escapeHtml(contentMode === "english" ? point.nameEn : point.nameZh)}</h2>
+              <h2>${escapeHtml(point.nameZh || point.nameEn)}</h2>
               <p>${escapeHtml(heroSubtitle(point))}</p>
             </div>
             <div class="hero-actions">
@@ -2329,7 +2341,7 @@ function copyPointLink(point) {
 function studySection(title, body, tone = "book") {
   return `
     <section class="study-section ${escapeAttribute(tone)}">
-      <h3>${escapeHtml(sectionIcon(tone))} ${escapeHtml(title)}</h3>
+      <h3>${escapeHtml(title)}</h3>
       <div class="study-copy">${formatStudyText(body)}</div>
     </section>
   `;
@@ -2341,7 +2353,7 @@ function visualLinksSection(point) {
   if (!links.length) return studySection(title, contentMode === "english" ? "No visual reference links yet." : "尚未建立外部圖像連結。", "visual");
   return `
     <section class="study-section visual">
-      <h3>${escapeHtml(sectionIcon("visual"))} ${escapeHtml(title)}</h3>
+      <h3>${escapeHtml(title)}</h3>
       <div class="visual-link-grid">
         ${links.map((link) => `
           <a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">
@@ -2362,7 +2374,7 @@ function pairingSection(pairings) {
   if (!pairings.length) return studySection(title, contentMode === "english" ? "Pairings are pending professional source review." : "待依臨床來源補入常用配穴、功效與適應證。", "link");
   return `
     <section class="study-section link">
-      <h3>${escapeHtml(sectionIcon("link"))} ${escapeHtml(title)}</h3>
+      <h3>${escapeHtml(title)}</h3>
       <div class="pairing-table" role="table" aria-label="${escapeAttribute(title)}">
         <div class="pairing-row head" role="row"><span>${contentMode === "english" ? "Point" : "配穴"}</span><span>${contentMode === "english" ? "Possible Use" : "可能用途"}</span><span>${contentMode === "english" ? "Action" : "動作"}</span></div>
         ${pairings.map((item) => `
@@ -2407,8 +2419,10 @@ function breadcrumbText(point) {
 }
 
 function heroSubtitle(point) {
-  if (contentMode === "english") return `${point.pinyin} · ${point.code} · ${primaryFunctionEn(point)}`;
-  return `${point.pinyin} · ${point.nameEn} · ${primaryFunction(point)}`;
+  // 中文大標題在上（renderDetail 的 h2）；副標題固定放拼音、英文名、國際代碼。
+  const base = [point.pinyin, point.nameEn, point.code].filter(Boolean).join(" · ");
+  const fn = contentMode === "english" ? primaryFunctionEn(point) : primaryFunction(point);
+  return fn && !isPendingContent(fn) ? `${base} · ${fn}` : base;
 }
 
 function externalPointLinks(point) {
@@ -2561,31 +2575,6 @@ function sharedPatternLabel(point, item) {
   const source = contentMode === "english" ? (item.patternsEn || []) : (item.patterns || []);
   const shared = source.find((pattern) => pointPatterns.has(String(pattern).toLowerCase()));
   return shared || (contentMode === "english" ? "Similar indications" : "同經/相近主治");
-}
-
-function sectionIcon(tone) {
-  const icons = contentMode === "english" ? {
-    book: "Overview",
-    location: "Location",
-    target: "Indications",
-    link: "Pairings",
-    visual: "Images",
-    needle: "Needling",
-    research: "Evidence",
-    warning: "Cautions",
-    sources: "Sources"
-  } : {
-    book: "基本介紹",
-    location: "取穴方法",
-    target: "主治病症",
-    link: "常用配穴",
-    visual: "圖像參考",
-    needle: "針刺與艾灸",
-    research: "現代研究",
-    warning: "注意事項",
-    sources: "參考來源"
-  };
-  return icons[tone] || "內容";
 }
 
 function formatStudyText(text) {
@@ -2895,6 +2884,63 @@ function renderCaseTags(item) {
   return tags.length ? `<div class="case-tags">${tags.map((tag) => `<span class="case-tag">${escapeHtml(tag)}</span>`).join("")}</div>` : "";
 }
 
+// --- SOAP note keyword linking: connect 用穴/方藥 free text to the knowledge base ---
+
+function buildPointTermIndex() {
+  const index = new Map();
+  points.forEach((point) => {
+    if (point.code) index.set(String(point.code).toUpperCase(), point.code);
+    if (point.nameZh && point.nameZh !== point.code) index.set(point.nameZh, point.code);
+    if (point.pinyin && point.pinyin !== point.code) index.set(String(point.pinyin).toLowerCase(), point.code);
+  });
+  return index;
+}
+
+function buildFormulaTermIndex() {
+  const index = new Map();
+  const records = globalThis.ACUTING_KNOWLEDGE?.formulas?.records || [];
+  records.forEach((formula) => {
+    if (formula.name_zh) index.set(formula.name_zh, formula.id);
+    if (formula.pinyin) index.set(String(formula.pinyin).toLowerCase(), formula.id);
+    if (formula.name_en) index.set(String(formula.name_en).toLowerCase(), formula.id);
+  });
+  return index;
+}
+
+function linkifyNoteTerms(value, separators, resolveTerm, fallback) {
+  const text = String(value || "").trim();
+  if (!text) return escapeHtml(fallback);
+  return text.split(separators).map((part, partIndex) => {
+    const isSeparator = partIndex % 2 === 1;
+    const term = part.trim();
+    if (isSeparator || !term) return escapeHtml(part);
+    const link = resolveTerm(term);
+    if (!link) return escapeHtml(part);
+    const leading = part.slice(0, part.indexOf(term[0]));
+    const trailing = part.slice(leading.length + term.length);
+    return `${escapeHtml(leading)}<a class="note-term-link" href="${escapeAttribute(link)}">${escapeHtml(term)}</a>${escapeHtml(trailing)}`;
+  }).join("");
+}
+
+function linkifyPointsUsed(value, fallback = "未填") {
+  // Point lists split on commas or any whitespace ("LI4 LR3 太陽").
+  const index = buildPointTermIndex();
+  return linkifyNoteTerms(value, /([,，、;；\/\n\s]+)/, (term) => {
+    const code = index.get(term.toUpperCase()) || index.get(term) || index.get(term.toLowerCase());
+    return code ? `#point/${encodeURIComponent(code)}` : "";
+  }, fallback);
+}
+
+function linkifyFormulaHerbs(value, fallback = "未填") {
+  // Formula names keep single spaces inside one name ("Gui Zhi Tang"),
+  // so only stronger separators split them.
+  const index = buildFormulaTermIndex();
+  return linkifyNoteTerms(value, /([,，、;；\/\n]+|\s{2,})/, (term) => {
+    const id = index.get(term) || index.get(term.toLowerCase());
+    return id ? "#formulaSection" : "";
+  }, fallback);
+}
+
 function renderSoapNoteCard(note) {
   const title = note.visitNumber ? `Visit ${note.visitNumber}` : "SOAP Note";
   const linkedRecords = [
@@ -2931,9 +2977,9 @@ function renderSoapNoteCard(note) {
         <div><small>治法 Tx principle</small><span>${escapeHtml(note.treatmentPrinciple || "—")}</span></div>
       </div>` : ""}
       <div class="clinical-mini-grid">
-        <div><small>用穴 Points</small><span>${escapeHtml(note.pointsUsed || "未填")}</span></div>
+        <div><small>用穴 Points</small><span>${linkifyPointsUsed(note.pointsUsed)}</span></div>
         <div><small>手法 Modalities</small><span>${escapeHtml([note.technique, note.modalities].filter(Boolean).join(" · ") || "未填")}</span></div>
-        <div><small>方藥 Formula / Herbs</small><span>${escapeHtml(note.formulaHerbs || "未填")}</span></div>
+        <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs)}</span></div>
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
       </div>

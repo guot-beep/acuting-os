@@ -23,6 +23,299 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-09 — Codex D5 verified + merged; 361-point data layer COMPLETE (Claude)
+
+Codex pushed D5 (fba37ac) onto the OLD main, so his 361.json had only 235
+records — a plain merge would have lost the 126 new points. Resolution:
+kept this branch's 361-record file and re-ran Codex's five batch files
+(bl/ki/sp/si/final_tail) through apply-361-enrichment.js. Result: 255
+fields filled across 150 records; needling / location_en / functions_en
+gaps are now ZERO across all 361 records. Spot-check BL13 肺俞 shows the
+required pneumothorax wording. All validators PASS. Merge commit bad8beb
+pushed to the claude/acuting-os-rebuild-analysis-u0e82n branch (PR #1).
+
+IMPORTANT for Ting/Codex: main is now BEHIND PR #1 and Codex's local main
+is diverged. Do NOT let Codex keep committing to main — next steps:
+1. Ting merges PR #1 on GitHub (it contains everything: 361 complete layer,
+   all fixes, Codex's D5 via re-apply).
+2. On the local machine: git checkout main && git pull (gets the merged
+   result). Codex resumes from CODEX_TASK_QUEUE.md — safe next tasks:
+   D1+D2 (CloudTCM fetch, local machine only), A1 (encoding guard),
+   A2 (migration map sync), B1 (formula merge preview, gated).
+3. Claude-owned next task (needs a fresh session): RUNTIME ADAPTER — make
+   the app render data/acupoints/361.json so the completed layer becomes
+   visible point pages (home counter still reads the old embedded layer,
+   shows 235). Includes retiring the legacy deep-equal gate in
+   validate-data.js with Ting's approval. Everything needed is in this log,
+   CODEX_TASK_QUEUE.md, and 361_DRAFT_FILL_SUMMARY.md.
+
+
+### 2026-07-09 — CloudTCM links to full pages; enrichment pipeline + LU/HT batch (Claude)
+
+1. Visual links: Ting reported the CloudTCM thumbnails (media.cloudtcm.uk/
+   acupoint-s/*.jpg) are too small to study from (e.g. LU2 雲門). enrichPoint
+   now links visual references to the full point page
+   (cloudtcm.com/acupoint/{id}) for all 361 mapped points, and upgrades any
+   previously-stored thumbnail URLs to the page. cloudtcmImage() replaced by
+   cloudtcmPageUrl(). Browser-verified on LU2 → /acupoint/162.
+2. Point hero titles were made Chinese-first earlier today (h2 always 中文,
+   subtitle pinyin · English · code, both content modes).
+3. Field enrichment for existing records: new fill-empty-only pipeline
+   `scripts/apply-361-enrichment.js` (only needling/location_en/functions_en/
+   indications_en/contraindications; never overwrites non-empty values;
+   conflicts reported; appends to 361_DRAFT_FILL_SUMMARY.md). Worked example
+   batch `enrichment/lu_ht_enrichment.json` applied: 35 fields across 20
+   records (LU1-11, HT1-9 needling; LU1/5/7/9 + HT7 EN triples). All drafts
+   pending source review.
+4. Remaining ~150 records (BL 60, KI 27, SP 21, SI 19, small remainders)
+   handed to Codex as CODEX_TASK_QUEUE.md D5 with exact gap-count command,
+   file format, safety rules (胸背穴氣胸警告必寫), and batch order.
+
+Validation: app.js syntax + validate-data (681 deep-equal) +
+validate-interactions + validate-relations PASS after both changes.
+
+### 2026-07-08 — 361 layer complete: 126 missing points filled as model drafts (Claude)
+
+Scope: Ting approved fast content filling using the established source
+registry. Since the sandbox network policy blocks direct fetching of the
+registry sites (403 on acupoints.org / acupun.site / cloudtcm.com), Claude
+filled the 126 missing standard points as conservative model-knowledge
+drafts — the same accepted pattern as the herb (202) and formula (23)
+draft fills — for later cross-checking against CloudTCM (D1-D3) and WHO SAPL.
+
+Changes:
+- New `data/imports/model_draft/{pc_lr_te,cv_gv,gb}_draft.json`: 126 records
+  (PC8, LR12, TE22, CV20, GV25, GB39) with bilingual location, functions,
+  indications, needling reference, and contraindications. High-risk points
+  carry explicit danger notes (CV22 天突 trachea/aortic arch; GV15 啞門 +
+  GV16 風府 medulla; CV8 神闕 needling contraindicated; chest/flank points
+  pneumothorax warnings; GV1 rectum; LR12 femoral artery; LR13/GB24/GB25
+  organ depth).
+- New `scripts/insert-361-drafts.js`: add-only inserter (existing records
+  never modified; aborts on duplicate codes), auto-fills per-point sources
+  (acupoints.org + CloudTCM direct link from the point map), stamps every
+  record review_status "draft" / source_status
+  "model_draft_pending_source_review", writes docs/361_DRAFT_FILL_SUMMARY.md,
+  regenerates data/audits/missing_report.json.
+- Applied: data/acupoints/361.json 235 → 361 records (0 modified, 0 removed).
+- missing_report.json now 361/361 present; ran scripts/build-data.js so the
+  Quality audit strip shows 361/361 · 缺 0 (browser-verified).
+
+Known visible discrepancy (intentional, documented): the LIVE dashboard
+counters still show 235/361 because the app runtime reads
+data/acupoints/embedded/*.json, not 361.json. The audit strip (361/361)
+counts the canonical layer. The runtime adapter that makes 361.json the
+single rendered source is the next Claude-owned task — until then the 126
+new drafts are reviewable in 361.json but not yet visible as point pages.
+
+Validation:
+- insert dry-run before apply: 126 to insert, 0 skipped, no duplicates.
+- After apply: validate-data (681 deep-equal — runtime untouched),
+  validate-interactions, validate-relations, validate-herbal-links,
+  validate-herb-canon all PASS; 69 data JSON files parse OK.
+
+Accuracy guardrail: all 126 records are study drafts from model knowledge.
+None is source_checked. Verification path: CloudTCM import cross-check
+(CODEX_TASK_QUEUE D1-D3) → WHO SAPL location verification → per-record
+promotion. Needling fields are study reference only, not operating
+instructions.
+
+Next:
+1. (Claude) Runtime adapter: render 361.json content in the app so the new
+   drafts become usable point pages — includes retiring/adapting the legacy
+   deep-equal gate in validate-data.js with Ting's approval.
+2. (Codex/Ting machine) D1-D2 CloudTCM fetch + distill to cross-check the
+   Chinese layer of these drafts.
+
+### 2026-07-08 — Bulk content pipeline: CloudTCM 361-point import scripts (Claude)
+
+Scope: Ting asked how to distill point/formula page content from the
+recommended sources faster than channel-by-channel manual work, using public
+GitHub resources or APIs where possible.
+
+Research result:
+- No open dataset exists with study-grade bilingual 361-point TEXT content.
+  Public "acupoint datasets" (AcuSim, FAcupoint, MetaAcuPoint, TARA) are
+  computer-vision image-localization sets. The Mengqi97 dataset index has no
+  acupoint text source (confirms the 07-03 DATASET_SHORTLIST finding).
+- Formula-side open repos are network-pharmacology/KG projects, not
+  textbook-grade content. Public-domain classics (傷寒論 etc., via ctext.org
+  or the TCM-Ancient-Books corpus) can seed classical compositions later.
+- Fastest bulk channel is already half-built in this repo: CloudTCM's Next.js
+  data endpoint + the existing data/sources/cloudtcm_point_map.json
+  (361 code→id, Session 8).
+
+Changes:
+- New `scripts/fetch-cloudtcm-points.js`: resumable, rate-limited (600 ms)
+  fetcher for all 361 point pages → raw JSON under
+  data/imports/cloudtcm/points/ + fetch_manifest.json. Must run on Ting's
+  machine (cloud sandbox cannot reach cloudtcm.com). Probes buildId
+  automatically per the re-fetch notes in TCM_SOURCE_REGISTRY.md.
+- New `scripts/transform-cloudtcm-points.js`: distills raw JSON →
+  data/imports/cloudtcm/staging_points.json (every record draft /
+  cloudtcm_import_pending_review with source_url) + coverage_report.json.
+  Has --inspect mode because the exact pageProps shape is unknown until the
+  first real fetch; FIELD_CANDIDATES is designed to be tightened after
+  inspection.
+- docs/CODEX_TASK_QUEUE.md: new Track D (D1 fetch → D2 distill → D3 gated
+  merge into 361.json mirroring the proven merge-361-preview pattern → D4
+  formulas), with the license/usage rule stated: raw imports are private
+  study staging only, per-record source URLs kept, nothing goes public
+  without rewrite + WHO/authorized verification. English content has no
+  legal bulk source (Deadman/Bensky copyrighted); bulk speed applies to the
+  Chinese layer, English stays channel-by-channel against WHO SAPL.
+- Suggested execution order updated: D1→D2 first (biggest coverage win:
+  126 missing points gain Chinese content; 645 missing-needling and 138
+  missing-safety records get fill candidates).
+
+Validation: both new scripts pass node --check; transform script correctly
+refuses to run without raw files. No data or runtime files touched.
+
+Next: Ting runs D1 probe (`node scripts/fetch-cloudtcm-points.js --limit 5`)
+on her machine, or dispatches D1+D2 to Codex. D3 merge stays approval-gated.
+
+### 2026-07-08 — Claude UI scan + three fixes (dashboard count bug, heading dup, SOAP keyword links)
+
+Scope: full browser walkthrough (desktop 1280px + mobile 390px, headless
+Chromium screenshots of every workspace) followed by three approved fixes.
+
+Findings from the scan:
+- HIGH: home + Quality dashboards showed 0/361 standard points, 0% completion,
+  0/N on every channel — contradicting the static audit strip (235/361) on the
+  same page. Root cause: `mergeByCode` spreads real records over placeholders,
+  but real data records carry no `reviewStatus` field, so the placeholder's
+  `reviewStatus: "placeholder"` survives the merge and
+  `isReviewedStandardChannelPoint` rejected all 681 points. Bug existed in
+  legacy app.js too (not a rebuild regression).
+- LOW: point detail section headings rendered doubled ("基本介紹 基本介紹")
+  because `studySection` printed `sectionIcon(tone)` + `title`, which resolve
+  to the same string.
+- SOAP notes' 用穴/方藥 were plain escaped text — the case↔knowledge-base
+  keyword link (long-standing Claude backlog item) did not exist yet.
+- Positive: mobile 390px has zero horizontal overflow; point pages, routing,
+  search, CloudTCM direct links, and the 23 formula cards all render correctly.
+
+Changes (app.js + styles.css only; no data files touched):
+- `isPlaceholderStandardRecord(point)` content-based check (reviewStatus
+  "placeholder" AND nameZh === code); `isReviewedStandardChannelPoint` and
+  `getDataQualityAudit`'s reviewed/placeholder counts now use it. Data itself
+  is unchanged, so validate-data deep-equal still passes. Dashboards now show
+  235/361 present, 126 placeholders, 65% — matching missing_report.json.
+- `studySection` / visual-links / pairing section h3s print the title once;
+  removed the now-unused `sectionIcon()`.
+- New `linkifyPointsUsed` / `linkifyFormulaHerbs` in the SOAP card renderer:
+  用穴 tokens matching a point code, Chinese name, or pinyin become
+  `#point/{code}` links; 方藥 tokens matching a formulas.json record (name_zh
+  / pinyin / name_en) link to `#formulaSection`. Unmatched terms stay plain
+  text (honest contract — only records that exist in the knowledge base get
+  links). New `.note-term-link` style in styles.css (dotted underline).
+
+Validation:
+- `node --check app.js` PASS; validate-data (681 deep-equal), 
+  validate-interactions, validate-relations, validate-herbal-links all PASS.
+- Playwright end-to-end: 6/6 PASS — home count 235, quality 235/361 · 65% ·
+  126 placeholders, no duplicated headings on #point/LI4, 用穴 "LI4, 太衝,
+  GB20, 太陽" all linkified, "Gui Zhi Tang" linkified (天麻鉤藤飲 correctly
+  NOT linked — not in the 23-record formulas.json yet), clicking LI4 lands on
+  the point page.
+
+For Codex: `sectionIcon()` was removed from app.js; `isPlaceholderStandardRecord`
+is the new placeholder test — reuse it instead of checking `reviewStatus`
+directly. The SOAP linkify helpers live next to `renderSoapNoteCard`; do not
+modify them (Claude-owned case/SOAP area, per standing rules).
+
+Next (Claude backlog): case dialog / SOAP dialog segmentation per
+docs/CASE_SOAP_FLOW_REVIEW.md; Cases workspace layout — move the working
+notebook above the explainer/scaffold sections.
+
+### 2026-07-08 — Claude Cowork sync check (status audit, no code/data changes)
+
+Scope: Claude Cowork rejoined after several days of Codex-only sessions on Ting's
+machine. This entry is a read-only audit of what actually changed since the
+last `DATA_MIGRATION_MAP.md` / `REBUILD_PLAN.md` update (2026-07-02), so both
+agents share the same status before any new work is assigned. No files other
+than this log entry were touched.
+
+Reviewed: AGENTS.md, git log/status, docs/REBUILD_HANDOFF.md (Sessions 7–21),
+docs/REBUILD_PLAN.md, docs/DATA_MIGRATION_MAP.md, docs/VALIDATION_LOG.md,
+docs/SESSION3_FINAL_STATUS.md, docs/CODEX_FOLLOWUP_2026-07-02.md,
+docs/361_MERGE_DIFF_SUMMARY.md, docs/MIGRATION_OFF_ONEDRIVE.md, and direct
+inspection of `data/acupoints/361.json`, `data/herbs/formulas.json`,
+`data/herbs/formula_canon_shortlist.json`, `data/herbs/herb_canon_shortlist.json`.
+
+Findings — completed since 2026-07-02:
+- 361.json standard-point merge is DONE and applied, not pending. Ting approved
+  `docs/361_MERGE_DIFF_SUMMARY.md`; `scripts/merge-361-preview.js --apply-approved`
+  ran; `data/acupoints/361.json` is 210→235 records, 0 removed, 23 documented
+  conflict fields left as-is. `validate-data.js` (681 deep-equal) and
+  `validate-interactions.js` passed after apply. Runtime still reads
+  `data/acupoints/embedded/*.json` via `app_data.js` — 361.json is merged but
+  not yet wired as the runtime source (documented next step, not done).
+- Formula/herb draft content buildout (Sessions 9–21, 07-03→07-07): 115-record
+  `data/herbs/formula_canon_shortlist.json` (ids/tier/comparison_group/
+  related_formulas graph complete, 23/115 filled with dual-track draft
+  content); 202-record `data/herbs/herb_canon_shortlist.json` (all 202
+  draft-filled, 0 `source_checked`). New validators added
+  (`validate-herb-canon.js`, `validate-relations.js`, `validate-herbal-links.js`).
+  Confirmed by direct read: neither shortlist file is wired into the UI —
+  the app's live Formula section reads the separate, smaller
+  `data/herbs/formulas.json` (23 records, wired by Claude on 07-02 via
+  `js/knowledge.js` / `data/generated/knowledge_data.js`). The two shortlists
+  are a parallel, not-yet-connected content-staging track.
+- docs/CASE_SOAP_FLOW_REVIEW.md (Session 14): docs-only review of case/SOAP
+  form UX, no schema or code change.
+
+Findings — still in progress / not started:
+- `REBUILD_PLAN.md` Phase 2 items untouched since 07-02: moving remaining
+  configs (`standardChannelAudit`, `channelPrefixMeta`, `directoryRegionGroups`,
+  etc.) out of app.js into data/; generating `data/tung/point_index.js` and
+  `data/auricular/gb93_*.js` from their `.json` source instead of hand-maintaining
+  twins. `DATA_MIGRATION_MAP.md` still marks both as "UNCHANGED — Phase 2."
+  No git history on `data/tung/` or `data/auricular/` since 07-02.
+  `DATA_MIGRATION_MAP.md` itself has not been updated since 07-02, so it no
+  longer reflects the herb/formula shortlist work.
+- 92/115 formula_canon_shortlist records are still skeleton-only (name/
+  category/source_hint, no content).
+- No herb or formula record has been source-checked against Bensky/CloudTCM
+  yet; all new content remains `draft`.
+
+Risk note (not a rule violation, but a repeat-risk pattern): Session 19
+batch-expansion of `herb_canon_shortlist.json` corrupted Chinese labels on 32
+records via a Windows console encoding issue (`pending_utf8_repair` /
+`pending_chinese_label_repair`); Session 20 repaired them before any promotion
+past `draft`. No data was lost or silently overwritten, but this is the same
+failure mode as the earlier OneDrive corruption (`docs/MIGRATION_OFF_ONEDRIVE.md`)
+— local Windows console/sync environment corrupting Chinese text during
+large batch edits. Worth a standing guard (e.g. a UTF-8 spot-check step)
+before any future large batch content fill, not just after.
+
+No hard-rule violations found: no data files deleted, no fields removed
+without a migration note, no private/public content mixing, nothing pushed
+without documentation. Working tree is clean; local branch matches
+`origin/main` at `33bc8a4` — no unexplained uncommitted changes.
+
+Validation: none run this session (read-only audit; ran ad hoc `node -e`
+record-count checks against `formulas.json` / `formula_canon_shortlist.json`
+/ `herb_canon_shortlist.json` to confirm the wiring gap above, no files
+modified).
+
+Commit: pending.
+
+Next: Ting to review this entry, then Claude will propose a Codex/Claude work
+split for the next phase (candidates: (a) reconcile REBUILD_PLAN.md Phase 2
+against actual state, (b) decide whether to keep expanding herb/formula
+shortlists or wire the existing 23-formula content deeper first, (c) pick up
+the stalled Tung/GB93 codegen and app.js config extraction). No implementation
+starts until Ting approves the split.
+
+Follow-up same day: Ting asked for the work split to be written down while
+Codex is low on tokens. Added `docs/CODEX_TASK_QUEUE.md` (self-contained,
+token-cheap task specs A1–C3 with approval gates; Claude-owned items listed
+separately) and updated REBUILD_PLAN.md Phase 2 with per-item ✅/⬜ status plus
+a Phase 2.5 note for the shortlist staging work. Standing decision recorded:
+wire existing draft content into the UI before creating new draft-content
+files. Ting dispatches tasks to Codex by ID when he has budget.
+
 ### 2026-07-03 — Dataset foundation staging
 
 Scope: first dataset-first import foundation for formulas and future TCM knowledge expansion.
