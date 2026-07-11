@@ -1,7 +1,7 @@
 # Data Migration Map
 
 Purpose: single authoritative answer to "which file is the latest truth?"
-Update this file every time data moves. Last update: 2026-07-02 (Claude).
+Update this file every time data moves. Last update: 2026-07-11 (Codex A2 sync).
 
 ## Authority table — where each dataset lives NOW
 
@@ -12,12 +12,25 @@ Update this file every time data moves. Last update: 2026-07-02 (Claude).
 | EN i18n maps (locations, anatomy glossary, functions, patterns) | `data/acupoints/embedded/i18n_maps.json` | `data/generated/app_data.js` | app.js 4 map consts (removed) | MIGRATED 2026-07-02 |
 | Master Tung index (277) | `data/tung/point_index.json` | hand-kept twin `data/tung/point_index.js` | same | UNCHANGED — Phase 2: generate .js from .json |
 | Auricular GB93 index (13/93) + worklist | `data/auricular/gb93_index.json`, `gb93_worklist.json` | hand-kept `.js` twins | same | UNCHANGED — Phase 2: generate |
-| 361 canonical file | `data/acupoints/361.json` (235 standard-channel records, transitional unified schema) | not loaded by app | synced by hand from app.js | MERGED 2026-07-02/03 by `scripts/merge-361-preview.js`; next phase: generated adapter/runtime migration |
-| Formulas (23) / categories / safety flags / pattern links | `data/herbs/*.json` | NOT wired into app yet | same | Phase 2 wiring |
-| Pathology conditions (6) + graph seeds | `data/pathology/*.json` | NOT wired | same | Phase 2 wiring |
-| Source registry (19) + validation matrix | `data/sources/*.json` | NOT wired | same | Phase 2 wiring |
+| 361 canonical file | `data/acupoints/361.json` (361 standard-channel records, transitional unified schema) | not loaded by app | synced by hand from app.js and enrichment batches | MERGED 2026-07-02/03, completed by later D5 enrichment; frozen pending Ting §A/§B decisions |
+| Formulas currently rendered (23) | `data/herbs/formulas.json` | Lookup / Knowledge formula section | same | CURRENT APP FORMULA SOURCE; contains content-bearing records and known encoding backlog |
+| Formula categories / safety flags / pattern links | `data/herbs/formula_categories.json`, `data/herbs/formula_safety_flags.json`, `data/herbs/formula_pattern_links.json` | partially referenced by formula/pathology planning scripts; not fully rendered | same | Draft relationship/reference layer |
+| Formula canon shortlist (115) | `data/herbs/formula_canon_shortlist.json` | NOT wired into app | created as formula canon planning layer | Draft skeleton/canon planning file; do not treat as rendered canonical until formula merge B1/B2 is approved |
+| Formula import staging | `data/herbs/formula_import_staging.json` | NOT wired into app | dataset import staging | Staging only; do not overwrite `formulas.json` from this file without a preview/apply workflow |
+| High-yield formula seeds | `data/herbs/high_yield_formula_seeds.json` | NOT wired into app | study seed file | Draft seed/reference list |
+| Single herbs rendered file | `data/herbs/single_herbs.json` | NOT wired into app | same | Empty placeholder; not current herb canon |
+| Herb canon shortlist (202) | `data/herbs/herb_canon_shortlist.json` | NOT wired into app | new CH / Materia Medica staging layer | Draft skeleton/content file; visible only after B3 wiring |
+| Pathology conditions + graph seeds | `data/pathology/conditions.json`, `clinical_graph_seed.json`, `condition_graph_expansion.json` | relation validator; not fully rendered | same plus graph expansion | Draft relationship layer; `conditions.json` is current primary pathology record file |
+| Western medications | `data/medications/western_medications.json` | relation validator; not rendered | new Friday relationship layer | Draft ID reference layer for clinical decision/pathology links |
+| Source registry + validation matrix | `data/sources/*.json` | Sources workspace / source planning; not fully validated | same | Draft registry; known encoding backlog in `source_registry.json` |
+| Dataset imports manifest and raw imports | `data/imports/import_manifest.json`, `data/imports/README.md`, `data/imports/*` | NOT wired into app | new import staging root | Raw/staging only; preserve original imports, never edit generated/canonical data directly from here |
+| CloudTCM raw/staging imports | `data/imports/cloudtcm/*` | D3 preview/review scripts only | private CloudTCM fetch staging | Private study staging; not canonical; do not bulk apply without gated review |
+| Model draft enrichment imports | `data/imports/model_draft/enrichment/*` | `scripts/apply-361-enrichment.js` | model-assisted D5 batch drafts | Applied through script only; rerunnable fill-empty workflow |
 | Missing-record audit | `data/audits/missing_report.json` | NOT wired (health cards are semi-static) | same | Phase 2 wiring |
-| Clinical case & SOAP templates, fertility workflow, billing seeds | `data/clinical_cases/*`, `data/billing/*` | app has its own form logic; templates not wired | same | Phase 3 |
+| Clinical case & SOAP templates | `data/clinical_cases/case_template.json`, `soap_note_template.json`, `fertility_case_template.json`, markdown quick templates | app has its own form logic; templates not fully wired | same | Phase 3; keep de-identified only |
+| Clinical decision links | `data/clinical_cases/clinical_decision_links.json` | `scripts/validate-relations.js` | new Friday relationship layer | Draft relationship layer; ID references only |
+| Fertility workflow seeds | `data/clinical_cases/fertility_workflow_seed.json` | `scripts/validate-relations.js` | new fertility workflow layer | Draft workflow/reference layer; not treatment protocol |
+| Clinical outcomes / patient record map | `data/clinical_cases/outcome_metrics.json`, `patient_record_system_map.json` | NOT wired or partially referenced by case workspace planning | same | Draft documentation/workflow layer |
 | USER DATA: edited points | browser localStorage `acupoint-atlas-v1` | app runtime | same | NOT in git. Ting must export via 匯出 JSON regularly |
 | USER DATA: clinical cases | browser localStorage `acuting-clinical-cases-v1` | app runtime | same | NOT in git. Export via Export cases. PRIVATE — do not commit if identifiable |
 | Small UI configs (channel audit, taxonomy, ear anchors) | still inside app.js (lines 5–150, ~5880–6035 region of legacy) | app.js | app.js | Phase 2 extraction |
