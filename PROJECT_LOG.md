@@ -23,6 +23,33 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Conditions mapping layer BUILT: 150 conditions x bidirectional links (Claude)
+
+Per Ting's request, executed the knowledge-dense core of Track E myself
+(the part that benefits from a strong model), leaving prose fill to Codex:
+
+- data/pathology/pattern_library.json: 50 TcmPattern records with key
+  signs, tongue/pulse, treatment principles (NCCAOM differential core).
+- data/pathology/tdis_registry.json: 75 traditional disease names
+  (內科/婦科/外科/五官/傷科 chapter level) with permanent ids.
+- data/pathology/condition_canon_shortlist.json: 150 western conditions
+  across the 12 design categories, EACH with the bidirectional mapping -
+  related_eastern_diseases (西醫->中醫病名) and related_patterns
+  (2-5 patterns per condition). This is the foundation that 現代應用
+  content on points/formulas will reference by id.
+
+Integrity verified: 0 broken references; 70/75 tdis and 48/50 patterns
+are used by at least one condition; category counts match the approved
+scope (gyn 25, msk 30, gi 15, psych 15, resp 10, neuro 12, derm 8,
+endo 10, cardio 8, uro 8, ent_eye 6, misc 3). All records draft /
+needs_source_review; mappings are study references, not diagnostic
+equivalence claims. All validators PASS.
+
+Codex E3 next: fill summary/red_flags/western_context per condition
+(category batches, gyn first; a condition may not render without
+red_flags), then E-tags vocabulary, then conditionGraph UI wiring.
+
+
 ### 2026-07-12 - Dependency rule: conditions before modern-application content (Ting)
 
 Ting set the ordering rule: the conditions module (Track E) completes
