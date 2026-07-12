@@ -23,6 +23,19 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Dependency rule: conditions before modern-application content (Ting)
+
+Ting set the ordering rule: the conditions module (Track E) completes
+BEFORE any 現代應用 content is written on acupoints/formulas, because
+modern-application statements must reference stable condition ids and the
+bidirectional 西醫↔中醫病名 mapping. Encoded in CONDITIONS_MODULE_DESIGN
+(prerequisite rule section: related_conditions/modern_use_tags may only
+contain existing ids) and EXECUTION_PLAN (month schedule reordered: Week 2
+= E1/E2 conditions skeletons first; C2 formula fills restricted to
+classical content until Track E ids exist; W3-0 = gyn_fertility 25 first
+fill batch).
+
+
 ### 2026-07-12 - Conditions module designed (Claude)
 
 Ting flagged the 中西醫病名 layer as undesigned. Wrote

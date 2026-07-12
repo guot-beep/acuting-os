@@ -4,6 +4,18 @@ Written: 2026-07-12 (Claude). Status: DESIGN — Ting approves scope before
 any skeleton is built. This module is the hub of M2 (unified search) and
 M3 (case tags → related points/formulas suggestions) in the timeline.
 
+## PREREQUISITE RULE (Ting, 2026-07-12)
+
+This module completes BEFORE any 現代應用 (modern application) content is
+written on acupoints or formulas. Reason: "modern application → which
+specific disease" must reference stable condition ids, and the 西醫病名 ↔
+中醫病名 mapping must exist in BOTH directions (western → eastern via
+related_eastern_diseases; eastern → western via related_western) before
+points/formulas link into it. Any 現代應用 text written before condition
+ids exist is loose prose that will need rework — therefore it is
+forbidden: `related_conditions[]` / `modern_use_tags[]` on points and
+formulas may only contain ids that exist in this module.
+
 ## Why three entities, not one
 
 A "condition" in this system is three different things that must never be
