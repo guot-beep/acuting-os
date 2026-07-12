@@ -1,5 +1,37 @@
 # Validation Log
 
+## 2026-07-12 -- A4 UI config extraction
+
+Scope:
+- Added `data/config/ui_config.json`.
+- Added `uiConfig` to `data/generated/app_data.js` via `scripts/build-data.js`.
+- Replaced seven app.js config constants with generated config hydration:
+  - `standardChannelAudit`
+  - `channelPrefixMeta`
+  - `auricularZonePositions`
+  - `directoryRegionGroups`
+  - `directoryTopics`
+  - `earAnatomyLabelData`
+  - `earPointAnchors`
+- Updated `scripts/validate-interactions.js` to read directory topic IDs from `data/config/ui_config.json`.
+
+Commands:
+- `node --check app.js` -> PASS
+- `node --check scripts/build-data.js` -> PASS
+- `node --check scripts/validate-interactions.js` -> PASS
+- `node scripts/build-data.js` -> PASS (`app_data.js` includes `uiConfig: 7`)
+- `node scripts/validate-data.js` -> PASS
+- `node scripts/validate-interactions.js` -> PASS
+- `node scripts/validate-relations.js` -> PASS
+- `node scripts/validate-herbal-links.js` -> PASS
+- `node scripts/validate-herb-canon.js` -> PASS
+- `node scripts/validate-encoding.js` -> expected backlog FAIL, still 798 existing findings.
+
+Result:
+- A4 extraction is validated at script/data level.
+- Encoding backlog count did not increase after adding `data/config/ui_config.json`.
+- Manual browser QA is still recommended for directory filters and ear map labels.
+
 ## 2026-07-12 -- A3 JS twins generation completed
 
 Scope:

@@ -41,6 +41,7 @@ const SOURCES = {
   auricularPoints: "data/auricular/embedded/auricular_points.json",
 };
 const I18N_SOURCE = "data/acupoints/embedded/i18n_maps.json";
+const UI_CONFIG_SOURCE = "data/config/ui_config.json";
 
 const payload = {};
 for (const [name, rel] of Object.entries(SOURCES)) {
@@ -48,10 +49,12 @@ for (const [name, rel] of Object.entries(SOURCES)) {
 }
 const i18n = readJson(I18N_SOURCE);
 Object.assign(payload, i18n);
+payload.uiConfig = readJson(UI_CONFIG_SOURCE);
 
 const banner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}
-// Source of truth: data/acupoints/embedded/*.json, data/auricular/embedded/*.json
+// Source of truth: data/acupoints/embedded/*.json, data/auricular/embedded/*.json,
+//                  data/config/ui_config.json
 `;
 const out = banner + "globalThis.ACUTING_APP_DATA = " + JSON.stringify(payload) + ";\n";
 

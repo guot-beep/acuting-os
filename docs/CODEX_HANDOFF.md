@@ -26,6 +26,62 @@ Claude review note:
 
 ---
 
+## 2026-07-12 - Codex - A4 UI config extraction
+
+Branch: `main`
+
+Commit: pending at time of entry.
+
+Task: CODEX_TASK_QUEUE A4. Move remaining app.js UI config constants into JSON and hydrate them from generated app data.
+
+Files changed:
+- `data/config/ui_config.json`
+- `scripts/build-data.js`
+- `data/generated/app_data.js`
+- `app.js`
+- `scripts/validate-interactions.js`
+- `docs/DATA_MIGRATION_MAP.md`
+- `docs/CODEX_HANDOFF.md`
+- `docs/REBUILD_HANDOFF.md`
+- `docs/VALIDATION_LOG.md`
+- `PROJECT_LOG.md`
+
+Validation:
+- `node --check app.js`: PASS
+- `node --check scripts/build-data.js`: PASS
+- `node --check scripts/validate-interactions.js`: PASS
+- `scripts/build-data.js`: PASS, `app_data.js` includes `uiConfig: 7`
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, still 798 known findings.
+
+Protected areas not touched:
+- `data/acupoints/361.json`
+- `docs/CLOUDTCM_*`
+- `js/router.js`
+- `js/knowledge.js`
+- `styles.css` point-detail-mode
+- `data/sources/cloudtcm_point_map.json`
+- `scripts/validate-data.js` IGNORED_FIELDS
+- `legacy/`
+
+Known risks / manual checks:
+- Browser QA is recommended for dashboard counts, directory topic shortcut chips, Tung/Auricular filters, and ear anatomy labels.
+- `app.js` was touched only for the A4-approved config hydration block.
+- Encoding backlog count did not increase after adding `data/config/ui_config.json`.
+
+Next recommended action:
+- Claude review A4 extraction and confirm `ui_config.json` should be the future edit source.
+
+Claude review note:
+- Regex-based directory region matching is stored as `matchPattern` / `matchFlags`.
+- Function-based topic filters are stored as `matchType` and hydrated through explicit matchers in app.js.
+
+---
+
 ## 2026-07-12 - Codex - A3 JS twins generation completed
 
 Branch: `main`

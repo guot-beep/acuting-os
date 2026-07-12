@@ -1,3 +1,87 @@
+# REBUILD HANDOFF - Session 36 (2026-07-12, A4 UI config extraction)
+
+## 1. Goal
+Complete CODEX_TASK_QUEUE A4: move the remaining UI config constants out of `app.js` into JSON, build them into `data/generated/app_data.js`, and keep runtime behavior unchanged.
+
+## 2. Files changed
+- `data/config/ui_config.json`
+- `scripts/build-data.js`
+- `data/generated/app_data.js`
+- `app.js`
+- `scripts/validate-interactions.js`
+- `docs/DATA_MIGRATION_MAP.md`
+- `docs/CODEX_HANDOFF.md`
+- `docs/REBUILD_HANDOFF.md`
+- `docs/VALIDATION_LOG.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Extracted seven config blocks:
+  - `standardChannelAudit`
+  - `channelPrefixMeta`
+  - `auricularZonePositions`
+  - `directoryRegionGroups`
+  - `directoryTopics`
+  - `earAnatomyLabelData`
+  - `earPointAnchors`
+- Added `data/config/ui_config.json` as the editable source.
+- `scripts/build-data.js` now includes `uiConfig` in `ACUTING_APP_DATA`.
+- `app.js` hydrates regex and topic match functions from config.
+- `scripts/validate-interactions.js` now reads directory topic IDs from `ui_config.json`.
+- `docs/DATA_MIGRATION_MAP.md` marks small UI configs as migrated.
+
+## 4. Why this changed
+This completes CODEX_TASK_QUEUE A4 and reduces app.js size/risk by moving static UI data into a structured JSON source.
+
+## 5. Data content changes
+No clinical/acupoint/herb/pathology content changed. The extracted config is a mechanical relocation of existing UI constants.
+
+## 6. Source status / accuracy guardrail
+No source status or clinical review status changed.
+
+## 7. Schema / field changes
+New config schema is implicit in `data/config/ui_config.json`. Directory regexes are stored as `matchPattern` / `matchFlags`; topic function shortcuts are stored as `matchType`.
+
+## 8. Generated files / scripts
+Ran `scripts/build-data.js`. `data/generated/app_data.js` now includes `uiConfig`.
+
+## 9. Protected areas
+Touched `app.js` only for the A4-approved config hydration change. Did not modify `data/acupoints/361.json`, `docs/CLOUDTCM_*`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- `node --check app.js`: PASS
+- `node --check scripts/build-data.js`: PASS
+- `node --check scripts/validate-interactions.js`: PASS
+- `scripts/build-data.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, still 798 known findings
+
+## 11. Triage results
+Default point validation remains lossless: 681 default points, no duplicate point codes, legacy/current app data deep-equal after excluded reference URL fields.
+Encoding backlog count did not increase after adding `data/config/ui_config.json`.
+
+## 12. Not completed
+Manual browser QA not yet done. Recommended checks: home dashboard counts, directory topic shortcut chips, Tung/Auricular filters, and ear anatomy labels.
+
+## 13. Next reader should inspect
+Read:
+- `data/config/ui_config.json`
+- `scripts/build-data.js`
+- top hydration block in `app.js`
+- `scripts/validate-interactions.js`
+
+## 14. Next step
+Claude/Ting should review A4 extraction. If accepted, future edits to these config values should happen in `data/config/ui_config.json`, followed by `scripts/build-data.js`.
+
+## 15. Risk
+Medium. Runtime behavior is validated by scripts, but browser visual QA is recommended because config affects directory and ear-map display.
+
+---
+
 # REBUILD HANDOFF - Session 35 (2026-07-12, A3 JS twins generation completed)
 
 ## 1. Goal

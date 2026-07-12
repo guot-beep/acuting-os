@@ -5,6 +5,10 @@ const root = path.resolve(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const js = fs.readFileSync(path.join(root, "app.js"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles.css"), "utf8");
+const uiConfigPath = path.join(root, "data", "config", "ui_config.json");
+const uiConfig = fs.existsSync(uiConfigPath)
+  ? JSON.parse(fs.readFileSync(uiConfigPath, "utf8"))
+  : {};
 
 const failures = [];
 const warnings = [];
@@ -50,7 +54,10 @@ if (workspaceRoutes.length) {
 }
 
 const topicLinks = matches(/data-directory-topic-link="([^"]+)"/g).map((match) => match[1]);
-const topicIds = matches(/id: "([^"]+)"/g, js).map((match) => match[1]);
+const topicIds = [
+  ...matches(/id: "([^"]+)"/g, js).map((match) => match[1]),
+  ...((uiConfig.directoryTopics || []).map((topic) => topic.id).filter(Boolean))
+];
 const missingTopicIds = unique(topicLinks.filter((topic) => !topicIds.includes(topic)));
 if (missingTopicIds.length) {
   fail("Directory topic shortcuts must point to known app.js topic IDs.", missingTopicIds);

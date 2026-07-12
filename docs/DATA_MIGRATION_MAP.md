@@ -1,7 +1,7 @@
 # Data Migration Map
 
 Purpose: single authoritative answer to "which file is the latest truth?"
-Update this file every time data moves. Last update: 2026-07-12 (Codex A3 JS twin generation).
+Update this file every time data moves. Last update: 2026-07-12 (Codex A4 UI config extraction).
 
 ## Authority table — where each dataset lives NOW
 
@@ -33,7 +33,7 @@ Update this file every time data moves. Last update: 2026-07-12 (Codex A3 JS twi
 | Clinical outcomes / patient record map | `data/clinical_cases/outcome_metrics.json`, `patient_record_system_map.json` | NOT wired or partially referenced by case workspace planning | same | Draft documentation/workflow layer |
 | USER DATA: edited points | browser localStorage `acupoint-atlas-v1` | app runtime | same | NOT in git. Ting must export via 匯出 JSON regularly |
 | USER DATA: clinical cases | browser localStorage `acuting-clinical-cases-v1` | app runtime | same | NOT in git. Export via Export cases. PRIVATE — do not commit if identifiable |
-| Small UI configs (channel audit, taxonomy, ear anchors) | still inside app.js (lines 5–150, ~5880–6035 region of legacy) | app.js | app.js | Phase 2 extraction |
+| Small UI configs (channel audit, taxonomy, ear anchors) | `data/config/ui_config.json` | `data/generated/app_data.js` -> app.js hydration | app.js constants | MIGRATED 2026-07-12; edit JSON only and run `scripts/build-data.js` |
 | Legacy app snapshot | `legacy/` (index.html, app.js, styles.css) | fallback only | root | FROZEN 2026-07-02, do not edit |
 
 ## Field-mapping note for Phase 2 (361.json unification)

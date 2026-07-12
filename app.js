@@ -14,44 +14,38 @@ const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 })();
 
 
-const standardChannelAudit = {
-  generatedOn: "2026-06-16",
-  expectedTotal: 361,
-  nextRecommendedBatch: "PC1-PC9",
-  channels: [
-    { code: "LU", name: "Lung", expected: 11 },
-    { code: "LI", name: "Large Intestine", expected: 20 },
-    { code: "ST", name: "Stomach", expected: 45 },
-    { code: "SP", name: "Spleen", expected: 21 },
-    { code: "HT", name: "Heart", expected: 9 },
-    { code: "SI", name: "Small Intestine", expected: 19 },
-    { code: "BL", name: "Bladder", expected: 67 },
-    { code: "KI", name: "Kidney", expected: 27 },
-    { code: "PC", name: "Pericardium", expected: 9 },
-    { code: "TE", name: "Triple Energizer", expected: 23 },
-    { code: "GB", name: "Gallbladder", expected: 44 },
-    { code: "LR", name: "Liver", expected: 14 },
-    { code: "CV", name: "Conception Vessel", expected: 24 },
-    { code: "GV", name: "Governing Vessel", expected: 28 }
-  ]
+const uiConfig = globalThis.ACUTING_APP_DATA?.uiConfig || {};
+const standardChannelAudit = uiConfig.standardChannelAudit || { generatedOn: "", expectedTotal: 0, nextRecommendedBatch: "", channels: [] };
+const channelPrefixMeta = uiConfig.channelPrefixMeta || {};
+const auricularZonePositions = uiConfig.auricularZonePositions || {};
+
+function hydrateRegexMatch(item) {
+  const { matchPattern, matchFlags, ...rest } = item;
+  return matchPattern ? { ...rest, match: new RegExp(matchPattern, matchFlags || "") } : rest;
+}
+
+const directoryTopicMatchers = {
+  needs_review: (point) => point.reviewStatus === "placeholder" || point.reviewStatus === "index_only",
+  tung_index: (point) => String(point.meridian || "").includes("Master Tung"),
+  auricular_index: (point) => isAuricularPoint(point),
+  auricular_gb93_draft: (point) => /^(HX|AH|SC|TF|TG|AT|CO|LO)\d+/i.test(point.code) && point.reviewStatus !== "source_checked",
+  missing_english_location: (point) => isPendingContent(point.locationEn),
+  missing_technique: (point) => isMissingTechnique(point),
+  missing_safety: (point) => isPendingContent(point.cautions),
+  missing_indications: (point) => isMissingIndications(point),
+  missing_sources: (point) => !(point.sources || []).length,
+  missing_visual: (point) => normalizeVisualLinks(point.visualLinks || []).length === 0
 };
 
-const channelPrefixMeta = {
-  LU: { meridian: "Lung / 肺經", region: "待補", x: 100, y: 200 },
-  LI: { meridian: "Large Intestine / 大腸經", region: "待補", x: 80, y: 250 },
-  ST: { meridian: "Stomach / 胃經", region: "待補", x: 220, y: 320 },
-  SP: { meridian: "Spleen / 脾經", region: "待補", x: 140, y: 440 },
-  HT: { meridian: "Heart / 心經", region: "待補", x: 82, y: 260 },
-  SI: { meridian: "Small Intestine / 小腸經", region: "待補", x: 68, y: 270 },
-  BL: { meridian: "Bladder / 膀胱經", region: "待補", x: 150, y: 360 },
-  KI: { meridian: "Kidney / 腎經", region: "待補", x: 150, y: 430 },
-  PC: { meridian: "Pericardium / 心包經", region: "待補", x: 58, y: 250 },
-  TE: { meridian: "Triple Energizer / 三焦經", region: "待補", x: 64, y: 250 },
-  GB: { meridian: "Gallbladder / 膽經", region: "待補", x: 228, y: 320 },
-  LR: { meridian: "Liver / 肝經", region: "待補", x: 230, y: 540 },
-  CV: { meridian: "Conception Vessel / 任脈", region: "前正中線", x: 180, y: 330 },
-  GV: { meridian: "Governing Vessel / 督脈", region: "後正中線", x: 180, y: 220 }
-};
+function hydrateDirectoryTopic(topic) {
+  const { matchType, ...rest } = topic;
+  return matchType && directoryTopicMatchers[matchType] ? { ...rest, match: directoryTopicMatchers[matchType] } : rest;
+}
+
+const directoryRegionGroups = (uiConfig.directoryRegionGroups || []).map(hydrateRegexMatch);
+const directoryTopics = (uiConfig.directoryTopics || []).map(hydrateDirectoryTopic);
+const earAnatomyLabelData = uiConfig.earAnatomyLabelData || [];
+const earPointAnchors = uiConfig.earPointAnchors || {};
 
 function standardPointPlaceholder(code) {
   const prefix = channelCodeFromPointCode(code);
@@ -120,16 +114,7 @@ const auricularGb93Zones = auricularGb93.zones || {};
 const auricularGb93Worklist = globalThis.ACUTING_AURICULAR_GB93_WORKLIST || {};
 const auricularGb93NextBatch = auricularGb93Worklist.next_batch || [];
 
-const auricularZonePositions = {
-  HX: { x: 166, y: 72 },
-  AH: { x: 134, y: 168 },
-  SC: { x: 92, y: 180 },
-  TF: { x: 142, y: 126 },
-  TG: { x: 224, y: 238 },
-  AT: { x: 174, y: 296 },
-  CO: { x: 158, y: 246 },
-  LO: { x: 170, y: 418 }
-};
+
 
 function auricularGb93Point(record) {
   const zone = auricularGb93Zones[record.zone] || {};
@@ -379,80 +364,13 @@ let modelView = "front";
 let directoryRegionGroup = "";
 let directoryTopic = "";
 
-const directoryRegionGroups = [
-  { id: "head_face", zh: "頭面頸部", en: "Head, Face, Neck", match: /頭|面|頸|項|鼻|眼|耳|眉|口|scalp|head|face|neck|nose|eye|ear/i },
-  { id: "chest_abdomen", zh: "胸腹部", en: "Chest & Abdomen", match: /胸|腹|脅|乳|chest|abdomen|thorax|rib/i },
-  { id: "back", zh: "背腰骶部", en: "Back, Lumbar, Sacral", match: /背|腰|骶|俞|back|lumbar|sacral/i },
-  { id: "upper_limb", zh: "上肢", en: "Upper Limb", match: /手|腕|肘|前臂|臂|肩|upper limb|hand|wrist|elbow|forearm|arm|shoulder/i },
-  { id: "lower_limb", zh: "下肢", en: "Lower Limb", match: /足|腿|膝|踝|趾|下肢|lower limb|leg|knee|ankle|foot|toe/i },
-  { id: "auricular", zh: "耳穴", en: "Auricular", match: /耳|auricular|ear/i }
-];
 
-const directoryTopics = [
-  { id: "pain", zh: "疼痛與痺症", en: "Pain", keywords: ["痛", "痺", "pain", "ache", "bi syndrome"] },
-  { id: "head_face", zh: "頭面五官", en: "Head & Sense Organs", keywords: ["頭", "面", "目", "鼻", "耳", "咽", "headache", "facial", "eye", "nose", "ear", "throat"] },
-  { id: "digestive", zh: "脾胃消化", en: "Digestive", keywords: ["胃", "腹", "便", "瀉", "嘔", "digest", "stomach", "abdominal", "diarrhea", "vomit"] },
-  { id: "respiratory", zh: "肺系呼吸", en: "Respiratory", keywords: ["咳", "喘", "肺", "鼻塞", "cough", "wheezing", "lung", "asthma", "nasal"] },
-  { id: "fertility_gyn", zh: "婦科與生殖", en: "Fertility & Gynecology", keywords: ["月經", "不孕", "子宮", "帶下", "pregnancy", "fertility", "menstrual", "uterus", "gynecology"] },
-  { id: "shen_sleep", zh: "神志睡眠", en: "Shen & Sleep", keywords: ["失眠", "神", "心悸", "焦慮", "sleep", "insomnia", "anxiety", "spirit", "palpitation"] },
-  { id: "tonify", zh: "補虛扶正", en: "Tonification", keywords: ["虛", "補", "氣血", "扶正", "tonify", "deficiency", "qi", "blood"] },
-  { id: "needs_review", zh: "待校對資料", en: "Needs Review", match: (point) => point.reviewStatus === "placeholder" || point.reviewStatus === "index_only" },
-  { id: "tung_index", zh: "董氏奇穴索引", en: "Master Tung Index", match: (point) => String(point.meridian || "").includes("Master Tung") },
-  { id: "auricular_index", zh: "耳穴索引", en: "Auricular Index", match: (point) => isAuricularPoint(point) },
-  { id: "auricular_gb93_draft", zh: "GB93待校對", en: "GB93 Drafts", match: (point) => /^(HX|AH|SC|TF|TG|AT|CO|LO)\d+/i.test(point.code) && point.reviewStatus !== "source_checked" },
-  { id: "missing_english_location", zh: "缺英文定位", en: "Missing English Location", match: (point) => isPendingContent(point.locationEn) },
-  { id: "missing_technique", zh: "缺針刺手法", en: "Missing Needling", match: (point) => isMissingTechnique(point) },
-  { id: "missing_safety", zh: "缺禁忌安全", en: "Missing Safety", match: (point) => isPendingContent(point.cautions) },
-  { id: "missing_indications", zh: "缺主治功效", en: "Missing Indications", match: (point) => isMissingIndications(point) },
-  { id: "missing_sources", zh: "缺資料來源", en: "Missing Sources", match: (point) => !(point.sources || []).length },
-  { id: "missing_visual", zh: "缺圖像連結", en: "Missing Visual Link", match: (point) => normalizeVisualLinks(point.visualLinks || []).length === 0 }
-];
 
-const earAnatomyLabelData = [
-  { zh: "耳輪", en: "Helix", x: 248, y: 116 },
-  { zh: "耳舟", en: "Scaphoid Fossa", x: 104, y: 168 },
-  { zh: "對耳輪", en: "AntiHelix", x: 148, y: 274 },
-  { zh: "三角窩", en: "Triangle Fossa", x: 204, y: 174 },
-  { zh: "耳甲艇", en: "Superior Concha", x: 170, y: 292 },
-  { zh: "耳甲腔", en: "Inferior Concha", x: 176, y: 376 },
-  { zh: "耳屏", en: "Tragus", x: 268, y: 344 },
-  { zh: "對耳屏", en: "Antitragus", x: 200, y: 432 },
-  { zh: "耳垂", en: "Lobe", x: 170, y: 526 },
-  { zh: "屏間切跡", en: "Intertragal Notch", x: 238, y: 416 },
-  { zh: "屏上切跡", en: "Supratragal Notch", x: 266, y: 290 }
-];
 
-const earPointAnchors = {
-  "EAR-SM": { x: 205, y: 176 },
-  "EAR-SYM": { x: 202, y: 268 },
-  "EAR-P0": { x: 176, y: 350 },
-  "EAR-END": { x: 222, y: 418 },
-  AT4: { x: 204, y: 430 },
-  "EAR-ADR": { x: 266, y: 366 },
-  "EAR-LUNG": { x: 190, y: 374 },
-  "EAR-HEART": { x: 172, y: 386 },
-  "EAR-LIVER": { x: 190, y: 318 },
-  "EAR-KIDNEY": { x: 176, y: 292 },
-  "EAR-SPLEEN": { x: 210, y: 382 },
-  "EAR-STOMACH": { x: 152, y: 350 },
-  "EAR-LI": { x: 214, y: 392 },
-  "EAR-MOUTH": { x: 244, y: 338 },
-  "EAR-HUNGER": { x: 272, y: 318 },
-  "EAR-OCC": { x: 170, y: 432 },
-  "EAR-EYE": { x: 164, y: 504 },
-  "EAR-APEX": { x: 158, y: 64 },
-  "EAR-CSP": { x: 154, y: 342 },
-  "EAR-LSP": { x: 152, y: 276 },
-  "EAR-KNEE": { x: 206, y: 208 },
-  "EAR-SHOULDER": { x: 116, y: 210 },
-  "EAR-UTERUS": { x: 220, y: 214 },
-  "EAR-DIA": { x: 166, y: 334 },
-  "EAR-BLADDER": { x: 204, y: 292 },
-  "EAR-TRACHEA": { x: 224, y: 366 },
-  "EAR-THROAT": { x: 260, y: 350 },
-  "EAR-EXT-NOSE": { x: 276, y: 324 },
-  "EAR-HTN-GROOVE": { x: 302, y: 470 }
-};
+
+
+
+
 
 document.querySelector("#addBtn").addEventListener("click", () => openEditor());
 document.querySelector("#closeDialog").addEventListener("click", () => dialog.close());
