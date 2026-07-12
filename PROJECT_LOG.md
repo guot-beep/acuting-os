@@ -23,6 +23,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - A3+A4 browser visual QA PASS (Claude)
+
+Ran the browser QA Codex requested for A4 (headless Chromium against the
+static app):
+- Dashboard counts: PASS (235 standard, 235/361 strip; live counter reads
+  the embedded runtime layer as expected until the runtime adapter lands).
+- Directory topic shortcuts (data-directory-topic-link): PASS - clicking
+  applies the filter with visible chip + result count (auricular_index -> 41).
+- Tung topic filter: PASS - 277 records, first card T11.01.
+- Auricular topic filter: PASS - 41 records, first card AT4.
+- Zero page errors on every view tested.
+- Ear anatomy labels: #earAnatomyLabels renders 0 children and #modelStage
+  is hidden - this is the DESIGNED state (canvas body/ear models were
+  deprecated per README visual strategy), not an A4 regression.
+  earAnatomyLabelData/earPointAnchors in ui_config.json are dormant legacy
+  config; candidates for removal later with Ting's approval.
+
+Verdict: A3 and A4 both verified. Track A complete. app.js UI-config
+hydration works; next app.js surgery is the Claude-owned runtime adapter.
+
+
 ### 2026-07-12 - NORTH_STAR strategic map added (Claude)
 
 At Ting's request, wrote docs/NORTH_STAR.md: the permanent big-picture map
