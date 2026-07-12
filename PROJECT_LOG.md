@@ -23,6 +23,31 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Final handoff package: EXECUTION_PLAN + RUNTIME_ADAPTER_SPEC (Claude)
+
+Per Ting's instruction that all agents follow Claude's plan going forward,
+completed the handoff document chain:
+
+- docs/EXECUTION_PLAN.md: THE standing ordered plan (Phases 1-6 with
+  [TING]/[CLAUDE]/[CODEX] ownership, rules of engagement, standing
+  freezes) PLUS a one-month Codex self-serve schedule (W1-W4, 20 slots,
+  skip-if-gated rule) covering: CloudTCM verdict application, encoding
+  triage of the 798 backlog, the 92 formula skeleton fills, herb
+  deepening, WHO SAPL worksheets, and knowledge.js status-strip polish.
+- docs/RUNTIME_ADAPTER_SPEC.md: complete surgical spec for the one
+  remaining Claude-owned task - 361.json becomes the rendered source.
+  Includes current-state facts, target data flow, full field-mapping
+  table, 8 execution steps with the validate-data retirement gate,
+  rollback plan, and known traps (localStorage resurrection, field-name
+  verification, app.js freeze coordination).
+
+Session start checklist for ANY agent: PROJECT_LOG top entry ->
+EXECUTION_PLAN -> task spec -> NORTH_STAR -> AGENTS.md.
+
+This closes the Fable session's handoff. Everything needed to continue
+is in the repo.
+
+
 ### 2026-07-12 - A3+A4 browser visual QA PASS (Claude)
 
 Ran the browser QA Codex requested for A4 (headless Chromium against the
