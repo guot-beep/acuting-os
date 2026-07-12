@@ -23,6 +23,19 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Conditions module designed (Claude)
+
+Ting flagged the 中西醫病名 layer as undesigned. Wrote
+docs/CONDITIONS_MODULE_DESIGN.md: three-entity model (WesternCondition /
+TraditionalDisease / TcmPattern) with full schemas, mandatory red_flags
+on every condition, 150-condition NCCAOM+practice scope across 12
+categories, ~50-pattern library expansion, one controlled tag vocabulary
+shared by cases/conditions/formulas/herbs/points (the backbone of the M3
+suggestion panel), permanent safety-wording rules, and the E1-E7 build
+order plugged into CODEX_TASK_QUEUE (new Track E) and the month schedule
+(W3-0). Gate: Ting approves design + scope before any skeleton is built.
+
+
 ### 2026-07-12 - Final handoff package: EXECUTION_PLAN + RUNTIME_ADAPTER_SPEC (Claude)
 
 Per Ting's instruction that all agents follow Claude's plan going forward,

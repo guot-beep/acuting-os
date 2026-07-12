@@ -316,6 +316,17 @@ copyrighted, WHO SAPL is a PDF for verification (tier-1 authority, hand-check
 per batch, can be marked source_checked when verified). English fills stay
 channel-by-channel (C3 style) — bulk speed applies to the Chinese layer.
 
+## Track E — Conditions module (中西醫病名層)
+
+Design spec: docs/CONDITIONS_MODULE_DESIGN.md (Claude, 2026-07-12).
+Gate: Ting approves the design + 150-condition scope FIRST.
+Then, in order: E1 pattern-library skeleton (~50) → E2 condition shortlist
+skeleton (150, STOP for scope review) → E3+ category fill batches
+(gyn_fertility first, red_flags mandatory) → E-tags tag_vocabulary.json →
+wire into conditionGraph UI. Follow the schemas and safety wording rules
+in the design doc exactly. Extend validate-relations for tag/id integrity
+as part of E3.
+
 ## Claude-owned items (do NOT assign to Codex)
 
 These involve high-risk app.js surgery or architecture calls:

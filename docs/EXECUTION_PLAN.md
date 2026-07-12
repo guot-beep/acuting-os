@@ -114,6 +114,8 @@ validators + a signed log entry.
         between batches. One batch per session.
 
 ### Week 3 — herb deepening + WHO prep
+- W3-0  If Ting approved CONDITIONS_MODULE_DESIGN: do E1+E2 (pattern +
+        condition skeletons, stop at scope review). Else skip.
 - W3-1..W3-3  Herb content deepening on the rendered 202: strengthen
         clinical_use_note + safety_flags for the ~75 already-filled
         records first, then the category-scaffold ones; 3 batches.
