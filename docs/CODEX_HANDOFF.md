@@ -26,6 +26,61 @@ Claude review note:
 
 ---
 
+## 2026-07-12 - Codex - A3 JS twins generation completed
+
+Branch: `main`
+
+Commit: pending at time of entry.
+
+Task: CODEX_TASK_QUEUE A3. Generate Tung + GB93 `.js` twins from `.json` sources, verify payload equivalence, and update `DATA_MIGRATION_MAP.md` after Ting approved continuing past the gate.
+
+Files changed:
+- `scripts/build-data.js`
+- `data/auricular/gb93_index.js`
+- `data/auricular/gb93_worklist.js`
+- `docs/A3_JS_TWINS_DIFF_SUMMARY.md`
+- `docs/DATA_MIGRATION_MAP.md`
+- `docs/CODEX_HANDOFF.md`
+- `docs/REBUILD_HANDOFF.md`
+- `docs/VALIDATION_LOG.md`
+- `PROJECT_LOG.md`
+
+Validation:
+- `node --check scripts/build-data.js`: PASS
+- `node --check data/tung/point_index.js`: PASS
+- `node --check data/auricular/gb93_index.js`: PASS
+- `node --check data/auricular/gb93_worklist.js`: PASS
+- JSON source vs generated JS payload equivalence: MATCH for all three targets.
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 798 known findings.
+
+Protected areas not touched:
+- `data/acupoints/361.json`
+- `docs/CLOUDTCM_*`
+- `app.js`
+- `js/router.js`
+- `js/knowledge.js`
+- `styles.css` point-detail-mode
+- `data/sources/cloudtcm_point_map.json`
+- `scripts/validate-data.js` IGNORED_FIELDS
+- `legacy/`
+
+Known risks / manual checks:
+- `data/auricular/gb93_index.js` and `data/auricular/gb93_worklist.js` have formatting diffs, but payloads match their JSON sources.
+- App/browser spot-check is recommended because `index.html` loads these JS twins directly.
+
+Next recommended action:
+- Claude review `docs/A3_JS_TWINS_DIFF_SUMMARY.md`, payload equivalence, and generated JS twin behavior.
+
+Claude review note:
+- This is now final A3 completion, not just the gate artifact. No source data content changed.
+
+---
+
 ## 2026-07-11 - Codex - B3 herbs Lookup wiring
 
 Branch: `main`

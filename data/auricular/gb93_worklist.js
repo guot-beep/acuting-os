@@ -19,27 +19,115 @@ globalThis.ACUTING_AURICULAR_GB93_WORKLIST = {
     "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
   ],
   "next_batch": [
-    { "candidate_code": "SC1", "zone": "SC", "status": "candidate_to_verify" },
-    { "candidate_code": "SC2", "zone": "SC", "status": "candidate_to_verify" },
-    { "candidate_code": "SC3", "zone": "SC", "status": "candidate_to_verify" },
-    { "candidate_code": "SC4", "zone": "SC", "status": "candidate_to_verify" },
-    { "candidate_code": "SC5", "zone": "SC", "status": "candidate_to_verify" },
-    { "candidate_code": "CO1", "zone": "CO", "status": "candidate_to_verify" },
-    { "candidate_code": "CO2", "zone": "CO", "status": "candidate_to_verify" },
-    { "candidate_code": "CO3", "zone": "CO", "status": "candidate_to_verify" },
-    { "candidate_code": "HX1", "zone": "HX", "status": "candidate_to_verify" },
-    { "candidate_code": "HX2", "zone": "HX", "status": "candidate_to_verify" },
-    { "candidate_code": "HX3", "zone": "HX", "status": "candidate_to_verify" },
-    { "candidate_code": "HX4", "zone": "HX", "status": "candidate_to_verify" },
-    { "candidate_code": "HX5", "zone": "HX", "status": "candidate_to_verify" },
-    { "candidate_code": "HX6", "zone": "HX", "status": "candidate_to_verify" },
-    { "candidate_code": "HX7", "zone": "HX", "status": "candidate_to_verify" },
-    { "candidate_code": "AH1", "zone": "AH", "status": "candidate_to_verify" },
-    { "candidate_code": "TF1", "zone": "TF", "status": "candidate_to_verify" },
-    { "candidate_code": "TF2", "zone": "TF", "status": "candidate_to_verify" },
-    { "candidate_code": "TF3", "zone": "TF", "status": "candidate_to_verify" },
-    { "candidate_code": "TG1", "zone": "TG", "status": "candidate_to_verify" },
-    { "candidate_code": "TG2", "zone": "TG", "status": "candidate_to_verify" },
-    { "candidate_code": "TG3", "zone": "TG", "status": "candidate_to_verify" }
+    {
+      "candidate_code": "SC1",
+      "zone": "SC",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "SC2",
+      "zone": "SC",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "SC3",
+      "zone": "SC",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "SC4",
+      "zone": "SC",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "SC5",
+      "zone": "SC",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "CO1",
+      "zone": "CO",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "CO2",
+      "zone": "CO",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "CO3",
+      "zone": "CO",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "HX1",
+      "zone": "HX",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "HX2",
+      "zone": "HX",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "HX3",
+      "zone": "HX",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "HX4",
+      "zone": "HX",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "HX5",
+      "zone": "HX",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "HX6",
+      "zone": "HX",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "HX7",
+      "zone": "HX",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "AH1",
+      "zone": "AH",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "TF1",
+      "zone": "TF",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "TF2",
+      "zone": "TF",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "TF3",
+      "zone": "TF",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "TG1",
+      "zone": "TG",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "TG2",
+      "zone": "TG",
+      "status": "candidate_to_verify"
+    },
+    {
+      "candidate_code": "TG3",
+      "zone": "TG",
+      "status": "candidate_to_verify"
+    }
   ]
 };

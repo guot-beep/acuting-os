@@ -1,3 +1,82 @@
+# REBUILD HANDOFF - Session 35 (2026-07-12, A3 JS twins generation completed)
+
+## 1. Goal
+Complete CODEX_TASK_QUEUE A3: generate Tung and GB93 `.js` twins from `.json` sources, prove payload equivalence, and update `docs/DATA_MIGRATION_MAP.md` after Ting approved continuing past the gate.
+
+## 2. Files changed
+- `scripts/build-data.js`
+- `data/auricular/gb93_index.js`
+- `data/auricular/gb93_worklist.js`
+- `docs/A3_JS_TWINS_DIFF_SUMMARY.md`
+- `docs/DATA_MIGRATION_MAP.md`
+- `docs/CODEX_HANDOFF.md`
+- `docs/REBUILD_HANDOFF.md`
+- `docs/VALIDATION_LOG.md`
+- `PROJECT_LOG.md`
+
+## 3. What changed
+- Added reusable JSON read/write helpers to `scripts/build-data.js`.
+- Added generation of:
+  - `data/tung/point_index.js` from `data/tung/point_index.json`
+  - `data/auricular/gb93_index.js` from `data/auricular/gb93_index.json`
+  - `data/auricular/gb93_worklist.js` from `data/auricular/gb93_worklist.json`
+- Ran build and wrote `docs/A3_JS_TWINS_DIFF_SUMMARY.md`.
+- Updated `docs/DATA_MIGRATION_MAP.md` to mark the three `.js` twins as generated from their `.json` sources.
+
+## 4. Why this changed
+The Tung/GB93 `.js` files are hand-maintained copies of JSON sources. A3 reduces double-edit risk by making the JSON files the future authority and the JS wrappers generated.
+
+## 5. Data content changes
+No source JSON content changed. Generated JS payloads match their JSON sources.
+
+## 6. Source status / accuracy guardrail
+No TCM content was added, removed, source-checked, or clinically upgraded.
+
+## 7. Schema / field changes
+No source schema changed.
+
+## 8. Generated files / scripts
+`scripts/build-data.js` now generates the three JS twins. `data/auricular/gb93_index.js` and `data/auricular/gb93_worklist.js` show formatting diffs; payload equivalence is MATCH. `data/tung/point_index.js` generated without tracked diff.
+
+## 9. Protected areas
+Did not modify `data/acupoints/361.json`, `docs/CLOUDTCM_*`, `app.js`, `js/router.js`, `js/knowledge.js`, `styles.css` point-detail-mode, `data/sources/cloudtcm_point_map.json`, `scripts/validate-data.js` IGNORED_FIELDS, or `legacy/`.
+
+## 10. Validation
+- `node --check scripts/build-data.js`: PASS
+- `node --check data/tung/point_index.js`: PASS
+- `node --check data/auricular/gb93_index.js`: PASS
+- `node --check data/auricular/gb93_worklist.js`: PASS
+- JSON source vs generated JS payload equivalence: MATCH for all three
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 798 known findings
+
+## 11. Triage results
+- Tung JS twin: payload MATCH, no tracked content diff after build.
+- GB93 index JS twin: payload MATCH, formatting diff only.
+- GB93 worklist JS twin: payload MATCH, formatting diff only.
+
+## 12. Not completed
+No browser visual QA yet. No source data content changed.
+
+## 13. Next reader should inspect
+Read:
+- `docs/A3_JS_TWINS_DIFF_SUMMARY.md`
+- `scripts/build-data.js`
+- `data/auricular/gb93_index.js`
+- `data/auricular/gb93_worklist.js`
+
+## 14. Next step
+Claude should review `docs/A3_JS_TWINS_DIFF_SUMMARY.md`, the generated JS twin diffs, and the `scripts/build-data.js` generation behavior. Ting should browser spot-check Tung and GB93 pages/filters.
+
+## 15. Risk
+Medium-low. The generated payloads match source JSON, but app/browser spot-check is still recommended because `index.html` loads these JS files directly.
+
+---
+
 # REBUILD HANDOFF - Session 34 (2026-07-11, B3 herbs Lookup wiring)
 
 ## 1. Goal

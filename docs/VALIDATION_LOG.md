@@ -1,5 +1,32 @@
 # Validation Log
 
+## 2026-07-12 -- A3 JS twins generation completed
+
+Scope:
+- Updated `scripts/build-data.js` to generate:
+  - `data/tung/point_index.js`
+  - `data/auricular/gb93_index.js`
+  - `data/auricular/gb93_worklist.js`
+- Added `docs/A3_JS_TWINS_DIFF_SUMMARY.md`.
+- Updated `docs/DATA_MIGRATION_MAP.md` after Ting approved continuing past the A3 gate.
+
+Commands:
+- `node --check scripts/build-data.js` -> PASS
+- `node --check data/tung/point_index.js` -> PASS
+- `node --check data/auricular/gb93_index.js` -> PASS
+- `node --check data/auricular/gb93_worklist.js` -> PASS
+- JSON source vs generated JS payload equivalence -> MATCH for all three.
+- `node scripts/validate-data.js` -> PASS
+- `node scripts/validate-interactions.js` -> PASS
+- `node scripts/validate-relations.js` -> PASS
+- `node scripts/validate-herbal-links.js` -> PASS
+- `node scripts/validate-herb-canon.js` -> PASS
+- `node scripts/validate-encoding.js` -> expected backlog FAIL, 798 existing findings.
+
+Result:
+- A3 JS twin generation is complete.
+- `docs/A3_JS_TWINS_DIFF_SUMMARY.md` remains available for Claude review.
+
 ## 2026-07-11 -- B3 herbs Lookup wiring
 
 Scope:

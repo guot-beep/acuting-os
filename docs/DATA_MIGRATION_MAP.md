@@ -1,7 +1,7 @@
 # Data Migration Map
 
 Purpose: single authoritative answer to "which file is the latest truth?"
-Update this file every time data moves. Last update: 2026-07-11 (Codex A2 sync).
+Update this file every time data moves. Last update: 2026-07-12 (Codex A3 JS twin generation).
 
 ## Authority table — where each dataset lives NOW
 
@@ -10,8 +10,8 @@ Update this file every time data moves. Last update: 2026-07-11 (Codex A2 sync).
 | Standard acupoints (LU–KI expansions, starter, professional) | `data/acupoints/embedded/*.json` (10 files) | `data/generated/app_data.js` | app.js lines ~156–4856 (removed) | MIGRATED 2026-07-02, validated lossless |
 | Auricular points (in-app 29 records) | `data/auricular/embedded/auricular_points.json` | `data/generated/app_data.js` | app.js `auricularPoints` (removed) | MIGRATED 2026-07-02 |
 | EN i18n maps (locations, anatomy glossary, functions, patterns) | `data/acupoints/embedded/i18n_maps.json` | `data/generated/app_data.js` | app.js 4 map consts (removed) | MIGRATED 2026-07-02 |
-| Master Tung index (277) | `data/tung/point_index.json` | hand-kept twin `data/tung/point_index.js` | same | UNCHANGED — Phase 2: generate .js from .json |
-| Auricular GB93 index (13/93) + worklist | `data/auricular/gb93_index.json`, `gb93_worklist.json` | hand-kept `.js` twins | same | UNCHANGED — Phase 2: generate |
+| Master Tung index (277) | `data/tung/point_index.json` | generated twin `data/tung/point_index.js` | formerly hand-kept twin | GENERATED 2026-07-12 by `scripts/build-data.js`; edit JSON only |
+| Auricular GB93 index (13/93) + worklist | `data/auricular/gb93_index.json`, `gb93_worklist.json` | generated `.js` twins | formerly hand-kept twins | GENERATED 2026-07-12 by `scripts/build-data.js`; edit JSON only |
 | 361 canonical file | `data/acupoints/361.json` (361 standard-channel records, transitional unified schema) | not loaded by app | synced by hand from app.js and enrichment batches | MERGED 2026-07-02/03, completed by later D5 enrichment; frozen pending Ting §A/§B decisions |
 | Formulas currently rendered (23) | `data/herbs/formulas.json` | Lookup / Knowledge formula section | same | CURRENT APP FORMULA SOURCE; contains content-bearing records and known encoding backlog |
 | Formula categories / safety flags / pattern links | `data/herbs/formula_categories.json`, `data/herbs/formula_safety_flags.json`, `data/herbs/formula_pattern_links.json` | partially referenced by formula/pathology planning scripts; not fully rendered | same | Draft relationship/reference layer |

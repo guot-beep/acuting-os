@@ -16,6 +16,17 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 
+function readJson(rel) {
+  return JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
+}
+
+function writeGlobalJson(rel, globalName, value, target = "globalThis") {
+  fs.writeFileSync(
+    path.join(ROOT, rel),
+    target + "." + globalName + " = " + JSON.stringify(value, null, 2) + ";\n"
+  );
+}
+
 const SOURCES = {
   starterPoints: "data/acupoints/embedded/starter_points.json",
   professionalPoints: "data/acupoints/embedded/professional_points.json",
@@ -33,9 +44,9 @@ const I18N_SOURCE = "data/acupoints/embedded/i18n_maps.json";
 
 const payload = {};
 for (const [name, rel] of Object.entries(SOURCES)) {
-  payload[name] = JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
+  payload[name] = readJson(rel);
 }
-const i18n = JSON.parse(fs.readFileSync(path.join(ROOT, I18N_SOURCE), "utf8"));
+const i18n = readJson(I18N_SOURCE);
 Object.assign(payload, i18n);
 
 const banner = `// GENERATED FILE - DO NOT EDIT.
@@ -55,11 +66,11 @@ console.log(JSON.stringify(counts, null, 2));
 
 // ---- Knowledge bundle (formulas / conditions / sources / audit) ----------
 const knowledge = {
-  formulas: JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/formulas.json"), "utf8")),
-  herbs: JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/herb_canon_shortlist.json"), "utf8")),
-  conditions: JSON.parse(fs.readFileSync(path.join(ROOT, "data/pathology/conditions.json"), "utf8")),
-  sources: JSON.parse(fs.readFileSync(path.join(ROOT, "data/sources/source_registry.json"), "utf8")),
-  audit: JSON.parse(fs.readFileSync(path.join(ROOT, "data/audits/missing_report.json"), "utf8")),
+  formulas: readJson("data/herbs/formulas.json"),
+  herbs: readJson("data/herbs/herb_canon_shortlist.json"),
+  conditions: readJson("data/pathology/conditions.json"),
+  sources: readJson("data/sources/source_registry.json"),
+  audit: readJson("data/audits/missing_report.json"),
 };
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}
@@ -83,7 +94,7 @@ console.log(JSON.stringify({
 }));
 
 // ---- CloudTCM per-point map (code -> numeric page id + image filename) -----
-const cloudtcm = JSON.parse(fs.readFileSync(path.join(ROOT, "data/sources/cloudtcm_point_map.json"), "utf8"));
+const cloudtcm = readJson("data/sources/cloudtcm_point_map.json");
 fs.writeFileSync(
   path.join(ROOT, "data/generated/cloudtcm_map.js"),
   "// GENERATED FILE - DO NOT EDIT. Built by scripts/build-data.js\n" +
@@ -91,3 +102,9 @@ fs.writeFileSync(
   "globalThis.ACUTING_CLOUDTCM_MAP = " + JSON.stringify(cloudtcm.points) + ";\n"
 );
 console.log("Built data/generated/cloudtcm_map.js (" + Object.keys(cloudtcm.points).length + " points)");
+
+// ---- JS twins generated from JSON source files ----------------------------
+writeGlobalJson("data/tung/point_index.js", "ACUTING_TUNG_INDEX", readJson("data/tung/point_index.json"), "window");
+writeGlobalJson("data/auricular/gb93_index.js", "ACUTING_AURICULAR_GB93", readJson("data/auricular/gb93_index.json"));
+writeGlobalJson("data/auricular/gb93_worklist.js", "ACUTING_AURICULAR_GB93_WORKLIST", readJson("data/auricular/gb93_worklist.json"));
+console.log("Built Tung/GB93 JS twins from JSON sources");

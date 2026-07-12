@@ -23,6 +23,18 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - A3 JS twins generation completed (Codex)
+
+Completed CODEX_TASK_QUEUE A3 after Ting approved continuing past the gate. Updated `scripts/build-data.js` so the Tung and GB93 hand-maintained JS twins are generated from their JSON sources:
+
+- `data/tung/point_index.js` from `data/tung/point_index.json`
+- `data/auricular/gb93_index.js` from `data/auricular/gb93_index.json`
+- `data/auricular/gb93_worklist.js` from `data/auricular/gb93_worklist.json`
+
+Ran the build and compared generated JS payloads back to their JSON sources. All three matched. Added `docs/A3_JS_TWINS_DIFF_SUMMARY.md` for Ting/Claude review. Updated `docs/DATA_MIGRATION_MAP.md` to mark the `.js` twins as generated from `.json` sources.
+
+Validation: node --check build-data and all three JS twins PASS; JSON-vs-JS payload equivalence MATCH for all three; validate-data, validate-interactions, validate-relations, validate-herbal-links, and validate-herb-canon PASS. validate-encoding still reports the known 798-item backlog and was not used as a blocker.
+
 ### 2026-07-11 - B3 herbs Lookup wiring (Codex)
 
 Completed CODEX_TASK_QUEUE B3 as additive UI/data wiring. Added `data/herbs/herb_canon_shortlist.json` to `scripts/build-data.js`, so `data/generated/knowledge_data.js` now carries 202 draft herb records. Added a Lookup herbs section in `index.html`, and updated `js/knowledge.js` to render herb records with search, category filtering, draft status, channels, modern-use tags, safety flags, and related formula ID chips. Added small chip/card styling in `styles.css`.
