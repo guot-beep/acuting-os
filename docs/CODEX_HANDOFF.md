@@ -30,7 +30,7 @@ Claude review note:
 
 Branch: `main`
 
-Commit: pending at time of entry.
+Commit: `fcb4f8d Add Codex task status overlay`; merged with Claude's latest `origin/main` in local merge commit `5afcf9b` before push.
 
 Task: Maintenance after A3/A4. Make task completion/gate state explicit so Claude/Ting do not have to infer status from the original long queue.
 
