@@ -318,6 +318,27 @@ copyrighted, WHO SAPL is a PDF for verification (tier-1 authority, hand-check
 per batch, can be marked source_checked when verified). English fills stay
 channel-by-channel (C3 style) — bulk speed applies to the Chinese layer.
 
+## Track E — Conditions module (中西醫病名層)
+
+Design spec: docs/CONDITIONS_MODULE_DESIGN.md (Claude, 2026-07-12).
+Gate: Ting approves the design + 150-condition scope FIRST.
+Then, in order: E1 pattern-library skeleton (~50) → E2 condition shortlist
+skeleton (150, STOP for scope review) → E3+ category fill batches
+(gyn_fertility first, red_flags mandatory) → E-tags tag_vocabulary.json →
+wire into conditionGraph UI. Follow the schemas and safety wording rules
+in the design doc exactly. Extend validate-relations for tag/id integrity
+as part of E3.
+
+## Track H — Herb module (單味中藥卡片、方藥互連、替換思考)
+
+Design spec: docs/HERB_MODULE_DESIGN.md (Claude, 2026-07-12).
+Gate: Ting approves the design first. Then in order: H1 category audit +
+comparison_group + related_herbs generation → H2 composition_structured
+for the 23 filled formulas (formula→herb ids; STOP list for ambiguous
+pinyin) → H3 substitution_context_zh fill batches → H4 herb detail card +
+formula⇄herb chips UI → H5 condition-id tag links (after Track E).
+Permanent wording law: related_herbs = 比較與替換思考參考，非自動替代.
+
 ## Claude-owned items (do NOT assign to Codex)
 
 These involve high-risk app.js surgery or architecture calls:

@@ -23,6 +23,137 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Herb module designed (Claude)
+
+Ting's requirement: herb cards like formula cards, formula<->herb linking
+in both directions, and category-based substitution reasoning (patient
+allergic to one herb -> see category neighbors + the formulas it appears
+in). Wrote docs/HERB_MODULE_DESIGN.md. Key design: (1) the herb->formula
+direction ALREADY exists (related_formulas, 407 links) - the missing half
+is formula->herb, added as composition_structured with herb ids +
+optional jun/chen/zuo/shi roles; (2) herb comparison_group +
+related_herbs + substitution_context_zh mirroring the proven formula
+pattern, with the permanent wording law that neighbors are substitution
+REASONING references, never dosage-equivalent swaps; (3) herb detail card
+layout in the Codex-safe knowledge.js area; (4) the 34 existing category
+labels stay as the classification layer with a rendered category index.
+Build order = Track H (H1-H5) in CODEX_TASK_QUEUE, gated on Ting's
+approval.
+
+
+### 2026-07-12 - Conditions mapping layer BUILT: 150 conditions x bidirectional links (Claude)
+
+Per Ting's request, executed the knowledge-dense core of Track E myself
+(the part that benefits from a strong model), leaving prose fill to Codex:
+
+- data/pathology/pattern_library.json: 50 TcmPattern records with key
+  signs, tongue/pulse, treatment principles (NCCAOM differential core).
+- data/pathology/tdis_registry.json: 75 traditional disease names
+  (內科/婦科/外科/五官/傷科 chapter level) with permanent ids.
+- data/pathology/condition_canon_shortlist.json: 150 western conditions
+  across the 12 design categories, EACH with the bidirectional mapping -
+  related_eastern_diseases (西醫->中醫病名) and related_patterns
+  (2-5 patterns per condition). This is the foundation that 現代應用
+  content on points/formulas will reference by id.
+
+Integrity verified: 0 broken references; 70/75 tdis and 48/50 patterns
+are used by at least one condition; category counts match the approved
+scope (gyn 25, msk 30, gi 15, psych 15, resp 10, neuro 12, derm 8,
+endo 10, cardio 8, uro 8, ent_eye 6, misc 3). All records draft /
+needs_source_review; mappings are study references, not diagnostic
+equivalence claims. All validators PASS.
+
+Codex E3 next: fill summary/red_flags/western_context per condition
+(category batches, gyn first; a condition may not render without
+red_flags), then E-tags vocabulary, then conditionGraph UI wiring.
+
+
+### 2026-07-12 - Dependency rule: conditions before modern-application content (Ting)
+
+Ting set the ordering rule: the conditions module (Track E) completes
+BEFORE any 現代應用 content is written on acupoints/formulas, because
+modern-application statements must reference stable condition ids and the
+bidirectional 西醫↔中醫病名 mapping. Encoded in CONDITIONS_MODULE_DESIGN
+(prerequisite rule section: related_conditions/modern_use_tags may only
+contain existing ids) and EXECUTION_PLAN (month schedule reordered: Week 2
+= E1/E2 conditions skeletons first; C2 formula fills restricted to
+classical content until Track E ids exist; W3-0 = gyn_fertility 25 first
+fill batch).
+
+
+### 2026-07-12 - Conditions module designed (Claude)
+
+Ting flagged the 中西醫病名 layer as undesigned. Wrote
+docs/CONDITIONS_MODULE_DESIGN.md: three-entity model (WesternCondition /
+TraditionalDisease / TcmPattern) with full schemas, mandatory red_flags
+on every condition, 150-condition NCCAOM+practice scope across 12
+categories, ~50-pattern library expansion, one controlled tag vocabulary
+shared by cases/conditions/formulas/herbs/points (the backbone of the M3
+suggestion panel), permanent safety-wording rules, and the E1-E7 build
+order plugged into CODEX_TASK_QUEUE (new Track E) and the month schedule
+(W3-0). Gate: Ting approves design + scope before any skeleton is built.
+
+
+### 2026-07-12 - Final handoff package: EXECUTION_PLAN + RUNTIME_ADAPTER_SPEC (Claude)
+
+Per Ting's instruction that all agents follow Claude's plan going forward,
+completed the handoff document chain:
+
+- docs/EXECUTION_PLAN.md: THE standing ordered plan (Phases 1-6 with
+  [TING]/[CLAUDE]/[CODEX] ownership, rules of engagement, standing
+  freezes) PLUS a one-month Codex self-serve schedule (W1-W4, 20 slots,
+  skip-if-gated rule) covering: CloudTCM verdict application, encoding
+  triage of the 798 backlog, the 92 formula skeleton fills, herb
+  deepening, WHO SAPL worksheets, and knowledge.js status-strip polish.
+- docs/RUNTIME_ADAPTER_SPEC.md: complete surgical spec for the one
+  remaining Claude-owned task - 361.json becomes the rendered source.
+  Includes current-state facts, target data flow, full field-mapping
+  table, 8 execution steps with the validate-data retirement gate,
+  rollback plan, and known traps (localStorage resurrection, field-name
+  verification, app.js freeze coordination).
+
+Session start checklist for ANY agent: PROJECT_LOG top entry ->
+EXECUTION_PLAN -> task spec -> NORTH_STAR -> AGENTS.md.
+
+This closes the Fable session's handoff. Everything needed to continue
+is in the repo.
+
+
+### 2026-07-12 - A3+A4 browser visual QA PASS (Claude)
+
+Ran the browser QA Codex requested for A4 (headless Chromium against the
+static app):
+- Dashboard counts: PASS (235 standard, 235/361 strip; live counter reads
+  the embedded runtime layer as expected until the runtime adapter lands).
+- Directory topic shortcuts (data-directory-topic-link): PASS - clicking
+  applies the filter with visible chip + result count (auricular_index -> 41).
+- Tung topic filter: PASS - 277 records, first card T11.01.
+- Auricular topic filter: PASS - 41 records, first card AT4.
+- Zero page errors on every view tested.
+- Ear anatomy labels: #earAnatomyLabels renders 0 children and #modelStage
+  is hidden - this is the DESIGNED state (canvas body/ear models were
+  deprecated per README visual strategy), not an A4 regression.
+  earAnatomyLabelData/earPointAnchors in ui_config.json are dormant legacy
+  config; candidates for removal later with Ting's approval.
+
+Verdict: A3 and A4 both verified. Track A complete. app.js UI-config
+hydration works; next app.js surgery is the Claude-owned runtime adapter.
+
+
+### 2026-07-12 - NORTH_STAR strategic map added (Claude)
+
+At Ting's request, wrote docs/NORTH_STAR.md: the permanent big-picture map
+for all AI collaborators. Contents: the one architectural law (app is
+replaceable, data is not), three horizons anchored to Ting's 5-year plan
+(3 school years + 2 practice years), technology decision triggers (when
+SQL/framework/server become justified - default NO until a trigger fires),
+the AI collaboration model (Claude architecture / Codex implementation /
+Ting gates), permanent prohibitions, and the pick-up-work checklist for
+any future agent. Known architectural debt named explicitly: clinical
+cases in localStorage must move to durable storage before real patient
+volume (H2). Direction precedence: NORTH_STAR wins on direction, AGENTS.md
+wins on safety, CODEX_TASK_QUEUE carries tactics.
+
 ### 2026-07-12 - A4 UI config extraction (Codex)
 
 Completed CODEX_TASK_QUEUE A4. Extracted the remaining app.js UI config constants into `data/config/ui_config.json`: standard channel audit, channel prefix metadata, auricular zone positions, directory region groups, directory topics, ear anatomy labels, and ear point anchors. `scripts/build-data.js` now includes this config in `data/generated/app_data.js` as `uiConfig`.
