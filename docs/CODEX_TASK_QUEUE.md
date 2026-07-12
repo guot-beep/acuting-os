@@ -5,6 +5,8 @@ Purpose: Codex is running low on tokens. Each task below is written to be
 self-contained — Codex should be able to execute it by reading ONLY this task
 section plus the files it names, without re-reading the whole handoff history.
 
+Status overlay: read `docs/CODEX_TASK_STATUS.md` first for completed / gated / blocked state before starting a task.
+
 ## How to use this file
 
 - Ting picks ONE task and tells Codex the task ID (e.g. "do A1").

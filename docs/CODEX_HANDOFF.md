@@ -26,11 +26,44 @@ Claude review note:
 
 ---
 
-## 2026-07-12 - Codex - A4 UI config extraction
+## 2026-07-12 - Codex - Task queue status overlay
 
 Branch: `main`
 
 Commit: pending at time of entry.
+
+Task: Maintenance after A3/A4. Make task completion/gate state explicit so Claude/Ting do not have to infer status from the original long queue.
+
+Files changed:
+- `docs/CODEX_HANDOFF.md`
+- `docs/CODEX_TASK_QUEUE.md`
+- `docs/CODEX_TASK_STATUS.md`
+
+Validation:
+- Docs-only change; no runtime validation required.
+
+Protected areas not touched:
+- `data/acupoints/361.json`
+- `docs/CLOUDTCM_*`
+- runtime app files
+- generated files
+
+Known risks / manual checks:
+- Status overlay should be reviewed by Claude against Git history.
+
+Next recommended action:
+- Claude can use `docs/CODEX_TASK_STATUS.md` as a fast overlay before assigning the next task.
+
+Claude review note:
+- A1-A4, B1-B3, D1-D2, and D5 are marked complete. D3 / encoding backlog / C1 remain gated or blocked.
+
+---
+
+## 2026-07-12 - Codex - A4 UI config extraction
+
+Branch: `main`
+
+Commit: `e26d4fa A4: move UI config constants to generated data`
 
 Task: CODEX_TASK_QUEUE A4. Move remaining app.js UI config constants into JSON and hydrate them from generated app data.
 
@@ -86,7 +119,7 @@ Claude review note:
 
 Branch: `main`
 
-Commit: pending at time of entry.
+Commit: `bfcd128 A3: generate Tung and GB93 JS twins from JSON`
 
 Task: CODEX_TASK_QUEUE A3. Generate Tung + GB93 `.js` twins from `.json` sources, verify payload equivalence, and update `DATA_MIGRATION_MAP.md` after Ting approved continuing past the gate.
 
