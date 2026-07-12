@@ -23,6 +23,24 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Herb module designed (Claude)
+
+Ting's requirement: herb cards like formula cards, formula<->herb linking
+in both directions, and category-based substitution reasoning (patient
+allergic to one herb -> see category neighbors + the formulas it appears
+in). Wrote docs/HERB_MODULE_DESIGN.md. Key design: (1) the herb->formula
+direction ALREADY exists (related_formulas, 407 links) - the missing half
+is formula->herb, added as composition_structured with herb ids +
+optional jun/chen/zuo/shi roles; (2) herb comparison_group +
+related_herbs + substitution_context_zh mirroring the proven formula
+pattern, with the permanent wording law that neighbors are substitution
+REASONING references, never dosage-equivalent swaps; (3) herb detail card
+layout in the Codex-safe knowledge.js area; (4) the 34 existing category
+labels stay as the classification layer with a rendered category index.
+Build order = Track H (H1-H5) in CODEX_TASK_QUEUE, gated on Ting's
+approval.
+
+
 ### 2026-07-12 - Conditions mapping layer BUILT: 150 conditions x bidirectional links (Claude)
 
 Per Ting's request, executed the knowledge-dense core of Track E myself
