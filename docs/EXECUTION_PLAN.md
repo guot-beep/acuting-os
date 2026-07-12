@@ -53,8 +53,12 @@ all other agents. After it lands: the full 361 layer is live in the app.
     caught by the rule), (c) rule fixes needed. Report only; repairs are
     separate gated batches. Then allowlist/fix so validate-encoding can
     become a blocking check.
-3.2 [CODEX] C2: fill the 92 formula skeletons (draft, conservative wording,
-    batches of ~15, encoding guard between batches).
+3.2 [CODEX] Track E conditions module (per CONDITIONS_MODULE_DESIGN):
+    patterns → condition shortlist → category fill batches. PREREQUISITE
+    for all 現代應用 content anywhere (Ting's dependency rule).
+3.2b [CODEX] C2: fill the 92 formula skeletons — classical content first;
+    modern_clinical_use_tags/related_conditions only AFTER Track E ids
+    exist (batches of ~15, encoding guard between batches).
 3.3 [CODEX] Herb content deepening on the rendered 202 (same pattern).
 3.4 [TING+any] C1 source-check pilot when Bensky/school materials are
     available: 20–30 high-yield records draft → source_checked, one by one.
@@ -107,13 +111,23 @@ validators + a signed log entry.
 - W1-5  If Ting's §A/§B verdicts arrived: apply via guarded script (1.2).
         Else skip.
 
-### Week 2 — formula skeleton fills (C2)
-- W2-1..W2-5  Fill the 92 formula skeletons in 5 batches (~18-19 each,
-        grouped by comparison_group). Conservative draft wording per
-        docs/FORMULA_CANON_RULES.md; no source_checked; encoding guard
-        between batches. One batch per session.
+### Week 2 — conditions module first (Ting's dependency rule)
+現代應用 content on points/formulas may ONLY reference condition ids —
+so Track E runs before formula modern-use writing.
+- W2-1  E1: pattern library skeleton (~50 records per
+        CONDITIONS_MODULE_DESIGN). Requires Ting's design approval; if
+        not yet given, ask once in the log and skip forward.
+- W2-2  E2: 150-condition shortlist skeleton (ids/names/categories/
+        icd_hint only). STOP for Ting scope review.
+- W2-3..W2-5  C2 formula skeleton fills, CLASSICAL content only
+        (組成/功效/主治/加減/禁忌 — 3 batches of ~30). Leave
+        modern_clinical_use_tags / related_conditions EMPTY until Track E
+        condition ids exist.
 
-### Week 3 — herb deepening + WHO prep
+### Week 3 — conditions fill + herb deepening + WHO prep
+- W3-0  If Ting approved the E2 scope: E3 first fill batch —
+        gyn_fertility 25 conditions with red_flags + bidirectional 中西
+        mappings. Else skip.
 - W3-1..W3-3  Herb content deepening on the rendered 202: strengthen
         clinical_use_note + safety_flags for the ~75 already-filled
         records first, then the category-scaffold ones; 3 batches.
