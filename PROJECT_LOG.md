@@ -37,6 +37,13 @@ cases in localStorage must move to durable storage before real patient
 volume (H2). Direction precedence: NORTH_STAR wins on direction, AGENTS.md
 wins on safety, CODEX_TASK_QUEUE carries tactics.
 
+### 2026-07-12 - A4 UI config extraction (Codex)
+
+Completed CODEX_TASK_QUEUE A4. Extracted the remaining app.js UI config constants into `data/config/ui_config.json`: standard channel audit, channel prefix metadata, auricular zone positions, directory region groups, directory topics, ear anatomy labels, and ear point anchors. `scripts/build-data.js` now includes this config in `data/generated/app_data.js` as `uiConfig`.
+
+Updated `app.js` to hydrate the config from `globalThis.ACUTING_APP_DATA.uiConfig`, including regex-based directory region matching and explicit directory topic matchers. Updated `scripts/validate-interactions.js` to read topic IDs from the new config file instead of assuming they live directly in app.js. Updated `docs/DATA_MIGRATION_MAP.md` to mark the UI config as migrated.
+
+Validation: node --check app.js, build-data, validate-data, validate-interactions, validate-relations, validate-herbal-links, and validate-herb-canon PASS. validate-encoding remains the expected 798-item backlog, with no increase from `ui_config.json`. Browser manual QA is still recommended for dashboard counts, directory topic shortcuts, and ear label placement.
 
 ### 2026-07-12 - A3 JS twins generation completed (Codex)
 
