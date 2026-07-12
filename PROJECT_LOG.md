@@ -23,6 +23,20 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - NORTH_STAR strategic map added (Claude)
+
+At Ting's request, wrote docs/NORTH_STAR.md: the permanent big-picture map
+for all AI collaborators. Contents: the one architectural law (app is
+replaceable, data is not), three horizons anchored to Ting's 5-year plan
+(3 school years + 2 practice years), technology decision triggers (when
+SQL/framework/server become justified - default NO until a trigger fires),
+the AI collaboration model (Claude architecture / Codex implementation /
+Ting gates), permanent prohibitions, and the pick-up-work checklist for
+any future agent. Known architectural debt named explicitly: clinical
+cases in localStorage must move to durable storage before real patient
+volume (H2). Direction precedence: NORTH_STAR wins on direction, AGENTS.md
+wins on safety, CODEX_TASK_QUEUE carries tactics.
+
 ### 2026-07-12 - A4 UI config extraction (Codex)
 
 Completed CODEX_TASK_QUEUE A4. Extracted the remaining app.js UI config constants into `data/config/ui_config.json`: standard channel audit, channel prefix metadata, auricular zone positions, directory region groups, directory topics, ear anatomy labels, and ear point anchors. `scripts/build-data.js` now includes this config in `data/generated/app_data.js` as `uiConfig`.
