@@ -23,6 +23,21 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - NORTH_STAR strategic map added (Claude)
+
+At Ting's request, wrote docs/NORTH_STAR.md: the permanent big-picture map
+for all AI collaborators. Contents: the one architectural law (app is
+replaceable, data is not), three horizons anchored to Ting's 5-year plan
+(3 school years + 2 practice years), technology decision triggers (when
+SQL/framework/server become justified - default NO until a trigger fires),
+the AI collaboration model (Claude architecture / Codex implementation /
+Ting gates), permanent prohibitions, and the pick-up-work checklist for
+any future agent. Known architectural debt named explicitly: clinical
+cases in localStorage must move to durable storage before real patient
+volume (H2). Direction precedence: NORTH_STAR wins on direction, AGENTS.md
+wins on safety, CODEX_TASK_QUEUE carries tactics.
+
+
 ### 2026-07-12 - A3 JS twins generation completed (Codex)
 
 Completed CODEX_TASK_QUEUE A3 after Ting approved continuing past the gate. Updated `scripts/build-data.js` so the Tung and GB93 hand-maintained JS twins are generated from their JSON sources:
