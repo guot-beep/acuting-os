@@ -41,3 +41,17 @@ case_exports/
 data/clinical_cases/local/
 data/clinical_cases/private/
 data/clinical_cases/exports/
+
+# Clinical databases — the coming durable case store (SQLite/File System Access).
+# Real patient data must NEVER be committed (NORTH_STAR §6, AGENTS.md).
+# NOTE: intentionally NOT globbing cases*.json / soap*.json — those collide with
+# the tracked de-identified TEMPLATES (soap_note_template.json, case_template.json).
+# Real cases live in the local/private/exports dirs above or in the .db below.
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+/clinical/
+*.phi.*
