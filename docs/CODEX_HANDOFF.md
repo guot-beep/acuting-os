@@ -26,6 +26,43 @@ Claude review note:
 
 ---
 
+## 2026-07-12 - Claude - Track E-I0/I1/I2/I4 executed
+
+Branch: `conditions-interop-design` (stacked on `phase2-runtime-adapter`)
+
+Commit: branch head after "Execute Track E-I0-I4" commit; pushed to origin.
+
+Task: docs/CONDITIONS_INTEROP_DESIGN.md §9 tasks E-I0, E-I1, E-I2, E-I4, executed under Ting's explicit "always allowed" continuation delegation (recorded in PROJECT_LOG).
+
+Files changed:
+- `data/pathology/conditions.json` + `data/pathology/condition_graph_expansion.json` (E-I0: 18 mojibake name_zh repaired via guarded script; provenance stamped)
+- `data/sources/source_registry.json` (E-I1: added `mohw_nricm_disease_name_dictionary`, additive only)
+- `data/interop/condition_crosswalk.json` (E-I2: NEW, 150 skeleton records)
+- `scripts/validate-relations.js` (E-I4: crosswalk FK checks + icd warning)
+- `data/generated/*` (rebuild)
+- `docs/CODEX_TASK_STATUS.md`, `docs/CODEX_HANDOFF.md`, `PROJECT_LOG.md`
+
+Validation:
+- validate-data / validate-interactions / validate-relations / validate-herbal-links / validate-herb-canon: PASS (relations now checks 150 crosswalk records, 0 errors 0 warnings)
+- validate-encoding: expected FAIL; findings DROPPED 798 → 768 (the repaired strings had triggered multiple rules each)
+- repair script re-run dry: 0 to repair, 18 recognized healthy
+
+Protected areas not touched:
+- `data/acupoints/361.json`, `docs/CLOUDTCM_*`, `app.js`, `index.html`, `legacy/`, all other encoding-backlog content beyond the 18 approved strings
+
+Known risks / manual checks:
+- E-I2 awaits Ting's 5-record spot-check (e.g. xwalk.pcos, one per category).
+- 大辭典 registry URL is the institute root; exact resource page/edition needs Ting's verification before E-I3.
+
+Next recommended action:
+- Ting: merge Phase 2 PR first, then the conditions-interop PR; spot-check E-I2; locate her copy of the 大辭典 for E-I3.
+- Codex: E-I3 stays BLOCKED; E-I5 waits for Phase 2 merge.
+
+Claude review note:
+- The old 798 encoding baseline is obsolete — new expected backlog count is 768.
+
+---
+
 ## 2026-07-12 - Claude - Phase 2 Runtime Adapter landed (branch, pending merge)
 
 Branch: `phase2-runtime-adapter`

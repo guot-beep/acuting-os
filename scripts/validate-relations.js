@@ -231,10 +231,53 @@ function validateWorkflows(workflowFile, sets, counters, errors) {
   });
 }
 
+function validateConditionCrosswalk(counters, errors, warnings) {
+  const crosswalkPath = "data/interop/condition_crosswalk.json";
+  if (!fs.existsSync(path.join(ROOT, crosswalkPath))) return;
+
+  const canon = readJson("data/pathology/condition_canon_shortlist.json");
+  const canonById = new Map(asArray(canon.records).map((record) => [record.id, record]));
+  const tdis = readJson("data/pathology/tdis_registry.json");
+  const tdisIds = new Set(asArray(tdis.records).map((record) => record.id).filter(Boolean));
+
+  const crosswalk = readJson(crosswalkPath);
+  asArray(crosswalk.records).forEach((record, index) => {
+    const base = `${crosswalkPath}.records[${index}]`;
+    counters.crosswalkRecords += 1;
+
+    const canonRecord = canonById.get(record.condition_id);
+    if (!canonRecord) {
+      errors.push(`${base}.condition_id: missing reference "${record.condition_id}"`);
+      return;
+    }
+    const expectedId = "xwalk." + String(record.condition_id).replace(/^cond\./, "");
+    if (record.id !== expectedId) {
+      errors.push(`${base}.id: "${record.id}" should be "${expectedId}"`);
+    }
+    if (!Array.isArray(record.cpt_placeholder)) {
+      errors.push(`${base}.cpt_placeholder: reserved array must be present`);
+    }
+    if (typeof record.insurance_placeholder !== "object" || record.insurance_placeholder === null || Array.isArray(record.insurance_placeholder)) {
+      errors.push(`${base}.insurance_placeholder: reserved object must be present`);
+    }
+    asArray(record.tcm_dictionary_refs).forEach((ref, refIndex) => {
+      counters.crosswalkDictionaryRefs += 1;
+      checkRef(tdisIds, ref.tdis_id, `${base}.tcm_dictionary_refs[${refIndex}].tdis_id`, errors);
+    });
+    const primaryIcd = asArray(record.icd10)[0]?.code || "";
+    if (canonRecord.icd_hint && primaryIcd && canonRecord.icd_hint !== primaryIcd) {
+      warnings.push(`${base}.icd10: "${primaryIcd}" disagrees with canon icd_hint "${canonRecord.icd_hint}"`);
+    }
+  });
+}
+
 function main() {
   const errors = [];
+  const warnings = [];
   const counters = {
     acupointLinks: 0,
+    crosswalkRecords: 0,
+    crosswalkDictionaryRefs: 0,
     formulaLinks: 0,
     medicationLinks: 0,
     patternLinks: 0,
@@ -295,6 +338,12 @@ function main() {
   validateFormulaPatternLinks(sets, counters, errors);
   validateFormulaCanon(sets, counters, errors);
   validateWorkflows("data/clinical_cases/fertility_workflow_seed.json", sets, counters, errors);
+  validateConditionCrosswalk(counters, errors, warnings);
+
+  if (warnings.length) {
+    console.warn("Relation validation warnings:");
+    warnings.forEach((warning) => console.warn(`- ${warning}`));
+  }
 
   if (errors.length) {
     console.error("Relation validation failed:");

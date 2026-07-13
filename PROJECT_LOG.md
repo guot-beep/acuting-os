@@ -23,6 +23,32 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Track E-I0/I1/I2/I4 executed under Ting's delegation (Claude Code)
+
+Ting reviewed the interop design + §6.1 replacement table, then delegated
+continuation before stepping out (「繼續執行工作 然後always allowed」);
+she returned before the scheduled run fired, so this executed live with
+her present. Scope kept strictly to the four pre-listed tasks:
+
+- E-I0 APPLIED: 18 mojibake name_zh strings repaired across
+  conditions.json + condition_graph_expansion.json via the guarded
+  script (verify-before-replace; re-run dry shows 0 left, 18 healthy).
+  validate-encoding findings dropped 798 → 768 — 768 is the new
+  expected backlog baseline.
+- E-I1: 《中西醫病名對照大辭典》 added to source_registry
+  (mohw_nricm_disease_name_dictionary, tier A, authority 5, additive
+  only; exact edition/URL needs Ting verification before E-I3).
+- E-I2: data/interop/condition_crosswalk.json created — 150 skeleton
+  records, icd10 seeded 150/150 from icd_hint, cpt_placeholder /
+  insurance_placeholder present on every record. PENDING Ting's
+  5-record spot-check.
+- E-I4: validate-relations extended (crosswalk FK integrity, id-shape
+  check, reserved-field presence, icd_hint agreement warning) —
+  150 records checked, 0 errors, 0 warnings.
+
+All must-pass validators green. E-I3 remains BLOCKED on Ting's copy of
+the 大辭典; E-I5 waits for the Phase 2 merge.
+
 ### 2026-07-12 - Conditions interop designed + pathology mojibake repair staged (Claude Code)
 
 Per Ting's request (中英文醫學學習 + 病例 + 保險對接方向), wrote

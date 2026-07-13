@@ -264,7 +264,7 @@
     {
       "id": "western_condition.insulin_resistance",
       "name_en": "Insulin Resistance Context",
-      "name_zh": "?????????",
+      "name_zh": "胰島素阻抗背景",
       "category": "metabolic_reproductive_context",
       "fertility_relevance": true,
       "common_documentation_topics": [
@@ -293,12 +293,13 @@
       "related_tcm_patterns": [
         "pattern.phlegm_damp",
         "pattern.spleen_qi_deficiency"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     },
     {
       "id": "western_condition.male_factor_context",
       "name_en": "Male Factor Context",
-      "name_zh": "????????",
+      "name_zh": "男性因素不孕背景",
       "category": "reproductive_medicine_context",
       "fertility_relevance": true,
       "common_documentation_topics": [
@@ -321,12 +322,13 @@
       "related_eastern_diseases": [
         "eastern_disease.infertility"
       ],
-      "related_tcm_patterns": []
+      "related_tcm_patterns": [],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     },
     {
       "id": "western_condition.ovulatory_factor_context",
       "name_en": "Ovulatory Factor Context",
-      "name_zh": "????????",
+      "name_zh": "排卵因素不孕背景",
       "category": "reproductive_endocrinology_context",
       "fertility_relevance": true,
       "common_documentation_topics": [
@@ -362,12 +364,13 @@
         "pattern.kidney_deficiency",
         "pattern.liver_qi_stagnation",
         "pattern.phlegm_damp"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     },
     {
       "id": "western_condition.ivf_cycle",
       "name_en": "IVF Cycle Context",
-      "name_zh": "????????",
+      "name_zh": "試管嬰兒療程背景",
       "category": "assisted_reproductive_technology_context",
       "fertility_relevance": true,
       "common_documentation_topics": [
@@ -405,12 +408,13 @@
         "pattern.kidney_deficiency",
         "pattern.blood_stasis",
         "pattern.liver_qi_stagnation"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     },
     {
       "id": "western_condition.embryo_transfer",
       "name_en": "Embryo Transfer Context",
-      "name_zh": "????????",
+      "name_zh": "胚胎植入背景",
       "category": "assisted_reproductive_technology_context",
       "fertility_relevance": true,
       "common_documentation_topics": [
@@ -444,12 +448,13 @@
       "related_tcm_patterns": [
         "pattern.kidney_deficiency",
         "pattern.spleen_qi_deficiency"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     },
     {
       "id": "western_condition.luteal_support",
       "name_en": "Luteal Support Context",
-      "name_zh": "????????",
+      "name_zh": "黃體期支持背景",
       "category": "reproductive_medicine_context",
       "fertility_relevance": true,
       "common_documentation_topics": [
@@ -485,7 +490,8 @@
         "pattern.kidney_deficiency",
         "pattern.spleen_qi_deficiency",
         "pattern.blood_deficiency"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     }
   ],
   "expansion_source": "data/pathology/condition_graph_expansion.json",
@@ -636,7 +642,7 @@
     },
     {
       "id": "pattern.damp_heat",
-      "name_zh": "??",
+      "name_zh": "濕熱",
       "pinyin": "Shi Re",
       "name_en": "Damp-Heat",
       "pattern_family": "damp_heat",
@@ -649,11 +655,12 @@
       ],
       "seed_formulas": [
         "formula.long_dan_xie_gan_tang"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     },
     {
       "id": "pattern.yin_deficiency",
-      "name_zh": "??",
+      "name_zh": "陰虛",
       "pinyin": "Yin Xu",
       "name_en": "Yin Deficiency",
       "pattern_family": "deficiency",
@@ -666,11 +673,12 @@
       "seed_formulas": [
         "formula.liu_wei_di_huang_wan",
         "formula.zuo_gui_wan"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     },
     {
       "id": "pattern.blood_deficiency",
-      "name_zh": "??",
+      "name_zh": "血虛",
       "pinyin": "Xue Xu",
       "name_en": "Blood Deficiency",
       "pattern_family": "deficiency",
@@ -685,7 +693,8 @@
         "formula.si_wu_tang",
         "formula.ba_zhen_tang",
         "formula.gui_pi_tang"
-      ]
+      ],
+      "mojibake_repair": "name_zh_reauthored_2026-07-12_pending_ting_review"
     }
   ],
   "relation_links": {
