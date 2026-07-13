@@ -27,6 +27,18 @@ Purpose: fast status overlay for `docs/CODEX_TASK_QUEUE.md`. This file does not 
 | Encoding backlog repair | FROZEN | `validate-encoding` still reports 798 known findings; B1 triage found `git-recoverable=0`. Repair requires source-aware content refill, not mechanical git restore. |
 | C1. Source-check pilot | BLOCKED | Needs Bensky / approved school notes from Ting. |
 
+## Track E-I — Conditions interop (added 2026-07-12)
+
+| Task | Status | Gate |
+| --- | --- | --- |
+| E-I0 pathology mojibake repair (18 strings) | READY — dry-run verified, script `scripts/repair-mojibake-pathology.js` | Ting approves CONDITIONS_INTEROP_DESIGN §6.1 table |
+| E-I1 大辭典 source-registry record | QUEUED | design approval |
+| E-I2 condition_crosswalk.json skeleton (150) | QUEUED | design approval; STOP after for spot-check |
+| E-I3 dictionary_refs fill batches | BLOCKED | needs Ting's copy of 《中西醫病名對照大辭典》 |
+| E-I4 validate-relations crosswalk extension | QUEUED | none |
+| E-I5 intake form build | BLOCKED | Phase 2 merge (app.js freeze) + design approval |
+| E-I6 conditionGraph → canon 150 rewire | BLOCKED | E3 gyn batch rendered |
+
 ## Remaining Candidate Tasks
 
 | Task | Recommended handling |

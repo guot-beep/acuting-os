@@ -23,6 +23,34 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Conditions interop designed + pathology mojibake repair staged (Claude Code)
+
+Per Ting's request (中英文醫學學習 + 病例 + 保險對接方向), wrote
+docs/CONDITIONS_INTEROP_DESIGN.md EXTENDING the existing conditions
+module design (three entities unchanged): (1) sidecar crosswalk layer
+data/interop/condition_crosswalk.json — structured icd10[], 《中西醫病名
+對照大辭典》(衛福部國家中醫藥研究所) dictionary_refs as the zh mapping
+authority, cpt_placeholder/insurance_placeholder reserved-but-present on
+every record so future fills need no migration; (2) symptom intake
+structured fields where picking a suspected condition auto-surfaces its
+red_flags as a mandatory screen; (3) HIPAA-target privacy rules (18
+identifiers = de-id checklist, codes-not-member-IDs, BAA trigger line,
+no PHI to AI services); (4) canonical AI answer template + fixed safety
+phrase blocks zh/en; (5) Track E-I build order for Codex with the
+CODEX_TASK_STATUS progress protocol.
+
+Mojibake located: the 亂碼 Ting saw is NOT in the new Track E files
+(clean) — it is 9 name_zh strings duplicated in data/pathology/
+conditions.json + condition_graph_expansion.json (6 fertility-context
+condition names + 濕熱/陰虛/血虛 pattern names). Originals are not
+git-recoverable, so replacements are re-authored labels. Guarded script
+scripts/repair-mojibake-pathology.js written; dry run verified 18/18
+strings match the guard, 0 healthy fields touched. GATED: waiting for
+Ting to approve the §6.1 replacement table before --apply.
+
+Branch conditions-interop-design (stacked on phase2-runtime-adapter).
+Docs + script only; no data files changed.
+
 ### 2026-07-12 - Phase 2 Runtime Adapter LANDED: app renders 361.json (Claude Code)
 
 Executed docs/RUNTIME_ADAPTER_SPEC.md on branch phase2-runtime-adapter

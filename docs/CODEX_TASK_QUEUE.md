@@ -329,6 +329,37 @@ wire into conditionGraph UI. Follow the schemas and safety wording rules
 in the design doc exactly. Extend validate-relations for tag/id integrity
 as part of E3.
 
+## Track E-I — Conditions interop (中西醫病名對照 × ICD/CPT × intake)
+
+Design spec: docs/CONDITIONS_INTEROP_DESIGN.md (Claude, 2026-07-12).
+Gate: Ting approves the design first; E-I0 additionally needs her approval
+of the §6.1 replacement table.
+
+In order:
+- E-I0 mojibake repair: `node scripts/repair-mojibake-pathology.js`
+  (dry-run verified 2026-07-12: 18 strings across conditions.json +
+  condition_graph_expansion.json). After Ting approves §6.1: `--apply`,
+  rebuild generated data, run validators, log.
+- E-I1 add 《中西醫病名對照大辭典》 (MOHW NRICM) to source_registry +
+  citation policy note. Additive only.
+- E-I2 `data/interop/condition_crosswalk.json` skeleton: one record per
+  canon condition (150), `icd10[]` seeded from icd_hint, empty
+  `cpt_placeholder`/`insurance_placeholder` present on every record.
+  STOP for Ting spot-check (5 records).
+- E-I3 `tcm_dictionary_refs` fill batches citing the 大辭典, category
+  order (gyn first), reconciling with related_eastern_diseases.
+  Per-batch Ting review; needs her copy of the dictionary.
+- E-I4 validate-relations extension: crosswalk FK integrity +
+  icd_hint/icd10 agreement warning.
+- E-I5 intake form structured fields — [CLAUDE design done → CODEX build],
+  only AFTER Phase 2 merge lifts the app.js freeze.
+- E-I6 conditionGraph UI reads canon 150 + crosswalk; mark conditions.json
+  superseded in DATA_MIGRATION_MAP (no deletion).
+
+Progress protocol: every E-I task ends with validators green + a row
+update in docs/CODEX_TASK_STATUS.md + a docs/CODEX_HANDOFF.md entry;
+batch tasks keep a done/total per-category checklist in CODEX_TASK_STATUS.
+
 ## Track H — Herb module (單味中藥卡片、方藥互連、替換思考)
 
 Design spec: docs/HERB_MODULE_DESIGN.md (Claude, 2026-07-12).
