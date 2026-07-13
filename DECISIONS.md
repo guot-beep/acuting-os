@@ -55,15 +55,32 @@ migration for Ting.
   could still be cosmetically changed later (approach B) but that is a
   separate app.js task, not an id change.
 
-## D3 — Formula/herb homonym disambiguation rule  · PROPOSED
+## D3 — Formula/herb homonym disambiguation rule  · LOCKED (2026-07-13, Ting delegated)
 
-- **What:** define now how same-name-different-source entities are
-  distinguished (e.g. two 溫經湯 → `wen_jing_tang__jinkui` vs
-  `wen_jing_tang__furen`), even though only one version is stored today.
-- **Why:** the day a second 溫經湯 is added, the rule must already exist or
-  the first one's id is ambiguous retroactively.
-- **Current state:** single versions only; no rule recorded.
-- **Reconsider only if:** the convention is set once, then LOCKED.
+- **What:** how same-name-different-source entities are distinguished.
+- **Rule:**
+  - Base id = `formula.<pinyin_slug>` / `herb.<pinyin_slug>` (lowercase,
+    underscores). No qualifier when the name has no homonym.
+  - Homonyms (distinct entities sharing a `name_zh`) are disambiguated by
+    classical SOURCE with a DOUBLE-underscore qualifier:
+    `formula.wen_jing_tang__jinkui` vs `formula.wen_jing_tang__furen`.
+  - The source token comes from a controlled abbreviation list (seed;
+    extend the list, never invent ad hoc):
+    `jinkui` 金匱要略 · `shanghan` 傷寒論 · `furen` 婦人大全良方 ·
+    `heji` 太平惠民和劑局方 · `jingyue` 景岳全書 · `piwei` 脾胃論 ·
+    `waike` 外科正宗 · `wenbing` 溫病條辨.
+- **D1 interaction:** never re-id an existing entity. If a base id is
+  already taken unqualified and a homonym later appears, the NEWCOMER takes
+  `__<source>`; the existing id is grandfathered. For names with well-known
+  homonyms (溫經湯, 理中丸/湯 families, …) qualify BOTH from the first entry
+  so neither is privileged — decide at entry time, not retroactively.
+- **Enforcement:** `scripts/validate-naming.js` fails the build if two
+  records share a `name_zh` without both being `__`-qualified, or if a
+  `__` token is not in the source list. Passes trivially today (0 homonyms
+  in the 115 formulas / 202 herbs) — it exists to catch the FIRST collision
+  the day C2/H content fills introduce it.
+- **Reconsider only if:** the source-abbreviation list may grow; the `__`
+  convention itself is LOCKED.
 
 ## D4 — De-identification is a habit, not just a schema  · LOCKED
 
