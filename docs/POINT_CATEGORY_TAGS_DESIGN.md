@@ -69,26 +69,34 @@ rendered — that is fine and expected.
 
 ## 4. Category vocabulary (v1 scope = the closed classical sets)
 
-Group them so the directory can show them as one "特定穴" section with
-sub-labels. IDs are lowercase_snake.
+Bilingual names VERIFIED 2026-07-13 against a standard TCM point-category
+teaching handout (tcmstudy.net, sourced from 靈樞/難經 + curriculum) and the
+Deadman *A Manual of Acupuncture* naming convention the project already
+uses. English "primary" = the most common NCCAOM/textbook term; "alt" lists
+accepted synonyms so search can match either. IDs are lowercase_snake.
 
-| group | id | 中文 | count |
-|---|---|---|---|
-| five_shu | five_shu.jing_well | 井穴 | 12 |
-| five_shu | five_shu.ying_spring | 滎穴 | 12 |
-| five_shu | five_shu.shu_stream | 輸穴 | 12 |
-| five_shu | five_shu.jing_river | 經穴 | 12 |
-| five_shu | five_shu.he_sea | 合穴 | 12 |
-| source | yuan | 原穴 | 12 |
-| connecting | luo | 絡穴 | 15 |
-| cleft | xi | 郄穴 | 16 |
-| back_shu | back_shu | 背俞穴 | 12 |
-| front_mu | front_mu | 募穴 | 12 |
-| influential | influential.zang / fu / qi / xue / jin / mai / gu / sui | 八會穴 | 8 |
-| confluent | confluent | 八脈交會穴 | 8 |
-| lower_he | lower_he | 下合穴 | 6 |
-| crossing | crossing | 交會穴 | many (v2) |
-| command | command.four | 四總穴 | 4 (v2) |
+| group | id | 中文 | pinyin | English (primary) | English (alt) | count |
+|---|---|---|---|---|---|---|
+| five_shu | five_shu.jing_well | 井穴 | jǐng | Jing-Well point | Well point | 12 |
+| five_shu | five_shu.ying_spring | 滎穴 | yíng | Ying-Spring point | Spring point | 12 |
+| five_shu | five_shu.shu_stream | 輸穴 | shū | Shu-Stream point | Stream point | 12 |
+| five_shu | five_shu.jing_river | 經穴 | jīng | Jing-River point | River point | 12 |
+| five_shu | five_shu.he_sea | 合穴 | hé | He-Sea point | Sea point | 12 |
+| source | yuan | 原穴 | yuán | Yuan-Source point | Source point | 12 |
+| connecting | luo | 絡穴 | luò | Luo-Connecting point | Connecting / Collateral point | 15 |
+| cleft | xi | 郄穴 | xì | Xi-Cleft point | Cleft / Accumulation point | 16 |
+| back_shu | back_shu | 背俞穴 | bèi shù | Back-Shu point | Back-Transporting / Associated point | 12 |
+| front_mu | front_mu | 募穴 | mù | Front-Mu point | Alarm / Collecting point | 12 |
+| influential | influential.* | 八會穴 | bā huì | Hui-Meeting point | Influential / Gathering point | 8 |
+| confluent | confluent | 八脈交會穴 | bā mài jiāo huì | Eight Confluent point | Confluence / Master point (of the 8 extraordinary vessels) | 8 |
+| lower_he | lower_he | 下合穴 | xià hé | Lower He-Sea point | Lower Uniting / Lower Sea point | 6 |
+| crossing | crossing | 交會穴 | jiāo huì | Crossing point | Meeting / Intersection point | many (v2) |
+| command | command.four | 四總穴 | sì zǒng | Four Command point | Command point | 4 (v2) |
+
+The eight 八會穴 each need a sub-label (what they gather): influential.zang
+臟會 (organ), influential.fu 腑會 (bowel), influential.qi 氣會, influential.xue
+血會 (blood), influential.jin 筋會 (sinew), influential.mai 脈會 (vessel),
+influential.gu 骨會 (bone), influential.sui 髓會 (marrow).
 
 v1 = five_shu, yuan, luo, xi, back_shu, front_mu, influential, confluent,
 lower_he (all fully closed, board-standard). v2 = crossing / command /
@@ -97,9 +105,11 @@ added after v1 proves the pattern.
 
 ## 5. Authoritative membership tables (for the Codex fill batch)
 
-These are the closed sets. Codex fills `point_categories` from these; every
-one should still be cross-checked against a textbook (中醫/針灸學) before any
-`source_checked` promotion — but membership itself is standard.
+These are the closed sets, VERIFIED 2026-07-13 against the tcmstudy.net
+point-category handout (yuan/luo/xi/lower-he tables matched exactly). Codex
+fills `point_categories` from these; every one should still be cross-checked
+against a textbook (中醫/針灸學) before any `source_checked` promotion — but
+membership itself is standard.
 
 **原穴 Yuan-Source (12):** LU9, LI4, ST42, SP3, HT7, SI4, BL64, KI3, PC7,
 TE4, GB40, LR3.
@@ -124,7 +134,18 @@ BL17 血會, GB34 筋會, LU9 脈會, BL11 骨會, GB39 髓會.
 BL62 (陽蹻), GB41 (帶), TE5 (陽維), LU7 (任), KI6 (陰蹻).
 
 **下合穴 Lower He-Sea (6):** ST36 胃, ST37 大腸, ST39 小腸, BL40 膀胱,
-BL39 三焦, GB34 膽.
+BL39 三焦, GB34 膽. (The 3 leg-yang channels' lower-He = their own He-Sea:
+胃 ST36, 膀胱 BL40, 膽 GB34; only the 3 arm-yang channels get a separate
+lower-He: 大腸 ST37, 小腸 ST39, 三焦 BL39 — the handout lists just those 3.)
+
+**Classical extra Yuan points (optional, note only):** 膏之原 鳩尾 CV15 and
+肓之原 氣海 CV6 appear in the 難經 as source points for the 膏/肓 — include as
+a note, not in the primary 12, to avoid confusing the count.
+
+**郄穴 count note:** the 12 primary-channel Xi-Cleft + 4 on the extraordinary
+vessels (陽蹻 BL59, 陰蹻 KI8, 陽維 GB35, 陰維 KI9) = 16, the NCCAOM figure.
+The teaching handout lists only the 12 primary; the validator expects 16
+(set the count per whichever scope Ting picks — recommend 16).
 
 **五輸穴 element rule (66 = 5 per channel):** the 井滎輸經合 sit distal on
 each of the 12 channels; element assignment is fixed by channel polarity:
@@ -195,3 +216,20 @@ other 361.json touch).
 1. This design + the v1 category scope (§4) + the membership tables (§5).
 2. A gated 361.json write window for PC2.
 3. PC5 UX (badge row + filter group) before it renders.
+
+## 10. Sources for the bilingual terminology (§4–§5)
+
+- Standard point-category teaching handout, tcmstudy.net
+  (`/handouts/A03_Point_Cat1.pdf`) — sourced from 靈樞 ch.1 / 難經 ch.63-68;
+  used to verify the Five-Shu / yuan / luo / xi / lower-He tables and the
+  Hui-Meeting naming. Confirms 井滎輸經合 English terms and the
+  yuan↔luo Host-Guest (原絡) pairing.
+- Deadman, *A Manual of Acupuncture* — the naming convention the project
+  already lists in source_registry (`manual_of_acupuncture`); use it as the
+  cross-check reference for the fill batch.
+- WHO *International Standard Terminologies on Traditional Medicine* — the
+  formal bilingual standard to cite once a readable copy is on hand (the
+  online PDF did not machine-parse this session); membership itself is not
+  in dispute, so this is a labeling cross-check, not a blocker.
+- Any code marked `source_checked` later must cite one of the above per
+  record, per the project's normal source discipline.
