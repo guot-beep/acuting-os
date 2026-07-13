@@ -26,6 +26,44 @@ Claude review note:
 
 ---
 
+## 2026-07-12 - Claude - Phase 2 Runtime Adapter landed (branch, pending merge)
+
+Branch: `phase2-runtime-adapter`
+
+Commit: see branch head — "Phase 2: render standard acupoints from 361 adapter". Push/PR may be pending GitHub access; if the branch is local-only, Codex should push it and open the PR for Ting.
+
+Task: EXECUTION_PLAN Phase 2 / docs/RUNTIME_ADAPTER_SPEC.md (all 8 steps). Gate (retire validate-data legacy deep-equal) was approved by Ting — recorded in PROJECT_LOG.
+
+Files changed:
+- `scripts/build-data.js` (emits `data/generated/points_361.js`)
+- `data/generated/points_361.js` (new, generated)
+- `data/generated/*` (rebuild timestamps)
+- `index.html` (script tag + dashboard quality labels)
+- `app.js` (adapt361Record, needling361Text, reconcileSavedPoints, assembly swap, placeholder removal, status-based dashboard counters)
+- `scripts/validate-data.js` (rewritten: 361-coverage validator)
+- `PROJECT_LOG.md`, `docs/DATA_MIGRATION_MAP.md`, `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `validate-data` PASS (new checks), `validate-interactions` PASS, `validate-relations` PASS, `validate-herbal-links` PASS, `validate-herb-canon` PASS
+- `validate-encoding`: expected backlog FAIL, still exactly 798 findings
+- Browser QA: dashboard 361/361, LI4/PC1/BL61 pages, search jump, filters, 390px, localStorage merge scenarios, no console errors
+
+Protected areas not touched:
+- `data/acupoints/361.json` (read-only source; content unchanged)
+- `docs/CLOUDTCM_*`, `data/acupoints/embedded/*.json`, `legacy/`, encoding backlog
+
+Known risks / manual checks:
+- Pre-adapter localStorage snapshots are filtered at load by `reconcileSavedPoints()`; if Ting has hand-edited points saved, verify they still appear (console logs an info line listing overriding codes).
+- BL61-BL67 needling shows the existing mojibake text (frozen encoding backlog) — expected until the data repair batch.
+
+Next recommended action:
+- Ting merge the PR (or Codex push branch + open PR first). After merge, app.js/index.html/build-data.js freeze for Codex lifts per EXECUTION_PLAN Phase 2 note.
+
+Claude review note:
+- Embedded arrays now contribute only EX-HN3/EX-HN5. Standard-channel content edits must go to `data/acupoints/361.json` + `scripts/build-data.js` rebuild from now on.
+
+---
+
 ## 2026-07-12 - Codex - Task queue status overlay
 
 Branch: `main`

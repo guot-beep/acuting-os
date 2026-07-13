@@ -106,6 +106,16 @@ fs.writeFileSync(
 );
 console.log("Built data/generated/cloudtcm_map.js (" + Object.keys(cloudtcm.points).length + " points)");
 
+// ---- 361 standard acupoint layer (Phase 2 runtime adapter) -----------------
+const points361 = readJson("data/acupoints/361.json");
+fs.writeFileSync(
+  path.join(ROOT, "data/generated/points_361.js"),
+  "// GENERATED FILE - DO NOT EDIT. Built by scripts/build-data.js\n" +
+  "// Source of truth: data/acupoints/361.json\n" +
+  "globalThis.ACUTING_POINTS_361 = " + JSON.stringify(points361) + ";\n"
+);
+console.log("Built data/generated/points_361.js (" + points361.length + " points)");
+
 // ---- JS twins generated from JSON source files ----------------------------
 writeGlobalJson("data/tung/point_index.js", "ACUTING_TUNG_INDEX", readJson("data/tung/point_index.json"), "window");
 writeGlobalJson("data/auricular/gb93_index.js", "ACUTING_AURICULAR_GB93", readJson("data/auricular/gb93_index.json"));

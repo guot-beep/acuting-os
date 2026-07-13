@@ -6,10 +6,13 @@ const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 // load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
 // silently degrading to placeholder-only content.
 (function dataLoadGuard() {
-  if (globalThis.ACUTING_APP_DATA) return;
+  const missing = [];
+  if (!globalThis.ACUTING_APP_DATA) missing.push("data/generated/app_data.js");
+  if (!globalThis.ACUTING_POINTS_361) missing.push("data/generated/points_361.js");
+  if (!missing.length) return;
   const banner = document.createElement("div");
   banner.className = "data-missing-banner";
-  banner.textContent = "⚠ 資料檔未載入：data/generated/app_data.js 沒有被讀到，穴位內容會大量缺失。請確認專案檔案已完整同步到本機後按 Ctrl+F5 重新整理。";
+  banner.textContent = `⚠ 資料檔未載入：${missing.join("、")} 沒有被讀到，穴位內容會大量缺失。請確認專案檔案已完整同步到本機後按 Ctrl+F5 重新整理。`;
   document.body.prepend(banner);
 })();
 
@@ -47,36 +50,69 @@ const directoryTopics = (uiConfig.directoryTopics || []).map(hydrateDirectoryTop
 const earAnatomyLabelData = uiConfig.earAnatomyLabelData || [];
 const earPointAnchors = uiConfig.earPointAnchors || {};
 
-function standardPointPlaceholder(code) {
-  const prefix = channelCodeFromPointCode(code);
+// standardPointPlaceholder() was removed with the Phase 2 runtime adapter:
+// the 361 layer is complete, so placeholder records are never generated.
+// (Old placeholder stubs saved in localStorage are dropped by
+// reconcileSavedPoints() below.)
+
+// Phase 2 runtime adapter: data/acupoints/361.json (loaded via generated
+// points_361.js) is the single runtime source for the 14 standard channels.
+// The embedded standard-channel arrays are retired from the runtime merge —
+// see docs/RUNTIME_ADAPTER_SPEC.md. Auricular / GB93 / Tung pipelines are
+// unchanged.
+// `needling` in 361.json is a string on 354 records and a structured object
+// ({depth, angle, technique, moxibustion}) on 7 (BL61-BL67, encoding-backlog
+// records). Render whatever text exists faithfully; never invent content.
+function needling361Text(needling) {
+  if (typeof needling === "string") return needling;
+  if (needling && typeof needling === "object") {
+    return [
+      needling.depth ? `針刺深度 Depth: ${needling.depth}` : "",
+      needling.angle ? `角度 Angle: ${needling.angle}` : "",
+      needling.technique || "",
+      needling.moxibustion ? `艾灸 Moxibustion: ${needling.moxibustion}` : ""
+    ].filter(Boolean).join("\n");
+  }
+  return "";
+}
+
+function adapt361Record(record) {
+  const prefix = channelCodeFromPointCode(record.code);
   const meta = channelPrefixMeta[prefix] || { meridian: "Standard Channel / 標準經穴", region: "待補", x: 180, y: 320 };
+  // Safety wording law: every contraindication and danger line must remain
+  // visible in the runtime cautions text.
+  const cautionLines = [...new Set([...(record.contraindications || []), ...(record.cautions || [])])];
+  const dangerLines = record.danger || [];
   return {
-    code,
-    nameZh: code,
-    nameEn: code,
-    pinyin: code,
-    meridian: meta.meridian,
-    region: meta.region,
-    location: "待依 WHO Standard Acupuncture Point Locations 與專業教材補入。",
-    locationEn: "Pending source review against WHO Standard Acupuncture Point Locations and professional textbooks.",
-    cunMeasurement: "Pending source review.",
-    functions: "待補。",
-    functionsEn: ["Pending source review"],
-    patterns: ["待補"],
-    patternsEn: ["Pending source review"],
-    evidence: "Placeholder page created so every standard channel point has an individual AcuTing OS record. Do not use as a clinical location until source_checked.",
-    cautions: "Draft placeholder. Needling depth, angle, contraindications, and anatomical safety notes are pending professional source review.",
-    reviewStatus: "placeholder",
-    sources: standardPointSources(code),
-    visualLinks: standardPointVisualLinks(code),
-    x: meta.x,
-    y: meta.y
+    code: record.code,
+    nameZh: record.chinese || record.code,
+    nameEn: record.english || record.code,
+    pinyin: record.pinyin || record.code,
+    meridian: record.meridian_display || meta.meridian,
+    region: record.region || meta.region,
+    location: record.location_zh || "",
+    locationEn: record.location_en || "",
+    cunMeasurement: record.cun_measurement || "",
+    anatomy: record.anatomy_terms || [],
+    functions: (record.functions_zh || []).join("，"),
+    functionsEn: (record.functions_en || []).join(" "),
+    patterns: record.indications_zh || [],
+    patternsEn: record.indications_en || [],
+    evidence: record.evidence || "",
+    cautions: [...cautionLines, ...dangerLines].join("\n"),
+    techniqueNotes: needling361Text(record.needling),
+    nccaomHighYield: record.nccaom_high_yield || [],
+    clinicalPearls: record.clinical_pearls || [],
+    reviewStatus: record.review_status || "draft",
+    sourceStatus: record.source_status || "model_draft_pending_source_review",
+    enrichmentStatus: record.enrichment_status || "",
+    sources: record.sources || [],
+    x: record.ui_map?.x ?? meta.x,
+    y: record.ui_map?.y ?? meta.y
   };
 }
 
-const standardPointPlaceholders = standardChannelAudit.channels.flatMap((channel) =>
-  Array.from({ length: channel.expected }, (_, index) => standardPointPlaceholder(`${channel.code}${index + 1}`))
-);
+const standardPoints361 = (globalThis.ACUTING_POINTS_361 || []).map(adapt361Record);
 
 const tungIndexRecords = globalThis.ACUTING_TUNG_INDEX?.points || [];
 
@@ -277,8 +313,16 @@ const patternEnglishMap = globalThis.ACUTING_APP_DATA?.patternEnglishMap || {};
 // Migrated to data/: edit data/**/embedded/*.json, then run scripts/build-data.js
 const auricularPoints = globalThis.ACUTING_APP_DATA?.auricularPoints || [];
 
+// The embedded arrays stay loaded only to contribute records OUTSIDE the 361
+// standard-channel scope (currently EX-HN3 印堂 and EX-HN5 太陽). Every
+// standard-channel code now renders from the 361 layer.
+const standard361Codes = new Set(standardPoints361.map((point) => point.code));
+const embeddedExtraPoints = [starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion]
+  .flat()
+  .filter((point) => !standard361Codes.has(point.code));
+
 const sourceByCode = Object.fromEntries(
-  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularGb93Index, auricularPoints, tungPointIndex)])]
+  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPoints361, embeddedExtraPoints, auricularGb93Index, auricularPoints, tungPointIndex)])]
     .map((code) => [code, ["https://www.acupoints.org/", "https://cloudtcm.com/acupoint"]])
 );
 
@@ -286,7 +330,7 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularGb93Index, auricularPoints, tungPointIndex));
+const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, auricularGb93Index, auricularPoints, tungPointIndex));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";
@@ -503,10 +547,34 @@ function loadPoints() {
   if (!saved) return defaultPoints;
   try {
     const parsed = JSON.parse(saved);
-    return Array.isArray(parsed) ? enrichPoints(mergeByCode(defaultPoints, parsed)) : defaultPoints;
+    if (!Array.isArray(parsed)) return defaultPoints;
+    return enrichPoints(mergeByCode(defaultPoints, reconcileSavedPoints(parsed)));
   } catch {
     return defaultPoints;
   }
+}
+
+// persist() snapshots the FULL merged dataset, so localStorage written before
+// the 361 adapter contains old placeholder stubs and unedited embedded copies
+// that would shadow the new 361 content on merge. Drop, at load time only:
+// (a) old placeholder stubs, and (b) standard-channel records without a
+// techniqueNotes key — pre-adapter default copies never had one, while every
+// record saved through the edit form or import does. Real user edits still
+// merge over defaults as before. localStorage itself is not rewritten.
+function reconcileSavedPoints(parsed) {
+  const OLD_PLACEHOLDER_LOCATION = "待依 WHO Standard Acupuncture Point Locations 與專業教材補入。";
+  const kept = parsed.filter((point) => {
+    if (!point || typeof point !== "object") return false;
+    const isOldPlaceholder = point.reviewStatus === "placeholder"
+      && (point.nameZh === point.code || point.location === OLD_PLACEHOLDER_LOCATION);
+    if (isOldPlaceholder) return false;
+    const isPreAdapterDefaultCopy = standard361Codes.has(point.code)
+      && point.techniqueNotes === undefined;
+    return !isPreAdapterDefaultCopy;
+  });
+  const overriding = kept.filter((point) => standard361Codes.has(point.code)).map((point) => point.code);
+  if (overriding.length) console.info("AcuTing: locally saved edits override 361 defaults for: " + overriding.join(", "));
+  return kept;
 }
 
 function findExactPoint(query) {
@@ -926,8 +994,8 @@ function renderDatabaseHealth() {
   if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
   if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);
   if (healthCompletionPercentEl) healthCompletionPercentEl.textContent = `${audit.completionPercent}%`;
-  if (healthReviewedStandardEl) healthReviewedStandardEl.textContent = String(quality.reviewedStandard);
-  if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.placeholderStandard);
+  if (healthReviewedStandardEl) healthReviewedStandardEl.textContent = String(quality.sourceCheckedStandard);
+  if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.draftStandard);
   if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
   if (healthAuricularIndexEl) healthAuricularIndexEl.textContent = String(quality.auricular);
   if (healthAuricularGb93CoverageEl) healthAuricularGb93CoverageEl.textContent = `${quality.auricularGb93Indexed}/${quality.auricularGb93Expected}`;
@@ -1000,8 +1068,10 @@ function getDataQualityAudit() {
   const visualLinked = points.filter((point) => normalizeVisualLinks(point.visualLinks || []).length > 0).length;
   return {
     total: points.length,
-    reviewedStandard: standard.filter((point) => !isPlaceholderStandardRecord(point)).length,
-    placeholderStandard: standard.filter(isPlaceholderStandardRecord).length,
+    // Post-361-adapter: every standard point is a real record, so the quality
+    // axis is review_status based (draft vs source_checked), not placeholder based.
+    sourceCheckedStandard: standard.filter((point) => point.reviewStatus === "source_checked").length,
+    draftStandard: standard.filter((point) => point.reviewStatus !== "source_checked").length,
     tungIndex: points.filter((point) => String(point.meridian || "").includes("Master Tung")).length,
     auricular: points.filter(isAuricularPoint).length,
     auricularGb93Indexed: auricularGb93Records.length,
@@ -1015,7 +1085,7 @@ function getDataQualityAudit() {
 }
 
 function getStandardPointAudit() {
-  const standardCodes = new Set(points.filter(isReviewedStandardChannelPoint).map((point) => point.code));
+  const standardCodes = new Set(points.filter(isStandardChannelPoint).map((point) => point.code));
   const channels = standardChannelAudit.channels.map((channel) => {
     const present = Array.from(standardCodes).filter((code) => channelCodeFromPointCode(code) === channel.code).length;
     const missing = Math.max(0, channel.expected - present);
@@ -1039,18 +1109,6 @@ function isStandardChannelPoint(point) {
     && !String(point.meridian || "").includes("Extra Point")
     && !String(point.meridian || "").includes("Master Tung")
     && !String(point.code || "").startsWith("EX-");
-}
-
-function isPlaceholderStandardRecord(point) {
-  // mergeByCode spreads real records over placeholders, but real records carry
-  // no reviewStatus field, so the placeholder's reviewStatus survives the merge.
-  // A record is only a true placeholder when its content is still the stub
-  // (nameZh was seeded with the point code itself).
-  return point.reviewStatus === "placeholder" && point.nameZh === point.code;
-}
-
-function isReviewedStandardChannelPoint(point) {
-  return isStandardChannelPoint(point) && !isPlaceholderStandardRecord(point);
 }
 
 function hydrateFilters() {

@@ -23,6 +23,68 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Phase 2 Runtime Adapter LANDED: app renders 361.json (Claude Code)
+
+Executed docs/RUNTIME_ADAPTER_SPEC.md on branch phase2-runtime-adapter
+(gate pre-approved, see entry below). The app now renders
+data/acupoints/361.json as the single standard-channel source: all 361
+points show full bilingual content, dashboard reads 361/361 with
+status-based quality counters (draft 361 / source_checked 0), and the
+embedded standard-channel arrays are retired from the runtime merge
+(files untouched; they still contribute EX-HN3 印堂 / EX-HN5 太陽,
+the two extras outside the 361 scope — discovered during field
+verification, they would otherwise have been lost).
+
+Changes: scripts/build-data.js emits data/generated/points_361.js;
+index.html loads it before app.js; app.js gains adapt361Record() +
+needling361Text() (7 BL61-67 records carry needling as an object with
+mojibake technique text — rendered faithfully, data untouched per the
+encoding freeze); standardPointPlaceholder() removed (validation passed
+first); loadPoints() gains reconcileSavedPoints() dropping pre-adapter
+localStorage snapshots (old placeholder stubs + unedited default copies
+identified by their missing techniqueNotes key) so stale text cannot
+shadow 361 content while real user edits still merge; validate-data.js
+rewritten from legacy deep-equal to a 361-coverage validator (coverage,
+field fidelity, safety-line preservation — every contraindication/danger
+line must survive into runtime cautions — layer counts 361+2+29+13-1+277
+= 681, duplicate check).
+
+Validation: validate-data PASS, validate-interactions PASS,
+validate-relations PASS, validate-herbal-links PASS, validate-herb-canon
+PASS, validate-encoding expected FAIL still exactly 798. Browser QA on
+a local static server: dashboard 361/361, LI4 + PC1 + BL61 render,
+exact-search jump (PC8), topic filters, 390px no overflow, localStorage
+3-scenario merge test, zero console errors.
+
+Field-map deviations from the spec table (verified against real embedded
+records as the spec instructed): functionsEn is a STRING in runtime
+convention (joined " "), not array; needling maps to techniqueNotes.
+Full implemented map recorded in docs/DATA_MIGRATION_MAP.md.
+
+Next: push branch + PR for Ting's merge. After merge: Codex W4-1 status
+strips can extend to point pages; Phase 3 hygiene continues.
+
+### 2026-07-12 - Runtime Adapter gate APPROVED; handoff to Claude Code (Claude, Cowork session)
+
+Ting approved the RUNTIME_ADAPTER_SPEC.md step-1 gate ask in a Cowork
+session: retire `scripts/validate-data.js`'s legacy deep-equal check,
+replaced by a 361-coverage validator, so the Runtime Adapter (Phase 2)
+can proceed. Approval recorded here per the spec's requirement ("do not
+start without this approval recorded").
+
+Execution did not happen in that Cowork session: its Linux sandbox
+(the tool environment used to run git/node there) failed to start after
+repeated retries, so no branch/commit/validation could run. Ting is
+switching to Claude Code (running locally) to continue Phase 2 with a
+working shell. No files were touched — 361.json, app.js, index.html,
+build-data.js, validate-data.js all unchanged from `f13899a`.
+
+Next agent (Claude Code session): read this entry + EXECUTION_PLAN.md
+Phase 2 + RUNTIME_ADAPTER_SPEC.md, confirm `git status` clean on main at
+`f13899a` (or later), then execute the 8 spec steps directly — the gate
+is already cleared, do not re-ask Ting unless spec details changed.
+
+
 ### 2026-07-12 - Herb module designed (Claude)
 
 Ting's requirement: herb cards like formula cards, formula<->herb linking
