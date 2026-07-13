@@ -31,24 +31,29 @@ migration for Ting.
 - **Reconsider only if:** never for existing ids. New id schemes apply to
   new entities only.
 
-## D2 — Namespace the non-standard point families  · PROPOSED
+## D2 — Namespace the non-standard point families  · LOCKED (2026-07-13, Ting: "統一命名")
 
-- **What:** give Tung and auricular points a consistent namespace prefix so
-  they can never collide with standard channel codes or each other.
-- **Why:** the external review's sharpest catch. Deciding this now is one
-  second; retrofitting it after clinical data references the bare codes is
-  a full migration.
-- **Current state (INCONSISTENT — this is the gap):**
-  - Standard: `SP6` ✓ stable
-  - Tung: `T11.01` — has a `T` prefix but not a clear `tung.` namespace
-  - Auricular GB93: `AT4` — **bare, no namespace**
-  - Auricular embedded: `EAR-SM` — **namespaced** ✓
-- **Decision needed from Ting:** pick ONE convention (recommend
-  `tung.11_01`, `ear.at4`, keep standard as-is) and, because practice data
-  is still disposable, run the rename now via a guarded migration + a
-  validator that rejects any new bare non-standard code. If Ting prefers to
-  leave codes as-is, record that here and the namespace door closes.
-- **Reconsider only if:** decided now, then LOCKED.
+- **What:** every acupoint carries a stable, namespaced `id`, ADDED as a new
+  field. The display `code` is NOT changed — approach A, so URLs, prefix
+  matchers, and the UI keep working. Clinical foreign keys reference `id`.
+- **The locked scheme (pure function of code):**
+  - standard channel : `id === code` (SP6 — international code is stable)
+  - extra point EX-* : `ex.hn3` (strip `EX-`, lowercase)
+  - Master Tung : `tung.11.01` / `tung.DT.01` — these ALREADY existed;
+    kept verbatim per D1 (277 points, untouched by the migration)
+  - auricular : `ear.at4` / `ear.sm` (strip `EAR-`, lowercase)
+- **Why the split code vs id:** the app uses `code` as id + display + URL
+  key (`#point/AT4`) + regex prefix matchers. Renaming `code` would break
+  all of that and needs frozen app.js edits. Adding a decoupled `id`
+  (D1's own principle) gets the stable namespaced key with zero runtime risk.
+- **How it was done:** `scripts/add-point-ids.js` (adds-only, respects
+  pre-existing ids, asserts distinct code → distinct id). 681 points → 681
+  unique ids, 0 collisions (the GB93 `AT4` and embedded `AT4` are the same
+  point and correctly share `ear.at4`). `scripts/validate-point-ids.js`
+  now enforces this every run — a bare non-standard id fails the build.
+- **Reconsider only if:** never for existing ids. The `code` display values
+  could still be cosmetically changed later (approach B) but that is a
+  separate app.js task, not an id change.
 
 ## D3 — Formula/herb homonym disambiguation rule  · PROPOSED
 

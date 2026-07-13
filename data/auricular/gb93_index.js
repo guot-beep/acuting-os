@@ -70,7 +70,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       ],
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.at4"
     },
     {
       "code": "AT1",
@@ -86,7 +87,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "location_en": "On the anteroinferior part of the lateral antitragus, corresponding to Antitragus Zone 1.",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT1"
-      ]
+      ],
+      "id": "ear.at1"
     },
     {
       "code": "AT2",
@@ -104,7 +106,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "location_en": "On the middle part of the lateral antitragus, corresponding to Antitragus Zone 2.",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT2"
-      ]
+      ],
+      "id": "ear.at2"
     },
     {
       "code": "AT3",
@@ -121,7 +124,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "location_en": "On the posterior part of the lateral antitragus, corresponding to Antitragus Zone 3.",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT3"
-      ]
+      ],
+      "id": "ear.at3"
     },
     {
       "code": "SC6",
@@ -131,7 +135,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.sc6"
     },
     {
       "code": "CO4",
@@ -141,7 +146,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.co4"
     },
     {
       "code": "CO5",
@@ -151,7 +157,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.co5"
     },
     {
       "code": "CO6",
@@ -161,7 +168,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.co6"
     },
     {
       "code": "HX8",
@@ -171,7 +179,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.hx8"
     },
     {
       "code": "AH2",
@@ -181,7 +190,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.ah2"
     },
     {
       "code": "TF4",
@@ -191,7 +201,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.tf4"
     },
     {
       "code": "TG4",
@@ -201,7 +212,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.tg4"
     },
     {
       "code": "LO5",
@@ -211,7 +223,8 @@ globalThis.ACUTING_AURICULAR_GB93 = {
       "review_status": "index_only",
       "source_urls": [
         "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4"
-      ]
+      ],
+      "id": "ear.lo5"
     }
   ]
 };

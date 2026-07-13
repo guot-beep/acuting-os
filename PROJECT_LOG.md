@@ -23,6 +23,23 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-13 - Point id namespacing executed (DECISIONS.md D2, Claude Code)
+
+Ting ratified D2 ("統一命名"). Executed approach A: ADD a stable namespaced
+`id` to every acupoint; the display `code` is untouched (URLs, prefix
+matchers, UI all keep working; no frozen app.js change). Discovered Tung
+already had ids (`tung.11.01`) — kept verbatim per D1's immutability rule.
+Added ids to standard (id=code), auricular GB93 + embedded (`ear.at4` /
+`ear.sm`), and EX extras (`ex.hn3`). 681 points → 681 unique ids, 0
+collisions (GB93 `AT4` and embedded `AT4` are the same merged point and
+correctly share `ear.at4`). New `scripts/add-point-ids.js` (adds-only,
+respects existing ids) + `scripts/validate-point-ids.js` (locks the
+convention; a bare non-standard id now fails the build; added to the
+standard validator list). All validators PASS. Branch point-id-namespace
+(off conditions-interop-design). Clinical foreign keys will reference `id`;
+runtime wiring (adapter passthrough) waits for the Phase 2 merge, per the
+DECISIONS.md / freeze sequencing.
+
 ### 2026-07-13 - 大辭典 verified + E3 gyn content fill (Claude Code)
 
 Codex is out of credits, so Claude ran the unblocked work. Two parts:
