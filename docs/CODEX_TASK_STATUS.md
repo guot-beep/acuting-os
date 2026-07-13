@@ -34,7 +34,8 @@ Purpose: fast status overlay for `docs/CODEX_TASK_QUEUE.md`. This file does not 
 | E-I0 pathology mojibake repair (18 strings) | DONE 2026-07-12 (Claude, under Ting's "always allowed" delegation) — encoding findings 798 → 768 | — |
 | E-I1 大辭典 source-registry record | DONE 2026-07-12 — `mohw_nricm_disease_name_dictionary`, registry now 34 sources | — |
 | E-I2 condition_crosswalk.json skeleton (150) | DONE 2026-07-12 — 150 records, icd10 seeded 150/150, placeholders present | Ting 5-record spot-check pending |
-| E-I3 dictionary_refs fill batches | BLOCKED | needs Ting's copy of 《中西醫病名對照大辭典》 |
+| E-I3 dictionary_refs fill batches | BLOCKED | needs Ting's copy of 《中西醫病名對照大辭典》. Online DB cnwm.nricm.edu.tw verified to EXIST but unreachable 2026-07-12 (port 80 timeout / 443 refused); official edition recorded in source registry. |
+| E3 gyn_fertility content fill (summary/red_flags/western_context) | DONE 2026-07-13 (Claude) — 25/25 conditions, 150 fields, all draft; encoding count unchanged 768 | Ting per-batch review |
 | E-I4 validate-relations crosswalk extension | DONE 2026-07-12 — 150 records checked, 0 errors, 0 warnings | — |
 | E-I5 intake form build | BLOCKED | Phase 2 merge (app.js freeze) + design approval |
 | E-I6 conditionGraph → canon 150 rewire | BLOCKED | E3 gyn batch rendered |

@@ -23,6 +23,34 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-13 - 大辭典 verified + E3 gyn content fill (Claude Code)
+
+Codex is out of credits, so Claude ran the unblocked work. Two parts:
+
+1. 大辭典 verification: located the official resource — 中西醫病名對照
+   大辭典 第二版 (國家中醫藥研究所, 2010, 全五冊, GPN 4809902627), official
+   page nricm.edu.tw/p/412-1000-320.php, online database cnwm.nricm.edu.tw.
+   The online DB EXISTS but was unreachable (port 80 timeout, 443 refused)
+   from here — recorded edition + both URLs + the access note in
+   source_registry (mohw_nricm_disease_name_dictionary). E-I3 stays
+   BLOCKED: without dictionary access I will not fabricate citations.
+
+2. E3 gyn_fertility content fill: filled the 25 gyn conditions in
+   condition_canon_shortlist.json with summary_zh/en, red_flags_zh/en,
+   western_context_zh/en (150 fields) via scripts/apply-condition-fill.js
+   (adds-only, never overwrites; compact-format preserved so the diff is
+   exactly the 25 gyn records, 125 others byte-identical). red_flags favour
+   the refer-out/seek-care direction; western_context uses documentation
+   language ("commonly managed with"), never treatment instruction. ALL
+   draft / needs_source_review — this is the E3 first batch the module
+   design queues (gyn first), pending Ting's per-batch review. Not rendered
+   anywhere yet (conditionGraph rewire E-I6 is separately blocked), so this
+   is pure reviewable data prep. New file data/pathology/condition_fill_gyn.json
+   holds the source content; apply script is rerunnable for later batches.
+
+Validators: relations/data/interactions/herb-canon PASS; encoding still
+768 (my Chinese content added zero findings). Branch conditions-interop-design.
+
 ### 2026-07-12 - Track E-I0/I1/I2/I4 executed under Ting's delegation (Claude Code)
 
 Ting reviewed the interop design + §6.1 replacement table, then delegated

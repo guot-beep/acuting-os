@@ -26,6 +26,36 @@ Claude review note:
 
 ---
 
+## 2026-07-13 - Claude - 大辭典 verified + E3 gyn content fill
+
+Branch: `conditions-interop-design`
+
+Task: ran the unblocked conditions work while Codex is out of credits.
+
+Files changed:
+- `data/sources/source_registry.json` (大辭典 record enriched with verified edition + official/online/GPI URLs + access note)
+- `data/pathology/condition_canon_shortlist.json` (25 gyn records gain summary/red_flags/western_context; 125 others byte-identical)
+- `data/pathology/condition_fill_gyn.json` (NEW: the fill source content)
+- `scripts/apply-condition-fill.js` (NEW: adds-only merge tool, rerunnable per batch)
+- `docs/CODEX_TASK_STATUS.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`
+
+Validation: validate-relations / validate-data / validate-interactions / validate-herb-canon PASS; validate-encoding still 768 (no new findings).
+
+Protected areas not touched: 361.json, CLOUDTCM_*, app.js, index.html, legacy/, encoding backlog.
+
+Known risks / manual checks:
+- E3 gyn content is DRAFT clinical study text pending Ting's per-batch review; not rendered yet (E-I6 conditionGraph rewire still blocked).
+- E-I3 dictionary_refs still BLOCKED: the NRICM online DB was unreachable from here; Ting's print/online access needed.
+
+Next recommended action:
+- Ting: review the 25 gyn fills (spot-check cond.pcos, cond.amenorrhea, cond.breech_presentation). If the tone/depth is right, the same apply-condition-fill.js pattern extends to pain_msk (30) next.
+- Codex (when credits return): E-I3 once Ting has the dictionary; E3 pain_msk batch using data/pathology/condition_fill_pain_msk.json + scripts/apply-condition-fill.js pain_msk.
+
+Claude review note:
+- red_flags are bilingual parallel arrays (red_flags_zh/red_flags_en), matching the existing conditions.json red_flags_en convention.
+
+---
+
 ## 2026-07-12 - Claude - Track E-I0/I1/I2/I4 executed
 
 Branch: `conditions-interop-design` (stacked on `phase2-runtime-adapter`)
