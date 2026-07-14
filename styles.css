@@ -425,6 +425,40 @@ h1 {
   padding-top: 0.5rem;
 }
 
+/* LL1: collapsible 按語 reflection section in the SOAP form (closed by default) */
+.soap-reflection {
+  border: 1px dashed #cbb98f;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  margin-top: 0.4rem;
+}
+.soap-reflection > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent-dark);
+  padding: 0.2rem 0;
+}
+.soap-reflection > label { margin-top: 0.5rem; }
+
+/* LL1: rendered 按語 on a SOAP note card (only shown when filled) */
+.soap-reflection-view {
+  margin-top: 0.5rem;
+  border-top: 1px dashed #cbb98f;
+  padding-top: 0.5rem;
+  display: grid;
+  gap: 0.4rem;
+}
+.soap-reflection-view small {
+  color: var(--accent-dark);
+  display: block;
+  font-size: 0.78rem;
+}
+.soap-reflection-view span {
+  color: #344044;
+  font-size: 0.86rem;
+  white-space: pre-line;
+}
+
 .soap-block strong {
   color: var(--accent-dark);
   display: block;

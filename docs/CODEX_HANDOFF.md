@@ -26,6 +26,31 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Claude - LL1: 按語 reflection fields on the SOAP note
+
+Branch: `ll1-reflection` (off main). Files: `index.html`, `app.js`, `styles.css`.
+
+Learning Loop LL1 (docs/LEARNING_LOOP_TRACK.md). Three OPTIONAL free-text
+fields added to the SOAP note inside a collapsible `<details class=
+"soap-reflection">` (closed by default, zero routine friction):
+`differentialConsidered`, `reflection` (按語), `ifIneffectivePlan`.
+
+Wiring: index.html form section; `normalizeSoapNote` + the save-form path +
+the fallback template all carry the 3 fields; `renderSoapNoteCard` shows a
+`.soap-reflection-view` block ONLY when at least one is filled (no clutter on
+plain notes). These live on the SOAP note object in localStorage (clinical
+layer) — NOT in Git. When the SQLite store lands they become `visits`
+columns per the LL track.
+
+Validation: 6-validator sweep PASS. Browser QA: section collapsed by default;
+a note SAVES with all three empty (0→1); filling them round-trips (saved to
+the note + rendered on the card); zero console errors.
+
+Claude review note: purely additive optional fields — no schema change to
+knowledge, no required field, routine SOAP entry time unchanged.
+
+---
+
 ## 2026-07-14 - Claude - CS4-2: pickers for all 7 SOAP link fields (Track E now selectable)
 
 Branch: `cs4-pickers-2` (off main). Files: `scripts/build-data.js`, `app.js`.

@@ -23,6 +23,18 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL1: 按語 reflection fields on the SOAP note (Claude Code)
+
+Learning Loop LL1 (highest-ROI item). Three OPTIONAL free-text fields added to
+the SOAP note inside a collapsible section (closed by default, no routine
+friction): differentialConsidered / reflection (按語) / ifIneffectivePlan.
+Wired through normalizeSoapNote + save path + fallback; renderSoapNoteCard
+shows them only when filled. Clinical-layer data (localStorage, not Git);
+becomes visits columns when the SQLite store lands. 6-validator sweep PASS;
+browser QA: collapsed by default, saves with all three empty (0→1), fills
+round-trip to the card, zero console errors. Branch ll1-reflection. Next
+Learning-Loop candidate: LL2 outcome_verdict enum + "cases to learn from" view.
+
 ### 2026-07-14 - CS4-2: pickers extended to all 7 SOAP link fields (Claude Code)
 
 Extended CS4 from 2 → 7 link fields. build-data now bundles pattern_library

@@ -2788,6 +2788,10 @@ function normalizeSoapNote(value) {
     outcomes: String(value.outcomes || ""),
     outcomeMetricLinks: normalizeStringList(value.outcomeMetricLinks),
     followUp: String(value.followUp || ""),
+    // LL1 按語: optional structured reflection (Learning Loop track)
+    differentialConsidered: String(value.differentialConsidered || ""),
+    reflection: String(value.reflection || ""),
+    ifIneffectivePlan: String(value.ifIneffectivePlan || ""),
     createdAt: String(value.createdAt || new Date().toISOString()),
     updatedAt: String(value.updatedAt || new Date().toISOString())
   };
@@ -3255,6 +3259,12 @@ function renderSoapNoteCard(note) {
         <div><small>Safety links</small><span>${escapeHtml(formatNoteList(note.safetyFlagLinks))}</span></div>
         <div class="wide"><small>Treatment record links</small><span>${escapeHtml(formatNoteList(linkedRecords))}</span></div>
       </div>
+      ${(note.differentialConsidered || note.reflection || note.ifIneffectivePlan) ? `
+      <div class="soap-reflection-view">
+        ${note.differentialConsidered ? `<div><small>鑑別考量 Differential</small><span>${escapeHtml(note.differentialConsidered)}</span></div>` : ""}
+        ${note.reflection ? `<div><small>按語 Reflection</small><span>${escapeHtml(note.reflection)}</span></div>` : ""}
+        ${note.ifIneffectivePlan ? `<div><small>若無效 If ineffective</small><span>${escapeHtml(note.ifIneffectivePlan)}</span></div>` : ""}
+      </div>` : ""}
     </article>
   `;
 }
@@ -3429,7 +3439,10 @@ function openSoapEditor(note = null) {
     medicationLinks: [],
     outcomes: "",
     outcomeMetricLinks: [],
-    followUp: ""
+    followUp: "",
+    differentialConsidered: "",
+    reflection: "",
+    ifIneffectivePlan: ""
   };
   const data = { ...fallback, ...(note || {}) };
   Object.entries(data).forEach(([key, value]) => {
@@ -3485,6 +3498,9 @@ function saveSoapFromForm(event) {
     outcomes: data.outcomes.trim(),
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
     followUp: data.followUp.trim(),
+    differentialConsidered: (data.differentialConsidered || "").trim(),
+    reflection: (data.reflection || "").trim(),
+    ifIneffectivePlan: (data.ifIneffectivePlan || "").trim(),
     createdAt: current?.createdAt || now,
     updatedAt: now
   });
