@@ -4037,6 +4037,43 @@ a { color: var(--accent-dark); }
 .k-herb-card {
   border-color: #dce6dc;
 }
+.k-comparison-card {
+  grid-column: 1 / -1;
+}
+.k-comparison-scroll {
+  border: 1px solid #e3dac7;
+  border-radius: 8px;
+  margin-top: 0.7rem;
+  overflow-x: auto;
+}
+.k-comparison-table {
+  border-collapse: collapse;
+  min-width: 720px;
+  width: 100%;
+}
+.k-comparison-table th,
+.k-comparison-table td {
+  border-bottom: 1px solid #eee5d4;
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+.k-comparison-table thead th {
+  background: #f8f2e6;
+  color: #3b3326;
+  font-size: 0.82rem;
+}
+.k-comparison-table tbody th {
+  background: #fbf8f0;
+  color: #6b5314;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.k-empty-cell {
+  color: #9a7a3a;
+  font-size: 0.82rem;
+  font-style: italic;
+}
 .k-link-chip {
   background: #eef4ef;
   border: 1px solid #dce6dc;

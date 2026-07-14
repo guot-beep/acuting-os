@@ -23,6 +23,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: comparison tables rendered in Lookup (Codex)
+
+Codex continued while Claude was token-limited. Added a Lookup workspace
+section, "Pattern Comparisons / 辨證鑑別表", that renders
+`data/knowledge/comparisons.json` as a side-by-side table. Empty discriminator
+cells show "待 Ting 填寫" and remain owner-filled only. Added filtering across
+comparison id, title, pattern ids, pattern labels, dimensions, status, and
+authorship metadata.
+
+This is a display-layer change only. No comparison content was model-filled,
+no clinical case data changed, and no protected acupuncture data changed.
+
+Validation: `node --check js/knowledge.js`, `node --check app.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings; no repair attempted.
+
+Next: Ting can fill `cmp.insomnia_patterns` cells from class/textbook notes;
+Claude can review the renderer and merge `ll3-comparison` when ready.
+
 ### 2026-07-14 - LL3: comparison record skeleton + relation validation (Claude Code -> Codex)
 
 Learning Loop LL3 was started by Claude Code and completed by Codex after

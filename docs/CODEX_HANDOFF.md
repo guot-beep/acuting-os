@@ -26,6 +26,56 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 comparison table renderer handoff
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Render LL3 comparison knowledge records in the Lookup workspace.
+
+Files changed:
+- `index.html`
+- `js/knowledge.js`
+- `styles.css`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check js/knowledge.js`: PASS
+- `node --check app.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 1`, `comparisonPatternLinks: 3`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS, 447 files
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled comparison/discriminator cells.
+
+Known risks / manual checks:
+- Browser spot-check the new Lookup "Pattern Comparisons / 辨證鑑別表" section.
+- Mobile should be checked for horizontal table scrolling.
+- Empty cells intentionally display "待 Ting 填寫".
+
+Next recommended action:
+- Ting can fill `cmp.insomnia_patterns` cells from class/textbook notes.
+- Claude can review renderer and merge `ll3-comparison` after manual UI check.
+
+Claude review note:
+- Renderer uses existing bundled `ACUTING_KNOWLEDGE.comparisons.records`.
+- Pattern labels are resolved from `patternLibrary.records` and
+  `conditions.tcm_patterns`; missing refs fall back to the stable id.
+
+---
+
 ## 2026-07-14 - Codex - LL3 comparison record skeleton handoff
 
 Date/time: 2026-07-14 afternoon
