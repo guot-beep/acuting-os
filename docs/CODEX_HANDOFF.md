@@ -26,6 +26,62 @@ Claude review note:
 
 ---
 
+## 2026-07-13 - Claude - CS-track batch 1 (runtime id + backup banner + runtime stats)
+
+Branch: `cs-track-1` (off main). First work after the freeze lifted.
+
+Files changed: `app.js`, `index.html`, `styles.css`.
+
+- Runtime `id` passthrough: `adapt361Record` / `tungIndexPoint` /
+  `auricularGb93Point` now emit `id` (DECISIONS D2 namespaced id). Every
+  runtime point carries `id` (embedded auricular / EX already had it from
+  their JSON). This is the field future clinical FKs + CS4 autocomplete key on.
+- CS1 backup discipline (no storage-engine change): `acuting-backup-meta-v1`
+  tracks last export + saves-since. A sticky banner appears when there are
+  cases AND the last export is ≥7 days old (or never); every 10th case/SOAP
+  save prompts to export. `exportClinicalCases()` resets the meta. localStorage
+  is still the store — this is the H2 bridge, not the migration.
+- CS2 stop the lying numbers: hardcoded stats in index.html (115/23/18/15,
+  202/34/407/409, fertility 4/12) replaced with runtime spans filled by
+  `renderKnowledgeCounts()` from ACUTING_KNOWLEDGE. Underivable ones (content-
+  bearing count, formula safety, workflow seeds, fertility meds) were removed
+  /reworded, not left to rot. Verified live: 115/17/202/202/34/407/409.
+
+Validation: 7-validator sweep PASS; browser QA (counts, banner, id passthrough,
+zero console errors). Next: CS4 autocomplete (separate batch), then merge.
+
+Claude review note: app.js/index.html are no longer frozen but stay
+one-writer-per-area — coordinate before touching the SOAP form.
+
+---
+
+## 2026-07-13 - Claude - ALL SESSION BRANCHES MERGED TO MAIN (read this first)
+
+Branch: `main`
+
+Commit: `367cdb2` (merge of the whole stack + point-category). main went `f13899a` -> `367cdb2`.
+
+State for Codex / other agents — the freeze has LIFTED:
+- **Phase 2 runtime adapter is LIVE on main.** app.js renders `data/acupoints/361.json` via `adapt361Record()`; embedded standard-channel arrays are retired from the runtime (they now contribute only EX-HN3/EX-HN5). `app.js` / `index.html` / `scripts/build-data.js` are NO LONGER frozen — but still coordinate one-writer-per-area.
+- **DECISIONS.md is now authoritative and machine-enforced.** READ IT before touching ids/schema/naming/deletion. Locked + validated: D2 (namespaced immutable point `id`), D3 (formula/herb homonym `__source` rule), D4 (de-id posture), D6 (knowledge never hard-deleted; `data/acupoints/point_id_manifest.json` ledger).
+- **New validators in the standard sweep** (run all of these now):
+  `validate-point-ids.js` (id namespacing + no-hard-delete via the manifest),
+  `validate-naming.js` (homonym rule). Plus the existing five.
+- **New data/docs on main:** `data/interop/condition_crosswalk.json` (150),
+  `data/acupoints/point_id_manifest.json`, point `id` fields across
+  361/tung/auricular/professional, gyn condition fills in
+  `condition_canon_shortlist.json`, `DECISIONS.md`, `docs/EXTERNAL_REVIEW_2026-07.md`,
+  `docs/POINT_CATEGORY_TAGS_DESIGN.md`, `docs/LEARNING_LOOP_TRACK.md`,
+  `docs/CONDITIONS_INTEROP_DESIGN.md`, hardened `.gitignore`.
+- **Point maintenance rule:** never delete a point — set `review_status="deprecated"`.
+  To add a new permanent point: add it, then `node scripts/update-point-manifest.js --write`.
+- All five session branches were merged and DELETED (local + remote). Only `main` remains active.
+
+Next (Claude, in progress on branch `cs-track-1`): CS-track batch 1 — runtime
+`id` passthrough + CS1 backup banner + CS2 replace hardcoded index.html stats.
+
+---
+
 ## 2026-07-13 - Claude - 大辭典 verified + E3 gyn content fill
 
 Branch: `conditions-interop-design`

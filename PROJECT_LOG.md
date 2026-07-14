@@ -23,6 +23,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-13 - CS-track batch 1: runtime id + backup banner + honest stats (Claude Code)
+
+First work after the Phase 2 merge lifted the app.js/index.html freeze.
+Branch cs-track-1 (off main). Three CS-track items:
+
+- Runtime `id` passthrough: the three point adapters now emit the DECISIONS-D2
+  namespaced `id`, so every runtime point carries the stable key that clinical
+  FKs and the coming CS4 autocomplete will reference.
+- CS1 backup discipline: a sticky "N days since export" banner (shown only when
+  there are cases and it's ≥7 days/never) + an every-10-saves export prompt +
+  export resets the meta. localStorage stays the store; this is the H2 bridge.
+- CS2 fixed the lying numbers: index.html's hardcoded stats (several already
+  wrong — 18 categories→17, 23 content-bearing→stale, 15 safety→meaningless)
+  replaced with runtime-derived spans; underivable ones removed rather than
+  left to drift. Verified live 115/17/202/202/34/407/409, zero console errors.
+
+7-validator sweep PASS + browser QA. Handoff updated. Next: CS4 autocomplete
+comboboxes (kills hand-typed ids — the biggest SOAP-form friction), separate batch.
+
 ### 2026-07-13 - D6 knowledge-never-hard-deleted + status backfill; D3 homonym rule (Claude Code)
 
 Ting: "你做吧". Two one-way doors closed with machine enforcement:

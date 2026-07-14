@@ -92,7 +92,7 @@
           <a class="library-card" id="herbLibrary" href="#herbSection">
             <span>Herbs / Materia Medica</span>
             <strong>Single-herb draft canon for CH review</strong>
-            <small>202 draft herb records with category filters, safety flags, modern-use tags, and related formula links.</small>
+            <small><span id="statHerbsInline">--</span> draft herb records with category filters, safety flags, modern-use tags, and related formula links.</small>
           </a>
           <a class="library-card" id="pathologyLibrary" href="#conditionGraph">
             <span>Conditions / 病症</span>
@@ -363,9 +363,9 @@
           </article>
         </div>
         <div class="fertility-link-grid">
-          <div><strong>4</strong><span>workflow seeds</span></div>
-          <div><strong>12</strong><span>fertility-related medication records</span></div>
-          <div><strong>6</strong><span>cycle phase vocabulary groups</span></div>
+          <div><strong>Workflows</strong><span>ovulation-induction / IVF / transfer seeds</span></div>
+          <div><strong>Meds</strong><span>letrozole / clomiphene / metformin / progesterone context</span></div>
+          <div><strong>Cycle</strong><span>menses / follicular / ovulation / luteal phase vocabulary</span></div>
           <div><strong>Safety</strong><span>pregnancy, anticoagulant, OHSS, clinic restriction, red-flag review</span></div>
         </div>
       </section>
@@ -429,10 +429,8 @@
         </div>
         <div id="formulaRecords" class="k-records" aria-label="Formula records"></div>
         <div class="formula-progress-strip" id="formulaProgress">
-          <span><strong>115</strong> core formulas searchable</span>
-          <span><strong>23</strong> content-bearing formula drafts</span>
-          <span><strong>18</strong> formula categories</span>
-          <span><strong>15</strong> safety flags for medication, pregnancy, fertility, and red-flag review</span>
+          <span><strong id="statFormulas">--</strong> core formulas searchable</span>
+          <span><strong id="statFormulaCategories">--</strong> formula categories</span>
         </div>
       </section>
 
@@ -452,10 +450,10 @@
         </nav>
         <div id="herbRecords" class="k-records" aria-label="Herb records"></div>
         <div class="formula-progress-strip" id="herbProgress">
-          <span><strong>202</strong> draft herb records</span>
-          <span><strong>34</strong> herb categories</span>
-          <span><strong>407</strong> related formula links</span>
-          <span><strong>409</strong> safety flags</span>
+          <span><strong id="statHerbs">--</strong> draft herb records</span>
+          <span><strong id="statHerbCategories">--</strong> herb categories</span>
+          <span><strong id="statHerbFormulaLinks">--</strong> related formula links</span>
+          <span><strong id="statHerbSafetyFlags">--</strong> safety flags</span>
         </div>
       </section>
 

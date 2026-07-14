@@ -3816,6 +3816,31 @@ a { color: var(--accent-dark); }
   z-index: 999;
 }
 
+/* CS1: clinical-cases backup reminder (localStorage-only until H2 store) */
+.backup-reminder-banner {
+  background: #8a6d1f;
+  color: #fffdf8;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.backup-reminder-banner button {
+  background: #fffdf8;
+  color: #6b5314;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .k-records { margin-top: 1rem; }
 
 .k-filter {

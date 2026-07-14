@@ -1,6 +1,12 @@
 const STORAGE_KEY = "acupoint-atlas-v1";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
+// CS1: clinical cases live only in localStorage until the durable store lands
+// (NORTH_STAR §H2). Until then, export discipline is the only backup. This
+// meta tracks the last export + saves since, to nudge before data is lost.
+const BACKUP_META_KEY = "acuting-backup-meta-v1";
+const BACKUP_STALE_DAYS = 7;
+const BACKUP_NUDGE_EVERY = 10;
 
 // Data-load guard: the app is data-driven; if the generated data file did not
 // load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
@@ -84,6 +90,7 @@ function adapt361Record(record) {
   const cautionLines = [...new Set([...(record.contraindications || []), ...(record.cautions || [])])];
   const dangerLines = record.danger || [];
   return {
+    id: record.id || record.code,   // stable namespaced id (DECISIONS D2); clinical FKs reference this
     code: record.code,
     nameZh: record.chinese || record.code,
     nameEn: record.english || record.code,
@@ -118,6 +125,7 @@ const tungIndexRecords = globalThis.ACUTING_TUNG_INDEX?.points || [];
 
 function tungIndexPoint(record) {
   return {
+    id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
     standardCode: record.display_code,
     nameZh: record.name_zh || record.name_en,
@@ -158,6 +166,7 @@ function auricularGb93Point(record) {
   const zoneLabelZh = zone.zh || record.zone || "耳廓";
   const zoneLabelEn = zone.en || record.zone || "Auricle";
   return {
+    id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
     standardCode: record.code,
     nameZh: record.name_zh || record.code,
@@ -729,6 +738,87 @@ function persistClinicalCases() {
   localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
 }
 
+// ---- CS2: knowledge counts derived at runtime (no hardcoded stats) --------
+// Every number here is computed from the loaded knowledge bundle so the UI
+// can never drift/lie. Counts that cannot be derived from loaded data were
+// removed from index.html rather than left to rot (external-review §0.4).
+function renderKnowledgeCounts() {
+  const k = globalThis.ACUTING_KNOWLEDGE;
+  if (!k) return;
+  const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = String(value); };
+  const formulas = k.formulas?.records || [];
+  const herbs = k.herbs?.records || [];
+  const distinct = (arr, key) => new Set(arr.map((r) => r[key]).filter(Boolean)).size;
+  const sumLen = (arr, key) => arr.reduce((s, r) => s + ((r[key] || []).length), 0);
+
+  set("statFormulas", formulas.length);
+  set("statFormulaCategories", distinct(formulas, "category"));
+  set("statHerbs", herbs.length);
+  set("statHerbsInline", herbs.length);
+  set("statHerbCategories", distinct(herbs, "category"));
+  set("statHerbFormulaLinks", sumLen(herbs, "related_formulas"));
+  set("statHerbSafetyFlags", sumLen(herbs, "safety_flags"));
+}
+
+// ---- CS1: backup discipline (no storage-engine change) --------------------
+function getBackupMeta() {
+  try {
+    return JSON.parse(localStorage.getItem(BACKUP_META_KEY)) || { lastBackupAt: null, savesSinceBackup: 0 };
+  } catch {
+    return { lastBackupAt: null, savesSinceBackup: 0 };
+  }
+}
+
+function setBackupMeta(meta) {
+  localStorage.setItem(BACKUP_META_KEY, JSON.stringify(meta));
+}
+
+// Call after a real export of clinical cases: resets the age + save counter.
+function markCasesBackedUp() {
+  setBackupMeta({ lastBackupAt: new Date().toISOString(), savesSinceBackup: 0 });
+  renderBackupBanner();
+}
+
+// Call on every case/SOAP save: counts unsaved-to-disk edits and nudges.
+function noteClinicalSave() {
+  const meta = getBackupMeta();
+  meta.savesSinceBackup = (meta.savesSinceBackup || 0) + 1;
+  setBackupMeta(meta);
+  if (meta.savesSinceBackup > 0 && meta.savesSinceBackup % BACKUP_NUDGE_EVERY === 0) {
+    if (confirm(`已有 ${meta.savesSinceBackup} 筆病歷變更尚未匯出備份。病歷只存在本機瀏覽器，清快取即全失。現在匯出？`)) {
+      exportClinicalCases();
+    }
+  }
+  renderBackupBanner();
+}
+
+function backupAgeDays(meta) {
+  if (!meta.lastBackupAt) return Infinity;
+  return (Date.now() - new Date(meta.lastBackupAt).getTime()) / 86400000;
+}
+
+// Persistent top banner shown only when there is data to lose AND it is stale.
+function renderBackupBanner() {
+  const existing = document.querySelector(".backup-reminder-banner");
+  const meta = getBackupMeta();
+  const stale = clinicalCases.length > 0 && backupAgeDays(meta) >= BACKUP_STALE_DAYS;
+  if (!stale) { if (existing) existing.remove(); return; }
+  if (existing) return;
+  const banner = document.createElement("div");
+  banner.className = "backup-reminder-banner";
+  const days = meta.lastBackupAt ? Math.floor(backupAgeDays(meta)) : null;
+  const label = days === null
+    ? "病歷尚未匯出過備份"
+    : `病歷已 ${days} 天未匯出備份`;
+  banner.innerHTML = `⚠ ${label}（${clinicalCases.length} 筆病例，只存在本機瀏覽器）— `;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = "立即匯出";
+  btn.addEventListener("click", exportClinicalCases);
+  banner.appendChild(btn);
+  document.body.prepend(banner);
+}
+
 function defaultCodeList(...groups) {
   return groups.flat().map((point) => point.code).filter(Boolean);
 }
@@ -859,7 +949,9 @@ function render() {
   hydrateFilters();
   renderOsStatus();
   renderDatabaseHealth();
+  renderKnowledgeCounts();   // CS2
   renderClinicalCases();
+  renderBackupBanner();   // CS1
   renderDirectoryFilters();
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
@@ -3081,6 +3173,7 @@ function saveCaseFromForm(event) {
   }
   selectedCaseId = nextCase.id;
   persistClinicalCases();
+  noteClinicalSave();   // CS1
   caseDialog.close();
   render();
 }
@@ -3205,6 +3298,7 @@ function saveSoapFromForm(event) {
     return { ...item, soapNotes: notes, updatedAt: now };
   });
   persistClinicalCases();
+  noteClinicalSave();   // CS1
   soapDialog.close();
   render();
 }
@@ -3229,6 +3323,7 @@ function exportClinicalCases() {
   link.download = `acuting-clinical-cases-${new Date().toISOString().slice(0, 10)}.json`;
   link.click();
   URL.revokeObjectURL(url);
+  markCasesBackedUp();   // CS1: reset backup age + save counter
 }
 
 function importClinicalCases(event) {
