@@ -26,6 +26,34 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Claude - CS4-2: pickers for all 7 SOAP link fields (Track E now selectable)
+
+Branch: `cs4-pickers-2` (off main). Files: `scripts/build-data.js`, `app.js`.
+
+- `build-data.js` knowledge bundle now also ships `patternLibrary` (50),
+  `tdisRegistry` (75), `conditionCanon` (150), `medications` (12),
+  `safetyFlags` (15) so the pickers can offer real ids.
+- `setupLinkAutocomplete()` extended from 2 → 7 fields:
+  `tcmPatternLinks`, `easternDiseaseLinks`, `westernConditionLinks`,
+  `medicationLinks`, `safetyFlagLinks` join the existing acupoint/formula
+  pickers. Each option set unions the Track E canon with the older rendered
+  registry and dedupes by id (e.g. 多囊 offers both `cond.pcos` and
+  `western_condition.pcos`). `outcomeMetricLinks` deliberately stays free
+  text (entries carry values, not bare ids — that's the LL2/LL5 structured
+  outcome item).
+- This is the first time Track E's 150 conditions / 50 patterns / 75 中醫病名
+  are selectable inside a case — the M3 suggestion panel + LL6 precursor.
+
+Validation: 7-validator sweep PASS. Browser QA on the acuting-static server:
+all 7 fields enhance to pickers, bilingual search hits (痰濕/多囊/不孕/letro/孕),
+selection writes the clean id to the textarea (`cond.pcos`) while the chip
+shows the bilingual label (D1 display↔id decoupling), zero console errors.
+
+Claude review note: pickers are progressive enhancement — the hidden
+<textarea> stays the form's source of truth, so save/serialize is unchanged.
+
+---
+
 ## 2026-07-14 - Claude - CS-track batch 2: CS4 autocomplete chip pickers
 
 Branch: `cs-track-2` (off main). Files: `app.js`, `index.html` (none — form

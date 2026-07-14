@@ -74,6 +74,12 @@ const knowledge = {
   conditions: readJson("data/pathology/conditions.json"),
   sources: readJson("data/sources/source_registry.json"),
   audit: readJson("data/audits/missing_report.json"),
+  // CS4-2: registries the SOAP link pickers offer (ids must exist to be picked)
+  patternLibrary: readJson("data/pathology/pattern_library.json"),
+  tdisRegistry: readJson("data/pathology/tdis_registry.json"),
+  conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
+  medications: readJson("data/medications/western_medications.json"),
+  safetyFlags: readJson("data/herbs/formula_safety_flags.json"),
 };
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}

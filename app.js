@@ -3074,9 +3074,79 @@ function enhanceLinkField(fieldName, buildOptions) {
   };
 }
 
+// Union helper: several link fields draw from an old (rendered) registry plus
+// the newer Track E canon; both id families are valid targets, dedupe by id.
+function dedupeOptions(list) {
+  const seen = new Set();
+  return list.filter((o) => (seen.has(o.value) ? false : (seen.add(o.value), true)));
+}
+
+function patternPickerOptions() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const lib = k.patternLibrary?.records || [];
+  const old = k.conditions?.tcm_patterns || [];
+  return dedupeOptions([...lib, ...old].map((p) => ({
+    value: p.id,
+    label: `${p.name_zh || p.id}${p.name_en ? " · " + p.name_en : ""}`,
+    terms: `${p.name_zh || ""} ${p.name_en || ""} ${p.id}`.toLowerCase(),
+    meta: p.id,
+  })));
+}
+
+function easternDiseasePickerOptions() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const tdis = k.tdisRegistry?.records || [];
+  const old = k.conditions?.eastern_diseases || [];
+  return dedupeOptions([...tdis, ...old].map((d) => ({
+    value: d.id,
+    label: `${d.name_zh || d.id}${d.pinyin ? " · " + d.pinyin : (d.name_en ? " · " + d.name_en : "")}`,
+    terms: `${d.name_zh || ""} ${d.pinyin || ""} ${d.name_en || ""} ${d.id}`.toLowerCase(),
+    meta: d.id,
+  })));
+}
+
+function westernConditionPickerOptions() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const canon = k.conditionCanon?.records || [];
+  const old = k.conditions?.records || [];
+  return dedupeOptions([...canon, ...old].map((c) => ({
+    value: c.id,
+    label: `${c.name_zh || c.id}${c.name_en ? " · " + c.name_en : ""}`,
+    terms: `${c.name_zh || ""} ${c.name_en || ""} ${c.icd_hint || ""} ${c.id}`.toLowerCase(),
+    meta: c.icd_hint || c.id,
+  })));
+}
+
+function medicationPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.medications?.records || [];
+  return records.map((m) => ({
+    value: m.id,
+    label: `${m.generic_name_en || m.id}${m.drug_class_en ? " · " + m.drug_class_en : ""}`,
+    terms: `${m.generic_name_en || ""} ${(m.brand_names_en || []).join(" ")} ${m.drug_class_en || ""} ${m.id}`.toLowerCase(),
+    meta: m.id,
+  }));
+}
+
+function safetyFlagPickerOptions() {
+  const flags = globalThis.ACUTING_KNOWLEDGE?.safetyFlags?.flags || [];
+  return flags.map((f) => ({
+    value: f.id,
+    label: `${f.label_zh || f.id}${f.label_en ? " · " + f.label_en : ""}`,
+    terms: `${f.label_zh || ""} ${f.label_en || ""} ${f.id}`.toLowerCase(),
+    meta: f.severity || f.id,
+  }));
+}
+
 function setupLinkAutocomplete() {
   enhanceLinkField("acupointLinks", pointPickerOptions);
   enhanceLinkField("formulaLinks", formulaPickerOptions);
+  enhanceLinkField("tcmPatternLinks", patternPickerOptions);
+  enhanceLinkField("easternDiseaseLinks", easternDiseasePickerOptions);
+  enhanceLinkField("westernConditionLinks", westernConditionPickerOptions);
+  enhanceLinkField("medicationLinks", medicationPickerOptions);
+  enhanceLinkField("safetyFlagLinks", safetyFlagPickerOptions);
+  // outcomeMetricLinks stays free text: entries carry values ("pain_score 7->4"),
+  // not bare ids — structured outcome entry is the LL-track item (LL2/LL5).
 }
 
 // --- SOAP note keyword linking: connect 用穴/方藥 free text to the knowledge base ---

@@ -23,6 +23,19 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - CS4-2: pickers extended to all 7 SOAP link fields (Claude Code)
+
+Extended CS4 from 2 → 7 link fields. build-data now bundles pattern_library
+(50), tdis_registry (75), condition_canon (150), western_medications (12),
+formula_safety_flags (15); `setupLinkAutocomplete()` wires pickers for
+tcmPattern / easternDisease / westernCondition / medication / safetyFlag
+(each unioning Track E canon with the older registry, deduped by id).
+outcomeMetricLinks stays free text (values, not ids → LL2/LL5). This makes
+Track E's conditions/patterns/中醫病名 selectable inside a case for the first
+time — M3 / LL6 precursor. 7-validator sweep PASS; browser QA confirmed
+bilingual search, id-only writeback (cond.pcos), zero console errors. Branch
+cs4-pickers-2. Next candidate: LL1 按語 reflection fields on the SOAP form.
+
 ### 2026-07-14 - CS-track batch 2: CS4 SOAP autocomplete chip pickers (Claude Code)
 
 The highest-ROI input-friction fix (external-review Phase 4.1). The SOAP
