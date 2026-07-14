@@ -26,6 +26,54 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 comparison source labels + fill progress
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Make LL3 comparison cards easier to review/fill in Lookup.
+
+Files changed:
+- `js/knowledge.js`
+- `styles.css`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `node --check js/knowledge.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No comparison/discriminator cells filled.
+
+Known risks / manual checks:
+- Browser spot-check the Lookup comparison section. Cards should show source condition chips and `0/N cells filled` progress.
+- Search should match source condition labels such as PCOS, IVF, embryo transfer, and insulin resistance.
+
+Next recommended action:
+- Ting can start filling owner-authored comparison cells from class notes/textbooks.
+- Claude can review UI wording before merge.
+
+Claude review note:
+- This is display-only metadata over existing comparison records; no new knowledge relationships were added.
+
+---
+
 ## 2026-07-14 - Codex - LL3 complete fertility skeleton coverage + validator hardening
 
 Date/time: 2026-07-14 afternoon

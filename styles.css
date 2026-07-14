@@ -4040,6 +4040,24 @@ a { color: var(--accent-dark); }
 .k-comparison-card {
   grid-column: 1 / -1;
 }
+.k-comparison-meta-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.45rem;
+}
+.k-fill-chip {
+  background: #f6efe1;
+  border: 1px solid #e4d5ba;
+  border-radius: 999px;
+  color: #6b5314;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 0.28rem 0.55rem;
+}
 .k-comparison-scroll {
   border: 1px solid #e3dac7;
   border-radius: 8px;

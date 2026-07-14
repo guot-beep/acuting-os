@@ -231,6 +231,22 @@
     (((K.patternLibrary || {}).records) || []).forEach(addPatternLabel);
     (((K.conditions || {}).tcm_patterns) || []).forEach(addPatternLabel);
     const patternLabel = (id) => patternLabels.get(id) || id;
+    const conditionLabels = new Map();
+    (((K.conditions || {}).records) || []).forEach((record) => {
+      if (!record || !record.id) return;
+      conditionLabels.set(record.id, [record.name_zh, record.name_en, record.id].filter(Boolean).join(" / "));
+    });
+    const conditionLabel = (id) => conditionLabels.get(id) || id || "";
+    const cellStats = (record) => {
+      const compares = record.compares || [];
+      const dimensions = record.dimensions || [];
+      const total = compares.length * dimensions.length;
+      const filled = compares.reduce((sum, id) => {
+        const row = (record.cells || {})[id] || {};
+        return sum + dimensions.filter((dimension) => String(row[dimension] || "").trim()).length;
+      }, 0);
+      return { filled, total };
+    };
     const cellText = (value) => {
       const text = String(value || "").trim();
       return text ? esc(text) : '<span class="k-empty-cell">待 Ting 填寫</span>';
@@ -238,6 +254,8 @@
     const renderComparisons = (list) => list.map((record) => {
       const compares = record.compares || [];
       const dimensions = record.dimensions || [];
+      const stats = cellStats(record);
+      const sourceLabel = record.source_condition_id ? conditionLabel(record.source_condition_id) : "";
       return `
         <article class="k-card k-comparison-card">
           <header>
@@ -245,6 +263,10 @@
             ${statusPill(record.review_status || record.status)}
           </header>
           <p class="k-meta">${esc(record.id)} · ${esc(record.authored_by || "owner")} · contrast table skeleton</p>
+          <div class="k-comparison-meta-row">
+            ${sourceLabel ? `<span class="k-link-chip">source: ${esc(sourceLabel)}</span>` : ""}
+            <span class="k-fill-chip">${stats.filled}/${stats.total} cells filled</span>
+          </div>
           <div class="k-comparison-scroll">
             <table class="k-comparison-table">
               <thead>
@@ -284,6 +306,8 @@
           record.authored_by,
           record.status,
           record.review_status,
+          record.source_condition_id,
+          conditionLabel(record.source_condition_id),
           ...(record.compares || []),
           ...(record.compares || []).map(patternLabel),
           ...(record.dimensions || [])

@@ -23,6 +23,24 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: comparison source labels + fill progress in Lookup (Codex)
+
+Improved the Lookup comparison renderer so each comparison card now shows its
+`source_condition_id` as a readable source condition chip and a filled-cell
+progress badge such as `0/18 cells filled`. The comparison search now also
+matches the source condition id and label, so typing PCOS, IVF, embryo
+transfer, insulin resistance, etc. finds the relevant skeleton table.
+
+This is display-only metadata for the LL3 workflow. No discriminator cells
+were filled and no clinical content was changed.
+
+Ran `scripts/build-data.js`; generated knowledge still reports
+`comparisons: 11`. Validation: `node --check js/knowledge.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings.
+
 ### 2026-07-14 - LL3: complete fertility comparison skeleton coverage + validator hardening (Codex)
 
 Completed the current fertility/reproductive comparison skeleton coverage for
