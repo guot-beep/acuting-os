@@ -26,6 +26,37 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Claude - CS-track batch 2: CS4 autocomplete chip pickers
+
+Branch: `cs-track-2` (off main). Files: `app.js`, `index.html` (none — form
+unchanged), `styles.css`. Plus `.claude/launch.json` + `scripts/dev-server.js`
+landed on main first (local static preview; `node` isn't on PATH so launch.json
+uses the bundled node absolute path).
+
+CS4 (external-review Phase 4.1 — the biggest SOAP-form friction): the SOAP
+`acupointLinks` and `formulaLinks` textareas are now progressively enhanced
+with an autocomplete chip picker. Type Chinese / pinyin / code → pick from a
+menu → a chip is added and the underlying (now hidden) textarea is filled with
+the exact `code` / `formula.<id>` the save+linkify path already expects. The
+user never types an internal id. Existing notes hydrate into chips on open.
+Vanilla, zero-dependency, progressive (textarea stays the source of truth, so
+`saveSoapFromForm` / `splitList` are untouched).
+
+Key functions (app.js): `enhanceLinkField()`, `setupLinkAutocomplete()`,
+`pointPickerOptions()` / `formulaPickerOptions()`, `linkPickerControllers`;
+`openSoapEditor()` calls setup+sync after hydration.
+
+Points store `code` (not the new `id`) to stay compatible with the current
+linkify renderer; the code→id swap happens with the future FK migration.
+NOT YET enhanced (same pattern, follow-ups): tcmPatternLinks, medicationLinks,
+safetyFlagLinks, westernConditionLinks, easternDiseaseLinks, outcomeMetricLinks.
+
+Validation: node --check + validate-interactions PASS; browser QA drove the
+real dialog — type/select/multi-select/remove/hydrate all verified, 0 console
+errors. Handoff + PROJECT_LOG updated.
+
+---
+
 ## 2026-07-13 - Claude - CS-track batch 1 (runtime id + backup banner + runtime stats)
 
 Branch: `cs-track-1` (off main). First work after the freeze lifted.

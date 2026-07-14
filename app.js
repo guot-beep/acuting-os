@@ -2952,6 +2952,133 @@ function renderCaseTags(item) {
   return tags.length ? `<div class="case-tags">${tags.map((tag) => `<span class="case-tag">${escapeHtml(tag)}</span>`).join("")}</div>` : "";
 }
 
+// --- CS4: autocomplete chip pickers so SOAP link fields never need typed ids ---
+// Progressive enhancement: the underlying <textarea> stays the source of truth
+// (form save/serialize is unchanged); we hide it and drive its value from chips.
+const linkPickerControllers = {};
+
+function pointPickerOptions() {
+  return points
+    .filter((p) => p.code)
+    .map((p) => ({
+      value: p.code,
+      label: `${p.nameZh || p.code} ${p.code}`,
+      terms: `${p.code} ${p.nameZh || ""} ${p.pinyin || ""}`.toLowerCase(),
+      meta: p.code,
+    }));
+}
+
+function formulaPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.formulas?.records || [];
+  return records.map((f) => ({
+    value: f.id,
+    label: `${f.name_zh || f.id}${f.pinyin ? " · " + f.pinyin : ""}`,
+    terms: `${f.name_zh || ""} ${f.pinyin || ""} ${f.name_en || ""} ${f.id}`.toLowerCase(),
+    meta: f.pinyin || f.name_en || "",
+  }));
+}
+
+function enhanceLinkField(fieldName, buildOptions) {
+  const textarea = soapForm?.elements?.[fieldName];
+  if (!textarea || textarea.dataset.pickerReady) return;
+  textarea.dataset.pickerReady = "1";
+  textarea.hidden = true;
+
+  const wrap = document.createElement("div");
+  wrap.className = "link-picker";
+  const chips = document.createElement("div");
+  chips.className = "link-chips";
+  const input = document.createElement("input");
+  input.type = "text";
+  input.className = "link-picker-input";
+  input.setAttribute("autocomplete", "off");
+  input.placeholder = "輸入中文 / 拼音 / 代碼，從清單選取…";
+  const menu = document.createElement("div");
+  menu.className = "link-picker-menu";
+  menu.hidden = true;
+  wrap.append(chips, input, menu);
+  textarea.after(wrap);
+
+  let options = null;
+  let labelByValue = new Map();
+  let activeIndex = -1;
+  const ensureOptions = () => {
+    if (options) return;
+    options = buildOptions();
+    labelByValue = new Map(options.map((o) => [o.value, o.label]));
+  };
+  const getValues = () => splitList(textarea.value);
+  const setValues = (vals) => {
+    const unique = [...new Set(vals.filter(Boolean))];
+    textarea.value = unique.join("、");
+    renderChips(unique);
+  };
+  function renderChips(vals) {
+    chips.innerHTML = "";
+    vals.forEach((v) => {
+      const chip = document.createElement("span");
+      chip.className = "link-chip";
+      chip.textContent = labelByValue.get(v) || v;
+      const x = document.createElement("button");
+      x.type = "button";
+      x.textContent = "✕";
+      x.setAttribute("aria-label", "移除");
+      x.addEventListener("click", () => setValues(getValues().filter((val) => val !== v)));
+      chip.appendChild(x);
+      chips.appendChild(chip);
+    });
+  }
+  function closeMenu() { menu.hidden = true; activeIndex = -1; }
+  function addValue(v) {
+    setValues([...getValues(), v]);
+    input.value = "";
+    closeMenu();
+    input.focus();
+  }
+  function renderMenu() {
+    ensureOptions();
+    const q = input.value.trim().toLowerCase();
+    const qCompact = q.replace(/\s+/g, "");
+    const chosen = new Set(getValues());
+    const matches = !q ? [] : options
+      .filter((o) => !chosen.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
+      .slice(0, 8);
+    if (!matches.length) { closeMenu(); return; }
+    menu.innerHTML = "";
+    matches.forEach((o, i) => {
+      const el = document.createElement("div");
+      el.className = "link-picker-option" + (i === activeIndex ? " active" : "");
+      el.innerHTML = `<span></span><small></small>`;
+      el.firstChild.textContent = o.label;
+      el.lastChild.textContent = o.value;
+      el.addEventListener("mousedown", (e) => { e.preventDefault(); addValue(o.value); });
+      menu.appendChild(el);
+    });
+    menu.hidden = false;
+    menu._matches = matches;
+  }
+  input.addEventListener("input", () => { activeIndex = -1; renderMenu(); });
+  input.addEventListener("focus", () => { if (input.value.trim()) renderMenu(); });
+  input.addEventListener("blur", () => setTimeout(closeMenu, 120));
+  input.addEventListener("keydown", (e) => {
+    const m = menu._matches || [];
+    if (e.key === "ArrowDown") { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, m.length - 1); renderMenu(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); renderMenu(); }
+    else if (e.key === "Enter") {
+      if (m.length) { e.preventDefault(); addValue(m[activeIndex >= 0 ? activeIndex : 0].value); }
+    } else if (e.key === "Escape") { closeMenu(); }
+  });
+
+  linkPickerControllers[fieldName] = {
+    sync() { ensureOptions(); renderChips(getValues()); input.value = ""; closeMenu(); },
+  };
+}
+
+function setupLinkAutocomplete() {
+  enhanceLinkField("acupointLinks", pointPickerOptions);
+  enhanceLinkField("formulaLinks", formulaPickerOptions);
+}
+
 // --- SOAP note keyword linking: connect 用穴/方藥 free text to the knowledge base ---
 
 function buildPointTermIndex() {
@@ -3239,6 +3366,8 @@ function openSoapEditor(note = null) {
     if (!soapForm.elements[key]) return;
     soapForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
+  setupLinkAutocomplete();                                   // CS4: idempotent
+  Object.values(linkPickerControllers).forEach((c) => c.sync());  // rebuild chips from hydrated values
   soapDialog.showModal();
 }
 

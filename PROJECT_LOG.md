@@ -23,6 +23,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - CS-track batch 2: CS4 SOAP autocomplete chip pickers (Claude Code)
+
+The highest-ROI input-friction fix (external-review Phase 4.1). The SOAP
+`acupointLinks` and `formulaLinks` fields no longer need hand-typed internal
+ids: type Chinese / pinyin / code → pick from an autocomplete menu → a chip is
+added and the hidden textarea holds the exact `code` / `formula.<id>` the save
+and linkify paths already use. Existing notes hydrate into chips on open.
+Vanilla + progressive enhancement — the textarea stays the source of truth, so
+the save path is untouched. This turns referential integrity from
+"caught later" toward "hard to type wrong" (DECISIONS D1/D3 intent).
+
+Also landed on main first: `scripts/dev-server.js` + `.claude/launch.json`
+(local static preview; `node` not on PATH → bundled-node absolute path).
+
+Points store `code` for now (linkify-compatible); the code→id swap comes with
+the FK migration. Follow-ups (same pattern): pattern/medication/safety/
+condition/outcome link fields. Verified in the live dialog (type/select/
+multi/remove/hydrate, 0 console errors); node --check + validate-interactions PASS.
+
 ### 2026-07-13 - CS-track batch 1: runtime id + backup banner + honest stats (Claude Code)
 
 First work after the Phase 2 merge lifted the app.js/index.html freeze.

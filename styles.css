@@ -3841,6 +3841,54 @@ a { color: var(--accent-dark); }
   cursor: pointer;
 }
 
+/* CS4: autocomplete chip picker for SOAP link fields (no hand-typed ids) */
+.link-picker { position: relative; }
+.link-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.35rem; }
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #efe7d3;
+  color: #4a3d22;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.85rem;
+}
+.link-chip button {
+  border: none;
+  background: transparent;
+  color: #8a6d1f;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.link-picker-input { width: 100%; }
+.link-picker-menu {
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  right: 0;
+  background: #fffdf8;
+  border: 1px solid #ddd3bd;
+  border-radius: 8px;
+  margin-top: 2px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.link-picker-menu[hidden] { display: none; }
+.link-picker-option {
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.link-picker-option:hover,
+.link-picker-option.active { background: #f2ead7; }
+.link-picker-option small { color: #8a7d5c; }
+
 .k-records { margin-top: 1rem; }
 
 .k-filter {
