@@ -10,6 +10,8 @@ Document chain (read in this order when starting any session):
 3. docs/CODEX_TASK_QUEUE.md — the task's detailed spec
 4. docs/NORTH_STAR.md — direction + permanent rules
 5. AGENTS.md — safety rules (always wins on safety)
+   (also read: DECISIONS.md — locked one-way doors;
+   docs/LEARNING_LOOP_TRACK.md — knowledge-shape / learning-loop supplement)
 
 ## Rules of engagement (all agents, standing)
 
