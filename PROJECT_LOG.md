@@ -23,6 +23,29 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-13 - D6 knowledge-never-hard-deleted + status backfill; D3 homonym rule (Claude Code)
+
+Ting: "你做吧". Two one-way doors closed with machine enforcement:
+
+- D3 LOCKED: formula/herb homonyms disambiguated by classical source with a
+  `__<source>` qualifier (`formula.wen_jing_tang__jinkui`); controlled
+  source list; `scripts/validate-naming.js` fails on an unqualified shared
+  name_zh. 0 homonyms today (115 formulas / 202 herbs) — guard catches the
+  first. Self-tested: a 溫經湯 pair without `__` is flagged.
+- D6 LOCKED: (1) `scripts/backfill-point-status.js` gave every point a
+  review_status — floor "draft" only, adds-only; 235 unlabeled 361 records
+  + 29 auricular filled; GB93 source_checked / Tung index_only untouched
+  (no promotion). (2) New ledger data/acupoints/point_id_manifest.json (681
+  ids) + `scripts/update-point-manifest.js`. (3) validate-point-ids.js now
+  fails if a manifest id vanished from data (hard delete) — retire via
+  review_status="deprecated" instead. Self-tested: a phantom manifest id
+  triggered the failure, then the ledger was regenerated clean.
+
+Both validators added to the standard list. Full sweep (7 validators) PASS.
+All data-only + validators; no frozen-file changes. Branch point-id-namespace.
+This closes the ID/naming/deletion one-way doors from the external review;
+D2+D3+D4+D6 are now LOCKED and machine-enforced.
+
 ### 2026-07-13 - Point id namespacing executed (DECISIONS.md D2, Claude Code)
 
 Ting ratified D2 ("統一命名"). Executed approach A: ADD a stable namespaced

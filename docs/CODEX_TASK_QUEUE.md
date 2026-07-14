@@ -40,6 +40,11 @@ node scripts/validate-naming.js
 node scripts/validate-encoding.js
 ```
 
+Point-set maintenance (DECISIONS D6): points are never hard-deleted. To
+retire one, set `review_status="deprecated"`. To add a new permanent point,
+add it then run `node scripts/update-point-manifest.js --write` to ratify
+the id into `data/acupoints/point_id_manifest.json`.
+
 ---
 
 ## Track A — Mechanical hygiene (small, low-risk, token-cheap)

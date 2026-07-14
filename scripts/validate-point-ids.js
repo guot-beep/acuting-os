@@ -76,6 +76,27 @@ for (const k of Object.keys(EXPECT)) {
   if (distinct[k] !== EXPECT[k]) fail(`distinct ${k} ids = ${distinct[k]}, expected ${EXPECT[k]}`);
 }
 
+// ---- D6: knowledge is never hard-deleted (manifest / tombstone check) ----
+const MPATH = path.join(ROOT, "data/acupoints/point_id_manifest.json");
+if (fs.existsSync(MPATH)) {
+  const manifest = JSON.parse(fs.readFileSync(MPATH, "utf8")).ids || [];
+  const current = new Set(idToCode.keys());
+  // any id in the ledger that has vanished from the data = a hard delete.
+  // Retirement is allowed ONLY as review_status="deprecated" (still present).
+  const vanished = manifest.filter((id) => !current.has(id));
+  if (vanished.length) {
+    fail(`${vanished.length} point id(s) removed from data but still in the manifest — hard delete is forbidden (DECISIONS D6). Retire via review_status="deprecated", or if intentional run update-point-manifest.js --write. First: ${vanished.slice(0, 8).join(", ")}`);
+  }
+  // any current id not yet in the ledger = a new permanent id added without
+  // ratifying it. Add it deliberately via update-point-manifest.js --write.
+  const unlisted = [...current].filter((id) => !manifest.includes(id));
+  if (unlisted.length) {
+    fail(`${unlisted.length} point id(s) not in the manifest — a new permanent id must be ratified with update-point-manifest.js --write. First: ${unlisted.slice(0, 8).join(", ")}`);
+  }
+} else {
+  console.warn("WARN: point_id_manifest.json missing — run update-point-manifest.js --write");
+}
+
 if (failures) { console.error(`\n${failures} failure(s).`); process.exit(1); }
 console.log("Point id validation passed.");
 console.log("distinct ids by namespace:", JSON.stringify(distinct), "| total:", idToCode.size);

@@ -111,19 +111,28 @@ migration for Ting.
   and `visit_patterns.is_primary` (CS3).
 - **Reconsider only if:** never downgrade an existing many-to-many.
 
-## D6 — Knowledge records are never hard-deleted  · PROPOSED (enforce in validator)
+## D6 — Knowledge records are never hard-deleted  · LOCKED (2026-07-13)
 
-- **What:** a knowledge entity (point/formula/herb/condition/pattern) that
-  has ever existed is retired via `status='deprecated'`, never removed.
-  Clinical notes reference these ids forever.
+- **What:** a knowledge entity that has ever existed is retired via
+  `review_status="deprecated"`, never removed. Clinical notes reference
+  these ids forever.
 - **Why:** three years out, an agent "cleaning up" an old auricular point
   silently breaks a real SOAP note's foreign key.
-- **Current state:** a status field exists (`review_status` /
-  `source_status`) but is populated on only ~126/361 source point records,
-  and no validator forbids deletion or checks for a `deprecated` tombstone.
-- **To do:** backfill status on all records; extend `validate-relations.js`
-  to fail if any id referenced anywhere has vanished (the machine-level
-  enforcer of this rule). Pairs with D7's rebuild pre-flight.
+- **Done:**
+  - Status backfilled: every point now has a `review_status`
+    (`scripts/backfill-point-status.js`, adds-only floor "draft" — the 235
+    unlabeled 361 records + 29 auricular; GB93 `source_checked` and Tung
+    `index_only` were left untouched).
+  - A point id ledger `data/acupoints/point_id_manifest.json` (681 ids)
+    records every id that has ever existed; regenerated deliberately via
+    `scripts/update-point-manifest.js --write`.
+  - `scripts/validate-point-ids.js` now FAILS the build if a manifest id has
+    vanished from the data (hard delete) or a new id is unlisted. Verified
+    by injecting a phantom id → validator failed as intended. Pairs with the
+    D7 rebuild pre-flight when the clinical store lands.
+- **How to retire a point:** set `review_status="deprecated"` (it stays in
+  the data and the manifest, still counts). To genuinely add a new permanent
+  point: add it, then run `update-point-manifest.js --write` to ratify.
 - **Reconsider only if:** never allow silent hard-delete.
 
 ## D7 — Storage split: JSON knowledge (git) + SQLite clinical (gitignored)  · LOCKED
