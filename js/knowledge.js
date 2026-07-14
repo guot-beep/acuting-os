@@ -247,6 +247,16 @@
       }, 0);
       return { filled, total };
     };
+    const comparisonTotals = comparisons.reduce((totals, record) => {
+      const stats = cellStats(record);
+      totals.filled += stats.filled;
+      totals.total += stats.total;
+      if (stats.filled === 0) totals.emptyTables += 1;
+      if (stats.filled > 0 && stats.filled < stats.total) totals.partialTables += 1;
+      if (stats.total > 0 && stats.filled === stats.total) totals.completeTables += 1;
+      return totals;
+    }, { filled: 0, total: 0, emptyTables: 0, partialTables: 0, completeTables: 0 });
+    const pendingCells = Math.max(0, comparisonTotals.total - comparisonTotals.filled);
     const cellText = (value) => {
       const text = String(value || "").trim();
       return text ? esc(text) : '<span class="k-empty-cell">待 Ting 填寫</span>';
@@ -292,6 +302,13 @@
       <div class="mini-heading">
         <strong>Comparison Records (${comparisons.length})</strong>
         <span>Source: data/knowledge/comparisons.json · draft skeletons; discriminator cells are owner-filled only.</span>
+      </div>
+      <div class="k-comparison-summary" aria-label="Comparison fill progress summary">
+        <span class="k-summary-chip"><strong>${comparisonTotals.filled}</strong> filled cells</span>
+        <span class="k-summary-chip"><strong>${pendingCells}</strong> pending cells</span>
+        <span class="k-summary-chip"><strong>${comparisonTotals.emptyTables}</strong> empty tables</span>
+        <span class="k-summary-chip"><strong>${comparisonTotals.partialTables}</strong> partial</span>
+        <span class="k-summary-chip"><strong>${comparisonTotals.completeTables}</strong> complete</span>
       </div>
       <input type="search" id="comparisonFilter" placeholder="Search comparison, pattern, axis..." class="k-filter" />
       <div class="k-grid k-grid-wide" id="comparisonGrid">${renderComparisons(comparisons) || '<p class="k-missing">No comparison records yet.</p>'}</div>`;

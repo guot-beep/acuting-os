@@ -26,6 +26,54 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 comparison fill-progress summary
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Add queue-level fill progress summary to the Lookup comparison section.
+
+Files changed:
+- `js/knowledge.js`
+- `styles.css`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `node --check js/knowledge.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No comparison/discriminator cells filled.
+
+Known risks / manual checks:
+- Browser spot-check the Lookup comparison section. Summary chips should show filled cells, pending cells, empty tables, partial tables, and complete tables.
+- Current expected state is likely all tables empty until Ting fills cells.
+
+Next recommended action:
+- Ting can use the summary as the LL3 filling queue.
+- Claude can review UI wording and merge readiness.
+
+Claude review note:
+- This is display-only queue metadata derived from existing comparison records.
+
+---
+
 ## 2026-07-14 - Codex - LL3 comparison source labels + fill progress
 
 Date/time: 2026-07-14 afternoon

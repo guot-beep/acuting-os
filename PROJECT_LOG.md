@@ -23,6 +23,23 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: comparison fill-progress summary (Codex)
+
+Added a compact fill-progress summary to the Lookup comparison section. The
+section now reports total filled cells, pending cells, empty tables, partial
+tables, and complete tables across all comparison records. This gives Ting a
+single queue-level view before opening individual comparison tables.
+
+This is display-only LL3 workflow support. No comparison/discriminator cells
+were filled and no clinical content was changed.
+
+Ran `scripts/build-data.js`; generated knowledge still reports
+`comparisons: 11`. Validation: `node --check js/knowledge.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings.
+
 ### 2026-07-14 - LL3: comparison source labels + fill progress in Lookup (Codex)
 
 Improved the Lookup comparison renderer so each comparison card now shows its

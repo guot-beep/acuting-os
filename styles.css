@@ -4040,6 +4040,26 @@ a { color: var(--accent-dark); }
 .k-comparison-card {
   grid-column: 1 / -1;
 }
+.k-comparison-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.85rem 0 0.7rem;
+}
+.k-summary-chip {
+  background: #f7f7f2;
+  border: 1px solid #dce6dc;
+  border-radius: 999px;
+  color: #4f584f;
+  display: inline-flex;
+  font-size: 0.82rem;
+  gap: 0.25rem;
+  line-height: 1.2;
+  padding: 0.34rem 0.65rem;
+}
+.k-summary-chip strong {
+  color: #213d35;
+}
 .k-comparison-meta-row {
   align-items: center;
   display: flex;
