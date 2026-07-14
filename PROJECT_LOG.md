@@ -23,6 +23,20 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL2: outcome verdict + "cases to learn from" view (Claude Code)
+
+Learning Loop LL2. Added `outcomeVerdict` (improved/no_change/worsened/
+lost_followup) per SOAP note — a select near Outcomes, validated in
+normalizeSoapNote, shown as a colored badge on each note card. Added a
+"值得學習的病例 / Cases to learn from" toggle that flattens every no_change/
+worsened visit across all cases (newest first, click-through to the case,
+framed as learning not failure). Clinical-layer data (localStorage) →
+visits.outcome_verdict at the SQLite store. 6-validator sweep PASS; browser QA
+confirmed verdict save + badge, correct filtering (improved excluded),
+click-through, toggle-off restore, zero console errors. Branch
+ll2-outcome-verdict. Next Learning-Loop candidate: LL3 comparison record type
+(contrast tables — highest pre-exam value; pure JSON knowledge + validator).
+
 ### 2026-07-14 - LL1: 按語 reflection fields on the SOAP note (Claude Code)
 
 Learning Loop LL1 (highest-ROI item). Three OPTIONAL free-text fields added to

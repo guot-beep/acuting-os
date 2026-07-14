@@ -425,6 +425,30 @@ h1 {
   padding-top: 0.5rem;
 }
 
+/* LL2: outcome verdict badge + "cases to learn from" toggle */
+.verdict-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.verdict-good { background: #d9ead0; color: #34611f; }
+.verdict-watch { background: #f3e0c2; color: #8a5a1f; }
+.verdict-muted { background: #e6e6e6; color: #555; }
+.learn-from-toggle {
+  width: 100%;
+  margin: 0.4rem 0;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #cbb98f;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+.learn-from-toggle.active { background: #8a5a1f; color: #fffdf8; border-color: #8a5a1f; }
+
 /* LL1: collapsible 按語 reflection section in the SOAP form (closed by default) */
 .soap-reflection {
   border: 1px dashed #cbb98f;

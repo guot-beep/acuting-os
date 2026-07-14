@@ -7,6 +7,16 @@ const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 const BACKUP_META_KEY = "acuting-backup-meta-v1";
 const BACKUP_STALE_DAYS = 7;
 const BACKUP_NUDGE_EVERY = 10;
+// LL2: per-visit outcome verdict. no_change/worsened feed the "cases to learn
+// from" review — error cases (誤案) teach more than successes.
+const OUTCOME_VERDICTS = {
+  improved: { zh: "改善", en: "Improved", tone: "good" },
+  no_change: { zh: "無變化", en: "No change", tone: "watch" },
+  worsened: { zh: "加重", en: "Worsened", tone: "watch" },
+  lost_followup: { zh: "失訪", en: "Lost to follow-up", tone: "muted" },
+};
+const LEARN_FROM_VERDICTS = ["no_change", "worsened"];
+let learnFromMode = false;
 
 // Data-load guard: the app is data-driven; if the generated data file did not
 // load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
@@ -495,7 +505,13 @@ caseForm.addEventListener("submit", saveCaseFromForm);
 soapForm.addEventListener("submit", saveSoapFromForm);
 deleteCaseBtn.addEventListener("click", deleteCurrentCase);
 deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
-caseSearch.addEventListener("input", renderClinicalCases);
+caseSearch.addEventListener("input", () => { learnFromMode = false; renderClinicalCases(); });
+document.querySelector("#learnFromToggle")?.addEventListener("click", (e) => {
+  learnFromMode = !learnFromMode;
+  e.currentTarget.setAttribute("aria-pressed", String(learnFromMode));
+  e.currentTarget.classList.toggle("active", learnFromMode);
+  renderClinicalCases();
+});
 window.addEventListener("hashchange", handlePointHashChange);
 
 searchInput?.addEventListener("keydown", (event) => {
@@ -2787,6 +2803,7 @@ function normalizeSoapNote(value) {
     medicationLinks: normalizeStringList(value.medicationLinks),
     outcomes: String(value.outcomes || ""),
     outcomeMetricLinks: normalizeStringList(value.outcomeMetricLinks),
+    outcomeVerdict: OUTCOME_VERDICTS[value.outcomeVerdict] ? value.outcomeVerdict : "",   // LL2
     followUp: String(value.followUp || ""),
     // LL1 按語: optional structured reflection (Learning Loop track)
     differentialConsidered: String(value.differentialConsidered || ""),
@@ -2812,6 +2829,7 @@ function createId(prefix) {
 }
 
 function renderClinicalCases() {
+  if (learnFromMode) return renderLearnFromReview();
   const filtered = getFilteredClinicalCases();
   if (selectedCaseId && !clinicalCases.some((item) => item.id === selectedCaseId)) selectedCaseId = clinicalCases[0]?.id || "";
   if (!selectedCaseId && filtered.length) selectedCaseId = filtered[0].id;
@@ -2838,6 +2856,38 @@ function renderClinicalCases() {
     });
   }
 
+  renderClinicalCaseDetail(clinicalCases.find((item) => item.id === selectedCaseId));
+}
+
+// LL2: "cases to learn from" — a flat list of visits whose verdict is
+// no_change/worsened across every case. Framed as learning, not failure.
+function renderLearnFromReview() {
+  const entries = [];
+  clinicalCases.forEach((item) => {
+    (item.soapNotes || []).forEach((note) => {
+      if (LEARN_FROM_VERDICTS.includes(note.outcomeVerdict)) entries.push({ item, note });
+    });
+  });
+  entries.sort((a, b) => String(b.note.visitDate || "").localeCompare(String(a.note.visitDate || "")));
+  caseResultCount.textContent = `${entries.length} 值得學習`;
+  caseList.innerHTML = "";
+  if (!entries.length) {
+    caseList.innerHTML = `<div class="case-empty">目前沒有標記為「無變化 / 加重」的就診。<br>在 SOAP 的成效判定填入後，這裡會集中呈現，供回顧學習。</div>`;
+    renderClinicalCaseDetail(null);
+    return;
+  }
+  entries.forEach(({ item, note }) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `case-list-item ${item.id === selectedCaseId ? "active" : ""}`;
+    button.innerHTML = `
+      <span>${escapeHtml(item.patientCode || "No code")} · ${escapeHtml(note.visitDate || "")}</span>
+      <strong>${escapeHtml(item.caseTitle || "Untitled case")}</strong>
+      <small>${verdictBadge(note.outcomeVerdict)} ${escapeHtml((note.assessment || note.subjective || "").slice(0, 40))}</small>
+    `;
+    button.addEventListener("click", () => { selectedCaseId = item.id; renderClinicalCases(); });
+    caseList.append(button);
+  });
   renderClinicalCaseDetail(clinicalCases.find((item) => item.id === selectedCaseId));
 }
 
@@ -3224,6 +3274,7 @@ function renderSoapNoteCard(note) {
         <h4>${escapeHtml(title)}</h4>
         <div class="case-actions">
           <small class="timeline-date">${escapeHtml([note.visitDate, note.fertilityPhase, note.cyclePhase, note.workflowLink, note.cycleDay ? `CD${note.cycleDay}` : ""].filter(Boolean).join(" · "))}</small>
+          ${verdictBadge(note.outcomeVerdict)}
           <button class="ghost" type="button" data-edit-soap="${escapeAttribute(note.id)}">編輯</button>
         </div>
       </div>
@@ -3271,6 +3322,12 @@ function renderSoapNoteCard(note) {
 
 function soapBlock(label, text) {
   return `<div class="soap-block"><strong>${label}</strong><p>${escapeHtml(text || "未填寫")}</p></div>`;
+}
+
+function verdictBadge(verdict) {
+  const v = OUTCOME_VERDICTS[verdict];
+  if (!v) return "";
+  return `<span class="verdict-badge verdict-${v.tone}">${escapeHtml(v.zh)} ${escapeHtml(v.en)}</span>`;
 }
 
 function selectPoint(code) {
@@ -3439,6 +3496,7 @@ function openSoapEditor(note = null) {
     medicationLinks: [],
     outcomes: "",
     outcomeMetricLinks: [],
+    outcomeVerdict: "",
     followUp: "",
     differentialConsidered: "",
     reflection: "",
@@ -3497,6 +3555,7 @@ function saveSoapFromForm(event) {
     medicationLinks: splitList(data.medicationLinks),
     outcomes: data.outcomes.trim(),
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
+    outcomeVerdict: data.outcomeVerdict || "",
     followUp: data.followUp.trim(),
     differentialConsidered: (data.differentialConsidered || "").trim(),
     reflection: (data.reflection || "").trim(),

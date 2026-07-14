@@ -26,6 +26,31 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Claude - LL2: outcome verdict + "cases to learn from" review
+
+Branch: `ll2-outcome-verdict` (off main). Files: `index.html`, `app.js`, `styles.css`.
+
+Learning Loop LL2. Two parts:
+- `outcomeVerdict` per SOAP note: `improved | no_change | worsened |
+  lost_followup` (a `<select>` near Outcomes). Validated against
+  `OUTCOME_VERDICTS` in normalizeSoapNote; a colored `verdictBadge()` shows on
+  each note card.
+- "值得學習的病例 / Cases to learn from" toggle in the case-list panel:
+  `renderLearnFromReview()` flattens every visit with a no_change/worsened
+  verdict across all cases, newest first; clicking an entry opens that case;
+  toggling off (or typing in search) returns to the normal list. Framed as
+  learning, not failure (per the brief's tone note).
+
+Data lives on the SOAP note in localStorage (clinical layer, not Git) →
+`visits.outcome_verdict` when the SQLite store lands.
+
+Validation: 6-validator sweep PASS. Browser QA: verdict saves + badge renders;
+learn-from view shows exactly the no_change/worsened visits (improved excluded),
+sorted by date; entry click selects the case; toggle off restores the list;
+zero console errors.
+
+---
+
 ## 2026-07-14 - Claude - LL1: 按語 reflection fields on the SOAP note
 
 Branch: `ll1-reflection` (off main). Files: `index.html`, `app.js`, `styles.css`.
