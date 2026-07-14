@@ -23,6 +23,28 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: complete fertility comparison skeleton coverage + validator hardening (Codex)
+
+Completed the current fertility/reproductive comparison skeleton coverage for
+all conditions in `data/pathology/conditions.json` that already had two or
+more `related_tcm_patterns`. Added five skeleton-only comparison records:
+`cmp.anovulation_patterns`, `cmp.endometriosis_context_patterns`,
+`cmp.recurrent_pregnancy_loss_context_patterns`,
+`cmp.insulin_resistance_patterns`, and `cmp.embryo_transfer_patterns`.
+
+Hardened `scripts/validate-relations.js` so comparison records now validate
+optional `source_condition_id`, require at least one dimension, require a cell
+object for every compared pattern, and require every dimension cell to exist as
+a string. This protects the LL3 table structure while keeping clinical
+discriminator content owner-filled only.
+
+Ran `scripts/build-data.js`; generated knowledge now reports `comparisons: 11`.
+Validation: `node --check scripts/validate-relations.js`, `validate-data`,
+`validate-interactions`, `validate-relations`, `validate-herbal-links`,
+`validate-herb-canon`, `validate-point-ids`, `validate-naming`, and JSON parse
+check PASS. `validate-encoding` remains expected FAIL with 768 known backlog
+findings; no repair attempted.
+
 ### 2026-07-14 - LL3: fertility comparison skeleton batch (Codex)
 
 Added five more LL3 comparison skeleton records using only existing

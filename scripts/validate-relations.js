@@ -121,11 +121,28 @@ function validateComparisons(sets, counters, errors) {
     if (!["draft", "deprecated"].includes(record.review_status)) {
       errors.push(`${base}.review_status: expected "draft" or "deprecated"`);
     }
+    if (record.source_condition_id) {
+      counters.comparisonSourceConditionLinks += 1;
+      checkRef(sets.westernConditions, record.source_condition_id, `${base}.source_condition_id`, errors);
+    }
+    const dimensions = asArray(record.dimensions);
+    if (!dimensions.length) errors.push(`${base}.dimensions: a comparison needs at least one dimension`);
     const compares = asArray(record.compares);
     if (compares.length < 2) errors.push(`${base}.compares: a comparison needs >= 2 patterns`);
     compares.forEach((id) => {
       counters.comparisonPatternLinks += 1;
       checkRef(patternUniverse, id, `${base}.compares`, errors);
+      if (!record.cells || typeof record.cells[id] !== "object" || Array.isArray(record.cells[id])) {
+        errors.push(`${base}.cells.${id}: missing cell object for compared pattern`);
+      } else {
+        dimensions.forEach((dimension) => {
+          if (!Object.prototype.hasOwnProperty.call(record.cells[id], dimension)) {
+            errors.push(`${base}.cells.${id}: missing dimension "${dimension}"`);
+          } else if (typeof record.cells[id][dimension] !== "string") {
+            errors.push(`${base}.cells.${id}.${dimension}: expected string value`);
+          }
+        });
+      }
     });
     // every cells key must be one of the compared patterns
     Object.keys(record.cells || {}).forEach((key) => {
@@ -319,6 +336,7 @@ function main() {
     acupointLinks: 0,
     comparisonRecords: 0,
     comparisonPatternLinks: 0,
+    comparisonSourceConditionLinks: 0,
     crosswalkRecords: 0,
     crosswalkDictionaryRefs: 0,
     formulaLinks: 0,

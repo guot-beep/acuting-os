@@ -26,6 +26,56 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 complete fertility skeleton coverage + validator hardening
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Complete current fertility/reproductive LL3 comparison skeleton coverage and harden comparison validation.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `scripts/validate-relations.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `node --check scripts/validate-relations.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled comparison/discriminator cells.
+
+Known risks / manual checks:
+- New records are skeleton-only. Every discriminator cell remains empty.
+- Manual browser spot-check: Lookup comparison filter should find anovulation, endometriosis context, recurrent pregnancy loss context, insulin resistance, and embryo transfer.
+- Validator now rejects missing comparison cell objects/dimension keys; future comparison edits may need to keep the full empty-cell scaffold.
+
+Next recommended action:
+- Ting can fill comparison cells from class notes/textbooks.
+- Claude can review if these LL3 skeleton IDs/titles are acceptable before merge.
+
+Claude review note:
+- This completes coverage for every current condition in `conditions.json` with >=2 existing `related_tcm_patterns`.
+- No new condition-pattern relationships were invented; all `compares` came from existing data.
+
+---
+
 ## 2026-07-14 - Codex - LL3 fertility comparison skeleton batch
 
 Date/time: 2026-07-14 afternoon

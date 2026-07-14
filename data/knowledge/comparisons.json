@@ -315,6 +315,216 @@
       "status": "draft",
       "review_status": "draft",
       "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.anovulation_patterns",
+      "type": "comparison",
+      "title_zh": "無排卵常見證型鑑別骨架",
+      "title_en": "Anovulation - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.anovulation",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.kidney_deficiency",
+        "pattern.liver_qi_stagnation"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.endometriosis_context_patterns",
+      "type": "comparison",
+      "title_zh": "子宮內膜異位症相關情境證型鑑別骨架",
+      "title_en": "Endometriosis context - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.endometriosis_context",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.blood_stasis",
+        "pattern.liver_qi_stagnation"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.blood_stasis": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.recurrent_pregnancy_loss_context_patterns",
+      "type": "comparison",
+      "title_zh": "反覆流產相關情境證型鑑別骨架",
+      "title_en": "Recurrent pregnancy loss context - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.recurrent_pregnancy_loss_context",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.kidney_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.spleen_qi_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.insulin_resistance_patterns",
+      "type": "comparison",
+      "title_zh": "胰島素阻抗相關情境證型鑑別骨架",
+      "title_en": "Insulin resistance context - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.insulin_resistance",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.phlegm_damp",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.phlegm_damp": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.spleen_qi_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.embryo_transfer_patterns",
+      "type": "comparison",
+      "title_zh": "胚胎植入相關情境證型鑑別骨架",
+      "title_en": "Embryo transfer context - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.embryo_transfer",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.kidney_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.spleen_qi_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
     }
   ]
 }
