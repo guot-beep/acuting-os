@@ -23,6 +23,27 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: fertility comparison skeleton batch (Codex)
+
+Added five more LL3 comparison skeleton records using only existing
+`related_tcm_patterns` already present in `data/pathology/conditions.json`.
+New records: `cmp.pcos_patterns`, `cmp.unexplained_infertility_patterns`,
+`cmp.ovulatory_factor_patterns`, `cmp.ivf_cycle_patterns`, and
+`cmp.luteal_support_patterns`.
+
+All discriminator cells are intentionally empty and remain owner/source-filled
+only. Each record is `authored_by: "model_draft"`, `status: "draft"`, and
+`review_status: "draft"`, with a `source_condition_id` pointing back to the
+condition that supplied the existing pattern set. This deepens the data layer
+without adding clinical claims.
+
+Ran `scripts/build-data.js`; generated knowledge now reports `comparisons: 6`.
+Validation: `node --check js/knowledge.js`, `validate-data`,
+`validate-interactions`, `validate-relations`, `validate-herbal-links`,
+`validate-herb-canon`, `validate-point-ids`, `validate-naming`, and JSON parse
+check PASS. `validate-encoding` remains expected FAIL with 768 known backlog
+findings; no repair attempted.
+
 ### 2026-07-14 - LL3: comparison tables rendered in Lookup (Codex)
 
 Codex continued while Claude was token-limited. Added a Lookup workspace

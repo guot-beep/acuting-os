@@ -26,6 +26,55 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 fertility comparison skeleton batch
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Add safe LL3 comparison skeletons from existing condition-pattern links.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 6`
+- `node --check js/knowledge.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 6`, `comparisonPatternLinks: 19`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled comparison/discriminator cells.
+
+Known risks / manual checks:
+- The new comparison records are skeletons only. Every cell is intentionally empty.
+- Manual browser spot-check: Lookup comparison filter should find PCOS, unexplained infertility, ovulatory factor, IVF, and luteal support tables.
+- `data/generated/app_data.js` changed only because `scripts/build-data.js` updates generated timestamps when run.
+
+Next recommended action:
+- Ting can fill the empty cells from class notes/textbooks.
+- Claude can review whether to keep these five fertility comparison skeletons as the next LL3 seed batch.
+
+Claude review note:
+- These records were derived only from existing `related_tcm_patterns` in
+  `data/pathology/conditions.json`; no new clinical pattern relationships were invented.
+
+---
+
 ## 2026-07-14 - Codex - LL3 comparison table renderer handoff
 
 Date/time: 2026-07-14 afternoon

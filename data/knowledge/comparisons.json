@@ -51,6 +51,270 @@
       "status": "draft",
       "review_status": "draft",
       "notes_zh": "骨架：格子由 Ting 依教材／臨床填寫；模型不代筆辨證鑑別內容。"
+    },
+    {
+      "id": "cmp.pcos_patterns",
+      "type": "comparison",
+      "title_zh": "PCOS 常見證型鑑別骨架",
+      "title_en": "PCOS - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.pcos",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.phlegm_damp",
+        "pattern.liver_qi_stagnation",
+        "pattern.kidney_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.phlegm_damp": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.blood_stasis": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.unexplained_infertility_patterns",
+      "type": "comparison",
+      "title_zh": "不明原因不孕常見證型鑑別骨架",
+      "title_en": "Unexplained infertility - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.unexplained_infertility",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.kidney_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.blood_stasis"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.blood_stasis": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.ovulatory_factor_patterns",
+      "type": "comparison",
+      "title_zh": "排卵因素常見證型鑑別骨架",
+      "title_en": "Ovulatory factor context - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.ovulatory_factor_context",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.kidney_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_damp"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.phlegm_damp": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.ivf_cycle_patterns",
+      "type": "comparison",
+      "title_zh": "IVF 週期常見證型鑑別骨架",
+      "title_en": "IVF cycle context - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.ivf_cycle",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.kidney_deficiency",
+        "pattern.blood_stasis",
+        "pattern.liver_qi_stagnation"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.blood_stasis": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.luteal_support_patterns",
+      "type": "comparison",
+      "title_zh": "黃體支持常見證型鑑別骨架",
+      "title_en": "Luteal support context - pattern differentiation skeleton",
+      "source_condition_id": "western_condition.luteal_support",
+      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "compares": [
+        "pattern.kidney_deficiency",
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_deficiency"
+      ],
+      "dimensions": [
+        "Chief pattern cue / 主辨證線索",
+        "Tongue / 舌",
+        "Pulse / 脈",
+        "Key accompanying signs / 兼症",
+        "Treatment principle / 治法",
+        "Representative formula / 代表方"
+      ],
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.spleen_qi_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        },
+        "pattern.blood_deficiency": {
+          "Chief pattern cue / 主辨證線索": "",
+          "Tongue / 舌": "",
+          "Pulse / 脈": "",
+          "Key accompanying signs / 兼症": "",
+          "Treatment principle / 治法": "",
+          "Representative formula / 代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
     }
   ]
 }
