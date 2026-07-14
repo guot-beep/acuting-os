@@ -93,6 +93,47 @@ function collectFormulaIds(set, errors) {
   });
 }
 
+function validateComparisons(sets, counters, errors) {
+  const rel = "data/knowledge/comparisons.json";
+  if (!fs.existsSync(path.join(ROOT, rel))) return;
+  // Comparisons reference the full pattern universe (pattern_library's 50 +
+  // the older graph patterns already in sets.patterns), not just the ~9 in
+  // the pathology graph files.
+  const patternUniverse = new Set(sets.patterns);
+  asArray(readJson("data/pathology/pattern_library.json").records)
+    .forEach((r) => { if (r.id) patternUniverse.add(r.id); });
+  const data = readJson(rel);
+  asArray(data.records).forEach((record, index) => {
+    const base = `${rel}.records[${index}]`;
+    counters.comparisonRecords += 1;
+    if (typeof record.id !== "string" || !record.id.startsWith("cmp.")) {
+      errors.push(`${base}.id: "${record.id}" must start with "cmp."`);
+    }
+    if (record.type !== "comparison") {
+      errors.push(`${base}.type: expected "comparison"`);
+    }
+    if (!["owner", "model_draft"].includes(record.authored_by)) {
+      errors.push(`${base}.authored_by: expected "owner" or "model_draft"`);
+    }
+    if (record.status !== "draft" && record.review_status !== "deprecated") {
+      errors.push(`${base}.status: expected "draft" unless review_status is "deprecated"`);
+    }
+    if (!["draft", "deprecated"].includes(record.review_status)) {
+      errors.push(`${base}.review_status: expected "draft" or "deprecated"`);
+    }
+    const compares = asArray(record.compares);
+    if (compares.length < 2) errors.push(`${base}.compares: a comparison needs >= 2 patterns`);
+    compares.forEach((id) => {
+      counters.comparisonPatternLinks += 1;
+      checkRef(patternUniverse, id, `${base}.compares`, errors);
+    });
+    // every cells key must be one of the compared patterns
+    Object.keys(record.cells || {}).forEach((key) => {
+      if (!compares.includes(key)) errors.push(`${base}.cells: "${key}" is not in compares[]`);
+    });
+  });
+}
+
 function validatePathologyGraph(graph, sourceName, sets, counters, errors) {
   const westernRecords = asArray(graph.records).concat(asArray(graph.western_conditions));
 
@@ -276,6 +317,8 @@ function main() {
   const warnings = [];
   const counters = {
     acupointLinks: 0,
+    comparisonRecords: 0,
+    comparisonPatternLinks: 0,
     crosswalkRecords: 0,
     crosswalkDictionaryRefs: 0,
     formulaLinks: 0,
@@ -339,6 +382,7 @@ function main() {
   validateFormulaCanon(sets, counters, errors);
   validateWorkflows("data/clinical_cases/fertility_workflow_seed.json", sets, counters, errors);
   validateConditionCrosswalk(counters, errors, warnings);
+  validateComparisons(sets, counters, errors);
 
   if (warnings.length) {
     console.warn("Relation validation warnings:");

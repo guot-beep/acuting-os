@@ -23,6 +23,32 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: comparison record skeleton + relation validation (Claude Code -> Codex)
+
+Learning Loop LL3 was started by Claude Code and completed by Codex after
+Claude ran out of token. Added the first JSON knowledge comparison record at
+`data/knowledge/comparisons.json`: `cmp.insomnia_patterns`, a draft
+side-by-side pattern differentiation skeleton for insomnia. The discriminating
+cells are intentionally empty: LL3 policy says clinical discriminators are
+owner-authored, never model-filled. Record is `authored_by: model_draft`,
+`status: draft`, `review_status: draft`.
+
+`scripts/build-data.js` now bundles comparisons into `ACUTING_KNOWLEDGE`, and
+`scripts/validate-relations.js` validates `cmp.*` ids, comparison type/status,
+compared pattern references, and `cells` keys. Added
+`.claude/settings.local.json` to `.gitignore` so local Claude permissions do
+not leak into commits. Build ran and generated knowledge data reports
+`comparisons: 1`.
+
+Validation: `node --check app.js`, `node --check scripts/build-data.js`,
+`node --check scripts/validate-relations.js`, `scripts/build-data.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`, and
+`validate-naming` PASS. `validate-encoding` remains expected FAIL with 768
+known backlog findings; no repair attempted. Next: Ting can fill the empty
+comparison cells from class/textbook notes; later a knowledge.js table renderer
+can display comparison records.
+
 ### 2026-07-14 - LL2: outcome verdict + "cases to learn from" view (Claude Code)
 
 Learning Loop LL2. Added `outcomeVerdict` (improved/no_change/worsened/

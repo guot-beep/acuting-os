@@ -1,0 +1,56 @@
+{
+  "dataset": "comparison",
+  "policy": "LL3 contrast tables (辨證鑑別) — docs/LEARNING_LOOP_TRACK.md. `compares` (pattern ids) and `dimensions` (axis labels) are structural. The `cells` — WHAT distinguishes each pattern on each axis — are DISCRIMINATORS, i.e. clinical content, and are authored ONLY by the owner, NEVER model-filled (AGENTS.md + LL constraint). Skeletons ship with empty cells + authored_by='model_draft' / status='draft'; the owner fills the cells and promotes status. Every id in `compares` must exist in pattern_library / conditions.tcm_patterns (validate-relations enforces). ids are cmp.<slug>, immutable (DECISIONS D1); retire via review_status='deprecated' (D6).",
+  "created": "2026-07-14",
+  "records": [
+    {
+      "id": "cmp.insomnia_patterns",
+      "type": "comparison",
+      "title_zh": "失眠常見證型鑑別",
+      "title_en": "Insomnia — common pattern differentiation",
+      "compares": [
+        "pattern.heart_spleen_deficiency",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.liver_fire"
+      ],
+      "dimensions": [
+        "主症",
+        "舌",
+        "脈",
+        "兼症",
+        "治法",
+        "代表方"
+      ],
+      "cells": {
+        "pattern.heart_spleen_deficiency": {
+          "主症": "",
+          "舌": "",
+          "脈": "",
+          "兼症": "",
+          "治法": "",
+          "代表方": ""
+        },
+        "pattern.heart_kidney_not_communicating": {
+          "主症": "",
+          "舌": "",
+          "脈": "",
+          "兼症": "",
+          "治法": "",
+          "代表方": ""
+        },
+        "pattern.liver_fire": {
+          "主症": "",
+          "舌": "",
+          "脈": "",
+          "兼症": "",
+          "治法": "",
+          "代表方": ""
+        }
+      },
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "notes_zh": "骨架：格子由 Ting 依教材／臨床填寫；模型不代筆辨證鑑別內容。"
+    }
+  ]
+}

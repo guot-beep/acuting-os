@@ -26,6 +26,58 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 comparison record skeleton handoff
+
+Date/time: 2026-07-14 afternoon
+Agent: Claude Code started; Codex completed after Claude token ran out.
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: LL3 comparison knowledge record type from `docs/LEARNING_LOOP_TRACK.md`.
+
+Files changed:
+- `.gitignore`
+- `data/knowledge/comparisons.json`
+- `scripts/build-data.js`
+- `scripts/validate-relations.js`
+- `data/generated/app_data.js`
+- `data/generated/knowledge_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check app.js`: PASS
+- `node --check scripts/build-data.js`: PASS
+- `node --check scripts/validate-relations.js`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 1`
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 1`, `comparisonPatternLinks: 3`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled clinical discriminator cells.
+
+Known risks / manual checks:
+- `cmp.insomnia_patterns` is a skeleton only; `cells` are intentionally empty for Ting/owner source-based filling.
+- No renderer yet; comparisons are bundled and validated but not displayed in `knowledge.js`.
+
+Next recommended action:
+- Ting can fill comparison cells from class/textbook notes.
+- Later Codex/Claude can add a knowledge.js comparison table renderer.
+
+Claude review note:
+- Validator now checks `cmp.*` ids, type/status/authored_by, pattern refs, and cells keys.
+- `.claude/settings.local.json` is ignored so local Claude permission settings stay out of Git.
+
+---
+
 ## 2026-07-14 - Claude - LL2: outcome verdict + "cases to learn from" review
 
 Branch: `ll2-outcome-verdict` (off main). Files: `index.html`, `app.js`, `styles.css`.
