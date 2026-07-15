@@ -6,18 +6,18 @@ This is a queue for owner/source-based filling. It does not contain clinical dis
 ## Summary
 
 - comparison records: 11
-- filled cells: 0
-- pending cells: 174
-- empty tables: 11
+- filled cells: 24
+- pending cells: 150
+- empty tables: 10
 - partial tables: 0
-- complete tables: 0
+- complete tables: 1
 
 ## Table Queue
 
 | ID | Title | Source condition | Patterns | Progress | Status |
 | --- | --- | --- | --- | --- | --- |
 | cmp.insomnia_patterns | 失眠常見證型鑑別 |  | 心脾兩虛 / Heart-Spleen Dual Deficiency / pattern.heart_spleen_deficiency<br>心腎不交 / Heart-Kidney Not Communicating / pattern.heart_kidney_not_communicating<br>肝火上炎 / Liver Fire Flaming Upward / pattern.liver_fire | 0/18 | draft / draft / model_draft |
-| cmp.pcos_patterns | PCOS 常見證型鑑別骨架 | 多囊卵巢症候群 / Polycystic Ovary Syndrome / western_condition.pcos | 痰濕 / Phlegm-Damp / pattern.phlegm_damp<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>血瘀 / Blood Stasis / pattern.blood_stasis | 0/24 | draft / draft / model_draft |
+| cmp.pcos_patterns | PCOS 常見證型鑑別骨架 | 多囊卵巢症候群 / Polycystic Ovary Syndrome / western_condition.pcos | 痰濕 / Phlegm-Damp / pattern.phlegm_damp<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>血瘀 / Blood Stasis / pattern.blood_stasis | 24/24 | draft / draft / codex_source_assisted_draft |
 | cmp.unexplained_infertility_patterns | 不明原因不孕常見證型鑑別骨架 | 不明原因不孕 / Unexplained Infertility / western_condition.unexplained_infertility | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>血瘀 / Blood Stasis / pattern.blood_stasis | 0/18 | draft / draft / model_draft |
 | cmp.ovulatory_factor_patterns | 排卵因素常見證型鑑別骨架 | 排卵因素不孕背景 / Ovulatory Factor Context / western_condition.ovulatory_factor_context | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>痰濕 / Phlegm-Damp / pattern.phlegm_damp | 0/18 | draft / draft / model_draft |
 | cmp.ivf_cycle_patterns | IVF 週期常見證型鑑別骨架 | 試管嬰兒療程背景 / IVF Cycle Context / western_condition.ivf_cycle | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>血瘀 / Blood Stasis / pattern.blood_stasis<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation | 0/18 | draft / draft / model_draft |
@@ -40,12 +40,12 @@ Progress: 0/18
 
 ### cmp.pcos_patterns
 
-Progress: 0/24
+Progress: 24/24
 
-- 痰濕 / Phlegm-Damp / pattern.phlegm_damp: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
-- 肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
-- 腎虛 / Kidney Deficiency / pattern.kidney_deficiency: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
-- 血瘀 / Blood Stasis / pattern.blood_stasis: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
+- 痰濕 / Phlegm-Damp / pattern.phlegm_damp: complete
+- 肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation: complete
+- 腎虛 / Kidney Deficiency / pattern.kidney_deficiency: complete
+- 血瘀 / Blood Stasis / pattern.blood_stasis: complete
 
 ### cmp.unexplained_infertility_patterns
 

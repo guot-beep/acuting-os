@@ -26,6 +26,61 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 PCOS comparison source-assisted draft fill
+
+Date/time: 2026-07-14 evening
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Fill `cmp.pcos_patterns` using official biomedical sources plus Ting Notion/Bastyr notes.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/knowledge/comparison_fill_pcos.json`
+- `scripts/apply-comparison-fill.js`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/apply-comparison-fill.js pcos`: dry-run PASS, 24 cells, 0 skipped, 11 metadata updates
+- `scripts/apply-comparison-fill.js pcos --apply`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `scripts/report-comparison-fill.js`: PASS, queue now `filled_cells: 24`, `pending_cells: 150`, `complete_tables: 1`
+- `node --check scripts/apply-comparison-fill.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No CloudTCM point map edits.
+
+Known risks / manual checks:
+- This is not `source_checked`; it is `draft`, `public_safe: false`, and includes a no-medical-advice disclaimer.
+- Claude/Ting should review the PCOS comparison wording against class materials before promoting it.
+- Official sources were used only for biomedical PCOS context; TCM discriminator cells derive from Ting Notion/Bastyr notes.
+- `scripts/apply-comparison-fill.js` intentionally fills only empty cells and refuses unknown dimensions/pattern ids.
+
+Next recommended action:
+- Browser spot-check Lookup -> Comparison Records -> PCOS. It should show 24/24 cells filled.
+- If approved, repeat the same fill-file pipeline for another high-yield comparison table.
+
+Claude review note:
+- Watch the standing policy tension: `comparisons.json` originally says discriminator cells are owner-filled only. Ting explicitly approved Codex helping fill from medical official sources + Notion/course notes. I kept the result as `model_draft` + `review_status: draft`, not source_checked.
+
+---
+
 ## 2026-07-14 - Codex - LL3 comparison fill queue report
 
 Date/time: 2026-07-14 afternoon

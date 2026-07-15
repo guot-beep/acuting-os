@@ -56,9 +56,9 @@
       "id": "cmp.pcos_patterns",
       "type": "comparison",
       "title_zh": "PCOS 常見證型鑑別骨架",
-      "title_en": "PCOS - pattern differentiation skeleton",
+      "title_en": "PCOS - pattern differentiation draft",
       "source_condition_id": "western_condition.pcos",
-      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "seed_basis": "Source-assisted draft approved by Ting: PCOS biomedical context from NIH/NICHD, OASH WomensHealth, and MedlinePlus; TCM pattern discriminator language from Ting's Notion/Bastyr diagnosis and pathology notes. Draft study comparison only; not medical advice.",
       "compares": [
         "pattern.phlegm_damp",
         "pattern.liver_qi_stagnation",
@@ -75,42 +75,57 @@
       ],
       "cells": {
         "pattern.phlegm_damp": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "PCOS context with irregular / absent cycles plus damp-phlegm signs: heaviness, weight/metabolic documentation context, chest oppression or nausea, poor appetite, loose stools, leukorrhea; distinguish from pure Kidney deficiency by obvious damp/greasy signs. 多囊月經不規則合併痰濕線索：身重、代謝/體重脈絡、胸悶泛惡、納差便溏、帶下；重點看濕膩與痰濕阻滯。",
+          "Tongue / 舌": "Pale or swollen tongue, often with white greasy coat; yellow greasy coat if damp-heat signs are also present. 舌淡胖或腫大，苔白膩；若夾濕熱可見黃膩苔。",
+          "Pulse / 脈": "Slippery or soggy/slippery. 脈滑，或濡滑。",
+          "Key accompanying signs / 兼症": "Fatigue/heaviness, abdominal fullness, phlegm/damp sensation, difficult weight loss or insulin-resistance documentation context; may overlap with Spleen Qi deficiency. 疲倦身重、腹脹、痰濕感、體重不易降或胰島素阻抗記錄脈絡；常與脾虛夾痰濕重疊。",
+          "Treatment principle / 治法": "Strengthen Spleen, transform dampness, resolve phlegm, regulate Chong/Ren and menstruation. 健脾化濕、祛痰，調衝任與月經。",
+          "Representative formula / 代表方": "Study anchors: formula.er_chen_tang, formula.liu_jun_zi_tang; add a course-specific PCOS phlegm-damp formula only after Ting/source review. 學習錨點：二陳湯、六君子湯；PCOS 專門痰濕方待課件/來源確認後再補。"
         },
         "pattern.liver_qi_stagnation": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "Irregular cycles with stress/emotional constraint, PMS-type breast or hypochondriac distension, distending lower abdominal pain, sighing, mood depression or irritability. 月經不調合併情志鬱結、乳房或脅肋脹、少腹脹痛、善太息、鬱悶或易怒。",
+          "Tongue / 舌": "Usually normal to dusky with thin white coat; red edges or thin yellow coat if constraint transforms into heat. 舌可正常或偏暗，苔薄白；鬱而化熱可見邊紅或薄黃苔。",
+          "Pulse / 脈": "Wiry; wiry-rapid if heat, wiry-choppy if blood stasis is also present. 脈弦；化熱則弦數，夾瘀則弦澀。",
+          "Key accompanying signs / 兼症": "Pain or distension tends to fluctuate with emotion; may include dysmenorrhea, breast distension, headaches, throat constraint, or digestive upset from Liver-Spleen disharmony. 脹痛多隨情緒波動；可見痛經、乳脹、頭痛、咽中梗阻感，或肝脾不調的消化症狀。",
+          "Treatment principle / 治法": "Soothe Liver, move qi, regulate menstruation/Chong-Ren; clear heat only when heat signs are present. 疏肝理氣、調經與衝任；有熱象時才加清熱。",
+          "Representative formula / 代表方": "Study anchors: formula.xiao_yao_san, formula.jia_wei_xiao_yao_san, formula.chai_hu_shu_gan_san. 學習錨點：逍遙散、加味逍遙散、柴胡疏肝散。"
         },
         "pattern.kidney_deficiency": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "Long-standing irregular, delayed, scanty, or absent cycles / infertility context with Kidney signs: sore low back/knees, fatigue, dizziness/tinnitus, low libido, or cold/heat deficiency clues. 長期月經後期、量少、閉經或不孕脈絡，合併腰膝酸軟、疲倦、頭暈耳鳴、性功能/生殖力低下，並辨陰虛或陽虛寒熱線索。",
+          "Tongue / 舌": "Kidney Yang/Qi deficiency: pale, swollen, wet coat. Kidney Yin/Essence deficiency: red or peeled/scant coat. 腎陽/腎氣虛多舌淡胖、苔潤；腎陰/精虧多舌紅少苔或剝苔。",
+          "Pulse / 脈": "Deep and weak is the broad Kidney deficiency cue; deep-slow-weak for Yang deficiency, thin-rapid for Yin deficiency. 腎虛總以沉弱為主；陽虛偏沉遲無力，陰虛偏細數。",
+          "Key accompanying signs / 兼症": "Differentiate Yang deficiency cold signs (cold limbs, clear urine, low libido) from Yin deficiency heat signs (five-center heat, night sweats, malar flush); Essence deficiency leans toward reproductive/developmental insufficiency. 分腎陽虛寒象（畏寒肢冷、小便清長、性功能低下）與腎陰虛熱象（五心煩熱、盜汗、顴紅）；精虧偏生殖/發育不足。",
+          "Treatment principle / 治法": "Tonify Kidney, support Essence, regulate Chong/Ren; choose warming Yang vs nourishing Yin according to signs. 補腎益精、調衝任；依寒熱虛象分溫腎陽或滋腎陰。",
+          "Representative formula / 代表方": "Study anchors: formula.liu_wei_di_huang_wan, formula.jin_gui_shen_qi_wan, formula.zuo_gui_wan, formula.you_gui_wan. 學習錨點：六味地黃丸、金匱腎氣丸、左歸丸、右歸丸。"
         },
         "pattern.blood_stasis": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "Irregular cycles with fixed, stabbing lower abdominal/pelvic pain, dark-purple menstrual blood or clots, pain worse at night or resistant to pressure; consider when chronic qi stagnation or masses/cysts are documented. 月經不調合併固定刺痛、少腹/骨盆痛、經色紫暗有塊、夜間較重或拒按；常由久鬱入絡、氣滯血瘀或癥塊脈絡提示。",
+          "Tongue / 舌": "Dusky-purple tongue, purple spots, or sublingual venous engorgement. 舌紫暗、瘀點瘀斑，或舌下絡脈怒張。",
+          "Pulse / 脈": "Choppy; wiry-choppy if qi stagnation is also prominent. 脈澀；夾肝鬱氣滯常見弦澀。",
+          "Key accompanying signs / 兼症": "Dysmenorrhea, dark clots, fixed pain, masses or endometriosis/fibroid documentation context; distinguish from qi stagnation by fixed stabbing pain rather than moving distension. 痛經、暗紫血塊、固定痛、癥塊或內膜異位/肌瘤等記錄脈絡；與氣滯的走竄脹痛不同，血瘀偏固定刺痛。",
+          "Treatment principle / 治法": "Invigorate blood, transform stasis, regulate Chong/Ren; move qi when qi stagnation is part of the presentation. 活血化瘀、調衝任；若氣滯明顯則兼行氣。",
+          "Representative formula / 代表方": "Study anchors: formula.tao_hong_si_wu_tang, formula.gui_zhi_fu_ling_wan, formula.xue_fu_zhu_yu_tang, formula.wen_jing_tang when cold-stasis signs are present. 學習錨點：桃紅四物湯、桂枝茯苓丸、血府逐瘀湯；寒瘀時參考溫經湯。"
         }
       },
       "authored_by": "model_draft",
       "status": "draft",
       "review_status": "draft",
-      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+      "notes_en": "Source-assisted draft approved by Ting. Biomedical PCOS context is from official medical sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr diagnosis and pathology notes. Keep draft until Ting or Claude reviews against class materials.",
+      "source_urls": [
+        "https://www.nichd.nih.gov/health/topics/pcos",
+        "https://womenshealth.gov/a-z-topics/polycystic-ovary-syndrome",
+        "https://medlineplus.gov/polycysticovarysyndrome.html",
+        "https://app.notion.com/p/37747f6dea35818e8cd0fc8d21623365",
+        "https://app.notion.com/p/38647f6dea35813d8fd8c738a37a7611",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "https://app.notion.com/p/38b47f6dea358157b25efc42f57b0b2f",
+        "https://app.notion.com/p/38b47f6dea35816ead62cc159b872dd3",
+        "https://app.notion.com/p/38b47f6dea35813e903fdb5f0ef67c94"
+      ],
+      "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-14",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose PCOS, replace biomedical diagnosis, or recommend treatment."
     },
     {
       "id": "cmp.unexplained_infertility_patterns",

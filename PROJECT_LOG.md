@@ -23,6 +23,31 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: PCOS comparison source-assisted draft fill (Codex)
+
+Filled the first LL3 comparison table, `cmp.pcos_patterns`, as a
+source-assisted draft. The PCOS table now compares phlegm-damp, Liver qi
+stagnation, Kidney deficiency, and Blood stasis across chief cue, tongue,
+pulse, accompanying signs, treatment principle, and representative formulas.
+
+Sources were kept explicit: biomedical PCOS context from NIH/NICHD,
+WomensHealth.gov, and MedlinePlus; TCM discriminator language from Ting's
+Notion/Bastyr diagnosis and pathology notes. The table remains
+`review_status: "draft"`, `authored_by: "model_draft"`, `public_safe: false`,
+and includes a no-medical-advice disclaimer.
+
+Added `scripts/apply-comparison-fill.js` plus
+`data/knowledge/comparison_fill_pcos.json` so future comparison fills can use a
+reviewable source-fill pipeline instead of hand-editing canonical JSON. Rebuilt
+generated data and refreshed `docs/COMPARISON_FILL_QUEUE.md`; queue status is
+now 24 filled cells, 150 pending cells, 10 empty tables, 1 complete table.
+
+Validation: `scripts/build-data.js`, `node --check
+scripts/apply-comparison-fill.js`, `validate-data`, `validate-interactions`,
+`validate-relations`, `validate-herbal-links`, `validate-herb-canon`,
+`validate-point-ids`, `validate-naming`, and JSON parse check PASS.
+`validate-encoding` remains expected FAIL with 768 known backlog findings.
+
 ### 2026-07-14 - LL3: comparison fill queue report (Codex)
 
 Added `scripts/report-comparison-fill.js`, a UTF-8 Node report generator for
