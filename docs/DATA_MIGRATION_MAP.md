@@ -1,18 +1,18 @@
 # Data Migration Map
 
 Purpose: single authoritative answer to "which file is the latest truth?"
-Update this file every time data moves. Last update: 2026-07-12 (Codex A4 UI config extraction).
+Update this file every time data moves. Last update: 2026-07-12 (Claude Phase 2 runtime adapter: 361.json is live).
 
 ## Authority table — where each dataset lives NOW
 
 | Dataset | Source of truth (edit here) | Consumed by app via | Old location | Status |
 |---|---|---|---|---|
-| Standard acupoints (LU–KI expansions, starter, professional) | `data/acupoints/embedded/*.json` (10 files) | `data/generated/app_data.js` | app.js lines ~156–4856 (removed) | MIGRATED 2026-07-02, validated lossless |
+| Standard acupoints (14 channels, 361 records) | `data/acupoints/361.json` | `data/generated/points_361.js` -> app.js `adapt361Record()` | `data/acupoints/embedded/*.json` standard-channel arrays (retired from runtime 2026-07-12, files kept in place) | LIVE 2026-07-12 (Phase 2 runtime adapter); embedded arrays now contribute only EX-HN3/EX-HN5 |
 | Auricular points (in-app 29 records) | `data/auricular/embedded/auricular_points.json` | `data/generated/app_data.js` | app.js `auricularPoints` (removed) | MIGRATED 2026-07-02 |
 | EN i18n maps (locations, anatomy glossary, functions, patterns) | `data/acupoints/embedded/i18n_maps.json` | `data/generated/app_data.js` | app.js 4 map consts (removed) | MIGRATED 2026-07-02 |
 | Master Tung index (277) | `data/tung/point_index.json` | generated twin `data/tung/point_index.js` | formerly hand-kept twin | GENERATED 2026-07-12 by `scripts/build-data.js`; edit JSON only |
 | Auricular GB93 index (13/93) + worklist | `data/auricular/gb93_index.json`, `gb93_worklist.json` | generated `.js` twins | formerly hand-kept twins | GENERATED 2026-07-12 by `scripts/build-data.js`; edit JSON only |
-| 361 canonical file | `data/acupoints/361.json` (361 standard-channel records, transitional unified schema) | not loaded by app | synced by hand from app.js and enrichment batches | MERGED 2026-07-02/03, completed by later D5 enrichment; frozen pending Ting §A/§B decisions |
+| 361 canonical file | `data/acupoints/361.json` (361 standard-channel records, unified schema) | `data/generated/points_361.js` (built by `scripts/build-data.js`) | synced by hand from app.js and enrichment batches | LIVE IN APP since 2026-07-12 (Phase 2); content still frozen pending Ting §A/§B decisions |
 | Formulas currently rendered (23) | `data/herbs/formulas.json` | Lookup / Knowledge formula section | same | CURRENT APP FORMULA SOURCE; contains content-bearing records and known encoding backlog |
 | Formula categories / safety flags / pattern links | `data/herbs/formula_categories.json`, `data/herbs/formula_safety_flags.json`, `data/herbs/formula_pattern_links.json` | partially referenced by formula/pathology planning scripts; not fully rendered | same | Draft relationship/reference layer |
 | Formula canon shortlist (115) | `data/herbs/formula_canon_shortlist.json` | NOT wired into app | created as formula canon planning layer | Draft skeleton/canon planning file; do not treat as rendered canonical until formula merge B1/B2 is approved |
@@ -35,6 +35,46 @@ Update this file every time data moves. Last update: 2026-07-12 (Codex A4 UI con
 | USER DATA: clinical cases | browser localStorage `acuting-clinical-cases-v1` | app runtime | same | NOT in git. Export via Export cases. PRIVATE — do not commit if identifiable |
 | Small UI configs (channel audit, taxonomy, ear anchors) | `data/config/ui_config.json` | `data/generated/app_data.js` -> app.js hydration | app.js constants | MIGRATED 2026-07-12; edit JSON only and run `scripts/build-data.js` |
 | Legacy app snapshot | `legacy/` (index.html, app.js, styles.css) | fallback only | root | FROZEN 2026-07-02, do not edit |
+
+## Phase 2 runtime adapter LANDED — Claude 2026-07-12
+
+`data/acupoints/361.json` is now the single runtime source for the 14
+standard channels, per docs/RUNTIME_ADAPTER_SPEC.md. Data flow:
+`361.json → scripts/build-data.js → data/generated/points_361.js
+(globalThis.ACUTING_POINTS_361) → app.js adapt361Record() → defaultPoints`.
+
+Field map actually implemented (verified against runtime renderers):
+
+| 361.json | runtime | decision |
+|---|---|---|
+| code / chinese / english / pinyin | code / nameZh / nameEn / pinyin | direct |
+| meridian_display, region | meridian, region | fallback channelPrefixMeta |
+| location_zh / location_en / cun_measurement | location / locationEn / cunMeasurement | direct |
+| functions_zh[] | functions (string) | join "，" |
+| functions_en[] | functionsEn (string) | join " " — runtime convention is string (embedded records), not array as the spec table guessed |
+| indications_zh[] / indications_en[] | patterns[] / patternsEn[] | pass through |
+| needling | techniqueNotes | authoritative needling field; string on 354 records, {depth,angle,technique,moxibustion} object on BL61–BL67 (encoding backlog) — composed by needling361Text() |
+| contraindications[] + cautions[] + danger[] | cautions (string) | deduped union joined "\n"; validator proves no safety line is lost |
+| anatomy_terms[] | anatomy[] | 65 records; others fall back to anatomyFromText() |
+| review_status / source_status / enrichment_status | reviewStatus / sourceStatus / enrichmentStatus | defaults draft / model_draft_pending_source_review for the 235 records that predate status fields |
+| nccaom_high_yield / clinical_pearls | nccaomHighYield / clinicalPearls | passed through for future study sections |
+| ui_map {x,y} | x, y | 126 new records lack ui_map → channelPrefixMeta fallback coords |
+| sources[] | sources[] | enrichPoint dedupes/augments as before |
+
+Runtime merge is now `mergeByCode(standardPoints361, embeddedExtraPoints,
+auricularGb93Index, auricularPoints, tungPointIndex)` = 681 total.
+`embeddedExtraPoints` = embedded records whose codes are NOT in 361.json —
+currently exactly EX-HN3 印堂 and EX-HN5 太陽. The embedded standard-channel
+arrays and `legacy/` stay in git unchanged (rollback = revert the PR).
+
+`scripts/validate-data.js` was rewritten (legacy deep-equal retired, approved
+by Ting 2026-07-12): it now proves 361 coverage, field fidelity, safety-line
+preservation, layer counts (361+2+29+13−1+277=681), and no duplicate codes.
+
+localStorage note: pre-adapter `persist()` snapshots contained placeholder
+stubs and unedited default copies; `reconcileSavedPoints()` in app.js drops
+those at load time (old placeholder stubs, and standard-channel records with
+no `techniqueNotes` key). Genuine user edits still merge over defaults.
 
 ## Field-mapping note for Phase 2 (361.json unification)
 

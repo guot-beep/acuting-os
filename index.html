@@ -92,7 +92,7 @@
           <a class="library-card" id="herbLibrary" href="#herbSection">
             <span>Herbs / Materia Medica</span>
             <strong>Single-herb draft canon for CH review</strong>
-            <small>202 draft herb records with category filters, safety flags, modern-use tags, and related formula links.</small>
+            <small><span id="statHerbsInline">--</span> draft herb records with category filters, safety flags, modern-use tags, and related formula links.</small>
           </a>
           <a class="library-card" id="pathologyLibrary" href="#conditionGraph">
             <span>Conditions / 病症</span>
@@ -152,13 +152,13 @@
         <div class="health-quality-grid" aria-label="Data quality status">
           <article>
             <span id="healthReviewedStandard">--</span>
-            <strong>Reviewed standard</strong>
-            <small>Standard channel records beyond placeholder status</small>
+            <strong>Source-checked standard</strong>
+            <small>Standard channel records verified against professional sources</small>
           </article>
           <article>
             <span id="healthPlaceholderStandard">--</span>
-            <strong>Standard placeholders</strong>
-            <small>Individual pages exist, but location and technique need review</small>
+            <strong>Draft standard</strong>
+            <small>Rendered from the 361 layer, source review still pending</small>
           </article>
           <article>
             <span id="healthTungIndex">--</span>
@@ -363,9 +363,9 @@
           </article>
         </div>
         <div class="fertility-link-grid">
-          <div><strong>4</strong><span>workflow seeds</span></div>
-          <div><strong>12</strong><span>fertility-related medication records</span></div>
-          <div><strong>6</strong><span>cycle phase vocabulary groups</span></div>
+          <div><strong>Workflows</strong><span>ovulation-induction / IVF / transfer seeds</span></div>
+          <div><strong>Meds</strong><span>letrozole / clomiphene / metformin / progesterone context</span></div>
+          <div><strong>Cycle</strong><span>menses / follicular / ovulation / luteal phase vocabulary</span></div>
           <div><strong>Safety</strong><span>pregnancy, anticoagulant, OHSS, clinic restriction, red-flag review</span></div>
         </div>
       </section>
@@ -381,6 +381,7 @@
         </div>
         <nav class="section-quicknav" aria-label="Formula section quick navigation">
           <a href="#formulaRecords">Records</a>
+          <a href="#comparisonSection">Comparisons</a>
           <a href="#formulaSchema">Schema</a>
           <a href="#formulaCategories">Categories</a>
           <a href="#formulaSafety">Safety</a>
@@ -429,10 +430,8 @@
         </div>
         <div id="formulaRecords" class="k-records" aria-label="Formula records"></div>
         <div class="formula-progress-strip" id="formulaProgress">
-          <span><strong>115</strong> core formulas searchable</span>
-          <span><strong>23</strong> content-bearing formula drafts</span>
-          <span><strong>18</strong> formula categories</span>
-          <span><strong>15</strong> safety flags for medication, pregnancy, fertility, and red-flag review</span>
+          <span><strong id="statFormulas">--</strong> core formulas searchable</span>
+          <span><strong id="statFormulaCategories">--</strong> formula categories</span>
         </div>
       </section>
 
@@ -452,11 +451,28 @@
         </nav>
         <div id="herbRecords" class="k-records" aria-label="Herb records"></div>
         <div class="formula-progress-strip" id="herbProgress">
-          <span><strong>202</strong> draft herb records</span>
-          <span><strong>34</strong> herb categories</span>
-          <span><strong>407</strong> related formula links</span>
-          <span><strong>409</strong> safety flags</span>
+          <span><strong id="statHerbs">--</strong> draft herb records</span>
+          <span><strong id="statHerbCategories">--</strong> herb categories</span>
+          <span><strong id="statHerbFormulaLinks">--</strong> related formula links</span>
+          <span><strong id="statHerbSafetyFlags">--</strong> safety flags</span>
         </div>
+      </section>
+
+      <section class="formula-section comparison-section" data-workspace="lookup" id="comparisonSection" aria-label="Pattern comparison tables">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Learning Loop</p>
+            <h2>Pattern Comparisons / 辨證鑑別表</h2>
+            <p>Contrast tables make look-alike patterns visible side by side. Skeletons stay draft until Ting fills the discriminator cells from class notes or textbooks.</p>
+          </div>
+          <span class="data-pill">owner-filled cells</span>
+        </div>
+        <nav class="section-quicknav" aria-label="Comparison section quick navigation">
+          <a href="#comparisonRecords">Records</a>
+          <a href="#formulaSection">Formulas</a>
+          <a href="#conditionGraph">Conditions</a>
+        </nav>
+        <div id="comparisonRecords" class="k-records" aria-label="Comparison records"></div>
       </section>
 
       <span id="pathologyAnchor" class="anchor-target" aria-hidden="true"></span>
@@ -599,6 +615,7 @@
               <strong>病例列表</strong>
               <small id="caseResultCount">0 cases</small>
             </div>
+            <button type="button" id="learnFromToggle" class="learn-from-toggle" aria-pressed="false">值得學習的病例 Cases to learn from</button>
             <div id="caseList" class="case-list"></div>
           </aside>
           <section class="case-detail-panel" id="caseDetail"></section>
@@ -792,9 +809,22 @@
           <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
           <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="med.letrozole, med.progesterone"></textarea></label>
           <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
+          <label>成效判定 Outcome verdict<select name="outcomeVerdict">
+            <option value="">—（尚未判定）</option>
+            <option value="improved">改善 Improved</option>
+            <option value="no_change">無變化 No change</option>
+            <option value="worsened">加重 Worsened</option>
+            <option value="lost_followup">失訪 Lost to follow-up</option>
+          </select></label>
           <label class="wide">Outcome metric links<textarea name="outcomeMetricLinks" rows="2" placeholder="sleep_quality +2, pain_score 7->4, lining_mm 8"></textarea></label>
           <label class="wide">醫囑 Advice（生活/飲食/運動）<textarea name="advice" rows="2" placeholder="作息、飲食宜忌、運動、情緒調攝"></textarea></label>
           <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
+          <details class="soap-reflection wide">
+            <summary>臨床推理 / 按語（選填）</summary>
+            <label class="wide">鑑別考量 Differential considered<textarea name="differentialConsidered" rows="2" placeholder="這次還考慮了哪些證型/診斷、為什麼排除"></textarea></label>
+            <label class="wide">按語 Reflection<textarea name="reflection" rows="3" placeholder="學到什麼、什麼出乎意料、下次要留意什麼"></textarea></label>
+            <label class="wide">若無效的下一步 If ineffective, next step<textarea name="ifIneffectivePlan" rows="2" placeholder="開方時就寫下可驗證的下一步，回診時檢查這個預測"></textarea></label>
+          </details>
         </div>
         <div class="dialog-actions">
           <button id="deleteSoapBtn" class="danger" type="button">刪除 SOAP</button>
@@ -813,6 +843,7 @@
     <script src="data/generated/app_data.js"></script>
     <script src="data/generated/knowledge_data.js"></script>
     <script src="data/generated/cloudtcm_map.js"></script>
+    <script src="data/generated/points_361.js"></script>
     <script src="data/tung/point_index.js"></script>
     <script src="data/auricular/gb93_index.js"></script>
     <script src="data/auricular/gb93_worklist.js"></script>

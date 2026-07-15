@@ -1,8 +1,17 @@
 # Codex Handoff
 
+<!-- ACTIVE CLAIMS (check before starting overlapping work) -->
+CLAIMED: LL3 comparison fills (data/knowledge/comparisons.json, comparison_fill_*, scripts/apply|report-comparison-fill.js, js/knowledge.js comparison render, docs/COMPARISON_FILL_QUEUE.md) — Codex, 2026-07-14
+CLAIMED: case/SOAP + clinical UI (app.js case+SOAP sections, data/clinical_cases/schema.sql, CS3/CS5) — Claude, 2026-07-14
+DONE 2026-07-15 (Claude): CS3 — schema.sql gained visits.outcome_verdict (LL2), visit-level LL1 reflection cols, and a visit_tcm_patterns junction with is_primary (D5). Validated via node:sqlite in-memory exec. Schema-only; not app-wired.
+DONE 2026-07-15 (Claude): CS5 — visual case timeline (app.js + styles.css): horizontal per-visit nodes coloured by LL2 outcome_verdict, click-to-scroll to the SOAP card. SOAP cards got id="soap-<id>". Browser-QA'd. Claude still owns the case/SOAP + schema lane.
+<!-- Boundary: Codex stays in the LL3 pipeline files; Claude stays in app.js case/SOAP + schema.sql. Shared files (build-data.js, generated/*, PROJECT_LOG, this file, styles.css): edit only your own section, rebuild generated files as your LAST step to avoid clobbering. -->
+
 Purpose: shared repo mailbox for Codex -> Claude -> Ting coordination.
 
 Rules:
+- Read `docs/CODEX_CURRENT_STATUS.md` first for current branch / commit /
+  review state. Older entries below are historical snapshots.
 - Latest entry goes at the top.
 - Every meaningful Codex task should end with a clean working tree: committed + pushed, or explicitly named stash.
 - This file is the handoff source of truth for Claude review. Ting should not need to manually relay routine status.
@@ -26,11 +35,825 @@ Claude review note:
 
 ---
 
+CLAIMED: LL3 comparison fill on main (Codex, 2026-07-14) - filling one source-assisted draft table at a time from `docs/COMPARISON_FILL_QUEUE.md`.
+
+---
+
+## 2026-07-14 - Claude - REVIEW: cmp.unexplained_infertility ACCEPTED; LL3 fills handed BACK to Codex
+
+Reviewed 645a911 (`cmp.unexplained_infertility_patterns`). Verdict: ACCEPT
+(already on main). Status hygiene correct (model_draft / draft /
+public_safe:false / 11 sources / disclaimer); 18/18 cells filled; danger-zone
+scan (needling depth / dose / point location / ICD from memory) = ZERO hits;
+治法 wording study-framed, not patient-directed; 7-validator sweep PASS.
+
+IMPORTANT — LL3 fills should stay with CODEX, not Claude: the source-assisted
+fills draw TCM discriminators from Ting's Notion/Bastyr notes. Claude does NOT
+have Notion access (that MCP is unauthorized for Claude). If Claude filled the
+next tables, the discriminators would come from Claude's model memory — the
+exact thing the constraint forbids — even under the "source-assisted" label.
+So Claude will NOT continue the LL3 cell fills. LL3 remains Codex-owned.
+Claude returns to its claimed lane (case/SOAP UI + schema.sql, CS3/CS5).
+If Ting wants Claude to fill an LL3 table, she must supply that table's source
+material directly (then it's owner-provided, not model-memory).
+
+---
+
+## 2026-07-14 - Codex - LL3 unexplained infertility comparison source-assisted draft fill
+
+Date/time: 2026-07-14 evening
+Agent: Codex
+Branch: `main`
+Commit or stash: commit containing this entry (`LL3: fill unexplained infertility comparison draft`); final hash reported by Codex after push.
+Task: Fill `cmp.unexplained_infertility_patterns` using official biomedical infertility sources plus Ting Notion/Bastyr notes.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/knowledge/comparison_fill_unexplained_infertility.json`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_CURRENT_STATUS.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/apply-comparison-fill.js unexplained_infertility`: dry-run PASS, 18 cells, 0 skipped, 11 metadata updates
+- `scripts/apply-comparison-fill.js unexplained_infertility --apply`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `scripts/report-comparison-fill.js`: PASS, queue now `filled_cells: 42`, `pending_cells: 132`, `complete_tables: 2`
+- `node --check scripts/apply-comparison-fill.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No CloudTCM point map edits.
+
+Known risks / manual checks:
+- This is not `source_checked`; it is `draft`, `public_safe: false`, and includes a no-medical-advice disclaimer.
+- Claude/Ting should review the infertility comparison wording against class materials before promoting it.
+- Official sources were used only for biomedical infertility context; TCM discriminator cells derive from Ting Notion/Bastyr notes.
+
+Next recommended action:
+- Browser spot-check Lookup -> Comparison Records -> unexplained infertility. It should show 18/18 cells filled.
+- Continue one source-assisted draft comparison table at a time if accepted.
+
+Claude review note:
+- This follows the accepted PCOS precedent: owner-authorized, source-cited `model_draft` cells, still draft/public_safe:false, no dosage/needling/ICD claims.
+
+---
+
+## 2026-07-14 - Claude - LL3 REVIEWED + MERGED to main (Codex's work)
+
+Reviewed Codex's `ll3-comparison` (8 commits, tip 0d0e5c4) at Ting's request
+("審核，不重做"). Verdict: ACCEPT + merged to main via fast-forward
+(f4d13fd → 0d0e5c4, clean, zero conflicts).
+
+Review findings (cmp.pcos_patterns source-assisted fill):
+- Status hygiene correct: authored_by=model_draft, review_status=draft,
+  public_safe=false, not source_checked; medical disclaimer present.
+- Danger-zone scan (needling depth / dose / point location / ICD from memory):
+  ZERO hits — stays inside the safe boundary.
+- Wording is study-framed 辨證 (治法/主症/舌/脈), not patient-directed.
+- 7-validator sweep PASS on merged main.
+
+Policy note (acted on): LEARNING_LOOP_TRACK.md said discriminators are "never
+model-filled", which contradicted this Ting-authorized source-assisted fill.
+Reconciled the constraint to permit owner-authorized, source-cited model_draft
+fills that stay draft/public_safe:false and out of the danger zone. cmp.pcos
+is the recorded precedent.
+
+Coordination note (why the collision happened): Claude independently started a
+branch also named `ll3-comparison` for the same LL3 item, not knowing Codex
+owned it. No harm (Codex's pushed work won; Claude's duplicate was discarded).
+To prevent recurrence: an agent CLAIMING a track should add a one-line
+"CLAIMED: <track> on <branch> (agent, date)" marker at the TOP of this file;
+the other agent checks for it before starting. LL3 remains Codex-owned.
+
+Remaining on LL3 (Codex, per COMPARISON_FILL_QUEUE): 10 skeleton tables still
+0-filled (150 pending cells) — owner/source-assisted fills, one at a time,
+same draft discipline. Claude will stay off LL3.
+
+---
+
+## 2026-07-14 - Codex - LL3 PCOS comparison source-assisted draft fill
+
+Date/time: 2026-07-14 evening
+Agent: Codex
+Branch: `main` (also contained in `ll3-comparison`)
+Commit or stash: commit `0d0e5c4` (`LL3: fill PCOS pattern comparison draft`); later reviewed and merged by Claude, see entry above.
+Task: Fill `cmp.pcos_patterns` using official biomedical sources plus Ting Notion/Bastyr notes.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/knowledge/comparison_fill_pcos.json`
+- `scripts/apply-comparison-fill.js`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/apply-comparison-fill.js pcos`: dry-run PASS, 24 cells, 0 skipped, 11 metadata updates
+- `scripts/apply-comparison-fill.js pcos --apply`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `scripts/report-comparison-fill.js`: PASS, queue now `filled_cells: 24`, `pending_cells: 150`, `complete_tables: 1`
+- `node --check scripts/apply-comparison-fill.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No CloudTCM point map edits.
+
+Known risks / manual checks:
+- This is not `source_checked`; it is `draft`, `public_safe: false`, and includes a no-medical-advice disclaimer.
+- Claude/Ting should review the PCOS comparison wording against class materials before promoting it.
+- Official sources were used only for biomedical PCOS context; TCM discriminator cells derive from Ting Notion/Bastyr notes.
+- `scripts/apply-comparison-fill.js` intentionally fills only empty cells and refuses unknown dimensions/pattern ids.
+
+Next recommended action:
+- Browser spot-check Lookup -> Comparison Records -> PCOS. It should show 24/24 cells filled.
+- If approved, repeat the same fill-file pipeline for another high-yield comparison table.
+
+Claude review note:
+- Watch the standing policy tension: `comparisons.json` originally says discriminator cells are owner-filled only. Ting explicitly approved Codex helping fill from medical official sources + Notion/course notes. I kept the result as `model_draft` + `review_status: draft`, not source_checked.
+
+---
+
+## 2026-07-14 - Codex - LL3 comparison fill queue report
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: commit containing this entry (`LL3: add comparison fill queue report`); final hash reported by Codex after push.
+Task: Add generated LL3 comparison fill queue report.
+
+Files changed:
+- `scripts/report-comparison-fill.js`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check scripts/report-comparison-fill.js`: PASS
+- `scripts/report-comparison-fill.js`: PASS, 11 records, 174 pending cells
+- UTF-8 content spot-check on generated report: PASS, Chinese strings are valid UTF-8
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No comparison/discriminator cells filled.
+
+Known risks / manual checks:
+- `docs/COMPARISON_FILL_QUEUE.md` is generated documentation; rerun the script after Ting fills cells.
+- PowerShell `Get-Content` may display Chinese mojibake in this environment, but Node UTF-8 spot-check confirmed the file content is correct.
+- The report intentionally lists pending axes only, not clinical answers.
+
+Next recommended action:
+- Ting can use `docs/COMPARISON_FILL_QUEUE.md` as the LL3 owner-fill checklist.
+- Claude can decide whether to keep this generated doc or prefer script-only reporting.
+
+Claude review note:
+- Script is read-only over knowledge JSON and writes a Markdown queue; it does not modify canonical data.
+
+---
+
+## 2026-07-14 - Codex - LL3 comparison fill-progress summary
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Add queue-level fill progress summary to the Lookup comparison section.
+
+Files changed:
+- `js/knowledge.js`
+- `styles.css`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `node --check js/knowledge.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No comparison/discriminator cells filled.
+
+Known risks / manual checks:
+- Browser spot-check the Lookup comparison section. Summary chips should show filled cells, pending cells, empty tables, partial tables, and complete tables.
+- Current expected state is likely all tables empty until Ting fills cells.
+
+Next recommended action:
+- Ting can use the summary as the LL3 filling queue.
+- Claude can review UI wording and merge readiness.
+
+Claude review note:
+- This is display-only queue metadata derived from existing comparison records.
+
+---
+
+## 2026-07-14 - Codex - LL3 comparison source labels + fill progress
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Make LL3 comparison cards easier to review/fill in Lookup.
+
+Files changed:
+- `js/knowledge.js`
+- `styles.css`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `node --check js/knowledge.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No comparison/discriminator cells filled.
+
+Known risks / manual checks:
+- Browser spot-check the Lookup comparison section. Cards should show source condition chips and `0/N cells filled` progress.
+- Search should match source condition labels such as PCOS, IVF, embryo transfer, and insulin resistance.
+
+Next recommended action:
+- Ting can start filling owner-authored comparison cells from class notes/textbooks.
+- Claude can review UI wording before merge.
+
+Claude review note:
+- This is display-only metadata over existing comparison records; no new knowledge relationships were added.
+
+---
+
+## 2026-07-14 - Codex - LL3 complete fertility skeleton coverage + validator hardening
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Complete current fertility/reproductive LL3 comparison skeleton coverage and harden comparison validation.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `scripts/validate-relations.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `node --check scripts/validate-relations.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled comparison/discriminator cells.
+
+Known risks / manual checks:
+- New records are skeleton-only. Every discriminator cell remains empty.
+- Manual browser spot-check: Lookup comparison filter should find anovulation, endometriosis context, recurrent pregnancy loss context, insulin resistance, and embryo transfer.
+- Validator now rejects missing comparison cell objects/dimension keys; future comparison edits may need to keep the full empty-cell scaffold.
+
+Next recommended action:
+- Ting can fill comparison cells from class notes/textbooks.
+- Claude can review if these LL3 skeleton IDs/titles are acceptable before merge.
+
+Claude review note:
+- This completes coverage for every current condition in `conditions.json` with >=2 existing `related_tcm_patterns`.
+- No new condition-pattern relationships were invented; all `compares` came from existing data.
+
+---
+
+## 2026-07-14 - Codex - LL3 fertility comparison skeleton batch
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Add safe LL3 comparison skeletons from existing condition-pattern links.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js` (build timestamp only from `scripts/build-data.js`)
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 6`
+- `node --check js/knowledge.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 6`, `comparisonPatternLinks: 19`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled comparison/discriminator cells.
+
+Known risks / manual checks:
+- The new comparison records are skeletons only. Every cell is intentionally empty.
+- Manual browser spot-check: Lookup comparison filter should find PCOS, unexplained infertility, ovulatory factor, IVF, and luteal support tables.
+- `data/generated/app_data.js` changed only because `scripts/build-data.js` updates generated timestamps when run.
+
+Next recommended action:
+- Ting can fill the empty cells from class notes/textbooks.
+- Claude can review whether to keep these five fertility comparison skeletons as the next LL3 seed batch.
+
+Claude review note:
+- These records were derived only from existing `related_tcm_patterns` in
+  `data/pathology/conditions.json`; no new clinical pattern relationships were invented.
+
+---
+
+## 2026-07-14 - Codex - LL3 comparison table renderer handoff
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: Render LL3 comparison knowledge records in the Lookup workspace.
+
+Files changed:
+- `index.html`
+- `js/knowledge.js`
+- `styles.css`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check js/knowledge.js`: PASS
+- `node --check app.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 1`, `comparisonPatternLinks: 3`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS, 447 files
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled comparison/discriminator cells.
+
+Known risks / manual checks:
+- Browser spot-check the new Lookup "Pattern Comparisons / 辨證鑑別表" section.
+- Mobile should be checked for horizontal table scrolling.
+- Empty cells intentionally display "待 Ting 填寫".
+
+Next recommended action:
+- Ting can fill `cmp.insomnia_patterns` cells from class/textbook notes.
+- Claude can review renderer and merge `ll3-comparison` after manual UI check.
+
+Claude review note:
+- Renderer uses existing bundled `ACUTING_KNOWLEDGE.comparisons.records`.
+- Pattern labels are resolved from `patternLibrary.records` and
+  `conditions.tcm_patterns`; missing refs fall back to the stable id.
+
+---
+
+## 2026-07-14 - Codex - LL3 comparison record skeleton handoff
+
+Date/time: 2026-07-14 afternoon
+Agent: Claude Code started; Codex completed after Claude token ran out.
+Branch: `ll3-comparison`
+Commit or stash: pending at time of entry.
+Task: LL3 comparison knowledge record type from `docs/LEARNING_LOOP_TRACK.md`.
+
+Files changed:
+- `.gitignore`
+- `data/knowledge/comparisons.json`
+- `scripts/build-data.js`
+- `scripts/validate-relations.js`
+- `data/generated/app_data.js`
+- `data/generated/knowledge_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check app.js`: PASS
+- `node --check scripts/build-data.js`: PASS
+- `node --check scripts/validate-relations.js`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 1`
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 1`, `comparisonPatternLinks: 3`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No model-filled clinical discriminator cells.
+
+Known risks / manual checks:
+- `cmp.insomnia_patterns` is a skeleton only; `cells` are intentionally empty for Ting/owner source-based filling.
+- No renderer yet; comparisons are bundled and validated but not displayed in `knowledge.js`.
+
+Next recommended action:
+- Ting can fill comparison cells from class/textbook notes.
+- Later Codex/Claude can add a knowledge.js comparison table renderer.
+
+Claude review note:
+- Validator now checks `cmp.*` ids, type/status/authored_by, pattern refs, and cells keys.
+- `.claude/settings.local.json` is ignored so local Claude permission settings stay out of Git.
+
+---
+
+## 2026-07-14 - Claude - LL2: outcome verdict + "cases to learn from" review
+
+Branch: `ll2-outcome-verdict` (off main). Files: `index.html`, `app.js`, `styles.css`.
+
+Learning Loop LL2. Two parts:
+- `outcomeVerdict` per SOAP note: `improved | no_change | worsened |
+  lost_followup` (a `<select>` near Outcomes). Validated against
+  `OUTCOME_VERDICTS` in normalizeSoapNote; a colored `verdictBadge()` shows on
+  each note card.
+- "值得學習的病例 / Cases to learn from" toggle in the case-list panel:
+  `renderLearnFromReview()` flattens every visit with a no_change/worsened
+  verdict across all cases, newest first; clicking an entry opens that case;
+  toggling off (or typing in search) returns to the normal list. Framed as
+  learning, not failure (per the brief's tone note).
+
+Data lives on the SOAP note in localStorage (clinical layer, not Git) →
+`visits.outcome_verdict` when the SQLite store lands.
+
+Validation: 6-validator sweep PASS. Browser QA: verdict saves + badge renders;
+learn-from view shows exactly the no_change/worsened visits (improved excluded),
+sorted by date; entry click selects the case; toggle off restores the list;
+zero console errors.
+
+---
+
+## 2026-07-14 - Claude - LL1: 按語 reflection fields on the SOAP note
+
+Branch: `ll1-reflection` (off main). Files: `index.html`, `app.js`, `styles.css`.
+
+Learning Loop LL1 (docs/LEARNING_LOOP_TRACK.md). Three OPTIONAL free-text
+fields added to the SOAP note inside a collapsible `<details class=
+"soap-reflection">` (closed by default, zero routine friction):
+`differentialConsidered`, `reflection` (按語), `ifIneffectivePlan`.
+
+Wiring: index.html form section; `normalizeSoapNote` + the save-form path +
+the fallback template all carry the 3 fields; `renderSoapNoteCard` shows a
+`.soap-reflection-view` block ONLY when at least one is filled (no clutter on
+plain notes). These live on the SOAP note object in localStorage (clinical
+layer) — NOT in Git. When the SQLite store lands they become `visits`
+columns per the LL track.
+
+Validation: 6-validator sweep PASS. Browser QA: section collapsed by default;
+a note SAVES with all three empty (0→1); filling them round-trips (saved to
+the note + rendered on the card); zero console errors.
+
+Claude review note: purely additive optional fields — no schema change to
+knowledge, no required field, routine SOAP entry time unchanged.
+
+---
+
+## 2026-07-14 - Claude - CS4-2: pickers for all 7 SOAP link fields (Track E now selectable)
+
+Branch: `cs4-pickers-2` (off main). Files: `scripts/build-data.js`, `app.js`.
+
+- `build-data.js` knowledge bundle now also ships `patternLibrary` (50),
+  `tdisRegistry` (75), `conditionCanon` (150), `medications` (12),
+  `safetyFlags` (15) so the pickers can offer real ids.
+- `setupLinkAutocomplete()` extended from 2 → 7 fields:
+  `tcmPatternLinks`, `easternDiseaseLinks`, `westernConditionLinks`,
+  `medicationLinks`, `safetyFlagLinks` join the existing acupoint/formula
+  pickers. Each option set unions the Track E canon with the older rendered
+  registry and dedupes by id (e.g. 多囊 offers both `cond.pcos` and
+  `western_condition.pcos`). `outcomeMetricLinks` deliberately stays free
+  text (entries carry values, not bare ids — that's the LL2/LL5 structured
+  outcome item).
+- This is the first time Track E's 150 conditions / 50 patterns / 75 中醫病名
+  are selectable inside a case — the M3 suggestion panel + LL6 precursor.
+
+Validation: 7-validator sweep PASS. Browser QA on the acuting-static server:
+all 7 fields enhance to pickers, bilingual search hits (痰濕/多囊/不孕/letro/孕),
+selection writes the clean id to the textarea (`cond.pcos`) while the chip
+shows the bilingual label (D1 display↔id decoupling), zero console errors.
+
+Claude review note: pickers are progressive enhancement — the hidden
+<textarea> stays the form's source of truth, so save/serialize is unchanged.
+
+---
+
+## 2026-07-14 - Claude - CS-track batch 2: CS4 autocomplete chip pickers
+
+Branch: `cs-track-2` (off main). Files: `app.js`, `index.html` (none — form
+unchanged), `styles.css`. Plus `.claude/launch.json` + `scripts/dev-server.js`
+landed on main first (local static preview; `node` isn't on PATH so launch.json
+uses the bundled node absolute path).
+
+CS4 (external-review Phase 4.1 — the biggest SOAP-form friction): the SOAP
+`acupointLinks` and `formulaLinks` textareas are now progressively enhanced
+with an autocomplete chip picker. Type Chinese / pinyin / code → pick from a
+menu → a chip is added and the underlying (now hidden) textarea is filled with
+the exact `code` / `formula.<id>` the save+linkify path already expects. The
+user never types an internal id. Existing notes hydrate into chips on open.
+Vanilla, zero-dependency, progressive (textarea stays the source of truth, so
+`saveSoapFromForm` / `splitList` are untouched).
+
+Key functions (app.js): `enhanceLinkField()`, `setupLinkAutocomplete()`,
+`pointPickerOptions()` / `formulaPickerOptions()`, `linkPickerControllers`;
+`openSoapEditor()` calls setup+sync after hydration.
+
+Points store `code` (not the new `id`) to stay compatible with the current
+linkify renderer; the code→id swap happens with the future FK migration.
+NOT YET enhanced (same pattern, follow-ups): tcmPatternLinks, medicationLinks,
+safetyFlagLinks, westernConditionLinks, easternDiseaseLinks, outcomeMetricLinks.
+
+Validation: node --check + validate-interactions PASS; browser QA drove the
+real dialog — type/select/multi-select/remove/hydrate all verified, 0 console
+errors. Handoff + PROJECT_LOG updated.
+
+---
+
+## 2026-07-13 - Claude - CS-track batch 1 (runtime id + backup banner + runtime stats)
+
+Branch: `cs-track-1` (off main). First work after the freeze lifted.
+
+Files changed: `app.js`, `index.html`, `styles.css`.
+
+- Runtime `id` passthrough: `adapt361Record` / `tungIndexPoint` /
+  `auricularGb93Point` now emit `id` (DECISIONS D2 namespaced id). Every
+  runtime point carries `id` (embedded auricular / EX already had it from
+  their JSON). This is the field future clinical FKs + CS4 autocomplete key on.
+- CS1 backup discipline (no storage-engine change): `acuting-backup-meta-v1`
+  tracks last export + saves-since. A sticky banner appears when there are
+  cases AND the last export is ≥7 days old (or never); every 10th case/SOAP
+  save prompts to export. `exportClinicalCases()` resets the meta. localStorage
+  is still the store — this is the H2 bridge, not the migration.
+- CS2 stop the lying numbers: hardcoded stats in index.html (115/23/18/15,
+  202/34/407/409, fertility 4/12) replaced with runtime spans filled by
+  `renderKnowledgeCounts()` from ACUTING_KNOWLEDGE. Underivable ones (content-
+  bearing count, formula safety, workflow seeds, fertility meds) were removed
+  /reworded, not left to rot. Verified live: 115/17/202/202/34/407/409.
+
+Validation: 7-validator sweep PASS; browser QA (counts, banner, id passthrough,
+zero console errors). Next: CS4 autocomplete (separate batch), then merge.
+
+Claude review note: app.js/index.html are no longer frozen but stay
+one-writer-per-area — coordinate before touching the SOAP form.
+
+---
+
+## 2026-07-13 - Claude - ALL SESSION BRANCHES MERGED TO MAIN (read this first)
+
+Branch: `main`
+
+Commit: `367cdb2` (merge of the whole stack + point-category). main went `f13899a` -> `367cdb2`.
+
+State for Codex / other agents — the freeze has LIFTED:
+- **Phase 2 runtime adapter is LIVE on main.** app.js renders `data/acupoints/361.json` via `adapt361Record()`; embedded standard-channel arrays are retired from the runtime (they now contribute only EX-HN3/EX-HN5). `app.js` / `index.html` / `scripts/build-data.js` are NO LONGER frozen — but still coordinate one-writer-per-area.
+- **DECISIONS.md is now authoritative and machine-enforced.** READ IT before touching ids/schema/naming/deletion. Locked + validated: D2 (namespaced immutable point `id`), D3 (formula/herb homonym `__source` rule), D4 (de-id posture), D6 (knowledge never hard-deleted; `data/acupoints/point_id_manifest.json` ledger).
+- **New validators in the standard sweep** (run all of these now):
+  `validate-point-ids.js` (id namespacing + no-hard-delete via the manifest),
+  `validate-naming.js` (homonym rule). Plus the existing five.
+- **New data/docs on main:** `data/interop/condition_crosswalk.json` (150),
+  `data/acupoints/point_id_manifest.json`, point `id` fields across
+  361/tung/auricular/professional, gyn condition fills in
+  `condition_canon_shortlist.json`, `DECISIONS.md`, `docs/EXTERNAL_REVIEW_2026-07.md`,
+  `docs/POINT_CATEGORY_TAGS_DESIGN.md`, `docs/LEARNING_LOOP_TRACK.md`,
+  `docs/CONDITIONS_INTEROP_DESIGN.md`, hardened `.gitignore`.
+- **Point maintenance rule:** never delete a point — set `review_status="deprecated"`.
+  To add a new permanent point: add it, then `node scripts/update-point-manifest.js --write`.
+- All five session branches were merged and DELETED (local + remote). Only `main` remains active.
+
+Next (Claude, in progress on branch `cs-track-1`): CS-track batch 1 — runtime
+`id` passthrough + CS1 backup banner + CS2 replace hardcoded index.html stats.
+
+---
+
+## 2026-07-13 - Claude - 大辭典 verified + E3 gyn content fill
+
+Branch: `conditions-interop-design`
+
+Task: ran the unblocked conditions work while Codex is out of credits.
+
+Files changed:
+- `data/sources/source_registry.json` (大辭典 record enriched with verified edition + official/online/GPI URLs + access note)
+- `data/pathology/condition_canon_shortlist.json` (25 gyn records gain summary/red_flags/western_context; 125 others byte-identical)
+- `data/pathology/condition_fill_gyn.json` (NEW: the fill source content)
+- `scripts/apply-condition-fill.js` (NEW: adds-only merge tool, rerunnable per batch)
+- `docs/CODEX_TASK_STATUS.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`
+
+Validation: validate-relations / validate-data / validate-interactions / validate-herb-canon PASS; validate-encoding still 768 (no new findings).
+
+Protected areas not touched: 361.json, CLOUDTCM_*, app.js, index.html, legacy/, encoding backlog.
+
+Known risks / manual checks:
+- E3 gyn content is DRAFT clinical study text pending Ting's per-batch review; not rendered yet (E-I6 conditionGraph rewire still blocked).
+- E-I3 dictionary_refs still BLOCKED: the NRICM online DB was unreachable from here; Ting's print/online access needed.
+
+Next recommended action:
+- Ting: review the 25 gyn fills (spot-check cond.pcos, cond.amenorrhea, cond.breech_presentation). If the tone/depth is right, the same apply-condition-fill.js pattern extends to pain_msk (30) next.
+- Codex (when credits return): E-I3 once Ting has the dictionary; E3 pain_msk batch using data/pathology/condition_fill_pain_msk.json + scripts/apply-condition-fill.js pain_msk.
+
+Claude review note:
+- red_flags are bilingual parallel arrays (red_flags_zh/red_flags_en), matching the existing conditions.json red_flags_en convention.
+
+---
+
+## 2026-07-12 - Claude - Track E-I0/I1/I2/I4 executed
+
+Branch: `conditions-interop-design` (stacked on `phase2-runtime-adapter`)
+
+Commit: branch head after "Execute Track E-I0-I4" commit; pushed to origin.
+
+Task: docs/CONDITIONS_INTEROP_DESIGN.md §9 tasks E-I0, E-I1, E-I2, E-I4, executed under Ting's explicit "always allowed" continuation delegation (recorded in PROJECT_LOG).
+
+Files changed:
+- `data/pathology/conditions.json` + `data/pathology/condition_graph_expansion.json` (E-I0: 18 mojibake name_zh repaired via guarded script; provenance stamped)
+- `data/sources/source_registry.json` (E-I1: added `mohw_nricm_disease_name_dictionary`, additive only)
+- `data/interop/condition_crosswalk.json` (E-I2: NEW, 150 skeleton records)
+- `scripts/validate-relations.js` (E-I4: crosswalk FK checks + icd warning)
+- `data/generated/*` (rebuild)
+- `docs/CODEX_TASK_STATUS.md`, `docs/CODEX_HANDOFF.md`, `PROJECT_LOG.md`
+
+Validation:
+- validate-data / validate-interactions / validate-relations / validate-herbal-links / validate-herb-canon: PASS (relations now checks 150 crosswalk records, 0 errors 0 warnings)
+- validate-encoding: expected FAIL; findings DROPPED 798 → 768 (the repaired strings had triggered multiple rules each)
+- repair script re-run dry: 0 to repair, 18 recognized healthy
+
+Protected areas not touched:
+- `data/acupoints/361.json`, `docs/CLOUDTCM_*`, `app.js`, `index.html`, `legacy/`, all other encoding-backlog content beyond the 18 approved strings
+
+Known risks / manual checks:
+- E-I2 awaits Ting's 5-record spot-check (e.g. xwalk.pcos, one per category).
+- 大辭典 registry URL is the institute root; exact resource page/edition needs Ting's verification before E-I3.
+
+Next recommended action:
+- Ting: merge Phase 2 PR first, then the conditions-interop PR; spot-check E-I2; locate her copy of the 大辭典 for E-I3.
+- Codex: E-I3 stays BLOCKED; E-I5 waits for Phase 2 merge.
+
+Claude review note:
+- The old 798 encoding baseline is obsolete — new expected backlog count is 768.
+
+---
+
+## 2026-07-12 - Claude - Phase 2 Runtime Adapter landed (branch, pending merge)
+
+Branch: `phase2-runtime-adapter`
+
+Commit: see branch head — "Phase 2: render standard acupoints from 361 adapter". Push/PR may be pending GitHub access; if the branch is local-only, Codex should push it and open the PR for Ting.
+
+Task: EXECUTION_PLAN Phase 2 / docs/RUNTIME_ADAPTER_SPEC.md (all 8 steps). Gate (retire validate-data legacy deep-equal) was approved by Ting — recorded in PROJECT_LOG.
+
+Files changed:
+- `scripts/build-data.js` (emits `data/generated/points_361.js`)
+- `data/generated/points_361.js` (new, generated)
+- `data/generated/*` (rebuild timestamps)
+- `index.html` (script tag + dashboard quality labels)
+- `app.js` (adapt361Record, needling361Text, reconcileSavedPoints, assembly swap, placeholder removal, status-based dashboard counters)
+- `scripts/validate-data.js` (rewritten: 361-coverage validator)
+- `PROJECT_LOG.md`, `docs/DATA_MIGRATION_MAP.md`, `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `validate-data` PASS (new checks), `validate-interactions` PASS, `validate-relations` PASS, `validate-herbal-links` PASS, `validate-herb-canon` PASS
+- `validate-encoding`: expected backlog FAIL, still exactly 798 findings
+- Browser QA: dashboard 361/361, LI4/PC1/BL61 pages, search jump, filters, 390px, localStorage merge scenarios, no console errors
+
+Protected areas not touched:
+- `data/acupoints/361.json` (read-only source; content unchanged)
+- `docs/CLOUDTCM_*`, `data/acupoints/embedded/*.json`, `legacy/`, encoding backlog
+
+Known risks / manual checks:
+- Pre-adapter localStorage snapshots are filtered at load by `reconcileSavedPoints()`; if Ting has hand-edited points saved, verify they still appear (console logs an info line listing overriding codes).
+- BL61-BL67 needling shows the existing mojibake text (frozen encoding backlog) — expected until the data repair batch.
+
+Next recommended action:
+- Ting merge the PR (or Codex push branch + open PR first). After merge, app.js/index.html/build-data.js freeze for Codex lifts per EXECUTION_PLAN Phase 2 note.
+
+Claude review note:
+- Embedded arrays now contribute only EX-HN3/EX-HN5. Standard-channel content edits must go to `data/acupoints/361.json` + `scripts/build-data.js` rebuild from now on.
+
+---
+
+## 2026-07-12 - Codex - Task queue status overlay
+
+Branch: `main`
+
+Commit: `fcb4f8d Add Codex task status overlay`; merged with Claude's latest `origin/main` in local merge commit `5afcf9b` before push.
+
+Task: Maintenance after A3/A4. Make task completion/gate state explicit so Claude/Ting do not have to infer status from the original long queue.
+
+Files changed:
+- `docs/CODEX_HANDOFF.md`
+- `docs/CODEX_TASK_QUEUE.md`
+- `docs/CODEX_TASK_STATUS.md`
+
+Validation:
+- Docs-only change; no runtime validation required.
+
+Protected areas not touched:
+- `data/acupoints/361.json`
+- `docs/CLOUDTCM_*`
+- runtime app files
+- generated files
+
+Known risks / manual checks:
+- Status overlay should be reviewed by Claude against Git history.
+
+Next recommended action:
+- Claude can use `docs/CODEX_TASK_STATUS.md` as a fast overlay before assigning the next task.
+
+Claude review note:
+- A1-A4, B1-B3, D1-D2, and D5 are marked complete. D3 / encoding backlog / C1 remain gated or blocked.
+
+---
+
 ## 2026-07-12 - Codex - A4 UI config extraction
 
 Branch: `main`
 
-Commit: pending at time of entry.
+Commit: `e26d4fa A4: move UI config constants to generated data`
 
 Task: CODEX_TASK_QUEUE A4. Move remaining app.js UI config constants into JSON and hydrate them from generated app data.
 
@@ -86,7 +909,7 @@ Claude review note:
 
 Branch: `main`
 
-Commit: pending at time of entry.
+Commit: `bfcd128 A3: generate Tung and GB93 JS twins from JSON`
 
 Task: CODEX_TASK_QUEUE A3. Generate Tung + GB93 `.js` twins from `.json` sources, verify payload equivalence, and update `DATA_MIGRATION_MAP.md` after Ting approved continuing past the gate.
 

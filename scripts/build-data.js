@@ -74,12 +74,19 @@ const knowledge = {
   conditions: readJson("data/pathology/conditions.json"),
   sources: readJson("data/sources/source_registry.json"),
   audit: readJson("data/audits/missing_report.json"),
+  // CS4-2: registries the SOAP link pickers offer (ids must exist to be picked)
+  patternLibrary: readJson("data/pathology/pattern_library.json"),
+  tdisRegistry: readJson("data/pathology/tdis_registry.json"),
+  conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
+  medications: readJson("data/medications/western_medications.json"),
+  safetyFlags: readJson("data/herbs/formula_safety_flags.json"),
+  comparisons: readJson("data/knowledge/comparisons.json"),   // LL3 contrast tables
 };
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}
 // Source of truth: data/herbs/formulas.json, data/herbs/herb_canon_shortlist.json,
 //                  data/pathology/conditions.json, data/sources/source_registry.json,
-//                  data/audits/missing_report.json
+//                  data/audits/missing_report.json, data/knowledge/comparisons.json
 `;
 fs.writeFileSync(
   path.join(ROOT, "data/generated/knowledge_data.js"),
@@ -93,6 +100,7 @@ console.log(JSON.stringify({
   eastern: knowledge.conditions.eastern_diseases.length,
   patterns: knowledge.conditions.tcm_patterns.length,
   sources: knowledge.sources.sources.length,
+  comparisons: knowledge.comparisons.records.length,
   audit_missing: knowledge.audit.total_missing,
 }));
 
@@ -105,6 +113,16 @@ fs.writeFileSync(
   "globalThis.ACUTING_CLOUDTCM_MAP = " + JSON.stringify(cloudtcm.points) + ";\n"
 );
 console.log("Built data/generated/cloudtcm_map.js (" + Object.keys(cloudtcm.points).length + " points)");
+
+// ---- 361 standard acupoint layer (Phase 2 runtime adapter) -----------------
+const points361 = readJson("data/acupoints/361.json");
+fs.writeFileSync(
+  path.join(ROOT, "data/generated/points_361.js"),
+  "// GENERATED FILE - DO NOT EDIT. Built by scripts/build-data.js\n" +
+  "// Source of truth: data/acupoints/361.json\n" +
+  "globalThis.ACUTING_POINTS_361 = " + JSON.stringify(points361) + ";\n"
+);
+console.log("Built data/generated/points_361.js (" + points361.length + " points)");
 
 // ---- JS twins generated from JSON source files ----------------------------
 writeGlobalJson("data/tung/point_index.js", "ACUTING_TUNG_INDEX", readJson("data/tung/point_index.json"), "window");

@@ -21,7 +21,7 @@
   }
 
   if (!K) {
-    ["formulaRecords", "herbRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
+    ["formulaRecords", "herbRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
       const host = el(id);
       if (host) host.innerHTML = '<p class="k-missing">⚠ knowledge_data.js 未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
     });
@@ -217,6 +217,122 @@
     };
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
+  }
+
+  // ---- Comparisons ---------------------------------------------------------
+  const comparisonHost = el("comparisonRecords");
+  if (comparisonHost) {
+    const comparisons = (K.comparisons && K.comparisons.records) || [];
+    const patternLabels = new Map();
+    const addPatternLabel = (record) => {
+      if (!record || !record.id) return;
+      patternLabels.set(record.id, [record.name_zh, record.name_en, record.id].filter(Boolean).join(" / "));
+    };
+    (((K.patternLibrary || {}).records) || []).forEach(addPatternLabel);
+    (((K.conditions || {}).tcm_patterns) || []).forEach(addPatternLabel);
+    const patternLabel = (id) => patternLabels.get(id) || id;
+    const conditionLabels = new Map();
+    (((K.conditions || {}).records) || []).forEach((record) => {
+      if (!record || !record.id) return;
+      conditionLabels.set(record.id, [record.name_zh, record.name_en, record.id].filter(Boolean).join(" / "));
+    });
+    const conditionLabel = (id) => conditionLabels.get(id) || id || "";
+    const cellStats = (record) => {
+      const compares = record.compares || [];
+      const dimensions = record.dimensions || [];
+      const total = compares.length * dimensions.length;
+      const filled = compares.reduce((sum, id) => {
+        const row = (record.cells || {})[id] || {};
+        return sum + dimensions.filter((dimension) => String(row[dimension] || "").trim()).length;
+      }, 0);
+      return { filled, total };
+    };
+    const comparisonTotals = comparisons.reduce((totals, record) => {
+      const stats = cellStats(record);
+      totals.filled += stats.filled;
+      totals.total += stats.total;
+      if (stats.filled === 0) totals.emptyTables += 1;
+      if (stats.filled > 0 && stats.filled < stats.total) totals.partialTables += 1;
+      if (stats.total > 0 && stats.filled === stats.total) totals.completeTables += 1;
+      return totals;
+    }, { filled: 0, total: 0, emptyTables: 0, partialTables: 0, completeTables: 0 });
+    const pendingCells = Math.max(0, comparisonTotals.total - comparisonTotals.filled);
+    const cellText = (value) => {
+      const text = String(value || "").trim();
+      return text ? esc(text) : '<span class="k-empty-cell">待 Ting 填寫</span>';
+    };
+    const renderComparisons = (list) => list.map((record) => {
+      const compares = record.compares || [];
+      const dimensions = record.dimensions || [];
+      const stats = cellStats(record);
+      const sourceLabel = record.source_condition_id ? conditionLabel(record.source_condition_id) : "";
+      return `
+        <article class="k-card k-comparison-card">
+          <header>
+            <strong>${esc(record.title_zh || record.id)} <small>${esc(record.title_en || "")}</small></strong>
+            ${statusPill(record.review_status || record.status)}
+          </header>
+          <p class="k-meta">${esc(record.id)} · ${esc(record.authored_by || "owner")} · contrast table skeleton</p>
+          <div class="k-comparison-meta-row">
+            ${sourceLabel ? `<span class="k-link-chip">source: ${esc(sourceLabel)}</span>` : ""}
+            <span class="k-fill-chip">${stats.filled}/${stats.total} cells filled</span>
+          </div>
+          <div class="k-comparison-scroll">
+            <table class="k-comparison-table">
+              <thead>
+                <tr>
+                  <th>Axis</th>
+                  ${compares.map((id) => `<th>${esc(patternLabel(id))}</th>`).join("")}
+                </tr>
+              </thead>
+              <tbody>
+                ${dimensions.map((dimension) => `
+                  <tr>
+                    <th>${esc(dimension)}</th>
+                    ${compares.map((id) => `<td>${cellText((record.cells || {})[id] && (record.cells || {})[id][dimension])}</td>`).join("")}
+                  </tr>`).join("")}
+              </tbody>
+            </table>
+          </div>
+          ${record.notes_zh ? `<p class="k-meta">${esc(record.notes_zh)}</p>` : ""}
+        </article>`;
+    }).join("");
+
+    comparisonHost.innerHTML = `
+      <div class="mini-heading">
+        <strong>Comparison Records (${comparisons.length})</strong>
+        <span>Source: data/knowledge/comparisons.json · draft skeletons; discriminator cells are owner-filled only.</span>
+      </div>
+      <div class="k-comparison-summary" aria-label="Comparison fill progress summary">
+        <span class="k-summary-chip"><strong>${comparisonTotals.filled}</strong> filled cells</span>
+        <span class="k-summary-chip"><strong>${pendingCells}</strong> pending cells</span>
+        <span class="k-summary-chip"><strong>${comparisonTotals.emptyTables}</strong> empty tables</span>
+        <span class="k-summary-chip"><strong>${comparisonTotals.partialTables}</strong> partial</span>
+        <span class="k-summary-chip"><strong>${comparisonTotals.completeTables}</strong> complete</span>
+      </div>
+      <input type="search" id="comparisonFilter" placeholder="Search comparison, pattern, axis..." class="k-filter" />
+      <div class="k-grid k-grid-wide" id="comparisonGrid">${renderComparisons(comparisons) || '<p class="k-missing">No comparison records yet.</p>'}</div>`;
+
+    el("comparisonFilter").addEventListener("input", (event) => {
+      const q = event.target.value.trim().toLowerCase();
+      const hit = comparisons.filter((record) => {
+        const text = [
+          record.id,
+          record.title_zh,
+          record.title_en,
+          record.authored_by,
+          record.status,
+          record.review_status,
+          record.source_condition_id,
+          conditionLabel(record.source_condition_id),
+          ...(record.compares || []),
+          ...(record.compares || []).map(patternLabel),
+          ...(record.dimensions || [])
+        ].join(" ").toLowerCase();
+        return !q || text.includes(q);
+      });
+      el("comparisonGrid").innerHTML = renderComparisons(hit) || '<p class="k-missing">No matching comparison records.</p>';
+    });
   }
 
   // ---- Conditions ----------------------------------------------------------

@@ -1,5 +1,12 @@
 # Repository Guidelines
 
+> **READ `DECISIONS.md` (repo root) FIRST.** It records the one-way-door
+> architecture decisions (ID immutability + namespacing, de-identification
+> posture, schema cardinality, the JSON-knowledge / SQLite-clinical split,
+> never-hard-delete). Do NOT "improve" or refactor any ID format, schema
+> relation, or the storage split without re-reading it — a tidy-looking
+> change there is a full-database migration for Ting.
+
 ## Project Purpose
 
 This project is AcuTing OS, a private/static TCM and acupuncture learning web app for Ting. It is for study, review, acupuncture point lookup, herbs, pathology, clinical cases, billing references, and future learning tools.

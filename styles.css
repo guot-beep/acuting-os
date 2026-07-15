@@ -425,6 +425,113 @@ h1 {
   padding-top: 0.5rem;
 }
 
+/* LL2: outcome verdict badge + "cases to learn from" toggle */
+.verdict-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.verdict-good { background: #d9ead0; color: #34611f; }
+.verdict-watch { background: #f3e0c2; color: #8a5a1f; }
+.verdict-muted { background: #e6e6e6; color: #555; }
+
+/* CS5: horizontal outcome timeline on the case detail */
+.case-timeline {
+  margin: 0.6rem 0 0.2rem;
+  overflow-x: auto;
+}
+.case-timeline-track {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 0.3rem 0.1rem;
+  min-width: min-content;
+  border-top: 1px dashed #d8cdb0;
+  padding-top: 0.6rem;
+}
+.case-timeline-node {
+  flex: 0 0 auto;
+  min-width: 76px;
+  max-width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  background: #fbf7ee;
+  border: 1px solid #e3d9c1;
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+  text-align: left;
+}
+.case-timeline-node:hover { border-color: var(--accent-dark); }
+.case-timeline-node .ctl-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  display: inline-block; background: #c9c9c9;
+}
+.verdict-dot-good { background: #4c8a2a !important; }
+.verdict-dot-watch { background: #c98a2a !important; }
+.verdict-dot-muted { background: #9a9a9a !important; }
+.verdict-dot-none { background: #d8d8d8 !important; }
+.case-timeline-node .ctl-label { font-weight: 700; font-size: 0.82rem; }
+.case-timeline-node .ctl-date { color: #7a6f56; font-size: 0.72rem; }
+.case-timeline-node .ctl-snip { color: #40484a; font-size: 0.72rem; line-height: 1.25; }
+.soap-note-flash {
+  animation: soapFlash 1.2s ease;
+}
+@keyframes soapFlash {
+  0% { background: #fdf3d6; }
+  100% { background: transparent; }
+}
+.learn-from-toggle {
+  width: 100%;
+  margin: 0.4rem 0;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #cbb98f;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+.learn-from-toggle.active { background: #8a5a1f; color: #fffdf8; border-color: #8a5a1f; }
+
+/* LL1: collapsible 按語 reflection section in the SOAP form (closed by default) */
+.soap-reflection {
+  border: 1px dashed #cbb98f;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  margin-top: 0.4rem;
+}
+.soap-reflection > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent-dark);
+  padding: 0.2rem 0;
+}
+.soap-reflection > label { margin-top: 0.5rem; }
+
+/* LL1: rendered 按語 on a SOAP note card (only shown when filled) */
+.soap-reflection-view {
+  margin-top: 0.5rem;
+  border-top: 1px dashed #cbb98f;
+  padding-top: 0.5rem;
+  display: grid;
+  gap: 0.4rem;
+}
+.soap-reflection-view small {
+  color: var(--accent-dark);
+  display: block;
+  font-size: 0.78rem;
+}
+.soap-reflection-view span {
+  color: #344044;
+  font-size: 0.86rem;
+  white-space: pre-line;
+}
+
 .soap-block strong {
   color: var(--accent-dark);
   display: block;
@@ -3816,6 +3923,79 @@ a { color: var(--accent-dark); }
   z-index: 999;
 }
 
+/* CS1: clinical-cases backup reminder (localStorage-only until H2 store) */
+.backup-reminder-banner {
+  background: #8a6d1f;
+  color: #fffdf8;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.backup-reminder-banner button {
+  background: #fffdf8;
+  color: #6b5314;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* CS4: autocomplete chip picker for SOAP link fields (no hand-typed ids) */
+.link-picker { position: relative; }
+.link-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.35rem; }
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #efe7d3;
+  color: #4a3d22;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.85rem;
+}
+.link-chip button {
+  border: none;
+  background: transparent;
+  color: #8a6d1f;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.link-picker-input { width: 100%; }
+.link-picker-menu {
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  right: 0;
+  background: #fffdf8;
+  border: 1px solid #ddd3bd;
+  border-radius: 8px;
+  margin-top: 2px;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.link-picker-menu[hidden] { display: none; }
+.link-picker-option {
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.link-picker-option:hover,
+.link-picker-option.active { background: #f2ead7; }
+.link-picker-option small { color: #8a7d5c; }
+
 .k-records { margin-top: 1rem; }
 
 .k-filter {
@@ -3905,6 +4085,81 @@ a { color: var(--accent-dark); }
 }
 .k-herb-card {
   border-color: #dce6dc;
+}
+.k-comparison-card {
+  grid-column: 1 / -1;
+}
+.k-comparison-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.85rem 0 0.7rem;
+}
+.k-summary-chip {
+  background: #f7f7f2;
+  border: 1px solid #dce6dc;
+  border-radius: 999px;
+  color: #4f584f;
+  display: inline-flex;
+  font-size: 0.82rem;
+  gap: 0.25rem;
+  line-height: 1.2;
+  padding: 0.34rem 0.65rem;
+}
+.k-summary-chip strong {
+  color: #213d35;
+}
+.k-comparison-meta-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.45rem;
+}
+.k-fill-chip {
+  background: #f6efe1;
+  border: 1px solid #e4d5ba;
+  border-radius: 999px;
+  color: #6b5314;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 0.28rem 0.55rem;
+}
+.k-comparison-scroll {
+  border: 1px solid #e3dac7;
+  border-radius: 8px;
+  margin-top: 0.7rem;
+  overflow-x: auto;
+}
+.k-comparison-table {
+  border-collapse: collapse;
+  min-width: 720px;
+  width: 100%;
+}
+.k-comparison-table th,
+.k-comparison-table td {
+  border-bottom: 1px solid #eee5d4;
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+.k-comparison-table thead th {
+  background: #f8f2e6;
+  color: #3b3326;
+  font-size: 0.82rem;
+}
+.k-comparison-table tbody th {
+  background: #fbf8f0;
+  color: #6b5314;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.k-empty-cell {
+  color: #9a7a3a;
+  font-size: 0.82rem;
+  font-style: italic;
 }
 .k-link-chip {
   background: #eef4ef;

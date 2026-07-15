@@ -1,0 +1,2707 @@
+{
+  "dataset": "condition_crosswalk",
+  "policy": "Interop sidecar for the 150-condition canon (docs/CONDITIONS_INTEROP_DESIGN.md). icd10[] seeded from icd_hint; tcm_dictionary_refs cite 《中西醫病名對照大辭典》 (source id mohw_nricm_disease_name_dictionary) — mappings + entry citations only, never dictionary prose. cpt_placeholder / insurance_placeholder are reserved and stay empty until the H2 clinic horizon. Coding fields are documentation hints, not billing truth. 對照 ≠ 等同.",
+  "created": "2026-07-12",
+  "records": [
+    {
+      "id": "xwalk.pcos",
+      "condition_id": "cond.pcos",
+      "icd10": [
+        {
+          "code": "E28.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.endometriosis",
+      "condition_id": "cond.endometriosis",
+      "icd10": [
+        {
+          "code": "N80",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.uterine_fibroids",
+      "condition_id": "cond.uterine_fibroids",
+      "icd10": [
+        {
+          "code": "D25",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.primary_dysmenorrhea",
+      "condition_id": "cond.primary_dysmenorrhea",
+      "icd10": [
+        {
+          "code": "N94.4",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.pms",
+      "condition_id": "cond.pms",
+      "icd10": [
+        {
+          "code": "N94.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.irregular_menstruation",
+      "condition_id": "cond.irregular_menstruation",
+      "icd10": [
+        {
+          "code": "N92.6",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.menorrhagia",
+      "condition_id": "cond.menorrhagia",
+      "icd10": [
+        {
+          "code": "N92.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.oligomenorrhea",
+      "condition_id": "cond.oligomenorrhea",
+      "icd10": [
+        {
+          "code": "N91.5",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.amenorrhea",
+      "condition_id": "cond.amenorrhea",
+      "icd10": [
+        {
+          "code": "N91.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.female_infertility",
+      "condition_id": "cond.female_infertility",
+      "icd10": [
+        {
+          "code": "N97",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.male_infertility",
+      "condition_id": "cond.male_infertility",
+      "icd10": [
+        {
+          "code": "N46",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.diminished_ovarian_reserve",
+      "condition_id": "cond.diminished_ovarian_reserve",
+      "icd10": [
+        {
+          "code": "E28.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.ivf_support",
+      "condition_id": "cond.ivf_support",
+      "icd10": [
+        {
+          "code": "Z31.83",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.recurrent_pregnancy_loss",
+      "condition_id": "cond.recurrent_pregnancy_loss",
+      "icd10": [
+        {
+          "code": "N96",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.luteal_phase_defect",
+      "condition_id": "cond.luteal_phase_defect",
+      "icd10": [
+        {
+          "code": "E28.8",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.menopause_syndrome",
+      "condition_id": "cond.menopause_syndrome",
+      "icd10": [
+        {
+          "code": "N95.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hyperemesis_gravidarum",
+      "condition_id": "cond.hyperemesis_gravidarum",
+      "icd10": [
+        {
+          "code": "O21",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.breech_presentation",
+      "condition_id": "cond.breech_presentation",
+      "icd10": [
+        {
+          "code": "O32.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.postpartum_hypolactation",
+      "condition_id": "cond.postpartum_hypolactation",
+      "icd10": [
+        {
+          "code": "O92.4",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_pelvic_pain",
+      "condition_id": "cond.chronic_pelvic_pain",
+      "icd10": [
+        {
+          "code": "R10.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.pid_chronic",
+      "condition_id": "cond.pid_chronic",
+      "icd10": [
+        {
+          "code": "N73.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.vulvovaginal_candidiasis",
+      "condition_id": "cond.vulvovaginal_candidiasis",
+      "icd10": [
+        {
+          "code": "B37.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.thin_endometrium",
+      "condition_id": "cond.thin_endometrium",
+      "icd10": [
+        {
+          "code": "N85.8",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.pmdd",
+      "condition_id": "cond.pmdd",
+      "icd10": [
+        {
+          "code": "F32.81",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.secondary_dysmenorrhea",
+      "condition_id": "cond.secondary_dysmenorrhea",
+      "icd10": [
+        {
+          "code": "N94.5",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_low_back_pain",
+      "condition_id": "cond.chronic_low_back_pain",
+      "icd10": [
+        {
+          "code": "M54.5",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.acute_lumbar_sprain",
+      "condition_id": "cond.acute_lumbar_sprain",
+      "icd10": [
+        {
+          "code": "S39.012",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.lumbar_disc_herniation",
+      "condition_id": "cond.lumbar_disc_herniation",
+      "icd10": [
+        {
+          "code": "M51.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.sciatica",
+      "condition_id": "cond.sciatica",
+      "icd10": [
+        {
+          "code": "M54.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.cervical_spondylosis",
+      "condition_id": "cond.cervical_spondylosis",
+      "icd10": [
+        {
+          "code": "M47.812",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.neck_pain_stiff",
+      "condition_id": "cond.neck_pain_stiff",
+      "icd10": [
+        {
+          "code": "M54.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.whiplash",
+      "condition_id": "cond.whiplash",
+      "icd10": [
+        {
+          "code": "S13.4",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.frozen_shoulder",
+      "condition_id": "cond.frozen_shoulder",
+      "icd10": [
+        {
+          "code": "M75.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.rotator_cuff",
+      "condition_id": "cond.rotator_cuff",
+      "icd10": [
+        {
+          "code": "M75.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.lateral_epicondylitis",
+      "condition_id": "cond.lateral_epicondylitis",
+      "icd10": [
+        {
+          "code": "M77.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.medial_epicondylitis",
+      "condition_id": "cond.medial_epicondylitis",
+      "icd10": [
+        {
+          "code": "M77.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.carpal_tunnel",
+      "condition_id": "cond.carpal_tunnel",
+      "icd10": [
+        {
+          "code": "G56.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.de_quervain",
+      "condition_id": "cond.de_quervain",
+      "icd10": [
+        {
+          "code": "M65.4",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.trigger_finger",
+      "condition_id": "cond.trigger_finger",
+      "icd10": [
+        {
+          "code": "M65.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.knee_osteoarthritis",
+      "condition_id": "cond.knee_osteoarthritis",
+      "icd10": [
+        {
+          "code": "M17",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.patellofemoral_pain",
+      "condition_id": "cond.patellofemoral_pain",
+      "icd10": [
+        {
+          "code": "M22.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.meniscus_injury",
+      "condition_id": "cond.meniscus_injury",
+      "icd10": [
+        {
+          "code": "S83.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.ankle_sprain",
+      "condition_id": "cond.ankle_sprain",
+      "icd10": [
+        {
+          "code": "S93.4",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.plantar_fasciitis",
+      "condition_id": "cond.plantar_fasciitis",
+      "icd10": [
+        {
+          "code": "M72.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.achilles_tendinopathy",
+      "condition_id": "cond.achilles_tendinopathy",
+      "icd10": [
+        {
+          "code": "M76.6",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hip_osteoarthritis",
+      "condition_id": "cond.hip_osteoarthritis",
+      "icd10": [
+        {
+          "code": "M16",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.piriformis_syndrome",
+      "condition_id": "cond.piriformis_syndrome",
+      "icd10": [
+        {
+          "code": "G57.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.fibromyalgia",
+      "condition_id": "cond.fibromyalgia",
+      "icd10": [
+        {
+          "code": "M79.7",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.myofascial_pain",
+      "condition_id": "cond.myofascial_pain",
+      "icd10": [
+        {
+          "code": "M79.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.tmd",
+      "condition_id": "cond.tmd",
+      "icd10": [
+        {
+          "code": "M26.6",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.tension_headache",
+      "condition_id": "cond.tension_headache",
+      "icd10": [
+        {
+          "code": "G44.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.migraine",
+      "condition_id": "cond.migraine",
+      "icd10": [
+        {
+          "code": "G43",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.cluster_headache",
+      "condition_id": "cond.cluster_headache",
+      "icd10": [
+        {
+          "code": "G44.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.gout",
+      "condition_id": "cond.gout",
+      "icd10": [
+        {
+          "code": "M10",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.rheumatoid_arthritis",
+      "condition_id": "cond.rheumatoid_arthritis",
+      "icd10": [
+        {
+          "code": "M05",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.gerd",
+      "condition_id": "cond.gerd",
+      "icd10": [
+        {
+          "code": "K21",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.functional_dyspepsia",
+      "condition_id": "cond.functional_dyspepsia",
+      "icd10": [
+        {
+          "code": "K30",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_gastritis",
+      "condition_id": "cond.chronic_gastritis",
+      "icd10": [
+        {
+          "code": "K29.5",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.peptic_ulcer",
+      "condition_id": "cond.peptic_ulcer",
+      "icd10": [
+        {
+          "code": "K27",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.ibs",
+      "condition_id": "cond.ibs",
+      "icd10": [
+        {
+          "code": "K58",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.ibd",
+      "condition_id": "cond.ibd",
+      "icd10": [
+        {
+          "code": "K50-K51",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_constipation",
+      "condition_id": "cond.chronic_constipation",
+      "icd10": [
+        {
+          "code": "K59.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_diarrhea",
+      "condition_id": "cond.chronic_diarrhea",
+      "icd10": [
+        {
+          "code": "K59.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.nausea_vomiting",
+      "condition_id": "cond.nausea_vomiting",
+      "icd10": [
+        {
+          "code": "R11",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hemorrhoids",
+      "condition_id": "cond.hemorrhoids",
+      "icd10": [
+        {
+          "code": "K64",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.nafld",
+      "condition_id": "cond.nafld",
+      "icd10": [
+        {
+          "code": "K76.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.gallbladder_dysfunction",
+      "condition_id": "cond.gallbladder_dysfunction",
+      "icd10": [
+        {
+          "code": "K82.8",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.cinv",
+      "condition_id": "cond.cinv",
+      "icd10": [
+        {
+          "code": "T45.1/R11",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.post_op_ileus",
+      "condition_id": "cond.post_op_ileus",
+      "icd10": [
+        {
+          "code": "K91.89",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.food_sensitivity",
+      "condition_id": "cond.food_sensitivity",
+      "icd10": [
+        {
+          "code": "K90.4",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.insomnia",
+      "condition_id": "cond.insomnia",
+      "icd10": [
+        {
+          "code": "G47.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.anxiety",
+      "condition_id": "cond.anxiety",
+      "icd10": [
+        {
+          "code": "F41",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.depression",
+      "condition_id": "cond.depression",
+      "icd10": [
+        {
+          "code": "F32-F33",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.panic_disorder",
+      "condition_id": "cond.panic_disorder",
+      "icd10": [
+        {
+          "code": "F41.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.ptsd",
+      "condition_id": "cond.ptsd",
+      "icd10": [
+        {
+          "code": "F43.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.adhd",
+      "condition_id": "cond.adhd",
+      "icd10": [
+        {
+          "code": "F90",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.stress_burnout",
+      "condition_id": "cond.stress_burnout",
+      "icd10": [
+        {
+          "code": "Z73.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_fatigue",
+      "condition_id": "cond.chronic_fatigue",
+      "icd10": [
+        {
+          "code": "G93.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.restless_legs",
+      "condition_id": "cond.restless_legs",
+      "icd10": [
+        {
+          "code": "G25.81",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.circadian_disorder",
+      "condition_id": "cond.circadian_disorder",
+      "icd10": [
+        {
+          "code": "G47.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.smoking_cessation",
+      "condition_id": "cond.smoking_cessation",
+      "icd10": [
+        {
+          "code": "F17.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.somatic_symptom",
+      "condition_id": "cond.somatic_symptom",
+      "icd10": [
+        {
+          "code": "F45",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.poor_memory",
+      "condition_id": "cond.poor_memory",
+      "icd10": [
+        {
+          "code": "R41.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.alcohol_use",
+      "condition_id": "cond.alcohol_use",
+      "icd10": [
+        {
+          "code": "F10",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.eating_disorder",
+      "condition_id": "cond.eating_disorder",
+      "icd10": [
+        {
+          "code": "F50",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.common_cold",
+      "condition_id": "cond.common_cold",
+      "icd10": [
+        {
+          "code": "J00",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.influenza",
+      "condition_id": "cond.influenza",
+      "icd10": [
+        {
+          "code": "J10-J11",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.allergic_rhinitis",
+      "condition_id": "cond.allergic_rhinitis",
+      "icd10": [
+        {
+          "code": "J30",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_sinusitis",
+      "condition_id": "cond.chronic_sinusitis",
+      "icd10": [
+        {
+          "code": "J32",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.asthma",
+      "condition_id": "cond.asthma",
+      "icd10": [
+        {
+          "code": "J45",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.copd",
+      "condition_id": "cond.copd",
+      "icd10": [
+        {
+          "code": "J44",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_cough",
+      "condition_id": "cond.chronic_cough",
+      "icd10": [
+        {
+          "code": "R05.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.post_viral_cough",
+      "condition_id": "cond.post_viral_cough",
+      "icd10": [
+        {
+          "code": "R05.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.acute_bronchitis",
+      "condition_id": "cond.acute_bronchitis",
+      "icd10": [
+        {
+          "code": "J20",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.sleep_apnea",
+      "condition_id": "cond.sleep_apnea",
+      "icd10": [
+        {
+          "code": "G47.33",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.bells_palsy",
+      "condition_id": "cond.bells_palsy",
+      "icd10": [
+        {
+          "code": "G51.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.stroke_rehab",
+      "condition_id": "cond.stroke_rehab",
+      "icd10": [
+        {
+          "code": "I69",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.peripheral_neuropathy",
+      "condition_id": "cond.peripheral_neuropathy",
+      "icd10": [
+        {
+          "code": "G62.9",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.diabetic_neuropathy",
+      "condition_id": "cond.diabetic_neuropathy",
+      "icd10": [
+        {
+          "code": "E11.42",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.trigeminal_neuralgia",
+      "condition_id": "cond.trigeminal_neuralgia",
+      "icd10": [
+        {
+          "code": "G50.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.postherpetic_neuralgia",
+      "condition_id": "cond.postherpetic_neuralgia",
+      "icd10": [
+        {
+          "code": "B02.29",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.parkinsons",
+      "condition_id": "cond.parkinsons",
+      "icd10": [
+        {
+          "code": "G20",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.multiple_sclerosis",
+      "condition_id": "cond.multiple_sclerosis",
+      "icd10": [
+        {
+          "code": "G35",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.essential_tremor",
+      "condition_id": "cond.essential_tremor",
+      "icd10": [
+        {
+          "code": "G25.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.dizziness_vertigo",
+      "condition_id": "cond.dizziness_vertigo",
+      "icd10": [
+        {
+          "code": "R42",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.menieres",
+      "condition_id": "cond.menieres",
+      "icd10": [
+        {
+          "code": "H81.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.migraine_vestibular",
+      "condition_id": "cond.migraine_vestibular",
+      "icd10": [
+        {
+          "code": "G43.82",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.eczema",
+      "condition_id": "cond.eczema",
+      "icd10": [
+        {
+          "code": "L20",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.urticaria",
+      "condition_id": "cond.urticaria",
+      "icd10": [
+        {
+          "code": "L50",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.acne",
+      "condition_id": "cond.acne",
+      "icd10": [
+        {
+          "code": "L70.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.psoriasis",
+      "condition_id": "cond.psoriasis",
+      "icd10": [
+        {
+          "code": "L40",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.herpes_zoster",
+      "condition_id": "cond.herpes_zoster",
+      "icd10": [
+        {
+          "code": "B02",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.alopecia",
+      "condition_id": "cond.alopecia",
+      "icd10": [
+        {
+          "code": "L63",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.rosacea",
+      "condition_id": "cond.rosacea",
+      "icd10": [
+        {
+          "code": "L71",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.pruritus",
+      "condition_id": "cond.pruritus",
+      "icd10": [
+        {
+          "code": "L29",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.t2dm",
+      "condition_id": "cond.t2dm",
+      "icd10": [
+        {
+          "code": "E11",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.metabolic_syndrome",
+      "condition_id": "cond.metabolic_syndrome",
+      "icd10": [
+        {
+          "code": "E88.81",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hypothyroidism",
+      "condition_id": "cond.hypothyroidism",
+      "icd10": [
+        {
+          "code": "E03",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hyperthyroidism",
+      "condition_id": "cond.hyperthyroidism",
+      "icd10": [
+        {
+          "code": "E05",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hashimoto",
+      "condition_id": "cond.hashimoto",
+      "icd10": [
+        {
+          "code": "E06.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.obesity",
+      "condition_id": "cond.obesity",
+      "icd10": [
+        {
+          "code": "E66",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.dyslipidemia",
+      "condition_id": "cond.dyslipidemia",
+      "icd10": [
+        {
+          "code": "E78",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.osteoporosis",
+      "condition_id": "cond.osteoporosis",
+      "icd10": [
+        {
+          "code": "M81",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hpa_dysregulation",
+      "condition_id": "cond.hpa_dysregulation",
+      "icd10": [
+        {
+          "code": "E27.8",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.edema_fluid",
+      "condition_id": "cond.edema_fluid",
+      "icd10": [
+        {
+          "code": "R60",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hypertension",
+      "condition_id": "cond.hypertension",
+      "icd10": [
+        {
+          "code": "I10",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hypotension",
+      "condition_id": "cond.hypotension",
+      "icd10": [
+        {
+          "code": "I95",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.palpitations",
+      "condition_id": "cond.palpitations",
+      "icd10": [
+        {
+          "code": "R00.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.cad",
+      "condition_id": "cond.cad",
+      "icd10": [
+        {
+          "code": "I25",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.heart_failure",
+      "condition_id": "cond.heart_failure",
+      "icd10": [
+        {
+          "code": "I50",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.raynaud",
+      "condition_id": "cond.raynaud",
+      "icd10": [
+        {
+          "code": "I73.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.varicose_veins",
+      "condition_id": "cond.varicose_veins",
+      "icd10": [
+        {
+          "code": "I83",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.poor_circulation",
+      "condition_id": "cond.poor_circulation",
+      "icd10": [
+        {
+          "code": "I73.9",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.recurrent_uti",
+      "condition_id": "cond.recurrent_uti",
+      "icd10": [
+        {
+          "code": "N39.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.interstitial_cystitis",
+      "condition_id": "cond.interstitial_cystitis",
+      "icd10": [
+        {
+          "code": "N30.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.overactive_bladder",
+      "condition_id": "cond.overactive_bladder",
+      "icd10": [
+        {
+          "code": "N32.81",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.urinary_retention",
+      "condition_id": "cond.urinary_retention",
+      "icd10": [
+        {
+          "code": "R33",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.bph",
+      "condition_id": "cond.bph",
+      "icd10": [
+        {
+          "code": "N40",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_prostatitis",
+      "condition_id": "cond.chronic_prostatitis",
+      "icd10": [
+        {
+          "code": "N41.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.erectile_dysfunction",
+      "condition_id": "cond.erectile_dysfunction",
+      "icd10": [
+        {
+          "code": "N52",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.nocturnal_enuresis",
+      "condition_id": "cond.nocturnal_enuresis",
+      "icd10": [
+        {
+          "code": "N39.44",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.tinnitus",
+      "condition_id": "cond.tinnitus",
+      "icd10": [
+        {
+          "code": "H93.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.hearing_loss",
+      "condition_id": "cond.hearing_loss",
+      "icd10": [
+        {
+          "code": "H90.3",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.dry_eye",
+      "condition_id": "cond.dry_eye",
+      "icd10": [
+        {
+          "code": "H04.12",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.eye_strain",
+      "condition_id": "cond.eye_strain",
+      "icd10": [
+        {
+          "code": "H53.14",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.globus_pharyngitis",
+      "condition_id": "cond.globus_pharyngitis",
+      "icd10": [
+        {
+          "code": "F45.8/J31.2",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.aphthous_ulcers",
+      "condition_id": "cond.aphthous_ulcers",
+      "icd10": [
+        {
+          "code": "K12.0",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.post_covid",
+      "condition_id": "cond.post_covid",
+      "icd10": [
+        {
+          "code": "U09.9",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.chronic_allergies",
+      "condition_id": "cond.chronic_allergies",
+      "icd10": [
+        {
+          "code": "T78.4",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    },
+    {
+      "id": "xwalk.cancer_supportive",
+      "condition_id": "cond.cancer_supportive",
+      "icd10": [
+        {
+          "code": "Z51.1",
+          "label_en": "",
+          "primary": true,
+          "note_zh": ""
+        }
+      ],
+      "tcm_dictionary_refs": [],
+      "cpt_placeholder": [],
+      "insurance_placeholder": {},
+      "documentation_note_zh": "",
+      "review_status": "draft",
+      "sources": []
+    }
+  ]
+}

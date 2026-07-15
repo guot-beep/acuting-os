@@ -34,6 +34,510 @@ icd_hint aligns with its ICD correspondences; agents prepare side-by-side
 worksheets for Ting's review batches) and TCM_SOURCE_REGISTRY (new tier-A
 row). If Ting meant a different Taiwan source, swap the name in both
 files - the workflow is source-agnostic.
+### 2026-07-15 - CS5: visual case timeline on the case detail (Claude Code)
+
+Added a compact horizontal outcome timeline above the SOAP cards on each case:
+one node per visit (oldest→newest), a dot coloured by LL2 `outcomeVerdict`
+(green improved / amber no_change|worsened / grey none), visit#/date + a short
+outcome snippet; clicking a node smooth-scrolls to that SOAP card and briefly
+flashes it. This turns the LL2 verdicts into the "did it work over time?"
+review artifact (external-review Phase 4.7). Progressive/additive — reads
+existing localStorage notes, no data-model change; SOAP cards gained an
+`id="soap-<noteid>"` anchor for the jump. app.js + styles.css. node --check +
+validate-interactions PASS; browser QA (3-visit case): 3 nodes chronological,
+correct verdict-dot colours, card anchors present, node click flashes the
+target card, zero console errors. Branch cs5-timeline; Claude's lane, no Codex
+overlap (origin unchanged since CS3).
+
+### 2026-07-15 - CS3: align schema.sql with LL1/LL2 + D5 cardinality (Claude Code)
+
+Claude's own lane (case/SOAP + schema.sql) while LL3 stays Codex's. The
+future SQLite clinical store already had `visit_outcomes` (structured) +
+`case_reflections`, so CS3 shrank to aligning `data/clinical_cases/schema.sql`
+with what's now in localStorage: (1) `visits.outcome_verdict` (LL2:
+improved/no_change/worsened/lost_followup); (2) visit-level LL1 反思 columns
+(reflection_differential_considered / reflection_note / reflection_if_ineffective_plan);
+(3) NEW `visit_tcm_patterns` junction with `is_primary` — the D5 "one visit →
+many patterns" cardinality (soap_notes.assessment_tcm_pattern_ids stays as the
+migration-source text blob). Validated by executing the whole schema against an
+in-memory SQLite (node:sqlite) — 20 tables, all three additions present, and an
+insert smoke test (visit+verdict+pattern junction) passed. Schema-only, not
+wired to the app yet (localStorage remains the store until the H2 migration);
+this is DECISIONS D5 "set cardinality while data is disposable" prep. Standard
+validators unaffected (schema.sql isn't app-loaded). Also reviewed + accepted
+Codex's 645a911 (unexplained infertility fill) earlier; recorded that LL3 fills
+stay with Codex since Claude lacks the Notion source.
+
+### 2026-07-14 - LL3: unexplained infertility comparison source-assisted draft fill (Codex)
+
+Filled the second LL3 comparison table, `cmp.unexplained_infertility_patterns`,
+as a source-assisted draft. The table now compares Kidney deficiency, Liver qi
+stagnation, and Blood stasis across chief cue, tongue, pulse, accompanying
+signs, treatment principle, and representative formulas.
+
+Biomedical infertility context came from NIH/NICHD, MedlinePlus, and
+WomensHealth.gov. TCM discriminator language came from Ting's Notion/Bastyr
+gynecology, extraordinary fu / uterus, diagnosis, Yu syndrome, and blood
+pathology notes. The record remains `authored_by: "model_draft"`,
+`review_status: "draft"`, `public_safe: false`, and includes a no-medical-advice
+disclaimer.
+
+Added `data/knowledge/comparison_fill_unexplained_infertility.json`, applied it
+through `scripts/apply-comparison-fill.js`, rebuilt generated data, and refreshed
+`docs/COMPARISON_FILL_QUEUE.md`. Queue status is now 42 filled cells,
+132 pending cells, 9 empty tables, 2 complete tables.
+
+Validation: `scripts/apply-comparison-fill.js unexplained_infertility` dry-run
+PASS, `scripts/apply-comparison-fill.js unexplained_infertility --apply` PASS,
+`scripts/build-data.js`, `node --check scripts/apply-comparison-fill.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings.
+
+### 2026-07-14 - Repo mailbox current-status hardening (Codex)
+
+Added `docs/CODEX_CURRENT_STATUS.md` as a single-screen coordination file so
+Claude/Ting/Codex can see the current branch, latest commit, review state, and
+next action without scanning older handoff entries. Updated
+`docs/CODEX_HANDOFF.md` to say that older `pending at time of entry` phrases
+are historical snapshots and that `CODEX_CURRENT_STATUS.md` is the current
+status source.
+
+Current status now explicitly says `0d0e5c4` (`LL3: fill PCOS pattern
+comparison draft`) was reviewed, accepted, and merged by Claude on `main`.
+It also records the new coordination rule: an agent should add a `CLAIMED:
+<track> on <branch>` marker before starting overlapping multi-step work.
+
+Validation: docs-only change; no data or runtime files changed. `git status`
+was clean before edits.
+
+### 2026-07-14 - LL3: PCOS comparison source-assisted draft fill (Codex)
+
+Filled the first LL3 comparison table, `cmp.pcos_patterns`, as a
+source-assisted draft. The PCOS table now compares phlegm-damp, Liver qi
+stagnation, Kidney deficiency, and Blood stasis across chief cue, tongue,
+pulse, accompanying signs, treatment principle, and representative formulas.
+
+Sources were kept explicit: biomedical PCOS context from NIH/NICHD,
+WomensHealth.gov, and MedlinePlus; TCM discriminator language from Ting's
+Notion/Bastyr diagnosis and pathology notes. The table remains
+`review_status: "draft"`, `authored_by: "model_draft"`, `public_safe: false`,
+and includes a no-medical-advice disclaimer.
+
+Added `scripts/apply-comparison-fill.js` plus
+`data/knowledge/comparison_fill_pcos.json` so future comparison fills can use a
+reviewable source-fill pipeline instead of hand-editing canonical JSON. Rebuilt
+generated data and refreshed `docs/COMPARISON_FILL_QUEUE.md`; queue status is
+now 24 filled cells, 150 pending cells, 10 empty tables, 1 complete table.
+
+Validation: `scripts/build-data.js`, `node --check
+scripts/apply-comparison-fill.js`, `validate-data`, `validate-interactions`,
+`validate-relations`, `validate-herbal-links`, `validate-herb-canon`,
+`validate-point-ids`, `validate-naming`, and JSON parse check PASS.
+`validate-encoding` remains expected FAIL with 768 known backlog findings.
+
+### 2026-07-14 - LL3: comparison fill queue report (Codex)
+
+Added `scripts/report-comparison-fill.js`, a UTF-8 Node report generator for
+LL3 comparison records. It writes `docs/COMPARISON_FILL_QUEUE.md` from
+`data/knowledge/comparisons.json`, listing table-level progress and pending
+axes without adding or filling any clinical discriminator content.
+
+Current queue: 11 comparison records, 0 filled cells, 174 pending cells,
+11 empty tables, 0 partial tables, 0 complete tables. This gives Ting a
+concrete owner-fill checklist for class notes / textbook-based completion.
+
+Validation: `node --check scripts/report-comparison-fill.js`,
+`scripts/report-comparison-fill.js`, `validate-data`, `validate-interactions`,
+`validate-relations`, `validate-herbal-links`, `validate-herb-canon`,
+`validate-point-ids`, `validate-naming`, and JSON parse check PASS.
+`validate-encoding` remains expected FAIL with 768 known backlog findings.
+
+### 2026-07-14 - LL3: comparison fill-progress summary (Codex)
+
+Added a compact fill-progress summary to the Lookup comparison section. The
+section now reports total filled cells, pending cells, empty tables, partial
+tables, and complete tables across all comparison records. This gives Ting a
+single queue-level view before opening individual comparison tables.
+
+This is display-only LL3 workflow support. No comparison/discriminator cells
+were filled and no clinical content was changed.
+
+Ran `scripts/build-data.js`; generated knowledge still reports
+`comparisons: 11`. Validation: `node --check js/knowledge.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings.
+
+### 2026-07-14 - LL3: comparison source labels + fill progress in Lookup (Codex)
+
+Improved the Lookup comparison renderer so each comparison card now shows its
+`source_condition_id` as a readable source condition chip and a filled-cell
+progress badge such as `0/18 cells filled`. The comparison search now also
+matches the source condition id and label, so typing PCOS, IVF, embryo
+transfer, insulin resistance, etc. finds the relevant skeleton table.
+
+This is display-only metadata for the LL3 workflow. No discriminator cells
+were filled and no clinical content was changed.
+
+Ran `scripts/build-data.js`; generated knowledge still reports
+`comparisons: 11`. Validation: `node --check js/knowledge.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings.
+
+### 2026-07-14 - LL3: complete fertility comparison skeleton coverage + validator hardening (Codex)
+
+Completed the current fertility/reproductive comparison skeleton coverage for
+all conditions in `data/pathology/conditions.json` that already had two or
+more `related_tcm_patterns`. Added five skeleton-only comparison records:
+`cmp.anovulation_patterns`, `cmp.endometriosis_context_patterns`,
+`cmp.recurrent_pregnancy_loss_context_patterns`,
+`cmp.insulin_resistance_patterns`, and `cmp.embryo_transfer_patterns`.
+
+Hardened `scripts/validate-relations.js` so comparison records now validate
+optional `source_condition_id`, require at least one dimension, require a cell
+object for every compared pattern, and require every dimension cell to exist as
+a string. This protects the LL3 table structure while keeping clinical
+discriminator content owner-filled only.
+
+Ran `scripts/build-data.js`; generated knowledge now reports `comparisons: 11`.
+Validation: `node --check scripts/validate-relations.js`, `validate-data`,
+`validate-interactions`, `validate-relations`, `validate-herbal-links`,
+`validate-herb-canon`, `validate-point-ids`, `validate-naming`, and JSON parse
+check PASS. `validate-encoding` remains expected FAIL with 768 known backlog
+findings; no repair attempted.
+
+### 2026-07-14 - LL3: fertility comparison skeleton batch (Codex)
+
+Added five more LL3 comparison skeleton records using only existing
+`related_tcm_patterns` already present in `data/pathology/conditions.json`.
+New records: `cmp.pcos_patterns`, `cmp.unexplained_infertility_patterns`,
+`cmp.ovulatory_factor_patterns`, `cmp.ivf_cycle_patterns`, and
+`cmp.luteal_support_patterns`.
+
+All discriminator cells are intentionally empty and remain owner/source-filled
+only. Each record is `authored_by: "model_draft"`, `status: "draft"`, and
+`review_status: "draft"`, with a `source_condition_id` pointing back to the
+condition that supplied the existing pattern set. This deepens the data layer
+without adding clinical claims.
+
+Ran `scripts/build-data.js`; generated knowledge now reports `comparisons: 6`.
+Validation: `node --check js/knowledge.js`, `validate-data`,
+`validate-interactions`, `validate-relations`, `validate-herbal-links`,
+`validate-herb-canon`, `validate-point-ids`, `validate-naming`, and JSON parse
+check PASS. `validate-encoding` remains expected FAIL with 768 known backlog
+findings; no repair attempted.
+
+### 2026-07-14 - LL3: comparison tables rendered in Lookup (Codex)
+
+Codex continued while Claude was token-limited. Added a Lookup workspace
+section, "Pattern Comparisons / 辨證鑑別表", that renders
+`data/knowledge/comparisons.json` as a side-by-side table. Empty discriminator
+cells show "待 Ting 填寫" and remain owner-filled only. Added filtering across
+comparison id, title, pattern ids, pattern labels, dimensions, status, and
+authorship metadata.
+
+This is a display-layer change only. No comparison content was model-filled,
+no clinical case data changed, and no protected acupuncture data changed.
+
+Validation: `node --check js/knowledge.js`, `node --check app.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings; no repair attempted.
+
+Next: Ting can fill `cmp.insomnia_patterns` cells from class/textbook notes;
+Claude can review the renderer and merge `ll3-comparison` when ready.
+
+### 2026-07-14 - LL3: comparison record skeleton + relation validation (Claude Code -> Codex)
+
+Learning Loop LL3 was started by Claude Code and completed by Codex after
+Claude ran out of token. Added the first JSON knowledge comparison record at
+`data/knowledge/comparisons.json`: `cmp.insomnia_patterns`, a draft
+side-by-side pattern differentiation skeleton for insomnia. The discriminating
+cells are intentionally empty: LL3 policy says clinical discriminators are
+owner-authored, never model-filled. Record is `authored_by: model_draft`,
+`status: draft`, `review_status: draft`.
+
+`scripts/build-data.js` now bundles comparisons into `ACUTING_KNOWLEDGE`, and
+`scripts/validate-relations.js` validates `cmp.*` ids, comparison type/status,
+compared pattern references, and `cells` keys. Added
+`.claude/settings.local.json` to `.gitignore` so local Claude permissions do
+not leak into commits. Build ran and generated knowledge data reports
+`comparisons: 1`.
+
+Validation: `node --check app.js`, `node --check scripts/build-data.js`,
+`node --check scripts/validate-relations.js`, `scripts/build-data.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`, and
+`validate-naming` PASS. `validate-encoding` remains expected FAIL with 768
+known backlog findings; no repair attempted. Next: Ting can fill the empty
+comparison cells from class/textbook notes; later a knowledge.js table renderer
+can display comparison records.
+
+### 2026-07-14 - LL2: outcome verdict + "cases to learn from" view (Claude Code)
+
+Learning Loop LL2. Added `outcomeVerdict` (improved/no_change/worsened/
+lost_followup) per SOAP note — a select near Outcomes, validated in
+normalizeSoapNote, shown as a colored badge on each note card. Added a
+"值得學習的病例 / Cases to learn from" toggle that flattens every no_change/
+worsened visit across all cases (newest first, click-through to the case,
+framed as learning not failure). Clinical-layer data (localStorage) →
+visits.outcome_verdict at the SQLite store. 6-validator sweep PASS; browser QA
+confirmed verdict save + badge, correct filtering (improved excluded),
+click-through, toggle-off restore, zero console errors. Branch
+ll2-outcome-verdict. Next Learning-Loop candidate: LL3 comparison record type
+(contrast tables — highest pre-exam value; pure JSON knowledge + validator).
+
+### 2026-07-14 - LL1: 按語 reflection fields on the SOAP note (Claude Code)
+
+Learning Loop LL1 (highest-ROI item). Three OPTIONAL free-text fields added to
+the SOAP note inside a collapsible section (closed by default, no routine
+friction): differentialConsidered / reflection (按語) / ifIneffectivePlan.
+Wired through normalizeSoapNote + save path + fallback; renderSoapNoteCard
+shows them only when filled. Clinical-layer data (localStorage, not Git);
+becomes visits columns when the SQLite store lands. 6-validator sweep PASS;
+browser QA: collapsed by default, saves with all three empty (0→1), fills
+round-trip to the card, zero console errors. Branch ll1-reflection. Next
+Learning-Loop candidate: LL2 outcome_verdict enum + "cases to learn from" view.
+
+### 2026-07-14 - CS4-2: pickers extended to all 7 SOAP link fields (Claude Code)
+
+Extended CS4 from 2 → 7 link fields. build-data now bundles pattern_library
+(50), tdis_registry (75), condition_canon (150), western_medications (12),
+formula_safety_flags (15); `setupLinkAutocomplete()` wires pickers for
+tcmPattern / easternDisease / westernCondition / medication / safetyFlag
+(each unioning Track E canon with the older registry, deduped by id).
+outcomeMetricLinks stays free text (values, not ids → LL2/LL5). This makes
+Track E's conditions/patterns/中醫病名 selectable inside a case for the first
+time — M3 / LL6 precursor. 7-validator sweep PASS; browser QA confirmed
+bilingual search, id-only writeback (cond.pcos), zero console errors. Branch
+cs4-pickers-2. Next candidate: LL1 按語 reflection fields on the SOAP form.
+
+### 2026-07-14 - CS-track batch 2: CS4 SOAP autocomplete chip pickers (Claude Code)
+
+The highest-ROI input-friction fix (external-review Phase 4.1). The SOAP
+`acupointLinks` and `formulaLinks` fields no longer need hand-typed internal
+ids: type Chinese / pinyin / code → pick from an autocomplete menu → a chip is
+added and the hidden textarea holds the exact `code` / `formula.<id>` the save
+and linkify paths already use. Existing notes hydrate into chips on open.
+Vanilla + progressive enhancement — the textarea stays the source of truth, so
+the save path is untouched. This turns referential integrity from
+"caught later" toward "hard to type wrong" (DECISIONS D1/D3 intent).
+
+Also landed on main first: `scripts/dev-server.js` + `.claude/launch.json`
+(local static preview; `node` not on PATH → bundled-node absolute path).
+
+Points store `code` for now (linkify-compatible); the code→id swap comes with
+the FK migration. Follow-ups (same pattern): pattern/medication/safety/
+condition/outcome link fields. Verified in the live dialog (type/select/
+multi/remove/hydrate, 0 console errors); node --check + validate-interactions PASS.
+
+### 2026-07-13 - CS-track batch 1: runtime id + backup banner + honest stats (Claude Code)
+
+First work after the Phase 2 merge lifted the app.js/index.html freeze.
+Branch cs-track-1 (off main). Three CS-track items:
+
+- Runtime `id` passthrough: the three point adapters now emit the DECISIONS-D2
+  namespaced `id`, so every runtime point carries the stable key that clinical
+  FKs and the coming CS4 autocomplete will reference.
+- CS1 backup discipline: a sticky "N days since export" banner (shown only when
+  there are cases and it's ≥7 days/never) + an every-10-saves export prompt +
+  export resets the meta. localStorage stays the store; this is the H2 bridge.
+- CS2 fixed the lying numbers: index.html's hardcoded stats (several already
+  wrong — 18 categories→17, 23 content-bearing→stale, 15 safety→meaningless)
+  replaced with runtime-derived spans; underivable ones removed rather than
+  left to drift. Verified live 115/17/202/202/34/407/409, zero console errors.
+
+7-validator sweep PASS + browser QA. Handoff updated. Next: CS4 autocomplete
+comboboxes (kills hand-typed ids — the biggest SOAP-form friction), separate batch.
+
+### 2026-07-13 - D6 knowledge-never-hard-deleted + status backfill; D3 homonym rule (Claude Code)
+
+Ting: "你做吧". Two one-way doors closed with machine enforcement:
+
+- D3 LOCKED: formula/herb homonyms disambiguated by classical source with a
+  `__<source>` qualifier (`formula.wen_jing_tang__jinkui`); controlled
+  source list; `scripts/validate-naming.js` fails on an unqualified shared
+  name_zh. 0 homonyms today (115 formulas / 202 herbs) — guard catches the
+  first. Self-tested: a 溫經湯 pair without `__` is flagged.
+- D6 LOCKED: (1) `scripts/backfill-point-status.js` gave every point a
+  review_status — floor "draft" only, adds-only; 235 unlabeled 361 records
+  + 29 auricular filled; GB93 source_checked / Tung index_only untouched
+  (no promotion). (2) New ledger data/acupoints/point_id_manifest.json (681
+  ids) + `scripts/update-point-manifest.js`. (3) validate-point-ids.js now
+  fails if a manifest id vanished from data (hard delete) — retire via
+  review_status="deprecated" instead. Self-tested: a phantom manifest id
+  triggered the failure, then the ledger was regenerated clean.
+
+Both validators added to the standard list. Full sweep (7 validators) PASS.
+All data-only + validators; no frozen-file changes. Branch point-id-namespace.
+This closes the ID/naming/deletion one-way doors from the external review;
+D2+D3+D4+D6 are now LOCKED and machine-enforced.
+
+### 2026-07-13 - Point id namespacing executed (DECISIONS.md D2, Claude Code)
+
+Ting ratified D2 ("統一命名"). Executed approach A: ADD a stable namespaced
+`id` to every acupoint; the display `code` is untouched (URLs, prefix
+matchers, UI all keep working; no frozen app.js change). Discovered Tung
+already had ids (`tung.11.01`) — kept verbatim per D1's immutability rule.
+Added ids to standard (id=code), auricular GB93 + embedded (`ear.at4` /
+`ear.sm`), and EX extras (`ex.hn3`). 681 points → 681 unique ids, 0
+collisions (GB93 `AT4` and embedded `AT4` are the same merged point and
+correctly share `ear.at4`). New `scripts/add-point-ids.js` (adds-only,
+respects existing ids) + `scripts/validate-point-ids.js` (locks the
+convention; a bare non-standard id now fails the build; added to the
+standard validator list). All validators PASS. Branch point-id-namespace
+(off conditions-interop-design). Clinical foreign keys will reference `id`;
+runtime wiring (adapter passthrough) waits for the Phase 2 merge, per the
+DECISIONS.md / freeze sequencing.
+
+### 2026-07-13 - 大辭典 verified + E3 gyn content fill (Claude Code)
+
+Codex is out of credits, so Claude ran the unblocked work. Two parts:
+
+1. 大辭典 verification: located the official resource — 中西醫病名對照
+   大辭典 第二版 (國家中醫藥研究所, 2010, 全五冊, GPN 4809902627), official
+   page nricm.edu.tw/p/412-1000-320.php, online database cnwm.nricm.edu.tw.
+   The online DB EXISTS but was unreachable (port 80 timeout, 443 refused)
+   from here — recorded edition + both URLs + the access note in
+   source_registry (mohw_nricm_disease_name_dictionary). E-I3 stays
+   BLOCKED: without dictionary access I will not fabricate citations.
+
+2. E3 gyn_fertility content fill: filled the 25 gyn conditions in
+   condition_canon_shortlist.json with summary_zh/en, red_flags_zh/en,
+   western_context_zh/en (150 fields) via scripts/apply-condition-fill.js
+   (adds-only, never overwrites; compact-format preserved so the diff is
+   exactly the 25 gyn records, 125 others byte-identical). red_flags favour
+   the refer-out/seek-care direction; western_context uses documentation
+   language ("commonly managed with"), never treatment instruction. ALL
+   draft / needs_source_review — this is the E3 first batch the module
+   design queues (gyn first), pending Ting's per-batch review. Not rendered
+   anywhere yet (conditionGraph rewire E-I6 is separately blocked), so this
+   is pure reviewable data prep. New file data/pathology/condition_fill_gyn.json
+   holds the source content; apply script is rerunnable for later batches.
+
+Validators: relations/data/interactions/herb-canon PASS; encoding still
+768 (my Chinese content added zero findings). Branch conditions-interop-design.
+
+### 2026-07-12 - Track E-I0/I1/I2/I4 executed under Ting's delegation (Claude Code)
+
+Ting reviewed the interop design + §6.1 replacement table, then delegated
+continuation before stepping out (「繼續執行工作 然後always allowed」);
+she returned before the scheduled run fired, so this executed live with
+her present. Scope kept strictly to the four pre-listed tasks:
+
+- E-I0 APPLIED: 18 mojibake name_zh strings repaired across
+  conditions.json + condition_graph_expansion.json via the guarded
+  script (verify-before-replace; re-run dry shows 0 left, 18 healthy).
+  validate-encoding findings dropped 798 → 768 — 768 is the new
+  expected backlog baseline.
+- E-I1: 《中西醫病名對照大辭典》 added to source_registry
+  (mohw_nricm_disease_name_dictionary, tier A, authority 5, additive
+  only; exact edition/URL needs Ting verification before E-I3).
+- E-I2: data/interop/condition_crosswalk.json created — 150 skeleton
+  records, icd10 seeded 150/150 from icd_hint, cpt_placeholder /
+  insurance_placeholder present on every record. PENDING Ting's
+  5-record spot-check.
+- E-I4: validate-relations extended (crosswalk FK integrity, id-shape
+  check, reserved-field presence, icd_hint agreement warning) —
+  150 records checked, 0 errors, 0 warnings.
+
+All must-pass validators green. E-I3 remains BLOCKED on Ting's copy of
+the 大辭典; E-I5 waits for the Phase 2 merge.
+
+### 2026-07-12 - Conditions interop designed + pathology mojibake repair staged (Claude Code)
+
+Per Ting's request (中英文醫學學習 + 病例 + 保險對接方向), wrote
+docs/CONDITIONS_INTEROP_DESIGN.md EXTENDING the existing conditions
+module design (three entities unchanged): (1) sidecar crosswalk layer
+data/interop/condition_crosswalk.json — structured icd10[], 《中西醫病名
+對照大辭典》(衛福部國家中醫藥研究所) dictionary_refs as the zh mapping
+authority, cpt_placeholder/insurance_placeholder reserved-but-present on
+every record so future fills need no migration; (2) symptom intake
+structured fields where picking a suspected condition auto-surfaces its
+red_flags as a mandatory screen; (3) HIPAA-target privacy rules (18
+identifiers = de-id checklist, codes-not-member-IDs, BAA trigger line,
+no PHI to AI services); (4) canonical AI answer template + fixed safety
+phrase blocks zh/en; (5) Track E-I build order for Codex with the
+CODEX_TASK_STATUS progress protocol.
+
+Mojibake located: the 亂碼 Ting saw is NOT in the new Track E files
+(clean) — it is 9 name_zh strings duplicated in data/pathology/
+conditions.json + condition_graph_expansion.json (6 fertility-context
+condition names + 濕熱/陰虛/血虛 pattern names). Originals are not
+git-recoverable, so replacements are re-authored labels. Guarded script
+scripts/repair-mojibake-pathology.js written; dry run verified 18/18
+strings match the guard, 0 healthy fields touched. GATED: waiting for
+Ting to approve the §6.1 replacement table before --apply.
+
+Branch conditions-interop-design (stacked on phase2-runtime-adapter).
+Docs + script only; no data files changed.
+
+### 2026-07-12 - Phase 2 Runtime Adapter LANDED: app renders 361.json (Claude Code)
+
+Executed docs/RUNTIME_ADAPTER_SPEC.md on branch phase2-runtime-adapter
+(gate pre-approved, see entry below). The app now renders
+data/acupoints/361.json as the single standard-channel source: all 361
+points show full bilingual content, dashboard reads 361/361 with
+status-based quality counters (draft 361 / source_checked 0), and the
+embedded standard-channel arrays are retired from the runtime merge
+(files untouched; they still contribute EX-HN3 印堂 / EX-HN5 太陽,
+the two extras outside the 361 scope — discovered during field
+verification, they would otherwise have been lost).
+
+Changes: scripts/build-data.js emits data/generated/points_361.js;
+index.html loads it before app.js; app.js gains adapt361Record() +
+needling361Text() (7 BL61-67 records carry needling as an object with
+mojibake technique text — rendered faithfully, data untouched per the
+encoding freeze); standardPointPlaceholder() removed (validation passed
+first); loadPoints() gains reconcileSavedPoints() dropping pre-adapter
+localStorage snapshots (old placeholder stubs + unedited default copies
+identified by their missing techniqueNotes key) so stale text cannot
+shadow 361 content while real user edits still merge; validate-data.js
+rewritten from legacy deep-equal to a 361-coverage validator (coverage,
+field fidelity, safety-line preservation — every contraindication/danger
+line must survive into runtime cautions — layer counts 361+2+29+13-1+277
+= 681, duplicate check).
+
+Validation: validate-data PASS, validate-interactions PASS,
+validate-relations PASS, validate-herbal-links PASS, validate-herb-canon
+PASS, validate-encoding expected FAIL still exactly 798. Browser QA on
+a local static server: dashboard 361/361, LI4 + PC1 + BL61 render,
+exact-search jump (PC8), topic filters, 390px no overflow, localStorage
+3-scenario merge test, zero console errors.
+
+Field-map deviations from the spec table (verified against real embedded
+records as the spec instructed): functionsEn is a STRING in runtime
+convention (joined " "), not array; needling maps to techniqueNotes.
+Full implemented map recorded in docs/DATA_MIGRATION_MAP.md.
+
+Next: push branch + PR for Ting's merge. After merge: Codex W4-1 status
+strips can extend to point pages; Phase 3 hygiene continues.
+
+### 2026-07-12 - Runtime Adapter gate APPROVED; handoff to Claude Code (Claude, Cowork session)
+
+Ting approved the RUNTIME_ADAPTER_SPEC.md step-1 gate ask in a Cowork
+session: retire `scripts/validate-data.js`'s legacy deep-equal check,
+replaced by a 361-coverage validator, so the Runtime Adapter (Phase 2)
+can proceed. Approval recorded here per the spec's requirement ("do not
+start without this approval recorded").
+
+Execution did not happen in that Cowork session: its Linux sandbox
+(the tool environment used to run git/node there) failed to start after
+repeated retries, so no branch/commit/validation could run. Ting is
+switching to Claude Code (running locally) to continue Phase 2 with a
+working shell. No files were touched — 361.json, app.js, index.html,
+build-data.js, validate-data.js all unchanged from `f13899a`.
+
+Next agent (Claude Code session): read this entry + EXECUTION_PLAN.md
+Phase 2 + RUNTIME_ADAPTER_SPEC.md, confirm `git status` clean on main at
+`f13899a` (or later), then execute the 8 spec steps directly — the gate
+is already cleared, do not re-ask Ting unless spec details changed.
 
 
 ### 2026-07-12 - Herb module designed (Claude)

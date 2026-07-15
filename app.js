@@ -1,15 +1,34 @@
 const STORAGE_KEY = "acupoint-atlas-v1";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
+// CS1: clinical cases live only in localStorage until the durable store lands
+// (NORTH_STAR §H2). Until then, export discipline is the only backup. This
+// meta tracks the last export + saves since, to nudge before data is lost.
+const BACKUP_META_KEY = "acuting-backup-meta-v1";
+const BACKUP_STALE_DAYS = 7;
+const BACKUP_NUDGE_EVERY = 10;
+// LL2: per-visit outcome verdict. no_change/worsened feed the "cases to learn
+// from" review — error cases (誤案) teach more than successes.
+const OUTCOME_VERDICTS = {
+  improved: { zh: "改善", en: "Improved", tone: "good" },
+  no_change: { zh: "無變化", en: "No change", tone: "watch" },
+  worsened: { zh: "加重", en: "Worsened", tone: "watch" },
+  lost_followup: { zh: "失訪", en: "Lost to follow-up", tone: "muted" },
+};
+const LEARN_FROM_VERDICTS = ["no_change", "worsened"];
+let learnFromMode = false;
 
 // Data-load guard: the app is data-driven; if the generated data file did not
 // load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
 // silently degrading to placeholder-only content.
 (function dataLoadGuard() {
-  if (globalThis.ACUTING_APP_DATA) return;
+  const missing = [];
+  if (!globalThis.ACUTING_APP_DATA) missing.push("data/generated/app_data.js");
+  if (!globalThis.ACUTING_POINTS_361) missing.push("data/generated/points_361.js");
+  if (!missing.length) return;
   const banner = document.createElement("div");
   banner.className = "data-missing-banner";
-  banner.textContent = "⚠ 資料檔未載入：data/generated/app_data.js 沒有被讀到，穴位內容會大量缺失。請確認專案檔案已完整同步到本機後按 Ctrl+F5 重新整理。";
+  banner.textContent = `⚠ 資料檔未載入：${missing.join("、")} 沒有被讀到，穴位內容會大量缺失。請確認專案檔案已完整同步到本機後按 Ctrl+F5 重新整理。`;
   document.body.prepend(banner);
 })();
 
@@ -47,41 +66,76 @@ const directoryTopics = (uiConfig.directoryTopics || []).map(hydrateDirectoryTop
 const earAnatomyLabelData = uiConfig.earAnatomyLabelData || [];
 const earPointAnchors = uiConfig.earPointAnchors || {};
 
-function standardPointPlaceholder(code) {
-  const prefix = channelCodeFromPointCode(code);
+// standardPointPlaceholder() was removed with the Phase 2 runtime adapter:
+// the 361 layer is complete, so placeholder records are never generated.
+// (Old placeholder stubs saved in localStorage are dropped by
+// reconcileSavedPoints() below.)
+
+// Phase 2 runtime adapter: data/acupoints/361.json (loaded via generated
+// points_361.js) is the single runtime source for the 14 standard channels.
+// The embedded standard-channel arrays are retired from the runtime merge —
+// see docs/RUNTIME_ADAPTER_SPEC.md. Auricular / GB93 / Tung pipelines are
+// unchanged.
+// `needling` in 361.json is a string on 354 records and a structured object
+// ({depth, angle, technique, moxibustion}) on 7 (BL61-BL67, encoding-backlog
+// records). Render whatever text exists faithfully; never invent content.
+function needling361Text(needling) {
+  if (typeof needling === "string") return needling;
+  if (needling && typeof needling === "object") {
+    return [
+      needling.depth ? `針刺深度 Depth: ${needling.depth}` : "",
+      needling.angle ? `角度 Angle: ${needling.angle}` : "",
+      needling.technique || "",
+      needling.moxibustion ? `艾灸 Moxibustion: ${needling.moxibustion}` : ""
+    ].filter(Boolean).join("\n");
+  }
+  return "";
+}
+
+function adapt361Record(record) {
+  const prefix = channelCodeFromPointCode(record.code);
   const meta = channelPrefixMeta[prefix] || { meridian: "Standard Channel / 標準經穴", region: "待補", x: 180, y: 320 };
+  // Safety wording law: every contraindication and danger line must remain
+  // visible in the runtime cautions text.
+  const cautionLines = [...new Set([...(record.contraindications || []), ...(record.cautions || [])])];
+  const dangerLines = record.danger || [];
   return {
-    code,
-    nameZh: code,
-    nameEn: code,
-    pinyin: code,
-    meridian: meta.meridian,
-    region: meta.region,
-    location: "待依 WHO Standard Acupuncture Point Locations 與專業教材補入。",
-    locationEn: "Pending source review against WHO Standard Acupuncture Point Locations and professional textbooks.",
-    cunMeasurement: "Pending source review.",
-    functions: "待補。",
-    functionsEn: ["Pending source review"],
-    patterns: ["待補"],
-    patternsEn: ["Pending source review"],
-    evidence: "Placeholder page created so every standard channel point has an individual AcuTing OS record. Do not use as a clinical location until source_checked.",
-    cautions: "Draft placeholder. Needling depth, angle, contraindications, and anatomical safety notes are pending professional source review.",
-    reviewStatus: "placeholder",
-    sources: standardPointSources(code),
-    visualLinks: standardPointVisualLinks(code),
-    x: meta.x,
-    y: meta.y
+    id: record.id || record.code,   // stable namespaced id (DECISIONS D2); clinical FKs reference this
+    code: record.code,
+    nameZh: record.chinese || record.code,
+    nameEn: record.english || record.code,
+    pinyin: record.pinyin || record.code,
+    meridian: record.meridian_display || meta.meridian,
+    region: record.region || meta.region,
+    location: record.location_zh || "",
+    locationEn: record.location_en || "",
+    cunMeasurement: record.cun_measurement || "",
+    anatomy: record.anatomy_terms || [],
+    functions: (record.functions_zh || []).join("，"),
+    functionsEn: (record.functions_en || []).join(" "),
+    patterns: record.indications_zh || [],
+    patternsEn: record.indications_en || [],
+    evidence: record.evidence || "",
+    cautions: [...cautionLines, ...dangerLines].join("\n"),
+    techniqueNotes: needling361Text(record.needling),
+    nccaomHighYield: record.nccaom_high_yield || [],
+    clinicalPearls: record.clinical_pearls || [],
+    reviewStatus: record.review_status || "draft",
+    sourceStatus: record.source_status || "model_draft_pending_source_review",
+    enrichmentStatus: record.enrichment_status || "",
+    sources: record.sources || [],
+    x: record.ui_map?.x ?? meta.x,
+    y: record.ui_map?.y ?? meta.y
   };
 }
 
-const standardPointPlaceholders = standardChannelAudit.channels.flatMap((channel) =>
-  Array.from({ length: channel.expected }, (_, index) => standardPointPlaceholder(`${channel.code}${index + 1}`))
-);
+const standardPoints361 = (globalThis.ACUTING_POINTS_361 || []).map(adapt361Record);
 
 const tungIndexRecords = globalThis.ACUTING_TUNG_INDEX?.points || [];
 
 function tungIndexPoint(record) {
   return {
+    id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
     standardCode: record.display_code,
     nameZh: record.name_zh || record.name_en,
@@ -122,6 +176,7 @@ function auricularGb93Point(record) {
   const zoneLabelZh = zone.zh || record.zone || "耳廓";
   const zoneLabelEn = zone.en || record.zone || "Auricle";
   return {
+    id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
     standardCode: record.code,
     nameZh: record.name_zh || record.code,
@@ -277,8 +332,16 @@ const patternEnglishMap = globalThis.ACUTING_APP_DATA?.patternEnglishMap || {};
 // Migrated to data/: edit data/**/embedded/*.json, then run scripts/build-data.js
 const auricularPoints = globalThis.ACUTING_APP_DATA?.auricularPoints || [];
 
+// The embedded arrays stay loaded only to contribute records OUTSIDE the 361
+// standard-channel scope (currently EX-HN3 印堂 and EX-HN5 太陽). Every
+// standard-channel code now renders from the 361 layer.
+const standard361Codes = new Set(standardPoints361.map((point) => point.code));
+const embeddedExtraPoints = [starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion]
+  .flat()
+  .filter((point) => !standard361Codes.has(point.code));
+
 const sourceByCode = Object.fromEntries(
-  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularGb93Index, auricularPoints, tungPointIndex)])]
+  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPoints361, embeddedExtraPoints, auricularGb93Index, auricularPoints, tungPointIndex)])]
     .map((code) => [code, ["https://www.acupoints.org/", "https://cloudtcm.com/acupoint"]])
 );
 
@@ -286,7 +349,7 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(standardPointPlaceholders, starterPoints, professionalPoints, lungMeridianExpansion, largeIntestineMeridianExpansion, stomachMeridianExpansion, spleenMeridianExpansion, heartMeridianExpansion, smallIntestineMeridianExpansion, bladderMeridianExpansion, kidneyMeridianExpansion, auricularGb93Index, auricularPoints, tungPointIndex));
+const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, auricularGb93Index, auricularPoints, tungPointIndex));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";
@@ -442,7 +505,13 @@ caseForm.addEventListener("submit", saveCaseFromForm);
 soapForm.addEventListener("submit", saveSoapFromForm);
 deleteCaseBtn.addEventListener("click", deleteCurrentCase);
 deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
-caseSearch.addEventListener("input", renderClinicalCases);
+caseSearch.addEventListener("input", () => { learnFromMode = false; renderClinicalCases(); });
+document.querySelector("#learnFromToggle")?.addEventListener("click", (e) => {
+  learnFromMode = !learnFromMode;
+  e.currentTarget.setAttribute("aria-pressed", String(learnFromMode));
+  e.currentTarget.classList.toggle("active", learnFromMode);
+  renderClinicalCases();
+});
 window.addEventListener("hashchange", handlePointHashChange);
 
 searchInput?.addEventListener("keydown", (event) => {
@@ -503,10 +572,34 @@ function loadPoints() {
   if (!saved) return defaultPoints;
   try {
     const parsed = JSON.parse(saved);
-    return Array.isArray(parsed) ? enrichPoints(mergeByCode(defaultPoints, parsed)) : defaultPoints;
+    if (!Array.isArray(parsed)) return defaultPoints;
+    return enrichPoints(mergeByCode(defaultPoints, reconcileSavedPoints(parsed)));
   } catch {
     return defaultPoints;
   }
+}
+
+// persist() snapshots the FULL merged dataset, so localStorage written before
+// the 361 adapter contains old placeholder stubs and unedited embedded copies
+// that would shadow the new 361 content on merge. Drop, at load time only:
+// (a) old placeholder stubs, and (b) standard-channel records without a
+// techniqueNotes key — pre-adapter default copies never had one, while every
+// record saved through the edit form or import does. Real user edits still
+// merge over defaults as before. localStorage itself is not rewritten.
+function reconcileSavedPoints(parsed) {
+  const OLD_PLACEHOLDER_LOCATION = "待依 WHO Standard Acupuncture Point Locations 與專業教材補入。";
+  const kept = parsed.filter((point) => {
+    if (!point || typeof point !== "object") return false;
+    const isOldPlaceholder = point.reviewStatus === "placeholder"
+      && (point.nameZh === point.code || point.location === OLD_PLACEHOLDER_LOCATION);
+    if (isOldPlaceholder) return false;
+    const isPreAdapterDefaultCopy = standard361Codes.has(point.code)
+      && point.techniqueNotes === undefined;
+    return !isPreAdapterDefaultCopy;
+  });
+  const overriding = kept.filter((point) => standard361Codes.has(point.code)).map((point) => point.code);
+  if (overriding.length) console.info("AcuTing: locally saved edits override 361 defaults for: " + overriding.join(", "));
+  return kept;
 }
 
 function findExactPoint(query) {
@@ -661,6 +754,87 @@ function persistClinicalCases() {
   localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
 }
 
+// ---- CS2: knowledge counts derived at runtime (no hardcoded stats) --------
+// Every number here is computed from the loaded knowledge bundle so the UI
+// can never drift/lie. Counts that cannot be derived from loaded data were
+// removed from index.html rather than left to rot (external-review §0.4).
+function renderKnowledgeCounts() {
+  const k = globalThis.ACUTING_KNOWLEDGE;
+  if (!k) return;
+  const set = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = String(value); };
+  const formulas = k.formulas?.records || [];
+  const herbs = k.herbs?.records || [];
+  const distinct = (arr, key) => new Set(arr.map((r) => r[key]).filter(Boolean)).size;
+  const sumLen = (arr, key) => arr.reduce((s, r) => s + ((r[key] || []).length), 0);
+
+  set("statFormulas", formulas.length);
+  set("statFormulaCategories", distinct(formulas, "category"));
+  set("statHerbs", herbs.length);
+  set("statHerbsInline", herbs.length);
+  set("statHerbCategories", distinct(herbs, "category"));
+  set("statHerbFormulaLinks", sumLen(herbs, "related_formulas"));
+  set("statHerbSafetyFlags", sumLen(herbs, "safety_flags"));
+}
+
+// ---- CS1: backup discipline (no storage-engine change) --------------------
+function getBackupMeta() {
+  try {
+    return JSON.parse(localStorage.getItem(BACKUP_META_KEY)) || { lastBackupAt: null, savesSinceBackup: 0 };
+  } catch {
+    return { lastBackupAt: null, savesSinceBackup: 0 };
+  }
+}
+
+function setBackupMeta(meta) {
+  localStorage.setItem(BACKUP_META_KEY, JSON.stringify(meta));
+}
+
+// Call after a real export of clinical cases: resets the age + save counter.
+function markCasesBackedUp() {
+  setBackupMeta({ lastBackupAt: new Date().toISOString(), savesSinceBackup: 0 });
+  renderBackupBanner();
+}
+
+// Call on every case/SOAP save: counts unsaved-to-disk edits and nudges.
+function noteClinicalSave() {
+  const meta = getBackupMeta();
+  meta.savesSinceBackup = (meta.savesSinceBackup || 0) + 1;
+  setBackupMeta(meta);
+  if (meta.savesSinceBackup > 0 && meta.savesSinceBackup % BACKUP_NUDGE_EVERY === 0) {
+    if (confirm(`已有 ${meta.savesSinceBackup} 筆病歷變更尚未匯出備份。病歷只存在本機瀏覽器，清快取即全失。現在匯出？`)) {
+      exportClinicalCases();
+    }
+  }
+  renderBackupBanner();
+}
+
+function backupAgeDays(meta) {
+  if (!meta.lastBackupAt) return Infinity;
+  return (Date.now() - new Date(meta.lastBackupAt).getTime()) / 86400000;
+}
+
+// Persistent top banner shown only when there is data to lose AND it is stale.
+function renderBackupBanner() {
+  const existing = document.querySelector(".backup-reminder-banner");
+  const meta = getBackupMeta();
+  const stale = clinicalCases.length > 0 && backupAgeDays(meta) >= BACKUP_STALE_DAYS;
+  if (!stale) { if (existing) existing.remove(); return; }
+  if (existing) return;
+  const banner = document.createElement("div");
+  banner.className = "backup-reminder-banner";
+  const days = meta.lastBackupAt ? Math.floor(backupAgeDays(meta)) : null;
+  const label = days === null
+    ? "病歷尚未匯出過備份"
+    : `病歷已 ${days} 天未匯出備份`;
+  banner.innerHTML = `⚠ ${label}（${clinicalCases.length} 筆病例，只存在本機瀏覽器）— `;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = "立即匯出";
+  btn.addEventListener("click", exportClinicalCases);
+  banner.appendChild(btn);
+  document.body.prepend(banner);
+}
+
 function defaultCodeList(...groups) {
   return groups.flat().map((point) => point.code).filter(Boolean);
 }
@@ -791,7 +965,9 @@ function render() {
   hydrateFilters();
   renderOsStatus();
   renderDatabaseHealth();
+  renderKnowledgeCounts();   // CS2
   renderClinicalCases();
+  renderBackupBanner();   // CS1
   renderDirectoryFilters();
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
@@ -926,8 +1102,8 @@ function renderDatabaseHealth() {
   if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
   if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);
   if (healthCompletionPercentEl) healthCompletionPercentEl.textContent = `${audit.completionPercent}%`;
-  if (healthReviewedStandardEl) healthReviewedStandardEl.textContent = String(quality.reviewedStandard);
-  if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.placeholderStandard);
+  if (healthReviewedStandardEl) healthReviewedStandardEl.textContent = String(quality.sourceCheckedStandard);
+  if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.draftStandard);
   if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
   if (healthAuricularIndexEl) healthAuricularIndexEl.textContent = String(quality.auricular);
   if (healthAuricularGb93CoverageEl) healthAuricularGb93CoverageEl.textContent = `${quality.auricularGb93Indexed}/${quality.auricularGb93Expected}`;
@@ -1000,8 +1176,10 @@ function getDataQualityAudit() {
   const visualLinked = points.filter((point) => normalizeVisualLinks(point.visualLinks || []).length > 0).length;
   return {
     total: points.length,
-    reviewedStandard: standard.filter((point) => !isPlaceholderStandardRecord(point)).length,
-    placeholderStandard: standard.filter(isPlaceholderStandardRecord).length,
+    // Post-361-adapter: every standard point is a real record, so the quality
+    // axis is review_status based (draft vs source_checked), not placeholder based.
+    sourceCheckedStandard: standard.filter((point) => point.reviewStatus === "source_checked").length,
+    draftStandard: standard.filter((point) => point.reviewStatus !== "source_checked").length,
     tungIndex: points.filter((point) => String(point.meridian || "").includes("Master Tung")).length,
     auricular: points.filter(isAuricularPoint).length,
     auricularGb93Indexed: auricularGb93Records.length,
@@ -1015,7 +1193,7 @@ function getDataQualityAudit() {
 }
 
 function getStandardPointAudit() {
-  const standardCodes = new Set(points.filter(isReviewedStandardChannelPoint).map((point) => point.code));
+  const standardCodes = new Set(points.filter(isStandardChannelPoint).map((point) => point.code));
   const channels = standardChannelAudit.channels.map((channel) => {
     const present = Array.from(standardCodes).filter((code) => channelCodeFromPointCode(code) === channel.code).length;
     const missing = Math.max(0, channel.expected - present);
@@ -1039,18 +1217,6 @@ function isStandardChannelPoint(point) {
     && !String(point.meridian || "").includes("Extra Point")
     && !String(point.meridian || "").includes("Master Tung")
     && !String(point.code || "").startsWith("EX-");
-}
-
-function isPlaceholderStandardRecord(point) {
-  // mergeByCode spreads real records over placeholders, but real records carry
-  // no reviewStatus field, so the placeholder's reviewStatus survives the merge.
-  // A record is only a true placeholder when its content is still the stub
-  // (nameZh was seeded with the point code itself).
-  return point.reviewStatus === "placeholder" && point.nameZh === point.code;
-}
-
-function isReviewedStandardChannelPoint(point) {
-  return isStandardChannelPoint(point) && !isPlaceholderStandardRecord(point);
 }
 
 function hydrateFilters() {
@@ -2637,7 +2803,12 @@ function normalizeSoapNote(value) {
     medicationLinks: normalizeStringList(value.medicationLinks),
     outcomes: String(value.outcomes || ""),
     outcomeMetricLinks: normalizeStringList(value.outcomeMetricLinks),
+    outcomeVerdict: OUTCOME_VERDICTS[value.outcomeVerdict] ? value.outcomeVerdict : "",   // LL2
     followUp: String(value.followUp || ""),
+    // LL1 按語: optional structured reflection (Learning Loop track)
+    differentialConsidered: String(value.differentialConsidered || ""),
+    reflection: String(value.reflection || ""),
+    ifIneffectivePlan: String(value.ifIneffectivePlan || ""),
     createdAt: String(value.createdAt || new Date().toISOString()),
     updatedAt: String(value.updatedAt || new Date().toISOString())
   };
@@ -2658,6 +2829,7 @@ function createId(prefix) {
 }
 
 function renderClinicalCases() {
+  if (learnFromMode) return renderLearnFromReview();
   const filtered = getFilteredClinicalCases();
   if (selectedCaseId && !clinicalCases.some((item) => item.id === selectedCaseId)) selectedCaseId = clinicalCases[0]?.id || "";
   if (!selectedCaseId && filtered.length) selectedCaseId = filtered[0].id;
@@ -2684,6 +2856,38 @@ function renderClinicalCases() {
     });
   }
 
+  renderClinicalCaseDetail(clinicalCases.find((item) => item.id === selectedCaseId));
+}
+
+// LL2: "cases to learn from" — a flat list of visits whose verdict is
+// no_change/worsened across every case. Framed as learning, not failure.
+function renderLearnFromReview() {
+  const entries = [];
+  clinicalCases.forEach((item) => {
+    (item.soapNotes || []).forEach((note) => {
+      if (LEARN_FROM_VERDICTS.includes(note.outcomeVerdict)) entries.push({ item, note });
+    });
+  });
+  entries.sort((a, b) => String(b.note.visitDate || "").localeCompare(String(a.note.visitDate || "")));
+  caseResultCount.textContent = `${entries.length} 值得學習`;
+  caseList.innerHTML = "";
+  if (!entries.length) {
+    caseList.innerHTML = `<div class="case-empty">目前沒有標記為「無變化 / 加重」的就診。<br>在 SOAP 的成效判定填入後，這裡會集中呈現，供回顧學習。</div>`;
+    renderClinicalCaseDetail(null);
+    return;
+  }
+  entries.forEach(({ item, note }) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `case-list-item ${item.id === selectedCaseId ? "active" : ""}`;
+    button.innerHTML = `
+      <span>${escapeHtml(item.patientCode || "No code")} · ${escapeHtml(note.visitDate || "")}</span>
+      <strong>${escapeHtml(item.caseTitle || "Untitled case")}</strong>
+      <small>${verdictBadge(note.outcomeVerdict)} ${escapeHtml((note.assessment || note.subjective || "").slice(0, 40))}</small>
+    `;
+    button.addEventListener("click", () => { selectedCaseId = item.id; renderClinicalCases(); });
+    caseList.append(button);
+  });
   renderClinicalCaseDetail(clinicalCases.find((item) => item.id === selectedCaseId));
 }
 
@@ -2775,6 +2979,7 @@ function renderClinicalCaseDetail(item) {
       <div><small>Western Dx</small><span>${escapeHtml(item.westernConditions.join("、") || "—")}</span></div>
     </div>
     ${renderCaseTags(item)}
+    ${renderCaseTimeline(notes)}
     <div class="timeline-head">
       <strong>SOAP Timeline</strong>
       <small class="timeline-date">${notes.length} notes</small>
@@ -2792,6 +2997,16 @@ function renderClinicalCaseDetail(item) {
       openSoapEditor(note);
     });
   });
+  // CS5: timeline node → scroll to that SOAP card + brief highlight
+  caseDetail.querySelectorAll("[data-jump-soap]").forEach((node) => {
+    node.addEventListener("click", () => {
+      const card = document.getElementById(`soap-${node.dataset.jumpSoap}`);
+      if (!card) return;
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.classList.add("soap-note-flash");
+      setTimeout(() => card.classList.remove("soap-note-flash"), 1200);
+    });
+  });
 }
 
 function renderCaseTags(item) {
@@ -2800,6 +3015,203 @@ function renderCaseTags(item) {
     ...item.safetyFlags.map((value) => `Safety ${value}`)
   ];
   return tags.length ? `<div class="case-tags">${tags.map((tag) => `<span class="case-tag">${escapeHtml(tag)}</span>`).join("")}</div>` : "";
+}
+
+// --- CS4: autocomplete chip pickers so SOAP link fields never need typed ids ---
+// Progressive enhancement: the underlying <textarea> stays the source of truth
+// (form save/serialize is unchanged); we hide it and drive its value from chips.
+const linkPickerControllers = {};
+
+function pointPickerOptions() {
+  return points
+    .filter((p) => p.code)
+    .map((p) => ({
+      value: p.code,
+      label: `${p.nameZh || p.code} ${p.code}`,
+      terms: `${p.code} ${p.nameZh || ""} ${p.pinyin || ""}`.toLowerCase(),
+      meta: p.code,
+    }));
+}
+
+function formulaPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.formulas?.records || [];
+  return records.map((f) => ({
+    value: f.id,
+    label: `${f.name_zh || f.id}${f.pinyin ? " · " + f.pinyin : ""}`,
+    terms: `${f.name_zh || ""} ${f.pinyin || ""} ${f.name_en || ""} ${f.id}`.toLowerCase(),
+    meta: f.pinyin || f.name_en || "",
+  }));
+}
+
+function enhanceLinkField(fieldName, buildOptions) {
+  const textarea = soapForm?.elements?.[fieldName];
+  if (!textarea || textarea.dataset.pickerReady) return;
+  textarea.dataset.pickerReady = "1";
+  textarea.hidden = true;
+
+  const wrap = document.createElement("div");
+  wrap.className = "link-picker";
+  const chips = document.createElement("div");
+  chips.className = "link-chips";
+  const input = document.createElement("input");
+  input.type = "text";
+  input.className = "link-picker-input";
+  input.setAttribute("autocomplete", "off");
+  input.placeholder = "輸入中文 / 拼音 / 代碼，從清單選取…";
+  const menu = document.createElement("div");
+  menu.className = "link-picker-menu";
+  menu.hidden = true;
+  wrap.append(chips, input, menu);
+  textarea.after(wrap);
+
+  let options = null;
+  let labelByValue = new Map();
+  let activeIndex = -1;
+  const ensureOptions = () => {
+    if (options) return;
+    options = buildOptions();
+    labelByValue = new Map(options.map((o) => [o.value, o.label]));
+  };
+  const getValues = () => splitList(textarea.value);
+  const setValues = (vals) => {
+    const unique = [...new Set(vals.filter(Boolean))];
+    textarea.value = unique.join("、");
+    renderChips(unique);
+  };
+  function renderChips(vals) {
+    chips.innerHTML = "";
+    vals.forEach((v) => {
+      const chip = document.createElement("span");
+      chip.className = "link-chip";
+      chip.textContent = labelByValue.get(v) || v;
+      const x = document.createElement("button");
+      x.type = "button";
+      x.textContent = "✕";
+      x.setAttribute("aria-label", "移除");
+      x.addEventListener("click", () => setValues(getValues().filter((val) => val !== v)));
+      chip.appendChild(x);
+      chips.appendChild(chip);
+    });
+  }
+  function closeMenu() { menu.hidden = true; activeIndex = -1; }
+  function addValue(v) {
+    setValues([...getValues(), v]);
+    input.value = "";
+    closeMenu();
+    input.focus();
+  }
+  function renderMenu() {
+    ensureOptions();
+    const q = input.value.trim().toLowerCase();
+    const qCompact = q.replace(/\s+/g, "");
+    const chosen = new Set(getValues());
+    const matches = !q ? [] : options
+      .filter((o) => !chosen.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
+      .slice(0, 8);
+    if (!matches.length) { closeMenu(); return; }
+    menu.innerHTML = "";
+    matches.forEach((o, i) => {
+      const el = document.createElement("div");
+      el.className = "link-picker-option" + (i === activeIndex ? " active" : "");
+      el.innerHTML = `<span></span><small></small>`;
+      el.firstChild.textContent = o.label;
+      el.lastChild.textContent = o.value;
+      el.addEventListener("mousedown", (e) => { e.preventDefault(); addValue(o.value); });
+      menu.appendChild(el);
+    });
+    menu.hidden = false;
+    menu._matches = matches;
+  }
+  input.addEventListener("input", () => { activeIndex = -1; renderMenu(); });
+  input.addEventListener("focus", () => { if (input.value.trim()) renderMenu(); });
+  input.addEventListener("blur", () => setTimeout(closeMenu, 120));
+  input.addEventListener("keydown", (e) => {
+    const m = menu._matches || [];
+    if (e.key === "ArrowDown") { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, m.length - 1); renderMenu(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); renderMenu(); }
+    else if (e.key === "Enter") {
+      if (m.length) { e.preventDefault(); addValue(m[activeIndex >= 0 ? activeIndex : 0].value); }
+    } else if (e.key === "Escape") { closeMenu(); }
+  });
+
+  linkPickerControllers[fieldName] = {
+    sync() { ensureOptions(); renderChips(getValues()); input.value = ""; closeMenu(); },
+  };
+}
+
+// Union helper: several link fields draw from an old (rendered) registry plus
+// the newer Track E canon; both id families are valid targets, dedupe by id.
+function dedupeOptions(list) {
+  const seen = new Set();
+  return list.filter((o) => (seen.has(o.value) ? false : (seen.add(o.value), true)));
+}
+
+function patternPickerOptions() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const lib = k.patternLibrary?.records || [];
+  const old = k.conditions?.tcm_patterns || [];
+  return dedupeOptions([...lib, ...old].map((p) => ({
+    value: p.id,
+    label: `${p.name_zh || p.id}${p.name_en ? " · " + p.name_en : ""}`,
+    terms: `${p.name_zh || ""} ${p.name_en || ""} ${p.id}`.toLowerCase(),
+    meta: p.id,
+  })));
+}
+
+function easternDiseasePickerOptions() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const tdis = k.tdisRegistry?.records || [];
+  const old = k.conditions?.eastern_diseases || [];
+  return dedupeOptions([...tdis, ...old].map((d) => ({
+    value: d.id,
+    label: `${d.name_zh || d.id}${d.pinyin ? " · " + d.pinyin : (d.name_en ? " · " + d.name_en : "")}`,
+    terms: `${d.name_zh || ""} ${d.pinyin || ""} ${d.name_en || ""} ${d.id}`.toLowerCase(),
+    meta: d.id,
+  })));
+}
+
+function westernConditionPickerOptions() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const canon = k.conditionCanon?.records || [];
+  const old = k.conditions?.records || [];
+  return dedupeOptions([...canon, ...old].map((c) => ({
+    value: c.id,
+    label: `${c.name_zh || c.id}${c.name_en ? " · " + c.name_en : ""}`,
+    terms: `${c.name_zh || ""} ${c.name_en || ""} ${c.icd_hint || ""} ${c.id}`.toLowerCase(),
+    meta: c.icd_hint || c.id,
+  })));
+}
+
+function medicationPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.medications?.records || [];
+  return records.map((m) => ({
+    value: m.id,
+    label: `${m.generic_name_en || m.id}${m.drug_class_en ? " · " + m.drug_class_en : ""}`,
+    terms: `${m.generic_name_en || ""} ${(m.brand_names_en || []).join(" ")} ${m.drug_class_en || ""} ${m.id}`.toLowerCase(),
+    meta: m.id,
+  }));
+}
+
+function safetyFlagPickerOptions() {
+  const flags = globalThis.ACUTING_KNOWLEDGE?.safetyFlags?.flags || [];
+  return flags.map((f) => ({
+    value: f.id,
+    label: `${f.label_zh || f.id}${f.label_en ? " · " + f.label_en : ""}`,
+    terms: `${f.label_zh || ""} ${f.label_en || ""} ${f.id}`.toLowerCase(),
+    meta: f.severity || f.id,
+  }));
+}
+
+function setupLinkAutocomplete() {
+  enhanceLinkField("acupointLinks", pointPickerOptions);
+  enhanceLinkField("formulaLinks", formulaPickerOptions);
+  enhanceLinkField("tcmPatternLinks", patternPickerOptions);
+  enhanceLinkField("easternDiseaseLinks", easternDiseasePickerOptions);
+  enhanceLinkField("westernConditionLinks", westernConditionPickerOptions);
+  enhanceLinkField("medicationLinks", medicationPickerOptions);
+  enhanceLinkField("safetyFlagLinks", safetyFlagPickerOptions);
+  // outcomeMetricLinks stays free text: entries carry values ("pain_score 7->4"),
+  // not bare ids — structured outcome entry is the LL-track item (LL2/LL5).
 }
 
 // --- SOAP note keyword linking: connect 用穴/方藥 free text to the knowledge base ---
@@ -2868,11 +3280,12 @@ function renderSoapNoteCard(note) {
     ...note.outcomeMetricLinks
   ];
   return `
-    <article class="soap-note">
+    <article class="soap-note" id="soap-${escapeAttribute(note.id)}">
       <div class="timeline-head">
         <h4>${escapeHtml(title)}</h4>
         <div class="case-actions">
           <small class="timeline-date">${escapeHtml([note.visitDate, note.fertilityPhase, note.cyclePhase, note.workflowLink, note.cycleDay ? `CD${note.cycleDay}` : ""].filter(Boolean).join(" · "))}</small>
+          ${verdictBadge(note.outcomeVerdict)}
           <button class="ghost" type="button" data-edit-soap="${escapeAttribute(note.id)}">編輯</button>
         </div>
       </div>
@@ -2908,12 +3321,49 @@ function renderSoapNoteCard(note) {
         <div><small>Safety links</small><span>${escapeHtml(formatNoteList(note.safetyFlagLinks))}</span></div>
         <div class="wide"><small>Treatment record links</small><span>${escapeHtml(formatNoteList(linkedRecords))}</span></div>
       </div>
+      ${(note.differentialConsidered || note.reflection || note.ifIneffectivePlan) ? `
+      <div class="soap-reflection-view">
+        ${note.differentialConsidered ? `<div><small>鑑別考量 Differential</small><span>${escapeHtml(note.differentialConsidered)}</span></div>` : ""}
+        ${note.reflection ? `<div><small>按語 Reflection</small><span>${escapeHtml(note.reflection)}</span></div>` : ""}
+        ${note.ifIneffectivePlan ? `<div><small>若無效 If ineffective</small><span>${escapeHtml(note.ifIneffectivePlan)}</span></div>` : ""}
+      </div>` : ""}
     </article>
   `;
 }
 
 function soapBlock(label, text) {
   return `<div class="soap-block"><strong>${label}</strong><p>${escapeHtml(text || "未填寫")}</p></div>`;
+}
+
+function verdictBadge(verdict) {
+  const v = OUTCOME_VERDICTS[verdict];
+  if (!v) return "";
+  return `<span class="verdict-badge verdict-${v.tone}">${escapeHtml(v.zh)} ${escapeHtml(v.en)}</span>`;
+}
+
+// CS5: compact horizontal outcome timeline — one node per visit (oldest left),
+// coloured by outcome_verdict, click to jump to that SOAP card. Turns the LL2
+// verdicts into the "did it work over time?" review artifact.
+function renderCaseTimeline(notes) {
+  if (!notes || notes.length < 1) return "";
+  const chrono = [...notes].reverse(); // notes arrive newest-first; show oldest→newest
+  const nodes = chrono.map((note) => {
+    const v = OUTCOME_VERDICTS[note.outcomeVerdict];
+    const tone = v ? v.tone : "none";
+    const label = note.visitNumber ? `#${note.visitNumber}` : (note.visitDate || "").slice(5);
+    const snippet = (note.outcomes || note.assessment || "").slice(0, 22);
+    return `
+      <button type="button" class="case-timeline-node" data-jump-soap="${escapeAttribute(note.id)}" title="${escapeAttribute([note.visitDate, v ? v.zh : ""].filter(Boolean).join(" · "))}">
+        <span class="ctl-dot verdict-dot-${tone}"></span>
+        <span class="ctl-label">${escapeHtml(label)}</span>
+        <small class="ctl-date">${escapeHtml((note.visitDate || "").slice(5))}</small>
+        ${snippet ? `<small class="ctl-snip">${escapeHtml(snippet)}</small>` : ""}
+      </button>`;
+  }).join("");
+  return `
+    <div class="case-timeline" aria-label="Outcome timeline">
+      <div class="case-timeline-track">${nodes}</div>
+    </div>`;
 }
 
 function selectPoint(code) {
@@ -3023,6 +3473,7 @@ function saveCaseFromForm(event) {
   }
   selectedCaseId = nextCase.id;
   persistClinicalCases();
+  noteClinicalSave();   // CS1
   caseDialog.close();
   render();
 }
@@ -3081,13 +3532,19 @@ function openSoapEditor(note = null) {
     medicationLinks: [],
     outcomes: "",
     outcomeMetricLinks: [],
-    followUp: ""
+    outcomeVerdict: "",
+    followUp: "",
+    differentialConsidered: "",
+    reflection: "",
+    ifIneffectivePlan: ""
   };
   const data = { ...fallback, ...(note || {}) };
   Object.entries(data).forEach(([key, value]) => {
     if (!soapForm.elements[key]) return;
     soapForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
+  setupLinkAutocomplete();                                   // CS4: idempotent
+  Object.values(linkPickerControllers).forEach((c) => c.sync());  // rebuild chips from hydrated values
   soapDialog.showModal();
 }
 
@@ -3134,7 +3591,11 @@ function saveSoapFromForm(event) {
     medicationLinks: splitList(data.medicationLinks),
     outcomes: data.outcomes.trim(),
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
+    outcomeVerdict: data.outcomeVerdict || "",
     followUp: data.followUp.trim(),
+    differentialConsidered: (data.differentialConsidered || "").trim(),
+    reflection: (data.reflection || "").trim(),
+    ifIneffectivePlan: (data.ifIneffectivePlan || "").trim(),
     createdAt: current?.createdAt || now,
     updatedAt: now
   });
@@ -3147,6 +3608,7 @@ function saveSoapFromForm(event) {
     return { ...item, soapNotes: notes, updatedAt: now };
   });
   persistClinicalCases();
+  noteClinicalSave();   // CS1
   soapDialog.close();
   render();
 }
@@ -3171,6 +3633,7 @@ function exportClinicalCases() {
   link.download = `acuting-clinical-cases-${new Date().toISOString().slice(0, 10)}.json`;
   link.click();
   URL.revokeObjectURL(url);
+  markCasesBackedUp();   // CS1: reset backup age + save counter
 }
 
 function importClinicalCases(event) {

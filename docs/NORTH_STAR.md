@@ -147,3 +147,11 @@ fires. The project's edge is curated data + discipline, not tech stack.
    push via the active branch/PR flow.
 5. If your work touches app.js, js/, or index.html structure — stop and
    confirm it is a Claude-designated task first.
+6. For knowledge-shape / learning-loop work (contrast tables, 按語 reflection,
+   recall/SRS, illness scripts), read docs/LEARNING_LOOP_TRACK.md — the
+   owner-approved brief supplement that layers those loops on the existing
+   record system without overriding this document.
+7. For specialty study (sports / cosmetic), mentor pearls (師承), lifestyle /
+   patient education, or integrative TCM+biomed cases, read
+   docs/SPECIALTY_EDUCATION_TRACK.md — specialty is a cross-cutting `domain`
+   TAG, never a per-specialty container (DECISIONS D8).
