@@ -154,6 +154,21 @@ migration for Ting.
   build bridge is not built yet (H2 storage upgrade).
 - **Reconsider only if:** never merge the two layers into one store.
 
+## D8 — Specialty is a cross-cutting `domain` TAG, never a container  · LOCKED (2026-07-15)
+
+- **What:** a specialty / practice area (internal, gyn_fertility, sports,
+  cosmetic, pain, …) is a multi-select `domain: []` tag on ONE canonical
+  record — never a per-specialty section/store/duplicate. ST36 is one record
+  tagged `["internal","sports","cosmetic"]`, not three copies.
+- **Why:** per-specialty rooms duplicate shared records; the copies drift and
+  contradict within a year and the validator can't keep them consistent.
+  Learning a new specialty = adding one value to the `domain` vocabulary.
+- **Current state:** no `domain` field yet. Introduce a controlled `domain`
+  vocabulary file + add `domain: []` additively to knowledge records.
+- **Reconsider only if:** never build a per-specialty container. Deciding
+  this now is one second; retrofitting after per-specialty rooms exist is a
+  full-DB merge. Source: docs/SPECIALTY_EDUCATION_TRACK.md (owner-endorsed).
+
 ---
 
 ## Sequencing (from the review) — do the painful things NOW

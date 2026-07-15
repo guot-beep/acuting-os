@@ -11,7 +11,8 @@ Document chain (read in this order when starting any session):
 4. docs/NORTH_STAR.md — direction + permanent rules
 5. AGENTS.md — safety rules (always wins on safety)
    (also read: DECISIONS.md — locked one-way doors;
-   docs/LEARNING_LOOP_TRACK.md — knowledge-shape / learning-loop supplement)
+   docs/LEARNING_LOOP_TRACK.md — knowledge-shape / learning-loop supplement;
+   docs/SPECIALTY_EDUCATION_TRACK.md — specialty domain-tag / pearls / lifestyle supplement)
 
 ## Rules of engagement (all agents, standing)
 
