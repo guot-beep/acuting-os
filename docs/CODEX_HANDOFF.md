@@ -37,6 +37,60 @@ CLAIMED: LL3 comparison fill on main (Codex, 2026-07-14) - filling one source-as
 
 ---
 
+## 2026-07-14 - Codex - LL3 unexplained infertility comparison source-assisted draft fill
+
+Date/time: 2026-07-14 evening
+Agent: Codex
+Branch: `main`
+Commit or stash: commit containing this entry (`LL3: fill unexplained infertility comparison draft`); final hash reported by Codex after push.
+Task: Fill `cmp.unexplained_infertility_patterns` using official biomedical infertility sources plus Ting Notion/Bastyr notes.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/knowledge/comparison_fill_unexplained_infertility.json`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `data/generated/knowledge_data.js`
+- `data/generated/app_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_CURRENT_STATUS.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/apply-comparison-fill.js unexplained_infertility`: dry-run PASS, 18 cells, 0 skipped, 11 metadata updates
+- `scripts/apply-comparison-fill.js unexplained_infertility --apply`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `scripts/report-comparison-fill.js`: PASS, queue now `filled_cells: 42`, `pending_cells: 132`, `complete_tables: 2`
+- `node --check scripts/apply-comparison-fill.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No CloudTCM point map edits.
+
+Known risks / manual checks:
+- This is not `source_checked`; it is `draft`, `public_safe: false`, and includes a no-medical-advice disclaimer.
+- Claude/Ting should review the infertility comparison wording against class materials before promoting it.
+- Official sources were used only for biomedical infertility context; TCM discriminator cells derive from Ting Notion/Bastyr notes.
+
+Next recommended action:
+- Browser spot-check Lookup -> Comparison Records -> unexplained infertility. It should show 18/18 cells filled.
+- Continue one source-assisted draft comparison table at a time if accepted.
+
+Claude review note:
+- This follows the accepted PCOS precedent: owner-authorized, source-cited `model_draft` cells, still draft/public_safe:false, no dosage/needling/ICD claims.
+
+---
+
 ## 2026-07-14 - Claude - LL3 REVIEWED + MERGED to main (Codex's work)
 
 Reviewed Codex's `ll3-comparison` (8 commits, tip 0d0e5c4) at Ting's request

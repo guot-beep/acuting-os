@@ -23,6 +23,33 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: unexplained infertility comparison source-assisted draft fill (Codex)
+
+Filled the second LL3 comparison table, `cmp.unexplained_infertility_patterns`,
+as a source-assisted draft. The table now compares Kidney deficiency, Liver qi
+stagnation, and Blood stasis across chief cue, tongue, pulse, accompanying
+signs, treatment principle, and representative formulas.
+
+Biomedical infertility context came from NIH/NICHD, MedlinePlus, and
+WomensHealth.gov. TCM discriminator language came from Ting's Notion/Bastyr
+gynecology, extraordinary fu / uterus, diagnosis, Yu syndrome, and blood
+pathology notes. The record remains `authored_by: "model_draft"`,
+`review_status: "draft"`, `public_safe: false`, and includes a no-medical-advice
+disclaimer.
+
+Added `data/knowledge/comparison_fill_unexplained_infertility.json`, applied it
+through `scripts/apply-comparison-fill.js`, rebuilt generated data, and refreshed
+`docs/COMPARISON_FILL_QUEUE.md`. Queue status is now 42 filled cells,
+132 pending cells, 9 empty tables, 2 complete tables.
+
+Validation: `scripts/apply-comparison-fill.js unexplained_infertility` dry-run
+PASS, `scripts/apply-comparison-fill.js unexplained_infertility --apply` PASS,
+`scripts/build-data.js`, `node --check scripts/apply-comparison-fill.js`,
+`validate-data`, `validate-interactions`, `validate-relations`,
+`validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+`validate-naming`, and JSON parse check PASS. `validate-encoding` remains
+expected FAIL with 768 known backlog findings.
+
 ### 2026-07-14 - Repo mailbox current-status hardening (Codex)
 
 Added `docs/CODEX_CURRENT_STATUS.md` as a single-screen coordination file so

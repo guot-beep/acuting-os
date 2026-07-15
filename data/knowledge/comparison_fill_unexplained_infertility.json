@@ -1,0 +1,60 @@
+{
+  "dataset": "comparison_fill",
+  "batch": "unexplained_infertility",
+  "purpose": "Source-assisted draft fill for the unexplained infertility pattern comparison table. Study context only; not medical advice.",
+  "review_status": "draft",
+  "source_policy": "Biomedical infertility context comes from official medical sources. TCM discriminator wording comes from Ting's Notion/Bastyr gynecology, diagnosis, and pathology notes. Keep draft until Ting/Claude source review.",
+  "fills": {
+    "cmp.unexplained_infertility_patterns": {
+      "title_en": "Unexplained infertility - pattern differentiation draft",
+      "seed_basis": "Source-assisted draft approved by Ting: infertility biomedical context from NIH/NICHD, MedlinePlus, and WomensHealth.gov; TCM pattern discriminator language from Ting's Notion/Bastyr gynecology, diagnosis, and pathology notes. Draft study comparison only; not medical advice.",
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "source_urls": [
+        "https://www.nichd.nih.gov/health/topics/infertility",
+        "https://medlineplus.gov/infertility.html",
+        "https://womenshealth.gov/a-z-topics/infertility",
+        "https://app.notion.com/p/37747f6dea35814d8bc2eabbcd9a5b07",
+        "https://app.notion.com/p/37747f6dea35818e8cd0fc8d21623365",
+        "https://app.notion.com/p/38547f6dea3581a59fccc6eb2a84df0e",
+        "https://app.notion.com/p/38647f6dea35813d8fd8c738a37a7611",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "https://app.notion.com/p/38b47f6dea35816ead62cc159b872dd3",
+        "https://app.notion.com/p/38b47f6dea35813e903fdb5f0ef67c94",
+        "https://app.notion.com/p/37747f6dea3581589a44ea0367e64975"
+      ],
+      "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-14",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose infertility, replace biomedical fertility evaluation, or recommend treatment.",
+      "notes_en": "Source-assisted draft approved by Ting. Biomedical infertility context is from official medical sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes. Keep draft until Ting or Claude reviews against class materials.",
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "Unexplained infertility context with delayed, scanty, irregular, or absent cycles plus Kidney signs: low back/knee soreness, fatigue, dizziness/tinnitus, low libido, or cold/heat deficiency clues. 不明原因不孕脈絡中，若見月經後期、量少、閉經或週期不穩，合併腰膝酸軟、疲倦、頭暈耳鳴、性功能/生殖力低下，優先辨腎虛。",
+          "Tongue / 舌": "Kidney Yang/Qi deficiency: pale, swollen, wet coat. Kidney Yin/Essence deficiency: red or scant/peeled coat. 腎陽/腎氣虛多舌淡胖、苔潤；腎陰/精虧多舌紅少苔或剝苔。",
+          "Pulse / 脈": "Deep and weak as the broad Kidney deficiency cue; deep-slow-weak for Yang deficiency, thin-rapid for Yin deficiency. 腎虛總以沉弱為主；陽虛偏沉遲無力，陰虛偏細數。",
+          "Key accompanying signs / 兼症": "Delayed cycles, scanty menses, amenorrhea, low back soreness, reproductive/Essence deficiency context; differentiate cold Yang deficiency from Yin deficiency heat signs. 月經後期、量少、閉經、腰痠，偏生殖/精虧脈絡；需分陽虛寒象與陰虛虛熱。",
+          "Treatment principle / 治法": "Tonify Kidney, support Essence, regulate Chong/Ren; warm Yang or nourish Yin according to the pattern. 補腎益精、調衝任；依證分溫腎陽或滋腎陰。",
+          "Representative formula / 代表方": "Study anchors: formula.liu_wei_di_huang_wan, formula.jin_gui_shen_qi_wan, formula.zuo_gui_wan, formula.you_gui_wan. 學習錨點：六味地黃丸、金匱腎氣丸、左歸丸、右歸丸。"
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "Unexplained infertility context with stress/emotional constraint, irregular cycles, PMS, breast distension, hypochondriac or lower abdominal distension, sighing, mood depression or irritability. 不明原因不孕脈絡中，若見情志鬱結、月經不調、經前乳脹、脅肋或少腹脹、善太息、鬱悶或易怒，偏肝氣鬱結。",
+          "Tongue / 舌": "Often normal to slightly dusky with thin white coat; red edges or thin yellow coat if constraint transforms into heat. 舌可正常或偏暗，苔薄白；鬱久化熱可見邊紅或薄黃苔。",
+          "Pulse / 脈": "Wiry; wiry-rapid if heat signs, wiry-choppy if blood stasis is also present. 脈弦；化熱偏弦數，夾瘀偏弦澀。",
+          "Key accompanying signs / 兼症": "Symptoms fluctuate with stress or emotion; distending rather than fixed pain; may overlap with Liver-Spleen disharmony digestive symptoms. 症狀常隨壓力/情緒波動，疼痛偏脹痛而非固定刺痛；可夾肝脾不調的消化症狀。",
+          "Treatment principle / 治法": "Soothe Liver, move qi, regulate menstruation and Chong/Ren; clear heat only when heat signs are present. 疏肝理氣、調經與衝任；有熱象時再兼清熱。",
+          "Representative formula / 代表方": "Study anchors: formula.xiao_yao_san, formula.jia_wei_xiao_yao_san, formula.chai_hu_shu_gan_san. 學習錨點：逍遙散、加味逍遙散、柴胡疏肝散。"
+        },
+        "pattern.blood_stasis": {
+          "Chief pattern cue / 主辨證線索": "Unexplained infertility context with fixed stabbing pelvic/lower abdominal pain, dysmenorrhea, dark-purple menstrual blood or clots, pain worse at night or pressure-sensitive; consider stasis when hidden endometriosis/fibroid/mass documentation context is being reviewed, without assuming a diagnosis. 不明原因不孕脈絡中，若見固定刺痛、痛經、經色紫暗有塊、夜間較重或拒按，偏血瘀；可作為內膜異位、肌瘤或癥塊等記錄脈絡的辨證提醒，但不可替代西醫診斷。",
+          "Tongue / 舌": "Dusky-purple tongue, purple spots, or sublingual venous engorgement. 舌紫暗、瘀點瘀斑，或舌下絡脈怒張。",
+          "Pulse / 脈": "Choppy; wiry-choppy when qi stagnation is also present. 脈澀；夾肝鬱氣滯時常見弦澀。",
+          "Key accompanying signs / 兼症": "Clots, fixed pain, purple coloration, masses or chronic pelvic pain documentation context; distinguish from Liver qi stagnation by fixed stabbing pain rather than moving distension. 血塊、固定痛、紫暗色、癥塊或慢性骨盆痛記錄脈絡；與肝鬱的走竄脹痛不同，血瘀偏固定刺痛。",
+          "Treatment principle / 治法": "Invigorate blood, transform stasis, regulate Chong/Ren; move qi when qi stagnation is part of the presentation. 活血化瘀、調衝任；若氣滯明顯則兼行氣。",
+          "Representative formula / 代表方": "Study anchors: formula.tao_hong_si_wu_tang, formula.gui_zhi_fu_ling_wan, formula.xue_fu_zhu_yu_tang, formula.wen_jing_tang when cold-stasis signs are present. 學習錨點：桃紅四物湯、桂枝茯苓丸、血府逐瘀湯；寒瘀時參考溫經湯。"
+        }
+      }
+    }
+  }
+}
