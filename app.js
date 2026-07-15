@@ -2979,6 +2979,7 @@ function renderClinicalCaseDetail(item) {
       <div><small>Western Dx</small><span>${escapeHtml(item.westernConditions.join("、") || "—")}</span></div>
     </div>
     ${renderCaseTags(item)}
+    ${renderCaseTimeline(notes)}
     <div class="timeline-head">
       <strong>SOAP Timeline</strong>
       <small class="timeline-date">${notes.length} notes</small>
@@ -2994,6 +2995,16 @@ function renderClinicalCaseDetail(item) {
     button.addEventListener("click", () => {
       const note = item.soapNotes.find((entry) => entry.id === button.dataset.editSoap);
       openSoapEditor(note);
+    });
+  });
+  // CS5: timeline node → scroll to that SOAP card + brief highlight
+  caseDetail.querySelectorAll("[data-jump-soap]").forEach((node) => {
+    node.addEventListener("click", () => {
+      const card = document.getElementById(`soap-${node.dataset.jumpSoap}`);
+      if (!card) return;
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.classList.add("soap-note-flash");
+      setTimeout(() => card.classList.remove("soap-note-flash"), 1200);
     });
   });
 }
@@ -3269,7 +3280,7 @@ function renderSoapNoteCard(note) {
     ...note.outcomeMetricLinks
   ];
   return `
-    <article class="soap-note">
+    <article class="soap-note" id="soap-${escapeAttribute(note.id)}">
       <div class="timeline-head">
         <h4>${escapeHtml(title)}</h4>
         <div class="case-actions">
@@ -3328,6 +3339,31 @@ function verdictBadge(verdict) {
   const v = OUTCOME_VERDICTS[verdict];
   if (!v) return "";
   return `<span class="verdict-badge verdict-${v.tone}">${escapeHtml(v.zh)} ${escapeHtml(v.en)}</span>`;
+}
+
+// CS5: compact horizontal outcome timeline — one node per visit (oldest left),
+// coloured by outcome_verdict, click to jump to that SOAP card. Turns the LL2
+// verdicts into the "did it work over time?" review artifact.
+function renderCaseTimeline(notes) {
+  if (!notes || notes.length < 1) return "";
+  const chrono = [...notes].reverse(); // notes arrive newest-first; show oldest→newest
+  const nodes = chrono.map((note) => {
+    const v = OUTCOME_VERDICTS[note.outcomeVerdict];
+    const tone = v ? v.tone : "none";
+    const label = note.visitNumber ? `#${note.visitNumber}` : (note.visitDate || "").slice(5);
+    const snippet = (note.outcomes || note.assessment || "").slice(0, 22);
+    return `
+      <button type="button" class="case-timeline-node" data-jump-soap="${escapeAttribute(note.id)}" title="${escapeAttribute([note.visitDate, v ? v.zh : ""].filter(Boolean).join(" · "))}">
+        <span class="ctl-dot verdict-dot-${tone}"></span>
+        <span class="ctl-label">${escapeHtml(label)}</span>
+        <small class="ctl-date">${escapeHtml((note.visitDate || "").slice(5))}</small>
+        ${snippet ? `<small class="ctl-snip">${escapeHtml(snippet)}</small>` : ""}
+      </button>`;
+  }).join("");
+  return `
+    <div class="case-timeline" aria-label="Outcome timeline">
+      <div class="case-timeline-track">${nodes}</div>
+    </div>`;
 }
 
 function selectPoint(code) {

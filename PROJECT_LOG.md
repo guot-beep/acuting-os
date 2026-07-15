@@ -23,6 +23,21 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-15 - CS5: visual case timeline on the case detail (Claude Code)
+
+Added a compact horizontal outcome timeline above the SOAP cards on each case:
+one node per visit (oldest→newest), a dot coloured by LL2 `outcomeVerdict`
+(green improved / amber no_change|worsened / grey none), visit#/date + a short
+outcome snippet; clicking a node smooth-scrolls to that SOAP card and briefly
+flashes it. This turns the LL2 verdicts into the "did it work over time?"
+review artifact (external-review Phase 4.7). Progressive/additive — reads
+existing localStorage notes, no data-model change; SOAP cards gained an
+`id="soap-<noteid>"` anchor for the jump. app.js + styles.css. node --check +
+validate-interactions PASS; browser QA (3-visit case): 3 nodes chronological,
+correct verdict-dot colours, card anchors present, node click flashes the
+target card, zero console errors. Branch cs5-timeline; Claude's lane, no Codex
+overlap (origin unchanged since CS3).
+
 ### 2026-07-15 - CS3: align schema.sql with LL1/LL2 + D5 cardinality (Claude Code)
 
 Claude's own lane (case/SOAP + schema.sql) while LL3 stays Codex's. The

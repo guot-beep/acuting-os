@@ -436,6 +436,55 @@ h1 {
 .verdict-good { background: #d9ead0; color: #34611f; }
 .verdict-watch { background: #f3e0c2; color: #8a5a1f; }
 .verdict-muted { background: #e6e6e6; color: #555; }
+
+/* CS5: horizontal outcome timeline on the case detail */
+.case-timeline {
+  margin: 0.6rem 0 0.2rem;
+  overflow-x: auto;
+}
+.case-timeline-track {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 0.3rem 0.1rem;
+  min-width: min-content;
+  border-top: 1px dashed #d8cdb0;
+  padding-top: 0.6rem;
+}
+.case-timeline-node {
+  flex: 0 0 auto;
+  min-width: 76px;
+  max-width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+  background: #fbf7ee;
+  border: 1px solid #e3d9c1;
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+  text-align: left;
+}
+.case-timeline-node:hover { border-color: var(--accent-dark); }
+.case-timeline-node .ctl-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  display: inline-block; background: #c9c9c9;
+}
+.verdict-dot-good { background: #4c8a2a !important; }
+.verdict-dot-watch { background: #c98a2a !important; }
+.verdict-dot-muted { background: #9a9a9a !important; }
+.verdict-dot-none { background: #d8d8d8 !important; }
+.case-timeline-node .ctl-label { font-weight: 700; font-size: 0.82rem; }
+.case-timeline-node .ctl-date { color: #7a6f56; font-size: 0.72rem; }
+.case-timeline-node .ctl-snip { color: #40484a; font-size: 0.72rem; line-height: 1.25; }
+.soap-note-flash {
+  animation: soapFlash 1.2s ease;
+}
+@keyframes soapFlash {
+  0% { background: #fdf3d6; }
+  100% { background: transparent; }
+}
 .learn-from-toggle {
   width: 100%;
   margin: 0.4rem 0;
