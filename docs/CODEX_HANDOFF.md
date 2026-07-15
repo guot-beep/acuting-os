@@ -3,6 +3,8 @@
 Purpose: shared repo mailbox for Codex -> Claude -> Ting coordination.
 
 Rules:
+- Read `docs/CODEX_CURRENT_STATUS.md` first for current branch / commit /
+  review state. Older entries below are historical snapshots.
 - Latest entry goes at the top.
 - Every meaningful Codex task should end with a clean working tree: committed + pushed, or explicitly named stash.
 - This file is the handoff source of truth for Claude review. Ting should not need to manually relay routine status.
@@ -26,12 +28,45 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Claude - LL3 REVIEWED + MERGED to main (Codex's work)
+
+Reviewed Codex's `ll3-comparison` (8 commits, tip 0d0e5c4) at Ting's request
+("審核，不重做"). Verdict: ACCEPT + merged to main via fast-forward
+(f4d13fd → 0d0e5c4, clean, zero conflicts).
+
+Review findings (cmp.pcos_patterns source-assisted fill):
+- Status hygiene correct: authored_by=model_draft, review_status=draft,
+  public_safe=false, not source_checked; medical disclaimer present.
+- Danger-zone scan (needling depth / dose / point location / ICD from memory):
+  ZERO hits — stays inside the safe boundary.
+- Wording is study-framed 辨證 (治法/主症/舌/脈), not patient-directed.
+- 7-validator sweep PASS on merged main.
+
+Policy note (acted on): LEARNING_LOOP_TRACK.md said discriminators are "never
+model-filled", which contradicted this Ting-authorized source-assisted fill.
+Reconciled the constraint to permit owner-authorized, source-cited model_draft
+fills that stay draft/public_safe:false and out of the danger zone. cmp.pcos
+is the recorded precedent.
+
+Coordination note (why the collision happened): Claude independently started a
+branch also named `ll3-comparison` for the same LL3 item, not knowing Codex
+owned it. No harm (Codex's pushed work won; Claude's duplicate was discarded).
+To prevent recurrence: an agent CLAIMING a track should add a one-line
+"CLAIMED: <track> on <branch> (agent, date)" marker at the TOP of this file;
+the other agent checks for it before starting. LL3 remains Codex-owned.
+
+Remaining on LL3 (Codex, per COMPARISON_FILL_QUEUE): 10 skeleton tables still
+0-filled (150 pending cells) — owner/source-assisted fills, one at a time,
+same draft discipline. Claude will stay off LL3.
+
+---
+
 ## 2026-07-14 - Codex - LL3 PCOS comparison source-assisted draft fill
 
 Date/time: 2026-07-14 evening
 Agent: Codex
-Branch: `ll3-comparison`
-Commit or stash: pending at time of entry.
+Branch: `main` (also contained in `ll3-comparison`)
+Commit or stash: `PUSHED_READY_FOR_CLAUDE_REVIEW` - commit `0d0e5c4` (`LL3: fill PCOS pattern comparison draft`)
 Task: Fill `cmp.pcos_patterns` using official biomedical sources plus Ting Notion/Bastyr notes.
 
 Files changed:

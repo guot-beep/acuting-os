@@ -45,6 +45,14 @@ sequencing section).
   (D1) and it is retired via `review_status="deprecated"`, never deleted (D6).
 - **Never author clinical content from model memory** — no needling depths,
   doses, point locations, ICD codes, and especially not LL4 `discriminators`.
+  EXCEPTION (owner-authorized source-assisted drafts): the owner MAY authorize
+  an agent to draft LL3/LL4 discriminator content FROM cited sources (official
+  medical references + the owner's own class/clinic notes). Such fills must
+  stay `authored_by="model_draft"`, `review_status="draft"`, `public_safe:false`,
+  carry `source_urls`/`source_type`, and NEVER contain the danger-zone facts
+  above (needling depth/dose/point location/ICD from memory). They remain draft
+  until the owner reviews against class materials. (Precedent: cmp.pcos_patterns,
+  Codex source-assisted fill authorized by Ting, reviewed by Claude 2026-07-14.)
 - Low friction is survival. Every field added here is OPTIONAL and must not slow
   routine SOAP entry. Progressive disclosure by default.
 
