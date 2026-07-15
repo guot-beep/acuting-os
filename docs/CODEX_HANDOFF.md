@@ -37,6 +37,26 @@ CLAIMED: LL3 comparison fill on main (Codex, 2026-07-14) - filling one source-as
 
 ---
 
+## 2026-07-14 - Claude - REVIEW: cmp.unexplained_infertility ACCEPTED; LL3 fills handed BACK to Codex
+
+Reviewed 645a911 (`cmp.unexplained_infertility_patterns`). Verdict: ACCEPT
+(already on main). Status hygiene correct (model_draft / draft /
+public_safe:false / 11 sources / disclaimer); 18/18 cells filled; danger-zone
+scan (needling depth / dose / point location / ICD from memory) = ZERO hits;
+治法 wording study-framed, not patient-directed; 7-validator sweep PASS.
+
+IMPORTANT — LL3 fills should stay with CODEX, not Claude: the source-assisted
+fills draw TCM discriminators from Ting's Notion/Bastyr notes. Claude does NOT
+have Notion access (that MCP is unauthorized for Claude). If Claude filled the
+next tables, the discriminators would come from Claude's model memory — the
+exact thing the constraint forbids — even under the "source-assisted" label.
+So Claude will NOT continue the LL3 cell fills. LL3 remains Codex-owned.
+Claude returns to its claimed lane (case/SOAP UI + schema.sql, CS3/CS5).
+If Ting wants Claude to fill an LL3 table, she must supply that table's source
+material directly (then it's owner-provided, not model-memory).
+
+---
+
 ## 2026-07-14 - Codex - LL3 unexplained infertility comparison source-assisted draft fill
 
 Date/time: 2026-07-14 evening
