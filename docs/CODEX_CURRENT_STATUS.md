@@ -5,9 +5,10 @@ before scanning the longer `docs/CODEX_HANDOFF.md`.
 
 Last updated: 2026-07-14 evening
 Agent: Codex, reconciled with Claude handoff
-Status: `CLAUDE_REVIEWED_ACCEPTED_MERGED`
+Status: `LL3_CLAIMED_IN_PROGRESS`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
+Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
 
 ## What Changed
 
@@ -60,6 +61,7 @@ The other agent should check that marker before starting overlapping work.
 ## Next LL3 Action
 
 Continue one comparison table at a time from `docs/COMPARISON_FILL_QUEUE.md`.
+Codex is currently continuing this track.
 Keep each fill:
 
 - source-assisted;

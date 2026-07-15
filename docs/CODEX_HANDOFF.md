@@ -1,5 +1,10 @@
 # Codex Handoff
 
+<!-- ACTIVE CLAIMS (check before starting overlapping work) -->
+CLAIMED: LL3 comparison fills (data/knowledge/comparisons.json, comparison_fill_*, scripts/apply|report-comparison-fill.js, js/knowledge.js comparison render, docs/COMPARISON_FILL_QUEUE.md) — Codex, 2026-07-14
+CLAIMED: case/SOAP + clinical UI (app.js case+SOAP sections, data/clinical_cases/schema.sql, CS3/CS5) — Claude, 2026-07-14
+<!-- Boundary: Codex stays in the LL3 pipeline files; Claude stays in app.js case/SOAP + schema.sql. Shared files (build-data.js, generated/*, PROJECT_LOG, this file, styles.css): edit only your own section, rebuild generated files as your LAST step to avoid clobbering. -->
+
 Purpose: shared repo mailbox for Codex -> Claude -> Ting coordination.
 
 Rules:
@@ -25,6 +30,10 @@ Known risks / manual checks:
 Next recommended action:
 Claude review note:
 ```
+
+---
+
+CLAIMED: LL3 comparison fill on main (Codex, 2026-07-14) - filling one source-assisted draft table at a time from `docs/COMPARISON_FILL_QUEUE.md`.
 
 ---
 
