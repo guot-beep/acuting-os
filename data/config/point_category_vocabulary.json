@@ -1,0 +1,32 @@
+{
+  "dataset": "point_category_vocabulary",
+  "policy": "Controlled vocabulary for 特定穴 (specific-point) tags — docs/POINT_CATEGORY_TAGS_DESIGN.md. Every id used in a point's point_categories[] MUST exist here (validate-point-categories enforces). Membership (which point codes belong to each category) lives in point_category_members.json. Bilingual names verified against a standard TCM point-category handout + Deadman naming. v1 = closed board-standard sets only.",
+  "version": "v1",
+  "created": "2026-07-15",
+  "five_shu_element_rule": {
+    "yin_channels": { "jing_well": "wood", "ying_spring": "fire", "shu_stream": "earth", "jing_river": "metal", "he_sea": "water" },
+    "yang_channels": { "jing_well": "metal", "ying_spring": "water", "shu_stream": "wood", "jing_river": "fire", "he_sea": "earth" }
+  },
+  "categories": [
+    { "id": "five_shu.jing_well", "group": "five_shu", "label_zh": "井穴", "pinyin": "jǐng", "label_en": "Jing-Well point", "alt_en": "Well point", "expected_count": 12 },
+    { "id": "five_shu.ying_spring", "group": "five_shu", "label_zh": "滎穴", "pinyin": "yíng", "label_en": "Ying-Spring point", "alt_en": "Spring point", "expected_count": 12 },
+    { "id": "five_shu.shu_stream", "group": "five_shu", "label_zh": "輸穴", "pinyin": "shū", "label_en": "Shu-Stream point", "alt_en": "Stream point", "expected_count": 12 },
+    { "id": "five_shu.jing_river", "group": "five_shu", "label_zh": "經穴", "pinyin": "jīng", "label_en": "Jing-River point", "alt_en": "River point", "expected_count": 12 },
+    { "id": "five_shu.he_sea", "group": "five_shu", "label_zh": "合穴", "pinyin": "hé", "label_en": "He-Sea point", "alt_en": "Sea point", "expected_count": 12 },
+    { "id": "yuan", "group": "source", "label_zh": "原穴", "pinyin": "yuán", "label_en": "Yuan-Source point", "alt_en": "Source point", "expected_count": 12 },
+    { "id": "luo", "group": "connecting", "label_zh": "絡穴", "pinyin": "luò", "label_en": "Luo-Connecting point", "alt_en": "Connecting / Collateral point", "expected_count": 15 },
+    { "id": "xi", "group": "cleft", "label_zh": "郄穴", "pinyin": "xì", "label_en": "Xi-Cleft point", "alt_en": "Cleft / Accumulation point", "expected_count": 16 },
+    { "id": "back_shu", "group": "back_shu", "label_zh": "背俞穴", "pinyin": "bèi shù", "label_en": "Back-Shu point", "alt_en": "Back-Transporting / Associated point", "expected_count": 12 },
+    { "id": "front_mu", "group": "front_mu", "label_zh": "募穴", "pinyin": "mù", "label_en": "Front-Mu point", "alt_en": "Alarm / Collecting point", "expected_count": 12 },
+    { "id": "influential.zang", "group": "influential", "label_zh": "臟會", "pinyin": "zàng huì", "label_en": "Influential point of the Zang", "alt_en": "Gathering point (organ)", "expected_count": 1 },
+    { "id": "influential.fu", "group": "influential", "label_zh": "腑會", "pinyin": "fǔ huì", "label_en": "Influential point of the Fu", "alt_en": "Gathering point (bowel)", "expected_count": 1 },
+    { "id": "influential.qi", "group": "influential", "label_zh": "氣會", "pinyin": "qì huì", "label_en": "Influential point of Qi", "alt_en": "", "expected_count": 1 },
+    { "id": "influential.xue", "group": "influential", "label_zh": "血會", "pinyin": "xuè huì", "label_en": "Influential point of Blood", "alt_en": "", "expected_count": 1 },
+    { "id": "influential.jin", "group": "influential", "label_zh": "筋會", "pinyin": "jīn huì", "label_en": "Influential point of the Sinews", "alt_en": "", "expected_count": 1 },
+    { "id": "influential.mai", "group": "influential", "label_zh": "脈會", "pinyin": "mài huì", "label_en": "Influential point of the Vessels", "alt_en": "", "expected_count": 1 },
+    { "id": "influential.gu", "group": "influential", "label_zh": "骨會", "pinyin": "gǔ huì", "label_en": "Influential point of the Bones", "alt_en": "", "expected_count": 1 },
+    { "id": "influential.sui", "group": "influential", "label_zh": "髓會", "pinyin": "suǐ huì", "label_en": "Influential point of the Marrow", "alt_en": "", "expected_count": 1 },
+    { "id": "confluent", "group": "confluent", "label_zh": "八脈交會穴", "pinyin": "bā mài jiāo huì", "label_en": "Eight Confluent point", "alt_en": "Confluence / Master point", "expected_count": 8 },
+    { "id": "lower_he", "group": "lower_he", "label_zh": "下合穴", "pinyin": "xià hé", "label_en": "Lower He-Sea point", "alt_en": "Lower Uniting / Lower Sea point", "expected_count": 6 }
+  ]
+}

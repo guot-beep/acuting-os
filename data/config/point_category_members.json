@@ -1,0 +1,368 @@
+{
+  "dataset": "point_category_members",
+  "policy": "Which point codes belong to each 特定穴 category (docs/POINT_CATEGORY_TAGS_DESIGN.md §5). Single source of truth for scripts/apply-point-categories.js (writes point_categories[] + five_shu_element onto 361.json) and scripts/validate-point-categories.js. Membership is board-standard textbook fact; codes are verified against a standard handout. five_shu holds the code -> {category, element} map (element encodes 五行 for 補母瀉子).",
+  "created": "2026-07-15",
+  "five_shu": {
+    "LU11": {
+      "category": "five_shu.jing_well",
+      "element": "wood"
+    },
+    "LU10": {
+      "category": "five_shu.ying_spring",
+      "element": "fire"
+    },
+    "LU9": {
+      "category": "five_shu.shu_stream",
+      "element": "earth"
+    },
+    "LU8": {
+      "category": "five_shu.jing_river",
+      "element": "metal"
+    },
+    "LU5": {
+      "category": "five_shu.he_sea",
+      "element": "water"
+    },
+    "LI1": {
+      "category": "five_shu.jing_well",
+      "element": "metal"
+    },
+    "LI2": {
+      "category": "five_shu.ying_spring",
+      "element": "water"
+    },
+    "LI3": {
+      "category": "five_shu.shu_stream",
+      "element": "wood"
+    },
+    "LI5": {
+      "category": "five_shu.jing_river",
+      "element": "fire"
+    },
+    "LI11": {
+      "category": "five_shu.he_sea",
+      "element": "earth"
+    },
+    "ST45": {
+      "category": "five_shu.jing_well",
+      "element": "metal"
+    },
+    "ST44": {
+      "category": "five_shu.ying_spring",
+      "element": "water"
+    },
+    "ST43": {
+      "category": "five_shu.shu_stream",
+      "element": "wood"
+    },
+    "ST41": {
+      "category": "five_shu.jing_river",
+      "element": "fire"
+    },
+    "ST36": {
+      "category": "five_shu.he_sea",
+      "element": "earth"
+    },
+    "SP1": {
+      "category": "five_shu.jing_well",
+      "element": "wood"
+    },
+    "SP2": {
+      "category": "five_shu.ying_spring",
+      "element": "fire"
+    },
+    "SP3": {
+      "category": "five_shu.shu_stream",
+      "element": "earth"
+    },
+    "SP5": {
+      "category": "five_shu.jing_river",
+      "element": "metal"
+    },
+    "SP9": {
+      "category": "five_shu.he_sea",
+      "element": "water"
+    },
+    "HT9": {
+      "category": "five_shu.jing_well",
+      "element": "wood"
+    },
+    "HT8": {
+      "category": "five_shu.ying_spring",
+      "element": "fire"
+    },
+    "HT7": {
+      "category": "five_shu.shu_stream",
+      "element": "earth"
+    },
+    "HT4": {
+      "category": "five_shu.jing_river",
+      "element": "metal"
+    },
+    "HT3": {
+      "category": "five_shu.he_sea",
+      "element": "water"
+    },
+    "SI1": {
+      "category": "five_shu.jing_well",
+      "element": "metal"
+    },
+    "SI2": {
+      "category": "five_shu.ying_spring",
+      "element": "water"
+    },
+    "SI3": {
+      "category": "five_shu.shu_stream",
+      "element": "wood"
+    },
+    "SI5": {
+      "category": "five_shu.jing_river",
+      "element": "fire"
+    },
+    "SI8": {
+      "category": "five_shu.he_sea",
+      "element": "earth"
+    },
+    "BL67": {
+      "category": "five_shu.jing_well",
+      "element": "metal"
+    },
+    "BL66": {
+      "category": "five_shu.ying_spring",
+      "element": "water"
+    },
+    "BL65": {
+      "category": "five_shu.shu_stream",
+      "element": "wood"
+    },
+    "BL60": {
+      "category": "five_shu.jing_river",
+      "element": "fire"
+    },
+    "BL40": {
+      "category": "five_shu.he_sea",
+      "element": "earth"
+    },
+    "KI1": {
+      "category": "five_shu.jing_well",
+      "element": "wood"
+    },
+    "KI2": {
+      "category": "five_shu.ying_spring",
+      "element": "fire"
+    },
+    "KI3": {
+      "category": "five_shu.shu_stream",
+      "element": "earth"
+    },
+    "KI7": {
+      "category": "five_shu.jing_river",
+      "element": "metal"
+    },
+    "KI10": {
+      "category": "five_shu.he_sea",
+      "element": "water"
+    },
+    "PC9": {
+      "category": "five_shu.jing_well",
+      "element": "wood"
+    },
+    "PC8": {
+      "category": "five_shu.ying_spring",
+      "element": "fire"
+    },
+    "PC7": {
+      "category": "five_shu.shu_stream",
+      "element": "earth"
+    },
+    "PC5": {
+      "category": "five_shu.jing_river",
+      "element": "metal"
+    },
+    "PC3": {
+      "category": "five_shu.he_sea",
+      "element": "water"
+    },
+    "TE1": {
+      "category": "five_shu.jing_well",
+      "element": "metal"
+    },
+    "TE2": {
+      "category": "five_shu.ying_spring",
+      "element": "water"
+    },
+    "TE3": {
+      "category": "five_shu.shu_stream",
+      "element": "wood"
+    },
+    "TE6": {
+      "category": "five_shu.jing_river",
+      "element": "fire"
+    },
+    "TE10": {
+      "category": "five_shu.he_sea",
+      "element": "earth"
+    },
+    "GB44": {
+      "category": "five_shu.jing_well",
+      "element": "metal"
+    },
+    "GB43": {
+      "category": "five_shu.ying_spring",
+      "element": "water"
+    },
+    "GB41": {
+      "category": "five_shu.shu_stream",
+      "element": "wood"
+    },
+    "GB38": {
+      "category": "five_shu.jing_river",
+      "element": "fire"
+    },
+    "GB34": {
+      "category": "five_shu.he_sea",
+      "element": "earth"
+    },
+    "LR1": {
+      "category": "five_shu.jing_well",
+      "element": "wood"
+    },
+    "LR2": {
+      "category": "five_shu.ying_spring",
+      "element": "fire"
+    },
+    "LR3": {
+      "category": "five_shu.shu_stream",
+      "element": "earth"
+    },
+    "LR4": {
+      "category": "five_shu.jing_river",
+      "element": "metal"
+    },
+    "LR8": {
+      "category": "five_shu.he_sea",
+      "element": "water"
+    }
+  },
+  "membership": {
+    "yuan": [
+      "LU9",
+      "LI4",
+      "ST42",
+      "SP3",
+      "HT7",
+      "SI4",
+      "BL64",
+      "KI3",
+      "PC7",
+      "TE4",
+      "GB40",
+      "LR3"
+    ],
+    "luo": [
+      "LU7",
+      "LI6",
+      "ST40",
+      "SP4",
+      "HT5",
+      "SI7",
+      "BL58",
+      "KI4",
+      "PC6",
+      "TE5",
+      "GB37",
+      "LR5",
+      "CV15",
+      "GV1",
+      "SP21"
+    ],
+    "xi": [
+      "LU6",
+      "LI7",
+      "ST34",
+      "SP8",
+      "HT6",
+      "SI6",
+      "BL63",
+      "KI5",
+      "PC4",
+      "TE7",
+      "GB36",
+      "LR6",
+      "BL59",
+      "KI8",
+      "GB35",
+      "KI9"
+    ],
+    "back_shu": [
+      "BL13",
+      "BL14",
+      "BL15",
+      "BL18",
+      "BL19",
+      "BL20",
+      "BL21",
+      "BL22",
+      "BL23",
+      "BL25",
+      "BL27",
+      "BL28"
+    ],
+    "front_mu": [
+      "LU1",
+      "ST25",
+      "CV12",
+      "LR13",
+      "CV14",
+      "CV4",
+      "CV3",
+      "GB25",
+      "CV17",
+      "CV5",
+      "GB24",
+      "LR14"
+    ],
+    "influential.zang": [
+      "LR13"
+    ],
+    "influential.fu": [
+      "CV12"
+    ],
+    "influential.qi": [
+      "CV17"
+    ],
+    "influential.xue": [
+      "BL17"
+    ],
+    "influential.jin": [
+      "GB34"
+    ],
+    "influential.mai": [
+      "LU9"
+    ],
+    "influential.gu": [
+      "BL11"
+    ],
+    "influential.sui": [
+      "GB39"
+    ],
+    "confluent": [
+      "SP4",
+      "PC6",
+      "SI3",
+      "BL62",
+      "GB41",
+      "TE5",
+      "LU7",
+      "KI6"
+    ],
+    "lower_he": [
+      "ST36",
+      "ST37",
+      "ST39",
+      "BL40",
+      "BL39",
+      "GB34"
+    ]
+  }
+}
