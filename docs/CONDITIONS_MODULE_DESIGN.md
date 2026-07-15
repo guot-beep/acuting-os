@@ -89,6 +89,26 @@ uro_renal 8, ent_eye 6, immune_misc 3. Total ≈ 150.
 Pattern library expansion: ~50 standard patterns covering the NCCAOM
 differential-diagnosis core (currently 9 exist).
 
+## Verification authority (Ting, 2026-07-12)
+
+Tier-1 authority for the 西醫↔中醫病名 mapping layer: 台灣《中西醫病名對照
+大辭典》(林昭庚 主編) — Ting's designated authoritative reference.
+Rules:
+- The mapping layer Claude built (condition_canon_shortlist related_eastern_
+  diseases / related_patterns) stays DRAFT until checked against this
+  dictionary per condition; on verification, record source as
+  「中西醫病名對照大辭典, 冊/頁」 in sources[] and upgrade source_status to
+  "taiwan_dictionary_checked".
+- Where the dictionary and the draft mapping disagree, the dictionary wins
+  for 病名對照 (disease-name correspondence); pattern links (證型) follow
+  中醫內科學/婦科學 textbook logic and NCCAOM scope.
+- icd_hint should align with the dictionary's ICD correspondence when the
+  entry provides one.
+- Practical workflow: Ting owns/accesses the dictionary; verification
+  happens in her review batches (like WHO SAPL for point locations) —
+  agents prepare per-category worksheets listing draft mappings side-by-side
+  for her to check against the dictionary.
+
 ## Safety wording rules (permanent)
 
 - Western summaries/context are documentation language: "commonly managed
