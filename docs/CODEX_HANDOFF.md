@@ -66,7 +66,7 @@ same draft discipline. Claude will stay off LL3.
 Date/time: 2026-07-14 evening
 Agent: Codex
 Branch: `main` (also contained in `ll3-comparison`)
-Commit or stash: `PUSHED_READY_FOR_CLAUDE_REVIEW` - commit `0d0e5c4` (`LL3: fill PCOS pattern comparison draft`)
+Commit or stash: commit `0d0e5c4` (`LL3: fill PCOS pattern comparison draft`); later reviewed and merged by Claude, see entry above.
 Task: Fill `cmp.pcos_patterns` using official biomedical sources plus Ting Notion/Bastyr notes.
 
 Files changed:

@@ -23,6 +23,23 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - Repo mailbox current-status hardening (Codex)
+
+Added `docs/CODEX_CURRENT_STATUS.md` as a single-screen coordination file so
+Claude/Ting/Codex can see the current branch, latest commit, review state, and
+next action without scanning older handoff entries. Updated
+`docs/CODEX_HANDOFF.md` to say that older `pending at time of entry` phrases
+are historical snapshots and that `CODEX_CURRENT_STATUS.md` is the current
+status source.
+
+Current status now explicitly says `0d0e5c4` (`LL3: fill PCOS pattern
+comparison draft`) was reviewed, accepted, and merged by Claude on `main`.
+It also records the new coordination rule: an agent should add a `CLAIMED:
+<track> on <branch>` marker before starting overlapping multi-step work.
+
+Validation: docs-only change; no data or runtime files changed. `git status`
+was clean before edits.
+
 ### 2026-07-14 - LL3: PCOS comparison source-assisted draft fill (Codex)
 
 Filled the first LL3 comparison table, `cmp.pcos_patterns`, as a
