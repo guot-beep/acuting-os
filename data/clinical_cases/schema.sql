@@ -111,9 +111,29 @@ CREATE TABLE IF NOT EXISTS visits (
   plan_en TEXT,
   next_follow_up TEXT,
   safety_flags TEXT,
+  -- LL2: per-visit outcome verdict (improved | no_change | worsened | lost_followup).
+  -- Feeds the "cases to learn from" review. Mirrors the localStorage outcomeVerdict.
+  outcome_verdict TEXT,
+  -- LL1 按語: optional structured reflection (mirrors the localStorage SOAP fields).
+  reflection_differential_considered TEXT,
+  reflection_note TEXT,
+  reflection_if_ineffective_plan TEXT,
   created_at TEXT,
   updated_at TEXT,
   FOREIGN KEY (case_id) REFERENCES cases(id)
+);
+
+-- D5 cardinality: one visit -> many TCM patterns, with is_primary. This is the
+-- canonical relation; soap_notes.assessment_tcm_pattern_ids stays as a
+-- migration-source text blob until a fill moves it here. A visit having several
+-- co-existing patterns (e.g. 肝鬱脾虛 + 腎陰虛) must be first-class.
+CREATE TABLE IF NOT EXISTS visit_tcm_patterns (
+  visit_id TEXT NOT NULL,
+  pattern_id TEXT NOT NULL,
+  is_primary INTEGER DEFAULT 0,
+  note TEXT,
+  PRIMARY KEY (visit_id, pattern_id),
+  FOREIGN KEY (visit_id) REFERENCES visits(id)
 );
 
 CREATE TABLE IF NOT EXISTS soap_notes (

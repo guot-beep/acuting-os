@@ -23,6 +23,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-15 - CS3: align schema.sql with LL1/LL2 + D5 cardinality (Claude Code)
+
+Claude's own lane (case/SOAP + schema.sql) while LL3 stays Codex's. The
+future SQLite clinical store already had `visit_outcomes` (structured) +
+`case_reflections`, so CS3 shrank to aligning `data/clinical_cases/schema.sql`
+with what's now in localStorage: (1) `visits.outcome_verdict` (LL2:
+improved/no_change/worsened/lost_followup); (2) visit-level LL1 反思 columns
+(reflection_differential_considered / reflection_note / reflection_if_ineffective_plan);
+(3) NEW `visit_tcm_patterns` junction with `is_primary` — the D5 "one visit →
+many patterns" cardinality (soap_notes.assessment_tcm_pattern_ids stays as the
+migration-source text blob). Validated by executing the whole schema against an
+in-memory SQLite (node:sqlite) — 20 tables, all three additions present, and an
+insert smoke test (visit+verdict+pattern junction) passed. Schema-only, not
+wired to the app yet (localStorage remains the store until the H2 migration);
+this is DECISIONS D5 "set cardinality while data is disposable" prep. Standard
+validators unaffected (schema.sql isn't app-loaded). Also reviewed + accepted
+Codex's 645a911 (unexplained infertility fill) earlier; recorded that LL3 fills
+stay with Codex since Claude lacks the Notion source.
+
 ### 2026-07-14 - LL3: unexplained infertility comparison source-assisted draft fill (Codex)
 
 Filled the second LL3 comparison table, `cmp.unexplained_infertility_patterns`,

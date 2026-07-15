@@ -3,6 +3,7 @@
 <!-- ACTIVE CLAIMS (check before starting overlapping work) -->
 CLAIMED: LL3 comparison fills (data/knowledge/comparisons.json, comparison_fill_*, scripts/apply|report-comparison-fill.js, js/knowledge.js comparison render, docs/COMPARISON_FILL_QUEUE.md) — Codex, 2026-07-14
 CLAIMED: case/SOAP + clinical UI (app.js case+SOAP sections, data/clinical_cases/schema.sql, CS3/CS5) — Claude, 2026-07-14
+DONE 2026-07-15 (Claude): CS3 — schema.sql gained visits.outcome_verdict (LL2), visit-level LL1 reflection cols, and a visit_tcm_patterns junction with is_primary (D5). Validated via node:sqlite in-memory exec. Schema-only; not app-wired. Claude still owns this lane; next: CS5 case timeline UI (app.js).
 <!-- Boundary: Codex stays in the LL3 pipeline files; Claude stays in app.js case/SOAP + schema.sql. Shared files (build-data.js, generated/*, PROJECT_LOG, this file, styles.css): edit only your own section, rebuild generated files as your LAST step to avoid clobbering. -->
 
 Purpose: shared repo mailbox for Codex -> Claude -> Ting coordination.
