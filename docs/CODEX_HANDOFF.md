@@ -26,6 +26,54 @@ Claude review note:
 
 ---
 
+## 2026-07-14 - Codex - LL3 comparison fill queue report
+
+Date/time: 2026-07-14 afternoon
+Agent: Codex
+Branch: `ll3-comparison`
+Commit or stash: commit containing this entry (`LL3: add comparison fill queue report`); final hash reported by Codex after push.
+Task: Add generated LL3 comparison fill queue report.
+
+Files changed:
+- `scripts/report-comparison-fill.js`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check scripts/report-comparison-fill.js`: PASS
+- `scripts/report-comparison-fill.js`: PASS, 11 records, 174 pending cells
+- UTF-8 content spot-check on generated report: PASS, Chinese strings are valid UTF-8
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No comparison/discriminator cells filled.
+
+Known risks / manual checks:
+- `docs/COMPARISON_FILL_QUEUE.md` is generated documentation; rerun the script after Ting fills cells.
+- PowerShell `Get-Content` may display Chinese mojibake in this environment, but Node UTF-8 spot-check confirmed the file content is correct.
+- The report intentionally lists pending axes only, not clinical answers.
+
+Next recommended action:
+- Ting can use `docs/COMPARISON_FILL_QUEUE.md` as the LL3 owner-fill checklist.
+- Claude can decide whether to keep this generated doc or prefer script-only reporting.
+
+Claude review note:
+- Script is read-only over knowledge JSON and writes a Markdown queue; it does not modify canonical data.
+
+---
+
 ## 2026-07-14 - Codex - LL3 comparison fill-progress summary
 
 Date/time: 2026-07-14 afternoon

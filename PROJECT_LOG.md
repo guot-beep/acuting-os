@@ -23,6 +23,23 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-14 - LL3: comparison fill queue report (Codex)
+
+Added `scripts/report-comparison-fill.js`, a UTF-8 Node report generator for
+LL3 comparison records. It writes `docs/COMPARISON_FILL_QUEUE.md` from
+`data/knowledge/comparisons.json`, listing table-level progress and pending
+axes without adding or filling any clinical discriminator content.
+
+Current queue: 11 comparison records, 0 filled cells, 174 pending cells,
+11 empty tables, 0 partial tables, 0 complete tables. This gives Ting a
+concrete owner-fill checklist for class notes / textbook-based completion.
+
+Validation: `node --check scripts/report-comparison-fill.js`,
+`scripts/report-comparison-fill.js`, `validate-data`, `validate-interactions`,
+`validate-relations`, `validate-herbal-links`, `validate-herb-canon`,
+`validate-point-ids`, `validate-naming`, and JSON parse check PASS.
+`validate-encoding` remains expected FAIL with 768 known backlog findings.
+
 ### 2026-07-14 - LL3: comparison fill-progress summary (Codex)
 
 Added a compact fill-progress summary to the Lookup comparison section. The
