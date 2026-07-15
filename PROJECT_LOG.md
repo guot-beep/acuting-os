@@ -23,6 +23,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-15 - PC1–PC3: 特定穴 category tags on 361.json (Claude Code)
+
+Executed the point-category tag layer (docs/POINT_CATEGORY_TAGS_DESIGN.md),
+gate opened by Ting. PC1: data/config/point_category_vocabulary.json (v1
+controlled vocab, 20 category ids + five-shu element rule). Membership single
+source of truth: data/config/point_category_members.json (generated from
+channel-ordered five-shu + polarity + the closed §5 code lists). PC2:
+scripts/apply-point-categories.js (adds-only) tagged 129 distinct points with
+point_categories[] + five_shu_element on 60 (five-shu) — 361.json additive,
+review_status untouched (a factual tag is not a promotion). PC3:
+scripts/validate-point-categories.js enforces id∈vocab, per-category counts ==
+expected (原穴12/絡穴15/郄穴16/背俞12/募穴12/八會8/八脈交會8/下合6/五輸60),
+no membership drift, and five_shu_element validity — added to the standard
+sweep. Self-tested: bad tag + missing element both fail. Spot-check LU9 太淵 =
+[輸穴, 脈會, 原穴] element earth (the multi-tag example). Full 8-validator sweep
+PASS. Fixed a design-doc slip (五輸 total is 60, not 66; 66 = 60 five-shu + 6
+yang-yuan). Data+validator only; runtime adapter passthrough (PC4) + UI badges/
+filter (PC5) remain. No Codex overlap (config/scripts/361.json).
+
 ### 2026-07-12 - Taiwan dictionary designated as conditions-mapping authority (Ting)
 
 Ting designated the Taiwan authority for the 中西醫病名對照 layer:

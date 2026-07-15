@@ -147,12 +147,15 @@ vessels (陽蹻 BL59, 陰蹻 KI8, 陽維 GB35, 陰維 KI9) = 16, the NCCAOM figu
 The teaching handout lists only the 12 primary; the validator expects 16
 (set the count per whichever scope Ting picks — recommend 16).
 
-**五輸穴 element rule (66 = 5 per channel):** the 井滎輸經合 sit distal on
+**五輸穴 element rule (60 = 5 × 12 channels):** the 井滎輸經合 sit distal on
 each of the 12 channels; element assignment is fixed by channel polarity:
 - 陰經 (zang): 井木 · 滎火 · 輸土 · 經金 · 合水
 - 陽經 (fu): 井金 · 滎水 · 輸木 · 經火 · 合土
 
-The exact code for each of the 66 comes from the standard channel point
+(Note: the classical "六十六穴" = these 60 five-shu + the 6 distinct yuan
+points of the yang channels; the five-shu subtypes themselves total 60.)
+
+The exact code for each of the 60 comes from the standard channel point
 order (e.g. Lung: LU11 井, LU10 滎, LU9 輸, LU8 經, LU5 合). Codex enumerates
 per channel from the point sequence — this is the one sub-table that needs
 careful per-channel listing; it is deterministic, not a judgement call.

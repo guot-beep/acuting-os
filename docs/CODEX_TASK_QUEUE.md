@@ -37,6 +37,7 @@ node scripts/validate-herbal-links.js
 node scripts/validate-herb-canon.js
 node scripts/validate-point-ids.js
 node scripts/validate-naming.js
+node scripts/validate-point-categories.js
 node scripts/validate-encoding.js
 ```
 
