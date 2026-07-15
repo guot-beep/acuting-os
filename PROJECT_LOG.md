@@ -23,6 +23,17 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-12 - Taiwan dictionary designated as conditions-mapping authority (Ting)
+
+Ting designated the Taiwan authority for the 中西醫病名對照 layer:
+《中西醫病名對照大辭典》(林昭庚 主編). Encoded in
+CONDITIONS_MODULE_DESIGN (new Verification authority section: mappings
+stay draft until checked per condition against the dictionary; dictionary
+wins on disease-name correspondence; pattern links follow textbook logic;
+icd_hint aligns with its ICD correspondences; agents prepare side-by-side
+worksheets for Ting's review batches) and TCM_SOURCE_REGISTRY (new tier-A
+row). If Ting meant a different Taiwan source, swap the name in both
+files - the workflow is source-agnostic.
 ### 2026-07-15 - CS5: visual case timeline on the case detail (Claude Code)
 
 Added a compact horizontal outcome timeline above the SOAP cards on each case:
