@@ -23,6 +23,28 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-16 - Verification worksheets: CloudTCM 24 + dictionary gyn 25 (Claude Code)
+
+Ting's "有空時核對" background task. Two review worksheets (docs-only; no
+canonical / 361.json / frozen CLOUDTCM edits):
+
+- docs/CLOUDTCM_REVIEW_24_WORKSHEET.md — the §A(15)+§B(9) high-risk diffs.
+  Currency check: all 24 "現有" values still match current 361.json. Key
+  finding: ~13 of the 15 §A location "conflicts" are FALSE — same point via a
+  different landmark (e.g. LU4「天府下1寸」= 腋前紋下4寸) or the 2026-07-11 diff
+  parser misreading 一寸五分/二寸五分 as 1/2.5. Only BL4 and SI16 are genuine
+  §A conflicts. §B's 9 are real depth non-overlaps and stay for Ting's textbook
+  adjudication (depth = safety field; Claude did NOT recommend depths). All §A
+  classifications marked "Claude 初判, 待 Ting/教材確認".
+- docs/DICTIONARY_REVIEW_GYN_25.md — side-by-side worksheet of the 25 gyn
+  western conditions (name/ICD/現有中醫病名對照/辭典欄/打勾欄) for Ting to check
+  against 《中西醫病名對照大辭典》. Claude can't access the dictionary itself;
+  this prepares the batch per CONDITIONS_MODULE_DESIGN's verification-authority
+  flow. Generated from canon + tdis + crosswalk.
+
+Note: runtime adapter (Phase 2) was another Claude's work, not Codex — noted
+for handoff attribution. Claude lane; no Codex overlap.
+
 ### 2026-07-15 - PC1–PC3: 特定穴 category tags on 361.json (Claude Code)
 
 Executed the point-category tag layer (docs/POINT_CATEGORY_TAGS_DESIGN.md),
