@@ -38,6 +38,12 @@ and concentrated-granule reference grams. Granule values require ratio/brand,
 dose scope, and source context and are never calculated automatically from raw
 herb grams. Current empty values remain visibly pending source review.
 
+Ting selected Sun Ten / 順天堂 as the first U.S. granule reference. The source
+policy now separates Sun Ten U.S. product/SKU/ingredient pages from Taiwan MOHW
+licensed-product records (raw-herb amount, extract weight, ratio, excipients),
+with label serving grams remaining null unless a public label or authenticated
+practitioner source is available.
+
 The relation graph is navigable in both directions: formula composition resolves
 pinyin entries to stable `herb.*` IDs where available, and herb cards link back
 to related `formula.*` records. Modern-use and condition/pattern IDs remain

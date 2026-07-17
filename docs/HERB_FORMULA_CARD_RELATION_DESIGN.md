@@ -112,6 +112,50 @@ The app must never derive `granule_reference_g` automatically from
 `decoction_reference_g`. Unknown values remain null/pending until a named
 manufacturer, formulary, course source, or other approved reference is recorded.
 
+### Concentrated Granule Source Policy (Ting decision: Sun Ten first)
+
+Use Sun Ten / 順天堂 as the first brand-specific reference for the U.S.
+concentrated-granule track. Product evidence has two complementary official
+sources and they must not be collapsed into one claim:
+
+- Sun Ten U.S. official product pages: U.S. SKU, marketed dosage form,
+  ingredient list, product-specific allergen/label notices, and product URL.
+- Taiwan Ministry of Health and Welfare licensed-medicine records: license
+  number, raw-herb quantities, extract weight, raw-herb-to-extract ratio,
+  excipients, dosage form, and manufacturer.
+- Bottle label or authenticated practitioner catalog: labeled serving grams and
+  frequency when those values are not published on the public U.S. product page.
+
+Suggested formula-level fields:
+
+```json
+{
+  "granule_products": [
+    {
+      "brand": "Sun Ten",
+      "market": "US",
+      "product_sku": "",
+      "product_url": "",
+      "tw_license_number": "",
+      "raw_herb_equivalent_g": null,
+      "extract_weight_g": null,
+      "concentration_ratio": "",
+      "finished_product_weight_g": null,
+      "excipients": [],
+      "label_serving_g": null,
+      "label_frequency": "",
+      "source_refs": [],
+      "review_status": "draft"
+    }
+  ]
+}
+```
+
+Do not infer a serving recommendation from bottle size, raw-herb equivalent, or
+extract ratio. If the public page does not show labeled serving information,
+keep `label_serving_g` null until Ting supplies a label image or an authenticated
+practitioner source is reviewed.
+
 If the herb ID does not exist yet, keep the name and mark
 `herb_id_review_status: "needs_matching"`. Do not invent unstable IDs.
 

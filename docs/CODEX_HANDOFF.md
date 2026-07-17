@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-17
 Agent: Codex
 Branch: `main`
-Commit or stash: this follow-up commit (`Add concentrated granule dose column to formula cards`), building on `9775bcd`
+Commit or stash: this documentation follow-up (`Document Sun Ten granule source policy`), building on `b8f6ddb`
 Task: Implement the approved first formula/herb detail-card experience without changing canonical data.
 
 Ting follow-up incorporated:
@@ -51,6 +51,10 @@ Ting follow-up incorporated:
 - Added a separate concentrated-granule reference-gram column beside classical
   amount and raw-herb/decoction grams. Schema guidance requires ratio/brand,
   dose scope, source, and no automatic raw-herb-to-granule conversion.
+- Recorded Ting's decision to use Sun Ten / 順天堂 as the first U.S. brand
+  reference. U.S. product pages provide SKU/form/ingredients; Taiwan MOHW
+  licenses provide extract ratios and excipients. Label serving grams stay null
+  unless a label or authenticated practitioner source is reviewed.
 
 Files changed:
 - `js/knowledge.js`
