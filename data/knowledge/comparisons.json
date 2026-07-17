@@ -268,9 +268,9 @@
       "id": "cmp.ivf_cycle_patterns",
       "type": "comparison",
       "title_zh": "IVF 週期常見證型鑑別骨架",
-      "title_en": "IVF cycle context - pattern differentiation skeleton",
+      "title_en": "IVF cycle context - pattern differentiation draft",
       "source_condition_id": "western_condition.ivf_cycle",
-      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "seed_basis": "Source-assisted draft approved by Ting: IVF/ART biomedical context from CDC, ACOG, MedlinePlus, and ASRM/ReproductiveFacts; TCM pattern discriminator language from Ting's Notion/Bastyr gynecology, inquiry, menstruation, and Zang-Fu notes, cross-checked against accepted LL3 drafts. Draft study comparison only; not medical advice.",
       "compares": [
         "pattern.kidney_deficiency",
         "pattern.blood_stasis",
@@ -286,34 +286,54 @@
       ],
       "cells": {
         "pattern.kidney_deficiency": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "IVF cycle documentation context with long-standing infertility, diminished reserve/age-related documentation context, delayed or scanty cycles, low back/knee soreness, fatigue, dizziness/tinnitus, or reproductive Essence deficiency cues. IVF 療程背景中，若見長期不孕、卵巢儲備/年齡相關記錄脈絡、月經後期或量少，合併腰膝酸軟、疲倦、頭暈耳鳴或生殖精氣不足線索，偏腎虛。",
+          "Tongue / 舌": "Kidney Yang/Qi deficiency: pale, swollen, wet coat. Kidney Yin/Essence deficiency: red or scant/peeled coat. 腎陽/腎氣虛多舌淡胖、苔潤；腎陰/精虧多舌紅少苔或剝苔。",
+          "Pulse / 脈": "Deep and weak as the broad Kidney deficiency cue; deep-slow-weak for Yang deficiency, thin-rapid for Yin deficiency. 腎虛總以沉弱為主；陽虛偏沉遲無力，陰虛偏細數。",
+          "Key accompanying signs / 兼症": "Low vitality, chronicity, low back soreness, cold signs or deficiency-heat signs; distinguish from Liver constraint by the deficiency base rather than stress-driven fluctuation alone. 兼見精力低、病程久、腰痠、寒象或虛熱象；與肝鬱相比，重點在虛象底色，而不只是壓力波動。",
+          "Treatment principle / 治法": "Tonify Kidney, support Essence, regulate Chong/Ren; warm Yang or nourish Yin according to signs. 補腎益精、調衝任；依證分溫腎陽或滋腎陰。",
+          "Representative formula / 代表方": "Study anchors: formula.liu_wei_di_huang_wan, formula.jin_gui_shen_qi_wan, formula.zuo_gui_wan, formula.you_gui_wan. 學習錨點：六味地黃丸、金匱腎氣丸、左歸丸、右歸丸。"
         },
         "pattern.blood_stasis": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "IVF cycle context with fixed, stabbing pelvic/lower abdominal pain, dark-purple menstrual blood, clots, history of pelvic procedures, endometriosis/fibroid documentation context, or pain resistant to pressure. IVF 療程背景中，若見固定刺痛、少腹/骨盆痛、經色紫暗有塊、骨盆手術史、內膜異位/肌瘤記錄脈絡，或疼痛拒按，偏血瘀。",
+          "Tongue / 舌": "Dusky-purple tongue, purple spots, or sublingual venous engorgement. 舌紫暗、瘀點瘀斑，或舌下絡脈怒張。",
+          "Pulse / 脈": "Choppy; wiry-choppy if qi stagnation is also prominent. 脈澀；若肝鬱氣滯明顯，常見弦澀。",
+          "Key accompanying signs / 兼症": "Dark clots, fixed pain, masses, prior trauma/procedure history, or endometriosis/fibroid documentation context; distinguish from qi stagnation by fixed stabbing quality rather than moving distension. 暗紫血塊、固定痛、癥塊、外傷/手術史或內膜異位/肌瘤記錄脈絡；與氣滯相比，血瘀偏固定刺痛，不是走竄脹痛。",
+          "Treatment principle / 治法": "Invigorate blood, transform stasis, regulate Chong/Ren; move qi when constraint is part of the presentation. 活血化瘀、調衝任；若兼情志鬱結或氣滯，則兼行氣。",
+          "Representative formula / 代表方": "Study anchors: formula.gui_zhi_fu_ling_wan, formula.tao_hong_si_wu_tang, formula.xue_fu_zhu_yu_tang, formula.wen_jing_tang when cold-stasis signs are present. 學習錨點：桂枝茯苓丸、桃紅四物湯、血府逐瘀湯；若見寒瘀，可比較溫經湯。"
         },
         "pattern.liver_qi_stagnation": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "IVF cycle context with stress, emotional constraint, PMS, breast or hypochondriac distension, lower abdominal distension, sighing, irritability, or symptoms that fluctuate around monitoring, medication timing, or cycle events. IVF 療程背景中，若見壓力、情志鬱結、PMS、乳脹或脅肋脹、少腹脹、善太息、易怒，或症狀隨監測/用藥時間/週期事件波動，偏肝氣鬱結。",
+          "Tongue / 舌": "Often normal to slightly dusky with thin white coat; red edges or thin yellow coat if constraint transforms into heat. 舌可正常或偏暗，苔薄白；鬱久化熱可見邊紅或薄黃苔。",
+          "Pulse / 脈": "Wiry; wiry-rapid if heat signs, wiry-choppy if stasis begins to appear. 脈弦；化熱偏弦數，夾瘀或久鬱入絡偏弦澀。",
+          "Key accompanying signs / 兼症": "Distending discomfort, mood/cycle linkage, breast distension, headache, throat constraint, or Liver-Spleen digestive upset; distinguish from blood stasis by moving distension rather than fixed stabbing pain. 兼見脹悶、情緒與週期連動、乳脹、頭痛、咽中梗阻感或肝脾不調消化症狀；與血瘀相比，偏走竄脹痛而非固定刺痛。",
+          "Treatment principle / 治法": "Soothe Liver, move qi, regulate menstruation and Chong/Ren; clear heat only when heat signs are present. 疏肝理氣、調經與衝任；有熱象時才兼清熱。",
+          "Representative formula / 代表方": "Study anchors: formula.xiao_yao_san, formula.jia_wei_xiao_yao_san, formula.chai_hu_shu_gan_san. 學習錨點：逍遙散、加味逍遙散、柴胡疏肝散。"
         }
       },
       "authored_by": "model_draft",
       "status": "draft",
       "review_status": "draft",
-      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+      "notes_en": "Source-assisted draft approved by Ting. IVF cycle language is documentation context only. TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes and prior accepted LL3 draft language. Keep draft until Ting or Claude reviews against class materials.",
+      "source_urls": [
+        "https://www.cdc.gov/art/about/index.html",
+        "https://www.acog.org/womens-health/faqs/treating-infertility",
+        "https://medlineplus.gov/ency/article/007279.htm",
+        "https://medlineplus.gov/assistedreproductivetechnology.html",
+        "https://www.reproductivefacts.org/news-and-publications/fact-sheets-and-infographics/in-vitro-fertilization-ivf-what-are-the-risks/",
+        "https://www.reproductivefacts.org/browse-all-topics/ivf-topic/",
+        "https://app.notion.com/p/37747f6dea3581fab36dd0c1d7d5bfdc",
+        "https://app.notion.com/p/37747f6dea35814d8bc2eabbcd9a5b07",
+        "https://app.notion.com/p/37747f6dea35810c8653cda996f42939",
+        "https://app.notion.com/p/38747f6dea358136bf6bd53e70c69150",
+        "https://app.notion.com/p/38547f6dea358103a71dd2b398b0e372",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "data/knowledge/comparison_fill_unexplained_infertility.json",
+        "data/knowledge/comparison_fill_anovulation.json"
+      ],
+      "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-17",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not guide IVF decisions, replace reproductive endocrinology care, or recommend treatment."
     },
     {
       "id": "cmp.luteal_support_patterns",

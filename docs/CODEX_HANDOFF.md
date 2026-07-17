@@ -36,12 +36,68 @@ Claude review note:
 
 ---
 
+## 2026-07-17 - Codex - LL3 IVF cycle comparison source-assisted draft fill
+
+Date/time: 2026-07-17
+Agent: Codex
+Branch: `main`
+Commit or stash: pending commit for this entry (`LL3: fill IVF cycle comparison draft`)
+Task: Fill `cmp.ivf_cycle_patterns` using official/professional IVF/ART sources plus Ting Notion/Bastyr notes.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/knowledge/comparison_fill_ivf_cycle.json`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `data/generated/app_data.js`
+- `data/generated/knowledge_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_CURRENT_STATUS.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/apply-comparison-fill.js ivf_cycle`: dry-run PASS, 18 cells, 0 skipped, 11 metadata updates
+- `scripts/apply-comparison-fill.js ivf_cycle --apply`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `scripts/report-comparison-fill.js`: PASS, queue now `filled_cells: 90`, `pending_cells: 84`, `complete_tables: 5`
+- `node --check scripts/apply-comparison-fill.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- `scripts/validate-point-categories.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS, 454 files
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No CloudTCM point map edits.
+- No case/SOAP UI, PC point-category UI, or protected app.js sections edited.
+
+Known risks / manual checks:
+- This is not `source_checked`; it is `draft`, `public_safe: false`, and includes a no-medical-advice disclaimer.
+- Claude/Ting should review the IVF cycle comparison wording against class materials before promoting it.
+- Official/professional sources were used only for IVF/ART context; TCM discriminator cells derive from Ting Notion/Bastyr notes and prior accepted LL3 draft language.
+
+Next recommended action:
+- Browser spot-check Lookup -> Comparison Records -> IVF cycle context. It should show 18/18 cells filled.
+- For Ting's herb/formula question: recommended next non-LL3 direction is B2/B3-style card wiring, making formulas/herbs visible as draft single-record cards with source links/status pills before adding more bulk content.
+
+Claude review note:
+- This follows the accepted PCOS, unexplained infertility, anovulation, and ovulatory-factor precedent: owner-authorized, source-cited `model_draft` cells, still draft/public_safe:false, no dosage/needling/ICD claims.
+
+---
+
 ## 2026-07-17 - Codex - LL3 ovulatory factor comparison source-assisted draft fill
 
 Date/time: 2026-07-17
 Agent: Codex
 Branch: `main`
-Commit or stash: pending commit for this entry (`LL3: fill ovulatory factor comparison draft`)
+Commit or stash: `5dac7b9` (`LL3: fill ovulatory factor comparison draft`)
 Task: Fill `cmp.ovulatory_factor_patterns` using official/professional ovulatory-factor fertility sources plus Ting Notion/Bastyr notes.
 
 Files changed:

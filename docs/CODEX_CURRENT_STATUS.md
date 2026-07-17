@@ -9,7 +9,7 @@ Status: `LL3_CLAIMED_IN_PROGRESS`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: `cmp.ovulatory_factor_patterns` source-assisted draft fill,
+Latest Codex work: `cmp.ivf_cycle_patterns` source-assisted draft fill,
 pending in the latest Codex handoff commit.
 
 ## What Changed
@@ -63,9 +63,10 @@ The other agent should check that marker before starting overlapping work.
 ## Next LL3 Action
 
 Continue one comparison table at a time from `docs/COMPARISON_FILL_QUEUE.md`.
-Codex has now filled PCOS, unexplained infertility, anovulation, and ovulatory
-factor context as draft comparison tables. Queue status after the latest fill:
-72 filled cells, 102 pending cells, 7 empty tables, 4 complete tables.
+Codex has now filled PCOS, unexplained infertility, anovulation, ovulatory
+factor context, and IVF cycle context as draft comparison tables. Queue status
+after the latest fill: 90 filled cells, 84 pending cells, 6 empty tables, 5
+complete tables.
 Keep each fill:
 
 - source-assisted;

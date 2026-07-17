@@ -23,6 +23,37 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-17 - LL3: IVF cycle comparison source-assisted draft fill (Codex)
+
+Filled `cmp.ivf_cycle_patterns` as the fifth LL3 comparison table. The table
+now compares Kidney deficiency, Blood stasis, and Liver qi stagnation across
+chief cue, tongue, pulse, key accompanying signs, treatment principle, and
+representative formulas (18/18 cells).
+
+Biomedical IVF/ART context came from CDC, ACOG, MedlinePlus, and
+ASRM/ReproductiveFacts. TCM discriminator language came from Ting's
+Notion/Bastyr gynecology, inquiry, irregular menstruation, and Zang-Fu notes
+plus accepted LL3 draft language. The fill stays `model_draft`,
+`review_status: "draft"`, `public_safe: false`, and not medical advice.
+
+Files changed: `data/knowledge/comparison_fill_ivf_cycle.json`,
+`data/knowledge/comparisons.json`, `docs/COMPARISON_FILL_QUEUE.md`,
+`data/generated/app_data.js`, `data/generated/knowledge_data.js`,
+`docs/CODEX_CURRENT_STATUS.md`, `docs/CODEX_HANDOFF.md`, `PROJECT_LOG.md`.
+
+Validation: `scripts/apply-comparison-fill.js ivf_cycle` dry-run PASS (18 cells,
+0 skipped); apply PASS; `scripts/build-data.js` PASS;
+`scripts/report-comparison-fill.js` PASS with 90 filled / 84 pending / 5
+complete; `node --check scripts/apply-comparison-fill.js` PASS; validate-data
+PASS; validate-interactions PASS; validate-relations PASS; validate-herbal-links
+PASS; validate-herb-canon PASS; validate-point-ids PASS; validate-naming PASS;
+validate-point-categories PASS; JSON parse check for `data/**/*.json` PASS.
+`scripts/validate-encoding.js` still fails on the known 768 finding backlog; no
+encoding repair was attempted.
+
+Protected areas not touched: no clinical case data, no `data/acupoints/361.json`,
+no `docs/CLOUDTCM_*`, no CloudTCM point map, no case/SOAP UI, no PC category UI.
+
 ### 2026-07-17 - LL3: ovulatory factor comparison source-assisted draft fill (Codex)
 
 Filled `cmp.ovulatory_factor_patterns` as the fourth LL3 comparison table. The
