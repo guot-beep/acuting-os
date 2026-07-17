@@ -23,6 +23,32 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-17 - Interactive formula and herb study cards (Codex)
+
+Implemented the first working AcuTing OS formula and single-herb detail cards in
+the Lookup workspace. Formula cards now separate exam core, composition,
+clinical context, and safety/sources. Herb cards separate exam core, clinical
+context, pairing/differentiation, and safety/sources.
+
+The relation graph is navigable in both directions: formula composition resolves
+pinyin entries to stable `herb.*` IDs where available, and herb cards link back
+to related `formula.*` records. Modern-use and condition/pattern IDs remain
+search-oriented context, not treatment claims. Damaged `????` or U+FFFD content
+is suppressed and replaced by a source-review pending state.
+
+Files changed: `js/knowledge.js`, `styles.css`, `design-qa.md`,
+`PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+
+Validation: JavaScript syntax PASS; validate-data PASS;
+validate-interactions PASS; validate-relations PASS; validate-herbal-links PASS;
+validate-herb-canon PASS; validate-point-ids PASS; validate-naming PASS; all
+`data/**/*.json` parse PASS. Browser QA passed at desktop and 390 x 844 mobile
+with no console warnings/errors and no detail-dialog horizontal overflow.
+
+Protected areas not touched: no `app.js`, no clinical case data, no
+`data/acupoints/361.json`, no `docs/CLOUDTCM_*`, no generated data, and no
+CloudTCM point map changes.
+
 ### 2026-07-17 - Herb/formula card relation design captured (Codex)
 
 Captured Ting's direction that formulas and single herbs should become

@@ -28,10 +28,163 @@
     return;
   }
 
+  const formulas = (K.formulas && K.formulas.records) || [];
+  const herbs = (K.herbs && K.herbs.records) || [];
+  const formulaById = new Map(formulas.map((record) => [record.id, record]));
+  const herbById = new Map(herbs.map((record) => [record.id, record]));
+
+  function normalizeKey(value) {
+    return String(value || "").trim().toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+  }
+
+  const herbByPinyin = new Map(herbs.map((record) => [normalizeKey(record.pinyin), record]));
+
+  function usableText(value) {
+    const text = String(value || "").trim();
+    return text && !/\?{2,}/.test(text) && !text.includes("\uFFFD") ? text : "";
+  }
+
+  function cleanList(values) {
+    return (Array.isArray(values) ? values : []).map(usableText).filter(Boolean);
+  }
+
+  function detailList(values, emptyText = "待補 / Content pending source review") {
+    const items = cleanList(values);
+    return items.length
+      ? `<ul class="k-detail-list">${items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`
+      : `<p class="k-detail-empty">${esc(emptyText)}</p>`;
+  }
+
+  function detailSection(titleZh, titleEn, content) {
+    return `<section class="k-detail-section"><h3>${esc(titleZh)} <small>${esc(titleEn)}</small></h3>${content}</section>`;
+  }
+
+  function relationButton(id, label, kind) {
+    return `<button type="button" class="k-relation-chip" data-detail-kind="${esc(kind)}" data-detail-id="${esc(id)}">${esc(label)}</button>`;
+  }
+
+  function formulaLabel(id) {
+    const record = formulaById.get(id);
+    return record ? `${record.name_zh || record.pinyin} · ${record.pinyin || record.name_en}` : id;
+  }
+
+  function sourceLinks(record) {
+    const links = (record.source_urls || []).filter((url) => /^https?:\/\//.test(url));
+    const sourceHint = usableText(record.source_hint);
+    return `
+      ${sourceHint ? `<p class="k-detail-note">${esc(sourceHint)}</p>` : ""}
+      ${links.length ? `<div class="k-source-links">${links.map((url, index) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1}</a>`).join("")}</div>` : '<p class="k-detail-empty">來源連結待補 / Source links pending</p>'}`;
+  }
+
+  function ensureDetailDialog() {
+    let dialog = el("knowledgeDetailDialog");
+    if (dialog) return dialog;
+    dialog = document.createElement("dialog");
+    dialog.id = "knowledgeDetailDialog";
+    dialog.className = "k-detail-dialog";
+    dialog.setAttribute("aria-label", "方藥學習卡詳情");
+    dialog.innerHTML = '<div id="knowledgeDetailContent"></div>';
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+      const closeButton = event.target.closest("[data-detail-close]");
+      if (closeButton) {
+        dialog.close();
+        return;
+      }
+      const tabButton = event.target.closest("[data-detail-tab]");
+      if (tabButton) {
+        const tabName = tabButton.dataset.detailTab;
+        dialog.querySelectorAll("[data-detail-tab]").forEach((button) => {
+          button.setAttribute("aria-selected", String(button === tabButton));
+        });
+        dialog.querySelectorAll("[data-detail-panel]").forEach((panel) => {
+          panel.hidden = panel.dataset.detailPanel !== tabName;
+        });
+        return;
+      }
+      const relation = event.target.closest("[data-detail-kind][data-detail-id]");
+      if (relation) openKnowledgeDetail(relation.dataset.detailKind, relation.dataset.detailId);
+    });
+    document.body.appendChild(dialog);
+    return dialog;
+  }
+
+  function detailShell(record, kind, panels) {
+    const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
+    const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
+    return `
+      <div class="k-detail-shell">
+        <header class="k-detail-header">
+          <div>
+            <p class="k-detail-eyebrow">${eyebrow}</p>
+            <h2>${esc(record.name_zh || record.pinyin)} <small>${esc(record.pinyin)}</small></h2>
+            <p class="k-detail-en">${esc(record.name_en)}</p>
+            <p class="k-detail-meta">${esc(identity)}</p>
+          </div>
+          <div class="k-detail-header-actions">
+            ${statusPill(record.review_status)}
+            <button type="button" class="k-detail-close" data-detail-close aria-label="關閉詳情">關閉</button>
+          </div>
+        </header>
+        <div class="k-review-banner"><strong>Draft · source review pending</strong><span>私人學習參考，不是醫療建議；現代病名關聯仍需辨證與來源核對。</span></div>
+        <nav class="k-detail-tabs" role="tablist" aria-label="學習卡分頁">
+          ${panels.map((panel, index) => `<button type="button" role="tab" id="knowledge-tab-${panel.id}" data-detail-tab="${panel.id}" aria-controls="knowledge-panel-${panel.id}" aria-selected="${index === 0}">${esc(panel.label)}</button>`).join("")}
+        </nav>
+        <div class="k-detail-panels">
+          ${panels.map((panel, index) => `<div role="tabpanel" id="knowledge-panel-${panel.id}" aria-labelledby="knowledge-tab-${panel.id}" data-detail-panel="${panel.id}"${index ? " hidden" : ""}>${panel.content}</div>`).join("")}
+        </div>
+      </div>`;
+  }
+
+  function formulaPanels(record) {
+    const exam = record.english_exam_track || {};
+    const actions = cleanList(exam.actions_en).length ? exam.actions_en : record.actions_en;
+    const indications = cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : record.pattern_indications_en;
+    const modifications = cleanList(exam.modifications_en).length ? exam.modifications_en : record.modifications_en;
+    const composition = (record.composition || []).map((item) => {
+      const herb = herbByPinyin.get(normalizeKey(item.pinyin));
+      const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" · ") || "Composition item pending";
+      const role = [usableText(item.role_zh), usableText(item.role_en), usableText(item.dose_range)].filter(Boolean).join(" · ");
+      return `<li><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></li>`;
+    }).join("");
+    const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
+    const relatedConditions = (record.related_conditions || []).map((id) => `<span class="k-static-chip">${esc(id)}</span>`).join("");
+    const modern = (record.modern_clinical_use_tags || []).map((value) => `<span class="k-modern-chip">${esc(value)}</span>`).join("");
+    const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
+    return [
+      { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(record.comparison_group)}</p>` : '<p class="k-detail-empty">待補</p>')}</div>` },
+      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成", "點選中藥可進入單味藥卡", composition ? `<ol class="k-composition-list">${composition}</ol>` : '<p class="k-detail-empty">組成待補 / Composition pending</p>') },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
+      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safety]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
+    ];
+  }
+
+  function herbPanels(record) {
+    const exam = record.english_exam_track || {};
+    const functions = cleanList(exam.functions).length ? exam.functions : record.functions;
+    const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
+    const modern = (record.modern_use_tags || []).map((value) => `<span class="k-modern-chip">${esc(value)}</span>`).join("");
+    return [
+      { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("性味", "Properties, taste & temperature", `<p>${esc(usableText(exam.properties_taste_temp) || usableText(record.properties_taste_temp) || "待補")}</p>`)}${detailSection("歸經", "Channels entered", detailList(record.channels_entered))}${detailSection("功效", "Functions", detailList(functions))}${detailSection("主治脈絡", "Indication context", detailList(exam.indications))}</div>` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Formulas containing or comparing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
+      { id: "pairing", label: "配伍與鑑別 Pairing", content: `${detailSection("常見配伍", "Common pairings", detailList(exam.common_pairings))}${detailSection("中文深度筆記", "Chinese-depth track", `<p>${esc(usableText((record.chinese_depth_track || {}).summary_zh) || "待 CloudTCM、機構庫或 Ting 課件核對後補入")}</p>`)}` },
+      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與安全提醒", "Contraindications & review prompts", detailList([...(exam.contraindications || []), ...(record.safety_flags || [])]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
+    ];
+  }
+
+  function openKnowledgeDetail(kind, id) {
+    const record = kind === "formula" ? formulaById.get(id) : herbById.get(id);
+    if (!record) return;
+    const dialog = ensureDetailDialog();
+    el("knowledgeDetailContent").innerHTML = detailShell(record, kind, kind === "formula" ? formulaPanels(record) : herbPanels(record));
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+  }
+
   // ---- Formulas ------------------------------------------------------------
   const formulaHost = el("formulaRecords");
   if (formulaHost) {
-    const records = K.formulas.records || [];
+    const records = formulas;
     if (records.length > 24) {
       const hasContent = (f) => [
         f.actions_en,
@@ -55,7 +208,7 @@
         const searchTags = (f.modern_clinical_use_tags || []).slice(0, 5);
         if (!contentReady) {
           return `
-            <article class="k-row k-formula-skeleton">
+            <article class="k-row k-formula-skeleton" data-record-id="${esc(f.id)}">
               <div>
                 <strong>${esc(f.name_zh)} <small>${esc(f.pinyin)}</small></strong>
                 <p class="k-en">${esc(f.name_en)}</p>
@@ -64,11 +217,12 @@
               <div class="k-row-side">
                 ${statusPill(f.review_status)}
                 <p class="k-tags">${searchTags.map(tag).join("")}</p>
+                <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">查看方劑卡</button>
               </div>
             </article>`;
         }
         return `
-          <article class="k-card">
+          <article class="k-card" data-record-id="${esc(f.id)}">
             <header>
               <strong>${esc(f.name_zh)} <small>${esc(f.pinyin)}</small></strong>
               ${statusPill(f.review_status)}
@@ -77,6 +231,7 @@
             <p class="k-meta">${esc(meta)}</p>
             <p class="k-tags">${[...(f.pattern_focus_en || []), ...searchTags].slice(0, 8).map(tag).join("")}</p>
             ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(esc).join(" · ")}</p>` : ""}
+            <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">查看方劑卡</button>
           </article>`;
       }).join("");
 
@@ -118,6 +273,10 @@
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
+      formulaHost.addEventListener("click", (event) => {
+        const button = event.target.closest('[data-detail-kind="formula"][data-detail-id]');
+        if (button) openKnowledgeDetail("formula", button.dataset.detailId);
+      });
     } else {
     const render = (list) => list.map((f) => `
       <article class="k-card">
@@ -157,7 +316,6 @@
   // ---- Herbs ---------------------------------------------------------------
   const herbHost = el("herbRecords");
   if (herbHost) {
-    const herbs = (K.herbs && K.herbs.records) || [];
     const herbCategory = (h) => h.category || "uncategorized";
     const categories = [...new Set(herbs.map(herbCategory).filter(Boolean))].sort((a, b) => a.localeCompare(b));
     const renderHerbs = (list) => list.map((h) => {
@@ -165,7 +323,7 @@
       const modernTags = (h.modern_use_tags || []).slice(0, 5);
       const safetyFlags = (h.safety_flags || []).slice(0, 4);
       return `
-        <article class="k-card k-herb-card">
+        <article class="k-card k-herb-card" data-record-id="${esc(h.id)}">
           <header>
             <strong>${esc(h.name_zh)} <small>${esc(h.pinyin)}</small></strong>
             ${statusPill(h.review_status)}
@@ -177,6 +335,7 @@
           ${formulaLinks.length ? `<p class="k-meta">Related formulas: ${formulaLinks.map((id) => `<span class="k-link-chip">${esc(id)}</span>`).join(" ")}</p>` : ""}
           ${safetyFlags.length ? `<p class="k-flags">Review: ${safetyFlags.map(esc).join(" Â· ")}</p>` : ""}
           <p class="k-meta">draft - source review pending - study reference only</p>
+          <button type="button" class="k-open-detail" data-detail-kind="herb" data-detail-id="${esc(h.id)}">查看中藥卡</button>
         </article>`;
     }).join("");
 
@@ -217,6 +376,10 @@
     };
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
+    herbHost.addEventListener("click", (event) => {
+      const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
+      if (button) openKnowledgeDetail("herb", button.dataset.detailId);
+    });
   }
 
   // ---- Comparisons ---------------------------------------------------------

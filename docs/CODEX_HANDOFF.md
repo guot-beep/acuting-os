@@ -36,6 +36,52 @@ Claude review note:
 
 ---
 
+## 2026-07-17 - Codex - Interactive formula and herb study cards
+
+Date/time: 2026-07-17
+Agent: Codex
+Branch: `main`
+Commit or stash: this commit (`Add interactive formula and herb study cards`)
+Task: Implement the approved first formula/herb detail-card experience without changing canonical data.
+
+Files changed:
+- `js/knowledge.js`
+- `styles.css`
+- `design-qa.md`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check js/knowledge.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- `data/**/*.json` parse check: PASS
+- Browser interaction QA: PASS on desktop and 390 x 844 mobile; no console warnings/errors; no detail-dialog horizontal overflow.
+
+Protected areas not touched:
+- No `app.js`, case/SOAP, or clinical data edits.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No `data/generated/*` or CloudTCM point-map edits.
+
+Known risks / manual checks:
+- This is a runtime presentation layer over current canonical/staging records. Most of the 115 formulas and 202 herbs remain draft skeletons.
+- Existing damaged question-mark fields are filtered from cards; they were not repaired or promoted.
+- Formula composition resolves to herb IDs by normalized pinyin; unmatched composition items remain readable plain text until canonical herb-ID composition records are approved.
+
+Next recommended action:
+- Ting should review one populated formula card and one populated herb card, then approve the card information hierarchy before broad source-backed content filling.
+
+Claude review note:
+- Please review `js/knowledge.js` relation navigation and `design-qa.md`. No canonical data schema or protected surface was changed.
+
+---
+
 ## 2026-07-17 - Codex - Herb/formula card relation design captured
 
 Date/time: 2026-07-17

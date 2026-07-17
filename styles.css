@@ -4172,6 +4172,192 @@ a { color: var(--accent-dark); }
   padding: 0.08rem 0.45rem;
   white-space: nowrap;
 }
+
+/* --- Formula / herb study-card detail prototype ------------------------ */
+.k-open-detail {
+  align-items: center;
+  background: #244f43;
+  border: 1px solid #244f43;
+  border-radius: 6px;
+  color: #fffdf8;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  justify-content: center;
+  margin-top: 0.65rem;
+  min-height: 2rem;
+  padding: 0.38rem 0.72rem;
+}
+.k-open-detail:hover,
+.k-open-detail:focus-visible {
+  background: #193c33;
+  outline: 2px solid #d2a43b;
+  outline-offset: 2px;
+}
+.k-row-side .k-open-detail { margin-top: 0; }
+
+.k-detail-dialog {
+  background: #fffdf8;
+  border: 1px solid #d7c9ad;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(55, 45, 31, 0.25);
+  color: var(--ink);
+  max-height: min(88vh, 900px);
+  max-width: 980px;
+  padding: 0;
+  width: min(94vw, 980px);
+}
+.k-detail-dialog::backdrop { background: rgba(40, 50, 45, 0.52); }
+.k-detail-shell { min-height: 32rem; }
+.k-detail-header {
+  align-items: start;
+  background: #f7f1e4;
+  border-bottom: 1px solid #ded2bc;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  padding: 1.35rem 1.5rem 1.15rem;
+}
+.k-detail-eyebrow {
+  color: #966c1e;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0 0 0.35rem;
+}
+.k-detail-header h2 {
+  color: #173f36;
+  font-family: "Noto Serif TC", serif;
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0;
+}
+.k-detail-header h2 small {
+  color: #6f6352;
+  display: block;
+  font-family: inherit;
+  font-size: 0.48em;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+.k-detail-en { color: #4e5f59; font-size: 1rem; margin: 0.45rem 0 0; }
+.k-detail-meta { color: #80725e; font-size: 0.78rem; margin: 0.35rem 0 0; overflow-wrap: anywhere; }
+.k-detail-header-actions { align-items: end; display: grid; gap: 0.65rem; justify-items: end; }
+.k-detail-close {
+  background: transparent;
+  border: 1px solid #9a8c72;
+  border-radius: 6px;
+  color: #4f4639;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0.38rem 0.7rem;
+}
+.k-review-banner {
+  align-items: center;
+  background: #fff7df;
+  border-bottom: 1px solid #ead8a9;
+  color: #72571b;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  padding: 0.72rem 1.5rem;
+}
+.k-review-banner span { font-size: 0.82rem; }
+.k-detail-tabs {
+  background: #fffdf8;
+  border-bottom: 1px solid #e3d8c4;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  padding: 0 1.1rem;
+}
+.k-detail-tabs button {
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: #6d6253;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0.85rem 0.9rem 0.72rem;
+  white-space: nowrap;
+}
+.k-detail-tabs button[aria-selected="true"] {
+  border-bottom-color: #c59631;
+  color: #173f36;
+}
+.k-detail-tabs button:focus-visible { outline: 2px solid #c59631; outline-offset: -3px; }
+.k-detail-panels { padding: 1.25rem 1.5rem 1.6rem; }
+.k-detail-panels [hidden] { display: none; }
+.k-detail-columns { display: grid; gap: 0.85rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.k-detail-section {
+  border-bottom: 1px solid #e7dfd0;
+  padding: 0.15rem 0 1rem;
+}
+.k-detail-columns .k-detail-section {
+  background: #fbfaf6;
+  border: 1px solid #e3dccf;
+  border-radius: 6px;
+  padding: 0.85rem 0.95rem;
+}
+.k-detail-section + .k-detail-section { margin-top: 1rem; }
+.k-detail-columns .k-detail-section + .k-detail-section { margin-top: 0; }
+.k-detail-section h3 {
+  color: #244f43;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1rem;
+  margin: 0 0 0.55rem;
+}
+.k-detail-section h3 small {
+  color: #847866;
+  font-family: inherit;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+.k-detail-section p { line-height: 1.65; margin: 0; }
+.k-detail-list { margin: 0; padding-left: 1.25rem; }
+.k-detail-list li { line-height: 1.55; margin: 0.22rem 0; }
+.k-detail-empty { color: #917b53; font-style: italic; }
+.k-detail-note { color: #655a49; margin-bottom: 0.65rem !important; }
+.k-chip-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.k-modern-chip,
+.k-static-chip,
+.k-relation-chip {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.76rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  padding: 0.3rem 0.62rem;
+}
+.k-modern-chip { background: #f2e7c9; color: #705318; }
+.k-static-chip { background: #eef2ee; border: 1px solid #dbe4dc; color: #39564c; }
+.k-relation-chip {
+  background: #e7f0eb;
+  border: 1px solid #bed2c6;
+  color: #1f5142;
+  cursor: pointer;
+  font-weight: 800;
+  text-align: left;
+}
+.k-relation-chip:hover,
+.k-relation-chip:focus-visible { background: #d9e9df; outline: 2px solid #c59631; outline-offset: 1px; }
+.k-composition-list { display: grid; gap: 0.55rem; margin: 0; padding-left: 1.5rem; }
+.k-composition-list li { color: #8a6d1f; }
+.k-composition-list li > div { align-items: center; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.k-composition-list small { color: #7b6e5b; }
+.k-source-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.k-source-links a {
+  border: 1px solid #cfc1a5;
+  border-radius: 6px;
+  color: #244f43;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.38rem 0.65rem;
+  text-decoration: none;
+}
+.k-source-links a:hover,
+.k-source-links a:focus-visible { background: #f4ecdc; outline: 2px solid #c59631; outline-offset: 1px; }
 @media (max-width: 760px) {
   .k-toolbar,
   .k-row {
@@ -4180,6 +4366,15 @@ a { color: var(--accent-dark); }
   .k-row-side {
     justify-items: start;
   }
+  .k-detail-dialog { max-height: 94vh; width: 96vw; }
+  .k-detail-header { gap: 0.85rem; padding: 1rem; }
+  .k-detail-header h2 { font-size: 1.65rem; }
+  .k-detail-header-actions { min-width: 4.5rem; }
+  .k-detail-tabs { padding: 0 0.35rem; }
+  .k-detail-tabs button { padding-inline: 0.7rem; }
+  .k-detail-panels { padding: 1rem; }
+  .k-detail-columns { grid-template-columns: 1fr; }
+  .k-review-banner { padding-inline: 1rem; }
 }
 
 /* --- Single-point detail: show ONLY the point, hide the rest ---------
