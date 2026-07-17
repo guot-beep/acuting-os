@@ -91,15 +91,9 @@
         dialog.close();
         return;
       }
-      const tabButton = event.target.closest("[data-detail-tab]");
-      if (tabButton) {
-        const tabName = tabButton.dataset.detailTab;
-        dialog.querySelectorAll("[data-detail-tab]").forEach((button) => {
-          button.setAttribute("aria-selected", String(button === tabButton));
-        });
-        dialog.querySelectorAll("[data-detail-panel]").forEach((panel) => {
-          panel.hidden = panel.dataset.detailPanel !== tabName;
-        });
+      const jumpButton = event.target.closest("[data-detail-jump]");
+      if (jumpButton) {
+        dialog.querySelector(`#knowledge-section-${jumpButton.dataset.detailJump}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
       const relation = event.target.closest("[data-detail-kind][data-detail-id]");
@@ -112,10 +106,30 @@
   function detailShell(record, kind, panels) {
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
+    const facts = kind === "formula"
+      ? [
+          ["分類 Category", record.category || record.category_en || "待補"],
+          ["學習層級 Tier", record.tier || "draft"],
+          ["組成 Composition", `${(record.composition || []).length} 味`],
+          ["鑑別群組 Comparison", record.comparison_group || "待補"]
+        ]
+      : [
+          ["分類 Category", record.category || record.category_en || "待補"],
+          ["性味 Properties", usableText(record.properties_taste_temp) || "待補"],
+          ["歸經 Channels", cleanList(record.channels_entered).join("、") || "待補"],
+          ["相關方劑 Related", `${(record.related_formulas || []).length} 首`]
+        ];
     return `
       <div class="k-detail-shell">
-        <header class="k-detail-header">
-          <div>
+        <div class="k-detail-toolbar">
+          <span>${esc(kind === "formula" ? "方劑資料庫 / Formula" : "中藥資料庫 / Materia Medica")}</span>
+          <button type="button" class="k-detail-close" data-detail-close aria-label="關閉詳情">返回列表</button>
+        </div>
+        <header class="k-detail-hero">
+          <div class="k-detail-watermark" aria-hidden="true">${esc((record.name_zh || record.pinyin || "?").slice(0, 1))}</div>
+          <div class="k-detail-hero-top">
+            <div>
+              <div class="k-detail-badges"><span>${esc(record.category || record.category_en || kind)}</span><span>${esc(record.id)}</span></div>
             <p class="k-detail-eyebrow">${eyebrow}</p>
             <h2>${esc(record.name_zh || record.pinyin)} <small>${esc(record.pinyin)}</small></h2>
             <p class="k-detail-en">${esc(record.name_en)}</p>
@@ -123,15 +137,28 @@
           </div>
           <div class="k-detail-header-actions">
             ${statusPill(record.review_status)}
-            <button type="button" class="k-detail-close" data-detail-close aria-label="關閉詳情">關閉</button>
+          </div>
+          </div>
+          <div class="k-detail-fact-grid">
+            ${facts.map(([label, value]) => `<article><span>${esc(label)}</span><strong>${esc(value)}</strong></article>`).join("")}
           </div>
         </header>
         <div class="k-review-banner"><strong>Draft · source review pending</strong><span>私人學習參考，不是醫療建議；現代病名關聯仍需辨證與來源核對。</span></div>
-        <nav class="k-detail-tabs" role="tablist" aria-label="學習卡分頁">
-          ${panels.map((panel, index) => `<button type="button" role="tab" id="knowledge-tab-${panel.id}" data-detail-tab="${panel.id}" aria-controls="knowledge-panel-${panel.id}" aria-selected="${index === 0}">${esc(panel.label)}</button>`).join("")}
-        </nav>
-        <div class="k-detail-panels">
-          ${panels.map((panel, index) => `<div role="tabpanel" id="knowledge-panel-${panel.id}" aria-labelledby="knowledge-tab-${panel.id}" data-detail-panel="${panel.id}"${index ? " hidden" : ""}>${panel.content}</div>`).join("")}
+        <div class="k-detail-study-layout">
+          <main class="k-detail-panels">
+            ${panels.map((panel) => `<section class="k-detail-panel" id="knowledge-section-${panel.id}" data-detail-panel="${panel.id}"><h2>${esc(panel.label)}</h2>${panel.content}</section>`).join("")}
+          </main>
+          <aside class="k-detail-sidebar" aria-label="學習卡快速導覽">
+            <section class="k-detail-sidebar-box">
+              <h3>快速導覽</h3>
+              ${panels.map((panel, index) => `<button type="button" data-detail-jump="${panel.id}"><span>${String(index + 1).padStart(2, "0")}</span>${esc(panel.label)}</button>`).join("")}
+            </section>
+            <section class="k-detail-sidebar-box k-detail-review-box">
+              <h3>資料狀態</h3>
+              <p>${statusPill(record.review_status)}</p>
+              <small>內容需依教材、機構資料庫與 Ting 課件逐欄核對。</small>
+            </section>
+          </aside>
         </div>
       </div>`;
   }

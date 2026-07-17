@@ -14,24 +14,26 @@ Surface: `#ws/lookup` formula and single-herb records
 ## Interaction QA
 
 - Formula and herb list cards open their corresponding detail card.
-- Formula tabs switch between exam core, composition, clinical context, and safety/sources.
-- Herb tabs switch between exam core, clinical context, pairing/differentiation, and safety/sources.
+- Formula cards present exam core, composition, clinical context, and safety/sources as one continuous study page.
+- Herb cards present exam core, clinical context, pairing/differentiation, and safety/sources as one continuous study page.
+- Desktop cards use the same hero, fact-grid, long-form article, and sticky related-navigation rhythm as acupoint detail pages.
+- Quick-navigation buttons scroll to each study section without hiding the other sections.
 - Formula composition herb links open the matching `herb.*` card when a stable ID match exists.
 - Herb related-formula links open the matching `formula.*` card.
 - Existing `????` and U+FFFD damaged fields are suppressed instead of rendered as study content.
 
 ## Responsive QA
 
-- Desktop dialog: 980 px maximum width, no horizontal overflow.
-- Mobile test: 390 x 844 px, dialog width 374.4 px, no dialog horizontal overflow.
-- Mobile tabs intentionally scroll horizontally; body content and relation chips remain inside the dialog.
-- No browser console warnings or errors were present during interaction testing.
+- Desktop dialog: 1120 px maximum width, no horizontal overflow at 1280 x 720.
+- Mobile rules collapse the four hero facts to two columns and move the status sidebar above the article; the redundant quick-navigation box is hidden.
+- Body content and relation chips remain constrained by min-width and overflow-wrap rules.
+- Formula-to-herb navigation was re-tested after the long-card conversion.
 
 ## Accessibility QA
 
 - Detail card uses a native modal `dialog` with an accessible label.
-- Study sections use headings; tab controls use `tablist`, `tab`, `tabpanel`, `aria-controls`, and `aria-labelledby` semantics.
-- Buttons and links retain visible keyboard focus styles.
+- Study sections use hierarchical headings and semantic `main`, `section`, and `aside` landmarks.
+- Quick-navigation controls are real buttons; buttons and links retain visible keyboard focus styles.
 
 ## Findings
 

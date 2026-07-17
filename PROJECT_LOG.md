@@ -26,9 +26,11 @@ Use this file as the first-read context before each daily optimization session. 
 ### 2026-07-17 - Interactive formula and herb study cards (Codex)
 
 Implemented the first working AcuTing OS formula and single-herb detail cards in
-the Lookup workspace. Formula cards now separate exam core, composition,
-clinical context, and safety/sources. Herb cards separate exam core, clinical
-context, pairing/differentiation, and safety/sources.
+the Lookup workspace. After Ting's visual review, the detail experience was
+revised to match the acupoint page rhythm: identity hero, four fast facts,
+continuous long-form sections, and sticky quick navigation. Formula cards cover
+exam core, composition, clinical context, and safety/sources. Herb cards cover
+exam core, clinical context, pairing/differentiation, and safety/sources.
 
 The relation graph is navigable in both directions: formula composition resolves
 pinyin entries to stable `herb.*` IDs where available, and herb cards link back
@@ -42,8 +44,10 @@ Files changed: `js/knowledge.js`, `styles.css`, `design-qa.md`,
 Validation: JavaScript syntax PASS; validate-data PASS;
 validate-interactions PASS; validate-relations PASS; validate-herbal-links PASS;
 validate-herb-canon PASS; validate-point-ids PASS; validate-naming PASS; all
-`data/**/*.json` parse PASS. Browser QA passed at desktop and 390 x 844 mobile
-with no console warnings/errors and no detail-dialog horizontal overflow.
+`data/**/*.json` parse PASS. The first version passed desktop and 390 x 844
+mobile QA. The acupoint-style revision was re-tested at 1280 x 720 with no
+detail-dialog horizontal overflow; compact-screen rules explicitly collapse the
+fact grid and sidebar.
 
 Protected areas not touched: no `app.js`, no clinical case data, no
 `data/acupoints/361.json`, no `docs/CLOUDTCM_*`, no generated data, and no

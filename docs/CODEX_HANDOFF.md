@@ -41,8 +41,13 @@ Claude review note:
 Date/time: 2026-07-17
 Agent: Codex
 Branch: `main`
-Commit or stash: this commit (`Add interactive formula and herb study cards`)
+Commit or stash: this follow-up commit (`Align formula and herb cards with acupoint details`), building on `7930f13`
 Task: Implement the approved first formula/herb detail-card experience without changing canonical data.
+
+Ting follow-up incorporated:
+- Replaced the compact tabbed presentation with an acupoint-style complete study card.
+- Added the same identity hero, four-fact summary, continuous article, and sticky related-navigation pattern used by point details.
+- Preserved formula-to-herb and herb-to-formula ID-based navigation.
 
 Files changed:
 - `js/knowledge.js`
@@ -61,7 +66,9 @@ Validation:
 - `scripts/validate-point-ids.js`: PASS
 - `scripts/validate-naming.js`: PASS
 - `data/**/*.json` parse check: PASS
-- Browser interaction QA: PASS on desktop and 390 x 844 mobile; no console warnings/errors; no detail-dialog horizontal overflow.
+- Browser interaction QA: first version PASS on desktop and 390 x 844 mobile.
+- Acupoint-style revision PASS at 1280 x 720; formula long card and formula-to-herb navigation work with zero detail-dialog horizontal overflow.
+- Responsive CSS retains the previously tested compact constraints and now collapses the fact grid/sidebar explicitly for compact screens.
 
 Protected areas not touched:
 - No `app.js`, case/SOAP, or clinical data edits.
