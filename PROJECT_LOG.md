@@ -23,6 +23,39 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-17 - First formula dose evidence staging batch (Codex)
+
+Created a source-gated dose staging layer for five existing formulas: Gui Zhi
+Tang, Ma Huang Tang, Yin Qiao San, Xiao Chai Hu Tang, and Xiao Yao San. The
+batch transcribes classical quantities and the modern gram references displayed
+on the reviewed HKBU formula pages while preserving non-gram units and source
+ambiguities. Sun Ten U.S. public product evidence records SKU, dosage form, and
+public notices for four formulas; all concentrated-granule serving grams remain
+null because the reviewed public pages do not state a serving amount.
+
+Added a dedicated validator that checks formula IDs, available herb IDs,
+canonical formula composition membership, source fields, positive quantities,
+draft status, and the no-inference granule rule. Added an approval summary and
+registered the staging layer in the data migration map. Canonical
+`data/herbs/formulas.json` was not changed.
+
+Files changed: `data/imports/formula_doses/README.md`,
+`data/imports/formula_doses/formula_dose_staging.json`,
+`scripts/validate-formula-dose-staging.js`,
+`docs/FORMULA_DOSE_STAGING_SUMMARY.md`, `docs/DATA_MIGRATION_MAP.md`,
+`PROJECT_LOG.md`, and `docs/CODEX_HANDOFF.md`.
+
+Validation: formula dose staging PASS (5 formulas, 34 composition rows, 30
+gram references, 4 missing/non-gram rows, 2 pending herb IDs, 4 Sun Ten product
+records, 0 granule serving-gram entries); validate-data, interactions,
+relations, herbal-links, herb-canon, point-ids, naming, point-categories, and all
+JSON parsing PASS. Encoding validator reports the existing 768-item backlog;
+none of the new staging files appears in its findings.
+
+Protected areas not touched: no `app.js`, no `js/knowledge.js`, no
+`styles.css`, no `data/herbs/formulas.json`, no `data/acupoints/361.json`, no
+`docs/CLOUDTCM_*`, no generated data, and no CloudTCM point map.
+
 ### 2026-07-17 - Interactive formula and herb study cards (Codex)
 
 Implemented the first working AcuTing OS formula and single-herb detail cards in

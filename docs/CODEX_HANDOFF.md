@@ -36,6 +36,60 @@ Claude review note:
 
 ---
 
+## 2026-07-17 - Codex - Formula dose evidence staging batch 1
+
+Date/time: 2026-07-17
+Agent: Codex
+Branch: `main`
+Commit or stash: pending task-close commit
+Task: Build a reviewable first dose-evidence batch without changing canonical formula data.
+
+Files changed:
+- `data/imports/formula_doses/README.md`
+- `data/imports/formula_doses/formula_dose_staging.json`
+- `scripts/validate-formula-dose-staging.js`
+- `docs/FORMULA_DOSE_STAGING_SUMMARY.md`
+- `docs/DATA_MIGRATION_MAP.md`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- Formula dose staging validator: PASS (5 formulas, 34 composition rows, 30
+  gram references, 4 non-gram/missing rows, 2 pending herb IDs, 4 Sun Ten
+  product records, 0 granule serving grams).
+- validate-data, validate-interactions, validate-relations,
+  validate-herbal-links, validate-herb-canon, validate-point-ids,
+  validate-naming, validate-point-categories: PASS.
+- All `data/**/*.json` parse: PASS (455 files).
+- validate-encoding: expected baseline FAIL with 768 pre-existing findings;
+  no new staging file appears in its findings.
+
+Protected areas not touched:
+- No canonical `data/herbs/formulas.json` write.
+- No `app.js`, `js/knowledge.js`, `styles.css`, clinical case data,
+  `data/acupoints/361.json`, `docs/CLOUDTCM_*`, generated data, or CloudTCM
+  point map changes.
+
+Known risks / manual checks:
+- HKBU displays 桂枝湯 大棗 as `十二枚 (3g)`; preserved and explicitly flagged
+  for unit review.
+- 小柴胡湯 大棗 is retained as `4枚`, not converted to grams.
+- 銀翹散 蘆根 and 逍遙散 薄荷/生薑 remain without a copied dose.
+- 竹葉 and 牛蒡子 have no stable ID in the current 202-herb shortlist and
+  remain `herb_id: null`; no IDs were invented.
+- Sun Ten public pages did not establish serving grams. All granule dose fields
+  remain null; no conversion was performed.
+
+Next recommended action:
+- Ting/Claude review `docs/FORMULA_DOSE_STAGING_SUMMARY.md` and decide the five
+  approval-gate questions before any field-level merge preview is written.
+
+Claude review note:
+- Please audit the HKBU transcriptions and Sun Ten SKU identity. This is a
+  staging-only evidence batch, not a request to apply values to canonical data.
+
+---
+
 ## 2026-07-17 - Codex - Interactive formula and herb study cards
 
 Date/time: 2026-07-17

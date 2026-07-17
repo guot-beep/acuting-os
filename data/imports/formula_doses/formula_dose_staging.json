@@ -1,0 +1,126 @@
+{
+  "dataset": "formula_dose_staging",
+  "schema_version": "1.0",
+  "updated": "2026-07-17",
+  "status": "staging_only",
+  "review_status": "draft",
+  "purpose": "Source-transcribed dose evidence for review before any canonical formula merge.",
+  "safety_notice": "Study reference only. Not medical advice and not a prescribing recommendation.",
+  "conversion_policy": "Never derive concentrated-granule serving grams from bottle size, raw-herb grams, extract weight, or concentration ratio.",
+  "records": [
+    {
+      "formula_id": "formula.gui_zhi_tang",
+      "name_zh": "桂枝湯",
+      "source_formula": {
+        "source_id": "source.institution.hkbu_formula_images",
+        "source_formula_id": "F00002",
+        "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00002&lang=chs",
+        "capture_status": "source_page_checked"
+      },
+      "composition_doses": [
+        { "herb_id": "herb.gui_zhi", "pinyin": "Gui Zhi", "name_zh": "桂枝", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.bai_shao", "pinyin": "Bai Shao", "name_zh": "芍藥", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.gan_cao", "pinyin": "Zhi Gan Cao", "name_zh": "炙甘草", "classical_amount_text": "二兩", "decoction_reference_g": 6, "reference_amount_text": "6g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.sheng_jiang", "pinyin": "Sheng Jiang", "name_zh": "生薑", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.da_zao", "pinyin": "Da Zao", "name_zh": "大棗", "classical_amount_text": "十二枚", "decoction_reference_g": 3, "reference_amount_text": "3g", "dose_status": "source_transcribed_needs_unit_review", "notes": "HKBU page displays 十二枚 (3g); preserve verbatim and verify the pieces-to-grams interpretation before canonical use." }
+      ],
+      "granule_products": [
+        { "brand": "Sun Ten", "market": "US", "product_sku": "212", "product_url": "https://sunten.com/products/212g", "dosage_form": "granules", "label_serving_g": null, "label_frequency": null, "concentration_ratio": null, "source_status": "public_product_page_checked", "granule_status": "label_serving_source_pending" }
+      ],
+      "review_status": "draft"
+    },
+    {
+      "formula_id": "formula.ma_huang_tang",
+      "name_zh": "麻黃湯",
+      "source_formula": {
+        "source_id": "source.institution.hkbu_formula_images",
+        "source_formula_id": "F00001",
+        "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00001&lang=chs",
+        "capture_status": "source_page_checked"
+      },
+      "composition_doses": [
+        { "herb_id": "herb.ma_huang", "pinyin": "Ma Huang", "name_zh": "麻黃", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.gui_zhi", "pinyin": "Gui Zhi", "name_zh": "桂枝", "classical_amount_text": "二兩", "decoction_reference_g": 6, "reference_amount_text": "6g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.xing_ren", "pinyin": "Xing Ren", "name_zh": "杏仁", "classical_amount_text": "七十個", "decoction_reference_g": 6, "reference_amount_text": "6g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.gan_cao", "pinyin": "Zhi Gan Cao", "name_zh": "炙甘草", "classical_amount_text": "一兩", "decoction_reference_g": 3, "reference_amount_text": "3g", "dose_status": "source_transcribed" }
+      ],
+      "granule_products": [],
+      "granule_catalog_status": "not_found_in_public_sun_ten_us_catalog",
+      "review_status": "draft"
+    },
+    {
+      "formula_id": "formula.yin_qiao_san",
+      "name_zh": "銀翹散",
+      "source_formula": {
+        "source_id": "source.institution.hkbu_formula_images",
+        "source_formula_id": "F00008",
+        "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00008&lang=chs",
+        "capture_status": "source_page_checked"
+      },
+      "composition_doses": [
+        { "herb_id": "herb.lian_qiao", "pinyin": "Lian Qiao", "name_zh": "連翹", "classical_amount_text": "一兩", "decoction_reference_g": 30, "reference_amount_text": "30g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.jin_yin_hua", "pinyin": "Jin Yin Hua", "name_zh": "金銀花", "classical_amount_text": "一兩", "decoction_reference_g": 30, "reference_amount_text": "30g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.jie_geng", "pinyin": "Jie Geng", "name_zh": "桔梗", "classical_amount_text": "六錢", "decoction_reference_g": 18, "reference_amount_text": "18g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.bo_he", "pinyin": "Bo He", "name_zh": "薄荷", "classical_amount_text": "六錢", "decoction_reference_g": 18, "reference_amount_text": "18g", "dose_status": "source_transcribed" },
+        { "herb_id": null, "pinyin": "Zhu Ye", "name_zh": "竹葉", "classical_amount_text": "四錢", "decoction_reference_g": 12, "reference_amount_text": "12g", "dose_status": "source_transcribed_herb_id_pending" },
+        { "herb_id": "herb.gan_cao", "pinyin": "Gan Cao", "name_zh": "生甘草", "classical_amount_text": "五錢", "decoction_reference_g": 15, "reference_amount_text": "15g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.jing_jie", "pinyin": "Jing Jie", "name_zh": "荊芥穗", "classical_amount_text": "四錢", "decoction_reference_g": 12, "reference_amount_text": "12g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.dan_dou_chi", "pinyin": "Dan Dou Chi", "name_zh": "淡豆豉", "classical_amount_text": "五錢", "decoction_reference_g": 15, "reference_amount_text": "15g", "dose_status": "source_transcribed" },
+        { "herb_id": null, "pinyin": "Niu Bang Zi", "name_zh": "牛蒡子", "classical_amount_text": "六錢", "decoction_reference_g": 18, "reference_amount_text": "18g", "dose_status": "source_transcribed_herb_id_pending" },
+        { "herb_id": "herb.lu_gen", "pinyin": "Lu Gen", "name_zh": "蘆根", "classical_amount_text": null, "decoction_reference_g": null, "reference_amount_text": null, "dose_status": "source_dose_missing", "notes": "Present in the current formula and Sun Ten ingredient list; the reviewed HKBU composition line did not state a dose." }
+      ],
+      "granule_products": [
+        { "brand": "Sun Ten", "market": "US", "product_sku": "440", "product_url": "https://sunten.com/products/440g", "dosage_form": "granules", "label_serving_g": null, "label_frequency": null, "concentration_ratio": null, "source_status": "public_product_page_checked", "granule_status": "label_serving_source_pending", "safety_notice": "Public product page states that the product contains soy (Dan Dou Shi)." }
+      ],
+      "review_status": "draft"
+    },
+    {
+      "formula_id": "formula.xiao_chai_hu_tang",
+      "name_zh": "小柴胡湯",
+      "source_formula": {
+        "source_id": "source.institution.hkbu_formula_images",
+        "source_formula_id": "F00026",
+        "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00026&lang=chs",
+        "capture_status": "source_page_checked"
+      },
+      "composition_doses": [
+        { "herb_id": "herb.chai_hu", "pinyin": "Chai Hu", "name_zh": "柴胡", "classical_amount_text": "半斤", "decoction_reference_g": 24, "reference_amount_text": "24g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.huang_qin", "pinyin": "Huang Qin", "name_zh": "黃芩", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.ren_shen", "pinyin": "Ren Shen", "name_zh": "人參", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.gan_cao", "pinyin": "Zhi Gan Cao", "name_zh": "炙甘草", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.ban_xia", "pinyin": "Ban Xia", "name_zh": "半夏", "classical_amount_text": "半升", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.sheng_jiang", "pinyin": "Sheng Jiang", "name_zh": "生薑", "classical_amount_text": "三兩", "decoction_reference_g": 9, "reference_amount_text": "9g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.da_zao", "pinyin": "Da Zao", "name_zh": "大棗", "classical_amount_text": "十二枚", "decoction_reference_g": null, "reference_amount_text": "4枚", "dose_status": "source_transcribed_non_gram_unit" }
+      ],
+      "granule_products": [
+        { "brand": "Sun Ten", "market": "US", "product_sku": "564", "product_url": "https://sunten.com/products/564g", "dosage_form": "granules", "label_serving_g": null, "label_frequency": null, "concentration_ratio": null, "source_status": "public_collection_listing_checked", "granule_status": "label_serving_source_pending" }
+      ],
+      "review_status": "draft"
+    },
+    {
+      "formula_id": "formula.xiao_yao_san",
+      "name_zh": "逍遙散",
+      "source_formula": {
+        "source_id": "source.institution.hkbu_formula_images",
+        "source_formula_id": "F00031",
+        "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00031&lang=chs",
+        "capture_status": "source_page_checked"
+      },
+      "composition_doses": [
+        { "herb_id": "herb.gan_cao", "pinyin": "Zhi Gan Cao", "name_zh": "炙甘草", "classical_amount_text": "半兩", "decoction_reference_g": 15, "reference_amount_text": "15g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.dang_gui", "pinyin": "Dang Gui", "name_zh": "當歸", "classical_amount_text": "一兩", "decoction_reference_g": 30, "reference_amount_text": "30g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.fu_ling", "pinyin": "Fu Ling", "name_zh": "茯苓", "classical_amount_text": "一兩", "decoction_reference_g": 30, "reference_amount_text": "30g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.bai_shao", "pinyin": "Bai Shao", "name_zh": "白芍", "classical_amount_text": "一兩", "decoction_reference_g": 30, "reference_amount_text": "30g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.bai_zhu", "pinyin": "Bai Zhu", "name_zh": "白朮", "classical_amount_text": "一兩", "decoction_reference_g": 30, "reference_amount_text": "30g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.chai_hu", "pinyin": "Chai Hu", "name_zh": "柴胡", "classical_amount_text": "一兩", "decoction_reference_g": 30, "reference_amount_text": "30g", "dose_status": "source_transcribed" },
+        { "herb_id": "herb.bo_he", "pinyin": "Bo He", "name_zh": "薄荷", "classical_amount_text": null, "decoction_reference_g": null, "reference_amount_text": null, "dose_status": "source_dose_missing_or_preparation_adjuvant" },
+        { "herb_id": "herb.sheng_jiang", "pinyin": "Sheng Jiang", "name_zh": "生薑", "classical_amount_text": null, "decoction_reference_g": null, "reference_amount_text": null, "dose_status": "source_dose_missing_or_preparation_adjuvant" }
+      ],
+      "granule_products": [
+        { "brand": "Sun Ten", "market": "US", "product_sku": "826", "product_url": "https://sunten.com/products/826g", "dosage_form": "granules", "label_serving_g": null, "label_frequency": null, "concentration_ratio": null, "source_status": "public_product_page_checked", "granule_status": "label_serving_source_pending" }
+      ],
+      "review_status": "draft"
+    }
+  ]
+}
+
