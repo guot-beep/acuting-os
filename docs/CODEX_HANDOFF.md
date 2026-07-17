@@ -36,12 +36,48 @@ Claude review note:
 
 ---
 
+## 2026-07-17 - Codex - Herb/formula card relation design captured
+
+Date/time: 2026-07-17
+Agent: Codex
+Branch: `main`
+Commit or stash: pending commit for this entry (`Design herb and formula card relation graph`)
+Task: Capture Ting's requirement that herb/formula cards include modern applications, bidirectional western/TCM disease links, related formulas, and formula composition links to herb IDs.
+
+Files changed:
+- `docs/HERB_FORMULA_CARD_RELATION_DESIGN.md`
+- `docs/DATA_MIGRATION_MAP.md`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- Docs-only change. No runtime validators required.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No CloudTCM point map edits.
+- No app.js, case/SOAP UI, or PC point-category UI edits.
+
+Known risks / manual checks:
+- This is a design capture, not implementation. Next implementation should still go through B1/B2/B3 wiring and relation-validator extension.
+- Source policy explicitly allows CloudTCM and American Dragon as private-study source layers, but canonical card fields still need clear source refs and review status.
+
+Next recommended action:
+- Use this design when implementing formula/herb cards: formula merge/render first, herb cards second, formula composition links third, then modern applications/source batches.
+
+Claude review note:
+- Please treat `docs/HERB_FORMULA_CARD_RELATION_DESIGN.md` as Ting's current desired direction for herb/formula UI and data modeling.
+
+---
+
 ## 2026-07-17 - Codex - LL3 IVF cycle comparison source-assisted draft fill
 
 Date/time: 2026-07-17
 Agent: Codex
 Branch: `main`
-Commit or stash: pending commit for this entry (`LL3: fill IVF cycle comparison draft`)
+Commit or stash: `cea498e` (`LL3: fill IVF cycle comparison draft`)
 Task: Fill `cmp.ivf_cycle_patterns` using official/professional IVF/ART sources plus Ting Notion/Bastyr notes.
 
 Files changed:

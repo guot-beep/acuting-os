@@ -17,6 +17,7 @@ Update this file every time data moves. Last update: 2026-07-12 (Claude Phase 2 
 | Formula categories / safety flags / pattern links | `data/herbs/formula_categories.json`, `data/herbs/formula_safety_flags.json`, `data/herbs/formula_pattern_links.json` | partially referenced by formula/pathology planning scripts; not fully rendered | same | Draft relationship/reference layer |
 | Formula canon shortlist (115) | `data/herbs/formula_canon_shortlist.json` | NOT wired into app | created as formula canon planning layer | Draft skeleton/canon planning file; do not treat as rendered canonical until formula merge B1/B2 is approved |
 | Formula import staging | `data/herbs/formula_import_staging.json` | NOT wired into app | dataset import staging | Staging only; do not overwrite `formulas.json` from this file without a preview/apply workflow |
+| Formula/herb card relation design | `docs/HERB_FORMULA_CARD_RELATION_DESIGN.md` | NOT wired into app | new design note | DESIGN 2026-07-17; modern applications, related formulas, condition links, and formula composition must use stable IDs |
 | High-yield formula seeds | `data/herbs/high_yield_formula_seeds.json` | NOT wired into app | study seed file | Draft seed/reference list |
 | Single herbs rendered file | `data/herbs/single_herbs.json` | NOT wired into app | same | Empty placeholder; not current herb canon |
 | Herb canon shortlist (202) | `data/herbs/herb_canon_shortlist.json` | NOT wired into app | new CH / Materia Medica staging layer | Draft skeleton/content file; visible only after B3 wiring |

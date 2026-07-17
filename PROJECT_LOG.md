@@ -23,6 +23,22 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-17 - Herb/formula card relation design captured (Codex)
+
+Captured Ting's direction that formulas and single herbs should become
+acupoint-style detail cards with first-class modern applications, related
+conditions, traditional disease links, related formulas, and formula composition
+links to herb IDs. Added `docs/HERB_FORMULA_CARD_RELATION_DESIGN.md` and
+registered it in `docs/DATA_MIGRATION_MAP.md`.
+
+Key decision: modern applications are not prose-only tags; they must connect
+western condition IDs, traditional disease IDs, pattern IDs, formulas, and herbs.
+Formula composition should link to stable `herb.*` IDs wherever possible.
+CloudTCM and American Dragon can be used as private-study source layers with
+source refs and draft/source-review status.
+
+Validation: docs-only change; no runtime validators required.
+
 ### 2026-07-17 - LL3: IVF cycle comparison source-assisted draft fill (Codex)
 
 Filled `cmp.ivf_cycle_patterns` as the fifth LL3 comparison table. The table
