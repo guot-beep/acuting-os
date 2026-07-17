@@ -199,9 +199,9 @@
       "id": "cmp.ovulatory_factor_patterns",
       "type": "comparison",
       "title_zh": "排卵因素常見證型鑑別骨架",
-      "title_en": "Ovulatory factor context - pattern differentiation skeleton",
+      "title_en": "Ovulatory factor context - pattern differentiation draft",
       "source_condition_id": "western_condition.ovulatory_factor_context",
-      "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
+      "seed_basis": "Source-assisted draft approved by Ting: ovulatory-factor biomedical context from NICHD, ACOG, and ASRM/ReproductiveFacts; TCM pattern discriminator language from Ting's Notion/Bastyr menstruation, Zang-Fu, and formula notes, cross-checked against accepted PCOS/anovulation LL3 drafts. Draft study comparison only; not medical advice.",
       "compares": [
         "pattern.kidney_deficiency",
         "pattern.liver_qi_stagnation",
@@ -217,34 +217,52 @@
       ],
       "cells": {
         "pattern.kidney_deficiency": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "Ovulatory-factor documentation context with delayed, long, scanty, irregular, or absent cycles plus Kidney signs: low back/knee soreness, fatigue, dizziness/tinnitus, low libido, or reproductive/Essence deficiency context. 排卵因素不孕背景中，若見月經後期、週期長、量少、閉經或不規則，合併腰膝酸軟、疲倦、頭暈耳鳴、性功能/生殖力低下，偏腎虛。",
+          "Tongue / 舌": "Kidney Yang/Qi deficiency: pale, swollen, wet coat. Kidney Yin/Essence deficiency: red or scant/peeled coat. 腎陽/腎氣虛多舌淡胖、苔潤；腎陰/精虧多舌紅少苔或剝苔。",
+          "Pulse / 脈": "Deep and weak as the broad Kidney deficiency cue; deep-slow-weak for Yang deficiency, thin-rapid for Yin deficiency. 腎虛總以沉弱為主；陽虛偏沉遲無力，陰虛偏細數。",
+          "Key accompanying signs / 兼症": "Ovulation-tracking notes may show inconsistent or absent LH/BBT/progesterone evidence, but the TCM discriminator is the deficiency base: delayed cycles, low back soreness, low vitality, cold signs, or deficiency-heat signs. 排卵追蹤可見 LH、基礎體溫或黃體期 progesterone 線索不穩或缺如；中醫鑑別重點是虛象底色：月經後期、腰痠、精力低、寒象或虛熱象。",
+          "Treatment principle / 治法": "Tonify Kidney, support Essence, regulate Chong/Ren and menstrual rhythm; warm Yang or nourish Yin according to signs. 補腎益精、調衝任與月經節律；依證分溫腎陽或滋腎陰。",
+          "Representative formula / 代表方": "Study anchors: formula.liu_wei_di_huang_wan, formula.jin_gui_shen_qi_wan, formula.zuo_gui_wan, formula.you_gui_wan. 學習錨點：六味地黃丸、金匱腎氣丸、左歸丸、右歸丸。"
         },
         "pattern.liver_qi_stagnation": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "Ovulatory-factor context with irregular cycles that fluctuate with stress, emotional constraint, PMS, breast distension, hypochondriac or lower abdominal distension, sighing, mood depression, or irritability. 排卵因素背景中，若週期隨壓力波動，合併情志鬱結、PMS、乳脹、脅肋或少腹脹、善太息、鬱悶易怒，偏肝氣鬱結。",
+          "Tongue / 舌": "Often normal to slightly dusky with thin white coat; red edges or thin yellow coat if constraint transforms into heat. 舌可正常或偏暗，苔薄白；鬱久化熱可見邊紅或薄黃苔。",
+          "Pulse / 脈": "Wiry; wiry-rapid if heat signs, wiry-choppy if stasis begins to appear. 脈弦；化熱偏弦數，夾瘀或久鬱入絡偏弦澀。",
+          "Key accompanying signs / 兼症": "Distending discomfort rather than fixed stabbing pain; mood/cycle linkage; breast distension, PMS, headaches, throat constraint, or Liver-Spleen digestive upset may coexist. 不適偏脹而非固定刺痛；情緒與週期連動；可伴乳脹、PMS、頭痛、咽中梗阻感，或肝脾不調消化症狀。",
+          "Treatment principle / 治法": "Soothe Liver, move qi, regulate menstruation and Chong/Ren; clear heat only when heat signs are present. 疏肝理氣、調經與衝任；有熱象時才兼清熱。",
+          "Representative formula / 代表方": "Study anchors: formula.xiao_yao_san, formula.jia_wei_xiao_yao_san, formula.chai_hu_shu_gan_san. 學習錨點：逍遙散、加味逍遙散、柴胡疏肝散。"
         },
         "pattern.phlegm_damp": {
-          "Chief pattern cue / 主辨證線索": "",
-          "Tongue / 舌": "",
-          "Pulse / 脈": "",
-          "Key accompanying signs / 兼症": "",
-          "Treatment principle / 治法": "",
-          "Representative formula / 代表方": ""
+          "Chief pattern cue / 主辨證線索": "Ovulatory-factor context with irregular or absent cycles plus damp-phlegm signs: heaviness, weight/metabolic documentation context, chest oppression or nausea, poor appetite, loose stools, leukorrhea, or a greasy coat. 排卵因素背景中，若週期不規則或閉經，合併痰濕線索：身重、代謝/體重脈絡、胸悶泛惡、納差便溏、帶下或苔膩，偏痰濕。",
+          "Tongue / 舌": "Pale, swollen, or enlarged tongue, often with white greasy coat; yellow greasy coat if damp-heat signs are also present. 舌淡胖或腫大，苔白膩；若夾濕熱可見黃膩苔。",
+          "Pulse / 脈": "Slippery or soggy/slippery. 脈滑，或濡滑。",
+          "Key accompanying signs / 兼症": "Fatigue with body heaviness, abdominal fullness, phlegm/damp sensation, difficult weight loss, insulin-resistance documentation context, or Spleen Qi deficiency overlap. 疲倦身重、腹脹、痰濕感、體重不易降、胰島素阻抗記錄脈絡，或與脾氣虛相互重疊。",
+          "Treatment principle / 治法": "Strengthen Spleen, transform dampness, resolve phlegm, regulate Chong/Ren and menstrual rhythm. 健脾化濕、祛痰，調衝任與月經節律。",
+          "Representative formula / 代表方": "Study anchors: formula.er_chen_tang, formula.liu_jun_zi_tang, formula.wen_dan_tang when phlegm-heat or Gallbladder phlegm disturbance cues are present. 學習錨點：二陳湯、六君子湯；若見痰熱或膽鬱痰擾線索，可比較溫膽湯。"
         }
       },
       "authored_by": "model_draft",
       "status": "draft",
       "review_status": "draft",
-      "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+      "notes_en": "Source-assisted draft approved by Ting. Biomedical context is from official/professional fertility education sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes and prior accepted LL3 draft language. Keep draft until Ting or Claude reviews against class materials.",
+      "source_urls": [
+        "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-female",
+        "https://www.acog.org/womens-health/faqs/treating-infertility",
+        "https://www.reproductivefacts.org/news-and-publications/fact-sheets-and-infographics/defining-infertility/",
+        "https://www.reproductivefacts.org/news-and-publications/fact-sheets-and-infographics/infertility-an-overview-booklet/",
+        "https://www.reproductivefacts.org/news-and-publications/fact-sheets-and-infographics/oral-medicines-for-inducing-ovulation/",
+        "https://www.reproductivefacts.org/news-and-publications/fact-sheets-and-infographics/medications-for-inducing-ovulation/",
+        "https://app.notion.com/p/37747f6dea35810c8653cda996f42939",
+        "https://app.notion.com/p/38547f6dea358103a71dd2b398b0e372",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "https://app.notion.com/p/37747f6dea3581ae94d9cc1c80144f52",
+        "data/knowledge/comparison_fill_pcos.json",
+        "data/knowledge/comparison_fill_anovulation.json"
+      ],
+      "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-17",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose ovulatory dysfunction, replace fertility evaluation, or recommend treatment."
     },
     {
       "id": "cmp.ivf_cycle_patterns",
