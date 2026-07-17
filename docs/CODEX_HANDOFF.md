@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-17
 Agent: Codex
 Branch: `main`
-Commit or stash: pending task-close commit
+Commit or stash: `631a64a` (`Stage source-backed formula dose evidence`)
 Task: Build a reviewable first dose-evidence batch without changing canonical formula data.
 
 Files changed:
