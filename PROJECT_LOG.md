@@ -32,6 +32,12 @@ continuous long-form sections, and sticky quick navigation. Formula cards cover
 exam core, composition, clinical context, and safety/sources. Herb cards cover
 exam core, clinical context, pairing/differentiation, and safety/sources.
 
+Ting's concentrated-granule requirement was added to the composition design.
+The table now separates classical amount, raw-herb/decoction reference grams,
+and concentrated-granule reference grams. Granule values require ratio/brand,
+dose scope, and source context and are never calculated automatically from raw
+herb grams. Current empty values remain visibly pending source review.
+
 The relation graph is navigable in both directions: formula composition resolves
 pinyin entries to stable `herb.*` IDs where available, and herb cards link back
 to related `formula.*` records. Modern-use and condition/pattern IDs remain
@@ -47,7 +53,8 @@ validate-herb-canon PASS; validate-point-ids PASS; validate-naming PASS; all
 `data/**/*.json` parse PASS. The first version passed desktop and 390 x 844
 mobile QA. The acupoint-style revision was re-tested at 1280 x 720 with no
 detail-dialog horizontal overflow; compact-screen rules explicitly collapse the
-fact grid and sidebar.
+fact grid and sidebar. The four-column dose table was also browser-tested at
+1280 x 720 with zero table or dialog horizontal overflow.
 
 Protected areas not touched: no `app.js`, no clinical case data, no
 `data/acupoints/361.json`, no `docs/CLOUDTCM_*`, no generated data, and no

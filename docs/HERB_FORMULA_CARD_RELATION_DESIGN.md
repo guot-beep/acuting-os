@@ -87,10 +87,30 @@ Formula composition should link to herb IDs wherever possible:
   "name_zh": "柴胡",
   "pinyin": "Chai Hu",
   "role": "chief",
-  "dose_note": "private study/source note only",
+  "classical_amount_text": "一兩",
+  "decoction_reference_g": 3,
+  "granule_reference_g": null,
+  "granule_concentration_ratio": "",
+  "granule_brand": "",
+  "dose_scope": "per_day / per_dose / whole_formula",
+  "dose_note": "private study/source note only; never auto-convert decoction grams to granule grams",
   "source_refs": ["bensky", "cloudtcm.formula.xiao_yao_san"]
 }
 ```
+
+Dose display is intentionally multi-track:
+
+- `classical_amount_text`: the source text and historical unit.
+- `decoction_reference_g`: source-backed raw-herb/decoction reference grams.
+- `granule_reference_g`: source-backed concentrated-granule reference grams.
+- `granule_concentration_ratio` and `granule_brand`: required context because
+  extraction ratios and products differ.
+- `dose_scope`: distinguishes a whole formula, total daily amount, and a single
+  administration.
+
+The app must never derive `granule_reference_g` automatically from
+`decoction_reference_g`. Unknown values remain null/pending until a named
+manufacturer, formulary, course source, or other approved reference is recorded.
 
 If the herb ID does not exist yet, keep the name and mark
 `herb_id_review_status: "needs_matching"`. Do not invent unstable IDs.

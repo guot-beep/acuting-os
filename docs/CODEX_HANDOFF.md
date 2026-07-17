@@ -41,13 +41,16 @@ Claude review note:
 Date/time: 2026-07-17
 Agent: Codex
 Branch: `main`
-Commit or stash: this follow-up commit (`Align formula and herb cards with acupoint details`), building on `7930f13`
+Commit or stash: this follow-up commit (`Add concentrated granule dose column to formula cards`), building on `9775bcd`
 Task: Implement the approved first formula/herb detail-card experience without changing canonical data.
 
 Ting follow-up incorporated:
 - Replaced the compact tabbed presentation with an acupoint-style complete study card.
 - Added the same identity hero, four-fact summary, continuous article, and sticky related-navigation pattern used by point details.
 - Preserved formula-to-herb and herb-to-formula ID-based navigation.
+- Added a separate concentrated-granule reference-gram column beside classical
+  amount and raw-herb/decoction grams. Schema guidance requires ratio/brand,
+  dose scope, source, and no automatic raw-herb-to-granule conversion.
 
 Files changed:
 - `js/knowledge.js`
@@ -68,6 +71,7 @@ Validation:
 - `data/**/*.json` parse check: PASS
 - Browser interaction QA: first version PASS on desktop and 390 x 844 mobile.
 - Acupoint-style revision PASS at 1280 x 720; formula long card and formula-to-herb navigation work with zero detail-dialog horizontal overflow.
+- Four-column composition dose table PASS at 1280 x 720 with zero wrapper/dialog overflow.
 - Responsive CSS retains the previously tested compact constraints and now collapses the fact grid/sidebar explicitly for compact screens.
 
 Protected areas not touched:

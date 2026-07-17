@@ -48,6 +48,14 @@
     return (Array.isArray(values) ? values : []).map(usableText).filter(Boolean);
   }
 
+  function doseValue(value, suffix = "g") {
+    if (value === 0) return `0${suffix}`;
+    if (typeof value === "number") return `${value}${suffix}`;
+    const text = usableText(value);
+    if (!text) return "待來源核對";
+    return /[a-zA-Z克兩錢枚]/.test(text) ? text : `${text}${suffix}`;
+  }
+
   function detailList(values, emptyText = "待補 / Content pending source review") {
     const items = cleanList(values);
     return items.length
@@ -171,8 +179,17 @@
     const composition = (record.composition || []).map((item) => {
       const herb = herbByPinyin.get(normalizeKey(item.pinyin));
       const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" · ") || "Composition item pending";
-      const role = [usableText(item.role_zh), usableText(item.role_en), usableText(item.dose_range)].filter(Boolean).join(" · ");
-      return `<li><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></li>`;
+      const role = [usableText(item.role_zh), usableText(item.role_en)].filter(Boolean).join(" · ");
+      const classicalAmount = usableText(item.classical_amount_text || item.classical_amount) || "待補";
+      const decoctionDose = doseValue(item.decoction_reference_g || item.decoction_dose_g || item.dose_range);
+      const granuleDose = doseValue(item.granule_reference_g || item.granule_dose_g);
+      const granuleContext = [usableText(item.granule_concentration_ratio), usableText(item.granule_brand)].filter(Boolean).join(" · ");
+      return `<tr>
+        <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
+        <td>${esc(classicalAmount)}</td>
+        <td>${esc(decoctionDose)}</td>
+        <td><strong>${esc(granuleDose)}</strong>${granuleContext ? `<small>${esc(granuleContext)}</small>` : ""}</td>
+      </tr>`;
     }).join("");
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
     const relatedConditions = (record.related_conditions || []).map((id) => `<span class="k-static-chip">${esc(id)}</span>`).join("");
@@ -180,7 +197,7 @@
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
       { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(record.comparison_group)}</p>` : '<p class="k-detail-empty">待補</p>')}</div>` },
-      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成", "點選中藥可進入單味藥卡", composition ? `<ol class="k-composition-list">${composition}</ol>` : '<p class="k-detail-empty">組成待補 / Composition pending</p>') },
+      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與劑量", "點選中藥可進入單味藥卡", composition ? `<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>原典用量</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div><p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : '<p class="k-detail-empty">組成待補 / Composition pending</p>') },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safety]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
     ];

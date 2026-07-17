@@ -49,6 +49,10 @@ modern_clinical_use_tags[], related_conditions[], related_formulas[], clinical_u
 
 - Dual-track content: English (exam) layer from Bensky *Formulas & Strategies* / *Materia Medica*
   + Deadman where relevant → mark source_checked. Chinese (depth) from CloudTCM /formula, 萬方 → draft.
+- Dose tracks must remain separate: classical source amount, raw-herb/decoction
+  reference grams, and concentrated-granule reference grams. Granule entries
+  require concentration ratio/brand, dose scope, source, and review status;
+  never auto-convert them from raw-herb grams.
 - **Framing, never medical claims:**
   - modern_clinical_use_tags / related_conditions → UI shows "相關 / 傳統用於 / 研究方向",
     NOT "treats / cures".

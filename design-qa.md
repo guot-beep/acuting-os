@@ -20,6 +20,10 @@ Surface: `#ws/lookup` formula and single-herb records
 - Quick-navigation buttons scroll to each study section without hiding the other sections.
 - Formula composition herb links open the matching `herb.*` card when a stable ID match exists.
 - Herb related-formula links open the matching `formula.*` card.
+- Formula composition uses a four-column dose table: herb, classical amount,
+  raw-herb/decoction reference grams, and concentrated-granule reference grams.
+- Empty dose fields render as source-review pending; the UI never auto-converts
+  raw-herb grams into concentrated-granule grams.
 - Existing `????` and U+FFFD damaged fields are suppressed instead of rendered as study content.
 
 ## Responsive QA
@@ -28,6 +32,7 @@ Surface: `#ws/lookup` formula and single-herb records
 - Mobile rules collapse the four hero facts to two columns and move the status sidebar above the article; the redundant quick-navigation box is hidden.
 - Body content and relation chips remain constrained by min-width and overflow-wrap rules.
 - Formula-to-herb navigation was re-tested after the long-card conversion.
+- Dose table QA at 1280 x 720: 777 px table wrapper, zero table or dialog horizontal overflow.
 
 ## Accessibility QA
 
