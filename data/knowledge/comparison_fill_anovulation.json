@@ -1,0 +1,52 @@
+{
+  "dataset": "comparison_fill",
+  "batch": "anovulation",
+  "purpose": "Source-assisted draft fill for the anovulation pattern comparison table. Study context only; not medical advice.",
+  "review_status": "draft",
+  "source_policy": "Biomedical ovulation/anovulation context comes from official medical sources. TCM discriminator wording comes from Ting's Notion/Bastyr gynecology, menstruation, uterus, Zang-Fu, and Liver pathology notes. Keep draft until Ting/Claude source review.",
+  "fills": {
+    "cmp.anovulation_patterns": {
+      "title_en": "Anovulation - pattern differentiation draft",
+      "seed_basis": "Source-assisted draft approved by Ting: ovulation/anovulation biomedical context from NIH/NICHD and WomensHealth.gov; TCM pattern discriminator language from Ting's Notion/Bastyr gynecology, irregular menstruation, uterus, Zang-Fu, and Liver pathology notes. Draft study comparison only; not medical advice.",
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "source_urls": [
+        "https://www.nichd.nih.gov/health/topics/infertility/conditioninfo/causes/causes-female",
+        "https://www.nichd.nih.gov/newsroom/news/042018-diet-ovulation",
+        "https://womenshealth.gov/menstrual-cycle/your-menstrual-cycle",
+        "https://womenshealth.gov/menstrual-cycle/your-menstrual-cycle-and-your-health",
+        "https://app.notion.com/p/37747f6dea35810c8653cda996f42939",
+        "https://app.notion.com/p/37747f6dea35814d8bc2eabbcd9a5b07",
+        "https://app.notion.com/p/37747f6dea35818e8cd0fc8d21623365",
+        "https://app.notion.com/p/38547f6dea3581a59fccc6eb2a84df0e",
+        "https://app.notion.com/p/38547f6dea358103a71dd2b398b0e372",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "https://app.notion.com/p/38b47f6dea3581e19e22e7eb6848332d"
+      ],
+      "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-17",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose anovulation, replace fertility evaluation, or recommend treatment.",
+      "notes_en": "Source-assisted draft approved by Ting. Biomedical ovulation context is from official medical sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes. Keep draft until Ting or Claude reviews against class materials.",
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "Anovulation / ovulation-tracking context with delayed, long, scanty, irregular, or absent cycles plus Kidney signs: low back/knee soreness, fatigue, dizziness/tinnitus, low libido, or reproductive/Essence deficiency context. 無排卵或排卵追蹤脈絡中，若見月經後期、週期長、量少、閉經或不規則，合併腰膝酸軟、疲倦、頭暈耳鳴、性功能/生殖力低下，偏腎虛。",
+          "Tongue / 舌": "Kidney Yang/Qi deficiency: pale, swollen, wet coat. Kidney Yin/Essence deficiency: red or scant/peeled coat. 腎陽/腎氣虛多舌淡胖、苔潤；腎陰/精虧多舌紅少苔或剝苔。",
+          "Pulse / 脈": "Deep and weak as the broad Kidney deficiency cue; deep-slow-weak for Yang deficiency, thin-rapid for Yin deficiency. 腎虛總以沉弱為主；陽虛偏沉遲無力，陰虛偏細數。",
+          "Key accompanying signs / 兼症": "Cycle tracking may show inconsistent or absent ovulation signs, but the TCM clue is the deficiency base: delayed cycles, low back soreness, low vitality, cold signs or deficiency-heat signs. 週期追蹤可見排卵線索不穩或缺如，但中醫重點是虛象底色：月經後期、腰痠、精力低、寒象或虛熱象。",
+          "Treatment principle / 治法": "Tonify Kidney, support Essence, regulate Chong/Ren and menstrual rhythm; warm Yang or nourish Yin according to signs. 補腎益精、調衝任與月經節律；依證分溫腎陽或滋腎陰。",
+          "Representative formula / 代表方": "Study anchors: formula.liu_wei_di_huang_wan, formula.jin_gui_shen_qi_wan, formula.zuo_gui_wan, formula.you_gui_wan. 學習錨點：六味地黃丸、金匱腎氣丸、左歸丸、右歸丸。"
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "Anovulation / irregular-cycle context with stress or emotional constraint, PMS, breast distension, hypochondriac or lower abdominal distension, sighing, mood depression, irritability, or cycle changes that fluctuate with stress. 無排卵或週期不規則脈絡中，若見壓力/情志鬱結、PMS、乳脹、脅肋或少腹脹、善太息、鬱悶易怒，或週期隨壓力波動，偏肝氣鬱結。",
+          "Tongue / 舌": "Often normal to slightly dusky with thin white coat; red edges or thin yellow coat if constraint transforms into heat. 舌可正常或偏暗，苔薄白；鬱久化熱可見邊紅或薄黃苔。",
+          "Pulse / 脈": "Wiry; wiry-rapid if heat signs, wiry-choppy if stasis begins to appear. 脈弦；化熱偏弦數，夾瘀或久鬱入絡偏弦澀。",
+          "Key accompanying signs / 兼症": "Distending pain rather than fixed stabbing pain; mood/cycle linkage; breast distension, PMS, headaches, throat constraint, or Liver-Spleen digestive upset may coexist. 疼痛偏脹而非固定刺痛；情緒與週期連動；可伴乳脹、PMS、頭痛、咽中梗阻感，或肝脾不調消化症狀。",
+          "Treatment principle / 治法": "Soothe Liver, move qi, regulate menstruation and Chong/Ren; clear heat only when heat signs are present. 疏肝理氣、調經與衝任；有熱象時才兼清熱。",
+          "Representative formula / 代表方": "Study anchors: formula.xiao_yao_san, formula.jia_wei_xiao_yao_san, formula.chai_hu_shu_gan_san. 學習錨點：逍遙散、加味逍遙散、柴胡疏肝散。"
+        }
+      }
+    }
+  }
+}

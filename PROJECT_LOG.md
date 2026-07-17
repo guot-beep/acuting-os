@@ -23,6 +23,34 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-17 - LL3: anovulation comparison source-assisted draft fill (Codex)
+
+Filled `cmp.anovulation_patterns` as the third LL3 comparison table. The table
+now compares Kidney deficiency and Liver qi stagnation across chief cue, tongue,
+pulse, key accompanying signs, treatment principle, and representative formulas
+(12/12 cells).
+
+Biomedical ovulation/anovulation context came from NICHD and WomensHealth.gov.
+TCM discriminator language came from Ting's Notion/Bastyr notes. The fill stays
+`model_draft`, `review_status: "draft"`, `public_safe: false`, and not medical
+advice.
+
+Files changed: `data/knowledge/comparison_fill_anovulation.json`,
+`data/knowledge/comparisons.json`, `docs/COMPARISON_FILL_QUEUE.md`,
+`data/generated/app_data.js`, `data/generated/knowledge_data.js`,
+`docs/CODEX_CURRENT_STATUS.md`, `docs/CODEX_HANDOFF.md`, `PROJECT_LOG.md`.
+
+Validation: `scripts/build-data.js` PASS; `scripts/report-comparison-fill.js`
+PASS with 54 filled / 120 pending / 3 complete; `node --check
+scripts/apply-comparison-fill.js` PASS; validate-data PASS;
+validate-interactions PASS; validate-relations PASS; validate-herbal-links PASS;
+validate-herb-canon PASS; validate-point-ids PASS; validate-naming PASS; JSON
+parse check for `data/**/*.json` PASS. `scripts/validate-encoding.js` still
+fails on the known 768 finding backlog; no encoding repair was attempted.
+
+Protected areas not touched: no clinical case data, no `data/acupoints/361.json`,
+no `docs/CLOUDTCM_*`, no CloudTCM point map, no case/SOAP UI.
+
 ### 2026-07-16 - Verification worksheets: CloudTCM 24 + dictionary gyn 25 (Claude Code)
 
 Ting's "有空時核對" background task. Two review worksheets (docs-only; no

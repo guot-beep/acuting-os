@@ -36,6 +36,61 @@ Claude review note:
 
 ---
 
+## 2026-07-17 - Codex - LL3 anovulation comparison source-assisted draft fill
+
+Date/time: 2026-07-17
+Agent: Codex
+Branch: `main`
+Commit or stash: pending commit for this entry (`LL3: fill anovulation comparison draft`)
+Task: Fill `cmp.anovulation_patterns` using official biomedical ovulation/anovulation sources plus Ting Notion/Bastyr notes.
+
+Files changed:
+- `data/knowledge/comparisons.json`
+- `data/knowledge/comparison_fill_anovulation.json`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `data/generated/app_data.js`
+- `data/generated/knowledge_data.js`
+- `PROJECT_LOG.md`
+- `docs/CODEX_CURRENT_STATUS.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/apply-comparison-fill.js anovulation`: dry-run PASS, 12 cells, 0 skipped, 11 metadata updates
+- `scripts/apply-comparison-fill.js anovulation --apply`: PASS
+- `scripts/build-data.js`: PASS, knowledge bundle reports `comparisons: 11`
+- `scripts/report-comparison-fill.js`: PASS, queue now `filled_cells: 54`, `pending_cells: 120`, `complete_tables: 3`
+- `node --check scripts/apply-comparison-fill.js`: PASS
+- `scripts/validate-data.js`: PASS
+- `scripts/validate-interactions.js`: PASS
+- `scripts/validate-relations.js`: PASS, `comparisonRecords: 11`, `comparisonPatternLinks: 29`, `comparisonSourceConditionLinks: 10`
+- `scripts/validate-herbal-links.js`: PASS
+- `scripts/validate-herb-canon.js`: PASS
+- `scripts/validate-point-ids.js`: PASS
+- `scripts/validate-naming.js`: PASS
+- JSON parse check for `data/**/*.json`: PASS, 452 files
+- `scripts/validate-encoding.js`: expected backlog FAIL, 768 known findings.
+
+Protected areas not touched:
+- No clinical case data committed.
+- No `data/acupoints/361.json` edits.
+- No `docs/CLOUDTCM_*` edits.
+- No CloudTCM point map edits.
+- No case/SOAP UI or PC point-category UI edits.
+
+Known risks / manual checks:
+- This is not `source_checked`; it is `draft`, `public_safe: false`, and includes a no-medical-advice disclaimer.
+- Claude/Ting should review the anovulation comparison wording against class materials before promoting it.
+- Official sources were used only for biomedical ovulation/anovulation context; TCM discriminator cells derive from Ting Notion/Bastyr notes.
+
+Next recommended action:
+- Browser spot-check Lookup -> Comparison Records -> anovulation. It should show 12/12 cells filled.
+- Continue one source-assisted draft comparison table at a time if accepted.
+
+Claude review note:
+- This follows the accepted PCOS and unexplained infertility precedent: owner-authorized, source-cited `model_draft` cells, still draft/public_safe:false, no dosage/needling/ICD claims.
+
+---
+
 CLAIMED: LL3 comparison fill on main (Codex, 2026-07-14) - filling one source-assisted draft table at a time from `docs/COMPARISON_FILL_QUEUE.md`.
 
 ---
