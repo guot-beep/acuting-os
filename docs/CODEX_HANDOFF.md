@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-18
 Agent: Codex
 Branch: `main`
-Commit or stash: pending coherent commit
+Commit or stash: `227eede` (`LL3: fill luteal support comparison draft`)
 Task: Fill `cmp.luteal_support_patterns` from Ting's Notion/Bastyr notes while keeping official reproductive-medicine context separate.
 
 Files changed:
