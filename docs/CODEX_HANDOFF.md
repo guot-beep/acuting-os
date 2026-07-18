@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-18
 Agent: Codex
 Branch: `main`
-Commit or stash: pending task-close commit
+Commit or stash: `942c3f0` (`LL3: fill insomnia pattern comparison draft`)
 Task: Fill `cmp.insomnia_patterns` from Ting's Notion/Bastyr notes with official biomedical context kept separate.
 
 Files changed:
