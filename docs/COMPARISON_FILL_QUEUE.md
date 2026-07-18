@@ -6,11 +6,11 @@ This is a queue for owner/source-based filling. It does not contain clinical dis
 ## Summary
 
 - comparison records: 11
-- filled cells: 108
-- pending cells: 66
-- empty tables: 5
+- filled cells: 126
+- pending cells: 48
+- empty tables: 4
 - partial tables: 0
-- complete tables: 6
+- complete tables: 7
 
 ## Table Queue
 
@@ -21,7 +21,7 @@ This is a queue for owner/source-based filling. It does not contain clinical dis
 | cmp.unexplained_infertility_patterns | 不明原因不孕常見證型鑑別骨架 | 不明原因不孕 / Unexplained Infertility / western_condition.unexplained_infertility | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>血瘀 / Blood Stasis / pattern.blood_stasis | 18/18 | draft / draft / model_draft |
 | cmp.ovulatory_factor_patterns | 排卵因素常見證型鑑別骨架 | 排卵因素不孕背景 / Ovulatory Factor Context / western_condition.ovulatory_factor_context | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>痰濕 / Phlegm-Damp / pattern.phlegm_damp | 18/18 | draft / draft / model_draft |
 | cmp.ivf_cycle_patterns | IVF 週期常見證型鑑別骨架 | 試管嬰兒療程背景 / IVF Cycle Context / western_condition.ivf_cycle | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>血瘀 / Blood Stasis / pattern.blood_stasis<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation | 18/18 | draft / draft / model_draft |
-| cmp.luteal_support_patterns | 黃體支持常見證型鑑別骨架 | 黃體期支持背景 / Luteal Support Context / western_condition.luteal_support | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency<br>血虛 / Blood Deficiency / pattern.blood_deficiency | 0/18 | draft / draft / model_draft |
+| cmp.luteal_support_patterns | 黃體支持常見證型鑑別骨架 | 黃體期支持背景 / Luteal Support Context / western_condition.luteal_support | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency<br>血虛 / Blood Deficiency / pattern.blood_deficiency | 18/18 | draft / draft / model_draft |
 | cmp.anovulation_patterns | 無排卵常見證型鑑別骨架 | 無排卵 / Anovulation / western_condition.anovulation | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation | 12/12 | draft / draft / model_draft |
 | cmp.endometriosis_context_patterns | 子宮內膜異位症相關情境證型鑑別骨架 | 子宮內膜異位症相關情境 / Endometriosis Context / western_condition.endometriosis_context | 血瘀 / Blood Stasis / pattern.blood_stasis<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation | 0/12 | draft / draft / model_draft |
 | cmp.recurrent_pregnancy_loss_context_patterns | 反覆流產相關情境證型鑑別骨架 | 反覆流產相關情境 / Recurrent Pregnancy Loss Context / western_condition.recurrent_pregnancy_loss_context | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency | 0/12 | draft / draft / model_draft |
@@ -73,11 +73,11 @@ Progress: 18/18
 
 ### cmp.luteal_support_patterns
 
-Progress: 0/18
+Progress: 18/18
 
-- 腎虛 / Kidney Deficiency / pattern.kidney_deficiency: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
-- 脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
-- 血虛 / Blood Deficiency / pattern.blood_deficiency: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
+- 腎虛 / Kidney Deficiency / pattern.kidney_deficiency: complete
+- 脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency: complete
+- 血虛 / Blood Deficiency / pattern.blood_deficiency: complete
 
 ### cmp.anovulation_patterns
 

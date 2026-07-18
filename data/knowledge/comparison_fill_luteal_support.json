@@ -1,0 +1,59 @@
+{
+  "dataset": "comparison_fill",
+  "batch": "luteal_support",
+  "purpose": "Source-assisted draft fill for the luteal-support documentation context pattern comparison table. Study context only; not medical advice.",
+  "review_status": "draft",
+  "source_policy": "Biomedical luteal-phase and progesterone context comes from ASRM and ACOG. TCM discriminator wording comes from Ting's Notion/Bastyr gynecology, menstruation, Zang-Fu, Qi-Blood, and formula notes. Do not map a short luteal phase, BBT chart, or single progesterone value directly to a TCM pattern.",
+  "fills": {
+    "cmp.luteal_support_patterns": {
+      "title_en": "Luteal support context - pattern differentiation draft",
+      "seed_basis": "Source-assisted draft approved by Ting: biomedical uncertainty and evaluation context from ASRM/ACOG; TCM pattern discriminators from Ting's Notion/Bastyr gynecology, irregular menstruation, Zang-Fu, Qi-Blood, and formula notes. Draft study comparison only; not medical advice.",
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "source_urls": [
+        "https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-luteal-phase-deciency-a-committee-opinion-2021/",
+        "https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/",
+        "https://www.acog.org/womens-health/faqs/evaluating-infertility",
+        "https://www.reproductivefacts.org/news-and-publications/fact-sheets-and-infographics/progesterone-supplementation-during-ivf/",
+        "https://app.notion.com/p/37747f6dea35810c8653cda996f42939",
+        "https://app.notion.com/p/37747f6dea35814d8bc2eabbcd9a5b07",
+        "https://app.notion.com/p/37747f6dea3581ee9039fd085f63b561",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "https://app.notion.com/p/38647f6dea35813d8fd8c738a37a7611",
+        "https://app.notion.com/p/37747f6dea3581aead57da529cffba84"
+      ],
+      "source_type": "source_assisted_draft_official_reproductive_medicine_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-18",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose luteal phase deficiency, interpret progesterone testing, recommend progesterone or fertility treatment, or replace reproductive evaluation.",
+      "notes_en": "ASRM states that no clinical diagnostic test for luteal phase deficiency has proven reliable and that a single progesterone value cannot assess luteal quality. TCM cells are a separate study framework synthesized from Ting's notes; no one-to-one biomedical-to-TCM mapping is intended.",
+      "cells": {
+        "pattern.kidney_deficiency": {
+          "Chief pattern cue / 主辨證線索": "黃體支持記錄背景中，若另見月經後期、量少或週期久不規則，伴腰膝酸軟、頭暈耳鳴、性慾/生殖精氣不足及明顯寒熱虛象，偏腎虛；不得由短黃體期或單次 progesterone 數值直接推定。 In a luteal-support documentation context, delayed/scanty or chronically irregular cycles with low-back/knee soreness, dizziness/tinnitus, low libido or reproductive-Essence deficiency, and clear deficiency cold/heat signs favor Kidney deficiency; never infer it from a short luteal phase or one progesterone result alone.",
+          "Tongue / 舌": "腎陽/腎氣虛多舌淡胖、苔白潤；腎陰/精虧多舌紅少苔或剝苔。 Kidney Yang/Qi deficiency: pale, swollen tongue with moist white coat; Kidney Yin/Essence deficiency: red tongue with scant or peeled coat.",
+          "Pulse / 脈": "腎虛總以沉弱為主；陽虛偏沉遲無力，陰虛偏細數。 Broad Kidney deficiency cue: deep and weak; deep-slow-weak for Yang deficiency and thin-rapid for Yin deficiency.",
+          "Key accompanying signs / 兼症": "病程久、腰膝痠軟、耳鳴、尿頻或生殖精氣不足；陽虛偏畏寒肢冷，陰虛偏潮熱盜汗。與脾氣虛相比，腎虛以腰膝、生殖/精與寒熱底色較突出，不以納差便溏為主。 Chronicity, low-back/knee soreness, tinnitus, urinary or reproductive-Essence cues; cold limbs with Yang deficiency or tidal heat/night sweats with Yin deficiency. Unlike Spleen Qi deficiency, Kidney/reproductive and cold-heat signs dominate over digestive weakness.",
+          "Treatment principle / 治法": "補腎益精、調衝任；依證分溫腎陽或滋腎陰。 Tonify Kidney, support Essence, and regulate Chong/Ren; warm Kidney Yang or nourish Kidney Yin according to the full pattern.",
+          "Representative formula / 代表方": "學習鑑別：陽虛偏寒可比較 formula.you_gui_wan（右歸丸）或 formula.jin_gui_shen_qi_wan（金匱腎氣丸）；陰/精不足需另依證比較滋陰益精方。 Study comparison: You Gui Wan or Jin Gui Shen Qi Wan for a cold Kidney-Yang presentation; Yin/Essence-deficiency formulas require separate pattern confirmation."
+        },
+        "pattern.spleen_qi_deficiency": {
+          "Chief pattern cue / 主辨證線索": "黃體支持記錄背景中，若見疲倦、少氣懶言、食慾差、食後腹脹、便溏，並有氣血生化不足或氣不攝血線索，偏脾氣虛；不可把 spotting 本身直接定為脾虛。 In a luteal-support documentation context, fatigue, weak voice, poor appetite, post-meal bloating, loose stool, and deficient Qi-Blood production or failure-to-hold cues favor Spleen Qi deficiency; spotting alone does not establish this pattern.",
+          "Tongue / 舌": "舌淡、可胖大有齒痕，苔薄白；夾濕可見白膩苔。 Pale tongue, possibly swollen with teeth marks and a thin white coat; white-greasy coat if Dampness is present.",
+          "Pulse / 脈": "脈細弱或緩弱；夾濕可偏濡。 Thin/weak or moderate-weak; may be soggy when Dampness coexists.",
+          "Key accompanying signs / 兼症": "面色萎黃、乏力、自汗、便溏、帶下清稀；若脾不統血，可見色淡、量少或反覆的出血記錄。與血虛相比，脾虛的消化、氣力與濕象更突出。 Sallow complexion, low energy, spontaneous sweating, loose stool, or clear discharge; pale recurrent bleeding may appear when Spleen fails to hold Blood. Compared with Blood deficiency, digestive weakness, low Qi, and Damp signs are more prominent.",
+          "Treatment principle / 治法": "健脾益氣、助氣血生化；只有在氣陷或氣不攝血線索明確時才兼升提或攝血。 Strengthen Spleen and augment Qi to support Qi-Blood production; raise or secure only when sinking or failure-to-hold signs are present.",
+          "Representative formula / 代表方": "學習錨點：formula.si_jun_zi_tang（四君子湯）；脾虛夾濕、便溏較明顯可比較 formula.shen_ling_bai_zhu_san（參苓白朮散）。 Study anchors: Si Jun Zi Tang; compare Shen Ling Bai Zhu San when Spleen deficiency with Dampness and loose stool is prominent."
+        },
+        "pattern.blood_deficiency": {
+          "Chief pattern cue / 主辨證線索": "黃體支持記錄背景中，若見月經量少色淡，伴面唇淡白、頭暈眼花、心悸失眠或肢體麻木，偏血虛；不得把較薄內膜、單次血液數值或不孕直接等同血虛。 In a luteal-support documentation context, scanty pale menses with pale face/lips, dizziness, blurred vision, palpitations, poor sleep, or limb numbness favors Blood deficiency; thin endometrium, one laboratory value, or infertility alone does not establish it.",
+          "Tongue / 舌": "舌淡，舌體可偏瘦、少津。 Pale tongue, sometimes thin-bodied or mildly dry.",
+          "Pulse / 脈": "脈細；若兼氣虛可細弱。 Thin pulse; thin and weak when Qi deficiency coexists.",
+          "Key accompanying signs / 兼症": "面色淡白或萎黃、唇甲色淡、目乾視物模糊、心悸、失眠、手足麻木、月經量少色淡。與脾氣虛相比，血不濡養的淡、眩、麻、悸較突出，而納差便溏不是主線。 Pale/sallow complexion, pale lips/nails, dry or blurred eyes, palpitations, poor sleep, numbness, and scanty pale menses. Compared with Spleen Qi deficiency, pallor, dizziness, numbness, and nourishment failure dominate rather than appetite or stool changes.",
+          "Treatment principle / 治法": "養血調血、調衝任；若氣血兩虛證據並見，再兼益氣。 Nourish and regulate Blood and Chong/Ren; add Qi tonification only when combined Qi-Blood deficiency is supported.",
+          "Representative formula / 代表方": "學習錨點：formula.si_wu_tang（四物湯）；氣血兩虛並見可比較 formula.ba_zhen_tang（八珍湯）。 Study anchor: Si Wu Tang; compare Ba Zhen Tang when both Qi and Blood deficiency are present."
+        }
+      }
+    }
+  }
+}

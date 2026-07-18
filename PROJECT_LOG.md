@@ -23,6 +23,32 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-18 - LL3: luteal support pattern comparison source-assisted draft fill (Codex)
+
+Filled `cmp.luteal_support_patterns` as the seventh complete LL3 comparison
+table. It now compares Kidney deficiency, Spleen qi deficiency, and Blood
+deficiency across chief cue, tongue, pulse, accompanying signs, treatment
+principle, and representative formula (18/18 cells).
+
+TCM discriminator wording came from Ting's Notion/Bastyr notes on irregular
+menstruation, gynecological disorders, female reproduction, Zang-Fu and
+Qi-Blood differentiation, and Si Wu Tang. ASRM, ACOG, and ReproductiveFacts
+were used only for cautious biomedical context: luteal phase deficiency lacks
+a reliable standalone diagnostic test, a single progesterone value cannot
+assess luteal quality, and IVF progesterone guidance must not be generalized
+to natural cycles. The table remains `model_draft`, `review_status: "draft"`,
+`public_safe: false`, and not medical advice.
+
+Files changed: `data/knowledge/comparison_fill_luteal_support.json`,
+`data/knowledge/comparisons.json`, `docs/COMPARISON_FILL_QUEUE.md`,
+`data/generated/knowledge_data.js`, `docs/CODEX_CURRENT_STATUS.md`,
+`PROJECT_LOG.md`, and `docs/CODEX_HANDOFF.md`.
+
+Validation: apply dry-run and apply both passed with 18 filled / 0 skipped;
+comparison queue reports 126 filled / 48 pending / 4 empty / 7 complete. Eight
+standard validators and 457-file JSON parse passed. Encoding remains at the
+known 768-finding baseline.
+
 ### 2026-07-18 - LL3: insomnia pattern comparison source-assisted draft fill (Codex)
 
 Filled `cmp.insomnia_patterns` as the sixth complete LL3 comparison table. It
