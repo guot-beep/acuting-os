@@ -6,17 +6,17 @@ This is a queue for owner/source-based filling. It does not contain clinical dis
 ## Summary
 
 - comparison records: 11
-- filled cells: 90
-- pending cells: 84
-- empty tables: 6
+- filled cells: 108
+- pending cells: 66
+- empty tables: 5
 - partial tables: 0
-- complete tables: 5
+- complete tables: 6
 
 ## Table Queue
 
 | ID | Title | Source condition | Patterns | Progress | Status |
 | --- | --- | --- | --- | --- | --- |
-| cmp.insomnia_patterns | 失眠常見證型鑑別 |  | 心脾兩虛 / Heart-Spleen Dual Deficiency / pattern.heart_spleen_deficiency<br>心腎不交 / Heart-Kidney Not Communicating / pattern.heart_kidney_not_communicating<br>肝火上炎 / Liver Fire Flaming Upward / pattern.liver_fire | 0/18 | draft / draft / model_draft |
+| cmp.insomnia_patterns | 失眠常見證型鑑別 |  | 心脾兩虛 / Heart-Spleen Dual Deficiency / pattern.heart_spleen_deficiency<br>心腎不交 / Heart-Kidney Not Communicating / pattern.heart_kidney_not_communicating<br>肝火上炎 / Liver Fire Flaming Upward / pattern.liver_fire | 18/18 | draft / draft / model_draft |
 | cmp.pcos_patterns | PCOS 常見證型鑑別骨架 | 多囊卵巢症候群 / Polycystic Ovary Syndrome / western_condition.pcos | 痰濕 / Phlegm-Damp / pattern.phlegm_damp<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>血瘀 / Blood Stasis / pattern.blood_stasis | 24/24 | draft / draft / model_draft |
 | cmp.unexplained_infertility_patterns | 不明原因不孕常見證型鑑別骨架 | 不明原因不孕 / Unexplained Infertility / western_condition.unexplained_infertility | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>血瘀 / Blood Stasis / pattern.blood_stasis | 18/18 | draft / draft / model_draft |
 | cmp.ovulatory_factor_patterns | 排卵因素常見證型鑑別骨架 | 排卵因素不孕背景 / Ovulatory Factor Context / western_condition.ovulatory_factor_context | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation<br>痰濕 / Phlegm-Damp / pattern.phlegm_damp | 18/18 | draft / draft / model_draft |
@@ -32,11 +32,11 @@ This is a queue for owner/source-based filling. It does not contain clinical dis
 
 ### cmp.insomnia_patterns
 
-Progress: 0/18
+Progress: 18/18
 
-- 心脾兩虛 / Heart-Spleen Dual Deficiency / pattern.heart_spleen_deficiency: `主症`, `舌`, `脈`, `兼症`, `治法`, `代表方`
-- 心腎不交 / Heart-Kidney Not Communicating / pattern.heart_kidney_not_communicating: `主症`, `舌`, `脈`, `兼症`, `治法`, `代表方`
-- 肝火上炎 / Liver Fire Flaming Upward / pattern.liver_fire: `主症`, `舌`, `脈`, `兼症`, `治法`, `代表方`
+- 心脾兩虛 / Heart-Spleen Dual Deficiency / pattern.heart_spleen_deficiency: complete
+- 心腎不交 / Heart-Kidney Not Communicating / pattern.heart_kidney_not_communicating: complete
+- 肝火上炎 / Liver Fire Flaming Upward / pattern.liver_fire: complete
 
 ### cmp.pcos_patterns
 

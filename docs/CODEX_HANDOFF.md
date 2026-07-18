@@ -36,6 +36,58 @@ Claude review note:
 
 ---
 
+## 2026-07-18 - Codex - LL3 insomnia comparison source-assisted draft fill
+
+Date/time: 2026-07-18
+Agent: Codex
+Branch: `main`
+Commit or stash: pending task-close commit
+Task: Fill `cmp.insomnia_patterns` from Ting's Notion/Bastyr notes with official biomedical context kept separate.
+
+Files changed:
+- `data/knowledge/comparison_fill_insomnia.json`
+- `data/knowledge/comparisons.json`
+- `docs/COMPARISON_FILL_QUEUE.md`
+- `data/generated/knowledge_data.js`
+- `docs/CODEX_CURRENT_STATUS.md`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `scripts/apply-comparison-fill.js insomnia`: dry-run PASS, 18 cells, 0 skipped, 11 metadata updates.
+- `scripts/apply-comparison-fill.js insomnia --apply`: PASS.
+- `scripts/report-comparison-fill.js`: PASS, 108 filled / 66 pending / 5 empty / 6 complete.
+- `scripts/build-data.js`: PASS; knowledge bundle still reports 11 comparison records.
+- validate-data, validate-interactions, validate-relations,
+  validate-herbal-links, validate-herb-canon, validate-point-ids,
+  validate-naming, and validate-point-categories: PASS.
+
+Protected areas not touched:
+- No clinical case/SOAP data or UI changes.
+- No canonical formula/herb records.
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, or CloudTCM point map changes.
+- No manual generated-file edits; `knowledge_data.js` came from `build-data.js`.
+
+Known risks / manual checks:
+- This is `model_draft`, `review_status: draft`, `public_safe: false`, and not
+  `source_checked`.
+- Official NIH/NCCIH sources support only biomedical insomnia context. TCM
+  discriminator cells come from Ting's own Notion/Bastyr notes.
+- Ting/Claude should compare the 18 cells against the original Thera 1 Insomnia
+  Handout 24 before promotion.
+
+Next recommended action:
+- Review Lookup -> Comparison Records -> 失眠常見證型鑑別.
+- After approval, continue one empty LL3 table at a time; do not promote this
+  table beyond draft without owner review.
+
+Claude review note:
+- Please verify the Heart-Spleen vs Heart-Kidney vs Liver Fire contrasts and
+  formula anchors. No dosage, needling, ICD mapping, or patient-directed advice
+  was added.
+
+---
+
 ## 2026-07-17 - Codex - Formula dose evidence staging batch 1
 
 Date/time: 2026-07-17

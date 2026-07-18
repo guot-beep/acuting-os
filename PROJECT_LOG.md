@@ -23,6 +23,36 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-18 - LL3: insomnia pattern comparison source-assisted draft fill (Codex)
+
+Filled `cmp.insomnia_patterns` as the sixth complete LL3 comparison table. It
+now compares Heart-Spleen deficiency, Heart-Kidney not communicating, and Liver
+Fire across chief cue, tongue, pulse, accompanying signs, treatment principle,
+and representative formula (18/18 cells).
+
+Biomedical insomnia definition, diagnostic context, and CBT-I context came from
+official NHLBI/NIH and NCCIH pages. TCM discriminator wording came from Ting's
+Notion/Bastyr Insomnia handout notes, Zang-Fu differentiation notes, Gui Pi Tang
+formula page, and CAM5300 Heart-Kidney Yin deficiency case. Official biomedical
+sources were not used to validate TCM patterns. The table remains
+`model_draft`, `review_status: "draft"`, `public_safe: false`, and explicitly
+not medical advice.
+
+Files changed: `data/knowledge/comparison_fill_insomnia.json`,
+`data/knowledge/comparisons.json`, `docs/COMPARISON_FILL_QUEUE.md`,
+`data/generated/knowledge_data.js`, `docs/CODEX_CURRENT_STATUS.md`,
+`PROJECT_LOG.md`, and `docs/CODEX_HANDOFF.md`.
+
+Validation: comparison-fill dry-run PASS (18 cells, 0 skipped, 11 metadata
+updates); apply PASS; build-data PASS; queue report PASS with 108 filled / 66
+pending / 6 complete; validate-data, interactions, relations, herbal-links,
+herb-canon, point-ids, naming, and point-categories PASS. Encoding remains the
+known baseline backlog and no frozen encoding repair was attempted.
+
+Protected areas not touched: no clinical case data, no canonical formula/herb
+records, no `data/acupoints/361.json`, no `docs/CLOUDTCM_*`, no CloudTCM point
+map, and no UI source edits.
+
 ### 2026-07-17 - First formula dose evidence staging batch (Codex)
 
 Created a source-gated dose staging layer for five existing formulas: Gui Zhi

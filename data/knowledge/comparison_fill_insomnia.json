@@ -1,0 +1,56 @@
+{
+  "dataset": "comparison_fill",
+  "batch": "insomnia",
+  "purpose": "Source-assisted draft fill for the insomnia pattern comparison table. Study context only; not medical advice.",
+  "review_status": "draft",
+  "source_policy": "Biomedical insomnia definition and diagnostic context come from official NIH sources. TCM discriminator wording comes from Ting's Notion/Bastyr insomnia, Zang-Fu differentiation, formula, and course-case notes. Keep draft until Ting/Claude reviews against the original course handout.",
+  "fills": {
+    "cmp.insomnia_patterns": {
+      "title_en": "Insomnia - common pattern differentiation draft",
+      "seed_basis": "Source-assisted draft approved by Ting: biomedical insomnia context from NHLBI/NIH and NCCIH; TCM pattern discriminators from Ting's Notion/Bastyr insomnia, Zang-Fu, Gui Pi Tang, and CAM5300 course-case notes. Draft study comparison only; not medical advice.",
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "source_urls": [
+        "https://www.nhlbi.nih.gov/health/insomnia",
+        "https://www.nhlbi.nih.gov/health/insomnia/diagnosis",
+        "https://www.nccih.nih.gov/health/providers/digest/psychological-and-physical-approaches-for-sleep-disorders-science",
+        "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "https://app.notion.com/p/37747f6dea358111bfc1e2055842845b",
+        "https://app.notion.com/p/39747f6dea3581bcbe61ea041645dd43"
+      ],
+      "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-18",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose insomnia, recommend treatment, or replace evaluation for sleep apnea, medication effects, mood disorders, or other causes of sleep difficulty.",
+      "notes_en": "Official medical sources support only the biomedical insomnia context. TCM pattern discriminators are synthesized from Ting's own Notion/Bastyr notes and remain draft. Do not infer a pattern from one symptom alone.",
+      "cells": {
+        "pattern.heart_spleen_deficiency": {
+          "主症": "多夢易醒或難入睡，伴心悸、健忘、疲倦與食慾差；核心是氣血不足、心神失養，而非明顯火熱。 Dream-disturbed or easily interrupted sleep with palpitations, forgetfulness, fatigue, and poor appetite; the key is Qi-Blood deficiency failing to nourish Shen, without prominent heat signs.",
+          "舌": "舌淡或淡白，苔薄白。 Pale or pale-white tongue with a thin white coat.",
+          "脈": "脈細弱。 Thin and weak pulse.",
+          "兼症": "面色淡白或萎黃、氣短乏力、食少便溏、思慮過度；可兼色淡出血。與心腎不交相比，偏淡、倦、納差，缺少盜汗與五心煩熱。 Pale/sallow complexion, low energy, poor intake, loose stool, or overthinking; pale bleeding may coexist. Compared with Heart-Kidney disharmony, deficiency and digestive signs dominate without night sweats or five-center heat.",
+          "治法": "補益心脾、益氣養血、安神。 Tonify Heart and Spleen, augment Qi, nourish Blood, and calm Shen.",
+          "代表方": "學習錨點：formula.gui_pi_tang（歸脾湯）。 Study anchor: Gui Pi Tang."
+        },
+        "pattern.heart_kidney_not_communicating": {
+          "主症": "心煩失眠或夜間易醒，伴心悸、盜汗、五心煩熱、口咽乾、頭暈耳鳴；核心是腎陰不足、水不濟火。 Restless sleep or frequent waking with palpitations, night sweats, five-center heat, dry mouth/throat, dizziness, or tinnitus; the key is Kidney Yin failing to restrain Heart Fire.",
+          "舌": "舌紅偏乾，少苔或無苔。 Red, dry tongue with scant or absent coat.",
+          "脈": "脈細數；兼情志緊張時可見弦數。 Thin and rapid; may be wiry-rapid when tension or constraint is also present.",
+          "兼症": "可見腰膝酸軟、潮熱、盜汗、耳鳴、夢遺或大便偏乾。與肝火相比，多見虛熱與陰液不足，脈偏細，舌苔少，不是實火黃厚苔。 Low-back/knee soreness, tidal heat, night sweating, tinnitus, nocturnal emission, or dry stool may occur. Compared with Liver Fire, deficiency-heat and fluid depletion predominate, with a thin pulse and scant coat rather than a forceful excess-heat picture.",
+          "治法": "滋養心腎之陰、清降虛火、交通心腎、安神。 Nourish Heart-Kidney Yin, clear deficiency heat, restore Heart-Kidney communication, and calm Shen.",
+          "代表方": "學習鑑別：心火偏重可比較 formula.huang_lian_e_jiao_tang（黃連阿膠湯）；慢性腎陰虛底色可比較 formula.liu_wei_di_huang_wan（六味地黃丸）。 Study comparison: Huang Lian E Jiao Tang when Heart Fire is prominent; Liu Wei Di Huang Wan when chronic Kidney Yin deficiency predominates."
+        },
+        "pattern.liver_fire": {
+          "主症": "難入睡或睡眠躁擾，伴煩躁易怒、頭痛、目赤、口苦咽乾；核心是肝鬱化火或肝火上擾心神。 Difficulty falling asleep or agitated sleep with irritability, headache, red eyes, bitter taste, or dry throat; the key is Liver constraint transforming into Fire or Liver Fire disturbing Shen.",
+          "舌": "舌紅，邊尖可更紅，苔黃。 Red tongue, often redder at the sides/tip, with a yellow coat.",
+          "脈": "脈弦數，多較有力。 Wiry and rapid, often relatively forceful.",
+          "兼症": "可見脅脹、眩暈耳鳴、面紅、便秘或小便黃。與心腎不交相比，實熱、易怒、口苦目赤較突出，舌有黃苔、脈弦數有力。 Hypochondriac distension, dizziness/tinnitus, flushed face, constipation, or dark urine may accompany it. Compared with Heart-Kidney disharmony, excess heat, anger, bitter taste, red eyes, yellow coat, and a more forceful wiry-rapid pulse are more prominent.",
+          "治法": "清肝瀉火、解鬱、安神；僅在鬱結線索存在時兼疏肝。 Clear and drain Liver Fire, relieve constraint, and calm Shen; soothe Liver Qi when constraint signs are present.",
+          "代表方": "學習錨點：formula.long_dan_xie_gan_tang（龍膽瀉肝湯）。 Study anchor: Long Dan Xie Gan Tang."
+        }
+      }
+    }
+  }
+}
