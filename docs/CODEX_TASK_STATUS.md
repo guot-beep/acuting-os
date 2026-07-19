@@ -54,6 +54,11 @@ content batches (30 / 30 / 32). No content has been filled. Each future batch
 must use staging + conflict-refusing preview and must not touch the 184 frozen
 question-mark-damaged values in the 23 populated pilot formulas.
 
+C2 preview update (2026-07-19): `scripts/preview-formula-content-fill.js` now
+enforces the staging gate and intentionally has no apply mode. A five-formula
+probe manifest exists under `data/imports/formula_content/`; source collection
+and authored content remain pending.
+
 ## Current Safe Default
 
 Until Ting/Claude issues a new explicit content task:

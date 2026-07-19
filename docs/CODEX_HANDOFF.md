@@ -36,6 +36,45 @@ Claude review note:
 
 ---
 
+## 2026-07-19 - Codex - C2 staging preview guard and probe manifest
+
+Date/time: 2026-07-19
+Agent: Codex
+Branch: `main`
+Commit or stash: pending coherent commit
+Task: Add a no-apply, conflict-refusing staging gate before any C2 formula content is authored.
+
+Files changed:
+- `scripts/preview-formula-content-fill.js`
+- `data/imports/formula_content/README.md`
+- `data/imports/formula_content/c2_1_probe_manifest.json`
+- coordination logs/status files
+
+Validation:
+- In-memory self-test: valid draft PASS; conflict, dose, and missing-source inputs correctly rejected.
+- Probe manifest JSON parse: PASS.
+- Eight standard validators and diff check: PASS.
+- Encoding: unchanged known baseline of 768 findings.
+
+Protected areas not touched:
+- No canonical formula/herb/condition/acupoint/case data or generated files changed.
+- No UI, `361.json`, `docs/CLOUDTCM_*`, or CloudTCM map changes.
+
+Known risks / manual checks:
+- The five selected formulas are a source-collection probe, not approved content.
+- Field-level sources remain in staging/preview; canonical evidence persistence needs review before any apply tool is designed.
+- The preview script deliberately refuses `--apply`.
+
+Next recommended action:
+- Gather Ting Notion/course-note and institutional references for the five probe formulas.
+- Author a staging JSON only, keep every field draft, then generate a preview report.
+- Do not add an apply path until Ting/Claude reviews the first preview.
+
+Claude review note: Please inspect the allowed-field list and rejection gates.
+No formula content, dose, modern link, or canonical data was added.
+
+---
+
 ## 2026-07-19 - Codex - C2 formula classical-content gap inventory
 
 Date/time: 2026-07-19

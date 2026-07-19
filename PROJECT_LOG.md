@@ -23,6 +23,23 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-19 - C2 formula staging preview guard and five-formula probe (Codex)
+
+Added a preview-only C2 staging validator for classical formula content. It
+requires per-field HTTPS sources and draft status, targets skeleton formulas
+only, and rejects populated-target conflicts, unsupported fields, damaged
+text, dose fields, modern-use/condition fields, and source-checked promotion.
+The tool intentionally has no apply mode and writes only review reports.
+
+Added staging documentation and a five-formula C2.1 source-collection probe
+manifest (Da Chai Hu Tang, Si Ni San, Tong Xie Yao Fang, Gan Mai Da Zao Tang,
+and Suan Zao Ren Tang). No clinical content and no canonical formula data were
+changed.
+
+Validation: in-memory guard tests passed for valid input, conflict rejection,
+dose rejection, and missing-source rejection. Probe JSON, eight standard
+validators, and diff check passed; encoding remains at 768 findings.
+
 ### 2026-07-19 - C2 formula classical-content gap inventory (Codex)
 
 Added a read-only, deterministic formula gap reporter and generated the first

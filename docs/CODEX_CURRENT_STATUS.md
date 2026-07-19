@@ -9,8 +9,8 @@ Status: `LL3_CLAIMED_IN_PROGRESS`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: read-only C2 formula classical-content gap inventory and
-three-batch fill queue; pending in the latest Codex handoff commit.
+Latest Codex work: preview-only C2 formula staging guard and five-formula probe
+manifest; pending in the latest Codex handoff commit.
 
 ## What Changed
 
@@ -89,6 +89,10 @@ skeletons split into 30 / 30 / 32. It is planning-only. Future C2 content must
 use staging, fill only empty classical fields, remain draft, and stop for a
 preview gate before canonical apply. The 184 existing `???` string values are
 frozen repair work and are not C2 gaps.
+
+`scripts/preview-formula-content-fill.js` now implements that preview gate. It
+has no apply mode. The first probe manifest selects five C2.1 formulas for
+field-level source collection; no formula content has been authored or merged.
 
 ## Protected Areas
 

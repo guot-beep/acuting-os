@@ -1,0 +1,38 @@
+{
+  "dataset": "formula_content_probe_manifest",
+  "batch": "c2_1_probe",
+  "status": "source_collection_pending",
+  "review_status": "draft",
+  "purpose": "Five-formula probe selected from C2.1 to test field-level sourcing and preview before any canonical write.",
+  "canonical_write_allowed": false,
+  "formula_ids": [
+    "formula.da_chai_hu_tang",
+    "formula.si_ni_san",
+    "formula.tong_xie_yao_fang",
+    "formula.gan_mai_da_zao_tang",
+    "formula.suan_zao_ren_tang"
+  ],
+  "target_fields": [
+    "composition",
+    "actions_en",
+    "pattern_indications_en",
+    "modifications_en",
+    "contraindications_en",
+    "safety_flags",
+    "english_exam_track.actions",
+    "english_exam_track.indications",
+    "english_exam_track.modifications",
+    "english_exam_track.contraindications"
+  ],
+  "source_policy": {
+    "exam_track": "Ting course notes and approved textbook notes; remain draft until textbook review is explicit.",
+    "institutional_cross_check": "Use HKBU or another registered institutional source when available.",
+    "prohibited": [
+      "dose conversion",
+      "modern disease treatment claims",
+      "condition links",
+      "source_checked promotion",
+      "canonical apply before review"
+    ]
+  }
+}
