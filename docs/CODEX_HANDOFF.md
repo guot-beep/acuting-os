@@ -36,6 +36,49 @@ Claude review note:
 
 ---
 
+## 2026-07-19 - Codex - Si Ni San institutional-only C2 staging preview
+
+Date/time: 2026-07-19
+Agent: Codex
+Branch: `main`
+Commit or stash: `b02d043` (`Stage Si Ni San institutional content preview`)
+Task: Continue the C2 probe without inventing a missing Ting course-note layer.
+
+Files changed:
+- `data/imports/formula_content/c2_1_probe_si_ni_san.json`
+- `data/imports/formula_content/c2_1_probe_manifest.json`
+- `docs/formula_content_previews/c2_1_probe_si_ni_san.md`
+- coordination logs/status files in a follow-up handoff commit
+
+Validation:
+- Formula-content preview: PASS; 1 formula, 3 fields, 8 staged items,
+  0 conflicts, 0 canonical writes.
+- Nine standard validators: PASS.
+- Recursive JSON parse: PASS, 462 files.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No canonical formula, generated, UI, clinical, point, or condition files.
+- No `361.json`, `docs/CLOUDTCM_*`, dose, modern-use, or apply changes.
+
+Known risks / manual checks:
+- This record uses HKBU and Taiwan MOHW only. No direct Ting/Bastyr Si Ni San
+  page was found, so exam-track and textbook-review fields remain empty.
+- No contraindication was staged because neither selected institutional page
+  supplied a sufficiently explicit formula-level contraindication.
+
+Next recommended action:
+- Review the institutional-only scope as a model for formulas lacking direct
+  course notes.
+- Continue source collection for Tong Xie Yao Fang, Gan Mai Da Zao Tang, and
+  Suan Zao Ren Tang; stage only fields directly supported by two sources.
+- Keep canonical apply gated.
+
+Claude review note: Please verify that the Si Ni San preview correctly stops at
+composition/actions/indications and does not imply a Bastyr exam-track review.
+
+---
+
 ## 2026-07-19 - Codex - Da Chai Hu Tang C2 source-backed staging preview
 
 Date/time: 2026-07-19 00:49 -07:00

@@ -23,6 +23,18 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-19 - Si Ni San institutional-only C2 staging preview (Codex)
+
+Added a second preview-only formula staging record for `formula.si_ni_san`.
+HKBU and Taiwan MOHW independently support the four-herb composition, actions,
+and two classical pattern indications. No direct Si Ni San page was found in
+Ting's imported Bastyr/Notion formula notes, so exam-track, contraindication,
+modern-use, and dose fields were deliberately left empty.
+
+Preview result: 3 fields / 8 items / 0 conflicts / 0 canonical writes. Nine
+standard validators passed, 462 JSON files parsed, and encoding stayed at the
+expected 768-finding baseline. Canonical formula data was not changed.
+
 ### 2026-07-19 - Da Chai Hu Tang source-backed C2 staging preview (Codex)
 
 Created the first real formula-content staging record for
