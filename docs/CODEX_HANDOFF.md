@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-18
 Agent: Codex
 Branch: `main`
-Commit or stash: pending coherent commit
+Commit or stash: `b2c3d1c` (`LL3: fill insulin resistance comparison draft`)
 Task: Fill `cmp.insulin_resistance_patterns` from Ting's course notes with NIDDK/CDC biomedical context kept separate.
 
 Files changed: `comparison_fill_insulin_resistance.json`, canonical comparison
