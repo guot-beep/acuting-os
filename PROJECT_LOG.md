@@ -23,6 +23,26 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-18 - LL3: endometriosis-context pattern comparison draft fill (Codex)
+
+Filled `cmp.endometriosis_context_patterns` as the eighth complete LL3
+comparison table. It compares Blood stasis and Liver qi stagnation across six
+study dimensions (12/12 cells). WHO, ACOG, and NICHD support only the
+biomedical symptom/evaluation context; Ting's Notion/Bastyr gynecology,
+Qi-Blood, clinical-skills, and Tao Hong Si Wu Tang notes supply the separate
+TCM discriminator framework.
+
+The table explicitly says that an endometriosis diagnosis, pain severity, or
+imaging result does not determine a TCM pattern, and that a TCM pattern does
+not diagnose endometriosis. Formula IDs are comparison anchors only. Status
+remains `model_draft`, `review_status: "draft"`, `public_safe: false`, and not
+medical advice.
+
+Validation: apply dry-run and apply passed with 12 filled / 0 skipped;
+comparison queue reports 138 filled / 36 pending / 3 empty / 8 complete. Eight
+standard validators and 458-file JSON parse passed. Encoding remains at the
+known 768-finding baseline.
+
 ### 2026-07-18 - LL3: luteal support pattern comparison source-assisted draft fill (Codex)
 
 Filled `cmp.luteal_support_patterns` as the seventh complete LL3 comparison

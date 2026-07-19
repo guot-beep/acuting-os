@@ -1,0 +1,51 @@
+{
+  "dataset": "comparison_fill",
+  "batch": "endometriosis_context",
+  "purpose": "Source-assisted draft fill for the endometriosis documentation-context pattern comparison table. Study context only; not medical advice.",
+  "review_status": "draft",
+  "source_policy": "Biomedical endometriosis symptoms and evaluation context come from WHO, ACOG, and NICHD. TCM discriminator wording comes from Ting's Notion/Bastyr gynecology, Qi-Blood differentiation, and formula notes. Do not infer endometriosis from a TCM pattern or infer a TCM pattern from the biomedical diagnosis alone.",
+  "fills": {
+    "cmp.endometriosis_context_patterns": {
+      "title_en": "Endometriosis context - pattern differentiation draft",
+      "seed_basis": "Source-assisted draft approved by Ting: biomedical context from WHO/ACOG/NICHD; TCM pattern discriminators from Ting's Notion/Bastyr gynecology, Qi-Blood, clinical-skills, and formula notes. Draft study comparison only; not medical advice.",
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "source_urls": [
+        "https://www.who.int/news-room/fact-sheets/detail/endometriosis",
+        "https://www.acog.org/womens-health/faqs/endometriosis",
+        "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2026/03/diagnosis-of-endometriosis",
+        "https://www.nichd.nih.gov/health/topics/endometri/conditioninfo/diagnose",
+        "https://app.notion.com/p/38747f6dea3581728d9ddc712231ed50",
+        "https://app.notion.com/p/37747f6dea35814d8bc2eabbcd9a5b07",
+        "https://app.notion.com/p/37747f6dea3581fab36dd0c1d7d5bfdc",
+        "https://app.notion.com/p/37747f6dea35810c8653cda996f42939",
+        "https://app.notion.com/p/38647f6dea35813d8fd8c738a37a7611",
+        "https://app.notion.com/p/37747f6dea3581f286f5ed30ab5b40c"
+      ],
+      "source_type": "source_assisted_draft_official_endometriosis_context_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-18",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose endometriosis, grade disease severity, recommend a formula or treatment, or replace gynecologic evaluation. Severe or worsening pelvic pain, heavy bleeding, pregnancy-related pain, fever, fainting, or other urgent symptoms require medical assessment.",
+      "notes_en": "WHO and ACOG describe endometriosis as a chronic disease with variable symptoms that may include severe menstrual pain, chronic pelvic pain, heavy bleeding, pain with sex, bowel or urinary pain, and infertility; diagnosis uses clinical evaluation and may include imaging or surgery. Those biomedical features do not identify a TCM pattern. The cells below compare only the separate course-note pattern framework.",
+      "cells": {
+        "pattern.blood_stasis": {
+          "Chief pattern cue / 主辨證線索": "在已由婦科評估的子宮內膜異位症相關情境中，若疼痛固定、刺痛、拒按，經前或經期加重，經血紫暗有塊，偏血瘀。診斷名稱、疼痛強度或影像結果本身不能單獨確立血瘀。 In an already evaluated endometriosis context, fixed stabbing pain that resists pressure, worsens before or during menses, and accompanies dark menstrual blood with clots favors Blood stasis; the diagnosis, pain severity, or imaging alone does not establish this pattern.",
+          "Tongue / 舌": "舌質紫暗，或見瘀點、瘀斑；不以正常舌象排除西醫疾病。 Dusky-purple tongue, possibly with petechiae or ecchymoses; a normal tongue does not exclude the biomedical disease.",
+          "Pulse / 脈": "脈澀；氣滯血瘀並見時可弦澀。 Choppy pulse; wiry-choppy when Qi stagnation and Blood stasis coexist.",
+          "Key accompanying signs / 兼症": "固定少腹或骨盆刺痛、夜間或經期較重、紫暗血塊、固定癥塊感；與肝氣鬱結相比，疼痛位置較固定、性質較刺、瘀色瘀點較突出。 Fixed lower-abdominal or pelvic stabbing pain, worse at night or around menses, dark clots, or a fixed-mass sensation. Compared with Liver Qi stagnation, the pain is more fixed and stabbing, with stronger purple or stasis signs.",
+          "Treatment principle / 治法": "活血化瘀、調經止痛；若兼氣滯，再配合理氣。此為辨證學習原則，不是取代婦科治療。 Invigorate Blood, dispel stasis, regulate menstruation, and relieve pain; add Qi regulation when stagnation coexists. This is a pattern-study principle, not a substitute for gynecologic care.",
+          "Representative formula / 代表方": "學習鑑別可比較 formula.tao_hong_si_wu_tang（桃紅四物湯；血虛兼血瘀）或 formula.gui_zhi_fu_ling_wan（桂枝茯苓丸；需另依完整方證核對）。不可因 endometriosis 診斷直接選方。 Study anchors: Tao Hong Si Wu Tang for Blood deficiency with stasis, or Gui Zhi Fu Ling Wan only after separate full formula-pattern confirmation. Do not select a formula from the endometriosis diagnosis alone."
+        },
+        "pattern.liver_qi_stagnation": {
+          "Chief pattern cue / 主辨證線索": "在已由婦科評估的子宮內膜異位症相關情境中，若疼痛以脹痛、走竄或時輕時重為主，明顯隨情緒壓力波動，並見經前乳脹、易怒或善太息，偏肝氣鬱結。 In an already evaluated endometriosis context, distending or wandering pain that fluctuates with emotional stress, with premenstrual breast distention, irritability, or frequent sighing, favors Liver Qi stagnation.",
+          "Tongue / 舌": "舌色可正常或舌邊稍紅，苔薄；若久鬱化熱或兼血瘀，舌象會相應改變。 Tongue may be normal or have mildly red sides with a thin coat; prolonged constraint with Heat or Blood stasis changes the picture.",
+          "Pulse / 脈": "脈弦；兼血瘀可弦澀。 Wiry pulse; wiry-choppy when Blood stasis coexists.",
+          "Key accompanying signs / 兼症": "經前乳房脹痛、胸脅或少腹脹滿、情緒抑鬱或易怒、嘆氣、症狀隨壓力起伏；與血瘀相比，脹、走竄、波動與情緒關聯更突出，固定刺痛和紫暗瘀點較少。 Premenstrual breast distention, chest/hypochondriac or lower-abdominal fullness, frustration or irritability, sighing, and stress-linked fluctuation. Compared with Blood stasis, distention, movement, variability, and emotional linkage dominate over fixed stabbing pain and purple signs.",
+          "Treatment principle / 治法": "疏肝理氣、調經止痛；若已見固定刺痛、紫暗血塊或弦澀脈，再辨是否兼活血化瘀。 Soothe Liver and regulate Qi, regulate menstruation, and relieve pain; add Blood-stasis differentiation only when fixed stabbing pain, dark clots, or a wiry-choppy pulse is present.",
+          "Representative formula / 代表方": "學習鑑別可比較 formula.xiao_yao_san（逍遙散；肝鬱兼脾虛血虛傾向）與 formula.chai_hu_shu_gan_san（柴胡疏肝散；氣滯脹痛較突出）。不可視為 endometriosis 的自動處方。 Study anchors: compare Xiao Yao San when Liver constraint coexists with Spleen/Blood deficiency tendencies and Chai Hu Shu Gan San when Qi-stagnation distending pain is prominent; neither is an automatic endometriosis prescription."
+        }
+      }
+    }
+  }
+}
