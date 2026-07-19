@@ -1,7 +1,7 @@
 {
   "dataset": "formula_content_probe_manifest",
   "batch": "c2_1_probe",
-  "status": "two_formula_previews_ready_three_pending",
+  "status": "three_formula_previews_ready_two_pending",
   "review_status": "draft",
   "purpose": "Five-formula probe selected from C2.1 to test field-level sourcing and preview before any canonical write.",
   "canonical_write_allowed": false,
@@ -59,7 +59,17 @@
     },
     {
       "id": "formula.tong_xie_yao_fang",
-      "status": "direct_course_page_not_found"
+      "status": "institutional_and_course_context_staged_preview_ready",
+      "direct_formula_course_page": null,
+      "course_context_sources": [
+        "https://app.notion.com/p/37947f6dea3581ad8b5bfae444780f9f",
+        "https://app.notion.com/p/39f47f6dea3581a6ac5ad177d2e2f332"
+      ],
+      "institutional_sources": [
+        "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00032&lang=eng&sort=name_cht_order"
+      ],
+      "staging_file": "data/imports/formula_content/c2_1_probe_tong_xie_yao_fang.json",
+      "scope_note": "HKBU supports formula facts; Ting course notes support the liver-overacting-spleen comparison context. No direct formula monograph was found in course notes."
     },
     {
       "id": "formula.gan_mai_da_zao_tang",

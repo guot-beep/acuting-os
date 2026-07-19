@@ -1,0 +1,117 @@
+{
+  "dataset": "formula_content_fill_staging",
+  "batch": "c2_1_probe_tong_xie_yao_fang",
+  "review_status": "draft",
+  "records": [
+    {
+      "id": "formula.tong_xie_yao_fang",
+      "review_status": "draft",
+      "fields": {
+        "composition": {
+          "value": [
+            {
+              "pinyin": "Bai Zhu",
+              "herb_zh": "白朮",
+              "herb_en": "Atractylodis Macrocephalae Rhizoma"
+            },
+            {
+              "pinyin": "Bai Shao",
+              "herb_zh": "白芍",
+              "herb_en": "Paeoniae Radix Alba"
+            },
+            {
+              "pinyin": "Chen Pi",
+              "herb_zh": "陳皮",
+              "herb_en": "Citri Reticulatae Pericarpium"
+            },
+            {
+              "pinyin": "Fang Feng",
+              "herb_zh": "防風",
+              "herb_en": "Saposhnikoviae Radix"
+            }
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Important Formula for Painful Diarrhea",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00032&lang=eng&sort=name_cht_order",
+              "locator": "Combination"
+            }
+          ]
+        },
+        "actions_en": {
+          "value": [
+            "Strengthens the spleen and softens the liver.",
+            "Dispels dampness and arrests diarrhea."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Important Formula for Painful Diarrhea",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00032&lang=eng&sort=name_cht_order",
+              "locator": "Action"
+            },
+            {
+              "title": "Ting Bastyr learning note - Diarrhea",
+              "url": "https://app.notion.com/p/37947f6dea3581ad8b5bfae444780f9f",
+              "locator": "Chronic Diarrhea and Treatment Principles"
+            }
+          ]
+        },
+        "pattern_indications_en": {
+          "value": [
+            "Painful diarrhea associated with spleen deficiency and an overacting or vigorous liver.",
+            "Study clues include borborygmus, abdominal pain with diarrhea, pain relieved after diarrhea, and disharmony between the left and right guan pulses, described as wiry on the left and moderate on the right."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Important Formula for Painful Diarrhea",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00032&lang=eng&sort=name_cht_order",
+              "locator": "Indication and pattern differentiation"
+            },
+            {
+              "title": "Ting Bastyr learning note - Diarrhea",
+              "url": "https://app.notion.com/p/37947f6dea3581ad8b5bfae444780f9f",
+              "locator": "Chronic Diarrhea"
+            }
+          ]
+        },
+        "english_exam_track.indications": {
+          "value": [
+            "Liver overacting on the spleen with abdominal pain and diarrhea is the direct course-note comparison context for this formula.",
+            "Stress-triggered diarrhea and abdominal pain support a liver-spleen disharmony study prompt, but the complete pattern still requires the accompanying signs and pulse context."
+          ],
+          "sources": [
+            {
+              "title": "Ting Bastyr FOM note - Yin-Yang and Five Elements",
+              "url": "https://app.notion.com/p/39f47f6dea3581a6ac5ad177d2e2f332",
+              "locator": "Five Element overacting and self-test Q3"
+            },
+            {
+              "title": "Ting Bastyr learning note - Diarrhea",
+              "url": "https://app.notion.com/p/37947f6dea3581ad8b5bfae444780f9f",
+              "locator": "Chronic Diarrhea and Exam Pearls"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Important Formula for Painful Diarrhea",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00032&lang=eng&sort=name_cht_order",
+              "locator": "Indication"
+            }
+          ]
+        },
+        "english_exam_track.notes": {
+          "value": [
+            "Differentiate the liver-overacting-spleen context from spleen qi deficiency diarrhea, where fatigue, poor appetite, loose stool, and a pale tongue are emphasized.",
+            "Differentiate it from kidney yang deficiency diarrhea, where dawn timing, cold limbs, and low-back cold or soreness are emphasized.",
+            "This comparison is a draft study aid and does not make abdominal pain or diarrhea specific to one formula or pattern."
+          ],
+          "sources": [
+            {
+              "title": "Ting Bastyr learning note - Diarrhea",
+              "url": "https://app.notion.com/p/37947f6dea3581ad8b5bfae444780f9f",
+              "locator": "Chronic Diarrhea and Exam Pearls"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
