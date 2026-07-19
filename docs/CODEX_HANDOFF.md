@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-19
 Agent: Codex
 Branch: `main`
-Commit or stash: pending coherent commit
+Commit or stash: `df284bb` (`Add guarded formula content preview pipeline`)
 Task: Add a no-apply, conflict-refusing staging gate before any C2 formula content is authored.
 
 Files changed:
