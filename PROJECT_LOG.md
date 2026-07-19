@@ -23,6 +23,23 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-19 - C2 formula classical-content gap inventory (Codex)
+
+Added a read-only, deterministic formula gap reporter and generated the first
+auditable C2 fill queue. It confirms 115 formulas = 23 populated pilot records
++ 92 skeleton records, and divides the skeletons into 30 / 30 / 32 formula
+batches. Each skeleton currently lacks 11 classical/English content and safety
+fields. The report separately identifies 184 question-mark-damaged string
+values across all 23 populated records as frozen repair work, not empty gaps.
+
+No formula data was changed. The queue requires staging, conflict-refusing
+dry-run preview, Ting/Claude approval, and apply-only-to-empty behavior before
+any future canonical fill. Dose fields, modern-use links, and review-status
+promotion are explicitly outside C2.
+
+Validation: reporter rerun PASS; eight standard validators PASS; formula JSON
+parse PASS; encoding remains at the known 768-finding baseline.
+
 ### 2026-07-18 - LL3: insulin-resistance-context pattern comparison draft fill (Codex)
 
 Filled `cmp.insulin_resistance_patterns` as the ninth complete LL3 table,

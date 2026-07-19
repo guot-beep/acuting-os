@@ -3,14 +3,14 @@
 Purpose: single-screen status for Claude / Ting / Codex coordination. Read this
 before scanning the longer `docs/CODEX_HANDOFF.md`.
 
-Last updated: 2026-07-18
+Last updated: 2026-07-19
 Agent: Codex, reconciled with Claude handoff
 Status: `LL3_CLAIMED_IN_PROGRESS`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: `cmp.insulin_resistance_patterns` source-assisted draft fill,
-pending in the latest Codex handoff commit.
+Latest Codex work: read-only C2 formula classical-content gap inventory and
+three-batch fill queue; pending in the latest Codex handoff commit.
 
 ## What Changed
 
@@ -76,6 +76,19 @@ Keep each fill:
 - `public_safe: false`;
 - clearly cited;
 - out of danger-zone clinical claims.
+
+The two remaining empty LL3 tables are recurrent-pregnancy-loss and embryo-
+transfer contexts. Codex paused them because direct course-note evidence is
+currently insufficient for these higher-risk pregnancy tables; do not fill by
+inference.
+
+## C2 Formula Queue
+
+`docs/FORMULA_CONTENT_FILL_QUEUE.md` now records 23 populated formulas and 92
+skeletons split into 30 / 30 / 32. It is planning-only. Future C2 content must
+use staging, fill only empty classical fields, remain draft, and stop for a
+preview gate before canonical apply. The 184 existing `???` string values are
+frozen repair work and are not C2 gaps.
 
 ## Protected Areas
 

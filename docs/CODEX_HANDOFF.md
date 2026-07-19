@@ -36,6 +36,49 @@ Claude review note:
 
 ---
 
+## 2026-07-19 - Codex - C2 formula classical-content gap inventory
+
+Date/time: 2026-07-19
+Agent: Codex
+Branch: `main`
+Commit or stash: pending coherent commit
+Task: Build a read-only, deterministic C2 queue before filling any of the 92 formula skeletons.
+
+Files changed:
+- `scripts/report-formula-content-gaps.js`
+- `docs/FORMULA_CONTENT_FILL_QUEUE.md`
+- `docs/CODEX_TASK_STATUS.md`
+- `docs/CODEX_CURRENT_STATUS.md`
+- `PROJECT_LOG.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- Reporter initial run and idempotent rerun: PASS.
+- Scope assertion: 115 total / 23 populated / 92 skeletons.
+- Batch sizes: 30 / 30 / 32.
+- Frozen damage separated: 23 populated records / 184 damaged string values.
+- Eight standard validators and formula JSON parse: PASS.
+- Encoding: unchanged known baseline of 768 findings.
+
+Protected areas not touched:
+- No formula, herb, condition, acupoint, case/SOAP, generated, CloudTCM, or UI data changed.
+- No `361.json` or `docs/CLOUDTCM_*` changes.
+
+Known risks / manual checks:
+- Queue ordering is deterministic by category and pinyin, not a clinical priority ranking.
+- Safety prompts are triage hints only; source-backed safety review is still required per record.
+- This task does not authorize content fill or canonical apply.
+
+Next recommended action:
+- Review `docs/FORMULA_CONTENT_FILL_QUEUE.md` and choose C2.1, C2.2, or C2.3.
+- Build a staging + dry-run preview path for one batch before authoring content.
+- Keep doses, modern-use links, review promotion, and frozen `???` repair outside C2.
+
+Claude review note: Please verify the 23/92 split, 30/30/32 batching, and the
+separation of 184 damaged strings from true empty fields. No canonical content was modified.
+
+---
+
 ## 2026-07-18 - Codex - LL3 insulin-resistance-context comparison draft fill
 
 Date/time: 2026-07-18

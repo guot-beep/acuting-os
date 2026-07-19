@@ -48,6 +48,12 @@ Purpose: fast status overlay for `docs/CODEX_TASK_QUEUE.md`. This file does not 
 | C3. PC/TE/GB/LR/CV/GV standard-point content batches | Do not start while `361.json` is frozen unless Ting explicitly unfreezes that scope. |
 | D4. Formula bulk fill | Start with probe/staging only; do not overwrite canonical formulas without preview/gate. |
 
+C2 planning update (2026-07-19): `scripts/report-formula-content-gaps.js` and
+`docs/FORMULA_CONTENT_FILL_QUEUE.md` now define three deterministic classical-
+content batches (30 / 30 / 32). No content has been filled. Each future batch
+must use staging + conflict-refusing preview and must not touch the 184 frozen
+question-mark-damaged values in the 23 populated pilot formulas.
+
 ## Current Safe Default
 
 Until Ting/Claude issues a new explicit content task:
