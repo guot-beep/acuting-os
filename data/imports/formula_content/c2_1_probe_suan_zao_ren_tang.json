@@ -1,0 +1,123 @@
+{
+  "dataset": "formula_content_fill_staging",
+  "batch": "c2_1_probe_suan_zao_ren_tang",
+  "review_status": "draft",
+  "records": [
+    {
+      "id": "formula.suan_zao_ren_tang",
+      "review_status": "draft",
+      "fields": {
+        "composition": {
+          "value": [
+            {
+              "pinyin": "Suan Zao Ren",
+              "herb_zh": "酸棗仁",
+              "herb_en": "Ziziphi Spinosae Semen"
+            },
+            {
+              "pinyin": "Chuan Xiong",
+              "herb_zh": "川芎",
+              "herb_en": "Chuanxiong Rhizoma"
+            },
+            {
+              "pinyin": "Gan Cao",
+              "herb_zh": "甘草",
+              "herb_en": "Glycyrrhizae Radix et Rhizoma"
+            },
+            {
+              "pinyin": "Zhi Mu",
+              "herb_zh": "知母",
+              "herb_en": "Anemarrhenae Rhizoma"
+            },
+            {
+              "pinyin": "Fu Ling",
+              "herb_zh": "茯苓",
+              "herb_en": "Poria"
+            }
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Sour Jujube Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&qs_type=%E5%AE%89%E7%A5%9E%E5%8A%91&sort=name_cht_order",
+              "locator": "Combination"
+            },
+            {
+              "title": "Ting Bastyr learning note - Insomnia",
+              "url": "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad",
+              "locator": "Key Herbal Formulas"
+            }
+          ]
+        },
+        "actions_en": {
+          "value": [
+            "Nourishes blood and calms the spirit.",
+            "Clears deficiency heat and relieves vexation."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Sour Jujube Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&qs_type=%E5%AE%89%E7%A5%9E%E5%8A%91&sort=name_cht_order",
+              "locator": "Action"
+            },
+            {
+              "title": "Ting Bastyr learning note - Insomnia",
+              "url": "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad",
+              "locator": "Liver Blood Deficiency treatment direction"
+            }
+          ]
+        },
+        "pattern_indications_en": {
+          "value": [
+            "Liver-blood deficiency with internal deficiency heat disturbing the spirit.",
+            "Study clues include vexation and insomnia with palpitations, restlessness, dizziness, dry throat or mouth, a red tongue, and a wiry, thin pulse."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Sour Jujube Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&qs_type=%E5%AE%89%E7%A5%9E%E5%8A%91&sort=name_cht_order",
+              "locator": "Indication and essential pattern differentiation"
+            },
+            {
+              "title": "Ting Bastyr learning note - Insomnia",
+              "url": "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad",
+              "locator": "Liver Blood Deficiency"
+            }
+          ]
+        },
+        "english_exam_track.indications": {
+          "value": [
+            "The direct course-note association is liver-blood deficiency insomnia, summarized by the classical study phrase xu lao xu fan bu de mian.",
+            "Use the complete deficiency-heat and liver-blood pattern context rather than insomnia alone when identifying this formula in a study question."
+          ],
+          "sources": [
+            {
+              "title": "Ting Bastyr learning note - Insomnia",
+              "url": "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad",
+              "locator": "Deficiency Patterns, Key Herbal Formulas, and Final Exam Traps"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Sour Jujube Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&qs_type=%E5%AE%89%E7%A5%9E%E5%8A%91&sort=name_cht_order",
+              "locator": "Indication"
+            }
+          ]
+        },
+        "english_exam_track.notes": {
+          "value": [
+            "Compare with Gui Pi Tang: heart-spleen deficiency emphasizes fatigue, poor appetite, palpitations, and a pale tongue with a thin, weak pulse.",
+            "Compare with Huang Lian E Jiao Tang or Liu Wei Di Huang Wan: heart-kidney disharmony emphasizes night sweating, tinnitus, dizziness, and a red tongue with little or no coating.",
+            "Compare with Wen Dan Tang: phlegm-heat disturbing the heart emphasizes heaviness of the head, chest fullness, nausea, a greasy yellow coat, and a slippery, rapid pulse.",
+            "These are pattern-comparison prompts, not automatic substitutions or treatment recommendations."
+          ],
+          "sources": [
+            {
+              "title": "Ting Bastyr learning note - Insomnia",
+              "url": "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad",
+              "locator": "Pattern Differentiation, Deficiency Patterns, and Key Herbal Formulas"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

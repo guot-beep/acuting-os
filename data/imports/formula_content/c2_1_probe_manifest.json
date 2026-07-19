@@ -1,7 +1,7 @@
 {
   "dataset": "formula_content_probe_manifest",
   "batch": "c2_1_probe",
-  "status": "four_formula_previews_ready_one_pending",
+  "status": "five_formula_previews_ready_review_gate",
   "review_status": "draft",
   "purpose": "Five-formula probe selected from C2.1 to test field-level sourcing and preview before any canonical write.",
   "canonical_write_allowed": false,
@@ -84,7 +84,16 @@
     },
     {
       "id": "formula.suan_zao_ren_tang",
-      "status": "direct_course_page_not_found"
+      "status": "institutional_and_course_context_staged_preview_ready",
+      "direct_formula_course_page": null,
+      "course_context_sources": [
+        "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad"
+      ],
+      "institutional_sources": [
+        "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&qs_type=%E5%AE%89%E7%A5%9E%E5%8A%91&sort=name_cht_order"
+      ],
+      "staging_file": "data/imports/formula_content/c2_1_probe_suan_zao_ren_tang.json",
+      "scope_note": "HKBU supports formula facts; Ting insomnia notes support liver-blood-deficiency and pattern-comparison exam context. No insomnia-to-formula treatment link was created."
     }
   ]
 }
