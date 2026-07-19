@@ -62,7 +62,10 @@ the first source-backed staging preview (commit `bf3b0dc`): 8 fields, 21 items,
 preview (commit `b02d043`): composition, actions, and indications only; 3
 fields, 8 items, 0 conflicts, and 0 canonical writes. Its exam-track fields
 remain empty because no direct Ting course page was found. Tong Xie Yao Fang,
-Gan Mai Da Zao Tang, and Suan Zao Ren Tang remain source-collection pending.
+now has a source-role-separated preview (commit `105991c`): 5 fields, 13 items,
+0 conflicts, and 0 canonical writes. HKBU supports formula facts; Ting's FOM
+and diarrhea notes support the exam comparison context. Gan Mai Da Zao Tang
+and Suan Zao Ren Tang remain source-collection pending.
 
 ## Current Safe Default
 

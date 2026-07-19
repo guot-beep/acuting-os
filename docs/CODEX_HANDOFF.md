@@ -36,6 +36,51 @@ Claude review note:
 
 ---
 
+## 2026-07-19 - Codex - Tong Xie Yao Fang C2 source-role preview
+
+Date/time: 2026-07-19
+Agent: Codex
+Branch: `main`
+Commit or stash: `105991c` (`Stage Tong Xie Yao Fang content preview`)
+Task: Stage classical formula facts and exam comparison context while keeping
+their evidence roles separate.
+
+Files changed:
+- `data/imports/formula_content/c2_1_probe_tong_xie_yao_fang.json`
+- `data/imports/formula_content/c2_1_probe_manifest.json`
+- `docs/formula_content_previews/c2_1_probe_tong_xie_yao_fang.md`
+- coordination logs/status files in a follow-up handoff commit
+
+Validation:
+- Formula-content preview: PASS; 1 formula, 5 fields, 13 staged items,
+  0 conflicts, 0 canonical writes.
+- Nine standard validators: PASS.
+- Recursive JSON parse: PASS, 463 files.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No canonical formula, generated, UI, clinical, point, or condition files.
+- No `361.json`, `docs/CLOUDTCM_*`, dose, modern-use, contraindication,
+  review-promotion, or apply changes.
+
+Known risks / manual checks:
+- No direct Ting formula monograph was found. HKBU supports composition,
+  actions, and indications; Ting's notes support only liver-overacting-spleen
+  and chronic-diarrhea comparison context.
+- The formula remains draft and is not textbook/source-checked.
+
+Next recommended action:
+- Review whether the explicit source-role split is suitable for future C2
+  records lacking a direct course formula page.
+- Continue the probe with Gan Mai Da Zao Tang and Suan Zao Ren Tang using the
+  same field-level evidence discipline.
+- Keep canonical apply gated.
+
+Claude review note: Please verify that course-note evidence is used only for
+the exam comparison and not presented as a full formula monograph.
+
+---
+
 ## 2026-07-19 - Codex - Si Ni San institutional-only C2 staging preview
 
 Date/time: 2026-07-19

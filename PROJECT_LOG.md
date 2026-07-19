@@ -23,6 +23,19 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-19 - Tong Xie Yao Fang source-role C2 staging preview (Codex)
+
+Added a preview-only staging record for `formula.tong_xie_yao_fang`. HKBU
+supports the four-herb composition, actions, and classical painful-diarrhea
+pattern. Ting's FOM and diarrhea notes separately support the liver-overacting-
+spleen exam context and comparison with spleen qi and kidney yang deficiency
+diarrhea. The staging wording keeps those source roles explicit.
+
+Preview result: 5 fields / 13 items / 0 conflicts / 0 canonical writes. Nine
+standard validators passed, 463 JSON files parsed, and encoding stayed at the
+expected 768-finding baseline. No dose, modern disease link, contraindication,
+review promotion, or canonical formula write was added.
+
 ### 2026-07-19 - Si Ni San institutional-only C2 staging preview (Codex)
 
 Added a second preview-only formula staging record for `formula.si_ni_san`.

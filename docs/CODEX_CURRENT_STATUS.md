@@ -10,8 +10,8 @@ Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
 Latest Codex work: preview-only C2 staging for Da Chai Hu Tang (`bf3b0dc`) and
-institutional-only Si Ni San (`b02d043`); canonical formula data remains
-unchanged.
+institutional-only Si Ni San (`b02d043`), plus source-role-separated Tong Xie
+Yao Fang (`105991c`); canonical formula data remains unchanged.
 
 ## What Changed
 
@@ -96,7 +96,9 @@ has no apply mode. The first previews now cover Da Chai Hu Tang (8 fields / 21
 items, direct Ting course note plus HKBU/MOHW) and Si Ni San (3 fields / 8
 items, HKBU/MOHW institutional-only). Both report 0 conflicts and 0 canonical
 writes. Si Ni San exam-track fields remain empty because no direct Ting course
-page was found. The remaining three probe formulas stay pending. No content
+page was found. Tong Xie Yao Fang adds 5 fields / 13 items: HKBU supports
+formula facts, while Ting's FOM/diarrhea notes support only the exam comparison
+context. Gan Mai Da Zao Tang and Suan Zao Ren Tang remain pending. No content
 has been merged into canonical formulas.
 
 ## Protected Areas
