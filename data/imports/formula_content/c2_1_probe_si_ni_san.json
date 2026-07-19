@@ -1,0 +1,85 @@
+{
+  "dataset": "formula_content_fill_staging",
+  "batch": "c2_1_probe_si_ni_san",
+  "review_status": "draft",
+  "records": [
+    {
+      "id": "formula.si_ni_san",
+      "review_status": "draft",
+      "fields": {
+        "composition": {
+          "value": [
+            {
+              "pinyin": "Chai Hu",
+              "herb_zh": "柴胡",
+              "herb_en": "Bupleuri Radix"
+            },
+            {
+              "pinyin": "Bai Shao",
+              "herb_zh": "白芍",
+              "herb_en": "Paeoniae Radix Alba"
+            },
+            {
+              "pinyin": "Zhi Shi",
+              "herb_zh": "枳實",
+              "herb_en": "Aurantii Fructus Immaturus"
+            },
+            {
+              "pinyin": "Zhi Gan Cao",
+              "herb_zh": "炙甘草",
+              "herb_en": "Glycyrrhizae Radix et Rhizoma Praeparata cum Melle"
+            }
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Frigid Extremities Powder",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00030&lang=eng&page=1&sort=name_cht_order",
+              "locator": "Combination"
+            },
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Si Ni San",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-5664-108.html",
+              "locator": "Prescription"
+            }
+          ]
+        },
+        "actions_en": {
+          "value": [
+            "Moves qi and resolves constraint.",
+            "Soothes the liver and regulates the spleen."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Frigid Extremities Powder",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00030&lang=eng&page=1&sort=name_cht_order",
+              "locator": "Action"
+            },
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Si Ni San",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-5664-108.html",
+              "locator": "Efficacy"
+            }
+          ]
+        },
+        "pattern_indications_en": {
+          "value": [
+            "Yang constraint with reversal cold of the extremities: lack of warmth in the hands and feet, possible abdominal pain, diarrhea or tenesmus, and a wiry pulse.",
+            "Liver-spleen disharmony with hypochondriac distention or fullness, epigastric or abdominal pain, and a wiry pulse."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Frigid Extremities Powder",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00030&lang=eng&page=1&sort=name_cht_order",
+              "locator": "Indication"
+            },
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Si Ni San",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-5664-108.html",
+              "locator": "Indications"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
