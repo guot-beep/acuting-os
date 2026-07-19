@@ -71,6 +71,13 @@ complete: 24 fields, 64 items, 0 conflicts, 0 canonical writes. C2 is stopped
 at the review gate documented in
 `docs/formula_content_previews/C2_1_PROBE_SUMMARY.md`.
 
+C2 Chinese-depth update (2026-07-19): a separate no-apply B-layer preview now
+covers the same five formulas using exact CloudTCM formula pages. It stages
+only `fang_yi_zh`, `zhu_zhi_zh`, and `notes_zh`: 15 fields, 0 conflicts, and
+0 canonical writes. Source inconsistencies are recorded rather than absorbed.
+American Dragon remains `manual_browser_review_required` because automated
+access returned a verification challenge. Canonical apply remains gated.
+
 ## Current Safe Default
 
 Until Ting/Claude issues a new explicit content task:

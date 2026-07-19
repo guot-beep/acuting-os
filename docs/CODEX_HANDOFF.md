@@ -36,6 +36,55 @@ Claude review note:
 
 ---
 
+## 2026-07-19 - Codex - CloudTCM Chinese depth five-formula probe
+
+Date/time: 2026-07-19
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Add a separate review-only Chinese depth lane for the completed five-
+formula C2 probe; do not modify canonical formulas.
+
+Files changed:
+- `scripts/preview-formula-chinese-depth.js`
+- `data/imports/formula_chinese_depth/README.md`
+- `data/imports/formula_chinese_depth/c2_2_cloudtcm_five_formula_probe.json`
+- `docs/formula_chinese_depth_previews/c2_2_cloudtcm_five_formula_probe.md`
+- coordination logs/status files
+
+Validation:
+- Chinese depth preview: PASS; 5 formulas, 15 fields, 0 conflicts, 0 writes.
+- Explicit `--apply` rejection: PASS.
+- Nine existing validators plus formula-dose staging validator: PASS.
+- Recursive JSON parse: PASS, 466 files.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No canonical formula, herb, condition, point, clinical, generated, or UI
+  files changed.
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, formula dose, modern
+  condition link, source-checked promotion, or apply path.
+
+Known risks / manual checks:
+- CloudTCM is a B-layer Chinese learning reference, not the exam authority.
+  The staging excludes its modern-disease and efficacy language.
+- Gan Mai Da Zao Tang formula/89 contains an internal Fu Xiao Mai versus Mai
+  Dong inconsistency; the affected explanation was excluded and documented.
+- American Dragon returned an automated verification challenge. Its formula
+  pages require manual-browser identity review before a separate staging batch.
+
+Next recommended action:
+- Review the three-field Chinese depth shape and the per-formula caveats.
+- Manually collect exact American Dragon pages if available, without bypassing
+  the access challenge or inventing URLs.
+- Keep canonical apply gated until field-level source persistence is approved.
+
+Claude review note: Please inspect the source caveats and conservative wording,
+especially the Gan Mai Da Zao Tang mismatch. This batch is additive staging
+only and does not supersede the C2.1 A-layer evidence probe.
+
+---
+
 ## 2026-07-19 - Codex - Complete five-formula C2 staging probe
 
 Date/time: 2026-07-19

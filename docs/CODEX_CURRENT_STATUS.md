@@ -5,14 +5,15 @@ before scanning the longer `docs/CODEX_HANDOFF.md`.
 
 Last updated: 2026-07-19
 Agent: Codex, reconciled with Claude handoff
-Status: `LL3_CLAIMED_IN_PROGRESS`
+Status: `C2_CHINESE_DEPTH_PREVIEW_READY_REVIEW`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: preview-only C2 staging for Da Chai Hu Tang (`bf3b0dc`) and
-institutional-only Si Ni San (`b02d043`), plus source-role-separated Tong Xie
-Yao Fang (`105991c`), Gan Mai Da Zao Tang (`7a7f740`), and Suan Zao Ren Tang
-(`0f45870`); canonical formula data remains unchanged.
+Latest Codex work: a separate five-formula CloudTCM Chinese-depth staging probe
+for `fang_yi_zh`, `zhu_zhi_zh`, and `notes_zh`. It has 15 staged fields,
+0 conflicts, and 0 canonical writes. American Dragon is recorded as manual-
+browser review required because automated access returned a verification
+challenge. Canonical formula data remains unchanged.
 
 ## What Changed
 
@@ -107,6 +108,12 @@ fields / 64 items / 0 conflicts / 0 canonical writes. See
 `docs/formula_content_previews/C2_1_PROBE_SUMMARY.md`. Do not expand to the
 remaining skeleton formulas until Ting/Claude accepts the evidence shape and
 decides how field-level sources persist in canonical data.
+
+The same five formulas now also have a separate B-layer Chinese-depth preview
+under `data/imports/formula_chinese_depth/`. The no-apply preview allows only
+the three existing `chinese_depth_track` fields and records exact CloudTCM
+formula IDs plus source caveats. It deliberately excludes dose and modern-
+disease claims. This remains an additional review gate, not a canonical merge.
 
 ## Protected Areas
 

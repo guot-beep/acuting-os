@@ -1,0 +1,375 @@
+{
+  "dataset": "formula_chinese_depth_staging",
+  "batch": "c2_2_cloudtcm_five_formula_probe",
+  "review_status": "draft",
+  "canonical_write_allowed": false,
+  "purpose": "Review-only Chinese depth summaries for the same five formulas used in the C2.1 evidence-shape probe.",
+  "content_policy": {
+    "allowed": [
+      "concise formula rationale",
+      "traditional pattern and differentiation clues",
+      "comparison notes"
+    ],
+    "excluded": [
+      "modern disease treatment claims",
+      "dose recommendations",
+      "condition links",
+      "source_checked promotion",
+      "long copied passages"
+    ]
+  },
+  "american_dragon_collection": {
+    "url": "https://www.americandragon.com/",
+    "status": "manual_browser_review_required",
+    "checked_on": "2026-07-19",
+    "reason": "Automated access returned a verification challenge, and search did not expose reliable exact formula pages for this batch.",
+    "next_action": "Open exact formula pages in a normal browser, verify formula identity, then add separately sourced English-practitioner notes in a later review-only staging batch. Do not infer URLs or content."
+  },
+  "records": [
+    {
+      "formula_id": "formula.da_chai_hu_tang",
+      "review_status": "draft",
+      "source_match": {
+        "status": "matched_with_caveats",
+        "cloudtcm_formula_id": 35,
+        "url": "https://cloudtcm.com/formula/35",
+        "identity_checks": [
+          "頁面主方名為大柴胡湯 / Da Chai Hu Tang。",
+          "《傷寒論》條目與八味核心組成可對上本專案方劑。",
+          "主證同時包含少陽證與陽明裡實線索。"
+        ],
+        "caveats": [
+          "頁面同時收錄多個同名古方，僅採用《傷寒論》八味條目。",
+          "頁面現代疾病與藥理敘述未納入本批。"
+        ]
+      },
+      "fields": {
+        "chinese_depth_track.fang_yi_zh": {
+          "value": "柴胡、黃芩和解少陽；半夏、生薑和胃降逆；枳實、大黃行氣通腑、瀉下裡實；白芍緩急，配大棗調和中焦。全方重點是少陽未解而陽明裡實已成，和解與通下並用。",
+          "sources": [
+            {
+              "title": "雲端中醫－大柴胡湯",
+              "url": "https://cloudtcm.com/formula/35",
+              "locator": "方劑組成解釋；《傷寒論》同名條目"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－大柴胡湯",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Combination and Action"
+            }
+          ]
+        },
+        "chinese_depth_track.zhu_zhi_zh": {
+          "value": "傳統辨證重點為少陽、陽明合病：往來寒熱、胸脅苦滿、噁心或嘔吐不止，同時見脘腹痞硬或滿痛、大便不解，常伴苔黃、脈弦有力。不可只看到胸脅不舒就套用，必須確認裡實線索。",
+          "sources": [
+            {
+              "title": "雲端中醫－大柴胡湯",
+              "url": "https://cloudtcm.com/formula/35",
+              "locator": "《傷寒論》同名條目；主治功效"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－大柴胡湯",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Indication and essential pattern differentiation"
+            }
+          ]
+        },
+        "chinese_depth_track.notes_zh": {
+          "value": [
+            "與小柴胡湯鑑別：兩者皆和解少陽，大柴胡湯另有較明確的陽明裡實、腹滿痛或便結。",
+            "與大承氣湯鑑別：大承氣湯偏陽明腑實，大柴胡湯仍保留往來寒熱、胸脅苦滿等少陽線索。",
+            "CloudTCM 的同名方清單很長；此筆只綁定《傷寒論》八味版本，不把其他同名方混入。"
+          ],
+          "sources": [
+            {
+              "title": "雲端中醫－大柴胡湯",
+              "url": "https://cloudtcm.com/formula/35",
+              "locator": "相同名稱方劑；方劑介紹"
+            },
+            {
+              "title": "Ting Bastyr learning note－Da Chai Hu Tang",
+              "url": "https://app.notion.com/p/37747f6dea3581979bcadb471b071dde",
+              "locator": "Exam Comparison"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "formula_id": "formula.si_ni_san",
+      "review_status": "draft",
+      "source_match": {
+        "status": "matched_with_caveats",
+        "cloudtcm_formula_id": 78,
+        "url": "https://cloudtcm.com/formula/78",
+        "identity_checks": [
+          "頁面主方名為四逆散 / Si Ni San。",
+          "組成為柴胡、枳實、白芍、甘草，與《傷寒論》方一致。",
+          "頁面明確區分陽鬱四逆與陽虛寒厥。"
+        ],
+        "caveats": [
+          "頁面含現代疾病列表與經絡推論，未納入本批。",
+          "四逆散不可與四逆湯的陽虛寒厥概念混同。"
+        ]
+      },
+      "fields": {
+        "chinese_depth_track.fang_yi_zh": {
+          "value": "柴胡透邪解鬱、疏達肝氣，枳實行氣散結，白芍養血柔肝、緩急，甘草益脾和中並調和諸藥。四藥合用，使鬱滯的氣機得以通達，重點在疏肝理脾，而不是溫補腎陽。",
+          "sources": [
+            {
+              "title": "雲端中醫－四逆散",
+              "url": "https://cloudtcm.com/formula/78",
+              "locator": "方劑介紹；方劑配方組成"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－四逆散",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00030&lang=eng&page=1&sort=name_cht_order",
+              "locator": "Combination and Action"
+            }
+          ]
+        },
+        "chinese_depth_track.zhu_zhi_zh": {
+          "value": "傳統辨證著眼於陽氣內鬱、不能達於四末所見的四肢厥逆，並可伴胸脅或腹部不舒、脈弦。這類手足冷通常不以全身深寒、精神衰微為主，辨證核心是氣機鬱滯。",
+          "sources": [
+            {
+              "title": "雲端中醫－四逆散",
+              "url": "https://cloudtcm.com/formula/78",
+              "locator": "方劑介紹；主治功效"
+            },
+            {
+              "title": "台灣衛生福利部中醫藥司－四逆散",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-5664-108.html",
+              "locator": "效能與適應症"
+            }
+          ]
+        },
+        "chinese_depth_track.notes_zh": {
+          "value": [
+            "與四逆湯鑑別：四逆散偏陽鬱氣滯，四逆湯偏少陰陽衰、陰寒內盛；兩者雖同名含「四逆」，病機不同。",
+            "與逍遙散、痛瀉要方比較時，應看主要問題是四末不溫的陽鬱、肝鬱血虛，或肝旺乘脾所致痛瀉。",
+            "本批只整理傳統辨證與方義，未採用頁面的現代疾病對應。"
+          ],
+          "sources": [
+            {
+              "title": "雲端中醫－四逆散",
+              "url": "https://cloudtcm.com/formula/78",
+              "locator": "方劑介紹"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－四逆散",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00030&lang=eng&page=1&sort=name_cht_order",
+              "locator": "Indication and essential pattern differentiation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "formula_id": "formula.tong_xie_yao_fang",
+      "review_status": "draft",
+      "source_match": {
+        "status": "matched_with_caveats",
+        "cloudtcm_formula_id": 563,
+        "url": "https://cloudtcm.com/formula/563",
+        "identity_checks": [
+          "頁面主方名為痛瀉要方 / Tong Xie Yao Fang。",
+          "組成為白朮、白芍、陳皮、防風四味。",
+          "病機與主證均指向脾虛肝旺、腹痛泄瀉。"
+        ],
+        "caveats": [
+          "頁面列出的合方與加減只作學習比較，不轉成處方建議。",
+          "頁面現代疾病及經絡檢測敘述未納入本批。"
+        ]
+      },
+      "fields": {
+        "chinese_depth_track.fang_yi_zh": {
+          "value": "白朮健脾燥濕，白芍養血柔肝、緩急止痛，陳皮理氣醒脾，防風疏肝升散並協助止瀉。配伍重點是扶脾與抑肝並行，使肝脾氣機和調。",
+          "sources": [
+            {
+              "title": "雲端中醫－痛瀉要方",
+              "url": "https://cloudtcm.com/formula/563",
+              "locator": "方劑組成解釋；方劑介紹"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－痛瀉要方",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00032&lang=eng&sort=name_cht_order",
+              "locator": "Combination and Action"
+            }
+          ]
+        },
+        "chinese_depth_track.zhu_zhi_zh": {
+          "value": "傳統主證是脾虛肝旺所致的腹痛泄瀉：腹痛與便溏或泄瀉相伴，腸鳴，情緒或肝氣不舒時易發，常見舌苔薄白、脈弦而緩。辨證不能只憑腹瀉，需同時看肝脾失調線索。",
+          "sources": [
+            {
+              "title": "雲端中醫－痛瀉要方",
+              "url": "https://cloudtcm.com/formula/563",
+              "locator": "主治功效；方劑介紹"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－痛瀉要方",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00032&lang=eng&sort=name_cht_order",
+              "locator": "Indication and essential pattern differentiation"
+            }
+          ]
+        },
+        "chinese_depth_track.notes_zh": {
+          "value": [
+            "與四逆散比較：兩者都涉及肝脾不和；痛瀉要方以腹痛泄瀉、脾虛肝旺為中心，四逆散更強調陽鬱與氣機不達四末。",
+            "頁面提及四神丸或附子理中湯作寒重腹瀉的比較方向；本筆只保留鑑別概念，不形成自動合方或替代建議。",
+            "現代腸炎或腸躁症名稱不能單獨決定本方，仍須回到脾虛肝旺的傳統辨證。"
+          ],
+          "sources": [
+            {
+              "title": "雲端中醫－痛瀉要方",
+              "url": "https://cloudtcm.com/formula/563",
+              "locator": "方劑介紹；加減法參考"
+            },
+            {
+              "title": "Ting FOM / diarrhea comparison notes",
+              "url": "https://app.notion.com/p/37947f6dea3581ad8b5bfae444780f9f",
+              "locator": "Liver overacting on Spleen comparison context"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "formula_id": "formula.gan_mai_da_zao_tang",
+      "review_status": "draft",
+      "source_match": {
+        "status": "matched_with_caveats",
+        "cloudtcm_formula_id": 89,
+        "url": "https://cloudtcm.com/formula/89",
+        "identity_checks": [
+          "頁面主方名為甘麥大棗湯 / Gan Mai Da Zao Tang。",
+          "基本資訊列浮小麥、甘草、大棗三味，與《金匱要略》核心方一致。",
+          "主治核心為臟躁、心神失養與和中緩急。"
+        ],
+        "caveats": [
+          "頁面部分藥味解釋誤提麥冬，與其基本資訊的浮小麥三味方不一致；該段未採用。",
+          "頁面現代精神疾病、藥理與療效語句未納入本批。"
+        ]
+      },
+      "fields": {
+        "chinese_depth_track.fang_yi_zh": {
+          "value": "浮小麥養心安神，甘草補中和緩，大棗益脾和中。三味皆偏甘潤平和，以養心、和中、緩急為主要配伍方向，重點不在峻補或攻邪。",
+          "sources": [
+            {
+              "title": "雲端中醫－甘麥大棗湯",
+              "url": "https://cloudtcm.com/formula/89",
+              "locator": "基本資訊；方劑介紹（排除誤提麥冬的段落）"
+            },
+            {
+              "title": "台灣衛生福利部中醫藥司－甘麥大棗湯",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-7146-108.html",
+              "locator": "處方與效能"
+            }
+          ]
+        },
+        "chinese_depth_track.zhu_zhi_zh": {
+          "value": "傳統主治為臟躁：精神恍惚、悲傷欲哭而難以自制、心神不寧或睡眠不安等，辨證理解著重心神失養並兼中焦不和。這是傳統證候描述，不等同於任何單一現代精神科診斷。",
+          "sources": [
+            {
+              "title": "雲端中醫－甘麥大棗湯",
+              "url": "https://cloudtcm.com/formula/89",
+              "locator": "相同名稱方劑－《金匱》條目；方劑介紹"
+            },
+            {
+              "title": "台灣衛生福利部中醫藥司－甘麥大棗湯",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-7146-108.html",
+              "locator": "適應症"
+            }
+          ]
+        },
+        "chinese_depth_track.notes_zh": {
+          "value": [
+            "與酸棗仁湯比較：甘麥大棗湯偏臟躁、悲傷欲哭與和中緩急；酸棗仁湯偏肝血不足、虛熱內擾所致虛煩不眠。",
+            "與天王補心丹比較時，後者更偏心腎陰虧、虛火與較完整的滋陰養血安神結構。",
+            "CloudTCM 頁面內有浮小麥／麥冬不一致，任何藥味解釋都必須再以機構資料或教材核對。"
+          ],
+          "sources": [
+            {
+              "title": "雲端中醫－甘麥大棗湯",
+              "url": "https://cloudtcm.com/formula/89",
+              "locator": "方劑介紹；基本資訊"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－甘麥大棗湯附方記錄",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&sort=name_cht_order",
+              "locator": "Additional formula record"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "formula_id": "formula.suan_zao_ren_tang",
+      "review_status": "draft",
+      "source_match": {
+        "status": "matched_with_caveats",
+        "cloudtcm_formula_id": 270,
+        "url": "https://cloudtcm.com/formula/270",
+        "identity_checks": [
+          "頁面主方名為酸棗仁湯 / Suan Zao Ren Tang。",
+          "組成為酸棗仁、茯苓、知母、川芎、甘草五味，與《金匱要略》核心方一致。",
+          "主證核心為肝血不足、虛熱內擾、虛煩不眠。"
+        ],
+        "caveats": [
+          "頁面對個別藥物寒熱與作用有前後不一致或過度延伸處，只採用與機構來源一致的高層方義。",
+          "頁面現代疾病、藥理與療效語句未納入本批。"
+        ]
+      },
+      "fields": {
+        "chinese_depth_track.fang_yi_zh": {
+          "value": "酸棗仁養肝血、安心神，茯苓寧心並兼顧脾運，知母清虛熱、除煩，川芎調暢肝氣血，甘草和中調藥。全方以養血安神為主，兼清虛熱與調肝。",
+          "sources": [
+            {
+              "title": "雲端中醫－酸棗仁湯",
+              "url": "https://cloudtcm.com/formula/270",
+              "locator": "方劑介紹；方劑組成解釋（僅採機構來源可交叉核對部分）"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－酸棗仁湯",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&qs_type=%E5%AE%89%E7%A5%9E%E5%8A%91&sort=name_cht_order",
+              "locator": "Combination and Action"
+            }
+          ]
+        },
+        "chinese_depth_track.zhu_zhi_zh": {
+          "value": "傳統辨證重點為肝血不足、虛熱內擾所致的虛煩不眠，可兼心悸、盜汗、頭暈目眩、口乾，常見舌偏紅、脈細弦。不能把所有失眠都歸入此方，需辨明血虛與虛熱線索。",
+          "sources": [
+            {
+              "title": "雲端中醫－酸棗仁湯",
+              "url": "https://cloudtcm.com/formula/270",
+              "locator": "方劑介紹；主治功效"
+            },
+            {
+              "title": "香港浸會大學中醫藥學院－酸棗仁湯",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&qs_type=%E5%AE%89%E7%A5%9E%E5%8A%91&sort=name_cht_order",
+              "locator": "Indication and essential pattern differentiation"
+            }
+          ]
+        },
+        "chinese_depth_track.notes_zh": {
+          "value": [
+            "與歸脾湯鑑別：兩者皆可涉及血不足與心神不寧；歸脾湯更重心脾氣血兩虛，酸棗仁湯更重肝血不足兼虛熱。",
+            "與天王補心丹鑑別：天王補心丹偏心腎陰虧、虛火較著；酸棗仁湯偏肝血不足、虛煩不眠。",
+            "與甘麥大棗湯鑑別：後者以臟躁、悲傷欲哭與和中緩急為主要學習線索。"
+          ],
+          "sources": [
+            {
+              "title": "雲端中醫－酸棗仁湯",
+              "url": "https://cloudtcm.com/formula/270",
+              "locator": "方劑介紹；方劑比較"
+            },
+            {
+              "title": "Ting insomnia comparison note",
+              "url": "https://app.notion.com/p/38147f6dea358185b847ce2d782288ad",
+              "locator": "Pattern comparison context"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

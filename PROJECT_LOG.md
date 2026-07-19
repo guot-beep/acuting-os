@@ -23,6 +23,28 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-19 - Stage five-formula CloudTCM Chinese depth probe (Codex)
+
+Added a separate review-only B-layer for Chinese formula depth. The probe
+covers Da Chai Hu Tang, Si Ni San, Tong Xie Yao Fang, Gan Mai Da Zao Tang,
+and Suan Zao Ren Tang with concise `fang_yi_zh`, `zhu_zhi_zh`, and
+`notes_zh` summaries. Each CloudTCM formula page was matched by name,
+classical identity, and composition, then cross-checked against the existing
+HKBU/MOHW/course-note evidence where available.
+
+The staging record explicitly preserves source caveats. In particular, the
+Gan Mai Da Zao Tang page contains an internal Fu Xiao Mai/Mai Dong mismatch,
+so the inconsistent ingredient explanation was excluded. Modern disease
+claims, dose recommendations, condition links, and source-checked promotion
+were not staged. American Dragon remains a separate manual-browser review
+because automated access returned a verification challenge; no URL or content
+was inferred.
+
+Added a no-apply preview tool and generated a 5-formula / 15-field report with
+0 conflicts and 0 canonical writes. Nine standard validators and formula-dose
+staging validation passed; all 466 JSON files parsed. Encoding remains at the
+expected 768-finding baseline.
+
 ### 2026-07-19 - Complete five-formula C2 review-only probe (Codex)
 
 Completed preview-only staging for Gan Mai Da Zao Tang and Suan Zao Ren Tang,
