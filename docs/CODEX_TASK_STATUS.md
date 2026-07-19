@@ -56,8 +56,11 @@ question-mark-damaged values in the 23 populated pilot formulas.
 
 C2 preview update (2026-07-19): `scripts/preview-formula-content-fill.js` now
 enforces the staging gate and intentionally has no apply mode. A five-formula
-probe manifest exists under `data/imports/formula_content/`; source collection
-and authored content remain pending.
+probe manifest exists under `data/imports/formula_content/`. Da Chai Hu Tang is
+the first source-backed staging preview (commit `bf3b0dc`): 8 fields, 21 items,
+0 conflicts, and 0 canonical writes. Si Ni San, Tong Xie Yao Fang, Gan Mai Da
+Zao Tang, and Suan Zao Ren Tang remain source-collection pending because no
+direct Ting course-note page was found.
 
 ## Current Safe Default
 

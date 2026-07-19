@@ -9,8 +9,8 @@ Status: `LL3_CLAIMED_IN_PROGRESS`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: preview-only C2 formula staging guard and five-formula probe
-manifest; pending in the latest Codex handoff commit.
+Latest Codex work: source-backed, preview-only Da Chai Hu Tang C2 staging at
+commit `bf3b0dc`; canonical formula data remains unchanged.
 
 ## What Changed
 
@@ -91,8 +91,11 @@ preview gate before canonical apply. The 184 existing `???` string values are
 frozen repair work and are not C2 gaps.
 
 `scripts/preview-formula-content-fill.js` now implements that preview gate. It
-has no apply mode. The first probe manifest selects five C2.1 formulas for
-field-level source collection; no formula content has been authored or merged.
+has no apply mode. The first real staging preview now covers Da Chai Hu Tang:
+8 fields / 21 staged items / 0 conflicts / 0 canonical writes. Ting's direct
+Bastyr/Notion note was cross-checked with HKBU and Taiwan MOHW institutional
+records. The remaining four probe formulas stay pending because direct course
+pages were not found. No content has been merged into canonical formulas.
 
 ## Protected Areas
 

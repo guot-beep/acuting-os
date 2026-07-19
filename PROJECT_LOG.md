@@ -23,6 +23,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-19 - Da Chai Hu Tang source-backed C2 staging preview (Codex)
+
+Created the first real formula-content staging record for
+`formula.da_chai_hu_tang`. Ting's direct Bastyr/Notion note supplies the exam
+comparison, while the HKBU Chinese Medicine Formulae Images Database and
+Taiwan MOHW reference-formula page independently support formula identity,
+composition, actions, and the combined Shaoyang-Yangming pattern.
+
+The staging record remains `draft` and contains 8 fields / 21 items. It does
+not include dose conversion, modern disease links, clinical claims, or review
+promotion. The preview reports 0 conflicts and 0 canonical writes. The other
+four formulas in the probe remain source-collection pending because no direct
+course-note page was found; indirect search results were not used as a
+substitute.
+
+Validation: preview PASS; nine standard validators PASS; all 461 JSON files
+parse; encoding remains at the expected 768-finding baseline. Canonical
+`data/herbs/formulas.json` was not changed.
+
 ### 2026-07-19 - C2 formula staging preview guard and five-formula probe (Codex)
 
 Added a preview-only C2 staging validator for classical formula content. It

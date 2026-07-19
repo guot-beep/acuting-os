@@ -36,6 +36,57 @@ Claude review note:
 
 ---
 
+## 2026-07-19 - Codex - Da Chai Hu Tang C2 source-backed staging preview
+
+Date/time: 2026-07-19 00:49 -07:00
+Agent: Codex
+Branch: `main`
+Commit or stash: `bf3b0dc` (`Stage Da Chai Hu Tang formula content preview`)
+Task: Exercise the C2 preview gate with one directly sourced formula while
+keeping canonical data frozen.
+
+Files changed:
+- `data/imports/formula_content/c2_1_probe_da_chai_hu_tang.json`
+- `data/imports/formula_content/c2_1_probe_manifest.json`
+- `docs/formula_content_previews/c2_1_probe_da_chai_hu_tang.md`
+- coordination logs/status files in a follow-up handoff commit
+
+Validation:
+- Formula-content preview: PASS; 1 formula, 8 fields, 21 staged items,
+  0 conflicts, 0 canonical writes.
+- `validate-data`, `validate-interactions`, `validate-relations`,
+  `validate-herbal-links`, `validate-herb-canon`, `validate-naming`,
+  `validate-point-categories`, `validate-point-ids`, and
+  `validate-formula-dose-staging`: PASS.
+- Recursive JSON parse: PASS, 461 files.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No `data/herbs/formulas.json`, generated data, UI, case/SOAP, point, or
+  condition writes.
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, or CloudTCM map changes.
+- No dose fields, modern disease links, review promotion, or apply path.
+
+Known risks / manual checks:
+- Draft wording needs Ting/Claude review before any canonical apply capability
+  is designed.
+- Bensky textbook verification is still pending, so nothing is
+  `source_checked`.
+- Four probe formulas remain pending; indirect Notion search hits were not
+  accepted in place of direct course pages.
+
+Next recommended action:
+- Review the Da Chai Hu Tang staging record and preview report.
+- If accepted, persist the field-level evidence model before building an
+  apply-only-to-empty tool, then source the next probe formula directly.
+- Do not batch all 92 formulas until this one-record evidence shape is accepted.
+
+Claude review note: Please review the eight staged fields against the linked
+Ting course note, HKBU formula record, and Taiwan MOHW reference-formula page.
+Canonical formula content remains byte-for-byte unchanged.
+
+---
+
 ## 2026-07-19 - Codex - C2 staging preview guard and probe manifest
 
 Date/time: 2026-07-19
