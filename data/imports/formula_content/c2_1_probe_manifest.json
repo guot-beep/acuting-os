@@ -1,7 +1,7 @@
 {
   "dataset": "formula_content_probe_manifest",
   "batch": "c2_1_probe",
-  "status": "source_collection_pending",
+  "status": "one_formula_preview_ready_four_pending",
   "review_status": "draft",
   "purpose": "Five-formula probe selected from C2.1 to test field-level sourcing and preview before any canonical write.",
   "canonical_write_allowed": false,
@@ -34,5 +34,33 @@
       "source_checked promotion",
       "canonical apply before review"
     ]
-  }
+  },
+  "source_collection_results": [
+    {
+      "id": "formula.da_chai_hu_tang",
+      "status": "staged_preview_ready",
+      "direct_course_note": "https://app.notion.com/p/37747f6dea3581979bcadb471b071dde",
+      "institutional_sources": [
+        "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+        "https://dep.mohw.gov.tw/docmap/fp-866-5631-108.html"
+      ],
+      "staging_file": "data/imports/formula_content/c2_1_probe_da_chai_hu_tang.json"
+    },
+    {
+      "id": "formula.si_ni_san",
+      "status": "direct_course_page_not_found"
+    },
+    {
+      "id": "formula.tong_xie_yao_fang",
+      "status": "direct_course_page_not_found"
+    },
+    {
+      "id": "formula.gan_mai_da_zao_tang",
+      "status": "direct_course_page_not_found"
+    },
+    {
+      "id": "formula.suan_zao_ren_tang",
+      "status": "direct_course_page_not_found"
+    }
+  ]
 }

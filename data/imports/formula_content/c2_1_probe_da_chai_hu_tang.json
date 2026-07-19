@@ -1,0 +1,189 @@
+{
+  "dataset": "formula_content_fill_staging",
+  "batch": "c2_1_probe_da_chai_hu_tang",
+  "review_status": "draft",
+  "records": [
+    {
+      "id": "formula.da_chai_hu_tang",
+      "review_status": "draft",
+      "fields": {
+        "composition": {
+          "value": [
+            {
+              "pinyin": "Chai Hu",
+              "herb_zh": "柴胡",
+              "herb_en": "Bupleuri Radix"
+            },
+            {
+              "pinyin": "Huang Qin",
+              "herb_zh": "黃芩",
+              "herb_en": "Scutellariae Radix"
+            },
+            {
+              "pinyin": "Bai Shao",
+              "herb_zh": "白芍",
+              "herb_en": "Paeoniae Radix Alba"
+            },
+            {
+              "pinyin": "Ban Xia",
+              "herb_zh": "半夏",
+              "herb_en": "Pinelliae Rhizoma"
+            },
+            {
+              "pinyin": "Sheng Jiang",
+              "herb_zh": "生薑",
+              "herb_en": "Zingiberis Rhizoma Recens"
+            },
+            {
+              "pinyin": "Zhi Shi",
+              "herb_zh": "枳實",
+              "herb_en": "Aurantii Fructus Immaturus"
+            },
+            {
+              "pinyin": "Da Zao",
+              "herb_zh": "大棗",
+              "herb_en": "Jujubae Fructus"
+            },
+            {
+              "pinyin": "Da Huang",
+              "herb_zh": "大黃",
+              "herb_en": "Rhei Radix et Rhizoma"
+            }
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Combination"
+            },
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Da Chai Hu Tang",
+              "url": "https://dep.mohw.gov.tw/docmap/fp-866-5631-108.html",
+              "locator": "Prescription"
+            }
+          ]
+        },
+        "actions_en": {
+          "value": [
+            "Harmonizes the Shaoyang stage.",
+            "Drains interior heat bind associated with concurrent Yangming excess."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Action"
+            },
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Da Chai Hu Tang",
+              "url": "https://dep.mohw.gov.tw/docmap/fp-866-5631-108.html",
+              "locator": "Efficacy"
+            }
+          ]
+        },
+        "pattern_indications_en": {
+          "value": [
+            "Combined Shaoyang and Yangming interior excess pattern.",
+            "Study clues include alternating chills and fever, chest or hypochondriac fullness, persistent nausea or vomiting, epigastric or abdominal fullness and pain, and constipation.",
+            "Additional source clues include a yellow tongue coating and a powerful wiry, rapid pulse."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Indication and essential pattern differentiation"
+            },
+            {
+              "title": "Ting Bastyr learning note - Da Chai Hu Tang",
+              "url": "https://app.notion.com/p/37747f6dea3581979bcadb471b071dde",
+              "locator": "Main Pattern and Key Clinical Clues"
+            }
+          ]
+        },
+        "contraindications_en": {
+          "value": [
+            "Do not infer use from a Shaoyang presentation alone: the cited indication requires concurrent Yangming interior excess, and the institutional source notes that purgation is prohibited in an uncombined Shaoyang pattern."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Pathogenesis"
+            }
+          ]
+        },
+        "english_exam_track.actions": {
+          "value": [
+            "Harmonizes Shaoyang and drains Yangming interior heat bind."
+          ],
+          "sources": [
+            {
+              "title": "Ting Bastyr learning note - Da Chai Hu Tang",
+              "url": "https://app.notion.com/p/37747f6dea3581979bcadb471b071dde",
+              "locator": "Core Actions"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Action"
+            }
+          ]
+        },
+        "english_exam_track.indications": {
+          "value": [
+            "Shaoyang disorder with Yangming interior excess.",
+            "Differentiate by the coexistence of Shaoyang signs and interior excess signs rather than by either group alone."
+          ],
+          "sources": [
+            {
+              "title": "Ting Bastyr learning note - Da Chai Hu Tang",
+              "url": "https://app.notion.com/p/37747f6dea3581979bcadb471b071dde",
+              "locator": "Main Pattern"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Indication"
+            }
+          ]
+        },
+        "english_exam_track.contraindications": {
+          "value": [
+            "A Shaoyang presentation without concurrent Yangming interior excess does not match the cited pattern for this formula."
+          ],
+          "sources": [
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Pathogenesis"
+            }
+          ]
+        },
+        "english_exam_track.notes": {
+          "value": [
+            "Compare with Xiao Chai Hu Tang: Shaoyang pattern without the same Yangming interior excess emphasis.",
+            "Compare with Da Cheng Qi Tang: Yangming bowel excess without the same Shaoyang focus.",
+            "The formula identity, classical composition, action, and pattern were cross-checked against HKBU and Taiwan MOHW institutional records; all wording remains draft pending formal textbook review."
+          ],
+          "sources": [
+            {
+              "title": "Ting Bastyr learning note - Da Chai Hu Tang",
+              "url": "https://app.notion.com/p/37747f6dea3581979bcadb471b071dde",
+              "locator": "Exam Comparison"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Major Bupleurum Decoction",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00027&lang=eng",
+              "locator": "Formula record"
+            },
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Da Chai Hu Tang",
+              "url": "https://dep.mohw.gov.tw/docmap/fp-866-5631-108.html",
+              "locator": "Reference formula record"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
