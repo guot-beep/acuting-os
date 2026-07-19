@@ -23,6 +23,23 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-19 - Complete five-formula C2 review-only probe (Codex)
+
+Completed preview-only staging for Gan Mai Da Zao Tang and Suan Zao Ren Tang,
+bringing the C2.1 probe to five formulas. Gan Mai Da Zao Tang uses Taiwan MOHW
+plus HKBU institutional evidence for three classical fields. Suan Zao Ren Tang
+uses HKBU for formula facts and Ting's insomnia course note for the explicitly
+linked liver-blood-deficiency and pattern-comparison exam context.
+
+Added `docs/formula_content_previews/C2_1_PROBE_SUMMARY.md` so the complete
+review gate is visible in one table. Probe total: 5 formulas, 24 fields, 64
+items, 0 conflicts, and 0 canonical writes. All records remain draft; no dose,
+modern disease relationship, source-checked promotion, or apply path exists.
+
+Final validation: nine standard validators passed, all 465 JSON files parsed,
+and encoding remained at the expected 768-finding baseline. C2 expansion stops
+at this review gate.
+
 ### 2026-07-19 - Tong Xie Yao Fang source-role C2 staging preview (Codex)
 
 Added a preview-only staging record for `formula.tong_xie_yao_fang`. HKBU

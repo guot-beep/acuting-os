@@ -36,6 +36,57 @@ Claude review note:
 
 ---
 
+## 2026-07-19 - Codex - Complete five-formula C2 staging probe
+
+Date/time: 2026-07-19
+Agent: Codex
+Branch: `main`
+Commit or stash:
+- `7a7f740` (`Stage Gan Mai Da Zao Tang content preview`)
+- `0f45870` (`Complete five-formula C2 staging probe`)
+Task: Finish the approved five-formula source/evidence-shape probe and stop at
+the review gate.
+
+Files changed:
+- `data/imports/formula_content/c2_1_probe_gan_mai_da_zao_tang.json`
+- `data/imports/formula_content/c2_1_probe_suan_zao_ren_tang.json`
+- `data/imports/formula_content/c2_1_probe_manifest.json`
+- individual preview reports and `docs/formula_content_previews/C2_1_PROBE_SUMMARY.md`
+- coordination logs/status files in a follow-up handoff commit
+
+Validation:
+- Gan Mai Da Zao Tang preview: 3 fields / 7 items / 0 conflicts / 0 writes.
+- Suan Zao Ren Tang preview: 5 fields / 15 items / 0 conflicts / 0 writes.
+- Complete probe: 5 formulas / 24 fields / 64 items / 0 canonical writes.
+- Nine standard validators: PASS after each batch and on final state.
+- Recursive JSON parse: PASS, 465 files.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No canonical formulas, generated data, UI, clinical, point, or condition
+  files changed.
+- No `361.json`, `docs/CLOUDTCM_*`, formula doses, modern disease links,
+  source-checked promotion, or apply path.
+
+Known risks / manual checks:
+- Institutional-only records intentionally leave exam fields empty.
+- Course-context sources are limited to comparison wording and are not treated
+  as complete formula monographs.
+- Bensky verification and a canonical field-level evidence model remain open.
+
+Next recommended action:
+- Review `docs/formula_content_previews/C2_1_PROBE_SUMMARY.md` and the five
+  linked staging files.
+- Decide whether institutional-only classical fields and narrow course-context
+  exam fields are acceptable evidence shapes.
+- Decide how field-level sources persist before any apply-only-to-empty tool is
+  designed. Do not expand the 92-formula queue before this gate is accepted.
+
+Claude review note: This is a review-only probe, not a content migration. The
+canonical formula file is byte-for-byte unchanged and no apply mode exists.
+
+---
+
 ## 2026-07-19 - Codex - Tong Xie Yao Fang C2 source-role preview
 
 Date/time: 2026-07-19

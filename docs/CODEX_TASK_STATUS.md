@@ -65,7 +65,11 @@ remain empty because no direct Ting course page was found. Tong Xie Yao Fang,
 now has a source-role-separated preview (commit `105991c`): 5 fields, 13 items,
 0 conflicts, and 0 canonical writes. HKBU supports formula facts; Ting's FOM
 and diarrhea notes support the exam comparison context. Gan Mai Da Zao Tang
-and Suan Zao Ren Tang remain source-collection pending.
+now has an institutional-only preview (`7a7f740`), and Suan Zao Ren Tang has an
+HKBU plus Ting-insomnia-context preview (`0f45870`). The five-formula probe is
+complete: 24 fields, 64 items, 0 conflicts, 0 canonical writes. C2 is stopped
+at the review gate documented in
+`docs/formula_content_previews/C2_1_PROBE_SUMMARY.md`.
 
 ## Current Safe Default
 
