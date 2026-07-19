@@ -1,0 +1,80 @@
+{
+  "dataset": "formula_content_fill_staging",
+  "batch": "c2_1_probe_gan_mai_da_zao_tang",
+  "review_status": "draft",
+  "records": [
+    {
+      "id": "formula.gan_mai_da_zao_tang",
+      "review_status": "draft",
+      "fields": {
+        "composition": {
+          "value": [
+            {
+              "pinyin": "Gan Cao",
+              "herb_zh": "甘草",
+              "herb_en": "Glycyrrhizae Radix et Rhizoma"
+            },
+            {
+              "pinyin": "Xiao Mai",
+              "herb_zh": "小麥",
+              "herb_en": "Tritici Fructus"
+            },
+            {
+              "pinyin": "Da Zao",
+              "herb_zh": "大棗",
+              "herb_en": "Jujubae Fructus"
+            }
+          ],
+          "sources": [
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Gan Mai Da Zao Tang",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-7146-108.html",
+              "locator": "Prescription"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Gan Mai Da Zao Tang additional formula",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&sort=name_cht_order",
+              "locator": "Additional formula: ingredients"
+            }
+          ]
+        },
+        "actions_en": {
+          "value": [
+            "Nourishes the heart and calms the spirit.",
+            "Harmonizes the middle and moderates urgency."
+          ],
+          "sources": [
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Gan Mai Da Zao Tang",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-7146-108.html",
+              "locator": "Efficacy"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Gan Mai Da Zao Tang additional formula",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&sort=name_cht_order",
+              "locator": "Additional formula: actions"
+            }
+          ]
+        },
+        "pattern_indications_en": {
+          "value": [
+            "Zang zao pattern with emotional lability, frequent sadness or crying that is difficult to control, restlessness, and disturbed sleep.",
+            "Additional source clues include frequent yawning, a pale-red tongue with scant coating, and a thin, slightly rapid pulse."
+          ],
+          "sources": [
+            {
+              "title": "Taiwan MOHW Department of Chinese Medicine and Pharmacy - Gan Mai Da Zao Tang",
+              "url": "https://dep.mohw.gov.tw/DOCMAP/fp-866-7146-108.html",
+              "locator": "Indications"
+            },
+            {
+              "title": "HKBU Chinese Medicine Formulae Images Database - Gan Mai Da Zao Tang additional formula",
+              "url": "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&sort=name_cht_order",
+              "locator": "Additional formula: applicable patterns"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

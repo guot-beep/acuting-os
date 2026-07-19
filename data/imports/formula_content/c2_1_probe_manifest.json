@@ -1,7 +1,7 @@
 {
   "dataset": "formula_content_probe_manifest",
   "batch": "c2_1_probe",
-  "status": "three_formula_previews_ready_two_pending",
+  "status": "four_formula_previews_ready_one_pending",
   "review_status": "draft",
   "purpose": "Five-formula probe selected from C2.1 to test field-level sourcing and preview before any canonical write.",
   "canonical_write_allowed": false,
@@ -73,7 +73,14 @@
     },
     {
       "id": "formula.gan_mai_da_zao_tang",
-      "status": "direct_course_page_not_found"
+      "status": "institutional_only_staged_preview_ready",
+      "direct_course_page": null,
+      "institutional_sources": [
+        "https://dep.mohw.gov.tw/DOCMAP/fp-866-7146-108.html",
+        "https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00097&lang=eng&sort=name_cht_order"
+      ],
+      "staging_file": "data/imports/formula_content/c2_1_probe_gan_mai_da_zao_tang.json",
+      "scope_note": "Classical composition, actions, and pattern indications only; no exam-track or modern-condition fields without direct course evidence."
     },
     {
       "id": "formula.suan_zao_ren_tang",
