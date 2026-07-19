@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-18
 Agent: Codex
 Branch: `main`
-Commit or stash: pending coherent commit
+Commit or stash: `e978edc` (`LL3: fill endometriosis context comparison draft`)
 Task: Fill `cmp.endometriosis_context_patterns` from Ting's Notion/Bastyr notes while keeping official biomedical endometriosis context separate.
 
 Files changed:
