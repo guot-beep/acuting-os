@@ -36,6 +36,45 @@ Claude review note:
 
 ---
 
+## 2026-07-18 - Codex - LL3 insulin-resistance-context comparison draft fill
+
+Date/time: 2026-07-18
+Agent: Codex
+Branch: `main`
+Commit or stash: pending coherent commit
+Task: Fill `cmp.insulin_resistance_patterns` from Ting's course notes with NIDDK/CDC biomedical context kept separate.
+
+Files changed: `comparison_fill_insulin_resistance.json`, canonical comparison
+record, generated knowledge bundle, fill queue, current status, project log,
+and this handoff.
+
+Validation:
+- dry-run/apply: PASS, 12 filled / 0 skipped / 11 metadata updates.
+- queue: 150 filled / 24 pending / 2 empty / 9 complete.
+- Eight standard validators and 459-file JSON parse: PASS.
+- Encoding: unchanged known baseline of 768 findings.
+
+Protected areas not touched: no case/SOAP data or UI, canonical formula/herb
+records, `361.json`, `docs/CLOUDTCM_*`, or CloudTCM point map.
+
+Known risks / manual checks:
+- Draft, `public_safe: false`, not `source_checked`, not medical advice.
+- NIDDK/CDC do not validate TCM patterns or formulas.
+- Body size, fatigue, tongue, pulse, and TCM patterns are explicitly barred
+  from diagnosing insulin resistance, prediabetes, or diabetes.
+- Formula IDs are comparison anchors only.
+
+Next recommended action:
+- Review Lookup -> Comparison Records -> 胰島素阻抗相關情境證型鑑別.
+- Remaining empty tables are recurrent-pregnancy-loss and embryo-transfer
+  contexts. Codex deferred them because direct course-note support is currently
+  insufficient for these higher-risk pregnancy contexts.
+
+Claude review note: Please verify Phlegm-Damp vs Spleen qi deficiency and the
+formula anchors. No dosage, lab interpretation, or treatment recommendation was added.
+
+---
+
 ## 2026-07-18 - Codex - LL3 endometriosis-context comparison draft fill
 
 Date/time: 2026-07-18

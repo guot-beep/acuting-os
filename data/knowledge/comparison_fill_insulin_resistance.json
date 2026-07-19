@@ -1,0 +1,47 @@
+{
+  "dataset": "comparison_fill",
+  "batch": "insulin_resistance",
+  "purpose": "Source-assisted draft fill for the insulin-resistance documentation-context pattern comparison table. Study context only; not medical advice.",
+  "review_status": "draft",
+  "source_policy": "Biomedical insulin-resistance and prediabetes context comes from NIDDK and CDC. TCM discriminator wording comes from Ting's Notion/Bastyr Spleen-Stomach, Zang-Fu, and Qi-Fluid differentiation notes. Do not infer insulin resistance from body type, symptoms, tongue, pulse, or a TCM pattern.",
+  "fills": {
+    "cmp.insulin_resistance_patterns": {
+      "title_en": "Insulin resistance context - pattern differentiation draft",
+      "seed_basis": "Source-assisted draft approved by Ting: biomedical context from NIDDK/CDC; TCM pattern discriminators from Ting's Notion/Bastyr Spleen-Stomach, Zang-Fu, and Qi-Fluid notes. Draft study comparison only; not medical advice.",
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "source_urls": [
+        "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/prediabetes-insulin-resistance",
+        "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+        "https://www.cdc.gov/diabetes/about/insulin-resistance-type-2-diabetes.html",
+        "https://app.notion.com/p/38b47f6dea3581b9b691df43be851147",
+        "https://app.notion.com/p/38647f6dea3581a2b446e87829e39322",
+        "https://app.notion.com/p/38647f6dea35813d8fd8c738a37a7611"
+      ],
+      "source_type": "source_assisted_draft_official_metabolic_context_plus_ting_notion_course_notes",
+      "last_reviewed": "2026-07-18",
+      "public_safe": false,
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose insulin resistance, prediabetes, diabetes, or metabolic syndrome; interpret glucose or A1C results; recommend medication, supplements, formulas, or diet; or replace medical evaluation.",
+      "notes_en": "NIDDK notes that insulin resistance and prediabetes usually have no symptoms, that direct insulin-resistance testing is mainly used in research, and that clinicians use history and blood tests to evaluate prediabetes. Body size, fatigue, tongue, pulse, or a TCM pattern cannot establish the biomedical condition. The cells below compare only a separate course-note TCM framework.",
+      "cells": {
+        "pattern.phlegm_damp": {
+          "Chief pattern cue / 主辨證線索": "在已有合格醫療紀錄的代謝相關情境中，若以形體困重、胸脘痞悶、噁心痰多、頭重昏沉、納呆與明顯膩苔為主，偏痰濕；體重或腰圍本身不能確立痰濕，更不能診斷胰島素阻抗。 In an already medically documented metabolic context, bodily heaviness, chest/epigastric oppression, nausea or abundant phlegm, heavy-headed fogginess, poor appetite, and a distinctly greasy coat favor Phlegm-Damp; weight or waist size alone establishes neither this pattern nor insulin resistance.",
+          "Tongue / 舌": "舌體胖大，可有齒痕，苔白膩；化熱則可黃膩。 Swollen tongue, possibly with teeth marks, and a white-greasy coat; yellow-greasy if Heat develops.",
+          "Pulse / 脈": "脈滑或濡滑；寒濕偏濡緩，化熱可滑數。 Slippery or soggy-slippery; soggy-moderate with Cold-Damp and slippery-rapid if Heat develops.",
+          "Key accompanying signs / 兼症": "頭身困重、胸悶泛惡、痰多、口黏、納呆、腹脹、大便黏滯不爽；與單純脾氣虛相比，重、悶、膩、滑等痰濕實象更突出。 Heavy head/body, chest oppression, nausea, phlegm, sticky mouth, poor appetite, bloating, or sticky/incomplete stool. Compared with simple Spleen Qi deficiency, heaviness, oppression, greasiness, and slipperiness are more prominent.",
+          "Treatment principle / 治法": "健脾化痰、燥濕和中；若見熱象再辨清化痰熱。此為課堂辨證原則，不是代謝疾病治療方案。 Strengthen Spleen, transform Phlegm, dry Dampness, and harmonize the middle; clear Phlegm-Heat only when Heat signs are present. This is a course-study principle, not a metabolic treatment plan.",
+          "Representative formula / 代表方": "學習鑑別：formula.er_chen_tang（二陳湯）作痰濕基本方錨點；若同時有明顯脾氣虛，可比較 formula.liu_jun_zi_tang（六君子湯）。不可因 insulin resistance 或體重直接選方。 Study anchors: Er Chen Tang for a basic Phlegm-Damp presentation; compare Liu Jun Zi Tang when clear Spleen Qi deficiency coexists. Do not select a formula from insulin resistance or body weight alone."
+        },
+        "pattern.spleen_qi_deficiency": {
+          "Chief pattern cue / 主辨證線索": "在已有合格醫療紀錄的代謝相關情境中，若以食少、食後腹脹、便溏、疲倦、少氣懶言、自汗及動則加重為主，偏脾氣虛；疲勞本身不能確立此證，也不能診斷胰島素阻抗。 In an already medically documented metabolic context, poor appetite, post-meal bloating, loose stool, fatigue, weak voice, spontaneous sweating, and worsening with exertion favor Spleen Qi deficiency; fatigue alone establishes neither this pattern nor insulin resistance.",
+          "Tongue / 舌": "舌淡、可胖大有齒痕，苔薄白；若膩苔顯著，需考慮兼濕或痰濕。 Pale tongue, possibly swollen with teeth marks, and a thin white coat; a distinctly greasy coat suggests concurrent Dampness or Phlegm-Damp.",
+          "Pulse / 脈": "脈細弱或緩弱；兼濕可濡。 Thin-weak or moderate-weak; may be soggy when Dampness coexists.",
+          "Key accompanying signs / 兼症": "面色萎黃、四肢乏力、少氣懶言、自汗、納差、食後腹脹、便溏；與痰濕相比，本虛的氣力不足與消化功能弱更突出，痰多胸悶和厚膩苔較少。 Sallow complexion, weak limbs, low voice, spontaneous sweating, poor appetite, post-meal bloating, and loose stool. Compared with Phlegm-Damp, deficient energy and weak digestion dominate, with less phlegm, chest oppression, or thick-greasy coating.",
+          "Treatment principle / 治法": "健脾益氣、助運化；只有兼濕明確時才加滲濕或化痰。 Strengthen Spleen, augment Qi, and support transformation and transportation; drain Dampness or transform Phlegm only when those signs are clearly present.",
+          "Representative formula / 代表方": "學習鑑別：formula.si_jun_zi_tang（四君子湯）作脾氣虛基本錨點；便溏、濕象較明顯可比較 formula.shen_ling_bai_zhu_san（參苓白朮散）。不可視為 insulin resistance 的自動處方。 Study anchors: Si Jun Zi Tang for basic Spleen Qi deficiency; compare Shen Ling Bai Zhu San when loose stool and Damp signs are more prominent. Neither is an automatic insulin-resistance prescription."
+        }
+      }
+    }
+  }
+}

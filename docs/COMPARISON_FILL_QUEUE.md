@@ -6,11 +6,11 @@ This is a queue for owner/source-based filling. It does not contain clinical dis
 ## Summary
 
 - comparison records: 11
-- filled cells: 138
-- pending cells: 36
-- empty tables: 3
+- filled cells: 150
+- pending cells: 24
+- empty tables: 2
 - partial tables: 0
-- complete tables: 8
+- complete tables: 9
 
 ## Table Queue
 
@@ -25,7 +25,7 @@ This is a queue for owner/source-based filling. It does not contain clinical dis
 | cmp.anovulation_patterns | 無排卵常見證型鑑別骨架 | 無排卵 / Anovulation / western_condition.anovulation | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation | 12/12 | draft / draft / model_draft |
 | cmp.endometriosis_context_patterns | 子宮內膜異位症相關情境證型鑑別骨架 | 子宮內膜異位症相關情境 / Endometriosis Context / western_condition.endometriosis_context | 血瘀 / Blood Stasis / pattern.blood_stasis<br>肝氣鬱結 / Liver Qi Stagnation / pattern.liver_qi_stagnation | 12/12 | draft / draft / model_draft |
 | cmp.recurrent_pregnancy_loss_context_patterns | 反覆流產相關情境證型鑑別骨架 | 反覆流產相關情境 / Recurrent Pregnancy Loss Context / western_condition.recurrent_pregnancy_loss_context | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency | 0/12 | draft / draft / model_draft |
-| cmp.insulin_resistance_patterns | 胰島素阻抗相關情境證型鑑別骨架 | 胰島素阻抗背景 / Insulin Resistance Context / western_condition.insulin_resistance | 痰濕 / Phlegm-Damp / pattern.phlegm_damp<br>脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency | 0/12 | draft / draft / model_draft |
+| cmp.insulin_resistance_patterns | 胰島素阻抗相關情境證型鑑別骨架 | 胰島素阻抗背景 / Insulin Resistance Context / western_condition.insulin_resistance | 痰濕 / Phlegm-Damp / pattern.phlegm_damp<br>脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency | 12/12 | draft / draft / model_draft |
 | cmp.embryo_transfer_patterns | 胚胎植入相關情境證型鑑別骨架 | 胚胎植入背景 / Embryo Transfer Context / western_condition.embryo_transfer | 腎虛 / Kidney Deficiency / pattern.kidney_deficiency<br>脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency | 0/12 | draft / draft / model_draft |
 
 ## Pending Axes
@@ -102,10 +102,10 @@ Progress: 0/12
 
 ### cmp.insulin_resistance_patterns
 
-Progress: 0/12
+Progress: 12/12
 
-- 痰濕 / Phlegm-Damp / pattern.phlegm_damp: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
-- 脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency: `Chief pattern cue / 主辨證線索`, `Tongue / 舌`, `Pulse / 脈`, `Key accompanying signs / 兼症`, `Treatment principle / 治法`, `Representative formula / 代表方`
+- 痰濕 / Phlegm-Damp / pattern.phlegm_damp: complete
+- 脾氣虛 / Spleen Qi Deficiency / pattern.spleen_qi_deficiency: complete
 
 ### cmp.embryo_transfer_patterns
 

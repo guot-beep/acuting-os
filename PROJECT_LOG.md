@@ -23,6 +23,19 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-18 - LL3: insulin-resistance-context pattern comparison draft fill (Codex)
+
+Filled `cmp.insulin_resistance_patterns` as the ninth complete LL3 table,
+comparing Phlegm-Damp and Spleen qi deficiency across 12/12 cells. NIDDK/CDC
+support only biomedical context; Ting's Notion/Bastyr notes supply the separate
+TCM framework. The table states that body size, fatigue, tongue, pulse, or a
+TCM pattern cannot diagnose insulin resistance, prediabetes, or diabetes.
+Formula IDs remain study anchors only. Status is draft and not medical advice.
+
+Validation: dry-run/apply passed with 12 filled / 0 skipped. Queue: 150 filled
+/ 24 pending / 2 empty / 9 complete. Eight validators and 459-file JSON parse
+passed; encoding remains at the known 768-finding baseline.
+
 ### 2026-07-18 - LL3: endometriosis-context pattern comparison draft fill (Codex)
 
 Filled `cmp.endometriosis_context_patterns` as the eighth complete LL3
