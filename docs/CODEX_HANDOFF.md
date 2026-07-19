@@ -41,7 +41,7 @@ Claude review note:
 Date/time: 2026-07-19
 Agent: Codex
 Branch: `main`
-Commit or stash: pending coherent commit
+Commit or stash: `3ed5709` (`Add formula classical content gap queue`)
 Task: Build a read-only, deterministic C2 queue before filling any of the 92 formula skeletons.
 
 Files changed:
