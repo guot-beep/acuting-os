@@ -1,0 +1,171 @@
+{
+  "dataset": "herb_visual_link_staging",
+  "batch": "hvl_2_exterior_cool_five_probe",
+  "created": "2026-07-20",
+  "review_status": "draft",
+  "canonical_write_allowed": false,
+  "purpose": "Exact-page visual reference probe for five high-yield cool exterior-releasing herbs. Study and identity reference only; not medical advice.",
+  "records": [
+    {
+      "herb_id": "herb.bo_he",
+      "name_zh": "薄荷",
+      "pinyin": "Bo He",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/pharm/975",
+          "label_zh": "雲端中醫：薄荷圖文頁",
+          "label_en": "CloudTCM Bo He herb profile",
+          "page_name_zh": "薄荷",
+          "page_pinyin": "Bao He",
+          "pinyin_match_status": "source_typo_documented",
+          "identity_checks": ["name_zh", "Mentha canadensis", "Herba Menthae"],
+          "caveats": ["CloudTCM displays the pinyin as Bao He; canonical study romanization is Bo He. Chinese name and botanical/pharmaceutical identity match." ]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00261",
+          "label_zh": "香港浸大：薄荷藥材圖像",
+          "label_en": "HKBU Bo He medicinal material images",
+          "page_name_zh": "薄荷",
+          "page_pinyin": "Bohe",
+          "identity_checks": ["name_zh", "pinyin", "Menthae Haplocalycis Herba"],
+          "caveats": ["This is the dried aerial portion; distinguish it from mint distillate, oil, and unrelated mint-named herbs."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.chan_tui",
+      "name_zh": "蟬蛻",
+      "pinyin": "Chan Tui",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/983",
+          "label_zh": "雲端中醫：蟬蛻圖文頁",
+          "label_en": "CloudTCM Chan Tui herb profile",
+          "page_name_zh": "蟬蛻",
+          "page_pinyin": "Chan Tui",
+          "identity_checks": ["name_zh", "pinyin", "Periostracum Cicadae"],
+          "caveats": ["The medicinal material is the sloughed exoskeleton, not the living insect or internal body."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00370",
+          "label_zh": "香港浸大：蟬蛻藥材圖像",
+          "label_en": "HKBU Chan Tui medicinal material images",
+          "page_name_zh": "蟬蛻",
+          "page_pinyin": "Chantui",
+          "identity_checks": ["name_zh", "pinyin", "Cicadae Periostracum"],
+          "caveats": ["Whole-shell integrity and cleaned dried-material appearance differ from fragmented retail material."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.sang_ye",
+      "name_zh": "桑葉",
+      "pinyin": "Sang Ye",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/pharm/1156",
+          "label_zh": "雲端中醫：桑葉圖文頁",
+          "label_en": "CloudTCM Sang Ye herb profile",
+          "page_name_zh": "桑葉",
+          "page_pinyin": "Sang Ye",
+          "identity_checks": ["name_zh", "pinyin", "Folium Mori"],
+          "caveats": ["Keep the dried leaf distinct from Sang Ye Zhi juice, Sang Ye Lu distillate, and other mulberry parts."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00334",
+          "label_zh": "香港浸大：桑葉藥材圖像",
+          "label_en": "HKBU Sang Ye medicinal material images",
+          "page_name_zh": "桑葉",
+          "page_pinyin": "Sangye",
+          "identity_checks": ["name_zh", "pinyin", "Mori Folium"],
+          "caveats": ["Processed fried or honey-prepared Sang Ye can differ in color and appearance from the raw dried leaf."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.ju_hua",
+      "name_zh": "菊花",
+      "pinyin": "Ju Hua",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/1079",
+          "label_zh": "雲端中醫：菊花圖文頁",
+          "label_en": "CloudTCM Ju Hua herb profile",
+          "page_name_zh": "菊花",
+          "page_pinyin": "Ju Hua",
+          "identity_checks": ["name_zh", "pinyin", "Flos Chrysanthemi"],
+          "caveats": ["Do not confuse the flower-head record with Ju Hua Ye, Ju Hua Gen, Ye Ju Hua, or other compound names."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00306",
+          "label_zh": "香港浸大：菊花藥材圖像",
+          "label_en": "HKBU Ju Hua medicinal material images",
+          "page_name_zh": "菊花",
+          "page_pinyin": "Juhua",
+          "identity_checks": ["name_zh", "pinyin", "Chrysanthemi Flos"],
+          "caveats": ["Hang Ju, Bo Ju, Gong Ju, and Chu Ju differ in regional processing and appearance within this same material record."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.ge_gen",
+      "name_zh": "葛根",
+      "pinyin": "Ge Gen",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/pharm/1043",
+          "label_zh": "雲端中醫：葛根圖文頁",
+          "label_en": "CloudTCM Ge Gen herb profile",
+          "page_name_zh": "葛根",
+          "page_pinyin": "Ge Gen",
+          "identity_checks": ["name_zh", "pinyin", "Radix Puerariae"],
+          "caveats": ["CloudTCM groups botanical identity broadly; distinguish Ge Gen/Pueraria lobata from Fen Ge/Pueraria thomsonii in material study."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00063",
+          "label_zh": "香港浸大：葛根藥材圖像",
+          "label_en": "HKBU Ge Gen medicinal material images",
+          "page_name_zh": "葛根",
+          "page_pinyin": "Gegen",
+          "identity_checks": ["name_zh", "pinyin", "Puerariae Lobatae Radix"],
+          "caveats": ["This HKBU record is Pueraria lobata and should not be substituted visually for the separate Fen Ge material."]
+        }
+      ]
+    }
+  ]
+}

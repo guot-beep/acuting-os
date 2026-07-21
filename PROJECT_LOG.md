@@ -23,6 +23,20 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-20 - Stage cool-exterior herb visual-link probe (Codex)
+
+Extended the no-apply exact visual-link lane with Bo He, Chan Tui, Sang Ye,
+Ju Hua, and Ge Gen. Each record carries one exact CloudTCM page and one HKBU
+MMID material-image page, for 10 additional links. The batch preserves a real
+source discrepancy instead of normalizing it away: CloudTCM's Bo He page
+displays `Bao He`, while Chinese name, Mentha botanical identity, and
+pharmaceutical identity match. The validator now accepts a pinyin mismatch
+only when `source_typo_documented` and an explicit pinyin caveat are present.
+Preview result: 5 herbs, 10 exact links, 0 conflicts, 0 canonical writes;
+`--apply` remains rejected. Eight validators and 468 JSON files passed.
+Encoding remains the known 768-finding baseline. No canonical, generated, or
+UI data changed.
+
 ### 2026-07-20 - Stage five-herb exact visual-link probe (Codex)
 
 Added a no-apply staging and preview workflow for exact single-herb image

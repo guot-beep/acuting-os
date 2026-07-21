@@ -16,8 +16,10 @@ browser review required because automated access returned a verification
 challenge. Canonical formula data remains unchanged. The latest UI-only batch
 adds CloudTCM and HKBU visual-reference searches to all single-herb detail
 cards; exact reviewed per-record links take precedence when later added. A
-separate no-apply probe now stages 10 exact pages for five high-yield exterior
-herbs with 0 conflicts and 0 canonical writes.
+separate no-apply lane now stages 20 exact pages for ten high-yield exterior
+herbs across two five-herb probes, each with 0 conflicts and 0 canonical
+writes. The second probe preserves CloudTCM's `Bao He` pinyin discrepancy as a
+documented source typo instead of silently changing it to canonical `Bo He`.
 
 ## What Changed
 

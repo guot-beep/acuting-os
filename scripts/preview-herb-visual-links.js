@@ -69,7 +69,11 @@ function buildPreview(staging, herbs) {
       validateLink(link, `${record.herb_id}.visual_links[${index}]`);
       if (link.page_name_zh !== target.name_zh) fail(`${record.herb_id}: source page Chinese name mismatch`);
       if (normalizedPinyin(link.page_pinyin) !== normalizedPinyin(target.pinyin)) {
-        fail(`${record.herb_id}: source page pinyin mismatch`);
+        if (link.pinyin_match_status !== "source_typo_documented") {
+          fail(`${record.herb_id}: source page pinyin mismatch`);
+        }
+        const typoDocumented = link.caveats.some((caveat) => /pinyin|拼音|romanization/i.test(caveat));
+        if (!typoDocumented) fail(`${record.herb_id}: source pinyin mismatch requires an explicit caveat`);
       }
       if (seenUrls.has(link.url)) fail(`duplicate visual URL: ${link.url}`);
       seenUrls.add(link.url);

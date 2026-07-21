@@ -38,6 +38,54 @@ Claude review note:
 
 ---
 
+## 2026-07-20 - Codex - Cool-exterior exact visual-link probe
+
+Date/time: 2026-07-20
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Extend the no-apply exact-page lane with five cool exterior herbs and
+make source-side pinyin discrepancies explicit and machine-checked.
+
+Files changed:
+- `data/imports/herb_visual_links/hvl_2_exterior_cool_five_probe.json`
+- `docs/herb_visual_previews/hvl_2_exterior_cool_five_probe.md`
+- `scripts/preview-herb-visual-links.js`
+- coordination logs/status files
+
+Validation:
+- Preview: PASS; 5 herbs, 10 exact links, 0 conflicts, 0 canonical writes.
+- Explicit `--apply` rejection: PASS.
+- JavaScript syntax plus eight standard validators: PASS.
+- Recursive JSON parse: PASS, 468 files.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No canonical herb, formula, condition, point, clinical, generated, or UI
+  data changed.
+- No `app.js`, `js/knowledge.js`, `styles.css`, `data/acupoints/361.json`,
+  or `docs/CLOUDTCM_*` changes.
+
+Known risks / manual checks:
+- CloudTCM's Thin Mint/Bo He page displays `Bao He`. The staging records the
+  source text exactly, marks `source_typo_documented`, and cross-checks Chinese
+  name plus Mentha/Herba Menthae identity. It does not alter canonical pinyin.
+- Verify Bo He versus mint distillate/oil; Sang Ye versus juice/distillate;
+  Ju Hua versus leaf/root/wild chrysanthemum; Ge Gen versus Fen Ge.
+- No efficacy, dosage, modern-disease, or source-checked content was staged.
+
+Next recommended action:
+- Ting/Claude reviews both five-herb reports together (10 herbs / 20 links).
+  Only then design a conflict-refusing canonical merge preview, still without
+  an apply path in the same review session.
+
+Claude review note:
+- Please verify the five page identities and the narrow pinyin-typo exception.
+  A mismatch without `source_typo_documented` plus an explicit caveat still
+  fails the preview.
+
+---
+
 ## 2026-07-20 - Codex - Five-herb exact visual-link staging probe
 
 Date/time: 2026-07-20
