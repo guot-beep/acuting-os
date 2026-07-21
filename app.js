@@ -66,6 +66,10 @@ const directoryTopics = (uiConfig.directoryTopics || []).map(hydrateDirectoryTop
 const earAnatomyLabelData = uiConfig.earAnatomyLabelData || [];
 const earPointAnchors = uiConfig.earPointAnchors || {};
 
+// PC5: 特定穴 category vocabulary (labels for detail badges + directory filter).
+const pointCategoryCatalog = globalThis.ACUTING_APP_DATA?.pointCategoryVocabulary?.categories || [];
+const pointCategoryLabelById = new Map(pointCategoryCatalog.map((c) => [c.id, c]));
+
 // standardPointPlaceholder() was removed with the Phase 2 runtime adapter:
 // the 361 layer is complete, so placeholder records are never generated.
 // (Old placeholder stubs saved in localStorage are dropped by
@@ -101,6 +105,8 @@ function adapt361Record(record) {
   const dangerLines = record.danger || [];
   return {
     id: record.id || record.code,   // stable namespaced id (DECISIONS D2); clinical FKs reference this
+    pointCategories: record.point_categories || [],   // PC4: 特定穴 tags
+    fiveShuElement: record.five_shu_element || "",     // PC4: 五輸五行
     code: record.code,
     nameZh: record.chinese || record.code,
     nameEn: record.english || record.code,
@@ -367,6 +373,7 @@ const patternFilter = document.querySelector("#patternFilter");
 const meridianCategoryList = document.querySelector("#meridianCategoryList");
 const regionCategoryList = document.querySelector("#regionCategoryList");
 const topicCategoryList = document.querySelector("#topicCategoryList");
+const pointCategoryList = document.querySelector("#pointCategoryList");
 const cardsEl = document.querySelector("#cards");
 const detailCard = document.querySelector("#detailCard");
 const bodyCanvas = document.querySelector("#bodyCanvas");
@@ -426,6 +433,7 @@ let visibleMapPoints = [];
 let modelView = "front";
 let directoryRegionGroup = "";
 let directoryTopic = "";
+let directoryPointCategory = "";   // PC5: 特定穴 filter
 
 
 
@@ -1071,6 +1079,7 @@ function clearActiveFilter(kind) {
   if (kind === "all" || kind === "pattern") patternFilter.value = "";
   if (kind === "all" || kind === "regionGroup") directoryRegionGroup = "";
   if (kind === "all" || kind === "topic") directoryTopic = "";
+  if (kind === "all" || kind === "pointCategory") directoryPointCategory = "";
 }
 
 function isPointDetailMode() {
@@ -1229,6 +1238,28 @@ function renderDirectoryFilters() {
   renderMeridianCategories();
   renderRegionCategories();
   renderTopicCategories();
+  renderPointCategories();
+}
+
+// PC5: 特定穴 filter group — click a category → list all points in it.
+function renderPointCategories() {
+  if (!pointCategoryList) return;
+  const withCounts = pointCategoryCatalog
+    .map((c) => ({ c, count: points.filter((p) => pointMatchesCategory(p, c.id)).length }))
+    .filter((x) => x.count > 0);
+  const rows = [
+    directoryButton({ labelZh: "全部", labelEn: "All", count: points.length, active: !directoryPointCategory, action: "pointCategory", value: "" }),
+    ...withCounts.map(({ c, count }) => directoryButton({
+      labelZh: c.label_zh,
+      labelEn: c.label_en,
+      count,
+      active: directoryPointCategory === c.id,
+      action: "pointCategory",
+      value: c.id
+    }))
+  ];
+  pointCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(pointCategoryList);
 }
 
 function renderMeridianCategories() {
@@ -1328,6 +1359,10 @@ function bindDirectoryButtons(scope) {
         directoryTopic = value;
         patternFilter.value = "";
       }
+      if (action === "pointCategory") {
+        directoryPointCategory = value;
+        searchInput.value = "";   // "按原穴就列出所有原穴" — show the full category set
+      }
       clearPointDetailHash();
       render();
       document.querySelector("#acupunctureWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1388,8 +1423,13 @@ function getFilteredPoints() {
       && (!regionFilter.value || point.region === regionFilter.value)
       && (!patternFilter.value || point.patterns.includes(patternFilter.value))
       && (!directoryRegionGroup || pointMatchesRegionGroup(point, directoryRegionGroup))
-      && (!directoryTopic || pointMatchesTopic(point, directoryTopic));
+      && (!directoryTopic || pointMatchesTopic(point, directoryTopic))
+      && (!directoryPointCategory || pointMatchesCategory(point, directoryPointCategory));
   });
+}
+
+function pointMatchesCategory(point, categoryId) {
+  return (point.pointCategories || []).includes(categoryId);
 }
 
 function pointMatchesRegionGroup(point, groupId) {
@@ -2346,6 +2386,7 @@ function renderDetail(point) {
           </div>
         </section>
 
+        ${renderPointCategoryBadges(point)}
         ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
         ${visualLinksSection(point)}
@@ -2381,6 +2422,37 @@ function renderDetail(point) {
   detailCard.querySelectorAll("[data-related-point]").forEach((button) => {
     button.addEventListener("click", () => selectPoint(button.dataset.relatedPoint));
   });
+  // PC5: category badge → filter the directory by that 特定穴 category
+  detailCard.querySelectorAll("[data-category-jump]").forEach((button) => {
+    button.addEventListener("click", () => {
+      directoryPointCategory = button.dataset.categoryJump;
+      searchInput.value = "";   // show all points in the category
+      clearPointDetailHash();
+      render();
+      document.querySelector("#acupointDirectory")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+const FIVE_SHU_ELEMENT_ZH = { wood: "木", fire: "火", earth: "土", metal: "金", water: "水" };
+
+// PC5: 特定穴 badges on the point detail page (point → categories). Each badge
+// links to the directory filtered by that category (the bidirectional loop).
+function renderPointCategoryBadges(point) {
+  const cats = point.pointCategories || [];
+  if (!cats.length) return "";
+  const badges = cats.map((id) => {
+    const c = pointCategoryLabelById.get(id);
+    const label = c ? (contentMode === "english" ? c.label_en : c.label_zh) : id;
+    let extra = "";
+    if (id.startsWith("five_shu.") && point.fiveShuElement) {
+      extra = ` · ${FIVE_SHU_ELEMENT_ZH[point.fiveShuElement] || point.fiveShuElement}`;
+    }
+    return `<button type="button" class="point-cat-badge" data-category-jump="${escapeAttribute(id)}">${escapeHtml(label)}${escapeHtml(extra)}</button>`;
+  }).join("");
+  return `<div class="point-cat-badges" aria-label="${contentMode === "english" ? "Specific-point types" : "特定穴類型"}">
+    <span class="pcb-label">${contentMode === "english" ? "Specific-point types" : "特定穴"}</span>${badges}
+  </div>`;
 }
 
 function relatedPointButton(item, meta) {

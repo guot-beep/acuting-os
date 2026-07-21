@@ -23,6 +23,21 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-20 - PC4+PC5: 特定穴 bidirectional browsing UI (Claude Code)
+
+Made the PC1–PC3 category tags reachable in the app. PC4: adapt361Record()
+now emits pointCategories + fiveShuElement to runtime; build-data bundles
+point_category_vocabulary into app_data for labels. PC5: (a) point detail page
+shows a 特定穴 badge row (LU9 → 輸穴·土 / 脈會 / 原穴), each badge clickable;
+(b) new "特定穴" directory filter group (20 category chips with live counts).
+Both directions of the bidirectional browsing Ting asked for: clicking 原穴
+(chip OR a point's 原穴 badge) lists exactly the 12 yuan points
+(BL64/GB40/HT7/KI3/LI4/LR3/LU9/PC7/SI4/SP3/ST42/TE4); selecting a category clears
+the search so it shows the full set. app.js + index.html + styles.css; also gave
+scripts/dev-server.js a no-store header (was serving stale app.js during QA).
+6-validator sweep PASS; browser QA all green, zero console errors. No Codex
+overlap (Claude's app.js vs Codex's js/knowledge.js / C2 formula staging).
+
 ### 2026-07-19 - Stage five-formula CloudTCM Chinese depth probe (Codex)
 
 Added a separate review-only B-layer for Chinese formula depth. The probe

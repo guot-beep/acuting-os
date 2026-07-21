@@ -35,7 +35,10 @@ http.createServer((req, res) => {
   if (!file.startsWith(path.normalize(ROOT))) { res.writeHead(403); res.end("forbidden"); return; }
   fs.readFile(file, (err, data) => {
     if (err) { res.writeHead(404); res.end("not found"); return; }
-    res.writeHead(200, { "Content-Type": MIME[path.extname(file).toLowerCase()] || "application/octet-stream" });
+    res.writeHead(200, {
+      "Content-Type": MIME[path.extname(file).toLowerCase()] || "application/octet-stream",
+      "Cache-Control": "no-store",   // local dev: always serve fresh (avoid stale app.js during QA)
+    });
     res.end(data);
   });
 }).listen(PORT, "127.0.0.1", () => {

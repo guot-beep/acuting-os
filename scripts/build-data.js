@@ -50,6 +50,7 @@ for (const [name, rel] of Object.entries(SOURCES)) {
 const i18n = readJson(I18N_SOURCE);
 Object.assign(payload, i18n);
 payload.uiConfig = readJson(UI_CONFIG_SOURCE);
+payload.pointCategoryVocabulary = readJson("data/config/point_category_vocabulary.json");   // PC5 badge/filter labels
 
 const banner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}

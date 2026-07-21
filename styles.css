@@ -437,6 +437,32 @@ h1 {
 .verdict-watch { background: #f3e0c2; color: #8a5a1f; }
 .verdict-muted { background: #e6e6e6; color: #555; }
 
+/* PC5: 特定穴 category badges on the point detail page */
+.point-cat-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.6rem 0 0.2rem;
+}
+.point-cat-badges .pcb-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-right: 0.2rem;
+}
+.point-cat-badge {
+  border: 1px solid #cdbf99;
+  background: #f7f1e2;
+  color: #6b5314;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.point-cat-badge:hover { background: #ecdfbd; border-color: var(--accent-dark); }
+
 /* CS5: horizontal outcome timeline on the case detail */
 .case-timeline {
   margin: 0.6rem 0 0.2rem;
