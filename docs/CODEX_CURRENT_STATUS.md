@@ -5,7 +5,7 @@ before scanning the longer `docs/CODEX_HANDOFF.md`.
 
 Last updated: 2026-07-20
 Agent: Codex, reconciled with Claude handoff
-Status: `HERB_VISUAL_REFERENCES_READY_REVIEW`
+Status: `HERB_EXACT_VISUAL_LINK_PROBE_READY_REVIEW`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
@@ -15,7 +15,9 @@ for `fang_yi_zh`, `zhu_zhi_zh`, and `notes_zh`. It has 15 staged fields,
 browser review required because automated access returned a verification
 challenge. Canonical formula data remains unchanged. The latest UI-only batch
 adds CloudTCM and HKBU visual-reference searches to all single-herb detail
-cards; exact reviewed per-record links take precedence when later added.
+cards; exact reviewed per-record links take precedence when later added. A
+separate no-apply probe now stages 10 exact pages for five high-yield exterior
+herbs with 0 conflicts and 0 canonical writes.
 
 ## What Changed
 

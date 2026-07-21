@@ -23,6 +23,21 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-20 - Stage five-herb exact visual-link probe (Codex)
+
+Added a no-apply staging and preview workflow for exact single-herb image
+references. The first probe covers Ma Huang, Gui Zhi, Zi Su Ye, Jing Jie, and
+Fang Feng with two verified pages each: CloudTCM plus an HKBU MMID or MPID
+image record. Page identity is checked against immutable herb ID, Chinese
+name, normalized pinyin, and a botanical/pharmaceutical identity signal.
+Per-link caveats record look-alikes, medicinal-part differences, and database
+type; Fang Feng correctly uses HKBU's medicinal-plant record rather than
+claiming an unavailable prepared-material record. Preview result: 5 herbs,
+10 exact links, 0 conflicts, 0 canonical writes. `--apply` is intentionally
+rejected. Eight standard validators and all 467 JSON files passed; encoding
+remains at the known 768-finding baseline. No canonical or generated data was
+changed.
+
 ### 2026-07-20 - Add dual-source visual references to single-herb cards (Codex)
 
 Added a dedicated `圖像參考 Visuals` panel to every Materia Medica detail

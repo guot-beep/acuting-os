@@ -22,6 +22,7 @@ Update this file every time data moves. Last update: 2026-07-12 (Claude Phase 2 
 | High-yield formula seeds | `data/herbs/high_yield_formula_seeds.json` | NOT wired into app | study seed file | Draft seed/reference list |
 | Single herbs rendered file | `data/herbs/single_herbs.json` | NOT wired into app | same | Empty placeholder; not current herb canon |
 | Herb canon shortlist (202) | `data/herbs/herb_canon_shortlist.json` | NOT wired into app | new CH / Materia Medica staging layer | Draft skeleton/content file; visible only after B3 wiring |
+| Herb exact visual-link staging | `data/imports/herb_visual_links/*.json` | `scripts/preview-herb-visual-links.js`; NOT canonical | verified CloudTCM herb pages + HKBU MMID/MPID image pages | Review-only exact-page mappings; no apply mode; canonical `visual_links[]` requires Ting/Claude preview approval |
 | Pathology conditions + graph seeds | `data/pathology/conditions.json`, `clinical_graph_seed.json`, `condition_graph_expansion.json` | relation validator; not fully rendered | same plus graph expansion | Draft relationship layer; `conditions.json` is current primary pathology record file |
 | Western medications | `data/medications/western_medications.json` | relation validator; not rendered | new Friday relationship layer | Draft ID reference layer for clinical decision/pathology links |
 | Source registry + validation matrix | `data/sources/*.json` | Sources workspace / source planning; not fully validated | same | Draft registry; known encoding backlog in `source_registry.json` |

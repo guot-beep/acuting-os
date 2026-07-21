@@ -38,6 +38,56 @@ Claude review note:
 
 ---
 
+## 2026-07-20 - Codex - Five-herb exact visual-link staging probe
+
+Date/time: 2026-07-20
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Establish a source-aware, no-apply workflow for exact CloudTCM/HKBU
+single-herb image pages, starting with five high-yield exterior herbs.
+
+Files changed:
+- `data/imports/herb_visual_links/README.md`
+- `data/imports/herb_visual_links/hvl_1_exterior_warm_five_probe.json`
+- `scripts/preview-herb-visual-links.js`
+- `docs/herb_visual_previews/hvl_1_exterior_warm_five_probe.md`
+- `docs/DATA_MIGRATION_MAP.md`
+- coordination logs/status files
+
+Validation:
+- Preview: PASS; 5 herbs, 10 exact links, 0 conflicts, 0 canonical writes.
+- Explicit `--apply` rejection: PASS.
+- JavaScript syntax plus eight standard validators: PASS.
+- Recursive JSON parse: PASS, 467 files.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No canonical herb, formula, condition, point, clinical, generated, or UI
+  data changed.
+- No `app.js`, `js/knowledge.js`, `styles.css`, `data/acupoints/361.json`,
+  or `docs/CLOUDTCM_*` changes.
+
+Known risks / manual checks:
+- CloudTCM is a Chinese-depth visual/profile source, not the English board-
+  exam authority. No efficacy or dosage content was staged.
+- Spot-check all ten links. Pay special attention to Gui Zhi versus Rou Gui,
+  Zi Su Ye versus seed/stem, Jing Jie versus named look-alikes, and Fang Feng
+  versus Shi/Yun/Xiu Qiu Fang Feng.
+- Fang Feng uses the HKBU MPID botanical-image record; it is accurately
+  labelled and is not presented as an MMID prepared-material record.
+
+Next recommended action:
+- Ting/Claude reviews the ten exact pages and identity caveats. After approval,
+  design a separate conflict-refusing merge preview; do not add an apply path
+  in the same review session.
+
+Claude review note:
+- Please verify the ten page identities and staging schema. This batch does
+  not change the dual-search fallback UI or any canonical herb record.
+
+---
+
 ## 2026-07-20 - Codex - Single-herb dual-source visual references
 
 Date/time: 2026-07-20

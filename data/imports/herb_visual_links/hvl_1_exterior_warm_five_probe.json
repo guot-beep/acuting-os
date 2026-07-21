@@ -1,0 +1,170 @@
+{
+  "dataset": "herb_visual_link_staging",
+  "batch": "hvl_1_exterior_warm_five_probe",
+  "created": "2026-07-20",
+  "review_status": "draft",
+  "canonical_write_allowed": false,
+  "purpose": "Exact-page visual reference probe for five high-yield exterior-releasing herbs. Study and identity reference only; not medical advice.",
+  "records": [
+    {
+      "herb_id": "herb.ma_huang",
+      "name_zh": "麻黃",
+      "pinyin": "Ma Huang",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/pharm/1",
+          "label_zh": "雲端中醫：麻黃圖文頁",
+          "label_en": "CloudTCM Ma Huang herb profile",
+          "page_name_zh": "麻黃",
+          "page_pinyin": "Ma Huang",
+          "identity_checks": ["name_zh", "pinyin", "Ephedrae Herba"],
+          "caveats": ["CloudTCM is a Chinese-depth study reference, not the English board-exam authority."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00278",
+          "label_zh": "香港浸大：麻黃藥材圖像",
+          "label_en": "HKBU Ma Huang medicinal material images",
+          "page_name_zh": "麻黃",
+          "page_pinyin": "Mahuang",
+          "identity_checks": ["name_zh", "pinyin", "Ephedrae Herba"],
+          "caveats": ["Prepared slices and microscopic views may differ from the whole dried stem shown in other references."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.gui_zhi",
+      "name_zh": "桂枝",
+      "pinyin": "Gui Zhi",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/pharm/2",
+          "label_zh": "雲端中醫：桂枝圖文頁",
+          "label_en": "CloudTCM Gui Zhi herb profile",
+          "page_name_zh": "桂枝",
+          "page_pinyin": "Gui Zhi",
+          "identity_checks": ["name_zh", "pinyin", "Cinnamomi Ramulus"],
+          "caveats": ["Verify twig identity separately from Rou Gui bark and other Cinnamomum materials."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00138",
+          "label_zh": "香港浸大：桂枝藥材圖像",
+          "label_en": "HKBU Gui Zhi medicinal material images",
+          "page_name_zh": "桂枝",
+          "page_pinyin": "Guizhi",
+          "identity_checks": ["name_zh", "pinyin", "Cinnamomi Ramulus"],
+          "caveats": ["This record is the dried tender twig; it must not be treated as Rou Gui bark."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.zi_su_ye",
+      "name_zh": "紫蘇葉",
+      "pinyin": "Zi Su Ye",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/pharm/1253",
+          "label_zh": "雲端中醫：紫蘇葉圖文頁",
+          "label_en": "CloudTCM Zi Su Ye herb profile",
+          "page_name_zh": "紫蘇葉",
+          "page_pinyin": "Zi Su Ye",
+          "identity_checks": ["name_zh", "pinyin", "Perillae Folium"],
+          "caveats": ["Keep the leaf distinct from Zi Su Zi seed and Zi Su Geng stem records."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00338",
+          "label_zh": "香港浸大：紫蘇葉藥材圖像",
+          "label_en": "HKBU Zi Su Ye medicinal material images",
+          "page_name_zh": "紫蘇葉",
+          "page_pinyin": "Zisuye",
+          "identity_checks": ["name_zh", "pinyin", "Perillae Folium"],
+          "caveats": ["Dried leaves may include small stem fragments; distinguish the medicinal part from Zi Su Geng."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.jing_jie",
+      "name_zh": "荊芥",
+      "pinyin": "Jing Jie",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/1091",
+          "label_zh": "雲端中醫：荊芥圖文頁",
+          "label_en": "CloudTCM Jing Jie herb profile",
+          "page_name_zh": "荊芥",
+          "page_pinyin": "Jing Jie",
+          "identity_checks": ["name_zh", "pinyin", "Schizonepetae Herba"],
+          "caveats": ["Do not confuse this record with similarly named Jia Jing Jie, Hong Jing Jie, or Tu Jing Jie pages."]
+        },
+        {
+          "source_id": "hkbu_mmid",
+          "source_name": "HKBU Chinese Medicinal Material Images Database",
+          "database_type": "medicinal_material_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php?pid=B00274",
+          "label_zh": "香港浸大：荊芥藥材圖像",
+          "label_en": "HKBU Jing Jie medicinal material images",
+          "page_name_zh": "荊芥",
+          "page_pinyin": "Jingjie",
+          "identity_checks": ["name_zh", "pinyin", "Schizonepetae Herba"],
+          "caveats": ["The database record is the dried aerial portion; Jing Jie Sui flower spikes require separate identification context."]
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.fang_feng",
+      "name_zh": "防風",
+      "pinyin": "Fang Feng",
+      "review_status": "draft",
+      "visual_links": [
+        {
+          "source_id": "cloudtcm_herb",
+          "source_name": "CloudTCM herb database / 雲端中醫中藥單方",
+          "database_type": "herb_profile",
+          "url": "https://cloudtcm.com/herb/1028",
+          "label_zh": "雲端中醫：防風圖文頁",
+          "label_en": "CloudTCM Fang Feng herb profile",
+          "page_name_zh": "防風",
+          "page_pinyin": "Fang Feng",
+          "identity_checks": ["name_zh", "pinyin", "Saposhnikoviae Radix"],
+          "caveats": ["Do not confuse the base herb with Shi Fang Feng, Yun Fang Feng, or Xiu Qiu Fang Feng records."]
+        },
+        {
+          "source_id": "hkbu_mpid",
+          "source_name": "HKBU Medicinal Plant Images Database",
+          "database_type": "medicinal_plant_image",
+          "url": "https://sys01.lib.hkbu.edu.hk/cmed/mpid/detail.php?herb_id=D00118",
+          "label_zh": "香港浸大：防風藥用植物圖像",
+          "label_en": "HKBU Fang Feng medicinal plant images",
+          "page_name_zh": "防風",
+          "page_pinyin": "Fangfeng",
+          "identity_checks": ["name_zh", "pinyin", "Saposhnikovia divaricata"],
+          "caveats": ["This is the medicinal-plant image record rather than an MMID prepared-material record."]
+        }
+      ]
+    }
+  ]
+}
