@@ -26,6 +26,7 @@ Purpose: fast status overlay for `docs/CODEX_TASK_QUEUE.md`. This file does not 
 | D3. CloudTCM merge into `361.json` | FROZEN / GATED | D3 review docs exist, but `data/acupoints/361.json` and `docs/CLOUDTCM_*` remain frozen pending Ting decisions. |
 | Encoding backlog repair | FROZEN | `validate-encoding` still reports 798 known findings; B1 triage found `git-recoverable=0`. Repair requires source-aware content refill, not mechanical git restore. |
 | C1. Source-check pilot | BLOCKED | Needs Bensky / approved school notes from Ting. |
+| H1. Herb comparison groups | PREVIEW READY / GATED | `docs/HERB_COMPARISON_GROUP_DIFF_SUMMARY.md`; 202 herbs, 34 mechanical category groups, 1,430 directed links, 0 canonical writes. Ting/Claude must review five groups larger than 10 herbs before any merge. |
 
 ## Track E-I — Conditions interop (added 2026-07-12)
 

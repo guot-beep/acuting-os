@@ -5,11 +5,19 @@ before scanning the longer `docs/CODEX_HANDOFF.md`.
 
 Last updated: 2026-07-20
 Agent: Codex, reconciled with Claude handoff
-Status: `HERB_EXACT_VISUAL_LINK_PROBE_READY_REVIEW`
+Status: `H1_HERB_COMPARISON_GROUP_PREVIEW_READY_REVIEW`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: a separate five-formula CloudTCM Chinese-depth staging probe
+Latest Codex work: a review-only H1 herb comparison preview. It mechanically
+maps all 202 herbs into 34 groups using their existing exact bilingual
+categories, proposes 1,430 directed `related_herbs` ID links, leaves
+`substitution_context_zh` empty, and reports 0 conflicts and 0 canonical
+writes. Apply mode is intentionally unsupported. Five groups larger than 10
+herbs require Ting/Claude boundary review before any merge. No dosage,
+substitution advice, efficacy language, or clinical prose was added.
+
+Earlier Codex work: a separate five-formula CloudTCM Chinese-depth staging probe
 for `fang_yi_zh`, `zhu_zhi_zh`, and `notes_zh`. It has 15 staged fields,
 0 conflicts, and 0 canonical writes. American Dragon is recorded as manual-
 browser review required because automated access returned a verification

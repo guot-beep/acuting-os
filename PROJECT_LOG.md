@@ -23,6 +23,19 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-20 - Preview herb comparison groups and related links (Codex)
+
+Added a review-only H1 generator that reuses the 202-herb canon's 34 exact
+bilingual categories as mechanical comparison-group boundaries. The preview
+proposes `comparison_group`, same-group `related_herbs[]`, and an empty
+`substitution_context_zh` for every herb: 1,430 directed ID links, 4 singleton
+groups, 0 conflicts, and 0 canonical writes. Apply mode is intentionally
+unsupported. Five groups larger than 10 herbs are explicitly flagged for
+Ting/Claude boundary review before any canonical merge. No substitution
+advice, dosage, efficacy claim, or clinical prose was generated. JavaScript
+syntax, eight standard validators, and 468 data JSON files passed; encoding
+remains the known 768-finding baseline.
+
 ### 2026-07-20 - Stage cool-exterior herb visual-link probe (Codex)
 
 Extended the no-apply exact visual-link lane with Bo He, Chan Tui, Sang Ye,

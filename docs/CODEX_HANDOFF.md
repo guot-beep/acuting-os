@@ -38,6 +38,54 @@ Claude review note:
 
 ---
 
+## 2026-07-20 - Codex - H1 herb comparison-group preview
+
+Date/time: 2026-07-20
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Build a no-apply H1 preview for stable-ID herb comparison groups and
+same-group related-herb navigation.
+
+Files changed:
+- `scripts/preview-herb-comparison-groups.js`
+- `docs/HERB_COMPARISON_GROUP_PREVIEW.json`
+- `docs/HERB_COMPARISON_GROUP_DIFF_SUMMARY.md`
+- coordination logs/status files
+
+Validation:
+- Preview: PASS; 202 herbs, 34 groups, 1,430 directed related-herb links,
+  4 singleton groups, 0 conflicts, 0 canonical writes.
+- Explicit `--apply` rejection: PASS.
+- JavaScript syntax plus eight standard validators: PASS.
+- Recursive data JSON parse: PASS, 468 files; preview JSON parse: PASS.
+- Encoding: expected baseline FAIL, unchanged at 768 known findings.
+
+Protected areas not touched:
+- No canonical herb, formula, condition, point, clinical, generated, or UI
+  data changed.
+- No `app.js`, `js/knowledge.js`, `styles.css`, `data/acupoints/361.json`,
+  or `docs/CLOUDTCM_*` changes.
+
+Known risks / manual checks:
+- Existing categories are a mechanical first boundary, not a clinical claim.
+- Five groups exceed 10 herbs: `invigorate_blood`,
+  `release_exterior_warm_acrid`, `regulate_qi`, `tonify_yang`, and
+  `tonify_yin`. Review whether these need smaller study-comparison groups.
+- Four singleton groups correctly have empty `related_herbs` arrays.
+- No substitution context, dosage, or efficacy content is included.
+
+Next recommended action:
+- Ting/Claude reviews all 34 boundaries, especially the five large groups.
+  If approved, specify whether the category-level grouping is accepted as-is
+  or provide split rules before a separate conflict-refusing merge tool exists.
+
+Claude review note:
+- This is preview-only. Please do not infer approval from the 0-conflict
+  result; that only proves structural compatibility.
+
+---
+
 ## 2026-07-20 - Codex - Cool-exterior exact visual-link probe
 
 Date/time: 2026-07-20
