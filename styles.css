@@ -4488,6 +4488,13 @@ a { color: var(--accent-dark); }
 }
 .k-source-links a:hover,
 .k-source-links a:focus-visible { background: #f4ecdc; outline: 2px solid #c59631; outline-offset: 1px; }
+.k-visual-source-links a {
+  display: grid;
+  gap: 0.15rem;
+  min-width: min(100%, 14rem);
+}
+.k-visual-source-links a strong { color: #244f43; }
+.k-visual-source-links a small { color: #756957; font-weight: 500; }
 .k-detail-sidebar {
   display: grid;
   gap: 0.85rem;

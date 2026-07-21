@@ -23,6 +23,21 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-20 - Add dual-source visual references to single-herb cards (Codex)
+
+Added a dedicated `圖像參考 Visuals` panel to every Materia Medica detail
+card. Each herb now offers a name-and-pinyin scoped search of CloudTCM herb
+pages and the HKBU Chinese Medicinal Material Images Database. This avoids
+guessing CloudTCM numeric IDs while providing immediate image access for all
+202 herb skeletons. Future per-record `visual_links[]` or `visualLinks[]`
+values automatically override the scoped-search fallback, so exact reviewed
+links can be added incrementally without another UI migration. The panel
+labels external images as identification/study references and reminds the
+reader to verify homonyms, processed forms, and look-alikes. No canonical herb
+or generated data changed. JavaScript syntax and eight validators passed;
+browser visual spot-check remains manual because the local preview service was
+not available in this session.
+
 ### 2026-07-20 - PC4+PC5: 特定穴 bidirectional browsing UI (Claude Code)
 
 Made the PC1–PC3 category tags reachable in the app. PC4: adapt361Record()

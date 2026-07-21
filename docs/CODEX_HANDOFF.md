@@ -38,6 +38,52 @@ Claude review note:
 
 ---
 
+## 2026-07-20 - Codex - Single-herb dual-source visual references
+
+Date/time: 2026-07-20
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Add image-reference access to Materia Medica cards without inventing
+unverified direct herb IDs or changing canonical herb records.
+
+Files changed:
+- `js/knowledge.js`
+- `styles.css`
+- `PROJECT_LOG.md`
+- `docs/CODEX_CURRENT_STATUS.md`
+- `docs/CODEX_HANDOFF.md`
+
+Validation:
+- `node --check js/knowledge.js`: PASS.
+- `validate-data`, `validate-interactions`, `validate-relations`,
+  `validate-herbal-links`, `validate-herb-canon`, `validate-point-ids`,
+  `validate-naming`, and `validate-point-categories`: PASS.
+
+Protected areas not touched:
+- No canonical herb, formula, condition, acupoint, clinical, generated, or
+  CloudTCM mapping data changed.
+- No `app.js`, `data/acupoints/361.json`, or `docs/CLOUDTCM_*` changes.
+
+Known risks / manual checks:
+- Fallback buttons are clearly labelled domain-scoped searches, not claimed
+  exact matches. Exact reviewed `visual_links[]` / `visualLinks[]` values take
+  precedence automatically when present.
+- Manually open a common herb such as Ma Huang and confirm both visual buttons
+  fit on desktop/mobile and return the matching Chinese name/pinyin.
+- Browser automation could not load the local file URL in this session, so no
+  visual screenshot was claimed.
+
+Next recommended action:
+- Review the two-link card UX. If accepted, begin a separate staged mapping of
+  exact CloudTCM/HKBU herb URLs, recording homonym and processed-form caveats.
+
+Claude review note:
+- Please review only the herb visual helper/panel and its additive CSS. The
+  existing C2 canonical gate and LL3 comparison ownership are unchanged.
+
+---
+
 ## 2026-07-19 - Codex - CloudTCM Chinese depth five-formula probe
 
 Date/time: 2026-07-19

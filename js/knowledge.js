@@ -84,6 +84,45 @@
       ${links.length ? `<div class="k-source-links">${links.map((url, index) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1}</a>`).join("")}</div>` : '<p class="k-detail-empty">來源連結待補 / Source links pending</p>'}`;
   }
 
+  function herbVisualLinks(record) {
+    const stored = Array.isArray(record.visual_links)
+      ? record.visual_links
+      : (Array.isArray(record.visualLinks) ? record.visualLinks : []);
+    const exact = stored.filter((link) => link && /^https?:\/\//.test(link.url || ""));
+    if (exact.length) return exact;
+
+    const name = usableText(record.name_zh) || usableText(record.pinyin) || usableText(record.name_en);
+    const pinyin = usableText(record.pinyin);
+    const scopedQuery = (site) => [site, `"${name}"`, pinyin ? `"${pinyin}"` : ""].filter(Boolean).join(" ");
+    return [
+      {
+        label_zh: "雲端中醫圖文搜尋",
+        label_en: "CloudTCM herb visual search",
+        source: "CloudTCM",
+        url: `https://www.google.com/search?q=${encodeURIComponent(scopedQuery("site:cloudtcm.com/herb/"))}`,
+        link_status: "scoped_search"
+      },
+      {
+        label_zh: "香港浸大中藥材圖像搜尋",
+        label_en: "HKBU medicinal material image search",
+        source: "HKBU Chinese Medicinal Material Images Database",
+        url: `https://www.google.com/search?q=${encodeURIComponent(scopedQuery("site:sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php"))}`,
+        link_status: "scoped_search"
+      }
+    ];
+  }
+
+  function herbVisualLinksSection(record) {
+    const links = herbVisualLinks(record);
+    return `<div class="k-source-links k-visual-source-links">
+      ${links.map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">
+        <strong>${esc(link.label_zh || link.labelZh || "圖像參考")}</strong>
+        <small>${esc(link.label_en || link.labelEn || link.source || "Visual reference")}</small>
+      </a>`).join("")}
+    </div>
+    <p class="k-detail-note">外部圖文只作藥材辨識與學習參考；同名藥、炮製品與混淆品仍須核對來源。搜尋結果請選擇與本卡中文名及拼音相符的記錄。</p>`;
+  }
+
   function ensureDetailDialog() {
     let dialog = el("knowledgeDetailDialog");
     if (dialog) return dialog;
@@ -212,6 +251,7 @@
       { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("性味", "Properties, taste & temperature", `<p>${esc(usableText(exam.properties_taste_temp) || usableText(record.properties_taste_temp) || "待補")}</p>`)}${detailSection("歸經", "Channels entered", detailList(record.channels_entered))}${detailSection("功效", "Functions", detailList(functions))}${detailSection("主治脈絡", "Indication context", detailList(exam.indications))}</div>` },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Formulas containing or comparing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "pairing", label: "配伍與鑑別 Pairing", content: `${detailSection("常見配伍", "Common pairings", detailList(exam.common_pairings))}${detailSection("中文深度筆記", "Chinese-depth track", `<p>${esc(usableText((record.chinese_depth_track || {}).summary_zh) || "待 CloudTCM、機構庫或 Ting 課件核對後補入")}</p>`)}` },
+      { id: "visual", label: "圖像參考 Visuals", content: detailSection("藥材與飲片圖像", "External herb image references", herbVisualLinksSection(record)) },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與安全提醒", "Contraindications & review prompts", detailList([...(exam.contraindications || []), ...(record.safety_flags || [])]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
     ];
   }
