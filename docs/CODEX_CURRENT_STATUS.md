@@ -3,19 +3,26 @@
 Purpose: single-screen status for Claude / Ting / Codex coordination. Read this
 before scanning the longer `docs/CODEX_HANDOFF.md`.
 
-Last updated: 2026-07-20
+Last updated: 2026-07-21
 Agent: Codex, reconciled with Claude handoff
-Status: `WHO_ACUPOINT_LOCATION_STAGING_READY_REVIEW`
+Status: `ACUPOINT_HIGH_RISK_ANATOMY_STAGING_READY_REVIEW`
 Current branch: `main`
-Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
+Reviewed work commit: `4c8879a` - `docs: Claude review — accept Codex dual-source herb visual references (5af7892)`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: a source-backed, review-only WHO location extraction for all
-361 standard points. The source PDF is fingerprinted but not committed. The
-staging retains page locators and extraction method; 356 records came from the
-PDF text layer and LI7/BL47-BL50 were transcribed from rendered source pages and
-flagged for second visual review. A separate no-apply preview proposes 100
-fill-empty `cun_measurement` values, leaves 131 unresolved, and reports 0
-conflicts and 0 canonical writes. `data/acupoints/361.json` remains untouched.
+Latest Codex work: a source-backed, review-only high-risk anatomy lane. Six
+peer-reviewed sources produce a 44-point ultrasound safety set, 15
+point-specific anatomy findings, and 16 explicit point-to-peripheral-nerve
+candidates. The combined preview covers 66 unique points. A strict fill-empty
+preview proposes 34 fields / 38 values across 28 points, skips three non-empty
+canonical safety fields, and reports 0 conflicts and 0 canonical writes. It
+does not infer universal safe depth or treat regional study membership as a
+point-specific anatomy claim. `data/acupoints/361.json` remains untouched.
+
+Earlier Codex work: a source-backed, review-only WHO location extraction for
+all 361 standard points. The source PDF is fingerprinted but not committed.
+The staging retains page locators and extraction method; a separate no-apply
+preview proposes 100 fill-empty `cun_measurement` values, leaves 131 unresolved,
+and reports 0 conflicts and 0 canonical writes.
 
 Earlier Codex work: a review-only H1 herb comparison preview. It mechanically
 maps all 202 herbs into 34 groups using their existing exact bilingual

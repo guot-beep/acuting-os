@@ -1,0 +1,2005 @@
+{
+  "generated_at": "2026-07-21T08:13:20.965Z",
+  "canonical_input": "data/acupoints/361.json",
+  "source_manifest": "data/imports/acupoint_anatomy/source_manifest.json",
+  "staging_input": "data/imports/acupoint_anatomy/high_risk_review_staging.json",
+  "canonical_write_allowed": false,
+  "summary": {
+    "canonical_records_checked": 361,
+    "ultrasound_high_risk_points": 44,
+    "unique_points_in_review_preview": 66,
+    "point_specific_findings": 15,
+    "explicit_peripheral_nerve_candidates": 16,
+    "sources_registered": 6,
+    "source_reference_errors": 0,
+    "unknown_point_codes": 0,
+    "conflicts": 0,
+    "canonical_writes": 0,
+    "region_counts": {
+      "chest": 8,
+      "abdomen": 4,
+      "anterior_neck": 3,
+      "face_and_posterior_neck": 8,
+      "shoulder_and_back": 11,
+      "waist_and_hip": 10
+    }
+  },
+  "rules": [
+    "Regional review targets are not canonical anatomy claims for every point in a study set.",
+    "Only explicitly named point-specific structures appear in point_specific_findings or nerve_candidates.",
+    "No fixed safe depth is proposed from population MRI or ultrasound measurements.",
+    "All proposed anatomy remains draft pending professional record-level review.",
+    "This preview does not provide treatment guidance or medical advice."
+  ],
+  "sources": [
+    {
+      "id": "kim_ultrasound_44_points_2017",
+      "title": "Development of an ultrasound-imaging procedure and acquisition of ultrasound images of acupuncture points for safety and accuracy of needle insertion",
+      "source_type": "peer_reviewed_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5741397/",
+      "pmcid": "PMC5741397",
+      "access_status": "public_full_text",
+      "allowed_use": [
+        "44_point_high_risk_study_set",
+        "regional_review_prompt",
+        "ST9_ultrasound_target_structures"
+      ],
+      "limitations": [
+        "The paper does not publish a complete point-by-point anatomy table for all 44 points.",
+        "The study explicitly says it was not oriented toward defining universal needling depth."
+      ]
+    },
+    {
+      "id": "lin_mri_neck_shoulder_depth_2015",
+      "title": "Retrospective study using MRI to measure depths of acupuncture points in neck and shoulder region",
+      "source_type": "peer_reviewed_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4521547/",
+      "pmcid": "PMC4521547",
+      "access_status": "public_full_text",
+      "allowed_use": [
+        "point_specific_deep_structure_review",
+        "BMI_and_anatomy_variability_prompt"
+      ],
+      "limitations": [
+        "Measured distances vary with BMI, sex, angle, and individual anatomy.",
+        "Do not convert population means into a universal safe depth."
+      ]
+    },
+    {
+      "id": "stuber_radial_nerve_ultrasound_2019",
+      "title": "Ultrasound Visualization of Radial Nerve Excursion During Acupuncture",
+      "source_type": "peer_reviewed_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6624832/",
+      "pmcid": "PMC6624832",
+      "access_status": "public_full_text",
+      "allowed_use": [
+        "explicit_point_to_peripheral_nerve_candidates",
+        "nerve_proximity_review_prompt"
+      ],
+      "limitations": [
+        "A nearby nerve is an anatomy and safety relationship, not an efficacy claim.",
+        "The article's experiment centers on radial nerve movement and cites several additional point-nerve examples in its introduction."
+      ]
+    },
+    {
+      "id": "zhang_cv22_st11_cadaver_2007",
+      "title": "Clinical anatomy study on acupuncture safety of Tiantu (CV22) and Qishe (ST11)",
+      "source_type": "peer_reviewed_cadaver_study",
+      "authority_tier": "A-",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17370496/",
+      "pmid": "17370496",
+      "access_status": "abstract_public",
+      "allowed_use": [
+        "CV22_and_ST11_specific_risk_structures"
+      ],
+      "limitations": [
+        "Cadaver observations require clinical and textbook review before canonical use.",
+        "Abstract-level extraction only in this staging batch."
+      ]
+    },
+    {
+      "id": "lee_gv20_anatomy_2023",
+      "title": "Anatomical study of the acupoint Baihui (GV20)",
+      "source_type": "peer_reviewed_anatomy_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9826820/",
+      "pmcid": "PMC9826820",
+      "access_status": "public_full_text",
+      "allowed_use": [
+        "GV20_specific_anatomy_candidates"
+      ],
+      "limitations": [
+        "Anatomical proximity does not establish clinical efficacy."
+      ]
+    },
+    {
+      "id": "chapple_361_anatomy_catalog_2013",
+      "title": "Proposed catalog of the neuroanatomy and the stratified anatomy for the 361 acupuncture points of 14 channels",
+      "source_type": "peer_reviewed_catalog",
+      "authority_tier": "A-",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24139465/",
+      "doi": "10.1016/j.jams.2013.01.001",
+      "pmid": "24139465",
+      "access_status": "abstract_public_full_catalog_not_extracted",
+      "allowed_use": [
+        "future_full_361_anatomy_lane_design"
+      ],
+      "limitations": [
+        "The abstract confirms 361-point scope, but the point-level catalog was not accessible for verified extraction in this batch.",
+        "Do not infer point anatomy from the abstract."
+      ]
+    }
+  ],
+  "records": [
+    {
+      "code": "BL12",
+      "name_zh": "風門",
+      "name_en": "Wind Gate",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL13",
+      "name_zh": "肺俞",
+      "name_en": "Lung Shu",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL15",
+      "name_zh": "心俞",
+      "name_en": "Heart Shu",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL17",
+      "name_zh": "膈俞",
+      "name_en": "Diaphragm Shu",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL21",
+      "name_zh": "胃俞",
+      "name_en": "Stomach Shu",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL23",
+      "name_zh": "腎俞",
+      "name_en": "Kidney Shu",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL25",
+      "name_zh": "大腸俞",
+      "name_en": "Large Intestine Shu",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL31",
+      "name_zh": "上髎",
+      "name_en": "Upper Bone Hole",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL32",
+      "name_zh": "次髎",
+      "name_en": "Second Bone Hole",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL33",
+      "name_zh": "中髎",
+      "name_en": "Middle Bone Hole",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL34",
+      "name_zh": "下髎",
+      "name_en": "Lower Bone Hole",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL40",
+      "name_zh": "委中",
+      "name_en": "Middle of the Crook",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "tibial nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL46",
+      "name_zh": "膈關",
+      "name_en": "Diaphragm Gate",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL50",
+      "name_zh": "胃倉",
+      "name_en": "Stomach Granary",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL52",
+      "name_zh": "志室",
+      "name_en": "Will Chamber",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL54",
+      "name_zh": "秩邊",
+      "name_en": "Order's Edge",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "sciatic nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV4",
+      "name_zh": "關元",
+      "name_en": "Origin Pass",
+      "risk_regions": [
+        "abdomen"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_abdomen"
+      ],
+      "regional_review_targets": [
+        "peritoneal_cavity",
+        "abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV12",
+      "name_zh": "中脘",
+      "name_en": "Middle Epigastrium",
+      "risk_regions": [
+        "abdomen"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_abdomen"
+      ],
+      "regional_review_targets": [
+        "peritoneal_cavity",
+        "abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV14",
+      "name_zh": "巨闕",
+      "name_en": "Great Tower Gate",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV15",
+      "name_zh": "鳩尾",
+      "name_en": "Turtledove Tail",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV20",
+      "name_zh": "華蓋",
+      "name_en": "Florid Canopy",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV22",
+      "name_zh": "天突",
+      "name_en": "Heavenly Prominence",
+      "risk_regions": [
+        "anterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_anterior_neck"
+      ],
+      "regional_review_targets": [
+        "carotid_sheath",
+        "thyroid",
+        "trachea",
+        "regional_nerves_and_vessels"
+      ],
+      "point_specific_findings": [
+        {
+          "source_id": "zhang_cv22_st11_cadaver_2007",
+          "finding_type": "cadaver_risk_structures",
+          "structures": [
+            "apical pleura",
+            "brachiocephalic vein"
+          ],
+          "review_prompt": "Abstract-level cadaver finding; verify full text and professional technique guidance before canonical use."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV23",
+      "name_zh": "廉泉",
+      "name_en": "Ridge Spring",
+      "risk_regions": [
+        "anterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_anterior_neck"
+      ],
+      "regional_review_targets": [
+        "carotid_sheath",
+        "thyroid",
+        "trachea",
+        "regional_nerves_and_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB20",
+      "name_zh": "風池",
+      "name_en": "Wind Pool",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "major neck vessels"
+          ],
+          "review_prompt": "Review internal jugular/common carotid region and needle direction; no universal safe depth is staged."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB21",
+      "name_zh": "肩井",
+      "name_en": "Shoulder Well",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "pleural membrane"
+          ],
+          "review_prompt": "Pneumothorax-focused review; angle and direction materially change risk."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB24",
+      "name_zh": "日月",
+      "name_en": "Sun and Moon",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB25",
+      "name_zh": "京門",
+      "name_en": "Capital Gate",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB30",
+      "name_zh": "環跳",
+      "name_en": "Jumping Round",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB34",
+      "name_zh": "陽陵泉",
+      "name_en": "Yang Mound Spring",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "peroneal nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV3",
+      "name_zh": "腰陽關",
+      "name_en": "Lumbar Yang Pass",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV4",
+      "name_zh": "命門",
+      "name_en": "Life Gate",
+      "risk_regions": [
+        "waist_and_hip"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_waist_hip"
+      ],
+      "regional_review_targets": [
+        "retroperitoneal_organs",
+        "sacral_foramina",
+        "sciatic_nerve_and_regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV9",
+      "name_zh": "至陽",
+      "name_en": "Reaching Yang",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV12",
+      "name_zh": "身柱",
+      "name_en": "Body Pillar",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV14",
+      "name_zh": "大椎",
+      "name_en": "Great Vertebra",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV15",
+      "name_zh": "啞門",
+      "name_en": "Mute Gate",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "dura mater"
+          ],
+          "review_prompt": "MRI study measured skin-to-dura distance; do not convert a cohort measurement into a universal safe depth."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV16",
+      "name_zh": "風府",
+      "name_en": "Wind Mansion",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "dura mater"
+          ],
+          "review_prompt": "MRI study measured skin-to-dura distance; direction, BMI, sex, and individual anatomy affect risk."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV20",
+      "name_zh": "百會",
+      "name_en": "Hundred Meetings",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [
+        {
+          "source_id": "lee_gv20_anatomy_2023",
+          "finding_type": "anatomy_candidates",
+          "structures": [
+            "parietal foramina",
+            "emissary veins",
+            "greater occipital nerves",
+            "occipital vessels"
+          ],
+          "review_prompt": "Stage as anatomy candidates only; proximity does not imply efficacy or a universal insertion rule."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "HT7",
+      "name_zh": "神門",
+      "name_en": "Spirit Gate",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "ulnar nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "KI3",
+      "name_zh": "太谿",
+      "name_en": "Great Ravine",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "tibial nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LI11",
+      "name_zh": "曲池",
+      "name_en": "Pool at the Bend",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "radial nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LI18",
+      "name_zh": "扶突",
+      "name_en": "Support the Prominence",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "major neck vessels"
+          ],
+          "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LR13",
+      "name_zh": "章門",
+      "name_en": "Camphorwood Gate",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LR14",
+      "name_zh": "期門",
+      "name_en": "Cycle Gate",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU1",
+      "name_zh": "中府",
+      "name_en": "Central Treasury",
+      "risk_regions": [
+        "chest"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_chest"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "heart_or_upper_abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "brachial plexus",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU2",
+      "name_zh": "雲門",
+      "name_en": "Cloud Gate",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "brachial plexus",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU5",
+      "name_zh": "尺澤",
+      "name_en": "Cubit Marsh",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "radial nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU7",
+      "name_zh": "列缺",
+      "name_en": "Broken Sequence",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "superficial radial nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU9",
+      "name_zh": "太淵",
+      "name_en": "Great Abyss",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "superficial radial nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "PC3",
+      "name_zh": "曲澤",
+      "name_en": "Marsh at the Bend",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "median nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "PC6",
+      "name_zh": "內關",
+      "name_en": "Inner Pass",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "median nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI8",
+      "name_zh": "小海",
+      "name_en": "Small Sea",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "ulnar nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI14",
+      "name_zh": "肩外俞",
+      "name_en": "Outer Shoulder Shu",
+      "risk_regions": [
+        "shoulder_and_back"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_shoulder_back"
+      ],
+      "regional_review_targets": [
+        "pleura",
+        "lung",
+        "spinal_canal",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "pleural membrane"
+          ],
+          "review_prompt": "Pneumothorax-focused review; this posterior shoulder region is not fully protected by scapula."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI15",
+      "name_zh": "肩中俞",
+      "name_en": "Middle Shoulder Shu",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "pleural membrane"
+          ],
+          "review_prompt": "Pneumothorax-focused review; this posterior shoulder region is not fully protected by scapula."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI16",
+      "name_zh": "天窗",
+      "name_en": "Celestial Window",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "major neck vessels"
+          ],
+          "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI17",
+      "name_zh": "天容",
+      "name_en": "Celestial Appearance",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "major neck vessels"
+          ],
+          "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI19",
+      "name_zh": "聽宮",
+      "name_en": "Hearing Palace",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SP9",
+      "name_zh": "陰陵泉",
+      "name_en": "Yin Mound Spring",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "saphenous nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SP12",
+      "name_zh": "衝門",
+      "name_en": "Surging Gate",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [],
+      "nerve_candidates": [
+        {
+          "nerve": "femoral nerve",
+          "source_id": "stuber_radial_nerve_ultrasound_2019",
+          "status": "candidate_pending_anatomy_review"
+        }
+      ],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SP14",
+      "name_zh": "腹結",
+      "name_en": "Abdomen Knot",
+      "risk_regions": [
+        "abdomen"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_abdomen"
+      ],
+      "regional_review_targets": [
+        "peritoneal_cavity",
+        "abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST6",
+      "name_zh": "頰車",
+      "name_en": "Jaw Bone",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST7",
+      "name_zh": "下關",
+      "name_en": "Below the Joint",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST9",
+      "name_zh": "人迎",
+      "name_en": "Man's Prognosis",
+      "risk_regions": [
+        "anterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_anterior_neck"
+      ],
+      "regional_review_targets": [
+        "carotid_sheath",
+        "thyroid",
+        "trachea",
+        "regional_nerves_and_vessels"
+      ],
+      "point_specific_findings": [
+        {
+          "source_id": "kim_ultrasound_44_points_2017",
+          "finding_type": "ultrasound_target_structures",
+          "structures": [
+            "sternocleidomastoid muscle",
+            "common carotid artery",
+            "thyroid cartilage"
+          ],
+          "review_prompt": "Review the point's relationship to the common carotid artery and adjacent neck structures before any anatomy-field proposal."
+        },
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "internal jugular vein",
+            "common carotid artery"
+          ],
+          "review_prompt": "Review carotid sheath structures; no universal safe depth is staged."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST11",
+      "name_zh": "氣舍",
+      "name_en": "Qi Abode",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [
+        {
+          "source_id": "zhang_cv22_st11_cadaver_2007",
+          "finding_type": "cadaver_risk_structures",
+          "structures": [
+            "internal jugular vein",
+            "common carotid artery",
+            "vagus nerve"
+          ],
+          "review_prompt": "Abstract-level cadaver finding; verify full text and professional technique guidance before canonical use."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST25",
+      "name_zh": "天樞",
+      "name_en": "Celestial Pivot",
+      "risk_regions": [
+        "abdomen"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_abdomen"
+      ],
+      "regional_review_targets": [
+        "peritoneal_cavity",
+        "abdominal_organs",
+        "regional_vessels"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "TE16",
+      "name_zh": "天牖",
+      "name_en": "Heavenly Window",
+      "risk_regions": [],
+      "study_set_ids": [],
+      "regional_review_targets": [],
+      "point_specific_findings": [
+        {
+          "source_id": "lin_mri_neck_shoulder_depth_2015",
+          "finding_type": "dangerous_deep_structure",
+          "structures": [
+            "major neck vessels"
+          ],
+          "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+        }
+      ],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "TE17",
+      "name_zh": "翳風",
+      "name_en": "Wind Screen",
+      "risk_regions": [
+        "face_and_posterior_neck"
+      ],
+      "study_set_ids": [
+        "ultrasound_44_face_posterior_neck"
+      ],
+      "regional_review_targets": [
+        "regional_nerves",
+        "regional_vessels",
+        "spinal_canal_or_dura_for_midline_upper_neck"
+      ],
+      "point_specific_findings": [],
+      "nerve_candidates": [],
+      "current_canonical_anatomy_counts": {
+        "muscles": 0,
+        "bones": 0,
+        "nerves": 0,
+        "vessels": 0
+      },
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "canonical_write_allowed": false
+    }
+  ]
+}

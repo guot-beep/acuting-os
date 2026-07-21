@@ -1,0 +1,182 @@
+{
+  "staging_version": "1.0",
+  "created_at": "2026-07-21",
+  "canonical_write_allowed": false,
+  "review_status": "draft",
+  "disclaimer": "Study and safety review prompts only; not medical advice and not universal needling-depth guidance.",
+  "study_sets": [
+    {
+      "id": "ultrasound_44_chest",
+      "source_id": "kim_ultrasound_44_points_2017",
+      "risk_region": "chest",
+      "codes": ["LU1", "CV20", "CV14", "CV15", "LR14", "GB24", "LR13", "GB25"],
+      "review_targets": ["pleura", "lung", "heart_or_upper_abdominal_organs", "regional_vessels"],
+      "evidence_scope": "Included in a 44-point ultrasound-imaging safety study; review targets are regional and are not asserted as structures beneath every listed point."
+    },
+    {
+      "id": "ultrasound_44_abdomen",
+      "source_id": "kim_ultrasound_44_points_2017",
+      "risk_region": "abdomen",
+      "codes": ["CV12", "ST25", "SP14", "CV4"],
+      "review_targets": ["peritoneal_cavity", "abdominal_organs", "regional_vessels"],
+      "evidence_scope": "Included in a 44-point ultrasound-imaging safety study; review targets are regional and are not asserted as structures beneath every listed point."
+    },
+    {
+      "id": "ultrasound_44_anterior_neck",
+      "source_id": "kim_ultrasound_44_points_2017",
+      "risk_region": "anterior_neck",
+      "codes": ["CV23", "ST9", "CV22"],
+      "review_targets": ["carotid_sheath", "thyroid", "trachea", "regional_nerves_and_vessels"],
+      "evidence_scope": "Included in a 44-point ultrasound-imaging safety study; ST9 has a point-specific example SOP in the article."
+    },
+    {
+      "id": "ultrasound_44_face_posterior_neck",
+      "source_id": "kim_ultrasound_44_points_2017",
+      "risk_region": "face_and_posterior_neck",
+      "codes": ["ST6", "ST7", "SI19", "TE17", "GV15", "GV16", "GB20", "GV14"],
+      "review_targets": ["regional_nerves", "regional_vessels", "spinal_canal_or_dura_for_midline_upper_neck"],
+      "evidence_scope": "Included in a 44-point ultrasound-imaging safety study; point-specific structures require separate source support."
+    },
+    {
+      "id": "ultrasound_44_shoulder_back",
+      "source_id": "kim_ultrasound_44_points_2017",
+      "risk_region": "shoulder_and_back",
+      "codes": ["GB21", "SI14", "BL12", "GV12", "BL13", "BL15", "GV9", "BL17", "BL46", "BL21", "BL50"],
+      "review_targets": ["pleura", "lung", "spinal_canal", "regional_vessels"],
+      "evidence_scope": "Included in a 44-point ultrasound-imaging safety study; thoracic points require pneumothorax-focused review."
+    },
+    {
+      "id": "ultrasound_44_waist_hip",
+      "source_id": "kim_ultrasound_44_points_2017",
+      "risk_region": "waist_and_hip",
+      "codes": ["GV4", "BL23", "BL52", "GV3", "BL25", "BL31", "BL32", "BL33", "BL34", "GB30"],
+      "review_targets": ["retroperitoneal_organs", "sacral_foramina", "sciatic_nerve_and_regional_vessels"],
+      "evidence_scope": "Included in a 44-point ultrasound-imaging safety study; review targets are regional and need point-specific confirmation."
+    }
+  ],
+  "point_specific_findings": [
+    {
+      "code": "ST9",
+      "source_id": "kim_ultrasound_44_points_2017",
+      "finding_type": "ultrasound_target_structures",
+      "structures": ["sternocleidomastoid muscle", "common carotid artery", "thyroid cartilage"],
+      "review_prompt": "Review the point's relationship to the common carotid artery and adjacent neck structures before any anatomy-field proposal."
+    },
+    {
+      "code": "GV15",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["dura mater"],
+      "review_prompt": "MRI study measured skin-to-dura distance; do not convert a cohort measurement into a universal safe depth."
+    },
+    {
+      "code": "GV16",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["dura mater"],
+      "review_prompt": "MRI study measured skin-to-dura distance; direction, BMI, sex, and individual anatomy affect risk."
+    },
+    {
+      "code": "GB20",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["major neck vessels"],
+      "review_prompt": "Review internal jugular/common carotid region and needle direction; no universal safe depth is staged."
+    },
+    {
+      "code": "SI17",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["major neck vessels"],
+      "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+    },
+    {
+      "code": "TE16",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["major neck vessels"],
+      "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+    },
+    {
+      "code": "ST9",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["internal jugular vein", "common carotid artery"],
+      "review_prompt": "Review carotid sheath structures; no universal safe depth is staged."
+    },
+    {
+      "code": "LI18",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["major neck vessels"],
+      "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+    },
+    {
+      "code": "SI16",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["major neck vessels"],
+      "review_prompt": "Review major neck vessels and individual anatomy before any technique-field proposal."
+    },
+    {
+      "code": "GB21",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["pleural membrane"],
+      "review_prompt": "Pneumothorax-focused review; angle and direction materially change risk."
+    },
+    {
+      "code": "SI14",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["pleural membrane"],
+      "review_prompt": "Pneumothorax-focused review; this posterior shoulder region is not fully protected by scapula."
+    },
+    {
+      "code": "SI15",
+      "source_id": "lin_mri_neck_shoulder_depth_2015",
+      "finding_type": "dangerous_deep_structure",
+      "structures": ["pleural membrane"],
+      "review_prompt": "Pneumothorax-focused review; this posterior shoulder region is not fully protected by scapula."
+    },
+    {
+      "code": "CV22",
+      "source_id": "zhang_cv22_st11_cadaver_2007",
+      "finding_type": "cadaver_risk_structures",
+      "structures": ["apical pleura", "brachiocephalic vein"],
+      "review_prompt": "Abstract-level cadaver finding; verify full text and professional technique guidance before canonical use."
+    },
+    {
+      "code": "ST11",
+      "source_id": "zhang_cv22_st11_cadaver_2007",
+      "finding_type": "cadaver_risk_structures",
+      "structures": ["internal jugular vein", "common carotid artery", "vagus nerve"],
+      "review_prompt": "Abstract-level cadaver finding; verify full text and professional technique guidance before canonical use."
+    },
+    {
+      "code": "GV20",
+      "source_id": "lee_gv20_anatomy_2023",
+      "finding_type": "anatomy_candidates",
+      "structures": ["parietal foramina", "emissary veins", "greater occipital nerves", "occipital vessels"],
+      "review_prompt": "Stage as anatomy candidates only; proximity does not imply efficacy or a universal insertion rule."
+    }
+  ],
+  "explicit_peripheral_nerve_candidates": [
+    {"code": "KI3", "nerve": "tibial nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "SI8", "nerve": "ulnar nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "HT7", "nerve": "ulnar nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "BL40", "nerve": "tibial nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "BL54", "nerve": "sciatic nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "SP9", "nerve": "saphenous nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "SP12", "nerve": "femoral nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "LU1", "nerve": "brachial plexus", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "LU2", "nerve": "brachial plexus", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "LU5", "nerve": "radial nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "LU7", "nerve": "superficial radial nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "LU9", "nerve": "superficial radial nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "LI11", "nerve": "radial nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "PC3", "nerve": "median nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "PC6", "nerve": "median nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"},
+    {"code": "GB34", "nerve": "peroneal nerve", "source_id": "stuber_radial_nerve_ultrasound_2019"}
+  ]
+}

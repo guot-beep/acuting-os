@@ -23,6 +23,21 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-21 - Stage high-risk acupoint anatomy and safety evidence (Codex)
+
+Registered six peer-reviewed anatomy/safety sources and built a review-only
+high-risk lane without modifying `data/acupoints/361.json`. The ultrasound
+study set covers 44 points across chest, abdomen, neck, shoulder/back, and
+waist/hip regions. MRI, cadaver, GV20 anatomy, and peripheral-nerve articles
+add 15 point-specific findings and 16 explicit point-nerve candidates. The
+combined preview covers 66 unique points. A stricter fill-empty preview creates
+34 field proposals containing 38 source-backed values for 28 points; three
+already-populated safety fields are skipped, conflicts are 0, and canonical
+writes are 0. Regional study membership remains a review prompt and is never
+treated as complete point anatomy. No fixed safe depth is inferred from cohort
+imaging. Eight standard validators, JavaScript syntax, and 483 JSON files pass;
+encoding remains the known 768-finding baseline.
+
 ### 2026-07-20 - Build WHO acupoint source staging and gap inventory (Codex)
 
 Replaced the vague "many fields pending" problem with a reproducible 361-point

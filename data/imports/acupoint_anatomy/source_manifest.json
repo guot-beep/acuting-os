@@ -1,0 +1,75 @@
+{
+  "manifest_version": "1.0",
+  "created_at": "2026-07-21",
+  "purpose": "Open literature sources for point-specific anatomy and high-risk needling review without canonical writes.",
+  "canonical_write_allowed": false,
+  "sources": [
+    {
+      "id": "kim_ultrasound_44_points_2017",
+      "title": "Development of an ultrasound-imaging procedure and acquisition of ultrasound images of acupuncture points for safety and accuracy of needle insertion",
+      "source_type": "peer_reviewed_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5741397/",
+      "pmcid": "PMC5741397",
+      "access_status": "public_full_text",
+      "allowed_use": ["44_point_high_risk_study_set", "regional_review_prompt", "ST9_ultrasound_target_structures"],
+      "limitations": ["The paper does not publish a complete point-by-point anatomy table for all 44 points.", "The study explicitly says it was not oriented toward defining universal needling depth."]
+    },
+    {
+      "id": "lin_mri_neck_shoulder_depth_2015",
+      "title": "Retrospective study using MRI to measure depths of acupuncture points in neck and shoulder region",
+      "source_type": "peer_reviewed_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4521547/",
+      "pmcid": "PMC4521547",
+      "access_status": "public_full_text",
+      "allowed_use": ["point_specific_deep_structure_review", "BMI_and_anatomy_variability_prompt"],
+      "limitations": ["Measured distances vary with BMI, sex, angle, and individual anatomy.", "Do not convert population means into a universal safe depth."]
+    },
+    {
+      "id": "stuber_radial_nerve_ultrasound_2019",
+      "title": "Ultrasound Visualization of Radial Nerve Excursion During Acupuncture",
+      "source_type": "peer_reviewed_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6624832/",
+      "pmcid": "PMC6624832",
+      "access_status": "public_full_text",
+      "allowed_use": ["explicit_point_to_peripheral_nerve_candidates", "nerve_proximity_review_prompt"],
+      "limitations": ["A nearby nerve is an anatomy and safety relationship, not an efficacy claim.", "The article's experiment centers on radial nerve movement and cites several additional point-nerve examples in its introduction."]
+    },
+    {
+      "id": "zhang_cv22_st11_cadaver_2007",
+      "title": "Clinical anatomy study on acupuncture safety of Tiantu (CV22) and Qishe (ST11)",
+      "source_type": "peer_reviewed_cadaver_study",
+      "authority_tier": "A-",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17370496/",
+      "pmid": "17370496",
+      "access_status": "abstract_public",
+      "allowed_use": ["CV22_and_ST11_specific_risk_structures"],
+      "limitations": ["Cadaver observations require clinical and textbook review before canonical use.", "Abstract-level extraction only in this staging batch."]
+    },
+    {
+      "id": "lee_gv20_anatomy_2023",
+      "title": "Anatomical study of the acupoint Baihui (GV20)",
+      "source_type": "peer_reviewed_anatomy_article",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9826820/",
+      "pmcid": "PMC9826820",
+      "access_status": "public_full_text",
+      "allowed_use": ["GV20_specific_anatomy_candidates"],
+      "limitations": ["Anatomical proximity does not establish clinical efficacy."]
+    },
+    {
+      "id": "chapple_361_anatomy_catalog_2013",
+      "title": "Proposed catalog of the neuroanatomy and the stratified anatomy for the 361 acupuncture points of 14 channels",
+      "source_type": "peer_reviewed_catalog",
+      "authority_tier": "A-",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24139465/",
+      "doi": "10.1016/j.jams.2013.01.001",
+      "pmid": "24139465",
+      "access_status": "abstract_public_full_catalog_not_extracted",
+      "allowed_use": ["future_full_361_anatomy_lane_design"],
+      "limitations": ["The abstract confirms 361-point scope, but the point-level catalog was not accessible for verified extraction in this batch.", "Do not infer point anatomy from the abstract."]
+    }
+  ]
+}

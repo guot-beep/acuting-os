@@ -39,6 +39,64 @@ Claude review note:
 
 ---
 
+## 2026-07-21 - Codex - High-risk acupoint anatomy staging and fill preview
+
+Date/time: 2026-07-21
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Build a source-backed high-risk anatomy/safety lane and exact fill-empty
+preview for the 361-point knowledge layer without canonical writes.
+
+Files changed:
+- `data/imports/acupoint_anatomy/*`
+- `scripts/preview-acupoint-anatomy-review.js`
+- `scripts/preview-acupoint-anatomy-fill.js`
+- `docs/ACUPOINT_HIGH_RISK_ANATOMY_PREVIEW.json`
+- `docs/ACUPOINT_HIGH_RISK_ANATOMY_SUMMARY.md`
+- `docs/ACUPOINT_ANATOMY_FILL_PREVIEW.json`
+- `docs/ACUPOINT_ANATOMY_FILL_DIFF_SUMMARY.md`
+- coordination logs/status files
+
+Validation:
+- Anatomy review preview: PASS; 44 ultrasound high-risk points, 66 unique
+  combined review points, 15 point-specific findings, 16 peripheral-nerve
+  candidates, 0 source/code errors, 0 conflicts, 0 writes.
+- Fill-empty preview: PASS; 34 field proposals / 38 values across 28 points;
+  3 non-empty canonical fields skipped, 0 conflicts, 0 writes.
+- Both explicit `--apply` rejection tests: PASS.
+- JavaScript syntax and recursive JSON parse: PASS (483 JSON files).
+- Eight standard validators: PASS. Encoding remains the known 768-finding
+  baseline and contains no finding in this new staging lane.
+
+Protected areas not touched:
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, generated file, runtime UI,
+  case/SOAP, formula, herb, condition, or clinical data changed.
+
+Known risks / manual checks:
+- The 44-point ultrasound paper supports high-risk study membership, not a
+  complete anatomy description for every point. Regional targets must remain
+  review prompts.
+- MRI distances vary with BMI, sex, direction, angle, and individual anatomy;
+  no universal safe depth was staged.
+- CV22/ST11 candidates came from a public abstract and require full-text or
+  professional textbook review before any canonical use.
+- The Chapple 361-point catalog is registered for future work only because its
+  point-level catalog was not accessible for verified extraction in this batch.
+
+Next recommended action:
+- Ting/Claude reviews the 34 field proposals. Approval may authorize a separate
+  conflict-refusing, fill-empty-only apply script for individually accepted
+  proposals. Do not apply regional study-set targets as anatomy fields.
+- Continue broader muscles/bones/nerves/vessels filling only when a point-level
+  professional anatomy source is accessible.
+
+Claude review note:
+- Please verify the source-scope boundaries and spot-check ST9, CV22/ST11,
+  GV15/GV16, GB21/SI14/SI15, GV20, and the 16 peripheral-nerve candidates.
+
+---
+
 ## 2026-07-20 - Codex - WHO acupoint location staging and cun preview
 
 Date/time: 2026-07-20

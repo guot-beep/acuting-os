@@ -1,0 +1,746 @@
+{
+  "generated_at": "2026-07-21T08:13:20.982Z",
+  "canonical_input": "data/acupoints/361.json",
+  "staging_input": "data/imports/acupoint_anatomy/high_risk_review_staging.json",
+  "canonical_write_allowed": false,
+  "summary": {
+    "canonical_records_checked": 361,
+    "raw_source_candidates": 41,
+    "fill_empty_field_proposals": 34,
+    "proposed_values": 38,
+    "existing_nonempty_field_skips": 3,
+    "affected_points": 28,
+    "conflicts": 0,
+    "canonical_writes": 0
+  },
+  "rules": [
+    "Only wholly empty canonical arrays are eligible for this preview.",
+    "No populated field is appended to or overwritten.",
+    "Danger values are source review prompts, not needling instructions.",
+    "Nerve, vessel, and muscle values require field-level review before any later apply tool is authorized.",
+    "No population imaging distance is converted to a safe depth."
+  ],
+  "proposals": [
+    {
+      "code": "BL40",
+      "name_zh": "委中",
+      "field": "nerves",
+      "proposed_values": [
+        "tibial nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "BL54",
+      "name_zh": "秩邊",
+      "field": "nerves",
+      "proposed_values": [
+        "sciatic nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "CV22",
+      "name_zh": "天突",
+      "field": "vessels",
+      "proposed_values": [
+        "brachiocephalic vein"
+      ],
+      "source_ids": [
+        "zhang_cv22_st11_cadaver_2007"
+      ],
+      "rationales": [
+        "Named in the published abstract's CV22 cadaver safety findings."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB20",
+      "name_zh": "風池",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: major neck vessels. Review internal jugular/common carotid region and needle direction; no universal safe depth is staged."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB21",
+      "name_zh": "肩井",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: pleural membrane. Pneumothorax-focused review; angle and direction materially change risk."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GB34",
+      "name_zh": "陽陵泉",
+      "field": "nerves",
+      "proposed_values": [
+        "peroneal nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV20",
+      "name_zh": "百會",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: parietal foramina; emissary veins; greater occipital nerves; occipital vessels. Stage as anatomy candidates only; proximity does not imply efficacy or a universal insertion rule."
+      ],
+      "source_ids": [
+        "lee_gv20_anatomy_2023"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV20",
+      "name_zh": "百會",
+      "field": "nerves",
+      "proposed_values": [
+        "greater occipital nerves"
+      ],
+      "source_ids": [
+        "lee_gv20_anatomy_2023"
+      ],
+      "rationales": [
+        "Named in the GV20 anatomy article."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "GV20",
+      "name_zh": "百會",
+      "field": "vessels",
+      "proposed_values": [
+        "emissary veins",
+        "occipital vessels"
+      ],
+      "source_ids": [
+        "lee_gv20_anatomy_2023"
+      ],
+      "rationales": [
+        "Named in the GV20 anatomy article."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "HT7",
+      "name_zh": "神門",
+      "field": "nerves",
+      "proposed_values": [
+        "ulnar nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "KI3",
+      "name_zh": "太谿",
+      "field": "nerves",
+      "proposed_values": [
+        "tibial nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LI11",
+      "name_zh": "曲池",
+      "field": "nerves",
+      "proposed_values": [
+        "radial nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LI18",
+      "name_zh": "扶突",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: major neck vessels. Review major neck vessels and individual anatomy before any technique-field proposal."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU1",
+      "name_zh": "中府",
+      "field": "nerves",
+      "proposed_values": [
+        "brachial plexus"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU2",
+      "name_zh": "雲門",
+      "field": "nerves",
+      "proposed_values": [
+        "brachial plexus"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU5",
+      "name_zh": "尺澤",
+      "field": "nerves",
+      "proposed_values": [
+        "radial nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU7",
+      "name_zh": "列缺",
+      "field": "nerves",
+      "proposed_values": [
+        "superficial radial nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "LU9",
+      "name_zh": "太淵",
+      "field": "nerves",
+      "proposed_values": [
+        "superficial radial nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "PC3",
+      "name_zh": "曲澤",
+      "field": "nerves",
+      "proposed_values": [
+        "median nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "PC6",
+      "name_zh": "內關",
+      "field": "nerves",
+      "proposed_values": [
+        "median nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI8",
+      "name_zh": "小海",
+      "field": "nerves",
+      "proposed_values": [
+        "ulnar nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI14",
+      "name_zh": "肩外俞",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: pleural membrane. Pneumothorax-focused review; this posterior shoulder region is not fully protected by scapula."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI15",
+      "name_zh": "肩中俞",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: pleural membrane. Pneumothorax-focused review; this posterior shoulder region is not fully protected by scapula."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI16",
+      "name_zh": "天窗",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: major neck vessels. Review major neck vessels and individual anatomy before any technique-field proposal."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SI17",
+      "name_zh": "天容",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: major neck vessels. Review major neck vessels and individual anatomy before any technique-field proposal."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SP9",
+      "name_zh": "陰陵泉",
+      "field": "nerves",
+      "proposed_values": [
+        "saphenous nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SP12",
+      "name_zh": "衝門",
+      "field": "nerves",
+      "proposed_values": [
+        "femoral nerve"
+      ],
+      "source_ids": [
+        "stuber_radial_nerve_ultrasound_2019"
+      ],
+      "rationales": [
+        "The source explicitly names this point-to-peripheral-nerve proximity relationship."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST9",
+      "name_zh": "人迎",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: sternocleidomastoid muscle; common carotid artery; thyroid cartilage. Review the point's relationship to the common carotid artery and adjacent neck structures before any anatomy-field proposal.",
+        "Source-identified anatomy review: internal jugular vein; common carotid artery. Review carotid sheath structures; no universal safe depth is staged."
+      ],
+      "source_ids": [
+        "kim_ultrasound_44_points_2017",
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST9",
+      "name_zh": "人迎",
+      "field": "muscles",
+      "proposed_values": [
+        "sternocleidomastoid muscle"
+      ],
+      "source_ids": [
+        "kim_ultrasound_44_points_2017"
+      ],
+      "rationales": [
+        "Named in the article's point-specific ST9 ultrasound SOP."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST9",
+      "name_zh": "人迎",
+      "field": "vessels",
+      "proposed_values": [
+        "common carotid artery",
+        "internal jugular vein"
+      ],
+      "source_ids": [
+        "kim_ultrasound_44_points_2017",
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Named in the article's point-specific ST9 ultrasound SOP.",
+        "Named as a major-vessel depth endpoint for the neck-point MRI review."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST11",
+      "name_zh": "氣舍",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: internal jugular vein; common carotid artery; vagus nerve. Abstract-level cadaver finding; verify full text and professional technique guidance before canonical use."
+      ],
+      "source_ids": [
+        "zhang_cv22_st11_cadaver_2007"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST11",
+      "name_zh": "氣舍",
+      "field": "nerves",
+      "proposed_values": [
+        "vagus nerve"
+      ],
+      "source_ids": [
+        "zhang_cv22_st11_cadaver_2007"
+      ],
+      "rationales": [
+        "Named in the published abstract's ST11 cadaver safety findings."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST11",
+      "name_zh": "氣舍",
+      "field": "vessels",
+      "proposed_values": [
+        "internal jugular vein",
+        "common carotid artery"
+      ],
+      "source_ids": [
+        "zhang_cv22_st11_cadaver_2007"
+      ],
+      "rationales": [
+        "Named in the published abstract's ST11 cadaver safety findings."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "TE16",
+      "name_zh": "天牖",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: major neck vessels. Review major neck vessels and individual anatomy before any technique-field proposal."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false
+    }
+  ],
+  "existing_field_skips": [
+    {
+      "code": "CV22",
+      "name_zh": "天突",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: apical pleura; brachiocephalic vein. Abstract-level cadaver finding; verify full text and professional technique guidance before canonical use."
+      ],
+      "source_ids": [
+        "zhang_cv22_st11_cadaver_2007"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [
+        "Trachea, brachiocephalic vein, and aortic arch lie deep — advanced technique required; beginners should not needle deeply."
+      ],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false,
+      "reason": "canonical field is already non-empty; no append or overwrite previewed"
+    },
+    {
+      "code": "GV15",
+      "name_zh": "啞門",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: dura mater. MRI study measured skin-to-dura distance; do not convert a cohort measurement into a universal safe depth."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [
+        "Medulla oblongata lies deep — needle slowly toward the mandible, never upward or deep. Potentially fatal if misdirected."
+      ],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false,
+      "reason": "canonical field is already non-empty; no append or overwrite previewed"
+    },
+    {
+      "code": "GV16",
+      "name_zh": "風府",
+      "field": "danger",
+      "proposed_values": [
+        "Source-identified anatomy review: dura mater. MRI study measured skin-to-dura distance; direction, BMI, sex, and individual anatomy affect risk."
+      ],
+      "source_ids": [
+        "lin_mri_neck_shoulder_depth_2015"
+      ],
+      "rationales": [
+        "Point-specific safety/anatomy finding; staged as a review prompt, not a technique or universal-depth rule."
+      ],
+      "current_value": [
+        "Medulla oblongata lies deep — same precautions as GV15."
+      ],
+      "review_status": "draft",
+      "source_status": "source_extracted_pending_record_review",
+      "conflict": false,
+      "canonical_write_allowed": false,
+      "reason": "canonical field is already non-empty; no append or overwrite previewed"
+    }
+  ]
+}
