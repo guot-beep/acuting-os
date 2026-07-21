@@ -42,6 +42,53 @@ Claude review note:
 
 ---
 
+## 2026-07-21 - Codex - Protocol-table acupoint anatomy preview
+
+Date/time: 2026-07-21
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Extract point-specific tissue and innervation rows from open human-study
+tables, while withholding cross-source differences from canonical proposals.
+
+Files changed:
+- `data/imports/acupoint_anatomy/source_manifest.json`
+- `data/imports/acupoint_anatomy/protocol_table_staging.json`
+- `scripts/preview-acupoint-protocol-anatomy.js`
+- `docs/ACUPOINT_PROTOCOL_ANATOMY_PREVIEW.json`
+- `docs/ACUPOINT_PROTOCOL_ANATOMY_SUMMARY.md`
+- coordination logs/status files
+
+Validation:
+- Preview: PASS; 12 source rows / 11 unique points, 8 fill-empty field
+  proposals / 12 values, 1 cross-source conflict withheld, 0 code/source
+  errors, 0 canonical writes.
+- Explicit `--apply` rejection: PASS.
+- JavaScript syntax, recursive JSON parse, and eight standard validators:
+  PASS. Encoding remains the known 768-finding baseline.
+
+Protected areas not touched:
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, generated file, runtime UI,
+  case/SOAP, formula, herb, condition, or clinical data changed.
+
+Known risks / manual checks:
+- Study protocol tissue paths are not exhaustive universal point anatomy.
+- Segmental innervation is retained as study metadata and is not forced into
+  the canonical `nerves` array.
+- LR3 is deliberately withheld: one study names first dorsal interosseous,
+  another extensor digitorum brevis with a different innervation description.
+
+Next recommended action:
+- Spot-check the eight proposals against a professional anatomy text.
+- Preserve LR3 as unresolved until localization, direction, and depth explain
+  or resolve the source difference.
+
+Claude review note:
+- Please review the source-scope language and independently check LR3, ST36,
+  SP6, LI4, and the two abdominal rectus-abdominis records.
+
+---
+
 ## 2026-07-21 - Codex - High-risk acupoint anatomy staging and fill preview
 
 Date/time: 2026-07-21

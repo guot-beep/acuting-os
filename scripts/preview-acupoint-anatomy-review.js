@@ -24,6 +24,7 @@ if (staging.review_status !== "draft") throw new Error("Anatomy staging must rem
 
 const canonicalByCode = new Map(canonical.map((point) => [point.code, point]));
 const sourcesById = new Map(manifest.sources.map((source) => [source.id, source]));
+const previewSourceIds = new Set(["chapple_361_anatomy_catalog_2013"]);
 
 function requireCode(code, context) {
   if (!canonicalByCode.has(code)) throw new Error(`${context}: unknown canonical point code ${code}`);
@@ -36,6 +37,7 @@ function requireSource(sourceId, context) {
 const studySetCodes = [];
 for (const set of staging.study_sets) {
   requireSource(set.source_id, `study set ${set.id}`);
+  previewSourceIds.add(set.source_id);
   for (const code of set.codes) {
     requireCode(code, `study set ${set.id}`);
     studySetCodes.push(code);
@@ -48,6 +50,7 @@ if (new Set(studySetCodes).size !== 44) throw new Error("The 44-point ultrasound
 for (const finding of staging.point_specific_findings) {
   requireCode(finding.code, "point-specific finding");
   requireSource(finding.source_id, `point-specific finding ${finding.code}`);
+  previewSourceIds.add(finding.source_id);
   if (!finding.structures.length) throw new Error(`Point-specific finding ${finding.code} has no structures`);
 }
 
@@ -55,6 +58,7 @@ const nerveKeys = new Set();
 for (const finding of staging.explicit_peripheral_nerve_candidates) {
   requireCode(finding.code, "nerve candidate");
   requireSource(finding.source_id, `nerve candidate ${finding.code}`);
+  previewSourceIds.add(finding.source_id);
   const key = `${finding.code}|${finding.nerve}`;
   if (nerveKeys.has(key)) throw new Error(`Duplicate nerve candidate ${key}`);
   nerveKeys.add(key);
@@ -120,6 +124,7 @@ for (const record of reviewByCode.values()) {
 }
 
 const records = [...reviewByCode.values()].sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
+const previewSources = manifest.sources.filter((source) => previewSourceIds.has(source.id));
 const regionCounts = {};
 for (const set of staging.study_sets) regionCounts[set.risk_region] = set.codes.length;
 
@@ -129,7 +134,7 @@ const summary = {
   unique_points_in_review_preview: records.length,
   point_specific_findings: staging.point_specific_findings.length,
   explicit_peripheral_nerve_candidates: staging.explicit_peripheral_nerve_candidates.length,
-  sources_registered: manifest.sources.length,
+  sources_registered: previewSources.length,
   source_reference_errors: 0,
   unknown_point_codes: 0,
   conflicts: 0,
@@ -151,7 +156,7 @@ const payload = {
     "All proposed anatomy remains draft pending professional record-level review.",
     "This preview does not provide treatment guidance or medical advice."
   ],
-  sources: manifest.sources,
+  sources: previewSources,
   records
 };
 

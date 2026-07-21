@@ -23,6 +23,17 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-21 - Extract protocol-table acupoint anatomy (Codex)
+
+Added a second review-only anatomy batch from two open peer-reviewed human
+studies. Twelve source-table rows cover 11 points with protocol tissue paths,
+muscle/skin innervation, and segmental context. The fill-empty preview proposes
+8 fields / 12 values, including structured muscles for seven points and muscle
+plus nerve candidates for ST36. LR3 is intentionally withheld because two
+studies name different muscle paths and innervation; the disagreement remains
+visible for anatomy review instead of being normalized. Apply mode is rejected,
+conflicts written to canonical data are 0, and canonical writes are 0.
+
 ### 2026-07-21 - Stage high-risk acupoint anatomy and safety evidence (Codex)
 
 Registered six peer-reviewed anatomy/safety sources and built a review-only

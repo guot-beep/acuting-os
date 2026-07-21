@@ -29,6 +29,7 @@ Purpose: fast status overlay for `docs/CODEX_TASK_QUEUE.md`. This file does not 
 | H1. Herb comparison groups | PREVIEW READY / GATED | `docs/HERB_COMPARISON_GROUP_DIFF_SUMMARY.md`; 202 herbs, 34 mechanical category groups, 1,430 directed links, 0 canonical writes. Ting/Claude must review five groups larger than 10 herbs before any merge. |
 | Acupoint WHO location/cun source lane | PREVIEW READY / GATED | `docs/WHO_ACUPOINT_LOCATION_EXTRACTION_SUMMARY.md` and `docs/WHO_CUN_FILL_DIFF_SUMMARY.md`; WHO staging 361/361, 100 fill-empty B-cun proposals, 0 canonical writes. Five page-image transcriptions require second review. |
 | Acupoint high-risk anatomy source lane | PREVIEW READY / GATED | `docs/ACUPOINT_HIGH_RISK_ANATOMY_SUMMARY.md` and `docs/ACUPOINT_ANATOMY_FILL_DIFF_SUMMARY.md`; 44-point ultrasound set, 66 unique review points, 34 fill-empty field proposals / 38 values for 28 points, 0 conflicts, 0 canonical writes. |
+| Acupoint protocol-table anatomy lane | PREVIEW READY / GATED | `docs/ACUPOINT_PROTOCOL_ANATOMY_SUMMARY.md`; 12 source rows / 11 points, 8 fill-empty field proposals / 12 values, LR3 cross-source conflict withheld, 0 canonical writes. |
 
 ## Track E-I — Conditions interop (added 2026-07-12)
 

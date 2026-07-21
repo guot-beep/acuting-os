@@ -1,0 +1,580 @@
+{
+  "generated_at": "2026-07-21T08:25:26.932Z",
+  "canonical_input": "data/acupoints/361.json",
+  "staging_input": "data/imports/acupoint_anatomy/protocol_table_staging.json",
+  "canonical_write_allowed": false,
+  "summary": {
+    "canonical_records_checked": 361,
+    "source_table_rows": 12,
+    "unique_points": 11,
+    "fill_empty_field_proposals": 8,
+    "proposed_values": 12,
+    "cross_source_conflicts": 1,
+    "withheld_or_existing_field_skips": 2,
+    "source_reference_errors": 0,
+    "unknown_point_codes": 0,
+    "canonical_writes": 0
+  },
+  "rules": [
+    "Protocol tissue is study-specific and is not a universal needling path.",
+    "Segmental innervation remains study metadata and is not forced into the canonical nerves array.",
+    "Cross-source muscle differences are withheld rather than silently merged.",
+    "Only wholly empty canonical arrays are eligible for fill proposals.",
+    "No treatment efficacy or universal depth claim is derived from these tables."
+  ],
+  "proposals": [
+    {
+      "code": "LI4",
+      "name_zh": "合谷",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "first dorsal interosseous muscle",
+        "second lumbrical muscle",
+        "adductor pollicis muscle"
+      ],
+      "source_ids": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "PC6",
+      "name_zh": "內關",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "flexor digitorum superficialis muscle"
+      ],
+      "source_ids": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SP6",
+      "name_zh": "三陰交",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "flexor digitorum longus muscle",
+        "tibialis posterior muscle"
+      ],
+      "source_ids": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "SP9",
+      "name_zh": "陰陵泉",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "gastrocnemius muscle"
+      ],
+      "source_ids": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST25",
+      "name_zh": "天樞",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "rectus abdominis muscle"
+      ],
+      "source_ids": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST29",
+      "name_zh": "歸來",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "rectus abdominis muscle"
+      ],
+      "source_ids": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST36",
+      "name_zh": "足三里",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "tibialis anterior muscle"
+      ],
+      "source_ids": [
+        "takahashi_lower_limb_hemodynamics_2012"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    },
+    {
+      "code": "ST36",
+      "name_zh": "足三里",
+      "field": "nerves",
+      "current_value": [],
+      "proposed_values": [
+        "lateral cutaneous nerve of the calf",
+        "deep fibular nerve"
+      ],
+      "source_ids": [
+        "takahashi_lower_limb_hemodynamics_2012"
+      ],
+      "rationale": "Human study explicitly names cutaneous or muscle innervation at the stimulation site.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false
+    }
+  ],
+  "conflicts": [
+    {
+      "code": "LR3",
+      "field": "muscles",
+      "source_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "first dorsal interosseous muscle"
+          ]
+        },
+        {
+          "source_id": "takahashi_lower_limb_hemodynamics_2012",
+          "values": [
+            "extensor digitorum brevis muscle"
+          ]
+        }
+      ],
+      "resolution": "withheld_pending_insertion_path_and_anatomy_review"
+    }
+  ],
+  "skips": [
+    {
+      "code": "LR3",
+      "name_zh": "太衝",
+      "field": "muscles",
+      "current_value": [],
+      "proposed_values": [
+        "first dorsal interosseous muscle",
+        "extensor digitorum brevis muscle"
+      ],
+      "source_ids": [
+        "wu_pcos_acupuncture_protocol_2013",
+        "takahashi_lower_limb_hemodynamics_2012"
+      ],
+      "rationale": "Study-protocol tissue path explicitly names these muscles; candidate is not an exhaustive universal anatomy statement.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false,
+      "reason": "cross-source anatomy conflict"
+    },
+    {
+      "code": "LR3",
+      "name_zh": "太衝",
+      "field": "nerves",
+      "current_value": [],
+      "proposed_values": [
+        "deep fibular nerve",
+        "dorsal digital nerve",
+        "lateral terminal branch of the deep fibular nerve"
+      ],
+      "source_ids": [
+        "takahashi_lower_limb_hemodynamics_2012"
+      ],
+      "rationale": "Human study explicitly names cutaneous or muscle innervation at the stimulation site.",
+      "review_status": "draft",
+      "source_status": "protocol_table_extracted_pending_anatomy_review",
+      "canonical_write_allowed": false,
+      "reason": "cross-source anatomy conflict"
+    }
+  ],
+  "study_records": [
+    {
+      "code": "CV3",
+      "name_zh": "中極",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "fibrous tissue",
+            "linea alba"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "L1"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "CV6",
+      "name_zh": "氣海",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "fibrous tissue",
+            "linea alba"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "T11"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "GV20",
+      "name_zh": "百會",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "epicranial aponeurosis"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "C2-C3",
+            "trigeminal nerve"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "LI4",
+      "name_zh": "合谷",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "first dorsal interosseous muscle",
+            "second lumbrical muscle",
+            "adductor pollicis muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "C8",
+            "T1"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "LR3",
+      "name_zh": "太衝",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013",
+        "takahashi_lower_limb_hemodynamics_2012"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "first dorsal interosseous muscle"
+          ]
+        },
+        {
+          "source_id": "takahashi_lower_limb_hemodynamics_2012",
+          "values": [
+            "extensor digitorum brevis muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "S2-S3"
+          ]
+        },
+        {
+          "source_id": "takahashi_lower_limb_hemodynamics_2012",
+          "values": []
+        }
+      ],
+      "cutaneous_innervation": [
+        "deep fibular nerve",
+        "dorsal digital nerve"
+      ],
+      "muscle_innervation": [
+        "lateral terminal branch of the deep fibular nerve"
+      ],
+      "cutaneous_segmental_innervation": [
+        "L5"
+      ],
+      "muscle_segmental_innervation": [
+        "L5",
+        "S1"
+      ],
+      "conflict_status": "cross_source_review_required",
+      "review_status": "draft"
+    },
+    {
+      "code": "PC6",
+      "name_zh": "內關",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "flexor digitorum superficialis muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "C8",
+            "T1"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "SP6",
+      "name_zh": "三陰交",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "flexor digitorum longus muscle",
+            "tibialis posterior muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "L4-L5",
+            "S1-S2"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "SP9",
+      "name_zh": "陰陵泉",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "gastrocnemius muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "S1-S2"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "ST25",
+      "name_zh": "天樞",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "rectus abdominis muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "T6-T12"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "ST29",
+      "name_zh": "歸來",
+      "sources": [
+        "wu_pcos_acupuncture_protocol_2013"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "rectus abdominis muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "wu_pcos_acupuncture_protocol_2013",
+          "values": [
+            "T6-T12"
+          ]
+        }
+      ],
+      "cutaneous_innervation": [],
+      "muscle_innervation": [],
+      "cutaneous_segmental_innervation": [],
+      "muscle_segmental_innervation": [],
+      "conflict_status": "none",
+      "review_status": "draft"
+    },
+    {
+      "code": "ST36",
+      "name_zh": "足三里",
+      "sources": [
+        "takahashi_lower_limb_hemodynamics_2012"
+      ],
+      "protocol_tissue_variants": [
+        {
+          "source_id": "takahashi_lower_limb_hemodynamics_2012",
+          "values": [
+            "tibialis anterior muscle"
+          ]
+        }
+      ],
+      "segmental_innervation": [
+        {
+          "source_id": "takahashi_lower_limb_hemodynamics_2012",
+          "values": []
+        }
+      ],
+      "cutaneous_innervation": [
+        "lateral cutaneous nerve of the calf"
+      ],
+      "muscle_innervation": [
+        "deep fibular nerve"
+      ],
+      "cutaneous_segmental_innervation": [
+        "L5",
+        "S1",
+        "S2"
+      ],
+      "muscle_segmental_innervation": [
+        "L4",
+        "L5"
+      ],
+      "conflict_status": "none",
+      "review_status": "draft"
+    }
+  ]
+}

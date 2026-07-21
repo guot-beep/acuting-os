@@ -70,6 +70,28 @@
       "access_status": "abstract_public_full_catalog_not_extracted",
       "allowed_use": ["future_full_361_anatomy_lane_design"],
       "limitations": ["The abstract confirms 361-point scope, but the point-level catalog was not accessible for verified extraction in this batch.", "Do not infer point anatomy from the abstract."]
+    },
+    {
+      "id": "wu_pcos_acupuncture_protocol_2013",
+      "title": "Acupuncture and Clomiphene Citrate for Live Birth in Polycystic Ovary Syndrome: Study Design of a Randomized Controlled Trial",
+      "source_type": "peer_reviewed_trial_protocol",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3762180/",
+      "pmcid": "PMC3762180",
+      "access_status": "public_full_text",
+      "allowed_use": ["protocol_specific_needle_tissue", "protocol_table_segmental_innervation"],
+      "limitations": ["The table documents tissues and innervation used in this trial protocol, not an exhaustive universal anatomy catalog.", "Protocol treatment context does not establish point efficacy or a general treatment recommendation."]
+    },
+    {
+      "id": "takahashi_lower_limb_hemodynamics_2012",
+      "title": "Haemodynamic Changes in the Superior Mesenteric Artery Induced by Acupuncture Stimulation on the Lower Limbs",
+      "source_type": "peer_reviewed_human_study",
+      "authority_tier": "A-",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3366235/",
+      "pmcid": "PMC3366235",
+      "access_status": "public_full_text",
+      "allowed_use": ["ST36_and_LR3_muscle_candidates", "point_specific_cutaneous_and_muscle_innervation"],
+      "limitations": ["The study describes its own stimulation sites and does not establish a universal insertion path.", "Different LR3 protocol descriptions must be retained as a review conflict rather than silently merged."]
     }
   ]
 }

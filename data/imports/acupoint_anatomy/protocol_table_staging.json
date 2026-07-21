@@ -1,0 +1,111 @@
+{
+  "staging_version": "1.0",
+  "created_at": "2026-07-21",
+  "canonical_write_allowed": false,
+  "review_status": "draft",
+  "scope_note": "Protocol-specific tissue paths and segmental innervation for anatomy study; not universal needling guidance or efficacy evidence.",
+  "records": [
+    {
+      "code": "CV3",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["fibrous tissue", "linea alba"],
+      "muscle_candidates": [],
+      "segmental_innervation": ["L1"],
+      "protocols": ["A", "B"]
+    },
+    {
+      "code": "CV6",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["fibrous tissue", "linea alba"],
+      "muscle_candidates": [],
+      "segmental_innervation": ["T11"],
+      "protocols": ["A", "B"]
+    },
+    {
+      "code": "ST29",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["rectus abdominis muscle"],
+      "muscle_candidates": ["rectus abdominis muscle"],
+      "segmental_innervation": ["T6-T12"],
+      "protocols": ["A", "B"]
+    },
+    {
+      "code": "SP6",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["flexor digitorum longus muscle", "tibialis posterior muscle"],
+      "muscle_candidates": ["flexor digitorum longus muscle", "tibialis posterior muscle"],
+      "segmental_innervation": ["L4-L5", "S1-S2"],
+      "protocols": ["A", "B"]
+    },
+    {
+      "code": "SP9",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["gastrocnemius muscle"],
+      "muscle_candidates": ["gastrocnemius muscle"],
+      "segmental_innervation": ["S1-S2"],
+      "protocols": ["A"]
+    },
+    {
+      "code": "LI4",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["first dorsal interosseous muscle", "second lumbrical muscle", "adductor pollicis muscle"],
+      "muscle_candidates": ["first dorsal interosseous muscle", "second lumbrical muscle", "adductor pollicis muscle"],
+      "segmental_innervation": ["C8", "T1"],
+      "protocols": ["A"]
+    },
+    {
+      "code": "GV20",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["epicranial aponeurosis"],
+      "muscle_candidates": [],
+      "segmental_innervation": ["C2-C3", "trigeminal nerve"],
+      "protocols": ["A", "B"]
+    },
+    {
+      "code": "ST25",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["rectus abdominis muscle"],
+      "muscle_candidates": ["rectus abdominis muscle"],
+      "segmental_innervation": ["T6-T12"],
+      "protocols": ["B"]
+    },
+    {
+      "code": "LR3",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["first dorsal interosseous muscle"],
+      "muscle_candidates": ["first dorsal interosseous muscle"],
+      "segmental_innervation": ["S2-S3"],
+      "protocols": ["B"],
+      "conflict_status": "cross_source_review_required"
+    },
+    {
+      "code": "PC6",
+      "source_id": "wu_pcos_acupuncture_protocol_2013",
+      "protocol_tissue": ["flexor digitorum superficialis muscle"],
+      "muscle_candidates": ["flexor digitorum superficialis muscle"],
+      "segmental_innervation": ["C8", "T1"],
+      "protocols": ["B"]
+    },
+    {
+      "code": "ST36",
+      "source_id": "takahashi_lower_limb_hemodynamics_2012",
+      "protocol_tissue": ["tibialis anterior muscle"],
+      "muscle_candidates": ["tibialis anterior muscle"],
+      "cutaneous_innervation": ["lateral cutaneous nerve of the calf"],
+      "muscle_innervation": ["deep fibular nerve"],
+      "cutaneous_segmental_innervation": ["L5", "S1", "S2"],
+      "muscle_segmental_innervation": ["L4", "L5"]
+    },
+    {
+      "code": "LR3",
+      "source_id": "takahashi_lower_limb_hemodynamics_2012",
+      "protocol_tissue": ["extensor digitorum brevis muscle"],
+      "muscle_candidates": ["extensor digitorum brevis muscle"],
+      "cutaneous_innervation": ["deep fibular nerve", "dorsal digital nerve"],
+      "muscle_innervation": ["lateral terminal branch of the deep fibular nerve"],
+      "cutaneous_segmental_innervation": ["L5"],
+      "muscle_segmental_innervation": ["L5", "S1"],
+      "conflict_status": "cross_source_review_required"
+    }
+  ]
+}

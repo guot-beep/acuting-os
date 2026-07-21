@@ -5,7 +5,7 @@ before scanning the longer `docs/CODEX_HANDOFF.md`.
 
 Last updated: 2026-07-21
 Agent: Codex, reconciled with Claude handoff
-Status: `ACUPOINT_HIGH_RISK_ANATOMY_STAGING_READY_REVIEW`
+Status: `ACUPOINT_ANATOMY_SOURCE_BATCHES_READY_REVIEW`
 Current branch: `main`
 Reviewed work commit: `4c8879a` - `docs: Claude review — accept Codex dual-source herb visual references (5af7892)`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
@@ -17,6 +17,13 @@ preview proposes 34 fields / 38 values across 28 points, skips three non-empty
 canonical safety fields, and reports 0 conflicts and 0 canonical writes. It
 does not infer universal safe depth or treat regional study membership as a
 point-specific anatomy claim. `data/acupoints/361.json` remains untouched.
+
+Continuation batch: two open peer-reviewed human-study tables add 12 source
+rows across 11 points. A strict preview proposes 8 empty fields / 12 values:
+muscle candidates for LI4, PC6, SP6, SP9, ST25, ST29, and ST36, plus named
+cutaneous/muscle nerves for ST36. LR3 is withheld because the two studies name
+different muscle paths and segmental descriptions. The disagreement remains
+explicit; 0 canonical writes.
 
 Earlier Codex work: a source-backed, review-only WHO location extraction for
 all 361 standard points. The source PDF is fingerprinted but not committed.
