@@ -38,6 +38,63 @@ Claude review note:
 
 ---
 
+## 2026-07-20 - Codex - WHO acupoint location staging and cun preview
+
+Date/time: 2026-07-20
+Agent: Codex
+Branch: `main`
+Commit or stash: this coherent task commit (hash reported after commit)
+Task: Inventory the visible 361-point content gaps, acquire an authoritative
+location source, and prepare a no-apply WHO B-cun fill preview.
+
+Files changed:
+- `scripts/report-acupoint-content-gaps.js`
+- `scripts/extract-who-acupoint-locations.py`
+- `scripts/preview-who-cun-fill.js`
+- `data/imports/acupoint_sources/*`
+- `docs/ACUPOINT_CONTENT_GAP_REPORT.md`
+- `docs/WHO_ACUPOINT_LOCATION_EXTRACTION_SUMMARY.md`
+- `docs/WHO_CUN_FILL_PREVIEW.json`
+- `docs/WHO_CUN_FILL_DIFF_SUMMARY.md`
+- coordination logs/status files
+
+Validation:
+- Gap report: PASS; 361 records, core eight content fields complete.
+- WHO extraction: PASS; 361/361 records, 176 records with explicit B-cun
+  fragments, 0 canonical writes.
+- Cun preview: PASS; 100 fill-empty proposals, 131 unresolved, 0 conflicts,
+  0 canonical writes.
+- Explicit cun `--apply` rejection: PASS.
+- Python compile, JavaScript syntax, recursive JSON parse, and standard
+  validators: PASS (see commit handoff output).
+- Encoding remains the expected known baseline; no canonical data changed.
+
+Protected areas not touched:
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, generated file, runtime UI,
+  case/SOAP, herb, formula, condition, or clinical data changed.
+
+Known risks / manual checks:
+- LI7 and BL47-BL50 use page-image transcription because the PDF text layer
+  omitted their headers. They are explicitly flagged for second visual review.
+- 354 WHO/current location strings differ after strict normalized comparison;
+  most are wording/order/B-cun differences, not automatic errors.
+- WHO supports location and proportional measurement, not point-specific
+  needling, moxa, function, indication, or efficacy claims.
+- The official IRIS direct endpoint returned a web shell during acquisition;
+  the temporary MEDBOX mirror matched WHO title/ISBN and is SHA-256 recorded.
+
+Next recommended action:
+- Ting/Claude reviews the 100 B-cun proposals and the five page-image records.
+  Approval would permit a separate fill-empty/conflict-refusing apply tool.
+- Next independent source lane should address high-risk regional anatomy, not
+  bulk clinical efficacy or inferred moxibustion.
+
+Claude review note:
+- Please verify source boundaries and sample WHO page locators. This commit
+  intentionally has no canonical apply path.
+
+---
+
 ## 2026-07-20 - Codex - H1 herb comparison-group preview
 
 Date/time: 2026-07-20

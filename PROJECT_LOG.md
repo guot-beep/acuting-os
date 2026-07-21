@@ -23,6 +23,21 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-20 - Build WHO acupoint source staging and gap inventory (Codex)
+
+Replaced the vague "many fields pending" problem with a reproducible 361-point
+gap inventory and source-lane plan. Core bilingual location, function,
+indication, needling, and contraindication fields are complete, while the main
+gaps are explicit moxa wording (343), cun measurement (231), anatomy terms
+(296), structured muscles/bones/nerves/vessels (361 each), source traceability
+(40), and exam/clinical study fields. Parsed the WHO 2008 point-location
+standard into a 361-record review-only staging file with PDF page locators and
+SHA-256; 356 entries came from the PDF text layer and five malformed-text-layer
+entries were transcribed from rendered source pages with a separate extraction
+method. A no-apply preview proposes filling 100 currently empty
+`cun_measurement` fields from explicit WHO B-cun clauses; 131 remain unresolved,
+0 conflicts, 0 canonical writes. The complete copyrighted PDF is not committed.
+
 ### 2026-07-20 - Preview herb comparison groups and related links (Codex)
 
 Added a review-only H1 generator that reuses the 202-herb canon's 34 exact

@@ -5,11 +5,19 @@ before scanning the longer `docs/CODEX_HANDOFF.md`.
 
 Last updated: 2026-07-20
 Agent: Codex, reconciled with Claude handoff
-Status: `H1_HERB_COMPARISON_GROUP_PREVIEW_READY_REVIEW`
+Status: `WHO_ACUPOINT_LOCATION_STAGING_READY_REVIEW`
 Current branch: `main`
 Reviewed work commit: `0d0e5c4` - `LL3: fill PCOS pattern comparison draft`
 Active claim: LL3 comparison fill on `main` (Codex, 2026-07-14)
-Latest Codex work: a review-only H1 herb comparison preview. It mechanically
+Latest Codex work: a source-backed, review-only WHO location extraction for all
+361 standard points. The source PDF is fingerprinted but not committed. The
+staging retains page locators and extraction method; 356 records came from the
+PDF text layer and LI7/BL47-BL50 were transcribed from rendered source pages and
+flagged for second visual review. A separate no-apply preview proposes 100
+fill-empty `cun_measurement` values, leaves 131 unresolved, and reports 0
+conflicts and 0 canonical writes. `data/acupoints/361.json` remains untouched.
+
+Earlier Codex work: a review-only H1 herb comparison preview. It mechanically
 maps all 202 herbs into 34 groups using their existing exact bilingual
 categories, proposes 1,430 directed `related_herbs` ID links, leaves
 `substitution_context_zh` empty, and reports 0 conflicts and 0 canonical

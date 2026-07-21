@@ -1,0 +1,82 @@
+{
+  "manifest_version": "1.0",
+  "created_at": "2026-07-20",
+  "purpose": "Source acquisition lanes for filling acupoint content gaps without overwriting canonical data.",
+  "canonical_write_allowed": false,
+  "sources": [
+    {
+      "id": "who_wpro_point_locations_2008",
+      "name": "WHO Standard Acupuncture Point Locations in the Western Pacific Region",
+      "authority_tier": "A",
+      "url": "https://iris.who.int/handle/10665/353407",
+      "download_url": "https://iris.who.int/bitstream/handle/10665/353407/9789290613831-eng.pdf?sequence=1&isAllowed=y",
+      "temporary_retrieval_url": "https://www.medbox.org/dl/627a4de115110145a1723f64",
+      "retrieval_note": "On 2026-07-20 the IRIS direct endpoint returned its SPA shell. The MEDBOX mirror matched the WHO title and ISBN; extraction records the PDF SHA-256 and the complete PDF is not committed.",
+      "access_status": "public_official",
+      "license_note": "WHO publication; extract short structured facts with citations. Do not commit or redistribute the complete PDF.",
+      "allowed_fields": ["code", "chinese", "pinyin", "location_en", "cun_measurement", "landmarks"],
+      "forbidden_inference": ["needling_depth", "moxibustion", "clinical_efficacy"]
+    },
+    {
+      "id": "gbt_12346_2021",
+      "name": "GB/T 12346-2021 Nomenclature and location of meridian points",
+      "authority_tier": "A",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=397548AE7248D3D87DD15E0AB8107185",
+      "access_status": "public_official_preview",
+      "license_note": "National standard access terms apply. Store structured factual fields and source locators, not a mirrored full standard.",
+      "allowed_fields": ["code", "chinese", "pinyin", "location_zh", "cun_measurement", "landmarks"],
+      "forbidden_inference": ["functions", "indications", "needling_depth", "clinical_efficacy"]
+    },
+    {
+      "id": "who_acupuncture_practice_benchmarks_2021",
+      "name": "WHO benchmarks for the practice of acupuncture",
+      "authority_tier": "A",
+      "url": "https://www.who.int/publications/i/item/978-92-4-001688-0",
+      "access_status": "public_official",
+      "license_note": "Use for general practice and safety policy only.",
+      "allowed_fields": ["general_safety_policy", "review_prompts"],
+      "forbidden_inference": ["point_specific_needling", "point_specific_moxa", "clinical_efficacy"]
+    },
+    {
+      "id": "nccaom_acpl_outline_2020",
+      "name": "NCCAOM Acupuncture with Point Location Content Outline",
+      "authority_tier": "A-",
+      "url": "https://www.nccaom.org/wp-content/uploads/pdf/2020%20ACPL%20Content%20Outline%205119.pdf",
+      "access_status": "public_official",
+      "license_note": "Use to define exam scope, not to invent per-point facts or reproduce the document.",
+      "allowed_fields": ["exam_scope", "review_prompts"],
+      "forbidden_inference": ["nccaom_high_yield_point", "point_function", "point_indication"]
+    },
+    {
+      "id": "nccih_acupuncture_evidence_safety",
+      "name": "NCCIH Acupuncture: Effectiveness and Safety",
+      "authority_tier": "A-",
+      "url": "https://www.nccih.nih.gov/health/acupuncture-effectiveness-and-safety",
+      "access_status": "public_official",
+      "license_note": "Summarize condition-level evidence conservatively and retain review dates.",
+      "allowed_fields": ["condition_level_evidence", "general_safety_context"],
+      "forbidden_inference": ["single_point_efficacy", "automatic_treatment_recommendation"]
+    },
+    {
+      "id": "ting_notion_bastyr_acupuncture_notes",
+      "name": "Ting private Bastyr acupuncture and NCCAOM notes",
+      "authority_tier": "course_note",
+      "url": "https://app.notion.com/p/37647f6dea3581319005f15db4fe39a3",
+      "access_status": "private_connected_workspace",
+      "license_note": "Private study use. Cite the exact Notion page ID and preserve course-note status.",
+      "allowed_fields": ["nccaom_high_yield", "clinical_pearls", "point_pairings", "teacher_safety_emphasis", "moxa_context"],
+      "forbidden_inference": ["source_checked_upgrade_without_review", "public_medical_claim"]
+    },
+    {
+      "id": "cloudtcm_acupoint_staging",
+      "name": "CloudTCM 361-point private staging capture",
+      "authority_tier": "B",
+      "url": "https://cloudtcm.com/acupoint",
+      "access_status": "private_staging_already_present",
+      "local_path": "data/imports/cloudtcm/staging_points.json",
+      "license_note": "Chinese-depth cross-check only. Existing D3 freeze remains in force.",
+      "allowed_fields": ["location_zh", "functions_zh", "indications_zh", "technique_zh", "cautions_zh", "source_url"],
+      "forbidden_inference": ["source_checked_upgrade", "automatic_canonical_merge", "clinical_efficacy"]
+    }
+  ]
+}

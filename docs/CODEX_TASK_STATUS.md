@@ -27,6 +27,7 @@ Purpose: fast status overlay for `docs/CODEX_TASK_QUEUE.md`. This file does not 
 | Encoding backlog repair | FROZEN | `validate-encoding` still reports 798 known findings; B1 triage found `git-recoverable=0`. Repair requires source-aware content refill, not mechanical git restore. |
 | C1. Source-check pilot | BLOCKED | Needs Bensky / approved school notes from Ting. |
 | H1. Herb comparison groups | PREVIEW READY / GATED | `docs/HERB_COMPARISON_GROUP_DIFF_SUMMARY.md`; 202 herbs, 34 mechanical category groups, 1,430 directed links, 0 canonical writes. Ting/Claude must review five groups larger than 10 herbs before any merge. |
+| Acupoint WHO location/cun source lane | PREVIEW READY / GATED | `docs/WHO_ACUPOINT_LOCATION_EXTRACTION_SUMMARY.md` and `docs/WHO_CUN_FILL_DIFF_SUMMARY.md`; WHO staging 361/361, 100 fill-empty B-cun proposals, 0 canonical writes. Five page-image transcriptions require second review. |
 
 ## Track E-I — Conditions interop (added 2026-07-12)
 
