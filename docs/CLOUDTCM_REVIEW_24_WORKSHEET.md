@@ -34,6 +34,36 @@ SAPL 確認**(定位是安全欄位，我不逕自改資料，只標分類)。
 → **§A 真正需要裁決的只有 2 筆：BL4、SI16。** 其餘 13 筆若初判成立，
 verdict = 保留現有 / 補一個 CloudTCM 的替代描述作參考，不算事實打架。
 
+### §A 兩筆已用 WHO 裁決 (2026-07-21, Claude)
+
+Codex commit `16b7f11` staged 了 WHO WPRO 2008《WHO Standard Acupuncture Point
+Locations》全 361 穴 (`data/imports/acupoint_sources/who_location_staging.json`,
+source: iris.who.int/handle/10665/353407)。用它裁決上面兩筆——**兩筆都判我方資料有誤**。
+以下為建議，**未寫入 361.json**(仍凍結,待 Ting 逐筆核可)。
+
+**BL4 曲差 — 建議：採 CloudTCM(1.5 寸)，我方 3 寸為錯誤**
+
+- WHO (p.101)：*0.5 B-cun superior to the anterior hairline, **1.5 B-cun lateral**
+  to the anterior median line.*
+- 旁證(同一 staging 檔內鄰穴)：BL5 五處 1.5、BL7 通天 1.5——膀胱經頭部線**整條都是
+  旁開 1.5 寸**。我方 BL4 的「3 寸」是這條線上的**孤例**,前後穴皆 1.5。
+- 我方 BL5 自己寫的就是「神庭旁開 1.5 寸」,與 BL4 的 3 寸自相矛盾。
+- 結論：typo/誤植的可能性極高。建議改為「前髮際上 0.5 寸,前正中線旁開 1.5 寸」。
+
+**SI16 天窗 — 建議：改用 WHO 地標敘述，移除有爭議的寸數**
+
+- WHO (p.95)：*posterior to the sternocleidomastoid muscle, at the same level as
+  the **superior border of the thyroid cartilage***。**WHO 完全不給寸數**,只用地標。
+- 關鍵旁證：我方 SI16 寫「喉結旁開約 3 寸」,而我方 **LI18 扶突也寫「喉結旁開約 3 寸」**
+  ——兩個不同穴、同一組數字。WHO 則明確用胸鎖乳突肌關係區分二者：
+  LI18 = *between* the anterior and posterior borders of SCM;SI16 = *posterior to* SCM。
+- 結論：我方 SI16 的 3 寸疑為沿用 LI18 數值。CloudTCM 的 3.5 寸較可能是教材值,
+  但**最穩的修法是採 WHO 地標敘述**(SCM 後緣、平甲狀軟骨上緣),寸數列為次要參考。
+
+→ §A 剩餘動作：Ting 核可上述 2 筆後,由 guarded 腳本逐筆改 (§「裁決後的動作」)。
+§B 的 9 筆深度仍**未裁決**——WHO SAPL 只給定位不給針刺深度,無法用這份 staging 解決,
+仍需 Ting 依教材 (Deadman 等) 判定。
+
 ## §B 深度不相交 9 筆 — 全是真衝突，**且屬安全欄位**
 
 深度是安全負載欄位；**Claude 不從記憶建議深度**。9 筆同為「直刺深度範圍不相交」，
