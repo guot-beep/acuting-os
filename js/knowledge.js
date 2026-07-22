@@ -34,6 +34,37 @@
     return byKey;
   })();
 
+  /* Bidirectional browsing: tap any tag and see everything carrying it.
+     Filtering on the concept, not the raw string, is what makes this correct -
+     搜尋「感冒」would otherwise miss records tagged uri or chills_body_ache_context,
+     since those are aliases of the same concept. Same pattern as the 特定穴
+     filter on the point directory. */
+  let activeConcept = null;
+  const conceptListeners = new Set();
+  function setActiveConcept(id) {
+    activeConcept = activeConcept === id ? null : id;
+    conceptListeners.forEach((fn) => fn());
+  }
+  function recordHasConcept(tags, conceptId) {
+    if (!conceptId) return true;
+    return (tags || []).some((t) => resolveModernTag(t).id === conceptId);
+  }
+  function conceptLabel(id) {
+    const c = MODERN_VOCAB.get(id);
+    if (!c) return id;
+    return c.name_zh && c.name_en ? `${c.name_zh} · ${c.name_en}` : (c.name_zh || c.name_en);
+  }
+  function activeConceptBar() {
+    if (!activeConcept) return "";
+    return `<div class="k-active-filter">篩選中 <strong>${esc(conceptLabel(activeConcept))}</strong>
+      <button type="button" data-concept-clear>清除 Clear</button></div>`;
+  }
+  document.addEventListener("click", (e) => {
+    const chip = e.target.closest("[data-concept-id]");
+    if (chip) { setActiveConcept(chip.dataset.conceptId); return; }
+    if (e.target.closest("[data-concept-clear]")) { setActiveConcept(null); }
+  });
+
   function resolveModernTag(raw) {
     const hit = MODERN_VOCAB.get(String(raw));
     if (hit) return hit;
@@ -57,7 +88,9 @@
       const zh = c.name_zh || "";
       const en = c.name_en || "";
       const text = zh && en ? `${zh} · ${en}` : (zh || en || c.id);
-      return `<span class="k-modern-chip ${cls}">${esc(text)}</span>`;
+      const on = activeConcept === c.id ? " is-active" : "";
+      return `<button type="button" class="k-modern-chip ${cls}${on}" data-concept-id="${esc(c.id)}"
+        title="顯示所有含此項目的方劑與中藥">${esc(text)}</button>`;
     };
     const block = (labelZh, labelEn, arr, cls) => {
       if (!arr.length) return "";
@@ -71,6 +104,51 @@
     ].join("");
     return out || '<p class="k-detail-empty">—</p>';
   }
+  /* 相關病名與證型 was printing raw ids (pattern.spleen_qi_deficiency). The
+     registries already carry bilingual names — the pattern library has 脾氣虛 /
+     Spleen Qi Deficiency — they were simply never resolved at display time. */
+  const ENTITY_NAMES = (() => {
+    const map = new Map();
+    const add = (list) => {
+      const arr = Array.isArray(list) ? list : (list && Object.values(list).find(Array.isArray)) || [];
+      arr.forEach((r) => { if (r && r.id) map.set(r.id, r); });
+    };
+    if (K) {
+      add(K.patternLibrary);
+      add(K.conditionCanon);
+      add(K.conditions);
+      add(K.tdisRegistry);
+    }
+    return map;
+  })();
+
+  function entityLabel(id) {
+    const r = ENTITY_NAMES.get(id);
+    if (r) {
+      const zh = r.name_zh || "";
+      const en = r.name_en || "";
+      return zh && en ? `${zh} · ${en}` : (zh || en || id);
+    }
+    // Unknown id: humanise rather than expose the key.
+    return String(id).replace(/^[a-z_]+\./, "").replace(/_/g, " ")
+      .replace(/^\w/, (m) => m.toUpperCase());
+  }
+
+  function entityKindLabel(id) {
+    const p = String(id).split(".")[0];
+    return p === "pattern" ? "證型" : p === "eastern_disease" ? "中醫病名"
+      : p === "western_condition" || p === "cond" ? "西醫病名" : "";
+  }
+
+  function entityChips(ids) {
+    const list = (ids || []).filter(Boolean);
+    if (!list.length) return '<p class="k-detail-empty">—</p>';
+    return list.map((id) => {
+      const kind = entityKindLabel(id);
+      return `<span class="k-entity-chip">${kind ? `<small>${esc(kind)}</small>` : ""}${esc(entityLabel(id))}</span>`;
+    }).join("");
+  }
+
   function statusPill(status) {
     return `<span class="k-status k-status-${esc(status)}">${esc(status || "draft")}</span>`;
   }
@@ -231,7 +309,7 @@
           <div class="k-detail-watermark" aria-hidden="true">${esc((record.name_zh || record.pinyin || "?").slice(0, 1))}</div>
           <div class="k-detail-hero-top">
             <div>
-              <div class="k-detail-badges"><span>${esc(record.category || record.category_en || kind)}</span><span>${esc(record.id)}</span></div>
+              <div class="k-detail-badges"><span>${esc(record.category || record.category_en || kind)}</span></div>
             <p class="k-detail-eyebrow">${eyebrow}</p>
             <h2>${esc(record.name_zh || record.pinyin)} <small>${esc(record.pinyin)}</small></h2>
             <p class="k-detail-en">${esc(record.name_en)}</p>
@@ -292,7 +370,7 @@
       </tr>`;
     }).join("");
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
-    const relatedConditions = (record.related_conditions || []).map((id) => `<span class="k-static-chip">${esc(id)}</span>`).join("");
+    const relatedConditions = entityChips(record.related_conditions);
     const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
@@ -400,6 +478,7 @@
         const q = el("formulaFilter").value.trim().toLowerCase();
         const category = el("formulaCategoryFilter").value;
         const hit = records.filter((f) => {
+          if (!recordHasConcept(f.modern_clinical_use_tags, activeConcept)) return false;
           const categoryHit = !category || categoryLabel(f) === category;
           const text = [
             f.id,
@@ -414,10 +493,19 @@
           ].join(" ").toLowerCase();
           return categoryHit && (!q || text.includes(q));
         });
-        el("formulaGrid").innerHTML = renderEnhanced(hit) || '<p class="k-missing">No matching formulas.</p>';
+        const bar = activeConceptBar();
+        el("formulaGrid").innerHTML = bar + (renderEnhanced(hit) || '<p class="k-missing">沒有符合的方劑 / No matching formulas.</p>');
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
+      // re-run when a tag is tapped anywhere, including from inside a detail card
+      conceptListeners.add(() => {
+        updateFormulaGrid();
+        if (activeConcept) {
+          document.querySelector("[data-detail-close]")?.click();
+          el("formulaGrid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
       formulaHost.addEventListener("click", (event) => {
         const button = event.target.closest('[data-detail-kind="formula"][data-detail-id]');
         if (button) openKnowledgeDetail("formula", button.dataset.detailId);
@@ -502,6 +590,7 @@
       const q = el("herbFilter").value.trim().toLowerCase();
       const category = el("herbCategoryFilter").value;
       const hit = herbs.filter((h) => {
+        if (!recordHasConcept(h.modern_use_tags, activeConcept)) return false;
         const categoryHit = !category || herbCategory(h) === category;
         const text = [
           h.id,
@@ -517,8 +606,9 @@
         ].join(" ").toLowerCase();
         return categoryHit && (!q || text.includes(q));
       });
-      el("herbGrid").innerHTML = renderHerbs(hit) || '<p class="k-missing">No matching herbs.</p>';
+      el("herbGrid").innerHTML = activeConceptBar() + (renderHerbs(hit) || '<p class="k-missing">沒有符合的中藥 / No matching herbs.</p>');
     };
+    conceptListeners.add(updateHerbGrid);
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
     herbHost.addEventListener("click", (event) => {
