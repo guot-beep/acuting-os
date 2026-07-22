@@ -1065,6 +1065,46 @@
       ],
       "notes": "Board renamed from NCCAOM to NCBAHM effective 2026-01-02. Structured copy of Appendix A/B/C lives at data/exams/ncbahm_bio_2026.json. Appendix A is explicitly non-exhaustive - minimum scope, not a closed set. Re-check for a newer outline before relying on it.",
       "review_status": "source_checked"
+    },
+    {
+      "id": "chinese_medicine_atlas",
+      "name": "TCM Herb Atlas (chinesemedicineatlas.com)",
+      "layer": "materia_medica_index",
+      "source_group": "B_reference",
+      "authority": 3,
+      "tier": "B",
+      "language": "en",
+      "url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
+      "access_type": "public_web",
+      "primary_use": [
+        "glance-layer card design",
+        "tone-marked pinyin",
+        "channel abbreviations",
+        "plain-language indications"
+      ],
+      "notes": "Chosen by Ting for its clean scan-layer presentation. 102 herbs, 16 category groups, 简体. Adopted for PRESENTATION not depth - see spec section 0. Links only, no image copying.",
+      "review_status": "source_checked"
+    },
+    {
+      "id": "cloudtcm_herb_pages",
+      "name": "CloudTCM herb pages (雲端中醫)",
+      "layer": "materia_medica",
+      "source_group": "A_authoritative",
+      "authority": 4,
+      "tier": "A-",
+      "language": "zh",
+      "url": "https://cloudtcm.com/herb/",
+      "access_type": "public_web",
+      "primary_use": [
+        "Chinese-language herb depth",
+        "性味歸經",
+        "傳統與現代功效",
+        "用量",
+        "炮製",
+        "化學成分"
+      ],
+      "notes": "Per-herb URLs are /herb/<numeric id> and contain no herb name - name-based site-scoped search does NOT resolve them, which is why the earlier image links were broken. Use data/imports/cloudtcm/herb_url_map.json.",
+      "review_status": "source_checked"
     }
   ],
   "tcm_registry_note": "Tier/category fields were added from docs/TCM_SOURCE_REGISTRY.md. A=official or national/major database, A-=university or major academic database, B=practical/clinical lookup, C=standards/reference utility. Draft URL values need manual verification before source extraction."

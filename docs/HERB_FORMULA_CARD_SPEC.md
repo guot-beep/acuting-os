@@ -8,6 +8,34 @@ Purpose of this file: define "good enough" as something measurable, so that
 
 ---
 
+## 0. Two layers, not one — the mistake the current cards make
+
+Ting, on `chinesemedicineatlas.com`: 「這個網站的標籤跟英文 還有圖片都很好
+沒有太多雜亂 剛剛好的內容」.
+
+That site is not competing with CloudTCM or American Dragon on depth — it is a
+different **layer**, and getting that separation right is most of what makes a
+card feel good rather than cluttered:
+
+- **Glance layer** — what you read while scanning 200 herbs. The Atlas card is
+  exactly: category banner, English common name, **tone-marked pinyin
+  (Má Huáng, not "Ma Huang")**, 中文, one temperature token, **channel
+  abbreviations (LU · BL)**, and **three plain-language indications**
+  ("common cold, asthma, bronchitis") — everyday English, deliberately not
+  pattern terminology.
+- **Study layer** — CloudTCM + American Dragon depth: nested indications,
+  dosage, processing, interactions, pairs, comparisons.
+
+Our current cards mix the two into one wall of text, which is why they read as
+cluttered *and* thin at the same time. Every record therefore carries a
+`glance` block alongside the study fields.
+
+Three things the Atlas has that we had none of: tone-marked pinyin, channel
+abbreviations, and plain-language indications. All three are now required.
+
+(Note: the Atlas uses 简体 and covers 102 herbs; this repo is 繁體 and 202.
+Adopt the presentation, keep our character set and coverage.)
+
 ## 1. The two benchmark sources
 
 Both fetched and confirmed 2026-07-22 against 麻黃 / Ma Huang.
@@ -107,15 +135,78 @@ not a draft.
 
 ## 4. Target formula record
 
-Same principle. Minimum sections: 組成(with each herb's dose and role
-君臣佐使)、方義、功用、主治(nested by pattern)、加減、禁忌、
-現代應用、出處/來源方書、相似方鑑別 — bilingual throughout.
-
-The `composition` entry needs per-herb dose and role, not just a name list:
+Everything the herb card gets, the formula card gets too — Ting: 「同樣的方劑也要有
+這個 加劑量隨證增減 對藥 還有中英文」.
 
 ```jsonc
-{ "herb_id": "herb.ma_huang", "dose_g": "9", "role_zh": "君", "role_en": "Chief" }
+{
+  "id": "formula.ma_huang_tang",
+  "name_zh": "麻黃湯", "name_en": "Ephedra Decoction", "pinyin_toned": "Má Huáng Tāng",
+  "source_text_zh": "《傷寒論》", "source_text_en": "Shang Han Lun",
+  "category_zh": "辛溫解表劑", "category_en": "Formulas that Release the Exterior - Warm Acrid",
+
+  "glance": { /* same scan layer as herbs: category banner, toned pinyin, 3 plain indications */ },
+
+  "composition": [                       // per-herb dose AND role, never a name list
+    { "herb_id": "herb.ma_huang", "dose_g": "9", "role_zh": "君", "role_en": "Chief",
+      "role_reason_zh": "發汗解表、宣肺平喘", "role_reason_en": "..." },
+    { "herb_id": "herb.gui_zhi", "dose_g": "6", "role_zh": "臣", "role_en": "Deputy" },
+    { "herb_id": "herb.xing_ren", "dose_g": "9", "role_zh": "佐", "role_en": "Assistant" },
+    { "herb_id": "herb.zhi_gan_cao", "dose_g": "3", "role_zh": "使", "role_en": "Envoy" }
+  ],
+
+  "key_pairs": ["pair.ma_huang__gui_zhi", "pair.ma_huang__xing_ren"],   // 對藥 - see §4.1
+
+  "fang_yi_zh": "…", "fang_yi_en": "…",          // 方義 - why this structure works
+  "actions_zh": [], "actions_en": [],
+  "indications": [ /* nested action -> pattern -> clinical picture, as for herbs */ ],
+  "tongue_zh": "", "pulse_zh": "", "tongue_en": "", "pulse_en": "",
+
+  "modifications": [                     // 加減 / 隨證增減 - REQUIRED, this is the clinical core
+    { "if_zh": "喘甚", "if_en": "Marked wheezing",
+      "change_zh": "加重杏仁，或加蘇子", "change_en": "Increase Xing Ren, or add Su Zi",
+      "sources": [] },
+    { "if_zh": "兼裡熱、煩躁", "if_en": "With interior heat and restlessness",
+      "change_zh": "加石膏（即大青龍湯法）", "change_en": "Add Shi Gao - the Da Qing Long Tang method",
+      "sources": [] }
+  ],
+  "dose_adjustment_note_zh": "",         // whole-formula scaling: 體虛減量、兒童按體重
+  "dose_adjustment_note_en": "",
+
+  "contraindications_zh": [], "contraindications_en": [],
+  "modern_applications": [],             // link to condition canon ids, not free text
+  "comparisons": [                       // 相似方鑑別
+    { "with": "formula.gui_zhi_tang", "differentiator_zh": "表實無汗 vs 表虛有汗",
+      "differentiator_en": "Exterior excess without sweating vs exterior deficiency with sweating" }
+  ],
+  "external_links": [], "field_sources": {}, "review_status": "draft"
+}
 ```
+
+### 4.1 對藥 in formulas — why the pair layer exists
+
+Herb pairs are **not** a field on the herb. They are their own records
+(`data/herbs/herb_pairs.json`), because a pair belongs to both herbs, carries
+its own meaning, and is the unit formulas are built and taught from. The real
+chain is **方劑 → 藥對 → 單味藥**, navigable in every direction.
+
+Each pair carries a 七情配伍 relation id from
+`data/config/herb_pair_relations.json` (單行/相須/相使/相畏/相殺/相惡/相反).
+The relation is what makes it a 藥對 rather than two names side by side.
+相反 is flagged `safety_critical` — the 十八反/十九畏 are combining
+contraindications, not notes.
+
+The worked example that teaches formula logic: 麻黃配桂枝 (相須) points the
+formula at cold; 麻黃配石膏 (相使) points it at heat. Same Ma Huang — the
+partner sets the direction.
+
+### 4.2 隨證增減 on both cards
+
+For **herbs** the adjustment usually runs through the processing form, and both
+benchmarks state it directly: 發汗解表宜生用、平喘止咳多炙用、麻黃絨多用於兒科.
+For **formulas** it runs through `modifications` (加減) plus whole-formula dose
+scaling. Both are required fields, and every entry cites its source — dosage is
+a safety-load field, so no invented numbers, ever.
 
 ---
 

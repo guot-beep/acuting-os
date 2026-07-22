@@ -5,6 +5,29 @@
   "name_zh": "麻黃",
   "name_en": "Ephedra",
   "pinyin": "Ma Huang",
+  "pinyin_toned": "Má Huáng",
+
+  "glance": {
+    "_note": "The scan layer, modelled on chinesemedicineatlas.com, which Ting picked out for being clean and exactly enough at a glance. Kept deliberately separate from the study layer below: this is what you read when scanning 200 herbs, that is what you read when studying one. Plain-language indications on purpose - not pattern terminology.",
+    "category_banner_en": "RELEASE EXTERIOR",
+    "category_banner_zh": "解表",
+    "name_en": "Ephedra",
+    "pinyin_toned": "Má Huáng",
+    "name_zh": "麻黃",
+    "temperature_token_en": "Warm",
+    "temperature_token_zh": "溫",
+    "channels_abbr": ["LU", "BL"],
+    "channels_abbr_display": "LU · BL",
+    "plain_indications_en": ["common cold", "asthma", "bronchitis"],
+    "plain_indications_zh": ["感冒", "氣喘", "支氣管炎"]
+  },
+
+  "external_links": [
+    { "source_id": "cloudtcm_herb_pages", "url": "https://cloudtcm.com/herb/1", "label_zh": "雲端中醫 麻黃", "label_en": "CloudTCM Ma Huang", "lang": "zh", "link_status": "direct" },
+    { "source_id": "american_dragon", "url": "http://www.americandragon.com/Individualherbsupdate/MaHuang.html", "label_zh": "American Dragon 麻黃專論", "label_en": "American Dragon monograph", "lang": "en", "link_status": "direct" },
+    { "source_id": "chinese_medicine_atlas", "url": "https://chinesemedicineatlas.com/tcm_herb_atlas/", "label_zh": "TCM Herb Atlas 圖鑑", "label_en": "TCM Herb Atlas", "lang": "en", "link_status": "index" }
+  ],
+  "_links_note": "Direct URLs, not Google site-scoped searches. The old search links failed because CloudTCM pages are /herb/<numeric id> and carry no herb name.",
   "pharmaceutical_latin": "Herba Ephedrae",
   "botanical_name": "Ephedra sinica",
   "aliases_en": ["Ephedra Stem", "Mormon Tea", "Chinese Joint Fir", "Numb Yellow", "Northern Aromatic"],
