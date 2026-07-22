@@ -279,6 +279,17 @@
       ${links.length ? `<div class="k-source-links">${links.map((url, index) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1}</a>`).join("")}</div>` : '<p class="k-detail-empty">來源連結待補 / Source links pending</p>'}`;
   }
 
+  /* Verified direct per-herb source URLs, keyed by herb id and by 中文名. */
+  const HERB_URL_MAP = (() => {
+    const d = K && K.herbUrlMap;
+    const m = new Map();
+    ((d && d.entries) || []).forEach((e) => {
+      if (e.herb_id) m.set(e.herb_id, e);
+      if (e.name_zh) m.set(e.name_zh, e);
+    });
+    return m;
+  })();
+
   function herbVisualLinks(record) {
     const stored = Array.isArray(record.visual_links)
       ? record.visual_links
@@ -286,36 +297,38 @@
     const exact = stored.filter((link) => link && /^https?:\/\//.test(link.url || ""));
     if (exact.length) return exact;
 
-    const name = usableText(record.name_zh) || usableText(record.pinyin) || usableText(record.name_en);
-    const pinyin = usableText(record.pinyin);
-    const scopedQuery = (site) => [site, `"${name}"`, pinyin ? `"${pinyin}"` : ""].filter(Boolean).join(" ");
-    return [
-      {
-        label_zh: "雲端中醫圖文搜尋",
-        label_en: "CloudTCM herb visual search",
+    /* No Google. The old fallback sent every herb to a site-scoped Google
+       search, which does not resolve: CloudTCM pages are /herb/<numeric id>
+       and carry no herb name, so a name-based search rarely lands on the
+       right record. data/imports/cloudtcm/herb_url_map.json holds verified
+       direct URLs. If a herb is not mapped yet, say so plainly rather than
+       handing over a link that goes nowhere useful. */
+    const mapped = HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh));
+    if (mapped) {
+      return [{
+        label_zh: `雲端中醫 · ${mapped.name_zh}`,
+        label_en: "CloudTCM herb page",
         source: "CloudTCM",
-        url: `https://www.google.com/search?q=${encodeURIComponent(scopedQuery("site:cloudtcm.com/herb/"))}`,
-        link_status: "scoped_search"
-      },
-      {
-        label_zh: "香港浸大中藥材圖像搜尋",
-        label_en: "HKBU medicinal material image search",
-        source: "HKBU Chinese Medicinal Material Images Database",
-        url: `https://www.google.com/search?q=${encodeURIComponent(scopedQuery("site:sys01.lib.hkbu.edu.hk/cmed/mmid/detail.php"))}`,
-        link_status: "scoped_search"
-      }
-    ];
+        url: mapped.page_url,
+        link_status: "direct"
+      }];
+    }
+    return [];
   }
 
   function herbVisualLinksSection(record) {
     const links = herbVisualLinks(record);
+    if (!links.length) {
+      return `<p class="k-detail-empty">此藥尚未建立直達來源連結。<br>
+        <small>No verified direct source link for this herb yet — see data/imports/cloudtcm/herb_url_map.json.</small></p>`;
+    }
     return `<div class="k-source-links k-visual-source-links">
       ${links.map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">
         <strong>${esc(link.label_zh || link.labelZh || "圖像參考")}</strong>
         <small>${esc(link.label_en || link.labelEn || link.source || "Visual reference")}</small>
       </a>`).join("")}
     </div>
-    <p class="k-detail-note">外部圖文只作藥材辨識與學習參考；同名藥、炮製品與混淆品仍須核對來源。搜尋結果請選擇與本卡中文名及拼音相符的記錄。</p>`;
+    <p class="k-detail-note">外部圖文只作藥材辨識與學習參考；同名藥、炮製品與混淆品仍須核對來源。</p>`;
   }
 
   function ensureDetailDialog() {

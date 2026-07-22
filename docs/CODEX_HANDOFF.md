@@ -69,6 +69,60 @@ Claude review note:
 
 ---
 
+## 2026-07-22 - Codex - Exact herb and Master Tung source links
+
+Date/time: 2026-07-22
+Agent: Codex
+Branch: `main`
+Commit or stash: coherent task commit; hash recorded after commit
+Task: Complete schedule N4/N5 and repair the inaccurate Master Tung identity
+and source-link layer reported by Ting.
+
+Files changed:
+- `scripts/fetch-cloudtcm-herb-map.js`
+- `data/imports/cloudtcm/herb_url_map.json`
+- `scripts/fetch-mastertung-point-map.js`
+- `data/sources/mastertung_point_map.json`
+- `data/tung/point_index.json` and generated `.js` twin
+- `js/knowledge.js`, `app.js`, `scripts/build-data.js`, generated bundles
+- coordination logs/handoff
+
+Validation:
+- CloudTCM herb map: 201/202 exact direct pages; one deliberately unmatched
+  record (牛膝) because the available candidate is 川牛膝.
+- Master Tung map: 277/277 verified sitemap/page identities; 277 Chinese names
+  and exact direct point URLs.
+- Browser QA: T44.02 displays 後椎穴 and links to the exact `houzhui-t-4402`
+  page; 大棗 links to `https://cloudtcm.com/herb/7`; zero Google-search links.
+- Build, JavaScript syntax, recursive JSON parse (484 files), and eight
+  validators passed, including content-quality at the existing 36% baseline.
+
+Protected areas not touched:
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, point-map source, case/SOAP,
+  router, review runtime, CSS, or clinical data change.
+- `app.js` changes are limited to exact visual/source-link helpers explicitly
+  requested by Ting; search and case/SOAP logic were not modified.
+
+Known risks / manual checks:
+- The herb URL map is identity/link metadata only; it does not make the 202
+  herb bodies substantive.
+- 牛膝 stays without a direct CloudTCM link until a source distinguishes 牛膝,
+  懷牛膝, and 川牛膝 safely.
+- Master Tung records remain index-level; location, needling, indications, and
+  safety were not filled from the website in this batch.
+
+Next recommended action:
+- Extract CloudTCM's 14 disease categories, 139 formula-function labels, and
+  2473 formula-indication labels as source-keyed vocabularies. Translate in
+  reviewed batches; never use pinyin as a fake English label.
+- Continue N6 substantive herb fill from professional sources after link QA.
+
+Claude review note:
+- Please verify the one withheld 牛膝 match and spot-check T44.02, T88.21,
+  大棗, 白豆蔻/白荳蔻, and 烏賊骨/海螵蛸 identity decisions.
+
+---
+
 ## 2026-07-21 - Codex - Protocol-table acupoint anatomy preview
 
 Date/time: 2026-07-21

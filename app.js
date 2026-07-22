@@ -265,21 +265,27 @@ function auricularPointVisualLinks(code) {
 }
 
 function tungPointVisualLinks(record = {}) {
-  const searchTerm = record.name_en || record.display_code || record.code || "Master Tung acupuncture";
-  return [
-    {
-      labelZh: "eLotus / Master Tung 圖文搜尋",
-      labelEn: "eLotus / Master Tung visual search",
-      url: `https://www.mastertungacupuncture.org/?s=${encodeURIComponent(searchTerm)}`,
+  const stored = Array.isArray(record.visual_links) ? record.visual_links : [];
+  const direct = stored.filter((link) => link && link.link_status === "direct" && /^https?:\/\//.test(link.url || ""));
+  if (direct.length) {
+    return direct.map((link) => ({
+      labelZh: link.label_zh || record.name_zh || "Master Tung",
+      labelEn: link.label_en || record.name_en || "Master Tung exact point page",
+      url: link.url,
+      source: link.source || "MasterTungAcupuncture.org"
+    }));
+  }
+  const directSources = (record.source_urls || [])
+    .filter((url) => /^https?:\/\//.test(url) && url !== "https://www.mastertungacupuncture.org/");
+  if (directSources.length) {
+    return directSources.map((url) => ({
+      labelZh: record.name_zh || "Master Tung",
+      labelEn: record.name_en || "Master Tung exact point page",
+      url,
       source: "MasterTungAcupuncture.org"
-    },
-    {
-      labelZh: "Master Tung 穴位資料庫",
-      labelEn: "Master Tung point database",
-      url: "https://www.mastertungacupuncture.org/",
-      source: "MasterTungAcupuncture.org"
-    }
-  ];
+    }));
+  }
+  return [];
 }
 
 // Migrated to data/: edit data/**/embedded/*.json, then run scripts/build-data.js
@@ -701,14 +707,11 @@ function cloudtcmEntry(point) {
 
 function chinesePointReference(point) {
   // Direct CloudTCM point page via the verified code->id map (data/sources/
-  // cloudtcm_point_map.json, 361 standard points). Falls back to a precise
-  // CloudTCM name search only if the point is not in the map (e.g. auricular).
+  // cloudtcm_point_map.json, 361 standard points). No search-page fallback:
+  // an absent exact record stays absent rather than misdirecting Ting.
   const entry = cloudtcmEntry(point);
   if (entry?.id) return "https://cloudtcm.com/acupoint/" + entry.id;
-  const name = String(point?.nameZh || "").trim();
-  const code = String(point?.code || "").trim();
-  const q = [name, code, "穴"].filter(Boolean).join(" ") + " site:cloudtcm.com";
-  return "https://www.google.com/search?q=" + encodeURIComponent(q);
+  return "";
 }
 
 function cloudtcmPageUrl(point) {
@@ -872,15 +875,18 @@ function enrichPoint(point) {
   // Chinese reference (CloudTCM has no derivable per-point URL).
   const GENERIC_CLOUDTCM = "https://cloudtcm.com/acupoint";
   const chineseRef = chinesePointReference(point);
-  const fixedSources = sources.map((u) => (u === GENERIC_CLOUDTCM ? chineseRef : u));
+  const fixedSources = sources.flatMap((u) => {
+    if (u !== GENERIC_CLOUDTCM) return [u];
+    return chineseRef ? [chineseRef] : [];
+  });
   const cloudtcmPage = cloudtcmPageUrl(point);
   const fixedVisualLinks = visualLinks.map((link) => {
     // Link to the full CloudTCM point page (Ting: thumbnails are too small);
     // also upgrade any previously-stored thumbnail URLs to the page.
-    if (link.url === GENERIC_CLOUDTCM) return { ...link, url: cloudtcmPage || chineseRef };
-    if (link.url.startsWith("https://media.cloudtcm.uk/")) return { ...link, url: cloudtcmPage || chineseRef };
+    if (link.url === GENERIC_CLOUDTCM) return cloudtcmPage || chineseRef ? { ...link, url: cloudtcmPage || chineseRef } : null;
+    if (link.url.startsWith("https://media.cloudtcm.uk/")) return cloudtcmPage || chineseRef ? { ...link, url: cloudtcmPage || chineseRef } : null;
     return link;
-  });
+  }).filter(Boolean);
   return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources: fixedSources, visualLinks: fixedVisualLinks };
 }
 

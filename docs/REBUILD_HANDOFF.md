@@ -1,3 +1,66 @@
+# REBUILD HANDOFF - Session 37 (2026-07-22, exact source-link repair)
+
+## 1. Goal
+Replace broken search links and inaccurate English-only Tung identities with
+verified exact CloudTCM herb and Master Tung point records.
+
+## 2. Files changed
+Herb/Tung source maps and fetch scripts; Tung JSON/generated JS; runtime source
+link helpers in `app.js` and `js/knowledge.js`; build output and handoff logs.
+
+## 3. What changed
+CloudTCM exact pages cover 201/202 herbs. Master Tung exact pages and Chinese
+names cover 277/277 points. Google search fallbacks were removed.
+
+## 4. Why this changed
+Ting found the old links misleading and specifically requested exact record
+pages, bilingual identities, and 後椎穴 at the authoritative T44.02 page.
+
+## 5. Data content changes
+Identity and link metadata only. No clinical facts, dosing, needling,
+indications, contraindications, or copied article/image content was added.
+
+## 6. Source status / accuracy guardrail
+Exact Chinese-name/code matching is required. 牛膝 is deliberately unmatched
+because 川牛膝 is not accepted as the same canonical entity.
+
+## 7. Schema / field changes
+The herb URL map stores verified page identity. Tung records gained/fill
+`name_zh`, aliases, exact `source_urls`, `visual_links`, and source status.
+
+## 8. Generated files / scripts
+Added two resumable fetchers. `scripts/build-data.js` bundles the herb URL map
+and regenerates application/Tung outputs.
+
+## 9. Protected areas
+No 361.json, CLOUDTCM review docs, CloudTCM point map, case/SOAP, router,
+review runtime, CSS, or clinical data changes. app.js edits are source-link
+helpers only.
+
+## 10. Validation
+Build and syntax PASS; recursive JSON parse PASS (484); eight validators PASS;
+browser QA PASS for 後椎穴, 大棗, exact URLs, and zero Google search links.
+
+## 11. Triage results
+Herbs 201 exact / 1 withheld; Tung 277 exact / 0 missing Chinese identity.
+
+## 12. Not completed
+The 139 formula functions and 2473 formula indications still need source-keyed
+bilingual vocabulary records. Herb and Tung substantive content remains a
+separate source-fill task.
+
+## 13. Next reader should inspect
+The two source maps, both fetch scripts, and the source-link helper diffs.
+
+## 14. Next step
+Build CloudTCM taxonomy vocabularies additively, preserving source IDs and
+translation review state; then continue professional-source herb content fill.
+
+## 15. Risk
+Low for routing. Synonym mapping remains identity-sensitive, especially 牛膝.
+
+---
+
 # REBUILD HANDOFF - Session 36 (2026-07-12, A4 UI config extraction)
 
 ## 1. Goal

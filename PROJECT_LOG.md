@@ -23,6 +23,28 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-22 - Exact CloudTCM herb and Master Tung point links (Codex)
+
+Replaced the broken Google/site-search source path with verified exact record
+links. `scripts/fetch-cloudtcm-herb-map.js` resolves the 202-herb canon against
+CloudTCM's public herb index/search API using exact Chinese identity matching;
+201 records now have direct `/herb/<id>` pages. The one intentionally withheld
+record is 牛膝: CloudTCM's candidate is 川牛膝, which is not a safe identity
+substitution for the Bensky canon record. 大棗 was browser-verified at
+`https://cloudtcm.com/herb/7`.
+
+Added a resumable Master Tung sitemap/page identity extractor. All 277 Tung
+records now have source-page Chinese names and exact point URLs. Browser QA
+confirmed `T44.02` renders as 後椎穴 and links directly to
+`/acupuncture/tung/points/houzhui-t-4402`. No article prose or remote images
+were copied; only identity and link metadata were retained.
+
+Runtime link helpers now return verified direct URLs or no link. The old
+Google fallback was removed from both acupoint and herb cards. Build, syntax,
+recursive JSON parsing, eight validators, and browser checks passed. Content
+quality remains a separate fill task; this batch fixes identity and routing,
+not the substantive herb/point descriptions.
+
 ### 2026-07-22 - RV1 in-app review, after measuring the real content gap (Claude)
 
 Ting reported the site is not usable and everything is stuck in review.

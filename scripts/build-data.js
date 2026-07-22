@@ -86,6 +86,7 @@ const knowledge = {
   comparisonGroupVocabulary: readJson("data/config/comparison_group_vocabulary.json"),      // bilingual labels for 鑑別群組
   herbPairs: readJson("data/herbs/herb_pairs.json"),                                        // 藥對
   herbPairRelations: readJson("data/config/herb_pair_relations.json"),                       // 七情配伍
+  herbUrlMap: readJson("data/imports/cloudtcm/herb_url_map.json"),                           // direct per-herb source URLs
 };
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}
