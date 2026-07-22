@@ -1,7 +1,7 @@
 # Data Migration Map
 
 Purpose: single authoritative answer to "which file is the latest truth?"
-Update this file every time data moves. Last update: 2026-07-22 (CloudTCM source taxonomies added as non-runtime vocabularies).
+Update this file every time data moves. Last update: 2026-07-22 (CloudTCM disease source index wired into Conditions).
 
 ## Authority table — where each dataset lives NOW
 
@@ -28,6 +28,7 @@ Update this file every time data moves. Last update: 2026-07-22 (CloudTCM source
 | Herb comparison-group preview | `data/herbs/herb_canon_shortlist.json` remains canonical input; preview lives in `docs/HERB_COMPARISON_GROUP_PREVIEW.json` | `scripts/preview-herb-comparison-groups.js`; NOT wired into app | existing 34 bilingual herb categories | H1 REVIEW-ONLY; proposes `comparison_group`, `related_herbs[]`, and empty `substitution_context_zh`; no apply mode and no canonical writes |
 | Pathology conditions + graph seeds | `data/pathology/conditions.json`, `clinical_graph_seed.json`, `condition_graph_expansion.json` | relation validator; not fully rendered | same plus graph expansion | Draft relationship layer; `conditions.json` is current primary pathology record file |
 | CloudTCM disease browse categories (14) | `data/pathology/cloudtcm_disease_categories.json` | NOT wired into app; future category-filter vocabulary | CloudTCM `/disease/tcm` `symptomCategoryTags` | SOURCE VOCABULARY 2026-07-22; 14/14 bilingual curated-draft labels; categories are browse facets, not diagnoses |
+| CloudTCM disease/symptom source entries (205 cards / 190 unique pages) | `data/pathology/cloudtcm_disease_entries.json`; English authority in `data/config/cloudtcm_disease_entry_en.json` | `data/generated/knowledge_data.js` -> Conditions source directory | CloudTCM `/disease/tcm` nested `columns` | LIVE SOURCE INDEX 2026-07-22; 190/190 stable namespaced IDs and bilingual curated-draft labels; repeated cards merge category IDs; entries are source terms, not automatically Western diagnoses |
 | Western medications | `data/medications/western_medications.json` | relation validator; not rendered | new Friday relationship layer | Draft ID reference layer for clinical decision/pathology links |
 | Source registry + validation matrix | `data/sources/*.json` | Sources workspace / source planning; not fully validated | same | Draft registry; known encoding backlog in `source_registry.json` |
 | Dataset imports manifest and raw imports | `data/imports/import_manifest.json`, `data/imports/README.md`, `data/imports/*` | NOT wired into app | new import staging root | Raw/staging only; preserve original imports, never edit generated/canonical data directly from here |

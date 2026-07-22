@@ -1,3 +1,67 @@
+# REBUILD HANDOFF - Session 41 (2026-07-22, bilingual CloudTCM disease index)
+
+## 1. Goal
+Give every CloudTCM disease/symptom browse entry a stable ID, Chinese and
+English display name, and exact source page; make 三叉神經痛 useful in-app.
+
+## 2. Files changed
+Disease source index/translation authority, condition canon, source registry,
+extract/build/validation scripts, renderer/styles, bundles, and handoff docs.
+
+## 3. What changed
+The 205 source cards became 190 unique bilingual source records with exact
+links, category filters, search, and pagination. Trigeminal Neuralgia gained a
+bilingual canon card with direct CloudTCM and NHS links.
+
+## 4. Why this changed
+The CloudTCM page has useful terms but the app lacked stable entry IDs,
+English labels, direct links, and a complete browse surface.
+
+## 5. Data content changes
+Added 190 curated-draft English labels. Existing `cond.trigeminal_neuralgia`
+kept its immutable ID and gained summary, alias, red flag, and source fields.
+
+## 6. Source status / accuracy guardrail
+CloudTCM labels are source vocabulary drafts. NHS supplies biomedical wording
+for the canon card. No symptom term is automatically promoted to a diagnosis.
+
+## 7. Schema / field changes
+New additive `cloudtcm.disease_entry.*` namespace with `category_ids[]`, exact
+source/image metadata, and translation status. No existing ID changed.
+
+## 8. Generated files / scripts
+Extractor flattens 205 nested cards, deduplicates exact routes, and merges
+categories. Build script adds the source index to the knowledge bundle.
+
+## 9. Protected areas
+No 361.json, CLOUDTCM review docs, case/SOAP, router, point map, clinical data,
+or Claude architecture draft change.
+
+## 10. Validation
+Extraction and vocabulary checks report 205 source cards, 190 unique pages,
+14 categories, and 190/190 bilingual records. Full results recorded at commit.
+
+## 11. Triage results
+The 15 repeated cards are category repetitions of an existing source page,
+not separate disease concepts; category IDs were merged.
+
+## 12. Not completed
+The 190 English labels remain curated drafts. Formal `cond.*` mappings require
+record-by-record source review and are intentionally not inferred by name.
+
+## 13. Next reader should inspect
+Search 三叉神經痛 or Trigeminal Neuralgia and open CloudTCM `/36` and NHS.
+
+## 14. Next step
+Review high-use bilingual labels and add explicit source-entry-to-concept
+relations for conditions already represented in the canon.
+
+## 15. Risk
+Low runtime risk; medium terminology risk if source symptoms are later treated
+as diagnoses. Namespaces and draft statuses keep those layers separate.
+
+---
+
 # REBUILD HANDOFF - Session 40 (2026-07-22, bilingual Dyspepsia sources)
 
 ## 1. Goal

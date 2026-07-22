@@ -54,15 +54,39 @@ if (!dyspepsia) {
   }
 }
 
+const trigeminal = (canon.records || []).find((record) => record.id === "cond.trigeminal_neuralgia");
+if (!trigeminal) {
+  errors.push("Missing cond.trigeminal_neuralgia");
+} else {
+  const urls = new Set((trigeminal.source_links || []).map((link) => link.url));
+  for (const expected of [
+    "https://cloudtcm.com/disease/tcm/36",
+    "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+  ]) {
+    if (!urls.has(expected)) errors.push(`cond.trigeminal_neuralgia: missing exact source ${expected}`);
+  }
+  if (trigeminal.name_en !== "Trigeminal Neuralgia" || trigeminal.name_zh !== "三叉神經痛") {
+    errors.push("cond.trigeminal_neuralgia: bilingual canonical names changed unexpectedly");
+  }
+}
+
 // Render the real condition section against a tiny DOM contract. This catches
 // data that validates but never becomes visible because the static app uses a
 // generated JS bundle rather than fetching JSON at runtime.
-const hosts = Object.fromEntries(["conditionRecords", "conditionFilter", "conditionGrid"].map((id) => [
+const hosts = Object.fromEntries([
+  "conditionRecords", "conditionFilter", "conditionGrid",
+  "cloudtcmDiseaseFilter", "cloudtcmDiseaseCategoryBar", "cloudtcmDiseaseGrid",
+  "cloudtcmDiseasePageStatus", "cloudtcmDiseasePrev", "cloudtcmDiseaseNext"
+].map((id) => [
   id,
   {
     innerHTML: "",
+    textContent: "",
+    value: "",
+    disabled: false,
     listeners: {},
-    addEventListener(type, handler) { this.listeners[type] = handler; }
+    addEventListener(type, handler) { this.listeners[type] = handler; },
+    querySelectorAll() { return []; }
   }
 ]));
 const documentStub = {
@@ -86,7 +110,32 @@ for (const expected of [
 ]) {
   if (!initialMarkup.includes(expected)) errors.push(`Rendered condition card is missing: ${expected}`);
 }
+for (const expected of [
+  "三叉神經痛",
+  "Trigeminal Neuralgia",
+  "https://cloudtcm.com/disease/tcm/36",
+  "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+]) {
+  if (!initialMarkup.includes(expected)) errors.push(`Rendered trigeminal-neuralgia card is missing: ${expected}`);
+}
 if (/google\./i.test(initialMarkup)) errors.push("Rendered condition cards contain a Google link");
+if (!initialMarkup.includes("Disease & Symptom Index (190)")) errors.push("CloudTCM disease directory was not mounted");
+
+if (hosts.cloudtcmDiseaseFilter.listeners.input) {
+  hosts.cloudtcmDiseaseFilter.value = "Trigeminal Neuralgia";
+  hosts.cloudtcmDiseaseFilter.listeners.input({ target: hosts.cloudtcmDiseaseFilter });
+  for (const expected of [
+    "cloudtcm.disease_entry.36",
+    "Trigeminal Neuralgia",
+    "https://cloudtcm.com/disease/tcm/36"
+  ]) {
+    if (!hosts.cloudtcmDiseaseGrid.innerHTML.includes(expected)) {
+      errors.push(`CloudTCM disease search is missing: ${expected}`);
+    }
+  }
+} else {
+  errors.push("CloudTCM disease search input handler was not mounted");
+}
 
 if (hosts.conditionFilter.listeners.input) {
   hosts.conditionFilter.listeners.input({ target: { value: "Dyspepsia" } });

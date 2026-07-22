@@ -79,6 +79,8 @@ const knowledge = {
   patternLibrary: readJson("data/pathology/pattern_library.json"),
   tdisRegistry: readJson("data/pathology/tdis_registry.json"),
   conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
+  cloudtcmDiseaseCategories: readJson("data/pathology/cloudtcm_disease_categories.json"),
+  cloudtcmDiseaseEntries: readJson("data/pathology/cloudtcm_disease_entries.json"),
   medications: readJson("data/medications/western_medications.json"),
   safetyFlags: readJson("data/herbs/formula_safety_flags.json"),
   comparisons: readJson("data/knowledge/comparisons.json"),   // LL3 contrast tables

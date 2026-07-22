@@ -69,6 +69,48 @@ Claude review note:
 
 ---
 
+## 2026-07-22 - Codex - Bilingual CloudTCM disease source index
+
+Date/time: 2026-07-22
+Agent: Codex
+Branch: `main`
+Commit or stash: coherent disease-index commit (this entry's commit)
+Task: Add stable bilingual IDs for every CloudTCM disease browse card and
+upgrade Trigeminal Neuralgia with exact Chinese and official English sources.
+
+Files changed:
+- CloudTCM disease translation authority and generated 190-entry source index
+- Trigeminal Neuralgia canon record and NHS source registry entry
+- extraction/build/validation scripts, Conditions renderer/styles, bundles
+- migration map and coordination logs
+
+Validation:
+- Source extraction: 205 cards -> 190 unique exact-page IDs; 14 categories.
+- Vocabulary validator: 190/190 unique and bilingual curated drafts.
+- Renderer contract: Trigeminal Neuralgia search, IDs, exact CloudTCM/NHS
+  links, and no Google link PASS.
+- Full standard validation sweep and JSON parse recorded before commit.
+
+Protected areas not touched:
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, case/SOAP, router, point
+  map, clinical records, or Claude architecture draft change.
+
+Known risks / manual checks:
+- The 190 English labels are curated drafts for search/display. Source entries
+  include symptoms and traditional expressions and must not be promoted en
+  masse to Western diagnoses.
+- `cond.trigeminal_neuralgia` remains draft; manually open both direct links.
+
+Next recommended action:
+- Review high-use source labels in-app, then link them to canon concepts only
+  through explicit relation records rather than matching names automatically.
+
+Claude review note:
+- Verify 205-to-190 category-preserving deduplication and the separation
+  between source vocabulary IDs and `cond.*` disease concept IDs.
+
+---
+
 ## 2026-07-22 - Codex - Bilingual Dyspepsia condition card
 
 Date/time: 2026-07-22

@@ -4567,6 +4567,64 @@ a { color: var(--accent-dark); }
 .k-condition-related > strong small { margin-left: 0.3rem; }
 .k-condition-flags { margin-top: 0.65rem; }
 .k-condition-flags summary { color: var(--warn); cursor: pointer; font-weight: 800; }
+.k-cloud-disease-directory {
+  border-top: 1px solid var(--line);
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+}
+.k-cloud-disease-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+.k-cloud-disease-categories button {
+  background: var(--panel);
+  border: 1px solid #bfd2b5;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.42rem 0.7rem;
+}
+.k-cloud-disease-categories button:hover,
+.k-cloud-disease-categories button:focus-visible,
+.k-cloud-disease-categories button.is-active {
+  background: var(--accent-dark);
+  color: #fff;
+  outline: none;
+}
+.k-cloud-disease-toolbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.55rem 0 0.75rem;
+}
+.k-cloud-disease-toolbar > div { display: flex; gap: 0.4rem; }
+.k-cloud-disease-toolbar button {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--accent-dark);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0.4rem 0.65rem;
+}
+.k-cloud-disease-toolbar button:disabled { cursor: default; opacity: 0.45; }
+.k-cloud-disease-card { display: grid; gap: 0.35rem; }
+.k-cloud-disease-link {
+  border-top: 1px solid var(--line);
+  color: var(--accent-dark);
+  display: grid;
+  gap: 0.1rem;
+  margin-top: 0.35rem;
+  padding-top: 0.55rem;
+  text-decoration: none;
+}
+.k-cloud-disease-link:hover strong,
+.k-cloud-disease-link:focus-visible strong { text-decoration: underline; }
+.k-cloud-disease-link small { color: var(--muted); }
 .k-visual-source-links a {
   display: grid;
   gap: 0.15rem;

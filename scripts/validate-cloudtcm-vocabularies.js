@@ -7,6 +7,7 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const specs = [
   { file: "data/pathology/cloudtcm_disease_categories.json", count: 14, prefix: "cloudtcm.disease_category.", bilingual: true },
+  { file: "data/pathology/cloudtcm_disease_entries.json", count: 190, prefix: "cloudtcm.disease_entry.", bilingual: true },
   { file: "data/herbs/cloudtcm_formula_function_tags.json", count: 139, prefix: "cloudtcm.formula_function.", bilingual: true },
   { file: "data/herbs/cloudtcm_formula_indication_tags.json", count: 2473, prefix: "cloudtcm.formula_indication.", bilingual: false }
 ];
@@ -37,6 +38,21 @@ for (const spec of specs) {
   if (doc.count !== spec.count) failures.push(`${spec.file}: metadata count mismatch`);
   if (doc.bilingual_complete != null && doc.bilingual_complete !== bilingual) failures.push(`${spec.file}: bilingual_complete mismatch`);
   summary.push({ file: spec.file, records: records.length, unique_ids: ids.size, bilingual, pending: records.length - bilingual });
+}
+
+const categories = JSON.parse(fs.readFileSync(path.join(ROOT, "data/pathology/cloudtcm_disease_categories.json"), "utf8"));
+const entries = JSON.parse(fs.readFileSync(path.join(ROOT, "data/pathology/cloudtcm_disease_entries.json"), "utf8"));
+const categoryIds = new Set(categories.records.map((record) => record.id));
+if (entries.source_row_count !== 205) failures.push(`disease entries: expected 205 source rows, found ${entries.source_row_count}`);
+for (const record of entries.records) {
+  if (!record.category_ids?.length) failures.push(`${record.id}: missing category_ids`);
+  for (const id of record.category_ids || []) {
+    if (!categoryIds.has(id)) failures.push(`${record.id}: unknown category ${id}`);
+  }
+  if (record.source_url !== `https://cloudtcm.com/disease/tcm/${record.source_id}`) failures.push(`${record.id}: source URL does not match source_id`);
+  if (record.image_url && !/^https:\/\/(media\.cloudtcm\.uk\/(?:disease|postimg)\/|cloudtcm-assets\.s3\.amazonaws\.com\/disease\/)/.test(record.image_url)) {
+    failures.push(`${record.id}: unexpected image host`);
+  }
 }
 
 if (failures.length) {

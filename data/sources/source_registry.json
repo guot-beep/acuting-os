@@ -1164,6 +1164,25 @@
       ],
       "notes": "Official NIDDK/NIH English reference. Use for biomedical terminology and safety prompts; it does not validate a one-to-one TCM disease mapping.",
       "review_status": "source_checked"
+    },
+    {
+      "id": "nhs_trigeminal_neuralgia",
+      "name": "NHS Trigeminal Neuralgia",
+      "layer": "western_condition_reference",
+      "source_group": "C_official_clinical",
+      "authority": 5,
+      "tier": "A",
+      "language": "en",
+      "url": "https://www.nhs.uk/conditions/trigeminal-neuralgia/",
+      "access_type": "official_public_web",
+      "primary_use": [
+        "English condition terminology",
+        "symptom context",
+        "medical review prompts",
+        "patient-facing biomedical reference"
+      ],
+      "notes": "Official NHS English condition page. Use for biomedical terminology and safety prompts; TCM relationships remain separate study mappings.",
+      "review_status": "source_checked"
     }
   ],
   "tcm_registry_note": "Tier/category fields were added from docs/TCM_SOURCE_REGISTRY.md. A=official or national/major database, A-=university or major academic database, B=practical/clinical lookup, C=standards/reference utility. Draft URL values need manual verification before source extraction."

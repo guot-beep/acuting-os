@@ -814,6 +814,9 @@
   const condHost = el("conditionRecords");
   if (condHost) {
     const allConds = (K.conditionCanon && K.conditionCanon.records) || [];
+    const cloudDiseaseCategories = (K.cloudtcmDiseaseCategories && K.cloudtcmDiseaseCategories.records) || [];
+    const cloudDiseaseEntries = (K.cloudtcmDiseaseEntries && K.cloudtcmDiseaseEntries.records) || [];
+    const cloudDiseaseCategoryById = new Map(cloudDiseaseCategories.map((record) => [record.id, record]));
     // CONDITIONS_MODULE_DESIGN gate: do not present a condition as study-ready
     // until its safety prompts exist. Skeleton-only records remain counted below.
     const conds = allConds.filter((record) =>
@@ -850,6 +853,43 @@
           ${conditionSources(c)}
         </article>`;
     }).join("");
+    const cloudDiseaseCard = (record) => `
+      <article class="k-card k-cloud-disease-card" data-record-id="${esc(record.id)}">
+        <header><strong>${esc(record.name_zh)} <small>${esc(record.name_en)}</small></strong>${statusPill(record.review_status)}</header>
+        <p class="k-meta">${esc(record.id)}</p>
+        <p class="k-tags">${(record.category_ids || []).map((id) => {
+          const category = cloudDiseaseCategoryById.get(id);
+          return tag(category ? `${category.name_zh} · ${category.name_en}` : id);
+        }).join("")}</p>
+        <a class="k-cloud-disease-link" href="${esc(record.source_url)}" target="_blank" rel="noopener noreferrer">
+          <strong>雲端中醫原始頁</strong><small>Open exact CloudTCM source page</small>
+        </a>
+      </article>`;
+    const cloudDiseasePageSize = 24;
+    let cloudDiseasePage = 1;
+    let activeCloudDiseaseCategory = "";
+    const renderCloudDiseaseDirectory = () => {
+      const query = String(el("cloudtcmDiseaseFilter")?.value || "").trim().toLowerCase();
+      const filtered = cloudDiseaseEntries.filter((record) => {
+        const matchesCategory = !activeCloudDiseaseCategory || (record.category_ids || []).includes(activeCloudDiseaseCategory);
+        const text = [record.id, record.name_zh, record.name_en, ...(record.category_ids || []).map((id) => {
+          const category = cloudDiseaseCategoryById.get(id);
+          return category ? `${category.name_zh} ${category.name_en}` : id;
+        })].join(" ").toLowerCase();
+        return matchesCategory && (!query || text.includes(query));
+      });
+      const totalPages = Math.max(1, Math.ceil(filtered.length / cloudDiseasePageSize));
+      cloudDiseasePage = Math.min(Math.max(1, cloudDiseasePage), totalPages);
+      const start = (cloudDiseasePage - 1) * cloudDiseasePageSize;
+      el("cloudtcmDiseaseGrid").innerHTML = filtered.slice(start, start + cloudDiseasePageSize).map(cloudDiseaseCard).join("")
+        || '<p class="k-missing">找不到相符病症 / No matching source entry.</p>';
+      el("cloudtcmDiseasePageStatus").textContent = `${filtered.length} 筆 · 第 ${cloudDiseasePage} / ${totalPages} 頁`;
+      el("cloudtcmDiseasePrev").disabled = cloudDiseasePage <= 1;
+      el("cloudtcmDiseaseNext").disabled = cloudDiseasePage >= totalPages;
+      el("cloudtcmDiseaseCategoryBar").querySelectorAll?.("[data-cloud-disease-category]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.cloudDiseaseCategory === activeCloudDiseaseCategory);
+      });
+    };
     condHost.innerHTML = `
       <div class="mini-heading">
         <strong>Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）</strong>
@@ -857,6 +897,25 @@
       </div>
       <input type="search" id="conditionFilter" placeholder="搜尋中英文病名、別名、ICD..." class="k-filter" />
       <div class="k-grid k-grid-wide" id="conditionGrid">${renderConditions(conds)}</div>
+      <section class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
+        <div class="mini-heading">
+          <strong id="cloudtcmDiseaseHeading">雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})</strong>
+          <span>205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。</span>
+        </div>
+        <div id="cloudtcmDiseaseCategoryBar" class="k-cloud-disease-categories" aria-label="症狀疾病分類">
+          <button type="button" class="is-active" data-cloud-disease-category="">全部 · All</button>
+          ${cloudDiseaseCategories.map((category) => `<button type="button" data-cloud-disease-category="${esc(category.id)}">${esc(category.name_zh)} · ${esc(category.name_en)}</button>`).join("")}
+        </div>
+        <input type="search" id="cloudtcmDiseaseFilter" placeholder="搜尋中文、English 或來源 ID..." class="k-filter" />
+        <div class="k-cloud-disease-toolbar">
+          <span id="cloudtcmDiseasePageStatus"></span>
+          <div>
+            <button type="button" id="cloudtcmDiseasePrev" aria-label="上一頁">上一頁</button>
+            <button type="button" id="cloudtcmDiseaseNext" aria-label="下一頁">下一頁</button>
+          </div>
+        </div>
+        <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
+      </section>
       <p class="k-meta">Eastern：${eastern.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>
       <p class="k-meta">Patterns：${patterns.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>`;
     el("conditionFilter").addEventListener("input", (event) => {
@@ -868,6 +927,26 @@
       ].join(" ").toLowerCase().includes(q));
       el("conditionGrid").innerHTML = renderConditions(hits) || '<p class="k-missing">找不到相符病症 / No matching condition.</p>';
     });
+    el("cloudtcmDiseaseFilter").addEventListener("input", () => {
+      cloudDiseasePage = 1;
+      renderCloudDiseaseDirectory();
+    });
+    el("cloudtcmDiseaseCategoryBar").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-cloud-disease-category]");
+      if (!button) return;
+      activeCloudDiseaseCategory = button.dataset.cloudDiseaseCategory || "";
+      cloudDiseasePage = 1;
+      renderCloudDiseaseDirectory();
+    });
+    el("cloudtcmDiseasePrev").addEventListener("click", () => {
+      cloudDiseasePage -= 1;
+      renderCloudDiseaseDirectory();
+    });
+    el("cloudtcmDiseaseNext").addEventListener("click", () => {
+      cloudDiseasePage += 1;
+      renderCloudDiseaseDirectory();
+    });
+    renderCloudDiseaseDirectory();
   }
 
   // ---- Source registry -------------------------------------------------------

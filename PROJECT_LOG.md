@@ -23,6 +23,24 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-22 - Bilingual CloudTCM disease index and Trigeminal Neuralgia (Codex)
+
+Converted all 205 CloudTCM disease/symptom browse cards into 190 unique,
+stable source-page records. Repeated cards now share one immutable
+`cloudtcm.disease_entry.*` ID and retain every browse-category ID instead of
+creating duplicate disease concepts. All 190 records have Chinese and
+curated-draft English labels plus exact non-Google CloudTCM links.
+
+The Conditions workspace now provides bilingual category filters, search,
+pagination, source IDs, and exact-page buttons for this source index. These
+records remain a symptom/disease vocabulary and are not automatically treated
+as Western diagnoses or one-to-one mappings.
+
+Upgraded the existing immutable `cond.trigeminal_neuralgia` record to a useful
+bilingual study card with its exact CloudTCM page `/disease/tcm/36`, official
+NHS English page, bilingual summary, alias, and medical-review prompt. The
+record remains `draft`.
+
 ### 2026-07-22 - Bilingual Dyspepsia condition card and exact sources (Codex)
 
 Upgraded `cond.functional_dyspepsia` without changing its immutable ID or

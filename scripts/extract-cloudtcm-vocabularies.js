@@ -8,6 +8,7 @@ const ROOT = path.join(__dirname, "..");
 const FORMULA_URL = "https://cloudtcm.com/formula";
 const DISEASE_URL = "https://cloudtcm.com/disease/tcm";
 const INDICATION_TRANSLATIONS = path.join(ROOT, "data/config/cloudtcm_formula_indication_en.json");
+const DISEASE_ENTRY_TRANSLATIONS = path.join(ROOT, "data/config/cloudtcm_disease_entry_en.json");
 
 const DISEASE_EN = {
   "疼痛症狀": "Pain Symptoms",
@@ -97,21 +98,31 @@ function writeJson(relativePath, value) {
 
 async function main() {
   const args = parseArgs(process.argv);
-  const formula = nextData(await readSource(args["formula-html"], FORMULA_URL), "formula page");
   const disease = nextData(await readSource(args["disease-html"], DISEASE_URL), "disease page");
-  const functions = formula.pageDataList_1 || [];
-  const indications = formula.pageDataList_2 || [];
+  const formula = args["disease-only"]
+    ? null
+    : nextData(await readSource(args["formula-html"], FORMULA_URL), "formula page");
+  const diseaseRows = (disease.columns || []).flat();
+  const functions = (formula && formula.pageDataList_1) || [];
+  const indications = (formula && formula.pageDataList_2) || [];
   const diseaseCategories = disease.symptomCategoryTags || [];
+  const diseaseEntryTranslationDoc = JSON.parse(fs.readFileSync(DISEASE_ENTRY_TRANSLATIONS, "utf8"));
+  const diseaseEntryTranslations = diseaseEntryTranslationDoc.translations || {};
   const indicationTranslationDoc = JSON.parse(fs.readFileSync(INDICATION_TRANSLATIONS, "utf8"));
   const indicationTranslations = new Map(indicationTranslationDoc.records.map((record) => [Number(record.source_id), record]));
 
-  if (functions.length !== 139 || indications.length !== 2473 || diseaseCategories.length !== 14) {
-    throw new Error(`Source counts changed: disease=${diseaseCategories.length}, functions=${functions.length}, indications=${indications.length}`);
+  if (diseaseRows.length !== 205 || diseaseCategories.length !== 14) {
+    throw new Error(`Source counts changed: disease rows=${diseaseRows.length}, categories=${diseaseCategories.length}`);
   }
-  const untranslatedFunctions = functions.filter((item) => !FUNCTION_EN[item.title]);
+  if (!args["disease-only"] && (functions.length !== 139 || indications.length !== 2473)) {
+    throw new Error(`Source counts changed: functions=${functions.length}, indications=${indications.length}`);
+  }
+  const untranslatedFunctions = formula ? functions.filter((item) => !FUNCTION_EN[item.title]) : [];
   const untranslatedDisease = diseaseCategories.filter((item) => !DISEASE_EN[item.TagName]);
-  if (untranslatedFunctions.length || untranslatedDisease.length) {
-    throw new Error(`Missing curated translations: disease=${untranslatedDisease.length}, functions=${untranslatedFunctions.length}`);
+  const untranslatedDiseaseEntries = [...new Set(diseaseRows.map((item) => item.title))]
+    .filter((name) => !diseaseEntryTranslations[name]);
+  if (untranslatedFunctions.length || untranslatedDisease.length || untranslatedDiseaseEntries.length) {
+    throw new Error(`Missing curated translations: disease categories=${untranslatedDisease.length}, disease entries=${untranslatedDiseaseEntries.join(" | ") || 0}, functions=${untranslatedFunctions.length}`);
   }
 
   const common = {
@@ -135,6 +146,46 @@ async function main() {
       translation_status: "curated_draft"
     }))
   });
+  const diseaseEntriesByRoute = new Map();
+  diseaseRows.forEach((item) => {
+    const route = String(item.route || "");
+    const existing = diseaseEntriesByRoute.get(route);
+    if (existing) {
+      if (existing.name_zh !== item.title) throw new Error(`Disease route identity mismatch: ${route}`);
+      existing.category_ids.add(`cloudtcm.disease_category.${item.TagID}`);
+      return;
+    }
+    const sourceId = numericId(route);
+    diseaseEntriesByRoute.set(route, {
+      id: `cloudtcm.disease_entry.${sourceId}`,
+      source_id: sourceId,
+      name_zh: item.title,
+      name_en: diseaseEntryTranslations[item.title],
+      category_ids: new Set([`cloudtcm.disease_category.${item.TagID}`]),
+      source_url: new URL(route, "https://cloudtcm.com").href,
+      image_url: item.image || null,
+      source_date: item.date || null,
+      translation_status: "curated_draft",
+      review_status: "draft"
+    });
+  });
+  const diseaseEntries = [...diseaseEntriesByRoute.values()]
+    .map((record) => ({ ...record, category_ids: [...record.category_ids].sort() }))
+    .sort((a, b) => a.source_id - b.source_id);
+  writeJson("data/pathology/cloudtcm_disease_entries.json", {
+    dataset: "CloudTCM bilingual disease and symptom source entries",
+    ...common,
+    source_url: DISEASE_URL,
+    source_row_count: diseaseRows.length,
+    count: diseaseEntries.length,
+    identity_policy: "One stable source-page ID per record. Repeated cards merge into category_ids; symptoms remain symptoms and are not promoted to diagnoses.",
+    translation_policy: diseaseEntryTranslationDoc.policy,
+    records: diseaseEntries
+  });
+  if (args["disease-only"]) {
+    console.log(`PASS: disease rows=${diseaseRows.length}, unique entries=${diseaseEntries.length}, categories=${diseaseCategories.length}`);
+    return;
+  }
   writeJson("data/herbs/cloudtcm_formula_function_tags.json", {
     dataset: "CloudTCM bilingual formula function tags",
     ...common,
