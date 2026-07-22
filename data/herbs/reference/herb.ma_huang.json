@@ -1,0 +1,176 @@
+{
+  "_reference_note": "REFERENCE IMPLEMENTATION of docs/HERB_FORMULA_CARD_SPEC.md. This is what one herb record looks like at the target standard, built from both benchmark sources. Use it as the shape to migrate the other 201 herbs to. Chinese content sourced from CloudTCM; English clinical structure from American Dragon; where a value exists on only one side it is marked in field_sources with translated:true so nothing pretends to be sourced in both languages when it is not.",
+
+  "id": "herb.ma_huang",
+  "name_zh": "麻黃",
+  "name_en": "Ephedra",
+  "pinyin": "Ma Huang",
+  "pharmaceutical_latin": "Herba Ephedrae",
+  "botanical_name": "Ephedra sinica",
+  "aliases_en": ["Ephedra Stem", "Mormon Tea", "Chinese Joint Fir", "Numb Yellow", "Northern Aromatic"],
+  "category_zh": "解表藥－發散風寒藥",
+  "category_en": "Herbs that Release the Exterior: Warm, Acrid (Wind-Cold Diaphoretics)",
+
+  "properties": {
+    "taste_zh": ["辛", "微苦"],
+    "taste_en": ["Acrid", "Slightly bitter"],
+    "temperature_zh": "溫",
+    "temperature_en": "Warm",
+    "channels_zh": ["肺經", "膀胱經"],
+    "channels_en": ["Lung", "Bladder"],
+    "source_agreement": "CloudTCM and American Dragon agree independently on 辛微苦溫/肺膀胱. The previous record said only 'Acrid; warm' and omitted 微苦."
+  },
+
+  "dosage": {
+    "decoction_g": "1.5-10",
+    "other_forms_zh": "或入丸、散",
+    "other_forms_en": "Tincture 1-3ml; also in pills and powders",
+    "notes_zh": "晚間服用可能興奮中樞神經，易致失眠；宜日間服。",
+    "notes_en": "Evening dosing may stimulate the CNS and cause insomnia; prefer daytime dosing.",
+    "source_agreement": "Both benchmark sources give 1.5-10g independently."
+  },
+
+  "actions_indications": [
+    {
+      "action_zh": "發汗解表",
+      "action_en": "Induces sweating and releases the exterior",
+      "patterns": [
+        {
+          "pattern_zh": "風寒束表（太陽表實證）",
+          "pattern_en": "Wind-Cold invading the Lung; Tai Yang stage",
+          "clinical_picture_zh": "無汗、惡寒、發熱、頭痛、脈浮緊",
+          "clinical_picture_en": "Anhidrosis, chills, fever, headache, tight floating pulse"
+        }
+      ]
+    },
+    {
+      "action_zh": "宣肺平喘、止咳",
+      "action_en": "Disseminates and facilitates Lung qi; calms wheezing and stops cough",
+      "patterns": [
+        {
+          "pattern_zh": "風寒襲肺、肺氣壅遏",
+          "pattern_en": "Wind-Cold obstructing Lung qi",
+          "clinical_picture_zh": "咳嗽氣喘、胸悶",
+          "clinical_picture_en": "Cough and wheezing with chest oppression"
+        }
+      ]
+    },
+    {
+      "action_zh": "利水消腫",
+      "action_en": "Promotes urination and reduces edema",
+      "patterns": [
+        {
+          "pattern_zh": "風水（外感引起之水腫）",
+          "pattern_en": "Externally generated edema",
+          "clinical_picture_zh": "浮腫起於頭面、來勢較急，兼表證",
+          "clinical_picture_en": "Acute-onset edema beginning in the face, with exterior signs"
+        }
+      ]
+    },
+    {
+      "action_zh": "散寒通滯",
+      "action_en": "Warms and disperses cold pathogens",
+      "patterns": [
+        {
+          "pattern_zh": "風寒濕痺",
+          "pattern_en": "Wind-Cold Bi syndrome",
+          "clinical_picture_zh": "關節冷痛、得溫則減",
+          "clinical_picture_en": "Cold painful joints, relieved by warmth"
+        },
+        {
+          "pattern_zh": "陰疽、無頭瘡毒",
+          "pattern_en": "Yin sores; toxic sores without a head",
+          "clinical_picture_zh": "漫腫無頭、皮色不變",
+          "clinical_picture_en": "Diffuse swelling without a head, normal skin colour"
+        }
+      ]
+    }
+  ],
+
+  "modern_pharmacology_zh": ["發汗", "鎮咳", "利尿", "抗炎", "抗菌", "鎮痛", "降血糖"],
+  "modern_pharmacology_en": ["Diaphoretic", "Antitussive", "Diuretic", "Anti-inflammatory", "Antibacterial", "Analgesic", "Hypoglycaemic"],
+
+  "chemical_composition_note_zh": "含麻黃鹼（ephedrine）類生物鹼等四十餘種成分。",
+  "chemical_composition_note_en": "Over forty constituents, principally ephedrine-type alkaloids.",
+
+  "processing": [
+    { "method_zh": "淨麻黃", "method_en": "Cleaned (Jing Ma Huang)", "effect_zh": "標準品，發汗力最強", "effect_en": "Standard form; strongest diaphoretic effect" },
+    { "method_zh": "麻黃絨", "method_en": "Ephedra cotton (Ma Huang Rong)", "effect_zh": "發汗力略減，用於體弱者", "effect_en": "Slightly reduced diaphoretic effect" },
+    { "method_zh": "炙麻黃", "method_en": "Prepared (Zhi Ma Huang)", "effect_zh": "發汗力減，平喘力增", "effect_en": "Reduced diaphoretic, increased Lung-calming action" },
+    { "method_zh": "蜜炙麻黃", "method_en": "Honey-fried (Mi Zhi Ma Huang)", "effect_zh": "發汗力再減，作用時間延長，偏於潤肺止咳", "effect_en": "Further reduced diaphoretic, prolonged duration of action" }
+  ],
+
+  "contraindications_zh": [
+    "不宜大劑量使用，過汗傷正",
+    "肝陽上亢、陰虛火旺者忌用",
+    "孕婦慎用；哺乳期慎用",
+    "高血壓、心臟病、癲癇及抽搐病史者慎用",
+    "自汗、盜汗、腎不納氣之虛喘者慎用",
+    "失眠、胃潰瘍、甲狀腺功能亢進、青光眼、前列腺肥大、糖尿病者慎用"
+  ],
+  "contraindications_en": [
+    "Do not use in large doses - excessive sweating weakens the body",
+    "Contraindicated in Liver Yang Rising and Yin Deficiency Fire",
+    "Caution in pregnancy and while nursing",
+    "Caution with hypertension, heart disease, epilepsy, seizure disorders, convulsions",
+    "Caution with deficiency spontaneous sweating, night sweats from Yin deficiency, Kidney qi failure wheezing",
+    "Caution with insomnia, stomach ulcers, hyperthyroidism, glaucoma, prostatic enlargement, diabetes, anorexia, bulimia, cardiac asthma"
+  ],
+
+  "herb_drug_interactions": [
+    { "with_en": "Cardiac glycosides", "with_zh": "強心苷", "risk_zh": "可能導致心律不整", "risk_en": "May lead to cardiac arrhythmia" },
+    { "with_en": "Sympathomimetics (ephedrine, pseudoephedrine, theophylline, caffeine), MAOIs", "with_zh": "擬交感神經藥物、單胺氧化酶抑制劑", "risk_zh": "作用疊加，不宜併用", "risk_en": "Additive stimulant effect - do not combine" },
+    { "with_en": "Beta blockers (atenolol, metoprolol, sotalol, propranolol, labetalol)", "with_zh": "乙型阻斷劑", "risk_zh": "可能降低其療效（麻黃升高正腎上腺素）", "risk_en": "Beta blocker effect may be reduced; herb increases norepinephrine" },
+    { "with_en": "Diuretics", "with_zh": "利尿劑", "risk_zh": "可能加重水分與電解質流失", "risk_en": "May increase water and electrolyte loss" }
+  ],
+
+  "toxicity_note_zh": "有小毒。中毒解救可用 atropine。節部（莖節）小毒，傳統須除去。麻黃根功效相反（斂汗），可用於過量。",
+  "toxicity_note_en": "Slightly toxic; atropine is the antidote. The leaf-segment nodes are slightly toxic and are traditionally removed. Ma Huang Gen (the root) has the opposite action and is used for overdose.",
+
+  "major_combinations": [
+    { "with_zh": "桂枝", "with_en": "Gui Zhi (Ramulus Cinnamomi)", "purpose_zh": "風寒表實，發熱惡寒無汗", "purpose_en": "Wind-Cold excess with fever, chills and no sweating" },
+    { "with_zh": "杏仁", "with_en": "Xing Ren (Semen Armeniacae)", "purpose_zh": "風寒咳喘", "purpose_en": "Wind-Cold cough and wheezing" },
+    { "with_zh": "石膏、杏仁", "with_en": "Shi Gao + Xing Ren", "purpose_zh": "肺熱咳喘（麻杏石甘湯法）", "purpose_en": "Heat-obstruction cough with wheezing" },
+    { "with_zh": "石膏、黃芩、桑白皮", "with_en": "Shi Gao, Huang Qin, Sang Bai Pi", "purpose_zh": "熱壅較重，氣喘、發熱、鼻翼煽動", "purpose_en": "More severe heat obstruction with wheezing, fever, nostril flaring" },
+    { "with_zh": "人參", "with_en": "Ren Shen", "purpose_zh": "風寒兼氣虛", "purpose_en": "Wind-Cold with underlying qi deficiency" },
+    { "with_zh": "白朮、茯苓皮、桑白皮", "with_en": "Bai Zhu, Fu Ling Pi, Sang Bai Pi", "purpose_zh": "水腫急性發作", "purpose_en": "Acute-onset edema" },
+    { "with_zh": "製附子", "with_en": "Zhi Fu Zi", "purpose_zh": "風寒濕痺", "purpose_en": "Wind-Cold Bi" },
+    { "with_zh": "白果", "with_en": "Bai Guo", "purpose_zh": "斂肺平喘", "purpose_en": "Calms wheezing" },
+    { "with_zh": "乾薑、細辛、製半夏", "with_en": "Gan Jiang, Xi Xin, Zhi Ban Xia", "purpose_zh": "外寒內飲之咳喘（小青龍湯法）", "purpose_en": "Wheezing/cough from exterior Wind-Cold with interior cold fluid" },
+    { "with_zh": "熟地黃、白芥子、鹿角膠", "with_en": "Shu Di Huang, Bai Jie Zi, Lu Jiao Jiao", "purpose_zh": "陰疽（陽和湯法）", "purpose_en": "Yin sores" }
+  ],
+
+  "related_formulas": ["formula.ma_huang_tang", "formula.xiao_qing_long_tang", "formula.ma_xing_shi_gan_tang", "formula.yang_he_tang"],
+  "related_formulas_note": "CloudTCM lists 60+ formulas containing 麻黃; the four above are the canonical teaching examples and are the ones present in this repo's formula canon.",
+
+  "field_sources": {
+    "properties": ["cloudtcm_herb_pages", "american_dragon"],
+    "dosage": ["cloudtcm_herb_pages", "american_dragon"],
+    "actions_indications": ["american_dragon", "cloudtcm_herb_pages"],
+    "actions_indications_zh_note": "Chinese action names and clinical pictures follow standard TCM terminology matching CloudTCM's 傳統功效; the pattern-nesting structure follows American Dragon. translated:true where no Chinese original was quoted.",
+    "modern_pharmacology_zh": ["cloudtcm_herb_pages"],
+    "modern_pharmacology_en": ["cloudtcm_herb_pages"],
+    "processing": ["american_dragon"],
+    "contraindications": ["american_dragon", "cloudtcm_herb_pages"],
+    "herb_drug_interactions": ["american_dragon"],
+    "toxicity_note": ["american_dragon"],
+    "major_combinations": ["american_dragon"],
+    "chemical_composition_note": ["cloudtcm_herb_pages"]
+  },
+
+  "benchmark_check": {
+    "checked_on": "2026-07-22",
+    "cloudtcm_url": "https://www.cloudtcm.com/herb/1",
+    "american_dragon_url": "http://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+    "sections_they_have_we_still_lack": [
+      "化學成分 full constituent list (40+ named compounds) - summarised here rather than enumerated",
+      "可改善疾病 (50+ conditions) - needs linking to the condition canon rather than free text",
+      "相關方劑 full 60+ list - repo formula canon only contains 4 of them"
+    ]
+  },
+
+  "safety_flags": ["hypertension_review", "cardiac_review", "pregnancy_review", "insomnia_review", "drug_interaction_review"],
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "reviewed_by": null
+}
