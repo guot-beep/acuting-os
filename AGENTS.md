@@ -1,5 +1,44 @@
 # Repository Guidelines
 
+> ## CONTENT POLICY CHANGED 2026-07-22 — READ THIS BEFORE FILLING ANYTHING
+>
+> Ting's instruction, verbatim: 「你應該直接填上 然後標註來源就好 …
+> 我審核太嚴格導致資訊近來太少 我這是內部使用不公開 所以我需要資訊強大」
+>
+> **The old default was wrong and is retired.** Leaving a field empty with a
+> 待補 / "pending review" placeholder is no longer the safe choice — it is the
+> failure case. An empty dosage field is not safer than a sourced one; it just
+> moves the lookup somewhere untracked. This app is **private, internal, not
+> public**, and it is a study tool, not a patient-facing service.
+>
+> **New default: FILL IT, then cite where it came from.**
+>
+> 1. **Fill every field you can from a professional source.** Dosage, 性味歸經,
+>    functions, indications, contraindications, modern clinical application —
+>    all of it. Per-record content, never a category-level template.
+> 2. **Cite per field.** Each filled value carries the source it came from.
+>    Provenance is the safety mechanism, not emptiness. In clinic Ting needs to
+>    know *what she is leaning on*, and a blank tells her nothing.
+> 3. **Bilingual is required, not optional.** 中文 and English content, not an
+>    English placeholder sitting in a `_zh` field.
+> 4. **No boilerplate. Ever.** If 200 records share one sentence, that is not
+>    content — it is a skeleton wearing content's clothes, and it defeats every
+>    coverage measurement. Writing the same sentence 200 times is worse than
+>    leaving it empty, because empty is at least honest.
+> 5. **`review_status` labels, it does not block.** Draft content renders, with
+>    its badge. Ting reviews it in-app while studying (RV1).
+>
+> **The only things that still get individual care** — and note that "care"
+> means *fill it, cite it, and flag it*, NOT leave it blank:
+> needling depth and angle, herb toxicity and maximum dose, pregnancy and
+> paediatric cautions, and drug–herb interactions. Give the source's number and
+> name the source. Never invent a number, and never present a single source's
+> figure as if it were consensus when sources disagree — record the
+> disagreement instead.
+>
+> **Applies to Codex too.** Stop producing staging previews that wait for a
+> gate. Fill, cite, ship, let Ting review in the app.
+
 > **READ `DECISIONS.md` (repo root) FIRST.** It records the one-way-door
 > architecture decisions (ID immutability + namespacing, de-identification
 > posture, schema cardinality, the JSON-knowledge / SQLite-clinical split,
