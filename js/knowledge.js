@@ -813,26 +813,61 @@
   // ---- Conditions ----------------------------------------------------------
   const condHost = el("conditionRecords");
   if (condHost) {
-    const conds = K.conditions.records || [];
+    const allConds = (K.conditionCanon && K.conditionCanon.records) || [];
+    // CONDITIONS_MODULE_DESIGN gate: do not present a condition as study-ready
+    // until its safety prompts exist. Skeleton-only records remain counted below.
+    const conds = allConds.filter((record) =>
+      (record.red_flags_zh || []).length && (record.red_flags_en || []).length
+    );
     const eastern = K.conditions.eastern_diseases || [];
     const patterns = K.conditions.tcm_patterns || [];
+    const conditionSources = (record) => {
+      const links = (record.source_links || []).filter((link) =>
+        link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
+      );
+      if (!links.length) return "";
+      return `<div class="k-source-links k-condition-source-links">
+        ${links.map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">
+          <strong>${esc(link.label_zh || "資料來源")}</strong>
+          <small>${esc(link.label_en || "Source")}</small>
+        </a>`).join("")}
+      </div>`;
+    };
+    const renderConditions = (list) => list.map((c) => {
+      const relatedSymptoms = (c.related_tcm_symptoms || []).map((item) =>
+        tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
+      ).join("");
+      const aliases = [...(c.aliases_zh || []), ...(c.aliases_en || [])];
+      return `
+        <article class="k-card k-condition-card" data-record-id="${esc(c.id)}">
+          <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}</header>
+          <p class="k-meta">${esc(c.id)} · ${esc(c.category || "")} · ICD hint ${esc(c.icd_hint || "—")}</p>
+          ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
+          ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}
+          ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
+          ${(c.related_eastern_diseases || []).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
+          ${(c.red_flags_zh || []).length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags</summary><p class="k-flags">⚠ ${(c.red_flags_zh || []).slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
+          ${conditionSources(c)}
+        </article>`;
+    }).join("");
     condHost.innerHTML = `
       <div class="mini-heading">
-        <strong>Condition Records / 病症紀錄（${conds.length} western · ${eastern.length} eastern · ${patterns.length} patterns）</strong>
-        <span>來源：data/pathology/conditions.json · relation records，不是一對一翻譯。</span>
+        <strong>Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）</strong>
+        <span>來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。</span>
       </div>
-      <div class="k-grid">
-        ${conds.map((c) => `
-          <article class="k-card">
-            <header><strong>${esc(c.name_zh)}</strong>${c.fertility_relevance ? '<span class="k-status k-status-fertility">fertility</span>' : ""}</header>
-            <p class="k-en">${esc(c.name_en)}</p>
-            <p class="k-meta">${esc(c.category)}</p>
-            <p class="k-tags">${(c.common_documentation_topics || []).slice(0, 4).map(tag).join("")}</p>
-            ${(c.red_flags_en || []).length ? `<p class="k-flags">⚠ ${(c.red_flags_en || []).slice(0, 3).map(esc).join(" · ")}</p>` : ""}
-          </article>`).join("")}
-      </div>
+      <input type="search" id="conditionFilter" placeholder="搜尋中英文病名、別名、ICD..." class="k-filter" />
+      <div class="k-grid k-grid-wide" id="conditionGrid">${renderConditions(conds)}</div>
       <p class="k-meta">Eastern：${eastern.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>
       <p class="k-meta">Patterns：${patterns.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>`;
+    el("conditionFilter").addEventListener("input", (event) => {
+      const q = event.target.value.trim().toLowerCase();
+      const hits = conds.filter((record) => [
+        record.id, record.name_zh, record.name_en, record.icd_hint, record.category,
+        ...(record.aliases_zh || []), ...(record.aliases_en || []),
+        ...(record.related_tcm_symptoms || []).flatMap((item) => [item.name_zh, item.name_en])
+      ].join(" ").toLowerCase().includes(q));
+      el("conditionGrid").innerHTML = renderConditions(hits) || '<p class="k-missing">找不到相符病症 / No matching condition.</p>';
+    });
   }
 
   // ---- Source registry -------------------------------------------------------

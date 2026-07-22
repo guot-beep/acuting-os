@@ -1,3 +1,67 @@
+# REBUILD HANDOFF - Session 40 (2026-07-22, bilingual Dyspepsia sources)
+
+## 1. Goal
+Show a useful bilingual Dyspepsia condition card with exact Chinese and
+English sources and no Google link.
+
+## 2. Files changed
+Condition canon, source registry, condition renderer/styles, generated bundle,
+focused validator, and coordination logs.
+
+## 3. What changed
+功能性消化不良 / Functional Dyspepsia now has aliases, a bilingual summary,
+safety prompts, exact source buttons, and searchable related terminology.
+
+## 4. Why this changed
+The existing 150-record canon was not visible in the Conditions workspace, and
+the user needs real source pages rather than generic searches.
+
+## 5. Data content changes
+Added Dyspepsia/Indigestion aliases and 上腹胃脘痛 as a related TCM symptom.
+
+## 6. Source status / accuracy guardrail
+NIDDK is the official English biomedical source. CloudTCM is the practical
+Chinese TCM source. The record remains draft and explicitly rejects one-to-one
+diagnostic equivalence.
+
+## 7. Schema / field changes
+Additive fields: aliases_zh/en, related_tcm_symptoms, summary/red_flags,
+source_links/source_urls, and source_status. No ID or existing field changed.
+
+## 8. Generated files / scripts
+`build-data.js` regenerated bundles. `validate-condition-sources.js` verifies
+identity, source registration, exact links, bilingual labels, rendering, and
+search behavior.
+
+## 9. Protected areas
+No 361.json, CLOUDTCM review docs, case/SOAP, router, point map, or clinical
+data change. Claude's untracked architecture draft was excluded.
+
+## 10. Validation
+Condition-source validator plus data, interaction, relation, herbal-link,
+herb-canon, JavaScript syntax, and content-quality checks PASS.
+
+## 11. Triage results
+上腹胃脘痛 is related to Dyspepsia but is not a safe exact replacement for
+the canonical diagnosis Functional Dyspepsia.
+
+## 12. Not completed
+The remaining condition canon still has major content gaps; only records with
+bilingual red flags are shown by the existing safety gate.
+
+## 13. Next reader should inspect
+The two direct links, related-not-exact wording, and NIDDK safety prompts.
+
+## 14. Next step
+Fill the next GI records in small bilingual batches with a direct Chinese page
+plus an official English condition page.
+
+## 15. Risk
+Low runtime risk; medium terminology risk if future contributors collapse TCM
+symptoms into Western diagnoses. The validator locks this record to `related`.
+
+---
+
 # REBUILD HANDOFF - Session 39 (2026-07-22, indication translation batch 1)
 
 ## 1. Goal

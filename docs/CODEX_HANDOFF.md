@@ -69,6 +69,50 @@ Claude review note:
 
 ---
 
+## 2026-07-22 - Codex - Bilingual Dyspepsia condition card
+
+Date/time: 2026-07-22
+Agent: Codex
+Branch: `main`
+Commit or stash: coherent condition-source commit (this entry's commit)
+Task: Add a bilingual Western-condition card with exact Chinese and English
+source pages, preserving a related-not-equivalent TCM symptom mapping.
+
+Files changed:
+- `data/pathology/condition_canon_shortlist.json`
+- `data/sources/source_registry.json`
+- `js/knowledge.js`, `styles.css`
+- `scripts/validate-condition-sources.js`
+- generated knowledge/app bundles and coordination logs
+
+Validation:
+- Condition source validator: 150 unique condition IDs, 2 exact source links,
+  bilingual source pair, rendered card, and Dyspepsia search PASS.
+- `validate-data`, `validate-interactions`, `validate-relations`,
+  `validate-herbal-links`, `validate-herb-canon`, and content-quality audit PASS.
+- No Google link exists in the rendered condition cards.
+
+Protected areas not touched:
+- No `data/acupoints/361.json`, `docs/CLOUDTCM_*`, case/SOAP, router,
+  point map, clinical data, or Claude architecture draft change.
+
+Known risks / manual checks:
+- `cond.functional_dyspepsia` remains draft. CloudTCM's 上腹胃脘痛 is a
+  related symptom concept, not an exact synonym for the Western diagnosis.
+- Browser automation could not reload localhost due its URL policy; the same
+  production renderer was executed in a local DOM contract test instead.
+
+Next recommended action:
+- Reuse the structured `source_links` + `related_tcm_symptoms` shape for the
+  next GI condition batch, always pairing a direct Chinese page with a real
+  English institutional source.
+
+Claude review note:
+- Verify the relation remains `related`, red flags match NIDDK, and the
+  Conditions workspace does not expose canon skeletons lacking safety fields.
+
+---
+
 ## 2026-07-22 - Codex - Formula indication translation batch 1
 
 Date/time: 2026-07-22

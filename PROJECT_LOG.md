@@ -23,6 +23,25 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-22 - Bilingual Dyspepsia condition card and exact sources (Codex)
+
+Upgraded `cond.functional_dyspepsia` without changing its immutable ID or
+collapsing Western and TCM concepts. The Western title remains 功能性消化不良 /
+Functional Dyspepsia; 消化不良, Dyspepsia, and Indigestion are searchable
+aliases. CloudTCM's 上腹胃脘痛 is stored and displayed as a related symptom,
+not an exact diagnostic translation.
+
+Added two direct non-Google references: CloudTCM's exact Chinese page
+`/disease/tcm/28325` and the official NIDDK English Indigestion (Dyspepsia)
+page. The card includes bilingual summary and NIDDK-derived red-flag review
+prompts, remains `draft`, and states that the mapping is not one-to-one.
+
+The Conditions workspace now reads the 150-record condition canon, renders
+only records that satisfy the existing bilingual safety-field gate, and adds
+bilingual search plus exact source buttons. A dedicated validator enforces
+HTTPS/direct links, no Google links, registered sources, bilingual labels,
+the related-not-exact mapping, rendered output, and Dyspepsia search.
+
 ### 2026-07-22 - First CloudTCM formula-indication translation batch (Codex)
 
 Added 58 curated-draft English labels to the 2473-record indication queue,

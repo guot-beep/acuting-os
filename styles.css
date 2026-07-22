@@ -4550,6 +4550,23 @@ a { color: var(--accent-dark); }
 }
 .k-source-links a:hover,
 .k-source-links a:focus-visible { background: #f4ecdc; outline: 2px solid #c59631; outline-offset: 1px; }
+.k-condition-source-links { margin-top: 0.75rem; }
+.k-condition-source-links a {
+  display: grid;
+  gap: 0.12rem;
+  min-width: min(100%, 15rem);
+}
+.k-condition-source-links a small,
+.k-condition-related small { color: var(--muted); font-weight: 500; }
+.k-condition-related {
+  border-top: 1px solid var(--line);
+  margin-top: 0.7rem;
+  padding-top: 0.65rem;
+}
+.k-condition-related > strong { color: var(--accent-dark); }
+.k-condition-related > strong small { margin-left: 0.3rem; }
+.k-condition-flags { margin-top: 0.65rem; }
+.k-condition-flags summary { color: var(--warn); cursor: pointer; font-weight: 800; }
 .k-visual-source-links a {
   display: grid;
   gap: 0.15rem;
