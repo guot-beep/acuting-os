@@ -204,6 +204,7 @@
               <h3>資料狀態</h3>
               <p>${statusPill(record.review_status)}</p>
               <small>內容需依教材、機構資料庫與 Ting 課件逐欄核對。</small>
+              ${window.AcuTingReview ? window.AcuTingReview.strip(kind, record.id, record.review_status) : ""}
             </section>
           </aside>
         </div>

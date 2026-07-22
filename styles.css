@@ -4646,3 +4646,78 @@ body.point-detail-mode .map-panel {
 .tcm-dx-row small { color: #7c5a22; display: block; font-size: 0.72rem; }
 .tcm-dx-row span { color: var(--ink); font-size: 0.9rem; }
 @media (max-width: 640px) { .tcm-dx-row { grid-template-columns: 1fr; } }
+
+/* RV1: in-app review controls (js/review.js) */
+.rv-strip {
+  margin: 0.85rem 0 1rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line, rgba(148, 163, 184, 0.28));
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.06);
+}
+
+.rv-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.rv-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-right: 0.2rem;
+}
+
+.rv-btn {
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line, rgba(148, 163, 184, 0.35));
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: inherit;
+}
+
+.rv-btn:hover { border-color: currentColor; }
+.rv-ok.is-active { background: #34d399; border-color: #34d399; color: #0b1220; }
+.rv-warn.is-active { background: #fbbf24; border-color: #fbbf24; color: #0b1220; }
+.rv-clear { opacity: 0.7; font-weight: 600; }
+
+.rv-count {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.rv-link {
+  border: 0;
+  background: none;
+  padding: 0 0 0 0.35rem;
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.rv-done {
+  margin: 0.55rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.rv-done small {
+  font-weight: 500;
+  opacity: 0.65;
+  margin-left: 0.4rem;
+}
+
+.rv-note { display: grid; gap: 0.3rem; margin-top: 0.6rem; font-size: 0.82rem; font-weight: 600; }
+.rv-note-actions { display: flex; gap: 0.4rem; margin-top: 0.45rem; }
+
+/* the review box in knowledge detail cards is narrow — stack there */
+.k-detail-review-box .rv-line { flex-direction: column; align-items: stretch; }
+.k-detail-review-box .rv-count { margin-left: 0; }

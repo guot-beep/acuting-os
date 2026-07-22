@@ -2387,6 +2387,7 @@ function renderDetail(point) {
         </section>
 
         ${renderPointCategoryBadges(point)}
+        ${window.AcuTingReview ? window.AcuTingReview.strip("point", point.code, point.reviewStatus) : ""}
         ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
         ${visualLinksSection(point)}
