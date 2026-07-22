@@ -4728,3 +4728,12 @@ body.point-detail-mode .map-panel {
   line-height: 1.45;
   color: var(--text, inherit);
 }
+
+/* Modern application tags: grouped, bilingual, never raw keys */
+.k-modern-group { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin: 0 0 0.55rem; }
+.k-modern-group-label { font-size: 0.78rem; font-weight: 800; color: var(--muted); margin-right: 0.2rem; }
+.k-modern-group-label small { font-weight: 600; opacity: 0.75; }
+.k-modern-chip.is-condition { background: rgba(56, 189, 248, 0.16); border-color: rgba(56, 189, 248, 0.4); }
+.k-modern-chip.is-symptom   { background: rgba(148, 163, 184, 0.14); }
+.k-modern-chip.is-pattern   { background: rgba(167, 139, 250, 0.16); border-color: rgba(167, 139, 250, 0.4); }
+.k-modern-chip.is-unmapped  { opacity: 0.7; font-style: italic; }

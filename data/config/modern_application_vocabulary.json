@@ -1,0 +1,583 @@
+{
+  "vocabulary_version": "1.0",
+  "created_at": "2026-07-22",
+  "name_zh": "現代運用詞彙",
+  "name_en": "Modern application vocabulary",
+  "purpose": "Raw snake_case keys were rendering straight into the UI (common_cold, uri, chills_body_ache_context). Those are internal identifiers, not content. This maps every tag to a bilingual label and a TYPE, so the card can show 感冒 Common cold and route each tag to the right section.",
+  "type_note": {
+    "condition": "a real modern diagnosis - links to the condition canon",
+    "symptom": "a symptom or finding, not a diagnosis",
+    "pattern": "a TCM pattern that was mis-filed under modern application - render under patterns, not here",
+    "internal": "workflow state that must NEVER render as a clinical tag"
+  },
+  "id_policy": "Source tag strings are NOT renamed - DECISIONS D1 keeps ids immutable. Variants such as cough and cough_context both resolve here via aliases, which also collapses the ~18 duplicate pairs.",
+  "review_status": "draft",
+  "concepts": [
+    {
+      "id": "common_cold",
+      "name_zh": "感冒",
+      "name_en": "Common cold",
+      "type": "condition",
+      "aliases": [
+        "uri",
+        "chills_body_ache_context"
+      ]
+    },
+    {
+      "id": "influenza_like",
+      "name_zh": "時行感冒",
+      "name_en": "Influenza-like illness",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "allergic_rhinitis",
+      "name_zh": "過敏性鼻炎",
+      "name_en": "Allergic rhinitis",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "asthma",
+      "name_zh": "氣喘",
+      "name_en": "Asthma",
+      "type": "condition",
+      "aliases": [
+        "asthma_documentation_context",
+        "wheezing_context"
+      ]
+    },
+    {
+      "id": "gerd",
+      "name_zh": "胃食道逆流",
+      "name_en": "GERD",
+      "type": "condition",
+      "aliases": [
+        "gerd_context"
+      ]
+    },
+    {
+      "id": "ibs",
+      "name_zh": "腸躁症",
+      "name_en": "Irritable bowel syndrome",
+      "type": "condition",
+      "aliases": [
+        "bowel_pattern_context"
+      ]
+    },
+    {
+      "id": "pms",
+      "name_zh": "經前症候群",
+      "name_en": "Premenstrual syndrome",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "dysmenorrhea",
+      "name_zh": "經痛",
+      "name_en": "Dysmenorrhea",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "amenorrhea",
+      "name_zh": "閉經",
+      "name_en": "Amenorrhea",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "irregular_menstruation",
+      "name_zh": "月經不調",
+      "name_en": "Irregular menstruation",
+      "type": "condition",
+      "aliases": [
+        "menstrual_context"
+      ]
+    },
+    {
+      "id": "menopause",
+      "name_zh": "更年期",
+      "name_en": "Menopause",
+      "type": "condition",
+      "aliases": [
+        "menopause_context"
+      ]
+    },
+    {
+      "id": "infertility",
+      "name_zh": "不孕",
+      "name_en": "Infertility",
+      "type": "condition",
+      "aliases": [
+        "fertility_context"
+      ]
+    },
+    {
+      "id": "eczema",
+      "name_zh": "濕疹",
+      "name_en": "Eczema",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "anemia",
+      "name_zh": "貧血",
+      "name_en": "Anemia",
+      "type": "condition",
+      "aliases": [
+        "anemia_context"
+      ]
+    },
+    {
+      "id": "insomnia",
+      "name_zh": "失眠",
+      "name_en": "Insomnia",
+      "type": "condition",
+      "aliases": [
+        "insomnia_context"
+      ]
+    },
+    {
+      "id": "anxiety",
+      "name_zh": "焦慮",
+      "name_en": "Anxiety",
+      "type": "condition",
+      "aliases": [
+        "anxiety_context"
+      ]
+    },
+    {
+      "id": "depression",
+      "name_zh": "鬱症",
+      "name_en": "Depression",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "chronic_fatigue",
+      "name_zh": "久病體虛",
+      "name_en": "Chronic fatigue",
+      "type": "condition",
+      "aliases": [
+        "post_illness_fatigue",
+        "post_illness_support_context"
+      ]
+    },
+    {
+      "id": "dyspepsia",
+      "name_zh": "消化不良",
+      "name_en": "Dyspepsia",
+      "type": "condition",
+      "aliases": [
+        "indigestion_context",
+        "food_stagnation_context"
+      ]
+    },
+    {
+      "id": "constipation",
+      "name_zh": "便秘",
+      "name_en": "Constipation",
+      "type": "condition",
+      "aliases": [
+        "constipation_context"
+      ]
+    },
+    {
+      "id": "diarrhea",
+      "name_zh": "腹瀉",
+      "name_en": "Diarrhea",
+      "type": "condition",
+      "aliases": [
+        "diarrhea_context",
+        "loose_stools"
+      ]
+    },
+    {
+      "id": "edema",
+      "name_zh": "水腫",
+      "name_en": "Edema",
+      "type": "condition",
+      "aliases": [
+        "edema_context"
+      ]
+    },
+    {
+      "id": "urinary_frequency",
+      "name_zh": "小便頻數",
+      "name_en": "Urinary frequency",
+      "type": "condition",
+      "aliases": [
+        "urinary_frequency_context",
+        "urinary_symptoms",
+        "urinary_symptom_context"
+      ]
+    },
+    {
+      "id": "genital_itching",
+      "name_zh": "陰癢",
+      "name_en": "Genital itching",
+      "type": "condition",
+      "aliases": []
+    },
+    {
+      "id": "abnormal_bleeding",
+      "name_zh": "出血證",
+      "name_en": "Abnormal bleeding",
+      "type": "condition",
+      "aliases": [
+        "bleeding_context",
+        "menstrual_bleeding_context"
+      ]
+    },
+    {
+      "id": "prolapse",
+      "name_zh": "中氣下陷、臟器下垂",
+      "name_en": "Organ prolapse",
+      "type": "condition",
+      "aliases": [
+        "prolapse_context"
+      ]
+    },
+    {
+      "id": "parasitic_infection",
+      "name_zh": "蟲積",
+      "name_en": "Parasitic infection",
+      "type": "condition",
+      "aliases": [
+        "parasite_context"
+      ]
+    },
+    {
+      "id": "fever",
+      "name_zh": "發熱",
+      "name_en": "Fever",
+      "type": "symptom",
+      "aliases": [
+        "fever_context"
+      ]
+    },
+    {
+      "id": "cough",
+      "name_zh": "咳嗽",
+      "name_en": "Cough",
+      "type": "symptom",
+      "aliases": [
+        "cough_context"
+      ]
+    },
+    {
+      "id": "sore_throat",
+      "name_zh": "咽喉腫痛",
+      "name_en": "Sore throat",
+      "type": "symptom",
+      "aliases": [
+        "sore_throat_or_headache_context"
+      ]
+    },
+    {
+      "id": "headache",
+      "name_zh": "頭痛",
+      "name_en": "Headache",
+      "type": "symptom",
+      "aliases": []
+    },
+    {
+      "id": "dizziness",
+      "name_zh": "頭暈",
+      "name_en": "Dizziness",
+      "type": "symptom",
+      "aliases": [
+        "dizziness_context"
+      ]
+    },
+    {
+      "id": "fatigue",
+      "name_zh": "神疲乏力",
+      "name_en": "Fatigue",
+      "type": "symptom",
+      "aliases": [
+        "fatigue_context"
+      ]
+    },
+    {
+      "id": "pain_general",
+      "name_zh": "疼痛",
+      "name_en": "Pain",
+      "type": "symptom",
+      "aliases": [
+        "pain_context"
+      ]
+    },
+    {
+      "id": "abdominal_pain",
+      "name_zh": "腹痛",
+      "name_en": "Abdominal pain",
+      "type": "symptom",
+      "aliases": [
+        "abdominal_pain_context"
+      ]
+    },
+    {
+      "id": "chest_pain",
+      "name_zh": "胸痛",
+      "name_en": "Chest pain",
+      "type": "symptom",
+      "aliases": [
+        "chest_pain_context"
+      ]
+    },
+    {
+      "id": "rib_side_discomfort",
+      "name_zh": "脅肋脹痛",
+      "name_en": "Hypochondriac distension and pain",
+      "type": "symptom",
+      "aliases": []
+    },
+    {
+      "id": "joint_pain",
+      "name_zh": "關節疼痛",
+      "name_en": "Joint pain",
+      "type": "symptom",
+      "aliases": [
+        "joint_pain_context"
+      ]
+    },
+    {
+      "id": "low_back_soreness",
+      "name_zh": "腰膝痠軟",
+      "name_en": "Low back and knee soreness",
+      "type": "symptom",
+      "aliases": [
+        "low_back_knee_context"
+      ]
+    },
+    {
+      "id": "bloating",
+      "name_zh": "脘腹脹滿",
+      "name_en": "Abdominal distension",
+      "type": "symptom",
+      "aliases": [
+        "bloating_context"
+      ]
+    },
+    {
+      "id": "nausea",
+      "name_zh": "噁心",
+      "name_en": "Nausea",
+      "type": "symptom",
+      "aliases": [
+        "nausea_context"
+      ]
+    },
+    {
+      "id": "poor_appetite",
+      "name_zh": "納呆食少",
+      "name_en": "Poor appetite",
+      "type": "symptom",
+      "aliases": [
+        "poor_appetite_context",
+        "appetite_loss"
+      ]
+    },
+    {
+      "id": "palpitations",
+      "name_zh": "心悸",
+      "name_en": "Palpitations",
+      "type": "symptom",
+      "aliases": [
+        "palpitations_context"
+      ]
+    },
+    {
+      "id": "night_sweats",
+      "name_zh": "盜汗",
+      "name_en": "Night sweats",
+      "type": "symptom",
+      "aliases": [
+        "night_sweats_context"
+      ]
+    },
+    {
+      "id": "spontaneous_sweating",
+      "name_zh": "自汗",
+      "name_en": "Spontaneous sweating",
+      "type": "symptom",
+      "aliases": [
+        "sweating_context",
+        "sweating_pattern"
+      ]
+    },
+    {
+      "id": "cold_intolerance",
+      "name_zh": "畏寒肢冷",
+      "name_en": "Cold intolerance",
+      "type": "symptom",
+      "aliases": []
+    },
+    {
+      "id": "tremor",
+      "name_zh": "震顫",
+      "name_en": "Tremor",
+      "type": "symptom",
+      "aliases": [
+        "tremor_context"
+      ]
+    },
+    {
+      "id": "spasm",
+      "name_zh": "痙攣",
+      "name_en": "Spasm",
+      "type": "symptom",
+      "aliases": [
+        "spasm_context"
+      ]
+    },
+    {
+      "id": "dryness",
+      "name_zh": "津虧燥象",
+      "name_en": "Dryness",
+      "type": "symptom",
+      "aliases": [
+        "dryness_context"
+      ]
+    },
+    {
+      "id": "altered_consciousness",
+      "name_zh": "神志異常",
+      "name_en": "Altered consciousness",
+      "type": "symptom",
+      "aliases": [
+        "consciousness_context",
+        "emergency_formula_context"
+      ]
+    },
+    {
+      "id": "stress_related_digestive",
+      "name_zh": "情志失調之腸胃症狀",
+      "name_en": "Stress-related digestive symptoms",
+      "type": "symptom",
+      "aliases": [
+        "stress_digestive_context"
+      ]
+    },
+    {
+      "id": "inflammation",
+      "name_zh": "炎症反應",
+      "name_en": "Inflammation",
+      "type": "symptom",
+      "aliases": [
+        "inflammation_context"
+      ]
+    },
+    {
+      "id": "pat.damp_heat",
+      "name_zh": "濕熱證",
+      "name_en": "Damp-Heat",
+      "type": "pattern",
+      "aliases": [
+        "damp_heat_context"
+      ]
+    },
+    {
+      "id": "pat.dampness",
+      "name_zh": "濕阻證",
+      "name_en": "Dampness Obstruction",
+      "type": "pattern",
+      "aliases": [
+        "dampness_context",
+        "digestive_dampness_context"
+      ]
+    },
+    {
+      "id": "pat.phlegm",
+      "name_zh": "痰證",
+      "name_en": "Phlegm",
+      "type": "pattern",
+      "aliases": [
+        "phlegm",
+        "phlegm_context"
+      ]
+    },
+    {
+      "id": "pat.blood_stasis",
+      "name_zh": "血瘀證",
+      "name_en": "Blood Stasis",
+      "type": "pattern",
+      "aliases": [
+        "blood_stasis_context",
+        "blood_stasis_pain"
+      ]
+    },
+    {
+      "id": "pat.blood_deficiency",
+      "name_zh": "血虛證",
+      "name_en": "Blood Deficiency",
+      "type": "pattern",
+      "aliases": [
+        "blood_deficiency_context"
+      ]
+    },
+    {
+      "id": "pat.cold_deficiency",
+      "name_zh": "虛寒證",
+      "name_en": "Deficiency Cold",
+      "type": "pattern",
+      "aliases": [
+        "cold_deficiency_context",
+        "digestive_cold_context",
+        "cold_pain_context"
+      ]
+    },
+    {
+      "id": "pat.yang_deficiency",
+      "name_zh": "陽虛證",
+      "name_en": "Yang Deficiency",
+      "type": "pattern",
+      "aliases": [
+        "yang_deficiency_context"
+      ]
+    },
+    {
+      "id": "pat.bi_syndrome",
+      "name_zh": "痺證",
+      "name_en": "Bi Syndrome (painful obstruction)",
+      "type": "pattern",
+      "aliases": [
+        "bi_syndrome_context"
+      ]
+    },
+    {
+      "id": "_wf.source_review_pending",
+      "name_zh": "",
+      "name_en": "",
+      "type": "internal",
+      "aliases": [
+        "source_review_pending"
+      ]
+    },
+    {
+      "id": "_wf.safety_review",
+      "name_zh": "",
+      "name_en": "",
+      "type": "internal",
+      "aliases": [
+        "safety_review"
+      ]
+    },
+    {
+      "id": "_wf.musculoskeletal_review",
+      "name_zh": "",
+      "name_en": "",
+      "type": "internal",
+      "aliases": [
+        "musculoskeletal_review"
+      ]
+    }
+  ],
+  "label_conventions": {
+    "zh": "Standard TCM/medical Chinese. Patterns carry 證 where that is the conventional form.",
+    "en_pattern": "Title Case for TCM patterns - the convention in English TCM literature (Blood Stasis, Damp-Heat, Yang Deficiency).",
+    "en_biomedical": "Sentence case for biomedical conditions and symptoms (Common cold, Poor appetite). Acronyms stay capitalised (GERD, PMS)."
+  }
+}

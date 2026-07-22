@@ -16,6 +16,61 @@
       .replace(/"/g, "&quot;");
   }
   function tag(t) { return `<span class="k-tag">${esc(t)}</span>`; }
+
+  /* Modern application tags were rendering as raw snake_case keys — common_cold,
+     uri, chills_body_ache_context. Those are internal identifiers, not content.
+     data/config/modern_application_vocabulary.json maps every tag to a bilingual
+     label plus a type, so a tag can be shown properly and routed to the right
+     section. Source strings are never renamed (DECISIONS D1); resolution happens
+     here at display time, which also collapses the ~18 cough / cough_context
+     duplicate pairs onto one concept. */
+  const MODERN_VOCAB = (() => {
+    const v = K && K.modernApplicationVocabulary;
+    const byKey = new Map();
+    (v && v.concepts ? v.concepts : []).forEach((c) => {
+      byKey.set(c.id, c);
+      (c.aliases || []).forEach((a) => byKey.set(a, c));
+    });
+    return byKey;
+  })();
+
+  function resolveModernTag(raw) {
+    const hit = MODERN_VOCAB.get(String(raw));
+    if (hit) return hit;
+    // Unmapped tag: still never show the raw key. Humanise it and flag it.
+    const label = String(raw || "").replace(/_context$/, "").replace(/_/g, " ").trim();
+    return { id: String(raw), name_zh: "", name_en: label.charAt(0).toUpperCase() + label.slice(1), type: "unmapped" };
+  }
+
+  /* Renders modern tags grouped by type. Conditions and symptoms show; TCM
+     patterns are labelled as patterns because they were mis-filed here and are
+     not modern applications; internal workflow states never render at all. */
+  function modernTagChips(values) {
+    const groups = { condition: [], symptom: [], pattern: [], unmapped: [] };
+    (values || []).forEach((raw) => {
+      const c = resolveModernTag(raw);
+      if (c.type === "internal") return;
+      (groups[c.type] || groups.unmapped).push(c);
+    });
+    const dedupe = (arr) => [...new Map(arr.map((c) => [c.id, c])).values()];
+    const chip = (c, cls) => {
+      const zh = c.name_zh || "";
+      const en = c.name_en || "";
+      const text = zh && en ? `${zh} · ${en}` : (zh || en || c.id);
+      return `<span class="k-modern-chip ${cls}">${esc(text)}</span>`;
+    };
+    const block = (labelZh, labelEn, arr, cls) => {
+      if (!arr.length) return "";
+      return `<div class="k-modern-group"><span class="k-modern-group-label">${esc(labelZh)} <small>${esc(labelEn)}</small></span>${dedupe(arr).map((c) => chip(c, cls)).join("")}</div>`;
+    };
+    const out = [
+      block("現代病名", "Conditions", groups.condition, "is-condition"),
+      block("症狀", "Symptoms", groups.symptom, "is-symptom"),
+      block("證型", "TCM patterns", groups.pattern, "is-pattern"),
+      block("其他", "Other", groups.unmapped, "is-unmapped")
+    ].join("");
+    return out || '<p class="k-detail-empty">—</p>';
+  }
   function statusPill(status) {
     return `<span class="k-status k-status-${esc(status)}">${esc(status || "draft")}</span>`;
   }
@@ -238,7 +293,7 @@
     }).join("");
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
     const relatedConditions = (record.related_conditions || []).map((id) => `<span class="k-static-chip">${esc(id)}</span>`).join("");
-    const modern = (record.modern_clinical_use_tags || []).map((value) => `<span class="k-modern-chip">${esc(value)}</span>`).join("");
+    const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
       { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(record.comparison_group)}</p>` : '<p class="k-detail-empty">待補</p>')}</div>` },
@@ -252,7 +307,7 @@
     const exam = record.english_exam_track || {};
     const functions = cleanList(exam.functions).length ? exam.functions : record.functions;
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
-    const modern = (record.modern_use_tags || []).map((value) => `<span class="k-modern-chip">${esc(value)}</span>`).join("");
+    const modern = modernTagChips(record.modern_use_tags);
     return [
       { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("性味", "Properties, taste & temperature", `<p>${esc(usableText(exam.properties_taste_temp) || usableText(record.properties_taste_temp) || "待補")}</p>`)}${detailSection("歸經", "Channels entered", detailList(record.channels_entered))}${detailSection("功效", "Functions", detailList(functions))}${detailSection("主治脈絡", "Indication context", detailList(exam.indications))}</div>` },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Formulas containing or comparing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },

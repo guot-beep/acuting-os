@@ -82,6 +82,8 @@ const knowledge = {
   medications: readJson("data/medications/western_medications.json"),
   safetyFlags: readJson("data/herbs/formula_safety_flags.json"),
   comparisons: readJson("data/knowledge/comparisons.json"),   // LL3 contrast tables
+  modernApplicationVocabulary: readJson("data/config/modern_application_vocabulary.json"),  // bilingual labels + type for 現代運用 tags
+  comparisonGroupVocabulary: readJson("data/config/comparison_group_vocabulary.json"),      // bilingual labels for 鑑別群組
 };
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}
