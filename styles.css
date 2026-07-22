@@ -1737,6 +1737,66 @@ label {
   grid-column: 1 / -1;
 }
 
+/* CS6: dialog segmentation — each fieldset spans the parent grid and
+   re-establishes its own two-column grid, so .wide keeps working inside. */
+.form-grid > .form-section {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 1rem 1rem 1.1rem;
+  border: 1px solid var(--line, rgba(148, 163, 184, 0.28));
+  border-radius: 14px;
+  background: rgba(148, 163, 184, 0.05);
+}
+
+.form-grid > .form-section + .form-section {
+  margin-top: 0.35rem;
+}
+
+.form-section > legend {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  float: none;
+  width: 100%;
+  padding: 0 0 0.15rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text, inherit);
+}
+
+.form-section > legend small {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.form-section-step {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--accent, #38bdf8);
+  color: #0b1220;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* SOAP letters keep the S/O/A/P rhythm readable at a glance */
+.soap-a > legend .form-section-step,
+.soap-p > legend .form-section-step {
+  background: #a78bfa;
+}
+
+.soap-outcome > legend .form-section-step {
+  background: #34d399;
+}
+
 .dialog-actions {
   grid-template-columns: auto 1fr auto auto;
   display: grid;
@@ -1787,7 +1847,8 @@ footer {
   }
 
   .info-grid,
-  .form-grid {
+  .form-grid,
+  .form-grid > .form-section {
     grid-template-columns: 1fr;
   }
 }
@@ -3462,7 +3523,8 @@ footer {
   .soap-link-grid,
   .clinical-mini-grid,
   .info-grid,
-  .form-grid {
+  .form-grid,
+  .form-grid > .form-section {
     grid-template-columns: 1fr;
   }
 

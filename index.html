@@ -742,27 +742,46 @@
           <button class="icon-btn" value="cancel" type="button" id="closeCaseDialog" aria-label="關閉">×</button>
         </div>
         <div class="form-grid">
-          <label>Patient code<input name="patientCode" required placeholder="P-2026-001" /></label>
-          <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
-          <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
-          <label>狀態 Status<select name="status"><option value="active">active</option><option value="paused">paused</option><option value="closed">closed</option></select></label>
-          <label>開始日期<input name="startDate" type="date" /></label>
-          <label>出生年月 Birth (year-month)<input name="birthYearMonth" type="month" min="1900-01" max="2100-12" /></label>
-          <label>性別 Sex<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
-          <label>職業 Occupation<input name="occupation" placeholder="選填" /></label>
-          <label class="wide">就診目標 Goals（病人想改善什麼）<input name="goals" placeholder="想改善睡眠 / 助孕 / 減痛…" /></label>
-          <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2" placeholder="主要不適 + 病程長短"></textarea></label>
-          <label class="wide">現病史 History of present illness<textarea name="historyPresent" rows="3" placeholder="發病時間、經過、誘因、加重/緩解因素、伴隨症狀"></textarea></label>
-          <label class="wide">既往史 Past medical history<textarea name="pastHistory" rows="2" placeholder="慢性病、手術、家族史"></textarea></label>
-          <label class="wide">月經/婦科史 Menstrual & OB-Gyn<textarea name="menstrualObHistory" rows="2" placeholder="初經、週期天數、經量/經色/血塊、經痛、LMP、孕產 G_P_、避孕方式"></textarea></label>
-          <label class="wide">生活習慣 Lifestyle<textarea name="lifestyle" rows="2" placeholder="睡眠、飲食、壓力、運動、菸酒、咖啡因"></textarea></label>
-          <label>過敏 Allergies<input name="allergies" placeholder="藥物 / 食物 / 暈針" /></label>
-          <label>目前用藥 Current meds<input name="currentMeds" placeholder="西藥 / 補充品" /></label>
-          <label class="wide">西醫病名 Western conditions<textarea name="westernConditions" rows="2" placeholder="PCOS, unexplained infertility"></textarea></label>
-          <label class="wide">中醫病名 Eastern diseases<textarea name="easternDiseases" rows="2" placeholder="不孕、月經後期"></textarea></label>
-          <label class="wide">目前主證型 Working pattern（摘要，每次看診可再細分）<textarea name="tcmPatterns" rows="2" placeholder="痰濕阻滯、肝氣鬱結"></textarea></label>
-          <label class="wide">安全提醒 Safety flags<textarea name="safetyFlags" rows="2" placeholder="possible pregnancy, anticoagulant use, heavy bleeding, needle syncope"></textarea></label>
-          <label class="wide">摘要 Summary<textarea name="summary" rows="2"></textarea></label>
+          <fieldset class="form-section">
+            <legend><span class="form-section-step">1</span>身分 Identity</legend>
+            <label>Patient code<input name="patientCode" required placeholder="P-2026-001" /></label>
+            <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
+            <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
+            <label>狀態 Status<select name="status"><option value="active">active</option><option value="paused">paused</option><option value="closed">closed</option></select></label>
+            <label>開始日期<input name="startDate" type="date" /></label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend><span class="form-section-step">2</span>背景 Background<small>穩定不變的底子，通常只填一次</small></legend>
+            <label>出生年月 Birth (year-month)<input name="birthYearMonth" type="month" min="1900-01" max="2100-12" /></label>
+            <label>性別 Sex<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
+            <label>職業 Occupation<input name="occupation" placeholder="選填" /></label>
+            <label>過敏 Allergies<input name="allergies" placeholder="藥物 / 食物 / 暈針" /></label>
+            <label class="wide">目前用藥 Current meds<input name="currentMeds" placeholder="西藥 / 補充品" /></label>
+            <label class="wide">月經/婦科史 Menstrual &amp; OB-Gyn<textarea name="menstrualObHistory" rows="2" placeholder="初經、週期天數、經量/經色/血塊、經痛、LMP、孕產 G_P_、避孕方式"></textarea></label>
+            <label class="wide">生活習慣 Lifestyle<textarea name="lifestyle" rows="2" placeholder="睡眠、飲食、壓力、運動、菸酒、咖啡因"></textarea></label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend><span class="form-section-step">3</span>主訴與病史 Presenting problem</legend>
+            <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2" placeholder="主要不適 + 病程長短"></textarea></label>
+            <label class="wide">現病史 History of present illness<textarea name="historyPresent" rows="3" placeholder="發病時間、經過、誘因、加重/緩解因素、伴隨症狀"></textarea></label>
+            <label class="wide">既往史 Past medical history<textarea name="pastHistory" rows="2" placeholder="慢性病、手術、家族史"></textarea></label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend><span class="form-section-step">4</span>診斷與證型 Diagnosis &amp; patterns</legend>
+            <label class="wide">西醫病名 Western conditions<textarea name="westernConditions" rows="2" placeholder="PCOS, unexplained infertility"></textarea></label>
+            <label class="wide">中醫病名 Eastern diseases<textarea name="easternDiseases" rows="2" placeholder="不孕、月經後期"></textarea></label>
+            <label class="wide">目前主證型 Working pattern（摘要，每次看診可再細分）<textarea name="tcmPatterns" rows="2" placeholder="痰濕阻滯、肝氣鬱結"></textarea></label>
+            <label class="wide">安全提醒 Safety flags<textarea name="safetyFlags" rows="2" placeholder="possible pregnancy, anticoagulant use, heavy bleeding, needle syncope"></textarea></label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend><span class="form-section-step">5</span>目標與摘要 Goal &amp; summary</legend>
+            <label class="wide">就診目標 Goals（病人想改善什麼）<input name="goals" placeholder="想改善睡眠 / 助孕 / 減痛…" /></label>
+            <label class="wide">摘要 Summary<textarea name="summary" rows="2"></textarea></label>
+          </fieldset>
         </div>
         <div class="dialog-actions">
           <button id="deleteCaseBtn" class="danger" type="button">刪除病例</button>
@@ -780,55 +799,76 @@
           <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉">×</button>
         </div>
         <div class="form-grid soap-form-grid">
-          <label>Visit date<input name="visitDate" type="date" /></label>
-          <label>Visit #<input name="visitNumber" type="number" min="1" /></label>
-          <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
-          <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
-          <label>Workflow link<input name="workflowLink" placeholder="fertility.workflow.pcos_ovulation_induction" /></label>
-          <label>Cycle phase<input name="cyclePhase" placeholder="menses / follicular / ovulation / luteal" /></label>
-          <label class="wide">Western condition links<textarea name="westernConditionLinks" rows="2" placeholder="condition.pcos, condition.unexplained_infertility"></textarea></label>
-          <label class="wide">Eastern disease / pattern links<textarea name="easternDiseaseLinks" rows="2" placeholder="disease.infertility, disease.irregular_menstruation"></textarea></label>
-          <label class="wide">TCM pattern links<textarea name="tcmPatternLinks" rows="2" placeholder="pattern.kidney_deficiency, pattern.phlegm_damp"></textarea></label>
-          <label class="wide">Safety flag links<textarea name="safetyFlagLinks" rows="2" placeholder="safety.possible_pregnancy, safety.anticoagulant_use"></textarea></label>
+          <fieldset class="form-section">
+            <legend><span class="form-section-step">1</span>就診脈絡 Visit context</legend>
+            <label>Visit date<input name="visitDate" type="date" /></label>
+            <label>Visit #<input name="visitNumber" type="number" min="1" /></label>
+            <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
+            <label>Cycle phase<input name="cyclePhase" placeholder="menses / follicular / ovulation / luteal" /></label>
+            <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
+            <label>Workflow link<input name="workflowLink" placeholder="fertility.workflow.pcos_ovulation_induction" /></label>
+          </fieldset>
 
-          <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
-          <label class="wide soap-section">O - Objective 望聞切<textarea name="objective" rows="3" placeholder="神色形態、望診、觸診、ROM、生命徵象、labs/imaging"></textarea></label>
-          <label>舌質 Tongue body<input name="tongueBody" placeholder="淡紅 / 紅 / 淡白 / 紫暗；胖大 / 齒痕 / 裂紋" /></label>
-          <label>舌苔 Tongue coating<input name="tongueCoating" placeholder="薄白 / 黃膩 / 少苔 / 無苔" /></label>
-          <label class="wide">脈象 Pulse<input name="pulse" placeholder="浮沉遲數 / 弦滑細澀…（可分左右寸關尺）" /></label>
-          <label class="wide">生命徵象 Vitals<input name="vitals" placeholder="BP 120/80、HR 72、身高/體重、體溫（選填）" /></label>
-          <label class="wide soap-section">A - Assessment 辨證<textarea name="assessment" rows="2" placeholder="四診合參、西醫診斷、安全判斷"></textarea></label>
-          <label class="wide">證型 TCM pattern（本次）<input name="tcmPattern" placeholder="肝鬱脾虛、腎陰虛…" /></label>
-          <label class="wide">病機 Pathomechanism<textarea name="pathomechanism" rows="2" placeholder="為什麼會這樣：如肝失疏泄，橫逆犯脾"></textarea></label>
-          <label class="wide soap-section">P - Plan 治法處方<textarea name="plan" rows="3" placeholder="整體治療計畫、homecare"></textarea></label>
-          <label class="wide">治法 Treatment principle<input name="treatmentPrinciple" placeholder="疏肝健脾、滋陰降火…" /></label>
+          <fieldset class="form-section soap-s">
+            <legend><span class="form-section-step">S</span>Subjective 主觀<small>病人說的</small></legend>
+            <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
+          </fieldset>
 
-          <label class="wide">用穴 Acupuncture points<textarea name="pointsUsed" rows="2" placeholder="SP6 bilateral, ST36 bilateral, LR3 bilateral"></textarea></label>
-          <label class="wide">Acupoint record links<textarea name="acupointLinks" rows="2" placeholder="SP6, ST36, LR3, CV4"></textarea></label>
-          <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
-          <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
-          <label class="wide">治療手法 Modalities<input name="modalities" placeholder="艾灸 moxa / 電針 e-stim / 拔罐 cupping / 刮痧 gua sha / 推拿 tuina" /></label>
-          <label class="wide">方劑/中藥 Formula & herbs<textarea name="formulaHerbs" rows="2"></textarea></label>
-          <label class="wide">Formula record links<textarea name="formulaLinks" rows="2" placeholder="formula.xiao_yao_san, formula.gui_pi_tang"></textarea></label>
-          <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
-          <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="med.letrozole, med.progesterone"></textarea></label>
-          <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
-          <label>成效判定 Outcome verdict<select name="outcomeVerdict">
-            <option value="">—（尚未判定）</option>
-            <option value="improved">改善 Improved</option>
-            <option value="no_change">無變化 No change</option>
-            <option value="worsened">加重 Worsened</option>
-            <option value="lost_followup">失訪 Lost to follow-up</option>
-          </select></label>
-          <label class="wide">Outcome metric links<textarea name="outcomeMetricLinks" rows="2" placeholder="sleep_quality +2, pain_score 7->4, lining_mm 8"></textarea></label>
-          <label class="wide">醫囑 Advice（生活/飲食/運動）<textarea name="advice" rows="2" placeholder="作息、飲食宜忌、運動、情緒調攝"></textarea></label>
-          <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
-          <details class="soap-reflection wide">
-            <summary>臨床推理 / 按語（選填）</summary>
-            <label class="wide">鑑別考量 Differential considered<textarea name="differentialConsidered" rows="2" placeholder="這次還考慮了哪些證型/診斷、為什麼排除"></textarea></label>
-            <label class="wide">按語 Reflection<textarea name="reflection" rows="3" placeholder="學到什麼、什麼出乎意料、下次要留意什麼"></textarea></label>
-            <label class="wide">若無效的下一步 If ineffective, next step<textarea name="ifIneffectivePlan" rows="2" placeholder="開方時就寫下可驗證的下一步，回診時檢查這個預測"></textarea></label>
-          </details>
+          <fieldset class="form-section soap-o">
+            <legend><span class="form-section-step">O</span>Objective 客觀<small>你看到、摸到的</small></legend>
+            <label class="wide soap-section">O - Objective 望聞切<textarea name="objective" rows="3" placeholder="神色形態、望診、觸診、ROM、生命徵象、labs/imaging"></textarea></label>
+            <label>舌質 Tongue body<input name="tongueBody" placeholder="淡紅 / 紅 / 淡白 / 紫暗；胖大 / 齒痕 / 裂紋" /></label>
+            <label>舌苔 Tongue coating<input name="tongueCoating" placeholder="薄白 / 黃膩 / 少苔 / 無苔" /></label>
+            <label class="wide">脈象 Pulse<input name="pulse" placeholder="浮沉遲數 / 弦滑細澀…（可分左右寸關尺）" /></label>
+            <label class="wide">生命徵象 Vitals<input name="vitals" placeholder="BP 120/80、HR 72、身高/體重、體溫（選填）" /></label>
+          </fieldset>
+
+          <fieldset class="form-section soap-a">
+            <legend><span class="form-section-step">A</span>Assessment 辨證<small>四診合參與連結</small></legend>
+            <label class="wide soap-section">A - Assessment 辨證<textarea name="assessment" rows="2" placeholder="四診合參、西醫診斷、安全判斷"></textarea></label>
+            <label class="wide">證型 TCM pattern（本次）<input name="tcmPattern" placeholder="肝鬱脾虛、腎陰虛…" /></label>
+            <label class="wide">病機 Pathomechanism<textarea name="pathomechanism" rows="2" placeholder="為什麼會這樣：如肝失疏泄，橫逆犯脾"></textarea></label>
+            <label class="wide">Western condition links<textarea name="westernConditionLinks" rows="2" placeholder="condition.pcos, condition.unexplained_infertility"></textarea></label>
+            <label class="wide">Eastern disease / pattern links<textarea name="easternDiseaseLinks" rows="2" placeholder="disease.infertility, disease.irregular_menstruation"></textarea></label>
+            <label class="wide">TCM pattern links<textarea name="tcmPatternLinks" rows="2" placeholder="pattern.kidney_deficiency, pattern.phlegm_damp"></textarea></label>
+            <label class="wide">Safety flag links<textarea name="safetyFlagLinks" rows="2" placeholder="safety.possible_pregnancy, safety.anticoagulant_use"></textarea></label>
+          </fieldset>
+
+          <fieldset class="form-section soap-p">
+            <legend><span class="form-section-step">P</span>Plan 治法處方<small>這次做了什麼、交代什麼</small></legend>
+            <label class="wide soap-section">P - Plan 治法處方<textarea name="plan" rows="3" placeholder="整體治療計畫、homecare"></textarea></label>
+            <label class="wide">治法 Treatment principle<input name="treatmentPrinciple" placeholder="疏肝健脾、滋陰降火…" /></label>
+            <label class="wide">用穴 Acupuncture points<textarea name="pointsUsed" rows="2" placeholder="SP6 bilateral, ST36 bilateral, LR3 bilateral"></textarea></label>
+            <label class="wide">Acupoint record links<textarea name="acupointLinks" rows="2" placeholder="SP6, ST36, LR3, CV4"></textarea></label>
+            <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
+            <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
+            <label class="wide">治療手法 Modalities<input name="modalities" placeholder="艾灸 moxa / 電針 e-stim / 拔罐 cupping / 刮痧 gua sha / 推拿 tuina" /></label>
+            <label class="wide">方劑/中藥 Formula &amp; herbs<textarea name="formulaHerbs" rows="2"></textarea></label>
+            <label class="wide">Formula record links<textarea name="formulaLinks" rows="2" placeholder="formula.xiao_yao_san, formula.gui_pi_tang"></textarea></label>
+            <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
+            <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="med.letrozole, med.progesterone"></textarea></label>
+            <label class="wide">醫囑 Advice（生活/飲食/運動）<textarea name="advice" rows="2" placeholder="作息、飲食宜忌、運動、情緒調攝"></textarea></label>
+            <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
+          </fieldset>
+
+          <fieldset class="form-section soap-outcome">
+            <legend><span class="form-section-step">✓</span>成效與反思 Outcome &amp; reflection<small>回診時回填，學習迴路靠這段</small></legend>
+            <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
+            <label>成效判定 Outcome verdict<select name="outcomeVerdict">
+              <option value="">—（尚未判定）</option>
+              <option value="improved">改善 Improved</option>
+              <option value="no_change">無變化 No change</option>
+              <option value="worsened">加重 Worsened</option>
+              <option value="lost_followup">失訪 Lost to follow-up</option>
+            </select></label>
+            <label class="wide">Outcome metric links<textarea name="outcomeMetricLinks" rows="2" placeholder="sleep_quality +2, pain_score 7->4, lining_mm 8"></textarea></label>
+            <details class="soap-reflection wide">
+              <summary>臨床推理 / 按語（選填）</summary>
+              <label class="wide">鑑別考量 Differential considered<textarea name="differentialConsidered" rows="2" placeholder="這次還考慮了哪些證型/診斷、為什麼排除"></textarea></label>
+              <label class="wide">按語 Reflection<textarea name="reflection" rows="3" placeholder="學到什麼、什麼出乎意料、下次要留意什麼"></textarea></label>
+              <label class="wide">若無效的下一步 If ineffective, next step<textarea name="ifIneffectivePlan" rows="2" placeholder="開方時就寫下可驗證的下一步，回診時檢查這個預測"></textarea></label>
+            </details>
+          </fieldset>
         </div>
         <div class="dialog-actions">
           <button id="deleteSoapBtn" class="danger" type="button">刪除 SOAP</button>
