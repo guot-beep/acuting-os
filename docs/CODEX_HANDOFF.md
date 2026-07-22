@@ -69,6 +69,46 @@ Claude review note:
 
 ---
 
+## 2026-07-22 - Codex - Formula indication translation batch 1
+
+Date/time: 2026-07-22
+Agent: Codex
+Branch: `main`
+Commit or stash: coherent translation-batch commit; hash recorded after commit
+Task: Begin medically conservative English translation of the 2473 CloudTCM
+formula-indication source labels using a rerunnable identity-checked override.
+
+Files changed:
+- `data/config/cloudtcm_formula_indication_en.json`
+- regenerated `data/herbs/cloudtcm_formula_indication_tags.json`
+- extraction/validation scripts, migration map, and coordination logs
+
+Validation:
+- 2473 source records / 2473 unique IDs.
+- 58 curated-draft bilingual labels; 2415 explicitly pending.
+- Every override source ID is unique and must match its source Chinese label.
+- Vocabulary validator and standard validation sweep pass.
+
+Protected areas not touched:
+- No runtime/UI wiring, canonical formula/condition content, 361.json,
+  CLOUDTCM review docs, point map, case/SOAP, router, CSS, clinical data, or
+  architecture draft change.
+
+Known risks / manual checks:
+- These are translations of source taxonomy labels, not diagnosis mappings.
+- Terms marked `(TCM term)` intentionally retain traditional scope.
+- Several English terms still need formula-text/editorial review before any
+  `source_checked` promotion.
+
+Next recommended action:
+- Continue deterministic 50-100 record batches, prioritising common formula
+  search terms and labels that can be linked to existing condition IDs.
+
+Claude review note:
+- Spot-check 嘈雜, 青盲, 口疳, 霍亂吐下, 氣膈, 不寐, 痛經, and 不孕.
+
+---
+
 ## 2026-07-22 - Codex - CloudTCM taxonomy source layer
 
 Date/time: 2026-07-22

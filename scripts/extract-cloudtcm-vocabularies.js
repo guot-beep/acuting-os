@@ -7,6 +7,7 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const FORMULA_URL = "https://cloudtcm.com/formula";
 const DISEASE_URL = "https://cloudtcm.com/disease/tcm";
+const INDICATION_TRANSLATIONS = path.join(ROOT, "data/config/cloudtcm_formula_indication_en.json");
 
 const DISEASE_EN = {
   "疼痛症狀": "Pain Symptoms",
@@ -101,6 +102,8 @@ async function main() {
   const functions = formula.pageDataList_1 || [];
   const indications = formula.pageDataList_2 || [];
   const diseaseCategories = disease.symptomCategoryTags || [];
+  const indicationTranslationDoc = JSON.parse(fs.readFileSync(INDICATION_TRANSLATIONS, "utf8"));
+  const indicationTranslations = new Map(indicationTranslationDoc.records.map((record) => [Number(record.source_id), record]));
 
   if (functions.length !== 139 || indications.length !== 2473 || diseaseCategories.length !== 14) {
     throw new Error(`Source counts changed: disease=${diseaseCategories.length}, functions=${functions.length}, indications=${indications.length}`);
@@ -149,24 +152,29 @@ async function main() {
       };
     })
   });
+  const translatedIndications = indications.map((item) => {
+    const id = numericId(item.route);
+    const translated = indicationTranslations.get(id);
+    if (translated && translated.name_zh !== item.title) {
+      throw new Error(`Indication translation identity mismatch for ${id}: ${translated.name_zh} != ${item.title}`);
+    }
+    return {
+      id: `cloudtcm.formula_indication.${id}`,
+      source_id: id,
+      name_zh: item.title,
+      name_en: translated?.name_en || null,
+      source_url: new URL(item.route, "https://cloudtcm.com").href,
+      translation_status: translated ? "curated_draft" : "pending_professional_translation"
+    };
+  });
   writeJson("data/herbs/cloudtcm_formula_indication_tags.json", {
     dataset: "CloudTCM formula indication tag translation queue",
     ...common,
     source_url: FORMULA_URL,
     count: indications.length,
-    bilingual_complete: 0,
-    translation_policy: "Chinese source canon is complete. name_en remains null until medically appropriate English is reviewed; never substitute pinyin or an unreviewed machine translation.",
-    records: indications.map((item) => {
-      const id = numericId(item.route);
-      return {
-        id: `cloudtcm.formula_indication.${id}`,
-        source_id: id,
-        name_zh: item.title,
-        name_en: null,
-        source_url: new URL(item.route, "https://cloudtcm.com").href,
-        translation_status: "pending_professional_translation"
-      };
-    })
+    bilingual_complete: translatedIndications.filter((record) => record.name_en).length,
+    translation_policy: "Chinese source canon is complete. English is applied only from the curated override vocabulary; never substitute pinyin or an unreviewed machine translation.",
+    records: translatedIndications
   });
   console.log(`PASS: disease=${diseaseCategories.length}, functions=${functions.length}, indications=${indications.length}`);
 }

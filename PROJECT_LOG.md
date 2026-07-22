@@ -23,6 +23,18 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-22 - First CloudTCM formula-indication translation batch (Codex)
+
+Added 58 curated-draft English labels to the 2473-record indication queue,
+including high-frequency search terms such as 不寐, 痛經, 月經不調, 不孕,
+偏頭痛, 胃痛, 腹痛, 便秘, and 哮喘. Traditional terms remain explicitly
+identified where a simple Western-diagnosis translation would be misleading.
+
+English authority lives in `data/config/cloudtcm_formula_indication_en.json`.
+The extractor verifies each override's source ID and Chinese identity before
+applying it, so source changes fail rather than silently cross-linking labels.
+Coverage is now 58 bilingual / 2415 pending. The layer remains unwired.
+
 ### 2026-07-22 - CloudTCM disease and formula taxonomy source layer (Codex)
 
 Added an additive, non-runtime taxonomy layer from CloudTCM's public Next.js

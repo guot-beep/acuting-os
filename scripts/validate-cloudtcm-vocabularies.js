@@ -30,6 +30,7 @@ for (const spec of specs) {
     if (!/^https:\/\/cloudtcm\.com\//.test(record.source_url || "")) failures.push(`${at}: non-direct source_url`);
     if (record.name_en) bilingual += 1;
     if (spec.bilingual && (!record.name_en || record.translation_status !== "curated_draft")) failures.push(`${at}: curated bilingual label required`);
+    if (!spec.bilingual && record.name_en && record.translation_status !== "curated_draft") failures.push(`${at}: translated indication must be curated_draft`);
     if (!spec.bilingual && !record.name_en && record.translation_status !== "pending_professional_translation") failures.push(`${at}: pending translation must be explicit`);
   }
   if (records.length !== spec.count) failures.push(`${spec.file}: expected ${spec.count}, found ${records.length}`);

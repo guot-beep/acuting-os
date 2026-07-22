@@ -1,3 +1,56 @@
+# REBUILD HANDOFF - Session 39 (2026-07-22, indication translation batch 1)
+
+## 1. Goal
+Start the 2473-label English layer with identity-checked curated overrides.
+
+## 2. Files changed
+Translation override, regenerated indication vocabulary, scripts, migration
+map, and coordination logs.
+
+## 3. What changed
+58 high-frequency or clearly translatable labels now have English drafts;
+2415 remain explicitly pending.
+
+## 4. Why this changed
+Ting requires bilingual tags, but bulk unreviewed machine translation would
+create false medical equivalences and poor search terms.
+
+## 5. Data content changes
+Taxonomy translations only; no clinical recommendations or formula facts.
+
+## 6. Source status / accuracy guardrail
+All translations remain curated_draft. Traditional terms are labelled as such.
+
+## 7. Schema / field changes
+English authority is stored separately by source_id + exact source name.
+
+## 8. Generated files / scripts
+Extractor applies overrides only after Chinese identity matches; validator
+enforces curated/pending status and bilingual counts.
+
+## 9. Protected areas
+No runtime, canonical clinical/content, generated app bundle, or frozen area.
+
+## 10. Validation
+2473 unique IDs; 58 bilingual; 2415 pending; vocabulary and standard checks PASS.
+
+## 11. Triage results
+Common search concepts are prioritised before obscure historical expressions.
+
+## 12. Not completed
+2415 English labels and all runtime wiring remain incomplete.
+
+## 13. Next reader should inspect
+The 58 override terms and TCM-term qualifications.
+
+## 14. Next step
+Continue 50-100 label batches and cross-link only after terminology review.
+
+## 15. Risk
+Medium terminology risk, zero runtime risk while unwired.
+
+---
+
 # REBUILD HANDOFF - Session 38 (2026-07-22, CloudTCM taxonomy source layer)
 
 ## 1. Goal
