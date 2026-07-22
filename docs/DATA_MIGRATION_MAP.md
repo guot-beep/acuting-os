@@ -1,7 +1,7 @@
 # Data Migration Map
 
 Purpose: single authoritative answer to "which file is the latest truth?"
-Update this file every time data moves. Last update: 2026-07-12 (Claude Phase 2 runtime adapter: 361.json is live).
+Update this file every time data moves. Last update: 2026-07-22 (CloudTCM source taxonomies added as non-runtime vocabularies).
 
 ## Authority table — where each dataset lives NOW
 
@@ -15,6 +15,8 @@ Update this file every time data moves. Last update: 2026-07-12 (Claude Phase 2 
 | 361 canonical file | `data/acupoints/361.json` (361 standard-channel records, unified schema) | `data/generated/points_361.js` (built by `scripts/build-data.js`) | synced by hand from app.js and enrichment batches | LIVE IN APP since 2026-07-12 (Phase 2); content still frozen pending Ting §A/§B decisions |
 | Formulas currently rendered (23) | `data/herbs/formulas.json` | Lookup / Knowledge formula section | same | CURRENT APP FORMULA SOURCE; contains content-bearing records and known encoding backlog |
 | Formula categories / safety flags / pattern links | `data/herbs/formula_categories.json`, `data/herbs/formula_safety_flags.json`, `data/herbs/formula_pattern_links.json` | partially referenced by formula/pathology planning scripts; not fully rendered | same | Draft relationship/reference layer |
+| CloudTCM formula function taxonomy (139) | `data/herbs/cloudtcm_formula_function_tags.json` | NOT wired into app; validated by `scripts/validate-cloudtcm-vocabularies.js` | CloudTCM `/formula` `pageDataList_1` | SOURCE VOCABULARY 2026-07-22; 139/139 bilingual curated-draft labels; source IDs/routes preserved; does not replace the 18 broad Bensky categories |
+| CloudTCM formula indication taxonomy (2473) | `data/herbs/cloudtcm_formula_indication_tags.json` | NOT wired into app; translation queue only | CloudTCM `/formula` `pageDataList_2` | SOURCE VOCABULARY 2026-07-22; 2473/2473 Chinese labels and direct routes, English 0/2473 pending professional translation; must not render as bilingual until complete |
 | Formula canon shortlist (115) | `data/herbs/formula_canon_shortlist.json` | NOT wired into app | created as formula canon planning layer | Draft skeleton/canon planning file; do not treat as rendered canonical until formula merge B1/B2 is approved |
 | Formula import staging | `data/herbs/formula_import_staging.json` | NOT wired into app | dataset import staging | Staging only; do not overwrite `formulas.json` from this file without a preview/apply workflow |
 | Formula dose evidence staging | `data/imports/formula_doses/formula_dose_staging.json` | NOT wired into app | HKBU dose transcription + Sun Ten U.S. product identity | Draft/source-evidence only; granule serving grams stay null without reviewed label evidence; requires field-level preview and Ting approval before canonical merge |
@@ -25,6 +27,7 @@ Update this file every time data moves. Last update: 2026-07-12 (Claude Phase 2 
 | Herb exact visual-link staging | `data/imports/herb_visual_links/*.json` | `scripts/preview-herb-visual-links.js`; NOT canonical | verified CloudTCM herb pages + HKBU MMID/MPID image pages | Review-only exact-page mappings; no apply mode; canonical `visual_links[]` requires Ting/Claude preview approval |
 | Herb comparison-group preview | `data/herbs/herb_canon_shortlist.json` remains canonical input; preview lives in `docs/HERB_COMPARISON_GROUP_PREVIEW.json` | `scripts/preview-herb-comparison-groups.js`; NOT wired into app | existing 34 bilingual herb categories | H1 REVIEW-ONLY; proposes `comparison_group`, `related_herbs[]`, and empty `substitution_context_zh`; no apply mode and no canonical writes |
 | Pathology conditions + graph seeds | `data/pathology/conditions.json`, `clinical_graph_seed.json`, `condition_graph_expansion.json` | relation validator; not fully rendered | same plus graph expansion | Draft relationship layer; `conditions.json` is current primary pathology record file |
+| CloudTCM disease browse categories (14) | `data/pathology/cloudtcm_disease_categories.json` | NOT wired into app; future category-filter vocabulary | CloudTCM `/disease/tcm` `symptomCategoryTags` | SOURCE VOCABULARY 2026-07-22; 14/14 bilingual curated-draft labels; categories are browse facets, not diagnoses |
 | Western medications | `data/medications/western_medications.json` | relation validator; not rendered | new Friday relationship layer | Draft ID reference layer for clinical decision/pathology links |
 | Source registry + validation matrix | `data/sources/*.json` | Sources workspace / source planning; not fully validated | same | Draft registry; known encoding backlog in `source_registry.json` |
 | Dataset imports manifest and raw imports | `data/imports/import_manifest.json`, `data/imports/README.md`, `data/imports/*` | NOT wired into app | new import staging root | Raw/staging only; preserve original imports, never edit generated/canonical data directly from here |

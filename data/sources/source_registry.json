@@ -1109,6 +1109,42 @@
       ],
       "notes": "Per-herb URLs are /herb/<numeric id> and contain no herb name - name-based site-scoped search does NOT resolve them, which is why the earlier image links were broken. Use data/imports/cloudtcm/herb_url_map.json.",
       "review_status": "source_checked"
+    },
+    {
+      "id": "cloudtcm_formula_taxonomy",
+      "name": "CloudTCM formula taxonomy / 雲端中醫複方分類",
+      "layer": "formula_taxonomy",
+      "source_group": "B_practical",
+      "authority": 3,
+      "tier": "B",
+      "language": "zh-Hant",
+      "url": "https://cloudtcm.com/formula",
+      "access_type": "public_web",
+      "primary_use": [
+        "formula function browse labels",
+        "formula indication browse labels",
+        "exact source taxonomy ids and routes"
+      ],
+      "notes": "Taxonomy labels only. A category relationship is not evidence of efficacy and must not replace formula differentiation or medical diagnosis. English labels require separate review.",
+      "review_status": "draft"
+    },
+    {
+      "id": "cloudtcm_disease_taxonomy",
+      "name": "CloudTCM TCM disease and symptom taxonomy / 雲端中醫中醫病症分類",
+      "layer": "condition_taxonomy",
+      "source_group": "B_practical",
+      "authority": 3,
+      "tier": "B",
+      "language": "zh-Hant",
+      "url": "https://cloudtcm.com/disease/tcm",
+      "access_type": "public_web",
+      "primary_use": [
+        "bilingual disease browse facets",
+        "symptom category labels",
+        "source taxonomy ids"
+      ],
+      "notes": "Browse categories only. Do not treat symptoms as diagnoses or map a browse category one-to-one to ICD or TCM pattern concepts.",
+      "review_status": "draft"
     }
   ],
   "tcm_registry_note": "Tier/category fields were added from docs/TCM_SOURCE_REGISTRY.md. A=official or national/major database, A-=university or major academic database, B=practical/clinical lookup, C=standards/reference utility. Draft URL values need manual verification before source extraction."

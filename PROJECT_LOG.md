@@ -23,6 +23,24 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-22 - CloudTCM disease and formula taxonomy source layer (Codex)
+
+Added an additive, non-runtime taxonomy layer from CloudTCM's public Next.js
+page data. It preserves 14 disease browse categories, 139 formula-function
+categories, and all 2473 formula-indication labels with stable source IDs and
+exact routes. No article text or images were copied.
+
+The 14 disease categories and 139 function categories have curated-draft
+English labels. The 2473 indication records deliberately keep `name_en: null`
+with `pending_professional_translation`; they are a complete Chinese source
+canon and translation queue, not a falsely completed bilingual dataset. A new
+validator enforces counts, unique namespaced IDs, direct links, CJK labels,
+and honest translation status. None of these files is wired into the app yet.
+
+Validation: new vocabulary validator, JavaScript syntax, recursive JSON parse,
+and eight standard validators passed. Existing content-quality baseline remains
+36%; this taxonomy task does not claim to fill formula or condition prose.
+
 ### 2026-07-22 - Exact CloudTCM herb and Master Tung point links (Codex)
 
 Replaced the broken Google/site-search source path with verified exact record

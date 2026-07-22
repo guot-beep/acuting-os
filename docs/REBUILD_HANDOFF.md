@@ -1,3 +1,65 @@
+# REBUILD HANDOFF - Session 38 (2026-07-22, CloudTCM taxonomy source layer)
+
+## 1. Goal
+Create stable source vocabularies for CloudTCM's 14 disease categories, 139
+formula functions, and 2473 formula indications without overwriting canon.
+
+## 2. Files changed
+Three additive JSON vocabularies, extraction/validation scripts, source
+registry, migration map, and coordination logs.
+
+## 3. What changed
+All source IDs, Chinese labels, and direct routes are preserved. Disease and
+function categories have English curated drafts; indications form a complete
+Chinese translation queue.
+
+## 4. Why this changed
+Ting requested CloudTCM-compatible classification and real bilingual labels,
+not English-only, Chinese-only, or ad hoc category names.
+
+## 5. Data content changes
+Taxonomy labels only. No article text, images, efficacy statements, formula
+composition, clinical recommendation, or diagnosis mapping was copied.
+
+## 6. Source status / accuracy guardrail
+All records remain draft. Taxonomy membership is browse metadata, not evidence
+of efficacy, a diagnosis, or a one-to-one Western/TCM equivalence.
+
+## 7. Schema / field changes
+New additive records carry namespaced source IDs, source_id, name_zh/name_en,
+direct source_url, and translation_status.
+
+## 8. Generated files / scripts
+Extractor reads public `__NEXT_DATA__`, asserts exact source counts, and writes
+UTF-8 JSON. Validator enforces counts, identity, direct links, and translations.
+
+## 9. Protected areas
+No current canonical formula/condition record, generated data, runtime UI,
+361.json, CLOUDTCM review document, point map, case/SOAP, router, or CSS change.
+
+## 10. Validation
+Vocabulary validation PASS (14/139/2473 unique IDs); syntax, recursive JSON,
+and eight standard validators PASS. Existing quality baseline remains 36%.
+
+## 11. Triage results
+English completion: disease 14/14, functions 139/139, indications 0/2473.
+
+## 12. Not completed
+The 2473 indication English translations and UI wiring are not complete.
+
+## 13. Next reader should inspect
+Both scripts, the 139 translations, qualified high-claim source labels, and
+the explicit 2473 pending-translation policy.
+
+## 14. Next step
+Translate only high-priority indication tags in deterministic reviewed batches,
+then connect complete bilingual vocabularies to browse filters.
+
+## 15. Risk
+Medium content risk, low runtime risk. The new files are currently unwired.
+
+---
+
 # REBUILD HANDOFF - Session 37 (2026-07-22, exact source-link repair)
 
 ## 1. Goal

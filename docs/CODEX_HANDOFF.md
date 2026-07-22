@@ -69,6 +69,57 @@ Claude review note:
 
 ---
 
+## 2026-07-22 - Codex - CloudTCM taxonomy source layer
+
+Date/time: 2026-07-22
+Agent: Codex
+Branch: `main`
+Commit or stash: coherent taxonomy commit; hash recorded after commit
+Task: Establish source-keyed disease/formula vocabularies requested by Ting,
+without overwriting existing broad Bensky categories or wiring incomplete
+translations into the UI.
+
+Files changed:
+- `scripts/extract-cloudtcm-vocabularies.js`
+- `scripts/validate-cloudtcm-vocabularies.js`
+- `data/pathology/cloudtcm_disease_categories.json`
+- `data/herbs/cloudtcm_formula_function_tags.json`
+- `data/herbs/cloudtcm_formula_indication_tags.json`
+- `data/sources/source_registry.json`
+- `docs/DATA_MIGRATION_MAP.md` and coordination logs
+
+Validation:
+- Source counts and unique IDs: disease 14/14, function 139/139, indication
+  2473/2473.
+- Bilingual: disease 14/14; function 139/139; indication 0/2473 pending.
+- New vocabulary validator, JavaScript syntax, recursive JSON parse, and eight
+  standard validators passed. Content-quality baseline remains 36%.
+
+Protected areas not touched:
+- No existing formula/condition canonical record, generated file, app runtime,
+  361.json, CLOUDTCM review file, CloudTCM point map, case/SOAP, router, CSS,
+  clinical data, or architecture draft was changed.
+
+Known risks / manual checks:
+- Function translations are study-oriented curated drafts and need terminology
+  review before `source_checked` promotion.
+- CloudTCM includes broad/practical labels such as 抗癌. The English wording is
+  explicitly qualified as a source category; no efficacy inference is allowed.
+- The 2473 indication English layer is intentionally incomplete and must remain
+  unwired until translated and reviewed in manageable batches.
+
+Next recommended action:
+- Translate the 2473 indication queue in deterministic batches, prioritising
+  tags referenced by the 115 formula canon; validate each batch.
+- Map selected CloudTCM tags to canonical formula/condition IDs as related
+  browse metadata, never as diagnosis equivalence or treatment claims.
+
+Claude review note:
+- Please review the 139 English labels, especially 攻補兼施, 氣血兩清, 抗癌,
+  產病, and 化解瘟疫, and confirm the decision to keep the 2473 queue off UI.
+
+---
+
 ## 2026-07-22 - Codex - Exact herb and Master Tung source links
 
 Date/time: 2026-07-22
