@@ -299,36 +299,72 @@
       "last_reviewed": "",
       "composition": [
         {
-          "herb_zh": "",
-          "herb_en": "",
+          "herb_zh": "麻黃",
+          "herb_en": "Ephedra",
           "pinyin": "Ma Huang",
-          "role_zh": "",
-          "role_en": "",
-          "dose_range": ""
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "",
+          "herb_id": "herb.ma_huang",
+          "pinyin_toned": "Má Huáng",
+          "role_reason_zh": "發汗解表，宣肺平喘——本方的推動力",
+          "decoction_reference_g": "9",
+          "classical_amount_text": "《傷寒論》原方，依現代常用折算",
+          "source_ids": [
+            "chinese_medicine_atlas",
+            "classical_formula_doctrine"
+          ]
         },
         {
-          "herb_zh": "",
-          "herb_en": "",
+          "herb_zh": "桂枝",
+          "herb_en": "Cinnamon Twig",
           "pinyin": "Gui Zhi",
-          "role_zh": "",
-          "role_en": "",
-          "dose_range": ""
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "",
+          "herb_id": "herb.gui_zhi",
+          "pinyin_toned": "Guì Zhī",
+          "role_reason_zh": "溫通經脈、解肌發表，助麻黃透達營衛，發汗之力倍增",
+          "decoction_reference_g": "6",
+          "classical_amount_text": "《傷寒論》原方，依現代常用折算",
+          "source_ids": [
+            "chinese_medicine_atlas",
+            "classical_formula_doctrine"
+          ]
         },
         {
-          "herb_zh": "",
-          "herb_en": "",
+          "herb_zh": "杏仁",
+          "herb_en": "Apricot Seed",
           "pinyin": "Xing Ren",
-          "role_zh": "",
-          "role_en": "",
-          "dose_range": ""
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "",
+          "herb_id": "herb.xing_ren",
+          "pinyin_toned": "Xìng Rén",
+          "role_reason_zh": "降肺氣，止咳平喘——與麻黃一宣一降，恢復肺的宣降之常",
+          "decoction_reference_g": "9",
+          "classical_amount_text": "《傷寒論》原方，依現代常用折算",
+          "source_ids": [
+            "chinese_medicine_atlas",
+            "classical_formula_doctrine"
+          ]
         },
         {
-          "herb_zh": "",
-          "herb_en": "",
+          "herb_zh": "炙甘草",
+          "herb_en": "Honey-fried Licorice",
           "pinyin": "Zhi Gan Cao",
-          "role_zh": "",
-          "role_en": "",
-          "dose_range": ""
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "",
+          "herb_id": "herb.zhi_gan_cao",
+          "pinyin_toned": "Zhì Gān Cǎo",
+          "role_reason_zh": "調和諸藥，緩麻黃、桂枝之峻烈，防過汗傷正",
+          "decoction_reference_g": "3",
+          "classical_amount_text": "《傷寒論》原方，依現代常用折算",
+          "source_ids": [
+            "chinese_medicine_atlas",
+            "classical_formula_doctrine"
+          ]
         }
       ],
       "actions_en": [
@@ -421,7 +457,10 @@
         "formula.xiao_qing_long_tang",
         "formula.bai_du_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked."
+      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "pinyin_toned": "Má Huáng Tāng",
+      "source_text_zh": "《傷寒論》",
+      "authored_by": "model_draft"
     },
     {
       "id": "formula.yin_qiao_san",

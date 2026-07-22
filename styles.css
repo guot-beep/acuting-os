@@ -4721,3 +4721,10 @@ body.point-detail-mode .map-panel {
 /* the review box in knowledge detail cards is narrow — stack there */
 .k-detail-review-box .rv-line { flex-direction: column; align-items: stretch; }
 .k-detail-review-box .rv-count { margin-left: 0; }
+
+/* V2: per-herb role in this formula (本方功效) */
+.k-dose-table .k-dose-role {
+  min-width: 12rem;
+  line-height: 1.45;
+  color: var(--text, inherit);
+}
