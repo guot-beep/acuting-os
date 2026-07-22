@@ -23,6 +23,46 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-21 - CS6 dialog segmentation + two Codex staging reviews (Claude)
+
+Reviews (both ACCEPT, both preview-only, 0 canonical writes):
+`27864b5` high-risk anatomy staging and `33882b5` protocol-table anatomy.
+Spot-checked ST9, CV22/ST11, GV15/GV16, GB21/SI14/SI15, GV20 and the 16
+peripheral-nerve candidates — anatomy correct throughout, and crucially no
+needling depth is staged anywhere. Three provenance/merge notes recorded in
+`docs/CODEX_HANDOFF.md`: the 16-point nerve list is an uncited background
+assertion in PMC6624832 (whose study measured only LI13, which is missing);
+ST9 has two legitimate source entries; and "first dorsal interosseous muscle"
+names two different muscles across LI4 (hand) and LR3 (foot), so no merge may
+key on muscle name. Earlier the same day, WHO staging `16b7f11` was used to
+close the two genuine CloudTCM §A location conflicts (BL4, SI16) as
+recommendations in the worksheet — still Ting-gated, 361.json untouched.
+
+Then EXECUTION_PLAN 4.3, dialog segmentation, per
+`docs/CASE_SOAP_FLOW_REVIEW.md`. The case intake dialog becomes five
+fieldsets (identity / background / presenting problem / diagnosis+patterns /
+goal+summary) and the SOAP dialog becomes visit-context + S / O / A / P +
+outcome & reflection. Following the review doc, the four record-link fields
+moved out of the top strip into A - Assessment, since links are assessment
+content rather than visit context.
+
+Files: `index.html`, `styles.css`. No data files touched. Field access
+throughout app.js is via `form.elements[name]` and `FormData`, both
+structure-independent, so segmentation cannot affect save or hydrate.
+
+Validation: validate-data / validate-point-categories / validate-naming PASS.
+Browser QA at 1280x900 and 375x812: all 21 case fields and all 38 SOAP fields
+resolvable by name; sections render 2-col on desktop and 1-col on mobile with
+no horizontal overflow; all seven CS4 link pickers re-attach in their new
+sections (A: pattern/disease/condition/safety, P: acupoint/formula/medication)
+and `outcomeMetricLinks` stays free text by design; save round-trip wrote 41
+keys and re-hydrated correctly, including the reflection fields nested in the
+`<details>` block. Zero console errors. Test case created in localStorage for
+the round-trip was deleted afterwards; nothing clinical entered git.
+
+Commit: `28e1440`. Next: 4.3's second half — Cases workspace reorder
+(working area above scaffolds).
+
 ### 2026-07-21 - Extract protocol-table acupoint anatomy (Codex)
 
 Added a second review-only anatomy batch from two open peer-reviewed human
