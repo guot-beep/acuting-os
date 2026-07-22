@@ -27,7 +27,61 @@
     "other_forms_en": "Tincture 1-3ml; also in pills and powders",
     "notes_zh": "晚間服用可能興奮中樞神經，易致失眠；宜日間服。",
     "notes_en": "Evening dosing may stimulate the CNS and cause insomnia; prefer daytime dosing.",
-    "source_agreement": "Both benchmark sources give 1.5-10g independently."
+    "source_agreement": "Both benchmark sources give 1.5-10g independently.",
+
+    "by_pattern": [
+      {
+        "purpose_zh": "發汗解表（風寒表實）",
+        "purpose_en": "Release the exterior (Wind-Cold excess)",
+        "preferred_form_zh": "生用（淨麻黃）",
+        "preferred_form_en": "Raw (Jing Ma Huang)",
+        "rationale_zh": "生用發汗力強",
+        "rationale_en": "Raw form is the strongest diaphoretic",
+        "dose_note_zh": "取全量範圍之較高端，中病即止，不可過汗",
+        "dose_note_en": "Toward the upper end of the range; stop once the sweat is achieved, do not over-sweat",
+        "source_quote_zh": "發汗解表宜生用",
+        "sources": ["cloudtcm_herb_pages", "american_dragon"]
+      },
+      {
+        "purpose_zh": "平喘止咳（肺氣壅遏）",
+        "purpose_en": "Calm wheezing and stop cough (obstructed Lung qi)",
+        "preferred_form_zh": "炙用／蜜炙麻黃",
+        "preferred_form_en": "Prepared / honey-fried (Zhi or Mi Zhi Ma Huang)",
+        "rationale_zh": "蜜炙可減弱發汗力，且有潤肺之功；作用時間延長",
+        "rationale_en": "Honey-frying reduces the diaphoretic action, adds a moistening effect on the Lung, and prolongs duration",
+        "dose_note_zh": "多用中低劑量，重在宣降而非發汗",
+        "dose_note_en": "Lower to middle of the range; the aim is diffusing and descending, not sweating",
+        "source_quote_zh": "蜜炙用可減弱發汗力，且有潤肺之功。故…平喘止咳多炙用",
+        "sources": ["cloudtcm_herb_pages", "american_dragon"]
+      },
+      {
+        "purpose_zh": "兒科使用",
+        "purpose_en": "Paediatric use",
+        "preferred_form_zh": "麻黃絨",
+        "preferred_form_en": "Ephedra floss (Ma Huang Rong)",
+        "rationale_zh": "發汗力弱，性較緩和",
+        "rationale_en": "Weakest diaphoretic action, gentler",
+        "dose_note_zh": "按年齡體重減量",
+        "dose_note_en": "Reduce by age and body weight",
+        "source_quote_zh": "麻黃絨發汗力弱，多用於兒科",
+        "sources": ["cloudtcm_herb_pages"]
+      },
+      {
+        "purpose_zh": "體虛、年老者",
+        "purpose_en": "Debilitated or elderly patients",
+        "preferred_form_zh": "減量，或改用麻黃絨；必要時配補氣藥",
+        "preferred_form_en": "Reduce dose, or switch to Ma Huang Rong; pair with qi tonics if needed",
+        "rationale_zh": "過汗傷正，體虛者尤甚",
+        "rationale_en": "Over-sweating damages the upright qi, especially in the depleted",
+        "dose_note_zh": "取範圍之低端",
+        "dose_note_en": "Low end of the range",
+        "sources": ["american_dragon", "cloudtcm_herb_pages"]
+      }
+    ],
+
+    "overdose_signs_zh": ["心悸", "呼吸急促", "噁心嘔吐", "失眠", "震顫"],
+    "overdose_signs_en": ["Palpitations", "Rapid breathing", "Nausea and vomiting", "Insomnia", "Tremor"],
+    "overdose_source_note": "CloudTCM: 高劑量可能引起心悸、呼吸急促、噁心嘔吐、失眠、震顫。Note the overlap with the cardiac contraindications - palpitations are both an overdose sign and the reason cardiac patients are excluded."
   },
 
   "actions_indications": [
