@@ -1,5 +1,11 @@
 # AcuTing OS — Standing Execution Plan
 
+> **SUPERSEDED IN PART — read `docs/SCHEDULE_2026-07-22.md` FIRST.**
+> That file consolidates the 2026-07-22 session: the retired content policy
+> (fill and cite, never 待補), the measured quality baseline (36% substantive),
+> the card redesign, and the current ordering. Where the two disagree, the
+> schedule wins.
+
 Written: 2026-07-12 (Claude, final session handoff). Per Ting's instruction,
 this is THE ordered plan all agents follow until Ting or a Claude
 architecture session revises it.
