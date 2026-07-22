@@ -1070,20 +1070,24 @@
       "id": "chinese_medicine_atlas",
       "name": "TCM Herb Atlas (chinesemedicineatlas.com)",
       "layer": "materia_medica_index",
-      "source_group": "B_reference",
-      "authority": 3,
-      "tier": "B",
+      "source_group": "A_authoritative",
+      "authority": 5,
+      "tier": "A",
       "language": "en",
       "url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "access_type": "public_web",
       "primary_use": [
-        "glance-layer card design",
+        "card layout and information design",
         "tone-marked pinyin",
         "channel abbreviations",
-        "plain-language indications"
+        "plain-language indications",
+        "formula herb roster with 君臣佐使",
+        "meridian ring",
+        "herb profile radar"
       ],
       "notes": "Chosen by Ting for its clean scan-layer presentation. 102 herbs, 16 category groups, 简体. Adopted for PRESENTATION not depth - see spec section 0. Links only, no image copying.",
-      "review_status": "source_checked"
+      "review_status": "source_checked",
+      "role": "PRIMARY DESIGN REFERENCE — Ting: put this site in a very important resource position. Card layout, information design, tag pills, meridian ring and herb-profile radar are modelled on it. See docs/CARD_REDESIGN_V2.md. Depth still comes primarily from CloudTCM; the Atlas supplies the arrangement, not the content volume."
     },
     {
       "id": "cloudtcm_herb_pages",
