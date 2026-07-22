@@ -23,6 +23,47 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-22 - RV1 in-app review, after measuring the real content gap (Claude)
+
+Ting reported the site is not usable and everything is stuck in review.
+Measured before acting, and the picture contradicted the impression:
+acupoints are 361/361 complete on functions, indications and
+contraindications in both languages, and herbs are 202/202 complete on
+functions, properties, clinical-use note and safety flags. The real gaps
+are formulas (composition on only 23/115 — 92 empty skeletons) and the
+condition canon (content on only 25/150). Acupoint anatomy fields are 0%,
+which is what Codex is currently staging.
+
+Diagnosis: the bottleneck is not production, it is that the gate model
+routes every record through one person, and asks her to review markdown
+worksheets in a repo. Two agents stage faster than one human approves, so
+previews pile up and the app stays empty. My own review worksheets were
+adding to that queue.
+
+RV1 addresses the review half. A two-button verdict control (內容正確 /
+有問題 + note) now sits on acupoint detail and on formula/herb study
+cards, so a verdict is a two-second action on the record being read.
+Verdicts are stored in localStorage, exported as JSON, and applied by
+`scripts/apply-review-verdicts.js` — dry-run by default. Confirmed
+promotes draft -> source_checked with reviewed_by/reviewed_at; issue
+never changes status, it only attaches review_issue so the record stays
+visibly in need of work. The app still never writes canonical JSON, and
+the script never touches content or safety-load fields.
+
+Files: `js/review.js` (new), `scripts/apply-review-verdicts.js` (new),
+`app.js`, `index.html`, `styles.css`, and a one-line guarded mount in
+`js/knowledge.js` (Codex's file, noted in handoff).
+
+Validation: 6 validators PASS, zero console errors. Browser QA: strip id
+always matches the rendered record (checked across five points); confirm,
+undo-by-second-click, issue-with-note, counter and export all work;
+end-to-end export -> dry-run reported the right three changes with
+canonical untouched. Test verdicts cleared from localStorage afterwards.
+
+Commit: `7f8ff7a`. Open decision for Ting: split safety-load fields from
+study fields so the 92 formula skeletons can fill as rendered drafts
+instead of waiting on a per-record gate.
+
 ### 2026-07-21 - CS6 dialog segmentation + two Codex staging reviews (Claude)
 
 Reviews (both ACCEPT, both preview-only, 0 canonical writes):
