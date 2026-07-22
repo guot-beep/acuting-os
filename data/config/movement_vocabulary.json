@@ -1,0 +1,64 @@
+{
+  "vocabulary_version": "1.0",
+  "created_at": "2026-07-22",
+  "purpose": "Controlled movement terms for the Anatomy & Movement track (docs/ANATOMY_MOVEMENT_TRACK_DESIGN.md). Muscle records reference these ids in actions[]. Without a controlled vocabulary, 踝背屈 / dorsiflexion / ankle dorsiflexion are three unrelated strings and nothing can be grouped or browsed bidirectionally.",
+  "scope_note": "Scoped to joints the 361 acupoints actually reach. This is a study companion for acupuncture, not a complete kinesiology reference.",
+  "review_status": "draft",
+  "movements": [
+    { "id": "move.neck_flexion", "joint": "neck", "name_en": "Neck flexion", "name_zh": "頸屈曲", "plane": "sagittal" },
+    { "id": "move.neck_extension", "joint": "neck", "name_en": "Neck extension", "name_zh": "頸伸展", "plane": "sagittal" },
+    { "id": "move.neck_lateral_flexion", "joint": "neck", "name_en": "Neck lateral flexion", "name_zh": "頸側屈", "plane": "frontal" },
+    { "id": "move.neck_rotation", "joint": "neck", "name_en": "Neck rotation", "name_zh": "頸旋轉", "plane": "transverse" },
+
+    { "id": "move.shoulder_flexion", "joint": "shoulder", "name_en": "Shoulder flexion", "name_zh": "肩屈曲", "plane": "sagittal" },
+    { "id": "move.shoulder_extension", "joint": "shoulder", "name_en": "Shoulder extension", "name_zh": "肩伸展", "plane": "sagittal" },
+    { "id": "move.shoulder_abduction", "joint": "shoulder", "name_en": "Shoulder abduction", "name_zh": "肩外展", "plane": "frontal" },
+    { "id": "move.shoulder_adduction", "joint": "shoulder", "name_en": "Shoulder adduction", "name_zh": "肩內收", "plane": "frontal" },
+    { "id": "move.shoulder_internal_rotation", "joint": "shoulder", "name_en": "Shoulder internal rotation", "name_zh": "肩內旋", "plane": "transverse" },
+    { "id": "move.shoulder_external_rotation", "joint": "shoulder", "name_en": "Shoulder external rotation", "name_zh": "肩外旋", "plane": "transverse" },
+    { "id": "move.scapular_elevation", "joint": "scapulothoracic", "name_en": "Scapular elevation", "name_zh": "肩胛上提", "plane": "frontal" },
+    { "id": "move.scapular_retraction", "joint": "scapulothoracic", "name_en": "Scapular retraction", "name_zh": "肩胛後縮", "plane": "transverse" },
+
+    { "id": "move.elbow_flexion", "joint": "elbow", "name_en": "Elbow flexion", "name_zh": "肘屈曲", "plane": "sagittal" },
+    { "id": "move.elbow_extension", "joint": "elbow", "name_en": "Elbow extension", "name_zh": "肘伸展", "plane": "sagittal" },
+    { "id": "move.forearm_pronation", "joint": "radioulnar", "name_en": "Forearm pronation", "name_zh": "前臂旋前", "plane": "transverse" },
+    { "id": "move.forearm_supination", "joint": "radioulnar", "name_en": "Forearm supination", "name_zh": "前臂旋後", "plane": "transverse" },
+
+    { "id": "move.wrist_flexion", "joint": "wrist", "name_en": "Wrist flexion", "name_zh": "腕屈曲", "plane": "sagittal" },
+    { "id": "move.wrist_extension", "joint": "wrist", "name_en": "Wrist extension", "name_zh": "腕伸展", "plane": "sagittal" },
+    { "id": "move.wrist_radial_deviation", "joint": "wrist", "name_en": "Wrist radial deviation", "name_zh": "腕橈側偏", "plane": "frontal" },
+    { "id": "move.wrist_ulnar_deviation", "joint": "wrist", "name_en": "Wrist ulnar deviation", "name_zh": "腕尺側偏", "plane": "frontal" },
+
+    { "id": "move.finger_flexion", "joint": "hand", "name_en": "Finger flexion", "name_zh": "手指屈曲", "plane": "sagittal" },
+    { "id": "move.finger_extension", "joint": "hand", "name_en": "Finger extension", "name_zh": "手指伸展", "plane": "sagittal" },
+    { "id": "move.finger_abduction", "joint": "hand", "name_en": "Finger abduction", "name_zh": "手指外展", "plane": "frontal" },
+    { "id": "move.finger_adduction", "joint": "hand", "name_en": "Finger adduction", "name_zh": "手指內收", "plane": "frontal" },
+    { "id": "move.thumb_adduction", "joint": "hand", "name_en": "Thumb adduction", "name_zh": "拇指內收", "plane": "frontal" },
+    { "id": "move.thumb_opposition", "joint": "hand", "name_en": "Thumb opposition", "name_zh": "拇指對掌", "plane": "composite" },
+
+    { "id": "move.trunk_flexion", "joint": "trunk", "name_en": "Trunk flexion", "name_zh": "軀幹屈曲", "plane": "sagittal" },
+    { "id": "move.trunk_extension", "joint": "trunk", "name_en": "Trunk extension", "name_zh": "軀幹伸展", "plane": "sagittal" },
+    { "id": "move.trunk_rotation", "joint": "trunk", "name_en": "Trunk rotation", "name_zh": "軀幹旋轉", "plane": "transverse" },
+    { "id": "move.trunk_lateral_flexion", "joint": "trunk", "name_en": "Trunk lateral flexion", "name_zh": "軀幹側屈", "plane": "frontal" },
+
+    { "id": "move.hip_flexion", "joint": "hip", "name_en": "Hip flexion", "name_zh": "髖屈曲", "plane": "sagittal" },
+    { "id": "move.hip_extension", "joint": "hip", "name_en": "Hip extension", "name_zh": "髖伸展", "plane": "sagittal" },
+    { "id": "move.hip_abduction", "joint": "hip", "name_en": "Hip abduction", "name_zh": "髖外展", "plane": "frontal" },
+    { "id": "move.hip_adduction", "joint": "hip", "name_en": "Hip adduction", "name_zh": "髖內收", "plane": "frontal" },
+    { "id": "move.hip_internal_rotation", "joint": "hip", "name_en": "Hip internal rotation", "name_zh": "髖內旋", "plane": "transverse" },
+    { "id": "move.hip_external_rotation", "joint": "hip", "name_en": "Hip external rotation", "name_zh": "髖外旋", "plane": "transverse" },
+
+    { "id": "move.knee_flexion", "joint": "knee", "name_en": "Knee flexion", "name_zh": "膝屈曲", "plane": "sagittal" },
+    { "id": "move.knee_extension", "joint": "knee", "name_en": "Knee extension", "name_zh": "膝伸展", "plane": "sagittal" },
+
+    { "id": "move.ankle_dorsiflexion", "joint": "ankle", "name_en": "Ankle dorsiflexion", "name_zh": "踝背屈", "plane": "sagittal" },
+    { "id": "move.ankle_plantarflexion", "joint": "ankle", "name_en": "Ankle plantarflexion", "name_zh": "踝蹠屈", "plane": "sagittal" },
+    { "id": "move.foot_inversion", "joint": "subtalar", "name_en": "Foot inversion", "name_zh": "足內翻", "plane": "frontal" },
+    { "id": "move.foot_eversion", "joint": "subtalar", "name_en": "Foot eversion", "name_zh": "足外翻", "plane": "frontal" },
+    { "id": "move.toe_flexion", "joint": "foot", "name_en": "Toe flexion", "name_zh": "足趾屈曲", "plane": "sagittal" },
+    { "id": "move.toe_extension", "joint": "foot", "name_en": "Toe extension", "name_zh": "足趾伸展", "plane": "sagittal" },
+
+    { "id": "move.respiration_forced_expiration", "joint": "thorax", "name_en": "Forced expiration", "name_zh": "用力呼氣", "plane": "composite" },
+    { "id": "move.mastication", "joint": "temporomandibular", "name_en": "Mastication", "name_zh": "咀嚼", "plane": "composite" }
+  ]
+}
