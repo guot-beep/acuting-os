@@ -1,0 +1,76 @@
+{
+  "vocabulary_version": "1.0",
+  "created_at": "2026-07-22",
+  "name_zh": "七情配伍",
+  "name_en": "The seven relations of herb combination",
+  "purpose": "Controlled vocabulary for WHY two herbs are paired. A 藥對 record without a relation type is just a list of two names; the relation is the teaching content. Referenced by data/herbs/herb_pairs.json.",
+  "source_note": "Standard materia medica doctrine (本草 七情), present in every major textbook. Bilingual labels kept parallel so the pair card reads in either language.",
+  "review_status": "draft",
+  "relations": [
+    {
+      "id": "pair.rel.dan_xing",
+      "name_zh": "單行",
+      "name_en": "Single action",
+      "meaning_zh": "單味藥即能奏效，不需配伍。",
+      "meaning_en": "One herb alone is sufficient; no combination required.",
+      "clinical_effect": "neutral"
+    },
+    {
+      "id": "pair.rel.xiang_xu",
+      "name_zh": "相須",
+      "name_en": "Mutual accentuation",
+      "meaning_zh": "性能功效相似的兩藥合用，互相增強，療效顯著提升。",
+      "meaning_en": "Two herbs of similar action used together, each strengthening the other; effect markedly increased.",
+      "clinical_effect": "potentiating",
+      "example_zh": "麻黃配桂枝"
+    },
+    {
+      "id": "pair.rel.xiang_shi",
+      "name_zh": "相使",
+      "name_en": "Mutual enhancement",
+      "meaning_zh": "以一藥為主，另一藥為輔，輔藥提高主藥療效。",
+      "meaning_en": "One herb is principal, the other assists and raises the principal herb's effect.",
+      "clinical_effect": "potentiating",
+      "example_zh": "黃耆配茯苓"
+    },
+    {
+      "id": "pair.rel.xiang_wei",
+      "name_zh": "相畏",
+      "name_en": "Mutual counteraction",
+      "meaning_zh": "一藥的毒性或烈性，被另一藥減輕或消除。",
+      "meaning_en": "The toxicity or harshness of one herb is reduced or removed by the other.",
+      "clinical_effect": "detoxifying",
+      "example_zh": "半夏畏生薑"
+    },
+    {
+      "id": "pair.rel.xiang_sha",
+      "name_zh": "相殺",
+      "name_en": "Mutual suppression",
+      "meaning_zh": "一藥能消除另一藥的毒性反應（與相畏為同一關係的兩種說法）。",
+      "meaning_en": "One herb removes the toxic reaction of the other - the same relationship as 相畏 described from the opposite side.",
+      "clinical_effect": "detoxifying",
+      "example_zh": "生薑殺半夏毒"
+    },
+    {
+      "id": "pair.rel.xiang_wu",
+      "name_zh": "相惡",
+      "name_en": "Mutual antagonism",
+      "meaning_zh": "兩藥合用，一藥使另一藥原有功效降低或喪失。",
+      "meaning_en": "Combined, one herb weakens or destroys the other's original effect.",
+      "clinical_effect": "diminishing",
+      "caution": true,
+      "example_zh": "人參惡萊菔子"
+    },
+    {
+      "id": "pair.rel.xiang_fan",
+      "name_zh": "相反",
+      "name_en": "Mutual incompatibility",
+      "meaning_zh": "兩藥合用產生毒性或劇烈副作用，屬配伍禁忌（十八反、十九畏）。",
+      "meaning_en": "Combined, the two produce toxicity or severe adverse effects - a combining contraindication (the Eighteen Antagonisms and Nineteen Incompatibilities).",
+      "clinical_effect": "contraindicated",
+      "caution": true,
+      "safety_critical": true,
+      "example_zh": "甘草反甘遂"
+    }
+  ]
+}

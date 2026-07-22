@@ -1,0 +1,79 @@
+{
+  "dataset": "herb_pairs",
+  "name_zh": "藥對",
+  "name_en": "Herb pairs (dui yao)",
+  "created_at": "2026-07-22",
+  "purpose": "藥對 as first-class records rather than a flat list hanging off one herb. A pair belongs to BOTH herbs, carries its own meaning (why these two), and is the unit formulas are actually built and taught from - so the real chain is 方劑 -> 藥對 -> 單味藥, navigable in every direction.",
+  "schema_note": {
+    "relation": "id from data/config/herb_pair_relations.json (七情配伍) - this is what makes it a 藥對 and not just two names",
+    "pair_meaning": "what the pair achieves that neither herb achieves alone - the actual teaching content",
+    "found_in_formulas": "formula ids where this pair does the work, so the formula card can show its pairs",
+    "bilingual": "every content field has _zh and _en"
+  },
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "pairs": [
+    {
+      "id": "pair.ma_huang__gui_zhi",
+      "herbs": ["herb.ma_huang", "herb.gui_zhi"],
+      "name_zh": "麻黃配桂枝",
+      "name_en": "Ma Huang with Gui Zhi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "兩藥皆能發汗解表。麻黃開腠理、發汗力峻，桂枝解肌發表、溫通經脈助營衛之氣外達。相須為用，發汗解表之力大增，為風寒表實無汗的核心組合。",
+      "pair_meaning_en": "Both release the exterior. Ma Huang forcefully opens the pores; Gui Zhi releases the muscle layer and warms the channels, carrying ying and wei outward. Used together they mutually accentuate, and the diaphoretic effect increases markedly - the core combination for Wind-Cold excess with no sweating.",
+      "indication_zh": "風寒表實證：惡寒發熱、無汗、頭身疼痛、脈浮緊",
+      "indication_en": "Wind-Cold excess pattern: chills and fever, absence of sweating, headache and body aches, tight floating pulse",
+      "caution_zh": "發汗力強，表虛自汗、陰虛、體弱者不宜；不可過汗。",
+      "caution_en": "Strongly diaphoretic - unsuitable for exterior deficiency with spontaneous sweating, yin deficiency, or debility. Do not over-sweat.",
+      "found_in_formulas": ["formula.ma_huang_tang", "formula.xiao_qing_long_tang"],
+      "sources": ["american_dragon", "cloudtcm_herb_pages"]
+    },
+    {
+      "id": "pair.ma_huang__xing_ren",
+      "herbs": ["herb.ma_huang", "herb.xing_ren"],
+      "name_zh": "麻黃配杏仁",
+      "name_en": "Ma Huang with Xing Ren",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃宣發肺氣以開，杏仁肅降肺氣以降。一宣一降，恢復肺的宣降之常，止咳平喘之力遠勝單用。",
+      "pair_meaning_en": "Ma Huang disseminates and opens Lung qi; Xing Ren directs Lung qi downward. One ascends and one descends, restoring the Lung's normal diffusing-and-descending function - far more effective for cough and wheezing than either alone.",
+      "indication_zh": "肺氣壅遏之咳嗽氣喘，無論寒熱皆可隨證配伍",
+      "indication_en": "Cough and wheezing from obstructed Lung qi; adaptable to either cold or heat patterns with appropriate partners",
+      "caution_zh": "杏仁有小毒，用量宜慎；嬰幼兒尤須注意。",
+      "caution_en": "Xing Ren is slightly toxic; dose carefully, especially in infants and young children.",
+      "found_in_formulas": ["formula.ma_huang_tang", "formula.ma_xing_shi_gan_tang"],
+      "sources": ["american_dragon"]
+    },
+    {
+      "id": "pair.ma_huang__shi_gao",
+      "herbs": ["herb.ma_huang", "herb.shi_gao"],
+      "name_zh": "麻黃配石膏",
+      "name_en": "Ma Huang with Shi Gao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃辛溫宣肺平喘，石膏辛甘大寒清瀉肺熱。石膏制麻黃之溫燥而存其宣肺之用，使全方由治寒轉為治熱。石膏用量常倍於麻黃，此比例即決定方向。",
+      "pair_meaning_en": "Ma Huang is acrid-warm and disseminates Lung qi to calm wheezing; Shi Gao is acrid-sweet and very cold, draining Lung heat. Shi Gao restrains Ma Huang's warmth and dryness while preserving its diffusing action, turning the formula from cold-treating to heat-treating. Shi Gao is typically dosed at several times Ma Huang, and that ratio is what sets the direction.",
+      "indication_zh": "肺熱壅盛之咳喘：發熱、汗出而喘、口渴、苔黃",
+      "indication_en": "Lung heat with cough and wheezing: fever, sweating with wheezing, thirst, yellow coating",
+      "caution_zh": "石膏大寒，脾胃虛寒者慎用。",
+      "caution_en": "Shi Gao is very cold; use with caution in spleen-stomach deficiency cold.",
+      "teaching_note_zh": "與「麻黃配桂枝」對比記憶：同一味麻黃，配桂枝則治寒，配石膏則治熱——配伍決定方向，這是理解方劑的關鍵範例。",
+      "teaching_note_en": "Contrast with Ma Huang + Gui Zhi: the same Ma Huang treats cold when paired with Gui Zhi and heat when paired with Shi Gao. The partner sets the direction - a key example for understanding formula construction.",
+      "found_in_formulas": ["formula.ma_xing_shi_gan_tang"],
+      "sources": ["american_dragon", "cloudtcm_herb_pages"]
+    },
+    {
+      "id": "pair.ban_xia__sheng_jiang",
+      "herbs": ["herb.ban_xia", "herb.sheng_jiang"],
+      "name_zh": "半夏配生薑",
+      "name_en": "Ban Xia with Sheng Jiang",
+      "relation": "pair.rel.xiang_wei",
+      "pair_meaning_zh": "生薑能減輕半夏之毒性與刺激性（半夏畏生薑、生薑殺半夏毒），同時兩藥皆能降逆止嘔，配伍後既安全又增效。此為相畏／相殺關係最經典的示範。",
+      "pair_meaning_en": "Sheng Jiang reduces Ban Xia's toxicity and irritancy - the textbook example of mutual counteraction and suppression - while both herbs direct rebellious qi downward and stop vomiting, so the pair is both safer and stronger.",
+      "indication_zh": "痰飲嘔吐、胃氣上逆",
+      "indication_en": "Vomiting from phlegm-fluid retention; rebellious stomach qi",
+      "caution_zh": "生半夏毒性大，內服須用製半夏。",
+      "caution_en": "Raw Ban Xia is markedly toxic; only processed Ban Xia is taken internally.",
+      "found_in_formulas": [],
+      "sources": ["standard_materia_medica_doctrine"]
+    }
+  ]
+}
