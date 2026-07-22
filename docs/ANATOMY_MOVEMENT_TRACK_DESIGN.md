@@ -137,6 +137,83 @@ clinical claim, and it is where a plausible-sounding but wrong association
 would do the most damage. Injury records get their own status ladder and do
 not inherit a muscle record's status.
 
+### 2.6 `data/anatomy/exams.json` — examination canon (physical tests + imaging)
+
+Added at Ting's request: she will be learning **how to test an injury**, so
+"which Western examination applies here" is knowledge the track must carry.
+
+An exam is its own record, not a field on the injury, for the same reason a
+muscle is: the relationship is many-to-many. Lachman supports ACL rupture;
+McMurray supports meniscal tear; a single injury usually has several tests,
+and a single test appears under several diagnoses.
+
+```json
+{
+  "id": "exam.lachman",
+  "exam_type": "physical_test",
+  "name_en": "Lachman test",
+  "name_zh": "拉赫曼測試",
+  "region": "knee",
+  "position_zh": "仰臥，膝屈約 20–30 度",
+  "procedure_zh": "一手固定股骨遠端，另一手握脛骨近端前拉",
+  "positive_finding_zh": "脛骨前移過多且終末阻力軟弱／消失",
+  "suggests": ["injury.acl_rupture"],
+  "accuracy": { "sensitivity": null, "specificity": null, "source_id": null },
+  "cautions_zh": ["急性期劇痛或疑似骨折時不做誘發性測試"],
+  "sources": [],
+  "review_status": "draft"
+}
+```
+
+`exam_type` covers both halves of 西醫檢查:
+
+- `physical_test` — orthopaedic special tests
+- `imaging` — X-ray / ultrasound / MRI, with what each modality actually shows
+  for that tissue (Radiopaedia is already in the source registry for this)
+- `lab` — reserved; rarely relevant here but keeps the field honest
+
+**Two rules for this layer, both non-negotiable:**
+
+1. **`accuracy` is null until sourced.** Sensitivity and specificity are
+   numeric clinical claims. They come from a cited study or they stay null.
+   Never from model memory, never "approximately".
+2. **A positive test is not a diagnosis.** Orthopaedic special tests perform
+   poorly in isolation; they are interpreted in clusters and in context. The
+   schema reflects this — see `exam_clusters` below — and the UI says
+   「支持／不支持」, never 「確診」.
+
+```json
+{ "id": "cluster.subacromial_impingement",
+  "injury_id": "injury.subacromial_impingement",
+  "exams": ["exam.neer", "exam.hawkins_kennedy", "exam.painful_arc"],
+  "interpretation_zh": "多項同時陽性才較有意義；單一測試陽性不足以判定",
+  "source_id": null, "review_status": "draft" }
+```
+
+### 2.7 Pathology fields on the injury record
+
+Ting also asked for the 病理 layer — what is actually happening in the tissue.
+These go on the injury record from §2.5:
+
+```json
+{
+  "tissue_type": "tendon",
+  "pathology_mechanism_zh": "慢性過度使用導致肌腱退化性變化（tendinosis），而非典型發炎",
+  "stage": "chronic",
+  "healing_timeline_zh": "肌腱血流少，修復以月計，與肌肉拉傷不同",
+  "referral_triggers_zh": ["夜間痛／休息痛", "外傷後無法負重", "神經症狀"]
+}
+```
+
+`pathology_mechanism` matters more than it looks. "Tendinitis vs tendinosis"
+changes what treatment is even rational, and it is exactly the kind of thing a
+study tool should make visible rather than flatten into a name.
+
+`referral_triggers` is the safety-critical field of this whole track: when to
+stop and send the patient for imaging or an orthopaedic opinion. It is
+required on every injury record — an injury record with an empty
+`referral_triggers` does not pass review.
+
 ---
 
 ## 3. What the app derives vs what it stores
@@ -196,6 +273,25 @@ list), it gets a registry entry with a tier and licensing note like every
 other source, and only then does it get URLs. Until then the zh labels point
 at the same en pages — honest, and it does not block the track.
 
+### 4.1 Injury/exam source candidates (Ting: "運動損傷這個醫學應該有很多正式中英文官網")
+
+Correct, and it changes §6: the injury layer's blocker was assumed to be
+"wait for Ting's textbooks", but public authoritative sources exist. Findings
+so far — **verification status is stated honestly per row**:
+
+| Candidate | Language | Status | Note |
+| --- | --- | --- | --- |
+| AAOS OrthoInfo | en | **VERIFIED 2026-07-22** | Official patient-education site of the American Academy of Orthopaedic Surgeons. Stable per-condition URLs, e.g. `/diseases--conditions/patellofemoral-pain-syndrome/`. **Host moved**: `orthoinfo.aaos.org` 301s to `www.orthoinfo.org` — register the new host. No zh version found. |
+| 中國醫藥大學附設醫院 衛教單張 | zh-TW | **CANDIDATE — not yet opened** | Surfaced in search with per-condition pages (`/HealthEdus/Detail?no=4895` 網球肘, `no=5245` 足底筋膜炎). Fits this project unusually well (integrative TCM+Western teaching hospital). URL ids are opaque `no=` params, so it **requires the URL map from §4** — it cannot be derived from a name. |
+| 台灣運動傷害防護學會 (tats.org.tw) | zh-TW | **CANDIDATE — not yet opened** | Professional body under 教育部體育署/衛福部 supervision. May be org-level rather than per-condition; needs checking before registering. |
+| 臺灣運動物理治療學會 (taiwansportspt.org.tw) | zh-TW | **CANDIDATE — not yet opened** | Same caveat. |
+| Physiopedia | en | **CANDIDATE — not yet opened** | Strong per-test coverage for special tests; wiki-model, so tier B at best, and each page's own citations matter more than the page. |
+| Radiopaedia | en | already registered | Tier A-, already in `source_registry.json` for imaging. Natural home for `exam_type: imaging`. |
+
+Before any of these is used: open it, confirm it resolves and is per-condition,
+register it with tier + language + licensing note like every other source.
+Same links-only rule — no copied images or text.
+
 ---
 
 ## 5. UI
@@ -252,10 +348,20 @@ Suggested order:
 | AM3 | `point_muscle_links.json`, seeded from Codex's staging + WHO locations | study-tier |
 | AM4 | visual URL map, every link fetch-verified | none (links only) |
 | AM5 | UI: anatomy section + muscle card + bidirectional browsing | none |
-| AM6 | injury layer | **Ting-gated, sourced, per record** |
+| AM6 | injury layer (incl. pathology fields §2.7) | sourced from §4.1 registry, **Ting reviews per record via RV1** |
+| AM7 | exam canon §2.6 — physical tests + imaging | as AM6; `accuracy` numbers stay null until individually sourced |
+| AM8 | injury ↔ exam junctions and clusters | as AM6 |
 
 AM0–AM1 are pure structure and can start immediately without any content
-decision. AM6 is the only part that must wait.
+decision.
+
+AM6–AM8 no longer wait on Ting's own textbooks — §4.1 establishes that
+authoritative public sources exist in both languages. What they still require
+is **per-record sourcing and per-record review**, which RV1 now makes cheap.
+The distinction that matters: these records may be *drafted* from registered
+public sources without a blocking gate, but they render as `draft` with the
+status badge, and `accuracy` numbers plus `referral_triggers` get individual
+attention because those are the fields that can actually hurt someone.
 
 ---
 
@@ -276,11 +382,25 @@ Following the existing suite's pattern (one validator per invariant):
 
 ## 8. Open questions for Ting
 
-1. Chinese-language anatomy image source — which site, or shall I bring a
-   candidate list with licensing notes for you to pick from? (§4)
-2. Bone layer: keep it to landmarks only, as proposed, or do you want
-   attachments modelled properly for the injury reasoning later? (§2.2)
-3. Injury layer sourcing: sports-medicine texts you already have, or should
-   this wait until you are further into the orthopaedic material? (§2.5)
+1. Chinese-language source: shall I open and verify the §4.1 candidates
+   (CMUH 衛教單張 looks the most promising — per-condition and integrative)
+   and bring back the ones that hold up, with licensing notes?
+2. Bone layer: keep it to landmarks only, as proposed, or model attachments
+   properly for the injury reasoning later? (§2.2)
+3. Exam layer depth: full procedure text per test, or start with
+   name + positive finding + what it suggests and deepen later? (§2.6)
 
 None of these block AM0–AM1.
+
+## 9. Scope note
+
+This track now spans anatomy → movement → injury → pathology → examination.
+That is a lot, and it is genuinely useful, but it is also the point where a
+design can quietly become a second project. Two guards:
+
+- The muscle/bone/movement layers (AM0–AM5) stand alone. If the injury and
+  exam layers never get filled, the anatomy feature is still complete and
+  useful on its own.
+- The exam layer is scoped to **regions the acupoints actually reach**. This
+  is a study companion for an acupuncture practice, not an orthopaedic
+  examination textbook.
