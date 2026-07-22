@@ -1,0 +1,607 @@
+{
+  "blueprint_id": "ncbahm_bio_2026",
+  "board": "NCBAHM",
+  "board_note": "National Certification Board for Acupuncture and Herbal Medicine. Renamed from NCCAOM effective 2026-01-02; per the board FAQ the rename did not itself change exam content.",
+  "module": "BIO",
+  "module_name": "Biomedicine",
+  "effective_date": "2026-09-01",
+  "captured_from": "NCBAHM Biomedicine Content Outline with Bibliography, January 2026 (Ting local copy)",
+  "captured_on": "2026-07-22",
+  "supersedes": "2020 BIO Content Outline (updated June 2021)",
+  "scope_note": "Appendix A states the exam focuses on but is not exclusively limited to these conditions. Treat as minimum required coverage, not a closed set.",
+  "review_status": "source_checked",
+  "domain_weights": [
+    {
+      "domain": "I. Biomedical Sciences",
+      "weight_pct": 18
+    },
+    {
+      "domain": "II. Patient Evaluation",
+      "weight_pct": 26
+    },
+    {
+      "domain": "III. Analysis and Clinical Decision-making",
+      "weight_pct": 34
+    },
+    {
+      "domain": "IV. Professional Responsibilities",
+      "weight_pct": 22
+    }
+  ],
+  "condition_categories": [
+    {
+      "category": "Autoimmune",
+      "category_id": "autoimmune",
+      "conditions": [
+        {
+          "id": "bp.myasthenia_gravis",
+          "label_en": "Myasthenia gravis"
+        },
+        {
+          "id": "bp.psoriasis",
+          "label_en": "Psoriasis"
+        },
+        {
+          "id": "bp.rheumatoid_arthritis",
+          "label_en": "Rheumatoid arthritis (RA)"
+        },
+        {
+          "id": "bp.systemic_lupus_erythematosus",
+          "label_en": "Systemic lupus erythematosus (SLE)"
+        },
+        {
+          "id": "bp.temporal_arteritis",
+          "label_en": "Temporal arteritis"
+        }
+      ]
+    },
+    {
+      "category": "Cardiovascular",
+      "category_id": "cardiovascular",
+      "conditions": [
+        {
+          "id": "bp.aneurysm",
+          "label_en": "Aneurysm"
+        },
+        {
+          "id": "bp.angina_pectoris",
+          "label_en": "Angina pectoris"
+        },
+        {
+          "id": "bp.arrhythmia",
+          "label_en": "Arrhythmia (e.g., atrial fibrillation, premature ventricular contraction, tachycardia)"
+        },
+        {
+          "id": "bp.atherosclerosis",
+          "label_en": "Atherosclerosis (e.g., coronary artery disease, peripheral vascular disease)"
+        },
+        {
+          "id": "bp.blood_pressure_disorders",
+          "label_en": "Blood pressure disorders (e.g., hypertension, hypotension)"
+        },
+        {
+          "id": "bp.congestive_heart_failure",
+          "label_en": "Congestive heart failure"
+        },
+        {
+          "id": "bp.deep_vein_thrombosis",
+          "label_en": "Deep vein thrombosis"
+        },
+        {
+          "id": "bp.dyslipidemia",
+          "label_en": "Dyslipidemia"
+        },
+        {
+          "id": "bp.myocardial_infarction",
+          "label_en": "Myocardial infarction"
+        },
+        {
+          "id": "bp.postural_orthostatic_tachycardia_syndrome",
+          "label_en": "Postural orthostatic tachycardia syndrome (POTS)"
+        },
+        {
+          "id": "bp.raynaud_s_phenomenon",
+          "label_en": "Raynaud's phenomenon"
+        },
+        {
+          "id": "bp.valvular_disease",
+          "label_en": "Valvular disease"
+        }
+      ]
+    },
+    {
+      "category": "Dermatological",
+      "category_id": "dermatological",
+      "conditions": [
+        {
+          "id": "bp.burns",
+          "label_en": "Burns"
+        },
+        {
+          "id": "bp.contagious_skin_conditions",
+          "label_en": "Contagious skin conditions (e.g., lice, fungal infections, scabies, cellulitis)"
+        },
+        {
+          "id": "bp.noncontagious_skin_conditions",
+          "label_en": "Noncontagious skin conditions (e.g., acne, eczema, alopecia, moles)"
+        }
+      ]
+    },
+    {
+      "category": "Endocrine and Metabolic",
+      "category_id": "endocrine_and_metabolic",
+      "conditions": [
+        {
+          "id": "bp.adrenal_disorders",
+          "label_en": "Adrenal disorders (e.g., Cushing's, Addison's)"
+        },
+        {
+          "id": "bp.diabetes_type_1",
+          "label_en": "Diabetes Type 1"
+        },
+        {
+          "id": "bp.metabolic_syndrome_insulin_resistance",
+          "label_en": "Metabolic syndrome/insulin resistance (e.g., Diabetes Type 2)"
+        },
+        {
+          "id": "bp.obesity",
+          "label_en": "Obesity"
+        },
+        {
+          "id": "bp.parathyroid_disorders",
+          "label_en": "Parathyroid disorders"
+        },
+        {
+          "id": "bp.pituitary_disorders",
+          "label_en": "Pituitary disorders"
+        },
+        {
+          "id": "bp.thyroid_disorders",
+          "label_en": "Thyroid disorders (e.g., Hashimoto's thyroiditis, Graves' disease)"
+        }
+      ]
+    },
+    {
+      "category": "Gastrointestinal",
+      "category_id": "gastrointestinal",
+      "conditions": [
+        {
+          "id": "bp.appendicitis",
+          "label_en": "Appendicitis"
+        },
+        {
+          "id": "bp.cirrhosis",
+          "label_en": "Cirrhosis"
+        },
+        {
+          "id": "bp.diverticular_diseases",
+          "label_en": "Diverticular diseases (e.g., diverticulosis, diverticulitis)"
+        },
+        {
+          "id": "bp.food_sensitivity_allergies",
+          "label_en": "Food sensitivity/allergies (e.g., celiac disease, lactose intolerance)"
+        },
+        {
+          "id": "bp.gallbladder_conditions",
+          "label_en": "Gallbladder conditions (e.g., cholelithiasis, cholecystitis)"
+        },
+        {
+          "id": "bp.gastric_bypass",
+          "label_en": "Gastric bypass"
+        },
+        {
+          "id": "bp.gastritis",
+          "label_en": "Gastritis"
+        },
+        {
+          "id": "bp.gastroesophageal_reflux_disease",
+          "label_en": "Gastroesophageal reflux disease (GERD)"
+        },
+        {
+          "id": "bp.gastrointestinal_polyps",
+          "label_en": "Gastrointestinal polyps"
+        },
+        {
+          "id": "bp.hemorrhoids",
+          "label_en": "Hemorrhoids"
+        },
+        {
+          "id": "bp.hepatitis",
+          "label_en": "Hepatitis"
+        },
+        {
+          "id": "bp.hiatal_hernia",
+          "label_en": "Hiatal hernia"
+        },
+        {
+          "id": "bp.inflammatory_bowel_disease",
+          "label_en": "Inflammatory bowel disease (e.g., Crohn's disease, ulcerative colitis)"
+        },
+        {
+          "id": "bp.intestinal_biliary_obstruction",
+          "label_en": "Intestinal/biliary obstruction"
+        },
+        {
+          "id": "bp.irritable_bowel_syndrome",
+          "label_en": "Irritable bowel syndrome (IBS)"
+        },
+        {
+          "id": "bp.pancreatitis",
+          "label_en": "Pancreatitis"
+        },
+        {
+          "id": "bp.peptic_ulcer",
+          "label_en": "Peptic ulcer (e.g., H. pylori, Campylobacter)"
+        },
+        {
+          "id": "bp.peritonitis",
+          "label_en": "Peritonitis"
+        },
+        {
+          "id": "bp.small_intestinal_bacterial_overgrowth",
+          "label_en": "Small intestinal bacterial overgrowth (SIBO)"
+        }
+      ]
+    },
+    {
+      "category": "Hematological",
+      "category_id": "hematological",
+      "conditions": [
+        {
+          "id": "bp.bleeding_and_coagulation_disorders",
+          "label_en": "Bleeding and coagulation disorders (e.g., pulmonary embolism)"
+        },
+        {
+          "id": "bp.disorders_of_platelets",
+          "label_en": "Disorders of platelets (e.g., thrombocytopenia)"
+        },
+        {
+          "id": "bp.disorders_of_red_blood_cells",
+          "label_en": "Disorders of red blood cells (e.g., anemia, polycythemia, sickle cell)"
+        },
+        {
+          "id": "bp.disorders_of_white_blood_cells",
+          "label_en": "Disorders of white blood cells (e.g., neutropenia)"
+        },
+        {
+          "id": "bp.hemochromatosis",
+          "label_en": "Hemochromatosis"
+        }
+      ]
+    },
+    {
+      "category": "Infectious",
+      "category_id": "infectious",
+      "conditions": [
+        {
+          "id": "bp.bacterial_infections",
+          "label_en": "Bacterial infections (e.g., E. coli, strep, MRSA, impetigo)"
+        },
+        {
+          "id": "bp.foodborne_illness",
+          "label_en": "Foodborne illness"
+        },
+        {
+          "id": "bp.lyme_disease",
+          "label_en": "Lyme disease"
+        },
+        {
+          "id": "bp.parasitic_infections",
+          "label_en": "Parasitic infections"
+        },
+        {
+          "id": "bp.sexually_transmitted_infections",
+          "label_en": "Sexually transmitted infections"
+        },
+        {
+          "id": "bp.tuberculosis",
+          "label_en": "Tuberculosis"
+        },
+        {
+          "id": "bp.viral_infections",
+          "label_en": "Viral infections (e.g., shingles, measles, influenza, post-viral illness)"
+        }
+      ]
+    },
+    {
+      "category": "Genetics",
+      "category_id": "genetics",
+      "conditions": [
+        {
+          "id": "bp.down_syndrome",
+          "label_en": "Down syndrome"
+        },
+        {
+          "id": "bp.ehlers_danlos_syndrome",
+          "label_en": "Ehlers-Danlos syndrome (EDS)"
+        },
+        {
+          "id": "bp.marfan_syndrome",
+          "label_en": "Marfan syndrome"
+        }
+      ]
+    },
+    {
+      "category": "Mental, Neurodevelopmental, and Behavioral",
+      "category_id": "mental_neurodevelopmental_and_behavioral",
+      "conditions": [
+        {
+          "id": "bp.addictions",
+          "label_en": "Addictions"
+        },
+        {
+          "id": "bp.anxiety_disorders",
+          "label_en": "Anxiety disorders"
+        },
+        {
+          "id": "bp.attention_deficit_hyperactivity_disorder",
+          "label_en": "Attention-deficit/hyperactivity disorder (ADHD)"
+        },
+        {
+          "id": "bp.eating_disorders",
+          "label_en": "Eating disorders (e.g., anorexia nervosa, bulimia nervosa)"
+        },
+        {
+          "id": "bp.mood_disorders",
+          "label_en": "Mood disorders (e.g., depression, bi-polar disorder)"
+        },
+        {
+          "id": "bp.obsessive_compulsive_disorder",
+          "label_en": "Obsessive-compulsive disorder (OCD)"
+        },
+        {
+          "id": "bp.post_traumatic_stress_disorder",
+          "label_en": "Post-traumatic stress disorder (PTSD)"
+        },
+        {
+          "id": "bp.schizophrenia",
+          "label_en": "Schizophrenia"
+        },
+        {
+          "id": "bp.spectrum_disorder",
+          "label_en": "Spectrum disorder (e.g., autism)"
+        },
+        {
+          "id": "bp.substance_use_disorder",
+          "label_en": "Substance use disorder (e.g., alcohol, opioids, nicotine)"
+        },
+        {
+          "id": "bp.suicidal_ideation",
+          "label_en": "Suicidal ideation"
+        }
+      ]
+    },
+    {
+      "category": "Musculoskeletal",
+      "category_id": "musculoskeletal",
+      "conditions": [
+        {
+          "id": "bp.acute_subacute_and_chronic_musculoskeletal_condition",
+          "label_en": "Acute, subacute, and chronic musculoskeletal conditions (e.g., trauma, degenerative disorders)"
+        },
+        {
+          "id": "bp.affecting_the_appendicular_skeleton",
+          "label_en": "Affecting the appendicular skeleton (e.g., meniscal injuries, frozen shoulder)"
+        },
+        {
+          "id": "bp.affecting_the_axial_skeleton",
+          "label_en": "Affecting the axial skeleton (e.g., disc herniation, TMJD)"
+        },
+        {
+          "id": "bp.bone_density_disorders",
+          "label_en": "Bone density disorders"
+        },
+        {
+          "id": "bp.gout",
+          "label_en": "Gout"
+        }
+      ]
+    },
+    {
+      "category": "Neurological",
+      "category_id": "neurological",
+      "conditions": [
+        {
+          "id": "bp.bell_s_palsy",
+          "label_en": "Bell's palsy"
+        },
+        {
+          "id": "bp.concussion_and_traumatic_brain_injury",
+          "label_en": "Concussion and traumatic brain injury (TBI)"
+        },
+        {
+          "id": "bp.dementia",
+          "label_en": "Dementia (e.g., Alzheimer's disease)"
+        },
+        {
+          "id": "bp.disorders_of_the_central_nervous_system",
+          "label_en": "Disorders of the central nervous system (e.g., cauda equina)"
+        },
+        {
+          "id": "bp.epilepsy",
+          "label_en": "Epilepsy"
+        },
+        {
+          "id": "bp.headaches",
+          "label_en": "Headaches (e.g., cluster, tension, migraine)"
+        },
+        {
+          "id": "bp.neuro_degenerative",
+          "label_en": "Neuro-degenerative (e.g., multiple sclerosis, Parkinson's disease)"
+        },
+        {
+          "id": "bp.peripheral_neuropathies",
+          "label_en": "Peripheral neuropathies"
+        },
+        {
+          "id": "bp.post_herpetic_neuralgia",
+          "label_en": "Post-herpetic neuralgia"
+        },
+        {
+          "id": "bp.radiculopathies",
+          "label_en": "Radiculopathies (e.g., sciatica)"
+        },
+        {
+          "id": "bp.stroke",
+          "label_en": "Stroke"
+        },
+        {
+          "id": "bp.transient_ischemic_attack",
+          "label_en": "Transient ischemic attack (TIA)"
+        },
+        {
+          "id": "bp.trigeminal_neuralgia",
+          "label_en": "Trigeminal neuralgia"
+        },
+        {
+          "id": "bp.vertigo",
+          "label_en": "Vertigo"
+        },
+        {
+          "id": "bp.other",
+          "label_en": "Other (e.g., Guillain-Barre, restless leg syndrome)"
+        }
+      ]
+    },
+    {
+      "category": "Oncological",
+      "category_id": "oncological",
+      "conditions": [
+        {
+          "id": "bp.cancer",
+          "label_en": "Cancer (e.g., organs, blood, bone, skin)"
+        },
+        {
+          "id": "bp.side_effects_secondary_to_cancer_treatment",
+          "label_en": "Side effects secondary to cancer treatment (e.g., nausea, pain)"
+        }
+      ]
+    },
+    {
+      "category": "Ophthalmic and Ear, Nose and Throat",
+      "category_id": "ophthalmic_and_ear_nose_and_throat",
+      "conditions": [
+        {
+          "id": "bp.conditions_of_the_ear",
+          "label_en": "Conditions of the ear (e.g., otitis media, tinnitus)"
+        },
+        {
+          "id": "bp.conditions_of_the_eye",
+          "label_en": "Conditions of the eye (e.g., macular degeneration, conjunctivitis)"
+        },
+        {
+          "id": "bp.conditions_of_the_nose_and_throat",
+          "label_en": "Conditions of the nose and throat (e.g., sinusitis, allergic rhinitis)"
+        }
+      ]
+    },
+    {
+      "category": "Pulmonary",
+      "category_id": "pulmonary",
+      "conditions": [
+        {
+          "id": "bp.asthma",
+          "label_en": "Asthma"
+        },
+        {
+          "id": "bp.chronic_obstructive_pulmonary_disease",
+          "label_en": "Chronic obstructive pulmonary disease (COPD)"
+        },
+        {
+          "id": "bp.pneumothorax",
+          "label_en": "Pneumothorax"
+        },
+        {
+          "id": "bp.respiratory_tract_infections",
+          "label_en": "Respiratory tract infections (e.g., bronchitis, pneumonia)"
+        }
+      ]
+    },
+    {
+      "category": "Reproductive",
+      "category_id": "reproductive",
+      "conditions": [
+        {
+          "id": "bp.breast_conditions",
+          "label_en": "Breast conditions (e.g., lumps, mastitis)"
+        },
+        {
+          "id": "bp.erectile_dysfunction",
+          "label_en": "Erectile dysfunction (ED)"
+        },
+        {
+          "id": "bp.infertility_low_sperm_count",
+          "label_en": "Infertility (e.g., polycystic ovarian syndrome (PCOS), low sperm count)"
+        },
+        {
+          "id": "bp.menopause",
+          "label_en": "Menopause (e.g., normal and with complications)"
+        },
+        {
+          "id": "bp.menstrual_and_uterine_disorders",
+          "label_en": "Menstrual and uterine disorders (e.g., dysmenorrhea, endometriosis, fibroids)"
+        },
+        {
+          "id": "bp.perinatal_support",
+          "label_en": "Perinatal support (e.g., labor preparation, postpartum)"
+        },
+        {
+          "id": "bp.pregnancy",
+          "label_en": "Pregnancy (e.g., normal and with complications)"
+        },
+        {
+          "id": "bp.prostate_conditions_prostatitis",
+          "label_en": "Prostate conditions (e.g., benign prostatic hyperplasia (BPH), prostatitis)"
+        }
+      ]
+    },
+    {
+      "category": "Urinary/Renal",
+      "category_id": "urinary_renal",
+      "conditions": [
+        {
+          "id": "bp.dysuria",
+          "label_en": "Dysuria (e.g., painful urination, retention)"
+        },
+        {
+          "id": "bp.incontinence",
+          "label_en": "Incontinence"
+        },
+        {
+          "id": "bp.infections",
+          "label_en": "Infections (e.g., cystitis, pyelonephritis)"
+        },
+        {
+          "id": "bp.kidney_stones",
+          "label_en": "Kidney stones"
+        },
+        {
+          "id": "bp.pelvic_floor_dysfunction",
+          "label_en": "Pelvic floor dysfunction (e.g., pelvic floor prolapse)"
+        }
+      ]
+    },
+    {
+      "category": "Miscellaneous",
+      "category_id": "miscellaneous",
+      "conditions": [
+        {
+          "id": "bp.implants",
+          "label_en": "Implants (e.g., pacemakers, breasts, other body part enhancements, muscles that have been treated with Botox)"
+        },
+        {
+          "id": "bp.multi_system_conditions",
+          "label_en": "Multi-system conditions (e.g., chronic fatigue, fibromyalgia)"
+        },
+        {
+          "id": "bp.sleep_disorders",
+          "label_en": "Sleep disorders (e.g., narcolepsy, sleep apnea, insomnia)"
+        },
+        {
+          "id": "bp.non_dermatological_fungal_infections",
+          "label_en": "Non-dermatological fungal infections (e.g., candidiasis)"
+        }
+      ]
+    }
+  ]
+}

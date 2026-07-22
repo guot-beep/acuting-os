@@ -1040,6 +1040,31 @@
         "entry_reference"
       ],
       "notes": "THE zh-side authority for the conditions crosswalk (docs/CONDITIONS_INTEROP_DESIGN.md section 2). Usage policy: record MAPPINGS plus per-entry citations (dictionary_ref) only; never bulk-copy dictionary prose — copyright. Exact resource page/edition needs manual verification by Ting before E-I3 fill batches."
+    },
+    {
+      "id": "ncbahm_bio_content_outline_2026",
+      "name": "NCBAHM Biomedicine Content Outline with Bibliography (January 2026)",
+      "layer": "exam_blueprint",
+      "source_group": "A_authoritative",
+      "authority": 5,
+      "tier": "A",
+      "language": "en",
+      "url": "https://www.ncbahm.org/",
+      "access_type": "official_publication_local_copy",
+      "effective_date": "2026-09-01",
+      "primary_use": [
+        "biomedical condition scope",
+        "pharmaceutical categories",
+        "supplement categories",
+        "exam domain weights"
+      ],
+      "fields_to_extract": [
+        "condition_scope",
+        "pharmaceutical_categories",
+        "supplement_categories"
+      ],
+      "notes": "Board renamed from NCCAOM to NCBAHM effective 2026-01-02. Structured copy of Appendix A/B/C lives at data/exams/ncbahm_bio_2026.json. Appendix A is explicitly non-exhaustive - minimum scope, not a closed set. Re-check for a newer outline before relying on it.",
+      "review_status": "source_checked"
     }
   ],
   "tcm_registry_note": "Tier/category fields were added from docs/TCM_SOURCE_REGISTRY.md. A=official or national/major database, A-=university or major academic database, B=practical/clinical lookup, C=standards/reference utility. Draft URL values need manual verification before source extraction."
