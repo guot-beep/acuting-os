@@ -460,7 +460,12 @@
       "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
       "pinyin_toned": "Má Huáng Tāng",
       "source_text_zh": "《傷寒論》",
-      "authored_by": "model_draft"
+      "authored_by": "model_draft",
+      "key_pairs": [
+        "pair.ma_huang__gui_zhi",
+        "pair.ma_huang__xing_ren"
+      ],
+      "key_pairs_note_zh": "麻黃配桂枝（相須）決定本方發汗解表的方向；麻黃配杏仁（相使）負責宣降平喘。理解這兩對，就理解了麻黃湯。"
     },
     {
       "id": "formula.yin_qiao_san",

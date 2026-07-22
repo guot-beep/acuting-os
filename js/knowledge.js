@@ -149,6 +149,68 @@
     }).join("");
   }
 
+  /* 藥對. A pair belongs to both herbs and is the unit formulas are built from,
+     so it renders on the formula card and on each member herb's card — the
+     chain is 方劑 → 藥對 → 單味藥, navigable in every direction.
+     Where a formula has no explicit key_pairs yet, pairs whose members are all
+     present in its composition are surfaced as candidates and labelled as such,
+     so the section is useful before every formula has been curated. */
+  const PAIRS = (() => {
+    const d = K && K.herbPairs;
+    return (d && d.pairs) ? d.pairs : [];
+  })();
+  const PAIR_RELATIONS = (() => {
+    const d = K && K.herbPairRelations;
+    const m = new Map();
+    ((d && d.relations) || []).forEach((r) => m.set(r.id, r));
+    return m;
+  })();
+
+  function pairCard(pair, derived) {
+    const rel = PAIR_RELATIONS.get(pair.relation);
+    const relLabel = rel ? `${rel.name_zh} · ${rel.name_en}` : "";
+    const warn = rel && rel.safety_critical;
+    const members = (pair.herbs || []).map((id) => {
+      const h = herbById.get(id);
+      const label = h ? `${h.name_zh || h.pinyin} · ${h.pinyin || ""}`.trim() : id.replace(/^herb\./, "");
+      return h ? relationButton(h.id, label, "herb") : `<span class="k-static-chip">${esc(label)}</span>`;
+    }).join('<span class="k-pair-plus">＋</span>');
+    return `<article class="k-pair${warn ? " is-warning" : ""}">
+      <header>
+        <div class="k-pair-members">${members}</div>
+        ${relLabel ? `<span class="k-pair-relation${warn ? " is-warning" : ""}">${esc(relLabel)}</span>` : ""}
+        ${derived ? '<span class="k-pair-derived">依組成推得 · derived from composition</span>' : ""}
+      </header>
+      ${pair.pair_meaning_zh ? `<p class="k-pair-meaning">${esc(pair.pair_meaning_zh)}</p>` : ""}
+      ${pair.pair_meaning_en ? `<p class="k-pair-meaning-en">${esc(pair.pair_meaning_en)}</p>` : ""}
+      ${pair.indication_zh ? `<p class="k-pair-line"><strong>主治</strong> ${esc(pair.indication_zh)}</p>` : ""}
+      ${pair.caution_zh ? `<p class="k-pair-line k-pair-caution"><strong>注意</strong> ${esc(pair.caution_zh)}</p>` : ""}
+      ${pair.teaching_note_zh ? `<p class="k-pair-line k-pair-teach"><strong>學習提示</strong> ${esc(pair.teaching_note_zh)}</p>` : ""}
+    </article>`;
+  }
+
+  function formulaPairsSection(record) {
+    const explicit = (record.key_pairs || []).map((id) => PAIRS.find((p) => p.id === id)).filter(Boolean);
+    let derived = [];
+    if (!explicit.length) {
+      const inFormula = new Set((record.composition || []).map((c) =>
+        c.herb_id || `herb.${normalizeKey(c.pinyin)}`));
+      derived = PAIRS.filter((p) => (p.herbs || []).length && p.herbs.every((h) => inFormula.has(h)));
+    }
+    const list = explicit.length ? explicit : derived;
+    if (!list.length) {
+      return '<p class="k-detail-empty">此方尚未建立藥對 / No herb pairs recorded for this formula yet.</p>';
+    }
+    const note = record.key_pairs_note_zh ? `<p class="k-pair-note">${esc(record.key_pairs_note_zh)}</p>` : "";
+    return note + `<div class="k-pair-list">${list.map((p) => pairCard(p, !explicit.length)).join("")}</div>`;
+  }
+
+  function herbPairsSection(record) {
+    const list = PAIRS.filter((p) => (p.herbs || []).includes(record.id));
+    if (!list.length) return '<p class="k-detail-empty">尚未建立此藥的藥對 / No herb pairs recorded yet.</p>';
+    return `<div class="k-pair-list">${list.map((p) => pairCard(p, false)).join("")}</div>`;
+  }
+
   function statusPill(status) {
     return `<span class="k-status k-status-${esc(status)}">${esc(status || "draft")}</span>`;
   }
@@ -376,6 +438,7 @@
     return [
       { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(record.comparison_group)}</p>` : '<p class="k-detail-empty">待補</p>')}</div>` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與劑量", "點選中藥可進入單味藥卡", composition ? `<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>原典用量</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div><p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : '<p class="k-detail-empty">組成待補 / Composition pending</p>') },
+      { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safety]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
     ];
@@ -390,6 +453,7 @@
       { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("性味", "Properties, taste & temperature", `<p>${esc(usableText(exam.properties_taste_temp) || usableText(record.properties_taste_temp) || "待補")}</p>`)}${detailSection("歸經", "Channels entered", detailList(record.channels_entered))}${detailSection("功效", "Functions", detailList(functions))}${detailSection("主治脈絡", "Indication context", detailList(exam.indications))}</div>` },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Formulas containing or comparing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "pairing", label: "配伍與鑑別 Pairing", content: `${detailSection("常見配伍", "Common pairings", detailList(exam.common_pairings))}${detailSection("中文深度筆記", "Chinese-depth track", `<p>${esc(usableText((record.chinese_depth_track || {}).summary_zh) || "待 CloudTCM、機構庫或 Ting 課件核對後補入")}</p>`)}` },
+      { id: "pairs", label: "藥對 Herb pairs", content: detailSection("含此藥的藥對", "Pairs this herb belongs to", herbPairsSection(record)) },
       { id: "visual", label: "圖像參考 Visuals", content: detailSection("藥材與飲片圖像", "External herb image references", herbVisualLinksSection(record)) },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與安全提醒", "Contraindications & review prompts", detailList([...(exam.contraindications || []), ...(record.safety_flags || [])]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
     ];
