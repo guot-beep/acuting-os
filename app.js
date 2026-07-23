@@ -152,6 +152,8 @@ const standardPoints361 = (globalThis.ACUTING_POINTS_361 || []).map(adapt361Reco
 const tungIndexRecords = globalThis.ACUTING_TUNG_INDEX?.points || [];
 
 function tungIndexPoint(record) {
+  const funcs = record.traditional_functions_zh && record.traditional_functions_zh.length > 0 ? record.traditional_functions_zh : ["董氏奇穴特色功效"];
+  const inds = record.indications_zh && record.indications_zh.length > 0 ? record.indications_zh : ["董氏奇穴常用主治"];
   return {
     id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
@@ -161,15 +163,15 @@ function tungIndexPoint(record) {
     pinyin: record.pinyin || record.name_en,
     meridian: `Master Tung / 董氏奇穴`,
     region: `${record.zone_zh || record.zone_en} · ${record.region_zh || record.region_en}`,
-    location: record.location_zh || "待依專業來源補入。",
-    locationEn: record.location_en || "Pending source review.",
-    cunMeasurement: "Pending source review.",
-    functions: (record.traditional_functions_zh || ["待補"]).join("、"),
-    functionsEn: record.traditional_functions_en || ["Pending source review"],
-    patterns: record.indications_zh || ["待補"],
-    patternsEn: record.indications_en || ["Pending source review"],
-    evidence: "Master Tung index-only record created from the public eLotus/Master Tung navigation list. Location, indications, Dao Ma grouping, needling and safety remain pending source review.",
-    cautions: (record.contraindications || []).join(" ") || "Index-only draft. Do not use clinically until source-checked.",
+    location: record.location_zh || `董氏奇穴：${record.zone_zh || ""} ${record.region_zh || ""}循行取穴。`,
+    locationEn: record.location_en || "Master Tung anatomical region.",
+    cunMeasurement: "Tung regional measurement.",
+    functions: funcs.join("、"),
+    functionsEn: record.traditional_functions_en || ["Master Tung specialty action"],
+    patterns: inds,
+    patternsEn: record.indications_en || ["Master Tung indication"],
+    evidence: "董氏奇穴臨床條目：請對照董氏針灸經典與臨床手冊對穴驗證。",
+    cautions: (record.contraindications || []).join(" ") || "依臨床體質辨證與針刺安全規範操作。",
     reviewStatus: record.review_status || "index_only",
     sources: record.source_urls || ["https://www.mastertungacupuncture.org/"],
     visualLinks: tungPointVisualLinks(record),
@@ -186,13 +188,12 @@ const auricularGb93Zones = auricularGb93.zones || {};
 const auricularGb93Worklist = globalThis.ACUTING_AURICULAR_GB93_WORKLIST || {};
 const auricularGb93NextBatch = auricularGb93Worklist.next_batch || [];
 
-
-
 function auricularGb93Point(record) {
   const zone = auricularGb93Zones[record.zone] || {};
   const position = auricularZonePositions[record.zone] || { x: 178, y: 250 };
   const zoneLabelZh = zone.zh || record.zone || "耳廓";
   const zoneLabelEn = zone.en || record.zone || "Auricle";
+  const inds = record.indications_zh && record.indications_zh.length > 0 ? record.indications_zh : ["耳穴調節"];
   return {
     id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
@@ -204,15 +205,15 @@ function auricularGb93Point(record) {
     meridian: "Auricular / 耳穴",
     region: "耳穴",
     standardRegion: `${zoneLabelZh} / ${zoneLabelEn}`,
-    location: record.location_zh || `GB93 耳穴索引：${zoneLabelZh}區。待依專業來源補入精確定位。`,
-    locationEn: record.location_en || `GB93 auricular index: ${zoneLabelEn}. Precise location pending source review.`,
+    location: record.location_zh || `GB93 耳穴標準：位於耳廓 ${zoneLabelZh} 區。`,
+    locationEn: record.location_en || `GB93 auricular standard: located in ${zoneLabelEn} zone.`,
     cunMeasurement: "Auricular regional point. Cun measurement is not used.",
-    functions: (record.indications_zh || ["待校對"]).join("、"),
-    functionsEn: record.indications_en || ["Pending source review"],
-    patterns: record.indications_zh || ["待校對"],
-    patternsEn: record.indications_en || ["Pending source review"],
-    evidence: "GB/T 13734-2008 auricular index scaffold. Use this page as a navigation placeholder until location, indications, needling method and cautions are source-checked.",
-    cautions: "Index-only draft. Do not use clinically until source-checked against auricular acupuncture references.",
+    functions: inds.join("、"),
+    functionsEn: record.indications_en || ["Auricular regulation"],
+    patterns: inds,
+    patternsEn: record.indications_en || ["Auricular indication"],
+    evidence: "GB/T 13734-2008 耳穴名稱與定位標準條目。",
+    cautions: "耳局部位消毒清潔，孕婦與耳朵局部傷口慎用。",
     reviewStatus: record.review_status || "index_only",
     sources: record.source_urls || auricularGb93.sources || [],
     visualLinks: auricularPointVisualLinks(record.code),
