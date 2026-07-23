@@ -4862,3 +4862,9 @@ button.k-modern-chip.is-active { outline: 2px solid var(--accent, #38bdf8); outl
 .k-pair-caution { color: #b45309; }
 .k-pair-teach { padding-top: 0.35rem; border-top: 1px dashed var(--line, rgba(148,163,184,0.3)); }
 .k-pair-note { margin: 0 0 0.6rem; font-size: 0.88rem; opacity: 0.85; }
+
+/* Formula category cards are now clickable browse entries */
+.formula-category-card.is-clickable { cursor: pointer; transition: border-color 0.15s, transform 0.05s; }
+.formula-category-card.is-clickable:hover { border-color: var(--accent, #38bdf8); }
+.formula-category-card.is-clickable:active { transform: translateY(1px); }
+.formula-category-card.is-clickable:focus-visible { outline: 2px solid var(--accent, #38bdf8); outline-offset: 2px; }

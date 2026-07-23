@@ -2764,10 +2764,24 @@ function bilingualText(zh, en) {
 }
 
 function bilingualPatterns(point) {
-  return (point.patterns || []).map((pattern, index) => {
-    const en = point.patternsEn?.[index] || patternEnglishMap[pattern] || "";
-    return en ? `${pattern} = ${en}` : pattern;
-  }).join("\n");
+  /* The zh and en indication lists were compiled independently and are NOT
+     parallel translations — pairing patterns[i] = patternsEn[i] produced wrong
+     equivalences like 血瘀 = Vomiting on BL17. Only pair a Chinese term with an
+     English one when a curated term map actually knows the translation;
+     otherwise show the two lists separately rather than assert a false mapping. */
+  const zh = point.patterns || [];
+  const en = point.patternsEn || [];
+  const paired = zh
+    .map((term) => (patternEnglishMap[term] ? `${term} = ${patternEnglishMap[term]}` : null))
+    .filter(Boolean);
+
+  if (paired.length === zh.length && zh.length) return paired.join("\n");
+
+  // No reliable per-term map: present each language's list honestly, unpaired.
+  const lines = [];
+  if (zh.length) lines.push(`主治（中文）：${zh.join("、")}`);
+  if (en.length) lines.push(`Indications (EN): ${en.join(", ")}`);
+  return lines.join("\n") || "待補主治病症。";
 }
 
 function formatTechniqueNotes(point) {

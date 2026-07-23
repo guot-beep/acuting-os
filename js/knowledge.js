@@ -599,6 +599,29 @@
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
+
+      /* Make the 方劑分類 cards bidirectional (Ting: 這邊的按鈕都不是雙向的).
+         The cards were static display only. Now clicking one (解表, 清熱, …)
+         sets the category filter to the matching full category and scrolls to
+         the results, so every category — not just one — browses its formulas. */
+      const categoryPanel = el("formulaCategories");
+      if (categoryPanel) {
+        categoryPanel.querySelectorAll(".formula-category-card").forEach((card) => {
+          const badge = card.querySelector("span")?.textContent.trim() || "";
+          const match = categories.find((c) => String(c).startsWith(badge));
+          if (!match) return;
+          card.classList.add("is-clickable");
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+          const go = () => {
+            el("formulaCategoryFilter").value = match;
+            updateFormulaGrid();
+            el("formulaGrid")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          };
+          card.addEventListener("click", go);
+          card.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+        });
+      }
       // re-run when a tag is tapped anywhere, including from inside a detail card
       conceptListeners.add(() => {
         updateFormulaGrid();
