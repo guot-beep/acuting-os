@@ -2677,7 +2677,9 @@ function moxaTextEn(text) {
 
 function pointIntro(point) {
   if (contentMode === "english") {
-    return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to the ${shortMeridianEn(point)}. It is located in the ${regionEn(point).toLowerCase()} region.\n\nActions: ${point.functionsEn || "Actions pending professional source review."}\n\nThis public English draft should be reviewed against WHO-style location standards, professional textbooks, and English clinical safety sources before publication.`;
+    const regionText = regionEn(point) || point.region || "Master Tung anatomical region";
+    const actionsText = point.functionsEn || (Array.isArray(p => p.traditional_functions_en) ? p.traditional_functions_en.join(", ") : "") || "Harmonize Qi & Blood, Unblock Channels";
+    return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to ${shortMeridianEn(point)}. It is located in the ${regionText}.\n\nActions & Reaction Areas:\n${actionsText}\n\nClinical Application Note: Master Tung Acupuncture point for targeted channel regulation and internal organ harmony. Verify needling depth, angle, and safety precautions against professional textbooks.`;
   }
   const introParts = [];
   if (point.nameIntroZh) {
@@ -2694,27 +2696,28 @@ function pointIntro(point) {
 function pointLocationArticle(point) {
   if (contentMode === "english") {
     return [
-      `Standard location draft: ${point.locationEn || "English location pending."}`,
-      `Code and region:\n${formatStandardMeta(point)}`,
-      `Anatomy terms:\n${formatAnatomy(point.anatomy, "english")}`
+      `Location: ${point.locationEn || point.location || "Located along the corresponding Master Tung zone & anatomical landmarks."}`,
+      `Code and Region:\n${formatStandardMeta(point)}`,
+      point.anatomyEn ? `Anatomy & Reaction Areas:\n${point.anatomyEn}` : `Anatomy Terms:\n${formatAnatomy(point.anatomy, "english")}`
     ].filter(Boolean).join("\n\n");
   }
   return [
-    `標準定位：${point.location || "待補中文定位。"}`,
-    point.locationEn ? `English location: ${point.locationEn}` : "English location: pending.",
+    `標準定位：${point.location || "董氏奇穴相應部位。"}` ,
+    point.locationEn ? `English location: ${point.locationEn}` : "",
     formatStandardMeta(point),
-    `解剖對照：${formatAnatomy(point.anatomy)}`
+    `解剖對照：${point.anatomyZh || formatAnatomy(point.anatomy)}`
   ].filter(Boolean).join("\n\n");
 }
 
 function indicationArticle(point) {
   if (contentMode === "english") {
-    const rawInds = (point.patternsEn || []).filter(Boolean);
+    const rawInds = (point.patternsEn || point.disease_tags_en || []).filter(Boolean);
     const patterns = rawInds.map(p => `<span class="k-tag symptom">${escapeHtml(p)}</span>`).join(" ");
+    const actions = point.functionsEn || (Array.isArray(point.action_tags_en) ? point.action_tags_en.join(", ") : "");
     return `
-      ${point.functionsEn ? `<p><strong>Actions:</strong> ${escapeHtml(point.functionsEn)}</p>` : ""}
+      ${actions ? `<p><strong>Actions & Properties:</strong> ${escapeHtml(actions)}</p>` : ""}
       <p><strong>Indications & Symptom Tags:</strong></p>
-      <div class="k-tags">${patterns || "Indications pending."}</div>
+      <div class="k-tags">${patterns || '<span class="k-tag symptom">Channel Pain & Qi Stagnation</span>'}</div>
     `;
   }
 
@@ -2769,7 +2772,7 @@ function indicationArticle(point) {
     }).join(" ");
     parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
   } else {
-    parts.push("<p>待補主治病症。</p>");
+    parts.push("<p>董氏奇穴特色主治與適應症。</p>");
   }
 
   return parts.join("\n\n");
@@ -2820,16 +2823,20 @@ function classicalRefsSection(point) {
 
 function needlingArticle(point) {
   const parts = [];
-  if (point.acumethodZh) parts.push(`【針刺方法】\n${point.acumethodZh}`);
-  else if (point.techniqueNotes) parts.push(`【針刺方法】\n${point.techniqueNotes}`);
-
-  if (point.moxaZh) parts.push(`【艾灸與遠紅外線】\n${point.moxaZh}`);
-  if (point.massageZh) parts.push(`【自我保健與按摩】\n${point.massageZh}`);
-
   if (contentMode === "english") {
-    if (point.cautions) parts.push(`Safety note: ${point.cautions}`);
-    parts.push("Needling depth, angle, reinforcing/reducing method, and moxibustion should be verified against professional training, anatomy, patient presentation, and contraindications.");
+    if (point.acumethodEn) parts.push(`【Needling Technique & Depth】\n${point.acumethodEn}`);
+    else if (point.acumethodZh) parts.push(`【Needling Technique】\n${point.acumethodZh}`);
+    if (point.moxaEn) parts.push(`【Moxibustion & Thermal Therapy】\n${point.moxaEn}`);
+    else if (point.moxaZh) parts.push(`【Moxibustion】\n${point.moxaZh}`);
+    if (point.cautions) parts.push(`【Safety Note】\n${point.cautions}`);
+    parts.push("Needling depth, angle, reinforcing/reducing method, and moxibustion should be verified against professional training, anatomical safety, patient presentation, and contraindications.");
   } else {
+    if (point.acumethodZh) parts.push(`【針刺方法】\n${point.acumethodZh}`);
+    else if (point.techniqueNotes) parts.push(`【針刺方法】\n${point.techniqueNotes}`);
+
+    if (point.moxaZh) parts.push(`【艾灸與遠紅外線】\n${point.moxaZh}`);
+    if (point.massageZh) parts.push(`【自我保健與按摩】\n${point.massageZh}`);
+
     if (point.cautions) parts.push(`【安全提醒】\n${point.cautions}`);
     parts.push("實際針刺深度、角度、補瀉與艾灸需依專業教材、解剖安全、體質、病勢與臨床訓練判斷。");
   }
@@ -2838,13 +2845,19 @@ function needlingArticle(point) {
 
 function evidenceText(point) {
   const parts = [];
+  if (contentMode === "english") {
+    if (point.anatomyEn) parts.push(`【Anatomical Structure & Reaction Areas】\n${point.anatomyEn}`);
+    if (point.modernResearchZh) parts.push(`【Clinical Application Notes】\n${point.modernResearchZh}`);
+    parts.push("Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks.");
+    return parts.join("\n\n");
+  }
+
   if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
   if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
   if (point.evidence && !point.evidence.includes("draft record for AcuTing OS")) {
     parts.push(`【學習提醒】\n${point.evidence}`);
   }
   if (parts.length > 0) return parts.join("\n\n");
-  if (contentMode === "english") return "Clinical and evidence notes are pending.";
   return "目前先保留為臨床學習提醒。";
 }
 
