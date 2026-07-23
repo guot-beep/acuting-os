@@ -1183,6 +1183,24 @@
       ],
       "notes": "Official NHS English condition page. Use for biomedical terminology and safety prompts; TCM relationships remain separate study mappings.",
       "review_status": "source_checked"
+    },
+    {
+      "id": "nlm_icd10cm",
+      "name": "NLM Clinical Tables — ICD-10-CM",
+      "layer": "biomedical_coding",
+      "source_group": "A_authoritative",
+      "authority": 5,
+      "tier": "A",
+      "language": "en",
+      "url": "https://clinicaltables.nlm.nih.gov/",
+      "api": "https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search",
+      "access_type": "public_api",
+      "primary_use": [
+        "ICD-10-CM code verification",
+        "official English disease labels"
+      ],
+      "notes": "US National Library of Medicine authoritative ICD-10-CM table. Reachable API (the NRICM cnwm.nricm.edu.tw crosswalk DB is unreachable from here). Fills condition_crosswalk icd10[].label_en; flags category-level codes needing a billable leaf.",
+      "review_status": "source_checked"
     }
   ],
   "tcm_registry_note": "Tier/category fields were added from docs/TCM_SOURCE_REGISTRY.md. A=official or national/major database, A-=university or major academic database, B=practical/clinical lookup, C=standards/reference utility. Draft URL values need manual verification before source extraction."

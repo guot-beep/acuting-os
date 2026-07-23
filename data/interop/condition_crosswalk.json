@@ -9,9 +9,10 @@
       "icd10": [
         {
           "code": "E28.2",
-          "label_en": "",
+          "label_en": "Polycystic ovarian syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -27,9 +28,12 @@
       "icd10": [
         {
           "code": "N80",
-          "label_en": "",
+          "label_en": "Endometriosis of the uterus",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "N80.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -45,9 +49,12 @@
       "icd10": [
         {
           "code": "D25",
-          "label_en": "",
+          "label_en": "Submucous leiomyoma of uterus",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "D25.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -63,9 +70,10 @@
       "icd10": [
         {
           "code": "N94.4",
-          "label_en": "",
+          "label_en": "Primary dysmenorrhea",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -81,9 +89,10 @@
       "icd10": [
         {
           "code": "N94.3",
-          "label_en": "",
+          "label_en": "Premenstrual tension syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -99,9 +108,10 @@
       "icd10": [
         {
           "code": "N92.6",
-          "label_en": "",
+          "label_en": "Irregular menstruation, unspecified",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -117,9 +127,10 @@
       "icd10": [
         {
           "code": "N92.0",
-          "label_en": "",
+          "label_en": "Excessive and frequent menstruation with regular cycle",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -135,9 +146,10 @@
       "icd10": [
         {
           "code": "N91.5",
-          "label_en": "",
+          "label_en": "Oligomenorrhea, unspecified",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -153,9 +165,10 @@
       "icd10": [
         {
           "code": "N91.1",
-          "label_en": "",
+          "label_en": "Secondary amenorrhea",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -171,9 +184,12 @@
       "icd10": [
         {
           "code": "N97",
-          "label_en": "",
+          "label_en": "Female infertility associated with anovulation",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "N97.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -189,9 +205,12 @@
       "icd10": [
         {
           "code": "N46",
-          "label_en": "",
+          "label_en": "Other male infertility",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "N46.8"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -207,9 +226,12 @@
       "icd10": [
         {
           "code": "E28.3",
-          "label_en": "",
+          "label_en": "Other primary ovarian failure",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "E28.39"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -225,9 +247,10 @@
       "icd10": [
         {
           "code": "Z31.83",
-          "label_en": "",
+          "label_en": "Encounter for assisted reproductive fertility procedure cycle",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -243,9 +266,10 @@
       "icd10": [
         {
           "code": "N96",
-          "label_en": "",
+          "label_en": "Recurrent pregnancy loss",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -261,9 +285,10 @@
       "icd10": [
         {
           "code": "E28.8",
-          "label_en": "",
+          "label_en": "Other ovarian dysfunction",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -279,9 +304,10 @@
       "icd10": [
         {
           "code": "N95.1",
-          "label_en": "",
+          "label_en": "Menopausal and female climacteric states",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -297,9 +323,12 @@
       "icd10": [
         {
           "code": "O21",
-          "label_en": "",
+          "label_en": "Mild hyperemesis gravidarum",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "O21.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -315,9 +344,12 @@
       "icd10": [
         {
           "code": "O32.1",
-          "label_en": "",
+          "label_en": "Maternal care for breech presentation",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "O32.1XX0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -333,9 +365,10 @@
       "icd10": [
         {
           "code": "O92.4",
-          "label_en": "",
+          "label_en": "Hypogalactia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -351,9 +384,12 @@
       "icd10": [
         {
           "code": "R10.2",
-          "label_en": "",
+          "label_en": "Pelvic and perineal pain unspecified side",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "R10.20"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -369,9 +405,10 @@
       "icd10": [
         {
           "code": "N73.1",
-          "label_en": "",
+          "label_en": "Chronic parametritis and pelvic cellulitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -387,9 +424,12 @@
       "icd10": [
         {
           "code": "B37.3",
-          "label_en": "",
+          "label_en": "Acute candidiasis of vulva and vagina",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "B37.31"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -405,9 +445,10 @@
       "icd10": [
         {
           "code": "N85.8",
-          "label_en": "",
+          "label_en": "Other specified noninflammatory disorders of uterus",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -423,9 +464,10 @@
       "icd10": [
         {
           "code": "F32.81",
-          "label_en": "",
+          "label_en": "Premenstrual dysphoric disorder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -441,9 +483,10 @@
       "icd10": [
         {
           "code": "N94.5",
-          "label_en": "",
+          "label_en": "Secondary dysmenorrhea",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -459,9 +502,12 @@
       "icd10": [
         {
           "code": "M54.5",
-          "label_en": "",
+          "label_en": "Low back pain",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M54.50"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -477,9 +523,12 @@
       "icd10": [
         {
           "code": "S39.012",
-          "label_en": "",
+          "label_en": "Strain of muscle",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "S39.012A"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -495,9 +544,12 @@
       "icd10": [
         {
           "code": "M51.2",
-          "label_en": "",
+          "label_en": "Other intervertebral disc displacement",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M51.24"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -513,9 +565,12 @@
       "icd10": [
         {
           "code": "M54.3",
-          "label_en": "",
+          "label_en": "Sciatica",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M54.30"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -531,9 +586,10 @@
       "icd10": [
         {
           "code": "M47.812",
-          "label_en": "",
+          "label_en": "Spondylosis without myelopathy or radiculopathy, cervical region",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -549,9 +605,10 @@
       "icd10": [
         {
           "code": "M54.2",
-          "label_en": "",
+          "label_en": "Cervicalgia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -567,9 +624,12 @@
       "icd10": [
         {
           "code": "S13.4",
-          "label_en": "",
+          "label_en": "Sprain of ligaments of cervical spine",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "S13.4XXA"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -585,9 +645,12 @@
       "icd10": [
         {
           "code": "M75.0",
-          "label_en": "",
+          "label_en": "Adhesive capsulitis of unspecified shoulder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M75.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -603,9 +666,12 @@
       "icd10": [
         {
           "code": "M75.1",
-          "label_en": "",
+          "label_en": "Unspecified rotator cuff tear or rupture of unspecified shoulder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M75.100"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -621,9 +687,12 @@
       "icd10": [
         {
           "code": "M77.1",
-          "label_en": "",
+          "label_en": "Lateral epicondylitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M77.10"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -639,9 +708,12 @@
       "icd10": [
         {
           "code": "M77.0",
-          "label_en": "",
+          "label_en": "Medial epicondylitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M77.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -657,9 +729,12 @@
       "icd10": [
         {
           "code": "G56.0",
-          "label_en": "",
+          "label_en": "Carpal tunnel syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G56.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -675,9 +750,10 @@
       "icd10": [
         {
           "code": "M65.4",
-          "label_en": "",
+          "label_en": "Radial styloid tenosynovitis [de Quervain]",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -693,9 +769,12 @@
       "icd10": [
         {
           "code": "M65.3",
-          "label_en": "",
+          "label_en": "Trigger finger",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M65.30"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -711,9 +790,12 @@
       "icd10": [
         {
           "code": "M17",
-          "label_en": "",
+          "label_en": "Bilateral primary osteoarthritis of knee",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M17.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -729,9 +811,12 @@
       "icd10": [
         {
           "code": "M22.2",
-          "label_en": "",
+          "label_en": "Patellofemoral disorders",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M22.2X1"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -747,9 +832,12 @@
       "icd10": [
         {
           "code": "S83.2",
-          "label_en": "",
+          "label_en": "Bucket-handle tear of unspecified meniscus",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "S83.200A"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -765,9 +853,12 @@
       "icd10": [
         {
           "code": "S93.4",
-          "label_en": "",
+          "label_en": "Sprain of unspecified ligament of right ankle",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "S93.401A"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -783,9 +874,10 @@
       "icd10": [
         {
           "code": "M72.2",
-          "label_en": "",
+          "label_en": "Plantar fascial fibromatosis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -801,9 +893,12 @@
       "icd10": [
         {
           "code": "M76.6",
-          "label_en": "",
+          "label_en": "Achilles tendinitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M76.60"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -819,9 +914,12 @@
       "icd10": [
         {
           "code": "M16",
-          "label_en": "",
+          "label_en": "Bilateral primary osteoarthritis of hip",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M16.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -837,9 +935,12 @@
       "icd10": [
         {
           "code": "G57.0",
-          "label_en": "",
+          "label_en": "Lesion of sciatic nerve",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G57.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -855,9 +956,10 @@
       "icd10": [
         {
           "code": "M79.7",
-          "label_en": "",
+          "label_en": "Fibromyalgia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -873,9 +975,12 @@
       "icd10": [
         {
           "code": "M79.1",
-          "label_en": "",
+          "label_en": "Myalgia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M79.10"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -891,9 +996,12 @@
       "icd10": [
         {
           "code": "M26.6",
-          "label_en": "",
+          "label_en": "Other specified disorders of temporomandibular joint",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M26.69"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -909,9 +1017,12 @@
       "icd10": [
         {
           "code": "G44.2",
-          "label_en": "",
+          "label_en": "Tension-type headache",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G44.201"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -927,9 +1038,12 @@
       "icd10": [
         {
           "code": "G43",
-          "label_en": "",
+          "label_en": "Cyclical vomiting",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G43.A0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -945,9 +1059,12 @@
       "icd10": [
         {
           "code": "G44.0",
-          "label_en": "",
+          "label_en": "Cluster headache syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G44.001"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -963,9 +1080,12 @@
       "icd10": [
         {
           "code": "M10",
-          "label_en": "",
+          "label_en": "Idiopathic gout",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M10.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -981,9 +1101,12 @@
       "icd10": [
         {
           "code": "M05",
-          "label_en": "",
+          "label_en": "Felty's syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M05.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -999,9 +1122,12 @@
       "icd10": [
         {
           "code": "K21",
-          "label_en": "",
+          "label_en": "Gastro-esophageal reflux disease without esophagitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "K21.9"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1017,9 +1143,10 @@
       "icd10": [
         {
           "code": "K30",
-          "label_en": "",
+          "label_en": "Functional dyspepsia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1035,9 +1162,12 @@
       "icd10": [
         {
           "code": "K29.5",
-          "label_en": "",
+          "label_en": "Unspecified chronic gastritis without bleeding",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "K29.50"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1053,9 +1183,12 @@
       "icd10": [
         {
           "code": "K27",
-          "label_en": "",
+          "label_en": "Acute peptic ulcer",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "K27.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1071,9 +1204,12 @@
       "icd10": [
         {
           "code": "K58",
-          "label_en": "",
+          "label_en": "Irritable bowel syndrome with diarrhea",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "K58.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1107,9 +1243,12 @@
       "icd10": [
         {
           "code": "K59.0",
-          "label_en": "",
+          "label_en": "Constipation",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "K59.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1125,9 +1264,10 @@
       "icd10": [
         {
           "code": "K59.1",
-          "label_en": "",
+          "label_en": "Functional diarrhea",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1143,9 +1283,12 @@
       "icd10": [
         {
           "code": "R11",
-          "label_en": "",
+          "label_en": "Nausea",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "R11.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1161,9 +1304,12 @@
       "icd10": [
         {
           "code": "K64",
-          "label_en": "",
+          "label_en": "First degree hemorrhoids",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "K64.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1179,9 +1325,10 @@
       "icd10": [
         {
           "code": "K76.0",
-          "label_en": "",
+          "label_en": "Fatty (change of) liver, not elsewhere classified",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1197,9 +1344,10 @@
       "icd10": [
         {
           "code": "K82.8",
-          "label_en": "",
+          "label_en": "Other specified diseases of gallbladder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1233,9 +1381,10 @@
       "icd10": [
         {
           "code": "K91.89",
-          "label_en": "",
+          "label_en": "Other postprocedural complications and disorders of digestive system",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1251,9 +1400,12 @@
       "icd10": [
         {
           "code": "K90.4",
-          "label_en": "",
+          "label_en": "Non-celiac gluten sensitivity",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "K90.41"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1269,9 +1421,12 @@
       "icd10": [
         {
           "code": "G47.0",
-          "label_en": "",
+          "label_en": "Insomnia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G47.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1287,9 +1442,12 @@
       "icd10": [
         {
           "code": "F41",
-          "label_en": "",
+          "label_en": "Panic disorder [episodic paroxysmal anxiety]",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "F41.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1323,9 +1481,10 @@
       "icd10": [
         {
           "code": "F41.0",
-          "label_en": "",
+          "label_en": "Panic disorder [episodic paroxysmal anxiety]",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1341,9 +1500,12 @@
       "icd10": [
         {
           "code": "F43.1",
-          "label_en": "",
+          "label_en": "Post-traumatic stress disorder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "F43.10"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1359,9 +1521,12 @@
       "icd10": [
         {
           "code": "F90",
-          "label_en": "",
+          "label_en": "Attention-deficit hyperactivity disorder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "F90.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1377,9 +1542,10 @@
       "icd10": [
         {
           "code": "Z73.0",
-          "label_en": "",
+          "label_en": "Burn-out",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1395,9 +1561,12 @@
       "icd10": [
         {
           "code": "G93.3",
-          "label_en": "",
+          "label_en": "Postviral fatigue syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G93.31"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1413,9 +1582,10 @@
       "icd10": [
         {
           "code": "G25.81",
-          "label_en": "",
+          "label_en": "Restless legs syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1431,9 +1601,12 @@
       "icd10": [
         {
           "code": "G47.2",
-          "label_en": "",
+          "label_en": "Circadian rhythm sleep disorder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G47.20"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1449,9 +1622,12 @@
       "icd10": [
         {
           "code": "F17.2",
-          "label_en": "",
+          "label_en": "Nicotine dependence",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "F17.200"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1467,9 +1643,12 @@
       "icd10": [
         {
           "code": "F45",
-          "label_en": "",
+          "label_en": "Somatization disorder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "F45.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1485,9 +1664,10 @@
       "icd10": [
         {
           "code": "R41.3",
-          "label_en": "",
+          "label_en": "Other amnesia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1503,9 +1683,12 @@
       "icd10": [
         {
           "code": "F10",
-          "label_en": "",
+          "label_en": "Alcohol abuse",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "F10.10"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1521,9 +1704,12 @@
       "icd10": [
         {
           "code": "F50",
-          "label_en": "",
+          "label_en": "Eating disorder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "F50.9"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1539,9 +1725,10 @@
       "icd10": [
         {
           "code": "J00",
-          "label_en": "",
+          "label_en": "Acute nasopharyngitis [common cold]",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1575,9 +1762,12 @@
       "icd10": [
         {
           "code": "J30",
-          "label_en": "",
+          "label_en": "Vasomotor rhinitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "J30.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1593,9 +1783,12 @@
       "icd10": [
         {
           "code": "J32",
-          "label_en": "",
+          "label_en": "Chronic maxillary sinusitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "J32.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1611,9 +1804,12 @@
       "icd10": [
         {
           "code": "J45",
-          "label_en": "",
+          "label_en": "Mild intermittent asthma",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "J45.20"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1629,9 +1825,12 @@
       "icd10": [
         {
           "code": "J44",
-          "label_en": "",
+          "label_en": "Chronic obstructive pulmonary disease with",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "J44.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1647,9 +1846,10 @@
       "icd10": [
         {
           "code": "R05.3",
-          "label_en": "",
+          "label_en": "Chronic cough",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1665,9 +1865,10 @@
       "icd10": [
         {
           "code": "R05.1",
-          "label_en": "",
+          "label_en": "Acute cough",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1683,9 +1884,12 @@
       "icd10": [
         {
           "code": "J20",
-          "label_en": "",
+          "label_en": "Acute bronchitis due to Mycoplasma pneumoniae",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "J20.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1701,9 +1905,10 @@
       "icd10": [
         {
           "code": "G47.33",
-          "label_en": "",
+          "label_en": "Obstructive sleep apnea (adult) (pediatric)",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1719,9 +1924,10 @@
       "icd10": [
         {
           "code": "G51.0",
-          "label_en": "",
+          "label_en": "Bell's palsy",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1737,9 +1943,12 @@
       "icd10": [
         {
           "code": "I69",
-          "label_en": "",
+          "label_en": "Unspecified sequelae of nontraumatic subarachnoid hemorrhage",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "I69.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1755,9 +1964,10 @@
       "icd10": [
         {
           "code": "G62.9",
-          "label_en": "",
+          "label_en": "Polyneuropathy, unspecified",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1773,9 +1983,10 @@
       "icd10": [
         {
           "code": "E11.42",
-          "label_en": "",
+          "label_en": "Type 2 diabetes mellitus with diabetic polyneuropathy",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1791,9 +2002,10 @@
       "icd10": [
         {
           "code": "G50.0",
-          "label_en": "",
+          "label_en": "Trigeminal neuralgia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1809,9 +2021,10 @@
       "icd10": [
         {
           "code": "B02.29",
-          "label_en": "",
+          "label_en": "Other postherpetic nervous system involvement",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1827,9 +2040,12 @@
       "icd10": [
         {
           "code": "G20",
-          "label_en": "",
+          "label_en": "Parkinsonism",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G20.C"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1845,9 +2061,12 @@
       "icd10": [
         {
           "code": "G35",
-          "label_en": "",
+          "label_en": "Relapsing-remitting multiple sclerosis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G35.A"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1863,9 +2082,10 @@
       "icd10": [
         {
           "code": "G25.0",
-          "label_en": "",
+          "label_en": "Essential tremor",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1881,9 +2101,10 @@
       "icd10": [
         {
           "code": "R42",
-          "label_en": "",
+          "label_en": "Dizziness and giddiness",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1899,9 +2120,12 @@
       "icd10": [
         {
           "code": "H81.0",
-          "label_en": "",
+          "label_en": "Meniere's disease",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "H81.01"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1917,9 +2141,12 @@
       "icd10": [
         {
           "code": "G43.82",
-          "label_en": "",
+          "label_en": "Menstrual migraine",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "G43.821"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1935,9 +2162,12 @@
       "icd10": [
         {
           "code": "L20",
-          "label_en": "",
+          "label_en": "Besnier's prurigo",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "L20.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1953,9 +2183,12 @@
       "icd10": [
         {
           "code": "L50",
-          "label_en": "",
+          "label_en": "Allergic urticaria",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "L50.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1971,9 +2204,10 @@
       "icd10": [
         {
           "code": "L70.0",
-          "label_en": "",
+          "label_en": "Acne vulgaris",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -1989,9 +2223,12 @@
       "icd10": [
         {
           "code": "L40",
-          "label_en": "",
+          "label_en": "Psoriasis vulgaris",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "L40.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2007,9 +2244,12 @@
       "icd10": [
         {
           "code": "B02",
-          "label_en": "",
+          "label_en": "Zoster encephalitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "B02.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2025,9 +2265,12 @@
       "icd10": [
         {
           "code": "L63",
-          "label_en": "",
+          "label_en": "Alopecia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "L63.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2043,9 +2286,12 @@
       "icd10": [
         {
           "code": "L71",
-          "label_en": "",
+          "label_en": "Perioral dermatitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "L71.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2061,9 +2307,12 @@
       "icd10": [
         {
           "code": "L29",
-          "label_en": "",
+          "label_en": "Pruritus ani",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "L29.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2079,9 +2328,12 @@
       "icd10": [
         {
           "code": "E11",
-          "label_en": "",
+          "label_en": "Type 2 diabetes mellitus with hyperosmolarity without nonketotic hyperglycemic-hyperosmolar coma",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "E11.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2097,9 +2349,12 @@
       "icd10": [
         {
           "code": "E88.81",
-          "label_en": "",
+          "label_en": "Metabolic syndrome",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "E88.810"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2115,9 +2370,12 @@
       "icd10": [
         {
           "code": "E03",
-          "label_en": "",
+          "label_en": "Congenital hypothyroidism with diffuse goiter",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "E03.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2133,9 +2391,12 @@
       "icd10": [
         {
           "code": "E05",
-          "label_en": "",
+          "label_en": "Thyrotoxicosis with diffuse goiter without thyrotoxic crisis or storm",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "E05.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2151,9 +2412,10 @@
       "icd10": [
         {
           "code": "E06.3",
-          "label_en": "",
+          "label_en": "Autoimmune thyroiditis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2169,9 +2431,12 @@
       "icd10": [
         {
           "code": "E66",
-          "label_en": "",
+          "label_en": "Drug-induced obesity",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "E66.1"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2187,9 +2452,12 @@
       "icd10": [
         {
           "code": "E78",
-          "label_en": "",
+          "label_en": "Pure hyperglyceridemia",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "E78.1"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2205,9 +2473,12 @@
       "icd10": [
         {
           "code": "M81",
-          "label_en": "",
+          "label_en": "Age-related osteoporosis without current pathological fracture",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "M81.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2223,9 +2494,10 @@
       "icd10": [
         {
           "code": "E27.8",
-          "label_en": "",
+          "label_en": "Other specified disorders of adrenal gland",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2241,9 +2513,12 @@
       "icd10": [
         {
           "code": "R60",
-          "label_en": "",
+          "label_en": "Localized edema",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "R60.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2259,9 +2534,10 @@
       "icd10": [
         {
           "code": "I10",
-          "label_en": "",
+          "label_en": "Essential (primary) hypertension",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2277,9 +2553,12 @@
       "icd10": [
         {
           "code": "I95",
-          "label_en": "",
+          "label_en": "Idiopathic hypotension",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "I95.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2295,9 +2574,10 @@
       "icd10": [
         {
           "code": "R00.2",
-          "label_en": "",
+          "label_en": "Palpitations",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2313,9 +2593,12 @@
       "icd10": [
         {
           "code": "I25",
-          "label_en": "",
+          "label_en": "Old myocardial infarction",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "I25.2"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2331,9 +2614,12 @@
       "icd10": [
         {
           "code": "I50",
-          "label_en": "",
+          "label_en": "Left ventricular failure",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "I50.1"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2349,9 +2635,12 @@
       "icd10": [
         {
           "code": "I73.0",
-          "label_en": "",
+          "label_en": "Raynaud's syndrome without gangrene",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "I73.00"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2367,9 +2656,12 @@
       "icd10": [
         {
           "code": "I83",
-          "label_en": "",
+          "label_en": "Varicose veins of unspecified lower extremity with inflammation",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "I83.10"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2385,9 +2677,10 @@
       "icd10": [
         {
           "code": "I73.9",
-          "label_en": "",
+          "label_en": "Peripheral vascular disease, unspecified",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2403,9 +2696,10 @@
       "icd10": [
         {
           "code": "N39.0",
-          "label_en": "",
+          "label_en": "Urinary tract infection, site not specified",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2421,9 +2715,12 @@
       "icd10": [
         {
           "code": "N30.1",
-          "label_en": "",
+          "label_en": "Interstitial cystitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "N30.10"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2439,9 +2736,10 @@
       "icd10": [
         {
           "code": "N32.81",
-          "label_en": "",
+          "label_en": "Overactive bladder",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2457,9 +2755,12 @@
       "icd10": [
         {
           "code": "R33",
-          "label_en": "",
+          "label_en": "Drug induced retention of urine",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "R33.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2475,9 +2776,12 @@
       "icd10": [
         {
           "code": "N40",
-          "label_en": "",
+          "label_en": "Benign prostatic hyperplasia without lower urinary tract symptoms",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "N40.0"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2493,9 +2797,10 @@
       "icd10": [
         {
           "code": "N41.1",
-          "label_en": "",
+          "label_en": "Chronic prostatitis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2511,9 +2816,12 @@
       "icd10": [
         {
           "code": "N52",
-          "label_en": "",
+          "label_en": "Erectile dysfunction due to diseases classified elsewhere",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "N52.1"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2529,9 +2837,10 @@
       "icd10": [
         {
           "code": "N39.44",
-          "label_en": "",
+          "label_en": "Nocturnal enuresis",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2547,9 +2856,12 @@
       "icd10": [
         {
           "code": "H93.1",
-          "label_en": "",
+          "label_en": "Tinnitus",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "H93.11"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2565,9 +2877,10 @@
       "icd10": [
         {
           "code": "H90.3",
-          "label_en": "",
+          "label_en": "Sensorineural hearing loss, bilateral",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2583,9 +2896,12 @@
       "icd10": [
         {
           "code": "H04.12",
-          "label_en": "",
+          "label_en": "Dry eye syndrome of right lacrimal gland",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "H04.121"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2601,9 +2917,12 @@
       "icd10": [
         {
           "code": "H53.14",
-          "label_en": "",
+          "label_en": "Visual discomfort",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "H53.141"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2637,9 +2956,10 @@
       "icd10": [
         {
           "code": "K12.0",
-          "label_en": "",
+          "label_en": "Recurrent oral aphthae",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2655,9 +2975,10 @@
       "icd10": [
         {
           "code": "U09.9",
-          "label_en": "",
+          "label_en": "Post COVID-19 condition, unspecified",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2673,9 +2994,12 @@
       "icd10": [
         {
           "code": "T78.4",
-          "label_en": "",
+          "label_en": "Allergy",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "T78.40XA"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -2691,9 +3015,12 @@
       "icd10": [
         {
           "code": "Z51.1",
-          "label_en": "",
+          "label_en": "Encounter for antineoplastic chemotherapy",
           "primary": true,
-          "note_zh": ""
+          "note_zh": "",
+          "label_source": "nlm_icd10cm",
+          "code_specificity": "category_needs_leaf",
+          "nearest_billable": "Z51.11"
         }
       ],
       "tcm_dictionary_refs": [],
