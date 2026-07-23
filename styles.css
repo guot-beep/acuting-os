@@ -1379,20 +1379,13 @@ footer {
   white-space: normal;
 }
 
-.study-copy p:last-child {
-  margin-bottom: 0;
-}
-
-.study-copy p:not(:first-child),
-.study-section.location .study-copy p,
-.study-section.needle .study-copy p,
-.study-section.warning .study-copy p,
-.study-section.sources .study-copy p {
-  background: #fbfdfb;
-  border: 1px solid #dcebe2;
-  border-left: 4px solid #8c4c70;
-  border-radius: 7px;
-  padding: 0.72rem 0.85rem;
+.study-copy p {
+  margin-bottom: 0.85rem;
+  line-height: 1.75;
+  color: #243831;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .pairing-table {

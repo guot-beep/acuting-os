@@ -99,10 +99,13 @@ function needling361Text(needling) {
 function adapt361Record(record) {
   const prefix = channelCodeFromPointCode(record.code);
   const meta = channelPrefixMeta[prefix] || { meridian: "Standard Channel / 標準經穴", region: "待補", x: 180, y: 320 };
-  // Safety wording law: every contraindication and danger line must remain
-  // visible in the runtime cautions text.
-  const cautionLines = [...new Set([...(record.contraindications || []), ...(record.cautions || [])])];
-  const dangerLines = record.danger || [];
+  const rawCautions = [
+    ...(Array.isArray(record.cautions_zh) ? record.cautions_zh : (typeof record.cautions_zh === "string" ? record.cautions_zh.split("\n") : [])),
+    ...(Array.isArray(record.cautions) ? record.cautions : (typeof record.cautions === "string" ? record.cautions.split("\n") : [])),
+    ...(Array.isArray(record.danger) ? record.danger : (typeof record.danger === "string" ? record.danger.split("\n") : []))
+  ];
+  const cleanCautions = Array.from(new Set(rawCautions.map(s => String(s).trim()).filter(Boolean)));
+
   return {
     id: record.id || record.code,   // stable namespaced id (DECISIONS D2); clinical FKs reference this
     pointCategories: record.point_categories || [],   // PC4: 特定穴 tags
@@ -122,7 +125,7 @@ function adapt361Record(record) {
     patterns: record.indications_zh || [],
     patternsEn: record.indications_en || [],
     evidence: record.evidence || "",
-    cautions: [...cautionLines, ...dangerLines].join("\n"),
+    cautions: cleanCautions.join("\n"),
     techniqueNotes: needling361Text(record.needling),
     nccaomHighYield: record.nccaom_high_yield || [],
     clinicalPearls: record.clinical_pearls || [],
@@ -2696,10 +2699,11 @@ function pointLocationArticle(point) {
 
 function indicationArticle(point) {
   if (contentMode === "english") {
-    const patterns = (point.patternsEn || []).filter(Boolean).map(p => `<span class="k-tag symptom">${escapeHtml(p)}</span>`).join(" ");
+    const rawInds = (point.patternsEn || []).filter(Boolean);
+    const patterns = rawInds.map(p => `<span class="k-tag symptom">${escapeHtml(p)}</span>`).join(" ");
     return `
       ${point.functionsEn ? `<p><strong>Actions:</strong> ${escapeHtml(point.functionsEn)}</p>` : ""}
-      <p><strong>Indications & Patterns:</strong></p>
+      <p><strong>Indications & Symptom Tags:</strong></p>
       <div class="k-tags">${patterns || "Indications pending."}</div>
     `;
   }
@@ -2718,16 +2722,34 @@ function indicationArticle(point) {
     parts.push(`<p><strong>【功效】</strong> ${escapeHtml(point.functions)}</p>`);
   }
 
-  // 2. Indications / Patterns Tags
-  const indications = Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[,，\n、]/) : []);
-  const cleanInds = Array.from(new Set(indications.map(i => String(i).trim()).filter(Boolean)));
+  // 2. Indications / Symptom Tags
+  let rawInds = Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[\n,，、]/) : []);
+  const cleanInds = [];
+  rawInds.forEach(item => {
+    let str = String(item).trim();
+    if (!str) return;
+    let zh = str, en = "";
+    if (str.includes("=")) {
+      const partsArr = str.split("=");
+      zh = partsArr[0].trim();
+      en = partsArr[1].trim();
+    } else if (patternEnglishMap[str]) {
+      en = patternEnglishMap[str];
+    }
+    if (zh) cleanInds.push({ zh, en });
+  });
 
-  if (cleanInds.length > 0) {
-    const indChips = cleanInds.map(i => {
-      const en = patternEnglishMap[i] ? ` <small>(${escapeHtml(patternEnglishMap[i])})</small>` : "";
-      return `<span class="k-tag symptom">${escapeHtml(i)}${en}</span>`;
+  const uniqueMap = new Map();
+  cleanInds.forEach(item => {
+    if (!uniqueMap.has(item.zh)) uniqueMap.set(item.zh, item.en);
+  });
+
+  if (uniqueMap.size > 0) {
+    const indChips = Array.from(uniqueMap.entries()).map(([zh, en]) => {
+      const enSpan = en ? ` <small>(${escapeHtml(en)})</small>` : "";
+      return `<span class="k-tag symptom">${escapeHtml(zh)}${enSpan}</span>`;
     }).join(" ");
-    parts.push(`<p><strong>【主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
+    parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
   } else {
     parts.push("<p>待補主治病症。</p>");
   }
