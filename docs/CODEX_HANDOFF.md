@@ -72,6 +72,39 @@ Claude review note:
 
 ---
 
+## 2026-07-23 - Antigravity - Full 361 Acupoint CloudTCM Deep Sync, Bilingual Tag Chips, Auto Disease Highlighting & Dual-Folder Sync
+
+Date/time: 2026-07-23 11:45 PST
+Agent: Antigravity (Gemini 3.6 Flash)
+Branch: `antigravity/content-fill`
+Commit or stash: `b3aef12` (and pending updates)
+Task: Complete CloudTCM sync across all 361 acupoints, purge legacy draft strings, render interactive bilingual tag chips for Actions & Indications, add dedicated 「🎯 穴位配伍與臨床應用」 section with automatic disease term auto-tagging, update Quality Dashboard missing_report to 2026-07-23, auto-refresh browser cache key (STORAGE_KEY v2), and sync all assets to `c:\Projects\acupuncture-point-app`.
+
+Files changed:
+- `data/acupoints/361.json` (Synced 361 points with exact CloudTCM record pages, tags, pairings, needling, moxa, research)
+- `data/acupoints/embedded/*.json` (Updated 10 embedded meridian JSON files)
+- `data/audits/missing_report.json` (Updated generated_on to 2026-07-23 with 4-domain stats)
+- `data/acupoints/embedded/i18n_maps.json` (Added 279+ bilingual pathology and action terms)
+- `app.js` (Added `indicationArticle` bilingual chip parser, `formatCombinePointsText` auto disease tagger, bumped STORAGE_KEY to `acuting-acupoint-v2`, fixed cautions array spreading bug)
+- `styles.css` (Removed per-paragraph inner border boxes for clean readable text flow)
+- `data/generated/*` (Rebuilt `app_data.js`, `points_361.js`, `cloudtcm_map.js`, `knowledge_data.js`)
+- `c:\Projects\acupuncture-point-app\*` (Fully synchronized all files to legacy dev server folder)
+
+Validation:
+- `node scripts/validate-data.js` -> PASS (361 runtime points non-empty, 681 total points intact)
+- `node scripts/validate-interactions.js` -> PASS (0 warnings, 0 failures)
+- `node scripts/validate-relations.js` -> PASS
+- `node scripts/validate-herb-quality-strict.js` -> PASS (202 herbs verified)
+- `node scripts/validate-formula-quality-strict.js` -> PASS (115 formulas verified)
+
+Protected areas not touched:
+- `js/router.js`, `js/review.js`, `data/clinical_cases/*`, schema relations intact.
+
+Next recommended action:
+- Claude/Ting review in-app at `http://localhost:8080/index.html#KI6` or `http://localhost:8080/index.html#GB30`.
+
+---
+
 ## 2026-07-22 - Codex - Bilingual CloudTCM disease source index
 
 Date/time: 2026-07-22

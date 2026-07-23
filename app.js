@@ -2716,7 +2716,12 @@ function indicationArticle(point) {
     : (point.functions ? String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean) : []);
 
   if (acuTags.length > 0) {
-    const actionChips = acuTags.map(t => `<span class="k-tag cat">${escapeHtml(t)}</span>`).join(" ");
+    const actionChips = acuTags.map(t => {
+      const tagStr = t.trim();
+      const translation = patternEnglishMap[tagStr] || functionEnglishMap[tagStr] || "";
+      const enSpan = translation ? ` <small>(${escapeHtml(translation)})</small>` : "";
+      return `<span class="k-tag cat">${escapeHtml(tagStr)}${enSpan}</span>`;
+    }).join(" ");
     parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
   } else if (point.functions) {
     parts.push(`<p><strong>【功效】</strong> ${escapeHtml(point.functions)}</p>`);
@@ -2735,6 +2740,8 @@ function indicationArticle(point) {
       en = partsArr[1].trim();
     } else if (patternEnglishMap[str]) {
       en = patternEnglishMap[str];
+    } else if (functionEnglishMap[str]) {
+      en = functionEnglishMap[str];
     }
     if (zh) cleanInds.push({ zh, en });
   });
@@ -2746,7 +2753,8 @@ function indicationArticle(point) {
 
   if (uniqueMap.size > 0) {
     const indChips = Array.from(uniqueMap.entries()).map(([zh, en]) => {
-      const enSpan = en ? ` <small>(${escapeHtml(en)})</small>` : "";
+      const translation = en || patternEnglishMap[zh] || functionEnglishMap[zh] || "";
+      const enSpan = translation ? ` <small>(${escapeHtml(translation)})</small>` : "";
       return `<span class="k-tag symptom">${escapeHtml(zh)}${enSpan}</span>`;
     }).join(" ");
     parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
@@ -2757,10 +2765,40 @@ function indicationArticle(point) {
   return parts.join("\n\n");
 }
 
+function formatCombinePointsText(text) {
+  if (!text) return "";
+
+  const termMap = new Map();
+  Object.entries(patternEnglishMap).forEach(([k, v]) => { if (k.length >= 2 && v) termMap.set(k, v); });
+  Object.entries(functionEnglishMap).forEach(([k, v]) => { if (k.length >= 2 && v && !termMap.has(k)) termMap.set(k, v); });
+
+  const sortedTerms = Array.from(termMap.keys()).sort((a, b) => b.length - a.length);
+  if (sortedTerms.length === 0) return text;
+
+  const escapedTerms = sortedTerms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const masterRegex = new RegExp(`(${escapedTerms.join('|')})`, 'g');
+
+  const paragraphs = String(text).split(/\n{2,}/);
+
+  const formattedParagraphs = paragraphs.map(p => {
+    const lines = p.split('\n').map(line => {
+      let escapedLine = escapeHtml(line);
+      return escapedLine.replace(masterRegex, (match) => {
+        const en = termMap.get(match);
+        if (!en) return match;
+        return `<span class="k-tag symptom">${match} <small>(${escapeHtml(en)})</small></span>`;
+      });
+    });
+    return `<p>${lines.join('<br>')}</p>`;
+  });
+
+  return formattedParagraphs.join('');
+}
+
 function combinePointsSection(point) {
   if (!point.combinePointsZh) return "";
   const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 穴位配伍與臨床應用";
-  return studySection(title, point.combinePointsZh, "link");
+  return studySection(title, formatCombinePointsText(point.combinePointsZh), "link");
 }
 
 function classicalRefsSection(point) {
