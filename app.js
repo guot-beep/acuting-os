@@ -1,4 +1,4 @@
-const STORAGE_KEY = "acupoint-atlas-v1";
+const STORAGE_KEY = "acuting-acupoint-v2";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 // CS1: clinical cases live only in localStorage until the durable store lands
@@ -572,6 +572,13 @@ function updateModuleNavigation() {
 }
 
 function loadPoints() {
+  try {
+    if (localStorage.getItem("acupoint-atlas-v1")) {
+      localStorage.removeItem("acupoint-atlas-v1");
+      console.info("AcuTing: Purged legacy acupoint-atlas-v1 cache");
+    }
+  } catch (e) {}
+
   const saved = localStorage.getItem(STORAGE_KEY);
   if (!saved) return defaultPoints;
   try {
