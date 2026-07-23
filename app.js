@@ -2756,15 +2756,23 @@ function evidenceText(point) {
   const parts = [];
   if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
   if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
-  if (point.evidence) parts.push(`【學習提醒】\n${point.evidence}`);
+  if (point.evidence && !point.evidence.includes("draft record for AcuTing OS")) {
+    parts.push(`【學習提醒】\n${point.evidence}`);
+  }
   if (parts.length > 0) return parts.join("\n\n");
   if (contentMode === "english") return "Clinical and evidence notes are pending.";
   return "目前先保留為臨床學習提醒。";
 }
 
 function cautionText(point) {
-  if (contentMode === "english") return point.cautions || "No specific cautions entered yet. Clinical use requires professional training, anatomy-based safety assessment, and patient-specific contraindication screening.";
-  return point.cautions || "無特別標註。實際操作仍需依專業訓練、解剖安全、患者體質與禁忌判斷。";
+  let cautionStr = point.cautions || "";
+  if (typeof cautionStr !== "string") cautionStr = String(cautionStr);
+  const lines = Array.from(new Set(
+    cautionStr.split("\n").map(l => l.trim()).filter(l => l.length > 0)
+  ));
+  const cleanStr = lines.join("\n");
+  if (contentMode === "english") return cleanStr || "No specific cautions entered yet. Clinical use requires professional training, anatomy-based safety assessment, and patient-specific contraindication screening.";
+  return cleanStr || "無特別標註。實際操作仍需依專業訓練、解剖安全、患者體質與禁忌判斷。";
 }
 
 function relatedPoints(point) {
