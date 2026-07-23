@@ -149,6 +149,30 @@
     }).join("");
   }
 
+  /* ⚠ LABEL RESOLVERS — DO NOT let a render-site rewrite drop these calls.
+     Raw snake_case keys must NEVER reach the screen. If you rewrite a section
+     that shows a comparison_group or safety_flags, keep the resolver call.
+     (comparisonGroupLabel was lost once in a merge and shipped raw keys.) */
+  const COMPARE_VOCAB = new Map(
+    ((K && K.comparisonGroupVocabulary && K.comparisonGroupVocabulary.groups) || []).map((g) => [g.id, g])
+  );
+  function comparisonGroupLabel(id) {
+    if (!id) return "";
+    const g = COMPARE_VOCAB.get(String(id).trim());
+    return g ? `${g.name_zh} · ${g.name_en}` : String(id).replace(/_/g, " ");
+  }
+
+  const SAFETY_VOCAB = new Map(
+    ((K && K.safetyFlagVocabulary && K.safetyFlagVocabulary.flags) || []).map((f) => [f.id, f])
+  );
+  function safetyFlagLabel(flag) {
+    const f = SAFETY_VOCAB.get(String(flag).trim());
+    return f ? `${f.name_zh} · ${f.name_en}` : String(flag).replace(/_/g, " ");
+  }
+  function safetyList(flags) {
+    return (flags || []).map(safetyFlagLabel);
+  }
+
   /* 藥對. A pair belongs to both herbs and is the unit formulas are built from,
      so it renders on the formula card and on each member herb's card — the
      chain is 方劑 → 藥對 → 單味藥, navigable in every direction.
@@ -366,7 +390,7 @@
           ["分類 Category", record.category || record.category_en || "待補"],
           ["學習層級 Tier", record.tier || "draft"],
           ["組成 Composition", `${(record.composition || []).length} 味`],
-          ["鑑別群組 Comparison", record.comparison_group || "待補"]
+          ["鑑別群組 Comparison", comparisonGroupLabel(record.comparison_group) || "—"]
         ]
       : [
           ["分類 Category", record.category || record.category_en || "待補"],
@@ -449,11 +473,11 @@
     const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(record.comparison_group)}</p>` : '<p class="k-detail-empty">待補</p>')}</div>` },
+      { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與劑量", "點選中藥可進入單味藥卡", composition ? `<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>原典用量</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div><p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : '<p class="k-detail-empty">組成待補 / Composition pending</p>') },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
-      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safety]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
+      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safetyList(safety)]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
     ];
   }
 
@@ -468,7 +492,7 @@
       { id: "pairing", label: "配伍與鑑別 Pairing", content: `${detailSection("常見配伍", "Common pairings", detailList(exam.common_pairings))}${detailSection("中文深度筆記", "Chinese-depth track", `<p>${esc(usableText((record.chinese_depth_track || {}).summary_zh) || "待 CloudTCM、機構庫或 Ting 課件核對後補入")}</p>`)}` },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("含此藥的藥對", "Pairs this herb belongs to", herbPairsSection(record)) },
       { id: "visual", label: "圖像參考 Visuals", content: detailSection("藥材與飲片圖像", "External herb image references", herbVisualLinksSection(record)) },
-      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與安全提醒", "Contraindications & review prompts", detailList([...(exam.contraindications || []), ...(record.safety_flags || [])]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
+      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與安全提醒", "Contraindications & review prompts", detailList([...(exam.contraindications || []), ...safetyList(record.safety_flags)]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
     ];
   }
 
