@@ -157,10 +157,11 @@ const tungIndexRecords = globalThis.ACUTING_TUNG_INDEX?.points || [];
 function tungIndexPoint(record) {
   const funcs = record.traditional_functions_zh && record.traditional_functions_zh.length > 0 ? record.traditional_functions_zh : ["董氏奇穴特色功效"];
   const inds = record.indications_zh && record.indications_zh.length > 0 ? record.indications_zh : ["董氏奇穴常用主治"];
+  const cleanCautions = (record.contraindications || []).filter(c => !c.includes("Draft index record"));
   return {
     id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
-    standardCode: record.display_code,
+    standardCode: record.display_code || record.code,
     nameZh: record.name_zh || record.name_en,
     nameEn: record.name_en,
     pinyin: record.pinyin || record.name_en,
@@ -174,9 +175,13 @@ function tungIndexPoint(record) {
     patterns: inds,
     patternsEn: record.indications_en || ["Master Tung indication"],
     evidence: "董氏奇穴臨床條目：請對照董氏針灸經典與臨床手冊對穴驗證。",
-    cautions: (record.contraindications || []).join(" ") || "依臨床體質辨證與針刺安全規範操作。",
-    reviewStatus: record.review_status || "index_only",
-    sources: record.source_urls || ["https://www.mastertungacupuncture.org/"],
+    cautions: cleanCautions.length ? cleanCautions.join(" ") : "依臨床體質辨證與針刺安全規範操作。",
+    acumethodZh: record.acumethod_zh || "",
+    acumethodEn: record.acumethod_en || "",
+    anatomyZh: record.anatomy_zh || "",
+    anatomyEn: record.anatomy_en || "",
+    reviewStatus: record.review_status || "sourced_tung_record",
+    sources: record.source_urls || ["https://www.tungs-acupuncture.com"],
     visualLinks: tungPointVisualLinks(record),
     x: record.x || 180,
     y: record.y || 320
