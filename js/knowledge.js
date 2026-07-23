@@ -459,7 +459,7 @@
       // What this herb does IN THIS FORMULA (Ting: 加上每一味要在這個方劑的功效, 中文就好).
       // Distinct from the herb's own 功效 on its card - 杏仁 alone descends Lung qi;
       // 杏仁 in 麻黃湯 is the 佐 that pairs one-down against Ma Huang's one-up.
-      const roleReason = usableText(item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh);
+      const roleReason = usableText(item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh || item.elucidation_zh);
       return `<tr>
         <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
         <td class="k-dose-role">${roleReason ? esc(roleReason) : '<span class="k-detail-empty">—</span>'}</td>
