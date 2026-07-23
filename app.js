@@ -134,6 +134,9 @@ function adapt361Record(record) {
     massageZh: record.massage_zh || "",
     classicalRefs: record.classical_refs || [],
     acuTags: record.acu_tags || [],
+    nameIntroZh: record.name_intro_zh || "",
+    otherNamesZh: record.other_names_zh || "",
+    wushuPoint: record.wushu_point || "",
     cloudtcmUrl: record.cloudtcm_url || "",
     reviewStatus: record.review_status || "draft",
     sourceStatus: record.source_status || "sourced_cloudtcm_record",
@@ -2641,6 +2644,14 @@ function primaryFunctionEn(point) {
 }
 
 function shortTechnique(point) {
+  if (point.acumethodZh) {
+    const first = point.acumethodZh.split('\n')[0].trim();
+    if (first) return first;
+  }
+  if (point.needling && typeof point.needling === "string") {
+    const first = point.needling.split(/[\n。]/)[0].trim();
+    if (first) return first;
+  }
   const text = formatTechniqueNotes(point);
   const depth = String(point.needlingDepth || "").trim();
   if (depth) return depth;
@@ -2649,6 +2660,7 @@ function shortTechnique(point) {
 }
 
 function inferMoxaText(point) {
+  if (point.moxaZh && point.moxaZh.length > 5) return "可施灸 (詳見內文步驟)";
   const caution = `${point.cautions || ""} ${point.techniqueNotes || ""}`;
   if (/禁灸|不宜灸|moxa contraindicated/i.test(caution)) return "不建議";
   if (/艾灸|moxa/i.test(caution)) return "依證適用";
@@ -2657,7 +2669,7 @@ function inferMoxaText(point) {
 
 function moxaTextEn(text) {
   if (/不建議|禁|contra/i.test(text)) return "Not recommended";
-  if (/適用|moxa/i.test(text)) return "As indicated";
+  if (/適用|moxa|施灸/i.test(text)) return "As indicated";
   return "Pending";
 }
 
@@ -2665,7 +2677,16 @@ function pointIntro(point) {
   if (contentMode === "english") {
     return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to the ${shortMeridianEn(point)}. It is located in the ${regionEn(point).toLowerCase()} region.\n\nActions: ${point.functionsEn || "Actions pending professional source review."}\n\nThis public English draft should be reviewed against WHO-style location standards, professional textbooks, and English clinical safety sources before publication.`;
   }
-  return `${point.nameZh} (${point.pinyin}; ${point.nameEn}) 屬於 ${shortMeridian(point)}，位置在${point.region || "未分類部位"}。${point.functions || "本穴功效待補。"}\n\n臨床學習時可同時對照中文主治、英文定位、解剖名詞與針刺安全提醒。`;
+  const introParts = [];
+  if (point.nameIntroZh) {
+    introParts.push(`【穴名釋義與概論】\n${point.nameIntroZh}`);
+  } else {
+    introParts.push(`${point.nameZh} (${point.pinyin}; ${point.nameEn}) 屬於 ${shortMeridian(point)}，位置在${point.region || "未分類部位"}。`);
+  }
+  if (point.otherNamesZh) introParts.push(`【別名】${point.otherNamesZh}`);
+  if (point.wushuPoint) introParts.push(`【特定穴分類】${point.wushuPoint}`);
+  if (point.functions) introParts.push(`【功效標籤】${point.functions}`);
+  return introParts.join("\n\n");
 }
 
 function pointLocationArticle(point) {
