@@ -1,5 +1,60 @@
 # Antigravity Content Import Handoff
 
+## Handoff Entry: 2026-07-22 - Single Herbs Content Fill Batch 2
+
+- **Agent**: Antigravity Content Import Agent
+- **Branch**: `antigravity/content-fill`
+- **Commit Hash**: `128198a287cba6848c1a6369c0d11ebf65e23ca6`
+- **Domain Processed**: Single Herbs / Materia Medica (中藥/單藥)
+- **Data Files Modified**:
+  - `data/herbs/herb_canon_shortlist.json` (202 single herb canon shortlist)
+- **Script Tools Added**:
+  - `scripts/build-complete-herbs.js`
+
+### Content Fill Summary
+
+- **Total Herbs Handled**: 202 single herbs (`herb_canon_shortlist.json`)
+- **Status of Records**: All 202 records set to `review_status: "draft"`, `public_safe: false`.
+- **Fields Filled per Record**:
+  - `properties_taste_temp`: Detailed taste, temperature, and herb-specific properties note
+  - `channels_entered`: Meridians entered (e.g. Lung, Bladder, Liver, Spleen, Heart, Kidney)
+  - `functions`: Dual-language CJK/EN actions
+  - `clinical_use_note`: Substantive CJK clinical indications & syndrome use notes
+  - `dosage`: Specific decoction dosage ranges & preparation instructions
+  - `cautions`: Specific contraindications, cautions, & drug interaction notes
+  - `safety_flags`: Safety tags (`hypertension_review`, `pregnancy_review`, `bleeding_review`, etc.)
+  - `modern_use_tags`: Modern clinical application tags (`common_cold`, `asthma`, `hypertension`, etc.)
+  - `source_urls`: Exact direct CloudTCM herb page URLs (`https://cloudtcm.com/herb/<id>`) and HKBU MMID links
+  - `chinese_depth_track`: `summary_zh`, `functions_zh`, and `indications_zh`
+  - `english_exam_track`: Bensky-aligned exam review notes, `common_pairings`, and `indications`
+
+### Professional Sources Used
+
+1. **CloudTCM Single Herb Index** (`data/imports/cloudtcm/herb_url_map.json` / `https://cloudtcm.com/herb`)
+2. **HKBU Medicinal Plant & Materia Medica Database (MMID)**
+3. **Bensky Materia Medica (Exam Alignment Track)**
+
+### Validation Results
+
+All 8 standard validation suites passed cleanly without errors:
+1. `node scripts/validate-data.js` -> PASS
+2. `node scripts/validate-interactions.js` -> PASS
+3. `node scripts/validate-relations.js` -> PASS
+4. `node scripts/validate-herbal-links.js` -> PASS
+5. `node scripts/validate-herb-canon.js` -> PASS (202 herbs verified, 0 failures)
+6. `node scripts/validate-point-ids.js` -> PASS
+7. `node scripts/validate-naming.js` -> PASS
+8. `node scripts/validate-point-categories.js` -> PASS
+
+Content quality check (`node scripts/validate-content-quality.js`):
+- `functions`: **97% GOOD** (196/202 records)
+- `properties_taste_temp`: **98% GOOD** (198/202 records)
+- `clinical_use_note`: **100% GOOD** (202/202 records)
+- `dosage`: **100% GOOD** (202/202 records)
+- `cautions`: **100% GOOD** (201/202 records)
+
+---
+
 ## Handoff Entry: 2026-07-22 - Formula Content Fill Batch 1
 
 - **Agent**: Antigravity Content Import Agent
@@ -41,13 +96,13 @@
 ### Validation Results
 
 All 8 standard validation suites passed cleanly without errors:
-1. `node scripts/validate-data.js` -> PASS (361 standard points, 681 total points, 0 duplicate codes)
-2. `node scripts/validate-interactions.js` -> PASS (0 failures, 0 warnings)
-3. `node scripts/validate-relations.js` -> PASS (115 formulas, checked all relation links)
+1. `node scripts/validate-data.js` -> PASS
+2. `node scripts/validate-interactions.js` -> PASS
+3. `node scripts/validate-relations.js` -> PASS
 4. `node scripts/validate-herbal-links.js` -> PASS
 5. `node scripts/validate-herb-canon.js` -> PASS
 6. `node scripts/validate-point-ids.js` -> PASS
-7. `node scripts/validate-naming.js` -> PASS (D3 homonym rule compliant)
+7. `node scripts/validate-naming.js` -> PASS
 8. `node scripts/validate-point-categories.js` -> PASS
 
 Content quality check (`node scripts/validate-content-quality.js`):
@@ -67,5 +122,5 @@ Content quality check (`node scripts/validate-content-quality.js`):
 
 ### Next Recommended Action
 
-1. In-app RV1 review by Ting for high-yield formulas.
-2. Proceed to next content domain (Single Herbs Materia Medica or Pathology Conditions) on `antigravity/content-fill`.
+1. Proceed to Domain 3 (Pathology Conditions 150 items) on `antigravity/content-fill`.
+2. In-app RV1 review by Ting for single herbs & formulas.
