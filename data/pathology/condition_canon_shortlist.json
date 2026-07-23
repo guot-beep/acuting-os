@@ -3,155 +3,3153 @@
   "policy": "Skeleton + mapping layer written by Claude (the knowledge-dense part). Every related_eastern_diseases id exists in tdis_registry.json; every related_patterns id exists in pattern_library.json. Prose fields (summary, red_flags, western_context, seeds) are E3 fill batches — a condition may NOT render until red_flags is filled. All draft / needs_source_review. Mappings are study references, not diagnostic equivalence claims.",
   "created": "2026-07-12",
   "records": [
-    {"id":"cond.pcos","name_en":"Polycystic Ovary Syndrome","name_zh":"多囊性卵巢症候群","category":"gyn_fertility","icd_hint":"E28.2","related_eastern_diseases":["tdis.yue_jing_hou_qi","tdis.bi_jing","tdis.bu_yun"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.phlegm_damp","pattern.liver_qi_stagnation","pattern.qi_stagnation_blood_stasis"],"review_status":"draft","summary_zh":"多囊性卵巢症候群是育齡女性常見的內分泌與代謝失調，特徵為排卵稀少或不排卵、雄性素過高表現（如多毛、痤瘡）與超音波多囊卵巢型態，常伴月經稀發及不孕。診斷多採 Rotterdam 標準（三取二），並需排除其他高雄性素病因。","summary_en":"PCOS is a common reproductive-age endocrine and metabolic disorder marked by oligo-/anovulation, clinical or biochemical hyperandrogenism, and polycystic ovarian morphology, often with irregular cycles and subfertility. Diagnosis commonly uses the Rotterdam criteria (2 of 3) after excluding other causes of hyperandrogenism.","red_flags_zh":["異常大量或持續子宮出血需評估子宮內膜病變","長期無月經合併子宮內膜增厚，需排除內膜增生／癌變","突發嚴重骨盆腔痛需排除卵巢扭轉或其他急症","疑似懷孕","急劇雄性素上升或男性化需排除分泌雄性素之腫瘤"],"red_flags_en":["Abnormally heavy or prolonged uterine bleeding — evaluate the endometrium","Prolonged amenorrhea with thickened endometrium — rule out hyperplasia/carcinoma","Sudden severe pelvic pain — rule out ovarian torsion or other acute cause","Possible pregnancy","Rapid virilization or steeply rising androgens — rule out an androgen-secreting tumor"],"western_context_zh":"臨床上常以生活型態調整、體重管理與依生育需求選用之藥物（如排卵誘導、口服避孕藥調經、胰島素敏感化劑）進行處置；此處僅為文件對照用語，非治療指示。","western_context_en":"Commonly managed with lifestyle modification, weight management, and — depending on fertility goals — agents such as ovulation induction, combined oral contraceptives for cycle regulation, or insulin sensitizers. Documentation context only, not a treatment instruction."},
-    {"id":"cond.endometriosis","name_en":"Endometriosis","name_zh":"子宮內膜異位症","category":"gyn_fertility","icd_hint":"N80","related_eastern_diseases":["tdis.tong_jing","tdis.zheng_jia","tdis.bu_yun"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.blood_stasis","pattern.kidney_yang_deficiency"],"review_status":"draft","summary_zh":"子宮內膜異位症指子宮內膜組織生長於子宮腔外（常見於卵巢、腹膜、子宮薦韌帶），造成慢性骨盆腔痛、經痛、性交痛與不孕；確診多需腹腔鏡與病理，影像可輔助評估卵巢子宮內膜異位瘤。","summary_en":"Endometriosis is the presence of endometrial-like tissue outside the uterine cavity (commonly ovary, peritoneum, uterosacral ligaments), causing chronic pelvic pain, dysmenorrhea, dyspareunia, and infertility. Definitive diagnosis usually needs laparoscopy with histology; imaging helps assess endometriomas.","red_flags_zh":["急性劇烈骨盆腔痛需排除卵巢子宮內膜異位瘤破裂或扭轉","腸道或膀胱周期性出血提示深部浸潤，需專科評估","疑似懷孕合併劇痛需排除異位妊娠","不孕需生殖專科評估"],"red_flags_en":["Acute severe pelvic pain — rule out ruptured or torsed endometrioma","Cyclical bowel or bladder bleeding suggests deep infiltrating disease — refer for specialist assessment","Possible pregnancy with severe pain — rule out ectopic pregnancy","Infertility — refer for reproductive evaluation"],"western_context_zh":"常以止痛、荷爾蒙抑制（如複方避孕藥、黃體素、GnRH 類似物）或手術處理，依疼痛與生育目標調整；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with analgesia, hormonal suppression (e.g., combined contraceptives, progestins, GnRH analogues), or surgery, tailored to pain and fertility goals. Documentation context only, not a treatment instruction."},
-    {"id":"cond.uterine_fibroids","name_en":"Uterine Fibroids","name_zh":"子宮肌瘤","category":"gyn_fertility","icd_hint":"D25","related_eastern_diseases":["tdis.zheng_jia","tdis.yue_jing_guo_duo"],"related_patterns":["pattern.blood_stasis","pattern.qi_stagnation_blood_stasis","pattern.phlegm_damp"],"review_status":"draft","summary_zh":"子宮肌瘤為子宮平滑肌之良性腫瘤，常見於育齡女性，可無症狀或引起經量過多、骨盆腔壓迫、頻尿與不孕，症狀與肌瘤大小及位置（黏膜下、肌壁間、漿膜下）相關。","summary_en":"Uterine fibroids are benign smooth-muscle tumors of the uterus, common in reproductive-age women. They may be asymptomatic or cause heavy menstrual bleeding, pelvic pressure, urinary frequency, and infertility, depending on size and location (submucosal, intramural, subserosal).","red_flags_zh":["嚴重或持續出血導致貧血症狀（頭暈、心悸、氣短）需即時評估","急性劇痛提示肌瘤變性或帶蒂肌瘤扭轉","快速長大或停經後仍長大需排除惡性（子宮肉瘤）","壓迫症狀導致排尿或排便困難"],"red_flags_en":["Severe or ongoing bleeding with anemia symptoms (dizziness, palpitations, dyspnea) — evaluate promptly","Acute severe pain suggests fibroid degeneration or torsion of a pedunculated fibroid","Rapid growth or growth after menopause — rule out malignancy (uterine sarcoma)","Mass effect causing urinary or bowel obstruction"],"western_context_zh":"依症狀與生育需求，處置範圍從觀察、藥物控制出血到子宮肌瘤切除或子宮切除等；此為文件對照用語，非治療指示。","western_context_en":"Depending on symptoms and fertility goals, management ranges from observation and medical control of bleeding to myomectomy or hysterectomy. Documentation context only, not a treatment instruction."},
-    {"id":"cond.primary_dysmenorrhea","name_en":"Primary Dysmenorrhea","name_zh":"原發性痛經","category":"gyn_fertility","icd_hint":"N94.4","related_eastern_diseases":["tdis.tong_jing"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.cold_stagnation_liver_channel","pattern.qi_blood_deficiency","pattern.kidney_yin_deficiency"],"review_status":"draft","summary_zh":"原發性痛經指無骨盆腔器質病變的經期疼痛，多因前列腺素引起子宮過度收縮，常於初經後 1–2 年開始，疼痛集中於下腹並可放射至腰背與大腿。","summary_en":"Primary dysmenorrhea is menstrual pain without pelvic pathology, largely from prostaglandin-mediated uterine hypercontractility. It typically begins within 1–2 years of menarche, with cramping lower-abdominal pain that may radiate to the back and thighs.","red_flags_zh":["疼痛型態改變或成年後才新發之痛經應排除次發性病因（如內膜異位）","發燒、異常分泌物提示骨盆腔感染","疑似懷孕合併劇痛需排除異位妊娠","止痛無效且進行性加重需進一步影像評估"],"red_flags_en":["Change in pain pattern or new-onset dysmenorrhea in adulthood — rule out secondary causes (e.g., endometriosis)","Fever or abnormal discharge suggests pelvic infection","Possible pregnancy with severe pain — rule out ectopic pregnancy","Pain unresponsive to analgesia and progressively worsening — pursue imaging"],"western_context_zh":"常以非類固醇消炎止痛藥、複方避孕藥與局部熱敷處理；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with NSAIDs, combined oral contraceptives, and local heat. Documentation context only, not a treatment instruction."},
-    {"id":"cond.pms","name_en":"Premenstrual Syndrome","name_zh":"經前症候群","category":"gyn_fertility","icd_hint":"N94.3","related_eastern_diseases":["tdis.yu_zheng","tdis.zang_zao"],"related_patterns":["pattern.liver_qi_stagnation","pattern.liver_spleen_disharmony","pattern.heart_spleen_deficiency"],"review_status":"draft","summary_zh":"經前症候群指黃體期反覆出現、月經來潮後緩解的身心症狀（如乳房脹痛、腹脹、易怒、情緒低落、疲倦），症狀須與月經週期有明確時間關聯並影響生活功能。","summary_en":"Premenstrual syndrome is a cyclical cluster of physical and mood symptoms (breast tenderness, bloating, irritability, low mood, fatigue) in the luteal phase that resolve after menses, with a clear temporal link to the cycle and functional impact.","red_flags_zh":["嚴重情緒低落、絕望或自殺意念需即時心理／精神科評估","症狀無週期性或持續整月，應重新評估診斷","症狀急遽惡化影響安全或工作能力"],"red_flags_en":["Severe low mood, hopelessness, or suicidal ideation — urgent mental-health evaluation","Non-cyclical or month-long symptoms — reconsider the diagnosis","Rapid worsening affecting safety or function"],"western_context_zh":"常以生活型態與飲食調整、運動，必要時選用血清素類藥物或荷爾蒙處置；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with lifestyle and dietary measures, exercise, and where needed serotonergic agents or hormonal approaches. Documentation context only, not a treatment instruction."},
-    {"id":"cond.irregular_menstruation","name_en":"Irregular Menstruation","name_zh":"月經不調","category":"gyn_fertility","icd_hint":"N92.6","related_eastern_diseases":["tdis.yue_jing_xian_qi","tdis.yue_jing_hou_qi"],"related_patterns":["pattern.chong_ren_disharmony","pattern.liver_qi_stagnation","pattern.kidney_yin_deficiency","pattern.spleen_qi_deficiency"],"review_status":"draft","summary_zh":"月經不調為描述性名詞，涵蓋週期、經期長短或經量的異常，成因多元（內分泌、結構、藥物、體重與壓力等），需依型態進一步鑑別。","summary_en":"Irregular menstruation is a descriptive term covering abnormalities of cycle length, duration, or flow, with many causes (endocrine, structural, medication, weight, stress). It requires further characterization to guide differential diagnosis.","red_flags_zh":["任何停經後出血需評估子宮內膜","大量出血合併貧血症狀需即時處理","疑似懷孕","合併泌乳、視野缺損或頭痛需排除腦下垂體病變"],"red_flags_en":["Any postmenopausal bleeding — evaluate the endometrium","Heavy bleeding with anemia symptoms — treat promptly","Possible pregnancy","Galactorrhea, visual-field loss, or headache — rule out pituitary pathology"],"western_context_zh":"處置依成因而定，可能包含荷爾蒙調節、矯正潛在內分泌或結構問題；此為文件對照用語，非治療指示。","western_context_en":"Management depends on the underlying cause and may include hormonal regulation and correction of endocrine or structural contributors. Documentation context only, not a treatment instruction."},
-    {"id":"cond.menorrhagia","name_en":"Heavy Menstrual Bleeding","name_zh":"月經過多","category":"gyn_fertility","icd_hint":"N92.0","related_eastern_diseases":["tdis.yue_jing_guo_duo","tdis.beng_lou"],"related_patterns":["pattern.spleen_not_governing_blood","pattern.blood_heat","pattern.blood_stasis"],"review_status":"draft","summary_zh":"月經過多指經量顯著增加或經期延長，可能造成缺鐵性貧血；成因包括排卵功能障礙、子宮肌瘤或內膜息肉、凝血異常及內膜病變等。","summary_en":"Heavy menstrual bleeding is markedly increased flow or prolonged menses that may cause iron-deficiency anemia. Causes include ovulatory dysfunction, fibroids or polyps, coagulopathy, and endometrial pathology.","red_flags_zh":["急性大量出血合併血壓下降、心悸、暈厥屬急症，需立即就醫","停經後出血或不規則出血需排除內膜增生／癌變","易瘀青或家族出血病史提示凝血疾病","貧血症狀明顯（極度疲倦、氣短）"],"red_flags_en":["Acute heavy bleeding with hypotension, palpitations, or syncope is an emergency — seek immediate care","Postmenopausal or irregular bleeding — rule out endometrial hyperplasia/carcinoma","Easy bruising or family bleeding history suggests coagulopathy","Marked anemia symptoms (severe fatigue, dyspnea)"],"western_context_zh":"常以補鐵、荷爾蒙或非荷爾蒙藥物減少出血，並針對結構性病因處理；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with iron repletion, hormonal or non-hormonal agents to reduce bleeding, and treatment of structural causes. Documentation context only, not a treatment instruction."},
-    {"id":"cond.oligomenorrhea","name_en":"Scanty/Infrequent Menstruation","name_zh":"月經過少","category":"gyn_fertility","icd_hint":"N91.5","related_eastern_diseases":["tdis.yue_jing_guo_shao","tdis.yue_jing_hou_qi"],"related_patterns":["pattern.qi_blood_deficiency","pattern.kidney_essence_deficiency","pattern.blood_stasis","pattern.phlegm_damp"],"review_status":"draft","summary_zh":"月經過少指經量明顯減少或經期縮短，成因包括內分泌失衡（如多囊、甲狀腺、高泌乳素）、子宮內膜損傷（如宮腔沾黏）、體重過低或壓力等。","summary_en":"Scanty or infrequent menstruation refers to reduced flow or shortened menses. Causes include endocrine imbalance (PCOS, thyroid, hyperprolactinemia), endometrial damage (intrauterine adhesions), low body weight, and stress.","red_flags_zh":["合併泌乳、頭痛或視野缺損需排除腦下垂體病變","近期子宮腔手術後經量驟減提示宮腔沾黏","疑似懷孕","顯著體重下降或過度運動導致停經傾向"],"red_flags_en":["Galactorrhea, headache, or visual-field loss — rule out pituitary pathology","Sharp drop in flow after recent uterine surgery suggests intrauterine adhesions","Possible pregnancy","Marked weight loss or over-exercise trending toward amenorrhea"],"western_context_zh":"處置聚焦於矯正潛在內分泌或結構因素，並依生育需求處理；此為文件對照用語，非治療指示。","western_context_en":"Management focuses on correcting the underlying endocrine or structural cause and addressing fertility goals. Documentation context only, not a treatment instruction."},
-    {"id":"cond.amenorrhea","name_en":"Secondary Amenorrhea","name_zh":"繼發性閉經","category":"gyn_fertility","icd_hint":"N91.1","related_eastern_diseases":["tdis.bi_jing"],"related_patterns":["pattern.qi_blood_deficiency","pattern.kidney_essence_deficiency","pattern.qi_stagnation_blood_stasis","pattern.phlegm_damp"],"review_status":"draft","summary_zh":"繼發性閉經指曾有月經者停經達三個週期或六個月以上，最常見原因為懷孕，其他包括下視丘功能性抑制、多囊、高泌乳素、甲狀腺異常、卵巢功能不全及宮腔沾黏等。","summary_en":"Secondary amenorrhea is the absence of menses for three cycles or six months in someone who previously menstruated. Pregnancy is the most common cause; others include functional hypothalamic suppression, PCOS, hyperprolactinemia, thyroid disease, ovarian insufficiency, and intrauterine adhesions.","red_flags_zh":["首先排除懷孕","合併泌乳、頭痛或視野缺損需排除腦下垂體腫瘤","潮熱、盜汗與 40 歲前停經提示卵巢早衰，需評估","顯著體重過低或飲食失調需整體醫療評估"],"red_flags_en":["Rule out pregnancy first","Galactorrhea, headache, or visual-field loss — rule out a pituitary tumor","Hot flashes, night sweats, and cessation before 40 suggest premature ovarian insufficiency — evaluate","Marked underweight or an eating disorder warrants broad medical evaluation"],"western_context_zh":"處置依病因，可能包含矯正泌乳素或甲狀腺異常、荷爾蒙補充、營養與體重恢復；此為文件對照用語，非治療指示。","western_context_en":"Management is cause-specific and may include correcting prolactin or thyroid abnormalities, hormonal support, and nutritional/weight restoration. Documentation context only, not a treatment instruction."},
-    {"id":"cond.female_infertility","name_en":"Female Infertility","name_zh":"女性不孕症","category":"gyn_fertility","icd_hint":"N97","related_eastern_diseases":["tdis.bu_yun"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.kidney_yin_deficiency","pattern.liver_qi_stagnation","pattern.qi_stagnation_blood_stasis","pattern.phlegm_damp"],"review_status":"draft","summary_zh":"女性不孕症一般指規律無避孕性行為一年（35 歲以上為半年）仍未受孕。成因包括排卵障礙、輸卵管與骨盆因素、子宮與內膜因素及卵巢儲備下降等，需伴侶雙方評估。","summary_en":"Female infertility is generally defined as failure to conceive after one year of regular unprotected intercourse (six months if age ≥35). Causes include ovulatory disorders, tubal/pelvic factors, uterine/endometrial factors, and diminished ovarian reserve; both partners should be evaluated.","red_flags_zh":["劇烈骨盆腔痛或異常出血需先排除急症與異位妊娠","35 歲以上或有卵巢儲備疑慮者宜及早轉介生殖專科","已知輸卵管病變、重度內膜異位或無精症需專科處理","反覆流產史需另作評估"],"red_flags_en":["Severe pelvic pain or abnormal bleeding — rule out acute causes and ectopic pregnancy first","Age ≥35 or ovarian-reserve concerns — refer to reproductive medicine early","Known tubal disease, severe endometriosis, or azoospermia needs specialist care","History of recurrent pregnancy loss warrants separate evaluation"],"western_context_zh":"評估與處置常涵蓋排卵監測、輸卵管與精液檢查，並依病因採排卵誘導或輔助生殖技術；此為文件對照用語，非治療指示。","western_context_en":"Evaluation and management commonly include ovulation tracking, tubal and semen assessment, and — by cause — ovulation induction or assisted reproductive technology. Documentation context only, not a treatment instruction."},
-    {"id":"cond.male_infertility","name_en":"Male Factor Infertility","name_zh":"男性不育症","category":"gyn_fertility","icd_hint":"N46","related_eastern_diseases":["tdis.bu_yu"],"related_patterns":["pattern.kidney_essence_deficiency","pattern.kidney_yang_deficiency","pattern.damp_heat_lower_burner"],"review_status":"draft","summary_zh":"男性不育症指男方因素導致的生育困難，常見於精液品質異常（少精、弱精、畸形精子或無精），成因包括精索靜脈曲張、內分泌、感染、遺傳與生活型態等，需精液分析評估。","summary_en":"Male factor infertility refers to subfertility from male causes, often abnormal semen parameters (oligo-, astheno-, teratozoospermia, or azoospermia). Causes include varicocele, endocrine, infectious, genetic, and lifestyle factors; semen analysis is central to evaluation.","red_flags_zh":["無精症或嚴重異常需泌尿／生殖專科與遺傳評估","睪丸腫塊或不對稱需排除睪丸腫瘤","性功能障礙合併荷爾蒙症狀需內分泌評估","泌尿感染或疼痛徵象"],"red_flags_en":["Azoospermia or severe abnormalities — refer to urology/reproductive medicine and genetic evaluation","Testicular mass or asymmetry — rule out testicular tumor","Sexual dysfunction with hormonal symptoms — endocrine evaluation","Signs of urinary infection or pain"],"western_context_zh":"處置依病因，可能包含矯正精索靜脈曲張、荷爾蒙處理、生活型態改善或輔助生殖；此為文件對照用語，非治療指示。","western_context_en":"Management is cause-specific and may include varicocele correction, hormonal treatment, lifestyle change, or assisted reproduction. Documentation context only, not a treatment instruction."},
-    {"id":"cond.diminished_ovarian_reserve","name_en":"Diminished Ovarian Reserve","name_zh":"卵巢儲備功能下降","category":"gyn_fertility","icd_hint":"E28.3","related_eastern_diseases":["tdis.bu_yun","tdis.yue_jing_guo_shao"],"related_patterns":["pattern.kidney_essence_deficiency","pattern.kidney_yin_deficiency","pattern.qi_blood_deficiency"],"review_status":"draft","summary_zh":"卵巢儲備功能下降指卵子數量與品質較同齡下降，可由抗穆勒氏管荷爾蒙（AMH）、竇卵泡數與 FSH 等評估，與受孕率下降及對排卵刺激反應不良相關。","summary_en":"Diminished ovarian reserve is a reduction in oocyte quantity and quality relative to age, assessed by AMH, antral follicle count, and FSH. It is associated with lower conception rates and poorer response to ovarian stimulation.","red_flags_zh":["40 歲前出現卵巢功能不全徵象（潮熱、停經）需評估卵巢早衰","計畫生育者宜及早轉介生殖專科討論時效性","合併停經症狀影響生活品質"],"red_flags_en":["Signs of ovarian insufficiency before 40 (hot flashes, amenorrhea) — evaluate for premature ovarian insufficiency","If pregnancy is desired, refer to reproductive medicine early given time-sensitivity","Menopausal symptoms affecting quality of life"],"western_context_zh":"常於生殖醫療脈絡中討論卵巢刺激方案調整、生育時效與可行選項；此為文件對照用語，非治療指示。","western_context_en":"Commonly discussed within reproductive care regarding stimulation-protocol adjustment, fertility timing, and available options. Documentation context only, not a treatment instruction."},
-    {"id":"cond.ivf_support","name_en":"IVF/ART Adjunctive Support (context)","name_zh":"試管嬰兒療程輔助（文件情境）","category":"gyn_fertility","icd_hint":"Z31.83","related_eastern_diseases":["tdis.bu_yun"],"related_patterns":["pattern.kidney_yin_deficiency","pattern.kidney_yang_deficiency","pattern.liver_qi_stagnation","pattern.qi_stagnation_blood_stasis"],"review_status":"draft","summary_zh":"此為試管嬰兒／輔助生殖療程期間的輔助照護文件情境，涵蓋刺激期、取卵、植入與黃體支持等階段之症狀紀錄與整體性支持，非獨立西醫診斷。","summary_en":"This is a documentation context for adjunctive care during IVF/ART cycles, spanning stimulation, retrieval, transfer, and luteal support phases for symptom tracking and whole-person support. It is not a standalone Western diagnosis.","red_flags_zh":["刺激期後腹脹、少尿、體重驟增或呼吸困難提示卵巢過度刺激症候群（OHSS），屬急症","取卵後劇烈腹痛或發燒需排除出血或感染","植入後劇痛合併陰道出血需排除併發症","任何疑似異位妊娠徵象"],"red_flags_en":["Post-stimulation bloating, reduced urine output, rapid weight gain, or dyspnea suggests ovarian hyperstimulation syndrome (OHSS) — an emergency","Severe abdominal pain or fever after retrieval — rule out bleeding or infection","Severe pain with vaginal bleeding after transfer — rule out complications","Any signs suggesting ectopic pregnancy"],"western_context_zh":"輔助照護在生殖團隊的療程計畫下進行，紀錄用語不取代生殖醫療處置；此為文件對照用語，非治療指示。","western_context_en":"Adjunctive care proceeds under the reproductive team's cycle plan; documentation does not replace reproductive medical management. Documentation context only, not a treatment instruction."},
-    {"id":"cond.recurrent_pregnancy_loss","name_en":"Recurrent Pregnancy Loss (context)","name_zh":"習慣性流產（文件情境）","category":"gyn_fertility","icd_hint":"N96","related_eastern_diseases":["tdis.bu_yun"],"related_patterns":["pattern.kidney_qi_not_firm","pattern.spleen_qi_deficiency","pattern.blood_heat","pattern.blood_stasis"],"review_status":"draft","summary_zh":"習慣性流產（文件情境）一般指連續兩次以上的自然流產，成因包括染色體、子宮結構、內分泌（如甲狀腺、血糖）、抗磷脂症候群與凝血異常等，需系統性評估雙方。","summary_en":"Recurrent pregnancy loss (context) generally refers to two or more consecutive spontaneous miscarriages. Causes include chromosomal, uterine structural, endocrine (thyroid, glucose), antiphospholipid syndrome, and thrombophilia; systematic evaluation of both partners is warranted.","red_flags_zh":["急性大量出血或劇痛合併頭暈屬急症，需立即就醫","疑似異位妊娠（單側劇痛、肩痛、暈厥）","發燒與惡臭分泌物提示感染性流產","確診抗磷脂症候群或血栓病史需專科共同照護"],"red_flags_en":["Acute heavy bleeding or severe pain with dizziness is an emergency — seek immediate care","Suspected ectopic pregnancy (unilateral severe pain, shoulder pain, syncope)","Fever with foul discharge suggests septic miscarriage","Confirmed antiphospholipid syndrome or thrombosis history needs co-managed specialist care"],"western_context_zh":"評估與處置常涵蓋內分泌與凝血檢查、子宮影像，並依病因給予相應支持；此為文件對照用語，非治療指示。","western_context_en":"Evaluation and management commonly include endocrine and coagulation workup, uterine imaging, and cause-specific support. Documentation context only, not a treatment instruction."},
-    {"id":"cond.luteal_phase_defect","name_en":"Luteal Phase Deficiency (context)","name_zh":"黃體功能不足（文件情境）","category":"gyn_fertility","icd_hint":"E28.8","related_eastern_diseases":["tdis.bu_yun","tdis.yue_jing_xian_qi"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.spleen_qi_deficiency"],"review_status":"draft","summary_zh":"黃體功能不足（文件情境）指黃體期黃體素分泌不足或內膜反應不良，可能與月經週期偏短、經前點狀出血及受孕／著床困難相關；其獨立診斷標準仍具爭議。","summary_en":"Luteal phase deficiency (context) refers to inadequate luteal progesterone or endometrial response, potentially linked to short cycles, premenstrual spotting, and difficulty conceiving or implanting. Its status as a discrete diagnosis remains debated.","red_flags_zh":["反覆早期流產需系統性評估","顯著週期紊亂或閉經應重新評估內分泌","疑似懷孕合併出血需排除先兆流產或異位妊娠"],"red_flags_en":["Recurrent early miscarriage warrants systematic evaluation","Marked cycle disruption or amenorrhea — reassess endocrine causes","Possible pregnancy with bleeding — rule out threatened or ectopic pregnancy"],"western_context_zh":"常於生育脈絡中討論黃體支持與潛在內分泌因素之矯正；此為文件對照用語，非治療指示。","western_context_en":"Commonly discussed within fertility care regarding luteal support and correction of underlying endocrine factors. Documentation context only, not a treatment instruction."},
-    {"id":"cond.menopause_syndrome","name_en":"Menopausal Syndrome","name_zh":"更年期症候群","category":"gyn_fertility","icd_hint":"N95.1","related_eastern_diseases":["tdis.jing_duan_qian_hou"],"related_patterns":["pattern.kidney_yin_deficiency","pattern.kidney_yang_deficiency","pattern.heart_kidney_not_communicating","pattern.liver_yang_rising"],"review_status":"draft","summary_zh":"更年期症候群指停經過渡期因卵巢功能衰退、雌激素下降所引起的一系列症狀，如潮熱、盜汗、睡眠障礙、情緒波動、陰道乾澀與泌尿生殖症狀。","summary_en":"Menopausal syndrome is the cluster of symptoms during the menopausal transition from declining ovarian function and estrogen, including hot flashes, night sweats, sleep disturbance, mood changes, vaginal dryness, and genitourinary symptoms.","red_flags_zh":["任何停經後陰道出血需評估子宮內膜以排除惡性","40 歲前即出現更年期症狀需評估卵巢早衰","嚴重情緒低落或自殺意念需即時心理支持","新發胸痛、嚴重頭痛或神經症狀不可歸因於更年期，需即時評估"],"red_flags_en":["Any postmenopausal vaginal bleeding — evaluate the endometrium to exclude malignancy","Menopausal symptoms before 40 — evaluate for premature ovarian insufficiency","Severe low mood or suicidal ideation — urgent mental-health support","New chest pain, severe headache, or neurologic symptoms must not be attributed to menopause — evaluate promptly"],"western_context_zh":"依症狀與風險，處置可涵蓋生活型態、非荷爾蒙藥物或荷爾蒙療法及局部治療；此為文件對照用語，非治療指示。","western_context_en":"Depending on symptoms and risk, management may include lifestyle measures, non-hormonal agents, hormone therapy, and local treatments. Documentation context only, not a treatment instruction."},
-    {"id":"cond.hyperemesis_gravidarum","name_en":"Nausea of Pregnancy / Hyperemesis (context)","name_zh":"妊娠劇吐（文件情境）","category":"gyn_fertility","icd_hint":"O21","related_eastern_diseases":["tdis.ren_shen_e_zu"],"related_patterns":["pattern.liver_stomach_disharmony","pattern.spleen_qi_deficiency"],"review_status":"draft","summary_zh":"妊娠劇吐（文件情境）為妊娠早期嚴重、持續之噁心嘔吐，導致脫水、電解質失衡與體重下降，較一般孕吐嚴重，可能需醫療處置與補液。","summary_en":"Hyperemesis gravidarum (context) is severe, persistent nausea and vomiting in early pregnancy causing dehydration, electrolyte imbalance, and weight loss — more severe than typical morning sickness and often needing medical management and fluids.","red_flags_zh":["無法進食飲水、少尿、明顯脫水或體重明顯下降需就醫補液","嘔吐物帶血","意識混亂、視力改變或步態不穩需排除電解質／維生素缺乏之神經併發症","發燒或腹痛提示其他病因"],"red_flags_en":["Inability to keep down food/fluids, reduced urine, marked dehydration, or significant weight loss — seek care for rehydration","Blood in vomit","Confusion, vision change, or unsteady gait — rule out neurologic complications of electrolyte/vitamin deficiency","Fever or abdominal pain suggests another cause"],"western_context_zh":"常以補液、止吐與營養支持處理，嚴重時需住院；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with rehydration, antiemetics, and nutritional support; severe cases may need admission. Documentation context only, not a treatment instruction."},
-    {"id":"cond.breech_presentation","name_en":"Breech Presentation (moxibustion context)","name_zh":"胎位不正（艾灸文件情境）","category":"gyn_fertility","icd_hint":"O32.1","related_eastern_diseases":["tdis.tai_wei_bu_zheng"],"related_patterns":["pattern.kidney_qi_not_firm","pattern.qi_blood_deficiency"],"review_status":"draft","summary_zh":"胎位不正（艾灸文件情境）指妊娠晚期胎兒非頭位（如臀位），與分娩方式及風險相關；部分傳統做法於特定孕週以艾灸至陰穴輔助，屬受訓醫者臨床決策。","summary_en":"Breech presentation (moxibustion context) is a non-cephalic fetal lie (e.g., breech) in late pregnancy, relevant to delivery mode and risk. Some traditional approaches use moxibustion at BL67 during a specific gestational window as an adjunct — a trained clinician's decision.","red_flags_zh":["破水合併臍帶脫垂徵象屬產科急症，需立即就醫","規則宮縮或陰道出血提示早產或產兆","胎動明顯減少需即時評估","任何外轉術均應由產科醫師於監測下執行"],"red_flags_en":["Ruptured membranes with signs of cord prolapse is an obstetric emergency — seek immediate care","Regular contractions or vaginal bleeding suggests preterm labor or onset of labor","Marked decrease in fetal movement — evaluate promptly","Any external cephalic version must be performed by an obstetrician under monitoring"],"western_context_zh":"產科依孕週與情況評估外轉術或剖腹產等分娩計畫；此為文件對照用語，非治療指示。","western_context_en":"Obstetric care assesses external cephalic version or delivery planning such as cesarean by gestation and circumstances. Documentation context only, not a treatment instruction."},
-    {"id":"cond.postpartum_hypolactation","name_en":"Insufficient Lactation","name_zh":"產後缺乳","category":"gyn_fertility","icd_hint":"O92.4","related_eastern_diseases":["tdis.que_ru"],"related_patterns":["pattern.qi_blood_deficiency","pattern.liver_qi_stagnation"],"review_status":"draft","summary_zh":"產後缺乳指產後乳汁分泌不足以滿足嬰兒需求，成因包括含乳與哺乳頻率、荷爾蒙、乳腺發育、壓力與疲勞及部分藥物等，需哺乳支持評估。","summary_en":"Insufficient lactation is inadequate milk production for the infant's needs. Causes include latch and feeding frequency, hormonal factors, breast development, stress and fatigue, and certain medications; lactation-support assessment is helpful.","red_flags_zh":["嬰兒體重不增、尿量少或脫水徵象需小兒科即時評估","乳房紅腫熱痛合併發燒提示乳腺炎","產後大量出血或嚴重情緒低落需即時醫療／心理評估","疑似 Sheehan 症候群（產後大出血後無泌乳）需內分泌評估"],"red_flags_en":["Poor infant weight gain, low urine output, or dehydration — urgent pediatric evaluation","Red, hot, painful breast with fever suggests mastitis","Postpartum hemorrhage or severe low mood — urgent medical/mental-health evaluation","Suspected Sheehan syndrome (no lactation after major postpartum hemorrhage) — endocrine evaluation"],"western_context_zh":"常以哺乳指導、增加有效吸吮與整體支持處理，必要時評估潛在病因；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with lactation guidance, increasing effective feeding, and whole-person support, evaluating underlying causes when needed. Documentation context only, not a treatment instruction."},
-    {"id":"cond.chronic_pelvic_pain","name_en":"Chronic Pelvic Pain","name_zh":"慢性骨盆腔疼痛","category":"gyn_fertility","icd_hint":"R10.2","related_eastern_diseases":["tdis.fu_tong","tdis.zheng_jia"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.damp_heat_lower_burner","pattern.cold_stagnation_liver_channel"],"review_status":"draft","summary_zh":"慢性骨盆腔疼痛指持續六個月以上的骨盆腔疼痛，成因多元（婦科、腸胃、泌尿、肌肉骨骼與神經因素），常需多面向評估與跨科處理。","summary_en":"Chronic pelvic pain is pelvic pain lasting more than six months with multiple possible sources (gynecologic, gastrointestinal, urologic, musculoskeletal, neurologic), often needing multidimensional assessment and multidisciplinary care.","red_flags_zh":["急性劇痛或痛感型態突變需排除急症（如卵巢扭轉、異位妊娠）","發燒、異常分泌物提示感染","腸道出血、體重減輕或排便習慣改變需排除腸道病變","血尿需泌尿評估"],"red_flags_en":["Acute severe pain or abrupt change in pattern — rule out an acute cause (e.g., torsion, ectopic)","Fever or abnormal discharge suggests infection","Rectal bleeding, weight loss, or bowel-habit change — rule out bowel pathology","Hematuria — urologic evaluation"],"western_context_zh":"處置常結合疼痛管理、針對可辨識病因之治療與身心支持；此為文件對照用語，非治療指示。","western_context_en":"Management commonly combines pain control, treatment of identifiable causes, and mind-body support. Documentation context only, not a treatment instruction."},
-    {"id":"cond.pid_chronic","name_en":"Chronic PID Sequelae (context)","name_zh":"慢性骨盆腔炎後遺（文件情境）","category":"gyn_fertility","icd_hint":"N73.1","related_eastern_diseases":["tdis.dai_xia_bing","tdis.fu_tong"],"related_patterns":["pattern.damp_heat_lower_burner","pattern.qi_stagnation_blood_stasis"],"review_status":"draft","summary_zh":"慢性骨盆腔炎後遺（文件情境）指骨盆腔發炎性疾病後之慢性後遺，如骨盆腔沾黏、慢性疼痛、輸卵管損傷與不孕，多與既往感染史相關。","summary_en":"Chronic PID sequelae (context) are long-term consequences after pelvic inflammatory disease, such as pelvic adhesions, chronic pain, tubal damage, and infertility, usually linked to prior infection.","red_flags_zh":["發燒、劇烈骨盆腔痛與異常分泌物提示急性發作或膿瘍，需即時就醫","疑似異位妊娠（有輸卵管損傷史者風險升高）","不孕需生殖專科評估","性伴侶需同步篩檢與處理以防再感染"],"red_flags_en":["Fever, severe pelvic pain, and abnormal discharge suggest an acute flare or abscess — seek urgent care","Suspected ectopic pregnancy (higher risk with tubal damage)","Infertility — refer for reproductive evaluation","Partners need concurrent screening/treatment to prevent reinfection"],"western_context_zh":"急性感染以抗生素處理，慢性後遺常需疼痛管理與生育相關評估；此為文件對照用語，非治療指示。","western_context_en":"Acute infection is treated with antibiotics; chronic sequelae often need pain management and fertility-related evaluation. Documentation context only, not a treatment instruction."},
-    {"id":"cond.vulvovaginal_candidiasis","name_en":"Vulvovaginal Candidiasis (context)","name_zh":"外陰陰道念珠菌感染（文件情境）","category":"gyn_fertility","icd_hint":"B37.3","related_eastern_diseases":["tdis.dai_xia_bing"],"related_patterns":["pattern.damp_heat_lower_burner","pattern.spleen_qi_deficiency"],"review_status":"draft","summary_zh":"外陰陰道念珠菌感染（文件情境）為念珠菌引起的陰道炎，症狀包括外陰搔癢、灼熱、白色凝乳狀分泌物與紅腫，常見且多可辨識，反覆發作需評估誘因。","summary_en":"Vulvovaginal candidiasis (context) is a yeast (Candida) vaginitis with vulvar itching, burning, thick white curd-like discharge, and erythema. It is common and usually recognizable; recurrent episodes warrant evaluation of contributors.","red_flags_zh":["反覆或難治性感染需排除糖尿病或免疫低下等誘因","合併發燒、骨盆腔痛提示上生殖道感染，非單純陰道炎","孕期症狀需依醫療指示處理","分泌物型態不符（惡臭、灰綠、泡沫）提示其他病原"],"red_flags_en":["Recurrent or refractory infection — rule out contributors such as diabetes or immunosuppression","Fever or pelvic pain suggests upper-tract infection, not simple vaginitis","Symptoms in pregnancy should be managed per medical guidance","Discharge that doesn't fit (foul, gray-green, frothy) suggests another pathogen"],"western_context_zh":"常以抗黴菌藥物處理並處置誘因；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with antifungal agents and addressing contributors. Documentation context only, not a treatment instruction."},
-    {"id":"cond.thin_endometrium","name_en":"Thin Endometrial Lining (context)","name_zh":"子宮內膜偏薄（文件情境）","category":"gyn_fertility","icd_hint":"N85.8","related_eastern_diseases":["tdis.yue_jing_guo_shao","tdis.bu_yun"],"related_patterns":["pattern.kidney_essence_deficiency","pattern.qi_blood_deficiency","pattern.blood_stasis"],"review_status":"draft","summary_zh":"子宮內膜偏薄（文件情境）指於評估時機內膜厚度低於一般著床所需，可能與雌激素不足、宮腔沾黏、既往手術或血流因素相關，主要見於生育與輔助生殖脈絡。","summary_en":"Thin endometrial lining (context) is endometrial thickness below what is generally favorable for implantation at the assessment time, potentially linked to low estrogen, intrauterine adhesions, prior surgery, or blood-flow factors, mainly relevant in fertility and ART contexts.","red_flags_zh":["有子宮腔手術史且經量驟減提示宮腔沾黏，需宮腔評估","反覆著床失敗需生殖專科評估","異常出血需排除內膜病變"],"red_flags_en":["Prior uterine surgery with a sharp drop in flow suggests intrauterine adhesions — assess the cavity","Recurrent implantation failure — refer to reproductive medicine","Abnormal bleeding — rule out endometrial pathology"],"western_context_zh":"常於生殖脈絡中討論雌激素支持、宮腔評估與改善內膜之策略；此為文件對照用語，非治療指示。","western_context_en":"Commonly discussed within reproductive care regarding estrogen support, cavity assessment, and strategies to improve the lining. Documentation context only, not a treatment instruction."},
-    {"id":"cond.pmdd","name_en":"Premenstrual Dysphoric Disorder (context)","name_zh":"經前不悅症（文件情境）","category":"gyn_fertility","icd_hint":"F32.81","related_eastern_diseases":["tdis.yu_zheng","tdis.zang_zao"],"related_patterns":["pattern.liver_qi_stagnation","pattern.liver_fire","pattern.heart_spleen_deficiency"],"review_status":"draft","summary_zh":"經前不悅症（文件情境）為經前症候群之嚴重型，以黃體期顯著情緒症狀（易怒、情緒低落、焦慮、失控感）為主，明顯影響人際與功能，月經來潮後緩解。","summary_en":"Premenstrual dysphoric disorder (context) is a severe form of PMS dominated by marked luteal-phase mood symptoms (irritability, low mood, anxiety, feeling out of control) that impair relationships and function and remit after menses.","red_flags_zh":["自殺意念、自傷或絕望感需即時精神科／危機介入","症狀無週期性或整月持續，應重新評估是否為其他情緒疾患","症狀急遽惡化影響安全"],"red_flags_en":["Suicidal ideation, self-harm, or hopelessness — urgent psychiatric/crisis intervention","Non-cyclical or month-long symptoms — reassess for another mood disorder","Rapid worsening affecting safety"],"western_context_zh":"常以血清素類藥物、荷爾蒙處置與心理支持處理；此為文件對照用語，非治療指示。","western_context_en":"Commonly managed with serotonergic agents, hormonal approaches, and psychological support. Documentation context only, not a treatment instruction."},
-    {"id":"cond.secondary_dysmenorrhea","name_en":"Secondary Dysmenorrhea","name_zh":"繼發性痛經","category":"gyn_fertility","icd_hint":"N94.5","related_eastern_diseases":["tdis.tong_jing","tdis.zheng_jia"],"related_patterns":["pattern.blood_stasis","pattern.qi_stagnation_blood_stasis"],"review_status":"draft","summary_zh":"繼發性痛經指由骨盆腔器質病變（如子宮內膜異位、子宮腺肌症、肌瘤、骨盆腔炎或宮內裝置）引起的經期疼痛，常於成年後新發或型態改變，需查明病因。","summary_en":"Secondary dysmenorrhea is menstrual pain caused by pelvic pathology (endometriosis, adenomyosis, fibroids, PID, or an intrauterine device), often new-onset in adulthood or with a changed pattern, requiring identification of the cause.","red_flags_zh":["進行性加重或止痛無效之痛經需影像與專科評估","發燒、異常分泌物提示感染","劇痛合併異常出血或疑似懷孕需排除急症","深部性交痛與腸道／膀胱周期症狀提示內膜異位深部浸潤"],"red_flags_en":["Progressive or analgesia-resistant pain — imaging and specialist evaluation","Fever or abnormal discharge suggests infection","Severe pain with abnormal bleeding or possible pregnancy — rule out acute causes","Deep dyspareunia with cyclical bowel/bladder symptoms suggests deep infiltrating endometriosis"],"western_context_zh":"處置以治療潛在病因為主，並輔以疼痛管理；此為文件對照用語，非治療指示。","western_context_en":"Management targets the underlying cause with adjunctive pain control. Documentation context only, not a treatment instruction."},
-    {"id":"cond.chronic_low_back_pain","name_en":"Chronic Low Back Pain","name_zh":"慢性下背痛","category":"pain_msk","icd_hint":"M54.5","related_eastern_diseases":["tdis.yao_tong","tdis.bi_zheng"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.kidney_yin_deficiency","pattern.wind_damp_bi","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.acute_lumbar_sprain","name_en":"Acute Lumbar Sprain","name_zh":"急性腰扭傷","category":"pain_msk","icd_hint":"S39.012","related_eastern_diseases":["tdis.yao_tong","tdis.jin_shang"],"related_patterns":["pattern.qi_stagnation_blood_stasis"],"review_status":"draft"},
-    {"id":"cond.lumbar_disc_herniation","name_en":"Lumbar Disc Herniation","name_zh":"腰椎椎間盤突出","category":"pain_msk","icd_hint":"M51.2","related_eastern_diseases":["tdis.yao_tong","tdis.bi_zheng"],"related_patterns":["pattern.blood_stasis","pattern.wind_damp_bi","pattern.kidney_yang_deficiency"],"review_status":"draft"},
-    {"id":"cond.sciatica","name_en":"Sciatica","name_zh":"坐骨神經痛","category":"pain_msk","icd_hint":"M54.3","related_eastern_diseases":["tdis.bi_zheng","tdis.yao_tong"],"related_patterns":["pattern.wind_damp_bi","pattern.blood_stasis","pattern.kidney_yang_deficiency"],"review_status":"draft"},
-    {"id":"cond.cervical_spondylosis","name_en":"Cervical Spondylosis","name_zh":"頸椎病","category":"pain_msk","icd_hint":"M47.812","related_eastern_diseases":["tdis.bi_zheng","tdis.xuan_yun"],"related_patterns":["pattern.wind_damp_bi","pattern.qi_stagnation_blood_stasis","pattern.liver_yang_rising"],"review_status":"draft"},
-    {"id":"cond.neck_pain_stiff","name_en":"Acute Neck Pain / Stiff Neck","name_zh":"急性頸痛／落枕","category":"pain_msk","icd_hint":"M54.2","related_eastern_diseases":["tdis.luo_zhen"],"related_patterns":["pattern.wind_damp_bi","pattern.qi_stagnation_blood_stasis"],"review_status":"draft"},
-    {"id":"cond.whiplash","name_en":"Whiplash-Associated Disorder (context)","name_zh":"揮鞭式頸部損傷（文件情境）","category":"pain_msk","icd_hint":"S13.4","related_eastern_diseases":["tdis.jin_shang"],"related_patterns":["pattern.qi_stagnation_blood_stasis"],"review_status":"draft"},
-    {"id":"cond.frozen_shoulder","name_en":"Frozen Shoulder (Adhesive Capsulitis)","name_zh":"五十肩／冷凍肩","category":"pain_msk","icd_hint":"M75.0","related_eastern_diseases":["tdis.jian_ning","tdis.bi_zheng"],"related_patterns":["pattern.wind_damp_bi","pattern.qi_blood_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.rotator_cuff","name_en":"Rotator Cuff Tendinopathy","name_zh":"旋轉肌袖肌腱病變","category":"pain_msk","icd_hint":"M75.1","related_eastern_diseases":["tdis.jin_shang","tdis.bi_zheng"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.lateral_epicondylitis","name_en":"Lateral Epicondylitis (Tennis Elbow)","name_zh":"網球肘","category":"pain_msk","icd_hint":"M77.1","related_eastern_diseases":["tdis.jin_shang","tdis.bi_zheng"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.medial_epicondylitis","name_en":"Medial Epicondylitis (Golfer's Elbow)","name_zh":"高爾夫球肘","category":"pain_msk","icd_hint":"M77.0","related_eastern_diseases":["tdis.jin_shang"],"related_patterns":["pattern.qi_stagnation_blood_stasis"],"review_status":"draft"},
-    {"id":"cond.carpal_tunnel","name_en":"Carpal Tunnel Syndrome","name_zh":"腕隧道症候群","category":"pain_msk","icd_hint":"G56.0","related_eastern_diseases":["tdis.ma_mu","tdis.bi_zheng"],"related_patterns":["pattern.wind_damp_bi","pattern.qi_blood_deficiency","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.de_quervain","name_en":"De Quervain Tenosynovitis","name_zh":"媽媽手（狹窄性腱鞘炎）","category":"pain_msk","icd_hint":"M65.4","related_eastern_diseases":["tdis.jin_shang"],"related_patterns":["pattern.qi_stagnation_blood_stasis"],"review_status":"draft"},
-    {"id":"cond.trigger_finger","name_en":"Trigger Finger","name_zh":"扳機指","category":"pain_msk","icd_hint":"M65.3","related_eastern_diseases":["tdis.jin_shang"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.knee_osteoarthritis","name_en":"Knee Osteoarthritis","name_zh":"膝骨關節炎","category":"pain_msk","icd_hint":"M17","related_eastern_diseases":["tdis.bi_zheng"],"related_patterns":["pattern.wind_damp_bi","pattern.kidney_yang_deficiency","pattern.qi_blood_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.patellofemoral_pain","name_en":"Patellofemoral Pain Syndrome","name_zh":"髕股疼痛症候群","category":"pain_msk","icd_hint":"M22.2","related_eastern_diseases":["tdis.bi_zheng","tdis.jin_shang"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.meniscus_injury","name_en":"Meniscus Injury (context)","name_zh":"半月板損傷（文件情境）","category":"pain_msk","icd_hint":"S83.2","related_eastern_diseases":["tdis.jin_shang"],"related_patterns":["pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.ankle_sprain","name_en":"Ankle Sprain","name_zh":"踝關節扭傷","category":"pain_msk","icd_hint":"S93.4","related_eastern_diseases":["tdis.jin_shang"],"related_patterns":["pattern.qi_stagnation_blood_stasis"],"review_status":"draft"},
-    {"id":"cond.plantar_fasciitis","name_en":"Plantar Fasciitis","name_zh":"足底筋膜炎","category":"pain_msk","icd_hint":"M72.2","related_eastern_diseases":["tdis.bi_zheng","tdis.jin_shang"],"related_patterns":["pattern.kidney_yin_deficiency","pattern.blood_stasis","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.achilles_tendinopathy","name_en":"Achilles Tendinopathy","name_zh":"阿基里斯腱病變","category":"pain_msk","icd_hint":"M76.6","related_eastern_diseases":["tdis.jin_shang"],"related_patterns":["pattern.kidney_yin_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.hip_osteoarthritis","name_en":"Hip Osteoarthritis","name_zh":"髖骨關節炎","category":"pain_msk","icd_hint":"M16","related_eastern_diseases":["tdis.bi_zheng"],"related_patterns":["pattern.wind_damp_bi","pattern.kidney_yang_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.piriformis_syndrome","name_en":"Piriformis Syndrome","name_zh":"梨狀肌症候群","category":"pain_msk","icd_hint":"G57.0","related_eastern_diseases":["tdis.bi_zheng"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.fibromyalgia","name_en":"Fibromyalgia","name_zh":"纖維肌痛症","category":"pain_msk","icd_hint":"M79.7","related_eastern_diseases":["tdis.bi_zheng","tdis.yu_zheng","tdis.xu_lao"],"related_patterns":["pattern.liver_qi_stagnation","pattern.qi_blood_deficiency","pattern.heart_spleen_deficiency","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.myofascial_pain","name_en":"Myofascial Pain Syndrome","name_zh":"肌筋膜疼痛症候群","category":"pain_msk","icd_hint":"M79.1","related_eastern_diseases":["tdis.bi_zheng"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.tmd","name_en":"Temporomandibular Disorder","name_zh":"顳顎關節障礙","category":"pain_msk","icd_hint":"M26.6","related_eastern_diseases":["tdis.mian_tong","tdis.bi_zheng"],"related_patterns":["pattern.liver_qi_stagnation","pattern.qi_stagnation_blood_stasis","pattern.wind_damp_bi"],"review_status":"draft"},
-    {"id":"cond.tension_headache","name_en":"Tension-Type Headache","name_zh":"緊張型頭痛","category":"pain_msk","icd_hint":"G44.2","related_eastern_diseases":["tdis.tou_tong"],"related_patterns":["pattern.liver_qi_stagnation","pattern.qi_blood_deficiency","pattern.liver_yang_rising"],"review_status":"draft"},
-    {"id":"cond.migraine","name_en":"Migraine","name_zh":"偏頭痛","category":"pain_msk","icd_hint":"G43","related_eastern_diseases":["tdis.tou_tong"],"related_patterns":["pattern.liver_yang_rising","pattern.liver_fire","pattern.phlegm_damp","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.cluster_headache","name_en":"Cluster Headache (context)","name_zh":"叢發性頭痛（文件情境）","category":"pain_msk","icd_hint":"G44.0","related_eastern_diseases":["tdis.tou_tong"],"related_patterns":["pattern.liver_fire","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.gout","name_en":"Gout (context)","name_zh":"痛風（文件情境）","category":"pain_msk","icd_hint":"M10","related_eastern_diseases":["tdis.bi_zheng"],"related_patterns":["pattern.heat_bi","pattern.damp_heat_spleen_stomach","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.rheumatoid_arthritis","name_en":"Rheumatoid Arthritis (context)","name_zh":"類風濕性關節炎（文件情境）","category":"pain_msk","icd_hint":"M05","related_eastern_diseases":["tdis.bi_zheng"],"related_patterns":["pattern.wind_damp_bi","pattern.heat_bi","pattern.kidney_yang_deficiency","pattern.qi_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.gerd","name_en":"Gastroesophageal Reflux Disease","name_zh":"胃食道逆流","category":"gi","icd_hint":"K21","related_eastern_diseases":["tdis.tun_suan","tdis.wei_tong"],"related_patterns":["pattern.liver_stomach_disharmony","pattern.stomach_heat","pattern.spleen_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.functional_dyspepsia","name_en":"Functional Dyspepsia","name_zh":"功能性消化不良","aliases_en":["Dyspepsia","Indigestion"],"aliases_zh":["消化不良"],"category":"gi","icd_hint":"K30","related_eastern_diseases":["tdis.pi_man","tdis.wei_tong"],"related_patterns":["pattern.liver_stomach_disharmony","pattern.spleen_qi_deficiency","pattern.food_stagnation"],"related_tcm_symptoms":[{"name_zh":"上腹胃脘痛","name_en":"Upper Abdominal / Epigastric Pain","relation_type":"related","source_id":"cloudtcm_disease_taxonomy","source_url":"https://cloudtcm.com/disease/tcm/28325","review_status":"draft","notes":"雲端中醫將 Dyspepsia 列為相似名稱；此處保留為相關症狀概念，不視為與功能性消化不良完全等同。"}],"summary_zh":"功能性消化不良是腸腦互動障礙之一，可見上腹疼痛、灼熱或不適、進食時過早飽足、少量進食後仍感過飽，以及腹脹、噁心或噯氣等症狀。此為學習與文件對照摘要，不取代臨床診斷。","summary_en":"Functional dyspepsia is a disorder of gut-brain interaction. Symptoms may include upper-abdominal pain, burning or discomfort, early satiety, uncomfortable post-meal fullness, bloating, nausea, or belching. Study and documentation context only; not a diagnostic substitute.","red_flags_zh":["胸、下顎、頸部或手臂疼痛","吞嚥困難或吞嚥疼痛","頻繁嘔吐或嘔血","嚴重且持續的腹痛","呼吸困難","非刻意體重減輕或食慾喪失","眼睛或皮膚發黃","黑色柏油樣糞便"],"red_flags_en":["Pain in the chest, jaw, neck, or arm","Difficulty or pain with swallowing","Frequent vomiting or bloody vomit","Severe and constant abdominal pain","Shortness of breath","Unintentional weight loss or loss of appetite","Yellowing of the eyes or skin","Black, tarry stools"],"source_links":[{"source_id":"cloudtcm_disease_taxonomy","language":"zh-Hant","label_zh":"雲端中醫 · 上腹胃脘痛","label_en":"CloudTCM · Upper abdominal / epigastric pain","url":"https://cloudtcm.com/disease/tcm/28325","relation_type":"related"},{"source_id":"niddk_indigestion_dyspepsia","language":"en","label_zh":"NIDDK · 消化不良（Dyspepsia）","label_en":"NIDDK · Indigestion (Dyspepsia)","url":"https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia","relation_type":"concept_reference"}],"source_urls":["https://cloudtcm.com/disease/tcm/28325","https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia"],"source_status":"dual_source_draft","review_status":"draft"},
-    {"id":"cond.chronic_gastritis","name_en":"Chronic Gastritis (context)","name_zh":"慢性胃炎（文件情境）","category":"gi","icd_hint":"K29.5","related_eastern_diseases":["tdis.wei_tong","tdis.pi_man"],"related_patterns":["pattern.spleen_qi_deficiency","pattern.stomach_yin_deficiency","pattern.damp_heat_spleen_stomach","pattern.liver_stomach_disharmony"],"review_status":"draft"},
-    {"id":"cond.peptic_ulcer","name_en":"Peptic Ulcer Disease (context)","name_zh":"消化性潰瘍（文件情境）","category":"gi","icd_hint":"K27","related_eastern_diseases":["tdis.wei_tong"],"related_patterns":["pattern.stomach_heat","pattern.spleen_yang_deficiency","pattern.blood_stasis","pattern.liver_stomach_disharmony"],"review_status":"draft"},
-    {"id":"cond.ibs","name_en":"Irritable Bowel Syndrome","name_zh":"腸躁症","category":"gi","icd_hint":"K58","related_eastern_diseases":["tdis.xie_xie","tdis.fu_tong","tdis.bian_mi"],"related_patterns":["pattern.liver_spleen_disharmony","pattern.spleen_qi_deficiency","pattern.spleen_kidney_yang_deficiency"],"review_status":"draft"},
-    {"id":"cond.ibd","name_en":"Inflammatory Bowel Disease (context)","name_zh":"發炎性腸道疾病（文件情境）","category":"gi","icd_hint":"K50-K51","related_eastern_diseases":["tdis.xie_xie","tdis.fu_tong"],"related_patterns":["pattern.damp_heat_spleen_stomach","pattern.spleen_kidney_yang_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.chronic_constipation","name_en":"Chronic Constipation","name_zh":"慢性便秘","category":"gi","icd_hint":"K59.0","related_eastern_diseases":["tdis.bian_mi"],"related_patterns":["pattern.stomach_heat","pattern.liver_qi_stagnation","pattern.qi_blood_deficiency","pattern.kidney_yang_deficiency"],"review_status":"draft"},
-    {"id":"cond.chronic_diarrhea","name_en":"Chronic Diarrhea","name_zh":"慢性腹瀉","category":"gi","icd_hint":"K59.1","related_eastern_diseases":["tdis.xie_xie"],"related_patterns":["pattern.spleen_qi_deficiency","pattern.spleen_kidney_yang_deficiency","pattern.damp_heat_spleen_stomach","pattern.liver_spleen_disharmony"],"review_status":"draft"},
-    {"id":"cond.nausea_vomiting","name_en":"Nausea and Vomiting","name_zh":"噁心嘔吐","category":"gi","icd_hint":"R11","related_eastern_diseases":["tdis.ou_tu"],"related_patterns":["pattern.liver_stomach_disharmony","pattern.food_stagnation","pattern.spleen_qi_deficiency","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.hemorrhoids","name_en":"Hemorrhoids","name_zh":"痔瘡","category":"gi","icd_hint":"K64","related_eastern_diseases":["tdis.zhi_chuang"],"related_patterns":["pattern.damp_heat_lower_burner","pattern.spleen_qi_sinking","pattern.blood_heat"],"review_status":"draft"},
-    {"id":"cond.nafld","name_en":"Nonalcoholic Fatty Liver (context)","name_zh":"非酒精性脂肪肝（文件情境）","category":"gi","icd_hint":"K76.0","related_eastern_diseases":["tdis.xie_tong","tdis.fei_pang"],"related_patterns":["pattern.phlegm_damp","pattern.liver_qi_stagnation","pattern.damp_heat_spleen_stomach"],"review_status":"draft"},
-    {"id":"cond.gallbladder_dysfunction","name_en":"Biliary Dyskinesia / Gallbladder Dysfunction (context)","name_zh":"膽道功能障礙（文件情境）","category":"gi","icd_hint":"K82.8","related_eastern_diseases":["tdis.xie_tong"],"related_patterns":["pattern.liver_gallbladder_damp_heat","pattern.liver_qi_stagnation"],"review_status":"draft"},
-    {"id":"cond.cinv","name_en":"Chemotherapy-Induced Nausea (adjunctive context)","name_zh":"化療相關噁心（輔助文件情境）","category":"gi","icd_hint":"T45.1/R11","related_eastern_diseases":["tdis.ou_tu"],"related_patterns":["pattern.spleen_qi_deficiency","pattern.stomach_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.post_op_ileus","name_en":"Postoperative Ileus (adjunctive context)","name_zh":"術後腸麻痺（輔助文件情境）","category":"gi","icd_hint":"K91.89","related_eastern_diseases":["tdis.fu_tong","tdis.bian_mi"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.spleen_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.food_sensitivity","name_en":"Food Intolerance (context)","name_zh":"食物不耐（文件情境）","category":"gi","icd_hint":"K90.4","related_eastern_diseases":["tdis.xie_xie","tdis.pi_man"],"related_patterns":["pattern.spleen_qi_deficiency","pattern.food_stagnation"],"review_status":"draft"},
-    {"id":"cond.insomnia","name_en":"Insomnia","name_zh":"失眠","category":"psych_sleep","icd_hint":"G47.0","related_eastern_diseases":["tdis.bu_mei"],"related_patterns":["pattern.heart_spleen_deficiency","pattern.heart_kidney_not_communicating","pattern.liver_fire","pattern.heart_blood_deficiency","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.anxiety","name_en":"Anxiety (context)","name_zh":"焦慮（文件情境）","category":"psych_sleep","icd_hint":"F41","related_eastern_diseases":["tdis.yu_zheng","tdis.zang_zao","tdis.xin_ji"],"related_patterns":["pattern.liver_qi_stagnation","pattern.heart_yin_deficiency","pattern.heart_kidney_not_communicating","pattern.heart_spleen_deficiency"],"review_status":"draft"},
-    {"id":"cond.depression","name_en":"Depression (context)","name_zh":"憂鬱（文件情境）","category":"psych_sleep","icd_hint":"F32-F33","related_eastern_diseases":["tdis.yu_zheng"],"related_patterns":["pattern.liver_qi_stagnation","pattern.heart_spleen_deficiency","pattern.kidney_yang_deficiency","pattern.phlegm_misting_heart"],"review_status":"draft"},
-    {"id":"cond.panic_disorder","name_en":"Panic Disorder (context)","name_zh":"恐慌症（文件情境）","category":"psych_sleep","icd_hint":"F41.0","related_eastern_diseases":["tdis.xin_ji","tdis.zang_zao"],"related_patterns":["pattern.heart_qi_deficiency","pattern.heart_kidney_not_communicating","pattern.phlegm_misting_heart"],"review_status":"draft"},
-    {"id":"cond.ptsd","name_en":"PTSD (context)","name_zh":"創傷後壓力症（文件情境）","category":"psych_sleep","icd_hint":"F43.1","related_eastern_diseases":["tdis.yu_zheng","tdis.bu_mei","tdis.xin_ji"],"related_patterns":["pattern.liver_qi_stagnation","pattern.heart_blood_deficiency","pattern.phlegm_misting_heart"],"review_status":"draft"},
-    {"id":"cond.adhd","name_en":"ADHD (context)","name_zh":"注意力不足過動症（文件情境）","category":"psych_sleep","icd_hint":"F90","related_eastern_diseases":["tdis.jian_wang"],"related_patterns":["pattern.heart_spleen_deficiency","pattern.kidney_essence_deficiency","pattern.liver_yang_rising"],"review_status":"draft"},
-    {"id":"cond.stress_burnout","name_en":"Stress / Burnout","name_zh":"壓力與過勞","category":"psych_sleep","icd_hint":"Z73.0","related_eastern_diseases":["tdis.yu_zheng","tdis.xu_lao"],"related_patterns":["pattern.liver_qi_stagnation","pattern.qi_blood_deficiency","pattern.heart_spleen_deficiency"],"review_status":"draft"},
-    {"id":"cond.chronic_fatigue","name_en":"Chronic Fatigue Syndrome (context)","name_zh":"慢性疲勞症候群（文件情境）","category":"psych_sleep","icd_hint":"G93.3","related_eastern_diseases":["tdis.xu_lao"],"related_patterns":["pattern.spleen_qi_deficiency","pattern.kidney_yang_deficiency","pattern.qi_blood_deficiency","pattern.liver_qi_stagnation"],"review_status":"draft"},
-    {"id":"cond.restless_legs","name_en":"Restless Legs Syndrome","name_zh":"不寧腿症候群","category":"psych_sleep","icd_hint":"G25.81","related_eastern_diseases":["tdis.bu_mei","tdis.ma_mu"],"related_patterns":["pattern.liver_blood_deficiency","pattern.kidney_yin_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.circadian_disorder","name_en":"Circadian Rhythm Sleep Disorder (context)","name_zh":"晝夜節律睡眠障礙（文件情境）","category":"psych_sleep","icd_hint":"G47.2","related_eastern_diseases":["tdis.bu_mei"],"related_patterns":["pattern.heart_kidney_not_communicating","pattern.liver_qi_stagnation"],"review_status":"draft"},
-    {"id":"cond.smoking_cessation","name_en":"Smoking Cessation Support (context)","name_zh":"戒菸輔助（文件情境）","category":"psych_sleep","icd_hint":"F17.2","related_eastern_diseases":["tdis.yu_zheng"],"related_patterns":["pattern.liver_qi_stagnation","pattern.phlegm_heat_in_lung"],"review_status":"draft"},
-    {"id":"cond.somatic_symptom","name_en":"Somatic Symptom Disorder (context)","name_zh":"身體症狀障礙（文件情境）","category":"psych_sleep","icd_hint":"F45","related_eastern_diseases":["tdis.yu_zheng","tdis.mei_he_qi","tdis.bai_he_bing"],"related_patterns":["pattern.liver_qi_stagnation","pattern.heart_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.poor_memory","name_en":"Memory Decline (context)","name_zh":"記憶力減退（文件情境）","category":"psych_sleep","icd_hint":"R41.3","related_eastern_diseases":["tdis.jian_wang"],"related_patterns":["pattern.heart_spleen_deficiency","pattern.kidney_essence_deficiency","pattern.phlegm_misting_heart"],"review_status":"draft"},
-    {"id":"cond.alcohol_use","name_en":"Alcohol Use Support (context)","name_zh":"飲酒問題輔助（文件情境）","category":"psych_sleep","icd_hint":"F10","related_eastern_diseases":["tdis.yu_zheng"],"related_patterns":["pattern.liver_gallbladder_damp_heat","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.eating_disorder","name_en":"Disordered Eating (context)","name_zh":"飲食失調（文件情境）","category":"psych_sleep","icd_hint":"F50","related_eastern_diseases":["tdis.yu_zheng"],"related_patterns":["pattern.liver_spleen_disharmony","pattern.spleen_qi_deficiency","pattern.stomach_heat"],"review_status":"draft"},
-    {"id":"cond.common_cold","name_en":"Common Cold / URI","name_zh":"感冒／上呼吸道感染","category":"respiratory","icd_hint":"J00","related_eastern_diseases":["tdis.gan_mao"],"related_patterns":["pattern.wind_cold_invading_lung","pattern.wind_heat_invading_lung","pattern.lung_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.influenza","name_en":"Influenza (context)","name_zh":"流行性感冒（文件情境）","category":"respiratory","icd_hint":"J10-J11","related_eastern_diseases":["tdis.gan_mao"],"related_patterns":["pattern.wind_heat_invading_lung"],"review_status":"draft"},
-    {"id":"cond.allergic_rhinitis","name_en":"Allergic Rhinitis","name_zh":"過敏性鼻炎","category":"respiratory","icd_hint":"J30","related_eastern_diseases":["tdis.bi_qiu"],"related_patterns":["pattern.lung_qi_deficiency","pattern.spleen_qi_deficiency","pattern.kidney_yang_deficiency"],"review_status":"draft"},
-    {"id":"cond.chronic_sinusitis","name_en":"Chronic Sinusitis","name_zh":"慢性鼻竇炎","category":"respiratory","icd_hint":"J32","related_eastern_diseases":["tdis.bi_yuan"],"related_patterns":["pattern.wind_heat_invading_lung","pattern.liver_gallbladder_damp_heat","pattern.spleen_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.asthma","name_en":"Asthma (adjunctive context)","name_zh":"氣喘（輔助文件情境）","category":"respiratory","icd_hint":"J45","related_eastern_diseases":["tdis.xiao_bing","tdis.chuan_zheng"],"related_patterns":["pattern.phlegm_damp_in_lung","pattern.phlegm_heat_in_lung","pattern.lung_qi_deficiency","pattern.kidney_not_grasping_qi"],"review_status":"draft"},
-    {"id":"cond.copd","name_en":"COPD (adjunctive context)","name_zh":"慢性阻塞性肺病（輔助文件情境）","category":"respiratory","icd_hint":"J44","related_eastern_diseases":["tdis.chuan_zheng","tdis.ke_sou"],"related_patterns":["pattern.lung_qi_deficiency","pattern.kidney_not_grasping_qi","pattern.phlegm_damp_in_lung"],"review_status":"draft"},
-    {"id":"cond.chronic_cough","name_en":"Chronic Cough","name_zh":"慢性咳嗽","category":"respiratory","icd_hint":"R05.3","related_eastern_diseases":["tdis.ke_sou"],"related_patterns":["pattern.lung_yin_deficiency","pattern.phlegm_damp_in_lung","pattern.liver_fire"],"review_status":"draft"},
-    {"id":"cond.post_viral_cough","name_en":"Post-Viral Cough","name_zh":"感染後咳嗽","category":"respiratory","icd_hint":"R05.1","related_eastern_diseases":["tdis.ke_sou"],"related_patterns":["pattern.lung_yin_deficiency","pattern.lung_qi_deficiency","pattern.wind_heat_invading_lung"],"review_status":"draft"},
-    {"id":"cond.acute_bronchitis","name_en":"Acute Bronchitis (context)","name_zh":"急性支氣管炎（文件情境）","category":"respiratory","icd_hint":"J20","related_eastern_diseases":["tdis.ke_sou"],"related_patterns":["pattern.wind_heat_invading_lung","pattern.phlegm_heat_in_lung"],"review_status":"draft"},
-    {"id":"cond.sleep_apnea","name_en":"Obstructive Sleep Apnea (context)","name_zh":"阻塞性睡眠呼吸中止（文件情境）","category":"respiratory","icd_hint":"G47.33","related_eastern_diseases":["tdis.fei_pang","tdis.bu_mei"],"related_patterns":["pattern.phlegm_damp","pattern.spleen_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.bells_palsy","name_en":"Bell's Palsy","name_zh":"顏面神經麻痺","category":"neuro","icd_hint":"G51.0","related_eastern_diseases":["tdis.mian_tan"],"related_patterns":["pattern.wind_cold_invading_lung","pattern.qi_blood_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.stroke_rehab","name_en":"Post-Stroke Rehabilitation","name_zh":"中風後復健","category":"neuro","icd_hint":"I69","related_eastern_diseases":["tdis.zhong_feng"],"related_patterns":["pattern.qi_stagnation_blood_stasis","pattern.liver_yang_rising","pattern.phlegm_misting_heart","pattern.qi_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.peripheral_neuropathy","name_en":"Peripheral Neuropathy","name_zh":"周邊神經病變","category":"neuro","icd_hint":"G62.9","related_eastern_diseases":["tdis.ma_mu","tdis.wei_zheng"],"related_patterns":["pattern.qi_blood_deficiency","pattern.blood_stasis","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.diabetic_neuropathy","name_en":"Diabetic Peripheral Neuropathy","name_zh":"糖尿病周邊神經病變","category":"neuro","icd_hint":"E11.42","related_eastern_diseases":["tdis.xiao_ke","tdis.ma_mu"],"related_patterns":["pattern.qi_blood_deficiency","pattern.kidney_yin_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.trigeminal_neuralgia","name_en":"Trigeminal Neuralgia","name_zh":"三叉神經痛","aliases_en":["Tic Douloureux"],"aliases_zh":[],"category":"neuro","icd_hint":"G50.0","related_eastern_diseases":["tdis.mian_tong"],"related_patterns":["pattern.liver_fire","pattern.wind_damp_bi","pattern.blood_stasis"],"summary_zh":"三叉神經痛表現為突發且劇烈的臉部疼痛，常被描述為尖銳、射擊樣或電擊樣疼痛，多影響單側，可持續數秒至約兩分鐘。洗臉、進食、刷牙、輕觸或風吹等刺激可能誘發疼痛。此為學習與文件對照摘要，不取代臨床診斷。","summary_en":"Trigeminal neuralgia causes sudden, severe facial pain often described as sharp, shooting, or electric-shock-like. It usually affects one side and may last from a few seconds to about two minutes. Washing, eating, brushing the teeth, light touch, or wind may trigger attacks. Study and documentation context only; not a diagnostic substitute.","red_flags_zh":["頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估"],"red_flags_en":["Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out"],"source_links":[{"source_id":"cloudtcm_disease_taxonomy","language":"zh-Hant","label_zh":"雲端中醫 · 三叉神經痛","label_en":"CloudTCM · Trigeminal Neuralgia","url":"https://cloudtcm.com/disease/tcm/36","relation_type":"concept_reference"},{"source_id":"nhs_trigeminal_neuralgia","language":"en","label_zh":"NHS · 三叉神經痛","label_en":"NHS · Trigeminal Neuralgia","url":"https://www.nhs.uk/conditions/trigeminal-neuralgia/","relation_type":"concept_reference"}],"source_urls":["https://cloudtcm.com/disease/tcm/36","https://www.nhs.uk/conditions/trigeminal-neuralgia/"],"source_status":"dual_source_draft","review_status":"draft"},
-    {"id":"cond.postherpetic_neuralgia","name_en":"Postherpetic Neuralgia","name_zh":"帶狀皰疹後神經痛","category":"neuro","icd_hint":"B02.29","related_eastern_diseases":["tdis.she_chuan_chuang"],"related_patterns":["pattern.blood_stasis","pattern.liver_gallbladder_damp_heat","pattern.qi_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.parkinsons","name_en":"Parkinson's Disease (adjunctive context)","name_zh":"帕金森氏症（輔助文件情境）","category":"neuro","icd_hint":"G20","related_eastern_diseases":["tdis.chan_zheng"],"related_patterns":["pattern.liver_wind","pattern.kidney_essence_deficiency","pattern.liver_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.multiple_sclerosis","name_en":"Multiple Sclerosis (adjunctive context)","name_zh":"多發性硬化症（輔助文件情境）","category":"neuro","icd_hint":"G35","related_eastern_diseases":["tdis.wei_zheng","tdis.ma_mu"],"related_patterns":["pattern.kidney_essence_deficiency","pattern.spleen_qi_deficiency","pattern.damp_heat_spleen_stomach"],"review_status":"draft"},
-    {"id":"cond.essential_tremor","name_en":"Essential Tremor (context)","name_zh":"原發性顫抖症（文件情境）","category":"neuro","icd_hint":"G25.0","related_eastern_diseases":["tdis.chan_zheng"],"related_patterns":["pattern.liver_wind","pattern.liver_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.dizziness_vertigo","name_en":"Dizziness / Vertigo","name_zh":"頭暈／眩暈","category":"neuro","icd_hint":"R42","related_eastern_diseases":["tdis.xuan_yun"],"related_patterns":["pattern.liver_yang_rising","pattern.phlegm_damp","pattern.qi_blood_deficiency","pattern.kidney_essence_deficiency"],"review_status":"draft"},
-    {"id":"cond.menieres","name_en":"Ménière's Disease (context)","name_zh":"梅尼爾氏症（文件情境）","category":"neuro","icd_hint":"H81.0","related_eastern_diseases":["tdis.xuan_yun","tdis.er_ming_er_long"],"related_patterns":["pattern.phlegm_damp","pattern.liver_yang_rising","pattern.kidney_essence_deficiency"],"review_status":"draft"},
-    {"id":"cond.migraine_vestibular","name_en":"Vestibular Migraine (context)","name_zh":"前庭性偏頭痛（文件情境）","category":"neuro","icd_hint":"G43.82","related_eastern_diseases":["tdis.xuan_yun","tdis.tou_tong"],"related_patterns":["pattern.liver_yang_rising","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.eczema","name_en":"Atopic Dermatitis / Eczema","name_zh":"異位性皮膚炎／濕疹","category":"derm","icd_hint":"L20","related_eastern_diseases":["tdis.shi_chuang"],"related_patterns":["pattern.damp_heat_spleen_stomach","pattern.blood_heat","pattern.spleen_qi_deficiency","pattern.liver_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.urticaria","name_en":"Urticaria","name_zh":"蕁麻疹","category":"derm","icd_hint":"L50","related_eastern_diseases":["tdis.yin_zhen"],"related_patterns":["pattern.wind_heat_invading_lung","pattern.blood_heat","pattern.qi_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.acne","name_en":"Acne Vulgaris","name_zh":"痤瘡","category":"derm","icd_hint":"L70.0","related_eastern_diseases":["tdis.fen_ci"],"related_patterns":["pattern.stomach_heat","pattern.damp_heat_spleen_stomach","pattern.blood_heat","pattern.chong_ren_disharmony"],"review_status":"draft"},
-    {"id":"cond.psoriasis","name_en":"Psoriasis (context)","name_zh":"乾癬／銀屑病（文件情境）","category":"derm","icd_hint":"L40","related_eastern_diseases":["tdis.bai_bi"],"related_patterns":["pattern.blood_heat","pattern.blood_stasis","pattern.liver_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.herpes_zoster","name_en":"Herpes Zoster (acute)","name_zh":"帶狀皰疹（急性期）","category":"derm","icd_hint":"B02","related_eastern_diseases":["tdis.she_chuan_chuang"],"related_patterns":["pattern.liver_gallbladder_damp_heat","pattern.damp_heat_spleen_stomach","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.alopecia","name_en":"Alopecia Areata (context)","name_zh":"斑禿（文件情境）","category":"derm","icd_hint":"L63","related_eastern_diseases":["tdis.you_feng"],"related_patterns":["pattern.liver_blood_deficiency","pattern.kidney_essence_deficiency","pattern.blood_heat","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.rosacea","name_en":"Rosacea (context)","name_zh":"酒糟性皮膚炎（文件情境）","category":"derm","icd_hint":"L71","related_eastern_diseases":["tdis.fen_ci"],"related_patterns":["pattern.stomach_heat","pattern.blood_heat","pattern.liver_fire"],"review_status":"draft"},
-    {"id":"cond.pruritus","name_en":"Chronic Pruritus (context)","name_zh":"慢性搔癢（文件情境）","category":"derm","icd_hint":"L29","related_eastern_diseases":["tdis.yin_zhen","tdis.shi_chuang"],"related_patterns":["pattern.blood_heat","pattern.liver_blood_deficiency","pattern.damp_heat_spleen_stomach"],"review_status":"draft"},
-    {"id":"cond.t2dm","name_en":"Type 2 Diabetes (adjunctive context)","name_zh":"第二型糖尿病（輔助文件情境）","category":"endo_metabolic","icd_hint":"E11","related_eastern_diseases":["tdis.xiao_ke"],"related_patterns":["pattern.stomach_yin_deficiency","pattern.kidney_yin_deficiency","pattern.qi_blood_deficiency","pattern.damp_heat_spleen_stomach"],"review_status":"draft"},
-    {"id":"cond.metabolic_syndrome","name_en":"Prediabetes / Metabolic Syndrome (context)","name_zh":"代謝症候群（文件情境）","category":"endo_metabolic","icd_hint":"E88.81","related_eastern_diseases":["tdis.fei_pang","tdis.xiao_ke"],"related_patterns":["pattern.phlegm_damp","pattern.spleen_qi_deficiency","pattern.damp_heat_spleen_stomach"],"review_status":"draft"},
-    {"id":"cond.hypothyroidism","name_en":"Hypothyroidism (context)","name_zh":"甲狀腺功能低下（文件情境）","category":"endo_metabolic","icd_hint":"E03","related_eastern_diseases":["tdis.xu_lao","tdis.ying_bing"],"related_patterns":["pattern.spleen_kidney_yang_deficiency","pattern.qi_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.hyperthyroidism","name_en":"Hyperthyroidism (context)","name_zh":"甲狀腺功能亢進（文件情境）","category":"endo_metabolic","icd_hint":"E05","related_eastern_diseases":["tdis.ying_bing"],"related_patterns":["pattern.liver_fire","pattern.heart_yin_deficiency","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.hashimoto","name_en":"Hashimoto Thyroiditis (context)","name_zh":"橋本氏甲狀腺炎（文件情境）","category":"endo_metabolic","icd_hint":"E06.3","related_eastern_diseases":["tdis.ying_bing","tdis.xu_lao"],"related_patterns":["pattern.spleen_kidney_yang_deficiency","pattern.liver_qi_stagnation","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.obesity","name_en":"Obesity / Weight Management","name_zh":"肥胖／體重管理","category":"endo_metabolic","icd_hint":"E66","related_eastern_diseases":["tdis.fei_pang"],"related_patterns":["pattern.phlegm_damp","pattern.spleen_qi_deficiency","pattern.stomach_heat","pattern.liver_qi_stagnation"],"review_status":"draft"},
-    {"id":"cond.dyslipidemia","name_en":"Dyslipidemia (context)","name_zh":"血脂異常（文件情境）","category":"endo_metabolic","icd_hint":"E78","related_eastern_diseases":["tdis.fei_pang"],"related_patterns":["pattern.phlegm_damp","pattern.spleen_qi_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.osteoporosis","name_en":"Osteoporosis (context)","name_zh":"骨質疏鬆（文件情境）","category":"endo_metabolic","icd_hint":"M81","related_eastern_diseases":["tdis.yao_tong","tdis.xu_lao"],"related_patterns":["pattern.kidney_essence_deficiency","pattern.kidney_yang_deficiency","pattern.spleen_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.hpa_dysregulation","name_en":"HPA-Axis Dysregulation / 'Adrenal Fatigue' (context)","name_zh":"下視丘-腦下垂體-腎上腺軸失調（文件情境）","category":"endo_metabolic","icd_hint":"E27.8","related_eastern_diseases":["tdis.xu_lao"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.kidney_yin_deficiency","pattern.heart_kidney_not_communicating"],"review_status":"draft"},
-    {"id":"cond.edema_fluid","name_en":"Idiopathic Edema / Fluid Retention (context)","name_zh":"特發性水腫（文件情境）","category":"endo_metabolic","icd_hint":"R60","related_eastern_diseases":["tdis.shui_zhong"],"related_patterns":["pattern.spleen_yang_deficiency","pattern.kidney_yang_deficiency","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.hypertension","name_en":"Essential Hypertension (adjunctive context)","name_zh":"原發性高血壓（輔助文件情境）","category":"cardio","icd_hint":"I10","related_eastern_diseases":["tdis.xuan_yun","tdis.tou_tong"],"related_patterns":["pattern.liver_yang_rising","pattern.liver_fire","pattern.phlegm_damp","pattern.kidney_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.hypotension","name_en":"Hypotension (context)","name_zh":"低血壓（文件情境）","category":"cardio","icd_hint":"I95","related_eastern_diseases":["tdis.xuan_yun","tdis.xu_lao"],"related_patterns":["pattern.qi_blood_deficiency","pattern.heart_yang_deficiency","pattern.spleen_qi_sinking"],"review_status":"draft"},
-    {"id":"cond.palpitations","name_en":"Palpitations / Benign Arrhythmia (context)","name_zh":"心悸／良性心律不整（文件情境）","category":"cardio","icd_hint":"R00.2","related_eastern_diseases":["tdis.xin_ji"],"related_patterns":["pattern.heart_blood_deficiency","pattern.heart_yin_deficiency","pattern.heart_yang_deficiency","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.cad","name_en":"Coronary Artery Disease (adjunctive context)","name_zh":"冠狀動脈疾病（輔助文件情境）","category":"cardio","icd_hint":"I25","related_eastern_diseases":["tdis.xiong_bi"],"related_patterns":["pattern.heart_blood_stasis","pattern.phlegm_damp","pattern.heart_yang_deficiency"],"review_status":"draft"},
-    {"id":"cond.heart_failure","name_en":"Heart Failure (adjunctive context)","name_zh":"心臟衰竭（輔助文件情境）","category":"cardio","icd_hint":"I50","related_eastern_diseases":["tdis.xiong_bi","tdis.shui_zhong","tdis.chuan_zheng"],"related_patterns":["pattern.heart_yang_deficiency","pattern.kidney_yang_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.raynaud","name_en":"Raynaud Phenomenon (context)","name_zh":"雷諾氏現象（文件情境）","category":"cardio","icd_hint":"I73.0","related_eastern_diseases":["tdis.ma_mu"],"related_patterns":["pattern.heart_yang_deficiency","pattern.cold_stagnation_liver_channel","pattern.qi_blood_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.varicose_veins","name_en":"Varicose Veins / Venous Insufficiency (context)","name_zh":"靜脈曲張（文件情境）","category":"cardio","icd_hint":"I83","related_eastern_diseases":["tdis.shui_zhong"],"related_patterns":["pattern.spleen_qi_sinking","pattern.blood_stasis","pattern.phlegm_damp"],"review_status":"draft"},
-    {"id":"cond.poor_circulation","name_en":"Poor Peripheral Circulation (context)","name_zh":"末梢循環不良（文件情境）","category":"cardio","icd_hint":"I73.9","related_eastern_diseases":["tdis.ma_mu"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.qi_blood_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.recurrent_uti","name_en":"Recurrent UTI (context)","name_zh":"反覆泌尿道感染（文件情境）","category":"uro_renal","icd_hint":"N39.0","related_eastern_diseases":["tdis.lin_zheng"],"related_patterns":["pattern.damp_heat_lower_burner","pattern.kidney_yin_deficiency","pattern.spleen_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.interstitial_cystitis","name_en":"Interstitial Cystitis / Bladder Pain Syndrome","name_zh":"間質性膀胱炎","category":"uro_renal","icd_hint":"N30.1","related_eastern_diseases":["tdis.lin_zheng","tdis.fu_tong"],"related_patterns":["pattern.damp_heat_lower_burner","pattern.liver_qi_stagnation","pattern.kidney_yin_deficiency","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.overactive_bladder","name_en":"Overactive Bladder","name_zh":"膀胱過動症","category":"uro_renal","icd_hint":"N32.81","related_eastern_diseases":["tdis.lin_zheng","tdis.yi_niao"],"related_patterns":["pattern.kidney_qi_not_firm","pattern.kidney_yang_deficiency","pattern.damp_heat_lower_burner"],"review_status":"draft"},
-    {"id":"cond.urinary_retention","name_en":"Non-obstructive Urinary Retention (context)","name_zh":"非阻塞性尿滯留（文件情境）","category":"uro_renal","icd_hint":"R33","related_eastern_diseases":["tdis.long_bi"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.spleen_qi_sinking","pattern.damp_heat_lower_burner"],"review_status":"draft"},
-    {"id":"cond.bph","name_en":"Benign Prostatic Hyperplasia (context)","name_zh":"良性攝護腺肥大（文件情境）","category":"uro_renal","icd_hint":"N40","related_eastern_diseases":["tdis.long_bi","tdis.lin_zheng"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.damp_heat_lower_burner","pattern.blood_stasis"],"review_status":"draft"},
-    {"id":"cond.chronic_prostatitis","name_en":"Chronic Prostatitis / CPPS","name_zh":"慢性攝護腺炎／慢性骨盆疼痛","category":"uro_renal","icd_hint":"N41.1","related_eastern_diseases":["tdis.lin_zheng","tdis.fu_tong"],"related_patterns":["pattern.damp_heat_lower_burner","pattern.qi_stagnation_blood_stasis","pattern.kidney_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.erectile_dysfunction","name_en":"Erectile Dysfunction","name_zh":"勃起功能障礙","category":"uro_renal","icd_hint":"N52","related_eastern_diseases":["tdis.yang_wei"],"related_patterns":["pattern.kidney_yang_deficiency","pattern.liver_qi_stagnation","pattern.heart_spleen_deficiency","pattern.damp_heat_lower_burner"],"review_status":"draft"},
-    {"id":"cond.nocturnal_enuresis","name_en":"Nocturnal Enuresis","name_zh":"夜間遺尿","category":"uro_renal","icd_hint":"N39.44","related_eastern_diseases":["tdis.yi_niao"],"related_patterns":["pattern.kidney_qi_not_firm","pattern.spleen_qi_deficiency","pattern.lung_qi_deficiency"],"review_status":"draft"},
-    {"id":"cond.tinnitus","name_en":"Tinnitus","name_zh":"耳鳴","category":"ent_eye","icd_hint":"H93.1","related_eastern_diseases":["tdis.er_ming_er_long"],"related_patterns":["pattern.kidney_essence_deficiency","pattern.liver_fire","pattern.phlegm_damp","pattern.qi_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.hearing_loss","name_en":"Sensorineural Hearing Loss (context)","name_zh":"感音神經性聽損（文件情境）","category":"ent_eye","icd_hint":"H90.3","related_eastern_diseases":["tdis.er_ming_er_long"],"related_patterns":["pattern.kidney_essence_deficiency","pattern.qi_blood_deficiency"],"review_status":"draft"},
-    {"id":"cond.dry_eye","name_en":"Dry Eye Syndrome","name_zh":"乾眼症","category":"ent_eye","icd_hint":"H04.12","related_eastern_diseases":["tdis.mu_yun"],"related_patterns":["pattern.liver_yin_deficiency","pattern.liver_blood_deficiency","pattern.lung_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.eye_strain","name_en":"Digital Eye Strain / Asthenopia","name_zh":"視疲勞","category":"ent_eye","icd_hint":"H53.14","related_eastern_diseases":["tdis.mu_yun"],"related_patterns":["pattern.liver_blood_deficiency","pattern.kidney_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.globus_pharyngitis","name_en":"Globus Sensation / Chronic Pharyngitis","name_zh":"喉球症／慢性咽炎","category":"ent_eye","icd_hint":"F45.8/J31.2","related_eastern_diseases":["tdis.mei_he_qi","tdis.ru_e"],"related_patterns":["pattern.liver_qi_stagnation","pattern.phlegm_damp","pattern.lung_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.aphthous_ulcers","name_en":"Recurrent Aphthous Ulcers","name_zh":"復發性口瘡","category":"ent_eye","icd_hint":"K12.0","related_eastern_diseases":["tdis.kou_chuang"],"related_patterns":["pattern.heart_fire","pattern.stomach_heat","pattern.kidney_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.post_covid","name_en":"Post-COVID Syndrome (context)","name_zh":"新冠後症候群（文件情境）","category":"immune_misc","icd_hint":"U09.9","related_eastern_diseases":["tdis.xu_lao","tdis.ke_sou"],"related_patterns":["pattern.lung_qi_deficiency","pattern.qi_blood_deficiency","pattern.phlegm_damp","pattern.lung_yin_deficiency"],"review_status":"draft"},
-    {"id":"cond.chronic_allergies","name_en":"Chronic Allergic Tendency (context)","name_zh":"慢性過敏體質（文件情境）","category":"immune_misc","icd_hint":"T78.4","related_eastern_diseases":["tdis.bi_qiu","tdis.yin_zhen"],"related_patterns":["pattern.lung_qi_deficiency","pattern.spleen_qi_deficiency","pattern.kidney_yang_deficiency"],"review_status":"draft"},
-    {"id":"cond.cancer_supportive","name_en":"Oncology Supportive Care (adjunctive context)","name_zh":"腫瘤支持照護（輔助文件情境）","category":"immune_misc","icd_hint":"Z51.1","related_eastern_diseases":["tdis.xu_lao","tdis.ou_tu"],"related_patterns":["pattern.qi_blood_deficiency","pattern.spleen_qi_deficiency","pattern.stomach_yin_deficiency"],"review_status":"draft"}
+    {
+      "id": "cond.pcos",
+      "name_en": "Polycystic Ovary Syndrome",
+      "name_zh": "多囊性卵巢症候群",
+      "category": "gyn_fertility",
+      "icd_hint": "E28.2",
+      "related_eastern_diseases": [
+        "tdis.yue_jing_hou_qi",
+        "tdis.bi_jing",
+        "tdis.bu_yun"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "多囊性卵巢症候群是育齡女性常見的內分泌與代謝失調，特徵為排卵稀少或不排卵、雄性素過高表現（如多毛、痤瘡）與超音波多囊卵巢型態，常伴月經稀發及不孕。診斷多採 Rotterdam 標準（三取二），並需排除其他高雄性素病因。",
+      "summary_en": "PCOS is a common reproductive-age endocrine and metabolic disorder marked by oligo-/anovulation, clinical or biochemical hyperandrogenism, and polycystic ovarian morphology, often with irregular cycles and subfertility. Diagnosis commonly uses the Rotterdam criteria (2 of 3) after excluding other causes of hyperandrogenism.",
+      "red_flags_zh": [
+        "異常大量或持續子宮出血需評估子宮內膜病變",
+        "長期無月經合併子宮內膜增厚，需排除內膜增生／癌變",
+        "突發嚴重骨盆腔痛需排除卵巢扭轉或其他急症",
+        "疑似懷孕",
+        "急劇雄性素上升或男性化需排除分泌雄性素之腫瘤"
+      ],
+      "red_flags_en": [
+        "Abnormally heavy or prolonged uterine bleeding — evaluate the endometrium",
+        "Prolonged amenorrhea with thickened endometrium — rule out hyperplasia/carcinoma",
+        "Sudden severe pelvic pain — rule out ovarian torsion or other acute cause",
+        "Possible pregnancy",
+        "Rapid virilization or steeply rising androgens — rule out an androgen-secreting tumor"
+      ],
+      "western_context_zh": "臨床上常以生活型態調整、體重管理與依生育需求選用之藥物（如排卵誘導、口服避孕藥調經、胰島素敏感化劑）進行處置；此處僅為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with lifestyle modification, weight management, and — depending on fertility goals — agents such as ovulation induction, combined oral contraceptives for cycle regulation, or insulin sensitizers. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.endometriosis",
+      "name_en": "Endometriosis",
+      "name_zh": "子宮內膜異位症",
+      "category": "gyn_fertility",
+      "icd_hint": "N80",
+      "related_eastern_diseases": [
+        "tdis.tong_jing",
+        "tdis.zheng_jia",
+        "tdis.bu_yun"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.blood_stasis",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "子宮內膜異位症指子宮內膜組織生長於子宮腔外（常見於卵巢、腹膜、子宮薦韌帶），造成慢性骨盆腔痛、經痛、性交痛與不孕；確診多需腹腔鏡與病理，影像可輔助評估卵巢子宮內膜異位瘤。",
+      "summary_en": "Endometriosis is the presence of endometrial-like tissue outside the uterine cavity (commonly ovary, peritoneum, uterosacral ligaments), causing chronic pelvic pain, dysmenorrhea, dyspareunia, and infertility. Definitive diagnosis usually needs laparoscopy with histology; imaging helps assess endometriomas.",
+      "red_flags_zh": [
+        "急性劇烈骨盆腔痛需排除卵巢子宮內膜異位瘤破裂或扭轉",
+        "腸道或膀胱周期性出血提示深部浸潤，需專科評估",
+        "疑似懷孕合併劇痛需排除異位妊娠",
+        "不孕需生殖專科評估"
+      ],
+      "red_flags_en": [
+        "Acute severe pelvic pain — rule out ruptured or torsed endometrioma",
+        "Cyclical bowel or bladder bleeding suggests deep infiltrating disease — refer for specialist assessment",
+        "Possible pregnancy with severe pain — rule out ectopic pregnancy",
+        "Infertility — refer for reproductive evaluation"
+      ],
+      "western_context_zh": "常以止痛、荷爾蒙抑制（如複方避孕藥、黃體素、GnRH 類似物）或手術處理，依疼痛與生育目標調整；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with analgesia, hormonal suppression (e.g., combined contraceptives, progestins, GnRH analogues), or surgery, tailored to pain and fertility goals. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.uterine_fibroids",
+      "name_en": "Uterine Fibroids",
+      "name_zh": "子宮肌瘤",
+      "category": "gyn_fertility",
+      "icd_hint": "D25",
+      "related_eastern_diseases": [
+        "tdis.zheng_jia",
+        "tdis.yue_jing_guo_duo"
+      ],
+      "related_patterns": [
+        "pattern.blood_stasis",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft",
+      "summary_zh": "子宮肌瘤為子宮平滑肌之良性腫瘤，常見於育齡女性，可無症狀或引起經量過多、骨盆腔壓迫、頻尿與不孕，症狀與肌瘤大小及位置（黏膜下、肌壁間、漿膜下）相關。",
+      "summary_en": "Uterine fibroids are benign smooth-muscle tumors of the uterus, common in reproductive-age women. They may be asymptomatic or cause heavy menstrual bleeding, pelvic pressure, urinary frequency, and infertility, depending on size and location (submucosal, intramural, subserosal).",
+      "red_flags_zh": [
+        "嚴重或持續出血導致貧血症狀（頭暈、心悸、氣短）需即時評估",
+        "急性劇痛提示肌瘤變性或帶蒂肌瘤扭轉",
+        "快速長大或停經後仍長大需排除惡性（子宮肉瘤）",
+        "壓迫症狀導致排尿或排便困難"
+      ],
+      "red_flags_en": [
+        "Severe or ongoing bleeding with anemia symptoms (dizziness, palpitations, dyspnea) — evaluate promptly",
+        "Acute severe pain suggests fibroid degeneration or torsion of a pedunculated fibroid",
+        "Rapid growth or growth after menopause — rule out malignancy (uterine sarcoma)",
+        "Mass effect causing urinary or bowel obstruction"
+      ],
+      "western_context_zh": "依症狀與生育需求，處置範圍從觀察、藥物控制出血到子宮肌瘤切除或子宮切除等；此為文件對照用語，非治療指示。",
+      "western_context_en": "Depending on symptoms and fertility goals, management ranges from observation and medical control of bleeding to myomectomy or hysterectomy. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.primary_dysmenorrhea",
+      "name_en": "Primary Dysmenorrhea",
+      "name_zh": "原發性痛經",
+      "category": "gyn_fertility",
+      "icd_hint": "N94.4",
+      "related_eastern_diseases": [
+        "tdis.tong_jing"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.cold_stagnation_liver_channel",
+        "pattern.qi_blood_deficiency",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "原發性痛經指無骨盆腔器質病變的經期疼痛，多因前列腺素引起子宮過度收縮，常於初經後 1–2 年開始，疼痛集中於下腹並可放射至腰背與大腿。",
+      "summary_en": "Primary dysmenorrhea is menstrual pain without pelvic pathology, largely from prostaglandin-mediated uterine hypercontractility. It typically begins within 1–2 years of menarche, with cramping lower-abdominal pain that may radiate to the back and thighs.",
+      "red_flags_zh": [
+        "疼痛型態改變或成年後才新發之痛經應排除次發性病因（如內膜異位）",
+        "發燒、異常分泌物提示骨盆腔感染",
+        "疑似懷孕合併劇痛需排除異位妊娠",
+        "止痛無效且進行性加重需進一步影像評估"
+      ],
+      "red_flags_en": [
+        "Change in pain pattern or new-onset dysmenorrhea in adulthood — rule out secondary causes (e.g., endometriosis)",
+        "Fever or abnormal discharge suggests pelvic infection",
+        "Possible pregnancy with severe pain — rule out ectopic pregnancy",
+        "Pain unresponsive to analgesia and progressively worsening — pursue imaging"
+      ],
+      "western_context_zh": "常以非類固醇消炎止痛藥、複方避孕藥與局部熱敷處理；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with NSAIDs, combined oral contraceptives, and local heat. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.pms",
+      "name_en": "Premenstrual Syndrome",
+      "name_zh": "經前症候群",
+      "category": "gyn_fertility",
+      "icd_hint": "N94.3",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng",
+        "tdis.zang_zao"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.liver_spleen_disharmony",
+        "pattern.heart_spleen_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "經前症候群指黃體期反覆出現、月經來潮後緩解的身心症狀（如乳房脹痛、腹脹、易怒、情緒低落、疲倦），症狀須與月經週期有明確時間關聯並影響生活功能。",
+      "summary_en": "Premenstrual syndrome is a cyclical cluster of physical and mood symptoms (breast tenderness, bloating, irritability, low mood, fatigue) in the luteal phase that resolve after menses, with a clear temporal link to the cycle and functional impact.",
+      "red_flags_zh": [
+        "嚴重情緒低落、絕望或自殺意念需即時心理／精神科評估",
+        "症狀無週期性或持續整月，應重新評估診斷",
+        "症狀急遽惡化影響安全或工作能力"
+      ],
+      "red_flags_en": [
+        "Severe low mood, hopelessness, or suicidal ideation — urgent mental-health evaluation",
+        "Non-cyclical or month-long symptoms — reconsider the diagnosis",
+        "Rapid worsening affecting safety or function"
+      ],
+      "western_context_zh": "常以生活型態與飲食調整、運動，必要時選用血清素類藥物或荷爾蒙處置；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with lifestyle and dietary measures, exercise, and where needed serotonergic agents or hormonal approaches. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.irregular_menstruation",
+      "name_en": "Irregular Menstruation",
+      "name_zh": "月經不調",
+      "category": "gyn_fertility",
+      "icd_hint": "N92.6",
+      "related_eastern_diseases": [
+        "tdis.yue_jing_xian_qi",
+        "tdis.yue_jing_hou_qi"
+      ],
+      "related_patterns": [
+        "pattern.chong_ren_disharmony",
+        "pattern.liver_qi_stagnation",
+        "pattern.kidney_yin_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "月經不調為描述性名詞，涵蓋週期、經期長短或經量的異常，成因多元（內分泌、結構、藥物、體重與壓力等），需依型態進一步鑑別。",
+      "summary_en": "Irregular menstruation is a descriptive term covering abnormalities of cycle length, duration, or flow, with many causes (endocrine, structural, medication, weight, stress). It requires further characterization to guide differential diagnosis.",
+      "red_flags_zh": [
+        "任何停經後出血需評估子宮內膜",
+        "大量出血合併貧血症狀需即時處理",
+        "疑似懷孕",
+        "合併泌乳、視野缺損或頭痛需排除腦下垂體病變"
+      ],
+      "red_flags_en": [
+        "Any postmenopausal bleeding — evaluate the endometrium",
+        "Heavy bleeding with anemia symptoms — treat promptly",
+        "Possible pregnancy",
+        "Galactorrhea, visual-field loss, or headache — rule out pituitary pathology"
+      ],
+      "western_context_zh": "處置依成因而定，可能包含荷爾蒙調節、矯正潛在內分泌或結構問題；此為文件對照用語，非治療指示。",
+      "western_context_en": "Management depends on the underlying cause and may include hormonal regulation and correction of endocrine or structural contributors. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.menorrhagia",
+      "name_en": "Heavy Menstrual Bleeding",
+      "name_zh": "月經過多",
+      "category": "gyn_fertility",
+      "icd_hint": "N92.0",
+      "related_eastern_diseases": [
+        "tdis.yue_jing_guo_duo",
+        "tdis.beng_lou"
+      ],
+      "related_patterns": [
+        "pattern.spleen_not_governing_blood",
+        "pattern.blood_heat",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "月經過多指經量顯著增加或經期延長，可能造成缺鐵性貧血；成因包括排卵功能障礙、子宮肌瘤或內膜息肉、凝血異常及內膜病變等。",
+      "summary_en": "Heavy menstrual bleeding is markedly increased flow or prolonged menses that may cause iron-deficiency anemia. Causes include ovulatory dysfunction, fibroids or polyps, coagulopathy, and endometrial pathology.",
+      "red_flags_zh": [
+        "急性大量出血合併血壓下降、心悸、暈厥屬急症，需立即就醫",
+        "停經後出血或不規則出血需排除內膜增生／癌變",
+        "易瘀青或家族出血病史提示凝血疾病",
+        "貧血症狀明顯（極度疲倦、氣短）"
+      ],
+      "red_flags_en": [
+        "Acute heavy bleeding with hypotension, palpitations, or syncope is an emergency — seek immediate care",
+        "Postmenopausal or irregular bleeding — rule out endometrial hyperplasia/carcinoma",
+        "Easy bruising or family bleeding history suggests coagulopathy",
+        "Marked anemia symptoms (severe fatigue, dyspnea)"
+      ],
+      "western_context_zh": "常以補鐵、荷爾蒙或非荷爾蒙藥物減少出血，並針對結構性病因處理；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with iron repletion, hormonal or non-hormonal agents to reduce bleeding, and treatment of structural causes. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.oligomenorrhea",
+      "name_en": "Scanty/Infrequent Menstruation",
+      "name_zh": "月經過少",
+      "category": "gyn_fertility",
+      "icd_hint": "N91.5",
+      "related_eastern_diseases": [
+        "tdis.yue_jing_guo_shao",
+        "tdis.yue_jing_hou_qi"
+      ],
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.kidney_essence_deficiency",
+        "pattern.blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft",
+      "summary_zh": "月經過少指經量明顯減少或經期縮短，成因包括內分泌失衡（如多囊、甲狀腺、高泌乳素）、子宮內膜損傷（如宮腔沾黏）、體重過低或壓力等。",
+      "summary_en": "Scanty or infrequent menstruation refers to reduced flow or shortened menses. Causes include endocrine imbalance (PCOS, thyroid, hyperprolactinemia), endometrial damage (intrauterine adhesions), low body weight, and stress.",
+      "red_flags_zh": [
+        "合併泌乳、頭痛或視野缺損需排除腦下垂體病變",
+        "近期子宮腔手術後經量驟減提示宮腔沾黏",
+        "疑似懷孕",
+        "顯著體重下降或過度運動導致停經傾向"
+      ],
+      "red_flags_en": [
+        "Galactorrhea, headache, or visual-field loss — rule out pituitary pathology",
+        "Sharp drop in flow after recent uterine surgery suggests intrauterine adhesions",
+        "Possible pregnancy",
+        "Marked weight loss or over-exercise trending toward amenorrhea"
+      ],
+      "western_context_zh": "處置聚焦於矯正潛在內分泌或結構因素，並依生育需求處理；此為文件對照用語，非治療指示。",
+      "western_context_en": "Management focuses on correcting the underlying endocrine or structural cause and addressing fertility goals. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.amenorrhea",
+      "name_en": "Secondary Amenorrhea",
+      "name_zh": "繼發性閉經",
+      "category": "gyn_fertility",
+      "icd_hint": "N91.1",
+      "related_eastern_diseases": [
+        "tdis.bi_jing"
+      ],
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.kidney_essence_deficiency",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft",
+      "summary_zh": "繼發性閉經指曾有月經者停經達三個週期或六個月以上，最常見原因為懷孕，其他包括下視丘功能性抑制、多囊、高泌乳素、甲狀腺異常、卵巢功能不全及宮腔沾黏等。",
+      "summary_en": "Secondary amenorrhea is the absence of menses for three cycles or six months in someone who previously menstruated. Pregnancy is the most common cause; others include functional hypothalamic suppression, PCOS, hyperprolactinemia, thyroid disease, ovarian insufficiency, and intrauterine adhesions.",
+      "red_flags_zh": [
+        "首先排除懷孕",
+        "合併泌乳、頭痛或視野缺損需排除腦下垂體腫瘤",
+        "潮熱、盜汗與 40 歲前停經提示卵巢早衰，需評估",
+        "顯著體重過低或飲食失調需整體醫療評估"
+      ],
+      "red_flags_en": [
+        "Rule out pregnancy first",
+        "Galactorrhea, headache, or visual-field loss — rule out a pituitary tumor",
+        "Hot flashes, night sweats, and cessation before 40 suggest premature ovarian insufficiency — evaluate",
+        "Marked underweight or an eating disorder warrants broad medical evaluation"
+      ],
+      "western_context_zh": "處置依病因，可能包含矯正泌乳素或甲狀腺異常、荷爾蒙補充、營養與體重恢復；此為文件對照用語，非治療指示。",
+      "western_context_en": "Management is cause-specific and may include correcting prolactin or thyroid abnormalities, hormonal support, and nutritional/weight restoration. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.female_infertility",
+      "name_en": "Female Infertility",
+      "name_zh": "女性不孕症",
+      "category": "gyn_fertility",
+      "icd_hint": "N97",
+      "related_eastern_diseases": [
+        "tdis.bu_yun"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft",
+      "summary_zh": "女性不孕症一般指規律無避孕性行為一年（35 歲以上為半年）仍未受孕。成因包括排卵障礙、輸卵管與骨盆因素、子宮與內膜因素及卵巢儲備下降等，需伴侶雙方評估。",
+      "summary_en": "Female infertility is generally defined as failure to conceive after one year of regular unprotected intercourse (six months if age ≥35). Causes include ovulatory disorders, tubal/pelvic factors, uterine/endometrial factors, and diminished ovarian reserve; both partners should be evaluated.",
+      "red_flags_zh": [
+        "劇烈骨盆腔痛或異常出血需先排除急症與異位妊娠",
+        "35 歲以上或有卵巢儲備疑慮者宜及早轉介生殖專科",
+        "已知輸卵管病變、重度內膜異位或無精症需專科處理",
+        "反覆流產史需另作評估"
+      ],
+      "red_flags_en": [
+        "Severe pelvic pain or abnormal bleeding — rule out acute causes and ectopic pregnancy first",
+        "Age ≥35 or ovarian-reserve concerns — refer to reproductive medicine early",
+        "Known tubal disease, severe endometriosis, or azoospermia needs specialist care",
+        "History of recurrent pregnancy loss warrants separate evaluation"
+      ],
+      "western_context_zh": "評估與處置常涵蓋排卵監測、輸卵管與精液檢查，並依病因採排卵誘導或輔助生殖技術；此為文件對照用語，非治療指示。",
+      "western_context_en": "Evaluation and management commonly include ovulation tracking, tubal and semen assessment, and — by cause — ovulation induction or assisted reproductive technology. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.male_infertility",
+      "name_en": "Male Factor Infertility",
+      "name_zh": "男性不育症",
+      "category": "gyn_fertility",
+      "icd_hint": "N46",
+      "related_eastern_diseases": [
+        "tdis.bu_yu"
+      ],
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "review_status": "draft",
+      "summary_zh": "男性不育症指男方因素導致的生育困難，常見於精液品質異常（少精、弱精、畸形精子或無精），成因包括精索靜脈曲張、內分泌、感染、遺傳與生活型態等，需精液分析評估。",
+      "summary_en": "Male factor infertility refers to subfertility from male causes, often abnormal semen parameters (oligo-, astheno-, teratozoospermia, or azoospermia). Causes include varicocele, endocrine, infectious, genetic, and lifestyle factors; semen analysis is central to evaluation.",
+      "red_flags_zh": [
+        "無精症或嚴重異常需泌尿／生殖專科與遺傳評估",
+        "睪丸腫塊或不對稱需排除睪丸腫瘤",
+        "性功能障礙合併荷爾蒙症狀需內分泌評估",
+        "泌尿感染或疼痛徵象"
+      ],
+      "red_flags_en": [
+        "Azoospermia or severe abnormalities — refer to urology/reproductive medicine and genetic evaluation",
+        "Testicular mass or asymmetry — rule out testicular tumor",
+        "Sexual dysfunction with hormonal symptoms — endocrine evaluation",
+        "Signs of urinary infection or pain"
+      ],
+      "western_context_zh": "處置依病因，可能包含矯正精索靜脈曲張、荷爾蒙處理、生活型態改善或輔助生殖；此為文件對照用語，非治療指示。",
+      "western_context_en": "Management is cause-specific and may include varicocele correction, hormonal treatment, lifestyle change, or assisted reproduction. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.diminished_ovarian_reserve",
+      "name_en": "Diminished Ovarian Reserve",
+      "name_zh": "卵巢儲備功能下降",
+      "category": "gyn_fertility",
+      "icd_hint": "E28.3",
+      "related_eastern_diseases": [
+        "tdis.bu_yun",
+        "tdis.yue_jing_guo_shao"
+      ],
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "卵巢儲備功能下降指卵子數量與品質較同齡下降，可由抗穆勒氏管荷爾蒙（AMH）、竇卵泡數與 FSH 等評估，與受孕率下降及對排卵刺激反應不良相關。",
+      "summary_en": "Diminished ovarian reserve is a reduction in oocyte quantity and quality relative to age, assessed by AMH, antral follicle count, and FSH. It is associated with lower conception rates and poorer response to ovarian stimulation.",
+      "red_flags_zh": [
+        "40 歲前出現卵巢功能不全徵象（潮熱、停經）需評估卵巢早衰",
+        "計畫生育者宜及早轉介生殖專科討論時效性",
+        "合併停經症狀影響生活品質"
+      ],
+      "red_flags_en": [
+        "Signs of ovarian insufficiency before 40 (hot flashes, amenorrhea) — evaluate for premature ovarian insufficiency",
+        "If pregnancy is desired, refer to reproductive medicine early given time-sensitivity",
+        "Menopausal symptoms affecting quality of life"
+      ],
+      "western_context_zh": "常於生殖醫療脈絡中討論卵巢刺激方案調整、生育時效與可行選項；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly discussed within reproductive care regarding stimulation-protocol adjustment, fertility timing, and available options. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.ivf_support",
+      "name_en": "IVF/ART Adjunctive Support (context)",
+      "name_zh": "試管嬰兒療程輔助（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "Z31.83",
+      "related_eastern_diseases": [
+        "tdis.bu_yun"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yin_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "此為試管嬰兒／輔助生殖療程期間的輔助照護文件情境，涵蓋刺激期、取卵、植入與黃體支持等階段之症狀紀錄與整體性支持，非獨立西醫診斷。",
+      "summary_en": "This is a documentation context for adjunctive care during IVF/ART cycles, spanning stimulation, retrieval, transfer, and luteal support phases for symptom tracking and whole-person support. It is not a standalone Western diagnosis.",
+      "red_flags_zh": [
+        "刺激期後腹脹、少尿、體重驟增或呼吸困難提示卵巢過度刺激症候群（OHSS），屬急症",
+        "取卵後劇烈腹痛或發燒需排除出血或感染",
+        "植入後劇痛合併陰道出血需排除併發症",
+        "任何疑似異位妊娠徵象"
+      ],
+      "red_flags_en": [
+        "Post-stimulation bloating, reduced urine output, rapid weight gain, or dyspnea suggests ovarian hyperstimulation syndrome (OHSS) — an emergency",
+        "Severe abdominal pain or fever after retrieval — rule out bleeding or infection",
+        "Severe pain with vaginal bleeding after transfer — rule out complications",
+        "Any signs suggesting ectopic pregnancy"
+      ],
+      "western_context_zh": "輔助照護在生殖團隊的療程計畫下進行，紀錄用語不取代生殖醫療處置；此為文件對照用語，非治療指示。",
+      "western_context_en": "Adjunctive care proceeds under the reproductive team's cycle plan; documentation does not replace reproductive medical management. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.recurrent_pregnancy_loss",
+      "name_en": "Recurrent Pregnancy Loss (context)",
+      "name_zh": "習慣性流產（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "N96",
+      "related_eastern_diseases": [
+        "tdis.bu_yun"
+      ],
+      "related_patterns": [
+        "pattern.kidney_qi_not_firm",
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_heat",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "習慣性流產（文件情境）一般指連續兩次以上的自然流產，成因包括染色體、子宮結構、內分泌（如甲狀腺、血糖）、抗磷脂症候群與凝血異常等，需系統性評估雙方。",
+      "summary_en": "Recurrent pregnancy loss (context) generally refers to two or more consecutive spontaneous miscarriages. Causes include chromosomal, uterine structural, endocrine (thyroid, glucose), antiphospholipid syndrome, and thrombophilia; systematic evaluation of both partners is warranted.",
+      "red_flags_zh": [
+        "急性大量出血或劇痛合併頭暈屬急症，需立即就醫",
+        "疑似異位妊娠（單側劇痛、肩痛、暈厥）",
+        "發燒與惡臭分泌物提示感染性流產",
+        "確診抗磷脂症候群或血栓病史需專科共同照護"
+      ],
+      "red_flags_en": [
+        "Acute heavy bleeding or severe pain with dizziness is an emergency — seek immediate care",
+        "Suspected ectopic pregnancy (unilateral severe pain, shoulder pain, syncope)",
+        "Fever with foul discharge suggests septic miscarriage",
+        "Confirmed antiphospholipid syndrome or thrombosis history needs co-managed specialist care"
+      ],
+      "western_context_zh": "評估與處置常涵蓋內分泌與凝血檢查、子宮影像，並依病因給予相應支持；此為文件對照用語，非治療指示。",
+      "western_context_en": "Evaluation and management commonly include endocrine and coagulation workup, uterine imaging, and cause-specific support. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.luteal_phase_defect",
+      "name_en": "Luteal Phase Deficiency (context)",
+      "name_zh": "黃體功能不足（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "E28.8",
+      "related_eastern_diseases": [
+        "tdis.bu_yun",
+        "tdis.yue_jing_xian_qi"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "黃體功能不足（文件情境）指黃體期黃體素分泌不足或內膜反應不良，可能與月經週期偏短、經前點狀出血及受孕／著床困難相關；其獨立診斷標準仍具爭議。",
+      "summary_en": "Luteal phase deficiency (context) refers to inadequate luteal progesterone or endometrial response, potentially linked to short cycles, premenstrual spotting, and difficulty conceiving or implanting. Its status as a discrete diagnosis remains debated.",
+      "red_flags_zh": [
+        "反覆早期流產需系統性評估",
+        "顯著週期紊亂或閉經應重新評估內分泌",
+        "疑似懷孕合併出血需排除先兆流產或異位妊娠"
+      ],
+      "red_flags_en": [
+        "Recurrent early miscarriage warrants systematic evaluation",
+        "Marked cycle disruption or amenorrhea — reassess endocrine causes",
+        "Possible pregnancy with bleeding — rule out threatened or ectopic pregnancy"
+      ],
+      "western_context_zh": "常於生育脈絡中討論黃體支持與潛在內分泌因素之矯正；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly discussed within fertility care regarding luteal support and correction of underlying endocrine factors. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.menopause_syndrome",
+      "name_en": "Menopausal Syndrome",
+      "name_zh": "更年期症候群",
+      "category": "gyn_fertility",
+      "icd_hint": "N95.1",
+      "related_eastern_diseases": [
+        "tdis.jing_duan_qian_hou"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yin_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.liver_yang_rising"
+      ],
+      "review_status": "draft",
+      "summary_zh": "更年期症候群指停經過渡期因卵巢功能衰退、雌激素下降所引起的一系列症狀，如潮熱、盜汗、睡眠障礙、情緒波動、陰道乾澀與泌尿生殖症狀。",
+      "summary_en": "Menopausal syndrome is the cluster of symptoms during the menopausal transition from declining ovarian function and estrogen, including hot flashes, night sweats, sleep disturbance, mood changes, vaginal dryness, and genitourinary symptoms.",
+      "red_flags_zh": [
+        "任何停經後陰道出血需評估子宮內膜以排除惡性",
+        "40 歲前即出現更年期症狀需評估卵巢早衰",
+        "嚴重情緒低落或自殺意念需即時心理支持",
+        "新發胸痛、嚴重頭痛或神經症狀不可歸因於更年期，需即時評估"
+      ],
+      "red_flags_en": [
+        "Any postmenopausal vaginal bleeding — evaluate the endometrium to exclude malignancy",
+        "Menopausal symptoms before 40 — evaluate for premature ovarian insufficiency",
+        "Severe low mood or suicidal ideation — urgent mental-health support",
+        "New chest pain, severe headache, or neurologic symptoms must not be attributed to menopause — evaluate promptly"
+      ],
+      "western_context_zh": "依症狀與風險，處置可涵蓋生活型態、非荷爾蒙藥物或荷爾蒙療法及局部治療；此為文件對照用語，非治療指示。",
+      "western_context_en": "Depending on symptoms and risk, management may include lifestyle measures, non-hormonal agents, hormone therapy, and local treatments. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.hyperemesis_gravidarum",
+      "name_en": "Nausea of Pregnancy / Hyperemesis (context)",
+      "name_zh": "妊娠劇吐（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "O21",
+      "related_eastern_diseases": [
+        "tdis.ren_shen_e_zu"
+      ],
+      "related_patterns": [
+        "pattern.liver_stomach_disharmony",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "妊娠劇吐（文件情境）為妊娠早期嚴重、持續之噁心嘔吐，導致脫水、電解質失衡與體重下降，較一般孕吐嚴重，可能需醫療處置與補液。",
+      "summary_en": "Hyperemesis gravidarum (context) is severe, persistent nausea and vomiting in early pregnancy causing dehydration, electrolyte imbalance, and weight loss — more severe than typical morning sickness and often needing medical management and fluids.",
+      "red_flags_zh": [
+        "無法進食飲水、少尿、明顯脫水或體重明顯下降需就醫補液",
+        "嘔吐物帶血",
+        "意識混亂、視力改變或步態不穩需排除電解質／維生素缺乏之神經併發症",
+        "發燒或腹痛提示其他病因"
+      ],
+      "red_flags_en": [
+        "Inability to keep down food/fluids, reduced urine, marked dehydration, or significant weight loss — seek care for rehydration",
+        "Blood in vomit",
+        "Confusion, vision change, or unsteady gait — rule out neurologic complications of electrolyte/vitamin deficiency",
+        "Fever or abdominal pain suggests another cause"
+      ],
+      "western_context_zh": "常以補液、止吐與營養支持處理，嚴重時需住院；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with rehydration, antiemetics, and nutritional support; severe cases may need admission. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.breech_presentation",
+      "name_en": "Breech Presentation (moxibustion context)",
+      "name_zh": "胎位不正（艾灸文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "O32.1",
+      "related_eastern_diseases": [
+        "tdis.tai_wei_bu_zheng"
+      ],
+      "related_patterns": [
+        "pattern.kidney_qi_not_firm",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "胎位不正（艾灸文件情境）指妊娠晚期胎兒非頭位（如臀位），與分娩方式及風險相關；部分傳統做法於特定孕週以艾灸至陰穴輔助，屬受訓醫者臨床決策。",
+      "summary_en": "Breech presentation (moxibustion context) is a non-cephalic fetal lie (e.g., breech) in late pregnancy, relevant to delivery mode and risk. Some traditional approaches use moxibustion at BL67 during a specific gestational window as an adjunct — a trained clinician's decision.",
+      "red_flags_zh": [
+        "破水合併臍帶脫垂徵象屬產科急症，需立即就醫",
+        "規則宮縮或陰道出血提示早產或產兆",
+        "胎動明顯減少需即時評估",
+        "任何外轉術均應由產科醫師於監測下執行"
+      ],
+      "red_flags_en": [
+        "Ruptured membranes with signs of cord prolapse is an obstetric emergency — seek immediate care",
+        "Regular contractions or vaginal bleeding suggests preterm labor or onset of labor",
+        "Marked decrease in fetal movement — evaluate promptly",
+        "Any external cephalic version must be performed by an obstetrician under monitoring"
+      ],
+      "western_context_zh": "產科依孕週與情況評估外轉術或剖腹產等分娩計畫；此為文件對照用語，非治療指示。",
+      "western_context_en": "Obstetric care assesses external cephalic version or delivery planning such as cesarean by gestation and circumstances. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.postpartum_hypolactation",
+      "name_en": "Insufficient Lactation",
+      "name_zh": "產後缺乳",
+      "category": "gyn_fertility",
+      "icd_hint": "O92.4",
+      "related_eastern_diseases": [
+        "tdis.que_ru"
+      ],
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.liver_qi_stagnation"
+      ],
+      "review_status": "draft",
+      "summary_zh": "產後缺乳指產後乳汁分泌不足以滿足嬰兒需求，成因包括含乳與哺乳頻率、荷爾蒙、乳腺發育、壓力與疲勞及部分藥物等，需哺乳支持評估。",
+      "summary_en": "Insufficient lactation is inadequate milk production for the infant's needs. Causes include latch and feeding frequency, hormonal factors, breast development, stress and fatigue, and certain medications; lactation-support assessment is helpful.",
+      "red_flags_zh": [
+        "嬰兒體重不增、尿量少或脫水徵象需小兒科即時評估",
+        "乳房紅腫熱痛合併發燒提示乳腺炎",
+        "產後大量出血或嚴重情緒低落需即時醫療／心理評估",
+        "疑似 Sheehan 症候群（產後大出血後無泌乳）需內分泌評估"
+      ],
+      "red_flags_en": [
+        "Poor infant weight gain, low urine output, or dehydration — urgent pediatric evaluation",
+        "Red, hot, painful breast with fever suggests mastitis",
+        "Postpartum hemorrhage or severe low mood — urgent medical/mental-health evaluation",
+        "Suspected Sheehan syndrome (no lactation after major postpartum hemorrhage) — endocrine evaluation"
+      ],
+      "western_context_zh": "常以哺乳指導、增加有效吸吮與整體支持處理，必要時評估潛在病因；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with lactation guidance, increasing effective feeding, and whole-person support, evaluating underlying causes when needed. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.chronic_pelvic_pain",
+      "name_en": "Chronic Pelvic Pain",
+      "name_zh": "慢性骨盆腔疼痛",
+      "category": "gyn_fertility",
+      "icd_hint": "R10.2",
+      "related_eastern_diseases": [
+        "tdis.fu_tong",
+        "tdis.zheng_jia"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.damp_heat_lower_burner",
+        "pattern.cold_stagnation_liver_channel"
+      ],
+      "review_status": "draft",
+      "summary_zh": "慢性骨盆腔疼痛指持續六個月以上的骨盆腔疼痛，成因多元（婦科、腸胃、泌尿、肌肉骨骼與神經因素），常需多面向評估與跨科處理。",
+      "summary_en": "Chronic pelvic pain is pelvic pain lasting more than six months with multiple possible sources (gynecologic, gastrointestinal, urologic, musculoskeletal, neurologic), often needing multidimensional assessment and multidisciplinary care.",
+      "red_flags_zh": [
+        "急性劇痛或痛感型態突變需排除急症（如卵巢扭轉、異位妊娠）",
+        "發燒、異常分泌物提示感染",
+        "腸道出血、體重減輕或排便習慣改變需排除腸道病變",
+        "血尿需泌尿評估"
+      ],
+      "red_flags_en": [
+        "Acute severe pain or abrupt change in pattern — rule out an acute cause (e.g., torsion, ectopic)",
+        "Fever or abnormal discharge suggests infection",
+        "Rectal bleeding, weight loss, or bowel-habit change — rule out bowel pathology",
+        "Hematuria — urologic evaluation"
+      ],
+      "western_context_zh": "處置常結合疼痛管理、針對可辨識病因之治療與身心支持；此為文件對照用語，非治療指示。",
+      "western_context_en": "Management commonly combines pain control, treatment of identifiable causes, and mind-body support. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.pid_chronic",
+      "name_en": "Chronic PID Sequelae (context)",
+      "name_zh": "慢性骨盆腔炎後遺（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "N73.1",
+      "related_eastern_diseases": [
+        "tdis.dai_xia_bing",
+        "tdis.fu_tong"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_lower_burner",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "慢性骨盆腔炎後遺（文件情境）指骨盆腔發炎性疾病後之慢性後遺，如骨盆腔沾黏、慢性疼痛、輸卵管損傷與不孕，多與既往感染史相關。",
+      "summary_en": "Chronic PID sequelae (context) are long-term consequences after pelvic inflammatory disease, such as pelvic adhesions, chronic pain, tubal damage, and infertility, usually linked to prior infection.",
+      "red_flags_zh": [
+        "發燒、劇烈骨盆腔痛與異常分泌物提示急性發作或膿瘍，需即時就醫",
+        "疑似異位妊娠（有輸卵管損傷史者風險升高）",
+        "不孕需生殖專科評估",
+        "性伴侶需同步篩檢與處理以防再感染"
+      ],
+      "red_flags_en": [
+        "Fever, severe pelvic pain, and abnormal discharge suggest an acute flare or abscess — seek urgent care",
+        "Suspected ectopic pregnancy (higher risk with tubal damage)",
+        "Infertility — refer for reproductive evaluation",
+        "Partners need concurrent screening/treatment to prevent reinfection"
+      ],
+      "western_context_zh": "急性感染以抗生素處理，慢性後遺常需疼痛管理與生育相關評估；此為文件對照用語，非治療指示。",
+      "western_context_en": "Acute infection is treated with antibiotics; chronic sequelae often need pain management and fertility-related evaluation. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.vulvovaginal_candidiasis",
+      "name_en": "Vulvovaginal Candidiasis (context)",
+      "name_zh": "外陰陰道念珠菌感染（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "B37.3",
+      "related_eastern_diseases": [
+        "tdis.dai_xia_bing"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_lower_burner",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "外陰陰道念珠菌感染（文件情境）為念珠菌引起的陰道炎，症狀包括外陰搔癢、灼熱、白色凝乳狀分泌物與紅腫，常見且多可辨識，反覆發作需評估誘因。",
+      "summary_en": "Vulvovaginal candidiasis (context) is a yeast (Candida) vaginitis with vulvar itching, burning, thick white curd-like discharge, and erythema. It is common and usually recognizable; recurrent episodes warrant evaluation of contributors.",
+      "red_flags_zh": [
+        "反覆或難治性感染需排除糖尿病或免疫低下等誘因",
+        "合併發燒、骨盆腔痛提示上生殖道感染，非單純陰道炎",
+        "孕期症狀需依醫療指示處理",
+        "分泌物型態不符（惡臭、灰綠、泡沫）提示其他病原"
+      ],
+      "red_flags_en": [
+        "Recurrent or refractory infection — rule out contributors such as diabetes or immunosuppression",
+        "Fever or pelvic pain suggests upper-tract infection, not simple vaginitis",
+        "Symptoms in pregnancy should be managed per medical guidance",
+        "Discharge that doesn't fit (foul, gray-green, frothy) suggests another pathogen"
+      ],
+      "western_context_zh": "常以抗黴菌藥物處理並處置誘因；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with antifungal agents and addressing contributors. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.thin_endometrium",
+      "name_en": "Thin Endometrial Lining (context)",
+      "name_zh": "子宮內膜偏薄（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "N85.8",
+      "related_eastern_diseases": [
+        "tdis.yue_jing_guo_shao",
+        "tdis.bu_yun"
+      ],
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "子宮內膜偏薄（文件情境）指於評估時機內膜厚度低於一般著床所需，可能與雌激素不足、宮腔沾黏、既往手術或血流因素相關，主要見於生育與輔助生殖脈絡。",
+      "summary_en": "Thin endometrial lining (context) is endometrial thickness below what is generally favorable for implantation at the assessment time, potentially linked to low estrogen, intrauterine adhesions, prior surgery, or blood-flow factors, mainly relevant in fertility and ART contexts.",
+      "red_flags_zh": [
+        "有子宮腔手術史且經量驟減提示宮腔沾黏，需宮腔評估",
+        "反覆著床失敗需生殖專科評估",
+        "異常出血需排除內膜病變"
+      ],
+      "red_flags_en": [
+        "Prior uterine surgery with a sharp drop in flow suggests intrauterine adhesions — assess the cavity",
+        "Recurrent implantation failure — refer to reproductive medicine",
+        "Abnormal bleeding — rule out endometrial pathology"
+      ],
+      "western_context_zh": "常於生殖脈絡中討論雌激素支持、宮腔評估與改善內膜之策略；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly discussed within reproductive care regarding estrogen support, cavity assessment, and strategies to improve the lining. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.pmdd",
+      "name_en": "Premenstrual Dysphoric Disorder (context)",
+      "name_zh": "經前不悅症（文件情境）",
+      "category": "gyn_fertility",
+      "icd_hint": "F32.81",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng",
+        "tdis.zang_zao"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.liver_fire",
+        "pattern.heart_spleen_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "經前不悅症（文件情境）為經前症候群之嚴重型，以黃體期顯著情緒症狀（易怒、情緒低落、焦慮、失控感）為主，明顯影響人際與功能，月經來潮後緩解。",
+      "summary_en": "Premenstrual dysphoric disorder (context) is a severe form of PMS dominated by marked luteal-phase mood symptoms (irritability, low mood, anxiety, feeling out of control) that impair relationships and function and remit after menses.",
+      "red_flags_zh": [
+        "自殺意念、自傷或絕望感需即時精神科／危機介入",
+        "症狀無週期性或整月持續，應重新評估是否為其他情緒疾患",
+        "症狀急遽惡化影響安全"
+      ],
+      "red_flags_en": [
+        "Suicidal ideation, self-harm, or hopelessness — urgent psychiatric/crisis intervention",
+        "Non-cyclical or month-long symptoms — reassess for another mood disorder",
+        "Rapid worsening affecting safety"
+      ],
+      "western_context_zh": "常以血清素類藥物、荷爾蒙處置與心理支持處理；此為文件對照用語，非治療指示。",
+      "western_context_en": "Commonly managed with serotonergic agents, hormonal approaches, and psychological support. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.secondary_dysmenorrhea",
+      "name_en": "Secondary Dysmenorrhea",
+      "name_zh": "繼發性痛經",
+      "category": "gyn_fertility",
+      "icd_hint": "N94.5",
+      "related_eastern_diseases": [
+        "tdis.tong_jing",
+        "tdis.zheng_jia"
+      ],
+      "related_patterns": [
+        "pattern.blood_stasis",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "繼發性痛經指由骨盆腔器質病變（如子宮內膜異位、子宮腺肌症、肌瘤、骨盆腔炎或宮內裝置）引起的經期疼痛，常於成年後新發或型態改變，需查明病因。",
+      "summary_en": "Secondary dysmenorrhea is menstrual pain caused by pelvic pathology (endometriosis, adenomyosis, fibroids, PID, or an intrauterine device), often new-onset in adulthood or with a changed pattern, requiring identification of the cause.",
+      "red_flags_zh": [
+        "進行性加重或止痛無效之痛經需影像與專科評估",
+        "發燒、異常分泌物提示感染",
+        "劇痛合併異常出血或疑似懷孕需排除急症",
+        "深部性交痛與腸道／膀胱周期症狀提示內膜異位深部浸潤"
+      ],
+      "red_flags_en": [
+        "Progressive or analgesia-resistant pain — imaging and specialist evaluation",
+        "Fever or abnormal discharge suggests infection",
+        "Severe pain with abnormal bleeding or possible pregnancy — rule out acute causes",
+        "Deep dyspareunia with cyclical bowel/bladder symptoms suggests deep infiltrating endometriosis"
+      ],
+      "western_context_zh": "處置以治療潛在病因為主，並輔以疼痛管理；此為文件對照用語，非治療指示。",
+      "western_context_en": "Management targets the underlying cause with adjunctive pain control. Documentation context only, not a treatment instruction."
+    },
+    {
+      "id": "cond.chronic_low_back_pain",
+      "name_en": "Chronic Low Back Pain",
+      "name_zh": "慢性下背痛",
+      "category": "pain_msk",
+      "icd_hint": "M54.5",
+      "related_eastern_diseases": [
+        "tdis.yao_tong",
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.wind_damp_bi",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.acute_lumbar_sprain",
+      "name_en": "Acute Lumbar Sprain",
+      "name_zh": "急性腰扭傷",
+      "category": "pain_msk",
+      "icd_hint": "S39.012",
+      "related_eastern_diseases": [
+        "tdis.yao_tong",
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.lumbar_disc_herniation",
+      "name_en": "Lumbar Disc Herniation",
+      "name_zh": "腰椎椎間盤突出",
+      "category": "pain_msk",
+      "icd_hint": "M51.2",
+      "related_eastern_diseases": [
+        "tdis.yao_tong",
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.blood_stasis",
+        "pattern.wind_damp_bi",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.sciatica",
+      "name_en": "Sciatica",
+      "name_zh": "坐骨神經痛",
+      "category": "pain_msk",
+      "icd_hint": "M54.3",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng",
+        "tdis.yao_tong"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.blood_stasis",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "review_status": "draft",
+      "summary_zh": "坐骨神經或其神經根（多為 L4–S1）受壓或刺激所致的下肢放射痛，常沿臀部、大腿後側至小腿、足部，可伴麻木或無力。最常見成因為腰椎間盤突出。",
+      "summary_en": "Radiating leg pain from compression or irritation of the sciatic nerve or its roots (usually L4–S1), travelling from the buttock down the posterior thigh to the calf and foot, sometimes with numbness or weakness. The commonest cause is lumbar disc herniation.",
+      "red_flags_zh": [
+        "鞍區麻木、大小便失禁或滯留、雙下肢無力 → 馬尾症候群，急診轉介",
+        "進行性足下垂或明顯肌力下降 → 需影像與神經外科評估",
+        "夜間痛合併體重減輕、發燒或癌症病史 → 排除腫瘤或感染"
+      ],
+      "red_flags_en": [
+        "Saddle anaesthesia, bowel or bladder incontinence/retention, bilateral leg weakness → cauda equina syndrome, emergency referral",
+        "Progressive foot drop or marked motor loss → needs imaging and neurosurgical assessment",
+        "Night pain with weight loss, fever, or cancer history → rule out tumour or infection"
+      ],
+      "western_context_zh": "多數椎間盤源性坐骨神經痛於 6–12 週內自然改善，以止痛、維持活動、神經根鬆動與物理治療為主。紅旗徵象是唯一必須立即處理的部分。",
+      "western_context_en": "Most disc-related sciatica improves within 6–12 weeks with analgesia, staying active, nerve mobilisation and physiotherapy. The red-flag features are the only part that demands immediate action.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.cervical_spondylosis",
+      "name_en": "Cervical Spondylosis",
+      "name_zh": "頸椎病",
+      "category": "pain_msk",
+      "icd_hint": "M47.812",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng",
+        "tdis.xuan_yun"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.liver_yang_rising"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.neck_pain_stiff",
+      "name_en": "Acute Neck Pain / Stiff Neck",
+      "name_zh": "急性頸痛／落枕",
+      "category": "pain_msk",
+      "icd_hint": "M54.2",
+      "related_eastern_diseases": [
+        "tdis.luo_zhen"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.whiplash",
+      "name_en": "Whiplash-Associated Disorder (context)",
+      "name_zh": "揮鞭式頸部損傷（文件情境）",
+      "category": "pain_msk",
+      "icd_hint": "S13.4",
+      "related_eastern_diseases": [
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.frozen_shoulder",
+      "name_en": "Frozen Shoulder (Adhesive Capsulitis)",
+      "name_zh": "五十肩／冷凍肩",
+      "category": "pain_msk",
+      "icd_hint": "M75.0",
+      "related_eastern_diseases": [
+        "tdis.jian_ning",
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "肩關節囊發炎、纖維化、攣縮，導致肩部漸進性疼痛與各方向主動、被動活動皆受限。病程分疼痛期、僵硬期、緩解期，可歷時一至三年。",
+      "summary_en": "Inflammation, fibrosis and contracture of the shoulder capsule causing progressive pain and loss of both active AND passive range in all directions. It runs through freezing, frozen and thawing phases over one to three years.",
+      "red_flags_zh": [
+        "外傷後突發無力或畸形 → 排除旋轉肌撕裂或骨折",
+        "夜間痛合併體重減輕或發燒 → 排除感染或腫瘤",
+        "被動活動不受限卻無力 → 可能是旋轉肌問題而非冰凍肩"
+      ],
+      "red_flags_en": [
+        "Sudden weakness or deformity after trauma → rule out rotator cuff tear or fracture",
+        "Night pain with weight loss or fever → rule out infection or tumour",
+        "Full passive range but weakness → likely rotator cuff, not adhesive capsulitis"
+      ],
+      "western_context_zh": "好發於 40–60 歲、女性、糖尿病及甲狀腺疾病患者。與旋轉肌病變的關鍵區別：冰凍肩「被動」活動也受限。多數可自癒，以物理治療與關節內注射為主。",
+      "western_context_en": "Most common in ages 40–60, women, and people with diabetes or thyroid disease. Key discriminator from rotator cuff disease: passive range is also limited. Usually self-limiting; managed with physiotherapy and intra-articular injection.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.rotator_cuff",
+      "name_en": "Rotator Cuff Tendinopathy",
+      "name_zh": "旋轉肌袖肌腱病變",
+      "category": "pain_msk",
+      "icd_hint": "M75.1",
+      "related_eastern_diseases": [
+        "tdis.jin_shang",
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft",
+      "summary_zh": "旋轉肌腱（棘上肌最常見）因退化或夾擠而肌腱病變，甚至撕裂。症狀為肩外側痛、過頭動作與夜間側睡加重、外展無力。",
+      "summary_en": "Tendinopathy or tearing of the rotator cuff tendons (most often supraspinatus) from degeneration or impingement. Presents with lateral shoulder pain worse on overhead reach and when lying on the side, with weakness in abduction.",
+      "red_flags_zh": [
+        "急性外傷後無法主動外展手臂 → 疑全層撕裂，需影像與轉介",
+        "合併頸部放射痛或手麻 → 排除頸神經根病變",
+        "夜間痛合併發燒 → 排除感染"
+      ],
+      "red_flags_en": [
+        "Cannot actively abduct the arm after acute trauma → suspect full-thickness tear, image and refer",
+        "With radiating neck pain or hand numbness → rule out cervical radiculopathy",
+        "Night pain with fever → rule out infection"
+      ],
+      "western_context_zh": "隨年齡增加而常見。理學檢查（Jobe/空罐、Hawkins-Kennedy、painful arc）需組合判讀，單一陽性不足以確診。多數部分厚度病變以復健改善；全層撕裂視情況考慮修補。",
+      "western_context_en": "Increasingly common with age. Special tests (empty-can/Jobe, Hawkins-Kennedy, painful arc) are interpreted in clusters, not singly. Most partial-thickness lesions improve with rehabilitation; full-thickness tears may need repair.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.lateral_epicondylitis",
+      "name_en": "Lateral Epicondylitis (Tennis Elbow)",
+      "name_zh": "網球肘",
+      "category": "pain_msk",
+      "icd_hint": "M77.1",
+      "related_eastern_diseases": [
+        "tdis.jin_shang",
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft",
+      "summary_zh": "前臂伸腕肌總腱起點（肱骨外上髁，以橈側伸腕短肌為主）的過度使用性肌腱病變，俗稱網球肘。症狀為外上髁壓痛、抗阻伸腕或握物時痛。",
+      "summary_en": "Overuse tendinopathy at the common extensor origin on the lateral epicondyle (chiefly ECRB), known as tennis elbow. Presents with tenderness over the lateral epicondyle and pain on resisted wrist extension or gripping.",
+      "red_flags_zh": [
+        "外上髁腫脹發熱 → 排除感染或發炎性關節病",
+        "合併手麻或無力 → 排除橈神經（後骨間神經）夾擠",
+        "外傷後劇痛 → 排除撕脫性骨折"
+      ],
+      "red_flags_en": [
+        "Warmth and swelling over the epicondyle → rule out infection or inflammatory arthropathy",
+        "With hand numbness or weakness → rule out radial (posterior interosseous) nerve entrapment",
+        "Severe pain after trauma → rule out avulsion fracture"
+      ],
+      "western_context_zh": "為肌腱退化（tendinosis）而非典型發炎，故命名雖為「炎」實則退化。多數以相對休息、離心運動、護具改善，自然病程可達一年以上。",
+      "western_context_en": "It is tendinosis (degeneration), not true inflammation, so despite the '-itis' name the pathology is degenerative. Most improve with relative rest, eccentric loading and bracing; the natural course can exceed a year.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.medial_epicondylitis",
+      "name_en": "Medial Epicondylitis (Golfer's Elbow)",
+      "name_zh": "高爾夫球肘",
+      "category": "pain_msk",
+      "icd_hint": "M77.0",
+      "related_eastern_diseases": [
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.carpal_tunnel",
+      "name_en": "Carpal Tunnel Syndrome",
+      "name_zh": "腕隧道症候群",
+      "category": "pain_msk",
+      "icd_hint": "G56.0",
+      "related_eastern_diseases": [
+        "tdis.ma_mu",
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.qi_blood_deficiency",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft",
+      "summary_zh": "正中神經於腕隧道內受壓迫。症狀為拇、食、中指及無名指橈側麻木刺痛，夜間及甩手時明顯，晚期可見大魚際肌萎縮與握力下降。",
+      "summary_en": "Compression of the median nerve within the carpal tunnel. Causes numbness and tingling in the thumb, index, middle and radial ring finger, worse at night and relieved by shaking the hand; late signs include thenar wasting and grip weakness.",
+      "red_flags_zh": [
+        "進行性大魚際肌萎縮或持續麻木 → 需神經傳導檢查與轉介，考慮手術減壓",
+        "雙側合併全身症狀 → 排除甲狀腺低下、類風濕、澱粉樣變",
+        "外傷後急性腫脹麻木 → 排除急性腕隧道症候群（急症）"
+      ],
+      "red_flags_en": [
+        "Progressive thenar wasting or constant numbness → needs nerve conduction study and referral; consider surgical release",
+        "Bilateral with systemic symptoms → rule out hypothyroidism, rheumatoid arthritis, amyloidosis",
+        "Acute swelling and numbness after trauma → rule out acute carpal tunnel syndrome (emergency)"
+      ],
+      "western_context_zh": "誘發測試（Phalen、Tinel）敏感度有限，確診靠神經傳導檢查。輕症以夜間副木、活動調整改善；持續或有肌萎縮者手術減壓效果良好。",
+      "western_context_en": "Provocative tests (Phalen, Tinel) have limited sensitivity; diagnosis is confirmed by nerve conduction studies. Mild cases improve with night splinting and activity change; persistent cases or those with wasting respond well to surgical release.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.de_quervain",
+      "name_en": "De Quervain Tenosynovitis",
+      "name_zh": "媽媽手（狹窄性腱鞘炎）",
+      "category": "pain_msk",
+      "icd_hint": "M65.4",
+      "related_eastern_diseases": [
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "腕橈側第一背側腔室（拇長展肌與拇短伸肌腱）的狹窄性腱鞘炎。症狀為橈側腕痛，拇指活動與握抓、抱嬰兒時加重，Finkelstein 測試陽性。",
+      "summary_en": "Stenosing tenosynovitis of the first dorsal compartment at the radial wrist (abductor pollicis longus and extensor pollicis brevis). Causes radial wrist pain worse with thumb movement, gripping and lifting infants; Finkelstein test is positive.",
+      "red_flags_zh": [
+        "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+        "合併麻木 → 排除橈神經淺支刺激",
+        "外傷後劇痛 → 排除橈骨莖突骨折"
+      ],
+      "red_flags_en": [
+        "Redness, warmth and swelling → rule out infectious tenosynovitis (emergency)",
+        "With numbness → rule out superficial radial nerve irritation",
+        "Severe pain after trauma → rule out radial styloid fracture"
+      ],
+      "western_context_zh": "常見於產後與育嬰者、重複拇指動作者。以副木、活動調整、注射改善；頑固者行腔室鬆解手術。",
+      "western_context_en": "Common postpartum, in infant carers, and with repetitive thumb use. Managed with splinting, activity modification and injection; refractory cases have surgical release of the compartment.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.trigger_finger",
+      "name_en": "Trigger Finger",
+      "name_zh": "扳機指",
+      "category": "pain_msk",
+      "icd_hint": "M65.3",
+      "related_eastern_diseases": [
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.knee_osteoarthritis",
+      "name_en": "Knee Osteoarthritis",
+      "name_zh": "膝骨關節炎",
+      "category": "pain_msk",
+      "icd_hint": "M17",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.kidney_yang_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "膝關節軟骨退化磨損伴骨質增生。症狀為活動後痛、晨僵通常少於 30 分鐘、上下樓與蹲起困難，可有摩擦感與腫脹。",
+      "summary_en": "Degenerative wear of knee cartilage with bony overgrowth. Presents with activity-related pain, morning stiffness usually under 30 minutes, difficulty with stairs and squatting, and sometimes crepitus and swelling.",
+      "red_flags_zh": [
+        "紅、熱、劇痛、發燒 → 排除化膿性關節炎或痛風（急症）",
+        "外傷後鎖住或明顯不穩 → 排除半月板或韌帶損傷",
+        "晨僵超過一小時、多關節對稱 → 排除類風濕性關節炎"
+      ],
+      "red_flags_en": [
+        "Red, hot, severely painful joint with fever → rule out septic arthritis or gout (emergency)",
+        "Locking or gross instability after trauma → rule out meniscal or ligament injury",
+        "Morning stiffness over an hour, symmetric polyarthritis → rule out rheumatoid arthritis"
+      ],
+      "western_context_zh": "危險因子：年齡、肥胖、既往關節損傷、力線不良。核心治療為運動治療與減重；藥物與注射為輔，末期考慮置換手術。",
+      "western_context_en": "Risk factors: age, obesity, prior joint injury, malalignment. Cornerstones are exercise therapy and weight loss; medication and injections are adjuncts, with joint replacement for end-stage disease.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.patellofemoral_pain",
+      "name_en": "Patellofemoral Pain Syndrome",
+      "name_zh": "髕股疼痛症候群",
+      "category": "pain_msk",
+      "icd_hint": "M22.2",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng",
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.meniscus_injury",
+      "name_en": "Meniscus Injury (context)",
+      "name_zh": "半月板損傷（文件情境）",
+      "category": "pain_msk",
+      "icd_hint": "S83.2",
+      "related_eastern_diseases": [
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.ankle_sprain",
+      "name_en": "Ankle Sprain",
+      "name_zh": "踝關節扭傷",
+      "category": "pain_msk",
+      "icd_hint": "S93.4",
+      "related_eastern_diseases": [
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "踝關節韌帶（最常為外側距腓前韌帶）因內翻扭傷而拉傷或撕裂。症狀為外踝腫脹、瘀青、壓痛與負重困難。",
+      "summary_en": "Stretch or tear of the ankle ligaments (most often the anterior talofibular ligament) from an inversion injury. Presents with lateral ankle swelling, bruising, tenderness and difficulty bearing weight.",
+      "red_flags_zh": [
+        "受傷後無法負重四步且骨性壓痛（Ottawa 踝準則陽性）→ 需 X 光排除骨折",
+        "明顯不穩或反覆扭傷 → 考慮韌帶完全斷裂或慢性不穩",
+        "近端腓骨壓痛 → 排除 Maisonneuve 骨折"
+      ],
+      "red_flags_en": [
+        "Unable to take four steps and bony tenderness (positive Ottawa ankle rules) → X-ray to exclude fracture",
+        "Gross instability or recurrent sprains → consider complete ligament rupture or chronic instability",
+        "Proximal fibular tenderness → rule out Maisonneuve fracture"
+      ],
+      "western_context_zh": "以功能性復健（早期活動、平衡與腓骨肌訓練）優於長期固定。多數在數週內恢復；忽略復健易致慢性踝不穩。",
+      "western_context_en": "Functional rehabilitation (early motion, balance and peroneal strengthening) beats prolonged immobilisation. Most recover within weeks; skipping rehab risks chronic ankle instability.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.plantar_fasciitis",
+      "name_en": "Plantar Fasciitis",
+      "name_zh": "足底筋膜炎",
+      "category": "pain_msk",
+      "icd_hint": "M72.2",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng",
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yin_deficiency",
+        "pattern.blood_stasis",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft",
+      "summary_zh": "足底筋膜（支撐足弓、連接跟骨與前足的強韌帶）因過度負荷而發炎、退化。典型症狀是晨起或久坐後起身「頭幾步」跟部劇痛，行走數分鐘後緩解。",
+      "summary_en": "Irritation and degeneration of the plantar fascia, the strong band supporting the arch from heel to forefoot. The hallmark is sharp heel pain with the first few steps after rest that eases within minutes of walking.",
+      "red_flags_zh": [
+        "夜間痛或休息痛、外傷後無法負重 → 排除跟骨應力性骨折",
+        "雙側跟痛合併其他關節症狀 → 考慮發炎性關節病（如僵直性脊椎炎）",
+        "足底麻木或灼痛 → 考慮神經夾擠而非筋膜炎"
+      ],
+      "red_flags_en": [
+        "Night or rest pain, or inability to bear weight after trauma → rule out calcaneal stress fracture",
+        "Bilateral heel pain with other joint symptoms → consider inflammatory arthropathy (e.g. ankylosing spondylitis)",
+        "Plantar numbness or burning → consider nerve entrapment rather than fasciitis"
+      ],
+      "western_context_zh": "危險因子：小腿三頭肌緊繃、扁平足或高弓足、肥胖、久站硬地、40–60 歲。逾九成患者以保守治療（伸展、足弓支撐、減量）於 10 個月內改善，少數才需手術。",
+      "western_context_en": "Risk factors: tight calf, flat or high-arched feet, obesity, prolonged standing on hard surfaces, age 40–60. Over 90% improve within 10 months with conservative care (stretching, arch support, load reduction); surgery is rarely needed.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.achilles_tendinopathy",
+      "name_en": "Achilles Tendinopathy",
+      "name_zh": "阿基里斯腱病變",
+      "category": "pain_msk",
+      "icd_hint": "M76.6",
+      "related_eastern_diseases": [
+        "tdis.jin_shang"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yin_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft",
+      "summary_zh": "跟腱因過度使用而退化性病變，分為腱中段型與跟骨止端型。症狀為跟腱疼痛僵硬，運動初期加重、熱身後略緩，局部可增厚壓痛。",
+      "summary_en": "Overuse degeneration of the Achilles tendon, either mid-portion or insertional. Presents with tendon pain and stiffness worse at the start of activity and easing with warm-up, often with local thickening and tenderness.",
+      "red_flags_zh": [
+        "突發後跟「被踢」感、無法墊腳、Thompson 測試陽性 → 跟腱斷裂，需轉介",
+        "紅熱腫脹合併發燒 → 排除感染",
+        "使用氟喹諾酮類抗生素 → 肌腱斷裂風險升高，須警覺"
+      ],
+      "red_flags_en": [
+        "Sudden 'kicked in the heel' sensation, inability to push off, positive Thompson test → Achilles rupture, refer",
+        "Redness, warmth and swelling with fever → rule out infection",
+        "On fluoroquinolone antibiotics → heightened rupture risk, stay alert"
+      ],
+      "western_context_zh": "核心治療為離心式小腿訓練與負荷管理。為退化非發炎，不建議局部類固醇注射於腱體（增加斷裂風險）。恢復以月計。",
+      "western_context_en": "The cornerstone is eccentric calf loading and load management. Being degenerative rather than inflammatory, corticosteroid injection into the tendon body is discouraged (rupture risk). Recovery is measured in months.",
+      "authored_by": "model_draft",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ]
+    },
+    {
+      "id": "cond.hip_osteoarthritis",
+      "name_en": "Hip Osteoarthritis",
+      "name_zh": "髖骨關節炎",
+      "category": "pain_msk",
+      "icd_hint": "M16",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.kidney_yang_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.piriformis_syndrome",
+      "name_en": "Piriformis Syndrome",
+      "name_zh": "梨狀肌症候群",
+      "category": "pain_msk",
+      "icd_hint": "G57.0",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.fibromyalgia",
+      "name_en": "Fibromyalgia",
+      "name_zh": "纖維肌痛症",
+      "category": "pain_msk",
+      "icd_hint": "M79.7",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng",
+        "tdis.yu_zheng",
+        "tdis.xu_lao"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_blood_deficiency",
+        "pattern.heart_spleen_deficiency",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.myofascial_pain",
+      "name_en": "Myofascial Pain Syndrome",
+      "name_zh": "肌筋膜疼痛症候群",
+      "category": "pain_msk",
+      "icd_hint": "M79.1",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.tmd",
+      "name_en": "Temporomandibular Disorder",
+      "name_zh": "顳顎關節障礙",
+      "category": "pain_msk",
+      "icd_hint": "M26.6",
+      "related_eastern_diseases": [
+        "tdis.mian_tong",
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.wind_damp_bi"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.tension_headache",
+      "name_en": "Tension-Type Headache",
+      "name_zh": "緊張型頭痛",
+      "category": "pain_msk",
+      "icd_hint": "G44.2",
+      "related_eastern_diseases": [
+        "tdis.tou_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_blood_deficiency",
+        "pattern.liver_yang_rising"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.migraine",
+      "name_en": "Migraine",
+      "name_zh": "偏頭痛",
+      "category": "pain_msk",
+      "icd_hint": "G43",
+      "related_eastern_diseases": [
+        "tdis.tou_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_yang_rising",
+        "pattern.liver_fire",
+        "pattern.phlegm_damp",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.cluster_headache",
+      "name_en": "Cluster Headache (context)",
+      "name_zh": "叢發性頭痛（文件情境）",
+      "category": "pain_msk",
+      "icd_hint": "G44.0",
+      "related_eastern_diseases": [
+        "tdis.tou_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.gout",
+      "name_en": "Gout (context)",
+      "name_zh": "痛風（文件情境）",
+      "category": "pain_msk",
+      "icd_hint": "M10",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.heat_bi",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.rheumatoid_arthritis",
+      "name_en": "Rheumatoid Arthritis (context)",
+      "name_zh": "類風濕性關節炎（文件情境）",
+      "category": "pain_msk",
+      "icd_hint": "M05",
+      "related_eastern_diseases": [
+        "tdis.bi_zheng"
+      ],
+      "related_patterns": [
+        "pattern.wind_damp_bi",
+        "pattern.heat_bi",
+        "pattern.kidney_yang_deficiency",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.gerd",
+      "name_en": "Gastroesophageal Reflux Disease",
+      "name_zh": "胃食道逆流",
+      "category": "gi",
+      "icd_hint": "K21",
+      "related_eastern_diseases": [
+        "tdis.tun_suan",
+        "tdis.wei_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_stomach_disharmony",
+        "pattern.stomach_heat",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.functional_dyspepsia",
+      "name_en": "Functional Dyspepsia",
+      "name_zh": "功能性消化不良",
+      "aliases_en": [
+        "Dyspepsia",
+        "Indigestion"
+      ],
+      "aliases_zh": [
+        "消化不良"
+      ],
+      "category": "gi",
+      "icd_hint": "K30",
+      "related_eastern_diseases": [
+        "tdis.pi_man",
+        "tdis.wei_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_stomach_disharmony",
+        "pattern.spleen_qi_deficiency",
+        "pattern.food_stagnation"
+      ],
+      "related_tcm_symptoms": [
+        {
+          "name_zh": "上腹胃脘痛",
+          "name_en": "Upper Abdominal / Epigastric Pain",
+          "relation_type": "related",
+          "source_id": "cloudtcm_disease_taxonomy",
+          "source_url": "https://cloudtcm.com/disease/tcm/28325",
+          "review_status": "draft",
+          "notes": "雲端中醫將 Dyspepsia 列為相似名稱；此處保留為相關症狀概念，不視為與功能性消化不良完全等同。"
+        }
+      ],
+      "summary_zh": "功能性消化不良是腸腦互動障礙之一，可見上腹疼痛、灼熱或不適、進食時過早飽足、少量進食後仍感過飽，以及腹脹、噁心或噯氣等症狀。此為學習與文件對照摘要，不取代臨床診斷。",
+      "summary_en": "Functional dyspepsia is a disorder of gut-brain interaction. Symptoms may include upper-abdominal pain, burning or discomfort, early satiety, uncomfortable post-meal fullness, bloating, nausea, or belching. Study and documentation context only; not a diagnostic substitute.",
+      "red_flags_zh": [
+        "胸、下顎、頸部或手臂疼痛",
+        "吞嚥困難或吞嚥疼痛",
+        "頻繁嘔吐或嘔血",
+        "嚴重且持續的腹痛",
+        "呼吸困難",
+        "非刻意體重減輕或食慾喪失",
+        "眼睛或皮膚發黃",
+        "黑色柏油樣糞便"
+      ],
+      "red_flags_en": [
+        "Pain in the chest, jaw, neck, or arm",
+        "Difficulty or pain with swallowing",
+        "Frequent vomiting or bloody vomit",
+        "Severe and constant abdominal pain",
+        "Shortness of breath",
+        "Unintentional weight loss or loss of appetite",
+        "Yellowing of the eyes or skin",
+        "Black, tarry stools"
+      ],
+      "source_links": [
+        {
+          "source_id": "cloudtcm_disease_taxonomy",
+          "language": "zh-Hant",
+          "label_zh": "雲端中醫 · 上腹胃脘痛",
+          "label_en": "CloudTCM · Upper abdominal / epigastric pain",
+          "url": "https://cloudtcm.com/disease/tcm/28325",
+          "relation_type": "related"
+        },
+        {
+          "source_id": "niddk_indigestion_dyspepsia",
+          "language": "en",
+          "label_zh": "NIDDK · 消化不良（Dyspepsia）",
+          "label_en": "NIDDK · Indigestion (Dyspepsia)",
+          "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia",
+          "relation_type": "concept_reference"
+        }
+      ],
+      "source_urls": [
+        "https://cloudtcm.com/disease/tcm/28325",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/indigestion-dyspepsia"
+      ],
+      "source_status": "dual_source_draft",
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_gastritis",
+      "name_en": "Chronic Gastritis (context)",
+      "name_zh": "慢性胃炎（文件情境）",
+      "category": "gi",
+      "icd_hint": "K29.5",
+      "related_eastern_diseases": [
+        "tdis.wei_tong",
+        "tdis.pi_man"
+      ],
+      "related_patterns": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.stomach_yin_deficiency",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.liver_stomach_disharmony"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.peptic_ulcer",
+      "name_en": "Peptic Ulcer Disease (context)",
+      "name_zh": "消化性潰瘍（文件情境）",
+      "category": "gi",
+      "icd_hint": "K27",
+      "related_eastern_diseases": [
+        "tdis.wei_tong"
+      ],
+      "related_patterns": [
+        "pattern.stomach_heat",
+        "pattern.spleen_yang_deficiency",
+        "pattern.blood_stasis",
+        "pattern.liver_stomach_disharmony"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.ibs",
+      "name_en": "Irritable Bowel Syndrome",
+      "name_zh": "腸躁症",
+      "category": "gi",
+      "icd_hint": "K58",
+      "related_eastern_diseases": [
+        "tdis.xie_xie",
+        "tdis.fu_tong",
+        "tdis.bian_mi"
+      ],
+      "related_patterns": [
+        "pattern.liver_spleen_disharmony",
+        "pattern.spleen_qi_deficiency",
+        "pattern.spleen_kidney_yang_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.ibd",
+      "name_en": "Inflammatory Bowel Disease (context)",
+      "name_zh": "發炎性腸道疾病（文件情境）",
+      "category": "gi",
+      "icd_hint": "K50-K51",
+      "related_eastern_diseases": [
+        "tdis.xie_xie",
+        "tdis.fu_tong"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_constipation",
+      "name_en": "Chronic Constipation",
+      "name_zh": "慢性便秘",
+      "category": "gi",
+      "icd_hint": "K59.0",
+      "related_eastern_diseases": [
+        "tdis.bian_mi"
+      ],
+      "related_patterns": [
+        "pattern.stomach_heat",
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_blood_deficiency",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_diarrhea",
+      "name_en": "Chronic Diarrhea",
+      "name_zh": "慢性腹瀉",
+      "category": "gi",
+      "icd_hint": "K59.1",
+      "related_eastern_diseases": [
+        "tdis.xie_xie"
+      ],
+      "related_patterns": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.liver_spleen_disharmony"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.nausea_vomiting",
+      "name_en": "Nausea and Vomiting",
+      "name_zh": "噁心嘔吐",
+      "category": "gi",
+      "icd_hint": "R11",
+      "related_eastern_diseases": [
+        "tdis.ou_tu"
+      ],
+      "related_patterns": [
+        "pattern.liver_stomach_disharmony",
+        "pattern.food_stagnation",
+        "pattern.spleen_qi_deficiency",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hemorrhoids",
+      "name_en": "Hemorrhoids",
+      "name_zh": "痔瘡",
+      "category": "gi",
+      "icd_hint": "K64",
+      "related_eastern_diseases": [
+        "tdis.zhi_chuang"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_lower_burner",
+        "pattern.spleen_qi_sinking",
+        "pattern.blood_heat"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.nafld",
+      "name_en": "Nonalcoholic Fatty Liver (context)",
+      "name_zh": "非酒精性脂肪肝（文件情境）",
+      "category": "gi",
+      "icd_hint": "K76.0",
+      "related_eastern_diseases": [
+        "tdis.xie_tong",
+        "tdis.fei_pang"
+      ],
+      "related_patterns": [
+        "pattern.phlegm_damp",
+        "pattern.liver_qi_stagnation",
+        "pattern.damp_heat_spleen_stomach"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.gallbladder_dysfunction",
+      "name_en": "Biliary Dyskinesia / Gallbladder Dysfunction (context)",
+      "name_zh": "膽道功能障礙（文件情境）",
+      "category": "gi",
+      "icd_hint": "K82.8",
+      "related_eastern_diseases": [
+        "tdis.xie_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.liver_qi_stagnation"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.cinv",
+      "name_en": "Chemotherapy-Induced Nausea (adjunctive context)",
+      "name_zh": "化療相關噁心（輔助文件情境）",
+      "category": "gi",
+      "icd_hint": "T45.1/R11",
+      "related_eastern_diseases": [
+        "tdis.ou_tu"
+      ],
+      "related_patterns": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.stomach_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.post_op_ileus",
+      "name_en": "Postoperative Ileus (adjunctive context)",
+      "name_zh": "術後腸麻痺（輔助文件情境）",
+      "category": "gi",
+      "icd_hint": "K91.89",
+      "related_eastern_diseases": [
+        "tdis.fu_tong",
+        "tdis.bian_mi"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.food_sensitivity",
+      "name_en": "Food Intolerance (context)",
+      "name_zh": "食物不耐（文件情境）",
+      "category": "gi",
+      "icd_hint": "K90.4",
+      "related_eastern_diseases": [
+        "tdis.xie_xie",
+        "tdis.pi_man"
+      ],
+      "related_patterns": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.food_stagnation"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.insomnia",
+      "name_en": "Insomnia",
+      "name_zh": "失眠",
+      "category": "psych_sleep",
+      "icd_hint": "G47.0",
+      "related_eastern_diseases": [
+        "tdis.bu_mei"
+      ],
+      "related_patterns": [
+        "pattern.heart_spleen_deficiency",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.liver_fire",
+        "pattern.heart_blood_deficiency",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.anxiety",
+      "name_en": "Anxiety (context)",
+      "name_zh": "焦慮（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F41",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng",
+        "tdis.zang_zao",
+        "tdis.xin_ji"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.heart_yin_deficiency",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.heart_spleen_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.depression",
+      "name_en": "Depression (context)",
+      "name_zh": "憂鬱（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F32-F33",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.heart_spleen_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.phlegm_misting_heart"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.panic_disorder",
+      "name_en": "Panic Disorder (context)",
+      "name_zh": "恐慌症（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F41.0",
+      "related_eastern_diseases": [
+        "tdis.xin_ji",
+        "tdis.zang_zao"
+      ],
+      "related_patterns": [
+        "pattern.heart_qi_deficiency",
+        "pattern.heart_kidney_not_communicating",
+        "pattern.phlegm_misting_heart"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.ptsd",
+      "name_en": "PTSD (context)",
+      "name_zh": "創傷後壓力症（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F43.1",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng",
+        "tdis.bu_mei",
+        "tdis.xin_ji"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.heart_blood_deficiency",
+        "pattern.phlegm_misting_heart"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.adhd",
+      "name_en": "ADHD (context)",
+      "name_zh": "注意力不足過動症（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F90",
+      "related_eastern_diseases": [
+        "tdis.jian_wang"
+      ],
+      "related_patterns": [
+        "pattern.heart_spleen_deficiency",
+        "pattern.kidney_essence_deficiency",
+        "pattern.liver_yang_rising"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.stress_burnout",
+      "name_en": "Stress / Burnout",
+      "name_zh": "壓力與過勞",
+      "category": "psych_sleep",
+      "icd_hint": "Z73.0",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng",
+        "tdis.xu_lao"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.qi_blood_deficiency",
+        "pattern.heart_spleen_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_fatigue",
+      "name_en": "Chronic Fatigue Syndrome (context)",
+      "name_zh": "慢性疲勞症候群（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "G93.3",
+      "related_eastern_diseases": [
+        "tdis.xu_lao"
+      ],
+      "related_patterns": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.liver_qi_stagnation"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.restless_legs",
+      "name_en": "Restless Legs Syndrome",
+      "name_zh": "不寧腿症候群",
+      "category": "psych_sleep",
+      "icd_hint": "G25.81",
+      "related_eastern_diseases": [
+        "tdis.bu_mei",
+        "tdis.ma_mu"
+      ],
+      "related_patterns": [
+        "pattern.liver_blood_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.circadian_disorder",
+      "name_en": "Circadian Rhythm Sleep Disorder (context)",
+      "name_zh": "晝夜節律睡眠障礙（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "G47.2",
+      "related_eastern_diseases": [
+        "tdis.bu_mei"
+      ],
+      "related_patterns": [
+        "pattern.heart_kidney_not_communicating",
+        "pattern.liver_qi_stagnation"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.smoking_cessation",
+      "name_en": "Smoking Cessation Support (context)",
+      "name_zh": "戒菸輔助（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F17.2",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_heat_in_lung"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.somatic_symptom",
+      "name_en": "Somatic Symptom Disorder (context)",
+      "name_zh": "身體症狀障礙（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F45",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng",
+        "tdis.mei_he_qi",
+        "tdis.bai_he_bing"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.heart_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.poor_memory",
+      "name_en": "Memory Decline (context)",
+      "name_zh": "記憶力減退（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "R41.3",
+      "related_eastern_diseases": [
+        "tdis.jian_wang"
+      ],
+      "related_patterns": [
+        "pattern.heart_spleen_deficiency",
+        "pattern.kidney_essence_deficiency",
+        "pattern.phlegm_misting_heart"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.alcohol_use",
+      "name_en": "Alcohol Use Support (context)",
+      "name_zh": "飲酒問題輔助（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F10",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng"
+      ],
+      "related_patterns": [
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.eating_disorder",
+      "name_en": "Disordered Eating (context)",
+      "name_zh": "飲食失調（文件情境）",
+      "category": "psych_sleep",
+      "icd_hint": "F50",
+      "related_eastern_diseases": [
+        "tdis.yu_zheng"
+      ],
+      "related_patterns": [
+        "pattern.liver_spleen_disharmony",
+        "pattern.spleen_qi_deficiency",
+        "pattern.stomach_heat"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.common_cold",
+      "name_en": "Common Cold / URI",
+      "name_zh": "感冒／上呼吸道感染",
+      "category": "respiratory",
+      "icd_hint": "J00",
+      "related_eastern_diseases": [
+        "tdis.gan_mao"
+      ],
+      "related_patterns": [
+        "pattern.wind_cold_invading_lung",
+        "pattern.wind_heat_invading_lung",
+        "pattern.lung_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.influenza",
+      "name_en": "Influenza (context)",
+      "name_zh": "流行性感冒（文件情境）",
+      "category": "respiratory",
+      "icd_hint": "J10-J11",
+      "related_eastern_diseases": [
+        "tdis.gan_mao"
+      ],
+      "related_patterns": [
+        "pattern.wind_heat_invading_lung"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.allergic_rhinitis",
+      "name_en": "Allergic Rhinitis",
+      "name_zh": "過敏性鼻炎",
+      "category": "respiratory",
+      "icd_hint": "J30",
+      "related_eastern_diseases": [
+        "tdis.bi_qiu"
+      ],
+      "related_patterns": [
+        "pattern.lung_qi_deficiency",
+        "pattern.spleen_qi_deficiency",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_sinusitis",
+      "name_en": "Chronic Sinusitis",
+      "name_zh": "慢性鼻竇炎",
+      "category": "respiratory",
+      "icd_hint": "J32",
+      "related_eastern_diseases": [
+        "tdis.bi_yuan"
+      ],
+      "related_patterns": [
+        "pattern.wind_heat_invading_lung",
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.asthma",
+      "name_en": "Asthma (adjunctive context)",
+      "name_zh": "氣喘（輔助文件情境）",
+      "category": "respiratory",
+      "icd_hint": "J45",
+      "related_eastern_diseases": [
+        "tdis.xiao_bing",
+        "tdis.chuan_zheng"
+      ],
+      "related_patterns": [
+        "pattern.phlegm_damp_in_lung",
+        "pattern.phlegm_heat_in_lung",
+        "pattern.lung_qi_deficiency",
+        "pattern.kidney_not_grasping_qi"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.copd",
+      "name_en": "COPD (adjunctive context)",
+      "name_zh": "慢性阻塞性肺病（輔助文件情境）",
+      "category": "respiratory",
+      "icd_hint": "J44",
+      "related_eastern_diseases": [
+        "tdis.chuan_zheng",
+        "tdis.ke_sou"
+      ],
+      "related_patterns": [
+        "pattern.lung_qi_deficiency",
+        "pattern.kidney_not_grasping_qi",
+        "pattern.phlegm_damp_in_lung"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_cough",
+      "name_en": "Chronic Cough",
+      "name_zh": "慢性咳嗽",
+      "category": "respiratory",
+      "icd_hint": "R05.3",
+      "related_eastern_diseases": [
+        "tdis.ke_sou"
+      ],
+      "related_patterns": [
+        "pattern.lung_yin_deficiency",
+        "pattern.phlegm_damp_in_lung",
+        "pattern.liver_fire"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.post_viral_cough",
+      "name_en": "Post-Viral Cough",
+      "name_zh": "感染後咳嗽",
+      "category": "respiratory",
+      "icd_hint": "R05.1",
+      "related_eastern_diseases": [
+        "tdis.ke_sou"
+      ],
+      "related_patterns": [
+        "pattern.lung_yin_deficiency",
+        "pattern.lung_qi_deficiency",
+        "pattern.wind_heat_invading_lung"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.acute_bronchitis",
+      "name_en": "Acute Bronchitis (context)",
+      "name_zh": "急性支氣管炎（文件情境）",
+      "category": "respiratory",
+      "icd_hint": "J20",
+      "related_eastern_diseases": [
+        "tdis.ke_sou"
+      ],
+      "related_patterns": [
+        "pattern.wind_heat_invading_lung",
+        "pattern.phlegm_heat_in_lung"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.sleep_apnea",
+      "name_en": "Obstructive Sleep Apnea (context)",
+      "name_zh": "阻塞性睡眠呼吸中止（文件情境）",
+      "category": "respiratory",
+      "icd_hint": "G47.33",
+      "related_eastern_diseases": [
+        "tdis.fei_pang",
+        "tdis.bu_mei"
+      ],
+      "related_patterns": [
+        "pattern.phlegm_damp",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.bells_palsy",
+      "name_en": "Bell's Palsy",
+      "name_zh": "顏面神經麻痺",
+      "category": "neuro",
+      "icd_hint": "G51.0",
+      "related_eastern_diseases": [
+        "tdis.mian_tan"
+      ],
+      "related_patterns": [
+        "pattern.wind_cold_invading_lung",
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.stroke_rehab",
+      "name_en": "Post-Stroke Rehabilitation",
+      "name_zh": "中風後復健",
+      "category": "neuro",
+      "icd_hint": "I69",
+      "related_eastern_diseases": [
+        "tdis.zhong_feng"
+      ],
+      "related_patterns": [
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.liver_yang_rising",
+        "pattern.phlegm_misting_heart",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.peripheral_neuropathy",
+      "name_en": "Peripheral Neuropathy",
+      "name_zh": "周邊神經病變",
+      "category": "neuro",
+      "icd_hint": "G62.9",
+      "related_eastern_diseases": [
+        "tdis.ma_mu",
+        "tdis.wei_zheng"
+      ],
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.diabetic_neuropathy",
+      "name_en": "Diabetic Peripheral Neuropathy",
+      "name_zh": "糖尿病周邊神經病變",
+      "category": "neuro",
+      "icd_hint": "E11.42",
+      "related_eastern_diseases": [
+        "tdis.xiao_ke",
+        "tdis.ma_mu"
+      ],
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.trigeminal_neuralgia",
+      "name_en": "Trigeminal Neuralgia",
+      "name_zh": "三叉神經痛",
+      "aliases_en": [
+        "Tic Douloureux"
+      ],
+      "aliases_zh": [],
+      "category": "neuro",
+      "icd_hint": "G50.0",
+      "related_eastern_diseases": [
+        "tdis.mian_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.wind_damp_bi",
+        "pattern.blood_stasis"
+      ],
+      "summary_zh": "三叉神經痛表現為突發且劇烈的臉部疼痛，常被描述為尖銳、射擊樣或電擊樣疼痛，多影響單側，可持續數秒至約兩分鐘。洗臉、進食、刷牙、輕觸或風吹等刺激可能誘發疼痛。此為學習與文件對照摘要，不取代臨床診斷。",
+      "summary_en": "Trigeminal neuralgia causes sudden, severe facial pain often described as sharp, shooting, or electric-shock-like. It usually affects one side and may last from a few seconds to about two minutes. Washing, eating, brushing the teeth, light touch, or wind may trigger attacks. Study and documentation context only; not a diagnostic substitute.",
+      "red_flags_zh": [
+        "頻繁或持續性臉部疼痛，尤其一般止痛藥無效且牙科已排除牙源性原因時，應接受醫療評估"
+      ],
+      "red_flags_en": [
+        "Frequent or persistent facial pain should be medically assessed, particularly when standard painkillers do not help and dental causes have been ruled out"
+      ],
+      "source_links": [
+        {
+          "source_id": "cloudtcm_disease_taxonomy",
+          "language": "zh-Hant",
+          "label_zh": "雲端中醫 · 三叉神經痛",
+          "label_en": "CloudTCM · Trigeminal Neuralgia",
+          "url": "https://cloudtcm.com/disease/tcm/36",
+          "relation_type": "concept_reference"
+        },
+        {
+          "source_id": "nhs_trigeminal_neuralgia",
+          "language": "en",
+          "label_zh": "NHS · 三叉神經痛",
+          "label_en": "NHS · Trigeminal Neuralgia",
+          "url": "https://www.nhs.uk/conditions/trigeminal-neuralgia/",
+          "relation_type": "concept_reference"
+        }
+      ],
+      "source_urls": [
+        "https://cloudtcm.com/disease/tcm/36",
+        "https://www.nhs.uk/conditions/trigeminal-neuralgia/"
+      ],
+      "source_status": "dual_source_draft",
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.postherpetic_neuralgia",
+      "name_en": "Postherpetic Neuralgia",
+      "name_zh": "帶狀皰疹後神經痛",
+      "category": "neuro",
+      "icd_hint": "B02.29",
+      "related_eastern_diseases": [
+        "tdis.she_chuan_chuang"
+      ],
+      "related_patterns": [
+        "pattern.blood_stasis",
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.parkinsons",
+      "name_en": "Parkinson's Disease (adjunctive context)",
+      "name_zh": "帕金森氏症（輔助文件情境）",
+      "category": "neuro",
+      "icd_hint": "G20",
+      "related_eastern_diseases": [
+        "tdis.chan_zheng"
+      ],
+      "related_patterns": [
+        "pattern.liver_wind",
+        "pattern.kidney_essence_deficiency",
+        "pattern.liver_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.multiple_sclerosis",
+      "name_en": "Multiple Sclerosis (adjunctive context)",
+      "name_zh": "多發性硬化症（輔助文件情境）",
+      "category": "neuro",
+      "icd_hint": "G35",
+      "related_eastern_diseases": [
+        "tdis.wei_zheng",
+        "tdis.ma_mu"
+      ],
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.spleen_qi_deficiency",
+        "pattern.damp_heat_spleen_stomach"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.essential_tremor",
+      "name_en": "Essential Tremor (context)",
+      "name_zh": "原發性顫抖症（文件情境）",
+      "category": "neuro",
+      "icd_hint": "G25.0",
+      "related_eastern_diseases": [
+        "tdis.chan_zheng"
+      ],
+      "related_patterns": [
+        "pattern.liver_wind",
+        "pattern.liver_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.dizziness_vertigo",
+      "name_en": "Dizziness / Vertigo",
+      "name_zh": "頭暈／眩暈",
+      "category": "neuro",
+      "icd_hint": "R42",
+      "related_eastern_diseases": [
+        "tdis.xuan_yun"
+      ],
+      "related_patterns": [
+        "pattern.liver_yang_rising",
+        "pattern.phlegm_damp",
+        "pattern.qi_blood_deficiency",
+        "pattern.kidney_essence_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.menieres",
+      "name_en": "Ménière's Disease (context)",
+      "name_zh": "梅尼爾氏症（文件情境）",
+      "category": "neuro",
+      "icd_hint": "H81.0",
+      "related_eastern_diseases": [
+        "tdis.xuan_yun",
+        "tdis.er_ming_er_long"
+      ],
+      "related_patterns": [
+        "pattern.phlegm_damp",
+        "pattern.liver_yang_rising",
+        "pattern.kidney_essence_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.migraine_vestibular",
+      "name_en": "Vestibular Migraine (context)",
+      "name_zh": "前庭性偏頭痛（文件情境）",
+      "category": "neuro",
+      "icd_hint": "G43.82",
+      "related_eastern_diseases": [
+        "tdis.xuan_yun",
+        "tdis.tou_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_yang_rising",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.eczema",
+      "name_en": "Atopic Dermatitis / Eczema",
+      "name_zh": "異位性皮膚炎／濕疹",
+      "category": "derm",
+      "icd_hint": "L20",
+      "related_eastern_diseases": [
+        "tdis.shi_chuang"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.blood_heat",
+        "pattern.spleen_qi_deficiency",
+        "pattern.liver_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.urticaria",
+      "name_en": "Urticaria",
+      "name_zh": "蕁麻疹",
+      "category": "derm",
+      "icd_hint": "L50",
+      "related_eastern_diseases": [
+        "tdis.yin_zhen"
+      ],
+      "related_patterns": [
+        "pattern.wind_heat_invading_lung",
+        "pattern.blood_heat",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.acne",
+      "name_en": "Acne Vulgaris",
+      "name_zh": "痤瘡",
+      "category": "derm",
+      "icd_hint": "L70.0",
+      "related_eastern_diseases": [
+        "tdis.fen_ci"
+      ],
+      "related_patterns": [
+        "pattern.stomach_heat",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.blood_heat",
+        "pattern.chong_ren_disharmony"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.psoriasis",
+      "name_en": "Psoriasis (context)",
+      "name_zh": "乾癬／銀屑病（文件情境）",
+      "category": "derm",
+      "icd_hint": "L40",
+      "related_eastern_diseases": [
+        "tdis.bai_bi"
+      ],
+      "related_patterns": [
+        "pattern.blood_heat",
+        "pattern.blood_stasis",
+        "pattern.liver_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.herpes_zoster",
+      "name_en": "Herpes Zoster (acute)",
+      "name_zh": "帶狀皰疹（急性期）",
+      "category": "derm",
+      "icd_hint": "B02",
+      "related_eastern_diseases": [
+        "tdis.she_chuan_chuang"
+      ],
+      "related_patterns": [
+        "pattern.liver_gallbladder_damp_heat",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.alopecia",
+      "name_en": "Alopecia Areata (context)",
+      "name_zh": "斑禿（文件情境）",
+      "category": "derm",
+      "icd_hint": "L63",
+      "related_eastern_diseases": [
+        "tdis.you_feng"
+      ],
+      "related_patterns": [
+        "pattern.liver_blood_deficiency",
+        "pattern.kidney_essence_deficiency",
+        "pattern.blood_heat",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.rosacea",
+      "name_en": "Rosacea (context)",
+      "name_zh": "酒糟性皮膚炎（文件情境）",
+      "category": "derm",
+      "icd_hint": "L71",
+      "related_eastern_diseases": [
+        "tdis.fen_ci"
+      ],
+      "related_patterns": [
+        "pattern.stomach_heat",
+        "pattern.blood_heat",
+        "pattern.liver_fire"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.pruritus",
+      "name_en": "Chronic Pruritus (context)",
+      "name_zh": "慢性搔癢（文件情境）",
+      "category": "derm",
+      "icd_hint": "L29",
+      "related_eastern_diseases": [
+        "tdis.yin_zhen",
+        "tdis.shi_chuang"
+      ],
+      "related_patterns": [
+        "pattern.blood_heat",
+        "pattern.liver_blood_deficiency",
+        "pattern.damp_heat_spleen_stomach"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.t2dm",
+      "name_en": "Type 2 Diabetes (adjunctive context)",
+      "name_zh": "第二型糖尿病（輔助文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "E11",
+      "related_eastern_diseases": [
+        "tdis.xiao_ke"
+      ],
+      "related_patterns": [
+        "pattern.stomach_yin_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.damp_heat_spleen_stomach"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.metabolic_syndrome",
+      "name_en": "Prediabetes / Metabolic Syndrome (context)",
+      "name_zh": "代謝症候群（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "E88.81",
+      "related_eastern_diseases": [
+        "tdis.fei_pang",
+        "tdis.xiao_ke"
+      ],
+      "related_patterns": [
+        "pattern.phlegm_damp",
+        "pattern.spleen_qi_deficiency",
+        "pattern.damp_heat_spleen_stomach"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hypothyroidism",
+      "name_en": "Hypothyroidism (context)",
+      "name_zh": "甲狀腺功能低下（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "E03",
+      "related_eastern_diseases": [
+        "tdis.xu_lao",
+        "tdis.ying_bing"
+      ],
+      "related_patterns": [
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hyperthyroidism",
+      "name_en": "Hyperthyroidism (context)",
+      "name_zh": "甲狀腺功能亢進（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "E05",
+      "related_eastern_diseases": [
+        "tdis.ying_bing"
+      ],
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.heart_yin_deficiency",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hashimoto",
+      "name_en": "Hashimoto Thyroiditis (context)",
+      "name_zh": "橋本氏甲狀腺炎（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "E06.3",
+      "related_eastern_diseases": [
+        "tdis.ying_bing",
+        "tdis.xu_lao"
+      ],
+      "related_patterns": [
+        "pattern.spleen_kidney_yang_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.obesity",
+      "name_en": "Obesity / Weight Management",
+      "name_zh": "肥胖／體重管理",
+      "category": "endo_metabolic",
+      "icd_hint": "E66",
+      "related_eastern_diseases": [
+        "tdis.fei_pang"
+      ],
+      "related_patterns": [
+        "pattern.phlegm_damp",
+        "pattern.spleen_qi_deficiency",
+        "pattern.stomach_heat",
+        "pattern.liver_qi_stagnation"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.dyslipidemia",
+      "name_en": "Dyslipidemia (context)",
+      "name_zh": "血脂異常（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "E78",
+      "related_eastern_diseases": [
+        "tdis.fei_pang"
+      ],
+      "related_patterns": [
+        "pattern.phlegm_damp",
+        "pattern.spleen_qi_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.osteoporosis",
+      "name_en": "Osteoporosis (context)",
+      "name_zh": "骨質疏鬆（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "M81",
+      "related_eastern_diseases": [
+        "tdis.yao_tong",
+        "tdis.xu_lao"
+      ],
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hpa_dysregulation",
+      "name_en": "HPA-Axis Dysregulation / 'Adrenal Fatigue' (context)",
+      "name_zh": "下視丘-腦下垂體-腎上腺軸失調（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "E27.8",
+      "related_eastern_diseases": [
+        "tdis.xu_lao"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.kidney_yin_deficiency",
+        "pattern.heart_kidney_not_communicating"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.edema_fluid",
+      "name_en": "Idiopathic Edema / Fluid Retention (context)",
+      "name_zh": "特發性水腫（文件情境）",
+      "category": "endo_metabolic",
+      "icd_hint": "R60",
+      "related_eastern_diseases": [
+        "tdis.shui_zhong"
+      ],
+      "related_patterns": [
+        "pattern.spleen_yang_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hypertension",
+      "name_en": "Essential Hypertension (adjunctive context)",
+      "name_zh": "原發性高血壓（輔助文件情境）",
+      "category": "cardio",
+      "icd_hint": "I10",
+      "related_eastern_diseases": [
+        "tdis.xuan_yun",
+        "tdis.tou_tong"
+      ],
+      "related_patterns": [
+        "pattern.liver_yang_rising",
+        "pattern.liver_fire",
+        "pattern.phlegm_damp",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hypotension",
+      "name_en": "Hypotension (context)",
+      "name_zh": "低血壓（文件情境）",
+      "category": "cardio",
+      "icd_hint": "I95",
+      "related_eastern_diseases": [
+        "tdis.xuan_yun",
+        "tdis.xu_lao"
+      ],
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.heart_yang_deficiency",
+        "pattern.spleen_qi_sinking"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.palpitations",
+      "name_en": "Palpitations / Benign Arrhythmia (context)",
+      "name_zh": "心悸／良性心律不整（文件情境）",
+      "category": "cardio",
+      "icd_hint": "R00.2",
+      "related_eastern_diseases": [
+        "tdis.xin_ji"
+      ],
+      "related_patterns": [
+        "pattern.heart_blood_deficiency",
+        "pattern.heart_yin_deficiency",
+        "pattern.heart_yang_deficiency",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.cad",
+      "name_en": "Coronary Artery Disease (adjunctive context)",
+      "name_zh": "冠狀動脈疾病（輔助文件情境）",
+      "category": "cardio",
+      "icd_hint": "I25",
+      "related_eastern_diseases": [
+        "tdis.xiong_bi"
+      ],
+      "related_patterns": [
+        "pattern.heart_blood_stasis",
+        "pattern.phlegm_damp",
+        "pattern.heart_yang_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.heart_failure",
+      "name_en": "Heart Failure (adjunctive context)",
+      "name_zh": "心臟衰竭（輔助文件情境）",
+      "category": "cardio",
+      "icd_hint": "I50",
+      "related_eastern_diseases": [
+        "tdis.xiong_bi",
+        "tdis.shui_zhong",
+        "tdis.chuan_zheng"
+      ],
+      "related_patterns": [
+        "pattern.heart_yang_deficiency",
+        "pattern.kidney_yang_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.raynaud",
+      "name_en": "Raynaud Phenomenon (context)",
+      "name_zh": "雷諾氏現象（文件情境）",
+      "category": "cardio",
+      "icd_hint": "I73.0",
+      "related_eastern_diseases": [
+        "tdis.ma_mu"
+      ],
+      "related_patterns": [
+        "pattern.heart_yang_deficiency",
+        "pattern.cold_stagnation_liver_channel",
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.varicose_veins",
+      "name_en": "Varicose Veins / Venous Insufficiency (context)",
+      "name_zh": "靜脈曲張（文件情境）",
+      "category": "cardio",
+      "icd_hint": "I83",
+      "related_eastern_diseases": [
+        "tdis.shui_zhong"
+      ],
+      "related_patterns": [
+        "pattern.spleen_qi_sinking",
+        "pattern.blood_stasis",
+        "pattern.phlegm_damp"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.poor_circulation",
+      "name_en": "Poor Peripheral Circulation (context)",
+      "name_zh": "末梢循環不良（文件情境）",
+      "category": "cardio",
+      "icd_hint": "I73.9",
+      "related_eastern_diseases": [
+        "tdis.ma_mu"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.recurrent_uti",
+      "name_en": "Recurrent UTI (context)",
+      "name_zh": "反覆泌尿道感染（文件情境）",
+      "category": "uro_renal",
+      "icd_hint": "N39.0",
+      "related_eastern_diseases": [
+        "tdis.lin_zheng"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_lower_burner",
+        "pattern.kidney_yin_deficiency",
+        "pattern.spleen_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.interstitial_cystitis",
+      "name_en": "Interstitial Cystitis / Bladder Pain Syndrome",
+      "name_zh": "間質性膀胱炎",
+      "category": "uro_renal",
+      "icd_hint": "N30.1",
+      "related_eastern_diseases": [
+        "tdis.lin_zheng",
+        "tdis.fu_tong"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_lower_burner",
+        "pattern.liver_qi_stagnation",
+        "pattern.kidney_yin_deficiency",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.overactive_bladder",
+      "name_en": "Overactive Bladder",
+      "name_zh": "膀胱過動症",
+      "category": "uro_renal",
+      "icd_hint": "N32.81",
+      "related_eastern_diseases": [
+        "tdis.lin_zheng",
+        "tdis.yi_niao"
+      ],
+      "related_patterns": [
+        "pattern.kidney_qi_not_firm",
+        "pattern.kidney_yang_deficiency",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.urinary_retention",
+      "name_en": "Non-obstructive Urinary Retention (context)",
+      "name_zh": "非阻塞性尿滯留（文件情境）",
+      "category": "uro_renal",
+      "icd_hint": "R33",
+      "related_eastern_diseases": [
+        "tdis.long_bi"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.spleen_qi_sinking",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.bph",
+      "name_en": "Benign Prostatic Hyperplasia (context)",
+      "name_zh": "良性攝護腺肥大（文件情境）",
+      "category": "uro_renal",
+      "icd_hint": "N40",
+      "related_eastern_diseases": [
+        "tdis.long_bi",
+        "tdis.lin_zheng"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.damp_heat_lower_burner",
+        "pattern.blood_stasis"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_prostatitis",
+      "name_en": "Chronic Prostatitis / CPPS",
+      "name_zh": "慢性攝護腺炎／慢性骨盆疼痛",
+      "category": "uro_renal",
+      "icd_hint": "N41.1",
+      "related_eastern_diseases": [
+        "tdis.lin_zheng",
+        "tdis.fu_tong"
+      ],
+      "related_patterns": [
+        "pattern.damp_heat_lower_burner",
+        "pattern.qi_stagnation_blood_stasis",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.erectile_dysfunction",
+      "name_en": "Erectile Dysfunction",
+      "name_zh": "勃起功能障礙",
+      "category": "uro_renal",
+      "icd_hint": "N52",
+      "related_eastern_diseases": [
+        "tdis.yang_wei"
+      ],
+      "related_patterns": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.liver_qi_stagnation",
+        "pattern.heart_spleen_deficiency",
+        "pattern.damp_heat_lower_burner"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.nocturnal_enuresis",
+      "name_en": "Nocturnal Enuresis",
+      "name_zh": "夜間遺尿",
+      "category": "uro_renal",
+      "icd_hint": "N39.44",
+      "related_eastern_diseases": [
+        "tdis.yi_niao"
+      ],
+      "related_patterns": [
+        "pattern.kidney_qi_not_firm",
+        "pattern.spleen_qi_deficiency",
+        "pattern.lung_qi_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.tinnitus",
+      "name_en": "Tinnitus",
+      "name_zh": "耳鳴",
+      "category": "ent_eye",
+      "icd_hint": "H93.1",
+      "related_eastern_diseases": [
+        "tdis.er_ming_er_long"
+      ],
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.liver_fire",
+        "pattern.phlegm_damp",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.hearing_loss",
+      "name_en": "Sensorineural Hearing Loss (context)",
+      "name_zh": "感音神經性聽損（文件情境）",
+      "category": "ent_eye",
+      "icd_hint": "H90.3",
+      "related_eastern_diseases": [
+        "tdis.er_ming_er_long"
+      ],
+      "related_patterns": [
+        "pattern.kidney_essence_deficiency",
+        "pattern.qi_blood_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.dry_eye",
+      "name_en": "Dry Eye Syndrome",
+      "name_zh": "乾眼症",
+      "category": "ent_eye",
+      "icd_hint": "H04.12",
+      "related_eastern_diseases": [
+        "tdis.mu_yun"
+      ],
+      "related_patterns": [
+        "pattern.liver_yin_deficiency",
+        "pattern.liver_blood_deficiency",
+        "pattern.lung_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.eye_strain",
+      "name_en": "Digital Eye Strain / Asthenopia",
+      "name_zh": "視疲勞",
+      "category": "ent_eye",
+      "icd_hint": "H53.14",
+      "related_eastern_diseases": [
+        "tdis.mu_yun"
+      ],
+      "related_patterns": [
+        "pattern.liver_blood_deficiency",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.globus_pharyngitis",
+      "name_en": "Globus Sensation / Chronic Pharyngitis",
+      "name_zh": "喉球症／慢性咽炎",
+      "category": "ent_eye",
+      "icd_hint": "F45.8/J31.2",
+      "related_eastern_diseases": [
+        "tdis.mei_he_qi",
+        "tdis.ru_e"
+      ],
+      "related_patterns": [
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_damp",
+        "pattern.lung_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.aphthous_ulcers",
+      "name_en": "Recurrent Aphthous Ulcers",
+      "name_zh": "復發性口瘡",
+      "category": "ent_eye",
+      "icd_hint": "K12.0",
+      "related_eastern_diseases": [
+        "tdis.kou_chuang"
+      ],
+      "related_patterns": [
+        "pattern.heart_fire",
+        "pattern.stomach_heat",
+        "pattern.kidney_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.post_covid",
+      "name_en": "Post-COVID Syndrome (context)",
+      "name_zh": "新冠後症候群（文件情境）",
+      "category": "immune_misc",
+      "icd_hint": "U09.9",
+      "related_eastern_diseases": [
+        "tdis.xu_lao",
+        "tdis.ke_sou"
+      ],
+      "related_patterns": [
+        "pattern.lung_qi_deficiency",
+        "pattern.qi_blood_deficiency",
+        "pattern.phlegm_damp",
+        "pattern.lung_yin_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.chronic_allergies",
+      "name_en": "Chronic Allergic Tendency (context)",
+      "name_zh": "慢性過敏體質（文件情境）",
+      "category": "immune_misc",
+      "icd_hint": "T78.4",
+      "related_eastern_diseases": [
+        "tdis.bi_qiu",
+        "tdis.yin_zhen"
+      ],
+      "related_patterns": [
+        "pattern.lung_qi_deficiency",
+        "pattern.spleen_qi_deficiency",
+        "pattern.kidney_yang_deficiency"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "cond.cancer_supportive",
+      "name_en": "Oncology Supportive Care (adjunctive context)",
+      "name_zh": "腫瘤支持照護（輔助文件情境）",
+      "category": "immune_misc",
+      "icd_hint": "Z51.1",
+      "related_eastern_diseases": [
+        "tdis.xu_lao",
+        "tdis.ou_tu"
+      ],
+      "related_patterns": [
+        "pattern.qi_blood_deficiency",
+        "pattern.spleen_qi_deficiency",
+        "pattern.stomach_yin_deficiency"
+      ],
+      "review_status": "draft"
+    }
   ]
 }

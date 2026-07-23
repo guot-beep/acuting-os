@@ -1201,6 +1201,24 @@
       ],
       "notes": "US National Library of Medicine authoritative ICD-10-CM table. Reachable API (the NRICM cnwm.nricm.edu.tw crosswalk DB is unreachable from here). Fills condition_crosswalk icd10[].label_en; flags category-level codes needing a billable leaf.",
       "review_status": "source_checked"
+    },
+    {
+      "id": "aaos_orthoinfo",
+      "name": "AAOS OrthoInfo",
+      "layer": "biomedical_patient_education",
+      "source_group": "A_authoritative",
+      "authority": 5,
+      "tier": "A",
+      "language": "en",
+      "url": "https://www.orthoinfo.org/",
+      "access_type": "public_web",
+      "primary_use": [
+        "musculoskeletal condition summaries",
+        "red flags",
+        "patient-education-level Western context"
+      ],
+      "notes": "Official patient-education site of the American Academy of Orthopaedic Surgeons. Host moved from orthoinfo.aaos.org to www.orthoinfo.org. Per-condition pages, direct links.",
+      "review_status": "source_checked"
     }
   ],
   "tcm_registry_note": "Tier/category fields were added from docs/TCM_SOURCE_REGISTRY.md. A=official or national/major database, A-=university or major academic database, B=practical/clinical lookup, C=standards/reference utility. Draft URL values need manual verification before source extraction."
