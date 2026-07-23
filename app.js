@@ -2684,18 +2684,43 @@ function pointLocationArticle(point) {
 
 function indicationArticle(point) {
   if (contentMode === "english") {
-    const patterns = (point.patternsEn || []).filter(Boolean).join("\n") || "Indications pending.";
-    return [
-      point.functionsEn ? `Actions: ${point.functionsEn}` : "",
-      `Common indications / patterns:\n${patterns}`
-    ].filter(Boolean).join("\n\n");
+    const patterns = (point.patternsEn || []).filter(Boolean).map(p => `<span class="k-tag symptom">${escapeHtml(p)}</span>`).join(" ");
+    return `
+      ${point.functionsEn ? `<p><strong>Actions:</strong> ${escapeHtml(point.functionsEn)}</p>` : ""}
+      <p><strong>Indications & Patterns:</strong></p>
+      <div class="k-tags">${patterns || "Indications pending."}</div>
+    `;
   }
-  const patterns = bilingualPatterns(point) || "待補主治病症。";
-  return [
-    point.functions ? `功效：${point.functions}` : "",
-    point.functionsEn ? `Actions: ${point.functionsEn}` : "",
-    `常見主治 / Patterns:\n${patterns}`
-  ].filter(Boolean).join("\n\n");
+
+  const parts = [];
+
+  // 1. AcuTags / Actions
+  const acuTags = point.acuTags && point.acuTags.length > 0
+    ? point.acuTags
+    : (point.functions ? String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean) : []);
+
+  if (acuTags.length > 0) {
+    const actionChips = acuTags.map(t => `<span class="k-tag cat">${escapeHtml(t)}</span>`).join(" ");
+    parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
+  } else if (point.functions) {
+    parts.push(`<p><strong>【功效】</strong> ${escapeHtml(point.functions)}</p>`);
+  }
+
+  // 2. Indications / Patterns Tags
+  const indications = Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[,，\n、]/) : []);
+  const cleanInds = Array.from(new Set(indications.map(i => String(i).trim()).filter(Boolean)));
+
+  if (cleanInds.length > 0) {
+    const indChips = cleanInds.map(i => {
+      const en = patternEnglishMap[i] ? ` <small>(${escapeHtml(patternEnglishMap[i])})</small>` : "";
+      return `<span class="k-tag symptom">${escapeHtml(i)}${en}</span>`;
+    }).join(" ");
+    parts.push(`<p><strong>【主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
+  } else {
+    parts.push("<p>待補主治病症。</p>");
+  }
+
+  return parts.join("\n\n");
 }
 
 function combinePointsSection(point) {
@@ -2779,7 +2804,14 @@ function sharedPatternLabel(point, item) {
 }
 
 function formatStudyText(text) {
-  return String(text || "待補")
+  if (!text) return "<p>待補</p>";
+  if (/<[a-z][\s\S]*>/i.test(text)) {
+    return String(text)
+      .split(/\n{2,}/)
+      .map((p) => (p.trim().startsWith("<") ? p : `<p>${p.replaceAll("\n", "<br>")}</p>`))
+      .join("");
+  }
+  return String(text)
     .split(/\n{2,}/)
     .map((paragraph) => `<p>${escapeHtml(paragraph).replaceAll("\n", "<br>")}</p>`)
     .join("");
