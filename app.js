@@ -596,6 +596,10 @@ function reconcileSavedPoints(parsed) {
     const isOldPlaceholder = point.reviewStatus === "placeholder"
       && (point.nameZh === point.code || point.location === OLD_PLACEHOLDER_LOCATION);
     if (isOldPlaceholder) return false;
+    // Drop standard 361 records from old localStorage caches unless explicitly edited by user in form
+    if (standard361Codes.has(point.code) && !point.isUserEdited) {
+      return false;
+    }
     const isPreAdapterDefaultCopy = standard361Codes.has(point.code)
       && point.techniqueNotes === undefined;
     return !isPreAdapterDefaultCopy;
