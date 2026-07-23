@@ -12,46 +12,53 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T11.01",
       "display_code": "T 11.01",
       "zone_code": "11",
-      "zone_en": "Fingers",
-      "zone_zh": "手指",
+      "zone_en": "Zone 11: Fingers",
+      "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
       "name_en": "Dajian",
       "name_zh": "大間穴",
       "pinyin": "Dajian",
-      "location_en": "On the palmar surface of the index finger, 0.5 cun lateral to the center line of the proximal phalanx.",
+      "location_en": "On the palmar surface of the index finger, 0.5 cun lateral to the center line of the proximal phalanx (Line D).",
       "location_zh": "食指掌側第一節正中央外側五分處。",
       "traditional_functions_en": [
-        "Heart reaction area",
-        "Small Intestine reaction area"
+        "Regulate Liver Qi",
+        "Clear Heart & Small Intestine",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
-        "心之神經",
-        "小腸之神經"
+        "心神經、小腸神經、肺神經",
+        "疏肝理氣",
+        "清心利小腸",
+        "通絡止痛"
       ],
       "indications_en": [
         "Hernia",
         "Intestinal qi pain",
         "Corner eye pain",
         "Palpitations",
-        "Knee pain"
+        "Knee pain",
+        "Tonsillitis",
+        "Enteritis"
       ],
       "indications_zh": [
         "小腸氣",
         "疝氣",
         "眼角痛",
         "心悸",
-        "膝蓋痛"
+        "膝蓋痛",
+        "扁桃腺炎",
+        "腸炎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dajian-t-1101",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -69,13 +76,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 大間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Dajian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.3寸；或用三棱針點刺出血。",
-      "reaction_area_zh": "心之神經、小腸之神經"
+      "acumethod_zh": "直刺0.2～0.3寸；或用三棱針點刺出黑血。針感局部酸脹。",
+      "reaction_area_zh": "心神經、小腸神經、肺神經",
+      "anatomy_zh": "淺層分佈正中神經之指掌側固有神經、肺支神經；深層為心及小腸神經。",
+      "anatomy_en": "Superficial: palmar digital nerve of median nerve, Lung branch; Deep: Heart & Small Intestine reaction areas.",
+      "disease_tags_zh": [
+        "疝氣",
+        "腹痛",
+        "心悸",
+        "膝關節痛",
+        "眼痛"
+      ],
+      "disease_tags_en": [
+        "Hernia",
+        "Abdominal Pain",
+        "Palpitations",
+        "Knee Pain",
+        "Eye Pain"
+      ],
+      "action_tags_zh": [
+        "疏肝理氣",
+        "清心利小腸",
+        "通絡止痛"
+      ],
+      "action_tags_en": [
+        "Regulate Liver Qi",
+        "Clear Heart & Small Intestine",
+        "Unblock Channels"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.1-0.25 cun. For HT/LU/head needle 0.1-0.2 cun; for hernia/knee pain 0.25 cun."
     },
     {
       "id": "tung.11.02",
@@ -83,8 +117,8 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T11.02",
       "display_code": "T 11.02",
       "zone_code": "11",
-      "zone_en": "Fingers",
-      "zone_zh": "手指",
+      "zone_en": "Zone 11: Fingers",
+      "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
       "name_en": "Xiaojian",
@@ -93,19 +127,23 @@ window.ACUTING_TUNG_INDEX = {
       "location_en": "On the palmar surface of the index finger, 0.5 cun lateral and 0.25 cun distal to the proximal phalanx midpoint.",
       "location_zh": "食指掌側第一節正中央外側五分偏下二分半處。",
       "traditional_functions_en": [
-        "Lung reaction area",
-        "Heart reaction area"
+        "Disperse Lung & Phlegm",
+        "Clear Heat & Calm Asthma",
+        "Regulate Qi"
       ],
       "traditional_functions_zh": [
-        "肺之神經",
-        "心之神經"
+        "肺神經、心神經",
+        "宣肺化痰",
+        "清熱平喘",
+        "疏肝理氣"
       ],
       "indications_en": [
         "Bronchitis",
         "Yellow sputum cough",
         "Chest fullness",
         "Hernia",
-        "Knee pain"
+        "Knee pain",
+        "Pediatric asthma"
       ],
       "indications_zh": [
         "支氣管炎",
@@ -113,17 +151,18 @@ window.ACUTING_TUNG_INDEX = {
         "胸悶",
         "小腸氣",
         "疝氣",
-        "膝蓋痛"
+        "膝蓋痛",
+        "小兒氣喘"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojian-t-1102",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -141,13 +180,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 小間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiaojian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.2～0.3寸。",
-      "reaction_area_zh": "肺之神經、心之神經"
+      "reaction_area_zh": "肺神經、心神經",
+      "anatomy_zh": "淺層有正中神經指固有神經，深層有肺支神經及心之神經。",
+      "anatomy_en": "Superficial: palmar digital nerve; Deep: Lung & Heart reaction areas.",
+      "disease_tags_zh": [
+        "支氣管炎",
+        "咳嗽",
+        "氣喘",
+        "疝氣",
+        "膝痛"
+      ],
+      "disease_tags_en": [
+        "Bronchitis",
+        "Cough",
+        "Asthma",
+        "Hernia",
+        "Knee Pain"
+      ],
+      "action_tags_zh": [
+        "宣肺化痰",
+        "清熱平喘",
+        "疏肝理氣"
+      ],
+      "action_tags_en": [
+        "Disperse Lung & Phlegm",
+        "Clear Heat & Calm Asthma",
+        "Regulate Qi"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.1-0.25 cun."
     },
     {
       "id": "tung.11.03",
@@ -189,11 +255,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fujian-t-1103",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -211,13 +277,39 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 浮間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fujian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.2～0.3寸。",
-      "reaction_area_zh": "心之神經、小腸之副神經"
+      "reaction_area_zh": "心之神經、小腸之副神經",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "疝氣",
+        "小腸氣",
+        "尿道炎",
+        "牙痛",
+        "胃脘痛"
+      ],
+      "disease_tags_en": [
+        "Hernia",
+        "Urethritis",
+        "Toothache",
+        "Epigastric pain"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.11.04",
@@ -259,11 +351,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waijian-t-1104",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -281,13 +373,39 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 外間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Waijian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.2～0.3寸。",
-      "reaction_area_zh": "心之神經、小腸之神經"
+      "reaction_area_zh": "心之神經、小腸之神經",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "疝氣",
+        "小腸氣",
+        "牙痛",
+        "胃痛",
+        "腸炎"
+      ],
+      "disease_tags_en": [
+        "Hernia",
+        "Toothache",
+        "Stomachache",
+        "Enteritis"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.11.05",
@@ -295,25 +413,32 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T11.05",
       "display_code": "T 11.05",
       "zone_code": "11",
-      "zone_en": "Fingers",
-      "zone_zh": "手指",
+      "zone_en": "Zone 11: Fingers",
+      "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
       "name_en": "Zhongjian",
       "name_zh": "中間穴",
       "pinyin": "Zhongjian",
-      "location_en": "On the palmar surface of the index finger, at the exact midpoint of the proximal phalanx.",
-      "location_zh": "食指掌側第一節正中央處。",
+      "location_en": "On the palmar aspect of the index finger, at the exact center of the proximal phalanx (Line C).",
+      "location_zh": "食指掌側第一節正中央處（Line C）。",
       "traditional_functions_en": [
-        "Heart reaction area"
+        "Disperse Lung",
+        "Calm Heart",
+        "Relieve Pain"
       ],
       "traditional_functions_zh": [
-        "心之神經"
+        "心神經、肺神經",
+        "宣肺平喘",
+        "清心安神",
+        "理氣止痛"
       ],
       "indications_en": [
         "Hernia",
+        "Asthma",
+        "Bronchitis",
+        "Pneumonia in children",
         "Palpitations",
-        "Chest fullness",
         "Knee pain"
       ],
       "indications_zh": [
@@ -321,17 +446,19 @@ window.ACUTING_TUNG_INDEX = {
         "小腸氣",
         "心悸",
         "胸悶",
-        "膝蓋痛"
+        "膝蓋痛",
+        "小兒氣喘",
+        "肺炎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjian-t-1105",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -349,13 +476,38 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 中間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongjian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.3寸。",
-      "reaction_area_zh": "心之神經"
+      "acumethod_zh": "直刺0.1～0.25寸。疝氣膝痛刺0.25寸深。",
+      "reaction_area_zh": "心神經、肺神經",
+      "anatomy_zh": "淺層分佈正中神經掌側固有神經，深層為心之神經及肺支神經。",
+      "anatomy_en": "Palmar digital nerve of median nerve; Deep: Heart reaction area, Lung branch.",
+      "disease_tags_zh": [
+        "疝氣",
+        "小兒氣喘",
+        "肺炎",
+        "心悸"
+      ],
+      "disease_tags_en": [
+        "Hernia",
+        "Pediatric Asthma",
+        "Pneumonia",
+        "Palpitations"
+      ],
+      "action_tags_zh": [
+        "宣肺平喘",
+        "清心安神",
+        "理氣止痛"
+      ],
+      "action_tags_en": [
+        "Disperse Lung",
+        "Calm Heart",
+        "Relieve Pain"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.1-0.25 cun. For HT/LU 0.1-0.2 cun; hernia/knee pain 0.25 cun."
     },
     {
       "id": "tung.11.06",
@@ -363,22 +515,25 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T11.06",
       "display_code": "T 11.06",
       "zone_code": "11",
-      "zone_en": "Fingers",
-      "zone_zh": "手指",
+      "zone_en": "Zone 11: Fingers",
+      "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
       "name_en": "Huanchao",
       "name_zh": "還巢穴",
       "pinyin": "Huanchao",
-      "location_en": "On the palmar surface of the ring finger, at the exact center of the ulnar side of the middle phalanx.",
-      "location_zh": "無名指中節掌側外側正中央處。",
+      "location_en": "On the palmar surface of the ring finger, at the center of the ulnar side (E line) of the middle phalanx.",
+      "location_zh": "無名指中節掌側外側（小指側）正中央處。",
       "traditional_functions_en": [
-        "Liver reaction area",
-        "Kidney reaction area"
+        "Tonify Liver & Kidney",
+        "Regulate Blood",
+        "Stabilize Chong-Ren"
       ],
       "traditional_functions_zh": [
-        "肝神經",
-        "腎神經"
+        "肝神經、腎神經",
+        "調補肝腎",
+        "理氣活血",
+        "固衝任安胎"
       ],
       "indications_en": [
         "Uterine fibroids",
@@ -386,7 +541,8 @@ window.ACUTING_TUNG_INDEX = {
         "Dysmenorrhea",
         "Irregular menses",
         "Infertility",
-        "Prevent miscarriage"
+        "Prevent miscarriage",
+        "Leukorrhea"
       ],
       "indications_zh": [
         "子宮肌瘤",
@@ -394,17 +550,18 @@ window.ACUTING_TUNG_INDEX = {
         "痛經",
         "月經不調",
         "不孕症",
-        "安胎"
+        "安胎",
+        "赤白帶下"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huanchao-t-1106",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -422,13 +579,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 還巢穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huanchao (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.4寸。常與婦科穴配伍倒馬。",
-      "reaction_area_zh": "肝神經、腎神經"
+      "acumethod_zh": "貼骨直刺0.2～0.4寸。常與婦科穴配伍倒馬，為婦科第一名穴對。",
+      "reaction_area_zh": "肝神經、腎神經",
+      "anatomy_zh": "尺神經指掌側固有神經，深層有肝神經及腎神經。",
+      "anatomy_en": "Ulnar palmar digital nerve; Deep: Liver & Kidney reaction areas.",
+      "disease_tags_zh": [
+        "子宮肌瘤",
+        "痛經",
+        "月經不調",
+        "不孕症",
+        "卵巢囊腫"
+      ],
+      "disease_tags_en": [
+        "Uterine Fibroids",
+        "Dysmenorrhea",
+        "Irregular Menses",
+        "Infertility",
+        "Ovarian Cyst"
+      ],
+      "action_tags_zh": [
+        "調補肝腎",
+        "理氣活血",
+        "固衝任安胎"
+      ],
+      "action_tags_en": [
+        "Tonify Liver & Kidney",
+        "Regulate Blood",
+        "Stabilize Chong-Ren"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.4 cun along bone. Pair with Fuke (T 11.15) for Dao Ma."
     },
     {
       "id": "tung.11.07",
@@ -469,11 +653,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisima-t-1107",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -491,13 +675,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muxue (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.2～0.3寸。",
-      "reaction_area_zh": "肝之神經"
+      "reaction_area_zh": "肝之神經",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "感冒流涕",
+        "過敏性鼻炎",
+        "皮膚瘙癢",
+        "手汗",
+        "眼赤腫痛"
+      ],
+      "disease_tags_en": [
+        "Common cold nasal discharge",
+        "Allergic rhinitis",
+        "Skin pruritus",
+        "Palmar hyperhidrosis",
+        "Red eyes"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.11.08",
@@ -513,9 +724,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "指五金穴, 指千金穴",
       "pinyin": "Zhiwujin & Zhiqianjin",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -523,7 +735,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -534,11 +748,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwujin-zhiqianjin-t-1108",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -554,12 +768,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 指五金穴, 指千金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhiwujin & Zhiqianjin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.09",
@@ -575,9 +813,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "心膝穴",
       "pinyin": "Xinxi",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -585,7 +824,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -596,11 +837,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinxi-t-1109",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -616,12 +857,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 心膝穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xinxi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.10",
@@ -637,9 +902,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木火穴",
       "pinyin": "Muhuo",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -647,7 +913,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -658,11 +926,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuo-t-1110",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -678,12 +946,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木火穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muhuo (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.11",
@@ -699,9 +991,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肺心穴",
       "pinyin": "Feixin",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -709,7 +1002,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -720,11 +1015,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feixin-t-1111",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -740,12 +1035,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肺心穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Feixin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.12",
@@ -761,9 +1080,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "二角明穴",
       "pinyin": "Erjiaoming",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -771,7 +1091,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -782,11 +1104,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erjiaoming-t-1112",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -802,12 +1124,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 二角明穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Erjiaoming (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.13",
@@ -823,9 +1169,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "膽穴",
       "pinyin": "Dan",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -833,7 +1180,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -844,11 +1193,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dan-t-1113",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -866,12 +1215,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 膽穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Dan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.14",
@@ -887,9 +1260,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "指三重穴",
       "pinyin": "Zhisanzhong",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -897,7 +1271,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -908,11 +1284,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisanzhong-t-1114",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -928,12 +1304,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 指三重穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhisanzhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.15",
@@ -941,22 +1341,25 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T11.15",
       "display_code": "T 11.15",
       "zone_code": "11",
-      "zone_en": "Fingers",
-      "zone_zh": "手指",
+      "zone_en": "Zone 11: Fingers",
+      "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
       "name_en": "Fuke",
       "name_zh": "婦科穴",
       "pinyin": "Zhishen",
-      "location_en": "On the dorsal surface of the thumb, 0.3 cun lateral to the midline on the proximal phalanx, five points arrayed vertically.",
-      "location_zh": "拇指第一節背面外側，距中央線三分處，上下共五穴。",
+      "location_en": "On the dorsal surface of the thumb, 0.3 cun lateral (ulnar side) to the midline on the proximal phalanx, 5 points arrayed vertically.",
+      "location_zh": "拇指第一節背面外側（尺側），距中央線三分處，上下共五穴。",
       "traditional_functions_en": [
-        "Uterus reaction area",
-        "Gynecological key zone"
+        "Warm Channels",
+        "Regulate Chong-Ren",
+        "Clear Damp-Heat"
       ],
       "traditional_functions_zh": [
         "子宮神經",
-        "婦科特效區"
+        "溫經散寒",
+        "調理衝任",
+        "清熱除濕"
       ],
       "indications_en": [
         "Dysmenorrhea",
@@ -964,7 +1367,8 @@ window.ACUTING_TUNG_INDEX = {
         "Metritis",
         "Oophoritis",
         "Infertility",
-        "Leukorrhea"
+        "Leukorrhea",
+        "Vaginal pain"
       ],
       "indications_zh": [
         "痛經",
@@ -972,17 +1376,18 @@ window.ACUTING_TUNG_INDEX = {
         "子宮炎",
         "卵巢炎",
         "不孕症",
-        "赤白帶下"
+        "赤白帶下",
+        "陰門腫痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhishen-t-1115",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -998,13 +1403,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 婦科穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fuke (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "貼骨直刺0.2～0.3寸。常與還巢穴配伍倒馬。",
-      "reaction_area_zh": "子宮神經"
+      "reaction_area_zh": "子宮神經",
+      "anatomy_zh": "橈神經淺支、正中神經指掌側固有神經，深層為子宮神經。",
+      "anatomy_en": "Radial nerve superficial branch; Deep: Uterus reaction area.",
+      "disease_tags_zh": [
+        "痛經",
+        "月經不調",
+        "不孕症",
+        "子宮炎",
+        "帶下病"
+      ],
+      "disease_tags_en": [
+        "Dysmenorrhea",
+        "Irregular Menses",
+        "Infertility",
+        "Metritis",
+        "Leukorrhea"
+      ],
+      "action_tags_zh": [
+        "溫經散寒",
+        "調理衝任",
+        "清熱除濕"
+      ],
+      "action_tags_en": [
+        "Warm Channels",
+        "Regulate Chong-Ren",
+        "Clear Damp-Heat"
+      ],
+      "acumethod_en": "Needle 0.2-0.3 cun along bone. Pair with Huanchao (T 11.06) for Dao Ma."
     },
     {
       "id": "tung.11.16",
@@ -1012,46 +1444,51 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T11.16",
       "display_code": "T 11.16",
       "zone_code": "11",
-      "zone_en": "Fingers",
-      "zone_zh": "手指",
+      "zone_en": "Zone 11: Fingers",
+      "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
       "name_en": "Zhiwu",
       "name_zh": "制污穴",
       "pinyin": "Huoxi",
-      "location_en": "On the dorsal surface of the thumb, along the midline of the proximal phalanx, three points arrayed vertically.",
+      "location_en": "On the dorsal surface of the thumb, along the midline of the proximal phalanx, 3 points arrayed vertically.",
       "location_zh": "拇指第一節背面中央線上，上下共三穴。",
       "traditional_functions_en": [
-        "Spleen reaction area",
-        "Promote healing & reduce swelling"
+        "Promote Qi & Blood",
+        "Clear Toxicity",
+        "Promote Tissue Healing"
       ],
       "traditional_functions_zh": [
         "脾神經",
-        "行氣清熱消腫"
+        "行氣化瘀",
+        "清熱解毒",
+        "生肌斂口"
       ],
       "indications_en": [
         "Non-healing wounds",
         "Chronic ulcers",
         "Postoperative wound drainage",
         "Acne",
-        "Boils and furuncles"
+        "Boils & furuncles",
+        "Bedsores"
       ],
       "indications_zh": [
         "傷口不癒合",
         "久潰不斂",
         "術後傷口滲液",
         "痤瘡",
-        "疔瘡腫毒"
+        "疔瘡腫毒",
+        "褥瘡"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoxi-t-1116",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1067,13 +1504,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 制污穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhiwu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "三棱針點刺出黑血；或直刺0.2～0.3寸。",
-      "reaction_area_zh": "脾神經"
+      "reaction_area_zh": "脾神經",
+      "anatomy_zh": "橈神經淺支，深層為脾神經。",
+      "anatomy_en": "Radial nerve superficial branch; Deep: Spleen reaction area.",
+      "disease_tags_zh": [
+        "傷口不癒合",
+        "久潰不斂",
+        "痤瘡",
+        "疔瘡",
+        "術後滲液"
+      ],
+      "disease_tags_en": [
+        "Non-healing Wound",
+        "Chronic Ulcer",
+        "Acne",
+        "Boils",
+        "Postop Drainage"
+      ],
+      "action_tags_zh": [
+        "行氣化瘀",
+        "清熱解毒",
+        "生肌斂口"
+      ],
+      "action_tags_en": [
+        "Promote Qi & Blood",
+        "Clear Toxicity",
+        "Promote Tissue Healing"
+      ],
+      "acumethod_en": "Prick with lance to bleed dark blood; or needle 0.2-0.3 cun."
     },
     {
       "id": "tung.11.17",
@@ -1110,11 +1574,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mu-t-1117",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1130,13 +1594,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 止涎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhixian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.2～0.3寸。",
-      "reaction_area_zh": "脾之神經"
+      "reaction_area_zh": "脾之神經",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "小兒流涎",
+        "中風口角流涎",
+        "脾虛流口水"
+      ],
+      "disease_tags_en": [
+        "Infantile drooling",
+        "Post-stroke mouth salivation",
+        "Spleen deficiency drooling"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.11.18",
@@ -1181,11 +1668,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pizhong-t-1118",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -1203,13 +1690,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 五虎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Wuhu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "貼骨直刺0.2～0.3寸。五虎一主手痛，五虎三主足痛，五虎五主腳跟痛。",
-      "reaction_area_zh": "脾神經、腎神經"
+      "reaction_area_zh": "脾神經、腎神經",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "全身骨痛",
+        "痛風",
+        "腳趾痛",
+        "腳跟痛",
+        "手骨痛"
+      ],
+      "disease_tags_en": [
+        "General bone pain",
+        "Gout",
+        "Toe pain",
+        "Heel pain",
+        "Hand bone pain"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.11.19",
@@ -1225,9 +1739,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "心常穴",
       "pinyin": "Xinchang",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1235,7 +1750,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1246,11 +1763,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinchang-t-1119",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1266,12 +1783,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 心常穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xinchang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.20",
@@ -1287,9 +1828,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木炎穴",
       "pinyin": "Muyan",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1297,7 +1839,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1308,11 +1852,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muyan-t-1120",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1328,12 +1872,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木炎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muyan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.21",
@@ -1349,9 +1917,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三眼穴",
       "pinyin": "Sanyan",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1359,7 +1928,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1370,11 +1941,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanyan-t-1121",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1390,12 +1961,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三眼穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanyan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.22",
@@ -1411,9 +2006,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "復原穴",
       "pinyin": "Fuyuan",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1421,7 +2017,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1432,11 +2030,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuyuan-t-1122",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -1454,12 +2052,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 復原穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fuyuan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.23",
@@ -1475,9 +2097,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "眼黃穴",
       "pinyin": "Yanhuang",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1485,7 +2108,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1496,11 +2121,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yanhuang-t-1123",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -1518,12 +2143,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 眼黃穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Yanhuang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.24",
@@ -1539,9 +2188,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "婦科穴",
       "pinyin": "Fuke",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1549,7 +2199,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1560,11 +2212,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuke-t-1124",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -1582,12 +2234,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 婦科穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fuke (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.25",
@@ -1603,9 +2279,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "止涎穴",
       "pinyin": "Zhixian",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1613,7 +2290,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1624,11 +2303,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhixian-t-1125",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1644,12 +2323,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 止涎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhixian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.26",
@@ -1665,9 +2368,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "制污穴",
       "pinyin": "Zhiwu",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1675,7 +2379,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1686,11 +2392,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwu-t-1126",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1706,12 +2412,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 制污穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhiwu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.27",
@@ -1727,9 +2457,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "五虎穴",
       "pinyin": "Wuhu",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1737,7 +2468,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1748,11 +2481,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuhu-t-1127",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [],
@@ -1768,12 +2501,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 五虎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Wuhu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.28",
@@ -1789,9 +2546,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "雙靈穴",
       "pinyin": "Shuangling",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1799,7 +2557,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1810,11 +2570,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuangling-t-1128",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -1832,12 +2592,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 雙靈穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuangling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.29",
@@ -1853,9 +2637,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木靈穴",
       "pinyin": "Muling",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1863,7 +2648,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1874,11 +2661,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muling-t-1129",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -1896,12 +2683,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木靈穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.30",
@@ -1917,9 +2728,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "八關三穴",
       "pinyin": "Baguansanxue",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1927,7 +2739,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -1938,11 +2752,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansanxue-t-1130",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -1960,12 +2774,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 八關三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Baguansanxue (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.11.31",
@@ -1981,9 +2819,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "八關四穴",
       "pinyin": "Baguansixue",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
+      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Fingers reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手指反射區",
@@ -1991,7 +2830,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手指區域痛症",
@@ -2002,11 +2843,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansixue-t-1131",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 70,
       "y": 275,
       "aliases_zh": [
@@ -2024,12 +2865,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 八關四穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Baguansixue (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手指】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
+      "disease_tags_zh": [
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Fingers pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手指神經反應區"
     },
     {
       "id": "tung.22.01",
@@ -2037,20 +2902,25 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T22.01",
       "display_code": "T 22.01",
       "zone_code": "22",
-      "zone_en": "Hands",
-      "zone_zh": "手部",
+      "zone_en": "Zone 22: Hands",
+      "zone_zh": "二二部位【手掌】",
       "region_en": "Hand",
       "region_zh": "手部",
       "name_en": "Zhongzi",
       "name_zh": "重子穴",
       "pinyin": "Chongzi",
-      "location_en": "On the palmar surface of the hand, between the 1st and 2nd metacarpal bones, near the proximal junction.",
-      "location_zh": "手掌大虎口下，第一掌骨與第二掌骨之間，掌骨底結合部前緣。",
+      "location_en": "On the palmar surface of the hand, between 1st & 2nd metacarpal bones, near the proximal junction.",
+      "location_zh": "手掌大虎口下，第一掌骨與第二掌骨之間，掌骨底結合部前緣凹陷處。",
       "traditional_functions_en": [
-        "Lung reaction area"
+        "Disperse Lung",
+        "Unblock Channels",
+        "Clear Exterior Heat"
       ],
       "traditional_functions_zh": [
-        "肺之神經"
+        "肺神經、心神經",
+        "宣肺平喘",
+        "疏經通絡",
+        "清熱解表"
       ],
       "indications_en": [
         "Back pain",
@@ -2058,7 +2928,8 @@ window.ACUTING_TUNG_INDEX = {
         "Cough",
         "Asthma",
         "Pneumonia",
-        "Pediatric cold"
+        "Pediatric cold",
+        "Fever reduction"
       ],
       "indications_zh": [
         "背痛",
@@ -2066,17 +2937,18 @@ window.ACUTING_TUNG_INDEX = {
         "咳嗽",
         "氣喘",
         "肺炎",
-        "小兒感冒"
+        "小兒感冒",
+        "退燒"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongzi-t-2201",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2092,13 +2964,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 重子穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongzi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.5～1.0寸。常與重仙穴配伍倒馬治療背痛。",
-      "reaction_area_zh": "肺之神經"
+      "acumethod_zh": "直刺0.5～1.0寸。與重仙穴配伍倒馬為治背痛第一特效藥對。",
+      "reaction_area_zh": "肺神經、心神經",
+      "anatomy_zh": "正中神經之掌側固有神經、橈動靜脈分支，深層為肺支神經及心之神經。",
+      "anatomy_en": "Median nerve palmar digital nerve; Deep: Lung & Heart reaction areas.",
+      "disease_tags_zh": [
+        "背痛",
+        "肩胛痛",
+        "咳嗽",
+        "肺炎",
+        "小兒感冒"
+      ],
+      "disease_tags_en": [
+        "Back Pain",
+        "Scapular Pain",
+        "Cough",
+        "Pneumonia",
+        "Pediatric Cold"
+      ],
+      "action_tags_zh": [
+        "宣肺平喘",
+        "疏經通絡",
+        "清熱解表"
+      ],
+      "action_tags_en": [
+        "Disperse Lung",
+        "Unblock Channels",
+        "Clear Exterior Heat"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.5-1.0 cun. Pair with Zhongxian (T 22.02) for back pain."
     },
     {
       "id": "tung.22.02",
@@ -2106,30 +3005,34 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T22.02",
       "display_code": "T 22.02",
       "zone_code": "22",
-      "zone_en": "Hands",
-      "zone_zh": "手部",
+      "zone_en": "Zone 22: Hands",
+      "zone_zh": "二二部位【手掌】",
       "region_en": "Hand",
       "region_zh": "手部",
       "name_en": "Zhongxian",
       "name_zh": "重仙穴",
       "pinyin": "Chongxian",
-      "location_en": "On the palmar surface of the hand, between the 1st and 2nd metacarpal bones, 2 cun proximal to Zhongzi.",
-      "location_zh": "手掌大虎口下，第一掌骨與第二掌骨骨縫間，距重子穴上二寸。",
+      "location_en": "On the palmar surface of the hand, between 1st & 2nd metacarpals, 2 cun proximal to Zhongzi (opposite Hegu LI4).",
+      "location_zh": "手掌大虎口下，第一掌骨與第二掌骨骨縫間，距重子穴上二寸（手背合谷穴對側）。",
       "traditional_functions_en": [
-        "Lung reaction area",
-        "Heart reaction area"
+        "Expand Chest",
+        "Disperse Lung",
+        "Relieve Pain"
       ],
       "traditional_functions_zh": [
-        "肺神經",
-        "心神經"
+        "肺神經、心神經",
+        "寬胸理氣",
+        "宣肺止咳",
+        "通絡止痛"
       ],
       "indications_en": [
         "Back pain",
-        "Chest oppression pain",
+        "Chest pain",
         "Knee pain",
         "Cough",
         "Asthma",
-        "Palpitations"
+        "Palpitations",
+        "Fever"
       ],
       "indications_zh": [
         "背痛",
@@ -2137,17 +3040,18 @@ window.ACUTING_TUNG_INDEX = {
         "膝蓋痛",
         "咳嗽",
         "氣喘",
-        "心悸"
+        "心悸",
+        "退燒"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxian-t-2202",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2163,13 +3067,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 重仙穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongxian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.5～1.0寸。與重子穴倒馬配伍為治療背痛特效藥對。",
-      "reaction_area_zh": "肺神經、心神經"
+      "acumethod_zh": "直刺0.5～1.0寸。與重子穴倒馬配伍。",
+      "reaction_area_zh": "肺神經、心神經",
+      "anatomy_zh": "正中神經掌側固有神經、深層有肺支神經與心神經。",
+      "anatomy_en": "Median nerve palmar digital branch; Deep: Lung & Heart reaction areas.",
+      "disease_tags_zh": [
+        "背痛",
+        "胸痛",
+        "膝關節痛",
+        "咳嗽",
+        "心悸"
+      ],
+      "disease_tags_en": [
+        "Back Pain",
+        "Chest Pain",
+        "Knee Pain",
+        "Cough",
+        "Palpitations"
+      ],
+      "action_tags_zh": [
+        "寬胸理氣",
+        "宣肺止咳",
+        "通絡止痛"
+      ],
+      "action_tags_en": [
+        "Expand Chest",
+        "Disperse Lung",
+        "Relieve Pain"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.5-1.0 cun. Pair with Zhongzi (T 22.01)."
     },
     {
       "id": "tung.22.03",
@@ -2185,9 +3116,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上白穴",
       "pinyin": "Shangbai",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2195,7 +3127,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2206,11 +3140,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangbai-t-2203",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2226,12 +3160,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上白穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangbai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.04",
@@ -2239,44 +3197,51 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T22.04",
       "display_code": "T 22.04",
       "zone_code": "22",
-      "zone_en": "Hands",
-      "zone_zh": "手部",
+      "zone_en": "Zone 22: Hands",
+      "zone_zh": "二二部位【手掌】",
       "region_en": "Hand",
       "region_zh": "手部",
       "name_en": "Dabai",
       "name_zh": "大白穴",
       "pinyin": "Dabai",
-      "location_en": "On the dorsum of the hand, between the 1st and 2nd metacarpal bones, 0.5 cun distal to Hegu (LI4).",
-      "location_zh": "手背第一掌骨與第二掌骨之間，合谷穴前五分處。",
+      "location_en": "On the dorsum of the hand, between 1st & 2nd metacarpals, 0.5 cun distal to Hegu (LI4).",
+      "location_zh": "手背第一掌骨與第二掌骨之間，合谷穴前五分處（手掌食指掌指關節後凹陷）。",
       "traditional_functions_en": [
-        "Lung reaction area"
+        "Purge Heat",
+        "Disperse Lung",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
-        "肺之神經"
+        "肺神經",
+        "瀉熱拔毒",
+        "宣肺平喘",
+        "通經止痛"
       ],
       "indications_en": [
         "Pediatric asthma",
         "High fever",
         "Sciatica",
         "Lung cancer",
-        "Headache"
+        "Headache",
+        "Acute pneumonia"
       ],
       "indications_zh": [
         "小兒氣喘",
         "高熱",
         "坐骨神經痛",
         "肺癌",
-        "頭痛"
+        "頭痛",
+        "急性肺炎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dabai-t-2204",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2292,13 +3257,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 大白穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Dabai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.5～1.0寸；或三棱針點刺出黑血。成人常與靈骨配伍倒馬。",
-      "reaction_area_zh": "肺之神經"
+      "acumethod_zh": "直刺0.5～1.0寸；小兒高熱三棱針刺出黑血。與靈骨穴倒馬。",
+      "reaction_area_zh": "肺神經",
+      "anatomy_zh": "橈骨神經淺支、橈動脈分支，深層為肺之神經。",
+      "anatomy_en": "Radial nerve superficial branch; Deep: Lung reaction area.",
+      "disease_tags_zh": [
+        "高熱",
+        "小兒氣喘",
+        "坐骨神經痛",
+        "頭痛",
+        "肺炎"
+      ],
+      "disease_tags_en": [
+        "High Fever",
+        "Pediatric Asthma",
+        "Sciatica",
+        "Headache",
+        "Pneumonia"
+      ],
+      "action_tags_zh": [
+        "瀉熱拔毒",
+        "宣肺平喘",
+        "通經止痛"
+      ],
+      "action_tags_en": [
+        "Purge Heat",
+        "Disperse Lung",
+        "Unblock Channels"
+      ],
+      "acumethod_en": "Needle 0.5-1.0 cun; bleed dark blood for high fever. Pair with Linggu (T 22.05)."
     },
     {
       "id": "tung.22.05",
@@ -2306,20 +3298,27 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T22.05",
       "display_code": "T 22.05",
       "zone_code": "22",
-      "zone_en": "Hands",
-      "zone_zh": "手部",
+      "zone_en": "Zone 22: Hands",
+      "zone_zh": "二二部位【手掌】",
       "region_en": "Hand",
       "region_zh": "手部",
       "name_en": "Linggu",
       "name_zh": "靈骨穴",
       "pinyin": "Linggu",
-      "location_en": "On the dorsum of the hand, at the junction of the 1st and 2nd metacarpal bones, proximal to Hegu (LI4).",
-      "location_zh": "手背第一掌骨與第二掌骨結合處，即合谷穴後上方。",
+      "location_en": "On the dorsum of the hand, at the junction of 1st & 2nd metacarpal bones, 1 cun proximal to Hegu (LI4). Can penetrate to Zhongxian.",
+      "location_zh": "手背第一掌骨與第二掌骨結合處，即合谷穴後一寸（第一二掌骨叉骨間）。可透重仙穴。",
       "traditional_functions_en": [
-        "Lung reaction area"
+        "Tonify Qi & Blood",
+        "Warm Yang",
+        "Unblock Channels",
+        "Tonify Kidney"
       ],
       "traditional_functions_zh": [
-        "肺之神經"
+        "肺神經、心神經、腎神經",
+        "大補氣血",
+        "溫陽行氣",
+        "通絡止痛",
+        "補腎納氣"
       ],
       "indications_en": [
         "Sciatica",
@@ -2327,7 +3326,10 @@ window.ACUTING_TUNG_INDEX = {
         "Hemiplegia",
         "Headache",
         "Tinnitus",
-        "Dysmenorrhea"
+        "Dysmenorrhea",
+        "Lower abdominal pain",
+        "Emphysema",
+        "CHD"
       ],
       "indications_zh": [
         "坐骨神經痛",
@@ -2336,17 +3338,19 @@ window.ACUTING_TUNG_INDEX = {
         "頭痛",
         "耳鳴",
         "痛經",
-        "少腹痛"
+        "少腹痛",
+        "肺氣腫",
+        "冠心病"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/linggu-t-2205",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -2364,13 +3368,44 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 靈骨穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Linggu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "透刺1.5～2.0寸。與大白穴配伍倒馬，為董氏奇穴第一大穴。",
-      "reaction_area_zh": "肺之神經"
+      "acumethod_zh": "握拳取穴，直刺或透刺重仙穴1.5～2.0寸。與大白穴配伍倒馬，為董氏奇穴第一大穴。",
+      "reaction_area_zh": "肺神經、心神經、腎神經",
+      "anatomy_zh": "淺層分佈手背靜脈、橈神經淺支。深層分佈正中神經固有掌側指神經、肺支神經、心及腎神經。",
+      "anatomy_en": "Superficial: dorsal venous network, radial nerve branch; Deep: median nerve, Lung branch, Heart & Kidney reaction areas.",
+      "disease_tags_zh": [
+        "坐骨神經痛",
+        "腰痛",
+        "半身不遂",
+        "頭痛",
+        "痛經",
+        "耳鳴"
+      ],
+      "disease_tags_en": [
+        "Sciatica",
+        "Lower Back Pain",
+        "Hemiplegia",
+        "Headache",
+        "Dysmenorrhea",
+        "Tinnitus"
+      ],
+      "action_tags_zh": [
+        "大補氣血",
+        "溫陽行氣",
+        "通絡止痛",
+        "補腎納氣"
+      ],
+      "action_tags_en": [
+        "Tonify Qi & Blood",
+        "Warm Yang",
+        "Unblock Channels",
+        "Tonify Kidney"
+      ],
+      "acumethod_en": "Form a fist to locate. Needle perpendicularly 1.5-2.0 cun or penetrate to Zhongxian. Pair with Dabai (T 22.04) for #1 Tung Master Pair."
     },
     {
       "id": "tung.22.06",
@@ -2378,20 +3413,25 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T22.06",
       "display_code": "T 22.06",
       "zone_code": "22",
-      "zone_en": "Hands",
-      "zone_zh": "手部",
+      "zone_en": "Zone 22: Hands",
+      "zone_zh": "二二部位【手掌】",
       "region_en": "Hand",
       "region_zh": "手部",
       "name_en": "Zhongbai",
       "name_zh": "中白穴",
       "pinyin": "Zhongbai",
-      "location_en": "On the dorsum of the hand, between the 4th and 5th metacarpal bones, 0.5 cun proximal to Zhongzhu (TE3).",
+      "location_en": "On the dorsum of the hand, between 4th & 5th metacarpal bones, 0.5 cun proximal to Zhongzhu (TE3).",
       "location_zh": "手背第四掌骨與第五掌骨小頭後方凹陷處（即中渚穴後五分）。",
       "traditional_functions_en": [
-        "Kidney reaction area"
+        "Nourish Liver & Kidney",
+        "Clear Head & Eyes",
+        "Relieve Pain"
       ],
       "traditional_functions_zh": [
-        "腎之神經"
+        "腎神經",
+        "滋補肝腎",
+        "清利頭目",
+        "通絡止痛"
       ],
       "indications_en": [
         "Kidney deficiency back pain",
@@ -2399,7 +3439,8 @@ window.ACUTING_TUNG_INDEX = {
         "Occipital headache",
         "Bone spurs",
         "Vertigo",
-        "Nephritis"
+        "Nephritis",
+        "Frequent urination"
       ],
       "indications_zh": [
         "腎虛腰痛",
@@ -2407,17 +3448,18 @@ window.ACUTING_TUNG_INDEX = {
         "後頭痛",
         "骨刺",
         "眩暈",
-        "腎炎"
+        "腎炎",
+        "小便頻數"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongbai-t-2206",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -2435,13 +3477,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 中白穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongbai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.5～1.0寸。常與下白穴配伍倒馬。",
-      "reaction_area_zh": "腎之神經"
+      "reaction_area_zh": "腎神經",
+      "anatomy_zh": "尺神經手背支、手背靜脈網，深層為腎之神經。",
+      "anatomy_en": "Dorsal branch of ulnar nerve; Deep: Kidney reaction area.",
+      "disease_tags_zh": [
+        "腎虛腰痛",
+        "坐骨神經痛",
+        "後頭痛",
+        "眩暈",
+        "腎炎"
+      ],
+      "disease_tags_en": [
+        "Kidney Back Pain",
+        "Sciatica",
+        "Occipital Headache",
+        "Vertigo",
+        "Nephritis"
+      ],
+      "action_tags_zh": [
+        "滋補肝腎",
+        "清利頭目",
+        "通絡止痛"
+      ],
+      "action_tags_en": [
+        "Nourish Liver & Kidney",
+        "Clear Head & Eyes",
+        "Relieve Pain"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.5-1.0 cun. Pair with Xiabai (T 22.07)."
     },
     {
       "id": "tung.22.07",
@@ -2484,11 +3553,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiabai-t-2207",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2504,13 +3573,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 下白穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiabai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.5～1.0寸。與中白穴配伍倒馬。",
-      "reaction_area_zh": "脾神經、腎神經"
+      "reaction_area_zh": "脾神經、腎神經",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "牙痛",
+        "肝痛",
+        "坐骨神經痛",
+        "腰痛",
+        "背痛"
+      ],
+      "disease_tags_en": [
+        "Toothache",
+        "Liver pain",
+        "Sciatica",
+        "Lower back pain",
+        "Back pain"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.22.08",
@@ -2526,9 +3622,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腕順一穴",
       "pinyin": "Wanshunyi",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2536,7 +3633,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2547,11 +3646,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshunyi-t-2208",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -2569,12 +3668,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腕順一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Wanshunyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.09",
@@ -2590,9 +3713,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腕順二穴",
       "pinyin": "Wanshuner",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2600,7 +3724,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2611,11 +3737,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshuner-t-2209",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -2633,12 +3759,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腕順二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Wanshuner (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.10",
@@ -2654,9 +3804,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "手解穴",
       "pinyin": "Shoujie",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2664,7 +3815,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2675,11 +3828,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujie-t-2210",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2695,12 +3848,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 手解穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shoujie (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.11",
@@ -2716,9 +3893,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "土水穴",
       "pinyin": "Tushui",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2726,7 +3904,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2737,11 +3917,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tushui-t-2211",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2757,12 +3937,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 土水穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tushui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.12",
@@ -2778,9 +3982,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "反後決穴",
       "pinyin": "Fanhoujue",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2788,7 +3993,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2799,11 +4006,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fanhoujue-t-2212",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -2821,12 +4028,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 反後決穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fanhoujue (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.13",
@@ -2842,9 +4073,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "小節穴",
       "pinyin": "Xiaojie",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2852,7 +4084,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2863,11 +4097,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojie-t-2213",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -2885,12 +4119,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 小節穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiaojie (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.15",
@@ -2906,9 +4164,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三叉一穴",
       "pinyin": "Sanchayi",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2916,7 +4175,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2927,11 +4188,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchayi-t-2215",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -2947,12 +4208,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三叉一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanchayi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.16",
@@ -2968,9 +4253,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三叉二穴",
       "pinyin": "Sanchaer",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -2978,7 +4264,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -2989,11 +4277,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchaer-t-2216",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -3009,12 +4297,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三叉二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanchaer (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.17",
@@ -3030,9 +4342,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三叉三穴",
       "pinyin": "Sanchasan",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3040,7 +4353,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3051,11 +4366,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchasan-t-2217",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -3071,12 +4386,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三叉三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanchasan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.18",
@@ -3092,9 +4431,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "止汗穴",
       "pinyin": "Zhihan",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3102,7 +4442,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3113,11 +4455,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhihan-t-2218",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -3133,12 +4475,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 止汗穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhihan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.19",
@@ -3154,9 +4520,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "手頸點",
       "pinyin": "Shoujingdian",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3164,7 +4531,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3175,11 +4544,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujingdian-t-2219",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -3197,12 +4566,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 手頸點 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shoujingdian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.21",
@@ -3218,9 +4611,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上高穴",
       "pinyin": "Shanggao",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3228,7 +4622,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3239,11 +4635,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shanggao-t-2221",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -3259,12 +4655,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上高穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shanggao (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.22",
@@ -3280,9 +4700,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "下高穴",
       "pinyin": "Xiagao",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3290,7 +4711,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3301,11 +4724,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiagao-t-2222",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [],
@@ -3321,12 +4744,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 下高穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiagao (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.24",
@@ -3342,9 +4789,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "骨關穴",
       "pinyin": "Guguan",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3352,7 +4800,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3363,11 +4813,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guguan-t-2224",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -3385,12 +4835,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 骨關穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Guguan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.25",
@@ -3406,9 +4880,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "中關穴",
       "pinyin": "Zhongguan",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3416,7 +4891,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3427,11 +4904,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongguan-t-2225",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -3449,12 +4926,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 中關穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongguan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.22.26",
@@ -3470,9 +4971,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木關穴",
       "pinyin": "Muguan",
       "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
+      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Hands reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "手部反射區",
@@ -3480,7 +4982,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "手部區域痛症",
@@ -3491,11 +4995,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muguan-t-2226",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 288,
       "aliases_zh": [
@@ -3513,12 +5017,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木關穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muguan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【手部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Hands.",
+      "disease_tags_zh": [
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Hands pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "手部神經反應區"
     },
     {
       "id": "tung.33.01",
@@ -3534,9 +5062,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "其門穴",
       "pinyin": "Qimen",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -3544,7 +5073,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -3555,11 +5086,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qimen-t-3301",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [
@@ -3577,12 +5108,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 其門穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qimen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.02",
@@ -3598,9 +5153,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "其角穴",
       "pinyin": "Qijiao",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -3608,7 +5164,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -3619,11 +5177,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qijiao-t-3302",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -3639,12 +5197,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 其角穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qijiao (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.03",
@@ -3660,9 +5242,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "其正穴",
       "pinyin": "Qizheng",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -3670,7 +5253,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -3681,11 +5266,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qizheng-t-3303",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -3701,12 +5286,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 其正穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qizheng (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.04",
@@ -3722,9 +5331,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火串穴",
       "pinyin": "Huochuan",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -3732,7 +5342,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -3743,11 +5355,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochuan-t-3304",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -3763,12 +5375,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火串穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huochuan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.05",
@@ -3784,9 +5420,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火陵穴",
       "pinyin": "Huoling",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -3794,7 +5431,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -3805,11 +5444,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoling-t-3305",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -3825,12 +5464,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火陵穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huoling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.06",
@@ -3846,9 +5509,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火山穴",
       "pinyin": "Huoshan",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -3856,7 +5520,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -3867,11 +5533,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoshan-t-3306",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -3887,12 +5553,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火山穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huoshan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.07",
@@ -3908,9 +5598,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火腑海穴",
       "pinyin": "Huofuhai",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -3918,7 +5609,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -3929,11 +5622,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofuhai-t-3307",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -3949,12 +5642,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火腑海穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huofuhai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.08",
@@ -3962,44 +5679,51 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T33.08",
       "display_code": "T 33.08",
       "zone_code": "33",
-      "zone_en": "Forearms",
-      "zone_zh": "前臂",
+      "zone_en": "Zone 33: Forearms",
+      "zone_zh": "三三部位【前臂】",
       "region_en": "Forearm",
       "region_zh": "前臂",
       "name_en": "Ganmen",
       "name_zh": "肝門穴",
       "pinyin": "Shouwujin",
       "location_en": "On the flexor aspect of the forearm along the Small Intestine channel, 3 cun proximal to the wrist crease.",
-      "location_zh": "前臂小腸經循行路線上，尺骨中點處（腕橫紋上三寸）。",
+      "location_zh": "前臂小腸經循行路線上，尺骨內側中點處（腕橫紋上三寸）。",
       "traditional_functions_en": [
-        "Liver reaction area"
+        "Soothe Liver",
+        "Clear Heat & Toxins",
+        "Harmonize Stomach"
       ],
       "traditional_functions_zh": [
-        "肝神經"
+        "肝神經",
+        "疏肝理氣",
+        "清熱解毒",
+        "和胃降逆"
       ],
       "indications_en": [
         "Acute hepatitis",
         "Chronic hepatitis",
         "Cirrhosis",
         "Hypochondriac pain",
-        "Nausea"
+        "Nausea",
+        "Liver distension"
       ],
       "indications_zh": [
         "急性肝炎",
         "慢性肝炎",
         "肝硬化",
         "脅痛",
-        "噁心嘔吐"
+        "噁心嘔吐",
+        "肝區脹痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouwujin-t-3308",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4015,13 +5739,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肝門穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ganmen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.3～0.5寸。左手取穴效果更佳。",
-      "reaction_area_zh": "肝神經"
+      "reaction_area_zh": "肝神經",
+      "anatomy_zh": "尺神經、前臂內側皮神經，深層為肝之神經。",
+      "anatomy_en": "Ulnar nerve, medial antebrachial cutaneous nerve; Deep: Liver reaction area.",
+      "disease_tags_zh": [
+        "急性肝炎",
+        "慢性肝炎",
+        "肝硬化",
+        "脅痛",
+        "噁心"
+      ],
+      "disease_tags_en": [
+        "Acute Hepatitis",
+        "Chronic Hepatitis",
+        "Cirrhosis",
+        "Hypochondriac Pain",
+        "Nausea"
+      ],
+      "action_tags_zh": [
+        "疏肝理氣",
+        "清熱解毒",
+        "和胃降逆"
+      ],
+      "action_tags_en": [
+        "Soothe Liver",
+        "Clear Heat & Toxins",
+        "Harmonize Stomach"
+      ],
+      "acumethod_en": "Needle 0.3-0.5 cun. Left arm selection preferred."
     },
     {
       "id": "tung.33.09",
@@ -4029,44 +5780,51 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T33.09",
       "display_code": "T 33.09",
       "zone_code": "33",
-      "zone_en": "Forearms",
-      "zone_zh": "前臂",
+      "zone_en": "Zone 33: Forearms",
+      "zone_zh": "三三部位【前臂】",
       "region_en": "Forearm",
       "region_zh": "前臂",
       "name_en": "Xinmen",
       "name_zh": "心門穴",
       "pinyin": "Shouqianjin",
       "location_en": "On the medial aspect of the forearm near the ulnar olecranon, 1.5 cun proximal to the wrist.",
-      "location_zh": "前臂尺骨鷹嘴突起內側凹陷處（腕橫紋上1.5寸）。",
+      "location_zh": "前臂尺骨鷹嘴突起內側凹陷處（腕橫紋上1.5寸，尺骨側）。",
       "traditional_functions_en": [
-        "Heart reaction area"
+        "Calm Heart",
+        "Unblock Yang Vessels",
+        "Relieve Pain"
       ],
       "traditional_functions_zh": [
-        "心之神經"
+        "心神經",
+        "寧心安神",
+        "通陽復脈",
+        "散寒止痛"
       ],
       "indications_en": [
         "Heart disease",
         "Palpitations",
         "Angina pectoris",
         "Knee pain",
-        "Groin pain"
+        "Groin pain",
+        "Retching"
       ],
       "indications_zh": [
         "心臟病",
         "心悸",
         "心絞痛",
         "膝蓋痛",
-        "鼠蹊部痛"
+        "鼠蹊部痛",
+        "乾嘔"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouqianjin-t-3309",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4082,13 +5840,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 心門穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xinmen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.4～0.7寸。",
-      "reaction_area_zh": "心之神經"
+      "reaction_area_zh": "心神經",
+      "anatomy_zh": "尺神經、尺動脈分支，深層為心之神經。",
+      "anatomy_en": "Ulnar nerve & artery branches; Deep: Heart reaction area.",
+      "disease_tags_zh": [
+        "心臟病",
+        "心悸",
+        "心絞痛",
+        "膝蓋痛",
+        "鼠蹊痛"
+      ],
+      "disease_tags_en": [
+        "Heart Disease",
+        "Palpitations",
+        "Angina",
+        "Knee Pain",
+        "Groin Pain"
+      ],
+      "action_tags_zh": [
+        "寧心安神",
+        "通陽復脈",
+        "散寒止痛"
+      ],
+      "action_tags_en": [
+        "Calm Heart",
+        "Unblock Yang Vessels",
+        "Relieve Pain"
+      ],
+      "acumethod_en": "Needle 0.4-0.7 cun perpendicularly."
     },
     {
       "id": "tung.33.10",
@@ -4104,9 +5889,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腸門穴",
       "pinyin": "Changmen",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4114,7 +5900,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4125,11 +5913,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/changmen-t-3310",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4145,12 +5933,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腸門穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Changmen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.11",
@@ -4166,9 +5978,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肝門穴",
       "pinyin": "Ganmen",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4176,7 +5989,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4187,11 +6002,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmen-t-3311",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4207,12 +6022,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肝門穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ganmen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.12",
@@ -4228,9 +6067,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "心門穴",
       "pinyin": "Xinmen",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4238,7 +6078,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4249,11 +6091,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinmen-t-3312",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4269,12 +6111,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 心門穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xinmen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.13",
@@ -4290,9 +6156,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "人士穴",
       "pinyin": "Renshi",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4300,7 +6167,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4311,11 +6180,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renshi-t-3313",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4331,12 +6200,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 人士穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Renshi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.14",
@@ -4352,9 +6245,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "地士穴",
       "pinyin": "Dishi",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4362,7 +6256,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4373,11 +6269,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dishi-t-3314",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4393,12 +6289,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 地士穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Dishi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.15",
@@ -4414,9 +6334,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "天士穴",
       "pinyin": "Tianshi",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4424,7 +6345,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4435,11 +6358,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianshi-t-3315",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4455,12 +6378,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 天士穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tianshi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.16",
@@ -4476,9 +6423,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "曲陵穴",
       "pinyin": "Quling",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4486,7 +6434,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4497,11 +6447,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/quling-t-3316",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4517,12 +6467,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 曲陵穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Quling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.17",
@@ -4538,9 +6512,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "心靈穴",
       "pinyin": "Xinling",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4548,7 +6523,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4559,11 +6536,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinling-t-3317",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [
@@ -4581,12 +6558,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 心靈穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xinling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.18",
@@ -4602,9 +6603,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肝靈三穴",
       "pinyin": "Ganlingsanxue",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4612,7 +6614,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4623,11 +6627,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganlingsanxue-t-3318",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [
@@ -4645,12 +6649,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肝靈三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ganlingsanxue (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.19",
@@ -4666,9 +6694,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "喉健穴",
       "pinyin": "Houjian",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4676,7 +6705,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4687,11 +6718,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-3319",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4707,12 +6738,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 喉健穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Houjian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.33.20",
@@ -4728,9 +6783,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腑格三穴",
       "pinyin": "Fugesan",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
+      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Forearms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "前臂反射區",
@@ -4738,7 +6794,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "前臂區域痛症",
@@ -4749,11 +6807,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-3320",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 74,
       "y": 246,
       "aliases_zh": [],
@@ -4769,12 +6827,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腑格三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fugesan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【前臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區"
     },
     {
       "id": "tung.44.01",
@@ -4790,9 +6872,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "分金穴",
       "pinyin": "Fenjin",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -4800,7 +6883,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -4811,11 +6896,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenjin-t-4401",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -4831,12 +6916,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 分金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fenjin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.02",
@@ -4852,9 +6961,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "後椎穴",
       "pinyin": "Houzhui",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -4862,7 +6972,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -4873,11 +6985,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhui-t-4402",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [
@@ -4895,12 +7007,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 後椎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Houzhui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.03",
@@ -4916,9 +7052,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "首英穴",
       "pinyin": "Shouying",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -4926,7 +7063,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -4937,11 +7076,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouying-t-4403",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -4957,12 +7096,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 首英穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shouying (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.04",
@@ -4978,9 +7141,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "富頂穴",
       "pinyin": "Fuding",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -4988,7 +7152,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -4999,11 +7165,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuding-t-4404",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [
@@ -5021,12 +7187,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 富頂穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fuding (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.05",
@@ -5042,9 +7232,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "後枝穴",
       "pinyin": "Houzhi",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5052,7 +7243,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5063,11 +7256,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhi-t-4405",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [
@@ -5085,12 +7278,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 後枝穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Houzhi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.06",
@@ -5106,9 +7323,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肩中穴",
       "pinyin": "Jianzhong",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5116,7 +7334,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5127,11 +7347,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianzhong-t-4406",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5147,12 +7367,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肩中穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jianzhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.07",
@@ -5168,9 +7412,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "背面穴",
       "pinyin": "Beimian",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5178,7 +7423,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5189,11 +7436,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/beimian-t-4407",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5209,12 +7456,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 背面穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Beimian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.08",
@@ -5230,9 +7501,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "人宗穴",
       "pinyin": "Renzong",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5240,7 +7512,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5251,11 +7525,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renzong-t-4408",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5271,12 +7545,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 人宗穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Renzong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.09",
@@ -5292,9 +7590,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "地宗穴",
       "pinyin": "Dizong",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5302,7 +7601,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5313,11 +7614,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dizong-t-4409",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5333,12 +7634,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 地宗穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Dizong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.10",
@@ -5354,9 +7679,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "天宗穴",
       "pinyin": "Tianzong",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5364,7 +7690,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5375,11 +7703,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianzong-t-4410",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5395,12 +7723,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 天宗穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tianzong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.11",
@@ -5416,9 +7768,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "云白穴",
       "pinyin": "Yunbai",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5426,7 +7779,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5437,11 +7792,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yunbai-t-4411",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5457,12 +7812,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 云白穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Yunbai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.12",
@@ -5478,9 +7857,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "李白穴",
       "pinyin": "Libai",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5488,7 +7868,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5499,11 +7881,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/libai-t-4412",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5519,12 +7901,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 李白穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Libai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.13",
@@ -5540,9 +7946,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "支通穴",
       "pinyin": "Zhitong",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5550,7 +7957,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5561,11 +7970,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhitong-t-4413",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5581,12 +7990,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 支通穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhitong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.14",
@@ -5602,9 +8035,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "落通穴",
       "pinyin": "Luotong",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5612,7 +8046,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5623,11 +8059,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/luotong-t-4414",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5643,12 +8079,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 落通穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Luotong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.15",
@@ -5664,9 +8124,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "下曲穴",
       "pinyin": "Xiaqu",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5674,7 +8135,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5685,11 +8148,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqu-t-4415",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5705,12 +8168,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 下曲穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiaqu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.16",
@@ -5726,9 +8213,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上曲穴",
       "pinyin": "Shangqu",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5736,7 +8224,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5747,11 +8237,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqu-t-4416",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5767,12 +8257,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上曲穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangqu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.17",
@@ -5788,9 +8302,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水愈穴",
       "pinyin": "Shuiyu",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5798,7 +8313,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5809,11 +8326,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiyu-t-4417",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5829,12 +8346,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水愈穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuiyu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.18",
@@ -5850,9 +8391,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三靈穴",
       "pinyin": "Sanling",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5860,7 +8402,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5871,11 +8415,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanling-t-4418",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [
@@ -5893,12 +8437,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三靈穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.19",
@@ -5914,9 +8482,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "神肩穴",
       "pinyin": "Shenjian",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5924,7 +8493,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5935,11 +8506,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shenjian-t-4419",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -5955,12 +8526,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 神肩穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shenjian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.20",
@@ -5976,9 +8571,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "偏肩穴",
       "pinyin": "Pianjian",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -5986,7 +8582,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -5997,11 +8595,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pianjian-t-4420",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6017,12 +8615,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 偏肩穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Pianjian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.21",
@@ -6038,9 +8660,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "骨刺一穴",
       "pinyin": "Guciyi",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6048,7 +8671,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6059,11 +8684,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guciyi-t-4421",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6079,12 +8704,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 骨刺一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Guciyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.22",
@@ -6100,9 +8749,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "骨刺二穴",
       "pinyin": "Gucier",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6110,7 +8760,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6121,11 +8773,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucier-t-4422",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6141,12 +8793,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 骨刺二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Gucier (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.23",
@@ -6162,9 +8838,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "骨刺三穴",
       "pinyin": "Gucisan",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6172,7 +8849,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6183,11 +8862,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucisan-t-4423",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6203,12 +8882,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 骨刺三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Gucisan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.24",
@@ -6224,9 +8927,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "正脊穴",
       "pinyin": "Zhengji",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6234,7 +8938,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6245,11 +8951,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengji-t-4424",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6265,12 +8971,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 正脊穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhengji (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.25",
@@ -6286,9 +9016,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肺氣一穴",
       "pinyin": "Feiqiyi",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6296,7 +9027,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6307,11 +9040,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqiyi-t-4425",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6327,12 +9060,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肺氣一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Feiqiyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.26",
@@ -6348,9 +9105,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肺氣二穴",
       "pinyin": "Feiqier",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6358,7 +9116,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6369,11 +9129,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqier-t-4426",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6389,12 +9149,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肺氣二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Feiqier (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.27",
@@ -6410,9 +9194,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三神穴",
       "pinyin": "Sanshen",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6420,7 +9205,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6431,11 +9218,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanshen-t-4427",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6451,12 +9238,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三神穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanshen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.28",
@@ -6472,9 +9283,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "定咳穴",
       "pinyin": "Dingke",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6482,7 +9294,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6493,11 +9307,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dingke-t-4428",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6513,12 +9327,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 定咳穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Dingke (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.29",
@@ -6534,9 +9372,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "喉健穴",
       "pinyin": "Houjian",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6544,7 +9383,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6555,11 +9396,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-4429",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6575,12 +9416,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 喉健穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Houjian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.30",
@@ -6596,9 +9461,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腑格三穴",
       "pinyin": "Fugesan",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6606,7 +9472,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6617,11 +9485,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-4430",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6637,12 +9505,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腑格三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fugesan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.44.31",
@@ -6658,9 +9550,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肩峰穴",
       "pinyin": "Jianfeng",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
+      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Upper Arms reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "上臂反射區",
@@ -6668,7 +9561,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "上臂區域痛症",
@@ -6679,11 +9574,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianfeng-t-4431",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 76,
       "y": 205,
       "aliases_zh": [],
@@ -6699,12 +9594,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肩峰穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jianfeng (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【上臂】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Upper Arms.",
+      "disease_tags_zh": [
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Upper Arms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "上臂神經反應區"
     },
     {
       "id": "tung.55.01",
@@ -6720,9 +9639,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火包穴",
       "pinyin": "Huobao",
       "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
+      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Soles reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足底反射區",
@@ -6730,7 +9650,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足底區域痛症",
@@ -6741,11 +9663,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huobao-t-5501",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 134,
       "y": 610,
       "aliases_zh": [],
@@ -6761,12 +9683,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火包穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huobao (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足底】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Soles.",
+      "disease_tags_zh": [
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足底神經反應區"
     },
     {
       "id": "tung.55.02",
@@ -6782,9 +9728,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "花骨一穴",
       "pinyin": "Huaguyi",
       "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
+      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Soles reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足底反射區",
@@ -6792,7 +9739,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足底區域痛症",
@@ -6803,11 +9752,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguyi-t-5502",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 134,
       "y": 610,
       "aliases_zh": [],
@@ -6823,12 +9772,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 花骨一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huaguyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足底】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Soles.",
+      "disease_tags_zh": [
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足底神經反應區"
     },
     {
       "id": "tung.55.03",
@@ -6844,9 +9817,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "花骨二穴",
       "pinyin": "Huaguer",
       "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
+      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Soles reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足底反射區",
@@ -6854,7 +9828,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足底區域痛症",
@@ -6865,11 +9841,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguer-t-5503",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 134,
       "y": 610,
       "aliases_zh": [],
@@ -6885,12 +9861,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 花骨二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huaguer (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足底】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Soles.",
+      "disease_tags_zh": [
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足底神經反應區"
     },
     {
       "id": "tung.55.04",
@@ -6906,9 +9906,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "花骨三穴",
       "pinyin": "Huagusan",
       "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
+      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Soles reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足底反射區",
@@ -6916,7 +9917,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足底區域痛症",
@@ -6927,11 +9930,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusan-t-5504",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 134,
       "y": 610,
       "aliases_zh": [],
@@ -6947,12 +9950,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 花骨三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huagusan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足底】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Soles.",
+      "disease_tags_zh": [
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足底神經反應區"
     },
     {
       "id": "tung.55.05",
@@ -6968,9 +9995,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "花骨四穴",
       "pinyin": "Huagusi",
       "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
+      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Soles reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足底反射區",
@@ -6978,7 +10006,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足底區域痛症",
@@ -6989,11 +10019,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusi-t-5505",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 134,
       "y": 610,
       "aliases_zh": [],
@@ -7009,12 +10039,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 花骨四穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huagusi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足底】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Soles.",
+      "disease_tags_zh": [
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足底神經反應區"
     },
     {
       "id": "tung.55.06",
@@ -7030,9 +10084,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上瘤穴",
       "pinyin": "Shangliu",
       "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
+      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Soles reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足底反射區",
@@ -7040,7 +10095,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足底區域痛症",
@@ -7051,11 +10108,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangliu-t-5506",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 134,
       "y": 610,
       "aliases_zh": [],
@@ -7071,12 +10128,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上瘤穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangliu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足底】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Soles.",
+      "disease_tags_zh": [
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足底神經反應區"
     },
     {
       "id": "tung.55.07",
@@ -7092,9 +10173,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三聖穴",
       "pinyin": "Sansheng",
       "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
+      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Soles reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足底反射區",
@@ -7102,7 +10184,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足底區域痛症",
@@ -7113,11 +10197,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sansheng-t-5507",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 134,
       "y": 610,
       "aliases_zh": [
@@ -7135,12 +10219,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三聖穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sansheng (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足底】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Soles.",
+      "disease_tags_zh": [
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Soles pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足底神經反應區"
     },
     {
       "id": "tung.66.01",
@@ -7156,9 +10264,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "海豹穴",
       "pinyin": "Haibao",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7166,7 +10275,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7177,11 +10288,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/haibao-t-6601",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7197,12 +10308,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 海豹穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Haibao (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.02",
@@ -7218,9 +10353,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木婦穴",
       "pinyin": "Mufu",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7228,7 +10364,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7239,11 +10377,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-6602",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [
@@ -7261,12 +10399,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木婦穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Mufu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.03",
@@ -7282,9 +10444,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火硬穴",
       "pinyin": "Huoying",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7292,7 +10455,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7303,11 +10468,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoying-t-6603",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7323,12 +10488,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火硬穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huoying (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.04",
@@ -7344,9 +10533,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火主穴",
       "pinyin": "Huozhu",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7354,7 +10544,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7365,11 +10557,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhu-t-6604",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7385,12 +10577,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火主穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huozhu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.05",
@@ -7406,9 +10622,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "門金穴",
       "pinyin": "Menjin",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7416,7 +10633,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7427,11 +10646,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/menjin-t-6605",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [
@@ -7449,12 +10668,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 門金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Menjin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.06",
@@ -7470,9 +10713,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木留穴",
       "pinyin": "Muliu",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7480,7 +10724,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7491,11 +10737,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliu-t-6606",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7511,12 +10757,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木留穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muliu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.07",
@@ -7532,9 +10802,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木斗穴",
       "pinyin": "Mudou",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7542,7 +10813,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7553,11 +10826,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mudou-t-6607",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7573,12 +10846,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木斗穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Mudou (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.08",
@@ -7594,9 +10891,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "六完穴",
       "pinyin": "Liuwan",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7604,7 +10902,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7615,11 +10915,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/liuwan-t-6608",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7635,12 +10935,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 六完穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Liuwan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.09",
@@ -7656,9 +10980,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水曲穴",
       "pinyin": "Shuiqu",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7666,7 +10991,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7677,11 +11004,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiqu-t-6609",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7697,12 +11024,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水曲穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuiqu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.10",
@@ -7718,9 +11069,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火連穴",
       "pinyin": "Huolian",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7728,7 +11080,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7739,11 +11093,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huolian-t-6610",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [
@@ -7761,12 +11115,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火連穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huolian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.11",
@@ -7782,9 +11160,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火菊穴",
       "pinyin": "Huoju",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7792,7 +11171,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7803,11 +11184,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoju-t-6611",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7823,12 +11204,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火菊穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huoju (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.12",
@@ -7844,9 +11249,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火散穴",
       "pinyin": "Huosan",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7854,7 +11260,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7865,11 +11273,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huosan-t-6612",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7885,12 +11293,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火散穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huosan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.13",
@@ -7906,9 +11338,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水晶穴",
       "pinyin": "Shuijing",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7916,7 +11349,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7927,11 +11362,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijing-t-6613",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -7947,12 +11382,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水晶穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuijing (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.14",
@@ -7968,9 +11427,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水相穴",
       "pinyin": "Shuixiang",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -7978,7 +11438,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -7989,11 +11451,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixiang-t-6614",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -8009,12 +11471,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水相穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuixiang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.15",
@@ -8030,9 +11516,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水仙穴",
       "pinyin": "Shuixian",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -8040,7 +11527,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -8051,11 +11540,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixian-t-6615",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -8071,12 +11560,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水仙穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuixian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.66.16",
@@ -8092,9 +11605,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "董氏腕痛穴",
       "pinyin": "Tung's Wantong",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
+      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Top of Feet reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "足背反射區",
@@ -8102,7 +11616,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "足背區域痛症",
@@ -8113,11 +11629,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tungs-wantong-t-6616",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 236,
       "y": 590,
       "aliases_zh": [],
@@ -8133,12 +11649,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 董氏腕痛穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tung's Wantong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【足背】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Top of Feet.",
+      "disease_tags_zh": [
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Top of Feet pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "足背神經反應區"
     },
     {
       "id": "tung.77.01",
@@ -8146,44 +11686,51 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T77.01",
       "display_code": "T 77.01",
       "zone_code": "77",
-      "zone_en": "Lower Legs",
-      "zone_zh": "小腿",
+      "zone_en": "Zone 77: Lower Leg",
+      "zone_zh": "七七部位【小腿】",
       "region_en": "Lower leg",
       "region_zh": "小腿",
       "name_en": "Zhengjin",
       "name_zh": "正筋穴",
       "pinyin": "Zhengjin",
-      "location_en": "On the Achilles tendon, 3 cun superior to the calcaneus.",
+      "location_en": "On the Achilles tendon, 3 cun superior to the base of the calcaneus.",
       "location_zh": "腳跟阿基里斯腱（跟腱）正中央上，距足跟底三寸處。",
       "traditional_functions_en": [
-        "Spine & Brain reaction area"
+        "Relax Tendons",
+        "Unblock Du Channel",
+        "Relieve Pain"
       ],
       "traditional_functions_zh": [
-        "脊膽神經"
+        "脊膽神經（腦與脊髓）",
+        "舒筋活絡",
+        "通督脊髓",
+        "祛風止痛"
       ],
       "indications_en": [
         "Stiff neck & nape pain",
         "Occipital headache",
         "Lumbar spine pain",
         "Heel pain",
-        "Cervical spondylosis"
+        "Cervical spondylosis",
+        "Acute lumbar sprain"
       ],
       "indications_zh": [
         "頸項強痛",
         "後頭痛",
         "腰脊痛",
         "腳跟痛",
-        "頸椎病"
+        "頸椎病",
+        "急性腰扭傷"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengjin-t-7701",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8199,13 +11746,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 正筋穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhengjin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "透刺跟腱1.5～2.0寸。常與正宗穴配伍倒馬。",
-      "reaction_area_zh": "脊膽神經"
+      "acumethod_zh": "透刺跟腱1.5～2.0寸。與正宗穴配伍倒馬，為治頸椎第一特效藥對。",
+      "reaction_area_zh": "脊膽神經（腦與脊髓）",
+      "anatomy_zh": "脛神經、小腿後皮神經，深層為脊膽神經（腦及脊髓反應區）。",
+      "anatomy_en": "Tibial nerve; Deep: Spine & Brain reaction areas.",
+      "disease_tags_zh": [
+        "頸椎病",
+        "頸項強痛",
+        "後頭痛",
+        "腰背痛",
+        "腳跟痛"
+      ],
+      "disease_tags_en": [
+        "Cervical Spondylosis",
+        "Stiff Neck",
+        "Occipital Headache",
+        "Lumbar Pain",
+        "Heel Pain"
+      ],
+      "action_tags_zh": [
+        "舒筋活絡",
+        "通督脊髓",
+        "祛風止痛"
+      ],
+      "action_tags_en": [
+        "Relax Tendons",
+        "Unblock Du Channel",
+        "Relieve Pain"
+      ],
+      "acumethod_en": "Penetrate tendon 1.5-2.0 cun. Pair with Zhengzong (T 77.02) for neck pain."
     },
     {
       "id": "tung.77.02",
@@ -8244,11 +11818,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengzong-t-7702",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8264,13 +11838,38 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 正宗穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhengzong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "透刺跟腱1.5～2.0寸。與正筋穴配伍倒馬為治頸椎病第一藥對。",
-      "reaction_area_zh": "脊膽神經"
+      "reaction_area_zh": "脊膽神經",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "頸項強痛",
+        "腰背痛",
+        "腳跟痛",
+        "扭傷"
+      ],
+      "disease_tags_en": [
+        "Stiff neck",
+        "Lower back & upper back pain",
+        "Heel pain",
+        "Sprain"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.77.03",
@@ -8286,9 +11885,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "正士穴",
       "pinyin": "Zhengshi",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8296,7 +11896,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8307,11 +11909,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengshi-t-7703",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8327,12 +11929,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 正士穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhengshi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.04",
@@ -8348,9 +11974,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "搏球穴",
       "pinyin": "Boqiu",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8358,7 +11985,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8369,11 +11998,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/boqiu-t-7704",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8389,12 +12018,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 搏球穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Boqiu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.05",
@@ -8410,9 +12063,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "一重穴",
       "pinyin": "Yizhong",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8420,7 +12074,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8431,11 +12087,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yizhong-t-7705",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8451,12 +12107,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 一重穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Yizhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.06",
@@ -8472,9 +12152,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "二重穴",
       "pinyin": "Erzhong",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8482,7 +12163,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8493,11 +12176,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erzhong-t-7706",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8513,12 +12196,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 二重穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Erzhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.07",
@@ -8534,9 +12241,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三重穴",
       "pinyin": "Sanzhong",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8544,7 +12252,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8555,11 +12265,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanzhong-t-7707",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8575,12 +12285,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三重穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanzhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.08",
@@ -8596,9 +12330,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四花上穴",
       "pinyin": "Sihuashang",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8606,7 +12341,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8617,11 +12354,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuashang-t-7708",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8637,12 +12374,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四花上穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sihuashang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.09",
@@ -8658,9 +12419,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四花中穴",
       "pinyin": "Sihuazhong",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8668,7 +12430,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8679,11 +12443,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuazhong-t-7709",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8699,12 +12463,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四花中穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sihuazhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.10",
@@ -8720,9 +12508,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四花副穴",
       "pinyin": "Sihuafu",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8730,7 +12519,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8741,11 +12532,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuafu-t-7710",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8761,12 +12552,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四花副穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sihuafu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.11",
@@ -8782,9 +12597,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四花下穴",
       "pinyin": "Sihuaxia",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8792,7 +12608,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8803,11 +12621,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuaxia-t-7711",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8823,12 +12641,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四花下穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sihuaxia (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.12",
@@ -8844,9 +12686,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腑肠穴",
       "pinyin": "Fuchang",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8854,7 +12697,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8865,11 +12710,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuchang-t-7712",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8885,12 +12730,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腑肠穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fuchang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.13",
@@ -8906,9 +12775,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四花里穴",
       "pinyin": "Sihuali",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8916,7 +12786,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8927,11 +12799,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuali-t-7713",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -8947,12 +12819,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四花里穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sihuali (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.14",
@@ -8968,9 +12864,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四花外穴",
       "pinyin": "Sihuawai",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -8978,7 +12875,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -8989,11 +12888,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuawai-t-7714",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9009,12 +12908,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四花外穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sihuawai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.15",
@@ -9030,9 +12953,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上唇穴",
       "pinyin": "Shangchun",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9040,7 +12964,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9051,11 +12977,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangchun-t-7715",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9071,12 +12997,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上唇穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangchun (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.16",
@@ -9092,9 +13042,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "下唇穴",
       "pinyin": "Xiachun",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9102,7 +13053,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9113,11 +13066,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiachun-t-7716",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9133,12 +13086,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 下唇穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiachun (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.17",
@@ -9181,11 +13158,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-7717",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9201,13 +13178,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四花中穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sihuazhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺1.5～2.5寸；或用三棱針點刺黑血。為董氏刺血要穴。",
-      "reaction_area_zh": "心神經、肺神經"
+      "reaction_area_zh": "心神經、肺神經",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "哮喘",
+        "肺癌",
+        "心臟病",
+        "急性腸胃炎",
+        "胸痛"
+      ],
+      "disease_tags_en": [
+        "Asthma",
+        "Lung cancer",
+        "Heart disease",
+        "Acute gastroenteritis",
+        "Chest pain"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.77.18",
@@ -9223,9 +13227,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "天皇副穴, 腎關穴",
       "pinyin": "Tianhuangfu [shenguan]",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9233,7 +13238,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9244,11 +13251,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuangfu-shenguan-t-7718",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [
@@ -9266,12 +13273,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 天皇副穴, 腎關穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tianhuangfu [shenguan] (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.19",
@@ -9287,9 +13318,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "地皇穴",
       "pinyin": "Dihuang",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9297,7 +13329,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9308,11 +13342,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dihuang-t-7719",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9328,12 +13362,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 地皇穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Dihuang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.20",
@@ -9341,20 +13399,27 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T77.20",
       "display_code": "T 77.20",
       "zone_code": "77",
-      "zone_en": "Lower Legs",
-      "zone_zh": "小腿",
+      "zone_en": "Zone 77: Lower Leg",
+      "zone_zh": "七七部位【小腿】",
       "region_en": "Lower leg",
       "region_zh": "小腿",
       "name_en": "Shenguan",
       "name_zh": "腎關穴",
       "pinyin": "Sizhi",
       "location_en": "On the medial side of the lower leg, 1.5 cun inferior to Yinlingquan (SP9).",
-      "location_zh": "小腿內側，陰陵泉穴直下一寸五分處（脛骨內側緣後方）。",
+      "location_zh": "小腿內側，陰陵泉穴直下一寸五分處（脛骨內側緣後方凹陷）。",
       "traditional_functions_en": [
-        "Kidney reaction area"
+        "Strongly Tonify Kidney",
+        "Nourish Essence",
+        "Unblock Shoulder",
+        "Improve Vision"
       ],
       "traditional_functions_zh": [
-        "腎之神經"
+        "腎神經",
+        "大補腎陽",
+        "滋養精血",
+        "舒筋利肩",
+        "明目止遺"
       ],
       "indications_en": [
         "Kidney deficiency back pain",
@@ -9362,7 +13427,8 @@ window.ACUTING_TUNG_INDEX = {
         "Frozen shoulder (50s shoulder)",
         "Blurred vision",
         "Diabetes",
-        "Impotence"
+        "Impotence",
+        "Sciatica"
       ],
       "indications_zh": [
         "腎虛腰痛",
@@ -9370,17 +13436,18 @@ window.ACUTING_TUNG_INDEX = {
         "肩周炎 (五十肩)",
         "眼花",
         "糖尿病",
-        "陽痿"
+        "陽痿",
+        "坐骨神經痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sizhi-t-7720",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9396,13 +13463,44 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腎關穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shenguan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺1.5～2.0寸。為董氏補腎第一要穴、治療五十肩特效穴。",
-      "reaction_area_zh": "腎之神經"
+      "reaction_area_zh": "腎神經",
+      "anatomy_zh": "脛神經、伏隱神經，深層為腎之神經。",
+      "anatomy_en": "Tibial nerve, saphenous nerve; Deep: Kidney reaction area.",
+      "disease_tags_zh": [
+        "五十肩",
+        "腎虛腰痛",
+        "夜尿多",
+        "糖尿病",
+        "眼花",
+        "陽痿"
+      ],
+      "disease_tags_en": [
+        "Frozen Shoulder",
+        "Kidney Back Pain",
+        "Nocturia",
+        "Diabetes",
+        "Blurred Vision",
+        "Impotence"
+      ],
+      "action_tags_zh": [
+        "大補腎陽",
+        "滋養精血",
+        "舒筋利肩",
+        "明目止遺"
+      ],
+      "action_tags_en": [
+        "Strongly Tonify Kidney",
+        "Nourish Essence",
+        "Unblock Shoulder",
+        "Improve Vision"
+      ],
+      "acumethod_en": "Needle perpendicularly 1.5-2.0 cun. #1 Tung point for Kidney tonification & frozen shoulder."
     },
     {
       "id": "tung.77.21",
@@ -9418,9 +13516,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "人皇穴",
       "pinyin": "Renhuang",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9428,7 +13527,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9439,11 +13540,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renhuang-t-7721",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9459,12 +13560,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 人皇穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Renhuang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.22",
@@ -9480,9 +13605,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "側三里穴",
       "pinyin": "Cesanli",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9490,7 +13616,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9501,11 +13629,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/cesanli-t-7722",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [
@@ -9523,12 +13651,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 側三里穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Cesanli (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.23",
@@ -9544,9 +13696,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "側下三里",
       "pinyin": "Cexiasanli",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9554,7 +13707,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9565,11 +13720,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/cexiasanli-t-7723",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [
@@ -9587,12 +13742,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 側下三里 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Cexiasanli (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.24",
@@ -9608,9 +13787,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "足千金穴",
       "pinyin": "Zuqianjin",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9618,7 +13798,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9629,11 +13811,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuqianjin-t-7724",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9649,12 +13831,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 足千金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zuqianjin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.25",
@@ -9670,9 +13876,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "足五金穴",
       "pinyin": "Zuwujin",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9680,7 +13887,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9691,11 +13900,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuwujin-t-7725",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9711,12 +13920,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 足五金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zuwujin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.26",
@@ -9732,9 +13965,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "七虎穴",
       "pinyin": "Qihu",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9742,7 +13976,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9753,11 +13989,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihu-t-7726",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9773,12 +14009,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 七虎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qihu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.27",
@@ -9794,9 +14054,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "外三關穴",
       "pinyin": "Waisanguan",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9804,7 +14065,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9815,11 +14078,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waisanguan-t-7727",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [
@@ -9837,12 +14100,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 外三關穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Waisanguan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.28",
@@ -9858,9 +14145,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "光明穴",
       "pinyin": "Guangming",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9868,7 +14156,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9879,11 +14169,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guangming-t-7728",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [],
@@ -9899,12 +14189,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 光明穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Guangming (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.29",
@@ -9920,9 +14234,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "雙龍一穴",
       "pinyin": "Shuanglongyi",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9930,7 +14245,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -9941,11 +14258,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglongyi-t-7729",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [
@@ -9963,12 +14280,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 雙龍一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuanglongyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.77.30",
@@ -9984,9 +14325,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "雙龍二穴",
       "pinyin": "Shuanglonger",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
+      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lower Legs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "小腿反射區",
@@ -9994,7 +14336,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "小腿區域痛症",
@@ -10005,11 +14349,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglonger-t-7730",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 224,
       "y": 485,
       "aliases_zh": [
@@ -10027,12 +14371,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 雙龍二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuanglonger (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
+      "disease_tags_zh": [
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Lower Legs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "小腿神經反應區"
     },
     {
       "id": "tung.88.01",
@@ -10040,8 +14408,8 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T88.01",
       "display_code": "T 88.01",
       "zone_code": "88",
-      "zone_en": "Thighs",
-      "zone_zh": "大腿",
+      "zone_en": "Zone 88: Thighs",
+      "zone_zh": "八八部位【大腿】",
       "region_en": "Thigh",
       "region_zh": "大腿",
       "name_en": "Tongguan",
@@ -10050,34 +14418,41 @@ window.ACUTING_TUNG_INDEX = {
       "location_en": "On the anterior thigh, 5 cun superior to the superior border of the patella.",
       "location_zh": "大腿前側正中央，髕骨上緣直上五寸處（股四頭肌隆起處）。",
       "traditional_functions_en": [
-        "Heart reaction area"
+        "Tonify Heart Qi",
+        "Unblock Yang",
+        "Harmonize Stomach"
       ],
       "traditional_functions_zh": [
-        "心之神經"
+        "心神經",
+        "補心益氣",
+        "通陽復脈",
+        "和胃理氣"
       ],
       "indications_en": [
         "Heart disease",
         "Palpitations",
         "Angina",
         "Stomachache",
-        "Limb numbness"
+        "Limb numbness",
+        "Myocardial infarction"
       ],
       "indications_zh": [
         "心臟病",
         "心悸",
         "心絞痛",
         "胃痛",
-        "肢體麻木"
+        "肢體麻木",
+        "心肌梗塞"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongguan-t-8801",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -10095,13 +14470,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 通關穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tongguan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺1.0～2.0寸。常與通山、通天配伍倒馬（通關三穴）。",
-      "reaction_area_zh": "心之神經"
+      "reaction_area_zh": "心神經",
+      "anatomy_zh": "股神經前皮支、股動靜脈，深層為心之神經。",
+      "anatomy_en": "Femoral nerve anterior cutaneous branch; Deep: Heart reaction area.",
+      "disease_tags_zh": [
+        "心臟病",
+        "心悸",
+        "心絞痛",
+        "胃痛",
+        "肢體麻木"
+      ],
+      "disease_tags_en": [
+        "Heart Disease",
+        "Palpitations",
+        "Angina",
+        "Stomach Pain",
+        "Numbness"
+      ],
+      "action_tags_zh": [
+        "補心益氣",
+        "通陽復脈",
+        "和胃理氣"
+      ],
+      "action_tags_en": [
+        "Tonify Heart Qi",
+        "Unblock Yang",
+        "Harmonize Stomach"
+      ],
+      "acumethod_en": "Needle 1.0-2.0 cun. Pair with Tongshan (T 88.02) & Tongtian (T 88.03)."
     },
     {
       "id": "tung.88.02",
@@ -10140,11 +14542,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshan-t-8802",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10160,13 +14562,38 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 通山穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tongshan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺1.0～2.0寸。",
-      "reaction_area_zh": "心之神經"
+      "reaction_area_zh": "心之神經",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "心臟病",
+        "胸悶",
+        "膝蓋痛",
+        "胃痛"
+      ],
+      "disease_tags_en": [
+        "Heart disease",
+        "Chest oppression",
+        "Knee pain",
+        "Stomachache"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.88.03",
@@ -10182,9 +14609,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "通天穴",
       "pinyin": "Tongtian",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10192,7 +14620,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10203,11 +14633,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongtian-t-8803",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10223,12 +14653,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 通天穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tongtian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.04",
@@ -10244,9 +14698,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "姐妹一穴",
       "pinyin": "Jiemeiyi",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10254,7 +14709,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10265,11 +14722,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeiyi-t-8804",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10285,12 +14742,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 姐妹一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jiemeiyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.05",
@@ -10306,9 +14787,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "姐妹二穴",
       "pinyin": "Jiemeier",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10316,7 +14798,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10327,11 +14811,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeier-t-8805",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10347,12 +14831,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 姐妹二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jiemeier (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.06",
@@ -10368,9 +14876,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "姐妹三穴",
       "pinyin": "Jiemeisan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10378,7 +14887,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10389,11 +14900,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeisan-t-8806",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10409,12 +14920,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 姐妹三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jiemeisan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.07",
@@ -10430,9 +14965,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "感冒一穴",
       "pinyin": "Ganmaoyi",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10440,7 +14976,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10451,11 +14989,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoyi-t-8807",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10471,12 +15009,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 感冒一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ganmaoyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.08",
@@ -10492,9 +15054,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "感冒二穴",
       "pinyin": "Ganmaoer",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10502,7 +15065,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10513,11 +15078,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoer-t-8808",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10533,12 +15098,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 感冒二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ganmaoer (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.09",
@@ -10554,9 +15143,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "通腎穴",
       "pinyin": "Tongshen",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10564,7 +15154,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10575,11 +15167,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshen-t-8809",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -10597,12 +15189,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 通腎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tongshen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.10",
@@ -10618,9 +15234,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "通胃穴",
       "pinyin": "Tongwei",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10628,7 +15245,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10639,11 +15258,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongwei-t-8810",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10659,12 +15278,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 通胃穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tongwei (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.11",
@@ -10680,9 +15323,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "通背穴",
       "pinyin": "Tongbei",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10690,7 +15334,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10701,11 +15347,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongbei-t-8811",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10721,12 +15367,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 通背穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tongbei (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.12",
@@ -10742,9 +15412,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "明黃穴",
       "pinyin": "Minghuang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10752,7 +15423,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10763,11 +15436,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/minghuang-t-8812",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -10785,12 +15458,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 明黃穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Minghuang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.13",
@@ -10806,9 +15503,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "天黃穴",
       "pinyin": "Tianhuang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10816,7 +15514,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10827,11 +15527,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-8813",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -10849,12 +15549,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 天黃穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tianhuang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.14",
@@ -10870,9 +15594,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "其黃穴",
       "pinyin": "Qihuang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10880,7 +15605,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10891,11 +15618,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihuang-t-8814",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -10913,12 +15640,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 其黃穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qihuang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.15",
@@ -10934,9 +15685,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火枝穴",
       "pinyin": "Huozhi",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -10944,7 +15696,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -10955,11 +15709,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhi-t-8815",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -10975,12 +15729,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火枝穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huozhi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.16",
@@ -10996,9 +15774,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火全穴",
       "pinyin": "Huoquan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11006,7 +15785,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11017,11 +15798,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoquan-t-8816",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11037,12 +15818,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火全穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huoquan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.17",
@@ -11050,8 +15855,8 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T88.17",
       "display_code": "T 88.17",
       "zone_code": "88",
-      "zone_en": "Thighs",
-      "zone_zh": "大腿",
+      "zone_en": "Zone 88: Thighs",
+      "zone_zh": "八八部位【大腿】",
       "region_en": "Thigh",
       "region_zh": "大腿",
       "name_en": "Simazhong",
@@ -11060,34 +15865,43 @@ window.ACUTING_TUNG_INDEX = {
       "location_en": "On the lateral aspect of the thigh, 7 cun superior to the patella, 0.5 cun anterior to the midline.",
       "location_zh": "大腿外側正中央，髕骨外上緣直上七寸，再向前橫開五分處。",
       "traditional_functions_en": [
-        "Lung reaction area"
+        "Disperse Lung",
+        "Relieve Itching",
+        "Clear Damp-Heat",
+        "Detoxify"
       ],
       "traditional_functions_zh": [
-        "肺之神經"
+        "肺神經",
+        "宣肺解表",
+        "祛風止癢",
+        "清熱利濕",
+        "通絡排毒"
       ],
       "indications_en": [
         "Allergic rhinitis",
         "Skin diseases (urticaria/eczema)",
         "Psoriasis",
         "Sciatica",
-        "Facial paralysis"
+        "Facial paralysis",
+        "Acne"
       ],
       "indications_zh": [
         "過敏性鼻炎",
         "皮膚病 (蕁麻疹/濕疹)",
         "牛皮癬",
         "坐骨神經痛",
-        "面癱"
+        "面癱",
+        "痤瘡"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simazhong-t-8817",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -11105,13 +15919,42 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四馬中穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Simazhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺1.5～2.5寸。與四馬上穴、四馬下穴配伍倒馬（四馬三穴），為治療皮膚過敏第一藥對。",
-      "reaction_area_zh": "肺之神經"
+      "reaction_area_zh": "肺神經",
+      "anatomy_zh": "股外側皮神經、股神經肌支，深層為肺之神經。",
+      "anatomy_en": "Lateral femoral cutaneous nerve; Deep: Lung reaction area.",
+      "disease_tags_zh": [
+        "過敏性鼻炎",
+        "蕁麻疹",
+        "濕疹",
+        "牛皮癬",
+        "坐骨神經痛"
+      ],
+      "disease_tags_en": [
+        "Allergic Rhinitis",
+        "Urticaria",
+        "Eczema",
+        "Psoriasis",
+        "Sciatica"
+      ],
+      "action_tags_zh": [
+        "宣肺解表",
+        "祛風止癢",
+        "清熱利濕",
+        "通絡排毒"
+      ],
+      "action_tags_en": [
+        "Disperse Lung",
+        "Relieve Itching",
+        "Clear Damp-Heat",
+        "Detoxify"
+      ],
+      "acumethod_en": "Needle 1.5-2.5 cun. Combine with Simashang & Simaxia for #1 skin/allergy set."
     },
     {
       "id": "tung.88.18",
@@ -11127,9 +15970,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "駟馬上穴",
       "pinyin": "Simashang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11137,7 +15981,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11148,11 +15994,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simashang-t-8818",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -11170,12 +16016,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 駟馬上穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Simashang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.19",
@@ -11191,9 +16061,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "駟馬下穴",
       "pinyin": "Simaxia",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11201,7 +16072,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11212,11 +16085,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simaxia-t-8819",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -11234,12 +16107,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 駟馬下穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Simaxia (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.20",
@@ -11255,9 +16152,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "下泉穴",
       "pinyin": "Xiaquan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11265,7 +16163,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11276,11 +16176,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaquan-t-8820",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11296,12 +16196,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 下泉穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiaquan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.21",
@@ -11317,9 +16241,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "中泉穴",
       "pinyin": "Zhongquan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11327,7 +16252,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11338,11 +16265,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongquan-t-8821",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11358,12 +16285,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 中泉穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongquan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.22",
@@ -11379,9 +16330,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上泉穴",
       "pinyin": "Shangquan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11389,7 +16341,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11400,11 +16354,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangquan-t-8822",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11420,12 +16374,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上泉穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangquan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.23",
@@ -11441,9 +16419,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "金前下穴",
       "pinyin": "Jinqianxia",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11451,7 +16430,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11462,11 +16443,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianxia-t-8823",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11482,12 +16463,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 金前下穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jinqianxia (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.24",
@@ -11503,9 +16508,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "金前上穴",
       "pinyin": "Jinqianshang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11513,7 +16519,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11524,11 +16532,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianshang-t-8824",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11544,12 +16552,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 金前上穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jinqianshang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.25",
@@ -11565,9 +16597,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "中九里穴",
       "pinyin": "Zhongjiuli",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11575,7 +16608,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11586,11 +16621,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjiuli-t-8825",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11606,12 +16641,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 中九里穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongjiuli (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.26",
@@ -11627,9 +16686,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上九里穴",
       "pinyin": "Shangjiuli",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11637,7 +16697,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11648,11 +16710,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangjiuli-t-8826",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11668,12 +16730,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上九里穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangjiuli (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.27",
@@ -11689,9 +16775,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "下九里穴",
       "pinyin": "Xiajiuli",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11699,7 +16786,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11710,11 +16799,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiajiuli-t-8827",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11730,12 +16819,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 下九里穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiajiuli (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.28",
@@ -11751,9 +16864,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "解穴",
       "pinyin": "Jie",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11761,7 +16875,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11772,11 +16888,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jie-t-8828",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11792,12 +16908,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 解穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jie (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.29",
@@ -11813,9 +16953,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "内通关穴",
       "pinyin": "Neitongguan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11823,7 +16964,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11834,11 +16977,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongguan-t-8829",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11854,12 +16997,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 内通关穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Neitongguan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.30",
@@ -11875,9 +17042,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "內通山穴",
       "pinyin": "Neitongshan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11885,7 +17053,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11896,11 +17066,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongshan-t-8830",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11916,12 +17086,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 內通山穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Neitongshan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.31",
@@ -11937,9 +17131,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "內通天穴",
       "pinyin": "Neitongtian",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -11947,7 +17142,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -11958,11 +17155,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongtian-t-8831",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -11978,12 +17175,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 內通天穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Neitongtian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.32",
@@ -11999,9 +17220,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "失音穴",
       "pinyin": "Shiyin",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12009,7 +17231,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12020,11 +17244,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shiyin-t-8832",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12040,12 +17264,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 失音穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shiyin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.33",
@@ -12061,9 +17309,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "金營上穴",
       "pinyin": "Jinyingshang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12071,7 +17320,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12082,11 +17333,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingshang-t-8833",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -12104,12 +17355,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 金營上穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jinyingshang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.34",
@@ -12125,9 +17400,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "金營下穴",
       "pinyin": "Jinyingxia",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12135,7 +17411,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12146,11 +17424,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingxia-t-8834",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -12168,12 +17446,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 金營下穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jinyingxia (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.35",
@@ -12189,9 +17491,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "脾一穴",
       "pinyin": "Piyi",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12199,7 +17502,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12210,11 +17515,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/piyi-t-8835",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12230,12 +17535,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 脾一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Piyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.36",
@@ -12251,9 +17580,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "脾二穴",
       "pinyin": "Pier",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12261,7 +17591,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12272,11 +17604,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pier-t-8836",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12292,12 +17624,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 脾二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Pier (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.37",
@@ -12313,9 +17669,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "脾三穴",
       "pinyin": "Pisan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12323,7 +17680,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12334,11 +17693,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pisan-t-8837",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12354,12 +17713,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 脾三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Pisan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.38",
@@ -12375,9 +17758,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木府穴",
       "pinyin": "Mufu",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12385,7 +17769,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12396,11 +17782,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-8838",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12416,12 +17802,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木府穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Mufu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.39",
@@ -12437,9 +17847,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木梁穴",
       "pinyin": "Muliang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12447,7 +17858,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12458,11 +17871,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliang-t-8839",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12478,12 +17891,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木梁穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muliang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.40",
@@ -12499,9 +17936,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木昌穴",
       "pinyin": "Muchang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12509,7 +17947,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12520,11 +17960,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muchang-t-8840",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12540,12 +17980,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木昌穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muchang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.41",
@@ -12561,9 +18025,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火府穴",
       "pinyin": "Huofu",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12571,7 +18036,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12582,11 +18049,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofu-t-8841",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12602,12 +18069,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火府穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huofu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.42",
@@ -12623,9 +18114,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火梁穴",
       "pinyin": "Huoliang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12633,7 +18125,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12644,11 +18138,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoliang-t-8842",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12664,12 +18158,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火梁穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huoliang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.43",
@@ -12685,9 +18203,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火昌穴",
       "pinyin": "Huochang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12695,7 +18214,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12706,11 +18227,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochang-t-8843",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12726,12 +18247,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火昌穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huochang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.44",
@@ -12747,9 +18292,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上奇穴",
       "pinyin": "Shangqi",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12757,7 +18303,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12768,11 +18316,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqi-t-8844",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12788,12 +18336,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上奇穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangqi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.45",
@@ -12809,9 +18381,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "下奇穴",
       "pinyin": "Xiaqi",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12819,7 +18392,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12830,11 +18405,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqi-t-8845",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -12850,12 +18425,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 下奇穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiaqi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.46",
@@ -12871,9 +18470,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "土靈穴",
       "pinyin": "Tuling",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12881,7 +18481,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12892,11 +18494,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tuling-t-8846",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -12914,12 +18516,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 土靈穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tuling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.47",
@@ -12935,9 +18561,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木黄穴",
       "pinyin": "Muhuang",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -12945,7 +18572,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -12956,11 +18585,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuang-t-8847",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -12978,12 +18607,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木黄穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muhuang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.48",
@@ -12999,9 +18652,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三靈一穴",
       "pinyin": "Sanlingyi",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -13009,7 +18663,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -13020,11 +18676,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingyi-t-8848",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -13042,12 +18698,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三靈一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanlingyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.49",
@@ -13063,9 +18743,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三靈二穴",
       "pinyin": "Sanlinger",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -13073,7 +18754,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -13084,11 +18767,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlinger-t-8849",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -13106,12 +18789,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三靈二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanlinger (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.50",
@@ -13127,9 +18834,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三靈三穴",
       "pinyin": "Sanlingsan",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -13137,7 +18845,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -13148,11 +18858,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingsan-t-8850",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [
@@ -13170,12 +18880,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三靈三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanlingsan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.88.51",
@@ -13191,9 +18925,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "七里穴",
       "pinyin": "Qili",
       "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
+      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Thighs reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "大腿反射區",
@@ -13201,7 +18936,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "大腿區域痛症",
@@ -13212,11 +18949,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qili-t-8851",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 220,
       "y": 405,
       "aliases_zh": [],
@@ -13232,12 +18969,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 七里穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qili (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【大腿】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Thighs.",
+      "disease_tags_zh": [
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Thighs pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "大腿神經反應區"
     },
     {
       "id": "tung.99.01",
@@ -13253,9 +19014,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "耳環穴",
       "pinyin": "Erhuan",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13263,7 +19025,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13274,11 +19038,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erhuan-t-9901",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13294,12 +19058,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 耳環穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Erhuan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.02",
@@ -13315,9 +19103,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木耳穴",
       "pinyin": "Muer",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13325,7 +19114,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13336,11 +19127,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muer-t-9902",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13356,12 +19147,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木耳穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muer (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.03",
@@ -13377,9 +19192,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "火耳穴",
       "pinyin": "Huo Er",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13387,7 +19203,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13398,11 +19216,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huo-er-t-9903",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13418,12 +19236,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 火耳穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Huo Er (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.04",
@@ -13439,9 +19281,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "土耳穴",
       "pinyin": "Tu Er",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13449,7 +19292,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13460,11 +19305,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tu-er-t-9904",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13480,12 +19325,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 土耳穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tu Er (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.05",
@@ -13501,9 +19370,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "金耳穴",
       "pinyin": "Jin Er",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13511,7 +19381,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13522,11 +19394,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-er-t-9905",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13542,12 +19414,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 金耳穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jin Er (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.06",
@@ -13563,9 +19459,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水耳穴",
       "pinyin": "Shui Er",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13573,7 +19470,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13584,11 +19483,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shui-er-t-9906",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13604,12 +19503,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水耳穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shui Er (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.07",
@@ -13625,9 +19548,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "耳背穴",
       "pinyin": "Er Bei",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13635,7 +19559,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13646,11 +19572,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/er-bei-t-9907",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13666,12 +19592,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 耳背穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Er Bei (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.08",
@@ -13687,9 +19637,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "耳三穴",
       "pinyin": "Ersan",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13697,7 +19648,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13708,11 +19661,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ersan-t-9908",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13728,12 +19681,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 耳三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ersan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.09",
@@ -13749,9 +19726,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "神耳",
       "pinyin": "Shener",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13759,7 +19737,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13770,11 +19750,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shener-t-9909",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13790,12 +19770,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 神耳 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shener (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.10",
@@ -13811,9 +19815,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "天耳",
       "pinyin": "Tianer",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13821,7 +19826,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13832,11 +19839,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianer-t-9910",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13852,12 +19859,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 天耳 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Tianer (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.11",
@@ -13873,9 +19904,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "耳圓",
       "pinyin": "Eryuan",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13883,7 +19915,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13894,11 +19928,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/eryuan-t-9911",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13914,12 +19948,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 耳圓 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Eryuan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.12",
@@ -13935,9 +19993,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木硬",
       "pinyin": "Muying",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -13945,7 +20004,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -13956,11 +20017,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muying-t-9912",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -13976,12 +20037,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木硬 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muying (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.13",
@@ -13997,9 +20082,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "外耳",
       "pinyin": "Waier",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14007,7 +20093,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14018,11 +20106,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waier-t-9913",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14038,12 +20126,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 外耳 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Waier (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.14",
@@ -14059,9 +20171,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "皮膚",
       "pinyin": "Pifu",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14069,7 +20182,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14080,11 +20195,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pifu-t-9914",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14100,12 +20215,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 皮膚 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Pifu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.15",
@@ -14121,9 +20260,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "降壓点",
       "pinyin": "Jiangyadian",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14131,7 +20271,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14142,11 +20284,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiangyadian-t-9915",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14162,12 +20304,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 降壓点 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jiangyadian (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.16",
@@ -14183,9 +20349,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三叉神經",
       "pinyin": "Sanchashenjing",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14193,7 +20360,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14204,11 +20373,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchashenjing-t-9916",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14224,12 +20393,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三叉神經 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sanchashenjing (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.17",
@@ -14245,9 +20438,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腫瘤",
       "pinyin": "Zhongliu",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14255,7 +20449,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14266,11 +20462,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongliu-t-9917",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14286,12 +20482,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腫瘤 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhongliu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.18",
@@ -14307,9 +20527,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "狹心",
       "pinyin": "Xiaxin",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14317,7 +20538,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14328,11 +20551,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaxin-t-9918",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14348,12 +20571,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 狹心 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xiaxin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.19",
@@ -14369,9 +20616,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "甲狀腺腫",
       "pinyin": "Jiazhuangxianzhong",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14379,7 +20627,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14390,11 +20640,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiazhuangxianzhong-t-9919",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14410,12 +20660,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 甲狀腺腫 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jiazhuangxianzhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.20",
@@ -14431,9 +20705,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "肺氣腫",
       "pinyin": "Feiqizhong",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14441,7 +20716,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14452,11 +20729,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqizhong-t-9920",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14472,12 +20749,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 肺氣腫 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Feiqizhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.99.21",
@@ -14493,9 +20794,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "興奮点",
       "pinyin": "Xingfen",
       "location_en": "Master Tung Ears point. Located in the Ear region.",
-      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
+      "location_zh": "位在【耳部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ears reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "耳部反射區",
@@ -14503,7 +20805,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "耳部區域痛症",
@@ -14514,11 +20818,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xingfen-t-9921",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 120,
       "aliases_zh": [],
@@ -14534,12 +20838,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 興奮点 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Xingfen (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【耳部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ears.",
+      "disease_tags_zh": [
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ears pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "耳部神經反應區"
     },
     {
       "id": "tung.1010.01",
@@ -14555,9 +20883,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "正會穴",
       "pinyin": "Zhenghui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -14565,7 +20894,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -14576,11 +20907,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenghui-t-101001",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -14598,12 +20929,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 正會穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhenghui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.02",
@@ -14619,9 +20974,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "州圓穴",
       "pinyin": "Zhouyuan",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -14629,7 +20985,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -14640,11 +20998,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouyuan-t-101002",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -14662,12 +21020,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 州圓穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhouyuan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.03",
@@ -14683,9 +21065,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "州昆穴",
       "pinyin": "Zhoukun",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -14693,7 +21076,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -14704,11 +21089,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoukun-t-101003",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -14724,12 +21109,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 州昆穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhoukun (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.04",
@@ -14745,9 +21154,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "州崙穴",
       "pinyin": "Zhoulun",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -14755,7 +21165,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -14766,11 +21178,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoulun-t-101004",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -14788,12 +21200,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 州崙穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhoulun (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.05",
@@ -14809,9 +21245,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "前會穴",
       "pinyin": "Qianhui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -14819,7 +21256,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -14830,11 +21269,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qianhui-t-101005",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -14852,12 +21291,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 前會穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qianhui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.06",
@@ -14873,9 +21336,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "後會穴",
       "pinyin": "Houhui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -14883,7 +21347,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -14894,11 +21360,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houhui-t-101006",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -14916,12 +21382,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 後會穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Houhui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.07",
@@ -14937,9 +21427,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "總樞穴",
       "pinyin": "Zongshu",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -14947,7 +21438,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -14958,11 +21451,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zongshu-t-101007",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -14980,12 +21473,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 總樞穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zongshu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.08",
@@ -15026,11 +21543,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenjing-t-101008",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -15048,13 +21565,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 馬金水穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Majinshui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "直刺0.2～0.5寸。常與馬快水配伍倒馬。",
-      "reaction_area_zh": "腎之神經"
+      "reaction_area_zh": "腎之神經",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "腎結石",
+        "膀胱結石",
+        "腰痛",
+        "腎炎",
+        "鼻炎"
+      ],
+      "disease_tags_en": [
+        "Kidney stones",
+        "Bladder stones",
+        "Lower back pain",
+        "Nephritis",
+        "Rhinitis"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results."
     },
     {
       "id": "tung.1010.09",
@@ -15070,9 +21614,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "上里穴",
       "pinyin": "Shangli",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15080,7 +21625,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15091,11 +21638,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangli-t-101009",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15111,12 +21658,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 上里穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shangli (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.10",
@@ -15132,9 +21703,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四腑二穴",
       "pinyin": "Sifuer",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15142,7 +21714,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15153,11 +21727,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuer-t-101010",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15173,12 +21747,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四腑二穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sifuer (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.11",
@@ -15194,9 +21792,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "四腑一穴",
       "pinyin": "Sifuyi",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15204,7 +21803,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15215,11 +21816,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuyi-t-101011",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15235,12 +21836,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 四腑一穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Sifuyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.12",
@@ -15256,9 +21881,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "正本穴",
       "pinyin": "Zhengben",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15266,7 +21892,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15277,11 +21905,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengben-t-101012",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15297,12 +21925,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 正本穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhengben (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.13",
@@ -15318,9 +21970,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "馬金水穴",
       "pinyin": "Majinshui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15328,7 +21981,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15339,11 +21994,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/majinshui-t-101013",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -15361,12 +22016,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 馬金水穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Majinshui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.14",
@@ -15382,9 +22061,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "馬快水穴",
       "pinyin": "Makuaishui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15392,7 +22072,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15403,11 +22085,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/makuaishui-t-101014",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [
@@ -15425,12 +22107,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 馬快水穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Makuaishui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.15",
@@ -15446,9 +22152,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腑快穴",
       "pinyin": "Fukuai",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15456,7 +22163,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15467,11 +22176,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fukuai-t-101015",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15487,12 +22196,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腑快穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fukuai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.16",
@@ -15508,9 +22241,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "六快穴",
       "pinyin": "Liukuai",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15518,7 +22252,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15529,11 +22265,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/liukuai-t-101016",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15549,12 +22285,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 六快穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Liukuai (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.17",
@@ -15562,8 +22322,8 @@ window.ACUTING_TUNG_INDEX = {
       "code": "T1010.17",
       "display_code": "T 1010.17",
       "zone_code": "1010",
-      "zone_en": "Head",
-      "zone_zh": "頭部",
+      "zone_en": "Zone 1010: Head & Face",
+      "zone_zh": "十十部位【頭面】",
       "region_en": "Head and face",
       "region_zh": "頭面部",
       "name_en": "Biyi",
@@ -15572,34 +22332,41 @@ window.ACUTING_TUNG_INDEX = {
       "location_en": "In the groove of the nasal alar cartilage at its midpoint.",
       "location_zh": "鼻翼軟骨溝正中央處（即鼻翼溝凹陷處）。",
       "traditional_functions_en": [
-        "Kidney reaction area"
+        "Sedate & Relieve Pain",
+        "Tonify Kidney & Bones",
+        "Awaken Mind"
       ],
       "traditional_functions_zh": [
-        "腎神經"
+        "腎神經",
+        "鎮靜止痛",
+        "補腎強骨",
+        "醒腦開竅"
       ],
       "indications_en": [
         "General bone pain",
         "Supraorbital pain",
         "Kidney deficiency back pain",
         "Dizziness",
-        "Fatigue syndrome"
+        "Fatigue syndrome",
+        "Acute pain"
       ],
       "indications_zh": [
         "全身骨痛",
         "眉棱骨痛",
         "腎虛腰痛",
         "眩暈",
-        "疲勞症候群"
+        "疲勞症候群",
+        "急性痛症"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qikuai-t-101017",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15615,13 +22382,40 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 鼻翼穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Biyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
       "acumethod_zh": "斜刺0.1～0.2寸。董氏奇穴止痛鎮靜特要穴。",
-      "reaction_area_zh": "腎神經"
+      "reaction_area_zh": "腎神經",
+      "anatomy_zh": "面神經頰支、眶下神經，深層為腎神經。",
+      "anatomy_en": "Facial nerve buccal branch; Deep: Kidney reaction area.",
+      "disease_tags_zh": [
+        "全身骨痛",
+        "眉棱骨痛",
+        "腎虛腰痛",
+        "眩暈",
+        "急性痛症"
+      ],
+      "disease_tags_en": [
+        "Bone Pain",
+        "Supraorbital Pain",
+        "Kidney Back Pain",
+        "Vertigo",
+        "Acute Pain"
+      ],
+      "action_tags_zh": [
+        "鎮靜止痛",
+        "補腎強骨",
+        "醒腦開竅"
+      ],
+      "action_tags_en": [
+        "Sedate & Relieve Pain",
+        "Tonify Kidney & Bones",
+        "Awaken Mind"
+      ],
+      "acumethod_en": "Oblique needle 0.1-0.2 cun. Major Tung point for acute pain & sedation."
     },
     {
       "id": "tung.1010.18",
@@ -15637,9 +22431,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "木枝穴",
       "pinyin": "Muzhi",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15647,7 +22442,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15658,11 +22455,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muzhi-t-101018",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15678,12 +22475,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木枝穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Muzhi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.19",
@@ -15699,9 +22520,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水通穴",
       "pinyin": "Shuitong",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15709,7 +22531,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15720,11 +22544,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuitong-t-101019",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15740,12 +22564,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水通穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuitong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.20",
@@ -15761,9 +22609,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水金穴",
       "pinyin": "Shuijin",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15771,7 +22620,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15782,11 +22633,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijin-t-101020",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15802,12 +22653,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuijin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.21",
@@ -15823,9 +22698,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "玉火穴",
       "pinyin": "Yuhuo",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15833,7 +22709,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15844,11 +22722,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yuhuo-t-101021",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15864,12 +22742,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 玉火穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Yuhuo (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.22",
@@ -15885,9 +22787,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "鼻翼穴",
       "pinyin": "Biyi",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15895,7 +22798,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15906,11 +22811,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/biyi-t-101022",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15926,12 +22831,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 鼻翼穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Biyi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.23",
@@ -15947,9 +22876,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "州火穴",
       "pinyin": "Zhouhuo",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -15957,7 +22887,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -15968,11 +22900,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouhuo-t-101023",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -15988,12 +22920,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 州火穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhouhuo (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.24",
@@ -16009,9 +22965,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "州金穴",
       "pinyin": "Zhoujin",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -16019,7 +22976,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -16030,11 +22989,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoujin-t-101024",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -16050,12 +23009,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 州金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhoujin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.1010.25",
@@ -16071,9 +23054,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "州水穴",
       "pinyin": "Zhoushui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
+      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Head reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "頭部反射區",
@@ -16081,7 +23065,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "頭部區域痛症",
@@ -16092,11 +23078,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoushui-t-101025",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 82,
       "aliases_zh": [],
@@ -16112,12 +23098,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 州水穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Zhoushui (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Head.",
+      "disease_tags_zh": [
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Head pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "頭部神經反應區"
     },
     {
       "id": "tung.DT.01",
@@ -16133,9 +23143,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "分枝上穴",
       "pinyin": "Fenzhishang",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16143,7 +23154,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16154,11 +23167,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhishang-t-dt01",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16174,12 +23187,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 分枝上穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fenzhishang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.02",
@@ -16195,9 +23232,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "分枝下穴",
       "pinyin": "Fenzhixia",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16205,7 +23243,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16216,11 +23256,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhixia-t-dt02",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16236,12 +23276,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 分枝下穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fenzhixia (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.03",
@@ -16257,9 +23321,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "七星穴",
       "pinyin": "Qixing",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16267,7 +23332,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16278,11 +23345,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qixing-t-dt03",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16298,12 +23365,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 七星穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Qixing (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.04",
@@ -16319,9 +23410,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "五嶺穴",
       "pinyin": "Wuling",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16329,7 +23421,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16340,11 +23434,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuling-t-dt04",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [
@@ -16362,12 +23456,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 五嶺穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Wuling (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.05",
@@ -16383,9 +23501,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "双凤穴",
       "pinyin": "Shuang Feng",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16393,7 +23512,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16404,11 +23525,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-feng-t-dt05",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16424,12 +23545,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 双凤穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuang Feng (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.06",
@@ -16445,9 +23590,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "九猴穴",
       "pinyin": "Jiu Hou",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16455,7 +23601,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16466,11 +23614,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiu-hou-t-dt06",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16486,12 +23634,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 九猴穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jiu Hou (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.07",
@@ -16507,9 +23679,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三金穴",
       "pinyin": "San Jin",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16517,7 +23690,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16528,11 +23703,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jin-t-dt07",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16548,12 +23723,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三金穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · San Jin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.08",
@@ -16569,9 +23768,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "精枝穴",
       "pinyin": "Jing Zhi",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16579,7 +23779,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16590,11 +23792,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jing-zhi-t-dt08",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16610,12 +23812,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 精枝穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jing Zhi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.09",
@@ -16631,9 +23857,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "金林穴",
       "pinyin": "Jin Lin",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16641,7 +23868,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16652,11 +23881,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-lin-t-dt09",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16672,12 +23901,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 金林穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jin Lin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.10",
@@ -16693,9 +23946,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "顶柱穴",
       "pinyin": "Ding Zhu",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16703,7 +23957,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16714,11 +23970,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ding-zhu-t-dt10",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16734,12 +23990,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 顶柱穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ding Zhu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.11",
@@ -16755,9 +24035,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "後心穴",
       "pinyin": "Houxin",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16765,7 +24046,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16776,11 +24059,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houxin-t-dt11",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [
@@ -16798,12 +24081,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 後心穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Houxin (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.12",
@@ -16819,9 +24126,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "感冒三穴",
       "pinyin": "Ganmaosan",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16829,7 +24137,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16840,11 +24150,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaosan-t-dt12",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16860,12 +24170,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 感冒三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Ganmaosan (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.13",
@@ -16881,9 +24215,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水中穴",
       "pinyin": "Shuizhong",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16891,7 +24226,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16902,11 +24239,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuizhong-t-dt13",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16922,12 +24259,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水中穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuizhong (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.14",
@@ -16943,9 +24304,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "水腑穴",
       "pinyin": "Shuifu",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -16953,7 +24315,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -16964,11 +24328,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuifu-t-dt14",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -16984,12 +24348,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 水腑穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuifu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.15",
@@ -17005,9 +24393,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "三江穴",
       "pinyin": "San Jiang",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -17015,7 +24404,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -17026,11 +24417,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jiang-t-dt15",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -17046,12 +24437,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三江穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · San Jiang (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.16",
@@ -17067,9 +24482,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "双河穴",
       "pinyin": "Shuang He",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -17077,7 +24493,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -17088,11 +24506,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-he-t-dt16",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -17108,12 +24526,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 双河穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shuang He (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.DT.17",
@@ -17129,9 +24571,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "沖霄穴",
       "pinyin": "Chongxiao",
       "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
+      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Dorsal Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "背部軀幹反射區",
@@ -17139,7 +24582,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "背部軀幹區域痛症",
@@ -17150,11 +24595,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxiao-t-dt17",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 150,
       "y": 270,
       "aliases_zh": [],
@@ -17170,12 +24615,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 沖霄穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Chongxiao (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【背部軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Dorsal Torso.",
+      "disease_tags_zh": [
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Dorsal Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "背部軀幹神經反應區"
     },
     {
       "id": "tung.VT.01",
@@ -17191,9 +24660,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "喉蛾九穴",
       "pinyin": "Hou E Jiu",
       "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
+      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ventral Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "胸腹軀幹反射區",
@@ -17201,7 +24671,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "胸腹軀幹區域痛症",
@@ -17212,11 +24684,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/hou-e-jiu-t-vt01",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 260,
       "aliases_zh": [],
@@ -17232,12 +24704,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 喉蛾九穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Hou E Jiu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【胸腹軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ventral Torso.",
+      "disease_tags_zh": [
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "胸腹軀幹神經反應區"
     },
     {
       "id": "tung.VT.02",
@@ -17253,9 +24749,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "十二猴穴",
       "pinyin": "Shi Er Hou",
       "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
+      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ventral Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "胸腹軀幹反射區",
@@ -17263,7 +24760,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "胸腹軀幹區域痛症",
@@ -17274,11 +24773,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shi-er-hou-t-vt02",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 260,
       "aliases_zh": [],
@@ -17294,12 +24793,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 十二猴穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Shi Er Hou (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【胸腹軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ventral Torso.",
+      "disease_tags_zh": [
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "胸腹軀幹神經反應區"
     },
     {
       "id": "tung.VT.03",
@@ -17315,9 +24838,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "金五穴",
       "pinyin": "Jin Wu",
       "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
+      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ventral Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "胸腹軀幹反射區",
@@ -17325,7 +24849,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "胸腹軀幹區域痛症",
@@ -17336,11 +24862,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-wu-t-vt03",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 260,
       "aliases_zh": [],
@@ -17356,12 +24882,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 金五穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Jin Wu (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【胸腹軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ventral Torso.",
+      "disease_tags_zh": [
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "胸腹軀幹神經反應區"
     },
     {
       "id": "tung.VT.04",
@@ -17377,9 +24927,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "胃毛七穴",
       "pinyin": "Wei Mao Qi",
       "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
+      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ventral Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "胸腹軀幹反射區",
@@ -17387,7 +24938,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "胸腹軀幹區域痛症",
@@ -17398,11 +24951,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wei-mao-qi-t-vt04",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 260,
       "aliases_zh": [],
@@ -17418,12 +24971,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 胃毛七穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Wei Mao Qi (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【胸腹軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ventral Torso.",
+      "disease_tags_zh": [
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "胸腹軀幹神經反應區"
     },
     {
       "id": "tung.VT.05",
@@ -17439,9 +25016,10 @@ window.ACUTING_TUNG_INDEX = {
       "name_zh": "腑巢二十三穴",
       "pinyin": "Fu Chao Er Shi San",
       "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
+      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Ventral Torso reaction area",
+        "Unblock Channels"
       ],
       "traditional_functions_zh": [
         "胸腹軀幹反射區",
@@ -17449,7 +25027,9 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡"
       ],
       "indications_en": [
-        "Pending source review"
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
       ],
       "indications_zh": [
         "胸腹軀幹區域痛症",
@@ -17460,11 +25040,11 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fu-chao-er-shi-san-t-vt05",
-        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
+        "https://www.tungs-acupuncture.com",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points"
       ],
       "review_status": "sourced_tung_record",
-      "public_safe": false,
+      "public_safe": true,
       "x": 180,
       "y": 260,
       "aliases_zh": [],
@@ -17480,12 +25060,36 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 腑巢二十三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · Fu Chao Er Shi San (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
+      "anatomy_zh": "分佈【胸腹軀幹】相應經絡皮部與神經反應區。",
+      "anatomy_en": "Distributed along nerve reaction areas of Ventral Torso.",
+      "disease_tags_zh": [
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
+      ],
+      "disease_tags_en": [
+        "Ventral Torso pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "疏通經絡",
+        "理氣止痛",
+        "調理臟腑"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "胸腹軀幹神經反應區"
     }
   ]
 };

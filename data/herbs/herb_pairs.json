@@ -703,8 +703,233 @@
       "sources": [
         "cloudtcm_herb_pages"
       ]
+    },
+    {
+      "id": "pair.zhi_shi__hou_po",
+      "herbs": [
+        "herb.zhi_shi",
+        "herb.hou_po"
+      ],
+      "name_zh": "枳實配厚朴",
+      "name_en": "Zhi Shi with Hou Po",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "枳實破氣消積、化痰除痞，主下氣破積；厚朴行氣燥濕、下氣除滿，主消除腹脹。兩藥相須，行氣導滯、破氣消積之力極強，為通腑瀉下核心藥對（大承氣湯）。",
+      "pair_meaning_en": "Zhi Shi breaks stagnant qi and purges accumulation; Hou Po relieves abdominal fullness. Powerful pair for purging gastrointestinal accumulation.",
+      "indication_zh": "腸胃積滯、燥屎內結：脘腹脹滿、疼痛拒按、大便秘結（大承氣湯證）",
+      "indication_en": "Gastrointestinal food stagnation & constipation: severe abdominal pain, distension, constipation (Da Cheng Qi Tang pattern).",
+      "caution_zh": "孕婦及脾胃虛弱者忌用。",
+      "caution_en": "Contraindicated in pregnancy or severe Spleen deficiency.",
+      "found_in_formulas": [
+        "formula.da_cheng_qi_tang",
+        "formula.xiao_cheng_qi_tang"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.chuan_xiong__dang_gui__chi_shao",
+      "herbs": [
+        "herb.chuan_xiong",
+        "herb.dang_gui",
+        "herb.chi_shao"
+      ],
+      "name_zh": "川芎配當歸、赤芍",
+      "name_en": "Chuan Xiong with Dang Gui and Chi Shao",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "當歸養血和血，川芎行氣活血，赤芍清熱涼血化瘀。三藥合用，養血活血、涼血散瘀，為治經產血瘀痛經之要藥。",
+      "pair_meaning_en": "Dang Gui nourishes blood; Chuan Xiong moves qi; Chi Shao clears heat and transforms stasis. Invigorates blood without drying.",
+      "indication_zh": "婦科血瘀、痛經經閉、產後惡露不盡、跌打損傷",
+      "indication_en": "Gynecological blood stasis, dysmenorrhea, postpartum lochia, traumatic injuries.",
+      "caution_zh": "月經過多者慎用。",
+      "caution_en": "Caution in menorrhagia.",
+      "found_in_formulas": [
+        "formula.si_wu_tang",
+        "formula.xue_fu_zhu_yu_tang"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.sang_ye__ju_hua",
+      "herbs": [
+        "herb.sang_ye",
+        "herb.ju_hua"
+      ],
+      "name_zh": "桑葉配菊花",
+      "name_en": "Sang Ye with Ju Hua",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "桑葉甘苦寒清宣肺熱、疏散風熱；菊花甘苦微寒清肝明目、疏散風熱。桑葉主清肺，菊花主清肝。兩藥相須，清宣風熱、清肝明目之力顯著（桑菊飲）。",
+      "pair_meaning_en": "Sang Ye clears Lung heat; Ju Hua clears Liver and brightens eyes. Classic pair for Wind-Heat cold and red eyes.",
+      "indication_zh": "風熱感冒、溫病初起：發熱頭痛、咳嗽、目赤腫痛、頭暈（桑菊飲證）",
+      "indication_en": "Wind-Heat cold or early warm disease: fever, headache, cough, red eyes.",
+      "caution_zh": "脾胃虛寒者不宜久服。",
+      "caution_en": "Unsuitable for prolonged use in Spleen cold deficiency.",
+      "found_in_formulas": [
+        "formula.sang_ju_yin"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.huang_qi__fang_feng",
+      "herbs": [
+        "herb.huang_qi",
+        "herb.fang_feng"
+      ],
+      "name_zh": "黃芪配防風",
+      "name_en": "Huang Qi with Fang Feng",
+      "relation": "pair.rel.xiang_zhi",
+      "pair_meaning_zh": "黃芪甘溫大補脾肺之氣、固表止汗；防風辛溫祛風解表勝濕。黃芪得防風則固表而不留邪，防風得黃芪則祛風而不傷正。補散兼施，固表禦風第一藥對（玉屏風散）。",
+      "pair_meaning_en": "Huang Qi tonifies wei qi to stabilize exterior; Fang Feng dispels wind. Huang Qi prevents exterior pathogens; Fang Feng expels lingering wind.",
+      "indication_zh": "表虛自汗、體虛易感風邪：惡風自汗、面色皎白、易感冒（玉屏風散證）",
+      "indication_en": "Exterior deficiency spontaneous sweating & susceptibility to cold: aversion to wind, pale complexion, frequent colds.",
+      "caution_zh": "外感風寒表實無汗者忌用。",
+      "caution_en": "Contraindicated in exterior excess Wind-Cold without sweating.",
+      "found_in_formulas": [
+        "formula.yu_ping_feng_san"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.long_gu__mu_li",
+      "herbs": [
+        "herb.long_gu",
+        "herb.mu_li"
+      ],
+      "name_zh": "龍骨配牡蠣",
+      "name_en": "Long Gu with Mu Li",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "龍骨甘澀平鎮心安神、收斂固澀；牡蠣咸澀微寒平肝潛陽、軟堅散結、收斂固澀。兩藥相須，鎮靜安神、平肝潛陽、收斂固澀之力極強（桂枝加龍骨牡蠣湯）。",
+      "pair_meaning_en": "Long Gu calms spirit and astringes essence; Mu Li anchors Liver yang and softens hardness. Combined for anxiety, palpitations, and fluid loss.",
+      "indication_zh": "心神不安、陰虛陽亢、自汗盜汗、遺精帶下、驚悸失眠",
+      "indication_en": "Emotional restlessness, Liver Yang hyperactivity, spontaneous/night sweats, nocturnal emission, insomnia.",
+      "caution_zh": "有濕熱積滯者忌用。",
+      "caution_en": "Contraindicated in damp-heat or food accumulation.",
+      "found_in_formulas": [
+        "formula.gui_zhi_jia_long_gu_mu_li_tang",
+        "formula.chai_hu_jia_long_gu_mu_li_tang"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.ju_he__chuan_lian_zi",
+      "herbs": [
+        "herb.ju_he",
+        "herb.chuan_lian_zi"
+      ],
+      "name_zh": "橘核配川楝子",
+      "name_en": "Ju He with Chuan Lian Zi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "橘核苦平行氣散結、止痛；川楝子苦寒行氣疏肝、清熱止痛。兩藥相須，疏肝理氣、行氣止痛、散結消腫之力顯著，為治療疝氣睪丸腫痛第一藥對。",
+      "pair_meaning_en": "Ju He moves qi and dissipates nodules; Chuan Lian Zi clears heat and relieves pain. Core pair for testicular pain and hernia.",
+      "indication_zh": "寒疝腹痛、睪丸腫痛、偏墜腫脹、乳房脹痛",
+      "indication_en": "Cold hernia pain, testicular swelling and pain, breast distension pain.",
+      "caution_zh": "川楝子有小毒，用量不宜過大。",
+      "caution_en": "Chuan Lian Zi is slightly toxic; control dosage carefully.",
+      "found_in_formulas": [
+        "formula.ju_he_wan"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.xian_mao__yin_yang_huo",
+      "herbs": [
+        "herb.xian_mao",
+        "herb.yin_yang_huo"
+      ],
+      "name_zh": "仙茅配淫羊藿",
+      "name_en": "Xian Mao with Yin Yang Huo",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "仙茅辛熱補腎壯陽、祛寒除濕；淫羊藿辛甘溫補腎壯陽、祛風除濕。兩藥相須，溫補命門、壯陽祛濕之力甚強，為治療腎陽虛衰核心藥對（二仙湯）。",
+      "pair_meaning_en": "Xian Mao strongly warms Kidney yang; Yin Yang Huo warms yang and dispels wind-damp. Essential combination for Kidney Yang deficiency.",
+      "indication_zh": "腎陽虛衰、命門火衰：陽痿不育、腰膝冷痛、高血壓更年期綜合徵（二仙湯證）",
+      "indication_en": "Kidney Yang deficiency: impotence, cold knees, menopausal hypertension (Er Xian Tang pattern).",
+      "caution_zh": "陰虛火旺者忌用。",
+      "caution_en": "Contraindicated in Yin deficiency with flaming fire.",
+      "found_in_formulas": [
+        "formula.er_xian_tang"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.ba_ji_tian__rou_cong_rong",
+      "herbs": [
+        "herb.ba_ji_tian",
+        "herb.rou_cong_rong"
+      ],
+      "name_zh": "巴戟天配肉蓯蓉",
+      "name_en": "Ba Ji Tian with Rou Cong Rong",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "巴戟天辛甘溫補腎陽、強筋骨、祛風濕；肉蓯蓉甘鹹溫補腎陽、益精血、潤腸通便。巴戟天主溫補強筋，肉蓯蓉主溫潤通便。溫而不燥，補而不滯。",
+      "pair_meaning_en": "Ba Ji Tian warms Kidney yang and strengthens bones; Rou Cong Rong tonifies essence and moistens intestines. Warming without drying.",
+      "indication_zh": "腎陽虛衰、精血不足：陽痿早洩、腰膝酸軟、宮冷不孕、腸燥便秘",
+      "indication_en": "Kidney Yang deficiency & essence depletion: impotence, cold uterus infertility, constipation from dryness.",
+      "caution_zh": "陰虛火旺、大便溏薄者忌用。",
+      "caution_en": "Contraindicated in Yin deficiency fire or loose stools.",
+      "found_in_formulas": [
+        "formula.you_gui_wan"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.mai_men_dong__wu_wei_zi",
+      "herbs": [
+        "herb.mai_men_dong",
+        "herb.wu_wei_zi"
+      ],
+      "name_zh": "麥門冬配五味子",
+      "name_en": "Mai Men Dong with Wu Wei Zi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "麥門冬甘微苦微寒滋陰潤肺、益胃生津；五味子酸溫酸收斂肺止汗、生津止渴。麥門冬主滋潤，五味子主收斂。一滋一斂，生津止渴、斂肺止汗（生脈散）。",
+      "pair_meaning_en": "Mai Men Dong nourishes Yin and Lungs; Wu Wei Zi astringes Lung qi and sweat. Nourishing and astringing combined (Sheng Mai San).",
+      "indication_zh": "暑熱耗氣傷陰、肺腎陰虛：乾咳少痰、口乾舌燥、汗多肢倦、脈虛數（生脈散證）",
+      "indication_en": "Summerheat damaging Qi & Yin: dry cough, extreme thirst, excessive sweating, rapid weak pulse.",
+      "caution_zh": "外感暴咳、實熱證者忌用。",
+      "caution_en": "Contraindicated in acute exterior cold cough or excess heat.",
+      "found_in_formulas": [
+        "formula.sheng_mai_san"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
+    },
+    {
+      "id": "pair.ren_shen__mai_dong__wu_wei_zi",
+      "herbs": [
+        "herb.ren_shen",
+        "herb.mai_men_dong",
+        "herb.wu_wei_zi"
+      ],
+      "name_zh": "人參配麥冬、五味子",
+      "name_en": "Ren Shen with Mai Dong and Wu Wei Zi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "人參大補元氣，麥冬滋陰潤肺生津，五味子斂肺止汗生津。三藥合用（生脈散），氣陰雙補、固脫復脈，為暑熱傷氣傷陰復脈救逆之第一金三角。",
+      "pair_meaning_en": "Ren Shen tonifies qi; Mai Dong generates fluids; Wu Wei Zi astringes sweat (Sheng Mai San). Core trio for Qi-Yin depletion.",
+      "indication_zh": "氣陰兩傷、肢體倦怠、氣短懶言、口乾作渴、汗多脈虛（生脈散）",
+      "indication_en": "Dual Qi-Yin deficiency: severe fatigue, shortness of breath, profuse sweating, thirst.",
+      "caution_zh": "外感風寒未解者忌用。",
+      "caution_en": "Contraindicated while exterior Wind-Cold is uncleared.",
+      "found_in_formulas": [
+        "formula.sheng_mai_san"
+      ],
+      "sources": [
+        "cloudtcm_herb_pages"
+      ]
     }
   ],
   "updated_at": "2026-07-23",
-  "total_pairs": 30
+  "total_pairs": 40
 }
