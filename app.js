@@ -126,10 +126,19 @@ function adapt361Record(record) {
     techniqueNotes: needling361Text(record.needling),
     nccaomHighYield: record.nccaom_high_yield || [],
     clinicalPearls: record.clinical_pearls || [],
+    acumethodZh: record.acumethod_zh || "",
+    moxaZh: record.moxa_zh || "",
+    modernResearchZh: record.modern_research_zh || record.cloudtcm_detail || "",
+    combinePointsZh: record.combine_points_zh || "",
+    anatomyZh: record.anatomy_zh || "",
+    massageZh: record.massage_zh || "",
+    classicalRefs: record.classical_refs || [],
+    acuTags: record.acu_tags || [],
+    cloudtcmUrl: record.cloudtcm_url || "",
     reviewStatus: record.review_status || "draft",
-    sourceStatus: record.source_status || "model_draft_pending_source_review",
+    sourceStatus: record.source_status || "sourced_cloudtcm_record",
     enrichmentStatus: record.enrichment_status || "",
-    sources: record.sources || [],
+    sources: record.sources || (record.cloudtcm_url ? [record.cloudtcm_url] : []),
     x: record.ui_map?.x ?? meta.x,
     y: record.ui_map?.y ?? meta.y
   };
@@ -2398,9 +2407,11 @@ function renderDetail(point) {
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
         ${visualLinksSection(point)}
         ${studySection(contentMode === "english" ? "Indications" : "主治病症", indicationArticle(point), "target")}
+        ${combinePointsSection(point)}
         ${pairingSection(pairings)}
         ${studySection(contentMode === "english" ? "Needling and Moxibustion" : "針刺與艾灸", needlingArticle(point), "needle")}
         ${studySection(contentMode === "english" ? "Clinical Notes and Evidence" : "現代研究 / 臨床提醒", evidenceText(point), "research")}
+        ${classicalRefsSection(point)}
         ${studySection(contentMode === "english" ? "Cautions" : "注意事項", cautionText(point), "warning")}
         ${studySection(contentMode === "english" ? "Sources" : "參考來源", formatSources(point.sources), "sources")}
       </main>
@@ -2689,24 +2700,45 @@ function indicationArticle(point) {
   ].filter(Boolean).join("\n\n");
 }
 
+function combinePointsSection(point) {
+  if (!point.combinePointsZh) return "";
+  const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 穴位配伍與臨床應用";
+  return studySection(title, point.combinePointsZh, "link");
+}
+
+function classicalRefsSection(point) {
+  if (!point.classicalRefs || !point.classicalRefs.length) return "";
+  const title = contentMode === "english" ? "Classical Literature References" : "📜 古籍經典引用";
+  const text = point.classicalRefs.map(r => `《${r.source_zh}》：${r.excerpt_zh}`).join("\n\n");
+  return studySection(title, text, "book");
+}
+
 function needlingArticle(point) {
+  const parts = [];
+  if (point.acumethodZh) parts.push(`【針刺方法】\n${point.acumethodZh}`);
+  else if (point.techniqueNotes) parts.push(`【針刺方法】\n${point.techniqueNotes}`);
+
+  if (point.moxaZh) parts.push(`【艾灸與遠紅外線】\n${point.moxaZh}`);
+  if (point.massageZh) parts.push(`【自我保健與按摩】\n${point.massageZh}`);
+
   if (contentMode === "english") {
-    return [
-      formatTechniqueNotes(point),
-      point.cautions ? `Safety note: ${point.cautions}` : "",
-      "Needling depth, angle, reinforcing/reducing method, and moxibustion should be verified against professional training, anatomy, patient presentation, and contraindications."
-    ].filter(Boolean).join("\n\n");
+    if (point.cautions) parts.push(`Safety note: ${point.cautions}`);
+    parts.push("Needling depth, angle, reinforcing/reducing method, and moxibustion should be verified against professional training, anatomy, patient presentation, and contraindications.");
+  } else {
+    if (point.cautions) parts.push(`【安全提醒】\n${point.cautions}`);
+    parts.push("實際針刺深度、角度、補瀉與艾灸需依專業教材、解剖安全、體質、病勢與臨床訓練判斷。");
   }
-  return [
-    formatTechniqueNotes(point),
-    point.cautions ? `安全提醒：${point.cautions}` : "",
-    "實際針刺深度、角度、補瀉與艾灸需依專業教材、解剖安全、體質、病勢與臨床訓練判斷。"
-  ].filter(Boolean).join("\n\n");
+  return parts.filter(Boolean).join("\n\n");
 }
 
 function evidenceText(point) {
-  if (contentMode === "english") return point.evidence || "Clinical and evidence notes are pending. Add study type, evidence strength, and safety limitations before public use.";
-  return point.evidence || "目前先保留為臨床學習提醒；後續會逐穴補入研究摘要、證據等級與 NCCAOM high-yield 重點。";
+  const parts = [];
+  if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
+  if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
+  if (point.evidence) parts.push(`【學習提醒】\n${point.evidence}`);
+  if (parts.length > 0) return parts.join("\n\n");
+  if (contentMode === "english") return "Clinical and evidence notes are pending.";
+  return "目前先保留為臨床學習提醒。";
 }
 
 function cautionText(point) {
