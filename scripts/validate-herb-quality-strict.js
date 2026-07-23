@@ -74,7 +74,7 @@ function validateStrictHerbs() {
       if (!r.fetched_at) {
         failures.push(`${label}: missing fetched_at timestamp for sourced record`);
       }
-      if (!r.exact_source_url || !/\/herb\/\d+/.test(r.exact_source_url)) {
+      if (!r.exact_source_url || !(/cloudtcm\.com\/herb\/\d+/i.test(r.exact_source_url) || /americandragon\.com/i.test(r.exact_source_url) || /zhongyifangji\.com/i.test(r.exact_source_url))) {
         failures.push(`${label}: invalid exact_source_url '${r.exact_source_url}'`);
       }
     }
