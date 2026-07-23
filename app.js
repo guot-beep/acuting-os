@@ -315,29 +315,6 @@ const smallIntestineMeridianExpansion = globalThis.ACUTING_APP_DATA?.smallIntest
 // Migrated to data/: edit data/**/embedded/*.json, then run scripts/build-data.js
 const bladderMeridianExpansion = globalThis.ACUTING_APP_DATA?.bladderMeridianExpansion || [];
 
-function kidneyPoint({ code, nameZh, nameEn, pinyin, region, location, locationEn, cunMeasurement, functions, functionsEn, patterns, patternsEn, cautions, x, y }) {
-  return {
-    code,
-    nameZh,
-    nameEn,
-    pinyin,
-    meridian: "Kidney / 腎經",
-    region,
-    location,
-    locationEn,
-    cunMeasurement,
-    functions,
-    functionsEn,
-    patterns,
-    patternsEn,
-    evidence: "Kidney channel draft record for AcuTing OS. Location and clinical notes should be cross-checked against WHO Standard Acupuncture Point Locations and professional textbooks before source_checked or public_ready status.",
-    cautions: cautions || "Draft educational record. Avoid needling over local infection, wounds, severe vascular disease, or unclear anatomy; pregnancy, fertility treatment, anticoagulant use, and serious symptoms require qualified clinical supervision.",
-    sources: standardPointSources(code),
-    x,
-    y
-  };
-}
-
 // Migrated to data/: edit data/**/embedded/*.json, then run scripts/build-data.js
 const kidneyMeridianExpansion = globalThis.ACUTING_APP_DATA?.kidneyMeridianExpansion || [];
 
