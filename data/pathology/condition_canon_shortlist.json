@@ -830,7 +830,28 @@
         "pattern.wind_damp_bi",
         "pattern.blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "持續逾三個月的下背痛，多為非特異性（無明確結構病灶），與肌肉失衡、姿勢、心理社會因素相關。症狀時輕時重，久坐久站或前彎加重。",
+      "summary_en": "Low back pain persisting beyond three months, most often non-specific (no identifiable structural lesion), linked to muscle imbalance, posture and psychosocial factors. Symptoms fluctuate and worsen with prolonged sitting, standing or forward bending.",
+      "red_flags_zh": [
+        "鞍區麻木、大小便失禁 → 馬尾症候群，急診",
+        "夜間痛、體重減輕、癌症病史 → 排除轉移或腫瘤",
+        "發燒、靜脈藥癮、免疫低下 → 排除脊椎感染",
+        "重大外傷或骨鬆長者輕微外力後痛 → 排除壓迫性骨折"
+      ],
+      "red_flags_en": [
+        "Saddle anaesthesia, bowel/bladder incontinence → cauda equina, emergency",
+        "Night pain, weight loss, cancer history → rule out metastasis or tumour",
+        "Fever, IV drug use, immunosuppression → rule out spinal infection",
+        "Major trauma, or minor force in osteoporotic elderly → rule out compression fracture"
+      ],
+      "western_context_zh": "指引一致建議：無紅旗者不需早期影像；核心處置為維持活動、運動治療與衛教，避免臥床。慢性化與心理社會因素關係密切。",
+      "western_context_en": "Guidelines agree: no early imaging without red flags. Core management is staying active, exercise therapy and education, avoiding bed rest. Chronicity is closely tied to psychosocial factors.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_spine_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.acute_lumbar_sprain",
@@ -845,7 +866,26 @@
       "related_patterns": [
         "pattern.qi_stagnation_blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "腰部肌肉或韌帶因突發用力、扭轉或搬重而拉傷。症狀為急性局部腰痛、肌肉緊繃痙攣、活動受限，通常無下肢放射痛。",
+      "summary_en": "Strain of the lumbar muscles or ligaments from sudden effort, twisting or lifting. Presents with acute localised low back pain, muscle guarding and spasm, and restricted motion, usually without leg radiation.",
+      "red_flags_zh": [
+        "下肢放射痛或麻木無力 → 考慮神經根受壓而非單純拉傷",
+        "馬尾徵象（鞍麻、失禁）→ 急診",
+        "外傷後劇痛無法負重 → 排除骨折"
+      ],
+      "red_flags_en": [
+        "Radiating leg pain or numbness/weakness → consider nerve root involvement, not simple strain",
+        "Cauda equina signs (saddle numbness, incontinence) → emergency",
+        "Severe pain unable to bear weight after trauma → rule out fracture"
+      ],
+      "western_context_zh": "多數在數日至數週內自癒。早期相對活動、止痛、熱敷優於臥床；反覆發作者需加強核心與動作訓練。",
+      "western_context_en": "Most resolve within days to weeks. Early relative activity, analgesia and heat beat bed rest; recurrent cases need core and movement training.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_spine_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.lumbar_disc_herniation",
@@ -862,7 +902,26 @@
         "pattern.wind_damp_bi",
         "pattern.kidney_yang_deficiency"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "腰椎間盤纖維環破裂、髓核突出壓迫神經根（多為 L4/5、L5/S1）。症狀為單側下肢放射痛（坐骨神經痛型），咳嗽、久坐、前彎加重，可伴皮節麻木與肌力下降。",
+      "summary_en": "Rupture of the annulus with nucleus pulposus herniation compressing a nerve root (usually L4/5, L5/S1). Causes unilateral radicular leg pain worse with coughing, sitting and bending, sometimes with dermatomal numbness and weakness.",
+      "red_flags_zh": [
+        "馬尾症候群（鞍麻、失禁、雙側無力）→ 急診手術",
+        "進行性足下垂或明顯肌力下降 → 神經外科評估",
+        "發燒或癌症病史 → 排除感染或腫瘤"
+      ],
+      "red_flags_en": [
+        "Cauda equina syndrome (saddle numbness, incontinence, bilateral weakness) → emergency surgery",
+        "Progressive foot drop or marked weakness → neurosurgical assessment",
+        "Fever or cancer history → rule out infection or tumour"
+      ],
+      "western_context_zh": "多數椎間盤突出於 6–12 週內隨吸收而改善，優先保守治療。手術保留給進行性神經缺損、馬尾或保守無效的頑固性坐骨神經痛。",
+      "western_context_en": "Most herniations improve within 6–12 weeks as they resorb; conservative care is first-line. Surgery is reserved for progressive deficit, cauda equina, or refractory sciatica.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_spine_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.sciatica",
@@ -915,7 +974,26 @@
         "pattern.qi_stagnation_blood_stasis",
         "pattern.liver_yang_rising"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "頸椎退化性變化（椎間盤、骨刺、關節突）。症狀為頸部僵硬痠痛、活動受限，可壓迫神經根致上肢放射痛麻，或壓迫脊髓致脊髓病變。",
+      "summary_en": "Age-related degenerative change of the cervical spine (discs, osteophytes, facets). Causes neck stiffness and ache with restricted motion; may compress nerve roots (radiculopathy) or the cord (myelopathy).",
+      "red_flags_zh": [
+        "步態不穩、手部精細動作變差、Hoffmann/Babinski 陽性 → 脊髓病變，需影像與轉介",
+        "進行性上肢無力或萎縮 → 神經根/脊髓受壓",
+        "發燒、體重減輕 → 排除感染或腫瘤"
+      ],
+      "red_flags_en": [
+        "Unsteady gait, clumsy hands, positive Hoffmann/Babinski → cervical myelopathy, image and refer",
+        "Progressive arm weakness or wasting → root/cord compression",
+        "Fever, weight loss → rule out infection or tumour"
+      ],
+      "western_context_zh": "影像退化與症狀常不平行。多數頸部痛與神經根病變以保守治療改善；脊髓病變是手術指徵，不宜延誤。",
+      "western_context_en": "Imaging degeneration and symptoms often diverge. Most neck pain and radiculopathy improve conservatively; myelopathy is a surgical indication and should not be delayed.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_spine_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.neck_pain_stiff",
@@ -930,7 +1008,26 @@
         "pattern.wind_damp_bi",
         "pattern.qi_stagnation_blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "急性頸部疼痛與僵硬（俗稱落枕），多因睡姿、受寒或輕微拉傷致肌肉痙攣。症狀為單側頸痛、轉頭受限，通常數日內緩解。",
+      "summary_en": "Acute neck pain and stiffness (wry neck / acute torticollis), often from sleep posture, cold exposure or minor strain causing muscle spasm. Presents with one-sided neck pain and limited rotation, usually settling within days.",
+      "red_flags_zh": [
+        "發燒合併頸部僵硬、畏光 → 排除腦膜炎（急症）",
+        "外傷後頸痛 → 排除骨折或韌帶損傷，勿貿然活動",
+        "上肢放射麻木無力 → 考慮神經根病變"
+      ],
+      "red_flags_en": [
+        "Fever with neck stiffness and photophobia → rule out meningitis (emergency)",
+        "Neck pain after trauma → rule out fracture or ligament injury, do not force motion",
+        "Radiating arm numbness/weakness → consider radiculopathy"
+      ],
+      "western_context_zh": "良性者以維持活動、熱敷、輕柔伸展改善，避免長時間固定。反覆發作與姿勢、壓力相關。",
+      "western_context_en": "Benign cases improve with continued motion, heat and gentle stretching, avoiding prolonged immobilisation. Recurrence relates to posture and stress.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_spine_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.whiplash",
@@ -944,7 +1041,26 @@
       "related_patterns": [
         "pattern.qi_stagnation_blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "頸部因加速—減速（多為車禍追撞）造成的軟組織損傷。症狀常延遲數小時至一日出現：頸痛僵硬、頭痛、活動受限，可伴頭暈。",
+      "summary_en": "Soft-tissue neck injury from an acceleration–deceleration mechanism (typically rear-end collision). Symptoms often appear hours to a day later: neck pain and stiffness, headache, restricted motion, sometimes dizziness.",
+      "red_flags_zh": [
+        "中線骨性壓痛、麻木無力、意識改變（加拿大頸椎準則陽性）→ 影像排除骨折/脫位",
+        "進行性神經症狀 → 神經外科評估",
+        "劇烈頭痛或吞嚥、發聲異常 → 排除血管損傷"
+      ],
+      "red_flags_en": [
+        "Midline bony tenderness, numbness/weakness, altered consciousness (positive Canadian C-spine rule) → image to exclude fracture/dislocation",
+        "Progressive neurological symptoms → neurosurgical assessment",
+        "Severe headache or swallowing/voice change → rule out vascular injury"
+      ],
+      "western_context_zh": "多數為 I–II 級（無骨折神經損傷），以早期活動、衛教、避免過度固定改善預後；恐懼—迴避與過度制動反而延長病程。",
+      "western_context_en": "Most are grade I–II (no fracture or neurological injury); early activity, education and avoiding over-immobilisation improve outcome. Fear-avoidance and excessive rest prolong recovery.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_spine_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.frozen_shoulder",
@@ -1064,7 +1180,26 @@
       "related_patterns": [
         "pattern.qi_stagnation_blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "前臂屈腕/旋前肌總腱起點（肱骨內上髁）的過度使用性肌腱病變，俗稱高爾夫球肘。症狀為內上髁壓痛，抗阻屈腕或旋前、握抓時加重。",
+      "summary_en": "Overuse tendinopathy at the common flexor–pronator origin on the medial epicondyle, known as golfer's elbow. Presents with medial epicondyle tenderness, worse on resisted wrist flexion/pronation and gripping.",
+      "red_flags_zh": [
+        "合併第四、五指麻木無力 → 排除尺神經（肘管）病變",
+        "紅熱腫脹 → 排除感染",
+        "外傷後劇痛 → 排除撕脫性骨折"
+      ],
+      "red_flags_en": [
+        "With numbness/weakness of the ring and little fingers → rule out ulnar nerve (cubital tunnel) involvement",
+        "Redness, warmth, swelling → rule out infection",
+        "Severe pain after trauma → rule out avulsion fracture"
+      ],
+      "western_context_zh": "與網球肘同屬肌腱退化。多以相對休息、離心運動、護具改善；須留意鄰近的尺神經症狀。",
+      "western_context_en": "Like tennis elbow, this is tendinosis. Most improve with relative rest, eccentric loading and bracing; watch for the adjacent ulnar nerve.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.carpal_tunnel",
@@ -1148,7 +1283,26 @@
         "pattern.qi_stagnation_blood_stasis",
         "pattern.phlegm_damp"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "屈指肌腱與 A1 滑車間的狹窄性腱鞘炎，肌腱通過受阻。症狀為手指屈伸時卡頓、彈響，晨間僵硬，嚴重時手指鎖在屈曲位需被動扳開。",
+      "summary_en": "Stenosing tenosynovitis between the flexor tendon and the A1 pulley, obstructing tendon glide. Causes catching or snapping on finger movement, morning stiffness, and in severe cases the finger locks in flexion requiring passive release.",
+      "red_flags_zh": [
+        "紅熱腫脹 → 排除感染性腱鞘炎（急症）",
+        "外傷後鎖住 → 排除肌腱斷裂或異物",
+        "多指同時受累 → 考慮糖尿病、類風濕等全身病因"
+      ],
+      "red_flags_en": [
+        "Redness, warmth, swelling → rule out infectious tenosynovitis (emergency)",
+        "Locking after trauma → rule out tendon rupture or foreign body",
+        "Multiple fingers involved → consider systemic causes such as diabetes or rheumatoid arthritis"
+      ],
+      "western_context_zh": "常見於糖尿病患者。輕症以副木、活動調整、注射改善；反覆或鎖死者行 A1 滑車鬆解手術。",
+      "western_context_en": "Common in people with diabetes. Mild cases improve with splinting, activity modification and injection; recurrent or locked digits have A1 pulley release.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.knee_osteoarthritis",
@@ -1200,7 +1354,26 @@
         "pattern.qi_stagnation_blood_stasis",
         "pattern.wind_damp_bi"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "髕骨與股骨滑車間的前膝疼痛，與髕骨軌跡不良、肌力失衡（股內側肌、髖外展肌無力）相關。症狀為上下樓、蹲、久坐後膝前痛（劇院徵）。",
+      "summary_en": "Anterior knee pain at the patellofemoral joint, linked to poor patellar tracking and muscle imbalance (weak VMO, hip abductors). Presents with pain on stairs, squatting and after prolonged sitting (theatre sign).",
+      "red_flags_zh": [
+        "關節腫脹積液 → 排除關節內損傷（半月板、軟骨）",
+        "鎖住或打軟 → 排除半月板或韌帶問題",
+        "紅熱發燒 → 排除感染性關節炎"
+      ],
+      "red_flags_en": [
+        "Joint effusion → rule out intra-articular injury (meniscus, cartilage)",
+        "Locking or giving way → rule out meniscal or ligament problem",
+        "Red, hot joint with fever → rule out septic arthritis"
+      ],
+      "western_context_zh": "以運動治療為核心（股四頭肌、髖外展與外旋肌強化、動作矯正），多數不需手術或影像。",
+      "western_context_en": "Exercise therapy is the cornerstone (quadriceps, hip abductor/external rotator strengthening, movement correction); most need neither surgery nor imaging.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.meniscus_injury",
@@ -1214,7 +1387,26 @@
       "related_patterns": [
         "pattern.blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "膝半月軟骨因扭轉或退化而撕裂。症狀為關節線壓痛、腫脹、鎖住或打軟，蹲與旋轉加重；McMurray 測試可陽性。",
+      "summary_en": "Tear of the knee meniscus from twisting or degeneration. Presents with joint-line tenderness, swelling, locking or giving way, worse with squatting and rotation; McMurray test may be positive.",
+      "red_flags_zh": [
+        "真正鎖住無法伸直 → 桶柄狀撕裂，需轉介評估",
+        "外傷後大量積血（數小時內腫脹）→ 排除韌帶斷裂或骨軟骨骨折",
+        "紅熱發燒 → 排除感染"
+      ],
+      "red_flags_en": [
+        "True locking with inability to extend → bucket-handle tear, refer for assessment",
+        "Large haemarthrosis (swelling within hours) after trauma → rule out ligament rupture or osteochondral fracture",
+        "Red, hot joint with fever → rule out infection"
+      ],
+      "western_context_zh": "退化性撕裂多以復健改善，未必需手術。特殊測試（McMurray、Thessaly）需組合判讀；MRI 確認結構但不取代臨床。",
+      "western_context_en": "Degenerative tears often improve with rehabilitation and may not need surgery. Special tests (McMurray, Thessaly) are read in combination; MRI confirms structure but does not replace clinical judgment.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.ankle_sprain",
@@ -1333,7 +1525,26 @@
         "pattern.kidney_yang_deficiency",
         "pattern.blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "髖關節軟骨退化。症狀為腹股溝痛（可轉移至大腿、膝），活動後加重、晨僵短暫，內旋與屈曲受限，行走漸困難。",
+      "summary_en": "Degenerative wear of the hip joint. Causes groin pain (may refer to thigh and knee), worse with activity, brief morning stiffness, limited internal rotation and flexion, and progressive difficulty walking.",
+      "red_flags_zh": [
+        "休息痛、夜間痛、體重減輕 → 排除腫瘤或感染",
+        "突發劇痛無法負重（尤其類固醇/酒精史）→ 排除股骨頭缺血性壞死或骨折",
+        "紅熱發燒 → 排除化膿性關節炎"
+      ],
+      "red_flags_en": [
+        "Rest or night pain with weight loss → rule out tumour or infection",
+        "Sudden severe pain unable to bear weight (esp. steroid/alcohol history) → rule out avascular necrosis or fracture",
+        "Red, hot joint with fever → rule out septic arthritis"
+      ],
+      "western_context_zh": "核心治療為運動與減重、輔以藥物；末期以人工髖關節置換效果佳。腹股溝痛而非外側痛較符合真正髖關節源。",
+      "western_context_en": "Cornerstones are exercise and weight loss with medication as adjunct; end-stage disease responds well to hip replacement. Groin pain rather than lateral pain better fits a true hip source.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.piriformis_syndrome",
@@ -1348,7 +1559,26 @@
         "pattern.qi_stagnation_blood_stasis",
         "pattern.wind_damp_bi"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "梨狀肌緊繃或痙攣壓迫其下方坐骨神經，造成臀部深部痛並可沿下肢放射，久坐、爬樓、髖外旋抗阻加重。屬排除性診斷。",
+      "summary_en": "Tightness or spasm of piriformis compressing the sciatic nerve beneath it, causing deep buttock pain that may radiate down the leg, worse with prolonged sitting, stairs and resisted hip external rotation. A diagnosis of exclusion.",
+      "red_flags_zh": [
+        "腰痛合併皮節分布麻木無力 → 優先排除腰椎神經根病變",
+        "馬尾徵象 → 急診",
+        "夜間痛、體重減輕 → 排除骨盆腫瘤"
+      ],
+      "red_flags_en": [
+        "Back pain with dermatomal numbness/weakness → first rule out lumbar radiculopathy",
+        "Cauda equina signs → emergency",
+        "Night pain, weight loss → rule out pelvic tumour"
+      ],
+      "western_context_zh": "須先排除腰椎源性坐骨神經痛。治療以伸展、臀部與核心訓練、動作矯正為主。",
+      "western_context_en": "Lumbar-source sciatica must be excluded first. Management centres on stretching, gluteal and core training, and movement correction.",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orthopedic_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.fibromyalgia",
@@ -1367,7 +1597,26 @@
         "pattern.heart_spleen_deficiency",
         "pattern.wind_damp_bi"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "以廣泛性慢性肌肉骨骼疼痛為核心的中樞敏感化症候群，伴疲勞、非恢復性睡眠、認知障礙（腦霧）。無特異影像或血液異常，屬臨床診斷。",
+      "summary_en": "A central sensitisation syndrome centred on widespread chronic musculoskeletal pain, with fatigue, non-restorative sleep and cognitive difficulty (fog). There is no specific imaging or blood abnormality; it is a clinical diagnosis.",
+      "red_flags_zh": [
+        "發燒、體重減輕、關節腫脹、皮疹 → 排除發炎性/自體免疫疾病",
+        "近端無力、肌酵素升高 → 排除肌炎",
+        "局部固定痛而非廣泛痛 → 重新考慮結構性病因"
+      ],
+      "red_flags_en": [
+        "Fever, weight loss, joint swelling, rash → rule out inflammatory/autoimmune disease",
+        "Proximal weakness with raised muscle enzymes → rule out myositis",
+        "Fixed focal pain rather than widespread → reconsider a structural cause"
+      ],
+      "western_context_zh": "診斷依 ACR 廣泛疼痛指數與症狀量表。治療以運動（有氧與漸進負荷）、睡眠與衛教為核心，藥物為輔。",
+      "western_context_en": "Diagnosis uses the ACR widespread pain index and symptom scale. Management centres on exercise (aerobic and graded), sleep and education, with medication as adjunct.",
+      "content_source": [
+        "acr_criteria",
+        "standard_rheumatology_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.myofascial_pain",
@@ -1382,7 +1631,25 @@
         "pattern.qi_stagnation_blood_stasis",
         "pattern.wind_damp_bi"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "肌筋膜激痛點（緊繃帶內的過敏點）引起的局部與轉移痛。症狀為特定肌肉壓痛、按壓可誘發轉移痛與局部抽動，活動範圍略受限。",
+      "summary_en": "Regional and referred pain from myofascial trigger points (hyperirritable spots within taut bands). Presents with focal muscle tenderness, a referred pain pattern and local twitch on palpation, with mildly limited range.",
+      "red_flags_zh": [
+        "合併全身廣泛壓痛、疲勞、睡眠障礙 → 考慮纖維肌痛而非局部肌筋膜痛",
+        "發燒、體重減輕 → 排除感染或腫瘤",
+        "進行性神經症狀 → 排除神經根或脊髓病變"
+      ],
+      "red_flags_en": [
+        "Widespread tenderness, fatigue and sleep disturbance → consider fibromyalgia rather than localised myofascial pain",
+        "Fever, weight loss → rule out infection or tumour",
+        "Progressive neurological symptoms → rule out radiculopathy or myelopathy"
+      ],
+      "western_context_zh": "與針灸阿是穴、經筋病概念高度重疊。治療含激痛點處理（乾針、按壓）、伸展與姿勢矯正。",
+      "western_context_en": "Overlaps strongly with acupuncture ashi points and the sinew-channel (jingjin) concept. Treatment includes trigger-point work (dry needling, pressure), stretching and posture correction.",
+      "content_source": [
+        "standard_pain_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.tmd",
@@ -1399,7 +1666,26 @@
         "pattern.qi_stagnation_blood_stasis",
         "pattern.wind_damp_bi"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "顳顎關節與咀嚼肌功能障礙。症狀為顎關節或咀嚼肌痛、開口受限或偏移、關節彈響、咀嚼與說話時加重，可伴頭痛耳前痛。",
+      "summary_en": "Dysfunction of the temporomandibular joint and masticatory muscles. Presents with joint or muscle pain, limited or deviating mouth opening, clicking, worse with chewing and talking, sometimes with headache and preauricular pain.",
+      "red_flags_zh": [
+        "顎關節鎖死無法開口/閉口 → 需轉介",
+        "外傷後咬合改變或劇痛 → 排除下頜骨折或脫位",
+        "進行性面部麻木無力 → 排除神經或腫瘤病因"
+      ],
+      "red_flags_en": [
+        "Jaw locked open or closed → refer",
+        "Bite change or severe pain after trauma → rule out mandibular fracture or dislocation",
+        "Progressive facial numbness/weakness → rule out neurological or tumour cause"
+      ],
+      "western_context_zh": "多數為良性、自限，以衛教、軟食、下頜運動、壓力管理與夜間咬合板改善。與咀嚼肌（CN V 支配）功能密切相關。",
+      "western_context_en": "Most cases are benign and self-limiting, improving with education, soft diet, jaw exercises, stress management and a night guard. Closely tied to the masticatory muscles (CN V innervation).",
+      "content_source": [
+        "aaos_orthoinfo",
+        "standard_orofacial_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.tension_headache",
@@ -1415,7 +1701,26 @@
         "pattern.qi_blood_deficiency",
         "pattern.liver_yang_rising"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "最常見的原發性頭痛。雙側、壓迫或緊箍樣、輕至中度、不因日常活動加重，無明顯噁心嘔吐。常與壓力、姿勢、頸肩肌緊繃相關。",
+      "summary_en": "The most common primary headache. Bilateral, pressing or tightening, mild to moderate, not aggravated by routine activity, without significant nausea or vomiting. Often linked to stress, posture and neck-shoulder muscle tension.",
+      "red_flags_zh": [
+        "霹靂性（瞬間達最強）頭痛 → 排除蛛網膜下腔出血（急症）",
+        "發燒合併頸僵、畏光 → 排除腦膜炎",
+        "新發於 50 歲以上、漸進惡化、神經缺損、清晨嘔吐 → 影像排除腫瘤/顱內壓升高"
+      ],
+      "red_flags_en": [
+        "Thunderclap (instant maximal) headache → rule out subarachnoid haemorrhage (emergency)",
+        "Fever with neck stiffness and photophobia → rule out meningitis",
+        "New onset over age 50, progressive, focal deficit, morning vomiting → image to exclude tumour/raised ICP"
+      ],
+      "western_context_zh": "診斷依國際頭痛分類（ICHD-3），為臨床診斷。治療以生活型態、壓力與姿勢管理為主，避免止痛藥過度使用致藥物過度使用性頭痛。",
+      "western_context_en": "Diagnosed clinically per the International Classification of Headache Disorders (ICHD-3). Management centres on lifestyle, stress and posture; avoid analgesic overuse leading to medication-overuse headache.",
+      "content_source": [
+        "ichd3",
+        "standard_neurology_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.migraine",
@@ -1432,7 +1737,28 @@
         "pattern.phlegm_damp",
         "pattern.blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "反覆發作的原發性頭痛，典型為單側、搏動性、中重度、日常活動加重，伴噁心嘔吐、畏光畏聲，可有先兆（視覺閃光、暗點）。發作可持續 4–72 小時。",
+      "summary_en": "A recurrent primary headache, typically unilateral, pulsating, moderate to severe, aggravated by routine activity, with nausea/vomiting and photophobia/phonophobia; aura (visual scintillations, scotoma) may occur. Attacks last 4–72 hours.",
+      "red_flags_zh": [
+        "霹靂性頭痛 → 排除蛛網膜下腔出血（急症）",
+        "頭痛型態明顯改變、進行性惡化、神經缺損持續 → 影像評估",
+        "發燒合併頸僵 → 排除腦膜炎",
+        "先兆持續逾一小時或每次同側 → 需進一步評估"
+      ],
+      "red_flags_en": [
+        "Thunderclap headache → rule out subarachnoid haemorrhage (emergency)",
+        "Marked change in pattern, progressive worsening, persistent deficit → image",
+        "Fever with neck stiffness → rule out meningitis",
+        "Aura lasting over an hour or always the same side → needs further assessment"
+      ],
+      "western_context_zh": "診斷依 ICHD-3。治療分急性（曲坦類、NSAID）與預防（生活型態、預防用藥）。記錄誘因與發作日誌有助管理。",
+      "western_context_en": "Diagnosed per ICHD-3. Treatment splits into acute (triptans, NSAIDs) and preventive (lifestyle, prophylactic medication). Tracking triggers and a headache diary aids management.",
+      "content_source": [
+        "ichd3",
+        "standard_neurology_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.cluster_headache",
@@ -1447,7 +1773,26 @@
         "pattern.liver_fire",
         "pattern.blood_stasis"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "summary_zh": "嚴重的單側原發性頭痛，痛在眼眶/顳部，伴同側自律神經徵象（流淚、鼻塞、眼瞼下垂）。發作短（15–180 分鐘）而密集成群，患者常躁動難安。",
+      "summary_en": "A severe unilateral primary headache around the eye/temple with ipsilateral autonomic signs (tearing, nasal congestion, ptosis). Attacks are short (15–180 minutes) and cluster in bouts; sufferers are typically restless and agitated.",
+      "red_flags_zh": [
+        "首次發作或型態改變 → 影像排除次發性病因（如海綿竇病灶）",
+        "霹靂性頭痛 → 排除出血（急症）",
+        "持續神經缺損 → 進一步評估"
+      ],
+      "red_flags_en": [
+        "First-ever attack or change in pattern → image to exclude a secondary cause (e.g. cavernous sinus lesion)",
+        "Thunderclap headache → rule out haemorrhage (emergency)",
+        "Persistent neurological deficit → further assessment"
+      ],
+      "western_context_zh": "屬三叉自律神經性頭痛。急性以高流量氧氣與皮下曲坦為主，需預防用藥。屬神經科範疇，非單純肌肉緊張。",
+      "western_context_en": "One of the trigeminal autonomic cephalalgias. Acute treatment is high-flow oxygen and subcutaneous triptan, with preventive medication needed. This is a neurology condition, not simple muscle tension.",
+      "content_source": [
+        "ichd3",
+        "standard_neurology_reference"
+      ],
+      "authored_by": "model_draft"
     },
     {
       "id": "cond.gout",
