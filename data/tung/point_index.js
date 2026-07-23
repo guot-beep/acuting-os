@@ -47,8 +47,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dajian-t-1101",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -59,10 +59,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 大間穴",
-          "label_en": "Master Tung · Dajian",
+          "label_zh": "董氏奇穴 · 大間穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Dajian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/dajian-t-1101",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 大間穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Dajian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -112,8 +119,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojian-t-1102",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -124,10 +131,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 小間穴",
-          "label_en": "Master Tung · Xiaojian",
+          "label_zh": "董氏奇穴 · 小間穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiaojian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojian-t-1102",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 小間穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiaojian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -175,8 +189,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fujian-t-1103",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -187,10 +201,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 浮間穴",
-          "label_en": "Master Tung · Fujian",
+          "label_zh": "董氏奇穴 · 浮間穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fujian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fujian-t-1103",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 浮間穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fujian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -238,8 +259,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waijian-t-1104",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -250,10 +271,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 外間穴",
-          "label_en": "Master Tung · Waijian",
+          "label_zh": "董氏奇穴 · 外間穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Waijian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/waijian-t-1104",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 外間穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Waijian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -299,8 +327,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjian-t-1105",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -311,10 +339,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 中間穴",
-          "label_en": "Master Tung · Zhongjian",
+          "label_zh": "董氏奇穴 · 中間穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongjian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjian-t-1105",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 中間穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongjian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -365,8 +400,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huanchao-t-1106",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -377,10 +412,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 還巢穴",
-          "label_en": "Master Tung · Huanchao",
+          "label_zh": "董氏奇穴 · 還巢穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huanchao (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huanchao-t-1106",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 還巢穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huanchao (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -427,8 +469,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisima-t-1107",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -439,10 +481,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 指駟馬穴",
-          "label_en": "Master Tung · Zhisima",
+          "label_zh": "董氏奇穴 · 木穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muxue (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisima-t-1107",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muxue (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -485,8 +534,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwujin-zhiqianjin-t-1108",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -495,10 +544,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 指五金穴, 指千金穴",
-          "label_en": "Master Tung · Zhiwujin & Zhiqianjin",
+          "label_zh": "董氏奇穴 · 指五金穴, 指千金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhiwujin & Zhiqianjin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwujin-zhiqianjin-t-1108",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 指五金穴, 指千金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhiwujin & Zhiqianjin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -540,8 +596,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinxi-t-1109",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -550,10 +606,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 心膝穴",
-          "label_en": "Master Tung · Xinxi",
+          "label_zh": "董氏奇穴 · 心膝穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xinxi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinxi-t-1109",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 心膝穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xinxi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -595,8 +658,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuo-t-1110",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -605,10 +668,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木火穴",
-          "label_en": "Master Tung · Muhuo",
+          "label_zh": "董氏奇穴 · 木火穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muhuo (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuo-t-1110",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木火穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muhuo (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -650,8 +720,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feixin-t-1111",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -660,10 +730,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肺心穴",
-          "label_en": "Master Tung · Feixin",
+          "label_zh": "董氏奇穴 · 肺心穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Feixin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/feixin-t-1111",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肺心穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Feixin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -705,8 +782,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erjiaoming-t-1112",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -715,10 +792,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 二角明穴",
-          "label_en": "Master Tung · Erjiaoming",
+          "label_zh": "董氏奇穴 · 二角明穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Erjiaoming (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/erjiaoming-t-1112",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 二角明穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Erjiaoming (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -760,8 +844,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dan-t-1113",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -772,10 +856,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 膽穴",
-          "label_en": "Master Tung · Dan",
+          "label_zh": "董氏奇穴 · 膽穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Dan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/dan-t-1113",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 膽穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Dan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -817,8 +908,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisanzhong-t-1114",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -827,10 +918,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 指三重穴",
-          "label_en": "Master Tung · Zhisanzhong",
+          "label_zh": "董氏奇穴 · 指三重穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhisanzhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisanzhong-t-1114",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 指三重穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhisanzhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -880,8 +978,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhishen-t-1115",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -890,10 +988,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 指肾穴",
-          "label_en": "Master Tung · Zhishen",
+          "label_zh": "董氏奇穴 · 婦科穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fuke (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhishen-t-1115",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 婦科穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fuke (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -942,8 +1047,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoxi-t-1116",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -952,10 +1057,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火膝穴",
-          "label_en": "Master Tung · Huoxi",
+          "label_zh": "董氏奇穴 · 制污穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhiwu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoxi-t-1116",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 制污穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhiwu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -998,8 +1110,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mu-t-1117",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1008,10 +1120,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木穴",
-          "label_en": "Master Tung · Mu",
+          "label_zh": "董氏奇穴 · 止涎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhixian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/mu-t-1117",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 止涎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhixian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1062,8 +1181,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pizhong-t-1118",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1074,10 +1193,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 脾腫穴",
-          "label_en": "Master Tung · Pizhong",
+          "label_zh": "董氏奇穴 · 五虎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Wuhu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/pizhong-t-1118",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 五虎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Wuhu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1120,8 +1246,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinchang-t-1119",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1130,10 +1256,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 心常穴",
-          "label_en": "Master Tung · Xinchang",
+          "label_zh": "董氏奇穴 · 心常穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xinchang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinchang-t-1119",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 心常穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xinchang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1175,8 +1308,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muyan-t-1120",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1185,10 +1318,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木炎穴",
-          "label_en": "Master Tung · Muyan",
+          "label_zh": "董氏奇穴 · 木炎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muyan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muyan-t-1120",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木炎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muyan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1230,8 +1370,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanyan-t-1121",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1240,10 +1380,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三眼穴",
-          "label_en": "Master Tung · Sanyan",
+          "label_zh": "董氏奇穴 · 三眼穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanyan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanyan-t-1121",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三眼穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanyan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1285,8 +1432,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuyuan-t-1122",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1297,10 +1444,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 復原穴",
-          "label_en": "Master Tung · Fuyuan",
+          "label_zh": "董氏奇穴 · 復原穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fuyuan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuyuan-t-1122",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 復原穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fuyuan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1342,8 +1496,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yanhuang-t-1123",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1354,10 +1508,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 眼黃穴",
-          "label_en": "Master Tung · Yanhuang",
+          "label_zh": "董氏奇穴 · 眼黃穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Yanhuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/yanhuang-t-1123",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 眼黃穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Yanhuang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1399,8 +1560,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuke-t-1124",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1411,10 +1572,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 婦科穴",
-          "label_en": "Master Tung · Fuke",
+          "label_zh": "董氏奇穴 · 婦科穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fuke (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuke-t-1124",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 婦科穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fuke (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1456,8 +1624,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhixian-t-1125",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1466,10 +1634,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 止涎穴",
-          "label_en": "Master Tung · Zhixian",
+          "label_zh": "董氏奇穴 · 止涎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhixian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhixian-t-1125",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 止涎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhixian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1511,8 +1686,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwu-t-1126",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1521,10 +1696,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 制污穴",
-          "label_en": "Master Tung · Zhiwu",
+          "label_zh": "董氏奇穴 · 制污穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhiwu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwu-t-1126",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 制污穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhiwu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1566,8 +1748,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuhu-t-1127",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1576,10 +1758,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 五虎穴",
-          "label_en": "Master Tung · Wuhu",
+          "label_zh": "董氏奇穴 · 五虎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Wuhu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuhu-t-1127",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 五虎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Wuhu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1621,8 +1810,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuangling-t-1128",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1633,10 +1822,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 雙靈穴",
-          "label_en": "Master Tung · Shuangling",
+          "label_zh": "董氏奇穴 · 雙靈穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuangling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuangling-t-1128",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 雙靈穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuangling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1678,8 +1874,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muling-t-1129",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1690,10 +1886,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木靈穴",
-          "label_en": "Master Tung · Muling",
+          "label_zh": "董氏奇穴 · 木靈穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muling-t-1129",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木靈穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1735,8 +1938,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansanxue-t-1130",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1747,10 +1950,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 八關三穴",
-          "label_en": "Master Tung · Baguansanxue",
+          "label_zh": "董氏奇穴 · 八關三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Baguansanxue (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansanxue-t-1130",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 八關三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Baguansanxue (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1792,8 +2002,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansixue-t-1131",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1804,10 +2014,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 八關四穴",
-          "label_en": "Master Tung · Baguansixue",
+          "label_zh": "董氏奇穴 · 八關四穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Baguansixue (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansixue-t-1131",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 八關四穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Baguansixue (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1855,8 +2072,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongzi-t-2201",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1865,10 +2082,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 重子穴",
-          "label_en": "Master Tung · Chongzi",
+          "label_zh": "董氏奇穴 · 重子穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongzi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongzi-t-2201",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 重子穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongzi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1919,8 +2143,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxian-t-2202",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1929,10 +2153,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 重仙穴",
-          "label_en": "Master Tung · Chongxian",
+          "label_zh": "董氏奇穴 · 重仙穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongxian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxian-t-2202",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 重仙穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongxian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -1975,8 +2206,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangbai-t-2203",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -1985,10 +2216,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上白穴",
-          "label_en": "Master Tung · Shangbai",
+          "label_zh": "董氏奇穴 · 上白穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangbai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangbai-t-2203",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上白穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangbai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2034,8 +2272,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dabai-t-2204",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2044,10 +2282,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 大白穴",
-          "label_en": "Master Tung · Dabai",
+          "label_zh": "董氏奇穴 · 大白穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Dabai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/dabai-t-2204",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 大白穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Dabai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2097,8 +2342,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/linggu-t-2205",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2109,10 +2354,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 靈骨穴",
-          "label_en": "Master Tung · Linggu",
+          "label_zh": "董氏奇穴 · 靈骨穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Linggu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/linggu-t-2205",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 靈骨穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Linggu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2161,8 +2413,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongbai-t-2206",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2173,10 +2425,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 中白穴, 鬼門穴",
-          "label_en": "Master Tung · Zhongbai",
+          "label_zh": "董氏奇穴 · 中白穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongbai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongbai-t-2206",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 中白穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongbai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2225,8 +2484,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiabai-t-2207",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2235,10 +2494,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 下白穴",
-          "label_en": "Master Tung · Xiabai",
+          "label_zh": "董氏奇穴 · 下白穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiabai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiabai-t-2207",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 下白穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiabai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2281,8 +2547,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshunyi-t-2208",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2293,10 +2559,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腕順一穴",
-          "label_en": "Master Tung · Wanshunyi",
+          "label_zh": "董氏奇穴 · 腕順一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Wanshunyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshunyi-t-2208",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腕順一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Wanshunyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2338,8 +2611,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshuner-t-2209",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2350,10 +2623,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腕順二穴",
-          "label_en": "Master Tung · Wanshuner",
+          "label_zh": "董氏奇穴 · 腕順二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Wanshuner (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshuner-t-2209",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腕順二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Wanshuner (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2395,8 +2675,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujie-t-2210",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2405,10 +2685,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 手解穴",
-          "label_en": "Master Tung · Shoujie",
+          "label_zh": "董氏奇穴 · 手解穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shoujie (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujie-t-2210",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 手解穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shoujie (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2450,8 +2737,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tushui-t-2211",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2460,10 +2747,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 土水穴",
-          "label_en": "Master Tung · Tushui",
+          "label_zh": "董氏奇穴 · 土水穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tushui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tushui-t-2211",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 土水穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tushui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2505,8 +2799,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fanhoujue-t-2212",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2517,10 +2811,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 反後決穴",
-          "label_en": "Master Tung · Fanhoujue",
+          "label_zh": "董氏奇穴 · 反後決穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fanhoujue (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fanhoujue-t-2212",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 反後決穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fanhoujue (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2562,8 +2863,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojie-t-2213",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2574,10 +2875,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 小節穴",
-          "label_en": "Master Tung · Xiaojie",
+          "label_zh": "董氏奇穴 · 小節穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiaojie (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojie-t-2213",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 小節穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiaojie (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2619,8 +2927,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchayi-t-2215",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2629,10 +2937,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三叉一穴",
-          "label_en": "Master Tung · Sanchayi",
+          "label_zh": "董氏奇穴 · 三叉一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanchayi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchayi-t-2215",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三叉一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanchayi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2674,8 +2989,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchaer-t-2216",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2684,10 +2999,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三叉二穴",
-          "label_en": "Master Tung · Sanchaer",
+          "label_zh": "董氏奇穴 · 三叉二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanchaer (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchaer-t-2216",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三叉二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanchaer (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2729,8 +3051,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchasan-t-2217",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2739,10 +3061,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三叉三穴",
-          "label_en": "Master Tung · Sanchasan",
+          "label_zh": "董氏奇穴 · 三叉三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanchasan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchasan-t-2217",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三叉三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanchasan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2784,8 +3113,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhihan-t-2218",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2794,10 +3123,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 止汗穴",
-          "label_en": "Master Tung · Zhihan",
+          "label_zh": "董氏奇穴 · 止汗穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhihan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhihan-t-2218",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 止汗穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhihan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2839,8 +3175,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujingdian-t-2219",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2851,10 +3187,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 手頸點",
-          "label_en": "Master Tung · Shoujingdian",
+          "label_zh": "董氏奇穴 · 手頸點 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shoujingdian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujingdian-t-2219",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 手頸點 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shoujingdian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2896,8 +3239,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shanggao-t-2221",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2906,10 +3249,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上高穴",
-          "label_en": "Master Tung · Shanggao",
+          "label_zh": "董氏奇穴 · 上高穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shanggao (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shanggao-t-2221",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上高穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shanggao (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -2951,8 +3301,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiagao-t-2222",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -2961,10 +3311,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 下高穴",
-          "label_en": "Master Tung · Xiagao",
+          "label_zh": "董氏奇穴 · 下高穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiagao (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiagao-t-2222",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 下高穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiagao (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3006,8 +3363,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guguan-t-2224",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3018,10 +3375,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 骨關穴",
-          "label_en": "Master Tung · Guguan",
+          "label_zh": "董氏奇穴 · 骨關穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Guguan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/guguan-t-2224",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 骨關穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Guguan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3063,8 +3427,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongguan-t-2225",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3075,10 +3439,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 中關穴",
-          "label_en": "Master Tung · Zhongguan",
+          "label_zh": "董氏奇穴 · 中關穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongguan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongguan-t-2225",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 中關穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongguan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3120,8 +3491,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muguan-t-2226",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3132,10 +3503,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木關穴",
-          "label_en": "Master Tung · Muguan",
+          "label_zh": "董氏奇穴 · 木關穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muguan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muguan-t-2226",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木關穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muguan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3177,8 +3555,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qimen-t-3301",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3189,10 +3567,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 其門穴",
-          "label_en": "Master Tung · Qimen",
+          "label_zh": "董氏奇穴 · 其門穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qimen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qimen-t-3301",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 其門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qimen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3234,8 +3619,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qijiao-t-3302",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3244,10 +3629,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 其角穴",
-          "label_en": "Master Tung · Qijiao",
+          "label_zh": "董氏奇穴 · 其角穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qijiao (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qijiao-t-3302",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 其角穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qijiao (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3289,8 +3681,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qizheng-t-3303",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3299,10 +3691,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 其正穴",
-          "label_en": "Master Tung · Qizheng",
+          "label_zh": "董氏奇穴 · 其正穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qizheng (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qizheng-t-3303",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 其正穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qizheng (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3344,8 +3743,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochuan-t-3304",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3354,10 +3753,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火串穴",
-          "label_en": "Master Tung · Huochuan",
+          "label_zh": "董氏奇穴 · 火串穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huochuan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochuan-t-3304",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火串穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huochuan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3399,8 +3805,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoling-t-3305",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3409,10 +3815,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火陵穴",
-          "label_en": "Master Tung · Huoling",
+          "label_zh": "董氏奇穴 · 火陵穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huoling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoling-t-3305",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火陵穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huoling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3454,8 +3867,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoshan-t-3306",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3464,10 +3877,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火山穴",
-          "label_en": "Master Tung · Huoshan",
+          "label_zh": "董氏奇穴 · 火山穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huoshan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoshan-t-3306",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火山穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huoshan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3509,8 +3929,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofuhai-t-3307",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3519,10 +3939,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火腑海穴",
-          "label_en": "Master Tung · Huofuhai",
+          "label_zh": "董氏奇穴 · 火腑海穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huofuhai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofuhai-t-3307",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火腑海穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huofuhai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3568,8 +3995,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouwujin-t-3308",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3578,10 +4005,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 手五金穴",
-          "label_en": "Master Tung · Shouwujin",
+          "label_zh": "董氏奇穴 · 肝門穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ganmen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouwujin-t-3308",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肝門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ganmen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3628,8 +4062,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouqianjin-t-3309",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3638,10 +4072,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 手千金穴",
-          "label_en": "Master Tung · Shouqianjin",
+          "label_zh": "董氏奇穴 · 心門穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xinmen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouqianjin-t-3309",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 心門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xinmen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3684,8 +4125,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/changmen-t-3310",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3694,10 +4135,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腸門穴",
-          "label_en": "Master Tung · Changmen",
+          "label_zh": "董氏奇穴 · 腸門穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Changmen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/changmen-t-3310",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腸門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Changmen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3739,8 +4187,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmen-t-3311",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3749,10 +4197,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肝門穴",
-          "label_en": "Master Tung · Ganmen",
+          "label_zh": "董氏奇穴 · 肝門穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ganmen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmen-t-3311",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肝門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ganmen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3794,8 +4249,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinmen-t-3312",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3804,10 +4259,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 心門穴",
-          "label_en": "Master Tung · Xinmen",
+          "label_zh": "董氏奇穴 · 心門穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xinmen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinmen-t-3312",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 心門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xinmen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3849,8 +4311,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renshi-t-3313",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3859,10 +4321,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 人士穴",
-          "label_en": "Master Tung · Renshi",
+          "label_zh": "董氏奇穴 · 人士穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Renshi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/renshi-t-3313",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 人士穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Renshi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3904,8 +4373,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dishi-t-3314",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3914,10 +4383,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 地士穴",
-          "label_en": "Master Tung · Dishi",
+          "label_zh": "董氏奇穴 · 地士穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Dishi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/dishi-t-3314",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 地士穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Dishi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -3959,8 +4435,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianshi-t-3315",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -3969,10 +4445,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 天士穴",
-          "label_en": "Master Tung · Tianshi",
+          "label_zh": "董氏奇穴 · 天士穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tianshi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianshi-t-3315",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 天士穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tianshi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4014,8 +4497,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/quling-t-3316",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4024,10 +4507,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 曲陵穴",
-          "label_en": "Master Tung · Quling",
+          "label_zh": "董氏奇穴 · 曲陵穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Quling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/quling-t-3316",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 曲陵穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Quling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4069,8 +4559,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinling-t-3317",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4081,10 +4571,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 心靈穴",
-          "label_en": "Master Tung · Xinling",
+          "label_zh": "董氏奇穴 · 心靈穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xinling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinling-t-3317",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 心靈穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xinling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4126,8 +4623,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganlingsanxue-t-3318",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4138,10 +4635,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肝靈三穴",
-          "label_en": "Master Tung · Ganlingsanxue",
+          "label_zh": "董氏奇穴 · 肝靈三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ganlingsanxue (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganlingsanxue-t-3318",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肝靈三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ganlingsanxue (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4183,8 +4687,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-3319",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4193,10 +4697,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 喉健穴",
-          "label_en": "Master Tung · Houjian",
+          "label_zh": "董氏奇穴 · 喉健穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Houjian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-3319",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 喉健穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Houjian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4238,8 +4749,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-3320",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4248,10 +4759,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腑格三穴",
-          "label_en": "Master Tung · Fugesan",
+          "label_zh": "董氏奇穴 · 腑格三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fugesan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-3320",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腑格三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fugesan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4293,8 +4811,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenjin-t-4401",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4303,10 +4821,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 分金穴",
-          "label_en": "Master Tung · Fenjin",
+          "label_zh": "董氏奇穴 · 分金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fenjin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenjin-t-4401",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 分金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fenjin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4348,8 +4873,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhui-t-4402",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4360,10 +4885,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 後椎穴",
-          "label_en": "Master Tung · Houzhui",
+          "label_zh": "董氏奇穴 · 後椎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Houzhui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhui-t-4402",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 後椎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Houzhui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4405,8 +4937,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouying-t-4403",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4415,10 +4947,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 首英穴",
-          "label_en": "Master Tung · Shouying",
+          "label_zh": "董氏奇穴 · 首英穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shouying (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouying-t-4403",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 首英穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shouying (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4460,8 +4999,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuding-t-4404",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4472,10 +5011,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 富頂穴",
-          "label_en": "Master Tung · Fuding",
+          "label_zh": "董氏奇穴 · 富頂穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fuding (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuding-t-4404",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 富頂穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fuding (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4517,8 +5063,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhi-t-4405",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4529,10 +5075,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 後枝穴",
-          "label_en": "Master Tung · Houzhi",
+          "label_zh": "董氏奇穴 · 後枝穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Houzhi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhi-t-4405",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 後枝穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Houzhi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4574,8 +5127,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianzhong-t-4406",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4584,10 +5137,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肩中穴",
-          "label_en": "Master Tung · Jianzhong",
+          "label_zh": "董氏奇穴 · 肩中穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jianzhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianzhong-t-4406",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肩中穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jianzhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4629,8 +5189,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/beimian-t-4407",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4639,10 +5199,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 背面穴",
-          "label_en": "Master Tung · Beimian",
+          "label_zh": "董氏奇穴 · 背面穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Beimian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/beimian-t-4407",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 背面穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Beimian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4684,8 +5251,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renzong-t-4408",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4694,10 +5261,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 人宗穴",
-          "label_en": "Master Tung · Renzong",
+          "label_zh": "董氏奇穴 · 人宗穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Renzong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/renzong-t-4408",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 人宗穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Renzong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4739,8 +5313,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dizong-t-4409",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4749,10 +5323,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 地宗穴",
-          "label_en": "Master Tung · Dizong",
+          "label_zh": "董氏奇穴 · 地宗穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Dizong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/dizong-t-4409",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 地宗穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Dizong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4794,8 +5375,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianzong-t-4410",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4804,10 +5385,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 天宗穴",
-          "label_en": "Master Tung · Tianzong",
+          "label_zh": "董氏奇穴 · 天宗穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tianzong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianzong-t-4410",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 天宗穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tianzong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4849,8 +5437,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yunbai-t-4411",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4859,10 +5447,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 云白穴",
-          "label_en": "Master Tung · Yunbai",
+          "label_zh": "董氏奇穴 · 云白穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Yunbai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/yunbai-t-4411",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 云白穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Yunbai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4904,8 +5499,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/libai-t-4412",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4914,10 +5509,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 李白穴",
-          "label_en": "Master Tung · Libai",
+          "label_zh": "董氏奇穴 · 李白穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Libai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/libai-t-4412",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 李白穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Libai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -4959,8 +5561,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhitong-t-4413",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -4969,10 +5571,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 支通穴",
-          "label_en": "Master Tung · Zhitong",
+          "label_zh": "董氏奇穴 · 支通穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhitong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhitong-t-4413",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 支通穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhitong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5014,8 +5623,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/luotong-t-4414",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5024,10 +5633,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 落通穴",
-          "label_en": "Master Tung · Luotong",
+          "label_zh": "董氏奇穴 · 落通穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Luotong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/luotong-t-4414",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 落通穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Luotong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5069,8 +5685,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqu-t-4415",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5079,10 +5695,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 下曲穴",
-          "label_en": "Master Tung · Xiaqu",
+          "label_zh": "董氏奇穴 · 下曲穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiaqu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqu-t-4415",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 下曲穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiaqu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5124,8 +5747,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqu-t-4416",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5134,10 +5757,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上曲穴",
-          "label_en": "Master Tung · Shangqu",
+          "label_zh": "董氏奇穴 · 上曲穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangqu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqu-t-4416",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上曲穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangqu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5179,8 +5809,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiyu-t-4417",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5189,10 +5819,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水愈穴",
-          "label_en": "Master Tung · Shuiyu",
+          "label_zh": "董氏奇穴 · 水愈穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuiyu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiyu-t-4417",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水愈穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuiyu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5234,8 +5871,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanling-t-4418",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5246,10 +5883,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三靈穴",
-          "label_en": "Master Tung · Sanling",
+          "label_zh": "董氏奇穴 · 三靈穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanling-t-4418",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三靈穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5291,8 +5935,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shenjian-t-4419",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5301,10 +5945,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 神肩穴",
-          "label_en": "Master Tung · Shenjian",
+          "label_zh": "董氏奇穴 · 神肩穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shenjian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shenjian-t-4419",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 神肩穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shenjian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5346,8 +5997,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pianjian-t-4420",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5356,10 +6007,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 偏肩穴",
-          "label_en": "Master Tung · Pianjian",
+          "label_zh": "董氏奇穴 · 偏肩穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Pianjian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/pianjian-t-4420",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 偏肩穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Pianjian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5401,8 +6059,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guciyi-t-4421",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5411,10 +6069,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 骨刺一穴",
-          "label_en": "Master Tung · Guciyi",
+          "label_zh": "董氏奇穴 · 骨刺一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Guciyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/guciyi-t-4421",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 骨刺一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Guciyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5456,8 +6121,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucier-t-4422",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5466,10 +6131,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 骨刺二穴",
-          "label_en": "Master Tung · Gucier",
+          "label_zh": "董氏奇穴 · 骨刺二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Gucier (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucier-t-4422",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 骨刺二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Gucier (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5511,8 +6183,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucisan-t-4423",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5521,10 +6193,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 骨刺三穴",
-          "label_en": "Master Tung · Gucisan",
+          "label_zh": "董氏奇穴 · 骨刺三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Gucisan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucisan-t-4423",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 骨刺三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Gucisan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5566,8 +6245,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengji-t-4424",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5576,10 +6255,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 正脊穴",
-          "label_en": "Master Tung · Zhengji",
+          "label_zh": "董氏奇穴 · 正脊穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhengji (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengji-t-4424",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 正脊穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhengji (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5621,8 +6307,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqiyi-t-4425",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5631,10 +6317,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肺氣一穴",
-          "label_en": "Master Tung · Feiqiyi",
+          "label_zh": "董氏奇穴 · 肺氣一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Feiqiyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqiyi-t-4425",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肺氣一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Feiqiyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5676,8 +6369,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqier-t-4426",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5686,10 +6379,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肺氣二穴",
-          "label_en": "Master Tung · Feiqier",
+          "label_zh": "董氏奇穴 · 肺氣二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Feiqier (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqier-t-4426",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肺氣二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Feiqier (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5731,8 +6431,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanshen-t-4427",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5741,10 +6441,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三神穴",
-          "label_en": "Master Tung · Sanshen",
+          "label_zh": "董氏奇穴 · 三神穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanshen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanshen-t-4427",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三神穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanshen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5786,8 +6493,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dingke-t-4428",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5796,10 +6503,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 定咳穴",
-          "label_en": "Master Tung · Dingke",
+          "label_zh": "董氏奇穴 · 定咳穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Dingke (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/dingke-t-4428",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 定咳穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Dingke (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5841,8 +6555,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-4429",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5851,10 +6565,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 喉健穴",
-          "label_en": "Master Tung · Houjian",
+          "label_zh": "董氏奇穴 · 喉健穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Houjian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-4429",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 喉健穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Houjian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5896,8 +6617,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-4430",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5906,10 +6627,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腑格三穴",
-          "label_en": "Master Tung · Fugesan",
+          "label_zh": "董氏奇穴 · 腑格三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fugesan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-4430",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腑格三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fugesan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -5951,8 +6679,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianfeng-t-4431",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -5961,10 +6689,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肩峰穴",
-          "label_en": "Master Tung · Jianfeng",
+          "label_zh": "董氏奇穴 · 肩峰穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jianfeng (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianfeng-t-4431",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肩峰穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jianfeng (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6006,8 +6741,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huobao-t-5501",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6016,10 +6751,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火包穴",
-          "label_en": "Master Tung · Huobao",
+          "label_zh": "董氏奇穴 · 火包穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huobao (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huobao-t-5501",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火包穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huobao (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6061,8 +6803,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguyi-t-5502",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6071,10 +6813,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 花骨一穴",
-          "label_en": "Master Tung · Huaguyi",
+          "label_zh": "董氏奇穴 · 花骨一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huaguyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguyi-t-5502",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 花骨一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huaguyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6116,8 +6865,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguer-t-5503",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6126,10 +6875,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 花骨二穴",
-          "label_en": "Master Tung · Huaguer",
+          "label_zh": "董氏奇穴 · 花骨二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huaguer (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguer-t-5503",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 花骨二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huaguer (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6171,8 +6927,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusan-t-5504",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6181,10 +6937,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 花骨三穴",
-          "label_en": "Master Tung · Huagusan",
+          "label_zh": "董氏奇穴 · 花骨三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huagusan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusan-t-5504",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 花骨三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huagusan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6226,8 +6989,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusi-t-5505",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6236,10 +6999,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 花骨四穴",
-          "label_en": "Master Tung · Huagusi",
+          "label_zh": "董氏奇穴 · 花骨四穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huagusi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusi-t-5505",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 花骨四穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huagusi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6281,8 +7051,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangliu-t-5506",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6291,10 +7061,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上瘤穴",
-          "label_en": "Master Tung · Shangliu",
+          "label_zh": "董氏奇穴 · 上瘤穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangliu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangliu-t-5506",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上瘤穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangliu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6336,8 +7113,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sansheng-t-5507",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6348,10 +7125,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三聖穴",
-          "label_en": "Master Tung · Sansheng",
+          "label_zh": "董氏奇穴 · 三聖穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sansheng (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sansheng-t-5507",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三聖穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sansheng (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6393,8 +7177,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/haibao-t-6601",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6403,10 +7187,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 海豹穴",
-          "label_en": "Master Tung · Haibao",
+          "label_zh": "董氏奇穴 · 海豹穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Haibao (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/haibao-t-6601",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 海豹穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Haibao (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6448,8 +7239,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-6602",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6460,10 +7251,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木婦穴",
-          "label_en": "Master Tung · Mufu",
+          "label_zh": "董氏奇穴 · 木婦穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Mufu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-6602",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木婦穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Mufu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6505,8 +7303,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoying-t-6603",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6515,10 +7313,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火硬穴",
-          "label_en": "Master Tung · Huoying",
+          "label_zh": "董氏奇穴 · 火硬穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huoying (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoying-t-6603",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火硬穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huoying (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6560,8 +7365,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhu-t-6604",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6570,10 +7375,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火主穴",
-          "label_en": "Master Tung · Huozhu",
+          "label_zh": "董氏奇穴 · 火主穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huozhu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhu-t-6604",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火主穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huozhu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6615,8 +7427,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/menjin-t-6605",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6627,10 +7439,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 門金穴",
-          "label_en": "Master Tung · Menjin",
+          "label_zh": "董氏奇穴 · 門金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Menjin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/menjin-t-6605",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 門金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Menjin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6672,8 +7491,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliu-t-6606",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6682,10 +7501,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木留穴",
-          "label_en": "Master Tung · Muliu",
+          "label_zh": "董氏奇穴 · 木留穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muliu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliu-t-6606",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木留穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muliu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6727,8 +7553,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mudou-t-6607",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6737,10 +7563,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木斗穴",
-          "label_en": "Master Tung · Mudou",
+          "label_zh": "董氏奇穴 · 木斗穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Mudou (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/mudou-t-6607",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木斗穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Mudou (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6782,8 +7615,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/liuwan-t-6608",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6792,10 +7625,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 六完穴",
-          "label_en": "Master Tung · Liuwan",
+          "label_zh": "董氏奇穴 · 六完穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Liuwan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/liuwan-t-6608",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 六完穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Liuwan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6837,8 +7677,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiqu-t-6609",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6847,10 +7687,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水曲穴",
-          "label_en": "Master Tung · Shuiqu",
+          "label_zh": "董氏奇穴 · 水曲穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuiqu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiqu-t-6609",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水曲穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuiqu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6892,8 +7739,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huolian-t-6610",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6904,10 +7751,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火連穴",
-          "label_en": "Master Tung · Huolian",
+          "label_zh": "董氏奇穴 · 火連穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huolian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huolian-t-6610",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火連穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huolian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -6949,8 +7803,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoju-t-6611",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -6959,10 +7813,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火菊穴",
-          "label_en": "Master Tung · Huoju",
+          "label_zh": "董氏奇穴 · 火菊穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huoju (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoju-t-6611",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火菊穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huoju (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7004,8 +7865,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huosan-t-6612",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7014,10 +7875,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火散穴",
-          "label_en": "Master Tung · Huosan",
+          "label_zh": "董氏奇穴 · 火散穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huosan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huosan-t-6612",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火散穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huosan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7059,8 +7927,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijing-t-6613",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7069,10 +7937,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水晶穴",
-          "label_en": "Master Tung · Shuijing",
+          "label_zh": "董氏奇穴 · 水晶穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuijing (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijing-t-6613",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水晶穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuijing (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7114,8 +7989,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixiang-t-6614",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7124,10 +7999,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水相穴",
-          "label_en": "Master Tung · Shuixiang",
+          "label_zh": "董氏奇穴 · 水相穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuixiang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixiang-t-6614",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水相穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuixiang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7169,8 +8051,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixian-t-6615",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7179,10 +8061,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水仙穴",
-          "label_en": "Master Tung · Shuixian",
+          "label_zh": "董氏奇穴 · 水仙穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuixian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixian-t-6615",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水仙穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuixian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7224,8 +8113,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tungs-wantong-t-6616",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7234,10 +8123,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 董氏腕痛穴",
-          "label_en": "Master Tung · Wantong",
+          "label_zh": "董氏奇穴 · 董氏腕痛穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tung's Wantong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tungs-wantong-t-6616",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 董氏腕痛穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tung's Wantong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7283,8 +8179,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengjin-t-7701",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7293,10 +8189,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 正筋穴",
-          "label_en": "Master Tung · Zhengjin",
+          "label_zh": "董氏奇穴 · 正筋穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhengjin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengjin-t-7701",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 正筋穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhengjin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7341,8 +8244,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengzong-t-7702",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7351,10 +8254,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 正宗穴",
-          "label_en": "Master Tung · Zhengzong",
+          "label_zh": "董氏奇穴 · 正宗穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhengzong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengzong-t-7702",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 正宗穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhengzong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7397,8 +8307,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengshi-t-7703",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7407,10 +8317,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 正士穴",
-          "label_en": "Master Tung · Zhengshi",
+          "label_zh": "董氏奇穴 · 正士穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhengshi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengshi-t-7703",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 正士穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhengshi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7452,8 +8369,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/boqiu-t-7704",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7462,10 +8379,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 搏球穴",
-          "label_en": "Master Tung · Boqiu",
+          "label_zh": "董氏奇穴 · 搏球穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Boqiu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/boqiu-t-7704",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 搏球穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Boqiu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7507,8 +8431,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yizhong-t-7705",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7517,10 +8441,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 一重穴",
-          "label_en": "Master Tung · Yizhong",
+          "label_zh": "董氏奇穴 · 一重穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Yizhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/yizhong-t-7705",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 一重穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Yizhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7562,8 +8493,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erzhong-t-7706",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7572,10 +8503,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 二重穴",
-          "label_en": "Master Tung · Erzhong",
+          "label_zh": "董氏奇穴 · 二重穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Erzhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/erzhong-t-7706",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 二重穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Erzhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7617,8 +8555,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanzhong-t-7707",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7627,10 +8565,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三重穴",
-          "label_en": "Master Tung · Sanzhong",
+          "label_zh": "董氏奇穴 · 三重穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanzhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanzhong-t-7707",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三重穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanzhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7672,8 +8617,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuashang-t-7708",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7682,10 +8627,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四花上穴",
-          "label_en": "Master Tung · Sihuashang",
+          "label_zh": "董氏奇穴 · 四花上穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sihuashang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuashang-t-7708",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四花上穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sihuashang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7727,8 +8679,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuazhong-t-7709",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7737,10 +8689,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四花中穴",
-          "label_en": "Master Tung · Sihuazhong",
+          "label_zh": "董氏奇穴 · 四花中穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sihuazhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuazhong-t-7709",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四花中穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sihuazhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7782,8 +8741,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuafu-t-7710",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7792,10 +8751,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四花副穴",
-          "label_en": "Master Tung · Sihuafu",
+          "label_zh": "董氏奇穴 · 四花副穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sihuafu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuafu-t-7710",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四花副穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sihuafu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7837,8 +8803,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuaxia-t-7711",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7847,10 +8813,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四花下穴",
-          "label_en": "Master Tung · Sihuaxia",
+          "label_zh": "董氏奇穴 · 四花下穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sihuaxia (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuaxia-t-7711",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四花下穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sihuaxia (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7892,8 +8865,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuchang-t-7712",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7902,10 +8875,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腑肠穴",
-          "label_en": "Master Tung · Fuchang",
+          "label_zh": "董氏奇穴 · 腑肠穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fuchang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuchang-t-7712",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腑肠穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fuchang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -7947,8 +8927,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuali-t-7713",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -7957,10 +8937,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四花里穴",
-          "label_en": "Master Tung · Sihuali",
+          "label_zh": "董氏奇穴 · 四花里穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sihuali (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuali-t-7713",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四花里穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sihuali (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8002,8 +8989,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuawai-t-7714",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8012,10 +8999,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四花外穴",
-          "label_en": "Master Tung · Sihuawai",
+          "label_zh": "董氏奇穴 · 四花外穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sihuawai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuawai-t-7714",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四花外穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sihuawai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8057,8 +9051,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangchun-t-7715",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8067,10 +9061,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上唇穴",
-          "label_en": "Master Tung · Shangchun",
+          "label_zh": "董氏奇穴 · 上唇穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangchun (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangchun-t-7715",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上唇穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangchun (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8112,8 +9113,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiachun-t-7716",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8122,10 +9123,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 下唇穴",
-          "label_en": "Master Tung · Xiachun",
+          "label_zh": "董氏奇穴 · 下唇穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiachun (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiachun-t-7716",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 下唇穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiachun (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8173,8 +9181,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-7717",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8183,10 +9191,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 天皇穴",
-          "label_en": "Master Tung · Tianhuang",
+          "label_zh": "董氏奇穴 · 四花中穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sihuazhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-7717",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四花中穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sihuazhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8229,8 +9244,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuangfu-shenguan-t-7718",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8241,10 +9256,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 天皇副穴, 腎關穴",
-          "label_en": "Master Tung · Tianhuangfu [shenguan]",
+          "label_zh": "董氏奇穴 · 天皇副穴, 腎關穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tianhuangfu [shenguan] (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuangfu-shenguan-t-7718",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 天皇副穴, 腎關穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tianhuangfu [shenguan] (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8286,8 +9308,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dihuang-t-7719",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8296,10 +9318,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 地皇穴",
-          "label_en": "Master Tung · Dihuang",
+          "label_zh": "董氏奇穴 · 地皇穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Dihuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/dihuang-t-7719",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 地皇穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Dihuang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8347,8 +9376,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sizhi-t-7720",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8357,10 +9386,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四肢穴",
-          "label_en": "Master Tung · Sizhi",
+          "label_zh": "董氏奇穴 · 腎關穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shenguan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sizhi-t-7720",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腎關穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shenguan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8403,8 +9439,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renhuang-t-7721",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8413,10 +9449,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 人皇穴",
-          "label_en": "Master Tung · Renhuang",
+          "label_zh": "董氏奇穴 · 人皇穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Renhuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/renhuang-t-7721",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 人皇穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Renhuang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8458,8 +9501,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/cesanli-t-7722",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8470,10 +9513,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 側三里穴",
-          "label_en": "Master Tung · Cesanli",
+          "label_zh": "董氏奇穴 · 側三里穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Cesanli (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/cesanli-t-7722",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 側三里穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Cesanli (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8515,8 +9565,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/cexiasanli-t-7723",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8527,10 +9577,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 側下三里",
-          "label_en": "Master Tung · Cexiasanli",
+          "label_zh": "董氏奇穴 · 側下三里 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Cexiasanli (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/cexiasanli-t-7723",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 側下三里 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Cexiasanli (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8572,8 +9629,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuqianjin-t-7724",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8582,10 +9639,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 足千金穴",
-          "label_en": "Master Tung · Zuqianjin",
+          "label_zh": "董氏奇穴 · 足千金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zuqianjin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuqianjin-t-7724",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 足千金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zuqianjin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8627,8 +9691,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuwujin-t-7725",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8637,10 +9701,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 足五金穴",
-          "label_en": "Master Tung · Zuwujin",
+          "label_zh": "董氏奇穴 · 足五金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zuwujin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuwujin-t-7725",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 足五金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zuwujin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8682,8 +9753,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihu-t-7726",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8692,10 +9763,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 七虎穴",
-          "label_en": "Master Tung · Qihu",
+          "label_zh": "董氏奇穴 · 七虎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qihu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihu-t-7726",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 七虎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qihu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8737,8 +9815,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waisanguan-t-7727",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8749,10 +9827,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 外三關穴",
-          "label_en": "Master Tung · Waisanguan",
+          "label_zh": "董氏奇穴 · 外三關穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Waisanguan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/waisanguan-t-7727",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 外三關穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Waisanguan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8794,8 +9879,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guangming-t-7728",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8804,10 +9889,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 光明穴",
-          "label_en": "Master Tung · Guangming",
+          "label_zh": "董氏奇穴 · 光明穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Guangming (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/guangming-t-7728",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 光明穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Guangming (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8849,8 +9941,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglongyi-t-7729",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8861,10 +9953,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 雙龍一穴",
-          "label_en": "Master Tung · Shuanglongyi",
+          "label_zh": "董氏奇穴 · 雙龍一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuanglongyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglongyi-t-7729",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 雙龍一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuanglongyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8906,8 +10005,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglonger-t-7730",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8918,10 +10017,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 雙龍二穴",
-          "label_en": "Master Tung · Shuanglonger",
+          "label_zh": "董氏奇穴 · 雙龍二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuanglonger (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglonger-t-7730",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 雙龍二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuanglonger (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -8967,8 +10073,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongguan-t-8801",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -8979,10 +10085,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 通關穴",
-          "label_en": "Master Tung · Tongguan",
+          "label_zh": "董氏奇穴 · 通關穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tongguan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongguan-t-8801",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 通關穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tongguan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9027,8 +10140,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshan-t-8802",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9037,10 +10150,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 通山穴",
-          "label_en": "Master Tung · Tongshan",
+          "label_zh": "董氏奇穴 · 通山穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tongshan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshan-t-8802",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 通山穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tongshan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9083,8 +10203,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongtian-t-8803",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9093,10 +10213,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 通天穴",
-          "label_en": "Master Tung · Tongtian",
+          "label_zh": "董氏奇穴 · 通天穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tongtian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongtian-t-8803",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 通天穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tongtian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9138,8 +10265,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeiyi-t-8804",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9148,10 +10275,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 姐妹一穴",
-          "label_en": "Master Tung · Jiemeiyi",
+          "label_zh": "董氏奇穴 · 姐妹一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jiemeiyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeiyi-t-8804",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 姐妹一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jiemeiyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9193,8 +10327,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeier-t-8805",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9203,10 +10337,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 姐妹二穴",
-          "label_en": "Master Tung · Jiemeier",
+          "label_zh": "董氏奇穴 · 姐妹二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jiemeier (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeier-t-8805",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 姐妹二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jiemeier (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9248,8 +10389,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeisan-t-8806",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9258,10 +10399,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 姐妹三穴",
-          "label_en": "Master Tung · Jiemeisan",
+          "label_zh": "董氏奇穴 · 姐妹三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jiemeisan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeisan-t-8806",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 姐妹三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jiemeisan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9303,8 +10451,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoyi-t-8807",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9313,10 +10461,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 感冒一穴",
-          "label_en": "Master Tung · Ganmaoyi",
+          "label_zh": "董氏奇穴 · 感冒一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ganmaoyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoyi-t-8807",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 感冒一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ganmaoyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9358,8 +10513,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoer-t-8808",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9368,10 +10523,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 感冒二穴",
-          "label_en": "Master Tung · Ganmaoer",
+          "label_zh": "董氏奇穴 · 感冒二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ganmaoer (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoer-t-8808",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 感冒二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ganmaoer (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9413,8 +10575,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshen-t-8809",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9425,10 +10587,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 通腎穴",
-          "label_en": "Master Tung · Tongshen",
+          "label_zh": "董氏奇穴 · 通腎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tongshen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshen-t-8809",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 通腎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tongshen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9470,8 +10639,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongwei-t-8810",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9480,10 +10649,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 通胃穴",
-          "label_en": "Master Tung · Tongwei",
+          "label_zh": "董氏奇穴 · 通胃穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tongwei (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongwei-t-8810",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 通胃穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tongwei (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9525,8 +10701,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongbei-t-8811",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9535,10 +10711,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 通背穴",
-          "label_en": "Master Tung · Tongbei",
+          "label_zh": "董氏奇穴 · 通背穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tongbei (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongbei-t-8811",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 通背穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tongbei (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9580,8 +10763,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/minghuang-t-8812",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9592,10 +10775,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 明黃穴",
-          "label_en": "Master Tung · Minghuang",
+          "label_zh": "董氏奇穴 · 明黃穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Minghuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/minghuang-t-8812",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 明黃穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Minghuang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9637,8 +10827,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-8813",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9649,10 +10839,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 天黃穴",
-          "label_en": "Master Tung · Tianhuang",
+          "label_zh": "董氏奇穴 · 天黃穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tianhuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-8813",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 天黃穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tianhuang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9694,8 +10891,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihuang-t-8814",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9706,10 +10903,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 其黃穴",
-          "label_en": "Master Tung · Qihuang",
+          "label_zh": "董氏奇穴 · 其黃穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qihuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihuang-t-8814",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 其黃穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qihuang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9751,8 +10955,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhi-t-8815",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9761,10 +10965,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火枝穴",
-          "label_en": "Master Tung · Huozhi",
+          "label_zh": "董氏奇穴 · 火枝穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huozhi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhi-t-8815",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火枝穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huozhi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9806,8 +11017,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoquan-t-8816",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9816,10 +11027,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火全穴",
-          "label_en": "Master Tung · Huoquan",
+          "label_zh": "董氏奇穴 · 火全穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huoquan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoquan-t-8816",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火全穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huoquan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9865,8 +11083,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simazhong-t-8817",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9877,10 +11095,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 駟馬中穴",
-          "label_en": "Master Tung · Simazhong",
+          "label_zh": "董氏奇穴 · 四馬中穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Simazhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/simazhong-t-8817",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四馬中穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Simazhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9923,8 +11148,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simashang-t-8818",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9935,10 +11160,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 駟馬上穴",
-          "label_en": "Master Tung · Simashang",
+          "label_zh": "董氏奇穴 · 駟馬上穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Simashang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/simashang-t-8818",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 駟馬上穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Simashang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -9980,8 +11212,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simaxia-t-8819",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -9992,10 +11224,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 駟馬下穴",
-          "label_en": "Master Tung · Simaxia",
+          "label_zh": "董氏奇穴 · 駟馬下穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Simaxia (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/simaxia-t-8819",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 駟馬下穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Simaxia (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10037,8 +11276,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaquan-t-8820",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10047,10 +11286,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 下泉穴",
-          "label_en": "Master Tung · Xiaquan",
+          "label_zh": "董氏奇穴 · 下泉穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiaquan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaquan-t-8820",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 下泉穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiaquan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10092,8 +11338,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongquan-t-8821",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10102,10 +11348,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 中泉穴",
-          "label_en": "Master Tung · Zhongquan",
+          "label_zh": "董氏奇穴 · 中泉穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongquan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongquan-t-8821",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 中泉穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongquan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10147,8 +11400,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangquan-t-8822",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10157,10 +11410,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上泉穴",
-          "label_en": "Master Tung · Shangquan",
+          "label_zh": "董氏奇穴 · 上泉穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangquan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangquan-t-8822",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上泉穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangquan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10202,8 +11462,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianxia-t-8823",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10212,10 +11472,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 金前下穴",
-          "label_en": "Master Tung · Jinqianxia",
+          "label_zh": "董氏奇穴 · 金前下穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jinqianxia (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianxia-t-8823",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 金前下穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jinqianxia (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10257,8 +11524,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianshang-t-8824",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10267,10 +11534,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 金前上穴",
-          "label_en": "Master Tung · Jinqianshang",
+          "label_zh": "董氏奇穴 · 金前上穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jinqianshang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianshang-t-8824",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 金前上穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jinqianshang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10312,8 +11586,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjiuli-t-8825",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10322,10 +11596,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 中九里穴",
-          "label_en": "Master Tung · Zhongjiuli",
+          "label_zh": "董氏奇穴 · 中九里穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongjiuli (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjiuli-t-8825",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 中九里穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongjiuli (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10367,8 +11648,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangjiuli-t-8826",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10377,10 +11658,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上九里穴",
-          "label_en": "Master Tung · Shangjiuli",
+          "label_zh": "董氏奇穴 · 上九里穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangjiuli (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangjiuli-t-8826",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上九里穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangjiuli (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10422,8 +11710,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiajiuli-t-8827",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10432,10 +11720,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 下九里穴",
-          "label_en": "Master Tung · Xiajiuli",
+          "label_zh": "董氏奇穴 · 下九里穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiajiuli (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiajiuli-t-8827",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 下九里穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiajiuli (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10477,8 +11772,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jie-t-8828",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10487,10 +11782,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 解穴",
-          "label_en": "Master Tung · Jie",
+          "label_zh": "董氏奇穴 · 解穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jie (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jie-t-8828",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 解穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jie (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10532,8 +11834,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongguan-t-8829",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10542,10 +11844,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 内通关穴",
-          "label_en": "Master Tung · Neitongguan",
+          "label_zh": "董氏奇穴 · 内通关穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Neitongguan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongguan-t-8829",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 内通关穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Neitongguan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10587,8 +11896,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongshan-t-8830",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10597,10 +11906,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 內通山穴",
-          "label_en": "Master Tung · Neitongshan",
+          "label_zh": "董氏奇穴 · 內通山穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Neitongshan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongshan-t-8830",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 內通山穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Neitongshan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10642,8 +11958,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongtian-t-8831",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10652,10 +11968,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 內通天穴",
-          "label_en": "Master Tung · Neitongtian",
+          "label_zh": "董氏奇穴 · 內通天穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Neitongtian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongtian-t-8831",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 內通天穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Neitongtian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10697,8 +12020,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shiyin-t-8832",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10707,10 +12030,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 失音穴",
-          "label_en": "Master Tung · Shiyin",
+          "label_zh": "董氏奇穴 · 失音穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shiyin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shiyin-t-8832",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 失音穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shiyin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10752,8 +12082,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingshang-t-8833",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10764,10 +12094,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 金營上穴",
-          "label_en": "Master Tung · Jinyingshang",
+          "label_zh": "董氏奇穴 · 金營上穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jinyingshang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingshang-t-8833",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 金營上穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jinyingshang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10809,8 +12146,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingxia-t-8834",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10821,10 +12158,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 金營下穴",
-          "label_en": "Master Tung · Jinyingxia",
+          "label_zh": "董氏奇穴 · 金營下穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jinyingxia (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingxia-t-8834",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 金營下穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jinyingxia (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10866,8 +12210,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/piyi-t-8835",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10876,10 +12220,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 脾一穴",
-          "label_en": "Master Tung · Piyi",
+          "label_zh": "董氏奇穴 · 脾一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Piyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/piyi-t-8835",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 脾一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Piyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10921,8 +12272,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pier-t-8836",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10931,10 +12282,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 脾二穴",
-          "label_en": "Master Tung · Pier",
+          "label_zh": "董氏奇穴 · 脾二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Pier (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/pier-t-8836",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 脾二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Pier (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -10976,8 +12334,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pisan-t-8837",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -10986,10 +12344,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 脾三穴",
-          "label_en": "Master Tung · Pisan",
+          "label_zh": "董氏奇穴 · 脾三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Pisan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/pisan-t-8837",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 脾三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Pisan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11031,8 +12396,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-8838",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11041,10 +12406,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木府穴",
-          "label_en": "Master Tung · Mufu",
+          "label_zh": "董氏奇穴 · 木府穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Mufu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-8838",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木府穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Mufu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11086,8 +12458,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliang-t-8839",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11096,10 +12468,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木梁穴",
-          "label_en": "Master Tung · Muliang",
+          "label_zh": "董氏奇穴 · 木梁穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muliang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliang-t-8839",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木梁穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muliang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11141,8 +12520,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muchang-t-8840",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11151,10 +12530,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木昌穴",
-          "label_en": "Master Tung · Muchang",
+          "label_zh": "董氏奇穴 · 木昌穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muchang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muchang-t-8840",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木昌穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muchang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11196,8 +12582,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofu-t-8841",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11206,10 +12592,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火府穴",
-          "label_en": "Master Tung · Huofu",
+          "label_zh": "董氏奇穴 · 火府穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huofu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofu-t-8841",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火府穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huofu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11251,8 +12644,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoliang-t-8842",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11261,10 +12654,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火梁穴",
-          "label_en": "Master Tung · Huoliang",
+          "label_zh": "董氏奇穴 · 火梁穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huoliang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoliang-t-8842",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火梁穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huoliang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11306,8 +12706,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochang-t-8843",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11316,10 +12716,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火昌穴",
-          "label_en": "Master Tung · Huochang",
+          "label_zh": "董氏奇穴 · 火昌穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huochang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochang-t-8843",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火昌穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huochang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11361,8 +12768,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqi-t-8844",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11371,10 +12778,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上奇穴",
-          "label_en": "Master Tung · Shangqi",
+          "label_zh": "董氏奇穴 · 上奇穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangqi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqi-t-8844",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上奇穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangqi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11416,8 +12830,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqi-t-8845",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11426,10 +12840,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 下奇穴",
-          "label_en": "Master Tung · Xiaqi",
+          "label_zh": "董氏奇穴 · 下奇穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiaqi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqi-t-8845",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 下奇穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiaqi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11471,8 +12892,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tuling-t-8846",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11483,10 +12904,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 土靈穴",
-          "label_en": "Master Tung · Tuling",
+          "label_zh": "董氏奇穴 · 土靈穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tuling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tuling-t-8846",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 土靈穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tuling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11528,8 +12956,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuang-t-8847",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11540,10 +12968,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木黄穴",
-          "label_en": "Master Tung · Muhuang",
+          "label_zh": "董氏奇穴 · 木黄穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muhuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuang-t-8847",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木黄穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muhuang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11585,8 +13020,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingyi-t-8848",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11597,10 +13032,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三靈一穴",
-          "label_en": "Master Tung · Sanlingyi",
+          "label_zh": "董氏奇穴 · 三靈一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanlingyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingyi-t-8848",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三靈一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanlingyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11642,8 +13084,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlinger-t-8849",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11654,10 +13096,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三靈二穴",
-          "label_en": "Master Tung · Sanlinger",
+          "label_zh": "董氏奇穴 · 三靈二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanlinger (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlinger-t-8849",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三靈二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanlinger (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11699,8 +13148,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingsan-t-8850",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11711,10 +13160,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三靈三穴",
-          "label_en": "Master Tung · Sanlingsan",
+          "label_zh": "董氏奇穴 · 三靈三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanlingsan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingsan-t-8850",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三靈三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanlingsan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11756,8 +13212,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qili-t-8851",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11766,10 +13222,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 七里穴",
-          "label_en": "Master Tung · Qili",
+          "label_zh": "董氏奇穴 · 七里穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qili (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qili-t-8851",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 七里穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qili (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11811,8 +13274,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erhuan-t-9901",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11821,10 +13284,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 耳環穴",
-          "label_en": "Master Tung · Erhuan",
+          "label_zh": "董氏奇穴 · 耳環穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Erhuan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/erhuan-t-9901",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 耳環穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Erhuan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11866,8 +13336,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muer-t-9902",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11876,10 +13346,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木耳穴",
-          "label_en": "Master Tung · Muer",
+          "label_zh": "董氏奇穴 · 木耳穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muer (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muer-t-9902",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木耳穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muer (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11921,8 +13398,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huo-er-t-9903",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11931,10 +13408,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 火耳穴",
-          "label_en": "Master Tung · Huoer",
+          "label_zh": "董氏奇穴 · 火耳穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huo Er (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huo-er-t-9903",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 火耳穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Huo Er (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -11976,8 +13460,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tu-er-t-9904",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -11986,10 +13470,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 土耳穴",
-          "label_en": "Master Tung · Tuer",
+          "label_zh": "董氏奇穴 · 土耳穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tu Er (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tu-er-t-9904",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 土耳穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tu Er (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12031,8 +13522,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-er-t-9905",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12041,10 +13532,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 金耳穴",
-          "label_en": "Master Tung · Jiner",
+          "label_zh": "董氏奇穴 · 金耳穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jin Er (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-er-t-9905",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 金耳穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jin Er (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12086,8 +13584,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shui-er-t-9906",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12096,10 +13594,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水耳穴",
-          "label_en": "Master Tung · Shuier",
+          "label_zh": "董氏奇穴 · 水耳穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shui Er (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shui-er-t-9906",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水耳穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shui Er (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12141,8 +13646,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/er-bei-t-9907",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12151,10 +13656,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 耳背穴",
-          "label_en": "Master Tung · Erbei",
+          "label_zh": "董氏奇穴 · 耳背穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Er Bei (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/er-bei-t-9907",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 耳背穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Er Bei (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12196,8 +13708,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ersan-t-9908",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12206,10 +13718,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 耳三穴",
-          "label_en": "Master Tung · Ersan",
+          "label_zh": "董氏奇穴 · 耳三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ersan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ersan-t-9908",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 耳三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ersan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12251,8 +13770,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shener-t-9909",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12261,10 +13780,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 神耳",
-          "label_en": "Master Tung · Shener",
+          "label_zh": "董氏奇穴 · 神耳 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shener (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shener-t-9909",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 神耳 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shener (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12306,8 +13832,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianer-t-9910",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12316,10 +13842,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 天耳",
-          "label_en": "Master Tung · Tianer",
+          "label_zh": "董氏奇穴 · 天耳 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Tianer (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianer-t-9910",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 天耳 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Tianer (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12361,8 +13894,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/eryuan-t-9911",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12371,10 +13904,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 耳圓",
-          "label_en": "Master Tung · Eryuan",
+          "label_zh": "董氏奇穴 · 耳圓 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Eryuan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/eryuan-t-9911",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 耳圓 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Eryuan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12416,8 +13956,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muying-t-9912",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12426,10 +13966,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木硬",
-          "label_en": "Master Tung · Muying",
+          "label_zh": "董氏奇穴 · 木硬 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muying (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muying-t-9912",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木硬 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muying (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12471,8 +14018,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waier-t-9913",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12481,10 +14028,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 外耳",
-          "label_en": "Master Tung · Waier",
+          "label_zh": "董氏奇穴 · 外耳 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Waier (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/waier-t-9913",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 外耳 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Waier (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12526,8 +14080,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pifu-t-9914",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12536,10 +14090,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 皮膚",
-          "label_en": "Master Tung · Pifu",
+          "label_zh": "董氏奇穴 · 皮膚 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Pifu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/pifu-t-9914",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 皮膚 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Pifu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12581,8 +14142,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiangyadian-t-9915",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12591,10 +14152,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 降壓点",
-          "label_en": "Master Tung · Jiangyadian",
+          "label_zh": "董氏奇穴 · 降壓点 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jiangyadian (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiangyadian-t-9915",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 降壓点 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jiangyadian (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12636,8 +14204,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchashenjing-t-9916",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12646,10 +14214,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三叉神經",
-          "label_en": "Master Tung · Sanchashenjing",
+          "label_zh": "董氏奇穴 · 三叉神經 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sanchashenjing (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchashenjing-t-9916",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三叉神經 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sanchashenjing (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12691,8 +14266,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongliu-t-9917",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12701,10 +14276,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腫瘤",
-          "label_en": "Master Tung · Zhongliu",
+          "label_zh": "董氏奇穴 · 腫瘤 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhongliu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongliu-t-9917",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腫瘤 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhongliu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12746,8 +14328,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaxin-t-9918",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12756,10 +14338,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 狹心",
-          "label_en": "Master Tung · Xiaxin",
+          "label_zh": "董氏奇穴 · 狹心 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xiaxin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaxin-t-9918",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 狹心 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xiaxin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12801,8 +14390,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiazhuangxianzhong-t-9919",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12811,10 +14400,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 甲狀腺腫",
-          "label_en": "Master Tung · Jiazhuangxianzhong",
+          "label_zh": "董氏奇穴 · 甲狀腺腫 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jiazhuangxianzhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiazhuangxianzhong-t-9919",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 甲狀腺腫 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jiazhuangxianzhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12856,8 +14452,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqizhong-t-9920",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12866,10 +14462,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 肺氣腫",
-          "label_en": "Master Tung · Feiqizhong",
+          "label_zh": "董氏奇穴 · 肺氣腫 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Feiqizhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqizhong-t-9920",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 肺氣腫 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Feiqizhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12911,8 +14514,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xingfen-t-9921",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12921,10 +14524,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 興奮点",
-          "label_en": "Master Tung · Xingfendian",
+          "label_zh": "董氏奇穴 · 興奮点 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Xingfen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xingfen-t-9921",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 興奮点 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Xingfen (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -12966,8 +14576,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenghui-t-101001",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -12978,10 +14588,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 正會穴",
-          "label_en": "Master Tung · Zhenghui",
+          "label_zh": "董氏奇穴 · 正會穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhenghui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenghui-t-101001",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 正會穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhenghui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13023,8 +14640,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouyuan-t-101002",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13035,10 +14652,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 州圓穴",
-          "label_en": "Master Tung · Zhouyuan",
+          "label_zh": "董氏奇穴 · 州圓穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhouyuan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouyuan-t-101002",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 州圓穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhouyuan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13080,8 +14704,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoukun-t-101003",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13090,10 +14714,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 州昆穴",
-          "label_en": "Master Tung · Zhoukun",
+          "label_zh": "董氏奇穴 · 州昆穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhoukun (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoukun-t-101003",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 州昆穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhoukun (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13135,8 +14766,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoulun-t-101004",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13147,10 +14778,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 州崙穴",
-          "label_en": "Master Tung · Zhoulun",
+          "label_zh": "董氏奇穴 · 州崙穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhoulun (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoulun-t-101004",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 州崙穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhoulun (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13192,8 +14830,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qianhui-t-101005",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13204,10 +14842,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 前會穴",
-          "label_en": "Master Tung · Qianhui",
+          "label_zh": "董氏奇穴 · 前會穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qianhui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qianhui-t-101005",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 前會穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qianhui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13249,8 +14894,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houhui-t-101006",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13261,10 +14906,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 後會穴",
-          "label_en": "Master Tung · Houhui",
+          "label_zh": "董氏奇穴 · 後會穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Houhui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/houhui-t-101006",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 後會穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Houhui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13306,8 +14958,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zongshu-t-101007",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13318,10 +14970,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 總樞穴",
-          "label_en": "Master Tung · Zongshu",
+          "label_zh": "董氏奇穴 · 總樞穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zongshu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zongshu-t-101007",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 總樞穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zongshu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13367,8 +15026,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenjing-t-101008",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13379,10 +15038,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 鎮靜穴",
-          "label_en": "Master Tung · Zhenjing",
+          "label_zh": "董氏奇穴 · 馬金水穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Majinshui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenjing-t-101008",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 馬金水穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Majinshui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13425,8 +15091,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangli-t-101009",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13435,10 +15101,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 上里穴",
-          "label_en": "Master Tung · Shangli",
+          "label_zh": "董氏奇穴 · 上里穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shangli (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangli-t-101009",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 上里穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shangli (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13480,8 +15153,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuer-t-101010",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13490,10 +15163,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四腑二穴",
-          "label_en": "Master Tung · Sifuer",
+          "label_zh": "董氏奇穴 · 四腑二穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sifuer (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuer-t-101010",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四腑二穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sifuer (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13535,8 +15215,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuyi-t-101011",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13545,10 +15225,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四腑一穴",
-          "label_en": "Master Tung · Sifuyi",
+          "label_zh": "董氏奇穴 · 四腑一穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Sifuyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuyi-t-101011",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 四腑一穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Sifuyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13590,8 +15277,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengben-t-101012",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13600,10 +15287,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 正本穴",
-          "label_en": "Master Tung · Zhengben",
+          "label_zh": "董氏奇穴 · 正本穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhengben (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengben-t-101012",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 正本穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhengben (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13645,8 +15339,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/majinshui-t-101013",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13657,10 +15351,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 馬金水穴",
-          "label_en": "Master Tung · Majinshui",
+          "label_zh": "董氏奇穴 · 馬金水穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Majinshui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/majinshui-t-101013",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 馬金水穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Majinshui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13702,8 +15403,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/makuaishui-t-101014",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13714,10 +15415,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 馬快水穴",
-          "label_en": "Master Tung · Makuaishui",
+          "label_zh": "董氏奇穴 · 馬快水穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Makuaishui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/makuaishui-t-101014",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 馬快水穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Makuaishui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13759,8 +15467,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fukuai-t-101015",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13769,10 +15477,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腑快穴",
-          "label_en": "Master Tung · Fukuai",
+          "label_zh": "董氏奇穴 · 腑快穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fukuai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fukuai-t-101015",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腑快穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fukuai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13814,8 +15529,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/liukuai-t-101016",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13824,10 +15539,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 六快穴",
-          "label_en": "Master Tung · Liukuai",
+          "label_zh": "董氏奇穴 · 六快穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Liukuai (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/liukuai-t-101016",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 六快穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Liukuai (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13873,8 +15595,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qikuai-t-101017",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13883,10 +15605,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 七快穴",
-          "label_en": "Master Tung · Qikuai",
+          "label_zh": "董氏奇穴 · 鼻翼穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Biyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qikuai-t-101017",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 鼻翼穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Biyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13929,8 +15658,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muzhi-t-101018",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13939,10 +15668,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木枝穴",
-          "label_en": "Master Tung · Muzhi",
+          "label_zh": "董氏奇穴 · 木枝穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Muzhi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muzhi-t-101018",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 木枝穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Muzhi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -13984,8 +15720,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuitong-t-101019",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -13994,10 +15730,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水通穴",
-          "label_en": "Master Tung · Shuitong",
+          "label_zh": "董氏奇穴 · 水通穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuitong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuitong-t-101019",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水通穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuitong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14039,8 +15782,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijin-t-101020",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14049,10 +15792,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水金穴",
-          "label_en": "Master Tung · Shuijin",
+          "label_zh": "董氏奇穴 · 水金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuijin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijin-t-101020",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuijin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14094,8 +15844,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yuhuo-t-101021",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14104,10 +15854,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 玉火穴",
-          "label_en": "Master Tung · Yuhuo",
+          "label_zh": "董氏奇穴 · 玉火穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Yuhuo (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/yuhuo-t-101021",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 玉火穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Yuhuo (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14149,8 +15906,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/biyi-t-101022",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14159,10 +15916,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 鼻翼穴",
-          "label_en": "Master Tung · Biyi",
+          "label_zh": "董氏奇穴 · 鼻翼穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Biyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/biyi-t-101022",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 鼻翼穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Biyi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14204,8 +15968,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouhuo-t-101023",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14214,10 +15978,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 州火穴",
-          "label_en": "Master Tung · Zhouhuo",
+          "label_zh": "董氏奇穴 · 州火穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhouhuo (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouhuo-t-101023",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 州火穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhouhuo (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14259,8 +16030,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoujin-t-101024",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14269,10 +16040,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 州金穴",
-          "label_en": "Master Tung · Zhoujin",
+          "label_zh": "董氏奇穴 · 州金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhoujin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoujin-t-101024",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 州金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhoujin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14314,8 +16092,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoushui-t-101025",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14324,10 +16102,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 州水穴",
-          "label_en": "Master Tung · Zhoushui",
+          "label_zh": "董氏奇穴 · 州水穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhoushui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoushui-t-101025",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 州水穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Zhoushui (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14369,8 +16154,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhishang-t-dt01",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14379,10 +16164,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 分枝上穴",
-          "label_en": "Master Tung · Fenzhishang",
+          "label_zh": "董氏奇穴 · 分枝上穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fenzhishang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhishang-t-dt01",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 分枝上穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fenzhishang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14424,8 +16216,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhixia-t-dt02",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14434,10 +16226,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 分枝下穴",
-          "label_en": "Master Tung · Fenzhixia",
+          "label_zh": "董氏奇穴 · 分枝下穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fenzhixia (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhixia-t-dt02",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 分枝下穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fenzhixia (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14479,8 +16278,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qixing-t-dt03",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14489,10 +16288,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 七星穴",
-          "label_en": "Master Tung · Qixing",
+          "label_zh": "董氏奇穴 · 七星穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Qixing (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/qixing-t-dt03",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 七星穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Qixing (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14534,8 +16340,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuling-t-dt04",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14546,10 +16352,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 五嶺穴",
-          "label_en": "Master Tung · Wuling",
+          "label_zh": "董氏奇穴 · 五嶺穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Wuling (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuling-t-dt04",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 五嶺穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Wuling (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14591,8 +16404,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-feng-t-dt05",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14601,10 +16414,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 双凤穴",
-          "label_en": "Master Tung · Shuangfeng",
+          "label_zh": "董氏奇穴 · 双凤穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuang Feng (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-feng-t-dt05",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 双凤穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuang Feng (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14646,8 +16466,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiu-hou-t-dt06",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14656,10 +16476,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 九猴穴",
-          "label_en": "Master Tung · Jiuhou",
+          "label_zh": "董氏奇穴 · 九猴穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jiu Hou (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiu-hou-t-dt06",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 九猴穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jiu Hou (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14701,8 +16528,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jin-t-dt07",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14711,10 +16538,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三金穴",
-          "label_en": "Master Tung · Sanjin",
+          "label_zh": "董氏奇穴 · 三金穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · San Jin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jin-t-dt07",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · San Jin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14756,8 +16590,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jing-zhi-t-dt08",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14766,10 +16600,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 精枝穴",
-          "label_en": "Master Tung · Jingzhi",
+          "label_zh": "董氏奇穴 · 精枝穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jing Zhi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jing-zhi-t-dt08",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 精枝穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jing Zhi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14811,8 +16652,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-lin-t-dt09",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14821,10 +16662,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 金林穴",
-          "label_en": "Master Tung · Jinlin",
+          "label_zh": "董氏奇穴 · 金林穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jin Lin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-lin-t-dt09",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 金林穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jin Lin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14866,8 +16714,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ding-zhu-t-dt10",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14876,10 +16724,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 顶柱穴",
-          "label_en": "Master Tung · Dingzhu",
+          "label_zh": "董氏奇穴 · 顶柱穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ding Zhu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ding-zhu-t-dt10",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 顶柱穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ding Zhu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14921,8 +16776,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houxin-t-dt11",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14933,10 +16788,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 後心穴",
-          "label_en": "Master Tung · Houxin",
+          "label_zh": "董氏奇穴 · 後心穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Houxin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/houxin-t-dt11",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 後心穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Houxin (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -14978,8 +16840,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaosan-t-dt12",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -14988,10 +16850,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 感冒三穴",
-          "label_en": "Master Tung · Ganmaosan",
+          "label_zh": "董氏奇穴 · 感冒三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Ganmaosan (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaosan-t-dt12",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 感冒三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Ganmaosan (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15033,8 +16902,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuizhong-t-dt13",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15043,10 +16912,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水中穴",
-          "label_en": "Master Tung · Shuizhong",
+          "label_zh": "董氏奇穴 · 水中穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuizhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuizhong-t-dt13",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水中穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuizhong (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15088,8 +16964,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuifu-t-dt14",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15098,10 +16974,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 水腑穴",
-          "label_en": "Master Tung · Shuifu",
+          "label_zh": "董氏奇穴 · 水腑穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuifu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuifu-t-dt14",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 水腑穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuifu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15143,8 +17026,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jiang-t-dt15",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15153,10 +17036,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 三江穴",
-          "label_en": "Master Tung · Sanjiang",
+          "label_zh": "董氏奇穴 · 三江穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · San Jiang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jiang-t-dt15",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 三江穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · San Jiang (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15198,8 +17088,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-he-t-dt16",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15208,10 +17098,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 双河穴",
-          "label_en": "Master Tung · Shuanghe",
+          "label_zh": "董氏奇穴 · 双河穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shuang He (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-he-t-dt16",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 双河穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shuang He (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15253,8 +17150,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxiao-t-dt17",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15263,10 +17160,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 沖霄穴",
-          "label_en": "Master Tung · Chongxiao",
+          "label_zh": "董氏奇穴 · 沖霄穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Chongxiao (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxiao-t-dt17",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 沖霄穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Chongxiao (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15308,8 +17212,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/hou-e-jiu-t-vt01",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15318,10 +17222,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 喉蛾九穴",
-          "label_en": "Master Tung · Houejiu",
+          "label_zh": "董氏奇穴 · 喉蛾九穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Hou E Jiu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/hou-e-jiu-t-vt01",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 喉蛾九穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Hou E Jiu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15363,8 +17274,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shi-er-hou-t-vt02",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15373,10 +17284,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 十二猴穴",
-          "label_en": "Master Tung · Shierhou",
+          "label_zh": "董氏奇穴 · 十二猴穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Shi Er Hou (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/shi-er-hou-t-vt02",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 十二猴穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Shi Er Hou (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15418,8 +17336,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-wu-t-vt03",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15428,10 +17346,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 金五穴",
-          "label_en": "Master Tung · Jinwu",
+          "label_zh": "董氏奇穴 · 金五穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Jin Wu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-wu-t-vt03",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 金五穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Jin Wu (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15473,8 +17398,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wei-mao-qi-t-vt04",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15483,10 +17408,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 胃毛七穴",
-          "label_en": "Master Tung · Weimaoqi",
+          "label_zh": "董氏奇穴 · 胃毛七穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Wei Mao Qi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/wei-mao-qi-t-vt04",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 胃毛七穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Wei Mao Qi (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
@@ -15528,8 +17460,8 @@ window.ACUTING_TUNG_INDEX = {
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
-        "https://www.mastertungacupuncture.org/"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fu-chao-er-shi-san-t-vt05",
+        "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/"
       ],
       "review_status": "sourced_tung_record",
       "public_safe": false,
@@ -15538,10 +17470,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腑巢二十三穴",
-          "label_en": "Master Tung · Fuchaoershisan",
+          "label_zh": "董氏奇穴 · 腑巢二十三穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fu Chao Er Shi San (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fu-chao-er-shi-san-t-vt05",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 腑巢二十三穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · Fu Chao Er Shi San (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e8%91%a3%e6%b0%8f%e7%a9%b4%e4%bd%8d%e8%a9%b3%e8%a7%a3/",
           "link_status": "direct"
         }
       ],
