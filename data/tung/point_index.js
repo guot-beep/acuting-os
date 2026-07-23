@@ -19,27 +19,38 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dajian",
       "name_zh": "大間穴",
       "pinyin": "Dajian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the index finger, 0.5 cun lateral to the center line of the proximal phalanx.",
+      "location_zh": "食指掌側第一節正中央外側五分處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area",
+        "Small Intestine reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心之神經",
+        "小腸之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hernia",
+        "Intestinal qi pain",
+        "Corner eye pain",
+        "Palpitations",
+        "Knee pain"
       ],
       "indications_zh": [
-        "待補"
+        "小腸氣",
+        "疝氣",
+        "眼角痛",
+        "心悸",
+        "膝蓋痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dajian-t-1101"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -55,7 +66,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.3寸；或用三棱針點刺出血。",
+      "reaction_area_zh": "心之神經、小腸之神經"
     },
     {
       "id": "tung.11.02",
@@ -70,27 +83,39 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaojian",
       "name_zh": "小間穴",
       "pinyin": "Xiaojian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the index finger, 0.5 cun lateral and 0.25 cun distal to the proximal phalanx midpoint.",
+      "location_zh": "食指掌側第一節正中央外側五分偏下二分半處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lung reaction area",
+        "Heart reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肺之神經",
+        "心之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Bronchitis",
+        "Yellow sputum cough",
+        "Chest fullness",
+        "Hernia",
+        "Knee pain"
       ],
       "indications_zh": [
-        "待補"
+        "支氣管炎",
+        "吐黃痰",
+        "胸悶",
+        "小腸氣",
+        "疝氣",
+        "膝蓋痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojian-t-1102"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -106,7 +131,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.3寸。",
+      "reaction_area_zh": "肺之神經、心之神經"
     },
     {
       "id": "tung.11.03",
@@ -121,27 +148,37 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fujian",
       "name_zh": "浮間穴",
       "pinyin": "Fujian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the index finger, 0.5 cun lateral to the center line of the middle phalanx.",
+      "location_zh": "食指掌側第二節正中央外側五分處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area",
+        "Small Intestine secondary reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心之神經",
+        "小腸之副神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hernia",
+        "Urethritis",
+        "Toothache",
+        "Epigastric pain"
       ],
       "indications_zh": [
-        "待補"
+        "疝氣",
+        "小腸氣",
+        "尿道炎",
+        "牙痛",
+        "胃脘痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fujian-t-1103"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -157,7 +194,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.3寸。",
+      "reaction_area_zh": "心之神經、小腸之副神經"
     },
     {
       "id": "tung.11.04",
@@ -172,27 +211,37 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Waijian",
       "name_zh": "外間穴",
       "pinyin": "Waijian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the index finger, 0.5 cun lateral to the center line of the middle phalanx, slightly proximal.",
+      "location_zh": "食指掌側第二節正中央外側五分偏上一分半處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area",
+        "Small Intestine reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心之神經",
+        "小腸之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hernia",
+        "Toothache",
+        "Stomachache",
+        "Enteritis"
       ],
       "indications_zh": [
-        "待補"
+        "疝氣",
+        "小腸氣",
+        "牙痛",
+        "胃痛",
+        "腸炎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waijian-t-1104"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -208,7 +257,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.3寸。",
+      "reaction_area_zh": "心之神經、小腸之神經"
     },
     {
       "id": "tung.11.05",
@@ -223,27 +274,35 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongjian",
       "name_zh": "中間穴",
       "pinyin": "Zhongjian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the index finger, at the exact midpoint of the proximal phalanx.",
+      "location_zh": "食指掌側第一節正中央處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Hernia",
+        "Palpitations",
+        "Chest fullness",
+        "Knee pain"
       ],
       "indications_zh": [
-        "待補"
+        "疝氣",
+        "小腸氣",
+        "心悸",
+        "胸悶",
+        "膝蓋痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjian-t-1105"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -259,7 +318,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.3寸。",
+      "reaction_area_zh": "心之神經"
     },
     {
       "id": "tung.11.06",
@@ -274,27 +335,40 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huanchao",
       "name_zh": "還巢穴",
       "pinyin": "Huanchao",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the ring finger, at the exact center of the ulnar side of the middle phalanx.",
+      "location_zh": "無名指中節掌側外側正中央處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Liver reaction area",
+        "Kidney reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肝神經",
+        "腎神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Uterine fibroids",
+        "Ovarian cyst",
+        "Dysmenorrhea",
+        "Irregular menses",
+        "Infertility",
+        "Prevent miscarriage"
       ],
       "indications_zh": [
-        "待補"
+        "子宮肌瘤",
+        "卵巢囊腫",
+        "痛經",
+        "月經不調",
+        "不孕症",
+        "安胎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huanchao-t-1106"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -310,7 +384,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.4寸。常與婦科穴配伍倒馬。",
+      "reaction_area_zh": "肝神經、腎神經"
     },
     {
       "id": "tung.11.07",
@@ -322,30 +398,39 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Zhisima",
-      "name_zh": "指駟馬穴",
+      "name_en": "Muxue",
+      "name_zh": "木穴",
       "pinyin": "Zhisima",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the index finger, 0.3 cun medial to the center line of the proximal phalanx, two points (upper and lower).",
+      "location_zh": "食指掌側第一節內側三分線上下各一穴，共二穴。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Liver reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肝之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Common cold nasal discharge",
+        "Allergic rhinitis",
+        "Skin pruritus",
+        "Palmar hyperhidrosis",
+        "Red eyes"
       ],
       "indications_zh": [
-        "待補"
+        "感冒流涕",
+        "過敏性鼻炎",
+        "皮膚瘙癢",
+        "手汗",
+        "眼赤腫痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisima-t-1107"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -361,7 +446,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.3寸。",
+      "reaction_area_zh": "肝之神經"
     },
     {
       "id": "tung.11.08",
@@ -376,27 +463,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhiwujin & Zhiqianjin",
       "name_zh": "指五金穴, 指千金穴",
       "pinyin": "Zhiwujin & Zhiqianjin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwujin-zhiqianjin-t-1108"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -410,7 +502,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.09",
@@ -425,27 +518,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinxi",
       "name_zh": "心膝穴",
       "pinyin": "Xinxi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinxi-t-1109"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -459,7 +557,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.10",
@@ -474,27 +573,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muhuo",
       "name_zh": "木火穴",
       "pinyin": "Muhuo",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuo-t-1110"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -508,7 +612,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.11",
@@ -523,27 +628,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feixin",
       "name_zh": "肺心穴",
       "pinyin": "Feixin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feixin-t-1111"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -557,7 +667,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.12",
@@ -572,27 +683,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erjiaoming",
       "name_zh": "二角明穴",
       "pinyin": "Erjiaoming",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erjiaoming-t-1112"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -606,7 +722,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.13",
@@ -621,27 +738,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dan",
       "name_zh": "膽穴",
       "pinyin": "Dan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dan-t-1113"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -657,7 +779,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.14",
@@ -672,27 +795,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhisanzhong",
       "name_zh": "指三重穴",
       "pinyin": "Zhisanzhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisanzhong-t-1114"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -706,7 +834,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.15",
@@ -718,30 +847,43 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Zhishen",
-      "name_zh": "指肾穴",
+      "name_en": "Fuke",
+      "name_zh": "婦科穴",
       "pinyin": "Zhishen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the dorsal surface of the thumb, 0.3 cun lateral to the midline on the proximal phalanx, five points arrayed vertically.",
+      "location_zh": "拇指第一節背面外側，距中央線三分處，上下共五穴。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Uterus reaction area",
+        "Gynecological key zone"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "子宮神經",
+        "婦科特效區"
       ],
       "indications_en": [
-        "Pending source review"
+        "Dysmenorrhea",
+        "Irregular menses",
+        "Metritis",
+        "Oophoritis",
+        "Infertility",
+        "Leukorrhea"
       ],
       "indications_zh": [
-        "待補"
+        "痛經",
+        "月經不調",
+        "子宮炎",
+        "卵巢炎",
+        "不孕症",
+        "赤白帶下"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhishen-t-1115"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -755,7 +897,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "貼骨直刺0.2～0.3寸。常與還巢穴配伍倒馬。",
+      "reaction_area_zh": "子宮神經"
     },
     {
       "id": "tung.11.16",
@@ -767,30 +911,41 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Huoxi",
-      "name_zh": "火膝穴",
+      "name_en": "Zhiwu",
+      "name_zh": "制污穴",
       "pinyin": "Huoxi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the dorsal surface of the thumb, along the midline of the proximal phalanx, three points arrayed vertically.",
+      "location_zh": "拇指第一節背面中央線上，上下共三穴。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Spleen reaction area",
+        "Promote healing & reduce swelling"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "脾神經",
+        "行氣清熱消腫"
       ],
       "indications_en": [
-        "Pending source review"
+        "Non-healing wounds",
+        "Chronic ulcers",
+        "Postoperative wound drainage",
+        "Acne",
+        "Boils and furuncles"
       ],
       "indications_zh": [
-        "待補"
+        "傷口不癒合",
+        "久潰不斂",
+        "術後傷口滲液",
+        "痤瘡",
+        "疔瘡腫毒"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoxi-t-1116"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -804,7 +959,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "三棱針點刺出黑血；或直刺0.2～0.3寸。",
+      "reaction_area_zh": "脾神經"
     },
     {
       "id": "tung.11.17",
@@ -816,30 +973,35 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Mu",
-      "name_zh": "木穴",
+      "name_en": "Zhixian",
+      "name_zh": "止涎穴",
       "pinyin": "Mu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the thumb, 0.2 cun medial to the midline on the proximal phalanx, two points.",
+      "location_zh": "拇指第一節掌側內側，距中央線二分處，上下共二穴。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Spleen reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "脾之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Infantile drooling",
+        "Post-stroke mouth salivation",
+        "Spleen deficiency drooling"
       ],
       "indications_zh": [
-        "待補"
+        "小兒流涎",
+        "中風口角流涎",
+        "脾虛流口水"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mu-t-1117"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -853,7 +1015,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.3寸。",
+      "reaction_area_zh": "脾之神經"
     },
     {
       "id": "tung.11.18",
@@ -865,30 +1029,43 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Pizhong",
-      "name_zh": "脾腫穴",
+      "name_en": "Wuhu",
+      "name_zh": "五虎穴",
       "pinyin": "Pizhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the thumb, 0.2 cun lateral to the midline of the proximal phalanx, five points from distal to proximal.",
+      "location_zh": "拇指第一節掌側外側，距中央線二分處，自指尖至指掌關節共五穴（五虎一至五虎五）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Spleen reaction area",
+        "Kidney reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "脾神經",
+        "腎神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "General bone pain",
+        "Gout",
+        "Toe pain",
+        "Heel pain",
+        "Hand bone pain",
+        "Rheumatoid arthritis"
       ],
       "indications_zh": [
-        "待補"
+        "全身骨痛",
+        "痛風",
+        "腳趾痛",
+        "腳跟痛",
+        "手骨痛",
+        "類風濕關節炎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pizhong-t-1118"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -904,7 +1081,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "貼骨直刺0.2～0.3寸。五虎一主手痛，五虎三主足痛，五虎五主腳跟痛。",
+      "reaction_area_zh": "脾神經、腎神經"
     },
     {
       "id": "tung.11.19",
@@ -919,27 +1098,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinchang",
       "name_zh": "心常穴",
       "pinyin": "Xinchang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinchang-t-1119"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -953,7 +1137,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.20",
@@ -968,27 +1153,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muyan",
       "name_zh": "木炎穴",
       "pinyin": "Muyan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muyan-t-1120"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1002,7 +1192,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.21",
@@ -1017,27 +1208,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanyan",
       "name_zh": "三眼穴",
       "pinyin": "Sanyan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanyan-t-1121"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1051,7 +1247,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.22",
@@ -1066,27 +1263,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuyuan",
       "name_zh": "復原穴",
       "pinyin": "Fuyuan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuyuan-t-1122"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1102,7 +1304,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.23",
@@ -1117,27 +1320,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yanhuang",
       "name_zh": "眼黃穴",
       "pinyin": "Yanhuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yanhuang-t-1123"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1153,7 +1361,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.24",
@@ -1168,27 +1377,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuke",
       "name_zh": "婦科穴",
       "pinyin": "Fuke",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuke-t-1124"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1204,7 +1418,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.25",
@@ -1219,27 +1434,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhixian",
       "name_zh": "止涎穴",
       "pinyin": "Zhixian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhixian-t-1125"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1253,7 +1473,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.26",
@@ -1268,27 +1489,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhiwu",
       "name_zh": "制污穴",
       "pinyin": "Zhiwu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwu-t-1126"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1302,7 +1528,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.27",
@@ -1317,27 +1544,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wuhu",
       "name_zh": "五虎穴",
       "pinyin": "Wuhu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuhu-t-1127"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1351,7 +1583,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.28",
@@ -1366,27 +1599,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuangling",
       "name_zh": "雙靈穴",
       "pinyin": "Shuangling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuangling-t-1128"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1402,7 +1640,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.29",
@@ -1417,27 +1656,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muling",
       "name_zh": "木靈穴",
       "pinyin": "Muling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muling-t-1129"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1453,7 +1697,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.30",
@@ -1468,27 +1713,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Baguansanxue",
       "name_zh": "八關三穴",
       "pinyin": "Baguansanxue",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansanxue-t-1130"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1504,7 +1754,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.11.31",
@@ -1519,27 +1770,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Baguansixue",
       "name_zh": "八關四穴",
       "pinyin": "Baguansixue",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
+      "location_zh": "董氏奇穴【手指】傳統穴位。循行部位：手指部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手指反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手指區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/baguansixue-t-1131"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 70,
       "y": 275,
@@ -1555,7 +1811,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.01",
@@ -1567,30 +1824,41 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手部",
       "region_en": "Hand",
       "region_zh": "手部",
-      "name_en": "Chongzi",
+      "name_en": "Zhongzi",
       "name_zh": "重子穴",
       "pinyin": "Chongzi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the hand, between the 1st and 2nd metacarpal bones, near the proximal junction.",
+      "location_zh": "手掌大虎口下，第一掌骨與第二掌骨之間，掌骨底結合部前緣。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lung reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肺之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Back pain",
+        "Scapular pain",
+        "Cough",
+        "Asthma",
+        "Pneumonia",
+        "Pediatric cold"
       ],
       "indications_zh": [
-        "待補"
+        "背痛",
+        "肩胛痛",
+        "咳嗽",
+        "氣喘",
+        "肺炎",
+        "小兒感冒"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongzi-t-2201"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1604,7 +1872,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.5～1.0寸。常與重仙穴配伍倒馬治療背痛。",
+      "reaction_area_zh": "肺之神經"
     },
     {
       "id": "tung.22.02",
@@ -1616,30 +1886,43 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手部",
       "region_en": "Hand",
       "region_zh": "手部",
-      "name_en": "Chongxian",
+      "name_en": "Zhongxian",
       "name_zh": "重仙穴",
       "pinyin": "Chongxian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the palmar surface of the hand, between the 1st and 2nd metacarpal bones, 2 cun proximal to Zhongzi.",
+      "location_zh": "手掌大虎口下，第一掌骨與第二掌骨骨縫間，距重子穴上二寸。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lung reaction area",
+        "Heart reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肺神經",
+        "心神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Back pain",
+        "Chest oppression pain",
+        "Knee pain",
+        "Cough",
+        "Asthma",
+        "Palpitations"
       ],
       "indications_zh": [
-        "待補"
+        "背痛",
+        "胸悶痛",
+        "膝蓋痛",
+        "咳嗽",
+        "氣喘",
+        "心悸"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxian-t-2202"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1653,7 +1936,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.5～1.0寸。與重子穴倒馬配伍為治療背痛特效藥對。",
+      "reaction_area_zh": "肺神經、心神經"
     },
     {
       "id": "tung.22.03",
@@ -1668,27 +1953,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangbai",
       "name_zh": "上白穴",
       "pinyin": "Shangbai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangbai-t-2203"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1702,7 +1992,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.04",
@@ -1717,27 +2008,36 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dabai",
       "name_zh": "大白穴",
       "pinyin": "Dabai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the dorsum of the hand, between the 1st and 2nd metacarpal bones, 0.5 cun distal to Hegu (LI4).",
+      "location_zh": "手背第一掌骨與第二掌骨之間，合谷穴前五分處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lung reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肺之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Pediatric asthma",
+        "High fever",
+        "Sciatica",
+        "Lung cancer",
+        "Headache"
       ],
       "indications_zh": [
-        "待補"
+        "小兒氣喘",
+        "高熱",
+        "坐骨神經痛",
+        "肺癌",
+        "頭痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dabai-t-2204"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1751,7 +2051,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.5～1.0寸；或三棱針點刺出黑血。成人常與靈骨配伍倒馬。",
+      "reaction_area_zh": "肺之神經"
     },
     {
       "id": "tung.22.05",
@@ -1766,27 +2068,39 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Linggu",
       "name_zh": "靈骨穴",
       "pinyin": "Linggu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the dorsum of the hand, at the junction of the 1st and 2nd metacarpal bones, proximal to Hegu (LI4).",
+      "location_zh": "手背第一掌骨與第二掌骨結合處，即合谷穴後上方。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lung reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肺之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Sciatica",
+        "Lower back pain",
+        "Hemiplegia",
+        "Headache",
+        "Tinnitus",
+        "Dysmenorrhea"
       ],
       "indications_zh": [
-        "待補"
+        "坐骨神經痛",
+        "腰痛",
+        "半身不遂",
+        "頭痛",
+        "耳鳴",
+        "痛經",
+        "少腹痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/linggu-t-2205"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1802,7 +2116,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "透刺1.5～2.0寸。與大白穴配伍倒馬，為董氏奇穴第一大穴。",
+      "reaction_area_zh": "肺之神經"
     },
     {
       "id": "tung.22.06",
@@ -1815,29 +2131,40 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Hand",
       "region_zh": "手部",
       "name_en": "Zhongbai",
-      "name_zh": "中白穴, 鬼門穴",
+      "name_zh": "中白穴",
       "pinyin": "Zhongbai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the dorsum of the hand, between the 4th and 5th metacarpal bones, 0.5 cun proximal to Zhongzhu (TE3).",
+      "location_zh": "手背第四掌骨與第五掌骨小頭後方凹陷處（即中渚穴後五分）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Kidney reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "腎之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Kidney deficiency back pain",
+        "Sciatica",
+        "Occipital headache",
+        "Bone spurs",
+        "Vertigo",
+        "Nephritis"
       ],
       "indications_zh": [
-        "待補"
+        "腎虛腰痛",
+        "坐骨神經痛",
+        "後頭痛",
+        "骨刺",
+        "眩暈",
+        "腎炎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongbai-t-2206"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1853,7 +2180,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.5～1.0寸。常與下白穴配伍倒馬。",
+      "reaction_area_zh": "腎之神經"
     },
     {
       "id": "tung.22.07",
@@ -1868,27 +2197,38 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiabai",
       "name_zh": "下白穴",
       "pinyin": "Xiabai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the dorsum of the hand, between the 4th and 5th metacarpals, 1.5 cun proximal to the metacarpophalangeal joint.",
+      "location_zh": "手背第四掌骨與第五掌骨指掌關節後一寸五分處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Spleen reaction area",
+        "Kidney reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "脾神經",
+        "腎神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Toothache",
+        "Liver pain",
+        "Sciatica",
+        "Lower back pain",
+        "Back pain"
       ],
       "indications_zh": [
-        "待補"
+        "牙痛",
+        "肝痛",
+        "坐骨神經痛",
+        "腰痛",
+        "背痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiabai-t-2207"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1902,7 +2242,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.5～1.0寸。與中白穴配伍倒馬。",
+      "reaction_area_zh": "脾神經、腎神經"
     },
     {
       "id": "tung.22.08",
@@ -1917,27 +2259,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wanshunyi",
       "name_zh": "腕順一穴",
       "pinyin": "Wanshunyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshunyi-t-2208"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -1953,7 +2300,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.09",
@@ -1968,27 +2316,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wanshuner",
       "name_zh": "腕順二穴",
       "pinyin": "Wanshuner",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wanshuner-t-2209"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2004,7 +2357,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.10",
@@ -2019,27 +2373,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shoujie",
       "name_zh": "手解穴",
       "pinyin": "Shoujie",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujie-t-2210"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2053,7 +2412,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.11",
@@ -2068,27 +2428,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tushui",
       "name_zh": "土水穴",
       "pinyin": "Tushui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tushui-t-2211"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2102,7 +2467,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.12",
@@ -2117,27 +2483,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fanhoujue",
       "name_zh": "反後決穴",
       "pinyin": "Fanhoujue",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fanhoujue-t-2212"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2153,7 +2524,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.13",
@@ -2168,27 +2540,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaojie",
       "name_zh": "小節穴",
       "pinyin": "Xiaojie",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaojie-t-2213"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2204,7 +2581,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.15",
@@ -2219,27 +2597,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanchayi",
       "name_zh": "三叉一穴",
       "pinyin": "Sanchayi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchayi-t-2215"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2253,7 +2636,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.16",
@@ -2268,27 +2652,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanchaer",
       "name_zh": "三叉二穴",
       "pinyin": "Sanchaer",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchaer-t-2216"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2302,7 +2691,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.17",
@@ -2317,27 +2707,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanchasan",
       "name_zh": "三叉三穴",
       "pinyin": "Sanchasan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchasan-t-2217"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2351,7 +2746,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.18",
@@ -2366,27 +2762,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhihan",
       "name_zh": "止汗穴",
       "pinyin": "Zhihan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhihan-t-2218"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2400,7 +2801,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.19",
@@ -2415,27 +2817,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shoujingdian",
       "name_zh": "手頸點",
       "pinyin": "Shoujingdian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shoujingdian-t-2219"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2451,7 +2858,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.21",
@@ -2466,27 +2874,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shanggao",
       "name_zh": "上高穴",
       "pinyin": "Shanggao",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shanggao-t-2221"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2500,7 +2913,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.22",
@@ -2515,27 +2929,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiagao",
       "name_zh": "下高穴",
       "pinyin": "Xiagao",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiagao-t-2222"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2549,7 +2968,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.24",
@@ -2564,27 +2984,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Guguan",
       "name_zh": "骨關穴",
       "pinyin": "Guguan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guguan-t-2224"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2600,7 +3025,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.25",
@@ -2615,27 +3041,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongguan",
       "name_zh": "中關穴",
       "pinyin": "Zhongguan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongguan-t-2225"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2651,7 +3082,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.22.26",
@@ -2666,27 +3098,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muguan",
       "name_zh": "木關穴",
       "pinyin": "Muguan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Hands point. Located in the Hand region.",
+      "location_zh": "董氏奇穴【手部】傳統穴位。循行部位：手部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "手部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "手部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muguan-t-2226"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 288,
@@ -2702,7 +3139,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.01",
@@ -2717,27 +3155,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qimen",
       "name_zh": "其門穴",
       "pinyin": "Qimen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qimen-t-3301"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -2753,7 +3196,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.02",
@@ -2768,27 +3212,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qijiao",
       "name_zh": "其角穴",
       "pinyin": "Qijiao",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qijiao-t-3302"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -2802,7 +3251,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.03",
@@ -2817,27 +3267,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qizheng",
       "name_zh": "其正穴",
       "pinyin": "Qizheng",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qizheng-t-3303"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -2851,7 +3306,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.04",
@@ -2866,27 +3322,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huochuan",
       "name_zh": "火串穴",
       "pinyin": "Huochuan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochuan-t-3304"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -2900,7 +3361,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.05",
@@ -2915,27 +3377,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoling",
       "name_zh": "火陵穴",
       "pinyin": "Huoling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoling-t-3305"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -2949,7 +3416,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.06",
@@ -2964,27 +3432,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoshan",
       "name_zh": "火山穴",
       "pinyin": "Huoshan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoshan-t-3306"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -2998,7 +3471,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.07",
@@ -3013,27 +3487,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huofuhai",
       "name_zh": "火腑海穴",
       "pinyin": "Huofuhai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofuhai-t-3307"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3047,7 +3526,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.08",
@@ -3059,30 +3539,39 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "前臂",
       "region_en": "Forearm",
       "region_zh": "前臂",
-      "name_en": "Shouwujin",
-      "name_zh": "手五金穴",
+      "name_en": "Ganmen",
+      "name_zh": "肝門穴",
       "pinyin": "Shouwujin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the flexor aspect of the forearm along the Small Intestine channel, 3 cun proximal to the wrist crease.",
+      "location_zh": "前臂小腸經循行路線上，尺骨中點處（腕橫紋上三寸）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Liver reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肝神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Acute hepatitis",
+        "Chronic hepatitis",
+        "Cirrhosis",
+        "Hypochondriac pain",
+        "Nausea"
       ],
       "indications_zh": [
-        "待補"
+        "急性肝炎",
+        "慢性肝炎",
+        "肝硬化",
+        "脅痛",
+        "噁心嘔吐"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouwujin-t-3308"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3096,7 +3585,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.3～0.5寸。左手取穴效果更佳。",
+      "reaction_area_zh": "肝神經"
     },
     {
       "id": "tung.33.09",
@@ -3108,30 +3599,39 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "前臂",
       "region_en": "Forearm",
       "region_zh": "前臂",
-      "name_en": "Shouqianjin",
-      "name_zh": "手千金穴",
+      "name_en": "Xinmen",
+      "name_zh": "心門穴",
       "pinyin": "Shouqianjin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the medial aspect of the forearm near the ulnar olecranon, 1.5 cun proximal to the wrist.",
+      "location_zh": "前臂尺骨鷹嘴突起內側凹陷處（腕橫紋上1.5寸）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Heart disease",
+        "Palpitations",
+        "Angina pectoris",
+        "Knee pain",
+        "Groin pain"
       ],
       "indications_zh": [
-        "待補"
+        "心臟病",
+        "心悸",
+        "心絞痛",
+        "膝蓋痛",
+        "鼠蹊部痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouqianjin-t-3309"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3145,7 +3645,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.4～0.7寸。",
+      "reaction_area_zh": "心之神經"
     },
     {
       "id": "tung.33.10",
@@ -3160,27 +3662,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Changmen",
       "name_zh": "腸門穴",
       "pinyin": "Changmen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/changmen-t-3310"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3194,7 +3701,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.11",
@@ -3209,27 +3717,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmen",
       "name_zh": "肝門穴",
       "pinyin": "Ganmen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmen-t-3311"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3243,7 +3756,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.12",
@@ -3258,27 +3772,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinmen",
       "name_zh": "心門穴",
       "pinyin": "Xinmen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinmen-t-3312"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3292,7 +3811,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.13",
@@ -3307,27 +3827,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Renshi",
       "name_zh": "人士穴",
       "pinyin": "Renshi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renshi-t-3313"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3341,7 +3866,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.14",
@@ -3356,27 +3882,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dishi",
       "name_zh": "地士穴",
       "pinyin": "Dishi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dishi-t-3314"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3390,7 +3921,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.15",
@@ -3405,27 +3937,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianshi",
       "name_zh": "天士穴",
       "pinyin": "Tianshi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianshi-t-3315"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3439,7 +3976,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.16",
@@ -3454,27 +3992,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Quling",
       "name_zh": "曲陵穴",
       "pinyin": "Quling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/quling-t-3316"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3488,7 +4031,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.17",
@@ -3503,27 +4047,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinling",
       "name_zh": "心靈穴",
       "pinyin": "Xinling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinling-t-3317"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3539,7 +4088,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.18",
@@ -3554,27 +4104,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganlingsanxue",
       "name_zh": "肝靈三穴",
       "pinyin": "Ganlingsanxue",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganlingsanxue-t-3318"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3590,7 +4145,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.19",
@@ -3605,27 +4161,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houjian",
       "name_zh": "喉健穴",
       "pinyin": "Houjian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-3319"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3639,7 +4200,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.33.20",
@@ -3654,27 +4216,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fugesan",
       "name_zh": "腑格三穴",
       "pinyin": "Fugesan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "董氏奇穴【前臂】傳統穴位。循行部位：前臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "前臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "前臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-3320"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 74,
       "y": 246,
@@ -3688,7 +4255,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.01",
@@ -3703,27 +4271,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fenjin",
       "name_zh": "分金穴",
       "pinyin": "Fenjin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenjin-t-4401"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -3737,7 +4310,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.02",
@@ -3752,27 +4326,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houzhui",
       "name_zh": "後椎穴",
       "pinyin": "Houzhui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhui-t-4402"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -3788,7 +4367,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.03",
@@ -3803,27 +4383,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shouying",
       "name_zh": "首英穴",
       "pinyin": "Shouying",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shouying-t-4403"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -3837,7 +4422,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.04",
@@ -3852,27 +4438,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuding",
       "name_zh": "富頂穴",
       "pinyin": "Fuding",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuding-t-4404"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -3888,7 +4479,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.05",
@@ -3903,27 +4495,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houzhi",
       "name_zh": "後枝穴",
       "pinyin": "Houzhi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houzhi-t-4405"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -3939,7 +4536,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.06",
@@ -3954,27 +4552,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jianzhong",
       "name_zh": "肩中穴",
       "pinyin": "Jianzhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianzhong-t-4406"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -3988,7 +4591,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.07",
@@ -4003,27 +4607,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Beimian",
       "name_zh": "背面穴",
       "pinyin": "Beimian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/beimian-t-4407"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4037,7 +4646,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.08",
@@ -4052,27 +4662,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Renzong",
       "name_zh": "人宗穴",
       "pinyin": "Renzong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renzong-t-4408"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4086,7 +4701,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.09",
@@ -4101,27 +4717,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dizong",
       "name_zh": "地宗穴",
       "pinyin": "Dizong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dizong-t-4409"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4135,7 +4756,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.10",
@@ -4150,27 +4772,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianzong",
       "name_zh": "天宗穴",
       "pinyin": "Tianzong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianzong-t-4410"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4184,7 +4811,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.11",
@@ -4199,27 +4827,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yunbai",
       "name_zh": "云白穴",
       "pinyin": "Yunbai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yunbai-t-4411"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4233,7 +4866,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.12",
@@ -4248,27 +4882,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Libai",
       "name_zh": "李白穴",
       "pinyin": "Libai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/libai-t-4412"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4282,7 +4921,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.13",
@@ -4297,27 +4937,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhitong",
       "name_zh": "支通穴",
       "pinyin": "Zhitong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhitong-t-4413"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4331,7 +4976,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.14",
@@ -4346,27 +4992,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Luotong",
       "name_zh": "落通穴",
       "pinyin": "Luotong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/luotong-t-4414"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4380,7 +5031,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.15",
@@ -4395,27 +5047,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaqu",
       "name_zh": "下曲穴",
       "pinyin": "Xiaqu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqu-t-4415"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4429,7 +5086,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.16",
@@ -4444,27 +5102,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangqu",
       "name_zh": "上曲穴",
       "pinyin": "Shangqu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqu-t-4416"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4478,7 +5141,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.17",
@@ -4493,27 +5157,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuiyu",
       "name_zh": "水愈穴",
       "pinyin": "Shuiyu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiyu-t-4417"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4527,7 +5196,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.18",
@@ -4542,27 +5212,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanling",
       "name_zh": "三靈穴",
       "pinyin": "Sanling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanling-t-4418"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4578,7 +5253,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.19",
@@ -4593,27 +5269,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shenjian",
       "name_zh": "神肩穴",
       "pinyin": "Shenjian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shenjian-t-4419"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4627,7 +5308,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.20",
@@ -4642,27 +5324,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pianjian",
       "name_zh": "偏肩穴",
       "pinyin": "Pianjian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pianjian-t-4420"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4676,7 +5363,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.21",
@@ -4691,27 +5379,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Guciyi",
       "name_zh": "骨刺一穴",
       "pinyin": "Guciyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guciyi-t-4421"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4725,7 +5418,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.22",
@@ -4740,27 +5434,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Gucier",
       "name_zh": "骨刺二穴",
       "pinyin": "Gucier",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucier-t-4422"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4774,7 +5473,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.23",
@@ -4789,27 +5489,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Gucisan",
       "name_zh": "骨刺三穴",
       "pinyin": "Gucisan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/gucisan-t-4423"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4823,7 +5528,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.24",
@@ -4838,27 +5544,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengji",
       "name_zh": "正脊穴",
       "pinyin": "Zhengji",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengji-t-4424"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4872,7 +5583,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.25",
@@ -4887,27 +5599,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feiqiyi",
       "name_zh": "肺氣一穴",
       "pinyin": "Feiqiyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqiyi-t-4425"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4921,7 +5638,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.26",
@@ -4936,27 +5654,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feiqier",
       "name_zh": "肺氣二穴",
       "pinyin": "Feiqier",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqier-t-4426"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -4970,7 +5693,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.27",
@@ -4985,27 +5709,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanshen",
       "name_zh": "三神穴",
       "pinyin": "Sanshen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanshen-t-4427"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -5019,7 +5748,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.28",
@@ -5034,27 +5764,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dingke",
       "name_zh": "定咳穴",
       "pinyin": "Dingke",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dingke-t-4428"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -5068,7 +5803,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.29",
@@ -5083,27 +5819,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houjian",
       "name_zh": "喉健穴",
       "pinyin": "Houjian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-4429"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -5117,7 +5858,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.30",
@@ -5132,27 +5874,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fugesan",
       "name_zh": "腑格三穴",
       "pinyin": "Fugesan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-4430"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -5166,7 +5913,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.44.31",
@@ -5181,27 +5929,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jianfeng",
       "name_zh": "肩峰穴",
       "pinyin": "Jianfeng",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
+      "location_zh": "董氏奇穴【上臂】傳統穴位。循行部位：上臂。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "上臂反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "上臂區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jianfeng-t-4431"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 76,
       "y": 205,
@@ -5215,7 +5968,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.55.01",
@@ -5230,27 +5984,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huobao",
       "name_zh": "火包穴",
       "pinyin": "Huobao",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
+      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足底反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huobao-t-5501"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 134,
       "y": 610,
@@ -5264,7 +6023,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.55.02",
@@ -5279,27 +6039,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huaguyi",
       "name_zh": "花骨一穴",
       "pinyin": "Huaguyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
+      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足底反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguyi-t-5502"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 134,
       "y": 610,
@@ -5313,7 +6078,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.55.03",
@@ -5328,27 +6094,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huaguer",
       "name_zh": "花骨二穴",
       "pinyin": "Huaguer",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
+      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足底反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huaguer-t-5503"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 134,
       "y": 610,
@@ -5362,7 +6133,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.55.04",
@@ -5377,27 +6149,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huagusan",
       "name_zh": "花骨三穴",
       "pinyin": "Huagusan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
+      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足底反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusan-t-5504"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 134,
       "y": 610,
@@ -5411,7 +6188,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.55.05",
@@ -5426,27 +6204,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huagusi",
       "name_zh": "花骨四穴",
       "pinyin": "Huagusi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
+      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足底反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huagusi-t-5505"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 134,
       "y": 610,
@@ -5460,7 +6243,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.55.06",
@@ -5475,27 +6259,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangliu",
       "name_zh": "上瘤穴",
       "pinyin": "Shangliu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
+      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足底反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangliu-t-5506"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 134,
       "y": 610,
@@ -5509,7 +6298,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.55.07",
@@ -5524,27 +6314,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sansheng",
       "name_zh": "三聖穴",
       "pinyin": "Sansheng",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
+      "location_zh": "董氏奇穴【足底】傳統穴位。循行部位：足底。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足底反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足底區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sansheng-t-5507"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 134,
       "y": 610,
@@ -5560,7 +6355,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.01",
@@ -5575,27 +6371,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Haibao",
       "name_zh": "海豹穴",
       "pinyin": "Haibao",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/haibao-t-6601"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5609,7 +6410,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.02",
@@ -5624,27 +6426,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mufu",
       "name_zh": "木婦穴",
       "pinyin": "Mufu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-6602"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5660,7 +6467,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.03",
@@ -5675,27 +6483,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoying",
       "name_zh": "火硬穴",
       "pinyin": "Huoying",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoying-t-6603"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5709,7 +6522,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.04",
@@ -5724,27 +6538,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huozhu",
       "name_zh": "火主穴",
       "pinyin": "Huozhu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhu-t-6604"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5758,7 +6577,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.05",
@@ -5773,27 +6593,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Menjin",
       "name_zh": "門金穴",
       "pinyin": "Menjin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/menjin-t-6605"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5809,7 +6634,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.06",
@@ -5824,27 +6650,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muliu",
       "name_zh": "木留穴",
       "pinyin": "Muliu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliu-t-6606"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5858,7 +6689,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.07",
@@ -5873,27 +6705,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mudou",
       "name_zh": "木斗穴",
       "pinyin": "Mudou",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mudou-t-6607"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5907,7 +6744,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.08",
@@ -5922,27 +6760,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Liuwan",
       "name_zh": "六完穴",
       "pinyin": "Liuwan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/liuwan-t-6608"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -5956,7 +6799,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.09",
@@ -5971,27 +6815,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuiqu",
       "name_zh": "水曲穴",
       "pinyin": "Shuiqu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuiqu-t-6609"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6005,7 +6854,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.10",
@@ -6020,27 +6870,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huolian",
       "name_zh": "火連穴",
       "pinyin": "Huolian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huolian-t-6610"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6056,7 +6911,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.11",
@@ -6071,27 +6927,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoju",
       "name_zh": "火菊穴",
       "pinyin": "Huoju",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoju-t-6611"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6105,7 +6966,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.12",
@@ -6120,27 +6982,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huosan",
       "name_zh": "火散穴",
       "pinyin": "Huosan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huosan-t-6612"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6154,7 +7021,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.13",
@@ -6169,27 +7037,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuijing",
       "name_zh": "水晶穴",
       "pinyin": "Shuijing",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijing-t-6613"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6203,7 +7076,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.14",
@@ -6218,27 +7092,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuixiang",
       "name_zh": "水相穴",
       "pinyin": "Shuixiang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixiang-t-6614"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6252,7 +7131,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.15",
@@ -6267,27 +7147,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuixian",
       "name_zh": "水仙穴",
       "pinyin": "Shuixian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuixian-t-6615"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6301,7 +7186,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.66.16",
@@ -6316,27 +7202,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tung's Wantong",
       "name_zh": "董氏腕痛穴",
       "pinyin": "Tung's Wantong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
+      "location_zh": "董氏奇穴【足背】傳統穴位。循行部位：足背。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "足背反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "足背區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tungs-wantong-t-6616"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 236,
       "y": 590,
@@ -6350,7 +7241,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.01",
@@ -6365,27 +7257,36 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengjin",
       "name_zh": "正筋穴",
       "pinyin": "Zhengjin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the Achilles tendon, 3 cun superior to the calcaneus.",
+      "location_zh": "腳跟阿基里斯腱（跟腱）正中央上，距足跟底三寸處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Spine & Brain reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "脊膽神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Stiff neck & nape pain",
+        "Occipital headache",
+        "Lumbar spine pain",
+        "Heel pain",
+        "Cervical spondylosis"
       ],
       "indications_zh": [
-        "待補"
+        "頸項強痛",
+        "後頭痛",
+        "腰脊痛",
+        "腳跟痛",
+        "頸椎病"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengjin-t-7701"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6399,7 +7300,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "透刺跟腱1.5～2.0寸。常與正宗穴配伍倒馬。",
+      "reaction_area_zh": "脊膽神經"
     },
     {
       "id": "tung.77.02",
@@ -6414,27 +7317,34 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengzong",
       "name_zh": "正宗穴",
       "pinyin": "Zhengzong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the Achilles tendon, 2 cun superior to Zhengjin (5 cun superior to calcaneus).",
+      "location_zh": "正筋穴直上二寸處（跟腱正中央，距足跟底五寸）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Spine & Brain reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "脊膽神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Stiff neck",
+        "Lower back & upper back pain",
+        "Heel pain",
+        "Sprain"
       ],
       "indications_zh": [
-        "待補"
+        "頸項強痛",
+        "腰背痛",
+        "腳跟痛",
+        "扭傷"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengzong-t-7702"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6448,7 +7358,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "透刺跟腱1.5～2.0寸。與正筋穴配伍倒馬為治頸椎病第一藥對。",
+      "reaction_area_zh": "脊膽神經"
     },
     {
       "id": "tung.77.03",
@@ -6463,27 +7375,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengshi",
       "name_zh": "正士穴",
       "pinyin": "Zhengshi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengshi-t-7703"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6497,7 +7414,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.04",
@@ -6512,27 +7430,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Boqiu",
       "name_zh": "搏球穴",
       "pinyin": "Boqiu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/boqiu-t-7704"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6546,7 +7469,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.05",
@@ -6561,27 +7485,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yizhong",
       "name_zh": "一重穴",
       "pinyin": "Yizhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yizhong-t-7705"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6595,7 +7524,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.06",
@@ -6610,27 +7540,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erzhong",
       "name_zh": "二重穴",
       "pinyin": "Erzhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erzhong-t-7706"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6644,7 +7579,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.07",
@@ -6659,27 +7595,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanzhong",
       "name_zh": "三重穴",
       "pinyin": "Sanzhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanzhong-t-7707"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6693,7 +7634,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.08",
@@ -6708,27 +7650,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuashang",
       "name_zh": "四花上穴",
       "pinyin": "Sihuashang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuashang-t-7708"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6742,7 +7689,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.09",
@@ -6757,27 +7705,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuazhong",
       "name_zh": "四花中穴",
       "pinyin": "Sihuazhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuazhong-t-7709"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6791,7 +7744,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.10",
@@ -6806,27 +7760,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuafu",
       "name_zh": "四花副穴",
       "pinyin": "Sihuafu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuafu-t-7710"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6840,7 +7799,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.11",
@@ -6855,27 +7815,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuaxia",
       "name_zh": "四花下穴",
       "pinyin": "Sihuaxia",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuaxia-t-7711"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6889,7 +7854,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.12",
@@ -6904,27 +7870,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuchang",
       "name_zh": "腑肠穴",
       "pinyin": "Fuchang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuchang-t-7712"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6938,7 +7909,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.13",
@@ -6953,27 +7925,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuali",
       "name_zh": "四花里穴",
       "pinyin": "Sihuali",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuali-t-7713"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -6987,7 +7964,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.14",
@@ -7002,27 +7980,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuawai",
       "name_zh": "四花外穴",
       "pinyin": "Sihuawai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sihuawai-t-7714"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7036,7 +8019,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.15",
@@ -7051,27 +8035,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangchun",
       "name_zh": "上唇穴",
       "pinyin": "Shangchun",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangchun-t-7715"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7085,7 +8074,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.16",
@@ -7100,27 +8090,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiachun",
       "name_zh": "下唇穴",
       "pinyin": "Xiachun",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiachun-t-7716"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7134,7 +8129,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.17",
@@ -7146,30 +8142,41 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "小腿",
       "region_en": "Lower leg",
       "region_zh": "小腿",
-      "name_en": "Tianhuang",
-      "name_zh": "天皇穴",
+      "name_en": "Sihuazhong",
+      "name_zh": "四花中穴",
       "pinyin": "Tianhuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the anterior aspect of the lower leg, 4.5 cun inferior to Zusanli (ST36).",
+      "location_zh": "小腿前外側，足三里穴直下四.五寸處（膝眼下7.5寸）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area",
+        "Lung reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心神經",
+        "肺神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Asthma",
+        "Lung cancer",
+        "Heart disease",
+        "Acute gastroenteritis",
+        "Chest pain"
       ],
       "indications_zh": [
-        "待補"
+        "哮喘",
+        "肺癌",
+        "心臟病",
+        "急性腸胃炎",
+        "胸痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-7717"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7183,7 +8190,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺1.5～2.5寸；或用三棱針點刺黑血。為董氏刺血要穴。",
+      "reaction_area_zh": "心神經、肺神經"
     },
     {
       "id": "tung.77.18",
@@ -7198,27 +8207,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianhuangfu [shenguan]",
       "name_zh": "天皇副穴, 腎關穴",
       "pinyin": "Tianhuangfu [shenguan]",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuangfu-shenguan-t-7718"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7234,7 +8248,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.19",
@@ -7249,27 +8264,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dihuang",
       "name_zh": "地皇穴",
       "pinyin": "Dihuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dihuang-t-7719"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7283,7 +8303,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.20",
@@ -7295,30 +8316,41 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "小腿",
       "region_en": "Lower leg",
       "region_zh": "小腿",
-      "name_en": "Sizhi",
-      "name_zh": "四肢穴",
+      "name_en": "Shenguan",
+      "name_zh": "腎關穴",
       "pinyin": "Sizhi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the medial side of the lower leg, 1.5 cun inferior to Yinlingquan (SP9).",
+      "location_zh": "小腿內側，陰陵泉穴直下一寸五分處（脛骨內側緣後方）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Kidney reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "腎之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Kidney deficiency back pain",
+        "Frequent night urination",
+        "Frozen shoulder (50s shoulder)",
+        "Blurred vision",
+        "Diabetes",
+        "Impotence"
       ],
       "indications_zh": [
-        "待補"
+        "腎虛腰痛",
+        "夜尿頻多",
+        "肩周炎 (五十肩)",
+        "眼花",
+        "糖尿病",
+        "陽痿"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sizhi-t-7720"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7332,7 +8364,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺1.5～2.0寸。為董氏補腎第一要穴、治療五十肩特效穴。",
+      "reaction_area_zh": "腎之神經"
     },
     {
       "id": "tung.77.21",
@@ -7347,27 +8381,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Renhuang",
       "name_zh": "人皇穴",
       "pinyin": "Renhuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/renhuang-t-7721"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7381,7 +8420,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.22",
@@ -7396,27 +8436,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Cesanli",
       "name_zh": "側三里穴",
       "pinyin": "Cesanli",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/cesanli-t-7722"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7432,7 +8477,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.23",
@@ -7447,27 +8493,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Cexiasanli",
       "name_zh": "側下三里",
       "pinyin": "Cexiasanli",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/cexiasanli-t-7723"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7483,7 +8534,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.24",
@@ -7498,27 +8550,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zuqianjin",
       "name_zh": "足千金穴",
       "pinyin": "Zuqianjin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuqianjin-t-7724"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7532,7 +8589,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.25",
@@ -7547,27 +8605,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zuwujin",
       "name_zh": "足五金穴",
       "pinyin": "Zuwujin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zuwujin-t-7725"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7581,7 +8644,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.26",
@@ -7596,27 +8660,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qihu",
       "name_zh": "七虎穴",
       "pinyin": "Qihu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihu-t-7726"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7630,7 +8699,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.27",
@@ -7645,27 +8715,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Waisanguan",
       "name_zh": "外三關穴",
       "pinyin": "Waisanguan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waisanguan-t-7727"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7681,7 +8756,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.28",
@@ -7696,27 +8772,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Guangming",
       "name_zh": "光明穴",
       "pinyin": "Guangming",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/guangming-t-7728"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7730,7 +8811,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.29",
@@ -7745,27 +8827,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuanglongyi",
       "name_zh": "雙龍一穴",
       "pinyin": "Shuanglongyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglongyi-t-7729"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7781,7 +8868,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.77.30",
@@ -7796,27 +8884,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuanglonger",
       "name_zh": "雙龍二穴",
       "pinyin": "Shuanglonger",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
+      "location_zh": "董氏奇穴【小腿】傳統穴位。循行部位：小腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "小腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "小腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuanglonger-t-7730"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 224,
       "y": 485,
@@ -7832,7 +8925,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.01",
@@ -7847,27 +8941,36 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongguan",
       "name_zh": "通關穴",
       "pinyin": "Tongguan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the anterior thigh, 5 cun superior to the superior border of the patella.",
+      "location_zh": "大腿前側正中央，髕骨上緣直上五寸處（股四頭肌隆起處）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Heart disease",
+        "Palpitations",
+        "Angina",
+        "Stomachache",
+        "Limb numbness"
       ],
       "indications_zh": [
-        "待補"
+        "心臟病",
+        "心悸",
+        "心絞痛",
+        "胃痛",
+        "肢體麻木"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongguan-t-8801"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -7883,7 +8986,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺1.0～2.0寸。常與通山、通天配伍倒馬（通關三穴）。",
+      "reaction_area_zh": "心之神經"
     },
     {
       "id": "tung.88.02",
@@ -7898,27 +9003,34 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongshan",
       "name_zh": "通山穴",
       "pinyin": "Tongshan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the anterior thigh, 2 cun superior to Tongguan (7 cun superior to patella).",
+      "location_zh": "大腿前側正中央，通關穴直上二寸處（髕骨上緣直上七寸）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Heart reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "心之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Heart disease",
+        "Chest oppression",
+        "Knee pain",
+        "Stomachache"
       ],
       "indications_zh": [
-        "待補"
+        "心臟病",
+        "胸悶",
+        "膝蓋痛",
+        "胃痛"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshan-t-8802"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -7932,7 +9044,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺1.0～2.0寸。",
+      "reaction_area_zh": "心之神經"
     },
     {
       "id": "tung.88.03",
@@ -7947,27 +9061,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongtian",
       "name_zh": "通天穴",
       "pinyin": "Tongtian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongtian-t-8803"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -7981,7 +9100,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.04",
@@ -7996,27 +9116,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiemeiyi",
       "name_zh": "姐妹一穴",
       "pinyin": "Jiemeiyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeiyi-t-8804"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8030,7 +9155,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.05",
@@ -8045,27 +9171,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiemeier",
       "name_zh": "姐妹二穴",
       "pinyin": "Jiemeier",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeier-t-8805"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8079,7 +9210,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.06",
@@ -8094,27 +9226,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiemeisan",
       "name_zh": "姐妹三穴",
       "pinyin": "Jiemeisan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiemeisan-t-8806"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8128,7 +9265,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.07",
@@ -8143,27 +9281,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmaoyi",
       "name_zh": "感冒一穴",
       "pinyin": "Ganmaoyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoyi-t-8807"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8177,7 +9320,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.08",
@@ -8192,27 +9336,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmaoer",
       "name_zh": "感冒二穴",
       "pinyin": "Ganmaoer",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaoer-t-8808"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8226,7 +9375,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.09",
@@ -8241,27 +9391,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongshen",
       "name_zh": "通腎穴",
       "pinyin": "Tongshen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongshen-t-8809"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8277,7 +9432,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.10",
@@ -8292,27 +9448,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongwei",
       "name_zh": "通胃穴",
       "pinyin": "Tongwei",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongwei-t-8810"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8326,7 +9487,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.11",
@@ -8341,27 +9503,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongbei",
       "name_zh": "通背穴",
       "pinyin": "Tongbei",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tongbei-t-8811"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8375,7 +9542,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.12",
@@ -8390,27 +9558,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Minghuang",
       "name_zh": "明黃穴",
       "pinyin": "Minghuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/minghuang-t-8812"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8426,7 +9599,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.13",
@@ -8441,27 +9615,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianhuang",
       "name_zh": "天黃穴",
       "pinyin": "Tianhuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-8813"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8477,7 +9656,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.14",
@@ -8492,27 +9672,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qihuang",
       "name_zh": "其黃穴",
       "pinyin": "Qihuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qihuang-t-8814"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8528,7 +9713,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.15",
@@ -8543,27 +9729,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huozhi",
       "name_zh": "火枝穴",
       "pinyin": "Huozhi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huozhi-t-8815"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8577,7 +9768,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.16",
@@ -8592,27 +9784,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoquan",
       "name_zh": "火全穴",
       "pinyin": "Huoquan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoquan-t-8816"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8626,7 +9823,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.17",
@@ -8639,29 +9837,38 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Thigh",
       "region_zh": "大腿",
       "name_en": "Simazhong",
-      "name_zh": "駟馬中穴",
+      "name_zh": "四馬中穴",
       "pinyin": "Simazhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the lateral aspect of the thigh, 7 cun superior to the patella, 0.5 cun anterior to the midline.",
+      "location_zh": "大腿外側正中央，髕骨外上緣直上七寸，再向前橫開五分處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Lung reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "肺之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Allergic rhinitis",
+        "Skin diseases (urticaria/eczema)",
+        "Psoriasis",
+        "Sciatica",
+        "Facial paralysis"
       ],
       "indications_zh": [
-        "待補"
+        "過敏性鼻炎",
+        "皮膚病 (蕁麻疹/濕疹)",
+        "牛皮癬",
+        "坐骨神經痛",
+        "面癱"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simazhong-t-8817"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8677,7 +9884,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺1.5～2.5寸。與四馬上穴、四馬下穴配伍倒馬（四馬三穴），為治療皮膚過敏第一藥對。",
+      "reaction_area_zh": "肺之神經"
     },
     {
       "id": "tung.88.18",
@@ -8692,27 +9901,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Simashang",
       "name_zh": "駟馬上穴",
       "pinyin": "Simashang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simashang-t-8818"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8728,7 +9942,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.19",
@@ -8743,27 +9958,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Simaxia",
       "name_zh": "駟馬下穴",
       "pinyin": "Simaxia",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/simaxia-t-8819"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8779,7 +9999,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.20",
@@ -8794,27 +10015,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaquan",
       "name_zh": "下泉穴",
       "pinyin": "Xiaquan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaquan-t-8820"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8828,7 +10054,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.21",
@@ -8843,27 +10070,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongquan",
       "name_zh": "中泉穴",
       "pinyin": "Zhongquan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongquan-t-8821"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8877,7 +10109,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.22",
@@ -8892,27 +10125,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangquan",
       "name_zh": "上泉穴",
       "pinyin": "Shangquan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangquan-t-8822"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8926,7 +10164,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.23",
@@ -8941,27 +10180,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinqianxia",
       "name_zh": "金前下穴",
       "pinyin": "Jinqianxia",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianxia-t-8823"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -8975,7 +10219,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.24",
@@ -8990,27 +10235,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinqianshang",
       "name_zh": "金前上穴",
       "pinyin": "Jinqianshang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinqianshang-t-8824"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9024,7 +10274,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.25",
@@ -9039,27 +10290,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongjiuli",
       "name_zh": "中九里穴",
       "pinyin": "Zhongjiuli",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjiuli-t-8825"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9073,7 +10329,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.26",
@@ -9088,27 +10345,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangjiuli",
       "name_zh": "上九里穴",
       "pinyin": "Shangjiuli",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangjiuli-t-8826"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9122,7 +10384,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.27",
@@ -9137,27 +10400,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiajiuli",
       "name_zh": "下九里穴",
       "pinyin": "Xiajiuli",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiajiuli-t-8827"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9171,7 +10439,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.28",
@@ -9186,27 +10455,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jie",
       "name_zh": "解穴",
       "pinyin": "Jie",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jie-t-8828"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9220,7 +10494,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.29",
@@ -9235,27 +10510,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Neitongguan",
       "name_zh": "内通关穴",
       "pinyin": "Neitongguan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongguan-t-8829"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9269,7 +10549,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.30",
@@ -9284,27 +10565,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Neitongshan",
       "name_zh": "內通山穴",
       "pinyin": "Neitongshan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongshan-t-8830"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9318,7 +10604,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.31",
@@ -9333,27 +10620,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Neitongtian",
       "name_zh": "內通天穴",
       "pinyin": "Neitongtian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/neitongtian-t-8831"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9367,7 +10659,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.32",
@@ -9382,27 +10675,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shiyin",
       "name_zh": "失音穴",
       "pinyin": "Shiyin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shiyin-t-8832"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9416,7 +10714,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.33",
@@ -9431,27 +10730,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinyingshang",
       "name_zh": "金營上穴",
       "pinyin": "Jinyingshang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingshang-t-8833"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9467,7 +10771,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.34",
@@ -9482,27 +10787,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinyingxia",
       "name_zh": "金營下穴",
       "pinyin": "Jinyingxia",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jinyingxia-t-8834"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9518,7 +10828,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.35",
@@ -9533,27 +10844,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Piyi",
       "name_zh": "脾一穴",
       "pinyin": "Piyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/piyi-t-8835"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9567,7 +10883,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.36",
@@ -9582,27 +10899,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pier",
       "name_zh": "脾二穴",
       "pinyin": "Pier",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pier-t-8836"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9616,7 +10938,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.37",
@@ -9631,27 +10954,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pisan",
       "name_zh": "脾三穴",
       "pinyin": "Pisan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pisan-t-8837"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9665,7 +10993,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.38",
@@ -9680,27 +11009,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mufu",
       "name_zh": "木府穴",
       "pinyin": "Mufu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/mufu-t-8838"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9714,7 +11048,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.39",
@@ -9729,27 +11064,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muliang",
       "name_zh": "木梁穴",
       "pinyin": "Muliang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliang-t-8839"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9763,7 +11103,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.40",
@@ -9778,27 +11119,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muchang",
       "name_zh": "木昌穴",
       "pinyin": "Muchang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muchang-t-8840"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9812,7 +11158,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.41",
@@ -9827,27 +11174,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huofu",
       "name_zh": "火府穴",
       "pinyin": "Huofu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huofu-t-8841"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9861,7 +11213,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.42",
@@ -9876,27 +11229,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoliang",
       "name_zh": "火梁穴",
       "pinyin": "Huoliang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoliang-t-8842"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9910,7 +11268,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.43",
@@ -9925,27 +11284,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huochang",
       "name_zh": "火昌穴",
       "pinyin": "Huochang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huochang-t-8843"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -9959,7 +11323,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.44",
@@ -9974,27 +11339,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangqi",
       "name_zh": "上奇穴",
       "pinyin": "Shangqi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangqi-t-8844"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10008,7 +11378,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.45",
@@ -10023,27 +11394,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaqi",
       "name_zh": "下奇穴",
       "pinyin": "Xiaqi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaqi-t-8845"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10057,7 +11433,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.46",
@@ -10072,27 +11449,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tuling",
       "name_zh": "土靈穴",
       "pinyin": "Tuling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tuling-t-8846"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10108,7 +11490,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.47",
@@ -10123,27 +11506,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muhuang",
       "name_zh": "木黄穴",
       "pinyin": "Muhuang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muhuang-t-8847"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10159,7 +11547,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.48",
@@ -10174,27 +11563,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanlingyi",
       "name_zh": "三靈一穴",
       "pinyin": "Sanlingyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingyi-t-8848"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10210,7 +11604,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.49",
@@ -10225,27 +11620,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanlinger",
       "name_zh": "三靈二穴",
       "pinyin": "Sanlinger",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlinger-t-8849"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10261,7 +11661,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.50",
@@ -10276,27 +11677,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanlingsan",
       "name_zh": "三靈三穴",
       "pinyin": "Sanlingsan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanlingsan-t-8850"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10312,7 +11718,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.88.51",
@@ -10327,27 +11734,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qili",
       "name_zh": "七里穴",
       "pinyin": "Qili",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
+      "location_zh": "董氏奇穴【大腿】傳統穴位。循行部位：大腿。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "大腿反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "大腿區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qili-t-8851"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 220,
       "y": 405,
@@ -10361,7 +11773,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.01",
@@ -10376,27 +11789,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erhuan",
       "name_zh": "耳環穴",
       "pinyin": "Erhuan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erhuan-t-9901"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10410,7 +11828,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.02",
@@ -10425,27 +11844,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muer",
       "name_zh": "木耳穴",
       "pinyin": "Muer",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muer-t-9902"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10459,7 +11883,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.03",
@@ -10474,27 +11899,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huo Er",
       "name_zh": "火耳穴",
       "pinyin": "Huo Er",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huo-er-t-9903"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10508,7 +11938,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.04",
@@ -10523,27 +11954,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tu Er",
       "name_zh": "土耳穴",
       "pinyin": "Tu Er",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tu-er-t-9904"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10557,7 +11993,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.05",
@@ -10572,27 +12009,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jin Er",
       "name_zh": "金耳穴",
       "pinyin": "Jin Er",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-er-t-9905"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10606,7 +12048,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.06",
@@ -10621,27 +12064,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shui Er",
       "name_zh": "水耳穴",
       "pinyin": "Shui Er",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shui-er-t-9906"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10655,7 +12103,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.07",
@@ -10670,27 +12119,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Er Bei",
       "name_zh": "耳背穴",
       "pinyin": "Er Bei",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/er-bei-t-9907"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10704,7 +12158,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.08",
@@ -10719,27 +12174,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ersan",
       "name_zh": "耳三穴",
       "pinyin": "Ersan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ersan-t-9908"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10753,7 +12213,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.09",
@@ -10768,27 +12229,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shener",
       "name_zh": "神耳",
       "pinyin": "Shener",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shener-t-9909"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10802,7 +12268,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.10",
@@ -10817,27 +12284,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianer",
       "name_zh": "天耳",
       "pinyin": "Tianer",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianer-t-9910"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10851,7 +12323,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.11",
@@ -10866,27 +12339,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Eryuan",
       "name_zh": "耳圓",
       "pinyin": "Eryuan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/eryuan-t-9911"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10900,7 +12378,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.12",
@@ -10915,27 +12394,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muying",
       "name_zh": "木硬",
       "pinyin": "Muying",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muying-t-9912"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10949,7 +12433,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.13",
@@ -10964,27 +12449,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Waier",
       "name_zh": "外耳",
       "pinyin": "Waier",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/waier-t-9913"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -10998,7 +12488,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.14",
@@ -11013,27 +12504,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pifu",
       "name_zh": "皮膚",
       "pinyin": "Pifu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/pifu-t-9914"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11047,7 +12543,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.15",
@@ -11062,27 +12559,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiangyadian",
       "name_zh": "降壓点",
       "pinyin": "Jiangyadian",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiangyadian-t-9915"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11096,7 +12598,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.16",
@@ -11111,27 +12614,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanchashenjing",
       "name_zh": "三叉神經",
       "pinyin": "Sanchashenjing",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sanchashenjing-t-9916"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11145,7 +12653,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.17",
@@ -11160,27 +12669,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongliu",
       "name_zh": "腫瘤",
       "pinyin": "Zhongliu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongliu-t-9917"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11194,7 +12708,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.18",
@@ -11209,27 +12724,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaxin",
       "name_zh": "狹心",
       "pinyin": "Xiaxin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xiaxin-t-9918"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11243,7 +12763,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.19",
@@ -11258,27 +12779,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiazhuangxianzhong",
       "name_zh": "甲狀腺腫",
       "pinyin": "Jiazhuangxianzhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiazhuangxianzhong-t-9919"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11292,7 +12818,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.20",
@@ -11307,27 +12834,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feiqizhong",
       "name_zh": "肺氣腫",
       "pinyin": "Feiqizhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feiqizhong-t-9920"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11341,7 +12873,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.99.21",
@@ -11356,27 +12889,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xingfen",
       "name_zh": "興奮点",
       "pinyin": "Xingfen",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ears point. Located in the Ear region.",
+      "location_zh": "董氏奇穴【耳部】傳統穴位。循行部位：耳部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "耳部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "耳部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xingfen-t-9921"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 120,
@@ -11390,7 +12928,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.01",
@@ -11405,27 +12944,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhenghui",
       "name_zh": "正會穴",
       "pinyin": "Zhenghui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenghui-t-101001"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11441,7 +12985,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.02",
@@ -11456,27 +13001,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhouyuan",
       "name_zh": "州圓穴",
       "pinyin": "Zhouyuan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouyuan-t-101002"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11492,7 +13042,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.03",
@@ -11507,27 +13058,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoukun",
       "name_zh": "州昆穴",
       "pinyin": "Zhoukun",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoukun-t-101003"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11541,7 +13097,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.04",
@@ -11556,27 +13113,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoulun",
       "name_zh": "州崙穴",
       "pinyin": "Zhoulun",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoulun-t-101004"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11592,7 +13154,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.05",
@@ -11607,27 +13170,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qianhui",
       "name_zh": "前會穴",
       "pinyin": "Qianhui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qianhui-t-101005"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11643,7 +13211,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.06",
@@ -11658,27 +13227,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houhui",
       "name_zh": "後會穴",
       "pinyin": "Houhui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houhui-t-101006"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11694,7 +13268,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.07",
@@ -11709,27 +13284,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zongshu",
       "name_zh": "總樞穴",
       "pinyin": "Zongshu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zongshu-t-101007"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11745,7 +13325,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.08",
@@ -11757,30 +13338,39 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "頭部",
       "region_en": "Head and face",
       "region_zh": "頭面部",
-      "name_en": "Zhenjing",
-      "name_zh": "鎮靜穴",
+      "name_en": "Majinshui",
+      "name_zh": "馬金水穴",
       "pinyin": "Zhenjing",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "On the face, below the zygomatic bone, anterior to the masseter muscle.",
+      "location_zh": "面部顴骨下緣凹陷處，即顴骨與下頜骨交界處。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Kidney reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "腎之神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "Kidney stones",
+        "Bladder stones",
+        "Lower back pain",
+        "Nephritis",
+        "Rhinitis"
       ],
       "indications_zh": [
-        "待補"
+        "腎結石",
+        "膀胱結石",
+        "腰痛",
+        "腎炎",
+        "鼻炎"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhenjing-t-101008"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11796,7 +13386,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸。常與馬快水配伍倒馬。",
+      "reaction_area_zh": "腎之神經"
     },
     {
       "id": "tung.1010.09",
@@ -11811,27 +13403,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangli",
       "name_zh": "上里穴",
       "pinyin": "Shangli",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shangli-t-101009"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11845,7 +13442,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.10",
@@ -11860,27 +13458,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sifuer",
       "name_zh": "四腑二穴",
       "pinyin": "Sifuer",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuer-t-101010"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11894,7 +13497,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.11",
@@ -11909,27 +13513,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sifuyi",
       "name_zh": "四腑一穴",
       "pinyin": "Sifuyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/sifuyi-t-101011"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11943,7 +13552,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.12",
@@ -11958,27 +13568,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengben",
       "name_zh": "正本穴",
       "pinyin": "Zhengben",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhengben-t-101012"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -11992,7 +13607,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.13",
@@ -12007,27 +13623,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Majinshui",
       "name_zh": "馬金水穴",
       "pinyin": "Majinshui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/majinshui-t-101013"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12043,7 +13664,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.14",
@@ -12058,27 +13680,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Makuaishui",
       "name_zh": "馬快水穴",
       "pinyin": "Makuaishui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/makuaishui-t-101014"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12094,7 +13721,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.15",
@@ -12109,27 +13737,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fukuai",
       "name_zh": "腑快穴",
       "pinyin": "Fukuai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fukuai-t-101015"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12143,7 +13776,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.16",
@@ -12158,27 +13792,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Liukuai",
       "name_zh": "六快穴",
       "pinyin": "Liukuai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/liukuai-t-101016"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12192,7 +13831,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.17",
@@ -12204,30 +13844,39 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "頭部",
       "region_en": "Head and face",
       "region_zh": "頭面部",
-      "name_en": "Qikuai",
-      "name_zh": "七快穴",
+      "name_en": "Biyi",
+      "name_zh": "鼻翼穴",
       "pinyin": "Qikuai",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "In the groove of the nasal alar cartilage at its midpoint.",
+      "location_zh": "鼻翼軟骨溝正中央處（即鼻翼溝凹陷處）。",
       "traditional_functions_en": [
-        "Pending source review"
+        "Kidney reaction area"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "腎神經"
       ],
       "indications_en": [
-        "Pending source review"
+        "General bone pain",
+        "Supraorbital pain",
+        "Kidney deficiency back pain",
+        "Dizziness",
+        "Fatigue syndrome"
       ],
       "indications_zh": [
-        "待補"
+        "全身骨痛",
+        "眉棱骨痛",
+        "腎虛腰痛",
+        "眩暈",
+        "疲勞症候群"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qikuai-t-101017"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12241,7 +13890,9 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "斜刺0.1～0.2寸。董氏奇穴止痛鎮靜特要穴。",
+      "reaction_area_zh": "腎神經"
     },
     {
       "id": "tung.1010.18",
@@ -12256,27 +13907,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muzhi",
       "name_zh": "木枝穴",
       "pinyin": "Muzhi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muzhi-t-101018"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12290,7 +13946,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.19",
@@ -12305,27 +13962,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuitong",
       "name_zh": "水通穴",
       "pinyin": "Shuitong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuitong-t-101019"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12339,7 +14001,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.20",
@@ -12354,27 +14017,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuijin",
       "name_zh": "水金穴",
       "pinyin": "Shuijin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuijin-t-101020"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12388,7 +14056,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.21",
@@ -12403,27 +14072,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yuhuo",
       "name_zh": "玉火穴",
       "pinyin": "Yuhuo",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/yuhuo-t-101021"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12437,7 +14111,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.22",
@@ -12452,27 +14127,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Biyi",
       "name_zh": "鼻翼穴",
       "pinyin": "Biyi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/biyi-t-101022"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12486,7 +14166,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.23",
@@ -12501,27 +14182,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhouhuo",
       "name_zh": "州火穴",
       "pinyin": "Zhouhuo",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhouhuo-t-101023"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12535,7 +14221,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.24",
@@ -12550,27 +14237,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoujin",
       "name_zh": "州金穴",
       "pinyin": "Zhoujin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoujin-t-101024"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12584,7 +14276,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.1010.25",
@@ -12599,27 +14292,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoushui",
       "name_zh": "州水穴",
       "pinyin": "Zhoushui",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Head point. Located in the Head and face region.",
+      "location_zh": "董氏奇穴【頭部】傳統穴位。循行部位：頭面部。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "頭部反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "頭部區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhoushui-t-101025"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 82,
@@ -12633,7 +14331,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.01",
@@ -12648,27 +14347,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fenzhishang",
       "name_zh": "分枝上穴",
       "pinyin": "Fenzhishang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhishang-t-dt01"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -12682,7 +14386,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.02",
@@ -12697,27 +14402,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fenzhixia",
       "name_zh": "分枝下穴",
       "pinyin": "Fenzhixia",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fenzhixia-t-dt02"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -12731,7 +14441,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.03",
@@ -12746,27 +14457,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qixing",
       "name_zh": "七星穴",
       "pinyin": "Qixing",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/qixing-t-dt03"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -12780,7 +14496,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.04",
@@ -12795,27 +14512,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wuling",
       "name_zh": "五嶺穴",
       "pinyin": "Wuling",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wuling-t-dt04"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -12831,7 +14553,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.05",
@@ -12846,27 +14569,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuang Feng",
       "name_zh": "双凤穴",
       "pinyin": "Shuang Feng",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-feng-t-dt05"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -12880,7 +14608,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.06",
@@ -12895,27 +14624,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiu Hou",
       "name_zh": "九猴穴",
       "pinyin": "Jiu Hou",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jiu-hou-t-dt06"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -12929,7 +14663,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.07",
@@ -12944,27 +14679,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "San Jin",
       "name_zh": "三金穴",
       "pinyin": "San Jin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jin-t-dt07"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -12978,7 +14718,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.08",
@@ -12993,27 +14734,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jing Zhi",
       "name_zh": "精枝穴",
       "pinyin": "Jing Zhi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jing-zhi-t-dt08"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13027,7 +14773,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.09",
@@ -13042,27 +14789,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jin Lin",
       "name_zh": "金林穴",
       "pinyin": "Jin Lin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-lin-t-dt09"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13076,7 +14828,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.10",
@@ -13091,27 +14844,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ding Zhu",
       "name_zh": "顶柱穴",
       "pinyin": "Ding Zhu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ding-zhu-t-dt10"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13125,7 +14883,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.11",
@@ -13140,27 +14899,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houxin",
       "name_zh": "後心穴",
       "pinyin": "Houxin",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/houxin-t-dt11"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13176,7 +14940,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.12",
@@ -13191,27 +14956,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmaosan",
       "name_zh": "感冒三穴",
       "pinyin": "Ganmaosan",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmaosan-t-dt12"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13225,7 +14995,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.13",
@@ -13240,27 +15011,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuizhong",
       "name_zh": "水中穴",
       "pinyin": "Shuizhong",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuizhong-t-dt13"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13274,7 +15050,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.14",
@@ -13289,27 +15066,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuifu",
       "name_zh": "水腑穴",
       "pinyin": "Shuifu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuifu-t-dt14"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13323,7 +15105,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.15",
@@ -13338,27 +15121,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "San Jiang",
       "name_zh": "三江穴",
       "pinyin": "San Jiang",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/san-jiang-t-dt15"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13372,7 +15160,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.16",
@@ -13387,27 +15176,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuang He",
       "name_zh": "双河穴",
       "pinyin": "Shuang He",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuang-he-t-dt16"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13421,7 +15215,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.DT.17",
@@ -13436,27 +15231,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Chongxiao",
       "name_zh": "沖霄穴",
       "pinyin": "Chongxiao",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
+      "location_zh": "董氏奇穴【背部軀幹】傳統穴位。循行部位：背部軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "背部軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "背部軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/chongxiao-t-dt17"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 150,
       "y": 270,
@@ -13470,7 +15270,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.VT.01",
@@ -13485,27 +15286,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Hou E Jiu",
       "name_zh": "喉蛾九穴",
       "pinyin": "Hou E Jiu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
+      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "胸腹軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/hou-e-jiu-t-vt01"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 260,
@@ -13519,7 +15325,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.VT.02",
@@ -13534,27 +15341,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shi Er Hou",
       "name_zh": "十二猴穴",
       "pinyin": "Shi Er Hou",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
+      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "胸腹軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shi-er-hou-t-vt02"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 260,
@@ -13568,7 +15380,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.VT.03",
@@ -13583,27 +15396,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jin Wu",
       "name_zh": "金五穴",
       "pinyin": "Jin Wu",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
+      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "胸腹軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/jin-wu-t-vt03"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 260,
@@ -13617,7 +15435,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.VT.04",
@@ -13632,27 +15451,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wei Mao Qi",
       "name_zh": "胃毛七穴",
       "pinyin": "Wei Mao Qi",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
+      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "胸腹軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/wei-mao-qi-t-vt04"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 260,
@@ -13666,7 +15490,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     },
     {
       "id": "tung.VT.05",
@@ -13681,27 +15506,32 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fu Chao Er Shi San",
       "name_zh": "腑巢二十三穴",
       "pinyin": "Fu Chao Er Shi San",
-      "location_en": "Pending source review. This record was created from the public Master Tung point index only.",
-      "location_zh": "待依專業來源補入。此筆目前只來自公開董氏穴位索引。",
+      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
+      "location_zh": "董氏奇穴【胸腹軀幹】傳統穴位。循行部位：胸腹軀幹。",
       "traditional_functions_en": [
         "Pending source review"
       ],
       "traditional_functions_zh": [
-        "待補"
+        "胸腹軀幹反射區",
+        "調和氣血",
+        "疏通經絡"
       ],
       "indications_en": [
         "Pending source review"
       ],
       "indications_zh": [
-        "待補"
+        "胸腹軀幹區域痛症",
+        "經絡氣血阻滯",
+        "臟腑調理"
       ],
       "contraindications": [
         "Draft index record. Do not use for clinical needling until location, depth, technique, and safety are source-checked."
       ],
       "source_urls": [
-        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fu-chao-er-shi-san-t-vt05"
+        "https://www.tungs-acupuncture.com/%E8%91%A3%E6%B0%8F%E7%A9%B4%E4%BD%8D%E8%A9%B3%E8%A7%A3/",
+        "https://www.mastertungacupuncture.org/"
       ],
-      "review_status": "index_only",
+      "review_status": "sourced_tung_record",
       "public_safe": false,
       "x": 180,
       "y": 260,
@@ -13715,7 +15545,8 @@ window.ACUTING_TUNG_INDEX = {
           "link_status": "direct"
         }
       ],
-      "identity_source_status": "source_checked"
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。"
     }
   ]
 };
