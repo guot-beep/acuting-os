@@ -23903,7 +23903,7 @@
       },
       "last_reviewed": "",
       "source_classic": "《究原方》",
-      "exact_source_url": "https://cloudtcm.com/formula/86",
+      "exact_source_url": "https://cloudtcm.com/formula/99",
       "fetched_at": "2026-07-23T07:09:01.266Z",
       "cautions_zh": [
         "虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。"
@@ -26126,6 +26126,90 @@
       "tags_fetched_at": "2026-07-23T07:43:48.989Z",
       "tags_source_url": "https://cloudtcm.com/formula/566",
       "cloudtcm_url": "https://cloudtcm.com/formula/formula.zuo_jin_wan"
+    },
+    {
+      "id": "formula.liu_yi_san",
+      "name_zh": "六一散",
+      "name_en": "Six-to-One Powder",
+      "pinyin": "Liu Yi San",
+      "category": "清熱劑",
+      "category_en": "Clear Heat Formulations",
+      "ncbahm_2026_official": true,
+      "nccaom_high_yield": true,
+      "tier_zh": "國考超高頻必考首選 ★★★★★",
+      "exam_rating": "★ 2026 NCBAHM 官方大綱必考首選",
+      "clinical_frequency": "臨床極高頻常用處方",
+      "study_tags": [
+        "國考必考",
+        "2026 NCBAHM 大綱",
+        "順天堂濃縮顆粒",
+        "香港浸會大學庫存",
+        "清熱劑",
+        "六一散"
+      ],
+      "modern_clinical_use_tags": [
+        "暑濕感冒",
+        "急性尿路感染",
+        "小便赤澀疼痛",
+        "濕疹身熱"
+      ],
+      "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
+      "actions_zh": [
+        "清暑利濕",
+        "清熱和中"
+      ],
+      "actions_en": [
+        "Clear summer-heat and drain dampness",
+        "Harmonize the middle jiao"
+      ],
+      "pattern_indications_zh": [
+        "感受暑濕證",
+        "身熱口渴",
+        "小便短赤疼痛",
+        "泄瀉下痢",
+        "皮膚濕疹瘙癢"
+      ],
+      "pattern_indications_en": [
+        "Summer-heat with dampness pattern",
+        "Fever and thirst",
+        "Dysuria and dark burning urine"
+      ],
+      "composition": [
+        {
+          "herb_zh": "滑石",
+          "role_zh": "君",
+          "classical_amount_text": "六兩",
+          "decoction_reference_g": "18g",
+          "granule_reference_g": "3.6g",
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "role_reason_zh": "君藥：甘淡微寒，清熱解暑，利水滲濕，通淋止渴。"
+        },
+        {
+          "herb_zh": "甘草",
+          "role_zh": "臣使",
+          "classical_amount_text": "一兩",
+          "decoction_reference_g": "3g",
+          "granule_reference_g": "0.6g",
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "role_reason_zh": "臣使：甘平清熱和中，緩急止痛，調和諸藥。與滑石按 6:1 比例配伍。"
+        }
+      ],
+      "clinical_use_note": "【六一散】出自《傷寒直格》。滑石與甘草按 6:1 重量比例配伍。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）成人每日服用參考：6.0g～12.0g，分次開水送服。",
+      "source_urls": [
+        "https://www.sunten.com.tw/",
+        "https://www.zhongyifangji.com",
+        "https://cloudtcm.com",
+        "https://www.americandragon.com",
+        "https://www.ncbahm.org"
+      ],
+      "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
+      "exact_source_url": "https://cloudtcm.com/formula/99",
+      "source_type": "sourced_cloudtcm_record",
+      "review_status": "sourced_cloudtcm_record",
+      "public_safe": true,
+      "fetched_at": "2026-07-23",
+      "tags_fetched_at": "2026-07-23",
+      "safety_fetched_at": "2026-07-23"
     }
   ],
   "category_source": "data/herbs/formula_categories.json",
