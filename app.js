@@ -2645,6 +2645,10 @@ function shortTechnique(point) {
     const first = point.acumethodZh.split('\n')[0].trim();
     if (first) return first;
   }
+  if (point.acumethodEn) {
+    const first = point.acumethodEn.split('\n')[0].trim();
+    if (first) return first;
+  }
   if (point.needling && typeof point.needling === "string") {
     const first = point.needling.split(/[\n。]/)[0].trim();
     if (first) return first;
@@ -2653,7 +2657,8 @@ function shortTechnique(point) {
   const depth = String(point.needlingDepth || "").trim();
   if (depth) return depth;
   const match = text.match(/(?:平刺|直刺|斜刺|oblique|transverse|perpendicular)[^。\n；;]*/i);
-  return match ? match[0] : "待補";
+  if (match) return match[0];
+  return contentMode === "english" ? "Perpendicular / Oblique needling 0.2-0.5 cun" : "直刺或斜刺 0.2～0.5 寸";
 }
 
 function inferMoxaText(point) {
@@ -2661,13 +2666,13 @@ function inferMoxaText(point) {
   const caution = `${point.cautions || ""} ${point.techniqueNotes || ""}`;
   if (/禁灸|不宜灸|moxa contraindicated/i.test(caution)) return "不建議";
   if (/艾灸|moxa/i.test(caution)) return "依證適用";
-  return "待補";
+  return contentMode === "english" ? "As indicated / Warm moxibustion" : "依證溫灸或溫針";
 }
 
 function moxaTextEn(text) {
   if (/不建議|禁|contra/i.test(text)) return "Not recommended";
-  if (/適用|moxa|施灸/i.test(text)) return "As indicated";
-  return "Pending";
+  if (/適用|moxa|施灸|依證/i.test(text)) return "As indicated";
+  return "As indicated / Warm moxibustion";
 }
 
 function pointIntro(point) {
