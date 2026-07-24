@@ -189,6 +189,7 @@ function tungIndexPoint(record) {
     cautionsEn: record.contraindications_en || [],
     diagramUrlsEn: record.diagram_urls_en || [],
     diagramUrlsZh: record.diagram_urls_zh || [],
+    sourceProvenanceNoteZh: record.source_provenance_note_zh || "",
     reviewStatus: record.review_status || "sourced_tung_record",
     sources: record.source_urls || ["https://www.tungs-acupuncture.com"],
     visualLinks: tungPointVisualLinks(record),
@@ -2969,10 +2970,17 @@ function evidenceText(point) {
   if (contentMode === "english") {
     if (point.anatomyEn) parts.push(`【Anatomical Structure & Reaction Areas】\n${point.anatomyEn}`);
     if (point.modernResearchZh) parts.push(`【Clinical Application Notes】\n${point.modernResearchZh}`);
-    parts.push("Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks.");
+    if (point.reviewStatus === "sourced_elotus_direct") {
+      parts.push("【Source Provenance】This record is sourced directly from eLotus CORE Master Tung Standard Documentation.");
+    } else {
+      parts.push("Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks.");
+    }
     return parts.join("\n\n");
   }
 
+  if (point.sourceProvenanceNoteZh) {
+    parts.push(`【出處與文獻標註】\n${point.sourceProvenanceNoteZh}`);
+  }
   if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
   if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
   if (point.evidence && !point.evidence.includes("draft record for AcuTing OS")) {
