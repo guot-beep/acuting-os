@@ -1394,6 +1394,120 @@ footer {
   overflow: hidden;
 }
 
+/* Master Tung Structured Combination Cards (Matching Image 3) */
+.tung-comb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.tung-comb-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2b5c56;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tung-comb-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.tung-comb-title {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a365d;
+}
+
+.tung-comb-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+.comb-point-highlight {
+  color: #dd6b20;
+  font-weight: 600;
+  background: rgba(221, 107, 32, 0.08);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+.comb-principle-title {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-weight: 700;
+  color: #2b6cb0;
+}
+
+.tung-comb-extra {
+  margin-top: 0.75rem;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #2d3748;
+  background: #f7fafc;
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  border-left: 3px solid #cbd5e0;
+}
+
+.tung-diagram-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.tung-zone-box {
+  border-color: rgba(140, 76, 112, 0.35);
+  background: linear-gradient(135deg, rgba(253, 242, 248, 0.85), rgba(245, 243, 255, 0.85));
+}
+
+.tung-zone-box h3 {
+  color: #8c4c70;
+  font-weight: 700;
+}
+
+.tung-diagram-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 600;
+  max-width: 220px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tung-diagram-card:hover {
+  border-color: #8c4c70;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.tung-diagram-card img {
+  width: 100%;
+  height: 145px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #f8fafc;
+  margin-bottom: 0.35rem;
+}
+
 .pairing-row {
   background: #fff;
   border: 0;

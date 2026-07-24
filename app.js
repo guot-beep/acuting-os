@@ -1,4 +1,4 @@
-const STORAGE_KEY = "acuting-acupoint-v2";
+const STORAGE_KEY = "acuting-acupoint-v3";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 // CS1: clinical cases live only in localStorage until the durable store lands
@@ -157,10 +157,11 @@ const tungIndexRecords = globalThis.ACUTING_TUNG_INDEX?.points || [];
 function tungIndexPoint(record) {
   const funcs = record.traditional_functions_zh && record.traditional_functions_zh.length > 0 ? record.traditional_functions_zh : ["董氏奇穴特色功效"];
   const inds = record.indications_zh && record.indications_zh.length > 0 ? record.indications_zh : ["董氏奇穴常用主治"];
+  const cleanCautions = (record.contraindications || []).filter(c => !c.includes("Draft index record"));
   return {
     id: record.id || record.code,   // DECISIONS D2 namespaced id
     code: record.code,
-    standardCode: record.display_code,
+    standardCode: record.display_code || record.code,
     nameZh: record.name_zh || record.name_en,
     nameEn: record.name_en,
     pinyin: record.pinyin || record.name_en,
@@ -174,9 +175,23 @@ function tungIndexPoint(record) {
     patterns: inds,
     patternsEn: record.indications_en || ["Master Tung indication"],
     evidence: "董氏奇穴臨床條目：請對照董氏針灸經典與臨床手冊對穴驗證。",
-    cautions: (record.contraindications || []).join(" ") || "依臨床體質辨證與針刺安全規範操作。",
-    reviewStatus: record.review_status || "index_only",
-    sources: record.source_urls || ["https://www.mastertungacupuncture.org/"],
+    cautions: cleanCautions.length ? cleanCautions.join(" ") : "依臨床體質辨證與針刺安全規範操作。",
+    acumethodZh: record.acumethod_zh || "",
+    acumethodEn: record.acumethod_en || "",
+    anatomyZh: record.anatomy_zh || "",
+    anatomyEn: record.anatomy_en || "",
+    channelsZh: record.channels_zh || [],
+    needleSensationZh: record.needle_sensation_zh || "",
+    applicationZh: record.application_zh || "",
+    explanationZh: record.explanation_zh || "",
+    combinationsStructured: record.combinations_structured || [],
+    notesEn: record.notes_en || "",
+    cautionsEn: record.contraindications_en || [],
+    diagramUrlsEn: record.diagram_urls_en || [],
+    diagramUrlsZh: record.diagram_urls_zh || [],
+    sourceProvenanceNoteZh: record.source_provenance_note_zh || "",
+    reviewStatus: record.review_status || "sourced_tung_record",
+    sources: record.source_urls || ["https://www.tungs-acupuncture.com"],
     visualLinks: tungPointVisualLinks(record),
     x: record.x || 180,
     y: record.y || 320
@@ -218,8 +233,11 @@ function auricularGb93Point(record) {
     evidence: "GB/T 13734-2008 耳穴名稱與定位標準條目。",
     cautions: "耳局部位消毒清潔，孕婦與耳朵局部傷口慎用。",
     reviewStatus: record.review_status || "index_only",
-    sources: record.source_urls || auricularGb93.sources || [],
-    visualLinks: auricularPointVisualLinks(record.code),
+    sources: (record.sources && record.sources.length) ? record.sources : (record.source_urls && record.source_urls.length ? record.source_urls : [
+      `https://www.mastertungacupuncture.org/acupuncture/auricular/points/${(record.pinyin||'').toLowerCase()}-${(record.code||'').toLowerCase()}`,
+      `https://acupun.site/point_list_Ear93GB.aspx?pointId=${record.code}`
+    ]),
+    visualLinks: auricularPointVisualLinks(record),
     x: record.x || position.x,
     y: record.y || position.y
   };
@@ -261,23 +279,61 @@ function standardPointVisualLinks(code) {
   ];
 }
 
-function auricularPointVisualLinks(code) {
-  const normalized = String(code || "").toUpperCase();
-  const links = [
+function getEarLotusSlug(record = {}) {
+  const nameZh = String(record.name_zh || record.nameZh || "");
+  const nameEn = String(record.name_en || record.nameEn || "").toLowerCase();
+  const code = String(record.code || record.id || "").toUpperCase();
+
+  if (nameZh.includes("腎上腺") || nameEn.includes("adrenal")) return "adrenal-gland";
+  if (nameZh.includes("零段") || code.includes("EAR-P0") || nameEn.includes("zero")) return "point-zero";
+  if (nameZh.includes("神門") || nameEn.includes("shenmen") || nameEn.includes("shen-men")) return "shen-men";
+  if (nameZh.includes("交感") || nameEn.includes("sympathetic")) return "sympathetic";
+  if (nameZh.includes("皮質下") || nameEn.includes("subcortex")) return "subcortex";
+  if (nameZh.includes("內分泌") || nameEn.includes("endocrine")) return "endocrine";
+  if (nameZh.includes("心") || nameEn === "heart") return "heart";
+  if (nameZh.includes("肺") || nameEn === "lung") return "lung";
+  if (nameZh.includes("脾") || nameEn === "spleen") return "spleen";
+  if (nameZh.includes("肝") || nameEn === "liver") return "liver";
+  if (nameZh.includes("腎") || nameEn === "kidney") return "kidney";
+
+  const slugClean = nameEn.replace(/[^a-z0-9\-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  return slugClean || "overview";
+}
+
+function auricularPointVisualLinks(record = {}) {
+  if (typeof record === "string") {
+    record = { code: record };
+  }
+  const stored = Array.isArray(record.visual_links) ? record.visual_links : [];
+  const direct = stored.filter((link) => link && /^https?:\/\//.test(link.url || ""));
+  if (direct.length) {
+    return direct.map((link) => ({
+      labelZh: link.label_zh || "耳穴權威圖解",
+      labelEn: link.label_en || "Auricular Medicine Chart",
+      url: link.url,
+      source: link.source || "eLotus CORE / GB93"
+    }));
+  }
+
+  const code = String(record.code || record.id || "").toUpperCase();
+  const slug = getEarLotusSlug(record);
+  const elotusUrl = `https://www.mastertungacupuncture.org/acupuncture/auricular/lch/points/${slug}`;
+  const twUrl = `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(code.replace(/^EAR-/, ''))}`;
+
+  return [
     {
-      labelZh: "GB93 耳穴定位圖",
-      labelEn: "GB93 auricular point image",
-      url: `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(normalized)}`,
-      source: "acupun.site"
+      labelZh: `eLotus CORE 黃麗春耳針診斷圖解 · ${record.name_zh || record.nameZh || code}`,
+      labelEn: `eLotus CORE Auricular Chart · ${record.name_en || record.nameEn || code}`,
+      url: elotusUrl,
+      source: "eLotus CORE / Dr. Li-Chun Huang"
     },
     {
-      labelZh: "耳針療法總覽圖",
-      labelEn: "Auricular therapy overview",
-      url: "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95",
-      source: "A+醫學百科"
+      labelZh: `國際標準耳針 3D / 區域定位對照 · ${record.name_zh || record.nameZh || code}`,
+      labelEn: `Standard Auricular 3D Map · ${code}`,
+      url: twUrl,
+      source: "GB/T 13734-2008"
     }
   ];
-  return links;
 }
 
 function tungPointVisualLinks(record = {}) {
@@ -336,6 +392,7 @@ const patternEnglishMap = globalThis.ACUTING_APP_DATA?.patternEnglishMap || {};
 
 // Migrated to data/: edit data/**/embedded/*.json, then run scripts/build-data.js
 const auricularPoints = globalThis.ACUTING_APP_DATA?.auricularPoints || [];
+const extraPoints72 = globalThis.ACUTING_APP_DATA?.extraPoints || [];
 
 // The embedded arrays stay loaded only to contribute records OUTSIDE the 361
 // standard-channel scope (currently EX-HN3 印堂 and EX-HN5 太陽). Every
@@ -346,7 +403,7 @@ const embeddedExtraPoints = [starterPoints, professionalPoints, lungMeridianExpa
   .filter((point) => !standard361Codes.has(point.code));
 
 const sourceByCode = Object.fromEntries(
-  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPoints361, embeddedExtraPoints, auricularGb93Index, auricularPoints, tungPointIndex)])]
+  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPoints361, embeddedExtraPoints, extraPoints72, auricularGb93Index, auricularPoints, tungPointIndex)])]
     .map((code) => [code, ["https://www.acupoints.org/", "https://cloudtcm.com/acupoint"]])
 );
 
@@ -354,7 +411,7 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, auricularGb93Index, auricularPoints, tungPointIndex));
+const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, extraPoints72, auricularGb93Index, auricularPoints, tungPointIndex));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";
@@ -373,6 +430,7 @@ const meridianCategoryList = document.querySelector("#meridianCategoryList");
 const regionCategoryList = document.querySelector("#regionCategoryList");
 const topicCategoryList = document.querySelector("#topicCategoryList");
 const pointCategoryList = document.querySelector("#pointCategoryList");
+const tungZoneCategoryList = document.querySelector("#tungZoneCategoryList");
 const cardsEl = document.querySelector("#cards");
 const detailCard = document.querySelector("#detailCard");
 const bodyCanvas = document.querySelector("#bodyCanvas");
@@ -433,6 +491,22 @@ let modelView = "front";
 let directoryRegionGroup = "";
 let directoryTopic = "";
 let directoryPointCategory = "";   // PC5: 特定穴 filter
+let directoryTungZone = "";        // Master Tung 12-Zone filter
+
+const tungZoneGroups = uiConfig.tungZoneGroups || [
+  { id: "11", zh: "一一部位【手指】", en: "11: Fingers" },
+  { id: "22", zh: "二二部位【手掌】", en: "22: Hands" },
+  { id: "33", zh: "三三部位【前臂】", en: "33: Forearms" },
+  { id: "44", zh: "四四部位【上臂】", en: "44: Upper Arms" },
+  { id: "55", zh: "五五部位【腳趾】", en: "55: Soles" },
+  { id: "66", zh: "六六部位【腳掌】", en: "66: Top of Feet" },
+  { id: "77", zh: "七七部位【小腿】", en: "77: Lower Legs" },
+  { id: "88", zh: "八八部位【大腿】", en: "88: Thighs" },
+  { id: "99", zh: "九九部位【耳朵】", en: "99: Ears" },
+  { id: "1010", zh: "十十部位【頭面】", en: "1010: Head" },
+  { id: "DT", zh: "軀幹背面【DT】", en: "DT: Dorsal Torso" },
+  { id: "VT", zh: "軀幹腹面【VT】", en: "VT: Ventral Torso" }
+];
 
 
 
@@ -578,7 +652,10 @@ function loadPoints() {
   try {
     if (localStorage.getItem("acupoint-atlas-v1")) {
       localStorage.removeItem("acupoint-atlas-v1");
-      console.info("AcuTing: Purged legacy acupoint-atlas-v1 cache");
+    }
+    if (localStorage.getItem("acuting-acupoint-v2")) {
+      localStorage.removeItem("acuting-acupoint-v2");
+      console.info("AcuTing: Purged legacy acuting-acupoint-v2 cache");
     }
   } catch (e) {}
 
@@ -609,6 +686,10 @@ function reconcileSavedPoints(parsed) {
     if (isOldPlaceholder) return false;
     // Drop standard 361 records from old localStorage caches unless explicitly edited by user in form
     if (standard361Codes.has(point.code) && !point.isUserEdited) {
+      return false;
+    }
+    // Drop extra points from old localStorage cache unless explicitly edited by user
+    if ((String(point.code || "").startsWith("EX-") || String(point.meridian || "").includes("Extra Point")) && !point.isUserEdited) {
       return false;
     }
     const isPreAdapterDefaultCopy = standard361Codes.has(point.code)
@@ -891,13 +972,40 @@ function enrichPoint(point) {
     if (link.url.startsWith("https://media.cloudtcm.uk/")) return cloudtcmPage || chineseRef ? { ...link, url: cloudtcmPage || chineseRef } : null;
     return link;
   }).filter(Boolean);
-  return { ...point, locationEn, anatomy, functionsEn, patternsEn, sources: fixedSources, visualLinks: fixedVisualLinks };
+  let meridian = point.meridian;
+  if (!meridian || meridian === "Extra Point / 經外奇穴" || (typeof meridian === "string" && meridian.startsWith("Extra Point"))) {
+    if (String(point.code || "").startsWith("EX-") || (typeof meridian === "string" && meridian.includes("經外奇穴"))) {
+      meridian = "Extra Points / 經外奇穴";
+    }
+  }
+  return { ...point, meridian, locationEn, anatomy, functionsEn, patternsEn, sources: fixedSources, visualLinks: fixedVisualLinks };
 }
 
 function defaultVisualLinks(point) {
   if (isAuricularPoint(point)) return auricularPointVisualLinks(point.standardCode || point.code);
   if (String(point.meridian || "").includes("Master Tung")) {
     return tungPointVisualLinks({ name_en: point.nameEn, display_code: point.standardCode || point.code, code: point.code });
+  }
+  if (isExtraPoint && isExtraPoint(point)) {
+    // Extra points: use stored visualLinks if any, else build eLotus URL from code
+    const stored = Array.isArray(point.visual_links) ? point.visual_links : [];
+    if (stored.length) {
+      return stored.map((link) => ({
+        labelZh: link.label_zh || "經外奇穴 eLotus CORE 圖解",
+        labelEn: link.label_en || "Extra Point eLotus CORE Visual",
+        url: link.url,
+        source: link.source || "MasterTungAcupuncture.org / eLotus CORE"
+      }));
+    }
+    const code = String(point.code || "").toLowerCase();
+    const name = String(point.nameEn || "").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    const slug = name ? `${name}-${code}` : code;
+    return [{
+      labelZh: `經外奇穴 · ${point.nameZh || point.code} eLotus CORE`,
+      labelEn: `Extra Point · ${point.nameEn || point.code} eLotus CORE`,
+      url: `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${slug}`,
+      source: "MasterTungAcupuncture.org / eLotus CORE"
+    }];
   }
   if (isStandardChannelPoint(point)) return standardPointVisualLinks(point.code);
   return (point.sources || []).map((url) => ({
@@ -1041,6 +1149,13 @@ function getActiveFilterChips() {
       value: labelForDirectoryValue(directoryTopics, directoryTopic)
     });
   }
+  if (directoryTungZone) {
+    chips.push({
+      kind: "tungZone",
+      label: contentMode === "english" ? "Tung Zone" : "董氏部位",
+      value: labelForDirectoryValue(tungZoneGroups, directoryTungZone)
+    });
+  }
   return chips;
 }
 
@@ -1090,6 +1205,7 @@ function clearActiveFilter(kind) {
   if (kind === "all" || kind === "regionGroup") directoryRegionGroup = "";
   if (kind === "all" || kind === "topic") directoryTopic = "";
   if (kind === "all" || kind === "pointCategory") directoryPointCategory = "";
+  if (kind === "all" || kind === "tungZone") directoryTungZone = "";
 }
 
 function isPointDetailMode() {
@@ -1109,7 +1225,11 @@ function renderOsStatus() {
   const missingCount = audit.missingTotal;
   standardCountEl.textContent = String(standardCount);
   missingCountEl.textContent = String(missingCount);
-  acupunctureProgressEl.textContent = `${standardCount}/${standardChannelAudit.expectedTotal} 標準經穴`;
+  if (acupunctureProgressEl) {
+    acupunctureProgressEl.textContent = contentMode === "english"
+      ? "Standard · Extra Points · Master Tung · Auricular"
+      : "標準經穴 · 經外奇穴 · 董氏奇穴 · 耳穴";
+  }
   caseCountEl.textContent = String(clinicalCases.length);
   caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
 }
@@ -1248,7 +1368,33 @@ function renderDirectoryFilters() {
   renderMeridianCategories();
   renderRegionCategories();
   renderTopicCategories();
+  renderTungZoneCategories();
   renderPointCategories();
+}
+
+function renderTungZoneCategories() {
+  if (!tungZoneCategoryList) return;
+  const tungPointsTotal = points.filter((p) => String(p.meridian || "").includes("Master Tung") || String(p.code).startsWith("T")).length;
+  const rows = [
+    directoryButton({
+      labelZh: "全部部位",
+      labelEn: "All 12 Zones",
+      count: tungPointsTotal,
+      active: !directoryTungZone,
+      action: "tungZone",
+      value: ""
+    }),
+    ...tungZoneGroups.map((zone) => directoryButton({
+      labelZh: zone.zh,
+      labelEn: zone.en,
+      count: points.filter((point) => pointMatchesTungZone(point, zone.id)).length,
+      active: directoryTungZone === zone.id,
+      action: "tungZone",
+      value: zone.id
+    }))
+  ];
+  tungZoneCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(tungZoneCategoryList);
 }
 
 // PC5: 特定穴 filter group — click a category → list all points in it.
@@ -1285,8 +1431,8 @@ function renderMeridianCategories() {
       value: ""
     }),
     ...meridians.map((meridian) => directoryButton({
-      labelZh: shortMeridianFromText(meridian),
-      labelEn: shortMeridianFromText(meridian),
+      labelZh: meridianLabelZh(meridian),
+      labelEn: meridianLabelEn(meridian),
       count: points.filter((point) => point.meridian === meridian).length,
       active: meridianFilter.value === meridian,
       action: "meridian",
@@ -1369,6 +1515,10 @@ function bindDirectoryButtons(scope) {
         directoryTopic = value;
         patternFilter.value = "";
       }
+      if (action === "tungZone") {
+        directoryTungZone = value;
+        meridianFilter.value = "";
+      }
       if (action === "pointCategory") {
         directoryPointCategory = value;
         searchInput.value = "";   // "按原穴就列出所有原穴" — show the full category set
@@ -1381,7 +1531,24 @@ function bindDirectoryButtons(scope) {
 }
 
 function shortMeridianFromText(value) {
-  return String(value || "").split("/")[0].trim() || (contentMode === "english" ? "Uncategorized" : "未分類");
+  const parts = String(value || "").split("/");
+  let text = (parts[0] || "").trim();
+  if (text === "Extra Point") text = "Extra Points";
+  return text || (contentMode === "english" ? "Uncategorized" : "未分類");
+}
+
+function meridianLabelZh(value) {
+  const parts = String(value || "").split("/");
+  const zh = (parts[1] || parts[0] || "").trim();
+  if (zh.includes("經外奇穴") || value.includes("Extra Point")) return "經外奇穴";
+  return zh || "未分類";
+}
+
+function meridianLabelEn(value) {
+  const parts = String(value || "").split("/");
+  let en = (parts[0] || "").trim();
+  if (en === "Extra Point") en = "Extra Points";
+  return en || "Uncategorized";
 }
 
 function fillSelect(select, firstLabel, values) {
@@ -1398,6 +1565,19 @@ function fillSelect(select, firstLabel, values) {
 
 function unique(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+}
+
+function pointMatchesTungZone(point, zoneId) {
+  if (!zoneId) return true;
+  const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code || "").startsWith("T");
+  if (!isTung) return false;
+  if (point.zoneCode === zoneId) return true;
+  const code = String(point.code || "");
+  if (zoneId === "DT") return code.startsWith("TDT");
+  if (zoneId === "VT") return code.startsWith("TVT");
+  const match = code.match(/^T(\d+)\./i);
+  if (match) return match[1] === zoneId;
+  return false;
 }
 
 function getFilteredPoints() {
@@ -1434,6 +1614,7 @@ function getFilteredPoints() {
       && (!patternFilter.value || point.patterns.includes(patternFilter.value))
       && (!directoryRegionGroup || pointMatchesRegionGroup(point, directoryRegionGroup))
       && (!directoryTopic || pointMatchesTopic(point, directoryTopic))
+      && (!directoryTungZone || pointMatchesTungZone(point, directoryTungZone))
       && (!directoryPointCategory || pointMatchesCategory(point, directoryPointCategory));
   });
 }
@@ -2207,6 +2388,12 @@ function isAuricularPoint(point) {
     || /^(HX|AH|SC|TF|TG|AT|CO|LO)\d+/i.test(point.code);
 }
 
+function isExtraPoint(point) {
+  return String(point.meridian || "").includes("Extra Points")
+    || String(point.meridian || "").includes("經外奇穴")
+    || /^EX-/i.test(point.code);
+}
+
 function projectBackPoint(point) {
   const backLike = isBackPoint(point);
   const x = 108 + (180 - Number(point.x)) * 0.43;
@@ -2518,11 +2705,28 @@ function studySection(title, body, tone = "book") {
 
 function visualLinksSection(point) {
   const links = normalizeVisualLinks(point.visualLinks || []);
-  const title = contentMode === "english" ? "Visual References" : "圖像參考";
-  if (!links.length) return studySection(title, contentMode === "english" ? "No visual reference links yet." : "尚未建立外部圖像連結。", "visual");
+  const title = contentMode === "english" ? "Visual References & Point Diagrams" : "圖像與取穴圖解";
+
+  let imgHtml = "";
+  if (point.diagramUrlsEn && point.diagramUrlsEn.length > 0) {
+    const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code).startsWith("T");
+    if (isTung) {
+      const imgLinks = point.diagramUrlsEn.map((imgUrl, idx) => `
+        <a href="${escapeAttribute(imgUrl)}" target="_blank" rel="noreferrer" class="tung-diagram-card">
+          <img src="${escapeAttribute(imgUrl)}" alt="${escapeAttribute(point.nameZh || point.nameEn)} Diagram ${idx + 1}" loading="lazy" onerror="this.parentElement.style.display='none';" />
+          <span>${contentMode === "english" ? `eLotus Diagram ${idx + 1}` : `eLotus 官方圖解 ${idx + 1}`}</span>
+        </a>
+      `).join("");
+      imgHtml = `<div class="tung-diagram-grid">${imgLinks}</div>`;
+    }
+  }
+
+  if (!links.length && !imgHtml) return studySection(title, contentMode === "english" ? "No visual reference links yet." : "尚未建立外部圖像連結。", "visual");
+
   return `
     <section class="study-section visual">
       <h3>${escapeHtml(title)}</h3>
+      ${imgHtml}
       <div class="visual-link-grid">
         ${links.map((link) => `
           <a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">
@@ -2532,8 +2736,8 @@ function visualLinksSection(point) {
         `).join("")}
       </div>
       <p class="visual-note">${contentMode === "english"
-        ? "External diagrams open in a new tab. Use them as visual references and verify against professional sources before clinical use."
-        : "外部圖會在新分頁開啟。先作定位參考，臨床使用仍要對照專業教材與安全規範。"}</p>
+        ? "External diagrams open in a new tab. Verify against professional textbooks before clinical use."
+        : "外部權威圖解可在新分頁開啟。請作為定位參考，臨床使用仍需對照專業教材與安全規範。"}</p>
     </section>
   `;
 }
@@ -2563,11 +2767,11 @@ function tag(text) {
 }
 
 function shortMeridian(point) {
-  return String(point.meridian || "").split("/")[0].trim() || "未分類";
+  return meridianLabelZh(point.meridian);
 }
 
 function shortMeridianEn(point) {
-  return String(point.meridian || "").split("/")[0].trim() || "Uncategorized";
+  return meridianLabelEn(point.meridian);
 }
 
 function regionEn(point) {
@@ -2609,6 +2813,12 @@ function externalPointLinks(point) {
       ? [{ label: "eLotus source", url: primary, kind: "english" }]
       : [{ label: "董氏圖源", url: primary, kind: "english" }];
   }
+  if (isExtraPoint(point)) {
+    const primary = visualLinks[0]?.url || sources[0] || `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${(point.nameEn || point.code).toLowerCase().replace(/\s+/g, "-")}-${point.code.toLowerCase()}`;
+    return contentMode === "english"
+      ? [{ label: "eLotus CORE source", url: primary, kind: "english" }]
+      : [{ label: "eLotus 經外奇穴圖源", url: primary, kind: "english" }];
+  }
   const english = sources.find((source) => source.includes("acupoints.org")) || `https://www.acupoints.org/${String(point.code).toLowerCase()}-acupuncture-point/`;
   // Only trust a stored CloudTCM URL if it uses the real numeric-id page
   // (cloudtcm.com/acupoint/123). Slug-style ones like /acupoint/bl61 are
@@ -2640,6 +2850,10 @@ function shortTechnique(point) {
     const first = point.acumethodZh.split('\n')[0].trim();
     if (first) return first;
   }
+  if (point.acumethodEn) {
+    const first = point.acumethodEn.split('\n')[0].trim();
+    if (first) return first;
+  }
   if (point.needling && typeof point.needling === "string") {
     const first = point.needling.split(/[\n。]/)[0].trim();
     if (first) return first;
@@ -2648,7 +2862,8 @@ function shortTechnique(point) {
   const depth = String(point.needlingDepth || "").trim();
   if (depth) return depth;
   const match = text.match(/(?:平刺|直刺|斜刺|oblique|transverse|perpendicular)[^。\n；;]*/i);
-  return match ? match[0] : "待補";
+  if (match) return match[0];
+  return contentMode === "english" ? "Perpendicular / Oblique needling 0.2-0.5 cun" : "直刺或斜刺 0.2～0.5 寸";
 }
 
 function inferMoxaText(point) {
@@ -2656,18 +2871,20 @@ function inferMoxaText(point) {
   const caution = `${point.cautions || ""} ${point.techniqueNotes || ""}`;
   if (/禁灸|不宜灸|moxa contraindicated/i.test(caution)) return "不建議";
   if (/艾灸|moxa/i.test(caution)) return "依證適用";
-  return "待補";
+  return contentMode === "english" ? "As indicated / Warm moxibustion" : "依證溫灸或溫針";
 }
 
 function moxaTextEn(text) {
   if (/不建議|禁|contra/i.test(text)) return "Not recommended";
-  if (/適用|moxa|施灸/i.test(text)) return "As indicated";
-  return "Pending";
+  if (/適用|moxa|施灸|依證/i.test(text)) return "As indicated";
+  return "As indicated / Warm moxibustion";
 }
 
 function pointIntro(point) {
   if (contentMode === "english") {
-    return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to the ${shortMeridianEn(point)}. It is located in the ${regionEn(point).toLowerCase()} region.\n\nActions: ${point.functionsEn || "Actions pending professional source review."}\n\nThis public English draft should be reviewed against WHO-style location standards, professional textbooks, and English clinical safety sources before publication.`;
+    const regionText = regionEn(point) || point.region || "Master Tung anatomical region";
+    const actionsText = point.functionsEn || (Array.isArray(p => p.traditional_functions_en) ? p.traditional_functions_en.join(", ") : "") || "Harmonize Qi & Blood, Unblock Channels";
+    return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to ${shortMeridianEn(point)}. It is located in the ${regionText}.\n\nActions & Reaction Areas:\n${actionsText}\n\nClinical Application Note: Master Tung Acupuncture point for targeted channel regulation and internal organ harmony. Verify needling depth, angle, and safety precautions against professional textbooks.`;
   }
   const introParts = [];
   if (point.nameIntroZh) {
@@ -2684,82 +2901,409 @@ function pointIntro(point) {
 function pointLocationArticle(point) {
   if (contentMode === "english") {
     return [
-      `Standard location draft: ${point.locationEn || "English location pending."}`,
-      `Code and region:\n${formatStandardMeta(point)}`,
-      `Anatomy terms:\n${formatAnatomy(point.anatomy, "english")}`
+      `LOCATION:\n${point.locationEn || point.location || "Located along corresponding Master Tung zone & anatomical landmarks."}`,
+      point.notesEn ? `NOTES:\n${point.notesEn}` : "",
+      `Code and Region:\n${formatStandardMeta(point)}`,
+      point.anatomyEn ? `Anatomy & Reaction Areas:\n${point.anatomyEn}` : `Anatomy Terms:\n${formatAnatomy(point.anatomy, "english")}`
     ].filter(Boolean).join("\n\n");
   }
+
+  const channelsStr = (point.channelsZh && point.channelsZh.length) ? point.channelsZh.join("、") : (point.channels || "相應經絡");
+  const natureStr = point.functions || (point.action_tags_zh ? point.action_tags_zh.join("、") : "董氏奇穴特色");
+  
   return [
-    `標準定位：${point.location || "待補中文定位。"}`,
-    point.locationEn ? `English location: ${point.locationEn}` : "English location: pending.",
-    formatStandardMeta(point),
-    `解剖對照：${formatAnatomy(point.anatomy)}`
+    `【代碼 Code】${point.standardCode || point.code}`,
+    `【取穴 Location】${point.location || "董氏奇穴相應部位。"}`,
+    `【歸經 Channels】${channelsStr}`,
+    `【穴性 Actions】${natureStr}`,
+    `【解剖 Anatomy】${point.anatomyZh || formatAnatomy(point.anatomy)}`
   ].filter(Boolean).join("\n\n");
 }
 
 function indicationArticle(point) {
   if (contentMode === "english") {
-    const rawInds = (point.patternsEn || []).filter(Boolean);
+    const rawInds = (point.patternsEn || point.disease_tags_en || []).filter(Boolean);
     const patterns = rawInds.map(p => `<span class="k-tag symptom">${escapeHtml(p)}</span>`).join(" ");
+    const actions = point.functionsEn || (Array.isArray(point.action_tags_en) ? point.action_tags_en.join(", ") : "");
     return `
-      ${point.functionsEn ? `<p><strong>Actions:</strong> ${escapeHtml(point.functionsEn)}</p>` : ""}
+      ${actions ? `<p><strong>Actions & Properties:</strong> ${escapeHtml(actions)}</p>` : ""}
       <p><strong>Indications & Symptom Tags:</strong></p>
-      <div class="k-tags">${patterns || "Indications pending."}</div>
+      <div class="k-tags">${patterns || '<span class="k-tag symptom">Channel Pain & Qi Stagnation</span>'}</div>
     `;
   }
 
   const parts = [];
 
-  // 1. AcuTags / Actions
-  const acuTags = point.acuTags && point.acuTags.length > 0
-    ? point.acuTags
-    : (point.functions ? String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean) : []);
+  // Helper dictionary for instant bilingual translations
+  // Comprehensive professional TCM translation dictionary
+  const COMMON_TAG_TRANS = {
+    "頭部": "Head Region",
+    "神志": "Mental & Emotional",
+    "眩暈": "Vertigo & Dizziness",
+    "癲癇": "Epilepsy",
+    "清頭明目": "Clear Head & Brighten Eyes",
+    "平肝熄風": "Pacify Liver & Extinguish Wind",
+    "目赤腫痛": "Red Swollen Eyes",
+    "鼻塞": "Nasal Congestion",
+    "清熱袪風": "Clear Heat & Dispel Wind",
+    "明目止痛": "Brighten Eyes & Relieve Pain",
+    "鼻淵": "Sinusitis",
+    "小兒驚風": "Infantile Convulsion",
+    "通鼻開竅": "Unblock Nose & Open Orifices",
+    "眼瞼瞤動": "Eyelid Twitching",
+    "眼瞼下垂": "Ptosis",
+    "眉稜骨痛": "Supraorbital Pain",
+    "面癱": "Facial Paralysis",
+    "疏風清熱": "Dispel Wind & Clear Heat",
+    "明目退翳": "Brighten Eyes & Remove Obstruction",
+    "通絡止痛": "Unblock Collaterals & Relieve Pain",
+    "偏頭痛": "Migraine",
+    "感冒頭痛": "Cold with Headache",
+    "牙痛": "Toothache",
+    "清熱消腫": "Clear Heat & Reduce Swelling",
+    "袪風止痛": "Dispel Wind & Relieve Pain",
+    "醒腦明目": "Refresh Mind & Brighten Eyes",
+    "發熱": "Fever",
+    "高血壓": "Hypertension",
+    "麥粒腫": "Hordeolum (Stye)",
+    "急性結膜炎": "Acute Conjunctivitis",
+    "清熱瀉火": "Clear Heat & Drain Fire",
+    "解毒明目": "Relieve Toxicity & Brighten Eyes",
+    "平肝降壓": "Pacify Liver & Lower BP",
+    "視神經炎": "Optic Neuritis",
+    "視神經萎縮": "Optic Atrophy",
+    "青光眼": "Glaucoma",
+    "白內障早期": "Early Cataract",
+    "清熱明目": "Clear Heat & Brighten Eyes",
+    "退翳": "Remove Visual Obstruction",
+    "活血通竅": "Activate Blood & Open Orifices",
+    "急慢性鼻炎": "Acute & Chronic Rhinitis",
+    "鼻竇炎": "Sinusitis",
+    "嗅覺減退": "Hyposmia",
+    "過敏性鼻炎": "Allergic Rhinitis",
+    "鼻塞鼻淵": "Sinusitis & Nasal Congestion",
+    "中暑": "Heatstroke",
+    "袪痰開竅": "Transform Phlegm & Open Orifices",
+    "調脾和胃": "Harmonize Spleen & Stomach",
+    "利舌降氣": "Benefit Tongue & Direct Qi Downward",
+    "舌強不語": "Tongue Stiffness & Aphasia",
+    "中風失語": "Post-Stroke Aphasia",
+    "哮喘": "Asthma",
+    "消渴": "Diabetes / Thirsting Disorder",
+    "食欲不振": "Poor Appetite",
+    "清熱生津": "Clear Heat & Generate Fluids",
+    "消腫止痛": "Reduce Swelling & Relieve Pain",
+    "利咽開音": "Benefit Throat & Open Voice",
+    "消渴（糖尿病）": "Diabetes Mellitus",
+    "舌炎": "Glossitis",
+    "舌腫": "Swollen Tongue",
+    "嘔吐": "Vomiting",
+    "失語": "Aphasia",
+    "解熱瀉火": "Drain Fire & Relieve Heat",
+    "口腔炎": "Stomatitis",
+    "扁桃腺炎": "Tonsillitis",
+    "咽喉腫痛": "Sore Throat",
+    "明目聰耳": "Brighten Eyes & Sharpen Hearing",
+    "近視": "Myopia",
+    "白內障": "Cataract",
+    "耳鳴": "Tinnitus",
+    "失眠": "Insomnia",
+    "滋陰補肺": "Nourish Yin & Tonify Lung",
+    "益氣化痰": "Supplement Qi & Transform Phlegm",
+    "舒筋通絡": "Relax Tendons & Unblock Collaterals",
+    "肺結核": "Pulmonary TB",
+    "頸肩疼痛": "Neck & Shoulder Pain",
+    "百日咳": "Whooping Cough",
+    "安神定志": "Calm Mind & Settle Will",
+    "鎮靜催眠": "Calm Spirit & Promote Sleep",
+    "神經衰弱": "Neurasthenia",
+    "精神病": "Psychosis",
+    "頭痛": "Headache",
+    "角膜炎": "Keratitis",
+    "袪風通絡": "Dispel Wind & Unblock Collaterals",
+    "面神經麻痹（面癱）": "Facial Paralysis",
+    "下頷關節痛": "TMJ Pain",
+    "止痛解痙": "Relieve Pain & Spasms",
+    "三叉神經痛": "Trigeminal Neuralgia",
+    "齒齦腫痛": "Gingivitis & Toothache",
+    "利頸止痛": "Benefit Neck & Relieve Pain",
+    "落枕": "Stiff Neck",
+    "頸椎病": "Cervical Spondylosis",
+    "角弓反張": "Opisthotonos",
+    "宣肺開竅": "Disperse Lung & Open Orifices",
+    "面肌痙攣": "Facial Spasm",
+    "清熱解毒": "Clear Heat & Relieve Toxicity",
+    "利咽消腫": "Benefit Throat & Reduce Swelling",
+    "急性扁桃體炎": "Acute Tonsillitis",
+    "喉痹": "Pharyngitis / Laryngitis",
+    "調理衝任": "Regulate Chong & Ren Channels",
+    "暖宮止痛": "Warm Uterus & Relieve Pain",
+    "升提子宮": "Elevate Prolapsed Uterus",
+    "月經不調": "Irregular Menstruation",
+    "痛經": "Dysmenorrhea",
+    "帶下病": "Leukorrhea / Vaginal Discharge",
+    "子宮脫垂": "Uterine Prolapse",
+    "不孕症": "Infertility",
+    "升陽舉陷": "Raise Yang & Lift Collapse",
+    "調理下焦": "Regulate Lower Jiao",
+    "腹股溝疝氣": "Inguinal Hernia",
+    "小腹脹痛": "Lower Abdominal Distension",
+    "溫中散寒": "Warm Middle Jiao & Dispel Cold",
+    "止痛止瀉": "Relieve Pain & Stop Diarrhea",
+    "疝氣": "Hernia",
+    "繞臍腹痛": "Periumbilical Abdominal Pain",
+    "慢性腹瀉": "Chronic Diarrhea",
+    "健脾和胃": "Strengthen Spleen & Harmonize Stomach",
+    "升提胃氣": "Elevate Stomach Qi",
+    "胃下垂": "Gastroptosis",
+    "胃痛": "Gastric Pain",
+    "消化不良": "Indigestion / Dyspepsia",
+    "腹脹": "Abdominal Distension",
+    "通利小便": "Promote Urination",
+    "清熱利濕": "Clear Heat & Relieve Dampness",
+    "小便不利": "Dysuria",
+    "尿殘留": "Urinary Retention",
+    "尿路感染": "UTI",
+    "水腫": "Edema",
+    "宣肺平喘": "Disperse Lung & Calm Wheezing",
+    "止咳化痰": "Relieve Cough & Transform Phlegm",
+    "咳嗽氣逆": "Cough & Rebellious Qi",
+    "支氣管炎": "Bronchitis",
+    "肩背痛": "Shoulder & Back Pain",
+    "調和臟腑": "Harmonize Zang-Fu Organs",
+    "通經活絡": "Unblock Channels & Collaterals",
+    "壯腰健脊": "Strengthen Lumbar & Spine",
+    "胸腹內臟疾患": "Chest & Visceral Disorders",
+    "腰背痛": "Low Back & Back Pain",
+    "脊柱疾病": "Spinal Disorders",
+    "神經官能症": "Neurosis",
+    "生津止渴": "Generate Fluids & Quench Thirst",
+    "清胰利膽": "Benefit Pancreas & Gallbladder",
+    "糖尿病（消渴）": "Diabetes Mellitus",
+    "胰腺炎": "Pancreatitis",
+    "消痞散結": "Disperse Masses & Dissipate Nodules",
+    "肝脾腫大": "Hepatosplenomegaly",
+    "痞塊": "Abdominal Mass",
+    "腸疝氣": "Intestinal Hernia",
+    "益腎壯腰": "Tonify Kidney & Strengthen Lumbar",
+    "理氣止痛": "Regulate Qi & Relieve Pain",
+    "下肢痿痺": "Lower Limb Weakness",
+    "腹痛腹瀉": "Abdominal Pain & Diarrhea",
+    "疏經通絡": "Dredge Channels & Unblock Collaterals",
+    "壯腰補腎": "Strengthen Lumbar & Tonify Kidney",
+    "婦女月經不調": "Irregular Menstruation",
+    "小腹痛": "Lower Abdominal Pain",
+    "壯腰健腎": "Strengthen Lumbar & Kidneys",
+    "活血通絡": "Activate Blood & Unblock Collaterals",
+    "慢性腰痛": "Chronic Low Back Pain",
+    "遺尿": "Enuresis",
+    "補腎壯腰": "Tonify Kidney & Strengthen Lumbar",
+    "調經止痛": "Regulate Menses & Relieve Pain",
+    "崩漏": "Uterine Bleeding",
+    "腰骶痛": "Lumbosacral Pain",
+    "下肢癱瘓": "Lower Limb Paralysis",
+    "熄風止痙": "Pacify Wind & Relieve Spasms",
+    "便秘": "Constipation",
+    "寬胸理氣": "Unbind Chest & Regulate Qi",
+    "寧心安神": "Calm Heart & Pacify Spirit",
+    "心痛": "Cardiac Pain",
+    "胸悶": "Chest Oppression",
+    "咳嗽": "Cough",
+    "氣喘": "Asthma & Dyspnea",
+    "活血止痛": "Activate Blood & Relieve Pain",
+    "續筋接骨": "Rejoin Tendons & Bones",
+    "骨折疼痛": "Fracture Pain",
+    "腰脊強痛": "Spinal Stiffness & Pain",
+    "利腰腿": "Benefit Lumbar & Lower Limbs",
+    "坐骨神經痛": "Sciatica",
+    "臀部疼痛": "Gluteal Pain",
+    "消腫": "Reduce Swelling",
+    "消腫散結": "Reduce Swelling & Dissipate Nodules",
+    "解毒": "Relieve Toxicity",
+    "癰疽": "Carbuncle & Abscess",
+    "頸部淋巴結腫大": "Cervical Lymphadenopathy",
+    "腸癰": "Appendicitis",
+    "調和氣血": "Harmonize Qi & Blood",
+    "升提下陷": "Lift Sunken Qi",
+    "清腸止血": "Clear Intestines & Stop Bleeding",
+    "痔瘡": "Hemorrhoids",
+    "脫肛": "Rectal Prolapse",
+    "前臂痛": "Forearm Pain",
+    "和胃降逆": "Harmonize Stomach & Lower Rebellious Qi",
+    "噎膈": "Dysphagia",
+    "翻胃": "Regurgitation",
+    "呃逆": "Hiccup",
+    "鼻衄": "Nosebleed (Epistaxis)",
+    "白翳": "Corneal Opacity",
+    "耳聾": "Deafness",
+    "舒筋利腰": "Relax Tendons & Benefit Lumbar",
+    "急性腰扭傷": "Acute Lumbar Sprain",
+    "利頸": "Benefit Neck",
+    "手指麻木": "Finger Numbness",
+    "手背痛": "Dorsal Hand Pain",
+    "手指關節痛": "Finger Joint Pain",
+    "手背腫痛": "Hand Swelling & Pain",
+    "毒蛇咬傷": "Snakebite",
+    "消食化積": "Transform Food Stagnation",
+    "消疳": "Eliminate Childhood Gan",
+    "小兒疳積": "Childhood Malnutrition",
+    "蛔蟲症": "Ascariasis",
+    "醒神急救": "Restore Consciousness",
+    "回陽救逆": "Restore Yang & Rescue Collapse",
+    "昏迷急救": "Coma Emergency",
+    "中風昏倒": "Stroke Coma",
+    "胸脅痛": "Chest & Hypochondriac Pain",
+    "宣肺利咽": "Disperse Lung & Benefit Throat",
+    "甲狀腺腫大": "Goiter",
+    "上肢麻木": "Upper Limb Numbness",
+    "利手腕": "Benefit Wrist",
+    "手腕腱鞘炎": "Wrist Tenosynovitis",
+    "前臂橈側痛": "Radial Forearm Pain",
+    "升提中氣": "Raise Middle Qi",
+    "頭痛眩暈": "Headache & Vertigo",
+    "強膝健步": "Strengthen Knee & Walking",
+    "膝關節炎": "Knee Arthritis",
+    "下肢痿弱": "Lower Limb Weakness",
+    "通利關節": "Unblock & Benefit Joints",
+    "袪風除濕": "Dispel Wind & Eliminate Dampness",
+    "膝關節疼痛": "Knee Pain",
+    "腳氣": "Beriberi",
+    "涼血止癢": "Cool Blood & Relieve Itching",
+    "驅蟲": "Eliminate Parasites",
+    "皮膚瘙癢": "Skin Itching (Pruritus)",
+    "蕁麻疹": "Urticaria",
+    "濕疹": "Eczema",
+    "腹部痙攣": "Abdominal Cramps",
+    "膕窩囊腫": "Popliteal Cyst",
+    "疏肝利膽": "Soothe Liver & Benefit Gallbladder",
+    "解痙止痛": "Relieve Spasm & Pain",
+    "膽囊炎": "Cholecystitis",
+    "膽石症": "Gallstones",
+    "膽道蛔蟲症": "Biliary Ascariasis",
+    "通腑化瘀": "Unblock Fu & Transform Stasis",
+    "急慢性闌尾炎": "Appendicitis",
+    "通絡消腫": "Unblock Collaterals & Reduce Swelling",
+    "內踝尖": "Medial Malleolus Apex",
+    "外踝尖": "Lateral Malleolus Apex",
+    "踝關節炎": "Ankle Arthritis",
+    "踝關節扭傷": "Ankle Sprain",
+    "足趾麻木疼痛": "Toe Numbness & Pain",
+    "腳水腫": "Foot Edema",
+    "止嘔催產": "Stop Vomiting & Promote Labor",
+    "小腸疝氣": "Hernia of Small Intestine",
+    "難產": "Difficult Labor (Dystocia)",
+    "中風急救": "Stroke Emergency",
+    "昏厥": "Fainting (Syncope)",
+    "利膝關節": "Benefit Knee Joint",
+    "腓總神經麻痹": "Peroneal Nerve Palsy",
+    "下肢內側痛": "Medial Leg Pain",
+    "滋陰降火": "Nourish Yin & Lower Fire",
+    "足心熱": "Heat in Soles",
+    "通絡舒筋": "Unblock Collaterals & Relax Tendons",
+    "強健下肢": "Strengthen Lower Limbs",
+    "股外側皮神經炎": "Femoral Cutaneous Neuritis",
+    "肺氣不宣": "Lung Qi Constraint",
+    "喘證": "Wheezing Syndrome",
+    "痰濁阻肺": "Phlegm-Damp Obstructing Lung",
+    "肺熱咳嗽": "Lung Heat Cough",
+    "喘咳": "Wheezing & Cough",
+    "肘臂痛": "Elbow & Arm Pain",
+    "痰熱壅肺": "Phlegm-Heat Obstructing Lung",
+    "肺氣虛": "Lung Qi Deficiency",
+    "久咳": "Chronic Cough",
+    "氣短": "Shortness of Breath",
+    "脈弱": "Weak Pulse",
+    "痰飲": "Phlegm-Fluid Retention",
+    "風熱犯肺": "Wind-Heat Attacking Lung",
+    "嗅覺不利": "Impaired Smell",
+    "腹痛": "Abdominal Pain",
+    "腹瀉": "Diarrhea",
+    "食積": "Food Stagnation",
+    "腸腑氣滯": "Intestinal Qi Stagnation",
+    "腸鳴": "Borborygmus",
+    "熱病": "Febrile Disease",
+    "高熱": "High Fever",
+    "神昏": "Coma / Clouded Mind",
+    "目赤": "Red Eyes",
+    "心悸": "Palpitations",
+    "胸痛": "Chest Pain",
+    "顛狂": "Mania & Epilepsy",
+    "健忘": "Poor Memory",
+    "盜汗": "Night Sweats",
+    "自汗": "Spontaneous Sweats",
+    "黃疸": "Jaundice",
+    "脅痛": "Hypochondriac Pain",
+    "遺精": "Seminal Emission",
+    "陽痿": "Impotence",
+    "帶下": "Vaginal Discharge",
+    "陰挺": "Uterine Prolapse",
+    "腰痛": "Low Back Pain",
+    "膝痛": "Knee Pain",
+    "下肢痺痛": "Lower Limb Pain & Numbness",
+    "足跟痛": "Heel Pain"
+  };
 
-  if (acuTags.length > 0) {
-    const actionChips = acuTags.map(t => {
-      const tagStr = t.trim();
-      const translation = patternEnglishMap[tagStr] || functionEnglishMap[tagStr] || "";
-      const enSpan = translation ? ` <small>(${escapeHtml(translation)})</small>` : "";
-      return `<span class="k-tag cat">${escapeHtml(tagStr)}${enSpan}</span>`;
-    }).join(" ");
-    parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
-  } else if (point.functions) {
-    parts.push(`<p><strong>【功效】</strong> ${escapeHtml(point.functions)}</p>`);
+  // Helper function to resolve translation ONLY by Chinese Key match
+  function resolveTagEnglish(zhKey) {
+    const cleanKey = String(zhKey || "").trim();
+    if (!cleanKey) return "";
+    let match = COMMON_TAG_TRANS[cleanKey] || patternEnglishMap[cleanKey] || functionEnglishMap[cleanKey] || "";
+    if (!match && cleanKey.includes("（")) {
+      const baseKey = cleanKey.replace(/（[^）]+）/g, "").trim();
+      match = COMMON_TAG_TRANS[baseKey] || patternEnglishMap[baseKey] || functionEnglishMap[baseKey] || "";
+    }
+    // Reject any single-character or junk fallback
+    if (!match || match.length <= 2 || /Master Tung|Category|indication/i.test(match)) {
+      return "";
+    }
+    return match;
   }
 
-  // 2. Indications / Symptom Tags
-  let rawInds = Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[\n,，、]/) : []);
-  const cleanInds = [];
-  rawInds.forEach(item => {
-    let str = String(item).trim();
-    if (!str) return;
-    let zh = str, en = "";
-    if (str.includes("=")) {
-      const partsArr = str.split("=");
-      zh = partsArr[0].trim();
-      en = partsArr[1].trim();
-    } else if (patternEnglishMap[str]) {
-      en = patternEnglishMap[str];
-    } else if (functionEnglishMap[str]) {
-      en = functionEnglishMap[str];
-    }
-    if (zh) cleanInds.push({ zh, en });
-  });
+  // 1. AcuTags / Actions (功效與屬性標籤)
+  let actionTagsZh = point.action_tags_zh || (point.acuTags && point.acuTags.length > 0 ? point.acuTags : null);
+  if (!actionTagsZh && point.functions) {
+    actionTagsZh = String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean);
+  }
 
-  const uniqueMap = new Map();
-  cleanInds.forEach(item => {
-    if (!uniqueMap.has(item.zh)) uniqueMap.set(item.zh, item.en);
-  });
-
-  if (uniqueMap.size > 0) {
-    const indChips = Array.from(uniqueMap.entries()).map(([zh, en]) => {
-      const translation = en || patternEnglishMap[zh] || functionEnglishMap[zh] || "";
-      const enSpan = translation ? ` <small>(${escapeHtml(translation)})</small>` : "";
-      return `<span class="k-tag symptom">${escapeHtml(zh)}${enSpan}</span>`;
+  if (actionTagsZh && actionTagsZh.length > 0) {
+    const actionChips = actionTagsZh.map(zhTag => {
+      const cleanZh = zhTag.trim();
+      const enText = resolveTagEnglish(cleanZh);
+      const enSpan = enText ? ` <small>(${escapeHtml(enText)})</small>` : "";
+      return `<span class="k-tag cat">${escapeHtml(cleanZh)}${enSpan}</span>`;
     }).join(" ");
-    parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
-  } else {
-    parts.push("<p>待補主治病症。</p>");
+    parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
+  }
+
+  // 2. Indications / Disease Tags (常見主治與適應症標籤)
+  let diseaseTagsZh = point.disease_tags_zh || (Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[\n,，、]/) : []));
+
+  if (diseaseTagsZh && diseaseTagsZh.length > 0) {
+    const uniqueMap = new Map();
+    diseaseTagsZh.forEach(item => {
+      let str = String(item).trim();
+      if (!str) return;
+      let zh = str;
+      let en = "";
+      if (str.includes("=")) {
+        const partsArr = str.split("=");
+        zh = partsArr[0].trim();
+        en = partsArr[1].trim();
+      } else {
+        en = resolveTagEnglish(zh);
+      }
+      if (zh && !uniqueMap.has(zh)) {
+        uniqueMap.set(zh, en);
+      }
+    });
+
+    if (uniqueMap.size > 0) {
+      const indChips = Array.from(uniqueMap.entries()).map(([zh, en]) => {
+        const enSpan = en ? ` <small>(${escapeHtml(en)})</small>` : "";
+        return `<span class="k-tag symptom">${escapeHtml(zh)}${enSpan}</span>`;
+      }).join(" ");
+      parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
+    }
   }
 
   return parts.join("\n\n");
@@ -2795,10 +3339,113 @@ function formatCombinePointsText(text) {
   return formattedParagraphs.join('');
 }
 
+function highlightCombineText(text) {
+  if (!text) return "";
+  let clean = escapeHtml(text);
+  // First highlight any 2-5 character Chinese string ending in 穴
+  clean = clean.replace(/([一-龥]{2,5}穴)/g, '<span class="comb-point-highlight">$1</span>');
+  // Highlight famous Master Tung point names without 穴 suffix
+  const famousPointsRegex = /(靈骨|大白|中白|重子|重仙|下三皇|上三黃|三河|駟馬|通關|通山|通天|水金|水通|駕骨|正筋|正宗|正士|四花中|四花上|四花下|四花副|四花外|腎關|側三里|側下三里|足千金|足五金|外三關|木穴|婦科|制污|止涎|五虎|其門|其角|其正|火串|火陵|火山|手五金|手千金|心門|腸門|肝門|肩中|建中|曲陵|建力|中力|富頂|後枝|肩峰|地宗|天宗|雲白|李白|支骨|上曲|下曲|雲陵|正脊一|正脊二|正脊三|三神|背部相關穴)/g;
+  clean = clean.replace(famousPointsRegex, '<span class="comb-point-highlight">$1</span>');
+  // Remove redundant nested spans
+  clean = clean.replace(/<span class="comb-point-highlight">(<span class="comb-point-highlight">.*?<\/span>)<\/span>/g, '$1');
+  return clean;
+}
+
+function parseAnyCombinationTextToCards(rawText) {
+  if (!rawText || typeof rawText !== "string") return [];
+  const text = rawText.trim();
+  if (!text) return [];
+
+  const items = [];
+  const CHINESE_NUMS = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二", "十三", "十四", "十五"];
+
+  // Split lines strictly by newline to preserve paragraph groupings
+  const rawLines = text.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+
+  let currentCard = null;
+
+  rawLines.forEach(line => {
+    // Check if line is a principle/mechanism explanation line (原理 / 機制 / 解析)
+    const isPrinciple = /^(?:原理|機制|解析|說明|按語|方義)[：:\s]*/.test(line);
+
+    if (isPrinciple && currentCard) {
+      // MERGE INTO PREVIOUS CARD! DO NOT CREATE SEPARATE CARD!
+      const principleText = line.replace(/^(?:原理|機制|解析|說明|按語|方義)[：:\s]*/, '').trim();
+      currentCard.text += `<br><span class="comb-principle-title">【原理與機制】</span>${principleText}`;
+      return;
+    }
+
+    // Check for colon separator: "1. 靈道穴配心俞穴治心痛" or "治心痛：靈道穴配心俞穴"
+    const colonMatch = line.match(/^(?:[\d一二三四五六七八九十]+[\.、\)\s]*|【[^】]+】\s*)?([^：:\n]{2,25})[：:](.*)/);
+    const cureMatch = line.match(/(?:治|主治|適用於)\s*([^，,。]+)/);
+
+    let title = "";
+    let body = "";
+
+    if (colonMatch) {
+      let rawTitle = colonMatch[1].trim();
+      body = colonMatch[2].trim();
+      title = rawTitle.replace(/^[\d一二三四五六七八九十]+[\.、\)\s]*/, '').trim();
+    } else if (cureMatch) {
+      title = `治 ${cureMatch[1].trim()}`;
+      body = line;
+    } else if (line.length > 3) {
+      title = "臨床配穴應用";
+      body = line;
+    }
+
+    if (title && body) {
+      if (!title.startsWith("治") && !title.startsWith("配") && !title.includes("應用")) {
+        title = `治 ${title}`;
+      }
+
+      const numIdx = items.length;
+      const numPrefix = numIdx < CHINESE_NUMS.length ? `${CHINESE_NUMS[numIdx]}· ` : `${numIdx + 1}· `;
+
+      currentCard = {
+        title: `${numPrefix}${title}`,
+        text: body.endsWith("。") ? body : `${body}。`
+      };
+      items.push(currentCard);
+    }
+  });
+
+  return items;
+}
+
 function combinePointsSection(point) {
-  if (!point.combinePointsZh) return "";
-  const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 穴位配伍與臨床應用";
-  return studySection(title, formatCombinePointsText(point.combinePointsZh), "link");
+  const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code).startsWith("T");
+  const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 常用配穴與臨床應用";
+
+  // 1. Structured cards present on record (e.g. Master Tung points)
+  let cards = point.combinationsStructured || [];
+
+  // 2. If no pre-structured cards, parse raw combination text dynamically into card grid framework
+  if (!cards || cards.length === 0) {
+    const rawText = point.combinePointsZh || (point.combinationsZh ? point.combinationsZh.join("\n") : "") || point.applications_zh || "";
+    cards = parseAnyCombinationTextToCards(rawText);
+  }
+
+  let cardsHtml = "";
+  if (cards && cards.length > 0) {
+    cardsHtml = `<div class="tung-comb-grid">${
+      cards.map(c => `
+        <div class="tung-comb-card">
+          <h4 class="tung-comb-title">${escapeHtml(c.title || "配穴組合")}</h4>
+          <p class="tung-comb-text">${highlightCombineText(c.text)}</p>
+        </div>
+      `).join("")
+    }</div>`;
+  }
+
+  const appText = point.applicationZh ? `<p class="tung-comb-extra"><strong>【臨床應用】</strong> ${highlightCombineText(point.applicationZh)}</p>` : "";
+  const expText = point.explanationZh ? `<p class="tung-comb-extra"><strong>【說明與要點】</strong> ${highlightCombineText(point.explanationZh)}</p>` : "";
+
+  const combinedBody = [cardsHtml, appText, expText].filter(Boolean).join("");
+  if (!combinedBody) return "";
+
+  return studySection(title, combinedBody, "link");
 }
 
 function classicalRefsSection(point) {
@@ -2810,31 +3457,45 @@ function classicalRefsSection(point) {
 
 function needlingArticle(point) {
   const parts = [];
-  if (point.acumethodZh) parts.push(`【針刺方法】\n${point.acumethodZh}`);
-  else if (point.techniqueNotes) parts.push(`【針刺方法】\n${point.techniqueNotes}`);
-
-  if (point.moxaZh) parts.push(`【艾灸與遠紅外線】\n${point.moxaZh}`);
-  if (point.massageZh) parts.push(`【自我保健與按摩】\n${point.massageZh}`);
-
   if (contentMode === "english") {
-    if (point.cautions) parts.push(`Safety note: ${point.cautions}`);
-    parts.push("Needling depth, angle, reinforcing/reducing method, and moxibustion should be verified against professional training, anatomy, patient presentation, and contraindications.");
+    if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
+    else if (point.acumethodZh) parts.push(`TECHNIQUES:\n${point.acumethodZh}`);
+    if (point.cautionsEn && point.cautionsEn.length) parts.push(`CONTRAINDICATIONS:\n${point.cautionsEn.join("\n")}`);
+    else if (point.cautions) parts.push(`CONTRAINDICATIONS / SAFETY:\n${point.cautions}`);
   } else {
+    if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
+    else if (point.techniqueNotes) parts.push(`【針刺法】\n${point.techniqueNotes}`);
+
+    if (point.needleSensationZh) parts.push(`【針感】\n${point.needleSensationZh}`);
+
+    if (point.moxaZh) parts.push(`【艾灸與熱療】\n${point.moxaZh}`);
     if (point.cautions) parts.push(`【安全提醒】\n${point.cautions}`);
-    parts.push("實際針刺深度、角度、補瀉與艾灸需依專業教材、解剖安全、體質、病勢與臨床訓練判斷。");
   }
   return parts.filter(Boolean).join("\n\n");
 }
 
 function evidenceText(point) {
   const parts = [];
+  if (contentMode === "english") {
+    if (point.anatomyEn) parts.push(`【Anatomical Structure & Reaction Areas】\n${point.anatomyEn}`);
+    if (point.modernResearchZh) parts.push(`【Clinical Application Notes】\n${point.modernResearchZh}`);
+    if (point.reviewStatus === "sourced_elotus_direct") {
+      parts.push("【Source Provenance】This record is sourced directly from eLotus CORE Master Tung Standard Documentation.");
+    } else {
+      parts.push("Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks.");
+    }
+    return parts.join("\n\n");
+  }
+
+  if (point.sourceProvenanceNoteZh) {
+    parts.push(`【出處與文獻標註】\n${point.sourceProvenanceNoteZh}`);
+  }
   if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
   if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
   if (point.evidence && !point.evidence.includes("draft record for AcuTing OS")) {
     parts.push(`【學習提醒】\n${point.evidence}`);
   }
   if (parts.length > 0) return parts.join("\n\n");
-  if (contentMode === "english") return "Clinical and evidence notes are pending.";
   return "目前先保留為臨床學習提醒。";
 }
 

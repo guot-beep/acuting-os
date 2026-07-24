@@ -16,7 +16,7 @@ globalThis.ACUTING_AURICULAR_GB93_WORKLIST = {
   ],
   "sources_to_check": [
     "https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4",
-    "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
+    "https://acupun.site/point_list_Ear93GB.aspx"
   ],
   "next_batch": [
     {
