@@ -88,7 +88,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e5%a4%a7%e9%96%93%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dajian-t-1101"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -279,7 +279,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 小間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 小間穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e5%a4%a7%e9%96%93%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -446,7 +446,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 浮間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 浮間穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e5%a4%a7%e9%96%93%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -613,7 +613,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 外間穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 外間穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e5%a4%a7%e9%96%93%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -727,7 +727,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e4%b8%ad%e9%96%93%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhongjian-t-1105"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -854,7 +854,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e9%82%84%e5%b7%a2%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/huanchao-t-1106"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -944,17 +944,17 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Muxue",
-      "name_zh": "木硬穴",
+      "name_en": "Zhisima",
+      "name_zh": "指駟馬穴",
       "pinyin": "Zhisima",
       "location_en": "On the palmar surface of the index finger, 0.3 cun medial to the center line of the proximal phalanx, two points (upper and lower).",
-      "location_zh": "耳甲腔肝區後方。",
+      "location_zh": "指駟馬二穴",
       "traditional_functions_en": [
         "Liver reaction area"
       ],
       "traditional_functions_zh": [
-        "疏肝利膽",
-        "通經止痛。"
+        "疏風解表",
+        "調和氣血。"
       ],
       "indications_en": [
         "Common cold nasal discharge",
@@ -964,17 +964,22 @@ window.ACUTING_TUNG_INDEX = {
         "Red eyes"
       ],
       "indications_zh": [
-        "肝硬化",
-        "肝炎",
-        "肝癌"
+        "皮膚病",
+        "臉上黑斑",
+        "雀斑",
+        "鼻炎",
+        "耳鳴",
+        "中耳炎",
+        "胸痛",
+        "肋膜炎"
       ],
       "contraindications": [
         "孕婦慎針或禁針（行氣活血力強）。",
         "手部神經血管豐富，避免過度強刺激。"
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%e6%9c%a8%e7%a1%ac%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.tungs-acupuncture.com/%e6%8c%87%e9%a7%9f%e9%a6%ac%e7%a9%b4/",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisima-t-1107"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -985,29 +990,34 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木硬穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Muxue (eLotus CORE Direct)",
+          "label_zh": "董氏奇穴 · 指駟馬穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhisima (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisima-t-1107",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 木硬穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 木硬穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 指駟馬穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 指駟馬穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e6%9c%a8%e7%a1%ac%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com/%e6%8c%87%e9%a7%9f%e9%a6%ac%e7%a9%b4/",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺一分。或放血針點刺出血，效佳。",
+      "acumethod_zh": "直刺一～二分。",
       "reaction_area_zh": "肝之神經",
-      "anatomy_zh": "肝之神經。",
+      "anatomy_zh": "正中神經下淺枝、肺分支神經。",
       "anatomy_en": "Distributed along nerve reaction areas of Fingers.",
       "disease_tags_zh": [
-        "肝硬化",
-        "肝炎",
-        "肝癌"
+        "皮膚病",
+        "臉上黑斑",
+        "雀斑",
+        "鼻炎",
+        "耳鳴",
+        "中耳炎",
+        "胸痛",
+        "肋膜炎"
       ],
       "disease_tags_en": [
         "Common cold nasal discharge",
@@ -1017,8 +1027,8 @@ window.ACUTING_TUNG_INDEX = {
         "Red eyes"
       ],
       "action_tags_zh": [
-        "疏肝利膽",
-        "通經止痛。"
+        "疏風解表",
+        "調和氣血。"
       ],
       "action_tags_en": [
         "Unblock Channels",
@@ -1033,19 +1043,20 @@ window.ACUTING_TUNG_INDEX = {
       "moxa_zh": "艾條溫灸5～10分鐘；或不宜直接壯灸（手掌微血管豐富）。",
       "moxa_en": "Warm moxibustion 5-10 mins with moxa stick; direct moxibustion not recommended.",
       "channels_zh": [
-        "肝經。"
+        "肺經。"
       ],
       "combinations_zh": [
-        "配穴：神耳 、 木耳 、 木硬 、土 耳 、內分泌。 神耳 、 木耳 、 木硬 、 金耳 、 腫瘤穴 。 耳三穴 點刺出血， 神耳 、 木耳 、 木硬 、三焦、 腫瘤 、 皮膚穴 。"
+        "配穴：足駟馬 穴配 通關 、 通山 、 靈骨 、上三黃 [註] 、下三皇 [註] ，效果佳。 加 婦科穴 或病位局部放血。扎 靈骨 、 大白 、耳穴 皮膚穴 埋針。 指駟馬穴 、 天 地 人 三士，陽面取三針。"
       ],
       "content_source": "tungs-acupuncture.com & mastertungacupuncture.org (fetched 2026-07-23)",
-      "explanation_zh": "治療肝硬化，以耳穴、體穴、放血區域互相配合使用。 木硬穴 未在董公原著中披露，而由胡師依董公平日所傳而特公佈之。",
+      "explanation_zh": "指駟馬穴 與指五金、指千金在同一條直線上，指五金在食指背第一節，指駟馬在第二節，董公原著外開二分，胡著三分，此為兩者出入。",
       "combinations_structured": [
         {
           "title": "配穴",
-          "text": "神耳 、 木耳 、 木硬 、土 耳 、內分泌。 神耳 、 木耳 、 木硬 、 金耳 、 腫瘤穴 。 耳三穴 點刺出血， 神耳 、 木耳 、 木硬 、三焦、 腫瘤 、 皮膚穴 。"
+          "text": "足駟馬 穴配 通關 、 通山 、 靈骨 、上三黃 [註] 、下三皇 [註] ，效果佳。 加 婦科穴 或病位局部放血。扎 靈骨 、 大白 、耳穴 皮膚穴 埋針。 指駟馬穴 、 天 地 人 三士，陽面取三針。"
         }
-      ]
+      ],
+      "needle_sensation_zh": "局部酸脹疼痛感。"
     },
     {
       "id": "tung.11.08",
@@ -1058,7 +1069,7 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Hand digits",
       "region_zh": "手指部",
       "name_en": "Zhiwujin & Zhiqianjin",
-      "name_zh": "指五金穴",
+      "name_zh": "指五金穴、指千金穴",
       "pinyin": "Zhiwujin & Zhiqianjin",
       "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
       "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
@@ -1096,17 +1107,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 指五金穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 指五金穴、指千金穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Zhiwujin & Zhiqianjin (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwujin-zhiqianjin-t-1108",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 指五金穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 指五金穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 指五金穴、指千金穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 指五金穴、指千金穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e6%8c%87%e4%ba%94%e9%87%91%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -1182,7 +1193,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e5%bf%83%e8%86%9d%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinxi-t-1109"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -1312,7 +1323,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木火穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 木火穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e6%9c%a8%e7%81%ab%e5%9b%9b%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -1409,7 +1420,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e8%82%ba%e5%bf%83%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/feixin-t-1111"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -1516,7 +1527,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e4%ba%8c%e8%a7%92%e6%98%8e%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/erjiaoming-t-1112"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -1633,7 +1644,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e8%86%bd%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/dan-t-1113"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -1754,7 +1765,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e6%8c%87%e4%b8%89%e9%87%8d%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhisanzhong-t-1114"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -1839,19 +1850,19 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Fuke",
-      "name_zh": "婦科五穴",
-      "pinyin": "Fuke",
+      "name_en": "Zhishen",
+      "name_zh": "指腎穴",
+      "pinyin": "Zhishen",
       "location_en": "On the dorsal surface of the thumb, 0.3 cun lateral (ulnar side) to the midline on the proximal phalanx, 5 points arrayed vertically.",
-      "location_zh": "手背大拇指第一節外側，從掌指橫紋起，每上二分一穴，合計五穴。",
+      "location_zh": "指腎二穴",
       "traditional_functions_en": [
         "Warm Channels",
         "Regulate Chong-Ren",
         "Clear Damp-Heat"
       ],
       "traditional_functions_zh": [
-        "調經理帶",
-        "宣通下焦。"
+        "調心氣",
+        "滋腎陰。"
       ],
       "indications_en": [
         "Dysmenorrhea",
@@ -1863,26 +1874,20 @@ window.ACUTING_TUNG_INDEX = {
         "Vaginal pain"
       ],
       "indications_zh": [
-        "子宮瘤",
-        "子宮癌",
-        "子宮炎",
-        "卵巢炎",
-        "不妊症",
-        "經痛",
-        "月經不調",
-        "月經過多或過少",
-        "陰痛腫痛",
-        "赤白帶下",
-        "陰吹",
-        "產後風症（月內風症）"
+        "心臟性氣喘",
+        "胸痛",
+        "腎虧",
+        "心臟衰弱",
+        "背痛",
+        "口乾"
       ],
       "contraindications": [
         "孕婦慎針或禁針（行氣活血力強）。",
         "手部神經血管豐富，避免過度強刺激。"
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%e5%a9%a6%e7%a7%91%e4%ba%94%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.tungs-acupuncture.com/%e6%8c%87%e8%85%8e%e7%a9%b4/",
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhishen-t-1115"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -1891,34 +1896,32 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 婦科五穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Fuke (eLotus CORE Direct)",
+          "label_zh": "董氏奇穴 · 指腎穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Zhishen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
-          "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuke-t-1115",
+          "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhishen-t-1115",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 婦科五穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 婦科五穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 指腎穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 指腎穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e5%a9%a6%e7%a7%91%e4%ba%94%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com/%e6%8c%87%e8%85%8e%e7%a9%b4/",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "五分針，直刺二～三分。或以三稜針淺刺出血。",
+      "acumethod_zh": "直刺一～二分。",
       "reaction_area_zh": "子宮神經",
-      "anatomy_zh": "固有掌側指神經皮下淺枝、子宮神經、六腑神經。",
+      "anatomy_zh": "尺神經、肝副神經、腎副神經、心之神經。",
       "anatomy_en": "Radial nerve superficial branch; Deep: Uterus reaction area.",
       "disease_tags_zh": [
-        "子宮瘤",
-        "子宮癌",
-        "子宮炎",
-        "卵巢炎",
-        "不妊症",
-        "經痛",
-        "月經不調",
-        "月經過多或過少"
+        "心臟性氣喘",
+        "胸痛",
+        "腎虧",
+        "心臟衰弱",
+        "背痛",
+        "口乾"
       ],
       "disease_tags_en": [
         "Dysmenorrhea",
@@ -1928,8 +1931,8 @@ window.ACUTING_TUNG_INDEX = {
         "Leukorrhea"
       ],
       "action_tags_zh": [
-        "調經理帶",
-        "宣通下焦。"
+        "調心氣",
+        "滋腎陰。"
       ],
       "action_tags_en": [
         "Warm Channels",
@@ -1944,35 +1947,19 @@ window.ACUTING_TUNG_INDEX = {
       "moxa_zh": "艾條溫灸5～10分鐘；或不宜直接壯灸（手掌微血管豐富）。",
       "moxa_en": "Warm moxibustion 5-10 mins with moxa stick; direct moxibustion not recommended.",
       "channels_zh": [
-        "任",
-        "督"
+        "心腎"
       ],
       "combinations_zh": [
-        "配穴：實證者，足陽明區、臀部坐骨區放血。 虛證者， 婦科穴 、上三黃、下三皇，配合艾灸腑巢二十三穴。",
-        "五、子宮肌瘤、癌：婦科 、 三重 、不定穴，配腑巢二十三穴或內踝下放血。",
-        "六、子宮瘤、炎、脹等：靈骨 、 婦科 、 婦靈 、 三重 ，配合水晶一帶放血。",
-        "七、子宮癌：上三黃、 婦科 、 三重 、不定穴。"
+        "配穴：胸背痛，宜三針同時使用；本穴配手 心靈穴 ，治心臟麻痺特效；配 地宗穴 ，治心臟擴大、心臟積水神效。"
       ],
       "content_source": "tungs-acupuncture.com & mastertungacupuncture.org (fetched 2026-07-23)",
       "needle_sensation_zh": "局部酸脹疼痛感。",
       "application_zh": "婦科五穴 為董氏七十二絕針之一，亦為婦人百病之特效穴。臨床上可任取二～三穴下針，有立竿見影之效。月經來腰酸背痛或小腹痛， 婦科五穴 可取三穴留針。",
-      "explanation_zh": "婦科五穴 為主治婦科百病的主穴，為婦科治病必取之要穴，可再配合其他如鳳巢、 木婦 等婦科相關穴位，本穴配 門金穴 、上三黃 [註] 、下三皇 [註] 治經痛特效。 婦科穴 ，在董公書中有二穴，胡師增三穴，計五穴，筆者認為，在此區域取三穴倒馬即可。",
+      "explanation_zh": "指腎穴 歸心、腎兩經，因此對心腎之疾有效，但治心疾伴有腎機能失調者如腎虧，效果較佳。 腎主唾液，屬腎的穴位都可治口乾。口乾， 腎關 、 水金 、 水通 。 董公所著為外開二分處，而胡師書校訂為外開三分。 下針時，如能貼骨而下，在療效上較佳。",
       "combinations_structured": [
         {
           "title": "配穴",
-          "text": "實證者，足陽明區、臀部坐骨區放血。 虛證者， 婦科穴 、上三黃、下三皇，配合艾灸腑巢二十三穴。"
-        },
-        {
-          "title": "五、子宮肌瘤、癌",
-          "text": "婦科 、 三重 、不定穴，配腑巢二十三穴或內踝下放血。"
-        },
-        {
-          "title": "六、子宮瘤、炎、脹等",
-          "text": "靈骨 、 婦科 、 婦靈 、 三重 ，配合水晶一帶放血。"
-        },
-        {
-          "title": "七、子宮癌",
-          "text": "上三黃、 婦科 、 三重 、不定穴。"
+          "text": "胸背痛，宜三針同時使用；本穴配手 心靈穴 ，治心臟麻痺特效；配 地宗穴 ，治心臟擴大、心臟積水神效。"
         }
       ]
     },
@@ -1986,8 +1973,8 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "一一部位【手指】",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Zhiwu",
-      "name_zh": "制污穴",
+      "name_en": "Huoxi",
+      "name_zh": "火膝穴",
       "pinyin": "Huoxi",
       "location_en": "On the dorsal surface of the thumb, along the midline of the proximal phalanx, 3 points arrayed vertically.",
       "location_zh": "制污二穴",
@@ -2029,17 +2016,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 制污穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Zhiwu (eLotus CORE Direct)",
+          "label_zh": "董氏奇穴 · 火膝穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Huoxi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/huoxi-t-1116",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 制污穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 制污穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 火膝穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 火膝穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e5%88%b6%e6%b1%a1%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -2104,8 +2091,8 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Zhixian",
-      "name_zh": "止涎五穴",
+      "name_en": "Mu",
+      "name_zh": "木穴",
       "pinyin": "Mu",
       "location_en": "On the palmar surface of the thumb, 0.2 cun medial to the midline on the proximal phalanx, two points.",
       "location_zh": "手背大拇指第一節中央偏內側五分，從掌指橫紋起，每上二分一穴，計有五穴。",
@@ -2150,17 +2137,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 止涎五穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Zhixian (eLotus CORE Direct)",
+          "label_zh": "董氏奇穴 · 木穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Mu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/mu-t-1117",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 止涎五穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 止涎五穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 木穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 木穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e6%ad%a2%e6%b6%8e%e4%ba%94%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -2227,8 +2214,8 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "手指",
       "region_en": "Hand digits",
       "region_zh": "手指部",
-      "name_en": "Wuhu",
-      "name_zh": "五虎穴",
+      "name_en": "Pizhong",
+      "name_zh": "脾腫穴",
       "pinyin": "Pizhong",
       "location_en": "On the palmar surface of the thumb, 0.2 cun lateral to the midline of the proximal phalanx, five points from distal to proximal.",
       "location_zh": "拇指第一節掌側外側，距中央線二分處，自指尖至指掌關節共五穴（五虎一至五虎五）。",
@@ -2273,17 +2260,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 五虎穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Wuhu (eLotus CORE Direct)",
+          "label_zh": "董氏奇穴 · 脾腫穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Pizhong (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/pizhong-t-1118",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 五虎穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 五虎穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 脾腫穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 脾腫穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%E4%BA%94%E8%99%8E%E7%A9%B4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -2363,7 +2350,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e5%bf%83%e5%b8%b8%e4%b8%89%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinchang-t-1119"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -2470,7 +2457,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e6%9c%a8%e7%82%8e%e4%b8%89%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/muyan-t-1120"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -2588,7 +2575,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 三眼穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 三眼穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e4%b8%89%e7%9c%bc%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -2662,7 +2649,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e5%be%a9%e5%8e%9f%e4%b8%89%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuyuan-t-1122"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -2795,7 +2782,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 眼黃穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 眼黃穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e7%9c%bc%e9%bb%83%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -2880,7 +2867,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e5%a9%a6%e7%a7%91%e4%ba%94%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/fuke-t-1124"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -3022,7 +3009,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e6%ad%a2%e6%b6%8e%e4%ba%94%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhixian-t-1125"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -3138,7 +3125,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e5%88%b6%e6%b1%a1%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/zhiwu-t-1126"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -3269,7 +3256,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 五虎穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 五虎穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e4%ba%94%e8%99%8e%e4%b8%80%e7%a9%b4%e3%80%81%e4%ba%94%e8%99%8e%e4%ba%8c%e7%a9%b4%e3%80%81%e4%ba%94%e8%99%8e%e4%b8%89%e7%a9%b4%e3%80%81%e4%ba%94%e8%99%8e%e5%9b%9b%e7%a9%b4%e3%80%81%e4%ba%94%e8%99%8e%e4%ba%94%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -3359,7 +3346,7 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "source_urls": [
         "https://www.tungs-acupuncture.com/%e9%9b%99%e9%9d%88%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.mastertungacupuncture.org/acupuncture/tung/points/shuangling-t-1128"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -3489,7 +3476,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 木靈穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 木靈穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e6%9c%a8%e9%9d%88%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -3587,7 +3574,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 八關三穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 八關三穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e5%85%ab%e9%97%9c%e4%b8%80%e7%a9%b4%e3%80%81%e5%85%ab%e9%97%9c%e4%ba%8c%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -3685,7 +3672,7 @@ window.ACUTING_TUNG_INDEX = {
           "label_zh": "董氏心氣神針 · 八關四穴 (中文傳承網圖解)",
           "label_en": "Tung Acupuncture · 八關四穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e5%85%ab%e9%97%9c%e4%b8%80%e7%a9%b4%e3%80%81%e5%85%ab%e9%97%9c%e4%ba%8c%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
