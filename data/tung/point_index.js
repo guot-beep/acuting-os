@@ -19,8 +19,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dajian",
       "name_zh": "大間穴",
       "pinyin": "Dajian",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On palmar surface of thumb, 0.5 cun lateral to midline on proximal phalanx (2 points).",
+      "location_zh": "手指大拇指掌面，第一節中線外側（橈側）5分處，共2穴。",
       "traditional_functions_en": [
         "Regulate Liver Qi",
         "Clear Heart & Small Intestine",
@@ -189,8 +189,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaojian",
       "name_zh": "小間穴",
       "pinyin": "Xiaojian",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "【小間穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "On palmar surface of thumb, 0.5 cun medial to midline on proximal phalanx (2 points).",
+      "location_zh": "手指大拇指掌面，第一節中線內側（尺側）5分處，共2穴。",
       "traditional_functions_en": [
         "Disperse Lung & Phlegm",
         "Clear Heat & Calm Asthma",
@@ -336,8 +336,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fujian",
       "name_zh": "浮間穴",
       "pinyin": "Fujian",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "【浮間穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "On palmar surface of index finger, 0.2 cun radial to midline on proximal phalanx (3 points).",
+      "location_zh": "食指掌面第一節中線橈側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Heart reaction area",
         "Small Intestine secondary reaction area"
@@ -483,8 +483,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Waijian",
       "name_zh": "外間穴",
       "pinyin": "Waijian",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "【外間穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "On palmar surface of index finger, 0.2 cun ulnar to midline on proximal phalanx (3 points).",
+      "location_zh": "食指掌面第一節中線尺側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Heart reaction area",
         "Small Intestine reaction area"
@@ -630,8 +630,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongjian",
       "name_zh": "中間穴",
       "pinyin": "Zhongjian",
-      "location_en": "On the palmar aspect of the index finger, at the center of the proximal phalanx (line C).",
-      "location_zh": "手掌食指第一節正中央。",
+      "location_en": "On palmar surface of index finger, 0.2 cun radial to midline on middle phalanx (3 points).",
+      "location_zh": "食指掌面第二節中線橈側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Disperse Lung",
         "Calm Heart",
@@ -758,8 +758,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huanchao",
       "name_zh": "還巢穴",
       "pinyin": "Huanchao",
-      "location_en": "On the palmar surface of the ring finger, at the center of the ulnar side (E line) of the middle phalanx.",
-      "location_zh": "手掌面無名指第二節正中央偏外側五分處",
+      "location_en": "On palmar surface of index finger, 0.2 cun ulnar to midline on middle phalanx (3 points).",
+      "location_zh": "食指掌面第二節中線尺側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Tonify Liver & Kidney",
         "Regulate Blood",
@@ -893,8 +893,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhisima",
       "name_zh": "指駟馬穴",
       "pinyin": "Zhisima",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On palmar surface of middle finger, 0.2 cun radial to midline on proximal phalanx (3 points).",
+      "location_zh": "中指掌面第一節中線橈側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Liver reaction area"
       ],
@@ -1018,8 +1018,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhiwujin & Zhiqianjin",
       "name_zh": "指五金穴、指千金穴",
       "pinyin": "Zhiwujin & Zhiqianjin",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On palmar surface of middle finger, 0.2 cun ulnar to midline on proximal phalanx (3 points).",
+      "location_zh": "中指掌面第一節中線尺側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1119,8 +1119,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinxi",
       "name_zh": "心膝穴",
       "pinyin": "Xinxi",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On palmar surface of middle finger, 0.2 cun radial to midline on middle phalanx (3 points).",
+      "location_zh": "中指掌面第二節中線橈側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1231,8 +1231,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muhuo",
       "name_zh": "木火穴",
       "pinyin": "Muhuo",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "【木火穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "On palmar surface of middle finger, 0.2 cun ulnar to midline on middle phalanx (3 points).",
+      "location_zh": "中指掌面第二節中線尺側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1337,8 +1337,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feixin",
       "name_zh": "肺心穴",
       "pinyin": "Feixin",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On palmar surface of ring finger, 0.2 cun radial to midline on proximal phalanx (3 points).",
+      "location_zh": "無名指掌面第一節中線橈側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1454,8 +1454,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erjiaoming",
       "name_zh": "二角明穴",
       "pinyin": "Erjiaoming",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "手背中指第一節中央線上。",
+      "location_en": "On palmar surface of ring finger, 0.2 cun ulnar to midline on proximal phalanx (3 points).",
+      "location_zh": "無名指掌面第一節中線尺側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1572,8 +1572,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dan",
       "name_zh": "膽穴",
       "pinyin": "Dan",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On palmar surface of ring finger, 0.2 cun radial to midline on proximal phalanx.",
+      "location_zh": "無名指掌面第一節中線外側（橈側）0.2寸處（膽穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1699,8 +1699,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhisanzhong",
       "name_zh": "指三重穴",
       "pinyin": "Zhisanzhong",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On palmar surface of ring finger, 0.2 cun radial to midline on middle phalanx.",
+      "location_zh": "無名指掌面第二節中線橈側0.2寸處（指三重穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1818,8 +1818,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhishen",
       "name_zh": "指腎穴",
       "pinyin": "Zhishen",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On palmar surface of little finger, 0.2 cun radial to midline on proximal phalanx (3 points).",
+      "location_zh": "小指掌面第一節中線橈側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Warm Channels",
         "Regulate Chong-Ren",
@@ -1939,8 +1939,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoxi",
       "name_zh": "火膝穴",
       "pinyin": "Huoxi",
-      "location_en": "On the dorsal surface of the middle finger, at the center of the distal interphalangeal joint.",
-      "location_zh": "中指背側末節指骨關節橫紋中央是穴。",
+      "location_en": "On palmar surface of little finger, 0.2 cun ulnar to midline on proximal phalanx (3 points).",
+      "location_zh": "小指掌面第一節中線尺側0.2寸處，共3穴。",
       "traditional_functions_en": [
         "Clear Heart Fire",
         "Unblock Channels",
@@ -2051,8 +2051,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mu",
       "name_zh": "木穴",
       "pinyin": "Mu",
-      "location_en": "On the palmar surface of the thumb, 0.2 cun medial to the midline on the proximal phalanx, two points.",
-      "location_zh": "手背大拇指第一節中央偏內側五分，從掌指橫紋起，每上二分一穴，計有五穴。",
+      "location_en": "On dorsal surface of thumb, proximal phalanx.",
+      "location_zh": "大拇指背側第一節中線橈側與尺側處（木穴）。",
       "traditional_functions_en": [
         "Spleen reaction area"
       ],
@@ -2171,8 +2171,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pizhong",
       "name_zh": "脾腫穴",
       "pinyin": "Pizhong",
-      "location_en": "On the palmar surface of the thumb, 0.2 cun lateral to the midline of the proximal phalanx, five points from distal to proximal.",
-      "location_zh": "拇指第一節掌側外側，距中央線二分處，自指尖至指掌關節共五穴（五虎一至五虎五）。",
+      "location_en": "On dorsal radial margin of index finger, proximal phalanx.",
+      "location_zh": "食指背側第一節橈側緣赤白肉際處（脾腫穴）。",
       "traditional_functions_en": [
         "Spleen reaction area",
         "Kidney reaction area"
@@ -2284,8 +2284,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinchang",
       "name_zh": "心常三穴",
       "pinyin": "Xinchang",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "手掌面中指第一節正中央內側三分上二分半處。",
+      "location_en": "On dorsal surface of middle finger, proximal phalanx.",
+      "location_zh": "中指背側第一節中線（心常穴/指三黃）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -2399,8 +2399,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muyan",
       "name_zh": "木炎三穴",
       "pinyin": "Muyan",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "手掌面無名指第二節正中央偏內側三分下二分半處。即 木炎二穴 上二分半處。",
+      "location_en": "On dorsal radial margin of ring finger, proximal phalanx.",
+      "location_zh": "無名指背側第一節橈側緣赤白肉際處（木炎穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -2502,8 +2502,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanyan",
       "name_zh": "三眼穴",
       "pinyin": "Sanyan",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On dorsal ulnar margin of ring finger, proximal phalanx.",
+      "location_zh": "無名指背側第一節尺側緣赤白肉際處（三眼穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -2603,8 +2603,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuyuan",
       "name_zh": "復原三穴",
       "pinyin": "Fuyuan",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "手掌面無名指第一節中央偏內側三分上二分半處即 復原二穴 上二分半處。",
+      "location_en": "On dorsal surface of ring finger, middle phalanx.",
+      "location_zh": "無名指背側第二節中線（復原穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -2716,8 +2716,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yanhuang",
       "name_zh": "眼黃穴",
       "pinyin": "Yanhuang",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On dorsal radial margin of little finger, proximal phalanx.",
+      "location_zh": "小指背側第一節橈側緣赤白肉際處（眼黃穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -2819,8 +2819,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuke",
       "name_zh": "婦科五穴",
       "pinyin": "Fuke",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "手背大拇指第一節外側，從掌指橫紋起，每上二分一穴，合計五穴。",
+      "location_en": "On dorsal ulnar margin of little finger, proximal phalanx (2 points).",
+      "location_zh": "小指背側第一節尺側緣赤白肉際處（婦科穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -2965,8 +2965,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhixian",
       "name_zh": "止涎五穴",
       "pinyin": "Zhixian",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "手背大拇指第一節中央偏內側五分，從掌指橫紋起，每上二分一穴，計有五穴。",
+      "location_en": "On dorsal hand, radial margin of 2nd metacarpal bone.",
+      "location_zh": "手背第二掌骨橈側緣（止涎穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -3094,8 +3094,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhiwu",
       "name_zh": "制污穴",
       "pinyin": "Zhiwu",
-      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
-      "location_zh": "一一部位【手指】：位於手指部。",
+      "location_en": "On dorsal hand, radial margin of 3rd metacarpal bone (3 points).",
+      "location_zh": "手背第三掌骨橈側緣（制污穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -3209,8 +3209,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wuhu",
       "name_zh": "五虎穴",
       "pinyin": "Wuhu",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On dorsal hand, radial margin of 1st metacarpal bone (5 points).",
+      "location_zh": "手背第四掌骨橈側緣（五虎穴）。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -3746,8 +3746,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Chongzi",
       "name_zh": "重子穴",
       "pinyin": "Chongzi",
-      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
-      "location_zh": "二二部位【手掌】：位於手掌部。",
+      "location_en": "On dorsal hand, between 1st & 2nd metacarpals, midpoint of radial border of 2nd metacarpal.",
+      "location_zh": "手背第1、第2掌骨之間，第2掌骨橈側緣中點處（重子穴）。",
       "traditional_functions_en": [
         "Disperse Lung",
         "Unblock Channels",
@@ -3878,8 +3878,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Chongxian",
       "name_zh": "重仙穴",
       "pinyin": "Chongxian",
-      "location_en": "On the palmar surface of the hand, between 1st & 2nd metacarpals, 2 cun proximal to Zhongzi (opposite Hegu LI4).",
-      "location_zh": "手掌於第一掌骨與第二掌骨之間，與手背 靈骨穴 相通。",
+      "location_en": "On dorsal hand, 1 cun proximal to Zhongzi (T22.01).",
+      "location_zh": "手背第1、第2掌骨之間，重子穴直上1寸處（重仙穴）。",
       "traditional_functions_en": [
         "Expand Chest",
         "Disperse Lung",
@@ -3993,8 +3993,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangbai",
       "name_zh": "上白穴",
       "pinyin": "Shangbai",
-      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
-      "location_zh": "二二部位【手掌】：位於手掌部。",
+      "location_en": "On palmar surface, ulnar border of 1st metacarpal bone.",
+      "location_zh": "手掌第一掌骨尺側緣，大魚際中央（上白穴）。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -4124,8 +4124,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dabai",
       "name_zh": "大白穴",
       "pinyin": "Dabai",
-      "location_en": "On the dorsum of the hand, between 1st & 2nd metacarpals, 0.5 cun distal to Hegu (LI4).",
-      "location_zh": "手背第一掌骨與第二掌骨之間，距 靈骨穴 遠端一寸。可透 重子穴 。",
+      "location_en": "On dorsal hand, between 2nd & 3rd metacarpals, 0.5 cun proximal to MCP joint.",
+      "location_zh": "手背第2、第3掌骨之間，掌指關節後0.5寸處（大白穴）。",
       "traditional_functions_en": [
         "Purge Heat",
         "Disperse Lung",
@@ -4254,8 +4254,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Linggu",
       "name_zh": "靈骨穴",
       "pinyin": "Linggu",
-      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
-      "location_zh": "二二部位【手掌】：位於手掌部。",
+      "location_en": "On dorsal hand, in depression distal to junction of 2nd & 3rd metacarpals.",
+      "location_zh": "手背第2、第3掌骨底結合部前方凹陷處（靈骨穴）。",
       "traditional_functions_en": [
         "Tonify Qi & Blood",
         "Warm Yang",
@@ -4421,8 +4421,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongbai",
       "name_zh": "中白穴",
       "pinyin": "Zhongbai",
-      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
-      "location_zh": "二二部位【手掌】：位於手掌部。",
+      "location_en": "On dorsal hand, between 3rd & 4th metacarpals, 0.5 cun proximal to MCP joint.",
+      "location_zh": "手背第3、第4掌骨之間，掌指關節後0.5寸處（中白穴/鬼門）。",
       "traditional_functions_en": [
         "Nourish Liver & Kidney",
         "Clear Head & Eyes",
@@ -4565,8 +4565,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiabai",
       "name_zh": "下白穴",
       "pinyin": "Xiabai",
-      "location_en": "On the dorsum of the hand, between the 4th and 5th metacarpals, 1.5 cun proximal to the metacarpophalangeal joint.",
-      "location_zh": "手背於第四掌骨與第五掌骨之間，距掌指關節一寸五分。 中白穴 近端一寸處。",
+      "location_en": "On dorsal hand, 1 cun proximal to Zhongbai (T22.06).",
+      "location_zh": "手背第3、第4掌骨之間，中白穴直上1寸處（下白穴）。",
       "traditional_functions_en": [
         "Spleen reaction area",
         "Kidney reaction area"
@@ -4679,8 +4679,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wanshunyi",
       "name_zh": "腕順一穴",
       "pinyin": "Wanshunyi",
-      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
-      "location_zh": "二二部位【手掌】：位於手掌部。",
+      "location_en": "On dorsal hand, between 4th & 5th metacarpals, 0.5 cun proximal to MCP joint.",
+      "location_zh": "手背第4、第5掌骨之間，掌指關節後0.5寸處（腕順一穴）。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -4801,8 +4801,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wanshuner",
       "name_zh": "腕順二穴",
       "pinyin": "Wanshuner",
-      "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "手背側面，當第五掌骨尺側下緣，手腕橫紋遠端二寸五分處。",
+      "location_en": "On dorsal hand, 1 cun proximal to Wanshun 1 (T22.08).",
+      "location_zh": "手背第4、第5掌骨之間，腕順一穴直上1寸處（腕順二穴）。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -4910,8 +4910,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shoujie",
       "name_zh": "手解穴",
       "pinyin": "Shoujie",
-      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
-      "location_zh": "二二部位【手掌】：位於手掌部。",
+      "location_en": "On hypothenar margin of palm, 0.5 cun distal to wrist crease.",
+      "location_zh": "手掌小魚際尺側緣，掌後第一橫紋直下0.5寸處（手解一穴）。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -5037,8 +5037,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tushui",
       "name_zh": "土水穴",
       "pinyin": "Tushui",
-      "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "手掌於大姆指第一掌骨之橈側骨下。",
+      "location_en": "On hypothenar margin of palm, 0.5 cun proximal to Shoujie 1 (T22.10).",
+      "location_zh": "手掌小魚際尺側緣，手解一穴直上0.5寸處（手解二穴）。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -14984,8 +14984,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengjin",
       "name_zh": "正筋穴",
       "pinyin": "Zhengjin",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "In center of Achilles tendon, 1.5 cun superior to calcaneus.",
+      "location_zh": "腳後跟腱（阿基里斯腱）正中央，足跟骨結節上1.5寸。",
       "traditional_functions_en": [
         "Relax Tendons",
         "Unblock Du Channel",
@@ -15111,8 +15111,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengzong",
       "name_zh": "正宗穴",
       "pinyin": "Zhengzong",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "2 cun superior to Zhengjin (T77.01), 3.5 cun superior to calcaneus.",
+      "location_zh": "正筋穴直上2寸，即足跟骨結節上3.5寸。",
       "traditional_functions_en": [
         "Spine & Brain reaction area"
       ],
@@ -15235,8 +15235,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengshi",
       "name_zh": "正士穴",
       "pinyin": "Zhengshi",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿後面，在正筋穴上四寸，正宗穴上二寸處。",
+      "location_en": "2 cun superior to Zhengzong (T77.02), 5.5 cun superior to calcaneus.",
+      "location_zh": "正宗穴直上2寸，即足跟骨結節上5.5寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15354,8 +15354,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Boqiu",
       "name_zh": "搏球穴",
       "pinyin": "Boqiu",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On posterior lower leg, 2.5 cun superior to Zhengshi (T77.03), in center of gastrocnemius muscle belly.",
+      "location_zh": "小腿後側，正士穴直上2.5寸，腓腸肌肌腹中央（相當於承山穴附近）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15455,8 +15455,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yizhong",
       "name_zh": "一重穴",
       "pinyin": "Yizhong",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "3 cun superior to tip of external malleolus, 0.5 cun anterior to anterior border of fibula.",
+      "location_zh": "外踝骨尖直上3寸，腓骨前緣向前0.5寸處。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15556,8 +15556,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erzhong",
       "name_zh": "二重穴",
       "pinyin": "Erzhong",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "【二重穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "2 cun superior to Yichong (T77.05), 5 cun superior to external malleolus.",
+      "location_zh": "一重穴直上2寸，即外踝尖上5寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15682,8 +15682,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanzhong",
       "name_zh": "三重穴",
       "pinyin": "Sanzhong",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "2 cun superior to Erchong (T77.06), 7 cun superior to external malleolus.",
+      "location_zh": "二重穴直上2寸，即外踝尖上7寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15816,8 +15816,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuashang",
       "name_zh": "四花上穴",
       "pinyin": "Sihuashang",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "3 cun distal to Xiyan (ST35), 1 cun lateral to anterior border of tibia.",
+      "location_zh": "膝眼下3寸，脛骨外側緣1寸處（相當於足三里穴直上0.5寸）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15968,8 +15968,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuazhong",
       "name_zh": "四花中穴",
       "pinyin": "Sihuazhong",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "4.5 cun distal to Sihuashang (T77.08), near Tiaokou (ST38).",
+      "location_zh": "四花上穴直下4.5寸（相當於條口穴附近）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16069,8 +16069,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuafu",
       "name_zh": "四花副穴",
       "pinyin": "Sihuafu",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿前面，在四花中穴直下二寸五分處。",
+      "location_en": "2.5 cun distal to Sihuazhong (T77.09).",
+      "location_zh": "四花中穴直下2.5寸（相當於豐隆穴直下）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16174,8 +16174,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuaxia",
       "name_zh": "四花下穴",
       "pinyin": "Sihuaxia",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "5 cun distal to Sihuazhong (T77.09).",
+      "location_zh": "四花中穴直下5寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16275,8 +16275,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuchang",
       "name_zh": "腑腸穴",
       "pinyin": "Fuchang",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿前面，在四花下穴直下一寸五分。",
+      "location_en": "2.5 cun distal to Sihuaxia (T77.11).",
+      "location_zh": "四花下穴直下2.5寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16386,8 +16386,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuali",
       "name_zh": "四花里穴",
       "pinyin": "Sihuali",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On lateral border of tibia.",
+      "location_zh": "脛骨外側緣。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16487,8 +16487,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuawai",
       "name_zh": "四花外穴",
       "pinyin": "Sihuawai",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿前面，在四花中穴向外橫開一寸五分。",
+      "location_en": "2 cun distal to Sihuazhong.",
+      "location_zh": "四花中穴下2寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16605,8 +16605,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangchun",
       "name_zh": "上唇穴",
       "pinyin": "Shangchun",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "In depression at midpoint of inferior border of patella.",
+      "location_zh": "膝蓋髕骨下緣正中凹陷中。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16706,8 +16706,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiachun",
       "name_zh": "下唇穴",
       "pinyin": "Xiachun",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "1 cun directly below Shangchun (T77.15).",
+      "location_zh": "上唇穴直下1寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16807,8 +16807,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianhuang",
       "name_zh": "天皇穴",
       "pinyin": "Tianhuang",
-      "location_en": "On the anterior aspect of the lower leg, 4.5 cun inferior to Zusanli (ST36).",
-      "location_zh": "小腿內側面，彎曲膝蓋，脛骨內側髁下緣凹陷處直下一寸。即十四經之陰陵泉穴直下一寸處。距膝關節三寸五分。",
+      "location_en": "Inferior to medial condyle of tibia, 1 cun inferior to Yinlingquan (SP9).",
+      "location_zh": "脛骨內側髁下緣，陰陵泉穴直下1寸。",
       "traditional_functions_en": [
         "Heart reaction area",
         "Lung reaction area"
@@ -16927,8 +16927,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianhuangfu [shenguan]",
       "name_zh": "天皇副穴",
       "pinyin": "Tianhuangfu",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿內側面，在 天皇穴 直下一寸五分。",
+      "location_en": "1.5 cun inferior to Tianhuang (T77.17), 2.5 cun inferior to Yinlingquan (SP9).",
+      "location_zh": "天皇穴直下1.5寸（即陰陵泉直下2.5寸）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17060,8 +17060,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dihuang",
       "name_zh": "地皇穴",
       "pinyin": "Dihuang",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿內側面，在人皇穴直上四寸。即內踝骨上緣直上七寸五分處。",
+      "location_en": "7 cun superior to tip of medial malleolus, posterior to medial border of tibia.",
+      "location_zh": "內踝尖直上7寸，脛骨內側緣後方（相當於漏谷穴）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17189,8 +17189,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sizhi",
       "name_zh": "四肢穴",
       "pinyin": "Sizhi",
-      "location_en": "On the medial side of the lower leg, 1.5 cun inferior to Yinlingquan (SP9).",
-      "location_zh": "小腿內側，陰陵泉穴直下一寸五分處（脛骨內側緣後方凹陷）。",
+      "location_en": "3 cun superior to tip of medial malleolus, posterior to medial border of tibia.",
+      "location_zh": "內踝尖直上3寸，脛骨內側緣後方（相當於三陰交穴）。",
       "traditional_functions_en": [
         "Strongly Tonify Kidney",
         "Nourish Essence",
@@ -17307,8 +17307,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Renhuang",
       "name_zh": "人皇穴",
       "pinyin": "Renhuang",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿內側面，在脛骨之內側前緣，即內踝骨上緣上三寸五分處。即十四經之三陰交穴上五分處。",
+      "location_en": "1.5 cun lateral to Zusanli (ST36), in depression anterior to fibula.",
+      "location_zh": "足三里穴向外開1.5寸，腓骨前緣凹陷處。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17432,8 +17432,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Cesanli",
       "name_zh": "側三里穴",
       "pinyin": "Cesanli",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "2 cun superior/distal to Cesanli, anterior to fibula.",
+      "location_zh": "側三里穴直下2寸，腓骨前緣。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17553,8 +17553,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Cexiasanli",
       "name_zh": "側下三里",
       "pinyin": "Cexiasanli",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "2 cun distal to Cesanli (T77.21), anterior border of fibula.",
+      "location_zh": "側三里穴直下2寸，腓骨前緣。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17674,8 +17674,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zuqianjin",
       "name_zh": "足千金穴",
       "pinyin": "Zuqianjin",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "2 cun distal to Cexiasanli (T77.23), anterior border of fibula.",
+      "location_zh": "腓骨前緣，側下三里穴直下2寸。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17789,8 +17789,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zuwujin",
       "name_zh": "足五金穴",
       "pinyin": "Zuwujin",
-      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
-      "location_zh": "七七部位【小腿】：位於小腿部。",
+      "location_en": "2 cun distal to Zuqianjin (T77.24), 4 cun distal to Cexiasanli (T77.23).",
+      "location_zh": "足千金穴直下2寸（即側下三里穴直下4寸）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17904,8 +17904,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qihu",
       "name_zh": "七虎穴",
       "pinyin": "Qihu",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "位在【小腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "1.5 cun posterior to tip of external malleolus, arranged vertically in a line of 3 points.",
+      "location_zh": "外踝骨尖後開1.5寸，向上直排三穴。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -18006,8 +18006,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Waisanguan",
       "name_zh": "外三關穴",
       "pinyin": "Waisanguan",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿外側面，外踝尖與膝蓋外側高骨之直線上。",
+      "location_en": "On line connecting external malleolus and lateral knee joint, 3 points dividing line into 4 equal segments.",
+      "location_zh": "外踝尖與膝蓋外側連線上，均分四等分之三個點。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -18138,8 +18138,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Guangming",
       "name_zh": "光明穴",
       "pinyin": "Guangming",
-      "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
-      "location_zh": "小腿內側面，內踝尖直後一寸，上一寸內踝骨上緣。",
+      "location_en": "1 cun superior to tip of medial malleolus, posterior border of tibia.",
+      "location_zh": "內踝尖直上1寸，脛骨後緣。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -18491,8 +18491,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongguan",
       "name_zh": "通關穴",
       "pinyin": "Tongguan",
-      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
-      "location_zh": "八八部位【大腿】：位於大腿部。",
+      "location_en": "On anterior thigh, 2 cun superior to patella, in depression lateral to rectus femoris tendon.",
+      "location_zh": "大腿前側，髕骨上緣直上2寸，股直肌腱外側凹陷中（通關穴）。",
       "traditional_functions_en": [
         "Tonify Heart Qi",
         "Unblock Yang",
@@ -18626,8 +18626,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongshan",
       "name_zh": "通山穴",
       "pinyin": "Tongshan",
-      "location_en": "On the anterior thigh, 2 cun superior to Tongguan (7 cun superior to patella).",
-      "location_zh": "大腿前面， 通關穴 直上二寸。",
+      "location_en": "2 cun superior to Tongguan (T88.01), 4 cun superior to patella.",
+      "location_zh": "通關穴直上2寸，即髕骨上緣直上4寸（通山穴）。",
       "traditional_functions_en": [
         "Heart reaction area"
       ],
@@ -18731,8 +18731,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongtian",
       "name_zh": "通天穴",
       "pinyin": "Tongtian",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "大腿前面， 通關穴 直上四寸。",
+      "location_en": "2 cun superior to Tongshan (T88.02), 6 cun superior to patella.",
+      "location_zh": "通山穴直上2寸，即髕骨上緣直上6寸（通天穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19447,8 +19447,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongshen",
       "name_zh": "通腎穴",
       "pinyin": "Tongshen",
-      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
-      "location_zh": "八八部位【大腿】：位於大腿部。",
+      "location_en": "On lateral midline of thigh, 7 cun superior to lateral superior border of patella.",
+      "location_zh": "大腿外側中線，髕骨外上緣直上7寸處（駟馬中穴/相當於風市穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19593,8 +19593,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongwei",
       "name_zh": "通胃穴",
       "pinyin": "Tongwei",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "大腿前面， 通腎穴 上二寸。",
+      "location_en": "2 cun superior to Simazhong (T88.09), 9 cun superior to patella.",
+      "location_zh": "駟馬中穴直上2寸，即髕骨外上緣直上9寸（駟馬上穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19703,8 +19703,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongbei",
       "name_zh": "通背穴",
       "pinyin": "Tongbei",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "大腿前面， 通腎穴 上四寸。",
+      "location_en": "2 cun inferior to Simazhong (T88.09), 5 cun superior to patella.",
+      "location_zh": "駟馬中穴直下2寸，即髕骨外上緣直上5寸（駟馬下穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19822,8 +19822,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Minghuang",
       "name_zh": "明黃穴",
       "pinyin": "Minghuang",
-      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
-      "location_zh": "八八部位【大腿】：位於大腿部。",
+      "location_en": "On medial midline of thigh, 3 cun superior to medial superior border of patella.",
+      "location_zh": "大腿內側中線，髕骨內上緣直上3寸（明黃穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19980,8 +19980,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianhuang",
       "name_zh": "天黃穴",
       "pinyin": "Tianhuang",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "大腿內側面， 明黃穴 上三寸。",
+      "location_en": "3 cun superior to Minghuang (T88.12), 6 cun superior to patella.",
+      "location_zh": "明黃穴直上3寸，即髕骨內上緣直上6寸（天黃穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -20096,8 +20096,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qihuang",
       "name_zh": "其黃穴",
       "pinyin": "Qihuang",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "大腿內側面， 明黃穴 直下三寸。",
+      "location_en": "3 cun inferior to Minghuang (T88.12), near superior border of patella.",
+      "location_zh": "明黃穴直下3寸，即髕骨內上緣處（其黃穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -20456,8 +20456,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Simazhong",
       "name_zh": "四馬中穴",
       "pinyin": "Simazhong",
-      "location_en": "On the lateral aspect of the thigh, 7 cun superior to the patella, 0.5 cun anterior to the midline.",
-      "location_zh": "大腿外側正中央，髕骨外上緣直上七寸，再向前橫開五分處。",
+      "location_en": "On anterior medial thigh, 2.5 cun superior to medial superior border of patella.",
+      "location_zh": "大腿前內側，髕骨內上緣直上2.5寸（九里穴）。",
       "traditional_functions_en": [
         "Disperse Lung",
         "Relieve Itching",
@@ -20572,8 +20572,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Simashang",
       "name_zh": "駟馬上穴",
       "pinyin": "Simashang",
-      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
-      "location_zh": "八八部位【大腿】：位於大腿部。",
+      "location_en": "2 cun superior to Jiuli (T88.17).",
+      "location_zh": "九里穴直上2寸（解穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21431,8 +21431,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongjiuli",
       "name_zh": "中九里穴",
       "pinyin": "Zhongjiuli",
-      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
-      "location_zh": "八八部位【大腿】：位於大腿部。",
+      "location_en": "On posterior midline of thigh, 3 cun superior to popliteal crease.",
+      "location_zh": "大腿後側中線，腘橫紋直上3寸（中黃穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21563,8 +21563,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangjiuli",
       "name_zh": "上九里穴",
       "pinyin": "Shangjiuli",
-      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
-      "location_zh": "八八部位【大腿】：位於大腿部。",
+      "location_en": "3 cun superior to Zhonghuang (T88.25), 6 cun superior to popliteal crease.",
+      "location_zh": "中黃穴直上3寸，即腘橫紋直上6寸（主黃穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21695,8 +21695,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiajiuli",
       "name_zh": "下九里穴",
       "pinyin": "Xiajiuli",
-      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
-      "location_zh": "八八部位【大腿】：位於大腿部。",
+      "location_en": "3 cun superior to Zhuhuang (T88.26), 9 cun superior to popliteal crease.",
+      "location_zh": "主黃穴直上3寸，即腘橫紋直上9寸（神黃穴）。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -26919,8 +26919,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhenghui",
       "name_zh": "正會穴",
       "pinyin": "Zhenghui",
-      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
-      "location_zh": "十十部位【頭面】：位於頭面部。",
+      "location_en": "On midline of head, 5 cun superior to anterior hairline, at Baihui (GV20).",
+      "location_zh": "頭頂正中線，前髮際直上5寸，百會穴處（正會穴）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27066,8 +27066,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhouyuan",
       "name_zh": "州圓穴",
       "pinyin": "Zhouyuan",
-      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
-      "location_zh": "十十部位【頭面】：位於頭面部。",
+      "location_en": "1.5 cun anterior to Zhenghui (T1010.01).",
+      "location_zh": "正會穴前1.5寸（州圓穴）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27197,8 +27197,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoukun",
       "name_zh": "州昆穴",
       "pinyin": "Zhoukun",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "州圓 直後一寸五分，即十四經之絡卻穴後五分",
+      "location_en": "1.5 cun posterior to Zhenghui (T1010.01).",
+      "location_zh": "正會穴後1.5寸（州昆穴）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27310,8 +27310,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoulun",
       "name_zh": "州崙穴",
       "pinyin": "Zhoulun",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "州圓穴 直前一寸五分，即十四經之承光穴後五分。",
+      "location_en": "1.5 cun lateral to Zhenghui (T1010.01).",
+      "location_zh": "正會穴旁開1.5寸（州崙穴）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27420,8 +27420,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qianhui",
       "name_zh": "前會穴",
       "pinyin": "Qianhui",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "正會穴 前一寸五分，即十四經之前項穴後五分。",
+      "location_en": "3.5 cun superior to anterior hairline, 1.5 cun anterior to Zhenghui.",
+      "location_zh": "前髮際正中直上3.5寸，正會穴前1.5寸凹陷中（前會穴）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27536,8 +27536,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houhui",
       "name_zh": "後會穴",
       "pinyin": "Houhui",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "正會穴 直後一寸五分，即十四經之後頂穴後五分。",
+      "location_en": "1.5 cun posterior to Zhenghui, 5.5 cun superior to posterior hairline.",
+      "location_zh": "正會穴後1.5寸，後髮際直上5.5寸（後會穴）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27663,8 +27663,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zongshu",
       "name_zh": "總樞穴",
       "pinyin": "Zongshu",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "後頭部腦戶穴下八分。",
+      "location_en": "On posterior head, 2 cun superior to Dazhui (GV14), on posterior midline.",
+      "location_zh": "後頭部，大椎穴直上2寸，項後正中線凹陷中（總樞穴/風府附近）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27779,8 +27779,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Majinshui",
       "name_zh": "馬金水穴",
       "pinyin": "Majinshui",
-      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
-      "location_zh": "十十部位【頭面】：位於頭面部。",
+      "location_en": "On cheek, 1.5 cun lateral to nose wing in depression below zygoma.",
+      "location_zh": "面部顴骨下緣，鼻翼外側開1.5寸凹陷處（馬金水穴）。",
       "traditional_functions_en": [
         "Kidney reaction area"
       ],
@@ -28815,8 +28815,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Biyi",
       "name_zh": "鼻翼穴",
       "pinyin": "Biyi",
-      "location_en": "In the groove of the nasal alar cartilage at its midpoint.",
-      "location_zh": "鼻翼上端之溝陷中。",
+      "location_en": "On face, in groove outer superior to nasal wing cartilage.",
+      "location_zh": "面部，鼻翼軟骨外上方溝中（鼻翼穴）。",
       "traditional_functions_en": [
         "Sedate & Relieve Pain",
         "Tonify Kidney & Bones",
@@ -29404,8 +29404,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhenjing",
       "name_zh": "鎮靜穴",
       "pinyin": "Zhenjing",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "兩眉頭之間正中上五分。",
+      "location_en": "0.5 cun directly above Yintang (Ex-HN3) on forehead.",
+      "location_zh": "頭部印堂穴直上0.5寸（鎮靜穴）。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
