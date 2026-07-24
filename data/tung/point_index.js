@@ -7707,7 +7707,7 @@ window.ACUTING_TUNG_INDEX = {
       "region_zh": "前臂部",
       "name_en": "Shouqianjin",
       "name_zh": "心門穴",
-      "pinyin": "Shouqianjin",
+      "pinyin": "Xinmen",
       "location_en": "On the medial aspect of the forearm near the ulnar olecranon, 1.5 cun proximal to the wrist.",
       "location_zh": "心靈一穴",
       "traditional_functions_en": [
@@ -7841,6 +7841,135 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Forearm",
       "region_zh": "前臂部",
       "name_en": "Changmen",
+      "name_zh": "其門穴",
+      "pinyin": "Qimen",
+      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
+      "location_zh": "其門穴",
+      "traditional_functions_en": [
+        "Forearms reaction area",
+        "Unblock Channels"
+      ],
+      "traditional_functions_zh": [
+        "行氣導滯",
+        "清瀉下焦"
+      ],
+      "indications_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "indications_zh": [
+        "子宮炎",
+        "卵巢炎",
+        "婦科月經不調",
+        "赤帶下",
+        "大便脫肛",
+        "便祕",
+        "下痢",
+        "子宮瘤",
+        "子宮頸癌",
+        "尿道炎",
+        "膀胱炎",
+        "痔瘡痛",
+        "下腹痛"
+      ],
+      "contraindications": [
+        "依臨床體質辨證操作，避免傷及深層血管與器官。",
+        "孕婦依穴位特性慎針。"
+      ],
+      "source_urls": [
+        "https://www.tungs-acupuncture.com/%e8%85%b8%e9%96%80%e7%a9%b4/",
+        "https://www.mastertungacupuncture.org"
+      ],
+      "review_status": "sourced_tungs_website",
+      "public_safe": true,
+      "x": 74,
+      "y": 246,
+      "aliases_zh": [],
+      "visual_links": [
+        {
+          "label_zh": "董氏奇穴 · 其門穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Changmen (eLotus CORE Direct)",
+          "source": "MasterTungAcupuncture.org / eLotus CORE",
+          "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/changmen-t-3310",
+          "link_status": "direct"
+        },
+        {
+          "label_zh": "董氏心氣神針 · 其門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 其門穴 (Chinese Heritage Direct)",
+          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
+          "url": "https://www.tungs-acupuncture.com/%e5%85%b6%e9%96%80%e7%a9%b4%e3%80%81%e5%85%b6%e8%a7%92%e7%a9%b4%e3%80%81%e5%85%b6%e6%ad%a3%e7%a9%b4/",
+          "link_status": "direct"
+        }
+      ],
+      "identity_source_status": "source_checked",
+      "acumethod_zh": "直刺無效。針向外斜刺與皮下平行約十五度刺一寸半。",
+      "anatomy_zh": "橈神經、正中神經、肺支神經、六腑神經。",
+      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
+      "disease_tags_zh": [
+        "子宮炎",
+        "卵巢炎",
+        "婦科月經不調",
+        "赤帶下",
+        "大便脫肛",
+        "便祕",
+        "下痢",
+        "子宮瘤"
+      ],
+      "disease_tags_en": [
+        "Forearms pain disorders",
+        "Channel qi obstruction",
+        "Organ harmony"
+      ],
+      "action_tags_zh": [
+        "行氣導滯",
+        "清瀉下焦"
+      ],
+      "action_tags_en": [
+        "Unblock Channels",
+        "Relieve Pain",
+        "Harmonize Organs"
+      ],
+      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
+      "reaction_area_zh": "前臂神經反應區",
+      "contraindications_en": [
+        "Needle with caution according to patient constitution & anatomical depth.",
+        "Exercise caution during pregnancy."
+      ],
+      "moxa_zh": "艾條溫灸15～20分鐘；或艾炷灸3～5壯。",
+      "moxa_en": "Moxa stick warm moxibustion for 15-20 mins, or 3-5 moxa cones.",
+      "channels_zh": [
+        "腸門穴 ：入膽及大腸經。 肝門穴： 入肝膽經。 心門穴 ：入心經。"
+      ],
+      "combinations_zh": [
+        "配穴：肝門穴 、 肝靈 、木炎，配耳穴肝點、肝炎點及上三黃。"
+      ],
+      "content_source": "tungs-acupuncture.com & mastertungacupuncture.org (fetched 2026-07-23)",
+      "needle_sensation_zh": "酸脹微麻感。",
+      "application_zh": null,
+      "explanation_zh": null,
+      "combinations_structured": [
+        {
+          "title": "配穴",
+          "text": "肝門穴 、 肝靈 、木炎，配耳穴肝點、肝炎點及上三黃。"
+        }
+      ],
+      "diagram_urls_en": [
+        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.10_2_loc.jpg",
+        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.10_3_needling.jpg"
+      ]
+    },
+    {
+      "id": "tung.33.11",
+      "system": "master_tung",
+      "code": "T33.11",
+      "display_code": "T 33.11",
+      "zone_code": "33",
+      "zone_en": "33: Forearms",
+      "zone_zh": "三三部位【前臂】",
+      "region_en": "Forearm",
+      "region_zh": "前臂部",
+      "name_en": "Ganmen",
       "name_zh": "腸門穴",
       "pinyin": "Changmen",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
@@ -7880,8 +8009,8 @@ window.ACUTING_TUNG_INDEX = {
         "孕婦依穴位特性慎針。"
       ],
       "source_urls": [
-        "https://www.tungs-acupuncture.com/%e8%85%b8%e9%96%80%e7%a9%b4/",
-        "https://www.mastertungacupuncture.org"
+        "https://www.tungs-acupuncture.com/%e8%82%9d%e9%9d%88%e7%a9%b4/",
+        "https://www.americandragon.com"
       ],
       "review_status": "sourced_tungs_website",
       "public_safe": true,
@@ -7891,9 +8020,9 @@ window.ACUTING_TUNG_INDEX = {
       "visual_links": [
         {
           "label_zh": "董氏奇穴 · 腸門穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Changmen (eLotus CORE Direct)",
+          "label_en": "Master Tung · Ganmen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
-          "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/changmen-t-3310",
+          "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmen-t-3311",
           "link_status": "direct"
         },
         {
@@ -7940,12 +8069,16 @@ window.ACUTING_TUNG_INDEX = {
       "moxa_zh": "艾條溫灸15～20分鐘；或艾炷灸3～5壯。",
       "moxa_en": "Moxa stick warm moxibustion for 15-20 mins, or 3-5 moxa cones.",
       "channels_zh": [
-        "腸門穴 ：入膽及大腸經。 肝門穴： 入肝膽經。 心門穴 ：入心經。"
+        "肝經。"
       ],
       "combinations_zh": [
         "配穴：肝門穴 、 肝靈 、木炎，配耳穴肝點、肝炎點及上三黃。"
       ],
-      "content_source": "tungs-acupuncture.com & mastertungacupuncture.org (fetched 2026-07-23)",
+      "content_source": "tungs-acupuncture.com (fetched 2026-07-23)",
+      "diagram_urls_en": [
+        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.11_2_loc.jpg",
+        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.11_3_needling.jpg"
+      ],
       "needle_sensation_zh": "腸門穴 ：酸脹感直達手指。 心門穴 ：酸脹微麻。",
       "application_zh": "腸門穴 大多與 肝門 相配形成倒馬，以加強其療效。",
       "explanation_zh": "在治療肝疾上，大多取上三黃為主，取肝門較少，而 肝門 亦很少單獨取用，都取 心門、腸門 形成倒馬，可通三焦，調理全身。",
@@ -7954,124 +8087,6 @@ window.ACUTING_TUNG_INDEX = {
           "title": "配穴",
           "text": "肝門穴 、 肝靈 、木炎，配耳穴肝點、肝炎點及上三黃。"
         }
-      ],
-      "diagram_urls_en": [
-        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.10_2_loc.jpg",
-        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.10_3_needling.jpg"
-      ]
-    },
-    {
-      "id": "tung.33.11",
-      "system": "master_tung",
-      "code": "T33.11",
-      "display_code": "T 33.11",
-      "zone_code": "33",
-      "zone_en": "33: Forearms",
-      "zone_zh": "三三部位【前臂】",
-      "region_en": "Forearm",
-      "region_zh": "前臂部",
-      "name_en": "Ganmen",
-      "name_zh": "肝門穴",
-      "pinyin": "Ganmen",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
-      "traditional_functions_en": [
-        "Forearms reaction area",
-        "Unblock Channels"
-      ],
-      "traditional_functions_zh": [
-        "疏肝理氣。"
-      ],
-      "indications_en": [
-        "Forearms pain disorders",
-        "Channel qi obstruction",
-        "Organ harmony"
-      ],
-      "indications_zh": [
-        "脊椎骨膜炎",
-        "肝炎",
-        "肝硬化",
-        "肝痛",
-        "兩脅痛",
-        "血癌症（白血球過多或過少）",
-        "脾腫大",
-        "坐骨神經痛",
-        "半身不遂",
-        "腰酸",
-        "筋骨痛"
-      ],
-      "contraindications": [
-        "依臨床體質辨證操作，避免傷及深層血管與器官。",
-        "孕婦依穴位特性慎針。"
-      ],
-      "source_urls": [
-        "https://www.tungs-acupuncture.com/%e8%82%9d%e9%9d%88%e7%a9%b4/",
-        "https://www.americandragon.com"
-      ],
-      "review_status": "sourced_tungs_website",
-      "public_safe": true,
-      "x": 74,
-      "y": 246,
-      "aliases_zh": [],
-      "visual_links": [
-        {
-          "label_zh": "董氏奇穴 · 肝門穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Ganmen (eLotus CORE Direct)",
-          "source": "MasterTungAcupuncture.org / eLotus CORE",
-          "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/ganmen-t-3311",
-          "link_status": "direct"
-        },
-        {
-          "label_zh": "董氏心氣神針 · 肝門穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 肝門穴 (Chinese Heritage Direct)",
-          "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com",
-          "link_status": "direct"
-        }
-      ],
-      "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺五分～一寸五分。或由下往上斜刺二寸。",
-      "anatomy_zh": "淺層分布前腕內外側皮神經、深層分布前骨、間動脈靜脈和正中神經。肝之神經、腎之神經。",
-      "anatomy_en": "Distributed along nerve reaction areas of Forearms.",
-      "disease_tags_zh": [
-        "脊椎骨膜炎",
-        "肝炎",
-        "肝硬化",
-        "肝痛",
-        "兩脅痛",
-        "血癌症（白血球過多或過少）"
-      ],
-      "disease_tags_en": [
-        "Forearms pain disorders",
-        "Channel qi obstruction",
-        "Organ harmony"
-      ],
-      "action_tags_zh": [
-        "疏肝理氣。"
-      ],
-      "action_tags_en": [
-        "Unblock Channels",
-        "Relieve Pain",
-        "Harmonize Organs"
-      ],
-      "acumethod_en": "Needle perpendicularly 0.2-0.5 cun along bone; Dao Ma combination yields superior results.",
-      "reaction_area_zh": "前臂神經反應區",
-      "contraindications_en": [
-        "Needle with caution according to patient constitution & anatomical depth.",
-        "Exercise caution during pregnancy."
-      ],
-      "moxa_zh": "艾條溫灸15～20分鐘；或艾炷灸3～5壯。",
-      "moxa_en": "Moxa stick warm moxibustion for 15-20 mins, or 3-5 moxa cones.",
-      "channels_zh": [
-        "肝經。"
-      ],
-      "combinations_zh": [
-        "倒馬針法，另"
-      ],
-      "content_source": "tungs-acupuncture.com (fetched 2026-07-23)",
-      "diagram_urls_en": [
-        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.11_2_loc.jpg",
-        "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.11_3_needling.jpg"
       ]
     },
     {
@@ -8085,8 +8100,8 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Forearm",
       "region_zh": "前臂部",
       "name_en": "Xinmen",
-      "name_zh": "心門穴",
-      "pinyin": "Xinmen",
+      "name_zh": "肝門穴",
+      "pinyin": "Ganmen",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
       "location_zh": "掌面朝上，手腕橫紋正中央上一寸五分為",
       "traditional_functions_en": [
@@ -8132,15 +8147,15 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 心門穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 肝門穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Xinmen (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/xinmen-t-3312",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 心門穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 心門穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 肝門穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 肝門穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
           "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
@@ -8922,8 +8937,8 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Forearm",
       "region_zh": "前臂部",
       "name_en": "Houjian*",
-      "name_zh": "喉健穴",
-      "pinyin": "Houjian",
+      "name_zh": "肺靈穴",
+      "pinyin": "Feiling",
       "location_en": "Master Tung Forearms point. Located in the Forearm region.",
       "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
@@ -8960,15 +8975,15 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 喉健穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 肺靈穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Houjian* (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/houjian-t-3319",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 喉健穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 喉健穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 肺靈穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 肺靈穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
           "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
@@ -12282,9 +12297,9 @@ window.ACUTING_TUNG_INDEX = {
       "zone_zh": "四四部位【上臂】",
       "region_en": "Upper arm",
       "region_zh": "上臂部",
-      "name_en": "Fugesan",
-      "name_zh": "腑格三穴",
-      "pinyin": "Fugesan",
+      "name_en": "Fuge",
+      "name_zh": "腑格穴",
+      "pinyin": "Fuge",
       "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
       "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
       "traditional_functions_en": [
@@ -12321,15 +12336,15 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腑格三穴 (eLotus CORE 英文圖解)",
-          "label_en": "Master Tung · Fugesan (eLotus CORE Direct)",
+          "label_zh": "董氏奇穴 · 腑格穴 (eLotus CORE 英文圖解)",
+          "label_en": "Master Tung · Fuge (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/fugesan-t-4430",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 腑格三穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 腑格三穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 腑格穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 腑格穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
           "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
@@ -13419,7 +13434,7 @@ window.ACUTING_TUNG_INDEX = {
       "region_zh": "腳掌部",
       "name_en": "Mufu",
       "name_zh": "木斗穴",
-      "pinyin": "Mufu",
+      "pinyin": "Mudou",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
       "location_zh": "木斗穴",
       "traditional_functions_en": [
@@ -13915,8 +13930,8 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Dorsum of Foot",
       "region_zh": "腳掌部",
       "name_en": "Muliu",
-      "name_zh": "木留穴",
-      "pinyin": "Muliu",
+      "name_zh": "木枝穴",
+      "pinyin": "Muzhi",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
       "location_zh": "木斗穴 ：當第三、四蹠骨之上緣，在蹠趾關節上緣骨縫中是穴。",
       "traditional_functions_en": [
@@ -13955,15 +13970,15 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木留穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 木枝穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Muliu (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muliu-t-6606",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 木留穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 木留穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 木枝穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 木枝穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
           "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
@@ -14029,8 +14044,8 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Dorsum of Foot",
       "region_zh": "腳掌部",
       "name_en": "Mudou",
-      "name_zh": "木斗穴",
-      "pinyin": "Mudou",
+      "name_zh": "木留穴",
+      "pinyin": "Muliu",
       "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
       "location_zh": "木斗穴",
       "traditional_functions_en": [
@@ -14078,17 +14093,17 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木斗穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 木留穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Mudou (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/mudou-t-6607",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 木斗穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 木斗穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 木留穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 木留穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e6%9c%a8%e6%96%97%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -17014,17 +17029,17 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Lower leg",
       "region_zh": "小腿部",
       "name_en": "Tianhuang",
-      "name_zh": "四花中穴",
+      "name_zh": "天皇穴",
       "pinyin": "Tianhuang",
       "location_en": "On the anterior aspect of the lower leg, 4.5 cun inferior to Zusanli (ST36).",
-      "location_zh": "小腿前外側，足三里穴直下四.五寸處（膝眼下7.5寸）。",
+      "location_zh": "小腿內側面，彎曲膝蓋，脛骨內側髁下緣凹陷處直下一寸。即十四經之陰陵泉穴直下一寸處。距膝關節三寸五分。",
       "traditional_functions_en": [
         "Heart reaction area",
         "Lung reaction area"
       ],
       "traditional_functions_zh": [
-        "心神經",
-        "肺神經"
+        "清熱化濕",
+        "疏導下焦。"
       ],
       "indications_en": [
         "Asthma",
@@ -17034,11 +17049,12 @@ window.ACUTING_TUNG_INDEX = {
         "Chest pain"
       ],
       "indications_zh": [
-        "哮喘",
-        "肺癌",
-        "心臟病",
-        "急性腸胃炎",
-        "胸痛"
+        "胃酸過多",
+        "反胃",
+        "腎臟炎",
+        "糖尿病",
+        "蛋白尿",
+        "膀胱炎"
       ],
       "contraindications": [
         "依臨床體質辨證操作，避免傷及深層血管與器官。",
@@ -17055,31 +17071,32 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 四花中穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 天皇穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Tianhuang (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/tianhuang-t-7717",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 四花中穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 四花中穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 天皇穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 天皇穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com",
+          "url": "https://www.tungs-acupuncture.com/%e5%a4%a9%e7%9a%87%e7%a9%b4/",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺1.5～2.5寸；或用三棱針點刺黑血。為董氏刺血要穴。",
+      "acumethod_zh": "直刺五分～一寸五分。",
       "reaction_area_zh": "心神經、肺神經",
-      "anatomy_zh": "分佈【小腿】相應經絡皮部與神經反應區。",
+      "anatomy_zh": "伏在神經、腎之神經、六腑神經、心之分支神經。",
       "anatomy_en": "Distributed along nerve reaction areas of Lower Legs.",
       "disease_tags_zh": [
-        "哮喘",
-        "肺癌",
-        "心臟病",
-        "急性腸胃炎",
-        "胸痛"
+        "胃酸過多",
+        "反胃",
+        "腎臟炎",
+        "糖尿病",
+        "蛋白尿",
+        "膀胱炎"
       ],
       "disease_tags_en": [
         "Asthma",
@@ -17089,9 +17106,8 @@ window.ACUTING_TUNG_INDEX = {
         "Chest pain"
       ],
       "action_tags_zh": [
-        "疏通經絡",
-        "理氣止痛",
-        "調理臟腑"
+        "清熱化濕",
+        "疏導下焦。"
       ],
       "action_tags_en": [
         "Unblock Channels",
@@ -17108,6 +17124,18 @@ window.ACUTING_TUNG_INDEX = {
       "diagram_urls_en": [
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t77.17_2_loc.jpg",
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t77.17_3_needling.jpg"
+      ],
+      "needle_sensation_zh": "酸脹麻電感。",
+      "application_zh": "本穴配 天皇副穴 ，治反胃、胃酸過多。",
+      "explanation_zh": null,
+      "combinations_structured": [
+        {
+          "title": "配穴",
+          "text": "本穴配腕順下穴（近後谿穴），配合導引行氣針法，一般馬上見效，效果未顯時，可於病位放血。"
+        }
+      ],
+      "combinations_zh": [
+        "配穴：本穴配腕順下穴（近後谿穴），配合導引行氣針法，一般馬上見效，效果未顯時，可於病位放血。"
       ]
     },
     {
@@ -17122,7 +17150,7 @@ window.ACUTING_TUNG_INDEX = {
       "region_zh": "小腿部",
       "name_en": "Tianhuangfu [shenguan]",
       "name_zh": "天皇副穴",
-      "pinyin": "Tianhuangfu [shenguan]",
+      "pinyin": "Tianhuangfu",
       "location_en": "Master Tung Lower Legs point. Located in the Lower leg region.",
       "location_zh": "小腿內側面，在 天皇穴 直下一寸五分。",
       "traditional_functions_en": [
@@ -17383,7 +17411,7 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Lower leg",
       "region_zh": "小腿部",
       "name_en": "Sizhi",
-      "name_zh": "腎關穴",
+      "name_zh": "四肢穴",
       "pinyin": "Sizhi",
       "location_en": "On the medial side of the lower leg, 1.5 cun inferior to Yinlingquan (SP9).",
       "location_zh": "小腿內側，陰陵泉穴直下一寸五分處（脛骨內側緣後方凹陷）。",
@@ -17433,15 +17461,15 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 腎關穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 四肢穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Sizhi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/sizhi-t-7720",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 腎關穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 腎關穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 四肢穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 四肢穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
           "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
@@ -28053,7 +28081,7 @@ window.ACUTING_TUNG_INDEX = {
       "region_zh": "頭面部",
       "name_en": "Zhenjing",
       "name_zh": "馬金水穴",
-      "pinyin": "Zhenjing",
+      "pinyin": "Majinshui",
       "location_en": "On the face, below the zygomatic bone, anterior to the masseter muscle.",
       "location_zh": "馬金水穴",
       "traditional_functions_en": [
@@ -28641,17 +28669,16 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Head & Face",
       "region_zh": "頭面部",
       "name_en": "Majinshui",
-      "name_zh": "馬金水穴",
-      "pinyin": "Majinshui",
+      "name_zh": "馬快水穴",
+      "pinyin": "Makuaishui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "馬金水穴",
+      "location_zh": "馬金水穴 直下四分。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
       ],
       "traditional_functions_zh": [
-        "馬金水穴 ：通調水道",
-        "疏風通絡。 馬快水穴 ：通利下焦",
+        "通利下焦",
         "疏通經絡。"
       ],
       "indications_en": [
@@ -28660,14 +28687,7 @@ window.ACUTING_TUNG_INDEX = {
         "Organ harmony"
       ],
       "indications_zh": [
-        "馬金水穴 ：腎結石",
-        "閃腰",
-        "腎臟炎",
-        "腰痛",
-        "背痛",
-        "鼻炎",
-        "岔氣（呼吸時感覺疼痛者即是）",
-        "馬快水穴 ：膀胱結石",
+        "膀胱結石",
         "膀胱炎",
         "小便頻數",
         "腰脊椎骨痛",
@@ -28691,17 +28711,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 馬金水穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 馬快水穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Majinshui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/majinshui-t-101013",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 馬金水穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 馬金水穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 馬快水穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 馬快水穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e9%a6%ac%e9%87%91%e6%b0%b4%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com/%e9%a6%ac%e5%bf%ab%e6%b0%b4%e7%a9%b4/",
           "link_status": "direct"
         }
       ],
@@ -28710,14 +28730,12 @@ window.ACUTING_TUNG_INDEX = {
       "anatomy_zh": "馬金水穴 ：咬肌神經、腎之神經、肺之副支神經。 \n 馬快水穴 ：咬肌神經、腎神經、膀胱神經。",
       "anatomy_en": "Distributed along nerve reaction areas of Head.",
       "disease_tags_zh": [
-        "馬金水穴 ：腎結石",
-        "閃腰",
-        "腎臟炎",
-        "腰痛",
-        "背痛",
-        "鼻炎",
-        "岔氣（呼吸時感覺疼痛者即是）",
-        "馬快水穴 ：膀胱結石"
+        "膀胱結石",
+        "膀胱炎",
+        "小便頻數",
+        "腰脊椎骨痛",
+        "骨刺",
+        "鼻竇炎"
       ],
       "disease_tags_en": [
         "Head pain disorders",
@@ -28725,8 +28743,7 @@ window.ACUTING_TUNG_INDEX = {
         "Organ harmony"
       ],
       "action_tags_zh": [
-        "馬金水穴 ：通調水道",
-        "疏風通絡。 馬快水穴 ：通利下焦",
+        "通利下焦",
         "疏通經絡。"
       ],
       "action_tags_en": [
@@ -28748,9 +28765,9 @@ window.ACUTING_TUNG_INDEX = {
         "膀胱經。"
       ],
       "content_source": "tungs-acupuncture.com & mastertungacupuncture.org (fetched 2026-07-23)",
-      "needle_sensation_zh": "馬金水穴 ：酸脹感。 \n 馬快水穴 ：局部酸脹感。",
-      "application_zh": "馬金水、馬快水 雙穴同取，兩針齊下，形成董氏特有的「跪馬針法」，功效倍增。",
-      "explanation_zh": "馬金水、馬快水 其穴義馬即快也，金為肺主氣、水為腎主水，亦可治岔氣、腎炎、水腫，根據其穴名，即可知曉。",
+      "needle_sensation_zh": "局部酸脹感。",
+      "application_zh": "馬金水 、 馬快水 雙穴同取，兩針齊下，形成董氏特有的「跪馬針法」，功效倍增。",
+      "explanation_zh": "馬金水 、 馬快水 ，其穴義馬即快也，金為肺主氣、水為腎主水，亦可治岔氣、腎炎、水腫，根據其穴名，即可知曉。",
       "diagram_urls_en": [
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t1010.13_2_loc.jpg",
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t1010.13_3_needling.jpg"
@@ -28769,8 +28786,8 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Head & Face",
       "region_zh": "頭面部",
       "name_en": "Makuaishui",
-      "name_zh": "馬快水穴",
-      "pinyin": "Makuaishui",
+      "name_zh": "腑快水穴",
+      "pinyin": "Fukuaishui",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
       "location_zh": "馬金水穴 直下四分。",
       "traditional_functions_en": [
@@ -28811,17 +28828,17 @@ window.ACUTING_TUNG_INDEX = {
       ],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 馬快水穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 腑快水穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Makuaishui (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/makuaishui-t-101014",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 馬快水穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 馬快水穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 腑快水穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 腑快水穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e9%a6%ac%e5%bf%ab%e6%b0%b4%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com",
           "link_status": "direct"
         }
       ],
@@ -29106,7 +29123,7 @@ window.ACUTING_TUNG_INDEX = {
       "region_zh": "頭面部",
       "name_en": "Qikuai",
       "name_zh": "鼻翼穴",
-      "pinyin": "Qikuai",
+      "pinyin": "Biyi",
       "location_en": "In the groove of the nasal alar cartilage at its midpoint.",
       "location_zh": "鼻翼上端之溝陷中。",
       "traditional_functions_en": [
@@ -29239,18 +29256,18 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Head & Face",
       "region_zh": "頭面部",
       "name_en": "Muzhi",
-      "name_zh": "木枝穴",
-      "pinyin": "Muzhi",
+      "name_zh": "州圓穴",
+      "pinyin": "Zhouyuan",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_zh": "州圓穴",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
       ],
       "traditional_functions_zh": [
-        "頭部反射區",
-        "調和氣血",
-        "疏通經絡"
+        "州圓穴 ：祛風通竅",
+        "疏經活絡。 州昆穴 ：通竅醒腦",
+        "疏經活絡。 州崙穴 ：通絡益腦。"
       ],
       "indications_en": [
         "Head pain disorders",
@@ -29258,9 +29275,18 @@ window.ACUTING_TUNG_INDEX = {
         "Organ harmony"
       ],
       "indications_zh": [
-        "頭部區域痛症",
-        "經絡氣血阻滯",
-        "臟腑調理"
+        "州圓穴 ：氣喘",
+        "坐骨神經痛",
+        "背痛",
+        "四肢酸痛",
+        "四肢無力",
+        "半身不遂",
+        "州昆穴 ：同州圓穴主治",
+        "又治腦神經痛",
+        "州崙穴 ：同州圓穴主治",
+        "另治腦瘤",
+        "頭痛",
+        "頭暈"
       ],
       "contraindications": [
         "依臨床體質辨證操作，避免傷及深層血管與器官。",
@@ -29277,28 +29303,33 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 木枝穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 州圓穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Muzhi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/muzhi-t-101018",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 木枝穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 木枝穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 州圓穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 州圓穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com",
+          "url": "https://www.tungs-acupuncture.com/%e5%b7%9e%e5%9c%93%e7%a9%b4/",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺0.2～0.5寸；或貼骨進針；倒馬針法效果更佳。",
-      "anatomy_zh": "分佈【頭部】相應經絡皮部與神經反應區。",
+      "acumethod_zh": "直刺一分～三分。或以放血針點刺出血。",
+      "anatomy_zh": "州圓穴 ：前頭神經、肺之神經。 \n 州昆穴 ：大後頭神經、肺之神經。\n 州崙穴 ：前頭神經、肺之神經。",
       "anatomy_en": "Distributed along nerve reaction areas of Head.",
       "disease_tags_zh": [
-        "頭部區域痛症",
-        "經絡氣血阻滯",
-        "臟腑調理"
+        "州圓穴 ：氣喘",
+        "坐骨神經痛",
+        "背痛",
+        "四肢酸痛",
+        "四肢無力",
+        "半身不遂",
+        "州昆穴 ：同州圓穴主治",
+        "又治腦神經痛"
       ],
       "disease_tags_en": [
         "Head pain disorders",
@@ -29306,9 +29337,9 @@ window.ACUTING_TUNG_INDEX = {
         "Organ harmony"
       ],
       "action_tags_zh": [
-        "疏通經絡",
-        "理氣止痛",
-        "調理臟腑"
+        "州圓穴 ：祛風通竅",
+        "疏經活絡。 州昆穴 ：通竅醒腦",
+        "疏經活絡。 州崙穴 ：通絡益腦。"
       ],
       "action_tags_en": [
         "Unblock Channels",
@@ -29326,6 +29357,18 @@ window.ACUTING_TUNG_INDEX = {
       "diagram_urls_en": [
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t1010.18_2_loc.jpg",
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t1010.18_3_needling.jpg"
+      ],
+      "needle_sensation_zh": "州圓穴 ：酸脹感。 \n 州昆穴 ：脹感。 \n 州崙穴 ：酸脹感。",
+      "application_zh": "臨床上採左病右取穴、右病左取穴的原則。 取用 州昆、州崙 取穴，亦以「左取右」、「右取左」的原則，來治療四肢無力，或中風後遺症。 州圓、州昆、州崙 三穴，可採行董氏針灸直三針之倒馬針法，可產生相乘之效果，使療效倍增。",
+      "explanation_zh": null,
+      "combinations_structured": [
+        {
+          "title": "配穴",
+          "text": "州昆穴 配 州圓 、 鎮靜 、 腎關 、 天黃 、 其黃 ，並再加配通腦、通四肢之相關穴位，治療中風後遺症。"
+        }
+      ],
+      "combinations_zh": [
+        "配穴：州昆穴 配 州圓 、 鎮靜 、 腎關 、 天黃 、 其黃 ，並再加配通腦、通四肢之相關穴位，治療中風後遺症。"
       ]
     },
     {
@@ -29670,17 +29713,16 @@ window.ACUTING_TUNG_INDEX = {
       "region_en": "Head & Face",
       "region_zh": "頭面部",
       "name_en": "Biyi",
-      "name_zh": "鼻翼穴",
-      "pinyin": "Biyi",
+      "name_zh": "鎮靜穴",
+      "pinyin": "Zhenjing",
       "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "鼻翼上端之溝陷中。",
+      "location_zh": "兩眉頭之間正中上五分。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
       ],
       "traditional_functions_zh": [
-        "通經解郁",
-        "疏筋利節。"
+        "清心鎮痙。"
       ],
       "indications_en": [
         "Head pain disorders",
@@ -29688,17 +29730,17 @@ window.ACUTING_TUNG_INDEX = {
         "Organ harmony"
       ],
       "indications_zh": [
-        "腎虧之各種神經痛",
-        "半身不遂",
-        "四肢痠痛",
-        "舌痛",
-        "舌硬",
-        "舌緊",
-        "喉痛",
-        "頭脹",
-        "偏頭痛",
-        "頭昏眼花",
-        "顏面麻痺"
+        "神經錯亂",
+        "四肢發抖",
+        "兩腿酸軟",
+        "四肢神經麻痺",
+        "失眠",
+        "小兒夢驚",
+        "鼻腔炎引起之頭痛",
+        "頭暈",
+        "重脹感",
+        "心臟病引起之前額頭痛",
+        "嘔吐"
       ],
       "contraindications": [
         "依臨床體質辨證操作，避免傷及深層血管與器官。",
@@ -29715,33 +29757,33 @@ window.ACUTING_TUNG_INDEX = {
       "aliases_zh": [],
       "visual_links": [
         {
-          "label_zh": "董氏奇穴 · 鼻翼穴 (eLotus CORE 英文圖解)",
+          "label_zh": "董氏奇穴 · 鎮靜穴 (eLotus CORE 英文圖解)",
           "label_en": "Master Tung · Biyi (eLotus CORE Direct)",
           "source": "MasterTungAcupuncture.org / eLotus CORE",
           "url": "https://www.mastertungacupuncture.org/acupuncture/tung/points/biyi-t-101022",
           "link_status": "direct"
         },
         {
-          "label_zh": "董氏心氣神針 · 鼻翼穴 (中文傳承網圖解)",
-          "label_en": "Tung Acupuncture · 鼻翼穴 (Chinese Heritage Direct)",
+          "label_zh": "董氏心氣神針 · 鎮靜穴 (中文傳承網圖解)",
+          "label_en": "Tung Acupuncture · 鎮靜穴 (Chinese Heritage Direct)",
           "source": "董氏心氣神針傳承網 (tungs-acupuncture.com)",
-          "url": "https://www.tungs-acupuncture.com/%e9%bc%bb%e7%bf%bc%e7%a9%b4/",
+          "url": "https://www.tungs-acupuncture.com/%e9%8e%ae%e9%9d%9c%e7%a9%b4/",
           "link_status": "direct"
         }
       ],
       "identity_source_status": "source_checked",
-      "acumethod_zh": "直刺一分～二分。",
-      "anatomy_zh": "肺、腎、脾神經。",
+      "acumethod_zh": "直刺一分～二分。或由上往下斜刺二分～五分。",
+      "anatomy_zh": "滑車上神經、顏面神經分枝、腦神經、心之神經。",
       "anatomy_en": "Distributed along nerve reaction areas of Head.",
       "disease_tags_zh": [
-        "腎虧之各種神經痛",
-        "半身不遂",
-        "四肢痠痛",
-        "舌痛",
-        "舌硬",
-        "舌緊",
-        "喉痛",
-        "頭脹"
+        "神經錯亂",
+        "四肢發抖",
+        "兩腿酸軟",
+        "四肢神經麻痺",
+        "失眠",
+        "小兒夢驚",
+        "鼻腔炎引起之頭痛",
+        "頭暈"
       ],
       "disease_tags_en": [
         "Head pain disorders",
@@ -29749,8 +29791,7 @@ window.ACUTING_TUNG_INDEX = {
         "Organ harmony"
       ],
       "action_tags_zh": [
-        "通經解郁",
-        "疏筋利節。"
+        "清心鎮痙。"
       ],
       "action_tags_en": [
         "Unblock Channels",
@@ -29770,16 +29811,16 @@ window.ACUTING_TUNG_INDEX = {
         "腎"
       ],
       "combinations_zh": [
-        "配穴：鼻翼穴 配上 水金 、 腑快 、對側三泉穴，治療顏面神經麻痺，效果顯著。"
+        "配穴：鎮靜 、 正會 、 水金 、 水通 、 前會 、 三重 。 水金 、 水通 、 心靈 、 正會 、 正筋、正宗 。"
       ],
       "content_source": "tungs-acupuncture.com & mastertungacupuncture.org (fetched 2026-07-23)",
-      "needle_sensation_zh": "酸脹感。",
-      "application_zh": "玉火穴主血症、 鼻翼穴 主氣症，雙穴同取形成跪馬針法，氣血雙療，效果倍增。",
-      "explanation_zh": "鼻翼穴 通經活絡之功能很強，多用於氣虛、氣鬱所引起之各種疼痛。本穴可配 神耳穴 、 正本穴 、 皮膚穴 ，尚能提神醒腦、消除疲勞。 本穴左右兩側配 鎮靜穴 ，可配合鼻翼兩側放血，針對鼻塞有效。若須調整體質，下針不宜超過三十分鐘。",
+      "needle_sensation_zh": "酸脹感。會延伸到鼻尖、上至頭頂。",
+      "application_zh": null,
+      "explanation_zh": null,
       "combinations_structured": [
         {
           "title": "配穴",
-          "text": "鼻翼穴 配上 水金 、 腑快 、對側三泉穴，治療顏面神經麻痺，效果顯著。"
+          "text": "鎮靜 、 正會 、 水金 、 水通 、 前會 、 三重 。 水金 、 水通 、 心靈 、 正會 、 正筋、正宗 。"
         }
       ],
       "diagram_urls_en": [
