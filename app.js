@@ -2866,56 +2866,94 @@ function indicationArticle(point) {
 
   const parts = [];
 
-  // 1. AcuTags / Actions
-  const acuTags = point.acuTags && point.acuTags.length > 0
-    ? point.acuTags
-    : (point.functions ? String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean) : []);
+  // Helper dictionary for instant bilingual translations
+  const COMMON_TAG_TRANS = {
+    "清肝利膽": "Clear Liver & Gallbladder",
+    "活血通絡": "Unblock Channels & Collaterals",
+    "軟堅散結": "Soften Masses & Disperse Nodulet",
+    "疏經止痛": "Relieve Channel Pain",
+    "理氣活血": "Regulate Qi & Activate Blood",
+    "通經活絡": "Unblock Channels",
+    "鎮痛散結": "Relieve Pain & Masses",
+    "清熱利水": "Clear Heat & Diuresis",
+    "補腎固表": "Tonify Kidney & Secure Exterior",
+    "利尿排石": "Promote Urination & Pass Stones",
+    "坐骨神經痛": "Sciatica",
+    "小兒麻痺後遺症": "Poliomyelitis Sequelae",
+    "手臂麻痛": "Arm Pain & Numbness",
+    "瘰癧（頸部淋巴結核）": "Scrofula (Lymphadenitis)",
+    "瘰癧": "Scrofula",
+    "腋下瘤": "Axillary Tumor",
+    "肝硬化": "Cirrhosis",
+    "肝炎": "Hepatitis",
+    "腹股溝拉傷": "Groin Strain",
+    "腎結石": "Kidney Stones",
+    "腎炎": "Nephritis",
+    "蛋白尿": "Proteinuria",
+    "腰痛": "Low Back Pain",
+    "手腕背側痛": "Dorsal Wrist Pain",
+    "腕隧道症候群": "Carpal Tunnel Syndrome",
+    "手臂痛": "Arm Pain",
+    "小腿肌肉痛": "Leg Muscle Pain",
+    "蕁麻疹": "Urticaria",
+    "多汗症": "Hyperhidrosis",
+    "灰指甲": "Nail Fungus",
+    "小兒夜哭": "Pediatric Night Crying",
+    "腹脹": "Abdominal Distension",
+    "腿酸脹": "Leg Soreness & Distension",
+    "頭昏": "Dizziness",
+    "頭痛": "Headache",
+    "黃膽病": "Jaundice",
+    "驚悸": "Palpitations & Fright"
+  };
 
-  if (acuTags.length > 0) {
-    const actionChips = acuTags.map(t => {
-      const tagStr = t.trim();
-      const translation = patternEnglishMap[tagStr] || functionEnglishMap[tagStr] || "";
-      const enSpan = translation ? ` <small>(${escapeHtml(translation)})</small>` : "";
-      return `<span class="k-tag cat">${escapeHtml(tagStr)}${enSpan}</span>`;
+  // 1. AcuTags / Actions (功效與屬性標籤)
+  let actionTagsZh = point.action_tags_zh || (point.acuTags && point.acuTags.length > 0 ? point.acuTags : null);
+  if (!actionTagsZh && point.functions) {
+    actionTagsZh = String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean);
+  }
+  const actionTagsEn = point.action_tags_en || point.functionsEn || [];
+
+  if (actionTagsZh && actionTagsZh.length > 0) {
+    const actionChips = actionTagsZh.map((zhTag, idx) => {
+      const cleanZh = zhTag.trim();
+      let enText = actionTagsEn[idx] || COMMON_TAG_TRANS[cleanZh] || patternEnglishMap[cleanZh] || functionEnglishMap[cleanZh] || "";
+      if (/Master Tung/i.test(enText) || /Category/i.test(enText)) enText = COMMON_TAG_TRANS[cleanZh] || "";
+      const enSpan = enText ? ` <small>(${escapeHtml(enText)})</small>` : "";
+      return `<span class="k-tag cat">${escapeHtml(cleanZh)}${enSpan}</span>`;
     }).join(" ");
     parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
-  } else if (point.functions) {
-    parts.push(`<p><strong>【功效】</strong> ${escapeHtml(point.functions)}</p>`);
   }
 
-  // 2. Indications / Symptom Tags
-  let rawInds = Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[\n,，、]/) : []);
-  const cleanInds = [];
-  rawInds.forEach(item => {
-    let str = String(item).trim();
-    if (!str) return;
-    let zh = str, en = "";
-    if (str.includes("=")) {
-      const partsArr = str.split("=");
-      zh = partsArr[0].trim();
-      en = partsArr[1].trim();
-    } else if (patternEnglishMap[str]) {
-      en = patternEnglishMap[str];
-    } else if (functionEnglishMap[str]) {
-      en = functionEnglishMap[str];
+  // 2. Indications / Disease Tags (常見主治與適應症標籤)
+  let diseaseTagsZh = point.disease_tags_zh || (Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[\n,，、]/) : []));
+  const diseaseTagsEn = point.disease_tags_en || point.patternsEn || [];
+
+  if (diseaseTagsZh && diseaseTagsZh.length > 0) {
+    const uniqueMap = new Map();
+    diseaseTagsZh.forEach((item, idx) => {
+      let str = String(item).trim();
+      if (!str) return;
+      let zh = str;
+      let en = diseaseTagsEn[idx] || COMMON_TAG_TRANS[zh] || patternEnglishMap[zh] || functionEnglishMap[zh] || "";
+      if (str.includes("=")) {
+        const partsArr = str.split("=");
+        zh = partsArr[0].trim();
+        en = partsArr[1].trim();
+      }
+      if (/Master Tung/i.test(en) || /indication/i.test(en)) en = COMMON_TAG_TRANS[zh] || "";
+      if (zh && !uniqueMap.has(zh)) {
+        uniqueMap.set(zh, en);
+      }
+    });
+
+    if (uniqueMap.size > 0) {
+      const indChips = Array.from(uniqueMap.entries()).map(([zh, en]) => {
+        const enSpan = en ? ` <small>(${escapeHtml(en)})</small>` : "";
+        return `<span class="k-tag symptom">${escapeHtml(zh)}${enSpan}</span>`;
+      }).join(" ");
+      parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
     }
-    if (zh) cleanInds.push({ zh, en });
-  });
-
-  const uniqueMap = new Map();
-  cleanInds.forEach(item => {
-    if (!uniqueMap.has(item.zh)) uniqueMap.set(item.zh, item.en);
-  });
-
-  if (uniqueMap.size > 0) {
-    const indChips = Array.from(uniqueMap.entries()).map(([zh, en]) => {
-      const translation = en || patternEnglishMap[zh] || functionEnglishMap[zh] || "";
-      const enSpan = translation ? ` <small>(${escapeHtml(translation)})</small>` : "";
-      return `<span class="k-tag symptom">${escapeHtml(zh)}${enSpan}</span>`;
-    }).join(" ");
-    parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
-  } else {
-    parts.push("<p>董氏奇穴特色主治與適應症。</p>");
   }
 
   return parts.join("\n\n");
