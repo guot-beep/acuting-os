@@ -2869,6 +2869,21 @@ function indicationArticle(point) {
   // Helper dictionary for instant bilingual translations
   // Comprehensive professional TCM translation dictionary
   const COMMON_TAG_TRANS = {
+    // Specific point categories
+    "輸穴": "Shu-Stream Point",
+    "原穴": "Yuan-Source Point",
+    "井穴": "Jing-Well Point",
+    "滎穴": "Ying-Spring Point",
+    "經穴": "Jing-River Point",
+    "合穴": "He-Sea Point",
+    "絡穴": "Luo-Connecting Point",
+    "隙穴": "Xi-Cleft Point",
+    "背俞穴": "Back-Shu Point",
+    "募穴": "Front-Mu Point",
+    "八會穴": "Eight Influential Point",
+    "八脈交會穴": "Eight Confluent Point",
+
+    // Action / Function tags
     "健脾": "Strengthen Spleen",
     "補腎壯陽": "Tonify Kidney & Strengthen Yang",
     "補益肝腎": "Nourish Liver & Kidney",
@@ -2898,6 +2913,30 @@ function indicationArticle(point) {
     "清熱利水": "Clear Heat & Diuresis",
     "補腎固表": "Tonify Kidney & Secure Exterior",
     "利尿排石": "Promote Urination & Pass Stones",
+    "活血": "Activate Blood",
+    "醒腦": "Awaken Brain & Mind",
+    "益氣": "Supplement Qi",
+    "活絡": "Unblock Collaterals",
+    "養心安神鎮靜": "Nourish Heart & Calm Mind",
+    "養心安神": "Nourish Heart & Calm Mind",
+    "鎮靜安神": "Calm Mind & Tranquilize",
+    "通經絡": "Unblock Channels",
+    "定驚": "Settle Fright",
+    "消脹": "Relieve Abdominal Distension",
+    "神經系統疾病": "Neurological Disorders",
+    "精神神志疾病": "Mental & Emotional Disorders",
+
+    // Disease / Symptom tags (100% Precise)
+    "心悸": "Palpitations",
+    "失眠": "Insomnia",
+    "多夢": "Dream-Disturbed Sleep",
+    "健忘": "Poor Memory",
+    "心血不足": "Heart Blood Deficiency",
+    "心神不寧": "Restless Mind",
+    "胸痛": "Chest Pain",
+    "心痛": "Cardiac Pain",
+    "狂躁": "Mania",
+    "焦慮": "Anxiety",
     "坐骨神經痛": "Sciatica",
     "小兒麻痺後遺症": "Poliomyelitis Sequelae",
     "手臂麻痛": "Arm Pain & Numbness",
@@ -2933,31 +2972,33 @@ function indicationArticle(point) {
     "手足逆冷": "Cold Limbs"
   };
 
+  // Helper function to resolve translation ONLY by Chinese Key match
+  function resolveTagEnglish(zhKey) {
+    const cleanKey = String(zhKey || "").trim();
+    if (!cleanKey) return "";
+    let match = COMMON_TAG_TRANS[cleanKey] || patternEnglishMap[cleanKey] || functionEnglishMap[cleanKey] || "";
+    if (!match && cleanKey.includes("（")) {
+      const baseKey = cleanKey.replace(/（[^）]+）/g, "").trim();
+      match = COMMON_TAG_TRANS[baseKey] || patternEnglishMap[baseKey] || functionEnglishMap[baseKey] || "";
+    }
+    // Reject any single-character or junk fallback
+    if (!match || match.length <= 2 || /Master Tung|Category|indication/i.test(match)) {
+      return "";
+    }
+    return match;
+  }
+
   // 1. AcuTags / Actions (功效與屬性標籤)
   let actionTagsZh = point.action_tags_zh || (point.acuTags && point.acuTags.length > 0 ? point.acuTags : null);
   if (!actionTagsZh && point.functions) {
     actionTagsZh = String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean);
   }
 
-  // Safely parse English action tags array
-  let actionTagsEn = [];
-  if (Array.isArray(point.action_tags_en)) {
-    actionTagsEn = point.action_tags_en;
-  } else if (Array.isArray(point.functionsEn)) {
-    actionTagsEn = point.functionsEn;
-  }
-
   if (actionTagsZh && actionTagsZh.length > 0) {
-    const actionChips = actionTagsZh.map((zhTag, idx) => {
+    const actionChips = actionTagsZh.map(zhTag => {
       const cleanZh = zhTag.trim();
-      let enText = COMMON_TAG_TRANS[cleanZh] || patternEnglishMap[cleanZh] || functionEnglishMap[cleanZh] || "";
-      if (!enText && actionTagsEn[idx] && typeof actionTagsEn[idx] === "string" && actionTagsEn[idx].length > 2) {
-        enText = actionTagsEn[idx];
-      }
-      if (/Master Tung/i.test(enText) || /Category/i.test(enText) || enText.length <= 2) {
-        enText = COMMON_TAG_TRANS[cleanZh] || "";
-      }
-      const enSpan = (enText && enText.length > 2) ? ` <small>(${escapeHtml(enText)})</small>` : "";
+      const enText = resolveTagEnglish(cleanZh);
+      const enSpan = enText ? ` <small>(${escapeHtml(enText)})</small>` : "";
       return `<span class="k-tag cat">${escapeHtml(cleanZh)}${enSpan}</span>`;
     }).join(" ");
     parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
@@ -2965,21 +3006,21 @@ function indicationArticle(point) {
 
   // 2. Indications / Disease Tags (常見主治與適應症標籤)
   let diseaseTagsZh = point.disease_tags_zh || (Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[\n,，、]/) : []));
-  const diseaseTagsEn = point.disease_tags_en || point.patternsEn || [];
 
   if (diseaseTagsZh && diseaseTagsZh.length > 0) {
     const uniqueMap = new Map();
-    diseaseTagsZh.forEach((item, idx) => {
+    diseaseTagsZh.forEach(item => {
       let str = String(item).trim();
       if (!str) return;
       let zh = str;
-      let en = diseaseTagsEn[idx] || COMMON_TAG_TRANS[zh] || patternEnglishMap[zh] || functionEnglishMap[zh] || "";
+      let en = "";
       if (str.includes("=")) {
         const partsArr = str.split("=");
         zh = partsArr[0].trim();
         en = partsArr[1].trim();
+      } else {
+        en = resolveTagEnglish(zh);
       }
-      if (/Master Tung/i.test(en) || /indication/i.test(en)) en = COMMON_TAG_TRANS[zh] || "";
       if (zh && !uniqueMap.has(zh)) {
         uniqueMap.set(zh, en);
       }
