@@ -233,8 +233,11 @@ function auricularGb93Point(record) {
     evidence: "GB/T 13734-2008 耳穴名稱與定位標準條目。",
     cautions: "耳局部位消毒清潔，孕婦與耳朵局部傷口慎用。",
     reviewStatus: record.review_status || "index_only",
-    sources: record.source_urls || auricularGb93.sources || [],
-    visualLinks: auricularPointVisualLinks(record.code),
+    sources: (record.sources && record.sources.length) ? record.sources : (record.source_urls && record.source_urls.length ? record.source_urls : [
+      `https://www.mastertungacupuncture.org/acupuncture/auricular/points/${(record.pinyin||'').toLowerCase()}-${(record.code||'').toLowerCase()}`,
+      `https://acupun.site/point_list_Ear93GB.aspx?pointId=${record.code}`
+    ]),
+    visualLinks: auricularPointVisualLinks(record),
     x: record.x || position.x,
     y: record.y || position.y
   };
@@ -276,23 +279,40 @@ function standardPointVisualLinks(code) {
   ];
 }
 
-function auricularPointVisualLinks(code) {
-  const normalized = String(code || "").toUpperCase();
-  const links = [
+function auricularPointVisualLinks(record = {}) {
+  if (typeof record === "string") {
+    record = { code: record };
+  }
+  const stored = Array.isArray(record.visual_links) ? record.visual_links : [];
+  const direct = stored.filter((link) => link && /^https?:\/\//.test(link.url || ""));
+  if (direct.length) {
+    return direct.map((link) => ({
+      labelZh: link.label_zh || "耳穴權威圖解",
+      labelEn: link.label_en || "Auricular Medicine Chart",
+      url: link.url,
+      source: link.source || "eLotus CORE / GB93"
+    }));
+  }
+
+  const code = String(record.code || "").toUpperCase();
+  const pinyin = String(record.pinyin || record.name_en || code).toLowerCase().replace(/[^a-z0-9]/g, "");
+  const elotusUrl = `https://www.mastertungacupuncture.org/acupuncture/auricular/points/${pinyin}-${code.toLowerCase()}`;
+  const twUrl = `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(code)}`;
+
+  return [
     {
-      labelZh: "GB93 耳穴定位圖",
-      labelEn: "GB93 auricular point image",
-      url: `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(normalized)}`,
-      source: "acupun.site"
+      labelZh: `eLotus CORE 黃麗春耳針診斷圖解 · ${record.name_zh || code}`,
+      labelEn: `eLotus CORE Auricular Chart · ${record.name_en || code}`,
+      url: elotusUrl,
+      source: "eLotus CORE / Dr. Li-Chun Huang"
     },
     {
-      labelZh: "耳針療法總覽圖",
-      labelEn: "Auricular therapy overview",
-      url: "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95",
-      source: "A+醫學百科"
+      labelZh: `國際標準耳針 3D / 區域定位對照 · ${record.name_zh || code}`,
+      labelEn: `Standard Auricular 3D Map · ${code}`,
+      url: twUrl,
+      source: "GB/T 13734-2008"
     }
   ];
-  return links;
 }
 
 function tungPointVisualLinks(record = {}) {
