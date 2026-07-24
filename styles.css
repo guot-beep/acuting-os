@@ -1394,6 +1394,44 @@ footer {
   overflow: hidden;
 }
 
+/* Master Tung Structured Combination Cards (Matching Image 3) */
+.tung-comb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.tung-comb-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #8c4c70;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tung-comb-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.tung-comb-title {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #8c4c70;
+}
+
+.tung-comb-text {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: #2d3748;
+}
+
 .pairing-row {
   background: #fff;
   border: 0;

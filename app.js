@@ -180,6 +180,13 @@ function tungIndexPoint(record) {
     acumethodEn: record.acumethod_en || "",
     anatomyZh: record.anatomy_zh || "",
     anatomyEn: record.anatomy_en || "",
+    channelsZh: record.channels_zh || [],
+    needleSensationZh: record.needle_sensation_zh || "",
+    applicationZh: record.application_zh || "",
+    explanationZh: record.explanation_zh || "",
+    combinationsStructured: record.combinations_structured || [],
+    notesEn: record.notes_en || "",
+    cautionsEn: record.contraindications_en || [],
     reviewStatus: record.review_status || "sourced_tung_record",
     sources: record.source_urls || ["https://www.tungs-acupuncture.com"],
     visualLinks: tungPointVisualLinks(record),
@@ -2696,16 +2703,22 @@ function pointIntro(point) {
 function pointLocationArticle(point) {
   if (contentMode === "english") {
     return [
-      `Location: ${point.locationEn || point.location || "Located along the corresponding Master Tung zone & anatomical landmarks."}`,
+      `LOCATION:\n${point.locationEn || point.location || "Located along corresponding Master Tung zone & anatomical landmarks."}`,
+      point.notesEn ? `NOTES:\n${point.notesEn}` : "",
       `Code and Region:\n${formatStandardMeta(point)}`,
       point.anatomyEn ? `Anatomy & Reaction Areas:\n${point.anatomyEn}` : `Anatomy Terms:\n${formatAnatomy(point.anatomy, "english")}`
     ].filter(Boolean).join("\n\n");
   }
+
+  const channelsStr = (point.channelsZh && point.channelsZh.length) ? point.channelsZh.join("、") : (point.channels || "相應經絡");
+  const natureStr = point.functions || (point.action_tags_zh ? point.action_tags_zh.join("、") : "董氏奇穴特色");
+  
   return [
-    `標準定位：${point.location || "董氏奇穴相應部位。"}` ,
-    point.locationEn ? `English location: ${point.locationEn}` : "",
-    formatStandardMeta(point),
-    `解剖對照：${point.anatomyZh || formatAnatomy(point.anatomy)}`
+    `【代碼 Code】${point.standardCode || point.code}`,
+    `【取穴 Location】${point.location || "董氏奇穴相應部位。"}`,
+    `【歸經 Channels】${channelsStr}`,
+    `【穴性 Actions】${natureStr}`,
+    `【解剖 Anatomy】${point.anatomyZh || formatAnatomy(point.anatomy)}`
   ].filter(Boolean).join("\n\n");
 }
 
@@ -2809,9 +2822,32 @@ function formatCombinePointsText(text) {
 }
 
 function combinePointsSection(point) {
-  if (!point.combinePointsZh) return "";
-  const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 穴位配伍與臨床應用";
-  return studySection(title, formatCombinePointsText(point.combinePointsZh), "link");
+  const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code).startsWith("T");
+  const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 常用配穴與臨床應用";
+
+  if (isTung && (point.combinationsStructured?.length || point.applicationZh || point.explanationZh)) {
+    let cardsHtml = "";
+    if (point.combinationsStructured && point.combinationsStructured.length > 0) {
+      cardsHtml = `<div class="tung-comb-grid">${
+        point.combinationsStructured.map(c => `
+          <div class="tung-comb-card">
+            <h4 class="tung-comb-title">${escapeHtml(c.title)}</h4>
+            <p class="tung-comb-text">${escapeHtml(c.text)}</p>
+          </div>
+        `).join("")
+      }</div>`;
+    }
+
+    const appText = point.applicationZh ? `<p><strong>【臨床應用】</strong> ${escapeHtml(point.applicationZh)}</p>` : "";
+    const expText = point.explanationZh ? `<p><strong>【說明與要點】</strong> ${escapeHtml(point.explanationZh)}</p>` : "";
+
+    const combinedBody = [cardsHtml, appText, expText].filter(Boolean).join("<br>");
+    return studySection(title, combinedBody, "link");
+  }
+
+  if (!point.combinePointsZh && (!point.combinationsZh || !point.combinationsZh.length)) return "";
+  const text = point.combinePointsZh || (point.combinationsZh ? point.combinationsZh.join("\n\n") : "");
+  return studySection(title, formatCombinePointsText(text), "link");
 }
 
 function classicalRefsSection(point) {
@@ -2824,21 +2860,18 @@ function classicalRefsSection(point) {
 function needlingArticle(point) {
   const parts = [];
   if (contentMode === "english") {
-    if (point.acumethodEn) parts.push(`【Needling Technique & Depth】\n${point.acumethodEn}`);
-    else if (point.acumethodZh) parts.push(`【Needling Technique】\n${point.acumethodZh}`);
-    if (point.moxaEn) parts.push(`【Moxibustion & Thermal Therapy】\n${point.moxaEn}`);
-    else if (point.moxaZh) parts.push(`【Moxibustion】\n${point.moxaZh}`);
-    if (point.cautions) parts.push(`【Safety Note】\n${point.cautions}`);
-    parts.push("Needling depth, angle, reinforcing/reducing method, and moxibustion should be verified against professional training, anatomical safety, patient presentation, and contraindications.");
+    if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
+    else if (point.acumethodZh) parts.push(`TECHNIQUES:\n${point.acumethodZh}`);
+    if (point.cautionsEn && point.cautionsEn.length) parts.push(`CONTRAINDICATIONS:\n${point.cautionsEn.join("\n")}`);
+    else if (point.cautions) parts.push(`CONTRAINDICATIONS / SAFETY:\n${point.cautions}`);
   } else {
-    if (point.acumethodZh) parts.push(`【針刺方法】\n${point.acumethodZh}`);
-    else if (point.techniqueNotes) parts.push(`【針刺方法】\n${point.techniqueNotes}`);
+    if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
+    else if (point.techniqueNotes) parts.push(`【針刺法】\n${point.techniqueNotes}`);
 
-    if (point.moxaZh) parts.push(`【艾灸與遠紅外線】\n${point.moxaZh}`);
-    if (point.massageZh) parts.push(`【自我保健與按摩】\n${point.massageZh}`);
+    if (point.needleSensationZh) parts.push(`【針感】\n${point.needleSensationZh}`);
 
+    if (point.moxaZh) parts.push(`【艾灸與熱療】\n${point.moxaZh}`);
     if (point.cautions) parts.push(`【安全提醒】\n${point.cautions}`);
-    parts.push("實際針刺深度、角度、補瀉與艾灸需依專業教材、解剖安全、體質、病勢與臨床訓練判斷。");
   }
   return parts.filter(Boolean).join("\n\n");
 }
