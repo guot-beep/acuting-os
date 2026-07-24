@@ -387,6 +387,7 @@ const meridianCategoryList = document.querySelector("#meridianCategoryList");
 const regionCategoryList = document.querySelector("#regionCategoryList");
 const topicCategoryList = document.querySelector("#topicCategoryList");
 const pointCategoryList = document.querySelector("#pointCategoryList");
+const tungZoneCategoryList = document.querySelector("#tungZoneCategoryList");
 const cardsEl = document.querySelector("#cards");
 const detailCard = document.querySelector("#detailCard");
 const bodyCanvas = document.querySelector("#bodyCanvas");
@@ -447,6 +448,22 @@ let modelView = "front";
 let directoryRegionGroup = "";
 let directoryTopic = "";
 let directoryPointCategory = "";   // PC5: 特定穴 filter
+let directoryTungZone = "";        // Master Tung 12-Zone filter
+
+const tungZoneGroups = uiConfig.tungZoneGroups || [
+  { id: "11", zh: "一一部位【手指】", en: "11: Fingers" },
+  { id: "22", zh: "二二部位【手掌】", en: "22: Hands" },
+  { id: "33", zh: "三三部位【前臂】", en: "33: Forearms" },
+  { id: "44", zh: "四四部位【上臂】", en: "44: Upper Arms" },
+  { id: "55", zh: "五五部位【腳趾】", en: "55: Soles" },
+  { id: "66", zh: "六六部位【腳掌】", en: "66: Top of Feet" },
+  { id: "77", zh: "七七部位【小腿】", en: "77: Lower Legs" },
+  { id: "88", zh: "八八部位【大腿】", en: "88: Thighs" },
+  { id: "99", zh: "九九部位【耳朵】", en: "99: Ears" },
+  { id: "1010", zh: "十十部位【頭面】", en: "1010: Head" },
+  { id: "DT", zh: "軀幹背面【DT】", en: "DT: Dorsal Torso" },
+  { id: "VT", zh: "軀幹腹面【VT】", en: "VT: Ventral Torso" }
+];
 
 
 
@@ -1055,6 +1072,13 @@ function getActiveFilterChips() {
       value: labelForDirectoryValue(directoryTopics, directoryTopic)
     });
   }
+  if (directoryTungZone) {
+    chips.push({
+      kind: "tungZone",
+      label: contentMode === "english" ? "Tung Zone" : "董氏部位",
+      value: labelForDirectoryValue(tungZoneGroups, directoryTungZone)
+    });
+  }
   return chips;
 }
 
@@ -1104,6 +1128,7 @@ function clearActiveFilter(kind) {
   if (kind === "all" || kind === "regionGroup") directoryRegionGroup = "";
   if (kind === "all" || kind === "topic") directoryTopic = "";
   if (kind === "all" || kind === "pointCategory") directoryPointCategory = "";
+  if (kind === "all" || kind === "tungZone") directoryTungZone = "";
 }
 
 function isPointDetailMode() {
@@ -1262,7 +1287,33 @@ function renderDirectoryFilters() {
   renderMeridianCategories();
   renderRegionCategories();
   renderTopicCategories();
+  renderTungZoneCategories();
   renderPointCategories();
+}
+
+function renderTungZoneCategories() {
+  if (!tungZoneCategoryList) return;
+  const tungPointsTotal = points.filter((p) => String(p.meridian || "").includes("Master Tung") || String(p.code).startsWith("T")).length;
+  const rows = [
+    directoryButton({
+      labelZh: "全部部位",
+      labelEn: "All 12 Zones",
+      count: tungPointsTotal,
+      active: !directoryTungZone,
+      action: "tungZone",
+      value: ""
+    }),
+    ...tungZoneGroups.map((zone) => directoryButton({
+      labelZh: zone.zh,
+      labelEn: zone.en,
+      count: points.filter((point) => pointMatchesTungZone(point, zone.id)).length,
+      active: directoryTungZone === zone.id,
+      action: "tungZone",
+      value: zone.id
+    }))
+  ];
+  tungZoneCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(tungZoneCategoryList);
 }
 
 // PC5: 特定穴 filter group — click a category → list all points in it.
@@ -1383,6 +1434,10 @@ function bindDirectoryButtons(scope) {
         directoryTopic = value;
         patternFilter.value = "";
       }
+      if (action === "tungZone") {
+        directoryTungZone = value;
+        meridianFilter.value = "";
+      }
       if (action === "pointCategory") {
         directoryPointCategory = value;
         searchInput.value = "";   // "按原穴就列出所有原穴" — show the full category set
@@ -1412,6 +1467,19 @@ function fillSelect(select, firstLabel, values) {
 
 function unique(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+}
+
+function pointMatchesTungZone(point, zoneId) {
+  if (!zoneId) return true;
+  const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code || "").startsWith("T");
+  if (!isTung) return false;
+  if (point.zoneCode === zoneId) return true;
+  const code = String(point.code || "");
+  if (zoneId === "DT") return code.startsWith("TDT");
+  if (zoneId === "VT") return code.startsWith("TVT");
+  const match = code.match(/^T(\d+)\./i);
+  if (match) return match[1] === zoneId;
+  return false;
 }
 
 function getFilteredPoints() {
@@ -1448,6 +1516,7 @@ function getFilteredPoints() {
       && (!patternFilter.value || point.patterns.includes(patternFilter.value))
       && (!directoryRegionGroup || pointMatchesRegionGroup(point, directoryRegionGroup))
       && (!directoryTopic || pointMatchesTopic(point, directoryTopic))
+      && (!directoryTungZone || pointMatchesTungZone(point, directoryTungZone))
       && (!directoryPointCategory || pointMatchesCategory(point, directoryPointCategory));
   });
 }

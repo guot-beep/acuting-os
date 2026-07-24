@@ -1440,6 +1440,16 @@ footer {
   margin-bottom: 0.85rem;
 }
 
+.tung-zone-box {
+  border-color: rgba(140, 76, 112, 0.35);
+  background: linear-gradient(135deg, rgba(253, 242, 248, 0.85), rgba(245, 243, 255, 0.85));
+}
+
+.tung-zone-box h3 {
+  color: #8c4c70;
+  font-weight: 700;
+}
+
 .tung-diagram-card {
   display: flex;
   flex-direction: column;
