@@ -25,8 +25,12 @@
      - 中文模式：`標準經穴 · 經外奇穴 · 董氏奇穴 · 耳穴`
      - 英文模式：`Standard · Extra Points · Master Tung · Auricular`
    - 預留擴充彈性，未來可隨時加入頭皮針、平衡針法等新體系
-4. **Data Pipeline 與 Validation**:
-   - `scripts/build-data.js` 生成包含 72 個經外奇穴的 `data/generated/app_data.js`
+4. **補全 300+ 雙語【功效與屬性標籤】與【常見主治與適應症標籤】**:
+   - 掃描全庫 751 個穴位中所有的中文標籤（功效、主治、證型），建立包含 304 個高頻專業中醫名詞的權威對照表 (`COMMON_TAG_TRANS`)
+   - 徹底修復先前部分標籤缺乏英文翻譯的缺陷（例如：`鎮靜催眠 (Calm Spirit & Promote Sleep)`、`神經衰弱 (Neurasthenia)`、`精神病 (Psychosis)`、`調和臟腑 (Harmonize Zang-Fu Organs)`、`壯腰健脊 (Strengthen Lumbar & Spine)`、`胸腹內臟疾患 (Chest & Visceral Disorders)`、`脊柱疾病 (Spinal Disorders)`、`神經官能症 (Neurosis)`、`通絡止痛 (Unblock Collaterals & Relieve Pain)`、`消腫 (Reduce Swelling)`、`足趾麻木疼痛 (Toe Numbness & Pain)`、`毒蛇咬傷 (Snakebite)`、`腳水腫 (Foot Edema)` 等）
+   - 同時同步至 `C:\Projects\acuting-antigravity` 與 `C:\Projects\acupuncture-point-app` 兩個資料夾中
+5. **Data Pipeline 與 Validation**:
+   - `scripts/build-data.js` 兩專案重新編譯 `data/generated/app_data.js` 成功
    - `scripts/validate-interactions.js` 100% PASS (0 Failures, 0 Warnings)
 
 ### Protected Areas Not Touched:
