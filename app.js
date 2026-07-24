@@ -187,6 +187,8 @@ function tungIndexPoint(record) {
     combinationsStructured: record.combinations_structured || [],
     notesEn: record.notes_en || "",
     cautionsEn: record.contraindications_en || [],
+    diagramUrlsEn: record.diagram_urls_en || [],
+    diagramUrlsZh: record.diagram_urls_zh || [],
     reviewStatus: record.review_status || "sourced_tung_record",
     sources: record.source_urls || ["https://www.tungs-acupuncture.com"],
     visualLinks: tungPointVisualLinks(record),
@@ -2530,11 +2532,28 @@ function studySection(title, body, tone = "book") {
 
 function visualLinksSection(point) {
   const links = normalizeVisualLinks(point.visualLinks || []);
-  const title = contentMode === "english" ? "Visual References" : "圖像參考";
-  if (!links.length) return studySection(title, contentMode === "english" ? "No visual reference links yet." : "尚未建立外部圖像連結。", "visual");
+  const title = contentMode === "english" ? "Visual References & Point Diagrams" : "圖像與取穴圖解";
+
+  let imgHtml = "";
+  if (point.diagramUrlsEn && point.diagramUrlsEn.length > 0) {
+    const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code).startsWith("T");
+    if (isTung) {
+      const imgLinks = point.diagramUrlsEn.map((imgUrl, idx) => `
+        <a href="${escapeAttribute(imgUrl)}" target="_blank" rel="noreferrer" class="tung-diagram-card">
+          <img src="${escapeAttribute(imgUrl)}" alt="${escapeAttribute(point.nameZh || point.nameEn)} Diagram ${idx + 1}" loading="lazy" onerror="this.parentElement.style.display='none';" />
+          <span>${contentMode === "english" ? `eLotus Diagram ${idx + 1}` : `eLotus 官方圖解 ${idx + 1}`}</span>
+        </a>
+      `).join("");
+      imgHtml = `<div class="tung-diagram-grid">${imgLinks}</div>`;
+    }
+  }
+
+  if (!links.length && !imgHtml) return studySection(title, contentMode === "english" ? "No visual reference links yet." : "尚未建立外部圖像連結。", "visual");
+
   return `
     <section class="study-section visual">
       <h3>${escapeHtml(title)}</h3>
+      ${imgHtml}
       <div class="visual-link-grid">
         ${links.map((link) => `
           <a href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">
@@ -2544,8 +2563,8 @@ function visualLinksSection(point) {
         `).join("")}
       </div>
       <p class="visual-note">${contentMode === "english"
-        ? "External diagrams open in a new tab. Use them as visual references and verify against professional sources before clinical use."
-        : "外部圖會在新分頁開啟。先作定位參考，臨床使用仍要對照專業教材與安全規範。"}</p>
+        ? "External diagrams open in a new tab. Verify against professional textbooks before clinical use."
+        : "外部權威圖解可在新分頁開啟。請作為定位參考，臨床使用仍需對照專業教材與安全規範。"}</p>
     </section>
   `;
 }
