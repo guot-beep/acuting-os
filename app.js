@@ -2992,10 +2992,12 @@ function formatCombinePointsText(text) {
 function highlightCombineText(text) {
   if (!text) return "";
   let clean = escapeHtml(text);
-  // Highlight acupoint names ending in 穴 or specific point names
+  // First highlight any 2-5 character Chinese string ending in 穴
   clean = clean.replace(/([一-龥]{2,5}穴)/g, '<span class="comb-point-highlight">$1</span>');
-  clean = clean.replace(/(上曲|下曲|肩中|雲白|靈骨|大白|中白|上三黃|下三皇|三河|肝門|腸門)/g, '<span class="comb-point-highlight">$1</span>');
-  // Remove redundant double span if overlapped
+  // Highlight famous Master Tung point names without 穴 suffix
+  const famousPointsRegex = /(靈骨|大白|中白|重子|重仙|下三皇|上三黃|三河|駟馬|通關|通山|通天|水金|水通|駕骨|正筋|正宗|正士|四花中|四花上|四花下|四花副|四花外|腎關|側三里|側下三里|足千金|足五金|外三關|木穴|婦科|制污|止涎|五虎|其門|其角|其正|火串|火陵|火山|手五金|手千金|心門|腸門|肝門|肩中|建中|曲陵|建力|中力|富頂|後枝|肩峰|地宗|天宗|雲白|李白|支骨|上曲|下曲|雲陵|正脊一|正脊二|正脊三|三神|背部相關穴)/g;
+  clean = clean.replace(famousPointsRegex, '<span class="comb-point-highlight">$1</span>');
+  // Remove redundant nested spans
   clean = clean.replace(/<span class="comb-point-highlight">(<span class="comb-point-highlight">.*?<\/span>)<\/span>/g, '$1');
   return clean;
 }
