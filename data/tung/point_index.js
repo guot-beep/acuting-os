@@ -3437,8 +3437,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muling",
       "name_zh": "木靈穴",
       "pinyin": "Muling",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers (Hand digits).",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -3540,8 +3540,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Baguansanxue",
       "name_zh": "八關三穴",
       "pinyin": "Baguansanxue",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers (Hand digits).",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -3643,8 +3643,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Baguansixue",
       "name_zh": "八關四穴",
       "pinyin": "Baguansixue",
-      "location_en": "Master Tung Fingers point. Located in the Hand digits region.",
-      "location_zh": "位在【手指】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers (Hand digits).",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -5167,8 +5167,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fanhoujue*",
       "name_zh": "反後決穴",
       "pinyin": "Fanhoujue",
-      "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands (Palm / Hand).",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -5270,8 +5270,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaojie*",
       "name_zh": "小節穴",
       "pinyin": "Xiaojie",
-      "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands (Palm / Hand).",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -5739,8 +5739,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhihan*",
       "name_zh": "止汗穴",
       "pinyin": "Zhihan",
-      "location_en": "Master Tung Hands point. Located in the Hand region.",
-      "location_zh": "位在【手部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands (Palm / Hand).",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -8629,8 +8629,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganlingsanxue*",
       "name_zh": "肝靈三穴",
       "pinyin": "Ganlingsanxue",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On medial forearm, 3, 6, and 9 cun superior to wrist/elbow crease (3 points).",
+      "location_zh": "前臂內側，肘橫紋直上3寸、6寸、9寸處，共三穴（肝靈一、二、三穴）。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8730,7 +8730,7 @@ window.ACUTING_TUNG_INDEX = {
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.18_3_needling.jpg"
       ],
       "source_provenance_note_zh": "本穴為 eLotus CORE 英文董氏奇穴擴充條目。中文傳承網無獨立單篇記載，僅保留英文權威文獻內容。",
-      "explanation_zh": null,
+      "explanation_zh": "肝靈一、二、三穴功同上三黃穴，董氏七十二絕針之一，為治療肝病之特效穴。臨床治療急性/慢性肝炎、肝硬化、肝腫大、腹脹有效。",
       "application_zh": null,
       "combinations_structured": []
     },
@@ -8747,8 +8747,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houjian*",
       "name_zh": "肺靈穴",
       "pinyin": "Feiling",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On anterior forearm, 3 and 6 cun proximal to wrist crease.",
+      "location_zh": "前臂內側，掌長肌腱與橈側腕屈肌腱之間，腕橫紋上3寸、6寸處。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8830,7 +8830,7 @@ window.ACUTING_TUNG_INDEX = {
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.19_3_needling.jpg"
       ],
       "source_provenance_note_zh": "本穴為 eLotus CORE 英文董氏奇穴擴充條目。中文傳承網無獨立單篇記載，僅保留英文權威文獻內容。",
-      "explanation_zh": null,
+      "explanation_zh": "肺靈穴入肺經，主治氣喘、咳嗽、肺炎、支氣管炎、前臂區域痛症與經絡氣血阻滯。",
       "application_zh": null,
       "combinations_structured": [],
       "combinations_zh": []
@@ -8848,8 +8848,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fugesan*",
       "name_zh": "腑格三穴",
       "pinyin": "Fugesan",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On palmar surface of forearm, 4.5, 6.5, and 8.5 cun proximal to wrist crease.",
+      "location_zh": "前臂掌側，腕橫紋上4.5寸、6.5寸、8.5寸處，共三穴。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8931,7 +8931,7 @@ window.ACUTING_TUNG_INDEX = {
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t33.20_3_needling.jpg"
       ],
       "source_provenance_note_zh": "本穴為 eLotus CORE 英文董氏奇穴擴充條目。中文傳承網無獨立單篇記載，僅保留英文權威文獻內容。",
-      "explanation_zh": null,
+      "explanation_zh": "腑格三穴調和六腑、理氣通經，主治胃腸脹氣、消化不良、腹痛與前臂經絡痛症。",
       "application_zh": null,
       "combinations_structured": [],
       "combinations_zh": []
@@ -11906,8 +11906,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dingke",
       "name_zh": "定咳穴",
       "pinyin": "Dingke",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 44: Upper Arms (Upper arm).",
+      "location_zh": "四四部位【上臂】：位於上臂部。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -12007,8 +12007,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houjian",
       "name_zh": "喉健穴",
       "pinyin": "Houjian",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On anterior medial upper arm, 4.5 cun superior to elbow crease.",
+      "location_zh": "上臂前內側，肱二頭肌內側溝中，肘橫紋上4.5寸處。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -12090,7 +12090,7 @@ window.ACUTING_TUNG_INDEX = {
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t44.29_3_needling.jpg"
       ],
       "source_provenance_note_zh": "本穴為 eLotus CORE 英文董氏奇穴擴充條目。中文傳承網無獨立單篇記載，僅保留英文權威文獻內容。",
-      "explanation_zh": null,
+      "explanation_zh": "喉健穴清熱利咽、宣肺開音，主治急性/慢性咽喉炎、聲音嘶啞、扁桃腺炎、喉嚨痛。",
       "application_zh": null,
       "combinations_structured": [],
       "combinations_zh": []
@@ -12108,8 +12108,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuge",
       "name_zh": "腑格穴",
       "pinyin": "Fuge",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On anterior medial upper arm, 6.5 cun superior to elbow crease.",
+      "location_zh": "上臂前內側，喉健穴直上2寸，即肘橫紋上6.5寸處。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -12191,7 +12191,7 @@ window.ACUTING_TUNG_INDEX = {
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t44.30_3_needling.jpg"
       ],
       "source_provenance_note_zh": "本穴為 eLotus CORE 英文董氏奇穴擴充條目。中文傳承網無獨立單篇記載，僅保留英文權威文獻內容。",
-      "explanation_zh": null,
+      "explanation_zh": "腑格穴寬胸利膈、降逆止嘔，主治食道炎、胃食道逆流、胸悶、嘔吐與膈肌痙攣。",
       "application_zh": null,
       "combinations_structured": [],
       "combinations_zh": []
@@ -12569,8 +12569,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huaguer",
       "name_zh": "花骨二穴",
       "pinyin": "Huaguer",
-      "location_en": "Master Tung Soles point. Located in the Sole of foot region.",
-      "location_zh": "位在【足底】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On sole of foot, in depression between bases of 2nd & 3rd metatarsal bones.",
+      "location_zh": "足底，第2與第3跖骨底縫隙間凹陷中。",
       "traditional_functions_en": [
         "Soles reaction area",
         "Unblock Channels"
@@ -12652,7 +12652,7 @@ window.ACUTING_TUNG_INDEX = {
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t55.03_3_needling.jpg"
       ],
       "source_provenance_note_zh": "本穴為 eLotus CORE 英文董氏奇穴擴充條目。中文傳承網無獨立單篇記載，僅保留英文權威文獻內容。",
-      "explanation_zh": null,
+      "explanation_zh": "花骨二穴主治手臂痛、手指痛、神經衰弱、弱視與足底麻痛。",
       "application_zh": null,
       "combinations_structured": [],
       "combinations_zh": []
@@ -13510,8 +13510,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huozhu",
       "name_zh": "火主穴",
       "pinyin": "Huozhu",
-      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet (Dorsum of Foot).",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -13847,8 +13847,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mudou",
       "name_zh": "木留穴",
       "pinyin": "Muliu",
-      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
-      "location_zh": "【木留穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet (Dorsum of Foot).",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -14348,8 +14348,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoju",
       "name_zh": "火菊穴",
       "pinyin": "Huoju",
-      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet (Dorsum of Foot).",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -14449,8 +14449,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huosan",
       "name_zh": "火散穴",
       "pinyin": "Huosan",
-      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet (Dorsum of Foot).",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -14883,8 +14883,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wantong*",
       "name_zh": "董氏腕痛穴",
       "pinyin": "Tung's Wantong",
-      "location_en": "Master Tung Top of Feet point. Located in the Dorsum of foot region.",
-      "location_zh": "位在【足背】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet (Dorsum of Foot).",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -15556,8 +15556,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erzhong",
       "name_zh": "二重穴",
       "pinyin": "Erzhong",
-      "location_en": "2 cun superior to Yichong (T77.05), 5 cun superior to external malleolus.",
-      "location_zh": "一重穴直上2寸，即外踝尖上5寸。",
+      "location_en": "On lateral lower leg, 2 cun superior to Yichong (T77.05), 5 cun superior to external malleolus.",
+      "location_zh": "小腿外側，一重穴（外踝尖直上3寸）直上2寸，即外踝尖上5寸，腓骨前緣。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15660,7 +15660,7 @@ window.ACUTING_TUNG_INDEX = {
       "combinations_zh": [],
       "content_source": "mastertungacupuncture.org / eLotus CORE & tungs-acupuncture.com",
       "needle_sensation_zh": "酸脹麻電感",
-      "explanation_zh": null,
+      "explanation_zh": "二重穴活血化瘀、清熱解毒、軟堅散結，主治甲狀腺腫大（心臟病引起）、眼球突出、扁桃腺炎、面癱、偏頭痛、乳腺炎。",
       "combinations_structured": [],
       "diagram_urls_en": [
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t77.06_2_loc.jpg",
@@ -15968,8 +15968,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuazhong",
       "name_zh": "四花中穴",
       "pinyin": "Sihuazhong",
-      "location_en": "4.5 cun distal to Sihuashang (T77.08), near Tiaokou (ST38).",
-      "location_zh": "四花上穴直下4.5寸（相當於條口穴附近）。",
+      "location_en": "On anterior lateral lower leg, 4.5 cun distal to Sihuashang (T77.08), 1 cun lateral to tibia border.",
+      "location_zh": "小腿前外側，四花上穴直下4.5寸，脛骨前緣外側1寸處（相當於條口穴附近）。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -16051,7 +16051,7 @@ window.ACUTING_TUNG_INDEX = {
         "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/t77.09_3_needling.jpg"
       ],
       "source_provenance_note_zh": "本穴為 eLotus CORE 英文董氏奇穴擴充條目。中文傳承網無獨立單篇記載，僅保留英文權威文獻內容。",
-      "explanation_zh": null,
+      "explanation_zh": "四花中穴清瀉肺胃熱邪、理氣止痛，為治療心臟病、肺癌、肺氣腫、哮喘、胃痛與血管硬化之重穴。",
       "application_zh": null,
       "combinations_structured": [],
       "combinations_zh": []
@@ -22392,8 +22392,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinyingshang",
       "name_zh": "金營上穴",
       "pinyin": "Jinyingshang",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22495,8 +22495,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinyingxia",
       "name_zh": "金營下穴",
       "pinyin": "Jinyingxia",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22598,8 +22598,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Piyi",
       "name_zh": "脾一穴",
       "pinyin": "Piyi",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22699,8 +22699,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pier",
       "name_zh": "脾二穴",
       "pinyin": "Pier",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22800,8 +22800,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pisan",
       "name_zh": "脾三穴",
       "pinyin": "Pisan",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -23651,8 +23651,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangqi",
       "name_zh": "上奇穴",
       "pinyin": "Shangqi",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -23752,8 +23752,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaqi",
       "name_zh": "下奇穴",
       "pinyin": "Xiaqi",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -24093,8 +24093,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanlingyi",
       "name_zh": "三靈一穴",
       "pinyin": "Sanlingyi",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -24196,8 +24196,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanlinger",
       "name_zh": "三靈二穴",
       "pinyin": "Sanlinger",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -24299,8 +24299,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanlingsan",
       "name_zh": "三靈三穴",
       "pinyin": "Sanlingsan",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -24402,8 +24402,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qili",
       "name_zh": "七里穴",
       "pinyin": "Qili",
-      "location_en": "Master Tung Thighs point. Located in the Thigh region.",
-      "location_zh": "位在【大腿】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs (Thigh).",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -24503,8 +24503,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erhuan",
       "name_zh": "耳環穴",
       "pinyin": "Erhuan",
-      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
-      "location_zh": "【耳環穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears (Ear).",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -25219,8 +25219,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erbei",
       "name_zh": "耳背穴",
       "pinyin": "Er Bei",
-      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
-      "location_zh": "【耳背穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears (Ear).",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -25438,8 +25438,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shener*",
       "name_zh": "神耳",
       "pinyin": "Shener",
-      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
-      "location_zh": "【神耳】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears (Ear).",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -25696,8 +25696,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Eryuan*",
       "name_zh": "耳圓穴",
       "pinyin": "Eryuan",
-      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
-      "location_zh": "【耳圓穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears (Ear).",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -28714,8 +28714,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Liukuai",
       "name_zh": "六快穴",
       "pinyin": "Liukuai",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head (Head & Face).",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -29303,8 +29303,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yuhuo",
       "name_zh": "玉火穴",
       "pinyin": "Yuhuo",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head (Head & Face).",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -29530,8 +29530,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhouhuo",
       "name_zh": "州火穴",
       "pinyin": "Zhouhuo",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head (Head & Face).",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -29631,8 +29631,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoujin",
       "name_zh": "州金穴",
       "pinyin": "Zhoujin",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head (Head & Face).",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -29732,8 +29732,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhoushui",
       "name_zh": "州水穴",
       "pinyin": "Zhoushui",
-      "location_en": "Master Tung Head point. Located in the Head and face region.",
-      "location_zh": "位在【頭部】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head (Head & Face).",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -30064,8 +30064,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qixing",
       "name_zh": "七星穴",
       "pinyin": "Qixing",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30165,8 +30165,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wuling",
       "name_zh": "五嶺穴",
       "pinyin": "Wuling",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30268,8 +30268,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuang Feng",
       "name_zh": "雙鳳穴",
       "pinyin": "Shuang Feng",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30369,8 +30369,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiu Hou",
       "name_zh": "九猴穴",
       "pinyin": "Jiu Hou",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30470,8 +30470,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "San Jin",
       "name_zh": "三金穴",
       "pinyin": "San Jin",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30571,8 +30571,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jing Zhi",
       "name_zh": "精枝穴",
       "pinyin": "Jing Zhi",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30672,8 +30672,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jin Lin",
       "name_zh": "金林穴",
       "pinyin": "Jin Lin",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30773,8 +30773,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ding Zhu",
       "name_zh": "頂柱穴",
       "pinyin": "Ding Zhu",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30874,8 +30874,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houxin",
       "name_zh": "後心穴",
       "pinyin": "Houxin",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -30977,8 +30977,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmaosan",
       "name_zh": "感冒三穴",
       "pinyin": "Ganmaosan",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -31078,8 +31078,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuizhong",
       "name_zh": "水中穴",
       "pinyin": "Shuizhong",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -31179,8 +31179,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuifu",
       "name_zh": "水腑穴",
       "pinyin": "Shuifu",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -31280,8 +31280,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "San Jiang",
       "name_zh": "三江穴",
       "pinyin": "San Jiang",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -31381,8 +31381,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuang He",
       "name_zh": "雙河穴",
       "pinyin": "Shuang He",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -31482,8 +31482,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Chongxiao",
       "name_zh": "沖霄穴",
       "pinyin": "Chongxiao",
-      "location_en": "Master Tung Dorsal Torso point. Located in the Back and dorsal torso region.",
-      "location_zh": "位在【背部軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in DT: Dorsal Torso (Dorsal Torso).",
+      "location_zh": "軀幹背面【DT】：位於背部。",
       "traditional_functions_en": [
         "Dorsal Torso reaction area",
         "Unblock Channels"
@@ -31583,8 +31583,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houejiu",
       "name_zh": "喉蛾九穴",
       "pinyin": "Hou E Jiu",
-      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in VT: Ventral Torso (Ventral Torso).",
+      "location_zh": "軀幹腹面【VT】：位於腹部。",
       "traditional_functions_en": [
         "Ventral Torso reaction area",
         "Unblock Channels"
@@ -31684,8 +31684,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shierhou",
       "name_zh": "十二猴穴",
       "pinyin": "Shi Er Hou",
-      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in VT: Ventral Torso (Ventral Torso).",
+      "location_zh": "軀幹腹面【VT】：位於腹部。",
       "traditional_functions_en": [
         "Ventral Torso reaction area",
         "Unblock Channels"
@@ -31785,8 +31785,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinwu",
       "name_zh": "金五穴",
       "pinyin": "Jin Wu",
-      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in VT: Ventral Torso (Ventral Torso).",
+      "location_zh": "軀幹腹面【VT】：位於腹部。",
       "traditional_functions_en": [
         "Ventral Torso reaction area",
         "Unblock Channels"
@@ -31886,8 +31886,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Weimaoqi",
       "name_zh": "胃毛七穴",
       "pinyin": "Wei Mao Qi",
-      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in VT: Ventral Torso (Ventral Torso).",
+      "location_zh": "軀幹腹面【VT】：位於腹部。",
       "traditional_functions_en": [
         "Ventral Torso reaction area",
         "Unblock Channels"
@@ -31987,8 +31987,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuchaoershisan",
       "name_zh": "腑巢二十三穴",
       "pinyin": "Fu Chao Er Shi San",
-      "location_en": "Master Tung Ventral Torso point. Located in the Chest, abdomen, and ventral torso region.",
-      "location_zh": "位在【胸腹軀幹】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "Master Tung Acupuncture: located in VT: Ventral Torso (Ventral Torso).",
+      "location_zh": "軀幹腹面【VT】：位於腹部。",
       "traditional_functions_en": [
         "Ventral Torso reaction area",
         "Unblock Channels"
