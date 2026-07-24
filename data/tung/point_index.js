@@ -6577,8 +6577,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qimen",
       "name_zh": "其門穴",
       "pinyin": "Qimen",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On the radial side of forearm, 2 cun proximal to wrist crease, on medial border of radius.",
+      "location_zh": "前臂橈側，腕橫紋上2寸，橈骨內側緣。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -6700,8 +6700,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qijiao",
       "name_zh": "其角穴",
       "pinyin": "Qijiao",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On radial side of forearm, 2 cun superior to Qimen (T33.01), 4 cun proximal to wrist crease.",
+      "location_zh": "前臂橈側，其門穴直上2寸，即腕橫紋上4寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -6821,8 +6821,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Qizheng",
       "name_zh": "其正穴",
       "pinyin": "Qizheng",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On radial side of forearm, 2 cun superior to Qijiao (T33.02), 6 cun proximal to wrist crease.",
+      "location_zh": "前臂橈側，其角穴直上2寸，即腕橫紋上6寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -6942,8 +6942,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huochuan",
       "name_zh": "火串穴",
       "pinyin": "Huochuan",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On dorsal forearm, 2.5 cun proximal to wrist crease, between radius and ulna.",
+      "location_zh": "前臂背側，腕橫紋上2.5寸，尺骨與橈骨之間（相當於支溝穴附近）。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -7060,8 +7060,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoling",
       "name_zh": "火陵穴",
       "pinyin": "Huoling",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On dorsal forearm, 2 cun superior to Huochuan (T33.04), 4.5 cun proximal to wrist crease.",
+      "location_zh": "前臂背側，火串穴直上2寸，即腕橫紋上4.5寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -7178,8 +7178,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoshan",
       "name_zh": "火山穴",
       "pinyin": "Huoshan",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On dorsal forearm, 1.5 cun superior to Huoling (T33.05), 6 cun proximal to wrist crease.",
+      "location_zh": "前臂背側，火陵穴直上1.5寸，即腕橫紋上6寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -7296,8 +7296,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huofuhai",
       "name_zh": "火腑海穴",
       "pinyin": "Huofuhai",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "手肘橫紋下二寸五分。橈骨與尺骨之間陷中。",
+      "location_en": "On ulnar side of forearm, 6.5 cun distal to elbow crease, on medial border of ulna.",
+      "location_zh": "前臂尺側，肘橫紋下6.5寸，尺骨內側緣。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -7423,8 +7423,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shouwujin",
       "name_zh": "肝靈穴",
       "pinyin": "Shouwujin",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On ulnar side of forearm, 1.5 cun superior to Shouwujin (T33.07), 5 cun distal to elbow crease.",
+      "location_zh": "前臂尺側，手五金穴直上1.5寸，即肘橫紋下5寸。",
       "traditional_functions_en": [
         "Soothe Liver",
         "Clear Heat & Toxins",
@@ -7542,8 +7542,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shouqianjin",
       "name_zh": "心門穴",
       "pinyin": "Xinmen",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "Medial to olecranon process of ulna, in depression medial to olecranon (1.5 cun distal to elbow crease).",
+      "location_zh": "肘關節尺骨鷹嘴突起內側，尺骨鷹嘴內側凹陷中（肘橫紋下1.5寸）。",
       "traditional_functions_en": [
         "Calm Heart",
         "Unblock Yang Vessels",
@@ -7665,8 +7665,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Changmen",
       "name_zh": "其門穴",
       "pinyin": "Qimen",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On ulnar side of forearm, on medial border of ulna, 3 cun proximal to wrist crease.",
+      "location_zh": "前臂尺側，尺骨內側緣，腕橫紋上3寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -7792,8 +7792,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmen",
       "name_zh": "腸門穴",
       "pinyin": "Changmen",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On ulnar side of forearm, 3 cun superior to Changmen (T33.10), 6 cun proximal to wrist crease.",
+      "location_zh": "前臂尺側，尺骨內側緣，腸門穴直上3寸（腕橫紋上6寸）。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -7920,8 +7920,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinmen",
       "name_zh": "肝門穴",
       "pinyin": "Ganmen",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "掌面朝上，手腕橫紋正中央上一寸五分為",
+      "location_en": "On palmar surface of middle finger, 0.2 cun lateral (ulnar side) to midline of proximal phalanx.",
+      "location_zh": "中指第一節掌面中線外側（尺側）0.2寸處。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8039,8 +8039,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Renshi",
       "name_zh": "人士穴",
       "pinyin": "Renshi",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On palmar radial side of forearm, 4 cun proximal to wrist crease.",
+      "location_zh": "前臂掌側橈側緣，腕橫紋上4寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8184,8 +8184,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dishi",
       "name_zh": "地士穴",
       "pinyin": "Dishi",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On palmar radial side of forearm, 3 cun superior to Renshi (T33.13), 7 cun proximal to wrist crease.",
+      "location_zh": "前臂掌側橈側緣，人士穴直上3寸，即腕橫紋上7寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8285,8 +8285,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianshi",
       "name_zh": "天士穴",
       "pinyin": "Tianshi",
-      "location_en": "Master Tung Forearms point. Located in the Forearm region.",
-      "location_zh": "位在【前臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On palmar radial side of forearm, 3 cun superior to Dishi (T33.14), 10 cun proximal to wrist crease.",
+      "location_zh": "前臂掌側橈側緣，地士穴直上3寸，即腕橫紋上10寸。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8386,8 +8386,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Quling",
       "name_zh": "曲陵穴",
       "pinyin": "Quling",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On cubital crease, at ulnar border of biceps brachii tendon.",
+      "location_zh": "肘窩橫紋上，肱二頭肌腱尺側緣（相當於尺澤穴附近）。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8507,8 +8507,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinling*",
       "name_zh": "心靈穴",
       "pinyin": "Xinling",
-      "location_en": "Master Tung Acupuncture: located in 33: Forearms (Forearm).",
-      "location_zh": "三三部位【前臂】：位於前臂部。",
+      "location_en": "On palmar midline of forearm, 1.5, 2.5, and 3.5 cun proximal to wrist crease.",
+      "location_zh": "前臂掌側中線，腕橫紋上1.5寸、2.5寸、3.5寸處（心靈一、二、三穴）。",
       "traditional_functions_en": [
         "Forearms reaction area",
         "Unblock Channels"
@@ -8949,8 +8949,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fenjin",
       "name_zh": "分金穴",
       "pinyin": "Fenjin",
-      "location_en": "Master Tung Acupuncture: located in 44: Upper Arms (Upper arm).",
-      "location_zh": "四四部位【上臂】：位於上臂部。",
+      "location_en": "On posterior upper arm, 1.5 cun superior to elbow crease, lower end of deltoid muscle.",
+      "location_zh": "上臂後側，肘橫紋上1.5寸，三角肌下端。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9063,8 +9063,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houzhui",
       "name_zh": "後椎穴",
       "pinyin": "Houzhui",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On posterior upper arm, 2.5 cun superior to elbow crease.",
+      "location_zh": "上臂後側，肘橫紋上2.5寸，分金穴直上1寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9166,8 +9166,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shouying",
       "name_zh": "首英穴",
       "pinyin": "Shouying",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On posterior upper arm, 4.5 cun superior to elbow crease.",
+      "location_zh": "上臂後側，肘橫紋上4.5寸，後椎穴直上2寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9267,8 +9267,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fuding",
       "name_zh": "富頂穴",
       "pinyin": "Fuding",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On posterior upper arm, 7 cun superior to elbow crease.",
+      "location_zh": "上臂後側，肘橫紋上7寸，首英穴直上2.5寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9370,8 +9370,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Houzhi",
       "name_zh": "後枝穴",
       "pinyin": "Houzhi",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On posterior upper arm, 1 cun superior to Fuding (T44.04), 8 cun superior to elbow crease.",
+      "location_zh": "上臂後側，富頂穴直上1寸，即肘橫紋上8寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9473,8 +9473,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jianzhong",
       "name_zh": "肩中穴",
       "pinyin": "Jianzhong",
-      "location_en": "Master Tung Acupuncture: located in 44: Upper Arms (Upper arm).",
-      "location_zh": "四四部位【上臂】：位於上臂部。",
+      "location_en": "2.5 cun directly below acromion, in center of deltoid muscle.",
+      "location_zh": "肩峰穴直下2.5寸，三角肌中央。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9598,8 +9598,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Beimian",
       "name_zh": "背面穴",
       "pinyin": "Beimian",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "在肩骨縫之中央，舉臂時有空陷處上二分處。",
+      "location_en": "2 cun directly below Jianzhong (T44.06), 4.5 cun below acromion.",
+      "location_zh": "肩中穴直下2寸，即肩峰直下4.5寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9702,8 +9702,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Renzong",
       "name_zh": "人宗穴",
       "pinyin": "Renzong",
-      "location_en": "Master Tung Acupuncture: located in 44: Upper Arms (Upper arm).",
-      "location_zh": "四四部位【上臂】：位於上臂部。",
+      "location_en": "On back, lateral to inferior angle of scapula.",
+      "location_zh": "背部肩胛骨下角旁側。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9847,8 +9847,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dizong",
       "name_zh": "地宗穴",
       "pinyin": "Dizong",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On anterior upper arm, 3 cun superior to elbow crease, medial border of biceps brachii.",
+      "location_zh": "上臂前側，肘橫紋上3寸，肱二頭肌內側緣。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -9948,8 +9948,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianzong",
       "name_zh": "天宗穴",
       "pinyin": "Tianzong",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "在上臂肱骨外側與肱二頭肌後部間之陷處，在 地宗穴 上三寸，距肘窩橫紋九寸五分。",
+      "location_en": "On anterior upper arm, 3 cun superior to Renzong (T44.09), 6 cun superior to elbow crease.",
+      "location_zh": "上臂前側，人宗穴直上3寸，即肘橫紋上6寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10072,8 +10072,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Yunbai",
       "name_zh": "云白穴",
       "pinyin": "Yunbai",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On anterior upper arm, 3 cun superior to Dizong (T44.10), 9 cun superior to elbow crease.",
+      "location_zh": "上臂前側，地宗穴直上3寸，即肘橫紋上9寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10173,8 +10173,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Libai",
       "name_zh": "李白穴",
       "pinyin": "Libai",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "1.5 cun anterior to acromion, 2 cun superior to anterior axillary fold.",
+      "location_zh": "肩峰前1.5寸，腋前皺襞直上2寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10274,8 +10274,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhitong",
       "name_zh": "支通穴",
       "pinyin": "Zhitong",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "2 cun directly below Yunbai (T44.12).",
+      "location_zh": "雲白穴直下2寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10375,8 +10375,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Luotong",
       "name_zh": "落通穴",
       "pinyin": "Luotong",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On lateral side of upper arm, lateral border of humerus.",
+      "location_zh": "上臂外側，肱骨外側緣。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10476,8 +10476,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaqu",
       "name_zh": "下曲穴",
       "pinyin": "Xiaqu",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "2 cun directly superior to Zhitong (T44.14).",
+      "location_zh": "支通穴直上2寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10577,8 +10577,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangqu",
       "name_zh": "上曲穴",
       "pinyin": "Shangqu",
-      "location_en": "Master Tung Acupuncture: located in 44: Upper Arms (Upper arm).",
-      "location_zh": "四四部位【上臂】：位於上臂部。",
+      "location_en": "On lateral upper arm, 1 cun posterior to Jianzhong (T44.06).",
+      "location_zh": "上臂外側，肩中穴後開1寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10700,8 +10700,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuiyu",
       "name_zh": "水愈穴",
       "pinyin": "Shuiyu",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "2 cun directly below Shangqu (T44.16).",
+      "location_zh": "上臂外側，上曲穴直下2寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10801,8 +10801,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanling*",
       "name_zh": "三靈穴",
       "pinyin": "Sanling",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "手撫胸取穴。如上述， 三神一、三神二、三神三 ，穴位說明。",
+      "location_en": "In depression posterior and inferior to acromion.",
+      "location_zh": "肩峰後下方凹陷中。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -10922,8 +10922,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shenjian*",
       "name_zh": "神肩穴",
       "pinyin": "Shenjian",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "在 肩峰穴 與 雲白穴 連線之中央點。",
+      "location_en": "On posterior upper arm, 6 cun superior to elbow crease.",
+      "location_zh": "上臂後側，肘橫紋上6寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11043,8 +11043,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Pianjian*",
       "name_zh": "偏肩穴",
       "pinyin": "Pianjian",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "手掌面無名指第二節正中央偏內側五分，靠近小指處。",
+      "location_en": "On posterior upper arm, inferior to scapula.",
+      "location_zh": "上臂後側，肩胛骨下方。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11160,8 +11160,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Guciyi*",
       "name_zh": "骨刺一穴",
       "pinyin": "Guciyi",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "In depression on posterior side of shoulder joint.",
+      "location_zh": "肩關節後側凹陷中。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11261,8 +11261,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Gucier*",
       "name_zh": "骨刺二穴",
       "pinyin": "Gucier",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "At lateral border of pectoralis major muscle.",
+      "location_zh": "胸大肌外側緣。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11362,8 +11362,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Gucisan*",
       "name_zh": "骨刺三穴",
       "pinyin": "Gucisan",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "On posterior medial border of upper arm.",
+      "location_zh": "上臂後內側緣。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11463,8 +11463,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengji*",
       "name_zh": "正脊穴",
       "pinyin": "Zhengji",
-      "location_en": "Master Tung Acupuncture: located in 44: Upper Arms (Upper arm).",
-      "location_zh": "四四部位【上臂】：位於上臂部。",
+      "location_en": "On posterior upper arm, 2 cun superior to elbow crease.",
+      "location_zh": "上臂後側，肘橫紋上2寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11576,8 +11576,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feiqiyi*",
       "name_zh": "肺氣一穴",
       "pinyin": "Feiqiyi",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "2 cun superior to Zhengji 1 (T44.24), 4 cun superior to elbow crease.",
+      "location_zh": "正脊一穴直上2寸，即肘橫紋上4寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11677,8 +11677,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feiqier*",
       "name_zh": "肺氣二穴",
       "pinyin": "Feiqier",
-      "location_en": "Master Tung Upper Arms point. Located in the Upper arm region.",
-      "location_zh": "位在【上臂】區域。請參考董氏心氣神針取穴說明與圖解。",
+      "location_en": "2 cun superior to Zhengji 2 (T44.25), 6 cun superior to elbow crease.",
+      "location_zh": "正脊二穴直上2寸，即肘橫紋上6寸。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
@@ -11778,8 +11778,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanshen",
       "name_zh": "三神穴",
       "pinyin": "Sanshen",
-      "location_en": "Master Tung Acupuncture: located in 44: Upper Arms (Upper arm).",
-      "location_zh": "四四部位【上臂】：位於上臂部。",
+      "location_en": "On posterior upper arm, 1.5 cun posterior to Jianzhong (T44.06), arranged vertically in a line of 3 points.",
+      "location_zh": "上臂後側，肩中穴後開1.5寸，向下直排三穴（三神一、二、三穴）。",
       "traditional_functions_en": [
         "Upper Arms reaction area",
         "Unblock Channels"
