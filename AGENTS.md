@@ -1,5 +1,11 @@
 # Repository Guidelines
 
+> ## AI ROLES 2026-07-24 — READ docs/AI_ROLES.md FIRST
+> Antigravity = generation. Codex = QA/validation. Claude = command/architecture
+> + escalation. Ting = final in-app review. Full standing prompts + copy-paste
+> dispatch lines in `docs/AI_ROLES.md`. This governs who does what; the content
+> policy below governs how the filling is done.
+
 > ## CONTENT POLICY CHANGED 2026-07-22 — READ THIS BEFORE FILLING ANYTHING
 >
 > Ting's instruction, verbatim: 「你應該直接填上 然後標註來源就好 …
