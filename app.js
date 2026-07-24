@@ -2951,6 +2951,17 @@ function formatCombinePointsText(text) {
   return formattedParagraphs.join('');
 }
 
+function highlightCombineText(text) {
+  if (!text) return "";
+  let clean = escapeHtml(text);
+  // Highlight acupoint names ending in 穴 or specific point names
+  clean = clean.replace(/([一-龥]{2,5}穴)/g, '<span class="comb-point-highlight">$1</span>');
+  clean = clean.replace(/(上曲|下曲|肩中|雲白|靈骨|大白|中白|上三黃|下三皇|三河|肝門|腸門)/g, '<span class="comb-point-highlight">$1</span>');
+  // Remove redundant double span if overlapped
+  clean = clean.replace(/<span class="comb-point-highlight">(<span class="comb-point-highlight">.*?<\/span>)<\/span>/g, '$1');
+  return clean;
+}
+
 function combinePointsSection(point) {
   const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code).startsWith("T");
   const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 常用配穴與臨床應用";
@@ -2961,23 +2972,41 @@ function combinePointsSection(point) {
       cardsHtml = `<div class="tung-comb-grid">${
         point.combinationsStructured.map(c => `
           <div class="tung-comb-card">
-            <h4 class="tung-comb-title">${escapeHtml(c.title)}</h4>
-            <p class="tung-comb-text">${escapeHtml(c.text)}</p>
+            <h4 class="tung-comb-title">${escapeHtml(c.title || "配穴組合")}</h4>
+            <p class="tung-comb-text">${highlightCombineText(c.text)}</p>
           </div>
         `).join("")
       }</div>`;
     }
 
-    const appText = point.applicationZh ? `<p><strong>【臨床應用】</strong> ${escapeHtml(point.applicationZh)}</p>` : "";
-    const expText = point.explanationZh ? `<p><strong>【說明與要點】</strong> ${escapeHtml(point.explanationZh)}</p>` : "";
+    const appText = point.applicationZh ? `<p class="tung-comb-extra"><strong>【臨床應用】</strong> ${highlightCombineText(point.applicationZh)}</p>` : "";
+    const expText = point.explanationZh ? `<p class="tung-comb-extra"><strong>【說明與要點】</strong> ${highlightCombineText(point.explanationZh)}</p>` : "";
 
-    const combinedBody = [cardsHtml, appText, expText].filter(Boolean).join("<br>");
+    const combinedBody = [cardsHtml, appText, expText].filter(Boolean).join("");
     return studySection(title, combinedBody, "link");
   }
 
   if (!point.combinePointsZh && (!point.combinationsZh || !point.combinationsZh.length)) return "";
-  const text = point.combinePointsZh || (point.combinationsZh ? point.combinationsZh.join("\n\n") : "");
-  return studySection(title, formatCombinePointsText(text), "link");
+  const rawText = point.combinePointsZh || (point.combinationsZh ? point.combinationsZh.join("\n\n") : "");
+
+  // If text contains bullet points or structured items, parse into cards
+  const lines = rawText.split(/\n+/).filter(l => l.trim().length > 0);
+  if (lines.length >= 2) {
+    const cards = lines.map((l, idx) => {
+      const parts = l.split(/[:：]/);
+      const cardTitle = parts.length > 1 ? parts[0] : `配穴 ${idx + 1}`;
+      const cardText = parts.length > 1 ? parts.slice(1).join("：") : l;
+      return `
+        <div class="tung-comb-card">
+          <h4 class="tung-comb-title">${escapeHtml(cardTitle)}</h4>
+          <p class="tung-comb-text">${highlightCombineText(cardText)}</p>
+        </div>
+      `;
+    }).join("");
+    return studySection(title, `<div class="tung-comb-grid">${cards}</div>`, "link");
+  }
+
+  return studySection(title, formatCombinePointsText(rawText), "link");
 }
 
 function classicalRefsSection(point) {
