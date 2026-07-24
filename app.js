@@ -3010,18 +3010,42 @@ function parseAnyCombinationTextToCards(rawText) {
   const items = [];
   const CHINESE_NUMS = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二", "十三", "十四", "十五"];
 
-  // Split by line breaks, semicolon, or numbered list items
-  const lines = text.split(/(?:\r?\n|[；;]|(?=\b\d+[\.、\)]|(?=[一二三四五六七八九十]+[、\.])))/).map(s => s.trim()).filter(Boolean);
+  // Split lines strictly by newline to preserve paragraph groupings
+  const rawLines = text.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
 
-  lines.forEach(line => {
-    // Check for colon separator: "症名：配穴與講解" or "1. 症名：配穴與講解"
+  let currentCard = null;
+
+  rawLines.forEach(line => {
+    // Check if line is a principle/mechanism explanation line (原理 / 機制 / 解析)
+    const isPrinciple = /^(?:原理|機制|解析|說明|按語|方義)[：:\s]*/.test(line);
+
+    if (isPrinciple && currentCard) {
+      // MERGE INTO PREVIOUS CARD! DO NOT CREATE SEPARATE CARD!
+      const principleText = line.replace(/^(?:原理|機制|解析|說明|按語|方義)[：:\s]*/, '').trim();
+      currentCard.text += `<br><span class="comb-principle-title">【原理與機制】</span>${principleText}`;
+      return;
+    }
+
+    // Check for colon separator: "1. 靈道穴配心俞穴治心痛" or "治心痛：靈道穴配心俞穴"
     const colonMatch = line.match(/^(?:[\d一二三四五六七八九十]+[\.、\)\s]*|【[^】]+】\s*)?([^：:\n]{2,25})[：:](.*)/);
+    const cureMatch = line.match(/(?:治|主治|適用於)\s*([^，,。]+)/);
+
+    let title = "";
+    let body = "";
+
     if (colonMatch) {
       let rawTitle = colonMatch[1].trim();
-      let rawBody = colonMatch[2].trim();
+      body = colonMatch[2].trim();
+      title = rawTitle.replace(/^[\d一二三四五六七八九十]+[\.、\)\s]*/, '').trim();
+    } else if (cureMatch) {
+      title = `治 ${cureMatch[1].trim()}`;
+      body = line;
+    } else if (line.length > 3) {
+      title = "臨床配穴應用";
+      body = line;
+    }
 
-      // Clean up title prefix
-      let title = rawTitle.replace(/^[\d一二三四五六七八九十]+[\.、\)\s]*/, '').trim();
+    if (title && body) {
       if (!title.startsWith("治") && !title.startsWith("配") && !title.includes("應用")) {
         title = `治 ${title}`;
       }
@@ -3029,27 +3053,11 @@ function parseAnyCombinationTextToCards(rawText) {
       const numIdx = items.length;
       const numPrefix = numIdx < CHINESE_NUMS.length ? `${CHINESE_NUMS[numIdx]}· ` : `${numIdx + 1}· `;
 
-      items.push({
+      currentCard = {
         title: `${numPrefix}${title}`,
-        text: rawBody || line
-      });
-    } else if (line.length > 5) {
-      // Pattern: "配XX穴治YY症" or "配XX穴，治YY症"
-      const cureMatch = line.match(/(?:治|主治|適用於)\s*([^，,。]+)/);
-      let titleStr = "臨床配穴應用";
-      if (cureMatch && cureMatch[1].trim().length > 1 && cureMatch[1].trim().length < 20) {
-        titleStr = `治 ${cureMatch[1].trim()}`;
-      } else if (line.includes("配")) {
-        titleStr = "對穴加減應用";
-      }
-
-      const numIdx = items.length;
-      const numPrefix = numIdx < CHINESE_NUMS.length ? `${CHINESE_NUMS[numIdx]}· ` : `${numIdx + 1}· `;
-
-      items.push({
-        title: `${numPrefix}${titleStr}`,
-        text: line.endsWith("。") ? line : `${line}。`
-      });
+        text: body.endsWith("。") ? body : `${body}。`
+      };
+      items.push(currentCard);
     }
   });
 
