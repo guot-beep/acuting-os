@@ -2867,7 +2867,27 @@ function indicationArticle(point) {
   const parts = [];
 
   // Helper dictionary for instant bilingual translations
+  // Comprehensive professional TCM translation dictionary
   const COMMON_TAG_TRANS = {
+    "健脾": "Strengthen Spleen",
+    "補腎壯陽": "Tonify Kidney & Strengthen Yang",
+    "補益肝腎": "Nourish Liver & Kidney",
+    "鎮痛": "Relieve Pain",
+    "利尿通淋": "Promote Urination & Relieve Strangury",
+    "清熱解毒": "Clear Heat & Relieve Toxicity",
+    "活血化瘀": "Activate Blood & Disperse Stasis",
+    "溫經通絡": "Warm Channels & Unblock Collaterals",
+    "平肝潛陽": "Calm Liver & Anchor Yang",
+    "培土生金": "Strengthen Earth to Generate Metal",
+    "滋陰降火": "Nourish Yin & Reduce Fire",
+    "疏肝解郁": "Soothe Liver & Relieve Stagnant Qi",
+    "宣肺平喘": "Disperse Lung & Relieve Asthma",
+    "和胃降逆": "Harmonize Stomach & Direct Qi Downward",
+    "瀉火解毒": "Drain Fire & Relieve Toxicity",
+    "祛風除濕": "Dispel Wind & Eliminate Dampness",
+    "化痰散結": "Transform Phlegm & Disperse Nodule",
+    "安神定志": "Calm Mind & Settle Will",
+    "開竅醒神": "Open Orifices & Restore Consciousness",
     "清肝利膽": "Clear Liver & Gallbladder",
     "活血通絡": "Unblock Channels & Collaterals",
     "軟堅散結": "Soften Masses & Disperse Nodulet",
@@ -2904,7 +2924,13 @@ function indicationArticle(point) {
     "頭昏": "Dizziness",
     "頭痛": "Headache",
     "黃膽病": "Jaundice",
-    "驚悸": "Palpitations & Fright"
+    "驚悸": "Palpitations & Fright",
+    "遺精": "Seminal Emission",
+    "陽痿": "Impotence",
+    "月經不調": "Irregular Menstruation",
+    "帶下": "Vaginal Discharge",
+    "泄瀉": "Diarrhea",
+    "手足逆冷": "Cold Limbs"
   };
 
   // 1. AcuTags / Actions (功效與屬性標籤)
@@ -2912,14 +2938,26 @@ function indicationArticle(point) {
   if (!actionTagsZh && point.functions) {
     actionTagsZh = String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean);
   }
-  const actionTagsEn = point.action_tags_en || point.functionsEn || [];
+
+  // Safely parse English action tags array
+  let actionTagsEn = [];
+  if (Array.isArray(point.action_tags_en)) {
+    actionTagsEn = point.action_tags_en;
+  } else if (Array.isArray(point.functionsEn)) {
+    actionTagsEn = point.functionsEn;
+  }
 
   if (actionTagsZh && actionTagsZh.length > 0) {
     const actionChips = actionTagsZh.map((zhTag, idx) => {
       const cleanZh = zhTag.trim();
-      let enText = actionTagsEn[idx] || COMMON_TAG_TRANS[cleanZh] || patternEnglishMap[cleanZh] || functionEnglishMap[cleanZh] || "";
-      if (/Master Tung/i.test(enText) || /Category/i.test(enText)) enText = COMMON_TAG_TRANS[cleanZh] || "";
-      const enSpan = enText ? ` <small>(${escapeHtml(enText)})</small>` : "";
+      let enText = COMMON_TAG_TRANS[cleanZh] || patternEnglishMap[cleanZh] || functionEnglishMap[cleanZh] || "";
+      if (!enText && actionTagsEn[idx] && typeof actionTagsEn[idx] === "string" && actionTagsEn[idx].length > 2) {
+        enText = actionTagsEn[idx];
+      }
+      if (/Master Tung/i.test(enText) || /Category/i.test(enText) || enText.length <= 2) {
+        enText = COMMON_TAG_TRANS[cleanZh] || "";
+      }
+      const enSpan = (enText && enText.length > 2) ? ` <small>(${escapeHtml(enText)})</small>` : "";
       return `<span class="k-tag cat">${escapeHtml(cleanZh)}${enSpan}</span>`;
     }).join(" ");
     parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
