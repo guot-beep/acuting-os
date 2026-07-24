@@ -19,8 +19,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dajian",
       "name_zh": "大間穴",
       "pinyin": "Dajian",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Regulate Liver Qi",
         "Clear Heart & Small Intestine",
@@ -35,8 +35,7 @@ window.ACUTING_TUNG_INDEX = {
         "消腫止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "大間穴：心內膜炎",
@@ -190,7 +189,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaojian",
       "name_zh": "小間穴",
       "pinyin": "Xiaojian",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
       "location_zh": "【小間穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Disperse Lung & Phlegm",
@@ -201,8 +200,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "大間穴：心內膜炎",
@@ -338,7 +336,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Fujian",
       "name_zh": "浮間穴",
       "pinyin": "Fujian",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
       "location_zh": "【浮間穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Heart reaction area",
@@ -348,8 +346,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "大間穴：心內膜炎",
@@ -486,7 +483,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Waijian",
       "name_zh": "外間穴",
       "pinyin": "Waijian",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
       "location_zh": "【外間穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Heart reaction area",
@@ -496,8 +493,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "大間穴：心內膜炎",
@@ -897,8 +893,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhisima",
       "name_zh": "指駟馬穴",
       "pinyin": "Zhisima",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Liver reaction area"
       ],
@@ -907,8 +903,7 @@ window.ACUTING_TUNG_INDEX = {
         "調和氣血。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "皮膚病",
@@ -1124,8 +1119,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xinxi",
       "name_zh": "心膝穴",
       "pinyin": "Xinxi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1134,8 +1129,7 @@ window.ACUTING_TUNG_INDEX = {
         "消腫止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肩胛痛",
@@ -1237,7 +1231,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muhuo",
       "name_zh": "木火穴",
       "pinyin": "Muhuo",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
       "location_zh": "【木火穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Fingers reaction area",
@@ -1247,8 +1241,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "半身不遂",
@@ -1344,8 +1337,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Feixin",
       "name_zh": "肺心穴",
       "pinyin": "Feixin",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1355,8 +1348,7 @@ window.ACUTING_TUNG_INDEX = {
         "通絡止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "頸項骨刺",
@@ -1580,8 +1572,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Dan",
       "name_zh": "膽穴",
       "pinyin": "Dan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1592,8 +1584,7 @@ window.ACUTING_TUNG_INDEX = {
         "止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "小兒夜哭",
@@ -1708,8 +1699,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhisanzhong",
       "name_zh": "指三重穴",
       "pinyin": "Zhisanzhong",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -1719,8 +1710,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏風消腫。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "乳癰",
@@ -1828,8 +1818,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhishen",
       "name_zh": "指腎穴",
       "pinyin": "Zhishen",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Warm Channels",
         "Regulate Chong-Ren",
@@ -1840,8 +1830,7 @@ window.ACUTING_TUNG_INDEX = {
         "滋腎陰。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "心臟性氣喘",
@@ -3105,8 +3094,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhiwu",
       "name_zh": "制污穴",
       "pinyin": "Zhiwu",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -3115,8 +3104,7 @@ window.ACUTING_TUNG_INDEX = {
         "消腫祛瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "久年惡瘡",
@@ -3322,8 +3310,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuangling",
       "name_zh": "雙靈穴",
       "pinyin": "Shuangling",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "一一部位【手指】 手指部：",
+      "location_en": "Master Tung Acupuncture: located in 11: Fingers.",
+      "location_zh": "一一部位【手指】：位於手指部。",
       "traditional_functions_en": [
         "Fingers reaction area",
         "Unblock Channels"
@@ -3332,8 +3320,7 @@ window.ACUTING_TUNG_INDEX = {
         "祛瘀通腑。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肺癌",
@@ -3759,8 +3746,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Chongzi",
       "name_zh": "重子穴",
       "pinyin": "Chongzi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Disperse Lung",
         "Unblock Channels",
@@ -3771,8 +3758,7 @@ window.ACUTING_TUNG_INDEX = {
         "清泄肺氣。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肺炎",
@@ -4007,8 +3993,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangbai",
       "name_zh": "上白穴",
       "pinyin": "Shangbai",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -4019,8 +4005,7 @@ window.ACUTING_TUNG_INDEX = {
         "通經止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "上白穴：結膜炎",
@@ -4269,8 +4254,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Linggu",
       "name_zh": "靈骨穴",
       "pinyin": "Linggu",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Tonify Qi & Blood",
         "Warm Yang",
@@ -4288,8 +4273,7 @@ window.ACUTING_TUNG_INDEX = {
         "行氣化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "靈骨穴：肺氣不足所引起的疾病",
@@ -4437,8 +4421,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongbai",
       "name_zh": "中白穴",
       "pinyin": "Zhongbai",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Nourish Liver & Kidney",
         "Clear Head & Eyes",
@@ -4450,8 +4434,7 @@ window.ACUTING_TUNG_INDEX = {
         "利導下焦。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "中白穴：膀胱炎",
@@ -4696,8 +4679,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Wanshunyi",
       "name_zh": "腕順一穴",
       "pinyin": "Wanshunyi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -4707,8 +4690,7 @@ window.ACUTING_TUNG_INDEX = {
         "通腎鎮痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "腎虧之頭痛眼花",
@@ -4928,8 +4910,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shoujie",
       "name_zh": "手解穴",
       "pinyin": "Shoujie",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -4940,8 +4922,7 @@ window.ACUTING_TUNG_INDEX = {
         "鎮靜安神。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "解暈針",
@@ -5392,8 +5373,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanchayi*",
       "name_zh": "三叉一穴",
       "pinyin": "Sanchayi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -5405,8 +5386,7 @@ window.ACUTING_TUNG_INDEX = {
         "益腎利尿。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "三叉一穴：角膜炎",
@@ -5985,8 +5965,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shanggao*",
       "name_zh": "上高穴",
       "pinyin": "Shanggao",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -5996,8 +5976,7 @@ window.ACUTING_TUNG_INDEX = {
         "補腎和胃。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肋膜炎",
@@ -6104,8 +6083,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiagao*",
       "name_zh": "下高穴",
       "pinyin": "Xiagao",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -6115,8 +6094,7 @@ window.ACUTING_TUNG_INDEX = {
         "補腎和胃。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肋膜炎",
@@ -6223,8 +6201,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Guguan*",
       "name_zh": "骨關穴",
       "pinyin": "Guguan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "二二部位【手掌】 手掌部：",
+      "location_en": "Master Tung Acupuncture: located in 22: Hands.",
+      "location_zh": "二二部位【手掌】：位於手掌部。",
       "traditional_functions_en": [
         "Hands reaction area",
         "Unblock Channels"
@@ -6234,8 +6212,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏經鎮痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "骨關穴：半身不遂",
@@ -6611,8 +6588,7 @@ window.ACUTING_TUNG_INDEX = {
         "清瀉下焦"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "子宮炎",
@@ -6735,8 +6711,7 @@ window.ACUTING_TUNG_INDEX = {
         "清瀉下焦"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "子宮炎",
@@ -6857,8 +6832,7 @@ window.ACUTING_TUNG_INDEX = {
         "清瀉下焦"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "子宮炎",
@@ -6979,8 +6953,7 @@ window.ACUTING_TUNG_INDEX = {
         "通絡止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "胸痛",
@@ -7098,8 +7071,7 @@ window.ACUTING_TUNG_INDEX = {
         "通絡止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "胸痛",
@@ -7217,8 +7189,7 @@ window.ACUTING_TUNG_INDEX = {
         "通絡止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "胸痛",
@@ -7463,8 +7434,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏肝理氣。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "脊椎骨膜炎",
@@ -7583,8 +7553,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "心律不整",
@@ -7707,8 +7676,7 @@ window.ACUTING_TUNG_INDEX = {
         "清瀉下焦"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "子宮炎",
@@ -7834,8 +7802,7 @@ window.ACUTING_TUNG_INDEX = {
         "腸門穴 ：疏洩腸腑。 肝門穴 ：疏肝理氣。 心門穴 ：通暢心絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "腸門穴 ：急慢性腸炎",
@@ -8083,8 +8050,7 @@ window.ACUTING_TUNG_INDEX = {
         "清宣肺氣"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "人士穴：氣喘",
@@ -8431,8 +8397,7 @@ window.ACUTING_TUNG_INDEX = {
         "通暢心絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "抽筋",
@@ -8552,8 +8517,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "心律不整",
@@ -8995,8 +8959,7 @@ window.ACUTING_TUNG_INDEX = {
         "清肅肺氣。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "感冒",
@@ -9521,8 +9484,7 @@ window.ACUTING_TUNG_INDEX = {
         "通經活絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "膝蓋關節炎",
@@ -9753,8 +9715,7 @@ window.ACUTING_TUNG_INDEX = {
         "開竅醒腦。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "人宗穴：手臂痛",
@@ -10626,8 +10587,7 @@ window.ACUTING_TUNG_INDEX = {
         "舒筋活絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "上曲穴 ：小兒麻痺",
@@ -11513,8 +11473,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "脊椎骨膜炎（骨刺）",
@@ -11830,8 +11789,7 @@ window.ACUTING_TUNG_INDEX = {
         "滋腎培元。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "蛋白尿",
@@ -12378,8 +12336,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huobao",
       "name_zh": "火包穴",
       "pinyin": "Huobao",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "五五部位【腳趾】 腳趾部：",
+      "location_en": "Master Tung Acupuncture: located in 55: Soles.",
+      "location_zh": "五五部位【腳趾】：位於腳趾部。",
       "traditional_functions_en": [
         "Soles reaction area",
         "Unblock Channels"
@@ -12388,8 +12346,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏肝理氣。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "心痛",
@@ -13062,8 +13019,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sansheng*",
       "name_zh": "三聖穴",
       "pinyin": "Sansheng",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "五五部位【腳趾】 腳趾部：",
+      "location_en": "Master Tung Acupuncture: located in 55: Soles.",
+      "location_zh": "五五部位【腳趾】：位於腳趾部。",
       "traditional_functions_en": [
         "Soles reaction area",
         "Unblock Channels"
@@ -13072,8 +13029,7 @@ window.ACUTING_TUNG_INDEX = {
         "平肝益腎。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "高血壓（特效）",
@@ -13285,8 +13241,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mufu",
       "name_zh": "木斗穴",
       "pinyin": "Mudou",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "六六部位【腳掌】 腳掌部：",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -13297,8 +13253,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏肝利膽。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "木斗穴 ：脾腫大（痞塊）",
@@ -13419,8 +13374,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoying",
       "name_zh": "火硬穴",
       "pinyin": "Huoying",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "六六部位【腳掌】 腳掌部：",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -13431,8 +13386,7 @@ window.ACUTING_TUNG_INDEX = {
         "舒肝理氣。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "火硬穴 ：心悸",
@@ -13893,7 +13847,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mudou",
       "name_zh": "木留穴",
       "pinyin": "Muliu",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
       "location_zh": "【木留穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
@@ -13903,8 +13857,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "木斗穴 ：脾腫大（痞塊）",
@@ -14015,8 +13968,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Liuwan",
       "name_zh": "六完穴",
       "pinyin": "Liuwan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "六六部位【腳掌】 腳掌部：",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -14027,8 +13980,7 @@ window.ACUTING_TUNG_INDEX = {
         "行氣止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "六完穴 ：止血（包括跌傷",
@@ -14253,8 +14205,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huolian",
       "name_zh": "火連穴",
       "pinyin": "Huolian",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "六六部位【腳掌】 腳掌部：",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -14264,8 +14216,7 @@ window.ACUTING_TUNG_INDEX = {
         "開竅醒腦。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "火連穴 ：高血壓引起之頭暈",
@@ -14710,8 +14661,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuixiang",
       "name_zh": "水相穴",
       "pinyin": "Shuixiang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "六六部位【腳掌】 腳掌部：",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -14721,8 +14672,7 @@ window.ACUTING_TUNG_INDEX = {
         "通調沖任。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "腎臟炎",
@@ -14822,8 +14772,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuixian",
       "name_zh": "水仙穴",
       "pinyin": "Shuixian",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "六六部位【腳掌】 腳掌部：",
+      "location_en": "Master Tung Acupuncture: located in 66: Top of Feet.",
+      "location_zh": "六六部位【腳掌】：位於腳掌部。",
       "traditional_functions_en": [
         "Top of Feet reaction area",
         "Unblock Channels"
@@ -14833,8 +14783,7 @@ window.ACUTING_TUNG_INDEX = {
         "通調沖任。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "腎臟炎",
@@ -15035,8 +14984,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengjin",
       "name_zh": "正筋穴",
       "pinyin": "Zhengjin",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Relax Tendons",
         "Unblock Du Channel",
@@ -15047,8 +14996,7 @@ window.ACUTING_TUNG_INDEX = {
         "通氣止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "腰脊椎痛",
@@ -15163,8 +15111,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhengzong",
       "name_zh": "正宗穴",
       "pinyin": "Zhengzong",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Spine & Brain reaction area"
       ],
@@ -15173,8 +15121,7 @@ window.ACUTING_TUNG_INDEX = {
         "通氣止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "腰脊椎痛",
@@ -15609,7 +15556,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erzhong",
       "name_zh": "二重穴",
       "pinyin": "Erzhong",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
       "location_zh": "【二重穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
@@ -15619,8 +15566,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "甲狀腺腫大（心臟病引起）",
@@ -15736,8 +15682,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sanzhong",
       "name_zh": "三重穴",
       "pinyin": "Sanzhong",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15747,8 +15693,7 @@ window.ACUTING_TUNG_INDEX = {
         "除積消瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "甲狀腺腫大（心臟病引起）",
@@ -15871,8 +15816,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Sihuashang",
       "name_zh": "四花上穴",
       "pinyin": "Sihuashang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -15883,8 +15828,7 @@ window.ACUTING_TUNG_INDEX = {
         "調理脾胃。 四花下穴 ：理脾和胃。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "四花上穴 ：哮喘",
@@ -17488,8 +17432,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Cesanli",
       "name_zh": "側三里穴",
       "pinyin": "Cesanli",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17499,8 +17443,7 @@ window.ACUTING_TUNG_INDEX = {
         "消炎止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "牙痛",
@@ -17610,8 +17553,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Cexiasanli",
       "name_zh": "側下三里",
       "pinyin": "Cexiasanli",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17621,8 +17564,7 @@ window.ACUTING_TUNG_INDEX = {
         "消炎止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "牙痛",
@@ -17732,8 +17674,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zuqianjin",
       "name_zh": "足千金穴",
       "pinyin": "Zuqianjin",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17743,8 +17685,7 @@ window.ACUTING_TUNG_INDEX = {
         "利咽喉。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "魚骨刺住喉管",
@@ -17848,8 +17789,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zuwujin",
       "name_zh": "足五金穴",
       "pinyin": "Zuwujin",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -17859,8 +17800,7 @@ window.ACUTING_TUNG_INDEX = {
         "利咽喉。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "魚骨刺住喉管",
@@ -18317,8 +18257,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuanglongyi",
       "name_zh": "雙龍一穴",
       "pinyin": "Shuanglongyi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -18328,8 +18268,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "乳腺炎",
@@ -18435,8 +18374,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuanglonger",
       "name_zh": "雙龍二穴",
       "pinyin": "Shuanglonger",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "七七部位【小腿】 小腿部：",
+      "location_en": "Master Tung Acupuncture: located in 77: Lower Legs.",
+      "location_zh": "七七部位【小腿】：位於小腿部。",
       "traditional_functions_en": [
         "Lower Legs reaction area",
         "Unblock Channels"
@@ -18446,8 +18385,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "乳腺炎",
@@ -18553,8 +18491,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongguan",
       "name_zh": "通關穴",
       "pinyin": "Tongguan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Tonify Heart Qi",
         "Unblock Yang",
@@ -18567,8 +18505,7 @@ window.ACUTING_TUNG_INDEX = {
         "溫經散寒。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "膝蓋痛",
@@ -18905,8 +18842,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiemeiyi",
       "name_zh": "姐妹一穴",
       "pinyin": "Jiemeiyi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -18918,8 +18855,7 @@ window.ACUTING_TUNG_INDEX = {
         "和中化滯。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "子宮瘤",
@@ -19036,8 +18972,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiemeier",
       "name_zh": "姐妹二穴",
       "pinyin": "Jiemeier",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19049,8 +18985,7 @@ window.ACUTING_TUNG_INDEX = {
         "和中化滯。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "子宮瘤",
@@ -19280,8 +19215,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmaoyi",
       "name_zh": "感冒一穴",
       "pinyin": "Ganmaoyi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19291,8 +19226,7 @@ window.ACUTING_TUNG_INDEX = {
         "宣肺祛風。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "重感冒",
@@ -19397,8 +19331,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Ganmaoer",
       "name_zh": "感冒二穴",
       "pinyin": "Ganmaoer",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19408,8 +19342,7 @@ window.ACUTING_TUNG_INDEX = {
         "宣肺祛風。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "重感冒",
@@ -19514,8 +19447,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tongshen",
       "name_zh": "通腎穴",
       "pinyin": "Tongshen",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19527,8 +19460,7 @@ window.ACUTING_TUNG_INDEX = {
         "溫經散寒。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "通腎穴 ：腎盂腎炎",
@@ -19890,8 +19822,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Minghuang",
       "name_zh": "明黃穴",
       "pinyin": "Minghuang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -19903,8 +19835,7 @@ window.ACUTING_TUNG_INDEX = {
         "祛風通絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "天黃穴 ：同明黃穴",
@@ -20641,8 +20572,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Simashang",
       "name_zh": "駟馬上穴",
       "pinyin": "Simashang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -20652,8 +20583,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏風解表。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肋骨痛",
@@ -20783,8 +20713,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Simaxia",
       "name_zh": "駟馬下穴",
       "pinyin": "Simaxia",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -20794,8 +20724,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏風解表。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肋骨痛",
@@ -20925,8 +20854,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiaquan",
       "name_zh": "下泉穴",
       "pinyin": "Xiaquan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -20937,8 +20866,7 @@ window.ACUTING_TUNG_INDEX = {
         "通關利節。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "顏面神經麻痺",
@@ -21045,8 +20973,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongquan",
       "name_zh": "中泉穴",
       "pinyin": "Zhongquan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21057,8 +20985,7 @@ window.ACUTING_TUNG_INDEX = {
         "通關利節。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "顏面神經麻痺",
@@ -21165,8 +21092,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangquan",
       "name_zh": "上泉穴",
       "pinyin": "Shangquan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21177,8 +21104,7 @@ window.ACUTING_TUNG_INDEX = {
         "通關利節。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "顏面神經麻痺",
@@ -21285,8 +21211,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinqianxia",
       "name_zh": "金前下穴",
       "pinyin": "Jinqianxia",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21296,8 +21222,7 @@ window.ACUTING_TUNG_INDEX = {
         "養肝活血。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肺弱",
@@ -21396,8 +21321,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jinqianshang",
       "name_zh": "金前上穴",
       "pinyin": "Jinqianshang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21407,8 +21332,7 @@ window.ACUTING_TUNG_INDEX = {
         "養肝活血。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "肺弱",
@@ -21507,8 +21431,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhongjiuli",
       "name_zh": "中九里穴",
       "pinyin": "Zhongjiuli",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21519,8 +21443,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏經化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "背痛",
@@ -21640,8 +21563,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangjiuli",
       "name_zh": "上九里穴",
       "pinyin": "Shangjiuli",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21652,8 +21575,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏經化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "背痛",
@@ -21773,8 +21695,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Xiajiuli",
       "name_zh": "下九里穴",
       "pinyin": "Xiajiuli",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -21785,8 +21707,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏經化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "背痛",
@@ -22025,8 +21946,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Neitongguan",
       "name_zh": "內通關穴",
       "pinyin": "Neitongguan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22036,8 +21957,7 @@ window.ACUTING_TUNG_INDEX = {
         "益氣調血。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "半身不遂",
@@ -22139,8 +22059,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Neitongshan",
       "name_zh": "內通山穴",
       "pinyin": "Neitongshan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22150,8 +22070,7 @@ window.ACUTING_TUNG_INDEX = {
         "益氣調血。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "半身不遂",
@@ -22253,8 +22172,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Neitongtian",
       "name_zh": "內通天穴",
       "pinyin": "Neitongtian",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22264,8 +22183,7 @@ window.ACUTING_TUNG_INDEX = {
         "益氣調血。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "半身不遂",
@@ -22983,8 +22901,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Mufu",
       "name_zh": "木府穴",
       "pinyin": "Mufu",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -22995,8 +22913,7 @@ window.ACUTING_TUNG_INDEX = {
         "通利水道。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "坐骨神經痛",
@@ -23111,8 +23028,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muliang",
       "name_zh": "木梁穴",
       "pinyin": "Muliang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -23123,8 +23040,7 @@ window.ACUTING_TUNG_INDEX = {
         "通利水道。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "坐骨神經痛",
@@ -23239,8 +23155,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muchang",
       "name_zh": "木昌穴",
       "pinyin": "Muchang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -23251,8 +23167,7 @@ window.ACUTING_TUNG_INDEX = {
         "通利水道。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "坐骨神經痛",
@@ -23367,8 +23282,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huofu",
       "name_zh": "火府穴",
       "pinyin": "Huofu",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -23378,8 +23293,7 @@ window.ACUTING_TUNG_INDEX = {
         "通經化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "脊椎骨骨刺",
@@ -23491,8 +23405,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoliang",
       "name_zh": "火梁穴",
       "pinyin": "Huoliang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -23502,8 +23416,7 @@ window.ACUTING_TUNG_INDEX = {
         "通經化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "脊椎骨骨刺",
@@ -23615,8 +23528,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huochang",
       "name_zh": "火昌穴",
       "pinyin": "Huochang",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "八八部位【大腿】 大腿部：",
+      "location_en": "Master Tung Acupuncture: located in 88: Thighs.",
+      "location_zh": "八八部位【大腿】：位於大腿部。",
       "traditional_functions_en": [
         "Thighs reaction area",
         "Unblock Channels"
@@ -23626,8 +23539,7 @@ window.ACUTING_TUNG_INDEX = {
         "通經化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "脊椎骨骨刺",
@@ -24591,7 +24503,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erhuan",
       "name_zh": "耳環穴",
       "pinyin": "Erhuan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
       "location_zh": "【耳環穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Ears reaction area",
@@ -24601,8 +24513,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "霍亂",
@@ -24697,8 +24608,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muer",
       "name_zh": "木耳穴",
       "pinyin": "Muer",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "九九部位【耳朵】 耳部：",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -24709,8 +24620,7 @@ window.ACUTING_TUNG_INDEX = {
         "調理肺氣。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "木耳 主治肝區疼痛",
@@ -24822,8 +24732,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Huoer",
       "name_zh": "火耳穴",
       "pinyin": "Huo Er",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "九九部位【耳朵】 耳部：",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -24834,8 +24744,7 @@ window.ACUTING_TUNG_INDEX = {
         "通利水道。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "火耳穴 主治心臟衰弱",
@@ -24944,8 +24853,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tuer",
       "name_zh": "土耳穴",
       "pinyin": "Tu Er",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "九九部位【耳朵】 耳部：",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -24956,8 +24865,7 @@ window.ACUTING_TUNG_INDEX = {
         "通利水道。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "火耳穴 主治心臟衰弱",
@@ -25066,8 +24974,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Jiner",
       "name_zh": "金耳穴",
       "pinyin": "Jin Er",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "九九部位【耳朵】 耳部：",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -25078,8 +24986,7 @@ window.ACUTING_TUNG_INDEX = {
         "調理肺氣。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "木耳 主治肝區疼痛",
@@ -25191,8 +25098,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuier",
       "name_zh": "水耳穴",
       "pinyin": "Shui Er",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "九九部位【耳朵】 耳部：",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -25203,8 +25110,7 @@ window.ACUTING_TUNG_INDEX = {
         "通利水道。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "火耳穴 主治心臟衰弱",
@@ -25313,7 +25219,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Erbei",
       "name_zh": "耳背穴",
       "pinyin": "Er Bei",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
       "location_zh": "【耳背穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Ears reaction area",
@@ -25323,8 +25229,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "霍亂",
@@ -25533,7 +25438,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shener*",
       "name_zh": "神耳",
       "pinyin": "Shener",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
       "location_zh": "【神耳】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Ears reaction area",
@@ -25543,8 +25448,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "各種急性病症之急救",
@@ -25663,8 +25567,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Tianer*",
       "name_zh": "天耳",
       "pinyin": "Tianer",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "九九部位【耳朵】 耳部：",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -25674,8 +25578,7 @@ window.ACUTING_TUNG_INDEX = {
         "鎮靜安神。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "天耳 主治食物中毒",
@@ -25793,7 +25696,7 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Eryuan*",
       "name_zh": "耳圓穴",
       "pinyin": "Eryuan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
       "location_zh": "【耳圓穴】未在中文傳承網建立獨立文章。請參照英文 eLotus 定位與圖解。",
       "traditional_functions_en": [
         "Ears reaction area",
@@ -25803,8 +25706,7 @@ window.ACUTING_TUNG_INDEX = {
         "eLotus董氏奇穴條目"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "霍亂",
@@ -26012,8 +25914,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Waier*",
       "name_zh": "外耳",
       "pinyin": "Waier",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "九九部位【耳朵】 耳部：",
+      "location_en": "Master Tung Acupuncture: located in 99: Ears.",
+      "location_zh": "九九部位【耳朵】：位於耳部。",
       "traditional_functions_en": [
         "Ears reaction area",
         "Unblock Channels"
@@ -26023,8 +25925,7 @@ window.ACUTING_TUNG_INDEX = {
         "鎮靜安神。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "天耳 主治食物中毒",
@@ -27018,8 +26919,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhenghui",
       "name_zh": "正會穴",
       "pinyin": "Zhenghui",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "十十部位【頭面】 頭面部：",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27031,8 +26932,7 @@ window.ACUTING_TUNG_INDEX = {
         "活血化瘀。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "正會穴 ：四肢顫抖",
@@ -27166,8 +27066,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Zhouyuan",
       "name_zh": "州圓穴",
       "pinyin": "Zhouyuan",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "十十部位【頭面】 頭面部：",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -27178,8 +27078,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏經活絡。 州崙穴 ：通絡益腦。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "州圓穴 ：氣喘",
@@ -27880,8 +27779,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Majinshui",
       "name_zh": "馬金水穴",
       "pinyin": "Majinshui",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "十十部位【頭面】 頭面部：",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Kidney reaction area"
       ],
@@ -27891,8 +27790,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏通經絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "馬金水穴 ：腎結石",
@@ -28008,8 +27906,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shangli",
       "name_zh": "上里穴",
       "pinyin": "Shangli",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "十十部位【頭面】 頭面部：",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -28020,8 +27918,7 @@ window.ACUTING_TUNG_INDEX = {
         "鎮痙止痛。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "眼壓過高脹痛",
@@ -29052,8 +28949,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Muzhi",
       "name_zh": "木枝穴",
       "pinyin": "Muzhi",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "十十部位【頭面】 頭面部：",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -29064,8 +28961,7 @@ window.ACUTING_TUNG_INDEX = {
         "疏經活絡。 州崙穴 ：通絡益腦。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "州圓穴 ：氣喘",
@@ -29178,8 +29074,8 @@ window.ACUTING_TUNG_INDEX = {
       "name_en": "Shuitong",
       "name_zh": "水通穴",
       "pinyin": "Shuitong",
-      "location_en": ") Portuguese (Português) French (Français) German (Deutsche)",
-      "location_zh": "十十部位【頭面】 頭面部：",
+      "location_en": "Master Tung Acupuncture: located in 1010: Head.",
+      "location_zh": "十十部位【頭面】：位於頭面部。",
       "traditional_functions_en": [
         "Head reaction area",
         "Unblock Channels"
@@ -29190,8 +29086,7 @@ window.ACUTING_TUNG_INDEX = {
         "溫經通絡。"
       ],
       "indications_en": [
-        "\">",
-        "collapse\">Indications Primary:&nbsp"
+        "Master Tung clinical indication"
       ],
       "indications_zh": [
         "風濕性腎臟病",
