@@ -279,6 +279,27 @@ function standardPointVisualLinks(code) {
   ];
 }
 
+function getEarLotusSlug(record = {}) {
+  const nameZh = String(record.name_zh || record.nameZh || "");
+  const nameEn = String(record.name_en || record.nameEn || "").toLowerCase();
+  const code = String(record.code || record.id || "").toUpperCase();
+
+  if (nameZh.includes("腎上腺") || nameEn.includes("adrenal")) return "adrenal-gland";
+  if (nameZh.includes("零段") || code.includes("EAR-P0") || nameEn.includes("zero")) return "point-zero";
+  if (nameZh.includes("神門") || nameEn.includes("shenmen") || nameEn.includes("shen-men")) return "shen-men";
+  if (nameZh.includes("交感") || nameEn.includes("sympathetic")) return "sympathetic";
+  if (nameZh.includes("皮質下") || nameEn.includes("subcortex")) return "subcortex";
+  if (nameZh.includes("內分泌") || nameEn.includes("endocrine")) return "endocrine";
+  if (nameZh.includes("心") || nameEn === "heart") return "heart";
+  if (nameZh.includes("肺") || nameEn === "lung") return "lung";
+  if (nameZh.includes("脾") || nameEn === "spleen") return "spleen";
+  if (nameZh.includes("肝") || nameEn === "liver") return "liver";
+  if (nameZh.includes("腎") || nameEn === "kidney") return "kidney";
+
+  const slugClean = nameEn.replace(/[^a-z0-9\-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+  return slugClean || "overview";
+}
+
 function auricularPointVisualLinks(record = {}) {
   if (typeof record === "string") {
     record = { code: record };
@@ -294,20 +315,20 @@ function auricularPointVisualLinks(record = {}) {
     }));
   }
 
-  const code = String(record.code || "").toUpperCase();
-  const pinyin = String(record.pinyin || record.name_en || code).toLowerCase().replace(/[^a-z0-9]/g, "");
-  const elotusUrl = `https://www.mastertungacupuncture.org/acupuncture/auricular/points/${pinyin}-${code.toLowerCase()}`;
-  const twUrl = `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(code)}`;
+  const code = String(record.code || record.id || "").toUpperCase();
+  const slug = getEarLotusSlug(record);
+  const elotusUrl = `https://www.mastertungacupuncture.org/acupuncture/auricular/lch/points/${slug}`;
+  const twUrl = `https://acupun.site/point_list_Ear93GB.aspx?pointId=${encodeURIComponent(code.replace(/^EAR-/, ''))}`;
 
   return [
     {
-      labelZh: `eLotus CORE 黃麗春耳針診斷圖解 · ${record.name_zh || code}`,
-      labelEn: `eLotus CORE Auricular Chart · ${record.name_en || code}`,
+      labelZh: `eLotus CORE 黃麗春耳針診斷圖解 · ${record.name_zh || record.nameZh || code}`,
+      labelEn: `eLotus CORE Auricular Chart · ${record.name_en || record.nameEn || code}`,
       url: elotusUrl,
       source: "eLotus CORE / Dr. Li-Chun Huang"
     },
     {
-      labelZh: `國際標準耳針 3D / 區域定位對照 · ${record.name_zh || code}`,
+      labelZh: `國際標準耳針 3D / 區域定位對照 · ${record.name_zh || record.nameZh || code}`,
       labelEn: `Standard Auricular 3D Map · ${code}`,
       url: twUrl,
       source: "GB/T 13734-2008"
