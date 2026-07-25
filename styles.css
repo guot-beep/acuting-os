@@ -5287,3 +5287,17 @@ html { scroll-padding-top: 92px; }
 .health-summary-card.verified > span { color: var(--accent-dark); }
 .source-card.add-slot { border-style: dashed; background: transparent; }
 .source-card.add-slot > span:first-child { color: var(--accent-dark); font-weight: 700; }
+
+/* --- Per-layer made vs verified progress table (2026-07-25) ----------- */
+.progress-matrix-wrap { overflow-x: auto; margin-bottom: 1.1rem; }
+.progress-matrix { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.progress-matrix th, .progress-matrix td {
+  text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: middle;
+}
+.progress-matrix th { color: var(--muted); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.progress-matrix .pm-label { font-weight: 700; font-family: var(--serif); white-space: nowrap; }
+.progress-matrix .pm-total { color: var(--muted); }
+.progress-matrix small { color: var(--muted); font-size: 0.78rem; }
+.pm-bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; margin-bottom: 0.25rem; min-width: 96px; }
+.pm-bar > i { display: block; height: 100%; background: var(--accent); }
+.pm-bar.pm-verify > i { background: var(--gold); }

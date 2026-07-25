@@ -1397,6 +1397,7 @@ function renderOsStatus() {
 function renderDatabaseHealth() {
   const audit = getStandardPointAudit();
   const quality = getDataQualityAudit();
+  renderProgressMatrix();
   if (auditGeneratedOnEl) auditGeneratedOnEl.textContent = `audit ${standardChannelAudit.generatedOn}`;
   if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
   if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);
@@ -1496,6 +1497,81 @@ function getDataQualityAudit() {
     missingTechnique: points.filter(isMissingTechnique).length,
     missingSafety: points.filter((point) => isPendingContent(point.cautions)).length
   };
+}
+
+// Per-layer 製作 (content filled) vs 驗證 (source_checked applied + owner RV1
+// marks) so Ting can see, honestly, how much of each domain is made and how
+// much she/the sources have actually verified.
+function getDomainProgress() {
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const recs = (key) => (K[key] && K[key].records) || [];
+  const verdicts = window.AcuTingReview ? window.AcuTingReview.allVerdicts() : [];
+  const byKind = (kind, verdict) => verdicts.filter((v) => v.kind === kind && v.verdict === verdict).length;
+  const filled = (v) => Array.isArray(v) ? v.length > 0 : (v != null && String(v).trim() !== "");
+  const madeCount = (arr, keys) => arr.filter((r) => keys.some((k) => filled(r[k]))).length;
+  const scCount = (arr) => arr.filter((r) => (r.review_status || "") === "source_checked").length;
+
+  const herbs = recs("herbs");
+  const formulas = recs("formulas");
+  const conditions = recs("conditionCanon");
+  const comparisons = recs("comparisons");
+
+  const row = (label, kind, total, made, sourceChecked) => ({
+    label, total, made, sourceChecked,
+    reviewed: byKind(kind, "confirmed"),
+    issues: byKind(kind, "issue")
+  });
+
+  return [
+    row("穴位 Acupoints", "point", points.length,
+      points.filter((p) => filled(p.functions) || filled(p.location) || filled(p.locationEn)).length,
+      points.filter((p) => (p.reviewStatus || "") === "source_checked").length),
+    row("中藥 Herbs", "herb", herbs.length,
+      madeCount(herbs, ["functions_zh", "functions", "modern_functions_zh", "actions_indications"]),
+      scCount(herbs)),
+    row("方劑 Formulas", "formula", formulas.length,
+      madeCount(formulas, ["composition", "actions_zh", "pattern_indications_zh"]),
+      scCount(formulas)),
+    row("病症 Conditions", "condition", conditions.length,
+      madeCount(conditions, ["tcm_patterns", "summary_zh", "etiology_zh"]),
+      scCount(conditions)),
+    row("辨證鑑別 Comparisons", "comparison", comparisons.length,
+      madeCount(comparisons, ["rows", "records", "discriminators", "cells"]),
+      scCount(comparisons)),
+    row("病例 Cases", "case", clinicalCases.length, clinicalCases.length, 0)
+  ];
+}
+
+function renderProgressMatrix() {
+  const host = document.getElementById("progressMatrix");
+  if (!host) return;
+  const pct = (n, total) => (total ? Math.round((n / total) * 100) : 0);
+  const rows = getDomainProgress().map((d) => {
+    const madePct = pct(d.made, d.total);
+    const verPct = pct(d.sourceChecked, d.total);
+    const notes = [
+      d.reviewed ? `你標正確 ${d.reviewed}（匯出後套用）` : "",
+      d.issues ? `你標問題 ${d.issues}` : ""
+    ].filter(Boolean).join(" · ");
+    return `
+      <tr>
+        <td class="pm-label">${escapeHtml(d.label)}</td>
+        <td class="pm-total">${d.total}</td>
+        <td>
+          <div class="pm-bar"><i style="width:${madePct}%"></i></div>
+          <small>${d.made}/${d.total} · ${madePct}%</small>
+        </td>
+        <td>
+          <div class="pm-bar pm-verify"><i style="width:${verPct}%"></i></div>
+          <small>${d.sourceChecked}/${d.total} 已源審核${notes ? ` · ${escapeHtml(notes)}` : ""}</small>
+        </td>
+      </tr>`;
+  }).join("");
+  host.innerHTML = `
+    <table class="progress-matrix">
+      <thead><tr><th>層 Layer</th><th>總數</th><th>製作 Made</th><th>驗證 Verified</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
 }
 
 function getStandardPointAudit() {
