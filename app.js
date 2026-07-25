@@ -1383,14 +1383,14 @@ function renderOsStatus() {
   const audit = getStandardPointAudit();
   const standardCount = audit.presentTotal;
   const missingCount = audit.missingTotal;
-  standardCountEl.textContent = String(standardCount);
-  missingCountEl.textContent = String(missingCount);
+  if (standardCountEl) standardCountEl.textContent = String(standardCount);
+  if (missingCountEl) missingCountEl.textContent = String(missingCount);
   if (acupunctureProgressEl) {
     acupunctureProgressEl.textContent = contentMode === "english"
       ? "Standard · Extra Points · Master Tung · Auricular"
       : "標準經穴 · 經外奇穴 · 董氏奇穴 · 耳穴";
   }
-  caseCountEl.textContent = String(clinicalCases.length);
+  if (caseCountEl) caseCountEl.textContent = String(clinicalCases.length);
   if (caseProgressEl) caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
 }
 

@@ -5265,3 +5265,19 @@ body.nav-open .fab-stack { display: none; }
 /* The topbar is fixed (~76px); offset every in-page jump / scrollIntoView so
    the target lands BELOW it instead of hidden under it (Ting: 定位點被遮住). */
 html { scroll-padding-top: 92px; }
+
+/* --- Home hero: centered search + calm lotus (2026-07-25) ------------- */
+.os-dashboard.home-hero {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.home-art { margin: 1.4rem auto 0.2rem; max-width: 430px; text-align: center; }
+.home-art svg { width: 100%; height: auto; display: block; }
+.home-art__caption {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  letter-spacing: 0.06em;
+}

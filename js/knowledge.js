@@ -628,6 +628,32 @@
     dialog.scrollTop = 0;
   }
 
+  /* Category filter chips (herb-atlas look: 解表 12 · 活血化瘀 15 …). Drives the
+     existing hidden <select> so each section's updateGrid keeps working. */
+  function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn) {
+    const container = el(containerId);
+    const select = el(selectId);
+    if (!container || !select) return;
+    const counts = new Map();
+    records.forEach((r) => { const c = categoryFn(r); if (c) counts.set(c, (counts.get(c) || 0) + 1); });
+    const cats = [...counts.entries()].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(b[0]));
+    const chip = (val, label, n, active) =>
+      `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(val)}">${esc(label)}<span class="cat-chip__n">${n}</span></button>`;
+    const render = () => {
+      const cur = select.value;
+      container.innerHTML = chip("", "全部 All", records.length, !cur) + cats.map(([c, n]) => chip(c, c, n, cur === c)).join("");
+    };
+    render();
+    container.addEventListener("click", (event) => {
+      const b = event.target.closest(".cat-chip");
+      if (!b) return;
+      select.value = b.dataset.cat;
+      updateFn();
+      render();
+    });
+    select.classList.add("is-chip-hidden");
+  }
+
   // ---- Formulas ------------------------------------------------------------
   const formulaHost = el("formulaRecords");
   if (formulaHost) {
@@ -701,6 +727,7 @@
             ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
           </select>
         </div>
+        <div class="cat-chips" id="formulaCatChips" aria-label="方劑分類篩選"></div>
         <div class="k-grid" id="formulaGrid">${renderEnhanced(records)}</div>`;
       formulaHost.appendChild(box);
 
@@ -728,6 +755,7 @@
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
+      buildCategoryChips("formulaCatChips", "formulaCategoryFilter", records, categoryLabel, updateFormulaGrid);
 
       /* Make the 方劑分類 cards bidirectional (Ting: 這邊的按鈕都不是雙向的).
          The cards were static display only. Now clicking one (解表, 清熱, …)
@@ -837,6 +865,7 @@
           ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
         </select>
       </div>
+      <div class="cat-chips" id="herbCatChips" aria-label="中藥分類篩選"></div>
       <div class="k-grid" id="herbGrid">${renderHerbs(herbs)}</div>`;
 
     const updateHerbGrid = () => {
@@ -864,6 +893,7 @@
     conceptListeners.add(updateHerbGrid);
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
+    buildCategoryChips("herbCatChips", "herbCategoryFilter", herbs, herbCategory, updateHerbGrid);
     herbHost.addEventListener("click", (event) => {
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
       if (button) openKnowledgeDetail("herb", button.dataset.detailId);
@@ -1162,4 +1192,10 @@
       <p class="k-meta">標準經穴 ${a.total_present}/${a.total_expected}，缺 ${a.total_missing}。${esc(worst)}</p>
       <p class="k-meta">建議下一批：${esc(a.next_recommended_batch || "—")}</p>`;
   }
+
+  // Expose the formula/herb study-card opener so unified search (app.js) can
+  // open the exact card the user clicked, rather than dumping them in a section.
+  globalThis.ACUTING_KNOWLEDGE_API = Object.assign(globalThis.ACUTING_KNOWLEDGE_API || {}, {
+    openDetail: openKnowledgeDetail
+  });
 })();
