@@ -5,7 +5,7 @@
   --ink: #202427;
   --muted: #66717a;
   --line: #d9e0e4;
-  --paper: #fbfbf8;
+  --paper: #f3eddf;
   --panel: #ffffff;
   --accent: #0f7f7a;
   --accent-dark: #0a5956;
@@ -14,7 +14,25 @@
   --green-soft: #e8f4ef;
   --blue-soft: #eaf1f7;
   --shadow: 0 16px 50px rgba(23, 33, 38, 0.1);
+  /* Atlas shell (2026-07-25): deep-green + gold slide-out nav, warm parchment
+     page, serif display headings — tuned to the herbal-atlas look Ting likes. */
+  --nav-bg: #16352f;
+  --nav-bg-soft: #1d443c;
+  --nav-ink: #f2ece0;
+  --nav-line: #c89033;
+  --serif: "Noto Serif TC", Georgia, "Songti TC", "STSong", serif;
   font-family: "Microsoft JhengHei", "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+}
+
+/* Serif display headings — the single biggest shift toward the atlas feel. */
+h1,
+h2,
+.brand-block h1,
+.mds-title,
+.detail-card h2,
+.hero-search + * h2 {
+  font-family: var(--serif);
+  letter-spacing: 0.01em;
 }
 
 * {
@@ -4812,6 +4830,63 @@ body.point-detail-mode .map-panel {
   display: none;
 }
 
+/* --- Collapsible module drawers (progressive disclosure, 2026-07-25) -----
+   Ting's ask: top of every workspace stays clean — a search box and light
+   navigation — with the heavier modules folded into toggles she opens only
+   when she wants them. Native <details> so it works with no JS and stays
+   accessible; router.js opens the right drawer when an anchor points inside. */
+.module-drawer {
+  margin-bottom: 1rem;
+}
+.module-drawer > summary {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0.85rem 1.1rem;
+}
+.module-drawer > summary::-webkit-details-marker {
+  display: none;
+}
+.module-drawer > summary:hover {
+  border-color: var(--accent);
+}
+.module-drawer > summary::after {
+  color: var(--muted);
+  content: "＋";
+  font-weight: 800;
+  margin-inline-start: auto;
+}
+.module-drawer[open] > summary::after {
+  content: "－";
+}
+.module-drawer[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.mds-title {
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+.mds-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+/* wrapped section keeps its own card styling; just add breathing room */
+.module-drawer[open] > :not(summary) {
+  margin-top: 0.75rem;
+}
+/* a selected point stands alone — no drawer summaries above the detail card */
+body.point-detail-mode .module-drawer {
+  display: none;
+}
+
 /* --- Clinical case: TCM four-diagnosis row (tongue/pulse/pattern) ------- */
 .tcm-dx-row {
   display: grid;
@@ -4975,3 +5050,214 @@ button.k-modern-chip.is-active { outline: 2px solid var(--accent, #38bdf8); outl
 .formula-category-card.is-clickable:hover { border-color: var(--accent, #38bdf8); }
 .formula-category-card.is-clickable:active { transform: translateY(1px); }
 .formula-category-card.is-clickable:focus-visible { outline: 2px solid var(--accent, #38bdf8); outline-offset: 2px; }
+
+/* ======================================================================
+   Atlas shell — slide-out navigation + unified search (2026-07-25)
+   ====================================================================== */
+
+/* --- Top-right menu button ------------------------------------------- */
+.nav-toggle {
+  align-items: center;
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-bg);
+  border-radius: 999px;
+  color: var(--nav-ink);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.5rem;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+}
+.nav-toggle:hover { background: var(--nav-bg-soft); }
+.nav-toggle__bars {
+  width: 18px; height: 12px; position: relative; display: inline-block;
+}
+.nav-toggle__bars::before,
+.nav-toggle__bars::after,
+.nav-toggle__bars span { content: ""; }
+.nav-toggle__bars::before,
+.nav-toggle__bars::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 2px;
+  background: var(--nav-line); border-radius: 2px;
+}
+.nav-toggle__bars::before { top: 0; }
+.nav-toggle__bars::after { bottom: 0; }
+.nav-toggle__text { font-size: 0.95rem; }
+
+/* --- Scrim + panel --------------------------------------------------- */
+.nav-scrim {
+  position: fixed; inset: 0; z-index: 40;
+  background: rgba(12, 20, 18, 0.42);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+body.nav-open .nav-scrim { opacity: 1; pointer-events: auto; }
+
+.nav-panel {
+  position: fixed; top: 0; right: 0; z-index: 41;
+  height: 100dvh; width: min(360px, 86vw);
+  background: var(--nav-bg); color: var(--nav-ink);
+  box-shadow: -18px 0 50px rgba(0, 0, 0, 0.35);
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+  overflow-y: auto;
+  display: flex; flex-direction: column;
+  padding: 0 0 1.5rem;
+}
+body.nav-open .nav-panel { transform: none; }
+
+.nav-panel__head {
+  position: sticky; top: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.15rem 1.3rem;
+  background: var(--nav-bg);
+  border-bottom: 1px solid rgba(200, 144, 51, 0.35);
+}
+.nav-panel__head strong {
+  font-family: var(--serif); font-size: 1.15rem; letter-spacing: 0.02em;
+}
+.nav-close {
+  background: transparent; border: 0; color: var(--nav-ink);
+  font-size: 1.6rem; line-height: 1; cursor: pointer; padding: 0 0.25rem;
+}
+.nav-close:hover { color: var(--nav-line); }
+
+.nav-panel__body { padding: 0.6rem 0.6rem 0; display: block; }
+
+.nav-home {
+  display: block; color: var(--nav-ink); text-decoration: none;
+  font-family: var(--serif); font-size: 1.05rem;
+  padding: 0.7rem 0.9rem; border-radius: 8px;
+}
+.nav-home:hover { background: var(--nav-bg-soft); }
+
+.nav-group { margin-top: 1.1rem; padding-left: 0.9rem; border-left: 2px solid var(--nav-line); }
+.nav-group__title {
+  margin: 0 0 0.35rem; padding-left: 0;
+  color: var(--nav-line); font-size: 0.82rem; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.nav-sub {
+  display: block; color: var(--nav-ink); text-decoration: none;
+  padding: 0.5rem 0.6rem; border-radius: 7px; font-size: 0.98rem;
+  opacity: 0.92;
+}
+.nav-sub:hover { background: var(--nav-bg-soft); opacity: 1; }
+.nav-panel .workspace-nav a.active { background: var(--nav-bg-soft); color: #fff; }
+
+.nav-panel__tools {
+  margin-top: 1.4rem; padding: 1.1rem 1.2rem 0;
+  border-top: 1px solid rgba(200, 144, 51, 0.3);
+}
+.nav-tools-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+.nav-panel__tools .ghost {
+  background: var(--nav-bg-soft); color: var(--nav-ink);
+  border: 1px solid rgba(200, 144, 51, 0.35);
+}
+.nav-panel__tools .ghost.active { background: var(--nav-line); color: #1a1205; }
+.nav-panel__tools .ghost:hover { border-color: var(--nav-line); }
+.nav-panel__tools .file-label { cursor: pointer; }
+.nav-panel__tools .danger { background: #5a241d; color: #f4d9d3; border: 1px solid #7a3128; }
+
+/* --- Unified search results (home) ----------------------------------- */
+.global-results {
+  margin-top: 0.7rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-height: min(60vh, 560px);
+  overflow-y: auto;
+  padding: 0.4rem;
+}
+.gr-group__title {
+  position: sticky; top: 0;
+  background: var(--panel);
+  color: var(--accent-dark);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.6rem 0.3rem;
+  border-bottom: 1px solid var(--line);
+}
+.gr-item {
+  display: flex; align-items: baseline; gap: 0.6rem; width: 100%;
+  background: transparent; border: 0; border-radius: 8px;
+  cursor: pointer; text-align: left;
+  padding: 0.55rem 0.6rem;
+  font: inherit; color: var(--ink);
+}
+.gr-item:hover, .gr-item:focus-visible { background: var(--green-soft); outline: none; }
+.gr-item__code {
+  flex: 0 0 auto; min-width: 3.2rem;
+  color: var(--accent-dark); font-weight: 800; font-size: 0.85rem;
+}
+.gr-item__main { flex: 1 1 auto; min-width: 0; }
+.gr-item__name { font-weight: 700; }
+.gr-item__name small { color: var(--muted); font-weight: 500; margin-left: 0.35rem; }
+.gr-item__sub {
+  color: var(--muted); font-size: 0.83rem;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.gr-kind {
+  flex: 0 0 auto; align-self: center;
+  font-size: 0.72rem; font-weight: 700;
+  color: var(--accent-dark);
+  background: var(--green-soft);
+  border-radius: 999px; padding: 0.1rem 0.55rem;
+}
+.gr-empty { padding: 0.9rem 0.7rem; color: var(--muted); }
+.gr-more { padding: 0.4rem 0.6rem 0.6rem; color: var(--muted); font-size: 0.82rem; }
+
+/* Serif page brand */
+.brand-block h1 { font-family: var(--serif); }
+
+@media (max-width: 720px) {
+  .nav-toggle__text { display: none; }
+  .global-results { max-height: 62vh; }
+}
+
+/* Brief highlight when unified search scrolls to a condition card */
+.gr-flash { animation: gr-flash-kf 1.6s ease; }
+@keyframes gr-flash-kf {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 127, 122, 0); }
+  15% { box-shadow: 0 0 0 3px rgba(15, 127, 122, 0.55); }
+}
+
+/* --- Category filter chips (herb-atlas style) ------------------------- */
+.cat-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.1rem 0 1rem; }
+.cat-chip {
+  align-items: center; display: inline-flex; gap: 0.45rem;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink); cursor: pointer; font: inherit; font-weight: 600;
+  padding: 0.38rem 0.8rem; transition: border-color 0.12s, background 0.12s;
+}
+.cat-chip:hover { border-color: var(--accent); }
+.cat-chip.active { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+.cat-chip__n {
+  background: var(--green-soft); border-radius: 999px; color: var(--muted);
+  font-size: 0.76rem; font-weight: 800; min-width: 1.4rem; padding: 0.02rem 0.45rem; text-align: center;
+}
+.cat-chip.active .cat-chip__n { background: var(--gold); color: #1a2e2b; }
+.is-chip-hidden { display: none; }
+
+/* --- Floating action buttons (mobile-friendly) ----------------------- */
+.fab-stack {
+  position: fixed; right: clamp(0.8rem, 2vw, 1.4rem); bottom: clamp(0.8rem, 2vw, 1.4rem);
+  z-index: 39; display: flex; flex-direction: column; gap: 0.7rem;
+}
+.fab {
+  width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.35rem; color: #fff; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  transition: transform 0.08s ease, filter 0.12s ease;
+}
+.fab:hover { filter: brightness(1.08); }
+.fab:active { transform: translateY(1px) scale(0.97); }
+.fab--search { background: var(--accent); }
+.fab--history { background: var(--gold); color: #26200e; }
+.fab--menu { background: var(--nav-bg); }
+.fab__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+/* The menu FAB stays reachable in every situation and at every width — it is
+   fixed to the corner, so the ☰ is always one tap away without scrolling back
+   up to the header (Ting: 不管甚麼情況都要按得到). */
+body.nav-open .fab-stack { display: none; }

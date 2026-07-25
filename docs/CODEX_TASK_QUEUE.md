@@ -39,6 +39,7 @@ node scripts/validate-point-ids.js
 node scripts/validate-naming.js
 node scripts/validate-point-categories.js
 node scripts/validate-encoding.js
+node scripts/validate-content-junk.js
 ```
 
 Point-set maintenance (DECISIONS D6): points are never hard-deleted. To
