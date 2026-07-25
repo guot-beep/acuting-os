@@ -257,6 +257,7 @@
   }
 
   const herbByPinyin = new Map(herbs.map((record) => [normalizeKey(record.pinyin), record]));
+  const herbByNameZh = new Map(herbs.map((record) => [record.name_zh, record]));
 
   function usableText(value) {
     const text = String(value || "").trim();
@@ -296,11 +297,36 @@
   }
 
   function sourceLinks(record) {
+    const citations = Array.isArray(record.source_citations) ? record.source_citations : [];
+    let html = '<div class="k-source-citations" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">';
+
+    // Web Links vs Textbook Citations
+    if (citations.length) {
+      citations.forEach(c => {
+        const isUrl = c.url && /^https?:\/\//.test(c.url);
+        if (isUrl) {
+          html += `
+            <a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#1e293b;font-size:0.85em;">
+              <strong style="color:#0284c7;">${esc(c.name)} ↗</strong>
+              ${c.scope ? `<span style="color:#64748b;margin-left:4px;">(${esc(c.scope)})</span>` : ""}
+            </a>`;
+        } else {
+          html += `
+            <div style="display:inline-block;padding:6px 12px;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#334155;font-size:0.85em;">
+              <strong>${esc(c.name)}</strong>
+              ${c.scope ? `<span style="color:#64748b;margin-left:4px;">— ${esc(c.scope)}</span>` : ""}
+            </div>`;
+        }
+      });
+    }
+
     const links = (record.source_urls || []).filter((url) => /^https?:\/\//.test(url));
-    const sourceHint = usableText(record.source_hint);
-    return `
-      ${sourceHint ? `<p class="k-detail-note">${esc(sourceHint)}</p>` : ""}
-      ${links.length ? `<div class="k-source-links">${links.map((url, index) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Source ${index + 1}</a>`).join("")}</div>` : '<p class="k-detail-empty">來源連結待補 / Source links pending</p>'}`;
+    if (!citations.length && links.length) {
+      html += links.map((url, index) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#0284c7;font-size:0.85em;">Source ${index + 1} ↗</a>`).join("");
+    }
+
+    html += '</div>';
+    return html;
   }
 
   /* Verified direct per-herb source URLs, keyed by herb id and by 中文名. */
@@ -396,7 +422,7 @@
           ["分類 Category", record.category || record.category_en || "待補"],
           ["性味 Properties", usableText(record.properties_taste_temp) || "待補"],
           ["歸經 Channels", cleanList(record.channels_entered).join("、") || "待補"],
-          ["相關方劑 Related", `${(record.related_formulas || []).length} 首`]
+          ["雲端中醫 CloudTCM", `<a href="${esc((HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))) ? (HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))).page_url : (record.cloudtcm_url || 'https://cloudtcm.com/'))}" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:bold;text-decoration:underline;">開啟藥材頁面 ↗</a>`, true]
         ];
     return `
       <div class="k-detail-shell">
@@ -409,17 +435,17 @@
           <div class="k-detail-hero-top">
             <div>
               <div class="k-detail-badges"><span>${esc(record.category || record.category_en || kind)}</span></div>
-            <p class="k-detail-eyebrow">${eyebrow}</p>
-            <h2>${esc(record.name_zh || record.pinyin)} <small>${esc(record.pinyin)}</small></h2>
-            <p class="k-detail-en">${esc(record.name_en)}</p>
-            <p class="k-detail-meta">${esc(identity)}</p>
-          </div>
+              ${kind === "formula" ? `<h2>${esc(record.name_zh || record.pinyin)} <small>${esc(record.pinyin)}</small></h2><p class="k-detail-en">${esc(record.name_en)}</p>` : `
+              <h2>${esc(record.name_zh || record.name_en)} <small style="font-size:0.8em;font-weight:bold;color:#ffffff;margin-left:8px;">${esc(record.pinyin_toned || record.pinyin || "")} · ${esc(record.name_en || "")}</small></h2>
+              ${record.latin_name ? `<p class="k-detail-en" style="color:#38bdf8;font-weight:600;margin:3px 0 0 0;font-size:0.95em;">${esc(record.latin_name)}</p>` : `<p class="k-detail-en">${esc(record.name_en)}</p>`}
+              `}
+            </div>
           <div class="k-detail-header-actions">
             ${statusPill(record.review_status)}
           </div>
           </div>
           <div class="k-detail-fact-grid">
-            ${facts.map(([label, value]) => `<article><span>${esc(label)}</span><strong>${esc(value)}</strong></article>`).join("")}
+            ${facts.map(([label, value, isRawHtml]) => `<article><span>${esc(label)}</span><strong>${isRawHtml ? value : esc(value)}</strong></article>`).join("")}
           </div>
         </header>
         <div class="k-review-banner"><strong>Draft · source review pending</strong><span>私人學習參考，不是醫療建議；現代病名關聯仍需辨證與來源核對。</span></div>
@@ -449,7 +475,7 @@
     const indications = cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : record.pattern_indications_en;
     const modifications = cleanList(exam.modifications_en).length ? exam.modifications_en : record.modifications_en;
     const composition = (record.composition || []).map((item) => {
-      const herb = herbByPinyin.get(normalizeKey(item.pinyin));
+      const herb = (item.pinyin && herbByPinyin.get(normalizeKey(item.pinyin))) || (item.herb_zh && herbByNameZh.get(usableText(item.herb_zh))) || (item.herbZh && herbByNameZh.get(usableText(item.herbZh)));
       const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" · ") || "Composition item pending";
       const role = [usableText(item.role_zh), usableText(item.role_en)].filter(Boolean).join(" · ");
       const classicalAmount = usableText(item.classical_amount_text || item.classical_amount) || "待補";
@@ -459,7 +485,7 @@
       // What this herb does IN THIS FORMULA (Ting: 加上每一味要在這個方劑的功效, 中文就好).
       // Distinct from the herb's own 功效 on its card - 杏仁 alone descends Lung qi;
       // 杏仁 in 麻黃湯 is the 佐 that pairs one-down against Ma Huang's one-up.
-      const roleReason = usableText(item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh);
+      const roleReason = usableText(item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh || item.elucidation_zh);
       return `<tr>
         <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
         <td class="k-dose-role">${roleReason ? esc(roleReason) : '<span class="k-detail-empty">—</span>'}</td>
@@ -483,16 +509,113 @@
 
   function herbPanels(record) {
     const exam = record.english_exam_track || {};
-    const functions = cleanList(exam.functions).length ? exam.functions : record.functions;
+    const props = record.tcm_properties || {};
+    const dose = record.dosage_g || {};
+    const safety = record.safety_info || {};
+    const visual = record.visual_reference || {};
+    
+    const tradFunctions = cleanList(record.traditional_functions_zh);
+    const modernPharm = cleanList(record.modern_pharmacology_zh);
+    const actionsEn = cleanList(record.actions_en);
+    const indicationsZh = cleanList(record.indications_zh);
+    const CONDITION_TAG_EN_MAP = {
+      "經閉": "Amenorrhea",
+      "痛經": "Dysmenorrhea",
+      "產後惡露腹痛": "Postpartum Abdominal Pain",
+      "跌打損傷": "Traumatic Injury",
+      "癥瘕積聚": "Abdominal Masses",
+      "腸燥便秘": "Dry Constipation",
+      "肺癰": "Lung Abscess",
+      "腸癰": "Intestinal Abscess",
+      "久咳失音": "Chronic Cough & Lost Voice",
+      "聲音嘶啞": "Hoarseness / Loss of Voice",
+      "咽喉腫痛": "Sore Throat",
+      "久瀉久痢": "Chronic Diarrhea & Dysentery",
+      "脫肛": "Prolapse of Rectum",
+      "便血": "Blood in Stool",
+      "崩漏": "Uterine Bleeding",
+      "下痢滑脫": "Unremitting Diarrhea",
+      "瘡瘍不斂": "Non-healing Sores",
+      "久咳虛喘": "Chronic Deficiency Cough & Wheeze",
+      "自汗盜汗": "Spontaneous & Night Sweating",
+      "津傷口渴": "Fluid Damage & Thirst",
+      "遺精尿頻": "Spermatorrhea & Polyuria",
+      "心悸失眠": "Palpitations & Insomnia",
+      "久咳少痰": "Chronic Dry Cough",
+      "虛熱消渴": "Deficiency Heat Wasting & Thirst",
+      "蛔厥腹痛": "Roundworm Abdominal Pain",
+      "膽道蛔蟲": "Biliary Ascariasis",
+      "五更瀉": "5 AM / Daybreak Diarrhea",
+      "脾胃虛寒久瀉": "SP Deficiency Cold Diarrhea",
+      "脘腹冷痛": "Cold Abdominal Pain",
+      "晨瀉": "Daybreak Diarrhea"
+    };
+
+    const bilingualFunctions = tradFunctions.map((zh, i) => {
+      const en = actionsEn[i] || "";
+      return en ? `<span class="k-chip" style="background:#ecfdf5;color:#047857;font-weight:500;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(zh)} <small style="opacity:0.85;margin-left:4px;font-weight:normal;color:#065f46;">(${esc(en)})</small></span>` : tag(zh);
+    }).join("");
+
+    const bilingualCondTags = condTags.map(zh => {
+      const en = CONDITION_TAG_EN_MAP[zh] || "";
+      return en ? `<span class="k-chip" style="background:#f1f5f9;color:#334155;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(zh)} <small style="opacity:0.85;margin-left:4px;font-weight:normal;color:#475569;">(${esc(en)})</small></span>` : tag(zh);
+    }).join("");
+    
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
-    const modern = modernTagChips(record.modern_use_tags);
+    const keyPairs = (record.key_pairs || []).map(p => typeof p === 'string' ? `<div class="k-pair-item"><strong>${esc(p)}</strong></div>` : `<div class="k-pair-item" style="margin-bottom:8px;padding:8px 12px;background:#f8fafc;border-left:3px solid #0284c7;border-radius:4px;"><strong>${esc(p.pair)}</strong><p style="margin:2px 0 0 0;font-size:0.92em;color:#334155;">${esc(p.rationale_zh || p.rationale || "")}</p></div>`).join("");
+    
+    const contraList = cleanList(safety.contraindications_zh);
+    const cautionList = cleanList(safety.cautions_zh);
+
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("性味", "Properties, taste & temperature", `<p>${esc(usableText(exam.properties_taste_temp) || usableText(record.properties_taste_temp) || "待補")}</p>`)}${detailSection("歸經", "Channels entered", detailList(record.channels_entered))}${detailSection("功效", "Functions", detailList(functions))}${detailSection("主治脈絡", "Indication context", detailList(exam.indications))}</div>` },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Formulas containing or comparing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
-      { id: "pairing", label: "配伍與鑑別 Pairing", content: `${detailSection("常見配伍", "Common pairings", detailList(exam.common_pairings))}${detailSection("中文深度筆記", "Chinese-depth track", `<p>${esc(usableText((record.chinese_depth_track || {}).summary_zh) || "待 CloudTCM、機構庫或 Ting 課件核對後補入")}</p>`)}` },
-      { id: "pairs", label: "藥對 Herb pairs", content: detailSection("含此藥的藥對", "Pairs this herb belongs to", herbPairsSection(record)) },
-      { id: "visual", label: "圖像參考 Visuals", content: detailSection("藥材與飲片圖像", "External herb image references", herbVisualLinksSection(record)) },
-      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與安全提醒", "Contraindications & review prompts", detailList([...(exam.contraindications || []), ...safetyList(record.safety_flags)]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
+      { 
+        id: "core", 
+        label: "考試與傳統核心 Exam Core", 
+        content: `
+          ${record.exam_importance ? `<p class="k-exam-badge" style="color:#d97706;font-weight:bold;margin-bottom:8px;">${esc(record.exam_importance)}</p>` : ""}
+          ${record.exam_pearl ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 Bastyr Exam Pearl:</strong> ${esc(record.exam_pearl)}</div>` : ""}
+          <div class="k-detail-columns">
+            ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
+            ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered))}
+            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "6~15g")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
+            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "根 / 果實 / 全草")}</p>`)}
+          </div>
+          ${detailSection("傳統功效 (Traditional Functions)", "中醫古籍記載功效標籤", `<div class="k-chip-cloud">${bilingualFunctions}</div>`)}
+          ${record.primary_actions_en && record.primary_actions_en.length ? detailSection("Bastyr Slide Primary Actions", "Bastyr Materia Medica slide actions", detailList(record.primary_actions_en)) : ""}
+          ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "NCBAHM 國考重點炮製說明", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
+          ${modernPharm.length ? detailSection("現代藥理 (Modern Pharmacology)", "實證藥理作用", `<div class="k-chip-cloud">${modernPharm.map(t => `<span class="k-chip" style="background:#e0f2fe;color:#0369a1;">${esc(t)}</span>`).join("")}</div>`) : ""}
+          ${actionsEn.length ? detailSection("英文國考功效 (English Actions)", "Chinese Medicine Atlas & NCCAOM actions", detailList(actionsEn)) : ""}
+        ` 
+      },
+      { 
+        id: "clinical", 
+        label: "主治與症狀 Indications", 
+        content: `
+          ${detailSection("主治症狀與病機", "Indications", detailList(indicationsZh.length ? indicationsZh : [record.indications_en]))}
+          ${record.key_indications_en && record.key_indications_en.length ? detailSection("Bastyr Key Indications (US Exam)", "Bastyr slide key indications", detailList(record.key_indications_en)) : ""}
+          ${detailSection("病名與症狀索引標籤", "Common Condition Tags", `<div class="k-chip-cloud">${bilingualCondTags}</div>`)}
+          ${detailSection("相關經典方劑", "Classical Formulas containing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}
+        ` 
+      },
+      { 
+        id: "pairing", 
+        label: "對藥與古文 Pairing & Classics", 
+        content: `
+          ${detailSection("經典對藥 (Herb Pairs)", "Key pairings and rationale", keyPairs || herbPairsSection(record))}
+          ${record.classical_text_zh ? detailSection("古文典籍記載", "Classical text quotation", `<blockquote class="k-classic-quote" style="border-left:3px solid #d97706;padding-left:10px;font-style:italic;color:#451a03;margin:8px 0;line-height:1.6;">${esc(record.classical_text_zh).replace(/\n/g, '<br>')}</blockquote>`) : ""}
+          ${detailSection("學習筆記", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}
+        ` 
+      },
+      { 
+        id: "safety", 
+        label: "毒性安全與來源 Safety & Sources", 
+        content: `
+          ${safety.toxicity_zh ? detailSection("毒性說明 (Toxicity)", "Toxicity review", `<p style="color:#b91c1c;font-weight:bold;">${esc(safety.toxicity_zh)}</p><p style="color:#7f1d1d;font-size:0.9em;">${esc(safety.toxicity_en || "")}</p>`) : ""}
+          ${detailSection("禁忌症 (Contraindications)", "Strict contraindications", detailList(contraList))}
+          ${detailSection("慎用與副作用 (Cautions & Interactions)", "Cautions, pregnancy, and drug interactions", detailList(cautionList))}
+          ${detailSection("權威來源引用與圖像連結 (Sources & References)", "Referenced sources & external visual links", sourceLinks(record))}
+        ` 
+      }
     ];
   }
 
@@ -505,37 +628,6 @@
     dialog.scrollTop = 0;
   }
 
-  /* Category filter chips (the herb-atlas look Ting likes: 解表 10 · 清熱 12 …).
-     Drives the existing hidden <select> so each section's updateGrid keeps
-     working unchanged. "全部 All" clears the filter. */
-  function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn) {
-    const container = el(containerId);
-    const select = el(selectId);
-    if (!container || !select) return;
-    const counts = new Map();
-    records.forEach((r) => {
-      const c = categoryFn(r);
-      if (c) counts.set(c, (counts.get(c) || 0) + 1);
-    });
-    const cats = [...counts.entries()].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(b[0]));
-    const chip = (val, label, n, active) =>
-      `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(val)}">${esc(label)}<span class="cat-chip__n">${n}</span></button>`;
-    const render = () => {
-      const cur = select.value;
-      container.innerHTML = chip("", "全部 All", records.length, !cur)
-        + cats.map(([c, n]) => chip(c, c, n, cur === c)).join("");
-    };
-    render();
-    container.addEventListener("click", (event) => {
-      const b = event.target.closest(".cat-chip");
-      if (!b) return;
-      select.value = b.dataset.cat;
-      updateFn();
-      render();
-    });
-    select.classList.add("is-chip-hidden");
-  }
-
   // ---- Formulas ------------------------------------------------------------
   const formulaHost = el("formulaRecords");
   if (formulaHost) {
@@ -544,11 +636,17 @@
       const hasContent = (f) => [
         f.actions_en,
         f.actions_zh,
+        f.functions_zh,
+        f.effect_zh,
         f.composition,
+        f.composition_zh,
         f.pattern_indications_en,
         f.pattern_indications_zh,
+        f.indications_zh,
+        f.syndromes_zh,
         f.contraindications_en,
-        f.contraindications_zh
+        f.contraindications_zh,
+        f.cautions_zh
       ].some((value) => Array.isArray(value) ? value.length > 0 : Boolean(value));
       const categoryLabel = (f) => f.category || f.category_en || f.category_id || "uncategorized";
       const categories = [...new Set(records.map(categoryLabel).filter(Boolean))].sort((a, b) => a.localeCompare(b));
@@ -603,7 +701,6 @@
             ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
           </select>
         </div>
-        <div class="cat-chips" id="formulaCatChips" aria-label="方劑分類篩選"></div>
         <div class="k-grid" id="formulaGrid">${renderEnhanced(records)}</div>`;
       formulaHost.appendChild(box);
 
@@ -631,7 +728,6 @@
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
-      buildCategoryChips("formulaCatChips", "formulaCategoryFilter", records, categoryLabel, updateFormulaGrid);
 
       /* Make the 方劑分類 cards bidirectional (Ting: 這邊的按鈕都不是雙向的).
          The cards were static display only. Now clicking one (解表, 清熱, …)
@@ -741,7 +837,6 @@
           ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
         </select>
       </div>
-      <div class="cat-chips" id="herbCatChips" aria-label="中藥分類篩選"></div>
       <div class="k-grid" id="herbGrid">${renderHerbs(herbs)}</div>`;
 
     const updateHerbGrid = () => {
@@ -769,7 +864,6 @@
     conceptListeners.add(updateHerbGrid);
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
-    buildCategoryChips("herbCatChips", "herbCategoryFilter", herbs, herbCategory, updateHerbGrid);
     herbHost.addEventListener("click", (event) => {
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
       if (button) openKnowledgeDetail("herb", button.dataset.detailId);
@@ -1068,10 +1162,4 @@
       <p class="k-meta">標準經穴 ${a.total_present}/${a.total_expected}，缺 ${a.total_missing}。${esc(worst)}</p>
       <p class="k-meta">建議下一批：${esc(a.next_recommended_batch || "—")}</p>`;
   }
-
-  // Expose the formula/herb study-card opener so unified search (app.js) can
-  // open the exact card the user clicked, rather than dumping them in a section.
-  globalThis.ACUTING_KNOWLEDGE_API = Object.assign(globalThis.ACUTING_KNOWLEDGE_API || {}, {
-    openDetail: openKnowledgeDetail
-  });
 })();
