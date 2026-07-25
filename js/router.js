@@ -15,7 +15,7 @@
  * This file deliberately does not touch app.js internals.
  */
 (function () {
-  const WORKSPACES = ["home", "lookup", "cases", "quality", "sources", "learn"];
+  const WORKSPACES = ["home", "acu", "formula", "herb", "condition", "comparison", "cases", "quality", "sources", "learn"];
   const DEFAULT_WS = "home";
   const sections = Array.from(document.querySelectorAll("section[data-workspace]"));
   const navLinks = Array.from(document.querySelectorAll(".workspace-nav a[data-ws]"));
@@ -65,7 +65,7 @@
       return;
     }
     if (hash.startsWith("#point/")) {
-      activate("lookup");
+      activate("acu");
       requestAnimationFrame(() => {
         const detail = document.getElementById("detailCard");
         if (detail) detail.scrollIntoView({ block: "start" });
