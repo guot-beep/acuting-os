@@ -128,7 +128,9 @@ HERB_FORMULA_CARD_SPEC 的完整欄位(巢狀主治、劑量、炮製、對藥�
 
 ## 6. 待 Ting 決定(open questions)
 
-1. 部署平台偏好?(建議 Cloudflare Pages + Access 密碼,免費且快)
+1. ~~部署平台~~ **已決定(2026-07-25):Cloudflare Pages + Access 密碼。**
 2. 新站名想好了嗎?(改名連動 repo 名/標題/todo)
 3. 辨證鑑別的課堂對照表:拍照/貼文字到 `curriculum/` 哪批先做?
-4. 高頻中藥清單(先衝的 50–80 味)以誰為準 — board outline 還是課程進度?
+4. ~~中藥優先序~~ **已決定(2026-07-25):照 board exam outline 衝。**
+   Tier-1 教材已入庫:`curriculum/herbs/`(356 味拼音/拉丁表 + 功效分類表 +
+   Materia Medica 精要,含文字抽取版)。
