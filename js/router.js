@@ -117,5 +117,21 @@
     });
   }
 
+  // --- Floating action buttons (touch-friendly) ------------------------
+  const fabMenu = document.getElementById("fabMenu");
+  const fabSearch = document.getElementById("fabSearch");
+  const fabHistory = document.getElementById("fabHistory");
+  if (fabMenu) fabMenu.addEventListener("click", () => setNav(true));
+  if (fabSearch) {
+    fabSearch.addEventListener("click", () => {
+      if (window.location.hash !== "#ws/home") window.location.hash = "#ws/home";
+      requestAnimationFrame(() => {
+        const box = document.getElementById("homeSearch");
+        if (box) { box.scrollIntoView({ block: "center" }); box.focus(); }
+      });
+    });
+  }
+  if (fabHistory) fabHistory.addEventListener("click", () => window.history.back());
+
   route();
 })();
