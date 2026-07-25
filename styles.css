@@ -5281,3 +5281,9 @@ html { scroll-padding-top: 92px; }
   font-size: 0.98rem;
   letter-spacing: 0.06em;
 }
+
+/* Honest "verified" headline card + extensible source slot (2026-07-25) */
+.health-summary-card.verified { border-color: var(--accent); background: var(--green-soft); }
+.health-summary-card.verified > span { color: var(--accent-dark); }
+.source-card.add-slot { border-style: dashed; background: transparent; }
+.source-card.add-slot > span:first-child { color: var(--accent-dark); font-weight: 700; }

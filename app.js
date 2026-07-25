@@ -1400,7 +1400,14 @@ function renderDatabaseHealth() {
   if (auditGeneratedOnEl) auditGeneratedOnEl.textContent = `audit ${standardChannelAudit.generatedOn}`;
   if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
   if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);
-  if (healthCompletionPercentEl) healthCompletionPercentEl.textContent = `${audit.completionPercent}%`;
+  // Honest "verified" %: source-checked records over the full 361, NOT mere
+  // presence (which would read a misleading 100% while content is still draft).
+  if (healthCompletionPercentEl) {
+    const verifiedPct = standardChannelAudit.expectedTotal
+      ? Math.round((quality.sourceCheckedStandard / standardChannelAudit.expectedTotal) * 100)
+      : 0;
+    healthCompletionPercentEl.textContent = `${verifiedPct}%`;
+  }
   if (healthReviewedStandardEl) healthReviewedStandardEl.textContent = String(quality.sourceCheckedStandard);
   if (healthPlaceholderStandardEl) healthPlaceholderStandardEl.textContent = String(quality.draftStandard);
   if (healthTungIndexEl) healthTungIndexEl.textContent = String(quality.tungIndex);
