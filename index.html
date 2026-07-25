@@ -64,6 +64,8 @@
         </div>
       </section>
 
+      <details class="module-drawer" id="drawerLibrary">
+        <summary><span class="mds-title">內容資料庫入口 Content Library</span><span class="mds-sub">針灸 · 耳穴 · 方劑 · 中藥 · 病症 · 病歷 · 保險</span></summary>
       <section class="content-library" data-workspace="home" id="contentLibrary" aria-label="AcuTing OS 內容資料庫">
         <div class="section-heading">
           <div>
@@ -116,6 +118,7 @@
           </a>
         </div>
       </section>
+      </details>
 
       <section class="database-health" data-workspace="quality" id="databaseHealth" aria-label="Database health and completion tracking">
         <div id="auditFileStrip" class="k-records"></div>
@@ -232,6 +235,8 @@
         </div>
       </section>
 
+      <details class="module-drawer" id="drawerRoadmap">
+        <summary><span class="mds-title">系統藍圖 Roadmap</span><span class="mds-sub">未來公開內容 · 董氏 · 耳穴 · 來源規則</span></summary>
       <section class="system-roadmap" data-workspace="home" id="systemRoadmap" aria-label="AcuTing OS roadmap and secondary systems">
         <div class="section-heading">
           <div>
@@ -274,6 +279,7 @@
           </a>
         </div>
       </section>
+      </details>
 
       <section class="patient-system" data-workspace="cases" id="patientSystem" aria-label="我的病歷系統">
         <div class="section-heading">
@@ -370,6 +376,77 @@
         </div>
       </section>
 
+      <section class="acupoint-directory-hero" data-workspace="lookup" id="acupointDirectory" aria-label="穴道大全">
+        <div>
+          <p class="eyebrow">Acupuncture Directory</p>
+          <h2>穴道大全 / Acupoint Directory</h2>
+        </div>
+        <div class="directory-mode-note">
+          <strong id="directoryTotal">--</strong>
+          <span>個穴道</span>
+          <small>中英學習版 / Public English 版可切換</small>
+        </div>
+      </section>
+
+      <section class="directory-layout" data-workspace="lookup" id="directoryLayout" aria-label="穴道大全分類瀏覽">
+        <aside class="directory-sidebar" aria-label="穴道分類">
+          <section class="directory-filter-box">
+            <h3>經絡分類</h3>
+            <div id="meridianCategoryList" class="directory-filter-list"></div>
+          </section>
+          <section class="directory-filter-box">
+            <h3>身體部位</h3>
+            <div id="regionCategoryList" class="directory-filter-list"></div>
+          </section>
+          <section class="directory-filter-box">
+            <h3>常用臨床主題</h3>
+            <div id="topicCategoryList" class="directory-filter-list"></div>
+          </section>
+          <section class="directory-filter-box">
+            <h3>特定穴 Specific points</h3>
+            <div id="pointCategoryList" class="directory-filter-list"></div>
+          </section>
+        </aside>
+
+        <div class="directory-main">
+          <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Acupuncture Layer</p>
+                <h2>穴位資料庫</h2>
+              </div>
+              <span class="data-pill">分類 + 搜尋</span>
+            </div>
+            <div class="search-row">
+              <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型..." />
+              <button id="addBtn" type="button">新增穴位</button>
+            </div>
+            <div class="filters">
+              <select id="meridianFilter" aria-label="經絡">
+                <option value="">全部經絡</option>
+              </select>
+              <select id="regionFilter" aria-label="部位">
+                <option value="">全部部位</option>
+              </select>
+              <select id="patternFilter" aria-label="證型">
+                <option value="">全部證型</option>
+              </select>
+            </div>
+            <div id="activeFilterSummary" class="active-filter-summary" aria-live="polite"></div>
+            <p id="resultCount" class="count"></p>
+          </section>
+
+          <section class="content-grid acupoint-browser">
+            <section class="details-panel" aria-live="polite">
+              <article id="detailCard" class="detail-card"></article>
+              <div id="cards" class="cards" aria-label="穴位列表"></div>
+            </section>
+          </section>
+        </div>
+      </section>
+
+      <details class="module-drawer" id="drawerFormula">
+        <summary><span class="mds-title">方劑 Formulas</span><span class="mds-sub">方名 · 組成 · 證型 · 加減</span></summary>
       <section class="formula-section" data-workspace="lookup" id="formulaSection" aria-label="方劑資料庫">
         <div class="section-heading">
           <div>
@@ -434,7 +511,10 @@
           <span><strong id="statFormulaCategories">--</strong> formula categories</span>
         </div>
       </section>
+      </details>
 
+      <details class="module-drawer" id="drawerHerb">
+        <summary><span class="mds-title">中藥 Materia Medica</span><span class="mds-sub">單味藥 · 性味歸經 · 功效 · 安全</span></summary>
       <section class="formula-section herb-section" data-workspace="lookup" id="herbSection" aria-label="Herb Materia Medica draft index">
         <div class="section-heading">
           <div>
@@ -457,7 +537,10 @@
           <span><strong id="statHerbSafetyFlags">--</strong> safety flags</span>
         </div>
       </section>
+      </details>
 
+      <details class="module-drawer" id="drawerComparison">
+        <summary><span class="mds-title">辨證鑑別 Pattern Comparisons</span><span class="mds-sub">相似證型對照表</span></summary>
       <section class="formula-section comparison-section" data-workspace="lookup" id="comparisonSection" aria-label="Pattern comparison tables">
         <div class="section-heading">
           <div>
@@ -474,7 +557,10 @@
         </nav>
         <div id="comparisonRecords" class="k-records" aria-label="Comparison records"></div>
       </section>
+      </details>
 
+      <details class="module-drawer" id="drawerCondition">
+        <summary><span class="mds-title">病症圖譜 Conditions</span><span class="mds-sub">西醫診斷 × 中醫證型</span></summary>
       <span id="pathologyAnchor" class="anchor-target" aria-hidden="true"></span>
       <section class="condition-graph-section" data-workspace="lookup" id="conditionGraph" aria-label="Condition knowledge graph">
         <div class="section-heading">
@@ -519,6 +605,7 @@
           <span>西醫診斷、傳統病名、證型不是一對一翻譯；AcuTing 用 relation records 表示「可能相關」，每次病例仍要依實際 SOAP 與臨床辨證判斷。</span>
         </div>
       </section>
+      </details>
 
       <section class="learn-section" data-workspace="learn" id="learnSection" aria-label="AcuTing Learn 英文內容層">
         <div class="section-heading">
@@ -623,75 +710,6 @@
         <p class="note">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
       </section>
 
-      <section class="acupoint-directory-hero" data-workspace="lookup" id="acupointDirectory" aria-label="穴道大全">
-        <div>
-          <p class="eyebrow">Acupuncture Directory</p>
-          <h2>穴道大全 / Acupoint Directory</h2>
-          <p>收錄常用穴位，包含取穴方法、主治病症、針刺深度、常用配穴與中英文資料來源。現在先以資料庫卡片與文章頁為主，不再內嵌自製或不精準圖片。</p>
-        </div>
-        <div class="directory-mode-note">
-          <strong id="directoryTotal">--</strong>
-          <span>個穴道</span>
-          <small>中英學習版 / Public English 版可切換</small>
-        </div>
-      </section>
-
-      <section class="directory-layout" data-workspace="lookup" id="directoryLayout" aria-label="穴道大全分類瀏覽">
-        <aside class="directory-sidebar" aria-label="穴道分類">
-          <section class="directory-filter-box">
-            <h3>經絡分類</h3>
-            <div id="meridianCategoryList" class="directory-filter-list"></div>
-          </section>
-          <section class="directory-filter-box">
-            <h3>身體部位</h3>
-            <div id="regionCategoryList" class="directory-filter-list"></div>
-          </section>
-          <section class="directory-filter-box">
-            <h3>常用臨床主題</h3>
-            <div id="topicCategoryList" class="directory-filter-list"></div>
-          </section>
-          <section class="directory-filter-box">
-            <h3>特定穴 Specific points</h3>
-            <div id="pointCategoryList" class="directory-filter-list"></div>
-          </section>
-        </aside>
-
-        <div class="directory-main">
-          <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Acupuncture Layer</p>
-                <h2>穴位資料庫</h2>
-              </div>
-              <span class="data-pill">分類 + 搜尋</span>
-            </div>
-            <div class="search-row">
-              <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型..." />
-              <button id="addBtn" type="button">新增穴位</button>
-            </div>
-            <div class="filters">
-              <select id="meridianFilter" aria-label="經絡">
-                <option value="">全部經絡</option>
-              </select>
-              <select id="regionFilter" aria-label="部位">
-                <option value="">全部部位</option>
-              </select>
-              <select id="patternFilter" aria-label="證型">
-                <option value="">全部證型</option>
-              </select>
-            </div>
-            <div id="activeFilterSummary" class="active-filter-summary" aria-live="polite"></div>
-            <p id="resultCount" class="count"></p>
-          </section>
-
-          <section class="content-grid acupoint-browser">
-            <section class="details-panel" aria-live="polite">
-              <article id="detailCard" class="detail-card"></article>
-              <div id="cards" class="cards" aria-label="穴位列表"></div>
-            </section>
-          </section>
-        </div>
-      </section>
     </main>
 
     <dialog id="editDialog">

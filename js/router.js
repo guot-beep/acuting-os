@@ -28,7 +28,12 @@
     activeWs = ws;
     document.body.setAttribute("data-active-ws", ws);
     sections.forEach((el) => {
-      el.hidden = el.getAttribute("data-workspace") !== ws;
+      const show = el.getAttribute("data-workspace") === ws;
+      el.hidden = !show;
+      // A section can be wrapped in a collapsible module drawer; the drawer
+      // belongs to whatever workspace its section does, so hide/show it too.
+      const drawer = el.closest("details.module-drawer");
+      if (drawer) drawer.hidden = !show;
     });
     navLinks.forEach((a) => {
       a.classList.toggle("active", a.getAttribute("data-ws") === ws);
@@ -38,6 +43,17 @@
   function workspaceForElement(el) {
     const host = el.closest("section[data-workspace]");
     return host ? host.getAttribute("data-workspace") : null;
+  }
+
+  // Anchors (home library chips, quicknav links, related-point jumps) may point
+  // at content that now lives inside a collapsed drawer. Open every drawer
+  // ancestor so the target is actually visible after we scroll to it.
+  function openDrawersFor(el) {
+    let d = el.closest("details.module-drawer");
+    while (d) {
+      d.open = true;
+      d = d.parentElement ? d.parentElement.closest("details.module-drawer") : null;
+    }
   }
 
   function route() {
@@ -62,6 +78,7 @@
       if (target) {
         const ws = workspaceForElement(target) || activeWs || DEFAULT_WS;
         activate(ws);
+        openDrawersFor(target);
         requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
         return;
       }

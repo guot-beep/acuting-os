@@ -4698,6 +4698,63 @@ body.point-detail-mode .map-panel {
   display: none;
 }
 
+/* --- Collapsible module drawers (progressive disclosure, 2026-07-25) -----
+   Ting's ask: top of every workspace stays clean — a search box and light
+   navigation — with the heavier modules folded into toggles she opens only
+   when she wants them. Native <details> so it works with no JS and stays
+   accessible; router.js opens the right drawer when an anchor points inside. */
+.module-drawer {
+  margin-bottom: 1rem;
+}
+.module-drawer > summary {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0.85rem 1.1rem;
+}
+.module-drawer > summary::-webkit-details-marker {
+  display: none;
+}
+.module-drawer > summary:hover {
+  border-color: var(--accent);
+}
+.module-drawer > summary::after {
+  color: var(--muted);
+  content: "＋";
+  font-weight: 800;
+  margin-inline-start: auto;
+}
+.module-drawer[open] > summary::after {
+  content: "－";
+}
+.module-drawer[open] > summary {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.mds-title {
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+.mds-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+/* wrapped section keeps its own card styling; just add breathing room */
+.module-drawer[open] > :not(summary) {
+  margin-top: 0.75rem;
+}
+/* a selected point stands alone — no drawer summaries above the detail card */
+body.point-detail-mode .module-drawer {
+  display: none;
+}
+
 /* --- Clinical case: TCM four-diagnosis row (tongue/pulse/pattern) ------- */
 .tcm-dx-row {
   display: grid;
