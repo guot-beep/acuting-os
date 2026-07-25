@@ -514,10 +514,15 @@
     const safety = record.safety_info || {};
     const visual = record.visual_reference || {};
     
-    const tradFunctions = cleanList(record.traditional_functions_zh);
-    const modernPharm = cleanList(record.modern_pharmacology_zh);
+    const tradFunctions = cleanList(record.traditional_functions_zh).length
+      ? cleanList(record.traditional_functions_zh)
+      : cleanList(record.functions_zh);
+    const modernPharm = cleanList(record.modern_pharmacology_zh).length
+      ? cleanList(record.modern_pharmacology_zh)
+      : cleanList(record.modern_functions_zh);
     const actionsEn = cleanList(record.actions_en);
     const indicationsZh = cleanList(record.indications_zh);
+    const condTags = cleanList(record.condition_tags_zh);
     const CONDITION_TAG_EN_MAP = {
       "經閉": "Amenorrhea",
       "痛經": "Dysmenorrhea",
