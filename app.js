@@ -788,7 +788,7 @@ function updateContentModeUI() {
 }
 
 function activeModuleTarget() {
-  const hash = window.location.hash || "#contentLibrary";
+  const hash = window.location.hash || "#ws/home";
   if (hash.startsWith("#point/") || hash === "#acupunctureWorkspace") return "#acupointDirectory";
   if (hash === "#caseWorkspace") return "#patientSystem";
   if (hash === "#fertilityWorkflow") return "#conditionGraph";
@@ -1391,7 +1391,7 @@ function renderOsStatus() {
       : "標準經穴 · 經外奇穴 · 董氏奇穴 · 耳穴";
   }
   caseCountEl.textContent = String(clinicalCases.length);
-  caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
+  if (caseProgressEl) caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
 }
 
 function renderDatabaseHealth() {
