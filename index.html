@@ -42,7 +42,6 @@
           <p class="nav-group__title">系統 System</p>
           <a href="#ws/quality" data-ws="quality" class="nav-sub">品質 Quality</a>
           <a href="#ws/sources" data-ws="sources" class="nav-sub">來源 Sources</a>
-          <a href="#ws/learn" data-ws="learn" class="nav-sub">公開 Learn</a>
         </div>
       </nav>
       <div class="nav-panel__tools">
@@ -106,32 +105,32 @@
         <div id="auditFileStrip" class="k-records"></div>
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Database Health</p>
-            <h2>資料庫完整度追蹤 / Completion Dashboard</h2>
-            <p>把 361 標準經穴、耳穴、董氏奇穴、方劑、病症、病例欄位分開追蹤。這一區用來決定每天最該補哪一批資料，而不是靠感覺亂補。</p>
+            <p class="eyebrow">Build Progress · 誠實版</p>
+            <h2>製作進度與品質報告 / Build Progress Report</h2>
+            <p><strong>「有一張卡片」不等於「已完成」。</strong>真正的完成度看下面<strong>已源審核</strong>那一格 —— 不是看骨架數量。骨架 100% 只代表每個穴位都有一張卡片可查，內容大多還是草稿、待逐筆對照專業來源。這頁記錄各層的真實進度、還缺什麼欄位、以及下一步該補哪一批。</p>
           </div>
           <span class="data-pill" id="auditGeneratedOn">audit</span>
         </div>
         <div class="health-summary-grid">
+          <article class="health-summary-card verified">
+            <span id="healthCompletionPercent">--</span>
+            <strong>已源審核比例 Verified</strong>
+            <small>逐筆對照過專業來源的標準經穴佔比（這才是真完成度）</small>
+          </article>
           <article class="health-summary-card">
             <span id="healthStandardCount">--</span>
-            <strong>Standard points present</strong>
-            <small>WHO/NCCAOM 14-channel 361 layer</small>
+            <strong>骨架卡片 Records exist</strong>
+            <small>每穴有一張可查卡片；有卡片 ≠ 內容已完成</small>
+          </article>
+          <article class="health-summary-card">
+            <span id="healthPlaceholderStandard">--</span>
+            <strong>草稿待審核 Draft</strong>
+            <small>已渲染但來源審核尚未完成，需逐筆對照</small>
           </article>
           <article class="health-summary-card warning">
             <span id="healthMissingCount">--</span>
-            <strong>Missing standard points</strong>
+            <strong>缺標準經穴 Missing</strong>
             <small id="healthNextBatch">Next batch: --</small>
-          </article>
-          <article class="health-summary-card">
-            <span id="healthCompletionPercent">--</span>
-            <strong>Completion</strong>
-            <small>Visible local database coverage</small>
-          </article>
-          <article class="health-summary-card">
-            <span>0</span>
-            <strong>Images embedded</strong>
-            <small>Images intentionally removed; use source links first</small>
           </article>
         </div>
         <div class="health-quality-grid" aria-label="Data quality status">
@@ -139,11 +138,6 @@
             <span id="healthReviewedStandard">--</span>
             <strong>Source-checked standard</strong>
             <small>Standard channel records verified against professional sources</small>
-          </article>
-          <article>
-            <span id="healthPlaceholderStandard">--</span>
-            <strong>Draft standard</strong>
-            <small>Rendered from the 361 layer, source review still pending</small>
           </article>
           <article>
             <span id="healthTungIndex">--</span>
@@ -195,7 +189,11 @@
         </div>
         <div class="health-action-grid">
           <div>
-            <strong>Next content task</strong>
+            <strong>開發紀錄 History</strong>
+            <span>完整逐日進度、決策與每批變更(Antigravity / Claude / Codex)記錄在 <code>PROJECT_LOG.md</code> 與 <code>DECISIONS.md</code>。</span>
+          </div>
+          <div>
+            <strong>下一步 Next content task</strong>
             <span id="healthNextTask">依缺口表建立下一批穴位草稿。</span>
           </div>
           <div>
@@ -536,17 +534,6 @@
         </div>
       </section>
 
-      <section class="learn-section" data-workspace="learn" id="learnSection" aria-label="AcuTing Learn 英文內容層">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">AcuTing Learn</p>
-            <h2>未來英文網站內容層</h2>
-            <p>中文網站可作主題地圖與分類參考；正式內容會改寫成英文，並用 WHO/NCCAOM/NCCIH/PubMed/解剖來源對照，避免只是一份翻譯稿。</p>
-          </div>
-          <span class="data-pill">English-ready</span>
-        </div>
-      </section>
-
       <section class="source-section" data-workspace="sources" id="sourceSection" aria-label="資料來源 Sources">
         <div class="section-heading">
           <div>
@@ -596,6 +583,11 @@
             <span>Core Standard</span>
             <strong>WHO / Manual / School Notes</strong>
             <small>定位、骨度分寸、手法禁忌與專業安全判斷仍需回到標準教材與臨床訓練。</small>
+          </article>
+          <article class="source-card add-slot">
+            <span>＋ 待收集 To add</span>
+            <strong>未來要加的網站 / 資料庫</strong>
+            <small>之後找到新的英文/中文/耳穴/董氏/中藥來源，就照上面的分類加一張卡；逐筆穴位的來源標註走下方 registry。</small>
           </article>
         </div>
         <div id="sourceRegistry" class="k-records" aria-label="Source registry"></div>
