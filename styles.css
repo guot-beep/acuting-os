@@ -5261,3 +5261,7 @@ body.nav-open .nav-panel { transform: none; }
    fixed to the corner, so the ☰ is always one tap away without scrolling back
    up to the header (Ting: 不管甚麼情況都要按得到). */
 body.nav-open .fab-stack { display: none; }
+
+/* The topbar is fixed (~76px); offset every in-page jump / scrollIntoView so
+   the target lands BELOW it instead of hidden under it (Ting: 定位點被遮住). */
+html { scroll-padding-top: 92px; }
