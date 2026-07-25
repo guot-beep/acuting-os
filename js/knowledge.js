@@ -320,9 +320,30 @@
       });
     }
 
-    const links = (record.source_urls || []).filter((url) => /^https?:\/\//.test(url));
+    /* Every source is named. "Source 1" told Ting nothing — a citation must say
+       what it is (Ting: 引用來源都要寫). URLs are named by host; curriculum
+       references collected from field_sources are shown as textbook citations. */
+    const hostName = (url) => {
+      if (/cloudtcm\.com/.test(url)) return "雲端中醫 CloudTCM";
+      if (/americandragon\.com/.test(url)) return "American Dragon";
+      if (/chinesemedicineatlas\.com/.test(url)) return "Chinese Medicine Atlas";
+      if (/acupun\.site/.test(url)) return "acupun.site";
+      try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return "來源 Source"; }
+    };
+    const links = [...new Set((record.source_urls || []).concat(record.exact_source_url || [], record.safety_source_url || [])
+      .filter((url) => typeof url === "string" && /^https?:\/\//.test(url)))];
     if (!citations.length && links.length) {
-      html += links.map((url, index) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#0284c7;font-size:0.85em;">Source ${index + 1} ↗</a>`).join("");
+      html += links.map((url) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#0284c7;font-size:0.85em;">${esc(hostName(url))} ↗</a>`).join("");
+    }
+    const curriculumRefs = [...new Set(Object.values(record.field_sources || {}).flat()
+      .filter((v) => typeof v === "string" && v.startsWith("curriculum/")))];
+    curriculumRefs.forEach((ref) => {
+      const page = (ref.match(/#p(\d+)/) || [])[1];
+      const base = ref.split("/").pop().split("#")[0].replace(/\.(pdf|csv|xlsx|md)$/, "").replace(/_/g, " ");
+      html += `<div style="display:inline-block;padding:6px 12px;background:#f6efdd;border:1px solid #e0d3ae;border-radius:6px;color:#6b5620;font-size:0.85em;">📘 課件 ${esc(base)}${page ? ` p${esc(page)}` : ""}</div>`;
+    });
+    if (record.safety_review_pending) {
+      html += `<div style="flex-basis:100%;margin-top:6px;color:#92400e;font-size:0.85em;">⏳ ${esc(record.safety_review_pending)}</div>`;
     }
 
     html += '</div>';
@@ -615,7 +636,7 @@
         label: "考試與傳統核心 Exam Core", 
         content: `
           ${record.exam_importance ? `<p class="k-exam-badge" style="color:#d97706;font-weight:bold;margin-bottom:8px;">${esc(record.exam_importance)}</p>` : ""}
-          ${record.exam_pearl ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 Bastyr Exam Pearl:</strong> ${esc(record.exam_pearl)}</div>` : ""}
+          ${record.exam_pearl ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 考試重點 Exam Pearl:</strong> ${esc(record.exam_pearl)}</div>` : ""}
           <div class="k-detail-columns">
             ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
             ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered))}
@@ -623,10 +644,9 @@
             ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "根 / 果實 / 全草")}</p>`)}
           </div>
           ${detailSection("傳統功效 (Traditional Functions)", "中醫古籍記載功效標籤", `<div class="k-chip-cloud">${bilingualFunctions}</div>`)}
-          ${record.primary_actions_en && record.primary_actions_en.length ? detailSection("Bastyr Slide Primary Actions", "Bastyr Materia Medica slide actions", detailList(record.primary_actions_en)) : ""}
-          ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "NCBAHM 國考重點炮製說明", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
+          ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
           ${modernPharm.length ? detailSection("現代藥理 (Modern Pharmacology)", "實證藥理作用", `<div class="k-chip-cloud">${bilingualModernPharm}</div>`) : ""}
-          ${actionsEn.length ? detailSection("英文國考功效 (English Actions)", "Chinese Medicine Atlas & NCCAOM actions", detailList(actionsEn)) : ""}
+          ${actionsEn.length ? detailSection("英文功效 (English Actions)", "English action list（來源見下方引用）", detailList(actionsEn)) : ""}
         ` 
       },
       { 
@@ -634,7 +654,7 @@
         label: "主治與症狀 Indications", 
         content: `
           ${detailSection("主治症狀與病機", "Indications", detailList(indicationsZh.length ? indicationsZh : [record.indications_en]))}
-          ${record.key_indications_en && record.key_indications_en.length ? detailSection("Bastyr Key Indications (US Exam)", "Bastyr slide key indications", detailList(record.key_indications_en)) : ""}
+          ${record.key_indications_en && record.key_indications_en.length ? detailSection("重點主治 (Key Indications)", "考試重點主治（來源見下方引用）", detailList(record.key_indications_en)) : ""}
           ${detailSection("病名與症狀索引標籤", "Common Condition Tags", `<div class="k-chip-cloud">${bilingualCondTags}</div>`)}
           ${detailSection("相關經典方劑", "Classical Formulas containing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}
         ` 
