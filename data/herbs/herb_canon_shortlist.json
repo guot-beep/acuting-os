@@ -24158,7 +24158,7 @@
       "latin_name": "Semen Persicae · Prunus persica (L.) Batsch",
       "pharmaceutical_name": "Semen Persicae",
       "botanical_name": "Prunus persica (L.) Batsch / Prunus davidiana (Carrière) Franch.",
-      "category": "活血化瘀藥 (Invigorate Blood)",
+      "category": "活血化瘀藥 / Invigorate Blood",
       "category_zh": "活血化瘀藥",
       "category_en": "Invigorate Blood & Eliminate Stasis",
       "cloudtcm_url": "https://cloudtcm.com/herb/1211",
@@ -29207,7 +29207,7 @@
       "name_zh": "牡蠣",
       "name_en": "Oyster Shell",
       "pinyin": "Mu Li",
-      "category": "安神/平肝藥 / Anchor and Calm",
+      "category": "重鎮降逆藥 / Anchor and Direct Downward",
       "channels_entered": [
         "肝經",
         "腎經",
@@ -29404,7 +29404,7 @@
       "name_zh": "龍骨",
       "name_en": "Dragon Bone",
       "pinyin": "Long Gu",
-      "category": "安神/平肝藥 / Anchor and Calm",
+      "category": "重鎮降逆藥 / Anchor and Direct Downward",
       "channels_entered": [
         "心經",
         "肝經",
@@ -37913,7 +37913,7 @@
       "name_zh": "旋覆花",
       "name_en": "Inula Flower",
       "pinyin": "Xuan Fu Hua",
-      "category": "化痰降逆藥 / Direct Qi Downward",
+      "category": "化痰止咳平喘藥 / Transform Phlegm",
       "channels_entered": [
         "胃經",
         "大腸經",
@@ -44255,7 +44255,8 @@
         "formula.xue_fu_zhu_yu_tang",
         "formula.tian_ma_gou_teng_yin",
         "formula.du_huo_ji_sheng_tang"
-      ]
+      ],
+      "category": "活血化瘀藥 / Invigorate Blood"
     },
     {
       "id": "herb.dan_zhu_ye",
@@ -44305,7 +44306,8 @@
         "formula.zhu_ye_shi_gao_tang",
         "formula.dao_chi_san",
         "formula.san_ren_tang"
-      ]
+      ],
+      "category": "清熱藥 / Clear Heat - Drain Fire"
     },
     {
       "id": "herb.fu_shen",
@@ -44359,7 +44361,7 @@
       "latin_name": "Sclerotium Poriae Pararadicis · Poria cocos (Schw.) Wolf",
       "pharmaceutical_name": "Sclerotium Poriae Pararadicis",
       "botanical_name": "Poria cocos (Schw.) Wolf",
-      "category": "利水滲濕藥 / 安神藥 (Drain Dampness / Calm Spirit)",
+      "category": "利水滲濕藥 / Drain Dampness",
       "category_en": "Drain Dampness & Calm Spirit",
       "cloudtcm_url": "https://cloudtcm.com/herb/1031",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/FuLing.html",
@@ -44537,7 +44539,8 @@
         "formula.xiao_feng_san",
         "formula.gan_lu_xiao_du_dan",
         "formula.pu_ji_xiao_du_yin"
-      ]
+      ],
+      "category": "解表藥 / Release Exterior - Cool Acrid"
     },
     {
       "id": "herb.tong_cao",
@@ -44676,7 +44679,8 @@
         "formula.dang_gui_si_ni_tang",
         "formula.san_ren_tang",
         "formula.gan_lu_xiao_du_dan"
-      ]
+      ],
+      "category": "利水滲濕藥 / Drain Dampness"
     },
     {
       "id": "herb.sha_shen",
@@ -44727,7 +44731,8 @@
         "formula.sha_shen_mai_men_dong_tang",
         "formula.bai_he_gu_jin_tang",
         "formula.mai_men_dong_tang"
-      ]
+      ],
+      "category": "補虛藥 / Tonify Yin"
     },
     {
       "id": "herb.bai_wei",
@@ -44775,7 +44780,8 @@
       "related_formulas": [
         "formula.jia_jian_wei_rui_tang",
         "formula.qing_hao_bie_jia_tang"
-      ]
+      ],
+      "category": "清熱藥 / Clear Deficiency Heat"
     },
     {
       "id": "herb.zi_su_zi",
@@ -44822,7 +44828,8 @@
         "formula.su_zi_jiang_qi_tang",
         "formula.san_zi_yang_qin_tang",
         "formula.ding_chuan_tang"
-      ]
+      ],
+      "category": "化痰止咳平喘藥 / Transform Phlegm"
     },
     {
       "id": "herb.xin_yi",
@@ -44870,7 +44877,8 @@
       ],
       "related_formulas": [
         "formula.cang_er_zi_san"
-      ]
+      ],
+      "category": "解表藥 / Release Exterior - Warm Acrid"
     },
     {
       "id": "herb.da_fu_pi",
@@ -44920,7 +44928,8 @@
       "related_formulas": [
         "formula.huo_xiang_zheng_qi_san",
         "formula.wu_ling_san"
-      ]
+      ],
+      "category": "利水滲濕藥 / Drain Dampness"
     },
     {
       "id": "herb.da_ji",
@@ -44969,7 +44978,8 @@
       "related_formulas": [
         "formula.shi_hui_san",
         "formula.zhu_ling_tang"
-      ]
+      ],
+      "category": "止血藥 / Stop Bleeding"
     },
     {
       "id": "herb.xiao_ji",
@@ -45018,7 +45028,8 @@
       "related_formulas": [
         "formula.shi_hui_san",
         "formula.zhu_ling_tang"
-      ]
+      ],
+      "category": "止血藥 / Stop Bleeding"
     },
     {
       "id": "herb.she_gan",
@@ -45065,7 +45076,8 @@
       ],
       "related_formulas": [
         "formula.gan_lu_xiao_du_dan"
-      ]
+      ],
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity"
     },
     {
       "id": "herb.gua_lou",
@@ -45118,7 +45130,8 @@
         "formula.bei_mu_gua_lou_san",
         "formula.ma_xing_shi_gan_tang",
         "formula.qing_zao_jiu_fei_tang"
-      ]
+      ],
+      "category": "化痰止咳平喘藥 / Transform Phlegm - Cool"
     },
     {
       "id": "herb.sang_bai_pi",
@@ -45170,7 +45183,8 @@
         "formula.ding_chuan_tang",
         "formula.ma_xing_shi_gan_tang",
         "formula.qing_zao_jiu_fei_tang"
-      ]
+      ],
+      "category": "化痰止咳平喘藥 / Stop Cough and Wheeze"
     },
     {
       "id": "herb.sang_piao_xiao",
@@ -45219,7 +45233,8 @@
       "related_formulas": [
         "formula.sang_piao_xiao_san",
         "formula.zhen_wu_tang"
-      ]
+      ],
+      "category": "收澀藥 / Stabilize and Bind"
     },
     {
       "id": "herb.huai_hua",
@@ -45269,7 +45284,8 @@
         "formula.ma_zi_ren_wan",
         "formula.tian_ma_gou_teng_yin",
         "formula.huai_hua_san"
-      ]
+      ],
+      "category": "止血藥 / Stop Bleeding"
     },
     {
       "id": "herb.bai_bian_dou",
@@ -45318,7 +45334,8 @@
       "related_formulas": [
         "formula.tong_xie_yao_fang",
         "formula.shen_ling_bai_zhu_san"
-      ]
+      ],
+      "category": "補虛藥 / Tonify Qi"
     },
     {
       "id": "herb.bai_mao_gen",
@@ -45372,7 +45389,8 @@
         "formula.zhu_ling_tang",
         "formula.bai_he_gu_jin_tang",
         "formula.gan_lu_xiao_du_dan"
-      ]
+      ],
+      "category": "止血藥 / Stop Bleeding"
     },
     {
       "id": "herb.bai_dou_kou",
@@ -45422,7 +45440,8 @@
       "related_formulas": [
         "formula.san_ren_tang",
         "formula.gan_lu_xiao_du_dan"
-      ]
+      ],
+      "category": "化濕藥 / Transform Dampness"
     },
     {
       "id": "herb.bai_fu_zi",
@@ -45469,7 +45488,8 @@
       "related_formulas": [
         "formula.bu_yang_huan_wu_tang",
         "formula.qian_zheng_san"
-      ]
+      ],
+      "category": "化痰止咳平喘藥 / Transform Phlegm - Warm"
     },
     {
       "id": "herb.qu_mai",
@@ -45612,7 +45632,8 @@
       ],
       "related_formulas": [
         "formula.ba_zheng_san"
-      ]
+      ],
+      "category": "利水滲濕藥 / Drain Dampness"
     },
     {
       "id": "herb.shi_jue_ming",
@@ -45660,7 +45681,8 @@
       "related_formulas": [
         "formula.bu_yang_huan_wu_tang",
         "formula.tian_ma_gou_teng_yin"
-      ]
+      ],
+      "category": "平肝息風藥 / Extinguish Wind"
     },
     {
       "id": "herb.ling_yang_jiao",
@@ -45709,7 +45731,8 @@
         "formula.tian_ma_gou_teng_yin",
         "formula.ling_jiao_gou_teng_tang",
         "formula.qing_zao_jiu_fei_tang"
-      ]
+      ],
+      "category": "平肝息風藥 / Extinguish Wind"
     },
     {
       "id": "herb.rou_dou_kou",
@@ -45758,7 +45781,8 @@
       ],
       "related_formulas": [
         "formula.jian_pi_wan"
-      ]
+      ],
+      "category": "收澀藥 / Stabilize and Bind"
     },
     {
       "id": "herb.qian_cao_gen",
@@ -45807,7 +45831,8 @@
         "formula.sang_ju_yin",
         "formula.shi_hui_san",
         "formula.shi_xiao_san"
-      ]
+      ],
+      "category": "止血藥 / Stop Bleeding"
     },
     {
       "id": "herb.he_ye",
@@ -45855,7 +45880,8 @@
       "related_formulas": [
         "formula.bai_hu_tang",
         "formula.shi_hui_san"
-      ]
+      ],
+      "category": "清熱藥 / Clear Heat - Drain Fire"
     },
     {
       "id": "herb.tu_si_zi",
@@ -45903,7 +45929,8 @@
       "related_formulas": [
         "formula.zuo_gui_wan",
         "formula.you_gui_wan"
-      ]
+      ],
+      "category": "補虛藥 / Tonify Yang"
     },
     {
       "id": "herb.bian_xu",
@@ -46038,7 +46065,8 @@
       "related_formulas": [
         "formula.ba_zheng_san",
         "formula.gan_lu_xiao_du_dan"
-      ]
+      ],
+      "category": "利水滲濕藥 / Drain Dampness"
     },
     {
       "id": "herb.xue_yu_tan",
@@ -46087,7 +46115,8 @@
       "related_formulas": [
         "formula.gui_zhi_fu_ling_wan",
         "formula.shi_xiao_san"
-      ]
+      ],
+      "category": "止血藥 / Stop Bleeding"
     },
     {
       "id": "herb.wu_ling_zhi",
@@ -46229,7 +46258,8 @@
       "related_formulas": [
         "formula.xue_fu_zhu_yu_tang",
         "formula.shi_xiao_san"
-      ]
+      ],
+      "category": "活血化瘀藥 / Invigorate Blood"
     },
     {
       "id": "herb.san_leng",
@@ -46278,7 +46308,8 @@
       "related_formulas": [
         "formula.xue_fu_zhu_yu_tang",
         "formula.zhi_bao_dan"
-      ]
+      ],
+      "category": "活血化瘀藥 / Invigorate Blood"
     },
     {
       "id": "herb.bie_jia",
@@ -46328,7 +46359,8 @@
         "formula.qing_hao_bie_jia_tang",
         "formula.yi_guan_jian",
         "formula.gui_zhi_fu_ling_wan"
-      ]
+      ],
+      "category": "補虛藥 / Tonify Yin"
     },
     {
       "id": "herb.wu_mei",
@@ -46484,7 +46516,8 @@
         "formula.qing_hao_bie_jia_tang",
         "formula.er_chen_tang",
         "formula.wu_mei_wan"
-      ]
+      ],
+      "category": "收澀藥 / Stabilize and Bind"
     },
     {
       "id": "herb.deng_xin_cao",
@@ -46623,7 +46656,8 @@
       ],
       "related_formulas": [
         "formula.ba_zheng_san"
-      ]
+      ],
+      "category": "利水滲濕藥 / Drain Dampness"
     },
     {
       "id": "herb.cong_bai",
@@ -46671,7 +46705,8 @@
       "related_formulas": [
         "formula.jia_jian_wei_rui_tang",
         "formula.bai_hu_tang"
-      ]
+      ],
+      "category": "解表藥 / Release Exterior - Warm Acrid"
     },
     {
       "id": "herb.yin_xing",
@@ -46717,7 +46752,8 @@
       ],
       "related_formulas": [
         "formula.ding_chuan_tang"
-      ]
+      ],
+      "category": "化痰止咳平喘藥 / Transform Phlegm"
     },
     {
       "id": "herb.yi_tang",
@@ -46765,7 +46801,8 @@
       ],
       "related_formulas": [
         "formula.xiao_jian_zhong_tang"
-      ]
+      ],
+      "category": "補虛藥 / Tonify Qi"
     },
     {
       "id": "herb.ma_bo",
@@ -46811,7 +46848,8 @@
       ],
       "related_formulas": [
         "formula.pu_ji_xiao_du_yin"
-      ]
+      ],
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity"
     },
     {
       "id": "herb.she_xiang",
@@ -46856,7 +46894,8 @@
       "condition_tags_zh": [],
       "related_formulas": [
         "formula.zhi_bao_dan"
-      ]
+      ],
+      "category": "開竅藥 / Open Orifices"
     },
     {
       "id": "herb.hei_zhi_ma",
@@ -46902,7 +46941,8 @@
       "condition_tags_zh": [],
       "related_formulas": [
         "formula.xiao_feng_san"
-      ]
+      ],
+      "category": "補虛藥 / Tonify Yin"
     },
     {
       "id": "herb.gao_ben",
@@ -46944,7 +46984,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "解表藥 / Release Exterior - Warm Acrid"
     },
     {
       "id": "herb.fu_ping",
@@ -46987,7 +47028,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "解表藥 / Release Exterior - Cool Acrid"
     },
     {
       "id": "herb.zi_cao",
@@ -47034,7 +47076,8 @@
       ],
       "related_formulas": [
         "formula.xiao_feng_san"
-      ]
+      ],
+      "category": "清熱藥 / Clear Heat - Cool Blood"
     },
     {
       "id": "herb.chuan_xin_lian",
@@ -47081,7 +47124,8 @@
       "condition_tags_zh": [
         "清熱解毒燥濕"
       ],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity"
     },
     {
       "id": "herb.shan_dou_gen",
@@ -47128,7 +47172,8 @@
       ],
       "related_formulas": [
         "formula.gan_lu_xiao_du_dan"
-      ]
+      ],
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity"
     },
     {
       "id": "herb.ma_chi_xian",
@@ -47171,7 +47216,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity"
     },
     {
       "id": "herb.chui_pen_cao",
@@ -47215,7 +47261,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity"
     },
     {
       "id": "herb.bai_jiang_cao",
@@ -47259,7 +47306,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity"
     },
     {
       "id": "herb.fan_xie_ye",
@@ -47306,7 +47354,8 @@
       "related_formulas": [
         "formula.huo_xiang_zheng_qi_san",
         "formula.wu_ling_san"
-      ]
+      ],
+      "category": "瀉下藥 / Drain Downward"
     },
     {
       "id": "herb.lu_hui",
@@ -47350,7 +47399,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "瀉下藥 / Drain Downward"
     },
     {
       "id": "herb.cao_dou_kou",
@@ -47397,7 +47447,8 @@
       ],
       "related_formulas": [
         "formula.ping_wei_san"
-      ]
+      ],
+      "category": "化濕藥 / Transform Dampness"
     },
     {
       "id": "herb.cao_guo",
@@ -47444,7 +47495,8 @@
       ],
       "related_formulas": [
         "formula.san_ren_tang"
-      ]
+      ],
+      "category": "化濕藥 / Transform Dampness"
     },
     {
       "id": "herb.hai_jin_sha",
@@ -47491,7 +47543,8 @@
       ],
       "related_formulas": [
         "formula.da_chai_hu_tang"
-      ]
+      ],
+      "category": "利水滲濕藥 / Drain Dampness"
     },
     {
       "id": "herb.wu_yao",
@@ -47545,7 +47598,8 @@
         "formula.gui_zhi_fu_ling_wan",
         "formula.ping_wei_san",
         "formula.qian_zheng_san"
-      ]
+      ],
+      "category": "理氣藥 / Regulate Qi"
     },
     {
       "id": "herb.jiang_huang",
@@ -47692,7 +47746,8 @@
       ],
       "related_formulas": [
         "formula.jiu_wei_qiang_huo_tang"
-      ]
+      ],
+      "category": "活血化瘀藥 / Invigorate Blood"
     },
     {
       "id": "herb.pang_da_hai",
@@ -47735,7 +47790,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "化痰止咳平喘藥 / Transform Phlegm"
     },
     {
       "id": "herb.ci_shi",
@@ -47782,7 +47838,8 @@
       "related_formulas": [
         "formula.tian_wang_bu_xin_dan",
         "formula.tian_ma_gou_teng_yin"
-      ]
+      ],
+      "category": "安神藥 / Calm Spirit"
     },
     {
       "id": "herb.bing_pian",
@@ -47828,7 +47885,8 @@
       "condition_tags_zh": [
         "開竅醒神清熱止痛"
       ],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "開竅藥 / Open Orifices"
     },
     {
       "id": "herb.huang_jing",
@@ -47872,7 +47930,8 @@
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "condition_tags_zh": [],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "補虛藥 / Tonify Qi"
     },
     {
       "id": "herb.mo_han_lian",
@@ -47917,7 +47976,8 @@
       "condition_tags_zh": [
         "滋補肝腎涼血止血"
       ],
-      "related_formulas": []
+      "related_formulas": [],
+      "category": "補虛藥 / Tonify Yin"
     },
     {
       "id": "herb.hu_zhang",
@@ -47933,7 +47993,7 @@
       "latin_name": "Radix et Rhizoma Polygoni Cuspidati · Reynoutria japonica Houtt.",
       "pharmaceutical_name": "Radix et Rhizoma Polygoni Cuspidati",
       "botanical_name": "Reynoutria japonica Houtt.",
-      "category": "活血化瘀藥 (Invigorate Blood)",
+      "category": "活血化瘀藥 / Invigorate Blood",
       "category_zh": "活血化瘀藥",
       "category_en": "Invigorate Blood & Drain Dampness",
       "cloudtcm_url": "https://cloudtcm.com/herb/1062",
@@ -48069,7 +48129,7 @@
       "latin_name": "Fructus Terminaliae Chebulae · Terminalia chebula Retz.",
       "pharmaceutical_name": "Fructus Terminaliae Chebulae",
       "botanical_name": "Terminalia chebula Retz.",
-      "category": "收澀藥 (Astringent Herbs)",
+      "category": "收澀藥 / Stabilize and Bind",
       "category_zh": "收澀藥",
       "category_en": "Astringent Herbs",
       "cloudtcm_url": "https://cloudtcm.com/herb/1063",
@@ -48192,7 +48252,7 @@
       "latin_name": "Halloysitum Rubrum",
       "pharmaceutical_name": "Halloysitum Rubrum",
       "botanical_name": "Halloysitum Rubrum",
-      "category": "收澀藥 (Astringent Herbs)",
+      "category": "收澀藥 / Stabilize and Bind",
       "category_zh": "收澀藥",
       "category_en": "Astringent Herbs",
       "cloudtcm_url": "https://cloudtcm.com/herb/987",

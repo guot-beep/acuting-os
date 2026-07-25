@@ -8,7 +8,7 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 
 > 你在 AcuTing OS repo 幫 Ting 填中藥卡。開工前依序讀:
 > `docs/BLUEPRINT.md` → `docs/AI_ROLES.md` → `docs/CONTENT_PIPELINE.md` →
-> `docs/HERB_FORMULA_CARD_SPEC.md` → `curriculum/herbs/README.md`。
+> `docs/HERB_FORMULA_CARD_SPEC.md` → **`docs/HERB_RECORD_STANDARD.md`(欄位規範,機器強制)** → `curriculum/herbs/README.md`。
 >
 > **來源優先序**:① `curriculum/herbs/` 的 Chenoweth 三檔(`.md`/`.csv`
 > 文字版;356 味拼音/拉丁表、功效分類表、Materia Medica 精要 — 這是 Ting
