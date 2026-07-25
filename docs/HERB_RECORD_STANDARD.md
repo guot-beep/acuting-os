@@ -18,13 +18,21 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `functions_zh` | array | **只放傳統功效**(發汗解表…)。現代藥理絕不混進來 |
 | `modern_functions_zh` | array | **只放現代藥理**(抗發炎…) |
 | `indications_zh` | array | 主治 |
-| `condition_tags_zh` | array | 病症標籤(卡片會配英文對照) |
+| `condition_tags_zh` / `condition_tags_en` | array | 病症標籤 **中英成對** |
+| `modern_functions_en` | array | 現代藥理英文,與 `modern_functions_zh` **逐項對齊** |
+| `cautions_en` | array | 注意事項英文,與 `cautions_zh` **逐項對齊** |
+| `actions_en` | array | 英文功效;若要與 `functions_zh` 配對顯示則**長度必須相同**,否則卡片只顯示中文標籤 + 另列英文清單 |
 | `dosage` | object | 有來源才填;**絕不編數字**。缺 = 留空 + 待補 |
 | `cautions_zh` | array | 禁忌/注意(安全欄位,優先審) |
 | `safety_flags` | array | 安全旗標 |
 | `related_formulas` | array | 方劑 id 連結 |
 | `exact_source_url` / `safety_source_url` | string | 逐筆出處;curriculum 用 `curriculum/herbs/<file>#p<N>` |
 | `review_status` | string | AI 只能寫 `"draft"`;`source_checked` 只由 Ting 的 RV1 流程升級 |
+
+**中英標籤鐵則**:`_en` 陣列必須與對應 `_zh` **同長度、同順序**(index-aligned)。
+長度不合 = validator E5 直接 FAIL —— 因為錯位會讓每個標籤都配到別人的英文
+(Antigravity 之前的 Insomnia/Palpitations 錯位就是這樣來的)。寧可整個 `_en`
+留空(卡片會只顯示中文),也不要半套錯位。
 
 **通則**:每欄雙語精神(`_zh` 欄位有內容就必須含中文 — validator E4 直接 FAIL);
 不可覆蓋更豐富的舊值(只加深不變薄);`data/generated/` 不手改。
@@ -51,3 +59,12 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 category 100% · functions_zh 98% · cautions_zh 98% · dosage 74% ·
 modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
 已源審核 57/266。缺口就是接下來批次的工作清單(照 board outline 分類順序)。
+
+## 5. 待補的深度層(next passes)
+
+- **毒性/交互作用**:CloudTCM 與 American Dragon 都有更深的 toxicity、
+  herb–drug interaction 資料,需有瀏覽能力的 agent 對照後填入
+  (`safety_review_pending` 欄位標記,樣板見 `herb.du_zhong`)。
+- **中英標籤補齊**:目前 `modern_functions_en` 缺 195 筆、`condition_tags_en`
+  缺 171 筆、`cautions_en` 缺 261 筆 —— 這是接下來批次的明確工作量。
+- **帶聲調拼音**:208 筆待補。

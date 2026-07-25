@@ -556,21 +556,58 @@
       "晨瀉": "Daybreak Diarrhea"
     };
 
+    /* Only pair 功效 with actions_en when the two arrays are index-aligned. On
+       older records actions_en is an independent English action list of a
+       different length, and pairing it by index printed the WRONG English on
+       every tag after the first gap. Unaligned -> Chinese tags stand alone and
+       the English actions render in their own section below. */
+    const actionsAligned = actionsEn.length === tradFunctions.length && tradFunctions.length > 0;
     const bilingualFunctions = tradFunctions.map((zh, i) => {
-      const en = actionsEn[i] || "";
+      const en = actionsAligned ? (actionsEn[i] || "") : "";
       return en ? `<span class="k-chip" style="background:#ecfdf5;color:#047857;font-weight:500;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(zh)} <small style="opacity:0.85;margin-left:4px;font-weight:normal;color:#065f46;">(${esc(en)})</small></span>` : tag(zh);
     }).join("");
 
-    const bilingualCondTags = condTags.map(zh => {
-      const en = CONDITION_TAG_EN_MAP[zh] || "";
-      return en ? `<span class="k-chip" style="background:#f1f5f9;color:#334155;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(zh)} <small style="opacity:0.85;margin-left:4px;font-weight:normal;color:#475569;">(${esc(en)})</small></span>` : tag(zh);
+    /* Bilingual tag chips. English comes from the record's own index-aligned
+       `_en` array first (the standard), then the shared fallback map. A tag
+       with no English still renders — missing English is a gap to fill, not a
+       reason to hide content. */
+    const bilingualChips = (zhList, enList, css, fallbackMap) => zhList.map((zh, i) => {
+      const en = (enList && enList[i]) || (fallbackMap && fallbackMap[zh]) || "";
+      if (!en) return `<span class="k-chip" style="${css}">${esc(zh)}</span>`;
+      return `<span class="k-chip" style="${css}">${esc(zh)} <small style="opacity:0.85;margin-left:4px;font-weight:normal;">(${esc(en)})</small></span>`;
     }).join("");
+
+    const bilingualCondTags = bilingualChips(
+      condTags,
+      cleanList(record.condition_tags_en),
+      "background:#f1f5f9;color:#334155;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;",
+      CONDITION_TAG_EN_MAP
+    );
+    const bilingualModernPharm = bilingualChips(
+      modernPharm,
+      cleanList(record.modern_functions_en),
+      "background:#e0f2fe;color:#0369a1;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;"
+    );
     
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
     const keyPairs = (record.key_pairs || []).map(p => typeof p === 'string' ? `<div class="k-pair-item"><strong>${esc(p)}</strong></div>` : `<div class="k-pair-item" style="margin-bottom:8px;padding:8px 12px;background:#f8fafc;border-left:3px solid #0284c7;border-radius:4px;"><strong>${esc(p.pair)}</strong><p style="margin:2px 0 0 0;font-size:0.92em;color:#334155;">${esc(p.rationale_zh || p.rationale || "")}</p></div>`).join("");
     
-    const contraList = cleanList(safety.contraindications_zh);
-    const cautionList = cleanList(safety.cautions_zh);
+    /* Safety text lives in safety_info on newer records but at the top level on
+       CloudTCM-sourced ones; read both or the panel renders empty. English is
+       paired in when the record carries it (Safety deepening from CloudTCM /
+       American Dragon is a later pass — see HERB_RECORD_STANDARD §5). */
+    const pairEn = (zhList, enList) => zhList.map((zh, i) => {
+      const en = (enList && enList[i]) || "";
+      return en ? `${zh}（${en}）` : zh;
+    });
+    const contraList = pairEn(
+      cleanList(safety.contraindications_zh).length ? cleanList(safety.contraindications_zh) : cleanList(record.contraindications_zh),
+      cleanList(safety.contraindications_en).length ? cleanList(safety.contraindications_en) : cleanList(record.contraindications_en)
+    );
+    const cautionList = pairEn(
+      cleanList(safety.cautions_zh).length ? cleanList(safety.cautions_zh) : cleanList(record.cautions_zh),
+      cleanList(safety.cautions_en).length ? cleanList(safety.cautions_en) : cleanList(record.cautions_en)
+    );
 
     return [
       { 
@@ -588,7 +625,7 @@
           ${detailSection("傳統功效 (Traditional Functions)", "中醫古籍記載功效標籤", `<div class="k-chip-cloud">${bilingualFunctions}</div>`)}
           ${record.primary_actions_en && record.primary_actions_en.length ? detailSection("Bastyr Slide Primary Actions", "Bastyr Materia Medica slide actions", detailList(record.primary_actions_en)) : ""}
           ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "NCBAHM 國考重點炮製說明", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
-          ${modernPharm.length ? detailSection("現代藥理 (Modern Pharmacology)", "實證藥理作用", `<div class="k-chip-cloud">${modernPharm.map(t => `<span class="k-chip" style="background:#e0f2fe;color:#0369a1;">${esc(t)}</span>`).join("")}</div>`) : ""}
+          ${modernPharm.length ? detailSection("現代藥理 (Modern Pharmacology)", "實證藥理作用", `<div class="k-chip-cloud">${bilingualModernPharm}</div>`) : ""}
           ${actionsEn.length ? detailSection("英文國考功效 (English Actions)", "Chinese Medicine Atlas & NCCAOM actions", detailList(actionsEn)) : ""}
         ` 
       },
