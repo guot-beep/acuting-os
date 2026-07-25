@@ -5143,6 +5143,7 @@ body.nav-open .nav-panel { transform: none; }
 .fab--history { background: var(--gold); color: #26200e; }
 .fab--menu { background: var(--nav-bg); }
 .fab__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-/* menu FAB is redundant with the header ☰ on wide screens; keep FABs for touch */
-@media (min-width: 921px) { .fab--menu { display: none; } }
+/* The menu FAB stays reachable in every situation and at every width — it is
+   fixed to the corner, so the ☰ is always one tap away without scrolling back
+   up to the header (Ting: 不管甚麼情況都要按得到). */
 body.nav-open .fab-stack { display: none; }
