@@ -106,12 +106,10 @@ if (missingTargetContextHooks.length) {
   fail("Hash-jump destinations must provide visible target context and top offset.", missingTargetContextHooks);
 }
 
+// 2026-07-25: topic pages (formula/herb/condition/comparison) are lookup-only —
+// meta blocks, progress strips, and their quicknavs moved to the Quality page
+// per Ting. Only the system/clinical pages keep dense-module anchors.
 const requiredQuicknavTargets = [
-  "formulaSchema",
-  "formulaCategories",
-  "formulaSafety",
-  "formulaProgress",
-  "conditionLayers",
   "conditionGraphRule",
   "sourceEnglish",
   "sourceChinese",
@@ -127,8 +125,8 @@ if (missingQuicknavTargets.length) {
 }
 
 const sectionQuicknavCount = matches(/class="section-quicknav"/g).length;
-if (sectionQuicknavCount < 4) {
-  fail("Formula, Condition, Sources, and Case Workspace should each have a section quicknav.", [`found ${sectionQuicknavCount}`]);
+if (sectionQuicknavCount < 2) {
+  fail("Sources and Case Workspace should each have a section quicknav.", [`found ${sectionQuicknavCount}`]);
 }
 
 const requiredPointDetailHooks = [

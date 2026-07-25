@@ -145,6 +145,11 @@
             <small>Standard channel records verified against professional sources</small>
           </article>
           <article>
+            <span id="healthComparisonCells">--</span>
+            <strong>鑑別表格子 Comparison cells</strong>
+            <small id="healthComparisonTables">owner-filled discriminator cells</small>
+          </article>
+          <article>
             <span id="healthTungIndex">--</span>
             <strong>Master Tung index</strong>
             <small>Searchable index-only records, source review pending</small>
@@ -392,105 +397,33 @@
       <section class="formula-section" data-workspace="formula" id="formulaSection" aria-label="方劑資料庫">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Formula Layer</p>
+            <p class="eyebrow">Formulas</p>
             <h2>方劑資料庫 / Herbal Formulas</h2>
-            <p>先建立像穴位卡片一樣的欄位：方名、英文名、組成、功效、主治證型、加減、禁忌、相關穴位與西藥注意。</p>
+            <p>方名、組成、功效、主治證型、加減與禁忌，依分類瀏覽或直接搜尋。</p>
           </div>
-          <span class="data-pill">下一階段填內容</span>
-        </div>
-        <nav class="section-quicknav" aria-label="Formula section quick navigation">
-          <a href="#formulaRecords">Records</a>
-          <a href="#comparisonSection">Comparisons</a>
-          <a href="#formulaSchema">Schema</a>
-          <a href="#formulaCategories">Categories</a>
-          <a href="#formulaSafety">Safety</a>
-          <a href="#formulaProgress">Progress</a>
-        </nav>
-        <div class="formula-preview-grid" id="formulaSchema">
-          <article class="formula-preview-card">
-            <span>Schema</span>
-            <strong>每張方劑卡要能連回病症與病例</strong>
-            <small>Formula → pattern → condition → points → herbs → medication cautions → SOAP note。</small>
-          </article>
-          <article class="formula-preview-card">
-            <span>Example workflow</span>
-            <strong>不孕症 / Fertility coordination</strong>
-            <small>PCOS、IVF/IUI 週期、西藥、針灸頻率、方藥禁忌與追蹤指標要放同一條知識鏈。</small>
-          </article>
-          <article class="formula-preview-card">
-            <span>Review status</span>
-            <strong>草稿、已翻譯、已對照、已臨床審核</strong>
-            <small>每筆內容都保留來源、最後審核日期與是否適合公開。</small>
-          </article>
-        </div>
-        <div class="formula-category-panel" id="formulaCategories" aria-label="Formula category browse">
-          <div class="mini-heading">
-            <strong>Formula Categories / 方劑分類</strong>
-            <span>先依類別建立入口，之後逐方補入組成、方義、證型、加減、安全與 public review 狀態。</span>
-          </div>
-          <div class="formula-category-grid">
-            <article class="formula-category-card"><span>解表</span><strong>Release the Exterior</strong><small>Wind-cold, wind-heat, early exterior patterns.</small></article>
-            <article class="formula-category-card"><span>清熱</span><strong>Clear Heat</strong><small>Heat, fire toxin, damp-heat, blood heat, deficiency heat.</small></article>
-            <article class="formula-category-card"><span>和解</span><strong>Harmonize</strong><small>Shaoyang, liver-spleen, mixed hot-cold, digestive disharmony.</small></article>
-            <article class="formula-category-card"><span>溫裡</span><strong>Warm the Interior</strong><small>Interior cold, yang deficiency, cold pain, collapse-type patterns.</small></article>
-            <article class="formula-category-card"><span>補益</span><strong>Tonify</strong><small>Qi, blood, yin, yang, essence, and chronic deficiency.</small></article>
-            <article class="formula-category-card"><span>理氣</span><strong>Regulate Qi</strong><small>Qi stagnation, rebellious qi, emotional constraint, nausea.</small></article>
-            <article class="formula-category-card"><span>理血</span><strong>Regulate Blood</strong><small>Blood stasis, bleeding, menstrual pain, trauma, masses.</small></article>
-            <article class="formula-category-card"><span>祛濕</span><strong>Dispel Dampness</strong><small>Dampness, edema, urinary difficulty, damp-heat, wind-damp.</small></article>
-            <article class="formula-category-card"><span>化痰</span><strong>Transform Phlegm</strong><small>Phlegm-damp, phlegm-heat, cough, nodules, dizziness.</small></article>
-            <article class="formula-category-card"><span>安神</span><strong>Calm the Spirit</strong><small>Insomnia, palpitations, anxiety patterns, restlessness.</small></article>
-            <article class="formula-category-card"><span>治風</span><strong>Extinguish Wind</strong><small>Internal wind, tremor, dizziness, spasms, neurological flags.</small></article>
-            <article class="formula-category-card"><span>消食</span><strong>Reduce Food Stagnation</strong><small>Food accumulation, bloating, reflux, pediatric digestive review.</small></article>
-          </div>
-        </div>
-        <div class="formula-safety-strip" id="formulaSafety">
-          <div><strong>Public formula rule</strong><span>公開英文版不可只列「功效」，必須同時列 pattern indication、contraindications、herb-drug cautions、pregnancy/fertility review。</span></div>
-          <div><strong>Clinic rule</strong><span>病例紀錄裡的方劑使用要連回 SOAP note、用藥、西醫診斷、療程日期與症狀變化。</span></div>
         </div>
         <div id="formulaRecords" class="k-records" aria-label="Formula records"></div>
-        <div class="formula-progress-strip" id="formulaProgress">
-          <span><strong id="statFormulas">--</strong> core formulas searchable</span>
-          <span><strong id="statFormulaCategories">--</strong> formula categories</span>
-        </div>
       </section>
 
-      <section class="formula-section herb-section" data-workspace="herb" id="herbSection" aria-label="Herb Materia Medica draft index">
+      <section class="formula-section herb-section" data-workspace="herb" id="herbSection" aria-label="中藥 Materia Medica">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Materia Medica Layer</p>
-            <h2>Single Herbs / CH Draft Canon</h2>
-            <p>Draft study index for single herbs. Every record remains source-review pending and is shown as study reference only.</p>
+            <p class="eyebrow">Materia Medica</p>
+            <h2>中藥 / Single Herbs</h2>
+            <p>性味歸經、功效、主治、安全與相關方劑，依分類瀏覽或直接搜尋。</p>
           </div>
-          <span class="data-pill">draft source-review pending</span>
         </div>
-        <nav class="section-quicknav" aria-label="Herb section quick navigation">
-          <a href="#herbRecords">Records</a>
-          <a href="#herbProgress">Progress</a>
-          <a href="#formulaSection">Formulas</a>
-        </nav>
         <div id="herbRecords" class="k-records" aria-label="Herb records"></div>
-        <div class="formula-progress-strip" id="herbProgress">
-          <span><strong id="statHerbs">--</strong> draft herb records</span>
-          <span><strong id="statHerbCategories">--</strong> herb categories</span>
-          <span><strong id="statHerbFormulaLinks">--</strong> related formula links</span>
-          <span><strong id="statHerbSafetyFlags">--</strong> safety flags</span>
-        </div>
       </section>
 
-      <section class="formula-section comparison-section" data-workspace="comparison" id="comparisonSection" aria-label="Pattern comparison tables">
+      <section class="formula-section comparison-section" data-workspace="comparison" id="comparisonSection" aria-label="辨證鑑別表">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Learning Loop</p>
-            <h2>Pattern Comparisons / 辨證鑑別表</h2>
-            <p>Contrast tables make look-alike patterns visible side by side. Skeletons stay draft until Ting fills the discriminator cells from class notes or textbooks.</p>
+            <p class="eyebrow">Differentiation</p>
+            <h2>辨證鑑別 / Pattern Comparisons</h2>
+            <p>相似證型並排對照：病機、舌脈、鑑別要點。TCM 病理與 Advanced Therapeutics 的對照表都收在這裡。</p>
           </div>
-          <span class="data-pill">owner-filled cells</span>
         </div>
-        <nav class="section-quicknav" aria-label="Comparison section quick navigation">
-          <a href="#comparisonRecords">Records</a>
-          <a href="#formulaSection">Formulas</a>
-          <a href="#conditionGraph">Conditions</a>
-        </nav>
         <div id="comparisonRecords" class="k-records" aria-label="Comparison records"></div>
       </section>
 
@@ -498,39 +431,10 @@
       <section class="condition-graph-section" data-workspace="condition" id="conditionGraph" aria-label="Condition knowledge graph">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Condition Graph</p>
-            <h2>中西醫病症對照 / Conditions Database</h2>
-            <p>這一層把西醫病名、傳統病名、TCM 證型、常見用藥、穴位、方劑與安全旗標分開存，再用關聯連起來。這樣不會把 PCOS 直接等同於某一個證型，也方便日後病例搜尋。</p>
+            <p class="eyebrow">Conditions</p>
+            <h2>中西醫病症對照 / Conditions</h2>
+            <p>西醫病名 × 傳統病名 × TCM 證型，中英標籤互相關聯，連向常用穴位、方劑與安全旗標。</p>
           </div>
-          <span class="data-pill">relationship database</span>
-        </div>
-        <nav class="section-quicknav" aria-label="Condition graph quick navigation">
-          <a href="#conditionLayers">Layers</a>
-          <a href="#conditionGraphRule">Graph Rule</a>
-          <a href="#fertilityWorkflow">Fertility Workflow</a>
-          <a href="#caseWorkspace">Case Notes</a>
-        </nav>
-        <div class="condition-graph-grid" id="conditionLayers">
-          <article class="condition-card">
-            <span>Western</span>
-            <strong>6 fertility-related conditions</strong>
-            <small>PCOS, anovulation, unexplained infertility, endometriosis context, diminished ovarian reserve, recurrent pregnancy loss context.</small>
-          </article>
-          <article class="condition-card">
-            <span>Eastern</span>
-            <strong>6 traditional disease categories</strong>
-            <small>Infertility, irregular menstruation, delayed menstruation, amenorrhea, dysmenorrhea, threatened miscarriage context.</small>
-          </article>
-          <article class="condition-card">
-            <span>Patterns</span>
-            <strong>5 TCM pattern families</strong>
-            <small>Kidney deficiency, Liver qi stagnation, Phlegm-damp, Blood stasis, Spleen qi deficiency.</small>
-          </article>
-          <article class="condition-card">
-            <span>Links</span>
-            <strong>Clinical graph relations</strong>
-            <small>Conditions connect to patterns, acupuncture seeds, formula seeds, medication context, fertility workflow, and red flags.</small>
-          </article>
         </div>
         <div id="conditionRecords" class="k-records" aria-label="Condition records"></div>
         <div class="condition-warning" id="conditionGraphRule">

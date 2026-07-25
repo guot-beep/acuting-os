@@ -628,20 +628,71 @@
     dialog.scrollTop = 0;
   }
 
-  /* Category filter chips (herb-atlas look: 解表 12 · 活血化瘀 15 …). Drives the
-     existing hidden <select> so each section's updateGrid keeps working. */
-  function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn) {
+  /* Category filter chips — the single category system (herb-atlas look).
+     One chip per category with a small round 圖示 (first 中文 char), a count,
+     and a one-line description under the row for the active category.
+     Raw category labels are inconsistent in the data ("清熱劑" vs
+     "清熱劑 / Clear Heat"), which used to split one category into two chips;
+     labels are merged by 中文 name unless they carry genuinely different
+     English subcategories (herb 解表藥 Warm vs Cool Acrid stay separate).
+     Chips drive the existing hidden <select>; merged chips filter via a
+     "||"-joined value that the grid updaters split. */
+  function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn, descMap) {
     const container = el(containerId);
     const select = el(selectId);
     if (!container || !select) return;
+
+    const zhOf = (raw) => String(raw).split("/")[0].trim();
+    const enOf = (raw) => String(raw).split("/").slice(1).join("/").trim();
+
     const counts = new Map();
     records.forEach((r) => { const c = categoryFn(r); if (c) counts.set(c, (counts.get(c) || 0) + 1); });
-    const cats = [...counts.entries()].sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(b[0]));
-    const chip = (val, label, n, active) =>
-      `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(val)}">${esc(label)}<span class="cat-chip__n">${n}</span></button>`;
+
+    // group raw labels by 中文 name; merge when English suffixes don't disagree
+    const groups = new Map();
+    for (const raw of counts.keys()) {
+      const zh = zhOf(raw);
+      if (!groups.has(zh)) groups.set(zh, []);
+      groups.get(zh).push(raw);
+    }
+    const chips = [];
+    for (const [zh, raws] of groups) {
+      const ens = [...new Set(raws.map(enOf).filter(Boolean))];
+      if (ens.length <= 1) {
+        chips.push({
+          value: raws.join("||"),
+          zh, en: ens[0] || "",
+          count: raws.reduce((s, r) => s + counts.get(r), 0)
+        });
+      } else {
+        raws.forEach((raw) => chips.push({ value: raw, zh, en: enOf(raw), count: counts.get(raw) }));
+      }
+    }
+    chips.sort((a, b) => b.count - a.count || a.zh.localeCompare(b.zh));
+
+    // merged "a||b" values need a real <option> or select.value assignment is dropped
+    chips.forEach((c) => {
+      if (c.value.includes("||") && ![...select.options].some((o) => o.value === c.value)) {
+        const o = document.createElement("option");
+        o.value = c.value; o.textContent = c.zh;
+        select.appendChild(o);
+      }
+    });
+
+    const chipHtml = (value, zh, en, n, active) =>
+      `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(value)}">
+        <span class="cat-chip__ico" aria-hidden="true">${esc(zh.charAt(0))}</span>
+        <span class="cat-chip__t">${esc(zh)}${en ? `<small>${esc(en)}</small>` : ""}</span>
+        <span class="cat-chip__n">${n}</span>
+      </button>`;
     const render = () => {
       const cur = select.value;
-      container.innerHTML = chip("", "全部 All", records.length, !cur) + cats.map(([c, n]) => chip(c, c, n, cur === c)).join("");
+      const active = chips.find((c) => c.value === cur);
+      const desc = active && descMap ? descMap[active.zh] : "";
+      container.innerHTML =
+        chipHtml("", "全部", "All", records.length, !cur)
+        + chips.map((c) => chipHtml(c.value, c.zh, c.en, c.count, cur === c.value)).join("")
+        + (desc ? `<p class="cat-desc">${esc(active.zh)}${active.en ? ` · ${esc(active.en)}` : ""} — ${esc(desc)}</p>` : "");
     };
     render();
     container.addEventListener("click", (event) => {
@@ -653,6 +704,29 @@
     });
     select.classList.add("is-chip-hidden");
   }
+
+  // One-line 解釋 per formula category (shown under the chips when selected).
+  const FORMULA_CATEGORY_DESC = {
+    "解表劑": "外感表證：風寒、風熱、表虛表實。Wind-cold, wind-heat, early exterior patterns.",
+    "清熱劑": "裡熱：熱毒、濕熱、血熱、虛熱。Heat, fire toxin, damp-heat, blood heat, deficiency heat.",
+    "和解劑": "少陽、肝脾不和、寒熱錯雜。Shaoyang, liver-spleen disharmony, mixed hot-cold.",
+    "溫裡劑": "裡寒、陽虛、寒痛、亡陽欲脫。Interior cold, yang deficiency, cold pain, collapse patterns.",
+    "補益劑": "氣血陰陽精之虛損。Qi, blood, yin, yang, essence, chronic deficiency.",
+    "理氣劑": "氣滯、氣逆、情志不暢。Qi stagnation, rebellious qi, emotional constraint.",
+    "理血劑": "血瘀、出血、經痛、癥瘕。Blood stasis, bleeding, menstrual pain, masses.",
+    "祛濕劑": "水濕、水腫、淋證、風濕。Dampness, edema, urinary difficulty, wind-damp.",
+    "祛痰劑": "痰濕、痰熱、咳嗽、眩暈。Phlegm-damp, phlegm-heat, cough, dizziness.",
+    "化痰劑": "痰濕、痰熱、咳嗽、瘰癧。Phlegm patterns: cough, nodules, dizziness.",
+    "安神劑": "失眠、心悸、煩躁不安。Insomnia, palpitations, restlessness.",
+    "治風劑": "內風、外風：抽搐、眩暈、中風。Internal/external wind: tremor, dizziness, spasms.",
+    "消食劑": "食積、脹滿、噯腐吞酸。Food stagnation, bloating, reflux.",
+    "固澀劑": "滑脫不禁：自汗、遺精、久瀉、帶下。Leakage: sweat, essence, chronic diarrhea, discharge.",
+    "瀉下劑": "便祕、積滯、水飲內停。Constipation, accumulation, retained fluids.",
+    "開竅劑": "神昏竅閉：熱閉、寒閉。Blocked orifices: loss of consciousness patterns.",
+    "治燥劑": "外燥、內燥：肺燥、腸燥。Dryness of lung and intestines.",
+    "驅蟲劑": "腸道蟲積。Intestinal parasites.",
+    "癰瘍劑": "瘡瘍腫毒、內癰。Sores, abscesses, toxic swellings."
+  };
 
   // ---- Formulas ------------------------------------------------------------
   const formulaHost = el("formulaRecords");
@@ -736,7 +810,7 @@
         const category = el("formulaCategoryFilter").value;
         const hit = records.filter((f) => {
           if (!recordHasConcept(f.modern_clinical_use_tags, activeConcept)) return false;
-          const categoryHit = !category || categoryLabel(f) === category;
+          const categoryHit = !category || category.split("||").includes(categoryLabel(f));
           const text = [
             f.id,
             f.name_zh,
@@ -755,7 +829,7 @@
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
-      buildCategoryChips("formulaCatChips", "formulaCategoryFilter", records, categoryLabel, updateFormulaGrid);
+      buildCategoryChips("formulaCatChips", "formulaCategoryFilter", records, categoryLabel, updateFormulaGrid, FORMULA_CATEGORY_DESC);
 
       /* Make the 方劑分類 cards bidirectional (Ting: 這邊的按鈕都不是雙向的).
          The cards were static display only. Now clicking one (解表, 清熱, …)
@@ -873,7 +947,7 @@
       const category = el("herbCategoryFilter").value;
       const hit = herbs.filter((h) => {
         if (!recordHasConcept(h.modern_use_tags, activeConcept)) return false;
-        const categoryHit = !category || herbCategory(h) === category;
+        const categoryHit = !category || category.split("||").includes(herbCategory(h));
         const text = [
           h.id,
           h.name_zh,
@@ -979,19 +1053,15 @@
         </article>`;
     }).join("");
 
+    // Fill-progress numbers belong on the Quality page, not the study page
+    // (Ting: 這應該在品質裡面出現). The lookup page keeps only search + tables.
+    const cmpStatEl = el("healthComparisonCells");
+    if (cmpStatEl) cmpStatEl.textContent = `${comparisonTotals.filled}/${comparisonTotals.filled + pendingCells}`;
+    const cmpTablesEl = el("healthComparisonTables");
+    if (cmpTablesEl) cmpTablesEl.textContent = `${comparisonTotals.completeTables} 完成 · ${comparisonTotals.partialTables} 部分 · ${comparisonTotals.emptyTables} 空`;
+
     comparisonHost.innerHTML = `
-      <div class="mini-heading">
-        <strong>Comparison Records (${comparisons.length})</strong>
-        <span>Source: data/knowledge/comparisons.json · draft skeletons; discriminator cells are owner-filled only.</span>
-      </div>
-      <div class="k-comparison-summary" aria-label="Comparison fill progress summary">
-        <span class="k-summary-chip"><strong>${comparisonTotals.filled}</strong> filled cells</span>
-        <span class="k-summary-chip"><strong>${pendingCells}</strong> pending cells</span>
-        <span class="k-summary-chip"><strong>${comparisonTotals.emptyTables}</strong> empty tables</span>
-        <span class="k-summary-chip"><strong>${comparisonTotals.partialTables}</strong> partial</span>
-        <span class="k-summary-chip"><strong>${comparisonTotals.completeTables}</strong> complete</span>
-      </div>
-      <input type="search" id="comparisonFilter" placeholder="Search comparison, pattern, axis..." class="k-filter" />
+      <input type="search" id="comparisonFilter" placeholder="搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis" class="k-filter" />
       <div class="k-grid k-grid-wide" id="comparisonGrid">${renderComparisons(comparisons) || '<p class="k-missing">No comparison records yet.</p>'}</div>`;
 
     el("comparisonFilter").addEventListener("input", (event) => {
