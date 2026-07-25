@@ -60,6 +60,18 @@ category 100% · functions_zh 98% · cautions_zh 98% · dosage 74% ·
 modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
 已源審核 57/266。缺口就是接下來批次的工作清單(照 board outline 分類順序)。
 
+## 4.5 來源誠實鐵則(Ting 2026-07-25)
+
+1. **卡片上不准出現沒有實際引用的來源名稱。** 曾經硬寫在版面上的
+   「Bastyr Slide / NCBAHM 國考 / Chinese Medicine Atlas & NCCAOM actions」
+   都是假標籤(內容其實來自課件或雲端中醫)—— 已全部移除。標題只能寫欄位是
+   什麼,**來源一律由 `field_sources` / `source_urls` 渲染出來**。
+2. **每個來源都要有名字**:不准再出現「Source 1」。URL 依網域顯示
+   (雲端中醫 CloudTCM / American Dragon / Chinese Medicine Atlas),課件顯示
+   「📘 課件 <檔名> p<頁>」。
+3. 考試相關敘述(exam_importance / exam_pearl)必須寫**依據哪一版大綱**;
+   Ting 已更新 2026 版 NCCAOM,舊版說法不得沿用。
+
 ## 5. 待補的深度層(next passes)
 
 - **毒性/交互作用**:CloudTCM 與 American Dragon 都有更深的 toxicity、
