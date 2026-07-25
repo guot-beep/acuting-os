@@ -4,8 +4,14 @@ Ting's division of labour, latest word wins over any earlier "everyone fills"
 note. **Antigravity generates. Claude + Codex review. Claude is 總指揮 —
 escalate big-direction questions to Claude only.**
 
-Read order every session: this file (your section) → AGENTS.md top banner →
-docs/SCHEDULE_2026-07-22.md → PROJECT_LOG.md top entry.
+Read order every session: this file (your section) → **docs/CONTENT_PIPELINE.md
+(the one shared process: source hierarchy + workflow + roadmap)** → AGENTS.md
+top banner → docs/SCHEDULE_2026-07-22.md → PROJECT_LOG.md top entry.
+
+**Source of truth for content:** `curriculum/` holds Ting's teacher materials
+(Tier-1, authoritative). Every AI extracts from there first, then deepens with
+CloudTCM / American Dragon / atlas per docs/CONTENT_PIPELINE.md — so everyone
+builds from the same understanding.
 
 | Role | Who | Job |
 |---|---|---|
