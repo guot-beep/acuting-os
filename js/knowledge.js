@@ -1033,4 +1033,10 @@
       <p class="k-meta">標準經穴 ${a.total_present}/${a.total_expected}，缺 ${a.total_missing}。${esc(worst)}</p>
       <p class="k-meta">建議下一批：${esc(a.next_recommended_batch || "—")}</p>`;
   }
+
+  // Expose the formula/herb study-card opener so unified search (app.js) can
+  // open the exact card the user clicked, rather than dumping them in a section.
+  globalThis.ACUTING_KNOWLEDGE_API = Object.assign(globalThis.ACUTING_KNOWLEDGE_API || {}, {
+    openDetail: openKnowledgeDetail
+  });
 })();

@@ -94,5 +94,28 @@
     })
   );
 
+  // --- Slide-out navigation panel (the top-right ☰ menu) ---------------
+  const navToggle = document.getElementById("navToggle");
+  const navPanel = document.getElementById("navPanel");
+  const navScrim = document.getElementById("navScrim");
+  const navClose = document.getElementById("navClose");
+
+  function setNav(open) {
+    document.body.classList.toggle("nav-open", open);
+    if (navToggle) navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  if (navToggle) navToggle.addEventListener("click", () => setNav(!document.body.classList.contains("nav-open")));
+  if (navClose) navClose.addEventListener("click", () => setNav(false));
+  if (navScrim) navScrim.addEventListener("click", () => setNav(false));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("nav-open")) setNav(false);
+  });
+  // Any navigation click inside the panel closes it (the hash change routes).
+  if (navPanel) {
+    navPanel.addEventListener("click", (e) => {
+      if (e.target.closest("a")) setNav(false);
+    });
+  }
+
   route();
 })();
