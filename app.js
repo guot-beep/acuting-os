@@ -453,7 +453,164 @@ document.querySelector("#modeEnglishBtn")?.addEventListener("click", () => setCo
 document.querySelector("#homeSearchBtn").addEventListener("click", runHomeSearch);
 homeSearch.addEventListener("keydown", (event) => {
   if (event.key === "Enter") runHomeSearch();
+  if (event.key === "Escape") clearGlobalResults();
 });
+
+/* ---- Unified site-wide search -------------------------------------------
+   One box searches acupoints + formulas + herbs + conditions + cases and
+   shows categorized results directly under the hero search, so studying is
+   "type -> see -> click", no scrolling through sections. */
+const globalResultsEl = document.querySelector("#globalResults");
+const GR_PER_GROUP = 6;
+
+function knowledgeRecords(key) {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  return (k[key] && k[key].records) || [];
+}
+
+// Fields vary between array and string across datasets; flatten to text safely.
+function txt(v) {
+  if (Array.isArray(v)) return v.map((x) => (x && typeof x === "object" ? Object.values(x).join(" ") : x)).join(" ");
+  return v == null ? "" : String(v);
+}
+
+function scoreMatch(q, ...fields) {
+  const hay = fields.filter(Boolean).map((v) => String(v).toLowerCase());
+  for (const h of hay) if (h === q) return 0;          // exact
+  for (const h of hay) if (h.startsWith(q)) return 1;  // prefix
+  const joined = hay.join("  ");
+  return joined.includes(q) ? 2 : -1;                  // substring / miss
+}
+
+function unifiedSearch(rawQuery) {
+  const q = String(rawQuery || "").trim().toLowerCase();
+  if (q.length < 1) return null;
+  const pick = (list, mapFields) => {
+    const scored = [];
+    for (const rec of list) {
+      const s = scoreMatch(q, ...mapFields(rec));
+      if (s >= 0) scored.push({ s, rec });
+    }
+    scored.sort((a, b) => a.s - b.s);
+    return { total: scored.length, items: scored.slice(0, GR_PER_GROUP).map((x) => x.rec) };
+  };
+
+  return {
+    points: pick(points, (p) => [p.code, p.nameZh, p.nameEn, p.pinyin, p.meridian, p.region,
+      txt(p.functions), txt(p.patterns)]),
+    formulas: pick(knowledgeRecords("formulas"), (f) => [f.name_zh, f.name_en, f.pinyin, f.id,
+      f.category_zh, f.category, txt(f.pattern_indications_zh), txt(f.composition)]),
+    herbs: pick(knowledgeRecords("herbs"), (h) => [h.name_zh, h.name_en, h.pinyin, h.id, h.category,
+      txt(h.channels_entered), txt(h.functions_zh || h.functions), txt(h.modern_use_tags)]),
+    conditions: pick(knowledgeRecords("conditionCanon"), (c) => [c.name_zh, c.name_en, c.id, c.category,
+      txt(c.tcm_patterns)]),
+    cases: pick(clinicalCases, (c) => [c.patientCode, c.caseTitle, c.chiefComplaint,
+      txt(c.westernConditions), txt(c.tcmPatterns)]),
+  };
+}
+
+function grItem(kind, kindLabel, code, name, sub, data) {
+  const attrs = Object.entries(data).map(([k, v]) => `data-${k}="${escapeHtml(String(v))}"`).join(" ");
+  return `<button type="button" class="gr-item" data-kind="${kind}" ${attrs}>
+    ${code ? `<span class="gr-item__code">${escapeHtml(code)}</span>` : `<span class="gr-item__code"></span>`}
+    <span class="gr-item__main">
+      <span class="gr-item__name">${escapeHtml(name)}</span>
+      ${sub ? `<span class="gr-item__sub">${escapeHtml(sub)}</span>` : ""}
+    </span>
+    <span class="gr-kind">${escapeHtml(kindLabel)}</span>
+  </button>`;
+}
+
+function renderGlobalResults(rawQuery) {
+  if (!globalResultsEl) return;
+  const res = unifiedSearch(rawQuery);
+  if (!res) { clearGlobalResults(); return; }
+
+  const groups = [];
+  const group = (title, obj, render) => {
+    if (!obj.items.length) return;
+    const rows = obj.items.map(render).join("");
+    const more = obj.total > obj.items.length
+      ? `<p class="gr-more">還有 ${obj.total - obj.items.length} 筆…輸入更精確的字</p>` : "";
+    groups.push(`<p class="gr-group__title">${title}（${obj.total}）</p>${rows}${more}`);
+  };
+
+  group("穴位 Acupoints", res.points, (p) =>
+    grItem("point", "穴位", p.code, `${p.nameZh || ""} ${p.nameEn ? `<small>${escapeHtml(p.nameEn)}</small>` : ""}`.trim(),
+      [p.meridian, p.region].filter(Boolean).join(" · "), { code: p.code }));
+  group("方劑 Formulas", res.formulas, (f) =>
+    grItem("formula", "方劑", "", `${f.name_zh || f.name_en || f.id}`,
+      [f.name_en, f.category_zh || f.category].filter(Boolean).join(" · "), { id: f.id }));
+  group("中藥 Herbs", res.herbs, (h) =>
+    grItem("herb", "中藥", "", `${h.name_zh || h.name_en || h.id}`,
+      [h.pinyin, h.category].filter(Boolean).join(" · "), { id: h.id }));
+  group("病症 Conditions", res.conditions, (c) =>
+    grItem("condition", "病症", "", `${c.name_zh || c.name_en || c.id}`,
+      [c.name_en, c.category].filter(Boolean).join(" · "), { id: c.id }));
+  group("病例 Cases", res.cases, (c) =>
+    grItem("case", "病例", c.patientCode || "", `${c.caseTitle || c.patientCode || ""}`,
+      c.chiefComplaint || "", { code: c.patientCode || "" }));
+
+  if (!groups.length) {
+    globalResultsEl.innerHTML = `<p class="gr-empty">找不到「${escapeHtml(rawQuery.trim())}」相關的穴位、方劑、中藥、病症或病例。</p>`;
+  } else {
+    globalResultsEl.innerHTML = groups.join("");
+  }
+  globalResultsEl.hidden = false;
+}
+
+function clearGlobalResults() {
+  if (!globalResultsEl) return;
+  globalResultsEl.innerHTML = "";
+  globalResultsEl.hidden = true;
+}
+
+function openGlobalResult(btn) {
+  const kind = btn.dataset.kind;
+  clearGlobalResults();
+  if (kind === "point") {
+    homeSearch.blur();
+    selectPoint(btn.dataset.code);
+    return;
+  }
+  if (kind === "formula" || kind === "herb") {
+    const api = globalThis.ACUTING_KNOWLEDGE_API;
+    if (api && api.openDetail) { api.openDetail(kind, btn.dataset.id); return; }
+    goToSection(kind === "formula" ? "formulaSection" : "herbSection");
+    return;
+  }
+  if (kind === "condition") {
+    goToSection("conditionGraph");
+    const id = btn.dataset.id;
+    requestAnimationFrame(() => {
+      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
+      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
+    });
+    return;
+  }
+  if (kind === "case") {
+    if (caseSearch) { caseSearch.value = btn.dataset.code || ""; renderClinicalCases(); }
+    goToSection("caseWorkspace");
+  }
+}
+
+if (globalResultsEl) {
+  let grTimer = null;
+  homeSearch.addEventListener("input", () => {
+    clearTimeout(grTimer);
+    grTimer = setTimeout(() => renderGlobalResults(homeSearch.value), 110);
+  });
+  globalResultsEl.addEventListener("click", (event) => {
+    const btn = event.target.closest(".gr-item");
+    if (btn) openGlobalResult(btn);
+  });
+  // Click outside the hero search closes the dropdown.
+  document.addEventListener("click", (event) => {
+    if (globalResultsEl.hidden) return;
+    if (event.target.closest(".hero-search") || event.target.closest("#globalResults")) return;
+    clearGlobalResults();
+  });
+}
 document.querySelectorAll("[data-directory-topic-link]").forEach((link) => {
   link.addEventListener("click", () => {
     const topic = link.dataset.directoryTopicLink || "";
@@ -645,6 +802,9 @@ function goToSection(id) {
 function runHomeSearch() {
   const query = homeSearch.value.trim();
   if (!query) return;
+  // If the unified dropdown is showing hits, Enter/搜尋 opens the top one.
+  const firstResult = globalResultsEl && !globalResultsEl.hidden && globalResultsEl.querySelector(".gr-item");
+  if (firstResult) { openGlobalResult(firstResult); return; }
   const caseHit = clinicalCases.some((item) => {
     const haystack = [
       item.patientCode,

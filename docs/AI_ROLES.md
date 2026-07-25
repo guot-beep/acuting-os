@@ -90,8 +90,11 @@ fill only when Claude assigns a specific batch; generation is Antigravity's job 
 
 **Each session, pick the most urgent:**
 1. **QA Antigravity's latest batch** — run `scripts/validate-content-quality.js`
-   + the full validator wall; report substantive % per field; flag boilerplate
-   (repeated sentences across records) and any regression → PROJECT_LOG.
+   + `scripts/validate-content-junk.js` (catches scraped page-header tokens like
+   "其他功效"/"藥理作用" leaking into content arrays — fix with
+   `node scripts/clean-content-junk.js --apply`) + the full validator wall;
+   report substantive % per field; flag boilerplate (repeated sentences across
+   records) and any regression → PROJECT_LOG.
 2. **Safety spot-check** — for needling depth / dose / contraindication fields
    Antigravity filled, cross-check a sample against a SECOND source; flag
    conflicts for Ting in worksheet format.
