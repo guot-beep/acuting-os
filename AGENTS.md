@@ -1,5 +1,14 @@
 # Repository Guidelines
 
+> ## BLUEPRINT 2026-07-25 — READ docs/BLUEPRINT.md FIRST
+> The site's direction is now **settled and canonical** in `docs/BLUEPRINT.md`:
+> purpose (private study system + case tracking for US licenses, 中西醫結合,
+> future diet/lifestyle layer), the final architecture (atlas shell, one topic =
+> one page, panel-only nav, honest Quality reporting), the page contract, and
+> the 10-week roadmap to "usable". The architecture has been reworked three
+> times — **do not reinvent it**. Architecture changes go through Claude;
+> direction changes come only from Ting.
+
 > ## AI ROLES 2026-07-24 — READ docs/AI_ROLES.md FIRST
 > Antigravity = generation. Codex = QA/validation. Claude = command/architecture
 > + escalation. Ting = final in-app review. Full standing prompts + copy-paste
