@@ -34957,7 +34957,7 @@
       "id": "herb.du_zhong",
       "name_zh": "杜仲",
       "name_en": "Eucommia Bark",
-      "pinyin": "Du Zhong",
+      "pinyin": "Dù Zhòng",
       "category": "補虛藥 / Tonify Yang",
       "channels_entered": [
         "肝經",
@@ -34965,7 +34965,7 @@
       ],
       "source_hint": "Bensky Materia Medica: Tonify Yang",
       "review_status": "draft",
-      "properties_taste_temp": "辛、溫、甘",
+      "properties_taste_temp": "甘、微辛，溫（Chenoweth/Bensky：Sweet, Slightly Acrid, Warm；雲端中醫作 甘、微苦，溫 — 兩源並記）",
       "functions": [
         "補氣",
         "強筋骨",
@@ -35046,7 +35046,11 @@
           "促進血液循環"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"6-15克\",\r\n  \"食療用量範圍\": \"6-12克\",\r\n  \"特殊說明\": \"鹽制杜仲可增強入腎補腎之功；入湯劑常規煎煮即可\"\r\n}",
+      "dosage": {
+        "decoction_g": "10–15（Chenoweth，daily herb 可常服；雲端中醫作 6–15）",
+        "食療用量範圍": "6–12克（雲端中醫）",
+        "特殊說明": "兩源劑量不合，並記不擇一。鹽制杜仲增強入腎補腎之功。"
+      },
       "cautions": "杜仲注意事項\n忌與蛇皮、元參同用。\n**腎虛火熾者不宜使用。**若須使用，應搭配黃柏、知母。\n內熱、精血燥者禁用。\n陰虛火旺者慎服。\n服用其他藥物時，尤其是降血糖藥物或抗凝血藥物，請先諮詢醫師建議。",
       "source_urls": [
         "https://cloudtcm.com/herb/1024"
@@ -35066,11 +35070,9 @@
       "safety_fetched_at": "2026-07-23T07:25:40.058Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "補氣",
+        "補肝腎",
         "強筋骨",
-        "補益肝腎",
-        "安胎",
-        "補腎"
+        "安胎"
       ],
       "modern_functions_zh": [
         "降血糖",
@@ -35078,7 +35080,12 @@
         "預防心血管疾病",
         "抗衰老",
         "促進骨骼健康",
-        "促進血液循環"
+        "促進血液循環",
+        "降血壓",
+        "抗發炎",
+        "中樞鎮靜",
+        "鬆弛子宮平滑肌（鹽炒）",
+        "適應原樣作用"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1024",
@@ -35115,7 +35122,9 @@
         "腎經"
       ],
       "indications_zh": [
-        "補肝腎；強筋骨；安胎"
+        "肝腎不足：腰膝痠痛、筋骨無力、疲倦、頻尿 —— 配 牛膝、獨活（高頻考點 YY）",
+        "胎動不安、妊娠出血（肝腎虛）—— 配 山藥、續斷、菟絲子",
+        "肝陽上亢之眩暈、頭暈（高血壓）—— 配 白芍、石決明、夏枯草、黃芩"
       ],
       "study_tags": [
         "單味中藥",
@@ -35125,8 +35134,107 @@
       ],
       "tags_fetched_at": "2026-07-23",
       "condition_tags_zh": [
-        "補肝腎強筋骨安胎"
-      ]
+        "腰膝痠痛",
+        "筋骨無力",
+        "胎動不安",
+        "妊娠出血",
+        "眩暈",
+        "高血壓",
+        "頻尿"
+      ],
+      "pharmaceutical_latin": "Eucommiae Cortex",
+      "part_used_en": "bark",
+      "tcm_properties": {
+        "four_natures_zh": "溫",
+        "five_flavors_zh": [
+          "甘",
+          "微辛（Chenoweth）",
+          "微苦（雲端中醫）"
+        ],
+        "meridian_tropism_zh": [
+          "肝經",
+          "腎經"
+        ],
+        "part_used_zh": "樹皮（杜仲皮）"
+      },
+      "actions_en": [
+        "Tonifies the Liver & Kidneys",
+        "Strengthens sinews and bones",
+        "Calms the fetus"
+      ],
+      "primary_actions_en": [
+        "Tonifies the Liver & Kidneys, strengthens sinews and bones — weak/painful low back & knees, fatigue, frequent urination",
+        "Calms the fetus — bleeding during pregnancy from LV/KD deficiency",
+        "Lowers blood pressure — dizziness from Liver Yang rising"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "10–15g（Chenoweth）／6–15g（雲端中醫）"
+      },
+      "pao_zhi_notes_zh": "炒杜仲（以斷絲為度，絲斷失其彈性）補肝腎之力最佳（Chenoweth: dry-fried / toasted best to tonify）；鹽炒引藥入腎，現代研究另見鬆弛子宮平滑肌之效（WM: uterine relaxant, salt-fried）；生用偏於降壓。",
+      "key_pairs": [
+        {
+          "pair": "杜仲 + 續斷 Xù Duàn",
+          "rationale_zh": "相須。補肝腎、強筋骨、安胎常相須為用（Chenoweth：often paired）——腰膝痠痛、胎動不安、先兆流產"
+        },
+        {
+          "pair": "杜仲 + 牛膝 Niú Xī",
+          "rationale_zh": "肝腎不足之腰膝痠痛；牛膝引藥下行、強化下部止痛"
+        },
+        {
+          "pair": "杜仲 + 山藥・續斷・菟絲子",
+          "rationale_zh": "安胎組合：妊娠出血、胎動不安（肝腎虛）"
+        }
+      ],
+      "exam_importance": "★ Board 高頻：補陽藥（Tonify Yang [25]）代表藥；Yao Yao 定位：Lower Back Pain & Knee Pain 首選",
+      "exam_pearl": "三大考點：①腰膝痠痛（肝腎不足）②安胎 ③肝陽上亢眩暈／高血壓。炮製考點：炒斷絲補力最佳、鹽炒入腎。",
+      "field_sources": {
+        "pinyin": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "category": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf#p2 → [25] Tonify Yang"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29",
+          "https://cloudtcm.com/herb/1024"
+        ],
+        "tcm_properties": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29",
+          "https://cloudtcm.com/herb/1024"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29",
+          "https://cloudtcm.com/herb/1024"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29"
+        ],
+        "condition_tags_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29",
+          "https://cloudtcm.com/herb/1024"
+        ],
+        "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29（WM 行）",
+          "https://cloudtcm.com/herb/1024"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29",
+          "https://cloudtcm.com/herb/1024"
+        ],
+        "pao_zhi_notes_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29",
+          "https://cloudtcm.com/herb/1024"
+        ],
+        "key_pairs": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p29"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1024"
+        ]
+      }
     },
     {
       "id": "herb.xu_duan",

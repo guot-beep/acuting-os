@@ -39,6 +39,16 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 
 ---
 
+## 品質樣板(先看這個再動手)
+
+**`herb.du_zhong`(杜仲)= 標準樣板**(Claude 2026-07-25,Ting 驗收)。
+每味藥做完應該長這樣:帶聲調拼音、tcm_properties、functions_zh 只放傳統功效
+且與 actions_en 逐項對齊、indications_zh 是「證型 —— 配伍」結構、key_pairs、
+pao_zhi_notes_zh、dosage 物件、exam_importance/exam_pearl、field_sources 逐欄
+引用。**兩源不合就並記**(看杜仲的性味與劑量欄怎麼寫)。
+註:American Dragon / chinesemedicineatlas 的線上對照需要有瀏覽能力的 agent;
+沒有瀏覽能力就標註「AD 對照待補」,不要假裝查過。
+
 ## 批次順序(board outline first,Ting 2026-07-25)
 
 照 Chenoweth 功效分類表的分類次序跑(它本身就是考試導向的分類):
