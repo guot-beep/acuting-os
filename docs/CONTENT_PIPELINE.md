@@ -51,6 +51,7 @@ two-layer Glance/Study design). New domains get their own spec doc, same shape.
 | then | 擴增穴位: 頭穴 / 耳穴 / 平衡針法 / 運動醫學 / 美容針法 | `data/acupoints/…`, `data/tung/…`, new sets | partial |
 | next sem | 西醫 病理 / 藥理 | `curriculum/western/` → `data/pathology/…`, new herb-drug tables | not started |
 | next sem | 西醫 Red flags / 轉診 | condition records `red_flags_*` | partial |
+| future | 飲食/生活建議層 (food therapy + lifestyle, atlas-style; 西醫+中醫+營養學; 地域×季節×年齡 templates for patient advice) | new `data/food/…` (schema via Claude first) | planned — see BLUEPRINT §1/§4 |
 
 ## 4. Clinical North Star (fill content *for this purpose*)
 
