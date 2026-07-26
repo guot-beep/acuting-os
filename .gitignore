@@ -56,3 +56,7 @@ data/clinical_cases/exports/
 *.sqlite3
 /clinical/
 *.phi.*
+
+# Python bytecode from scripts/extract-curriculum-text.py
+__pycache__/
+*.pyc
