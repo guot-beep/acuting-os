@@ -6,6 +6,7 @@
 - **Task**: Formal-template sample for 蒲公英、桂枝、生薑、荊芥、防風、紫蘇葉.
 - **Files changed**: `data/herbs/herb_canon_shortlist.json`, build-generated `data/generated/app_data.js`, `data/generated/knowledge_data.js`, and `PROJECT_LOG.md`.
 - **Sources**: Chenoweth course PDF/CSV first; CloudTCM and American Dragon cross-checks recorded per field. American Dragon 紫蘇葉 was verification-blocked and was not claimed as a content source.
+- **2026-07-26 correction**: Replaced incorrect `NCCAOM` labels on these six cards with `NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A`; herb-specific board emphasis remains explicitly attributed to Chenoweth course material.
 - **Validation**: six-herb delta PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS; `build-data.js` PASS.
 - **Existing full-repo blockers**: `validate-data.js` expects 681 points but runtime has 751; `validate-encoding.js` reports pre-existing repository-wide import/acupoint issues; `validate-herb-canon.js` has legacy staging-status, formula-link, and incomplete-record failures outside this sample.
 - **Protected areas not touched manually**: `js/`, `app.js`, `index.html`, `scripts/`, acupoint/Tung/auricular source data, and generated files other than build outputs.
