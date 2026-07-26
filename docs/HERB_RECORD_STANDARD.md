@@ -12,13 +12,14 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | 欄位 | 型別 | 規則 |
 |---|---|---|
 | `id` | string | `herb.<pinyin_snake>`,不可改不可刪 |
-| `name_zh` / `name_en` / `pinyin` | string | 必填;pinyin **帶聲調**(Dù Zhòng,不是 Du Zhong)— 新填/改到的一律帶調 |
+| `name_zh` / `name_en` / `pinyin` | string | 必填；`name_en` 是拼音旁的英文 common name，**不得放 pharmaceutical Latin**；pinyin **帶聲調**(Dù Zhòng,不是 Du Zhong)— 新填/改到的一律帶調 |
+| `pharmaceutical_latin` | string | 必填；正式拉丁藥名，獨立顯示於標頭下一排，不得拿來取代 `name_en` |
 | `category` | string | **必須**出自 `data/config/herb_category_canon.json` 的 `categories`;要新分類 → 先經 Claude 加進 canon,再用 |
 | `properties_taste_temp` | string | 性味+溫度,如「辛、微苦、溫」 |
 | `channels_zh` | array | 歸經,如 ["肺經","膀胱經"] |
 | `functions_zh` | array | **只放傳統功效**(發汗解表…)。現代藥理絕不混進來 |
-| `modern_functions_zh` | array | **只放現代藥理**(抗發炎…) |
-| `indications_zh` | array | 主治 |
+| `modern_functions_zh` | array | **只放現代藥理**(抗發炎…)；不設筆數上限，來源有幾則有效資料就完整保留 |
+| `indications_zh` | array | 主治；不設筆數上限，不得把 8 則有區別的主治硬縮成 3–5 則 |
 | `condition_tags_zh` / `condition_tags_en` | array | 病症標籤 **中英成對** |
 | `modern_functions_en` | array | 現代藥理英文,與 `modern_functions_zh` **逐項對齊** |
 | `cautions_en` | array | 注意事項英文,與 `cautions_zh` **逐項對齊** |
@@ -28,8 +29,16 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `cautions_zh` / `_en` | array | 慎用(相對):慎服、注意、交互作用 |
 | `safety_flags` | array | 安全旗標 |
 | `related_formulas` | array | 方劑 id 連結 |
+| `clinical_use_note` | string | 必填學習筆記：核心定位、相似藥鑑別、重要配伍與安全記憶；不得只是重貼功效主治 |
+| `key_pairs` | array | 已有 `herb_pairs.json` 正式對藥時留空，避免遮住完整彩色卡；不得用簡版覆蓋正式對藥 |
+| `source_citations` | array | 卡片底部實際顯示的來源；每筆含具名 `name`、可選 `url`、`scope` |
 | `exact_source_url` / `safety_source_url` | string | 逐筆出處;curriculum 用 `curriculum/herbs/<file>#p<N>` |
 | `review_status` | string | AI 只能寫 `"draft"`;`source_checked` 只由 Ting 的 RV1 流程升級 |
+
+**數量規則：**3–5 條的濃縮目標只適用於傳統功效 `functions_zh`。
+`indications_zh`、`modern_functions_zh` 與逐項對齊的 `modern_functions_en`
+均不設上限。只有完全同義、沒有新增證型、症狀、用途、機制或研究資訊的重複項
+可以合併；其餘全部保留並逐欄標註來源。
 
 **中英標籤鐵則**:`_en` 陣列必須與對應 `_zh` **同長度、同順序**(index-aligned)。
 長度不合 = validator E5 直接 FAIL —— 因為錯位會讓每個標籤都配到別人的英文
@@ -71,8 +80,26 @@ modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
 2. **每個來源都要有名字**:不准再出現「Source 1」。URL 依網域顯示
    (雲端中醫 CloudTCM / American Dragon / Chinese Medicine Atlas),課件顯示
    「📘 課件 <檔名> p<頁>」。
-3. 考試相關敘述(exam_importance / exam_pearl)必須寫**依據哪一版大綱**;
-   Ting 已更新 2026 版 NCCAOM,舊版說法不得沿用。
+3. `field_sources` 負責逐欄溯源，但外部 URL 不會自動全部顯示。凡實際核讀的
+   CloudTCM、American Dragon、Chinese Medicine Atlas 或圖像來源，必須同步
+   寫入具名 `source_citations`（或至少 `source_urls`）；未核讀不得列名。
+4. 考試相關敘述(exam_importance / exam_pearl)必須寫**依據哪一版大綱**;
+   現行為 **NCBAHM 2026**，不得再寫成 NCCAOM。
+
+## 4.6 對藥完整卡規則(Ting 2026-07-26)
+
+1. 正式對藥寫入 `data/herbs/herb_pairs.json`，不是只塞一段 `key_pairs` 理由。
+2. 每筆必填：`relation`（相須／相使等）、`pair_meaning_zh/_en`、
+   `indication_zh/_en`、`caution_zh/_en`、`sources`。
+3. 主治與注意保留為獨立欄位，讓卡片以不同顏色顯示；不得合併進配伍理由。
+4. 若該藥已有正式 pair records，單味藥記錄的 `key_pairs` 留空，讓渲染器使用
+   完整彩色卡；否則簡略卡會遮住主治、注意與七情關係。
+5. `exam_importance` / `exam_pearl` 照常保留，但不能取代對藥主治與注意。
+6. 對藥筆數以實際來源為準，沒有「每味只留一則」的限制。必須檢查課件
+   pairing / major combinations、NCBAHM 對藥及已核讀的專業來源；有幾組重要、
+   可溯源的對藥就建立幾筆，不得只取第一組或把不同配伍合併。
+7. A+B 與 B+A 是同一筆正式 pair record，避免反向重複；渲染器會讓它同時出現
+   在 A、B 兩味藥卡。只有來源確實只支持一組時，卡片才只有一則。
 
 ## 5. 待補的深度層(next passes)
 

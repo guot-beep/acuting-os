@@ -16,7 +16,7 @@
         "膀胱經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、微苦，溫（Chenoweth: Acrid, Slightly Bitter, Warm）",
       "functions": [
         "發汗解表",
@@ -56,7 +56,7 @@
         "cardiac_review",
         "pregnancy_review"
       ],
-      "clinical_use_note": "麻黃是中藥,別名:結力根,色道麻,龍沙,狗骨,卑鹽,卑相，主治功效解表、止咳化痰、散風寒,發汗作用,鎮靜,散風寒,抗過敏,強心,利水滲濕,利水消腫,止咳平喘,抗發炎,止痛,抗菌,興奮中樞神經,降血糖。注意副作用是晚上不要服用以免會失眠。體虛弱而自汗、盜汗、虛寒虛喘者、中風癱瘓、陽虛腠理不密之人均忌服。心血管疾病,高血壓,甲狀腺疾病,攝護腺肥大患者,減肥慎用。",
+      "clinical_use_note": "學習辨識：麻黃是辛溫解表中發汗力最強的代表藥，核心辨證為「風寒表實、無汗、脈浮緊」；表虛有汗更偏桂枝，不能只見感冒便用麻黃。除發汗外，麻黃能宣肺平喘與利水消腫：配杏仁一宣一降治肺氣壅遏咳喘，配石膏轉治肺熱喘咳，配附子用於陽虛外感。生麻黃偏發汗利水，蜜炙麻黃偏止咳平喘，麻黃絨力弱。安全重點是麻黃鹼的擬交感與中樞興奮作用；心血管病、高血壓、甲狀腺機能亢進、青光眼、攝護腺肥大及失眠者須特別避免或慎用，並核對興奮劑、MAOI、地高辛等交互作用。",
       "modern_use_tags": [
         "common_cold",
         "uri",
@@ -127,25 +127,36 @@
           "其他功效"
         ]
       },
-      "dosage": "{\"一般建議\":\"\\n\\n* 內服：煎湯，1.5-10g；或入丸、散。\\n* 麻黃生用發汗力强，蜜炙 用可減弱發汗力，且有潤肺之功。故發汗解表宜生用，平喘止咳多炙用。\\n* 內服煎湯宜先煎，去水面浮沫。麻黄絨發汗力弱，多用於兒科。\\n* 外用：適量，研末(口畜)鼻或研末敷。\\n\",\"食療用量範圍\":\"\",\"特殊說明\":\"\"}",
+      "dosage": {
+        "decoction_g": "CloudTCM、American Dragon：1.5–10g",
+        "tincture_ml": "American Dragon：1–3mL",
+        "特殊說明": "煎劑可先煎去浮沫；發汗解表宜生用，止咳平喘多蜜炙用。不可因來源上限為 10g 即自行使用大劑量。"
+      },
+      "dosage_g": "1.5–10g（CloudTCM、American Dragon）",
       "cautions": "晚上服用麻黃可能興奮中樞神經，易致失眠。 [1]\n體虛自汗、盜汗、虛寒虛喘、中風癱瘓、陽虛者忌服。\n心血管疾病患者（如心衰竭、心肌梗塞、心臟病、高血壓）需慎服，麻黃可升高血壓。\n甲狀腺疾病患者或對麻黃過敏者應慎用。\n攝護腺肥大者可能導致尿滯留。\n《本草經疏》提到麻黃能去寒邪，但多服會損耗真元之氣。\n孕婦或哺乳期婦女應慎用麻黃。\n正在服用感冒藥或綜合感冒藥者，應諮詢醫師是否能服麻黃。\n麻黃劑量過高時可能引起心跳加速、呼吸急促、噁心、嘔吐、失眠、情緒亢奮、頭痛、癲癇及顫抖等副作用。",
       "source_urls": [
-        "https://cloudtcm.com/herb/1"
+        "https://cloudtcm.com/herb/1",
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+        "https://www.nccih.nih.gov/health/ephedra",
+        "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
       ],
       "exact_source_url": "https://cloudtcm.com/herb/1",
       "fetched_at": "2026-07-23T07:19:57.615Z",
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "晚上服用麻黃可能興奮中樞神經，易致失眠。 [1]",
-        "體虛自汗、盜汗、虛寒虛喘、中風癱瘓、陽虛者忌服。",
-        "心血管疾病患者（如心衰竭、心肌梗塞、心臟病、高血壓）需慎服，麻黃可升高血壓。",
-        "甲狀腺疾病患者或對麻黃過敏者應慎用。",
-        "攝護腺肥大者可能導致尿滯留。",
-        "《本草經疏》提到麻黃能去寒邪，但多服會損耗真元之氣。",
-        "孕婦或哺乳期婦女應慎用麻黃。",
-        "正在服用感冒藥或綜合感冒藥者，應諮詢醫師是否能服麻黃。",
-        "麻黃劑量過高時可能引起心跳加速、呼吸急促、噁心、嘔吐、失眠、情緒亢奮、頭痛、癲癇及顫抖等副作用。"
+        "避免晚間服用；中樞興奮可能引起失眠、焦慮或情緒亢奮。",
+        "不可大劑量或久用；過汗會耗傷正氣與津液。",
+        "過量或高暴露可引起高血壓、心悸、心跳過速、呼吸急促、噁心、嘔吐、頭痛、顫抖、癲癇、腦中風、心肌梗塞或精神症狀。",
+        "與地高辛等強心苷併用可能增加心律不整風險。",
+        "與單胺氧化酶抑制劑（MAOI）併用可能引發高血壓危象。",
+        "與中樞興奮劑、咖啡因、麻黃鹼、偽麻黃鹼或 beta 腎上腺素致效劑併用可能產生加成性興奮或毒性。",
+        "可能改變茶鹼作用；併用須由專業人員核對藥物。",
+        "因增加去甲腎上腺素活性，可能降低 beta 阻斷劑效果。",
+        "與利尿劑併用可能增加水分或電解質流失。",
+        "可能降低 benzodiazepines 或其他鎮靜劑的效果。",
+        "須核對所有感冒藥與綜合感冒藥，避免重複攝取擬交感成分。",
+        "美國已因嚴重安全風險禁止含麻黃鹼生物鹼的膳食補充品；此法規情境須與合格中醫師監督下的中藥處方分開理解。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1",
       "safety_fetched_at": "2026-07-23T07:24:57.554Z",
@@ -153,20 +164,28 @@
       "functions_zh": [
         "發汗解表",
         "宣肺平喘",
-        "利水消腫"
+        "利水消腫",
+        "溫散寒邪"
       ],
       "modern_functions_zh": [
-        "發汗",
-        "支氣管擴張",
-        "鎮咳",
-        "利尿",
-        "升血壓",
-        "興奮中樞神經",
-        "解熱",
-        "抗發炎",
-        "抗過敏",
-        "抗菌抗病毒",
-        "鎮痛"
+        "促進汗腺分泌與發汗",
+        "解熱作用",
+        "支氣管擴張作用",
+        "鎮咳作用",
+        "利尿作用",
+        "血管收縮與升高血壓作用",
+        "興奮中樞神經作用",
+        "增強心肌收縮與加快心率",
+        "抗發炎作用",
+        "抗過敏作用",
+        "抗菌作用",
+        "抗病毒作用",
+        "鎮痛作用",
+        "揮發油鎮靜作用",
+        "揮發油抗驚厥作用",
+        "降血糖作用",
+        "利膽作用",
+        "調節腸道平滑肌活動"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1",
@@ -232,18 +251,31 @@
           "analysis_zh": "**發汗機理：** 麻黃可能通過兩種機制促進發汗。一是阻礙汗腺導管對鈉離子的重吸收，導致汗液分泌增加。二是可能與興奮中樞神經系統的相關部位以及外周α受體有關。\n\n**對腸道的作用：** 麻黃鹼(Eph) 在離體實驗中，對豚鼠回腸的自發收縮具有抑制作用，也能減弱乙酰膽鹼和5-羥色胺引起的腸道收縮。然而，當腸肌經過河豚毒素處理後，麻黃鹼反而能激發腸道收縮。這提示麻黃鹼對腸肌可能具有直接的抑制作用，且該抑制作用可能通過興奮β-受體來實現。\n\n**利膽和脂肪合成作用：** 麻黃提取物的水溶液靜脈注射可以促進實驗兔的膽汁分泌，表現出利膽作用。此外，麻黃具有促進脂肪細胞脂肪合成的作用，其作用機制可能與胰島素類似。"
         }
       ],
-      "aliases_zh": [],
+      "aliases_zh": [
+        "結力根",
+        "色道麻",
+        "龍沙",
+        "狗骨",
+        "卑鹽",
+        "卑相",
+        "淨麻黃",
+        "麻黃絨"
+      ],
       "category_zh": "發散風寒藥",
       "channels_zh": [
         "肺經",
         "膀胱經"
       ],
       "indications_zh": [
-        "風寒表實證(急性、實證):惡寒發熱、無汗、脈浮緊 —— 配 桂枝（麻黃湯）",
-        "咳嗽氣喘 —— 配 杏仁、甘草（三拗湯）",
-        "熱邪壅肺之喘咳、鼻翼煽動 —— 配 石膏、杏仁（麻杏石甘湯）",
-        "氣虛而感風寒 —— 配 人參",
-        "風水水腫(表邪引起) —— 生用發汗利水"
+        "風寒表實證 —— 惡寒發熱、無汗、頭身疼痛、鼻塞、脈浮緊；配 桂枝（麻黃湯）。",
+        "風寒束肺、肺氣壅遏 —— 咳嗽、氣喘、胸悶；配 杏仁、甘草（三拗湯）。",
+        "熱邪壅肺 —— 發熱、口渴、喘咳氣急、鼻翼煽動；配 石膏、杏仁（麻杏石甘湯）。",
+        "氣虛而外感風寒 —— 惡寒無汗兼氣短乏力；配 人參扶正解表。",
+        "風水水腫 —— 急性水腫、表證、小便不利；生麻黃宣肺發汗、通調水道。",
+        "風寒濕痹 —— 關節冷痛、屈伸不利；配 桂枝、白朮或薏苡仁溫散寒濕。",
+        "陽虛外感或陽虛水腫 —— 畏寒、肢冷、脈沉；配 附子溫陽解表、助陽行水。",
+        "外寒內飲之咳喘 —— 咳吐清稀痰涎、胸滿、喘息；配 乾薑、細辛、半夏（小青龍湯）。",
+        "寒凝經脈之陰疽、漫腫無頭或肢端血脈不通 —— 配 熟地黃、白芥子、鹿角膠等溫陽散寒通滯。"
       ],
       "study_tags": [
         "單味中藥",
@@ -281,24 +313,12 @@
         "抗發炎與抗過敏 (Anti-inflammatory & Anti-allergic)"
       ],
       "pao_zhi_notes_zh": "生麻黃發汗力強,用於發汗解表、利水消腫;蜜炙麻黃(炙)發汗力減、潤肺止咳平喘為主,用於慢性咳喘;麻黃絨力最弱,多用於兒科與體弱者。煎煮宜先煎去上沫。",
-      "key_pairs": [
-        {
-          "pair": "麻黃 + 桂枝 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "發汗解表、宣肺散寒（代表方：麻黃湯）。"
-        },
-        {
-          "pair": "麻黃 + 杏仁 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "宣肺降氣、平喘止咳（一宣一降對藥）。"
-        },
-        {
-          "pair": "麻黃 + 石膏 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "清肺平喘、宣散鬱熱（代表方：麻杏甘石湯）。"
-        }
-      ],
+      "key_pairs": [],
       "actions_en": [
         "Induces sweating and releases the exterior",
         "Diffuses Lung qi and calms wheezing",
-        "Promotes urination and reduces edema"
+        "Promotes urination and reduces edema",
+        "Warms and disperses Cold pathogens"
       ],
       "condition_tags_zh": [
         "風寒表實",
@@ -307,7 +327,12 @@
         "氣喘",
         "鼻塞",
         "水腫",
-        "小便不利"
+        "小便不利",
+        "風寒濕痹",
+        "陽虛外感",
+        "外寒內飲",
+        "肺熱喘咳",
+        "陰疽"
       ],
       "modern_pharmacology": [
         {
@@ -328,7 +353,7 @@
         }
       ],
       "pharmaceutical_latin": "Ephedrae Herba",
-      "part_used_en": "stem",
+      "part_used_en": "Dried herbaceous stem",
       "condition_tags_en": [
         "Wind-cold excess exterior",
         "Absence of sweating",
@@ -336,26 +361,73 @@
         "Wheezing",
         "Nasal congestion",
         "Edema",
-        "Difficult urination"
+        "Difficult urination",
+        "Wind-Cold-Damp painful obstruction",
+        "Exterior Cold with Yang deficiency",
+        "Exterior Cold with internal thin fluids",
+        "Lung Heat wheezing and cough",
+        "Yin-type sores"
       ],
       "modern_functions_en": [
-        "Diaphoretic",
-        "Bronchodilator",
-        "Antitussive",
-        "Diuretic",
-        "Raises blood pressure",
-        "CNS stimulant",
-        "Antipyretic",
-        "Anti-inflammatory",
-        "Antiallergic",
-        "Antibacterial / antiviral",
-        "Analgesic"
+        "Promotes sweat-gland secretion and diaphoresis",
+        "Antipyretic activity",
+        "Bronchodilator activity",
+        "Antitussive activity",
+        "Diuretic activity",
+        "Vasoconstrictive and blood-pressure-raising activity",
+        "Central nervous system stimulation",
+        "Positive inotropic and chronotropic activity",
+        "Anti-inflammatory activity",
+        "Antiallergic activity",
+        "Antibacterial activity",
+        "Antiviral activity",
+        "Analgesic activity",
+        "Sedative activity of the volatile oil",
+        "Anticonvulsant activity of the volatile oil",
+        "Hypoglycemic activity",
+        "Choleretic activity",
+        "Modulation of intestinal smooth-muscle activity"
       ],
-      "classical_text_zh": "《本草綱目》：「麻黃乃肺經專藥，故治肺病多用之。」",
-      "classical_text_en": "Ben Cao Gang Mu: \"Ma Huang is the specific herb of the Lung channel, hence its frequent use in Lung disorders.\"",
+      "classical_text_zh": "《神農本草經》：「主中風、傷寒頭痛，溫瘧。發表出汗，去邪熱氣。」",
+      "classical_text_en": "Shen Nong Ben Cao Jing: It treats wind-strike, Cold Damage headache and warm malaria; it releases the exterior through sweating and dispels pathogenic heat.",
       "exam_importance": "★ Board 高頻:解表藥－發散風寒(Wind Cold Releasing [1])代表藥;對藥收於 2026 NCBAHM Appendix B",
       "exam_pearl": "三大功效:①發汗解表(表實無汗才用)②宣肺平喘 ③利水消腫。安全考點:升血壓、興奮中樞 —— 高血壓、心臟病、失眠、甲狀腺疾病慎用/忌用。",
-      "safety_review_pending": "毒性/中西藥交互深度資料待補;麻黃鹼與 MAOI、興奮劑、降壓藥的交互作用需第二來源確認(安全關鍵)",
+      "safety_review_pending": "Ting 複核重點：區分中醫處方中的炮製麻黃與美國被禁售的含麻黃鹼膳食補充品；劑量、病人心血管風險與併用藥物須逐案確認。",
+      "source_citations": [
+        {
+          "name": "Chenoweth Materia Medica 課件",
+          "scope": "p.1：性味歸經、傳統功效、主治辨證、主要配伍、炮製差異及 board 重點"
+        },
+        {
+          "name": "雲端中醫 CloudTCM・麻黃",
+          "url": "https://cloudtcm.com/herb/1",
+          "scope": "精確單味藥頁與圖像；英文名、基原、性味歸經、傳統功效、現代藥理、1.5–10g 劑量、炮製及注意事項"
+        },
+        {
+          "name": "American Dragon・Ma Huang",
+          "url": "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "scope": "Pharmaceutical Latin、1.5–10g 劑量、actions、indications、major combinations、contraindications 與 herb–drug interactions"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A 與 Appendix B 對藥範圍"
+        },
+        {
+          "name": "NCCIH・Ephedra: Usefulness and Safety",
+          "url": "https://www.nccih.nih.gov/health/ephedra",
+          "scope": "美國膳食補充品禁售背景、心血管與神經系統嚴重風險、孕哺期與兒童安全"
+        },
+        {
+          "name": "Memorial Sloan Kettering・Ephedra",
+          "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra",
+          "scope": "禁忌、嚴重不良反應及 MAOI、CNS stimulants、theophylline、digoxin 等交互作用"
+        },
+        {
+          "name": "Wikimedia Commons 圖像",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ephedra_sinica_bgi.jpg/640px-Ephedra_sinica_bgi.jpg",
+          "scope": "麻黃植物圖像"
+        }
+      ],
       "field_sources": {
         "pinyin": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
@@ -370,13 +442,17 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
         ],
         "functions_zh": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "actions_en": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "indications_zh": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "condition_tags_zh": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
@@ -385,13 +461,27 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
         ],
         "modern_functions_zh": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "modern_functions_en": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "key_pairs": [
-          "2026 NCBAHM Appendix B（Antigravity 匯入）"
+          "data/herbs/herb_pairs.json#pair.ma_huang__gui_zhi",
+          "data/herbs/herb_pairs.json#pair.ma_huang__xing_ren",
+          "data/herbs/herb_pairs.json#pair.ma_huang__shi_gao",
+          "data/herbs/herb_pairs.json#pair.ma_huang__ren_shen",
+          "data/herbs/herb_pairs.json#pair.ma_huang__fu_zi",
+          "data/herbs/herb_pairs.json#pair.ma_huang__gan_jiang__xi_xin__ban_xia",
+          "data/herbs/herb_pairs.json#pair.ma_huang__yi_yi_ren",
+          "data/herbs/herb_pairs.json#pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "NCBAHM 2026 Chinese Herbology Content Outline, Appendix B",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "exam_pearl": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
@@ -409,53 +499,78 @@
           "curriculum/herbs/herb_functions_chenoweth.pdf"
         ],
         "dosage": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "cautions_en": [
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "classical_text_zh": [
-          "model_recalled — 待對照原典/雲端中醫"
+          "https://cloudtcm.com/herb/1"
         ],
         "classical_text_en": [
-          "model_recalled — 待對照原典/雲端中醫"
+          "https://cloudtcm.com/herb/1"
         ],
         "category": [
           "curriculum/herbs/herb_functions_chenoweth.pdf → [1] Wind Cold Releasing"
         ],
         "contraindications_zh": [
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "contraindications_en": [
-          "https://cloudtcm.com/herb/1"
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ]
       },
       "cautions_en": [
-        "Taken at night it may stimulate the CNS and cause insomnia.",
-        "Contraindicated in deficiency with spontaneous or night sweating, deficiency-cold wheezing, wind-stroke paralysis, or yang deficiency.",
-        "Cardiovascular disease (heart failure, myocardial infarction, heart disease, hypertension): use with caution — it raises blood pressure.",
-        "Use with caution in thyroid disease or known Ma Huang allergy.",
-        "May cause urinary retention in prostatic hypertrophy.",
-        "Ben Cao Jing Shu notes it dispels cold pathogens but that prolonged use consumes true source qi.",
-        "Use with caution in pregnancy and lactation.",
-        "Consult a physician before combining with cold or multi-symptom cold medicines.",
-        "Excessive doses may cause tachycardia, rapid breathing, nausea, vomiting, insomnia, agitation, headache, seizures and tremor."
+        "Avoid evening administration because CNS stimulation may cause insomnia, anxiety or agitation.",
+        "Do not use large doses or prolonged courses; excessive sweating may damage qi and fluids.",
+        "Excessive exposure may cause hypertension, palpitations, tachycardia, rapid breathing, nausea, vomiting, headache, tremor, seizure, stroke, myocardial infarction or psychosis.",
+        "Cardiac glycosides such as digoxin may increase the risk of cardiac arrhythmia.",
+        "MAO inhibitors may precipitate a hypertensive crisis.",
+        "CNS stimulants, caffeine, ephedrine, pseudoephedrine and beta-adrenergic agonists may produce additive stimulation or toxicity.",
+        "Theophylline effects may be altered; combined use requires professional medication review.",
+        "Ma Huang may reduce the effects of beta blockers through increased norepinephrine activity.",
+        "Concurrent diuretics may increase water or electrolyte loss.",
+        "It may reduce the effects of benzodiazepines or other sedatives.",
+        "Review all cold and multi-symptom products to avoid duplicate sympathomimetic ingredients.",
+        "In the United States, dietary supplements containing ephedrine alkaloids are banned because of serious safety risks; this must be distinguished from supervised TCM prescribing."
       ],
       "contraindications_zh": [
-        "體虛自汗、盜汗者忌服",
-        "虛寒虛喘者忌服",
-        "中風癱瘓、陽虛者忌服",
-        "表虛無邪者不可發汗"
+        "體虛自汗、陰虛盜汗或表虛無邪者禁用。",
+        "肝陽上亢或陰虛火旺者禁用。",
+        "孕婦、哺乳期婦女及兒童禁用含麻黃鹼的麻黃膳食補充品；中醫處方亦須由合格專業人員另行評估。",
+        "高血壓、心臟病、心律不整或重大心血管風險者禁用。",
+        "甲狀腺機能亢進、青光眼、攝護腺肥大或嚴重焦慮者禁用。",
+        "正在使用 MAOI 者禁用，以免發生高血壓危象。"
       ],
       "contraindications_en": [
-        "Contraindicated with deficiency spontaneous sweating or night sweating",
-        "Contraindicated in deficiency-cold wheezing",
-        "Contraindicated in wind-stroke paralysis and yang deficiency",
-        "Do not induce sweating when the exterior is deficient and no pathogen is present"
+        "Contraindicated with deficiency spontaneous sweating, Yin-deficiency night sweating, or exterior deficiency without a pathogen.",
+        "Contraindicated for Liver Yang rising or Yin-deficiency Fire.",
+        "Ephedrine-alkaloid ephedra supplements are contraindicated during pregnancy, breastfeeding and childhood; professionally supervised TCM prescribing requires separate assessment.",
+        "Contraindicated in hypertension, heart disease, arrhythmia or major cardiovascular risk.",
+        "Contraindicated in hyperthyroidism, glaucoma, prostatic enlargement or severe anxiety.",
+        "Contraindicated with monoamine oxidase inhibitors because of the risk of hypertensive crisis."
       ]
     },
     {
@@ -472,7 +587,7 @@
         "腎經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、甘、溫",
       "functions": [
         "發汗解表",
@@ -504,7 +619,6 @@
         "formula.xiao_qing_long_tang",
         "formula.tiao_wei_cheng_qi_tang",
         "formula.xiao_chai_hu_tang",
-        "formula.chai_hu_gui_zhi_tang",
         "formula.xiao_jian_zhong_tang",
         "formula.dang_gui_si_ni_tang",
         "formula.yu_ping_feng_san",
@@ -608,6 +722,27 @@
       "source_urls": [
         "https://cloudtcm.com/herb/2"
       ],
+      "source_citations": [
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/2",
+          "scope": "性味、功效、現代藥理與安全資料"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html",
+          "scope": "Actions、indications、dosage、contraindications and combinations"
+        },
+        {
+          "name": "Wikimedia Commons 圖像",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cinnamomum_cassia_blume.jpg/640px-Cinnamomum_cassia_blume.jpg",
+          "scope": "桂枝植物圖像"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A"
+        }
+      ],
       "exact_source_url": "https://cloudtcm.com/herb/2",
       "fetched_at": "2026-07-23T07:19:57.890Z",
       "public_safe": false,
@@ -628,17 +763,10 @@
       "safety_fetched_at": "2026-07-23T07:24:57.789Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "發汗解表",
-        "祛風除濕",
-        "溫經",
-        "散風寒",
-        "通經絡",
-        "活絡止痛",
-        "止嘔",
-        "活血化瘀",
-        "提振胸陽",
-        "調和營衛",
-        "發汗解肌"
+        "解肌發表，調和營衛",
+        "溫通經脈，散寒止痛",
+        "助陽化氣，溫化水飲",
+        "溫通胸陽，平沖降逆"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -708,7 +836,11 @@
         "膀胱經"
       ],
       "indications_zh": [
-        "發汗解肌；溫通經脈；助陽化氣"
+        "風寒表虛、營衛不和（汗出惡風）——配 白芍、生薑、大棗",
+        "風寒表實、無汗身痛——配 麻黃",
+        "風寒濕痹、經脈寒凝疼痛——配 羌活、附子",
+        "陽虛水飲（心悸、眩暈、小便不利）——配 茯苓、白朮",
+        "寒凝血瘀痛經或癥塊——配 當歸、川芎、桃仁"
       ],
       "study_tags": [
         "單味中藥",
@@ -721,6 +853,8 @@
       "cloudtcm_url": "https://cloudtcm.com/herb/2",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cinnamomum_cassia_blume.jpg/640px-Cinnamomum_cassia_blume.jpg",
+      "pharmaceutical_latin": "Cinnamomi Ramulus",
+      "part_used_en": "Young Twig",
       "tcm_properties": {
         "four_natures_zh": "溫",
         "four_natures_en": "Warm",
@@ -760,29 +894,40 @@
       "pao_zhi_notes_zh": "生桂枝發汗解表、溫經通脈力強；蜜炙桂枝溫通心陽、緩和發汗之力；炒桂枝偏於溫經通絡止痛。",
       "key_pairs": [
         {
-          "pair": "桂枝 + 白芍 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "調和營衛、解肌發汗（代表方：桂枝湯）。"
+          "pair": "桂枝 + 白芍 Bái Sháo",
+          "rationale_zh": "一散一收，調和營衛、解肌發表——營衛不和、汗出惡風（桂枝湯）。",
+          "rationale_en": "One disperses while the other restrains, harmonizing Ying and Wei for spontaneous sweating with aversion to wind (Gui Zhi Tang)."
         },
         {
-          "pair": "桂枝 + 麻黃 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "相須為用，增強發汗解表散寒之力（代表方：麻黃湯）。"
+          "pair": "桂枝 + 麻黃 Má Huáng",
+          "rationale_zh": "相須。增強發汗解表、散寒之力——風寒表實、無汗身痛（麻黃湯）。",
+          "rationale_en": "Xiang Xu (mutual accentuation). Strengthens sweating and Wind-Cold release for an exterior excess pattern with no sweating and body aches (Ma Huang Tang)."
         },
         {
-          "pair": "桂枝 + 茯苓 (Bastyr 官方對藥)",
-          "rationale_zh": "溫陽化氣、利水活血（代表方：桂枝茯苓丸、苓桂術甘湯）。"
+          "pair": "桂枝 + 茯苓 Fú Líng",
+          "rationale_zh": "溫陽化氣、利水化飲——陽虛水飲所致眩暈、心悸、小便不利（苓桂朮甘湯）。",
+          "rationale_en": "Warms Yang, transforms Qi and drains thin fluids for dizziness, palpitations and difficult urination from Yang deficiency (Ling Gui Zhu Gan Tang)."
         }
       ],
       "actions_en": [
-        "Release Exterior & Muscle Layer by Sweating",
-        "Warm & Unblock Meridians & Collaterals",
-        "Assist Yang & Transform Qi/Fluid",
-        "Direct Rebellious Qi Downward"
+        "Release the muscle layer and harmonize Ying and Wei",
+        "Warm and unblock the channels; disperse Cold and relieve pain",
+        "Assist Yang, transform Qi and resolve thin fluids",
+        "Warm and unblock chest Yang; calm surging and redirect rebellious Qi"
       ],
       "condition_tags_zh": [
-        "發汗解肌",
-        "溫通經脈",
-        "助陽化氣",
-        "平沖降逆"
+        "風寒表虛",
+        "風寒表實",
+        "風寒濕痹",
+        "寒凝痛經",
+        "陽虛水飲"
+      ],
+      "condition_tags_en": [
+        "Wind-Cold exterior deficiency",
+        "Wind-Cold exterior excess",
+        "Wind-Cold-Damp Bi",
+        "Cold-congealing dysmenorrhea",
+        "Yang-deficiency thin-fluid retention"
       ],
       "modern_pharmacology": [
         {
@@ -801,13 +946,80 @@
           "tag": "強心與促進血液循環",
           "analysis_zh": "Cardiotonic Effect"
         }
-      ]
+      ],
+      "modern_functions_zh": [
+        "解熱與鎮痛",
+        "抗發炎與抗病毒",
+        "利尿",
+        "改善末梢循環"
+      ],
+      "modern_functions_en": [
+        "Antipyretic and analgesic activity",
+        "Anti-inflammatory and antiviral activity",
+        "Diuretic activity",
+        "Peripheral circulation support"
+      ],
+      "dosage": {
+        "decoction_g": "課件未列；American Dragon：外感 3–10g，痹痛 9–15g",
+        "特殊說明": "妊娠或月經過多屬慎用；American Dragon 建議乾炒後不超過 6g。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–10g（外感）／9–15g（痹痛；American Dragon）"
+      },
+      "contraindications_zh": [
+        "溫病禁用。",
+        "陰虛有熱者禁用。",
+        "血熱妄行、嘔血者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in warm-febrile disease.",
+        "Contraindicated in Yin deficiency with Heat signs.",
+        "Contraindicated in Blood Heat with vomiting of blood."
+      ],
+      "cautions_zh": [
+        "妊娠及月經過多者慎用；Chenoweth 課件將妊娠、高出血風險與經量過多列為禁忌，American Dragon 則列為慎用並建議乾炒後不超過 6g，兩源差異保留待 Ting 審核。",
+        "與利尿劑併用可能增加水分或電解質流失。"
+      ],
+      "cautions_en": [
+        "Use cautiously in pregnancy or heavy menstruation. Chenoweth lists pregnancy, high bleeding risk and heavy menses as contraindications, while American Dragon lists caution and suggests no more than 6g dry-fried; retain both for Ting's review.",
+        "Concurrent use with diuretics may increase water or electrolyte loss."
+      ],
+      "exam_importance": "★ Chenoweth 課件重點：辛溫解表、調和營衛與溫通經脈代表藥；對應 NCBAHM 2026 CH 考綱 Domain I.A。",
+      "exam_pearl": "比較麻黃：桂枝偏解肌、調和營衛，表虛有汗亦可用；又能溫通胸陽、經脈與水飲。",
+      "safety_flags": [
+        "pregnancy_priority_review",
+        "bleeding_priority_review",
+        "herb_drug_interaction_review"
+      ],
+      "safety_review_pending": "課件與 American Dragon 對妊娠／經量過多的禁忌強度不同，已並列，須 Ting 優先審核。",
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row91"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "channels_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/2", "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "condition_tags_en": ["https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/2"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "dosage": ["https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "key_pairs": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/GuiZhi.html"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"]
+      }
     },
     {
       "id": "herb.zi_su_ye",
       "name_zh": "紫蘇葉",
-      "name_en": "Perilla Leaf",
-      "pinyin": "Zǐ Sū Yè",
+      "name_en": "Purple Perilla Leaf",
+      "pinyin": "Zi Su Ye",
       "category": "解表藥 / Release Exterior - Warm Acrid",
       "channels_entered": [
         "脾經",
@@ -817,7 +1029,7 @@
         "心經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、溫、無毒",
       "functions": [
         "發汗解表",
@@ -839,7 +1051,6 @@
         "抗氧化"
       ],
       "related_formulas": [
-        "formula.xiang_su_san",
         "formula.ban_xia_hou_po_tang",
         "formula.huo_xiang_zheng_qi_san",
         "formula.xing_su_san"
@@ -919,6 +1130,22 @@
       "source_urls": [
         "https://cloudtcm.com/herb/1253"
       ],
+      "source_citations": [
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1253",
+          "scope": "性味、功效、現代藥理與安全資料"
+        },
+        {
+          "name": "Wikimedia Commons 圖像",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Perilla_frutescens_crispa_purpurea0.jpg/640px-Perilla_frutescens_crispa_purpurea0.jpg",
+          "scope": "紫蘇葉植物圖像"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A；American Dragon 頁面未成功核讀，未列為內容來源"
+        }
+      ],
       "exact_source_url": "https://cloudtcm.com/herb/1253",
       "fetched_at": "2026-07-23T07:19:58.151Z",
       "public_safe": false,
@@ -937,16 +1164,10 @@
       "safety_fetched_at": "2026-07-23T07:24:58.035Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "發汗解表",
-        "散風寒",
-        "止嘔",
-        "理氣行氣",
-        "降氣",
-        "安胎",
-        "止咳平喘",
-        "止血",
-        "解毒",
-        "行氣寬中"
+        "解表散寒",
+        "行氣寬中，和胃止嘔",
+        "理氣安胎",
+        "解魚蟹毒"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -996,7 +1217,11 @@
         "脾經"
       ],
       "indications_zh": [
-        "解表散寒；行氣和胃；解魚蟹毒"
+        "風寒感冒兼咳嗽、鼻塞——配 生薑、杏仁",
+        "氣滯胸悶、脘腹脹滿——配 陳皮、香附",
+        "脾胃氣滯之噁心嘔吐——配 生薑、半夏",
+        "妊娠惡阻、胎氣不和——紫蘇葉偏行氣，蘇梗偏安胎",
+        "魚蟹中毒之腹痛嘔吐——配 生薑"
       ],
       "study_tags": [
         "單味中藥",
@@ -1006,9 +1231,11 @@
       ],
       "tags_fetched_at": "2026-07-23",
       "pinyin_toned": "Zǐ Sū Yè",
-      "cloudtcm_url": "https://cloudtcm.com/herb/1247",
+      "cloudtcm_url": "https://cloudtcm.com/herb/1253",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZiSuYe.html",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Perilla_frutescens_crispa_purpurea0.jpg/640px-Perilla_frutescens_crispa_purpurea0.jpg",
+      "pharmaceutical_latin": "Perillae Folium",
+      "part_used_en": "Leaf",
       "tcm_properties": {
         "four_natures_zh": "溫",
         "four_natures_en": "Warm",
@@ -1044,25 +1271,35 @@
       "pao_zhi_notes_zh": "生用辛香散寒、行氣解毒力強；蘇梗（莖枝）偏於行氣寬中安胎；蘇子（果實）專於降氣化痰平喘。",
       "key_pairs": [
         {
-          "pair": "紫蘇葉 + 生薑 (Bastyr 官方對藥)",
-          "rationale_zh": "發散風寒、溫中止嘔（代表方：杏蘇散、香蘇散）。"
+          "pair": "紫蘇葉 + 生薑 Shēng Jiāng",
+          "rationale_zh": "相使。共同發散風寒、和胃止嘔，並用於魚蟹中毒。",
+          "rationale_en": "Xiang Shi (mutual assistance). Together they disperse Wind-Cold, harmonize the Stomach, stop vomiting and address seafood toxicity."
         },
         {
-          "pair": "紫蘇葉 + 陳皮 (Bastyr 官方對藥)",
-          "rationale_zh": "行氣寬中、理氣化痰（治氣鬱胸悶）。"
+          "pair": "紫蘇葉 + 陳皮 Chén Pí",
+          "rationale_zh": "行氣寬中、理氣化痰——氣滯胸悶、脘腹脹滿。",
+          "rationale_en": "Moves Qi, unbinds the chest and transforms Phlegm for chest oppression and abdominal distention from Qi stagnation."
         }
       ],
       "actions_en": [
-        "Release Exterior & Dispel Cold",
-        "Promote Qi Movement & Unbind Middle Jiao",
-        "Calm Fetus",
-        "Relieve Fish & Crab Food Toxicity"
+        "Release the Exterior and disperse Cold",
+        "Move Qi, unbind the chest and harmonize the Stomach",
+        "Regulate Qi and calm the fetus",
+        "Relieve fish and crab toxicity"
       ],
       "condition_tags_zh": [
-        "解表散寒",
-        "行氣寬中",
-        "安胎",
-        "解魚蟹毒"
+        "風寒感冒",
+        "胸悶氣滯",
+        "噁心嘔吐",
+        "妊娠惡阻",
+        "魚蟹中毒"
+      ],
+      "condition_tags_en": [
+        "Wind-Cold common cold",
+        "Chest oppression from Qi stagnation",
+        "Nausea and vomiting",
+        "Nausea and vomiting of pregnancy",
+        "Fish and crab toxicity"
       ],
       "modern_pharmacology": [
         {
@@ -1081,12 +1318,75 @@
           "tag": "抗菌與抑真菌",
           "analysis_zh": "Antibacterial & Antifungal"
         }
-      ]
+      ],
+      "modern_functions_zh": [
+        "促進胃酸分泌與胃腸蠕動",
+        "解熱與鎮靜",
+        "抗過敏",
+        "抗菌與抗真菌"
+      ],
+      "modern_functions_en": [
+        "Promotes gastric secretion and gastrointestinal motility",
+        "Antipyretic and sedative activity",
+        "Anti-allergic activity",
+        "Antibacterial and antifungal activity"
+      ],
+      "dosage": {
+        "decoction_g": "CloudTCM：5–10g；課件未列劑量",
+        "特殊說明": "辛香含揮發油，入湯劑不宜久煎。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "5–10g（CloudTCM）"
+      },
+      "contraindications_zh": [
+        "溫病及氣弱表虛者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in warm-febrile disease and exterior deficiency from weak Qi."
+      ],
+      "cautions_zh": [
+        "陰虛而見寒熱、惡寒或頭痛者慎用；火升嘔吐者亦慎用。",
+        "American Dragon 個別頁本次受網站驗證頁阻擋，未把未讀內容當作來源。"
+      ],
+      "cautions_en": [
+        "Use cautiously for Yin deficiency presenting with chills-fever, aversion to cold or headache, and for vomiting from flaring Fire.",
+        "The American Dragon individual page was blocked by a verification page during this review; no unread content was attributed to it."
+      ],
+      "exam_importance": "★ Chenoweth 課件重點：辛溫解表兼行氣和中代表藥；對應 NCBAHM 2026 CH 考綱 Domain I.A。",
+      "exam_pearl": "葉、梗、子分工要辨：紫蘇葉解表行氣；蘇梗偏寬中安胎；蘇子偏降氣化痰。",
+      "safety_flags": [
+        "pregnancy_priority_review",
+        "source_access_review"
+      ],
+      "safety_review_pending": "American Dragon 個別頁需人工瀏覽複核；目前安全資料依 CloudTCM，妊娠用途與一般安全性須 Ting 審核。",
+      "exact_source_url": "https://cloudtcm.com/herb/1253",
+      "safety_source_url": "https://cloudtcm.com/herb/1253",
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row266"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/1253"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/1253"],
+        "actions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "condition_tags_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/1253"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "dosage": ["https://cloudtcm.com/herb/1253"],
+        "key_pairs": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "contraindications_zh": ["https://cloudtcm.com/herb/1253"],
+        "contraindications_en": ["https://cloudtcm.com/herb/1253"],
+        "cautions_zh": ["https://cloudtcm.com/herb/1253"],
+        "cautions_en": ["https://cloudtcm.com/herb/1253"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"]
+      }
     },
     {
       "id": "herb.sheng_jiang",
       "name_zh": "生薑",
-      "name_en": "Fresh Ginger",
+      "name_en": "Fresh Ginger Root",
       "pinyin": "Shēng Jiāng",
       "category": "解表藥 / Release Exterior - Warm Acrid",
       "channels_entered": [
@@ -1095,7 +1395,7 @@
         "胃經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、溫",
       "functions": [
         "散風寒",
@@ -1266,7 +1566,28 @@
       "dosage": "{\r\n  \"一般建議\": \"3-10克（入藥）；10-30克（食療）\",\r\n  \"食療用量範圍\": \"3-15克（約3-5片）\",\r\n  \"特殊說明\": \"作為調味品用量可適度增減，但不宜過量；風寒感冒初期可用至20-30克煎湯\"\r\n}",
       "cautions": "中藥「生薑」注意事項重點\n**陰虛內熱及實熱證禁服：**生薑性溫，陰虛內熱者服用會加重熱證，實熱證患者服用會助長火勢，故不宜服用。\n**傷陰助火：**生薑味辛，容易損耗陰液，加重火熱，故陰虛內熱者忌服。\n**積熱患目：**長期食用生薑會積熱，引起眼睛發紅、疼痛等症狀。\n**久服損陰傷目：**久服生薑會損傷陰液，導致眼目受損。\n**陰虛咳嗽吐血、自汗盜汗等症狀：**生薑會加重這些症狀，故不宜服用。\n**胃潰瘍或十二指腸潰瘍：**生薑會促進胃液分泌，加重潰瘍部位疼痛和出血。\n**血液疾病：**生薑會促進血液循環，增加出血風險，故血友病、血小板減少性紫癜等血液疾病患者應避免食用。\n**孕婦：**過量食用生薑可能會引起子宮收縮，增加流產風險。\n**藥物禁忌：**生薑與抗凝血劑、降血糖藥物、降血壓藥物等藥物併用會產生相互作用，影響藥物療效。",
       "source_urls": [
-        "https://cloudtcm.com/herb/6"
+        "https://cloudtcm.com/herb/1171"
+      ],
+      "source_citations": [
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1171",
+          "scope": "性味、功效、現代藥理與劑量"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ShengJiang.html",
+          "scope": "Actions、indications、dosage、contraindications and combinations"
+        },
+        {
+          "name": "Wikimedia Commons 圖像",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Zingiber_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-148.jpg/640px-Zingiber_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-148.jpg",
+          "scope": "生薑植物圖像"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A"
+        }
       ],
       "exact_source_url": "https://cloudtcm.com/herb/6",
       "fetched_at": "2026-07-23T07:19:58.451Z",
@@ -1287,17 +1608,11 @@
       "safety_fetched_at": "2026-07-23T07:24:58.288Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "散風寒",
-        "發汗解表",
-        "止咳化痰",
-        "降氣",
-        "補陽",
-        "健脾胃",
-        "解毒",
-        "止嘔",
-        "祛風除濕",
-        "活血化瘀",
-        "解表散寒"
+        "解表散寒，發汗",
+        "溫中止嘔",
+        "溫肺止咳",
+        "解藥毒與魚蟹毒",
+        "調和營衛"
       ],
       "modern_functions_zh": [
         "抗氧化",
@@ -1422,7 +1737,11 @@
         "胃經"
       ],
       "indications_zh": [
-        "解表散寒；溫中止嘔；化痰止咳"
+        "風寒初起、咳嗽有痰——配 紫蘇葉、杏仁",
+        "胃寒嘔吐、脘腹冷痛——配 半夏",
+        "風寒犯肺咳嗽或肺虛痰咳——配 杏仁、紫菀",
+        "半夏、天南星等藥毒或魚蟹中毒——配 甘草、紫蘇葉",
+        "太陽中風、營衛不和——配 桂枝、白芍、大棗"
       ],
       "study_tags": [
         "單味中藥",
@@ -1435,6 +1754,8 @@
       "cloudtcm_url": "https://cloudtcm.com/herb/1171",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShengJiang.html",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Zingiber_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-148.jpg/640px-Zingiber_officinale_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-148.jpg",
+      "pharmaceutical_latin": "Zingiberis Rhizoma Recens",
+      "part_used_en": "Fresh Rhizome",
       "tcm_properties": {
         "four_natures_zh": "微溫",
         "four_natures_en": "Slightly Warm",
@@ -1472,25 +1793,36 @@
       "pao_zhi_notes_zh": "生薑發汗解表止嘔；乾薑溫中回陽；炮薑溫經止血；薑皮利水消腫。",
       "key_pairs": [
         {
-          "pair": "生薑 + 半夏 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "溫中止嘔、降逆化飲，治嘔吐第一對藥（代表方：小半夏湯）。"
+          "pair": "生薑 + 半夏 Bàn Xià",
+          "rationale_zh": "相使。溫中降逆、化飲止嘔，生薑並制半夏之毒——胃寒痰飲嘔吐（小半夏湯）。",
+          "rationale_en": "Xiang Shi (mutual assistance). Warms the Middle, redirects rebellion and transforms thin fluids; Sheng Jiang also moderates Ban Xia toxicity (Xiao Ban Xia Tang)."
         },
         {
-          "pair": "生薑 + 大棗 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "調和營衛、健脾和胃（代表方：桂枝湯）。"
+          "pair": "生薑 + 大棗 Dà Zǎo",
+          "rationale_zh": "一散一補，調和營衛並保護脾胃——太陽中風、營衛不和（桂枝湯）。",
+          "rationale_en": "One disperses while the other nourishes, harmonizing Ying and Wei and protecting the Spleen and Stomach (Gui Zhi Tang)."
         }
       ],
       "actions_en": [
-        "Release Exterior by Sweating",
-        "Warm Middle & Stop Vomiting",
-        "Warm Lungs & Stop Cough",
-        "Relieve Ban Xia, Tian Nan Xing & Seafood Toxicity"
+        "Release the Exterior, induce sweating and disperse Cold",
+        "Warm the Middle and stop vomiting",
+        "Warm the Lungs and stop coughing",
+        "Reduce herb and seafood toxicity",
+        "Harmonize Ying and Wei"
       ],
       "condition_tags_zh": [
-        "發汗解表",
-        "溫中止嘔",
-        "溫肺止咳",
-        "解半夏天南星毒"
+        "風寒感冒",
+        "胃寒嘔吐",
+        "風寒咳嗽",
+        "肺虛痰咳",
+        "魚蟹中毒"
+      ],
+      "condition_tags_en": [
+        "Wind-Cold common cold",
+        "Vomiting from Stomach Cold",
+        "Wind-Cold cough",
+        "Lung-deficiency cough with Phlegm",
+        "Seafood toxicity"
       ],
       "modern_pharmacology": [
         {
@@ -1509,7 +1841,72 @@
           "tag": "抗氧化與心血管保護",
           "analysis_zh": "Antioxidant & Cardiovascular Protection"
         }
-      ]
+      ],
+      "modern_functions_zh": [
+        "促進胃黏液分泌",
+        "促進腸道蠕動",
+        "止噁心與止嘔",
+        "抗菌與抗發炎"
+      ],
+      "modern_functions_en": [
+        "Promotes gastric mucus secretion",
+        "Promotes intestinal motility",
+        "Antiemetic activity",
+        "Antibacterial and anti-inflammatory activity"
+      ],
+      "dosage": {
+        "decoction_g": "American Dragon：1–10g；CloudTCM：3–10g",
+        "特殊說明": "兩源範圍不同，並記不擇一；鮮品入煎劑。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "1–10g（American Dragon）／3–10g（CloudTCM）"
+      },
+      "contraindications_zh": [
+        "表虛自汗者禁用。",
+        "肺熱者禁用。",
+        "胃熱嘔吐者禁用。",
+        "陰虛有熱者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in spontaneous sweating from Exterior deficiency.",
+        "Contraindicated in Lung Heat.",
+        "Contraindicated in vomiting from Stomach Heat.",
+        "Contraindicated in Yin deficiency with Heat signs."
+      ],
+      "cautions_zh": [
+        "現有來源未提供可核實的特定藥物交互作用數字；不沿用舊資料中未具精確來源的抗凝血、降壓或降糖斷言。"
+      ],
+      "cautions_en": [
+        "Current reviewed sources provide no verifiable numeric drug-interaction guidance; prior unsourced assertions about anticoagulants, antihypertensives or glucose-lowering drugs are not promoted."
+      ],
+      "exam_importance": "★ Chenoweth 課件重點：兼具溫中止嘔與解毒作用的辛溫解表藥；對應 NCBAHM 2026 CH 考綱 Domain I.A。",
+      "exam_pearl": "四個辨識點：風寒初起、胃寒嘔吐、風寒咳嗽、解半夏／南星及魚蟹毒；生薑配大棗調和營衛。",
+      "safety_flags": [
+        "heat_pattern_contraindication",
+        "herb_drug_interaction_review"
+      ],
+      "safety_review_pending": "中西藥交互作用尚待藥理來源補強。",
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row144"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "condition_tags_en": ["https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "dosage": ["https://cloudtcm.com/herb/1171", "https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "key_pairs": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "contraindications_zh": ["https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "cautions_zh": ["https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/ShengJiang.html"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"]
+      }
     },
     {
       "id": "herb.xiang_ru",
@@ -1745,15 +2142,15 @@
     {
       "id": "herb.jing_jie",
       "name_zh": "荊芥",
-      "name_en": "Schizonepeta / Japanese Catnip",
-      "pinyin": "Jīng Jiè",
+      "name_en": "Schizonepeta",
+      "pinyin": "Jing Jie",
       "category": "解表藥 / Release Exterior - Warm Acrid",
       "channels_entered": [
         "肺經",
         "肝經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、微苦、溫",
       "functions": [
         "散風寒",
@@ -1777,7 +2174,6 @@
       "related_formulas": [
         "formula.yin_qiao_san",
         "formula.sang_ju_yin",
-        "formula.jing_fang_bai_du_san",
         "formula.chuan_xiong_cha_tiao_san",
         "formula.xiao_feng_san",
         "formula.huai_hua_san",
@@ -1861,6 +2257,27 @@
       "source_urls": [
         "https://cloudtcm.com/herb/1091"
       ],
+      "source_citations": [
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1091",
+          "scope": "性味、功效、現代藥理與安全資料"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/JingJie.html",
+          "scope": "Actions、indications、dosage、contraindications and combinations"
+        },
+        {
+          "name": "Wikimedia Commons 圖像",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Schizonepeta_tenuifolia_bgi.jpg/640px-Schizonepeta_tenuifolia_bgi.jpg",
+          "scope": "荊芥植物圖像"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A"
+        }
+      ],
       "exact_source_url": "https://cloudtcm.com/herb/1091",
       "fetched_at": "2026-07-23T07:19:58.966Z",
       "public_safe": false,
@@ -1882,15 +2299,10 @@
       "safety_fetched_at": "2026-07-23T07:24:58.761Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "散風寒",
-        "發汗解表",
-        "祛風除濕",
-        "止癢",
-        "止血",
-        "活絡止痛",
-        "透疹",
-        "消食化積",
-        "斂瘡"
+        "祛風解表",
+        "透疹止癢",
+        "祛風解痙",
+        "炒炭止血"
       ],
       "modern_functions_zh": [
         "抗發炎",
@@ -1949,7 +2361,11 @@
         "肝經"
       ],
       "indications_zh": [
-        "祛風解表；透疹消瘡；止血（炒炭）"
+        "風寒表證（惡寒發熱、無汗）——配 防風、羌活",
+        "風熱表證（發熱、頭痛、咽痛）——配 薄荷、金銀花、連翹",
+        "麻疹初起不透、風疹瘙癢——配 薄荷、牛蒡子、蟬蛻",
+        "外風所致產後痙攣或牙關緊閉——作輔藥辨證使用",
+        "便血、崩漏等輕症出血——荊芥炭入藥"
       ],
       "study_tags": [
         "單味中藥",
@@ -1962,6 +2378,8 @@
       "cloudtcm_url": "https://cloudtcm.com/herb/1091",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/JingJie.html",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Schizonepeta_tenuifolia_bgi.jpg/640px-Schizonepeta_tenuifolia_bgi.jpg",
+      "pharmaceutical_latin": "Schizonepetae Herba",
+      "part_used_en": "Aerial Parts / Spike",
       "tcm_properties": {
         "four_natures_zh": "微溫",
         "four_natures_en": "Slightly Warm",
@@ -1996,23 +2414,35 @@
       "pao_zhi_notes_zh": "生荊芥發汗解表、祛風透疹；荊芥穗祛風透疹之力更專；荊芥炭辛散之性消失，專於涼血止血（治便血崩漏）。",
       "key_pairs": [
         {
-          "pair": "荊芥 + 防風 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "相須為用，祛風解表勝濕第一對藥（代表方：荊防敗毒散）。"
+          "pair": "荊芥 + 防風 Fáng Fēng",
+          "rationale_zh": "相須。共同祛風解表、勝濕止痛——風寒表證兼頭身疼痛（荊防敗毒散）。",
+          "rationale_en": "Xiang Xu (mutual accentuation). Together they dispel Wind, release the Exterior and overcome Dampness for Wind-Cold with headache and body aches."
         },
         {
-          "pair": "荊芥 + 薄荷 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "疏風清熱、透疹止癢（代表方：銀翹散）。"
+          "pair": "荊芥 + 薄荷 Bò Hé",
+          "rationale_zh": "疏散風熱、透疹止癢——風熱初起、麻疹初起或瘙癢。",
+          "rationale_en": "Disperses Wind-Heat and vents rashes for early Wind-Heat, initial measles or pruritic eruptions."
         }
       ],
       "actions_en": [
-        "Dispel Wind & Release Exterior",
-        "Promote Eruption & Relieve Itching",
-        "Stop Bleeding"
+        "Dispel Wind and release the Exterior",
+        "Vent rashes and relieve itching",
+        "Dispel Wind and relieve spasms",
+        "Stop bleeding when charred"
       ],
       "condition_tags_zh": [
-        "祛風解表",
-        "透疹止癢",
-        "止血"
+        "風寒表證",
+        "風熱表證",
+        "麻疹初起",
+        "皮膚瘙癢",
+        "便血崩漏"
+      ],
+      "condition_tags_en": [
+        "Wind-Cold exterior pattern",
+        "Wind-Heat exterior pattern",
+        "Initial-stage measles",
+        "Pruritic skin eruptions",
+        "Intestinal or uterine bleeding"
       ],
       "modern_pharmacology": [
         {
@@ -2031,12 +2461,80 @@
           "tag": "廣譜抗菌與抗發炎",
           "analysis_zh": "Broad-spectrum Antibacterial"
         }
-      ]
+      ],
+      "modern_functions_zh": [
+        "解熱與發汗",
+        "抗菌",
+        "止血",
+        "支氣管擴張"
+      ],
+      "modern_functions_en": [
+        "Antipyretic and diaphoretic activity",
+        "Antibacterial activity",
+        "Hemostatic activity",
+        "Bronchodilator activity"
+      ],
+      "dosage": {
+        "decoction_g": "CloudTCM：5–10g；American Dragon：3–10g",
+        "最大量": "30g（American Dragon）",
+        "特殊說明": "兩源常用量不同，並記不擇一；解表生用，止血炒炭，不宜久煎。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "5–10g（CloudTCM）／3–10g（American Dragon）；最大 30g（American Dragon）"
+      },
+      "contraindications_zh": [
+        "麻疹已透或瘡瘍已潰者禁用。",
+        "表虛自汗者禁用。",
+        "陰虛頭痛者禁用。",
+        "無風邪者禁用。",
+        "內風肢體痙攣或震顫者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated after measles has fully erupted or when sores are open.",
+        "Contraindicated in spontaneous sweating from Exterior deficiency.",
+        "Contraindicated in headache from Yin deficiency.",
+        "Contraindicated when pathogenic Wind is absent.",
+        "Contraindicated in Internal Wind with limb spasms or tremors."
+      ],
+      "cautions_zh": [
+        "CloudTCM 另列孕婦、慢性支氣管炎、高熱及過敏體質禁用，但 Chenoweth 與 American Dragon 本次可讀內容未列；保留為來源差異，須 Ting 優先複核。"
+      ],
+      "cautions_en": [
+        "CloudTCM additionally lists pregnancy, chronic bronchitis, high fever and allergic constitution as contraindications; these were not present in the reviewed Chenoweth or American Dragon text, so the discrepancy requires Ting's priority review."
+      ],
+      "exam_importance": "★ Chenoweth 課件重點：風寒、風熱皆可用，兼透疹止癢；炒炭止血是炮製考點；對應 NCBAHM 2026 CH 考綱 Domain I.A。",
+      "exam_pearl": "荊芥與防風為 twins：荊芥偏透疹止癢，荊芥炭止血；不可把內風痙攣當成其止痙適應症。",
+      "safety_flags": [
+        "pregnancy_source_conflict",
+        "contraindication_source_conflict"
+      ],
+      "safety_review_pending": "CloudTCM 與 American Dragon 對禁忌範圍差異明顯，須 Ting 優先審核。",
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row288"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/1091", "https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "condition_tags_en": ["https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "dosage": ["https://cloudtcm.com/herb/1091", "https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "key_pairs": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "contraindications_zh": ["https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "cautions_zh": ["https://cloudtcm.com/herb/1091", "https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "cautions_en": ["https://cloudtcm.com/herb/1091", "https://www.americandragon.com/Individualherbsupdate/JingJie.html"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"]
+      }
     },
     {
       "id": "herb.fang_feng",
       "name_zh": "防風",
-      "name_en": "Saposhnikovia / Siler Root",
+      "name_en": "Saposhnikovia Root",
       "pinyin": "Fáng Fēng",
       "category": "解表藥 / Release Exterior - Warm Acrid",
       "channels_entered": [
@@ -2046,7 +2544,7 @@
         "肝經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、甘、微溫、無毒",
       "functions": [
         "散風寒",
@@ -2075,7 +2573,6 @@
       ],
       "related_formulas": [
         "formula.jiu_wei_qiang_huo_tang",
-        "formula.jing_fang_bai_du_san",
         "formula.tong_xie_yao_fang",
         "formula.yu_ping_feng_san",
         "formula.huo_xiang_zheng_qi_san",
@@ -2176,6 +2673,27 @@
       "source_urls": [
         "https://cloudtcm.com/herb/1028"
       ],
+      "source_citations": [
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1028",
+          "scope": "性味、功效、現代藥理與安全資料"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/FangFeng.html",
+          "scope": "Actions、indications、dosage、contraindications and combinations"
+        },
+        {
+          "name": "Wikimedia Commons 圖像",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Saposhnikovia_divaricata_1.jpg/640px-Saposhnikovia_divaricata_1.jpg",
+          "scope": "防風植物圖像"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A"
+        }
+      ],
       "exact_source_url": "https://cloudtcm.com/herb/1028",
       "fetched_at": "2026-07-23T07:19:59.239Z",
       "public_safe": false,
@@ -2196,13 +2714,10 @@
       "safety_fetched_at": "2026-07-23T07:24:58.999Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "散風寒",
-        "發汗解表",
-        "止瀉",
-        "活絡止痛",
-        "祛風除濕",
-        "去風止痙",
-        "解毒"
+        "祛風解表",
+        "勝濕止痛",
+        "祛風止痙",
+        "止瀉止血"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -2302,7 +2817,11 @@
         "脾經"
       ],
       "indications_zh": [
-        "祛風解表；勝濕止痛；止痙"
+        "風寒表證（頭痛、惡寒、身痛）——配 荊芥、紫蘇葉",
+        "風寒濕痹、肢體關節疼痛——配 羌活、秦艽",
+        "外風引動之手足震顫、痙攣——作止痙輔藥",
+        "脾肝不和之痛瀉、腹鳴腹痛——配 白朮、白芍、陳皮",
+        "衛氣虛自汗、易感冒——配 黃耆、白朮（玉屏風散）"
       ],
       "study_tags": [
         "單味中藥",
@@ -2315,6 +2834,8 @@
       "cloudtcm_url": "https://cloudtcm.com/herb/1028",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/FangFeng.html",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Saposhnikovia_divaricata_1.jpg/640px-Saposhnikovia_divaricata_1.jpg",
+      "pharmaceutical_latin": "Saposhnikoviae Radix",
+      "part_used_en": "Root",
       "tcm_properties": {
         "four_natures_zh": "微溫",
         "four_natures_en": "Slightly Warm",
@@ -2353,12 +2874,14 @@
       "pao_zhi_notes_zh": "生防風勝濕止痛解表力強；炒防風健脾止瀉；防風炭涼血止血。",
       "key_pairs": [
         {
-          "pair": "防風 + 黃耆 + 白朮 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "益氣固表、祛風止汗（代表方：玉屏風散）。"
+          "pair": "防風 + 黃耆 Huáng Qí・白朮 Bái Zhú",
+          "rationale_zh": "黃耆、白朮益氣固表，防風疏散表邪，使補而不留邪——衛氣虛自汗、易感冒（玉屏風散）。",
+          "rationale_en": "Huang Qi and Bai Zhu tonify and secure the Exterior while Fang Feng disperses Wind, preventing the tonics from trapping pathogens (Yu Ping Feng San)."
         },
         {
-          "pair": "防風 + 荊芥 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "祛風勝濕、解表透疹（代表方：荊防敗毒散）。"
+          "pair": "防風 + 荊芥 Jīng Jiè",
+          "rationale_zh": "相須。祛風解表、勝濕止痛——風寒表證兼頭身疼痛（荊防敗毒散）。",
+          "rationale_en": "Xiang Xu (mutual accentuation). Dispels Wind, releases the Exterior and overcomes Dampness for Wind-Cold with headache and body aches."
         }
       ],
       "actions_en": [
@@ -2368,10 +2891,18 @@
         "Stop Diarrhea & Stop Bleeding"
       ],
       "condition_tags_zh": [
-        "祛風解表",
-        "勝濕止痛",
-        "止痙",
-        "止瀉止血"
+        "風寒表證",
+        "風寒濕痹",
+        "外風痙攣",
+        "偏頭痛",
+        "痛瀉"
+      ],
+      "condition_tags_en": [
+        "Wind-Cold exterior pattern",
+        "Wind-Cold-Damp Bi",
+        "Spasms from External Wind",
+        "Migraine headache",
+        "Painful diarrhea"
       ],
       "modern_pharmacology": [
         {
@@ -2386,7 +2917,79 @@
           "tag": "免疫調節與抗過敏",
           "analysis_zh": "Immune Enhancement & Anti-allergic"
         }
-      ]
+      ],
+      "modern_functions_zh": [
+        "解熱",
+        "鎮痛與抗發炎",
+        "抗病毒與抗菌",
+        "免疫調節"
+      ],
+      "modern_functions_en": [
+        "Antipyretic activity",
+        "Analgesic and anti-inflammatory activity",
+        "Antiviral and antibacterial activity",
+        "Immunomodulatory activity"
+      ],
+      "dosage": {
+        "decoction_g": "CloudTCM 與 American Dragon：3–10g",
+        "最大量": "30g（American Dragon）",
+        "特殊說明": "CloudTCM 稱醋制可增強止痛；此炮製說法待 Ting 複核。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–10g；最大 30g（American Dragon）"
+      },
+      "contraindications_zh": [
+        "血虛發痙者禁用。",
+        "陰虛有熱者禁用。",
+        "無風濕或寒邪者禁用。",
+        "陰虛、肝陽或肝風上擾所致頭痛者禁用。",
+        "氣虛自汗者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in spasms from Blood deficiency.",
+        "Contraindicated in Yin deficiency with Heat signs.",
+        "Contraindicated when Wind-Dampness or Cold is absent.",
+        "Contraindicated in headache from Yin deficiency, Liver Yang or Liver Wind rising.",
+        "Contraindicated in spontaneous sweating from Qi deficiency."
+      ],
+      "cautions_zh": [
+        "American Dragon 另列中風、產後痙攣、二便不利、逆氣噁心及火咳禁用，範圍較廣，須辨證複核。",
+        "American Dragon 記載與乾薑、藜蘆、萆薢、山茱萸有相惡或不相容關係；未提供藥物交互作用資料。",
+        "CloudTCM 同頁「特殊說明」寫孕婦禁用，注意事項又寫孕婦慎用，站內自相矛盾，未擅自選邊。"
+      ],
+      "cautions_en": [
+        "American Dragon additionally contraindicates use in stroke, postpartum convulsions, difficult urination or defecation, rebellious-Qi nausea and Fire cough; this broader list requires pattern-based review.",
+        "American Dragon records antagonism or incompatibility with Gan Jiang, Li Lu, Bi Xie and Shan Zhu Yu; no drug-interaction entry is provided.",
+        "CloudTCM says both 'contraindicated' and 'use cautiously' in pregnancy on the same page; the internal conflict is retained rather than resolved."
+      ],
+      "exam_importance": "★ Chenoweth 課件重點：風藥中「治風通用」代表，兼勝濕止痛與止痙；對應 NCBAHM 2026 CH 考綱 Domain I.A。",
+      "exam_pearl": "與荊芥並稱 twins；防風偏勝濕止痛、止外風痙，且是玉屏風散中防邪而不留邪的關鍵。",
+      "safety_flags": [
+        "pregnancy_source_conflict",
+        "herb_incompatibility_review"
+      ],
+      "safety_review_pending": "CloudTCM 對妊娠禁用／慎用自相矛盾；已標記 Ting 優先審核。",
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row284"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/1028", "https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "condition_tags_en": ["https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://cloudtcm.com/herb/1028"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"],
+        "dosage": ["https://cloudtcm.com/herb/1028", "https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "key_pairs": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1", "https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "contraindications_zh": ["https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "cautions_zh": ["https://cloudtcm.com/herb/1028", "https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "cautions_en": ["https://cloudtcm.com/herb/1028", "https://www.americandragon.com/Individualherbsupdate/FangFeng.html"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"]
+      }
     },
     {
       "id": "herb.qiang_huo",
@@ -9344,7 +9947,7 @@
       "id": "herb.pu_gong_ying",
       "name_zh": "蒲公英",
       "name_en": "Dandelion",
-      "pinyin": "Pu Gong Ying",
+      "pinyin": "Pǔ Gōng Yīng",
       "category": "清熱藥 / Clear Heat - Resolve Toxicity",
       "channels_entered": [
         "肝經",
@@ -9441,10 +10044,33 @@
           "利水通淋"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"10-30克\",\r\n  \"食療用量範圍\": \"10-60克（鮮品可加倍）\",\r\n  \"特殊說明\": \"脾胃虛寒者慎用；用量過大可能引起腹瀉\"\r\n}",
+      "dosage": {
+        "decoction_g": "Chenoweth 課件未列；CloudTCM：10–30g；American Dragon：9–30g",
+        "食療用量範圍": "10–60g（鮮品可加倍；CloudTCM）",
+        "特殊說明": "兩源常用下限不同，並記不擇一；過量可能引起輕度腹瀉。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "10–30g（CloudTCM）／9–30g（American Dragon）"
+      },
       "cautions": "蒲公英注意事項重點：\n**用量過大：**可致緩瀉。\n**陽虛外寒：**忌用。\n**脾胃虛弱：**忌用。\n**孕婦和哺乳期婦女：**避免使用，以免影響胎兒和嬰兒健康。\n**泌尿系統疾病：**避免使用，以免加重症狀。\n**糖尿病患者：**注意使用，必要時應在醫生的指導下使用。\n**與藥物交互作用：**避免與利尿劑、鎮痛藥、抗生素等藥物併用。",
       "source_urls": [
         "https://cloudtcm.com/herb/1133"
+      ],
+      "source_citations": [
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1133",
+          "scope": "性味、功效、現代藥理與安全資料"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html",
+          "scope": "Actions、indications、dosage、contraindications and combinations"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A"
+        }
       ],
       "exact_source_url": "https://cloudtcm.com/herb/1133",
       "fetched_at": "2026-07-23T07:20:07.665Z",
@@ -9464,15 +10090,9 @@
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
         "清熱解毒",
-        "清熱瀉火",
-        "止咳化痰",
-        "清肺熱利咽",
-        "清熱利尿",
-        "利水消腫",
-        "清肝明目",
-        "利膽",
         "消腫散結",
-        "利水通淋"
+        "利濕通淋",
+        "清肝明目"
       ],
       "modern_functions_zh": [
         "抗發炎",
@@ -9516,7 +10136,11 @@
         "胃經"
       ],
       "indications_zh": [
-        "清熱解毒；消腫散結；利濕通淋"
+        "乳癰初起、乳房紅腫熱痛——配 瓜蔞、浙貝母、金銀花",
+        "熱毒瘡癰、疔瘡腫痛——配 金銀花、紫花地丁、連翹",
+        "肺癰、腸癰——分別配 魚腥草、冬瓜仁，或 紅藤、敗醬草",
+        "肝火目赤腫痛——可單用煎湯熏洗，或配 菊花、黃芩",
+        "濕熱淋證、小便澀痛或濕熱黃疸——辨證配伍利濕清熱藥"
       ],
       "study_tags": [
         "單味中藥",
@@ -9525,7 +10149,113 @@
         "蒲公英"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": [
+        "乳癰",
+        "腸癰",
+        "肺癰",
+        "疔瘡腫毒",
+        "濕熱淋證",
+        "濕熱黃疸"
+      ],
+      "condition_tags_en": [
+        "Breast abscess",
+        "Intestinal abscess",
+        "Lung abscess",
+        "Hot toxic sores and furuncles",
+        "Damp-Heat painful urinary dysfunction",
+        "Damp-Heat jaundice"
+      ],
+      "actions_en": [
+        "Clear Heat and relieve Fire toxicity",
+        "Reduce abscesses and dissipate nodules",
+        "Clear Damp-Heat and unblock painful urination",
+        "Clear Liver Heat and benefit the eyes"
+      ],
+      "modern_functions_en": [
+        "Anti-inflammatory activity",
+        "Lipid-lowering activity",
+        "Antibacterial activity",
+        "Selective antiviral activity",
+        "Antitumor activity in preclinical models"
+      ],
+      "pharmaceutical_latin": "Taraxaci Herba",
+      "part_used_en": "Aerial Parts / Whole Plant",
+      "tcm_properties": {
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "five_flavors_zh": ["苦", "甘"],
+        "five_flavors_en": ["Bitter", "Sweet"],
+        "meridian_tropism_zh": ["肝經", "胃經"],
+        "meridian_tropism_en": ["LR Liver", "ST Stomach"],
+        "part_used_zh": "地上部分或全草",
+        "part_used_en": "Aerial Parts / Whole Plant"
+      },
+      "pao_zhi_notes_zh": "乾品密封置陰涼乾燥處；鮮品可外用於紅腫熱痛之瘡癰。CloudTCM 未列特殊炮製法。",
+      "key_pairs": [
+        {
+          "pair": "蒲公英 + 瓜蔞 Guā Lóu・浙貝母 Zhè Bèi Mǔ",
+          "rationale_zh": "清熱解毒、消腫散結——乳癰初起紅腫熱痛。",
+          "rationale_en": "Clears Heat, relieves toxicity and dissipates nodules for early breast abscess with redness, swelling, Heat and pain."
+        },
+        {
+          "pair": "蒲公英 + 金銀花 Jīn Yín Huā・紫花地丁 Zǐ Huā Dì Dīng",
+          "rationale_zh": "相須。增強清熱解毒、消癰散結——熱毒瘡癰、疔瘡腫痛。",
+          "rationale_en": "Xiang Xu (mutual accentuation). Strengthens Heat-clearing, toxicity-relieving and abscess-resolving effects for hot toxic sores and furuncles."
+        }
+      ],
+      "contraindications_zh": [
+        "陰疽或瘡癰不紅不痛者禁用。",
+        "中焦虛寒者禁用。",
+        "血寒者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated for Yin-type sores or carbuncles without redness or pain.",
+        "Contraindicated in Middle Jiao deficiency-cold.",
+        "Contraindicated in Cold Blood patterns."
+      ],
+      "cautions_en": [
+        "Overdose may cause mild diarrhea.",
+        "Allergic reactions may include itching, sensations of Heat, urticaria, abdominal discomfort, nausea or vomiting.",
+        "Oral use may cause heartburn.",
+        "Concurrent use may alter the bioavailability or disposition of quinolone antibiotics such as ciprofloxacin."
+      ],
+      "cautions_zh": [
+        "過量可能引起輕度腹瀉。",
+        "可能出現搔癢、熱感、蕁麻疹、腹部不適、噁心或嘔吐等過敏反應。",
+        "口服可能引起胃灼熱。",
+        "與喹諾酮類抗生素（如 ciprofloxacin）併用可能影響其生體可用率或體內處置。"
+      ],
+      "exam_importance": "★ Chenoweth 課件 Yao Yao：清熱解毒藥中乳癰／乳房膿腫代表藥；對應 NCBAHM 2026 CH 考綱 Domain I.A。",
+      "exam_pearl": "核心辨識：乳癰最重要，其次熱毒瘡癰；兼清肝明目、利濕通淋。陰疽不紅不痛與中焦虛寒不可用。",
+      "safety_flags": [
+        "allergy_review",
+        "herb_drug_interaction_review",
+        "pregnancy_review"
+      ],
+      "safety_review_pending": "American Dragon 明列 quinolone 交互作用；CloudTCM 另列孕哺、泌尿疾病、糖尿病等警示但缺少細節，須 Ting 優先複核。",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html",
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row113", "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4", "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "channels_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4", "https://cloudtcm.com/herb/1133", "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4", "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4", "curriculum/herbs/herb_functions_chenoweth.pdf#p5"],
+        "condition_tags_en": ["https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4", "https://cloudtcm.com/herb/1133"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4", "https://cloudtcm.com/herb/1133"],
+        "dosage": ["https://cloudtcm.com/herb/1133", "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "key_pairs": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4", "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "contraindications_zh": ["https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "cautions_zh": ["https://cloudtcm.com/herb/1133", "https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/PuGongYing.html"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p5"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p4"]
+      }
     },
     {
       "id": "herb.zi_hua_di_ding",
@@ -26334,47 +27064,76 @@
           "抗腫瘤"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"3-9克\",\r\n  \"食療用量範圍\": \"3-6克\",\r\n  \"特殊說明\": \"內服必須用炮製品，不宜生用；清半夏長於燥濕化痰，姜半夏長於降逆止嘔，法半夏長於燥濕健脾；外用生品適量\"\r\n}",
+      "dosage": {
+        "decoction_g": "Chenoweth：5–10g；CloudTCM：3–9g；American Dragon：3–15g",
+        "特殊說明": "三源劑量範圍不同，並列不擇一。內服必須使用炮製品；生半夏僅供外用。"
+      },
       "cautions": "中藥「半夏」注意事項重點：\n陰虛燥咳、津傷口渴、血證及燥痰者禁服。\n生半夏必須煎服，0.1-1.8g生半夏即可引發中毒，對口腔、喉頭及消化道粘膜有強烈刺激性。\n長期口服或肌肉注射姜半夏制劑，少數病例出現肝功能異常和血尿。\n不宜與烏頭類藥材同用。\n一切血證及陰虛燥咳、津傷口渴者忌服。\n《本草經集註》：射干為之使。惡皁莢。畏雄黃、生薑、乾薑、秦皮、龜甲。反烏頭。\n《藥性論》：忌羊血、海藻、飴糖。柴胡為之使。\n張元素：諸血證及口渴者禁用。孕婦忌之，用生薑則無害。\n《醫學入門》：凡諸血證及自汗、渴者禁用。",
       "source_urls": [
         "https://cloudtcm.com/herb/966"
+      ],
+      "source_citations": [
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/966",
+          "scope": "性味、功效、現代藥理、劑量與安全資料"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm",
+          "scope": "Actions、indications、dosage、processing、contraindications and combinations"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A、Appendix A、Appendix B"
+        }
       ],
       "exact_source_url": "https://cloudtcm.com/herb/966",
       "fetched_at": "2026-07-23T07:20:28.063Z",
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "陰虛燥咳、津傷口渴、血證及燥痰者禁服。",
-        "生半夏必須煎服，0.1-1.8g生半夏即可引發中毒，對口腔、喉頭及消化道粘膜有強烈刺激性。",
-        "長期口服或肌肉注射姜半夏制劑，少數病例出現肝功能異常和血尿。",
-        "不宜與烏頭類藥材同用。",
-        "一切血證及陰虛燥咳、津傷口渴者忌服。",
-        "《本草經集註》：射干為之使。惡皁莢。畏雄黃、生薑、乾薑、秦皮、龜甲。反烏頭。",
-        "《藥性論》：忌羊血、海藻、飴糖。柴胡為之使。",
-        "張元素：諸血證及口渴者禁用。孕婦忌之，用生薑則無害。",
-        "《醫學入門》：凡諸血證及自汗、渴者禁用。"
+        "生半夏毒性強，內服必須使用炮製品；生品僅供外用。",
+        "過量可見口舌與咽喉麻木腫痛、流涎、吞嚥困難、嘔吐、腹痛；重者可呼吸抑制。",
+        "孕期資料有分歧：Chenoweth列妊娠嘔吐為適應證；American Dragon主張慎用並需配足量生薑；CloudTCM同時收錄忌用與可辨證使用的不同古籍意見。",
+        "痰熱證原則上不單用；Chenoweth指出配伍黃芩、石膏、知母等清熱藥後可辨證使用。",
+        "長期使用薑半夏製劑曾有少數肝功能異常與血尿報告（CloudTCM彙整）。"
+      ],
+      "cautions_en": [
+        "Raw Ban Xia is strongly toxic; only processed forms are used internally, while the raw herb is restricted to external use.",
+        "Overdose may cause oral and throat numbness, swelling, salivation, dysphagia, vomiting and abdominal pain; severe toxicity may depress respiration.",
+        "Pregnancy guidance conflicts: Chenoweth lists pregnancy-related nausea as an indication; American Dragon advises caution with substantial Sheng Jiang; CloudTCM preserves differing historical opinions.",
+        "Do not use it alone for Phlegm-Heat; Chenoweth allows pattern-based use when appropriately combined with Heat-clearing herbs such as Huang Qin, Shi Gao or Zhi Mu.",
+        "CloudTCM reports rare liver-function abnormalities and hematuria after prolonged use of Jiang Ban Xia preparations."
       ],
       "safety_source_url": "https://cloudtcm.com/herb/966",
       "safety_fetched_at": "2026-07-23T07:25:25.674Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "溫化寒痰",
-        "止咳化痰",
-        "降氣",
-        "利水消腫",
-        "化痰消痞",
-        "降逆止嘔",
-        "燥濕化痰"
+        "燥濕化痰",
+        "降逆和胃止嘔",
+        "消痞散結",
+        "外用消腫止痛"
+      ],
+      "actions_en": [
+        "Dry Dampness and transform Phlegm",
+        "Descend rebellious Qi, harmonize the Stomach and stop vomiting",
+        "Dissipate nodules and reduce focal distention",
+        "Reduce swelling and relieve pain when used externally"
       ],
       "modern_functions_zh": [
-        "止痛功效",
-        "抑制胃酸",
-        "防癌抗腫瘤",
         "鎮咳作用",
-        "抗生育作用",
-        "降血脂",
+        "鎮吐作用（炮製品）",
+        "抑制胃酸與抗潰瘍作用",
         "抗心律失常",
-        "抗腫瘤"
+        "抗腫瘤活性研究（體外／動物研究）"
+      ],
+      "modern_functions_en": [
+        "Antitussive activity",
+        "Antiemetic activity of processed preparations",
+        "Gastric-acid suppression and anti-ulcer activity",
+        "Antiarrhythmic activity",
+        "Antineoplastic activity investigated in vitro and animal studies"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/966",
@@ -26424,7 +27183,13 @@
         "肺經"
       ],
       "indications_zh": [
-        "燥濕化痰；降逆止嘔；消痞散結"
+        "肺脾濕痰、寒痰咳嗽，痰多色白易咯、胸悶——配 陳皮、茯苓、甘草（二陳湯）",
+        "寒飲犯肺，咳嗽痰稀兼噁心嘔吐——配 乾薑、細辛",
+        "痰熱咳嗽、痰黃稠黏——須配 黃芩、石膏、知母等清熱藥，不宜單用",
+        "胃中痰飲、胃氣上逆之噁心嘔吐——寒證配 生薑；胃熱配 黃連、竹茹",
+        "妊娠惡阻——Chenoweth列為晨吐要藥，配 生薑、砂仁或紫蘇梗；孕期安全說法有來源分歧",
+        "痰氣互結之胸脘痞悶、梅核氣或痰核瘰癧——配 厚朴、茯苓",
+        "癰腫、瘡瘍、痰核——生品研末外用，不得內服"
       ],
       "study_tags": [
         "單味中藥",
@@ -26433,13 +27198,84 @@
         "半夏"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": [
+        "濕痰咳嗽",
+        "寒痰咳嗽",
+        "痰熱咳嗽（配伍使用）",
+        "痰飲嘔吐",
+        "妊娠惡阻",
+        "梅核氣",
+        "痰核瘰癧"
+      ],
+      "condition_tags_en": [
+        "Damp-Phlegm cough",
+        "Cold-Phlegm cough",
+        "Phlegm-Heat cough when appropriately combined",
+        "Vomiting from Phlegm and thin fluids",
+        "Nausea and vomiting of pregnancy",
+        "Plum-pit Qi / globus sensation",
+        "Phlegm nodules and scrofula"
+      ],
+      "pinyin_toned": "Bàn Xià",
+      "cloudtcm_url": "https://cloudtcm.com/herb/966",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm",
+      "pharmaceutical_latin": "Pinelliae Rhizoma",
+      "part_used_en": "Rhizome",
+      "dosage_g": "3–15g（來源範圍不同；僅限炮製品內服）",
+      "pao_zhi_notes_zh": [
+        "法半夏：甘草、石灰等法製，燥濕化痰而藥力較和，偏脾虛濕痰。",
+        "薑半夏：以生薑、明礬炮製，長於降逆止嘔、溫中化痰。",
+        "清半夏：明礬等法製，偏燥濕化痰，適合痰多而正氣較弱者。",
+        "生半夏：毒性強，只供外用，不得內服。"
+      ],
+      "key_pairs": [],
+      "contraindications_zh": [
+        "陰虛燥咳、津傷口渴或燥痰者禁用。",
+        "咳血及其他血證、火熱所致咽喉腫痛者禁用。",
+        "生半夏不得內服。",
+        "禁止與烏頭類同用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated for dry cough from Yin or fluid deficiency and for Dry Phlegm.",
+        "Contraindicated with hemoptysis, other bleeding disorders, or sore throat due to Fire.",
+        "Raw Ban Xia must not be administered internally.",
+        "Incompatible with all forms of Aconite."
+      ],
+      "exam_importance": "★ Chenoweth Yao Yao：一切痰證（All Phlegm Conditions）；必考方向為燥濕化痰並使逆氣下降。對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "四個辨識點：痰證要藥、降逆止嘔、消痞散結、炮製減毒；生品只外用，反烏頭。對藥必記半夏–陳皮與半夏–生薑。",
+      "safety_review": {
+        "toxicity": "高風險：生半夏具強烈黏膜刺激與全身毒性，內服須用炮製品。",
+        "pregnancy": "來源分歧：可用於妊娠惡阻，但應辨證、使用炮製品並常配生薑；保留孕期慎用標記。",
+        "interaction": "反烏頭類；CloudTCM另彙整海藻、飴糖等傳統配伍說法，需進一步核對。"
+      },
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row248", "NCBAHM 2026 Chinese Herbology Content Outline, Appendix A"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26"],
+        "condition_tags_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "pao_zhi_notes_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "key_pairs": ["data/herbs/herb_pairs.json#pair.chen_pi__ban_xia", "data/herbs/herb_pairs.json#pair.ban_xia__hou_po", "NCBAHM 2026 Chinese Herbology Content Outline, Appendix B", "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p5"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "NCBAHM 2026 Chinese Herbology Content Outline, Appendix B"]
+      }
     },
     {
       "id": "herb.tian_nan_xing",
       "name_zh": "天南星",
-      "name_en": "Arisaema Rhizome",
-      "pinyin": "Tian Nan Xing",
+      "name_en": "Jack-in-the-Pulpit Root",
+      "pinyin": "Tiān Nán Xīng",
       "category": "化痰止咳平喘藥 / Transform Phlegm",
       "channels_entered": [
         "肝經",
@@ -26571,23 +27407,22 @@
       "safety_source_url": "https://cloudtcm.com/herb/1194",
       "safety_fetched_at": "2026-07-23T07:25:25.952Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "本品有毒，內服必須使用專業炮製品。",
+        "生品可造成口咽強烈刺激、麻木、腫脹，嚴重可影響呼吸。",
+        "痰熱證不得單用，須配伍清熱化痰藥。"
+      ],
       "functions_zh": [
-        "溫化寒痰",
-        "祛風除濕",
-        "止咳化痰",
-        "降氣",
-        "利水消腫",
-        "去風止痙",
+        "燥濕化痰",
+        "祛風化痰",
         "祛風止痙",
-        "燥濕化痰"
+        "外用散結消腫止痛"
       ],
       "modern_functions_zh": [
-        "抗氧化",
-        "抗發炎",
-        "抗菌抗病毒",
-        "降血糖",
-        "防癌抗腫瘤",
-        "保肝利膽"
+        "抗驚厥作用",
+        "鎮靜作用",
+        "抗腫瘤活性研究",
+        "抗發炎作用"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1194",
@@ -26629,7 +27464,11 @@
         "脾經"
       ],
       "indications_zh": [
-        "燥濕化痰；祛風止痙；消腫散結"
+        "濕痰、頑痰壅肺 —— 咳嗽痰多、胸膈痞悶；其燥濕化痰力較半夏強。",
+        "風痰上擾 —— 眩暈、中風痰壅、口眼歪斜、半身不遂。",
+        "風痰閉阻、痰迷心竅 —— 癲癇、驚風、破傷風抽搐。",
+        "痰熱證 —— 本品性溫，不單用；須配黃芩、竹瀝等清熱化痰藥。",
+        "癰腫、痰核、毒蛇咬傷 —— 生品研末外敷，僅限外用。"
       ],
       "study_tags": [
         "單味中藥",
@@ -26638,13 +27477,45 @@
         "天南星"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": ["濕痰咳嗽", "頑痰壅肺", "風痰眩暈", "中風痰壅", "癲癇驚風", "破傷風痙攣", "癰腫痰核"],
+      "condition_tags_en": ["Damp-Phlegm cough", "Stubborn Phlegm obstructing the Lung", "Wind-Phlegm dizziness", "Phlegm obstruction in wind-stroke", "Epilepsy and childhood convulsions", "Tetanus spasms", "Abscesses and Phlegm nodules"],
+      "actions_en": ["Dry Dampness and transform Phlegm", "Dispel Wind and transform Phlegm", "Dispel Wind and stop spasms", "Dissipate nodules, reduce swelling and relieve pain externally"],
+      "modern_functions_en": ["Anticonvulsant activity", "Sedative activity", "Antineoplastic activity under investigation", "Anti-inflammatory activity"],
+      "pharmaceutical_latin": "Arisaematis Rhizoma preparatum",
+      "part_used_en": "Processed rhizome/tuber",
+      "dosage_g": "3–10g（僅限炮製品；膽南星 2–5g）",
+      "pao_zhi_notes_zh": ["制天南星以生薑等炮製後供內服，以降低刺激與毒性。", "膽南星偏清熱化痰、息風定驚。", "生天南星有毒，只供外用。"],
+      "contraindications_zh": ["孕婦禁用。", "陰虛燥咳、津傷燥痰者禁用。", "血虛動風或火熱生風者禁用。", "生天南星不得內服。"],
+      "contraindications_en": ["Contraindicated during pregnancy.", "Contraindicated for dry cough or Dry Phlegm from Yin or fluid deficiency.", "Contraindicated for Internal Wind from Blood deficiency or blazing Fire.", "Raw Tian Nan Xing must not be administered internally."],
+      "cautions_en": ["Internal use requires a professionally processed preparation.", "Raw herb exposure can cause severe oral and pharyngeal irritation, numbness, swelling and respiratory compromise.", "Phlegm-Heat requires appropriate Heat-clearing combinations rather than use alone."],
+      "exam_importance": "★ Chenoweth：燥濕化痰力較半夏強，並能祛風止痙；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "辨識三點：頑痰、風痰、痙攣。內服必須炮製；生品只外用；膽南星偏清熱化痰。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.31：性味歸經、功效、主治、劑量、炮製、禁忌與現代藥理"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/1194", "scope": "傳統功效、安全與現代藥理交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html", "scope": "Actions、indications、dosage、preparation and contraindications"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://cloudtcm.com/herb/1194"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://cloudtcm.com/herb/1194"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://cloudtcm.com/herb/1194"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.jie_geng",
       "name_zh": "桔梗",
-      "name_en": "Platycodon Root",
-      "pinyin": "Jie Geng",
+      "name_en": "Balloon Flower Root",
+      "pinyin": "Jié Gěng",
       "category": "化痰止咳平喘藥 / Transform Phlegm",
       "channels_entered": [
         "肺經",
@@ -26775,23 +27646,22 @@
       "safety_source_url": "https://cloudtcm.com/herb/1088",
       "safety_fetched_at": "2026-07-23T07:25:26.195Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "本品升散，氣機上逆者慎用。",
+        "劑量過大可能刺激胃部，引起噁心或嘔吐。"
+      ],
       "functions_zh": [
-        "溫化寒痰",
-        "清肺熱利咽",
+        "宣肺祛痰",
+        "利咽開音",
         "排膿",
-        "止咳化痰",
-        "破血消癥",
-        "止血",
-        "清熱解毒"
+        "載藥上行"
       ],
       "modern_functions_zh": [
-        "降血糖",
-        "抗發炎",
-        "抗氧化",
-        "提升免疫力",
-        "鎮咳作用",
-        "抗炎鎮痛",
-        "抗腫瘤"
+        "祛痰鎮咳作用",
+        "抗發炎作用",
+        "鎮痛作用",
+        "降血糖作用",
+        "調節血脂作用"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1088",
@@ -26835,7 +27705,11 @@
         "肺經"
       ],
       "indications_zh": [
-        "宣肺化痰；利咽開音；排膿"
+        "外感咳嗽 —— 風寒或風熱皆可隨證配伍，用於咳嗽痰多、胸悶不暢。",
+        "肺氣不宣、痰阻咽喉 —— 咽痛、聲音嘶啞、失音。",
+        "肺癰胸痛、咳吐膿痰 —— 配魚腥草、薏苡仁等清肺排膿。",
+        "咽喉腫痛 —— 常配甘草，宣肺利咽。",
+        "引藥上行 —— 配方中載諸藥上達胸肺與頭面。"
       ],
       "study_tags": [
         "單味中藥",
@@ -26844,7 +27718,39 @@
         "桔梗"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": ["外感咳嗽", "咳嗽痰多", "咽喉腫痛", "聲音嘶啞失音", "肺癰膿痰"],
+      "condition_tags_en": ["Exterior-pattern cough", "Cough with copious sputum", "Sore and swollen throat", "Hoarseness or loss of voice", "Lung abscess with purulent sputum"],
+      "actions_en": ["Disseminate Lung Qi and expel Phlegm", "Benefit the throat and restore the voice", "Expel pus", "Guide other herbs upward"],
+      "modern_functions_en": ["Expectorant and antitussive activity", "Anti-inflammatory activity", "Analgesic activity", "Hypoglycemic activity", "Lipid-modulating activity"],
+      "pharmaceutical_latin": "Platycodi Radix",
+      "part_used_en": "Root",
+      "dosage_g": "3–10g",
+      "pao_zhi_notes_zh": ["生桔梗偏宣肺祛痰、利咽排膿；蜜炙品較潤，偏於止咳。"],
+      "contraindications_zh": ["陰虛久咳、無痰乾咳者禁用。", "咳血、吐血等出血傾向者禁用。"],
+      "contraindications_en": ["Contraindicated for chronic dry cough from Yin deficiency without Phlegm.", "Contraindicated with hemoptysis, hematemesis or a significant bleeding tendency."],
+      "cautions_en": ["Its ascending and dispersing nature may aggravate rebellious Qi.", "Large doses may irritate the stomach and cause nausea or vomiting."],
+      "exam_importance": "★ Chenoweth：宣肺利咽、排膿並載藥上行；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "風寒風熱咳嗽皆可隨證配伍；「咽痛失音＋肺癰排膿＋引藥上行」是辨識組合。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量、禁忌與現代藥理"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/1088", "scope": "傳統功效、現代藥理與安全交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/JieGeng.html", "scope": "Actions、indications、dosage and cautions"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1088"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1088"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "cautions_zh": ["https://cloudtcm.com/herb/1088"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.chuan_bei_mu",
@@ -38763,8 +39669,8 @@
     {
       "id": "herb.xuan_fu_hua",
       "name_zh": "旋覆花",
-      "name_en": "Inula Flower",
-      "pinyin": "Xuan Fu Hua",
+      "name_en": "Inula Flower / Japanese Elecampane Flower",
+      "pinyin": "Xuán Fù Huā",
       "category": "化痰止咳平喘藥 / Transform Phlegm",
       "channels_entered": [
         "胃經",
@@ -38862,11 +39768,15 @@
       "safety_source_url": "https://cloudtcm.com/herb/1223",
       "safety_fetched_at": "2026-07-23T07:25:44.792Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "花絨可能刺激咽喉，入煎劑須包煎。",
+        "體虛便溏者慎用。",
+        "與利尿藥同用時注意疊加作用。"
+      ],
       "functions_zh": [
-        "溫化寒痰",
-        "止咳化痰",
-        "止嘔",
-        "降氣"
+        "消痰行水",
+        "降氣止咳",
+        "降逆止嘔"
       ],
       "modern_functions_zh": [
         "抗菌抗病毒",
@@ -38898,7 +39808,10 @@
         "大腸經"
       ],
       "indications_zh": [
-        "降氣；消痰；行水止嘔"
+        "痰飲壅肺、肺氣上逆 —— 咳嗽氣喘、痰多胸悶。",
+        "寒痰或熱痰咳嗽 —— 依證配溫化或清熱化痰藥。",
+        "胃氣上逆 —— 噁心嘔吐、噫氣、呃逆。",
+        "痰飲停聚胸脅 —— 胸脅痞滿、咳引胸痛。"
       ],
       "study_tags": [
         "單味中藥",
@@ -38908,8 +39821,44 @@
       ],
       "tags_fetched_at": "2026-07-23",
       "condition_tags_zh": [
-        "降氣消痰行水止嘔"
-      ]
+        "痰飲咳喘",
+        "肺氣上逆",
+        "胃氣上逆嘔吐",
+        "噫氣呃逆",
+        "胸脅痰飲"
+      ],
+      "condition_tags_en": ["Phlegm-Fluids cough and wheezing", "Rebellious Lung Qi", "Vomiting from rebellious Stomach Qi", "Belching and hiccups", "Phlegm-Fluids in the chest and flanks"],
+      "actions_en": ["Transform Phlegm and regulate water", "Direct Qi downward and stop cough", "Descend rebellious Qi and stop vomiting"],
+      "modern_functions_en": ["Antimicrobial activity", "Anti-inflammatory activity", "Antioxidant activity"],
+      "pharmaceutical_latin": "Inulae Flos",
+      "part_used_en": "Flower",
+      "dosage_g": "3–12g（包煎）",
+      "pao_zhi_notes_zh": ["花絨可能刺激咽喉，入煎劑須以布包煎。", "蜜炙旋覆花較潤，可減少辛散傷氣傷陰。"],
+      "contraindications_zh": ["陰虛燥咳、肺癆咳嗽者禁用。", "風熱咳嗽而無痰飲者禁用。"],
+      "contraindications_en": ["Contraindicated for dry cough from Yin deficiency or consumptive Lung disease.", "Contraindicated for Wind-Heat cough without Phlegm-Fluids."],
+      "cautions_en": ["Wrap the flowers in cloth during decoction because the fine hairs may irritate the throat.", "Use cautiously in debilitated patients with loose stools.", "Monitor additive effects when combined with diuretic drugs."],
+      "exam_importance": "★ Chenoweth：少數花類中藥中以降氣為主，兼降胃逆止嘔；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "「諸花皆升，旋覆獨降」；咳喘與噯氣嘔吐同見時要想到旋覆花，且必須包煎。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量、炮製與現代藥理"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/1223", "scope": "傳統功效、現代藥理與安全交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html", "scope": "Actions、indications、dosage、preparation and cautions"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1223"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1223"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "contraindications_zh": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1223"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.gao_liang_jiang",
@@ -42288,7 +43237,7 @@
       "id": "herb.bai_jie_zi",
       "name_zh": "白芥子",
       "name_en": "White Mustard Seed",
-      "pinyin": "Bai Jie Zi",
+      "pinyin": "Bái Jiè Zǐ",
       "category": "化痰止咳平喘藥 / Transform Phlegm - Warm",
       "channels_entered": [
         "肺經",
@@ -42388,8 +43337,15 @@
       "safety_source_url": "https://cloudtcm.com/herb/955",
       "safety_fetched_at": "2026-07-23T07:25:50.207Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "生品可能刺激胃腸，敏感者慎用。",
+        "外敷可使皮膚起泡或灼傷，不可久敷。",
+        "孕期使用前須優先審核安全性。"
+      ],
       "functions_zh": [
-        "溫肺化痰、利氣散結、通絡止痛"
+        "溫肺豁痰",
+        "利氣散結",
+        "通絡止痛"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -42423,7 +43379,10 @@
         "肺經"
       ],
       "indications_zh": [
-        "溫肺化痰；利氣散結；通絡止痛"
+        "寒痰壅肺 —— 咳嗽氣喘、痰多清稀、胸膈滿悶。",
+        "痰飲停聚胸脅 —— 胸脅脹滿疼痛、咳引脅痛。",
+        "痰阻經絡 —— 肢體麻木、關節疼痛、陰疽流注。",
+        "寒痰凝結 —— 痰核、瘰癧、陰疽漫腫不潰。"
       ],
       "study_tags": [
         "單味中藥",
@@ -42432,7 +43391,39 @@
         "白芥子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": ["寒痰咳喘", "胸脅痰飲", "痰阻經絡", "肢體麻木疼痛", "陰疽流注", "痰核瘰癧"],
+      "condition_tags_en": ["Cold-Phlegm cough and wheezing", "Phlegm-Fluids in the chest and flanks", "Phlegm obstructing the channels", "Limb numbness and pain", "Yin-type abscesses", "Phlegm nodules and scrofula"],
+      "actions_en": ["Warm the Lung and expel Phlegm", "Move Qi and dissipate nodules", "Unblock the channels and relieve pain"],
+      "modern_functions_en": ["Analgesic activity", "Antimicrobial activity", "Lipid-modulating activity", "Cardiovascular activity under investigation"],
+      "pharmaceutical_latin": "Sinapis Semen",
+      "part_used_en": "Seed",
+      "dosage_g": "3–15g（來源範圍不同；不宜久煎）",
+      "pao_zhi_notes_zh": ["炒白芥子刺激性較緩，便於內服。", "外用研末以醋調敷，不可久敷，以免起泡灼傷。"],
+      "contraindications_zh": ["陰虛火旺、肺虛久咳者禁用。", "胃火亢盛或消化性潰瘍活動期者禁用。"],
+      "contraindications_en": ["Contraindicated for chronic cough from Lung deficiency or Yin deficiency with Fire.", "Contraindicated with blazing Stomach Fire or active peptic ulcer disease."],
+      "cautions_en": ["The raw seed can irritate the gastrointestinal tract.", "Topical application can blister or burn the skin and must not be prolonged.", "Pregnancy safety requires priority review before use."],
+      "exam_importance": "★ Chenoweth：辨識點是胸脅寒痰與痰阻經絡；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "寒痰＋胸脅痛＋經絡痰阻選白芥子；辛溫走竄，不宜久煎，外敷過久會起泡。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量與禁忌"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/955", "scope": "傳統功效、現代藥理與安全交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html", "scope": "Actions、indications、dosage and cautions"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/955"],
+        "modern_functions_zh": ["https://cloudtcm.com/herb/955"],
+        "modern_functions_en": ["https://cloudtcm.com/herb/955"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "cautions_zh": ["https://cloudtcm.com/herb/955"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.qian_hu",
@@ -46196,8 +47187,8 @@
     {
       "id": "herb.bai_fu_zi",
       "name_zh": "白附子",
-      "name_en": "Typhonii Rhizoma",
-      "pinyin": "Bai Fu Zi",
+      "name_en": "Giant Typhonium Rhizome",
+      "pinyin": "Bái Fù Zǐ",
       "category_zh": "溫化寒痰藥",
       "taste_temperature_zh": "辛, 甘, 溫, 有毒",
       "channels_zh": [
@@ -46205,13 +47196,20 @@
         "肝經"
       ],
       "functions_zh": [
-        "祛風痰、定驚癇、解毒散結"
+        "燥濕化痰",
+        "祛風止痙",
+        "解毒散結",
+        "止痛"
       ],
       "indications_zh": [
-        "祛風痰；定驚癇；解毒散結"
+        "風痰阻絡、頭面部病證 —— 口眼歪斜、面癱、偏頭痛、半身不遂。",
+        "風痰閉阻、筋脈拘急 —— 癲癇、驚風、破傷風痙攣。",
+        "痰核瘰癧、毒蛇咬傷 —— 炮製品內服或生品適量外用。",
+        "偏正頭痛、眩暈而屬風痰者 —— 常配川芎、白芷等。"
       ],
       "cautions_zh": [
-        "孕婦慎用"
+        "本品有毒，內服必須使用炮製品並嚴格控制劑量。",
+        "過量可引起口舌咽喉麻木腫脹、噁心嘔吐、心悸或呼吸困難。"
       ],
       "study_tags": [
         "單味中藥",
@@ -46221,22 +47219,64 @@
         "白附子"
       ],
       "source_urls": [
-        "https://cloudtcm.com",
-        "https://www.americandragon.com",
-        "https://www.zhongyifangji.com"
+        "https://cloudtcm.com/herb/1772",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html",
+        "https://traditional-worldmedicine.com/baifuzi/",
+        "https://baike.baidu.com/item/%E7%99%BD%E9%99%84%E5%AD%90"
       ],
-      "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
-      "exact_source_url": "https://www.americandragon.com",
-      "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "cloudtcm_url": "https://cloudtcm.com/herb/1772",
+      "safety_source": "Chenoweth p.32; American Dragon Zhi Bai Fu Zi",
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html",
+      "source_type": "source_transcribed",
+      "review_status": "draft",
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [],
+      "condition_tags_zh": ["面癱口歪", "風痰頭痛", "半身不遂", "癲癇驚風", "破傷風痙攣", "痰核瘰癧"],
+      "condition_tags_en": ["Facial paralysis", "Wind-Phlegm headache", "Hemiplegia", "Epilepsy and convulsions", "Tetanus spasms", "Phlegm nodules and scrofula"],
+      "actions_en": ["Dry Dampness and transform Phlegm", "Dispel Wind and stop spasms", "Resolve toxicity and dissipate nodules", "Relieve pain"],
+      "modern_functions_zh": ["抗驚厥作用", "鎮靜作用", "鎮痛作用", "抗發炎作用", "抗菌作用", "抗腫瘤作用"],
+      "modern_functions_en": ["Anticonvulsant activity", "Sedative activity", "Analgesic activity", "Anti-inflammatory activity", "Antibacterial activity", "Antitumor activity"],
+      "pharmaceutical_latin": "Typhonii Rhizoma preparatum",
+      "part_used_en": "Prepared rhizome",
+      "dosage": {"decoction_g": "Chenoweth：3–5g，重症可至 9g；American Dragon：1.5–6g；CloudTCM、Traditional World Medicine：3–6g", "特殊說明": "各來源範圍並列保留。內服只用炮製品；生品僅供外用。"},
+      "dosage_g": "1.5–9g（依來源與病情；僅限炮製品）",
+      "pao_zhi_notes_zh": ["制白附子經炮製降低毒性後供內服。", "生白附子毒性與刺激性較強，只供外用。"],
+      "contraindications_zh": ["孕婦禁用。", "陰虛血虛動風者禁用。", "內熱生驚者禁用。", "生白附子不得內服。"],
+      "contraindications_en": ["Contraindicated during pregnancy.", "Contraindicated for Internal Wind from Yin or Blood deficiency.", "Contraindicated for convulsions due to Internal Heat.", "Raw Bai Fu Zi must not be administered internally."],
+      "cautions_en": ["Internal use requires a professionally processed preparation and careful dosing.", "Overdose may cause oral and throat numbness or swelling, nausea, vomiting, palpitations or respiratory difficulty."],
+      "exam_importance": "★ Chenoweth：頭面風痰要藥，尤其口眼歪斜、面癱與風痰頭痛；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "重點不是一般肺痰，而是「頭面風痰＋止痙」；有毒，內服必須炮製，生品只外用。",
+      "clinical_use_note": "學習辨識：白附子的核心定位是「頭面風痰＋止痙止痛」，特別留意口眼歪斜、面癱、偏頭痛及風痰驚搐；這與偏治濕痰、降逆止嘔的半夏，以及偏治頑痰、風痰痙厥的天南星不同。常與白僵蠶、全蠍同用以祛風化痰、通絡止痙。安全記憶點是「有毒、內服必須用制品、生品只外用」，且孕婦與陰虛血虛動風者禁用。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量、炮製與禁忌"},
+        {"name": "雲端中醫 CloudTCM・白附子", "url": "https://cloudtcm.com/herb/1772", "scope": "精確單味藥頁與圖像；交叉支持英文名、獨角蓮基原、性味歸經、功效、3–6g 劑量、炮製安全、禁忌及現代藥理。頁面中另一段異質基原敘述未採用"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html", "scope": "Actions、indications、dosage、preparation and contraindications"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"},
+        {"name": "Traditional World Medicine・白附子", "url": "https://traditional-worldmedicine.com/baifuzi/", "scope": "主要外部圖像與藥材辨識；並交叉支持來源、性味歸經、功效、主治、3–6g 劑量、炮製及對藥資料"},
+        {"name": "百度百科・白附子", "url": "https://baike.baidu.com/item/%E7%99%BD%E9%99%84%E5%AD%90", "scope": "備援外部圖像與植物辨識參考；不作功效、劑量或安全依據"}
+      ],
+      "field_sources": {
+        "taste_temperature_zh": ["https://cloudtcm.com/herb/1772", "https://traditional-worldmedicine.com/baifuzi/"],
+        "channels_zh": ["https://cloudtcm.com/herb/1772", "https://traditional-worldmedicine.com/baifuzi/"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1772", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html", "https://traditional-worldmedicine.com/baifuzi/"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html", "https://traditional-worldmedicine.com/baifuzi/"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1772"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1772"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1772", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html", "https://traditional-worldmedicine.com/baifuzi/"],
+        "pao_zhi_notes_zh": ["https://cloudtcm.com/herb/1772", "https://traditional-worldmedicine.com/baifuzi/"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1772", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "contraindications_en": ["https://cloudtcm.com/herb/1772", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "clinical_use_note": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1772", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html", "https://traditional-worldmedicine.com/baifuzi/"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": [],
       "related_formulas": [
-        "formula.bu_yang_huan_wu_tang",
         "formula.qian_zheng_san"
       ],
       "category": "化痰止咳平喘藥 / Transform Phlegm - Warm"

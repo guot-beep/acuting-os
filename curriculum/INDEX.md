@@ -76,8 +76,9 @@
 | `pinyin_latin_herb_list.csv` | 21 KB | ✅ 本身是文字 |
 | `pinyin_latin_herb_list.md` | 23 KB | ✅ 本身是文字 |
 | `pinyin_latin_herb_list.xlsx` | 41 KB | ✅ |
+| `臺灣中藥典第四版英文版.pdf` | 10.9 MB | ⚠️ 待抽文字 |
 
-> 這個資料夾有 67 檔,超過 30 —— 可以考慮依 `README.md` 的分法開子資料夾。
+> 這個資料夾有 68 檔,超過 30 —— 可以考慮依 `README.md` 的分法開子資料夾。
 
 ## formulas/ — 方劑 — 組成、加減、比較表
 
@@ -91,10 +92,33 @@
 | `Formulations Summary Chart.docx.pdf` | 1.7 MB | ✅ |
 | `Herbal Formulations Comprehensive.docx.md` | 526 KB | ✅ 本身是文字 |
 | `Herbal Formulations Comprehensive.docx.pdf` | 6.5 MB | ✅ |
+| `臺灣中藥典第四版英文版.md` | 2.7 MB | ✅ 本身是文字 |
+| `臺灣中藥典第四版英文版.pdf` | 10.9 MB | ✅ |
 
 ## acupoints/ — 針灸 — 經絡講義、針法、特定穴
 
-_(空)_
+| 檔案 | 大小 | 文字版 |
+|---|---|---|
+| `1 LUNG CHANNEL OF HAND TAI YIN.pdf` | 433 KB | ⚠️ 待抽文字 |
+| `10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf` | 882 KB | ⚠️ 待抽文字 |
+| `11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf` | 1.5 MB | ⚠️ 待抽文字 |
+| `12 LIVER CHANNEL OF FOOT JUE YIN.pdf` | 715 KB | ⚠️ 待抽文字 |
+| `13 CONCEPTION VESSEL (REN CHANNEL).pdf` | 1.7 MB | ⚠️ 待抽文字 |
+| `14 DU CHANNEL (GOVERNING VESSEL).pdf` | 1.0 MB | ⚠️ 待抽文字 |
+| `2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf` | 772 KB | ⚠️ 待抽文字 |
+| `3 STOMACH CHANNEL OF FOOT YANG MING.pdf` | 1.3 MB | ⚠️ 待抽文字 |
+| `4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf` | 788 KB | ⚠️ 待抽文字 |
+| `5 HEART CHANNEL OF HAND SHAO YIN.pdf` | 455 KB | ⚠️ 待抽文字 |
+| `6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf` | 1.0 MB | ⚠️ 待抽文字 |
+| `7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf` | 1.5 MB | ⚠️ 待抽文字 |
+| `8 KIDNEY CHANNEL OF FOOT SHAO YIN.pdf` | 762 KB | ⚠️ 待抽文字 |
+| `9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf` | 430 KB | ⚠️ 待抽文字 |
+| `Advanced Techniques Notes.pdf` | 117 KB | ⚠️ 待抽文字 |
+| `AP Point Book (1).pdf` | 1.3 MB | ⚠️ 待抽文字 |
+| `Divergent, muscle and primary - boards.docx.pdf` | 279 KB | ⚠️ 待抽文字 |
+| `Techniques 1 & 2 Notes.docx` | 244 KB | ⚠️ 待抽文字 |
+| `Techniques 3 points.pdf` | 551 KB | ⚠️ 待抽文字 |
+| `Techniques 3 Quizzes.docx` | 168 KB | ⚠️ 待抽文字 |
 
 ## conditions/ — 病證 — 中西醫結合的病(病因病機/辨證/治法)
 
@@ -105,7 +129,9 @@ _(空)_
 
 ## cases/ — 病例 — 具體某個人(已去識別化)
 
-_(空)_
+| 檔案 | 大小 | 文字版 |
+|---|---|---|
+| `Case Study Chenoweth.docx` | 22 KB | ⚠️ 待抽文字 |
 
 ## lifestyle/ — 食療生活 — 飲食、作息、養生、營養學
 
@@ -127,22 +153,25 @@ _(空)_
 
 ## board/ — 考綱 — outline、題庫、複習清單(決定順序,不是教材)
 
-_(空)_
+| 檔案 | 大小 | 文字版 |
+|---|---|---|
+| `NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md` | 10 KB | ✅ 本身是文字 |
+| `NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf` | 165 KB | ✅ |
 
 ## 總計
 
 | 資料夾 | 檔數 | 待抽文字 |
 |---|---|---|
-| herbs | 67 | — |
-| formulas | 8 | — |
-| acupoints | 0 | — |
+| herbs | 68 | 1 |
+| formulas | 10 | — |
+| acupoints | 20 | 20 |
 | conditions | 2 | — |
-| cases | 0 | — |
+| cases | 1 | 1 |
 | lifestyle | 2 | — |
 | theory | 2 | 1 |
 | western | 0 | — |
-| board | 0 | — |
-| **合計** | **81** | **1** |
+| board | 2 | — |
+| **合計** | **107** | **23** |
 
 ### ⚠️ 這些檔還沒有可用的文字版
 
@@ -152,5 +181,27 @@ _(空)_
 **已經有 `.md` 但還列在這裡** = 那份是掃描檔/圖片投影片,抽不出文字,
 需要人工把重點打字進去 —— 空的文字版比沒有更危險,它會讓人以為已經處理過。
 
+- `herbs/臺灣中藥典第四版英文版.pdf`
+- `acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf`
+- `acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf`
+- `acupoints/11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf`
+- `acupoints/12 LIVER CHANNEL OF FOOT JUE YIN.pdf`
+- `acupoints/13 CONCEPTION VESSEL (REN CHANNEL).pdf`
+- `acupoints/14 DU CHANNEL (GOVERNING VESSEL).pdf`
+- `acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf`
+- `acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf`
+- `acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf`
+- `acupoints/5 HEART CHANNEL OF HAND SHAO YIN.pdf`
+- `acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf`
+- `acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf`
+- `acupoints/8 KIDNEY CHANNEL OF FOOT SHAO YIN.pdf`
+- `acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf`
+- `acupoints/Advanced Techniques Notes.pdf`
+- `acupoints/AP Point Book (1).pdf`
+- `acupoints/Divergent, muscle and primary - boards.docx.pdf`
+- `acupoints/Techniques 1 & 2 Notes.docx`
+- `acupoints/Techniques 3 points.pdf`
+- `acupoints/Techniques 3 Quizzes.docx`
+- `cases/Case Study Chenoweth.docx`
 - `theory/Medical Chinese 1 Notes.pdf`
 
