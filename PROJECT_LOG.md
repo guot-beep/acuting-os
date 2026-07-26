@@ -23,6 +23,13 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-26 - Six-herb formal card sample (Codex)
+- Scope: 蒲公英、桂枝、生薑、荊芥、防風、紫蘇葉，依正式 herb card template 補齊雙語欄位。
+- Sources: Chenoweth 課件優先，交叉核對 CloudTCM 與 American Dragon；衝突並列且逐欄標註來源。
+- Files: `data/herbs/herb_canon_shortlist.json`；生成檔由 `scripts/build-data.js` 重建。
+- Validation: six-herb delta、herb standard、content junk 與 diff check 通過；全庫既有 validator failures 另記 handoff。
+- Next: Ting 在 app 逐張審閱排序、禁忌與來源衝突，再決定是否擴充整批辛溫解表藥。
+
 ### 2026-07-22 - Bilingual CloudTCM disease index and Trigeminal Neuralgia (Codex)
 
 Converted all 205 CloudTCM disease/symptom browse cards into 190 unique,
