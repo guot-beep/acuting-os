@@ -15,6 +15,7 @@
  *   E5 an _en tag array is not index-aligned with its _zh array
  *   E6 a template-grade record (has field_sources) is missing an _en array
  *   E7 a template-grade record has no contraindications_zh (禁忌症)
+ *   E8 a template-grade record's functions_zh is outside 2-6 curated actions
  *
  * REPORT (always printed) — honest per-field coverage vs the canonical record
  * (docs/HERB_RECORD_STANDARD.md), plus fixable counts (alias-mappable
@@ -106,6 +107,16 @@ for (const r of recs) {
     const en = Array.isArray(r[SOFT_PAIR[1]]) ? r[SOFT_PAIR[1]] : [];
     if (en.length && zh.length && en.length !== zh.length) unpairedActions++;
   }
+  // Ting 2026-07-26: actions must be CURATED, not truncated and not dumped —
+  // cross-compare the sources, rank by board-exam importance, keep the key
+  // ones. Library today: 70 records list 0-1 actions (under-listed) and 100
+  // list more than 6 (raw dumps). Template-grade records must land in 2-6.
+  if (r.field_sources && Object.keys(r.field_sources).length) {
+    const n = Array.isArray(r.functions_zh) ? r.functions_zh.length : 0;
+    if (n < 2 || n > 6) {
+      errors.push(`E8 ${id}: functions_zh has ${n} action(s) — template-grade records keep the 2-6 key actions (target ~3-5), ranked most important first`);
+    }
+  }
   // Ting 2026-07-26: 禁忌症 sat empty on every card because scraped safety text
   // all went into cautions_zh and nobody filled contraindications_zh. 禁忌
   // (absolute) and 慎用 (relative) are different clinical calls, so a
@@ -128,6 +139,10 @@ console.log("\nBilingual tag gaps (records with 中文 but no English — fill t
 for (const [f, n] of Object.entries(missingEn)) console.log(`  ${f.padEnd(24)} missing on ${n} record(s)`);
 console.log(`\nFixable: ${aliasFixable} record(s) with alias-mappable category (run scripts/normalize-herb-categories.js --apply)`);
 console.log(`Note: ${unpairedActions} record(s) where actions_en cannot pair with functions_zh (card shows 中文 tags alone + a separate English actions list).`);
+const actionCounts = recs.map((r) => (Array.isArray(r.functions_zh) ? r.functions_zh.length : 0));
+const under = actionCounts.filter((n) => n <= 1).length;
+const over = actionCounts.filter((n) => n > 6).length;
+console.log(`Note: action curation — ${under} record(s) list 0-1 actions (under-listed), ${over} list >6 (raw dumps), ${recs.length - under - over} in the 2-6 range.`);
 console.log(`Note: ${tonelessPinyin} record(s) without tone-marked pinyin (glance layer wants Má Huáng).`);
 
 if (errors.length) {
