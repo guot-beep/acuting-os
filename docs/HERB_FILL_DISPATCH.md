@@ -19,6 +19,9 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 > 的課件,最權威)+ board exam outline 範圍 → ② CloudTCM、American Dragon、
 > chinesemedicineatlas 交叉補深(中文深度/英文巢狀主治/掃描層呈現)。
 > 兩源不合 → 兩個都記、標明出處,絕不擅自二選一。
+> **CloudTCM 找不到單味藥頁時，下一步查百度百科**，並記錄實際條目 URL；
+> 百度可補圖像、別名、基原與一般內容，但劑量、毒性、孕期、禁忌及交互作用
+> 必須再與課件、American Dragon 或其他專業來源交叉核對，不以百度單獨定案。
 >
 > **每味藥要填**(目標檔 `data/herbs/herb_canon_shortlist.json`,對照
 > SPEC §3):帶聲調拼音、中文名、英文 common name、pharmaceutical latin(xlsx 有)、
