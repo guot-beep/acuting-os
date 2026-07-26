@@ -12,7 +12,8 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | 欄位 | 型別 | 規則 |
 |---|---|---|
 | `id` | string | `herb.<pinyin_snake>`,不可改不可刪 |
-| `name_zh` / `name_en` / `pinyin` | string | 必填;pinyin **帶聲調**(Dù Zhòng,不是 Du Zhong)— 新填/改到的一律帶調 |
+| `name_zh` / `name_en` / `pinyin` | string | 必填；`name_en` 是拼音旁的英文 common name，**不得放 pharmaceutical Latin**；pinyin **帶聲調**(Dù Zhòng,不是 Du Zhong)— 新填/改到的一律帶調 |
+| `pharmaceutical_latin` | string | 必填；正式拉丁藥名，獨立顯示於標頭下一排，不得拿來取代 `name_en` |
 | `category` | string | **必須**出自 `data/config/herb_category_canon.json` 的 `categories`;要新分類 → 先經 Claude 加進 canon,再用 |
 | `properties_taste_temp` | string | 性味+溫度,如「辛、微苦、溫」 |
 | `channels_zh` | array | 歸經,如 ["肺經","膀胱經"] |

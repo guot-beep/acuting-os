@@ -21,7 +21,9 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 > 兩源不合 → 兩個都記、標明出處,絕不擅自二選一。
 >
 > **每味藥要填**(目標檔 `data/herbs/herb_canon_shortlist.json`,對照
-> SPEC §3):帶聲調拼音、中英名、pharmaceutical latin(xlsx 有)、
+> SPEC §3):帶聲調拼音、中文名、英文 common name、pharmaceutical latin(xlsx 有)、
+> **`name_en` 只放拼音旁的英文 common name；拉丁藥名只放
+> `pharmaceutical_latin`，在標頭下一排獨立顯示，兩者不得混用**；
 > category(功效分類表)、性味歸經(雙語)、**巢狀主治**(功效→證型→臨床
 > 表現,Materia 的 bullet 就是這個結構)、配伍(s = pairing →
 > major_combinations)、劑量(Materia 的 "Dosage: X–Y grams";**沒來源就留空,

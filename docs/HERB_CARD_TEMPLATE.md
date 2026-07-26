@@ -12,7 +12,7 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 
 | # | 區塊 | 來源欄位 | 必要性 |
 |---|---|---|---|
-| 1 | 標頭:中文名 · 帶聲調拼音 · 英文名 | `name_zh` `pinyin` `name_en` | 必 |
+| 1 | 標頭:中文名 · 帶聲調拼音 · 英文常用名(Common name) | `name_zh` `pinyin` `name_en` | 必 |
 | 2 | 分類 / 性味 / 歸經 / 外部連結 | `category` `properties_taste_temp` `channels_zh` | 必 |
 | 3 | **考試標註**(★高頻 + 💡考點 pearl) | `exam_importance` `exam_pearl` | 必(Ting 指定保留) |
 | 4 | 性味・歸經・常用劑量・使用部位 | `tcm_properties` `dosage` `dosage_g` | 必 |
@@ -82,7 +82,8 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 
 ## 3. 樣板欄位清單(杜仲 30 欄,全部到位)
 
-`id` `name_zh` `name_en` `pinyin`(帶聲調) `pharmaceutical_latin` `part_used_en`
+`id` `name_zh` `name_en`(英文 common name，不得填拉丁藥名) `pinyin`(帶聲調)
+`pharmaceutical_latin`(拉丁藥名，顯示於標頭下一排) `part_used_en`
 `category`(正典) `properties_taste_temp` `tcm_properties` `channels_zh`
 `functions_zh` `actions_en` `indications_zh` `condition_tags_zh`
 `condition_tags_en` `modern_functions_zh` `modern_functions_en` `dosage`
