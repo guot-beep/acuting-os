@@ -5320,3 +5320,12 @@ html { scroll-padding-top: 92px; }
   background: var(--green-soft); border-radius: 8px;
   color: var(--ink); font-size: 0.88rem;
 }
+
+/* Clickable bilingual herb references inside indications / pairs / cautions */
+.k-herb-link {
+  background: #eef7f2; border: 1px solid #cfe6da; border-radius: 6px;
+  color: #14543f; cursor: pointer; font: inherit; font-weight: 700;
+  padding: 1px 7px; margin: 0 2px; display: inline-flex; align-items: baseline; gap: 4px;
+}
+.k-herb-link:hover { background: var(--gold); border-color: var(--gold); color: #24200c; }
+.k-herb-link small { font-weight: 500; opacity: 0.75; font-size: 0.82em; }
