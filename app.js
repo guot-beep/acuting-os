@@ -575,7 +575,11 @@ function unifiedSearch(rawQuery) {
     formulas: pick(knowledgeRecords("formulas"), (f) => [f.name_zh, f.name_en, f.pinyin, f.id,
       f.category_zh, f.category, txt(f.pattern_indications_zh), txt(f.composition)]),
     herbs: pick(knowledgeRecords("herbs"), (h) => [h.name_zh, h.name_en, h.pinyin, h.id, h.category,
-      txt(h.channels_entered), txt(h.functions_zh || h.functions), txt(h.modern_use_tags)]),
+      txt(h.channels_entered), txt(h.functions_zh || h.functions), txt(h.modern_use_tags),
+      // condition tags and indications are what a symptom search actually hits
+      // (clicking 腰膝痠痛 on a card searches for it and must find these herbs)
+      txt(h.condition_tags_zh), txt(h.condition_tags_en), txt(h.indications_zh),
+      txt(h.modern_functions_zh), txt(h.actions_en)]),
     conditions: pick(knowledgeRecords("conditionCanon"), (c) => [c.name_zh, c.name_en, c.id, c.category,
       txt(c.tcm_patterns)]),
     cases: pick(clinicalCases, (c) => [c.patientCode, c.caseTitle, c.chiefComplaint,
@@ -668,6 +672,24 @@ function openGlobalResult(btn) {
   }
 }
 
+/* Let knowledge cards trigger a site-wide search (condition tags do this):
+   close any open study card, go home, and run the unified search. */
+globalThis.ACUTING_SEARCH = function (term) {
+  const q = String(term || "").trim();
+  if (!q) return;
+  document.querySelectorAll("dialog[open]").forEach((d) => d.close());
+  goToSection("ws/home");
+  if (homeSearch) {
+    homeSearch.value = q;
+    renderGlobalResults(q);
+    requestAnimationFrame(() => homeSearch.scrollIntoView({ block: "center" }));
+  }
+};
+document.addEventListener("click", (event) => {
+  const t = event.target.closest("[data-search-term]");
+  if (t) globalThis.ACUTING_SEARCH(t.dataset.searchTerm);
+});
+
 if (globalResultsEl) {
   let grTimer = null;
   homeSearch.addEventListener("input", () => {
@@ -678,10 +700,13 @@ if (globalResultsEl) {
     const btn = event.target.closest(".gr-item");
     if (btn) openGlobalResult(btn);
   });
-  // Click outside the hero search closes the dropdown.
+  // Click outside the hero search closes the dropdown — except for a tag that
+  // just RAN a search (its click is outside the box, and closing here would
+  // wipe the results it opened).
   document.addEventListener("click", (event) => {
     if (globalResultsEl.hidden) return;
     if (event.target.closest(".hero-search") || event.target.closest("#globalResults")) return;
+    if (event.target.closest("[data-search-term]")) return;
     clearGlobalResults();
   });
 }

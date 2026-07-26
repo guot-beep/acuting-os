@@ -20,10 +20,20 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 | 6 | 炮製作用 | `pao_zhi_notes_zh` | 有就填 |
 | 7 | 現代藥理(中英標籤成對) | `modern_functions_zh` + `modern_functions_en` | 必 |
 | 8 | 主治與症狀(證型 —— 配伍 結構,**配伍藥名可點開**) | `indications_zh` | 必 |
-| 9 | 病名症狀索引標籤(中英成對) | `condition_tags_zh` + `condition_tags_en` | 必 |
+| 9 | 病名症狀索引標籤(中英成對,**點了會全站搜尋該症狀**) | `condition_tags_zh` + `condition_tags_en` | 必 |
 | 10 | **經典對藥**(藥對 + 中英配伍理由,**藥名可點開**) | `key_pairs`(`pair` / `rationale_zh` / `rationale_en`) | 必(Ting 指定保留) |
+| 10.5 | **古籍原文**(本草原文 + 英譯,一兩句就好) | `classical_text_zh` + `classical_text_en` | 有就填 |
 | 11 | 相關方劑 | `related_formulas` | 有就填 |
 | 12 | 毒性安全與來源(禁忌/慎用中英 + 具名來源) | `cautions_zh` + `cautions_en` `safety_flags` `field_sources` | 必 |
+
+**功效欄位的唯一真相是 `functions_zh`**(渲染器優先讀它)。舊的
+`traditional_functions_zh` 只在 `functions_zh` 空白時當備援 —— 兩者不一致會
+讓中英標籤配不起來(麻黃就出過這個問題)。填資料一律寫 `functions_zh`。
+把各來源(課件、CloudTCM、American Dragon、atlas)的功效**整合成 3–5 條**
+中英成對的標籤,方便 board exam 記憶;不要為每個來源另開一節。
+
+**課件引用一兩個就夠**:`field_sources` 可以逐欄標,但卡片下方只顯示
+**每個課件檔一個 chip、最多 2 個**(避免同一頁重複洗版)。
 
 **已刪除、不要再加**:
 - `primary_actions_en`(Bastyr Slide Primary Actions)—— 與第 8 區主治重複(Ting: 太重複了)。
@@ -44,6 +54,12 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 
 ## 2. 硬規則(違反 = validator 擋下或退回)
 
+0. **模板級記錄必須全雙語(E6 FAIL)**。只要記錄有 `field_sources`(= 宣稱照
+   模板做),`modern_functions_en` / `condition_tags_en` / `cautions_en` 一個都
+   不能缺,缺了 `validate-herb-standard.js` 直接 FAIL。
+   (Ting 2026-07-26 問:模板寫了為什麼還是會漏?—— 因為之前文件只是建議、
+   檢查器只「報告」缺漏。現在改成擋下。舊資料沒有 `field_sources`,仍是待補
+   清單,不會卡住批次。)
 1. **中英標籤逐項對齊**:`_en` 陣列長度必須等於 `_zh`;不確定就整個留空。
    錯位 = E5 FAIL(會讓每個標籤配到別人的英文)。
 2. **`functions_zh` 只放傳統功效**;現代藥理放 `modern_functions_zh`。
