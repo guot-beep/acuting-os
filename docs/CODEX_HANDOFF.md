@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-26] Codex Handoff - Herb source citation display
+
+- **Branch / content commit**: `codex/herbs-release-exterior-sample` / `41881b2`
+- **Scope**: Added rendered `source_citations` to 蒲公英、桂枝、生薑、荊芥、防風、紫蘇葉、半夏.
+- **Source honesty**: American Dragon appears only on the six records actually consulted; it is intentionally absent from 紫蘇葉 because that page was verification-blocked. Wikimedia links appear only where an image URL is used.
+- **Also corrected**: 生薑 legacy `source_urls` CloudTCM link from incorrect `/herb/6` to verified `/herb/1171`.
+- **Validation**: `build-data.js`, `validate-herb-standard.js`, `validate-content-junk.js`, and `git diff --check` PASS.
+- **Protected/user files**: No untracked curriculum files or protected application/source files were staged or modified.
+
 ## [2026-07-26] Codex Handoff - Formal Ban Xia card
 
 - **Branch / content commit**: `codex/herbs-release-exterior-sample` / `e9c3e5a`
