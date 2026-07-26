@@ -75,18 +75,24 @@ echo.
 REM --- 3b) 剛剛不在 main 的話，把那個分支的工作併回 main ---
 REM 否則你在別的分支做的東西會留在原地，更新完看起來像「東西不見了」。
 if /i not "!CURBR!"=="main" (
-    echo [3b] 把分支 !CURBR! 的工作合併進 main...
+    echo [3b] 把分支 !CURBR! 還沒進 main 的工作合併進來...
     git merge --no-edit "!CURBR!"
     if errorlevel 1 (
-        echo.
-        echo [!] 合併 !CURBR! 有衝突 —— 已安全停下。
-        echo     你的工作還完整留在分支 !CURBR! 上，一點都沒少，
-        echo     而且剛剛已經備份到 GitHub 了。
-        echo     請把這個畫面截圖給 Claude，不要自己 reset。
+        REM 衝突「不是」失敗，不能在這裡結束。最常見的原因是這個分支已經被
+        REM squash 合併進 main 了：squash 會把整個分支壓成一顆新 commit，原本
+        REM 那些 commit 的編號不會出現在 main，git 認不出「已經合過」，再 merge
+        REM 一次就是同一份內容自己撞自己。舊版在這裡 exit /b 1，於是第 4 步的
+        REM push 永遠跑不到，看起來像同步壞掉，其實 main 早就是最新的了。
         git merge --abort >nul 2>&1
         echo.
-        pause
-        exit /b 1
+        echo [!] 合併有衝突 —— 已安全取消，main 沒有被改到。
+        echo     你的工作完整留在分支 !CURBR! 上，一點都沒少，
+        echo     而且剛剛已經備份到 GitHub 了。
+        echo     最常見的原因：這個分支之前已經被 squash 合併進 main 了，
+        echo     也就是「東西早就在 main 裡」，不需要再合一次。
+        echo     底下會繼續完成同步。如果你覺得真的少了東西，
+        echo     再把這個畫面截圖給 Claude —— 不要自己 reset。
+        echo.
     )
     echo.
 )
