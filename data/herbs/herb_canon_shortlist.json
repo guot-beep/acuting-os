@@ -26827,7 +26827,10 @@
           "抗腫瘤"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"3-9克\",\r\n  \"食療用量範圍\": \"3-6克\",\r\n  \"特殊說明\": \"內服必須用炮製品，不宜生用；清半夏長於燥濕化痰，姜半夏長於降逆止嘔，法半夏長於燥濕健脾；外用生品適量\"\r\n}",
+      "dosage": {
+        "decoction_g": "Chenoweth：5–10g；CloudTCM：3–9g；American Dragon：3–15g",
+        "特殊說明": "三源劑量範圍不同，並列不擇一。內服必須使用炮製品；生半夏僅供外用。"
+      },
       "cautions": "中藥「半夏」注意事項重點：\n陰虛燥咳、津傷口渴、血證及燥痰者禁服。\n生半夏必須煎服，0.1-1.8g生半夏即可引發中毒，對口腔、喉頭及消化道粘膜有強烈刺激性。\n長期口服或肌肉注射姜半夏制劑，少數病例出現肝功能異常和血尿。\n不宜與烏頭類藥材同用。\n一切血證及陰虛燥咳、津傷口渴者忌服。\n《本草經集註》：射干為之使。惡皁莢。畏雄黃、生薑、乾薑、秦皮、龜甲。反烏頭。\n《藥性論》：忌羊血、海藻、飴糖。柴胡為之使。\n張元素：諸血證及口渴者禁用。孕婦忌之，用生薑則無害。\n《醫學入門》：凡諸血證及自汗、渴者禁用。",
       "source_urls": [
         "https://cloudtcm.com/herb/966"
@@ -26837,37 +26840,47 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "陰虛燥咳、津傷口渴、血證及燥痰者禁服。",
-        "生半夏必須煎服，0.1-1.8g生半夏即可引發中毒，對口腔、喉頭及消化道粘膜有強烈刺激性。",
-        "長期口服或肌肉注射姜半夏制劑，少數病例出現肝功能異常和血尿。",
-        "不宜與烏頭類藥材同用。",
-        "一切血證及陰虛燥咳、津傷口渴者忌服。",
-        "《本草經集註》：射干為之使。惡皁莢。畏雄黃、生薑、乾薑、秦皮、龜甲。反烏頭。",
-        "《藥性論》：忌羊血、海藻、飴糖。柴胡為之使。",
-        "張元素：諸血證及口渴者禁用。孕婦忌之，用生薑則無害。",
-        "《醫學入門》：凡諸血證及自汗、渴者禁用。"
+        "生半夏毒性強，內服必須使用炮製品；生品僅供外用。",
+        "過量可見口舌與咽喉麻木腫痛、流涎、吞嚥困難、嘔吐、腹痛；重者可呼吸抑制。",
+        "孕期資料有分歧：Chenoweth列妊娠嘔吐為適應證；American Dragon主張慎用並需配足量生薑；CloudTCM同時收錄忌用與可辨證使用的不同古籍意見。",
+        "痰熱證原則上不單用；Chenoweth指出配伍黃芩、石膏、知母等清熱藥後可辨證使用。",
+        "長期使用薑半夏製劑曾有少數肝功能異常與血尿報告（CloudTCM彙整）。"
+      ],
+      "cautions_en": [
+        "Raw Ban Xia is strongly toxic; only processed forms are used internally, while the raw herb is restricted to external use.",
+        "Overdose may cause oral and throat numbness, swelling, salivation, dysphagia, vomiting and abdominal pain; severe toxicity may depress respiration.",
+        "Pregnancy guidance conflicts: Chenoweth lists pregnancy-related nausea as an indication; American Dragon advises caution with substantial Sheng Jiang; CloudTCM preserves differing historical opinions.",
+        "Do not use it alone for Phlegm-Heat; Chenoweth allows pattern-based use when appropriately combined with Heat-clearing herbs such as Huang Qin, Shi Gao or Zhi Mu.",
+        "CloudTCM reports rare liver-function abnormalities and hematuria after prolonged use of Jiang Ban Xia preparations."
       ],
       "safety_source_url": "https://cloudtcm.com/herb/966",
       "safety_fetched_at": "2026-07-23T07:25:25.674Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "溫化寒痰",
-        "止咳化痰",
-        "降氣",
-        "利水消腫",
-        "化痰消痞",
-        "降逆止嘔",
-        "燥濕化痰"
+        "燥濕化痰",
+        "降逆和胃止嘔",
+        "消痞散結",
+        "外用消腫止痛"
+      ],
+      "actions_en": [
+        "Dry Dampness and transform Phlegm",
+        "Descend rebellious Qi, harmonize the Stomach and stop vomiting",
+        "Dissipate nodules and reduce focal distention",
+        "Reduce swelling and relieve pain when used externally"
       ],
       "modern_functions_zh": [
-        "止痛功效",
-        "抑制胃酸",
-        "防癌抗腫瘤",
         "鎮咳作用",
-        "抗生育作用",
-        "降血脂",
+        "鎮吐作用（炮製品）",
+        "抑制胃酸與抗潰瘍作用",
         "抗心律失常",
-        "抗腫瘤"
+        "抗腫瘤活性研究（體外／動物研究）"
+      ],
+      "modern_functions_en": [
+        "Antitussive activity",
+        "Antiemetic activity of processed preparations",
+        "Gastric-acid suppression and anti-ulcer activity",
+        "Antiarrhythmic activity",
+        "Antineoplastic activity investigated in vitro and animal studies"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/966",
@@ -26917,7 +26930,13 @@
         "肺經"
       ],
       "indications_zh": [
-        "燥濕化痰；降逆止嘔；消痞散結"
+        "肺脾濕痰、寒痰咳嗽，痰多色白易咯、胸悶——配 陳皮、茯苓、甘草（二陳湯）",
+        "寒飲犯肺，咳嗽痰稀兼噁心嘔吐——配 乾薑、細辛",
+        "痰熱咳嗽、痰黃稠黏——須配 黃芩、石膏、知母等清熱藥，不宜單用",
+        "胃中痰飲、胃氣上逆之噁心嘔吐——寒證配 生薑；胃熱配 黃連、竹茹",
+        "妊娠惡阻——Chenoweth列為晨吐要藥，配 生薑、砂仁或紫蘇梗；孕期安全說法有來源分歧",
+        "痰氣互結之胸脘痞悶、梅核氣或痰核瘰癧——配 厚朴、茯苓",
+        "癰腫、瘡瘍、痰核——生品研末外用，不得內服"
       ],
       "study_tags": [
         "單味中藥",
@@ -26926,7 +26945,94 @@
         "半夏"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": [
+        "濕痰咳嗽",
+        "寒痰咳嗽",
+        "痰熱咳嗽（配伍使用）",
+        "痰飲嘔吐",
+        "妊娠惡阻",
+        "梅核氣",
+        "痰核瘰癧"
+      ],
+      "condition_tags_en": [
+        "Damp-Phlegm cough",
+        "Cold-Phlegm cough",
+        "Phlegm-Heat cough when appropriately combined",
+        "Vomiting from Phlegm and thin fluids",
+        "Nausea and vomiting of pregnancy",
+        "Plum-pit Qi / globus sensation",
+        "Phlegm nodules and scrofula"
+      ],
+      "pinyin_toned": "Bàn Xià",
+      "cloudtcm_url": "https://cloudtcm.com/herb/966",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm",
+      "pharmaceutical_latin": "Pinelliae Rhizoma",
+      "part_used_en": "Rhizome",
+      "dosage_g": "3–15g（來源範圍不同；僅限炮製品內服）",
+      "pao_zhi_notes_zh": [
+        "法半夏：甘草、石灰等法製，燥濕化痰而藥力較和，偏脾虛濕痰。",
+        "薑半夏：以生薑、明礬炮製，長於降逆止嘔、溫中化痰。",
+        "清半夏：明礬等法製，偏燥濕化痰，適合痰多而正氣較弱者。",
+        "生半夏：毒性強，只供外用，不得內服。"
+      ],
+      "key_pairs": [
+        {
+          "pair": "半夏 + 陳皮 Chén Pí（NCBAHM 2026 Appendix B）",
+          "rationale_zh": "陳皮理氣健脾、燥濕化痰；半夏燥濕化痰、降逆和胃。陳皮主理氣，半夏主化痰。氣順則痰消，兩藥相須，理氣化痰、燥濕和中之核心藥對（二陳湯）。",
+          "rationale_en": "Chen Pi regulates qi and dries dampness; Ban Xia transforms phlegm and lowers rebellion. Regulating qi resolves phlegm (Er Chen Tang)."
+        },
+        {
+          "pair": "半夏 + 生薑 Shēng Jiāng（NCBAHM 2026 Appendix B）",
+          "rationale_zh": "相使。半夏燥濕化痰、降逆止嘔；生薑溫胃止嘔並制半夏之毒——痰飲上逆、胃寒嘔吐（小半夏湯）。",
+          "rationale_en": "Xiang Shi (mutual assistance). Ban Xia transforms Phlegm and stops vomiting; Sheng Jiang warms the Stomach, assists the antiemetic action and moderates Ban Xia toxicity (Xiao Ban Xia Tang)."
+        },
+        {
+          "pair": "半夏 + 厚朴 Hòu Pò",
+          "rationale_zh": "半夏燥濕化痰、降逆和胃；厚朴行氣燥濕、下氣除滿。半夏主化痰降逆，厚朴主行氣消脹。兩藥相須，行氣化痰、降逆除滿之力甚強（半夏厚朴湯）。",
+          "rationale_en": "Ban Xia transforms phlegm and lowers rebellious qi; Hou Po moves qi and relieves fullness. Essential pair for phlegm-qi stagnation."
+        }
+      ],
+      "contraindications_zh": [
+        "陰虛燥咳、津傷口渴或燥痰者禁用。",
+        "咳血及其他血證、火熱所致咽喉腫痛者禁用。",
+        "生半夏不得內服。",
+        "禁止與烏頭類同用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated for dry cough from Yin or fluid deficiency and for Dry Phlegm.",
+        "Contraindicated with hemoptysis, other bleeding disorders, or sore throat due to Fire.",
+        "Raw Ban Xia must not be administered internally.",
+        "Incompatible with all forms of Aconite."
+      ],
+      "exam_importance": "★ Chenoweth Yao Yao：一切痰證（All Phlegm Conditions）；必考方向為燥濕化痰並使逆氣下降。對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "四個辨識點：痰證要藥、降逆止嘔、消痞散結、炮製減毒；生品只外用，反烏頭。對藥必記半夏–陳皮與半夏–生薑。",
+      "safety_review": {
+        "toxicity": "高風險：生半夏具強烈黏膜刺激與全身毒性，內服須用炮製品。",
+        "pregnancy": "來源分歧：可用於妊娠惡阻，但應辨證、使用炮製品並常配生薑；保留孕期慎用標記。",
+        "interaction": "反烏頭類；CloudTCM另彙整海藻、飴糖等傳統配伍說法，需進一步核對。"
+      },
+      "field_sources": {
+        "pinyin": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26"],
+        "pharmaceutical_latin": ["curriculum/herbs/pinyin_latin_herb_list.csv#row248", "NCBAHM 2026 Chinese Herbology Content Outline, Appendix A"],
+        "category": ["curriculum/herbs/herb_functions_chenoweth.pdf#p3"],
+        "properties_taste_temp": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "condition_tags_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26"],
+        "condition_tags_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "pao_zhi_notes_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "key_pairs": ["data/herbs/herb_pairs.json#pair.chen_pi__ban_xia", "data/herbs/herb_pairs.json#pair.ban_xia__hou_po", "NCBAHM 2026 Chinese Herbology Content Outline, Appendix B", "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "https://cloudtcm.com/herb/966", "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"],
+        "exam_importance": ["NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A", "curriculum/herbs/herb_functions_chenoweth.pdf#p5"],
+        "exam_pearl": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p26", "NCBAHM 2026 Chinese Herbology Content Outline, Appendix B"]
+      }
     },
     {
       "id": "herb.tian_nan_xing",
