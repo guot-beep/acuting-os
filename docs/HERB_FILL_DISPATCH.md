@@ -19,6 +19,9 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 > 的課件,最權威)+ board exam outline 範圍 → ② CloudTCM、American Dragon、
 > chinesemedicineatlas 交叉補深(中文深度/英文巢狀主治/掃描層呈現)。
 > 兩源不合 → 兩個都記、標明出處,絕不擅自二選一。
+> **現有 CloudTCM URL map 沒收錄，不代表網站沒有該藥。** 必須再用中文藥名
+> 查找並核對精確 `/herb/<數字>` 頁；找到後補回
+> `data/imports/cloudtcm/herb_url_map.json`，不得直接宣告 CloudTCM 無資料。
 > **CloudTCM 找不到單味藥頁時，先查可核讀的專業單味藥頁（例如 Traditional
 > World Medicine），仍找不到再查百度百科**，並記錄實際條目 URL。專業頁面
 > 實際核讀後，可搬入圖像、辨識、性味歸經、功效、主治、炮製、對藥與劑量，
