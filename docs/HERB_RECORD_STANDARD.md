@@ -18,8 +18,8 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `properties_taste_temp` | string | 性味+溫度,如「辛、微苦、溫」 |
 | `channels_zh` | array | 歸經,如 ["肺經","膀胱經"] |
 | `functions_zh` | array | **只放傳統功效**(發汗解表…)。現代藥理絕不混進來 |
-| `modern_functions_zh` | array | **只放現代藥理**(抗發炎…) |
-| `indications_zh` | array | 主治 |
+| `modern_functions_zh` | array | **只放現代藥理**(抗發炎…)；不設筆數上限，來源有幾則有效資料就完整保留 |
+| `indications_zh` | array | 主治；不設筆數上限，不得把 8 則有區別的主治硬縮成 3–5 則 |
 | `condition_tags_zh` / `condition_tags_en` | array | 病症標籤 **中英成對** |
 | `modern_functions_en` | array | 現代藥理英文,與 `modern_functions_zh` **逐項對齊** |
 | `cautions_en` | array | 注意事項英文,與 `cautions_zh` **逐項對齊** |
@@ -33,6 +33,11 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `source_citations` | array | 卡片底部實際顯示的來源；每筆含具名 `name`、可選 `url`、`scope` |
 | `exact_source_url` / `safety_source_url` | string | 逐筆出處;curriculum 用 `curriculum/herbs/<file>#p<N>` |
 | `review_status` | string | AI 只能寫 `"draft"`;`source_checked` 只由 Ting 的 RV1 流程升級 |
+
+**數量規則：**3–5 條的濃縮目標只適用於傳統功效 `functions_zh`。
+`indications_zh`、`modern_functions_zh` 與逐項對齊的 `modern_functions_en`
+均不設上限。只有完全同義、沒有新增證型、症狀、用途、機制或研究資訊的重複項
+可以合併；其餘全部保留並逐欄標註來源。
 
 **中英標籤鐵則**:`_en` 陣列必須與對應 `_zh` **同長度、同順序**(index-aligned)。
 長度不合 = validator E5 直接 FAIL —— 因為錯位會讓每個標籤都配到別人的英文
