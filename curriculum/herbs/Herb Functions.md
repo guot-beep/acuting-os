@@ -1,6 +1,6 @@
-# herb_functions_chenoweth
+# Herb Functions
 
-> 自動抽取自 `curriculum/herbs/herb_functions_chenoweth.pdf`(engine: pdfplumber+xycut)。**這是原始文字,未經整理或校對。**
+> 自動抽取自 `curriculum/herbs/Herb Functions.pdf`(engine: pdfplumber+xycut)。**這是原始文字,未經整理或校對。**
 > 
 > 🚨 **多欄版面:約 33% 的行可能是「左欄 + 右欄」黏在一起的。**
 > 例:`[21] Aromatic, Open Orifices • Du Zhong [W]` —— 杜仲在右邊那欄
@@ -8,7 +8,7 @@
 > **一行裡的兩個東西不一定有關係。** 要判斷「某味藥屬於哪個功效分類」,
 > 請找該分類**整段連續的清單**(標題 + 底下的 bullet),不要只看單一行;
 > 或改用逐味論述的 `herbs/Materia Medica Abbbreviated.md`。
-> 引用寫法:`curriculum/herbs/herb_functions_chenoweth.pdf#p<頁碼>`。頁碼 = 下方 `## p.N` 標題。
+> 引用寫法:`curriculum/herbs/Herb Functions.pdf#p<頁碼>`。頁碼 = 下方 `## p.N` 標題。
 > ⚠️ PDF 的段落順序不等於視覺順序。跨欄位抓到的內容(尤其禁忌、劑量、
 > 針刺深度)一定要回頭確認它掛在哪一味藥/哪一個穴底下 —— 曾經在麻黃附近
 > 抓到的禁忌實際上屬於桂枝。

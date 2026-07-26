@@ -37,6 +37,25 @@ const FOLDERS = {
 
 // A PDF/DOCX is only usable by every agent if a text version sits beside it.
 const TEXT_EXT = new Set([".md", ".txt", ".csv"]);
+
+// ...and only if that text version actually has text in it. A scanned PDF
+// extracts to a .md containing nothing but the auto-generated header and empty
+// page markers; counting that as "✅ has text" would be a lie in the one place
+// the index exists to prevent lies.
+const SUBSTANTIVE_MIN = 200;
+function hasRealText(abs) {
+  try {
+    const body = fs
+      .readFileSync(abs, "utf8")
+      .replace(/^#.*$/gm, "")           // headings incl. the ## p.N markers
+      .replace(/^>.*$/gm, "")           // the provenance/warning block
+      .replace(/^_\(.*\)_$/gm, "")      // "(這一頁沒有可抽取的文字)" placeholders
+      .trim();
+    return body.length >= SUBSTANTIVE_MIN;
+  } catch {
+    return false;
+  }
+}
 const BINARY_EXT = new Set([".pdf", ".doc", ".docx", ".xlsx", ".ppt", ".pptx"]);
 const IMAGE_EXT = new Set([".png", ".jpg", ".jpeg", ".gif", ".webp"]);
 
@@ -73,7 +92,11 @@ const summary = [];
 for (const [folder, purpose] of Object.entries(FOLDERS)) {
   const files = scan(path.join(CUR, folder));
   total += files.length;
-  const textStems = new Set(files.filter((f) => TEXT_EXT.has(f.ext)).map((f) => f.rel.replace(/\.[^.]+$/, "")));
+  const textStems = new Set(
+    files
+      .filter((f) => TEXT_EXT.has(f.ext) && hasRealText(path.join(CUR, folder, f.rel)))
+      .map((f) => f.rel.replace(/\.[^.]+$/, ""))
+  );
   const missing = files.filter((f) => BINARY_EXT.has(f.ext) && !textStems.has(f.rel.replace(/\.[^.]+$/, "")));
   missing.forEach((f) => needExtract.push(`${folder}/${f.rel}`));
   summary.push({ folder, n: files.length, missing: missing.length });
@@ -90,8 +113,9 @@ for (const [folder, purpose] of Object.entries(FOLDERS)) {
   for (const f of files) {
     const stem = f.rel.replace(/\.[^.]+$/, "");
     let mark = "—";
-    if (TEXT_EXT.has(f.ext)) mark = "✅ 本身是文字";
-    else if (IMAGE_EXT.has(f.ext)) mark = textStems.has(stem) ? "✅" : "⚠️ 圖片,需附 .md 轉述";
+    if (TEXT_EXT.has(f.ext)) {
+      mark = hasRealText(path.join(CUR, folder, f.rel)) ? "✅ 本身是文字" : "⚠️ 幾乎沒有內容";
+    } else if (IMAGE_EXT.has(f.ext)) mark = textStems.has(stem) ? "✅" : "⚠️ 圖片,需附 .md 轉述";
     else if (BINARY_EXT.has(f.ext)) mark = textStems.has(stem) ? "✅" : "⚠️ 待抽文字";
     lines.push(`| \`${f.rel}\` | ${kb(f.size)} | ${mark} |`);
   }
@@ -110,9 +134,13 @@ for (const s of summary) lines.push(`| ${s.folder} | ${s.n} | ${s.missing || "�
 lines.push(`| **合計** | **${total}** | **${needExtract.length}** |`);
 lines.push("");
 if (needExtract.length) {
-  lines.push("### ⚠️ 這些檔還沒有文字版");
+  lines.push("### ⚠️ 這些檔還沒有可用的文字版");
   lines.push("");
-  lines.push("讀不了 PDF/DOCX 的 agent 看不到它們。請 Claude 抽文字後放同名 `.md`。");
+  lines.push("讀不了 PDF/DOCX 的 agent 看不到它們。跑");
+  lines.push("`python3 scripts/extract-curriculum-text.py` 產生同名 `.md`。");
+  lines.push("");
+  lines.push("**已經有 `.md` 但還列在這裡** = 那份是掃描檔/圖片投影片,抽不出文字,");
+  lines.push("需要人工把重點打字進去 —— 空的文字版比沒有更危險,它會讓人以為已經處理過。");
   lines.push("");
   needExtract.forEach((f) => lines.push(`- \`${f}\``));
   lines.push("");

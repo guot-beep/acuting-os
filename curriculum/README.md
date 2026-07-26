@@ -93,14 +93,28 @@ case_王X明_2026-03-14.md      ❌ 姓名 + 就診日期
 - 圖片(`.png/.jpg` 的投影片或表格):最後手段 —— 旁邊加一個 `.md` 把重點打字
   下來,因為不是每個 agent 讀得了圖。
 
-丟完 PDF 後跑 `node scripts/index-curriculum.js`,它會列出**哪些檔還沒有文字版**
-—— 沒有文字版的 PDF 對半數 agent 等於不存在。
+丟完 PDF 後跑這兩行:
+
+```bash
+python3 scripts/extract-curriculum-text.py   # 產生同名 .md(頁碼 = ## p.N)
+node scripts/index-curriculum.js             # 更新 INDEX.md,列出還缺文字版的檔
+```
+
+沒有文字版的 PDF 對半數 agent 等於不存在。抽完之後看 `INDEX.md` 的「文字版」欄:
+還是 ⚠️ 的表示那份是掃描檔,抽不出字,要人工把重點打進去。
 
 ## AI 怎麼引用
 值從這裡來,就在該筆記錄的 `field_sources` 寫
 `curriculum/<path>#<page-or-section>`,跟 URL 一樣的寫法。Ting 的老師課件與網路
 來源衝突時以課件為準,但**衝突照樣兩邊都記**(絕不安靜地丟掉一邊)。
 
-⚠️ 抽 PDF 文字有個真實踩過的坑:PDF 的段落順序不等於視覺順序。麻黃附近抓到的
-「Contraindications: Pregnancy…」實際上屬於**桂枝**。跨欄位 grep 出來的東西,
-一定要回頭確認它掛在哪一味藥/哪一個穴底下,尤其是安全性欄位。
+⚠️ 抽 PDF 文字有兩個真實踩過的坑:
+
+1. **段落順序 ≠ 視覺順序**。麻黃附近抓到的「Contraindications: Pregnancy…」
+   實際上屬於**桂枝**。grep 出來的東西一定要回頭確認它掛在哪一味藥/哪一個穴
+   底下,尤其是安全性欄位。
+2. **多欄版面會把左右欄黏成一行**。`Herb Functions.pdf` 攤平後會出現
+   `[21] Aromatic, Open Orifices • Du Zhong [W]` —— 杜仲是補陽藥,跟開竅
+   完全無關,標題在左欄、藥在右欄。抽取腳本現在會偵測這種版面並改用逐欄
+   重讀(XY-cut),但殘留的行仍會在該 `.md` 開頭標 🚨。**看到 🚨 就不要只憑
+   單一行判斷歸屬**,要找整段連續的清單。
