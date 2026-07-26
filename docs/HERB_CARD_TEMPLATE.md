@@ -24,6 +24,7 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 | 10 | **經典對藥**(七情關係 + 中英配伍理由 + **主治 + 注意**,不同顏色顯示) | 優先 `data/herbs/herb_pairs.json`; `key_pairs` 僅供尚未建立正式藥對記錄時暫存 | 必(Ting 指定保留) |
 | 10.5 | **古籍原文**(本草原文 + 英譯,一兩句就好) | `classical_text_zh` + `classical_text_en` | 有就填 |
 | 11 | 相關方劑 | `related_formulas` | 有就填 |
+| 11.5 | **學習筆記**(辨識定位、相似藥鑑別、臨床記憶與安全重點；不可空白) | `clinical_use_note` | 必 |
 | 12 | 毒性安全與來源 | **`contraindications_zh` + `_en`(禁忌,必填)**、`cautions_zh` + `_en`(慎用)、`safety_flags`、`field_sources` | 必 |
 
 **功效欄位的唯一真相是 `functions_zh`**(渲染器優先讀它)。舊的
@@ -106,7 +107,11 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 `dosage_g` `pao_zhi_notes_zh` `key_pairs` `cautions_zh` `cautions_en`
 `contraindications_zh` `contraindications_en`
 `safety_flags` `safety_review_pending` `related_formulas` `exam_importance`
-`exam_pearl` `field_sources` `review_status`
+`exam_pearl` `clinical_use_note` `field_sources` `review_status`
+
+`clinical_use_note` 不是把功效、主治重新貼一次，而是整理「這味藥如何辨識與記憶」：
+核心定位、與相似藥的鑑別、最重要配伍、炮製／安全提醒及 board 考點。內容必須
+由已核讀來源綜合而來，並在 `field_sources.clinical_use_note` 列出來源。
 
 正式對藥記錄放在 `data/herbs/herb_pairs.json`，包含 `relation`、
 `pair_meaning_zh/_en`、`indication_zh/_en`、`caution_zh/_en`、

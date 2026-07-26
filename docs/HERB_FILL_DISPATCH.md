@@ -48,6 +48,9 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 > 不得套用傳統功效的 3–5 條濃縮規則。只合併完全同義的重複敘述；不同證型、
 > 症狀、用途、作用機制或研究結果全部保留。`modern_functions_zh/_en` 必須逐項
 > 對齊，且每個採用來源寫入 `field_sources`。
+> **`clinical_use_note` 必填**：寫核心辨識定位、相似藥鑑別、重要配伍、
+> 炮製／安全記憶與 board 考點，不得只是複製功效主治；來源同步寫入
+> `field_sources.clinical_use_note`。
 > `review_status:"draft"`。`_zh` 欄位放英文 = 缺陷。
 > **不可覆蓋既有更豐富的值** — 只加深、不變薄。
 >

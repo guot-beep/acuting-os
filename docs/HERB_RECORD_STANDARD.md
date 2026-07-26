@@ -29,6 +29,7 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `cautions_zh` / `_en` | array | 慎用(相對):慎服、注意、交互作用 |
 | `safety_flags` | array | 安全旗標 |
 | `related_formulas` | array | 方劑 id 連結 |
+| `clinical_use_note` | string | 必填學習筆記：核心定位、相似藥鑑別、重要配伍與安全記憶；不得只是重貼功效主治 |
 | `key_pairs` | array | 已有 `herb_pairs.json` 正式對藥時留空，避免遮住完整彩色卡；不得用簡版覆蓋正式對藥 |
 | `source_citations` | array | 卡片底部實際顯示的來源；每筆含具名 `name`、可選 `url`、`scope` |
 | `exact_source_url` / `safety_source_url` | string | 逐筆出處;curriculum 用 `curriculum/herbs/<file>#p<N>` |
