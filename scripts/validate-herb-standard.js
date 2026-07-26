@@ -12,6 +12,8 @@
  *   E3 category present but not in the canon (data/config/herb_category_canon.json)
  *      and not a known alias
  *   E4 a *_zh text field is non-empty but contains no Chinese at all
+ *   E5 an _en tag array is not index-aligned with its _zh array
+ *   E6 a template-grade record (has field_sources) is missing an _en array
  *
  * REPORT (always printed) — honest per-field coverage vs the canonical record
  * (docs/HERB_RECORD_STANDARD.md), plus fixable counts (alias-mappable
@@ -85,7 +87,17 @@ for (const r of recs) {
     if (en.length && en.length !== zh.length) {
       errors.push(`E5 ${id}: ${enF} (${en.length}) is not index-aligned with ${zhF} (${zh.length}) — English would land on the wrong tag`);
     }
-    if (zh.length && !en.length) missingEn[enF] = (missingEn[enF] || 0) + 1;
+    if (zh.length && !en.length) {
+      missingEn[enF] = (missingEn[enF] || 0) + 1;
+      // A record carrying field_sources claims template grade (see
+      // docs/HERB_CARD_TEMPLATE.md) — for those, a missing English array is a
+      // FAILURE, not a note. Ting: 模板寫了為什麼還是會遺漏 — because the doc
+      // was advisory and the check was only a report. Legacy records without
+      // field_sources stay exempt; they are the known backlog.
+      if (r.field_sources && Object.keys(r.field_sources).length) {
+        errors.push(`E6 ${id}: template-grade record is missing ${enF} (${zh.length} 中文 tags, 0 English)`);
+      }
+    }
   }
   {
     const zh = Array.isArray(r[SOFT_PAIR[0]]) ? r[SOFT_PAIR[0]] : [];

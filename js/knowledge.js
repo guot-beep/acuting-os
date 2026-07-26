@@ -335,8 +335,19 @@
     if (!citations.length && links.length) {
       html += links.map((url) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#0284c7;font-size:0.85em;">${esc(hostName(url))} ↗</a>`).join("");
     }
+    /* One chip per curriculum file+page. field_sources annotates the same page
+       many ways ("...#p29（WM 行）"), which used to print the same course file
+       three times (Ting: 課件部份就標註一兩個就好,不要重複). */
     const curriculumRefs = [...new Set(Object.values(record.field_sources || {}).flat()
-      .filter((v) => typeof v === "string" && v.startsWith("curriculum/")))];
+      .filter((v) => typeof v === "string" && v.startsWith("curriculum/"))
+      .map((v) => v.split("（")[0].split(" (")[0].split(" →")[0].trim()))]
+      .reduce((acc, ref) => {                       // one chip per course FILE
+        const file = ref.split("#")[0];
+        if (!acc.some((x) => x.split("#")[0] === file)) acc.push(ref);
+        return acc;
+      }, [])
+      .sort((a, b) => (b.includes("materia") ? 1 : 0) - (a.includes("materia") ? 1 : 0))
+      .slice(0, 2);
     curriculumRefs.forEach((ref) => {
       const page = (ref.match(/#p(\d+)/) || [])[1];
       const base = ref.split("/").pop().split("#")[0].replace(/\.(pdf|csv|xlsx|md)$/, "").replace(/_/g, " ");
@@ -569,9 +580,9 @@
     const safety = record.safety_info || {};
     const visual = record.visual_reference || {};
     
-    const tradFunctions = cleanList(record.traditional_functions_zh).length
-      ? cleanList(record.traditional_functions_zh)
-      : cleanList(record.functions_zh);
+    const tradFunctions = cleanList(record.functions_zh).length
+      ? cleanList(record.functions_zh)
+      : cleanList(record.traditional_functions_zh);
     const modernPharm = cleanList(record.modern_pharmacology_zh).length
       ? cleanList(record.modern_pharmacology_zh)
       : cleanList(record.modern_functions_zh);
@@ -632,12 +643,16 @@
       return `<span class="k-chip" style="${css}">${esc(zh)} <small style="opacity:0.85;margin-left:4px;font-weight:normal;">(${esc(en)})</small></span>`;
     }).join("");
 
-    const bilingualCondTags = bilingualChips(
-      condTags,
-      cleanList(record.condition_tags_en),
-      "background:#f1f5f9;color:#334155;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;",
-      CONDITION_TAG_EN_MAP
-    );
+    /* Condition tags search the whole site. They mostly do NOT match a
+       condition record 1:1 (水腫/泄瀉/痰飲 are symptoms, not canon entries), so
+       a direct link would be dead most of the time; a search always resolves
+       and shows every herb / formula / condition carrying that term. */
+    const condEn = cleanList(record.condition_tags_en);
+    const bilingualCondTags = condTags.map((zh, i) => {
+      const en = condEn[i] || CONDITION_TAG_EN_MAP[zh] || "";
+      return `<button type="button" class="k-cond-tag" data-search-term="${esc(zh)}" title="搜尋「${esc(zh)}」相關內容">` +
+        `${esc(zh)}${en ? `<small>(${esc(en)})</small>` : ""}</button>`;
+    }).join("");
     const bilingualModernPharm = bilingualChips(
       modernPharm,
       cleanList(record.modern_functions_en),
@@ -706,6 +721,7 @@
         label: "對藥與古文 Pairing & Classics", 
         content: `
           ${detailSection("經典對藥 (Herb Pairs)", "Key pairings and rationale", keyPairs || herbPairsSection(record))}
+          ${record.classical_text_zh ? detailSection("古籍原文 (Classical Text)", "本草原文與英譯", `<blockquote class="k-classic">${linkifyHerbs(record.classical_text_zh, record.id)}${record.classical_text_en ? `<span class="k-classic-en">${esc(record.classical_text_en)}</span>` : ""}</blockquote>`) : ""}
           ${record.classical_text_zh ? detailSection("古文典籍記載", "Classical text quotation", `<blockquote class="k-classic-quote" style="border-left:3px solid #d97706;padding-left:10px;font-style:italic;color:#451a03;margin:8px 0;line-height:1.6;">${esc(record.classical_text_zh).replace(/\n/g, '<br>')}</blockquote>`) : ""}
           ${detailSection("學習筆記", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}
         ` 

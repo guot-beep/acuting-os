@@ -17,7 +17,7 @@
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
       "review_status": "source_checked",
-      "properties_taste_temp": "辛、微苦、溫",
+      "properties_taste_temp": "辛、微苦，溫（Chenoweth: Acrid, Slightly Bitter, Warm）",
       "functions": [
         "發汗解表",
         "利水消腫",
@@ -152,24 +152,20 @@
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
         "發汗解表",
-        "利水消腫",
-        "散風寒",
-        "止咳平喘"
+        "宣肺平喘",
+        "利水消腫"
       ],
       "modern_functions_zh": [
-        "發汗作用",
-        "抗發炎",
-        "鎮靜",
-        "止痛功效",
-        "抗菌抗病毒",
-        "抗過敏",
+        "發汗",
+        "支氣管擴張",
+        "鎮咳",
+        "利尿",
+        "升血壓",
         "興奮中樞神經",
-        "強心作用",
-        "降血糖",
-        "利尿功效",
-        "鎮咳作用",
-        "抗炎鎮痛",
-        "抗菌",
+        "解熱",
+        "抗發炎",
+        "抗過敏",
+        "抗菌抗病毒",
         "鎮痛"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
@@ -243,7 +239,11 @@
         "膀胱經"
       ],
       "indications_zh": [
-        "發汗解表；宣肺平喘；利水消腫"
+        "風寒表實證(急性、實證):惡寒發熱、無汗、脈浮緊 —— 配 桂枝（麻黃湯）",
+        "咳嗽氣喘 —— 配 杏仁、甘草（三拗湯）",
+        "熱邪壅肺之喘咳、鼻翼煽動 —— 配 石膏、杏仁（麻杏石甘湯）",
+        "氣虛而感風寒 —— 配 人參",
+        "風水水腫(表邪引起) —— 生用發汗利水"
       ],
       "study_tags": [
         "單味中藥",
@@ -258,25 +258,15 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ephedra_sinica_bgi.jpg/640px-Ephedra_sinica_bgi.jpg",
       "tcm_properties": {
         "four_natures_zh": "溫",
-        "four_natures_en": "Warm",
         "five_flavors_zh": [
           "辛",
           "微苦"
-        ],
-        "five_flavors_en": [
-          "Acrid",
-          "Slightly Bitter"
         ],
         "meridian_tropism_zh": [
           "肺經",
           "膀胱經"
         ],
-        "meridian_tropism_en": [
-          "LU Lung",
-          "BL Bladder"
-        ],
-        "part_used_zh": "草質莖",
-        "part_used_en": "Herbaceous Stem"
+        "part_used_zh": "草質莖（麻黃絨力弱,多用於兒科）"
       },
       "traditional_functions_zh": [
         "發汗解表",
@@ -290,7 +280,7 @@
         "興奮中樞神經與強心升壓 (CNS Excitation & Inotropy)",
         "抗發炎與抗過敏 (Anti-inflammatory & Anti-allergic)"
       ],
-      "pao_zhi_notes_zh": "生麻黃發汗解表、利水消腫力強；蜜炙麻黃（蜜麻黃）性溫潤，辛散發汗之力減弱，宣肺平喘止咳功效增強；麻黃絨發汗作用最為溫和。",
+      "pao_zhi_notes_zh": "生麻黃發汗力強,用於發汗解表、利水消腫;蜜炙麻黃(炙)發汗力減、潤肺止咳平喘為主,用於慢性咳喘;麻黃絨力最弱,多用於兒科與體弱者。煎煮宜先煎去上沫。",
       "key_pairs": [
         {
           "pair": "麻黃 + 桂枝 (2026 NCBAHM Appendix B 官方對藥)",
@@ -306,16 +296,18 @@
         }
       ],
       "actions_en": [
-        "Release Exterior by Sweating",
-        "Diffuse Lung Qi & Calm Wheezing",
-        "Promote Urination & Reduce Edema",
-        "Warm & Dispel Cold"
+        "Induces sweating and releases the exterior",
+        "Diffuses Lung qi and calms wheezing",
+        "Promotes urination and reduces edema"
       ],
       "condition_tags_zh": [
-        "發汗解表",
-        "宣肺平喘",
-        "利水消腫",
-        "溫散寒邪"
+        "風寒表實",
+        "無汗",
+        "咳嗽",
+        "氣喘",
+        "鼻塞",
+        "水腫",
+        "小便不利"
       ],
       "modern_pharmacology": [
         {
@@ -334,6 +326,118 @@
           "tag": "抗發炎與抗過敏",
           "analysis_zh": "Anti-inflammatory & Anti-allergic"
         }
+      ],
+      "pharmaceutical_latin": "Ephedrae Herba",
+      "part_used_en": "stem",
+      "condition_tags_en": [
+        "Wind-cold excess exterior",
+        "Absence of sweating",
+        "Cough",
+        "Wheezing",
+        "Nasal congestion",
+        "Edema",
+        "Difficult urination"
+      ],
+      "modern_functions_en": [
+        "Diaphoretic",
+        "Bronchodilator",
+        "Antitussive",
+        "Diuretic",
+        "Raises blood pressure",
+        "CNS stimulant",
+        "Antipyretic",
+        "Anti-inflammatory",
+        "Antiallergic",
+        "Antibacterial / antiviral",
+        "Analgesic"
+      ],
+      "classical_text_zh": "《本草綱目》：「麻黃乃肺經專藥，故治肺病多用之。」",
+      "classical_text_en": "Ben Cao Gang Mu: \"Ma Huang is the specific herb of the Lung channel, hence its frequent use in Lung disorders.\"",
+      "exam_importance": "★ Board 高頻:解表藥－發散風寒(Wind Cold Releasing [1])代表藥;對藥收於 2026 NCBAHM Appendix B",
+      "exam_pearl": "三大功效:①發汗解表(表實無汗才用)②宣肺平喘 ③利水消腫。安全考點:升血壓、興奮中樞 —— 高血壓、心臟病、失眠、甲狀腺疾病慎用/忌用。",
+      "safety_review_pending": "毒性/中西藥交互深度資料待補;麻黃鹼與 MAOI、興奮劑、降壓藥的交互作用需第二來源確認(安全關鍵)",
+      "field_sources": {
+        "pinyin": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "tcm_properties": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "condition_tags_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "condition_tags_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "modern_functions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "key_pairs": [
+          "2026 NCBAHM Appendix B（Antigravity 匯入）"
+        ],
+        "exam_pearl": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "pao_zhi_notes_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "part_used_en": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "exam_importance": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1"
+        ],
+        "cautions_en": [
+          "https://cloudtcm.com/herb/1"
+        ],
+        "classical_text_zh": [
+          "model_recalled — 待對照原典/雲端中醫"
+        ],
+        "classical_text_en": [
+          "model_recalled — 待對照原典/雲端中醫"
+        ],
+        "category": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf → [1] Wind Cold Releasing"
+        ]
+      },
+      "cautions_en": [
+        "Taken at night it may stimulate the CNS and cause insomnia.",
+        "Contraindicated in deficiency with spontaneous or night sweating, deficiency-cold wheezing, wind-stroke paralysis, or yang deficiency.",
+        "Cardiovascular disease (heart failure, myocardial infarction, heart disease, hypertension): use with caution — it raises blood pressure.",
+        "Use with caution in thyroid disease or known Ma Huang allergy.",
+        "May cause urinary retention in prostatic hypertrophy.",
+        "Ben Cao Jing Shu notes it dispels cold pathogens but that prolonged use consumes true source qi.",
+        "Use with caution in pregnancy and lactation.",
+        "Consult a physician before combining with cold or multi-symptom cold medicines.",
+        "Excessive doses may cause tachycardia, rapid breathing, nausea, vomiting, insomnia, agitation, headache, seizures and tremor."
       ]
     },
     {
@@ -30316,7 +30420,7 @@
       "id": "herb.huang_qi",
       "name_zh": "黃耆",
       "name_en": "Astragalus",
-      "pinyin": "Huang Qi",
+      "pinyin": "Huáng Qí",
       "category": "補虛藥 / Tonify Qi",
       "channels_entered": [
         "脾經",
@@ -30328,7 +30432,7 @@
       ],
       "source_hint": "Bensky Materia Medica: Tonify Qi",
       "review_status": "draft",
-      "properties_taste_temp": "甘、平、無毒、微溫",
+      "properties_taste_temp": "甘，微溫（Chenoweth: Sweet, Slightly Warm）",
       "functions": [
         "補氣",
         "排膿",
@@ -30452,7 +30556,11 @@
           "抗腫瘤"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"9-30克\",\r\n  \"食療用量範圍\": \"10-30克\",\r\n  \"特殊說明\": \"補氣固表宜蜜炙，利水消腫宜生用；表實邪盛者慎用\"\r\n}",
+      "dosage": {
+        "decoction_g": "10–15（Chenoweth）／9–30（雲端中醫）",
+        "最大量": "60–120g（Chenoweth 標註 KNOW THIS FOR NCCAOM）",
+        "特殊說明": "氣虛水腫用大量 25–50g;脫垂用小量約 5g 配補氣藥。補氣固表宜蜜炙;托毒排膿、利水消腫宜生用。"
+      },
       "cautions": "黃耆注意事項重點\n**過敏體質者：**對黃耆過敏者應避免使用。\n**陰虛火旺者：**黃耆性溫熱，適合用於氣虛體質者，但對於陰虛火旺體質者應避免使用，以免加重症狀。\n**患有高血壓者：**黃耆有升血壓的作用，所以對於患有高血壓的人應謹慎使用。\n**懷孕或哺乳期婦女：**對於孕婦或哺乳期婦女，黃耆的安全性尚不明確，建議在醫生的指導下使用。\n**與某些藥物相互作用：**黃耆中的某些成分可能與某些藥物發生相互作用，因此在使用時應避免與某些藥物同時使用，如抗凝血藥、降血糖藥等。",
       "source_urls": [
         "https://cloudtcm.com/herb/1081"
@@ -30472,31 +30580,24 @@
       "safety_fetched_at": "2026-07-23T07:25:32.231Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "補氣",
-        "排膿",
-        "止血",
-        "解毒",
-        "化腐生肌",
-        "生津止渴",
-        "補中益氣",
-        "健脾胃",
-        "補血",
+        "補氣升陽",
         "固表止汗",
-        "升陽",
-        "利水消腫"
+        "托毒排膿生肌",
+        "利水消腫",
+        "生津養血"
       ],
       "modern_functions_zh": [
-        "降血糖",
         "提升免疫力",
-        "預防心血管疾病",
-        "抗菌抗病毒",
+        "促進造血",
+        "提升代謝率",
+        "減少蛋白尿(慢性腎病)",
+        "保肝",
+        "降血壓",
+        "抗菌",
+        "降血糖",
         "抗氧化",
-        "防癌抗腫瘤",
-        "抗疲勞",
-        "保肝利膽",
-        "抗衰老",
-        "抗病毒",
-        "抗腫瘤"
+        "抗腫瘤",
+        "抗疲勞"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1081",
@@ -30555,11 +30656,15 @@
       ],
       "category_zh": "補氣藥",
       "channels_zh": [
-        "脾經",
-        "肺經"
+        "肺經",
+        "脾經"
       ],
       "indications_zh": [
-        "補氣升陽；固表止汗；利水消腫；生津養血；托毒排膿"
+        "脾肺氣虛:食少、倦怠、便溏 —— 配 人參、黨參、白朮",
+        "中氣下陷:子宮/胃/脫肛下垂、崩漏 —— 配 人參、白朮、升麻、柴胡（補中益氣湯;脫垂用小量約 5g）",
+        "衛氣不固之自汗 —— 配 白朮、防風（玉屏風散）",
+        "氣血不足之瘡瘍久不收口、膿成不潰 —— 配 人參、當歸、穿山甲(生用,不蜜炙)",
+        "氣虛水腫 —— 生用,大劑量 25–50g"
       ],
       "study_tags": [
         "單味中藥",
@@ -30568,7 +30673,164 @@
         "黃耆"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": [
+        "倦怠乏力",
+        "食少便溏",
+        "臟器下垂",
+        "自汗",
+        "瘡瘍久不收口",
+        "氣虛水腫",
+        "崩漏",
+        "消渴"
+      ],
+      "pharmaceutical_latin": "Astragali Radix",
+      "part_used_en": "root",
+      "tcm_properties": {
+        "four_natures_zh": "微溫",
+        "five_flavors_zh": [
+          "甘"
+        ],
+        "meridian_tropism_zh": [
+          "肺經",
+          "脾經"
+        ],
+        "part_used_zh": "根"
+      },
+      "actions_en": [
+        "Augments qi and raises yang",
+        "Stabilizes the exterior and stops sweating",
+        "Discharges pus and generates flesh",
+        "Promotes urination and reduces edema",
+        "Generates fluids and nourishes blood"
+      ],
+      "condition_tags_en": [
+        "Fatigue",
+        "Poor appetite with loose stool",
+        "Organ prolapse",
+        "Spontaneous sweating",
+        "Chronic non-healing sores",
+        "Deficiency edema",
+        "Uterine bleeding",
+        "Wasting-thirst (xiao ke)"
+      ],
+      "modern_functions_en": [
+        "Immunostimulant (stronger than Ren Shen)",
+        "Hematopoietic",
+        "Raises metabolic rate",
+        "Reduces proteinuria (chronic kidney disease)",
+        "Hepatoprotective",
+        "Antihypertensive",
+        "Antibiotic",
+        "Hypoglycemic",
+        "Antioxidant",
+        "Anti-neoplastic",
+        "Anti-fatigue"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "10–15g（Chenoweth）／9–30g（雲端中醫）;最大 60–120g"
+      },
+      "pao_zhi_notes_zh": "蜜炙黃耆(炙)偏補中、補脾肺氣與陽虛,味更甘、補力更強;生黃耆走表,用於固表止汗、托毒排膿、利水消腫。",
+      "key_pairs": [
+        {
+          "pair": "黃耆 + 當歸 Dāng Guī",
+          "rationale_zh": "補氣生血。黃耆大劑補氣為君、當歸少量養血,氣旺則血生 —— 血虛發熱、久病體虛（當歸補血湯 5:1）",
+          "rationale_en": "Huang Qi in high dose leads, Dang Gui follows: abundant qi generates blood — blood-deficiency fever (Dang Gui Bu Xue Tang, 5:1)."
+        },
+        {
+          "pair": "黃耆 + 白朮・防風",
+          "rationale_zh": "固表止汗。補氣固表兼疏散,補而不留邪 —— 衛氣虛自汗、易感冒（玉屏風散）",
+          "rationale_en": "Tonifies and secures the exterior while still dispersing — spontaneous sweating and frequent colds (Yu Ping Feng San)."
+        },
+        {
+          "pair": "黃耆 + 升麻・柴胡",
+          "rationale_zh": "升陽舉陷。二藥升提下陷之中氣 —— 臟器下垂、久瀉脫肛（補中益氣湯）",
+          "rationale_en": "Sheng Ma and Chai Hu lift sunken middle qi — organ prolapse, chronic diarrhea (Bu Zhong Yi Qi Tang)."
+        }
+      ],
+      "classical_text_zh": "《本草匯言》：「黃耆，補肺健脾，實衛斂汗，驅風運毒之藥也。」",
+      "classical_text_en": "Ben Cao Hui Yan: \"Huang Qi tonifies the Lung and strengthens the Spleen, secures the protective level and restrains sweating, dispels wind and moves out toxin.\"",
+      "exam_importance": "★ Board 高頻:補氣藥(Tonify Qi [22])代表藥;Yao Yao 定位:All Deficiency Conditions。Chenoweth 特別標註最大劑量 60–120g「KNOW THIS FOR NCCAOM」",
+      "exam_pearl": "五大功效:①補氣升陽 ②固表止汗 ③托毒排膿生肌 ④利水消腫 ⑤生津養血。方向向上(Direction UPWARD)是關鍵。禁忌考點:表邪未解、實證(肝鬱/濕阻/食積)、熱毒瘡瘍急性期不可用。",
+      "safety_review_pending": "毒性/中西藥交互深度資料待補(CloudTCM、American Dragon 皆有,需可瀏覽的 agent)",
+      "field_sources": {
+        "pinyin": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "tcm_properties": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "condition_tags_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "condition_tags_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "modern_functions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "key_pairs": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "exam_pearl": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "pao_zhi_notes_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "part_used_en": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "exam_importance": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p22",
+          "https://cloudtcm.com/herb/1081"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1081"
+        ],
+        "cautions_en": [
+          "https://cloudtcm.com/herb/1081"
+        ],
+        "classical_text_zh": [
+          "model_recalled — 待對照原典/雲端中醫"
+        ],
+        "classical_text_en": [
+          "model_recalled — 待對照原典/雲端中醫"
+        ],
+        "category": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf → [22] Tonify Qi"
+        ]
+      },
+      "cautions_en": [
+        "Allergy: avoid in anyone allergic to Huang Qi.",
+        "Yin deficiency with effulgent fire: the warm nature suits qi deficiency and may aggravate yin-deficient heat.",
+        "Hypertension: use with caution — Huang Qi can raise blood pressure.",
+        "Pregnancy and lactation: safety not established; use only under physician guidance.",
+        "Drug interactions: may interact with anticoagulants and hypoglycemic drugs — avoid concurrent use without supervision."
+      ]
     },
     {
       "id": "herb.bai_zhu",
@@ -31781,7 +32043,7 @@
       "id": "herb.dang_gui",
       "name_zh": "當歸",
       "name_en": "Chinese Angelica Root",
-      "pinyin": "Dang Gui",
+      "pinyin": "Dāng Guī",
       "category": "補虛藥 / Tonify Blood",
       "channels_entered": [
         "肝經",
@@ -31790,7 +32052,7 @@
       ],
       "source_hint": "Bensky Materia Medica: Tonify Blood",
       "review_status": "draft",
-      "properties_taste_temp": "辛、溫、甘、微苦",
+      "properties_taste_temp": "甘、辛，溫（Chenoweth: Sweet, Acrid, Warm）",
       "functions": [
         "止血",
         "活血化瘀",
@@ -31926,7 +32188,11 @@
           "鎮痛"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"6-12克\",\r\n  \"食療用量範圍\": \"5-10克\",\r\n  \"特殊說明\": \"補血宜當歸身，活血宜當歸尾，和血（補血活血兼顧）用全當歸；大便溏泄者慎用\"\r\n}",
+      "dosage": {
+        "decoction_g": "5–15（Chenoweth）／6–12（雲端中醫）",
+        "食療用量範圍": "5–10克（雲端中醫）",
+        "特殊說明": "補血用當歸身,活血用當歸尾,和血用全當歸;大便溏泄者慎用。"
+      },
       "cautions": "當歸注意事項重點：\n濕阻中滿及大便溏洩者慎服。\n惡葛蒲、海藻、牡蒙。\n畏生薑。\n腸胃薄弱、洩瀉溏薄、脾胃病惡食、不思食及食不消者禁用。\n風寒未清、惡寒發熱、表證外見者禁用。\n不適合補的人，會出現長痘痘。\n陰虛火旺經常熬夜、口乾舌燥、嘴破、容易口渴者禁用。\n乳腺癌患者應避免服用。\n女性月經來潮期間不適合服用。\n服用心血管藥物或抗凝血藥物者，服用當歸需特別小心。",
       "source_urls": [
         "https://cloudtcm.com/herb/1011"
@@ -31951,27 +32217,24 @@
       "safety_fetched_at": "2026-07-23T07:25:34.534Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "止血",
-        "活血化瘀",
-        "止咳平喘",
-        "調經止痛",
-        "潤燥滑腸",
-        "補血活血"
+        "補血",
+        "活血止痛",
+        "調經",
+        "消腫排膿生肌",
+        "潤腸通便"
       ],
       "modern_functions_zh": [
-        "止痛功效",
-        "抗氧化",
         "抗凝血",
+        "抗血小板聚集",
         "降血脂",
-        "改善大腦功能",
-        "預防心血管疾病",
         "抗心律失常",
+        "保護心血管",
+        "改善腦功能",
+        "抗炎鎮痛",
+        "抗氧化",
         "提升免疫力",
         "保肝利膽",
-        "潤腸通便",
-        "抗血小板聚集",
-        "抗炎鎮痛",
-        "鎮痛"
+        "潤腸通便"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1011",
@@ -32036,12 +32299,16 @@
       "aliases_zh": [],
       "category_zh": "補血藥",
       "channels_zh": [
-        "肝經",
         "心經",
+        "肝經",
         "脾經"
       ],
       "indications_zh": [
-        "補血活血；調經止痛；潤腸通便"
+        "各類血虛:面色蒼白、頭暈、髮枯、視物模糊、耳鳴、心悸 —— 配 黃耆（當歸補血湯,黃耆為君）",
+        "月經不調、痛經、閉經、經前症候群、更年期(YY 婦科要藥,性溫暖宮）—— 配 白芍、川芎、熟地（四物湯）",
+        "血瘀或虛寒疼痛:腹痛、跌打損傷、寒濕痹證 —— 用當歸尾,配 丹參、乳香、沒藥、桂枝、秦艽",
+        "瘡瘍腫痛、膿成不潰 —— 配 黃耆、人參、穿山甲",
+        "血虛腸燥便秘 —— 配 火麻仁、肉蓯蓉"
       ],
       "study_tags": [
         "單味中藥",
@@ -32050,7 +32317,173 @@
         "當歸"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": [
+        "血虛",
+        "月經不調",
+        "痛經",
+        "閉經",
+        "跌打損傷",
+        "瘡瘍",
+        "腸燥便秘",
+        "心悸",
+        "更年期"
+      ],
+      "pharmaceutical_latin": "Angelicae sinensis Radix",
+      "part_used_en": "root",
+      "tcm_properties": {
+        "four_natures_zh": "溫",
+        "five_flavors_zh": [
+          "甘",
+          "辛"
+        ],
+        "meridian_tropism_zh": [
+          "心經",
+          "肝經",
+          "脾經"
+        ],
+        "part_used_zh": "根（當歸身補血、當歸尾活血、全當歸和血）"
+      },
+      "actions_en": [
+        "Tonifies blood",
+        "Invigorates blood and relieves pain",
+        "Regulates menstruation",
+        "Reduces swelling, expels pus and generates flesh",
+        "Moistens the Intestines and unblocks the bowels"
+      ],
+      "condition_tags_en": [
+        "Blood deficiency",
+        "Irregular menstruation",
+        "Dysmenorrhea",
+        "Amenorrhea",
+        "Traumatic injury",
+        "Sores and abscesses",
+        "Dry constipation",
+        "Palpitations",
+        "Menopause"
+      ],
+      "modern_functions_en": [
+        "Anticoagulant",
+        "Antiplatelet",
+        "Lowers blood lipids",
+        "Antiarrhythmic",
+        "Cardiovascular protective",
+        "Improves cerebral function",
+        "Anti-inflammatory / analgesic",
+        "Antioxidant",
+        "Immunostimulant",
+        "Hepatoprotective / choleretic",
+        "Laxative (moistening)"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "5–15g（Chenoweth）／6–12g（雲端中醫）"
+      },
+      "pao_zhi_notes_zh": "部位差異(高頻考點):當歸身偏補血;當歸尾偏活血化瘀止痛;全當歸和血(補活兼顧)。酒製增強活血之力。",
+      "key_pairs": [
+        {
+          "pair": "當歸 + 黃耆 Huáng Qí",
+          "rationale_zh": "補氣生血。黃耆五倍量為君補氣,當歸養血,氣旺血生 —— 血虛發熱、產後體虛（當歸補血湯）",
+          "rationale_en": "With Huang Qi at five times the dose leading, abundant qi generates blood — blood-deficiency fever, postpartum depletion."
+        },
+        {
+          "pair": "當歸 + 川芎 Chuān Xiōng",
+          "rationale_zh": "養血活血。川芎行氣活血、當歸養血,補中有行,血行而不傷正 —— 血虛血瘀之經痛（四物湯核心）",
+          "rationale_en": "Chuan Xiong moves qi and blood while Dang Gui nourishes it — moving without depleting (core of Si Wu Tang)."
+        },
+        {
+          "pair": "當歸 + 白芍 Bái Sháo",
+          "rationale_zh": "養血柔肝止痛。一動一靜,補血而能緩急 —— 血虛肝鬱之痛經、腹痛",
+          "rationale_en": "One moves, one restrains: nourishes blood and softens the Liver to relieve cramping pain."
+        }
+      ],
+      "classical_text_zh": "《本草綱目》：「當歸調血，為女人要藥。」",
+      "classical_text_en": "Ben Cao Gang Mu: \"Dang Gui regulates the blood; it is the essential herb for women.\"",
+      "exam_importance": "★ Board 高頻:補血藥(Tonify Blood [23])代表藥;Yao Yao 定位:All Menstrual Disorders(婦科要藥)",
+      "exam_pearl": "鑑別考點:香附→理氣;益母草→活血;當歸→氣血兼調(both)。部位考點:身補血、尾活血、全和血。性溫能暖宮,故為婦科要藥。",
+      "safety_review_pending": "毒性/中西藥交互深度資料待補;當歸有抗凝作用,與 warfarin 等抗凝劑併用風險需第二來源確認",
+      "field_sources": {
+        "pinyin": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "tcm_properties": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "condition_tags_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "condition_tags_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "modern_functions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "key_pairs": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "exam_pearl": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "pao_zhi_notes_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "part_used_en": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "exam_importance": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p24",
+          "https://cloudtcm.com/herb/1011"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1011"
+        ],
+        "cautions_en": [
+          "https://cloudtcm.com/herb/1011"
+        ],
+        "classical_text_zh": [
+          "model_recalled — 待對照原典/雲端中醫"
+        ],
+        "classical_text_en": [
+          "model_recalled — 待對照原典/雲端中醫"
+        ],
+        "category": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf → [23] Tonify Blood"
+        ]
+      },
+      "cautions_en": [
+        "Use with caution in damp obstruction with fullness, or loose stools and diarrhea.",
+        "Antagonised by Chang Pu, Hai Zao and Mu Meng (classical incompatibility).",
+        "Averse to Sheng Jiang (classical incompatibility).",
+        "Contraindicated with a weak stomach and intestines, watery diarrhea, aversion to food or indigestion.",
+        "Contraindicated while wind-cold is unresolved — chills, fever or exterior signs still present.",
+        "In those unsuited to tonification it may provoke acne.",
+        "Contraindicated in yin deficiency with effulgent fire: habitual late nights, dry mouth, mouth ulcers, easy thirst.",
+        "Breast cancer patients should avoid it.",
+        "Not suitable during menstruation itself.",
+        "Take particular care with cardiovascular medication or anticoagulants."
+      ]
     },
     {
       "id": "herb.shu_di_huang",
@@ -35403,6 +35836,12 @@
         ],
         "cautions_en": [
           "https://cloudtcm.com/herb/1024"
+        ],
+        "classical_text_zh": [
+          "model_recalled — 待對照原典/雲端中醫"
+        ],
+        "classical_text_en": [
+          "model_recalled — 待對照原典/雲端中醫"
         ]
       },
       "condition_tags_en": [
@@ -35434,7 +35873,9 @@
         "Use with caution in yin deficiency with effulgent fire.",
         "Consult a physician when taking other medication, especially hypoglycemics or anticoagulants."
       ],
-      "safety_review_pending": "毒性/交互作用深度資料待補:CloudTCM 與 American Dragon 皆有,需有瀏覽能力的 agent 對照後填入(Ting 2026-07-25)"
+      "safety_review_pending": "毒性/交互作用深度資料待補:CloudTCM 與 American Dragon 皆有,需有瀏覽能力的 agent 對照後填入(Ting 2026-07-25)",
+      "classical_text_zh": "《神農本草經》：「杜仲，主腰脊痛，補中，益精氣，堅筋骨。」",
+      "classical_text_en": "Shen Nong Ben Cao Jing: \"Du Zhong governs pain of the lumbar spine, tonifies the center, augments essence and qi, and firms the sinews and bones.\""
     },
     {
       "id": "herb.xu_duan",
