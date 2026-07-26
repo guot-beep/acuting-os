@@ -24,7 +24,7 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 | 10 | **經典對藥**(藥對 + 中英配伍理由,**藥名可點開**) | `key_pairs`(`pair` / `rationale_zh` / `rationale_en`) | 必(Ting 指定保留) |
 | 10.5 | **古籍原文**(本草原文 + 英譯,一兩句就好) | `classical_text_zh` + `classical_text_en` | 有就填 |
 | 11 | 相關方劑 | `related_formulas` | 有就填 |
-| 12 | 毒性安全與來源(禁忌/慎用中英 + 具名來源) | `cautions_zh` + `cautions_en` `safety_flags` `field_sources` | 必 |
+| 12 | 毒性安全與來源 | **`contraindications_zh` + `_en`(禁忌,必填)**、`cautions_zh` + `_en`(慎用)、`safety_flags`、`field_sources` | 必 |
 
 **功效欄位的唯一真相是 `functions_zh`**(渲染器優先讀它)。舊的
 `traditional_functions_zh` 只在 `functions_zh` 空白時當備援 —— 兩者不一致會
@@ -54,7 +54,15 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 
 ## 2. 硬規則(違反 = validator 擋下或退回)
 
-0. **模板級記錄必須全雙語(E6 FAIL)**。只要記錄有 `field_sources`(= 宣稱照
+0a. **禁忌症必填(E7 FAIL)**。`contraindications_zh`(+`_en`)是獨立欄位,
+   **不能用 `cautions_zh` 代替** —— 「禁用/忌服」(絕對禁忌)和「慎服/慎用」
+   (相對注意)是不同的臨床判斷,卡片也分兩格顯示。
+   來源順序:① 課件的 Contraindications 段 → ② 權威網站中明確「忌服/禁用/
+   不得服」的條目(把它們從注意事項升級過來);「慎服」留在 `cautions_zh`。
+   ⚠️ 抽課件時務必確認段落屬於**這一味藥** —— 麻黃後面緊接桂枝的
+   「Contraindications: Pregnancy…」,那是桂枝的,張冠李戴會出人命等級的錯。
+
+0b. **模板級記錄必須全雙語(E6 FAIL)**。只要記錄有 `field_sources`(= 宣稱照
    模板做),`modern_functions_en` / `condition_tags_en` / `cautions_en` 一個都
    不能缺,缺了 `validate-herb-standard.js` 直接 FAIL。
    (Ting 2026-07-26 問:模板寫了為什麼還是會漏?—— 因為之前文件只是建議、
@@ -77,6 +85,7 @@ Ting 定案時的兩句話:「**對藥跟考試標註都留著**」、
 `functions_zh` `actions_en` `indications_zh` `condition_tags_zh`
 `condition_tags_en` `modern_functions_zh` `modern_functions_en` `dosage`
 `dosage_g` `pao_zhi_notes_zh` `key_pairs` `cautions_zh` `cautions_en`
+`contraindications_zh` `contraindications_en`
 `safety_flags` `safety_review_pending` `related_formulas` `exam_importance`
 `exam_pearl` `field_sources` `review_status`
 
