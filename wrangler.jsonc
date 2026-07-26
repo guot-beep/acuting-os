@@ -1,0 +1,14 @@
+{
+  // Cloudflare deploy config for AcuTing OS (private study app).
+  // Without this, wrangler treats the repo ROOT as the assets directory and
+  // uploads all 897 files / 137 MB — which fails on the 39 MB import file
+  // (25 MiB per-asset limit) and would publish curriculum/ (copyrighted
+  // course material). dist/ is built by scripts/build-site.js and contains
+  // only the 13 files index.html actually references.
+  "name": "acuting-os",
+  "compatibility_date": "2026-07-26",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
