@@ -48,12 +48,31 @@ Antigravity 已把 361 穴的欄位填到近 100%,所以這裡的工作**不是�
 - **安全不可降級**:既有的氣胸/深刺警告只能**加強或補充**,不可刪除或改弱。
 - AI 只能寫 `review_status: "draft"`;`source_checked` 由 Ting 的 RV1 流程升級。
 
-## 4. 來源優先序
+## 4. 來源優先序(Ting 定案 2026-07-26 — 與中藥卡流程相同,只是參照物不同)
 
-1. **`curriculum/acupoints/`** — Ting 的針灸課件(最權威,含頁碼引用)
-2. **Board exam outline**(NCCAOM 2026 / CALE 範圍)— 決定哪些是考點、要標 `exam_importance`
-3. **CloudTCM / eLotus** — 已入庫的中文深度與圖源(現有內容多來自此)
-4. WHO Standard Acupuncture Point Locations — 定位以此為準
+**先框架、再內容。** board outline 決定**做什麼、什麼是考點**;課件與網站決定
+**寫什麼**。順序不可對調 —— outline 是範圍不是教材,不要拿 outline 的條列當主治。
+
+| # | 來源 | 它決定什麼 |
+|---|---|---|
+| 0 | **Board exam outline**(`curriculum/board/`,NCBAHM / CALE 現行版)| **框架** — 哪些穴要做、先做哪一批、`exam_importance` 怎麼標 |
+| 1 | **`curriculum/acupoints/`** — Ting 的針灸課件 | 內容主幹(14 條經絡講義 + Techniques + AP Point Book),逐頁引用 |
+| 2 | **eLotus** | 課件沒講到的臨床深度、針法細節 |
+| 3 | **CloudTCM 雲端中醫** | 中文深度補充(現有庫存內容多來自此,要當**補充**不是主幹) |
+| 4 | WHO Standard Acupuncture Point Locations | 定位以此為準 |
+
+⚠️ 這個順序和中藥卡**不一樣**:中藥卡 CloudTCM 排在前面,穴位卡 **eLotus 在
+CloudTCM 之前**。既有的 361 穴內容多半是 CloudTCM 來的,所以整理時要**用 eLotus
+回頭校**,不是反過來拿現有內容當基準。
+
+### 董氏奇穴(Tung's points)另一套來源
+董氏奇穴不走上面的順序,主幹是:
+
+1. **<https://www.tungs-acupuncture.com/>**(例:婦科五穴頁)— 董門定位與主治
+2. **eLotus** — 臨床應用與對照
+
+董氏穴**不要拿十四經的定位邏輯去套**(它有自己的分區與取穴法),也不要把它的
+主治混進正經穴卡。資料在 `data/tung/`,與 `data/acupoints/361.json` 分開維護。
 
 **兩源不合就並記、標出處,絕不擅自二選一。**
 
