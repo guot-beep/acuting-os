@@ -16,6 +16,13 @@
  *   E6 a template-grade record (has field_sources) is missing an _en array
  *   E7 a template-grade record has no contraindications_zh (禁忌症)
  *   E8 a template-grade record's functions_zh is outside 2-6 curated actions
+ *   E9 two records share the same id (variant-character duplicates)
+ *
+ * WORKLIST MODE — `node scripts/validate-herb-standard.js --worklist`
+ * lists the actual herb names behind every number, grouped by defect and by
+ * category (batches run one category at a time, see docs/HERB_FILL_DISPATCH.md).
+ * Add `--category "解表藥 / Release Exterior - Warm Acrid"` for one batch, or
+ * `--all` to stop truncating long lists.
  *
  * REPORT (always printed) — honest per-field coverage vs the canonical record
  * (docs/HERB_RECORD_STANDARD.md), plus fixable counts (alias-mappable
@@ -65,8 +72,35 @@ const COVERAGE = [
   "related_formulas", "exact_source_url", "safety_source_url"
 ];
 
+const WORKLIST = process.argv.includes("--worklist");
+const SHOW_ALL = process.argv.includes("--all");
+const CAT_ARG = (() => {
+  const i = process.argv.indexOf("--category");
+  return i > -1 ? process.argv[i + 1] : null;
+})();
+
 const errors = [];
 const missingEn = {};
+// E9: two records sharing an id break every id-keyed lookup (the app's herb
+// index keeps only one while search shows both). Found 2026-07-26: five herbs
+// stored twice under variant Chinese characters (三棱/三稜, 白豆蔻/白荳蔻,
+// 瓜蔞/括蔞, 菟絲子/菟蕬子, 肉豆蔻/肉荳蔻).
+{
+  const seen = new Map();
+  for (const r of recs) {
+    if (!r.id) continue;
+    if (seen.has(r.id)) {
+      errors.push(`E9 ${r.id}: duplicate id — 「${seen.get(r.id)}」 and 「${r.name_zh}」 share it (variant characters? merge, keeping the richer record and adding the variant to aliases_zh)`);
+    } else seen.set(r.id, r.name_zh);
+  }
+}
+// herb-level defects collected for the worklist: id -> {name, category, issues[]}
+const defects = new Map();
+function flag(r, issue) {
+  const key = r.id || r.name_zh;
+  if (!defects.has(key)) defects.set(key, { name: r.name_zh || key, id: key, category: r.category || r.category_zh || "(未分類)", issues: [] });
+  defects.get(key).issues.push(issue);
+}
 let aliasFixable = 0;
 let tonelessPinyin = 0;
 let unpairedActions = 0;
@@ -88,10 +122,12 @@ for (const r of recs) {
     const zh = Array.isArray(r[zhF]) ? r[zhF] : [];
     const en = Array.isArray(r[enF]) ? r[enF] : [];
     if (en.length && en.length !== zh.length) {
+      flag(r, `E5 ${enF} 與 ${zhF} 長度不符 (${en.length} vs ${zh.length})`);
       errors.push(`E5 ${id}: ${enF} (${en.length}) is not index-aligned with ${zhF} (${zh.length}) — English would land on the wrong tag`);
     }
     if (zh.length && !en.length) {
       missingEn[enF] = (missingEn[enF] || 0) + 1;
+      flag(r, `缺英文 ${enF}`);
       // A record carrying field_sources claims template grade (see
       // docs/HERB_CARD_TEMPLATE.md) — for those, a missing English array is a
       // FAILURE, not a note. Ting: 模板寫了為什麼還是會遺漏 — because the doc
@@ -105,7 +141,10 @@ for (const r of recs) {
   {
     const zh = Array.isArray(r[SOFT_PAIR[0]]) ? r[SOFT_PAIR[0]] : [];
     const en = Array.isArray(r[SOFT_PAIR[1]]) ? r[SOFT_PAIR[1]] : [];
-    if (en.length && zh.length && en.length !== zh.length) unpairedActions++;
+    if (en.length && zh.length && en.length !== zh.length) {
+      unpairedActions++;
+      flag(r, `actions_en 無法與 functions_zh 配對 (${en.length} vs ${zh.length})`);
+    }
   }
   // Ting 2026-07-26: actions must be CURATED, not truncated and not dumped —
   // cross-compare the sources, rank by board-exam importance, keep the key
@@ -114,6 +153,7 @@ for (const r of recs) {
   if (r.field_sources && Object.keys(r.field_sources).length) {
     const n = Array.isArray(r.functions_zh) ? r.functions_zh.length : 0;
     if (n < 2 || n > 6) {
+      flag(r, `功效 ${n} 條(需 2-6,目標 3-5)`);
       errors.push(`E8 ${id}: functions_zh has ${n} action(s) — template-grade records keep the 2-6 key actions (target ~3-5), ranked most important first`);
     }
   }
@@ -123,9 +163,15 @@ for (const r of recs) {
   // template-grade record must carry both.
   if (r.field_sources && Object.keys(r.field_sources).length &&
       !(Array.isArray(r.contraindications_zh) && r.contraindications_zh.length)) {
+    flag(r, "缺禁忌症 contraindications_zh");
     errors.push(`E7 ${id}: template-grade record has no contraindications_zh (禁忌症 required — 慎用 in cautions_zh does not count)`);
   }
-  if (r.pinyin && !/[Ā-ỿǎǐǒǔ]/.test(r.pinyin) && !/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/i.test(r.pinyin)) tonelessPinyin++;
+  if (r.pinyin && !/[Ā-ỿǎǐǒǔ]/.test(r.pinyin) && !/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/i.test(r.pinyin)) {
+    tonelessPinyin++;
+    flag(r, "拼音未帶聲調");
+  }
+  // herbs nobody has curated yet: no field_sources at all
+  if (!(r.field_sources && Object.keys(r.field_sources).length)) flag(r, "尚未依模板整理(無 field_sources)");
   for (const k of COVERAGE) if (filled(r[k])) cov[k]++;
 }
 
@@ -144,6 +190,30 @@ const under = actionCounts.filter((n) => n <= 1).length;
 const over = actionCounts.filter((n) => n > 6).length;
 console.log(`Note: action curation — ${under} record(s) list 0-1 actions (under-listed), ${over} list >6 (raw dumps), ${recs.length - under - over} in the 2-6 range.`);
 console.log(`Note: ${tonelessPinyin} record(s) without tone-marked pinyin (glance layer wants Má Huáng).`);
+if (!WORKLIST) console.log(`\n提示：加 --worklist 可列出每一味不合格的藥名（--category "<分類>" 看單一批次）。`);
+
+if (WORKLIST) {
+  let rows = [...defects.values()];
+  if (CAT_ARG) rows = rows.filter((d) => d.category === CAT_ARG);
+  const byCat = new Map();
+  rows.forEach((d) => {
+    if (!byCat.has(d.category)) byCat.set(d.category, []);
+    byCat.get(d.category).push(d);
+  });
+  const cats = [...byCat.entries()].sort((a, b) => b[1].length - a[1].length);
+  console.log(`\n===== 待整理清單 WORKLIST — ${rows.length} 味有缺，${cats.length} 個分類 =====`);
+  if (CAT_ARG) console.log(`(只顯示分類：${CAT_ARG})`);
+  for (const [cat, list] of cats) {
+    console.log(`\n## ${cat}  (${list.length} 味)`);
+    const show = SHOW_ALL ? list : list.slice(0, 12);
+    show.sort((a, b) => b.issues.length - a.issues.length);
+    for (const d of show) {
+      console.log(`  ${d.name.padEnd(5)} ${d.id.padEnd(22)} ${d.issues.length} 項：${d.issues.join("、")}`);
+    }
+    if (!SHOW_ALL && list.length > show.length) console.log(`  … 還有 ${list.length - show.length} 味（加 --all 顯示全部）`);
+  }
+  console.log(`\n用法：--category "<分類>" 只看一批；--all 顯示全部。批次順序見 docs/HERB_FILL_DISPATCH.md。`);
+}
 
 if (errors.length) {
   console.error(`\nFAIL — ${errors.length} structural defect(s):`);
