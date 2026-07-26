@@ -93,7 +93,7 @@ HERB_FORMULA_CARD_SPEC 的完整欄位(巢狀主治、劑量、炮製、對藥�
 - [ ] 手機可用(部署到有密碼保護的網址)。
 - [ ] 每層驗證進度在品質頁真實可見、持續上升。
 
-**Phase 1(第 1–2 週)— 中藥衝刺**
+**Phase 1(第 1–2 週)— 中藥衝刺** ✅ 樣板已定案(`docs/HERB_CARD_TEMPLATE.md`,杜仲)
 - Ting 把課件放進 `curriculum/herbs/` + board exam outline。
 - Claude 用 1 味藥跑完整管線做示範卡(curriculum→4源→雙語→引用)。
 - 產出「接手指令」給 Codex / 第二個 Claude(Antigravity 沒 token 期間)。
