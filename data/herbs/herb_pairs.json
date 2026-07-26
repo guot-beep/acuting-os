@@ -450,6 +450,28 @@
       ]
     },
     {
+      "id": "pair.ban_xia__sheng_jiang",
+      "herbs": [
+        "herb.ban_xia",
+        "herb.sheng_jiang"
+      ],
+      "name_zh": "半夏配生薑",
+      "name_en": "Ban Xia with Sheng Jiang",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "半夏燥濕化痰、降逆止嘔；生薑溫中和胃、降逆止嘔，並能制約半夏之毒。兩藥相使，增強化飲降逆、和胃止嘔之力（小半夏湯）。",
+      "pair_meaning_en": "Ban Xia transforms Phlegm and redirects rebellious Qi; Sheng Jiang warms and harmonizes the Stomach, assists the antiemetic action, and moderates Ban Xia toxicity.",
+      "indication_zh": "胃寒痰飲上逆：噁心嘔吐、吐清水痰涎、心下痞悶（小半夏湯證）",
+      "indication_en": "Cold Phlegm and thin fluids rebelling from the Stomach: nausea, vomiting of clear fluids and epigastric focal distention.",
+      "caution_zh": "陰虛燥咳、津傷口渴、血證及痰熱而無適當清熱配伍者忌用；內服須用炮製半夏。",
+      "caution_en": "Avoid in Yin or fluid deficiency, bleeding disorders, or unbalanced Phlegm-Heat; only processed Ban Xia is used internally.",
+      "found_in_formulas": [],
+      "sources": [
+        "NCBAHM_2026_CH_Appendix_B",
+        "chenoweth_materia_medica_p26",
+        "american_dragon"
+      ]
+    },
+    {
       "id": "pair.gui_zhi__bai_shao",
       "herbs": [
         "herb.gui_zhi",
@@ -931,5 +953,5 @@
     }
   ],
   "updated_at": "2026-07-23",
-  "total_pairs": 40
+  "total_pairs": 41
 }

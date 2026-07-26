@@ -23,6 +23,11 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 > major_combinations)、劑量(Materia 的 "Dosage: X–Y grams";**沒來源就留空,
 > 絕不編數字**)、禁忌/注意、modern_pharmacology(Materia 的 "WM:" 行)、
 > 每欄位 `field_sources`(`curriculum/herbs/<file>#p<N>` 或 URL)、
+> 所有實際核讀的外部網站與圖像另同步到具名 `source_citations`
+> (`name` / `url` / `scope`)，否則畫面不會顯示；未核讀的來源不得列入。
+> 對藥優先寫入 `data/herbs/herb_pairs.json` 完整記錄：七情 `relation`、
+> 中英配伍理由、**中英主治、中英注意**與 sources；已有正式對藥時，單味藥
+> `key_pairs` 留空，避免簡略樣式遮住原本不同顏色的「主治／注意」卡。
 > `review_status:"draft"`。`_zh` 欄位放英文 = 缺陷。
 > **不可覆蓋既有更豐富的值** — 只加深、不變薄。
 >
@@ -47,9 +52,10 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 **`herb.du_zhong`(杜仲)= 標準樣板**(Ting 定案 2026-07-25:對藥與考試標註保留,
 Primary Actions 區塊已刪)。
 每味藥做完應該長這樣:帶聲調拼音、tcm_properties、functions_zh 只放傳統功效
-且與 actions_en 逐項對齊、indications_zh 是「證型 —— 配伍」結構、key_pairs、
+且與 actions_en 逐項對齊、indications_zh 是「證型 —— 配伍」結構、完整
+`herb_pairs.json` 對藥卡（相須／相使、配伍理由、主治、注意均雙語）、
 pao_zhi_notes_zh、dosage 物件、exam_importance/exam_pearl、field_sources 逐欄
-引用、**中英標籤成對且逐項對齊**(condition_tags_en / modern_functions_en /
+引用、具名 source_citations 顯示所有實際核讀外部來源、**中英標籤成對且逐項對齊**(condition_tags_en / modern_functions_en /
 cautions_en)。**兩源不合就並記**(看杜仲的性味與劑量欄怎麼寫)。
 ⚠️ 標籤英文**長度必須與中文相同**,不確定就整個留空 —— 錯位會讓所有標籤配錯,
 validator E5 會直接擋下。

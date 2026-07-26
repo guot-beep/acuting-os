@@ -28,6 +28,8 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `cautions_zh` / `_en` | array | 慎用(相對):慎服、注意、交互作用 |
 | `safety_flags` | array | 安全旗標 |
 | `related_formulas` | array | 方劑 id 連結 |
+| `key_pairs` | array | 已有 `herb_pairs.json` 正式對藥時留空，避免遮住完整彩色卡；不得用簡版覆蓋正式對藥 |
+| `source_citations` | array | 卡片底部實際顯示的來源；每筆含具名 `name`、可選 `url`、`scope` |
 | `exact_source_url` / `safety_source_url` | string | 逐筆出處;curriculum 用 `curriculum/herbs/<file>#p<N>` |
 | `review_status` | string | AI 只能寫 `"draft"`;`source_checked` 只由 Ting 的 RV1 流程升級 |
 
@@ -71,8 +73,21 @@ modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
 2. **每個來源都要有名字**:不准再出現「Source 1」。URL 依網域顯示
    (雲端中醫 CloudTCM / American Dragon / Chinese Medicine Atlas),課件顯示
    「📘 課件 <檔名> p<頁>」。
-3. 考試相關敘述(exam_importance / exam_pearl)必須寫**依據哪一版大綱**;
-   Ting 已更新 2026 版 NCCAOM,舊版說法不得沿用。
+3. `field_sources` 負責逐欄溯源，但外部 URL 不會自動全部顯示。凡實際核讀的
+   CloudTCM、American Dragon、Chinese Medicine Atlas 或圖像來源，必須同步
+   寫入具名 `source_citations`（或至少 `source_urls`）；未核讀不得列名。
+4. 考試相關敘述(exam_importance / exam_pearl)必須寫**依據哪一版大綱**;
+   現行為 **NCBAHM 2026**，不得再寫成 NCCAOM。
+
+## 4.6 對藥完整卡規則(Ting 2026-07-26)
+
+1. 正式對藥寫入 `data/herbs/herb_pairs.json`，不是只塞一段 `key_pairs` 理由。
+2. 每筆必填：`relation`（相須／相使等）、`pair_meaning_zh/_en`、
+   `indication_zh/_en`、`caution_zh/_en`、`sources`。
+3. 主治與注意保留為獨立欄位，讓卡片以不同顏色顯示；不得合併進配伍理由。
+4. 若該藥已有正式 pair records，單味藥記錄的 `key_pairs` 留空，讓渲染器使用
+   完整彩色卡；否則簡略卡會遮住主治、注意與七情關係。
+5. `exam_importance` / `exam_pearl` 照常保留，但不能取代對藥主治與注意。
 
 ## 5. 待補的深度層(next passes)
 
