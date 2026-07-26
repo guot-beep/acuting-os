@@ -40,6 +40,8 @@ node scripts/validate-naming.js
 node scripts/validate-point-categories.js
 node scripts/validate-encoding.js
 node scripts/validate-content-junk.js
+node scripts/validate-herb-standard.js
+node scripts/validate-acupoint-standard.js
 ```
 
 Point-set maintenance (DECISIONS D6): points are never hard-deleted. To

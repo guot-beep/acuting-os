@@ -23,6 +23,26 @@ Rule: **extract Tier 1 first, then cross-check/deepen with Tier 2.** Where two
 sources disagree, record **both** with attribution — never silently pick one.
 Dosage and safety numbers are never invented; if unsourced, leave empty + flag.
 
+### 1a. Tier-2 order differs per domain (Ting, 2026-07-26)
+
+The tiers above are constant; **which Tier-2 site leads is not**. Same process,
+different references.
+
+| Domain | Tier-2 order | Dispatch |
+|---|---|---|
+| 中藥 herbs | CloudTCM → American Dragon → chinesemedicineatlas | `docs/HERB_FILL_DISPATCH.md` |
+| 穴位 acupoints | **eLotus → CloudTCM** → WHO locations | `docs/ACUPOINT_FILL_DISPATCH.md` |
+| 董氏奇穴 Tung's | **tungs-acupuncture.com → eLotus** (own scheme; keep out of `361.json`) | same, §董氏 |
+
+Note the reversal: acupoints put **eLotus ahead of CloudTCM**. Most of the
+existing 361-point content came from CloudTCM, so it is the thing being
+*checked*, not the baseline to check against.
+
+And the ordering that is easy to get backwards: the **board outline frames the
+work** (which records, which batch first, what counts as an exam point) while
+`curriculum/` and the Tier-2 sites **supply the content**. An outline bullet is
+scope, never card text.
+
 ## 2. The workflow for every record
 
 1. **Extract** the Tier-1 facts from `curriculum/` (and the exam outline scope).
@@ -46,12 +66,14 @@ two-layer Glance/Study design). New domains get their own spec doc, same shape.
 |---|---|---|---|
 | now | 中藥 Single herbs | `data/herbs/herb_canon_shortlist.json` | filling (made ~98%, verified ~57/266) |
 | next | 方劑 Formulas | `data/herbs/formulas.json` | started (~88% made, 0 verified) |
-| next | 病症 Conditions (中西病名互標) | `data/pathology/…` | made, 0 verified |
+| next | 針灸 361 穴 optimisation | `data/acupoints/361.json` ← `curriculum/acupoints/` | pipeline built; 0 verified, 418 中英錯位 |
+| next | 病症 Conditions (中西病名互標) | `data/pathology/…` ← `curriculum/conditions/` | made, 0 verified |
+| next | 病例 Cases (中西醫病例討論) | `data/cases/…` ← `curriculum/cases/` | folder ready, no records |
 | next | 辨證鑑別 Comparisons (病理 + advanced therapeutics 對照表) | `data/knowledge/comparisons.json` | skeletons |
 | then | 擴增穴位: 頭穴 / 耳穴 / 平衡針法 / 運動醫學 / 美容針法 | `data/acupoints/…`, `data/tung/…`, new sets | partial |
 | next sem | 西醫 病理 / 藥理 | `curriculum/western/` → `data/pathology/…`, new herb-drug tables | not started |
 | next sem | 西醫 Red flags / 轉診 | condition records `red_flags_*` | partial |
-| future | 飲食/生活建議層 (food therapy + lifestyle, atlas-style; 西醫+中醫+營養學; 地域×季節×年齡 templates for patient advice) | new `data/food/…` (schema via Claude first) | planned — see BLUEPRINT §1/§4 |
+| future | 飲食/生活建議層 (food therapy + lifestyle, atlas-style; 西醫+中醫+營養學; 地域×季節×年齡 templates for patient advice) | new `data/food/…` ← `curriculum/lifestyle/` (schema via Claude first) | planned — see BLUEPRINT §1/§4 |
 
 ## 4. Clinical North Star (fill content *for this purpose*)
 
