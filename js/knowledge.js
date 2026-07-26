@@ -528,6 +528,40 @@
     ];
   }
 
+  /* Herb-name linkifier. Ting: 推薦配伍中藥 建議可以加上中英文標籤跟連接.
+     Any 中藥 named inside an indication line or a 對藥 becomes a clickable
+     bilingual chip that opens that herb's card (the dialog already delegates
+     [data-detail-kind][data-detail-id] clicks). Longest names match first so
+     懷牛膝 wins over 牛膝; a herb never links to itself. */
+  const HERB_NAME_INDEX = (() => {
+    const m = new Map();
+    ((K.herbs && K.herbs.records) || []).forEach((h) => {
+      if (h.name_zh) m.set(h.name_zh, h);
+      (h.aliases_zh || []).forEach((a) => { if (a && !m.has(a)) m.set(a, h); });
+    });
+    return m;
+  })();
+  const HERB_NAME_RE = (() => {
+    const names = [...HERB_NAME_INDEX.keys()].filter((n) => n.length >= 2)
+      .sort((a, b) => b.length - a.length)
+      .map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    return names.length ? new RegExp(names.join("|"), "g") : null;
+  })();
+  function herbChipHtml(h, label) {
+    const sub = [h.pinyin, h.name_en].filter(Boolean).join(" · ");
+    return `<button type="button" class="k-herb-link" data-detail-kind="herb" data-detail-id="${esc(h.id)}"` +
+      ` title="${esc(sub)}">${esc(label)}<small>${esc(h.pinyin || h.name_en || "")}</small></button>`;
+  }
+  function linkifyHerbs(text, selfId) {
+    const safe = esc(text);
+    if (!HERB_NAME_RE) return safe;
+    return safe.replace(HERB_NAME_RE, (name) => {
+      const h = HERB_NAME_INDEX.get(name);
+      if (!h || h.id === selfId) return name;
+      return herbChipHtml(h, name);
+    });
+  }
+
   function herbPanels(record) {
     const exam = record.english_exam_track || {};
     const props = record.tcm_properties || {};
@@ -611,7 +645,16 @@
     );
     
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
-    const keyPairs = (record.key_pairs || []).map(p => typeof p === 'string' ? `<div class="k-pair-item"><strong>${esc(p)}</strong></div>` : `<div class="k-pair-item" style="margin-bottom:8px;padding:8px 12px;background:#f8fafc;border-left:3px solid #0284c7;border-radius:4px;"><strong>${esc(p.pair)}</strong><p style="margin:2px 0 0 0;font-size:0.92em;color:#334155;">${esc(p.rationale_zh || p.rationale || "")}</p></div>`).join("");
+    const keyPairs = (record.key_pairs || []).map((p) => {
+      if (typeof p === "string") return `<div class="k-pair-item"><strong>${linkifyHerbs(p, record.id)}</strong></div>`;
+      const zh = p.rationale_zh || p.rationale || "";
+      const en = p.rationale_en || "";
+      return `<div class="k-pair-item" style="margin-bottom:8px;padding:8px 12px;background:#f8fafc;border-left:3px solid #0284c7;border-radius:4px;">
+        <strong>${linkifyHerbs(p.pair || "", record.id)}</strong>
+        ${zh ? `<p style="margin:4px 0 0 0;font-size:0.92em;color:#334155;">${linkifyHerbs(zh, record.id)}</p>` : ""}
+        ${en ? `<p style="margin:2px 0 0 0;font-size:0.88em;color:#64748b;">${esc(en)}</p>` : ""}
+      </div>`;
+    }).join("");
     
     /* Safety text lives in safety_info on newer records but at the top level on
        CloudTCM-sourced ones; read both or the panel renders empty. English is
@@ -643,17 +686,16 @@
             ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "6~15g")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
             ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "根 / 果實 / 全草")}</p>`)}
           </div>
-          ${detailSection("傳統功效 (Traditional Functions)", "中醫古籍記載功效標籤", `<div class="k-chip-cloud">${bilingualFunctions}</div>`)}
+          ${detailSection("功效 (Actions)", "傳統功效 · 中英對照", `<div class="k-chip-cloud">${bilingualFunctions}${actionsAligned ? "" : actionsEn.map((a) => `<span class="k-chip" style="background:#ecfdf5;color:#047857;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(a)}</span>`).join("")}</div>`)}
           ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
           ${modernPharm.length ? detailSection("現代藥理 (Modern Pharmacology)", "實證藥理作用", `<div class="k-chip-cloud">${bilingualModernPharm}</div>`) : ""}
-          ${actionsEn.length ? detailSection("英文功效 (English Actions)", "English action list（來源見下方引用）", detailList(actionsEn)) : ""}
         ` 
       },
       { 
         id: "clinical", 
         label: "主治與症狀 Indications", 
         content: `
-          ${detailSection("主治症狀與病機", "Indications", detailList(indicationsZh.length ? indicationsZh : [record.indications_en]))}
+          ${detailSection("主治症狀與病機", "Indications（配伍中藥可點開）", (indicationsZh.length ? indicationsZh : [record.indications_en]).filter(Boolean).length ? `<ul class="k-detail-list">${(indicationsZh.length ? indicationsZh : [record.indications_en]).filter(Boolean).map((v) => `<li>${linkifyHerbs(v, record.id)}</li>`).join("")}</ul>` : '<p class="k-detail-empty">待補 / Content pending source review</p>')}
           ${record.key_indications_en && record.key_indications_en.length ? detailSection("重點主治 (Key Indications)", "考試重點主治（來源見下方引用）", detailList(record.key_indications_en)) : ""}
           ${detailSection("病名與症狀索引標籤", "Common Condition Tags", `<div class="k-chip-cloud">${bilingualCondTags}</div>`)}
           ${detailSection("相關經典方劑", "Classical Formulas containing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}
@@ -673,8 +715,8 @@
         label: "毒性安全與來源 Safety & Sources", 
         content: `
           ${safety.toxicity_zh ? detailSection("毒性說明 (Toxicity)", "Toxicity review", `<p style="color:#b91c1c;font-weight:bold;">${esc(safety.toxicity_zh)}</p><p style="color:#7f1d1d;font-size:0.9em;">${esc(safety.toxicity_en || "")}</p>`) : ""}
-          ${detailSection("禁忌症 (Contraindications)", "Strict contraindications", detailList(contraList))}
-          ${detailSection("慎用與副作用 (Cautions & Interactions)", "Cautions, pregnancy, and drug interactions", detailList(cautionList))}
+          ${detailSection("禁忌症 (Contraindications)", "Strict contraindications", contraList.length ? `<ul class="k-detail-list">${contraList.map((v) => `<li>${linkifyHerbs(v, record.id)}</li>`).join("")}</ul>` : '<p class="k-detail-empty">待補 / Content pending source review</p>')}
+          ${detailSection("慎用與副作用 (Cautions & Interactions)", "Cautions, pregnancy, and drug interactions（提到的中藥可點開）", cautionList.length ? `<ul class="k-detail-list">${cautionList.map((v) => `<li>${linkifyHerbs(v, record.id)}</li>`).join("")}</ul>` : '<p class="k-detail-empty">待補 / Content pending source review</p>')}
           ${detailSection("權威來源引用與圖像連結 (Sources & References)", "Referenced sources & external visual links", sourceLinks(record))}
         ` 
       }
