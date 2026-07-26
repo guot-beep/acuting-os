@@ -575,6 +575,7 @@ function unifiedSearch(rawQuery) {
     formulas: pick(knowledgeRecords("formulas"), (f) => [f.name_zh, f.name_en, f.pinyin, f.id,
       f.category_zh, f.category, txt(f.pattern_indications_zh), txt(f.composition)]),
     herbs: pick(knowledgeRecords("herbs"), (h) => [h.name_zh, h.name_en, h.pinyin, h.id, h.category,
+      txt(h.aliases_zh),   // variant characters (三稜 -> 三棱) must still find the herb
       txt(h.channels_entered), txt(h.functions_zh || h.functions), txt(h.modern_use_tags),
       // condition tags and indications are what a symptom search actually hits
       // (clicking 腰膝痠痛 on a card searches for it and must find these herbs)
