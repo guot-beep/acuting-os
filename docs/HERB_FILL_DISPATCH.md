@@ -19,9 +19,12 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 > 的課件,最權威)+ board exam outline 範圍 → ② CloudTCM、American Dragon、
 > chinesemedicineatlas 交叉補深(中文深度/英文巢狀主治/掃描層呈現)。
 > 兩源不合 → 兩個都記、標明出處,絕不擅自二選一。
-> **CloudTCM 找不到單味藥頁時，下一步查百度百科**，並記錄實際條目 URL；
-> 百度可補圖像、別名、基原與一般內容，但劑量、毒性、孕期、禁忌及交互作用
-> 必須再與課件、American Dragon 或其他專業來源交叉核對，不以百度單獨定案。
+> **CloudTCM 找不到單味藥頁時，先查可核讀的專業單味藥頁（例如 Traditional
+> World Medicine），仍找不到再查百度百科**，並記錄實際條目 URL。專業頁面
+> 實際核讀後，可搬入圖像、辨識、性味歸經、功效、主治、炮製、對藥與劑量，
+> 但必須逐欄標來源；百度可補備援圖像、別名、基原與一般內容。劑量、毒性、
+> 孕期、禁忌及交互作用必須再與課件、American Dragon 或其他專業來源交叉核對，
+> 不以單一外部網站定案，也不得覆蓋來源差異。
 >
 > **每味藥要填**(目標檔 `data/herbs/herb_canon_shortlist.json`,對照
 > SPEC §3):帶聲調拼音、中文名、英文 common name、pharmaceutical latin(xlsx 有)、
@@ -37,6 +40,10 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 > 對藥優先寫入 `data/herbs/herb_pairs.json` 完整記錄：七情 `relation`、
 > 中英配伍理由、**中英主治、中英注意**與 sources；已有正式對藥時，單味藥
 > `key_pairs` 留空，避免簡略樣式遮住原本不同顏色的「主治／注意」卡。
+> **對藥沒有每味一則的上限**：逐一檢查課件 pairing / major combinations、
+> NCBAHM 對藥與已核讀專業頁面，有幾組重要且可溯源的配伍就建幾筆正式記錄；
+> 不得只取第一組或合併不同配伍。A+B / B+A 共用同一筆記錄；只有來源確實只
+> 支持一組時才只顯示一組。
 > `review_status:"draft"`。`_zh` 欄位放英文 = 缺陷。
 > **不可覆蓋既有更豐富的值** — 只加深、不變薄。
 >

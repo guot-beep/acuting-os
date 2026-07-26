@@ -89,6 +89,11 @@ modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
 4. 若該藥已有正式 pair records，單味藥記錄的 `key_pairs` 留空，讓渲染器使用
    完整彩色卡；否則簡略卡會遮住主治、注意與七情關係。
 5. `exam_importance` / `exam_pearl` 照常保留，但不能取代對藥主治與注意。
+6. 對藥筆數以實際來源為準，沒有「每味只留一則」的限制。必須檢查課件
+   pairing / major combinations、NCBAHM 對藥及已核讀的專業來源；有幾組重要、
+   可溯源的對藥就建立幾筆，不得只取第一組或把不同配伍合併。
+7. A+B 與 B+A 是同一筆正式 pair record，避免反向重複；渲染器會讓它同時出現
+   在 A、B 兩味藥卡。只有來源確實只支持一組時，卡片才只有一則。
 
 ## 5. 待補的深度層(next passes)
 
