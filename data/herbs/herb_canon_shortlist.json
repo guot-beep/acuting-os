@@ -15319,7 +15319,7 @@
       "id": "herb.fu_ling",
       "name_zh": "茯苓",
       "name_en": "Poria",
-      "pinyin": "Fu Ling",
+      "pinyin": "Fú Líng",
       "category": "利水滲濕藥 / Drain Dampness",
       "channels_entered": [
         "心經",
@@ -15329,7 +15329,7 @@
       ],
       "source_hint": "Bensky Materia Medica: Drain Dampness",
       "review_status": "draft",
-      "properties_taste_temp": "平、淡、甘",
+      "properties_taste_temp": "甘、淡，平（Chenoweth: Sweet, Bland, Neutral;雲端中醫同）",
       "functions": [
         "利水消腫",
         "利水滲濕",
@@ -15463,7 +15463,11 @@
           "抗腫瘤"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"9-15克\",\r\n  \"食療用量範圍\": \"10-30克\",\r\n  \"特殊說明\": \"入湯劑常規煎煮即可；研末沖服用量減半；可作藥膳長期食用\"\r\n}",
+      "dosage": {
+        "decoction_g": "9–15（雲端中醫）",
+        "食療用量範圍": "10–30克（雲端中醫）",
+        "特殊說明": "入湯劑常規煎煮;研末沖服用量減半;可作藥膳長期食用。Chenoweth 精要未列克數,故僅記雲端中醫來源。"
+      },
       "cautions": "**陰虛而無濕熱者慎服：**茯苓性平味甘，陰虛無濕熱者服用可能加重體內陰虛狀況。\n**虛寒精滑或氣虛下陷者忌服：**茯苓性平偏涼，虛寒精滑或氣虛下陷者服用可能損傷陽氣，加重虛症。\n**避免與白斂、牡蒙、地榆、雄黃、秦艽、龜甲等藥物同用：**這些藥物會影響茯苓的藥效。\n**忌米醋：**米醋會破壞茯苓的藥性。\n**體質虛寒、肝腎不足、胃寒食慾不振者不宜服用：**茯苓的溫補作用可能加重這些症狀。\n**腎功能不全、高血鉀症、心臟衰竭等患者應慎用或避免使用：**茯苓含有一定量的鉀離子，可能會影響這些患者的身體健康。\n**小便利或數者不宜服用：**茯苓利尿，小便頻繁者服用可能損傷目力。\n**汗多入服之損元氣：**茯苓利尿，汗出過多者服用可能損耗元氣。\n**病人腎虛、小水自利或不禁、虛寒精清滑者皆不得服：**茯苓利尿，上述情況者服用可能加重病情。\n**氣虛下陷、水涸口乾者俱禁用：**茯苓利尿，氣虛下陷、水涸口乾者服用可能加重虛症。\n**腹瀉者不宜服用：**茯苓有收斂止瀉的作用，腹瀉者服用可能加重腹瀉症狀。\n**孕婦應在醫生的指導下使用茯苓：**茯苓具有利尿作用，孕婦過量使用可能會影響胎兒發育。",
       "source_urls": [
         "https://cloudtcm.com/herb/1031"
@@ -15490,26 +15494,19 @@
       "safety_fetched_at": "2026-07-23T07:25:14.146Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "利水消腫",
         "利水滲濕",
-        "清熱利尿",
-        "祛風除濕",
-        "安胎",
-        "健脾胃",
-        "補血",
-        "安神",
-        "保肝"
+        "健脾",
+        "寧心安神"
       ],
       "modern_functions_zh": [
-        "降血糖",
-        "提升免疫力",
+        "利尿（輕度）",
         "鎮靜",
-        "防癌抗腫瘤",
-        "保肝利膽",
-        "抗菌抗病毒",
-        "抗發炎",
+        "抗腫瘤",
         "抗菌",
-        "抗腫瘤"
+        "抗發炎",
+        "提升免疫力",
+        "保肝利膽",
+        "降血糖"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1031",
@@ -15559,12 +15556,15 @@
       "category_zh": "利水滲濕藥",
       "channels_zh": [
         "心經",
-        "肺經",
         "脾經",
-        "腎經"
+        "腎經",
+        "肺經（雲端中醫）"
       ],
       "indications_zh": [
-        "利水滲濕；健脾；寧心"
+        "水濕內停:小便不利、水腫、泄瀉 —— 配 豬苓、澤瀉、白朮（五苓散）",
+        "脾虛濕困:食少便溏、倦怠乏力 —— 配 人參、白朮、甘草（四君子湯）",
+        "痰飲:心悸、頭暈、苔厚膩（濕性眩暈,非肝陽上亢）—— 配 桂枝、白朮（苓桂朮甘湯）",
+        "心神不安:心悸、失眠、健忘 —— 用茯神,配 酸棗仁、遠志"
       ],
       "study_tags": [
         "單味中藥",
@@ -15574,8 +15574,170 @@
       ],
       "tags_fetched_at": "2026-07-23",
       "condition_tags_zh": [
-        "利水滲濕健脾寧心"
-      ]
+        "水腫",
+        "小便不利",
+        "泄瀉",
+        "痰飲",
+        "心悸",
+        "失眠",
+        "頭暈",
+        "食少便溏"
+      ],
+      "pharmaceutical_latin": "Poria (Sclerotium Poriae Cocos)",
+      "part_used_en": "sclerotium",
+      "tcm_properties": {
+        "four_natures_zh": "平",
+        "five_flavors_zh": [
+          "甘",
+          "淡"
+        ],
+        "meridian_tropism_zh": [
+          "心經",
+          "脾經",
+          "腎經",
+          "肺經（雲端中醫另列;Chenoweth 作 HT/SP/KD 三經）"
+        ],
+        "part_used_zh": "菌核（去皮切塊）"
+      },
+      "actions_en": [
+        "Promotes urination and drains dampness",
+        "Strengthens the Spleen",
+        "Quiets the Heart and calms the spirit"
+      ],
+      "condition_tags_en": [
+        "Edema",
+        "Difficult urination",
+        "Diarrhea",
+        "Phlegm-fluid retention",
+        "Palpitations",
+        "Insomnia",
+        "Dizziness (damp)",
+        "Poor appetite with loose stool"
+      ],
+      "modern_functions_en": [
+        "Diuretic (mild)",
+        "Sedative",
+        "Anti-neoplastic",
+        "Antibacterial",
+        "Anti-inflammatory",
+        "Immunostimulant",
+        "Hepatoprotective / choleretic",
+        "Hypoglycemic"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "9–15g（雲端中醫）"
+      },
+      "pao_zhi_notes_zh": "部位差異（Chenoweth「Layers of Fu Ling」高頻考點）:茯苓皮 → 表淺水腫（非凹陷性）、早期腎炎、經期水腫;赤茯苓 → 濕熱,尤其下焦、泌尿道感染;白茯苓 → 一般利水滲濕健脾;茯神（菌核中心抱松根者）→ 寧心安神,心悸、失眠、健忘。",
+      "key_pairs": [
+        {
+          "pair": "茯苓 + 豬苓 Zhū Líng",
+          "rationale_zh": "相須。同為利水滲濕要藥,合用滲利之力更強 —— 小便不利、水腫（五苓散、豬苓湯）",
+          "rationale_en": "Xiang Xu (mutual accentuation). Both drain dampness through urination; together the effect is stronger — difficult urination, edema."
+        },
+        {
+          "pair": "茯苓 + 白朮 Bái Zhú",
+          "rationale_zh": "相使。白朮燥濕健脾,茯苓滲濕安中,脾健則濕自去 —— 脾虛濕停、食少便溏",
+          "rationale_en": "Bai Zhu dries damp and strengthens the Spleen while Fu Ling leaches damp out; a strong Spleen stops damp forming — Spleen deficiency with damp."
+        },
+        {
+          "pair": "茯苓 + 桂枝 Guì Zhī",
+          "rationale_zh": "溫陽化飲。桂枝溫通陽氣,茯苓滲利水飲 —— 痰飲之心悸、頭眩（苓桂朮甘湯）",
+          "rationale_en": "Gui Zhi warms and frees yang while Fu Ling leaches out thin fluids — palpitations and dizziness from phlegm-fluid (Ling Gui Zhu Gan Tang)."
+        },
+        {
+          "pair": "茯神 + 酸棗仁 Suān Zǎo Rén",
+          "rationale_zh": "寧心安神。茯神專入心,配酸棗仁養心安神 —— 心悸、失眠、健忘",
+          "rationale_en": "Fu Shen targets the Heart; with Suan Zao Ren it nourishes the Heart and settles the spirit — palpitations, insomnia, forgetfulness."
+        }
+      ],
+      "cautions_en": [
+        "Use with caution in yin deficiency without damp-heat — the sweet, bland nature may aggravate yin deficiency.",
+        "Contraindicated in deficiency-cold spermatorrhea or qi deficiency with sinking — may injure yang and worsen the deficiency.",
+        "Avoid combining with Bai Lian, Mu Meng, Di Yu, Xiong Huang, Qin Jiao, Gui Jia — these are said to reduce its effect.",
+        "Avoid rice vinegar, which is said to spoil the herb's properties.",
+        "[⚠ source self-contradiction] Not suitable for constitutional deficiency-cold, Liver–Kidney insufficiency, or stomach cold with poor appetite — the source calls this a 'warming tonic' action although it lists the herb as neutral/slightly cool elsewhere.",
+        "Caution or avoid in renal insufficiency, hyperkalemia, or heart failure — it contains potassium.",
+        "Not suitable when urination is already frequent or copious — it promotes urination.",
+        "With profuse sweating it may drain source qi (yuan qi) further.",
+        "Avoid in Kidney deficiency, incontinence or unrestrained urination, and deficiency-cold spermatorrhea.",
+        "Contraindicated in qi deficiency with sinking, or fluid exhaustion with dry mouth.",
+        "[⚠ source self-contradiction] Said to be unsuitable in diarrhea because of an 'astringent' action — yet the same source lists diarrhea from damp as an indication. Verify before use.",
+        "Pregnancy: use only under physician guidance; excessive use may affect fetal development given the diuretic action."
+      ],
+      "exam_importance": "★ Board 高頻:利水滲濕藥(Drain Dampness [14])代表藥;Yao Yao 定位:Damp Conditions [ALL, Strengthens SP]",
+      "exam_pearl": "三大考點:①利水滲濕(所有濕證通用)②健脾③寧心安神。關鍵在性平 —— 利濕而不傷氣,寒熱虛實皆可配伍。四層考點:茯苓皮/赤茯苓/白茯苓/茯神。",
+      "safety_review_pending": "毒性/中西藥交互深度資料待補(CloudTCM、American Dragon 皆有,需可瀏覽的 agent)。另:雲端中醫注意事項第 5、11 條與其自身性味/主治敘述矛盾(稱溫補、稱收斂止瀉),已在英文標註 ⚠,待 Ting 或第二來源裁定。",
+      "field_sources": {
+        "pinyin": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "part_used_en": [
+          "curriculum/herbs/pinyin_latin_herb_list.csv"
+        ],
+        "category": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf → [14] Drain Dampness"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5",
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "tcm_properties": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5",
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5",
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5",
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5"
+        ],
+        "condition_tags_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5",
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "condition_tags_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5"
+        ],
+        "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5（WM 行）",
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "modern_functions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5（WM 行）"
+        ],
+        "dosage": [
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "pao_zhi_notes_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5（Layers of Fu Ling）"
+        ],
+        "key_pairs": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "cautions_en": [
+          "https://cloudtcm.com/herb/1031"
+        ],
+        "exam_importance": [
+          "curriculum/herbs/herb_functions_chenoweth.pdf（Yao Yao 表）"
+        ],
+        "exam_pearl": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5"
+        ]
+      }
     },
     {
       "id": "herb.zhu_ling",
