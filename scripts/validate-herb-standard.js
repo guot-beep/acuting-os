@@ -14,6 +14,7 @@
  *   E4 a *_zh text field is non-empty but contains no Chinese at all
  *   E5 an _en tag array is not index-aligned with its _zh array
  *   E6 a template-grade record (has field_sources) is missing an _en array
+ *   E7 a template-grade record has no contraindications_zh (禁忌症)
  *
  * REPORT (always printed) — honest per-field coverage vs the canonical record
  * (docs/HERB_RECORD_STANDARD.md), plus fixable counts (alias-mappable
@@ -46,7 +47,8 @@ const ZH_FIELDS = ["name_zh", "category_zh", "functions_zh", "modern_functions_z
 const PAIRS = [
   ["modern_functions_zh", "modern_functions_en"],
   ["condition_tags_zh", "condition_tags_en"],
-  ["cautions_zh", "cautions_en"]
+  ["cautions_zh", "cautions_en"],
+  ["contraindications_zh", "contraindications_en"]
 ];
 // Legacy: actions_en on older records is an independent English action list,
 // not a per-tag translation. Misalignment there is reported, not failed — the
@@ -58,7 +60,7 @@ const COVERAGE = [
   "condition_tags_en", "modern_functions_en", "actions_en",
   "properties_taste_temp", "channels_zh",
   "functions_zh", "indications_zh", "modern_functions_zh",
-  "dosage", "cautions_zh", "safety_flags",
+  "dosage", "cautions_zh", "contraindications_zh", "safety_flags",
   "related_formulas", "exact_source_url", "safety_source_url"
 ];
 
@@ -103,6 +105,14 @@ for (const r of recs) {
     const zh = Array.isArray(r[SOFT_PAIR[0]]) ? r[SOFT_PAIR[0]] : [];
     const en = Array.isArray(r[SOFT_PAIR[1]]) ? r[SOFT_PAIR[1]] : [];
     if (en.length && zh.length && en.length !== zh.length) unpairedActions++;
+  }
+  // Ting 2026-07-26: 禁忌症 sat empty on every card because scraped safety text
+  // all went into cautions_zh and nobody filled contraindications_zh. 禁忌
+  // (absolute) and 慎用 (relative) are different clinical calls, so a
+  // template-grade record must carry both.
+  if (r.field_sources && Object.keys(r.field_sources).length &&
+      !(Array.isArray(r.contraindications_zh) && r.contraindications_zh.length)) {
+    errors.push(`E7 ${id}: template-grade record has no contraindications_zh (禁忌症 required — 慎用 in cautions_zh does not count)`);
   }
   if (r.pinyin && !/[Ā-ỿǎǐǒǔ]/.test(r.pinyin) && !/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/i.test(r.pinyin)) tonelessPinyin++;
   for (const k of COVERAGE) if (filled(r[k])) cov[k]++;

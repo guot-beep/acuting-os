@@ -24,7 +24,8 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `cautions_en` | array | 注意事項英文,與 `cautions_zh` **逐項對齊** |
 | `actions_en` | array | 英文功效;若要與 `functions_zh` 配對顯示則**長度必須相同**,否則卡片只顯示中文標籤 + 另列英文清單 |
 | `dosage` | object | 有來源才填;**絕不編數字**。缺 = 留空 + 待補 |
-| `cautions_zh` | array | 禁忌/注意(安全欄位,優先審) |
+| `contraindications_zh` / `_en` | array | **禁忌(絕對):禁用/忌服/不得服。必填,E7 擋** |
+| `cautions_zh` / `_en` | array | 慎用(相對):慎服、注意、交互作用 |
 | `safety_flags` | array | 安全旗標 |
 | `related_formulas` | array | 方劑 id 連結 |
 | `exact_source_url` / `safety_source_url` | string | 逐筆出處;curriculum 用 `curriculum/herbs/<file>#p<N>` |
