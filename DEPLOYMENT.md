@@ -102,3 +102,33 @@ No build step is required right now.
 3. Use the staging URL on phone for study and data lookup.
 4. Keep AcuTing Learn public English content separate from private AcuTing OS clinical notes.
 5. Hand public-ready content to the acuting.com / Claude-managed workflow only after source review.
+
+
+---
+
+## Cloudflare Pages 部署(2026-07-26 定案)
+
+**設定**(Cloudflare Dashboard → Workers & Pages → 專案 → Settings → Build):
+
+| 欄位 | 值 |
+|---|---|
+| Build command | `node scripts/build-site.js` |
+| Build output directory | `dist` |
+| Framework preset | None |
+
+**為什麼要 build 步驟**:直接部署 repo 根目錄會失敗且不安全 ——
+- `data/imports/cloudtcm/formula_url_map.json` 有 39 MB,超過 Cloudflare
+  單一 asset 上限 25 MiB → `[ERROR] Asset too large`。
+- 整個 repo 有 897 檔 / 137 MB,其中 **`curriculum/` 是 Ting 的版權課件,
+  絕對不可上傳**。
+
+`scripts/build-site.js` 只複製 `index.html` 實際引用的本地檔案(13 檔、
+約 13 MB),其餘一律留在私人 repo。新增資料檔時只要在 index.html 引用,
+build 會自動帶上,不用改腳本。
+
+**上鎖(只有 Ting 能開)**:Cloudflare Zero Trust → Access → Applications →
+Add self-hosted → 網域填 `<專案>.pages.dev` → Policy: Allow / Include /
+Emails = Ting 的 email → 登入方式 One-time PIN。
+
+**注意**:病例資料存在各瀏覽器 localStorage,手機與電腦各自獨立;
+要搬用面板裡的 匯出/匯入 JSON。知識內容(穴位/中藥/方劑)則隨部署同步。
