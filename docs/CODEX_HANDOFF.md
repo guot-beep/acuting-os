@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-26] Codex Handoff - Formal Ban Xia card
+
+- **Branch / content commit**: `codex/herbs-release-exterior-sample` / `e9c3e5a`
+- **Scope**: Completed `herb.ban_xia` using the formal herb template; preserved the existing `herb_pairs.json` records and their 相須 wording.
+- **Sources**: Chenoweth pp. 26–27, NCBAHM 2026 CH Appendix A/B, CloudTCM `/herb/966`, and American Dragon `ZhiBanXia.htm`; conflicts in dosage, pregnancy, and Phlegm-Heat use are retained.
+- **Validation**: Ban Xia bilingual delta PASS; `build-data.js`, `validate-herb-standard.js`, `validate-content-junk.js`, and `git diff --check` PASS.
+- **Protected/user files**: No untracked curriculum uploads were staged or modified; no JS, HTML, scripts, acupoint, Tung, or auricular source files were touched.
+- **Manual review**: Check the rendered four actions, seven indication lines, five modern functions, four processing forms, and three Dui Yao entries.
+
 ## [2026-07-26] Codex Handoff - Six-herb formal card sample
 
 - **Agent / branch / content commit**: Codex / `codex/herbs-release-exterior-sample` / `50e6b07`
