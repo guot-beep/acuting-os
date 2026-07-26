@@ -1,5 +1,44 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-26] Codex Handoff - Rich herb-pair template rule
+
+- **Branch / content commit**: `codex/herbs-release-exterior-sample` / `9bb83fe`
+- **Decision from Ting**: Preserve the colored full pair cards with 七情 relation, bilingual rationale, 主治 and 注意; keep ★/💡 exam notes separately.
+- **Ban Xia**: Restored automatic rich-card rendering for the existing Ban Xia–Hou Po and Chen Pi–Ban Xia records; added a complete Ban Xia–Sheng Jiang 相使 record.
+- **Rules updated**: `HERB_CARD_TEMPLATE.md`, `HERB_RECORD_STANDARD.md`, and `HERB_FILL_DISPATCH.md` now require formal `herb_pairs.json` records and rendered `source_citations`.
+- **Validation**: rich-pair delta PASS (3 complete pairs, total count 41); build, herb-standard, content-junk and diff checks PASS.
+- **Known gap**: no dedicated `validate-herb-pairs.js` exists; Xiao Ban Xia Tang has no canonical formula ID, so the pair names it in prose without an invalid link.
+
+## [2026-07-26] Codex Handoff - Herb source citation display
+
+- **Branch / content commit**: `codex/herbs-release-exterior-sample` / `41881b2`
+- **Scope**: Added rendered `source_citations` to 蒲公英、桂枝、生薑、荊芥、防風、紫蘇葉、半夏.
+- **Source honesty**: American Dragon appears only on the six records actually consulted; it is intentionally absent from 紫蘇葉 because that page was verification-blocked. Wikimedia links appear only where an image URL is used.
+- **Also corrected**: 生薑 legacy `source_urls` CloudTCM link from incorrect `/herb/6` to verified `/herb/1171`.
+- **Validation**: `build-data.js`, `validate-herb-standard.js`, `validate-content-junk.js`, and `git diff --check` PASS.
+- **Protected/user files**: No untracked curriculum files or protected application/source files were staged or modified.
+
+## [2026-07-26] Codex Handoff - Formal Ban Xia card
+
+- **Branch / content commit**: `codex/herbs-release-exterior-sample` / `e9c3e5a`
+- **Scope**: Completed `herb.ban_xia` using the formal herb template; preserved the existing `herb_pairs.json` records and their 相須 wording.
+- **Sources**: Chenoweth pp. 26–27, NCBAHM 2026 CH Appendix A/B, CloudTCM `/herb/966`, and American Dragon `ZhiBanXia.htm`; conflicts in dosage, pregnancy, and Phlegm-Heat use are retained.
+- **Validation**: Ban Xia bilingual delta PASS; `build-data.js`, `validate-herb-standard.js`, `validate-content-junk.js`, and `git diff --check` PASS.
+- **Protected/user files**: No untracked curriculum uploads were staged or modified; no JS, HTML, scripts, acupoint, Tung, or auricular source files were touched.
+- **Manual review**: Check the rendered four actions, seven indication lines, five modern functions, four processing forms, and three Dui Yao entries.
+
+## [2026-07-26] Codex Handoff - Six-herb formal card sample
+
+- **Agent / branch / content commit**: Codex / `codex/herbs-release-exterior-sample` / `50e6b07`
+- **Task**: Formal-template sample for 蒲公英、桂枝、生薑、荊芥、防風、紫蘇葉.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, build-generated `data/generated/app_data.js`, `data/generated/knowledge_data.js`, and `PROJECT_LOG.md`.
+- **Sources**: Chenoweth course PDF/CSV first; CloudTCM and American Dragon cross-checks recorded per field. American Dragon 紫蘇葉 was verification-blocked and was not claimed as a content source.
+- **2026-07-26 correction**: Replaced incorrect `NCCAOM` labels on these six cards with `NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A`; herb-specific board emphasis remains explicitly attributed to Chenoweth course material.
+- **Validation**: six-herb delta PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS; `build-data.js` PASS.
+- **Existing full-repo blockers**: `validate-data.js` expects 681 points but runtime has 751; `validate-encoding.js` reports pre-existing repository-wide import/acupoint issues; `validate-herb-canon.js` has legacy staging-status, formula-link, and incomplete-record failures outside this sample.
+- **Protected areas not touched manually**: `js/`, `app.js`, `index.html`, `scripts/`, acupoint/Tung/auricular source data, and generated files other than build outputs.
+- **Manual review / next action**: Ting should review the six rendered cards, especially source disagreements for 桂枝 pregnancy/bleeding and 防風 pregnancy wording; then Claude can approve expansion to the remaining warm-acrid herbs.
+
 ## [2026-07-24] Antigravity Handoff - 經外奇穴 Extra Points (EX) Implementation
 
 - **Agent**: Antigravity (Pair programming with Ting)
@@ -79,3 +118,12 @@
 ### Recommended Next Steps for Large-Scale Rectification (大規模整改):
 - Audit remaining formulas in `data/herbs/formulas.json` line-by-line against Hong Kong Baptist University School of Chinese Medicine (Zhongyifangji.com) and CloudTCM.
 - Enrich bilingual English/Chinese exam ratings, indication tags, and safety cautions for each formula without batch placeholders.
+# [2026-07-26] Codex Handoff — Transform Phlegm five-card batch
+
+- **Branch**: `codex/herbs-release-exterior-sample`
+- **Task**: Formal cards for 天南星、白附子、白芥子、桔梗、旋覆花 plus rich herb pairs.
+- **Files**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, generated data, dispatch rule and project log.
+- **Validation**: build-data PASS; herb-standard PASS; content-junk PASS; pair delta 5/5 PASS; diff check PASS.
+- **Protected areas**: no JS, HTML, scripts, acupoint source data or user-uploaded curriculum files were modified or staged.
+- **Known limits**: CloudTCM exact single-herb URL for 白附子 was not verified, so it is intentionally absent; full-repo data-count/encoding failures pre-exist.
+- **Next**: Ting reviews five rendered cards and colored pair cards; Claude may review safety wording and merge.

@@ -450,6 +450,28 @@
       ]
     },
     {
+      "id": "pair.ban_xia__sheng_jiang",
+      "herbs": [
+        "herb.ban_xia",
+        "herb.sheng_jiang"
+      ],
+      "name_zh": "半夏配生薑",
+      "name_en": "Ban Xia with Sheng Jiang",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "半夏燥濕化痰、降逆止嘔；生薑溫中和胃、降逆止嘔，並能制約半夏之毒。兩藥相使，增強化飲降逆、和胃止嘔之力（小半夏湯）。",
+      "pair_meaning_en": "Ban Xia transforms Phlegm and redirects rebellious Qi; Sheng Jiang warms and harmonizes the Stomach, assists the antiemetic action, and moderates Ban Xia toxicity.",
+      "indication_zh": "胃寒痰飲上逆：噁心嘔吐、吐清水痰涎、心下痞悶（小半夏湯證）",
+      "indication_en": "Cold Phlegm and thin fluids rebelling from the Stomach: nausea, vomiting of clear fluids and epigastric focal distention.",
+      "caution_zh": "陰虛燥咳、津傷口渴、血證及痰熱而無適當清熱配伍者忌用；內服須用炮製半夏。",
+      "caution_en": "Avoid in Yin or fluid deficiency, bleeding disorders, or unbalanced Phlegm-Heat; only processed Ban Xia is used internally.",
+      "found_in_formulas": [],
+      "sources": [
+        "NCBAHM_2026_CH_Appendix_B",
+        "chenoweth_materia_medica_p26",
+        "american_dragon"
+      ]
+    },
+    {
       "id": "pair.gui_zhi__bai_shao",
       "herbs": [
         "herb.gui_zhi",
@@ -928,8 +950,236 @@
       "sources": [
         "cloudtcm_herb_pages"
       ]
+    },
+    {
+      "id": "pair.tian_nan_xing__ban_xia",
+      "herbs": [
+        "herb.tian_nan_xing",
+        "herb.ban_xia"
+      ],
+      "name_zh": "天南星配半夏",
+      "name_en": "Tian Nan Xing with Ban Xia",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "天南星燥濕化痰、祛風止痙，長於頑痰與風痰；半夏燥濕化痰、降逆和胃，長於濕痰與胃氣上逆。兩藥相須，燥濕化痰之力增強，並兼顧痰壅、氣逆。",
+      "pair_meaning_en": "Tian Nan Xing treats stubborn and Wind-Phlegm; Ban Xia dries Dampness, transforms Phlegm and descends rebellious Qi. Together they strongly transform Damp-Phlegm.",
+      "indication_zh": "濕痰、頑痰壅盛：咳嗽痰多黏稠、胸膈痞悶、眩暈噁心。",
+      "indication_en": "Abundant Damp or stubborn Phlegm with cough, copious sputum, chest oppression, dizziness and nausea.",
+      "caution_zh": "兩藥均溫燥有毒，內服必須用炮製品；陰虛燥痰、孕婦禁用，痰熱證須配清熱藥。",
+      "caution_en": "Both herbs are warm, drying and toxic; use only processed forms internally. Contraindicated in pregnancy and Yin-deficient Dry Phlegm.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"
+      ]
+    },
+    {
+      "id": "pair.bai_fu_zi__bai_jiang_can__quan_xie",
+      "herbs": [
+        "herb.bai_fu_zi",
+        "herb.bai_jiang_can",
+        "herb.quan_xie"
+      ],
+      "name_zh": "白附子配白僵蠶、全蠍",
+      "name_en": "Bai Fu Zi with Bai Jiang Can and Quan Xie",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "白附子祛頭面風痰、止痙；白僵蠶與全蠍息風止痙、通絡。三藥相須，祛風化痰、止痙通絡，構成牽正散核心配伍。",
+      "pair_meaning_en": "Bai Fu Zi dispels Wind-Phlegm from the head and face; Bai Jiang Can and Quan Xie extinguish Wind and unblock the channels. This is the core trio of Qian Zheng San.",
+      "indication_zh": "風痰阻絡：口眼歪斜、面肌抽動、面癱，或痙攣拘急。",
+      "indication_en": "Wind-Phlegm obstructing the channels with facial paralysis, facial twitching or spasms.",
+      "caution_zh": "三藥均須嚴格控量；白附子有毒，孕婦禁用；全蠍有毒，出血傾向者慎用。",
+      "caution_en": "Dose carefully. Bai Fu Zi is toxic and contraindicated in pregnancy; use Quan Xie cautiously with bleeding tendency.",
+      "found_in_formulas": [
+        "formula.qian_zheng_san"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html",
+        "formula.qian_zheng_san"
+      ]
+    },
+    {
+      "id": "pair.bai_jie_zi__zi_su_zi__lai_fu_zi",
+      "herbs": [
+        "herb.bai_jie_zi",
+        "herb.zi_su_zi",
+        "herb.lai_fu_zi"
+      ],
+      "name_zh": "白芥子配紫蘇子、萊菔子",
+      "name_en": "Bai Jie Zi with Zi Su Zi and Lai Fu Zi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "白芥子溫肺豁痰，紫蘇子降氣化痰平喘，萊菔子消食導滯、降氣化痰。三藥相須，痰、氣、食並治，為三子養親湯核心。",
+      "pair_meaning_en": "Bai Jie Zi warms the Lung and expels Phlegm, Zi Su Zi descends Qi and calms wheezing, and Lai Fu Zi reduces food stagnation. The trio treats Phlegm, Qi rebellion and food stagnation together.",
+      "indication_zh": "痰壅氣逆兼食積：咳嗽喘逆、痰多胸悶、食少腹脹。",
+      "indication_en": "Phlegm with rebellious Qi and food stagnation: cough, wheezing, copious sputum, chest oppression and abdominal distention.",
+      "caution_zh": "陰虛燥咳、肺虛久咳者忌；氣虛無痰、無食積者不宜。",
+      "caution_en": "Avoid in Yin-deficient dry cough or chronic Lung-deficiency cough; inappropriate for Qi deficiency without Phlegm or food stagnation.",
+      "found_in_formulas": [
+        "formula.san_zi_yang_qin_tang"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html",
+        "formula.san_zi_yang_qin_tang"
+      ]
+    },
+    {
+      "id": "pair.jie_geng__gan_cao",
+      "herbs": [
+        "herb.jie_geng",
+        "herb.gan_cao"
+      ],
+      "name_zh": "桔梗配甘草",
+      "name_en": "Jie Geng with Gan Cao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "桔梗宣肺利咽、祛痰排膿；甘草清熱解毒、緩急利咽並調和藥性。桔梗為主、甘草為輔，相使而增強利咽止痛與排膿作用。",
+      "pair_meaning_en": "Jie Geng disseminates Lung Qi, benefits the throat and expels pus; Gan Cao assists by clearing toxicity, soothing pain and harmonizing the combination.",
+      "indication_zh": "肺氣不宣或熱毒咽痛：咽喉腫痛、聲音嘶啞；亦用於肺癰咳吐膿痰（桔梗湯）。",
+      "indication_en": "Sore, swollen throat and hoarseness from constrained Lung Qi or toxicity; also Lung abscess with purulent sputum.",
+      "caution_zh": "陰虛乾咳、咳血者慎用桔梗；甘草不宜長期大量使用，水腫、高血壓者注意。",
+      "caution_en": "Use Jie Geng cautiously with Yin-deficient dry cough or hemoptysis. Avoid prolonged high-dose Gan Cao in edema or hypertension.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"
+      ]
+    },
+    {
+      "id": "pair.xuan_fu_hua__dai_zhe_shi",
+      "herbs": [
+        "herb.xuan_fu_hua",
+        "herb.dai_zhe_shi"
+      ],
+      "name_zh": "旋覆花配代赭石",
+      "name_en": "Xuan Fu Hua with Dai Zhe Shi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "旋覆花消痰降氣、降逆止嘔；代赭石重鎮降逆。旋覆花為主、代赭石為輔，相使以加強降胃氣、止噫氣嘔吐，為旋覆代赭湯核心藥對。",
+      "pair_meaning_en": "Xuan Fu Hua transforms Phlegm and descends rebellious Qi; Dai Zhe Shi heavily anchors rebellion downward. Together they strongly descend Stomach Qi.",
+      "indication_zh": "胃虛痰阻、胃氣上逆：心下痞硬、噫氣頻作、呃逆、噁心嘔吐。",
+      "indication_en": "Stomach deficiency with Phlegm and rebellious Qi: focal epigastric distention, frequent belching, hiccups, nausea and vomiting.",
+      "caution_zh": "旋覆花須包煎；代赭石質重，孕婦慎用，脾胃虛弱者不宜過量。",
+      "caution_en": "Wrap Xuan Fu Hua for decoction. Use heavy Dai Zhe Shi cautiously in pregnancy and avoid excessive doses in weak digestion.",
+      "found_in_formulas": [
+        "formula.xuan_fu_dai_zhe_tang"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html",
+        "formula.xuan_fu_dai_zhe_tang"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__ren_shen",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.ren_shen"
+      ],
+      "name_zh": "麻黃配人參",
+      "name_en": "Ma Huang with Ren Shen",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃發汗散寒、宣肺解表；人參益氣扶正，防止體虛者發汗更傷正氣。麻黃為主、人參為輔，相使以達扶正解表。",
+      "pair_meaning_en": "Ma Huang releases Wind-Cold through sweating, while Ren Shen supports source Qi and limits further depletion in a deficient patient.",
+      "indication_zh": "氣虛外感風寒：惡寒、無汗、頭痛身痛兼氣短乏力、脈弱。",
+      "indication_en": "Exterior Wind-Cold with Qi deficiency: chills, no sweating and body aches with fatigue, shortness of breath and a weak pulse.",
+      "caution_zh": "表虛自汗、陰虛盜汗者仍不宜使用麻黃；不可因配人參而忽略心血管與交互作用風險。",
+      "caution_en": "Still unsuitable for spontaneous or night sweating; adding Ren Shen does not remove Ma Huang's cardiovascular or interaction risks.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__fu_zi",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.fu_zi"
+      ],
+      "name_zh": "麻黃配附子",
+      "name_en": "Ma Huang with Fu Zi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃發汗解表、宣肺行水；附子溫陽扶正、助陽散寒。兩藥相使，使外寒得解而不致更傷衰微之陽氣。",
+      "pair_meaning_en": "Ma Huang releases the exterior and mobilizes water; Fu Zi restores Yang and assists the dispersal of Cold.",
+      "indication_zh": "陽虛外感或陽虛水腫：畏寒甚、無汗、肢冷、神疲、脈沉微。",
+      "indication_en": "Exterior Cold or edema with Yang deficiency: marked aversion to cold, no sweating, cold limbs, fatigue and a deep faint pulse.",
+      "caution_zh": "附子有毒，必須使用合格炮製品並遵守劑量與煎煮規範；陰虛火旺及心律不整者不宜。",
+      "caution_en": "Fu Zi is toxic and requires proper processing, dosing and decoction; avoid in Yin-deficiency Heat and arrhythmia.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__gan_jiang__xi_xin__ban_xia",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.gan_jiang",
+        "herb.xi_xin",
+        "herb.ban_xia"
+      ],
+      "name_zh": "麻黃配乾薑、細辛、半夏",
+      "name_en": "Ma Huang with Gan Jiang, Xi Xin and Ban Xia",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "麻黃解表宣肺，乾薑、細辛溫肺化飲，半夏燥濕化痰、降逆。合用由表及裡溫散寒飲，相須增強止咳平喘之力。",
+      "pair_meaning_en": "Ma Huang releases the exterior; Gan Jiang and Xi Xin warm the Lung and transform thin fluids; Ban Xia dries Phlegm and redirects rebellion.",
+      "indication_zh": "外寒內飲：惡寒發熱、無汗、咳喘、痰多清稀、胸滿或乾嘔（小青龍湯核心組合）。",
+      "indication_en": "Exterior Cold with internal thin fluids: chills, fever, no sweating, cough, wheezing, copious clear sputum, chest fullness or retching.",
+      "caution_zh": "陰虛燥咳、津傷、血證及無寒飲者不宜；細辛與半夏均須符合炮製及劑量規範。",
+      "caution_en": "Avoid in Yin-deficient dry cough, fluid injury, bleeding or absence of Cold fluids; observe processing and dose requirements for Xi Xin and Ban Xia.",
+      "found_in_formulas": [
+        "formula.xiao_qing_long_tang"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+        "formula.xiao_qing_long_tang"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__yi_yi_ren",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.yi_yi_ren"
+      ],
+      "name_zh": "麻黃配薏苡仁",
+      "name_en": "Ma Huang with Yi Yi Ren",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃散表寒、通腠理，薏苡仁滲濕舒筋。麻黃為主散寒，薏苡仁為輔利濕，相使以祛風寒濕痹。",
+      "pair_meaning_en": "Ma Huang disperses exterior Cold and opens the interstices; Yi Yi Ren leaches Dampness and relaxes the sinews.",
+      "indication_zh": "風寒濕痹偏表：周身疼痛、關節沉重，或一身盡疼、午後加重。",
+      "indication_en": "Superficial Wind-Cold-Damp painful obstruction with generalized aching and heavy joints.",
+      "caution_zh": "津液不足、陰虛或自汗者慎；孕期使用薏苡仁亦須專業評估。",
+      "caution_en": "Use cautiously with fluid or Yin deficiency and spontaneous sweating; Yi Yi Ren also requires pregnancy review.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.shu_di_huang",
+        "herb.bai_jie_zi",
+        "herb.lu_jiao_jiao"
+      ],
+      "name_zh": "麻黃配熟地黃、白芥子、鹿角膠",
+      "name_en": "Ma Huang with Shu Di Huang, Bai Jie Zi and Lu Jiao Jiao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃開腠散寒，白芥子溫化寒痰、通絡散結，熟地黃與鹿角膠溫補精血。散寒通滯而兼顧陰血，合治陰寒凝聚。",
+      "pair_meaning_en": "Ma Huang opens the interstices, Bai Jie Zi warms Cold Phlegm and disperses nodules, while Shu Di Huang and Lu Jiao Jiao support essence and Blood.",
+      "indication_zh": "陽虛寒凝之陰疽、貼骨疽或漫腫無頭：局部不紅不熱、皮色不變、酸痛無力（陽和湯核心配伍）。",
+      "indication_en": "Yin-type sores from Yang deficiency and congealed Cold: diffuse deep swelling without redness, heat or a distinct head.",
+      "caution_zh": "陽證癰瘍、紅腫熱痛或陰虛火旺者禁用；麻黃心血管風險仍須評估。",
+      "caution_en": "Contraindicated for hot Yang-type abscesses or Yin-deficiency Fire; Ma Huang cardiovascular risks still require assessment.",
+      "found_in_formulas": [
+        "formula.yang_he_tang"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+        "formula.yang_he_tang"
+      ]
     }
   ],
-  "updated_at": "2026-07-23",
-  "total_pairs": 40
+  "updated_at": "2026-07-26",
+  "total_pairs": 51
 }

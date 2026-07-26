@@ -23,6 +23,13 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-26 - Six-herb formal card sample (Codex)
+- Scope: 蒲公英、桂枝、生薑、荊芥、防風、紫蘇葉，依正式 herb card template 補齊雙語欄位。
+- Sources: Chenoweth 課件優先，交叉核對 CloudTCM 與 American Dragon；衝突並列且逐欄標註來源。
+- Files: `data/herbs/herb_canon_shortlist.json`；生成檔由 `scripts/build-data.js` 重建。
+- Validation: six-herb delta、herb standard、content junk 與 diff check 通過；全庫既有 validator failures 另記 handoff。
+- Next: Ting 在 app 逐張審閱排序、禁忌與來源衝突，再決定是否擴充整批辛溫解表藥。
+
 ### 2026-07-22 - Bilingual CloudTCM disease index and Trigeminal Neuralgia (Codex)
 
 Converted all 205 CloudTCM disease/symptom browse cards into 190 unique,
@@ -2394,3 +2401,9 @@ Current repo state as of this log:
 - GB93 index is `13/93`.
 - Master Tung index has 277 index-only records.
 - Standard 361 point pages exist, but many are placeholders or need source review.
+# 2026-07-26 Codex — Transform Phlegm five-card batch
+- Completed formal cards for 天南星、白附子、白芥子、桔梗、旋覆花 from Chenoweth pp.31–32 with CloudTCM/American Dragon cross-checks.
+- Added five rich colored herb-pair records with 七情 relation, bilingual rationale, 主治, 注意 and sources.
+- Added the rule that every herb, formula or point named by the exam outline/course materials must have a record even when no template exists.
+- Validation: build-data, herb-standard, content-junk, pair delta and diff checks PASS.
+- Existing full-repo blockers remain: validate-data 751/681 count mismatch and legacy encoding findings outside this batch.

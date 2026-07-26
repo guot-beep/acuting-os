@@ -443,6 +443,16 @@
   function detailShell(record, kind, panels) {
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
+    const mappedHerb = kind === "herb" ? (HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))) : null;
+    const preferredCitation = kind === "herb"
+      ? (record.source_citations || []).find((source) => source?.url && /主要外部圖像|圖像與藥材辨識/.test(source.scope || ""))
+        || (record.source_citations || []).find((source) => source?.url)
+      : null;
+    const herbReferenceUrl = mappedHerb?.page_url || record.cloudtcm_url || preferredCitation?.url
+      || record.exact_source_url || (record.source_urls || []).find(Boolean) || "";
+    const herbReferenceLabel = mappedHerb || record.cloudtcm_url
+      ? "雲端中醫 CloudTCM"
+      : (preferredCitation?.name || "外部藥材參考 Source");
     const facts = kind === "formula"
       ? [
           ["分類 Category", record.category || record.category_en || "待補"],
@@ -452,9 +462,11 @@
         ]
       : [
           ["分類 Category", record.category || record.category_en || "待補"],
-          ["性味 Properties", usableText(record.properties_taste_temp) || "待補"],
-          ["歸經 Channels", cleanList(record.channels_entered).join("、") || "待補"],
-          ["雲端中醫 CloudTCM", `<a href="${esc((HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))) ? (HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))).page_url : (record.cloudtcm_url || 'https://cloudtcm.com/'))}" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:bold;text-decoration:underline;">開啟藥材頁面 ↗</a>`, true]
+          ["性味 Properties", usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補"],
+          ["歸經 Channels", cleanList(record.channels_entered || record.channels_zh).join("、") || "待補"],
+          [herbReferenceLabel, herbReferenceUrl
+            ? `<a href="${esc(herbReferenceUrl)}" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:bold;text-decoration:underline;">開啟藥材頁面 ↗</a>`
+            : "來源待補", Boolean(herbReferenceUrl)]
         ];
     return `
       <div class="k-detail-shell">
@@ -469,7 +481,7 @@
               <div class="k-detail-badges"><span>${esc(record.category || record.category_en || kind)}</span></div>
               ${kind === "formula" ? `<h2>${esc(record.name_zh || record.pinyin)} <small>${esc(record.pinyin)}</small></h2><p class="k-detail-en">${esc(record.name_en)}</p>` : `
               <h2>${esc(record.name_zh || record.name_en)} <small style="font-size:0.8em;font-weight:bold;color:#ffffff;margin-left:8px;">${esc(record.pinyin_toned || record.pinyin || "")} · ${esc(record.name_en || "")}</small></h2>
-              ${record.latin_name ? `<p class="k-detail-en" style="color:#38bdf8;font-weight:600;margin:3px 0 0 0;font-size:0.95em;">${esc(record.latin_name)}</p>` : `<p class="k-detail-en">${esc(record.name_en)}</p>`}
+              ${(record.pharmaceutical_latin || record.latin_name) ? `<p class="k-detail-en" style="color:#38bdf8;font-weight:600;margin:3px 0 0 0;font-size:0.95em;">${esc(record.pharmaceutical_latin || record.latin_name)}</p>` : ""}
               `}
             </div>
           <div class="k-detail-header-actions">
@@ -696,8 +708,8 @@
           ${record.exam_importance ? `<p class="k-exam-badge" style="color:#d97706;font-weight:bold;margin-bottom:8px;">${esc(record.exam_importance)}</p>` : ""}
           ${record.exam_pearl ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 考試重點 Exam Pearl:</strong> ${esc(record.exam_pearl)}</div>` : ""}
           <div class="k-detail-columns">
-            ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
-            ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered))}
+            ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
+            ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered || record.channels_zh))}
             ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "6~15g")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
             ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "根 / 果實 / 全草")}</p>`)}
           </div>
