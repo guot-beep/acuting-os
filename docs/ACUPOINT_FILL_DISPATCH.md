@@ -1,0 +1,53 @@
+# 穴位優化接手指令(貼給 Codex / Antigravity)
+
+> 你在 AcuTing OS repo 幫 Ting **優化穴位卡**(不是從零填 —— 361 穴欄位已近乎填滿,
+> 你的工作是**校正、精煉、補英文、加考點**)。
+>
+> **開工前依序讀**:`docs/BLUEPRINT.md` → `docs/AI_ROLES.md` →
+> **`docs/ACUPOINT_CARD_TEMPLATE.md`(目標卡片 + 硬規則)** →
+> `curriculum/acupoints/README.md`(Ting 的針灸課件)。
+> 中藥的做法可參考已定案的 `docs/HERB_CARD_TEMPLATE.md` 與樣板 `herb.du_zhong`。
+>
+> **目標檔**:`data/acupoints/361.json`。**一次一條經絡**。
+> 先跑清單看這批要修什麼:
+> ```
+> node scripts/validate-acupoint-standard.js --worklist --channel LU --all
+> ```
+>
+> **來源優先序**:① `curriculum/acupoints/` 課件 ② board exam outline
+> ③ CloudTCM / eLotus(已入庫)④ WHO 定位標準。
+> 兩源不合 → **兩個都記、標出處**,絕不二選一。查不到就標「待補」,**不准假裝查過**。
+>
+> **最容易做錯的三件事**
+> 1. **功效**:交叉比對後留 **3–8 條(目標 4–6)**,**最重要的排前面**
+>    (判準:board 考點 + 各家共識)。現況很多穴列了 9–16 條甚至 36 條,要**精煉**;
+>    但真的只有 3 條就列 3 條,不要湊數。
+> 2. **中英對齊**:`functions_en` 現在常常只有 1 條、中文卻 16 條 ——
+>    必須**逐項對應寫齊**。長度不一致 = A4 FAIL;不確定就整個 `_en` 留空。
+> 3. **禁忌要穴位專屬**:「局部皮膚破損或感染時避開」這種共用套話 = A8 FAIL。
+>    寫這個穴的真實風險(氣胸、大血管、神經、孕婦禁針…)。
+>
+> **絕對不可以**:刪弱既有的安全警告(LU1/LU2/GB21/KI27 等氣胸警告)、
+> 動針刺深度數字除非有更好來源(要標出處)、把英文寫進 `_zh` 欄位。
+>
+> **每穴要補**:`exam_importance`(board 考點 + 特定穴身份:五輸/原/絡/俞/募/
+> 八會/交會)、`exam_pearl`(2–3 句記憶重點)、`field_sources`(逐欄引用,
+> 課件用 `curriculum/acupoints/<file>#p<N>`)、`review_status:"draft"`。
+>
+> **完成條件**:`node scripts/build-data.js` 後,
+> `validate-acupoint-standard.js`、`validate-data.js`、`validate-point-ids.js`、
+> `validate-encoding.js`(中文不可變亂碼)、`validate-content-junk.js` 全綠。
+> 開 branch `<你的名字>/points-<經絡>` → PR,**不直接推 main**。
+> PROJECT_LOG 留 5 行 handoff(經絡、穴數、來源、validator 結果、疑問)。
+>
+> **紅線**:只碰 `data/acupoints/`。**絕不碰** `js/`、`app.js`、`index.html`、
+> `scripts/`、`data/generated/`(用 build-data 重生)。
+> 架構問題問 Claude,安全數字衝突問 Claude,方向問題問 Ting。
+
+## 批次順序
+
+LU(11)→ LI(20)→ ST(45)→ SP(21)→ HT(9)→ SI(19)→ BL(67)
+→ KI(27,注意 11 穴的 `cautions_zh` 是英文要修)→ PC(9)→ TE(23)
+→ GB(44)→ LV(14)→ CV(24)→ GV(28)
+
+建議 **LU 先做**(11 穴,小批),Ting 驗收後再放量。
