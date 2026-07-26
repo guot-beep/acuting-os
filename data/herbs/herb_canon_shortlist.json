@@ -16,7 +16,7 @@
         "膀胱經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、微苦，溫（Chenoweth: Acrid, Slightly Bitter, Warm）",
       "functions": [
         "發汗解表",
@@ -56,7 +56,7 @@
         "cardiac_review",
         "pregnancy_review"
       ],
-      "clinical_use_note": "麻黃是中藥,別名:結力根,色道麻,龍沙,狗骨,卑鹽,卑相，主治功效解表、止咳化痰、散風寒,發汗作用,鎮靜,散風寒,抗過敏,強心,利水滲濕,利水消腫,止咳平喘,抗發炎,止痛,抗菌,興奮中樞神經,降血糖。注意副作用是晚上不要服用以免會失眠。體虛弱而自汗、盜汗、虛寒虛喘者、中風癱瘓、陽虛腠理不密之人均忌服。心血管疾病,高血壓,甲狀腺疾病,攝護腺肥大患者,減肥慎用。",
+      "clinical_use_note": "學習辨識：麻黃是辛溫解表中發汗力最強的代表藥，核心辨證為「風寒表實、無汗、脈浮緊」；表虛有汗更偏桂枝，不能只見感冒便用麻黃。除發汗外，麻黃能宣肺平喘與利水消腫：配杏仁一宣一降治肺氣壅遏咳喘，配石膏轉治肺熱喘咳，配附子用於陽虛外感。生麻黃偏發汗利水，蜜炙麻黃偏止咳平喘，麻黃絨力弱。安全重點是麻黃鹼的擬交感與中樞興奮作用；心血管病、高血壓、甲狀腺機能亢進、青光眼、攝護腺肥大及失眠者須特別避免或慎用，並核對興奮劑、MAOI、地高辛等交互作用。",
       "modern_use_tags": [
         "common_cold",
         "uri",
@@ -127,25 +127,36 @@
           "其他功效"
         ]
       },
-      "dosage": "{\"一般建議\":\"\\n\\n* 內服：煎湯，1.5-10g；或入丸、散。\\n* 麻黃生用發汗力强，蜜炙 用可減弱發汗力，且有潤肺之功。故發汗解表宜生用，平喘止咳多炙用。\\n* 內服煎湯宜先煎，去水面浮沫。麻黄絨發汗力弱，多用於兒科。\\n* 外用：適量，研末(口畜)鼻或研末敷。\\n\",\"食療用量範圍\":\"\",\"特殊說明\":\"\"}",
+      "dosage": {
+        "decoction_g": "CloudTCM、American Dragon：1.5–10g",
+        "tincture_ml": "American Dragon：1–3mL",
+        "特殊說明": "煎劑可先煎去浮沫；發汗解表宜生用，止咳平喘多蜜炙用。不可因來源上限為 10g 即自行使用大劑量。"
+      },
+      "dosage_g": "1.5–10g（CloudTCM、American Dragon）",
       "cautions": "晚上服用麻黃可能興奮中樞神經，易致失眠。 [1]\n體虛自汗、盜汗、虛寒虛喘、中風癱瘓、陽虛者忌服。\n心血管疾病患者（如心衰竭、心肌梗塞、心臟病、高血壓）需慎服，麻黃可升高血壓。\n甲狀腺疾病患者或對麻黃過敏者應慎用。\n攝護腺肥大者可能導致尿滯留。\n《本草經疏》提到麻黃能去寒邪，但多服會損耗真元之氣。\n孕婦或哺乳期婦女應慎用麻黃。\n正在服用感冒藥或綜合感冒藥者，應諮詢醫師是否能服麻黃。\n麻黃劑量過高時可能引起心跳加速、呼吸急促、噁心、嘔吐、失眠、情緒亢奮、頭痛、癲癇及顫抖等副作用。",
       "source_urls": [
-        "https://cloudtcm.com/herb/1"
+        "https://cloudtcm.com/herb/1",
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+        "https://www.nccih.nih.gov/health/ephedra",
+        "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
       ],
       "exact_source_url": "https://cloudtcm.com/herb/1",
       "fetched_at": "2026-07-23T07:19:57.615Z",
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "晚上服用麻黃可能興奮中樞神經，易致失眠。 [1]",
-        "體虛自汗、盜汗、虛寒虛喘、中風癱瘓、陽虛者忌服。",
-        "心血管疾病患者（如心衰竭、心肌梗塞、心臟病、高血壓）需慎服，麻黃可升高血壓。",
-        "甲狀腺疾病患者或對麻黃過敏者應慎用。",
-        "攝護腺肥大者可能導致尿滯留。",
-        "《本草經疏》提到麻黃能去寒邪，但多服會損耗真元之氣。",
-        "孕婦或哺乳期婦女應慎用麻黃。",
-        "正在服用感冒藥或綜合感冒藥者，應諮詢醫師是否能服麻黃。",
-        "麻黃劑量過高時可能引起心跳加速、呼吸急促、噁心、嘔吐、失眠、情緒亢奮、頭痛、癲癇及顫抖等副作用。"
+        "避免晚間服用；中樞興奮可能引起失眠、焦慮或情緒亢奮。",
+        "不可大劑量或久用；過汗會耗傷正氣與津液。",
+        "過量或高暴露可引起高血壓、心悸、心跳過速、呼吸急促、噁心、嘔吐、頭痛、顫抖、癲癇、腦中風、心肌梗塞或精神症狀。",
+        "與地高辛等強心苷併用可能增加心律不整風險。",
+        "與單胺氧化酶抑制劑（MAOI）併用可能引發高血壓危象。",
+        "與中樞興奮劑、咖啡因、麻黃鹼、偽麻黃鹼或 beta 腎上腺素致效劑併用可能產生加成性興奮或毒性。",
+        "可能改變茶鹼作用；併用須由專業人員核對藥物。",
+        "因增加去甲腎上腺素活性，可能降低 beta 阻斷劑效果。",
+        "與利尿劑併用可能增加水分或電解質流失。",
+        "可能降低 benzodiazepines 或其他鎮靜劑的效果。",
+        "須核對所有感冒藥與綜合感冒藥，避免重複攝取擬交感成分。",
+        "美國已因嚴重安全風險禁止含麻黃鹼生物鹼的膳食補充品；此法規情境須與合格中醫師監督下的中藥處方分開理解。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1",
       "safety_fetched_at": "2026-07-23T07:24:57.554Z",
@@ -153,20 +164,28 @@
       "functions_zh": [
         "發汗解表",
         "宣肺平喘",
-        "利水消腫"
+        "利水消腫",
+        "溫散寒邪"
       ],
       "modern_functions_zh": [
-        "發汗",
-        "支氣管擴張",
-        "鎮咳",
-        "利尿",
-        "升血壓",
-        "興奮中樞神經",
-        "解熱",
-        "抗發炎",
-        "抗過敏",
-        "抗菌抗病毒",
-        "鎮痛"
+        "促進汗腺分泌與發汗",
+        "解熱作用",
+        "支氣管擴張作用",
+        "鎮咳作用",
+        "利尿作用",
+        "血管收縮與升高血壓作用",
+        "興奮中樞神經作用",
+        "增強心肌收縮與加快心率",
+        "抗發炎作用",
+        "抗過敏作用",
+        "抗菌作用",
+        "抗病毒作用",
+        "鎮痛作用",
+        "揮發油鎮靜作用",
+        "揮發油抗驚厥作用",
+        "降血糖作用",
+        "利膽作用",
+        "調節腸道平滑肌活動"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1",
@@ -232,18 +251,31 @@
           "analysis_zh": "**發汗機理：** 麻黃可能通過兩種機制促進發汗。一是阻礙汗腺導管對鈉離子的重吸收，導致汗液分泌增加。二是可能與興奮中樞神經系統的相關部位以及外周α受體有關。\n\n**對腸道的作用：** 麻黃鹼(Eph) 在離體實驗中，對豚鼠回腸的自發收縮具有抑制作用，也能減弱乙酰膽鹼和5-羥色胺引起的腸道收縮。然而，當腸肌經過河豚毒素處理後，麻黃鹼反而能激發腸道收縮。這提示麻黃鹼對腸肌可能具有直接的抑制作用，且該抑制作用可能通過興奮β-受體來實現。\n\n**利膽和脂肪合成作用：** 麻黃提取物的水溶液靜脈注射可以促進實驗兔的膽汁分泌，表現出利膽作用。此外，麻黃具有促進脂肪細胞脂肪合成的作用，其作用機制可能與胰島素類似。"
         }
       ],
-      "aliases_zh": [],
+      "aliases_zh": [
+        "結力根",
+        "色道麻",
+        "龍沙",
+        "狗骨",
+        "卑鹽",
+        "卑相",
+        "淨麻黃",
+        "麻黃絨"
+      ],
       "category_zh": "發散風寒藥",
       "channels_zh": [
         "肺經",
         "膀胱經"
       ],
       "indications_zh": [
-        "風寒表實證(急性、實證):惡寒發熱、無汗、脈浮緊 —— 配 桂枝（麻黃湯）",
-        "咳嗽氣喘 —— 配 杏仁、甘草（三拗湯）",
-        "熱邪壅肺之喘咳、鼻翼煽動 —— 配 石膏、杏仁（麻杏石甘湯）",
-        "氣虛而感風寒 —— 配 人參",
-        "風水水腫(表邪引起) —— 生用發汗利水"
+        "風寒表實證 —— 惡寒發熱、無汗、頭身疼痛、鼻塞、脈浮緊；配 桂枝（麻黃湯）。",
+        "風寒束肺、肺氣壅遏 —— 咳嗽、氣喘、胸悶；配 杏仁、甘草（三拗湯）。",
+        "熱邪壅肺 —— 發熱、口渴、喘咳氣急、鼻翼煽動；配 石膏、杏仁（麻杏石甘湯）。",
+        "氣虛而外感風寒 —— 惡寒無汗兼氣短乏力；配 人參扶正解表。",
+        "風水水腫 —— 急性水腫、表證、小便不利；生麻黃宣肺發汗、通調水道。",
+        "風寒濕痹 —— 關節冷痛、屈伸不利；配 桂枝、白朮或薏苡仁溫散寒濕。",
+        "陽虛外感或陽虛水腫 —— 畏寒、肢冷、脈沉；配 附子溫陽解表、助陽行水。",
+        "外寒內飲之咳喘 —— 咳吐清稀痰涎、胸滿、喘息；配 乾薑、細辛、半夏（小青龍湯）。",
+        "寒凝經脈之陰疽、漫腫無頭或肢端血脈不通 —— 配 熟地黃、白芥子、鹿角膠等溫陽散寒通滯。"
       ],
       "study_tags": [
         "單味中藥",
@@ -281,24 +313,12 @@
         "抗發炎與抗過敏 (Anti-inflammatory & Anti-allergic)"
       ],
       "pao_zhi_notes_zh": "生麻黃發汗力強,用於發汗解表、利水消腫;蜜炙麻黃(炙)發汗力減、潤肺止咳平喘為主,用於慢性咳喘;麻黃絨力最弱,多用於兒科與體弱者。煎煮宜先煎去上沫。",
-      "key_pairs": [
-        {
-          "pair": "麻黃 + 桂枝 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "發汗解表、宣肺散寒（代表方：麻黃湯）。"
-        },
-        {
-          "pair": "麻黃 + 杏仁 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "宣肺降氣、平喘止咳（一宣一降對藥）。"
-        },
-        {
-          "pair": "麻黃 + 石膏 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "清肺平喘、宣散鬱熱（代表方：麻杏甘石湯）。"
-        }
-      ],
+      "key_pairs": [],
       "actions_en": [
         "Induces sweating and releases the exterior",
         "Diffuses Lung qi and calms wheezing",
-        "Promotes urination and reduces edema"
+        "Promotes urination and reduces edema",
+        "Warms and disperses Cold pathogens"
       ],
       "condition_tags_zh": [
         "風寒表實",
@@ -307,7 +327,12 @@
         "氣喘",
         "鼻塞",
         "水腫",
-        "小便不利"
+        "小便不利",
+        "風寒濕痹",
+        "陽虛外感",
+        "外寒內飲",
+        "肺熱喘咳",
+        "陰疽"
       ],
       "modern_pharmacology": [
         {
@@ -328,7 +353,7 @@
         }
       ],
       "pharmaceutical_latin": "Ephedrae Herba",
-      "part_used_en": "stem",
+      "part_used_en": "Dried herbaceous stem",
       "condition_tags_en": [
         "Wind-cold excess exterior",
         "Absence of sweating",
@@ -336,26 +361,73 @@
         "Wheezing",
         "Nasal congestion",
         "Edema",
-        "Difficult urination"
+        "Difficult urination",
+        "Wind-Cold-Damp painful obstruction",
+        "Exterior Cold with Yang deficiency",
+        "Exterior Cold with internal thin fluids",
+        "Lung Heat wheezing and cough",
+        "Yin-type sores"
       ],
       "modern_functions_en": [
-        "Diaphoretic",
-        "Bronchodilator",
-        "Antitussive",
-        "Diuretic",
-        "Raises blood pressure",
-        "CNS stimulant",
-        "Antipyretic",
-        "Anti-inflammatory",
-        "Antiallergic",
-        "Antibacterial / antiviral",
-        "Analgesic"
+        "Promotes sweat-gland secretion and diaphoresis",
+        "Antipyretic activity",
+        "Bronchodilator activity",
+        "Antitussive activity",
+        "Diuretic activity",
+        "Vasoconstrictive and blood-pressure-raising activity",
+        "Central nervous system stimulation",
+        "Positive inotropic and chronotropic activity",
+        "Anti-inflammatory activity",
+        "Antiallergic activity",
+        "Antibacterial activity",
+        "Antiviral activity",
+        "Analgesic activity",
+        "Sedative activity of the volatile oil",
+        "Anticonvulsant activity of the volatile oil",
+        "Hypoglycemic activity",
+        "Choleretic activity",
+        "Modulation of intestinal smooth-muscle activity"
       ],
-      "classical_text_zh": "《本草綱目》：「麻黃乃肺經專藥，故治肺病多用之。」",
-      "classical_text_en": "Ben Cao Gang Mu: \"Ma Huang is the specific herb of the Lung channel, hence its frequent use in Lung disorders.\"",
+      "classical_text_zh": "《神農本草經》：「主中風、傷寒頭痛，溫瘧。發表出汗，去邪熱氣。」",
+      "classical_text_en": "Shen Nong Ben Cao Jing: It treats wind-strike, Cold Damage headache and warm malaria; it releases the exterior through sweating and dispels pathogenic heat.",
       "exam_importance": "★ Board 高頻:解表藥－發散風寒(Wind Cold Releasing [1])代表藥;對藥收於 2026 NCBAHM Appendix B",
       "exam_pearl": "三大功效:①發汗解表(表實無汗才用)②宣肺平喘 ③利水消腫。安全考點:升血壓、興奮中樞 —— 高血壓、心臟病、失眠、甲狀腺疾病慎用/忌用。",
-      "safety_review_pending": "毒性/中西藥交互深度資料待補;麻黃鹼與 MAOI、興奮劑、降壓藥的交互作用需第二來源確認(安全關鍵)",
+      "safety_review_pending": "Ting 複核重點：區分中醫處方中的炮製麻黃與美國被禁售的含麻黃鹼膳食補充品；劑量、病人心血管風險與併用藥物須逐案確認。",
+      "source_citations": [
+        {
+          "name": "Chenoweth Materia Medica 課件",
+          "scope": "p.1：性味歸經、傳統功效、主治辨證、主要配伍、炮製差異及 board 重點"
+        },
+        {
+          "name": "雲端中醫 CloudTCM・麻黃",
+          "url": "https://cloudtcm.com/herb/1",
+          "scope": "精確單味藥頁與圖像；英文名、基原、性味歸經、傳統功效、現代藥理、1.5–10g 劑量、炮製及注意事項"
+        },
+        {
+          "name": "American Dragon・Ma Huang",
+          "url": "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "scope": "Pharmaceutical Latin、1.5–10g 劑量、actions、indications、major combinations、contraindications 與 herb–drug interactions"
+        },
+        {
+          "name": "NCBAHM 2026 CH Content Outline",
+          "scope": "Domain I.A 與 Appendix B 對藥範圍"
+        },
+        {
+          "name": "NCCIH・Ephedra: Usefulness and Safety",
+          "url": "https://www.nccih.nih.gov/health/ephedra",
+          "scope": "美國膳食補充品禁售背景、心血管與神經系統嚴重風險、孕哺期與兒童安全"
+        },
+        {
+          "name": "Memorial Sloan Kettering・Ephedra",
+          "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra",
+          "scope": "禁忌、嚴重不良反應及 MAOI、CNS stimulants、theophylline、digoxin 等交互作用"
+        },
+        {
+          "name": "Wikimedia Commons 圖像",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ephedra_sinica_bgi.jpg/640px-Ephedra_sinica_bgi.jpg",
+          "scope": "麻黃植物圖像"
+        }
+      ],
       "field_sources": {
         "pinyin": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
@@ -370,13 +442,17 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
         ],
         "functions_zh": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "actions_en": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "indications_zh": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "condition_tags_zh": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
@@ -385,13 +461,27 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
         ],
         "modern_functions_zh": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "modern_functions_en": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "key_pairs": [
-          "2026 NCBAHM Appendix B（Antigravity 匯入）"
+          "data/herbs/herb_pairs.json#pair.ma_huang__gui_zhi",
+          "data/herbs/herb_pairs.json#pair.ma_huang__xing_ren",
+          "data/herbs/herb_pairs.json#pair.ma_huang__shi_gao",
+          "data/herbs/herb_pairs.json#pair.ma_huang__ren_shen",
+          "data/herbs/herb_pairs.json#pair.ma_huang__fu_zi",
+          "data/herbs/herb_pairs.json#pair.ma_huang__gan_jiang__xi_xin__ban_xia",
+          "data/herbs/herb_pairs.json#pair.ma_huang__yi_yi_ren",
+          "data/herbs/herb_pairs.json#pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "NCBAHM 2026 Chinese Herbology Content Outline, Appendix B",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "exam_pearl": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
@@ -409,53 +499,78 @@
           "curriculum/herbs/herb_functions_chenoweth.pdf"
         ],
         "dosage": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "cautions_en": [
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "classical_text_zh": [
-          "model_recalled — 待對照原典/雲端中醫"
+          "https://cloudtcm.com/herb/1"
         ],
         "classical_text_en": [
-          "model_recalled — 待對照原典/雲端中醫"
+          "https://cloudtcm.com/herb/1"
         ],
         "category": [
           "curriculum/herbs/herb_functions_chenoweth.pdf → [1] Wind Cold Releasing"
         ],
         "contraindications_zh": [
-          "https://cloudtcm.com/herb/1"
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ],
         "contraindications_en": [
-          "https://cloudtcm.com/herb/1"
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+          "https://cloudtcm.com/herb/1",
+          "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+          "https://www.nccih.nih.gov/health/ephedra",
+          "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ephedra"
         ]
       },
       "cautions_en": [
-        "Taken at night it may stimulate the CNS and cause insomnia.",
-        "Contraindicated in deficiency with spontaneous or night sweating, deficiency-cold wheezing, wind-stroke paralysis, or yang deficiency.",
-        "Cardiovascular disease (heart failure, myocardial infarction, heart disease, hypertension): use with caution — it raises blood pressure.",
-        "Use with caution in thyroid disease or known Ma Huang allergy.",
-        "May cause urinary retention in prostatic hypertrophy.",
-        "Ben Cao Jing Shu notes it dispels cold pathogens but that prolonged use consumes true source qi.",
-        "Use with caution in pregnancy and lactation.",
-        "Consult a physician before combining with cold or multi-symptom cold medicines.",
-        "Excessive doses may cause tachycardia, rapid breathing, nausea, vomiting, insomnia, agitation, headache, seizures and tremor."
+        "Avoid evening administration because CNS stimulation may cause insomnia, anxiety or agitation.",
+        "Do not use large doses or prolonged courses; excessive sweating may damage qi and fluids.",
+        "Excessive exposure may cause hypertension, palpitations, tachycardia, rapid breathing, nausea, vomiting, headache, tremor, seizure, stroke, myocardial infarction or psychosis.",
+        "Cardiac glycosides such as digoxin may increase the risk of cardiac arrhythmia.",
+        "MAO inhibitors may precipitate a hypertensive crisis.",
+        "CNS stimulants, caffeine, ephedrine, pseudoephedrine and beta-adrenergic agonists may produce additive stimulation or toxicity.",
+        "Theophylline effects may be altered; combined use requires professional medication review.",
+        "Ma Huang may reduce the effects of beta blockers through increased norepinephrine activity.",
+        "Concurrent diuretics may increase water or electrolyte loss.",
+        "It may reduce the effects of benzodiazepines or other sedatives.",
+        "Review all cold and multi-symptom products to avoid duplicate sympathomimetic ingredients.",
+        "In the United States, dietary supplements containing ephedrine alkaloids are banned because of serious safety risks; this must be distinguished from supervised TCM prescribing."
       ],
       "contraindications_zh": [
-        "體虛自汗、盜汗者忌服",
-        "虛寒虛喘者忌服",
-        "中風癱瘓、陽虛者忌服",
-        "表虛無邪者不可發汗"
+        "體虛自汗、陰虛盜汗或表虛無邪者禁用。",
+        "肝陽上亢或陰虛火旺者禁用。",
+        "孕婦、哺乳期婦女及兒童禁用含麻黃鹼的麻黃膳食補充品；中醫處方亦須由合格專業人員另行評估。",
+        "高血壓、心臟病、心律不整或重大心血管風險者禁用。",
+        "甲狀腺機能亢進、青光眼、攝護腺肥大或嚴重焦慮者禁用。",
+        "正在使用 MAOI 者禁用，以免發生高血壓危象。"
       ],
       "contraindications_en": [
-        "Contraindicated with deficiency spontaneous sweating or night sweating",
-        "Contraindicated in deficiency-cold wheezing",
-        "Contraindicated in wind-stroke paralysis and yang deficiency",
-        "Do not induce sweating when the exterior is deficient and no pathogen is present"
+        "Contraindicated with deficiency spontaneous sweating, Yin-deficiency night sweating, or exterior deficiency without a pathogen.",
+        "Contraindicated for Liver Yang rising or Yin-deficiency Fire.",
+        "Ephedrine-alkaloid ephedra supplements are contraindicated during pregnancy, breastfeeding and childhood; professionally supervised TCM prescribing requires separate assessment.",
+        "Contraindicated in hypertension, heart disease, arrhythmia or major cardiovascular risk.",
+        "Contraindicated in hyperthyroidism, glaucoma, prostatic enlargement or severe anxiety.",
+        "Contraindicated with monoamine oxidase inhibitors because of the risk of hypertensive crisis."
       ]
     },
     {

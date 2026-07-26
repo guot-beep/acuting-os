@@ -1067,8 +1067,119 @@
         "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html",
         "formula.xuan_fu_dai_zhe_tang"
       ]
+    },
+    {
+      "id": "pair.ma_huang__ren_shen",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.ren_shen"
+      ],
+      "name_zh": "麻黃配人參",
+      "name_en": "Ma Huang with Ren Shen",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃發汗散寒、宣肺解表；人參益氣扶正，防止體虛者發汗更傷正氣。麻黃為主、人參為輔，相使以達扶正解表。",
+      "pair_meaning_en": "Ma Huang releases Wind-Cold through sweating, while Ren Shen supports source Qi and limits further depletion in a deficient patient.",
+      "indication_zh": "氣虛外感風寒：惡寒、無汗、頭痛身痛兼氣短乏力、脈弱。",
+      "indication_en": "Exterior Wind-Cold with Qi deficiency: chills, no sweating and body aches with fatigue, shortness of breath and a weak pulse.",
+      "caution_zh": "表虛自汗、陰虛盜汗者仍不宜使用麻黃；不可因配人參而忽略心血管與交互作用風險。",
+      "caution_en": "Still unsuitable for spontaneous or night sweating; adding Ren Shen does not remove Ma Huang's cardiovascular or interaction risks.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1",
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__fu_zi",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.fu_zi"
+      ],
+      "name_zh": "麻黃配附子",
+      "name_en": "Ma Huang with Fu Zi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃發汗解表、宣肺行水；附子溫陽扶正、助陽散寒。兩藥相使，使外寒得解而不致更傷衰微之陽氣。",
+      "pair_meaning_en": "Ma Huang releases the exterior and mobilizes water; Fu Zi restores Yang and assists the dispersal of Cold.",
+      "indication_zh": "陽虛外感或陽虛水腫：畏寒甚、無汗、肢冷、神疲、脈沉微。",
+      "indication_en": "Exterior Cold or edema with Yang deficiency: marked aversion to cold, no sweating, cold limbs, fatigue and a deep faint pulse.",
+      "caution_zh": "附子有毒，必須使用合格炮製品並遵守劑量與煎煮規範；陰虛火旺及心律不整者不宜。",
+      "caution_en": "Fu Zi is toxic and requires proper processing, dosing and decoction; avoid in Yin-deficiency Heat and arrhythmia.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__gan_jiang__xi_xin__ban_xia",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.gan_jiang",
+        "herb.xi_xin",
+        "herb.ban_xia"
+      ],
+      "name_zh": "麻黃配乾薑、細辛、半夏",
+      "name_en": "Ma Huang with Gan Jiang, Xi Xin and Ban Xia",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "麻黃解表宣肺，乾薑、細辛溫肺化飲，半夏燥濕化痰、降逆。合用由表及裡溫散寒飲，相須增強止咳平喘之力。",
+      "pair_meaning_en": "Ma Huang releases the exterior; Gan Jiang and Xi Xin warm the Lung and transform thin fluids; Ban Xia dries Phlegm and redirects rebellion.",
+      "indication_zh": "外寒內飲：惡寒發熱、無汗、咳喘、痰多清稀、胸滿或乾嘔（小青龍湯核心組合）。",
+      "indication_en": "Exterior Cold with internal thin fluids: chills, fever, no sweating, cough, wheezing, copious clear sputum, chest fullness or retching.",
+      "caution_zh": "陰虛燥咳、津傷、血證及無寒飲者不宜；細辛與半夏均須符合炮製及劑量規範。",
+      "caution_en": "Avoid in Yin-deficient dry cough, fluid injury, bleeding or absence of Cold fluids; observe processing and dose requirements for Xi Xin and Ban Xia.",
+      "found_in_formulas": [
+        "formula.xiao_qing_long_tang"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+        "formula.xiao_qing_long_tang"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__yi_yi_ren",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.yi_yi_ren"
+      ],
+      "name_zh": "麻黃配薏苡仁",
+      "name_en": "Ma Huang with Yi Yi Ren",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃散表寒、通腠理，薏苡仁滲濕舒筋。麻黃為主散寒，薏苡仁為輔利濕，相使以祛風寒濕痹。",
+      "pair_meaning_en": "Ma Huang disperses exterior Cold and opens the interstices; Yi Yi Ren leaches Dampness and relaxes the sinews.",
+      "indication_zh": "風寒濕痹偏表：周身疼痛、關節沉重，或一身盡疼、午後加重。",
+      "indication_en": "Superficial Wind-Cold-Damp painful obstruction with generalized aching and heavy joints.",
+      "caution_zh": "津液不足、陰虛或自汗者慎；孕期使用薏苡仁亦須專業評估。",
+      "caution_en": "Use cautiously with fluid or Yin deficiency and spontaneous sweating; Yi Yi Ren also requires pregnancy review.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao",
+      "herbs": [
+        "herb.ma_huang",
+        "herb.shu_di_huang",
+        "herb.bai_jie_zi",
+        "herb.lu_jiao_jiao"
+      ],
+      "name_zh": "麻黃配熟地黃、白芥子、鹿角膠",
+      "name_en": "Ma Huang with Shu Di Huang, Bai Jie Zi and Lu Jiao Jiao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃開腠散寒，白芥子溫化寒痰、通絡散結，熟地黃與鹿角膠溫補精血。散寒通滯而兼顧陰血，合治陰寒凝聚。",
+      "pair_meaning_en": "Ma Huang opens the interstices, Bai Jie Zi warms Cold Phlegm and disperses nodules, while Shu Di Huang and Lu Jiao Jiao support essence and Blood.",
+      "indication_zh": "陽虛寒凝之陰疽、貼骨疽或漫腫無頭：局部不紅不熱、皮色不變、酸痛無力（陽和湯核心配伍）。",
+      "indication_en": "Yin-type sores from Yang deficiency and congealed Cold: diffuse deep swelling without redness, heat or a distinct head.",
+      "caution_zh": "陽證癰瘍、紅腫熱痛或陰虛火旺者禁用；麻黃心血管風險仍須評估。",
+      "caution_en": "Contraindicated for hot Yang-type abscesses or Yin-deficiency Fire; Ma Huang cardiovascular risks still require assessment.",
+      "found_in_formulas": [
+        "formula.yang_he_tang"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
+        "formula.yang_he_tang"
+      ]
     }
   ],
   "updated_at": "2026-07-26",
-  "total_pairs": 46
+  "total_pairs": 51
 }
