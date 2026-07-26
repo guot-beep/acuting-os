@@ -5,6 +5,7 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 會強制檢查,任何 AI 的中藥批次必須全綠才能 push。
 
 檔案:`data/herbs/herb_canon_shortlist.json`(266 味)。
+卡片版面與區塊順序定案於 **`docs/HERB_CARD_TEMPLATE.md`**(樣板:`herb.du_zhong`)。
 
 ## 1. 正典欄位(canonical fields)
 

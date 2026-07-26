@@ -41,7 +41,11 @@ Ting 把這整段貼給任何要幫忙填中藥的 AI 即可。Antigravity 回�
 
 ## 品質樣板(先看這個再動手)
 
-**`herb.du_zhong`(杜仲)= 標準樣板**(Claude 2026-07-25,Ting 驗收)。
+📌 **樣板已定案:`docs/HERB_CARD_TEMPLATE.md`(12 區塊 + 30 欄位清單 + 硬規則)。
+動手前必讀。**
+
+**`herb.du_zhong`(杜仲)= 標準樣板**(Ting 定案 2026-07-25:對藥與考試標註保留,
+Primary Actions 區塊已刪)。
 每味藥做完應該長這樣:帶聲調拼音、tcm_properties、functions_zh 只放傳統功效
 且與 actions_en 逐項對齊、indications_zh 是「證型 —— 配伍」結構、key_pairs、
 pao_zhi_notes_zh、dosage 物件、exam_importance/exam_pearl、field_sources 逐欄
