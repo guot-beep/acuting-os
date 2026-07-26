@@ -61,7 +61,12 @@ function inspectValue(value, context, issues) {
       });
     }
 
-    if (context.key && isChineseField(context.key) && trimmed.length > 3 && !CJK_RE.test(trimmed)) {
+    // field_sources is keyed BY field name, so field_sources.functions_zh holds
+    // a citation ("curriculum/herbs/....pdf#p1" or a URL) — a path, not prose.
+    // Without this exemption every properly-cited 中文 field reports as mojibake,
+    // and the noise grows with each herb that gets sourced correctly.
+    const inFieldSources = String(context.path || "").includes("field_sources");
+    if (context.key && isChineseField(context.key) && !inFieldSources && trimmed.length > 3 && !CJK_RE.test(trimmed)) {
       issues.push({
         type: "chinese_field_without_cjk",
         file: context.file,

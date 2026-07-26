@@ -14,8 +14,15 @@
 > node scripts/validate-acupoint-standard.js --worklist --channel LU --all
 > ```
 >
-> **來源優先序**:① `curriculum/acupoints/` 課件 ② board exam outline
-> ③ CloudTCM / eLotus(已入庫)④ WHO 定位標準。
+> **來源優先序**(先框架後內容,與中藥卡流程相同、參照物不同):
+> ⓪ **board outline**(`curriculum/board/`)決定做哪些穴、標 `exam_importance`
+> —— 它是**範圍不是教材**,不要拿 outline 的條列當主治;
+> ① `curriculum/acupoints/` 課件(14 條經絡講義 + Techniques + AP Point Book)
+> ② **eLotus** ③ **CloudTCM 雲端中醫** ④ WHO 定位標準。
+> ⚠️ 這裡 **eLotus 排在 CloudTCM 之前**(和中藥卡相反)。現有 361 穴內容多半是
+> CloudTCM 來的,所以要**用課件與 eLotus 回頭校它**,不是拿現有內容當基準。
+> 董氏奇穴走另一套:**tungs-acupuncture.com + eLotus**,資料在 `data/tung/`,
+> **不要混進 `361.json`**,也不要拿十四經取穴邏輯去套董氏分區。
 > 兩源不合 → **兩個都記、標出處**,絕不二選一。查不到就標「待補」,**不准假裝查過**。
 >
 > **最容易做錯的三件事**
