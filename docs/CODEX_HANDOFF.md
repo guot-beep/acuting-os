@@ -118,3 +118,12 @@
 ### Recommended Next Steps for Large-Scale Rectification (大規模整改):
 - Audit remaining formulas in `data/herbs/formulas.json` line-by-line against Hong Kong Baptist University School of Chinese Medicine (Zhongyifangji.com) and CloudTCM.
 - Enrich bilingual English/Chinese exam ratings, indication tags, and safety cautions for each formula without batch placeholders.
+# [2026-07-26] Codex Handoff — Transform Phlegm five-card batch
+
+- **Branch**: `codex/herbs-release-exterior-sample`
+- **Task**: Formal cards for 天南星、白附子、白芥子、桔梗、旋覆花 plus rich herb pairs.
+- **Files**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, generated data, dispatch rule and project log.
+- **Validation**: build-data PASS; herb-standard PASS; content-junk PASS; pair delta 5/5 PASS; diff check PASS.
+- **Protected areas**: no JS, HTML, scripts, acupoint source data or user-uploaded curriculum files were modified or staged.
+- **Known limits**: CloudTCM exact single-herb URL for 白附子 was not verified, so it is intentionally absent; full-repo data-count/encoding failures pre-exist.
+- **Next**: Ting reviews five rendered cards and colored pair cards; Claude may review safety wording and merge.

@@ -950,8 +950,125 @@
       "sources": [
         "cloudtcm_herb_pages"
       ]
+    },
+    {
+      "id": "pair.tian_nan_xing__ban_xia",
+      "herbs": [
+        "herb.tian_nan_xing",
+        "herb.ban_xia"
+      ],
+      "name_zh": "天南星配半夏",
+      "name_en": "Tian Nan Xing with Ban Xia",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "天南星燥濕化痰、祛風止痙，長於頑痰與風痰；半夏燥濕化痰、降逆和胃，長於濕痰與胃氣上逆。兩藥相須，燥濕化痰之力增強，並兼顧痰壅、氣逆。",
+      "pair_meaning_en": "Tian Nan Xing treats stubborn and Wind-Phlegm; Ban Xia dries Dampness, transforms Phlegm and descends rebellious Qi. Together they strongly transform Damp-Phlegm.",
+      "indication_zh": "濕痰、頑痰壅盛：咳嗽痰多黏稠、胸膈痞悶、眩暈噁心。",
+      "indication_en": "Abundant Damp or stubborn Phlegm with cough, copious sputum, chest oppression, dizziness and nausea.",
+      "caution_zh": "兩藥均溫燥有毒，內服必須用炮製品；陰虛燥痰、孕婦禁用，痰熱證須配清熱藥。",
+      "caution_en": "Both herbs are warm, drying and toxic; use only processed forms internally. Contraindicated in pregnancy and Yin-deficient Dry Phlegm.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiBanXia.htm"
+      ]
+    },
+    {
+      "id": "pair.bai_fu_zi__bai_jiang_can__quan_xie",
+      "herbs": [
+        "herb.bai_fu_zi",
+        "herb.bai_jiang_can",
+        "herb.quan_xie"
+      ],
+      "name_zh": "白附子配白僵蠶、全蠍",
+      "name_en": "Bai Fu Zi with Bai Jiang Can and Quan Xie",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "白附子祛頭面風痰、止痙；白僵蠶與全蠍息風止痙、通絡。三藥相須，祛風化痰、止痙通絡，構成牽正散核心配伍。",
+      "pair_meaning_en": "Bai Fu Zi dispels Wind-Phlegm from the head and face; Bai Jiang Can and Quan Xie extinguish Wind and unblock the channels. This is the core trio of Qian Zheng San.",
+      "indication_zh": "風痰阻絡：口眼歪斜、面肌抽動、面癱，或痙攣拘急。",
+      "indication_en": "Wind-Phlegm obstructing the channels with facial paralysis, facial twitching or spasms.",
+      "caution_zh": "三藥均須嚴格控量；白附子有毒，孕婦禁用；全蠍有毒，出血傾向者慎用。",
+      "caution_en": "Dose carefully. Bai Fu Zi is toxic and contraindicated in pregnancy; use Quan Xie cautiously with bleeding tendency.",
+      "found_in_formulas": [
+        "formula.qian_zheng_san"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html",
+        "formula.qian_zheng_san"
+      ]
+    },
+    {
+      "id": "pair.bai_jie_zi__zi_su_zi__lai_fu_zi",
+      "herbs": [
+        "herb.bai_jie_zi",
+        "herb.zi_su_zi",
+        "herb.lai_fu_zi"
+      ],
+      "name_zh": "白芥子配紫蘇子、萊菔子",
+      "name_en": "Bai Jie Zi with Zi Su Zi and Lai Fu Zi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "白芥子溫肺豁痰，紫蘇子降氣化痰平喘，萊菔子消食導滯、降氣化痰。三藥相須，痰、氣、食並治，為三子養親湯核心。",
+      "pair_meaning_en": "Bai Jie Zi warms the Lung and expels Phlegm, Zi Su Zi descends Qi and calms wheezing, and Lai Fu Zi reduces food stagnation. The trio treats Phlegm, Qi rebellion and food stagnation together.",
+      "indication_zh": "痰壅氣逆兼食積：咳嗽喘逆、痰多胸悶、食少腹脹。",
+      "indication_en": "Phlegm with rebellious Qi and food stagnation: cough, wheezing, copious sputum, chest oppression and abdominal distention.",
+      "caution_zh": "陰虛燥咳、肺虛久咳者忌；氣虛無痰、無食積者不宜。",
+      "caution_en": "Avoid in Yin-deficient dry cough or chronic Lung-deficiency cough; inappropriate for Qi deficiency without Phlegm or food stagnation.",
+      "found_in_formulas": [
+        "formula.san_zi_yang_qin_tang"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html",
+        "formula.san_zi_yang_qin_tang"
+      ]
+    },
+    {
+      "id": "pair.jie_geng__gan_cao",
+      "herbs": [
+        "herb.jie_geng",
+        "herb.gan_cao"
+      ],
+      "name_zh": "桔梗配甘草",
+      "name_en": "Jie Geng with Gan Cao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "桔梗宣肺利咽、祛痰排膿；甘草清熱解毒、緩急利咽並調和藥性。桔梗為主、甘草為輔，相使而增強利咽止痛與排膿作用。",
+      "pair_meaning_en": "Jie Geng disseminates Lung Qi, benefits the throat and expels pus; Gan Cao assists by clearing toxicity, soothing pain and harmonizing the combination.",
+      "indication_zh": "肺氣不宣或熱毒咽痛：咽喉腫痛、聲音嘶啞；亦用於肺癰咳吐膿痰（桔梗湯）。",
+      "indication_en": "Sore, swollen throat and hoarseness from constrained Lung Qi or toxicity; also Lung abscess with purulent sputum.",
+      "caution_zh": "陰虛乾咳、咳血者慎用桔梗；甘草不宜長期大量使用，水腫、高血壓者注意。",
+      "caution_en": "Use Jie Geng cautiously with Yin-deficient dry cough or hemoptysis. Avoid prolonged high-dose Gan Cao in edema or hypertension.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"
+      ]
+    },
+    {
+      "id": "pair.xuan_fu_hua__dai_zhe_shi",
+      "herbs": [
+        "herb.xuan_fu_hua",
+        "herb.dai_zhe_shi"
+      ],
+      "name_zh": "旋覆花配代赭石",
+      "name_en": "Xuan Fu Hua with Dai Zhe Shi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "旋覆花消痰降氣、降逆止嘔；代赭石重鎮降逆。旋覆花為主、代赭石為輔，相使以加強降胃氣、止噫氣嘔吐，為旋覆代赭湯核心藥對。",
+      "pair_meaning_en": "Xuan Fu Hua transforms Phlegm and descends rebellious Qi; Dai Zhe Shi heavily anchors rebellion downward. Together they strongly descend Stomach Qi.",
+      "indication_zh": "胃虛痰阻、胃氣上逆：心下痞硬、噫氣頻作、呃逆、噁心嘔吐。",
+      "indication_en": "Stomach deficiency with Phlegm and rebellious Qi: focal epigastric distention, frequent belching, hiccups, nausea and vomiting.",
+      "caution_zh": "旋覆花須包煎；代赭石質重，孕婦慎用，脾胃虛弱者不宜過量。",
+      "caution_en": "Wrap Xuan Fu Hua for decoction. Use heavy Dai Zhe Shi cautiously in pregnancy and avoid excessive doses in weak digestion.",
+      "found_in_formulas": [
+        "formula.xuan_fu_dai_zhe_tang"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32",
+        "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html",
+        "formula.xuan_fu_dai_zhe_tang"
+      ]
     }
   ],
-  "updated_at": "2026-07-23",
-  "total_pairs": 41
+  "updated_at": "2026-07-26",
+  "total_pairs": 46
 }

@@ -2401,3 +2401,9 @@ Current repo state as of this log:
 - GB93 index is `13/93`.
 - Master Tung index has 277 index-only records.
 - Standard 361 point pages exist, but many are placeholders or need source review.
+# 2026-07-26 Codex — Transform Phlegm five-card batch
+- Completed formal cards for 天南星、白附子、白芥子、桔梗、旋覆花 from Chenoweth pp.31–32 with CloudTCM/American Dragon cross-checks.
+- Added five rich colored herb-pair records with 七情 relation, bilingual rationale, 主治, 注意 and sources.
+- Added the rule that every herb, formula or point named by the exam outline/course materials must have a record even when no template exists.
+- Validation: build-data, herb-standard, content-junk, pair delta and diff checks PASS.
+- Existing full-repo blockers remain: validate-data 751/681 count mismatch and legacy encoding findings outside this batch.

@@ -27154,7 +27154,7 @@
       "id": "herb.tian_nan_xing",
       "name_zh": "天南星",
       "name_en": "Arisaema Rhizome",
-      "pinyin": "Tian Nan Xing",
+      "pinyin": "Tiān Nán Xīng",
       "category": "化痰止咳平喘藥 / Transform Phlegm",
       "channels_entered": [
         "肝經",
@@ -27286,23 +27286,22 @@
       "safety_source_url": "https://cloudtcm.com/herb/1194",
       "safety_fetched_at": "2026-07-23T07:25:25.952Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "本品有毒，內服必須使用專業炮製品。",
+        "生品可造成口咽強烈刺激、麻木、腫脹，嚴重可影響呼吸。",
+        "痰熱證不得單用，須配伍清熱化痰藥。"
+      ],
       "functions_zh": [
-        "溫化寒痰",
-        "祛風除濕",
-        "止咳化痰",
-        "降氣",
-        "利水消腫",
-        "去風止痙",
+        "燥濕化痰",
+        "祛風化痰",
         "祛風止痙",
-        "燥濕化痰"
+        "外用散結消腫止痛"
       ],
       "modern_functions_zh": [
-        "抗氧化",
-        "抗發炎",
-        "抗菌抗病毒",
-        "降血糖",
-        "防癌抗腫瘤",
-        "保肝利膽"
+        "抗驚厥作用",
+        "鎮靜作用",
+        "抗腫瘤活性研究",
+        "抗發炎作用"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1194",
@@ -27344,7 +27343,11 @@
         "脾經"
       ],
       "indications_zh": [
-        "燥濕化痰；祛風止痙；消腫散結"
+        "濕痰、頑痰壅肺 —— 咳嗽痰多、胸膈痞悶；其燥濕化痰力較半夏強。",
+        "風痰上擾 —— 眩暈、中風痰壅、口眼歪斜、半身不遂。",
+        "風痰閉阻、痰迷心竅 —— 癲癇、驚風、破傷風抽搐。",
+        "痰熱證 —— 本品性溫，不單用；須配黃芩、竹瀝等清熱化痰藥。",
+        "癰腫、痰核、毒蛇咬傷 —— 生品研末外敷，僅限外用。"
       ],
       "study_tags": [
         "單味中藥",
@@ -27353,13 +27356,45 @@
         "天南星"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": ["濕痰咳嗽", "頑痰壅肺", "風痰眩暈", "中風痰壅", "癲癇驚風", "破傷風痙攣", "癰腫痰核"],
+      "condition_tags_en": ["Damp-Phlegm cough", "Stubborn Phlegm obstructing the Lung", "Wind-Phlegm dizziness", "Phlegm obstruction in wind-stroke", "Epilepsy and childhood convulsions", "Tetanus spasms", "Abscesses and Phlegm nodules"],
+      "actions_en": ["Dry Dampness and transform Phlegm", "Dispel Wind and transform Phlegm", "Dispel Wind and stop spasms", "Dissipate nodules, reduce swelling and relieve pain externally"],
+      "modern_functions_en": ["Anticonvulsant activity", "Sedative activity", "Antineoplastic activity under investigation", "Anti-inflammatory activity"],
+      "pharmaceutical_latin": "Arisaematis Rhizoma preparatum",
+      "part_used_en": "Processed rhizome/tuber",
+      "dosage_g": "3–10g（僅限炮製品；膽南星 2–5g）",
+      "pao_zhi_notes_zh": ["制天南星以生薑等炮製後供內服，以降低刺激與毒性。", "膽南星偏清熱化痰、息風定驚。", "生天南星有毒，只供外用。"],
+      "contraindications_zh": ["孕婦禁用。", "陰虛燥咳、津傷燥痰者禁用。", "血虛動風或火熱生風者禁用。", "生天南星不得內服。"],
+      "contraindications_en": ["Contraindicated during pregnancy.", "Contraindicated for dry cough or Dry Phlegm from Yin or fluid deficiency.", "Contraindicated for Internal Wind from Blood deficiency or blazing Fire.", "Raw Tian Nan Xing must not be administered internally."],
+      "cautions_en": ["Internal use requires a professionally processed preparation.", "Raw herb exposure can cause severe oral and pharyngeal irritation, numbness, swelling and respiratory compromise.", "Phlegm-Heat requires appropriate Heat-clearing combinations rather than use alone."],
+      "exam_importance": "★ Chenoweth：燥濕化痰力較半夏強，並能祛風止痙；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "辨識三點：頑痰、風痰、痙攣。內服必須炮製；生品只外用；膽南星偏清熱化痰。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.31：性味歸經、功效、主治、劑量、炮製、禁忌與現代藥理"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/1194", "scope": "傳統功效、安全與現代藥理交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html", "scope": "Actions、indications、dosage、preparation and contraindications"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://cloudtcm.com/herb/1194"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://cloudtcm.com/herb/1194"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "https://cloudtcm.com/herb/1194"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiTianNanXing.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p31", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.jie_geng",
       "name_zh": "桔梗",
       "name_en": "Platycodon Root",
-      "pinyin": "Jie Geng",
+      "pinyin": "Jié Gěng",
       "category": "化痰止咳平喘藥 / Transform Phlegm",
       "channels_entered": [
         "肺經",
@@ -27490,23 +27525,22 @@
       "safety_source_url": "https://cloudtcm.com/herb/1088",
       "safety_fetched_at": "2026-07-23T07:25:26.195Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "本品升散，氣機上逆者慎用。",
+        "劑量過大可能刺激胃部，引起噁心或嘔吐。"
+      ],
       "functions_zh": [
-        "溫化寒痰",
-        "清肺熱利咽",
+        "宣肺祛痰",
+        "利咽開音",
         "排膿",
-        "止咳化痰",
-        "破血消癥",
-        "止血",
-        "清熱解毒"
+        "載藥上行"
       ],
       "modern_functions_zh": [
-        "降血糖",
-        "抗發炎",
-        "抗氧化",
-        "提升免疫力",
-        "鎮咳作用",
-        "抗炎鎮痛",
-        "抗腫瘤"
+        "祛痰鎮咳作用",
+        "抗發炎作用",
+        "鎮痛作用",
+        "降血糖作用",
+        "調節血脂作用"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1088",
@@ -27550,7 +27584,11 @@
         "肺經"
       ],
       "indications_zh": [
-        "宣肺化痰；利咽開音；排膿"
+        "外感咳嗽 —— 風寒或風熱皆可隨證配伍，用於咳嗽痰多、胸悶不暢。",
+        "肺氣不宣、痰阻咽喉 —— 咽痛、聲音嘶啞、失音。",
+        "肺癰胸痛、咳吐膿痰 —— 配魚腥草、薏苡仁等清肺排膿。",
+        "咽喉腫痛 —— 常配甘草，宣肺利咽。",
+        "引藥上行 —— 配方中載諸藥上達胸肺與頭面。"
       ],
       "study_tags": [
         "單味中藥",
@@ -27559,7 +27597,39 @@
         "桔梗"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": ["外感咳嗽", "咳嗽痰多", "咽喉腫痛", "聲音嘶啞失音", "肺癰膿痰"],
+      "condition_tags_en": ["Exterior-pattern cough", "Cough with copious sputum", "Sore and swollen throat", "Hoarseness or loss of voice", "Lung abscess with purulent sputum"],
+      "actions_en": ["Disseminate Lung Qi and expel Phlegm", "Benefit the throat and restore the voice", "Expel pus", "Guide other herbs upward"],
+      "modern_functions_en": ["Expectorant and antitussive activity", "Anti-inflammatory activity", "Analgesic activity", "Hypoglycemic activity", "Lipid-modulating activity"],
+      "pharmaceutical_latin": "Platycodi Radix",
+      "part_used_en": "Root",
+      "dosage_g": "3–10g",
+      "pao_zhi_notes_zh": ["生桔梗偏宣肺祛痰、利咽排膿；蜜炙品較潤，偏於止咳。"],
+      "contraindications_zh": ["陰虛久咳、無痰乾咳者禁用。", "咳血、吐血等出血傾向者禁用。"],
+      "contraindications_en": ["Contraindicated for chronic dry cough from Yin deficiency without Phlegm.", "Contraindicated with hemoptysis, hematemesis or a significant bleeding tendency."],
+      "cautions_en": ["Its ascending and dispersing nature may aggravate rebellious Qi.", "Large doses may irritate the stomach and cause nausea or vomiting."],
+      "exam_importance": "★ Chenoweth：宣肺利咽、排膿並載藥上行；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "風寒風熱咳嗽皆可隨證配伍；「咽痛失音＋肺癰排膿＋引藥上行」是辨識組合。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量、禁忌與現代藥理"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/1088", "scope": "傳統功效、現代藥理與安全交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/JieGeng.html", "scope": "Actions、indications、dosage and cautions"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1088"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1088"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "cautions_zh": ["https://cloudtcm.com/herb/1088"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/JieGeng.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.chuan_bei_mu",
@@ -39474,7 +39544,7 @@
       "id": "herb.xuan_fu_hua",
       "name_zh": "旋覆花",
       "name_en": "Inula Flower",
-      "pinyin": "Xuan Fu Hua",
+      "pinyin": "Xuán Fù Huā",
       "category": "化痰止咳平喘藥 / Transform Phlegm",
       "channels_entered": [
         "胃經",
@@ -39572,11 +39642,15 @@
       "safety_source_url": "https://cloudtcm.com/herb/1223",
       "safety_fetched_at": "2026-07-23T07:25:44.792Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "花絨可能刺激咽喉，入煎劑須包煎。",
+        "體虛便溏者慎用。",
+        "與利尿藥同用時注意疊加作用。"
+      ],
       "functions_zh": [
-        "溫化寒痰",
-        "止咳化痰",
-        "止嘔",
-        "降氣"
+        "消痰行水",
+        "降氣止咳",
+        "降逆止嘔"
       ],
       "modern_functions_zh": [
         "抗菌抗病毒",
@@ -39608,7 +39682,10 @@
         "大腸經"
       ],
       "indications_zh": [
-        "降氣；消痰；行水止嘔"
+        "痰飲壅肺、肺氣上逆 —— 咳嗽氣喘、痰多胸悶。",
+        "寒痰或熱痰咳嗽 —— 依證配溫化或清熱化痰藥。",
+        "胃氣上逆 —— 噁心嘔吐、噫氣、呃逆。",
+        "痰飲停聚胸脅 —— 胸脅痞滿、咳引胸痛。"
       ],
       "study_tags": [
         "單味中藥",
@@ -39618,8 +39695,44 @@
       ],
       "tags_fetched_at": "2026-07-23",
       "condition_tags_zh": [
-        "降氣消痰行水止嘔"
-      ]
+        "痰飲咳喘",
+        "肺氣上逆",
+        "胃氣上逆嘔吐",
+        "噫氣呃逆",
+        "胸脅痰飲"
+      ],
+      "condition_tags_en": ["Phlegm-Fluids cough and wheezing", "Rebellious Lung Qi", "Vomiting from rebellious Stomach Qi", "Belching and hiccups", "Phlegm-Fluids in the chest and flanks"],
+      "actions_en": ["Transform Phlegm and regulate water", "Direct Qi downward and stop cough", "Descend rebellious Qi and stop vomiting"],
+      "modern_functions_en": ["Antimicrobial activity", "Anti-inflammatory activity", "Antioxidant activity"],
+      "pharmaceutical_latin": "Inulae Flos",
+      "part_used_en": "Flower",
+      "dosage_g": "3–12g（包煎）",
+      "pao_zhi_notes_zh": ["花絨可能刺激咽喉，入煎劑須以布包煎。", "蜜炙旋覆花較潤，可減少辛散傷氣傷陰。"],
+      "contraindications_zh": ["陰虛燥咳、肺癆咳嗽者禁用。", "風熱咳嗽而無痰飲者禁用。"],
+      "contraindications_en": ["Contraindicated for dry cough from Yin deficiency or consumptive Lung disease.", "Contraindicated for Wind-Heat cough without Phlegm-Fluids."],
+      "cautions_en": ["Wrap the flowers in cloth during decoction because the fine hairs may irritate the throat.", "Use cautiously in debilitated patients with loose stools.", "Monitor additive effects when combined with diuretic drugs."],
+      "exam_importance": "★ Chenoweth：少數花類中藥中以降氣為主，兼降胃逆止嘔；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "「諸花皆升，旋覆獨降」；咳喘與噯氣嘔吐同見時要想到旋覆花，且必須包煎。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量、炮製與現代藥理"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/1223", "scope": "傳統功效、現代藥理與安全交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html", "scope": "Actions、indications、dosage、preparation and cautions"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1223"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1223"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "contraindications_zh": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/1223"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/XuanFuHua.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.gao_liang_jiang",
@@ -42998,7 +43111,7 @@
       "id": "herb.bai_jie_zi",
       "name_zh": "白芥子",
       "name_en": "White Mustard Seed",
-      "pinyin": "Bai Jie Zi",
+      "pinyin": "Bái Jiè Zǐ",
       "category": "化痰止咳平喘藥 / Transform Phlegm - Warm",
       "channels_entered": [
         "肺經",
@@ -43098,8 +43211,15 @@
       "safety_source_url": "https://cloudtcm.com/herb/955",
       "safety_fetched_at": "2026-07-23T07:25:50.207Z",
       "safety_source": "cloudtcm_caution_field",
+      "cautions_zh": [
+        "生品可能刺激胃腸，敏感者慎用。",
+        "外敷可使皮膚起泡或灼傷，不可久敷。",
+        "孕期使用前須優先審核安全性。"
+      ],
       "functions_zh": [
-        "溫肺化痰、利氣散結、通絡止痛"
+        "溫肺豁痰",
+        "利氣散結",
+        "通絡止痛"
       ],
       "modern_functions_zh": [
         "止痛功效",
@@ -43133,7 +43253,10 @@
         "肺經"
       ],
       "indications_zh": [
-        "溫肺化痰；利氣散結；通絡止痛"
+        "寒痰壅肺 —— 咳嗽氣喘、痰多清稀、胸膈滿悶。",
+        "痰飲停聚胸脅 —— 胸脅脹滿疼痛、咳引脅痛。",
+        "痰阻經絡 —— 肢體麻木、關節疼痛、陰疽流注。",
+        "寒痰凝結 —— 痰核、瘰癧、陰疽漫腫不潰。"
       ],
       "study_tags": [
         "單味中藥",
@@ -43142,7 +43265,39 @@
         "白芥子"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": []
+      "condition_tags_zh": ["寒痰咳喘", "胸脅痰飲", "痰阻經絡", "肢體麻木疼痛", "陰疽流注", "痰核瘰癧"],
+      "condition_tags_en": ["Cold-Phlegm cough and wheezing", "Phlegm-Fluids in the chest and flanks", "Phlegm obstructing the channels", "Limb numbness and pain", "Yin-type abscesses", "Phlegm nodules and scrofula"],
+      "actions_en": ["Warm the Lung and expel Phlegm", "Move Qi and dissipate nodules", "Unblock the channels and relieve pain"],
+      "modern_functions_en": ["Analgesic activity", "Antimicrobial activity", "Lipid-modulating activity", "Cardiovascular activity under investigation"],
+      "pharmaceutical_latin": "Sinapis Semen",
+      "part_used_en": "Seed",
+      "dosage_g": "3–15g（來源範圍不同；不宜久煎）",
+      "pao_zhi_notes_zh": ["炒白芥子刺激性較緩，便於內服。", "外用研末以醋調敷，不可久敷，以免起泡灼傷。"],
+      "contraindications_zh": ["陰虛火旺、肺虛久咳者禁用。", "胃火亢盛或消化性潰瘍活動期者禁用。"],
+      "contraindications_en": ["Contraindicated for chronic cough from Lung deficiency or Yin deficiency with Fire.", "Contraindicated with blazing Stomach Fire or active peptic ulcer disease."],
+      "cautions_en": ["The raw seed can irritate the gastrointestinal tract.", "Topical application can blister or burn the skin and must not be prolonged.", "Pregnancy safety requires priority review before use."],
+      "exam_importance": "★ Chenoweth：辨識點是胸脅寒痰與痰阻經絡；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "寒痰＋胸脅痛＋經絡痰阻選白芥子；辛溫走竄，不宜久煎，外敷過久會起泡。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量與禁忌"},
+        {"name": "雲端中醫 CloudTCM", "url": "https://cloudtcm.com/herb/955", "scope": "傳統功效、現代藥理與安全交叉核對"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html", "scope": "Actions、indications、dosage and cautions"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://cloudtcm.com/herb/955"],
+        "modern_functions_zh": ["https://cloudtcm.com/herb/955"],
+        "modern_functions_en": ["https://cloudtcm.com/herb/955"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "cautions_zh": ["https://cloudtcm.com/herb/955"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/BaiJieZi.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": []
     },
     {
       "id": "herb.qian_hu",
@@ -47008,8 +47163,8 @@
     {
       "id": "herb.bai_fu_zi",
       "name_zh": "白附子",
-      "name_en": "Typhonii Rhizoma",
-      "pinyin": "Bai Fu Zi",
+      "name_en": "Prepared Typhonium Rhizome",
+      "pinyin": "Bái Fù Zǐ",
       "category_zh": "溫化寒痰藥",
       "taste_temperature_zh": "辛, 甘, 溫, 有毒",
       "channels_zh": [
@@ -47017,13 +47172,20 @@
         "肝經"
       ],
       "functions_zh": [
-        "祛風痰、定驚癇、解毒散結"
+        "燥濕化痰",
+        "祛風止痙",
+        "解毒散結",
+        "止痛"
       ],
       "indications_zh": [
-        "祛風痰；定驚癇；解毒散結"
+        "風痰阻絡、頭面部病證 —— 口眼歪斜、面癱、偏頭痛、半身不遂。",
+        "風痰閉阻、筋脈拘急 —— 癲癇、驚風、破傷風痙攣。",
+        "痰核瘰癧、毒蛇咬傷 —— 炮製品內服或生品適量外用。",
+        "偏正頭痛、眩暈而屬風痰者 —— 常配川芎、白芷等。"
       ],
       "cautions_zh": [
-        "孕婦慎用"
+        "本品有毒，內服必須使用炮製品並嚴格控制劑量。",
+        "過量可引起口舌咽喉麻木腫脹、噁心嘔吐、心悸或呼吸困難。"
       ],
       "study_tags": [
         "單味中藥",
@@ -47033,22 +47195,52 @@
         "白附子"
       ],
       "source_urls": [
-        "https://cloudtcm.com",
-        "https://www.americandragon.com",
-        "https://www.zhongyifangji.com"
+        "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"
       ],
-      "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
-      "exact_source_url": "https://www.americandragon.com",
-      "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
-      "public_safe": true,
+      "safety_source": "Chenoweth p.32; American Dragon Zhi Bai Fu Zi",
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html",
+      "source_type": "source_transcribed",
+      "review_status": "draft",
+      "public_safe": false,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
       "aliases_zh": [],
-      "condition_tags_zh": [],
+      "condition_tags_zh": ["面癱口歪", "風痰頭痛", "半身不遂", "癲癇驚風", "破傷風痙攣", "痰核瘰癧"],
+      "condition_tags_en": ["Facial paralysis", "Wind-Phlegm headache", "Hemiplegia", "Epilepsy and convulsions", "Tetanus spasms", "Phlegm nodules and scrofula"],
+      "actions_en": ["Dry Dampness and transform Phlegm", "Dispel Wind and stop spasms", "Resolve toxicity and dissipate nodules", "Relieve pain"],
+      "modern_functions_zh": ["抗驚厥作用", "鎮靜作用", "鎮痛作用", "抗發炎作用"],
+      "modern_functions_en": ["Anticonvulsant activity", "Sedative activity", "Analgesic activity", "Anti-inflammatory activity"],
+      "pharmaceutical_latin": "Typhonii Rhizoma preparatum",
+      "part_used_en": "Prepared rhizome",
+      "dosage": {"decoction_g": "Chenoweth：3–5g，重症可至 9g；American Dragon：1.5–6g", "特殊說明": "兩源範圍不同，並列保留。內服只用炮製品；生品僅供外用。"},
+      "dosage_g": "1.5–9g（依來源與病情；僅限炮製品）",
+      "pao_zhi_notes_zh": ["制白附子經炮製降低毒性後供內服。", "生白附子毒性與刺激性較強，只供外用。"],
+      "contraindications_zh": ["孕婦禁用。", "陰虛血虛動風者禁用。", "生白附子不得內服。"],
+      "contraindications_en": ["Contraindicated during pregnancy.", "Contraindicated for Internal Wind from Yin or Blood deficiency.", "Raw Bai Fu Zi must not be administered internally."],
+      "cautions_en": ["Internal use requires a professionally processed preparation and careful dosing.", "Overdose may cause oral and throat numbness or swelling, nausea, vomiting, palpitations or respiratory difficulty."],
+      "exam_importance": "★ Chenoweth：頭面風痰要藥，尤其口眼歪斜、面癱與風痰頭痛；對應 NCBAHM 2026 CH Domain I.A。",
+      "exam_pearl": "重點不是一般肺痰，而是「頭面風痰＋止痙」；有毒，內服必須炮製，生品只外用。",
+      "source_citations": [
+        {"name": "Chenoweth Materia Medica 課件", "scope": "p.32：性味歸經、功效、主治、劑量、炮製與禁忌"},
+        {"name": "American Dragon", "url": "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html", "scope": "Actions、indications、dosage、preparation and contraindications"},
+        {"name": "NCBAHM 2026 CH Content Outline", "scope": "Domain I.A"}
+      ],
+      "field_sources": {
+        "functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "actions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "indications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "modern_functions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "modern_functions_en": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "dosage": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "contraindications_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "contraindications_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "cautions_zh": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32"],
+        "cautions_en": ["https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"],
+        "exam_importance": ["curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p32", "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A"]
+      },
+      "key_pairs": [],
       "related_formulas": [
-        "formula.bu_yang_huan_wu_tang",
         "formula.qian_zheng_san"
       ],
       "category": "化痰止咳平喘藥 / Transform Phlegm - Warm"
