@@ -237,6 +237,13 @@ def parse(pdf_path):
                 txt = [w["text"] for w in words
                        if w["x1"] <= name_x + 2 and a["y0"] - 1 <= w["top"] < a["y1"]]
                 a["identity"] = [" ".join(txt)] if txt else []
+                # The exam asterisk usually sits on the code (SP-6**), but on two
+                # points in the whole set it sits on the pinyin one line down
+                # ("Da Bao*", "Zhong Zhu*"). Reading only the code silently rated
+                # SP21 and TE3 as non-exam points. Take whichever carries it.
+                for w in txt:
+                    if w.endswith("*") and not CODE_RE.match(w):
+                        a["stars"] = max(a["stars"], len(w) - len(w.rstrip("*")))
 
             for a in anchors:
                 rec = points.setdefault(a["code"], {"code": a["code"], "stars": a["stars"], "pages": [],

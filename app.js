@@ -3096,13 +3096,20 @@ function pointIdentitySection(point) {
   </div>`;
 }
 
+// Exam pearls mark the one phrase worth memorising with **…**. Escape first,
+// then promote the markers — so the text is still fully escaped and only the
+// marker pairs this function produced ever become tags.
+function boldMarkers(text) {
+  return escapeHtml(String(text || "")).replace(/\*\*([^*]+)\*\*/g, '<strong class="pep-key">$1</strong>');
+}
+
 function examPearlSection(point) {
   if (!point.examPearl && !point.examImportance) return "";
   const star = Number(point.examStar) || 0;
   const heading = contentMode === "english" ? "Exam Pearl" : "考試重點";
   return `<section class="point-exam-pearl${star >= 2 ? " is-high" : ""}">
     <h3>${star ? (star >= 2 ? "★★ " : "★ ") : "💡 "}${escapeHtml(heading)}</h3>
-    ${point.examPearl ? `<p class="pep-body">${escapeHtml(point.examPearl)}</p>` : ""}
+    ${point.examPearl ? `<p class="pep-body">${boldMarkers(point.examPearl)}</p>` : ""}
     ${point.examImportance ? `<p class="pep-scope">${escapeHtml(point.examImportance)}</p>` : ""}
   </section>`;
 }
@@ -3672,7 +3679,13 @@ function evidenceText(point) {
   }
   if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
   if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
-  if (point.evidence && !point.evidence.includes("draft record for AcuTing OS")) {
+  // The CloudTCM import wrote the same paragraph into both evidence and
+  // modern_research_zh on 348 of 361 points, so this section printed it twice
+  // under two different headings. The data keeps both fields (§0「只刪不加」);
+  // the card just does not repeat itself.
+  const evidenceIsEcho = point.evidence && point.modernResearchZh
+    && String(point.evidence).trim() === String(point.modernResearchZh).trim();
+  if (point.evidence && !evidenceIsEcho && !point.evidence.includes("draft record for AcuTing OS")) {
     parts.push(`【學習提醒】\n${point.evidence}`);
   }
   if (parts.length > 0) return parts.join("\n\n");

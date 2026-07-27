@@ -5410,6 +5410,9 @@ html { scroll-padding-top: 92px; }
 .point-exam-pearl h3 { margin: 0 0 0.4rem; font-size: 0.98rem; font-weight: 800; }
 .point-exam-pearl .pep-body { margin: 0 0 0.4rem; line-height: 1.65; }
 .point-exam-pearl .pep-scope { margin: 0; font-size: 0.84rem; opacity: 0.78; }
+/* The one phrase in the pearl worth memorising. Weight carries it — a second
+   colour inside an already-tinted box just muddies it. */
+.point-exam-pearl .pep-key { font-weight: 800; text-underline-offset: 3px; text-decoration: underline; }
 
 .point-functions__list { margin: 0; padding-left: 1.35rem; }
 .point-functions__list li { margin-bottom: 0.45rem; line-height: 1.6; }

@@ -124,13 +124,16 @@ for (const r of recs) {
 
   const nf = arr(r.functions_zh).length;
   funcCounts.push(nf);
-  // Floor is 2, not 3. Chenoweth's own table gives LU4, LU8 and LU11 exactly two
-  // curated actions; demanding a third would force padding, which is the defect
-  // this check exists to prevent. Target stays 4-6, same shape as the herb rule
-  // (E8 blocks outside 2-6 while the doc asks for 3-5).
-  if (!neverNeedled && (nf < 2 || nf > 8)) {
-    flag(r, `功效 ${nf} 條(需 2-8,目標 4-6)`);
-    if (isTemplate) errors.push(`A6 ${id}: functions_zh has ${nf} item(s) — keep the 2-8 key actions`);
+  // The ceiling is the real rule: 16 unranked "functions" is the misfiling this
+  // check exists to catch. The floor blocks nothing, because the source
+  // sometimes genuinely gives very few — Chenoweth's table has exactly two
+  // actions for LU4/LU8/LU11 and exactly one for SP16 腹哀 (「調理腸道」).
+  // Erroring there would force padding, which is the same defect from the other
+  // direction. Thin records still surface on the worklist for Ting to review.
+  if (!neverNeedled && nf < 2) flag(r, `功效只有 ${nf} 條(目標 4-6,課件若真的只給這些就不用湊)`);
+  if (!neverNeedled && nf > 8) {
+    flag(r, `功效 ${nf} 條(上限 8,目標 4-6)`);
+    if (isTemplate) errors.push(`A6 ${id}: functions_zh has ${nf} items — condense to the 8 key actions`);
   }
   if (!neverNeedled && !/\d/.test(String(r.needling || "") + String(r.acumethod_zh || ""))) {
     flag(r, "針法缺具體深度/角度數字");

@@ -27486,52 +27486,49 @@
     "location_en": "On the medial side of the great toe, about 0.1 cun from the corner of the nail.",
     "cun_measurement": "0.1 cun from the medial nail corner of the great toe.",
     "functions_zh": [
-      "井穴",
-      "健脾",
-      "理氣",
-      "溫陽",
-      "瀉火",
-      "醒腦",
-      "調經",
-      "益氣",
-      "下血",
       "止血",
-      "清心",
-      "消脹",
-      "頭面五官疾病",
-      "神經系統疾病",
-      "消化系統疾病",
-      "婦科疾病",
-      "精神神志疾病"
+      "調理脾氣",
+      "寬胸",
+      "寧心安神",
+      "醒神開竅"
     ],
     "functions_en": [
-      "Regulates the Spleen and blood",
-      "Stops bleeding",
-      "Restores consciousness",
-      "Calms the spirit"
+      "Stops Bleeding",
+      "Regulates Spleen",
+      "Unbinds chest",
+      "Calms heart & spirit",
+      "Restores consciousness"
     ],
     "indications_zh": [
-      "脾不統血",
-      "崩漏",
+      "腹脹",
       "便血",
-      "昏厥",
-      "多夢驚悸"
+      "月經過多（經血量大）",
+      "崩漏",
+      "神志失常",
+      "多夢擾眠",
+      "驚厥抽搐",
+      "痛風"
     ],
     "indications_en": [
-      "Spleen failing to control blood",
+      "Abdominal distention",
+      "Bloody stools",
+      "Menorrhagia (heavy menstrual bleeding)",
       "Uterine bleeding",
-      "Blood in stool",
-      "Fainting",
-      "Agitation with dreaming"
+      "Mental disorders",
+      "Dream disturbed sleep",
+      "Convulsions",
+      "Gout"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "足趾感染、糖尿病足、凝血異常或抗凝藥使用者避免自行刺絡。"
+      "足趾感染、糖尿病足、凝血異常或抗凝藥使用者避免自行刺絡。",
+      "趾端穴，僅可沿皮下淺刺 0.1 吋，不可深刺",
+      "甲角旁血運豐富，出針後按壓止血"
     ],
-    "needling": "淺刺0.2～0.3寸，或點刺出血",
+    "needling": "淺刺0.2～0.3寸，或點刺出血\n\n課件：Subcutaneously 0.1 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -27563,7 +27560,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP1",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.jing_well"
     ],
@@ -27682,9 +27679,53 @@
     "exam_star": 1,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "井穴",
+      "木穴（本經子穴）",
+      "鬼穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Jing Well Point",
+      "Wood Point",
+      "Ghost Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_pearl": "★ 脾經止血第一穴：崩漏、便血都找它。井穴又是鬼穴，所以既治血證也治神志（多夢、驚厥）。臨床常用灸法止崩漏。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP2",
@@ -27697,45 +27738,38 @@
     "location_en": "On the medial side of the great toe, distal and inferior to the first metatarsophalangeal joint, at the junction of red and white skin.",
     "cun_measurement": "Distal to the first metatarsophalangeal joint.",
     "functions_zh": [
-      "滎穴",
-      "健脾",
-      "止痛",
-      "除濕利濕化濕",
-      "止嘔",
-      "潛陽熄風",
-      "消脹",
-      "化濕",
-      "呼吸系統疾病",
-      "消化系統疾病"
+      "調理脾氣",
+      "化濕、清利濕熱",
+      "和中焦",
+      "清熱"
     ],
     "functions_en": [
-      "Strengthens the Spleen",
-      "Harmonizes the Stomach",
-      "Clears heat",
-      "Resolves dampness"
+      "Regulates Spleen",
+      "Resolves dampness & damp-heat",
+      "Harmonizes middle jiao",
+      "Clears heat"
     ],
     "indications_zh": [
-      "脾胃濕熱",
-      "胃痛",
       "腹脹",
-      "嘔吐",
-      "發熱無汗"
+      "胃痛",
+      "便祕",
+      "熱病無汗"
     ],
     "indications_en": [
-      "Damp-heat in the Spleen and Stomach",
-      "Epigastric pain",
       "Abdominal distention",
-      "Vomiting",
-      "Fever without sweating"
+      "Gastric pain",
+      "Constipation",
+      "Febrile diseases w/anhidrosis"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "足部傷口、感染、痛風急性發作或糖尿病足風險者避免自行刺激。"
+      "足部傷口、感染、痛風急性發作或糖尿病足風險者避免自行刺激。",
+      "赤白肉際處針感強，直刺不超過 0.3 吋"
     ],
-    "needling": "直刺0.3～0.5寸",
+    "needling": "直刺0.3～0.5寸\n\n課件：Perpendicular 0.1-0.3 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -27766,7 +27800,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP2",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.ying_spring"
     ],
@@ -27864,9 +27898,51 @@
     "exam_star": 1,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "滎穴",
+      "火穴（本經母穴）",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Ying Spring Point",
+      "Fire Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_pearl": "滎主身熱 —— 本穴是脾經清熱穴，「熱病無汗」是課件特別列的主治。火穴＝本經母穴，虛則補其母，脾虛可補此穴。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP3",
@@ -27879,39 +27955,42 @@
     "location_en": "On the medial side of the foot, posterior and inferior to the head of the first metatarsal bone, at the junction of red and white skin.",
     "cun_measurement": "Posterior-inferior to the first metatarsal head.",
     "functions_zh": [
-      "輸穴",
-      "原穴",
       "健脾",
-      "止嘔",
-      "消脹"
+      "化濕、清利濕熱",
+      "調和脾胃",
+      "理氣"
     ],
     "functions_en": [
-      "Tonifies the Spleen",
-      "Resolves dampness",
-      "Harmonizes the middle burner"
+      "Tonifies Spleen",
+      "Resolves dampness & damp-heat",
+      "Harmonizes Spleen & Stomach",
+      "Regulates Qi"
     ],
     "indications_zh": [
-      "脾虛濕困",
+      "胃痛",
       "腹脹",
-      "腹痛",
-      "泄瀉",
-      "倦怠"
+      "便祕、痢疾、泄瀉",
+      "嘔吐、腸鳴",
+      "身重倦怠",
+      "腳氣（維生素 B1 缺乏）"
     ],
     "indications_en": [
-      "Spleen qi deficiency with dampness",
+      "Gastric pain",
       "Abdominal distention",
-      "Abdominal pain",
-      "Diarrhea",
-      "Fatigue"
+      "Constipation, dysentery, diarrhea",
+      "Vomiting, borborygmus",
+      "Sluggishness",
+      "Beriberi (B-1 thiamine deficiency)"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "足內側局部腫痛、傷口或感染時避開。"
+      "足內側局部腫痛、傷口或感染時避開。",
+      "赤白肉際取穴，直刺 0.3–0.5 吋，避免刺入關節腔"
     ],
-    "needling": "直刺0.5～1寸",
+    "needling": "直刺0.5～1寸\n\n課件：Perpendicular 0.3-0.5 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -27945,7 +28024,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP3",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.shu_stream",
       "yuan"
@@ -28026,9 +28105,53 @@
     "exam_star": 1,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "輸穴",
+      "土穴（本經本穴）",
+      "原穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Shu Stream Point",
+      "Earth Point",
+      "Yuan Source Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_pearl": "★ 脾經原穴，也是輸穴與土穴三重身分 —— 「本經本穴」，補脾的代表穴。輸主體重節痛，所以身重倦怠也用它。與 SP4 公孫分工：太白補脾之本，公孫調衝脈與心胸。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP4",
@@ -28041,52 +28164,48 @@
     "location_en": "On the medial side of the foot, distal and inferior to the base of the first metatarsal bone, at the junction of red and white skin.",
     "cun_measurement": "Distal-inferior to the base of the first metatarsal.",
     "functions_zh": [
-      "絡穴",
-      "八脈交會穴",
       "健脾",
+      "和中焦",
       "理氣",
-      "溫陽",
-      "除濕利濕化濕",
-      "溫經",
-      "活絡",
-      "補益肝腎",
-      "下血",
-      "止嘔",
-      "鎮痛",
-      "消脹",
-      "消化系統疾病",
-      "婦科疾病"
+      "化濕",
+      "安神",
+      "利心胸",
+      "調理衝脈"
     ],
     "functions_en": [
-      "Strengthens the Spleen",
-      "Harmonizes the Stomach",
-      "Regulates the Chong vessel",
-      "Unbinds the chest"
+      "Fortifies Spleen",
+      "Harmonizes Middle Jiao",
+      "Regulates Qi",
+      "Resolves dampness",
+      "Calms spirit",
+      "Benefits Heart & chest",
+      "Regulates Penetrating vessel"
     ],
     "indications_zh": [
-      "脾胃不和",
       "胃痛",
       "嘔吐",
-      "腹痛泄瀉",
-      "胸悶",
-      "月經不調"
+      "腹痛腹脹",
+      "泄瀉",
+      "痢疾",
+      "腸鳴"
     ],
     "indications_en": [
-      "Spleen-Stomach disharmony",
-      "Epigastric pain",
+      "Gastric pain",
       "Vomiting",
-      "Abdominal pain with diarrhea",
-      "Chest oppression",
-      "Menstrual irregularity"
+      "Abdominal pain & distention",
+      "Diarrhea",
+      "Dysentery",
+      "Borborygmus"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "孕期或腹痛出血等情況需由合格醫師辨證，不宜自行強刺激。"
+      "孕期或腹痛出血等情況需由合格醫師辨證，不宜自行強刺激。",
+      "第一蹠骨基底前下方取穴，直刺 0.5–0.8 吋，避免刺傷骨膜"
     ],
-    "needling": "直刺0.5～1寸",
+    "needling": "直刺0.5～1寸\n\n課件：Perpendicular 0.5-0.8 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -28116,7 +28235,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP4",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "confluent",
       "luo"
@@ -28224,7 +28343,57 @@
       "",
       "Chest Oppression",
       "Irregular Menstruation"
-    ]
+    ],
+    "point_identity_zh": [
+      "絡穴",
+      "八脈交會穴 —— 通衝脈",
+      "配 PC6 內關（通陰維脈）合治心、胸、胃",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Luo Connecting Point",
+      "Chong Mai Master Point",
+      "Paired with PC-6 (Yin Wei Mai Master Point)",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "八脈交會穴必背：公孫通衝脈，配內關（PC6，通陰維脈），主治**心、胸、胃**。這一組是八法歌訣的第一組。同時是脾經絡穴，別走胃經。（課件未標星號，但屬考綱 Domain III 治療計畫的固定內容。）",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ]
+    }
   },
   {
     "code": "SP5",
@@ -28237,42 +28406,42 @@
     "location_en": "In the depression anterior and inferior to the medial malleolus, near the midpoint between the navicular tuberosity and the tip of the medial malleolus.",
     "cun_measurement": "Anterior-inferior to the medial malleolus.",
     "functions_zh": [
-      "經穴",
       "健脾",
-      "理氣",
-      "益氣",
-      "清心",
-      "消脹",
-      "消化系統疾病",
-      "運動系統疾病"
+      "化濕",
+      "利筋骨",
+      "安神"
     ],
     "functions_en": [
-      "Strengthens the Spleen",
+      "Fortifies Spleen",
       "Resolves dampness",
-      "Benefits the ankle"
+      "Benefits sinews & bones",
+      "Calms spirit"
     ],
     "indications_zh": [
-      "脾虛濕困",
-      "腹脹泄瀉",
-      "黃疸",
+      "腹脹",
+      "便祕、泄瀉",
+      "腸鳴",
+      "舌強痛",
       "足踝痛",
-      "痔疾"
+      "痔瘡"
     ],
     "indications_en": [
-      "Spleen deficiency with dampness",
-      "Abdominal distention with diarrhea",
-      "Jaundice",
-      "Ankle pain",
-      "Hemorrhoids"
+      "Abdominal distention",
+      "Constipation, diarrhea",
+      "Borborygmus",
+      "Pain & rigidity of tongue",
+      "Pain in foot/ankle",
+      "Hemorrhoid"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "踝部急性扭傷、骨折疑慮或感染時先評估。"
+      "踝部急性扭傷、骨折疑慮或感染時先評估。",
+      "內踝前下方凹陷處，直刺不超過 0.3 吋，避免刺傷踝關節與脛後動脈分支"
     ],
-    "needling": "直刺0.3～0.5寸",
+    "needling": "直刺0.3～0.5寸\n\n課件：Perpendicular 0.2-0.3 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -28303,7 +28472,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP5",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.jing_river"
     ],
@@ -28390,7 +28559,55 @@
       "Jaundice",
       "",
       "Hemorrhoids"
-    ]
+    ],
+    "point_identity_zh": [
+      "經穴",
+      "金穴（本經子穴）",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Jing River Point",
+      "Metal Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "踝關節局部要穴 —— 「利筋骨」加「足踝痛」是課件唯一在脾經給的踝部主治。金穴＝本經子穴，實則瀉其子，脾經實證瀉此穴。舌強痛是容易漏的考點（脾之脈連舌本、散舌下）。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ]
+    }
   },
   {
     "code": "SP6",
@@ -28403,51 +28620,55 @@
     "location_en": "On the medial aspect of the leg, 3 cun superior to the prominence of the medial malleolus, posterior to the medial border of the tibia.",
     "cun_measurement": "3 cun above the medial malleolus.",
     "functions_zh": [
-      "健脾",
-      "除濕利濕化濕",
-      "溫經",
-      "調經",
-      "行氣",
-      "止血",
-      "止帶",
-      "止嘔",
-      "養陰滋陰",
-      "養血",
-      "消脹",
-      "利尿通淋",
-      "婦科疾病"
+      "健脾和胃",
+      "化濕",
+      "疏肝、補腎",
+      "調經、催產",
+      "調理下焦、通利小便、益前陰",
+      "安神",
+      "活血",
+      "通經活絡、止痛"
     ],
     "functions_en": [
-      "Strengthens the Spleen",
+      "Tonifies Spleen & Stomach",
       "Resolves dampness",
-      "Regulates Liver and Kidney",
-      "Regulates menstruation",
-      "Calms the spirit"
+      "Harmonizes Liver and tonifies Kidneys",
+      "Regulates menstruation and induces labor",
+      "Harmonizes Lower Jiao, regulates urination and benefits genitals",
+      "Calms spirit",
+      "Invigorates blood",
+      "Activates channel and alleviates pain"
     ],
     "indications_zh": [
-      "脾虛濕盛",
-      "月經不調",
-      "痛經",
-      "不孕",
-      "失眠",
-      "小便不利"
+      "腹痛腹脹、腸鳴泄瀉",
+      "痛經、月經不調、崩漏",
+      "帶下、子宮脫垂、不孕、滯產",
+      "遺精、陽痿",
+      "遺尿（尤其小兒夜間）、小便不利澀痛",
+      "水腫、疝氣、外陰痛",
+      "肌肉萎縮、運動障礙、下肢癱瘓疼痛",
+      "頭痛、頭暈目眩、失眠"
     ],
     "indications_en": [
-      "Spleen deficiency with dampness",
-      "Menstrual irregularity",
-      "Dysmenorrhea",
-      "Infertility pattern support",
-      "Insomnia",
-      "Urinary difficulty"
+      "Abdominal pain & distention; Borborygmus, diarrhea",
+      "Dysmenorrhea (painful menses); Irregular menstruation; Uterine bleeding",
+      "Morbid leucorrhea (vaginal disch.); Uterine prolapse; Sterility; Delayed labor",
+      "Nocturnal emission, impotence",
+      "Enuresis (involuntary urination, esp. by children at night); Dysuria (Painful, difficult urination)",
+      "Edema, Hernia; Pain in external genitalia",
+      "Muscular atrophy; Motor impairment; Paralysis/pain of lower extremities",
+      "Headache; Dizziness/vertigo; Insomnia"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "孕婦禁針或灸"
+      "孕婦禁針或灸",
+      "⚠️ 孕婦禁針 —— 課件明列 Contraindicated during pregnancy，本穴能催產（Induces labor）",
+      "脛骨內側後緣，直刺 0.5–1.0 吋，避免刺傷脛後動脈與神經"
     ],
-    "needling": "直刺0.5～1.5寸。孕婦慎用",
+    "needling": "直刺0.5～1.5寸。孕婦慎用\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -28478,7 +28699,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP6",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "cautions_zh": [
       "孕婦禁針或灸"
     ],
@@ -28584,9 +28805,52 @@
     "exam_star": 2,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "交會穴 —— 足三陰（脾、肝、腎）交會",
+      "婦科要穴",
+      "可灸",
+      "⚠️ 孕婦禁針"
+    ],
+    "point_identity_en": [
+      "Intersection Point of 3 Yin Leg Meridians (Spleen, Liver, Kidney)",
+      "Moxibustion Applicable",
+      "Contraindicated during pregnancy"
+    ],
+    "exam_pearl": "★★ 全身最重要的穴之一，脾經第一考點。足三陰（脾肝腎）交會 —— 一穴通三經，所以婦科、泌尿、生殖、失眠都用它。**孕婦禁針**是安全考點，理由就在功效裡：它能催產。與 ST36 分工：足三里補氣，三陰交補陰血、調下焦。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP7",
@@ -28600,47 +28864,39 @@
     "cun_measurement": "6 cun above the medial malleolus.",
     "functions_zh": [
       "健脾",
-      "理氣",
-      "利水",
-      "溫陽",
-      "除濕利濕化濕",
-      "活血",
-      "化瘀",
-      "溫經",
-      "補益肝腎",
-      "消脹",
-      "利尿通淋",
-      "消化系統疾病",
-      "運動系統疾病",
-      "精神神志疾病"
+      "化濕",
+      "利小便",
+      "消腫"
     ],
     "functions_en": [
-      "Strengthens the Spleen",
-      "Drains dampness",
-      "Regulates the lower burner"
+      "Fortifies Spleen",
+      "Resolves dampness",
+      "Promotes urination",
+      "Disperses swelling"
     ],
     "indications_zh": [
-      "脾虛濕盛",
       "腹脹",
-      "小便不利",
-      "下肢腫脹",
-      "足膝冷痛"
+      "腸鳴",
+      "腹中冷感",
+      "膝腿麻木癱瘓",
+      "水腫"
     ],
     "indications_en": [
-      "Spleen deficiency with dampness",
       "Abdominal distention",
-      "Urinary difficulty",
-      "Leg swelling",
-      "Cold pain of foot and knee"
+      "Borborygmus",
+      "Coldness",
+      "Numbness & paralysis of knee & leg",
+      "Edema"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "下肢不明腫脹、紅熱痛或疑似血栓需先就醫。"
+      "下肢不明腫脹、紅熱痛或疑似血栓需先就醫。",
+      "脛骨內側後緣，直刺 0.5–1.0 吋，避開脛後動脈"
     ],
-    "needling": "直刺0.5～1.5寸",
+    "needling": "直刺0.5～1.5寸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -28669,7 +28925,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP7",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.5～1.5寸",
     "cloudtcm_detail": "漏谷穴主要功效「健脾消腫，滲濕利尿」，主治腹脹腸鳴、小便不利、遺精、下肢痿痹、腳氣、腿膝踝腫、消化不良、尿路感染、功能性子宮出血、腳氣。",
     "combine_points_zh": "漏谷穴配伍詳解\n\n漏谷穴，位於小腿內側，當內踝尖上3寸，脛骨後緣。屬足太陰脾經，具有健脾利濕、疏肝理氣、活血化瘀的功效。其配伍應用豐富，以下針對題目所述配伍進行詳細分析：\n\n1. 漏谷穴配足三里穴治腹脹腸鳴：\n\n此配伍主要針對脾胃虛弱引起的腹脹、腸鳴等症。漏谷穴健脾利濕，疏通脾經氣血，而足三里穴是胃經的強壯穴，具有健脾和胃、理氣消脹的功效。兩穴合用，一疏一補，協同作用，達到健脾和胃、理氣消脹的療效。原理在於補脾胃之氣，促進消化吸收，排除腸道積滯。\n\n2. 漏谷穴配曲泉穴，有活血祛瘀的作用，治血瘕：\n\n曲泉穴屬足厥陰肝經，具有疏肝理氣、活血化瘀的功效。血瘕多因氣滯血瘀所致，漏谷穴活血化瘀，曲泉穴疏肝理氣，兩穴合用，標本兼治，可有效改善氣滯血瘀的病理狀態，促進瘀血消散。原理在於疏通肝脾經絡，促進氣血運行，消除瘀滯。\n\n3. 漏谷穴配陰陵泉穴，三陰交穴，有溫經通絡除濕的作用：\n\n陰陵泉穴屬足太陰脾經，三陰交穴為肝脾腎三經交會穴，都具有健脾利濕、溫經通絡的功效。此配伍針對脾腎陽虛、寒濕凝滯所致的經絡不通、肢體沉重等症。漏谷穴與陰陵泉、三陰交穴合用，加強了健脾利濕、溫經通絡的功效，從而達到溫經散寒、除濕通絡的目的。原理在於溫補脾腎，化解寒濕，暢通經絡。\n\n4. 治下肢重病，漏谷穴配中極穴，太溪穴：\n\n中極穴屬任脈，太溪穴屬足少陰腎經，都與下肢氣血運行密切相關。此配伍用於治療下肢疾患，如下肢水腫、麻木等。漏谷穴健脾利濕，中極穴補益元氣，太溪穴滋陰補腎，三穴合用，標本兼治，可有效改善下肢氣血運行，消除水腫、麻木等症狀。原理在於補益腎氣，利水消腫，改善下肢血液循環。",
@@ -28772,7 +29028,53 @@
       "Dysuria / Difficulty Urinating",
       "",
       ""
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "定位靠 SP6 與 SP9 的連線：內踝尖上 6 吋，正好在三陰交（3 吋）與陰陵泉之間。功效是縮小版的陰陵泉 —— 利濕消腫，但沒有 SP9 的「開水道」層次。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p1"
+      ]
+    }
   },
   {
     "code": "SP8",
@@ -28785,51 +29087,42 @@
     "location_en": "On the medial aspect of the leg, 3 cun inferior to SP9, posterior to the medial border of the tibia.",
     "cun_measurement": "3 cun inferior to SP9.",
     "functions_zh": [
-      "郄穴",
-      "健脾",
-      "理氣",
-      "溫陽",
-      "散寒",
-      "活血",
-      "化瘀",
       "調經",
-      "益氣",
-      "行氣",
-      "止帶",
-      "止嘔",
-      "鎮痛",
-      "消脹",
-      "利尿通淋",
-      "泌尿生殖系統疾病"
+      "活血",
+      "和脾",
+      "化濕",
+      "緩急止痛"
     ],
     "functions_en": [
-      "Regulates the Spleen",
-      "Regulates blood",
       "Regulates menstruation",
-      "Stops pain"
+      "Invigorates blood",
+      "Harmonizes Spleen",
+      "Resolves dampness",
+      "Moderates acute conditions"
     ],
     "indications_zh": [
-      "痛經",
-      "月經不調",
-      "腹痛",
-      "泄瀉",
-      "水腫"
+      "腹痛腹脹",
+      "濕濁停聚 —— 泄瀉、水腫、小便不利",
+      "遺精",
+      "血瘀 —— 月經不調、痛經、血塊、肌瘤",
+      "男性不育"
     ],
     "indications_en": [
-      "Dysmenorrhea",
-      "Menstrual irregularity",
-      "Abdominal pain",
-      "Diarrhea",
-      "Edema"
+      "Abdominal pain & distention",
+      "Accumulation of dampness (diarrhea, edema, dysuria)",
+      "Nocturnal emission",
+      "Blood stagnation (irregular menses, dysmenorrhea (painful menses), clotting, fibroids)",
+      "Male infertility"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "劇烈腹痛、異常出血或疑似急腹症需先醫療評估。"
+      "劇烈腹痛、異常出血或疑似急腹症需先醫療評估。",
+      "脛骨內側後緣，直刺 0.5–1.0 吋，避開脛後動脈"
     ],
-    "needling": "直刺0.5～1.5寸",
+    "needling": "直刺0.5～1.5寸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -28859,7 +29152,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP8",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "xi"
     ],
@@ -28974,9 +29267,49 @@
     "exam_star": 1,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "郄穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Xi Cleft Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_pearl": "★ 郄穴主急症與血證 —— 「緩急止痛」加「血瘀」就是它的兩張牌，**急性痛經**是最典型的用法（陰經郄穴治血證）。定位口訣：陰陵泉下 3 吋。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP9",
@@ -28989,50 +29322,46 @@
     "location_en": "On the tibial aspect of the leg, in the depression between the inferior border of the medial condyle of the tibia and the medial border of the tibia.",
     "cun_measurement": "",
     "functions_zh": [
-      "合穴",
-      "清熱",
-      "健脾",
-      "消腫",
-      "利水",
-      "除濕利濕化濕",
-      "調經",
-      "補腎壯陽",
-      "活絡",
-      "補益肝腎",
-      "行氣",
-      "止帶",
-      "止嘔",
-      "消脹",
-      "利尿通淋",
-      "快氣和中",
-      "泌尿生殖系統疾病",
-      "消化系統疾病"
+      "調理脾氣",
+      "化濕",
+      "開通水道",
+      "利下焦"
     ],
     "functions_en": [
-      "Strengthens the spleen, resolves dampness, benefits the lower jiao. He-sea point of the spleen channel."
+      "Regulates Spleen",
+      "Resolves dampness",
+      "Opens & moves water passages",
+      "Benefits lower jiao"
     ],
     "indications_zh": [
-      "脾虛濕盛",
-      "水腫",
-      "小便不利",
-      "腹瀉",
-      "膝痛"
+      "腹痛腹脹",
+      "泄瀉、痢疾、水腫",
+      "黃疸、肝炎（濕熱）",
+      "小便不利、遺尿、尿失禁",
+      "外陰痛、痛經",
+      "膝痛（尤其內側）",
+      "濕痺",
+      "慢性念珠菌感染"
     ],
     "indications_en": [
-      "Abdominal distension",
-      "Diarrhea",
-      "Edema",
-      "Difficult urination",
-      "Knee pain"
+      "Abdominal pain & distention",
+      "Diarrhea, dysentery, edema",
+      "Jaundice, hepatitis (damp heat)",
+      "Dysuria, enuresis (involuntary urination), urine incontinence",
+      "Pain in external genitalia; Dysmenorrhea",
+      "Knee pain (especially medial)",
+      "Damp Bi",
+      "Chronic yeast infections, candida"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "膝內側疼痛或腫脹明顯時需先評估原因。"
+      "膝內側疼痛或腫脹明顯時需先評估原因。",
+      "脛骨內側髁下緣凹陷，直刺 0.5–1.0 吋，避免刺入膝關節腔"
     ],
-    "needling": "直刺0.5～1.5寸",
+    "needling": "直刺0.5～1.5寸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -29052,7 +29381,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP9",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.he_sea"
     ],
@@ -29174,9 +29503,52 @@
     "exam_star": 1,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "合穴",
+      "水穴",
+      "祛濕要穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "He Sea Point",
+      "Water Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_pearl": "★ 全身祛濕第一穴：合穴＋水穴，所以「開通水道」是它獨有的功效層次（SP7 只有利濕消腫，沒有這一層）。水腫、黃疸、濕痺、白帶都靠它。常配 SP6 三陰交、ST36 足三里。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP10",
@@ -29189,44 +29561,38 @@
     "location_en": "On the anteromedial aspect of the thigh, on the bulge of the vastus medialis muscle, 2 cun superior to the medial end of the base of the patella.",
     "cun_measurement": "",
     "functions_zh": [
-      "清熱",
-      "健脾",
-      "除濕利濕化濕",
       "活血",
+      "祛瘀",
+      "涼血（課件註記：最常用於此）",
       "調經",
-      "舒筋",
-      "補益肝腎",
-      "養血",
-      "消脹",
-      "利尿通淋",
-      "快氣和中",
-      "婦科疾病"
+      "利皮膚"
     ],
     "functions_en": [
-      "Invigorates and cools blood, regulates menstruation, benefits the skin."
+      "Invigorates blood",
+      "Dispels blood stasis",
+      "Cools blood (used often for this)",
+      "Harmonizes menstruation",
+      "Benefits skin"
     ],
     "indications_zh": [
-      "血瘀",
-      "血熱",
-      "皮膚瘙癢",
-      "月經不調",
-      "膝痛"
+      "血分婦科病 —— 血虛、血熱、血瘀所致的月經不調、痛經、閉經、經期腹痛、經前症候群",
+      "濕熱或血熱型皮膚病 —— 蕁麻疹、濕疹、皮膚炎、丹毒",
+      "大腿內側痛"
     ],
     "indications_en": [
-      "Irregular menstruation",
-      "Dysmenorrhea",
-      "Urticaria",
-      "Eczema",
-      "Medial thigh pain"
+      "Gynecological issues due to blood, heat, stasis, or deficiency (Irregular menstruation, dysmenorrhea, amenorrhea, cramps, PMS)",
+      "Skin problems from damp-heat or hot blood [Urticaria (hives), Eczema, dermatitis, Erysipelas (bacterial infection causing large, raised red skin patches)]",
+      "Pain in medial aspect of thigh"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "不明原因陰道出血、凝血異常或抗凝藥使用者需謹慎。"
+      "不明原因陰道出血、凝血異常或抗凝藥使用者需謹慎。",
+      "屈膝取穴，股四頭肌內側頭隆起處，直刺 0.5–1.2 吋"
     ],
-    "needling": "直刺0.5～1.5寸",
+    "needling": "直刺0.5～1.5寸\n\n課件：Perpendicular 0.5-1.2 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -29249,7 +29615,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP10",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.5～1.5寸",
     "cloudtcm_detail": "血海穴，血這裡指脾血，海，指脾經所生之血在此聚集，氣血物質充斥的範圍巨大如海。所以此穴具有化血為氣，運化脾血之功能，是脾經上的重要穴道之一。\n\n經常按摩血海穴，可以幫助下半身血液循環，主要可以消除下肢水腫，舒緩腹脹、濕疹、皮膚瘙癢，改善女性的月經不調、貧血、各種婦科疾病。女性在產後容易容易出現各種酸痛，因此產後更需要按摩此穴道。\n\n看電視的時候，也可以一邊看電視，一邊用拳頭敲敲左右血海穴，這樣可以順便疏通經絡，以免「久坐傷肉」。\n\n現代發現，針刺血海穴對血液的高凝聚狀態和毛細血管的形態及血流狀態都有不同程度的影響，能促進血液運行，改善微循環，具有一定的活血化瘀作用。\n\n取雙側血海穴配合三陰交治療老年皮膚瘙癢症，觀察66例，痊癒58例，顯效5例，有效了到，總有效率100%。",
     "combine_points_zh": "血海穴，位於大腿內側，屬脾經。其名稱點明其特性：儲藏血液。臨牀上多用於治療血分病證，尤其與婦科疾病關係密切。\n\n1. 血海穴配三陰交穴治月經不調：\n\n原理:  三陰交穴是足太陰脾經、足厥陰肝經、足少陰腎經的交會穴，統攝肝、脾、腎三臟的功能。月經不調往往與肝、脾、腎三臟功能失調相關。肝藏血，脾統血，腎藏精生血。三陰交穴調理三臟，疏通經絡氣血，恢復其正常功能。血海穴則如同一個「血庫」，能夠補充和調節血液，改善血虛或血瘀等導致的月經不調問題。此配伍，三陰交調和臟腑功能，血海則直接作用於血分，協同作用，標本兼治。\n\n適用症狀: 月經量少、月經週期紊亂、痛經（血瘀型）、閉經（血虛或血瘀型）。\n\n2. 血海穴配曲池穴治癮疹：\n\n原理: 癮疹（蕁麻疹）的發病與風、濕、熱邪侵犯肌膚，以及血虛、血瘀等因素有關。曲池穴是手陽明大腸經的原穴，具有瀉熱、清血毒的作用，能清泄體內蘊積的濕熱之邪。血海穴則可以活血化瘀，補充血氣，改善皮膚營養狀況，從而緩解皮膚過敏反應。此配伍，曲池清熱解毒，血海活血化瘀，協同作用，從內外兼顧，治療癮疹。\n\n適用症狀: 急性蕁麻疹，伴有皮膚紅腫、瘙癢等症狀，以及因血熱、血瘀引起的慢性蕁麻疹。",
@@ -29350,9 +29716,49 @@
     "exam_star": 1,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "血證要穴（血海）",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Good for Blood conditions",
+      "Moxibustion Applicable"
+    ],
+    "exam_pearl": "★ 名字就是考點 —— 「血海」，一切血證。課件特別註明**最常用的是涼血**，所以皮膚病（蕁麻疹、濕疹）用它比婦科更典型。與 SP6 分工：血海治血，三陰交調三陰經。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP11",
@@ -29365,37 +29771,36 @@
     "location_en": "On the medial aspect of the thigh, 8 cun superior to the base of the patella, between vastus medialis and sartorius.",
     "cun_measurement": "8 cun above the base of the patella.",
     "functions_zh": [
-      "健脾",
-      "利水",
-      "補益肝腎",
-      "利尿通淋",
-      "泌尿生殖系統疾病"
+      "調理小便",
+      "利濕",
+      "清熱"
     ],
     "functions_en": [
-      "Benefits urination",
-      "Regulates the lower burner",
-      "Clears dampness"
+      "Regulates urination",
+      "Drains damp",
+      "Clears heat"
     ],
     "indications_zh": [
-      "小便不利",
-      "淋證",
-      "腹股溝痛",
-      "下肢腫痛"
+      "小便不利、遺尿",
+      "腹股溝腫痛",
+      "肌肉萎縮、運動障礙",
+      "下肢痛與癱瘓"
     ],
     "indications_en": [
-      "Urinary difficulty",
-      "Lin patterns",
-      "Inguinal pain",
-      "Leg swelling and pain"
+      "Dysuria, enuresis",
+      "Pain & swelling in inguinal region",
+      "Muscular atrophy, motor impairment",
+      "Pain & paralysis of lower extremities"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "避開動脈，《黃帝內經素問·刺禁論》：「刺陰股中大脈，血出不止」"
+      "避開動脈，《黃帝內經素問·刺禁論》：「刺陰股中大脈，血出不止」",
+      "大腿內側，深部有股動靜脈，直刺 0.5–1.0 吋，避開搏動處"
     ],
-    "needling": "直刺0.5～1.5寸。禁直接灸",
+    "needling": "直刺0.5～1.5寸。禁直接灸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -29426,7 +29831,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP11",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "cautions_zh": [
       "避開動脈，《黃帝內經素問·刺禁論》：「刺陰股中大脈，血出不止」"
     ],
@@ -29499,7 +29904,53 @@
       "",
       "",
       ""
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "大腿內側局部穴，臨床少用。定位靠 SP10 與 SP12 的連線（血海上 6 吋）。功效是「利濕清熱」加局部痿痺，屬於補位穴而非主穴。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ]
+    }
   },
   {
     "code": "SP12",
@@ -29512,35 +29963,30 @@
     "location_en": "In the inguinal region, 3.5 cun lateral to the upper border of the pubic symphysis, lateral to the femoral artery.",
     "cun_measurement": "3.5 cun lateral to the pubic symphysis.",
     "functions_zh": [
-      "健脾",
+      "活血",
       "理氣",
-      "溫經",
-      "益氣",
-      "行氣",
-      "消脹",
-      "利尿通淋",
-      "泌尿生殖系統疾病",
-      "婦科疾病",
-      "前陰疾病"
+      "止痛",
+      "利濕",
+      "清熱",
+      "調理小便"
     ],
     "functions_en": [
-      "Moves qi",
-      "Resolves dampness",
-      "Regulates the lower burner"
+      "Invigorates blood",
+      "Regulates Qi",
+      "Alleviates pain",
+      "Drains damp",
+      "Clears heat",
+      "Regulates urination"
     ],
     "indications_zh": [
       "腹痛",
       "疝氣",
-      "帶下",
-      "小便不利",
-      "腹股溝痛"
+      "小便不利"
     ],
     "indications_en": [
       "Abdominal pain",
-      "Hernia patterns",
-      "Vaginal discharge",
-      "Urinary difficulty",
-      "Inguinal pain"
+      "Hernia",
+      "Dysuria"
     ],
     "muscles": [],
     "bones": [],
@@ -29548,9 +29994,11 @@
     "vessels": [],
     "contraindications": [
       "重要血管區，避開股動脈",
-      "孕期、腹股溝腫塊或血管病變需專業操作。"
+      "孕期、腹股溝腫塊或血管病變需專業操作。",
+      "⚠️ 緊鄰髂外動脈搏動處 —— 課件明列 Avoid Artery，取穴時先觸搏動再向外側取，不可直刺搏動點",
+      "位於腹股溝，孕婦與腹部術後慎用"
     ],
-    "needling": "避開股動脈，刺入1～2寸。禁用直接灸",
+    "needling": "避開股動脈，刺入1～2寸。禁用直接灸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -29586,7 +30034,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP12",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "避開股動脈，刺入1～2寸。禁用直接灸",
     "cloudtcm_detail": "沖門穴功效「降逆利濕，理氣消痔」， 主治 腹痛、痔瘡、疝氣、小便不利，胎氣上衝。\n\n現代研究發現，針刺衝門等穴治療下肢深靜脈血栓，取患側衝門、急脈、箕門、血海等穴，穴位皆探刺 1 ~1.5 寸，效果顯效。",
     "combine_points_zh": "衝門穴，位於腹部，臍中下3寸，旁開2寸，屬足太陰脾經。其穴位特性與脾經、肝經、任脈關係密切，主要功能是疏通氣血，調理臟腑。以下針對提供的配伍作詳細分析：\n\n一、衝門配百會、氣海、三陰交治子宮脫垂：\n\n原理： 子宮脫垂多因中氣下陷，脾腎陽虛所致。\n\n衝門穴：  疏通脾經氣血，調理臟腑，提升中氣。\n\n百會穴：  位於頭頂，為諸陽之會，具有提昇陽氣、固本扶正的作用，可輔助提升中氣。\n\n氣海穴：  任脈要穴，元氣歸藏之所，具有溫補元氣、益氣固脫的作用，直接作用於子宮下垂的根本。\n\n三陰交穴：  肝脾腎三陰交會穴，具有調理肝脾腎、補益氣血的作用，從根本上調理臟腑功能，防止再次下垂。\n\n此配伍由上而下，整體提升中氣，溫補腎陽，從而使子宮回歸正常位置。\n\n二、衝門配大敦、太沖、三陰交治疝氣：\n\n原理： 疝氣多因肝氣鬱結、氣血運行不暢所致。\n\n衝門穴：  疏通肝脾氣血，調理臟腑，緩解氣滯。\n\n大敦穴: 足厥陰肝經的原穴，具有疏通肝經、理氣止痛的作用，且為肝經的原穴，能更有效的調理肝氣。\n\n太沖穴：  肝經的原穴，疏肝理氣，活血化瘀，可有效疏解肝氣鬱結。\n\n三陰交穴：  調理肝脾腎，調整氣血運行，輔助治療。\n\n此配伍重點在於疏肝理氣，活血化瘀，從而使疝氣消退。\n\n三、衝門配大敦治疝氣：\n\n此配伍簡潔有效，主要依靠大敦穴疏通肝經，衝門穴協同調理脾經，達到疏肝理氣，緩解疝氣的目的。原理與第二種配伍相似，但作用相對單一。",
@@ -29678,7 +30126,55 @@
       "Leukorrhea",
       "Dysuria / Difficulty Urinating",
       ""
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸",
+      "⚠️ 避開動脈"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable",
+      "Avoid Artery"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "★ 安全考點：本穴外側就是**髂外動脈搏動處**，課件直接寫 Avoid Artery。定位在恥骨聯合上緣水平、旁開任脈 3.5 吋 —— 這個 3.5 吋是脾經腹部唯一不是 4 吋的一穴。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ]
+    }
   },
   {
     "code": "SP13",
@@ -29691,40 +30187,30 @@
     "location_en": "On the lower abdomen, 4 cun inferior to the umbilicus and 4 cun lateral to the anterior midline.",
     "cun_measurement": "4 cun below the umbilicus, 4 cun lateral to midline.",
     "functions_zh": [
-      "健脾",
-      "止痛",
-      "活血",
-      "溫經",
-      "消脹",
-      "消化系統疾病"
+      "理氣",
+      "止痛"
     ],
     "functions_en": [
-      "Moves qi",
-      "Stops pain",
-      "Regulates the intestines"
+      "Regulates Qi",
+      "Alleviates pain"
     ],
     "indications_zh": [
-      "腹痛",
-      "疝氣",
-      "便秘",
-      "腹滿",
-      "積聚"
+      "少腹痛",
+      "疝氣"
     ],
     "indications_en": [
-      "Abdominal pain",
-      "Hernia patterns",
-      "Constipation",
-      "Abdominal fullness",
-      "Abdominal masses pattern"
+      "Lower abdominal pain",
+      "Hernia"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "孕期、腹部腫塊、急腹症或術後疤痕區需避開或專業評估。"
+      "孕期、腹部腫塊、急腹症或術後疤痕區需避開或專業評估。",
+      "腹部穴，直刺 0.5–1.0 吋，孕婦與腹部術後慎用"
     ],
-    "needling": "直刺或斜刺0.5～1.5寸",
+    "needling": "直刺或斜刺0.5～1.5寸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -29750,7 +30236,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP13",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺或斜刺0.5～1.5寸",
     "cloudtcm_detail": "府舍穴主要功效「健脾消滿，理中和胃」。 主治腹痛、腹滿、積聚、霍亂吐瀉、脾腫大、便秘、子宮附件炎、腹股溝淋巴結炎等。",
     "combine_points_zh": "府舍穴，位於足太陰脾經，具有健脾益氣、理氣止痛的功效。其配伍應用豐富，主要針對脾胃及婦科疾患。以下針對題目提供的配伍，詳細分析其原理：\n\n一、府舍配氣沖、箕門，治疝氣：\n\n原理：疝氣多因氣滯血瘀，脾胃虛弱所致。府舍穴健脾益氣，理氣止痛；氣沖穴為氣血衝注之處，具有疏通氣血，調暢衝任二脈的作用；箕門穴位於腹股溝部，可直接疏通局部氣血，緩解疝氣疼痛。三穴合用，標本兼治，能有效改善疝氣症狀。\n\n二、府舍配關元、陰陵泉、三陰交，治子宮脫垂：\n\n原理：子宮脫垂多因脾腎兩虛，氣血不足，衝任二脈失調所致。府舍穴健脾益氣，補益脾經之氣；關元穴為任脈要穴，具有培元固本，補益腎氣的作用；陰陵泉穴為脾經合穴，具有瀉熱除濕，健脾利濕的功效；三陰交穴為肝脾腎三經交會穴，具有調理三陰經氣血的作用。此四穴合用，能夠補益脾腎，固衝任，升提子宮，從而治療子宮脫垂。\n\n三、府舍配氣海穴治腹痛：\n\n原理：腹痛的成因較為複雜，但多與脾胃虛弱，氣滯血瘀有關。府舍穴健脾益氣，理氣止痛；氣海穴為任脈之氣海，具有培元固本，溫補元氣的作用。兩穴合用，可溫補脾胃，理氣止痛，從而緩解腹痛。",
@@ -29828,7 +30314,53 @@
       "Constipation",
       "",
       ""
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "課件只給兩條功效，是脾經最簡的穴之一。與 SP12 衝門僅相距 0.7 吋，主治高度重疊（都治疝氣與少腹痛），差別在 SP12 要避動脈、SP13 不用。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ]
+    }
   },
   {
     "code": "SP14",
@@ -29841,39 +30373,34 @@
     "location_en": "On the lower abdomen, 1.3 cun inferior to the umbilicus and 4 cun lateral to the anterior midline.",
     "cun_measurement": "1.3 cun below the umbilicus, 4 cun lateral to midline.",
     "functions_zh": [
-      "健脾",
+      "溫利下焦",
       "理氣",
-      "消脹",
-      "消化系統疾病"
+      "降逆"
     ],
     "functions_en": [
-      "Moves qi",
-      "Dissipates binding",
-      "Regulates the intestines",
-      "Stops pain"
+      "Warms & benefits lower jiao",
+      "Regulates Qi",
+      "Descends rebellion"
     ],
     "indications_zh": [
-      "腹痛",
-      "腹滿",
-      "便秘",
-      "泄瀉",
-      "疝氣"
+      "臍周痛",
+      "腹脹",
+      "泄瀉、便祕"
     ],
     "indications_en": [
-      "Abdominal pain",
-      "Abdominal fullness",
-      "Constipation",
-      "Diarrhea",
-      "Hernia patterns"
+      "Pain in umbilical region",
+      "Abdominal distention",
+      "Diarrhea, constipation"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "急性腹痛、腹部腫塊、孕期或術後區域需先評估。"
+      "急性腹痛、腹部腫塊、孕期或術後區域需先評估。",
+      "腹部穴，直刺 0.5–1.0 吋，孕婦與腹部術後慎用"
     ],
-    "needling": "直刺或斜刺0.5～1.5寸",
+    "needling": "直刺或斜刺0.5～1.5寸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -29899,7 +30426,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP14",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺或斜刺0.5～1.5寸",
     "cloudtcm_detail": "腹結穴主要功效「溫脾止瀉，鎮痛止咳」主治繞躋腹痛、疝氣、腹寒泄瀉、咳逆、細菌性痢疾。\n\n現代研究發現循經走罐可治療腸炎，患者取仰臥位，四肢伸直，全身放鬆。首先在腹部胃、脾經兩側塗一薄層潤滑劑，然後據患者胖瘦選大號或中號玻璃火罐，上自梁門、腹哀，下至歸來、腹結穴，反復逆時針施走罐療法，最後將火罐固定於神闕穴。留罐5~10分鐘。治療5次後腹瀉漸止，治療8次而愈。",
     "combine_points_zh": "腹結穴(SP14)位於下腹部，具有理氣調腸、去濕健脾的功效，臨牀多用於治療腹痛、腹瀉、便祕等腸胃疾患。其配伍應用，主要基於經絡循行及臟腑之間的相互影響。\n\n1. 腹結穴 + 天樞穴(ST25) + 氣海穴(RN1):  此組穴位皆位於腹部，天樞穴為大腸經原穴，氣海穴為任脈之要穴，三穴合用，可全面調理腸胃氣機，疏通大腸經氣血，溫補元氣，從而緩解腹痛。原理在於協同作用，疏通氣滯，消除脹痛。\n\n2. 腹結穴 + 天樞穴(ST25) + 足三里穴(ST36):  此配伍除了調理腸胃氣機外，更加入了足三里穴，此穴為胃經合穴，具有健脾和胃、補益氣血之效。此組合適用於脾胃虛弱引起的腹瀉，通過健脾益氣，固澀止瀉。\n\n3. 腹結穴 + 中脘穴(RN12) + 天樞穴(ST25) + 灸神闕穴(RN8): 繞臍痛常與胃腸氣滯、寒凝有關。中脘穴為胃之募穴，神闕穴為任脈之穴，具有溫補元氣的作用。此組合通過疏通胃腸經絡，溫陽散寒，緩解繞臍疼痛。灸神闕穴有助於溫通經絡，提升治療效果。\n\n4. 腹結穴 + 氣海穴(RN1) + 關元穴(RN4):  疝氣多與氣滯血瘀、臟腑功能失調有關。氣海穴、關元穴皆為任脈要穴，具有溫補元氣、調理臟腑的作用。此配伍通過理氣活血，溫補元氣，緩解疝氣引起的疼痛。\n\n5. 腹結穴 + 上巨虛穴(ST38) + 天樞穴(ST25): 便祕多因腸道傳導功能失常、氣滯不通。上巨虛穴為胃經經穴，具有通利大腸、潤腸通便之效。此組合通過調理腸道氣機，促進腸蠕動，改善便祕。\n\n需要注意的是，以上配伍僅供參考，實際應用需根據患者的具體病情、體質、舌脈等信息進行調整，並結合其他治療方法，才能達到最佳療效。  此外，施針需由專業人士操作，以確保安全。",
@@ -29972,7 +30499,53 @@
       "Constipation",
       "Diarrhea",
       "Hernia"
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "腹部三穴（SP14 腹結、SP15 大橫、SP16 腹哀）都在旁開前正中線 4 吋的直線上，由下而上排列，泄瀉便祕都能治。SP14 多一層「溫」—— 適合虛寒型腹痛。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ]
+    }
   },
   {
     "code": "SP15",
@@ -29985,41 +30558,30 @@
     "location_en": "On the abdomen, 4 cun lateral to the center of the umbilicus.",
     "cun_measurement": "4 cun lateral to the umbilicus.",
     "functions_zh": [
-      "健脾",
-      "理氣",
-      "止痛",
-      "散寒",
-      "除濕利濕化濕",
-      "消脹",
-      "消化系統疾病"
+      "行氣",
+      "調理腸道"
     ],
     "functions_en": [
-      "Regulates the intestines",
-      "Strengthens the Spleen",
-      "Resolves dampness"
+      "Moves Qi",
+      "Regulates intestines"
     ],
     "indications_zh": [
-      "便秘",
-      "泄瀉",
-      "腹痛",
-      "腹脹",
-      "腸鳴"
+      "腹痛腹脹",
+      "泄瀉、痢疾、便祕（課件註記：泄瀉以 ST25 天樞為佳）"
     ],
     "indications_en": [
-      "Constipation",
-      "Diarrhea",
-      "Abdominal pain",
-      "Abdominal distention",
-      "Borborygmus"
+      "Abdominal pain & distention",
+      "Diarrhea, dysentery, constipation (ST-25 better for diarrhea)"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "孕期、急腹症、腹主動脈瘤風險或腹部手術近期史需專業評估。"
+      "孕期、急腹症、腹主動脈瘤風險或腹部手術近期史需專業評估。",
+      "腹部穴，直刺 0.7–1.2 吋，孕婦與腹部術後慎用"
     ],
-    "needling": "直刺或斜刺0.5～1.5寸",
+    "needling": "直刺或斜刺0.5～1.5寸\n\n課件：Perpendicular 0.7-1.2 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -30050,7 +30612,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP15",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺或斜刺0.5～1.5寸",
     "cloudtcm_detail": "大橫穴可改善腹痛，腹瀉，便秘，痢疾及蛔蟲症。\n\n治療老年性尿失禁，取雙側大橫，針尖稍向臍中方向針入3寸左右，總有效率86.3%。",
     "combine_points_zh": "大橫穴配伍應用分析\n\n大橫穴位於腹部，屬於足太陰脾經，具有理氣消脹、通利大腸的功效。其配伍應用多與腹部及腸胃相關疾病有關，以下針對提供的配伍進行詳細分析：\n\n1. 大橫穴配天樞穴、中脘穴、足三里穴 治腹痛、腹瀉：\n\n原理： 此配伍組合強大，針對脾胃虛弱、氣滯血瘀引起的腹痛腹瀉效果顯著。大橫穴通利大腸，天樞穴是氣機出入的樞紐，中脘穴為胃之募穴，三者合用，可調節脾胃氣機，促進腸胃蠕動，緩解腹痛腹瀉症狀。足三里穴為胃經強壯穴，具有健脾益胃、補中益氣之效，增強整體治療效果。\n\n2. 大橫穴配四縫穴、足三里穴 治腸道寄生蟲病：\n\n原理：  此配伍針對腸道寄生蟲病，利用四縫穴瀉熱殺蟲，大橫穴通利大腸，將寄生蟲排出體外。足三里穴健脾益胃，增強機體抵抗力，輔助治療。\n\n3. 大橫穴配天樞穴、上巨虛穴 治繞臍腹痛：\n\n原理： 繞臍腹痛多與肝氣鬱滯、脾胃虛弱有關。此配伍中，大橫穴與天樞穴調節脾胃氣機，上巨虛穴為足陽明胃經穴位，協同調理胃經氣血，共同疏通氣機，緩解繞臍腹痛。\n\n4. 大橫穴配水溝穴、合谷穴 治癔症：\n\n原理：  此配伍較為特殊，癔症屬情志病，與肝氣鬱結、氣血失調有關。大橫穴疏通氣機，水溝穴為督脈穴位，可寧心安神，合谷穴為原穴，具有疏通經絡、調和氣血的功效。三者合用，可疏肝理氣，寧心安神，緩解癔症症狀。\n\n5.  治療腹痛時，可用盤旋法，艾灸：\n\n原理： 盤旋法艾灸大橫穴，可溫通經絡，促進局部氣血運行，有助於緩解腹痛。艾灸具有溫經散寒、活血通絡的功效，配合大橫穴的特性，可有效治療寒邪導致的腹痛。",
@@ -30136,9 +30698,49 @@
     "exam_star": 1,
     "field_sources": {
       "exam_star": [
-        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf"
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "交會穴 —— 脾經、陰維脈",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Intersection Point (Spleen, Yin Wei / Yin Linking)",
+      "Moxibustion Applicable"
+    ],
+    "exam_pearl": "★ 便祕的腹部主穴，與臍同高、旁開 4 吋。課件明白寫著**泄瀉用 ST25 天樞比較好**，所以大橫的臨床位置偏向便祕與腹脹 —— 這種「兩穴分工」正是考題喜歡問的。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）"
   },
   {
     "code": "SP16",
@@ -30151,38 +30753,31 @@
     "location_en": "On the upper abdomen, 3 cun superior to the umbilicus and 4 cun lateral to the anterior midline.",
     "cun_measurement": "3 cun above the umbilicus, 4 cun lateral to midline.",
     "functions_zh": [
-      "健脾",
-      "理氣",
-      "消化系統疾病"
+      "調理腸道"
     ],
     "functions_en": [
-      "Strengthens the Spleen",
-      "Harmonizes the Stomach",
-      "Descends counterflow",
-      "Stops pain"
+      "Regulates intestines"
     ],
     "indications_zh": [
-      "胃痛",
       "腹痛",
       "消化不良",
-      "嘔吐",
-      "便秘"
+      "便祕與痢疾（課件註記：最常用）"
     ],
     "indications_en": [
-      "Epigastric pain",
       "Abdominal pain",
       "Indigestion",
-      "Vomiting",
-      "Constipation"
+      "Constipation & dysentery (most common)"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "不明上腹痛、胸痛、黑便或劇烈嘔吐需先排除急症。"
+      "不明上腹痛、胸痛、黑便或劇烈嘔吐需先排除急症。",
+      "⚠️ 部分體型者本穴會落在肋弓上 —— 課件給三種處理：改取較內側（首選）、沿肋弓平刺、或改選他穴",
+      "腹部穴，直刺 0.5–1.0 吋，不可在肋弓上直刺"
     ],
-    "needling": "直刺或斜刺0.5～1.5寸",
+    "needling": "直刺或斜刺0.5～1.5寸\n\n課件：Perpendicular 0.5-1.0 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -30207,7 +30802,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP16",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺或斜刺0.5～1.5寸",
     "cloudtcm_detail": "腹哀穴功效「健脾消食，通降腑氣」，主治飲食不振、繞臍痛、便秘、痢疾、胃痙攣、胃及十二指腸潰瘍、胃酸過多或減少，細菌性痢疾。\n\n現代研究發現，針刺腹哀穴治療精索靜脈術後，腹膜刺激症狀，取雙側腹哀、大橫、中脘、關元等穴，針刺得氣後施平補平瀉法，刺激10分鐘，再留針10分鐘。治療1例，腹痛等症狀即刻緩解，進少許飲食後欣然下床。",
     "combine_points_zh": "1. 腹哀穴配氣海穴治腸鳴：\n\n原理： 腹哀穴擅理脾胃氣機，氣海穴為氣之大海，元氣充足之處。腸鳴多因脾胃氣虛，升降失調所致。此配伍，一則疏通脾經氣滯，改善腸道蠕動；二則補充元氣，調節腸胃功能，從根本上解決腸鳴問題。氣海穴補氣，腹哀穴理氣，一補一瀉，協同作用，效果更佳。\n\n2. 腹哀穴配梁丘穴、足三里穴、中脘穴治急性腹痛：\n\n原理： 此配伍針對急性腹痛，取穴兼顧多個方面。梁丘穴屬足陽明胃經，為胃經之募穴，具有理氣止痛的功效；足三里穴為胃經強壯要穴，具有健脾和胃、補益正氣的作用；中脘穴為胃之募穴，與胃的關係密切。  腹哀穴則直接作用於脾經，調理脾胃氣機。此配伍，多個穴位協同作用，快速止痛，並調理脾胃，預防復發。\n\n3. 腹哀穴配脾俞穴、胃俞穴、中脘穴、內關穴、足三里穴治消化不良：\n\n原理： 消化不良多因脾胃虛弱，運化功能失常。此配伍從多個方面入手：脾俞穴、胃俞穴補益脾胃之氣；中脘穴調理胃部；內關穴寧心安神，調理脾胃；足三里穴健脾和胃、補益正氣；腹哀穴則疏通脾經氣機，促進消化吸收。整體配伍，補瀉兼顧，標本兼治，全面提升脾胃功能，從而改善消化不良症狀。",
@@ -30277,7 +30872,53 @@
       "",
       "Vomiting",
       "Constipation"
-    ]
+    ],
+    "point_identity_zh": [
+      "交會穴 —— 脾經、陰維脈",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Intersection Point (Spleen, Yin Wei / Yin Linking)",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "課件唯一給了「取穴落在肋弓上怎麼辦」的穴，三個選項要記：**改內側（首選）→ 沿肋弓平刺 → 換穴**。功效只有一條（調理腸道），主治以便祕痢疾最常用。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p2"
+      ]
+    }
   },
   {
     "code": "SP17",
@@ -30290,35 +30931,18 @@
     "location_en": "On the lateral chest, in the fifth intercostal space, 6 cun lateral to the anterior midline.",
     "cun_measurement": "Fifth intercostal space, 6 cun lateral to midline.",
     "functions_zh": [
-      "健脾",
-      "利水",
-      "通乳",
-      "平喘",
-      "行氣",
-      "寬胸",
-      "消脹",
-      "利尿通淋",
-      "呼吸系統疾病"
+      "消散食積與水飲",
+      "助消化"
     ],
     "functions_en": [
-      "Unbinds the chest",
-      "Benefits the diaphragm",
-      "Descends counterflow",
-      "Harmonizes the Stomach"
+      "Dissipates accumulation of food & fluid",
+      "Promotes digestion"
     ],
     "indications_zh": [
-      "胸脅滿悶",
-      "噫氣",
-      "嘔吐",
-      "食少",
-      "水飲停胸"
+      "胸脅脹滿疼痛（哮喘 —— 胸中已滿，吸不進氣）"
     ],
     "indications_en": [
-      "Chest and hypochondriac fullness",
-      "Belching",
-      "Vomiting",
-      "Poor appetite",
-      "Fluid retention in chest pattern"
+      "Fullness & pain in chest & hypochondriac region (asthma – chest already full, can’t get breath)"
     ],
     "muscles": [],
     "bones": [],
@@ -30326,9 +30950,11 @@
     "vessels": [],
     "contraindications": [
       "胸肋區需淺刺斜刺，避免深刺",
-      "胸痛、呼吸困難需先急症評估。"
+      "胸痛、呼吸困難需先急症評估。",
+      "⚠️ 肋間穴，僅可斜刺 0.3–0.5 吋，直刺或深刺有氣胸風險",
+      "第 5 肋間隙，旁開前正中線 6 吋"
     ],
-    "needling": "沿肋間隙橫刺0.3～0.5寸",
+    "needling": "沿肋間隙橫刺0.3～0.5寸\n\n課件：Obliquely 0.3-0.5 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -30354,7 +30980,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP17",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "沿肋間隙橫刺0.3～0.5寸",
     "cloudtcm_detail": "食竇穴主要功效「運化水谷，和胃下氣」。主治腹脹腸鳴，反胃、入食即吐、噫氣、水腫、胸脅脹痛、胃炎、腹水、肝區痛、肋間神經痛。",
     "combine_points_zh": "食竇穴，位於胸部，屬足太陰脾經，具有疏肝理氣、健脾和胃的功效。其配伍其他穴位，主要針對胸脅、腹部疼痛等症狀，治療原理基於經絡循行及臟腑之間的相互影響。\n\n1. 食竇穴配膻中穴治胸肋脹痛：\n\n原理： 膻中穴位於胸部正中，是任脈與手厥陰心包經的交會穴，具有寬胸理氣、寧心安神的作用。胸肋脹痛多因肝氣鬱滯、氣機阻滯所致。食竇穴疏肝理氣，膻中穴寬胸理氣，兩穴合用，標本兼治，疏通肝氣，調和氣機，從而緩解胸肋脹痛。\n\n2. 食竇穴配足三里穴、中脘穴治腹痛：\n\n原理： 足三里穴是足陽明胃經的合穴，具有健脾和胃、理氣止痛的功效；中脘穴位於腹部，是任脈與胃經的交會穴，具有和胃降逆、消食導滯的作用。腹痛的成因複雜，可能與脾胃虛弱、氣滯血瘀等有關。食竇穴健脾和胃，配合足三里、中脘穴，共同調理脾胃，理氣消食，從而緩解腹痛。\n\n3. 食竇穴配支溝穴、陽陵泉穴治胸脅脹痛：\n\n原理： 支溝穴屬手少陽三焦經，具有疏通三焦、理氣止痛的作用；陽陵泉穴屬足少陽膽經，具有清利膽熱、疏通經絡的功效。此配伍同樣針對肝氣鬱滯、氣機阻滯導致的胸脅脹痛。食竇穴疏肝理氣，與支溝、陽陵泉穴合用，三穴共同疏通三焦、膽經、脾經的氣血運行，暢通經絡，從而消除脹痛。",
@@ -30443,7 +31069,53 @@
       "Vomiting",
       "Reduced Appetite",
       ""
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "脾經胸部五穴（SP17–SP21）從這裡開始，全部**只能斜刺 0.3–0.5 吋**，這是氣胸安全考點。SP17 食竇是五穴中唯一還帶消化功效的（名字就叫「食」竇），往上就純粹是理氣寬胸了。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ]
+    }
   },
   {
     "code": "SP18",
@@ -30456,39 +31128,33 @@
     "location_en": "On the lateral chest, in the fourth intercostal space, 6 cun lateral to the anterior midline.",
     "cun_measurement": "Fourth intercostal space, 6 cun lateral to midline.",
     "functions_zh": [
-      "理氣",
-      "通乳",
-      "寬胸",
-      "呼吸系統疾病"
+      "調氣降逆（胃氣與肺氣）",
+      "通乳、利乳房"
     ],
     "functions_en": [
-      "Moves chest qi",
-      "Benefits the breast",
-      "Promotes lactation",
-      "Dissipates nodules"
+      "Regulates & descends Qi (Stomach & Lung Qi)",
+      "Benefits breasts & promotes lactation"
     ],
     "indications_zh": [
-      "胸悶",
-      "乳少",
-      "乳癰",
-      "咳嗽",
-      "胸脅痛"
+      "胸脅脹滿疼痛",
+      "咳嗽、呃逆",
+      "乳腺炎、乳汁不足"
     ],
     "indications_en": [
-      "Chest oppression",
-      "Insufficient lactation",
-      "Breast abscess pattern",
-      "Cough",
-      "Chest and hypochondriac pain"
+      "Fullness & pain in chest & hypochondrium",
+      "Cough, hiccough",
+      "Mastitis, insufficient lactation"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "內有肺臟，切勿深刺，以防氣胸"
+      "內有肺臟，切勿深刺，以防氣胸",
+      "⚠️ 肋間穴，僅可斜刺 0.3–0.5 吋，直刺或深刺有氣胸風險",
+      "第 4 肋間隙（與乳頭同高），旁開前正中線 6 吋"
     ],
-    "needling": "沿肋間隙橫刺0.3～0.5寸，不可深刺",
+    "needling": "沿肋間隙橫刺0.3～0.5寸，不可深刺\n\n課件：Obliquely 0.3-0.5 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -30518,7 +31184,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP18",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "cautions_zh": [
       "內有肺臟，切勿深刺，以防氣胸"
     ],
@@ -30590,7 +31256,53 @@
       "Mastitis",
       "Cough",
       "Chest & Hypochondriac Pain"
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "★ 胸部五穴中唯一治乳房的 —— 第 4 肋間、與乳頭同高，位置就說明了功效。乳腺炎與乳汁不足找它，與 ST18 乳根、SI1 少澤同為通乳組。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ]
+    }
   },
   {
     "code": "SP19",
@@ -30603,37 +31315,29 @@
     "location_en": "On the lateral chest, in the third intercostal space, 6 cun lateral to the anterior midline.",
     "cun_measurement": "Third intercostal space, 6 cun lateral to midline.",
     "functions_zh": [
-      "健脾",
-      "理氣",
-      "寬胸",
-      "呼吸系統疾病"
+      "調氣降逆",
+      "寬胸"
     ],
     "functions_en": [
-      "Unbinds the chest",
-      "Moves qi",
-      "Stops cough",
-      "Calms wheezing"
+      "Regulates & descends Qi",
+      "Unbinds chest"
     ],
     "indications_zh": [
-      "胸悶",
-      "咳嗽",
-      "氣喘",
-      "胸脅痛"
+      "胸脅脹滿疼痛"
     ],
     "indications_en": [
-      "Chest oppression",
-      "Cough",
-      "Wheezing",
-      "Chest and hypochondriac pain"
+      "Fullness & pain in chest & hypochondriac region"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "內有肺臟，不可直刺，深刺，以防氣胸"
+      "內有肺臟，不可直刺，深刺，以防氣胸",
+      "⚠️ 肋間穴，僅可斜刺 0.3–0.5 吋，直刺或深刺有氣胸風險",
+      "第 3 肋間隙，旁開前正中線 6 吋"
     ],
-    "needling": "沿肋間隙橫刺0.3～0.5寸。不可深刺",
+    "needling": "沿肋間隙橫刺0.3～0.5寸。不可深刺\n\n課件：Obliquely 0.3-0.5 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -30662,7 +31366,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP19",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "cautions_zh": [
       "內有肺臟，不可直刺，深刺，以防氣胸"
     ],
@@ -30732,7 +31436,53 @@
       "Cough",
       "Asthma / Wheezing",
       "Chest & Hypochondriac Pain"
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "SP19 胸鄉與 SP20 周榮功效完全相同（調氣降逆、寬胸），差別只在肋間隙：胸鄉第 3、周榮第 2。由下而上數：SP18 第 4、SP19 第 3、SP20 第 2 —— 這個序列是定位考點。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ]
+    }
   },
   {
     "code": "SP20",
@@ -30745,40 +31495,31 @@
     "location_en": "On the lateral chest, in the second intercostal space, 6 cun lateral to the anterior midline.",
     "cun_measurement": "Second intercostal space, 6 cun lateral to midline.",
     "functions_zh": [
-      "化痰",
-      "健脾",
-      "理氣",
-      "平喘",
-      "清肺宣肺",
-      "寬胸",
-      "呼吸系統疾病"
+      "調氣降逆",
+      "寬胸"
     ],
     "functions_en": [
-      "Spreads Lung qi",
-      "Unbinds the chest",
-      "Stops cough",
-      "Calms wheezing"
+      "Regulates & descends Qi",
+      "Unbinds chest"
     ],
     "indications_zh": [
-      "咳嗽",
-      "氣喘",
-      "胸悶",
-      "胸脅痛"
+      "胸脅脹滿疼痛",
+      "咳嗽、呃逆"
     ],
     "indications_en": [
-      "Cough",
-      "Wheezing",
-      "Chest oppression",
-      "Chest and hypochondriac pain"
+      "Fullness & pain in chest & hypochondrium",
+      "Cough, hiccough"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "內有肺臟，不可深刺，以防造成氣胸"
+      "內有肺臟，不可深刺，以防造成氣胸",
+      "⚠️ 肋間穴，僅可斜刺 0.3–0.5 吋，直刺或深刺有氣胸風險",
+      "第 2 肋間隙，旁開前正中線 6 吋"
     ],
-    "needling": "沿肋間隙橫刺0.3～0.5寸",
+    "needling": "沿肋間隙橫刺0.3～0.5寸\n\n課件：Obliquely 0.3-0.5 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -30804,7 +31545,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP20",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "cautions_zh": [
       "內有肺臟，不可深刺，以防造成氣胸"
     ],
@@ -30884,7 +31625,53 @@
       "Asthma / Wheezing",
       "Chest Oppression",
       "Chest & Hypochondriac Pain"
-    ]
+    ],
+    "point_identity_zh": [
+      "局部穴",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Local Point",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 0,
+    "exam_pearl": "脾經最高的一個肋間穴（第 2 肋間）。功效與 SP19 相同，但課件多給了「咳嗽、呃逆」—— 位置越高越靠近肺，降逆止咳的用法越明顯。",
+    "exam_importance": "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ]
+    }
   },
   {
     "code": "SP21",
@@ -30897,40 +31684,41 @@
     "location_en": "On the lateral side of the chest, in the sixth intercostal space, on the midaxillary line.",
     "cun_measurement": "Sixth intercostal space on the midaxillary line.",
     "functions_zh": [
-      "理氣",
+      "調理氣血",
+      "強健筋骨關節",
       "寬胸",
-      "急救",
-      "利胸脅",
-      "呼吸系統疾病"
+      "利脅肋"
     ],
     "functions_en": [
-      "Regulates the network vessels",
-      "Unbinds the chest",
-      "Moves qi",
-      "Stops pain"
+      "Regulates Qi & blood",
+      "Firms sinews & joints",
+      "Unbinds chest",
+      "Benefits lateral costal region"
     ],
     "indications_zh": [
-      "全身疼痛",
-      "胸脅痛",
-      "氣短",
-      "四肢無力",
-      "岔氣"
+      "胸痛、脅痛、胸背痛",
+      "哮喘",
+      "周身痠痛無力（課件註記：纖維肌痛症適用）",
+      "虛證 —— 全身關節鬆軟無力（按壓覺舒服）",
+      "實證 —— 周身疼痛（按壓覺加痛）"
     ],
     "indications_en": [
-      "Generalized body pain",
-      "Chest and hypochondriac pain",
-      "Shortness of breath",
-      "Weakness of the limbs",
-      "Intercostal strain pattern"
+      "Pain in chest, hypochondriac or thoracic region",
+      "Asthma",
+      "General aching & weakness [good for fibromyalgia]",
+      "Deficiency à All joints flaccid [Pressure feels good]",
+      "Excess à Pain all over body [Pressure hurts]"
     ],
     "muscles": [],
     "bones": [],
     "nerves": [],
     "vessels": [],
     "contraindications": [
-      "嚴禁深刺，以防刺傷肺臟"
+      "嚴禁深刺，以防刺傷肺臟",
+      "⚠️ 肋間穴，僅可斜刺 0.3–0.5 吋，直刺或深刺有氣胸風險",
+      "腋中線第 6 肋間隙（課件另註：MOA 作第 7 肋間）"
     ],
-    "needling": "沿肋間隙橫刺0.3～0.5寸。不可深刺",
+    "needling": "沿肋間隙橫刺0.3～0.5寸。不可深刺\n\n課件：Obliquely 0.3-0.5 inch",
     "danger": [],
     "nccaom_high_yield": [],
     "clinical_pearls": [
@@ -30955,7 +31743,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SP21",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "luo"
     ],
@@ -31034,7 +31822,55 @@
       "Shortness of Breath",
       "",
       ""
-    ]
+    ],
+    "point_identity_zh": [
+      "脾之大絡（總統絡穴）",
+      "統絡全身諸絡",
+      "可灸"
+    ],
+    "point_identity_en": [
+      "Grand Luo Connecting Point",
+      "Connects all Luo channels",
+      "Moxibustion Applicable"
+    ],
+    "exam_star": 1,
+    "exam_pearl": "★ 脾之大絡，**統絡全身諸絡** —— 全身唯一有這個身分的穴，必考。課件給的辨證口訣最實用：**虛則全身關節鬆軟、按之覺舒；實則周身疼痛、按之更痛**。纖維肌痛症是課件明列的現代適應症。",
+    "exam_importance": "★ NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）與 Domain III（治療計畫，40%）",
+    "field_sources": {
+      "functions_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_zh": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "point_identity_en": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_importance": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "exam_star": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "contraindications": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ],
+      "needling": [
+        "curriculum/acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf#p3"
+      ]
+    }
   },
   {
     "code": "ST1",
