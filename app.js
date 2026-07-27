@@ -2918,7 +2918,6 @@ function renderDetail(point) {
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
         ${visualLinksSection(point)}
         ${combinePointsSection(point)}
-        ${pairingSection(pairings)}
         ${studySection(contentMode === "english" ? "Needling and Moxibustion" : "針刺與艾灸", needlingArticle(point), "needle")}
         ${studySection(contentMode === "english" ? "Clinical Notes and Evidence" : "現代研究 / 臨床提醒", evidenceText(point), "research")}
         ${classicalRefsSection(point)}
@@ -2931,10 +2930,10 @@ function renderDetail(point) {
           <h3>${contentMode === "english" ? "Related Points" : "相關穴道"}</h3>
           ${related.map((item) => relatedPointButton(item, item.code)).join("") || `<p>${contentMode === "english" ? "No related points yet." : "尚未建立相關穴道。"}</p>`}
         </section>
-        <section class="sidebar-box">
-          <h3>${contentMode === "english" ? "Common Pairings" : "常用配穴"}</h3>
-          ${pairings.map((item) => relatedPointButton(item, sharedPatternLabel(point, item))).join("") || `<p>${contentMode === "english" ? "Pairings pending." : "待補常用配穴。"}</p>`}
-        </section>
+        ${pairings.length ? `<section class="sidebar-box">
+          <h3>${contentMode === "english" ? "Shares indications with" : "主治相近的穴"}</h3>
+          ${pairings.map((item) => relatedPointButton(item, sharedPatternLabel(point, item))).join("")}
+        </section>` : ""}
       </aside>
     </div>
   `;
