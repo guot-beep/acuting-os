@@ -99,7 +99,8 @@
 
 | 檔案 | 大小 | 文字版 |
 |---|---|---|
-| `1 LUNG CHANNEL OF HAND TAI YIN.pdf` | 433 KB | ⚠️ 待抽文字 |
+| `1 LUNG CHANNEL OF HAND TAI YIN.md` | 10 KB | ✅ 本身是文字 |
+| `1 LUNG CHANNEL OF HAND TAI YIN.pdf` | 433 KB | ✅ |
 | `10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf` | 882 KB | ⚠️ 待抽文字 |
 | `11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf` | 1.5 MB | ⚠️ 待抽文字 |
 | `12 LIVER CHANNEL OF FOOT JUE YIN.pdf` | 715 KB | ⚠️ 待抽文字 |
@@ -157,6 +158,8 @@ _(空)_
 |---|---|---|
 | `NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md` | 10 KB | ✅ 本身是文字 |
 | `NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf` | 165 KB | ✅ |
+| `NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md` | 38 KB | ✅ 本身是文字 |
+| `NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf` | 284 KB | ✅ |
 
 ## 總計
 
@@ -164,14 +167,14 @@ _(空)_
 |---|---|---|
 | herbs | 68 | 1 |
 | formulas | 10 | — |
-| acupoints | 20 | 20 |
+| acupoints | 21 | 19 |
 | conditions | 2 | — |
 | cases | 1 | 1 |
 | lifestyle | 2 | — |
 | theory | 2 | 1 |
 | western | 0 | — |
-| board | 2 | — |
-| **合計** | **107** | **23** |
+| board | 4 | — |
+| **合計** | **110** | **22** |
 
 ### ⚠️ 這些檔還沒有可用的文字版
 
@@ -182,7 +185,6 @@ _(空)_
 需要人工把重點打字進去 —— 空的文字版比沒有更危險,它會讓人以為已經處理過。
 
 - `herbs/臺灣中藥典第四版英文版.pdf`
-- `acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf`
 - `acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf`
 - `acupoints/11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf`
 - `acupoints/12 LIVER CHANNEL OF FOOT JUE YIN.pdf`

@@ -217,7 +217,13 @@ if (claims.size) {
   }
   if ([...claims.keys()].some((b) => !outlineText.includes(b))) {
     console.log(`  ⚠️ 引用了 repo 裡沒有的考綱 = 無法核對。請 Ting 上傳該考綱，或把該敘述改成課件依據。`);
-    console.log(`     注意：目前 curriculum/board/ 只有 ACPL（針灸點位）考綱，它不包含中藥範圍。`);
+    console.log(`     現有考綱：${outlines.filter((f) => f.endsWith(".pdf")).join("、") || "(無)"}`);
+    // Filename matching cannot tell CH (herbology) from ACPL (point location) —
+    // both are "NCBAHM". A herb card citing the ACPL outline would pass the
+    // check above while citing a document with no herb content at all.
+    if (outlineText.includes("NCBAHM") && !outlineText.includes("_CH_")) {
+      console.log(`     ⚠️ 只有 ACPL（針灸點位）考綱，它不含中藥範圍 —— 中藥卡引用 NCBAHM 仍無法核對。`);
+    }
   }
 }
 if (!WORKLIST) console.log(`\n提示：加 --worklist 可列出每一味不合格的藥名（--category "<分類>" 看單一批次）。`);

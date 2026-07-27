@@ -109,9 +109,13 @@ for (const r of recs) {
   }
   const nf = arr(r.functions_zh).length;
   funcCounts.push(nf);
-  if (nf < 3 || nf > 8) {
-    flag(r, `功效 ${nf} 條(需 3-8,目標 4-6)`);
-    if (isTemplate) errors.push(`A6 ${id}: functions_zh has ${nf} item(s) — keep the 3-8 key actions`);
+  // Floor is 2, not 3. Chenoweth's own table gives LU4, LU8 and LU11 exactly two
+  // curated actions; demanding a third would force padding, which is the defect
+  // this check exists to prevent. Target stays 4-6, same shape as the herb rule
+  // (E8 blocks outside 2-6 while the doc asks for 3-5).
+  if (nf < 2 || nf > 8) {
+    flag(r, `功效 ${nf} 條(需 2-8,目標 4-6)`);
+    if (isTemplate) errors.push(`A6 ${id}: functions_zh has ${nf} item(s) — keep the 2-8 key actions`);
   }
   if (!/\d/.test(String(r.needling || "") + String(r.acumethod_zh || ""))) {
     flag(r, "針法缺具體深度/角度數字");
@@ -126,11 +130,11 @@ for (const r of recs) {
   if (!isTemplate) flag(r, "尚未依模板整理(無 field_sources)");
 }
 
-const inRange = funcCounts.filter((n) => n >= 3 && n <= 8).length;
+const inRange = funcCounts.filter((n) => n >= 2 && n <= 8).length;
 console.log(`validate-acupoint-standard: ${recs.length} points (${templateGrade} template-grade)\n`);
 console.log(`  中英未對齊 misaligned pairs      ${misaligned}`);
 console.log(`  缺英文陣列 missing _en arrays     ${missingEnAny}`);
-console.log(`  功效 3-8 條 curated               ${inRange}/${recs.length}  (max ${Math.max(...funcCounts)})`);
+console.log(`  功效 2-8 條 curated               ${inRange}/${recs.length}  (max ${Math.max(...funcCounts)})`);
 console.log(`  共用套話禁忌 boilerplate safety   ${boilerplateHits}  (${BOILERPLATE.size} distinct shared strings)`);
 
 if (WORKLIST) {
