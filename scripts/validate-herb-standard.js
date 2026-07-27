@@ -190,6 +190,36 @@ const under = actionCounts.filter((n) => n <= 1).length;
 const over = actionCounts.filter((n) => n > 6).length;
 console.log(`Note: action curation — ${under} record(s) list 0-1 actions (under-listed), ${over} list >6 (raw dumps), ${recs.length - under - over} in the 2-6 range.`);
 console.log(`Note: ${tonelessPinyin} record(s) without tone-marked pinyin (glance layer wants Má Huáng).`);
+
+// Board-outline provenance. The card once carried invented labels ("Bastyr Exam
+// Pearl", "NCCAOM actions") that pointed at nothing; §4.5 forbids naming an
+// exam source you cannot show. So check the claim against the outlines actually
+// in curriculum/board/ — reported, not enforced, because the answer may simply
+// be that Ting has not uploaded the herbology outline yet.
+const boardDir = path.join(ROOT, "curriculum/board");
+const outlines = fs.existsSync(boardDir)
+  ? fs.readdirSync(boardDir).filter((f) => !f.startsWith(".") && f !== "README.md")
+  : [];
+const outlineText = outlines.join(" ").toUpperCase();
+const BODIES = ["NCBAHM", "NCCAOM", "CALE", "BASTYR"];
+const claims = new Map();
+for (const r of recs) {
+  const txt = `${r.exam_importance || ""} ${r.exam_pearl || ""} ${JSON.stringify(r.source_citations || [])}`;
+  for (const b of BODIES) {
+    if (txt.toUpperCase().includes(b)) claims.set(b, (claims.get(b) || 0) + 1);
+  }
+}
+if (claims.size) {
+  console.log(`\nBoard-outline citations (curriculum/board/ holds ${outlines.length} file(s)):`);
+  for (const [body, n] of [...claims.entries()].sort((a, b) => b[1] - a[1])) {
+    const have = outlineText.includes(body);
+    console.log(`  ${body.padEnd(8)} cited by ${String(n).padStart(3)} record(s)   ${have ? "✅ outline present" : "⚠️ no such outline in curriculum/board/"}`);
+  }
+  if ([...claims.keys()].some((b) => !outlineText.includes(b))) {
+    console.log(`  ⚠️ 引用了 repo 裡沒有的考綱 = 無法核對。請 Ting 上傳該考綱，或把該敘述改成課件依據。`);
+    console.log(`     注意：目前 curriculum/board/ 只有 ACPL（針灸點位）考綱，它不包含中藥範圍。`);
+  }
+}
 if (!WORKLIST) console.log(`\n提示：加 --worklist 可列出每一味不合格的藥名（--category "<分類>" 看單一批次）。`);
 
 if (WORKLIST) {
