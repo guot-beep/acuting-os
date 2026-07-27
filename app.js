@@ -189,7 +189,12 @@ function tungIndexPoint(record) {
     locationEn: record.location_en || "Master Tung anatomical region.",
     cunMeasurement: "Tung regional measurement.",
     functions: funcs.join("、"),
-    functionsEn: record.traditional_functions_en || ["Master Tung specialty action"],
+    // Same shape as the 361 records: a joined string plus the raw list. Emitting
+    // the bare array here made the card's function block call .split on it and
+    // threw, so no 董氏奇穴 point would open at all.
+    functionsEn: (record.traditional_functions_en || ["Master Tung specialty action"]).join(" "),
+    functionsZhList: funcs,
+    functionsEnList: record.traditional_functions_en || [],
     patterns: inds,
     patternsEn: record.indications_en || ["Master Tung indication"],
     evidence: "董氏奇穴臨床條目：請對照董氏針灸經典與臨床手冊對穴驗證。",
@@ -250,7 +255,9 @@ function auricularGb93Point(record) {
     locationEn: record.location_en || `GB93 auricular standard: located in ${zoneLabelEn} zone.`,
     cunMeasurement: "Auricular regional point. Cun measurement is not used.",
     functions: inds.join("、"),
-    functionsEn: record.indications_en || ["Auricular regulation"],
+    functionsEn: (record.indications_en || ["Auricular regulation"]).join(" "),
+    functionsZhList: inds,
+    functionsEnList: record.indications_en || [],
     patterns: inds,
     patternsEn: record.indications_en || ["Auricular indication"],
     evidence: "GB/T 13734-2008 耳穴名稱與定位標準條目。",
@@ -454,6 +461,7 @@ const regionCategoryList = document.querySelector("#regionCategoryList");
 const topicCategoryList = document.querySelector("#topicCategoryList");
 const pointCategoryList = document.querySelector("#pointCategoryList");
 const tungZoneCategoryList = document.querySelector("#tungZoneCategoryList");
+const systemCategoryList = document.querySelector("#systemCategoryList");
 const cardsEl = document.querySelector("#cards");
 const detailCard = document.querySelector("#detailCard");
 const bodyCanvas = document.querySelector("#bodyCanvas");
@@ -1338,7 +1346,10 @@ function render() {
   renderDirectoryFilters();
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
-  if (!filtered.some((point) => point.code === selectedCode)) {
+  // In detail mode the hash owns the selection. Clamping it to the browse
+  // list meant that opening #point/SP6 while the list was filtered to
+  // 董氏奇穴 rendered points[0] (睛明) instead — the wrong point, silently.
+  if (!detailMode && !filtered.some((point) => point.code === selectedCode)) {
     selectedCode = filtered[0]?.code || points[0]?.code || "";
   }
   renderMap(filtered);
@@ -1742,29 +1753,69 @@ function renderPointCategories() {
   bindDirectoryButtons(pointCategoryList);
 }
 
+// 經外奇穴, 耳穴 and 董氏奇穴 are not channels — they are separate point systems
+// with their own logic (Tung reads by 部位, not by 經絡). Listing them alongside
+// 肺經 in 經絡分類 taught the wrong thing every time the page was opened, so they
+// get their own box.
+function isChannelMeridian(meridian) {
+  const v = String(meridian || "");
+  return !(v.includes("董氏") || v.includes("Master Tung")
+    || v.includes("耳穴") || v.includes("Auricular")
+    || v.includes("經外奇穴") || v.includes("Extra Point"));
+}
+
+// Classical 流注 order — the sequence the channels are actually learned and
+// examined in. The default was alphabetical by English name, which put 膀胱經
+// first and 肺經 ninth.
+// Kept inside the function on purpose: render() runs from the init code above
+// this line, so a module-level const here is still in its temporal dead zone
+// and throws on first paint.
+function channelOrderIndex(meridian) {
+  const order = ["肺經", "大腸經", "胃經", "脾經", "心經", "小腸經",
+    "膀胱經", "腎經", "心包經", "三焦經", "膽經", "肝經", "任脈", "督脈"];
+  const i = order.indexOf(meridianLabelZh(meridian));
+  return i === -1 ? order.length : i;
+}
+
+function meridianCategoryRows(list, activeValue) {
+  return list.map((meridian) => directoryButton({
+    labelZh: meridianLabelZh(meridian),
+    labelEn: meridianLabelEn(meridian),
+    count: points.filter((point) => point.meridian === meridian).length,
+    active: activeValue === meridian,
+    action: "meridian",
+    value: meridian
+  }));
+}
+
 function renderMeridianCategories() {
   if (!meridianCategoryList) return;
   const meridians = unique(points.map((point) => point.meridian));
+  const channels = meridians.filter(isChannelMeridian)
+    .sort((a, b) => channelOrderIndex(a) - channelOrderIndex(b));
+  const systems = meridians.filter((m) => !isChannelMeridian(m));
+  const channelCount = points.filter((point) => isChannelMeridian(point.meridian)).length;
   const rows = [
     directoryButton({
-      labelZh: "全部",
-      labelEn: "All",
+      // Named 全部穴位, not 全部: it clears the filter across every system, so
+      // its 751 does not belong to the 十四經絡 heading above it.
+      labelZh: "全部穴位",
+      labelEn: "All points",
       count: points.length,
       active: !meridianFilter.value,
       action: "meridian",
       value: ""
     }),
-    ...meridians.map((meridian) => directoryButton({
-      labelZh: meridianLabelZh(meridian),
-      labelEn: meridianLabelEn(meridian),
-      count: points.filter((point) => point.meridian === meridian).length,
-      active: meridianFilter.value === meridian,
-      action: "meridian",
-      value: meridian
-    }))
+    ...meridianCategoryRows(channels, meridianFilter.value)
   ];
   meridianCategoryList.innerHTML = rows.join("");
   bindDirectoryButtons(meridianCategoryList);
+  const heading = meridianCategoryList.closest(".directory-filter-box")?.querySelector("h3");
+  if (heading) heading.textContent = `十四經絡 (${channelCount})`;
+  if (systemCategoryList) {
+    systemCategoryList.innerHTML = meridianCategoryRows(systems, meridianFilter.value).join("");
+    bindDirectoryButtons(systemCategoryList);
+  }
 }
 
 function renderRegionCategories() {
@@ -1802,7 +1853,13 @@ function renderTopicCategories() {
       action: "topic",
       value: ""
     }),
-    ...directoryTopics.map((topic) => directoryButton({
+    // Clinical themes only. The list also carries index buckets (董氏索引,
+    // 耳穴索引) and eight data-quality buckets (缺針刺手法, GB93待校對,
+    // 缺資料來源…). Those are build state, not a way to look up a point, and
+    // mixing them into 常用臨床主題 made the clinical surface read like a QA
+    // dashboard. They stay reachable below, grouped and labelled for what they
+    // are, so nothing is lost.
+    ...directoryTopics.filter((t) => (t.group || "clinical") === "clinical").map((topic) => directoryButton({
       labelZh: topic.zh,
       labelEn: topic.en,
       count: points.filter((point) => pointMatchesTopic(point, topic.id)).length,
@@ -1811,6 +1868,23 @@ function renderTopicCategories() {
       value: topic.id
     }))
   ];
+
+  const extras = directoryTopics.filter((t) => (t.group || "clinical") !== "clinical");
+  const group = (name, labelZh, labelEn) => {
+    const list = extras.filter((t) => t.group === name);
+    if (!list.length) return "";
+    return `<details class="directory-subgroup">
+      <summary>${contentMode === "english" ? labelEn : labelZh}</summary>
+      ${list.map((topic) => directoryButton({
+        labelZh: topic.zh, labelEn: topic.en,
+        count: points.filter((point) => pointMatchesTopic(point, topic.id)).length,
+        active: directoryTopic === topic.id, action: "topic", value: topic.id
+      })).join("")}
+    </details>`;
+  };
+  rows.push(group("index", "其他索引 Other indexes", "Other indexes"));
+  rows.push(group("qa", "資料品質檢查(建置用)", "Data quality (build)"));
+
   topicCategoryList.innerHTML = rows.join("");
   bindDirectoryButtons(topicCategoryList);
 }
@@ -3037,8 +3111,11 @@ function examPearlSection(point) {
 // notes are English and the 中文 is the structured reading of them — seeing both
 // rows is the point of the four-layer split.
 function pointFunctionsSection(point) {
-  const zh = (point.functions || "").split(/[，、]/).map((x) => x.trim()).filter(Boolean);
-  const en = (point.functionsEn || "").split(/\s{2,}|(?<=[a-z])\s(?=[A-Z])/).map((x) => x.trim()).filter(Boolean);
+  // Belt and braces: normalisers should hand strings in, but a single
+  // array-shaped source used to throw here and blank the whole point page.
+  const asText = (v) => (Array.isArray(v) ? v.join(" ") : String(v || ""));
+  const zh = asText(point.functions).split(/[，、]/).map((x) => x.trim()).filter(Boolean);
+  const en = asText(point.functionsEn).split(/\s{2,}|(?<=[a-z])\s(?=[A-Z])/).map((x) => x.trim()).filter(Boolean);
   const zhList = point.functionsZhList && point.functionsZhList.length ? point.functionsZhList : zh;
   const enList = point.functionsEnList && point.functionsEnList.length ? point.functionsEnList : en;
   if (!zhList.length && !enList.length) return "";

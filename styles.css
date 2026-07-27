@@ -772,46 +772,6 @@ footer {
   align-items: start;
 }
 
-.acupoint-directory-hero {
-  align-items: center;
-  background:
-    radial-gradient(circle at 88% 8%, rgba(255, 255, 255, 0.12), transparent 22%),
-    linear-gradient(135deg, #6e2f55, #8d4e70);
-  border-radius: 8px;
-  color: #fff;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) auto;
-  padding: 1.25rem;
-}
-
-.acupoint-directory-hero .eyebrow,
-.acupoint-directory-hero p,
-.directory-mode-note small,
-.directory-mode-note span {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.acupoint-directory-hero h2 {
-  color: #fff;
-  font-size: 1.8rem;
-}
-
-.directory-mode-note {
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 8px;
-  display: grid;
-  min-width: 150px;
-  padding: 0.9rem;
-  text-align: center;
-}
-
-.directory-mode-note strong {
-  color: #fff;
-  font-size: 1.8rem;
-}
-
 .acupoint-browser {
   grid-template-columns: 1fr;
 }
@@ -3468,7 +3428,6 @@ footer {
   }
 
   .home-hero,
-  .acupoint-directory-hero,
   .content-library,
   .database-health,
   .patient-system,
@@ -3490,14 +3449,6 @@ footer {
   .os-intro h2 {
     font-size: 1.16rem;
     line-height: 1.28;
-  }
-
-  .acupoint-directory-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .directory-mode-note {
-    min-width: 0;
   }
 
   .os-intro p:last-child {
@@ -3659,6 +3610,12 @@ footer {
 
   .directory-sidebar {
     position: static;
+  }
+
+  /* Stacked, the sidebar's filter boxes would push 穴位資料庫 off the first
+     screen. The search box is what the page is for — it goes first. */
+  .directory-main {
+    order: -1;
   }
 
   .directory-filter-box {
