@@ -122,6 +122,9 @@ function adapt361Record(record) {
     anatomy: record.anatomy_terms || [],
     functions: (record.functions_zh || []).join("，"),
     functionsEn: (record.functions_en || []).join(" "),
+    // Joined strings cannot be paired row by row; keep the arrays too.
+    functionsZhList: record.functions_zh || [],
+    functionsEnList: record.functions_en || [],
     patterns: record.indications_zh || [],
     patternsEn: record.indications_en || [],
     evidence: record.evidence || "",
@@ -132,6 +135,17 @@ function adapt361Record(record) {
     // See scripts/mark-exam-stars.js — never hand-set, so the badge always
     // traces back to a page Ting can open.
     examStar: Number(record.exam_star) || 0,
+    // Fields the curation pass writes. They existed in the data for 76 points
+    // but nothing rendered them, so the 特定穴 identity and the exam pearls were
+    // invisible in the app — the two things most worth seeing on a point card.
+    pointIdentityZh: record.point_identity_zh || [],
+    pointIdentityEn: record.point_identity_en || [],
+    examPearl: record.exam_pearl || "",
+    examImportance: record.exam_importance || "",
+    actionTagsZh: record.action_tags_zh || [],
+    actionTagsEn: record.action_tags_en || [],
+    diseaseTagsZh: record.disease_tags_zh || [],
+    diseaseTagsEn: record.disease_tags_en || [],
     clinicalPearls: record.clinical_pearls || [],
     acumethodZh: record.acumethod_zh || "",
     moxaZh: record.moxa_zh || "",
@@ -2882,12 +2896,15 @@ function renderDetail(point) {
           </div>
         </section>
 
-        ${renderPointCategoryBadges(point)}
+        ${pointIdentitySection(point)}
         ${window.AcuTingReview ? window.AcuTingReview.strip("point", point.code, point.reviewStatus) : ""}
+        ${examPearlSection(point)}
+        ${pointFunctionsSection(point)}
+        ${studySection(contentMode === "english" ? "Indications" : "主治病症", indicationArticle(point), "target")}
+        ${pointTagSection(point)}
         ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
         ${visualLinksSection(point)}
-        ${studySection(contentMode === "english" ? "Indications" : "主治病症", indicationArticle(point), "target")}
         ${combinePointsSection(point)}
         ${pairingSection(pairings)}
         ${studySection(contentMode === "english" ? "Needling and Moxibustion" : "針刺與艾灸", needlingArticle(point), "needle")}
@@ -2937,6 +2954,91 @@ const FIVE_SHU_ELEMENT_ZH = { wood: "木", fire: "火", earth: "土", metal: "�
 
 // PC5: 特定穴 badges on the point detail page (point → categories). Each badge
 // links to the directory filtered by that category (the bidirectional loop).
+// ── Card blocks added to give the point page the herb card's structure ──────
+// The herb card leads with identity and exam value, then goes into detail. The
+// point page did the opposite: it opened with 基本介紹 and buried the functions
+// inside the indications section, so the layer worth memorising had no shape.
+
+function pointIdentitySection(point) {
+  const zh = point.pointIdentityZh || [];
+  const en = point.pointIdentityEn || [];
+  const list = contentMode === "english" ? (en.length ? en : zh) : zh;
+  // One identity row, not two. The structured category badges (clickable, they
+  // jump to the category listing) and the curriculum's identity text were
+  // rendering as separate strips saying nearly the same thing — the duplicate
+  // entry point Ting has flagged before. Categories lead, curriculum text
+  // follows, and terms already covered by a badge are not repeated.
+  const cats = renderPointCategoryBadges(point);
+  if (!list.length) return cats;
+  const catText = cats.replace(/<[^>]+>/g, " ");
+  const extra = list.filter((t) => {
+    const core = String(t).replace(/[（(].*$/, "").trim();
+    return core.length < 2 || !catText.includes(core);
+  });
+  if (!extra.length) return cats;
+  // A safety line in the identity list is not a badge — it is a warning, and
+  // ST17's 「絕對禁針禁灸」 must not look like 「合穴」.
+  const chips = extra.map((t) => {
+    const danger = /⚠|禁針|禁灸|NEVER|deep needling|Avoid/i.test(t);
+    return `<span class="point-identity-chip${danger ? " is-danger" : ""}">${escapeHtml(t)}</span>`;
+  }).join("");
+  return `${cats}<div class="point-identity" aria-label="${contentMode === "english" ? "Point identity" : "穴位身分"}">
+    <div class="point-identity__chips">${chips}</div>
+  </div>`;
+}
+
+function examPearlSection(point) {
+  if (!point.examPearl && !point.examImportance) return "";
+  const star = Number(point.examStar) || 0;
+  const heading = contentMode === "english" ? "Exam Pearl" : "考試重點";
+  return `<section class="point-exam-pearl${star >= 2 ? " is-high" : ""}">
+    <h3>${star ? (star >= 2 ? "★★ " : "★ ") : "💡 "}${escapeHtml(heading)}</h3>
+    ${point.examPearl ? `<p class="pep-body">${escapeHtml(point.examPearl)}</p>` : ""}
+    ${point.examImportance ? `<p class="pep-scope">${escapeHtml(point.examImportance)}</p>` : ""}
+  </section>`;
+}
+
+// Functions get their own block. Bilingual side by side, because the course
+// notes are English and the 中文 is the structured reading of them — seeing both
+// rows is the point of the four-layer split.
+function pointFunctionsSection(point) {
+  const zh = (point.functions || "").split(/[，、]/).map((x) => x.trim()).filter(Boolean);
+  const en = (point.functionsEn || "").split(/\s{2,}|(?<=[a-z])\s(?=[A-Z])/).map((x) => x.trim()).filter(Boolean);
+  const zhList = point.functionsZhList && point.functionsZhList.length ? point.functionsZhList : zh;
+  const enList = point.functionsEnList && point.functionsEnList.length ? point.functionsEnList : en;
+  if (!zhList.length && !enList.length) return "";
+  const aligned = zhList.length === enList.length && zhList.length > 0;
+  const rows = aligned
+    ? zhList.map((z, i) => `<li><span class="pf-zh">${escapeHtml(z)}</span><span class="pf-en">${escapeHtml(enList[i])}</span></li>`).join("")
+    : [...zhList, ...enList].map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
+  return `<section class="study-section point-functions">
+    <h3>${contentMode === "english" ? "Functions & Actions" : "功效"}</h3>
+    <ol class="point-functions__list${aligned ? " is-paired" : ""}">${rows}</ol>
+  </section>`;
+}
+
+// Tags are the searchable layer, so they are buttons: clicking one runs the
+// site search for that term rather than being decoration.
+function pointTagSection(point) {
+  const groups = [
+    ["action", contentMode === "english" ? "Action tags" : "功效標籤", point.actionTagsZh, point.actionTagsEn],
+    ["disease", contentMode === "english" ? "Condition tags" : "病症標籤", point.diseaseTagsZh, point.diseaseTagsEn]
+  ];
+  const html = groups.map(([kind, label, zh, en]) => {
+    const list = contentMode === "english" ? (en && en.length ? en : zh) : zh;
+    if (!list || !list.length) return "";
+    const chips = list.map((t, i) => {
+      // Search the 中文 term even in English mode: the index is richer on that
+      // side, and the button still shows whatever language is on screen.
+      const term = (zh && zh[i]) || t;
+      return `<button type="button" class="point-tag point-tag--${kind}" data-search-term="${escapeAttribute(term)}">${escapeHtml(t)}</button>`;
+    }).join("");
+    return `<div class="point-tags__group"><span class="point-tags__label">${escapeHtml(label)}</span><div class="point-tags__chips">${chips}</div></div>`;
+  }).join("");
+  if (!html) return "";
+  return `<section class="study-section point-tags"><h3>${contentMode === "english" ? "Tags" : "標籤（點擊搜尋）"}</h3>${html}</section>`;
+}
+
 function renderPointCategoryBadges(point) {
   const cats = point.pointCategories || [];
   if (!cats.length) return "";
@@ -3192,8 +3294,9 @@ function pointIntro(point) {
     introParts.push(`${point.nameZh} (${point.pinyin}; ${point.nameEn}) 屬於 ${shortMeridian(point)}，位置在${point.region || "未分類部位"}。`);
   }
   if (point.otherNamesZh) introParts.push(`【別名】${point.otherNamesZh}`);
-  if (point.wushuPoint) introParts.push(`【特定穴分類】${point.wushuPoint}`);
-  if (point.functions) introParts.push(`【功效標籤】${point.functions}`);
+  // 特定穴分類 and 功效 now have their own blocks above this one; repeating them
+  // here is the duplicate-entry problem in miniature — the reader sees the same
+  // list twice and cannot tell which is authoritative.
   return introParts.join("\n\n");
 }
 
@@ -3220,392 +3323,26 @@ function pointLocationArticle(point) {
 }
 
 function indicationArticle(point) {
+  // Indications only. This function used to render the tag chips as well, which
+  // duplicated the dedicated tag section below it and left the 主治病症 heading
+  // showing tags instead of indications. Tags live in pointTagSection; this
+  // block shows what the course actually lists as indications, paired 中英 the
+  // same way the functions block does.
+  const zh = (point.patterns || []).filter(Boolean);
+  const en = (point.patternsEn || []).filter(Boolean);
+  const aligned = zh.length && zh.length === en.length;
+
   if (contentMode === "english") {
-    const rawInds = (point.patternsEn || point.disease_tags_en || []).filter(Boolean);
-    const patterns = rawInds.map(p => `<span class="k-tag symptom">${escapeHtml(p)}</span>`).join(" ");
-    const actions = point.functionsEn || (Array.isArray(point.action_tags_en) ? point.action_tags_en.join(", ") : "");
-    return `
-      ${actions ? `<p><strong>Actions & Properties:</strong> ${escapeHtml(actions)}</p>` : ""}
-      <p><strong>Indications & Symptom Tags:</strong></p>
-      <div class="k-tags">${patterns || '<span class="k-tag symptom">Channel Pain & Qi Stagnation</span>'}</div>
-    `;
+    const list = en.length ? en : zh;
+    if (!list.length) return "";
+    return `<ol class="point-functions__list">${list.map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("")}</ol>`;
   }
 
-  const parts = [];
-
-  // Helper dictionary for instant bilingual translations
-  // Comprehensive professional TCM translation dictionary
-  const COMMON_TAG_TRANS = {
-    "頭部": "Head Region",
-    "神志": "Mental & Emotional",
-    "眩暈": "Vertigo & Dizziness",
-    "癲癇": "Epilepsy",
-    "清頭明目": "Clear Head & Brighten Eyes",
-    "平肝熄風": "Pacify Liver & Extinguish Wind",
-    "目赤腫痛": "Red Swollen Eyes",
-    "鼻塞": "Nasal Congestion",
-    "清熱袪風": "Clear Heat & Dispel Wind",
-    "明目止痛": "Brighten Eyes & Relieve Pain",
-    "鼻淵": "Sinusitis",
-    "小兒驚風": "Infantile Convulsion",
-    "通鼻開竅": "Unblock Nose & Open Orifices",
-    "眼瞼瞤動": "Eyelid Twitching",
-    "眼瞼下垂": "Ptosis",
-    "眉稜骨痛": "Supraorbital Pain",
-    "面癱": "Facial Paralysis",
-    "疏風清熱": "Dispel Wind & Clear Heat",
-    "明目退翳": "Brighten Eyes & Remove Obstruction",
-    "通絡止痛": "Unblock Collaterals & Relieve Pain",
-    "偏頭痛": "Migraine",
-    "感冒頭痛": "Cold with Headache",
-    "牙痛": "Toothache",
-    "清熱消腫": "Clear Heat & Reduce Swelling",
-    "袪風止痛": "Dispel Wind & Relieve Pain",
-    "醒腦明目": "Refresh Mind & Brighten Eyes",
-    "發熱": "Fever",
-    "高血壓": "Hypertension",
-    "麥粒腫": "Hordeolum (Stye)",
-    "急性結膜炎": "Acute Conjunctivitis",
-    "清熱瀉火": "Clear Heat & Drain Fire",
-    "解毒明目": "Relieve Toxicity & Brighten Eyes",
-    "平肝降壓": "Pacify Liver & Lower BP",
-    "視神經炎": "Optic Neuritis",
-    "視神經萎縮": "Optic Atrophy",
-    "青光眼": "Glaucoma",
-    "白內障早期": "Early Cataract",
-    "清熱明目": "Clear Heat & Brighten Eyes",
-    "退翳": "Remove Visual Obstruction",
-    "活血通竅": "Activate Blood & Open Orifices",
-    "急慢性鼻炎": "Acute & Chronic Rhinitis",
-    "鼻竇炎": "Sinusitis",
-    "嗅覺減退": "Hyposmia",
-    "過敏性鼻炎": "Allergic Rhinitis",
-    "鼻塞鼻淵": "Sinusitis & Nasal Congestion",
-    "中暑": "Heatstroke",
-    "袪痰開竅": "Transform Phlegm & Open Orifices",
-    "調脾和胃": "Harmonize Spleen & Stomach",
-    "利舌降氣": "Benefit Tongue & Direct Qi Downward",
-    "舌強不語": "Tongue Stiffness & Aphasia",
-    "中風失語": "Post-Stroke Aphasia",
-    "哮喘": "Asthma",
-    "消渴": "Diabetes / Thirsting Disorder",
-    "食欲不振": "Poor Appetite",
-    "清熱生津": "Clear Heat & Generate Fluids",
-    "消腫止痛": "Reduce Swelling & Relieve Pain",
-    "利咽開音": "Benefit Throat & Open Voice",
-    "消渴（糖尿病）": "Diabetes Mellitus",
-    "舌炎": "Glossitis",
-    "舌腫": "Swollen Tongue",
-    "嘔吐": "Vomiting",
-    "失語": "Aphasia",
-    "解熱瀉火": "Drain Fire & Relieve Heat",
-    "口腔炎": "Stomatitis",
-    "扁桃腺炎": "Tonsillitis",
-    "咽喉腫痛": "Sore Throat",
-    "明目聰耳": "Brighten Eyes & Sharpen Hearing",
-    "近視": "Myopia",
-    "白內障": "Cataract",
-    "耳鳴": "Tinnitus",
-    "失眠": "Insomnia",
-    "滋陰補肺": "Nourish Yin & Tonify Lung",
-    "益氣化痰": "Supplement Qi & Transform Phlegm",
-    "舒筋通絡": "Relax Tendons & Unblock Collaterals",
-    "肺結核": "Pulmonary TB",
-    "頸肩疼痛": "Neck & Shoulder Pain",
-    "百日咳": "Whooping Cough",
-    "安神定志": "Calm Mind & Settle Will",
-    "鎮靜催眠": "Calm Spirit & Promote Sleep",
-    "神經衰弱": "Neurasthenia",
-    "精神病": "Psychosis",
-    "頭痛": "Headache",
-    "角膜炎": "Keratitis",
-    "袪風通絡": "Dispel Wind & Unblock Collaterals",
-    "面神經麻痹（面癱）": "Facial Paralysis",
-    "下頷關節痛": "TMJ Pain",
-    "止痛解痙": "Relieve Pain & Spasms",
-    "三叉神經痛": "Trigeminal Neuralgia",
-    "齒齦腫痛": "Gingivitis & Toothache",
-    "利頸止痛": "Benefit Neck & Relieve Pain",
-    "落枕": "Stiff Neck",
-    "頸椎病": "Cervical Spondylosis",
-    "角弓反張": "Opisthotonos",
-    "宣肺開竅": "Disperse Lung & Open Orifices",
-    "面肌痙攣": "Facial Spasm",
-    "清熱解毒": "Clear Heat & Relieve Toxicity",
-    "利咽消腫": "Benefit Throat & Reduce Swelling",
-    "急性扁桃體炎": "Acute Tonsillitis",
-    "喉痹": "Pharyngitis / Laryngitis",
-    "調理衝任": "Regulate Chong & Ren Channels",
-    "暖宮止痛": "Warm Uterus & Relieve Pain",
-    "升提子宮": "Elevate Prolapsed Uterus",
-    "月經不調": "Irregular Menstruation",
-    "痛經": "Dysmenorrhea",
-    "帶下病": "Leukorrhea / Vaginal Discharge",
-    "子宮脫垂": "Uterine Prolapse",
-    "不孕症": "Infertility",
-    "升陽舉陷": "Raise Yang & Lift Collapse",
-    "調理下焦": "Regulate Lower Jiao",
-    "腹股溝疝氣": "Inguinal Hernia",
-    "小腹脹痛": "Lower Abdominal Distension",
-    "溫中散寒": "Warm Middle Jiao & Dispel Cold",
-    "止痛止瀉": "Relieve Pain & Stop Diarrhea",
-    "疝氣": "Hernia",
-    "繞臍腹痛": "Periumbilical Abdominal Pain",
-    "慢性腹瀉": "Chronic Diarrhea",
-    "健脾和胃": "Strengthen Spleen & Harmonize Stomach",
-    "升提胃氣": "Elevate Stomach Qi",
-    "胃下垂": "Gastroptosis",
-    "胃痛": "Gastric Pain",
-    "消化不良": "Indigestion / Dyspepsia",
-    "腹脹": "Abdominal Distension",
-    "通利小便": "Promote Urination",
-    "清熱利濕": "Clear Heat & Relieve Dampness",
-    "小便不利": "Dysuria",
-    "尿殘留": "Urinary Retention",
-    "尿路感染": "UTI",
-    "水腫": "Edema",
-    "宣肺平喘": "Disperse Lung & Calm Wheezing",
-    "止咳化痰": "Relieve Cough & Transform Phlegm",
-    "咳嗽氣逆": "Cough & Rebellious Qi",
-    "支氣管炎": "Bronchitis",
-    "肩背痛": "Shoulder & Back Pain",
-    "調和臟腑": "Harmonize Zang-Fu Organs",
-    "通經活絡": "Unblock Channels & Collaterals",
-    "壯腰健脊": "Strengthen Lumbar & Spine",
-    "胸腹內臟疾患": "Chest & Visceral Disorders",
-    "腰背痛": "Low Back & Back Pain",
-    "脊柱疾病": "Spinal Disorders",
-    "神經官能症": "Neurosis",
-    "生津止渴": "Generate Fluids & Quench Thirst",
-    "清胰利膽": "Benefit Pancreas & Gallbladder",
-    "糖尿病（消渴）": "Diabetes Mellitus",
-    "胰腺炎": "Pancreatitis",
-    "消痞散結": "Disperse Masses & Dissipate Nodules",
-    "肝脾腫大": "Hepatosplenomegaly",
-    "痞塊": "Abdominal Mass",
-    "腸疝氣": "Intestinal Hernia",
-    "益腎壯腰": "Tonify Kidney & Strengthen Lumbar",
-    "理氣止痛": "Regulate Qi & Relieve Pain",
-    "下肢痿痺": "Lower Limb Weakness",
-    "腹痛腹瀉": "Abdominal Pain & Diarrhea",
-    "疏經通絡": "Dredge Channels & Unblock Collaterals",
-    "壯腰補腎": "Strengthen Lumbar & Tonify Kidney",
-    "婦女月經不調": "Irregular Menstruation",
-    "小腹痛": "Lower Abdominal Pain",
-    "壯腰健腎": "Strengthen Lumbar & Kidneys",
-    "活血通絡": "Activate Blood & Unblock Collaterals",
-    "慢性腰痛": "Chronic Low Back Pain",
-    "遺尿": "Enuresis",
-    "補腎壯腰": "Tonify Kidney & Strengthen Lumbar",
-    "調經止痛": "Regulate Menses & Relieve Pain",
-    "崩漏": "Uterine Bleeding",
-    "腰骶痛": "Lumbosacral Pain",
-    "下肢癱瘓": "Lower Limb Paralysis",
-    "熄風止痙": "Pacify Wind & Relieve Spasms",
-    "便秘": "Constipation",
-    "寬胸理氣": "Unbind Chest & Regulate Qi",
-    "寧心安神": "Calm Heart & Pacify Spirit",
-    "心痛": "Cardiac Pain",
-    "胸悶": "Chest Oppression",
-    "咳嗽": "Cough",
-    "氣喘": "Asthma & Dyspnea",
-    "活血止痛": "Activate Blood & Relieve Pain",
-    "續筋接骨": "Rejoin Tendons & Bones",
-    "骨折疼痛": "Fracture Pain",
-    "腰脊強痛": "Spinal Stiffness & Pain",
-    "利腰腿": "Benefit Lumbar & Lower Limbs",
-    "坐骨神經痛": "Sciatica",
-    "臀部疼痛": "Gluteal Pain",
-    "消腫": "Reduce Swelling",
-    "消腫散結": "Reduce Swelling & Dissipate Nodules",
-    "解毒": "Relieve Toxicity",
-    "癰疽": "Carbuncle & Abscess",
-    "頸部淋巴結腫大": "Cervical Lymphadenopathy",
-    "腸癰": "Appendicitis",
-    "調和氣血": "Harmonize Qi & Blood",
-    "升提下陷": "Lift Sunken Qi",
-    "清腸止血": "Clear Intestines & Stop Bleeding",
-    "痔瘡": "Hemorrhoids",
-    "脫肛": "Rectal Prolapse",
-    "前臂痛": "Forearm Pain",
-    "和胃降逆": "Harmonize Stomach & Lower Rebellious Qi",
-    "噎膈": "Dysphagia",
-    "翻胃": "Regurgitation",
-    "呃逆": "Hiccup",
-    "鼻衄": "Nosebleed (Epistaxis)",
-    "白翳": "Corneal Opacity",
-    "耳聾": "Deafness",
-    "舒筋利腰": "Relax Tendons & Benefit Lumbar",
-    "急性腰扭傷": "Acute Lumbar Sprain",
-    "利頸": "Benefit Neck",
-    "手指麻木": "Finger Numbness",
-    "手背痛": "Dorsal Hand Pain",
-    "手指關節痛": "Finger Joint Pain",
-    "手背腫痛": "Hand Swelling & Pain",
-    "毒蛇咬傷": "Snakebite",
-    "消食化積": "Transform Food Stagnation",
-    "消疳": "Eliminate Childhood Gan",
-    "小兒疳積": "Childhood Malnutrition",
-    "蛔蟲症": "Ascariasis",
-    "醒神急救": "Restore Consciousness",
-    "回陽救逆": "Restore Yang & Rescue Collapse",
-    "昏迷急救": "Coma Emergency",
-    "中風昏倒": "Stroke Coma",
-    "胸脅痛": "Chest & Hypochondriac Pain",
-    "宣肺利咽": "Disperse Lung & Benefit Throat",
-    "甲狀腺腫大": "Goiter",
-    "上肢麻木": "Upper Limb Numbness",
-    "利手腕": "Benefit Wrist",
-    "手腕腱鞘炎": "Wrist Tenosynovitis",
-    "前臂橈側痛": "Radial Forearm Pain",
-    "升提中氣": "Raise Middle Qi",
-    "頭痛眩暈": "Headache & Vertigo",
-    "強膝健步": "Strengthen Knee & Walking",
-    "膝關節炎": "Knee Arthritis",
-    "下肢痿弱": "Lower Limb Weakness",
-    "通利關節": "Unblock & Benefit Joints",
-    "袪風除濕": "Dispel Wind & Eliminate Dampness",
-    "膝關節疼痛": "Knee Pain",
-    "腳氣": "Beriberi",
-    "涼血止癢": "Cool Blood & Relieve Itching",
-    "驅蟲": "Eliminate Parasites",
-    "皮膚瘙癢": "Skin Itching (Pruritus)",
-    "蕁麻疹": "Urticaria",
-    "濕疹": "Eczema",
-    "腹部痙攣": "Abdominal Cramps",
-    "膕窩囊腫": "Popliteal Cyst",
-    "疏肝利膽": "Soothe Liver & Benefit Gallbladder",
-    "解痙止痛": "Relieve Spasm & Pain",
-    "膽囊炎": "Cholecystitis",
-    "膽石症": "Gallstones",
-    "膽道蛔蟲症": "Biliary Ascariasis",
-    "通腑化瘀": "Unblock Fu & Transform Stasis",
-    "急慢性闌尾炎": "Appendicitis",
-    "通絡消腫": "Unblock Collaterals & Reduce Swelling",
-    "內踝尖": "Medial Malleolus Apex",
-    "外踝尖": "Lateral Malleolus Apex",
-    "踝關節炎": "Ankle Arthritis",
-    "踝關節扭傷": "Ankle Sprain",
-    "足趾麻木疼痛": "Toe Numbness & Pain",
-    "腳水腫": "Foot Edema",
-    "止嘔催產": "Stop Vomiting & Promote Labor",
-    "小腸疝氣": "Hernia of Small Intestine",
-    "難產": "Difficult Labor (Dystocia)",
-    "中風急救": "Stroke Emergency",
-    "昏厥": "Fainting (Syncope)",
-    "利膝關節": "Benefit Knee Joint",
-    "腓總神經麻痹": "Peroneal Nerve Palsy",
-    "下肢內側痛": "Medial Leg Pain",
-    "滋陰降火": "Nourish Yin & Lower Fire",
-    "足心熱": "Heat in Soles",
-    "通絡舒筋": "Unblock Collaterals & Relax Tendons",
-    "強健下肢": "Strengthen Lower Limbs",
-    "股外側皮神經炎": "Femoral Cutaneous Neuritis",
-    "肺氣不宣": "Lung Qi Constraint",
-    "喘證": "Wheezing Syndrome",
-    "痰濁阻肺": "Phlegm-Damp Obstructing Lung",
-    "肺熱咳嗽": "Lung Heat Cough",
-    "喘咳": "Wheezing & Cough",
-    "肘臂痛": "Elbow & Arm Pain",
-    "痰熱壅肺": "Phlegm-Heat Obstructing Lung",
-    "肺氣虛": "Lung Qi Deficiency",
-    "久咳": "Chronic Cough",
-    "氣短": "Shortness of Breath",
-    "脈弱": "Weak Pulse",
-    "痰飲": "Phlegm-Fluid Retention",
-    "風熱犯肺": "Wind-Heat Attacking Lung",
-    "嗅覺不利": "Impaired Smell",
-    "腹痛": "Abdominal Pain",
-    "腹瀉": "Diarrhea",
-    "食積": "Food Stagnation",
-    "腸腑氣滯": "Intestinal Qi Stagnation",
-    "腸鳴": "Borborygmus",
-    "熱病": "Febrile Disease",
-    "高熱": "High Fever",
-    "神昏": "Coma / Clouded Mind",
-    "目赤": "Red Eyes",
-    "心悸": "Palpitations",
-    "胸痛": "Chest Pain",
-    "顛狂": "Mania & Epilepsy",
-    "健忘": "Poor Memory",
-    "盜汗": "Night Sweats",
-    "自汗": "Spontaneous Sweats",
-    "黃疸": "Jaundice",
-    "脅痛": "Hypochondriac Pain",
-    "遺精": "Seminal Emission",
-    "陽痿": "Impotence",
-    "帶下": "Vaginal Discharge",
-    "陰挺": "Uterine Prolapse",
-    "腰痛": "Low Back Pain",
-    "膝痛": "Knee Pain",
-    "下肢痺痛": "Lower Limb Pain & Numbness",
-    "足跟痛": "Heel Pain"
-  };
-
-  // Helper function to resolve translation ONLY by Chinese Key match
-  function resolveTagEnglish(zhKey) {
-    const cleanKey = String(zhKey || "").trim();
-    if (!cleanKey) return "";
-    let match = COMMON_TAG_TRANS[cleanKey] || patternEnglishMap[cleanKey] || functionEnglishMap[cleanKey] || "";
-    if (!match && cleanKey.includes("（")) {
-      const baseKey = cleanKey.replace(/（[^）]+）/g, "").trim();
-      match = COMMON_TAG_TRANS[baseKey] || patternEnglishMap[baseKey] || functionEnglishMap[baseKey] || "";
-    }
-    // Reject any single-character or junk fallback
-    if (!match || match.length <= 2 || /Master Tung|Category|indication/i.test(match)) {
-      return "";
-    }
-    return match;
-  }
-
-  // 1. AcuTags / Actions (功效與屬性標籤)
-  let actionTagsZh = point.action_tags_zh || (point.acuTags && point.acuTags.length > 0 ? point.acuTags : null);
-  if (!actionTagsZh && point.functions) {
-    actionTagsZh = String(point.functions).split(/[,，、]/).map(s => s.trim()).filter(Boolean);
-  }
-
-  if (actionTagsZh && actionTagsZh.length > 0) {
-    const actionChips = actionTagsZh.map(zhTag => {
-      const cleanZh = zhTag.trim();
-      const enText = resolveTagEnglish(cleanZh);
-      const enSpan = enText ? ` <small>(${escapeHtml(enText)})</small>` : "";
-      return `<span class="k-tag cat">${escapeHtml(cleanZh)}${enSpan}</span>`;
-    }).join(" ");
-    parts.push(`<p><strong>【功效與屬性標籤】</strong></p><div class="k-tags">${actionChips}</div>`);
-  }
-
-  // 2. Indications / Disease Tags (常見主治與適應症標籤)
-  let diseaseTagsZh = point.disease_tags_zh || (Array.isArray(point.patterns) ? point.patterns : (point.patterns ? String(point.patterns).split(/[\n,，、]/) : []));
-
-  if (diseaseTagsZh && diseaseTagsZh.length > 0) {
-    const uniqueMap = new Map();
-    diseaseTagsZh.forEach(item => {
-      let str = String(item).trim();
-      if (!str) return;
-      let zh = str;
-      let en = "";
-      if (str.includes("=")) {
-        const partsArr = str.split("=");
-        zh = partsArr[0].trim();
-        en = partsArr[1].trim();
-      } else {
-        en = resolveTagEnglish(zh);
-      }
-      if (zh && !uniqueMap.has(zh)) {
-        uniqueMap.set(zh, en);
-      }
-    });
-
-    if (uniqueMap.size > 0) {
-      const indChips = Array.from(uniqueMap.entries()).map(([zh, en]) => {
-        const enSpan = en ? ` <small>(${escapeHtml(en)})</small>` : "";
-        return `<span class="k-tag symptom">${escapeHtml(zh)}${enSpan}</span>`;
-      }).join(" ");
-      parts.push(`<p><strong>【常見主治與適應症標籤】</strong></p><div class="k-tags">${indChips}</div>`);
-    }
-  }
-
-  return parts.join("\n\n");
+  if (!zh.length && !en.length) return "";
+  const rows = aligned
+    ? zh.map((z, i) => `<li><span class="pf-zh">${escapeHtml(z)}</span><span class="pf-en">${escapeHtml(en[i])}</span></li>`).join("")
+    : [...zh, ...(zh.length ? [] : en)].map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
+  return `<ol class="point-functions__list${aligned ? " is-paired" : ""}">${rows}</ol>`;
 }
 
 function formatCombinePointsText(text) {
