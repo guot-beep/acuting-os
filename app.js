@@ -147,6 +147,11 @@ function adapt361Record(record) {
     diseaseTagsZh: record.disease_tags_zh || [],
     diseaseTagsEn: record.disease_tags_en || [],
     clinicalPearls: record.clinical_pearls || [],
+    // §6.5 linking layer. Without these three the work in
+    // link-point-conditions.js and build-compare-with.js is invisible.
+    relatedConditions: record.related_conditions || [],
+    tcmPatternIds: record.tcm_pattern_ids || [],
+    compareWith: record.compare_with || [],
     acumethodZh: record.acumethod_zh || "",
     moxaZh: record.moxa_zh || "",
     modernResearchZh: record.modern_research_zh || record.cloudtcm_detail || "",
@@ -752,6 +757,12 @@ globalThis.ACUTING_SEARCH = function (term) {
 document.addEventListener("click", (event) => {
   const t = event.target.closest("[data-search-term]");
   if (t) globalThis.ACUTING_SEARCH(t.dataset.searchTerm);
+});
+// §6.5 (B) condition chips on a point card reuse the search-result routing, so
+// a chip lands on the same condition card the global search would open.
+document.addEventListener("click", (event) => {
+  const chip = event.target.closest('.point-link[data-kind="condition"]');
+  if (chip) openGlobalResult(chip);
 });
 
 if (globalResultsEl) {
@@ -2995,6 +3006,8 @@ function renderDetail(point) {
           return body ? studySection(contentMode === "english" ? "Indications" : "主治病症", body, "target") : "";
         })()}
         ${pointTagSection(point)}
+        ${pointCompareSection(point)}
+        ${pointLinkSection(point)}
         ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
         ${visualLinksSection(point)}
@@ -3158,6 +3171,69 @@ function pointTagSection(point) {
   }).join("");
   if (!html) return "";
   return `<section class="study-section point-tags"><h3>${contentMode === "english" ? "Tags" : "標籤（點擊搜尋）"}</h3>${html}</section>`;
+}
+
+/* §6.5 (C) 複習對比 — the contrast is what board questions actually ask
+   ("SP15 or ST25 for diarrhea"), and prose hides it. Each row names the other
+   point, the axis being compared, and the sourced note. The code links to that
+   point's page so the comparison can be read from either side. */
+function pointCompareSection(point) {
+  const rows = point.compareWith || [];
+  if (!rows.length) return "";
+  const html = rows.map((r) => {
+    const other = (r.codes || []).find((c) => c !== point.code) || "";
+    const rec = points.find((p) => p.code === other);
+    const name = rec ? rec.nameZh || "" : "";
+    return `<li class="pcmp-row">
+      <a class="pcmp-code" href="${pointHash(other)}">${escapeHtml(other)}${name ? ` ${escapeHtml(name)}` : ""}</a>
+      <span class="pcmp-axis">${escapeHtml(r.axis || "")}</span>
+      <span class="pcmp-note">${escapeHtml(r.note || "")}</span>
+    </li>`;
+  }).join("");
+  return `<section class="study-section point-compare">
+    <h3>${contentMode === "english" ? "Compare with" : "複習對比"}</h3>
+    <ul class="point-compare__list">${html}</ul>
+  </section>`;
+}
+
+/* §6.5 (B) 連接層 — both vocabularies, because a case is written in 西醫病名
+   but the reasoning is 病 → 證 → 穴. LI4 carries 115 conditions, so the list
+   collapses past a dozen rather than burying the rest of the card. */
+function pointLinkSection(point) {
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const condById = new Map((K.conditionCanon?.records || []).map((c) => [c.id, c]));
+  const patById = new Map((K.tcmPatternCanon?.records || []).map((p) => [p.id, p]));
+  const CAP = 12;
+
+  const block = (label, items, render) => {
+    if (!items.length) return "";
+    const head = items.slice(0, CAP).map(render).join("");
+    const rest = items.slice(CAP).map(render).join("");
+    return `<div class="point-links__group">
+      <span class="point-links__label">${escapeHtml(label)} <b>${items.length}</b></span>
+      <div class="point-links__chips">${head}</div>
+      ${rest ? `<details class="point-links__more"><summary>${contentMode === "english" ? `show all ${items.length}` : `其餘 ${items.length - CAP} 個`}</summary><div class="point-links__chips">${rest}</div></details>` : ""}
+    </div>`;
+  };
+
+  const conds = (point.relatedConditions || []).map((id) => condById.get(id)).filter(Boolean);
+  const pats = (point.tcmPatternIds || []).map((id) => patById.get(id)).filter(Boolean);
+
+  const html = [
+    block(contentMode === "english" ? "Western conditions" : "相關西醫病名", conds, (c) =>
+      `<button type="button" class="point-link point-link--cond" data-kind="condition" data-id="${escapeAttribute(c.id)}">${escapeHtml(c.name_zh || c.name_en || c.id)}</button>`),
+    // Patterns have no page of their own yet, so the chip runs the site search
+    // instead of pretending to navigate somewhere.
+    // 方證 (桂枝湯證) and 證候 (肝氣鬱結) are different kinds of diagnosis; the
+    // canon marks which, so the chip says so rather than presenting them as
+    // one flat vocabulary.
+    block(contentMode === "english" ? "TCM patterns" : "相關中醫證候", pats, (p) =>
+      `<button type="button" class="point-link point-link--pat${p.kind === "方證" ? " is-formula-pattern" : ""}" data-search-term="${escapeAttribute(p.name_zh)}">${escapeHtml(p.name_zh)}${p.formula_zh ? `<span class="pl-formula">${escapeHtml(p.formula_zh)}</span>` : ""}</button>`)
+  ].join("");
+  if (!html) return "";
+  return `<section class="study-section point-links">
+    <h3>${contentMode === "english" ? "Linked conditions & patterns" : "連結：病證與證候"}</h3>${html}
+  </section>`;
 }
 
 function renderPointCategoryBadges(point) {

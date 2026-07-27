@@ -5474,7 +5474,59 @@ html { scroll-padding-top: 92px; }
 .point-tag .pt-zh { font-weight: 600; }
 .point-tag .pt-en { font-size: 0.74rem; opacity: 0.72; }
 
+/* §6.5 (C) 複習對比 — a table, not prose, so the contrast can be scanned.
+   Code | axis | note, collapsing to stacked rows on a phone. */
+.point-compare__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.pcmp-row {
+  display: grid;
+  grid-template-columns: minmax(90px, auto) minmax(90px, auto) minmax(0, 1fr);
+  gap: 0.2rem 0.75rem;
+  align-items: baseline;
+  padding: 0.5rem 0.7rem;
+  background: #fbf9f4;
+  border: 1px solid #e8e0cf;
+  border-left: 3px solid #b08a3e;
+  border-radius: 6px;
+}
+.pcmp-code { font-weight: 700; text-decoration: none; color: #7a4a86; white-space: nowrap; }
+.pcmp-code:hover { text-decoration: underline; }
+.pcmp-axis { font-size: 0.83rem; font-weight: 600; color: #6b5a2e; white-space: nowrap; }
+.pcmp-note { font-size: 0.9rem; line-height: 1.6; }
+
+/* §6.5 (B) linked conditions & patterns. LI4 has 115 conditions, so anything
+   past the first dozen goes behind a disclosure rather than burying the card. */
+.point-links__group { margin: 0 0 0.7rem; }
+.point-links__group:last-child { margin-bottom: 0; }
+.point-links__label { display: block; font-size: 0.8rem; font-weight: 700; opacity: 0.72; margin-bottom: 0.3rem; }
+.point-links__label b { color: #7a4a86; }
+.point-links__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.point-links__more { margin-top: 0.4rem; }
+.point-links__more > summary { cursor: pointer; font-size: 0.83rem; opacity: 0.75; }
+.point-links__more > summary:hover { opacity: 1; }
+.point-links__more[open] > summary { margin-bottom: 0.35rem; }
+.point-link {
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.24rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform 0.08s ease;
+}
+.point-link:hover, .point-link:focus-visible { transform: translateY(-1px); outline: none; }
+.point-link--cond { background: #eef2fb; color: #1f3a68; border-color: #c4d2ec; }
+.point-link--pat { background: #f6eef7; color: #5b2a66; border-color: #ddc4e3; display: inline-flex; align-items: baseline; gap: 0.35em; }
+.point-link .pl-formula { font-size: 0.74rem; opacity: 0.72; }
+
+@media (max-width: 640px) {
+  .pcmp-row { grid-template-columns: 1fr; }
+}
+
 /* The mechanism half of a pairing card. Previously appended into the card text
    as raw markup, which the escaping then printed on screen verbatim. */
 .tung-comb-principle { margin: 0.5rem 0 0; font-size: 0.92rem; line-height: 1.6; }
 .comb-principle-title { font-weight: 800; margin-right: 0.35em; }
+
+/* 方證 reads differently from 證候 — it is the pattern of a named formula, so
+   the chip is tinted to say so instead of blending into the syndrome list. */
+.point-link--pat.is-formula-pattern { background: #fdf3e6; color: #7a4a12; border-color: #eecfa5; }

@@ -88,7 +88,8 @@
         "cond.urinary_retention",
         "cond.chronic_allergies"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.臟腑虛弱",
@@ -173,7 +174,8 @@
         "cond.urinary_retention",
         "cond.chronic_allergies"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝氣鬱結",
@@ -233,7 +235,8 @@
         "cond.post_covid",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.氣滯血瘀",
@@ -289,7 +292,8 @@
         "cond.erectile_dysfunction",
         "cond.hearing_loss"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎陽虛",
@@ -339,7 +343,8 @@
         "cond.nocturnal_enuresis",
         "cond.hearing_loss"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.氣血兩虛",
@@ -384,7 +389,8 @@
         "cond.hypotension",
         "cond.erectile_dysfunction"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.心脾兩虛",
@@ -426,7 +432,8 @@
         "cond.eye_strain",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾腎陽虛",
@@ -466,7 +473,8 @@
         "cond.post_viral_cough",
         "cond.erectile_dysfunction"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.下焦濕熱",
@@ -506,7 +514,8 @@
         "cond.hemorrhoids",
         "cond.erectile_dysfunction"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾胃陽虛",
@@ -545,7 +554,8 @@
         "cond.bph",
         "cond.chronic_prostatitis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎陰虛",
@@ -583,7 +593,8 @@
         "cond.hearing_loss",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.外感風濕",
@@ -621,7 +632,8 @@
         "cond.rheumatoid_arthritis",
         "cond.chronic_diarrhea"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝脾不調",
@@ -658,7 +670,8 @@
         "cond.circadian_disorder",
         "cond.globus_pharyngitis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.當歸四逆湯",
@@ -693,7 +706,9 @@
         "cond.bph",
         "cond.chronic_prostatitis"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.dang_gui_si_ni_tang"
     },
     {
       "id": "pat.脾虛濕困",
@@ -727,7 +742,8 @@
         "cond.psoriasis",
         "cond.erectile_dysfunction"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.外感風寒",
@@ -761,7 +777,8 @@
         "cond.post_viral_cough",
         "cond.post_covid"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎精不足",
@@ -794,7 +811,8 @@
         "cond.erectile_dysfunction",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝血虛",
@@ -827,7 +845,8 @@
         "cond.hearing_loss",
         "cond.eye_strain"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾胃氣虛",
@@ -860,7 +879,8 @@
         "cond.peptic_ulcer",
         "cond.hypotension"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝火上炎",
@@ -892,7 +912,8 @@
         "cond.hearing_loss",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.血虛",
@@ -923,7 +944,8 @@
         "cond.cluster_headache",
         "cond.hypotension"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.寒凝肝脈",
@@ -954,7 +976,8 @@
         "cond.recurrent_pregnancy_loss",
         "cond.chronic_pelvic_pain"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝血瘀滯",
@@ -985,7 +1008,8 @@
         "cond.recurrent_pregnancy_loss",
         "cond.chronic_pelvic_pain"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.麻黃附子細辛湯",
@@ -1016,7 +1040,8 @@
         "cond.hypothyroidism",
         "cond.hearing_loss"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證"
     },
     {
       "id": "pat.肝腎不足",
@@ -1047,7 +1072,8 @@
         "cond.rheumatoid_arthritis",
         "cond.eye_strain"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.痰瘀互結",
@@ -1078,7 +1104,8 @@
         "cond.post_viral_cough",
         "cond.herpes_zoster"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.小柴胡湯",
@@ -1109,7 +1136,9 @@
         "cond.recurrent_uti",
         "cond.eye_strain"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.xiao_chai_hu_tang"
     },
     {
       "id": "pat.[通脈]四逆湯",
@@ -1139,7 +1168,9 @@
         "cond.plantar_fasciitis",
         "cond.tmd"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.si_ni_tang"
     },
     {
       "id": "pat.真武湯",
@@ -1169,7 +1200,9 @@
         "cond.recurrent_uti",
         "cond.post_covid"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.zhen_wu_tang"
     },
     {
       "id": "pat.外感風熱",
@@ -1199,7 +1232,8 @@
         "cond.post_viral_cough",
         "cond.hearing_loss"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾氣虛",
@@ -1229,7 +1263,8 @@
         "cond.recurrent_uti",
         "cond.globus_pharyngitis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.心腎不交",
@@ -1259,7 +1294,8 @@
         "cond.aphthous_ulcers",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎氣虛",
@@ -1288,7 +1324,8 @@
         "cond.overactive_bladder",
         "cond.nocturnal_enuresis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.黃耆桂枝五物湯",
@@ -1317,7 +1354,8 @@
         "cond.trigger_finger",
         "cond.hypotension"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證"
     },
     {
       "id": "pat.葛根湯",
@@ -1346,7 +1384,9 @@
         "cond.tmd",
         "cond.chronic_diarrhea"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.ge_gen_tang"
     },
     {
       "id": "pat.柴胡桂枝湯",
@@ -1375,7 +1415,9 @@
         "cond.heart_failure",
         "cond.hearing_loss"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.chai_hu_gui_zhi_tang"
     },
     {
       "id": "pat.肝陽上亢",
@@ -1404,7 +1446,8 @@
         "cond.migraine_vestibular",
         "cond.hearing_loss"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.濕痰",
@@ -1433,7 +1476,8 @@
         "cond.chronic_cough",
         "cond.post_viral_cough"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.半夏瀉心湯",
@@ -1462,7 +1506,9 @@
         "cond.circadian_disorder",
         "cond.aphthous_ulcers"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.ban_xia_xie_xin_tang"
     },
     {
       "id": "pat.痰氣互結",
@@ -1491,7 +1537,8 @@
         "cond.globus_pharyngitis",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.燥氣傷肺",
@@ -1520,7 +1567,8 @@
         "cond.post_viral_cough",
         "cond.post_covid"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎陽虛水泛",
@@ -1549,7 +1597,8 @@
         "cond.hypothyroidism",
         "cond.nocturnal_enuresis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.水飲內停",
@@ -1577,7 +1626,8 @@
         "cond.chronic_cough",
         "cond.post_viral_cough"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.桂枝湯",
@@ -1605,7 +1655,9 @@
         "cond.asthma",
         "cond.post_covid"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.gui_zhi_tang"
     },
     {
       "id": "pat.少陰寒化",
@@ -1633,7 +1685,8 @@
         "cond.asthma",
         "cond.post_covid"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.吳茱萸湯",
@@ -1661,7 +1714,9 @@
         "cond.bph",
         "cond.chronic_prostatitis"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.wu_zhu_yu_tang"
     },
     {
       "id": "pat.食傷脾胃",
@@ -1689,7 +1744,8 @@
         "cond.asthma",
         "cond.post_covid"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.小青龍湯",
@@ -1717,7 +1773,9 @@
         "cond.recurrent_uti",
         "cond.post_covid"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.xiao_qing_long_tang"
     },
     {
       "id": "pat.五苓散",
@@ -1745,7 +1803,9 @@
         "cond.overactive_bladder",
         "cond.nocturnal_enuresis"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.wu_ling_san"
     },
     {
       "id": "pat.膀胱濕熱",
@@ -1773,7 +1833,8 @@
         "cond.bph",
         "cond.chronic_prostatitis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.小建中湯類方",
@@ -1800,7 +1861,8 @@
         "cond.hypotension",
         "cond.eye_strain"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.濕熱",
@@ -1827,7 +1889,8 @@
         "cond.de_quervain",
         "cond.trigger_finger"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾陽虛",
@@ -1854,7 +1917,8 @@
         "cond.chronic_diarrhea",
         "cond.hypotension"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎氣不固",
@@ -1881,7 +1945,8 @@
         "cond.chronic_cough",
         "cond.post_viral_cough"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝火犯肺",
@@ -1908,7 +1973,8 @@
         "cond.chronic_cough",
         "cond.post_viral_cough"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.桂枝加葛根湯",
@@ -1934,7 +2000,8 @@
         "cond.cervical_spondylosis",
         "cond.myofascial_pain"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證"
     },
     {
       "id": "pat.大青龍湯",
@@ -1960,7 +2027,8 @@
         "cond.fibromyalgia",
         "cond.psoriasis"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證"
     },
     {
       "id": "pat.桂枝湯類方",
@@ -1984,7 +2052,8 @@
         "cond.tension_headache",
         "cond.cluster_headache"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.麻黃湯類方",
@@ -2008,7 +2077,8 @@
         "cond.tension_headache",
         "cond.cluster_headache"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.血瘀",
@@ -2034,7 +2104,8 @@
         "cond.tension_headache",
         "cond.cluster_headache"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.氣虛",
@@ -2060,7 +2131,8 @@
         "cond.tension_headache",
         "cond.cluster_headache"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.柴胡湯類方",
@@ -2086,7 +2158,8 @@
         "cond.tension_headache",
         "cond.cluster_headache"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.雜病類方証",
@@ -2108,7 +2181,8 @@
         "cond.tension_headache",
         "cond.cluster_headache"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝胃不和",
@@ -2134,7 +2208,8 @@
         "cond.chronic_gastritis",
         "cond.nausea_vomiting"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.心胃火盛",
@@ -2160,7 +2235,8 @@
         "cond.chronic_gastritis",
         "cond.aphthous_ulcers"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.大腸濕熱",
@@ -2186,7 +2262,8 @@
         "cond.chronic_diarrhea",
         "cond.hemorrhoids"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.四逆散",
@@ -2212,7 +2289,9 @@
         "cond.chronic_diarrhea",
         "cond.recurrent_uti"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.si_ni_san"
     },
     {
       "id": "pat.心血虛",
@@ -2238,7 +2317,8 @@
         "cond.depression",
         "cond.cancer_supportive"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.柴胡桂枝乾薑湯",
@@ -2264,7 +2344,8 @@
         "cond.depression",
         "cond.cancer_supportive"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證"
     },
     {
       "id": "pat.心火旺盛",
@@ -2290,7 +2371,8 @@
         "cond.circadian_disorder",
         "cond.aphthous_ulcers"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.麻黃湯",
@@ -2316,7 +2398,9 @@
         "cond.asthma",
         "cond.post_covid"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.ma_huang_tang"
     },
     {
       "id": "pat.麻杏石甘湯",
@@ -2342,7 +2426,9 @@
         "cond.asthma",
         "cond.post_covid"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.ma_xing_shi_gan_tang"
     },
     {
       "id": "pat.腎不納氣",
@@ -2368,7 +2454,8 @@
         "cond.asthma",
         "cond.post_covid"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.承氣湯",
@@ -2394,7 +2481,9 @@
         "cond.asthma",
         "cond.post_covid"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.da_cheng_qi_tang"
     },
     {
       "id": "pat.肝陽上亢",
@@ -2407,7 +2496,8 @@
         "cond.dizziness_vertigo",
         "cond.hypertension"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.血虛風燥",
@@ -2420,7 +2510,8 @@
         "cond.eczema",
         "cond.urticaria"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.濕熱瀰漫三焦",
@@ -2446,7 +2537,8 @@
         "cond.acne",
         "cond.aphthous_ulcers"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾胃濕熱",
@@ -2472,7 +2564,8 @@
         "cond.psoriasis",
         "cond.herpes_zoster"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝腎陰虛",
@@ -2485,7 +2578,8 @@
         "cond.hypertension",
         "cond.dry_eye"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.心陽虛",
@@ -2511,7 +2605,8 @@
         "cond.palpitations",
         "cond.heart_failure"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.心脈瘀阻",
@@ -2537,7 +2632,8 @@
         "cond.palpitations",
         "cond.heart_failure"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.炙甘草湯",
@@ -2563,7 +2659,9 @@
         "cond.palpitations",
         "cond.heart_failure"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.zhi_gan_cao_tang"
     },
     {
       "id": "pat.肝鬱血虛",
@@ -2579,7 +2677,8 @@
       "condition_ids": [
         "cond.uterine_fibroids"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.血瘀閉阻",
@@ -2593,7 +2692,8 @@
       "condition_ids": [
         "cond.uterine_fibroids"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.風寒濕痹",
@@ -2618,7 +2718,8 @@
       "condition_ids": [
         "cond.knee_osteoarthritis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝陰虛",
@@ -2643,7 +2744,8 @@
       "condition_ids": [
         "cond.ankle_sprain"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾不統血",
@@ -2668,7 +2770,8 @@
       "condition_ids": [
         "cond.fibromyalgia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝胃不和",
@@ -2680,7 +2783,8 @@
       "condition_ids": [
         "cond.gerd"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.膽熱犯胃",
@@ -2692,7 +2796,8 @@
       "condition_ids": [
         "cond.gerd"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾胃虛寒",
@@ -2704,7 +2809,8 @@
       "condition_ids": [
         "cond.gerd"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾虛濕阻",
@@ -2716,7 +2822,8 @@
       "condition_ids": [
         "cond.functional_dyspepsia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝胃氣滯",
@@ -2728,7 +2835,8 @@
       "condition_ids": [
         "cond.functional_dyspepsia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝火犯胃",
@@ -2753,7 +2861,8 @@
       "condition_ids": [
         "cond.peptic_ulcer"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.溼熱鬱滯經絡",
@@ -2771,7 +2880,8 @@
       "condition_ids": [
         "cond.peptic_ulcer"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.胃陰虛",
@@ -2796,7 +2906,8 @@
       "condition_ids": [
         "cond.peptic_ulcer"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝鬱脾虛",
@@ -2808,7 +2919,8 @@
       "condition_ids": [
         "cond.ibs"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾胃虛弱",
@@ -2820,7 +2932,8 @@
       "condition_ids": [
         "cond.ibs"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.熱秘",
@@ -2832,7 +2945,8 @@
       "condition_ids": [
         "cond.chronic_constipation"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.氣秘",
@@ -2844,7 +2958,8 @@
       "condition_ids": [
         "cond.chronic_constipation"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.虛秘",
@@ -2856,7 +2971,8 @@
       "condition_ids": [
         "cond.chronic_constipation"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.理中湯",
@@ -2881,7 +2997,8 @@
       "condition_ids": [
         "cond.chronic_diarrhea"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證"
     },
     {
       "id": "pat.胃寒",
@@ -2906,7 +3023,8 @@
       "condition_ids": [
         "cond.nausea_vomiting"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.胃熱",
@@ -2931,7 +3049,8 @@
       "condition_ids": [
         "cond.nausea_vomiting"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.心脾兩虛",
@@ -2943,7 +3062,8 @@
       "condition_ids": [
         "cond.insomnia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.陰虛火旺",
@@ -2955,7 +3075,8 @@
       "condition_ids": [
         "cond.insomnia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝鬱化火",
@@ -2967,7 +3088,8 @@
       "condition_ids": [
         "cond.insomnia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.少陰陰虛火旺",
@@ -2992,7 +3114,8 @@
       "condition_ids": [
         "cond.circadian_disorder"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.熱擾胸膈",
@@ -3017,7 +3140,8 @@
       "condition_ids": [
         "cond.circadian_disorder"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肺氣虛寒",
@@ -3029,7 +3153,8 @@
       "condition_ids": [
         "cond.allergic_rhinitis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾氣虛弱",
@@ -3041,7 +3166,8 @@
       "condition_ids": [
         "cond.allergic_rhinitis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.風寒襲絡",
@@ -3053,7 +3179,8 @@
       "condition_ids": [
         "cond.bells_palsy"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.氣血虛弱",
@@ -3065,7 +3192,8 @@
       "condition_ids": [
         "cond.bells_palsy"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.風火上擾",
@@ -3077,7 +3205,8 @@
       "condition_ids": [
         "cond.trigeminal_neuralgia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.瘀血阻絡",
@@ -3089,7 +3218,8 @@
       "condition_ids": [
         "cond.trigeminal_neuralgia"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.痰濕中阻",
@@ -3101,7 +3231,8 @@
       "condition_ids": [
         "cond.dizziness_vertigo"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎精不足",
@@ -3113,7 +3244,8 @@
       "condition_ids": [
         "cond.dizziness_vertigo"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.濕熱浸淫",
@@ -3125,7 +3257,8 @@
       "condition_ids": [
         "cond.eczema"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.風熱相搏",
@@ -3137,7 +3270,8 @@
       "condition_ids": [
         "cond.urticaria"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肺熱壅盛",
@@ -3162,7 +3296,8 @@
       "condition_ids": [
         "cond.acne"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.熱毒熾盛",
@@ -3182,7 +3317,8 @@
       "condition_ids": [
         "cond.acne"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.苓桂朮甘湯",
@@ -3207,7 +3343,9 @@
       "condition_ids": [
         "cond.psoriasis"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.ling_gui_zhu_gan_tang"
     },
     {
       "id": "pat.太陽病輕",
@@ -3232,7 +3370,8 @@
       "condition_ids": [
         "cond.psoriasis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.1",
@@ -3248,7 +3387,8 @@
       "condition_ids": [
         "cond.psoriasis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肺胃燥熱",
@@ -3260,7 +3400,8 @@
       "condition_ids": [
         "cond.t2dm"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎陰虧虛",
@@ -3272,7 +3413,8 @@
       "condition_ids": [
         "cond.t2dm"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.越婢加朮湯",
@@ -3297,7 +3439,8 @@
       "condition_ids": [
         "cond.hypothyroidism"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證"
     },
     {
       "id": "pat.水氣凌心",
@@ -3322,7 +3465,8 @@
       "condition_ids": [
         "cond.hypothyroidism"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾約",
@@ -3347,7 +3491,8 @@
       "condition_ids": [
         "cond.hypothyroidism"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.白虎湯",
@@ -3372,7 +3517,9 @@
       "condition_ids": [
         "cond.hyperthyroidism"
       ],
-      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+      "note": "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。",
+      "kind": "方證",
+      "formula_id": "formula.bai_hu_tang"
     },
     {
       "id": "pat.心陰虛",
@@ -3397,7 +3544,8 @@
       "condition_ids": [
         "cond.hyperthyroidism"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.下焦血瘀",
@@ -3412,7 +3560,8 @@
       "condition_ids": [
         "cond.recurrent_uti"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肺氣虛",
@@ -3437,7 +3586,8 @@
       "condition_ids": [
         "cond.overactive_bladder"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.膀胱虛寒",
@@ -3462,7 +3612,8 @@
       "condition_ids": [
         "cond.nocturnal_enuresis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.肝膽火盛",
@@ -3474,7 +3625,8 @@
       "condition_ids": [
         "cond.tinnitus"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.腎精虧虛",
@@ -3486,7 +3638,8 @@
       "condition_ids": [
         "cond.tinnitus"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.脾胃虛弱",
@@ -3511,7 +3664,8 @@
       "condition_ids": [
         "cond.hearing_loss"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.陰虛火旺",
@@ -3536,7 +3690,8 @@
       "condition_ids": [
         "cond.globus_pharyngitis"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.陰虛",
@@ -3561,7 +3716,8 @@
       "condition_ids": [
         "cond.aphthous_ulcers"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.氣陰兩虛",
@@ -3586,7 +3742,8 @@
       "condition_ids": [
         "cond.aphthous_ulcers"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     },
     {
       "id": "pat.清陽不升",
@@ -3611,7 +3768,8 @@
       "condition_ids": [
         "cond.aphthous_ulcers"
       ],
-      "note": ""
+      "note": "",
+      "kind": "證候"
     }
   ]
 }
