@@ -101,26 +101,44 @@
 |---|---|---|
 | `1 LUNG CHANNEL OF HAND TAI YIN.md` | 10 KB | ✅ 本身是文字 |
 | `1 LUNG CHANNEL OF HAND TAI YIN.pdf` | 433 KB | ✅ |
-| `10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf` | 882 KB | ⚠️ 待抽文字 |
-| `11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf` | 1.5 MB | ⚠️ 待抽文字 |
-| `12 LIVER CHANNEL OF FOOT JUE YIN.pdf` | 715 KB | ⚠️ 待抽文字 |
-| `13 CONCEPTION VESSEL (REN CHANNEL).pdf` | 1.7 MB | ⚠️ 待抽文字 |
-| `14 DU CHANNEL (GOVERNING VESSEL).pdf` | 1.0 MB | ⚠️ 待抽文字 |
+| `10 SAN JIAO CHANNEL OF HAND SHAO YANG.md` | 14 KB | ✅ 本身是文字 |
+| `10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf` | 882 KB | ✅ |
+| `11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.md` | 30 KB | ✅ 本身是文字 |
+| `11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf` | 1.5 MB | ✅ |
+| `12 LIVER CHANNEL OF FOOT JUE YIN.md` | 10 KB | ✅ 本身是文字 |
+| `12 LIVER CHANNEL OF FOOT JUE YIN.pdf` | 715 KB | ✅ |
+| `13 CONCEPTION VESSEL (REN CHANNEL).md` | 17 KB | ✅ 本身是文字 |
+| `13 CONCEPTION VESSEL (REN CHANNEL).pdf` | 1.7 MB | ✅ |
+| `14 DU CHANNEL (GOVERNING VESSEL).md` | 20 KB | ✅ 本身是文字 |
+| `14 DU CHANNEL (GOVERNING VESSEL).pdf` | 1.0 MB | ✅ |
 | `2 LARGE INTESTINE CHANNEL OF HAND YANG MING.md` | 14 KB | ✅ 本身是文字 |
 | `2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf` | 772 KB | ✅ |
-| `3 STOMACH CHANNEL OF FOOT YANG MING.pdf` | 1.3 MB | ⚠️ 待抽文字 |
-| `4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf` | 788 KB | ⚠️ 待抽文字 |
-| `5 HEART CHANNEL OF HAND SHAO YIN.pdf` | 455 KB | ⚠️ 待抽文字 |
-| `6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf` | 1.0 MB | ⚠️ 待抽文字 |
-| `7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf` | 1.5 MB | ⚠️ 待抽文字 |
-| `8 KIDNEY CHANNEL OF FOOT SHAO YIN.pdf` | 762 KB | ⚠️ 待抽文字 |
-| `9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf` | 430 KB | ⚠️ 待抽文字 |
-| `Advanced Techniques Notes.pdf` | 117 KB | ⚠️ 待抽文字 |
-| `AP Point Book (1).pdf` | 1.3 MB | ⚠️ 待抽文字 |
-| `Divergent, muscle and primary - boards.docx.pdf` | 279 KB | ⚠️ 待抽文字 |
+| `3 STOMACH CHANNEL OF FOOT YANG MING.md` | 24 KB | ✅ 本身是文字 |
+| `3 STOMACH CHANNEL OF FOOT YANG MING.pdf` | 1.3 MB | ✅ |
+| `4 SPLEEN CHANNEL OF FOOT TAI YIN.md` | 11 KB | ✅ 本身是文字 |
+| `4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf` | 788 KB | ✅ |
+| `5 HEART CHANNEL OF HAND SHAO YIN.md` | 7 KB | ✅ 本身是文字 |
+| `5 HEART CHANNEL OF HAND SHAO YIN.pdf` | 455 KB | ✅ |
+| `6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.md` | 10 KB | ✅ 本身是文字 |
+| `6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf` | 1.0 MB | ✅ |
+| `7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.md` | 40 KB | ✅ 本身是文字 |
+| `7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf` | 1.5 MB | ✅ |
+| `8 KIDNEY CHANNEL OF FOOT SHAO YIN.md` | 16 KB | ✅ 本身是文字 |
+| `8 KIDNEY CHANNEL OF FOOT SHAO YIN.pdf` | 762 KB | ✅ |
+| `9 PERICARDIUM CHANNEL OF HAND JUE YIN.md` | 8 KB | ✅ 本身是文字 |
+| `9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf` | 430 KB | ✅ |
+| `Advanced Techniques Notes.md` | 13 KB | ✅ 本身是文字 |
+| `Advanced Techniques Notes.pdf` | 117 KB | ✅ |
+| `AP Point Book (1).md` | 458 KB | ✅ 本身是文字 |
+| `AP Point Book (1).pdf` | 1.3 MB | ✅ |
+| `Divergent, muscle and primary - boards.docx.md` | 25 KB | ✅ 本身是文字 |
+| `Divergent, muscle and primary - boards.docx.pdf` | 279 KB | ✅ |
 | `Techniques 1 & 2 Notes.docx` | 244 KB | ⚠️ 待抽文字 |
-| `Techniques 3 points.pdf` | 551 KB | ⚠️ 待抽文字 |
+| `Techniques 3 points.md` | 94 KB | ✅ 本身是文字 |
+| `Techniques 3 points.pdf` | 551 KB | ✅ |
 | `Techniques 3 Quizzes.docx` | 168 KB | ⚠️ 待抽文字 |
+
+> 這個資料夾有 38 檔,超過 30 —— 可以考慮依 `README.md` 的分法開子資料夾。
 
 ## conditions/ — 病證 — 中西醫結合的病(病因病機/辨證/治法)
 
@@ -170,14 +188,14 @@ _(空)_
 |---|---|---|
 | herbs | 68 | 1 |
 | formulas | 10 | — |
-| acupoints | 22 | 18 |
+| acupoints | 38 | 2 |
 | conditions | 2 | — |
 | cases | 1 | 1 |
 | lifestyle | 2 | — |
 | theory | 2 | 1 |
 | western | 0 | — |
 | board | 6 | 2 |
-| **合計** | **113** | **23** |
+| **合計** | **129** | **7** |
 
 ### ⚠️ 這些檔還沒有可用的文字版
 
@@ -188,23 +206,7 @@ _(空)_
 需要人工把重點打字進去 —— 空的文字版比沒有更危險,它會讓人以為已經處理過。
 
 - `herbs/臺灣中藥典第四版英文版.pdf`
-- `acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf`
-- `acupoints/11 GALLBLADDER CHANNEL OF FOOT SHAO YANG.pdf`
-- `acupoints/12 LIVER CHANNEL OF FOOT JUE YIN.pdf`
-- `acupoints/13 CONCEPTION VESSEL (REN CHANNEL).pdf`
-- `acupoints/14 DU CHANNEL (GOVERNING VESSEL).pdf`
-- `acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf`
-- `acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf`
-- `acupoints/5 HEART CHANNEL OF HAND SHAO YIN.pdf`
-- `acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf`
-- `acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf`
-- `acupoints/8 KIDNEY CHANNEL OF FOOT SHAO YIN.pdf`
-- `acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf`
-- `acupoints/Advanced Techniques Notes.pdf`
-- `acupoints/AP Point Book (1).pdf`
-- `acupoints/Divergent, muscle and primary - boards.docx.pdf`
 - `acupoints/Techniques 1 & 2 Notes.docx`
-- `acupoints/Techniques 3 points.pdf`
 - `acupoints/Techniques 3 Quizzes.docx`
 - `cases/Case Study Chenoweth.docx`
 - `theory/Medical Chinese 1 Notes.pdf`

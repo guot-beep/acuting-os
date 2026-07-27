@@ -82,7 +82,13 @@ let misaligned = 0, boilerplateHits = 0, missingEnAny = 0;
 
 for (const r of recs) {
   const id = r.code || r.id || r.chinese || "(unknown)";
-  const isTemplate = !!(r.field_sources && Object.keys(r.field_sources).length);
+  // "Template-grade" means the point has actually been curated against the
+  // curriculum, not merely that it carries some citation. Marking board stars
+  // adds field_sources.exam_star to 145 otherwise-untouched points; keying off
+  // "any field_sources" would have flipped all of them into the strict A4-A8
+  // checks and reported 236 failures for work nobody had started. functions_zh
+  // is the field the rewrite always sets, so it is the honest marker.
+  const isTemplate = !!(r.field_sources && r.field_sources.functions_zh);
   if (isTemplate) templateGrade++;
 
   if (!r.code || !r.chinese || !r.pinyin) errors.push(`A1 ${id}: missing code/chinese/pinyin`);

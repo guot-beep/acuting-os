@@ -5345,3 +5345,58 @@ html { scroll-padding-top: 92px; }
   font-family: var(--serif); color: #5b4a1e; line-height: 1.75;
 }
 .k-classic-en { display: block; margin-top: 6px; font-family: inherit; font-size: 0.9em; color: #7a6a3c; font-style: italic; }
+
+/* ── Board exam emphasis (課件星號) ─────────────────────────────────────────
+   Two levels taken from the course tables: ** is the teacher's strong mark,
+   * is emphasis. Kept visually distinct rather than one generic highlight,
+   because the 18 ** points are the ones that should catch the eye first.
+   Colour alone never carries the meaning — the glyph (★/★★) and the label
+   are always present, so the badge still reads without colour perception. */
+.exam-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.exam-star--1 {
+  color: #b45309;                 /* amber-700 on parchment: AA at this weight */
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+}
+.exam-star--2 {
+  color: #fff;
+  background: #b91c1c;            /* red-700 */
+  border: 1px solid #991b1b;
+}
+
+/* In lists and search results the star stands alone before the name. */
+.exam-star-mark {
+  font-weight: 700;
+  margin-right: 0.35em;
+}
+.exam-star-mark--1 { color: #b45309; }
+.exam-star-mark--2 { color: #b91c1c; }
+
+@media (prefers-color-scheme: dark) {
+  .exam-star--1 { color: #fcd34d; background: rgba(180, 83, 9, 0.22); border-color: #b45309; }
+  .exam-star--2 { color: #fff; background: #dc2626; border-color: #ef4444; }
+  .exam-star-mark--1 { color: #fcd34d; }
+  .exam-star-mark--2 { color: #f87171; }
+}
+
+/* .hero-badges span sets a translucent pill for every badge and outranks
+   .exam-star on specificity, so the hero variants are stated explicitly.
+   The hero is dark, so level 1 flips to a bright amber on a tinted pill
+   instead of the light-background treatment used in body text. */
+.hero-badges .exam-star--1 {
+  color: #fde68a;
+  background: rgba(180, 83, 9, 0.45);
+  border-color: rgba(252, 211, 77, 0.65);
+}
+.hero-badges .exam-star--2 {
+  color: #fff;
+  background: #dc2626;
+  border-color: #fca5a5;
+}
