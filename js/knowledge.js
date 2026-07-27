@@ -440,6 +440,30 @@
     return dialog;
   }
 
+  /* The Tier-2 herb sites, in the order Ting set. Each link carries what is
+     actually known about it:
+       CloudTCM       — verified per-herb page (exact-name match against their
+                        public index, recorded in herb_url_map.json)
+       American Dragon— URL derived from the pinyin; the page is not confirmed
+                        to exist, so it is marked 未驗證
+       Atlas          — only an index page is known; there is no per-herb path */
+  function herbSourceLinks(record, cloudUrl) {
+    const a = (url, label, note) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link">${esc(label)} ↗</a>${note ? `<small class="k-src-note">${esc(note)}</small>` : ""}`;
+    const out = [];
+    // herbReferenceUrl falls back through source_urls, which for the 45 herbs
+    // with no CloudTCM page can be an American Dragon or NCCIH link. Labelling
+    // that "雲端中醫 CloudTCM" claims a source the record does not have, so the
+    // label follows the host, not the position in the fallback chain.
+    if (cloudUrl && /cloudtcm\.com/i.test(cloudUrl)) out.push(a(cloudUrl, "雲端中醫 CloudTCM"));
+    else if (cloudUrl && !/americandragon/i.test(cloudUrl)) out.push(a(cloudUrl, "外部藥材參考"));
+    if (record.american_dragon_url) {
+      out.push(a(record.american_dragon_url, "American Dragon",
+        record.american_dragon_link_status === "derived" ? "未驗證連結" : ""));
+    }
+    if (record.atlas_url) out.push(a(record.atlas_url, "TCM Herb Atlas", record.atlas_link_status === "index" ? "索引頁" : ""));
+    return out.length ? `<span class="k-src-links">${out.join("")}</span>` : "來源待補";
+  }
+
   function detailShell(record, kind, panels) {
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
@@ -464,9 +488,12 @@
           ["分類 Category", record.category || record.category_en || "待補"],
           ["性味 Properties", usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補"],
           ["歸經 Channels", cleanList(record.channels_entered || record.channels_zh).join("、") || "待補"],
-          [herbReferenceLabel, herbReferenceUrl
-            ? `<a href="${esc(herbReferenceUrl)}" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:bold;text-decoration:underline;">開啟藥材頁面 ↗</a>`
-            : "來源待補", Boolean(herbReferenceUrl)]
+          // All three Tier-2 sites, in Ting's order (CloudTCM → American Dragon
+          // → atlas), each labelled by how far it can be trusted. A derived
+          // American Dragon URL and an atlas index page are useful links but
+          // they are not verified per-herb pages, and the card says so rather
+          // than presenting all three as equivalent.
+          ["外部參考 Sources", herbSourceLinks(record, herbReferenceUrl), Boolean(herbReferenceUrl || record.american_dragon_url || record.atlas_url)]
         ];
     return `
       <div class="k-detail-shell">

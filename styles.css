@@ -5530,3 +5530,9 @@ html { scroll-padding-top: 92px; }
 /* 方證 reads differently from 證候 — it is the pattern of a named formula, so
    the chip is tinted to say so instead of blending into the syndrome list. */
 .point-link--pat.is-formula-pattern { background: #fdf3e6; color: #7a4a12; border-color: #eecfa5; }
+
+/* Herb card external sources: three links with different levels of confidence,
+   so each carries its own caveat rather than all three looking equivalent. */
+.k-src-links { display: flex; flex-direction: column; gap: 0.15rem; align-items: flex-start; }
+.k-src-link { color: #38bdf8; font-weight: 700; text-decoration: underline; }
+.k-src-note { display: block; font-size: 0.72rem; opacity: 0.66; font-weight: 400; margin-bottom: 0.2rem; }
