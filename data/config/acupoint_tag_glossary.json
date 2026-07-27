@@ -2,7 +2,17 @@
   "_note": "穴位短標籤的中英對照。標籤與『功效/主治全文』是兩層不同的東西：全文承載課件內容，標籤負責搜尋與篩選 chip，所以必須短。這份表全 361 穴共用，新標籤先加進來再用，才不會同一個詞在不同經被翻成兩種英文。identity 區塊的詞是穴位身份（五輸、原絡郄募…），屬於 point_identity_zh，不該混進 action_tags。",
   "_usage": "node scripts/restore-point-tags.js --channel LU --apply",
   "identity_not_action": [
-    "井穴", "滎穴", "輸穴", "經穴", "合穴", "原穴", "絡穴", "郄穴", "募穴", "八脈交會穴"
+    "井穴",
+    "滎穴",
+    "輸穴",
+    "經穴",
+    "合穴",
+    "原穴",
+    "絡穴",
+    "郄穴",
+    "募穴",
+    "八脈交會穴",
+    "下合穴"
   ],
   "action": {
     "清熱": "Clear Heat",
@@ -64,7 +74,12 @@
     "寬胸": "Unbind the Chest",
     "下血": "Move Blood Downward",
     "利胸脅": "Benefit the Chest & Hypochondrium",
-    "定驚": "Settle Fright"
+    "定驚": "Settle Fright",
+    "聰耳": "Benefit Hearing",
+    "化濕": "Transform Dampness",
+    "解毒": "Resolve Toxicity",
+    "補益肝腎": "Tonify the Liver & Kidney",
+    "生殖系統疾病": "Reproductive Disorders"
   },
   "disease": {
     "咽喉腫痛": "Sore & Swollen Throat",

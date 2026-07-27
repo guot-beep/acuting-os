@@ -113,17 +113,25 @@ for (const r of recs) {
       if (isTemplate) errors.push(`A5 ${id}: template-grade record missing ${enF}`);
     }
   }
+  // A point that must never be needled has no depth to state, and demanding one
+  // would be actively wrong — ST17 乳中's own contraindication is "NEVER needled
+  // or treated", so a depth on that card would contradict the safety rule this
+  // check exists to enforce. Same reason A6 does not apply: its single
+  // "function" is the prohibition itself.
+  const neverNeedled = arr(r.contraindications).concat(arr(r.cautions_zh))
+    .some((v) => /絕對禁針|NEVER needled/i.test(String(v)));
+
   const nf = arr(r.functions_zh).length;
   funcCounts.push(nf);
   // Floor is 2, not 3. Chenoweth's own table gives LU4, LU8 and LU11 exactly two
   // curated actions; demanding a third would force padding, which is the defect
   // this check exists to prevent. Target stays 4-6, same shape as the herb rule
   // (E8 blocks outside 2-6 while the doc asks for 3-5).
-  if (nf < 2 || nf > 8) {
+  if (!neverNeedled && (nf < 2 || nf > 8)) {
     flag(r, `功效 ${nf} 條(需 2-8,目標 4-6)`);
     if (isTemplate) errors.push(`A6 ${id}: functions_zh has ${nf} item(s) — keep the 2-8 key actions`);
   }
-  if (!/\d/.test(String(r.needling || "") + String(r.acumethod_zh || ""))) {
+  if (!neverNeedled && !/\d/.test(String(r.needling || "") + String(r.acumethod_zh || ""))) {
     flag(r, "針法缺具體深度/角度數字");
     if (isTemplate) errors.push(`A7 ${id}: needling has no numeric depth/angle (safety-critical)`);
   }
