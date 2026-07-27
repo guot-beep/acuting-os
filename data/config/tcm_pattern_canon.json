@@ -1,0 +1,3617 @@
+{
+  "_note": "中醫證候 canon。由 scripts/build-tcm-pattern-canon.js 從 data/pathology/condition_canon_shortlist.json 的 tcm_patterns 抽出，不要手改；要加證候先補來源資料再重跑。name_en 一律留空待補 —— 沒有來源就不翻譯。",
+  "_usage": "node scripts/build-tcm-pattern-canon.js --apply",
+  "generated_at": "2026-07-27",
+  "source": "data/pathology/condition_canon_shortlist.json",
+  "count": 140,
+  "records": [
+    {
+      "id": "pat.氣血不和",
+      "name_zh": "氣血不和證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "八珍湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.menorrhagia",
+        "cond.amenorrhea",
+        "cond.diminished_ovarian_reserve",
+        "cond.ivf_support",
+        "cond.luteal_phase_defect",
+        "cond.menopause_syndrome",
+        "cond.hyperemesis_gravidarum",
+        "cond.breech_presentation",
+        "cond.postpartum_hypolactation",
+        "cond.pid_chronic",
+        "cond.vulvovaginal_candidiasis",
+        "cond.pmdd",
+        "cond.secondary_dysmenorrhea",
+        "cond.chronic_low_back_pain",
+        "cond.acute_lumbar_sprain",
+        "cond.neck_pain_stiff",
+        "cond.whiplash",
+        "cond.rotator_cuff",
+        "cond.lateral_epicondylitis",
+        "cond.medial_epicondylitis",
+        "cond.carpal_tunnel",
+        "cond.meniscus_injury",
+        "cond.achilles_tendinopathy",
+        "cond.hip_osteoarthritis",
+        "cond.piriformis_syndrome",
+        "cond.gout",
+        "cond.ibd",
+        "cond.nafld",
+        "cond.gallbladder_dysfunction",
+        "cond.cinv",
+        "cond.post_op_ileus",
+        "cond.food_sensitivity",
+        "cond.anxiety",
+        "cond.panic_disorder",
+        "cond.ptsd",
+        "cond.adhd",
+        "cond.stress_burnout",
+        "cond.chronic_fatigue",
+        "cond.restless_legs",
+        "cond.smoking_cessation",
+        "cond.somatic_symptom",
+        "cond.poor_memory",
+        "cond.alcohol_use",
+        "cond.eating_disorder",
+        "cond.common_cold",
+        "cond.influenza",
+        "cond.chronic_sinusitis",
+        "cond.acute_bronchitis",
+        "cond.sleep_apnea",
+        "cond.stroke_rehab",
+        "cond.peripheral_neuropathy",
+        "cond.diabetic_neuropathy",
+        "cond.postherpetic_neuralgia",
+        "cond.parkinsons",
+        "cond.multiple_sclerosis",
+        "cond.essential_tremor",
+        "cond.menieres",
+        "cond.alopecia",
+        "cond.rosacea",
+        "cond.pruritus",
+        "cond.metabolic_syndrome",
+        "cond.hashimoto",
+        "cond.obesity",
+        "cond.dyslipidemia",
+        "cond.osteoporosis",
+        "cond.hpa_dysregulation",
+        "cond.edema_fluid",
+        "cond.cad",
+        "cond.raynaud",
+        "cond.varicose_veins",
+        "cond.poor_circulation",
+        "cond.interstitial_cystitis",
+        "cond.urinary_retention",
+        "cond.chronic_allergies"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.臟腑虛弱",
+      "name_zh": "臟腑虛弱證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "補中益氣湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.menorrhagia",
+        "cond.amenorrhea",
+        "cond.diminished_ovarian_reserve",
+        "cond.ivf_support",
+        "cond.luteal_phase_defect",
+        "cond.menopause_syndrome",
+        "cond.hyperemesis_gravidarum",
+        "cond.breech_presentation",
+        "cond.postpartum_hypolactation",
+        "cond.pid_chronic",
+        "cond.vulvovaginal_candidiasis",
+        "cond.pmdd",
+        "cond.secondary_dysmenorrhea",
+        "cond.chronic_low_back_pain",
+        "cond.acute_lumbar_sprain",
+        "cond.neck_pain_stiff",
+        "cond.whiplash",
+        "cond.rotator_cuff",
+        "cond.lateral_epicondylitis",
+        "cond.medial_epicondylitis",
+        "cond.carpal_tunnel",
+        "cond.meniscus_injury",
+        "cond.achilles_tendinopathy",
+        "cond.hip_osteoarthritis",
+        "cond.piriformis_syndrome",
+        "cond.gout",
+        "cond.ibd",
+        "cond.nafld",
+        "cond.gallbladder_dysfunction",
+        "cond.cinv",
+        "cond.post_op_ileus",
+        "cond.food_sensitivity",
+        "cond.anxiety",
+        "cond.panic_disorder",
+        "cond.ptsd",
+        "cond.adhd",
+        "cond.stress_burnout",
+        "cond.chronic_fatigue",
+        "cond.restless_legs",
+        "cond.smoking_cessation",
+        "cond.somatic_symptom",
+        "cond.poor_memory",
+        "cond.alcohol_use",
+        "cond.eating_disorder",
+        "cond.common_cold",
+        "cond.influenza",
+        "cond.chronic_sinusitis",
+        "cond.acute_bronchitis",
+        "cond.sleep_apnea",
+        "cond.stroke_rehab",
+        "cond.peripheral_neuropathy",
+        "cond.diabetic_neuropathy",
+        "cond.postherpetic_neuralgia",
+        "cond.parkinsons",
+        "cond.multiple_sclerosis",
+        "cond.essential_tremor",
+        "cond.menieres",
+        "cond.alopecia",
+        "cond.rosacea",
+        "cond.pruritus",
+        "cond.metabolic_syndrome",
+        "cond.hashimoto",
+        "cond.obesity",
+        "cond.dyslipidemia",
+        "cond.osteoporosis",
+        "cond.hpa_dysregulation",
+        "cond.edema_fluid",
+        "cond.cad",
+        "cond.raynaud",
+        "cond.varicose_veins",
+        "cond.poor_circulation",
+        "cond.interstitial_cystitis",
+        "cond.urinary_retention",
+        "cond.chronic_allergies"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝氣鬱結",
+      "name_zh": "肝氣鬱結",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "加味逍遙散",
+      "symptoms_zh": [
+        "弦脈",
+        "滑脈",
+        "舌苔白膩",
+        "舌苔淡薄白",
+        "排尿困難",
+        "腹內有腫塊",
+        "食慾不振",
+        "容易健忘",
+        "噯氣",
+        "經常疲勞想睡",
+        "容易生氣",
+        "容易嘆氣"
+      ],
+      "condition_ids": [
+        "cond.pcos",
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.oligomenorrhea",
+        "cond.female_infertility",
+        "cond.male_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.thin_endometrium",
+        "cond.knee_osteoarthritis",
+        "cond.fibromyalgia",
+        "cond.peptic_ulcer",
+        "cond.nausea_vomiting",
+        "cond.hemorrhoids",
+        "cond.depression",
+        "cond.circadian_disorder",
+        "cond.asthma",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.acne",
+        "cond.herpes_zoster",
+        "cond.hypothyroidism",
+        "cond.hyperthyroidism",
+        "cond.palpitations",
+        "cond.heart_failure",
+        "cond.recurrent_uti",
+        "cond.overactive_bladder",
+        "cond.bph",
+        "cond.chronic_prostatitis",
+        "cond.erectile_dysfunction",
+        "cond.globus_pharyngitis",
+        "cond.post_covid",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.氣滯血瘀",
+      "name_zh": "氣滯血瘀",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桃紅四物湯",
+      "symptoms_zh": [
+        "弦脈",
+        "澀脈",
+        "沉脈",
+        "舌頭上面有瘀斑",
+        "舌苔淡薄白",
+        "嘴唇焦裂",
+        "嘴唇紅腫痛",
+        "耳聾",
+        "口唇濕爛",
+        "嗅覺減退喪失",
+        "半身或下肢麻木",
+        "暈眩"
+      ],
+      "condition_ids": [
+        "cond.pcos",
+        "cond.endometriosis",
+        "cond.uterine_fibroids",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.oligomenorrhea",
+        "cond.female_infertility",
+        "cond.male_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.thin_endometrium",
+        "cond.lumbar_disc_herniation",
+        "cond.sciatica",
+        "cond.cervical_spondylosis",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger",
+        "cond.knee_osteoarthritis",
+        "cond.patellofemoral_pain",
+        "cond.ankle_sprain",
+        "cond.plantar_fasciitis",
+        "cond.myofascial_pain",
+        "cond.migraine",
+        "cond.rheumatoid_arthritis",
+        "cond.peptic_ulcer",
+        "cond.migraine_vestibular",
+        "cond.psoriasis",
+        "cond.bph",
+        "cond.chronic_prostatitis",
+        "cond.erectile_dysfunction",
+        "cond.hearing_loss"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎陽虛",
+      "name_zh": "腎陽虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "八味地黃丸",
+      "symptoms_zh": [
+        "沉脈",
+        "細脈",
+        "弱脈",
+        "遲脈",
+        "面色較黑",
+        "面色發白",
+        "面色發黃",
+        "舌苔淡薄白",
+        "身體容易出汗",
+        "噁心反胃",
+        "唾液過多",
+        "夜間遺尿"
+      ],
+      "condition_ids": [
+        "cond.uterine_fibroids",
+        "cond.male_infertility",
+        "cond.lumbar_disc_herniation",
+        "cond.sciatica",
+        "cond.frozen_shoulder",
+        "cond.knee_osteoarthritis",
+        "cond.patellofemoral_pain",
+        "cond.ankle_sprain",
+        "cond.plantar_fasciitis",
+        "cond.fibromyalgia",
+        "cond.migraine",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.migraine_vestibular",
+        "cond.hypothyroidism",
+        "cond.hypotension",
+        "cond.palpitations",
+        "cond.heart_failure",
+        "cond.recurrent_uti",
+        "cond.overactive_bladder",
+        "cond.bph",
+        "cond.chronic_prostatitis",
+        "cond.erectile_dysfunction",
+        "cond.nocturnal_enuresis",
+        "cond.hearing_loss"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.氣血兩虛",
+      "name_zh": "氣血兩虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "人參養榮湯",
+      "symptoms_zh": [
+        "細脈",
+        "弱脈",
+        "面色發白",
+        "舌苔淡薄白",
+        "容易掉頭髮",
+        "四肢肌肉萎縮",
+        "經常疲勞想睡",
+        "身體消瘦",
+        "容易焦慮恐懼",
+        "男性勃起障礙",
+        "睡眠障礙",
+        "心悸"
+      ],
+      "condition_ids": [
+        "cond.pcos",
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.oligomenorrhea",
+        "cond.female_infertility",
+        "cond.male_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.thin_endometrium",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.knee_osteoarthritis",
+        "cond.patellofemoral_pain",
+        "cond.ankle_sprain",
+        "cond.fibromyalgia",
+        "cond.tmd",
+        "cond.rheumatoid_arthritis",
+        "cond.hypotension",
+        "cond.erectile_dysfunction"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.心脾兩虛",
+      "name_zh": "心脾兩虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "歸脾湯",
+      "symptoms_zh": [
+        "細脈",
+        "弱脈",
+        "面色發黃",
+        "舌苔淡薄白",
+        "心律不整",
+        "心悸",
+        "腦鳴",
+        "癡呆智能低下",
+        "容易健忘",
+        "夜間多夢",
+        "睡眠障礙",
+        "經常疲勞想睡"
+      ],
+      "condition_ids": [
+        "cond.pcos",
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.oligomenorrhea",
+        "cond.female_infertility",
+        "cond.male_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.thin_endometrium",
+        "cond.depression",
+        "cond.circadian_disorder",
+        "cond.palpitations",
+        "cond.heart_failure",
+        "cond.erectile_dysfunction",
+        "cond.eye_strain",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾腎陽虛",
+      "name_zh": "脾腎陽虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "八味地黃丸",
+      "symptoms_zh": [
+        "沉脈",
+        "遲脈",
+        "細脈",
+        "面色發白",
+        "舌邊有齒痕",
+        "腹瀉",
+        "噁心反胃",
+        "大便秘結",
+        "食慾不振",
+        "打嗝呃逆",
+        "四肢肌肉萎縮",
+        "經常疲勞想睡"
+      ],
+      "condition_ids": [
+        "cond.pcos",
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.oligomenorrhea",
+        "cond.female_infertility",
+        "cond.male_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.thin_endometrium",
+        "cond.chronic_diarrhea",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.erectile_dysfunction"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.下焦濕熱",
+      "name_zh": "下焦濕熱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "四妙散",
+      "symptoms_zh": [
+        "滑脈",
+        "數脈",
+        "舌苔黃膩",
+        "腹瀉",
+        "大便膿血",
+        "噁心反胃",
+        "食慾不振",
+        "身體沉重",
+        "大便非常臭",
+        "男性勃起障礙",
+        "頻尿",
+        "排尿困難"
+      ],
+      "condition_ids": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.male_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.lumbar_disc_herniation",
+        "cond.knee_osteoarthritis",
+        "cond.patellofemoral_pain",
+        "cond.ankle_sprain",
+        "cond.plantar_fasciitis",
+        "cond.rheumatoid_arthritis",
+        "cond.hemorrhoids",
+        "cond.erectile_dysfunction"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾胃陽虛",
+      "name_zh": "脾胃陽虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "腎著湯",
+      "symptoms_zh": [
+        "細脈",
+        "沉脈",
+        "弱脈",
+        "面色發黃",
+        "舌苔淡薄白",
+        "舌胖大",
+        "手腳冰冷",
+        "怕冷",
+        "腹中有鳴叫聲",
+        "喝水之後吐水",
+        "噁心反胃",
+        "腹中感到寒冷"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.myofascial_pain",
+        "cond.migraine",
+        "cond.chronic_gastritis",
+        "cond.peptic_ulcer",
+        "cond.circadian_disorder",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.migraine_vestibular",
+        "cond.acne",
+        "cond.hypothyroidism",
+        "cond.overactive_bladder",
+        "cond.bph",
+        "cond.chronic_prostatitis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎陰虛",
+      "name_zh": "腎陰虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "知柏地黃丸",
+      "symptoms_zh": [
+        "數脈",
+        "細脈",
+        "舌上無苔，光滑潔淨",
+        "舌苔乾燥(舌乾)",
+        "舌頭鮮紅色",
+        "頭部發熱",
+        "夜間遺尿",
+        "嘴中感到鹹鹹的",
+        "夜間多夢",
+        "睡眠障礙",
+        "容易生氣",
+        "手心腳心發熱"
+      ],
+      "condition_ids": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.lumbar_disc_herniation",
+        "cond.plantar_fasciitis",
+        "cond.depression",
+        "cond.acne",
+        "cond.overactive_bladder",
+        "cond.hearing_loss",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.外感風濕",
+      "name_zh": "外感風濕",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "獨活寄生湯",
+      "symptoms_zh": [
+        "浮脈",
+        "緩脈",
+        "濡脈",
+        "舌苔白膩",
+        "四肢筋肉筋攣僵硬",
+        "頭重",
+        "發燒",
+        "味覺減退",
+        "身體沉重",
+        "發燒及發冷",
+        "身體容易出汗",
+        "噁心反胃"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.sciatica",
+        "cond.cervical_spondylosis",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger",
+        "cond.knee_osteoarthritis",
+        "cond.plantar_fasciitis",
+        "cond.fibromyalgia",
+        "cond.myofascial_pain",
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.rheumatoid_arthritis",
+        "cond.chronic_diarrhea"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝脾不調",
+      "name_zh": "肝脾不調",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "四逆散",
+      "symptoms_zh": [
+        "弦脈",
+        "舌苔白膩",
+        "腹瀉",
+        "經常放屁",
+        "腹中有鳴叫聲",
+        "大便溏",
+        "食慾不振",
+        "嘴裡發苦",
+        "容易生氣",
+        "心情煩燥",
+        "容易憂鬱",
+        "胃腸脹氣"
+      ],
+      "condition_ids": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.de_quervain",
+        "cond.plantar_fasciitis",
+        "cond.chronic_gastritis",
+        "cond.chronic_diarrhea",
+        "cond.circadian_disorder",
+        "cond.globus_pharyngitis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.當歸四逆湯",
+      "name_zh": "當歸四逆湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "當歸四逆加吳茱萸生薑湯",
+      "symptoms_zh": [
+        "澀脈",
+        "弦脈",
+        "細脈",
+        "面色發白",
+        "舌苔淡薄白",
+        "氣喘",
+        "手腳冰冷",
+        "背部感覺冷",
+        "腰部冷涼",
+        "男性勃起障礙",
+        "腹瀉",
+        "子宮下垂"
+      ],
+      "condition_ids": [
+        "cond.sciatica",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger",
+        "cond.patellofemoral_pain",
+        "cond.ankle_sprain",
+        "cond.plantar_fasciitis",
+        "cond.rheumatoid_arthritis",
+        "cond.hypothyroidism",
+        "cond.bph",
+        "cond.chronic_prostatitis"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.脾虛濕困",
+      "name_zh": "脾虛濕困",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "平胃散",
+      "symptoms_zh": [
+        "緩脈",
+        "濡脈",
+        "面色發黃",
+        "舌苔白膩",
+        "舌胖大",
+        "舌邊有齒痕",
+        "咳嗽",
+        "全身性水腫",
+        "經常疲勞想睡",
+        "胃腸脹氣",
+        "胃酸食道逆流",
+        "頭重"
+      ],
+      "condition_ids": [
+        "cond.male_infertility",
+        "cond.sciatica",
+        "cond.myofascial_pain",
+        "cond.tmd",
+        "cond.chronic_diarrhea",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.psoriasis",
+        "cond.erectile_dysfunction"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.外感風寒",
+      "name_zh": "外感風寒",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麻黃附子細辛湯",
+      "symptoms_zh": [
+        "緊脈",
+        "浮脈",
+        "舌苔淡薄白",
+        "發燒",
+        "咳嗽",
+        "打噴嚏",
+        "白痰,白鼻涕",
+        "身體容易出汗",
+        "忽冷忽熱",
+        "手腳冰冷",
+        "喉中痰鳴",
+        "流鼻涕"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.fibromyalgia",
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.rheumatoid_arthritis",
+        "cond.asthma",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.post_covid"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎精不足",
+      "name_zh": "腎精不足",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "右歸丸",
+      "symptoms_zh": [
+        "細脈",
+        "弱脈",
+        "面色較黑",
+        "舌苔淡薄白",
+        "男性勃起障礙",
+        "耳鳴",
+        "經常疲勞想睡",
+        "腦鳴",
+        "四肢肌肉萎縮",
+        "容易健忘",
+        "容易焦慮恐懼",
+        "暈眩"
+      ],
+      "condition_ids": [
+        "cond.pcos",
+        "cond.oligomenorrhea",
+        "cond.male_infertility",
+        "cond.thin_endometrium",
+        "cond.knee_osteoarthritis",
+        "cond.depression",
+        "cond.hypotension",
+        "cond.erectile_dysfunction",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝血虛",
+      "name_zh": "肝血虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "四物湯",
+      "symptoms_zh": [
+        "細脈",
+        "弦脈",
+        "沉脈",
+        "面色發黃",
+        "面色發白",
+        "舌苔淡薄白",
+        "容易憂鬱",
+        "經常疲勞想睡",
+        "指甲變形",
+        "半身或下肢麻木",
+        "身體消瘦",
+        "眼睛模糊"
+      ],
+      "condition_ids": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.hearing_loss",
+        "cond.eye_strain"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾胃氣虛",
+      "name_zh": "脾胃氣虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "補中益氣湯",
+      "symptoms_zh": [
+        "聲音嘶啞",
+        "小便量多顏色像水",
+        "排尿後有殘尿感",
+        "大便次數頻繁",
+        "潮熱",
+        "耳鳴",
+        "癱瘓",
+        "眼皮水腫",
+        "上腹胃脘痛",
+        "頭頂痛",
+        "小便疼痛",
+        "月經不調"
+      ],
+      "condition_ids": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.peptic_ulcer",
+        "cond.hypotension"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝火上炎",
+      "name_zh": "肝火上炎",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "龍膽瀉肝湯",
+      "symptoms_zh": [
+        "弦脈",
+        "數脈",
+        "面色發紅",
+        "舌尖邊紅色",
+        "舌苔黃膩",
+        "流鼻血",
+        "身體消瘦",
+        "暈眩",
+        "口臭",
+        "口乾口渴",
+        "耳鳴",
+        "排尿困難"
+      ],
+      "condition_ids": [
+        "cond.male_infertility",
+        "cond.tmd",
+        "cond.depression",
+        "cond.circadian_disorder",
+        "cond.herpes_zoster",
+        "cond.erectile_dysfunction",
+        "cond.hearing_loss",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.血虛",
+      "name_zh": "血虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "四物湯",
+      "symptoms_zh": [
+        "細脈",
+        "虛脈",
+        "澀脈",
+        "面色發白",
+        "舌苔淡薄白",
+        "面色發黃",
+        "打嗝呃逆",
+        "四肢肌膚麻木",
+        "容易健忘",
+        "腋下出汗",
+        "睡眠障礙",
+        "身體消瘦"
+      ],
+      "condition_ids": [
+        "cond.pcos",
+        "cond.oligomenorrhea",
+        "cond.thin_endometrium",
+        "cond.sciatica",
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.hypotension"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.寒凝肝脈",
+      "name_zh": "寒凝肝脈",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "吳茱萸湯",
+      "symptoms_zh": [
+        "弦脈",
+        "沉脈",
+        "緊脈",
+        "面色發白",
+        "舌苔淡薄白",
+        "白帶",
+        "小便量多顏色像水",
+        "手腳冰冷",
+        "陰囊濕冷",
+        "下腹脹氣",
+        "腹中感到寒冷",
+        "陰部感到寒冷"
+      ],
+      "condition_ids": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝血瘀滯",
+      "name_zh": "肝血瘀滯",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "溫經湯",
+      "symptoms_zh": [
+        "弦脈",
+        "澀脈",
+        "舌頭發紫",
+        "面色較黑",
+        "面色發青",
+        "舌苔淡薄白",
+        "舌頭上面有瘀斑",
+        "胃腸脹氣",
+        "胃酸食道逆流",
+        "食慾不振",
+        "經常疲勞想睡",
+        "大便溏"
+      ],
+      "condition_ids": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.麻黃附子細辛湯",
+      "name_zh": "麻黃附子細辛湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麻黃附子細辛湯",
+      "symptoms_zh": [
+        "沉脈",
+        "浮脈",
+        "舌苔淡薄白",
+        "發燒及發冷",
+        "怕冷",
+        "發燒",
+        "背部感覺冷",
+        "咳嗽",
+        "白痰,白鼻涕",
+        "手腳冰冷",
+        "經常疲勞想睡",
+        "失音"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.sciatica",
+        "cond.patellofemoral_pain",
+        "cond.migraine",
+        "cond.migraine_vestibular",
+        "cond.hypothyroidism",
+        "cond.hearing_loss"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.肝腎不足",
+      "name_zh": "肝腎不足",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "左歸丸",
+      "symptoms_zh": [
+        "沉脈",
+        "弦脈",
+        "細脈",
+        "舌頭鮮紅色",
+        "舌上無苔，光滑潔淨",
+        "面色發紅",
+        "耳鳴",
+        "暈眩",
+        "大便秘結",
+        "小便顏色偏黃",
+        "四肢肌肉萎縮",
+        "腰膝軟弱無力"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger",
+        "cond.knee_osteoarthritis",
+        "cond.rheumatoid_arthritis",
+        "cond.eye_strain"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.痰瘀互結",
+      "name_zh": "痰瘀互結",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "身痛逐瘀湯",
+      "symptoms_zh": [
+        "沉脈",
+        "遲脈",
+        "緊脈",
+        "滑脈",
+        "舌苔灰黑",
+        "舌苔白膩",
+        "舌苔黃膩",
+        "舌頭發紫",
+        "四肢筋肉筋攣僵硬",
+        "大便溏",
+        "小便量多顏色像水",
+        "手腳冰冷"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.fibromyalgia",
+        "cond.hemorrhoids",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.herpes_zoster"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.小柴胡湯",
+      "name_zh": "小柴胡湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "小柴胡湯",
+      "symptoms_zh": [
+        "弦脈",
+        "舌苔淡薄白",
+        "咽喉乾燥",
+        "噁心反胃",
+        "食慾不振",
+        "忽冷忽熱",
+        "暈眩",
+        "口乾口渴",
+        "嘴裡發苦",
+        "睡眠障礙",
+        "手腳容易出汗",
+        "乾嘔"
+      ],
+      "condition_ids": [
+        "cond.sciatica",
+        "cond.nausea_vomiting",
+        "cond.circadian_disorder",
+        "cond.psoriasis",
+        "cond.hyperthyroidism",
+        "cond.recurrent_uti",
+        "cond.eye_strain"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.[通脈]四逆湯",
+      "name_zh": "[通脈]四逆湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "四逆湯",
+      "symptoms_zh": [
+        "沉脈",
+        "浮脈",
+        "面色發白",
+        "面色發紅",
+        "舌苔淡薄白",
+        "手腳冰冷",
+        "睡眠障礙",
+        "容易憂鬱",
+        "腹瀉伴隨不消化食物",
+        "腹瀉",
+        "心情煩燥",
+        "怕冷"
+      ],
+      "condition_ids": [
+        "cond.trigger_finger",
+        "cond.knee_osteoarthritis",
+        "cond.patellofemoral_pain",
+        "cond.ankle_sprain",
+        "cond.plantar_fasciitis",
+        "cond.tmd"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.真武湯",
+      "name_zh": "真武湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "真武湯",
+      "symptoms_zh": [
+        "細脈",
+        "沉脈",
+        "舌苔淡薄白",
+        "氣喘",
+        "咳嗽",
+        "嘔吐",
+        "睡眠障礙",
+        "心悸",
+        "經常疲勞想睡",
+        "暈眩",
+        "怕冷",
+        "腹瀉"
+      ],
+      "condition_ids": [
+        "cond.plantar_fasciitis",
+        "cond.migraine",
+        "cond.asthma",
+        "cond.migraine_vestibular",
+        "cond.recurrent_uti",
+        "cond.post_covid"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.外感風熱",
+      "name_zh": "外感風熱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃連上清丸",
+      "symptoms_zh": [
+        "數脈",
+        "浮脈",
+        "舌尖邊紅色",
+        "苔薄白微黄",
+        "舌紅沒有津液",
+        "聲音嘶啞",
+        "氣喘",
+        "喉中痰鳴",
+        "耳聾",
+        "流鼻血",
+        "鼻子癢",
+        "多痰"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.hearing_loss"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾氣虛",
+      "name_zh": "脾氣虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "歸脾湯",
+      "symptoms_zh": [
+        "弱脈",
+        "細脈",
+        "沉脈",
+        "遲脈",
+        "面色發黃",
+        "舌苔淡薄白",
+        "舌胖大",
+        "舌邊有齒痕",
+        "食後疲倦想睡",
+        "口角自動會流口水",
+        "暈眩",
+        "男性勃起障礙"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.peptic_ulcer",
+        "cond.hemorrhoids",
+        "cond.recurrent_uti",
+        "cond.globus_pharyngitis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.心腎不交",
+      "name_zh": "心腎不交",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "交泰丸",
+      "symptoms_zh": [
+        "數脈",
+        "細脈",
+        "舌上無苔，光滑潔淨",
+        "舌頭鮮紅色",
+        "心悸",
+        "手心腳心發熱",
+        "手腳容易出汗",
+        "耳聾",
+        "容易健忘",
+        "夜間多夢",
+        "睡眠障礙",
+        "耳鳴"
+      ],
+      "condition_ids": [
+        "cond.depression",
+        "cond.circadian_disorder",
+        "cond.nocturnal_enuresis",
+        "cond.hearing_loss",
+        "cond.aphthous_ulcers",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎氣虛",
+      "name_zh": "腎氣虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "斑龍丸",
+      "symptoms_zh": [
+        "細脈",
+        "弱脈",
+        "沉脈",
+        "面色較黑",
+        "舌苔淡薄白",
+        "半身或下肢麻木",
+        "暈眩",
+        "耳聾",
+        "耳鳴",
+        "夜間頻尿多尿",
+        "牙齦腫脹痛",
+        "腦鳴"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.overactive_bladder",
+        "cond.nocturnal_enuresis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.黃耆桂枝五物湯",
+      "name_zh": "黃耆桂枝五物湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃耆桂枝五物湯",
+      "symptoms_zh": [
+        "沉脈",
+        "緊脈",
+        "動脈",
+        "舌苔淡薄白",
+        "暈眩",
+        "排尿後有殘尿感",
+        "四肢肌膚麻木",
+        "半身或下肢麻木",
+        "頭皮麻木",
+        "四肢筋肉筋攣僵硬",
+        "肥胖",
+        "耳鳴"
+      ],
+      "condition_ids": [
+        "cond.sciatica",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger",
+        "cond.hypotension"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.葛根湯",
+      "name_zh": "葛根湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "葛根湯",
+      "symptoms_zh": [
+        "緊脈",
+        "浮脈",
+        "舌苔淡薄白",
+        "發燒",
+        "四肢肌膚麻木",
+        "不易流汗",
+        "發燒及發冷",
+        "腹瀉",
+        "失音",
+        "顏面神經麻痺",
+        "嗅覺減退喪失",
+        "鼻子癢"
+      ],
+      "condition_ids": [
+        "cond.cervical_spondylosis",
+        "cond.de_quervain",
+        "cond.myofascial_pain",
+        "cond.tmd",
+        "cond.chronic_diarrhea"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.柴胡桂枝湯",
+      "name_zh": "柴胡桂枝湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "柴胡桂枝湯",
+      "symptoms_zh": [
+        "浮脈",
+        "弦脈",
+        "舌苔淡薄白",
+        "噁心反胃",
+        "耳鳴",
+        "暈眩",
+        "發燒",
+        "口乾口渴",
+        "胸悶脹",
+        "食慾不振",
+        "怕冷",
+        "頭部發冷"
+      ],
+      "condition_ids": [
+        "cond.cervical_spondylosis",
+        "cond.de_quervain",
+        "cond.palpitations",
+        "cond.heart_failure",
+        "cond.hearing_loss"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.肝陽上亢",
+      "name_zh": "肝陽上亢",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "天麻鉤藤飲",
+      "symptoms_zh": [
+        "數脈",
+        "細脈",
+        "弦脈",
+        "舌苔淡薄白",
+        "面色發紅",
+        "突然暈倒不省人事",
+        "頭部發熱",
+        "頭部不由自主地搖動不能自制",
+        "容易生氣",
+        "暈眩",
+        "耳鳴",
+        "耳聾"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.migraine",
+        "cond.cluster_headache",
+        "cond.migraine_vestibular",
+        "cond.hearing_loss"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.濕痰",
+      "name_zh": "濕痰",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "半夏白朮天麻湯",
+      "symptoms_zh": [
+        "緩脈",
+        "滑脈",
+        "舌苔白膩",
+        "舌胖大",
+        "面色發黃",
+        "嘔吐",
+        "胸悶脹",
+        "多痰",
+        "咳嗽",
+        "耳鳴",
+        "大便溏",
+        "嘴中感到黏膩感"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.半夏瀉心湯",
+      "name_zh": "半夏瀉心湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "半夏瀉心湯",
+      "symptoms_zh": [
+        "數脈",
+        "弦脈",
+        "暈眩",
+        "噁心反胃",
+        "胃腸出血",
+        "口乾口渴",
+        "嘴裡發苦",
+        "發燒",
+        "大便溏",
+        "腹瀉",
+        "腹中有鳴叫聲",
+        "胃酸食道逆流"
+      ],
+      "condition_ids": [
+        "cond.chronic_gastritis",
+        "cond.peptic_ulcer",
+        "cond.nausea_vomiting",
+        "cond.circadian_disorder",
+        "cond.aphthous_ulcers"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.痰氣互結",
+      "name_zh": "痰氣互結",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "旋覆代赭湯",
+      "symptoms_zh": [
+        "弦脈",
+        "細脈",
+        "滑脈",
+        "舌苔白膩",
+        "胸悶脹",
+        "呼吸氣短言語無力",
+        "口乾口渴",
+        "多痰",
+        "吞咽障礙",
+        "咽喉有異物感",
+        "容易憂鬱",
+        "容易生氣"
+      ],
+      "condition_ids": [
+        "cond.nausea_vomiting",
+        "cond.depression",
+        "cond.hearing_loss",
+        "cond.globus_pharyngitis",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.燥氣傷肺",
+      "name_zh": "燥氣傷肺",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "清燥救肺湯",
+      "symptoms_zh": [
+        "數脈",
+        "細脈",
+        "弦脈",
+        "舌頭鮮紅色",
+        "排尿困難",
+        "四肢痿軟無力",
+        "口乾口渴",
+        "頭髮乾燥",
+        "鼻子乾燥",
+        "咽喉乾燥",
+        "咳血",
+        "咳嗽"
+      ],
+      "condition_ids": [
+        "cond.asthma",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.post_covid"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎陽虛水泛",
+      "name_zh": "腎陽虛水泛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "真武湯",
+      "symptoms_zh": [
+        "遲脈",
+        "沉脈",
+        "舌邊有齒痕",
+        "舌胖大",
+        "面色發白",
+        "氣喘",
+        "咳嗽",
+        "肚臍上有跳動現象",
+        "喝水之後吐水",
+        "心悸",
+        "暈眩",
+        "手腳冰冷"
+      ],
+      "condition_ids": [
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.hypothyroidism",
+        "cond.nocturnal_enuresis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.水飲內停",
+      "name_zh": "水飲內停",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "五苓散",
+      "symptoms_zh": [
+        "緊脈",
+        "弦脈",
+        "沉脈",
+        "舌苔白膩",
+        "四肢浮腫發脹",
+        "胸悶脹",
+        "全身性水腫",
+        "下肢水腫",
+        "口乾口渴",
+        "呼吸氣短言語無力",
+        "面部浮腫",
+        "暈眩"
+      ],
+      "condition_ids": [
+        "cond.lumbar_disc_herniation",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.桂枝湯",
+      "name_zh": "桂枝湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桂枝湯",
+      "symptoms_zh": [
+        "浮脈",
+        "舌苔淡薄白",
+        "地圖舌",
+        "怕冷",
+        "發燒",
+        "大便秘結",
+        "腹瀉",
+        "流鼻涕",
+        "打噴嚏",
+        "鼻塞",
+        "乾嘔",
+        "身體容易出汗"
+      ],
+      "condition_ids": [
+        "cond.frozen_shoulder",
+        "cond.nausea_vomiting",
+        "cond.asthma",
+        "cond.post_covid"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.少陰寒化",
+      "name_zh": "少陰寒化證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "四逆湯",
+      "symptoms_zh": [
+        "細脈",
+        "沉脈",
+        "舌苔淡薄白",
+        "小便量多顏色像水",
+        "經常疲勞想睡",
+        "氣喘",
+        "發燒",
+        "睡眠障礙",
+        "心情煩燥",
+        "乾嘔",
+        "嘔吐",
+        "腹瀉"
+      ],
+      "condition_ids": [
+        "cond.rheumatoid_arthritis",
+        "cond.circadian_disorder",
+        "cond.asthma",
+        "cond.post_covid"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.吳茱萸湯",
+      "name_zh": "吳茱萸湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "吳茱萸湯",
+      "symptoms_zh": [
+        "沉脈",
+        "細脈",
+        "弦脈",
+        "舌苔淡薄白",
+        "經常疲勞想睡",
+        "胸悶脹",
+        "喝水之後吐水",
+        "頭部發冷",
+        "乾嘔",
+        "嘔吐",
+        "心情煩燥",
+        "手腳冰冷"
+      ],
+      "condition_ids": [
+        "cond.chronic_gastritis",
+        "cond.peptic_ulcer",
+        "cond.bph",
+        "cond.chronic_prostatitis"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.食傷脾胃",
+      "name_zh": "食傷脾胃",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "保和丸",
+      "symptoms_zh": [
+        "滑脈",
+        "弦脈",
+        "舌苔黃膩",
+        "腹中有鳴叫聲",
+        "食慾不振",
+        "噯氣",
+        "腹瀉",
+        "嘔吐",
+        "胃酸食道逆流",
+        "大便秘結",
+        "口臭",
+        "大便非常臭"
+      ],
+      "condition_ids": [
+        "cond.peptic_ulcer",
+        "cond.chronic_diarrhea",
+        "cond.asthma",
+        "cond.post_covid"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.小青龍湯",
+      "name_zh": "小青龍湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "小青龍湯",
+      "symptoms_zh": [
+        "浮脈",
+        "緊脈",
+        "舌苔淡薄白",
+        "白痰,白鼻涕",
+        "氣喘",
+        "腹瀉",
+        "口乾口渴",
+        "發燒",
+        "乾嘔",
+        "咳嗽",
+        "流鼻涕",
+        "不易流汗"
+      ],
+      "condition_ids": [
+        "cond.chronic_diarrhea",
+        "cond.asthma",
+        "cond.recurrent_uti",
+        "cond.post_covid"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.五苓散",
+      "name_zh": "五苓散證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "五苓散",
+      "symptoms_zh": [
+        "浮脈",
+        "舌苔白膩",
+        "頻尿",
+        "噁心反胃",
+        "發燒",
+        "下肢水腫",
+        "全身性水腫",
+        "腹瀉",
+        "下腹脹氣",
+        "嘔吐",
+        "喝水之後吐水",
+        "暈眩"
+      ],
+      "condition_ids": [
+        "cond.chronic_diarrhea",
+        "cond.recurrent_uti",
+        "cond.overactive_bladder",
+        "cond.nocturnal_enuresis"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.膀胱濕熱",
+      "name_zh": "膀胱濕熱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "八正散",
+      "symptoms_zh": [
+        "數脈",
+        "舌苔黃膩",
+        "舌頭鮮紅色",
+        "血尿",
+        "排尿困難",
+        "發燒",
+        "無尿及少尿",
+        "排尿後有殘尿感",
+        "頻尿",
+        "小便顏色偏黃",
+        "睡眠障礙",
+        "潮熱"
+      ],
+      "condition_ids": [
+        "cond.recurrent_uti",
+        "cond.overactive_bladder",
+        "cond.bph",
+        "cond.chronic_prostatitis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.小建中湯類方",
+      "name_zh": "小建中湯類方證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "當歸建中湯",
+      "symptoms_zh": [
+        "浮脈",
+        "沉脈",
+        "舌苔淡薄白",
+        "口乾口渴",
+        "暈眩",
+        "經常疲勞想睡",
+        "顏面神經麻痺",
+        "眼皮一直跳，難以控制",
+        "咽喉乾燥",
+        "四肢筋肉筋攣僵硬",
+        "胸悶脹",
+        "發燒"
+      ],
+      "condition_ids": [
+        "cond.sciatica",
+        "cond.hypotension",
+        "cond.eye_strain"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.濕熱",
+      "name_zh": "濕熱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "二妙散",
+      "symptoms_zh": [
+        "沉脈",
+        "數脈",
+        "面色發黃",
+        "頻尿",
+        "食慾不振",
+        "口臭",
+        "頭部出汗",
+        "嘴中感到黏膩感",
+        "手腳容易出汗",
+        "忽冷忽熱",
+        "腋下出汗",
+        "發燒"
+      ],
+      "condition_ids": [
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾陽虛",
+      "name_zh": "脾陽虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "安中散",
+      "symptoms_zh": [
+        "沉脈",
+        "緊脈",
+        "細脈",
+        "遲脈",
+        "弱脈",
+        "面色發白",
+        "舌苔淡薄白",
+        "舌邊有齒痕",
+        "舌胖大",
+        "食慾不振",
+        "手腳冰冷",
+        "便秘與腹瀉交替出現"
+      ],
+      "condition_ids": [
+        "cond.chronic_gastritis",
+        "cond.chronic_diarrhea",
+        "cond.hypotension"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎氣不固",
+      "name_zh": "腎氣不固",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麥味地黃丸",
+      "symptoms_zh": [
+        "沉脈",
+        "細脈",
+        "舌苔淡薄白",
+        "咳嗽",
+        "排尿後有殘尿感",
+        "夜間頻尿多尿",
+        "流鼻涕",
+        "頻尿",
+        "白帶",
+        "下肢萎縮",
+        "氣喘",
+        "胎漏"
+      ],
+      "condition_ids": [
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝火犯肺",
+      "name_zh": "肝火犯肺",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "龍膽瀉肝湯",
+      "symptoms_zh": [
+        "弦脈",
+        "數脈",
+        "面色發紅",
+        "胸悶脹",
+        "咳血",
+        "吐血",
+        "黃痰,黃鼻涕",
+        "咳嗽",
+        "暈眩",
+        "嘴裡發苦",
+        "心情煩燥",
+        "流鼻血"
+      ],
+      "condition_ids": [
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.桂枝加葛根湯",
+      "name_zh": "桂枝加葛根湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桂枝加葛根湯",
+      "symptoms_zh": [
+        "遲脈",
+        "沉脈",
+        "緩脈",
+        "浮脈",
+        "舌苔淡薄白",
+        "暈眩",
+        "怕吹到風",
+        "身體容易出汗",
+        "大便秘結",
+        "胃腸脹氣",
+        "下腹脹氣",
+        "面部浮腫"
+      ],
+      "condition_ids": [
+        "cond.cervical_spondylosis",
+        "cond.myofascial_pain"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.大青龍湯",
+      "name_zh": "大青龍湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "大青龍湯",
+      "symptoms_zh": [
+        "緊脈",
+        "浮脈",
+        "小便顏色偏黃",
+        "口乾口渴",
+        "鼻塞",
+        "不易流汗",
+        "氣喘",
+        "心情煩燥",
+        "怕冷",
+        "黃痰,黃鼻涕",
+        "咳嗽",
+        "發燒及發冷"
+      ],
+      "condition_ids": [
+        "cond.fibromyalgia",
+        "cond.psoriasis"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.桂枝湯類方",
+      "name_zh": "桂枝湯類方證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桂枝加葛根湯",
+      "symptoms_zh": [
+        "弱脈",
+        "浮脈",
+        "怕冷",
+        "乾嘔",
+        "身體容易出汗",
+        "發燒",
+        "怕吹到風",
+        "脖子頸項酸痛",
+        "頭痛",
+        "感冒"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.麻黃湯類方",
+      "name_zh": "麻黃湯類方證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麻黃附子細辛湯",
+      "symptoms_zh": [
+        "浮脈",
+        "氣喘",
+        "不易流汗",
+        "怕吹到風",
+        "發燒",
+        "脖子頸項酸痛",
+        "四肢關節疼痛",
+        "腰痛",
+        "頭痛",
+        "感冒"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.血瘀",
+      "name_zh": "血瘀",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "血府逐瘀湯",
+      "symptoms_zh": [
+        "澀脈",
+        "沉脈",
+        "舌頭發紫",
+        "面色較黑",
+        "面色發青",
+        "舌頭上面有瘀斑",
+        "經常疲勞想睡",
+        "胸悶脹",
+        "嘴唇青紫",
+        "容易健忘",
+        "心情煩燥",
+        "心律不整"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.氣虛",
+      "name_zh": "氣虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "順氣和中湯",
+      "symptoms_zh": [
+        "細脈",
+        "虛脈",
+        "舌邊有齒痕",
+        "面色較黑",
+        "面色發青",
+        "舌苔淡薄白",
+        "夜間多夢",
+        "睡眠障礙",
+        "身體消瘦",
+        "肥胖",
+        "容易悲傷",
+        "怕冷"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.柴胡湯類方",
+      "name_zh": "柴胡湯類方證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "小柴胡湯",
+      "symptoms_zh": [
+        "數脈",
+        "弦脈",
+        "舌苔淡薄白",
+        "噁心反胃",
+        "心情煩燥",
+        "暈眩",
+        "嘴裡發苦",
+        "食慾不振",
+        "耳聾",
+        "耳鳴",
+        "口乾口渴",
+        "忽冷忽熱"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.雜病類方証",
+      "name_zh": "雜病類方証",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "吳茱萸湯",
+      "symptoms_zh": [
+        "胃腸脹氣",
+        "食慾不振",
+        "噁心反胃",
+        "心情煩燥",
+        "腰痛",
+        "全身酸痛",
+        "肋間神經疼痛",
+        "頭痛"
+      ],
+      "condition_ids": [
+        "cond.tension_headache",
+        "cond.cluster_headache"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝胃不和",
+      "name_zh": "肝胃不和",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "柴胡疏肝湯",
+      "symptoms_zh": [
+        "弦脈",
+        "數脈",
+        "舌苔淡薄白",
+        "舌苔黃膩",
+        "嘔吐",
+        "打嗝呃逆",
+        "噁心反胃",
+        "心情煩燥",
+        "消化不良",
+        "胃酸食道逆流",
+        "胃腸脹氣",
+        "口乾口渴"
+      ],
+      "condition_ids": [
+        "cond.chronic_gastritis",
+        "cond.nausea_vomiting"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.心胃火盛",
+      "name_zh": "心胃火盛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "三黃瀉心湯",
+      "symptoms_zh": [
+        "數脈",
+        "滑脈",
+        "舌頭鮮紅色",
+        "面色發紅",
+        "小便顏色偏黃",
+        "大便秘結",
+        "口臭",
+        "口瘡嘴破口角炎",
+        "吐血",
+        "心情煩燥",
+        "胃酸食道逆流",
+        "口角自動會流口水"
+      ],
+      "condition_ids": [
+        "cond.chronic_gastritis",
+        "cond.aphthous_ulcers"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.大腸濕熱",
+      "name_zh": "大腸濕熱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "葛根黃芩黃連湯",
+      "symptoms_zh": [
+        "數脈",
+        "滑脈",
+        "舌苔黃膩",
+        "胃腸脹氣",
+        "下腹脹氣",
+        "身體沉重",
+        "食慾不振",
+        "噁心反胃",
+        "大便膿血",
+        "大便出血",
+        "身體容易出汗",
+        "發燒"
+      ],
+      "condition_ids": [
+        "cond.chronic_diarrhea",
+        "cond.hemorrhoids"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.四逆散",
+      "name_zh": "四逆散證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "四逆散",
+      "symptoms_zh": [
+        "弦脈",
+        "動脈",
+        "舌苔淡薄白",
+        "舌苔黃膩",
+        "手腳冰冷",
+        "氣喘",
+        "咳嗽",
+        "腹瀉",
+        "胸悶脹",
+        "排尿困難",
+        "心悸",
+        "心律不整"
+      ],
+      "condition_ids": [
+        "cond.chronic_diarrhea",
+        "cond.recurrent_uti"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.心血虛",
+      "name_zh": "心血虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "養心湯",
+      "symptoms_zh": [
+        "結脈",
+        "代脈",
+        "滑脈",
+        "數脈",
+        "細脈",
+        "面色發白",
+        "舌頭鮮紅色",
+        "舌上無苔，光滑潔淨",
+        "易感到驚嚇",
+        "暈眩",
+        "夜間多夢",
+        "睡眠障礙"
+      ],
+      "condition_ids": [
+        "cond.depression",
+        "cond.cancer_supportive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.柴胡桂枝乾薑湯",
+      "name_zh": "柴胡桂枝乾薑湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "柴胡桂枝乾薑湯",
+      "symptoms_zh": [
+        "弦脈",
+        "舌苔淡薄白",
+        "睡眠障礙",
+        "情煩燥",
+        "忽冷忽熱",
+        "口乾口渴",
+        "排尿困難",
+        "胸悶脹",
+        "心悸",
+        "嘴裡發苦",
+        "子宮崩漏",
+        "暈眩"
+      ],
+      "condition_ids": [
+        "cond.depression",
+        "cond.cancer_supportive"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.心火旺盛",
+      "name_zh": "心火旺盛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "導赤散",
+      "symptoms_zh": [
+        "數脈",
+        "細脈",
+        "舌上出血",
+        "舌頭鮮紅色",
+        "舌尖邊紅色",
+        "舌苔黃膩",
+        "面色發紅",
+        "暈眩",
+        "口瘡嘴破口角炎",
+        "吐血",
+        "睡眠障礙",
+        "血尿"
+      ],
+      "condition_ids": [
+        "cond.circadian_disorder",
+        "cond.aphthous_ulcers"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.麻黃湯",
+      "name_zh": "麻黃湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麻黃湯",
+      "symptoms_zh": [
+        "浮脈",
+        "緊脈",
+        "舌苔淡薄白",
+        "氣喘",
+        "咳嗽",
+        "不易流汗",
+        "怕吹到風",
+        "發燒",
+        "黃疸",
+        "大便秘結",
+        "排尿困難",
+        "夜間遺尿"
+      ],
+      "condition_ids": [
+        "cond.asthma",
+        "cond.post_covid"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.麻杏石甘湯",
+      "name_zh": "麻杏石甘湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麻杏石甘湯",
+      "symptoms_zh": [
+        "數脈",
+        "浮脈",
+        "舌苔黃膩",
+        "口乾口渴",
+        "氣喘",
+        "咳嗽",
+        "發燒",
+        "聲音嘶啞",
+        "黃痰,黃鼻涕",
+        "呼吸氣短言語無力",
+        "小便顏色偏黃",
+        "無尿及少尿"
+      ],
+      "condition_ids": [
+        "cond.asthma",
+        "cond.post_covid"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.腎不納氣",
+      "name_zh": "腎不納氣",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "蘇子降氣湯",
+      "symptoms_zh": [
+        "細脈",
+        "沉脈",
+        "舌苔淡薄白",
+        "夜間頻尿多尿",
+        "頻尿",
+        "耳聾",
+        "耳鳴",
+        "氣喘",
+        "呼吸急促，氣不接續之症",
+        "呼吸氣短言語無力",
+        "腰膝軟弱無力",
+        "經常疲勞想睡"
+      ],
+      "condition_ids": [
+        "cond.asthma",
+        "cond.post_covid"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.承氣湯",
+      "name_zh": "承氣湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "大承氣湯",
+      "symptoms_zh": [
+        "沉脈",
+        "實脈",
+        "舌苔乾燥(舌乾)",
+        "口乾口渴",
+        "發燒",
+        "大便秘結",
+        "氣喘",
+        "潮熱",
+        "心情煩燥",
+        "暈眩",
+        "下肢腫脹疼痛",
+        "腹痛"
+      ],
+      "condition_ids": [
+        "cond.asthma",
+        "cond.post_covid"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.肝陽上亢",
+      "name_zh": "肝陽上亢證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "天麻鉤藤飲",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.dizziness_vertigo",
+        "cond.hypertension"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.血虛風燥",
+      "name_zh": "血虛風燥證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "當歸飲子",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.eczema",
+        "cond.urticaria"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.濕熱瀰漫三焦",
+      "name_zh": "濕熱瀰漫三焦",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃連解毒湯",
+      "symptoms_zh": [
+        "濡脈",
+        "滑脈",
+        "舌苔黃膩",
+        "舌苔白膩",
+        "發燒",
+        "噁心反胃",
+        "胃腸脹氣",
+        "胸悶脹",
+        "身體沉重",
+        "大便溏",
+        "腹瀉",
+        "小便顏色偏黃"
+      ],
+      "condition_ids": [
+        "cond.acne",
+        "cond.aphthous_ulcers"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾胃濕熱",
+      "name_zh": "脾胃濕熱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "甘露消毒丹",
+      "symptoms_zh": [
+        "濡脈",
+        "數脈",
+        "面色發黃",
+        "舌苔黃膩",
+        "舌頭鮮紅色",
+        "頭重",
+        "發燒",
+        "皮膚顏色發黃",
+        "大便溏",
+        "大便非常臭",
+        "身體沉重",
+        "噁心反胃"
+      ],
+      "condition_ids": [
+        "cond.psoriasis",
+        "cond.herpes_zoster"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝腎陰虛",
+      "name_zh": "肝腎陰虛證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "杞菊地黃丸",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.hypertension",
+        "cond.dry_eye"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.心陽虛",
+      "name_zh": "心陽虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桂枝甘草湯",
+      "symptoms_zh": [
+        "結脈",
+        "代脈",
+        "細脈",
+        "遲脈",
+        "弱脈",
+        "舌苔淡薄白",
+        "面色發白",
+        "舌頭發紫",
+        "氣從少腹起上衝咽喉",
+        "呼吸氣短言語無力",
+        "手腳冰冷",
+        "心律不整"
+      ],
+      "condition_ids": [
+        "cond.palpitations",
+        "cond.heart_failure"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.心脈瘀阻",
+      "name_zh": "心脈瘀阻",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "血府逐瘀湯",
+      "symptoms_zh": [
+        "弦脈",
+        "沉脈",
+        "結脈",
+        "代脈",
+        "澀脈",
+        "面色發青",
+        "舌頭上面有瘀斑",
+        "舌頭發紫",
+        "舌邊有齒痕",
+        "嘴唇青紫",
+        "胸悶脹",
+        "心悸"
+      ],
+      "condition_ids": [
+        "cond.palpitations",
+        "cond.heart_failure"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.炙甘草湯",
+      "name_zh": "炙甘草湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "炙甘草湯",
+      "symptoms_zh": [
+        "代脈",
+        "結脈",
+        "面色發白",
+        "舌苔淡薄白",
+        "心悸",
+        "心律不整",
+        "氣喘",
+        "呼吸氣短言語無力",
+        "經常疲勞想睡",
+        "胸悶脹",
+        "耳鳴",
+        "胎漏"
+      ],
+      "condition_ids": [
+        "cond.palpitations",
+        "cond.heart_failure"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.肝鬱血虛",
+      "name_zh": "肝鬱血虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桃紅四物湯",
+      "symptoms_zh": [
+        "癱瘓",
+        "子宮肌瘤",
+        "四肢癱"
+      ],
+      "condition_ids": [
+        "cond.uterine_fibroids"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.血瘀閉阻",
+      "name_zh": "血瘀閉阻",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "少腹逐瘀湯",
+      "symptoms_zh": [
+        "子宮肌瘤"
+      ],
+      "condition_ids": [
+        "cond.uterine_fibroids"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.風寒濕痹",
+      "name_zh": "風寒濕痹",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "三痹湯",
+      "symptoms_zh": [
+        "弦脈",
+        "緊脈",
+        "濡脈",
+        "緩脈",
+        "舌苔白膩",
+        "舌苔淡薄白",
+        "四肢筋肉筋攣僵硬",
+        "身體沉重",
+        "腰部冷涼",
+        "手腳冰冷",
+        "怕冷",
+        "全身酸痛"
+      ],
+      "condition_ids": [
+        "cond.knee_osteoarthritis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝陰虛",
+      "name_zh": "肝陰虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "芍藥甘草湯",
+      "symptoms_zh": [
+        "弦脈",
+        "數脈",
+        "細脈",
+        "面色發紅",
+        "舌上無苔，光滑潔淨",
+        "舌頭鮮紅色",
+        "暈眩",
+        "睡眠障礙",
+        "夜間盜汗",
+        "潮熱",
+        "感覺掌心發熱",
+        "口乾口渴"
+      ],
+      "condition_ids": [
+        "cond.ankle_sprain"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾不統血",
+      "name_zh": "脾不統血",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "歸脾湯",
+      "symptoms_zh": [
+        "弱脈",
+        "細脈",
+        "面色發白",
+        "舌苔淡薄白",
+        "面色發黃",
+        "身體消瘦",
+        "呼吸氣短言語無力",
+        "經常疲勞想睡",
+        "大便溏",
+        "胃腸脹氣",
+        "牙齦出血",
+        "流鼻血"
+      ],
+      "condition_ids": [
+        "cond.fibromyalgia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝胃不和",
+      "name_zh": "肝胃不和證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "柴胡疏肝散",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.gerd"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.膽熱犯胃",
+      "name_zh": "膽熱犯胃證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "溫膽湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.gerd"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾胃虛寒",
+      "name_zh": "脾胃虛寒證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃芪建中湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.gerd"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾虛濕阻",
+      "name_zh": "脾虛濕阻證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "參苓白朮散",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.functional_dyspepsia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝胃氣滯",
+      "name_zh": "肝胃氣滯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "柴胡疏肝散",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.functional_dyspepsia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝火犯胃",
+      "name_zh": "肝火犯胃",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "左金丸",
+      "symptoms_zh": [
+        "弦脈",
+        "數脈",
+        "舌苔淡薄白",
+        "嘴中感到酸酸的",
+        "胃酸食道逆流",
+        "打嗝呃逆",
+        "噁心反胃",
+        "吐血",
+        "嘴唇紅腫痛",
+        "上腹胃脘痛",
+        "肋間神經疼痛",
+        "頭目脹痛"
+      ],
+      "condition_ids": [
+        "cond.peptic_ulcer"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.溼熱鬱滯經絡",
+      "name_zh": "溼熱鬱滯經絡證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "五苓散",
+      "symptoms_zh": [
+        "面色發黃",
+        "耳鳴",
+        "食慾不振",
+        "上腹胃脘痛",
+        "肢體疼痛"
+      ],
+      "condition_ids": [
+        "cond.peptic_ulcer"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.胃陰虛",
+      "name_zh": "胃陰虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麥門冬湯",
+      "symptoms_zh": [
+        "數脈",
+        "細脈",
+        "舌上無苔，光滑潔淨",
+        "舌頭鮮紅色",
+        "食慾不振",
+        "嘔吐",
+        "打嗝呃逆",
+        "四肢痿軟無力",
+        "噁心反胃",
+        "大便秘結",
+        "口乾口渴",
+        "肚子餓卻吃不下"
+      ],
+      "condition_ids": [
+        "cond.peptic_ulcer"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝鬱脾虛",
+      "name_zh": "肝鬱脾虛證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "痛瀉要方",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.ibs"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾胃虛弱",
+      "name_zh": "脾胃虛弱證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "參苓白朮散",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.ibs"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.熱秘",
+      "name_zh": "熱秘證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麻子仁丸",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.chronic_constipation"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.氣秘",
+      "name_zh": "氣秘證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "六磨湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.chronic_constipation"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.虛秘",
+      "name_zh": "虛秘證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃芪湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.chronic_constipation"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.理中湯",
+      "name_zh": "理中湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "理中湯",
+      "symptoms_zh": [
+        "緩脈",
+        "沉脈",
+        "舌苔淡薄白",
+        "面色發白",
+        "呼吸氣短言語無力",
+        "上吐下瀉",
+        "嘔吐",
+        "暈眩",
+        "身體沉重",
+        "大便溏",
+        "手腳冰冷",
+        "食慾不振"
+      ],
+      "condition_ids": [
+        "cond.chronic_diarrhea"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.胃寒",
+      "name_zh": "胃寒",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "附子理中湯",
+      "symptoms_zh": [
+        "遲脈",
+        "弦脈",
+        "舌苔淡薄白",
+        "喝水之後吐水",
+        "腹中感到寒冷",
+        "乾嘔",
+        "胃酸食道逆流",
+        "噁心反胃",
+        "嘔吐",
+        "打嗝呃逆",
+        "腹瀉",
+        "腹中有鳴叫聲"
+      ],
+      "condition_ids": [
+        "cond.nausea_vomiting"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.胃熱",
+      "name_zh": "胃熱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃連解毒湯",
+      "symptoms_zh": [
+        "數脈",
+        "洪脈",
+        "舌苔黃膩",
+        "舌頭腫大",
+        "身體消瘦",
+        "容易飢餓食慾好",
+        "大便秘結",
+        "牙齦出血",
+        "咽喉乾燥",
+        "嘔吐",
+        "打嗝呃逆",
+        "口臭"
+      ],
+      "condition_ids": [
+        "cond.nausea_vomiting"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.心脾兩虛",
+      "name_zh": "心脾兩虛證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "歸脾湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.insomnia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.陰虛火旺",
+      "name_zh": "陰虛火旺證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃連阿膠湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.insomnia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝鬱化火",
+      "name_zh": "肝鬱化火證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "龍膽瀉肝湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.insomnia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.少陰陰虛火旺",
+      "name_zh": "少陰陰虛火旺",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "黃連阿膠湯",
+      "symptoms_zh": [
+        "細脈",
+        "數脈",
+        "舌頭鮮紅色",
+        "舌上無苔，光滑潔淨",
+        "睡眠障礙",
+        "手心腳心發熱",
+        "心悸",
+        "口乾口渴",
+        "遺精",
+        "傷寒",
+        "失眠",
+        "潮紅"
+      ],
+      "condition_ids": [
+        "cond.circadian_disorder"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.熱擾胸膈",
+      "name_zh": "熱擾胸膈",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "梔子豉湯",
+      "symptoms_zh": [
+        "數脈",
+        "睡眠障礙",
+        "噁心反胃",
+        "呼吸氣短言語無力",
+        "食慾不振",
+        "夜間多夢",
+        "潮熱",
+        "胸悶脹",
+        "發燒",
+        "嘔吐",
+        "上腹胃脘痛",
+        "胸悶胸痛"
+      ],
+      "condition_ids": [
+        "cond.circadian_disorder"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肺氣虛寒",
+      "name_zh": "肺氣虛寒證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "玉屏風散合溫肺止流丹",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.allergic_rhinitis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾氣虛弱",
+      "name_zh": "脾氣虛弱證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "補中益氣湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.allergic_rhinitis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.風寒襲絡",
+      "name_zh": "風寒襲絡證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "牽正散合小續命湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.bells_palsy"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.氣血虛弱",
+      "name_zh": "氣血虛弱證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "八珍湯合牽正散",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.bells_palsy"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.風火上擾",
+      "name_zh": "風火上擾證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "龍膽瀉肝湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.trigeminal_neuralgia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.瘀血阻絡",
+      "name_zh": "瘀血阻絡證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桃紅四物湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.trigeminal_neuralgia"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.痰濕中阻",
+      "name_zh": "痰濕中阻證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "半夏白朮天麻湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.dizziness_vertigo"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎精不足",
+      "name_zh": "腎精不足證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "左歸丸",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.dizziness_vertigo"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.濕熱浸淫",
+      "name_zh": "濕熱浸淫證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "消風散",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.eczema"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.風熱相搏",
+      "name_zh": "風熱相搏證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "消風散",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.urticaria"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肺熱壅盛",
+      "name_zh": "肺熱壅盛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "清上防風湯",
+      "symptoms_zh": [
+        "弦脈",
+        "胸悶脹",
+        "心情煩燥",
+        "氣喘",
+        "咳嗽",
+        "口乾口渴",
+        "嗅覺減退喪失",
+        "黃痰,黃鼻涕",
+        "鼻塞",
+        "咳血",
+        "鼻子乾燥",
+        "痤瘡"
+      ],
+      "condition_ids": [
+        "cond.acne"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.熱毒熾盛",
+      "name_zh": "熱毒熾盛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "普濟消毒飲",
+      "symptoms_zh": [
+        "吐血",
+        "積滯",
+        "潮熱",
+        "頭痛",
+        "口乾",
+        "四肢抽搐",
+        "痤瘡"
+      ],
+      "condition_ids": [
+        "cond.acne"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.苓桂朮甘湯",
+      "name_zh": "苓桂朮甘湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "苓桂朮甘湯",
+      "symptoms_zh": [
+        "濡脈",
+        "滑脈",
+        "弦脈",
+        "舌苔白膩",
+        "口乾口渴",
+        "胃腸脹氣",
+        "胸悶脹",
+        "經常疲勞想睡",
+        "食慾不振",
+        "暈眩",
+        "咳嗽",
+        "心悸"
+      ],
+      "condition_ids": [
+        "cond.psoriasis"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.太陽病輕",
+      "name_zh": "太陽病輕證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "桂枝麻黃各半湯",
+      "symptoms_zh": [
+        "緩脈",
+        "浮脈",
+        "舌苔淡薄白",
+        "不易流汗",
+        "皮膚搔癢",
+        "怕冷",
+        "發燒",
+        "氣喘",
+        "皮疹紅疹",
+        "頭痛",
+        "四肢關節疼痛",
+        "皮膚風疹"
+      ],
+      "condition_ids": [
+        "cond.psoriasis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.1",
+      "name_zh": "1",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "獨活寄生湯",
+      "symptoms_zh": [
+        "疼痛",
+        "牛皮癬",
+        "僵直性脊椎炎"
+      ],
+      "condition_ids": [
+        "cond.psoriasis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肺胃燥熱",
+      "name_zh": "肺胃燥熱證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "玉女煎",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.t2dm"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎陰虧虛",
+      "name_zh": "腎陰虧虛證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "六味地黃丸",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.t2dm"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.越婢加朮湯",
+      "name_zh": "越婢加朮湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "越婢加朮湯",
+      "symptoms_zh": [
+        "浮脈",
+        "舌苔淡薄白",
+        "咳嗽",
+        "發燒",
+        "怕吹到風",
+        "怕冷",
+        "下肢水腫",
+        "全身性水腫",
+        "眼皮水腫",
+        "身體沉重",
+        "無尿及少尿",
+        "排尿困難"
+      ],
+      "condition_ids": [
+        "cond.hypothyroidism"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.水氣凌心",
+      "name_zh": "水氣凌心",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "苓桂朮甘湯",
+      "symptoms_zh": [
+        "沉脈",
+        "弦脈",
+        "細脈",
+        "滑脈",
+        "舌苔淡薄白",
+        "舌苔白膩",
+        "心律不整",
+        "心悸",
+        "心下胃脘部有跳動現象",
+        "呼吸氣短言語無力",
+        "暈眩",
+        "嘔吐"
+      ],
+      "condition_ids": [
+        "cond.hypothyroidism"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾約",
+      "name_zh": "脾約證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "麻子仁丸",
+      "symptoms_zh": [
+        "滑脈",
+        "數脈",
+        "舌苔乾燥(舌乾)",
+        "口臭",
+        "口乾口渴",
+        "胃腸脹氣",
+        "小便顏色偏黃",
+        "排尿困難",
+        "頻尿",
+        "大便秘結",
+        "心情煩燥",
+        "潮熱"
+      ],
+      "condition_ids": [
+        "cond.hypothyroidism"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.白虎湯",
+      "name_zh": "白虎湯證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "白虎加人參湯",
+      "symptoms_zh": [
+        "實脈",
+        "洪脈",
+        "舌苔黃膩",
+        "發燒",
+        "大便秘結",
+        "心情煩燥",
+        "昏迷",
+        "潮熱",
+        "口乾口渴",
+        "手腳容易出汗",
+        "皮膚搔癢",
+        "夜間遺尿"
+      ],
+      "condition_ids": [
+        "cond.hyperthyroidism"
+      ],
+      "note": "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑"
+    },
+    {
+      "id": "pat.心陰虛",
+      "name_zh": "心陰虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "生脈飲",
+      "symptoms_zh": [
+        "結脈",
+        "細脈",
+        "數脈",
+        "代脈",
+        "舌頭鮮紅色",
+        "睡眠障礙",
+        "心悸",
+        "心律不整",
+        "身體容易出汗",
+        "夜間盜汗",
+        "身體發低熱",
+        "口乾口渴"
+      ],
+      "condition_ids": [
+        "cond.hyperthyroidism"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.下焦血瘀",
+      "name_zh": "下焦血瘀",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "抵當湯",
+      "symptoms_zh": [
+        "排尿後有殘尿感",
+        "排尿困難"
+      ],
+      "condition_ids": [
+        "cond.recurrent_uti"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肺氣虛",
+      "name_zh": "肺氣虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "六君子湯",
+      "symptoms_zh": [
+        "細脈",
+        "弱脈",
+        "虛脈",
+        "面色發青",
+        "舌苔淡薄白",
+        "心悸",
+        "大便秘結",
+        "流鼻涕",
+        "鼻子癢",
+        "大便時間較長",
+        "打噴嚏",
+        "面部浮腫"
+      ],
+      "condition_ids": [
+        "cond.overactive_bladder"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.膀胱虛寒",
+      "name_zh": "膀胱虛寒",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "縮泉丸",
+      "symptoms_zh": [
+        "弱脈",
+        "沉脈",
+        "舌苔淡薄白",
+        "面色較黑",
+        "身體消瘦",
+        "耳鳴",
+        "暈眩",
+        "經常疲勞想睡",
+        "夜間頻尿多尿",
+        "夜間遺尿",
+        "頻尿",
+        "手腳冰冷"
+      ],
+      "condition_ids": [
+        "cond.nocturnal_enuresis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.肝膽火盛",
+      "name_zh": "肝膽火盛證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "龍膽瀉肝湯",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.tinnitus"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.腎精虧虛",
+      "name_zh": "腎精虧虛證",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "耳聾左慈丸",
+      "symptoms_zh": [],
+      "condition_ids": [
+        "cond.tinnitus"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.脾胃虛弱",
+      "name_zh": "脾胃虛弱",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "補中益氣湯",
+      "symptoms_zh": [
+        "面色發白",
+        "噯氣",
+        "食後疲倦想睡",
+        "噁心反胃",
+        "手腳冰冷",
+        "鼻塞",
+        "耳鳴",
+        "耳聾",
+        "四肢肌肉萎縮",
+        "味覺減退",
+        "身體消瘦",
+        "打嗝呃逆"
+      ],
+      "condition_ids": [
+        "cond.hearing_loss"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.陰虛火旺",
+      "name_zh": "陰虛火旺",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "知柏地黃丸",
+      "symptoms_zh": [
+        "細脈",
+        "數脈",
+        "面色發紅",
+        "舌頭鮮紅色",
+        "嘴唇紅腫痛",
+        "咽喉有異物感",
+        "小便顏色偏黃",
+        "夜間盜汗",
+        "潮熱",
+        "手心腳心發熱",
+        "身體消瘦",
+        "月經不調"
+      ],
+      "condition_ids": [
+        "cond.globus_pharyngitis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.陰虛",
+      "name_zh": "陰虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "知柏地黃丸",
+      "symptoms_zh": [
+        "細脈",
+        "數脈",
+        "舌上無苔，光滑潔淨",
+        "舌頭發麻",
+        "舌頭鮮紅色",
+        "舌苔乾燥(舌乾)",
+        "嘴中感到鹹鹹的",
+        "牙齒緊閉口張不開",
+        "夜間多夢",
+        "睡眠障礙",
+        "身體消瘦",
+        "夜間盜汗"
+      ],
+      "condition_ids": [
+        "cond.aphthous_ulcers"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.氣陰兩虛",
+      "name_zh": "氣陰兩虛",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "生脈飲",
+      "symptoms_zh": [
+        "虛脈",
+        "沉脈",
+        "芤脈",
+        "細脈",
+        "舌上無苔，光滑潔淨",
+        "舌苔白膩",
+        "舌苔乾燥(舌乾)",
+        "舌紅沒有津液",
+        "舌頭鮮紅色",
+        "氣喘",
+        "嘔吐",
+        "打嗝呃逆"
+      ],
+      "condition_ids": [
+        "cond.aphthous_ulcers"
+      ],
+      "note": ""
+    },
+    {
+      "id": "pat.清陽不升",
+      "name_zh": "清陽不升",
+      "name_en": "",
+      "aliases_zh": [],
+      "formula_zh": "補中益氣湯",
+      "symptoms_zh": [
+        "弱脈",
+        "濡脈",
+        "沉脈",
+        "滑脈",
+        "舌苔白膩",
+        "舌苔淡薄白",
+        "大便溏",
+        "經常疲勞想睡",
+        "手腳冰冷",
+        "怕冷",
+        "耳聾",
+        "耳鳴"
+      ],
+      "condition_ids": [
+        "cond.aphthous_ulcers"
+      ],
+      "note": ""
+    }
+  ]
+}
