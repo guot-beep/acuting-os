@@ -38,6 +38,28 @@ Antigravity 已把 361 穴的欄位填到近 100%,所以這裡的工作**不是�
 | 12 | **禁忌與注意** | `contraindications` `cautions_zh/en` | **必須穴位專屬**,套話 = A8 FAIL |
 | 13 | 來源 | `field_sources` `sources` `visual_links` | 逐欄引用 |
 
+## 2.5 四層分工(Ting 2026-07-27,不可再混)
+
+課件筆記是英文,所以**英文欄承載課件原文**;中文欄是結構化後的版本。
+標籤與全文是**兩層不同的東西**,不可以互相取代:
+
+| 層 | 欄位 | 內容 | 長度 |
+|---|---|---|---|
+| 內容(英) | `functions_en` `indications_en` | Ting 課件原文,照抄不改寫 | 可長 |
+| 內容(中) | `functions_zh` `indications_zh` | 結構化中文,帶配伍 | 可長 |
+| **標籤(中)** | `action_tags_zh` `disease_tags_zh` | **短標籤**,搜尋與篩選 chip 用 | 2–6 字 |
+| **標籤(英)** | `action_tags_en` `disease_tags_en` | 短標籤的英文,查 glossary | 短 |
+| 身分 | `point_identity_zh/en` | 五輸、原絡郄募、八會、交會 | — |
+
+⚠️ **曾經踩過**:整理 LU/LI 時把 `action_tags` 直接設成 `functions`,
+結果 LU1 的病症標籤變成「肺募穴 —— 主一切肺病,尤其實證:咳嗽、喘鳴、哮喘」
+—— 當 chip 沒用,當搜尋詞比原本的「咳嗽」更差。**標籤必須短。**
+
+英文標籤一律查 **`data/config/acupoint_tag_glossary.json`**,不要自己翻,
+否則同一個詞在不同經會有兩種英文,搜尋就散了。glossary 沒有的詞**先加進去**再用;
+該欄寧可整個留空,也不要半翻(半翻會讓後面所有標籤錯位)。
+身分詞(井滎輸經合、原絡郄募)**不可放進 `action_tags`** —— 「募穴」不是穴位做的事。
+
 ## 3. 硬規則(validator 會擋)
 
 - **A4 中英逐項對齊**:`_en` 陣列長度必須等於 `_zh`;不確定就整個留空,**絕不錯位**。
