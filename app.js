@@ -199,6 +199,11 @@ function tungIndexPoint(record) {
     anatomyZh: record.anatomy_zh || "",
     anatomyEn: record.anatomy_en || "",
     channelsZh: record.channels_zh || [],
+    // channels_zh is empty on the 十四經 points; channel_zh is where the value
+    // is. Without this the location block printed the Tung fallback 「相應經絡」
+    // as the channel for every standard point.
+    channelZh: record.channel_zh || "",
+    channelEn: record.channel_en || "",
     needleSensationZh: record.needle_sensation_zh || "",
     applicationZh: record.application_zh || "",
     explanationZh: record.explanation_zh || "",
@@ -2900,7 +2905,14 @@ function renderDetail(point) {
         ${window.AcuTingReview ? window.AcuTingReview.strip("point", point.code, point.reviewStatus) : ""}
         ${examPearlSection(point)}
         ${pointFunctionsSection(point)}
-        ${studySection(contentMode === "english" ? "Indications" : "主治病症", indicationArticle(point), "target")}
+        ${(() => {
+          // 待補 is the right word for a point nobody has filled yet, and the
+          // wrong word for ST17 乳中, which has no indications because it must
+          // never be treated. Drop the section when there is genuinely nothing
+          // rather than printing a placeholder that reads as an omission.
+          const body = indicationArticle(point);
+          return body ? studySection(contentMode === "english" ? "Indications" : "主治病症", body, "target") : "";
+        })()}
         ${pointTagSection(point)}
         ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
@@ -2959,6 +2971,23 @@ const FIVE_SHU_ELEMENT_ZH = { wood: "木", fire: "火", earth: "土", metal: "�
 // point page did the opposite: it opened with 基本介紹 and buried the functions
 // inside the indications section, so the layer worth memorising had no shape.
 
+// Course items often arrive as "headline —— detail list", e.g.
+// 「一切脾胃問題 —— 胃痛、嘔吐、呃逆、腹脹…」 at 47 characters. Rendered flat it
+// is a wall; split on the dash the source already uses and the headline becomes
+// scannable with the detail beneath it.
+function pairedRow(zhText, enText) {
+  const [zhHead, ...zhTail] = String(zhText).split(/\s*(?:——|—|:：)\s*/);
+  const zhDetail = zhTail.join(" — ");
+  const [enHead, ...enTail] = String(enText || "").split(/\s*(?:——|—|:|à)\s*/);
+  const enDetail = enTail.join(" — ");
+  return `<li>
+    <span class="pf-zh">${escapeHtml(zhHead)}</span>
+    ${zhDetail ? `<span class="pf-detail">${escapeHtml(zhDetail)}</span>` : ""}
+    ${enText ? `<span class="pf-en">${escapeHtml(enHead)}</span>` : ""}
+    ${enText && enDetail ? `<span class="pf-detail pf-detail--en">${escapeHtml(enDetail)}</span>` : ""}
+  </li>`;
+}
+
 function pointIdentitySection(point) {
   const zh = point.pointIdentityZh || [];
   const en = point.pointIdentityEn || [];
@@ -3009,7 +3038,7 @@ function pointFunctionsSection(point) {
   if (!zhList.length && !enList.length) return "";
   const aligned = zhList.length === enList.length && zhList.length > 0;
   const rows = aligned
-    ? zhList.map((z, i) => `<li><span class="pf-zh">${escapeHtml(z)}</span><span class="pf-en">${escapeHtml(enList[i])}</span></li>`).join("")
+    ? zhList.map((z, i) => pairedRow(z, enList[i])).join("")
     : [...zhList, ...enList].map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
   return `<section class="study-section point-functions">
     <h3>${contentMode === "english" ? "Functions & Actions" : "功效"}</h3>
@@ -3310,16 +3339,39 @@ function pointLocationArticle(point) {
     ].filter(Boolean).join("\n\n");
   }
 
-  const channelsStr = (point.channelsZh && point.channelsZh.length) ? point.channelsZh.join("、") : (point.channels || "相應經絡");
-  const natureStr = point.functions || (point.action_tags_zh ? point.action_tags_zh.join("、") : "董氏奇穴特色");
-  
-  return [
-    `【代碼 Code】${point.standardCode || point.code}`,
-    `【取穴 Location】${point.location || "董氏奇穴相應部位。"}`,
-    `【歸經 Channels】${channelsStr}`,
-    `【穴性 Actions】${natureStr}`,
-    `【解剖 Anatomy】${point.anatomyZh || formatAnatomy(point.anatomy)}`
-  ].filter(Boolean).join("\n\n");
+  // This block used to repeat the code (already in the hero) and the actions
+  // (now their own section), and it printed the Tung-point fallback 「相應經絡」
+  // as the channel for every 十四經 point because channels_zh is empty on them —
+  // channel_zh is where the value actually lives. Location is what this section
+  // is for, so it leads and is split into landmark / cun / posture rather than
+  // arriving as one sentence.
+  const channelsStr = (point.channelsZh && point.channelsZh.length)
+    ? point.channelsZh.join("、")
+    : (point.channelZh || point.channels || shortMeridian(point) || "");
+
+  // Split the location sentence on its own commas: the first clause is the
+  // region, clauses carrying 寸/指 are the measurement, the rest are landmarks.
+  const locRaw = String(point.location || "").trim();
+  const clauses = locRaw.split(/[，,]/).map((c) => c.trim()).filter(Boolean);
+  const cun = clauses.filter((c) => /[0-9０-９]+\s*寸|橫指|指寬/.test(c));
+  const rest = clauses.filter((c) => !cun.includes(c));
+
+  const parts = [];
+  if (locRaw) {
+    parts.push(`【定位 Location】${locRaw}`);
+    // Only the cun measurement is pulled out — it is the exam-critical part and
+    // easy to lose inside the sentence. A 體表標誌 line was tried too, but it
+    // was just the same sentence minus the cun, so the section said everything
+    // twice.
+    if (cun.length) parts.push(`【骨度分寸】${cun.join("；")}`);
+  } else {
+    parts.push("【定位 Location】待補");
+  }
+  if (point.cunMeasurement) parts.push(`【取穴要點】${point.cunMeasurement}`);
+  if (channelsStr) parts.push(`【歸經 Channel】${channelsStr}${point.region ? `　【部位】${point.region}` : ""}`);
+  const anat = point.anatomyZh || formatAnatomy(point.anatomy);
+  if (anat) parts.push(`【解剖 Anatomy】${anat}`);
+  return parts.join("\n\n");
 }
 
 function indicationArticle(point) {
@@ -3340,7 +3392,7 @@ function indicationArticle(point) {
 
   if (!zh.length && !en.length) return "";
   const rows = aligned
-    ? zh.map((z, i) => `<li><span class="pf-zh">${escapeHtml(z)}</span><span class="pf-en">${escapeHtml(en[i])}</span></li>`).join("")
+    ? zh.map((z, i) => pairedRow(z, en[i])).join("")
     : [...zh, ...(zh.length ? [] : en)].map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
   return `<ol class="point-functions__list${aligned ? " is-paired" : ""}">${rows}</ol>`;
 }
