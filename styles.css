@@ -5503,3 +5503,19 @@ html { scroll-padding-top: 92px; }
   .point-tag--action { background: rgba(22, 163, 74, 0.18); color: #bbf7d0; border-color: rgba(22, 163, 74, 0.4); }
   .point-tag--disease { background: rgba(180, 83, 9, 0.2); color: #fed7aa; border-color: rgba(180, 83, 9, 0.45); }
 }
+
+/* The detail half of a "headline —— detail" item. Kept lighter and slightly
+   indented so the headline carries the scan and the list beneath it reads as
+   support, not as more headlines. */
+.point-functions__list .pf-detail {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.82;
+  padding-left: 0.15rem;
+}
+.point-functions__list .pf-detail--en {
+  font-size: 0.84rem;
+  font-style: italic;
+  opacity: 0.62;
+}
