@@ -5379,12 +5379,7 @@ html { scroll-padding-top: 92px; }
 .exam-star-mark--1 { color: #b45309; }
 .exam-star-mark--2 { color: #b91c1c; }
 
-@media (prefers-color-scheme: dark) {
-  .exam-star--1 { color: #fcd34d; background: rgba(180, 83, 9, 0.22); border-color: #b45309; }
-  .exam-star--2 { color: #fff; background: #dc2626; border-color: #ef4444; }
-  .exam-star-mark--1 { color: #fcd34d; }
-  .exam-star-mark--2 { color: #f87171; }
-}
+
 
 /* .hero-badges span sets a translucent pill for every badge and outranks
    .exam-star on specificity, so the hero variants are stated explicitly.
@@ -5494,15 +5489,7 @@ html { scroll-padding-top: 92px; }
 .point-tag--action { background: #e6f4ea; color: #14532d; border-color: #b7dfc4; }
 .point-tag--disease { background: #fdf0e3; color: #7c3f12; border-color: #f0cfa4; }
 
-@media (prefers-color-scheme: dark) {
-  .point-identity { background: rgba(243, 237, 223, 0.06); border-color: rgba(243, 237, 223, 0.18); }
-  .point-identity__label { color: #f3eddf; }
-  .point-identity-chip { background: #f3eddf; color: #16352f; }
-  .point-exam-pearl { background: rgba(22, 163, 74, 0.14); color: #bbf7d0; }
-  .point-exam-pearl.is-high { background: rgba(185, 28, 28, 0.18); color: #fecaca; }
-  .point-tag--action { background: rgba(22, 163, 74, 0.18); color: #bbf7d0; border-color: rgba(22, 163, 74, 0.4); }
-  .point-tag--disease { background: rgba(180, 83, 9, 0.2); color: #fed7aa; border-color: rgba(180, 83, 9, 0.45); }
-}
+
 
 /* The detail half of a "headline —— detail" item. Kept lighter and slightly
    indented so the headline carries the scan and the list beneath it reads as
@@ -5519,3 +5506,15 @@ html { scroll-padding-top: 92px; }
   font-style: italic;
   opacity: 0.62;
 }
+
+/* Bilingual tag chip: 中文 leads, English underneath. Both are always shown —
+   the English tag set exists so board study and search work in English, and
+   hiding it behind a page-wide language toggle made it unreachable. */
+.point-tag { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.25; }
+.point-tag .pt-zh { font-weight: 600; }
+.point-tag .pt-en { font-size: 0.74rem; opacity: 0.72; }
+
+/* The mechanism half of a pairing card. Previously appended into the card text
+   as raw markup, which the escaping then printed on screen verbatim. */
+.tung-comb-principle { margin: 0.5rem 0 0; font-size: 0.92rem; line-height: 1.6; }
+.comb-principle-title { font-weight: 800; margin-right: 0.35em; }
