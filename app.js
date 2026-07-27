@@ -128,6 +128,10 @@ function adapt361Record(record) {
     cautions: cleanCautions.join("\n"),
     techniqueNotes: needling361Text(record.needling),
     nccaomHighYield: record.nccaom_high_yield || [],
+    // Board emphasis, read off the curriculum's own asterisks (2 = **, 1 = *).
+    // See scripts/mark-exam-stars.js — never hand-set, so the badge always
+    // traces back to a page Ting can open.
+    examStar: Number(record.exam_star) || 0,
     clinicalPearls: record.clinical_pearls || [],
     acumethodZh: record.acumethod_zh || "",
     moxaZh: record.moxa_zh || "",
@@ -588,16 +592,40 @@ function unifiedSearch(rawQuery) {
   };
 }
 
-function grItem(kind, kindLabel, code, name, sub, data) {
+// `name` is escaped, so callers cannot smuggle markup through it — that is the
+// right default for record text. `nameHtml` is the deliberate exception for
+// markup this file builds itself (the exam star, the English-name <small>);
+// anything interpolated into it must already be escaped at the call site.
+// Before nameHtml existed, callers passed raw tags through `name` and users saw
+// literal "<small>Lie Que</small>" in the results.
+function grItem(kind, kindLabel, code, name, sub, data, nameHtml) {
   const attrs = Object.entries(data).map(([k, v]) => `data-${k}="${escapeHtml(String(v))}"`).join(" ");
   return `<button type="button" class="gr-item" data-kind="${kind}" ${attrs}>
     ${code ? `<span class="gr-item__code">${escapeHtml(code)}</span>` : `<span class="gr-item__code"></span>`}
     <span class="gr-item__main">
-      <span class="gr-item__name">${escapeHtml(name)}</span>
+      <span class="gr-item__name">${nameHtml || escapeHtml(name)}</span>
       ${sub ? `<span class="gr-item__sub">${escapeHtml(sub)}</span>` : ""}
     </span>
     <span class="gr-kind">${escapeHtml(kindLabel)}</span>
   </button>`;
+}
+
+// Board-exam emphasis, straight from the course tables: ** is the teacher's
+// strong mark, * is emphasis. Two levels, not a boolean, because the ** points
+// (LU7, LI4, ST36, SP6, PC6, LR3 …) are the ones worth spotting from across the
+// page. Title text names the source so the marker is never mystery styling.
+function examStarLabel(n) {
+  return n >= 2 ? "課件標記 ★★ 重點中的重點 (board high-yield)" : "課件標記 ★ 考試重點 (board key point)";
+}
+function examStarBadge(point) {
+  const n = Number(point && point.examStar) || 0;
+  if (!n) return "";
+  return `<span class="exam-star exam-star--${n}" title="${escapeAttribute(examStarLabel(n))}">${n >= 2 ? "★★" : "★"} ${n >= 2 ? "考試重點" : "考點"}</span>`;
+}
+function examStarMark(point) {
+  const n = Number(point && point.examStar) || 0;
+  if (!n) return "";
+  return `<span class="exam-star-mark exam-star-mark--${n}" title="${escapeAttribute(examStarLabel(n))}">${n >= 2 ? "★★" : "★"}</span>`;
 }
 
 function renderGlobalResults(rawQuery) {
@@ -615,8 +643,9 @@ function renderGlobalResults(rawQuery) {
   };
 
   group("穴位 Acupoints", res.points, (p) =>
-    grItem("point", "穴位", p.code, `${p.nameZh || ""} ${p.nameEn ? `<small>${escapeHtml(p.nameEn)}</small>` : ""}`.trim(),
-      [p.meridian, p.region].filter(Boolean).join(" · "), { code: p.code }));
+    grItem("point", "穴位", p.code, p.nameZh || "",
+      [p.meridian, p.region].filter(Boolean).join(" · "), { code: p.code },
+      `${examStarMark(p)}${escapeHtml(p.nameZh || "")}${p.nameEn ? ` <small>${escapeHtml(p.nameEn)}</small>` : ""}`));
   group("方劑 Formulas", res.formulas, (f) =>
     grItem("formula", "方劑", "", `${f.name_zh || f.name_en || f.id}`,
       [f.name_en, f.category_zh || f.category].filter(Boolean).join(" · "), { id: f.id }));
@@ -2834,6 +2863,7 @@ function renderDetail(point) {
               <div class="hero-badges">
                 <span>${escapeHtml(contentMode === "english" ? shortMeridianEn(point) : shortMeridian(point))}</span>
                 <span>${escapeHtml(point.code)}</span>
+                ${examStarBadge(point)}
               </div>
               <h2>${escapeHtml(point.nameZh || point.nameEn)}</h2>
               <p>${escapeHtml(heroSubtitle(point))}</p>
@@ -2930,7 +2960,7 @@ function relatedPointButton(item, meta) {
   return `
     <button type="button" class="related-point-action" data-related-point="${escapeAttribute(item.code)}" aria-label="${escapeAttribute(`${actionLabel}: ${label} ${item.code}`)}">
       <span class="related-point-main">
-        <strong>${escapeHtml(label)}</strong>
+        <strong>${examStarMark(item)}${escapeHtml(label)}</strong>
         <small>${escapeHtml(meta || item.code)}</small>
       </span>
       <span class="related-point-open">${escapeHtml(actionLabel)}</span>
