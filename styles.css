@@ -5400,3 +5400,106 @@ html { scroll-padding-top: 92px; }
   background: #dc2626;
   border-color: #fca5a5;
 }
+
+/* ── Point card: identity, exam pearl, functions, tags ──────────────────────
+   The point page opened with 基本介紹 and buried the functions inside the
+   indications block, so the layer worth memorising had no shape. These four
+   blocks give it the herb card's order: identity and exam value first, detail
+   after. */
+
+/* Sits directly under the structured category badges as one continuous
+   identity strip, so the page has a single place that answers "what kind of
+   point is this". */
+.point-identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: -0.35rem 0 1rem;
+  padding: 0 0.15rem;
+}
+.point-identity__label {
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: #16352f;
+  opacity: 0.72;
+}
+.point-identity__chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.point-identity-chip {
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  background: #16352f;
+  color: #f3eddf;
+}
+/* A prohibition in the identity list is a warning, not a badge — ST17's
+   「絕對禁針禁灸」 must never read like 「合穴」. */
+.point-identity-chip.is-danger {
+  background: #b91c1c;
+  color: #fff;
+  box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.22);
+}
+
+.point-exam-pearl {
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1.1rem;
+  background: #f0fdf4;
+  border-left: 5px solid #16a34a;
+  border-radius: 8px;
+  color: #14532d;
+}
+.point-exam-pearl.is-high {
+  background: #fef2f2;
+  border-left-color: #b91c1c;
+  color: #7f1d1d;
+}
+.point-exam-pearl h3 { margin: 0 0 0.4rem; font-size: 0.98rem; font-weight: 800; }
+.point-exam-pearl .pep-body { margin: 0 0 0.4rem; line-height: 1.65; }
+.point-exam-pearl .pep-scope { margin: 0; font-size: 0.84rem; opacity: 0.78; }
+
+.point-functions__list { margin: 0; padding-left: 1.35rem; }
+.point-functions__list li { margin-bottom: 0.45rem; line-height: 1.6; }
+.point-functions__list .pf-zh { font-weight: 700; }
+/* Paired rows put the course's English under the 中文 reading of it, which is
+   the whole reason the two layers are kept separate. */
+.point-functions__list.is-paired li { display: flex; flex-direction: column; gap: 0.1rem; }
+.point-functions__list.is-paired .pf-en {
+  font-size: 0.88rem;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.point-tags__group { margin-bottom: 0.75rem; }
+.point-tags__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  margin-bottom: 0.35rem;
+}
+.point-tags__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.point-tag {
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.24rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform 0.08s ease;
+}
+.point-tag:hover, .point-tag:focus-visible { transform: translateY(-1px); outline: none; }
+.point-tag--action { background: #e6f4ea; color: #14532d; border-color: #b7dfc4; }
+.point-tag--disease { background: #fdf0e3; color: #7c3f12; border-color: #f0cfa4; }
+
+@media (prefers-color-scheme: dark) {
+  .point-identity { background: rgba(243, 237, 223, 0.06); border-color: rgba(243, 237, 223, 0.18); }
+  .point-identity__label { color: #f3eddf; }
+  .point-identity-chip { background: #f3eddf; color: #16352f; }
+  .point-exam-pearl { background: rgba(22, 163, 74, 0.14); color: #bbf7d0; }
+  .point-exam-pearl.is-high { background: rgba(185, 28, 28, 0.18); color: #fecaca; }
+  .point-tag--action { background: rgba(22, 163, 74, 0.18); color: #bbf7d0; border-color: rgba(22, 163, 74, 0.4); }
+  .point-tag--disease { background: rgba(180, 83, 9, 0.2); color: #fed7aa; border-color: rgba(180, 83, 9, 0.45); }
+}
