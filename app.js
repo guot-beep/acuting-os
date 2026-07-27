@@ -3060,13 +3060,15 @@ function pointTagSection(point) {
     ["disease", contentMode === "english" ? "Condition tags" : "病症標籤", point.diseaseTagsZh, point.diseaseTagsEn]
   ];
   const html = groups.map(([kind, label, zh, en]) => {
-    const list = contentMode === "english" ? (en && en.length ? en : zh) : zh;
-    if (!list || !list.length) return "";
-    const chips = list.map((t, i) => {
-      // Search the 中文 term even in English mode: the index is richer on that
-      // side, and the button still shows whatever language is on screen.
-      const term = (zh && zh[i]) || t;
-      return `<button type="button" class="point-tag point-tag--${kind}" data-search-term="${escapeAttribute(term)}">${escapeHtml(t)}</button>`;
+    if (!zh || !zh.length) return "";
+    // Both languages on every chip. Showing one at a time meant the English tag
+    // set — which exists precisely so board study and search work in English —
+    // was invisible unless the whole page was switched.
+    const chips = (zh || []).map((z, i) => {
+      const enText = en && en[i] ? en[i] : "";
+      return `<button type="button" class="point-tag point-tag--${kind}" data-search-term="${escapeAttribute(z)}">
+        <span class="pt-zh">${escapeHtml(z)}</span>${enText ? `<span class="pt-en">${escapeHtml(enText)}</span>` : ""}
+      </button>`;
     }).join("");
     return `<div class="point-tags__group"><span class="point-tags__label">${escapeHtml(label)}</span><div class="point-tags__chips">${chips}</div></div>`;
   }).join("");
@@ -3466,7 +3468,13 @@ function parseAnyCombinationTextToCards(rawText) {
     if (isPrinciple && currentCard) {
       // MERGE INTO PREVIOUS CARD! DO NOT CREATE SEPARATE CARD!
       const principleText = line.replace(/^(?:原理|機制|解析|說明|按語|方義)[：:\s]*/, '').trim();
-      currentCard.text += `<br><span class="comb-principle-title">【原理與機制】</span>${principleText}`;
+      // Store it as its own field. Appending markup into `text` meant
+      // highlightCombineText's escapeHtml then escaped the tags this line had
+      // just written, and every pairing card rendered a literal
+      // `<br><span class="comb-principle-title">【原理與機制】</span>` on screen.
+      currentCard.principle = currentCard.principle
+        ? `${currentCard.principle} ${principleText}`
+        : principleText;
       return;
     }
 
@@ -3528,6 +3536,7 @@ function combinePointsSection(point) {
         <div class="tung-comb-card">
           <h4 class="tung-comb-title">${escapeHtml(c.title || "配穴組合")}</h4>
           <p class="tung-comb-text">${highlightCombineText(c.text)}</p>
+          ${c.principle ? `<p class="tung-comb-principle"><span class="comb-principle-title">${contentMode === "english" ? "Mechanism" : "【原理與機制】"}</span>${highlightCombineText(c.principle)}</p>` : ""}
         </div>
       `).join("")
     }</div>`;
