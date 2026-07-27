@@ -20,6 +20,7 @@
  *   A7 template-grade record has no needling text containing a number
  *      (depth/angle is safety-critical — never leave it prose-only)
  *   A8 template-grade record still carries shared boilerplate contraindications
+ *   A9 an existing content field (配穴 / 臨床要點) was emptied — never delete
  *
  * WORKLIST — `--worklist` lists the actual point codes behind the numbers,
  * grouped by channel (batches run one channel at a time).
@@ -135,6 +136,20 @@ for (const r of recs) {
     flag(r, "針法缺具體深度/角度數字");
     if (isTemplate) errors.push(`A7 ${id}: needling has no numeric depth/angle (safety-critical)`);
   }
+  // A9 — Ting's rule that the existing content must survive the rewrite:
+  // 「配穴的地方肯定是需要的…但這部分不能刪掉」. All 361 points carry
+  // combine_points_zh and clinical_pearls today, so an empty one can only mean
+  // a pass removed it. Enforced for every record, not just template-grade,
+  // because deletion is exactly what an unfinished pass does.
+  for (const [f, label] of [["combine_points_zh", "配穴"], ["clinical_pearls", "臨床要點"]]) {
+    const v = r[f];
+    const empty = Array.isArray(v) ? v.length === 0 : !String(v || "").trim();
+    if (empty) {
+      flag(r, `${label}(${f})被清空 —— 既有內容不可刪除`);
+      errors.push(`A9 ${id}: ${f} is empty — existing content must not be deleted (${label})`);
+    }
+  }
+
   const bp = arr(r.contraindications).filter((v) => BOILERPLATE.has(String(v).trim()));
   if (bp.length) {
     boilerplateHits++;
