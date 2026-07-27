@@ -106,7 +106,8 @@
 | `12 LIVER CHANNEL OF FOOT JUE YIN.pdf` | 715 KB | ⚠️ 待抽文字 |
 | `13 CONCEPTION VESSEL (REN CHANNEL).pdf` | 1.7 MB | ⚠️ 待抽文字 |
 | `14 DU CHANNEL (GOVERNING VESSEL).pdf` | 1.0 MB | ⚠️ 待抽文字 |
-| `2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf` | 772 KB | ⚠️ 待抽文字 |
+| `2 LARGE INTESTINE CHANNEL OF HAND YANG MING.md` | 14 KB | ✅ 本身是文字 |
+| `2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf` | 772 KB | ✅ |
 | `3 STOMACH CHANNEL OF FOOT YANG MING.pdf` | 1.3 MB | ⚠️ 待抽文字 |
 | `4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf` | 788 KB | ⚠️ 待抽文字 |
 | `5 HEART CHANNEL OF HAND SHAO YIN.pdf` | 455 KB | ⚠️ 待抽文字 |
@@ -156,10 +157,12 @@ _(空)_
 
 | 檔案 | 大小 | 文字版 |
 |---|---|---|
+| `January 2026 BIO Exam Content Outline with Bibliography-2.pdf` | 231 KB | ⚠️ 待抽文字 |
 | `NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md` | 10 KB | ✅ 本身是文字 |
 | `NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf` | 165 KB | ✅ |
 | `NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md` | 38 KB | ✅ 本身是文字 |
 | `NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf` | 284 KB | ✅ |
+| `NCBAHM_FOM_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf` | 155 KB | ⚠️ 待抽文字 |
 
 ## 總計
 
@@ -167,14 +170,14 @@ _(空)_
 |---|---|---|
 | herbs | 68 | 1 |
 | formulas | 10 | — |
-| acupoints | 21 | 19 |
+| acupoints | 22 | 18 |
 | conditions | 2 | — |
 | cases | 1 | 1 |
 | lifestyle | 2 | — |
 | theory | 2 | 1 |
 | western | 0 | — |
-| board | 4 | — |
-| **合計** | **110** | **22** |
+| board | 6 | 2 |
+| **合計** | **113** | **23** |
 
 ### ⚠️ 這些檔還沒有可用的文字版
 
@@ -190,7 +193,6 @@ _(空)_
 - `acupoints/12 LIVER CHANNEL OF FOOT JUE YIN.pdf`
 - `acupoints/13 CONCEPTION VESSEL (REN CHANNEL).pdf`
 - `acupoints/14 DU CHANNEL (GOVERNING VESSEL).pdf`
-- `acupoints/2 LARGE INTESTINE CHANNEL OF HAND YANG MING.pdf`
 - `acupoints/3 STOMACH CHANNEL OF FOOT YANG MING.pdf`
 - `acupoints/4 SPLEEN CHANNEL OF FOOT TAI YIN.pdf`
 - `acupoints/5 HEART CHANNEL OF HAND SHAO YIN.pdf`
@@ -206,4 +208,6 @@ _(空)_
 - `acupoints/Techniques 3 Quizzes.docx`
 - `cases/Case Study Chenoweth.docx`
 - `theory/Medical Chinese 1 Notes.pdf`
+- `board/January 2026 BIO Exam Content Outline with Bibliography-2.pdf`
+- `board/NCBAHM_FOM_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf`
 
