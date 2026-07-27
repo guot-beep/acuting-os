@@ -164,7 +164,20 @@ console.log(`validate-acupoint-standard: ${recs.length} points (${templateGrade}
 console.log(`  中英未對齊 misaligned pairs      ${misaligned}`);
 console.log(`  缺英文陣列 missing _en arrays     ${missingEnAny}`);
 console.log(`  功效 2-8 條 curated               ${inRange}/${recs.length}  (max ${Math.max(...funcCounts)})`);
+// Linking layer (template §6.5). Reported, never blocking: these are fields
+// Ting will fill as her 中醫/西醫 notes come in, so an empty one is a known gap,
+// not a defect. Showing the coverage keeps the gap visible instead of forgotten.
+const linked = {
+  conditions: recs.filter((r) => arr(r.related_conditions).length).length,
+  patterns: recs.filter((r) => arr(r.tcm_pattern_ids).length).length,
+  compare: recs.filter((r) => arr(r.compare_with).length).length
+};
 console.log(`  共用套話禁忌 boilerplate safety   ${boilerplateHits}  (${BOILERPLATE.size} distinct shared strings)`);
+
+console.log(`\n連接層(§6.5，待補不擋):`);
+console.log(`  病證連結 related_conditions     ${linked.conditions}/${recs.length}`);
+console.log(`  證候連結 tcm_pattern_ids        ${linked.patterns}/${recs.length}`);
+console.log(`  複習對比 compare_with           ${linked.compare}/${recs.length}`);
 
 if (WORKLIST) {
   let rows = [...defects.values()];

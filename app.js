@@ -593,8 +593,15 @@ function unifiedSearch(rawQuery) {
   };
 
   return {
+    // Tags are kept short precisely so they can be searched and joined, but the
+    // point index never included them — the 151 restored/translated tags were
+    // unreachable from search, which defeats the reason for keeping them short.
+    // 別名 and the 特定穴 identity were missing too: 「合谷」 is also 虎口, and
+    // 「郄穴」 is how you look for the acute-condition points.
     points: pick(points, (p) => [p.code, p.nameZh, p.nameEn, p.pinyin, p.meridian, p.region,
-      txt(p.functions), txt(p.patterns)]),
+      txt(p.functions), txt(p.patterns), txt(p.functionsEn),
+      txt(p.actionTagsZh), txt(p.actionTagsEn), txt(p.diseaseTagsZh), txt(p.diseaseTagsEn),
+      txt(p.pointIdentityZh), txt(p.pointIdentityEn), txt(p.otherNamesZh)]),
     formulas: pick(knowledgeRecords("formulas"), (f) => [f.name_zh, f.name_en, f.pinyin, f.id,
       f.category_zh, f.category, txt(f.pattern_indications_zh), txt(f.composition)]),
     herbs: pick(knowledgeRecords("herbs"), (h) => [h.name_zh, h.name_en, h.pinyin, h.id, h.category,

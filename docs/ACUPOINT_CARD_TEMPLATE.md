@@ -201,6 +201,69 @@ CloudTCM 搬來的敘述,已渲染成「常用配穴與臨床應用」卡片。*
 
 ---
 
+## 6.5 連接層(複習 / 病例 / 搜尋)—— Ting 定案 2026-07-27
+
+卡片不只是拿來讀的,還要能**複習、連病例、被搜到**。這三件事各需要一個欄位,
+現在**先把欄位與頁面位置定下來,資料可以留空,以後補**。
+
+### (A) 搜尋契約 —— 已完成
+
+穴位搜尋**必須**索引下列欄位。標籤保持短的理由就是為了被搜到與被連接,
+如果不索引,短標籤就沒有意義:
+
+```
+code · chinese · name_en · pinyin · channel · region
+functions_zh · functions_en · indications_zh
+action_tags_zh/en · disease_tags_zh/en      ← 短標籤
+point_identity_zh/en                          ← 「郄穴」「八脈交會」搜得到
+other_names_zh                                ← 別名，「虎口」找得到合谷
+```
+
+⚠️ 曾經漏掉:標籤、身分、別名都不在索引裡,所以辛苦翻譯的 151 個標籤
+搜尋搜不到,「郄穴」「八脈交會」「虎口」全部 0 筆。新增可搜欄位時要同步更新
+`app.js` 的 `unifiedSearch` 與這份清單。
+
+### (B) 病例連接 —— 兩套詞彙都掛(Ting 定案)
+
+| 欄位 | 指向 | 現況 |
+|---|---|---|
+| `related_conditions` | `data/pathology/condition_canon_shortlist.json` 的 `cond.*` | **待補** |
+| `tcm_pattern_ids` | `data/config/tcm_pattern_canon.json` 的 `pat.*` | **待補** |
+
+**為什麼兩套都要**:病例寫的是主訴與西醫病名(方便從病例找穴),但推理路徑是
+**病 → 證 → 穴**。只掛病名會失去辨證層;只掛證候則從病例查不到。
+
+中醫證候 canon **已經建好**:`data/config/tcm_pattern_canon.json`,140 個證候,
+由 `scripts/build-tcm-pattern-canon.js` 從病證庫既有的 `tcm_patterns` 抽出,
+每個帶代表方與關聯病證。**英文名全部留空** —— 沒來源不翻譯,等 Ting 的
+中醫/西醫筆記進來再補。其中 **25 個是方證不是證候**(桂枝湯證、小柴胡湯證…),
+已在 `note` 標註,待 Ting 決定是否改掛方劑。
+
+⚠️ **代碼格式不一致**:病證庫的敘述文字寫 `SP08`、`SP06`、`DU04`,
+穴位庫是 `SP8`、`SP6`、`GV4`。**直接 join 會全部落空** —— 建連結時必須先正規化
+(去前導零、DU→GV、REN→CV、UB→BL、SJ→TE、KD→KI、LV→LR)。
+
+### (C) 複習對比 —— `compare_with`
+
+考點裡最有用的是**對比**,但現在是散文,App 無法生對照表也搜不到:
+
+> 「頭痛分經:白芷走陽明,羌活走太陽,藁本走巔頂,川芎走少陽。」
+
+目標欄位(**只在有對比價值的穴填,不強制**):
+
+```json
+"compare_with": [
+  { "codes": ["LU5", "LU10"], "axis": "清熱緩急", "note": "LU10 偏清而急主咽痛；LU5 偏降而廣主水道與痹痛" },
+  { "codes": ["ST37", "ST39"], "axis": "下合穴分工", "note": "上巨虛主大腸、下巨虛主小腸" }
+]
+```
+
+現況:LU/LI/ST 76 穴的對比都寫在 `exam_pearl` 散文裡。**先不強制抽取** ——
+等考點寫得夠多再回頭結構化,現在強制填會變成為填而填。
+
+**驗證**:三項都由 `validate-acupoint-standard.js` **報告而不擋**
+(覆蓋率會列在摘要),因為它們是「以後補」而不是「現在缺」。
+
 ## 7. 批次順序與開工
 
 照經絡,一次一條:
