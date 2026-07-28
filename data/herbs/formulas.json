@@ -358,7 +358,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:19.661Z",
       "tags_source_url": "https://cloudtcm.com/formula/2",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.gui_zhi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/2",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -370,8 +370,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 2
     },
     {
       "id": "formula.ma_huang_tang",
@@ -614,7 +618,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:19.980Z",
       "tags_source_url": "https://cloudtcm.com/formula/1",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ma_huang_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/1",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "field_sources": {
         "in_formula_zh": [
@@ -694,6 +698,9 @@
         ],
         "administration_en": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
       "on_board_list": true,
@@ -814,7 +821,8 @@
         "Antibacterial, antiviral"
       ],
       "administration_zh": "熱服，以助發汗。得汗即停後服。",
-      "administration_en": "taken hot to induce sweating"
+      "administration_en": "taken hot to induce sweating",
+      "cloudtcm_id": 1
     },
     {
       "id": "formula.xiao_qing_long_tang",
@@ -1098,7 +1106,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:43.953Z",
       "tags_source_url": "https://cloudtcm.com/formula/41",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xiao_qing_long_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/41",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Minor Bluegreen Dragon Decoction",
@@ -1109,8 +1117,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 41
     },
     {
       "id": "formula.jiu_wei_qiang_huo_tang",
@@ -1354,15 +1366,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:34.571Z",
       "tags_source_url": "https://cloudtcm.com/formula/9",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.jiu_wei_qiang_huo_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/9",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 9
     },
     {
       "id": "formula.yin_qiao_san",
@@ -1656,7 +1672,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:20.306Z",
       "tags_source_url": "https://cloudtcm.com/formula/271",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.yin_qiao_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/271",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -1668,8 +1684,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 271
     },
     {
       "id": "formula.sang_ju_yin",
@@ -1993,7 +2013,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:20.615Z",
       "tags_source_url": "https://cloudtcm.com/formula/162",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.sang_ju_yin",
+      "cloudtcm_url": "https://cloudtcm.com/formula/162",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -2005,8 +2025,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 162
     },
     {
       "id": "formula.xiang_su_san",
@@ -2108,8 +2132,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/317",
+      "cloudtcm_id": 317
     },
     {
       "id": "formula.jing_fang_bai_du_san",
@@ -2270,8 +2299,13 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/183",
+      "cloudtcm_id": 183
     },
     {
       "id": "formula.chai_ge_jie_ji_tang",
@@ -2418,8 +2452,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/173",
+      "cloudtcm_id": 173
     },
     {
       "id": "formula.ge_gen_tang",
@@ -2495,8 +2534,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/260",
+      "cloudtcm_id": 260
     },
     {
       "id": "formula.sheng_ma_ge_gen_tang",
@@ -2572,8 +2616,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/57",
+      "cloudtcm_id": 57
     },
     {
       "id": "formula.cang_er_zi_san",
@@ -2675,8 +2724,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/269",
+      "cloudtcm_id": 269
     },
     {
       "id": "formula.ren_shen_bai_du_san",
@@ -2752,8 +2806,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/12",
+      "cloudtcm_id": 12
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -3090,7 +3149,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:27.725Z",
       "tags_source_url": "https://cloudtcm.com/formula/98",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.bai_hu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/98",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "White Tiger Decoction",
@@ -3101,8 +3160,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 98
     },
     {
       "id": "formula.zhu_ye_shi_gao_tang",
@@ -3355,7 +3418,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:48.358Z",
       "tags_source_url": "https://cloudtcm.com/formula/108",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhu_ye_shi_gao_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/108",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Lophatherum and Gypsum Decoction",
@@ -3366,8 +3429,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 108
     },
     {
       "id": "formula.huang_lian_jie_du_tang",
@@ -3578,7 +3645,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:33.665Z",
       "tags_source_url": "https://cloudtcm.com/formula/244",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.huang_lian_jie_du_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/244",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Coptis Decoction to Resolve Toxicity",
@@ -3589,8 +3656,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 244
     },
     {
       "id": "formula.xie_xin_tang",
@@ -3723,8 +3794,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/204",
+      "cloudtcm_id": 204
     },
     {
       "id": "formula.qing_ying_tang",
@@ -3797,7 +3873,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.qing_ying_tang",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Clear the Nutritive Level Decoction",
@@ -3882,7 +3957,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xi_jiao_di_huang_tang",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -4089,7 +4163,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:33.386Z",
       "tags_source_url": "https://cloudtcm.com/formula/306",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.huang_lian_e_jiao_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/306",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Coptis and Ass-Hide Gelatin Decoction",
@@ -4100,8 +4174,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 306
     },
     {
       "id": "formula.dao_chi_san",
@@ -4288,7 +4366,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:30.988Z",
       "tags_source_url": "https://cloudtcm.com/formula/281",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.dao_chi_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/281",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Guide Out the Red Powder",
@@ -4299,8 +4377,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 281
     },
     {
       "id": "formula.long_dan_xie_gan_tang",
@@ -4706,7 +4788,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:24.940Z",
       "tags_source_url": "https://cloudtcm.com/formula/286",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.long_dan_xie_gan_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/286",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -4718,8 +4800,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 286
     },
     {
       "id": "formula.qing_wei_san",
@@ -4914,7 +5000,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:37.010Z",
       "tags_source_url": "https://cloudtcm.com/formula/211",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.qing_wei_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/211",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Clear the Stomach Powder",
@@ -4925,8 +5011,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 211
     },
     {
       "id": "formula.xie_bai_san",
@@ -4992,8 +5082,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/295",
+      "cloudtcm_id": 295
     },
     {
       "id": "formula.yu_nv_jian",
@@ -5055,8 +5150,13 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/82",
+      "cloudtcm_id": 82
     },
     {
       "id": "formula.shao_yao_tang",
@@ -5132,8 +5232,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/119",
+      "cloudtcm_id": 119
     },
     {
       "id": "formula.bai_tou_weng_tang",
@@ -5199,8 +5304,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/97",
+      "cloudtcm_id": 97
     },
     {
       "id": "formula.qing_hao_bie_jia_tang",
@@ -5390,7 +5500,7 @@
       "tags_fetched_at": "2026-07-23T07:43:36.703Z",
       "tags_source_url": "https://cloudtcm.com/formula/567",
       "syndromes_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.qing_hao_bie_jia_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/567",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Sweet Wormwood and Soft-shelled Turtle Shell Decoction",
@@ -5401,8 +5511,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 567
     },
     {
       "id": "formula.qing_gu_san",
@@ -5545,8 +5659,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/253",
+      "cloudtcm_id": 253
     },
     {
       "id": "formula.liu_yi_san",
@@ -5641,8 +5760,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/53",
+      "cloudtcm_id": 53
     },
     {
       "id": "formula.wu_wei_xiao_du_yin",
@@ -5983,7 +6107,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:30.120Z",
       "tags_source_url": "https://cloudtcm.com/formula/32",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.da_cheng_qi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/32",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Major Order the Qi Decoction",
@@ -5994,8 +6118,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 32
     },
     {
       "id": "formula.xiao_cheng_qi_tang",
@@ -6223,7 +6351,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:42.915Z",
       "tags_source_url": "https://cloudtcm.com/formula/40",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xiao_cheng_qi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/40",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Minor Order the Qi Decoction",
@@ -6234,8 +6362,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 40
     },
     {
       "id": "formula.tiao_wei_cheng_qi_tang",
@@ -6428,7 +6560,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:40.763Z",
       "tags_source_url": "https://cloudtcm.com/formula/277",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.tiao_wei_cheng_qi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/277",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Regulate the Stomach and Order the Qi Decoction",
@@ -6439,8 +6571,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 277
     },
     {
       "id": "formula.zeng_ye_cheng_qi_tang",
@@ -6506,8 +6642,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/557",
+      "cloudtcm_id": 557
     },
     {
       "id": "formula.da_huang_mu_dan_tang",
@@ -6836,7 +6977,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:35.438Z",
       "tags_source_url": "https://cloudtcm.com/formula/222",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ma_zi_ren_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/222",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Hemp Seed Pill",
@@ -6847,8 +6988,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 222
     },
     {
       "id": "formula.run_chang_wan",
@@ -6914,8 +7059,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/278",
+      "cloudtcm_id": 278
     },
     {
       "id": "formula.ji_chuan_jian",
@@ -6977,8 +7127,13 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/559",
+      "cloudtcm_id": 559
     },
     {
       "id": "formula.xiao_chai_hu_tang",
@@ -7262,7 +7417,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:21.282Z",
       "tags_source_url": "https://cloudtcm.com/formula/43",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xiao_chai_hu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/43",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -7274,8 +7429,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 43
     },
     {
       "id": "formula.da_chai_hu_tang",
@@ -7510,7 +7669,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:29.830Z",
       "tags_source_url": "https://cloudtcm.com/formula/35",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.da_chai_hu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/35",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Major Bupleurum Decoction",
@@ -7521,8 +7680,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 35
     },
     {
       "id": "formula.chai_hu_gui_zhi_tang",
@@ -7598,8 +7761,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/170",
+      "cloudtcm_id": 170
     },
     {
       "id": "formula.xiao_yao_san",
@@ -7905,7 +8073,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:21.591Z",
       "tags_source_url": "https://cloudtcm.com/formula/219",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xiao_yao_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/219",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -7917,8 +8085,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 219
     },
     {
       "id": "formula.jia_wei_xiao_yao_san",
@@ -8301,7 +8473,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:21.896Z",
       "tags_source_url": "https://cloudtcm.com/formula/65",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.jia_wei_xiao_yao_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/65",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -8313,8 +8485,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 65
     },
     {
       "id": "formula.tong_xie_yao_fang",
@@ -8534,7 +8710,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:41.051Z",
       "tags_source_url": "https://cloudtcm.com/formula/563",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.tong_xie_yao_fang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/563",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Important Formula for Painful Diarrhea",
@@ -8545,8 +8721,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 563
     },
     {
       "id": "formula.ban_xia_xie_xin_tang",
@@ -8818,7 +8998,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:25.215Z",
       "tags_source_url": "https://cloudtcm.com/formula/67",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ban_xia_xie_xin_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/67",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -8830,8 +9010,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 67
     },
     {
       "id": "formula.li_zhong_wan",
@@ -8902,7 +9086,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.li_zhong_wan",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Regulate the Middle Pill",
@@ -9237,7 +9420,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:43.500Z",
       "tags_source_url": "https://cloudtcm.com/formula/39",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xiao_jian_zhong_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/39",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Minor Construct the Middle Decoction",
@@ -9248,8 +9431,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 39
     },
     {
       "id": "formula.huang_qi_jian_zhong_tang",
@@ -9513,7 +9700,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:39.267Z",
       "tags_source_url": "https://cloudtcm.com/formula/483",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.si_ni_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/483",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Frigid Extremities Decoction",
@@ -9524,8 +9711,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 483
     },
     {
       "id": "formula.shen_fu_tang",
@@ -9591,8 +9782,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/568",
+      "cloudtcm_id": 568
     },
     {
       "id": "formula.wu_zhu_yu_tang",
@@ -9824,7 +10020,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:42.631Z",
       "tags_source_url": "https://cloudtcm.com/formula/111",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.wu_zhu_yu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/111",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Evodia Decoction",
@@ -9835,8 +10031,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 111
     },
     {
       "id": "formula.dang_gui_si_ni_tang",
@@ -10062,7 +10262,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:30.701Z",
       "tags_source_url": "https://cloudtcm.com/formula/256",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.dang_gui_si_ni_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/256",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Tangkuei Decoction for Frigid Extremities",
@@ -10073,8 +10273,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 256
     },
     {
       "id": "formula.si_jun_zi_tang",
@@ -10289,7 +10493,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:22.213Z",
       "tags_source_url": "https://cloudtcm.com/formula/75",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.si_jun_zi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/75",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -10301,8 +10505,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 75
     },
     {
       "id": "formula.liu_jun_zi_tang",
@@ -10575,7 +10783,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:22.518Z",
       "tags_source_url": "https://cloudtcm.com/formula/54",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.liu_jun_zi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/54",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -10587,8 +10795,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 54
     },
     {
       "id": "formula.xiang_sha_liu_jun_zi_tang",
@@ -10654,8 +10866,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/150",
+      "cloudtcm_id": 150
     },
     {
       "id": "formula.shen_ling_bai_zhu_san",
@@ -11037,7 +11254,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:37.871Z",
       "tags_source_url": "https://cloudtcm.com/formula/194",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.shen_ling_bai_zhu_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/194",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Ginseng, Poria, and White Atractylodes Powder",
@@ -11048,8 +11265,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 194
     },
     {
       "id": "formula.bu_zhong_yi_qi_tang",
@@ -11361,7 +11582,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:22.828Z",
       "tags_source_url": "https://cloudtcm.com/formula/262",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.bu_zhong_yi_qi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/262",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -11373,8 +11594,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 262
     },
     {
       "id": "formula.yu_ping_feng_san",
@@ -11547,7 +11772,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:46.235Z",
       "tags_source_url": "https://cloudtcm.com/formula/86",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.yu_ping_feng_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/86",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Jade Windscreen Powder",
@@ -11558,8 +11783,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 86
     },
     {
       "id": "formula.sheng_mai_san",
@@ -11633,7 +11862,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.sheng_mai_san",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Generate the Pulse Powder",
@@ -11717,8 +11945,13 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/10",
+      "cloudtcm_id": 10
     },
     {
       "id": "formula.si_wu_tang",
@@ -12017,7 +12250,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:23.516Z",
       "tags_source_url": "https://cloudtcm.com/formula/77",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.si_wu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/77",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -12029,8 +12262,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 77
     },
     {
       "id": "formula.tao_hong_si_wu_tang",
@@ -12306,7 +12543,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:26.458Z",
       "tags_source_url": "https://cloudtcm.com/formula/171",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.tao_hong_si_wu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/171",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -12318,8 +12555,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 171
     },
     {
       "id": "formula.jiao_ai_tang",
@@ -12556,7 +12797,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:30.407Z",
       "tags_source_url": "https://cloudtcm.com/formula/251",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.dang_gui_bu_xue_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/251",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Tangkuei Decoction to Tonify the Blood",
@@ -12567,8 +12808,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 251
     },
     {
       "id": "formula.ba_zhen_tang",
@@ -12870,7 +13115,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:23.851Z",
       "tags_source_url": "https://cloudtcm.com/formula/18",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ba_zhen_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/18",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -12882,8 +13127,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 18
     },
     {
       "id": "formula.shi_quan_da_bu_tang",
@@ -13039,8 +13288,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/20",
+      "cloudtcm_id": 20
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -13106,8 +13360,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/570",
+      "cloudtcm_id": 570
     },
     {
       "id": "formula.liu_wei_di_huang_wan",
@@ -13369,7 +13628,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:24.163Z",
       "tags_source_url": "https://cloudtcm.com/formula/55",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.liu_wei_di_huang_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/55",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -13381,8 +13640,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 55
     },
     {
       "id": "formula.zuo_gui_wan",
@@ -13658,15 +13921,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:48.697Z",
       "tags_source_url": "https://cloudtcm.com/formula/81",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zuo_gui_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/81",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 81
     },
     {
       "id": "formula.zuo_gui_yin",
@@ -13988,15 +14255,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:45.695Z",
       "tags_source_url": "https://cloudtcm.com/formula/70",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.you_gui_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/70",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 70
     },
     {
       "id": "formula.you_gui_yin",
@@ -14125,8 +14396,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/115",
+      "cloudtcm_id": 115
     },
     {
       "id": "formula.zhi_bai_di_huang_wan",
@@ -14192,8 +14468,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/137",
+      "cloudtcm_id": 137
     },
     {
       "id": "formula.shen_qi_wan",
@@ -14401,7 +14682,6 @@
         "陰虛火旺、咽乾口燥者忌用",
         "孕婦慎用"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.jin_gui_shen_qi_wan",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
@@ -14669,7 +14949,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:47.758Z",
       "tags_source_url": "https://cloudtcm.com/formula/136",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhi_gan_cao_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/136",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Prepared Licorice Decoction",
@@ -14680,8 +14960,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 136
     },
     {
       "id": "formula.yi_guan_jian",
@@ -14900,7 +15184,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:45.096Z",
       "tags_source_url": "https://cloudtcm.com/formula/359",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.yi_guan_jian",
+      "cloudtcm_url": "https://cloudtcm.com/formula/359",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Linking Decoction",
@@ -14911,8 +15195,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 359
     },
     {
       "id": "formula.mu_li_san",
@@ -14985,7 +15273,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.mu_li_san",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Oyster Shell Powder",
@@ -15070,7 +15357,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhen_ren_yang_zang_tang",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "True Man’s Decoction to Nourish the Organs",
@@ -15155,7 +15441,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.si_shen_wan",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Four-Miracle Pill",
@@ -15233,8 +15518,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/138",
+      "cloudtcm_id": 138
     },
     {
       "id": "formula.sang_piao_xiao_san",
@@ -15300,8 +15590,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/160",
+      "cloudtcm_id": 160
     },
     {
       "id": "formula.suo_quan_wan",
@@ -15632,7 +15927,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:39.845Z",
       "tags_source_url": "https://cloudtcm.com/formula/270",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.suan_zao_ren_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/270",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Sour Jujube Decoction",
@@ -15643,8 +15938,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 270
     },
     {
       "id": "formula.tian_wang_bu_xin_dan",
@@ -15993,7 +16292,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:24.463Z",
       "tags_source_url": "https://cloudtcm.com/formula/58",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.tian_wang_bu_xin_dan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/58",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -16005,8 +16304,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 58
     },
     {
       "id": "formula.gan_mai_da_zao_tang",
@@ -16210,7 +16513,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:32.507Z",
       "tags_source_url": "https://cloudtcm.com/formula/89",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.gan_mai_da_zao_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/89",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Licorice, Wheat, and Jujube Decoction",
@@ -16221,8 +16524,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 89
     },
     {
       "id": "formula.chai_hu_jia_long_gu_mu_li_tang",
@@ -16294,8 +16601,13 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/168",
+      "cloudtcm_id": 168
     },
     {
       "id": "formula.yue_ju_wan",
@@ -16497,7 +16809,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:46.542Z",
       "tags_source_url": "https://cloudtcm.com/formula/238",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.yue_ju_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/238",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Escape Restraint Pill",
@@ -16508,8 +16820,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 238
     },
     {
       "id": "formula.chai_hu_shu_gan_san",
@@ -16600,7 +16916,6 @@
       "cautions_zh": [
         "陰虛火旺者慎用"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.chai_hu_shu_gan_san",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Bupleurum Powder to Dredge the Liver",
@@ -16684,8 +16999,13 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/357",
+      "cloudtcm_id": 357
     },
     {
       "id": "formula.ban_xia_hou_po_tang",
@@ -16890,7 +17210,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:28.662Z",
       "tags_source_url": "https://cloudtcm.com/formula/71",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ban_xia_hou_po_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/71",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Pinellia and Magnolia Bark Decoction",
@@ -16901,8 +17221,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 71
     },
     {
       "id": "formula.su_zi_jiang_qi_tang",
@@ -17151,7 +17475,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:39.555Z",
       "tags_source_url": "https://cloudtcm.com/formula/299",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.su_zi_jiang_qi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/299",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Perilla Fruit Decoction for Directing Qi Downward",
@@ -17162,8 +17486,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 299
     },
     {
       "id": "formula.ju_pi_zhu_ru_tang",
@@ -17239,8 +17567,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/283",
+      "cloudtcm_id": 283
     },
     {
       "id": "formula.xue_fu_zhu_yu_tang",
@@ -17568,7 +17901,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:26.756Z",
       "tags_source_url": "https://cloudtcm.com/formula/109",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xue_fu_zhu_yu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/109",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -17580,8 +17913,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 109
     },
     {
       "id": "formula.bu_yang_huan_wu_tang",
@@ -17835,15 +18172,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:29.230Z",
       "tags_source_url": "https://cloudtcm.com/formula/264",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.bu_yang_huan_wu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/264",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 264
     },
     {
       "id": "formula.sheng_hua_tang",
@@ -18058,7 +18399,7 @@
       "tags_fetched_at": "2026-07-23T07:43:38.150Z",
       "tags_source_url": "https://cloudtcm.com/formula/90",
       "syndromes_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.sheng_hua_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/90",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Generating and Transforming Decoction",
@@ -18069,8 +18410,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 90
     },
     {
       "id": "formula.shi_hui_san",
@@ -18340,7 +18685,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:38.432Z",
       "tags_source_url": "https://cloudtcm.com/formula/573",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.shi_hui_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/573",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Ten Partially-charred Substances Powder",
@@ -18351,8 +18696,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 573
     },
     {
       "id": "formula.wen_jing_tang",
@@ -18779,7 +19128,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:26.151Z",
       "tags_source_url": "https://cloudtcm.com/formula/249",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.wen_jing_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/249",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -18791,8 +19140,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 249
     },
     {
       "id": "formula.gui_zhi_fu_ling_wan",
@@ -18999,7 +19352,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:32.773Z",
       "tags_source_url": "https://cloudtcm.com/formula/189",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.gui_zhi_fu_ling_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/189",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Cinnamon Twig and Poria Pill",
@@ -19010,8 +19363,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 189
     },
     {
       "id": "formula.ge_xia_zhu_yu_tang",
@@ -19077,8 +19434,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/571",
+      "cloudtcm_id": 571
     },
     {
       "id": "formula.shao_fu_zhu_yu_tang",
@@ -19144,8 +19506,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/441",
+      "cloudtcm_id": 441
     },
     {
       "id": "formula.shen_tong_zhu_yu_tang",
@@ -19211,8 +19578,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/120",
+      "cloudtcm_id": 120
     },
     {
       "id": "formula.ping_wei_san",
@@ -19565,7 +19937,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:25.839Z",
       "tags_source_url": "https://cloudtcm.com/formula/79",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ping_wei_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/79",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -19577,8 +19949,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 79
     },
     {
       "id": "formula.huo_xiang_zheng_qi_san",
@@ -19930,7 +20306,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:33.969Z",
       "tags_source_url": "https://cloudtcm.com/formula/298",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.huo_xiang_zheng_qi_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/298",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Patchouli/Agastache Powder to Rectify the Qi",
@@ -19941,8 +20317,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 298
     },
     {
       "id": "formula.wu_ling_san",
@@ -20185,7 +20565,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:42.036Z",
       "tags_source_url": "https://cloudtcm.com/formula/50",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.wu_ling_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/50",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Five-Ingredient Powder with Poria",
@@ -20196,8 +20576,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 50
     },
     {
       "id": "formula.zhu_ling_tang",
@@ -20435,7 +20819,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:48.039Z",
       "tags_source_url": "https://cloudtcm.com/formula/273",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhu_ling_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/273",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Polyporus Decoction",
@@ -20446,8 +20830,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 273
     },
     {
       "id": "formula.san_ren_tang",
@@ -20694,7 +21082,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:37.586Z",
       "tags_source_url": "https://cloudtcm.com/formula/401",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.san_ren_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/401",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Three-Seed Decoction",
@@ -20705,8 +21093,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 401
     },
     {
       "id": "formula.er_miao_san",
@@ -20772,8 +21164,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/368",
+      "cloudtcm_id": 368
     },
     {
       "id": "formula.si_miao_wan",
@@ -21094,7 +21491,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:46.896Z",
       "tags_source_url": "https://cloudtcm.com/formula/180",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhen_wu_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/180",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "True Warrior Decoction",
@@ -21105,8 +21502,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 180
     },
     {
       "id": "formula.shi_pi_yin",
@@ -21392,7 +21793,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:31.851Z",
       "tags_source_url": "https://cloudtcm.com/formula/526",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.fang_ji_huang_qi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/526",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Stephania and Astragalus Decoction",
@@ -21403,8 +21804,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 526
     },
     {
       "id": "formula.yin_chen_hao_tang",
@@ -21618,7 +22023,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:45.379Z",
       "tags_source_url": "https://cloudtcm.com/formula/188",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.yin_chen_hao_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/188",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Virgate Wormwood Decoction",
@@ -21629,8 +22034,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 188
     },
     {
       "id": "formula.ba_zheng_san",
@@ -21882,7 +22291,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:27.037Z",
       "tags_source_url": "https://cloudtcm.com/formula/15",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ba_zheng_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/15",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Eight-Herb Powder for Rectification",
@@ -21893,8 +22302,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 15
     },
     {
       "id": "formula.ling_gui_zhu_gan_tang",
@@ -21960,8 +22373,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/151",
+      "cloudtcm_id": 151
     },
     {
       "id": "formula.er_chen_tang",
@@ -22254,7 +22672,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:25.543Z",
       "tags_source_url": "https://cloudtcm.com/formula/7",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.er_chen_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/7",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
@@ -22262,8 +22680,12 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 7
     },
     {
       "id": "formula.wen_dan_tang",
@@ -22554,7 +22976,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:41.650Z",
       "tags_source_url": "https://cloudtcm.com/formula/250",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.wen_dan_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/250",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Warm Gallbladder Decoction",
@@ -22565,8 +22987,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 250
     },
     {
       "id": "formula.ban_xia_bai_zhu_tian_ma_tang",
@@ -22949,7 +23375,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:28.022Z",
       "tags_source_url": "https://cloudtcm.com/formula/69",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ban_xia_bai_zhu_tian_ma_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/69",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Pinellia, White Atractylodes, and Gastrodia Decoction",
@@ -22960,8 +23386,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 69
     },
     {
       "id": "formula.qing_qi_hua_tan_wan",
@@ -23035,7 +23465,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.qing_qi_hua_tan_wan",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Clear the Qi and Transform Phlegm Pill",
@@ -23273,15 +23702,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:44.223Z",
       "tags_source_url": "https://cloudtcm.com/formula/419",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xiao_xian_xiong_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/419",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 419
     },
     {
       "id": "formula.san_zi_yang_qin_tang",
@@ -23374,8 +23807,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/25",
+      "cloudtcm_id": 25
     },
     {
       "id": "formula.chuan_xiong_cha_tiao_san",
@@ -23619,7 +24057,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:29.513Z",
       "tags_source_url": "https://cloudtcm.com/formula/45",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.chuan_xiong_cha_tiao_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/45",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Chuanxiong Powder to be Taken with Green Tea",
@@ -23630,8 +24068,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 45
     },
     {
       "id": "formula.xiao_feng_san",
@@ -23922,7 +24364,7 @@
       "tags_fetched_at": "2026-07-23T07:43:43.204Z",
       "tags_source_url": "https://cloudtcm.com/formula/176",
       "syndromes_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xiao_feng_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/176",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Eliminate Wind Powder from Orthodox Lineage",
@@ -23933,8 +24375,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 176
     },
     {
       "id": "formula.tian_ma_gou_teng_yin",
@@ -24227,7 +24673,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:40.480Z",
       "tags_source_url": "https://cloudtcm.com/formula/314",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.tian_ma_gou_teng_yin",
+      "cloudtcm_url": "https://cloudtcm.com/formula/314",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Gastrodia and Uncaria Drink",
@@ -24238,8 +24684,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 314
     },
     {
       "id": "formula.zhen_gan_xi_feng_tang",
@@ -24311,7 +24761,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhen_gan_xi_feng_tang",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Sedate the Liver and Extinguish Wind Decoction",
@@ -24617,7 +25066,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:28.946Z",
       "tags_source_url": "https://cloudtcm.com/formula/142",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.bao_he_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/142",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Preserve Harmony Pill",
@@ -24628,8 +25077,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 142
     },
     {
       "id": "formula.jian_pi_wan",
@@ -24925,15 +25378,19 @@
       "tags_source_url": "https://cloudtcm.com/formula/193",
       "syndromes_zh": [],
       "modern_diseases_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.jian_pi_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/193",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 193
     },
     {
       "id": "formula.sang_xing_tang",
@@ -24999,8 +25456,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/327",
+      "cloudtcm_id": 327
     },
     {
       "id": "formula.sha_shen_mai_men_dong_tang",
@@ -25143,8 +25605,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/60",
+      "cloudtcm_id": 60
     },
     {
       "id": "formula.an_gong_niu_huang_wan",
@@ -25231,7 +25698,6 @@
         "本方為涼開重劑，脫證神昏者忌用",
         "孕婦禁用"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.an_gong_niu_huang_wan",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -25606,15 +26072,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:47.171Z",
       "tags_source_url": "https://cloudtcm.com/formula/493",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhi_bao_dan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/493",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 493
     },
     {
       "id": "formula.yang_he_tang",
@@ -26024,7 +26494,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:23.136Z",
       "tags_source_url": "https://cloudtcm.com/formula/293",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.gui_pi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/293",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -26036,8 +26506,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 293
     },
     {
       "id": "formula.bai_du_san",
@@ -26126,7 +26600,6 @@
       "cautions_zh": [
         "外感風熱及陰虛外感者不宜使用"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.bai_du_san",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -26385,7 +26858,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:27.324Z",
       "tags_source_url": "https://cloudtcm.com/formula/106",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.bai_he_gu_jin_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/106",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Lily Bulb Decoction to Preserve the Metal",
@@ -26396,8 +26869,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 106
     },
     {
       "id": "formula.bei_mu_gua_lou_san",
@@ -26471,7 +26948,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.bei_mu_gua_lou_san",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Fritillaria and Trichosanthes Fruit Powder",
@@ -26555,7 +27031,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.da_ding_feng_zhu",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -26836,7 +27311,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:31.265Z",
       "tags_source_url": "https://cloudtcm.com/formula/130",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ding_chuan_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/130",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Arrest Wheezing Decoction",
@@ -26847,8 +27322,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 130
     },
     {
       "id": "formula.du_huo_ji_sheng_tang",
@@ -27175,7 +27654,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:31.559Z",
       "tags_source_url": "https://cloudtcm.com/formula/285",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.du_huo_ji_sheng_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/285",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Pubescent Angelica and Taxillus Decoction",
@@ -27186,8 +27665,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 285
     },
     {
       "id": "formula.gan_lu_xiao_du_dan",
@@ -27459,15 +27942,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:32.214Z",
       "tags_source_url": "https://cloudtcm.com/formula/88",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.gan_lu_xiao_du_dan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/88",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 88
     },
     {
       "id": "formula.gu_chong_tang",
@@ -27540,7 +28027,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.gu_chong_tang",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -27736,7 +28222,7 @@
       "tags_fetched_at": "2026-07-23T07:43:33.068Z",
       "tags_source_url": "https://cloudtcm.com/formula/268",
       "syndromes_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.huai_hua_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/268",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Sophora Japonica Flower Powder",
@@ -27747,8 +28233,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 268
     },
     {
       "id": "formula.huang_tu_tang",
@@ -27819,7 +28309,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.huang_tu_tang",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -27900,7 +28389,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.lian_po_yin",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -28180,15 +28668,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:34.860Z",
       "tags_source_url": "https://cloudtcm.com/formula/575",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ling_jiao_gou_teng_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/575",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 575
     },
     {
       "id": "formula.ma_xing_shi_gan_tang",
@@ -28397,7 +28889,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:35.153Z",
       "tags_source_url": "https://cloudtcm.com/formula/224",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.ma_xing_shi_gan_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/224",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Ephedra, Apricot Kernel, Gypsum and Licorice Decoction",
@@ -28408,8 +28900,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 224
     },
     {
       "id": "formula.mai_men_dong_tang",
@@ -28637,7 +29133,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:35.725Z",
       "tags_source_url": "https://cloudtcm.com/formula/221",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.mai_men_dong_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/221",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Ophiopogonis Decoction",
@@ -28648,8 +29144,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 221
     },
     {
       "id": "formula.pu_ji_xiao_du_yin",
@@ -29006,7 +29506,7 @@
       "tags_fetched_at": "2026-07-23T07:43:36.146Z",
       "tags_source_url": "https://cloudtcm.com/formula/231",
       "syndromes_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.pu_ji_xiao_du_yin",
+      "cloudtcm_url": "https://cloudtcm.com/formula/231",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Universal Benefit Drink to Eliminate Toxin",
@@ -29017,8 +29517,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 231
     },
     {
       "id": "formula.qian_zheng_san",
@@ -29224,7 +29728,7 @@
       "tags_fetched_at": "2026-07-23T07:43:36.424Z",
       "tags_source_url": "https://cloudtcm.com/formula/574",
       "syndromes_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.qian_zheng_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/574",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Lead to Symmetry Powder",
@@ -29235,8 +29739,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 574
     },
     {
       "id": "formula.qing_zao_jiu_fei_tang",
@@ -29500,7 +30008,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:37.319Z",
       "tags_source_url": "https://cloudtcm.com/formula/216",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.qing_zao_jiu_fei_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/216",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Clear Dryness and Rescue the Lungs Decoction",
@@ -29511,8 +30019,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 216
     },
     {
       "id": "formula.shi_pi_san",
@@ -29585,7 +30097,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.shi_pi_san",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -29793,7 +30304,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:38.701Z",
       "tags_source_url": "https://cloudtcm.com/formula/478",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.shi_xiao_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/478",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Sudden Smile Powder",
@@ -29804,8 +30315,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 478
     },
     {
       "id": "formula.si_ni_san",
@@ -30029,7 +30544,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:38.998Z",
       "tags_source_url": "https://cloudtcm.com/formula/78",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.si_ni_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/78",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Frigid Extremities Powder",
@@ -30040,8 +30555,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 78
     },
     {
       "id": "formula.su_he_xiang_wan",
@@ -30112,7 +30631,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.su_he_xiang_wan",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -30395,7 +30913,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:40.199Z",
       "tags_source_url": "https://cloudtcm.com/formula/169",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.tao_he_cheng_qi_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/169",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Peach Pit Decoction to Order the Qi",
@@ -30406,8 +30924,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 169
     },
     {
       "id": "formula.wan_dai_tang",
@@ -30697,7 +31219,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:41.340Z",
       "tags_source_url": "https://cloudtcm.com/formula/112",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.wan_dai_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/112",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "End Discharge Decoction",
@@ -30708,8 +31230,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 112
     },
     {
       "id": "formula.wu_mei_wan",
@@ -30978,15 +31504,19 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:42.313Z",
       "tags_source_url": "https://cloudtcm.com/formula/179",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.wu_mei_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/179",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 179
     },
     {
       "id": "formula.xing_su_san",
@@ -31250,7 +31780,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:44.526Z",
       "tags_source_url": "https://cloudtcm.com/formula/114",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xing_su_san",
+      "cloudtcm_url": "https://cloudtcm.com/formula/114",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Apricot Kernel and Perilla Leaf Powder",
@@ -31261,8 +31791,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 114
     },
     {
       "id": "formula.xuan_fu_dai_zhe_tang",
@@ -31469,7 +32003,7 @@
       "tags_fetched_at": "2026-07-23T07:43:44.821Z",
       "tags_source_url": "https://cloudtcm.com/formula/62",
       "syndromes_zh": [],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.xuan_fu_dai_zhe_tang",
+      "cloudtcm_url": "https://cloudtcm.com/formula/62",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Inula and Hematite Decoction",
@@ -31480,8 +32014,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 62
     },
     {
       "id": "formula.yu_nu_jian",
@@ -31704,7 +32242,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:45.968Z",
       "tags_source_url": "https://cloudtcm.com/formula/82",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.yu_nu_jian",
+      "cloudtcm_url": "https://cloudtcm.com/formula/82",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Jade Woman Decoction",
@@ -31715,8 +32253,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 82
     },
     {
       "id": "formula.zhi_shi_xie_bai_gui_zhi_tang",
@@ -31789,7 +32331,6 @@
       "cautions_zh": [
         "孕婦及體虛者請遵醫囑使用。"
       ],
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zhi_shi_xie_bai_gui_zhi_tang",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -31966,7 +32507,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:48.989Z",
       "tags_source_url": "https://cloudtcm.com/formula/566",
-      "cloudtcm_url": "https://cloudtcm.com/formula/formula.zuo_jin_wan",
+      "cloudtcm_url": "https://cloudtcm.com/formula/566",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Left Metal Pill",
@@ -31977,8 +32518,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_id": 566
     },
     {
       "id": "formula.bu_fei_tang",
@@ -32402,8 +32947,13 @@
         ],
         "name_zh": [
           "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/345",
+      "cloudtcm_id": 345
     },
     {
       "id": "formula.fang_feng_tong_sheng_san",
@@ -32910,8 +33460,13 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "cloudtcm_url": [
+          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
-      }
+      },
+      "cloudtcm_url": "https://cloudtcm.com/formula/48",
+      "cloudtcm_id": 48
     },
     {
       "id": "formula.xi_jiao_di_huang_wan",
