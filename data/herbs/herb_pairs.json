@@ -1178,8 +1178,96 @@
         "https://www.americandragon.com/Individualherbsupdate/MaHuang.html",
         "formula.yang_he_tang"
       ]
+    },
+    {
+      "id": "pair.bo_he__chai_hu",
+      "herbs": [
+        "herb.bo_he",
+        "herb.chai_hu"
+      ],
+      "name_zh": "薄荷配柴胡",
+      "name_en": "Bo He with Chai Hu",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "柴胡疏肝解鬱；薄荷辛涼輕清，助其疏達肝氣。兩藥相使。",
+      "pair_meaning_en": "Chai Hu courses Liver Qi while Bo He assists its light dispersing movement.",
+      "indication_zh": "肝鬱血虛之胸脅脹痛、情志不舒、月經不調（逍遙散證）",
+      "indication_en": "Liver constraint with Blood deficiency: hypochondriac distention, emotional constraint, and menstrual irregularity.",
+      "caution_zh": "陰虛陽亢或氣逆者須辨證使用。",
+      "caution_en": "Use only after pattern differentiation in Yin deficiency with Yang rising or rebellious Qi.",
+      "found_in_formulas": [
+        "formula.xiao_yao_san"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+      ]
+    },
+    {
+      "id": "pair.bo_he__chan_tui",
+      "herbs": [
+        "herb.bo_he",
+        "herb.chan_tui"
+      ],
+      "name_zh": "薄荷配蟬蛻",
+      "name_en": "Bo He with Chan Tui",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "薄荷疏散風熱、清利咽喉；蟬蛻利咽開音、透疹止癢，兩藥相須。",
+      "pair_meaning_en": "Bo He disperses Wind-Heat and benefits the throat; Chan Tui restores the voice and vents rashes.",
+      "indication_zh": "風熱咽痛、聲音嘶啞、麻疹不透或風疹瘙癢",
+      "indication_en": "Wind-Heat sore throat, hoarseness, incomplete measles eruption, or itchy wind rash.",
+      "caution_zh": "表虛多汗及對昆蟲來源藥材過敏者慎用。",
+      "caution_en": "Use cautiously with exterior deficiency sweating or allergy to insect-derived medicines.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
+        "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+      ]
+    },
+    {
+      "id": "pair.chan_tui__pang_da_hai",
+      "herbs": [
+        "herb.chan_tui",
+        "herb.pang_da_hai"
+      ],
+      "name_zh": "蟬蛻配胖大海",
+      "name_en": "Chan Tui with Pang Da Hai",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "蟬蛻疏風熱、利咽開音；胖大海清肺利咽，兩藥相須。",
+      "pair_meaning_en": "Chan Tui dispels Wind-Heat and restores the voice; Pang Da Hai clears the Lung and benefits the throat.",
+      "indication_zh": "風熱或肺熱所致咽喉腫痛、聲音嘶啞、失音",
+      "indication_en": "Sore swollen throat, hoarseness, or loss of voice from Wind-Heat or Lung Heat.",
+      "caution_zh": "脾胃虛寒、便溏者慎用。",
+      "caution_en": "Use cautiously with Spleen-Stomach deficiency cold or loose stools.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+      ]
+    },
+    {
+      "id": "pair.sang_ye__xing_ren",
+      "herbs": [
+        "herb.sang_ye",
+        "herb.xing_ren"
+      ],
+      "name_zh": "桑葉配杏仁",
+      "name_en": "Sang Ye with Xing Ren",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "桑葉清肺潤燥；杏仁降肺氣止咳，一清一降，兩藥相使。",
+      "pair_meaning_en": "Sang Ye clears and moistens the Lung while Xing Ren directs Lung Qi downward to stop cough.",
+      "indication_zh": "外感溫燥傷肺：乾咳少痰、咽乾口渴、頭痛身熱（桑杏湯證）",
+      "indication_en": "Warm-Dryness injuring the Lung: dry cough with scant sputum, dry throat, thirst, headache, and fever.",
+      "caution_zh": "脾胃虛寒便溏者慎用；杏仁劑量須遵專業來源。",
+      "caution_en": "Use cautiously with Spleen-Stomach deficiency cold and loose stools; Xing Ren dosing must follow professional sources.",
+      "found_in_formulas": [
+        "formula.sang_xing_tang"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+      ]
     }
   ],
-  "updated_at": "2026-07-26",
-  "total_pairs": 51
+  "updated_at": "2026-07-28",
+  "total_pairs": 55
 }

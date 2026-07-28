@@ -4851,15 +4851,15 @@
     {
       "id": "herb.bo_he",
       "name_zh": "薄荷",
-      "name_en": "Peppermint / Mentha Leaf",
-      "pinyin": "Bò He",
+      "name_en": "Field Mint",
+      "pinyin": "Bò Hé",
       "category": "解表藥 / Release Exterior - Cool Acrid",
       "channels_entered": [
         "肺經",
         "肝經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "辛、涼",
       "functions": [
         "散風熱",
@@ -4891,8 +4891,6 @@
         "formula.yin_qiao_san",
         "formula.sang_ju_yin",
         "formula.xiao_yao_san",
-        "formula.cang_er_zi_san",
-        "formula.jia_jian_wei_rui_tang",
         "formula.bai_hu_tang",
         "formula.jia_wei_xiao_yao_san",
         "formula.san_ren_tang",
@@ -4905,7 +4903,7 @@
       "safety_flags": [
         "pregnancy_review"
       ],
-      "clinical_use_note": "薄荷是中藥，別名:薄苛,水益母,接骨草,夜息花,蕃荷菜,菝藺,貓兒薄苛,仁丹草,升陽菜,吳菝藺,蔢荷,香薷草,南薄荷,, 功效:辛涼質輕，主升浮，既可疏散上焦風熱，又可疏理肝氣，臨床多用之疏風散熱，疏肝解鬱。散風熱,止血,降氣,抗菌,解表,解毒,透疹,鎮靜,保肝利膽...",
+      "clinical_use_note": "薄荷質輕上浮，是辛涼解表中清頭目、利咽與疏肝的代表。與桑葉、菊花同用偏疏散風熱；與桔梗、牛蒡子同用偏利咽；少量入逍遙散類方則取疏肝解鬱。考試要記「後下」以保存揮發油，並區分一般飲片與高濃度薄荷精油的孕期安全性。",
       "modern_use_tags": [
         "common_cold",
         "uri",
@@ -4991,54 +4989,38 @@
       "dosage": "{\r\n  \"一般建議\": \"3-6克\",\r\n  \"食療用量範圍\": \"3-9克（鮮品可加倍至6-15克）\",\r\n  \"特殊說明\": \"入湯劑宜後下（起鍋前3-5分鐘放入），不宜久煎，以免揮發油散失\"\r\n}",
       "cautions": "薄荷注意事項\n陰虛血燥，肝陽偏亢，表虛汗多者忌服。\n《藥性論》：新病瘥人勿食，令人虛汗不止。\n《千金·食治》：動消渴病。\n《本經逢原》：多服久服，令人虛冷；陰虛發熱，咳嗽自汗者勿施。\n《本草從新》：辛香伐氣，多服損肺傷心，虛者遠之。陰虛血燥，肝陽偏亢，表虛汗多者忌服。芳香辛散，發汗耗氣，體虛多汗者不宜使用；陰虛有熱者不宜。\n孕婦忌用：可能導致流產或早產，並減少乳汁分泌。\n嬰兒和幼兒忌用：薄荷含有類似激素的成分，可能影響發育。\n腸胃病患者忌用：薄荷含有香油酚和樟腦，可能刺激腸胃，加重不適。\n腎功能不全患者忌用：薄荷含有尿酸，可能加重腎臟負擔。\n過敏症患者忌用：薄荷含有機酸和樟腦，可能引起過敏反應。",
       "source_urls": [
-        "https://cloudtcm.com/herb/975"
+        "https://cloudtcm.com/herb/975",
+        "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
       ],
       "exact_source_url": "https://cloudtcm.com/herb/975",
       "fetched_at": "2026-07-23T07:20:01.029Z",
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "陰虛血燥，肝陽偏亢，表虛汗多者忌服。",
-        "《藥性論》：新病瘥人勿食，令人虛汗不止。",
-        "《千金·食治》：動消渴病。",
-        "《本經逢原》：多服久服，令人虛冷；陰虛發熱，咳嗽自汗者勿施。",
-        "《本草從新》：辛香伐氣，多服損肺傷心，虛者遠之。陰虛血燥，肝陽偏亢，表虛汗多者忌服。芳香辛散，發汗耗氣，體虛多汗者不宜使用；陰虛有熱者不宜。",
-        "孕婦忌用：可能導致流產或早產，並減少乳汁分泌。",
-        "嬰兒和幼兒忌用：薄荷含有類似激素的成分，可能影響發育。",
-        "腸胃病患者忌用：薄荷含有香油酚和樟腦，可能刺激腸胃，加重不適。",
-        "腎功能不全患者忌用：薄荷含有尿酸，可能加重腎臟負擔。",
-        "過敏症患者忌用：薄荷含有機酸和樟腦，可能引起過敏反應。"
+        "芳香辛散，體虛或表虛多汗者慎用。",
+        "陰虛血燥、陰虛咳嗽或肝陽偏亢者慎用。",
+        "揮發油易散失，湯劑宜在最後 5–10 分鐘後下。",
+        "哺乳期大量或長期使用前須專業評估。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/975",
       "safety_fetched_at": "2026-07-23T07:25:00.443Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "散風熱",
-        "發汗解表",
-        "止血",
-        "降氣",
+        "疏散風熱",
+        "清利頭目與咽喉",
         "透疹",
-        "疏肝解鬱",
-        "清熱解毒",
-        "消暑",
-        "除穢氣障氣",
-        "保肝",
-        "利膽"
+        "疏肝行氣"
       ],
       "modern_functions_zh": [
-        "抗菌抗病毒",
-        "鎮靜",
-        "保肝利膽",
-        "改善大腦功能",
-        "改善消化系統",
-        "止痛功效",
-        "改善皮膚健康",
-        "緩解壓力",
-        "驅蟲",
-        "抗早孕",
+        "促進局部血液循環與清涼止癢",
+        "發汗解熱",
+        "抗發炎",
         "抗菌",
         "抗病毒",
-        "解熱作用"
+        "鎮痛",
+        "促進膽汁分泌與解痙",
+        "中樞調節與鎮靜作用",
+        "動物研究顯示薄荷油具抗著床及抗早孕作用"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/975",
@@ -5107,7 +5089,10 @@
         "肝經"
       ],
       "indications_zh": [
-        "疏散風熱；清利頭目；利咽透疹；疏肝行氣"
+        "風熱表證 —— 發熱、微惡風、頭痛、咳嗽；常配 菊花、荊芥、防風、桑葉。",
+        "風熱上攻頭目咽喉 —— 頭痛、目赤、咽喉腫痛、聲音不利；常配 桔梗、牛蒡子。",
+        "麻疹初起、疹出不暢或皮膚瘙癢 —— 配 荊芥、蟬蛻、牛蒡子。",
+        "肝氣鬱滯之胸脅脹悶、情志不舒及婦科氣鬱 —— 少量配 柴胡、白芍。"
       ],
       "study_tags": [
         "單味中藥",
@@ -5153,27 +5138,19 @@
         "中樞鎮痛與解熱 (Analgesic & Antipyretic)"
       ],
       "pao_zhi_notes_zh": "生用疏散風熱、清利頭目力強；後下煎服（煎沸3-5分鐘即可），過煎則揮發油（薄荷腦）散失。",
-      "key_pairs": [
-        {
-          "pair": "薄荷 + 柴胡 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "疏肝解鬱、條達氣機（代表方：逍遙散）。"
-        },
-        {
-          "pair": "薄荷 + 蟬蛻 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "疏散風熱、宣肺利咽透疹（代表方：銀翹散）。"
-        }
-      ],
+      "key_pairs": [],
       "actions_en": [
         "Dispel Wind-Heat",
-        "Clear Heat & Benefit Head, Eyes & Throat",
-        "Promote Eruption & Clear Throat",
-        "Unbind Liver Qi & Regulate Qi Movement"
+        "Clear the Head, Eyes, and Throat",
+        "Promote Eruption",
+        "Course Liver Qi"
       ],
       "condition_tags_zh": [
-        "疏散風熱",
-        "清利頭目",
-        "透疹利咽",
-        "疏肝行氣"
+        "風熱感冒",
+        "頭痛目赤",
+        "咽喉腫痛",
+        "麻疹不透",
+        "肝氣鬱滯"
       ],
       "modern_pharmacology": [
         {
@@ -5196,62 +5173,131 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {
-        "properties_taste_temp": [
-          "https://cloudtcm.com/herb/975"
+        "name_en": [
+          "curriculum/herbs/pinyin_latin_herb_list.md"
         ],
-        "tcm_properties": [
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/975"
         ],
         "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/975"
         ],
         "functions_zh": [
-          "https://cloudtcm.com/herb/975"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/975",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ],
         "indications_zh": [
-          "https://cloudtcm.com/herb/975"
-        ],
-        "traditional_functions_zh": [
-          "https://cloudtcm.com/herb/975"
-        ],
-        "dosage": [
-          "https://cloudtcm.com/herb/975"
-        ],
-        "pao_zhi_notes_zh": [
-          "https://cloudtcm.com/herb/975"
-        ],
-        "modern_pharmacology_zh": [
-          "https://cloudtcm.com/herb/975"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ],
         "condition_tags_zh": [
-          "https://cloudtcm.com/herb/975"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
         ],
-        "category_zh": [
-          "https://cloudtcm.com/herb/975"
+        "condition_tags_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
         ],
         "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/975"
         ],
-        "modern_functions_detail_zh": [
+        "modern_functions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/975"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/975"
+          "https://cloudtcm.com/herb/975",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "cautions_en": [
+          "https://cloudtcm.com/herb/975",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/975",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "contraindications_en": [
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/975",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ]
-      }
+      },
+      "pharmaceutical_latin": "Menthae haplocalycis Succus",
+      "condition_tags_en": [
+        "Wind-Heat common cold",
+        "Headache and red eyes",
+        "Sore swollen throat",
+        "Incomplete measles eruption",
+        "Liver Qi stagnation"
+      ],
+      "modern_functions_en": [
+        "Promotes local circulation with cooling antipruritic effects",
+        "Diaphoretic and antipyretic effects",
+        "Anti-inflammatory activity",
+        "Antibacterial activity",
+        "Antiviral activity",
+        "Analgesic activity",
+        "Choleretic and antispasmodic effects",
+        "Central nervous system modulation and sedative activity",
+        "Animal studies report anti-implantation and early-pregnancy effects of mint oil"
+      ],
+      "cautions_en": [
+        "Use cautiously in constitutional or exterior deficiency with profuse sweating.",
+        "Use cautiously with Yin deficiency, Blood dryness, Yin-deficiency cough, or ascendant Liver Yang.",
+        "Its volatile oil dissipates readily; add during the final 5–10 minutes of decoction.",
+        "Professional review is advised before large or prolonged use during lactation."
+      ],
+      "contraindications_zh": [
+        "對薄荷或其揮發油成分已知過敏者禁用。",
+        "孕期不得自行使用薄荷精油或高濃度製劑；動物研究顯示抗著床及抗早孕作用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in known allergy to mint or its volatile-oil constituents.",
+        "Do not self-administer mint essential oil or concentrated preparations during pregnancy; animal studies report anti-implantation effects."
+      ],
+      "source_citations": [
+        {
+          "name": "Chenoweth Materia Medica Abbreviated, p.2",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "scope": "Properties, channels, indications, pairings, preparation, and modern pharmacology"
+        },
+        {
+          "name": "CloudTCM — 薄荷",
+          "url": "https://cloudtcm.com/herb/975",
+          "scope": "Traditional actions, materia identification, pharmacology, and cautions"
+        },
+        {
+          "name": "American Dragon — Bo He",
+          "url": "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
+          "scope": "Actions, indications, dosage, combinations, contraindications, and interactions"
+        }
+      ]
     },
     {
       "id": "herb.chan_tui",
       "name_zh": "蟬蛻",
-      "name_en": "Cicada Slough",
-      "pinyin": "Chán Tuì",
+      "name_en": "Cicada Molting",
+      "pinyin": "Chán Tuì",
       "category": "解表藥 / Release Exterior - Cool Acrid",
       "channels_entered": [
         "肝經",
         "肺經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "鹹、涼、甘",
       "functions": [
         "散風熱",
@@ -5274,7 +5320,7 @@
       "safety_flags": [
         "pregnancy_review"
       ],
-      "clinical_use_note": "蟬蛻是中藥，別名:仙人衣,唧唧猴皮,蜩甲,伏蜟,知了皮,蟬甲,蟬衣,伏殼,蟬退,熱皮,蟬脫,枯蟬,蟬退殼,麻兒鳥皮,蜩, 功效:疏風散熱，以透散為能，既可解表之肺經風熱，又可散裡之肝經風熱。疏散風熱，透疹止癢 明目退翳 祛風止痙。",
+      "clinical_use_note": "蟬蛻質輕，除疏散風熱外，考試重點是利咽開音、透疹止癢、明目退翳、息風止痙。和薄荷相比更偏聲音嘶啞、皮膚瘙癢與小兒驚風；和牛蒡子相比不以清熱解毒、利咽散結為主。昆蟲來源須記過敏風險，止痙大劑量不可自行推定。",
       "modern_use_tags": [
         "common_cold",
         "uri",
@@ -5330,36 +5376,35 @@
       "dosage": "{\r\n  \"一般建議\": \"3-6克\",\r\n  \"食療用量範圍\": \"2-5克\",\r\n  \"特殊說明\": \"入湯劑常規煎煮，不宜久煎；研末沖服用量減半；外用適量\"\r\n}",
       "cautions": "中藥蟬蛻注意事項重點\n含異體蛋白，過敏史者慎用。\n煎服或研末沖服，止痙須大量30g。\n孕婦和哺乳期婦女禁止使用。\n脾虛便溏者禁止使用。\n虛寒體質者禁止使用。\n高血壓患者慎重使用。",
       "source_urls": [
-        "https://cloudtcm.com/herb/983"
+        "https://cloudtcm.com/herb/983",
+        "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
       ],
       "exact_source_url": "https://cloudtcm.com/herb/983",
       "fetched_at": "2026-07-23T07:20:01.433Z",
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "含異體蛋白，過敏史者慎用。",
-        "煎服或研末沖服，止痙須大量30g。",
-        "孕婦和哺乳期婦女禁止使用。",
-        "脾虛便溏者禁止使用。",
-        "虛寒體質者禁止使用。",
-        "高血壓患者慎重使用。"
+        "含昆蟲異體蛋白，有過敏史者慎用。",
+        "脾胃虛弱、便溏或虛寒者慎用。",
+        "止痙所需劑量可能高於一般解表用量，必須依專業來源及臨床監督使用。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/983",
       "safety_fetched_at": "2026-07-23T07:25:00.693Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "散風熱",
-        "發汗解表",
-        "祛風除濕",
-        "止癢",
-        "退翳",
-        "透疹",
-        "去風止痙",
-        "明目消翳"
+        "疏散風熱",
+        "利咽開音",
+        "透疹止癢",
+        "明目退翳",
+        "息風止痙"
       ],
       "modern_functions_zh": [
+        "中樞神經抑制與抗驚厥",
+        "鎮靜",
         "抗過敏",
-        "抗菌抗病毒"
+        "抗發炎",
+        "對慢性蕁麻疹相關反應的調節作用",
+        "抗菌與抗病毒活性"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/983",
@@ -5380,7 +5425,11 @@
         "肝經"
       ],
       "indications_zh": [
-        "疏散風熱；利咽開音；透疹止癢；息風止痙"
+        "風熱表證 —— 發熱、咳嗽、咽痛；常配 薄荷、牛蒡子。",
+        "風熱壅肺之咽喉腫痛、聲音嘶啞或失音 —— 配 桔梗、胖大海。",
+        "麻疹透發不暢、風疹瘙癢或慢性蕁麻疹 —— 配 荊芥、防風、薄荷。",
+        "風熱上攻或肝經風熱之目赤、翳障、視物模糊 —— 配 菊花、桑葉。",
+        "小兒熱極生風、驚風抽搐、夜啼或痙攣 —— 配 鉤藤、僵蠶、全蠍。"
       ],
       "study_tags": [
         "單味中藥",
@@ -5428,29 +5477,20 @@
         "抗過敏與解痙 (Anti-allergic & Spasmolytic)"
       ],
       "pao_zhi_notes_zh": "生用疏散風熱、透疹止癢、息風止痙力強；洗淨泥沙後晒乾入藥。",
-      "key_pairs": [
-        {
-          "pair": "蟬蛻 + 薄荷 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "疏散風熱、透疹利咽（代表方：銀翹散）。"
-        },
-        {
-          "pair": "蟬蛻 + 胖大海 (Bastyr 官方對藥)",
-          "rationale_zh": "清宣肺氣、利咽開音，治暴喑失音（代表方：蟬聲散）。"
-        }
-      ],
+      "key_pairs": [],
       "actions_en": [
         "Dispel Wind-Heat",
-        "Clear Throat & Loss of Voice",
-        "Promote Eruption & Stop Itching",
-        "Extinguish Wind & Stop Spasms",
-        "Clear Eyes & Reduce Obstruction"
+        "Benefit the Throat and Restore the Voice",
+        "Promote Eruption and Stop Itching",
+        "Clear the Eyes and Remove Obstruction",
+        "Extinguish Wind and Stop Spasms"
       ],
       "condition_tags_zh": [
-        "疏散風熱",
-        "利咽開音",
-        "透疹止癢",
-        "息風止痙",
-        "明目退翳"
+        "風熱感冒",
+        "咽痛失音",
+        "麻疹風疹",
+        "目赤翳障",
+        "小兒驚風"
       ],
       "modern_pharmacology": [
         {
@@ -5469,62 +5509,127 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {
-        "properties_taste_temp": [
-          "https://cloudtcm.com/herb/983"
+        "name_en": [
+          "curriculum/herbs/pinyin_latin_herb_list.md"
         ],
-        "tcm_properties": [
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/983"
         ],
         "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/983"
         ],
         "functions_zh": [
-          "https://cloudtcm.com/herb/983"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/983",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ],
         "indications_zh": [
-          "https://cloudtcm.com/herb/983"
-        ],
-        "traditional_functions_zh": [
-          "https://cloudtcm.com/herb/983"
-        ],
-        "dosage": [
-          "https://cloudtcm.com/herb/983"
-        ],
-        "pao_zhi_notes_zh": [
-          "https://cloudtcm.com/herb/983"
-        ],
-        "modern_pharmacology_zh": [
-          "https://cloudtcm.com/herb/983"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ],
         "condition_tags_zh": [
-          "https://cloudtcm.com/herb/983"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
         ],
-        "category_zh": [
-          "https://cloudtcm.com/herb/983"
+        "condition_tags_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
         ],
         "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/983"
         ],
-        "modern_functions_detail_zh": [
+        "modern_functions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/983"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/983"
+          "https://cloudtcm.com/herb/983",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "cautions_en": [
+          "https://cloudtcm.com/herb/983",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/983",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "contraindications_en": [
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/983",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ]
-      }
+      },
+      "pharmaceutical_latin": "Cicadae Periostracum",
+      "condition_tags_en": [
+        "Wind-Heat common cold",
+        "Sore throat and loss of voice",
+        "Measles and wind rash",
+        "Red eyes and visual obstruction",
+        "Pediatric convulsions"
+      ],
+      "modern_functions_en": [
+        "Central nervous system depressant and anticonvulsant effects",
+        "Sedative activity",
+        "Antiallergic activity",
+        "Anti-inflammatory activity",
+        "Modulation of reactions associated with chronic urticaria",
+        "Antibacterial and antiviral activity"
+      ],
+      "cautions_en": [
+        "Contains insect proteins; use cautiously in patients with an allergy history.",
+        "Use cautiously with Spleen-Stomach deficiency, loose stools, or deficiency cold.",
+        "Antispasmodic dosing may exceed routine exterior-releasing doses and requires professional sourcing and supervision."
+      ],
+      "contraindications_zh": [
+        "孕婦禁用或僅在合格中醫師明確評估下使用。",
+        "對蟬蛻或昆蟲來源藥材已知過敏者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated during pregnancy unless specifically assessed by a qualified practitioner.",
+        "Contraindicated in known allergy to cicada slough or insect-derived medicines."
+      ],
+      "source_citations": [
+        {
+          "name": "Chenoweth Materia Medica Abbreviated, p.2",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "scope": "Properties, channels, indications, pairings, preparation, and modern pharmacology"
+        },
+        {
+          "name": "CloudTCM — 蟬蛻 / Chan Tui",
+          "url": "https://cloudtcm.com/herb/983",
+          "scope": "Traditional actions, pharmacology, and cautions"
+        },
+        {
+          "name": "American Dragon — 蟬蛻 / Chan Tui",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ChanTui.html",
+          "scope": "Actions, indications, dosage, combinations, contraindications, and interactions"
+        }
+      ]
     },
     {
       "id": "herb.sang_ye",
       "name_zh": "桑葉",
       "name_en": "Mulberry Leaf",
-      "pinyin": "Sāng Yè",
+      "pinyin": "Sāng Yè",
       "category": "解表藥 / Release Exterior - Cool Acrid",
       "channels_entered": [
         "肝經",
         "肺經"
       ],
       "source_hint": "Bensky Materia Medica: Release Exterior",
-      "review_status": "source_checked",
+      "review_status": "draft",
       "properties_taste_temp": "苦、甘、寒",
       "functions": [
         "散風熱",
@@ -5555,7 +5660,7 @@
       "safety_flags": [
         "pregnancy_review"
       ],
-      "clinical_use_note": "桑葉是中藥，功效:疏散風熱 清肺潤燥 平肝明目 涼血止血。風溫發熱、頭痛、目赤、口渴，肺熱咳嗽，風痺隱疹，下肢象皮腫，血熱吐血症",
+      "clinical_use_note": "桑葉既是辛涼解表藥，也是清肺潤燥、平肝明目的常考藥。與菊花相須偏風熱與肝目；與杏仁、沙參同用偏肺燥乾咳。生桑葉偏疏風清熱，蜜炙後偏潤肺止咳。現代代謝研究不能直接等同臨床降糖治療，合併降糖或降壓藥時應監測。",
       "modern_use_tags": [
         "common_cold",
         "uri",
@@ -5621,40 +5726,37 @@
       "dosage": "{\r\n  \"一般建議\": \"5-10克\",\r\n  \"食療用量範圍\": \"6-12克\",\r\n  \"特殊說明\": \"入湯劑常規煎煮即可；脾胃虛寒者慎用\"\r\n}",
       "cautions": "桑葉注意事項\n**體質偏寒、陽虛內寒者不宜食用：**桑葉性寒，易傷陽氣。\n**脾胃虛弱、食慾不振、腹瀉者不宜食用：**桑葉促進胃腸蠕動，易加重症狀。\n**肝病、腎病患者慎用：**桑葉草酸較多，易增加肝腎負擔。\n**孕婦不宜食用：**桑葉生物鹼和黃酮類物質可能對胎兒產生不良影響。\n**對桑屬植物過敏者不宜食用：**易引發過敏反應。",
       "source_urls": [
-        "https://cloudtcm.com/herb/1156"
+        "https://cloudtcm.com/herb/1156",
+        "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
       ],
       "exact_source_url": "https://cloudtcm.com/herb/1156",
       "fetched_at": "2026-07-23T07:20:01.699Z",
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "體質偏寒、陽虛內寒者不宜食用：桑葉性寒，易傷陽氣。",
-        "脾胃虛弱、食慾不振、腹瀉者不宜食用：桑葉促進胃腸蠕動，易加重症狀。",
-        "肝病、腎病患者慎用：桑葉草酸較多，易增加肝腎負擔。",
-        "孕婦不宜食用：桑葉生物鹼和黃酮類物質可能對胎兒產生不良影響。",
-        "對桑屬植物過敏者不宜食用：易引發過敏反應。"
+        "性偏寒，脾胃虛寒、食少便溏者慎用。",
+        "正在使用降血糖或降血壓藥物者，應監測血糖與血壓並評估疊加作用。",
+        "對桑屬植物過敏者避免使用。",
+        "孕期與哺乳期如需較大劑量或長期使用，應先由合格醫療人員評估。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1156",
       "safety_fetched_at": "2026-07-23T07:25:00.916Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "散風熱",
-        "發汗解表",
-        "平肝息風",
-        "清肺熱利咽",
-        "清熱涼血",
-        "生津止渴",
-        "清肝明目",
-        "斂瘡",
+        "疏散風熱",
+        "清肺潤燥",
+        "平肝明目",
         "涼血止血"
       ],
       "modern_functions_zh": [
+        "抗菌",
+        "代謝調節",
         "降血糖",
-        "抗菌抗病毒",
-        "抗發炎",
-        "抗氧化",
         "降血脂",
-        "防癌抗腫瘤"
+        "抗氧化",
+        "抗發炎",
+        "抗病毒",
+        "血壓調節作用"
       ],
       "modern_functions_source": "cloudtcm_herb_tag_analysis",
       "modern_functions_source_url": "https://cloudtcm.com/herb/1156",
@@ -5691,7 +5793,10 @@
         "肝經"
       ],
       "indications_zh": [
-        "疏散風熱；清肺潤燥；清肝明目"
+        "風熱犯肺之發熱、頭痛、咳嗽 —— 常配 菊花、薄荷。",
+        "肺熱或燥熱傷肺之乾咳少痰、咽乾 —— 蜜炙桑葉偏潤肺止咳，常配 杏仁、沙參、貝母。",
+        "肝陽上亢或肝熱之頭痛、眩暈、目赤澀痛、視物模糊 —— 配 菊花、決明子。",
+        "血熱妄行之咳血、吐血、衄血 —— 取其涼血止血之輕清作用。"
       ],
       "study_tags": [
         "單味中藥",
@@ -5739,27 +5844,19 @@
         "抗氧化與延緩衰老 (Antioxidant Effect)"
       ],
       "pao_zhi_notes_zh": "生桑葉疏散風熱、清肺潤燥力強；蜜炙桑葉（蜜桑葉）增強潤肺止咳功效；桑葉炭涼血止血。",
-      "key_pairs": [
-        {
-          "pair": "桑葉 + 菊花 (2026 NCBAHM Appendix B 官方對藥)",
-          "rationale_zh": "相須為用，疏散風熱、清肝明目第一對藥（代表方：桑菊飲）。"
-        },
-        {
-          "pair": "桑葉 + 杏仁 (Bastyr 官方對藥)",
-          "rationale_zh": "清肺潤燥、止咳化痰（代表方：桑杏湯）。"
-        }
-      ],
+      "key_pairs": [],
       "actions_en": [
         "Dispel Wind-Heat",
-        "Clear Lung Heat & Moisten Dryness",
-        "Calm Liver & Clear Eyes",
-        "Cool Blood & Stop Bleeding"
+        "Clear Lung Heat and Moisten Dryness",
+        "Calm the Liver and Brighten the Eyes",
+        "Cool the Blood and Stop Bleeding"
       ],
       "condition_tags_zh": [
-        "疏散風熱",
-        "清肺潤燥",
-        "平肝明目",
-        "涼血止血"
+        "風熱咳嗽",
+        "肺燥乾咳",
+        "肝陽頭暈",
+        "目赤視昏",
+        "血熱出血"
       ],
       "modern_pharmacology": [
         {
@@ -5782,49 +5879,117 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "field_sources": {
-        "properties_taste_temp": [
-          "https://cloudtcm.com/herb/1156"
+        "name_en": [
+          "curriculum/herbs/pinyin_latin_herb_list.md"
         ],
-        "tcm_properties": [
+        "pharmaceutical_latin": [
+          "curriculum/herbs/pinyin_latin_herb_list.md"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/1156"
         ],
         "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/1156"
         ],
         "functions_zh": [
-          "https://cloudtcm.com/herb/1156"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/1156",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ],
         "indications_zh": [
-          "https://cloudtcm.com/herb/1156"
-        ],
-        "traditional_functions_zh": [
-          "https://cloudtcm.com/herb/1156"
-        ],
-        "dosage": [
-          "https://cloudtcm.com/herb/1156"
-        ],
-        "pao_zhi_notes_zh": [
-          "https://cloudtcm.com/herb/1156"
-        ],
-        "modern_pharmacology_zh": [
-          "https://cloudtcm.com/herb/1156"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ],
         "condition_tags_zh": [
-          "https://cloudtcm.com/herb/1156"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
         ],
-        "category_zh": [
-          "https://cloudtcm.com/herb/1156"
+        "condition_tags_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
         ],
         "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/1156"
         ],
-        "modern_functions_detail_zh": [
+        "modern_functions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://cloudtcm.com/herb/1156"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/1156"
+          "https://cloudtcm.com/herb/1156",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "cautions_en": [
+          "https://cloudtcm.com/herb/1156",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1156",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "contraindications_en": [
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/1156",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ]
-      }
+      },
+      "pharmaceutical_latin": "Mori Folium",
+      "condition_tags_en": [
+        "Wind-Heat cough",
+        "Dry cough from Lung dryness",
+        "Dizziness from ascendant Liver Yang",
+        "Red eyes and blurred vision",
+        "Bleeding from Blood Heat"
+      ],
+      "modern_functions_en": [
+        "Antibacterial activity",
+        "Metabolic regulatory effects",
+        "Hypoglycemic activity",
+        "Hypolipidemic activity",
+        "Antioxidant activity",
+        "Anti-inflammatory activity",
+        "Antiviral activity",
+        "Blood-pressure regulatory effects"
+      ],
+      "cautions_en": [
+        "Its cold nature warrants caution in Spleen-Stomach deficiency cold with poor appetite or loose stools.",
+        "Monitor glucose and blood pressure when combined with antidiabetic or antihypertensive medicines.",
+        "Avoid use in patients allergic to Morus species.",
+        "Professional assessment is advised before large-dose or prolonged use during pregnancy or lactation."
+      ],
+      "contraindications_zh": [
+        "對桑葉或桑屬植物已知過敏者禁用。",
+        "明顯脾胃虛寒並持續腹瀉者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in known allergy to mulberry leaf or Morus species.",
+        "Contraindicated in pronounced Spleen-Stomach deficiency cold with persistent diarrhea."
+      ],
+      "source_citations": [
+        {
+          "name": "Chenoweth Materia Medica Abbreviated, p.2",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "scope": "Properties, channels, indications, pairings, preparation, and modern pharmacology"
+        },
+        {
+          "name": "CloudTCM — 桑葉 / Sang Ye",
+          "url": "https://cloudtcm.com/herb/1156",
+          "scope": "Traditional actions, pharmacology, and cautions"
+        },
+        {
+          "name": "American Dragon — 桑葉 / Sang Ye",
+          "url": "https://www.americandragon.com/Individualherbsupdate/SangYe.html",
+          "scope": "Actions, indications, dosage, combinations, contraindications, and interactions"
+        }
+      ]
     },
     {
       "id": "herb.ju_hua",
