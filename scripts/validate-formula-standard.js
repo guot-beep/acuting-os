@@ -78,7 +78,7 @@ const errors = [];
 const flags = new Map();
 const flag = (r, msg) => {
   const k = r.id || r.name_zh;
-  if (!flags.has(k)) flags.set(k, { name: r.name_zh, category: r.category || r.category_en || "", items: [] });
+  if (!flags.has(k)) flags.set(k, { name: r.name_zh || r.pinyin || r.id, category: r.category || r.category_en || "", items: [] });
   flags.get(k).items.push(msg);
 };
 
@@ -119,14 +119,20 @@ const isSentence = (v) => {
 };
 const BAN_IN_ACTIONS = /(禁用|忌服|孕婦忌|不可服|慎服|禁忌)/;
 
-let nTemplate = 0, nRoles = 0, nMojibake = 0, nDamaged = 0, nComp = 0, nMisaligned = 0, nUnknownHerb = 0, nSuspect = 0;
+let nTemplate = 0, nRoles = 0, nMojibake = 0, nDamaged = 0, nComp = 0, nMisaligned = 0, nUnknownHerb = 0, nSuspect = 0, nNeedName = 0, nSkeleton = 0;
 
 for (const r of recs) {
   const id = r.id || r.name_zh || "(no id)";
 
-  // F1
+  // F1 — a skeleton created from the board outline legitimately has no 中文
+  // name yet: Appendix C is English + pinyin only, and transliterating 12
+  // formula names myself is exactly the invention this project keeps out.
+  // They are reported instead, for Ting to name.
+  const isSkeleton = r.review_status === "skeleton";
   for (const f of ["id", "name_zh", "pinyin"]) {
-    if (!String(r[f] || "").trim()) errors.push(`F1 ${id}: missing ${f}`);
+    if (String(r[f] || "").trim()) continue;
+    if (isSkeleton && f === "name_zh") { nNeedName++; flag(r, "待 Ting 補中文方名（考綱只有英文與拼音）"); continue; }
+    errors.push(`F1 ${id}: missing ${f}`);
   }
   // F2
   if (r.id) {
@@ -221,6 +227,7 @@ for (const r of recs) {
     if (isTemplate(r)) errors.push(`F8 ${id}: actions_zh has ${na} items — condense to the 8 key actions`);
   }
 
+  if (isSkeleton) nSkeleton++;
   if (isTemplate(r)) nTemplate++;
   else flag(r, "尚未依模板整理(無 field_sources.actions_zh)");
 
@@ -309,6 +316,7 @@ console.log(`  有舌脈                    ${pct(recs.filter((r) => arr(r.tongu
 console.log(`  有方劑家族 formula_family ${pct(recs.filter((r) => arr(r.formula_family).length).length)}`);
 console.log(`  ⚠️ 組成有中藥庫查無的藥    ${nUnknownHerb} 味次`);
 console.log(`  ⚠️ 組成疑似被截斷         ${pct(nSuspect)}`);
+console.log(`  考綱骨架記錄(待補)        ${pct(nSkeleton)}${nNeedName ? `，其中 ${nNeedName} 個待 Ting 補中文方名` : ""}`);
 
 // The linking layer, reported but not blocking — same as the acupoint card.
 const linked = recs.filter((r) => arr(r.related_conditions).length || arr(r.condition_links).length).length;

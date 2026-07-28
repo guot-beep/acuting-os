@@ -36,7 +36,9 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const FILE = path.join(ROOT, "data/herbs/formulas.json");
 const SRC_MD = path.join(ROOT, "curriculum/formulas/Formulations Summary Chart.docx.md");
+const SRC_MD2 = path.join(ROOT, "curriculum/formulas/Herbal Formulations Comprehensive.docx.md");
 const CITE = "curriculum/formulas/Formulations Summary Chart.docx.pdf#p1";
+const CITE2 = "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）";
 const APPLY = process.argv.includes("--apply");
 const ID = "formula.ma_huang_tang";
 
@@ -61,7 +63,23 @@ const EN = {
   pulse: "Floating, tight pulse",
   preparation: "Short time [<20 minutes]",
   caution: "Could damage Qi & Fluids",
-  note: "Strongest Diaphoretic"
+  note: "Strongest Diaphoretic",
+  // ── from Herbal Formulations Comprehensive ──
+  // "Applications" is the 現代應用 Ting was looking for: what this formula
+  // treats today. CloudTCM's modern_diseases_zh list for this formula includes
+  // 系統性紅斑性狼瘡 and 心肌梗塞, which is a loose keyword association, not a
+  // clinical application — so the curriculum's list is kept separate from it
+  // rather than merged into it.
+  applications: [
+    "Cold/flu/acute bronchitis, asthma mainly manifesting as wheezing due to cold",
+    "Bi Sx due to wind cold damp",
+    "Nosebleeds w/o sweating and with a floating/tight pulse",
+    "Acute glomerulonephritis",
+    "Skin disorders due to wind cold"
+  ],
+  research: ["Antipyretic", "Promotes glandular secretion, esp. sweating & tearing",
+    "Antitussive", "Antiasthmatic", "Expectorant", "Antibacterial, antiviral"],
+  administration: "taken hot to induce sweating"
 };
 
 const ZH = {
@@ -94,6 +112,15 @@ const ZH = {
     "高血壓、心臟病患者慎用麻黃",
     "中病即止，不可久服；得汗即停後服"
   ],
+  applications: [
+    "感冒／流感／急性支氣管炎；氣喘以寒性喘鳴為主",
+    "風寒濕痺",
+    "鼻衄 —— 無汗、脈浮緊者",
+    "急性腎小球腎炎",
+    "風寒型皮膚病"
+  ],
+  research: ["解熱", "促進腺體分泌（尤其發汗與流淚）", "止咳", "平喘", "祛痰", "抗菌、抗病毒"],
+  administration: "熱服，以助發汗。得汗即停後服。",
   compare: [
     { codes: ["formula.ma_huang_tang", "formula.gui_zhi_tang"], axis: "有汗 vs 無汗", note: "麻黃湯治風寒表實（無汗、脈浮緊）；桂枝湯治風寒表虛（有汗、脈浮緩）。這是傷寒論第一組、也是最常考的一組對比。" },
     { codes: ["formula.ma_huang_tang", "formula.da_qing_long_tang"], axis: "是否兼內熱", note: "大青龍湯就是麻黃湯加石膏、生薑、大棗並倍麻黃 —— 外寒兼內熱煩躁時用它。" }
@@ -113,6 +140,9 @@ const page = (() => {
   const j = md.indexOf("## p.2");
   return (j > i ? md.slice(i, j) : md).replace(/\s+/g, " ");
 })();
+// The Comprehensive doc's 麻黃湯 entry — Applications, Modern research and
+// Administration come from here, and are asserted against it separately.
+const page2 = fs.readFileSync(SRC_MD2, "utf8").replace(/\s+/g, " ");
 
 const fail = [];
 // Every English string must be on that page, whitespace-insensitive. This is
@@ -123,8 +153,14 @@ const quoted = [
 ];
 for (const s of quoted) {
   const norm = String(s).replace(/\s+/g, " ").trim();
-  if (!page.includes(norm)) fail.push(`課件第 1 頁找不到這句英文，可能是我抄錯：「${norm}」`);
+  if (!page.includes(norm)) fail.push(`Summary Chart 第 1 頁找不到這句英文：「${norm}」`);
 }
+for (const s of [...EN.applications, ...EN.research, EN.administration]) {
+  const norm = String(s).replace(/\s+/g, " ").trim();
+  if (!page2.includes(norm)) fail.push(`Comprehensive 找不到這句英文：「${norm}」`);
+}
+if (ZH.applications.length !== EN.applications.length) fail.push(`現代應用 中${ZH.applications.length} vs 英${EN.applications.length}`);
+if (ZH.research.length !== EN.research.length) fail.push(`藥理 中${ZH.research.length} vs 英${EN.research.length}`);
 // 中英 must pair (F4).
 if (ZH.actions.length !== EN.actions.length) fail.push(`功效 中${ZH.actions.length} vs 英${EN.actions.length}`);
 if (ZH.indications.length !== EN.indications.length) fail.push(`主治 中${ZH.indications.length} vs 英${EN.indications.length}`);
@@ -172,6 +208,15 @@ if ((r.contraindications_en || []).length && r.contraindications_en.length !== Z
 }
 r.formula_family = ZH.family.map((f) => ({ ...f, source: CITE }));
 r.compare_with = ZH.compare;
+// 現代應用 kept in its OWN field, not merged into CloudTCM's modern_diseases_zh
+// (§0 — that list stays untouched, and mixing a curriculum list into a scraped
+// one would make neither citable).
+r.applications_zh = ZH.applications;
+r.applications_en = EN.applications;
+r.modern_research_zh = ZH.research;
+r.modern_research_en = EN.research;
+r.administration_zh = ZH.administration;
+r.administration_en = EN.administration;
 
 for (const x of ZH.roles) {
   const c = comp.find((c) => String(c.herb_zh).trim() === x.herb);
@@ -188,6 +233,10 @@ for (const f of ["actions_zh", "actions_en", "pattern_indications_zh", "pattern_
   "ba_fa_zh", "exam_pearl", "contraindications_zh", "formula_family", "compare_with", "composition"]) {
   r.field_sources[f] = [CITE];
 }
+for (const f of ["applications_zh", "applications_en", "modern_research_zh", "modern_research_en",
+  "administration_zh", "administration_en"]) {
+  r.field_sources[f] = [CITE2];
+}
 r.review_status = "draft";
 
 console.log(`樣板卡：${r.name_zh}（${r.pinyin}）\n`);
@@ -199,6 +248,9 @@ console.log(`  主治          ${ZH.indications.length} 條（中英成對）`);
 console.log(`  舌脈          ${ZH.tongue} · ${ZH.pulse}`);
 console.log(`  方劑家族      ${ZH.family.length} 個衍生方`);
 console.log(`  類方對比      ${ZH.compare.length} 組`);
+console.log(`  現代應用      ${ZH.applications.length} 條（中英成對，來自 Comprehensive）`);
+console.log(`  現代藥理      ${ZH.research.length} 條（中英成對）`);
+console.log(`  服法          ${ZH.administration}`);
 console.log(`  禁忌          ${ZH.contra.length} 條`);
 console.log(`  逐欄來源      ${Object.keys(r.field_sources).length} 欄`);
 console.log(`\n✅ 每一句英文都在 ${CITE} 的頁面文字裡找得到；中英逐條對齊；角色都對應既有組成`);

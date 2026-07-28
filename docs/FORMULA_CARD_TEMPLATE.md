@@ -220,7 +220,8 @@ CloudTCM 相反:有 202 筆精確名稱比對的驗證紀錄,那是**查過的**
 | 1 | 標頭:方名 · 拼音 · 英文 · **出典** · ★考試星號 | `name_zh` `pinyin` `name_en` `source_classic` `exam_star` | 必 |
 | 2 | 速覽格:分類 / 學習層級 / 鑑別群組 / 味數 | `category` `tier` `comparison_group` | 必 |
 | 3 | **💡 考試重點**(★★ 轉紅底) | `exam_importance` `exam_pearl` | 必 |
-| 4 | **組成與君臣佐使**(表格:角色 · 藥名 · 劑量 · **這味藥在此方做什麼**) | `composition[]` | **必 —— 卡片核心** |
+| 4 | **組成與君臣佐使 · 方劑分析**(角色 · 藥名 · **本方功效** · **原方用量** · **科學中藥用量**) | `composition[]` | **必 —— 卡片核心** |
+| 4b | **原方**(這個方是誰的加減) | `derived_from` | 衍生方必填 |
 | 5 | **功效**(中英逐條成對) | `actions_zh` + `actions_en` | 必 |
 | 6 | **主治證候**(中英逐條成對) | `pattern_indications_zh` + `_en` | 必 |
 | 7 | **辨證要點**(**舌 · 脈** · 主症)| `tongue_zh` `pulse_zh` `symptoms_zh` | 必 |
@@ -228,8 +229,9 @@ CloudTCM 相反:有 202 筆精確名稱比對的驗證紀錄,那是**查過的**
 | 9 | **方義**(為什麼這樣配) | `chinese_depth_track.fang_yi_zh` | 必 |
 | 10 | **方劑家族**(基礎方 → 加/減什麼 → 治什麼) | `formula_family` | **必(§6 新結構)** |
 | 11 | **類方鑑別**(同群組互比) | `comparison_group` `compare_with` | 必 |
-| 12 | 現代應用疾病 | `modern_diseases_zh` | 有就填 |
-| 13 | 現代藥理 | `pharmacology_zh` | 有就填 |
+| 12 | **現代應用**(這個方現在治什麼)| `applications_zh/en` | **必** |
+| 13 | **現代藥理** | `modern_research_zh/en` | 有就填 |
+| 13b | CloudTCM 可改善疾病(**關鍵字關聯，非臨床應用**) | `modern_diseases_zh` | 有就填，但要標明性質 |
 | 14 | ⚠️ 注意事項與禁忌 | `contraindications_zh/en` `cautions_zh` `safety_flags` | 必 |
 | 15 | 連結:單味藥 · 病證 · 證候 | `composition[].herb_id` `related_conditions` `tcm_pattern_ids` | 必(可留空) |
 | 16 | 參考來源 | `field_sources` `sources` | 必 |
@@ -360,6 +362,28 @@ Indications: Tai Yang Shang Han (Wind Cold Exterior Excess (Shi))
 `change` 是陣列,**必須寫劑量**(特性 C)。
 F11 會擋只有方名沒有 `change` 的條目。
 
+### 反向連結 `derived_from`(Ting 定案:很需要)
+
+`formula_family` 寫在**基礎方**上,所以打開大青龍湯時完全看不出它是麻黃湯的加減 ——
+而那是關於它最有用的一件事,本身也是考點。
+
+`scripts/link-formula-family-back.js` 把基礎方的每一條 family 條目**鏡射**到衍生方
+的 `derived_from`,欄位全部從基礎方複製,所以兩邊永遠不會講不一樣的話;
+基礎方改了就重跑一次重新同步。**不在這裡自己寫任何內容。**
+
+家族裡提到但資料庫沒有的方**只報告不建立** —— 麻黃湯的四個衍生方目前全都沒有記錄,
+這正好指出資料庫缺什麼。
+
+### 君臣佐使那一欄是「方劑分析」(Ting 定案)
+
+它跟中藥卡本身的功效**是分開的兩件事**:
+
+- **本方功效** = 這味藥在**這個方裡**做什麼(`composition[].in_formula_zh` / `role_reason_zh`)
+- **劑量** = **原方用量** + **科學中藥濃縮顆粒用量**,兩套都要
+- 中藥卡的功效 = 這味藥**自己**能做什麼
+
+杏仁單用是降肺氣;杏仁在麻黃湯裡是**佐藥**,跟麻黃一宣一降。這兩句話都要,而且不能互相取代。
+
 ## §7 目前資料現況(2026-07-28 實測,173 方)
 
 | 缺口 | 數量 |
@@ -395,6 +419,29 @@ F11 會擋只有方名沒有 `change` 的條目。
    對照最完整,而且家族關係最豐富,適合驗證 `formula_family` 這個新結構
 2. 辛涼解表 → 瀉下 → 和解 → 清熱
 3. 補益劑(課件有專門一份 `Formulas That Tonify 补益剂`)
+
+### 考綱缺的 28 方(Ting 定案:要補)
+
+`scripts/add-missing-board-formulas.js` 已建立 **28 筆骨架記錄**,
+`review_status: "skeleton"`,帶 `needs_fill` 說明。每一筆只帶兩個來源真的講過的東西:
+
+- `name_en` / `pinyin` ← 考綱 Appendix C(官方)
+- `name_zh` ← **課件裡拼音旁邊就寫著中文的**才拿(16 筆),
+  其餘 **12 筆 `name_zh` 留空**,不自己音譯 —— F1 對 skeleton 豁免這一欄,改列 worklist 等 Ting 指認
+- `source_classic` ← 課件標了出典的
+
+**組成一律留空。** 從方名推測組成正是把「瀉心」寫進瀉心湯成分表的那個錯。
+之後由 Codex / Antigravity 依這份模板做交叉比對填充。
+
+### 現代應用從哪來
+
+`curriculum/formulas/Herbal Formulations Comprehensive` 每個方都有:
+**Applications**(這個方現在治什麼)、**Modern research**(藥理)、
+**Administration**(服法)、以及一張 Rank/Herb/Amount/**Properties**/**Channels**/Notes 表。
+
+⚠️ **不要拿 CloudTCM 的 `modern_diseases_zh` 當現代應用** ——
+麻黃湯那一欄列著「系統性紅斑性狼瘡」「心肌梗塞」,那是關鍵字關聯不是臨床應用。
+兩者**各自成欄、各自標來源**,卡片上也分開顯示。
 
 **做法**:一批一支腳本(`scripts/curate-<分類>-formulas.js`),
 中文層寫在腳本裡、英文一律由解析器讀出,腳本自己 assert:

@@ -676,6 +676,24 @@
         ],
         "cautions_en": [
           "既有安全敘述，因無法與中文逐條配對而移至此欄（scripts/curate-sample-formula.js）"
+        ],
+        "applications_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）"
+        ],
+        "applications_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）"
+        ],
+        "modern_research_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）"
+        ],
+        "modern_research_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）"
+        ],
+        "administration_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）"
+        ],
+        "administration_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf（麻黃湯 條目）"
         ]
       },
       "on_board_list": true,
@@ -764,7 +782,39 @@
       ],
       "cautions_en": [
         "Pregnancy, hypertension, palpitations, insomnia, stimulant medication, or profuse sweating require review"
-      ]
+      ],
+      "applications_zh": [
+        "感冒／流感／急性支氣管炎；氣喘以寒性喘鳴為主",
+        "風寒濕痺",
+        "鼻衄 —— 無汗、脈浮緊者",
+        "急性腎小球腎炎",
+        "風寒型皮膚病"
+      ],
+      "applications_en": [
+        "Cold/flu/acute bronchitis, asthma mainly manifesting as wheezing due to cold",
+        "Bi Sx due to wind cold damp",
+        "Nosebleeds w/o sweating and with a floating/tight pulse",
+        "Acute glomerulonephritis",
+        "Skin disorders due to wind cold"
+      ],
+      "modern_research_zh": [
+        "解熱",
+        "促進腺體分泌（尤其發汗與流淚）",
+        "止咳",
+        "平喘",
+        "祛痰",
+        "抗菌、抗病毒"
+      ],
+      "modern_research_en": [
+        "Antipyretic",
+        "Promotes glandular secretion, esp. sweating & tearing",
+        "Antitussive",
+        "Antiasthmatic",
+        "Expectorant",
+        "Antibacterial, antiviral"
+      ],
+      "administration_zh": "熱服，以助發汗。得汗即停後服。",
+      "administration_en": "taken hot to induce sweating"
     },
     {
       "id": "formula.xiao_qing_long_tang",
@@ -31927,6 +31977,1093 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ]
+      }
+    },
+    {
+      "id": "formula.bu_fei_tang",
+      "name_zh": "补肺汤",
+      "name_en": "Tonify the Lungs Decoction",
+      "pinyin": "Bu Fei Tang",
+      "board_name_en": "Tonify the Lungs Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.da_bu_yin_wan",
+      "name_zh": "大补阴丸",
+      "name_en": "Great Tonify the Yin Pill",
+      "pinyin": "Da Bu Yin Wan",
+      "board_name_en": "Great Tonify the Yin Pill",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.da_jian_zhong_tang",
+      "name_zh": "",
+      "name_en": "Major Construct the Middle Decoction",
+      "pinyin": "Da Jian Zhong Tang",
+      "board_name_en": "Major Construct the Middle Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.da_qing_long_tang",
+      "name_zh": "",
+      "name_en": "Major Bluegreen Dragon Decoction",
+      "pinyin": "Da Qing Long Tang",
+      "board_name_en": "Major Bluegreen Dragon Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.dan_shen_yin",
+      "name_zh": "丹参饮",
+      "name_en": "Salvia Drink",
+      "pinyin": "Dan Shen Yin",
+      "board_name_en": "Salvia Drink",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.dang_gui_shao_yao_san",
+      "name_zh": "",
+      "name_en": "Tangkuei and Peony Powder",
+      "pinyin": "Dang Gui Shao Yao San",
+      "board_name_en": "Tangkuei and Peony Powder",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.dang_gui_yin_zi",
+      "name_zh": "",
+      "name_en": "Tangkuei Drink",
+      "pinyin": "Dang Gui Yin Zi",
+      "board_name_en": "Tangkuei Drink",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.ding_zhi_wan",
+      "name_zh": "",
+      "name_en": "Settle the Emotions Pill",
+      "pinyin": "Ding Zhi Wan",
+      "board_name_en": "Settle the Emotions Pill",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.du_qi_wan",
+      "name_zh": "都气",
+      "name_en": "Capital Qi Pill",
+      "pinyin": "Du Qi Wan",
+      "board_name_en": "Capital Qi Pill",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.er_xian_tang",
+      "name_zh": "二仙汤",
+      "name_en": "Two-Immortal Decoction",
+      "pinyin": "Er Xian Tang",
+      "board_name_en": "Two-Immortal Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.er_zhi_wan",
+      "name_zh": "二至丸",
+      "name_en": "Two-Solstice Pill",
+      "pinyin": "Er Zhi Wan",
+      "board_name_en": "Two-Solstice Pill",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.fang_feng_tong_sheng_san",
+      "name_zh": "防风通圣散",
+      "name_en": "Saposhnikovia Powder That Sagely Unblocks",
+      "pinyin": "Fang Feng Tong Sheng San",
+      "board_name_en": "Saposhnikovia Powder That Sagely Unblocks",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.fu_yuan_huo_xue_tang",
+      "name_zh": "复元活血汤",
+      "name_en": "Revive Health by Invigorating the Blood Decoction",
+      "pinyin": "Fu Yuan Huo Xue Tang",
+      "board_name_en": "Revive Health by Invigorating the Blood Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.ge_gen_huang_qin_huang_lian_tang",
+      "name_zh": "葛根黄芩黄连汤",
+      "name_en": "Kudzu, Scutellaria, and Coptis Decoction",
+      "pinyin": "Ge Gen Huang Qin Huang Lian Tang",
+      "board_name_en": "Kudzu, Scutellaria, and Coptis Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "《Shang Han Lun》",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "source_classic": [
+          "curriculum/formulas/（課件標註出典）"
+        ]
+      }
+    },
+    {
+      "id": "formula.gu_jing_wan",
+      "name_zh": "固经丸",
+      "name_en": "Stabilize the Menses Pill",
+      "pinyin": "Gu Jing Wan",
+      "board_name_en": "Stabilize the Menses Pill",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.gui_zhi_shao_yao_zhi_mu_tang",
+      "name_zh": "",
+      "name_en": "Cinnamon Twig, Peony, and Anemarrhena Decoction",
+      "pinyin": "Gui Zhi Shao Yao Zhi Mu Tang",
+      "board_name_en": "Cinnamon Twig, Peony, and Anemarrhena Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.jin_ling_zi_san",
+      "name_zh": "",
+      "name_en": "Melia Toosendan Powder",
+      "pinyin": "Jin Ling Zi San",
+      "board_name_en": "Melia Toosendan Powder",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.liang_fu_wan",
+      "name_zh": "良附丸",
+      "name_en": "Galangal and Cyperus Pill",
+      "pinyin": "Liang Fu Wan",
+      "board_name_en": "Galangal and Cyperus Pill",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.ling_jiao_gou_teng_yin",
+      "name_zh": "",
+      "name_en": "Antelope Horn and Uncaria Decoction",
+      "pinyin": "Ling Jiao Gou Teng Yin",
+      "board_name_en": "Antelope Horn and Uncaria Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.nuan_gan_jian",
+      "name_zh": "暖肝煎",
+      "name_en": "Warm the Liver Decoction",
+      "pinyin": "Nuan Gan Jian",
+      "board_name_en": "Warm the Liver Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.qiang_huo_sheng_shi_tang",
+      "name_zh": "羌活胜湿汤",
+      "name_en": "Notopterygium Decoction to Overcome Dampness",
+      "pinyin": "Qiang Huo Sheng Shi Tang",
+      "board_name_en": "Notopterygium Decoction to Overcome Dampness",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.shao_yao_gan_cao_tang",
+      "name_zh": "",
+      "name_en": "Peony and Licorice Decoction",
+      "pinyin": "Shao Yao Gan Cao Tang",
+      "board_name_en": "Peony and Licorice Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.tian_tai_wu_yao_san",
+      "name_zh": "",
+      "name_en": "Top-Quality Lindera Powder",
+      "pinyin": "Tian Tai Wu Yao San",
+      "board_name_en": "Top-Quality Lindera Powder",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.wu_pi_san",
+      "name_zh": "五皮散",
+      "name_en": "Five-Peel Powder",
+      "pinyin": "Wu Pi San",
+      "board_name_en": "Five-Peel Powder",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.xi_jiao_di_huang_wan",
+      "name_zh": "",
+      "name_en": "Rhinoceros Horn and Rehmannia Decoction",
+      "pinyin": "Xi Jiao Di Huang Wan",
+      "board_name_en": "Rhinoceros Horn and Rehmannia Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ]
+      }
+    },
+    {
+      "id": "formula.xiao_ji_yin_zi",
+      "name_zh": "小蓟饮子",
+      "name_en": "Small Thistle Drink",
+      "pinyin": "Xiao Ji Yin Zi",
+      "board_name_en": "Small Thistle Drink",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.xie_huang_san",
+      "name_zh": "泻黄散",
+      "name_en": "Drain the Yellow Powder",
+      "pinyin": "Xie Huang San",
+      "board_name_en": "Drain the Yellow Powder",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "name_zh": [
+          "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ]
+      }
+    },
+    {
+      "id": "formula.zeng_ye_tang",
+      "name_zh": "",
+      "name_en": "Increase the Fluids Decoction",
+      "pinyin": "Zeng Ye Tang",
+      "board_name_en": "Increase the Fluids Decoction",
+      "on_board_list": true,
+      "exam_star": 1,
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
+      "source_classic": "",
+      "composition": [],
+      "actions_zh": [],
+      "actions_en": [],
+      "pattern_indications_zh": [],
+      "pattern_indications_en": [],
+      "contraindications_zh": [],
+      "contraindications_en": [],
+      "formula_family": [],
+      "review_status": "skeleton",
+      "source_type": "board_outline_skeleton",
+      "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
+      "source_urls": [],
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "pinyin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "on_board_list": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
         ]
       }
     }
