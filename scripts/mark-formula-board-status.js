@@ -91,6 +91,22 @@ for (const r of recs) {
 
 const missingFromRepo = listed.filter((x) => !matchedKeys.has(key(x.pinyin)));
 
+// Near misses are reported, never auto-matched. The outline writes
+// "Xi Jiao Di Huang Wan" where the repo has "…Tang" — 丸 vs 湯 is a different
+// preparation, not a typo, so guessing they are the same formula is exactly
+// the kind of silent decision this project keeps out of scripts. Ting decides.
+const stem = (s) => key(s).replace(/(tang|wan|san|yin|jian|pian|gao|dan)$/, "");
+const nearMisses = [];
+for (const r of recs) {
+  if (r.on_board_list) continue;
+  const rs = stem(r.pinyin);
+  if (!rs) continue;
+  for (const x of missingFromRepo) {
+    if (stem(x.pinyin) !== rs) continue;
+    nearMisses.push(`${r.name_zh}「${r.pinyin}」 ↔ 考綱「${x.pinyin}」(${x.name_en})`);
+  }
+}
+
 console.log(`NCBAHM 2026 CH 考綱 Appendix C：${listed.length} 方\n`);
 console.log(`  資料庫 ${recs.length} 方中，在考綱表上的   ${on}`);
 console.log(`                     不在表上的     ${off}`);
@@ -100,6 +116,10 @@ if (unmatchedRepo.length) {
   console.log(`\n不在考綱表上的方（可能是拼音寫法不同，要人工看）：`);
   unmatchedRepo.slice(0, 25).forEach((n) => console.log("  " + n));
   if (unmatchedRepo.length > 25) console.log(`  … 還有 ${unmatchedRepo.length - 25}`);
+}
+if (nearMisses.length) {
+  console.log(`\n⚠️ 疑似同方但拼音/劑型不同 ${nearMisses.length} 組 —— 不自動配對，請 Ting 確認：`);
+  nearMisses.forEach((n) => console.log("  " + n));
 }
 if (missingFromRepo.length) {
   console.log(`\n考綱列了但資料庫沒有的方：`);

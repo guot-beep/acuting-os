@@ -1397,12 +1397,24 @@
         <span>來源：data/sources/source_registry.json · authority 5 = 最高權威。</span>
       </div>
       <div class="k-grid k-grid-wide">
-        ${sources.map((s) => `
-          <article class="k-card">
-            <header><strong>${esc(s.name)}</strong><span class="k-status">${"★".repeat(s.authority || 0)}</span></header>
+        ${sources.map((s) => {
+          // 36 of the 43 registry entries carry a url that nothing rendered, so
+          // the page Ting browses these sites from listed their names and made
+          // her go find them herself. The title is the link when there is one;
+          // the rest say so rather than looking identical to a dead title.
+          const url = s.url || "";
+          const title = url
+            ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">${esc(s.name)} ↗</a>`
+            : `<strong>${esc(s.name)}</strong>`;
+          const host = url ? (() => { try { return new URL(url).host.replace(/^www\./, ""); } catch { return ""; } })() : "";
+          return `
+          <article class="k-card${url ? " has-link" : ""}">
+            <header>${title}<span class="k-status">${"★".repeat(s.authority || 0)}</span></header>
             <p class="k-meta">${esc(s.source_group || "")} · ${esc(s.layer || "")} · ${esc(s.access_type || "")}</p>
+            ${host ? `<p class="k-src-host">${esc(host)}</p>` : `<p class="k-src-host is-none">無線上連結（紙本／付費資料庫）</p>`}
             <p class="k-tags">${(s.primary_use || []).slice(0, 5).map(tag).join("")}</p>
-          </article>`).join("")}
+          </article>`;
+        }).join("")}
       </div>`;
   }
 
