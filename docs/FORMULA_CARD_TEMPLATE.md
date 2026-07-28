@@ -1,6 +1,10 @@
 # 方劑卡樣板規範
 
-**Status: DRAFT — 待 Ting 定案。**
+**Status: 定案（Ting 2026-07-28 逐項確認過）。** 每一個方都照這張做。
+樣板記錄:`formula.ma_huang_tang`(麻黃湯)。改樣板 = 先問 Ting。
+
+**要開工填方劑的人請先看 `docs/FORMULA_FILL_DISPATCH.md`** —— 那份講怎麼開工、
+紅線在哪、現在缺什麼；這份是規範本體。
 機器檢查:`node scripts/validate-formula-standard.js`(F1–F12,`--worklist` 出清單)。
 
 姊妹文件:`docs/HERB_CARD_TEMPLATE.md`(中藥,E1–E9)、
@@ -384,7 +388,7 @@ F11 會擋只有方名沒有 `change` 的條目。
 
 杏仁單用是降肺氣;杏仁在麻黃湯裡是**佐藥**,跟麻黃一宣一降。這兩句話都要,而且不能互相取代。
 
-## §7 目前資料現況(2026-07-28 實測,173 方)
+## §7 目前資料現況(2026-07-28,201 方 —— 最新數字見 `docs/HANDOFF_2026-07-28.md`)
 
 | 缺口 | 數量 |
 |---|---|
