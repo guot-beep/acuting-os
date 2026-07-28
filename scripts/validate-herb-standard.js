@@ -13,7 +13,7 @@
  *      and not a known alias
  *   E4 a *_zh text field is non-empty but contains no Chinese at all
  *   E5 an _en tag array is not index-aligned with its _zh array
- *   E6 a template-grade record (has field_sources) is missing an _en array
+ *   E6 a template-grade record (has field_sources.actions_en) is missing an _en array
  *   E7 a template-grade record has no contraindications_zh (禁忌症)
  *   E8 a template-grade record's functions_zh is outside 2-6 curated actions
  *   E9 two records share the same id (variant-character duplicates)
@@ -31,6 +31,12 @@
 const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
+
+// Template grade = the curation pass wrote actions_en's provenance. A record can
+// carry field_sources for a dozen imported fields and still never have been
+// curated; judging it by the template's content rules would be judging work
+// nobody claimed to have done.
+const isTemplateGrade = (r) => !!(r.field_sources && r.field_sources.actions_en);
 
 const canon = JSON.parse(fs.readFileSync(path.join(ROOT, "data/config/herb_category_canon.json"), "utf8"));
 const CANON = new Set(canon.categories);
@@ -128,12 +134,20 @@ for (const r of recs) {
     if (zh.length && !en.length) {
       missingEn[enF] = (missingEn[enF] || 0) + 1;
       flag(r, `缺英文 ${enF}`);
-      // A record carrying field_sources claims template grade (see
+      // "Template grade" is field_sources.actions_en specifically, NOT "has any
+      // field_sources". link-herb-sources.js attaches per-field citations to
+      // 217 herbs from their recorded CloudTCM provenance — that says where the
+      // content came from, not that anyone curated it to the template. The
+      // loose definition turned all 217 into template-grade and produced 755
+      // errors for work nobody had claimed to do. Same trap the acupoint
+      // validator hit with field_sources.exam_star; same fix.
+      // (see docs/HERB_CARD_TEMPLATE.md)
+      // A record carrying actions_en provenance claims template grade (see
       // docs/HERB_CARD_TEMPLATE.md) — for those, a missing English array is a
       // FAILURE, not a note. Ting: 模板寫了為什麼還是會遺漏 — because the doc
       // was advisory and the check was only a report. Legacy records without
       // field_sources stay exempt; they are the known backlog.
-      if (r.field_sources && Object.keys(r.field_sources).length) {
+      if (isTemplateGrade(r)) {
         errors.push(`E6 ${id}: template-grade record is missing ${enF} (${zh.length} 中文 tags, 0 English)`);
       }
     }
@@ -150,7 +164,7 @@ for (const r of recs) {
   // cross-compare the sources, rank by board-exam importance, keep the key
   // ones. Library today: 70 records list 0-1 actions (under-listed) and 100
   // list more than 6 (raw dumps). Template-grade records must land in 2-6.
-  if (r.field_sources && Object.keys(r.field_sources).length) {
+  if (isTemplateGrade(r)) {
     const n = Array.isArray(r.functions_zh) ? r.functions_zh.length : 0;
     if (n < 2 || n > 6) {
       flag(r, `功效 ${n} 條(需 2-6,目標 3-5)`);
@@ -161,7 +175,7 @@ for (const r of recs) {
   // all went into cautions_zh and nobody filled contraindications_zh. 禁忌
   // (absolute) and 慎用 (relative) are different clinical calls, so a
   // template-grade record must carry both.
-  if (r.field_sources && Object.keys(r.field_sources).length &&
+  if (isTemplateGrade(r) &&
       !(Array.isArray(r.contraindications_zh) && r.contraindications_zh.length)) {
     flag(r, "缺禁忌症 contraindications_zh");
     errors.push(`E7 ${id}: template-grade record has no contraindications_zh (禁忌症 required — 慎用 in cautions_zh does not count)`);
@@ -171,7 +185,7 @@ for (const r of recs) {
     flag(r, "拼音未帶聲調");
   }
   // herbs nobody has curated yet: no field_sources at all
-  if (!(r.field_sources && Object.keys(r.field_sources).length)) flag(r, "尚未依模板整理(無 field_sources)");
+  if (!isTemplateGrade(r)) flag(r, "尚未依模板整理(無 field_sources.actions_en)");
   for (const k of COVERAGE) if (filled(r[k])) cov[k]++;
 }
 

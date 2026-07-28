@@ -440,6 +440,30 @@
     return dialog;
   }
 
+  /* The Tier-2 herb sites, in the order Ting set. Each link carries what is
+     actually known about it:
+       CloudTCM       — verified per-herb page (exact-name match against their
+                        public index, recorded in herb_url_map.json)
+       American Dragon— URL derived from the pinyin; the page is not confirmed
+                        to exist, so it is marked 未驗證
+       Atlas          — only an index page is known; there is no per-herb path */
+  function herbSourceLinks(record, cloudUrl) {
+    const a = (url, label, note) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link">${esc(label)} ↗</a>${note ? `<small class="k-src-note">${esc(note)}</small>` : ""}`;
+    const out = [];
+    // herbReferenceUrl falls back through source_urls, which for the 45 herbs
+    // with no CloudTCM page can be an American Dragon or NCCIH link. Labelling
+    // that "雲端中醫 CloudTCM" claims a source the record does not have, so the
+    // label follows the host, not the position in the fallback chain.
+    if (cloudUrl && /cloudtcm\.com/i.test(cloudUrl)) out.push(a(cloudUrl, "雲端中醫 CloudTCM"));
+    else if (cloudUrl && !/americandragon/i.test(cloudUrl)) out.push(a(cloudUrl, "外部藥材參考"));
+    if (record.american_dragon_url) {
+      out.push(a(record.american_dragon_url, "American Dragon",
+        record.american_dragon_link_status === "derived" ? "未驗證連結" : ""));
+    }
+    if (record.atlas_url) out.push(a(record.atlas_url, "TCM Herb Atlas", record.atlas_link_status === "index" ? "索引頁" : ""));
+    return out.length ? `<span class="k-src-links">${out.join("")}</span>` : "來源待補";
+  }
+
   function detailShell(record, kind, panels) {
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
@@ -464,9 +488,12 @@
           ["分類 Category", record.category || record.category_en || "待補"],
           ["性味 Properties", usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補"],
           ["歸經 Channels", cleanList(record.channels_entered || record.channels_zh).join("、") || "待補"],
-          [herbReferenceLabel, herbReferenceUrl
-            ? `<a href="${esc(herbReferenceUrl)}" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;font-weight:bold;text-decoration:underline;">開啟藥材頁面 ↗</a>`
-            : "來源待補", Boolean(herbReferenceUrl)]
+          // All three Tier-2 sites, in Ting's order (CloudTCM → American Dragon
+          // → atlas), each labelled by how far it can be trusted. A derived
+          // American Dragon URL and an atlas index page are useful links but
+          // they are not verified per-herb pages, and the card says so rather
+          // than presenting all three as equivalent.
+          ["外部參考 Sources", herbSourceLinks(record, herbReferenceUrl), Boolean(herbReferenceUrl || record.american_dragon_url || record.atlas_url)]
         ];
     return `
       <div class="k-detail-shell">
@@ -529,7 +556,10 @@
       // What this herb does IN THIS FORMULA (Ting: 加上每一味要在這個方劑的功效, 中文就好).
       // Distinct from the herb's own 功效 on its card - 杏仁 alone descends Lung qi;
       // 杏仁 in 麻黃湯 is the 佐 that pairs one-down against Ma Huang's one-up.
-      const roleReason = usableText(item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh || item.elucidation_zh);
+      // in_formula_zh comes first: it is the short, curated line rescued from
+      // pattern_indications_zh by fix-formula-misfiled-composition.js, and it
+      // is more useful here than elucidation_zh's several paragraphs.
+      const roleReason = usableText(item.in_formula_zh || item.role_reason_zh || item.function_in_formula_zh || item.role_note_zh || item.elucidation_zh);
       return `<tr>
         <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
         <td class="k-dose-role">${roleReason ? esc(roleReason) : '<span class="k-detail-empty">—</span>'}</td>
@@ -544,7 +574,7 @@
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
       { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>` },
-      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與劑量", "點選中藥可進入單味藥卡", composition ? `<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>原典用量</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div><p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : '<p class="k-detail-empty">組成待補 / Composition pending</p>') },
+      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與劑量", "點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>原典用量</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div><p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safetyList(safety)]))}${detailSection("來源", "Sources", sourceLinks(record))}` }

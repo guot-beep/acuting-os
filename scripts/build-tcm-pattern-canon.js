@@ -61,13 +61,38 @@ for (const c of conds) {
 
 const records = [...byName.values()].sort((a, b) => b.condition_ids.length - a.condition_ids.length);
 
-// 方證 vs 證候: a name ending in 湯證/散證/丸證 is the pattern of a formula, which
-// belongs in the formula records, not in a syndrome vocabulary.
-let flagged = 0;
+// 方證 vs 證候 — Ting's call, 2026-07-27: keep both, but stop pretending they
+// are the same kind of thing.
+//
+// 桂枝湯證 is a real diagnostic entity in 傷寒論 practice, so deleting it would
+// lose information. It is not a 臟腑辨證 syndrome either, so leaving it in one
+// flat list with 肝氣鬱結 makes the vocabulary incoherent and a 證候 picker
+// offers the user two different kinds of answer to the same question.
+//
+// So: every record gets an explicit `kind`, and a 方證 additionally carries the
+// formula it is named after. Consumers filter on `kind` instead of guessing
+// from the name. No acupoint linked to any 方證 at the time this was decided
+// (0 of 25), so nothing had to be migrated.
+const formulas = (() => {
+  const f = path.join(ROOT, "data/herbs/formulas.json");
+  if (!fs.existsSync(f)) return new Map();
+  const j = JSON.parse(fs.readFileSync(f, "utf8"));
+  return new Map((j.records || j).map((x) => [x.name_zh, x.id]));
+})();
+
+let flagged = 0, linked = 0;
 for (const r of records) {
   if (/[湯散丸飲膏丹]證$/.test(r.name_zh)) {
-    r.note = "方證（以方名命名），非標準證候 —— 待 Ting 決定是否改掛方劑";
+    r.kind = "方證";
+    // Match on formula_zh, not on the pattern name: 白虎湯證's representative
+    // formula is 白虎加人參湯 and 承氣湯證's is 大承氣湯, so stripping 證 off the
+    // name finds neither.
+    const fid = formulas.get(r.formula_zh) || formulas.get(r.name_zh.replace(/證$/, ""));
+    if (fid) { r.formula_id = fid; linked++; }
+    r.note = "方證（以方名命名），非臟腑辨證證候。以 kind 區分，證候選單不應列入。";
     flagged++;
+  } else {
+    r.kind = "證候";
   }
 }
 
@@ -84,7 +109,8 @@ console.log(`中醫證候 canon: ${records.length} 個證候，來自 ${conds.le
 console.log(`  有代表方的       ${records.filter((r) => r.formula_zh).length}`);
 console.log(`  有症狀清單的     ${records.filter((r) => r.symptoms_zh.length).length}`);
 console.log(`  英文名待補       ${records.length}  (全部 — 無來源不翻譯)`);
-console.log(`  ⚠️ 方證非證候     ${flagged}  (已標註，待 Ting 決定)`);
+console.log(`  方證 kind=方證   ${flagged}  (其中 ${linked} 個已連到方劑記錄)`);
+console.log(`  證候 kind=證候   ${records.length - flagged}`);
 console.log("\n前 8 個（依關聯病證數）:");
 records.slice(0, 8).forEach((r) => console.log(`  ${r.id.padEnd(16)} ${r.name_zh.padEnd(8)} ${String(r.condition_ids.length).padStart(3)} 病證  ${r.formula_zh || "—"}`));
 

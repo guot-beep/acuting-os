@@ -321,23 +321,15 @@
         </div>
       </section>
 
-      <section class="acupoint-directory-hero" data-workspace="acu" id="acupointDirectory" aria-label="穴道大全">
-        <div>
-          <p class="eyebrow">Acupuncture Directory</p>
-          <h2>穴道大全 / Acupoint Directory</h2>
-        </div>
-        <div class="directory-mode-note">
-          <strong id="directoryTotal">--</strong>
-          <span>個穴道</span>
-          <small>中英學習版 / Public English 版可切換</small>
-        </div>
-      </section>
-
-      <section class="directory-layout" data-workspace="acu" id="directoryLayout" aria-label="穴道大全分類瀏覽">
+      <section class="directory-layout" data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫">
         <aside class="directory-sidebar" aria-label="穴道分類">
           <section class="directory-filter-box">
-            <h3>經絡分類</h3>
+            <h3>十四經絡</h3>
             <div id="meridianCategoryList" class="directory-filter-list"></div>
+          </section>
+          <section class="directory-filter-box">
+            <h3>其他穴系 Other systems</h3>
+            <div id="systemCategoryList" class="directory-filter-list"></div>
           </section>
           <section class="directory-filter-box">
             <h3>身體部位</h3>
@@ -364,7 +356,7 @@
                 <p class="eyebrow">Acupuncture Layer</p>
                 <h2>穴位資料庫</h2>
               </div>
-              <span class="data-pill">分類 + 搜尋</span>
+              <span class="data-pill"><strong id="directoryTotal">--</strong> 個穴道</span>
             </div>
             <div class="search-row">
               <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型..." />

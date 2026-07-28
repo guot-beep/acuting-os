@@ -80,6 +80,9 @@ const knowledge = {
   patternLibrary: readJson("data/pathology/pattern_library.json"),
   tdisRegistry: readJson("data/pathology/tdis_registry.json"),
   conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
+  // §6.5 (B) — points carry tcm_pattern_ids; without the canon in the bundle
+  // the card can only print "pat.肝氣鬱結" instead of the pattern's name.
+  tcmPatternCanon: readJson("data/config/tcm_pattern_canon.json"),
   cloudtcmDiseaseCategories: readJson("data/pathology/cloudtcm_disease_categories.json"),
   cloudtcmDiseaseEntries: readJson("data/pathology/cloudtcm_disease_entries.json"),
   medications: readJson("data/medications/western_medications.json"),

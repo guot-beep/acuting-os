@@ -147,6 +147,11 @@ function adapt361Record(record) {
     diseaseTagsZh: record.disease_tags_zh || [],
     diseaseTagsEn: record.disease_tags_en || [],
     clinicalPearls: record.clinical_pearls || [],
+    // §6.5 linking layer. Without these three the work in
+    // link-point-conditions.js and build-compare-with.js is invisible.
+    relatedConditions: record.related_conditions || [],
+    tcmPatternIds: record.tcm_pattern_ids || [],
+    compareWith: record.compare_with || [],
     acumethodZh: record.acumethod_zh || "",
     moxaZh: record.moxa_zh || "",
     modernResearchZh: record.modern_research_zh || record.cloudtcm_detail || "",
@@ -189,7 +194,12 @@ function tungIndexPoint(record) {
     locationEn: record.location_en || "Master Tung anatomical region.",
     cunMeasurement: "Tung regional measurement.",
     functions: funcs.join("、"),
-    functionsEn: record.traditional_functions_en || ["Master Tung specialty action"],
+    // Same shape as the 361 records: a joined string plus the raw list. Emitting
+    // the bare array here made the card's function block call .split on it and
+    // threw, so no 董氏奇穴 point would open at all.
+    functionsEn: (record.traditional_functions_en || ["Master Tung specialty action"]).join(" "),
+    functionsZhList: funcs,
+    functionsEnList: record.traditional_functions_en || [],
     patterns: inds,
     patternsEn: record.indications_en || ["Master Tung indication"],
     evidence: "董氏奇穴臨床條目：請對照董氏針灸經典與臨床手冊對穴驗證。",
@@ -250,7 +260,9 @@ function auricularGb93Point(record) {
     locationEn: record.location_en || `GB93 auricular standard: located in ${zoneLabelEn} zone.`,
     cunMeasurement: "Auricular regional point. Cun measurement is not used.",
     functions: inds.join("、"),
-    functionsEn: record.indications_en || ["Auricular regulation"],
+    functionsEn: (record.indications_en || ["Auricular regulation"]).join(" "),
+    functionsZhList: inds,
+    functionsEnList: record.indications_en || [],
     patterns: inds,
     patternsEn: record.indications_en || ["Auricular indication"],
     evidence: "GB/T 13734-2008 耳穴名稱與定位標準條目。",
@@ -454,6 +466,7 @@ const regionCategoryList = document.querySelector("#regionCategoryList");
 const topicCategoryList = document.querySelector("#topicCategoryList");
 const pointCategoryList = document.querySelector("#pointCategoryList");
 const tungZoneCategoryList = document.querySelector("#tungZoneCategoryList");
+const systemCategoryList = document.querySelector("#systemCategoryList");
 const cardsEl = document.querySelector("#cards");
 const detailCard = document.querySelector("#detailCard");
 const bodyCanvas = document.querySelector("#bodyCanvas");
@@ -744,6 +757,12 @@ globalThis.ACUTING_SEARCH = function (term) {
 document.addEventListener("click", (event) => {
   const t = event.target.closest("[data-search-term]");
   if (t) globalThis.ACUTING_SEARCH(t.dataset.searchTerm);
+});
+// §6.5 (B) condition chips on a point card reuse the search-result routing, so
+// a chip lands on the same condition card the global search would open.
+document.addEventListener("click", (event) => {
+  const chip = event.target.closest('.point-link[data-kind="condition"]');
+  if (chip) openGlobalResult(chip);
 });
 
 if (globalResultsEl) {
@@ -1338,7 +1357,10 @@ function render() {
   renderDirectoryFilters();
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
-  if (!filtered.some((point) => point.code === selectedCode)) {
+  // In detail mode the hash owns the selection. Clamping it to the browse
+  // list meant that opening #point/SP6 while the list was filtered to
+  // 董氏奇穴 rendered points[0] (睛明) instead — the wrong point, silently.
+  if (!detailMode && !filtered.some((point) => point.code === selectedCode)) {
     selectedCode = filtered[0]?.code || points[0]?.code || "";
   }
   renderMap(filtered);
@@ -1742,29 +1764,69 @@ function renderPointCategories() {
   bindDirectoryButtons(pointCategoryList);
 }
 
+// 經外奇穴, 耳穴 and 董氏奇穴 are not channels — they are separate point systems
+// with their own logic (Tung reads by 部位, not by 經絡). Listing them alongside
+// 肺經 in 經絡分類 taught the wrong thing every time the page was opened, so they
+// get their own box.
+function isChannelMeridian(meridian) {
+  const v = String(meridian || "");
+  return !(v.includes("董氏") || v.includes("Master Tung")
+    || v.includes("耳穴") || v.includes("Auricular")
+    || v.includes("經外奇穴") || v.includes("Extra Point"));
+}
+
+// Classical 流注 order — the sequence the channels are actually learned and
+// examined in. The default was alphabetical by English name, which put 膀胱經
+// first and 肺經 ninth.
+// Kept inside the function on purpose: render() runs from the init code above
+// this line, so a module-level const here is still in its temporal dead zone
+// and throws on first paint.
+function channelOrderIndex(meridian) {
+  const order = ["肺經", "大腸經", "胃經", "脾經", "心經", "小腸經",
+    "膀胱經", "腎經", "心包經", "三焦經", "膽經", "肝經", "任脈", "督脈"];
+  const i = order.indexOf(meridianLabelZh(meridian));
+  return i === -1 ? order.length : i;
+}
+
+function meridianCategoryRows(list, activeValue) {
+  return list.map((meridian) => directoryButton({
+    labelZh: meridianLabelZh(meridian),
+    labelEn: meridianLabelEn(meridian),
+    count: points.filter((point) => point.meridian === meridian).length,
+    active: activeValue === meridian,
+    action: "meridian",
+    value: meridian
+  }));
+}
+
 function renderMeridianCategories() {
   if (!meridianCategoryList) return;
   const meridians = unique(points.map((point) => point.meridian));
+  const channels = meridians.filter(isChannelMeridian)
+    .sort((a, b) => channelOrderIndex(a) - channelOrderIndex(b));
+  const systems = meridians.filter((m) => !isChannelMeridian(m));
+  const channelCount = points.filter((point) => isChannelMeridian(point.meridian)).length;
   const rows = [
     directoryButton({
-      labelZh: "全部",
-      labelEn: "All",
+      // Named 全部穴位, not 全部: it clears the filter across every system, so
+      // its 751 does not belong to the 十四經絡 heading above it.
+      labelZh: "全部穴位",
+      labelEn: "All points",
       count: points.length,
       active: !meridianFilter.value,
       action: "meridian",
       value: ""
     }),
-    ...meridians.map((meridian) => directoryButton({
-      labelZh: meridianLabelZh(meridian),
-      labelEn: meridianLabelEn(meridian),
-      count: points.filter((point) => point.meridian === meridian).length,
-      active: meridianFilter.value === meridian,
-      action: "meridian",
-      value: meridian
-    }))
+    ...meridianCategoryRows(channels, meridianFilter.value)
   ];
   meridianCategoryList.innerHTML = rows.join("");
   bindDirectoryButtons(meridianCategoryList);
+  const heading = meridianCategoryList.closest(".directory-filter-box")?.querySelector("h3");
+  if (heading) heading.textContent = `十四經絡 (${channelCount})`;
+  if (systemCategoryList) {
+    systemCategoryList.innerHTML = meridianCategoryRows(systems, meridianFilter.value).join("");
+    bindDirectoryButtons(systemCategoryList);
+  }
 }
 
 function renderRegionCategories() {
@@ -1802,7 +1864,13 @@ function renderTopicCategories() {
       action: "topic",
       value: ""
     }),
-    ...directoryTopics.map((topic) => directoryButton({
+    // Clinical themes only. The list also carries index buckets (董氏索引,
+    // 耳穴索引) and eight data-quality buckets (缺針刺手法, GB93待校對,
+    // 缺資料來源…). Those are build state, not a way to look up a point, and
+    // mixing them into 常用臨床主題 made the clinical surface read like a QA
+    // dashboard. They stay reachable below, grouped and labelled for what they
+    // are, so nothing is lost.
+    ...directoryTopics.filter((t) => (t.group || "clinical") === "clinical").map((topic) => directoryButton({
       labelZh: topic.zh,
       labelEn: topic.en,
       count: points.filter((point) => pointMatchesTopic(point, topic.id)).length,
@@ -1811,6 +1879,23 @@ function renderTopicCategories() {
       value: topic.id
     }))
   ];
+
+  const extras = directoryTopics.filter((t) => (t.group || "clinical") !== "clinical");
+  const group = (name, labelZh, labelEn) => {
+    const list = extras.filter((t) => t.group === name);
+    if (!list.length) return "";
+    return `<details class="directory-subgroup">
+      <summary>${contentMode === "english" ? labelEn : labelZh}</summary>
+      ${list.map((topic) => directoryButton({
+        labelZh: topic.zh, labelEn: topic.en,
+        count: points.filter((point) => pointMatchesTopic(point, topic.id)).length,
+        active: directoryTopic === topic.id, action: "topic", value: topic.id
+      })).join("")}
+    </details>`;
+  };
+  rows.push(group("index", "其他索引 Other indexes", "Other indexes"));
+  rows.push(group("qa", "資料品質檢查(建置用)", "Data quality (build)"));
+
   topicCategoryList.innerHTML = rows.join("");
   bindDirectoryButtons(topicCategoryList);
 }
@@ -2921,6 +3006,8 @@ function renderDetail(point) {
           return body ? studySection(contentMode === "english" ? "Indications" : "主治病症", body, "target") : "";
         })()}
         ${pointTagSection(point)}
+        ${pointCompareSection(point)}
+        ${pointLinkSection(point)}
         ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
         ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
         ${visualLinksSection(point)}
@@ -3022,13 +3109,20 @@ function pointIdentitySection(point) {
   </div>`;
 }
 
+// Exam pearls mark the one phrase worth memorising with **…**. Escape first,
+// then promote the markers — so the text is still fully escaped and only the
+// marker pairs this function produced ever become tags.
+function boldMarkers(text) {
+  return escapeHtml(String(text || "")).replace(/\*\*([^*]+)\*\*/g, '<strong class="pep-key">$1</strong>');
+}
+
 function examPearlSection(point) {
   if (!point.examPearl && !point.examImportance) return "";
   const star = Number(point.examStar) || 0;
   const heading = contentMode === "english" ? "Exam Pearl" : "考試重點";
   return `<section class="point-exam-pearl${star >= 2 ? " is-high" : ""}">
     <h3>${star ? (star >= 2 ? "★★ " : "★ ") : "💡 "}${escapeHtml(heading)}</h3>
-    ${point.examPearl ? `<p class="pep-body">${escapeHtml(point.examPearl)}</p>` : ""}
+    ${point.examPearl ? `<p class="pep-body">${boldMarkers(point.examPearl)}</p>` : ""}
     ${point.examImportance ? `<p class="pep-scope">${escapeHtml(point.examImportance)}</p>` : ""}
   </section>`;
 }
@@ -3037,8 +3131,11 @@ function examPearlSection(point) {
 // notes are English and the 中文 is the structured reading of them — seeing both
 // rows is the point of the four-layer split.
 function pointFunctionsSection(point) {
-  const zh = (point.functions || "").split(/[，、]/).map((x) => x.trim()).filter(Boolean);
-  const en = (point.functionsEn || "").split(/\s{2,}|(?<=[a-z])\s(?=[A-Z])/).map((x) => x.trim()).filter(Boolean);
+  // Belt and braces: normalisers should hand strings in, but a single
+  // array-shaped source used to throw here and blank the whole point page.
+  const asText = (v) => (Array.isArray(v) ? v.join(" ") : String(v || ""));
+  const zh = asText(point.functions).split(/[，、]/).map((x) => x.trim()).filter(Boolean);
+  const en = asText(point.functionsEn).split(/\s{2,}|(?<=[a-z])\s(?=[A-Z])/).map((x) => x.trim()).filter(Boolean);
   const zhList = point.functionsZhList && point.functionsZhList.length ? point.functionsZhList : zh;
   const enList = point.functionsEnList && point.functionsEnList.length ? point.functionsEnList : en;
   if (!zhList.length && !enList.length) return "";
@@ -3074,6 +3171,69 @@ function pointTagSection(point) {
   }).join("");
   if (!html) return "";
   return `<section class="study-section point-tags"><h3>${contentMode === "english" ? "Tags" : "標籤（點擊搜尋）"}</h3>${html}</section>`;
+}
+
+/* §6.5 (C) 複習對比 — the contrast is what board questions actually ask
+   ("SP15 or ST25 for diarrhea"), and prose hides it. Each row names the other
+   point, the axis being compared, and the sourced note. The code links to that
+   point's page so the comparison can be read from either side. */
+function pointCompareSection(point) {
+  const rows = point.compareWith || [];
+  if (!rows.length) return "";
+  const html = rows.map((r) => {
+    const other = (r.codes || []).find((c) => c !== point.code) || "";
+    const rec = points.find((p) => p.code === other);
+    const name = rec ? rec.nameZh || "" : "";
+    return `<li class="pcmp-row">
+      <a class="pcmp-code" href="${pointHash(other)}">${escapeHtml(other)}${name ? ` ${escapeHtml(name)}` : ""}</a>
+      <span class="pcmp-axis">${escapeHtml(r.axis || "")}</span>
+      <span class="pcmp-note">${escapeHtml(r.note || "")}</span>
+    </li>`;
+  }).join("");
+  return `<section class="study-section point-compare">
+    <h3>${contentMode === "english" ? "Compare with" : "複習對比"}</h3>
+    <ul class="point-compare__list">${html}</ul>
+  </section>`;
+}
+
+/* §6.5 (B) 連接層 — both vocabularies, because a case is written in 西醫病名
+   but the reasoning is 病 → 證 → 穴. LI4 carries 115 conditions, so the list
+   collapses past a dozen rather than burying the rest of the card. */
+function pointLinkSection(point) {
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const condById = new Map((K.conditionCanon?.records || []).map((c) => [c.id, c]));
+  const patById = new Map((K.tcmPatternCanon?.records || []).map((p) => [p.id, p]));
+  const CAP = 12;
+
+  const block = (label, items, render) => {
+    if (!items.length) return "";
+    const head = items.slice(0, CAP).map(render).join("");
+    const rest = items.slice(CAP).map(render).join("");
+    return `<div class="point-links__group">
+      <span class="point-links__label">${escapeHtml(label)} <b>${items.length}</b></span>
+      <div class="point-links__chips">${head}</div>
+      ${rest ? `<details class="point-links__more"><summary>${contentMode === "english" ? `show all ${items.length}` : `其餘 ${items.length - CAP} 個`}</summary><div class="point-links__chips">${rest}</div></details>` : ""}
+    </div>`;
+  };
+
+  const conds = (point.relatedConditions || []).map((id) => condById.get(id)).filter(Boolean);
+  const pats = (point.tcmPatternIds || []).map((id) => patById.get(id)).filter(Boolean);
+
+  const html = [
+    block(contentMode === "english" ? "Western conditions" : "相關西醫病名", conds, (c) =>
+      `<button type="button" class="point-link point-link--cond" data-kind="condition" data-id="${escapeAttribute(c.id)}">${escapeHtml(c.name_zh || c.name_en || c.id)}</button>`),
+    // Patterns have no page of their own yet, so the chip runs the site search
+    // instead of pretending to navigate somewhere.
+    // 方證 (桂枝湯證) and 證候 (肝氣鬱結) are different kinds of diagnosis; the
+    // canon marks which, so the chip says so rather than presenting them as
+    // one flat vocabulary.
+    block(contentMode === "english" ? "TCM patterns" : "相關中醫證候", pats, (p) =>
+      `<button type="button" class="point-link point-link--pat${p.kind === "方證" ? " is-formula-pattern" : ""}" data-search-term="${escapeAttribute(p.name_zh)}">${escapeHtml(p.name_zh)}${p.formula_zh ? `<span class="pl-formula">${escapeHtml(p.formula_zh)}</span>` : ""}</button>`)
+  ].join("");
+  if (!html) return "";
+  return `<section class="study-section point-links">
+    <h3>${contentMode === "english" ? "Linked conditions & patterns" : "連結：病證與證候"}</h3>${html}
+  </section>`;
 }
 
 function renderPointCategoryBadges(point) {
@@ -3595,7 +3755,13 @@ function evidenceText(point) {
   }
   if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
   if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
-  if (point.evidence && !point.evidence.includes("draft record for AcuTing OS")) {
+  // The CloudTCM import wrote the same paragraph into both evidence and
+  // modern_research_zh on 348 of 361 points, so this section printed it twice
+  // under two different headings. The data keeps both fields (§0「只刪不加」);
+  // the card just does not repeat itself.
+  const evidenceIsEcho = point.evidence && point.modernResearchZh
+    && String(point.evidence).trim() === String(point.modernResearchZh).trim();
+  if (point.evidence && !evidenceIsEcho && !point.evidence.includes("draft record for AcuTing OS")) {
     parts.push(`【學習提醒】\n${point.evidence}`);
   }
   if (parts.length > 0) return parts.join("\n\n");

@@ -241,18 +241,66 @@
     }
   ],
   "tungZoneGroups": [
-    { "id": "11", "zh": "一一部位【手指】", "en": "11: Fingers" },
-    { "id": "22", "zh": "二二部位【手掌】", "en": "22: Hands" },
-    { "id": "33", "zh": "三三部位【前臂】", "en": "33: Forearms" },
-    { "id": "44", "zh": "四四部位【上臂】", "en": "44: Upper Arms" },
-    { "id": "55", "zh": "五五部位【腳趾】", "en": "55: Soles" },
-    { "id": "66", "zh": "六六部位【腳掌】", "en": "66: Top of Feet" },
-    { "id": "77", "zh": "七七部位【小腿】", "en": "77: Lower Legs" },
-    { "id": "88", "zh": "八八部位【大腿】", "en": "88: Thighs" },
-    { "id": "99", "zh": "九九部位【耳朵】", "en": "99: Ears" },
-    { "id": "1010", "zh": "十十部位【頭面】", "en": "1010: Head" },
-    { "id": "DT", "zh": "軀幹背面【DT】", "en": "DT: Dorsal Torso" },
-    { "id": "VT", "zh": "軀幹腹面【VT】", "en": "VT: Ventral Torso" }
+    {
+      "id": "11",
+      "zh": "一一部位【手指】",
+      "en": "11: Fingers"
+    },
+    {
+      "id": "22",
+      "zh": "二二部位【手掌】",
+      "en": "22: Hands"
+    },
+    {
+      "id": "33",
+      "zh": "三三部位【前臂】",
+      "en": "33: Forearms"
+    },
+    {
+      "id": "44",
+      "zh": "四四部位【上臂】",
+      "en": "44: Upper Arms"
+    },
+    {
+      "id": "55",
+      "zh": "五五部位【腳趾】",
+      "en": "55: Soles"
+    },
+    {
+      "id": "66",
+      "zh": "六六部位【腳掌】",
+      "en": "66: Top of Feet"
+    },
+    {
+      "id": "77",
+      "zh": "七七部位【小腿】",
+      "en": "77: Lower Legs"
+    },
+    {
+      "id": "88",
+      "zh": "八八部位【大腿】",
+      "en": "88: Thighs"
+    },
+    {
+      "id": "99",
+      "zh": "九九部位【耳朵】",
+      "en": "99: Ears"
+    },
+    {
+      "id": "1010",
+      "zh": "十十部位【頭面】",
+      "en": "1010: Head"
+    },
+    {
+      "id": "DT",
+      "zh": "軀幹背面【DT】",
+      "en": "DT: Dorsal Torso"
+    },
+    {
+      "id": "VT",
+      "zh": "軀幹腹面【VT】",
+      "en": "VT: Ventral Torso"
+    }
   ],
   "directoryTopics": [
     {
@@ -265,7 +313,8 @@
         "pain",
         "ache",
         "bi syndrome"
-      ]
+      ],
+      "group": "clinical"
     },
     {
       "id": "head_face",
@@ -284,7 +333,8 @@
         "nose",
         "ear",
         "throat"
-      ]
+      ],
+      "group": "clinical"
     },
     {
       "id": "digestive",
@@ -301,7 +351,8 @@
         "abdominal",
         "diarrhea",
         "vomit"
-      ]
+      ],
+      "group": "clinical"
     },
     {
       "id": "respiratory",
@@ -317,7 +368,8 @@
         "lung",
         "asthma",
         "nasal"
-      ]
+      ],
+      "group": "clinical"
     },
     {
       "id": "fertility_gyn",
@@ -333,7 +385,8 @@
         "menstrual",
         "uterus",
         "gynecology"
-      ]
+      ],
+      "group": "clinical"
     },
     {
       "id": "shen_sleep",
@@ -349,7 +402,8 @@
         "anxiety",
         "spirit",
         "palpitation"
-      ]
+      ],
+      "group": "clinical"
     },
     {
       "id": "tonify",
@@ -364,67 +418,78 @@
         "deficiency",
         "qi",
         "blood"
-      ]
+      ],
+      "group": "clinical"
     },
     {
       "id": "needs_review",
       "zh": "待校對資料",
       "en": "Needs Review",
-      "matchType": "needs_review"
+      "matchType": "needs_review",
+      "group": "qa"
     },
     {
       "id": "tung_index",
       "zh": "董氏奇穴索引",
       "en": "Master Tung Index",
-      "matchType": "tung_index"
+      "matchType": "tung_index",
+      "group": "index"
     },
     {
       "id": "auricular_index",
       "zh": "耳穴索引",
       "en": "Auricular Index",
-      "matchType": "auricular_index"
+      "matchType": "auricular_index",
+      "group": "index"
     },
     {
       "id": "auricular_gb93_draft",
       "zh": "GB93待校對",
       "en": "GB93 Drafts",
-      "matchType": "auricular_gb93_draft"
+      "matchType": "auricular_gb93_draft",
+      "group": "qa"
     },
     {
       "id": "missing_english_location",
       "zh": "缺英文定位",
       "en": "Missing English Location",
-      "matchType": "missing_english_location"
+      "matchType": "missing_english_location",
+      "group": "qa"
     },
     {
       "id": "missing_technique",
       "zh": "缺針刺手法",
       "en": "Missing Needling",
-      "matchType": "missing_technique"
+      "matchType": "missing_technique",
+      "group": "qa"
     },
     {
       "id": "missing_safety",
       "zh": "缺禁忌安全",
       "en": "Missing Safety",
-      "matchType": "missing_safety"
+      "matchType": "missing_safety",
+      "group": "qa"
     },
     {
       "id": "missing_indications",
       "zh": "缺主治功效",
       "en": "Missing Indications",
-      "matchType": "missing_indications"
+      "matchType": "missing_indications",
+      "group": "qa"
     },
     {
       "id": "missing_sources",
       "zh": "缺資料來源",
       "en": "Missing Sources",
-      "matchType": "missing_sources"
+      "matchType": "missing_sources",
+      "group": "qa"
     },
     {
       "id": "missing_visual",
       "zh": "缺圖像連結",
       "en": "Missing Visual Link",
-      "matchType": "missing_visual"
+      "matchType": "missing_visual",
+      "group": "qa"
     }
   ],
   "earAnatomyLabelData": [
