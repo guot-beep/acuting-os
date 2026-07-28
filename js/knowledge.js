@@ -283,6 +283,21 @@
       : `<p class="k-detail-empty">${esc(emptyText)}</p>`;
   }
 
+  /* 中英逐條成對 (FORMULA_CARD_TEMPLATE §1 sections 5 and 6). The formula card
+     used to show English only, so the curated 中文 layer was invisible — the
+     same defect the acupoint card had with point_identity and exam_pearl.
+     Falls back to a single-language list when the two do not pair, rather than
+     lining up rows that describe different things. */
+  function detailPairedList(zh, en, emptyText = "待補 / Content pending source review") {
+    const z = cleanList(zh), e = cleanList(en);
+    if (!z.length && !e.length) return `<p class="k-detail-empty">${esc(emptyText)}</p>`;
+    if (z.length && e.length && z.length === e.length) {
+      return `<ol class="k-paired-list">${z.map((v, i) =>
+        `<li><span class="kp-zh">${esc(v)}</span><span class="kp-en">${esc(e[i])}</span></li>`).join("")}</ol>`;
+    }
+    return detailList(z.length ? z : e, emptyText);
+  }
+
   function detailSection(titleZh, titleEn, content) {
     return `<section class="k-detail-section"><h3>${esc(titleZh)} <small>${esc(titleEn)}</small></h3>${content}</section>`;
   }
@@ -464,6 +479,86 @@
     return out.length ? `<span class="k-src-links">${out.join("")}</span>` : "來源待補";
   }
 
+  /* Formula-specific card sections (docs/FORMULA_CARD_TEMPLATE.md §1).
+     These exist because a formula is an assembly, not an entity: the 八法 is
+     the treatment strategy the outline examines by name (Domain I.B.5), the
+     family is what "加減" actually means, and the tongue/pulse is the selection
+     signal that tells this formula apart from its neighbours. */
+  function formulaExamBanner(record) {
+    const onBoard = record.on_board_list;
+    const pearl = usableText(record.exam_pearl);
+    if (!record.exam_importance && !pearl) return "";
+    const bold = (t) => esc(t).replace(/\*\*([^*]+)\*\*/g, '<strong class="k-pearl-key">$1</strong>').replace(/\n/g, "<br>");
+    return `<section class="k-exam-banner${onBoard ? " is-board" : ""}">
+      <h4>${onBoard ? "★ 考試重點 · NCBAHM 應試方劑" : "💡 學習提示"}</h4>
+      ${record.exam_importance ? `<p class="k-exam-scope">${esc(record.exam_importance)}</p>` : ""}
+      ${pearl ? `<p class="k-exam-pearl">${bold(pearl)}</p>` : ""}
+    </section>`;
+  }
+
+  function formulaGlanceRow(record) {
+    const bits = [
+      ["八法 Ba Fa", [usableText(record.ba_fa_zh), usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
+      ["出典 Source", usableText(record.source_classic)],
+      ["舌 Tongue", cleanList(record.tongue_zh).join("、")],
+      ["脈 Pulse", cleanList(record.pulse_zh).join("、")],
+      ["煎法 Preparation", usableText(record.preparation_zh)]
+    ].filter(([, v]) => v);
+    if (!bits.length) return "";
+    return `<div class="k-formula-glance">${bits.map(([k, v]) =>
+      `<div><span class="kfg-k">${esc(k)}</span><span class="kfg-v">${esc(v)}</span></div>`).join("")}</div>`;
+  }
+
+  function formulaFamilySection(record) {
+    const fam = Array.isArray(record.formula_family) ? record.formula_family : [];
+    if (!fam.length) return '<p class="k-detail-empty">待補 / Pending</p>';
+    const sign = { "加": "＋", "減": "－", "倍": "×", "合方": "＋方", "同類": "≈" };
+    return `<ul class="k-family">${fam.map((f) => `
+      <li class="k-family__row">
+        <span class="kf-rel">${esc(sign[f.relation] || "")}${esc(f.relation || "")}</span>
+        <span class="kf-name">${esc(f.name_zh || f.formula_id || "")}</span>
+        <span class="kf-change">${(f.change || []).map((c) => `<code>${esc(c)}</code>`).join(" ")}</span>
+        <span class="kf-ind">${esc(f.indication_zh || "")}</span>
+      </li>`).join("")}</ul>`;
+  }
+
+  function formulaCompareSection(record) {
+    const rows = Array.isArray(record.compare_with) ? record.compare_with : [];
+    if (!rows.length) return '<p class="k-detail-empty">待補 / Pending</p>';
+    return `<ul class="k-fcompare">${rows.map((c) => {
+      const other = (c.codes || []).find((x) => x !== record.id) || "";
+      return `<li><span class="kfc-axis">${esc(c.axis || "")}</span><span class="kfc-note">${esc(c.note || "")}</span></li>`;
+    }).join("")}</ul>`;
+  }
+
+  /* 原方 back-link. formula_family lives on the BASE formula, so opening a
+     derived one gave no hint it was a modification — which is the single most
+     useful thing to know about 大青龍湯. Mirrored by
+     scripts/link-formula-family-back.js, never authored twice. */
+  function formulaDerivedFrom(record) {
+    const d = record.derived_from;
+    if (!d) return "";
+    return `<p class="k-derived-from">原方 <a href="#" data-formula-jump="${esc(d.formula_id)}">${esc(d.name_zh)}</a>
+      <span class="kdf-rel">${esc(d.relation || "")}</span>
+      ${(d.change || []).map((c) => `<code>${esc(c)}</code>`).join(" ")}
+      ${d.indication_zh ? `<span class="kdf-ind">${esc(d.indication_zh)}</span>` : ""}</p>`;
+  }
+
+  /* 現代應用 — what this formula treats today. Kept separate from CloudTCM's
+     modern_diseases_zh: that list has 系統性紅斑性狼瘡 and 心肌梗塞 under
+     麻黃湯, which is keyword association rather than clinical application. Both
+     are shown, each under its own heading and its own source. */
+  function formulaModernSection(record) {
+    const out = [];
+    const app = cleanList(record.applications_zh), appEn = cleanList(record.applications_en);
+    if (app.length) out.push(detailSection("現代應用", "What this formula treats today（課件 Applications）", detailPairedList(app, appEn)));
+    const res = cleanList(record.modern_research_zh), resEn = cleanList(record.modern_research_en);
+    if (res.length) out.push(detailSection("現代藥理", "Modern research（課件）", detailPairedList(res, resEn)));
+    const dis = cleanList(record.modern_diseases_zh);
+    if (dis.length) out.push(detailSection("CloudTCM 可改善疾病", "關聯疾病索引（來源為關鍵字關聯，非臨床應用，需自行判讀）", `<div class="k-chip-cloud">${dis.map(tag).join("")}</div>`));
+    return out.join("");
+  }
+
   function detailShell(record, kind, panels) {
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
@@ -480,7 +575,13 @@
     const facts = kind === "formula"
       ? [
           ["分類 Category", record.category || record.category_en || "待補"],
-          ["學習層級 Tier", record.tier || "draft"],
+          // Ting removed the Tier tile long ago and wants this slot to be the
+          // CloudTCM link instead — it is the page she actually opens from a
+          // formula card. Falls back to the tier only when no link exists, so
+          // the tile is never empty.
+          record.cloudtcm_url
+            ? ["雲端中醫 CloudTCM", `<a href="${esc(record.cloudtcm_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">開啟方劑頁面 ↗</a>`, true]
+            : ["學習層級 Tier", record.tier || "draft"],
           ["組成 Composition", `${(record.composition || []).length} 味`],
           ["鑑別群組 Comparison", comparisonGroupLabel(record.comparison_group) || "—"]
         ]
@@ -542,14 +643,25 @@
 
   function formulaPanels(record) {
     const exam = record.english_exam_track || {};
-    const actions = cleanList(exam.actions_en).length ? exam.actions_en : record.actions_en;
-    const indications = cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : record.pattern_indications_en;
+    // On a curated card the curriculum English is the half that was asserted to
+    // pair with the 中文 line for line; english_exam_track is an older summary
+    // that does not. Prefer the curated pair when it exists.
+    const curated = !!(record.field_sources && record.field_sources.actions_zh);
+    const actions = curated && cleanList(record.actions_en).length
+      ? record.actions_en
+      : (cleanList(exam.actions_en).length ? exam.actions_en : record.actions_en);
+    const indications = curated && cleanList(record.pattern_indications_en).length
+      ? record.pattern_indications_en
+      : (cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : record.pattern_indications_en);
     const modifications = cleanList(exam.modifications_en).length ? exam.modifications_en : record.modifications_en;
     const composition = (record.composition || []).map((item) => {
       const herb = (item.pinyin && herbByPinyin.get(normalizeKey(item.pinyin))) || (item.herb_zh && herbByNameZh.get(usableText(item.herb_zh))) || (item.herbZh && herbByNameZh.get(usableText(item.herbZh)));
       const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" · ") || "Composition item pending";
       const role = [usableText(item.role_zh), usableText(item.role_en)].filter(Boolean).join(" · ");
-      const classicalAmount = usableText(item.classical_amount_text || item.classical_amount) || "待補";
+      // 原典用量 dropped from the table on Ting's call (「原典用量不用，全部
+      // 用生藥煎劑就好」). Only 22 of 201 formulas carry one and the rest
+      // printed a column of 待補. The field is NOT deleted from the data —
+      // §0 — it simply no longer occupies a column on the card.
       const decoctionDose = doseValue(item.decoction_reference_g || item.decoction_dose_g || item.dose_range);
       const granuleDose = doseValue(item.granule_reference_g || item.granule_dose_g);
       const granuleContext = [usableText(item.granule_concentration_ratio), usableText(item.granule_brand)].filter(Boolean).join(" · ");
@@ -563,7 +675,6 @@
       return `<tr>
         <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
         <td class="k-dose-role">${roleReason ? esc(roleReason) : '<span class="k-detail-empty">—</span>'}</td>
-        <td>${esc(classicalAmount)}</td>
         <td>${esc(decoctionDose)}</td>
         <td><strong>${esc(granuleDose)}</strong>${granuleContext ? `<small>${esc(granuleContext)}</small>` : ""}</td>
       </tr>`;
@@ -573,10 +684,10 @@
     const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `<div class="k-detail-columns">${detailSection("功用", "Actions", detailList(actions))}${detailSection("主治證型", "Pattern indications", detailList(indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>` },
-      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與劑量", "點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>原典用量</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div><p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaCompareSection(record))}` },
+      { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
-      { id: "clinical", label: "臨床理解 Clinical", content: `${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
+      { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
       { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safetyList(safety)]))}${detailSection("來源", "Sources", sourceLinks(record))}` }
     ];
   }
@@ -1397,12 +1508,24 @@
         <span>來源：data/sources/source_registry.json · authority 5 = 最高權威。</span>
       </div>
       <div class="k-grid k-grid-wide">
-        ${sources.map((s) => `
-          <article class="k-card">
-            <header><strong>${esc(s.name)}</strong><span class="k-status">${"★".repeat(s.authority || 0)}</span></header>
+        ${sources.map((s) => {
+          // 36 of the 43 registry entries carry a url that nothing rendered, so
+          // the page Ting browses these sites from listed their names and made
+          // her go find them herself. The title is the link when there is one;
+          // the rest say so rather than looking identical to a dead title.
+          const url = s.url || "";
+          const title = url
+            ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">${esc(s.name)} ↗</a>`
+            : `<strong>${esc(s.name)}</strong>`;
+          const host = url ? (() => { try { return new URL(url).host.replace(/^www\./, ""); } catch { return ""; } })() : "";
+          return `
+          <article class="k-card${url ? " has-link" : ""}">
+            <header>${title}<span class="k-status">${"★".repeat(s.authority || 0)}</span></header>
             <p class="k-meta">${esc(s.source_group || "")} · ${esc(s.layer || "")} · ${esc(s.access_type || "")}</p>
+            ${host ? `<p class="k-src-host">${esc(host)}</p>` : `<p class="k-src-host is-none">無線上連結（紙本／付費資料庫）</p>`}
             <p class="k-tags">${(s.primary_use || []).slice(0, 5).map(tag).join("")}</p>
-          </article>`).join("")}
+          </article>`;
+        }).join("")}
       </div>`;
   }
 

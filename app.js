@@ -1080,7 +1080,13 @@ function applyPointHash() {
   const point = points.find((item) => item.code.toLowerCase() === code.toLowerCase());
   if (!point) return false;
   selectedCode = point.code;
-  searchInput.value = point.code;
+  // Deliberately does NOT write the code into the search box. It used to, and
+  // that silently filtered the browse list: opening ST37 left "ST37" in the
+  // box, so returning to the list showed 2 of 751 points. Every later click
+  // landed on one of those two, and once the filter matched nothing the
+  // selection fell back to points[0] — which is why so many points appeared to
+  // open BL1 睛明. The hash owns the detail view; the filter belongs to the
+  // browse view, and one must not reach into the other.
   if (isAuricularPoint(point)) modelView = "ear";
   return true;
 }
