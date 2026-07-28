@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-28] Codex Handoff - Cool acrid board exam pearls
+
+- **Branch**: `codex/herbs-warm-acrid-2`
+- **Task**: Added missing `exam_importance` and `exam_pearl` fields for `herb.bo_he`, `herb.chan_tui`, and `herb.sang_ye`.
+- **Sources**: NCBAHM 2026 CH Content Outline herb list / Appendix B where applicable, Chenoweth Materia Medica p.2, Chenoweth herb-function category notes, and special-prep notes.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js --worklist --category "解表藥 / Release Exterior - Cool Acrid" --all` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no app/js/html/scripts/source schema files touched; no pair records changed.
+- **Known risks / manual checks**: Ting should visually confirm the exam section appears on the three rendered cards and that Sang Ye highlights official Sang Ye + Ju Hua pair.
+
 ## [2026-07-28] Codex Handoff - Chan Tui and Sang Ye corrections
 
 - **Branch**: `codex/herbs-warm-acrid-2`
