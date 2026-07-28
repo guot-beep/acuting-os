@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-28] Codex Handoff - Chan Tui and Sang Ye corrections
+
+- **Branch**: `codex/herbs-warm-acrid-2`
+- **Task**: Rechecked `herb.chan_tui` and `herb.sang_ye` against Chenoweth p.2, CloudTCM, and American Dragon; expanded indications, safety fields, bilingual tags, and modern pharmacology where prior cards were too compressed.
+- **Sources & images**: Both cards now show explicit `source_citations` for Chenoweth curriculum, CloudTCM, American Dragon, and the external Wikimedia image URL; `source_urls` includes the consulted external pages and image link.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js --worklist --category "解表藥 / Release Exterior - Cool Acrid" --all` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no app/js/html/scripts/source schema files touched; no herb-pair records changed in this correction pass.
+- **Known risks / manual checks**: Ting should visually confirm Chan Tui shows 4 contraindications/5 cautions and Sang Ye shows 4 contraindications/4 cautions with the bottom Sources & References chips.
+
 ## [2026-07-28] Codex Handoff - Bo He contraindication correction
 
 - **Branch**: `codex/herbs-warm-acrid-2`
