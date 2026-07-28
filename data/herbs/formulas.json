@@ -409,7 +409,8 @@
           "elucidation_zh": "麻黃湯中包含麻黃，主要基於其發汗解表之效。麻黃性溫，味辛，入肺、膀胱經，具有宣肺散寒、發汗解表、利水消腫之功效。\n麻黃湯適用於外感風寒，症見發熱惡寒、頭痛鼻塞、咳嗽喘促等。麻黃能發汗解表，驅散風寒，並能宣肺通竅，緩解鼻塞、頭痛等症狀，故成為麻黃湯中的主要藥物。",
           "decoction_reference_g": "9g",
           "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "發汗解表、宣肺平喘"
         },
         {
           "herb_zh": "桂枝",
@@ -421,7 +422,8 @@
           "elucidation_zh": "麻黃湯中包含桂枝，主要基於以下兩點原因：\n相輔相成： 麻黃性溫，發散風寒，但易傷津耗氣。桂枝性溫，辛甘，可溫通經絡，調和營衛，且能補氣固表，恰好彌補麻黃的不足，使藥力溫和，不致傷陰耗氣。\n協同作用： 麻黃宣肺解表，桂枝溫經通脈，兩者合用，可增強解表散寒之效，並能促進血液循環，溫通經絡，使藥效更顯著，更利於治療風寒表證。",
           "decoction_reference_g": "6g",
           "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "溫通心陽、散寒止痛"
         },
         {
           "herb_zh": "杏仁",
@@ -433,7 +435,8 @@
           "elucidation_zh": "麻黃湯中加入杏仁，主要原因有二：\n宣肺止咳：杏仁性味苦甘，入肺經，具有宣肺止咳、降氣平喘之效。麻黃湯以麻黃、桂枝宣肺散寒，杏仁則進一步助其宣肺止咳，針對風寒束表、肺氣不宣所致的咳嗽、喘息等症，起到更有效的治療作用。\n潤肺化痰：杏仁亦能潤肺化痰，對於風寒束表引起的痰液黏稠難以咳出者，杏仁可以幫助化痰，使咳嗽更容易排出，達到更好的止咳效果。",
           "decoction_reference_g": "9g",
           "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "潤肺止咳、平喘化痰"
         },
         {
           "herb_zh": "甘草",
@@ -445,7 +448,8 @@
           "elucidation_zh": "麻黃湯中加入甘草，主要有以下兩項原因：\n調和藥性: 麻黃性溫燥，容易傷津耗氣，甘草性甘平，能緩解麻黃的燥性，使藥性趨於平和，避免過於刺激，達到溫和發汗的效果。\n增強功效: 甘草具有補氣益血的作用，能增強麻黃的發汗解表功效，使藥效更加顯著。同時，甘草還能緩解麻黃的毒性，保障患者的安全。\n總之，甘草在麻黃湯中起到調和藥性、增強功效和保障安全的作用，是不可或缺的藥材。",
           "decoction_reference_g": "3g",
           "granule_reference_g": "0.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "調和諸藥、益氣緩急"
         }
       ],
       "actions_en": [
@@ -506,13 +510,7 @@
         "Exterior excess wind-cold pattern with absence of sweating",
         "Cough/wheezing pattern context with exterior cold signs"
       ],
-      "pattern_indications_zh": [
-        "組成:",
-        "麻黃：發汗解表、宣肺平喘",
-        "桂枝：溫通心陽、散寒止痛",
-        "杏仁：潤肺止咳、平喘化痰",
-        "甘草：調和諸藥、益氣緩急"
-      ],
+      "pattern_indications_zh": [],
       "modern_clinical_use_tags": [
         "common_cold",
         "uri",
@@ -619,7 +617,12 @@
       "tags_fetched_at": "2026-07-23T07:43:19.980Z",
       "tags_source_url": "https://cloudtcm.com/formula/1",
       "cloudtcm_url": "https://cloudtcm.com/formula/formula.ma_huang_tang",
-      "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）"
+      "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
+      "field_sources": {
+        "in_formula_zh": [
+          "原本誤置於 pattern_indications_zh，由 scripts/fix-formula-misfiled-composition.js 歸位"
+        ]
+      }
     },
     {
       "id": "formula.xiao_qing_long_tang",
@@ -2212,7 +2215,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.sheng_ma_ge_gen_tang",
@@ -2276,7 +2280,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.cang_er_zi_san",
@@ -2431,7 +2436,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -3259,17 +3265,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Drain the Epigastrium Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "瀉心",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：瀉心為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【瀉心湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -3284,7 +3280,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.liang_ge_san",
@@ -3323,17 +3320,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Cool the Diaphragm Powder"
       ],
-      "composition": [
-        {
-          "herb_zh": "涼膈",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：涼膈為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【涼膈散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -3348,7 +3335,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.qing_ying_tang",
@@ -4521,17 +4509,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Drain the White Powder"
       ],
-      "composition": [
-        {
-          "herb_zh": "瀉白",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：瀉白為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【瀉白散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -4546,7 +4524,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.yu_nv_jian",
@@ -4585,17 +4564,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Jade Woman Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "玉女",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：玉女為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【玉女煎】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -4610,7 +4579,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.shao_yao_tang",
@@ -4674,7 +4644,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.bai_tou_weng_tang",
@@ -4713,17 +4684,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Pulsatilla Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "白頭",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：白頭為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【白頭翁湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -4738,7 +4699,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.qing_hao_bie_jia_tang",
@@ -4967,17 +4929,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Cool Bones Powder"
       ],
-      "composition": [
-        {
-          "herb_zh": "清骨",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：清骨為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【清骨散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -4992,7 +4944,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.dang_gui_liu_huang_tang",
@@ -5056,7 +5009,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.liu_yi_san",
@@ -5179,17 +5133,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Five-Ingredient Decoction to Eliminate Toxicity"
       ],
-      "composition": [
-        {
-          "herb_zh": "五味",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：五味為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【五味消毒飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -5204,7 +5148,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.qing_wen_bai_du_yin",
@@ -5243,17 +5188,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Clear Epidemics and Overcome Toxicity Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "清瘟",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：清瘟為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【清瘟敗毒飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -5268,7 +5203,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.da_cheng_qi_tang",
@@ -5935,17 +5871,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Increase Fluids and Order the Qi Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "增液",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：增液為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【增液承氣湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -5960,7 +5886,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.da_huang_mu_dan_tang",
@@ -6024,7 +5951,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.ma_zi_ren_wan",
@@ -6315,17 +6243,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Moisten the Intestines Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "潤腸",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：潤腸為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【潤腸丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -6340,7 +6258,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.ji_chuan_jian",
@@ -6379,17 +6298,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Benefit the River Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "濟川",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：濟川為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【濟川煎】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -6404,7 +6313,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.xiao_chai_hu_tang",
@@ -6988,7 +6898,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.xiao_yao_san",
@@ -8307,7 +8218,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.xiao_jian_zhong_tang",
@@ -8617,7 +8529,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.si_ni_tang",
@@ -8843,17 +8756,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Ginseng and Aconite Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "參附",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：參附為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【參附湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -8868,7 +8771,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.wu_zhu_yu_tang",
@@ -9855,17 +9759,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Six Gentlemen Decoction with Saussurea and Cardamom"
       ],
-      "composition": [
-        {
-          "herb_zh": "香砂",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：香砂為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【香砂六君子湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -9880,7 +9774,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.shen_ling_bai_zhu_san",
@@ -10886,7 +10781,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.si_wu_tang",
@@ -11502,17 +11398,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Ass-Hide Gelatin and Mugwort Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "膠艾",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：膠艾為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【膠艾湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -11527,7 +11413,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.dang_gui_bu_xue_tang",
@@ -12184,17 +12071,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Mount Tai Bedrock Powder"
       ],
-      "composition": [
-        {
-          "herb_zh": "泰山",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：泰山為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【泰山磐石散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -12209,7 +12086,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.liu_wei_di_huang_wan",
@@ -12787,17 +12665,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Left-Restoring Drink"
       ],
-      "composition": [
-        {
-          "herb_zh": "左歸",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：左歸為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【左歸飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -12812,7 +12680,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.you_gui_wan",
@@ -13110,17 +12979,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Right-Restoring Drink"
       ],
-      "composition": [
-        {
-          "herb_zh": "右歸",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：右歸為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【右歸飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -13135,7 +12994,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.qi_ju_di_huang_wan",
@@ -13174,17 +13034,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Lycium Fruit, Chrysanthemum and Rehmannia Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "杞菊",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：杞菊為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【杞菊地黃丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -13199,7 +13049,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.zhi_bai_di_huang_wan",
@@ -13238,17 +13089,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Anemarrhena, Phellodendron, and Rehmannia Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "知柏",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：知柏為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【知柏地黃丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -13263,7 +13104,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.shen_qi_wan",
@@ -13302,17 +13144,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Kidney Qi Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "腎氣",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：腎氣為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【腎氣丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -13327,7 +13159,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.jin_gui_shen_qi_wan",
@@ -14205,17 +14038,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Metal Lock Pill to Stabilize Essence"
       ],
-      "composition": [
-        {
-          "herb_zh": "金鎖",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：金鎖為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【金鎖固精丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -14230,7 +14053,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.sang_piao_xiao_san",
@@ -14269,17 +14093,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Mantis Egg-Case Powder"
       ],
-      "composition": [
-        {
-          "herb_zh": "桑螵",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：桑螵為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【桑螵蛸散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -14294,7 +14108,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.suo_quan_wan",
@@ -14333,17 +14148,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Shut the Sluice Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "縮泉",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：縮泉為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【縮泉丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -14358,7 +14163,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.shou_tai_wan",
@@ -14397,17 +14203,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Fetus-Longevity Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "壽胎",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：壽胎為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【壽胎丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -14422,7 +14218,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.suan_zao_ren_tang",
@@ -15241,7 +15038,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.yue_ju_wan",
@@ -15598,7 +15396,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.ban_xia_hou_po_tang",
@@ -16116,7 +15915,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.xue_fu_zhu_yu_tang",
@@ -17858,17 +17658,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Drive Out Stasis Below the Diaphragm Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "膈下",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：膈下為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【膈下逐瘀湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -17883,7 +17673,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.shao_fu_zhu_yu_tang",
@@ -17922,17 +17713,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Drive Out Stasis in the Lower Abdomen Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "少腹",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：少腹為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【少腹逐瘀湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -17947,7 +17728,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.shen_tong_zhu_yu_tang",
@@ -17986,17 +17768,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Drive Out Stasis from Painful Body Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "身痛",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：身痛為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【身痛逐瘀湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -18011,7 +17783,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.ping_wei_san",
@@ -19484,17 +19257,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Two Miracle Powder"
       ],
-      "composition": [
-        {
-          "herb_zh": "二妙",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：二妙為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【二妙散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -19509,7 +19272,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.si_miao_wan",
@@ -19548,17 +19312,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Four Miracle Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "四妙",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：四妙為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【四妙丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -19573,7 +19327,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.zhen_wu_tang",
@@ -19866,17 +19621,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Strengthen the Spleen Drink"
       ],
-      "composition": [
-        {
-          "herb_zh": "實脾",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：實脾為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【實脾飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -19891,7 +19636,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.fang_ji_huang_qi_tang",
@@ -20615,17 +20361,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Poria, Cinnamon Twig, Atractylodes and Licorice Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "苓桂",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：苓桂為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【苓桂朮甘湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -20640,7 +20376,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.er_chen_tang",
@@ -22929,17 +22666,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Minor Invigorate the Collaterals Special Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "小活",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：小活為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【小活絡丹】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -22954,7 +22681,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.bao_he_wan",
@@ -23516,17 +23244,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Mulberry Leaf and Apricot Kernel Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "桑杏",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：桑杏為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【桑杏湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -23541,7 +23259,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.sha_shen_mai_men_dong_tang",
@@ -23605,7 +23324,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_suspect": "組成只有一味，且該味是方名開頭 —— 很可能是匯入時被截斷，待由 curriculum/formulas 補齊"
     },
     {
       "id": "formula.zhi_sou_san",
@@ -23644,17 +23364,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Stop Coughing Powder"
       ],
-      "composition": [
-        {
-          "herb_zh": "止嗽",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：止嗽為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【止嗽散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -23669,7 +23379,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.an_gong_niu_huang_wan",
@@ -23795,17 +23506,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Purple Snow Special Pill"
       ],
-      "composition": [
-        {
-          "herb_zh": "紫雪",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：紫雪為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【紫雪丹】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -23820,7 +23521,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.zhi_bao_dan",
@@ -24163,17 +23865,7 @@
       "pattern_indications_en": [
         "Pattern Indications of Yang-Harmonizing Decoction"
       ],
-      "composition": [
-        {
-          "herb_zh": "陽和",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：陽和為本方核心主藥。"
-        }
-      ],
+      "composition": [],
       "clinical_use_note": "【陽和湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -24188,7 +23880,8 @@
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
-      "safety_fetched_at": "2026-07-23"
+      "safety_fetched_at": "2026-07-23",
+      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）"
     },
     {
       "id": "formula.gui_pi_tang",

@@ -16,6 +16,12 @@
  *   F6 template-grade record has a composition entry with no herb_zh
  *   F7 template-grade record has no 君臣佐使, or names more than 2 君藥
  *   F8 template-grade record's actions_zh exceeds 8 items
+ *   F10 misfiled content — the defect class that dominated the herb and
+ *      acupoint cards (組成 inside pattern_indications, a prohibition written
+ *      as an action, a whole sentence sitting in the short-tag layer)
+ *   F11 formula_family entry that names a formula without saying what changed —
+ *      a bare list of names throws away the only valuable part
+ *   F12 composition names an herb that is not in herb_canon_shortlist
  *   F9 fully-destroyed mojibake anywhere in the record — EVERY record, not
  *      just template-grade, because corrupt text is corrupt either way and it
  *      must never reach a card. Partially damaged text (a few characters lost,
@@ -43,6 +49,7 @@ const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const FILE = path.join(ROOT, "data/herbs/formulas.json");
+const HERBS = path.join(ROOT, "data/herbs/herb_canon_shortlist.json");
 
 const WORKLIST = process.argv.includes("--worklist");
 const ALL = process.argv.includes("--all");
@@ -83,7 +90,27 @@ const PAIRS = [
   ["contraindications_zh", "contraindications_en"]
 ];
 
-let nTemplate = 0, nRoles = 0, nMojibake = 0, nDamaged = 0, nComp = 0, nMisaligned = 0;
+// F12 — the composition→herb join is the formula card's whole reason to exist
+// as the hub of the three cards, so an ingredient nobody can look up is a real
+// break, not a cosmetic one.
+const herbNames = (() => {
+  if (!fs.existsSync(HERBS)) return null;
+  const j = JSON.parse(fs.readFileSync(HERBS, "utf8"));
+  const set = new Set();
+  for (const h of (j.records || j)) {
+    if (h.name_zh) set.add(String(h.name_zh).trim());
+    for (const a of h.aliases_zh || []) set.add(String(a).trim());
+  }
+  return set;
+})();
+
+const ROLE_OK = /^(君|臣|佐|使|chief|deputy|assistant|envoy)/i;
+// A short tag is 2-6 characters. A whole sentence in the tag layer is the
+// defect that destroyed the acupoint search layer once already.
+const TAG_MAX = 12;
+const BAN_IN_ACTIONS = /(禁用|忌服|孕婦忌|不可服|慎服|禁忌)/;
+
+let nTemplate = 0, nRoles = 0, nMojibake = 0, nDamaged = 0, nComp = 0, nMisaligned = 0, nUnknownHerb = 0, nSuspect = 0;
 
 for (const r of recs) {
   const id = r.id || r.name_zh || "(no id)";
@@ -150,6 +177,15 @@ for (const r of recs) {
     if (isTemplate(r)) errors.push(`F6 ${id}: composition[${i}] has no herb_zh`);
   });
   if (!comp.length) flag(r, "缺組成 composition");
+  // Marked by fix-formula-name-as-ingredient.js: the composition is a single
+  // herb that is also the head of the formula's own name, i.e. almost certainly
+  // truncated at import. Not blocking — the real composition needs the
+  // curriculum — but it must never pass silently as a complete card.
+  if (r.composition_suspect) {
+    nSuspect++;
+    flag(r, "組成疑似被截斷(只剩方名開頭那一味)");
+    if (isTemplate(r)) errors.push(`F6 ${id}: composition 疑似被截斷 — 整理前必須先從 curriculum/formulas 補齊`);
+  }
 
   // F7 — 君臣佐使 is the core of a formula card.
   const roles = comp.map((c) => String(c?.role_zh || c?.role || "").trim()).filter(Boolean);
@@ -171,6 +207,71 @@ for (const r of recs) {
   if (isTemplate(r)) nTemplate++;
   else flag(r, "尚未依模板整理(無 field_sources.actions_zh)");
 
+  // ── F10 misfiled content ─────────────────────────────────────────────────
+  // Each of these is a real defect seen on the other two cards, not a
+  // hypothetical: 麻黃湯's composition really is inside pattern_indications_zh,
+  // and ST17's needling prohibition really was filed as a function.
+  for (const v of arr(r.pattern_indications_zh)) {
+    if (/^\s*組成\s*[:：]/.test(String(v))) {
+      flag(r, "組成寫在 pattern_indications_zh 裡");
+      errors.push(`F10 ${id}: pattern_indications_zh 含「組成:」條目 — 組成應該在 composition`);
+      break;
+    }
+  }
+  for (const v of arr(r.actions_zh)) {
+    if (BAN_IN_ACTIONS.test(String(v))) {
+      flag(r, "禁忌語寫在功效裡");
+      if (isTemplate(r)) errors.push(`F10 ${id}: actions_zh 含禁忌語 — 禁忌應該在 contraindications_zh`);
+      break;
+    }
+  }
+  for (const tf of ["modern_clinical_use_tags", "study_tags"]) {
+    const longs = arr(r[tf]).filter((v) => String(v).replace(/\s/g, "").length > TAG_MAX);
+    if (!longs.length) continue;
+    flag(r, `${tf} 有整句(${longs.length} 條)`);
+    if (isTemplate(r)) errors.push(`F10 ${id}: ${tf} 有 ${longs.length} 條超過 ${TAG_MAX} 字 — 標籤層是短標籤，不是整句`);
+  }
+
+  // ── F7 role vocabulary ───────────────────────────────────────────────────
+  for (const role of roles) {
+    if (ROLE_OK.test(role)) continue;
+    flag(r, `角色用詞不合規:${role}`);
+    if (isTemplate(r)) errors.push(`F7 ${id}: composition role「${role}」— 只能是 君/臣/佐/使`);
+  }
+
+  // ── F6b dose ─────────────────────────────────────────────────────────────
+  // 桂枝湯 → 桂枝加芍藥湯 differs only in the 芍藥 dose, so a dose is part of
+  // what the formula IS, not an annotation on it.
+  const noDose = comp.filter((c) => !String(c?.dose_range || c?.decoction_reference_g || "").trim()).length;
+  if (noDose) {
+    flag(r, `${noDose} 味沒有劑量`);
+    if (isTemplate(r)) errors.push(`F6 ${id}: ${noDose} 味沒有 dose_range — 比例就是方`);
+  }
+
+  // ── F11 formula_family must say what changed ─────────────────────────────
+  for (const [i, fam] of arr(r.formula_family).entries()) {
+    const changed = arr(fam?.change).filter((x) => String(x).trim()).length;
+    const named = String(fam?.formula_id || fam?.name_zh || "").trim();
+    if (!named) errors.push(`F11 ${id}: formula_family[${i}] 沒有方名也沒有 formula_id`);
+    if (!changed) errors.push(`F11 ${id}: formula_family[${i}]「${named}」沒寫 change — 只列方名等於沒寫`);
+    if (fam?.relation && !/^(加|減|倍|合方|同類)$/.test(String(fam.relation))) {
+      errors.push(`F11 ${id}: formula_family[${i}] relation「${fam.relation}」— 只能是 加/減/倍/合方/同類`);
+    }
+  }
+  if (!arr(r.formula_family).length) flag(r, "缺方劑家族 formula_family");
+
+  // ── F12 composition → herb canon ─────────────────────────────────────────
+  if (herbNames) {
+    const unknown = comp.map((c) => String(c?.herb_zh || "").trim())
+      .filter((n) => n && !herbNames.has(n));
+    if (unknown.length) {
+      flag(r, `中藥庫查無:${unknown.slice(0, 3).join("、")}`);
+      nUnknownHerb += unknown.length;
+      if (isTemplate(r)) errors.push(`F12 ${id}: composition 有 ${unknown.length} 味不在中藥庫 — ${unknown.slice(0, 4).join("、")}`);
+    }
+  }
+
+  if (!arr(r.tongue_zh).length && !arr(r.pulse_zh).length) flag(r, "缺舌脈 tongue_zh/pulse_zh");
   if (!arr(r.modifications_zh).length) flag(r, "缺加減變化");
   if (!String(r.source_classic || "").trim()) flag(r, "缺出典 source_classic");
   if (!arr(r.contraindications_zh).length) flag(r, "缺禁忌 contraindications_zh");
@@ -186,6 +287,11 @@ console.log(`  有禁忌                    ${pct(recs.filter((r) => arr(r.contr
 console.log(`  ⚠️ 完全損毀的亂碼         ${pct(nMojibake)}`);
 console.log(`  ⚠️ 缺字待修(仍可讀)      ${pct(nDamaged)}`);
 console.log(`  ⚠️ 中英未對齊             ${pct(nMisaligned)}`);
+console.log(`  有劑量的方                ${pct(recs.filter((r) => arr(r.composition).some((c) => c?.dose_range)).length)}`);
+console.log(`  有舌脈                    ${pct(recs.filter((r) => arr(r.tongue_zh).length || arr(r.pulse_zh).length).length)}`);
+console.log(`  有方劑家族 formula_family ${pct(recs.filter((r) => arr(r.formula_family).length).length)}`);
+console.log(`  ⚠️ 組成有中藥庫查無的藥    ${nUnknownHerb} 味次`);
+console.log(`  ⚠️ 組成疑似被截斷         ${pct(nSuspect)}`);
 
 // The linking layer, reported but not blocking — same as the acupoint card.
 const linked = recs.filter((r) => arr(r.related_conditions).length || arr(r.condition_links).length).length;
