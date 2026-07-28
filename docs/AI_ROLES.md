@@ -1,3 +1,8 @@
+> **2026-07-28 新增**:方劑卡規範與派工已就緒 ——
+> `docs/FORMULA_CARD_TEMPLATE.md`(F1–F12)、`docs/FORMULA_FILL_DISPATCH.md`(接手指令)、
+> `docs/HANDOFF_2026-07-28.md`(現況、下一步、待 Ting 決定的事)。
+> 三張卡的規範現在是同一套邏輯,填哪一張都先讀對應的 CARD_TEMPLATE。
+
 # AI Roles & Standing Prompts (Ting, 2026-07-24)
 
 Ting's division of labour, latest word wins over any earlier "everyone fills"
