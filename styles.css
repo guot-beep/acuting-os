@@ -5556,3 +5556,44 @@ html { scroll-padding-top: 92px; }
 .k-src-host { margin: 0.15rem 0 0.4rem; font-size: 0.76rem; opacity: 0.62; font-family: ui-monospace, monospace; }
 .k-src-host.is-none { font-family: inherit; font-style: italic; }
 .k-card.has-link { border-color: rgba(56, 189, 248, 0.35); }
+
+/* Formula card: the exam banner leads, because Ting asked for board emphasis
+   to be the first thing on the card, and the outline names 方劑 as its own
+   examined domain. */
+.k-exam-banner { margin: 0 0 0.9rem; padding: 0.75rem 0.95rem; border-radius: 8px;
+  background: rgba(56, 189, 248, 0.10); border-left: 4px solid #38bdf8; }
+.k-exam-banner.is-board { background: rgba(185, 28, 28, 0.14); border-left-color: #ef4444; }
+.k-exam-banner h4 { margin: 0 0 0.35rem; font-size: 0.95rem; font-weight: 800; }
+.k-exam-scope { margin: 0 0 0.4rem; font-size: 0.8rem; opacity: 0.8; line-height: 1.55; }
+.k-exam-pearl { margin: 0; font-size: 0.92rem; line-height: 1.75; }
+.k-pearl-key { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
+
+.k-formula-glance { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; }
+.k-formula-glance > div { flex: 1 1 150px; padding: 0.5rem 0.7rem; border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); }
+.kfg-k { display: block; font-size: 0.7rem; opacity: 0.62; letter-spacing: 0.03em; }
+.kfg-v { display: block; font-size: 0.9rem; font-weight: 600; margin-top: 0.15rem; }
+
+.k-family { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.k-family__row { display: grid; grid-template-columns: 3.2rem minmax(6rem, auto) minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 0.2rem 0.7rem; align-items: baseline; padding: 0.5rem 0.7rem; border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05); border-left: 3px solid #b08a3e; }
+.kf-rel { font-weight: 800; color: #eab308; white-space: nowrap; }
+.kf-name { font-weight: 700; }
+.kf-change code { font-size: 0.8rem; padding: 0.05rem 0.35rem; border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1); margin-right: 0.25rem; }
+.kf-ind { font-size: 0.85rem; opacity: 0.82; }
+
+.k-fcompare { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.k-fcompare li { padding: 0.5rem 0.7rem; border-radius: 6px; background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #7a4a86; }
+.kfc-axis { display: block; font-size: 0.8rem; font-weight: 700; opacity: 0.8; margin-bottom: 0.15rem; }
+.kfc-note { font-size: 0.9rem; line-height: 1.65; }
+
+@media (max-width: 720px) { .k-family__row { grid-template-columns: 1fr; } }
+
+/* 中英成對 on the formula card, same shape as the acupoint card's 功效 block. */
+.k-paired-list { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.45rem; }
+.k-paired-list li { line-height: 1.55; }
+.k-paired-list .kp-zh { display: block; font-weight: 650; }
+.k-paired-list .kp-en { display: block; font-size: 0.85rem; opacity: 0.72; }

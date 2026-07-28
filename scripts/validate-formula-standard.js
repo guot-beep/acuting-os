@@ -105,9 +105,18 @@ const herbNames = (() => {
 })();
 
 const ROLE_OK = /^(君|臣|佐|使|chief|deputy|assistant|envoy)/i;
-// A short tag is 2-6 characters. A whole sentence in the tag layer is the
-// defect that destroyed the acupoint search layer once already.
-const TAG_MAX = 12;
+// A whole sentence in the tag layer is the defect that destroyed the acupoint
+// search layer once already. But a flat character limit is the wrong test:
+// Chinese tags are 2-6 字 while English tags are snake_case slugs
+// ("wheezing_context" is 16 characters and is a perfectly good tag). What
+// actually marks a sentence is prose punctuation or several space-separated
+// words, so that is what this checks.
+const isSentence = (v) => {
+  const s = String(v).trim();
+  if (/[。，、；：!?]/.test(s)) return true;            // prose punctuation
+  if (/[\u4e00-\u9fff]/.test(s)) return s.length > 12; // 中文 tag: still a length rule
+  return s.split(/\s+/).length > 4;                    // English: a slug or short phrase
+};
 const BAN_IN_ACTIONS = /(禁用|忌服|孕婦忌|不可服|慎服|禁忌)/;
 
 let nTemplate = 0, nRoles = 0, nMojibake = 0, nDamaged = 0, nComp = 0, nMisaligned = 0, nUnknownHerb = 0, nSuspect = 0;
@@ -163,6 +172,14 @@ for (const r of recs) {
       if (isTemplate(r)) errors.push(`F4 ${id}: ${ef} (${en.length}) is not index-aligned with ${zf} (${zh.length}) — English would land on the wrong item`);
     }
     if (zh.length && !en.length) {
+      // Safety is one group. contraindications_en may legitimately be empty
+      // when the English safety statement is a single umbrella sentence that
+      // cannot pair line-for-line with several 中文 rules — F4 forbids padding
+      // it out, and inventing three more English lines to match is the exact
+      // misalignment F4 exists to stop. If cautions_en carries it, the English
+      // is not missing, it is just filed where it can stand alone.
+      const safetyElsewhere = ef === "contraindications_en" && arr(r.cautions_en).length;
+      if (safetyElsewhere) { flag(r, "禁忌英文改掛 cautions_en（無法逐條配對）"); continue; }
       flag(r, `缺英文 ${ef}`);
       if (isTemplate(r)) errors.push(`F5 ${id}: template-grade record is missing ${ef} (${zh.length} 中文, 0 English)`);
     }
@@ -226,10 +243,10 @@ for (const r of recs) {
     }
   }
   for (const tf of ["modern_clinical_use_tags", "study_tags"]) {
-    const longs = arr(r[tf]).filter((v) => String(v).replace(/\s/g, "").length > TAG_MAX);
+    const longs = arr(r[tf]).filter(isSentence);
     if (!longs.length) continue;
     flag(r, `${tf} 有整句(${longs.length} 條)`);
-    if (isTemplate(r)) errors.push(`F10 ${id}: ${tf} 有 ${longs.length} 條超過 ${TAG_MAX} 字 — 標籤層是短標籤，不是整句`);
+    if (isTemplate(r)) errors.push(`F10 ${id}: ${tf} 有 ${longs.length} 條是整句而非標籤 — 「${String(longs[0]).slice(0, 24)}…」`);
   }
 
   // ── F7 role vocabulary ───────────────────────────────────────────────────
