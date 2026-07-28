@@ -208,18 +208,21 @@
       "name_en": "Chai Hu with Bai Shao",
       "relation": "pair.rel.xiang_zhi",
       "pair_meaning_zh": "柴胡辛散疏肝理氣，白芍酸收養血柔肝止痛。一散一收，疏肝而不傷陰，柔肝而不滯氣，為調和肝脾、疏肝止痛之經典藥對。",
-      "pair_meaning_en": "Chai Hu moves and spreads Liver qi; Bai Shao sours and softens the Liver to relieve pain. Spreading without injuring yin, softening without stagnating qi.",
-      "indication_zh": "肝鬱血虛、肝脾不和證：胸脅脹痛、情志抑鬱、腹痛下利、月經不調",
-      "indication_en": "Liver qi stagnation with Blood deficiency: chest fullness, emotional depression, abdominal pain, irregular menses.",
-      "caution_zh": "肝陽上亢者慎用柴胡。",
-      "caution_en": "Caution with Chai Hu in Liver Yang hyperactivity.",
+      "pair_meaning_en": "Chai Hu spreads and courses Liver Qi; Bai Shao nourishes Blood, softens the Liver, and relieves pain. One disperses and one restrains, coursing the Liver without damaging Yin and softening without stagnating Qi.",
+      "indication_zh": "肝鬱血虛、肝脾不和證：胸脅脹痛、情志抑鬱、腹痛下利、月經不調。",
+      "indication_en": "Liver Qi stagnation with Blood deficiency or Liver-Spleen disharmony: hypochondriac distention, emotional constraint, abdominal pain with diarrhea, and irregular menses.",
+      "caution_zh": "肝陽上亢、陰虛津虧或肝火上炎者慎用/禁用柴胡方向；依柴胡安全欄辨證。",
+      "caution_en": "Use or avoid the Chai Hu direction carefully in Liver Yang rising, Yin/Fluid deficiency, or Liver Fire flaring upward; follow the Chai Hu safety panel.",
       "found_in_formulas": [
         "formula.si_ni_san",
         "formula.xiao_yao_san",
         "formula.chai_hu_shu_gan_san"
       ],
       "sources": [
-        "cloudtcm_herb_pages"
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L509",
+        "cloudtcm_herb_pages",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "https://www.americandragon.com/Individualherbsupdate/ChaiHu.html"
       ]
     },
     {
@@ -782,16 +785,20 @@
       "name_zh": "桑葉配菊花",
       "name_en": "Sang Ye with Ju Hua",
       "relation": "pair.rel.xiang_xu",
-      "pair_meaning_zh": "桑葉甘苦寒清宣肺熱、疏散風熱；菊花甘苦微寒清肝明目、疏散風熱。桑葉主清肺，菊花主清肝。兩藥相須，清宣風熱、清肝明目之力顯著（桑菊飲）。",
-      "pair_meaning_en": "Sang Ye clears Lung heat; Ju Hua clears Liver and brightens eyes. Classic pair for Wind-Heat cold and red eyes.",
+      "pair_meaning_zh": "桑葉清宣肺熱、疏散風熱；菊花清肝明目、疏散風熱。桑葉主肺，菊花主肝，兩藥相須，清宣風熱、清肝明目之力增強（桑菊飲）。",
+      "pair_meaning_en": "Sang Ye clears and vents Lung Heat while Ju Hua clears the Liver and brightens the eyes. Together they mutually reinforce Wind-Heat release and Liver-eye clearing, as in Sang Ju Yin.",
       "indication_zh": "風熱感冒、溫病初起：發熱頭痛、咳嗽、目赤腫痛、頭暈（桑菊飲證）",
-      "indication_en": "Wind-Heat cold or early warm disease: fever, headache, cough, red eyes.",
-      "caution_zh": "脾胃虛寒者不宜久服。",
-      "caution_en": "Unsuitable for prolonged use in Spleen cold deficiency.",
+      "indication_en": "Wind-Heat common cold or early warm disease: fever, headache, cough, red painful eyes, and dizziness.",
+      "caution_zh": "兩藥皆偏寒涼；脾胃虛寒、肺虛寒或氣虛者慎用，並依各單味安全欄辨證。",
+      "caution_en": "Both herbs are cool/cold; use caution in Spleen/Stomach deficiency-cold, weak/cold Lung, or Qi deficiency, and consult each single-herb safety panel.",
       "found_in_formulas": [
         "formula.sang_ju_yin"
       ],
       "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L551",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L222-L231",
+        "https://www.americandragon.com/Individualherbsupdate/JuHua.html",
+        "https://www.americandragon.com/Individualherbsupdate/SangYe.html",
         "cloudtcm_herb_pages"
       ]
     },
@@ -1266,8 +1273,426 @@
         "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
         "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
       ]
+    },
+    {
+      "id": "pair.gou_qi_zi__ju_hua",
+      "herbs": [
+        "herb.gou_qi_zi",
+        "herb.ju_hua"
+      ],
+      "name_zh": "枸杞子配菊花",
+      "name_en": "Gou Qi Zi with Ju Hua",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "枸杞子滋補肝腎、益精明目；菊花清肝明目、平肝。兩藥相使，一補一清，用於肝腎不足或肝陽偏亢所致目疾與頭暈（杞菊地黃丸方向）。",
+      "pair_meaning_en": "Gou Qi Zi nourishes Liver and Kidney essence and benefits the eyes, while Ju Hua clears the Liver, brightens the eyes, and calms the Liver. The pair combines supplementation with clearing for eye disorders and dizziness.",
+      "indication_zh": "肝腎不足或肝陰不足之視物昏花、目乾、目澀，兼肝陽上亢頭暈頭痛者。",
+      "indication_en": "Blurred, dry, or strained eyes from Liver/Kidney deficiency or Liver Yin deficiency, especially with Liver Yang dizziness or headache.",
+      "caution_zh": "脾胃虛寒、便溏或陽虛寒證者慎用菊花；痰濕重或外邪未解時補益藥需辨證。",
+      "caution_en": "Use Ju Hua cautiously in Spleen/Stomach deficiency-cold, loose stool, or Yang-deficient Cold; use the tonic component cautiously when Damp-Phlegm is heavy or exterior pathogens remain unresolved.",
+      "found_in_formulas": [
+        "formula.qi_ju_di_huang_wan"
+      ],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L522",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L5623-L5626",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L5725-L5731",
+        "https://www.americandragon.com/Individualherbsupdate/JuHua.html"
+      ]
+    },
+    {
+      "id": "pair.ge_gen__sheng_ma",
+      "herbs": [
+        "herb.ge_gen",
+        "herb.sheng_ma"
+      ],
+      "name_zh": "葛根配升麻",
+      "name_en": "Ge Gen with Sheng Ma",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "葛根解肌透疹、生津升陽；升麻升散透疹、升舉清陽。兩藥相使，增強透疹與升清陽之力，常見於升麻葛根湯方向。",
+      "pair_meaning_en": "Ge Gen releases the muscle layer, vents rashes, generates fluids, and raises Yang; Sheng Ma vents rashes and raises clear Yang. Together they assist each other in venting measles and raising clear Yang.",
+      "indication_zh": "麻疹初起透發不暢；熱利下痢或清陽不升所致泄瀉，須依熱象與脾胃狀態配伍。",
+      "indication_en": "Incomplete early measles eruption; Heat diarrhea/dysentery or diarrhea from failure of clear Yang to ascend, with formula context adjusted to Heat signs and Spleen/Stomach status.",
+      "caution_zh": "兩藥升散；陰虛陽亢、汗出過多、氣逆上衝或胃寒汗出者須慎用。",
+      "caution_en": "Both herbs are ascending and dispersing; use caution in Yin deficiency with Yang rising, excessive sweating, upward-rebellious Qi, or Stomach Cold with sweating.",
+      "found_in_formulas": [
+        "formula.sheng_ma_ge_gen_tang"
+      ],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L521",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "https://www.americandragon.com/Individualherbsupdate/GeGen.html"
+      ]
+    },
+    {
+      "id": "pair.chai_hu__huang_qin",
+      "herbs": [
+        "herb.chai_hu",
+        "herb.huang_qin"
+      ],
+      "name_zh": "柴胡配黃芩",
+      "name_en": "Chai Hu with Huang Qin",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "柴胡和解少陽、透達半表半裡；黃芩清少陽膽熱。兩藥相使，外和少陽、內清鬱熱，是小柴胡湯處理少陽寒熱往來的核心藥對。",
+      "pair_meaning_en": "Chai Hu harmonizes Shaoyang and opens the half-exterior/half-interior pivot; Huang Qin clears Shaoyang/Gallbladder Heat. Together they assist each other in harmonizing Shaoyang while clearing constrained Heat.",
+      "indication_zh": "少陽證寒熱往來、胸脅苦滿、口苦、心煩、嘔吐；小柴胡湯方向。",
+      "indication_en": "Shaoyang pattern with alternating chills and fever, hypochondriac fullness, bitter taste, irritability, and vomiting; Xiao Chai Hu Tang direction.",
+      "caution_zh": "陰虛津虧、肝陽上亢或脾胃虛寒者須辨證；黃芩苦寒與柴胡升散方向都不可機械套用。",
+      "caution_en": "Use pattern differentiation in Yin/Fluid deficiency, Liver Yang rising, or Spleen/Stomach deficiency-cold; do not apply Huang Qin’s bitter-cold clearing or Chai Hu’s ascending-dispersing direction mechanically.",
+      "found_in_formulas": [
+        "formula.xiao_chai_hu_tang",
+        "formula.da_chai_hu_tang"
+      ],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L510",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "https://www.americandragon.com/Individualherbsupdate/ChaiHu.html"
+      ]
+    },
+    {
+      "id": "pair.chai_hu__sheng_ma",
+      "herbs": [
+        "herb.chai_hu",
+        "herb.sheng_ma"
+      ],
+      "name_zh": "柴胡配升麻",
+      "name_en": "Chai Hu with Sheng Ma",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "柴胡升舉少陽清氣，升麻升舉陽明清陽。兩藥相使，合用增強升提中氣、舉陷之力，常見於補中益氣湯方向。",
+      "pair_meaning_en": "Chai Hu raises the clear Qi of Shaoyang while Sheng Ma raises Yangming clear Yang. Together they assist each other in lifting sinking middle Qi, as in the Bu Zhong Yi Qi Tang direction.",
+      "indication_zh": "中氣下陷、清陽不升：久瀉、脫肛、子宮下垂、胃下垂、疲倦氣短；須配補氣藥使用。",
+      "indication_en": "Sinking middle Qi and failure of clear Yang to ascend: chronic diarrhea, rectal or uterine prolapse, stomach prolapse, fatigue, and shortness of breath; use with Qi-tonifying herbs.",
+      "caution_zh": "陰虛陽亢、肝火上炎、氣逆上衝或實熱上擾者慎用/禁用升散方向。",
+      "caution_en": "Avoid or use caution with this ascending-dispersing strategy in Yin deficiency with Yang rising, Liver Fire flaring upward, upward-rebellious Qi, or excess Heat disturbing upward.",
+      "found_in_formulas": [
+        "formula.bu_zhong_yi_qi_tang"
+      ],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L511",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "https://www.americandragon.com/Individualherbsupdate/ChaiHu.html"
+      ]
+    },
+    {
+      "id": "pair.zhi_zi__dan_dou_chi",
+      "herbs": [
+        "herb.zhi_zi",
+        "herb.dan_dou_chi"
+      ],
+      "name_zh": "梔子配淡豆豉",
+      "name_en": "Zhi Zi with Dan Dou Chi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "梔子清泄胸膈鬱熱、除煩；淡豆豉輕宣透邪、宣鬱除煩。兩藥相使，一清一宣，用於熱擾胸膈、煩躁懊憹、不得眠（梔子豉湯方向）。",
+      "pair_meaning_en": "Zhi Zi clears constrained Heat from the chest and diaphragm and relieves vexation; Dan Dou Chi lightly vents pathogens, disperses constraint, and relieves irritability. Together they clear and vent Heat disturbing the chest with vexation and insomnia.",
+      "indication_zh": "熱病後餘熱擾胸膈：心煩懊憹、煩躁不眠、胸中窒悶。",
+      "indication_en": "Residual Heat disturbing the chest and diaphragm after febrile disease: vexation, irritability, insomnia, and stifling chest oppression.",
+      "caution_zh": "脾胃虛寒、陰寒內盛或哺乳期需慎用淡豆豉；苦寒清泄與輕宣透邪須依寒熱虛實辨證。",
+      "caution_en": "Use Dan Dou Chi cautiously in Spleen/Stomach deficiency-cold, internal Yin-Cold, or lactation; bitter-cold clearing and light venting require pattern differentiation.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L558",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L207-L213",
+        "https://www.americandragon.com/Individualherbsupdate/DanDouChi.html"
+      ]
+    },
+    {
+      "id": "pair.niu_bang_zi__lian_qiao",
+      "herbs": [
+        "herb.niu_bang_zi",
+        "herb.lian_qiao"
+      ],
+      "name_zh": "牛蒡子配連翹",
+      "name_en": "Niu Bang Zi with Lian Qiao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "牛蒡子疏散風熱、利咽、透疹並解毒消腫；連翹清熱解毒、散結消腫。兩藥相使，偏治風熱或溫毒上攻之咽喉腫痛、痄腮、熱毒腫痛與瘡瘍。",
+      "pair_meaning_en": "Niu Bang Zi disperses Wind-Heat, benefits the throat, vents rashes, and resolves toxic swelling; Lian Qiao clears Heat toxin and disperses clumps and swelling. Together they address Wind-Heat or warm-toxin throat swelling, mumps, toxic swelling, and sores.",
+      "indication_zh": "風熱咽喉腫痛、痄腮、熱毒腫痛、瘡瘍或舌口潰瘍，尤見紅腫熱痛者。",
+      "indication_en": "Wind-Heat sore swollen throat, mumps, Heat-toxin swelling, sores, or mouth/tongue ulcerations with redness, swelling, heat, and pain.",
+      "caution_zh": "牛蒡子寒滑，氣虛便溏、腹瀉、脾胃虛寒者慎用或忌用；孕哺與降血糖/利尿藥併用需查來源。",
+      "caution_en": "Niu Bang Zi is Cold and slippery; avoid or use cautiously in Qi-deficient loose stool, diarrhea, or Spleen/Stomach deficiency-cold. Check source-layered pregnancy/lactation and hypoglycemic/diuretic drug cautions.",
+      "found_in_formulas": [
+        "formula.yin_qiao_san",
+        "formula.pu_ji_xiao_du_yin"
+      ],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L545",
+        "https://www.americandragon.com/Individualherbsupdate/NiuBangZi.html",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L184-L196"
+      ]
+    },
+    {
+      "id": "pair.man_jing_zi__ju_hua",
+      "herbs": [
+        "herb.man_jing_zi",
+        "herb.ju_hua"
+      ],
+      "name_zh": "蔓荊子配菊花",
+      "name_en": "Man Jing Zi with Ju Hua",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "蔓荊子疏散頭面風熱、清利頭目；菊花疏風清熱、清肝明目。兩藥相使，偏治風熱或肝經風熱上攻所致頭痛、目赤腫痛、眼痛與頭面不適。此對藥來自 American Dragon major combinations，非 NCBAHM Appendix B 正式對藥。",
+      "pair_meaning_en": "Man Jing Zi disperses Wind-Heat from the head and face and benefits the head and eyes; Ju Hua disperses Wind-Heat and clears the Liver to brighten the eyes. Together they support Wind-Heat or Liver-channel Wind-Heat headache, red painful eyes, eye pain, and head/face discomfort. This pair is from American Dragon major combinations, not an NCBAHM Appendix B pair.",
+      "indication_zh": "風熱頭痛、頭面疼痛、目赤腫痛、眼痛、流淚或眼前黑花，尤偏肝經風熱或肝火上炎者。",
+      "indication_en": "Wind-Heat headache, head/facial pain, red swollen painful eyes, eye pain, tearing, or spots before the eyes, especially from Liver-channel Wind-Heat or Liver Fire rising.",
+      "caution_zh": "陰虛、血虛所致頭痛或目疾者慎用蔓荊子；脾胃氣虛者慎用。菊花寒涼，脾胃虛寒、便溏或陽虛寒證者慎用。",
+      "caution_en": "Use Man Jing Zi cautiously when headache or eye disorders are due to Yin or Blood deficiency, and in Spleen/Stomach Qi deficiency. Ju Hua is Cold and should be used cautiously in Spleen/Stomach deficiency-cold, loose stool, or Yang-deficient Cold patterns.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/ManJingZi.html#L149-L168",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L234-L238"
+      ]
+    },
+    {
+      "id": "pair.man_jing_zi__fang_feng",
+      "herbs": [
+        "herb.man_jing_zi",
+        "herb.fang_feng"
+      ],
+      "name_zh": "蔓荊子配防風",
+      "name_en": "Man Jing Zi with Fang Feng",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "蔓荊子清利頭目、祛頭面風熱；防風祛風解表、勝濕止痛。兩藥相使，偏治風熱或風濕上擾所致頭痛、頭重、肩背痛與周身沉重疼痛。此對藥依 American Dragon major combinations 補入，非 NCBAHM Appendix B 正式對藥。",
+      "pair_meaning_en": "Man Jing Zi clears and benefits the head and eyes and dispels head/face Wind-Heat; Fang Feng releases the exterior, dispels Wind, overcomes Dampness, and relieves pain. Together they address Wind-Heat or superficial Wind-Damp headache, heavy head, shoulder/back pain, and generalized heaviness or pain. This pair is added from American Dragon major combinations, not an NCBAHM Appendix B pair.",
+      "indication_zh": "風熱頭痛、頭面疼痛；或風濕頭痛、頭重身重、肩背疼痛。",
+      "indication_en": "Wind-Heat headache and head/facial pain, or Wind-Damp headache with heavy head/body and shoulder/back pain.",
+      "caution_zh": "蔓荊子對陰血不足頭痛目疾、脾胃氣虛者慎用；防風辛散，血虛痙急、陰虛火旺或表虛自汗者需辨證慎用。",
+      "caution_en": "Use Man Jing Zi cautiously in Yin/Blood-deficiency headache or eye disorders and Spleen/Stomach Qi deficiency. Fang Feng is acrid-dispersing and requires caution in Blood-deficiency spasms, Yin-deficiency Fire, or exterior-deficiency sweating patterns.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/ManJingZi.html#L120-L139",
+        "https://www.americandragon.com/Individualherbsupdate/ManJingZi.html#L149-L168",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L234-L238"
+      ]
+    },
+    {
+      "id": "pair.fu_ping__jing_jie__bo_he__lian_qiao",
+      "herbs": [
+        "herb.fu_ping",
+        "herb.jing_jie",
+        "herb.bo_he",
+        "herb.lian_qiao"
+      ],
+      "name_zh": "浮萍配荊芥、薄荷、連翹",
+      "name_en": "Fu Ping with Jing Jie, Bo He, and Lian Qiao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "浮萍辛寒、發汗解表並透疹止癢；荊芥疏風透表，薄荷疏散風熱、清利頭目，連翹清熱解毒散結。此組依 American Dragon Major Combinations，用於風熱在表而發熱、無汗者；非 NCBAHM Appendix B 正式對藥。",
+      "pair_meaning_en": "Fu Ping is acrid-cold and releases the exterior through sweating while venting rashes and relieving itching; Jing Jie vents the exterior, Bo He disperses Wind-Heat and clears the head, and Lian Qiao clears Heat toxin and disperses constraint. This group is from American Dragon Major Combinations for Wind-Heat fever with lack of sweating, not an NCBAHM Appendix B pair.",
+      "indication_zh": "風熱表證，發熱、身痛而無汗；兼熱毒、咽喉或皮膚風熱者尤可參考。",
+      "indication_en": "Wind-Heat exterior pattern with fever, body aches, and absence of sweating, especially when Heat toxin, throat symptoms, or Wind-Heat skin signs are present.",
+      "caution_zh": "浮萍發汗力強；表虛自汗、盜汗、氣血虛或陰虛口乾者禁忌。連翹與薄荷偏寒涼，脾胃虛寒者慎用。",
+      "caution_en": "Fu Ping is a strong diaphoretic; avoid in spontaneous sweating, night sweating, Qi/Blood deficiency, or Yin-deficiency dry mouth. Lian Qiao and Bo He are cooling and require caution in Spleen/Stomach deficiency-cold.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/FuPing.html#L92-L120",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L281-L286"
+      ],
+      "teaching_note_zh": "考點方向：辛寒也能強發汗；不要把浮萍誤歸為一般溫和辛涼解表。"
+    },
+    {
+      "id": "pair.fu_ping__bo_he__niu_bang_zi__chan_tui__sheng_ma",
+      "herbs": [
+        "herb.fu_ping",
+        "herb.bo_he",
+        "herb.niu_bang_zi",
+        "herb.chan_tui",
+        "herb.sheng_ma"
+      ],
+      "name_zh": "浮萍配薄荷、牛蒡子、蟬蛻、升麻",
+      "name_en": "Fu Ping with Bo He, Niu Bang Zi, Chan Tui, and Sheng Ma",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "浮萍透疹止癢，薄荷疏散風熱，牛蒡子疏風利咽透疹，蟬蛻疏風透疹止癢，升麻升散透疹。此組依 American Dragon Major Combinations，偏治麻疹或風疹透發不暢。",
+      "pair_meaning_en": "Fu Ping vents rashes and relieves itching; Bo He disperses Wind-Heat; Niu Bang Zi disperses Wind-Heat, benefits the throat, and vents rashes; Chan Tui vents rashes and relieves itching; Sheng Ma lifts and vents rashes. This American Dragon combination targets incomplete expression of measles or Wind rash.",
+      "indication_zh": "麻疹、風疹或皮疹透發不暢，搔癢，兼風熱表證者。",
+      "indication_en": "Measles, Wind rash, or incomplete rash expression with itching, especially with a Wind-Heat exterior pattern.",
+      "caution_zh": "疹已透、表虛自汗、血虛膚燥、陰虛盜汗者不宜強行發散；牛蒡子寒滑，便溏腹瀉者慎用。",
+      "caution_en": "Do not force diaphoresis when the rash has fully expressed or in exterior-deficiency sweating, Blood-deficiency dry skin, or Yin-deficiency night sweating. Niu Bang Zi is Cold and slippery; use caution with loose stool or diarrhea.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/FuPing.html#L108-L133",
+        "https://cloudtcm.com/herb/1806#L54-L63",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L281-L286"
+      ],
+      "teaching_note_zh": "這組是皮膚/疹出方向，不是咳喘方向；浮萍不像麻黃能止喘。"
+    },
+    {
+      "id": "pair.fu_ping__ma_huang",
+      "herbs": [
+        "herb.fu_ping",
+        "herb.ma_huang"
+      ],
+      "name_zh": "浮萍配麻黃",
+      "name_en": "Fu Ping with Ma Huang",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "浮萍與麻黃皆能開腠理、發汗並通水道；浮萍辛寒偏風熱、皮疹與水腫，麻黃辛溫偏風寒、宣肺平喘。American Dragon 特別以此比較風水水腫、面腫、小便不利與無汗。",
+      "pair_meaning_en": "Fu Ping and Ma Huang both open the pores, promote sweating, and unblock fluid pathways. Fu Ping is acrid-cold and leans toward Wind-Heat, rash, itching, and edema; Ma Huang is acrid-warm and leans toward Wind-Cold with Lung wheezing. American Dragon highlights this comparison for Wind-edema with swollen face, urinary difficulty, and anhidrosis.",
+      "indication_zh": "風水水腫、面目浮腫、小便不利、無汗；需辨風熱/風寒與寒熱偏性。",
+      "indication_en": "Wind-edema with swollen face, urinary difficulty, and absence of sweating; differentiate Wind-Heat versus Wind-Cold and the Cold/Heat direction of the pattern.",
+      "caution_zh": "兩者皆可發汗，虛汗、盜汗、氣血虛者禁忌。麻黃另有心血管、失眠與興奮劑交互作用風險；浮萍腎病與孕婦需慎用（CloudTCM）。",
+      "caution_en": "Both can induce sweating and are inappropriate in deficiency sweating, night sweating, or Qi/Blood deficiency. Ma Huang also carries cardiovascular, insomnia, and stimulant-interaction risks; Fu Ping requires caution in kidney disease and pregnancy per CloudTCM.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/FuPing.html#L127-L150",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L281-L286",
+        "https://cloudtcm.com/herb/1806#L105-L115"
+      ],
+      "teaching_note_zh": "Chenoweth 寫「Diuretic, diaphoresis ≈ Ma Huang」；AD 補充：浮萍不治咳喘，麻黃才有宣肺平喘方向。"
+    },
+    {
+      "id": "pair.fu_ping__tian_hua_fen",
+      "herbs": [
+        "herb.fu_ping",
+        "herb.tian_hua_fen"
+      ],
+      "name_zh": "浮萍配天花粉",
+      "name_en": "Fu Ping with Tian Hua Fen",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "浮萍辛寒發散風熱、透表泄熱；天花粉清熱生津。此組依 American Dragon Major Combinations，用於風熱兼口渴者。",
+      "pair_meaning_en": "Fu Ping acrid-coldly releases Wind-Heat and vents exterior Heat; Tian Hua Fen clears Heat and generates fluids. This American Dragon combination is used when Wind-Heat is accompanied by thirst.",
+      "indication_zh": "風熱表證兼口渴、熱盛津傷傾向。",
+      "indication_en": "Wind-Heat exterior pattern with thirst or a tendency toward Heat damaging fluids.",
+      "caution_zh": "天花粉孕期禁忌需另查來源；浮萍孕婦慎用（CloudTCM），且表虛自汗、陰虛盜汗者禁用。",
+      "caution_en": "Pregnancy contraindication/caution for Tian Hua Fen must be checked separately; Fu Ping is cautioned in pregnancy by CloudTCM and is contraindicated in exterior-deficiency spontaneous sweating or Yin-deficiency night sweating.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/FuPing.html#L130-L139",
+        "https://cloudtcm.com/herb/1806#L105-L115"
+      ],
+      "teaching_note_zh": "這組保留為 AD 補充組合；不是 NCBAHM Appendix B 對藥。"
+    },
+    {
+      "id": "pair.fu_ping__bai_ji_li__niu_bang_zi__bo_he",
+      "herbs": [
+        "herb.fu_ping",
+        "herb.bai_ji_li",
+        "herb.niu_bang_zi",
+        "herb.bo_he"
+      ],
+      "name_zh": "浮萍配白蒺藜、牛蒡子、薄荷",
+      "name_en": "Fu Ping with Bai Ji Li, Niu Bang Zi, and Bo He",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "浮萍辛寒發汗、透表泄熱；白蒺藜祛風明目止癢並平肝；牛蒡子疏風熱、利咽透疹；薄荷疏散風熱、清利頭目。此組依 American Dragon Major Combinations，用於風熱發熱頭痛與皮膚/頭面風熱。",
+      "pair_meaning_en": "Fu Ping acrid-coldly promotes sweating and vents exterior Heat; Bai Ji Li dispels Wind, benefits the eyes, relieves itching, and calms the Liver; Niu Bang Zi disperses Wind-Heat and vents rashes; Bo He disperses Wind-Heat and clears the head. This American Dragon combination supports Wind-Heat fever/headache and Wind-Heat affecting the skin, head, or eyes.",
+      "indication_zh": "風熱發熱頭痛，兼頭目不利、皮膚風熱或疹癢者。",
+      "indication_en": "Wind-Heat fever and headache with head/eye discomfort, Wind-Heat skin signs, rash, or itching.",
+      "caution_zh": "浮萍發汗力強；表虛自汗、盜汗、氣血虛或陰虛津虧者禁忌。白蒺藜孕婦、血虛氣弱者慎用；牛蒡子便溏腹瀉者慎用。",
+      "caution_en": "Fu Ping is strongly diaphoretic; avoid in spontaneous sweating, night sweating, Qi/Blood deficiency, or Yin/fluid depletion. Use Bai Ji Li cautiously in pregnancy or Qi/Blood deficiency; use Niu Bang Zi cautiously with loose stool or diarrhea.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/FuPing.html#L101-L120",
+        "https://www.americandragon.com/Individualherbsupdate/BaiJiLi.html",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L281-L286",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8493-L8522"
+      ],
+      "teaching_note_zh": "這是 AD 補充組合，非 NCBAHM Appendix B 正式對藥；白蒺藜已建 herb.bai_ji_li 以避免死連結。"
+    },
+    {
+      "id": "pair.ba_dou__wu_ling_zhi",
+      "herbs": [
+        "herb.ba_dou",
+        "herb.wu_ling_zhi"
+      ],
+      "name_zh": "巴豆配五靈脂",
+      "name_en": "Ba Dou with Wu Ling Zhi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "課件 Herb Functions 在「開閉／burst clogs」方向標出巴豆 s 五靈脂；巴豆峻猛開閉、破寒積痰閉，五靈脂活血止痛、散瘀通絡。兩藥相使，偏處理寒凝、痰瘀互結、閉阻疼痛。",
+      "pair_meaning_en": "Chenoweth Herb Functions marks Ba Dou with Wu Ling Zhi in the 'bursts clogs' direction. Ba Dou forcefully opens Cold accumulation and Phlegm obstruction; Wu Ling Zhi moves Blood, dispels stasis, and relieves pain. Together they support obstruction-breaking in Cold, Phlegm, and stasis patterns.",
+      "indication_zh": "寒凝痰瘀閉阻、腹痛或頑固疼痛；作 board 配伍記憶，不作一般臨床自用。",
+      "indication_en": "Cold, Phlegm, and Blood-stasis obstruction with abdominal or stubborn pain; board-memory pairing, not routine self-use.",
+      "caution_zh": "巴豆大毒，孕婦、哺乳、體弱、無寒積者禁用；不可熱飲、不可生用或超量。五靈脂活血，出血傾向與孕期亦須慎辨。",
+      "caution_en": "Ba Dou is very toxic and contraindicated in pregnancy, breastfeeding, weak patients, and non-Cold accumulation; avoid hot beverages, raw use, and overdose. Wu Ling Zhi moves Blood, so bleeding tendency and pregnancy require caution.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/herb_functions_chenoweth.md#L1896-L1898",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L1197-L1218",
+        "https://www.americandragon.com/Individualherbsupdate/BaDou.html"
+      ]
+    },
+    {
+      "id": "pair.ba_dou__da_huang",
+      "herbs": [
+        "herb.ba_dou",
+        "herb.da_huang"
+      ],
+      "name_zh": "巴豆配大黃",
+      "name_en": "Ba Dou with Da Huang",
+      "relation": "pair.rel.xiang_fan_or_contrast",
+      "pair_meaning_zh": "AD 以巴豆與大黃比較瀉下方向：巴豆辛熱大毒，攻寒積；大黃苦寒，瀉熱結並兼活血解毒。此組重在辨寒熱與毒性，不是常規相須。",
+      "pair_meaning_en": "AD contrasts Ba Dou and Da Huang as purgatives: Ba Dou is acrid-hot and very toxic for Cold accumulation; Da Huang is bitter-cold for Heat accumulation with Blood-stasis/toxin directions. This is primarily a Cold/Heat and toxicity contrast, not a routine mutual-assistance pair.",
+      "indication_zh": "瀉下藥寒熱鑑別：寒積閉結偏巴豆；陽明熱結、熱毒瘀滯偏大黃。",
+      "indication_en": "Purgative differentiation: Cold accumulation obstruction points toward Ba Dou; Yangming Heat accumulation, Heat toxin, and stasis point toward Da Huang.",
+      "caution_zh": "巴豆與大黃同屬攻下，不得因皆瀉下而混用；CloudTCM 古籍層另列巴豆畏大黃，需保留來源差異。",
+      "caution_en": "Do not combine or substitute simply because both purge downward. CloudTCM's classical layer also lists Ba Dou as fearing Da Huang, so the source difference should remain visible.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/BaDou.html",
+        "https://cloudtcm.com/herb/1769",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L1197-L1218"
+      ]
+    },
+    {
+      "id": "pair.ba_dou__gan_jiang",
+      "herbs": [
+        "herb.ba_dou",
+        "herb.gan_jiang"
+      ],
+      "name_zh": "巴豆配乾薑",
+      "name_en": "Ba Dou with Gan Jiang",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "AD major combinations 將巴豆與乾薑列於內寒積聚方向；巴豆峻下寒積，乾薑溫中散寒，兩者同向加強寒積閉阻之溫通攻逐。",
+      "pair_meaning_en": "AD major combinations place Ba Dou with Gan Jiang for interior Cold accumulation. Ba Dou forcefully purges Cold accumulation while Gan Jiang warms the middle and disperses Cold; together they emphasize warming and driving out Cold obstruction.",
+      "indication_zh": "內寒積聚、腹滿冷痛、寒積閉結。",
+      "indication_en": "Interior Cold accumulation with abdominal fullness, cold pain, and obstructed bowels.",
+      "caution_zh": "兩藥皆偏熱；陰虛、熱結、出血熱象或孕哺禁忌需避開，巴豆另有大毒與小劑量限制。",
+      "caution_en": "Both are warming/hot; avoid in Yin deficiency, Heat accumulation, Heat-type bleeding, pregnancy or lactation. Ba Dou also carries very-toxic minute-dose restrictions.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/BaDou.html",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L1197-L1218"
+      ]
+    },
+    {
+      "id": "pair.chuan_wu__cao_wu",
+      "herbs": [
+        "herb.chuan_wu",
+        "herb.cao_wu"
+      ],
+      "name_zh": "制川烏配制草烏",
+      "name_en": "Zhi Chuan Wu with Zhi Cao Wu",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "二者同為烏頭類高毒祛風濕止痛藥；制川烏祛寒濕止痛，制草烏更強更毒。AD notes 指二者常作外用膏藥止痛基礎。",
+      "pair_meaning_en": "Both are highly toxic aconite-root medicines for Wind-Damp-Cold pain. Zhi Chuan Wu dispels Cold-Damp and stops pain; Zhi Cao Wu is stronger and more toxic. AD notes they often form the basis of topical plasters for musculoskeletal pain.",
+      "indication_zh": "寒濕痹痛劇烈、筋骨關節疼痛、肌肉痙攣疼痛，尤偏外用膏藥或專科處方。",
+      "indication_en": "Severe Cold-Damp Bi pain, bone/joint pain, or spasmodic muscle pain, especially in topical plasters or specialist prescriptions.",
+      "caution_zh": "雙重烏頭類毒性；孕禁、未炮製禁、陰虛熱痛禁，心律不整/抗心律不整藥者極慎。不得自行內服。",
+      "caution_en": "Dual aconite toxicity. Contraindicated in pregnancy, unprocessed use, Yin deficiency, and Heat-type pain; extreme caution with arrhythmia history or antiarrhythmic drugs. Do not self-administer internally.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica III-Extra Herbs.md#p7-p8",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiChuanWu.html",
+        "https://www.americandragon.com/Individualherbsupdate/ZhiCaoWu.html"
+      ]
+    },
+    {
+      "id": "pair.chuan_wu__ma_huang__bai_shao",
+      "herbs": [
+        "herb.chuan_wu",
+        "herb.ma_huang",
+        "herb.bai_shao"
+      ],
+      "name_zh": "制川烏配麻黃、白芍",
+      "name_en": "Zhi Chuan Wu with Ma Huang and Bai Shao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "AD major combinations 將制川烏配麻黃、白芍（並可加黃耆）用於全身關節疼痛與活動受限。制川烏溫經散寒止痛，麻黃宣散寒濕、開腠理，白芍養血柔筋止痛以緩急。",
+      "pair_meaning_en": "AD major combinations pair Zhi Chuan Wu with Ma Huang and Bai Shao (optionally Huang Qi) for generalized joint pain with restricted range of motion. Zhi Chuan Wu warms channels and stops pain; Ma Huang disperses Cold-Damp and opens the pores; Bai Shao nourishes Blood, softens sinews, and relieves spasm.",
+      "indication_zh": "風寒濕痹、全身關節疼痛、活動受限，寒象明顯者。",
+      "indication_en": "Wind-Cold-Damp painful obstruction with generalized joint pain and restricted movement, especially when Cold signs are clear.",
+      "caution_zh": "制川烏高毒需炮製先煎；麻黃有心血管/失眠/興奮劑風險；白芍較緩但不可抵消烏頭毒性。",
+      "caution_en": "Zhi Chuan Wu is highly toxic and requires processing and pre-decoction; Ma Huang carries cardiovascular, insomnia, and stimulant risks; Bai Shao moderates spasm but does not neutralize aconite toxicity.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/ZhiChuanWu.html",
+        "curriculum/herbs/Materia Medica III-Extra Herbs.md#p7-p8"
+      ]
     }
   ],
   "updated_at": "2026-07-28",
-  "total_pairs": 55
+  "total_pairs": 73
 }
