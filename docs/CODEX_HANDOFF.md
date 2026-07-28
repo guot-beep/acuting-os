@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-28] Codex Handoff - Bo He contraindication correction
+
+- **Branch**: `codex/herbs-warm-acrid-2`
+- **Task**: Corrected `herb.bo_he` after Ting review: expanded actions to 5 bilingual aligned items, expanded indications to 6 source-backed clinical lines, and moved Ting-specified five contraindications into formal `contraindications_zh/_en`.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, and this handoff.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js --worklist --category "解表藥 / Release Exterior - Cool Acrid" --all` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no app/js/html/scripts/source schema files touched; no new herb IDs or pair records changed.
+- **Known risks / manual checks**: Ting should visually confirm Bo He card shows 5 contraindication rows and the separated `清利頭目` / `利咽` action chips.
+
 ## [2026-07-26] Codex Handoff - Rich herb-pair template rule
 
 - **Branch / content commit**: `codex/herbs-release-exterior-sample` / `9bb83fe`

@@ -4901,7 +4901,12 @@
         "formula.qian_zheng_san"
       ],
       "safety_flags": [
-        "pregnancy_review"
+        "pregnancy_contraindicated",
+        "pediatric_contraindicated",
+        "gi_irritation_risk",
+        "renal_review",
+        "allergy_risk",
+        "lactation_review"
       ],
       "clinical_use_note": "薄荷質輕上浮，是辛涼解表中清頭目、利咽與疏肝的代表。與桑葉、菊花同用偏疏散風熱；與桔梗、牛蒡子同用偏利咽；少量入逍遙散類方則取疏肝解鬱。考試要記「後下」以保存揮發油，並區分一般飲片與高濃度薄荷精油的孕期安全性。",
       "modern_use_tags": [
@@ -5000,15 +5005,16 @@
         "芳香辛散，體虛或表虛多汗者慎用。",
         "陰虛血燥、陰虛咳嗽或肝陽偏亢者慎用。",
         "揮發油易散失，湯劑宜在最後 5–10 分鐘後下。",
-        "哺乳期大量或長期使用前須專業評估。"
+        "哺乳期大量或長期使用前須專業評估；薄荷可能減少乳汁分泌。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/975",
       "safety_fetched_at": "2026-07-23T07:25:00.443Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
         "疏散風熱",
-        "清利頭目與咽喉",
-        "透疹",
+        "清利頭目",
+        "利咽",
+        "透疹止癢",
         "疏肝行氣"
       ],
       "modern_functions_zh": [
@@ -5089,10 +5095,12 @@
         "肝經"
       ],
       "indications_zh": [
-        "風熱表證 —— 發熱、微惡風、頭痛、咳嗽；常配 菊花、荊芥、防風、桑葉。",
-        "風熱上攻頭目咽喉 —— 頭痛、目赤、咽喉腫痛、聲音不利；常配 桔梗、牛蒡子。",
-        "麻疹初起、疹出不暢或皮膚瘙癢 —— 配 荊芥、蟬蛻、牛蒡子。",
-        "肝氣鬱滯之胸脅脹悶、情志不舒及婦科氣鬱 —— 少量配 柴胡、白芍。"
+        "風熱表證 —— 發熱、微惡風、頭痛、咳嗽；常配 菊花、桑葉、荊芥、防風。",
+        "風熱上攻頭目 —— 頭痛、目赤腫痛、目癢或眩暈；常配 菊花、桑葉。",
+        "風熱咽喉腫痛、聲音不利 —— 配 桔梗、牛蒡子、蟬蛻以利咽開音。",
+        "麻疹初起、疹出不暢、風疹瘙癢 —— 配 荊芥、蟬蛻、牛蒡子以透疹止癢。",
+        "肝氣鬱滯之胸脅脹悶、情志不舒、乳房脹痛或婦科氣鬱 —— 少量配 柴胡、白芍。",
+        "暑熱穢濁、頭昏胸悶或口臭口膩 —— 取其芳香辛散、清暑化濁之性，短煎後下。"
       ],
       "study_tags": [
         "單味中藥",
@@ -5128,7 +5136,8 @@
       "traditional_functions_zh": [
         "疏散風熱",
         "清利頭目",
-        "透疹利咽",
+        "利咽",
+        "透疹止癢",
         "疏肝行氣"
       ],
       "modern_pharmacology_zh": [
@@ -5141,8 +5150,9 @@
       "key_pairs": [],
       "actions_en": [
         "Dispel Wind-Heat",
-        "Clear the Head, Eyes, and Throat",
-        "Promote Eruption",
+        "Clear the Head and Eyes",
+        "Benefit the Throat",
+        "Vent Rashes and Stop Itching",
         "Course Liver Qi"
       ],
       "condition_tags_zh": [
@@ -5150,7 +5160,9 @@
         "頭痛目赤",
         "咽喉腫痛",
         "麻疹不透",
-        "肝氣鬱滯"
+        "皮膚瘙癢",
+        "肝氣鬱滯",
+        "暑熱穢濁"
       ],
       "modern_pharmacology": [
         {
@@ -5198,13 +5210,16 @@
         ],
         "indications_zh": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/975",
           "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ],
         "condition_tags_zh": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/975"
         ],
         "condition_tags_en": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://cloudtcm.com/herb/975"
         ],
         "modern_functions_zh": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
@@ -5216,18 +5231,23 @@
         ],
         "cautions_zh": [
           "https://cloudtcm.com/herb/975",
-          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
+          "Ting correction 2026-07-28"
         ],
         "cautions_en": [
           "https://cloudtcm.com/herb/975",
-          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
+          "Ting correction 2026-07-28"
         ],
         "contraindications_zh": [
           "https://cloudtcm.com/herb/975",
-          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+          "legacy CloudTCM caution import retained in herb.cautions",
+          "Ting correction 2026-07-28"
         ],
         "contraindications_en": [
-          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+          "https://cloudtcm.com/herb/975",
+          "legacy CloudTCM caution import retained in herb.cautions",
+          "Ting correction 2026-07-28"
         ],
         "clinical_use_note": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
@@ -5241,7 +5261,9 @@
         "Headache and red eyes",
         "Sore swollen throat",
         "Incomplete measles eruption",
-        "Liver Qi stagnation"
+        "Skin itching",
+        "Liver Qi stagnation",
+        "Summerheat turbidity"
       ],
       "modern_functions_en": [
         "Promotes local circulation with cooling antipruritic effects",
@@ -5258,15 +5280,21 @@
         "Use cautiously in constitutional or exterior deficiency with profuse sweating.",
         "Use cautiously with Yin deficiency, Blood dryness, Yin-deficiency cough, or ascendant Liver Yang.",
         "Its volatile oil dissipates readily; add during the final 5–10 minutes of decoction.",
-        "Professional review is advised before large or prolonged use during lactation."
+        "Professional review is advised before large or prolonged use during lactation; mint may reduce milk secretion."
       ],
       "contraindications_zh": [
-        "對薄荷或其揮發油成分已知過敏者禁用。",
-        "孕期不得自行使用薄荷精油或高濃度製劑；動物研究顯示抗著床及抗早孕作用。"
+        "孕婦忌用：可能導致流產或早產，並減少乳汁分泌。",
+        "嬰兒和幼兒忌用：薄荷含有類似激素的成分，可能影響發育。",
+        "腸胃病患者忌用：薄荷含有香油酚和樟腦，可能刺激腸胃，加重不適。",
+        "腎功能不全患者忌用：薄荷含有尿酸，可能加重腎臟負擔。",
+        "過敏症患者忌用：薄荷含有機酸和樟腦，可能引起過敏反應。"
       ],
       "contraindications_en": [
-        "Contraindicated in known allergy to mint or its volatile-oil constituents.",
-        "Do not self-administer mint essential oil or concentrated preparations during pregnancy; animal studies report anti-implantation effects."
+        "Contraindicated in pregnancy: may contribute to miscarriage or premature labor and may reduce milk secretion.",
+        "Contraindicated in infants and young children: mint contains hormone-like constituents that may affect development.",
+        "Contraindicated in patients with gastrointestinal disease: volatile constituents such as eugenol-like aromatic oils and camphor may irritate the gastrointestinal tract and worsen discomfort.",
+        "Contraindicated in renal insufficiency: mint is described as containing uric acid and may increase renal burden.",
+        "Contraindicated in allergic patients: organic acids and camphor-like constituents may trigger allergic reactions."
       ],
       "source_citations": [
         {
@@ -5283,6 +5311,11 @@
           "name": "American Dragon — Bo He",
           "url": "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
           "scope": "Actions, indications, dosage, combinations, contraindications, and interactions"
+        },
+        {
+          "name": "Ting correction — Bo He contraindications",
+          "url": "internal://ting-review/2026-07-28/bo-he-contraindications",
+          "scope": "Contraindication wording promoted from legacy caution text into the formal contraindications field"
         }
       ]
     },
