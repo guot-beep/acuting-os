@@ -4901,12 +4901,13 @@
         "formula.qian_zheng_san"
       ],
       "safety_flags": [
-        "pregnancy_contraindicated",
-        "pediatric_contraindicated",
-        "gi_irritation_risk",
-        "renal_review",
-        "allergy_risk",
-        "lactation_review"
+        "exterior_deficiency_contraindicated",
+        "liver_yang_rising_contraindicated",
+        "yin_deficiency_heat_contraindicated",
+        "lactation_contraindicated",
+        "pediatric_essential_oil_inhalation_avoid",
+        "hiatal_hernia_contraindicated",
+        "late_decoction_required"
       ],
       "clinical_use_note": "薄荷質輕上浮，是辛涼解表中清頭目、利咽與疏肝的代表。與桑葉、菊花同用偏疏散風熱；與桔梗、牛蒡子同用偏利咽；少量入逍遙散類方則取疏肝解鬱。考試要記「後下」以保存揮發油，並區分一般飲片與高濃度薄荷精油的孕期安全性。",
       "modern_use_tags": [
@@ -4991,7 +4992,12 @@
           "解熱作用"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"3-6克\",\r\n  \"食療用量範圍\": \"3-9克（鮮品可加倍至6-15克）\",\r\n  \"特殊說明\": \"入湯劑宜後下（起鍋前3-5分鐘放入），不宜久煎，以免揮發油散失\"\r\n}",
+      "dosage": {
+        "standard_daily_g": "1.5–6g（Chenoweth special-prep note）；American Dragon lists 1.5–30g with common range 3–6g",
+        "tincture": "2–3 ml（American Dragon）",
+        "preparation_zh": "芳香輕清，課件與 American Dragon 均支持後下；煎煮最後 5–10 分鐘加入，避免久煎揮發油散失。",
+        "preparation_en": "Aromatic and volatile; Chenoweth and American Dragon support adding near the end of decoction, during the final 5–10 minutes."
+      },
       "cautions": "薄荷注意事項\n陰虛血燥，肝陽偏亢，表虛汗多者忌服。\n《藥性論》：新病瘥人勿食，令人虛汗不止。\n《千金·食治》：動消渴病。\n《本經逢原》：多服久服，令人虛冷；陰虛發熱，咳嗽自汗者勿施。\n《本草從新》：辛香伐氣，多服損肺傷心，虛者遠之。陰虛血燥，肝陽偏亢，表虛汗多者忌服。芳香辛散，發汗耗氣，體虛多汗者不宜使用；陰虛有熱者不宜。\n孕婦忌用：可能導致流產或早產，並減少乳汁分泌。\n嬰兒和幼兒忌用：薄荷含有類似激素的成分，可能影響發育。\n腸胃病患者忌用：薄荷含有香油酚和樟腦，可能刺激腸胃，加重不適。\n腎功能不全患者忌用：薄荷含有尿酸，可能加重腎臟負擔。\n過敏症患者忌用：薄荷含有機酸和樟腦，可能引起過敏反應。",
       "source_urls": [
         "https://cloudtcm.com/herb/975",
@@ -5003,10 +5009,9 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "芳香辛散，體虛或表虛多汗者慎用。",
-        "陰虛血燥、陰虛咳嗽或肝陽偏亢者慎用。",
-        "揮發油易散失，湯劑宜在最後 5–10 分鐘後下。",
-        "哺乳期大量或長期使用前須專業評估；薄荷可能減少乳汁分泌。"
+        "後下 5–10 分鐘；久煎會使揮發油散失（Chenoweth / American Dragon）。",
+        "薄荷葉偏散風透疹；薄荷梗偏降氣和中；不同部位作用不同（American Dragon notes）。",
+        "先前 CloudTCM/內部修正列出的孕期、腎功能、腸胃病等禁忌，本次未找到課件或 American Dragon 對應依據，未作為本安全欄來源。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/975",
       "safety_fetched_at": "2026-07-23T07:25:00.443Z",
@@ -5231,24 +5236,24 @@
           "https://cloudtcm.com/herb/975"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/975",
-          "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
-          "Ting correction 2026-07-28"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ],
         "cautions_en": [
-          "https://cloudtcm.com/herb/975",
-          "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
-          "Ting correction 2026-07-28"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ],
         "contraindications_zh": [
-          "https://cloudtcm.com/herb/975",
-          "legacy CloudTCM caution import retained in herb.cautions",
-          "Ting correction 2026-07-28"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ],
         "contraindications_en": [
-          "https://cloudtcm.com/herb/975",
-          "legacy CloudTCM caution import retained in herb.cautions",
-          "Ting correction 2026-07-28"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ],
         "clinical_use_note": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
@@ -5266,6 +5271,26 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "curriculum/herbs/herb_functions_chenoweth.md#L353",
           "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "dosage_g": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "safety_info": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
+        ],
+        "safety_flags": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+          "https://www.americandragon.com/Individualherbsupdate/BoHe.html"
         ]
       },
       "pharmaceutical_latin": "Menthae haplocalycis Succus",
@@ -5290,24 +5315,27 @@
         "Animal studies report anti-implantation and early-pregnancy effects of mint oil"
       ],
       "cautions_en": [
-        "Use cautiously in constitutional or exterior deficiency with profuse sweating.",
-        "Use cautiously with Yin deficiency, Blood dryness, Yin-deficiency cough, or ascendant Liver Yang.",
-        "Its volatile oil dissipates readily; add during the final 5–10 minutes of decoction.",
-        "Professional review is advised before large or prolonged use during lactation; mint may reduce milk secretion."
+        "Add during the final 5–10 minutes; prolonged decoction loses volatile oils (Chenoweth / American Dragon).",
+        "Mentha leaves emphasize dispersing Wind and venting rashes; Mentha stalks emphasize descending Qi and easing the Middle (American Dragon notes).",
+        "Earlier CloudTCM/internal pregnancy, renal, and gastrointestinal contraindication wording was not found in Chenoweth or American Dragon in this pass and is not cited as a safety source here."
       ],
       "contraindications_zh": [
-        "孕婦忌用：可能導致流產或早產，並減少乳汁分泌。",
-        "嬰兒和幼兒忌用：薄荷含有類似激素的成分，可能影響發育。",
-        "腸胃病患者忌用：薄荷含有香油酚和樟腦，可能刺激腸胃，加重不適。",
-        "腎功能不全患者忌用：薄荷含有尿酸，可能加重腎臟負擔。",
-        "過敏症患者忌用：薄荷含有機酸和樟腦，可能引起過敏反應。"
+        "體虛表虛自汗者禁用（American Dragon）。",
+        "肝陽上亢者禁用（American Dragon）。",
+        "陰虛有熱者禁用（American Dragon）。",
+        "陰虛血虛熱所致血虛者禁用（American Dragon）。",
+        "哺乳期不建議使用；American Dragon 記載可能造成乳汁不足。",
+        "食道裂孔疝者禁用（American Dragon）。",
+        "小兒不得吸入薄荷精油（American Dragon）。"
       ],
       "contraindications_en": [
-        "Contraindicated in pregnancy: may contribute to miscarriage or premature labor and may reduce milk secretion.",
-        "Contraindicated in infants and young children: mint contains hormone-like constituents that may affect development.",
-        "Contraindicated in patients with gastrointestinal disease: volatile constituents such as eugenol-like aromatic oils and camphor may irritate the gastrointestinal tract and worsen discomfort.",
-        "Contraindicated in renal insufficiency: mint is described as containing uric acid and may increase renal burden.",
-        "Contraindicated in allergic patients: organic acids and camphor-like constituents may trigger allergic reactions."
+        "Contraindicated in debilitated patients with exterior deficiency and spontaneous sweating (American Dragon).",
+        "Contraindicated in Liver Yang Rising (American Dragon).",
+        "Contraindicated in Yin deficiency with Heat signs (American Dragon).",
+        "Contraindicated in Blood deficiency due to Yin-deficiency Heat (American Dragon).",
+        "Not recommended for nursing mothers; American Dragon notes it may lead to insufficient lactation.",
+        "Contraindicated in hiatal hernia (American Dragon).",
+        "The essential oil should not be inhaled by small children (American Dragon)."
       ],
       "source_citations": [
         {
@@ -5318,17 +5346,12 @@
         {
           "name": "CloudTCM — 薄荷",
           "url": "https://cloudtcm.com/herb/975",
-          "scope": "Traditional actions, materia identification, pharmacology, and cautions"
+          "scope": "Traditional actions, materia identification, and modern pharmacology; not used as the source for this American Dragon + curriculum safety pass"
         },
         {
           "name": "American Dragon — Bo He",
           "url": "https://www.americandragon.com/Individualherbsupdate/BoHe.html",
-          "scope": "Actions, indications, dosage, combinations, contraindications, and interactions"
-        },
-        {
-          "name": "Ting correction — Bo He contraindications",
-          "url": "internal://ting-review/2026-07-28/bo-he-contraindications",
-          "scope": "Contraindication wording promoted from legacy caution text into the formal contraindications field"
+          "scope": "Safety source for contraindications, lactation warning, hiatal hernia, small-child essential-oil inhalation warning, dosage, preparation, and notes"
         },
         {
           "name": "NCBAHM 2026 CH Content Outline — single-herb list",
@@ -5342,7 +5365,41 @@
         }
       ],
       "exam_importance": "高頻：NCBAHM 2026 CH 大綱列名；Chenoweth 將薄荷歸入辛涼解表第 2 類，屬清上焦風熱、透疹、疏肝行氣與後下用法的核心藥。",
-      "exam_pearl": "薄荷考點抓五個：風熱表證、頭痛目赤、咽喉腫痛、麻疹/疹癢、少量疏肝行氣；用法一定記「芳香後下 5–10 分鐘」，不要久煎。與牛蒡子、蟬蛻相比，薄荷更輕清上達，又能入肝疏鬱。"
+      "exam_pearl": "薄荷考點抓五個：風熱表證、頭痛目赤、咽喉腫痛、麻疹/疹癢、少量疏肝行氣；用法一定記「芳香後下 5–10 分鐘」，不要久煎。與牛蒡子、蟬蛻相比，薄荷更輕清上達，又能入肝疏鬱。",
+      "dosage_g": "1.5–6g（課件）；AD 常用 3–6g，頁面另列 1.5–30g",
+      "safety_info": {
+        "toxicity_zh": "課件與 American Dragon 未將薄荷標為有毒藥；安全重點是芳香揮發油、後下短煎、體質禁忌、哺乳期與小兒吸入精油風險。",
+        "toxicity_en": "Chenoweth and American Dragon do not classify Bo He as toxic; the safety focus is volatile oil handling, late decoction, constitutional contraindications, lactation, and avoidance of essential-oil inhalation in small children.",
+        "contraindications_zh": [
+          "體虛表虛自汗者禁用（American Dragon）。",
+          "肝陽上亢者禁用（American Dragon）。",
+          "陰虛有熱者禁用（American Dragon）。",
+          "陰虛血虛熱所致血虛者禁用（American Dragon）。",
+          "哺乳期不建議使用；American Dragon 記載可能造成乳汁不足。",
+          "食道裂孔疝者禁用（American Dragon）。",
+          "小兒不得吸入薄荷精油（American Dragon）。"
+        ],
+        "contraindications_en": [
+          "Contraindicated in debilitated patients with exterior deficiency and spontaneous sweating (American Dragon).",
+          "Contraindicated in Liver Yang Rising (American Dragon).",
+          "Contraindicated in Yin deficiency with Heat signs (American Dragon).",
+          "Contraindicated in Blood deficiency due to Yin-deficiency Heat (American Dragon).",
+          "Not recommended for nursing mothers; American Dragon notes it may lead to insufficient lactation.",
+          "Contraindicated in hiatal hernia (American Dragon).",
+          "The essential oil should not be inhaled by small children (American Dragon)."
+        ],
+        "cautions_zh": [
+          "後下 5–10 分鐘；久煎會使揮發油散失（Chenoweth / American Dragon）。",
+          "薄荷葉偏散風透疹；薄荷梗偏降氣和中；不同部位作用不同（American Dragon notes）。",
+          "先前 CloudTCM/內部修正列出的孕期、腎功能、腸胃病等禁忌，本次未找到課件或 American Dragon 對應依據，未作為本安全欄來源。"
+        ],
+        "cautions_en": [
+          "Add during the final 5–10 minutes; prolonged decoction loses volatile oils (Chenoweth / American Dragon).",
+          "Mentha leaves emphasize dispersing Wind and venting rashes; Mentha stalks emphasize descending Qi and easing the Middle (American Dragon notes).",
+          "Earlier CloudTCM/internal pregnancy, renal, and gastrointestinal contraindication wording was not found in Chenoweth or American Dragon in this pass and is not cited as a safety source here."
+        ]
+      },
+      "safety_review_pending": "薄荷安全欄本次僅採課件與 American Dragon；CloudTCM/內部修正的孕期、腎臟、腸胃禁忌需 Ting/Claude 另行裁定是否保留為非 AD 來源。"
     },
     {
       "id": "herb.chan_tui",
@@ -5376,13 +5433,13 @@
         "formula.pu_ji_xiao_du_yin"
       ],
       "safety_flags": [
-        "pregnancy_contraindicated",
-        "lactation_contraindicated",
-        "pediatric_dose_review",
-        "allergy_risk",
+        "pregnancy_caution",
+        "exterior_deficiency_caution",
+        "qi_yin_deficiency_caution",
         "sedative_interaction",
-        "hypertension_caution",
-        "deficiency_caution"
+        "caffeine_interaction",
+        "pediatric_dose_review",
+        "insect_allergy_review"
       ],
       "clinical_use_note": "蟬蛻質輕，除疏散風熱外，考試重點是利咽開音、透疹止癢、明目退翳、息風止痙。和薄荷相比更偏聲音嘶啞、皮膚瘙癢與小兒驚風；和牛蒡子相比不以清熱解毒、利咽散結為主。昆蟲來源須記過敏風險，止痙大劑量不可自行推定。",
       "modern_use_tags": [
@@ -5437,7 +5494,12 @@
           "明目消翳"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"3-6克\",\r\n  \"食療用量範圍\": \"2-5克\",\r\n  \"特殊說明\": \"入湯劑常規煎煮，不宜久煎；研末沖服用量減半；外用適量\"\r\n}",
+      "dosage": {
+        "standard_daily_g": "3–9g（Chenoweth special-prep note）；American Dragon lists 3–10g",
+        "tincture": "1–3 ml（American Dragon）",
+        "preparation_zh": "一般煎服；蟲類藥材須注意過敏史與兒科劑量審核。",
+        "preparation_en": "Standard decoction; because this is an insect-derived medicinal, review allergy history and pediatric dosing."
+      },
       "cautions": "中藥蟬蛻注意事項重點\n含異體蛋白，過敏史者慎用。\n煎服或研末沖服，止痙須大量30g。\n孕婦和哺乳期婦女禁止使用。\n脾虛便溏者禁止使用。\n虛寒體質者禁止使用。\n高血壓患者慎重使用。",
       "source_urls": [
         "https://cloudtcm.com/herb/983",
@@ -5449,11 +5511,11 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "含昆蟲異體蛋白，有過敏史者慎用。",
-        "表虛、氣虛或陰虛者慎用。",
-        "高血壓患者慎重使用。",
-        "止痙所需劑量可能高於一般解表用量，必須依專業來源及臨床監督使用。",
-        "可能增強抗組織胺、麻醉性止痛藥、巴比妥類、苯二氮平類等鎮靜藥作用，並降低咖啡因效果。"
+        "表虛者慎用（American Dragon）。",
+        "孕期慎用；American Dragon 記載其曾用於催產與排出胞衣。",
+        "氣虛或陰虛者慎用（American Dragon）。",
+        "可增強抗組織胺、麻醉性止痛藥、巴比妥類、苯二氮平類等鎮靜藥作用，並降低咖啡因效果（American Dragon）。",
+        "課件標示 WM: CNS suppression / seizures；若用於驚風、抽搐或兒科，劑量與用藥監督須特別審核。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/983",
       "safety_fetched_at": "2026-07-23T07:25:00.693Z",
@@ -5631,19 +5693,23 @@
           "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/983",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
           "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ],
         "cautions_en": [
-          "https://cloudtcm.com/herb/983",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
           "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ],
         "contraindications_zh": [
-          "https://cloudtcm.com/herb/983",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
           "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ],
         "contraindications_en": [
-          "https://cloudtcm.com/herb/983",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
           "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ],
         "clinical_use_note": [
@@ -5662,6 +5728,26 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "curriculum/herbs/herb_functions_chenoweth.md#L353",
           "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "dosage_g": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "safety_info": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
+        ],
+        "safety_flags": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
+          "https://www.americandragon.com/Individualherbsupdate/ChanTui.html"
         ]
       },
       "pharmaceutical_latin": "Cicadae Periostracum",
@@ -5685,23 +5771,19 @@
         "May potentiate sedative medications and reduce caffeine effect"
       ],
       "cautions_en": [
-        "Use cautiously in patients with allergy history because it contains insect proteins.",
-        "Use cautiously in Exterior deficiency, Qi deficiency, or Yin deficiency.",
-        "Use with caution in hypertension.",
-        "Antispasmodic use may require higher doses than exterior-releasing use and should follow professional sources and clinical supervision.",
-        "May potentiate sedatives including antihistamines, narcotic analgesics, barbiturates, and benzodiazepines, and may reduce caffeine effect."
+        "Use caution in exterior deficiency (American Dragon).",
+        "Use caution during pregnancy; American Dragon notes historical use for delayed labor and expulsion of afterbirth.",
+        "Use caution in Qi deficiency or Yin deficiency (American Dragon).",
+        "May potentiate sedatives including antihistamines, narcotic analgesics, barbiturates, and benzodiazepines, and may reduce caffeine effect (American Dragon).",
+        "Chenoweth notes CNS suppression/seizures; when used for convulsions or in pediatrics, dose and supervision need special review."
       ],
       "contraindications_zh": [
-        "孕婦和哺乳期婦女禁止使用。",
-        "脾虛便溏者禁止使用。",
-        "虛寒體質者禁止使用。",
-        "對蟬蛻或昆蟲來源藥材已知過敏者禁用。"
+        "課件與 American Dragon 未列明絕對禁忌；不要把 AD 的「慎用」升級成禁用。",
+        "對蟬蛻或昆蟲來源藥材已知過敏者應避免使用；此為過敏安全判斷，需 Ting/Claude 複核來源等級。"
       ],
       "contraindications_en": [
-        "Contraindicated during pregnancy and lactation.",
-        "Contraindicated in Spleen deficiency with loose stools.",
-        "Contraindicated in cold-deficiency constitutions.",
-        "Contraindicated in known allergy to Chan Tui or insect-derived medicinals."
+        "Chenoweth and American Dragon do not list absolute contraindications; do not upgrade American Dragon's cautions into strict contraindications.",
+        "Avoid in known allergy to Chan Tui or insect-derived medicinals; this allergy-safety judgment needs Ting/Claude review for source tiering."
       ],
       "source_citations": [
         {
@@ -5712,12 +5794,12 @@
         {
           "name": "CloudTCM — 蟬蛻 / Chan Tui",
           "url": "https://cloudtcm.com/herb/983",
-          "scope": "Basic materia data, traditional actions, modern effects, dosage, cautions, and contraindication wording"
+          "scope": "Basic materia data, traditional actions, and modern effects; not used as the source for this American Dragon + curriculum safety pass"
         },
         {
           "name": "American Dragon — Chan Tui",
           "url": "https://www.americandragon.com/Individualherbsupdate/ChanTui.html",
-          "scope": "Actions, indications, dosage, combinations, contraindications, and sedative interaction"
+          "scope": "Safety source for pregnancy, deficiency cautions, sedative/caffeine interactions, dosage, and notes"
         },
         {
           "name": "Wikimedia Commons — Cicada shell image",
@@ -5731,7 +5813,35 @@
         }
       ],
       "exam_importance": "高頻：NCBAHM 2026 CH 大綱列名；Chenoweth 將蟬蛻歸入辛涼解表第 2 類，重點是風熱咽喉失音、透疹止癢、明目退翳與小兒驚風止痙。",
-      "exam_pearl": "蟬蛻不是普通辛涼解表而已；考題常用「聲音嘶啞/失音、疹癢、目翳視物模糊、小兒熱病驚風」來指向它。與薄荷同為風熱咽喉藥，蟬蛻更偏開音、止癢、息風止痙，且是蟲類藥，過敏與孕哺禁忌要特別看。"
+      "exam_pearl": "蟬蛻不是普通辛涼解表而已；考題常用「聲音嘶啞/失音、疹癢、目翳視物模糊、小兒熱病驚風」來指向它。與薄荷同為風熱咽喉藥，蟬蛻更偏開音、止癢、息風止痙，且是蟲類藥，過敏與孕哺禁忌要特別看。",
+      "dosage_g": "3–9g（課件）；AD 3–10g",
+      "safety_info": {
+        "toxicity_zh": "課件未標示蟬蛻為有毒；American Dragon 也未列毒性警告。安全重點在孕期慎用、虛證慎用、鎮靜藥交互作用，以及蟲類藥過敏風險需臨床詢問。",
+        "toxicity_en": "Chenoweth does not mark Chan Tui as toxic, and American Dragon lists no toxicity warning. Safety focus: pregnancy caution, deficiency cautions, sedative interactions, and clinical screening for allergy to insect-derived medicinals.",
+        "contraindications_zh": [
+          "課件與 American Dragon 未列明絕對禁忌；不要把 AD 的「慎用」升級成禁用。",
+          "對蟬蛻或昆蟲來源藥材已知過敏者應避免使用；此為過敏安全判斷，需 Ting/Claude 複核來源等級。"
+        ],
+        "contraindications_en": [
+          "Chenoweth and American Dragon do not list absolute contraindications; do not upgrade American Dragon's cautions into strict contraindications.",
+          "Avoid in known allergy to Chan Tui or insect-derived medicinals; this allergy-safety judgment needs Ting/Claude review for source tiering."
+        ],
+        "cautions_zh": [
+          "表虛者慎用（American Dragon）。",
+          "孕期慎用；American Dragon 記載其曾用於催產與排出胞衣。",
+          "氣虛或陰虛者慎用（American Dragon）。",
+          "可增強抗組織胺、麻醉性止痛藥、巴比妥類、苯二氮平類等鎮靜藥作用，並降低咖啡因效果（American Dragon）。",
+          "課件標示 WM: CNS suppression / seizures；若用於驚風、抽搐或兒科，劑量與用藥監督須特別審核。"
+        ],
+        "cautions_en": [
+          "Use caution in exterior deficiency (American Dragon).",
+          "Use caution during pregnancy; American Dragon notes historical use for delayed labor and expulsion of afterbirth.",
+          "Use caution in Qi deficiency or Yin deficiency (American Dragon).",
+          "May potentiate sedatives including antihistamines, narcotic analgesics, barbiturates, and benzodiazepines, and may reduce caffeine effect (American Dragon).",
+          "Chenoweth notes CNS suppression/seizures; when used for convulsions or in pediatrics, dose and supervision need special review."
+        ]
+      },
+      "safety_review_pending": "課件與 American Dragon 未列蟬蛻絕對禁忌；過敏禁用屬臨床安全補充，需 Ting/Claude 確認是否保留為正式禁忌。"
     },
     {
       "id": "herb.sang_ye",
@@ -5773,13 +5883,11 @@
         "formula.qing_zao_jiu_fei_tang"
       ],
       "safety_flags": [
-        "pregnancy_contraindicated",
-        "cold_deficiency_contraindicated",
-        "gi_weakness_contraindicated",
-        "allergy_risk",
-        "liver_kidney_caution",
-        "glucose_bp_medication_review",
-        "lactation_review"
+        "cold_lung_caution",
+        "qi_deficiency_caution",
+        "max_dose_30g_ad",
+        "allergy_review",
+        "no_ad_drug_interactions_listed"
       ],
       "clinical_use_note": "桑葉既是辛涼解表藥，也是清肺潤燥、平肝明目的常考藥。與菊花相須偏風熱與肝目；與杏仁、沙參同用偏肺燥乾咳。生桑葉偏疏風清熱，蜜炙後偏潤肺止咳。現代代謝研究不能直接等同臨床降糖治療，合併降糖或降壓藥時應監測。",
       "modern_use_tags": [
@@ -5844,7 +5952,14 @@
           "涼血止血"
         ]
       },
-      "dosage": "{\r\n  \"一般建議\": \"5-10克\",\r\n  \"食療用量範圍\": \"6-12克\",\r\n  \"特殊說明\": \"入湯劑常規煎煮即可；脾胃虛寒者慎用\"\r\n}",
+      "dosage": {
+        "standard_daily_g": "4.5–14g（American Dragon）",
+        "blood_heat_dose_g": "15–30g to cool Blood Heat（American Dragon）",
+        "max_daily_g": "30g maximum dosage（American Dragon）",
+        "tincture": "2–5 ml（American Dragon）",
+        "preparation_zh": "課件標示蜜炙桑葉偏潤肺止咳；AD notes honey-prepared Sang Ye enhances moistening Dryness and nourishing the Lung.",
+        "preparation_en": "Chenoweth notes honey-fried Sang Ye for Lung dryness cough; American Dragon states honey-prepared leaves enhance moistening Dryness and nourishing the Lung."
+      },
       "cautions": "桑葉注意事項\n**體質偏寒、陽虛內寒者不宜食用：**桑葉性寒，易傷陽氣。\n**脾胃虛弱、食慾不振、腹瀉者不宜食用：**桑葉促進胃腸蠕動，易加重症狀。\n**肝病、腎病患者慎用：**桑葉草酸較多，易增加肝腎負擔。\n**孕婦不宜食用：**桑葉生物鹼和黃酮類物質可能對胎兒產生不良影響。\n**對桑屬植物過敏者不宜食用：**易引發過敏反應。",
       "source_urls": [
         "https://cloudtcm.com/herb/1156",
@@ -5856,10 +5971,11 @@
       "public_safe": false,
       "source_type": "sourced_cloudtcm_record",
       "cautions_zh": [
-        "性偏寒，肺氣虛寒或氣虛者慎用。",
-        "肝病、腎病患者慎用；CloudTCM 記載桑葉草酸較多，可能增加肝腎負擔。",
-        "正在使用降血糖、降血脂或降血壓藥物者，應監測相關指標並評估疊加作用。",
-        "哺乳期如需較大劑量或長期使用，應先由合格醫療人員評估。"
+        "肺虛寒者慎用（American Dragon）。",
+        "氣虛者慎用（American Dragon）。",
+        "AD 標示涼血熱可用 15–30g，最大劑量 30g；超過此範圍不可自行推定。",
+        "蜜炙桑葉偏潤肺止咳；燥咳與風熱表證用法需辨證區分（Chenoweth / American Dragon）。",
+        "American Dragon 未列 herb-drug interactions；本次不加入降血糖、降血脂或血壓藥交互作用，避免無來源擴寫。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1156",
       "safety_fetched_at": "2026-07-23T07:25:00.916Z",
@@ -6054,19 +6170,19 @@
           "https://cloudtcm.com/herb/1156"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/1156",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ],
         "cautions_en": [
-          "https://cloudtcm.com/herb/1156",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ],
         "contraindications_zh": [
-          "https://cloudtcm.com/herb/1156",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ],
         "contraindications_en": [
-          "https://cloudtcm.com/herb/1156",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ],
         "clinical_use_note": [
@@ -6087,6 +6203,22 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
           "curriculum/herbs/herb_functions_chenoweth.md#L353",
           "curriculum/herbs/herb_functions_chenoweth.md#L1305"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "dosage_g": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "safety_info": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
+        ],
+        "safety_flags": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+          "https://www.americandragon.com/Individualherbsupdate/SangYe.html"
         ]
       },
       "pharmaceutical_latin": "Mori Folium",
@@ -6112,22 +6244,19 @@
         "Anticancer and antitumor-related research"
       ],
       "cautions_en": [
-        "Use cautiously in weak and cold Lung patterns or Qi deficiency.",
-        "Use cautiously in liver or kidney disease; CloudTCM notes higher oxalic acid content may increase hepatic or renal burden.",
-        "Monitor carefully when used with glucose-lowering, lipid-lowering, or blood-pressure medications because effects may overlap.",
-        "Professional review is advised before large or prolonged use during lactation."
+        "Use caution in weak and cold Lungs (American Dragon).",
+        "Use caution in Qi deficiency (American Dragon).",
+        "American Dragon lists 15–30g for cooling Blood Heat and a maximum dosage of 30g; do not infer doses beyond that range.",
+        "Honey-prepared Sang Ye emphasizes moistening the Lung and stopping cough; distinguish Dryness cough from Wind-Heat exterior use (Chenoweth / American Dragon).",
+        "American Dragon lists no herb-drug interactions; this pass does not add glucose, lipid, or blood-pressure medication interactions without a cited source."
       ],
       "contraindications_zh": [
-        "體質偏寒、陽虛內寒者不宜食用。",
-        "脾胃虛弱、食慾不振或腹瀉者不宜食用。",
-        "孕婦不宜食用。",
-        "對桑屬植物過敏者禁用。"
+        "課件與 American Dragon 未列明絕對禁忌；不要把 AD 的「慎用」升級成禁用。",
+        "對桑屬植物已知過敏者應避免使用；此為過敏安全判斷，需 Ting/Claude 複核來源等級。"
       ],
       "contraindications_en": [
-        "Contraindicated or unsuitable in cold constitutions or Yang deficiency with internal cold.",
-        "Contraindicated or unsuitable in Spleen-Stomach weakness, poor appetite, or diarrhea.",
-        "Contraindicated or unsuitable during pregnancy.",
-        "Contraindicated in known allergy to Morus species."
+        "Chenoweth and American Dragon do not list absolute contraindications; do not upgrade American Dragon's cautions into strict contraindications.",
+        "Avoid in known allergy to Morus species; this allergy-safety judgment needs Ting/Claude review for source tiering."
       ],
       "source_citations": [
         {
@@ -6138,12 +6267,12 @@
         {
           "name": "CloudTCM — 桑葉 / Sang Ye",
           "url": "https://cloudtcm.com/herb/1156",
-          "scope": "Basic materia data, traditional actions, modern effects, dosage, cautions, and contraindication wording"
+          "scope": "Basic materia data, traditional actions, and modern effects; not used as the source for this American Dragon + curriculum safety pass"
         },
         {
           "name": "American Dragon — Sang Ye",
           "url": "https://www.americandragon.com/Individualherbsupdate/SangYe.html",
-          "scope": "Actions, indications, dosage, major combinations, and cautions"
+          "scope": "Safety source for weak/cold Lung and Qi deficiency cautions, dosage, maximum dose, preparation notes, and absence of listed herb-drug interactions"
         },
         {
           "name": "Wikimedia Commons — Mulberry leaf image",
@@ -6162,7 +6291,35 @@
         }
       ],
       "exam_importance": "高頻：NCBAHM 2026 CH 大綱列名，且 Appendix B 將桑葉 + 菊花列為官方對藥；Chenoweth 將桑葉歸入辛涼解表第 2 類，並標示肺熱/肺燥咳嗽與清肝明目。",
-      "exam_pearl": "桑葉考點是「上焦風熱 + 肺熱/燥咳 + 肝陽/目疾」三條線。看到肺熱燥咳、乾咳少痰或蜜炙桑葉，想到清肺潤燥；看到頭暈目赤、視物模糊，想到桑葉配菊花；官方對藥 Sang Ye + Ju Hua 要背。"
+      "exam_pearl": "桑葉考點是「上焦風熱 + 肺熱/燥咳 + 肝陽/目疾」三條線。看到肺熱燥咳、乾咳少痰或蜜炙桑葉，想到清肺潤燥；看到頭暈目赤、視物模糊，想到桑葉配菊花；官方對藥 Sang Ye + Ju Hua 要背。",
+      "dosage_g": "4.5–14g；涼血熱 15–30g；最大 30g（AD）",
+      "safety_info": {
+        "toxicity_zh": "課件與 American Dragon 未將桑葉標為有毒藥；American Dragon 未列中西藥交互作用。安全重點是寒涼性、肺虛寒與氣虛慎用，以及較大劑量涼血熱時不得超過 AD 所列最大量。",
+        "toxicity_en": "Chenoweth and American Dragon do not classify Sang Ye as toxic, and American Dragon lists no herb-drug interactions. Safety focus: cold nature, weak/cold Lung and Qi deficiency cautions, and respecting the American Dragon maximum dosage when cooling Blood Heat.",
+        "contraindications_zh": [
+          "課件與 American Dragon 未列明絕對禁忌；不要把 AD 的「慎用」升級成禁用。",
+          "對桑屬植物已知過敏者應避免使用；此為過敏安全判斷，需 Ting/Claude 複核來源等級。"
+        ],
+        "contraindications_en": [
+          "Chenoweth and American Dragon do not list absolute contraindications; do not upgrade American Dragon's cautions into strict contraindications.",
+          "Avoid in known allergy to Morus species; this allergy-safety judgment needs Ting/Claude review for source tiering."
+        ],
+        "cautions_zh": [
+          "肺虛寒者慎用（American Dragon）。",
+          "氣虛者慎用（American Dragon）。",
+          "AD 標示涼血熱可用 15–30g，最大劑量 30g；超過此範圍不可自行推定。",
+          "蜜炙桑葉偏潤肺止咳；燥咳與風熱表證用法需辨證區分（Chenoweth / American Dragon）。",
+          "American Dragon 未列 herb-drug interactions；本次不加入降血糖、降血脂或血壓藥交互作用，避免無來源擴寫。"
+        ],
+        "cautions_en": [
+          "Use caution in weak and cold Lungs (American Dragon).",
+          "Use caution in Qi deficiency (American Dragon).",
+          "American Dragon lists 15–30g for cooling Blood Heat and a maximum dosage of 30g; do not infer doses beyond that range.",
+          "Honey-prepared Sang Ye emphasizes moistening the Lung and stopping cough; distinguish Dryness cough from Wind-Heat exterior use (Chenoweth / American Dragon).",
+          "American Dragon lists no herb-drug interactions; this pass does not add glucose, lipid, or blood-pressure medication interactions without a cited source."
+        ]
+      },
+      "safety_review_pending": "課件與 American Dragon 未列桑葉絕對禁忌或中西藥交互作用；既有 CloudTCM 藥物交互/肝腎負擔說法未納入本 AD+課件安全欄。"
     },
     {
       "id": "herb.ju_hua",

@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-28] Codex Handoff - Cool acrid Safety & Sources correction
+
+- **Branch**: `codex/herbs-warm-acrid-2`
+- **Task**: Rebuilt Safety & Sources for `herb.bo_he`, `herb.chan_tui`, and `herb.sang_ye` using only Chenoweth curriculum notes and American Dragon for safety-critical wording.
+- **Source honesty**: CloudTCM remains cited only for non-safety content already used earlier; the safety panel source scopes now explicitly say CloudTCM was not used for this safety pass. Unsupported prior safety wording was removed or marked pending review instead of being attributed to AD/course.
+- **Safety changes**: Added `safety_info` with toxicity review, contraindications, cautions/interactions, sourced dosage, and safety flags; Bo He now uses AD contraindications, Chan Tui keeps AD pregnancy/deficiency/sedative-interaction cautions without upgrading them to strict contraindications, Sang Ye keeps AD weak/cold Lung and Qi deficiency cautions plus max-dose note.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js --worklist --category "解表藥 / Release Exterior - Cool Acrid" --all` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no app/js/html/scripts/source schema files touched; no pair records changed.
+- **Known risks / manual checks**: Ting should review whether allergy-avoidance lines for Chan Tui and Sang Ye should remain formal contraindications or be moved to cautions, because AD/course do not state them as absolute contraindications.
+
 ## [2026-07-28] Codex Handoff - Cool acrid board exam pearls
 
 - **Branch**: `codex/herbs-warm-acrid-2`
