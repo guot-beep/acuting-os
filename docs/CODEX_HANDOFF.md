@@ -1,5 +1,19 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-28 05:35 -07:00] Codex Handoff - NCBAHM missing herbs batch 2: Niu Huang, Shui Niu Jiao, Wu Gong
+
+- **Branch**: `codex/herbs-warm-acrid-2`
+- **Task**: Created the next three high-risk NCBAHM 2026 CH Appendix A missing herb cards: `herb.niu_huang`, `herb.shui_niu_jiao`, and `herb.wu_gong`.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `docs/CODEX_HANDOFF.md`, `docs/CODEX_TASK_QUEUE.md`, `PROJECT_LOG.md`.
+- **Sources used**: NCBAHM 2026 CH Appendix A (`Niu Huang` L349, `Shui Niu Jiao` L413, `Wu Gong` L437); Chenoweth Clear Heat / Eliminate Toxins Niu Huang p.7; Chenoweth Open Orifices Niu Huang combinations; Chenoweth abbreviated Materia Medica Shui Niu Jiao and Wu Gong; Chenoweth Wind-Extinguishing Herbs Wu Gong p.6-p.7; CloudTCM Shui Niu Jiao `/herb/1184`; American Dragon Niu Huang, Shui Niu Jiao, and Wu Gong.
+- **Source honesty**: No exact CloudTCM single-herb page was found in this pass for Niu Huang or Wu Gong; those cards therefore list American Dragon as the top external link and keep CloudTCM marked as not used for single-herb authority. Shui Niu Jiao has exact CloudTCM and American Dragon links.
+- **Top external-link correction**: Ting caught that the previous batch's top `外部參考 Sources` box showed generic `外部藥材參考`. Added renderer-facing `cloudtcm_url`, `american_dragon_url`, and link-status fields for Ba Dou, Chuan Wu, Cao Wu, Niu Huang, Shui Niu Jiao, and Wu Gong so the top box shows named CloudTCM / American Dragon links instead of fallback labels.
+- **Pair records added**: `pair.niu_huang__shui_niu_jiao`, `pair.niu_huang__she_xiang__bing_pian`, `pair.shui_niu_jiao__sheng_di_huang`, `pair.shui_niu_jiao__mu_dan_pi__chi_shao`, and `pair.wu_gong__quan_xie`. These are course/AD sourced, not NCBAHM Appendix B pairs.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved to 242/304 matched and 62 missing. Removed Niu Huang, Shui Niu Jiao, and Wu Gong from the Quality missing list.
+- **Validation**: `build-data.js` PASS; targeted three-card QA PASS (bilingual array alignment, contraindications/cautions English present, renderer-facing `dosage_g`, named source citations); `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no app shell, JS, scripts, source curriculum, schema, or formula records touched.
+- **Known risks / manual checks**: Review Niu Huang sedative-interaction and pregnancy wording; Shui Niu Jiao large-dose / pre-decoction instructions; Wu Gong toxicity, pregnancy, blood-deficiency and liver-function cautions. Top link box requires browser hard refresh to pick up regenerated `knowledge_data.js`.
+
 ## [2026-07-28 04:55 -07:00] Codex Handoff - NCBAHM missing herbs batch 1: Ba Dou, Chuan Wu, Cao Wu
 
 - **Branch**: `codex/herbs-warm-acrid-2`

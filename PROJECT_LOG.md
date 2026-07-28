@@ -23,6 +23,13 @@ Use this file as the first-read context before each daily optimization session. 
 
 ## Log Entries
 
+### 2026-07-28 - NCBAHM CH missing herbs batch 2 (Codex)
+- Scope: Created `herb.niu_huang`, `herb.shui_niu_jiao`, and `herb.wu_gong`; also fixed top external-link fields for the six newly created high-risk cards.
+- Sources: NCBAHM 2026 CH Appendix A, Chenoweth herb curriculum, CloudTCM Shui Niu Jiao, and American Dragon Niu Huang / Shui Niu Jiao / Wu Gong.
+- Files: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated data, `docs/CODEX_HANDOFF.md`, `docs/CODEX_TASK_QUEUE.md`.
+- Validation: build-data, targeted three-card bilingual/source/dose QA, herb-standard, content-junk, and diff-check passed.
+- Next: Continue the remaining 62 NCBAHM CH Appendix A missing herbs; suggested next high-risk set is Han Fang Ji, Ma Huang Gen, Jue Ming Zi, Mu Zei, Bai Hua She, Liu Huang, Xian Mao.
+
 ### 2026-07-28 - NCBAHM CH missing herbs batch 1 (Codex)
 - Scope: Created `herb.ba_dou`, `herb.chuan_wu`, and `herb.cao_wu` as formal high-toxicity herb cards from the NCBAHM 2026 CH Appendix A missing-card list.
 - Sources: NCBAHM 2026 CH Appendix A, Chenoweth herb curriculum, CloudTCM Ba Dou / Wu Tou, and American Dragon Ba Dou / Zhi Chuan Wu / Zhi Cao Wu.

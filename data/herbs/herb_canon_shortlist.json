@@ -63103,7 +63103,11 @@
           "url": "https://www.americandragon.com/Individualherbsupdate/BaDou.html"
         }
       ],
-      "last_reviewed": "2026-07-28"
+      "last_reviewed": "2026-07-28",
+      "cloudtcm_url": "https://cloudtcm.com/herb/1769",
+      "cloudtcm_link_status": "verified_exact",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BaDou.html",
+      "american_dragon_link_status": "verified_exact"
     },
     {
       "id": "herb.chuan_wu",
@@ -63436,7 +63440,11 @@
           "url": "https://www.americandragon.com/Individualherbsupdate/ZhiChuanWu.html"
         }
       ],
-      "last_reviewed": "2026-07-28"
+      "last_reviewed": "2026-07-28",
+      "cloudtcm_url": "https://cloudtcm.com/herb/1309",
+      "cloudtcm_link_status": "verified_combined_wu_tou_page",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhiChuanWu.html",
+      "american_dragon_link_status": "verified_exact"
     },
     {
       "id": "herb.cao_wu",
@@ -63766,7 +63774,952 @@
           "url": "https://www.americandragon.com/Individualherbsupdate/ZhiCaoWu.html"
         }
       ],
-      "last_reviewed": "2026-07-28"
+      "last_reviewed": "2026-07-28",
+      "cloudtcm_url": "https://cloudtcm.com/herb/1309",
+      "cloudtcm_link_status": "verified_combined_wu_tou_page",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ZhiCaoWu.html",
+      "american_dragon_link_status": "verified_exact"
+    },
+    {
+      "id": "herb.niu_huang",
+      "name_zh": "牛黃",
+      "name_en": "Cattle Gallstone",
+      "pinyin": "Niú Huáng",
+      "pinyin_toned": "Niú Huáng",
+      "aliases_zh": [
+        "天然牛黃",
+        "人工牛黃",
+        "牛膽結石"
+      ],
+      "aliases_en": [
+        "Ox Gallstone",
+        "Bezoar",
+        "Calculus Bovis",
+        "Synthetic Calculus Bovis"
+      ],
+      "category": "開竅藥 / Open Orifices",
+      "category_zh": "開竅藥 / 清熱解毒藥",
+      "category_en": "Open Orifices / Clear Heat Toxin",
+      "review_status": "draft",
+      "public_safe": false,
+      "source_type": "full_card_verified_multi_source",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "pharmaceutical_latin": "Calculus Bovis",
+      "part_used_zh": "牛科動物膽結石；臨床常用人工牛黃替代",
+      "part_used_en": "Cattle gallstone; synthetic Calculus Bovis is commonly substituted",
+      "properties_taste_temp": "苦，涼；課件/AD 另列微甘",
+      "taste_temperature_zh": "苦，涼",
+      "channels_zh": [
+        "心經",
+        "肝經"
+      ],
+      "channels_en": [
+        "HT Heart",
+        "LV Liver"
+      ],
+      "channels_entered": [
+        "心經",
+        "肝經"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦",
+          "甘"
+        ],
+        "five_flavors_en": [
+          "Bitter",
+          "Sweet"
+        ],
+        "four_natures_zh": "涼",
+        "four_natures_en": "Cool",
+        "meridian_tropism_zh": [
+          "心經",
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart",
+          "LV Liver"
+        ],
+        "part_used_zh": "膽結石",
+        "part_used_en": "Gallstone",
+        "source_note_zh": "課件列 bitter/cool、心肝；AD 列 bitter (sweet)、cool、心肝，另括膽經。CloudTCM 精準單味頁本次未找到。",
+        "source_note_en": "Course notes list bitter/cool and Heart/Liver; AD lists bitter (sweet), cool, Heart/Liver, with Gallbladder in parentheses. No exact CloudTCM single-herb page was found in this pass."
+      },
+      "property_channel_source_note_zh": "主顯示採課件與 American Dragon；CloudTCM 未精準命中牛黃單味頁，未列為已核用來源。",
+      "functions_zh": [
+        "清心豁痰、開竅醒神",
+        "息風止痙",
+        "清熱解毒、消腫止痛",
+        "涼血解毒"
+      ],
+      "actions_en": [
+        "Clears the Heart, transforms Phlegm, opens the orifices, and awakens the Spirit",
+        "Extinguishes Wind and stops spasms",
+        "Clears Heat toxin, reduces swelling, and relieves pain",
+        "Cools the Blood and resolves toxicity"
+      ],
+      "indications_zh": [
+        "溫熱病熱入心包、痰熱蒙蔽心竅之神昏譫語、昏迷；安宮牛黃丸為核心記憶。",
+        "高熱動風、驚厥、抽搐、癲癇或小兒驚風，屬心肝熱盛、痰熱內閉者。",
+        "中風痰熱閉竅、熱病神昏、熱厥；需辨熱閉，不是寒閉。",
+        "咽喉紅腫疼痛、口舌生瘡、牙齦腫痛；AD 列局部熱毒腫痛方向。",
+        "癰疽疔毒、疔瘡腫毒、乳癰、蜂窩組織炎等熱毒腫痛；AD notes 可內服/外用。",
+        "痰熱驚癇、癲狂或意識混濁；AD 與課件皆強調清熱、化痰、開竅。"
+      ],
+      "indications_en": [
+        "Warm-febrile disease with Heat entering the Pericardium and Hot Phlegm blocking the orifices, causing delirium, coma, or impaired consciousness; An Gong Niu Huang Wan is the core memory.",
+        "High fever generating internal Wind with convulsions, tremors, seizures, epilepsy, or infantile convulsions from Heart/Liver Heat and Phlegm-Heat obstruction.",
+        "Wind-stroke or febrile collapse with Phlegm-Heat closing the orifices; differentiate Heat closure, not Cold closure.",
+        "Red, swollen, painful throat, mouth/tongue sores, or swollen painful gums from Heat toxin.",
+        "Sores, carbuncles, boils, mastitis, cellulitis, and other Heat-toxin swellings; AD notes internal and topical use.",
+        "Phlegm-Heat seizures, mania-withdrawal patterns, or muddled consciousness; both course and AD emphasize clearing Heat, transforming Phlegm, and opening orifices."
+      ],
+      "condition_tags_zh": [
+        "神昏譫語",
+        "昏迷",
+        "痰熱閉竅",
+        "高熱驚厥",
+        "癲癇",
+        "中風熱閉",
+        "咽喉腫痛",
+        "口舌生瘡",
+        "癰疽疔毒",
+        "乳癰",
+        "蜂窩組織炎"
+      ],
+      "condition_tags_en": [
+        "Delirium",
+        "Coma",
+        "Phlegm-Heat orifice obstruction",
+        "High-fever convulsions",
+        "Epilepsy",
+        "Heat-closure wind-stroke",
+        "Swollen sore throat",
+        "Mouth and tongue sores",
+        "Carbuncles and boils",
+        "Mastitis",
+        "Cellulitis"
+      ],
+      "modern_functions_zh": [
+        "輕度鎮靜",
+        "減弱咖啡因興奮並增強嗎啡/巴比妥類等鎮靜作用",
+        "抗驚厥/抗癲癇方向",
+        "抑制癌細胞生長訊號",
+        "消化/膽汁酵素不足相關刺激作用"
+      ],
+      "modern_functions_en": [
+        "Mild sedative effect",
+        "Reduces caffeine stimulation and enhances morphine/barbiturate/sedative effects",
+        "Anticonvulsant / antiepileptic direction",
+        "Cancer-cell growth-inhibition signal",
+        "Digestive and biliary insufficiency stimulation signal"
+      ],
+      "modern_pharmacology": [
+        "Mild sedative effect",
+        "Sedative drug interaction",
+        "Anticonvulsant signal",
+        "Antineoplastic signal",
+        "Digestive/biliary stimulation signal"
+      ],
+      "modern_pharmacology_zh": "AD 明列牛黃有輕度鎮靜，可減少咖啡因刺激並增強嗎啡、巴比妥類及其他鎮靜藥作用；notes 另列抑制癌細胞生長、消化/膽汁酵素不足相關刺激作用。課件也將其放在高熱驚厥、癲癇與開竅熱閉脈絡。",
+      "modern_pharmacology_en": "AD states that Niu Huang has mild sedative effects, reduces caffeine stimulation, and enhances morphine, barbiturate, and other sedative effects; notes also list cancer-cell growth inhibition and digestive/biliary insufficiency stimulation. Course materials place it in high-fever convulsion, epilepsy, and Heat-closure orifice-opening contexts.",
+      "dosage": {
+        "standard_daily_g": "課件 0.2–0.5g；AD 0.15–1g，多入丸散，不作一般煎劑使用。",
+        "source_note_zh": "Ren Gong Niu Huang（人工牛黃）常作替代；課件明列人工牛黃常代天然牛黃。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "0.2–0.5g（課件）；AD 0.15–1g",
+        "granule_dose_g": "多入丸散；無常規顆粒劑量"
+      },
+      "pao_zhi_notes_zh": "天然牛黃稀少，課件註明 Ren Gong Niu Huang / Calculus Bovis Syntheticum 常作替代；AD notes 指人工牛黃清熱解毒近似，但開竅力不如天然品。",
+      "contraindications_zh": [
+        "孕婦禁用/慎用：AD 明列孕期禁用，課件列孕期慎用。",
+        "非實熱證禁用：AD 列 no Heat Excess 禁用，課件列無實熱者慎用。",
+        "脾胃虛弱者禁用：AD 明列 Spleen and Stomach Deficiency contraindication。",
+        "乳食不化泄瀉之嬰兒禁用：AD 明列此條。",
+        "中風在經絡、口眼喎斜、皮膚麻木或肢體偏癱而非熱閉竅者禁用：AD 明列。"
+      ],
+      "contraindications_en": [
+        "Contraindicated or use with caution in pregnancy: AD lists pregnancy contraindication; course notes caution during pregnancy.",
+        "Contraindicated when there is no Excess Heat: AD lists no Heat Excess; course notes caution when the patient does not present with Excess Heat.",
+        "Contraindicated in Spleen and Stomach deficiency per AD.",
+        "Contraindicated for infants with diarrhea due to poor digestion of milk per AD.",
+        "Contraindicated for channel-level wind-stroke with facial paralysis, skin numbness, or partial limb paralysis when the pattern is not Heat closure of the orifices per AD."
+      ],
+      "cautions_zh": [
+        "鎮靜藥交互作用：AD 記載可增強嗎啡、巴比妥類及其他鎮靜藥鎮靜作用。",
+        "可減弱咖啡因刺激作用；使用咖啡因或中樞神經興奮/抑制藥者需標註。",
+        "與龍骨、生地黃、龍膽草、常山相惡/相畏，與牛膝相反/抵消；AD 列為 incompatibilities。",
+        "天然品昂貴稀少，人工牛黃替代力道不同，尤其開竅力較弱，需在來源中標清。"
+      ],
+      "cautions_en": [
+        "Sedative-drug interaction: AD states that it enhances sedation from morphine, barbiturates, and other sedatives.",
+        "May reduce caffeine stimulation; flag use with caffeine or CNS stimulant/depressant drugs.",
+        "AD lists antagonisms with Long Gu, Sheng Di Huang, Long Dan Cao, and Chang Shan, and counteraction with Niu Xi.",
+        "Natural material is rare and expensive; synthetic Calculus Bovis is a substitute with weaker orifice-opening action and must be labeled by source."
+      ],
+      "safety_flags": [
+        "pregnancy_contraindicated",
+        "sedative_interaction",
+        "pediatric_caution",
+        "pattern_specific",
+        "source_difference_review"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan"
+      ],
+      "key_pairs": [],
+      "classical_text_zh": "牛黃清心肝之熱、豁痰開竅、息風定驚，為熱閉神昏與高熱驚厥之要藥。",
+      "classical_text_en": "Niu Huang clears Heart/Liver Heat, transforms Phlegm, opens the orifices, and extinguishes Wind, making it a key substance for Heat-closure coma and high-fever convulsions.",
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 官方中藥；熱閉神昏/安宮牛黃丸核心。重點：牛黃 = 清心肝熱、豁痰開竅、息風止痙、清熱解毒；孕禁/非實熱禁。",
+      "exam_pearl": "💡 Board pearl: Niu Huang opens orifices for Heat closure, not Cold closure. Pair memory: An Gong Niu Huang Wan = She Xiang + Bing Pian + Niu Huang + Zhu Sha; AD also pairs Niu Huang with Shui Niu Jiao for severe Heat and blocked orifices.",
+      "clinical_use_note": "牛黃的定位是「熱、痰、閉、風、毒」：熱病神昏、痰熱閉竅、高熱驚厥和熱毒腫痛。和麝香比，開竅力不如麝香但清熱解毒強；和冰片比，更偏清心肝熱、化痰息風。看到寒閉、虛證、無實熱、脾胃虛弱、嬰兒乳食泄瀉，要避免。",
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L349",
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L349",
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "actions_en": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "indications_en": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "dosage": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "dosage_g": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "contraindications_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "modern_functions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L349",
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7"
+        ],
+        "exam_pearl": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L349",
+          "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+          "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        ]
+      },
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A — Niu Huang",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L349",
+          "scope": "Board-outline presence and exam scope."
+        },
+        {
+          "name": "Chenoweth Clear Heat / Eliminate Toxins — Niu Huang",
+          "url": "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#p7",
+          "scope": "Course properties, actions, indications, dose, substitute note and pregnancy/excess-heat caution."
+        },
+        {
+          "name": "Chenoweth Open Orifices — Niu Huang combinations",
+          "url": "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+          "scope": "An Gong Niu Huang Wan and heat-closure pairing context."
+        },
+        {
+          "name": "American Dragon — Niu Huang",
+          "url": "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html",
+          "scope": "Actions, contraindications, interactions, major combinations and notes."
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html",
+      "cloudtcm_link_status": "exact single-herb CloudTCM page not found in this pass; CloudTCM formula pages mention Niu Huang but were not used as single-herb authority",
+      "visual_links": [
+        {
+          "label_zh": "American Dragon Niu Huang",
+          "label_en": "American Dragon Niu Huang",
+          "url": "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+        }
+      ],
+      "last_reviewed": "2026-07-28",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html",
+      "american_dragon_link_status": "verified_exact"
+    },
+    {
+      "id": "herb.shui_niu_jiao",
+      "name_zh": "水牛角",
+      "name_en": "Water Buffalo Horn",
+      "pinyin": "Shuǐ Niú Jiǎo",
+      "pinyin_toned": "Shuǐ Niú Jiǎo",
+      "aliases_zh": [
+        "沙牛角",
+        "水牛角片",
+        "水牛角濃縮粉",
+        "犀角代用品"
+      ],
+      "aliases_en": [
+        "Buffalo Horn",
+        "Cornu Bubali",
+        "Xi Jiao substitute"
+      ],
+      "category": "清熱藥 / Clear Heat - Cool Blood",
+      "category_zh": "清熱涼血藥",
+      "category_en": "Clear Heat and Cool Blood",
+      "review_status": "draft",
+      "public_safe": false,
+      "source_type": "full_card_verified_multi_source",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "pharmaceutical_latin": "Bubali Cornu / Cornu Bubali",
+      "part_used_zh": "水牛角",
+      "part_used_en": "Water buffalo horn",
+      "properties_taste_temp": "鹹、苦，寒",
+      "taste_temperature_zh": "鹹、苦，寒",
+      "channels_zh": [
+        "心經",
+        "肝經",
+        "胃經"
+      ],
+      "channels_en": [
+        "HT Heart",
+        "LV Liver",
+        "ST Stomach"
+      ],
+      "channels_entered": [
+        "心經",
+        "肝經",
+        "胃經"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "鹹",
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Salty",
+          "Bitter"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [
+          "心經",
+          "肝經",
+          "胃經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart",
+          "LV Liver",
+          "ST Stomach"
+        ],
+        "part_used_zh": "角",
+        "part_used_en": "Horn",
+        "source_note_zh": "課件/AD/CloudTCM 均支持鹹苦寒、心肝方向；AD 另列胃、三焦、陰蹺，CloudTCM 主列心肝。本卡主顯示心肝胃。"
+      },
+      "property_channel_source_note_zh": "水牛角為犀角替代品；AD notes 指作用較弱故劑量較大，課件亦寫需用犀角 8–10 倍劑量。",
+      "functions_zh": [
+        "清熱涼血",
+        "清營解毒",
+        "定驚止痙",
+        "涼血止血"
+      ],
+      "actions_en": [
+        "Clears Heat and cools the Blood",
+        "Clears Ying-level Heat and resolves toxicity",
+        "Calms fright and stops convulsions",
+        "Cools the Blood and stops bleeding"
+      ],
+      "indications_zh": [
+        "溫病熱入營血、高熱神昏、譫語、煩躁；熱勢夜間加重者尤需辨營血分。",
+        "發斑發疹、紫斑、斑疹色深，屬血熱或熱毒入血。",
+        "吐血、衄血、齒衄、便血或胃腸出血等血熱妄行。",
+        "驚風、抽搐、癲狂、躁動，屬熱入心肝、熱極生風。",
+        "高熱伴抽搐、腦炎/流腦類溫熱病情境；AD notes 提到 infants/children high fever and encephalitis B。",
+        "陽黃、熱毒咽痛或急性咽喉重痛；AD notes 提到 acute throat infections with severe pain。"
+      ],
+      "indications_en": [
+        "Warm disease Heat entering the Ying/Xue levels with high fever, impaired consciousness, delirium, and irritability, especially when fever worsens at night.",
+        "Eruptive rashes, dark-purple macules, purpura, or toxic rashes from Blood Heat or Heat toxin entering the Blood.",
+        "Hematemesis, epistaxis, gum bleeding, hematochezia, or gastrointestinal bleeding due to Blood Heat reckless movement.",
+        "Convulsions, mania, agitation, or fright from Heat entering the Heart/Liver and extreme Heat generating Wind.",
+        "High fever with convulsions or encephalitis/meningitis-like warm-disease contexts; AD notes infant/child high fever and encephalitis B.",
+        "Yang jaundice, Heat-toxin throat pain, or acute throat infections with severe pain as noted by AD."
+      ],
+      "condition_tags_zh": [
+        "溫病高熱",
+        "神昏譫語",
+        "營血分熱",
+        "發斑發疹",
+        "紫斑",
+        "吐血",
+        "衄血",
+        "胃腸出血",
+        "驚風抽搐",
+        "癲狂",
+        "咽喉劇痛",
+        "陽黃"
+      ],
+      "condition_tags_en": [
+        "High fever in warm disease",
+        "Delirium and impaired consciousness",
+        "Ying-Xue level Heat",
+        "Eruptive rashes",
+        "Purpura",
+        "Hematemesis",
+        "Epistaxis",
+        "Gastrointestinal bleeding",
+        "Convulsions",
+        "Mania",
+        "Severe throat pain",
+        "Yang jaundice"
+      ],
+      "modern_functions_zh": [
+        "抗內毒素作用",
+        "拮抗內毒素相關 DIC 凝血異常",
+        "抗菌作用",
+        "鎮靜作用",
+        "強心作用",
+        "降壓作用"
+      ],
+      "modern_functions_en": [
+        "Anti-endotoxin activity",
+        "Antagonizes endotoxin-related DIC coagulation abnormalities",
+        "Antibacterial activity",
+        "Sedative activity",
+        "Cardiotonic activity",
+        "Blood-pressure lowering activity"
+      ],
+      "modern_pharmacology": [
+        "Anti-endotoxin activity",
+        "DIC/coagulation modulation",
+        "Antibacterial activity",
+        "Sedative activity",
+        "Cardiotonic activity",
+        "Blood-pressure lowering"
+      ],
+      "modern_pharmacology_zh": "CloudTCM 詳列抗內毒素、對抗內毒素所致 DIC、抗菌、鎮靜、強心與降壓；課件另列抗癲癇、退熱、心血管、提升免疫等學習標籤。此欄為來源索引，不作療效宣稱。",
+      "modern_pharmacology_en": "CloudTCM lists anti-endotoxin effects, antagonism of endotoxin-induced DIC, antibacterial activity, sedation, cardiotonic and hypotensive actions. Course notes also list antiseizure/antiepileptic, antipyretic, cardiovascular, and immune-support study tags. This is a source index, not an efficacy claim.",
+      "dosage": {
+        "standard_daily_g": "CloudTCM 15–30g，大劑量 60–120g，先煎 3 小時以上；AD decoction 20–120g；課件寫需犀角常量 8–10 倍。",
+        "powder": "CloudTCM 研末每次 3–9g；AD powder 4–20g；濃縮粉 CloudTCM 每次 1.5–3g。",
+        "source_note_zh": "主顯示採 CloudTCM 常規 15–30g；重症大劑量與粉末劑量並記來源差異。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "15–30g；重症 60–120g，先煎3小時以上",
+        "granule_dose_g": "濃縮粉 1.5–3g/次（CloudTCM）"
+      },
+      "pao_zhi_notes_zh": "水牛角片需劈開、熱水浸泡、鎊片、曬乾；煎劑需先煎至少 3 小時。濃縮粉可沖服，不需長時間煎煮。",
+      "contraindications_zh": [
+        "對水牛角過敏者禁用（CloudTCM）。",
+        "非實熱證、無高熱之氣虛發疹不宜使用（AD）。",
+        "中焦虛寒者不宜或需慎用；AD/CloudTCM 均列中虛胃寒/Deficiency Cold。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in known allergy to water buffalo horn per CloudTCM.",
+        "Do not use for non-Excess-Heat patterns or Qi-deficiency rashes without high fever per AD.",
+        "Avoid or use cautiously in Middle-Jiao deficiency-cold / Spleen-Stomach cold, listed by AD and CloudTCM."
+      ],
+      "cautions_zh": [
+        "孕期需極慎；AD 列 great caution during pregnancy，CloudTCM 列孕婦慎用。",
+        "大量服用可能出現上腹不適、噁心、腹脹、食欲不振（CloudTCM）。",
+        "兒童、哺乳期、體弱者慎用（CloudTCM）。",
+        "犀角為禁用瀕危動物藥；本品是替代品，勿混用或尋求犀角。"
+      ],
+      "cautions_en": [
+        "Use with great caution during pregnancy; AD and CloudTCM both caution pregnancy.",
+        "Large doses may cause epigastric discomfort, nausea, abdominal distention, and poor appetite per CloudTCM.",
+        "Use cautiously in children, lactation, and weak patients per CloudTCM.",
+        "Rhinoceros horn is prohibited/endangered; Shui Niu Jiao is the substitute and should not be confused with or replaced by Xi Jiao."
+      ],
+      "safety_flags": [
+        "pregnancy_caution",
+        "allergy_contraindicated",
+        "deficiency_cold_caution",
+        "predecoction_required",
+        "endangered_species_substitute"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.qing_ying_tang",
+        "formula.xi_jiao_di_huang_tang",
+        "formula.an_gong_niu_huang_wan"
+      ],
+      "key_pairs": [],
+      "classical_text_zh": "水牛角清營涼血、解毒定驚，今作犀角替代；因力較弱，用量需大。",
+      "classical_text_en": "Shui Niu Jiao clears Ying-level Heat, cools Blood, resolves toxicity, and calms convulsions; it now substitutes for Xi Jiao and requires larger dosing because it is weaker.",
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 官方中藥；清營涼血、犀角替代考點。重點：高熱神昏、發斑發疹、血熱妄行出血、驚風抽搐；先煎、大劑量。",
+      "exam_pearl": "💡 Board pearl: Shui Niu Jiao is the legal Xi Jiao substitute. Think Ying/Xue Heat + high fever + bleeding/rash/convulsions. Dose is large and requires long pre-decoction.",
+      "clinical_use_note": "水牛角的核心是「熱入營血」：高熱、神昏、斑疹、吐衄、驚厥。和生地黃比，水牛角更偏清熱解毒、定驚；和犀角比，是現代替代品、力弱量大。用量與先煎是考點：常規 15–30g，重症可 60–120g，先煎 3 小時以上。",
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L413",
+          "curriculum/herbs/pinyin_latin_herb_list.md#L351",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L413",
+          "curriculum/herbs/pinyin_latin_herb_list.md#L351",
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "indications_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "dosage": [
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531"
+        ],
+        "dosage_g": [
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1184",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://cloudtcm.com/herb/1184",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L413",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531"
+        ],
+        "exam_pearl": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L413",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        ]
+      },
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A — Shui Niu Jiao",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L413",
+          "scope": "Board-outline presence and exam scope."
+        },
+        {
+          "name": "Chenoweth Materia Medica Abbreviated — Shui Niu Jiao",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531",
+          "scope": "Course position as Xi Jiao substitute and dose relationship."
+        },
+        {
+          "name": "雲端中醫 CloudTCM — 水牛角",
+          "url": "https://cloudtcm.com/herb/1184",
+          "scope": "Chinese properties, indications, dosage, processing, cautions and modern pharmacology."
+        },
+        {
+          "name": "American Dragon — Shui Niu Jiao",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html",
+          "scope": "Actions, indications, cautions, dosage, major combinations and comparison notes."
+        }
+      ],
+      "source_urls": [
+        "https://cloudtcm.com/herb/1184",
+        "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+      ],
+      "exact_source_url": "https://cloudtcm.com/herb/1184",
+      "safety_source_url": "https://cloudtcm.com/herb/1184",
+      "visual_links": [
+        {
+          "label_zh": "雲端中醫 CloudTCM 水牛角",
+          "label_en": "CloudTCM Shui Niu Jiao",
+          "url": "https://cloudtcm.com/herb/1184"
+        },
+        {
+          "label_zh": "American Dragon Shui Niu Jiao",
+          "label_en": "American Dragon Shui Niu Jiao",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html"
+        }
+      ],
+      "last_reviewed": "2026-07-28",
+      "cloudtcm_url": "https://cloudtcm.com/herb/1184",
+      "cloudtcm_link_status": "verified_exact",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html",
+      "american_dragon_link_status": "verified_exact"
+    },
+    {
+      "id": "herb.wu_gong",
+      "name_zh": "蜈蚣",
+      "name_en": "Centipede",
+      "pinyin": "Wú Gōng",
+      "pinyin_toned": "Wú Gōng",
+      "aliases_zh": [
+        "百足蟲",
+        "天龍"
+      ],
+      "aliases_en": [
+        "Scolopendra",
+        "Centipede"
+      ],
+      "category": "平肝息風藥 / Extinguish Wind",
+      "category_zh": "平肝息風藥",
+      "category_en": "Extinguish Wind and Stop Tremors",
+      "review_status": "draft",
+      "public_safe": false,
+      "source_type": "full_card_verified_multi_source",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "pharmaceutical_latin": "Scolopendra",
+      "part_used_zh": "全蟲",
+      "part_used_en": "Whole animal",
+      "properties_taste_temp": "辛，溫，有毒",
+      "taste_temperature_zh": "辛，溫，有毒",
+      "channels_zh": [
+        "肝經"
+      ],
+      "channels_en": [
+        "LV Liver"
+      ],
+      "channels_entered": [
+        "肝經"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "辛"
+        ],
+        "five_flavors_en": [
+          "Acrid"
+        ],
+        "four_natures_zh": "溫，有毒",
+        "four_natures_en": "Warm, toxic",
+        "meridian_tropism_zh": [
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "LV Liver"
+        ],
+        "part_used_zh": "全蟲",
+        "part_used_en": "Whole animal",
+        "source_note_zh": "課件/AD 均列辛、溫、有毒、入肝。CloudTCM 精準單味頁本次未找到，搜尋結果多為蜈蚣草/水蜈蚣等不同藥。"
+      },
+      "property_channel_source_note_zh": "蜈蚣為有毒動物藥，資料以 Chenoweth 課件與 American Dragon 為主；CloudTCM 未精準命中單味蜈蚣頁。",
+      "functions_zh": [
+        "息風止痙",
+        "通絡止痛",
+        "攻毒散結",
+        "解毒消腫、外用蛇蟲咬傷"
+      ],
+      "actions_en": [
+        "Extinguishes Wind and stops spasms and convulsions",
+        "Unblocks the collaterals and stops pain",
+        "Attacks toxins and dissipates nodules",
+        "Resolves toxicity and reduces swelling, including topical snake/insect-bite use"
+      ],
+      "indications_zh": [
+        "急慢驚風、抽搐、痙攣、角弓反張、牙關緊閉、癲癇；課件強調 severe spasms。",
+        "口眼喎斜、面癱或風中經絡；AD 列 facial paralysis due to Wind。",
+        "頑固頭痛、偏頭痛、久痛入絡；課件與 AD 皆列 stubborn headaches/migraines。",
+        "風濕痹痛、頑固疼痛、筋脈拘急；通絡止痛方向。",
+        "瘰癧、痰核、毒結、頸部腫塊、癰疽瘡毒；內服或外用需慎。",
+        "毒蛇咬傷、皮膚毒腫之外用；AD 列 snake bites/topical plaster。",
+        "癌症/腫塊作來源記載：AD 列 cancer/tumors，僅作學習索引，不作療效宣稱。"
+      ],
+      "indications_en": [
+        "Acute or chronic childhood convulsions, spasms, opisthotonos, lockjaw, seizures, or epilepsy; course notes emphasize severe spasms.",
+        "Facial paralysis or channel-level Wind presentations; AD lists facial paralysis due to Wind.",
+        "Stubborn headaches, migraines, or chronic pain entering the collaterals; both course and AD list stubborn headaches/migraines.",
+        "Wind-Damp Bi pain, stubborn pain, and sinew/channel contracture; the emphasis is unblocking collaterals and stopping pain.",
+        "Scrofula, Phlegm nodules, toxic nodules, neck lumps, carbuncles, and sores; internal or topical use requires caution.",
+        "Snake bites or toxic skin swellings in topical contexts; AD lists snake bites and topical plaster use.",
+        "Cancer/tumor contexts are source-listed by AD as a study index only, not an efficacy claim."
+      ],
+      "condition_tags_zh": [
+        "急慢驚風",
+        "抽搐",
+        "痙攣",
+        "角弓反張",
+        "牙關緊閉",
+        "癲癇",
+        "面癱",
+        "偏頭痛",
+        "風濕痹痛",
+        "瘰癧",
+        "癰疽瘡毒",
+        "毒蛇咬傷"
+      ],
+      "condition_tags_en": [
+        "Acute and chronic convulsions",
+        "Convulsions",
+        "Spasms",
+        "Opisthotonos",
+        "Lockjaw",
+        "Epilepsy",
+        "Facial paralysis",
+        "Migraine",
+        "Wind-Damp Bi pain",
+        "Scrofula",
+        "Carbuncles and toxic sores",
+        "Snake bite"
+      ],
+      "modern_functions_zh": [
+        "抗驚厥/抗癲癇方向",
+        "鎮痛方向",
+        "抗腫瘤/抗肉瘤訊號",
+        "皮膚科外用方向",
+        "長期使用可能損害肝功能"
+      ],
+      "modern_functions_en": [
+        "Anticonvulsant / antiepileptic direction",
+        "Analgesic direction",
+        "Antitumor / antisarcoma signal",
+        "Dermatologic topical-use direction",
+        "Long-term use may impair Liver function"
+      ],
+      "modern_pharmacology": [
+        "Anticonvulsant signal",
+        "Analgesic signal",
+        "Antineoplastic signal",
+        "Topical dermatologic use",
+        "Liver-function risk"
+      ],
+      "modern_pharmacology_zh": "課件 abbreviated notes 列 antiepileptic、cardiovascular、antineoplastic(sarcoma)、dermatological topical、submandibular lymphadenitis、bone tuberculosis 等學習標籤；AD safety 明列長期使用可能損害肝功能。本卡只保留來源明確且 board 有用的摘要。",
+      "modern_pharmacology_en": "Chenoweth abbreviated notes list antiepileptic, cardiovascular, antineoplastic (sarcoma), dermatologic topical, submandibular lymphadenitis, and bone-tuberculosis study tags; AD safety notes that long-term use may impair Liver function. The card retains concise source-backed, board-relevant items.",
+      "dosage": {
+        "standard_daily_g": "課件 1–3g 煎服；AD decoction 1–4g。",
+        "powder": "課件/AD powder 0.6–1g；AD 尾部 0.6–1g；tincture 0.5–1ml。",
+        "source_note_zh": "主顯示採課件 1–3g；AD 較寬 1–4g 作來源差異。"
+      },
+      "dosage_g": {
+        "standard_daily_g": "1–3g（課件）；AD 1–4g",
+        "granule_dose_g": "粉末 0.6–1g；高毒動物藥須專業處方"
+      },
+      "pao_zhi_notes_zh": "可煎服或研末；課件與 AD 均列粉末 0.6–1g。因有毒，粉末小劑量更需嚴格控量。",
+      "contraindications_zh": [
+        "孕婦禁用：課件/AD 均明列。",
+        "血虛者禁用或避免：Chenoweth abbreviated notes 明列 blood deficiency contraindication。",
+        "慢驚風屬虛證者禁用：Chenoweth abbreviated notes 明列 chronic childhood convulsions contraindication。",
+        "過量禁用：AD 明列 toxic，never overdose。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy: listed by course and AD.",
+        "Contraindicated or avoid in Blood deficiency per Chenoweth abbreviated notes.",
+        "Contraindicated in deficiency-type chronic childhood convulsions per Chenoweth abbreviated notes.",
+        "Overdose is contraindicated; AD states it is toxic and should never be overdosed."
+      ],
+      "cautions_zh": [
+        "有毒，須極慎用，嚴格控制劑量。",
+        "長期使用可能損害肝功能（AD）。",
+        "兒童驚風需分實熱/痰熱/肝風與虛風；慢驚虛證不可套用。",
+        "外用於瘡毒、蛇咬或瘰癧時仍需避免黏膜/眼部與過敏反應。"
+      ],
+      "cautions_en": [
+        "Toxic; use extreme caution and strict dose control.",
+        "Long-term use may impair Liver function per AD.",
+        "Childhood convulsions require differentiation of Excess Heat/Phlegm-Heat/Liver Wind versus deficiency Wind; do not apply to deficiency chronic convulsions.",
+        "Topical use for sores, snakebite, or scrofula still requires avoidance of mucosa/eyes and monitoring for allergy."
+      ],
+      "safety_flags": [
+        "toxic",
+        "pregnancy_contraindicated",
+        "liver_function_risk",
+        "max_dose_review",
+        "pediatric_caution",
+        "topical_caution"
+      ],
+      "safety_review_pending": true,
+      "related_formulas": [
+        "formula.da_ding_feng_zhu"
+      ],
+      "key_pairs": [],
+      "classical_text_zh": "蜈蚣走竄通絡、息風止痙、攻毒散結，力猛有毒，專治頑固重證。",
+      "classical_text_en": "Wu Gong powerfully penetrates the channels, extinguishes Wind, stops spasms, attacks toxin, and dissipates nodules; it is forceful and toxic, reserved for stubborn severe presentations.",
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 官方中藥；高毒息風止痙考點。重點：蜈蚣 = severe spasms、lockjaw、頑固偏頭痛、毒結瘡腫；比全蠍更強，孕禁。",
+      "exam_pearl": "💡 Board pearl: Wu Gong is stronger than Quan Xie for severe spasms. If the clue says toxic nodules + stubborn migraine + severe convulsions/lockjaw, think Wu Gong—but remember toxic, pregnancy contraindicated, no overdose.",
+      "clinical_use_note": "蜈蚣的定位是「重、頑、毒、痛」：重度痙攣、牙關緊閉、頑固偏頭痛、久痹疼痛、毒結瘡腫。和全蠍比，蜈蚣更猛、更偏攻毒散結與通絡止痛；但毒性也更需要控制。看到孕婦、血虛、慢驚虛證或長期使用風險要立刻標紅。",
+      "field_sources": {
+        "name_en": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L437",
+          "curriculum/herbs/pinyin_latin_herb_list.md#L80",
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "pharmaceutical_latin": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L437",
+          "curriculum/herbs/pinyin_latin_herb_list.md#L80",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "actions_en": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "indications_en": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "dosage": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "dosage_g": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "contraindications_zh": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "cautions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L437",
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7"
+        ],
+        "exam_pearl": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L437",
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        ]
+      },
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A — Wu Gong",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L437",
+          "scope": "Board-outline presence and exam scope."
+        },
+        {
+          "name": "Chenoweth Wind-Extinguishing Herbs — Wu Gong",
+          "url": "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+          "scope": "Course actions, key indications, dose, cautions and exam pearl."
+        },
+        {
+          "name": "Chenoweth Materia Medica Abbreviated — Wu Gong",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+          "scope": "Expanded course indications, dose and contraindications."
+        },
+        {
+          "name": "American Dragon — Wu Gong",
+          "url": "https://www.americandragon.com/Individualherbsupdate/WuGong.html",
+          "scope": "Actions, dosage, contraindications, major combinations and notes."
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/WuGong.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/WuGong.html",
+      "cloudtcm_link_status": "exact single-herb CloudTCM page not found in this pass; search results were different herbs such as Wu Gong Cao / Shui Wu Gong",
+      "visual_links": [
+        {
+          "label_zh": "American Dragon Wu Gong",
+          "label_en": "American Dragon Wu Gong",
+          "url": "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+        }
+      ],
+      "last_reviewed": "2026-07-28",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/WuGong.html",
+      "american_dragon_link_status": "verified_exact"
     }
   ],
   "batch_summary": {

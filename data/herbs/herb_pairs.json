@@ -1691,8 +1691,127 @@
         "https://www.americandragon.com/Individualherbsupdate/ZhiChuanWu.html",
         "curriculum/herbs/Materia Medica III-Extra Herbs.md#p7-p8"
       ]
+    },
+    {
+      "id": "pair.niu_huang__shui_niu_jiao",
+      "herbs": [
+        "herb.niu_huang",
+        "herb.shui_niu_jiao"
+      ],
+      "name_zh": "牛黃配水牛角",
+      "name_en": "Niu Huang with Shui Niu Jiao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "牛黃清心開竅、化痰息風；水牛角清營涼血、解毒定驚。AD 將二者列於熱入心包/營血分之神昏譫語、煩躁、抽搐。",
+      "pair_meaning_en": "Niu Huang clears the Heart, opens the orifices, transforms Phlegm, and extinguishes Wind; Shui Niu Jiao clears Ying-level Heat, cools Blood, resolves toxicity, and calms convulsions. AD pairs them for Heat attacking the Pericardium/Ying-Xue levels with delirium, irritability, and convulsions.",
+      "indication_zh": "溫病熱入心包或營血分：高熱、神昏譫語、煩躁、抽搐。",
+      "indication_en": "Warm disease Heat entering the Pericardium or Ying-Xue levels: high fever, delirium, irritability, and convulsions.",
+      "caution_zh": "兩者皆偏寒涼清熱，非實熱閉證或中焦虛寒者不宜；牛黃孕禁/鎮靜交互作用，水牛角孕期慎用。",
+      "caution_en": "Both are cold Heat-clearing substances and are inappropriate without Excess Heat closure or in Middle-Jiao deficiency-cold. Niu Huang is contraindicated in pregnancy and has sedative interactions; Shui Niu Jiao requires pregnancy caution.",
+      "found_in_formulas": [
+        "formula.an_gong_niu_huang_wan"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html",
+        "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html",
+        "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130"
+      ]
+    },
+    {
+      "id": "pair.niu_huang__she_xiang__bing_pian",
+      "herbs": [
+        "herb.niu_huang",
+        "herb.she_xiang",
+        "herb.bing_pian"
+      ],
+      "name_zh": "牛黃配麝香、冰片",
+      "name_en": "Niu Huang with She Xiang and Bing Pian",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "牛黃清熱化痰開竅，麝香芳香走竄醒神，冰片開竅清熱止痛。課件以安宮牛黃丸記熱閉神昏；AD 亦列 severe Heat and blocked orifices。",
+      "pair_meaning_en": "Niu Huang clears Heat, transforms Phlegm, and opens orifices; She Xiang powerfully aromatically opens and awakens; Bing Pian opens orifices and clears Heat/pain. Course notes use An Gong Niu Huang Wan for Heat-closure coma, and AD lists severe Heat with blocked orifices.",
+      "indication_zh": "熱閉神昏、熱病譫語、高熱抽搐、痰熱閉竅。",
+      "indication_en": "Heat-closure impaired consciousness, febrile delirium, high-fever convulsions, and Phlegm-Heat blocking the orifices.",
+      "caution_zh": "麝香孕禁且芳香走竄；牛黃孕禁/慎孕與鎮靜交互作用；冰片芳香藥不宜久煎。寒閉不用此方向。",
+      "caution_en": "She Xiang is contraindicated in pregnancy and strongly penetrating; Niu Huang carries pregnancy and sedative-interaction concerns; Bing Pian is aromatic and should not be long-decocted. Do not use this Heat-opening direction for Cold closure.",
+      "found_in_formulas": [
+        "formula.an_gong_niu_huang_wan"
+      ],
+      "sources": [
+        "curriculum/herbs/Herbs_that_Open_the_Orifice.md#L75-L130",
+        "https://www.americandragon.com/Individualherbsupdate/NiuHuang.html"
+      ]
+    },
+    {
+      "id": "pair.shui_niu_jiao__sheng_di_huang",
+      "herbs": [
+        "herb.shui_niu_jiao",
+        "herb.sheng_di_huang"
+      ],
+      "name_zh": "水牛角配生地黃",
+      "name_en": "Shui Niu Jiao with Sheng Di Huang",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "水牛角清營涼血解毒，生地黃清熱涼血並養陰生津。AD 將此組列於血熱吐衄、紫斑與神昏。",
+      "pair_meaning_en": "Shui Niu Jiao clears Ying-level Heat, cools Blood, and resolves toxicity; Sheng Di Huang cools Blood while nourishing Yin and generating fluids. AD uses this direction for Blood-Heat bleeding, purpura, and delirium.",
+      "indication_zh": "熱入營血、吐血衄血、紫斑、斑疹、神昏譫語。",
+      "indication_en": "Heat entering Ying/Blood with hematemesis, epistaxis, purpura, rashes, delirium, or impaired consciousness.",
+      "caution_zh": "兩藥寒涼，脾胃虛寒、食少便溏者慎用；水牛角需先煎或用濃縮粉。",
+      "caution_en": "Both are cold; use cautiously in Spleen/Stomach deficiency-cold with poor appetite or loose stool. Shui Niu Jiao requires pre-decoction or concentrated powder.",
+      "found_in_formulas": [
+        "formula.xi_jiao_di_huang_tang",
+        "formula.qing_ying_tang"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html",
+        "https://cloudtcm.com/herb/1184",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L523-L531"
+      ]
+    },
+    {
+      "id": "pair.shui_niu_jiao__mu_dan_pi__chi_shao",
+      "herbs": [
+        "herb.shui_niu_jiao",
+        "herb.mu_dan_pi",
+        "herb.chi_shao"
+      ],
+      "name_zh": "水牛角配牡丹皮、赤芍",
+      "name_en": "Shui Niu Jiao with Mu Dan Pi and Chi Shao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "水牛角清血分熱毒，牡丹皮清熱涼血兼活血散瘀，赤芍清熱涼血、散瘀止痛。AD 列此組可加強涼血作用。",
+      "pair_meaning_en": "Shui Niu Jiao clears Blood-level Heat toxin; Mu Dan Pi cools Blood and moves Blood stasis; Chi Shao cools Blood, dispels stasis, and relieves pain. AD notes this combination strengthens Blood-cooling action.",
+      "indication_zh": "血熱發斑、紫斑、吐衄、熱毒入血兼瘀者。",
+      "indication_en": "Blood-Heat rashes, purpura, hematemesis/epistaxis, and Heat toxin entering the Blood with stasis.",
+      "caution_zh": "寒涼且兼活血，虛寒、孕期、出血非血熱者需慎辨。",
+      "caution_en": "Cold and partly Blood-moving; differentiate carefully in deficiency-cold, pregnancy, or bleeding not due to Blood Heat.",
+      "found_in_formulas": [
+        "formula.xi_jiao_di_huang_tang"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/ShuiNiuJiao.html",
+        "https://cloudtcm.com/herb/1184"
+      ]
+    },
+    {
+      "id": "pair.wu_gong__quan_xie",
+      "herbs": [
+        "herb.wu_gong",
+        "herb.quan_xie"
+      ],
+      "name_zh": "蜈蚣配全蠍",
+      "name_en": "Wu Gong with Quan Xie",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "蜈蚣與全蠍皆息風止痙、通絡止痛；蜈蚣力更猛、攻毒散結較強。AD 與課件均列常配，用於嚴重抽搐、痙攣、頑固偏頭痛與風濕痹痛。",
+      "pair_meaning_en": "Wu Gong and Quan Xie both extinguish Wind, stop spasms, unblock collaterals, and relieve pain; Wu Gong is stronger and more forceful at attacking toxins and nodules. AD and course materials list the pair for severe convulsions, spasms, stubborn migraine, and Bi pain.",
+      "indication_zh": "急慢驚風、抽搐痙攣、角弓反張、牙關緊閉、頑固偏頭痛、風濕痹痛。",
+      "indication_en": "Acute/chronic convulsions, spasms, opisthotonos, lockjaw, stubborn migraine, and Wind-Damp Bi pain.",
+      "caution_zh": "兩者皆有毒；孕婦禁用，血虛或慢驚虛證禁用/慎用，不得超量或久用。",
+      "caution_en": "Both are toxic; contraindicated in pregnancy, avoid or use cautiously in Blood deficiency or deficiency-type chronic convulsions, and do not overdose or use long-term.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p6-p7",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
+        "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
+      ]
     }
   ],
   "updated_at": "2026-07-28",
-  "total_pairs": 73
+  "total_pairs": 78
 }

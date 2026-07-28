@@ -53,12 +53,12 @@ the id into `data/acupoints/point_id_manifest.json`.
 
 Status: OPEN. Source of truth for the live Quality page is `data/audits/missing_report.json.herb_outline_coverage`.
 
-Finding: NCBAHM 2026 CH Appendix A lists 304 herbs. Current local herb cards include 264 records after adding Ba Dou, Chuan Wu, and Cao Wu; normalized pinyin / alias matching found 239 Appendix A herbs represented locally and 65 card candidates still missing. This is a board-outline coverage gap, not the older 202 CloudTCM seed-count metric.
+Finding: NCBAHM 2026 CH Appendix A lists 304 herbs. Current local herb cards include 267 records after adding Ba Dou, Chuan Wu, Cao Wu, Niu Huang, Shui Niu Jiao, and Wu Gong; normalized pinyin / alias matching found 242 Appendix A herbs represented locally and 62 card candidates still missing. This is a board-outline coverage gap, not the older 202 CloudTCM seed-count metric.
 
 Missing card candidates:
-Bai Guo; Bai Hua She; Bai Hua She She Cao; Bai Qian; Bai Xian Pi; Ban Zhi Lian; Bi Ba; Bi Xie; Chen Xiang; Chi Xiao Dou; Chuan Mu Tong; Chun Pi; Ci Wu Jia; Di Fu Zi; Dong Chong Xia Cao; Dong Gua Zi; Dong Kui Zi; Feng Mi; Fu Pen Zi; Ge Jie; Gou Ji; Gu Sui Bu; Gu Ya; Gua Lou Pi; Gua Lou Ren; Hai Piao Xiao; Hai Tong Pi; Hai Zao; Han Fang Ji; He Tao Ren; Hu Jiao; Huai Mi; Jin Ying Zi; Jing Mi; Jue Ming Zi; Kun Bu; Lian Xu; Lian Zi Xin; Ling Zhi; Liu Huang; Lu Dou; Lu Lu Tong; Ma Huang Gen; Mu Zei; Niu Huang; Ou Jie; Qin Pi; Qing Dai; Sang Zhi; Sha Yuan Ji Li; She Chuang Zi; Shi Wei; Shui Niu Jiao; Si Gua Luo; Suo Yang; Tan Xiang; Tu Bie Chong; Tu Fu Ling; Wu Gong; Xi Xian Cao; Xian Mao; Ye Ju Hua; Yin Chen; Zao Jiao Ci; Zhen Zhu.
+Bai Guo; Bai Hua She; Bai Hua She She Cao; Bai Qian; Bai Xian Pi; Ban Zhi Lian; Bi Ba; Bi Xie; Chen Xiang; Chi Xiao Dou; Chuan Mu Tong; Chun Pi; Ci Wu Jia; Di Fu Zi; Dong Chong Xia Cao; Dong Gua Zi; Dong Kui Zi; Feng Mi; Fu Pen Zi; Ge Jie; Gou Ji; Gu Sui Bu; Gu Ya; Gua Lou Pi; Gua Lou Ren; Hai Piao Xiao; Hai Tong Pi; Hai Zao; Han Fang Ji; He Tao Ren; Hu Jiao; Huai Mi; Jin Ying Zi; Jing Mi; Jue Ming Zi; Kun Bu; Lian Xu; Lian Zi Xin; Ling Zhi; Liu Huang; Lu Dou; Lu Lu Tong; Ma Huang Gen; Mu Zei; Ou Jie; Qin Pi; Qing Dai; Sang Zhi; Sha Yuan Ji Li; She Chuang Zi; Shi Wei; Si Gua Luo; Suo Yang; Tan Xiang; Tu Bie Chong; Tu Fu Ling; Xi Xian Cao; Xian Mao; Ye Ju Hua; Yin Chen; Zao Jiao Ci; Zhen Zhu.
 
-Recommended next pass: Niu Huang, Shui Niu Jiao, Wu Gong, Han Fang Ji, Ma Huang Gen, Jue Ming Zi, Mu Zei because toxicity / safety / board risk is highest.
+Recommended next pass: Han Fang Ji, Ma Huang Gen, Jue Ming Zi, Mu Zei, Bai Hua She, Liu Huang, Xian Mao because toxicity / safety / board risk is highest.
 
 Done when: each new herb card is created from the current herb template, source-layered against NCBAHM 2026 CH + Chenoweth course + CloudTCM + American Dragon when available, and the missing count is recomputed in `data/audits/missing_report.json`.
 
