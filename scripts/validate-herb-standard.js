@@ -32,11 +32,25 @@ const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 
-// Template grade = the curation pass wrote actions_en's provenance. A record can
-// carry field_sources for a dozen imported fields and still never have been
-// curated; judging it by the template's content rules would be judging work
-// nobody claimed to have done.
-const isTemplateGrade = (r) => !!(r.field_sources && r.field_sources.actions_en);
+/* Template grade is an EXPLICIT claim: card_grade === "template".
+ *
+ * It used to be inferred from `field_sources.actions_en` — "you recorded where
+ * the English came from, so the card must be finished". That conflates two
+ * different things, and it has now misfired three times: the acupoint
+ * validator's `exam_star` (236 errors), this file's `actions_en` (755 errors),
+ * and again when 溫裡藥 7 味 recorded honest provenance for the 功效 layer and
+ * were immediately charged with missing English for 現代藥理 — English that no
+ * available source supplies.
+ *
+ * The effect was perverse: recording a source made a record fail, so the way to
+ * stay green was to cite nothing. A card is built in layers (功效 → 主治 →
+ * 禁忌 → 現代藥理); provenance accrues per layer, completeness is a claim about
+ * the whole card. Keeping them separate lets a batch cite its work honestly and
+ * still say "this card is not finished yet".
+ *
+ * Set card_grade: "template" only when every bilingual pair is actually there.
+ */
+const isTemplateGrade = (r) => r.card_grade === "template";
 
 const canon = JSON.parse(fs.readFileSync(path.join(ROOT, "data/config/herb_category_canon.json"), "utf8"));
 const CANON = new Set(canon.categories);
