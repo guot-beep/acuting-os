@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 9
+
+- Added full formal herb cards for 覆盆子、蛤蚧、狗脊、骨碎補、谷芽 from NCBAHM 2026 CH + Chenoweth course notes, with CloudTCM/American Dragon used only where exact pages were actually reviewed.
+- Added eleven sourced herb-pair records for Fu Pen Zi urinary/vision leakage pairs, Ge Jie Lung-Kidney grasping-Qi pairs, Gou Ji Liver-Kidney/Wind-Damp pairs, Gu Sui Bu fracture/Blood-stasis pairs, and Gu Ya food-stagnation pairs.
+- Updated Quality herb-outline audit from 266/304 matched and 38 missing to 271/304 matched and 33 missing; local herb cards are now 296.
+- Source honesty notes: Ge Jie AD direct page was blocked this pass and not listed as a formal source; Gu Ya CloudTCM exact page was not found and not listed; Gu Sui Bu uses course + CloudTCM without AD.
+- Validation: build-data PASS after one transient Windows generated-file lock retry; herb-standard PASS; content-junk PASS; batch9 targeted bilingual/source/pair/mojibake QA PASS. Full validate-data/encoding still fail on known pre-existing acupoint/import issues outside this herb batch.
+
 ## 2026-07-29 Codex — make exterior-pattern chips conservative
 
 - Fixed a false-positive exterior-pattern chip issue: 麻黃 could be incorrectly labeled 表虛 because the UI scanned clinical-note contrast text such as “表虛有汗更偏桂枝” as if it were Ma Huang’s indication.

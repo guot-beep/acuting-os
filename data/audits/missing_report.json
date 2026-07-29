@@ -12,23 +12,24 @@
     "pathology_conditions_matched": "89/150",
     "ncbahm_2026_ch_herb_cards": "266/304 matched; 38 missing"
   },
-  "next_recommended_batch": "Quality finding 2026-07-29: NCBAHM 2026 CH Appendix A has 304 herbs; 266 matched local herb cards; 38 cards missing after adding Di Fu Zi, Dong Chong Xia Cao, Dong Gua Zi, Dong Kui Zi, and Feng Mi. Next priority: Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, Gu Ya.",
-  "next_recommendation": "361 layer complete and 100% synchronized with CloudTCM. All primary fields, pairings, tags, needling, moxa, and modern research are live.",
+  "next_recommended_batch": [
+    "Gua Lou Pi",
+    "Gua Lou Ren",
+    "Hai Piao Xiao",
+    "Hai Tong Pi",
+    "Hai Zao"
+  ],
+  "next_recommendation": "Quality finding 2026-07-29: NCBAHM 2026 CH Appendix A has 304 herbs; 271 matched local herb cards; 33 cards missing after adding Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, and Gu Ya. Next priority: Gua Lou Pi, Gua Lou Ren, Hai Piao Xiao, Hai Tong Pi, Hai Zao.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",
     "scope_note": "Board-outline herb coverage audit; separate from the older 202 CloudTCM herb seed count.",
     "matching_method": "Normalized Appendix A pinyin and checked against local herb records plus known aliases; Bai Ji Li / Ci Ji Li counted as present after herb.bai_ji_li creation.",
     "appendix_a_total": 304,
-    "local_herb_cards": 291,
-    "matched_to_local_cards": 266,
-    "missing_card_count": 38,
+    "local_herb_cards": 296,
+    "matched_to_local_cards": 271,
+    "missing_card_count": 33,
     "missing_cards": [
-      "Fu Pen Zi",
-      "Ge Jie",
-      "Gou Ji",
-      "Gu Sui Bu",
-      "Gu Ya",
       "Gua Lou Pi",
       "Gua Lou Ren",
       "Hai Piao Xiao",
@@ -84,18 +85,18 @@
     ],
     "last_updated": "2026-07-29",
     "last_completed_cards": [
-      "Di Fu Zi",
-      "Dong Chong Xia Cao",
-      "Dong Gua Zi",
-      "Dong Kui Zi",
-      "Feng Mi"
-    ],
-    "next_recommended_batch": [
       "Fu Pen Zi",
       "Ge Jie",
       "Gou Ji",
       "Gu Sui Bu",
       "Gu Ya"
+    ],
+    "next_recommended_batch": [
+      "Gua Lou Pi",
+      "Gua Lou Ren",
+      "Hai Piao Xiao",
+      "Hai Tong Pi",
+      "Hai Zao"
     ]
   },
   "channels": {

@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 9: Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, Gu Ya
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Created five NCBAHM 2026 CH Appendix A missing herb cards: `herb.fu_pen_zi`, `herb.ge_jie`, `herb.gou_ji`, `herb.gu_sui_bu`, and `herb.gu_ya`, following Ting's strict rule to treat new cards as full source-layered records rather than trusting old/skeleton content.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `docs/CODEX_TASK_QUEUE.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **Sources used**: NCBAHM 2026 CH Appendix A; Chenoweth course files for Astringent Herbs, Yang Tonics, Food Stagnation Herbs, abbreviated materia medica, and Pinyin/Latin list; CloudTCM exact pages Fu Pen Zi `/herb/1034`, Ge Jie `/herb/1044`, Gou Ji `/herb/1046`, and Gu Sui Bu `/herb/1050`; American Dragon exact pages Fu Pen Zi, Gou Ji, and Su Ya/Gu Ya. Ge Jie AD direct page was blocked this pass, so it is not shown as a formal source on `herb.ge_jie`.
+- **Pair records added**: `pair.fu_pen_zi__sang_piao_xiao__yi_zhi_ren`, `pair.fu_pen_zi__tu_si_zi__gou_qi_zi__wu_wei_zi`, `pair.ge_jie__ren_shen`, `pair.ge_jie__ren_shen__xing_ren__chuan_bei_mu`, `pair.gou_ji__du_zhong__niu_xi`, `pair.gou_ji__gui_zhi__qin_jiao__mu_gua__wu_jia_pi`, `pair.gou_ji__du_zhong__xu_duan`, `pair.gu_sui_bu__xu_duan`, `pair.gu_sui_bu__ru_xiang__mo_yao`, `pair.gu_ya__mai_ya`, and `pair.gu_ya__shan_zha__shen_qu`.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved from 266/304 matched and 38 missing to 271/304 matched and 33 missing. Local herb-card count is now 296. Next recommended batch: Gua Lou Pi, Gua Lou Ren, Hai Piao Xiao, Hai Tong Pi, Hai Zao.
+- **Validation**: `build-data.js` PASS after one transient Windows file-lock retry; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; targeted batch9 QA PASS for bilingual alignment, contraindications/cautions English, source citations, no new mojibake, and all 11 pair records present. Full `validate-data.js` still FAILS on pre-existing acupoint/defaultPoints issues; full `validate-encoding.js` still FAILS on pre-existing acupoint/import/formula mojibake and URL-in-*_zh checks, not introduced by this batch.
+- **Protected areas**: no app shell, JS, CSS, scripts, source curriculum, schema, or formula records touched. Generated files were refreshed only via `scripts/build-data.js`.
+- **Known risks / manual checks**: Ge Jie CloudTCM safety wording includes a source discrepancy around “陽虛火旺”; card flags it for manual review. Gu Ya CloudTCM exact page was not found, so CloudTCM is intentionally not listed for Gu Ya. Gu Sui Bu AD direct page was not used in this pass; review if a usable AD page becomes available.
+
 ## [2026-07-29] Codex Handoff - Make exterior-pattern chips conservative
 
 - **Branch**: `codex/herbs-missing-cards-batch9`

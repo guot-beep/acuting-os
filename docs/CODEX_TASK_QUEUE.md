@@ -53,16 +53,18 @@ the id into `data/acupoints/point_id_manifest.json`.
 
 Status: OPEN. Source of truth for the live Quality page is `data/audits/missing_report.json.herb_outline_coverage`.
 
+Update 2026-07-29 batch9: local herb cards are now 296 after adding Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, and Gu Ya. Normalized Appendix A matching is now 271/304 with 33 card candidates still missing. Next recommended batch: Gua Lou Pi; Gua Lou Ren; Hai Piao Xiao; Hai Tong Pi; Hai Zao.
+
 Finding: NCBAHM 2026 CH Appendix A lists 304 herbs. Current local herb cards include 291 records after adding Ba Dou, Chuan Wu, Cao Wu, Niu Huang, Shui Niu Jiao, Wu Gong, Han Fang Ji, Ma Huang Gen, Jue Ming Zi, Mu Zei, Bai Hua She, Liu Huang, Xian Mao, Bai Hua She She Cao, Bai Xian Pi, Bai Guo, Bai Qian, Ban Zhi Lian, Bi Ba, Bi Xie, Chen Xiang, Chi Xiao Dou, Chuan Mu Tong, Chun Pi, Ci Wu Jia, Di Fu Zi, Dong Chong Xia Cao, Dong Gua Zi, Dong Kui Zi, and Feng Mi; normalized pinyin / alias matching found 266 Appendix A herbs represented locally and 38 card candidates still missing. This is a board-outline coverage gap, not the older 202 CloudTCM seed-count metric.
 
 Missing card candidates:
-Fu Pen Zi; Ge Jie; Gou Ji; Gu Sui Bu; Gu Ya; Gua Lou Pi; Gua Lou Ren; Hai Piao Xiao; Hai Tong Pi; Hai Zao; He Tao Ren; Hu Jiao; Huai Mi; Jin Ying Zi; Jing Mi; Kun Bu; Lian Xu; Lian Zi Xin; Ling Zhi; Lu Dou; Lu Lu Tong; Ou Jie; Qin Pi; Qing Dai; Sang Zhi; Sha Yuan Ji Li; She Chuang Zi; Shi Wei; Si Gua Luo; Suo Yang; Tan Xiang; Tu Bie Chong; Tu Fu Ling; Xi Xian Cao; Ye Ju Hua; Yin Chen; Zao Jiao Ci; Zhen Zhu.
+Gua Lou Pi; Gua Lou Ren; Hai Piao Xiao; Hai Tong Pi; Hai Zao; He Tao Ren; Hu Jiao; Huai Mi; Jin Ying Zi; Jing Mi; Kun Bu; Lian Xu; Lian Zi Xin; Ling Zhi; Lu Dou; Lu Lu Tong; Ou Jie; Qin Pi; Qing Dai; Sang Zhi; Sha Yuan Ji Li; She Chuang Zi; Shi Wei; Si Gua Luo; Suo Yang; Tan Xiang; Tu Bie Chong; Tu Fu Ling; Xi Xian Cao; Ye Ju Hua; Yin Chen; Zao Jiao Ci; Zhen Zhu.
 
-Recommended next pass: Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, Gu Ya unless Ting reprioritizes high-risk herbs such as She Chuang Zi or Qing Dai.
+Recommended next pass: Gua Lou Pi, Gua Lou Ren, Hai Piao Xiao, Hai Tong Pi, Hai Zao unless Ting reprioritizes high-risk herbs such as She Chuang Zi or Qing Dai.
 
 Backlog rule from Ting 2026-07-28: if herb or formula work discovers a missing herb ID that is not on this current 38-card list, append it to the missing-card backlog and build it later. Do not ignore missing referenced herbs just because they were absent from the original NCBAHM-gap list. Current discovered extra backlog item from pair scan: Ju He / `herb.ju_he` for pre-existing `pair.ju_he__chuan_lian_zi`.
 
-Pending pair-linked herb IDs from batch8: `herb.she_chuang_zi`, `herb.qing_xiang_zi`, `herb.gu_jing_cao`, `herb.ge_jie`, `herb.nan_sha_shen`. These are allowed in `herb_pairs.json` before their local cards exist; front-end links remain plain/pending until cards are built.
+Pending pair-linked herb IDs from batch8/9: `herb.she_chuang_zi`, `herb.qing_xiang_zi`, `herb.gu_jing_cao`, `herb.nan_sha_shen`. `herb.ge_jie` was created in batch9, so the existing Dong Chong Xia Cao/Ge Jie pair should now link normally. These pending IDs are allowed in `herb_pairs.json` before their local cards exist; front-end links remain plain/pending until cards are built.
 
 Done when: each new herb card is created from the current herb template, source-layered against NCBAHM 2026 CH + Chenoweth course + CloudTCM + American Dragon when available, and the missing count is recomputed in `data/audits/missing_report.json`.
 
