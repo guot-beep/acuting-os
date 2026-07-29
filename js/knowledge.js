@@ -954,6 +954,18 @@
      English subcategories (herb 解表藥 Warm vs Cool Acrid stay separate).
      Chips drive the existing hidden <select>; merged chips filter via a
      "||"-joined value that the grid updaters split. */
+  function categoryModeLabel(raw) {
+    const text = String(raw || "").trim();
+    const zh = text.split("/")[0].trim();
+    const en = text.split("/").slice(1).join("/").trim();
+    return displayLabel(zh, en, text);
+  }
+
+  function categorySummaryLabel(value, emptyLabel = modeText("全部 All", "All")) {
+    if (!value) return emptyLabel;
+    return String(value).split("||").map(categoryModeLabel).join(" / ");
+  }
+
   function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn, descMap) {
     const container = el(containerId);
     const select = el(selectId);
@@ -996,12 +1008,15 @@
       }
     });
 
-    const chipHtml = (value, zh, en, n, active) =>
-      `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(value)}">
+    const chipHtml = (value, zh, en, n, active) => {
+      const main = isEnglishMode() ? (en || zh) : zh;
+      const sub = isEnglishMode() ? (zh && en ? zh : "") : en;
+      return `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(value)}">
         <span class="cat-chip__ico" aria-hidden="true">${esc(zh.charAt(0))}</span>
-        <span class="cat-chip__t">${esc(zh)}${en ? `<small>${esc(en)}</small>` : ""}</span>
+        <span class="cat-chip__t">${esc(main)}${sub ? `<small>${esc(sub)}</small>` : ""}</span>
         <span class="cat-chip__n">${n}</span>
       </button>`;
+    };
     const render = () => {
       const cur = select.value;
       const active = chips.find((c) => c.value === cur);
@@ -1009,9 +1024,10 @@
       container.innerHTML =
         chipHtml("", "全部", "All", records.length, !cur)
         + chips.map((c) => chipHtml(c.value, c.zh, c.en, c.count, cur === c.value)).join("")
-        + (desc ? `<p class="cat-desc">${esc(active.zh)}${active.en ? ` · ${esc(active.en)}` : ""} — ${esc(desc)}</p>` : "");
+        + (desc ? `<p class="cat-desc">${esc(displayLabel(active.zh, active.en, active.zh))} — ${esc(desc)}</p>` : "");
     };
     render();
+    document.addEventListener("acuting:content-mode", render);
     container.addEventListener("click", (event) => {
       const b = event.target.closest(".cat-chip");
       if (!b) return;
@@ -1145,11 +1161,12 @@
         });
         const bar = activeConceptBar();
         const summary = el("formulaCategorySummary");
-        if (summary) summary.textContent = `${category ? category.replace(/\|\|/g, " / ") : modeText("全部 All", "All")} · ${hit.length}`;
+        if (summary) summary.textContent = `${categorySummaryLabel(category)} · ${hit.length}`;
         el("formulaGrid").innerHTML = bar + (renderEnhanced(hit) || '<p class="k-missing">沒有符合的方劑 / No matching formulas.</p>');
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
+      document.addEventListener("acuting:content-mode", updateFormulaGrid);
       buildCategoryChips("formulaCatChips", "formulaCategoryFilter", records, categoryLabel, updateFormulaGrid, FORMULA_CATEGORY_DESC);
 
       /* Make the 方劑分類 cards bidirectional (Ting: 這邊的按鈕都不是雙向的).
@@ -1286,12 +1303,13 @@
         return categoryHit && (!q || text.includes(q));
       });
       const summary = el("herbCategorySummary");
-      if (summary) summary.textContent = `${category ? category.replace(/\|\|/g, " / ") : modeText("全部 All", "All")} · ${hit.length}`;
+      if (summary) summary.textContent = `${categorySummaryLabel(category)} · ${hit.length}`;
       el("herbGrid").innerHTML = activeConceptBar() + (renderHerbs(hit) || '<p class="k-missing">沒有符合的中藥 / No matching herbs.</p>');
     };
     conceptListeners.add(updateHerbGrid);
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
+    document.addEventListener("acuting:content-mode", updateHerbGrid);
     buildCategoryChips("herbCatChips", "herbCategoryFilter", herbs, herbCategory, updateHerbGrid);
     herbHost.addEventListener("click", (event) => {
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');

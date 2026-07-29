@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Fix Public EN toggle on herb/formula pages
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Ting found that `Public EN` / `中英版` worked from the homepage but did not switch herb/formula workspace card labels in place.
+- **Files changed**: `js/knowledge.js`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: herb and formula grids now listen to `acuting:content-mode` and redraw current search/filter results immediately; category chips also re-render on mode change and swap label priority by mode.
+- **Implementation note**: this preserves current search text/category filter/active modern tag filter and only refreshes display labels. No data IDs or records changed.
+- **Validation**: bundled Node `--check js/knowledge.js` PASS; `scripts/validate-interactions.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no herb/formula content records, generated data, scripts, schema, source curriculum, or clinical cases touched.
+- **Manual check**: on `#ws/herb` and `#ws/formula`, switch between `Public EN` and `中英版` without returning home; card chips, related formula labels, review labels, category chips, and result summaries should update in place.
+
 ## [2026-07-29] Codex Handoff - Herb/formula lookup label resolver
 
 - **Branch**: `codex/herbs-missing-cards-batch9`

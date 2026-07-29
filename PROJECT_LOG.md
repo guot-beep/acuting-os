@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — fix Public EN toggle on herb/formula pages
+
+- Fixed a mode-sync bug where clicking `Public EN` / `中英版` while already on the herb or formula workspace changed global UI state but did not re-render the lookup grids.
+- Herb and formula grids now listen to `acuting:content-mode` and redraw their cards, summaries, and human-readable tag/formula/safety labels immediately.
+- Category filter chips now also switch display order by mode: 中英版 keeps Chinese first with English sublabel; Public EN shows English first with Chinese sublabel.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: open `#ws/herb` or `#ws/formula`, search/filter something, then click `Public EN` and `中英版` without returning home; labels should switch in-place.
+
 ## 2026-07-29 Codex — herb/formula lookup label resolver
 
 - Fixed herb/formula lookup cards so internal IDs no longer render as user-facing labels: modern tags, safety review flags, and related formula IDs now pass through bilingual/English display resolvers.
