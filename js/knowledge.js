@@ -8,8 +8,34 @@
  */
 (function () {
   const K = globalThis.ACUTING_KNOWLEDGE;
+  const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 
   function el(id) { return document.getElementById(id); }
+  function isEnglishMode() {
+    return document.body.dataset.contentMode === "english" || localStorage.getItem(CONTENT_MODE_KEY) === "english";
+  }
+  function modeText(bilingual, english) {
+    return isEnglishMode() ? english : bilingual;
+  }
+  function displayLabel(zh, en, fallback = "") {
+    const cleanZh = String(zh || "").trim();
+    const cleanEn = String(en || "").trim();
+    if (isEnglishMode()) return cleanEn || cleanZh || fallback;
+    return cleanZh && cleanEn ? `${cleanZh} \u00B7 ${cleanEn}` : (cleanZh || cleanEn || fallback);
+  }
+  function applyKnowledgeModeText() {
+    const formulaFilter = el("formulaFilter");
+    if (formulaFilter) formulaFilter.placeholder = modeText("搜尋方劑、拼音、分類、證型、現代標籤… Search formula, pinyin, category, pattern...", "Search formulas, pinyin, category, patterns, modern tags...");
+    const herbFilter = el("herbFilter");
+    if (herbFilter) herbFilter.placeholder = modeText("搜尋中藥、拼音、功效、主治、方劑… Search herb, pinyin, action, indication...", "Search herbs, pinyin, actions, indications, formulas...");
+    const comparisonFilter = el("comparisonFilter");
+    if (comparisonFilter) comparisonFilter.placeholder = modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes...");
+    const conditionFilter = el("conditionFilter");
+    if (conditionFilter) conditionFilter.placeholder = modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD...");
+    const cloudtcmDiseaseFilter = el("cloudtcmDiseaseFilter");
+    if (cloudtcmDiseaseFilter) cloudtcmDiseaseFilter.placeholder = modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID...");
+  }
+  document.addEventListener("acuting:content-mode", applyKnowledgeModeText);
   function esc(v) {
     return String(v == null ? "" : v)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -52,12 +78,12 @@
   function conceptLabel(id) {
     const c = MODERN_VOCAB.get(id);
     if (!c) return id;
-    return c.name_zh && c.name_en ? `${c.name_zh} · ${c.name_en}` : (c.name_zh || c.name_en);
+    return displayLabel(c.name_zh, c.name_en, id);
   }
   function activeConceptBar() {
     if (!activeConcept) return "";
-    return `<div class="k-active-filter">篩選中 <strong>${esc(conceptLabel(activeConcept))}</strong>
-      <button type="button" data-concept-clear>清除 Clear</button></div>`;
+    return `<div class="k-active-filter">${esc(modeText("篩選中", "Filtering"))} <strong>${esc(conceptLabel(activeConcept))}</strong>
+      <button type="button" data-concept-clear>${esc(modeText("清除 Clear", "Clear"))}</button></div>`;
   }
   document.addEventListener("click", (e) => {
     const chip = e.target.closest("[data-concept-id]");
@@ -85,9 +111,7 @@
     });
     const dedupe = (arr) => [...new Map(arr.map((c) => [c.id, c])).values()];
     const chip = (c, cls) => {
-      const zh = c.name_zh || "";
-      const en = c.name_en || "";
-      const text = zh && en ? `${zh} · ${en}` : (zh || en || c.id);
+      const text = displayLabel(c.name_zh, c.name_en, c.id);
       const on = activeConcept === c.id ? " is-active" : "";
       return `<button type="button" class="k-modern-chip ${cls}${on}" data-concept-id="${esc(c.id)}"
         title="顯示所有含此項目的方劑與中藥">${esc(text)}</button>`;
@@ -103,6 +127,96 @@
       block("其他", "Other", groups.unmapped, "is-unmapped")
     ].join("");
     return out || '<p class="k-detail-empty">—</p>';
+  }
+
+  function modernInlineChips(values, limit = 6) {
+    const seen = new Set();
+    const chips = [];
+    (values || []).forEach((raw) => {
+      const c = resolveModernTag(raw);
+      if (c.type === "internal" || seen.has(c.id) || chips.length >= limit) return;
+      seen.add(c.id);
+      const on = activeConcept === c.id ? " is-active" : "";
+      chips.push(`<button type="button" class="k-modern-chip is-inline ${c.type ? `is-${esc(c.type)}` : ""}${on}" data-concept-id="${esc(c.id)}">${esc(displayLabel(c.name_zh, c.name_en, c.id))}</button>`);
+    });
+    return chips.join("");
+  }
+
+  const EXTERIOR_CONTEXTS = [
+    {
+      id: "wind_cold",
+      zh: "風寒感冒",
+      en: "Wind-Cold cold",
+      cls: "is-wind-cold",
+      terms: ["風寒", "外感風寒", "寒邪襲表", "寒邪束表", "wind-cold", "wind cold"]
+    },
+    {
+      id: "wind_heat",
+      zh: "風熱感冒",
+      en: "Wind-Heat cold",
+      cls: "is-wind-heat",
+      terms: ["風熱", "外感風熱", "溫病初起", "溫熱初起", "wind-heat", "wind heat"]
+    },
+    {
+      id: "summerheat_damp",
+      zh: "暑濕感冒",
+      en: "Summerheat-Damp cold",
+      cls: "is-summerheat-damp",
+      terms: ["暑濕", "暑邪", "夏月", "陰暑", "summerheat", "summer heat"]
+    },
+    {
+      id: "exterior_deficiency",
+      zh: "表虛感冒",
+      en: "Exterior-deficiency",
+      cls: "is-exterior-deficiency",
+      terms: ["表虛", "營衛不和", "exterior deficiency", "ying-wei"]
+    },
+    {
+      id: "exterior_excess",
+      zh: "表實感冒",
+      en: "Exterior-excess",
+      cls: "is-exterior-excess",
+      terms: ["表實", "風寒表實", "exterior excess", "excess exterior"]
+    },
+    {
+      id: "wind_cold_lung",
+      zh: "風寒束肺",
+      en: "Wind-Cold constraining Lung",
+      cls: "is-wind-cold-lung",
+      terms: ["風寒束肺", "外寒內飲", "寒飲", "咳吐清稀", "wind-cold cough", "cold-phlegm", "exterior cold with internal", "internal thin fluids"]
+    }
+  ];
+
+  function recordTextForContext(record) {
+    const fields = [
+      record.category,
+      record.category_zh,
+      record.category_en,
+      ...(record.condition_tags_zh || []),
+      ...(record.condition_tags_en || []),
+      ...(record.indications_zh || []),
+      ...(record.indications_en || []),
+      ...(record.pattern_focus_zh || []),
+      ...(record.pattern_focus_en || []),
+      ...(record.pattern_indications_zh || []),
+      ...(record.pattern_indications_en || []),
+      ...(record.syndromes_zh || []),
+      ...(record.syndromes_en || [])
+    ];
+    return fields.filter(Boolean).join(" ").toLowerCase();
+  }
+
+  function exteriorContextChips(record) {
+    const modern = [
+      ...(record.modern_use_tags || []),
+      ...(record.modern_clinical_use_tags || [])
+    ].map((raw) => resolveModernTag(raw).id);
+    const text = recordTextForContext(record);
+    const hasColdSearchTag = modern.includes("common_cold") || /感冒|common cold|外感|表證|解表|release exterior/.test(text);
+    if (!hasColdSearchTag) return "";
+    const matched = EXTERIOR_CONTEXTS.filter((ctx) => ctx.terms.some((term) => text.includes(term.toLowerCase())));
+    if (!matched.length) return `<span class="k-pattern-chip is-unspecified">${esc(modeText("感冒類：待辨風寒/風熱", "Cold/URI: pattern unspecified"))}</span>`;
+    return matched.map((ctx) => `<span class="k-pattern-chip ${esc(ctx.cls)}">${esc(displayLabel(ctx.zh, ctx.en, ctx.id))}</span>`).join("");
   }
   /* 相關病名與證型 was printing raw ids (pattern.spleen_qi_deficiency). The
      registries already carry bilingual names — the pattern library has 脾氣虛 /
@@ -127,7 +241,7 @@
     if (r) {
       const zh = r.name_zh || "";
       const en = r.name_en || "";
-      return zh && en ? `${zh} · ${en}` : (zh || en || id);
+      return displayLabel(zh, en, id);
     }
     // Unknown id: humanise rather than expose the key.
     return String(id).replace(/^[a-z_]+\./, "").replace(/_/g, " ")
@@ -159,7 +273,7 @@
   function comparisonGroupLabel(id) {
     if (!id) return "";
     const g = COMPARE_VOCAB.get(String(id).trim());
-    return g ? `${g.name_zh} · ${g.name_en}` : String(id).replace(/_/g, " ");
+    return g ? displayLabel(g.name_zh, g.name_en, id) : String(id).replace(/_/g, " ");
   }
 
   const SAFETY_VOCAB = new Map(
@@ -167,7 +281,7 @@
   );
   function safetyFlagLabel(flag) {
     const f = SAFETY_VOCAB.get(String(flag).trim());
-    return f ? `${f.name_zh} · ${f.name_en}` : String(flag).replace(/_/g, " ");
+    return f ? displayLabel(f.name_zh, f.name_en, flag) : String(flag).replace(/_/g, " ");
   }
   function safetyList(flags) {
     return (flags || []).map(safetyFlagLabel);
@@ -308,7 +422,14 @@
 
   function formulaLabel(id) {
     const record = formulaById.get(id);
-    return record ? `${record.name_zh || record.pinyin} · ${record.pinyin || record.name_en}` : id;
+    if (record) return displayLabel(record.name_zh, record.pinyin || record.name_en, id);
+    return String(id || "").replace(/^formula\./, "").replace(/_/g, " ").replace(/^\w/, (m) => m.toUpperCase());
+  }
+
+  function formulaChips(ids) {
+    return (ids || []).filter(Boolean)
+      .map((id) => `<span class="k-link-chip">${esc(formulaLabel(id))}</span>`)
+      .join(" ");
   }
 
   function sourceLinks(record) {
@@ -1094,6 +1215,18 @@
      English subcategories (herb 解表藥 Warm vs Cool Acrid stay separate).
      Chips drive the existing hidden <select>; merged chips filter via a
      "||"-joined value that the grid updaters split. */
+  function categoryModeLabel(raw) {
+    const text = String(raw || "").trim();
+    const zh = text.split("/")[0].trim();
+    const en = text.split("/").slice(1).join("/").trim();
+    return displayLabel(zh, en, text);
+  }
+
+  function categorySummaryLabel(value, emptyLabel = modeText("全部 All", "All")) {
+    if (!value) return emptyLabel;
+    return String(value).split("||").map(categoryModeLabel).join(" / ");
+  }
+
   function buildCategoryChips(containerId, selectId, records, categoryFn, updateFn, descMap) {
     const container = el(containerId);
     const select = el(selectId);
@@ -1136,12 +1269,15 @@
       }
     });
 
-    const chipHtml = (value, zh, en, n, active) =>
-      `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(value)}">
+    const chipHtml = (value, zh, en, n, active) => {
+      const main = isEnglishMode() ? (en || zh) : zh;
+      const sub = isEnglishMode() ? (zh && en ? zh : "") : en;
+      return `<button type="button" class="cat-chip${active ? " active" : ""}" data-cat="${esc(value)}">
         <span class="cat-chip__ico" aria-hidden="true">${esc(zh.charAt(0))}</span>
-        <span class="cat-chip__t">${esc(zh)}${en ? `<small>${esc(en)}</small>` : ""}</span>
+        <span class="cat-chip__t">${esc(main)}${sub ? `<small>${esc(sub)}</small>` : ""}</span>
         <span class="cat-chip__n">${n}</span>
       </button>`;
+    };
     const render = () => {
       const cur = select.value;
       const active = chips.find((c) => c.value === cur);
@@ -1149,9 +1285,10 @@
       container.innerHTML =
         chipHtml("", "全部", "All", records.length, !cur)
         + chips.map((c) => chipHtml(c.value, c.zh, c.en, c.count, cur === c.value)).join("")
-        + (desc ? `<p class="cat-desc">${esc(active.zh)}${active.en ? ` · ${esc(active.en)}` : ""} — ${esc(desc)}</p>` : "");
+        + (desc ? `<p class="cat-desc">${esc(displayLabel(active.zh, active.en, active.zh))} — ${esc(desc)}</p>` : "");
     };
     render();
+    document.addEventListener("acuting:content-mode", render);
     container.addEventListener("click", (event) => {
       const b = event.target.closest(".cat-chip");
       if (!b) return;
@@ -1216,6 +1353,7 @@
           f.nccaom_high_yield ? "NCCAOM high-yield" : ""
         ].filter(Boolean).join(" · ");
         const searchTags = (f.modern_clinical_use_tags || []).slice(0, 5);
+        const exteriorChips = exteriorContextChips(f);
         if (!contentReady) {
           return `
             <article class="k-row k-formula-skeleton" data-record-id="${esc(f.id)}">
@@ -1226,8 +1364,8 @@
               </div>
               <div class="k-row-side">
                 ${statusPill(f.review_status)}
-                <p class="k-tags">${searchTags.map(tag).join("")}</p>
-                <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">查看方劑卡</button>
+                <p class="k-tags">${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
+                <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
               </div>
             </article>`;
         }
@@ -1239,26 +1377,28 @@
             </header>
             <p class="k-en">${esc(f.name_en)}</p>
             <p class="k-meta">${esc(meta)}</p>
-            <p class="k-tags">${[...(f.pattern_focus_en || []), ...searchTags].slice(0, 8).map(tag).join("")}</p>
-            ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(esc).join(" · ")}</p>` : ""}
-            <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">查看方劑卡</button>
+            <p class="k-tags">${(f.pattern_focus_en || []).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
+            ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+            <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
           </article>`;
       }).join("");
 
       const box = document.createElement("div");
       box.innerHTML = `
-        <div class="mini-heading">
-          <strong>Formula Records (${records.length})</strong>
-          <span>Source: data/herbs/formulas.json · draft/source-review pending · study reference only.</span>
+        <div class="k-toolbar k-toolbar--single">
+          <input type="search" id="formulaFilter" placeholder="${esc(modeText("搜尋方劑、拼音、分類、證型、現代標籤… Search formula, pinyin, category, pattern...", "Search formulas, pinyin, category, patterns, modern tags..."))}" class="k-filter" />
         </div>
-        <div class="k-toolbar">
-          <input type="search" id="formulaFilter" placeholder="Search formula, pinyin, category, modern tag..." class="k-filter" />
+        <details class="k-category-drawer">
+          <summary>
+            <span><span class="i18n-zh">分類篩選 </span><span class="i18n-en">Category filters</span></span>
+            <small id="formulaCategorySummary">${esc(modeText("全部 All", "All"))} · ${records.length}</small>
+          </summary>
           <select id="formulaCategoryFilter" class="k-filter">
             <option value="">All categories</option>
             ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
           </select>
-        </div>
-        <div class="cat-chips" id="formulaCatChips" aria-label="方劑分類篩選"></div>
+          <div class="cat-chips" id="formulaCatChips" aria-label="方劑分類篩選"></div>
+        </details>
         <div class="k-grid" id="formulaGrid">${renderEnhanced(records)}</div>`;
       formulaHost.appendChild(box);
 
@@ -1282,10 +1422,13 @@
           return categoryHit && (!q || text.includes(q));
         });
         const bar = activeConceptBar();
+        const summary = el("formulaCategorySummary");
+        if (summary) summary.textContent = `${categorySummaryLabel(category)} · ${hit.length}`;
         el("formulaGrid").innerHTML = bar + (renderEnhanced(hit) || '<p class="k-missing">沒有符合的方劑 / No matching formulas.</p>');
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
+      document.addEventListener("acuting:content-mode", updateFormulaGrid);
       buildCategoryChips("formulaCatChips", "formulaCategoryFilter", records, categoryLabel, updateFormulaGrid, FORMULA_CATEGORY_DESC);
 
       /* Make the 方劑分類 cards bidirectional (Ting: 這邊的按鈕都不是雙向的).
@@ -1332,7 +1475,7 @@
         <p class="k-en">${esc(f.name_en)}</p>
         <p class="k-meta">${esc(f.category_en)}${f.nccaom_high_yield ? " · NCCAOM high-yield" : ""}</p>
         <p class="k-tags">${(f.pattern_focus_en || []).map(tag).join("")}</p>
-        ${(f.safety_flags || []).length ? `<p class="k-flags">⚠ ${(f.safety_flags || []).map(esc).join(" · ")}</p>` : ""}
+        ${(f.safety_flags || []).length ? `<p class="k-flags">⚠ ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
       </article>`).join("");
 
     const box = document.createElement("div");
@@ -1367,6 +1510,7 @@
       const formulaLinks = (h.related_formulas || []).slice(0, 5);
       const modernTags = (h.modern_use_tags || []).slice(0, 5);
       const safetyFlags = (h.safety_flags || []).slice(0, 4);
+      const exteriorChips = exteriorContextChips(h);
       return `
         <article class="k-card k-herb-card" data-record-id="${esc(h.id)}">
           <header>
@@ -1376,27 +1520,29 @@
           <p class="k-en">${esc(h.name_en)}</p>
           <p class="k-meta">${esc(herbCategory(h))}</p>
           <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
-          <p class="k-tags">${modernTags.map(tag).join("")}</p>
-          ${formulaLinks.length ? `<p class="k-meta">Related formulas: ${formulaLinks.map((id) => `<span class="k-link-chip">${esc(id)}</span>`).join(" ")}</p>` : ""}
-          ${safetyFlags.length ? `<p class="k-flags">Review: ${safetyFlags.map(esc).join(" Â· ")}</p>` : ""}
-          <p class="k-meta">draft - source review pending - study reference only</p>
-          <button type="button" class="k-open-detail" data-detail-kind="herb" data-detail-id="${esc(h.id)}">查看中藥卡</button>
+          <p class="k-tags">${modernInlineChips(modernTags, 5)}${exteriorChips}</p>
+          ${formulaLinks.length ? `<p class="k-meta">${esc(modeText("相關方劑：", "Related formulas:"))} ${formulaChips(formulaLinks)}</p>` : ""}
+          ${safetyFlags.length ? `<p class="k-flags">${esc(modeText("審核：", "Review:"))} ${safetyFlags.map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+          <p class="k-meta">${esc(modeText("草稿 · 來源待審 · 學習參考", "draft · source review pending · study reference only"))}</p>
+          <button type="button" class="k-open-detail" data-detail-kind="herb" data-detail-id="${esc(h.id)}">${esc(modeText("查看中藥卡", "Open herb card"))}</button>
         </article>`;
     }).join("");
 
     herbHost.innerHTML = `
-      <div class="mini-heading">
-        <strong>Herb Records (${herbs.length})</strong>
-        <span>Source: data/herbs/herb_canon_shortlist.json Â· draft/source-review pending Â· study reference only.</span>
+      <div class="k-toolbar k-toolbar--single">
+        <input type="search" id="herbFilter" placeholder="${esc(modeText("搜尋中藥、拼音、功效、主治、方劑… Search herb, pinyin, action, indication...", "Search herbs, pinyin, actions, indications, formulas..."))}" class="k-filter" />
       </div>
-      <div class="k-toolbar">
-        <input type="search" id="herbFilter" placeholder="Search herb, pinyin, category, tag, related formula..." class="k-filter" />
+      <details class="k-category-drawer">
+        <summary>
+          <span><span class="i18n-zh">分類篩選 </span><span class="i18n-en">Category filters</span></span>
+          <small id="herbCategorySummary">${esc(modeText("全部 All", "All"))} · ${herbs.length}</small>
+        </summary>
         <select id="herbCategoryFilter" class="k-filter">
           <option value="">All categories</option>
           ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
         </select>
-      </div>
-      <div class="cat-chips" id="herbCatChips" aria-label="中藥分類篩選"></div>
+        <div class="cat-chips" id="herbCatChips" aria-label="中藥分類篩選"></div>
+      </details>
       <div class="k-grid" id="herbGrid">${renderHerbs(herbs)}</div>`;
 
     const updateHerbGrid = () => {
@@ -1419,11 +1565,14 @@
         ].join(" ").toLowerCase();
         return categoryHit && (!q || text.includes(q));
       });
+      const summary = el("herbCategorySummary");
+      if (summary) summary.textContent = `${categorySummaryLabel(category)} · ${hit.length}`;
       el("herbGrid").innerHTML = activeConceptBar() + (renderHerbs(hit) || '<p class="k-missing">沒有符合的中藥 / No matching herbs.</p>');
     };
     conceptListeners.add(updateHerbGrid);
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
+    document.addEventListener("acuting:content-mode", updateHerbGrid);
     buildCategoryChips("herbCatChips", "herbCategoryFilter", herbs, herbCategory, updateHerbGrid);
     herbHost.addEventListener("click", (event) => {
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
@@ -1518,7 +1667,7 @@
     if (cmpTablesEl) cmpTablesEl.textContent = `${comparisonTotals.completeTables} 完成 · ${comparisonTotals.partialTables} 部分 · ${comparisonTotals.emptyTables} 空`;
 
     comparisonHost.innerHTML = `
-      <input type="search" id="comparisonFilter" placeholder="搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis" class="k-filter" />
+      <input type="search" id="comparisonFilter" placeholder="${esc(modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes..."))}" class="k-filter" />
       <div class="k-grid k-grid-wide" id="comparisonGrid">${renderComparisons(comparisons) || '<p class="k-missing">No comparison records yet.</p>'}</div>`;
 
     el("comparisonFilter").addEventListener("input", (event) => {
@@ -1625,26 +1774,26 @@
     };
     condHost.innerHTML = `
       <div class="mini-heading">
-        <strong>Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）</strong>
-        <span>來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。</span>
+        <strong>${esc(modeText(`Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）`, `Western Conditions (${conds.length} safety-filled · ${allConds.length} canon)`))}</strong>
+        <span>${esc(modeText("來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。", "Source: condition_canon_shortlist.json · biomedical and TCM names are related mappings, not one-to-one translations."))}</span>
       </div>
-      <input type="search" id="conditionFilter" placeholder="搜尋中英文病名、別名、ICD..." class="k-filter" />
+      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD..."))}" class="k-filter" />
       <div class="k-grid k-grid-wide" id="conditionGrid">${renderConditions(conds)}</div>
       <section class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
         <div class="mini-heading">
-          <strong id="cloudtcmDiseaseHeading">雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})</strong>
-          <span>205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。</span>
+          <strong id="cloudtcmDiseaseHeading">${esc(modeText(`雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})`, `CloudTCM Disease & Symptom Index (${cloudDiseaseEntries.length})`))}</strong>
+          <span>${esc(modeText(`205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。`, `205 source cards are consolidated into ${cloudDiseaseEntries.length} stable page IDs; English labels are curated drafts.`))}</span>
         </div>
         <div id="cloudtcmDiseaseCategoryBar" class="k-cloud-disease-categories" aria-label="症狀疾病分類">
           <button type="button" class="is-active" data-cloud-disease-category="">全部 · All</button>
           ${cloudDiseaseCategories.map((category) => `<button type="button" data-cloud-disease-category="${esc(category.id)}">${esc(category.name_zh)} · ${esc(category.name_en)}</button>`).join("")}
         </div>
-        <input type="search" id="cloudtcmDiseaseFilter" placeholder="搜尋中文、English 或來源 ID..." class="k-filter" />
+        <input type="search" id="cloudtcmDiseaseFilter" placeholder="${esc(modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID..."))}" class="k-filter" />
         <div class="k-cloud-disease-toolbar">
           <span id="cloudtcmDiseasePageStatus"></span>
           <div>
-            <button type="button" id="cloudtcmDiseasePrev" aria-label="上一頁">上一頁</button>
-            <button type="button" id="cloudtcmDiseaseNext" aria-label="下一頁">下一頁</button>
+            <button type="button" id="cloudtcmDiseasePrev" aria-label="${esc(modeText("上一頁", "Previous page"))}">${esc(modeText("上一頁", "Previous"))}</button>
+            <button type="button" id="cloudtcmDiseaseNext" aria-label="${esc(modeText("下一頁", "Next page"))}">${esc(modeText("下一頁", "Next"))}</button>
           </div>
         </div>
         <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
@@ -1688,8 +1837,8 @@
     const sources = K.sources.sources || [];
     srcHost.innerHTML = `
       <div class="mini-heading">
-        <strong>Source Registry / 來源登記（${sources.length}）</strong>
-        <span>來源：data/sources/source_registry.json · authority 5 = 最高權威。</span>
+        <strong>${esc(modeText(`Source Registry / 來源登記（${sources.length}）`, `Source Registry (${sources.length})`))}</strong>
+        <span>${esc(modeText("來源：data/sources/source_registry.json · authority 5 = 最高權威。", "Source: data/sources/source_registry.json · authority 5 = highest authority."))}</span>
       </div>
       <div class="k-grid k-grid-wide">
         ${sources.map((s) => {

@@ -1,6 +1,154 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — homepage video asset
+
+- Replaced the static homepage illustration render with Ting's `curriculum/Home/Home.mp4` video while keeping `assets/home-acuting-watercolor.png` as the poster fallback.
+- Added `.home-art__video` styling so the video keeps the same rounded, softly shadowed homepage visual treatment as the prior image.
+- Kept the video as a local repo asset under `curriculum/Home/` per Ting's placement; no data records, generated files, or TCM content changed.
+- Validation: `validate-interactions.js` PASS using bundled Node; `git diff --check` PASS.
+
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 11
+
+- Added full formal herb cards for 核桃仁、胡椒、槐米、金櫻子、粳米 from NCBAHM 2026 CH Appendix A + Chenoweth course notes, with CloudTCM/American Dragon used only where exact usable pages or explicitly labeled contextual support were actually reviewed.
+- Added ten sourced herb-pair records, including NCBAHM 2026 CH Appendix B `地榆 + 槐米`, plus AD/course-supported pairs for 核桃仁、胡椒、金櫻子、粳米.
+- Updated Quality herb-outline audit from 276/304 matched and 28 missing to 281/304 matched and 23 missing; local herb cards are now 306.
+- Source honesty notes: 核桃仁 CloudTCM exact page was not found, so only 野核桃仁 is cited as contextual/variant support; 粳米 exact CloudTCM page was not found, so CloudTCM is only contextual via 粳米泔/formula use. 粳米 is placed under 補虛藥 / Tonify Qi because the current canon has no food-grain category, with note that it is mainly a food-medicinal Stomach-protecting assistant.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch11 targeted bilingual/source/pair/property-contamination QA PASS. Full validate-data/encoding still fail on known pre-existing acupoint/defaultPoints/import encoding issues outside this herb batch.
+
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 10
+
+- Added full formal herb cards for 栝樓皮、栝樓仁、海螵蛸、海桐皮、海藻 from NCBAHM 2026 CH Appendix A + Chenoweth course notes, with CloudTCM/American Dragon used only where exact usable pages or explicitly scoped source support were actually reviewed.
+- Added ten sourced herb-pair records for 栝樓皮 chest-Bi/phlegm-heat pairings, 栝樓仁 dry cough/constipation pairings, 海螵蛸 astringent/safety-conflict pairings, 海桐皮 wind-damp pairings, and 海藻/昆布 soft-hardness pairing.
+- Updated Quality herb-outline audit from 271/304 matched and 33 missing to 276/304 matched and 28 missing; local herb cards are now 301.
+- Source honesty notes: Gua Lou Ren American Dragon direct page was not used; Hai Zao uses course + CloudTCM + incompatibility course, with AD not listed as a formal source because the direct page was not usable in this pass. Hai Piao Xiao/Bai Ji pair is marked as source-conflict review because AD/CloudTCM also list incompatibility warnings.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch10 targeted bilingual/source/pair/mojibake QA PASS. Full validate-data/encoding still fail on known pre-existing acupoint/defaultPoints/import encoding issues outside this herb batch.
+
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 9
+
+- Added full formal herb cards for 覆盆子、蛤蚧、狗脊、骨碎補、谷芽 from NCBAHM 2026 CH + Chenoweth course notes, with CloudTCM/American Dragon used only where exact pages were actually reviewed.
+- Added eleven sourced herb-pair records for Fu Pen Zi urinary/vision leakage pairs, Ge Jie Lung-Kidney grasping-Qi pairs, Gou Ji Liver-Kidney/Wind-Damp pairs, Gu Sui Bu fracture/Blood-stasis pairs, and Gu Ya food-stagnation pairs.
+- Updated Quality herb-outline audit from 266/304 matched and 38 missing to 271/304 matched and 33 missing; local herb cards are now 296.
+- Source honesty notes: Ge Jie AD direct page was blocked this pass and not listed as a formal source; Gu Ya CloudTCM exact page was not found and not listed; Gu Sui Bu uses course + CloudTCM without AD.
+- Validation: build-data PASS after one transient Windows generated-file lock retry; herb-standard PASS; content-junk PASS; batch9 targeted bilingual/source/pair/mojibake QA PASS. Full validate-data/encoding still fail on known pre-existing acupoint/import issues outside this herb batch.
+
+## 2026-07-29 Codex — make exterior-pattern chips conservative
+
+- Fixed a false-positive exterior-pattern chip issue: 麻黃 could be incorrectly labeled 表虛 because the UI scanned clinical-note contrast text such as “表虛有汗更偏桂枝” as if it were Ma Huang’s indication.
+- Exterior-pattern chips now derive only from positive category/tag/indication/pattern fields, not clinical notes, summaries, exam pearls, actions, or functions where negation and comparison language are common.
+- Removed overly broad symptom-only triggers such as 自汗, 口渴, 無汗, and 脈浮緊 from chip inference; pattern labels now require explicit pattern wording or board-style English terms.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: 麻黃 should no longer show 表虛; 桂枝 may show 表虛 only when its positive source fields state 營衛不和/表虛.
+
+## 2026-07-29 Codex — soften exterior-pattern chip colors
+
+- Softened the new exterior-pattern chips so 風寒/風熱/暑濕/表虛/表實 remain distinguishable without visually overpowering herb/formula cards.
+- Reduced pattern-chip font size/weight and replaced saturated blue/red/purple colors with muted parchment-compatible tones.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: search 麻黃, 桂枝, 葛根; confirm pattern chips feel like gentle hints rather than warning labels.
+- No data/content records changed.
+
+## 2026-07-29 Codex — distinguish TCM cold patterns in lookup chips
+
+- Added a front-end TCM exterior-pattern hint layer for herb/formula lookup cards so biomedical `感冒 / Common cold` tags do not flatten board-relevant distinctions.
+- Cards now derive colored context chips from existing fields such as category, condition tags, indications, actions, syndromes, and pattern indications: 風寒感冒, 風熱感冒, 暑濕感冒, 表虛感冒, 表實感冒, and 風寒束肺.
+- If a card is broadly tagged as cold/URI/exterior but no specific pattern is detectable, it shows `感冒類：待辨風寒/風熱` instead of pretending the pattern is known.
+- This is display-only and preserves all immutable IDs and source data; detailed data cleanup still belongs to the herb-card verification batches.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+
+## 2026-07-29 Codex — fix Public EN toggle on herb/formula pages
+
+- Fixed a mode-sync bug where clicking `Public EN` / `中英版` while already on the herb or formula workspace changed global UI state but did not re-render the lookup grids.
+- Herb and formula grids now listen to `acuting:content-mode` and redraw their cards, summaries, and human-readable tag/formula/safety labels immediately.
+- Category filter chips now also switch display order by mode: 中英版 keeps Chinese first with English sublabel; Public EN shows English first with Chinese sublabel.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: open `#ws/herb` or `#ws/formula`, search/filter something, then click `Public EN` and `中英版` without returning home; labels should switch in-place.
+
+## 2026-07-29 Codex — herb/formula lookup label resolver
+
+- Fixed herb/formula lookup cards so internal IDs no longer render as user-facing labels: modern tags, safety review flags, and related formula IDs now pass through bilingual/English display resolvers.
+- Chinese/bilingual mode now shows labels like `感冒 · Common cold` and `麻黃湯 · Ma Huang Tang`; Public EN mode shows English-facing labels like `Common cold` and `Ma Huang Tang`.
+- Kept immutable IDs unchanged for search/data integrity; this is display-only, not a data migration.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: search herbs such as 麻黃/桂枝 and confirm no `common_cold`, `uri`, `formula.ma_huang_tang`, or `pregnancy_priority_review` chips appear in the card list.
+
+## 2026-07-29 Codex — homepage watercolor illustration
+
+- Replaced the experimental inline SVG homepage art with Ting's selected watercolor-style AcuTing illustration as the single local image asset: `assets/home-acuting-watercolor.png`.
+- Updated `index.html` to render the image with descriptive alt text and updated `styles.css` so the homepage artwork is centered, responsive, softly rounded, and lightly shadowed.
+- This is an explicit one-image exception to the earlier no-image default because Ting chose the image and the whole site currently uses only this one homepage artwork.
+- Validation: `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: open `#ws/home` on desktop and phone width; confirm the image size, crop, and visual weight feel right.
+
+## 2026-07-29 Codex — Public EN homepage interface
+
+- Added Public EN mode text switching for the home page, top brand title, right-side navigation panel labels, home search button/placeholder, lotus caption, and unified search-result UI labels.
+- Kept bilingual mode unchanged; the new behavior only activates when the existing `Public EN` button sets `contentMode="english"`.
+- Implemented this as small `data-mode-text` / `data-mode-aria-label` attributes plus one shared `modeText()` helper in `app.js`, so there is no duplicate homepage to maintain.
+- Validation: JS syntax checks PASS for `app.js`, `js/knowledge.js`, and `js/router.js`; `validate-interactions.js` PASS.
+- Manual check: open homepage, click `Public EN`, confirm the home hero/search/navigation labels switch to English; click `中英版`, confirm the original bilingual interface returns.
+
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 8
+
+- Added full formal herb cards for 地膚子、冬蟲夏草、冬瓜子、冬葵子、蜂蜜 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used only where exact usable pages or explicitly labeled snippets were available.
+- Added fourteen sourced herb-pair records, including source-supported pairs that reference still-missing herb IDs; per Ting's rule, those pending herb links are preserved for later card creation instead of being deleted.
+- Updated the herb record standard: source-supported 對藥 may reference a pending herb ID before the target herb card exists; front-end should keep it plain/pending until the card is built.
+- Updated Quality herb-outline audit from 261/304 matched and 43 missing to 266/304 matched and 38 missing; local herb cards are now 291.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch8 targeted bilingual/source/pair QA PASS with allowed pending pair-linked herb IDs; git diff --check PASS. Known pre-existing full-suite issues remain outside this herb batch.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 7
+
+- Added full formal herb cards for 沉香、赤小豆、川木通、椿皮、刺五加 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used only where exact pages were actually usable.
+- Added seven sourced herb-pair records: 沉香/烏藥/肉桂/小茴香, 沉香/丁香/白豆蔻/紫蘇葉/生薑, 赤小豆/麻黃/連翹/桑白皮, 赤小豆/當歸, 川木通/車前子/梔子/滑石, 椿皮/黃柏/梔子/車前子, 刺五加/杜仲/桑寄生.
+- Corrected source honesty for 刺五加: American Dragon exact URL was attempted but blocked/placeholder in this pass, so it is not shown as a formal source or top external link.
+- Updated Quality herb-outline audit from 256/304 matched and 48 missing to 261/304 matched and 43 missing; local herb cards are now 286.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch7 targeted bilingual/source/pair/property QA PASS; git diff --check PASS. Known pre-existing missing pair ref remains `pair.ju_he__chuan_lian_zi` → `herb.ju_he`.
+
+## 2026-07-28 Codex — search fallback route repair + herb/formula lookup UX
+
+- Investigated Ting-reported issue that search/click links appeared nonfunctional after `update.bat`.
+- Confirmed `validate-interactions.js` PASS and generated knowledge/app data can load without syntax errors; no evidence of git overwrite or missing herb data.
+- Updated `app.js` fallback routing for formula/herb search results and SOAP formula/herb links from legacy section anchors to workspace hashes (`#ws/formula`, `#ws/herb`) so navigation still works if the knowledge-detail API is not ready.
+- Removed stale `Herb Records` / `Formula Records` source-review mini text from lookup pages; that audit/status language belongs in Quality, not the daily search interface.
+- Moved the long herb and formula category chip lists into collapsed drawer controls, with stronger clickable styling and visible counts so search results sit higher on the page.
+- Added lightweight Public EN support for herb/formula lookup controls: search placeholders and drawer open/close labels switch to English when the existing Public EN mode is selected.
+- Reverted generated timestamp-only diffs; no data/herb content changed in this repair.
+- Validation: `validate-interactions.js` PASS; JS syntax check PASS for `app.js`, `js/knowledge.js`, and `js/router.js`.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 6
+
+- Added full formal herb cards for 白果、白前、半枝蓮、蓽茇、萆薢 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used where verified.
+- Added five sourced herb-pair records: 白果/麻黃/紫蘇子/杏仁, 蓽茇/高良薑, 蓽茇/延胡索/細辛, 萆薢/益智仁/烏藥, 萆薢/車前子/滑石/黃柏.
+- Updated Quality herb-outline audit from 251/304 matched and 53 missing to 256/304 matched and 48 missing; local herb cards are now 281.
+- Added backlog rule: if formula/herb work discovers a missing herb ID not on the current missing-card list, append it to the missing-card backlog instead of ignoring it.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; new-pair QA PASS; git diff --check PASS; validate-interactions PASS.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 5
+
+- Added full formal herb cards for 仙茅、白花蛇舌草、白鮮皮 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM + American Dragon.
+- Added/updated six sourced herb-pair records: 仙茅/淫羊藿 source update, 仙茅/杜仲, 白花蛇舌草/敗醬草/金銀花, 白花蛇舌草/茵陳蒿/黃柏/梔子, 白鮮皮/黃柏/苦參/防風, 白鮮皮/大黃/梔子.
+- Updated Quality herb-outline audit from 248/304 matched and 56 missing to 251/304 matched and 53 missing.
+- Preserved source dose differences in the requested format, including Xian Mao `3–10g（課件、AD）/ 3–9g（CloudTCM）`, Bai Hua She She Cao `15–30g（課件）/ 15–60g（AD、CloudTCM）`, and Bai Xian Pi `6–10g（課件）/ 4–16g（AD）`.
+- Fixed Ting-caught Quality stat display bug: Herbs progress now uses NCBAHM 2026 CH board-outline coverage (`304` total and `251/304` made/covered) instead of the stale local-card/fill-count display (`273`, `269/273`) and refreshed audit metadata to 2026-07-28.
+- Hid the obsolete `audit 2026-06-16` Quality summary cards (Verified / Records exist / Draft / Missing) because that older 361-only audit was stale and misleading.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; targeted bilingual/source/property-contamination QA PASS.
+
 Use this file as the first-read context before each daily optimization session. After each session, add a new entry with date, scope, files changed, validation, commit hash, and next task.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 4 + dosage rule correction
+
+- Added full formal herb cards for 木賊、白花蛇、硫黃 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM + American Dragon.
+- Added six sourced herb-pair records for Mu Zei eye pairs, Bai Hua She Wind-Damp/convulsion pairs, and Liu Huang internal/external safety-relevant pairs.
+- Updated Quality herb-outline audit from 245/304 matched and 59 missing to 248/304 matched and 56 missing.
+- Fixed Ting-caught property/channel boundary issue: `properties_taste_temp` now stays pure taste/temperature/toxicity; source/channel differences are preserved in notes/sources.
+- Updated Jue Ming Zi dosage display to preserve source differences: `6–10g（課件）/ 9–15g（AD、CloudTCM）`, with powder and dietary-use notes retained.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 3
+
+- Added full formal herb cards for 漢防己、麻黃根、決明子 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM + American Dragon.
+- Added six sourced herb-pair records: 漢防己/黃耆, 漢防己/桂枝/茯苓, 麻黃根/黃耆/牡蠣, 麻黃根/浮小麥/黃耆, 決明子/菊花, 決明子/夏枯草.
+- Updated Quality herb-outline audit from 242/304 matched and 62 missing to 245/304 matched and 59 missing.
+- Corrected 決明子 category to canonical `平肝息風藥 / Extinguish Wind` after validator caught the longer non-canon category string.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; git diff --check PASS. Full validate-data/encoding still fail on pre-existing unrelated acupoint/import issues.
 
 ## Daily Operating Rule
 
@@ -22,6 +170,20 @@ Use this file as the first-read context before each daily optimization session. 
 - Sunday: UI/mobile polish, source registry, validation, backlog planning.
 
 ## Log Entries
+
+### 2026-07-28 - NCBAHM CH missing herbs batch 2 (Codex)
+- Scope: Created `herb.niu_huang`, `herb.shui_niu_jiao`, and `herb.wu_gong`; also fixed top external-link fields for the six newly created high-risk cards.
+- Sources: NCBAHM 2026 CH Appendix A, Chenoweth herb curriculum, CloudTCM Shui Niu Jiao, and American Dragon Niu Huang / Shui Niu Jiao / Wu Gong.
+- Files: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated data, `docs/CODEX_HANDOFF.md`, `docs/CODEX_TASK_QUEUE.md`.
+- Validation: build-data, targeted three-card bilingual/source/dose QA, herb-standard, content-junk, and diff-check passed.
+- Next: Continue the remaining 62 NCBAHM CH Appendix A missing herbs; suggested next high-risk set is Han Fang Ji, Ma Huang Gen, Jue Ming Zi, Mu Zei, Bai Hua She, Liu Huang, Xian Mao.
+
+### 2026-07-28 - NCBAHM CH missing herbs batch 1 (Codex)
+- Scope: Created `herb.ba_dou`, `herb.chuan_wu`, and `herb.cao_wu` as formal high-toxicity herb cards from the NCBAHM 2026 CH Appendix A missing-card list.
+- Sources: NCBAHM 2026 CH Appendix A, Chenoweth herb curriculum, CloudTCM Ba Dou / Wu Tou, and American Dragon Ba Dou / Zhi Chuan Wu / Zhi Cao Wu.
+- Files: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated data, `docs/CODEX_HANDOFF.md`, `docs/CODEX_TASK_QUEUE.md`.
+- Validation: build-data, targeted three-card bilingual/source/dose QA, herb-standard, two category worklists, content-junk, and diff-check passed.
+- Next: Continue the remaining 65 NCBAHM CH Appendix A missing herbs; suggested next high-risk set is Niu Huang, Shui Niu Jiao, Wu Gong, Han Fang Ji, Ma Huang Gen, Jue Ming Zi, Mu Zei.
 
 ### 2026-07-26 - Six-herb formal card sample (Codex)
 - Scope: 蒲公英、桂枝、生薑、荊芥、防風、紫蘇葉，依正式 herb card template 補齊雙語欄位。

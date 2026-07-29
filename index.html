@@ -10,93 +10,75 @@
     <header class="topbar">
       <div class="brand-block">
         <p class="eyebrow">AcuTing OS</p>
-        <h1>AcuTing OS 中醫學習系統</h1>
+        <h1 data-mode-text data-bilingual="AcuTing OS 中醫學習系統" data-english="AcuTing OS TCM Study System">AcuTing OS 中醫學習系統</h1>
       </div>
     </header>
 
     <div id="navScrim" class="nav-scrim"></div>
     <aside id="navPanel" class="nav-panel" aria-label="主選單">
       <div class="nav-panel__head">
-        <strong>選單 Navigation</strong>
+        <strong data-mode-text data-bilingual="選單 Navigation" data-english="Navigation">選單 Navigation</strong>
         <button id="navClose" class="nav-close" type="button" aria-label="關閉選單">×</button>
       </div>
       <nav class="nav-panel__body workspace-nav" aria-label="主要工作區">
-        <a href="#ws/home" data-ws="home" class="nav-home">首頁 Home</a>
+        <a href="#ws/home" data-ws="home" class="nav-home" data-mode-text data-bilingual="首頁 Home" data-english="Home">首頁 Home</a>
 
         <div class="nav-group">
-          <p class="nav-group__title">查詢 Lookup</p>
-          <a href="#ws/acu" data-ws="acu" class="nav-sub">針灸穴位 Acupoints</a>
-          <a href="#ws/formula" data-ws="formula" class="nav-sub">方劑 Formulas</a>
-          <a href="#ws/herb" data-ws="herb" class="nav-sub">中藥 Materia Medica</a>
-          <a href="#ws/condition" data-ws="condition" class="nav-sub">病症圖譜 Conditions</a>
-          <a href="#ws/comparison" data-ws="comparison" class="nav-sub">辨證鑑別 Comparisons</a>
+          <p class="nav-group__title" data-mode-text data-bilingual="查詢 Lookup" data-english="Lookup">查詢 Lookup</p>
+          <a href="#ws/acu" data-ws="acu" class="nav-sub" data-mode-text data-bilingual="針灸穴位 Acupoints" data-english="Acupoints">針灸穴位 Acupoints</a>
+          <a href="#ws/formula" data-ws="formula" class="nav-sub" data-mode-text data-bilingual="方劑 Formulas" data-english="Formulas">方劑 Formulas</a>
+          <a href="#ws/herb" data-ws="herb" class="nav-sub" data-mode-text data-bilingual="中藥 Materia Medica" data-english="Materia Medica">中藥 Materia Medica</a>
+          <a href="#ws/condition" data-ws="condition" class="nav-sub" data-mode-text data-bilingual="病症圖譜 Conditions" data-english="Conditions">病症圖譜 Conditions</a>
+          <a href="#ws/comparison" data-ws="comparison" class="nav-sub" data-mode-text data-bilingual="辨證鑑別 Comparisons" data-english="Comparisons">辨證鑑別 Comparisons</a>
         </div>
 
         <div class="nav-group">
-          <p class="nav-group__title">臨床 Clinical</p>
-          <a href="#ws/cases" data-ws="cases" class="nav-sub">病例 Cases</a>
-          <a href="#billingSection" class="nav-sub">保險 Billing</a>
+          <p class="nav-group__title" data-mode-text data-bilingual="臨床 Clinical" data-english="Clinical">臨床 Clinical</p>
+          <a href="#ws/cases" data-ws="cases" class="nav-sub" data-mode-text data-bilingual="病例 Cases" data-english="Cases">病例 Cases</a>
+          <a href="#billingSection" class="nav-sub" data-mode-text data-bilingual="保險 Billing" data-english="Billing">保險 Billing</a>
         </div>
 
         <div class="nav-group">
-          <p class="nav-group__title">系統 System</p>
-          <a href="#ws/quality" data-ws="quality" class="nav-sub">品質 Quality</a>
-          <a href="#ws/sources" data-ws="sources" class="nav-sub">來源 Sources</a>
+          <p class="nav-group__title" data-mode-text data-bilingual="系統 System" data-english="System">系統 System</p>
+          <a href="#ws/quality" data-ws="quality" class="nav-sub" data-mode-text data-bilingual="品質 Quality" data-english="Quality">品質 Quality</a>
+          <a href="#ws/sources" data-ws="sources" class="nav-sub" data-mode-text data-bilingual="來源 Sources" data-english="Sources">來源 Sources</a>
         </div>
       </nav>
       <div class="nav-panel__tools">
-        <p class="nav-group__title">工具 Tools</p>
+        <p class="nav-group__title" data-mode-text data-bilingual="工具 Tools" data-english="Tools">工具 Tools</p>
         <div class="nav-tools-row">
           <button id="modeBilingualBtn" class="ghost active" type="button">中英版</button>
           <button id="modeEnglishBtn" class="ghost" type="button">Public EN</button>
         </div>
         <div class="nav-tools-row">
-          <button id="exportBtn" class="ghost" type="button">匯出 JSON</button>
+          <button id="exportBtn" class="ghost" type="button" data-mode-text data-bilingual="匯出 JSON" data-english="Export JSON">匯出 JSON</button>
           <label class="ghost file-label">
-            匯入 JSON
+            <span data-mode-text data-bilingual="匯入 JSON" data-english="Import JSON">匯入 JSON</span>
             <input id="importFile" type="file" accept="application/json" />
           </label>
-          <button id="resetBtn" class="danger" type="button">還原範例</button>
+          <button id="resetBtn" class="danger" type="button" data-mode-text data-bilingual="還原範例" data-english="Reset demo">還原範例</button>
         </div>
       </div>
     </aside>
 
     <main class="layout">
-      <section class="os-dashboard home-hero" data-workspace="home" aria-label="AcuTing OS 模組與進度">
+      <section class="os-dashboard home-hero" data-workspace="home" aria-label="AcuTing OS 模組與進度" data-mode-aria-label data-bilingual-aria-label="AcuTing OS 模組與進度" data-english-aria-label="AcuTing OS modules and progress">
         <div class="os-intro">
-          <p class="eyebrow">Private Clinical Workspace</p>
-          <h2>查資料、寫 SOAP、建立自己的臨床知識庫</h2>
-          <p>先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。</p>
+          <p class="eyebrow" data-mode-text data-bilingual="Private Clinical Workspace" data-english="Private Clinical Workspace">Private Clinical Workspace</p>
+          <h2 data-mode-text data-bilingual="查資料、寫 SOAP、建立自己的臨床知識庫" data-english="Search, chart SOAP notes, and build your clinical knowledge base">查資料、寫 SOAP、建立自己的臨床知識庫</h2>
+          <p data-mode-text data-bilingual="先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。" data-english="Start with cases and acupuncture points, then connect TCM and biomedical conditions, formulas, herbs, medications, interactions, and billing documentation into one searchable study graph.">先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。</p>
           <div class="hero-search">
             <input id="homeSearch" type="search" autocomplete="off" placeholder="搜尋穴位、方劑、中藥、病症、病例… 例：SP6、四物、當歸、血虛" />
-            <button id="homeSearchBtn" type="button">搜尋</button>
+            <button id="homeSearchBtn" type="button" data-mode-text data-bilingual="搜尋" data-english="Search">搜尋</button>
           </div>
-          <div id="globalResults" class="global-results" role="listbox" aria-label="搜尋結果" hidden></div>
+          <div id="globalResults" class="global-results" role="listbox" aria-label="搜尋結果" data-mode-aria-label data-bilingual-aria-label="搜尋結果" data-english-aria-label="Search results" hidden></div>
         </div>
-        <div class="home-art" aria-hidden="true">
-          <svg viewBox="0 0 600 320" role="img" preserveAspectRatio="xMidYMid meet">
-            <circle cx="300" cy="150" r="116" fill="none" stroke="#e3d9c3" stroke-width="1.3" opacity="0.75"/>
-            <circle cx="300" cy="150" r="150" fill="none" stroke="#ece4d3" stroke-width="1.1" opacity="0.5"/>
-            <path d="M150,246 Q300,226 450,246" fill="none" stroke="#bcd4c7" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M182,264 Q300,246 418,264" fill="none" stroke="#cbe0d4" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M214,280 Q300,266 386,280" fill="none" stroke="#d7e8de" stroke-width="1.2" stroke-linecap="round"/>
-            <g fill="#f3f8f5" stroke="#6b9c83" stroke-width="2.2" stroke-linejoin="round">
-              <g transform="rotate(-54 300 208)"><path d="M300,208 C286,182 292,156 300,138 C308,156 314,182 300,208 Z"/></g>
-              <g transform="rotate(54 300 208)"><path d="M300,208 C286,182 292,156 300,138 C308,156 314,182 300,208 Z"/></g>
-              <g transform="rotate(-28 300 208)"><path d="M300,208 C284,176 289,144 300,122 C311,144 316,176 300,208 Z"/></g>
-              <g transform="rotate(28 300 208)"><path d="M300,208 C284,176 289,144 300,122 C311,144 316,176 300,208 Z"/></g>
-              <g><path d="M300,208 C283,172 287,136 300,112 C313,136 317,172 300,208 Z"/></g>
-            </g>
-            <g stroke="#c89033" stroke-width="2" stroke-linecap="round">
-              <line x1="300" y1="202" x2="300" y2="172"/>
-              <line x1="300" y1="202" x2="287" y2="180"/>
-              <line x1="300" y1="202" x2="313" y2="180"/>
-            </g>
-            <circle cx="300" cy="170" r="3" fill="#c89033"/>
-            <circle cx="286" cy="178" r="2.6" fill="#c89033"/>
-            <circle cx="314" cy="178" r="2.6" fill="#c89033"/>
-          </svg>
-          <p class="home-art__caption">靜心求本 · 針灸 · 方劑 · 中藥 · 病症，從一個搜尋開始</p>
+        <div class="home-art">
+          <video class="home-art__video" poster="assets/home-acuting-watercolor.png" autoplay muted loop playsinline preload="metadata" aria-label="AcuTing OS watercolor video with acupuncture, herbal medicine, and classical Chinese medicine imagery">
+            <source src="curriculum/Home/Home.mp4" type="video/mp4" />
+            Your browser does not support the homepage video.
+          </video>
+          <p class="home-art__caption" data-mode-text data-bilingual="靜心求本 · 針灸 · 方劑 · 中藥 · 病症，從一個搜尋開始" data-english="Quiet study, clinical memory · Acupuncture, formulas, herbs, and conditions begin with one search">靜心求本 · 針灸 · 方劑 · 中藥 · 病症，從一個搜尋開始</p>
         </div>
       </section>
 
@@ -111,7 +93,7 @@
           </div>
           <span class="data-pill" id="auditGeneratedOn">audit</span>
         </div>
-        <div class="health-summary-grid">
+        <div class="health-summary-grid" hidden>
           <article class="health-summary-card verified">
             <span id="healthCompletionPercent">--</span>
             <strong>已源審核比例 Verified</strong>
@@ -286,30 +268,30 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Fertility Workflow</p>
-            <h2>不孕症 / IVF-IUI 臨床紀錄骨架</h2>
-            <p>這一層把西醫診斷、週期階段、IUI/IVF 節點、西藥、針灸、方劑、安全旗標和 SOAP note 連在一起。它是臨床紀錄與查詢工具，不取代生殖科醫囑。</p>
+            <h2 data-mode-text data-bilingual="不孕症 / IVF-IUI 臨床紀錄骨架" data-english="Fertility / IVF-IUI Clinical Documentation Scaffold">不孕症 / IVF-IUI 臨床紀錄骨架</h2>
+            <p data-mode-text data-bilingual="這一層把西醫診斷、週期階段、IUI/IVF 節點、西藥、針灸、方劑、安全旗標和 SOAP note 連在一起。它是臨床紀錄與查詢工具，不取代生殖科醫囑。" data-english="This layer connects biomedical diagnoses, cycle phases, IUI/IVF milestones, medications, acupuncture, formulas, safety flags, and SOAP notes. It is a charting and lookup scaffold, not a replacement for reproductive-medicine guidance.">這一層把西醫診斷、週期階段、IUI/IVF 節點、西藥、針灸、方劑、安全旗標和 SOAP note 連在一起。它是臨床紀錄與查詢工具，不取代生殖科醫囑。</p>
           </div>
           <span class="data-pill">documentation scaffold</span>
         </div>
         <div class="fertility-workflow-grid">
           <article class="fertility-card">
             <span>PCOS / OI</span>
-            <strong>排卵誘導輔助紀錄</strong>
+            <strong data-mode-text data-bilingual="排卵誘導輔助紀錄" data-english="Ovulation-induction support notes">排卵誘導輔助紀錄</strong>
             <small>Track cycle day, letrozole/clomiphene/metformin/progesterone context, ovulation signs, PCOS patterns, safety flags.</small>
           </article>
           <article class="fertility-card">
             <span>IUI</span>
-            <strong>人工授精週期</strong>
+            <strong data-mode-text data-bilingual="人工授精週期" data-english="IUI cycle">人工授精週期</strong>
             <small>Track trigger timing, IUI date, luteal support, two-week wait, clinic herb/acupuncture restrictions.</small>
           </article>
           <article class="fertility-card">
             <span>IVF</span>
-            <strong>促排、取卵、植入</strong>
+            <strong data-mode-text data-bilingual="促排、取卵、植入" data-english="Stimulation, retrieval, transfer">促排、取卵、植入</strong>
             <small>Track stimulation day, monitoring notes, trigger/retrieval, transfer prep, luteal support, OHSS warning signs.</small>
           </article>
           <article class="fertility-card">
             <span>Transfer</span>
-            <strong>胚胎植入 / 黃體期</strong>
+            <strong data-mode-text data-bilingual="胚胎植入 / 黃體期" data-english="Embryo transfer / luteal phase">胚胎植入 / 黃體期</strong>
             <small>Track progesterone/estradiol/aspirin/anticoagulant context, bleeding, cramping, anxiety, sleep, pregnancy test window.</small>
           </article>
         </div>
@@ -321,56 +303,56 @@
         </div>
       </section>
 
-      <section class="directory-layout" data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫">
-        <aside class="directory-sidebar" aria-label="穴道分類">
+      <section class="directory-layout" data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫" data-mode-aria-label data-bilingual-aria-label="穴位資料庫" data-english-aria-label="Acupoint directory">
+        <aside class="directory-sidebar" aria-label="穴道分類" data-mode-aria-label data-bilingual-aria-label="穴道分類" data-english-aria-label="Acupoint categories">
           <section class="directory-filter-box">
-            <h3>十四經絡</h3>
+            <h3 data-mode-text data-bilingual="十四經絡" data-english="Fourteen Channels">十四經絡</h3>
             <div id="meridianCategoryList" class="directory-filter-list"></div>
           </section>
           <section class="directory-filter-box">
-            <h3>其他穴系 Other systems</h3>
+            <h3 data-mode-text data-bilingual="其他穴系 Other systems" data-english="Other Systems">其他穴系 Other systems</h3>
             <div id="systemCategoryList" class="directory-filter-list"></div>
           </section>
           <section class="directory-filter-box">
-            <h3>身體部位</h3>
+            <h3 data-mode-text data-bilingual="身體部位" data-english="Body Regions">身體部位</h3>
             <div id="regionCategoryList" class="directory-filter-list"></div>
           </section>
           <section class="directory-filter-box">
-            <h3>常用臨床主題</h3>
+            <h3 data-mode-text data-bilingual="常用臨床主題" data-english="Clinical Topics">常用臨床主題</h3>
             <div id="topicCategoryList" class="directory-filter-list"></div>
           </section>
           <section class="directory-filter-box tung-zone-box">
-            <h3>董氏十二部位 Tung 12 Zones</h3>
+            <h3 data-mode-text data-bilingual="董氏十二部位 Tung 12 Zones" data-english="Tung 12 Zones">董氏十二部位 Tung 12 Zones</h3>
             <div id="tungZoneCategoryList" class="directory-filter-list tung-zone-list"></div>
           </section>
           <section class="directory-filter-box">
-            <h3>特定穴 Specific points</h3>
+            <h3 data-mode-text data-bilingual="特定穴 Specific points" data-english="Specific Points">特定穴 Specific points</h3>
             <div id="pointCategoryList" class="directory-filter-list"></div>
           </section>
         </aside>
 
         <div class="directory-main">
-          <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選">
+          <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選" data-mode-aria-label data-bilingual-aria-label="搜尋與篩選" data-english-aria-label="Search and filters">
             <div class="section-heading">
               <div>
                 <p class="eyebrow">Acupuncture Layer</p>
-                <h2>穴位資料庫</h2>
+                <h2 data-mode-text data-bilingual="穴位資料庫" data-english="Acupoint Directory">穴位資料庫</h2>
               </div>
-              <span class="data-pill"><strong id="directoryTotal">--</strong> 個穴道</span>
+              <span class="data-pill"><strong id="directoryTotal">--</strong> <span data-mode-text data-bilingual="個穴道" data-english="points">個穴道</span></span>
             </div>
             <div class="search-row">
               <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型..." />
-              <button id="addBtn" type="button">新增穴位</button>
+              <button id="addBtn" type="button" data-mode-text data-bilingual="新增穴位" data-english="Add point">新增穴位</button>
             </div>
             <div class="filters">
-              <select id="meridianFilter" aria-label="經絡">
-                <option value="">全部經絡</option>
+              <select id="meridianFilter" aria-label="經絡" data-mode-aria-label data-bilingual-aria-label="經絡" data-english-aria-label="Channel">
+                <option value="" data-mode-text data-bilingual="全部經絡" data-english="All channels">全部經絡</option>
               </select>
-              <select id="regionFilter" aria-label="部位">
-                <option value="">全部部位</option>
+              <select id="regionFilter" aria-label="部位" data-mode-aria-label data-bilingual-aria-label="部位" data-english-aria-label="Region">
+                <option value="" data-mode-text data-bilingual="全部部位" data-english="All regions">全部部位</option>
               </select>
-              <select id="patternFilter" aria-label="證型">
-                <option value="">全部證型</option>
+              <select id="patternFilter" aria-label="證型" data-mode-aria-label data-bilingual-aria-label="證型" data-english-aria-label="Pattern">
+                <option value="" data-mode-text data-bilingual="全部證型" data-english="All patterns">全部證型</option>
               </select>
             </div>
             <div id="activeFilterSummary" class="active-filter-summary" aria-live="polite"></div>
@@ -380,40 +362,40 @@
           <section class="content-grid acupoint-browser">
             <section class="details-panel" aria-live="polite">
               <article id="detailCard" class="detail-card"></article>
-              <div id="cards" class="cards" aria-label="穴位列表"></div>
+              <div id="cards" class="cards" aria-label="穴位列表" data-mode-aria-label data-bilingual-aria-label="穴位列表" data-english-aria-label="Acupoint list"></div>
             </section>
           </section>
         </div>
       </section>
 
-      <section class="formula-section" data-workspace="formula" id="formulaSection" aria-label="方劑資料庫">
+      <section class="formula-section" data-workspace="formula" id="formulaSection" aria-label="方劑資料庫" data-mode-aria-label data-bilingual-aria-label="方劑資料庫" data-english-aria-label="Formula database">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Formulas</p>
-            <h2>方劑資料庫 / Herbal Formulas</h2>
-            <p>方名、組成、功效、主治證型、加減與禁忌，依分類瀏覽或直接搜尋。</p>
+            <h2 data-mode-text data-bilingual="方劑資料庫 / Herbal Formulas" data-english="Herbal Formulas">方劑資料庫 / Herbal Formulas</h2>
+            <p data-mode-text data-bilingual="方名、組成、功效、主治證型、加減與禁忌，依分類瀏覽或直接搜尋。" data-english="Browse and search formula names, ingredients, actions, pattern indications, modifications, and contraindications.">方名、組成、功效、主治證型、加減與禁忌，依分類瀏覽或直接搜尋。</p>
           </div>
         </div>
         <div id="formulaRecords" class="k-records" aria-label="Formula records"></div>
       </section>
 
-      <section class="formula-section herb-section" data-workspace="herb" id="herbSection" aria-label="中藥 Materia Medica">
+      <section class="formula-section herb-section" data-workspace="herb" id="herbSection" aria-label="中藥 Materia Medica" data-mode-aria-label data-bilingual-aria-label="中藥 Materia Medica" data-english-aria-label="Materia Medica">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Materia Medica</p>
-            <h2>中藥 / Single Herbs</h2>
-            <p>性味歸經、功效、主治、安全與相關方劑，依分類瀏覽或直接搜尋。</p>
+            <h2 data-mode-text data-bilingual="中藥 / Single Herbs" data-english="Single Herbs">中藥 / Single Herbs</h2>
+            <p data-mode-text data-bilingual="性味歸經、功效、主治、安全與相關方劑，依分類瀏覽或直接搜尋。" data-english="Browse and search properties, channels, actions, indications, safety notes, and related formulas.">性味歸經、功效、主治、安全與相關方劑，依分類瀏覽或直接搜尋。</p>
           </div>
         </div>
         <div id="herbRecords" class="k-records" aria-label="Herb records"></div>
       </section>
 
-      <section class="formula-section comparison-section" data-workspace="comparison" id="comparisonSection" aria-label="辨證鑑別表">
+      <section class="formula-section comparison-section" data-workspace="comparison" id="comparisonSection" aria-label="辨證鑑別表" data-mode-aria-label data-bilingual-aria-label="辨證鑑別表" data-english-aria-label="Pattern comparison tables">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Differentiation</p>
-            <h2>辨證鑑別 / Pattern Comparisons</h2>
-            <p>相似證型並排對照：病機、舌脈、鑑別要點。TCM 病理與 Advanced Therapeutics 的對照表都收在這裡。</p>
+            <h2 data-mode-text data-bilingual="辨證鑑別 / Pattern Comparisons" data-english="Pattern Comparisons">辨證鑑別 / Pattern Comparisons</h2>
+            <p data-mode-text data-bilingual="相似證型並排對照：病機、舌脈、鑑別要點。TCM 病理與 Advanced Therapeutics 的對照表都收在這裡。" data-english="Compare similar patterns side by side: pathomechanism, tongue, pulse, and key discriminators from TCM pathology and Advanced Therapeutics.">相似證型並排對照：病機、舌脈、鑑別要點。TCM 病理與 Advanced Therapeutics 的對照表都收在這裡。</p>
           </div>
         </div>
         <div id="comparisonRecords" class="k-records" aria-label="Comparison records"></div>
@@ -424,23 +406,23 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Conditions</p>
-            <h2>中西醫病症對照 / Conditions</h2>
-            <p>西醫病名 × 傳統病名 × TCM 證型，中英標籤互相關聯，連向常用穴位、方劑與安全旗標。</p>
+            <h2 data-mode-text data-bilingual="中西醫病症對照 / Conditions" data-english="Conditions">中西醫病症對照 / Conditions</h2>
+            <p data-mode-text data-bilingual="西醫病名 × 傳統病名 × TCM 證型，中英標籤互相關聯，連向常用穴位、方劑與安全旗標。" data-english="Connect biomedical conditions, traditional disease names, and TCM patterns with bilingual tags, related points, formulas, and safety flags.">西醫病名 × 傳統病名 × TCM 證型，中英標籤互相關聯，連向常用穴位、方劑與安全旗標。</p>
           </div>
         </div>
         <div id="conditionRecords" class="k-records" aria-label="Condition records"></div>
         <div class="condition-warning" id="conditionGraphRule">
           <strong>Graph rule</strong>
-          <span>西醫診斷、傳統病名、證型不是一對一翻譯；AcuTing 用 relation records 表示「可能相關」，每次病例仍要依實際 SOAP 與臨床辨證判斷。</span>
+          <span data-mode-text data-bilingual="西醫診斷、傳統病名、證型不是一對一翻譯；AcuTing 用 relation records 表示「可能相關」，每次病例仍要依實際 SOAP 與臨床辨證判斷。" data-english="Biomedical diagnoses, traditional disease names, and TCM patterns are not one-to-one translations. AcuTing uses relation records to show possible links; each case still depends on the actual SOAP note and clinical differentiation.">西醫診斷、傳統病名、證型不是一對一翻譯；AcuTing 用 relation records 表示「可能相關」，每次病例仍要依實際 SOAP 與臨床辨證判斷。</span>
         </div>
       </section>
 
-      <section class="source-section" data-workspace="sources" id="sourceSection" aria-label="資料來源 Sources">
+      <section class="source-section" data-workspace="sources" id="sourceSection" aria-label="資料來源 Sources" data-mode-aria-label data-bilingual-aria-label="資料來源 Sources" data-english-aria-label="Sources">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Sources</p>
-            <h2>資料來源 / Bilingual References</h2>
-            <p>每筆穴位資料會逐步標註英文與中文來源；正式定位仍以 WHO/教材為核心，網路資料作快速查找、翻譯對照與欄位補強。</p>
+            <h2 data-mode-text data-bilingual="資料來源 / Bilingual References" data-english="Sources & References">資料來源 / Bilingual References</h2>
+            <p data-mode-text data-bilingual="每筆穴位資料會逐步標註英文與中文來源；正式定位仍以 WHO/教材為核心，網路資料作快速查找、翻譯對照與欄位補強。" data-english="Each record is gradually tied to English and Chinese sources. Formal location and safety standards still depend on professional references; web sources support lookup, translation, and field enrichment.">每筆穴位資料會逐步標註英文與中文來源；正式定位仍以 WHO/教材為核心，網路資料作快速查找、翻譯對照與欄位補強。</p>
           </div>
           <span class="data-pill">source-aware</span>
         </div>
@@ -455,40 +437,40 @@
             <span id="sourceEnglish" class="inline-anchor"></span>
             <span>English</span>
             <strong>AcuPoints.org</strong>
-            <small>英文穴位與經絡頁面，用於英文名稱、基本定位、經絡瀏覽與快速對照。</small>
+            <small data-mode-text data-bilingual="英文穴位與經絡頁面，用於英文名稱、基本定位、經絡瀏覽與快速對照。" data-english="English acupoint and channel pages used for English names, basic location lookup, channel browsing, and quick comparison.">英文穴位與經絡頁面，用於英文名稱、基本定位、經絡瀏覽與快速對照。</small>
           </a>
           <a class="source-card" href="https://cloudtcm.com/acupoint" target="_blank" rel="noreferrer">
             <span id="sourceChinese" class="inline-anchor"></span>
-            <span>中文</span>
+            <span data-mode-text data-bilingual="中文" data-english="Chinese">中文</span>
             <strong>雲端中醫穴道資料庫</strong>
-            <small>中文穴名、經絡、位置、主治功效與穴位分類，用於中文資料補強與欄位對照。</small>
+            <small data-mode-text data-bilingual="中文穴名、經絡、位置、主治功效與穴位分類，用於中文資料補強與欄位對照。" data-english="Chinese point names, channels, locations, indications, functions, and point categories for Chinese data enrichment and field comparison.">中文穴名、經絡、位置、主治功效與穴位分類，用於中文資料補強與欄位對照。</small>
           </a>
           <a class="source-card" href="https://www.mastertungacupuncture.org/" target="_blank" rel="noreferrer">
             <span>English architecture</span>
             <strong>Master Tung / eLotus CORE</strong>
-            <small>作為 public 版專業架構參考：Tung by zone、TCM channels、auricular anatomy、special methods。內容需改寫並交叉審核。</small>
+            <small data-mode-text data-bilingual="作為 public 版專業架構參考：Tung by zone、TCM channels、auricular anatomy、special methods。內容需改寫並交叉審核。" data-english="Professional architecture reference for public-facing organization: Tung zones, TCM channels, auricular anatomy, and special methods. Content must be rewritten and cross-checked.">作為 public 版專業架構參考：Tung by zone、TCM channels、auricular anatomy、special methods。內容需改寫並交叉審核。</small>
           </a>
           <a class="source-card" href="https://acupun.site/point_list_Ear93GB.aspx?pointId=AT4" target="_blank" rel="noreferrer">
             <span id="sourceAuricular" class="inline-anchor"></span>
             <span>Auricular visual</span>
             <strong>GB93 耳穴定位圖</strong>
-            <small>耳穴個別定位圖與國際代碼入口。AcuTing 只放外部圖源連結，不下載或嵌入圖片。</small>
+            <small data-mode-text data-bilingual="耳穴個別定位圖與國際代碼入口。AcuTing 只放外部圖源連結，不下載或嵌入圖片。" data-english="Auricular location diagrams and international-code entry pages. AcuTing links to external visuals only; it does not download or embed images.">耳穴個別定位圖與國際代碼入口。AcuTing 只放外部圖源連結，不下載或嵌入圖片。</small>
           </a>
           <a class="source-card" href="https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95" target="_blank" rel="noreferrer">
-            <span>耳針總覽</span>
+            <span data-mode-text data-bilingual="耳針總覽" data-english="Auricular overview">耳針總覽</span>
             <strong>A+ 醫學百科耳針療法</strong>
-            <small>耳穴分區、常用耳針療法與總覽圖參考。用於中文對照與索引，不作臨床唯一來源。</small>
+            <small data-mode-text data-bilingual="耳穴分區、常用耳針療法與總覽圖參考。用於中文對照與索引，不作臨床唯一來源。" data-english="Auricular zones, common ear-acupuncture methods, and overview diagrams for Chinese comparison and indexing; not the sole clinical source.">耳穴分區、常用耳針療法與總覽圖參考。用於中文對照與索引，不作臨床唯一來源。</small>
           </a>
           <article class="source-card core">
             <span id="sourceCore" class="inline-anchor"></span>
             <span>Core Standard</span>
             <strong>WHO / Manual / School Notes</strong>
-            <small>定位、骨度分寸、手法禁忌與專業安全判斷仍需回到標準教材與臨床訓練。</small>
+            <small data-mode-text data-bilingual="定位、骨度分寸、手法禁忌與專業安全判斷仍需回到標準教材與臨床訓練。" data-english="Location, proportional measurements, technique contraindications, and safety judgments still return to professional standards and clinical training.">定位、骨度分寸、手法禁忌與專業安全判斷仍需回到標準教材與臨床訓練。</small>
           </article>
           <article class="source-card add-slot">
-            <span>＋ 待收集 To add</span>
-            <strong>未來要加的網站 / 資料庫</strong>
-            <small>之後找到新的英文/中文/耳穴/董氏/中藥來源，就照上面的分類加一張卡；逐筆穴位的來源標註走下方 registry。</small>
+            <span data-mode-text data-bilingual="＋ 待收集 To add" data-english="+ To add">＋ 待收集 To add</span>
+            <strong data-mode-text data-bilingual="未來要加的網站 / 資料庫" data-english="Future websites / databases">未來要加的網站 / 資料庫</strong>
+            <small data-mode-text data-bilingual="之後找到新的英文/中文/耳穴/董氏/中藥來源，就照上面的分類加一張卡；逐筆穴位的來源標註走下方 registry。" data-english="When new English, Chinese, auricular, Tung, or materia-medica sources are approved, add one card by category; per-record source tracking lives in the registry below.">之後找到新的英文/中文/耳穴/董氏/中藥來源，就照上面的分類加一張卡；逐筆穴位的來源標註走下方 registry。</small>
           </article>
         </div>
         <div id="sourceRegistry" class="k-records" aria-label="Source registry"></div>
@@ -498,9 +480,9 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Clinical Case Notebook</p>
-            <h2>病例紀錄 / SOAP Notes</h2>
+            <h2 data-mode-text data-bilingual="病例紀錄 / SOAP Notes" data-english="Clinical Cases / SOAP Notes">病例紀錄 / SOAP Notes</h2>
           </div>
-          <span class="data-pill">本機去識別化紀錄</span>
+          <span class="data-pill" data-mode-text data-bilingual="本機去識別化紀錄" data-english="Local de-identified records">本機去識別化紀錄</span>
         </div>
         <nav class="section-quicknav" aria-label="Clinical case workspace quick navigation">
           <a href="#caseToolbar">Actions</a>
@@ -510,26 +492,26 @@
         </nav>
         <div class="case-toolbar" id="caseToolbar">
           <input id="caseSearch" type="search" placeholder="搜尋 patient code、case、病名、證型、用穴、方藥..." />
-          <button id="newCaseBtn" type="button">新增病例</button>
-          <button id="newSoapBtn" class="ghost" type="button">新增 SOAP</button>
-          <button id="exportCasesBtn" class="ghost" type="button">匯出病例</button>
+          <button id="newCaseBtn" type="button" data-mode-text data-bilingual="新增病例" data-english="New case">新增病例</button>
+          <button id="newSoapBtn" class="ghost" type="button" data-mode-text data-bilingual="新增 SOAP" data-english="New SOAP">新增 SOAP</button>
+          <button id="exportCasesBtn" class="ghost" type="button" data-mode-text data-bilingual="匯出病例" data-english="Export cases">匯出病例</button>
           <label class="ghost file-label">
-            匯入病例
+            <span data-mode-text data-bilingual="匯入病例" data-english="Import cases">匯入病例</span>
             <input id="importCasesFile" type="file" accept="application/json" />
           </label>
         </div>
         <div class="case-grid">
           <aside class="case-list-panel" id="caseListPanel">
             <div class="mini-head">
-              <strong>病例列表</strong>
+              <strong data-mode-text data-bilingual="病例列表" data-english="Case List">病例列表</strong>
               <small id="caseResultCount">0 cases</small>
             </div>
-            <button type="button" id="learnFromToggle" class="learn-from-toggle" aria-pressed="false">值得學習的病例 Cases to learn from</button>
+            <button type="button" id="learnFromToggle" class="learn-from-toggle" aria-pressed="false" data-mode-text data-bilingual="值得學習的病例 Cases to learn from" data-english="Cases to learn from">值得學習的病例 Cases to learn from</button>
             <div id="caseList" class="case-list"></div>
           </aside>
           <section class="case-detail-panel" id="caseDetail"></section>
         </div>
-        <p class="note">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
+        <p class="note" data-mode-text data-bilingual="病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。" data-english="Clinical case records are currently stored locally in this browser. Use patient_code and avoid full names, full birth dates, phone numbers, addresses, insurance details, or other directly identifying information.">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
       </section>
 
     </main>
@@ -543,8 +525,8 @@
     <dialog id="editDialog">
       <form id="pointForm" method="dialog">
         <div class="dialog-head">
-          <h2 id="dialogTitle">新增穴位</h2>
-          <button class="icon-btn" value="cancel" type="button" id="closeDialog" aria-label="關閉">×</button>
+          <h2 id="dialogTitle" data-mode-text data-bilingual="新增穴位" data-english="Add Point">新增穴位</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
         <div class="form-grid">
           <label>代碼 Code<input name="code" required placeholder="LI4" /></label>
@@ -573,10 +555,10 @@
           <label>Y 座標<input name="y" type="number" min="0" max="620" required /></label>
         </div>
         <div class="dialog-actions">
-          <button id="deleteBtn" class="danger" type="button">刪除</button>
+          <button id="deleteBtn" class="danger" type="button" data-mode-text data-bilingual="刪除" data-english="Delete">刪除</button>
           <span></span>
-          <button class="ghost" type="button" id="cancelBtn">取消</button>
-          <button type="submit">儲存</button>
+          <button class="ghost" type="button" id="cancelBtn" data-mode-text data-bilingual="取消" data-english="Cancel">取消</button>
+          <button type="submit" data-mode-text data-bilingual="儲存" data-english="Save">儲存</button>
         </div>
       </form>
     </dialog>
@@ -584,8 +566,8 @@
     <dialog id="caseDialog">
       <form id="caseForm" method="dialog">
         <div class="dialog-head">
-          <h2 id="caseDialogTitle">新增病例</h2>
-          <button class="icon-btn" value="cancel" type="button" id="closeCaseDialog" aria-label="關閉">×</button>
+          <h2 id="caseDialogTitle" data-mode-text data-bilingual="新增病例" data-english="New Case">新增病例</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeCaseDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
         <div class="form-grid">
           <fieldset class="form-section">
@@ -630,10 +612,10 @@
           </fieldset>
         </div>
         <div class="dialog-actions">
-          <button id="deleteCaseBtn" class="danger" type="button">刪除病例</button>
+          <button id="deleteCaseBtn" class="danger" type="button" data-mode-text data-bilingual="刪除病例" data-english="Delete case">刪除病例</button>
           <span></span>
-          <button class="ghost" type="button" id="cancelCaseBtn">取消</button>
-          <button type="submit">儲存病例</button>
+          <button class="ghost" type="button" id="cancelCaseBtn" data-mode-text data-bilingual="取消" data-english="Cancel">取消</button>
+          <button type="submit" data-mode-text data-bilingual="儲存病例" data-english="Save case">儲存病例</button>
         </div>
       </form>
     </dialog>
@@ -642,7 +624,7 @@
       <form id="soapForm" method="dialog">
         <div class="dialog-head">
           <h2 id="soapDialogTitle">新增 SOAP Note</h2>
-          <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉">×</button>
+          <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
         <div class="form-grid soap-form-grid">
           <fieldset class="form-section">
@@ -717,17 +699,17 @@
           </fieldset>
         </div>
         <div class="dialog-actions">
-          <button id="deleteSoapBtn" class="danger" type="button">刪除 SOAP</button>
+          <button id="deleteSoapBtn" class="danger" type="button" data-mode-text data-bilingual="刪除 SOAP" data-english="Delete SOAP">刪除 SOAP</button>
           <span></span>
-          <button class="ghost" type="button" id="cancelSoapBtn">取消</button>
-          <button type="submit">儲存 SOAP</button>
+          <button class="ghost" type="button" id="cancelSoapBtn" data-mode-text data-bilingual="取消" data-english="Cancel">取消</button>
+          <button type="submit" data-mode-text data-bilingual="儲存 SOAP" data-english="Save SOAP">儲存 SOAP</button>
         </div>
       </form>
     </dialog>
 
     <footer>
-      <strong>學習用途：</strong>本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。
-      核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。
+      <span data-mode-text data-bilingual="學習用途：本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。" data-english="Study use only: this tool organizes common Traditional Chinese Medicine point and pattern relationships. It does not replace diagnosis or treatment by a qualified healthcare professional. Core locations should be checked against WHO-style standards and professional course materials; web sources support bilingual lookup and comparison."><strong>學習用途：</strong>本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。
+      核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。</span>
     </footer>
 
     <script src="data/generated/app_data.js"></script>

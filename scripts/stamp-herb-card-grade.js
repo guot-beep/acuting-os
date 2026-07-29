@@ -41,9 +41,14 @@ const PAIRS = [
 ];
 const len = (v) => (Array.isArray(v) ? v.length : 0);
 
-/* 舊定義：field_sources.actions_en 有值 = 模板級。
-   新定義要挑出的是「用舊定義判定為模板級、而且今天真的全部通過」的那些。 */
-const claimedBefore = (r) => !!(r.field_sources && r.field_sources.actions_en);
+/* 功效層（functions_zh 與 actions_en 是同一層的中英兩側）有沒有記出處。
+   兩個 key 名都在用：Claude 的批次記 actions_en，Codex 的批次記 functions_zh。
+   只認 actions_en 會把 Codex 那 17 張有出處、且結構全數通過的卡誤判成未完成。 */
+const hasActionsProvenance = (r) =>
+  !!(r.field_sources && (r.field_sources.actions_en || r.field_sources.functions_zh));
+
+// 舊定義：field_sources.actions_en 有值就算模板級（不看內容是否齊全）。
+const claimedUnderOldRule = (r) => !!(r.field_sources && r.field_sources.actions_en);
 const passesEveryRule = (r) => {
   for (const [zhF, enF] of PAIRS) {
     if (len(r[zhF]) && !len(r[enF])) return false;          // E6 缺英文
@@ -56,15 +61,19 @@ const passesEveryRule = (r) => {
 };
 
 let template = 0, partial = 0;
-const demoted = [], promoted = [];
+const incomplete = [], noProvenance = [], newlyCounted = [];
 
 for (const r of recs) {
-  const ok = passesEveryRule(r) && claimedBefore(r);
-  if (ok) { r.card_grade = "template"; template++; }
-  else {
+  const rules = passesEveryRule(r);
+  const cited = hasActionsProvenance(r);
+  if (rules && cited) {
+    r.card_grade = "template"; template++;
+    // 結構本來就齊、出處記在 functions_zh 而非 actions_en，舊定義看不見的那些
+    if (!claimedUnderOldRule(r)) newlyCounted.push(r.name_zh);
+  } else {
     r.card_grade = "partial"; partial++;
-    if (claimedBefore(r) && !passesEveryRule(r)) demoted.push(r.name_zh);
-    if (!claimedBefore(r) && passesEveryRule(r)) promoted.push(r.name_zh);
+    if (!rules) incomplete.push(r.name_zh);
+    else if (!cited) noProvenance.push(r.name_zh);
   }
 }
 
@@ -73,23 +82,30 @@ console.log(`  card_grade: template  ${template}`);
 console.log(`  card_grade: partial   ${partial}`);
 console.log(`  合計 ${recs.length}`);
 
-if (demoted.length) {
-  console.log(`\n  有記 actions_en 出處、但今天並未通過全部規則的 ${demoted.length} 筆 → partial：`);
-  console.log("    " + demoted.join("、"));
-  console.log("    ↑ 這些不是被降級 —— 它們本來就沒做完，只是舊定義看不出來。");
+console.log(`\n  partial 的兩種原因：`);
+console.log(`    結構未齊（缺英文對照／缺禁忌／功效條數不符）  ${incomplete.length}`);
+console.log(`    結構齊但功效層完全沒記出處                    ${noProvenance.length}`);
+if (noProvenance.length) {
+  console.log("      " + noProvenance.slice(0, 14).join("、") + (noProvenance.length > 14 ? ` …(${noProvenance.length})` : ""));
+  console.log("      ↑ 這些通過結構檢查，但沒有人記下內容出自哪裡。§紅線5：沒核讀過就不算來源。");
 }
-if (promoted.length) {
-  console.log(`\n  通過全部規則但沒記 actions_en 出處的 ${promoted.length} 筆，仍算 partial（沒有出處就不算做完）：`);
-  console.log("    " + promoted.slice(0, 12).join("、"));
+if (newlyCounted.length) {
+  console.log(`\n  舊定義看不見、這次正確計入 template 的 ${newlyCounted.length} 筆：`);
+  console.log("    " + newlyCounted.slice(0, 14).join("、") + (newlyCounted.length > 14 ? ` …(${newlyCounted.length})` : ""));
+  console.log("    ↑ 出處記在 field_sources.functions_zh（Codex 批次的寫法），不是 actions_en。");
 }
 
-// 這支腳本不該改變驗證結果。標成 template 的筆數必須等於舊定義下真的全綠的筆數。
-const oldGreen = recs.filter((r) => claimedBefore(r) && passesEveryRule(r)).length;
-if (template !== oldGreen) {
-  console.error(`\n❌ 標成 template 的有 ${template} 筆，但舊定義下全綠的是 ${oldGreen} 筆 —— 不寫入`);
+/* 唯一不可以發生的事：舊定義下已經全綠的紀錄被靜默降級。
+   數量可以往上（承認別人做完的卡），不可以往下（把做完的說成沒做完）。 */
+const silentlyDemoted = recs.filter(
+  (r) => claimedUnderOldRule(r) && passesEveryRule(r) && r.card_grade !== "template"
+);
+if (silentlyDemoted.length) {
+  console.error(`\n❌ ${silentlyDemoted.length} 筆原本全綠卻被降級 —— 不寫入`);
+  silentlyDemoted.slice(0, 10).forEach((r) => console.error("  " + r.name_zh));
   process.exit(1);
 }
-console.log("\n✅ 沒有紀錄因此升級或降級；只是把既有判定寫成明文");
+console.log("\n✅ 沒有任何原本全綠的紀錄被降級；partial 的每一筆都說得出是缺結構還是缺出處");
 
 if (!APPLY) { console.log("\n(dry run — pass --apply)"); process.exit(0); }
 const indent = /^\{?\[?\n(\s+)"/.exec(raw)?.[1]?.length || 2;

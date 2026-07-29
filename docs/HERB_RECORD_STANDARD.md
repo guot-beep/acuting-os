@@ -15,7 +15,7 @@ Ting 2026-07-25:「感覺還不夠系統,請制定更規範,然後大家都可�
 | `name_zh` / `name_en` / `pinyin` | string | 必填；`name_en` 是拼音旁的英文 common name，**不得放 pharmaceutical Latin**；pinyin **帶聲調**(Dù Zhòng,不是 Du Zhong)— 新填/改到的一律帶調 |
 | `pharmaceutical_latin` | string | 必填；正式拉丁藥名，獨立顯示於標頭下一排，不得拿來取代 `name_en` |
 | `category` | string | **必須**出自 `data/config/herb_category_canon.json` 的 `categories`;要新分類 → 先經 Claude 加進 canon,再用 |
-| `properties_taste_temp` | string | 性味+溫度,如「辛、微苦、溫」 |
+| `properties_taste_temp` | string | 性味+溫度,如「辛、微苦、溫」。**只能放味與寒熱/毒性；不可塞歸經、來源差異、課件/CloudTCM/AD 說明。** |
 | `channels_zh` | array | 歸經,如 ["肺經","膀胱經"] |
 | `functions_zh` | array | **只放傳統功效**(發汗解表…)。現代藥理絕不混進來 |
 | `modern_functions_zh` | array | **只放現代藥理**(抗發炎…)；不設筆數上限，來源有幾則有效資料就完整保留 |
@@ -100,6 +100,11 @@ modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
    可溯源的對藥就建立幾筆，不得只取第一組或把不同配伍合併。
 7. A+B 與 B+A 是同一筆正式 pair record，避免反向重複；渲染器會讓它同時出現
    在 A、B 兩味藥卡。只有來源確實只支持一組時，卡片才只有一則。
+8. **對藥可以先引用尚未建立的 herb ID。** 若課件、NCBAHM Appendix B 或 American Dragon
+   明確列出重要配伍，但其中一味本地卡尚未建立，仍應建立正式 `herb_pairs.json` 記錄；
+   在 `sources`、`caution_zh` 或 handoff 中標註該 herb ID is pending card creation。
+   前端會先不建立可點連結；之後補上該 herb card 時自然恢復連結。不要因本地卡片尚缺就刪掉
+   board/AD 支持的配伍。
 
 ## 5. 待補的深度層(next passes)
 
@@ -109,3 +114,22 @@ modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
 - **中英標籤補齊**:目前 `modern_functions_en` 缺 195 筆、`condition_tags_en`
   缺 171 筆、`cautions_en` 缺 261 筆 —— 這是接下來批次的明確工作量。
 - **帶聲調拼音**:208 筆待補。
+
+## 2026-07-28 dosage source-difference rule
+
+When source dosage ranges differ, do not collapse the card to only the highest-priority source. Keep the course dose and the external-source dose visible in `dosage_g.standard_daily_g`.
+
+Example for Jue Ming Zi:
+
+`6–10g（課件）/ 9–15g（AD、CloudTCM）`
+
+Then keep special forms and non-standard use in the dose note, for example:
+
+`粉末 3–6g（American Dragon）；食療 6–12g（CloudTCM）。`
+
+Rules:
+
+- Course/NCBAHM-aligned dose remains first.
+- AD / CloudTCM / other reviewed professional-source differences are preserved, not silently discarded.
+- Powder, pill, wine, topical, internal, severe-case, fresh-herb, dietary-use, and granule/product doses must be separated in `source_note` or `granule_note`.
+- Toxic herbs and internal/external medicines must never merge separate dose forms into one vague daily raw-herb dose.
