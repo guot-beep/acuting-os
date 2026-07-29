@@ -26,15 +26,10 @@
     "scope_note": "Board-outline herb coverage audit; separate from the older 202 CloudTCM herb seed count.",
     "matching_method": "Normalized Appendix A pinyin against local name_zh AND aliases_zh/aliases_en. Sha Yuan Ji Li → 沙苑子 and Yin Chen → 茵陳蒿 were counted missing only because those two records had empty alias arrays; aliases added rather than new cards created, so no duplicate herb was introduced (E9).",
     "appendix_a_total": 304,
-    "local_herb_cards": 306,
-    "matched_to_local_cards": 283,
-    "missing_card_count": 21,
+    "local_herb_cards": 311,
+    "matched_to_local_cards": 288,
+    "missing_card_count": 16,
     "missing_cards": [
-      "Kun Bu",
-      "Lian Xu",
-      "Lian Zi Xin",
-      "Ling Zhi",
-      "Lu Dou",
       "Lu Lu Tong",
       "Ou Jie",
       "Qin Pi",
@@ -73,29 +68,29 @@
     ],
     "last_updated": "2026-07-29",
     "last_completed_cards": [
-      "Fu Pen Zi",
-      "Ge Jie",
-      "Gou Ji",
-      "Gu Sui Bu",
-      "Gu Ya"
-    ],
-    "next_recommended_batch": [
       "Kun Bu",
       "Lian Xu",
       "Lian Zi Xin",
       "Ling Zhi",
       "Lu Dou"
+    ],
+    "next_recommended_batch": [
+      "Lu Lu Tong",
+      "Ou Jie",
+      "Qin Pi",
+      "Qing Dai",
+      "Sang Zhi"
     ],
     "ncbahm_2026_ch_appendix_a_total": 304,
     "last_quality_update": "2026-07-29",
     "next_priority": [
-      "Kun Bu",
-      "Lian Xu",
-      "Lian Zi Xin",
-      "Ling Zhi",
-      "Lu Dou"
+      "Lu Lu Tong",
+      "Ou Jie",
+      "Qin Pi",
+      "Qing Dai",
+      "Sang Zhi"
     ],
-    "note": "23 → 21: two of the reported gaps were alias-matching failures on cards that already existed. Building them would have created duplicate herbs. The remaining 21 are genuinely absent. Note also 6 herb_pairs entries point at herb ids that do not exist (herb.ju_he 橘核, herb.qing_xiang_zi 青葙子, herb.gu_jing_cao 穀精草, herb.nan_sha_shen 南沙參, plus herb.she_chuang_zi and herb.kun_bu which are on the Appendix A list) — 4 of those are outside the Appendix A scope, so clearing Appendix A alone will not fix every broken pair link."
+    "note": "23 → 21 (dedup fix) → 16: batch 12 built Kun Bu/Lian Xu/Lian Zi Xin/Ling Zhi/Lu Dou against curriculum + American Dragon + CloudTCM (network-verified). 16 genuinely absent remain. 4 herb_pairs entries still point at herb ids outside Appendix A scope (橘核, 青葙子, 穀精草, 南沙參)."
   },
   "channels": {
     "BL": {
@@ -572,5 +567,6 @@
       "missing": []
     }
   },
-  "updated_at": "2026-07-29"
+  "updated_at": "2026-07-29",
+  "last_quality_update": "2026-07-29"
 }

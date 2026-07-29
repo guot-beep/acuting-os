@@ -53,6 +53,8 @@ the id into `data/acupoints/point_id_manifest.json`.
 
 Status: OPEN. Source of truth for the live Quality page is `data/audits/missing_report.json.herb_outline_coverage`.
 
+Update 2026-07-29 (Claude, network-verified session) — dedup fix + batch12: before building the reported-missing list, alias-matched every candidate against the canon; Sha Yuan Ji Li and Yin Chen were already present as `herb.sha_yuan_zi`/`herb.yin_chen_hao` with empty alias arrays, so aliases were added instead of creating duplicates (23 → 21 missing, no new records). Then built batch12: Kun Bu, Lian Xu, Lian Zi Xin, Ling Zhi, Lu Dou — each verified against curriculum + a live American Dragon page fetch + a live CloudTCM page fetch (this session has network access; prior sessions did not). Local herb cards now 311. Normalized Appendix A matching is 288/304 with 16 card candidates still missing. Next recommended batch (13): Lu Lu Tong; Ou Jie; Qin Pi; Qing Dai; Sang Zhi.
+
 Update 2026-07-29 batch11: local herb cards are now 306 after adding He Tao Ren, Hu Jiao, Huai Mi, Jin Ying Zi, and Jing Mi. Normalized Appendix A matching is now 281/304 with 23 card candidates still missing. Next recommended batch: Kun Bu; Lian Xu; Lian Zi Xin; Ling Zhi; Lu Dou.
 
 Update 2026-07-29 batch10: local herb cards were 301 after adding Gua Lou Pi, Gua Lou Ren, Hai Piao Xiao, Hai Tong Pi, and Hai Zao. Normalized Appendix A matching was 276/304 with 28 card candidates still missing.

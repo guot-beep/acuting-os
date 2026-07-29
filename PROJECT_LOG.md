@@ -1,5 +1,12 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Claude — NCBAHM CH missing herbs batch 12 (network-verified): Kun Bu, Lian Xu, Lian Zi Xin, Ling Zhi, Lu Dou
+
+- First re-confirmed the dedup trap in Ting's forwarded 23-item list: Sha Yuan Ji Li / Yin Chen were already fixed on this branch as `herb.sha_yuan_zi`/`herb.yin_chen_hao` (aliases added, no duplicates) — real gap was 21, not 23.
+- Built 5 full herb cards with live-fetched American Dragon + CloudTCM pages (this session has network access) plus Chenoweth curriculum files, following the `herb.he_tao_ren` template: source conflicts kept side by side (species basionym for Kun Bu, dosage ranges for all five), no fake consensus.
+- Updated Quality herb-outline audit from 283/304 matched / 21 missing to 288/304 matched / 16 missing; local herb cards now 311.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; card-grade stamper graded all 5 `template` (full pass). Full validate-data/validate-encoding/validate-herb-canon still fail on pre-existing issues unrelated to this batch (acupoint safety lines, CloudTCM/Tung import encoding, and a legacy herb schema ~175 pre-existing records already fail) — confirmed pre-existing by comparing failure counts before/after this batch.
+
 ## 2026-07-29 Codex — homepage video asset
 
 - Replaced the static homepage illustration render with Ting's `curriculum/Home/Home.mp4` video while keeping `assets/home-acuting-watercolor.png` as the poster fallback.
