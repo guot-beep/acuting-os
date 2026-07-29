@@ -17,6 +17,12 @@
   function modeText(bilingual, english) {
     return isEnglishMode() ? english : bilingual;
   }
+  function displayLabel(zh, en, fallback = "") {
+    const cleanZh = String(zh || "").trim();
+    const cleanEn = String(en || "").trim();
+    if (isEnglishMode()) return cleanEn || cleanZh || fallback;
+    return cleanZh && cleanEn ? `${cleanZh} \u00B7 ${cleanEn}` : (cleanZh || cleanEn || fallback);
+  }
   function applyKnowledgeModeText() {
     const formulaFilter = el("formulaFilter");
     if (formulaFilter) formulaFilter.placeholder = modeText("搜尋方劑、拼音、分類、證型、現代標籤… Search formula, pinyin, category, pattern...", "Search formulas, pinyin, category, patterns, modern tags...");
@@ -72,7 +78,7 @@
   function conceptLabel(id) {
     const c = MODERN_VOCAB.get(id);
     if (!c) return id;
-    return c.name_zh && c.name_en ? `${c.name_zh} · ${c.name_en}` : (c.name_zh || c.name_en);
+    return displayLabel(c.name_zh, c.name_en, id);
   }
   function activeConceptBar() {
     if (!activeConcept) return "";
@@ -105,9 +111,7 @@
     });
     const dedupe = (arr) => [...new Map(arr.map((c) => [c.id, c])).values()];
     const chip = (c, cls) => {
-      const zh = c.name_zh || "";
-      const en = c.name_en || "";
-      const text = zh && en ? `${zh} · ${en}` : (zh || en || c.id);
+      const text = displayLabel(c.name_zh, c.name_en, c.id);
       const on = activeConcept === c.id ? " is-active" : "";
       return `<button type="button" class="k-modern-chip ${cls}${on}" data-concept-id="${esc(c.id)}"
         title="顯示所有含此項目的方劑與中藥">${esc(text)}</button>`;
@@ -123,6 +127,19 @@
       block("其他", "Other", groups.unmapped, "is-unmapped")
     ].join("");
     return out || '<p class="k-detail-empty">—</p>';
+  }
+
+  function modernInlineChips(values, limit = 6) {
+    const seen = new Set();
+    const chips = [];
+    (values || []).forEach((raw) => {
+      const c = resolveModernTag(raw);
+      if (c.type === "internal" || seen.has(c.id) || chips.length >= limit) return;
+      seen.add(c.id);
+      const on = activeConcept === c.id ? " is-active" : "";
+      chips.push(`<button type="button" class="k-modern-chip is-inline ${c.type ? `is-${esc(c.type)}` : ""}${on}" data-concept-id="${esc(c.id)}">${esc(displayLabel(c.name_zh, c.name_en, c.id))}</button>`);
+    });
+    return chips.join("");
   }
   /* 相關病名與證型 was printing raw ids (pattern.spleen_qi_deficiency). The
      registries already carry bilingual names — the pattern library has 脾氣虛 /
@@ -147,7 +164,7 @@
     if (r) {
       const zh = r.name_zh || "";
       const en = r.name_en || "";
-      return zh && en ? `${zh} · ${en}` : (zh || en || id);
+      return displayLabel(zh, en, id);
     }
     // Unknown id: humanise rather than expose the key.
     return String(id).replace(/^[a-z_]+\./, "").replace(/_/g, " ")
@@ -179,7 +196,7 @@
   function comparisonGroupLabel(id) {
     if (!id) return "";
     const g = COMPARE_VOCAB.get(String(id).trim());
-    return g ? `${g.name_zh} · ${g.name_en}` : String(id).replace(/_/g, " ");
+    return g ? displayLabel(g.name_zh, g.name_en, id) : String(id).replace(/_/g, " ");
   }
 
   const SAFETY_VOCAB = new Map(
@@ -187,7 +204,7 @@
   );
   function safetyFlagLabel(flag) {
     const f = SAFETY_VOCAB.get(String(flag).trim());
-    return f ? `${f.name_zh} · ${f.name_en}` : String(flag).replace(/_/g, " ");
+    return f ? displayLabel(f.name_zh, f.name_en, flag) : String(flag).replace(/_/g, " ");
   }
   function safetyList(flags) {
     return (flags || []).map(safetyFlagLabel);
@@ -328,7 +345,14 @@
 
   function formulaLabel(id) {
     const record = formulaById.get(id);
-    return record ? `${record.name_zh || record.pinyin} · ${record.pinyin || record.name_en}` : id;
+    if (record) return displayLabel(record.name_zh, record.pinyin || record.name_en, id);
+    return String(id || "").replace(/^formula\./, "").replace(/_/g, " ").replace(/^\w/, (m) => m.toUpperCase());
+  }
+
+  function formulaChips(ids) {
+    return (ids || []).filter(Boolean)
+      .map((id) => `<span class="k-link-chip">${esc(formulaLabel(id))}</span>`)
+      .join(" ");
   }
 
   function sourceLinks(record) {
@@ -1062,7 +1086,7 @@
               </div>
               <div class="k-row-side">
                 ${statusPill(f.review_status)}
-                <p class="k-tags">${searchTags.map(tag).join("")}</p>
+                <p class="k-tags">${modernInlineChips(searchTags, 5)}</p>
                 <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
               </div>
             </article>`;
@@ -1075,8 +1099,8 @@
             </header>
             <p class="k-en">${esc(f.name_en)}</p>
             <p class="k-meta">${esc(meta)}</p>
-            <p class="k-tags">${[...(f.pattern_focus_en || []), ...searchTags].slice(0, 8).map(tag).join("")}</p>
-            ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(esc).join(" · ")}</p>` : ""}
+            <p class="k-tags">${(f.pattern_focus_en || []).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}</p>
+            ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
             <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
           </article>`;
       }).join("");
@@ -1172,7 +1196,7 @@
         <p class="k-en">${esc(f.name_en)}</p>
         <p class="k-meta">${esc(f.category_en)}${f.nccaom_high_yield ? " · NCCAOM high-yield" : ""}</p>
         <p class="k-tags">${(f.pattern_focus_en || []).map(tag).join("")}</p>
-        ${(f.safety_flags || []).length ? `<p class="k-flags">⚠ ${(f.safety_flags || []).map(esc).join(" · ")}</p>` : ""}
+        ${(f.safety_flags || []).length ? `<p class="k-flags">⚠ ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
       </article>`).join("");
 
     const box = document.createElement("div");
@@ -1216,10 +1240,10 @@
           <p class="k-en">${esc(h.name_en)}</p>
           <p class="k-meta">${esc(herbCategory(h))}</p>
           <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
-          <p class="k-tags">${modernTags.map(tag).join("")}</p>
-          ${formulaLinks.length ? `<p class="k-meta">Related formulas: ${formulaLinks.map((id) => `<span class="k-link-chip">${esc(id)}</span>`).join(" ")}</p>` : ""}
-          ${safetyFlags.length ? `<p class="k-flags">Review: ${safetyFlags.map(esc).join(" ・ ")}</p>` : ""}
-          <p class="k-meta">draft - source review pending - study reference only</p>
+          <p class="k-tags">${modernInlineChips(modernTags, 5)}</p>
+          ${formulaLinks.length ? `<p class="k-meta">${esc(modeText("相關方劑：", "Related formulas:"))} ${formulaChips(formulaLinks)}</p>` : ""}
+          ${safetyFlags.length ? `<p class="k-flags">${esc(modeText("審核：", "Review:"))} ${safetyFlags.map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+          <p class="k-meta">${esc(modeText("草稿 · 來源待審 · 學習參考", "draft · source review pending · study reference only"))}</p>
           <button type="button" class="k-open-detail" data-detail-kind="herb" data-detail-id="${esc(h.id)}">${esc(modeText("查看中藥卡", "Open herb card"))}</button>
         </article>`;
     }).join("");

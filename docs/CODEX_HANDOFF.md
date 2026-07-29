@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Herb/formula lookup label resolver
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Ting reported herb lookup cards were showing raw internal codes (`common_cold`, `uri`, `formula.ma_huang_tang`, `pregnancy_priority_review`) instead of readable labels, making the page feel like a database/debug screen.
+- **Files changed**: `js/knowledge.js`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: added one mode-aware `displayLabel()` helper; routed modern application tags, safety flags, comparison/entity labels, and related formula chips through resolvers; list cards now show bilingual labels in 中英版 and English-facing labels in Public EN.
+- **Implementation note**: entity IDs remain immutable and searchable; only display text changed. Unknown formula IDs now fall back to humanized text instead of raw `formula.*` strings.
+- **Validation**: bundled Node `--check js/knowledge.js` PASS; `scripts/validate-interactions.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no herb/formula records, generated data, scripts, schema, source curriculum, or clinical case data touched.
+- **Manual check**: Ctrl+F5, search herbs such as 麻黃/桂枝; confirm modern-use chips, related formulas, and Review flags are human-readable in both 中英版 and Public EN.
+
 ## [2026-07-29] Codex Handoff - Homepage watercolor illustration
 
 - **Branch**: `codex/herbs-missing-cards-batch8`

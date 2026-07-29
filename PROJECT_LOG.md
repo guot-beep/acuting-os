@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — herb/formula lookup label resolver
+
+- Fixed herb/formula lookup cards so internal IDs no longer render as user-facing labels: modern tags, safety review flags, and related formula IDs now pass through bilingual/English display resolvers.
+- Chinese/bilingual mode now shows labels like `感冒 · Common cold` and `麻黃湯 · Ma Huang Tang`; Public EN mode shows English-facing labels like `Common cold` and `Ma Huang Tang`.
+- Kept immutable IDs unchanged for search/data integrity; this is display-only, not a data migration.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: search herbs such as 麻黃/桂枝 and confirm no `common_cold`, `uri`, `formula.ma_huang_tang`, or `pregnancy_priority_review` chips appear in the card list.
+
 ## 2026-07-29 Codex — homepage watercolor illustration
 
 - Replaced the experimental inline SVG homepage art with Ting's selected watercolor-style AcuTing illustration as the single local image asset: `assets/home-acuting-watercolor.png`.
