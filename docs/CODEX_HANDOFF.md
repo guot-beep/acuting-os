@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Soften exterior-pattern chip colors
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Ting liked the distinction but found the 風寒/風熱/表虛 pattern chips too visually loud and asked for softer colors and no bold.
+- **Files changed**: `styles.css`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: reduced pattern-chip font weight/size/padding and changed saturated blue/red/purple/green chips to low-saturation parchment-compatible tones.
+- **Validation**: bundled Node `--check js/knowledge.js` PASS; `scripts/validate-interactions.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no data records, generated files, scripts, schema, source curriculum, or clinical cases touched.
+- **Manual check**: search 麻黃, 桂枝, 葛根; confirm pattern chips are readable but no longer visually noisy.
+
 ## [2026-07-29] Codex Handoff - Distinguish TCM cold patterns in lookup chips
 
 - **Branch**: `codex/herbs-missing-cards-batch9`

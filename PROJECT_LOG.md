@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — soften exterior-pattern chip colors
+
+- Softened the new exterior-pattern chips so 風寒/風熱/暑濕/表虛/表實 remain distinguishable without visually overpowering herb/formula cards.
+- Reduced pattern-chip font size/weight and replaced saturated blue/red/purple colors with muted parchment-compatible tones.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: search 麻黃, 桂枝, 葛根; confirm pattern chips feel like gentle hints rather than warning labels.
+- No data/content records changed.
+
 ## 2026-07-29 Codex — distinguish TCM cold patterns in lookup chips
 
 - Added a front-end TCM exterior-pattern hint layer for herb/formula lookup cards so biomedical `感冒 / Common cold` tags do not flatten board-relevant distinctions.

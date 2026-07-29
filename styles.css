@@ -5026,41 +5026,41 @@ body.point-detail-mode .module-drawer {
   align-items: center;
   border: 1px solid transparent;
   border-radius: 999px;
-  font-size: 0.86rem;
-  font-weight: 800;
+  font-size: 0.84rem;
+  font-weight: 500;
   line-height: 1.2;
-  padding: 0.32rem 0.72rem;
+  padding: 0.3rem 0.68rem;
 }
 .k-pattern-chip.is-wind-cold,
 .k-pattern-chip.is-wind-cold-lung {
-  background: rgba(59, 130, 246, 0.14);
-  border-color: rgba(59, 130, 246, 0.34);
-  color: #1d4ed8;
+  background: #eef5f7;
+  border-color: #cbdde2;
+  color: #46606a;
 }
 .k-pattern-chip.is-wind-heat {
-  background: rgba(239, 68, 68, 0.12);
-  border-color: rgba(239, 68, 68, 0.32);
-  color: #b91c1c;
+  background: #f8eeee;
+  border-color: #ead0ca;
+  color: #7b514b;
 }
 .k-pattern-chip.is-summerheat-damp {
-  background: rgba(132, 204, 22, 0.16);
-  border-color: rgba(101, 163, 13, 0.32);
-  color: #4d7c0f;
+  background: #f1f4e8;
+  border-color: #d8dfc2;
+  color: #5d6742;
 }
 .k-pattern-chip.is-exterior-deficiency {
-  background: rgba(168, 85, 247, 0.13);
-  border-color: rgba(168, 85, 247, 0.32);
-  color: #7e22ce;
+  background: #f3eef6;
+  border-color: #ddd0e5;
+  color: #67536f;
 }
 .k-pattern-chip.is-exterior-excess {
-  background: rgba(15, 118, 110, 0.12);
-  border-color: rgba(15, 118, 110, 0.32);
-  color: #0f766e;
+  background: #edf3ef;
+  border-color: #ccdcd2;
+  color: #4c6557;
 }
 .k-pattern-chip.is-unspecified {
-  background: rgba(245, 158, 11, 0.14);
-  border-color: rgba(245, 158, 11, 0.36);
-  color: #92400e;
+  background: #f7f0df;
+  border-color: #e4d6b9;
+  color: #725d36;
 }
 
 /* Tag chips are now buttons: tap one to see everything carrying it */
