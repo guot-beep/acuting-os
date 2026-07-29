@@ -396,7 +396,27 @@
       "pattern_tags_en": [
         "Ying-Wei Disharmony",
         "Exterior Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 39,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 18,
+          "補虛": 21
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 9g",
+            "生薑 9g"
+          ],
+          "補虛": [
+            "白芍 9g",
+            "甘草 6g",
+            "大棗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ma_huang_tang",
@@ -864,7 +884,29 @@
       ],
       "pattern_tags_en": [
         "Exterior Excess"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 27,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 15,
+          "補虛": 3,
+          "化痰止咳": 9
+        },
+        "groups_herbs": {
+          "解表": [
+            "麻黃 9g",
+            "桂枝 6g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "杏仁 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xiao_qing_long_tang",
@@ -1164,7 +1206,39 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 41
+      "cloudtcm_id": 41,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 81,
+        "herb_count": 8,
+        "groups_g": {
+          "解表": 27,
+          "溫裡": 9,
+          "補虛": 18,
+          "化痰止咳": 15,
+          "安神收澀": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "麻黃 9g",
+            "桂枝 9g",
+            "細辛 9g"
+          ],
+          "溫裡": [
+            "乾薑 9g"
+          ],
+          "補虛": [
+            "白芍 9g",
+            "甘草 9g"
+          ],
+          "化痰止咳": [
+            "半夏 15g"
+          ],
+          "安神收澀": [
+            "五味子 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.jiu_wei_qiang_huo_tang",
@@ -1420,7 +1494,40 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 9
+      "cloudtcm_id": 9,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 34,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 14,
+          "清熱瀉下": 9,
+          "祛濕": 5,
+          "理氣活血": 3,
+          "補虛": 3
+        },
+        "groups_herbs": {
+          "解表": [
+            "防風 5g",
+            "羌活 5g",
+            "白芷 3g",
+            "細辛 1g"
+          ],
+          "清熱瀉下": [
+            "生地黃 6g",
+            "黃芩 3g"
+          ],
+          "祛濕": [
+            "蒼朮 5g"
+          ],
+          "理氣活血": [
+            "川芎 3g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.yin_qiao_san",
@@ -1750,7 +1857,37 @@
       ],
       "pattern_tags_en": [
         "Wind-Heat"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 168,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 63,
+          "清熱瀉下": 72,
+          "補虛": 15,
+          "化痰止咳": 18
+        },
+        "groups_herbs": {
+          "解表": [
+            "薄荷 18g",
+            "牛蒡子 18g",
+            "淡豆豉 15g",
+            "荊芥 12g"
+          ],
+          "清熱瀉下": [
+            "金銀花 30g",
+            "連翹 30g",
+            "淡竹葉 12g"
+          ],
+          "補虛": [
+            "甘草 15g"
+          ],
+          "化痰止咳": [
+            "桔梗 18g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.sang_ju_yin",
@@ -2113,7 +2250,36 @@
       "pattern_tags_en": [
         "Wind-Heat",
         "Lung Heat"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 38.5,
+        "herb_count": 8,
+        "groups_g": {
+          "解表": 13,
+          "清熱瀉下": 11,
+          "補虛": 2.5,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "桑葉 7.5g",
+            "菊花 3g",
+            "薄荷 2.5g"
+          ],
+          "清熱瀉下": [
+            "蘆根 6g",
+            "連翹 5g"
+          ],
+          "補虛": [
+            "甘草 2.5g"
+          ],
+          "化痰止咳": [
+            "杏仁 6g",
+            "桔梗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xiang_su_san",
@@ -2225,7 +2391,29 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 33,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 12,
+          "理氣活血": 18,
+          "補虛": 3
+        },
+        "groups_herbs": {
+          "解表": [
+            "紫蘇葉 12g"
+          ],
+          "理氣活血": [
+            "香附 12g",
+            "陳皮 6g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.jing_fang_bai_du_san",
@@ -2396,7 +2584,42 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 84,
+        "herb_count": 11,
+        "groups_g": {
+          "解表": 36,
+          "祛濕": 18,
+          "理氣活血": 12,
+          "補虛": 3,
+          "化痰止咳": 15
+        },
+        "groups_herbs": {
+          "解表": [
+            "荊芥 9g",
+            "防風 9g",
+            "羌活 9g",
+            "柴胡 9g"
+          ],
+          "祛濕": [
+            "獨活 9g",
+            "茯苓 9g"
+          ],
+          "理氣活血": [
+            "川芎 6g",
+            "枳殼 6g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "前胡 9g",
+            "桔梗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.chai_ge_jie_ji_tang",
@@ -2553,7 +2776,37 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 66,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 33,
+          "清熱瀉下": 21,
+          "補虛": 9,
+          "化痰止咳": 3
+        },
+        "groups_herbs": {
+          "解表": [
+            "柴胡 9g",
+            "葛根 12g",
+            "羌活 6g",
+            "白芷 6g"
+          ],
+          "清熱瀉下": [
+            "黃芩 6g",
+            "石膏 15g"
+          ],
+          "補虛": [
+            "白芍 6g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "桔梗 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ge_gen_tang",
@@ -2837,7 +3090,23 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 27,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 27
+        },
+        "groups_herbs": {
+          "解表": [
+            "蒼耳子 9g",
+            "辛夷 6g",
+            "白芷 9g",
+            "薄荷 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ren_shen_bai_du_san",
@@ -3057,7 +3326,35 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 42,
+        "herb_count": 7,
+        "groups_g": {
+          "解表": 21,
+          "清熱瀉下": 3,
+          "補虛": 12,
+          "化痰止咳": 6
+        },
+        "groups_herbs": {
+          "解表": [
+            "薄荷 6g",
+            "蔥白 6g",
+            "淡豆豉 9g"
+          ],
+          "清熱瀉下": [
+            "白薇 3g"
+          ],
+          "補虛": [
+            "玉竹 9g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "桔梗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.bai_hu_tang",
@@ -3280,7 +3577,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 98
+      "cloudtcm_id": 98,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 63,
+        "herb_count": 3,
+        "groups_g": {
+          "清熱瀉下": 60,
+          "補虛": 3
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "知母 30g",
+            "石膏 30g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.zhu_ye_shi_gao_tang",
@@ -3549,7 +3864,31 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 108
+      "cloudtcm_id": 108,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 77,
+        "herb_count": 6,
+        "groups_g": {
+          "清熱瀉下": 36,
+          "補虛": 32,
+          "化痰止咳": 9
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "石膏 30g",
+            "淡竹葉 6g"
+          ],
+          "補虛": [
+            "麥門冬 20g",
+            "人參 6g",
+            "甘草 6g"
+          ],
+          "化痰止咳": [
+            "半夏 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.huang_lian_jie_du_tang",
@@ -3776,7 +4115,23 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 244
+      "cloudtcm_id": 244,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 39,
+        "herb_count": 4,
+        "groups_g": {
+          "清熱瀉下": 39
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃芩 12g",
+            "梔子 12g",
+            "黃連 9g",
+            "黃柏 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xie_xin_tang",
@@ -4302,7 +4657,26 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 306
+      "cloudtcm_id": 306,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 33,
+        "herb_count": 4,
+        "groups_g": {
+          "清熱瀉下": 18,
+          "補虛": 15
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃連 12g",
+            "黃芩 6g"
+          ],
+          "補虛": [
+            "白芍 6g",
+            "阿膠 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.dao_chi_san",
@@ -4505,7 +4879,29 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 281
+      "cloudtcm_id": 281,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 24,
+        "herb_count": 4,
+        "groups_g": {
+          "清熱瀉下": 12,
+          "祛濕": 6,
+          "補虛": 6
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "淡竹葉 6g",
+            "生地黃 6g"
+          ],
+          "祛濕": [
+            "木通 6g"
+          ],
+          "補虛": [
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.long_dan_xie_gan_tang",
@@ -4952,7 +5348,38 @@
         "Liver-Gallbladder Fire",
         "Damp-Heat",
         "Lower Jiao"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 108,
+        "herb_count": 10,
+        "groups_g": {
+          "解表": 9,
+          "清熱瀉下": 48,
+          "祛濕": 33,
+          "補虛": 18
+        },
+        "groups_herbs": {
+          "解表": [
+            "柴胡 9g"
+          ],
+          "清熱瀉下": [
+            "生地黃 15g",
+            "黃芩 12g",
+            "梔子 12g",
+            "龍膽草 9g"
+          ],
+          "祛濕": [
+            "車前子 15g",
+            "澤瀉 12g",
+            "木通 6g"
+          ],
+          "補虛": [
+            "當歸 12g",
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.qing_wei_san",
@@ -5163,7 +5590,30 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 211
+      "cloudtcm_id": 211,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 36,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 9,
+          "清熱瀉下": 21,
+          "補虛": 6
+        },
+        "groups_herbs": {
+          "解表": [
+            "升麻 9g"
+          ],
+          "清熱瀉下": [
+            "牡丹皮 9g",
+            "黃連 6g",
+            "生地黃 6g"
+          ],
+          "補虛": [
+            "當歸 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xie_bai_san",
@@ -5679,7 +6129,27 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 567
+      "cloudtcm_id": 567,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 48,
+        "herb_count": 5,
+        "groups_g": {
+          "清熱瀉下": 33,
+          "補虛": 15
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "生地黃 12g",
+            "牡丹皮 9g",
+            "青蒿 6g",
+            "知母 6g"
+          ],
+          "補虛": [
+            "鱉甲 15g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.qing_gu_san",
@@ -5944,7 +6414,24 @@
         "Eczema with Fever"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 21,
+        "herb_count": 2,
+        "groups_g": {
+          "祛濕": 18,
+          "補虛": 3
+        },
+        "groups_herbs": {
+          "祛濕": [
+            "滑石 18g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.wu_wei_xiao_du_yin",
@@ -6309,7 +6796,29 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 32
+      "cloudtcm_id": 32,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 57,
+        "herb_count": 4,
+        "groups_g": {
+          "清熱瀉下": 30,
+          "祛濕": 18,
+          "理氣活血": 9
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "大黃 12g",
+            "芒硝 18g"
+          ],
+          "祛濕": [
+            "厚朴 18g"
+          ],
+          "理氣活血": [
+            "枳實 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xiao_cheng_qi_tang",
@@ -6553,7 +7062,28 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 40
+      "cloudtcm_id": 40,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 30,
+        "herb_count": 3,
+        "groups_g": {
+          "清熱瀉下": 12,
+          "祛濕": 9,
+          "理氣活血": 9
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "大黃 12g"
+          ],
+          "祛濕": [
+            "厚朴 9g"
+          ],
+          "理氣活血": [
+            "枳實 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.tiao_wei_cheng_qi_tang",
@@ -6762,7 +7292,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 277
+      "cloudtcm_id": 277,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 28,
+        "herb_count": 3,
+        "groups_g": {
+          "清熱瀉下": 22,
+          "補虛": 6
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "芒硝 12g",
+            "大黃 10g"
+          ],
+          "補虛": [
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.zeng_ye_cheng_qi_tang",
@@ -7187,7 +7735,37 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 222
+      "cloudtcm_id": 222,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 138,
+        "herb_count": 6,
+        "groups_g": {
+          "清熱瀉下": 48,
+          "祛濕": 24,
+          "理氣活血": 24,
+          "補虛": 24,
+          "化痰止咳": 18
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "火麻仁 30g",
+            "大黃 18g"
+          ],
+          "祛濕": [
+            "厚朴 24g"
+          ],
+          "理氣活血": [
+            "枳實 24g"
+          ],
+          "補虛": [
+            "白芍 24g"
+          ],
+          "化痰止咳": [
+            "杏仁 18g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.run_chang_wan",
@@ -7658,7 +8236,35 @@
       ],
       "pattern_tags_en": [
         "Liver & Gallbladder"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 78,
+        "herb_count": 7,
+        "groups_g": {
+          "解表": 33,
+          "清熱瀉下": 9,
+          "補虛": 24,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "柴胡 24g",
+            "生薑 9g"
+          ],
+          "清熱瀉下": [
+            "黃芩 9g"
+          ],
+          "補虛": [
+            "人參 9g",
+            "甘草 9g",
+            "大棗 6g"
+          ],
+          "化痰止咳": [
+            "半夏 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.da_chai_hu_tang",
@@ -7909,7 +8515,39 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 35
+      "cloudtcm_id": 35,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 88,
+        "herb_count": 8,
+        "groups_g": {
+          "解表": 36,
+          "清熱瀉下": 16,
+          "理氣活血": 12,
+          "補虛": 12,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "柴胡 24g",
+            "生薑 12g"
+          ],
+          "清熱瀉下": [
+            "黃芩 10g",
+            "大黃 6g"
+          ],
+          "理氣活血": [
+            "枳實 12g"
+          ],
+          "補虛": [
+            "白芍 6g",
+            "大棗 6g"
+          ],
+          "化痰止咳": [
+            "半夏 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.chai_hu_gui_zhi_tang",
@@ -8343,7 +8981,33 @@
       "pattern_tags_en": [
         "Liver Qi Stagnation",
         "Spleen Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 60,
+        "herb_count": 8,
+        "groups_g": {
+          "解表": 18,
+          "祛濕": 9,
+          "補虛": 33
+        },
+        "groups_herbs": {
+          "解表": [
+            "薄荷 3g",
+            "柴胡 9g",
+            "生薑 6g"
+          ],
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "補虛": [
+            "白芍 9g",
+            "白朮 9g",
+            "當歸 9g",
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.jia_wei_xiao_yao_san",
@@ -8767,7 +9431,38 @@
       ],
       "pattern_tags_en": [
         "Liver Qi Stagnation"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 86,
+        "herb_count": 10,
+        "groups_g": {
+          "解表": 25,
+          "清熱瀉下": 16,
+          "祛濕": 10,
+          "補虛": 35
+        },
+        "groups_herbs": {
+          "解表": [
+            "薄荷 5g",
+            "柴胡 10g",
+            "生薑 10g"
+          ],
+          "清熱瀉下": [
+            "牡丹皮 8g",
+            "梔子 8g"
+          ],
+          "祛濕": [
+            "茯苓 10g"
+          ],
+          "補虛": [
+            "白芍 10g",
+            "白朮 10g",
+            "當歸 10g",
+            "甘草 5g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.tong_xie_yao_fang",
@@ -9003,7 +9698,29 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 563
+      "cloudtcm_id": 563,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 135,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 30,
+          "理氣活血": 45,
+          "補虛": 60
+        },
+        "groups_herbs": {
+          "解表": [
+            "防風 30g"
+          ],
+          "理氣活血": [
+            "陳皮 45g"
+          ],
+          "補虛": [
+            "白芍 30g",
+            "白朮 30g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ban_xia_xie_xin_tang",
@@ -9315,7 +10032,35 @@
       ],
       "pattern_tags_en": [
         "Hot-Cold Complex"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 61,
+        "herb_count": 7,
+        "groups_g": {
+          "清熱瀉下": 13,
+          "溫裡": 10,
+          "補虛": 26,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃芩 10g",
+            "黃連 3g"
+          ],
+          "溫裡": [
+            "乾薑 10g"
+          ],
+          "補虛": [
+            "人參 10g",
+            "甘草 10g",
+            "大棗 6g"
+          ],
+          "化痰止咳": [
+            "半夏 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.li_zhong_wan",
@@ -9740,7 +10485,28 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 39
+      "cloudtcm_id": 39,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 94,
+        "herb_count": 6,
+        "groups_g": {
+          "解表": 19,
+          "補虛": 75
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 9g",
+            "生薑 10g"
+          ],
+          "補虛": [
+            "飴糖 45g",
+            "白芍 12g",
+            "大棗 12g",
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.huang_qi_jian_zhong_tang",
@@ -10024,7 +10790,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 483
+      "cloudtcm_id": 483,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 23,
+        "herb_count": 3,
+        "groups_g": {
+          "溫裡": 14,
+          "補虛": 9
+        },
+        "groups_herbs": {
+          "溫裡": [
+            "附子 6g",
+            "乾薑 8g"
+          ],
+          "補虛": [
+            "甘草 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.shen_fu_tang",
@@ -10348,7 +11132,29 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 111
+      "cloudtcm_id": 111,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 51,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 18,
+          "溫裡": 12,
+          "補虛": 21
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 18g"
+          ],
+          "溫裡": [
+            "吳茱萸 12g"
+          ],
+          "補虛": [
+            "人參 9g",
+            "大棗 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.dang_gui_si_ni_tang",
@@ -10590,7 +11396,32 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 256
+      "cloudtcm_id": 256,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 58,
+        "herb_count": 7,
+        "groups_g": {
+          "解表": 20,
+          "祛濕": 6,
+          "補虛": 32
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 10g",
+            "細辛 10g"
+          ],
+          "祛濕": [
+            "通草 6g"
+          ],
+          "補虛": [
+            "白芍 10g",
+            "當歸 10g",
+            "甘草 6g",
+            "大棗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.si_jun_zi_tang",
@@ -10844,7 +11675,26 @@
       "pattern_tags_en": [
         "Qi Deficiency",
         "Spleen Qi Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 33,
+        "herb_count": 4,
+        "groups_g": {
+          "祛濕": 9,
+          "補虛": 24
+        },
+        "groups_herbs": {
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "補虛": [
+            "白朮 9g",
+            "人參 9g",
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.liu_jun_zi_tang",
@@ -11159,7 +12009,34 @@
         "Phlegm",
         "Qi Deficiency",
         "Phlegm-Damp"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 55,
+        "herb_count": 6,
+        "groups_g": {
+          "祛濕": 9,
+          "理氣活血": 9,
+          "補虛": 25,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "理氣活血": [
+            "陳皮 9g"
+          ],
+          "補虛": [
+            "人參 10g",
+            "白朮 9g",
+            "甘草 6g"
+          ],
+          "化痰止咳": [
+            "半夏 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xiang_sha_liu_jun_zi_tang",
@@ -11633,7 +12510,43 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 194
+      "cloudtcm_id": 194,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 360,
+        "herb_count": 12,
+        "groups_g": {
+          "解表": 30,
+          "祛濕": 90,
+          "補虛": 180,
+          "化痰止咳": 30,
+          "安神收澀": 30
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 30g"
+          ],
+          "祛濕": [
+            "茯苓 30g",
+            "砂仁 30g",
+            "薏苡仁 30g"
+          ],
+          "補虛": [
+            "白扁豆 30g",
+            "白朮 30g",
+            "人參 30g",
+            "山藥 30g",
+            "甘草 30g",
+            "大棗 30g"
+          ],
+          "化痰止咳": [
+            "桔梗 30g"
+          ],
+          "安神收澀": [
+            "蓮子 30g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.bu_zhong_yi_qi_tang",
@@ -11985,7 +12898,34 @@
       "pattern_tags_en": [
         "Qi Deficiency",
         "Middle Jiao"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 96,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 21,
+          "理氣活血": 9,
+          "補虛": 66
+        },
+        "groups_herbs": {
+          "解表": [
+            "柴胡 9g",
+            "升麻 6g",
+            "生薑 6g"
+          ],
+          "理氣活血": [
+            "陳皮 9g"
+          ],
+          "補虛": [
+            "黃耆 24g",
+            "白朮 12g",
+            "當歸 12g",
+            "人參 12g",
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.yu_ping_feng_san",
@@ -12174,7 +13114,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 86
+      "cloudtcm_id": 86,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 90,
+        "herb_count": 3,
+        "groups_g": {
+          "解表": 30,
+          "補虛": 60
+        },
+        "groups_herbs": {
+          "解表": [
+            "防風 30g"
+          ],
+          "補虛": [
+            "白朮 30g",
+            "黃耆 30g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.sheng_mai_san",
@@ -12682,7 +13640,26 @@
       ],
       "pattern_tags_en": [
         "Blood Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 54,
+        "herb_count": 4,
+        "groups_g": {
+          "理氣活血": 6,
+          "補虛": 48
+        },
+        "groups_herbs": {
+          "理氣活血": [
+            "川芎 6g"
+          ],
+          "補虛": [
+            "熟地黃 21g",
+            "白芍 15g",
+            "當歸 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.tao_hong_si_wu_tang",
@@ -12999,7 +13976,28 @@
       ],
       "pattern_tags_en": [
         "Blood Stasis"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 69,
+        "herb_count": 6,
+        "groups_g": {
+          "理氣活血": 21,
+          "補虛": 48
+        },
+        "groups_herbs": {
+          "理氣活血": [
+            "桃仁 9g",
+            "川芎 6g",
+            "紅花 6g"
+          ],
+          "補虛": [
+            "熟地黃 24g",
+            "白芍 12g",
+            "當歸 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.jiao_ai_tang",
@@ -13256,7 +14254,21 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 251
+      "cloudtcm_id": 251,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 36,
+        "herb_count": 2,
+        "groups_g": {
+          "補虛": 36
+        },
+        "groups_herbs": {
+          "補虛": [
+            "黃耆 30g",
+            "當歸 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ba_zhen_tang",
@@ -13598,7 +14610,33 @@
       ],
       "pattern_tags_en": [
         "Qi & Blood Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 64,
+        "herb_count": 8,
+        "groups_g": {
+          "祛濕": 8,
+          "理氣活血": 5,
+          "補虛": 51
+        },
+        "groups_herbs": {
+          "祛濕": [
+            "茯苓 8g"
+          ],
+          "理氣活血": [
+            "川芎 5g"
+          ],
+          "補虛": [
+            "當歸 10g",
+            "熟地黃 15g",
+            "白芍 8g",
+            "人參 3g",
+            "白朮 10g",
+            "甘草 5g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.shi_quan_da_bu_tang",
@@ -13764,7 +14802,38 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 81,
+        "herb_count": 10,
+        "groups_g": {
+          "祛濕": 9,
+          "溫裡": 3,
+          "理氣活血": 6,
+          "補虛": 63
+        },
+        "groups_herbs": {
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "溫裡": [
+            "肉桂 3g"
+          ],
+          "理氣活血": [
+            "川芎 6g"
+          ],
+          "補虛": [
+            "人參 9g",
+            "黃耆 12g",
+            "白朮 9g",
+            "當歸 9g",
+            "熟地黃 12g",
+            "白芍 9g",
+            "甘草 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -14143,7 +15212,34 @@
       "pattern_tags_en": [
         "Kidney Yin Deficiency",
         "Yin Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 75,
+        "herb_count": 6,
+        "groups_g": {
+          "清熱瀉下": 9,
+          "祛濕": 18,
+          "補虛": 36,
+          "安神收澀": 12
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "牡丹皮 9g"
+          ],
+          "祛濕": [
+            "茯苓 9g",
+            "澤瀉 9g"
+          ],
+          "補虛": [
+            "熟地黃 24g",
+            "山藥 12g"
+          ],
+          "安神收澀": [
+            "山茱萸 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.zuo_gui_wan",
@@ -14431,7 +15527,33 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 81
+      "cloudtcm_id": 81,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 105,
+        "herb_count": 8,
+        "groups_g": {
+          "理氣活血": 9,
+          "補虛": 84,
+          "安神收澀": 12
+        },
+        "groups_herbs": {
+          "理氣活血": [
+            "川牛膝 9g"
+          ],
+          "補虛": [
+            "山藥 12g",
+            "枸杞子 12g",
+            "菟絲子 12g",
+            "鹿角膠 12g",
+            "熟地黃 24g",
+            "龜板 12g"
+          ],
+          "安神收澀": [
+            "山茱萸 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.zuo_gui_yin",
@@ -14769,7 +15891,35 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 70
+      "cloudtcm_id": 70,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 300,
+        "herb_count": 10,
+        "groups_g": {
+          "溫裡": 60,
+          "補虛": 210,
+          "安神收澀": 30
+        },
+        "groups_herbs": {
+          "溫裡": [
+            "肉桂 30g",
+            "附子 30g"
+          ],
+          "補虛": [
+            "熟地黃 30g",
+            "山藥 30g",
+            "枸杞子 30g",
+            "鹿角膠 30g",
+            "菟絲子 30g",
+            "杜仲 30g",
+            "當歸 30g"
+          ],
+          "安神收澀": [
+            "山茱萸 30g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.you_gui_yin",
@@ -15507,7 +16657,34 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 136
+      "cloudtcm_id": 136,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 96,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 18,
+          "清熱瀉下": 40,
+          "補虛": 38
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 9g",
+            "生薑 9g"
+          ],
+          "清熱瀉下": [
+            "生地黃 30g",
+            "火麻仁 10g"
+          ],
+          "補虛": [
+            "阿膠 6g",
+            "麥門冬 10g",
+            "人參 6g",
+            "甘草 12g",
+            "大棗 4g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.yi_guan_jian",
@@ -15742,7 +16919,31 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 359
+      "cloudtcm_id": 359,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 80,
+        "herb_count": 6,
+        "groups_g": {
+          "清熱瀉下": 30,
+          "理氣活血": 5,
+          "補虛": 45
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "生地黃 30g"
+          ],
+          "理氣活血": [
+            "川楝子 5g"
+          ],
+          "補虛": [
+            "枸杞子 15g",
+            "當歸 10g",
+            "麥門冬 10g",
+            "沙參 10g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.mu_li_san",
@@ -16501,7 +17702,36 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 270
+      "cloudtcm_id": 270,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 39,
+        "herb_count": 5,
+        "groups_g": {
+          "清熱瀉下": 6,
+          "祛濕": 6,
+          "理氣活血": 6,
+          "補虛": 3,
+          "安神收澀": 18
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "知母 6g"
+          ],
+          "祛濕": [
+            "茯苓 6g"
+          ],
+          "理氣活血": [
+            "川芎 6g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ],
+          "安神收澀": [
+            "酸棗仁 18g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.tian_wang_bu_xin_dan",
@@ -16890,7 +18120,47 @@
       ],
       "pattern_tags_en": [
         "Heart Yin Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 166,
+        "herb_count": 13,
+        "groups_g": {
+          "清熱瀉下": 24,
+          "祛濕": 12,
+          "理氣活血": 12,
+          "補虛": 46,
+          "化痰止咳": 12,
+          "安神收澀": 60
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "生地黃 12g",
+            "玄參 12g"
+          ],
+          "祛濕": [
+            "茯苓 12g"
+          ],
+          "理氣活血": [
+            "丹參 12g"
+          ],
+          "補虛": [
+            "麥門冬 12g",
+            "人參 12g",
+            "天門冬 12g",
+            "當歸 10g"
+          ],
+          "化痰止咳": [
+            "桔梗 12g"
+          ],
+          "安神收澀": [
+            "酸棗仁 18g",
+            "五味子 18g",
+            "柏子仁 12g",
+            "遠志 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.gan_mai_da_zao_tang",
@@ -17110,7 +18380,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 89
+      "cloudtcm_id": 89,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 34,
+        "herb_count": 3,
+        "groups_g": {
+          "補虛": 19,
+          "安神收澀": 15
+        },
+        "groups_herbs": {
+          "補虛": [
+            "甘草 9g",
+            "大棗 10g"
+          ],
+          "安神收澀": [
+            "浮小麥 15g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.chai_hu_jia_long_gu_mu_li_tang",
@@ -17410,7 +18698,30 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 238
+      "cloudtcm_id": 238,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 48,
+        "herb_count": 5,
+        "groups_g": {
+          "清熱瀉下": 9,
+          "祛濕": 9,
+          "理氣活血": 30
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "梔子 9g"
+          ],
+          "祛濕": [
+            "蒼朮 9g"
+          ],
+          "理氣活血": [
+            "香附 12g",
+            "川芎 9g",
+            "神麴 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.chai_hu_shu_gan_san",
@@ -17815,7 +19126,30 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 71
+      "cloudtcm_id": 71,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 52,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 18,
+          "祛濕": 22,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "紫蘇葉 6g",
+            "生薑 12g"
+          ],
+          "祛濕": [
+            "茯苓 12g",
+            "厚朴 10g"
+          ],
+          "化痰止咳": [
+            "半夏 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.su_zi_jiang_qi_tang",
@@ -18080,7 +19414,40 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 299
+      "cloudtcm_id": 299,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 52,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 4,
+          "祛濕": 6,
+          "溫裡": 3,
+          "補虛": 17,
+          "化痰止咳": 22
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 4g"
+          ],
+          "祛濕": [
+            "厚朴 6g"
+          ],
+          "溫裡": [
+            "肉桂 3g"
+          ],
+          "補虛": [
+            "當歸 9g",
+            "甘草 4g",
+            "大棗 4g"
+          ],
+          "化痰止咳": [
+            "紫蘇子 4g",
+            "前胡 9g",
+            "半夏 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ju_pi_zhu_ru_tang",
@@ -18535,7 +19902,42 @@
         "Blood Stasis",
         "Chest",
         "Qi Stagnation"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 76,
+        "herb_count": 11,
+        "groups_g": {
+          "解表": 3,
+          "清熱瀉下": 15,
+          "理氣活血": 41,
+          "補虛": 12,
+          "化痰止咳": 5
+        },
+        "groups_herbs": {
+          "解表": [
+            "柴胡 3g"
+          ],
+          "清熱瀉下": [
+            "生地黃 9g",
+            "赤芍 6g"
+          ],
+          "理氣活血": [
+            "桃仁 12g",
+            "川牛膝 9g",
+            "紅花 9g",
+            "枳殼 6g",
+            "川芎 5g"
+          ],
+          "補虛": [
+            "當歸 9g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "桔梗 5g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.bu_yang_huan_wu_tang",
@@ -18801,7 +20203,35 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 264
+      "cloudtcm_id": 264,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 29,
+        "herb_count": 7,
+        "groups_g": {
+          "清熱瀉下": 5,
+          "理氣活血": 9,
+          "補虛": 12,
+          "安神收澀": 3
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "赤芍 5g"
+          ],
+          "理氣活血": [
+            "川芎 3g",
+            "桃仁 3g",
+            "紅花 3g"
+          ],
+          "補虛": [
+            "黃耆 6g",
+            "當歸 6g"
+          ],
+          "安神收澀": [
+            "地龍 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.sheng_hua_tang",
@@ -19032,7 +20462,30 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 90
+      "cloudtcm_id": 90,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 43,
+        "herb_count": 5,
+        "groups_g": {
+          "溫裡": 2,
+          "理氣活血": 15,
+          "補虛": 26
+        },
+        "groups_herbs": {
+          "溫裡": [
+            "乾薑 2g"
+          ],
+          "理氣活血": [
+            "川芎 9g",
+            "桃仁 6g"
+          ],
+          "補虛": [
+            "當歸 24g",
+            "甘草 2g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.shi_hui_san",
@@ -19318,7 +20771,31 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 573
+      "cloudtcm_id": 573,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 81,
+        "herb_count": 9,
+        "groups_g": {
+          "清熱瀉下": 36,
+          "安神收澀": 45
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "大黃 9g",
+            "荷葉 9g",
+            "牡丹皮 9g",
+            "梔子 9g"
+          ],
+          "安神收澀": [
+            "白茅根 9g",
+            "側柏葉 9g",
+            "茜草根 9g",
+            "大薊 9g",
+            "小薊 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.wen_jing_tang",
@@ -19787,7 +21264,46 @@
       "pattern_tags_en": [
         "Blood Stasis",
         "Deficiency Heat"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 91,
+        "herb_count": 12,
+        "groups_g": {
+          "解表": 12,
+          "清熱瀉下": 6,
+          "溫裡": 10,
+          "理氣活血": 6,
+          "補虛": 51,
+          "化痰止咳": 6
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 6g",
+            "生薑 6g"
+          ],
+          "清熱瀉下": [
+            "牡丹皮 6g"
+          ],
+          "溫裡": [
+            "吳茱萸 10g"
+          ],
+          "理氣活血": [
+            "川芎 6g"
+          ],
+          "補虛": [
+            "麥門冬 18g",
+            "當歸 9g",
+            "白芍 6g",
+            "阿膠 6g",
+            "人參 6g",
+            "甘草 6g"
+          ],
+          "化痰止咳": [
+            "半夏 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.gui_zhi_fu_ling_wan",
@@ -20010,7 +21526,33 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 189
+      "cloudtcm_id": 189,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 45,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 9,
+          "清熱瀉下": 18,
+          "祛濕": 9,
+          "理氣活血": 9
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 9g"
+          ],
+          "清熱瀉下": [
+            "赤芍 9g",
+            "牡丹皮 9g"
+          ],
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "理氣活血": [
+            "桃仁 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ge_xia_zhu_yu_tang",
@@ -20632,7 +22174,34 @@
       "pattern_tags_en": [
         "Damp Stagnation",
         "Middle Jiao"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 57,
+        "herb_count": 6,
+        "groups_g": {
+          "解表": 6,
+          "祛濕": 27,
+          "理氣活血": 12,
+          "補虛": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 6g"
+          ],
+          "祛濕": [
+            "蒼朮 15g",
+            "厚朴 12g"
+          ],
+          "理氣活血": [
+            "陳皮 12g"
+          ],
+          "補虛": [
+            "甘草 6g",
+            "大棗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.huo_xiang_zheng_qi_san",
@@ -21000,7 +22569,42 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 298
+      "cloudtcm_id": 298,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 93,
+        "herb_count": 11,
+        "groups_g": {
+          "解表": 12,
+          "祛濕": 39,
+          "理氣活血": 9,
+          "補虛": 15,
+          "化痰止咳": 18
+        },
+        "groups_herbs": {
+          "解表": [
+            "白芷 6g",
+            "紫蘇葉 6g"
+          ],
+          "祛濕": [
+            "藿香 12g",
+            "大腹皮 9g",
+            "茯苓 9g",
+            "厚朴 9g"
+          ],
+          "理氣活血": [
+            "陳皮 9g"
+          ],
+          "補虛": [
+            "白朮 12g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "半夏 9g",
+            "桔梗 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.wu_ling_san",
@@ -21259,7 +22863,30 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 50
+      "cloudtcm_id": 50,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 48,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 6,
+          "祛濕": 33,
+          "補虛": 9
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 6g"
+          ],
+          "祛濕": [
+            "澤瀉 15g",
+            "茯苓 9g",
+            "豬苓 9g"
+          ],
+          "補虛": [
+            "白朮 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.zhu_ling_tang",
@@ -21513,7 +23140,27 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 273
+      "cloudtcm_id": 273,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 15,
+        "herb_count": 5,
+        "groups_g": {
+          "祛濕": 12,
+          "補虛": 3
+        },
+        "groups_herbs": {
+          "祛濕": [
+            "茯苓 3g",
+            "滑石 3g",
+            "澤瀉 3g",
+            "豬苓 3g"
+          ],
+          "補虛": [
+            "阿膠 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.san_ren_tang",
@@ -21776,7 +23423,33 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 401
+      "cloudtcm_id": 401,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 82,
+        "herb_count": 8,
+        "groups_g": {
+          "清熱瀉下": 6,
+          "祛濕": 54,
+          "化痰止咳": 22
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "淡竹葉 6g"
+          ],
+          "祛濕": [
+            "滑石 18g",
+            "薏苡仁 18g",
+            "白豆蔻 6g",
+            "厚朴 6g",
+            "通草 6g"
+          ],
+          "化痰止咳": [
+            "杏仁 12g",
+            "半夏 10g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.er_miao_san",
@@ -22193,7 +23866,33 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 180
+      "cloudtcm_id": 180,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 42,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 9,
+          "祛濕": 9,
+          "溫裡": 9,
+          "補虛": 15
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 9g"
+          ],
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "溫裡": [
+            "附子 9g"
+          ],
+          "補虛": [
+            "白芍 9g",
+            "白朮 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.shi_pi_yin",
@@ -22499,7 +24198,31 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 526
+      "cloudtcm_id": 526,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 60,
+        "herb_count": 6,
+        "groups_g": {
+          "解表": 6,
+          "祛濕": 15,
+          "補虛": 39
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 6g"
+          ],
+          "祛濕": [
+            "防己 15g"
+          ],
+          "補虛": [
+            "黃耆 15g",
+            "白朮 12g",
+            "甘草 6g",
+            "大棗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.yin_chen_hao_tang",
@@ -22729,7 +24452,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 188
+      "cloudtcm_id": 188,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 36,
+        "herb_count": 3,
+        "groups_g": {
+          "清熱瀉下": 18,
+          "祛濕": 18
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "梔子 12g",
+            "大黃 6g"
+          ],
+          "祛濕": [
+            "茵陳蒿 18g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ba_zheng_san",
@@ -22997,7 +24738,34 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 15
+      "cloudtcm_id": 15,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 111,
+        "herb_count": 9,
+        "groups_g": {
+          "清熱瀉下": 18,
+          "祛濕": 81,
+          "補虛": 12
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "大黃 9g",
+            "梔子 9g"
+          ],
+          "祛濕": [
+            "燈心草 6g",
+            "滑石 30g",
+            "車前子 15g",
+            "萹蓄 12g",
+            "瞿麥 12g",
+            "木通 6g"
+          ],
+          "補虛": [
+            "甘草 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ling_gui_zhu_gan_tang",
@@ -23402,7 +25170,36 @@
         "Phlegm",
         "Phlegm-Damp",
         "Spleen"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 50,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 9,
+          "祛濕": 9,
+          "理氣活血": 15,
+          "補虛": 5,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 9g"
+          ],
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "理氣活血": [
+            "陳皮 15g"
+          ],
+          "補虛": [
+            "甘草 5g"
+          ],
+          "化痰止咳": [
+            "半夏 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.wen_dan_tang",
@@ -23709,7 +25506,38 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 250
+      "cloudtcm_id": 250,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 41,
+        "herb_count": 7,
+        "groups_g": {
+          "解表": 6,
+          "祛濕": 5,
+          "理氣活血": 15,
+          "補虛": 3,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 6g"
+          ],
+          "祛濕": [
+            "茯苓 5g"
+          ],
+          "理氣活血": [
+            "陳皮 9g",
+            "枳實 6g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "半夏 6g",
+            "竹茹 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ban_xia_bai_zhu_tian_ma_tang",
@@ -24108,7 +25936,51 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 69
+      "cloudtcm_id": 69,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 73,
+        "herb_count": 14,
+        "groups_g": {
+          "清熱瀉下": 6,
+          "祛濕": 15,
+          "溫裡": 6,
+          "理氣活血": 12,
+          "補虛": 23,
+          "化痰止咳": 5,
+          "安神收澀": 6
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃柏 6g"
+          ],
+          "祛濕": [
+            "蒼朮 6g",
+            "澤瀉 6g",
+            "茯苓 3g"
+          ],
+          "溫裡": [
+            "乾薑 6g"
+          ],
+          "理氣活血": [
+            "麥芽 6g",
+            "陳皮 3g",
+            "神麴 3g"
+          ],
+          "補虛": [
+            "白朮 9g",
+            "黃耆 6g",
+            "人參 6g",
+            "甘草 2g"
+          ],
+          "化痰止咳": [
+            "半夏 5g"
+          ],
+          "安神收澀": [
+            "天麻 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.qing_qi_hua_tan_wan",
@@ -24431,7 +26303,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 419
+      "cloudtcm_id": 419,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 29,
+        "herb_count": 3,
+        "groups_g": {
+          "清熱瀉下": 6,
+          "化痰止咳": 23
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃連 6g"
+          ],
+          "化痰止咳": [
+            "半夏 15g",
+            "瓜蔞 8g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.san_zi_yang_qin_tang",
@@ -24534,7 +26424,25 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 24,
+        "herb_count": 3,
+        "groups_g": {
+          "理氣活血": 9,
+          "化痰止咳": 15
+        },
+        "groups_herbs": {
+          "理氣活血": [
+            "萊菔子 9g"
+          ],
+          "化痰止咳": [
+            "紫蘇子 9g",
+            "白芥子 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.chuan_xiong_cha_tiao_san",
@@ -24794,7 +26702,33 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 45
+      "cloudtcm_id": 45,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 74,
+        "herb_count": 8,
+        "groups_g": {
+          "解表": 56,
+          "理氣活血": 12,
+          "補虛": 6
+        },
+        "groups_herbs": {
+          "解表": [
+            "薄荷 24g",
+            "荊芥 12g",
+            "白芷 6g",
+            "羌活 6g",
+            "防風 5g",
+            "細辛 3g"
+          ],
+          "理氣活血": [
+            "川芎 12g"
+          ],
+          "補虛": [
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xiao_feng_san",
@@ -25101,7 +27035,41 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 176
+      "cloudtcm_id": 176,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 72,
+        "herb_count": 13,
+        "groups_g": {
+          "解表": 24,
+          "清熱瀉下": 24,
+          "祛濕": 9,
+          "補虛": 15
+        },
+        "groups_herbs": {
+          "解表": [
+            "蟬蛻 6g",
+            "防風 6g",
+            "荊芥 6g",
+            "牛蒡子 6g"
+          ],
+          "清熱瀉下": [
+            "生地黃 6g",
+            "石膏 6g",
+            "知母 6g",
+            "苦參 6g"
+          ],
+          "祛濕": [
+            "蒼朮 6g",
+            "木通 3g"
+          ],
+          "補虛": [
+            "當歸 6g",
+            "黑芝麻 6g",
+            "甘草 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.tian_ma_gou_teng_yin",
@@ -25410,7 +27378,42 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 314
+      "cloudtcm_id": 314,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 171,
+        "herb_count": 11,
+        "groups_g": {
+          "清熱瀉下": 18,
+          "祛濕": 39,
+          "理氣活血": 24,
+          "補虛": 12,
+          "安神收澀": 78
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃芩 9g",
+            "梔子 9g"
+          ],
+          "祛濕": [
+            "桑寄生 24g",
+            "茯神 15g"
+          ],
+          "理氣活血": [
+            "川牛膝 12g",
+            "益母草 12g"
+          ],
+          "補虛": [
+            "杜仲 12g"
+          ],
+          "安神收澀": [
+            "夜交藤 30g",
+            "石決明 24g",
+            "鉤藤 15g",
+            "天麻 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.zhen_gan_xi_feng_tang",
@@ -25807,7 +27810,35 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 142
+      "cloudtcm_id": 142,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 75,
+        "herb_count": 7,
+        "groups_g": {
+          "清熱瀉下": 6,
+          "祛濕": 12,
+          "理氣活血": 45,
+          "化痰止咳": 12
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "連翹 6g"
+          ],
+          "祛濕": [
+            "茯苓 12g"
+          ],
+          "理氣活血": [
+            "山楂 15g",
+            "神麴 12g",
+            "陳皮 9g",
+            "萊菔子 9g"
+          ],
+          "化痰止咳": [
+            "半夏 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.jian_pi_wan",
@@ -26115,7 +28146,47 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 193
+      "cloudtcm_id": 193,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 373,
+        "herb_count": 13,
+        "groups_g": {
+          "清熱瀉下": 22,
+          "祛濕": 60,
+          "溫裡": 22,
+          "理氣活血": 142,
+          "補虛": 97,
+          "安神收澀": 30
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃連 22g"
+          ],
+          "祛濕": [
+            "茯苓 30g",
+            "砂仁 30g"
+          ],
+          "溫裡": [
+            "乾薑 22g"
+          ],
+          "理氣活血": [
+            "陳皮 30g",
+            "麥芽 30g",
+            "山楂 30g",
+            "神麴 30g",
+            "木香 22g"
+          ],
+          "補虛": [
+            "人參 45g",
+            "山藥 30g",
+            "白朮 22g"
+          ],
+          "安神收澀": [
+            "肉豆蔻 30g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.sang_xing_tang",
@@ -26825,7 +28896,41 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 493
+      "cloudtcm_id": 493,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 395,
+        "herb_count": 13,
+        "groups_g": {
+          "祛濕": 70,
+          "理氣活血": 145,
+          "補虛": 135,
+          "安神收澀": 45
+        },
+        "groups_herbs": {
+          "祛濕": [
+            "茯神 40g",
+            "滑石 30g"
+          ],
+          "理氣活血": [
+            "陳皮 30g",
+            "莪朮 30g",
+            "木香 30g",
+            "三棱 30g",
+            "青皮 25g"
+          ],
+          "補虛": [
+            "白朮 40g",
+            "山藥 40g",
+            "益智仁 25g",
+            "甘草 30g"
+          ],
+          "安神收澀": [
+            "麝香 5g",
+            "遠志 40g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.yang_he_tang",
@@ -27281,7 +29386,43 @@
       "pattern_tags_en": [
         "Qi & Blood Deficiency",
         "Heart-Spleen Deficiency"
-      ]
+      ],
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 108,
+        "herb_count": 12,
+        "groups_g": {
+          "解表": 6,
+          "祛濕": 12,
+          "理氣活血": 6,
+          "補虛": 66,
+          "安神收澀": 18
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 6g"
+          ],
+          "祛濕": [
+            "茯神 12g"
+          ],
+          "理氣活血": [
+            "木香 6g"
+          ],
+          "補虛": [
+            "白朮 12g",
+            "當歸 9g",
+            "黃耆 12g",
+            "龍眼肉 9g",
+            "人參 6g",
+            "甘草 6g",
+            "大棗 12g"
+          ],
+          "安神收澀": [
+            "遠志 6g",
+            "酸棗仁 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.bai_du_san",
@@ -27644,7 +29785,35 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 106
+      "cloudtcm_id": 106,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 60,
+        "herb_count": 10,
+        "groups_g": {
+          "清熱瀉下": 15,
+          "補虛": 34,
+          "化痰止咳": 11
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "生地黃 9g",
+            "玄參 6g"
+          ],
+          "補虛": [
+            "當歸 9g",
+            "熟地黃 9g",
+            "百合 5g",
+            "麥門冬 5g",
+            "白芍 3g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "桔梗 6g",
+            "川貝母 5g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.bei_mu_gua_lou_san",
@@ -28097,7 +30266,37 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 130
+      "cloudtcm_id": 130,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 60,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 9,
+          "清熱瀉下": 4.5,
+          "補虛": 3,
+          "化痰止咳": 43.5
+        },
+        "groups_herbs": {
+          "解表": [
+            "麻黃 9g"
+          ],
+          "清熱瀉下": [
+            "黃芩 4.5g"
+          ],
+          "補虛": [
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "銀杏 9g",
+            "半夏 9g",
+            "款冬花 9g",
+            "桑白皮 6g",
+            "紫蘇子 6g",
+            "杏仁 4.5g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.du_huo_ji_sheng_tang",
@@ -28440,7 +30639,49 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 285
+      "cloudtcm_id": 285,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 93,
+        "herb_count": 15,
+        "groups_g": {
+          "解表": 12,
+          "清熱瀉下": 6,
+          "祛濕": 27,
+          "溫裡": 6,
+          "理氣活血": 12,
+          "補虛": 30
+        },
+        "groups_herbs": {
+          "解表": [
+            "防風 6g",
+            "細辛 6g"
+          ],
+          "清熱瀉下": [
+            "生地黃 6g"
+          ],
+          "祛濕": [
+            "獨活 9g",
+            "茯苓 6g",
+            "秦艽 6g",
+            "桑寄生 6g"
+          ],
+          "溫裡": [
+            "肉桂 6g"
+          ],
+          "理氣活血": [
+            "川牛膝 6g",
+            "川芎 6g"
+          ],
+          "補虛": [
+            "白芍 6g",
+            "當歸 6g",
+            "杜仲 6g",
+            "人參 6g",
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.gan_lu_xiao_du_dan",
@@ -28724,7 +30965,42 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 88
+      "cloudtcm_id": 88,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 216,
+        "herb_count": 11,
+        "groups_g": {
+          "解表": 12,
+          "清熱瀉下": 54,
+          "祛濕": 117,
+          "化痰止咳": 15,
+          "安神收澀": 18
+        },
+        "groups_herbs": {
+          "解表": [
+            "薄荷 12g"
+          ],
+          "清熱瀉下": [
+            "黃芩 30g",
+            "連翹 12g",
+            "射干 12g"
+          ],
+          "祛濕": [
+            "滑石 45g",
+            "茵陳蒿 33g",
+            "木通 15g",
+            "白豆蔻 12g",
+            "藿香 12g"
+          ],
+          "化痰止咳": [
+            "川貝母 15g"
+          ],
+          "安神收澀": [
+            "石菖蒲 18g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.gu_chong_tang",
@@ -29008,7 +31284,29 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 268
+      "cloudtcm_id": 268,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 36,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 6,
+          "理氣活血": 6,
+          "安神收澀": 24
+        },
+        "groups_herbs": {
+          "解表": [
+            "荊芥 6g"
+          ],
+          "理氣活血": [
+            "枳殼 6g"
+          ],
+          "安神收澀": [
+            "槐花 12g",
+            "側柏葉 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.huang_tu_tang",
@@ -29450,7 +31748,43 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 575
+      "cloudtcm_id": 575,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 77,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 15,
+          "清熱瀉下": 15,
+          "祛濕": 9,
+          "補虛": 12,
+          "化痰止咳": 12,
+          "安神收澀": 14
+        },
+        "groups_herbs": {
+          "解表": [
+            "菊花 9g",
+            "桑葉 6g"
+          ],
+          "清熱瀉下": [
+            "生地黃 15g"
+          ],
+          "祛濕": [
+            "茯神 9g"
+          ],
+          "補虛": [
+            "白芍 9g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "川貝母 12g"
+          ],
+          "安神收澀": [
+            "鉤藤 9g",
+            "羚羊角 5g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.ma_xing_shi_gan_tang",
@@ -29675,7 +32009,32 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 224
+      "cloudtcm_id": 224,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 84,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 18,
+          "清熱瀉下": 48,
+          "補虛": 9,
+          "化痰止咳": 9
+        },
+        "groups_herbs": {
+          "解表": [
+            "麻黃 18g"
+          ],
+          "清熱瀉下": [
+            "石膏 48g"
+          ],
+          "補虛": [
+            "甘草 9g"
+          ],
+          "化痰止咳": [
+            "杏仁 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.mai_men_dong_tang",
@@ -29919,7 +32278,27 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 221
+      "cloudtcm_id": 221,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 67,
+        "herb_count": 5,
+        "groups_g": {
+          "補虛": 61,
+          "化痰止咳": 6
+        },
+        "groups_herbs": {
+          "補虛": [
+            "麥門冬 42g",
+            "人參 9g",
+            "甘草 6g",
+            "大棗 4g"
+          ],
+          "化痰止咳": [
+            "半夏 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.pu_ji_xiao_du_yin",
@@ -30292,7 +32671,48 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 231
+      "cloudtcm_id": 231,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 77,
+        "herb_count": 14,
+        "groups_g": {
+          "解表": 18,
+          "清熱瀉下": 42,
+          "理氣活血": 3,
+          "補虛": 6,
+          "化痰止咳": 6,
+          "安神收澀": 2
+        },
+        "groups_herbs": {
+          "解表": [
+            "牛蒡子 10g",
+            "升麻 2g",
+            "柴胡 6g"
+          ],
+          "清熱瀉下": [
+            "黃芩 15g",
+            "黃連 15g",
+            "玄參 3g",
+            "連翹 3g",
+            "板藍根 3g",
+            "馬勃 3g"
+          ],
+          "理氣活血": [
+            "陳皮 3g"
+          ],
+          "補虛": [
+            "人參 3g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "桔梗 6g"
+          ],
+          "安神收澀": [
+            "白僵蠶 2g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.qian_zheng_san",
@@ -30514,7 +32934,25 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 574
+      "cloudtcm_id": 574,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 24,
+        "herb_count": 3,
+        "groups_g": {
+          "化痰止咳": 10,
+          "安神收澀": 14
+        },
+        "groups_herbs": {
+          "化痰止咳": [
+            "白附子 10g"
+          ],
+          "安神收澀": [
+            "全蠍 5g",
+            "白僵蠶 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.qing_zao_jiu_fei_tang",
@@ -30794,7 +33232,37 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 216
+      "cloudtcm_id": 216,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 42,
+        "herb_count": 9,
+        "groups_g": {
+          "解表": 9,
+          "清熱瀉下": 11,
+          "補虛": 12,
+          "化痰止咳": 10
+        },
+        "groups_herbs": {
+          "解表": [
+            "桑葉 9g"
+          ],
+          "清熱瀉下": [
+            "石膏 8g",
+            "火麻仁 3g"
+          ],
+          "補虛": [
+            "人參 2g",
+            "阿膠 3g",
+            "麥門冬 4g",
+            "甘草 3g"
+          ],
+          "化痰止咳": [
+            "杏仁 2g",
+            "枇杷葉 8g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.shi_pi_san",
@@ -31090,7 +33558,27 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 478
+      "cloudtcm_id": 478,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 39,
+        "herb_count": 5,
+        "groups_g": {
+          "理氣活血": 15,
+          "安神收澀": 24
+        },
+        "groups_herbs": {
+          "理氣活血": [
+            "益母草 9g",
+            "五靈脂 6g"
+          ],
+          "安神收澀": [
+            "茜草根 9g",
+            "血餘炭 9g",
+            "蒲黃 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.si_ni_san",
@@ -31330,7 +33818,29 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 78
+      "cloudtcm_id": 78,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 48,
+        "herb_count": 4,
+        "groups_g": {
+          "解表": 12,
+          "理氣活血": 12,
+          "補虛": 24
+        },
+        "groups_herbs": {
+          "解表": [
+            "柴胡 12g"
+          ],
+          "理氣活血": [
+            "枳實 12g"
+          ],
+          "補虛": [
+            "白芍 12g",
+            "甘草 12g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.su_he_xiang_wan",
@@ -31699,7 +34209,33 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 169
+      "cloudtcm_id": 169,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 39,
+        "herb_count": 5,
+        "groups_g": {
+          "解表": 6,
+          "清熱瀉下": 18,
+          "理氣活血": 9,
+          "補虛": 6
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 6g"
+          ],
+          "清熱瀉下": [
+            "芒硝 6g",
+            "大黃 12g"
+          ],
+          "理氣活血": [
+            "桃仁 9g"
+          ],
+          "補虛": [
+            "甘草 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.wan_dai_tang",
@@ -32005,7 +34541,38 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 112
+      "cloudtcm_id": 112,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 111,
+        "herb_count": 10,
+        "groups_g": {
+          "解表": 6,
+          "祛濕": 18,
+          "理氣活血": 3,
+          "補虛": 84
+        },
+        "groups_herbs": {
+          "解表": [
+            "荊芥 3g",
+            "柴胡 3g"
+          ],
+          "祛濕": [
+            "車前子 9g",
+            "蒼朮 9g"
+          ],
+          "理氣活血": [
+            "陳皮 3g"
+          ],
+          "補虛": [
+            "白朮 30g",
+            "山藥 30g",
+            "人參 6g",
+            "白芍 15g",
+            "甘草 3g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.wu_mei_wan",
@@ -32286,7 +34853,41 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 179
+      "cloudtcm_id": 179,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 414,
+        "herb_count": 10,
+        "groups_g": {
+          "解表": 96,
+          "清熱瀉下": 78,
+          "溫裡": 120,
+          "補虛": 90,
+          "安神收澀": 30
+        },
+        "groups_herbs": {
+          "解表": [
+            "桂枝 48g",
+            "細辛 48g"
+          ],
+          "清熱瀉下": [
+            "黃柏 48g",
+            "黃連 30g"
+          ],
+          "溫裡": [
+            "附子 48g",
+            "花椒 42g",
+            "乾薑 30g"
+          ],
+          "補虛": [
+            "人參 48g",
+            "當歸 42g"
+          ],
+          "安神收澀": [
+            "烏梅 30g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xing_su_san",
@@ -32566,7 +35167,42 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 114
+      "cloudtcm_id": 114,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 72,
+        "herb_count": 11,
+        "groups_g": {
+          "解表": 12,
+          "祛濕": 9,
+          "理氣活血": 12,
+          "補虛": 6,
+          "化痰止咳": 33
+        },
+        "groups_herbs": {
+          "解表": [
+            "紫蘇葉 9g",
+            "生薑 3g"
+          ],
+          "祛濕": [
+            "茯苓 9g"
+          ],
+          "理氣活血": [
+            "陳皮 6g",
+            "枳殼 6g"
+          ],
+          "補虛": [
+            "甘草 3g",
+            "大棗 3g"
+          ],
+          "化痰止咳": [
+            "杏仁 9g",
+            "半夏 9g",
+            "前胡 9g",
+            "桔梗 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.xuan_fu_dai_zhe_tang",
@@ -32789,7 +35425,35 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 62
+      "cloudtcm_id": 62,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 53,
+        "herb_count": 7,
+        "groups_g": {
+          "解表": 10,
+          "補虛": 16,
+          "化痰止咳": 18,
+          "安神收澀": 9
+        },
+        "groups_herbs": {
+          "解表": [
+            "生薑 10g"
+          ],
+          "補虛": [
+            "人參 6g",
+            "甘草 6g",
+            "大棗 4g"
+          ],
+          "化痰止咳": [
+            "半夏 9g",
+            "旋覆花 9g"
+          ],
+          "安神收澀": [
+            "代赭石 9g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.yu_nu_jian",
@@ -33028,7 +35692,30 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 82
+      "cloudtcm_id": 82,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 76,
+        "herb_count": 5,
+        "groups_g": {
+          "清熱瀉下": 35,
+          "理氣活血": 5,
+          "補虛": 36
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "石膏 30g",
+            "知母 5g"
+          ],
+          "理氣活血": [
+            "川牛膝 5g"
+          ],
+          "補虛": [
+            "熟地黃 30g",
+            "麥門冬 6g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.zhi_shi_xie_bai_gui_zhi_tang",
@@ -33293,7 +35980,24 @@
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ]
       },
-      "cloudtcm_id": 566
+      "cloudtcm_id": 566,
+      "action_profile": {
+        "basis": "decoction_g",
+        "total_g": 210,
+        "herb_count": 2,
+        "groups_g": {
+          "清熱瀉下": 180,
+          "溫裡": 30
+        },
+        "groups_herbs": {
+          "清熱瀉下": [
+            "黃連 180g"
+          ],
+          "溫裡": [
+            "吳茱萸 30g"
+          ]
+        }
+      }
     },
     {
       "id": "formula.bu_fei_tang",

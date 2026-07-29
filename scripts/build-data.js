@@ -94,6 +94,10 @@ const knowledge = {
   herbPairs: readJson("data/herbs/herb_pairs.json"),                                        // 藥對
   herbPairRelations: readJson("data/config/herb_pair_relations.json"),                       // 七情配伍
   herbUrlMap: readJson("data/imports/cloudtcm/herb_url_map.json"),                           // direct per-herb source URLs
+  // 雷達圖的 8 根軸（中英標籤 + 固定順序）。順序就是畫圖順序，所以必須來自
+  // 同一份設定，不能在 knowledge.js 裡另抄一份 —— 抄第二份就會有一天不同步，
+  // 而圖照樣畫得出來，只是軸錯位，畫面上看不出來。
+  formulaActionGroups: readJson("data/config/formula_tag_glossary.json").action_groups,
 };
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js on ${new Date().toISOString()}

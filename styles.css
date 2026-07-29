@@ -5592,6 +5592,68 @@ html { scroll-padding-top: 92px; }
 
 @media (max-width: 720px) { .k-family__row { grid-template-columns: 1fr; } }
 
+/* ── 功效組成雷達圖（類方鑑別）────────────────────────────────────────────
+   兩個系列固定用第 1、2 色位，不依名次上色 —— 換一個對照方，本方的顏色不能跟著
+   變。這組色是用 dataviz 的 validate_palette.js 對這張卡真正的底色 #fffdf8 驗過
+   的（不是憑眼睛看）：色覺障礙下最差 ΔE 24.7、一般視覺 ΔE 33.6、兩色對比度都
+   過 3:1。要換色請重跑驗證，不要直接改 hex。
+   這個 app 是 color-scheme: light（styles.css 第 4 行），沒有深色版，所以這裡
+   不寫 prefers-color-scheme 分支 —— 寫了也永遠不會生效。 */
+.k-radar {
+  --kr-s1: #2a78d6;   /* 本方 */
+  --kr-s2: #eb6834;   /* 對照方 */
+  --kr-surface: #fffdf8;
+  margin: 0 0 1.1rem;
+}
+.kr-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin-bottom: 0.3rem; }
+.kr-legend { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+.kr-key { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.86rem; font-weight: 650; color: var(--ink); }
+.kr-sw { width: 0.7rem; height: 0.7rem; border-radius: 2px; display: inline-block; }
+.kr-sw.kr-s1 { background: var(--kr-s1); }
+.kr-sw.kr-s2 { background: var(--kr-s2); }
+
+/* 對照方切換：篩選器放在圖的上方一列（不是散在圖裡） */
+.kr-picker { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-left: auto; }
+.kr-chip { font: inherit; font-size: 0.78rem; padding: 0.15rem 0.55rem; border-radius: 999px;
+  border: 1px solid #d7c9ad; background: #fff; color: var(--muted); cursor: pointer; }
+.kr-chip:hover { border-color: var(--kr-s2); color: var(--ink); }
+.kr-chip.is-on { background: var(--kr-s2); border-color: var(--kr-s2); color: #fff; font-weight: 650; }
+
+.kr-plot { position: relative; max-width: 22.5rem; margin: 0 auto; }
+.kr-plot svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+/* 格線要退到後面：它是刻度，不是內容 */
+.kr-ring { fill: none; stroke: #e6ddc9; stroke-width: 1; }
+.kr-spoke { stroke: #ece4d3; stroke-width: 1; }
+.kr-tick { fill: var(--muted); font-size: 9px; opacity: 0.75; }
+.kr-axis { fill: var(--ink); font-size: 12px; font-weight: 600; }
+
+.kr-area { stroke-width: 2; fill-opacity: 0.14; }
+.kr-area.kr-s1 { stroke: var(--kr-s1); fill: var(--kr-s1); }
+.kr-area.kr-s2 { stroke: var(--kr-s2); fill: var(--kr-s2); }
+/* 兩個形狀一定會重疊，所以每個標記加一圈 2px 底色描邊把它從下層挑出來 */
+.kr-dot { stroke: var(--kr-surface); stroke-width: 2; }
+.kr-dot.kr-s1 { fill: var(--kr-s1); }
+.kr-dot.kr-s2 { fill: var(--kr-s2); }
+.kr-hit { fill: transparent; cursor: pointer; }
+
+.kr-tip { position: absolute; transform: translate(-50%, -125%); pointer-events: none;
+  background: #2b3a34; color: #fff; font-size: 0.76rem; line-height: 1.45;
+  padding: 0.3rem 0.55rem; border-radius: 5px; max-width: 15rem; z-index: 3;
+  box-shadow: 0 6px 18px rgba(30, 40, 35, 0.28); }
+
+/* 表格不是備份，是主要的可讀路徑 —— 螢幕報讀、色覺障礙、以及「到底幾克」 */
+.kr-table { width: 100%; border-collapse: collapse; margin-top: 0.6rem; font-size: 0.85rem; }
+.kr-table caption { caption-side: bottom; text-align: left; font-size: 0.75rem;
+  color: var(--muted); padding-top: 0.4rem; line-height: 1.5; }
+.kr-table th, .kr-table td { text-align: left; padding: 0.3rem 0.5rem; border-bottom: 1px solid #ece4d3; vertical-align: baseline; }
+.kr-table thead th { font-size: 0.78rem; color: var(--muted); font-weight: 650; }
+.kr-table tbody th { font-weight: 650; white-space: nowrap; }
+.kr-table tbody th small { display: block; font-weight: 400; font-size: 0.7rem; color: var(--muted); }
+.kr-table td small { display: block; font-weight: 400; color: var(--muted); font-size: 0.74rem; }
+.kr-table .kr-nil { color: var(--muted); opacity: 0.5; }
+@media (max-width: 720px) { .kr-picker { margin-left: 0; } }
+
 /* 中英成對 on the formula card, same shape as the acupoint card's 功效 block. */
 .k-paired-list { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.45rem; }
 .k-paired-list li { line-height: 1.55; }

@@ -448,8 +448,37 @@
         dialog.querySelector(`#knowledge-section-${jumpButton.dataset.detailJump}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
+      // 換對照方：只重畫雷達圖那一塊，不重開整張卡（重開會把捲軸彈回最上面）
+      const partnerChip = event.target.closest("[data-radar-partner]");
+      if (partnerChip) {
+        const box = partnerChip.closest("[data-radar-for]");
+        const rec = box && formulaById.get(box.dataset.radarFor);
+        if (rec) box.outerHTML = formulaRadarSection(rec, partnerChip.dataset.radarPartner);
+        return;
+      }
       const relation = event.target.closest("[data-detail-kind][data-detail-id]");
       if (relation) openKnowledgeDetail(relation.dataset.detailKind, relation.dataset.detailId);
+    });
+    /* Hover 層。圖上的百分比是算出來的，所以每一點都該說得出它是哪幾味藥
+       堆出來的 —— 「解表 56%（15g）｜麻黃 9g、桂枝 6g」。鍵盤與螢幕報讀走
+       下面那張表，不用逐點 tab（8 軸 × 2 方 = 16 個停留點太多）。 */
+    dialog.addEventListener("mouseover", (event) => {
+      const hit = event.target.closest("[data-radar-tip]");
+      if (!hit) return;
+      const plot = hit.closest(".kr-plot");
+      const tip = plot && plot.querySelector(".kr-tip");
+      if (!tip) return;
+      const box = plot.getBoundingClientRect();
+      const dot = hit.getBoundingClientRect();
+      tip.textContent = hit.dataset.radarTip;
+      tip.hidden = false;
+      tip.style.left = Math.round(dot.left + dot.width / 2 - box.left) + "px";
+      tip.style.top = Math.round(dot.top - box.top) + "px";
+    });
+    dialog.addEventListener("mouseout", (event) => {
+      if (!event.target.closest("[data-radar-tip]")) return;
+      const tip = event.target.closest(".kr-plot")?.querySelector(".kr-tip");
+      if (tip) tip.hidden = true;
     });
     document.body.appendChild(dialog);
     return dialog;
@@ -529,6 +558,161 @@
       const other = (c.codes || []).find((x) => x !== record.id) || "";
       return `<li><span class="kfc-axis">${esc(c.axis || "")}</span><span class="kfc-note">${esc(c.note || "")}</span></li>`;
     }).join("")}</ul>`;
+  }
+
+  /* ── 功效組成雷達圖 ────────────────────────────────────────────────────
+     Ting: 「數縮到 8 根（用八法或功效大類），兩個方疊圖，放在『類方鑑別』那一區」
+
+     CloudTCM 那張圖有 26 根軸，其中 20 根趨近於零。兩個方疊上去，差別被埋在
+     一圈噪音裡。8 根軸不是把資訊丟掉，是把差異留下來。
+
+     圖上每一格都是算出來的，不是評出來的：軸長 = 該類藥的煎劑克數 ÷ 全方總克數，
+     由 scripts/build-formula-action-profile.js 從組成算好寫進 action_profile，
+     hover 就看得到是哪幾味藥撐起這根軸。這裡只負責畫，不做任何判斷。
+
+     刻度依這一對方的最大值收放，圈上直接標出百分比。本來寫死 0–100%，理由是
+     「每張圖刻度一樣才能互相比」，但畫出來就知道那是錯的：溫膽湯 vs 二陳湯
+     全部落在 7–37%，兩個形狀擠成中心一小團，什麼都看不出來 —— 而它們的差別
+     （溫膽湯就是二陳湯加竹茹枳實）正是這張圖唯一該講的事。
+     這張圖的工作是比「疊在一起的這兩個方」，不是跨卡片比大小；刻度標在圈上，
+     所以收放不會騙人。 */
+  const ACTION_AXES = Object.entries((K && K.formulaActionGroups) || {})
+    .map(([zh, def]) => ({ zh, en: (def && def.en) || "" }));
+
+  const RADAR = { CX: 180, CY: 158, R: 100, LR: 126 };
+  function radarPoint(i, v) {
+    const a = (-90 + i * (360 / ACTION_AXES.length)) * Math.PI / 180;
+    return [RADAR.CX + Math.cos(a) * RADAR.R * v, RADAR.CY + Math.sin(a) * RADAR.R * v];
+  }
+  const radarPolygon = (shares) =>
+    shares.map((v, i) => radarPoint(i, v).map((n) => n.toFixed(1)).join(",")).join(" ");
+
+  function actionShares(record) {
+    const p = record && record.action_profile;
+    if (!p || !p.total_g) return null;
+    return ACTION_AXES.map((ax) => (p.groups_g[ax.zh] || 0) / p.total_g);
+  }
+
+  /* 類方 = 可以疊圖的對象，依「關係有多明確」排序：
+       compare_with   已經寫好鑑別要點的一對（最明確，但目前只有 1 筆）
+       derived_from / formula_family  加減關係（麻黃湯 ↔ 大青龍湯）
+       comparison_group 同一個鑑別群組（115 方有，這是覆蓋率的來源）
+     只留真的算得出圖的對象 —— 沒有 action_profile 就疊不上去。 */
+  function comparablePartners(record) {
+    const ids = [];
+    const push = (id) => { if (id && id !== record.id && !ids.includes(id)) ids.push(id); };
+    (record.compare_with || []).forEach((c) => (c.codes || []).forEach(push));
+    if (record.derived_from) push(record.derived_from.formula_id);
+    (record.formula_family || []).forEach((f) => push(f.formula_id));
+    if (record.comparison_group) {
+      formulas.forEach((f) => { if (f.comparison_group === record.comparison_group) push(f.id); });
+    }
+    return ids.map((id) => formulaById.get(id)).filter((f) => f && f.action_profile);
+  }
+
+  function formulaRadarSection(record, partnerId) {
+    const mine = actionShares(record);
+    if (!mine) return "";
+    const partners = comparablePartners(record);
+    const partner = partners.find((p) => p.id === partnerId) || partners[0] || null;
+    const theirs = partner ? actionShares(partner) : null;
+
+    const pct = (v) => Math.round(v * 100);
+    const grams = (rec, ax) => (rec.action_profile.groups_g[ax.zh] || 0);
+    const herbsOf = (rec, ax) => (rec.action_profile.groups_herbs[ax.zh] || []).join("、");
+
+    // 兩個系列用固定的第 1、2 色位（藍／橘），不是依名次上色 —— 換一個對照方，
+    // 本方的顏色不可以跟著變。palette 已用 dataviz 的 validate_palette.js 對
+    // #ffffff 面驗過：CVD ΔE 24.7、一般視覺 ΔE 33.6、對比度都過 3:1。
+    const series = [
+      { rec: record, shares: mine, cls: "s1" },
+      ...(partner ? [{ rec: partner, shares: theirs, cls: "s2" }] : [])
+    ];
+
+    // 最外圈 = 兩個方的最大值進位到 10%，下限 40%（免得一個很平的方被放大到
+    // 看起來像有巨大差異）。scale() 把百分比換算成 0–1 的半徑比例。
+    const peak = Math.max(...mine, ...(theirs || [0]));
+    const outer = Math.max(0.4, Math.ceil(peak * 10) / 10);
+    const scale = (v) => v / outer;
+
+    const rings = [0.25, 0.5, 0.75, 1].map((f) =>
+      `<polygon class="kr-ring" points="${radarPolygon(ACTION_AXES.map(() => f))}"/>`).join("");
+    const spokes = ACTION_AXES.map((_, i) => {
+      const [x, y] = radarPoint(i, 1);
+      return `<line class="kr-spoke" x1="${RADAR.CX}" y1="${RADAR.CY}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`;
+    }).join("");
+    /* 刻度標在最外和中間兩圈，靠垂直軸左側（text-anchor=end）—— 本來壓在
+       正上方那根軸上，資料線一畫過去就疊在一起看不清。 */
+    const ticks = [0.5, 1].map((f) =>
+      `<text class="kr-tick" x="${RADAR.CX - 6}" y="${(RADAR.CY - RADAR.R * f + 3).toFixed(1)}"
+         text-anchor="end">${Math.round(outer * f * 100)}%</text>`).join("");
+
+    const labels = ACTION_AXES.map((ax, i) => {
+      const [x, y] = radarPoint(i, RADAR.LR / RADAR.R);
+      const dx = x - RADAR.CX;
+      const anchor = dx > 6 ? "start" : dx < -6 ? "end" : "middle";
+      return `<text class="kr-axis" x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="${anchor}">${esc(ax.zh)}</text>`;
+    }).join("");
+
+    const shapes = series.map((s) =>
+      `<polygon class="kr-area kr-${s.cls}" points="${radarPolygon(s.shares.map(scale))}"/>`).join("");
+    // 標記只畫在有值的軸上。零值全部落在圓心，八個點疊成一坨反而看不懂。
+    const dots = series.map((s) => s.shares.map((v, i) => {
+      if (!v) return "";
+      const [x, y] = radarPoint(i, scale(v));
+      const ax = ACTION_AXES[i];
+      return `<circle class="kr-dot kr-${s.cls}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"/>`
+        + `<circle class="kr-hit" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="13"
+             data-radar-tip="${esc(`${ax.zh} ${ax.en} · ${s.rec.name_zh} ${pct(v)}%（${grams(s.rec, ax)}g）｜${herbsOf(s.rec, ax)}`)}"/>`;
+    }).join("")).join("");
+
+    const legend = series.map((s) =>
+      `<span class="kr-key"><i class="kr-sw kr-${s.cls}"></i>${esc(s.rec.name_zh)}</span>`).join("");
+
+    const chips = partners.length > 1
+      ? `<div class="kr-picker">${partners.map((p) =>
+          `<button type="button" class="kr-chip${p.id === (partner && partner.id) ? " is-on" : ""}"
+             data-radar-partner="${esc(p.id)}">${esc(p.name_zh)}</button>`).join("")}</div>`
+      : "";
+
+    // 表格不是備份，是主要的可讀路徑：螢幕報讀、色覺障礙、以及「到底幾克」
+    // 都靠它。圖是快速看形狀，數字在這裡。
+    const rows = ACTION_AXES.map((ax) => {
+      const a = mine[ACTION_AXES.indexOf(ax)];
+      const b = theirs ? theirs[ACTION_AXES.indexOf(ax)] : null;
+      if (!a && !b) return "";
+      const cell = (rec, v) => v
+        ? `<td><b>${pct(v)}%</b> <small>${grams(rec, ax)}g · ${esc(herbsOf(rec, ax))}</small></td>`
+        : `<td class="kr-nil">—</td>`;
+      return `<tr><th scope="row">${esc(ax.zh)}<small>${esc(ax.en)}</small></th>`
+        + cell(record, a) + (partner ? cell(partner, b) : "") + "</tr>";
+    }).join("");
+
+    const summary = `${record.name_zh} 功效組成：`
+      + ACTION_AXES.map((ax, i) => mine[i] ? `${ax.zh} ${pct(mine[i])}%` : "").filter(Boolean).join("、")
+      + (partner ? `；對照 ${partner.name_zh}：`
+        + ACTION_AXES.map((ax, i) => theirs[i] ? `${ax.zh} ${pct(theirs[i])}%` : "").filter(Boolean).join("、") : "");
+
+    return `<div class="k-radar" data-radar-for="${esc(record.id)}">
+      <div class="kr-head">
+        <div class="kr-legend">${legend}</div>
+        ${chips}
+      </div>
+      <div class="kr-plot">
+        <svg viewBox="0 0 360 326" role="img" aria-label="${esc(summary)}">
+          <g>${rings}${spokes}</g>
+          ${ticks}
+          ${labels}${shapes}${dots}
+        </svg>
+        <div class="kr-tip" hidden></div>
+      </div>
+      <table class="kr-table">
+        <caption>依煎劑劑量佔比計算，非療效評分。組成裡的食材輔料（粳米等）不計入分母。</caption>
+        <thead><tr><th scope="col">功效大類</th><th scope="col">${esc(record.name_zh)}</th>
+          ${partner ? `<th scope="col">${esc(partner.name_zh)}</th>` : ""}</tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
   }
 
   /* 原方 back-link. formula_family lives on the BASE formula, so opening a
@@ -684,7 +868,7 @@
     const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
