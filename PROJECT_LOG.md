@@ -1,5 +1,12 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — homepage video asset
+
+- Replaced the static homepage illustration render with Ting's `curriculum/Home/Home.mp4` video while keeping `assets/home-acuting-watercolor.png` as the poster fallback.
+- Added `.home-art__video` styling so the video keeps the same rounded, softly shadowed homepage visual treatment as the prior image.
+- Kept the video as a local repo asset under `curriculum/Home/` per Ting's placement; no data records, generated files, or TCM content changed.
+- Validation: `validate-interactions.js` PASS using bundled Node; `git diff --check` PASS.
+
 ## 2026-07-29 Codex — NCBAHM CH missing herbs batch 11
 
 - Added full formal herb cards for 核桃仁、胡椒、槐米、金櫻子、粳米 from NCBAHM 2026 CH Appendix A + Chenoweth course notes, with CloudTCM/American Dragon used only where exact usable pages or explicitly labeled contextual support were actually reviewed.

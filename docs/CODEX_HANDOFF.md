@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Homepage video asset
+
+- **Branch**: `main`
+- **Task**: Ting placed `curriculum/Home/Home.mp4` and asked Codex to put it onto the homepage.
+- **Files changed**: `index.html`, `styles.css`, `curriculum/Home/Home.mp4`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: homepage art now renders a local `<video>` with `autoplay muted loop playsinline preload="metadata"` and keeps `assets/home-acuting-watercolor.png` as the poster fallback. Added `.home-art__video` styling to match the previous rounded/shadowed homepage image treatment.
+- **Validation**: bundled Node `scripts/validate-interactions.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no herb/formula/acupoint data, generated data, scripts, schema, curriculum PDFs/course notes, or clinical cases changed.
+- **Known risks / manual checks**: browser spot-check only. Open `#ws/home`, Ctrl+F5, confirm the video autoplays muted, loops smoothly, and still looks acceptable on phone width.
+- **Next recommended action**: if Ting wants controls or click-to-play instead of ambient autoplay, change only the video attributes in `index.html`.
+
 ## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 11: He Tao Ren, Hu Jiao, Huai Mi, Jin Ying Zi, Jing Mi
 
 - **Branch**: `codex/herbs-missing-cards-batch9`
