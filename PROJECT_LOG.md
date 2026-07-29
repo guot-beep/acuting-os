@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — homepage watercolor illustration
+
+- Replaced the experimental inline SVG homepage art with Ting's selected watercolor-style AcuTing illustration as the single local image asset: `assets/home-acuting-watercolor.png`.
+- Updated `index.html` to render the image with descriptive alt text and updated `styles.css` so the homepage artwork is centered, responsive, softly rounded, and lightly shadowed.
+- This is an explicit one-image exception to the earlier no-image default because Ting chose the image and the whole site currently uses only this one homepage artwork.
+- Validation: `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: open `#ws/home` on desktop and phone width; confirm the image size, crop, and visual weight feel right.
+
 ## 2026-07-29 Codex — Public EN homepage interface
 
 - Added Public EN mode text switching for the home page, top brand title, right-side navigation panel labels, home search button/placeholder, lotus caption, and unified search-result UI labels.

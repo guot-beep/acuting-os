@@ -22,6 +22,12 @@
     if (formulaFilter) formulaFilter.placeholder = modeText("搜尋方劑、拼音、分類、證型、現代標籤… Search formula, pinyin, category, pattern...", "Search formulas, pinyin, category, patterns, modern tags...");
     const herbFilter = el("herbFilter");
     if (herbFilter) herbFilter.placeholder = modeText("搜尋中藥、拼音、功效、主治、方劑… Search herb, pinyin, action, indication...", "Search herbs, pinyin, actions, indications, formulas...");
+    const comparisonFilter = el("comparisonFilter");
+    if (comparisonFilter) comparisonFilter.placeholder = modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes...");
+    const conditionFilter = el("conditionFilter");
+    if (conditionFilter) conditionFilter.placeholder = modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD...");
+    const cloudtcmDiseaseFilter = el("cloudtcmDiseaseFilter");
+    if (cloudtcmDiseaseFilter) cloudtcmDiseaseFilter.placeholder = modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID...");
   }
   document.addEventListener("acuting:content-mode", applyKnowledgeModeText);
   function esc(v) {
@@ -70,8 +76,8 @@
   }
   function activeConceptBar() {
     if (!activeConcept) return "";
-    return `<div class="k-active-filter">篩選中 <strong>${esc(conceptLabel(activeConcept))}</strong>
-      <button type="button" data-concept-clear>清除 Clear</button></div>`;
+    return `<div class="k-active-filter">${esc(modeText("篩選中", "Filtering"))} <strong>${esc(conceptLabel(activeConcept))}</strong>
+      <button type="button" data-concept-clear>${esc(modeText("清除 Clear", "Clear"))}</button></div>`;
   }
   document.addEventListener("click", (e) => {
     const chip = e.target.closest("[data-concept-id]");
@@ -1057,7 +1063,7 @@
               <div class="k-row-side">
                 ${statusPill(f.review_status)}
                 <p class="k-tags">${searchTags.map(tag).join("")}</p>
-                <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">查看方劑卡</button>
+                <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
               </div>
             </article>`;
         }
@@ -1071,7 +1077,7 @@
             <p class="k-meta">${esc(meta)}</p>
             <p class="k-tags">${[...(f.pattern_focus_en || []), ...searchTags].slice(0, 8).map(tag).join("")}</p>
             ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(esc).join(" · ")}</p>` : ""}
-            <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">查看方劑卡</button>
+            <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
           </article>`;
       }).join("");
 
@@ -1212,9 +1218,9 @@
           <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
           <p class="k-tags">${modernTags.map(tag).join("")}</p>
           ${formulaLinks.length ? `<p class="k-meta">Related formulas: ${formulaLinks.map((id) => `<span class="k-link-chip">${esc(id)}</span>`).join(" ")}</p>` : ""}
-          ${safetyFlags.length ? `<p class="k-flags">Review: ${safetyFlags.map(esc).join(" Â· ")}</p>` : ""}
+          ${safetyFlags.length ? `<p class="k-flags">Review: ${safetyFlags.map(esc).join(" ・ ")}</p>` : ""}
           <p class="k-meta">draft - source review pending - study reference only</p>
-          <button type="button" class="k-open-detail" data-detail-kind="herb" data-detail-id="${esc(h.id)}">查看中藥卡</button>
+          <button type="button" class="k-open-detail" data-detail-kind="herb" data-detail-id="${esc(h.id)}">${esc(modeText("查看中藥卡", "Open herb card"))}</button>
         </article>`;
     }).join("");
 
@@ -1356,7 +1362,7 @@
     if (cmpTablesEl) cmpTablesEl.textContent = `${comparisonTotals.completeTables} 完成 · ${comparisonTotals.partialTables} 部分 · ${comparisonTotals.emptyTables} 空`;
 
     comparisonHost.innerHTML = `
-      <input type="search" id="comparisonFilter" placeholder="搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis" class="k-filter" />
+      <input type="search" id="comparisonFilter" placeholder="${esc(modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes..."))}" class="k-filter" />
       <div class="k-grid k-grid-wide" id="comparisonGrid">${renderComparisons(comparisons) || '<p class="k-missing">No comparison records yet.</p>'}</div>`;
 
     el("comparisonFilter").addEventListener("input", (event) => {
@@ -1463,26 +1469,26 @@
     };
     condHost.innerHTML = `
       <div class="mini-heading">
-        <strong>Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）</strong>
-        <span>來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。</span>
+        <strong>${esc(modeText(`Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）`, `Western Conditions (${conds.length} safety-filled · ${allConds.length} canon)`))}</strong>
+        <span>${esc(modeText("來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。", "Source: condition_canon_shortlist.json · biomedical and TCM names are related mappings, not one-to-one translations."))}</span>
       </div>
-      <input type="search" id="conditionFilter" placeholder="搜尋中英文病名、別名、ICD..." class="k-filter" />
+      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD..."))}" class="k-filter" />
       <div class="k-grid k-grid-wide" id="conditionGrid">${renderConditions(conds)}</div>
       <section class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
         <div class="mini-heading">
-          <strong id="cloudtcmDiseaseHeading">雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})</strong>
-          <span>205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。</span>
+          <strong id="cloudtcmDiseaseHeading">${esc(modeText(`雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})`, `CloudTCM Disease & Symptom Index (${cloudDiseaseEntries.length})`))}</strong>
+          <span>${esc(modeText(`205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。`, `205 source cards are consolidated into ${cloudDiseaseEntries.length} stable page IDs; English labels are curated drafts.`))}</span>
         </div>
         <div id="cloudtcmDiseaseCategoryBar" class="k-cloud-disease-categories" aria-label="症狀疾病分類">
           <button type="button" class="is-active" data-cloud-disease-category="">全部 · All</button>
           ${cloudDiseaseCategories.map((category) => `<button type="button" data-cloud-disease-category="${esc(category.id)}">${esc(category.name_zh)} · ${esc(category.name_en)}</button>`).join("")}
         </div>
-        <input type="search" id="cloudtcmDiseaseFilter" placeholder="搜尋中文、English 或來源 ID..." class="k-filter" />
+        <input type="search" id="cloudtcmDiseaseFilter" placeholder="${esc(modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID..."))}" class="k-filter" />
         <div class="k-cloud-disease-toolbar">
           <span id="cloudtcmDiseasePageStatus"></span>
           <div>
-            <button type="button" id="cloudtcmDiseasePrev" aria-label="上一頁">上一頁</button>
-            <button type="button" id="cloudtcmDiseaseNext" aria-label="下一頁">下一頁</button>
+            <button type="button" id="cloudtcmDiseasePrev" aria-label="${esc(modeText("上一頁", "Previous page"))}">${esc(modeText("上一頁", "Previous"))}</button>
+            <button type="button" id="cloudtcmDiseaseNext" aria-label="${esc(modeText("下一頁", "Next page"))}">${esc(modeText("下一頁", "Next"))}</button>
           </div>
         </div>
         <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
@@ -1526,8 +1532,8 @@
     const sources = K.sources.sources || [];
     srcHost.innerHTML = `
       <div class="mini-heading">
-        <strong>Source Registry / 來源登記（${sources.length}）</strong>
-        <span>來源：data/sources/source_registry.json · authority 5 = 最高權威。</span>
+        <strong>${esc(modeText(`Source Registry / 來源登記（${sources.length}）`, `Source Registry (${sources.length})`))}</strong>
+        <span>${esc(modeText("來源：data/sources/source_registry.json · authority 5 = 最高權威。", "Source: data/sources/source_registry.json · authority 5 = highest authority."))}</span>
       </div>
       <div class="k-grid k-grid-wide">
         ${sources.map((s) => {

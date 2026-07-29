@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Homepage watercolor illustration
+
+- **Branch**: `codex/herbs-missing-cards-batch8`
+- **Task**: Ting preferred the uploaded watercolor AcuTing illustration over the experimental inline SVG designs and approved using it directly because the whole site only needs one homepage image.
+- **Files changed**: `assets/home-acuting-watercolor.png`, `index.html`, `styles.css`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: replaced the prior lotus/experimental SVG homepage art with a local PNG image at `assets/home-acuting-watercolor.png`, rendered from `index.html` with descriptive alt text.
+- **Implementation note**: this is an explicit one-image exception to the Blueprint's no-image default, based on Ting's direct instruction. The image is copied into the repo so the homepage does not depend on `Downloads` or an absolute local path.
+- **Validation**: `scripts/validate-interactions.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no data, generated files, scripts, schema, or clinical content touched.
+- **Manual check**: visually review `#ws/home` after Ctrl+F5, especially mobile width, to confirm image size and visual weight feel right.
+
 ## [2026-07-29] Codex Handoff - Public EN homepage interface
 
 - **Branch**: `codex/herbs-missing-cards-batch8`
