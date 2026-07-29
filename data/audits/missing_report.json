@@ -1,18 +1,18 @@
 {
   "generated_on": "2026-07-28",
-  "scope": "AcuTing OS Quality snapshot: Acupoints 361/361 standard-channel layer complete; herb local cards 281; NCBAHM 2026 CH Appendix A herb coverage 256/304 with 48 missing; formulas 201; pathology conditions 150.",
+  "scope": "AcuTing OS Quality snapshot: Acupoints 361/361 standard-channel layer complete; herb local cards 286; NCBAHM 2026 CH Appendix A herb coverage 261/304 with 43 missing; formulas 201; pathology conditions 150.",
   "total_expected": 361,
   "total_present": 361,
   "total_missing": 0,
   "domain_summary": {
     "acupoints_sourced_cloudtcm": "361/361",
-    "herb_local_cards": "281",
+    "herb_local_cards": "286",
     "herbs_sourced_cloudtcm": "202/202 legacy CloudTCM seed layer; not the NCBAHM board-outline total",
     "formulas_sourced_cloudtcm": "201 local formula records; source-check still pending",
     "pathology_conditions_matched": "89/150",
-    "ncbahm_2026_ch_herb_cards": "256/304 matched; 48 missing"
+    "ncbahm_2026_ch_herb_cards": "261/304 matched; 43 missing"
   },
-  "next_recommended_batch": "Quality finding 2026-07-28: NCBAHM 2026 CH Appendix A has 304 herbs; 256 matched local herb cards; 48 cards missing after adding Bai Guo, Bai Qian, Ban Zhi Lian, Bi Ba, and Bi Xie. Next priority: Chen Xiang, Chi Xiao Dou, Chuan Mu Tong, Chun Pi, Ci Wu Jia.",
+  "next_recommended_batch": "Quality finding 2026-07-28: NCBAHM 2026 CH Appendix A has 304 herbs; 261 matched local herb cards; 43 cards missing after adding Chen Xiang, Chi Xiao Dou, Chuan Mu Tong, Chun Pi, and Ci Wu Jia. Next priority: Di Fu Zi, Dong Chong Xia Cao, Dong Gua Zi, Dong Kui Zi, Feng Mi.",
   "next_recommendation": "361 layer complete and 100% synchronized with CloudTCM. All primary fields, pairings, tags, needling, moxa, and modern research are live.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
@@ -20,15 +20,10 @@
     "scope_note": "Board-outline herb coverage audit; separate from the older 202 CloudTCM herb seed count.",
     "matching_method": "Normalized Appendix A pinyin and checked against local herb records plus known aliases; Bai Ji Li / Ci Ji Li counted as present after herb.bai_ji_li creation.",
     "appendix_a_total": 304,
-    "local_herb_cards": 281,
-    "matched_to_local_cards": 256,
-    "missing_card_count": 48,
+    "local_herb_cards": 286,
+    "matched_to_local_cards": 261,
+    "missing_card_count": 43,
     "missing_cards": [
-      "Chen Xiang",
-      "Chi Xiao Dou",
-      "Chuan Mu Tong",
-      "Chun Pi",
-      "Ci Wu Jia",
       "Di Fu Zi",
       "Dong Chong Xia Cao",
       "Dong Gua Zi",
@@ -94,16 +89,18 @@
     ],
     "last_updated": "2026-07-28",
     "last_completed_cards": [
-      "Xian Mao",
-      "Bai Hua She She Cao",
-      "Bai Xian Pi"
-    ],
-    "next_recommended_batch": [
-      "She Chuang Zi",
-      "Qing Dai",
       "Chen Xiang",
       "Chi Xiao Dou",
-      "Chuan Mu Tong"
+      "Chuan Mu Tong",
+      "Chun Pi",
+      "Ci Wu Jia"
+    ],
+    "next_recommended_batch": [
+      "Di Fu Zi",
+      "Dong Chong Xia Cao",
+      "Dong Gua Zi",
+      "Dong Kui Zi",
+      "Feng Mi"
     ]
   },
   "channels": {

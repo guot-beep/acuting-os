@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 7
+
+- Added full formal herb cards for 沉香、赤小豆、川木通、椿皮、刺五加 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used only where exact pages were actually usable.
+- Added seven sourced herb-pair records: 沉香/烏藥/肉桂/小茴香, 沉香/丁香/白豆蔻/紫蘇葉/生薑, 赤小豆/麻黃/連翹/桑白皮, 赤小豆/當歸, 川木通/車前子/梔子/滑石, 椿皮/黃柏/梔子/車前子, 刺五加/杜仲/桑寄生.
+- Corrected source honesty for 刺五加: American Dragon exact URL was attempted but blocked/placeholder in this pass, so it is not shown as a formal source or top external link.
+- Updated Quality herb-outline audit from 256/304 matched and 48 missing to 261/304 matched and 43 missing; local herb cards are now 286.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch7 targeted bilingual/source/pair/property QA PASS; git diff --check PASS. Known pre-existing missing pair ref remains `pair.ju_he__chuan_lian_zi` → `herb.ju_he`.
+
 ## 2026-07-28 Codex — search fallback route repair + herb/formula lookup UX
 
 - Investigated Ting-reported issue that search/click links appeared nonfunctional after `update.bat`.

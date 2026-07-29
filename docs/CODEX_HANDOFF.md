@@ -1,5 +1,18 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-28] Codex Handoff - NCBAHM missing herbs batch 7: Chen Xiang, Chi Xiao Dou, Chuan Mu Tong, Chun Pi, Ci Wu Jia
+
+- **Branch**: `codex/herbs-missing-cards-batch7`
+- **Task**: Created five NCBAHM 2026 CH Appendix A missing herb cards: `herb.chen_xiang`, `herb.chi_xiao_dou`, `herb.chuan_mu_tong`, `herb.chun_pi`, and `herb.ci_wu_jia`, following the current full-card template and Ting's "treat old content as untrusted" rule.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`, `docs/CODEX_TASK_QUEUE.md`.
+- **Sources used**: NCBAHM 2026 CH Appendix A (`Chen Xiang` L180, `Chi Xiao Dou` L183, `Chuan Mu Tong` L192, `Chun Pi` L197, `Ci Wu Jia` L200); Chenoweth course files for Regulate Qi, Drain Dampness, Extra Herbs, Astringent Herbs, and Qi-tonifying Herbs; CloudTCM Chen Xiang `/herb/987`, Chi Xiao Dou `/herb/1333`, Mu Tong `/herb/1123`, Chun Bai Pi `/herb/998`, and Ci Wu Jia `/herb/3045`; American Dragon Chen Xiang, Chi Xiao Dou, Mu Tong, and Chun Pi pages.
+- **Source honesty**: American Dragon `CiWuJia.html` was attempted but blocked/placeholder in this pass, so `herb.ci_wu_jia` does not show American Dragon as a formal source or top external link.
+- **Pair records added**: `pair.chen_xiang__wu_yao__rou_gui__xiao_hui_xiang`, `pair.chen_xiang__ding_xiang__bai_dou_kou__zi_su_ye__sheng_jiang`, `pair.chi_xiao_dou__ma_huang__lian_qiao__sang_bai_pi`, `pair.chi_xiao_dou__dang_gui`, `pair.chuan_mu_tong__che_qian_zi__zhi_zi__hua_shi`, `pair.chun_pi__huang_bai__zhi_zi__che_qian_zi`, and `pair.ci_wu_jia__du_zhong__sang_ji_sheng`.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved from 256/304 matched and 48 missing to 261/304 matched and 43 missing. Local herb-card count is now 286. Next recommended batch: Di Fu Zi, Dong Chong Xia Cao, Dong Gua Zi, Dong Kui Zi, Feng Mi.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; batch7 targeted QA PASS (bilingual alignment, source citations, dose fields, property/channel boundary, batch pair refs); `git diff --check` PASS. Full-library pair scan still finds pre-existing missing ref `pair.ju_he__chuan_lian_zi` → `herb.ju_he`; this was not introduced by batch7 and remains in backlog.
+- **Protected areas**: no app shell, JS, CSS, scripts, source curriculum, schema, or formula records touched. Generated files were refreshed only via `scripts/build-data.js`.
+- **Known risks / manual checks**: visually spot-check high-safety fields for Chuan Mu Tong species distinction (Chuan/Guan Mu Tong, nephrotoxicity and pregnancy/kidney contraindications), Chen Xiang pregnancy/Heat-Yin deficiency cautions, and Chun Pi deficiency-cold/early-dysentery cautions.
+
 ## [2026-07-28] Codex Handoff - Search fallback + herb/formula lookup UX repair
 
 - **Branch**: `codex/herbs-missing-cards-batch7`
