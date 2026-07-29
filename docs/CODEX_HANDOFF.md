@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Distinguish TCM cold patterns in lookup chips
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Ting noted that many herbs/formulas showed only `感冒 / Common cold`, which hides the TCM distinction between 風寒, 風熱, 暑濕, 表虛, etc.
+- **Files changed**: `js/knowledge.js`, `styles.css`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: added a display-only exterior-pattern derivation layer that scans existing sourced/card fields and adds colored chips for 風寒感冒, 風熱感冒, 暑濕感冒, 表虛感冒, 表實感冒, and 風寒束肺; broad cold/exterior records without a detectable pattern show `感冒類：待辨風寒/風熱`.
+- **Implementation note**: this does not modify herb/formula data or IDs. It makes lookup cards less misleading immediately while full card verification continues separately.
+- **Validation**: bundled Node `--check js/knowledge.js` PASS; `scripts/validate-interactions.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no herb/formula JSON content records, generated data, scripts, schema, source curriculum, or clinical cases touched.
+- **Manual check**: search 麻黃/桂枝/薄荷/菊花/香薷/杏蘇散 and confirm cold-related cards show distinct colored TCM context chips instead of only a generic `感冒`.
+
 ## [2026-07-29] Codex Handoff - Fix Public EN toggle on herb/formula pages
 
 - **Branch**: `codex/herbs-missing-cards-batch9`

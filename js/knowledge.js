@@ -141,6 +141,92 @@
     });
     return chips.join("");
   }
+
+  const EXTERIOR_CONTEXTS = [
+    {
+      id: "wind_cold",
+      zh: "風寒感冒",
+      en: "Wind-Cold cold",
+      cls: "is-wind-cold",
+      terms: ["風寒", "外感風寒", "寒邪襲表", "寒邪束表", "惡寒", "無汗", "脈浮緊", "wind-cold", "wind cold"]
+    },
+    {
+      id: "wind_heat",
+      zh: "風熱感冒",
+      en: "Wind-Heat cold",
+      cls: "is-wind-heat",
+      terms: ["風熱", "外感風熱", "溫病初起", "溫熱初起", "咽痛", "口渴", "wind-heat", "wind heat"]
+    },
+    {
+      id: "summerheat_damp",
+      zh: "暑濕感冒",
+      en: "Summerheat-Damp cold",
+      cls: "is-summerheat-damp",
+      terms: ["暑濕", "暑邪", "夏月", "陰暑", "summerheat", "summer heat"]
+    },
+    {
+      id: "exterior_deficiency",
+      zh: "表虛感冒",
+      en: "Exterior-deficiency",
+      cls: "is-exterior-deficiency",
+      terms: ["表虛", "營衛不和", "自汗", "exterior deficiency", "ying-wei"]
+    },
+    {
+      id: "exterior_excess",
+      zh: "表實感冒",
+      en: "Exterior-excess",
+      cls: "is-exterior-excess",
+      terms: ["表實", "無汗", "脈浮緊", "exterior excess"]
+    },
+    {
+      id: "wind_cold_lung",
+      zh: "風寒束肺",
+      en: "Wind-Cold constraining Lung",
+      cls: "is-wind-cold-lung",
+      terms: ["風寒束肺", "外寒內飲", "寒飲", "咳吐清稀", "wind-cold cough", "cold-phlegm"]
+    }
+  ];
+
+  function recordTextForContext(record) {
+    const fields = [
+      record.category,
+      record.category_zh,
+      record.category_en,
+      record.clinical_use_note,
+      record.exam_pearl_zh,
+      record.exam_pearl_en,
+      record.summary_zh,
+      record.summary_en,
+      ...(record.condition_tags_zh || []),
+      ...(record.condition_tags_en || []),
+      ...(record.actions_zh || []),
+      ...(record.actions_en || []),
+      ...(record.functions_zh || []),
+      ...(record.functions_en || []),
+      ...(record.indications_zh || []),
+      ...(record.indications_en || []),
+      ...(record.pattern_focus_zh || []),
+      ...(record.pattern_focus_en || []),
+      ...(record.pattern_indications_zh || []),
+      ...(record.pattern_indications_en || []),
+      ...(record.syndromes_zh || []),
+      ...(record.syndromes_en || [])
+    ];
+    return fields.filter(Boolean).join(" ").toLowerCase();
+  }
+
+  function exteriorContextChips(record) {
+    const modern = [
+      ...(record.modern_use_tags || []),
+      ...(record.modern_clinical_use_tags || [])
+    ].map((raw) => resolveModernTag(raw).id);
+    const text = recordTextForContext(record);
+    const hasColdSearchTag = modern.includes("common_cold") || /感冒|common cold|外感|表證|解表|release exterior/.test(text);
+    if (!hasColdSearchTag) return "";
+    const matched = EXTERIOR_CONTEXTS.filter((ctx) => ctx.terms.some((term) => text.includes(term.toLowerCase())));
+    if (!matched.length) return `<span class="k-pattern-chip is-unspecified">${esc(modeText("感冒類：待辨風寒/風熱", "Cold/URI: pattern unspecified"))}</span>`;
+    return matched.map((ctx) => `<span class="k-pattern-chip ${esc(ctx.cls)}">${esc(displayLabel(ctx.zh, ctx.en, ctx.id))}</span>`).join("");
+  }
   /* 相關病名與證型 was printing raw ids (pattern.spleen_qi_deficiency). The
      registries already carry bilingual names — the pattern library has 脾氣虛 /
      Spleen Qi Deficiency — they were simply never resolved at display time. */
@@ -1092,6 +1178,7 @@
           f.nccaom_high_yield ? "NCCAOM high-yield" : ""
         ].filter(Boolean).join(" · ");
         const searchTags = (f.modern_clinical_use_tags || []).slice(0, 5);
+        const exteriorChips = exteriorContextChips(f);
         if (!contentReady) {
           return `
             <article class="k-row k-formula-skeleton" data-record-id="${esc(f.id)}">
@@ -1102,7 +1189,7 @@
               </div>
               <div class="k-row-side">
                 ${statusPill(f.review_status)}
-                <p class="k-tags">${modernInlineChips(searchTags, 5)}</p>
+                <p class="k-tags">${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
                 <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
               </div>
             </article>`;
@@ -1115,7 +1202,7 @@
             </header>
             <p class="k-en">${esc(f.name_en)}</p>
             <p class="k-meta">${esc(meta)}</p>
-            <p class="k-tags">${(f.pattern_focus_en || []).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}</p>
+            <p class="k-tags">${(f.pattern_focus_en || []).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
             ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
             <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
           </article>`;
@@ -1248,6 +1335,7 @@
       const formulaLinks = (h.related_formulas || []).slice(0, 5);
       const modernTags = (h.modern_use_tags || []).slice(0, 5);
       const safetyFlags = (h.safety_flags || []).slice(0, 4);
+      const exteriorChips = exteriorContextChips(h);
       return `
         <article class="k-card k-herb-card" data-record-id="${esc(h.id)}">
           <header>
@@ -1257,7 +1345,7 @@
           <p class="k-en">${esc(h.name_en)}</p>
           <p class="k-meta">${esc(herbCategory(h))}</p>
           <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
-          <p class="k-tags">${modernInlineChips(modernTags, 5)}</p>
+          <p class="k-tags">${modernInlineChips(modernTags, 5)}${exteriorChips}</p>
           ${formulaLinks.length ? `<p class="k-meta">${esc(modeText("相關方劑：", "Related formulas:"))} ${formulaChips(formulaLinks)}</p>` : ""}
           ${safetyFlags.length ? `<p class="k-flags">${esc(modeText("審核：", "Review:"))} ${safetyFlags.map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
           <p class="k-meta">${esc(modeText("草稿 · 來源待審 · 學習參考", "draft · source review pending · study reference only"))}</p>

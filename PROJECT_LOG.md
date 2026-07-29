@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — distinguish TCM cold patterns in lookup chips
+
+- Added a front-end TCM exterior-pattern hint layer for herb/formula lookup cards so biomedical `感冒 / Common cold` tags do not flatten board-relevant distinctions.
+- Cards now derive colored context chips from existing fields such as category, condition tags, indications, actions, syndromes, and pattern indications: 風寒感冒, 風熱感冒, 暑濕感冒, 表虛感冒, 表實感冒, and 風寒束肺.
+- If a card is broadly tagged as cold/URI/exterior but no specific pattern is detectable, it shows `感冒類：待辨風寒/風熱` instead of pretending the pattern is known.
+- This is display-only and preserves all immutable IDs and source data; detailed data cleanup still belongs to the herb-card verification batches.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+
 ## 2026-07-29 Codex — fix Public EN toggle on herb/formula pages
 
 - Fixed a mode-sync bug where clicking `Public EN` / `中英版` while already on the herb or formula workspace changed global UI state but did not re-render the lookup grids.
