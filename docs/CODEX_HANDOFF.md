@@ -1,5 +1,15 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Make exterior-pattern chips conservative
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Ting correctly caught that Ma Huang must not be labeled 風寒表虛; the UI inference had scanned contrast/negative text as if it were positive indication evidence.
+- **Files changed**: `js/knowledge.js`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: exterior-pattern chip inference now scans only positive category/tag/indication/pattern fields and excludes clinical notes, summaries, exam pearls, actions, and functions. Removed broad symptom-only triggers (`自汗`, `口渴`, `無汗`, `脈浮緊`) so chips require explicit pattern wording or board-style English pattern labels.
+- **Validation**: bundled Node `--check js/knowledge.js` PASS; `scripts/validate-interactions.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no herb/formula JSON content records, generated data, scripts, schema, source curriculum, or clinical cases touched.
+- **Manual check**: search 麻黃; it should not show 表虛. Search 桂枝; 表虛 should appear only if its positive indication/tag fields state 營衛不和/表虛.
+
 ## [2026-07-29] Codex Handoff - Soften exterior-pattern chip colors
 
 - **Branch**: `codex/herbs-missing-cards-batch9`

@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — make exterior-pattern chips conservative
+
+- Fixed a false-positive exterior-pattern chip issue: 麻黃 could be incorrectly labeled 表虛 because the UI scanned clinical-note contrast text such as “表虛有汗更偏桂枝” as if it were Ma Huang’s indication.
+- Exterior-pattern chips now derive only from positive category/tag/indication/pattern fields, not clinical notes, summaries, exam pearls, actions, or functions where negation and comparison language are common.
+- Removed overly broad symptom-only triggers such as 自汗, 口渴, 無汗, and 脈浮緊 from chip inference; pattern labels now require explicit pattern wording or board-style English terms.
+- Validation: `js/knowledge.js` syntax check PASS; `validate-interactions.js` PASS; `git diff --check` PASS.
+- Manual check: 麻黃 should no longer show 表虛; 桂枝 may show 表虛 only when its positive source fields state 營衛不和/表虛.
+
 ## 2026-07-29 Codex — soften exterior-pattern chip colors
 
 - Softened the new exterior-pattern chips so 風寒/風熱/暑濕/表虛/表實 remain distinguishable without visually overpowering herb/formula cards.

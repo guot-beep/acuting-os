@@ -148,14 +148,14 @@
       zh: "風寒感冒",
       en: "Wind-Cold cold",
       cls: "is-wind-cold",
-      terms: ["風寒", "外感風寒", "寒邪襲表", "寒邪束表", "惡寒", "無汗", "脈浮緊", "wind-cold", "wind cold"]
+      terms: ["風寒", "外感風寒", "寒邪襲表", "寒邪束表", "wind-cold", "wind cold"]
     },
     {
       id: "wind_heat",
       zh: "風熱感冒",
       en: "Wind-Heat cold",
       cls: "is-wind-heat",
-      terms: ["風熱", "外感風熱", "溫病初起", "溫熱初起", "咽痛", "口渴", "wind-heat", "wind heat"]
+      terms: ["風熱", "外感風熱", "溫病初起", "溫熱初起", "wind-heat", "wind heat"]
     },
     {
       id: "summerheat_damp",
@@ -169,21 +169,21 @@
       zh: "表虛感冒",
       en: "Exterior-deficiency",
       cls: "is-exterior-deficiency",
-      terms: ["表虛", "營衛不和", "自汗", "exterior deficiency", "ying-wei"]
+      terms: ["表虛", "營衛不和", "exterior deficiency", "ying-wei"]
     },
     {
       id: "exterior_excess",
       zh: "表實感冒",
       en: "Exterior-excess",
       cls: "is-exterior-excess",
-      terms: ["表實", "無汗", "脈浮緊", "exterior excess"]
+      terms: ["表實", "風寒表實", "exterior excess", "excess exterior"]
     },
     {
       id: "wind_cold_lung",
       zh: "風寒束肺",
       en: "Wind-Cold constraining Lung",
       cls: "is-wind-cold-lung",
-      terms: ["風寒束肺", "外寒內飲", "寒飲", "咳吐清稀", "wind-cold cough", "cold-phlegm"]
+      terms: ["風寒束肺", "外寒內飲", "寒飲", "咳吐清稀", "wind-cold cough", "cold-phlegm", "exterior cold with internal", "internal thin fluids"]
     }
   ];
 
@@ -192,17 +192,8 @@
       record.category,
       record.category_zh,
       record.category_en,
-      record.clinical_use_note,
-      record.exam_pearl_zh,
-      record.exam_pearl_en,
-      record.summary_zh,
-      record.summary_en,
       ...(record.condition_tags_zh || []),
       ...(record.condition_tags_en || []),
-      ...(record.actions_zh || []),
-      ...(record.actions_en || []),
-      ...(record.functions_zh || []),
-      ...(record.functions_en || []),
       ...(record.indications_zh || []),
       ...(record.indications_en || []),
       ...(record.pattern_focus_zh || []),
