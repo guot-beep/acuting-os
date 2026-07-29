@@ -28,6 +28,25 @@ const refs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)]
 
 const files = [...new Set([ENTRY, ...refs])];
 
+/* The "curriculum/ stays behind" promise in the header was never enforced — it
+ * held only because index.html happened never to reference that directory. The
+ * first time one did (a homepage video committed to curriculum/Home/Home.mp4),
+ * this script would have copied it into dist/ and published Ting's private
+ * course directory to the open internet, silently, with a green build.
+ *
+ * Deployment is outward-facing and hard to take back: once a file is served it
+ * can be cached and indexed even after removal. So the quarantine is a check,
+ * not a comment. Site assets belong in assets/.
+ */
+const QUARANTINED = ["curriculum/", "data/imports/", "docs/", "clinical/", "cases/"];
+const leaked = files.filter((rel) => QUARANTINED.some((dir) => rel.startsWith(dir)));
+if (leaked.length) {
+  console.error(`FAIL — ${ENTRY} references ${leaked.length} file(s) inside a directory that must never ship:`);
+  leaked.forEach((rel) => console.error(`  ${rel}`));
+  console.error("\nThese would have been published. Move the asset into assets/ and update the reference.");
+  process.exit(1);
+}
+
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
