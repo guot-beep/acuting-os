@@ -1,5 +1,19 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 8: Di Fu Zi, Dong Chong Xia Cao, Dong Gua Zi, Dong Kui Zi, Feng Mi
+
+- **Branch**: `codex/herbs-missing-cards-batch8`
+- **Task**: Created five NCBAHM 2026 CH Appendix A missing herb cards: `herb.di_fu_zi`, `herb.dong_chong_xia_cao`, `herb.dong_gua_zi`, `herb.dong_kui_zi`, and `herb.feng_mi`, following Ting's strict full-card template rule: old/local skeleton values are not trusted unless rechecked.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `docs/HERB_RECORD_STANDARD.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`, `docs/CODEX_TASK_QUEUE.md`.
+- **Sources used**: NCBAHM 2026 CH Appendix A (`Di Fu Zi` L214, `Dong Chong Xia Cao` L225, `Dong Gua Zi` L226, `Dong Kui Zi` L227, `Feng Mi` L234); Chenoweth course files for Drain Dampness, Yang Tonics, Qi Tonics, and blood-regulating abscess context; CloudTCM Di Fu Zi `/herb/1014`, Dong Chong Xia Cao `/herb/1569`, Dong Gua Zi `/herb/1021`, Dong Kui Zi `/herb/1022`, and Feng Mi `/herb/1030`; American Dragon Di Fu Zi and Dong Chong Xia Cao full pages, with Dong Kui Zi direct page blocked and therefore labeled as search-snippet support only.
+- **Pair records added**: `pair.di_fu_zi__ku_shen__bai_xian_pi`, `pair.di_fu_zi__che_qian_zi__hua_shi`, `pair.di_fu_zi__ku_shen__she_chuang_zi`, `pair.di_fu_zi__ju_hua__jue_ming_zi__qing_xiang_zi__gu_jing_cao`, `pair.dong_chong_xia_cao__du_zhong__yin_yang_huo__rou_cong_rong`, `pair.dong_chong_xia_cao__chuan_bei_mu__e_jiao__mai_men_dong`, `pair.dong_chong_xia_cao__ge_jie`, `pair.dong_gua_zi__yu_xing_cao__lu_gen__yi_yi_ren`, `pair.dong_gua_zi__xing_ren__ban_xia__chuan_bei_mu__ce_bai_ye`, `pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao`, `pair.dong_kui_zi__che_qian_zi__hua_shi__jin_qian_cao`, `pair.dong_kui_zi__huo_ma_ren`, `pair.feng_mi__bai_zi_ren__huo_ma_ren`, and `pair.feng_mi__huang_qi`.
+- **New Ting rule captured**: source-supported 對藥 can reference a missing `herb_id` before the target card is created. Do not delete NCBAHM/Chenoweth/AD-supported pair evidence just because the linked herb card is not local yet; mark the link pending and build that missing card later.
+- **Pending pair-linked herb IDs**: `herb.she_chuang_zi`, `herb.qing_xiang_zi`, `herb.gu_jing_cao`, `herb.ge_jie`, `herb.nan_sha_shen`. These are intentional pending links, not broken accidental refs.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved from 261/304 matched and 43 missing to 266/304 matched and 38 missing. Local herb-card count is now 291. Next recommended batch: Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, Gu Ya.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; batch8 targeted QA PASS (bilingual alignment, contraindications/cautions English, source citations, dosage fields, no property/channel contamination, and pair refs checked with intentional pending refs allowed); `git diff --check` PASS.
+- **Protected areas**: no app shell, JS, CSS, scripts, source curriculum, schema, or formula records touched. Generated files were refreshed only via `scripts/build-data.js`.
+- **Known risks / manual checks**: review Di Fu Zi source-channel differences and Hai Piao Xiao incompatibility; Dong Chong Xia Cao pregnancy/bleeding/anticoagulant cautions; Dong Gua Zi dose because CloudTCM provided food/tea use rather than a standard decoction dose; Dong Kui Zi direct American Dragon page was blocked and only snippet support was retained; Feng Mi infant/diabetes/dampness cautions.
+
 ## [2026-07-28] Codex Handoff - NCBAHM missing herbs batch 7: Chen Xiang, Chi Xiao Dou, Chuan Mu Tong, Chun Pi, Ci Wu Jia
 
 - **Branch**: `codex/herbs-missing-cards-batch7`

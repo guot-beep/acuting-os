@@ -68991,6 +68991,815 @@
       "cloudtcm_link_status": "verified_exact_page",
       "american_dragon_link_status": "exact_page_open_blocked_not_used_for_direct_content",
       "american_dragon_status": "not_used_exact_page_blocked_this_pass"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "id": "herb.di_fu_zi",
+      "name_zh": "地膚子",
+      "name_en": "Kochia Fruit",
+      "pinyin": "Dì Fū Zǐ",
+      "pharmaceutical_latin": "Kochiae Fructus",
+      "part_used_en": "fruit",
+      "aliases_zh": [
+        "地葵",
+        "掃帚子",
+        "帚菜子",
+        "竹帚子"
+      ],
+      "category": "利水滲濕藥 / Drain Dampness",
+      "properties_taste_temp": "甘、苦，寒",
+      "channels_zh": [
+        "膀胱經",
+        "腎經"
+      ],
+      "functions_zh": [
+        "清熱利濕通淋",
+        "利水消腫",
+        "祛風除濕止癢",
+        "清風熱、明目止痛"
+      ],
+      "actions_en": [
+        "Clears Damp-Heat, promotes urination, and unblocks Lin",
+        "Promotes urination and reduces edema",
+        "Dispels Wind-Damp and stops itching",
+        "Clears Wind-Heat, brightens the eyes, and relieves pain"
+      ],
+      "indications_zh": [
+        "膀胱濕熱淋證 —— 小便短赤、灼熱澀痛、尿少，常配豬苓、通草、瞿麥或車前子、滑石。",
+        "濕熱皮膚瘙癢 —— 濕疹、疥癬、陰囊濕疹、外陰瘙癢，可內服或煎湯外洗。",
+        "風熱上攻目赤頭痛 —— 眼紅腫痛、頭面風熱，可配菊花、薄荷、黃柏等疏清。",
+        "濕熱下注之外陰或尿道不適 —— 尿道炎、陰部濕癢、白帶黃濁需辨濕熱。",
+        "水腫尿少 —— 以濕熱或膀胱氣化不利為主，單用力弱，多作配伍藥。"
+      ],
+      "indications_en": [
+        "Bladder Damp-Heat Lin with short, red, burning, scanty, painful urination; often combined with Zhu Ling, Tong Cao, Qu Mai, Che Qian Zi, or Hua Shi.",
+        "Damp-Heat skin itching such as eczema, scabies, scrotal eczema, or genital itching; used internally or as an external wash.",
+        "Wind-Heat attacking the head and eyes with red, swollen, painful eyes and headache; combined with cooling Wind-Heat herbs.",
+        "Damp-Heat in the lower genital or urinary tract with urethral discomfort, genital itching, or yellow discharge.",
+        "Edema with scanty urine due to Damp-Heat or impaired Bladder Qi transformation; mild alone and usually combined."
+      ],
+      "condition_tags_zh": [
+        "熱淋",
+        "小便澀痛",
+        "濕疹",
+        "皮膚瘙癢",
+        "陰囊濕疹",
+        "目赤腫痛"
+      ],
+      "condition_tags_en": [
+        "Heat Lin",
+        "Painful urination",
+        "Eczema",
+        "Pruritus",
+        "Scrotal eczema",
+        "Red swollen painful eyes"
+      ],
+      "modern_functions_zh": [
+        "利尿",
+        "抗發炎",
+        "抗氧化",
+        "降血脂",
+        "抗腫瘤潛力",
+        "止癢/皮膚抗敏方向"
+      ],
+      "modern_functions_en": [
+        "Diuretic activity",
+        "Anti-inflammatory activity",
+        "Antioxidant activity",
+        "Lipid-lowering activity",
+        "Potential antitumor activity",
+        "Anti-pruritic / dermatologic anti-allergy direction"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "10–15g（課件）/ 6–15g（CloudTCM）/ 3–15g（American Dragon）",
+        "course_dose_g": "10–15g",
+        "cloudtcm_dose_g": "6–15g；外用適量煎水洗",
+        "ad_dose_g": "3–15g；tincture 2–4ml",
+        "source_note": "內服以課件 10–15g 為主；外用洗劑不併入內服日量。CloudTCM 與 American Dragon 劑量差異保留。"
+      },
+      "dosage": {
+        "min_g": 10,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "contraindications_zh": [
+        "無濕熱症狀者禁用/不宜（American Dragon）。",
+        "脾胃虛寒者不宜使用（CloudTCM）。",
+        "氣滯不通者不宜使用（CloudTCM）。"
+      ],
+      "contraindications_en": [
+        "Do not use when Damp-Heat signs are absent (American Dragon).",
+        "Unsuitable in Spleen-Stomach deficiency Cold (CloudTCM).",
+        "Unsuitable when Qi stagnation/obstruction is the main issue (CloudTCM)."
+      ],
+      "cautions_zh": [
+        "相惡/不宜同用螵蛸；American Dragon 列勿與海螵蛸同用，CloudTCM 亦列忌螵蛸。",
+        "孕婦、哺乳期、兒童、老人或體質虛弱者慎用（CloudTCM）。",
+        "過量可能噁心、嘔吐、腹瀉、暈眩、四肢無力；不宜長期大量使用（CloudTCM）。"
+      ],
+      "cautions_en": [
+        "Incompatible/avoid with Hai Piao Xiao / mantis egg case-like source notes; American Dragon lists Os Sepiae/Sepiellae, CloudTCM lists Piao Xiao.",
+        "Use cautiously in pregnancy, lactation, children, elders, or weak constitution (CloudTCM).",
+        "Overdose may cause nausea, vomiting, diarrhea, dizziness, and limb weakness; avoid long-term high-dose use (CloudTCM)."
+      ],
+      "safety_flags": [
+        "pregnancy_caution",
+        "pediatric_caution",
+        "incompatibility_hai_piao_xiao",
+        "overdose_caution"
+      ],
+      "related_formulas": [],
+      "key_pairs": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：利水通淋 + 濕熱皮膚瘙癢；外洗/內服都常考。",
+      "exam_pearl": "地膚子 = 膀胱濕熱尿痛 + 濕熱皮膚癢。不是單純利水藥；沒有濕熱就不要用。",
+      "clinical_use_note": "地膚子定位在『濕熱從小便出 + 皮膚止癢』。和苦參都清濕熱止癢，但地膚子更偏利尿通淋、祛風止癢；苦參更苦寒燥濕殺蟲。注意蛇床子尚未建卡，本批不做正式 pair。",
+      "classical_text_zh": "《本草正義》意旨：苦寒洩熱，重在清導濕熱、通洩小便。",
+      "classical_text_en": "Classical summaries emphasize bitter-cold Heat-draining action that guides Damp-Heat out through urination.",
+      "field_sources": {
+        "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L214",
+        "curriculum": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L429-L450",
+        "cloudtcm": "https://cloudtcm.com/herb/1014",
+        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/DiFuZi.html"
+      },
+      "exact_source_url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L429-L450",
+      "safety_source_url": "https://cloudtcm.com/herb/1014",
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L214",
+          "note": "Di Fu Zi listed as board-outline herb."
+        },
+        {
+          "name": "Chenoweth Drain Dampness",
+          "url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L429-L450",
+          "note": "Course properties, channels, actions, indications, and dose."
+        },
+        {
+          "name": "CloudTCM 地膚子",
+          "url": "https://cloudtcm.com/herb/1014",
+          "note": "Exact page for aliases, properties/channels, modern functions, dose, cautions, and visual link."
+        },
+        {
+          "name": "American Dragon Di Fu Zi",
+          "url": "https://www.americandragon.com/Individualherbsupdate/DiFuZi.html",
+          "note": "Actions, indications, dose, contraindication, incompatibility, and major combinations."
+        }
+      ],
+      "cloudtcm_url": "https://cloudtcm.com/herb/1014",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/DiFuZi.html"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "id": "herb.dong_chong_xia_cao",
+      "name_zh": "冬蟲夏草",
+      "name_en": "Cordyceps",
+      "pinyin": "Dōng Chóng Xià Cǎo",
+      "pharmaceutical_latin": "Cordyceps",
+      "part_used_en": "fungus-insect complex",
+      "aliases_zh": [
+        "蟲草",
+        "夏草冬蟲"
+      ],
+      "category": "補虛藥 / Tonify Yang",
+      "properties_taste_temp": "甘，溫（AD 另列平）",
+      "channels_zh": [
+        "肺經",
+        "腎經"
+      ],
+      "functions_zh": [
+        "補腎益精助陽",
+        "補肺益腎、止咳平喘",
+        "止血化痰",
+        "扶正補虛、止汗"
+      ],
+      "actions_en": [
+        "Tonifies the Kidneys, augments Essence, and supports Yang",
+        "Tonifies the Lung and Kidney and stops cough and wheezing",
+        "Stops bleeding and transforms phlegm",
+        "Supports deficiency recovery and helps stop sweating"
+      ],
+      "indications_zh": [
+        "腎陽/腎精不足 —— 陽痿、腰膝酸軟、骨關節虛弱、耳鳴、久虛疲倦。",
+        "肺腎兩虛久咳虛喘 —— 慢性咳喘、氣短、肺腎不納，痰中帶血。",
+        "肺陰不足或虛勞咳血 —— 乾咳、少痰或血絲痰，常配沙參、川貝母、阿膠、麥冬等。",
+        "病後體虛、自汗、衛氣不足 —— 久病恢復期疲倦、自汗、抵抗力低下，可作食療燉服。",
+        "虛損百勞、長期體虛 —— 溫和平補，偏肺腎同補而不猛烈燥烈。"
+      ],
+      "indications_en": [
+        "Kidney Yang/Jing deficiency with impotence, weak low back/knees, weak bones/joints, tinnitus, and chronic fatigue.",
+        "Chronic cough and wheezing from Lung-Kidney deficiency with shortness of breath, failure to grasp Qi, and blood-streaked phlegm.",
+        "Lung Yin deficiency or consumptive cough with dry cough, scant phlegm, or blood-streaked sputum; often combined with Sha Shen, Chuan Bei Mu, E Jiao, or Mai Men Dong.",
+        "Post-illness deficiency with spontaneous sweating, fatigue, weak Wei Qi, and lowered resistance; often prepared as medicinal soup.",
+        "Chronic deficiency and debility; gently tonifies the Lung-Kidney axis without the harshness of stronger Yang tonics."
+      ],
+      "condition_tags_zh": [
+        "久咳虛喘",
+        "咳血",
+        "腎虛陽痿",
+        "腰膝酸軟",
+        "病後體虛",
+        "自汗"
+      ],
+      "condition_tags_en": [
+        "Chronic deficiency cough and wheezing",
+        "Hemoptysis / blood-streaked sputum",
+        "Kidney-deficiency impotence",
+        "Low back and knee weakness",
+        "Post-illness debility",
+        "Spontaneous sweating"
+      ],
+      "modern_functions_zh": [
+        "抗疲勞",
+        "抗氧化",
+        "提升免疫力",
+        "降血糖",
+        "預防心血管疾病",
+        "抗心律失常",
+        "抗腫瘤潛力"
+      ],
+      "modern_functions_en": [
+        "Anti-fatigue activity",
+        "Antioxidant activity",
+        "Immune-supporting activity",
+        "Hypoglycemic activity",
+        "Cardiovascular protective potential",
+        "Anti-arrhythmic activity",
+        "Potential antitumor activity"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "5–10g（課件）/ 3–9g（CloudTCM）/ 3–14g（American Dragon）",
+        "course_dose_g": "5–10g decoction or soup",
+        "cloudtcm_dose_g": "3–9g；食療 5–15g；研末每日約 1g",
+        "ad_dose_g": "3–14g；tincture 2–4ml",
+        "source_note": "因價格昂貴，CloudTCM 建議可另煎兌服或研粉沖服；課件也列可燉湯。劑量差異保留，不合併成單一共識。"
+      },
+      "dosage": {
+        "min_g": 5,
+        "max_g": 10,
+        "unit": "g/day",
+        "route": "decoction/soup"
+      },
+      "contraindications_zh": [
+        "表邪未解或外感表證者不宜/慎用（課件、American Dragon、CloudTCM 皆列表證慎用）。",
+        "對冬蟲夏草或菌類、真菌類過敏者禁用/避免使用（CloudTCM）。",
+        "孕婦、哺乳期婦女與小兒不建議自行使用（CloudTCM）。"
+      ],
+      "contraindications_en": [
+        "Avoid or use cautiously when an exterior pathogen is unresolved (course, American Dragon, and CloudTCM list exterior-condition caution).",
+        "Avoid in allergy to Cordyceps or fungi/mushrooms (CloudTCM).",
+        "Pregnant/lactating patients and children should not self-use (CloudTCM)."
+      ],
+      "cautions_zh": [
+        "出血性疾病或正在使用抗凝/抗血小板藥者慎用；CloudTCM 列可能增加出血風險。",
+        "心臟病、高血壓患者需專業監督（CloudTCM）。",
+        "名貴且常有替代/偽品問題；臨床需確認來源品質，不可把食品級補品等同藥用品。"
+      ],
+      "cautions_en": [
+        "Use cautiously in bleeding disorders or with anticoagulant/antiplatelet drugs; CloudTCM lists potential bleeding-risk concerns.",
+        "Use under professional supervision in heart disease or hypertension (CloudTCM).",
+        "Expensive and prone to substitution/adulteration; verify sourcing quality and do not equate supplement-grade products with medicinal material."
+      ],
+      "safety_flags": [
+        "exterior_condition_caution",
+        "pregnancy_lactation_pediatric_caution",
+        "anticoagulant_caution",
+        "source_quality_caution"
+      ],
+      "related_formulas": [],
+      "key_pairs": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：少數同時補腎陽/益精又補肺陰、止咳平喘、止血化痰的高價補虛藥。",
+      "exam_pearl": "冬蟲夏草 = 肺腎雙補；比蛤蚧更溫和、偏長期虛損，特色是補陽而不太傷陰。",
+      "clinical_use_note": "冬蟲夏草不要只記成補陽藥：它是肺腎軸、虛勞久咳、血絲痰、病後體虛的橋樑。和蛤蚧相比，蛤蚧更強在納氣平喘；冬蟲夏草更平補、兼益精與止血化痰。表邪未解不要急補。",
+      "classical_text_zh": "《本草從新》意旨：保肺益腎，止血化痰，已勞嗽。",
+      "classical_text_en": "Classical materia medica emphasizes protecting the Lung, benefiting the Kidney, stopping bleeding, transforming phlegm, and addressing consumptive cough.",
+      "field_sources": {
+        "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L225",
+        "curriculum": "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L124-L145",
+        "cloudtcm": "https://cloudtcm.com/herb/1569",
+        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/DongChongXiaCao.html"
+      },
+      "exact_source_url": "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L124-L145",
+      "safety_source_url": "https://cloudtcm.com/herb/1569",
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L225",
+          "note": "Dong Chong Xia Cao listed as board-outline herb."
+        },
+        {
+          "name": "Chenoweth Yang Tonics",
+          "url": "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L124-L145",
+          "note": "Course properties, channels, actions, indications, dose, cautions, and exam comparison."
+        },
+        {
+          "name": "CloudTCM 冬蟲夏草",
+          "url": "https://cloudtcm.com/herb/1569",
+          "note": "Exact page for identity, properties, modern functions, dose, and safety cautions."
+        },
+        {
+          "name": "American Dragon Dong Chong Xia Cao",
+          "url": "https://www.americandragon.com/Individualherbsupdate/DongChongXiaCao.html",
+          "note": "Actions, indications, dose, contraindications, notes, and major combinations."
+        }
+      ],
+      "cloudtcm_url": "https://cloudtcm.com/herb/1569",
+      "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/DongChongXiaCao.html"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "id": "herb.dong_gua_zi",
+      "name_zh": "冬瓜子",
+      "name_en": "Winter Melon Seed",
+      "pinyin": "Dōng Guā Zǐ",
+      "pharmaceutical_latin": "Benincasae Semen",
+      "part_used_en": "seed",
+      "aliases_zh": [
+        "冬瓜仁",
+        "白瓜子",
+        "瓜瓣"
+      ],
+      "category": "利水滲濕藥 / Drain Dampness",
+      "properties_taste_temp": "甘，寒/微寒（CloudTCM列無毒）",
+      "channels_zh": [
+        "肺經",
+        "大腸經",
+        "胃經",
+        "小腸經"
+      ],
+      "functions_zh": [
+        "清熱化痰",
+        "消癰排膿",
+        "利水消腫",
+        "潤肺止咳"
+      ],
+      "actions_en": [
+        "Clears Heat and transforms phlegm",
+        "Reduces abscesses and drains pus",
+        "Promotes urination and reduces edema",
+        "Moistens the Lung and stops cough"
+      ],
+      "indications_zh": [
+        "肺癰 —— 咳吐腥臭膿痰，常配魚腥草、蘆根、薏苡仁。",
+        "腸癰 —— 右下腹痛、膿腫方向，可配大黃、牡丹皮、敗醬草等。",
+        "痰熱咳嗽/支氣管炎 —— 黃痰、咽痛，課件列可配薄荷、杏仁、前胡、牛蒡子、射干。",
+        "乾咳或痰少帶血 —— 可與杏仁、半夏、生地黃、川貝母、側柏葉、茜草等同用。",
+        "水腫、小便不利 —— 冬瓜皮與冬瓜子皆可利水，但冬瓜子力較溫和，常需配伍增效。"
+      ],
+      "indications_en": [
+        "Lung abscess with foul-smelling purulent sputum; often combined with Yu Xing Cao, Lu Gen, and Yi Yi Ren.",
+        "Intestinal abscess with lower-abdominal pain or pus; may be combined with Da Huang, Mu Dan Pi, Bai Jiang Cao, and related herbs.",
+        "Phlegm-Heat cough/bronchitis with yellow sputum and sore throat; course lists combinations with Bo He, Xing Ren, Qian Hu, Niu Bang Zi, and She Gan.",
+        "Dry cough or scanty blood-streaked sputum; may combine with Xing Ren, Ban Xia, Sheng Di Huang, Chuan Bei Mu, Ce Bai Ye, and Qian Cao.",
+        "Edema and difficult urination; winter melon peel and seed both drain water, but the seed is mild and usually needs combination."
+      ],
+      "condition_tags_zh": [
+        "肺癰",
+        "腸癰",
+        "痰熱咳嗽",
+        "黃痰",
+        "水腫",
+        "小便不利"
+      ],
+      "condition_tags_en": [
+        "Lung abscess",
+        "Intestinal abscess",
+        "Phlegm-Heat cough",
+        "Yellow sputum",
+        "Edema",
+        "Difficult urination"
+      ],
+      "modern_functions_zh": [
+        "抗氧化",
+        "抗菌",
+        "抗病毒",
+        "抗腫瘤潛力",
+        "降血脂",
+        "降血糖",
+        "降血壓",
+        "利尿"
+      ],
+      "modern_functions_en": [
+        "Antioxidant activity",
+        "Antibacterial activity",
+        "Antiviral activity",
+        "Potential antitumor activity",
+        "Lipid-lowering activity",
+        "Hypoglycemic activity",
+        "Blood-pressure-lowering potential",
+        "Diuretic activity"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "10–15g（課件）/ 食療泡水約10g（CloudTCM）",
+        "course_dose_g": "10–15g",
+        "cloudtcm_dose_g": "泡水可用約10g；本頁未列完整湯劑標準段",
+        "ad_dose_g": "American Dragon 直接頁本次未能安全核讀，未採用",
+        "source_note": "課件為內服標準主軸；CloudTCM 食療泡水 10g 只作食療 note，不覆蓋課件湯劑量。"
+      },
+      "dosage": {
+        "min_g": 10,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "contraindications_zh": [
+        "肺寒咳嗽或寒痰咳嗽者不宜（依冬瓜子甘寒、清熱化痰方向，需辨證；課件未列專段禁忌）。",
+        "無熱毒膿癰、無痰熱或無水濕者不宜作主藥（依課件主治範圍）。"
+      ],
+      "contraindications_en": [
+        "Unsuitable for Cold-type cough or Cold-phlegm cough; differentiate because the herb is sweet-cold and clears Heat-phlegm (course has no separate contraindication paragraph).",
+        "Do not use as the main herb when Heat-toxin abscess, Phlegm-Heat, or water-Damp signs are absent (based on course indication scope)."
+      ],
+      "cautions_zh": [
+        "冬瓜子利水力較溫和，水腫尿少不可單靠此藥；課件明示需配伍增效。",
+        "脾胃虛寒、便溏者慎用甘寒潤利之品。",
+        "CloudTCM 食療內容不可當成治療劑量；免疫低下或慢性病食療仍需辨證。"
+      ],
+      "cautions_en": [
+        "Its diuretic effect is mild; do not rely on it alone for edema or dysuria—course notes it should be combined for effectiveness.",
+        "Use cautiously in Spleen-Stomach deficiency Cold or loose stools because it is sweet-cold and moistening.",
+        "CloudTCM food-therapy instructions are not the same as therapeutic dosing; chronic illness or immune weakness still requires pattern differentiation."
+      ],
+      "safety_flags": [
+        "deficiency_cold_caution",
+        "food_therapy_dose_separate"
+      ],
+      "related_formulas": [
+        "formula.wei_jing_tang"
+      ],
+      "key_pairs": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：冬瓜子偏肺癰/腸癰排膿 + 利水；冬瓜皮偏利水消腫清暑熱。",
+      "exam_pearl": "冬瓜子 = 清熱化痰、消癰排膿；肺癰腸癰一定想到葦莖湯方向。",
+      "clinical_use_note": "冬瓜子不要和冬瓜皮混掉：皮更偏利水消腫清熱；子更偏肺癰、腸癰、痰熱咳嗽與排膿。課件明說生品化痰排膿較強，炒後偏暖脾胃、除濕。",
+      "classical_text_zh": "古法多取冬瓜子甘寒潤利，入肺腸以清熱化痰、消癰排膿。",
+      "classical_text_en": "Traditional use emphasizes its sweet-cold moistening quality entering Lung and Intestine to clear Heat, transform phlegm, and drain abscess pus.",
+      "pao_zhi_notes_zh": "生冬瓜子化痰、排膿、消癰與利水較強；炒冬瓜子較偏溫脾胃、除濕（課件）。",
+      "pao_zhi_notes_en": "Unprocessed seed is stronger for phlegm, pus, abscesses, and edema; dry-fried seed is more warming to the Spleen/Stomach and Damp-transforming (course).",
+      "field_sources": {
+        "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L226",
+        "curriculum": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L463-L490; curriculum/herbs/MM2-Herbs_that_Regulate_the_Blood.md#L403-L404",
+        "cloudtcm": "https://cloudtcm.com/herb/1021",
+        "american_dragon_status": "Exact American Dragon page not safely verified in this pass; not used."
+      },
+      "exact_source_url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L463-L490",
+      "safety_source_url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L463-L490",
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L226",
+          "note": "Dong Gua Zi listed as board-outline herb."
+        },
+        {
+          "name": "Chenoweth Drain Dampness",
+          "url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L463-L490",
+          "note": "Course properties, channels, actions, indications, processing, and dose."
+        },
+        {
+          "name": "Chenoweth Blood/Abscess combinations",
+          "url": "curriculum/herbs/MM2-Herbs_that_Regulate_the_Blood.md#L403-L404",
+          "note": "Course combinations for lung and intestinal abscess."
+        },
+        {
+          "name": "CloudTCM 冬瓜子",
+          "url": "https://cloudtcm.com/herb/1021",
+          "note": "Exact page for identity, properties, traditional/modern functions, food-use note, and visual link."
+        }
+      ],
+      "cloudtcm_url": "https://cloudtcm.com/herb/1021"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "id": "herb.dong_kui_zi",
+      "name_zh": "冬葵子",
+      "name_en": "Mallow Seed",
+      "pinyin": "Dōng Kuí Zǐ",
+      "pharmaceutical_latin": "Malvae Fructus",
+      "part_used_en": "seed / fruit",
+      "aliases_zh": [
+        "葵子",
+        "葵菜子",
+        "冬莧菜"
+      ],
+      "category": "利水滲濕藥 / Drain Dampness",
+      "properties_taste_temp": "甘，寒/涼（CloudTCM另列澀）",
+      "channels_zh": [
+        "膀胱經",
+        "大腸經",
+        "小腸經"
+      ],
+      "functions_zh": [
+        "利水通淋",
+        "通乳消腫",
+        "潤腸通便",
+        "滑利通竅"
+      ],
+      "actions_en": [
+        "Promotes urination and unblocks Lin",
+        "Promotes lactation and reduces swelling",
+        "Moistens the intestines and unblocks the bowels",
+        "Slippery-unblocks the orifices and passages"
+      ],
+      "indications_zh": [
+        "熱淋、血淋、石淋 —— 小便灼熱澀痛、尿血、砂石，常配車前子、滑石、木通/川木通、金錢草等。",
+        "水腫、小便不利 —— 尤其兼便秘或尿道澀痛者，可作配伍利水通淋藥。",
+        "乳汁不通、乳房脹痛 —— 產後乳少、乳房腫痛或早期乳癰，可配王不留行等通乳藥。",
+        "腸燥便秘 —— 腸液不足、糞便乾結，常作潤腸輔藥，可配火麻仁。",
+        "產後或孕期小便不利需嚴格辨證 —— 課件與 AD/CloudTCM 均提示孕期需慎，不可自行使用。"
+      ],
+      "indications_en": [
+        "Heat Lin, Blood Lin, or Stone Lin with burning painful urination, hematuria, or stones; often combined with Che Qian Zi, Hua Shi, Mu Tong/Chuan Mu Tong, or Jin Qian Cao.",
+        "Edema and difficult urination, especially when accompanied by constipation or urethral discomfort.",
+        "Insufficient lactation, painful swollen breasts, or early breast abscess; may combine with lactation-unblocking herbs such as Wang Bu Liu Xing.",
+        "Dry constipation from intestinal fluid insufficiency; often used as a moistening adjunct such as with Huo Ma Ren.",
+        "Pregnancy/postpartum urinary difficulty requires strict pattern differentiation; course and external sources caution pregnancy use."
+      ],
+      "condition_tags_zh": [
+        "熱淋",
+        "石淋",
+        "血淋",
+        "小便不利",
+        "乳汁不通",
+        "便秘",
+        "水腫"
+      ],
+      "condition_tags_en": [
+        "Heat Lin",
+        "Stone Lin",
+        "Blood Lin",
+        "Difficult urination",
+        "Insufficient lactation",
+        "Constipation",
+        "Edema"
+      ],
+      "modern_functions_zh": [
+        "潤腸通便",
+        "抗發炎",
+        "降血脂"
+      ],
+      "modern_functions_en": [
+        "Laxative / bowel-moistening activity",
+        "Anti-inflammatory activity",
+        "Lipid-lowering activity"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "10–15g（課件）/ 6–15g（CloudTCM）/ 3–14g（AD 搜尋摘要；直接頁本次受阻）",
+        "course_dose_g": "10–15g",
+        "cloudtcm_dose_g": "6–15g；或入散劑",
+        "ad_dose_g": "3–14g（search snippet only; exact page blocked in this pass）",
+        "source_note": "正式內服以課件 10–15g 為主；CloudTCM 6–15g 作來源差異。AD 直接開啟驗證牆，本批不把 AD 當正式可核全文來源。"
+      },
+      "dosage": {
+        "min_g": 10,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "contraindications_zh": [
+        "氣虛下陷者禁用（CloudTCM）。",
+        "脾虛腸滑/便溏泄瀉者禁用或避免（CloudTCM；課件列脾胃虛寒慎用）。",
+        "孕婦避免自行使用；CloudTCM 列可能墮胎，課件與 AD 均列孕期慎用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated/avoid in Qi deficiency sinking (CloudTCM).",
+        "Contraindicated or avoid in Spleen deficiency with slippery intestines, loose stools, or diarrhea (CloudTCM; course cautions Spleen-Stomach deficiency Cold).",
+        "Pregnant patients should avoid self-use; CloudTCM lists possible abortifacient concern, while course/AD list pregnancy caution."
+      ],
+      "cautions_zh": [
+        "哺乳期、兒童、老人應避免自行使用（CloudTCM）。",
+        "脾胃虛弱、消化道潰瘍、腹瀉等腸胃疾病患者應避免或慎用（CloudTCM）。",
+        "糖尿病患者慎用或避免使用；CloudTCM 列可能升高血糖。",
+        "長期或過量可能引起嘔吐、腹瀉等中毒反應（CloudTCM）。"
+      ],
+      "cautions_en": [
+        "Lactating patients, children, and elders should avoid self-use (CloudTCM).",
+        "Avoid or use cautiously in weak digestion, peptic ulcer disease, diarrhea, or other GI disorders (CloudTCM).",
+        "Use cautiously or avoid in diabetes; CloudTCM lists possible blood-sugar elevation.",
+        "Long-term or excessive use may cause toxic reactions such as vomiting and diarrhea (CloudTCM)."
+      ],
+      "safety_flags": [
+        "pregnancy_caution",
+        "deficiency_cold_caution",
+        "diabetes_caution",
+        "overdose_caution"
+      ],
+      "related_formulas": [],
+      "key_pairs": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：通淋 + 通乳 + 潤腸，且孕期慎用。",
+      "exam_pearl": "冬葵子 = 滑利之品：尿道、乳汁、腸道都『通』；看到石淋/血淋又便秘很適合想起。",
+      "clinical_use_note": "冬葵子與滑石都滑利通竅、治尿澀痛；滑石偏清暑濕、外用濕熱瘡疹，冬葵子兼通乳與潤腸。孕期相關文獻很容易混淆：古方可用於孕期小便不利，但現代卡片需保留慎用/避免自行使用。",
+      "classical_text_zh": "《本草綱目》意旨：氣味俱薄，淡滑為陽，故能利竅通乳，消腫滑胎。",
+      "classical_text_en": "Classical explanations emphasize its light, slippery quality that opens passages, promotes lactation, reduces swelling, and requires pregnancy caution.",
+      "field_sources": {
+        "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L227",
+        "curriculum": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L568-L595",
+        "cloudtcm": "https://cloudtcm.com/herb/1022",
+        "american_dragon_status": "Search result contained a detailed AD page snippet, but exact page open was blocked; not used as formal full-page source."
+      },
+      "exact_source_url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L568-L595",
+      "safety_source_url": "https://cloudtcm.com/herb/1022",
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L227",
+          "note": "Dong Kui Zi listed as board-outline herb."
+        },
+        {
+          "name": "Chenoweth Drain Dampness",
+          "url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L568-L595",
+          "note": "Course properties, channels, actions, indications, dose, and pregnancy/Spleen-Stomach deficiency caution."
+        },
+        {
+          "name": "CloudTCM 冬葵子",
+          "url": "https://cloudtcm.com/herb/1022",
+          "note": "Exact page for aliases, properties/channels, traditional/modern functions, dose, and cautions."
+        }
+      ],
+      "cloudtcm_url": "https://cloudtcm.com/herb/1022"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "id": "herb.feng_mi",
+      "name_zh": "蜂蜜",
+      "name_en": "Honey",
+      "pinyin": "Fēng Mì",
+      "pharmaceutical_latin": "Mel",
+      "part_used_en": "honey",
+      "aliases_zh": [
+        "白蜜",
+        "蜜糖",
+        "蜂糖"
+      ],
+      "category": "補虛藥 / Tonify Qi",
+      "properties_taste_temp": "甘，平/微溫",
+      "channels_zh": [
+        "肺經",
+        "脾經",
+        "大腸經",
+        "胃經"
+      ],
+      "functions_zh": [
+        "補中緩急止痛",
+        "潤肺止咳",
+        "潤腸通便",
+        "解毒和藥"
+      ],
+      "actions_en": [
+        "Tonifies the Middle, relaxes urgency, and alleviates pain",
+        "Moistens the Lung and stops cough",
+        "Lubricates the intestines and unblocks the bowels",
+        "Resolves toxicity and harmonizes other medicinals"
+      ],
+      "indications_zh": [
+        "中焦虛弱腹痛、疲倦 —— 甘緩補中，常作緩急止痛或和中輔助。",
+        "肺虛久咳、乾咳 —— 肺燥或肺虛咳嗽，可與潤肺止咳藥同用。",
+        "腸燥便秘 —— 津液不足、大便乾結，可與柏子仁、火麻仁等潤腸藥同用。",
+        "藥物炮製與和藥 —— 蜜炙可增潤肺、補中、緩和藥性；蜂蜜本身不入煎，沖服。",
+        "外用/局部輔助 —— 傷口、口瘡、咽喉乾痛等以潤燥、止痛、抗菌為輔助方向，需區分食療與藥用。"
+      ],
+      "indications_en": [
+        "Middle Jiao deficiency with abdominal pain and fatigue; sweet-moderating support to relax urgency and harmonize the Middle.",
+        "Chronic or dry cough from Lung deficiency or dryness; combined with Lung-moistening cough herbs.",
+        "Dry constipation from fluid insufficiency; may combine with Bai Zi Ren, Huo Ma Ren, and other moistening laxatives.",
+        "Processing and harmonization: honey-frying enhances moistening/tonifying and moderates harshness; honey itself is not decocted but dissolved into strained decoction.",
+        "Topical/local support for wounds, mouth sores, or dry sore throat through moistening, pain-relieving, and antibacterial effects; distinguish food use from medicinal use."
+      ],
+      "condition_tags_zh": [
+        "腹痛",
+        "肺虛久咳",
+        "乾咳",
+        "腸燥便秘",
+        "口瘡",
+        "咽喉乾痛"
+      ],
+      "condition_tags_en": [
+        "Abdominal pain",
+        "Lung-deficiency chronic cough",
+        "Dry cough",
+        "Dry constipation",
+        "Mouth sores",
+        "Dry sore throat"
+      ],
+      "modern_functions_zh": [
+        "提升免疫力",
+        "改善消化系統",
+        "抗氧化",
+        "營養補充",
+        "改善睡眠",
+        "抗菌抗病毒",
+        "止痛/促進傷口修復"
+      ],
+      "modern_functions_en": [
+        "Immune-supporting activity",
+        "Digestive-support activity",
+        "Antioxidant activity",
+        "Nutritional support",
+        "Sleep-support potential",
+        "Antibacterial and antiviral activity",
+        "Analgesic / wound-healing support"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "15–30g（課件）/ 10–30g（CloudTCM）",
+        "course_dose_g": "15–30g; do not cook in decoction, take with strained decoction",
+        "cloudtcm_dose_g": "10–30g；食療 10–50g",
+        "ad_dose_g": "American Dragon 直接頁本次受阻，未採用",
+        "source_note": "蜂蜜不可入鍋久煎；課件明列不煎煮，沖入去渣藥液。CloudTCM 亦列不宜用沸水沖泡；食療量另列。"
+      },
+      "dosage": {
+        "min_g": 15,
+        "max_g": 30,
+        "unit": "g/day",
+        "route": "dissolved in strained decoction"
+      },
+      "contraindications_zh": [
+        "痰濕內蘊、中滿痞脹及大便不實者禁服（CloudTCM；課件列 dampness、loose stools/diarrhea、bloating）。",
+        "1歲以下嬰兒禁用（CloudTCM）。",
+        "對蜜蜂或蜂蜜過敏者禁用/避免（CloudTCM）。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in internal Phlegm-Damp, focal abdominal fullness/distention, or unformed stools (CloudTCM; course lists Dampness, loose stools/diarrhea, and bloating).",
+        "Contraindicated in infants under 1 year old (CloudTCM).",
+        "Avoid in allergy to bees or honey (CloudTCM)."
+      ],
+      "cautions_zh": [
+        "糖尿病患者慎用並需控制量（CloudTCM）。",
+        "腸胃疾病或胃腸不適者食用過量可能加重症狀（CloudTCM）。",
+        "高熱病人應避免或慎用（CloudTCM）。",
+        "不宜用沸水沖泡；不可入煎久煮（課件、CloudTCM）。"
+      ],
+      "cautions_en": [
+        "Use cautiously and control intake in diabetes (CloudTCM).",
+        "Excess intake may aggravate GI disease or discomfort (CloudTCM).",
+        "Avoid or use cautiously in high fever (CloudTCM).",
+        "Do not dissolve in boiling water or cook for long in decoction (course and CloudTCM)."
+      ],
+      "safety_flags": [
+        "infant_contraindication",
+        "diabetes_caution",
+        "damp_phlegm_contraindication",
+        "do_not_decoct"
+      ],
+      "related_formulas": [
+        "formula.ma_zi_ren_wan"
+      ],
+      "key_pairs": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：補中緩急、潤肺止咳、潤腸通便、和藥解毒；不可煎煮。",
+      "exam_pearl": "蜂蜜 = 甘潤和緩。能補中、潤肺、潤腸、和藥；痰濕中滿便溏不要用，一歲以下嬰兒禁用。",
+      "clinical_use_note": "蜂蜜既是藥材也是炮製輔料。蜜炙不是裝飾：會增加潤肺、補中、緩和藥性的方向。臨床記憶：乾、虛、急痛可考慮；濕、滿、便溏、嬰兒、糖尿病要警覺。",
+      "classical_text_zh": "《神農本草經疏》意旨：止痛解毒，和百藥。",
+      "classical_text_en": "Classical sources emphasize pain relief, detoxification, and harmonizing other medicinals.",
+      "pao_zhi_notes_zh": "蜜炙可增強潤肺、補中、緩和藥性；蜂蜜本身應沖入去渣藥液，不宜煎煮或沸水沖泡。",
+      "pao_zhi_notes_en": "Honey-frying enhances Lung-moistening, Middle-tonifying, and moderating effects; honey itself should be dissolved into strained decoction, not boiled.",
+      "field_sources": {
+        "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L234",
+        "curriculum": "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L464-L480",
+        "cloudtcm": "https://cloudtcm.com/herb/1030",
+        "american_dragon_status": "Exact American Dragon page open blocked this pass; not used."
+      },
+      "exact_source_url": "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L464-L480",
+      "safety_source_url": "https://cloudtcm.com/herb/1030",
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L234",
+          "note": "Feng Mi listed as board-outline herb."
+        },
+        {
+          "name": "Chenoweth Qi-tonifying Herbs",
+          "url": "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L464-L480",
+          "note": "Course actions, indications, dose, no-decoction handling, and contraindications."
+        },
+        {
+          "name": "CloudTCM 蜂蜜",
+          "url": "https://cloudtcm.com/herb/1030",
+          "note": "Exact page for identity, properties/channels, modern functions, dose, no-boiling note, contraindications, and visual link."
+        }
+      ],
+      "cloudtcm_url": "https://cloudtcm.com/herb/1030"
     }
   ],
   "batch_summary": {
@@ -68998,7 +69807,16 @@
     "repaired_pending_utf8_records": 32,
     "draft_filled_this_batch": 127,
     "source_checked_records": 0,
-    "safety_rule": "Search tags and clinical notes are documentation context only, not treatment claims."
+    "safety_rule": "Search tags and clinical notes are documentation context only, not treatment claims.",
+    "last_batch": "NCBAHM missing herbs batch 8",
+    "last_batch_cards": [
+      "Di Fu Zi",
+      "Dong Chong Xia Cao",
+      "Dong Gua Zi",
+      "Dong Kui Zi",
+      "Feng Mi"
+    ],
+    "local_herb_cards": 291
   },
-  "updated_at": "2026-07-28"
+  "updated_at": "2026-07-29"
 }

@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 8
+
+- Added full formal herb cards for 地膚子、冬蟲夏草、冬瓜子、冬葵子、蜂蜜 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used only where exact usable pages or explicitly labeled snippets were available.
+- Added fourteen sourced herb-pair records, including source-supported pairs that reference still-missing herb IDs; per Ting's rule, those pending herb links are preserved for later card creation instead of being deleted.
+- Updated the herb record standard: source-supported 對藥 may reference a pending herb ID before the target herb card exists; front-end should keep it plain/pending until the card is built.
+- Updated Quality herb-outline audit from 261/304 matched and 43 missing to 266/304 matched and 38 missing; local herb cards are now 291.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch8 targeted bilingual/source/pair QA PASS with allowed pending pair-linked herb IDs; git diff --check PASS. Known pre-existing full-suite issues remain outside this herb batch.
+
 ## 2026-07-28 Codex — NCBAHM CH missing herbs batch 7
 
 - Added full formal herb cards for 沉香、赤小豆、川木通、椿皮、刺五加 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used only where exact pages were actually usable.

@@ -100,6 +100,11 @@ modern_functions_zh 74% · properties 76% · **帶聲調拼音只有 57/266** ·
    可溯源的對藥就建立幾筆，不得只取第一組或把不同配伍合併。
 7. A+B 與 B+A 是同一筆正式 pair record，避免反向重複；渲染器會讓它同時出現
    在 A、B 兩味藥卡。只有來源確實只支持一組時，卡片才只有一則。
+8. **對藥可以先引用尚未建立的 herb ID。** 若課件、NCBAHM Appendix B 或 American Dragon
+   明確列出重要配伍，但其中一味本地卡尚未建立，仍應建立正式 `herb_pairs.json` 記錄；
+   在 `sources`、`caution_zh` 或 handoff 中標註該 herb ID is pending card creation。
+   前端會先不建立可點連結；之後補上該 herb card 時自然恢復連結。不要因本地卡片尚缺就刪掉
+   board/AD 支持的配伍。
 
 ## 5. 待補的深度層(next passes)
 
