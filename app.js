@@ -584,6 +584,10 @@ function txt(v) {
   return v == null ? "" : String(v);
 }
 
+function modeText(bilingual, english) {
+  return contentMode === "english" ? english : bilingual;
+}
+
 function scoreMatch(q, ...fields) {
   const hay = fields.filter(Boolean).map((v) => String(v).toLowerCase());
   for (const h of hay) if (h === q) return 0;          // exact
@@ -677,29 +681,32 @@ function renderGlobalResults(rawQuery) {
     if (!obj.items.length) return;
     const rows = obj.items.map(render).join("");
     const more = obj.total > obj.items.length
-      ? `<p class="gr-more">還有 ${obj.total - obj.items.length} 筆…輸入更精確的字</p>` : "";
+      ? `<p class="gr-more">${escapeHtml(modeText(`還有 ${obj.total - obj.items.length} 筆…輸入更精確的字`, `${obj.total - obj.items.length} more results… keep typing to narrow the search`))}</p>` : "";
     groups.push(`<p class="gr-group__title">${title}（${obj.total}）</p>${rows}${more}`);
   };
 
-  group("穴位 Acupoints", res.points, (p) =>
-    grItem("point", "穴位", p.code, p.nameZh || "",
+  group(modeText("穴位 Acupoints", "Acupoints"), res.points, (p) =>
+    grItem("point", modeText("穴位", "Point"), p.code, p.nameZh || "",
       [p.meridian, p.region].filter(Boolean).join(" · "), { code: p.code },
       `${examStarMark(p)}${escapeHtml(p.nameZh || "")}${p.nameEn ? ` <small>${escapeHtml(p.nameEn)}</small>` : ""}`));
-  group("方劑 Formulas", res.formulas, (f) =>
-    grItem("formula", "方劑", "", `${f.name_zh || f.name_en || f.id}`,
+  group(modeText("方劑 Formulas", "Formulas"), res.formulas, (f) =>
+    grItem("formula", modeText("方劑", "Formula"), "", `${f.name_zh || f.name_en || f.id}`,
       [f.name_en, f.category_zh || f.category].filter(Boolean).join(" · "), { id: f.id }));
-  group("中藥 Herbs", res.herbs, (h) =>
-    grItem("herb", "中藥", "", `${h.name_zh || h.name_en || h.id}`,
+  group(modeText("中藥 Herbs", "Herbs"), res.herbs, (h) =>
+    grItem("herb", modeText("中藥", "Herb"), "", `${h.name_zh || h.name_en || h.id}`,
       [h.pinyin, h.category].filter(Boolean).join(" · "), { id: h.id }));
-  group("病症 Conditions", res.conditions, (c) =>
-    grItem("condition", "病症", "", `${c.name_zh || c.name_en || c.id}`,
+  group(modeText("病症 Conditions", "Conditions"), res.conditions, (c) =>
+    grItem("condition", modeText("病症", "Condition"), "", `${c.name_zh || c.name_en || c.id}`,
       [c.name_en, c.category].filter(Boolean).join(" · "), { id: c.id }));
-  group("病例 Cases", res.cases, (c) =>
-    grItem("case", "病例", c.patientCode || "", `${c.caseTitle || c.patientCode || ""}`,
+  group(modeText("病例 Cases", "Cases"), res.cases, (c) =>
+    grItem("case", modeText("病例", "Case"), c.patientCode || "", `${c.caseTitle || c.patientCode || ""}`,
       c.chiefComplaint || "", { code: c.patientCode || "" }));
 
   if (!groups.length) {
-    globalResultsEl.innerHTML = `<p class="gr-empty">找不到「${escapeHtml(rawQuery.trim())}」相關的穴位、方劑、中藥、病症或病例。</p>`;
+    globalResultsEl.innerHTML = `<p class="gr-empty">${escapeHtml(modeText(
+      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症或病例。`,
+      `No acupoints, formulas, herbs, conditions, or cases found for “${rawQuery.trim()}”.`
+    ))}</p>`;
   } else {
     globalResultsEl.innerHTML = groups.join("");
   }
@@ -884,8 +891,26 @@ function setContentMode(mode) {
 
 function updateContentModeUI() {
   document.body.dataset.contentMode = contentMode;
+  document.documentElement.lang = contentMode === "english" ? "en" : "zh-Hant";
   document.querySelector("#modeBilingualBtn")?.classList.toggle("active", contentMode === "bilingual");
   document.querySelector("#modeEnglishBtn")?.classList.toggle("active", contentMode === "english");
+  document.querySelectorAll("[data-mode-text]").forEach((el) => {
+    el.textContent = modeText(el.dataset.bilingual || el.textContent || "", el.dataset.english || el.textContent || "");
+  });
+  document.querySelectorAll("[data-mode-aria-label]").forEach((el) => {
+    el.setAttribute("aria-label", modeText(el.dataset.bilingualAriaLabel || "", el.dataset.englishAriaLabel || ""));
+  });
+  if (homeSearch) {
+    homeSearch.placeholder = modeText(
+      "搜尋穴位、方劑、中藥、病症、病例… 例：SP6、四物、當歸、血虛",
+      "Search acupoints, formulas, herbs, conditions, or cases… e.g. SP6, Si Wu Tang, Dang Gui, Blood deficiency"
+    );
+  }
+  const navPanel = document.querySelector("#navPanel");
+  if (navPanel) navPanel.setAttribute("aria-label", modeText("主選單", "Main navigation"));
+  document.querySelector("#navClose")?.setAttribute("aria-label", modeText("關閉選單", "Close navigation"));
+  document.title = modeText("AcuTing OS", "AcuTing OS | TCM Study System");
+  if (homeSearch && homeSearch.value.trim()) renderGlobalResults(homeSearch.value);
 }
 
 function activeModuleTarget() {

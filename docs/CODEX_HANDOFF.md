@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Public EN homepage interface
+
+- **Branch**: `codex/herbs-missing-cards-batch8`
+- **Task**: Ting asked for the homepage to also have an English interface after the herb/formula lookup Public EN pass.
+- **Files changed**: `index.html`, `app.js`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: added Public EN mode switching for the top brand title, right-side navigation panel labels, home hero headline/body/caption, home search button and placeholder, ARIA labels, and unified search-result group labels/empty/more text. Bilingual mode remains the default and keeps the prior Chinese/English mixed interface.
+- **Implementation note**: used reusable `data-mode-text` / `data-mode-aria-label` attributes and one `modeText()` helper in `app.js`; no duplicate home page was created.
+- **Validation**: bundled Node syntax checks PASS for `app.js`, `js/knowledge.js`, and `js/router.js`; `scripts/validate-interactions.js` PASS.
+- **Protected areas**: no data/herb cards, generated data, scripts, schema, source curriculum, or clinical case data touched.
+- **Known risks / manual checks**: browser spot-check only: click `Public EN` from the navigation panel on `#ws/home`, confirm home hero/search/nav labels switch to English; type a search term and confirm result group labels are English; switch back to `中英版` and confirm bilingual labels return.
+
 ## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 8: Di Fu Zi, Dong Chong Xia Cao, Dong Gua Zi, Dong Kui Zi, Feng Mi
 
 - **Branch**: `codex/herbs-missing-cards-batch8`

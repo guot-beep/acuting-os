@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — Public EN homepage interface
+
+- Added Public EN mode text switching for the home page, top brand title, right-side navigation panel labels, home search button/placeholder, lotus caption, and unified search-result UI labels.
+- Kept bilingual mode unchanged; the new behavior only activates when the existing `Public EN` button sets `contentMode="english"`.
+- Implemented this as small `data-mode-text` / `data-mode-aria-label` attributes plus one shared `modeText()` helper in `app.js`, so there is no duplicate homepage to maintain.
+- Validation: JS syntax checks PASS for `app.js`, `js/knowledge.js`, and `js/router.js`; `validate-interactions.js` PASS.
+- Manual check: open homepage, click `Public EN`, confirm the home hero/search/navigation labels switch to English; click `中英版`, confirm the original bilingual interface returns.
+
 ## 2026-07-29 Codex — NCBAHM CH missing herbs batch 8
 
 - Added full formal herb cards for 地膚子、冬蟲夏草、冬瓜子、冬葵子、蜂蜜 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used only where exact usable pages or explicitly labeled snippets were available.
