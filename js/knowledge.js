@@ -612,17 +612,23 @@
        American Dragon— URL derived from the pinyin; the page is not confirmed
                         to exist, so it is marked 未驗證
        Atlas          — only an index page is known; there is no per-herb path */
-  function herbSourceLinks(record, cloudUrl) {
+  function herbSourceLinks(record, cloudUrl, adUrl) {
     const a = (url, label, note) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link">${esc(label)} ↗</a>${note ? `<small class="k-src-note">${esc(note)}</small>` : ""}`;
     const out = [];
     // herbReferenceUrl falls back through source_urls, which for the 45 herbs
     // with no CloudTCM page can be an American Dragon or NCCIH link. Labelling
     // that "雲端中醫 CloudTCM" claims a source the record does not have, so the
-    // label follows the host, not the position in the fallback chain.
+    // label follows the host, not the position in the fallback chain. Only
+    // treat it as a generic external link when it is an actual http(s) URL —
+    // a curriculum file path (e.g. "curriculum/herbs/...md#L1-L2") reaching
+    // here is a caller bug, not a link to render.
     if (cloudUrl && /cloudtcm\.com/i.test(cloudUrl)) out.push(a(cloudUrl, "雲端中醫 CloudTCM"));
-    else if (cloudUrl && !/americandragon/i.test(cloudUrl)) out.push(a(cloudUrl, "外部藥材參考"));
-    if (record.american_dragon_url) {
-      out.push(a(record.american_dragon_url, "American Dragon",
+    else if (cloudUrl && /^https?:\/\//i.test(cloudUrl) && !/americandragon/i.test(cloudUrl)) out.push(a(cloudUrl, "外部藥材參考"));
+    // American Dragon: prefer the dedicated field; most herb records only
+    // carry the AD page inside source_citations, so fall back to that.
+    const dragonUrl = record.american_dragon_url || adUrl;
+    if (dragonUrl) {
+      out.push(a(dragonUrl, "American Dragon",
         record.american_dragon_link_status === "derived" ? "未驗證連結" : ""));
     }
     if (record.atlas_url) out.push(a(record.atlas_url, "TCM Herb Atlas", record.atlas_link_status === "index" ? "索引頁" : ""));
@@ -868,15 +874,27 @@
     const eyebrow = kind === "formula" ? "FORMULA STUDY CARD" : "MATERIA MEDICA STUDY CARD";
     const identity = [record.category || record.category_en, record.tier ? `tier: ${record.tier}` : "", record.id].filter(Boolean).join(" · ");
     const mappedHerb = kind === "herb" ? (HERB_URL_MAP.get(record.id) || HERB_URL_MAP.get(usableText(record.name_zh))) : null;
+    // Most herb cards (Codex + Claude batches) never set the dedicated
+    // record.cloudtcm_url / record.american_dragon_url fields — those sources
+    // only live inside source_citations. Without an http(s) filter here, the
+    // "find first citation with a url" fallback below picks whichever came
+    // first in the array, which is often a curriculum file path like
+    // "curriculum/herbs/...md#L1-L2" (truthy .url, not a real link) — that
+    // then got rendered as if it were the herb's external reference link.
+    const herbCitations = kind === "herb" ? (record.source_citations || []) : [];
+    const citedUrl = (re) => herbCitations.find((source) => source?.url && re.test(source.url))?.url;
+    const citedCloudtcmUrl = citedUrl(/cloudtcm\.com/i);
+    const citedAmericanDragonUrl = citedUrl(/americandragon\.com/i);
     const preferredCitation = kind === "herb"
-      ? (record.source_citations || []).find((source) => source?.url && /主要外部圖像|圖像與藥材辨識/.test(source.scope || ""))
-        || (record.source_citations || []).find((source) => source?.url)
+      ? herbCitations.find((source) => source?.url && /^https?:\/\//.test(source.url) && /主要外部圖像|圖像與藥材辨識/.test(source.scope || ""))
+        || herbCitations.find((source) => source?.url && /^https?:\/\//.test(source.url))
       : null;
-    const herbReferenceUrl = mappedHerb?.page_url || record.cloudtcm_url || preferredCitation?.url
+    const herbReferenceUrl = mappedHerb?.page_url || record.cloudtcm_url || citedCloudtcmUrl || preferredCitation?.url
       || record.exact_source_url || (record.source_urls || []).find(Boolean) || "";
-    const herbReferenceLabel = mappedHerb || record.cloudtcm_url
+    const herbReferenceLabel = mappedHerb || record.cloudtcm_url || citedCloudtcmUrl
       ? "雲端中醫 CloudTCM"
       : (preferredCitation?.name || "外部藥材參考 Source");
+    const herbDragonUrl = record.american_dragon_url || citedAmericanDragonUrl;
     const facts = kind === "formula"
       ? [
           ["分類 Category", record.category || record.category_en || "待補"],
@@ -899,7 +917,7 @@
           // American Dragon URL and an atlas index page are useful links but
           // they are not verified per-herb pages, and the card says so rather
           // than presenting all three as equivalent.
-          ["外部參考 Sources", herbSourceLinks(record, herbReferenceUrl), Boolean(herbReferenceUrl || record.american_dragon_url || record.atlas_url)]
+          ["外部參考 Sources", herbSourceLinks(record, herbReferenceUrl, herbDragonUrl), Boolean(herbReferenceUrl || herbDragonUrl || record.atlas_url)]
         ];
     return `
       <div class="k-detail-shell">
