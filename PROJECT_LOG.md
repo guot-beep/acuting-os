@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 10
+
+- Added full formal herb cards for 栝樓皮、栝樓仁、海螵蛸、海桐皮、海藻 from NCBAHM 2026 CH Appendix A + Chenoweth course notes, with CloudTCM/American Dragon used only where exact usable pages or explicitly scoped source support were actually reviewed.
+- Added ten sourced herb-pair records for 栝樓皮 chest-Bi/phlegm-heat pairings, 栝樓仁 dry cough/constipation pairings, 海螵蛸 astringent/safety-conflict pairings, 海桐皮 wind-damp pairings, and 海藻/昆布 soft-hardness pairing.
+- Updated Quality herb-outline audit from 271/304 matched and 33 missing to 276/304 matched and 28 missing; local herb cards are now 301.
+- Source honesty notes: Gua Lou Ren American Dragon direct page was not used; Hai Zao uses course + CloudTCM + incompatibility course, with AD not listed as a formal source because the direct page was not usable in this pass. Hai Piao Xiao/Bai Ji pair is marked as source-conflict review because AD/CloudTCM also list incompatibility warnings.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch10 targeted bilingual/source/pair/mojibake QA PASS. Full validate-data/encoding still fail on known pre-existing acupoint/defaultPoints/import encoding issues outside this herb batch.
+
 ## 2026-07-29 Codex — NCBAHM CH missing herbs batch 9
 
 - Added full formal herb cards for 覆盆子、蛤蚧、狗脊、骨碎補、谷芽 from NCBAHM 2026 CH + Chenoweth course notes, with CloudTCM/American Dragon used only where exact pages were actually reviewed.

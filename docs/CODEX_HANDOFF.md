@@ -1,5 +1,18 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 10: Gua Lou Pi, Gua Lou Ren, Hai Piao Xiao, Hai Tong Pi, Hai Zao
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Created five NCBAHM 2026 CH Appendix A missing herb cards: `herb.gua_lou_pi`, `herb.gua_lou_ren`, `herb.hai_piao_xiao`, `herb.hai_tong_pi`, and `herb.hai_zao`, following Ting's current rule to treat every new card as source-layered and to verify each field rather than trusting skeleton/boilerplate values.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, generated `data/generated/cloudtcm_map.js`, generated `data/generated/points_361.js`, generated Tung/GB93 JS twins, `docs/CODEX_TASK_QUEUE.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **Sources used**: NCBAHM 2026 CH Appendix A; Chenoweth course files for Transform Phlegm, abbreviated materia medica, Dispel Wind-Damp herbs, Astringent Herbs summary, Pinyin/Latin list, and incompatibility notes; CloudTCM Gua Lou `/herb/1783`, Gua Lou Ren `/herb/4673`, Gua Lou Zi `/herb/1054`, Hai Piao Xiao `/herb/1058`, Hai Tong Pi `/herb/1059`, and Hai Zao `/herb/1060`; American Dragon exact pages Gua Lou Pi, Hai Piao Xiao, and Hai Tong Pi.
+- **Source honesty**: American Dragon direct Gua Lou Ren page was not used. Hai Zao does not list AD as a formal source in the card because the direct page was not usable in this pass; course + CloudTCM + incompatibility course were sufficient. Hai Piao Xiao/Bai Ji pair is deliberately marked as `pair.rel.xiang_wu` with source-conflict wording because AD/CloudTCM also list Bai Ji incompatibility warnings.
+- **Pair records added**: `pair.gua_lou_pi__huang_lian__ban_xia`, `pair.gua_lou_pi__xie_bai__ban_xia`, `pair.gua_lou_pi__zhe_bei_mu__jie_geng__xing_ren`, `pair.gua_lou_ren__huo_ma_ren__zhi_ke`, `pair.gua_lou_ren__xing_ren`, `pair.hai_piao_xiao__shan_yao__long_gu__mu_li`, `pair.hai_piao_xiao__bai_ji`, `pair.hai_tong_pi__niu_xi__qiang_huo`, `pair.hai_tong_pi__bi_xie__mu_tong`, and `pair.hai_zao__kun_bu`.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved from 271/304 matched and 33 missing to 276/304 matched and 28 missing. Local herb-card count is now 301. Next recommended batch: He Tao Ren, Hu Jiao, Huai Mi, Jin Ying Zi, Jing Mi.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; targeted batch10 QA PASS for bilingual alignment, contraindications/cautions English, source citations/source URLs, property/channel separation, no replacement characters in new records, and all 10 pair records present. Full `validate-data.js` still FAILS on pre-existing acupoint/defaultPoints safety-line issues; full `validate-encoding.js` still FAILS on pre-existing acupoint/import/formula mojibake and URL-in-*_zh checks, not introduced by this batch.
+- **Protected areas**: no app shell, JS, CSS, scripts, source curriculum, schema, formula records, or clinical cases touched. Generated files were refreshed only via `scripts/build-data.js`.
+- **Known risks / manual checks**: visually spot-check Gua Lou Pi vs Gua Lou Ren distinction; Hai Piao Xiao strict contraindications and Bai Ji source-conflict pair; Hai Tong Pi channel source difference (course/AD LV-SP-KD vs CloudTCM adding ST); Hai Zao Gan Cao incompatibility and pending `herb.kun_bu` link.
+
 ## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 9: Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, Gu Ya
 
 - **Branch**: `codex/herbs-missing-cards-batch9`
