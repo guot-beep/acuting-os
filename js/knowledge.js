@@ -1064,6 +1064,13 @@
       : cleanList(record.modern_functions_zh);
     const actionsEn = cleanList(record.actions_en);
     const indicationsZh = cleanList(record.indications_zh);
+    const indicationsEn = cleanList(record.indications_en);
+    /* Same alignment rule as actionsAligned above: only pair by index when the
+       two arrays actually correspond 1:1. This section used to render
+       indications_zh only and silently drop a fully-populated, index-aligned
+       indications_en — the record had bilingual content but the card only
+       ever showed the Chinese half. */
+    const indicationsAligned = indicationsEn.length === indicationsZh.length && indicationsZh.length > 0;
     const condTags = cleanList(record.condition_tags_zh);
     const CONDITION_TAG_EN_MAP = {
       "經閉": "Amenorrhea",
@@ -1186,7 +1193,10 @@
         id: "clinical", 
         label: "主治與症狀 Indications", 
         content: `
-          ${detailSection("主治症狀與病機", "Indications（配伍中藥可點開）", (indicationsZh.length ? indicationsZh : [record.indications_en]).filter(Boolean).length ? `<ul class="k-detail-list">${(indicationsZh.length ? indicationsZh : [record.indications_en]).filter(Boolean).map((v) => `<li>${linkifyHerbs(v, record.id)}</li>`).join("")}</ul>` : '<p class="k-detail-empty">待補 / Content pending source review</p>')}
+          ${detailSection("主治症狀與病機", "Indications（配伍中藥可點開）", indicationsZh.length ? `<ul class="k-detail-list">${indicationsZh.map((zh, i) => {
+            const en = indicationsAligned ? indicationsEn[i] : "";
+            return `<li>${linkifyHerbs(zh, record.id)}${en ? `<br><small style="color:#64748b;">${esc(en)}</small>` : ""}</li>`;
+          }).join("")}</ul>${!indicationsAligned && indicationsEn.length ? `<div class="k-detail-list" style="margin-top:6px;color:#64748b;font-size:0.92em;">${indicationsEn.map((v) => `<p>${esc(v)}</p>`).join("")}</div>` : ""}` : (indicationsEn.length ? `<ul class="k-detail-list">${indicationsEn.map((v) => `<li>${esc(v)}</li>`).join("")}</ul>` : '<p class="k-detail-empty">待補 / Content pending source review</p>'))}
           ${record.key_indications_en && record.key_indications_en.length ? detailSection("重點主治 (Key Indications)", "考試重點主治（來源見下方引用）", detailList(record.key_indications_en)) : ""}
           ${detailSection("病名與症狀索引標籤", "Common Condition Tags", `<div class="k-chip-cloud">${bilingualCondTags}</div>`)}
           ${detailSection("相關經典方劑", "Classical Formulas containing this herb", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}
