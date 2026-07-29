@@ -1,0 +1,6 @@
+{
+  "dataset": "American Dragon herb fetch staging",
+  "policy": "draft only; raw capture, unmerged, unreviewed; Claude curates before promotion to data/herbs/herb_canon_shortlist.json",
+  "schema_note": "One record per herb per source. Never merge American Dragon and CloudTCM content into one record — Ting's rule, and the two disagree often enough (dosage especially) that merging would silently discard real information.",
+  "records": []
+}
