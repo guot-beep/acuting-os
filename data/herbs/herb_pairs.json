@@ -3252,8 +3252,229 @@
         "https://cloudtcm.com/herb/1060",
         "curriculum/herbs/Mnemonics for 18 incompatibilities, 19 antagonisms and pregnant contraindications.md"
       ]
+    },
+    {
+      "id": "pair.he_tao_ren__du_zhong__bu_gu_zhi",
+      "herbs": [
+        "herb.he_tao_ren",
+        "herb.du_zhong",
+        "herb.bu_gu_zhi"
+      ],
+      "name_zh": "核桃仁配杜仲、補骨脂",
+      "name_en": "He Tao Ren with Du Zhong and Bu Gu Zhi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "核桃仁補腎益精、強腰膝，杜仲補肝腎強筋骨，補骨脂溫補腎陽。相使溫補腎陽、強腰膝並助納氣。",
+      "pair_meaning_en": "He Tao Ren tonifies Kidney and Jing and strengthens the low back/knees; Du Zhong tonifies Liver-Kidney and strengthens sinews/bones; Bu Gu Zhi warms Kidney Yang. Together they enhance Kidney Yang, low-back/knee strength, and Qi grasping.",
+      "indication_zh": "腎陽不足之腰膝冷痛、下肢無力，兼咳喘或早洩尿頻。",
+      "indication_en": "Kidney Yang deficiency with cold painful low back/knees, weak legs, and possible cough/wheezing, premature ejaculation, or urinary frequency.",
+      "caution_zh": "陰虛火旺、熱咳、痰火或便溏泄瀉者忌用；核桃仁有抗凝/抗血小板交互作用需審核。",
+      "caution_en": "Avoid in Yin deficiency Heat, Hot cough, Phlegm-Fire, or loose stool/diarrhea; review He Tao Ren anticoagulant/antiplatelet interactions.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L6364-L6372"
+      ]
+    },
+    {
+      "id": "pair.he_tao_ren__ren_shen__ge_jie",
+      "herbs": [
+        "herb.he_tao_ren",
+        "herb.ren_shen",
+        "herb.ge_jie"
+      ],
+      "name_zh": "核桃仁配人參、蛤蚧",
+      "name_en": "He Tao Ren with Ren Shen and Ge Jie",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "核桃仁溫肺補腎納氣，人參補肺脾元氣，蛤蚧補肺腎定喘。相使補肺腎、納氣平喘。",
+      "pair_meaning_en": "He Tao Ren warms Lung-Kidney and helps grasp Qi; Ren Shen tonifies Lung/Spleen Yuan Qi; Ge Jie tonifies Lung-Kidney and calms wheezing. Together they tonify Lung-Kidney and relieve dyspnea.",
+      "indication_zh": "肺腎兩虛、腎不納氣之久咳久喘、動則喘甚、不能平臥。",
+      "indication_en": "Chronic cough and wheezing from Lung-Kidney deficiency or Kidneys failing to grasp Qi, worse on exertion and possibly inability to lie flat.",
+      "caution_zh": "有熱咳、痰火、外邪未解或出血/抗凝藥風險者慎用或禁用。",
+      "caution_en": "Avoid or use cautiously with Hot cough, Phlegm-Fire, unresolved exterior pathogen, or bleeding/anticoagulant risk.",
+      "found_in_formulas": [
+        "formula.ren_shen_ge_jie_san"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+      ]
+    },
+    {
+      "id": "pair.he_tao_ren__dang_gui__huo_ma_ren__rou_cong_rong",
+      "herbs": [
+        "herb.he_tao_ren",
+        "herb.dang_gui",
+        "herb.huo_ma_ren",
+        "herb.rou_cong_rong"
+      ],
+      "name_zh": "核桃仁配當歸、火麻仁、肉蓯蓉",
+      "name_en": "He Tao Ren with Dang Gui, Huo Ma Ren, and Rou Cong Rong",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "核桃仁與火麻仁潤腸，當歸養血潤燥，肉蓯蓉溫補腎陽而潤腸。相使治津血不足或老年虛弱便秘。",
+      "pair_meaning_en": "He Tao Ren and Huo Ma Ren moisten the Intestines; Dang Gui nourishes Blood and moistens Dryness; Rou Cong Rong warms Kidney Yang while moistening the bowels. Together they address deficiency constipation, especially in the elderly.",
+      "indication_zh": "津血不足、腎虛或老年腸燥便秘。",
+      "indication_en": "Intestinal Dryness constipation from deficient Fluids/Blood, Kidney deficiency, or old age.",
+      "caution_zh": "便溏泄瀉、水樣便或濕盛者忌用；孕期與抗凝藥風險需審核。",
+      "caution_en": "Avoid in loose stool, watery diarrhea, or pronounced Dampness; review pregnancy and anticoagulant risk.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+      ]
+    },
+    {
+      "id": "pair.hu_jiao__gao_liang_jiang__bi_ba",
+      "herbs": [
+        "herb.hu_jiao",
+        "herb.gao_liang_jiang",
+        "herb.bi_ba"
+      ],
+      "name_zh": "胡椒配高良薑、蓽茇",
+      "name_en": "Hu Jiao with Gao Liang Jiang and Bi Ba",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "胡椒辛熱溫中，高良薑溫胃止嘔，蓽茇溫中下氣止痛。相使溫散胃腸寒邪、止痛止嘔止瀉。",
+      "pair_meaning_en": "Hu Jiao is acrid-hot and warms the middle; Gao Liang Jiang warms the Stomach and stops vomiting; Bi Ba warms the middle, descends Qi, and relieves pain. Together they disperse Cold in the Stomach/Intestines and stop pain, vomiting, and diarrhea.",
+      "indication_zh": "胃腸寒冷之嘔吐、腹瀉、腹痛、脘腹冷痛。",
+      "indication_en": "Stomach/Intestinal Cold with vomiting, diarrhea, abdominal pain, and cold epigastric pain.",
+      "caution_zh": "陰虛有熱、實熱、孕期、出血、痔瘡、咽喉口齒目疾者忌用。",
+      "caution_en": "Contraindicated in Yin deficiency Heat, Excess Heat, pregnancy, bleeding, hemorrhoids, or throat/mouth/tooth/eye disorders.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2273-L2285",
+        "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+      ]
+    },
+    {
+      "id": "pair.hu_jiao__sheng_jiang__ban_xia",
+      "herbs": [
+        "herb.hu_jiao",
+        "herb.sheng_jiang",
+        "herb.ban_xia"
+      ],
+      "name_zh": "胡椒配生薑、半夏",
+      "name_en": "Hu Jiao with Sheng Jiang and Ban Xia",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "胡椒溫中下氣，生薑溫胃散寒止嘔，半夏燥濕化痰降逆。相使治胃寒痰飲上逆之劇烈嘔吐。",
+      "pair_meaning_en": "Hu Jiao warms the middle and descends Qi; Sheng Jiang warms the Stomach, disperses Cold, and stops vomiting; Ban Xia dries Dampness, transforms Phlegm, and directs rebellion downward. Together they treat severe vomiting from Stomach Cold with Phlegm-fluid rebellion.",
+      "indication_zh": "胃寒劇烈嘔吐、清水嘔吐、痰飲上逆。",
+      "indication_en": "Severe vomiting, vomiting of clear fluid, and Phlegm-fluid rebellion due to Stomach Cold.",
+      "caution_zh": "熱嘔、陰虛火旺、孕期或咽喉口齒目疾者忌用；半夏需炮製。",
+      "caution_en": "Avoid in Heat vomiting, Yin deficiency with Fire, pregnancy, or throat/mouth/tooth/eye disorders; Ban Xia must be properly processed.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+      ]
+    },
+    {
+      "id": "pair.di_yu__huai_mi",
+      "herbs": [
+        "herb.di_yu",
+        "herb.huai_mi"
+      ],
+      "name_zh": "地榆配槐米",
+      "name_en": "Di Yu with Huai Mi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "地榆涼血止血、解毒斂瘡，槐米涼血止血、清肝降火。相須治大腸濕熱/血熱出血，尤其便血痔血。",
+      "pair_meaning_en": "Di Yu cools Blood, stops bleeding, resolves toxin, and astringes sores; Huai Mi cools Blood, stops bleeding, cools Liver, and drains Fire. Together they mutually reinforce treatment of Large Intestine Damp-Heat/Blood-Heat bleeding, especially blood in stool and bleeding hemorrhoids.",
+      "indication_zh": "腸風便血、痔血、血痢、熱性崩漏或子宮出血。",
+      "indication_en": "Intestinal Wind bleeding, bleeding hemorrhoids, bloody dysentery, and Heat-type uterine bleeding.",
+      "caution_zh": "NCBAHM 2026 CH Appendix B 明列。脾胃虛寒或脾氣虛不攝血者慎用；陰虛血熱/非實熱禁用槐米。",
+      "caution_en": "Listed in NCBAHM 2026 CH Appendix B. Use cautiously in Spleen/Stomach deficiency-cold or Spleen Qi failing to contain Blood; Huai Mi is contraindicated in Yin-deficiency Blood Heat or non-Excess Heat.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L517",
+        "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+      ]
+    },
+    {
+      "id": "pair.huai_mi__ce_bai_ye__jing_jie__zhi_ke",
+      "herbs": [
+        "herb.huai_mi",
+        "herb.ce_bai_ye",
+        "herb.jing_jie",
+        "herb.zhi_ke"
+      ],
+      "name_zh": "槐米配側柏葉、荊芥、枳殼",
+      "name_en": "Huai Mi with Ce Bai Ye, Jing Jie, and Zhi Ke",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "槐米涼血止血，側柏葉涼血收斂止血，荊芥穗疏風止血，枳殼行氣寬腸。相使治腸風痔血，為槐花散意。",
+      "pair_meaning_en": "Huai Mi cools Blood and stops bleeding; Ce Bai Ye cools and astringes Blood; Jing Jie Sui dispels Wind and stops bleeding; Zhi Ke moves Qi and relaxes the Intestines. Together they treat Intestinal Wind bleeding and bleeding hemorrhoids, echoing Huai Hua San.",
+      "indication_zh": "腸風便血、痔瘡出血、血痢。",
+      "indication_en": "Intestinal Wind bleeding, bleeding hemorrhoids, and bloody dysentery.",
+      "caution_zh": "脾胃虛寒、脾氣虛不攝血者慎用；需辨血熱濕熱與虛寒出血。",
+      "caution_en": "Use cautiously in Spleen/Stomach deficiency-cold or Spleen Qi failing to contain Blood; distinguish Blood-Heat/Damp-Heat bleeding from deficiency-cold bleeding.",
+      "found_in_formulas": [
+        "formula.huai_hua_san"
+      ],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+      ]
+    },
+    {
+      "id": "pair.jin_ying_zi__sang_piao_xiao",
+      "herbs": [
+        "herb.jin_ying_zi",
+        "herb.sang_piao_xiao"
+      ],
+      "name_zh": "金櫻子配桑螵蛸",
+      "name_en": "Jin Ying Zi with Sang Piao Xiao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "金櫻子收澀固精縮尿，桑螵蛸補腎助陽、固精縮尿。相使治腎虛下焦不固。",
+      "pair_meaning_en": "Jin Ying Zi astringes Jing and urine; Sang Piao Xiao tonifies Kidney Yang and secures Jing/urine. Together they treat Kidney deficiency lower-jiao instability.",
+      "indication_zh": "遺精、遺尿、尿頻、老年小便失禁。",
+      "indication_en": "Spermatorrhea, enuresis, urinary frequency, and elderly urinary incontinence.",
+      "caution_zh": "實邪、熱邪或陰虛火旺之滑脫禁用；金櫻子只收不補，虛證需配補藥。",
+      "caution_en": "Contraindicated in excess pathogens, Heat, or Yin-deficiency Fire leakage; Jin Ying Zi only astringes and does not tonify, so deficiency requires tonics.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+      ]
+    },
+    {
+      "id": "pair.jin_ying_zi__qian_shi",
+      "herbs": [
+        "herb.jin_ying_zi",
+        "herb.qian_shi"
+      ],
+      "name_zh": "金櫻子配芡實",
+      "name_en": "Jin Ying Zi with Qian Shi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "金櫻子收澀下焦，芡實益腎固精、補脾止瀉。相使治腎虛滑脫與脾虛久瀉。",
+      "pair_meaning_en": "Jin Ying Zi astringes the lower jiao; Qian Shi tonifies Kidney, secures Jing, strengthens Spleen, and stops diarrhea. Together they treat Kidney deficiency leakage and Spleen deficiency chronic diarrhea.",
+      "indication_zh": "遺精、尿頻、帶下、脾虛久瀉。",
+      "indication_en": "Spermatorrhea, urinary frequency, vaginal discharge, and chronic Spleen deficiency diarrhea.",
+      "caution_zh": "實熱、濕熱或邪未去者不宜收澀；便秘腹痛者慎用。",
+      "caution_en": "Do not astringe when Excess Heat, Damp-Heat, or unresolved pathogens remain; use cautiously with constipation or abdominal pain.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+      ]
+    },
+    {
+      "id": "pair.jing_mi__shi_gao__zhi_mu__gan_cao",
+      "herbs": [
+        "herb.jing_mi",
+        "herb.shi_gao",
+        "herb.zhi_mu",
+        "herb.gan_cao"
+      ],
+      "name_zh": "粳米配石膏、知母、甘草",
+      "name_en": "Jing Mi with Shi Gao, Zhi Mu, and Gan Cao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "石膏、知母清氣分大熱，粳米、甘草益胃生津、緩和寒涼。相使清熱而護胃津，為白虎湯核心結構。",
+      "pair_meaning_en": "Shi Gao and Zhi Mu clear blazing Qi-level Heat; Jing Mi and Gan Cao support the Stomach, generate fluids, and moderate coldness. Together they clear Heat while protecting Stomach fluids, the core structure of Bai Hu Tang.",
+      "indication_zh": "氣分大熱、壯熱煩渴、大汗、脈洪大，兼胃津受傷風險。",
+      "indication_en": "Blazing Qi-level Heat with high fever, irritability, thirst, profuse sweating, a flooding pulse, and risk of Stomach-fluid injury.",
+      "caution_zh": "脾胃虛寒、無實熱者不宜用白虎湯清寒結構；粳米本身是護胃佐使，不代表可忽略石膏知母寒性。",
+      "caution_en": "Avoid the cold Bai Hu Tang structure in Spleen/Stomach deficiency-cold or absence of excess Heat; Jing Mi protects the Stomach but does not cancel Shi Gao/Zhi Mu coldness.",
+      "found_in_formulas": [
+        "formula.bai_hu_tang"
+      ],
+      "sources": [
+        "data/herbs/formulas.json",
+        "https://www.americandragon.com/Individualherbsupdate/GengMi.html"
+      ]
     }
   ],
   "updated_at": "2026-07-29",
-  "total_pairs": 142
+  "total_pairs": 152
 }

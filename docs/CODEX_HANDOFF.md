@@ -1,5 +1,18 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 11: He Tao Ren, Hu Jiao, Huai Mi, Jin Ying Zi, Jing Mi
+
+- **Branch**: `codex/herbs-missing-cards-batch9`
+- **Task**: Created five NCBAHM 2026 CH Appendix A missing herb cards: `herb.he_tao_ren`, `herb.hu_jiao`, `herb.huai_mi`, `herb.jin_ying_zi`, and `herb.jing_mi`, following Ting's strict rule to rebuild each card from verified sources rather than trusting old/skeleton content.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/herbs/herb_pairs.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `docs/CODEX_TASK_QUEUE.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **Sources used**: NCBAHM 2026 CH Appendix A and Appendix B; Chenoweth course files for Yang Tonics, Warm Interior Herbs, Astringent Herbs, abbreviated materia medica, and Pinyin/Latin list; American Dragon exact pages Hu/Hu Tao Ren, Hu Jiao, Huai Hua Mi, Jin Ying Zi, and Geng/Jing Mi; CloudTCM exact pages Hu Jiao `/herb/1071`, Huai Mi `/herb/5433`, Jin Ying Zi `/herb/1090`, plus contextual-only pages Ye He Tao Ren `/herb/12064` and Jing Mi Gan `/herb/6300`.
+- **Source honesty**: He Tao Ren exact CloudTCM page was not found, so CloudTCM is only cited as a contextual wild-walnut variant. Jing Mi exact CloudTCM page was not found, so CloudTCM is only contextual via rice-washing-water/formula use. Jing Mi is categorized as `補虛藥 / Tonify Qi` because the current canon lacks a food-grain category; the card note states it is mainly a food-medicinal Stomach-protecting assistant, not a strong tonic.
+- **Pair records added**: `pair.he_tao_ren__du_zhong__bu_gu_zhi`, `pair.he_tao_ren__ren_shen__ge_jie`, `pair.he_tao_ren__dang_gui__huo_ma_ren__rou_cong_rong`, `pair.hu_jiao__gao_liang_jiang__bi_ba`, `pair.hu_jiao__sheng_jiang__ban_xia`, `pair.di_yu__huai_mi`, `pair.huai_mi__ce_bai_ye__jing_jie__zhi_ke`, `pair.jin_ying_zi__sang_piao_xiao`, `pair.jin_ying_zi__qian_shi`, and `pair.jing_mi__shi_gao__zhi_mu__gan_cao`.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved from 276/304 matched and 28 missing to 281/304 matched and 23 missing. Local herb-card count is now 306. Next recommended batch: Kun Bu, Lian Xu, Lian Zi Xin, Ling Zhi, Lu Dou.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; targeted batch11 QA PASS for bilingual alignment, contraindications/cautions English, source citations/source URLs, property/channel separation, no replacement characters in new records or pairs, and all 10 pair records present. Full `validate-data.js` still FAILS on pre-existing acupoint/defaultPoints safety-line issues; full `validate-encoding.js` still FAILS on pre-existing acupoint/import/formula mojibake and URL-in-*_zh checks, not introduced by this batch.
+- **Protected areas**: no app shell, JS, CSS, scripts, source curriculum, schema, formula records, or clinical cases touched. Generated files were refreshed only via `scripts/build-data.js`.
+- **Known risks / manual checks**: review Huai Mi Appendix B pair display with Di Yu; review Jing Mi category wording because it is food-medicinal in the source tradition; review Hu Jiao channel differences because course/AD list ST-LI while CloudTCM lists broader channels.
+
 ## [2026-07-29] Codex Handoff - NCBAHM missing herbs batch 10: Gua Lou Pi, Gua Lou Ren, Hai Piao Xiao, Hai Tong Pi, Hai Zao
 
 - **Branch**: `codex/herbs-missing-cards-batch9`

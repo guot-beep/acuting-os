@@ -1,5 +1,13 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — NCBAHM CH missing herbs batch 11
+
+- Added full formal herb cards for 核桃仁、胡椒、槐米、金櫻子、粳米 from NCBAHM 2026 CH Appendix A + Chenoweth course notes, with CloudTCM/American Dragon used only where exact usable pages or explicitly labeled contextual support were actually reviewed.
+- Added ten sourced herb-pair records, including NCBAHM 2026 CH Appendix B `地榆 + 槐米`, plus AD/course-supported pairs for 核桃仁、胡椒、金櫻子、粳米.
+- Updated Quality herb-outline audit from 276/304 matched and 28 missing to 281/304 matched and 23 missing; local herb cards are now 306.
+- Source honesty notes: 核桃仁 CloudTCM exact page was not found, so only 野核桃仁 is cited as contextual/variant support; 粳米 exact CloudTCM page was not found, so CloudTCM is only contextual via 粳米泔/formula use. 粳米 is placed under 補虛藥 / Tonify Qi because the current canon has no food-grain category, with note that it is mainly a food-medicinal Stomach-protecting assistant.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; batch11 targeted bilingual/source/pair/property-contamination QA PASS. Full validate-data/encoding still fail on known pre-existing acupoint/defaultPoints/import encoding issues outside this herb batch.
+
 ## 2026-07-29 Codex — NCBAHM CH missing herbs batch 10
 
 - Added full formal herb cards for 栝樓皮、栝樓仁、海螵蛸、海桐皮、海藻 from NCBAHM 2026 CH Appendix A + Chenoweth course notes, with CloudTCM/American Dragon used only where exact usable pages or explicitly scoped source support were actually reviewed.

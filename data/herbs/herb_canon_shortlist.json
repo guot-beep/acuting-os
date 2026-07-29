@@ -72333,10 +72333,1297 @@
           "curriculum/herbs/Mnemonics for 18 incompatibilities, 19 antagonisms and pregnant contraindications.md"
         ]
       }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A 與可核讀外部來源建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.he_tao_ren",
+      "name_zh": "核桃仁",
+      "name_en": "Walnut",
+      "pinyin": "Hé Táo Rén",
+      "pinyin_toned": "Hé Táo Rén",
+      "pharmaceutical_latin": "Juglandis Semen / Semen Juglandis",
+      "part_used_zh": "成熟種仁",
+      "part_used_en": "mature seed kernel",
+      "category": "補虛藥 / Tonify Yang",
+      "properties_taste_temp": "甘，溫",
+      "taste_temperature_zh": "甘，溫",
+      "channels_zh": [
+        "腎經",
+        "肺經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "KD Kidney",
+        "LU Lung",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "腎經",
+        "肺經",
+        "大腸經"
+      ],
+      "aliases_zh": [
+        "胡桃仁",
+        "胡桃肉",
+        "核桃肉"
+      ],
+      "aliases_en": [
+        "Hu Tao Ren",
+        "English Walnut",
+        "Persian Walnut"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "甘"
+        ],
+        "five_flavors_en": [
+          "Sweet"
+        ],
+        "four_natures_zh": "溫",
+        "four_natures_en": "Warm",
+        "meridian_tropism_zh": [
+          "腎經",
+          "肺經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "KD Kidney",
+          "LU Lung",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "成熟種仁",
+        "part_used_en": "mature seed kernel",
+        "source_note_zh": "NCBAHM 用 He Tao Ren；AD 精準頁用 Hu Tao Ren。課件與 AD 均支持甘溫、腎肺大腸。CloudTCM 本次只找到野核桃仁頁，作變體/背景參考，不覆蓋主欄。"
+      },
+      "property_channel_source_note_zh": "主欄不放『野核桃仁』頁的變體來源；保留核桃仁/胡桃仁命名差異。",
+      "functions_zh": [
+        "補腎助陽、益精強腰膝",
+        "溫肺納氣、定喘止咳",
+        "潤腸通便"
+      ],
+      "actions_en": [
+        "Tonifies Kidney Yang, replenishes Jing, and strengthens the low back and knees",
+        "Warms the Lungs, helps the Kidneys grasp Qi, and relieves chronic cough/wheezing",
+        "Moistens the Intestines and unblocks the bowels"
+      ],
+      "indications_zh": [
+        "腎陽不足或腎精不足之腰膝冷痛、腰膝痠軟、下肢無力。",
+        "腎不納氣、肺腎兩虛之久咳久喘，勞則喘甚。",
+        "虛寒咳喘、寒痰咳嗽，尤其肺腎同病者。",
+        "津血不足、老年或熱病傷津後腸燥便秘。",
+        "腎陽虛兼尿頻、陽痿、早洩等下焦虛寒。"
+      ],
+      "indications_en": [
+        "Kidney Yang or Kidney Jing deficiency with cold painful low back/knees, soreness, and weak legs.",
+        "Kidneys failing to grasp Qi or Lung-Kidney deficiency with chronic cough/wheezing worse on exertion.",
+        "Deficiency-Cold cough and wheezing or Cold-Phlegm cough, especially when Lung and Kidney are both involved.",
+        "Intestinal Dryness constipation from deficient Fluids/Blood, old age, or fluid injury after febrile disease.",
+        "Lower-jiao deficiency-cold with urinary frequency, impotence, or premature ejaculation."
+      ],
+      "condition_tags_zh": [
+        "腎陽虛",
+        "腎精不足",
+        "腰膝冷痛",
+        "下肢無力",
+        "腎不納氣",
+        "久咳久喘",
+        "寒痰",
+        "腸燥便秘",
+        "老年便秘",
+        "尿頻",
+        "陽痿",
+        "早洩"
+      ],
+      "condition_tags_en": [
+        "Kidney Yang deficiency",
+        "Kidney Jing deficiency",
+        "Cold painful low back and knees",
+        "Weak legs",
+        "Kidneys failing to grasp Qi",
+        "Chronic cough and wheezing",
+        "Cold Phlegm",
+        "Intestinal Dryness constipation",
+        "Constipation in the elderly",
+        "Urinary frequency",
+        "Impotence",
+        "Premature ejaculation"
+      ],
+      "modern_functions_zh": [
+        "抗凝與溶栓作用（AD列交互作用）",
+        "潤腸通便之油脂與纖維作用",
+        "止咳祛痰/平喘相關背景",
+        "營養性脂肪酸與維生素支持"
+      ],
+      "modern_functions_en": [
+        "Anticoagulant and thrombolytic activity noted as an interaction by American Dragon",
+        "Oil- and fiber-related bowel-moistening effect",
+        "Antitussive, expectorant, and antiasthmatic background signal",
+        "Nutritional fatty-acid and vitamin support"
+      ],
+      "dosage": {
+        "min_g": 9,
+        "max_g": 30,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "9–30g（American Dragon）/ 野核桃仁 30–50g 煎湯或 10–30g 嚼服（CloudTCM contextual）",
+        "course_dose_g": "課件表格未列精準日服量",
+        "ad_dose_g": "9–30g；tincture 2–4mL",
+        "cloudtcm_dose_g": "野核桃仁變體：煎湯 30–50g，或搗碎嚼 10–30g",
+        "source_note": "核桃仁精準劑量採 AD；CloudTCM 是野核桃仁變體頁，只作 contextual，不當作精準核桃仁共識。"
+      },
+      "related_formulas": [
+        "formula.ren_shen_ge_jie_san"
+      ],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：肺腎同治，補腎納氣定喘，又潤腸通便。",
+      "exam_pearl": "核桃仁/胡桃仁 = 腎陽虛腰膝冷痛 + 肺腎虛喘 + 老人腸燥便秘。看到 Kidneys fail to grasp Qi 又便秘，可想到它。",
+      "clinical_use_note": "核桃仁很像『肺腎同病 + 腸燥』的橋樑藥。它溫補但質潤，所以可補腎助陽、納氣平喘，又能潤腸；但有痰火、熱咳、陰虛火旺或水樣便時會出問題。AD 明確列抗凝/抗血小板交互作用，安全欄要比一般補陽藥更小心。",
+      "contraindications_zh": [
+        "痰火者禁用。",
+        "熱咳者禁用。",
+        "陰虛有熱者禁用。",
+        "水樣便或泄瀉者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Phlegm-Fire.",
+        "Contraindicated in Hot cough.",
+        "Contraindicated in Yin deficiency with Heat signs.",
+        "Contraindicated in watery stool or diarrhea."
+      ],
+      "cautions_zh": [
+        "AD 列有抗凝與溶栓作用；服用 warfarin、heparin、aspirin、clopidogrel 等抗凝/抗血小板藥者慎用。",
+        "AD 註明不宜與濃茶同服。",
+        "CloudTCM 精準頁本次未找到；野核桃仁資料僅作變體背景。"
+      ],
+      "cautions_en": [
+        "American Dragon lists anticoagulant and thrombolytic effects; use cautiously with warfarin, heparin, aspirin, clopidogrel, and other anticoagulant/antiplatelet drugs.",
+        "American Dragon states not to take it with strong tea.",
+        "A precise CloudTCM He/Hu Tao Ren page was not found this pass; Ye He Tao Ren is contextual variant background only."
+      ],
+      "safety_flags": [
+        "phlegm_fire_contraindication",
+        "hot_cough_contraindication",
+        "yin_deficiency_heat_contraindication",
+        "diarrhea_contraindication",
+        "anticoagulant_antiplatelet_interaction"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Yang Tonics table",
+          "url": "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L43-L45",
+          "scope": "課件表格：核桃仁性味、歸經與核心定位"
+        },
+        {
+          "name": "📘 Chenoweth abbreviated materia medica",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L6364-L6372",
+          "scope": "補骨脂段落中腎陽虛咳喘配伍背景"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌、交互作用與配伍"
+        },
+        {
+          "name": "雲端中醫 CloudTCM 野核桃仁 contextual",
+          "url": "https://cloudtcm.com/herb/12064",
+          "scope": "變體頁：野核桃仁性味歸經、潤肺化痰/通便背景；不作精準核桃仁主來源"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+        "https://cloudtcm.com/herb/12064"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L43-L45",
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+        ],
+        "category": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L43-L45",
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L43-L45",
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L43-L45",
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L43-L45",
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L6364-L6372"
+        ],
+        "indications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L6364-L6372"
+        ],
+        "modern_functions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+          "https://cloudtcm.com/herb/12064"
+        ],
+        "dosage": [
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+          "https://cloudtcm.com/herb/12064"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L43-L45",
+          "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L6364-L6372"
+        ]
+      }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A 與可核讀外部來源建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.hu_jiao",
+      "name_zh": "胡椒",
+      "name_en": "Black Pepper",
+      "pinyin": "Hú Jiāo",
+      "pinyin_toned": "Hú Jiāo",
+      "pharmaceutical_latin": "Piperis Fructus / Fructus Piperis Nigri",
+      "part_used_zh": "果實",
+      "part_used_en": "fruit",
+      "category": "溫裡藥 / Warm Interior",
+      "properties_taste_temp": "辛，熱",
+      "taste_temperature_zh": "辛，熱",
+      "channels_zh": [
+        "胃經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "ST Stomach",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "胃經",
+        "大腸經"
+      ],
+      "aliases_zh": [
+        "黑胡椒",
+        "白胡椒",
+        "浮椒"
+      ],
+      "aliases_en": [
+        "Pepper",
+        "Black Pepper",
+        "White Pepper"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "辛"
+        ],
+        "five_flavors_en": [
+          "Acrid"
+        ],
+        "four_natures_zh": "熱",
+        "four_natures_en": "Hot",
+        "meridian_tropism_zh": [
+          "胃經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "ST Stomach",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "果實",
+        "part_used_en": "fruit",
+        "source_note_zh": "課件與 AD 均列辛熱、胃大腸。CloudTCM 另列脾腎肝肺三焦等多經，主欄採課件/AD 共識，CloudTCM 差異放 note。"
+      },
+      "property_channel_source_note_zh": "胡椒歸經易被 CloudTCM 擴大；本卡主欄採考試課件與 AD 的胃、大腸。",
+      "functions_zh": [
+        "溫中散寒止痛",
+        "下氣消痰",
+        "開胃進食、助消化"
+      ],
+      "actions_en": [
+        "Warms the middle jiao, disperses Cold, and relieves pain",
+        "Descends Qi and resolves Cold-Phlegm",
+        "Stimulates appetite and supports digestion"
+      ],
+      "indications_zh": [
+        "胃腸寒冷之嘔吐、腹瀉、腹痛。",
+        "胃寒嘔吐清水、食慾減退、脘腹冷痛。",
+        "寒邪中阻、寒痰或宿食不消而氣逆。",
+        "寒性泄瀉、冷痢或大腸寒證。",
+        "牙痛或臍部溫中外用，僅作來源性外用提示。"
+      ],
+      "indications_en": [
+        "Cold in the Stomach and Intestines with vomiting, diarrhea, and abdominal pain.",
+        "Stomach Cold with vomiting of clear fluid, poor appetite, and cold epigastric/abdominal pain.",
+        "Cold obstructing the middle with Cold-Phlegm or food stagnation causing rebellious Qi.",
+        "Cold diarrhea, cold dysenteric disorder, or Large Intestine Cold.",
+        "Source-based topical use for toothache or umbilical warming; external-use note only."
+      ],
+      "condition_tags_zh": [
+        "胃寒",
+        "嘔吐",
+        "腹瀉",
+        "腹痛",
+        "脘腹冷痛",
+        "食慾不振",
+        "寒痰",
+        "宿食不消",
+        "冷痢",
+        "牙痛"
+      ],
+      "condition_tags_en": [
+        "Stomach Cold",
+        "Vomiting",
+        "Diarrhea",
+        "Abdominal pain",
+        "Cold epigastric and abdominal pain",
+        "Poor appetite",
+        "Cold Phlegm",
+        "Undigested food stagnation",
+        "Cold dysentery",
+        "Toothache"
+      ],
+      "modern_functions_zh": [
+        "止痛作用",
+        "抗菌抗病毒作用",
+        "抗氧化作用",
+        "抗發炎作用",
+        "促進消化與改善食慾",
+        "免疫調節/提高免疫力提示"
+      ],
+      "modern_functions_en": [
+        "Analgesic activity",
+        "Antibacterial and antiviral activity",
+        "Antioxidant activity",
+        "Anti-inflammatory activity",
+        "Digestive and appetite-promoting activity",
+        "Immune-modulating / immunity-support signal"
+      ],
+      "dosage": {
+        "min_g": 1,
+        "max_g": 4.5,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "2–4g（課件）/ 1.5–4.5g（AD；可至 30g）/ 1–3g（CloudTCM）",
+        "course_dose_g": "2–4g decoction；0.5–1g powder",
+        "ad_dose_g": "1.5–4.5g，使用前搗碎；可至 30g；丸散 0.5–1g",
+        "cloudtcm_dose_g": "1–3g；食療 1–5g；入湯劑後下，不宜久煎；研末沖服減半",
+        "source_note": "胡椒辛熱耗陰，劑量不取 AD 高量作常規；課件與 CloudTCM 小劑量置前。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：溫中止痛，胃腸寒冷嘔吐腹瀉腹痛；辛熱禁忌很多。",
+      "exam_pearl": "胡椒 = 胃/大腸寒痛嘔瀉。比花椒更偏『溫中下氣、寒性嘔吐腹瀉』；熱象、陰虛、孕期、痔瘡出血都要避。",
+      "clinical_use_note": "胡椒是小而熱的溫裡藥，考試抓胃寒嘔吐、腹瀉腹痛即可；CloudTCM 展開很多現代藥理與食療用途，但禁忌更重要。它不是一般感冒藥，也不是所有痰都可用，只適合寒痰/寒中。",
+      "contraindications_zh": [
+        "陰虛有熱者禁用。",
+        "出血性疾病或血證者禁用。",
+        "痔瘡患者禁用。",
+        "咽喉、口、齒、眼部疾病或火熱上炎者禁用。",
+        "孕期禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with Heat signs.",
+        "Contraindicated in bleeding disorders or Blood-Heat/bleeding presentations.",
+        "Contraindicated in hemorrhoids.",
+        "Contraindicated in throat, mouth, tooth, or eye disorders or upward flaring Heat.",
+        "Contraindicated during pregnancy."
+      ],
+      "cautions_zh": [
+        "辛熱燥烈，不宜多服或久煎；CloudTCM 記載多食動火燥液、耗氣傷陰。",
+        "胃潰瘍、口乾、熱性咳嗽或火熱體質慎用。",
+        "綠豆能制其毒為 CloudTCM 典籍性解毒提示。"
+      ],
+      "cautions_en": [
+        "Acrid, hot, and drying; avoid overuse or prolonged boiling. CloudTCM notes that overuse can stir Fire, dry fluids, consume Qi, and damage Yin.",
+        "Use cautiously in gastric ulcer, dry mouth, Hot cough, or Heat constitution.",
+        "CloudTCM includes a classical note that mung bean can counteract its toxicity."
+      ],
+      "safety_flags": [
+        "yin_deficiency_heat_contraindication",
+        "bleeding_disorder_contraindication",
+        "hemorrhoid_contraindication",
+        "pregnancy_contraindication",
+        "mouth_eye_throat_heat_contraindication"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuJiao.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuJiao.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Warm Interior Herbs p12",
+          "url": "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "scope": "胡椒性味、歸經、功效主治、劑量與陰虛/熱禁忌"
+        },
+        {
+          "name": "📘 Chenoweth abbreviated materia medica",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2273-L2285",
+          "scope": "胡椒寒中嘔瀉腹痛與配伍提示"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1071",
+          "scope": "別名、來源、現代功效、劑量與詳細安全"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/HuJiao.html",
+          "scope": "英文名、性味歸經、劑量、功效主治、禁忌與配伍"
+        }
+      ],
+      "source_urls": [
+        "https://cloudtcm.com/herb/1071",
+        "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "category": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2273-L2285",
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2273-L2285",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html",
+          "https://cloudtcm.com/herb/1071"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2273-L2285",
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2273-L2285",
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1071"
+        ],
+        "dosage": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "contraindications_zh": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L468-L479",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2273-L2285",
+          "https://cloudtcm.com/herb/1071",
+          "https://www.americandragon.com/Individualherbsupdate/HuJiao.html"
+        ]
+      }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A 與可核讀外部來源建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.huai_mi",
+      "name_zh": "槐米",
+      "name_en": "Sophora Bud",
+      "pinyin": "Huái Mǐ",
+      "pinyin_toned": "Huái Mǐ",
+      "pharmaceutical_latin": "Sophorae Flos Immaturus / Flos Sophorae Immaturus",
+      "part_used_zh": "花蕾",
+      "part_used_en": "immature flower bud",
+      "category": "止血藥 / Stop Bleeding",
+      "properties_taste_temp": "苦，微寒/涼",
+      "taste_temperature_zh": "苦，微寒/涼",
+      "channels_zh": [
+        "肝經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "LV Liver",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "肝經",
+        "大腸經"
+      ],
+      "aliases_zh": [
+        "槐花米",
+        "槐花",
+        "白槐"
+      ],
+      "aliases_en": [
+        "Pagoda Tree Bud",
+        "Japanese Pagoda Tree Flower",
+        "Sophora Flower Bud"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Bitter"
+        ],
+        "four_natures_zh": "微寒/涼",
+        "four_natures_en": "Slightly cold / cool",
+        "meridian_tropism_zh": [
+          "肝經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "LV Liver",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "花蕾",
+        "part_used_en": "immature flower bud",
+        "source_note_zh": "CloudTCM 列苦微寒、肝大腸；AD 列苦涼、肝大腸（肺括號）。主欄採肝大腸。"
+      },
+      "property_channel_source_note_zh": "AD 的肺經括號來源差異不放主欄；槐米與槐花/槐角部位不同，注意別混。",
+      "functions_zh": [
+        "涼血止血",
+        "清肝瀉火",
+        "清熱瀉火/解毒"
+      ],
+      "actions_en": [
+        "Cools the Blood and stops bleeding",
+        "Cools the Liver and drains Fire",
+        "Clears Heat, drains Fire, and resolves toxin"
+      ],
+      "indications_zh": [
+        "大腸濕熱或血熱之便血、痔血、血痢。",
+        "吐血、衄血、尿血、崩漏等血熱出血。",
+        "肝熱目赤、頭痛、眩暈。",
+        "濕熱腸炎、痢疾或消化道感染熱象。",
+        "高血壓、胸悶煩躁等 AD/CloudTCM 現代應用提示。"
+      ],
+      "indications_en": [
+        "Hematochezia, bleeding hemorrhoids, or bloody dysentery from Large Intestine Damp-Heat or Blood Heat.",
+        "Hematemesis, epistaxis, hematuria, or uterine bleeding due to Blood Heat.",
+        "Liver Heat with red eyes, headache, and dizziness.",
+        "Damp-Heat enteritis, dysentery, or digestive infection with Heat signs.",
+        "Modern-source application signal for hypertension, chest stifling, and irritability."
+      ],
+      "condition_tags_zh": [
+        "便血",
+        "痔血",
+        "血痢",
+        "吐血",
+        "衄血",
+        "尿血",
+        "崩漏",
+        "血熱出血",
+        "肝熱目赤",
+        "頭痛",
+        "眩暈",
+        "高血壓",
+        "腸炎",
+        "痢疾"
+      ],
+      "condition_tags_en": [
+        "Blood in stool",
+        "Bleeding hemorrhoids",
+        "Bloody dysentery",
+        "Hematemesis",
+        "Epistaxis",
+        "Hematuria",
+        "Uterine bleeding",
+        "Blood-Heat bleeding",
+        "Liver-Heat red eyes",
+        "Headache",
+        "Dizziness",
+        "Hypertension",
+        "Enteritis",
+        "Dysentery"
+      ],
+      "modern_functions_zh": [
+        "止血作用",
+        "抗氧化作用",
+        "抗發炎作用",
+        "抗菌作用",
+        "降血壓作用",
+        "降血糖作用",
+        "抗腫瘤研究提示"
+      ],
+      "modern_functions_en": [
+        "Hemostatic activity",
+        "Antioxidant activity",
+        "Anti-inflammatory activity",
+        "Antibacterial activity",
+        "Blood-pressure-lowering activity",
+        "Hypoglycemic activity",
+        "Antitumor research signal"
+      ],
+      "dosage": {
+        "min_g": 4.5,
+        "max_g": 16,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "4.5–16g（American Dragon）/ CloudTCM 本次頁面未列明標準劑量",
+        "ad_dose_g": "4.5–16g；tincture 2–4mL",
+        "cloudtcm_dose_g": "本次可核讀頁面未列標準日服量",
+        "source_note": "劑量採 AD；CloudTCM 用於性味、功效、現代藥理與來源。"
+      },
+      "related_formulas": [
+        "formula.huai_hua_san"
+      ],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；Appendix B 明列 Di Yu + Huai Mi 對藥。考點：涼血止血，尤其腸風便血、痔血。",
+      "exam_pearl": "槐米 = 大腸濕熱/血熱出血 + 清肝火。便血痔血先想槐米；Appendix B 必背地榆＋槐米。",
+      "clinical_use_note": "槐米是止血藥裡很 board 的腸道出血藥，和地榆同為腸風便血要藥；槐米偏清肝降火，地榆偏收斂止血、解毒斂瘡。止血時要分血熱/濕熱與脾氣不攝血，AD 對脾胃虛寒和脾氣虛崩漏只列慎用，但陰虛血熱/非實熱則禁用。",
+      "contraindications_zh": [
+        "陰虛所致血熱者禁用（AD）。",
+        "非實熱之熱象者禁用（AD）。"
+      ],
+      "contraindications_en": [
+        "Contraindicated when Blood Heat is due to Yin deficiency according to American Dragon.",
+        "Contraindicated in Heat that is not due to Excess according to American Dragon."
+      ],
+      "cautions_zh": [
+        "脾胃虛寒者慎用。",
+        "脾氣虛所致崩漏/子宮出血者慎用，需分清補攝與涼血。",
+        "CloudTCM 列降糖、降壓作用；使用降糖或降壓藥者需交互作用審核。"
+      ],
+      "cautions_en": [
+        "Use cautiously in Spleen/Stomach deficiency-cold.",
+        "Use cautiously for uterine bleeding due to Spleen Qi deficiency; distinguish tonifying containment from cooling Blood.",
+        "CloudTCM lists hypoglycemic and blood-pressure-lowering activity; review interactions with diabetes or antihypertensive drugs."
+      ],
+      "safety_flags": [
+        "yin_deficiency_blood_heat_contraindication",
+        "non_excess_heat_contraindication",
+        "spleen_stomach_deficiency_cold_caution",
+        "diabetes_drug_interaction_review",
+        "antihypertensive_interaction_review"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html",
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix B",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L517",
+          "scope": "官方對藥 Di Yu + Huai Mi"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/5433",
+          "scope": "性味歸經、來源、傳統功效、現代藥理"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html",
+          "scope": "英文名、性味歸經、主治、劑量、禁忌與配伍"
+        }
+      ],
+      "source_urls": [
+        "https://cloudtcm.com/herb/5433",
+        "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "https://cloudtcm.com/herb/5433",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "category": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "properties_taste_temp": [
+          "https://cloudtcm.com/herb/5433",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "channels_zh": [
+          "https://cloudtcm.com/herb/5433",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "functions_zh": [
+          "https://cloudtcm.com/herb/5433",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "indications_zh": [
+          "https://cloudtcm.com/herb/5433",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/5433",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "dosage": [
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html",
+          "https://cloudtcm.com/herb/5433"
+        ],
+        "clinical_use_note": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L517",
+          "https://cloudtcm.com/herb/5433",
+          "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html"
+        ]
+      }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A 與可核讀外部來源建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.jin_ying_zi",
+      "name_zh": "金櫻子",
+      "name_en": "Cherokee Rose Hip",
+      "pinyin": "Jīn Yīng Zǐ",
+      "pinyin_toned": "Jīn Yīng Zǐ",
+      "pharmaceutical_latin": "Rosae Laevigatae Fructus / Fructus Rosae Laevigatae",
+      "part_used_zh": "成熟果實",
+      "part_used_en": "mature fruit",
+      "category": "收澀藥 / Stabilize and Bind",
+      "properties_taste_temp": "酸、澀，平",
+      "taste_temperature_zh": "酸、澀，平",
+      "channels_zh": [
+        "腎經",
+        "膀胱經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "KD Kidney",
+        "BL Bladder",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "腎經",
+        "膀胱經",
+        "大腸經"
+      ],
+      "aliases_zh": [
+        "金罌子",
+        "山石榴",
+        "糖罐子",
+        "刺梨子"
+      ],
+      "aliases_en": [
+        "Rosa Laevigata",
+        "Golden Tassel Seed"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "酸",
+          "澀"
+        ],
+        "five_flavors_en": [
+          "Sour",
+          "Astringent"
+        ],
+        "four_natures_zh": "平",
+        "four_natures_en": "Neutral",
+        "meridian_tropism_zh": [
+          "腎經",
+          "膀胱經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "KD Kidney",
+          "BL Bladder",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "成熟果實",
+        "part_used_en": "mature fruit",
+        "source_note_zh": "課件表格列腎、大腸；AD 列膀胱、腎、大腸；CloudTCM 另列肺脾。主欄採 AD + 課件核心。"
+      },
+      "property_channel_source_note_zh": "金櫻子不是補藥主力；AD 明確說它 only stabilizes，不像山茱萸能補。歸經差異放 note。",
+      "functions_zh": [
+        "固精縮尿止帶",
+        "澀腸止瀉",
+        "收斂固澀"
+      ],
+      "actions_en": [
+        "Stabilizes the Kidneys, astringes urine, retains Jing, and stops discharge",
+        "Astringes the Intestines and stops diarrhea",
+        "Astringes and stabilizes leakage"
+      ],
+      "indications_zh": [
+        "下焦虛損不固之遺精、滑精、夢遺。",
+        "遺尿、尿頻、小便失禁，尤偏腎虛不固。",
+        "帶下清稀、久帶不止。",
+        "久瀉久痢、脾虛久瀉。",
+        "老年腎虛尿失禁或精關不固。"
+      ],
+      "indications_en": [
+        "Lower-jiao deficiency instability with spermatorrhea, seminal emission, or nocturnal emission.",
+        "Enuresis, urinary frequency, or urinary incontinence, especially from Kidney deficiency instability.",
+        "Watery vaginal discharge or chronic discharge.",
+        "Chronic diarrhea/dysentery or chronic Spleen deficiency diarrhea.",
+        "Elderly Kidney deficiency urinary incontinence or insecure Jing gate."
+      ],
+      "condition_tags_zh": [
+        "遺精",
+        "滑精",
+        "夢遺",
+        "遺尿",
+        "尿頻",
+        "小便失禁",
+        "帶下",
+        "久瀉",
+        "久痢",
+        "脾虛泄瀉",
+        "下焦不固"
+      ],
+      "condition_tags_en": [
+        "Spermatorrhea",
+        "Seminal emission",
+        "Nocturnal emission",
+        "Enuresis",
+        "Urinary frequency",
+        "Urinary incontinence",
+        "Vaginal discharge",
+        "Chronic diarrhea",
+        "Chronic dysentery",
+        "Spleen deficiency diarrhea",
+        "Lower-jiao instability"
+      ],
+      "modern_functions_zh": [
+        "保肝利膽作用",
+        "抗氧化作用",
+        "抗腫瘤研究提示",
+        "預防骨質疏鬆研究提示",
+        "鞣質收斂止瀉相關作用"
+      ],
+      "modern_functions_en": [
+        "Hepatoprotective and cholagogue-related activity",
+        "Antioxidant activity",
+        "Antitumor research signal",
+        "Osteoporosis-prevention research signal",
+        "Tannin-related astringent antidiarrheal effect"
+      ],
+      "dosage": {
+        "min_g": 6,
+        "max_g": 18,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "6–12g（CloudTCM）/ 6–18g（AD；單用可至 30g）",
+        "cloudtcm_dose_g": "6–12g；食療 6–15g",
+        "ad_dose_g": "6–18g；單用可至 30g；tincture 1–3mL",
+        "source_note": "課件摘要未列完整劑量；AD 與 CloudTCM 並列。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：收澀藥，固精縮尿與澀腸止瀉；不是補腎主藥。",
+      "exam_pearl": "金櫻子 = 下焦漏＋腸漏：遺精、尿頻、帶下、久瀉。AD 特別提醒它只收不補，虛證要配補藥。",
+      "clinical_use_note": "金櫻子容易被誤記成補腎藥，但 AD notes 說它 does not tonify，必須與補藥同用。與山茱萸相比，山茱萸補肝腎又收斂；金櫻子偏收澀、兼久瀉。若實熱、濕熱、外邪未清或陰虛火旺造成滑脫，收澀會閉邪或助熱。",
+      "contraindications_zh": [
+        "實邪未去，尤其熱邪或實火者禁用。",
+        "陰虛火熾所致小便不禁或遺精者禁用。",
+        "中寒有痞者禁用（CloudTCM）。",
+        "火熱暴注之泄瀉禁用或不宜用。",
+        "阿片類藥物配伍禁用（CloudTCM）。"
+      ],
+      "contraindications_en": [
+        "Contraindicated when excess pathogens remain, especially Heat or Excess Fire.",
+        "Contraindicated for urinary incontinence or spermatorrhea from blazing Fire due to Yin deficiency.",
+        "Contraindicated in middle Cold with focal distention according to CloudTCM.",
+        "Contraindicated or unsuitable in acute Heat-type diarrhea.",
+        "CloudTCM lists contraindication with opioid-type drugs."
+      ],
+      "cautions_zh": [
+        "過量或久服可致腹痛或便秘。",
+        "心衰、胃酸過多、孕期與產後婦女慎用（CloudTCM）。",
+        "蜜製偏補中澀腸；鹽製偏入腎固精縮尿，炮製差異需辨。"
+      ],
+      "cautions_en": [
+        "Overdose or long-term use may cause abdominal pain or constipation.",
+        "Use cautiously in heart failure, hyperacidity, pregnancy, and postpartum according to CloudTCM.",
+        "Honey-prepared form emphasizes middle-tonifying intestinal astringing; salt-prepared form more strongly enters Kidney to astringe Jing and urine."
+      ],
+      "safety_flags": [
+        "excess_pathogen_heat_contraindication",
+        "yin_deficiency_fire_contraindication",
+        "heat_diarrhea_contraindication",
+        "constipation_long_use_caution",
+        "pregnancy_postpartum_caution",
+        "opioid_interaction_cloudtcm"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Astringent Herbs summary",
+          "url": "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L63-L70",
+          "scope": "金櫻子收澀定位與課件歸經摘要"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1090",
+          "scope": "性味歸經差異、功效、劑量、現代藥理與安全"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html",
+          "scope": "英文名、性味歸經、功效主治、劑量、禁忌與配伍"
+        }
+      ],
+      "source_urls": [
+        "https://cloudtcm.com/herb/1090",
+        "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "curriculum/herbs/Pinyin & Latin Herb List.md",
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "category": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L63-L70",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L63-L70",
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L63-L70",
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L63-L70",
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "indications_zh": [
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1090"
+        ],
+        "dosage": [
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1090",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L63-L70",
+          "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html",
+          "https://cloudtcm.com/herb/1090"
+        ]
+      }
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Codex",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A 與可核讀外部來源建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.jing_mi",
+      "name_zh": "粳米",
+      "name_en": "Nonglutinous Rice",
+      "pinyin": "Jīng Mǐ",
+      "pinyin_toned": "Jīng Mǐ",
+      "pharmaceutical_latin": "Oryzae Semen / Semen Oryzae",
+      "part_used_zh": "種仁/米粒",
+      "part_used_en": "seed grain / rice kernel",
+      "category": "補虛藥 / Tonify Qi",
+      "properties_taste_temp": "甘，平",
+      "taste_temperature_zh": "甘，平",
+      "channels_zh": [
+        "脾經",
+        "胃經",
+        "肺經"
+      ],
+      "channels_en": [
+        "SP Spleen",
+        "ST Stomach",
+        "LU Lung"
+      ],
+      "channels_entered": [
+        "脾經",
+        "胃經",
+        "肺經"
+      ],
+      "aliases_zh": [
+        "大米",
+        "稻米",
+        "白米"
+      ],
+      "aliases_en": [
+        "Rice Seed",
+        "Nonglutinous Rice",
+        "Rice"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "甘"
+        ],
+        "five_flavors_en": [
+          "Sweet"
+        ],
+        "four_natures_zh": "平（來源另有溫/涼記載）",
+        "four_natures_en": "Neutral; sources also list warm/cool variants",
+        "meridian_tropism_zh": [
+          "脾經",
+          "胃經",
+          "肺經"
+        ],
+        "meridian_tropism_en": [
+          "SP Spleen",
+          "ST Stomach",
+          "LU Lung"
+        ],
+        "part_used_zh": "種仁/米粒",
+        "part_used_en": "seed grain / rice kernel",
+        "source_note_zh": "NCBAHM 列 Oryzae Semen。AD 精準頁列脾（胃）、甘、溫/涼；方劑資料中粳米常入脾胃肺。CloudTCM 本次找到粳米泔，不是粳米單味，僅作衍生品背景。"
+      },
+      "property_channel_source_note_zh": "粳米在本系統先歸補氣/食療護胃，不是強補藥；主要用於白虎湯、竹葉石膏湯等保胃生津。",
+      "functions_zh": [
+        "補中益氣、健脾和胃",
+        "生津止渴",
+        "和中護胃、緩和藥性"
+      ],
+      "actions_en": [
+        "Tonifies the middle, augments Qi, strengthens the Spleen, and harmonizes the Stomach",
+        "Generates fluids and stops thirst",
+        "Harmonizes the middle, protects the Stomach, and moderates harsh/cold herbs"
+      ],
+      "indications_zh": [
+        "脾胃氣虛、食少、疲弱、自汗等氣虛表現。",
+        "熱病傷津、煩渴、口渴。",
+        "白虎湯、竹葉石膏湯中保護胃氣、助生津止渴。",
+        "陽虛或虛寒泄瀉之方中佐使應用（AD列）。",
+        "作藥引或食療基底，緩和寒涼或燥烈藥對胃的刺激。"
+      ],
+      "indications_en": [
+        "Spleen/Stomach Qi deficiency with poor appetite, weakness, spontaneous sweating, or fatigue.",
+        "Fluid injury after febrile disease with irritability and thirst.",
+        "Protects Stomach Qi and supports fluid generation in Bai Hu Tang and Zhu Ye Shi Gao Tang.",
+        "Formula-assistant use for Yang-deficiency or deficiency-cold diarrhea as listed by American Dragon.",
+        "Food-medicinal guide/base that moderates cold or harsh herbs and protects the Stomach."
+      ],
+      "condition_tags_zh": [
+        "脾胃氣虛",
+        "食少",
+        "疲弱",
+        "自汗",
+        "煩渴",
+        "津傷",
+        "熱病傷津",
+        "胃氣受傷",
+        "虛寒泄瀉",
+        "藥食同源"
+      ],
+      "condition_tags_en": [
+        "Spleen/Stomach Qi deficiency",
+        "Poor appetite",
+        "Weakness",
+        "Spontaneous sweating",
+        "Irritability and thirst",
+        "Fluid injury",
+        "Febrile-disease fluid injury",
+        "Stomach Qi injury",
+        "Deficiency-cold diarrhea",
+        "Food-medicinal use"
+      ],
+      "modern_functions_zh": [
+        "營養支持與提供能量",
+        "易消化吸收、保護胃腸",
+        "生津止渴/補液食療支持",
+        "礦物質與維生素營養支持"
+      ],
+      "modern_functions_en": [
+        "Nutritional support and energy provision",
+        "Easy digestion and gastrointestinal support",
+        "Fluid-generating / rehydrating food-therapy support",
+        "Mineral and vitamin nutritional support"
+      ],
+      "dosage": {
+        "min_g": 9,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction/food medicinal"
+      },
+      "dosage_g": {
+        "standard_daily_g": "9–15g（American Dragon）/ 方劑中大米常見 30g（CloudTCM formula contextual）",
+        "ad_dose_g": "9–15g",
+        "cloudtcm_dose_g": "粳米飲/附子粳米湯等方劑中大米 30g；粳米泔為淘米水衍生品，非精準粳米單味",
+        "source_note": "精準單味劑量採 AD；方劑中常作食療/佐使，30g 屬方劑用量背景，不改寫成單味日服標準。"
+      },
+      "related_formulas": [
+        "formula.bai_hu_tang",
+        "formula.zhu_ye_shi_gao_tang"
+      ],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥。考點：粳米在方中護胃、生津、補中，不是只當食物忽略。",
+      "exam_pearl": "粳米在白虎湯/竹葉石膏湯裡像『胃氣安全墊』：石膏知母清熱太寒，粳米甘和保胃生津。",
+      "clinical_use_note": "粳米比較像藥食同源的方中護胃層，不宜誇大成強補陽/補氣藥。AD 把它列在補陽與補氣，但實際學習重點是甘和、保胃、生津、止渴，尤其在白虎湯與竹葉石膏湯中保護胃氣、避免寒涼傷中。",
+      "contraindications_zh": [
+        "精準單味頁未列明嚴格禁忌；本卡不捏造禁忌。",
+        "濕熱食積、痰濕壅盛而不宜穀食增滯者，需辨證避免過量食用。"
+      ],
+      "contraindications_en": [
+        "The precise single-herb source reviewed did not list strict contraindications; no invented contraindication is added.",
+        "In Damp-Heat food stagnation or pronounced Phlegm-Damp accumulation where grain intake would worsen stagnation, avoid excessive use after pattern differentiation."
+      ],
+      "cautions_zh": [
+        "糖尿病或血糖控制需求者，作食療大量使用時需注意碳水化合物負荷。",
+        "CloudTCM 粳米泔是淘米水，性味用途不同，不可當粳米精準頁。"
+      ],
+      "cautions_en": [
+        "For diabetes or blood-glucose management, consider carbohydrate load when used as food therapy in larger amounts.",
+        "CloudTCM Jing Mi Gan is rice-washing water with different nature/use; do not treat it as a precise Jing Mi single-herb page."
+      ],
+      "safety_flags": [
+        "carbohydrate_glucose_caution",
+        "food_medicinal_context",
+        "no_strict_contraindication_found"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+      "source_citations": [
+        {
+          "name": "NCBAHM 2026 CH Appendix A",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "scope": "官方單味藥收錄與拉丁名"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "scope": "精準頁：英文名、性味歸經、劑量與功效主治"
+        },
+        {
+          "name": "雲端中醫 CloudTCM 粳米泔 contextual",
+          "url": "https://cloudtcm.com/herb/6300",
+          "scope": "衍生品頁：粳米泔資料；僅作背景，不取代粳米單味"
+        },
+        {
+          "name": "本地方劑資料",
+          "url": "data/herbs/formulas.json",
+          "scope": "白虎湯、竹葉石膏湯中粳米/大米保胃生津角色"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+        "https://cloudtcm.com/herb/6300"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html"
+        ],
+        "category": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L272-L304",
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html"
+        ],
+        "properties_taste_temp": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "data/herbs/formulas.json"
+        ],
+        "channels_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "data/herbs/formulas.json"
+        ],
+        "functions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "data/herbs/formulas.json"
+        ],
+        "indications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "data/herbs/formulas.json"
+        ],
+        "modern_functions_zh": [
+          "data/herbs/formulas.json",
+          "https://cloudtcm.com/herb/6300"
+        ],
+        "dosage": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "data/herbs/formulas.json"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "https://cloudtcm.com/herb/6300"
+        ],
+        "clinical_use_note": [
+          "https://www.americandragon.com/Individualherbsupdate/GengMi.html",
+          "data/herbs/formulas.json"
+        ]
+      }
     }
   ],
   "batch_summary": {
-    "total_records": 301,
+    "total_records": 306,
     "repaired_pending_utf8_records": 32,
     "draft_filled_this_batch": 127,
     "source_checked_records": 0,
@@ -72355,13 +73642,13 @@
       "agent": "Codex",
       "branch": "codex/herbs-missing-cards-batch9",
       "added": [
-        "herb.gua_lou_pi",
-        "herb.gua_lou_ren",
-        "herb.hai_piao_xiao",
-        "herb.hai_tong_pi",
-        "herb.hai_zao"
+        "herb.he_tao_ren",
+        "herb.hu_jiao",
+        "herb.huai_mi",
+        "herb.jin_ying_zi",
+        "herb.jing_mi"
       ],
-      "rule": "NCBAHM 2026 CH Appendix A missing-card creation; source-layered draft; sources used per field."
+      "rule": "NCBAHM 2026 CH Appendix A missing-card creation; source-layered draft."
     }
   },
   "updated_at": "2026-07-29"
