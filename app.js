@@ -1556,6 +1556,17 @@ function renderDatabaseHealth() {
   if (!healthChannelListEl) return;
   healthChannelListEl.innerHTML = audit.channels.map((item) => {
     const status = item.missing === 0 ? "complete" : item.percent >= 50 ? "partial" : "priority";
+    /*
+    const d = {};
+    const madePct = 0;
+    const verifiedTotal = 0;
+    const notes = "";
+    const totalHtml = d.totalNote
+      ? `<div>${d.total}</div><small>${escapeHtml(d.totalNote)}</small>`
+      : `${d.total}`;
+    const madeLabel = d.madeNote || `${d.made}/${d.total} Â· ${madePct}%`;
+    const verifiedLabel = `${d.sourceChecked}/${verifiedTotal} å·²æºå¯©æ ¸${d.verifiedNote ? ` Â· ${escapeHtml(d.verifiedNote)}` : ""}${notes ? ` Â· ${escapeHtml(notes)}` : ""}`;
+    */
     return `
       <article class="health-channel-row ${status}">
         <div>
@@ -1614,6 +1625,7 @@ function getDataQualityAudit() {
 function getDomainProgress() {
   const K = globalThis.ACUTING_KNOWLEDGE || {};
   const recs = (key) => (K[key] && K[key].records) || [];
+  const herbCoverage = K.audit?.herb_outline_coverage || {};
   const verdicts = window.AcuTingReview ? window.AcuTingReview.allVerdicts() : [];
   const byKind = (kind, verdict) => verdicts.filter((v) => v.kind === kind && v.verdict === verdict).length;
   const filled = (v) => Array.isArray(v) ? v.length > 0 : (v != null && String(v).trim() !== "");
@@ -1625,10 +1637,23 @@ function getDomainProgress() {
   const conditions = recs("conditionCanon");
   const comparisons = recs("comparisons");
 
-  const row = (label, kind, total, made, sourceChecked) => ({
-    label, total, made, sourceChecked,
+  const row = (label, kind, total, made, sourceChecked, extra = {}) => ({
+    label, total, made, sourceChecked, ...extra,
     reviewed: byKind(kind, "confirmed"),
     issues: byKind(kind, "issue")
+  });
+
+  const herbTotal = Number(herbCoverage.appendix_a_total) || herbs.length;
+  const herbMade = Number(herbCoverage.matched_to_local_cards) || madeCount(herbs, ["functions_zh", "functions", "modern_functions_zh", "actions_indications"]);
+  const herbLocalCards = Number(herbCoverage.local_herb_cards) || herbs.length;
+  const herbMissing = Number(herbCoverage.missing_card_count);
+  const herbProgressRow = row("中藥 Herbs", "herb", herbTotal, herbMade, scCount(herbs), {
+    totalNote: herbCoverage.appendix_a_total ? `NCBAHM ${herbTotal} · 本地卡 ${herbLocalCards}` : "",
+    madeNote: herbCoverage.appendix_a_total
+      ? `${herbMade}/${herbTotal} NCBAHM 覆蓋 · 缺 ${Number.isFinite(herbMissing) ? herbMissing : Math.max(0, herbTotal - herbMade)}`
+      : "",
+    verifiedDenominator: herbLocalCards,
+    verifiedNote: herbCoverage.appendix_a_total ? `本地卡 ${herbLocalCards} 張；source_checked 仍按本地卡計` : ""
   });
 
   return [
@@ -1637,7 +1662,7 @@ function getDomainProgress() {
       points.filter((p) => (p.reviewStatus || "") === "source_checked").length),
     row("中藥 Herbs", "herb", herbs.length,
       madeCount(herbs, ["functions_zh", "functions", "modern_functions_zh", "actions_indications"]),
-      scCount(herbs)),
+      scCount(herbs)) && herbProgressRow,
     row("方劑 Formulas", "formula", formulas.length,
       madeCount(formulas, ["composition", "actions_zh", "pattern_indications_zh"]),
       scCount(formulas)),
@@ -1657,7 +1682,8 @@ function renderProgressMatrix() {
   const pct = (n, total) => (total ? Math.round((n / total) * 100) : 0);
   const rows = getDomainProgress().map((d) => {
     const madePct = pct(d.made, d.total);
-    const verPct = pct(d.sourceChecked, d.total);
+    const verifiedTotal = d.verifiedDenominator || d.total;
+    const verPct = pct(d.sourceChecked, verifiedTotal);
     const notes = [
       d.reviewed ? `你標正確 ${d.reviewed}（匯出後套用）` : "",
       d.issues ? `你標問題 ${d.issues}` : ""
@@ -5038,4 +5064,3 @@ function escapeHtml(value) {
 function escapeAttribute(value) {
   return escapeHtml(value).replaceAll("`", "&#096;");
 }
-

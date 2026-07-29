@@ -1,6 +1,40 @@
 # AcuTing OS Project Log
 
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 6
+
+- Added full formal herb cards for 白果、白前、半枝蓮、蓽茇、萆薢 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used where verified.
+- Added five sourced herb-pair records: 白果/麻黃/紫蘇子/杏仁, 蓽茇/高良薑, 蓽茇/延胡索/細辛, 萆薢/益智仁/烏藥, 萆薢/車前子/滑石/黃柏.
+- Updated Quality herb-outline audit from 251/304 matched and 53 missing to 256/304 matched and 48 missing; local herb cards are now 281.
+- Added backlog rule: if formula/herb work discovers a missing herb ID not on the current missing-card list, append it to the missing-card backlog instead of ignoring it.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; new-pair QA PASS; git diff --check PASS; validate-interactions PASS.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 5
+
+- Added full formal herb cards for 仙茅、白花蛇舌草、白鮮皮 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM + American Dragon.
+- Added/updated six sourced herb-pair records: 仙茅/淫羊藿 source update, 仙茅/杜仲, 白花蛇舌草/敗醬草/金銀花, 白花蛇舌草/茵陳蒿/黃柏/梔子, 白鮮皮/黃柏/苦參/防風, 白鮮皮/大黃/梔子.
+- Updated Quality herb-outline audit from 248/304 matched and 56 missing to 251/304 matched and 53 missing.
+- Preserved source dose differences in the requested format, including Xian Mao `3–10g（課件、AD）/ 3–9g（CloudTCM）`, Bai Hua She She Cao `15–30g（課件）/ 15–60g（AD、CloudTCM）`, and Bai Xian Pi `6–10g（課件）/ 4–16g（AD）`.
+- Fixed Ting-caught Quality stat display bug: Herbs progress now uses NCBAHM 2026 CH board-outline coverage (`304` total and `251/304` made/covered) instead of the stale local-card/fill-count display (`273`, `269/273`) and refreshed audit metadata to 2026-07-28.
+- Hid the obsolete `audit 2026-06-16` Quality summary cards (Verified / Records exist / Draft / Missing) because that older 361-only audit was stale and misleading.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; targeted bilingual/source/property-contamination QA PASS.
+
 Use this file as the first-read context before each daily optimization session. After each session, add a new entry with date, scope, files changed, validation, commit hash, and next task.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 4 + dosage rule correction
+
+- Added full formal herb cards for 木賊、白花蛇、硫黃 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM + American Dragon.
+- Added six sourced herb-pair records for Mu Zei eye pairs, Bai Hua She Wind-Damp/convulsion pairs, and Liu Huang internal/external safety-relevant pairs.
+- Updated Quality herb-outline audit from 245/304 matched and 59 missing to 248/304 matched and 56 missing.
+- Fixed Ting-caught property/channel boundary issue: `properties_taste_temp` now stays pure taste/temperature/toxicity; source/channel differences are preserved in notes/sources.
+- Updated Jue Ming Zi dosage display to preserve source differences: `6–10g（課件）/ 9–15g（AD、CloudTCM）`, with powder and dietary-use notes retained.
+
+## 2026-07-28 Codex — NCBAHM CH missing herbs batch 3
+
+- Added full formal herb cards for 漢防己、麻黃根、決明子 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM + American Dragon.
+- Added six sourced herb-pair records: 漢防己/黃耆, 漢防己/桂枝/茯苓, 麻黃根/黃耆/牡蠣, 麻黃根/浮小麥/黃耆, 決明子/菊花, 決明子/夏枯草.
+- Updated Quality herb-outline audit from 242/304 matched and 62 missing to 245/304 matched and 59 missing.
+- Corrected 決明子 category to canonical `平肝息風藥 / Extinguish Wind` after validator caught the longer non-canon category string.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; git diff --check PASS. Full validate-data/encoding still fail on pre-existing unrelated acupoint/import issues.
 
 ## Daily Operating Rule
 

@@ -888,7 +888,122 @@
         "formula.er_xian_tang"
       ],
       "sources": [
-        "cloudtcm_herb_pages"
+        "NCBAHM_2026_CH_Appendix_A",
+        "chenoweth_yang_tonics",
+        "american_dragon_xian_mao",
+        "cloudtcm_xian_mao"
+      ]
+    },
+    {
+      "id": "pair.xian_mao__du_zhong",
+      "herbs": [
+        "herb.xian_mao",
+        "herb.du_zhong"
+      ],
+      "name_zh": "仙茅配杜仲",
+      "name_en": "Xian Mao with Du Zhong",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "仙茅辛熱有毒，強補腎陽、祛寒濕；杜仲甘溫補肝腎、強筋骨。兩藥相使，仙茅溫腎逐寒，杜仲扶肝腎筋骨，使下焦陽虛兼腰膝冷痛者補而能行。",
+      "pair_meaning_en": "Xian Mao strongly warms Kidney Yang and dispels Cold-Damp; Du Zhong tonifies Liver/Kidney and strengthens bones and sinews. Together they support Kidney Yang deficiency with low-back and leg weakness.",
+      "indication_zh": "腎陽虛衰兼腰膝冷痛、筋骨痿軟、陽痿遺精；AD 列 impotence, spermatorrhea, weakness and pain in lower back and legs。",
+      "indication_en": "Kidney Yang deficiency with low-back/knee cold pain, weak bones and sinews, impotence, and spermatorrhea; listed in American Dragon combinations.",
+      "caution_zh": "仙茅辛熱有毒，陰虛火旺、實熱、孕期禁用；不可久服。",
+      "caution_en": "Xian Mao is hot and toxic; contraindicated in Yin deficiency heat, Excess Heat, pregnancy, and long-term use.",
+      "found_in_formulas": [],
+      "sources": [
+        "american_dragon_xian_mao",
+        "chenoweth_yang_tonics"
+      ]
+    },
+    {
+      "id": "pair.bai_hua_she_she_cao__bai_jiang_cao__jin_yin_hua",
+      "herbs": [
+        "herb.bai_hua_she_she_cao",
+        "herb.bai_jiang_cao",
+        "herb.jin_yin_hua"
+      ],
+      "name_zh": "白花蛇舌草配敗醬草、金銀花",
+      "name_en": "Bai Hua She She Cao with Bai Jiang Cao and Jin Yin Hua",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "白花蛇舌草清熱解毒、消癰散結；敗醬草清熱解毒、排膿消癰；金銀花清熱解毒、疏散熱毒。三藥相使，強化腸癰與熱毒癰腫之清解排膿力。",
+      "pair_meaning_en": "Bai Hua She She Cao clears Heat-toxicity and reduces abscesses; Bai Jiang Cao clears toxicity and expels pus; Jin Yin Hua vents and resolves Heat-toxicity. Together they strengthen treatment of intestinal abscess and toxic swellings.",
+      "indication_zh": "腸癰、闌尾炎樣右下腹痛、熱毒腹癰；課件原組合另列紅藤，但本地尚未建紅藤卡，本筆先以已存在卡片建立。",
+      "indication_en": "Intestinal abscess / appendicitis-like right-lower-quadrant heat-toxin abscess; the course also lists Hong Teng, but the local Hong Teng card is not yet present.",
+      "caution_zh": "白花蛇舌草性寒，脾胃虛寒、孕期/哺乳期與腎病患者慎用；若急腹症疑似闌尾炎不可延誤急診評估。",
+      "caution_en": "Bai Hua She She Cao is cold; use caution in Spleen/Stomach deficiency-cold, pregnancy/lactation, and kidney disease. Suspected acute appendicitis requires urgent medical evaluation.",
+      "found_in_formulas": [],
+      "sources": [
+        "chenoweth_clear_heat_toxins",
+        "american_dragon_bai_hua_she_she_cao"
+      ]
+    },
+    {
+      "id": "pair.bai_hua_she_she_cao__yin_chen_hao__huang_bai__zhi_zi",
+      "herbs": [
+        "herb.bai_hua_she_she_cao",
+        "herb.yin_chen_hao",
+        "herb.huang_bai",
+        "herb.zhi_zi"
+      ],
+      "name_zh": "白花蛇舌草配茵陳蒿、黃柏、梔子",
+      "name_en": "Bai Hua She She Cao with Yin Chen Hao, Huang Bai, and Zhi Zi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "白花蛇舌草清熱解毒並利濕；茵陳蒿清利濕熱退黃；黃柏清下焦濕熱；梔子清三焦火熱並利濕。合用清熱解毒、利濕退黃之力較完整。",
+      "pair_meaning_en": "Bai Hua She She Cao clears toxicity and promotes urination; Yin Chen Hao clears Damp-Heat jaundice; Huang Bai drains lower-jiao Damp-Heat; Zhi Zi clears Heat through the Triple Burner. Together they clear Heat-toxicity and Damp-Heat jaundice.",
+      "indication_zh": "濕熱黃疸、肝膽濕熱、小便黃赤；AD major combinations 列此組。",
+      "indication_en": "Damp-Heat jaundice, hepatobiliary Damp-Heat, and dark scanty urine; listed in American Dragon major combinations.",
+      "caution_zh": "苦寒清利藥較多，脾胃虛寒、便溏、孕期與腎病患者需慎用並核對病機。",
+      "caution_en": "This is a cold bitter draining combination; use caution in Spleen/Stomach deficiency-cold, loose stools, pregnancy, and kidney disease.",
+      "found_in_formulas": [
+        "formula.yin_chen_hao_tang"
+      ],
+      "sources": [
+        "american_dragon_bai_hua_she_she_cao",
+        "cloudtcm_bai_hua_she_she_cao"
+      ]
+    },
+    {
+      "id": "pair.bai_xian_pi__huang_bai__ku_shen__fang_feng",
+      "herbs": [
+        "herb.bai_xian_pi",
+        "herb.huang_bai",
+        "herb.ku_shen",
+        "herb.fang_feng"
+      ],
+      "name_zh": "白鮮皮配黃柏、苦參、防風",
+      "name_en": "Bai Xian Pi with Huang Bai, Ku Shen, and Fang Feng",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "白鮮皮清熱燥濕、祛風止癢；黃柏清下焦濕熱；苦參苦寒燥濕殺蟲止癢；防風祛風止癢。合用針對濕熱兼風之皮膚瘙癢、滲液與瘡毒。",
+      "pair_meaning_en": "Bai Xian Pi clears Damp-Heat and stops itching; Huang Bai drains lower-jiao Damp-Heat; Ku Shen dries Dampness and stops itching; Fang Feng dispels Wind and relieves itching. Together they address Damp-Heat with Wind in itchy, oozing skin disease.",
+      "indication_zh": "濕熱瘡毒、濕疹、風疹、瘙癢、滲液潰瘍；課件 review question 明列 Huang Bai, Ku Shen, Fang Feng 可配白鮮皮治多種皮膚病。",
+      "indication_en": "Damp-Heat toxic sores, eczema, rashes, itching, and oozing ulcerations; the course explicitly lists Huang Bai, Ku Shen, and Fang Feng with Bai Xian Pi for many skin conditions.",
+      "caution_zh": "白鮮皮孕期禁用；虛寒、脾虛便溏、肝病/肝功能差者慎用或禁用；需核對 AD 所列化療藥交互。",
+      "caution_en": "Bai Xian Pi is contraindicated during pregnancy; avoid or use cautiously in deficiency-cold, loose stools, liver disease/poor liver function, and check American Dragon drug interactions.",
+      "found_in_formulas": [],
+      "sources": [
+        "chenoweth_clear_heat_toxins",
+        "american_dragon_bai_xian_pi"
+      ]
+    },
+    {
+      "id": "pair.bai_xian_pi__da_huang__zhi_zi",
+      "herbs": [
+        "herb.bai_xian_pi",
+        "herb.da_huang",
+        "herb.zhi_zi"
+      ],
+      "name_zh": "白鮮皮配大黃、梔子",
+      "name_en": "Bai Xian Pi with Da Huang and Zhi Zi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "白鮮皮清濕熱、解毒止癢；大黃瀉熱通腑、涼血解毒；梔子清熱瀉火、利濕。合用可加強濕熱黃疸、熱毒內結之清泄力。",
+      "pair_meaning_en": "Bai Xian Pi clears Damp-Heat and toxicity; Da Huang drains Heat through the bowels and cools Blood; Zhi Zi clears Heat and promotes Damp-Heat drainage. Together they strengthen clearing and draining in Damp-Heat jaundice.",
+      "indication_zh": "濕熱黃疸；AD major combinations 列白鮮皮配大黃、梔子。",
+      "indication_en": "Damp-Heat jaundice; listed in American Dragon major combinations.",
+      "caution_zh": "大黃攻下，孕期、虛寒、便溏、體虛者需嚴格辨證；白鮮皮另有孕禁與肝功能/藥物交互注意。",
+      "caution_en": "Da Huang is purgative; pregnancy, deficiency-cold, loose stools, and frailty require strict differentiation. Bai Xian Pi adds pregnancy, liver-function, and drug-interaction cautions.",
+      "found_in_formulas": [],
+      "sources": [
+        "american_dragon_bai_xian_pi"
       ]
     },
     {
@@ -1810,8 +1925,383 @@
         "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8624-L8648",
         "https://www.americandragon.com/Individualherbsupdate/WuGong.html"
       ]
+    },
+    {
+      "id": "pair.han_fang_ji__huang_qi",
+      "herbs": [
+        "herb.han_fang_ji",
+        "herb.huang_qi"
+      ],
+      "name_zh": "漢防己配黃耆",
+      "name_en": "Han Fang Ji with Huang Qi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "防己利水祛濕、通痺止痛；黃耆益氣固表、扶正行水。課件以防己黃耆湯提示「水腫兼汗出惡風、身重、脈浮」的虛實夾雜水濕證。",
+      "pair_meaning_en": "Han Fang Ji drains water, dispels Damp, and relieves Bi pain; Huang Qi tonifies Qi, secures the exterior, and supports water movement. Course materials point to Fang Ji Huang Qi Tang for edema with sweating, aversion to wind, heaviness, and a floating pulse.",
+      "indication_zh": "虛性水腫、汗出惡風、身重、脈浮；防己黃耆湯證。",
+      "indication_en": "Deficiency-type edema with sweating, aversion to wind, heaviness, and floating pulse; Fang Ji Huang Qi Tang pattern.",
+      "caution_zh": "若防己品種不明須先排除廣防己/木防己毒性來源；陰虛、脾胃虛寒者慎用。",
+      "caution_en": "If the Fang Ji species is unclear, first exclude toxic Guang/Mu Fang Ji sources; use cautiously in Yin deficiency or Spleen/Stomach deficiency-cold.",
+      "found_in_formulas": [
+        "formula.fang_ji_huang_qi_tang"
+      ],
+      "sources": [
+        "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L622",
+        "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#p7-p8",
+        "https://www.americandragon.com/Individualherbsupdate/HanFangJi.html"
+      ]
+    },
+    {
+      "id": "pair.han_fang_ji__gui_zhi__fu_ling",
+      "herbs": [
+        "herb.han_fang_ji",
+        "herb.gui_zhi",
+        "herb.fu_ling"
+      ],
+      "name_zh": "漢防己配桂枝、茯苓",
+      "name_en": "Han Fang Ji with Gui Zhi and Fu Ling",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "防己祛風利水，桂枝通陽化氣，茯苓滲濕利水；AD 與課件方義皆提示水濕在表裡、腹水或水腫時可用此組思路。",
+      "pair_meaning_en": "Han Fang Ji dispels Wind and promotes urination, Gui Zhi warms yang and transforms qi, and Fu Ling leaches Damp and drains water. American Dragon and course formula logic support this direction for water-damp obstruction, ascites, or edema.",
+      "indication_zh": "水腫、腹水、水濕壅滯兼氣化不利。",
+      "indication_en": "Edema, ascites, or water-damp obstruction with impaired qi transformation.",
+      "caution_zh": "寒熱虛實須辨；防己苦寒，脾胃虛寒者慎用。",
+      "caution_en": "Differentiate Cold/Heat and deficiency/excess; Han Fang Ji is bitter-cold and requires caution in Spleen/Stomach deficiency-cold.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#p7-p8",
+        "https://www.americandragon.com/Individualherbsupdate/HanFangJi.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang_gen__huang_qi__mu_li",
+      "herbs": [
+        "herb.ma_huang_gen",
+        "herb.huang_qi",
+        "herb.mu_li"
+      ],
+      "name_zh": "麻黃根配黃耆、牡蠣",
+      "name_en": "Ma Huang Gen with Huang Qi and Mu Li",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃根收斂止汗，黃耆益氣固表，牡蠣斂陰潛陽、收澀止汗；AD 列此類組合治自汗、盜汗與虛性汗出。",
+      "pair_meaning_en": "Ma Huang Gen restrains sweating, Huang Qi tonifies Qi and secures the exterior, and Mu Li astringes Yin and restrains sweating. American Dragon lists this direction for spontaneous, night, and deficiency sweating.",
+      "indication_zh": "氣虛自汗、陰虛盜汗、虛性汗出。",
+      "indication_en": "Qi-deficiency spontaneous sweating, Yin-deficiency night sweats, and deficiency sweating.",
+      "caution_zh": "有表邪者忌用，勿過早收汗。",
+      "caution_en": "Contraindicated with an exterior pathogen; do not restrain sweating too early.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#p10-p11",
+        "https://www.americandragon.com/Individualherbsupdate/MaHuangGen.html"
+      ]
+    },
+    {
+      "id": "pair.ma_huang_gen__fu_xiao_mai__huang_qi",
+      "herbs": [
+        "herb.ma_huang_gen",
+        "herb.fu_xiao_mai",
+        "herb.huang_qi"
+      ],
+      "name_zh": "麻黃根配浮小麥、黃耆",
+      "name_en": "Ma Huang Gen with Fu Xiao Mai and Huang Qi",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "麻黃根專止汗，浮小麥益心斂汗，黃耆益氣固表；課件比較麻黃根與浮小麥，AD 也列麻黃根配黃耆、浮小麥治自汗。",
+      "pair_meaning_en": "Ma Huang Gen focuses on stopping sweating, Fu Xiao Mai nourishes Heart/Yin context and restrains sweating, and Huang Qi tonifies Qi and secures the exterior. The course compares Ma Huang Gen with Fu Xiao Mai, and American Dragon lists Ma Huang Gen with Huang Qi and Fu Xiao Mai for spontaneous sweating.",
+      "indication_zh": "自汗、盜汗、氣虛表不固兼心陰虛語境。",
+      "indication_en": "Spontaneous or night sweating from unsecured exterior Qi with Heart/Yin-deficiency context.",
+      "caution_zh": "外感表證、邪未解者忌用。",
+      "caution_en": "Avoid in exterior patterns or when the pathogen has not been resolved.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#p10-p11",
+        "https://www.americandragon.com/Individualherbsupdate/MaHuangGen.html"
+      ]
+    },
+    {
+      "id": "pair.jue_ming_zi__ju_hua",
+      "herbs": [
+        "herb.jue_ming_zi",
+        "herb.ju_hua"
+      ],
+      "name_zh": "決明子配菊花",
+      "name_en": "Jue Ming Zi with Ju Hua",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "決明子清肝明目、兼潤腸；菊花疏風清熱、平肝明目。AD 多處列二者合用，治風熱或肝火目赤腫痛、畏光流淚、頭痛眩暈。",
+      "pair_meaning_en": "Jue Ming Zi clears the Liver, brightens the eyes, and moistens the Intestines; Ju Hua disperses Wind-Heat, pacifies the Liver, and brightens the eyes. American Dragon repeatedly lists the pair for Wind-Heat or Liver-Fire eye redness, swelling, photophobia, tearing, headache, and dizziness.",
+      "indication_zh": "目赤腫痛、畏光流淚、頭痛眩暈，屬風熱犯肝或肝火上炎。",
+      "indication_en": "Red, swollen, painful eyes, photophobia, tearing, headache, and dizziness due to Wind-Heat attacking the Liver or Liver Fire.",
+      "caution_zh": "脾胃虛寒泄瀉、低血壓或孕期者先看決明子禁忌；菊花來源差異另見菊花卡。",
+      "caution_en": "Check Jue Ming Zi contraindications first in Spleen/Stomach deficiency-cold diarrhea, hypotension, or pregnancy; see the Ju Hua card for Ju Hua source differences.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p12-p13",
+        "https://www.americandragon.com/Individualherbsupdate/JueMingZi.html"
+      ]
+    },
+    {
+      "id": "pair.jue_ming_zi__xia_ku_cao",
+      "herbs": [
+        "herb.jue_ming_zi",
+        "herb.xia_ku_cao"
+      ],
+      "name_zh": "決明子配夏枯草",
+      "name_en": "Jue Ming Zi with Xia Ku Cao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "決明子清肝明目、平肝潛陽，夏枯草清肝火、散結；AD 列於肝火目疾、眼痛夜甚、頭痛眩暈與高血壓語境。",
+      "pair_meaning_en": "Jue Ming Zi clears Liver Heat, brightens the eyes, and anchors Liver Yang, while Xia Ku Cao clears Liver Fire and dissipates nodules. American Dragon lists this direction for Liver-Fire eye disorders, night-worse eye pain, headache, dizziness, and hypertension contexts.",
+      "indication_zh": "肝火目赤腫痛、眼痛夜甚、頭痛眩暈、高血壓。",
+      "indication_en": "Liver-Fire red swollen painful eyes, eye pain worse at night, headache, dizziness, and hypertension.",
+      "caution_zh": "兩藥皆偏清肝降火，脾胃虛寒、便溏或低血壓者慎用。",
+      "caution_en": "Both herbs clear Liver Heat/Fire; use cautiously in Spleen/Stomach deficiency-cold, loose stools, or hypotension.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p12-p13",
+        "https://www.americandragon.com/Individualherbsupdate/JueMingZi.html"
+      ]
+    },
+    {
+      "id": "pair.mu_zei__ju_hua",
+      "herbs": [
+        "herb.mu_zei",
+        "herb.ju_hua"
+      ],
+      "name_zh": "木賊配菊花",
+      "name_en": "Mu Zei with Ju Hua",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "木賊散風熱、退翳障；菊花疏風清熱、平肝明目。課件與 AD 均把木賊放在風熱/肝熱眼科配伍中，用於目赤腫痛、雲翳、畏光流淚。",
+      "pair_meaning_en": "Mu Zei disperses Wind-Heat and eliminates superficial visual obstruction; Ju Hua disperses Wind-Heat, pacifies the Liver, and brightens the eyes. Course materials and American Dragon both place Mu Zei in eye-focused Wind-Heat/Liver-Heat combinations.",
+      "indication_zh": "風熱或肝熱目赤腫痛、雲翳、畏光流淚。",
+      "indication_en": "Wind-Heat or Liver-Heat red, swollen, painful eyes with cloudiness, photophobia, and tearing.",
+      "caution_zh": "若屬肝陽上亢目赤、津液虧耗或孕期，先看木賊慎用欄。",
+      "caution_en": "If red eyes are from Liver Yang Rising, depleted fluids, or pregnancy, check Mu Zei cautions first.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L596",
+        "https://www.americandragon.com/Individualherbsupdate/MuZei.html"
+      ]
+    },
+    {
+      "id": "pair.mu_zei__bai_ji_li",
+      "herbs": [
+        "herb.mu_zei",
+        "herb.bai_ji_li"
+      ],
+      "name_zh": "木賊配白蒺藜",
+      "name_en": "Mu Zei with Bai Ji Li",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "木賊較強於散風熱、退翳；白蒺藜疏肝祛風、明目止癢。AD 特別比較二者：白蒺藜較能平肝除障，木賊散發作用較強。",
+      "pair_meaning_en": "Mu Zei is stronger at dispersing Wind-Heat and removing superficial visual obstruction; Bai Ji Li courses the Liver, dispels Wind, brightens the eyes, and stops itching. American Dragon specifically compares their complementary strengths.",
+      "indication_zh": "風熱目疾、胬肉翳障、流淚、皮膚瘙癢。",
+      "indication_en": "Wind-Heat eye disorders, pterygium or superficial visual obstruction, tearing, and itching skin.",
+      "caution_zh": "兩藥皆偏走散風；體虛、孕期或津液不足者慎用。",
+      "caution_en": "Both disperse Wind; use cautiously in deficiency, pregnancy, or depleted fluids.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/MuZei.html"
+      ]
+    },
+    {
+      "id": "pair.bai_hua_she__qiang_huo__fang_feng__qin_jiao",
+      "herbs": [
+        "herb.bai_hua_she",
+        "herb.qiang_huo",
+        "herb.fang_feng",
+        "herb.qin_jiao"
+      ],
+      "name_zh": "白花蛇配羌活、防風、秦艽",
+      "name_en": "Bai Hua She with Qiang Huo, Fang Feng, and Qin Jiao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "白花蛇強力祛風通絡、透筋骨；羌活、防風、秦艽分別祛風濕、止痺痛。AD 列此組治風濕關節痛、肢體無力僵硬。",
+      "pair_meaning_en": "Bai Hua She powerfully dispels Wind and unblocks collaterals; Qiang Huo, Fang Feng, and Qin Jiao assist in dispelling Wind-Damp and relieving Bi pain. American Dragon lists this group for Wind-Damp joint pain, weakness, and stiffness.",
+      "indication_zh": "風濕痺痛、關節痛、肢體無力僵硬。",
+      "indication_en": "Wind-Damp Bi pain, joint pain, limb weakness, and stiffness.",
+      "caution_zh": "白花蛇有毒；孕期、抗凝/抗血小板藥、血虛生風者需避用或嚴格審核。",
+      "caution_en": "Bai Hua She is toxic; pregnancy, anticoagulant/antiplatelet use, and Wind from Blood deficiency require avoidance or strict review.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L305-L330",
+        "https://www.americandragon.com/Individualherbsupdate/BaiHuaShe%28QiShe%29.html"
+      ]
+    },
+    {
+      "id": "pair.bai_hua_she__wu_gong__quan_xie",
+      "herbs": [
+        "herb.bai_hua_she",
+        "herb.wu_gong",
+        "herb.quan_xie"
+      ],
+      "name_zh": "白花蛇配蜈蚣、全蠍",
+      "name_en": "Bai Hua She with Wu Gong and Quan Xie",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "三藥皆偏強力息風通絡；白花蛇祛風透筋骨，蜈蚣、全蠍息風止痙、通絡止痛。AD 列白花蛇與蜈蚣/全蠍語境治痙攣、破傷風及頑固痺痛。",
+      "pair_meaning_en": "All three are forceful Wind-extinguishing and collateral-unblocking substances. Bai Hua She dispels Wind through sinews and bones, while Wu Gong and Quan Xie extinguish Wind, stop spasms, unblock collaterals, and relieve pain. American Dragon places these combinations in spasm, tetany/tetanus, and stubborn Bi contexts.",
+      "indication_zh": "痙攣、抽搐、破傷風、頑固痺痛。",
+      "indication_en": "Spasms, convulsions, tetany/tetanus, and stubborn Bi pain.",
+      "caution_zh": "高毒性組合；孕婦禁用，血虛或肝腎功能風險者慎避，需嚴格劑量審核。",
+      "caution_en": "High-toxicity combination; contraindicated in pregnancy, avoid or use extreme caution with Blood deficiency or liver/kidney risk, and requires strict dose review.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L323-L330",
+        "https://www.americandragon.com/Individualherbsupdate/BaiHuaShe%28QiShe%29.html"
+      ]
+    },
+    {
+      "id": "pair.liu_huang__fu_zi__rou_gui",
+      "herbs": [
+        "herb.liu_huang",
+        "herb.fu_zi",
+        "herb.rou_gui"
+      ],
+      "name_zh": "硫黃配附子、肉桂",
+      "name_en": "Liu Huang with Fu Zi and Rou Gui",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "硫黃補命門火、助腎陽；附子、肉桂溫腎助陽、回陽散寒。課件與 AD 都以此方向提示腎陽虛、腎不納氣喘與下焦虛寒。",
+      "pair_meaning_en": "Liu Huang tonifies Ming Men Fire and strengthens Kidney Yang; Fu Zi and Rou Gui warm Kidney Yang and disperse Cold. Course materials and American Dragon both support this direction for Kidney Yang deficiency, Kidney failing to grasp Qi asthma, and Lower Jiao Cold-deficiency.",
+      "indication_zh": "腎陽虛、腎不納氣喘、腰膝冷痛、下焦虛寒。",
+      "indication_en": "Kidney Yang deficiency, asthma from Kidneys failing to grasp Qi, cold painful low back and knees, and Lower Jiao Cold-deficiency.",
+      "caution_zh": "三藥皆熱，硫黃與附子皆高風險；孕期禁用，陰虛熱證禁用，嚴格審核劑量與炮製。",
+      "caution_en": "All three are hot, and Liu Huang/Fu Zi are high-risk; contraindicated in pregnancy and Yin-deficiency Heat, with strict dose and processing review required.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L184-L220",
+        "https://www.americandragon.com/Individualherbsupdate/LiuHuang.html"
+      ]
+    },
+    {
+      "id": "pair.liu_huang__ban_xia",
+      "herbs": [
+        "herb.liu_huang",
+        "herb.ban_xia"
+      ],
+      "name_zh": "硫黃配半夏",
+      "name_en": "Liu Huang with Ban Xia",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "AD 與 Chenoweth abbreviated 都列硫黃、半夏用於虛寒便秘／寒結不通方向（Ban Liu Wan）。硫黃溫腎陽、通寒結，半夏降逆化痰、和胃。",
+      "pair_meaning_en": "American Dragon and Chenoweth abbreviated notes list Liu Huang with Ban Xia for Cold-deficiency constipation / Cold obstruction (Ban Liu Wan direction). Liu Huang warms Kidney Yang and unblocks Cold accumulation, while Ban Xia redirects rebellion, transforms Phlegm, and harmonizes the Stomach.",
+      "indication_zh": "老人或腎陽虛寒之便秘、寒結不通。",
+      "indication_en": "Elderly or Kidney-Yang-deficiency Cold constipation and Cold obstruction.",
+      "caution_zh": "硫黃有毒且熱；陰虛熱、孕期、非寒證便秘不宜。半夏亦需炮製與劑量審核。",
+      "caution_en": "Liu Huang is toxic and hot; avoid in Yin-deficiency Heat, pregnancy, or non-Cold constipation. Ban Xia also requires processing and dose review.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8795",
+        "https://www.americandragon.com/Individualherbsupdate/LiuHuang.html"
+      ]
+    },
+    {
+      "id": "pair.bai_guo__ma_huang__zi_su_zi__xing_ren",
+      "herbs": [
+        "herb.bai_guo",
+        "herb.ma_huang",
+        "herb.zi_su_zi",
+        "herb.xing_ren"
+      ],
+      "name_zh": "白果配麻黃、紫蘇子、杏仁",
+      "name_en": "Bai Guo with Ma Huang, Zi Su Zi, and Xing Ren",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "白果斂肺定喘並化痰；麻黃宣肺平喘，紫蘇子、杏仁降肺氣化痰止咳。課件列此為喘咳 wheezing combination，一收一宣、一降一化，使喘咳痰多兼具收斂與宣降。",
+      "pair_meaning_en": "Bai Guo astringes the Lung and stops wheezing while transforming Phlegm; Ma Huang diffuses the Lung and calms wheezing, while Zi Su Zi and Xing Ren descend Lung Qi and transform Phlegm. The course lists this as a wheezing combination.",
+      "indication_zh": "喘咳痰多、肺氣上逆；較適合非外感初起之慢性或痰喘方向。",
+      "indication_en": "Wheezing cough with copious Phlegm and rebellious Lung Qi, especially when not in the initial exterior stage.",
+      "caution_zh": "白果收澀且小毒；外感初起、實證或黃黏痰未清者禁用。麻黃有心血管與興奮風險，需審核劑量與禁忌。",
+      "caution_en": "Bai Guo is astringent and slightly toxic; avoid in early exterior, Excess, or thick yellow Phlegm patterns. Ma Huang carries cardiovascular/stimulant risks and requires dose and contraindication review.",
+      "found_in_formulas": [
+        "formula.ding_chuan_tang"
+      ],
+      "sources": [
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L7775-L7778",
+        "https://www.americandragon.com/Individualherbsupdate/BaiGuo.html"
+      ]
+    },
+    {
+      "id": "pair.bi_ba__gao_liang_jiang",
+      "herbs": [
+        "herb.bi_ba",
+        "herb.gao_liang_jiang"
+      ],
+      "name_zh": "蓽茇配高良薑",
+      "name_en": "Bi Ba with Gao Liang Jiang",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "兩藥皆辛熱溫中止痛；蓽茇溫中散寒、下氣止痛，高良薑溫胃散寒、止嘔止痛。課件列高良薑、蓽茇用於胃寒嘔吐、腹瀉、腹痛。",
+      "pair_meaning_en": "Both are acrid-hot Middle-warming pain-relievers. Bi Ba warms the Middle, disperses Cold, descends Qi, and relieves pain; Gao Liang Jiang warms the Stomach, disperses Cold, stops vomiting, and relieves pain.",
+      "indication_zh": "胃寒或中焦寒凝：脘腹冷痛、嘔吐清水、泄瀉、噯氣呃逆。",
+      "indication_en": "Stomach Cold or Middle Jiao Cold congealing with cold epigastric/abdominal pain, vomiting clear fluids, diarrhea, belching, or hiccup.",
+      "caution_zh": "辛熱燥烈；陰虛火旺、實熱、口乾便秘明顯者禁用或慎避。",
+      "caution_en": "Acrid, hot, and drying; contraindicated or avoided in Yin-deficiency Fire, Excess Heat, marked dryness, or constipation.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L355-L373",
+        "curriculum/herbs/MM2_Module 4_Warm_Interior_Herbs-1.md#L472-L474",
+        "https://www.americandragon.com/Individualherbsupdate/BiBa.html"
+      ]
+    },
+    {
+      "id": "pair.bi_ba__yan_hu_suo__xi_xin",
+      "herbs": [
+        "herb.bi_ba",
+        "herb.yan_hu_suo",
+        "herb.xi_xin"
+      ],
+      "name_zh": "蓽茇配延胡索、細辛",
+      "name_en": "Bi Ba with Yan Hu Suo and Xi Xin",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "課件理氣頁列三藥用於寒凝氣滯胸痛。蓽茇溫散寒凝、下氣止痛；延胡索活血行氣止痛；細辛辛溫散寒止痛，三藥合用偏寒凝氣血阻滯疼痛。",
+      "pair_meaning_en": "The course Qi-regulating module lists this trio for chest pain from Cold and Qi stagnation. Bi Ba warms and descends, Yan Hu Suo moves Qi and Blood to stop pain, and Xi Xin disperses Cold and relieves pain.",
+      "indication_zh": "寒凝氣滯或寒凝血滯之胸痛、胸腹疼痛。",
+      "indication_en": "Chest or chest-abdominal pain from Cold congealing with Qi/Blood stagnation.",
+      "caution_zh": "辛溫走散且止痛力強；熱證、陰虛火旺禁用。細辛與延胡索另有安全與用藥交互作用需審核。",
+      "caution_en": "Acrid-warm and dispersing; contraindicated in Heat patterns and Yin-deficiency Fire. Xi Xin and Yan Hu Suo require separate safety and interaction review.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/MM2_Herbs_that_Regulate_Qi.md#L453-L460",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2632-L2638"
+      ]
+    },
+    {
+      "id": "pair.bi_xie__yi_zhi_ren__wu_yao",
+      "herbs": [
+        "herb.bi_xie",
+        "herb.yi_zhi_ren",
+        "herb.wu_yao"
+      ],
+      "name_zh": "萆薢配益智仁、烏藥",
+      "name_en": "Bi Xie with Yi Zhi Ren and Wu Yao",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "萆薢分清去濁；益智仁溫腎固攝，烏藥行氣溫下焦。AD 列此組用於陽虛小便頻數或尿失禁；課件亦列萆薢治下焦濁濕可配益智仁、烏藥。",
+      "pair_meaning_en": "Bi Xie separates the pure from the turbid; Yi Zhi Ren warms the Kidney and secures, while Wu Yao moves Qi and warms the Lower Jiao. American Dragon lists this direction for Yang-deficiency urinary frequency or incontinence.",
+      "indication_zh": "下焦虛寒或陽虛之小便頻數、尿失禁、白濁帶下兼濁濕不分。",
+      "indication_en": "Lower Jiao deficiency-Cold or Yang deficiency with urinary frequency, incontinence, turbid urine, or discharge.",
+      "caution_zh": "若屬濕熱熾盛、陰虛火旺或下部無濕，不宜誤用溫攝組合。",
+      "caution_en": "Do not use this warming-securing combination in blazing Damp-Heat, Yin-deficiency Fire, or absence of Dampness below.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L388-L390",
+        "https://www.americandragon.com/Individualherbsupdate/BeiXie.html"
+      ]
+    },
+    {
+      "id": "pair.bi_xie__che_qian_zi__hua_shi__huang_bai",
+      "herbs": [
+        "herb.bi_xie",
+        "herb.che_qian_zi",
+        "herb.hua_shi",
+        "herb.huang_bai"
+      ],
+      "name_zh": "萆薢配車前子、滑石、黃柏",
+      "name_en": "Bi Xie with Che Qian Zi, Hua Shi, and Huang Bai",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "萆薢分清別濁；車前子、滑石清利濕熱通淋，黃柏清下焦濕熱。AD 列此組用於濕熱下注之尿頻、尿濁、帶下與舌紅苔黃膩。",
+      "pair_meaning_en": "Bi Xie separates clear from turbid; Che Qian Zi and Hua Shi drain Damp-Heat through urination, and Huang Bai clears Lower Jiao Damp-Heat. American Dragon lists this group for Damp-Heat pouring downward.",
+      "indication_zh": "濕熱下注：尿頻、尿濁、白濁、帶下、舌紅苔黃膩。",
+      "indication_en": "Damp-Heat pouring downward with urinary frequency, cloudy urine, turbid discharge, vaginal discharge, red tongue and yellow greasy coat.",
+      "caution_zh": "陰虛火旺、下部無濕或腎陰虛腰痛者禁用萆薢；苦寒利濕組合易傷正，虛寒者慎避。",
+      "caution_en": "Bi Xie is contraindicated in Yin-deficiency Fire, absence of Dampness below, or low back pain from Kidney Yin deficiency; this bitter-cold draining combination may damage deficiency-Cold patients.",
+      "found_in_formulas": [],
+      "sources": [
+        "https://www.americandragon.com/Individualherbsupdate/BeiXie.html",
+        "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L382-L401"
+      ]
     }
   ],
   "updated_at": "2026-07-28",
-  "total_pairs": 78
+  "total_pairs": 100
 }
