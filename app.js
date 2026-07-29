@@ -723,7 +723,7 @@ function openGlobalResult(btn) {
   if (kind === "formula" || kind === "herb") {
     const api = globalThis.ACUTING_KNOWLEDGE_API;
     if (api && api.openDetail) { api.openDetail(kind, btn.dataset.id); return; }
-    goToSection(kind === "formula" ? "formulaSection" : "herbSection");
+    goToSection(kind === "formula" ? "ws/formula" : "ws/herb");
     return;
   }
   if (kind === "condition") {
@@ -878,6 +878,7 @@ function setContentMode(mode) {
   contentMode = mode;
   localStorage.setItem(CONTENT_MODE_KEY, contentMode);
   updateContentModeUI();
+  document.dispatchEvent(new CustomEvent("acuting:content-mode", { detail: { mode: contentMode } }));
   render();
 }
 
@@ -4464,7 +4465,7 @@ function linkifyFormulaHerbs(value, fallback = "未填") {
   const index = buildFormulaTermIndex();
   return linkifyNoteTerms(value, /([,，、;；\/\n]+|\s{2,})/, (term) => {
     const id = index.get(term) || index.get(term.toLowerCase());
-    return id ? "#formulaSection" : "";
+    return id ? "#ws/formula" : "";
   }, fallback);
 }
 

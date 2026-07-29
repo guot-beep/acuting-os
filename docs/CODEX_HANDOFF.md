@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-28] Codex Handoff - Search fallback + herb/formula lookup UX repair
+
+- **Branch**: `codex/herbs-missing-cards-batch7`
+- **Commit**: branch HEAD commit for this handoff.
+- **Task**: Ting reported that after update/search work, links felt broken and the herb lookup page had poor UX because stale record/source text and a long category-chip wall sat above search results. Also requested formula lookup parity and lightweight English interface behavior.
+- **Files changed**: `app.js`, `js/knowledge.js`, `styles.css`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: repaired formula/herb fallback navigation from old anchors to workspace routes (`#ws/formula`, `#ws/herb`); removed `Herb Records`/`Formula Records` source-review mini text from lookup pages; moved herb and formula category chips into collapsed drawer controls; made drawer summaries visibly clickable with stronger type, count pill, and open/close pill; added Public EN control text for herb/formula search placeholders and drawer open/close labels.
+- **Validation**: bundled Node `validate-interactions.js` PASS; JS syntax check PASS for `app.js`, `js/knowledge.js`, `js/router.js`; `git diff --check` PASS.
+- **Protected areas**: no herb/formula data records, curriculum files, scripts, generated data, or schema changed.
+- **Known risks / manual checks**: browser may need Ctrl+F5. Manually check `#ws/herb` and `#ws/formula`: search should show results immediately without scrolling past the category wall; clicking Category filters should open/close; Public EN should change drawer open/close labels and search placeholders.
+- **Next recommended action**: after Ting confirms lookup/search UX is normal, resume missing herb batch 7 cards: Chen Xiang, Chi Xiao Dou, Chuan Mu Tong, Chun Pi, Ci Wu Jia, using NCBAHM/Chenoweth first, CloudTCM second, AD third.
+
 ## [2026-07-28 08:20 -07:00] Codex Handoff - NCBAHM missing herbs batch 6: Bai Guo, Bai Qian, Ban Zhi Lian, Bi Ba, Bi Xie
 
 - **Branch**: `codex/herbs-warm-acrid-2`

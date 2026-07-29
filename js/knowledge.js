@@ -8,8 +8,22 @@
  */
 (function () {
   const K = globalThis.ACUTING_KNOWLEDGE;
+  const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 
   function el(id) { return document.getElementById(id); }
+  function isEnglishMode() {
+    return document.body.dataset.contentMode === "english" || localStorage.getItem(CONTENT_MODE_KEY) === "english";
+  }
+  function modeText(bilingual, english) {
+    return isEnglishMode() ? english : bilingual;
+  }
+  function applyKnowledgeModeText() {
+    const formulaFilter = el("formulaFilter");
+    if (formulaFilter) formulaFilter.placeholder = modeText("搜尋方劑、拼音、分類、證型、現代標籤… Search formula, pinyin, category, pattern...", "Search formulas, pinyin, category, patterns, modern tags...");
+    const herbFilter = el("herbFilter");
+    if (herbFilter) herbFilter.placeholder = modeText("搜尋中藥、拼音、功效、主治、方劑… Search herb, pinyin, action, indication...", "Search herbs, pinyin, actions, indications, formulas...");
+  }
+  document.addEventListener("acuting:content-mode", applyKnowledgeModeText);
   function esc(v) {
     return String(v == null ? "" : v)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -1063,18 +1077,20 @@
 
       const box = document.createElement("div");
       box.innerHTML = `
-        <div class="mini-heading">
-          <strong>Formula Records (${records.length})</strong>
-          <span>Source: data/herbs/formulas.json · draft/source-review pending · study reference only.</span>
+        <div class="k-toolbar k-toolbar--single">
+          <input type="search" id="formulaFilter" placeholder="${esc(modeText("搜尋方劑、拼音、分類、證型、現代標籤… Search formula, pinyin, category, pattern...", "Search formulas, pinyin, category, patterns, modern tags..."))}" class="k-filter" />
         </div>
-        <div class="k-toolbar">
-          <input type="search" id="formulaFilter" placeholder="Search formula, pinyin, category, modern tag..." class="k-filter" />
+        <details class="k-category-drawer">
+          <summary>
+            <span><span class="i18n-zh">分類篩選 </span><span class="i18n-en">Category filters</span></span>
+            <small id="formulaCategorySummary">${esc(modeText("全部 All", "All"))} · ${records.length}</small>
+          </summary>
           <select id="formulaCategoryFilter" class="k-filter">
             <option value="">All categories</option>
             ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
           </select>
-        </div>
-        <div class="cat-chips" id="formulaCatChips" aria-label="方劑分類篩選"></div>
+          <div class="cat-chips" id="formulaCatChips" aria-label="方劑分類篩選"></div>
+        </details>
         <div class="k-grid" id="formulaGrid">${renderEnhanced(records)}</div>`;
       formulaHost.appendChild(box);
 
@@ -1098,6 +1114,8 @@
           return categoryHit && (!q || text.includes(q));
         });
         const bar = activeConceptBar();
+        const summary = el("formulaCategorySummary");
+        if (summary) summary.textContent = `${category ? category.replace(/\|\|/g, " / ") : modeText("全部 All", "All")} · ${hit.length}`;
         el("formulaGrid").innerHTML = bar + (renderEnhanced(hit) || '<p class="k-missing">沒有符合的方劑 / No matching formulas.</p>');
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
@@ -1201,18 +1219,20 @@
     }).join("");
 
     herbHost.innerHTML = `
-      <div class="mini-heading">
-        <strong>Herb Records (${herbs.length})</strong>
-        <span>Source: data/herbs/herb_canon_shortlist.json Â· draft/source-review pending Â· study reference only.</span>
+      <div class="k-toolbar k-toolbar--single">
+        <input type="search" id="herbFilter" placeholder="${esc(modeText("搜尋中藥、拼音、功效、主治、方劑… Search herb, pinyin, action, indication...", "Search herbs, pinyin, actions, indications, formulas..."))}" class="k-filter" />
       </div>
-      <div class="k-toolbar">
-        <input type="search" id="herbFilter" placeholder="Search herb, pinyin, category, tag, related formula..." class="k-filter" />
+      <details class="k-category-drawer">
+        <summary>
+          <span><span class="i18n-zh">分類篩選 </span><span class="i18n-en">Category filters</span></span>
+          <small id="herbCategorySummary">${esc(modeText("全部 All", "All"))} · ${herbs.length}</small>
+        </summary>
         <select id="herbCategoryFilter" class="k-filter">
           <option value="">All categories</option>
           ${categories.map((category) => `<option value="${esc(category)}">${esc(category)}</option>`).join("")}
         </select>
-      </div>
-      <div class="cat-chips" id="herbCatChips" aria-label="中藥分類篩選"></div>
+        <div class="cat-chips" id="herbCatChips" aria-label="中藥分類篩選"></div>
+      </details>
       <div class="k-grid" id="herbGrid">${renderHerbs(herbs)}</div>`;
 
     const updateHerbGrid = () => {
@@ -1235,6 +1255,8 @@
         ].join(" ").toLowerCase();
         return categoryHit && (!q || text.includes(q));
       });
+      const summary = el("herbCategorySummary");
+      if (summary) summary.textContent = `${category ? category.replace(/\|\|/g, " / ") : modeText("全部 All", "All")} · ${hit.length}`;
       el("herbGrid").innerHTML = activeConceptBar() + (renderHerbs(hit) || '<p class="k-missing">沒有符合的中藥 / No matching herbs.</p>');
     };
     conceptListeners.add(updateHerbGrid);

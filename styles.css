@@ -4230,6 +4230,76 @@ a { color: var(--accent-dark); }
   grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.42fr);
   margin-bottom: 0.78rem;
 }
+.k-toolbar--single {
+  grid-template-columns: minmax(0, 1fr);
+  margin-bottom: 0.55rem;
+}
+.k-toolbar--single .k-filter {
+  max-width: 52rem;
+}
+.k-category-drawer {
+  background: rgba(255, 252, 246, 0.92);
+  border: 1px solid #e4d8bf;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(43, 32, 20, 0.05);
+  margin: 0 0 0.9rem;
+  overflow: hidden;
+}
+.k-category-drawer summary {
+  align-items: center;
+  color: var(--accent-dark);
+  cursor: pointer;
+  display: flex;
+  font-size: clamp(1rem, 2.3vw, 1.16rem);
+  font-weight: 900;
+  gap: 0.75rem;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0.72rem 0.9rem;
+}
+.k-category-drawer summary::-webkit-details-marker {
+  display: none;
+}
+.k-category-drawer summary::after {
+  background: var(--gold);
+  border-radius: 999px;
+  color: #1a2e2b;
+  content: "展開 ▾";
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 0.18rem 0.62rem;
+}
+.k-category-drawer[open] summary::after {
+  content: "收合 ▴";
+}
+body[data-content-mode="english"] .k-category-drawer summary::after {
+  content: "Open ▾";
+}
+body[data-content-mode="english"] .k-category-drawer[open] summary::after {
+  content: "Close ▴";
+}
+body[data-content-mode="english"] .i18n-zh {
+  display: none;
+}
+.k-category-drawer summary small {
+  background: var(--green-soft);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 900;
+  padding: 0.18rem 0.62rem;
+}
+.k-category-drawer .k-filter {
+  margin: 0 0.9rem 0.65rem;
+  max-width: min(100% - 1.8rem, 34rem);
+}
+.k-category-drawer .cat-chips {
+  margin: 0 0.9rem 0.85rem;
+  max-height: 42vh;
+  overflow: auto;
+  padding-right: 0.15rem;
+}
 .k-row {
   align-items: start;
   background: #fbfcfb;

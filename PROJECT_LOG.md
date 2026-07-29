@@ -1,5 +1,16 @@
 # AcuTing OS Project Log
 
+## 2026-07-28 Codex — search fallback route repair + herb/formula lookup UX
+
+- Investigated Ting-reported issue that search/click links appeared nonfunctional after `update.bat`.
+- Confirmed `validate-interactions.js` PASS and generated knowledge/app data can load without syntax errors; no evidence of git overwrite or missing herb data.
+- Updated `app.js` fallback routing for formula/herb search results and SOAP formula/herb links from legacy section anchors to workspace hashes (`#ws/formula`, `#ws/herb`) so navigation still works if the knowledge-detail API is not ready.
+- Removed stale `Herb Records` / `Formula Records` source-review mini text from lookup pages; that audit/status language belongs in Quality, not the daily search interface.
+- Moved the long herb and formula category chip lists into collapsed drawer controls, with stronger clickable styling and visible counts so search results sit higher on the page.
+- Added lightweight Public EN support for herb/formula lookup controls: search placeholders and drawer open/close labels switch to English when the existing Public EN mode is selected.
+- Reverted generated timestamp-only diffs; no data/herb content changed in this repair.
+- Validation: `validate-interactions.js` PASS; JS syntax check PASS for `app.js`, `js/knowledge.js`, and `js/router.js`.
+
 ## 2026-07-28 Codex — NCBAHM CH missing herbs batch 6
 
 - Added full formal herb cards for 白果、白前、半枝蓮、蓽茇、萆薢 from NCBAHM 2026 CH + Chenoweth course notes + CloudTCM, with American Dragon used where verified.
