@@ -3235,10 +3235,12 @@ function renderDetail(point) {
         ${/* 2. 針法・艾灸・安全 — adjacent to location: locating and needling
               are one motion. Cautions fold in here instead of sitting alone
               near the bottom of the card where a safety note is useless. */""}
-        ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", [
-          needlingArticle(point),
-          cautionText(point) ? `${contentMode === "english" ? "CAUTIONS:" : "【注意事項】"}\n${cautionText(point)}` : ""
-        ].filter(Boolean).join("\n\n"), "needle", true)}
+        ${/* needlingArticle already emits the cautions block from point.cautions,
+              and cautionText() reads that same field — appending it printed the
+              identical safety text twice, under 【安全提醒】 then 【注意事項】.
+              Folding cautions into this section was the point of the
+              restructure; doing it once is enough. */""}
+        ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", needlingArticle(point), "needle", true)}
 
         ${/* 3. 我的臨床筆記 — placed right after location/needling/safety
               because that is the context she is in when something is worth

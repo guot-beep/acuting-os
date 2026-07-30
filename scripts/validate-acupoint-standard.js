@@ -55,6 +55,16 @@ const ZH_FIELDS = ["chinese", "functions_zh", "indications_zh", "location_zh", "
 
 // Boilerplate = a safety string shared by many points. Generic text is not a
 // contraindication for THIS point; it hides the fact nothing specific is known.
+/* Shared-ness alone is NOT boilerplate. A8 originally flagged any string used by
+   >=10 points, which swept up 「⚠️ 深刺可能刺穿肺造成氣胸（課件明列）」(10 穴) and
+   「⚠️ 嚴禁深刺以免氣胸。」(10 穴). Those repeat because the same real risk applies
+   to many chest/back points, so the rule as written pressured an agent to DELETE
+   氣胸 warnings to get the wall green — the opposite of what it is for, and a
+   plausible reason a refinement pass stripped safety text. Text naming an
+   anatomical structure, organ risk, pregnancy, or bleeding is therefore exempt
+   however often it recurs; only content that is vacuous for any needle
+   insertion ("局部皮膚破損時避開。") counts as boilerplate. */
+const REAL_RISK_RE = /氣胸|肺|動脈|靜脈|神經|直腸|膀胱|腹膜|眼球|關節腔|孕|哺乳|出血|抗凝|深刺|不可深|嚴禁|骨/;
 const BOILERPLATE = (() => {
   const c = new Map();
   for (const r of recs) {
@@ -63,7 +73,9 @@ const BOILERPLATE = (() => {
       c.set(k, (c.get(k) || 0) + 1);
     }
   }
-  return new Set([...c.entries()].filter(([, n]) => n >= 10).map(([k]) => k));
+  return new Set([...c.entries()]
+    .filter(([k, n]) => n >= 10 && !REAL_RISK_RE.test(k))
+    .map(([k]) => k));
 })();
 
 /* A10-A13 added 2026-07-30 after an HT-channel review passed this validator
@@ -97,7 +109,16 @@ const ALLOWED_STATUS = new Set(["draft", "source_checked", "deprecated"]);
 const SYSTEM_LABEL_RE = /系統疾病|系統病|System Disorders$|^(?:Neurological|Gynecological|Respiratory|Digestive|Reproductive|Mental & Psychiatric|Locomotor & Musculoskeletal|Head, Face & Sensory)[\w\s,&]*Disorders$/;
 const TONE_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/i;
 
-let scaffoldHits = 0, cjkInEnHits = 0, badStatusHits = 0, systemTagHits = 0, noToneHits = 0, evidenceDupHits = 0;
+// A14 helpers — see the check itself for why A8 was not enough.
+const NEEDLING_TEXT_RE = /(直刺|斜刺|平刺|沿皮刺|透刺|刺入)|[0-9０-９．.]+\s*[-–~～]\s*[0-9０-９．.]+\s*(寸|吋)/;
+/* Broad on purpose. A depth limit IS a safety statement when it is framed as a
+   limit ("頸部針刺深度控制在 0.3–0.5 吋", "直刺不超過 0.3 吋", "深刺可能傷及肺").
+   A first, narrower version flagged four of those as type errors, which would
+   have pushed someone to delete real warnings to get the wall green — the exact
+   failure this check exists to prevent. */
+const SAFETY_WORD_RE = /⚠|禁|嚴禁|慎|避開|避免|不可|勿|孕|哺乳|氣胸|動脈|靜脈|神經|急症|出血|就醫|評估|風險|感染|腫塊|過深|深刺|傷及|傷到|刺傷|不超過|不宜|控制在|嚴格控制|限制|以免|恐/;
+
+let scaffoldHits = 0, cjkInEnHits = 0, badStatusHits = 0, systemTagHits = 0, noToneHits = 0, evidenceDupHits = 0, safetyTypeHits = 0;
 
 const errors = [];
 const defects = new Map();
@@ -224,6 +245,24 @@ for (const r of recs) {
     flag(r, `功效標籤混入病系分類(${sysTags.length} 條)`);
   }
 
+  /* A14 — a safety field holding a needling instruction instead of a risk.
+     A8 only catches text SHARED by many points, so when a pass wrote each
+     point's own "臍下 3 寸，直刺 0.8-1.2 寸。" into contraindications the string
+     was unique per point and sailed through as if it were point-specific. It
+     left 206 points with a depth measurement where the contraindication should
+     be and no warning at all. A safety field must state a RISK; if it only
+     states where and how deep to needle, it is the wrong field. Text that
+     mentions technique as part of a warning ("近肺區域需斜刺或淺刺，避免深刺")
+     is correct and must not trip this. */
+  const safetyTypeErr = arr(r.contraindications)
+    .map((v) => String(v).trim())
+    .filter((v) => v && NEEDLING_TEXT_RE.test(v) && !SAFETY_WORD_RE.test(v));
+  if (safetyTypeErr.length) {
+    safetyTypeHits++;
+    flag(r, `禁忌欄是針法文字(${safetyTypeErr.length} 條)`);
+    errors.push(`A14 ${id}: contraindications holds a needling instruction, not a risk — 「${safetyTypeErr[0].slice(0, 46)}」`);
+  }
+
   if (!TONE_RE.test(String(r.pinyin || ""))) noToneHits++;
   if (r.evidence && r.modern_research_zh && String(r.evidence).trim() === String(r.modern_research_zh).trim()) evidenceDupHits++;
 
@@ -247,11 +286,18 @@ console.log(`  共用套話禁忌 boilerplate safety   ${boilerplateHits}  (${BO
 console.log(`  標籤殘留匯入標記 A10 (擋)         ${scaffoldHits}`);
 console.log(`  英文欄位內含中文 A11 (擋)         ${cjkInEnHits}`);
 console.log(`  review_status 非法 A12            ${badStatusHits}  (模板級才擋)`);
+console.log(`  禁忌欄是針法文字 A14 (擋)         ${safetyTypeHits}`);
 
 console.log(`\n全庫既有清理(報告不擋，非單一批次造成):`);
 console.log(`  功效標籤混入病系分類 A13         ${systemTagHits}/${recs.length}`);
-console.log(`  拼音無聲調                        ${noToneHits}/${recs.length}`);
 console.log(`  evidence 與 modern_research_zh 重複 ${evidenceDupHits}/${recs.length}`);
+/* Toned pinyin is deliberately NOT reported as a gap. Ting 2026-07-30:
+   「其實我不喜歡拼音有聲調 因為這樣搜尋打拼音很難找」— and she is right:
+   `pinyin` is what unified search matches on, so "Zú Sān Lǐ" makes typing
+   "zusanli" fail. Plain pinyin in this field is the correct state. If a toned
+   form is ever wanted for display it belongs in a separate `pinyin_toned`
+   field, leaving the searchable one untouched. Counted only as information. */
+console.log(`  (參考) 無聲調拼音 ${noToneHits}/${recs.length} — 依 Ting 決定，pinyin 保持無聲調以便搜尋`);
 
 console.log(`\n連接層(§6.5，待補不擋):`);
 console.log(`  病證連結 related_conditions     ${linked.conditions}/${recs.length}`);
