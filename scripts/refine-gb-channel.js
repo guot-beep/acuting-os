@@ -2,9 +2,9 @@
  * refine-gb-channel.js
  * Refines Gallbladder Channel (足少陽膽經 GB1–GB44):
  *   1. acumethod_en: Per-point specific anatomical depth, angle, and safety precautions.
- *   2. functions_en & indications_en: Aligned length-matched arrays to _zh, sourced from course PDF & eLotus.
+ *   2. functions_en & indications_en: Aligned length-matched clean arrays to _zh, sourced from course PDF & eLotus.
  *   3. action_tags_zh & action_tags_en: Remove A13 disease system categories in 1-to-1 parallel alignment.
- *   4. point_identity_zh & point_identity_en: Five-Shu, Yuan, Luo, Xi, Confluent, Front-Mu, Back-Shu, 8 Hui, etc.
+ *   4. point_identity_zh & point_identity_en: Jing-Well, Ying-Spring, Shu-Stream, Yuan-Source, Luo-Connecting, Xi-Cleft, He-Sea, Hui-Meeting of Sinews/Marrow, Front-Mu, Confluent, etc.
  *   5. exam_star & exam_pearl / exam_pearl_en for key board exam points.
  *   6. field_sources & review_status = "draft".
  *
@@ -21,156 +21,156 @@ const APPLY = process.argv.includes('--apply');
 
 // Key needle methods and safety notes for GB channel (GB1–GB44)
 const GB_NEEDLING_EN = {
-  GB1:  'Subcutaneous insertion 0.3–0.5 cun posterior or lateral to outer canthus. CAUTION: Avoid superficial temporal vessel puncture.',
-  GB2:  'Perpendicular insertion 0.5–1.0 cun in depression anterior to intertragic notch with mouth open. Key ear point (Tinghui).',
-  GB3:  'Perpendicular insertion 0.3–0.5 cun with mouth open.',
-  GB4:  'Subcutaneous insertion 0.3–0.5 cun along scalp.',
-  GB5:  'Subcutaneous insertion 0.3–0.5 cun along scalp.',
-  GB6:  'Subcutaneous insertion 0.3–0.5 cun along scalp.',
-  GB7:  'Subcutaneous insertion 0.3–0.5 cun along scalp.',
-  GB8:  'Subcutaneous insertion 0.3–0.5 cun 1.5 cun superior to apex of ear. Primary point for migraines & alcohol intoxication (Shuaigu).',
-  GB9:  'Subcutaneous insertion 0.3–0.5 cun.',
-  GB10: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB11: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB12: 'Oblique or subcutaneous insertion 0.3–0.5 cun in depression posterior and inferior to mastoid process.',
-  GB13: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB14: 'Subcutaneous insertion 0.3–0.5 cun inferiorly or laterally 1 cun above midpoint of eyebrow. Primary point for frontal headache & eye twitching.',
-  GB15: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB16: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB17: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB18: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB19: 'Subcutaneous insertion 0.3–0.5 cun.',
-  GB20: 'Oblique insertion 0.8–1.2 cun toward tip of nose or opposite eyeball in depression between sternocleidomastoid & trapezius. Primary point for head, eyes & wind. CAUTION: Avoid deep insertion toward medulla spinalis or occipital artery.',
-  GB21: 'Perpendicular or oblique insertion 0.5–0.8 cun at highest point of shoulder. Primary point for shoulder pain & lactation. CAUTION: STRICTLY CONTRAINDICATED IN PREGNANCY. DEEP PERPENDICULAR INSERTION RISKS PNEUMOTHORAX.',
-  GB22: 'Oblique or transverse insertion 0.3–0.5 cun in 5th intercostal space. CAUTION: Deep perpendicular insertion risks pneumothorax.',
-  GB23: 'Oblique or transverse insertion 0.3–0.5 cun in 5th intercostal space. CAUTION: Deep perpendicular insertion risks pneumothorax.',
-  GB24: 'Oblique or transverse insertion 0.3–0.5 cun in 7th intercostal space directly below nipple. Front-Mu point of Gallbladder. CAUTION: Deep perpendicular insertion risks pneumothorax or liver/gallbladder injury.',
-  GB25: 'Perpendicular insertion 0.5–1.0 cun at lower border of free end of 12th rib. Front-Mu point of Kidney. CAUTION: Deep perpendicular insertion risks renal injury.',
-  GB26: 'Perpendicular insertion 0.5–1.0 cun at intersection of free end of 11th rib and level of navel. Confluent point of Dai Mai (Girdling Vessel).',
-  GB27: 'Perpendicular insertion 0.5–1.0 cun anterior to anterior superior iliac spine.',
-  GB28: 'Perpendicular insertion 0.5–1.0 cun anterior & inferior to anterior superior iliac spine.',
-  GB29: 'Perpendicular insertion 1.0–1.5 cun in midpoint between ASIS and greater trochanter.',
-  GB30: 'Perpendicular insertion 1.5–3.0 cun in depression between greater trochanter and sacral hiatus. Primary point for sciatica, lumbar pain & lower limb motor impairment.',
-  GB31: 'Perpendicular insertion 1.0–2.0 cun on lateral midline of thigh where tip of middle finger rests when standing. Primary point for leg paralysis, hemiplegia & itching (Fengshi).',
-  GB32: 'Perpendicular insertion 1.0–2.0 cun.',
+  GB1:  'Subcutaneous insertion 0.3–0.5 cun 0.5 cun lateral to outer canthus of eye. CAUTION: Avoid deep orbital insertion or optic nerve injury.',
+  GB2:  'Perpendicular insertion 0.5–1.0 cun in depression anterior to intertragic notch with mouth open. Primary point for ear disorders & tinnitus (Tinghui).',
+  GB3:  'Perpendicular insertion 0.3–0.5 cun on upper border of zygomatic arch in depression above ST7.',
+  GB4:  'Subcutaneous insertion 0.5–0.8 cun along scalp within temporal hairline.',
+  GB5:  'Subcutaneous insertion 0.5–0.8 cun along scalp.',
+  GB6:  'Subcutaneous insertion 0.5–0.8 cun along scalp.',
+  GB7:  'Subcutaneous insertion 0.5–0.8 cun along scalp anterior and superior to ear apex.',
+  GB8:  'Subcutaneous insertion 0.5–0.8 cun along scalp 1.5 cun superior to apex of ear. Primary point for hangover migraine & vertigo (Shuaigu).',
+  GB9:  'Subcutaneous insertion 0.5–0.8 cun along scalp 0.5 cun posterior to GB8.',
+  GB10: 'Subcutaneous insertion 0.5–0.8 cun along scalp posterior to ear.',
+  GB11: 'Subcutaneous insertion 0.5–0.8 cun along scalp.',
+  GB12: 'Perpendicular or subcutaneous insertion 0.5–0.8 cun in depression posterior and inferior to mastoid process. Key point for insomnia & severe headache (Wangu).',
+  GB13: 'Subcutaneous insertion 0.5–0.8 cun along scalp 0.5 cun within anterior hairline.',
+  GB14: 'Subcutaneous insertion 0.3–0.5 cun downward or laterally 1 cun superior to middle of eyebrow. Key point for frontal headache & ptosis (Yangbai).',
+  GB15: 'Subcutaneous insertion 0.3–0.5 cun along scalp 0.5 cun within anterior hairline directly above GB14.',
+  GB16: 'Subcutaneous insertion 0.3–0.5 cun along scalp.',
+  GB17: 'Subcutaneous insertion 0.3–0.5 cun along scalp.',
+  GB18: 'Subcutaneous insertion 0.3–0.5 cun along scalp.',
+  GB19: 'Subcutaneous insertion 0.3–0.5 cun along scalp level with occipital protuberance.',
+  GB20: 'Oblique insertion 0.8–1.2 cun toward tip of nose or opposite eyeball in depression between sternocleidomastoid & trapezius muscles. Primary point for exterior wind, headache, dizziness & hypertension (Fengchi). CAUTION: STRICTLY AVOID DEEP UPWARD INSERTION TOWARD MEDULLA OBLONGATA.',
+  GB21: 'Perpendicular or oblique posterior insertion 0.5–0.8 cun at highest point of shoulder muscle. Primary point for shoulder stiffness, mastitis & labor (Jianjing). CAUTION: STRICTLY CONTRAINDICATED IN PREGNANCY! DEEP DOWNWARD PERPENDICULAR INSERTION RISKS PNEUMOTHORAX.',
+  GB22: 'Perpendicular or oblique insertion 0.5–0.8 cun in 4th intercostal space on mid-axillary line.',
+  GB23: 'Perpendicular or oblique insertion 0.5–0.8 cun 1 cun anterior to GB22.',
+  GB24: 'Oblique or subcutaneous insertion 0.5–0.8 cun in 7th intercostal space below nipple. Front-Mu of Gallbladder (Riyue). CAUTION: Deep perpendicular insertion risks liver or lung injury.',
+  GB25: 'Perpendicular insertion 0.8–1.0 cun at lower border of free end of 12th rib. Front-Mu of Kidney (Jingmen). CAUTION: Deep perpendicular insertion risks renal injury.',
+  GB26: 'Perpendicular insertion 0.8–1.2 cun at level of navel directly below 11th rib end. Primary point for Daimai disorders & leukorrhea (Daimai).',
+  GB27: 'Perpendicular insertion 0.8–1.2 cun anterior to anterior superior iliac spine.',
+  GB28: 'Perpendicular insertion 0.8–1.2 cun 0.5 cun anterior and inferior to GB27.',
+  GB29: 'Perpendicular insertion 1.0–1.5 cun midway between anterior superior iliac spine and prominent tip of greater trochanter.',
+  GB30: 'Perpendicular insertion 2.0–3.0 cun at junction of lateral 1/3 and medial 2/3 of distance between greater trochanter and sacral hiatus. Primary point for sciatica, hip joint & lower limb pain (Huantiao).',
+  GB31: 'Perpendicular insertion 1.0–2.0 cun on lateral thigh 7 cun superior to popliteal crease where middle finger tip reaches when standing straight. Primary point for skin itching, urticaria & leg paralysis (Fengshi).',
+  GB32: 'Perpendicular insertion 1.0–1.5 cun 5 cun superior to popliteal crease.',
   GB33: 'Perpendicular insertion 0.8–1.0 cun in depression superior to lateral epicondyle of femur.',
-  GB34: 'Perpendicular insertion 1.0–1.5 cun in depression anterior and inferior to head of fibula. He-Sea (Earth, Horary) & Lower He-Sea of Gallbladder; Hui-Meeting of Sinews/Tendons. Primary point for sinews & gallbladder.',
-  GB35: 'Perpendicular insertion 0.8–1.2 cun 7 cun superior to lateral malleolus. Xi-Cleft of Yang Wei Mai.',
-  GB36: 'Perpendicular insertion 0.8–1.2 cun 7 cun superior to lateral malleolus. Xi-Cleft of Gallbladder channel.',
-  GB37: 'Perpendicular insertion 0.7–1.0 cun 5 cun superior to lateral malleolus. Luo-Connecting point of Gallbladder channel. Primary point for eye disorders & night blindness (Guangming).',
-  GB38: 'Perpendicular insertion 0.7–1.0 cun 4 cun superior to lateral malleolus. Jing-River (Fire, Son/Sedation) point.',
-  GB39: 'Perpendicular insertion 0.7–1.0 cun 3 cun superior to lateral malleolus. Hui-Meeting of Marrow (Suihui). Primary point for neck rigidity, marrow nourishment & lower limb atrophy (Xuanzhong).',
-  GB40: 'Perpendicular insertion 0.5–0.8 cun anterior and inferior to lateral malleolus. Yuan-Source point of Gallbladder channel (Qiuxu).',
-  GB41: 'Perpendicular insertion 0.5–0.8 cun in depression distal to junction of 4th & 5th metatarsal bones. Shu-Stream (Wood, Horary) & Confluent point of Dai Mai. Paired with TE5 for Shao Yang migraines & eye pain.',
-  GB42: 'Perpendicular insertion 0.3–0.5 cun.',
-  GB43: 'Perpendicular or oblique insertion 0.3–0.5 cun between 4th & 5th toes. Ying-Spring (Water, Mother) point.',
-  GB44: 'Subcutaneous insertion 0.1 cun at lateral side of 4th toe tip, or prick to bleed. Jing-Well (Metal) point.'
+  GB34: 'Perpendicular insertion 1.0–1.5 cun in depression anterior and inferior to head of fibula. He-Sea (Earth), Lower He-Sea of GB & Hui-Meeting of Sinews. Primary point on the body for tendon stiffness, sciatica & gallbladder disorders (Yanglingquan).',
+  GB35: 'Perpendicular insertion 0.8–1.2 cun 7 cun superior to prominence of lateral malleolus at posterior border of fibula. Xi-Cleft of Yangwei Mai.',
+  GB36: 'Perpendicular insertion 0.8–1.2 cun 7 cun superior to lateral malleolus at anterior border of fibula. Xi-Cleft of Gallbladder.',
+  GB37: 'Perpendicular insertion 0.8–1.2 cun 5 cun superior to lateral malleolus. Luo-Connecting point of Gallbladder channel. Primary point for eye night blindness & vision disorders (Guangming).',
+  GB38: 'Perpendicular insertion 0.8–1.2 cun 4 cun superior to lateral malleolus. Jing-River (Fire) point.',
+  GB39: 'Perpendicular insertion 0.8–1.2 cun 3 cun superior to lateral malleolus. Hui-Meeting of Marrow (Suihui). Primary point for neck stiffness, stroke hemiplegia & bone marrow disorders (Xuanzhong / Juegu).',
+  GB40: 'Perpendicular insertion 0.5–0.8 cun in depression anterior and inferior to lateral malleolus. Yuan-Source point of Gallbladder (Qiuxu).',
+  GB41: 'Perpendicular insertion 0.5–0.8 cun in depression distal to junction of 4th & 5th metatarsal bones. Shu-Stream (Wood, Horary) & Confluent point of Daimai. Primary point for Daimai disorders, migraine & breast distension (Zulinqi).',
+  GB42: 'Perpendicular insertion 0.3–0.5 cun between 4th & 5th metatarsal bones.',
+  GB43: 'Perpendicular or oblique insertion 0.3–0.5 cun between 4th & 5th toes proximal to margin of web. Ying-Spring (Water, Mother) point.',
+  GB44: 'Subcutaneous insertion 0.1 cun at lateral side of 4th toenail corner, or prick to bleed. Jing-Well (Metal, Child/Sedation) point. Primary point for clearing Liver/Gallbladder fire & migraine.'
 };
 
 // Board exam pearls & stars for GB channel key points
 const GB_EXAM_PEARLS = {
   GB20: {
     star: 1,
-    zh: '★ 風池為祛風清頭目第一要穴（「風池祛風醒腦」）。主治感冒發熱、頭痛項強、眩暈、目赤與中風。斜刺0.8-1.2寸針尖向鼻尖方向，嚴禁向上深刺延髓。',
-    en: '★ Fengchi is the primary point on the body for dispelling exterior/interior wind and clearing head & eyes. Oblique 0.8-1.2 inch toward tip of nose; avoid deep upward insertion toward medulla.'
+    zh: '★ 風池為祛外風內風第一要穴（「風池醒腦祛風」）。主治頭痛眩暈、感冒發熱、頸項強痛與高血壓。向鼻尖方向斜刺0.8-1.2寸，⚠️ 嚴禁向上深刺延髓。',
+    en: '★ Fengchi is the primary point on the body for dispelling interior and exterior wind. Primary point for headache, dizziness, neck stiffness, and hypertension. Oblique 0.8-1.2 inch toward nose tip; ⚠️ deep upward insertion toward medulla is FORBIDDEN.'
   },
   GB21: {
     star: 1,
-    zh: '★ 肩井為肩痛與通乳催產要穴。直刺或斜刺0.5-0.8寸。⚠️ 孕婦嚴禁針刺（具下胎催產之力）；直刺過深有氣胸風險。',
-    en: '★ Jianjing is a key point for shoulder pain, mastitis, and promoting labor. ⚠️ STRICTLY CONTRAINDICATED IN PREGNANCY. Deep perpendicular insertion risks pneumothorax.'
+    zh: '★ 肩井為肩背僵硬、催產通乳第一要穴。直刺0.5-0.8寸。⚠️ 孕婦嚴禁針刺！直刺過深有刺破肺尖致氣胸風險。',
+    en: '★ Jianjing is a primary point for shoulder pain, acute mastitis, and promoting labor. Perpendicular 0.5-0.8 inch. ⚠️ STRICTLY CONTRAINDICATED IN PREGNANCY; deep insertion risks pneumothorax.'
   },
   GB24: {
     star: 1,
-    zh: '★ 日月為膽之募穴。疏肝利膽、清膽囊濕熱第一要穴（主治黃疸、脅痛、嘔吐）。斜刺或平刺0.3-0.5寸，避免深刺傷及肝膽。',
-    en: '★ Riyue is the Front-Mu point of Gallbladder. Primary point for clearing Gallbladder damp-heat, jaundice, and hypochondriac pain. Oblique/transverse 0.3-0.5 inch; avoid deep perpendicular insertion.'
+    zh: '★ 日月為膽之募穴。疏肝利膽、黃疸與膽囊炎第一要穴。斜刺或平刺0.5-0.8寸，⚠️ 嚴禁深刺以免傷及肝肺。',
+    en: '★ Riyue is the Front-Mu point of Gallbladder. Primary point for soothing Liver/GB, jaundice, and cholecystitis. Oblique 0.5-0.8 inch.'
   },
   GB25: {
     star: 1,
-    zh: '★ 京門為腎之募穴。溫補腎陽、利水消腫、治腰脅痛要穴。直刺0.5-1.0寸。',
-    en: '★ Jingmen is the Front-Mu point of Kidney. Key point for tonifying Kidney Yang, edema, and lumbar pain. Perpendicular 0.5-1.0 inch.'
+    zh: '★ 京門為腎之募穴。溫補腎陽、腰痛與水腫要穴。直刺0.8-1.0寸，⚠️ 深刺避開腎臟。',
+    en: '★ Jingmen is the Front-Mu point of Kidney. Key point for warming Kidney Yang, lumbar pain, and edema. Perpendicular 0.8-1.0 inch.'
   },
   GB30: {
     star: 1,
-    zh: '★ 環跳為坐骨神經痛與下肢腰腿痛第一要穴（「環跳治坐骨」）。直刺1.5-3.0寸。',
-    en: '★ Huantiao is the primary point for sciatica, lumbar pain, and lower limb paralysis. Perpendicular 1.5-3.0 inches.'
+    zh: '★ 環跳為下肢坐骨神經痛第一要穴（「腰腿坐骨尋環跳」）。直刺2.0-3.0寸。',
+    en: '★ Huantiao is the primary point on the body for sciatica, hip joint pain, and lower limb paralysis. Perpendicular 2.0-3.0 inch.'
   },
   GB31: {
     star: 1,
-    zh: '★ 風市為祛風止癢與下肢癱瘓要穴（「風市止癢祛風」）。直刺1.0-2.0寸。',
-    en: '★ Fengshi is a key point for dispelling wind, arresting skin itching (pruritus/urticaria), and treating leg paralysis. Perpendicular 1.0-2.0 inches.'
+    zh: '★ 風市為全身祛風止癢第一要穴（「皮膚瘙癢尋風市」）。主治蕁麻疹、濕疹與下肢麻痺。直刺1.0-2.0寸。',
+    en: '★ Fengshi is the primary point on the body for dispelling wind and arresting itching (urticaria, eczema, pruritus). Perpendicular 1.0-2.0 inch.'
   },
   GB34: {
     star: 1,
-    zh: '★ 陽陵泉為合穴（土/本穴）、膽之下合穴、八會穴之「筋會」。全身舒筋利節、利膽退黃第一要穴（「筋會陽陵泉」）。直刺1.0-1.5寸。',
-    en: '★ Yanglingquan is the He-Sea, Lower He-Sea of Gallbladder, and Hui-Meeting of Sinews. Primary point on the body for tendons/sinews, joints, and gallbladder disorders. Perpendicular 1.0-1.5 inches.'
+    zh: '★ 陽陵泉為合穴（土）、膽下合穴、八會穴之「筋會」。全身筋病、膽囊炎與膝痛第一要穴（「筋會陽陵泉」）。直刺1.0-1.5寸。',
+    en: '★ Yanglingquan is the He-Sea (Earth), Lower He-Sea of GB, and Hui-Meeting of Sinews. Primary point on the body for tendon pain, sciatica, and GB disorders. Perpendicular 1.0-1.5 inch.'
   },
   GB37: {
     star: 1,
-    zh: '★ 光明為絡穴（通肝經）。清肝明目、夜盲症第一要穴（「光明明目治夜盲」）。直刺0.7-1.0寸。',
-    en: '★ Guangming is the Luo-Connecting point (connects to Liver). Primary point for eye disorders, night blindness, and clearing vision. Perpendicular 0.7-1.0 inch.'
+    zh: '★ 光明為絡穴（通肝經）。全身眼疾、夜盲與視物昏花第一要穴（「眼疾夜盲尋光明」）。直刺0.8-1.2寸。',
+    en: '★ Guangming is the Luo-Connecting point of Gallbladder. Primary point for eye night blindness, blurred vision, and ophthalmic conditions. Perpendicular 0.8-1.2 inch.'
   },
   GB39: {
     star: 1,
-    zh: '★ 懸鐘為八會穴之「髓會」。補髓壯骨、頭項強痛第一要穴（「髓會懸鐘」）。直刺0.7-1.0寸。',
-    en: '★ Xuanzhong is the Hui-Meeting point of Marrow. Primary point for nourishing marrow, strengthening bones, and neck rigidity. Perpendicular 0.7-1.0 inch.'
+    zh: '★ 懸鐘（絕骨）為八會穴之「髓海/髓會」。主治頸項強痛、中風半身不遂與骨髓病變（「髓會懸鐘」）。直刺0.8-1.2寸。',
+    en: '★ Xuanzhong (Juegu) is the Hui-Meeting of Marrow. Primary point for neck stiffness, stroke hemiplegia, and marrow disorders. Perpendicular 0.8-1.2 inch.'
   },
   GB40: {
     star: 1,
-    zh: '★ 丘墟為原穴（膽經原穴）。疏肝利膽、腳氣與外踝痛要穴。直刺0.5-0.8寸。',
-    en: '★ Qiuxu is the Yuan-Source point of Gallbladder. Key point for coursing Liver/Gallbladder Qi, ankle pain, and beriberi. Perpendicular 0.5-0.8 inch.'
+    zh: '★ 丘墟為原穴（膽經原穴）。疏肝利膽、外踝腫痛第一要穴。直刺0.5-0.8寸。',
+    en: '★ Qiuxu is the Yuan-Source point of Gallbladder. Primary point for soothing GB and external malleolus pain. Perpendicular 0.5-0.8 inch.'
   },
   GB41: {
     star: 1,
-    zh: '★ 足臨泣為輸穴（木/本穴）、八脈交會穴（通帶脈）。疏肝理氣、治偏頭痛與乳癰要穴，配手少陽外關TE5。直刺0.5-0.8寸。',
-    en: '★ Zulinqi is the Shu-Stream (Wood, Horary) & Confluent point of Dai Mai. Key point for migraines, breast distension, and Dai Mai disorders; paired with TE5. Perpendicular 0.5-0.8 inch.'
+    zh: '★ 足臨泣為輸穴（木/本穴）、八脈交會穴（通帶脈）。偏頭痛、目赤、乳房脹痛與帶脈病第一要穴（「帶脈臨泣穴」）。直刺0.5-0.8寸。',
+    en: '★ Zulinqi is the Shu-Stream (Wood, Horary) & Confluent point of Daimai. Primary point for Daimai disorders, migraine, and mastitis. Perpendicular 0.5-0.8 inch.'
   }
 };
 
 const GB_SPECIFIC_CAUTIONS = {
-  GB1:  { zh: '眼眶外側敏感部位，避開顳淺動靜脈分支；平刺或斜刺 0.3-0.5 寸。', en: 'Outer canthus location; avoid superficial temporal vessels.' },
-  GB2:  { zh: '耳屏前張口取穴，直刺 0.5-1.0 寸。', en: 'Anterior to intertragic notch with mouth open; perpendicular 0.5-1.0 cun.' },
-  GB3:  { zh: '顴弓上緣，張口取穴，直刺 0.3-0.5 寸。', en: 'Superior border of zygomatic arch with mouth open; perpendicular 0.3-0.5 cun.' },
-  GB4:  { zh: '頭顳部，沿皮刺 0.3-0.5 寸。', en: 'Temporal scalp; transverse 0.3-0.5 cun.' },
-  GB5:  { zh: '頭顳部，沿皮刺 0.3-0.5 寸。', en: 'Temporal scalp; transverse 0.3-0.5 cun.' },
-  GB6:  { zh: '頭顳部，沿皮刺 0.3-0.5 寸。', en: 'Temporal scalp; transverse 0.3-0.5 cun.' },
-  GB7:  { zh: '耳前鬢角後方，沿皮刺 0.3-0.5 寸。', en: 'Temporal scalp; transverse 0.3-0.5 cun.' },
-  GB8:  { zh: '耳尖直上 1.5 寸，沿皮刺 0.3-0.5 寸。', en: '1.5 cun superior to ear apex; transverse 0.3-0.5 cun.' },
-  GB9:  { zh: '耳後頭部，沿皮刺 0.3-0.5 寸。', en: 'Posterior scalp; transverse 0.3-0.5 cun.' },
-  GB10: { zh: '耳後頭部，沿皮刺 0.3-0.5 寸。', en: 'Posterior scalp; transverse 0.3-0.5 cun.' },
-  GB11: { zh: '耳後頭部，沿皮刺 0.3-0.5 寸。', en: 'Posterior scalp; transverse 0.3-0.5 cun.' },
-  GB12: { zh: '耳後完骨下方凹陷處，平刺或斜刺 0.3-0.5 寸。', en: 'Depression below mastoid process; transverse 0.3-0.5 cun.' },
-  GB13: { zh: '前額髮際內，沿皮刺 0.3-0.5 寸。', en: 'Frontal scalp; transverse 0.3-0.5 cun.' },
-  GB14: { zh: '眉毛中點上方 1 寸，向下或向外平刺 0.3-0.5 寸，避開眶上神經。', en: '1 cun above midpoint of eyebrow; transverse 0.3-0.5 cun, avoid supraorbital nerve.' },
-  GB15: { zh: '前額髮際內，平刺 0.3-0.5 寸。', en: 'Frontal scalp; transverse 0.3-0.5 cun.' },
-  GB16: { zh: '頭頂兩側，平刺 0.3-0.5 寸。', en: 'Parietal scalp; transverse 0.3-0.5 cun.' },
-  GB17: { zh: '頭頂兩側，平刺 0.3-0.5 寸。', en: 'Parietal scalp; transverse 0.3-0.5 cun.' },
-  GB18: { zh: '頭頂兩側，平刺 0.3-0.5 寸。', en: 'Parietal scalp; transverse 0.3-0.5 cun.' },
-  GB19: { zh: '枕外粗隆上方兩側，平刺 0.3-0.5 寸。', en: 'Occipital scalp; transverse 0.3-0.5 cun.' },
-  GB20: { zh: '枕骨下方風池穴，斜刺 0.8-1.2 寸針尖向鼻尖，嚴禁向上深刺延髓以免致危及生命。', en: 'Suboccipital space; oblique 0.8-1.2 cun toward nose. Upward deep insertion toward medulla is STRICTLY FORBIDDEN.' },
-  GB21: { zh: '肩井穴高處，斜刺 0.5-0.8 寸。⚠️ 孕婦禁針（催產下胎）；直刺深刺有刺傷肺尖引發氣胸風險。', en: 'Highest point of shoulder; oblique 0.5-0.8 cun. ⚠️ PREGNANCY CONTRAINDICATED. Deep perpendicular insertion risks pneumothorax.' },
-  GB22: { zh: '腋下第 5 肋間隙，斜刺或平刺 0.3-0.5 寸，嚴禁直刺深刺以免致氣胸。', en: '5th intercostal space; transverse/oblique 0.3-0.5 cun. Deep perpendicular insertion contraindicated (pneumothorax risk).' },
-  GB23: { zh: '第 5 肋間隙，斜刺或平刺 0.3-0.5 寸，嚴禁直刺深刺以免致氣胸。', en: '5th intercostal space; transverse/oblique 0.3-0.5 cun. Deep perpendicular insertion contraindicated (pneumothorax risk).' },
-  GB24: { zh: '乳頭直下第 7 肋間隙，斜刺或平刺 0.3-0.5 寸，嚴禁直刺深刺以免刺傷肝膽致氣胸或內出血。', en: '7th intercostal space; transverse/oblique 0.3-0.5 cun. Deep perpendicular insertion contraindicated (liver/gallbladder/pneumothorax risk).' },
-  GB25: { zh: '第 12 肋游離端下方，直刺 0.5-1.0 寸，避免過深刺傷腎臟。', en: 'Free end of 12th rib; perpendicular 0.5-1.0 cun, avoid deep renal puncture.' },
-  GB26: { zh: '肚臍平高第 11 肋游離端，直刺 0.5-1.0 寸。', en: 'Navel level at 11th rib; perpendicular 0.5-1.0 cun.' },
-  GB27: { zh: '髂前上棘前方，直刺 0.5-1.0 寸。', en: 'Anterior to ASIS; perpendicular 0.5-1.0 cun.' },
-  GB28: { zh: '髂前上棘前下方，直刺 0.5-1.0 寸。', en: 'Anterior-inferior to ASIS; perpendicular 0.5-1.0 cun.' },
-  GB29: { zh: '髖關節附近，直刺 1.0-1.5 寸。', en: 'Near hip joint; perpendicular 1.0-1.5 cun.' },
-  GB30: { zh: '股骨大轉子與骶管裂孔連線外 1/3 處，直刺 1.5-3.0 寸。', en: 'Outer 1/3 of ASIS-sacral hiatus line; perpendicular 1.5-3.0 cun.' },
-  GB31: { zh: '大腿外側正中線，直刺 1.0-2.0 寸。', en: 'Lateral midline of thigh; perpendicular 1.0-2.0 cun.' },
-  GB32: { zh: '大腿外側，直刺 1.0-2.0 寸。', en: 'Lateral thigh; perpendicular 1.0-2.0 cun.' },
-  GB33: { zh: '股骨外上髁上方凹陷處，直刺 0.8-1.0 寸。', en: 'Above lateral epicondyle of femur; perpendicular 0.8-1.0 cun.' },
-  GB34: { zh: '腓骨小頭前下方凹陷處，直刺 1.0-1.5 寸，避開腓總神經。', en: 'Anterior-inferior to fibular head; perpendicular 1.0-1.5 cun, avoid common peroneal nerve.' },
-  GB35: { zh: '外踝上 7 寸，直刺 0.8-1.2 寸。', en: '7 cun above lateral malleolus; perpendicular 0.8-1.2 cun.' },
-  GB36: { zh: '外踝上 7 寸腓骨前緣，直刺 0.8-1.2 寸。', en: '7 cun above lateral malleolus; perpendicular 0.8-1.2 cun.' },
-  GB37: { zh: '外踝上 5 寸腓骨前緣，直刺 0.7-1.0 寸。', en: '5 cun above lateral malleolus; perpendicular 0.7-1.0 cun.' },
-  GB38: { zh: '外踝上 4 寸腓骨前緣，直刺 0.7-1.0 寸。', en: '4 cun above lateral malleolus; perpendicular 0.7-1.0 cun.' },
-  GB39: { zh: '外踝上 3 寸腓骨後緣與腓骨短肌之間，直刺 0.7-1.0 寸。', en: '3 cun above lateral malleolus; perpendicular 0.7-1.0 cun.' },
-  GB40: { zh: '外踝前下方凹陷處，直刺 0.5-0.8 寸。', en: 'Anterior-inferior to lateral malleolus; perpendicular 0.5-0.8 cun.' },
-  GB41: { zh: '足背第 4、5 跖骨底結合部前凹陷處，直刺 0.5-0.8 寸。', en: 'Distal to junction of 4th/5th metatarsals; perpendicular 0.5-0.8 cun.' },
-  GB42: { zh: '足背第 4、5 跖骨頭後方，直刺 0.3-0.5 寸。', en: 'Posterior to 4th/5th metatarsal heads; perpendicular 0.3-0.5 cun.' },
-  GB43: { zh: '足背第 4、5 趾縫間，直或斜刺 0.3-0.5 寸。', en: 'Between 4th and 5th toes; perpendicular/oblique 0.3-0.5 cun.' },
-  GB44: { zh: '第 4 趾甲角旁 0.1 寸，淺刺 0.1 寸或點刺出血。', en: '0.1 cun lateral to 4th toenail corner; subcutaneous 0.1 cun or bleed.' }
+  GB1:  { zh: '目外眶旁，平刺 0.3-0.5 寸。⚠️ 嚴禁深刺眼眶以免傷及眼球或視神經。', en: 'Lateral eye orbit; subcutaneous 0.3-0.5 cun. ⚠️ Avoid deep orbital insertion.' },
+  GB2:  { zh: '耳屏間切跡前凹陷處，張口直刺 0.5-1.0 寸。', en: 'Anterior to intertragic notch; open mouth, perpendicular 0.5-1.0 cun.' },
+  GB3:  { zh: '顴弓上緣，直刺 0.3-0.5 寸。', en: 'Upper border of zygomatic arch; perpendicular 0.3-0.5 cun.' },
+  GB4:  { zh: '顳部髮際內，沿皮刺 0.5-0.8 寸。', en: 'Temporal hairline; subcutaneous 0.5-0.8 cun.' },
+  GB5:  { zh: '顳部頭皮，沿皮刺 0.5-0.8 寸。', en: 'Temporal scalp; subcutaneous 0.5-0.8 cun.' },
+  GB6:  { zh: '顳部頭皮，沿皮刺 0.5-0.8 寸。', en: 'Temporal scalp; subcutaneous 0.5-0.8 cun.' },
+  GB7:  { zh: '耳頂前方髮際，沿皮刺 0.5-0.8 寸。', en: 'Hairline above ear; subcutaneous 0.5-0.8 cun.' },
+  GB8:  { zh: '耳尖直上 1.5 寸，沿皮刺 0.5-0.8 寸。', en: '1.5 cun above ear apex; subcutaneous 0.5-0.8 cun.' },
+  GB9:  { zh: '率谷後 0.5 寸，沿皮刺 0.5-0.8 寸。', en: '0.5 cun posterior to GB8; subcutaneous 0.5-0.8 cun.' },
+  GB10: { zh: '耳後頭皮，沿皮刺 0.5-0.8 寸。', en: 'Posterior to ear; subcutaneous 0.5-0.8 cun.' },
+  GB11: { zh: '耳後頭皮，沿皮刺 0.5-0.8 寸。', en: 'Posterior to ear; subcutaneous 0.5-0.8 cun.' },
+  GB12: { zh: '乳突後下方凹陷處，直刺或斜刺 0.5-0.8 寸。', en: 'Posterior-inferior to mastoid; perpendicular/oblique 0.5-0.8 cun.' },
+  GB13: { zh: '前髮際內 0.5 寸，沿皮刺 0.5-0.8 寸。', en: '0.5 cun within anterior hairline; subcutaneous 0.5-0.8 cun.' },
+  GB14: { zh: '眉上 1 寸，向下沿皮刺 0.3-0.5 寸。', en: '1 cun above eyebrow; subcutaneous downward 0.3-0.5 cun.' },
+  GB15: { zh: '前髮際內 0.5 寸，沿皮刺 0.3-0.5 寸。', en: '0.5 cun within anterior hairline; subcutaneous 0.3-0.5 cun.' },
+  GB16: { zh: '頭頂側部，沿皮刺 0.3-0.5 寸。', en: 'Lateral scalp; subcutaneous 0.3-0.5 cun.' },
+  GB17: { zh: '頭頂側部，沿皮刺 0.3-0.5 寸。', en: 'Lateral scalp; subcutaneous 0.3-0.5 cun.' },
+  GB18: { zh: '頭頂側部，沿皮刺 0.3-0.5 寸。', en: 'Lateral scalp; subcutaneous 0.3-0.5 cun.' },
+  GB19: { zh: '枕外粗隆平高處，沿皮刺 0.3-0.5 寸。', en: 'Level with occipital protuberance; subcutaneous 0.3-0.5 cun.' },
+  GB20: { zh: '胸鎖乳突肌與斜方肌之間凹陷處，向鼻尖方向斜刺 0.8-1.2 寸。⚠️ 嚴禁向上深刺延髓。', en: 'In depression between SCM & trapezius; oblique 0.8-1.2 cun. ⚠️ Deep upward insertion toward medulla FORBIDDEN.' },
+  GB21: { zh: '肩頸最高處，直刺 0.5-0.8 寸。⚠️ 孕婦嚴禁針刺！直刺過深有刺破肺尖致氣胸風險。', en: 'Highest point of shoulder; perpendicular 0.5-0.8 cun. ⚠️ STRICTLY CONTRAINDICATED IN PREGNANCY (pneumothorax risk).' },
+  GB22: { zh: '第 4 肋間隙腋中線上，斜刺或平刺 0.5-0.8 寸。', en: '4th intercostal space on mid-axillary line; oblique/transverse 0.5-0.8 cun.' },
+  GB23: { zh: 'GB22 前 1 寸，斜刺或平刺 0.5-0.8 寸。', en: '1 cun anterior to GB22; oblique/transverse 0.5-0.8 cun.' },
+  GB24: { zh: '第 7 肋間隙，斜刺 0.5-0.8 寸。⚠️ 嚴禁深刺以免傷及肝臟（右）或肺臟。', en: '7th intercostal space; oblique 0.5-0.8 cun. ⚠️ Deep perpendicular insertion contraindicated (liver/lung risk).' },
+  GB25: { zh: '第 12 肋游離端下緣，直刺 0.8-1.0 寸。⚠️ 深刺避開腎臟。', en: 'Lower border of 12th rib free end; perpendicular 0.8-1.0 cun. ⚠️ Avoid deep renal puncture.' },
+  GB26: { zh: '章門穴直下平臍處，直刺 0.8-1.2 寸。', en: 'Level with navel below GB13 end; perpendicular 0.8-1.2 cun.' },
+  GB27: { zh: '髂前上棘前內側，直刺 0.8-1.2 寸。', en: 'Anterior to ASIS; perpendicular 0.8-1.2 cun.' },
+  GB28: { zh: 'GB27 前下方 0.5 寸，直刺 0.8-1.2 寸。', en: '0.5 cun anterior-inferior to GB27; perpendicular 0.8-1.2 cun.' },
+  GB29: { zh: '髂前上棘與股骨大轉子連線中點，直刺 1.0-1.5 寸。', en: 'Midpoint between ASIS and greater trochanter; perpendicular 1.0-1.5 cun.' },
+  GB30: { zh: '股骨大轉子與骶管裂孔連線外 1/3 處，直刺 2.0-3.0 寸。', en: 'Lateral 1/3 of line between greater trochanter & sacral hiatus; perpendicular 2.0-3.0 cun.' },
+  GB31: { zh: '大腿外側直立垂手中指尖觸及處，直刺 1.0-2.0 寸。', en: 'Lateral thigh where middle finger tip touches; perpendicular 1.0-2.0 cun.' },
+  GB32: { zh: '膕橫紋上 5 寸，直刺 1.0-1.5 寸。', en: '5 cun above popliteal crease; perpendicular 1.0-1.5 cun.' },
+  GB33: { zh: '股骨外上髁上方凹陷處，直刺 0.8-1.0 寸。', en: 'Depression superior to lateral femoral epicondyle; perpendicular 0.8-1.0 cun.' },
+  GB34: { zh: '腓骨小頭前下方凹陷處，直刺 1.0-1.5 寸。', en: 'Depression anterior-inferior to fibular head; perpendicular 1.0-1.5 cun.' },
+  GB35: { zh: '外踝尖上 7 寸腓骨後緣，直刺 0.8-1.2 寸。', en: '7 cun above lateral malleolus, posterior fibula; perpendicular 0.8-1.2 cun.' },
+  GB36: { zh: '外踝尖上 7 寸腓骨前緣，直刺 0.8-1.2 寸。', en: '7 cun above lateral malleolus, anterior fibula; perpendicular 0.8-1.2 cun.' },
+  GB37: { zh: '外踝尖上 5 寸腓骨前緣，直刺 0.8-1.2 寸。', en: '5 cun above lateral malleolus; perpendicular 0.8-1.2 cun.' },
+  GB38: { zh: '外踝尖上 4 寸腓骨前緣，直刺 0.8-1.2 寸。', en: '4 cun above lateral malleolus; perpendicular 0.8-1.2 cun.' },
+  GB39: { zh: '外踝尖上 3 寸腓骨後緣，直刺 0.8-1.2 寸。', en: '3 cun above lateral malleolus; perpendicular 0.8-1.2 cun.' },
+  GB40: { zh: '外踝前下方凹陷處，直刺 0.5-0.8 寸。', en: 'Depression anterior-inferior to lateral malleolus; perpendicular 0.5-0.8 cun.' },
+  GB41: { zh: '第 4、5 跖骨結合部前方凹陷處，直刺 0.5-0.8 寸。', en: 'Distal to junction of 4th & 5th metatarsals; perpendicular 0.5-0.8 cun.' },
+  GB42: { zh: '第 4、5 跖骨之間，直刺 0.3-0.5 寸。', en: 'Between 4th & 5th metatarsals; perpendicular 0.3-0.5 cun.' },
+  GB43: { zh: '第 4、5 趾縫間，直刺或斜刺 0.3-0.5 寸。', en: 'Web space between 4th & 5th toes; perpendicular/oblique 0.3-0.5 cun.' },
+  GB44: { zh: '第 4 趾甲角旁 0.1 寸，點刺出血或淺刺 0.1 寸。', en: 'Lateral to 4th toenail corner; prick to bleed or insert 0.1 cun.' }
 };
 
 const DISEASE_CAT_RE = /頭面五官|系統疾病|系統病|五官疾病|婦科疾病|精神神志/;
@@ -183,7 +183,7 @@ data.forEach(point => {
   if (!/^GB([1-9]|[1-3][0-9]|4[0-4])$/.test(code)) return;
 
   const idx = parseInt(code.replace('GB', ''), 10);
-  const pageNum = Math.min(Math.ceil(idx / 6), 8);
+  const pageNum = Math.min(Math.ceil(idx / 8), 6);
 
   // 1. Needling Method EN
   if (GB_NEEDLING_EN[code] && point.acumethod_en !== GB_NEEDLING_EN[code]) {
@@ -274,7 +274,7 @@ data.forEach(point => {
 
   // 5. GB21 Pregnancy Contraindication
   if (code === 'GB21') {
-    const pregZh = '孕婦禁針（肩井穴降氣催產力強，孕婦針刺易致流產或早產）。';
+    const pregZh = '孕婦嚴禁針刺（肩井穴降氣下行，針刺極易激發強烈宮縮致流產或早產）。';
     if (!point.contraindications.includes(pregZh)) {
       if (APPLY) {
         point.contraindications.push(pregZh);
