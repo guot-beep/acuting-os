@@ -1,29 +1,27 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 15:15] Antigravity Handoff — eLOTUS-STYLE SYSTEM TOGGLE BRANCH DRAWER ARCHITECTURE IMPLEMENTED & DEPLOYED! 🎉
+## [2026-07-30 15:17] Antigravity Handoff — COLLAPSIBLE DIRECTORY ACCORDIONS & PURE 361 PRINCIPAL CHANNELS CLASSIFICATION DEPLOYED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `8e39c6d`)
-- **Self-Audit Verification & System Branch Redesign**:
-  1. **eLotus-Style System Toggle Branch Drawer (`#systemToggleDrawer`)**:
-     - Completely implemented dedicated System Toggle Branch Panels matching eLotus CORE model per user directive ("參考eLotus 每個體系應該有自己的toggle分支").
-     - Clicking any System Tab button (or clicking again to toggle off) expands/collapses a dedicated, structured **System Branch Grid Panel (`.system-toggle-drawer`)** with 中英雙語對照:
-       - **☯️ 十四正經 (14 Channels Branch)**: 14 經絡分支 (`LU`, `LI`, `ST`, `SP`, `HT`, `SI`, `BL`, `KI`, `PC`, `TE`, `GB`, `LR`, `CV`, `GV`) + `📊 經脈與特定穴圖表 ↗` 捷徑。
-       - **🪵 董氏奇穴 (Master Tung Branch)**: 12 解剖部位分支 (`11手指`, `22手掌`, `33前臂`, `44上臂`, `55腳趾`, `66腳背`, `77小腿`, `88大腿`, `99耳朵`, `1010頭面`, `DT`, `VT`)。
-       - **👂 耳穴體系 (Auricular LCH Branch)**: 14 耳郭解剖分區分支 (`TF三角窩`, `AH對耳輪`, `SAC`, `IAC`, `AT對耳屏`, `TR耳屏`, `CVC耳甲腔`, `CYC耳甲艇`, `EL耳垂`, `SC耳舟`, `HX`, `HCS`, `IN`, `POS`)。
-       - **🧠 頭皮針 (Scalp Acupuncture Branch)**: 18 分區與焦氏頭針功能區分支 (`額區 MS1-MS4`, `頂區 MS5-MS9`, `枕區 MS10-MS12`, `顳區 MS13-MS14`, `焦氏頭針功能區`)。
-       - **⭐️ 經外奇穴 (Extra Points Branch)**: 5 大解剖部位 (`EX-HN 頭頸`, `EX-CA 胸腹`, `EX-B 背部`, `EX-UE 上肢`, `EX-LE 下肢`)。
-       - **🌀 特色/微針 (Special Microsystems Branch)**: `腹針`, `腕踝針`, `靳三針`, `平衡針`。
-  2. **Seamless Sub-Branch Filtering & Full Internationalization**:
-     - Clicking any sub-branch chip instantly locks and filters points in real-time.
-     - Automatically adapts text in "中英版 (Bilingual)" and "Public EN (English)" modes.
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `00dd2bc`)
+- **Self-Audit Verification & Directory Sidebar Refactor**:
+  1. **Converted Directory Sidebar to Collapsible Accordions (`<details class="directory-filter-accordion">`)**:
+     - Removed static expanded sidebar boxes per user directive ("下面這個有點廢 用toggle起來可能還有用 但要正穴分類 12經絡就不要混其他").
+     - Refactored into 4 collapsible accordion drawers with smooth arrow indicators (`▸`/`▾`):
+       - **☯️ 十四正經 (361正穴)**: Default open, strictly lists the 14 principal channels (361 standard points).
+       - **📍 身體部位 (Body Regions)**: Collapsible accordion for Anatomical Regions.
+       - **⭐️ 特定穴類別 (Specific Point Groups)**: Collapsible accordion for Five Shu, Yuan, Luo, Xi, Front Mu, Back Shu, Ghost, Four Seas.
+       - **🩺 臨床主題與證型 (Clinical Topics & Patterns)**: Collapsible accordion for clinical patterns.
+  2. **Isolated Pure 361 Standard Points Classification**:
+     - Stripped out all non-standard systems (耳穴, 頭皮針, 董氏奇穴) from the 14 principal channels list!
+     - "全部正經穴位" count strictly displays **361** (the exact standard channel points count), removing misleading 769 totals under the 14 Channels header.
 - **Validation Audit**:
   - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
   - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `index.html` — Added `#systemToggleDrawer` container under system tabs.
-  - `styles.css` — Styled `.system-toggle-drawer`, `.drawer-header`, `.drawer-grid`, `.drawer-branch-chip`.
-  - `app.js` — Added `renderSystemToggleDrawer()`, `pointMatchesSystemBranch()`, and tab toggle logic.
+  - `index.html` — Updated `directory-sidebar` boxes to `<details class="directory-filter-accordion">`.
+  - `styles.css` — Styled `.directory-filter-accordion` and `.accordion-summary` with hover and indicator states.
+  - `app.js` — Updated `renderMeridianCategories()` for pure 361 standard points count and label formatting.
   - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
