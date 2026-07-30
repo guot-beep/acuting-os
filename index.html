@@ -276,30 +276,37 @@
 
       <section class="directory-layout" data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫" data-mode-aria-label data-bilingual-aria-label="穴位資料庫" data-english-aria-label="Acupoint directory">
         <aside class="directory-sidebar" aria-label="穴道分類" data-mode-aria-label data-bilingual-aria-label="穴道分類" data-english-aria-label="Acupoint categories">
-          <section class="directory-filter-box">
-            <h3 data-mode-text data-bilingual="十四經絡" data-english="Fourteen Channels">十四經絡</h3>
+          <!-- 1. 純正穴十四經脈 (Collapsible Accordion, Default Open) -->
+          <details class="directory-filter-accordion" open>
+            <summary class="accordion-summary">
+              <span data-mode-text data-bilingual="☯️ 十四正經 (361正穴)" data-english="☯️ 14 Channels (361 Points)">☯️ 十四正經 (361正穴)</span>
+            </summary>
             <div id="meridianCategoryList" class="directory-filter-list"></div>
-          </section>
-          <section class="directory-filter-box">
-            <h3 data-mode-text data-bilingual="其他穴系 Other systems" data-english="Other Systems">其他穴系 Other systems</h3>
-            <div id="systemCategoryList" class="directory-filter-list"></div>
-          </section>
-          <section class="directory-filter-box">
-            <h3 data-mode-text data-bilingual="身體部位" data-english="Body Regions">身體部位</h3>
+          </details>
+
+          <!-- 2. 身體解剖部位 (Collapsible Accordion) -->
+          <details class="directory-filter-accordion">
+            <summary class="accordion-summary">
+              <span data-mode-text data-bilingual="📍 身體部位" data-english="📍 Body Regions">📍 身體部位</span>
+            </summary>
             <div id="regionCategoryList" class="directory-filter-list"></div>
-          </section>
-          <section class="directory-filter-box">
-            <h3 data-mode-text data-bilingual="常用臨床主題" data-english="Clinical Topics">常用臨床主題</h3>
-            <div id="topicCategoryList" class="directory-filter-list"></div>
-          </section>
-          <section class="directory-filter-box tung-zone-box">
-            <h3 data-mode-text data-bilingual="董氏十二部位 Tung 12 Zones" data-english="Tung 12 Zones">董氏十二部位 Tung 12 Zones</h3>
-            <div id="tungZoneCategoryList" class="directory-filter-list tung-zone-list"></div>
-          </section>
-          <section class="directory-filter-box">
-            <h3 data-mode-text data-bilingual="特定穴 Specific points" data-english="Specific Points">特定穴 Specific points</h3>
+          </details>
+
+          <!-- 3. 特定穴類別 (Collapsible Accordion) -->
+          <details class="directory-filter-accordion">
+            <summary class="accordion-summary">
+              <span data-mode-text data-bilingual="⭐️ 特定穴類別" data-english="⭐️ Specific Point Groups">⭐️ 特定穴類別</span>
+            </summary>
             <div id="pointCategoryList" class="directory-filter-list"></div>
-          </section>
+          </details>
+
+          <!-- 4. 常用臨床主題與證型 (Collapsible Accordion) -->
+          <details class="directory-filter-accordion">
+            <summary class="accordion-summary">
+              <span data-mode-text data-bilingual="🩺 臨床主題與證型" data-english="🩺 Clinical Topics">🩺 臨床主題與證型</span>
+            </summary>
+            <div id="topicCategoryList" class="directory-filter-list"></div>
+          </details>
         </aside>
 
         <div class="directory-main">

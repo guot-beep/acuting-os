@@ -2017,31 +2017,36 @@ function meridianCategoryRows(list, activeValue) {
 
 function renderMeridianCategories() {
   if (!meridianCategoryList) return;
-  const meridians = unique(points.map((point) => point.meridian));
-  const channels = meridians.filter(isChannelMeridian)
+  const stdPoints = points.filter(isStandardChannelPoint);
+  const stdMeridians = unique(stdPoints.map((point) => point.meridian))
     .sort((a, b) => channelOrderIndex(a) - channelOrderIndex(b));
-  const systems = meridians.filter((m) => !isChannelMeridian(m));
-  const channelCount = points.filter((point) => isChannelMeridian(point.meridian)).length;
+
   const rows = [
     directoryButton({
-      // Named 全部穴位, not 全部: it clears the filter across every system, so
-      // its 751 does not belong to the 十四經絡 heading above it.
-      labelZh: "全部穴位",
-      labelEn: "All points",
-      count: points.length,
-      active: !meridianFilter.value,
+      labelZh: "全部正經穴位",
+      labelEn: "All 361 channel points",
+      count: stdPoints.length,
+      active: !meridianFilter.value && selectedSystem === "standard14",
       action: "meridian",
       value: ""
     }),
-    ...meridianCategoryRows(channels, meridianFilter.value)
+    ...stdMeridians.map((meridian) => directoryButton({
+      labelZh: meridianLabelZh(meridian),
+      labelEn: meridianLabelEn(meridian),
+      count: stdPoints.filter((point) => point.meridian === meridian).length,
+      active: meridianFilter.value === meridian,
+      action: "meridian",
+      value: meridian
+    }))
   ];
+
   meridianCategoryList.innerHTML = rows.join("");
   bindDirectoryButtons(meridianCategoryList);
-  const heading = meridianCategoryList.closest(".directory-filter-box")?.querySelector("h3");
-  if (heading) heading.textContent = `十四經絡 (${channelCount})`;
-  if (systemCategoryList) {
-    systemCategoryList.innerHTML = meridianCategoryRows(systems, meridianFilter.value).join("");
-    bindDirectoryButtons(systemCategoryList);
+
+  const accordionSummary = meridianCategoryList.closest("details")?.querySelector(".accordion-summary span");
+  if (accordionSummary) {
+    const isEn = contentMode === "english";
+    accordionSummary.textContent = isEn ? `☯️ 14 Channels (${stdPoints.length} Points)` : `☯️ 十四正經 (${stdPoints.length}正穴)`;
   }
 }
 
