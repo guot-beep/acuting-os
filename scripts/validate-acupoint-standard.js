@@ -66,6 +66,39 @@ const BOILERPLATE = (() => {
   return new Set([...c.entries()].filter(([, n]) => n >= 10).map(([k]) => k));
 })();
 
+/* A10-A13 added 2026-07-30 after an HT-channel review passed this validator
+   while 9/9 points were still short of docs/ACUPOINT_CARD_TEMPLATE.md. The
+   lesson recorded in that doc (§6.8「驗證器全綠不等於做完」) is only useful if
+   the wall actually catches the next occurrence, so the checks are here now.
+
+   Blocking vs reporting was decided by MEASURING the library first, not by
+   how bad each defect feels. A check that 260/361 points already fail cannot
+   block — every batch would fail on inherited state and the wall would be
+   ignored. So:
+     A10, A11  → 0 current failures library-wide, so they block EVERY record.
+                 Both are things that are never correct at any stage, and both
+                 are exactly what fires if an older branch reintroduces
+                 pre-translation tags (which is how they were found).
+     A12       → 264/361 records still carry the legacy status, so it blocks
+                 template-grade records only (same gate as A4-A8).
+     A13, and the pinyin / evidence-duplication rows → reported with counts.
+                 281/361 and 346/361 respectively: real, known, library-wide
+                 cleanup, not something a single channel batch introduced. */
+
+// Import scaffolding. The transform that built the tag arrays annotated each
+// term with what it was ("心痛 (Indication)"), and that annotation is not part
+// of the label — it must never reach a chip the reader sees.
+const SCAFFOLD_RE = /\((?:Indication|TCM Action|Function|Pattern)\)/i;
+const TAG_FIELDS = ["action_tags_zh", "action_tags_en", "disease_tags_zh", "disease_tags_en"];
+const EN_ARRAY_FIELDS = ["functions_en", "indications_en", "action_tags_en", "disease_tags_en", "point_identity_en"];
+const ALLOWED_STATUS = new Set(["draft", "source_checked", "deprecated"]);
+// 病系分類 belongs in disease_tags. "消化系統疾病" is not something the point
+// DOES, so it is not an action — same rule that keeps 「募穴」 out of action_tags.
+const SYSTEM_LABEL_RE = /系統疾病|系統病|System Disorders$|^(?:Neurological|Gynecological|Respiratory|Digestive|Reproductive|Mental & Psychiatric|Locomotor & Musculoskeletal|Head, Face & Sensory)[\w\s,&]*Disorders$/;
+const TONE_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/i;
+
+let scaffoldHits = 0, cjkInEnHits = 0, badStatusHits = 0, systemTagHits = 0, noToneHits = 0, evidenceDupHits = 0;
+
 const errors = [];
 const defects = new Map();
 function flag(r, issue) {
@@ -159,6 +192,41 @@ for (const r of recs) {
     flag(r, `禁忌為共用套話(${bp.length} 條)`);
     if (isTemplate) errors.push(`A8 ${id}: contraindications are shared boilerplate — write point-specific risk`);
   }
+  // A10 — import scaffolding left in a tag label. Blocks every record.
+  const scaffold = TAG_FIELDS.flatMap((f) => arr(r[f])).filter((v) => SCAFFOLD_RE.test(String(v)));
+  if (scaffold.length) {
+    scaffoldHits++;
+    flag(r, `標籤殘留匯入標記(${scaffold.length} 條)`);
+    errors.push(`A10 ${id}: tag labels still carry import scaffolding — ${scaffold.slice(0, 2).map((s) => `「${s}」`).join("、")}${scaffold.length > 2 ? ` (+${scaffold.length - 2})` : ""}`);
+  }
+
+  // A11 — Chinese sitting inside an _en array. Blocks every record: a half
+  // translated _en is worse than an empty one, because the card renders it as
+  // if it were the English layer.
+  const cjkInEn = EN_ARRAY_FIELDS.flatMap((f) => arr(r[f]).map((v) => [f, v])).filter(([, v]) => hasCJK(v));
+  if (cjkInEn.length) {
+    cjkInEnHits++;
+    flag(r, `英文欄位內含中文(${cjkInEn.length} 條)`);
+    errors.push(`A11 ${id}: ${cjkInEn[0][0]} contains Chinese — translate it or leave the whole array empty (${cjkInEn.length} item(s))`);
+  }
+
+  // A12 — AI may only write "draft"; source_checked is Ting's RV1 promotion.
+  if (r.review_status && !ALLOWED_STATUS.has(r.review_status)) {
+    badStatusHits++;
+    flag(r, `review_status = ${r.review_status}`);
+    if (isTemplate) errors.push(`A12 ${id}: review_status "${r.review_status}" is not draft/source_checked/deprecated`);
+  }
+
+  // A13 — reported only: 281/361 library-wide, a known cleanup pass.
+  const sysTags = ["action_tags_zh", "action_tags_en"].flatMap((f) => arr(r[f])).filter((v) => SYSTEM_LABEL_RE.test(String(v).trim()));
+  if (sysTags.length) {
+    systemTagHits++;
+    flag(r, `功效標籤混入病系分類(${sysTags.length} 條)`);
+  }
+
+  if (!TONE_RE.test(String(r.pinyin || ""))) noToneHits++;
+  if (r.evidence && r.modern_research_zh && String(r.evidence).trim() === String(r.modern_research_zh).trim()) evidenceDupHits++;
+
   if (!isTemplate) flag(r, "尚未依模板整理(無 field_sources)");
 }
 
@@ -176,6 +244,14 @@ const linked = {
   compare: recs.filter((r) => arr(r.compare_with).length).length
 };
 console.log(`  共用套話禁忌 boilerplate safety   ${boilerplateHits}  (${BOILERPLATE.size} distinct shared strings)`);
+console.log(`  標籤殘留匯入標記 A10 (擋)         ${scaffoldHits}`);
+console.log(`  英文欄位內含中文 A11 (擋)         ${cjkInEnHits}`);
+console.log(`  review_status 非法 A12            ${badStatusHits}  (模板級才擋)`);
+
+console.log(`\n全庫既有清理(報告不擋，非單一批次造成):`);
+console.log(`  功效標籤混入病系分類 A13         ${systemTagHits}/${recs.length}`);
+console.log(`  拼音無聲調                        ${noToneHits}/${recs.length}`);
+console.log(`  evidence 與 modern_research_zh 重複 ${evidenceDupHits}/${recs.length}`);
 
 console.log(`\n連接層(§6.5，待補不擋):`);
 console.log(`  病證連結 related_conditions     ${linked.conditions}/${recs.length}`);
@@ -205,7 +281,7 @@ if (WORKLIST) {
 }
 
 if (errors.length) {
-  console.error(`\nFAIL — ${errors.length} defect(s) (A1-A3 apply to every record; A4-A8 to template-grade only):`);
+  console.error(`\nFAIL — ${errors.length} defect(s) (A1-A3/A10/A11 apply to every record; A4-A8/A12 to template-grade only):`);
   errors.slice(0, 40).forEach((e) => console.error("  " + e));
   if (errors.length > 40) console.error(`  ... and ${errors.length - 40} more`);
   process.exit(1);
