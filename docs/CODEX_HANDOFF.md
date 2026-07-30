@@ -1,5 +1,52 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30] Antigravity Handoff — HT channel acumethod_en + ST17 fix
+
+- **Agent**: Antigravity (pair programming with Ting)
+- **Branch**: `antigravity/ht-acumethod` (branched from `origin/main`, not from the stale `antigravity/content-fill`)
+- **Commit**: `e6ec72a` + merge of `4bf7876` (A10–A13 validator)
+- **Validation**: `node scripts/validate-acupoint-standard.js --worklist --channel HT --all`
+  - PASS — no blocking defects
+  - A10 (scaffold suffix in tags): **0** ✅
+  - A11 (CJK inside _en array): **0** ✅
+  - A12 (illegal review_status, template-grade only): 263 — full-library inherited, not introduced here
+  - A13 (病系分類 in action_tags): reported, not blocking
+
+### Files changed
+- `data/acupoints/361.json` — HT1–HT9 + ST17
+- `scripts/apply-ht-acumethod-patch.js` (new — reusable dry-run/apply script)
+
+### What changed
+1. **HT1–HT9 `acumethod_en`**: replaced global generic text (`Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions`) with per-point anatomically-specific depth, angle, and vascular/neural safety warnings (eLotus CORE + WHO SAPL 2008 style).
+2. **HT2 `contraindications[]` / `cautions_zh[]`**: added 《經穴匯解》 classical "禁刺" record with source attribution.
+3. **ST17 `acumethod_en` bug fix**: forbidden-point was still carrying generic needling text; replaced with `FORBIDDEN: No needling or moxibustion. (《針灸甲乙經》)`.
+
+### Why this branch, not antigravity/content-fill
+`antigravity/content-fill` branched 2026-07-23, falling 109 commits behind `main`. Running the new validator against that branch produced 719 FAIL (A10 on 354 points, A11 on 354) — all pre-existing stale tags, not defects introduced by this session. A new branch from `origin/main` was the correct base.
+
+### Protected areas NOT touched
+- `app.js`, `js/`, `index.html`, `styles.css` — not touched
+- `scripts/validate-acupoint-standard.js` — not touched (Ting's A10–A13 update merged in separately)
+- All non-HT and non-ST17 point records — not touched
+
+### HT worklist (next batch — reported, not blocking)
+| Point | Issues |
+|-------|--------|
+| HT2/3/6/7/8/9 | `functions_zh` > 8 items (A6 — template-grade only) |
+| HT1–HT9 | `functions_en` length ≠ `functions_zh` length (A4) |
+| HT1–HT9 | `review_status` = legacy value (A12 — template-grade only) |
+| HT1–HT9 | `action_tags_zh` has 病系分類 entries (A13 — reported) |
+| HT1–HT9 | no `field_sources` yet |
+
+These are full-library inherited issues visible in the worklist. Per §6.8 red-line rules, next HT work should start from a fresh `origin/main` branch after this PR is merged.
+
+### Next recommended action
+- Ting: merge `antigravity/ht-acumethod` → `main` (PR already on GitHub)
+- Next batch: SP channel (21 points) — `node scripts/validate-acupoint-standard.js --worklist --channel SP --all`
+- Or continue HT template-grade pass (functions_zh ≤ 8, field_sources, review_status → draft) after merge
+
+---
+
 ## [2026-07-29] Codex Handoff - Quality four-layer progress model
 
 - **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
