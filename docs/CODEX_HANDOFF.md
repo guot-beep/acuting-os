@@ -1,5 +1,35 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30] Antigravity Handoff — SP channel acumethod_en + tag cleanup
+
+- **Agent**: Antigravity (pair programming with Ting)
+- **Branch**: `antigravity/sp-acumethod` (branched from `origin/main`)
+- **Validation**: `node scripts/validate-acupoint-standard.js --worklist --channel SP --all`
+  - PASS — no blocking defects
+  - A10 (scaffold suffix in tags): **0** ✅
+  - A11 (CJK inside _en array): **0** ✅
+  - A12 (illegal review_status, template-grade only): 263 — full-library inherited
+  - A13 (病系分類 in action_tags): cleaned for SP channel (moved to disease_tags with 1-to-1 index-aligned _en tags)
+
+### Files changed
+- `data/acupoints/361.json` — SP1–SP21
+- `scripts/refine-sp-channel.js` (new — reusable dry-run/apply script for SP channel)
+
+### What changed
+1. **SP1–SP21 `acumethod_en`**: replaced global generic text with per-point anatomically-specific depth, angle, and safety precautions (WHO SAPL / eLotus CORE style).
+2. **SP1–SP21 `action_tags_zh` / `action_tags_en`**: cleaned A13 disease category strings (e.g. `消化系統疾病`, `呼吸系統疾病`, `神經系統疾病`, `運動系統疾病`, `泌尿生殖系統疾病`) in 1-to-1 index-aligned fashion, preserving `_zh` and `_en` array length equality for rule A4.
+3. **SP6 `contraindications`**: explicitly ensured pregnancy prohibition `孕婦禁針（可引產催生）` is recorded.
+
+### Protected areas NOT touched
+- `app.js`, `js/`, `index.html`, `styles.css` — not touched
+- All non-SP point records — not touched
+
+### Next recommended action
+- Ting: merge `antigravity/sp-acumethod` → `main` (PR on GitHub)
+- Next channel: SI channel (19 points) or BL channel (67 points)
+
+---
+
 ## [2026-07-29] Codex Handoff - Quality four-layer progress model
 
 - **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
