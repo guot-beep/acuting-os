@@ -597,7 +597,17 @@ const tungZoneGroups = uiConfig.tungZoneGroups || [
 
 
 
-document.querySelector("#addBtn").addEventListener("click", () => openEditor());
+let selectedSystem = "";
+document.querySelectorAll(".system-tab-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    selectedSystem = btn.dataset.system || "";
+    clearPointDetailHash();
+    render();
+  });
+});
+document.querySelector("#addBtn")?.addEventListener("click", () => openEditor());
 document.querySelector("#closeDialog").addEventListener("click", () => dialog.close());
 document.querySelector("#cancelBtn").addEventListener("click", () => dialog.close());
 document.querySelector("#exportBtn").addEventListener("click", exportJson);
@@ -2166,6 +2176,7 @@ function getFilteredPoints() {
     ].join(" ").toLowerCase();
 
     return (!query || haystack.includes(query))
+      && pointMatchesSystem(point, selectedSystem)
       && (!meridianFilter.value || point.meridian === meridianFilter.value)
       && (!regionFilter.value || point.region === regionFilter.value)
       && (!patternFilter.value || point.patterns.includes(patternFilter.value))
@@ -2174,6 +2185,31 @@ function getFilteredPoints() {
       && (!directoryTungZone || pointMatchesTungZone(point, directoryTungZone))
       && (!directoryPointCategory || pointMatchesCategory(point, directoryPointCategory));
   });
+}
+
+function pointMatchesSystem(point, sys) {
+  if (!sys) return true;
+  const m = String(point.meridian || "");
+  const code = String(point.code || "");
+  if (sys === "standard14") {
+    return isStandardChannelPoint(point);
+  }
+  if (sys === "extra") {
+    return m.includes("Extra Point") || m.includes("經外奇穴") || code.startsWith("EX-");
+  }
+  if (sys === "tung") {
+    return m.includes("Master Tung") || m.includes("董氏奇穴") || code.startsWith("T");
+  }
+  if (sys === "auricular") {
+    return m.includes("Auricular") || m.includes("耳穴") || code.startsWith("EAR-") || code.startsWith("AT");
+  }
+  if (sys === "scalp") {
+    return m.includes("Scalp") || m.includes("頭皮針") || code.startsWith("MS") || code.startsWith("SCALP-");
+  }
+  if (sys === "special") {
+    return m.includes("Special") || m.includes("腹針") || m.includes("腕踝針") || m.includes("靳三針") || m.includes("平衡針");
+  }
+  return true;
 }
 
 function pointMatchesCategory(point, categoryId) {

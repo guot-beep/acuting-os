@@ -306,15 +306,29 @@
           <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選" data-mode-aria-label data-bilingual-aria-label="搜尋與篩選" data-english-aria-label="Search and filters">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">Acupuncture Layer</p>
+                <p class="eyebrow">Acupuncture Layer · 針灸大體系</p>
                 <h2 data-mode-text data-bilingual="穴位資料庫" data-english="Acupoint Directory">穴位資料庫</h2>
               </div>
               <span class="data-pill"><strong id="directoryTotal">--</strong> <span data-mode-text data-bilingual="個穴道" data-english="points">個穴道</span></span>
             </div>
-            <div class="search-row">
-              <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型..." />
-              <button id="addBtn" type="button" data-mode-text data-bilingual="新增穴位" data-english="Add point">新增穴位</button>
+
+            <!-- Top Search Row (Full width, no add button) -->
+            <div class="search-row search-row-clean">
+              <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型... (例：ST36, 太衝, 運動區, 神門)" />
             </div>
+
+            <!-- eLotus-Inspired System Tabs Selector Bar -->
+            <div class="system-tabs-bar" id="systemTabsBar" aria-label="針灸體系分類">
+              <button type="button" class="system-tab-btn active" data-system="">🌐 <span data-mode-text data-bilingual="全庫體系" data-english="All Systems">全庫體系</span></button>
+              <button type="button" class="system-tab-btn" data-system="standard14">☯️ <span data-mode-text data-bilingual="十四正經" data-english="14 Channels">十四正經</span></button>
+              <button type="button" class="system-tab-btn" data-system="extra">⭐️ <span data-mode-text data-bilingual="經外奇穴" data-english="Extra Points">經外奇穴</span></button>
+              <button type="button" class="system-tab-btn" data-system="tung">🪵 <span data-mode-text data-bilingual="董氏奇穴" data-english="Master Tung">董氏奇穴</span></button>
+              <button type="button" class="system-tab-btn" data-system="auricular">👂 <span data-mode-text data-bilingual="耳穴體系" data-english="Auricular">耳穴體系</span></button>
+              <button type="button" class="system-tab-btn" data-system="scalp">🧠 <span data-mode-text data-bilingual="頭皮針" data-english="Scalp Acu">頭皮針</span></button>
+              <button type="button" class="system-tab-btn" data-system="special">🌀 <span data-mode-text data-bilingual="特色/微針" data-english="Special Systems">特色/微針</span></button>
+            </div>
+
+            <!-- Secondary Dynamic Filters -->
             <div class="filters">
               <select id="meridianFilter" aria-label="經絡" data-mode-aria-label data-bilingual-aria-label="經絡" data-english-aria-label="Channel">
                 <option value="" data-mode-text data-bilingual="全部經絡" data-english="All channels">全部經絡</option>
