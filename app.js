@@ -3821,10 +3821,27 @@ function americanDragonPointUrl(point) {
   return `https://www.americandragon.com/Points/${adPrefix}-${num}.html`;
 }
 
+function eLotusPointUrl(point) {
+  const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
+  const directVisual = visualLinks.find((v) => v && v.url && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(v.url));
+  if (directVisual) return directVisual.url;
+
+  const sources = Array.isArray(point.sources) ? point.sources : [];
+  const directSource = sources.find((s) => typeof s === "string" && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(s));
+  if (directSource) return directSource;
+
+  let code = String(point.code || point.id || "").toLowerCase().trim();
+  if (isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")) {
+    return visualLinks[0]?.url || (typeof sources[0] === "string" && sources[0].startsWith("http") ? sources[0] : "https://www.mastertungacupuncture.org/acupuncture/traditional/points");
+  }
+
+  code = code.replace(/^te/, "th").replace(/^sj/, "th");
+  return `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${code}`;
+}
+
 function externalPointLinks(point) {
   const sources = point.sources || [];
   const visualLinks = normalizeVisualLinks(point.visualLinks || []);
-  const code = String(point.code || "").trim();
 
   if (isAuricularPoint(point)) {
     const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
@@ -3841,10 +3858,8 @@ function externalPointLinks(point) {
   // 2. American Dragon (AD) — Direct 1-to-1 point page
   const adUrl = americanDragonPointUrl(point);
 
-  // 3. eLotus / Master Tung Acupuncture
-  const eLotusUrl = isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")
-    ? (visualLinks[0]?.url || sources[0] || `https://www.mastertungacupuncture.org/acupuncture/traditional/points`)
-    : `https://www.mastertungacupuncture.org/search?q=${encodeURIComponent(code + " " + (point.nameZh || ""))}`;
+  // 3. eLotus / Master Tung Acupuncture — Direct 1-to-1 point page
+  const eLotusUrl = eLotusPointUrl(point);
 
   if (contentMode === "english") {
     return [
