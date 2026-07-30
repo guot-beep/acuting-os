@@ -1,27 +1,27 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 15:17] Antigravity Handoff — COLLAPSIBLE DIRECTORY ACCORDIONS & PURE 361 PRINCIPAL CHANNELS CLASSIFICATION DEPLOYED! 🎉
+## [2026-07-30 15:20] Antigravity Handoff — REDUNDANT DROPDOWNS REMOVED, SIDEBAR DE-DUPLICATED, QA BUCKETS STRIPPED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `00dd2bc`)
-- **Self-Audit Verification & Directory Sidebar Refactor**:
-  1. **Converted Directory Sidebar to Collapsible Accordions (`<details class="directory-filter-accordion">`)**:
-     - Removed static expanded sidebar boxes per user directive ("下面這個有點廢 用toggle起來可能還有用 但要正穴分類 12經絡就不要混其他").
-     - Refactored into 4 collapsible accordion drawers with smooth arrow indicators (`▸`/`▾`):
-       - **☯️ 十四正經 (361正穴)**: Default open, strictly lists the 14 principal channels (361 standard points).
-       - **📍 身體部位 (Body Regions)**: Collapsible accordion for Anatomical Regions.
-       - **⭐️ 特定穴類別 (Specific Point Groups)**: Collapsible accordion for Five Shu, Yuan, Luo, Xi, Front Mu, Back Shu, Ghost, Four Seas.
-       - **🩺 臨床主題與證型 (Clinical Topics & Patterns)**: Collapsible accordion for clinical patterns.
-  2. **Isolated Pure 361 Standard Points Classification**:
-     - Stripped out all non-standard systems (耳穴, 頭皮針, 董氏奇穴) from the 14 principal channels list!
-     - "全部正經穴位" count strictly displays **361** (the exact standard channel points count), removing misleading 769 totals under the 14 Channels header.
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `fd1ef86`)
+- **Self-Audit Verification & UX Cleanup**:
+  1. **Removed Redundant Stacked Dropdowns Below System Drawer**:
+     - Completely removed the 3 duplicate stacked select boxes (`全部經絡/部位`, `全部身體部位`, `全部證型`) from under the System Toolbar / Branch Drawer per user directive ("第一個圖還可以 但第二個分類之後應該把下面的第三張圖的那個部分刪掉 不然很奇怪").
+     - Top search area is now 100% clean and uncluttered.
+  2. **De-duplicated Left Sidebar Categories**:
+     - Reconfigured the lower sidebar (`.directory-sidebar`) so it doesn't repeat what is already in the top System Tabs & Branch Drawers per user directive ("下面也要重新設置 不要重複").
+     - Lower sidebar now strictly focuses on 3 essential non-overlapping study categories:
+       - **⭐️ 特定穴類別** (五輸/原絡/郄/俞募/鬼穴...) — Default open.
+       - **🩺 臨床主題與證型** (Clinical Indications & Patterns).
+       - **📍 身體部位** (Body Regions).
+  3. **Completely Stripped QA / Build Quality Buckets from Study UI**:
+     - Removed `資料品質檢查(建置用)` and QA build buckets from `renderTopicCategories()` per user directive ("資料品質檢查(建置用)不應該在這裡 quality的責任").
 - **Validation Audit**:
   - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
   - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `index.html` — Updated `directory-sidebar` boxes to `<details class="directory-filter-accordion">`.
-  - `styles.css` — Styled `.directory-filter-accordion` and `.accordion-summary` with hover and indicator states.
-  - `app.js` — Updated `renderMeridianCategories()` for pure 361 standard points count and label formatting.
+  - `index.html` — Removed `.filters-compact` duplicate selects, updated `directory-sidebar` ordering.
+  - `app.js` — Removed `group("qa")` from `renderTopicCategories()`.
   - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
