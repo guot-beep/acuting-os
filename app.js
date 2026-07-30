@@ -2101,22 +2101,6 @@ function renderTopicCategories() {
     }))
   ];
 
-  const extras = directoryTopics.filter((t) => (t.group || "clinical") !== "clinical");
-  const group = (name, labelZh, labelEn) => {
-    const list = extras.filter((t) => t.group === name);
-    if (!list.length) return "";
-    return `<details class="directory-subgroup">
-      <summary>${contentMode === "english" ? labelEn : labelZh}</summary>
-      ${list.map((topic) => directoryButton({
-        labelZh: topic.zh, labelEn: topic.en,
-        count: points.filter((point) => pointMatchesTopic(point, topic.id)).length,
-        active: directoryTopic === topic.id, action: "topic", value: topic.id
-      })).join("")}
-    </details>`;
-  };
-  rows.push(group("index", "其他索引 Other indexes", "Other indexes"));
-  rows.push(group("qa", "資料品質檢查(建置用)", "Data quality (build)"));
-
   topicCategoryList.innerHTML = rows.join("");
   bindDirectoryButtons(topicCategoryList);
 }
