@@ -2,9 +2,9 @@
  * refine-lr-channel.js
  * Refines Liver Channel (足厥陰肝經 LR1–LR14):
  *   1. acumethod_en: Per-point specific anatomical depth, angle, and safety precautions.
- *   2. functions_en & indications_en: Aligned length-matched arrays to _zh, sourced from course PDF & eLotus.
+ *   2. functions_en & indications_en: Aligned length-matched clean arrays to _zh, sourced from course PDF & eLotus.
  *   3. action_tags_zh & action_tags_en: Remove A13 disease system categories in 1-to-1 parallel alignment.
- *   4. point_identity_zh & point_identity_en: Five-Shu, Yuan, Luo, Xi, Front-Mu, 8 Hui, etc.
+ *   4. point_identity_zh & point_identity_en: Jing-Well, Ying-Spring, Shu-Stream, Yuan-Source, Luo-Connecting, Xi-Cleft, He-Sea, Hui-Meeting of Zang, Front-Mu of Liver & Spleen, etc.
  *   5. exam_star & exam_pearl / exam_pearl_en for key board exam points.
  *   6. field_sources & review_status = "draft".
  *
@@ -21,76 +21,76 @@ const APPLY = process.argv.includes('--apply');
 
 // Key needle methods and safety notes for LR channel (LR1–LR14)
 const LR_NEEDLING_EN = {
-  LR1:  'Subcutaneous insertion 0.1 cun at lateral side of big toenail, or prick to bleed. Jing-Well (Wood, Horary) point. Primary point for hernia & uterine bleeding.',
-  LR2:  'Oblique insertion 0.3–0.5 cun toward heel. Ying-Spring (Fire, Child/Sedation) point. Primary point for clearing Liver Fire.',
-  LR3:  'Perpendicular insertion 0.5–1.0 cun in depression distal to junction of 1st & 2nd metatarsal bones. Shu-Stream (Earth) & Yuan-Source point. Primary point for extinguishing Liver Wind & moving Liver Qi; paired with LI4 (Four Gates).',
-  LR4:  'Perpendicular insertion 0.5–0.8 cun anterior to medial malleolus. Jing-River (Metal) point.',
-  LR5:  'Subcutaneous insertion 0.3–0.5 cun along medial border of tibia, 5 cun superior to medial malleolus. Luo-Connecting point of Liver channel.',
-  LR6:  'Subcutaneous insertion 0.3–0.5 cun along medial border of tibia, 7 cun superior to medial malleolus. Xi-Cleft point of Liver channel.',
-  LR7:  'Perpendicular insertion 1.0–1.5 cun posterior & inferior to medial condyle of tibia.',
-  LR8:  'Perpendicular insertion 0.8–1.2 cun in depression anterior to insertion of semimembranosus & semitendinosus muscles. He-Sea (Water, Mother) point. Primary point for nourishing Liver Yin & Blood (Ququan).',
+  LR1:  'Subcutaneous insertion 0.1 cun at lateral side of big toenail corner, or prick to bleed. Jing-Well (Wood, Horary) point. Primary point for hernia, uterine bleeding & genital pain (Dadun).',
+  LR2:  'Oblique insertion 0.3–0.5 cun toward heel in web space between 1st & 2nd toes. Ying-Spring (Fire, Child/Sedation) point. Primary point for clearing Liver Fire, headache, dizziness & hypertension (Xingjian).',
+  LR3:  'Perpendicular or oblique insertion 0.5–1.0 cun in depression distal to junction of 1st & 2nd metatarsal bones. Shu-Stream (Earth) & Yuan-Source point. Primary point on the body for pacifying Liver wind, soothing Liver Qi & Si Guan (Taichong).',
+  LR4:  'Perpendicular insertion 0.5–0.8 cun 1 cun anterior to medial malleolus. Jing-River (Metal) point.',
+  LR5:  'Subcutaneous insertion 0.5–0.8 cun 5 cun superior to medial malleolus on medial surface of tibia. Luo-Connecting point of Liver channel. Primary point for pudendal itching, plum-pit Qi & genital disorders (Ligou).',
+  LR6:  'Perpendicular insertion 0.8–1.0 cun 7 cun superior to medial malleolus on medial surface of tibia. Xi-Cleft point of Liver channel (Zhongdu).',
+  LR7:  'Perpendicular insertion 0.8–1.2 cun posterior and inferior to medial condyle of tibia.',
+  LR8:  'Perpendicular insertion 0.8–1.2 cun in depression anterior to insertion of semimembranosus and semitendinosus muscles when knee is flexed. He-Sea (Water, Mother) point. Primary point for nourishing Liver Yin & blood (Ququan).',
   LR9:  'Perpendicular insertion 1.0–1.5 cun 4 cun superior to medial epicondyle of femur.',
-  LR10: 'Perpendicular insertion 1.0–1.5 cun 3 cun inferior to ST30. CAUTION: Avoid femoral artery puncture.',
-  LR11: 'Perpendicular insertion 1.0–1.5 cun 2 cun inferior to ST30. CAUTION: Avoid femoral artery puncture.',
-  LR12: 'Oblique insertion 0.5–0.8 cun in pubic groove. CAUTION: Avoid femoral vessel puncture.',
-  LR13: 'Oblique or transverse insertion 0.5–0.8 cun at lower border of free end of 11th rib. Front-Mu of Spleen & Hui-Meeting of Zang/Solid Organs. CAUTION: Deep perpendicular insertion risks Liver (right) or Spleen (left) enlargement puncture.',
-  LR14: 'Oblique or transverse insertion 0.3–0.5 cun in 6th intercostal space directly below nipple. Front-Mu of Liver. CAUTION: Deep perpendicular insertion risks pneumothorax or liver/spleen injury.'
+  LR10: 'Perpendicular insertion 0.8–1.2 cun 3 cun inferior to ST30 on medial thigh.',
+  LR11: 'Perpendicular insertion 0.8–1.2 cun 2 cun inferior to ST30 on medial thigh.',
+  LR12: 'Perpendicular insertion 0.5–0.8 cun 1 cun inferior to ST30 in pubic region. CAUTION: Avoid femoral vein & artery.',
+  LR13: 'Perpendicular or oblique insertion 0.8–1.0 cun at lower border of free end of 11th rib. Front-Mu of Spleen & Hui-Meeting of Zang/Solid Organs. Primary point for Liver-Spleen disharmony, abdominal distension & diarrhea (Zhangmen). CAUTION: Deep perpendicular insertion risks liver (right) or spleen (left) enlargement puncture.',
+  LR14: 'Oblique or subcutaneous insertion 0.5–0.8 cun in 6th intercostal space on mammillary line. Front-Mu of Liver. Primary point for hypochondriac pain, Liver Qi stagnation & breast distension (Qimen). CAUTION: Deep perpendicular insertion risks pneumothorax or liver/spleen injury.'
 };
 
 // Board exam pearls & stars for LR channel key points
 const LR_EXAM_PEARLS = {
   LR1: {
     star: 1,
-    zh: '★ 大敦為井穴（木/本穴）。治疝氣與崩漏止血第一要穴（「大敦止崩止疝」）。淺刺0.1寸或點刺出血。',
-    en: '★ Dadun is the Jing-Well (Wood, Horary) point. Primary point for hernia and stopping uterine bleeding (menorrhagia). Subcutaneous 0.1 inch or bleed.'
+    zh: '★ 大敦為井穴（木/本穴）。止崩漏、疝氣與睪丸腫痛第一要穴。淺刺0.1寸或點刺出血。',
+    en: '★ Dadun is the Jing-Well (Wood, Horary) point. Primary point for uterine bleeding, hernia, and testicular swelling. Subcutaneous 0.1 inch or bleed.'
   },
   LR2: {
     star: 1,
-    zh: '★ 行間為滎穴（火/子穴）。瀉肝火第一要穴（治頭痛目赤、口苦脅痛、躁怒）。斜刺0.3-0.5寸。',
-    en: '★ Xingjian is the Ying-Spring (Fire, Child/Sedation) point. Primary point on the body for clearing Liver Fire (headache, red eyes, bitter taste). Oblique 0.3-0.5 inch.'
+    zh: '★ 行間為滎穴（火/子穴）。瀉肝火、清頭目、高血壓與痛經第一要穴（「瀉肝火尋行間」）。斜刺0.3-0.5寸。',
+    en: '★ Xingjian is the Ying-Spring (Fire, Child/Sedation) point. Primary point for draining Liver Fire, headache, hypertension, and dysmenorrhea. Oblique 0.3-0.5 inch.'
   },
   LR3: {
     star: 1,
-    zh: '★ 太衝為輸穴、原穴（土）。平肝息風、疏肝理氣第一要穴（配手陽明合谷LI4組成「四關穴」平肝安神止痛）。直刺0.5-1.0寸。',
-    en: '★ Taichong is the Shu-Stream, Yuan-Source (Earth) point. Primary point for extinguishing Liver Wind and moving Liver Qi; paired with LI4 as "Four Gates". Perpendicular 0.5-1.0 inch.'
+    zh: '★ 太衝為輸穴、原穴（土）。平肝息風、疏肝理氣與四關穴第一要穴（「四關穴：合谷+太衝」）。直刺0.5-1.0寸。',
+    en: '★ Taichong is the Shu-Stream, Yuan-Source point. Primary point on the body for pacifying Liver wind, soothing Liver Qi, and Four Gates (Hegu + Taichong). Perpendicular 0.5-1.0 inch.'
   },
   LR5: {
     star: 1,
-    zh: '★ 蠡溝為絡穴（通膽經）。生殖器、陰癢、梅核氣與泌尿第一要穴。平刺0.3-0.5寸。',
-    en: '★ Ligou is the Luo-Connecting point (connects to Gallbladder). Primary point for genital pruritus, plum-pit Qi, and leukorrhea. Transverse 0.3-0.5 inch.'
+    zh: '★ 蠡溝為絡穴（通膽經）。全身陰痛陰癢、梅核氣與生殖器病變第一要穴（「陰痛陰癢尋蠡溝」）。沿皮刺0.5-0.8寸。',
+    en: '★ Ligou is the Luo-Connecting point of Liver. Primary point for genital itching/pain, plum-pit Qi, and urogenital disorders. Subcutaneous 0.5-0.8 inch.'
   },
   LR8: {
     star: 1,
-    zh: '★ 曲泉為合穴（水/母穴）。滋陰養肝血、清下焦濕熱第一要穴（治陰癢、陰挺、膝痛）。直刺0.8-1.2寸。',
-    en: '★ Ququan is the He-Sea (Water, Mother) point. Primary point for nourishing Liver Yin/Blood and clearing lower jiao damp-heat. Perpendicular 0.8-1.2 inch.'
+    zh: '★ 曲泉為合穴（水/母穴）。滋陰養肝血、膝痛與清下焦濕熱要穴。直刺0.8-1.2寸。',
+    en: '★ Ququan is the He-Sea (Water, Mother) point. Primary point for nourishing Liver Yin/blood, knee joint pain, and clearing lower jiao damp-heat. Perpendicular 0.8-1.2 inch.'
   },
   LR13: {
     star: 1,
-    zh: '★ 章門為脾之募穴、八會穴之「臟會」。疏肝理脾、調和肝脾第一要穴（治腹脹、腹瀉、脾腫大）。斜刺或平刺0.5-0.8寸，避免深刺傷及肝脾。',
-    en: '★ Zhangmen is the Front-Mu point of Spleen and Hui-Meeting of Zang/Solid Organs. Primary point for harmonizing Liver & Spleen. Oblique/transverse 0.5-0.8 inch; avoid deep insertion.'
+    zh: '★ 章門為脾之募穴、八會穴之「臟會」。肝脾不和、腹脹腹瀉與臟病第一要穴（「臟會章門」）。直刺0.8-1.0寸，⚠️ 深刺避開肝脾。',
+    en: '★ Zhangmen is the Front-Mu point of Spleen and Hui-Meeting of Zang/Solid Organs. Primary point for Liver-Spleen disharmony, abdominal distension, and diarrhea. Perpendicular 0.8-1.0 inch.'
   },
   LR14: {
     star: 1,
-    zh: '★ 期門為肝之募穴。疏肝理氣、寬胸脅要穴（治胸脅痛、胸悶、乳癰）。斜刺或平刺0.3-0.5寸，嚴禁直刺深刺以免致氣胸或傷及肝脾。',
-    en: '★ Qimen is the Front-Mu point of Liver. Primary point for coursing Liver Qi, chest oppression, and mastitis. Oblique/transverse 0.3-0.5 inch; deep perpendicular insertion contraindicated.'
+    zh: '★ 期門為肝之募穴。疏肝理氣、脅肋痛與乳房脹痛第一要穴。斜刺0.5-0.8寸，⚠️ 嚴禁直刺深刺以免刺傷氣胸或肝脾。',
+    en: '★ Qimen is the Front-Mu point of Liver. Primary point for soothing Liver Qi, hypochondriac pain, and acute mastitis. Oblique 0.5-0.8 inch; ⚠️ deep perpendicular insertion contraindicated.'
   }
 };
 
 const LR_SPECIFIC_CAUTIONS = {
-  LR1:  { zh: '大趾甲角旁敏感部位，點刺出血或淺刺 0.1 寸。', en: 'Sensitive toenail location; prick to bleed or insert 0.1 cun.' },
-  LR2:  { zh: '趾縫部位，斜刺 0.3-0.5 寸。', en: 'Interdigital space; oblique insertion 0.3-0.5 cun.' },
-  LR3:  { zh: '第 1、2 跖骨間隙，避開足背動脈網。', en: '1st & 2nd metatarsal space; avoid dorsal pedis vessels.' },
-  LR4:  { zh: '內踝前凹陷處，避開大隱靜脈。', en: 'Anterior to medial malleolus; avoid great saphenous vein.' },
-  LR5:  { zh: '脛骨內側面，沿骨緣平刺 0.3-0.5 寸。', en: 'Medial surface of tibia; transverse 0.3-0.5 cun along bone.' },
-  LR6:  { zh: '脛骨內側面，沿骨緣平刺 0.3-0.5 寸。', en: 'Medial surface of tibia; transverse 0.3-0.5 cun along bone.' },
-  LR7:  { zh: '脛骨內側髁後下方，直刺 1.0-1.5 寸。', en: 'Posterior-inferior to medial tibial condyle; perpendicular 1.0-1.5 cun.' },
-  LR8:  { zh: '膝關節內側膕橫紋頭，避開大隱靜脈。', en: 'Medial end of popliteal crease; avoid great saphenous vein.' },
-  LR9:  { zh: '股內側，直刺 1.0-1.5 寸。', en: 'Medial thigh; perpendicular 1.0-1.5 cun.' },
-  LR10: { zh: '股內側，避開股動靜脈與股神經，直刺 1.0-1.5 寸。', en: 'Medial thigh; avoid femoral artery/vein/nerve.' },
-  LR11: { zh: '股內側，避開股動靜脈，直刺 1.0-1.5 寸。', en: 'Medial thigh; avoid femoral vessels.' },
-  LR12: { zh: '恥骨結節外下方，避開股動靜脈與精索，斜刺 0.5-0.8 寸。', en: 'Pubic groove; avoid femoral vessels and spermatic cord.' },
-  LR13: { zh: '第 11 肋游離端下方，斜刺或平刺 0.5-0.8 寸，嚴禁直刺深刺以免刺傷肝臟（右）或脾臟（左）。', en: '11th rib free end; transverse/oblique 0.5-0.8 cun. Deep perpendicular insertion contraindicated (liver/spleen risk).' },
-  LR14: { zh: '乳頭直下第 6 肋間隙，斜刺或平刺 0.3-0.5 寸，嚴禁直刺深刺以免致氣胸或傷及肝脾。', en: '6th intercostal space; transverse/oblique 0.3-0.5 cun. Deep perpendicular insertion contraindicated (pneumothorax/organ risk).' }
+  LR1:  { zh: '大趾外側趾甲角旁 0.1 寸，點刺出血或淺刺 0.1 寸。', en: 'Lateral side of big toenail corner; prick to bleed or 0.1 cun.' },
+  LR2:  { zh: '第 1、2 趾縫間，斜刺 0.3-0.5 寸。', en: 'Web space between 1st & 2nd toes; oblique 0.3-0.5 cun.' },
+  LR3:  { zh: '第 1、2 跖骨結合部前方凹陷處，直刺 0.5-1.0 寸。', en: 'Distal to junction of 1st & 2nd metatarsals; perpendicular 0.5-1.0 cun.' },
+  LR4:  { zh: '內踝前 1 寸，直刺 0.5-0.8 寸。', en: '1 cun anterior to medial malleolus; perpendicular 0.5-0.8 cun.' },
+  LR5:  { zh: '內踝尖上 5 寸脛骨內側面上，沿皮刺 0.5-0.8 寸。', en: '5 cun above medial malleolus; subcutaneous 0.5-0.8 cun.' },
+  LR6:  { zh: '內踝尖上 7 寸脛骨內側面上，直刺 0.8-1.0 寸。', en: '7 cun above medial malleolus; perpendicular 0.8-1.0 cun.' },
+  LR7:  { zh: '脛骨內側髁後下方，直刺 0.8-1.2 寸。', en: 'Posterior-inferior to medial tibial condyle; perpendicular 0.8-1.2 cun.' },
+  LR8:  { zh: '屈膝膝內側橫紋頭上方凹陷處，直刺 0.8-1.2 寸。', en: 'Medial popliteal crease depression; perpendicular 0.8-1.2 cun.' },
+  LR9:  { zh: '股骨內上髁上 4 寸，直刺 1.0-1.5 寸。', en: '4 cun above medial femoral epicondyle; perpendicular 1.0-1.5 cun.' },
+  LR10: { zh: '氣衝穴下 3 寸，直刺 0.8-1.2 寸。', en: '3 cun below ST30; perpendicular 0.8-1.2 cun.' },
+  LR11: { zh: '氣衝穴下 2 寸，直刺 0.8-1.2 寸。', en: '2 cun below ST30; perpendicular 0.8-1.2 cun.' },
+  LR12: { zh: '恥骨結節外下方，直刺 0.5-0.8 寸。⚠️ 避開股靜脈與股動脈。', en: 'Inferior to pubic tubercle; perpendicular 0.5-0.8 cun. ⚠️ Avoid femoral vessels.' },
+  LR13: { zh: '第 11 肋游離端下緣，直刺 0.8-1.0 寸。⚠️ 深刺避開肝臟（右）或脾臟（左）。', en: 'Lower border of 11th rib end; perpendicular 0.8-1.0 cun. ⚠️ Avoid liver/spleen puncture.' },
+  LR14: { zh: '第 6 肋間隙乳頭直下，斜刺 0.5-0.8 寸。⚠️ 嚴禁直刺深刺以免刺傷肺臟致氣胸或傷及肝脾。', en: '6th intercostal space; oblique 0.5-0.8 cun. ⚠️ Deep perpendicular insertion contraindicated (pneumothorax/liver risk).' }
 };
 
 const DISEASE_CAT_RE = /頭面五官|系統疾病|系統病|五官疾病|婦科疾病|精神神志/;
@@ -214,7 +214,7 @@ data.forEach(point => {
 });
 
 console.log(`\n${APPLY ? '✅ APPLIED' : '🔍 DRY RUN'} — ${changes.length} change(s) across LR channel:\n`);
-changes.forEach(c => {
+changes.slice(0, 30).forEach(c => {
   console.log(`  [${c.code}] ${c.field}`);
   console.log(`    FROM: ${JSON.stringify(c.from)}`);
   console.log(`    TO:   ${JSON.stringify(c.to)}\n`);
