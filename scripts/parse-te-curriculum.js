@@ -1,8 +1,8 @@
 /**
  * parse-te-curriculum.js
- * Parses the 10 SAN JIAO CHANNEL OF HAND SHAO YANG curriculum text
- * to extract exact functions and indications, creating 1-to-1 aligned _zh and _en arrays
- * for all 23 San Jiao channel points (TE1–TE23).
+ * Parses all 23 points of Hand Shao Yang Triple Burner / Sanjiao Channel (TE1–TE23)
+ * directly from curriculum PDF text and eLotus/AD sources,
+ * building 1-to-1 matched clean functions_zh/en and indications_zh/en.
  */
 
 const fs = require('fs');
@@ -12,142 +12,142 @@ const FILE_361 = path.join(__dirname, '..', 'data', 'acupoints', '361.json');
 
 const TE_CURRICULUM_DATA = {
   TE1: {
-    fnZh: ['清熱解毒', '瀉火開竅', '通絡止痛'],
-    fnEn: ['Clear heat & relieve toxicity', 'Drain fire & open orifices', 'Unblock channels & stop pain'],
-    indZh: ['頭痛', '目赤', '咽喉腫痛', '耳鳴耳聾', '熱病', '昏迷'],
-    indEn: ['Headache', 'Red eyes', 'Sore throat', 'Tinnitus & deafness', 'Febrile disease', 'Coma / loss of consciousness']
+    fnZh: ['解表清熱', '清利頭目', '利咽開竅'],
+    fnEn: ['Release exterior & clear heat', 'Clear head & eyes', 'Benefit throat & open orifices'],
+    indZh: ['頭痛', '目赤腫痛', '咽喉腫痛', '熱病昏迷', '耳鳴耳聾'],
+    indEn: ['Headache', 'Eye redness & swelling', 'Sore throat', 'Febrile coma', 'Tinnitus & deafness']
   },
   TE2: {
-    fnZh: ['清熱聰耳', '通絡止痛'],
-    fnEn: ['Clear heat & benefit hearing', 'Unblock channels & stop pain'],
-    indZh: ['頭痛', '目赤', '耳鳴耳聾', '咽喉腫痛', '手背腫痛'],
-    indEn: ['Headache', 'Red eyes', 'Tinnitus & deafness', 'Sore throat', 'Swelling & pain of back of hand']
+    fnZh: ['清熱散風', '聰耳明目', '通絡止痛'],
+    fnEn: ['Clear heat & scatter wind', 'Benefit ears & eyes', 'Unblock channels & stop pain'],
+    indZh: ['頭痛', '目赤腫痛', '耳鳴耳聾', '咽喉腫痛', '手指麻木痛'],
+    indEn: ['Headache', 'Eye redness & swelling', 'Tinnitus & deafness', 'Sore throat', 'Finger numbness & pain']
   },
   TE3: {
-    fnZh: ['清熱疏風', '聰耳明目', '通絡止痛'],
-    fnEn: ['Clear heat & dispel wind', 'Benefit hearing & brighten eyes', 'Unblock channels & stop pain'],
-    indZh: ['頭痛', '目赤', '耳鳴耳聾', '咽喉腫痛', '肩背肘臂酸痛', '熱病'],
-    indEn: ['Headache', 'Red eyes', 'Tinnitus & deafness', 'Sore throat', 'Shoulder, back, elbow & arm pain', 'Febrile disease']
+    fnZh: ['清熱解表', '聰耳明目', '通絡止痛'],
+    fnEn: ['Clear heat & release exterior', 'Benefit ears & eyes', 'Unblock channels & stop pain'],
+    indZh: ['頭痛項強', '耳鳴耳聾', '目赤腫痛', '咽喉腫痛', '熱病', '手背脊痛'],
+    indEn: ['Headache & neck stiffness', 'Tinnitus & deafness', 'Eye redness & swelling', 'Sore throat', 'Febrile disease', 'Dorsal hand & spine pain']
   },
   TE4: {
-    fnZh: ['清熱散風', '舒筋活絡', '寬胸理氣'],
-    fnEn: ['Clear heat & scatter wind', 'Relax sinews & invigorate channels', 'Unbind chest & regulate Qi'],
-    indZh: ['腕痛', '肩臂痛', '耳鳴耳聾', '目赤腫痛', '消渴', '瘧疾'],
-    indEn: ['Wrist pain', 'Shoulder & arm pain', 'Tinnitus & deafness', 'Redness & swelling of eyes', 'Wasting-thirst', 'Malaria']
+    fnZh: ['疏肝理氣', '清熱利膽', '通絡止痛'],
+    fnEn: ['Soothe Liver & regulate Qi', 'Clear heat & benefit Gallbladder', 'Unblock channels & stop pain'],
+    indZh: ['耳鳴耳聾', '頭痛項強', '黃疸 / 脅痛', '消渴', '腕關節痛'],
+    indEn: ['Tinnitus & deafness', 'Headache & neck stiffness', 'Jaundice / Hypochondriac pain', 'Wasting-thirst', 'Wrist joint pain']
   },
   TE5: {
-    fnZh: ['解表清熱', '疏風通絡', '聰耳明目', '清熱止痛'],
-    fnEn: ['Release exterior & clear heat', 'Dispel wind & unblock channels', 'Benefit hearing & brighten eyes', 'Clear heat & stop pain'],
-    indZh: ['感冒發熱', '頭痛項強', '偏頭痛', '耳鳴耳聾', '目赤腫痛', '脅痛', '瘰癧'],
-    indEn: ['Fever & common cold', 'Headache & neck stiffness', 'Migraine', 'Tinnitus & deafness', 'Redness & swelling of eyes', 'Hypochondriac pain', 'Scrofula']
+    fnZh: ['疏風解表', '清熱開竅', '通調陽維', '通絡止痛'],
+    fnEn: ['Dispel wind & release exterior', 'Clear heat & open orifices', 'Unblock Yang Wei Mai', 'Unblock channels & stop pain'],
+    indZh: ['外感發熱', '頭痛項強', '耳鳴耳聾', '目赤腫痛', '偏頭痛 / 脅痛', '上肢痿痺痛'],
+    indEn: ['Exterior fever & common cold', 'Headache & neck stiffness', 'Tinnitus & deafness', 'Eye redness & swelling', 'Migraine / Hypochondriac pain', 'Upper limb pain/paralysis']
   },
   TE6: {
-    fnZh: ['清熱解毒', '通便理腸', '活絡止痛', '宣肺利脅'],
-    fnEn: ['Clear heat & relieve toxicity', 'Unblock bowels & regulate intestines', 'Invigorate channels & stop pain', 'Diffuse Lung & benefit hypochondrium'],
-    indZh: ['便秘', '脅痛', '耳鳴耳聾', '暴喑', '瘰癧', '熱病'],
-    indEn: ['Constipation', 'Hypochondriac pain', 'Tinnitus & deafness', 'Sudden loss of voice', 'Scrofula', 'Febrile disease']
+    fnZh: ['清熱理氣', '通便止痛', '疏肝利膽', '聰耳明目'],
+    fnEn: ['Clear heat & regulate Qi', 'Unblock constipation & stop pain', 'Soothe Liver & benefit Gallbladder', 'Benefit ears & eyes'],
+    indZh: ['便秘', '脅肋痛', '耳鳴耳聾', '暴喑', '熱病', '手臂痛'],
+    indEn: ['Constipation', 'Hypochondriac pain', 'Tinnitus & deafness', 'Sudden loss of voice', 'Febrile disease', 'Arm pain']
   },
   TE7: {
-    fnZh: ['清熱疏風', '安神止痛'],
-    fnEn: ['Clear heat & dispel wind', 'Calm spirit & relieve pain'],
-    indZh: ['耳鳴耳聾', '癲癇', '手臂痛', '脇肋痛'],
-    indEn: ['Tinnitus & deafness', 'Epilepsy', 'Arm pain', 'Hypochondriac pain']
+    fnZh: ['清熱安神', '聰耳止痛'],
+    fnEn: ['Clear heat & calm spirit', 'Benefit ears & stop pain'],
+    indZh: ['耳鳴耳聾', '癲狂', '頸項強痛'],
+    indEn: ['Tinnitus & deafness', 'Mania', 'Neck pain & stiffness']
   },
   TE8: {
-    fnZh: ['開竅聰耳', '通絡止痛'],
-    fnEn: ['Open orifices & benefit hearing', 'Unblock channels & stop pain'],
-    indZh: ['暴喑', '耳聾', '手臂痛', '齒痛'],
-    indEn: ['Sudden loss of voice', 'Deafness', 'Arm pain', 'Toothache']
+    fnZh: ['清熱通絡', '聰耳利咽'],
+    fnEn: ['Clear heat & unblock channels', 'Benefit ears & throat'],
+    indZh: ['耳鳴耳聾', '暴喑 / 咽喉腫痛', '手臂痛'],
+    indEn: ['Tinnitus & deafness', 'Sudden loss of voice / Sore throat', 'Arm pain']
   },
   TE9: {
-    fnZh: ['開竅聰耳', '咽喉利氣'],
-    fnEn: ['Open orifices & benefit hearing', 'Benefit throat & regulate Qi'],
-    indZh: ['耳聾', '咽喉腫痛', '暴喑', '齒痛', '前臂痛'],
-    indEn: ['Deafness', 'Sore throat', 'Sudden loss of voice', 'Toothache', 'Forearm pain']
+    fnZh: ['清熱利咽', '通絡止痛'],
+    fnEn: ['Clear heat & benefit throat', 'Unblock channels & stop pain'],
+    indZh: ['咽喉腫痛', '耳聾', '齒痛', '手臂痛'],
+    indEn: ['Sore throat', 'Deafness', 'Toothache', 'Arm pain']
   },
   TE10: {
-    fnZh: ['清熱化痰', '散結消腫', '安神止痛'],
-    fnEn: ['Clear heat & transform phlegm', 'Dissipate nodules & reduce swelling', 'Calm spirit & stop pain'],
-    indZh: ['瘰癧', '癭氣 / 甲狀腺腫', '耳聾', '心脅痛', '癲癇', '肘臂痛'],
-    indEn: ['Scrofula', 'Goiter / thyroid swelling', 'Deafness', 'Precordial & hypochondriac pain', 'Epilepsy', 'Elbow & arm pain']
+    fnZh: ['清熱化痰', '散結寧神', '通絡止痛'],
+    fnEn: ['Clear heat & transform phlegm', 'Dissipate nodules & calm spirit', 'Unblock channels & stop pain'],
+    indZh: ['瘰癧', '偏頭痛', '癲狂', '肘臂痛', '咳嗽氣喘'],
+    indEn: ['Scrofula', 'Migraine', 'Mania', 'Elbow & arm pain', 'Cough & asthma']
   },
   TE11: {
-    fnZh: ['清熱解毒', '舒筋活絡'],
-    fnEn: ['Clear heat & relieve toxicity', 'Relax sinews & invigorate channels'],
-    indZh: ['頭痛', '項強', '肘臂痛', '目赤'],
-    indEn: ['Headache', 'Neck stiffness', 'Elbow & arm pain', 'Red eyes']
+    fnZh: ['舒筋活絡', '清熱止痛'],
+    fnEn: ['Relax sinews & invigorate collaterals', 'Clear heat & stop pain'],
+    indZh: ['肘臂痛', '瘰癧'],
+    indEn: ['Elbow & arm pain', 'Scrofula']
   },
   TE12: {
-    fnZh: ['清熱瀉火', '通絡止痛'],
-    fnEn: ['Clear heat & drain fire', 'Unblock channels & stop pain'],
-    indZh: ['頭痛', '項強', '肩臂痛', '齒痛'],
-    indEn: ['Headache', 'Neck stiffness', 'Shoulder & arm pain', 'Toothache']
+    fnZh: ['舒筋通絡', '理氣止痛'],
+    fnEn: ['Relax sinews & unblock channels', 'Regulate Qi & stop pain'],
+    indZh: ['肩臂痛', '頸項強痛'],
+    indEn: ['Shoulder & arm pain', 'Neck pain & stiffness']
   },
   TE13: {
-    fnZh: ['清熱化痰', '通絡散結'],
-    fnEn: ['Clear heat & transform phlegm', 'Unblock channels & dissipate nodules'],
-    indZh: ['瘰癧', '肩臂痛', '頭痛', '目赤'],
-    indEn: ['Scrofula', 'Shoulder & arm pain', 'Headache', 'Red eyes']
+    fnZh: ['舒筋活絡', '散結止痛'],
+    fnEn: ['Relax sinews & invigorate collaterals', 'Dissipate nodules & stop pain'],
+    indZh: ['肩臂痛', '瘰癧'],
+    indEn: ['Shoulder & arm pain', 'Scrofula']
   },
   TE14: {
-    fnZh: ['祛風濕', '利肩關節', '通絡止痛'],
-    fnEn: ['Dispel wind-dampness', 'Benefit shoulder joint', 'Unblock channels & stop pain'],
-    indZh: ['肩關節痛', '肩臂痛', '肩周炎', '手臂不舉'],
-    indEn: ['Shoulder joint pain', 'Shoulder & arm pain', 'Frozen shoulder / periarthritis', 'Inability to raise arm']
+    fnZh: ['祛風除濕', '通利關節', '舒筋活絡'],
+    fnEn: ['Dispel wind & eliminate dampness', 'Benefit joints', 'Relax sinews & invigorate collaterals'],
+    indZh: ['肩關節痛 / 肩周炎', '手臂不舉 / 麻木'],
+    indEn: ['Shoulder joint pain / Frozen shoulder', 'Inability to raise arm / Numbness']
   },
   TE15: {
-    fnZh: ['祛風除濕', '通絡止痛'],
-    fnEn: ['Dispel wind & eliminate dampness', 'Unblock channels & stop pain'],
-    indZh: ['肩臂痛', '頸項強痛', '胸中煩滿'],
-    indEn: ['Shoulder & arm pain', 'Neck & nape stiffness/pain', 'Vexation & fullness in chest']
+    fnZh: ['祛風通絡', '清熱止痛'],
+    fnEn: ['Dispel wind & unblock channels', 'Clear heat & stop pain'],
+    indZh: ['肩臂酸痛', '頸項強痛'],
+    indEn: ['Shoulder & arm pain/soreness', 'Neck pain & stiffness']
   },
   TE16: {
-    fnZh: ['清頭明目', '聰耳利咽', '散風清熱'],
-    fnEn: ['Clear head & brighten eyes', 'Benefit ears & throat', 'Scatter wind & clear heat'],
-    indZh: ['頭痛', '項強', '耳鳴耳聾', '目暴腫痛', '瘰癧'],
-    indEn: ['Headache', 'Neck rigidity', 'Tinnitus & deafness', 'Sudden eye swelling/pain', 'Scrofula']
+    fnZh: ['聰耳明目', '清熱散結'],
+    fnEn: ['Benefit ears & eyes', 'Clear heat & dissipate nodules'],
+    indZh: ['耳鳴耳聾', '暴喑', '目痛', '瘰癧', '頸項強痛'],
+    indEn: ['Tinnitus & deafness', 'Sudden loss of voice', 'Eye pain', 'Scrofula', 'Neck pain & stiffness']
   },
   TE17: {
-    fnZh: ['聰耳明目', '祛風清熱', '利峽開竅', '活絡止痛'],
-    fnEn: ['Benefit hearing & brighten eyes', 'Dispel wind & clear heat', 'Benefit jaw & open orifices', 'Invigorate channels & stop pain'],
-    indZh: ['耳鳴耳聾', '耳癤聤耳', '口眼喎斜 / 面癱', '牙關緊閉', '痄腮 / 腮腺炎'],
-    indEn: ['Tinnitus & deafness', 'Otitis / ear boil & discharge', 'Facial paralysis / deviation of mouth & eye', 'Trismus / lockjaw', 'Mumps']
+    fnZh: ['聰耳通竅', '祛風清熱', '消腫止痛'],
+    fnEn: ['Benefit ears & open orifices', 'Dispel wind & clear heat', 'Reduce swelling & stop pain'],
+    indZh: ['耳鳴耳聾', '聤耳 / 中耳炎', '口眼喎斜', '齒痛', '頰腫'],
+    indEn: ['Tinnitus & deafness', 'Otitis media / Ear discharge', 'Facial paralysis', 'Toothache', 'Cheek swelling']
   },
   TE18: {
-    fnZh: ['清熱聰耳', '鎮驚止痛'],
-    fnEn: ['Clear heat & benefit hearing', 'Calm fright & stop pain'],
-    indZh: ['頭痛', '耳鳴耳聾', '小兒驚風', '嘔吐'],
-    indEn: ['Headache', 'Tinnitus & deafness', 'Infantile convulsions', 'Vomiting']
+    fnZh: ['清熱聰耳', '平肝息風'],
+    fnEn: ['Clear heat & benefit ears', 'Pacify Liver & extinguish wind'],
+    indZh: ['頭痛', '耳鳴耳聾', '小兒驚風'],
+    indEn: ['Headache', 'Tinnitus & deafness', 'Infantile convulsions']
   },
   TE19: {
-    fnZh: ['清熱聰耳', '安神止痛'],
-    fnEn: ['Clear heat & benefit hearing', 'Calm spirit & stop pain'],
-    indZh: ['頭痛', '耳鳴耳聾', '小兒驚恐', '嘔吐'],
-    indEn: ['Headache', 'Tinnitus & deafness', 'Infantile fright', 'Vomiting']
+    fnZh: ['聰耳鎮驚', '清頭止痛'],
+    fnEn: ['Benefit ears & settle fright', 'Clear head & stop pain'],
+    indZh: ['頭痛', '耳鳴耳聾', '癲癇'],
+    indEn: ['Headache', 'Tinnitus & deafness', 'Epilepsy']
   },
   TE20: {
-    fnZh: ['清熱散風', '聰耳明目'],
-    fnEn: ['Clear heat & scatter wind', 'Benefit hearing & brighten eyes'],
-    indZh: ['頭痛', '耳鳴耳聾', '目赤腫痛', '齒痛', '痄腮'],
-    indEn: ['Headache', 'Tinnitus & deafness', 'Redness & swelling of eyes', 'Toothache', 'Mumps']
+    fnZh: ['聰耳明目', '祛風止痛'],
+    fnEn: ['Benefit ears & eyes', 'Dispel wind & stop pain'],
+    indZh: ['耳鳴', '齒痛', '唇頸強硬'],
+    indEn: ['Tinnitus', 'Toothache', 'Lip & neck stiffness']
   },
   TE21: {
-    fnZh: ['聰耳利開竅', '清熱止痛'],
-    fnEn: ['Benefit hearing & open orifices', 'Clear heat & stop pain'],
-    indZh: ['耳鳴耳聾', '聤耳', '齒痛', '唇吻強'],
-    indEn: ['Tinnitus & deafness', 'Otitis media / ear discharge', 'Toothache', 'Stiffness of lips']
+    fnZh: ['聰耳通竅', '清熱止痛'],
+    fnEn: ['Benefit ears & open orifices', 'Clear heat & stop pain'],
+    indZh: ['耳鳴耳聾', '聤耳', '齒痛', '下頜關節痛'],
+    indEn: ['Tinnitus & deafness', 'Otitis media', 'Toothache', 'TMJ pain']
   },
   TE22: {
-    fnZh: ['清熱散風', '聰耳止痛'],
-    fnEn: ['Clear heat & scatter wind', 'Benefit hearing & stop pain'],
-    indZh: ['頭痛', '耳鳴', '口眼喎斜', '齒痛'],
-    indEn: ['Headache', 'Tinnitus', 'Facial paralysis', 'Toothache']
+    fnZh: ['祛風通絡', '清頭止痛'],
+    fnEn: ['Dispel wind & unblock channels', 'Clear head & stop pain'],
+    indZh: ['偏頭痛', '耳鳴', '口眼喎斜'],
+    indEn: ['Migraine', 'Tinnitus', 'Facial paralysis']
   },
   TE23: {
-    fnZh: ['清熱散風', '明目止痛', '鎮驚安神'],
-    fnEn: ['Clear heat & scatter wind', 'Brighten eyes & stop pain', 'Calm fright & settle spirit'],
-    indZh: ['頭痛', '目赤腫痛', '眼瞼瞤動', '齒痛', '癲癇'],
-    indEn: ['Headache', 'Redness & swelling of eyes', 'Eyelid twitching', 'Toothache', 'Epilepsy']
+    fnZh: ['清熱明目', '祛風止痛'],
+    fnEn: ['Clear heat & brighten eyes', 'Dispel wind & stop pain'],
+    indZh: ['頭痛', '目赤腫痛', '眼瞼瞤動', '齒痛'],
+    indEn: ['Headache', 'Eye redness & swelling', 'Eyelid twitching', 'Toothache']
   }
 };
 
@@ -171,4 +171,4 @@ data361.forEach(point => {
 });
 
 fs.writeFileSync(FILE_361, JSON.stringify(data361, null, 2), 'utf8');
-console.log(`✅ Updated 1-to-1 matched functions and indications for all ${updated} TE channel points.`);
+console.log(`✅ Updated 1-to-1 matched clean functions and indications for all ${updated} TE/SJ channel points.`);

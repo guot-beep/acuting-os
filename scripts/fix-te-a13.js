@@ -1,6 +1,6 @@
 /**
  * fix-te-a13.js
- * Cleans remaining A13 disease category tags for TE channel points.
+ * Cleans remaining A13 disease category tags for TE channel points in both Chinese and English.
  */
 
 const fs = require('fs');
@@ -8,61 +8,32 @@ const path = require('path');
 const FILE = path.join(__dirname, '..', 'data', 'acupoints', '361.json');
 const db = JSON.parse(fs.readFileSync(FILE, 'utf8'));
 
-const TRANSLATIONS = {
-  '頭面五官疾病': 'Head, face & ENT disorders',
-  '呼吸系統疾病': 'Respiratory system disorders',
-  '神經系統疾病': 'Nervous system disorders',
-  '消化系統疾病': 'Digestive system disorders',
-  '精神神志疾病': 'Mental & emotional disorders'
-};
-
-const DISEASE_CAT_RE = /系統疾病|系統病|五官疾病|婦科疾病|精神神志疾病/;
+const DISEASE_CAT_RE_ZH = /頭面五官|系統疾病|系統病|五官疾病|婦科疾病|精神神志/;
+const DISEASE_CAT_RE_EN = /Head, Face & Sensory|Disorders|System/i;
 
 db.forEach(point => {
   if (!/^TE([1-9]|1[0-9]|2[0-3])$/.test(point.code)) return;
 
   if (Array.isArray(point.action_tags_zh) && Array.isArray(point.action_tags_en)) {
-    const newZh = [];
-    const newEn = [];
-    const movedZh = [];
-    const movedEn = [];
+    const cleanZh = [];
+    const cleanEn = [];
 
     for (let i = 0; i < point.action_tags_zh.length; i++) {
-      const zh = point.action_tags_zh[i];
-      const en = point.action_tags_en[i];
-      if (DISEASE_CAT_RE.test(zh)) {
-        movedZh.push(zh);
-        movedEn.push(en && !/[\u4e00-\u9fa5]/.test(en) ? en : (TRANSLATIONS[zh] || 'Systemic disorder'));
-      } else {
-        newZh.push(zh);
-        if (en) newEn.push(en);
+      const tagZh = point.action_tags_zh[i];
+      const tagEn = point.action_tags_en[i];
+
+      if (!DISEASE_CAT_RE_ZH.test(tagZh) && (!tagEn || !DISEASE_CAT_RE_EN.test(tagEn))) {
+        cleanZh.push(tagZh);
+        if (tagEn) cleanEn.push(tagEn);
       }
     }
 
-    point.action_tags_zh = newZh;
-    point.action_tags_en = newEn;
-    point.acu_tags = newZh;
-    point.action_tags = newEn;
-
-    if (!Array.isArray(point.disease_tags_zh)) point.disease_tags_zh = [];
-    if (!Array.isArray(point.disease_tags_en)) point.disease_tags_en = [];
-
-    movedZh.forEach((dz, idx2) => {
-      if (!point.disease_tags_zh.includes(dz)) {
-        point.disease_tags_zh.push(dz);
-        point.disease_tags_en.push(movedEn[idx2] || TRANSLATIONS[dz] || 'Systemic disorder');
-      }
-    });
-  }
-
-  if (Array.isArray(point.disease_tags_zh) && Array.isArray(point.disease_tags_en)) {
-    point.disease_tags_en = point.disease_tags_zh.map((zh, idx) => {
-      const en = point.disease_tags_en[idx];
-      if (en && !/[\u4e00-\u9fa5]/.test(en)) return en;
-      return TRANSLATIONS[zh] || 'Systemic disorder';
-    });
+    point.action_tags_zh = cleanZh;
+    point.action_tags_en = cleanEn;
+    point.acu_tags = cleanZh;
+    point.action_tags = cleanEn;
   }
 });
 
 fs.writeFileSync(FILE, JSON.stringify(db, null, 2), 'utf8');
-console.log('✅ Cleaned remaining A13 tags for TE channel.');
+console.log('✅ Cleaned remaining A13 tags (ZH & EN) for TE channel.');

@@ -1,10 +1,10 @@
 /**
  * refine-te-channel.js
- * Refines San Jiao Channel (手少陽三焦經 TE1–TE23):
+ * Refines Triple Burner Channel (手少陽三焦經 TE1–TE23):
  *   1. acumethod_en: Per-point specific anatomical depth, angle, and safety precautions.
- *   2. functions_en & indications_en: Aligned length-matched arrays to _zh, sourced from course PDF & eLotus.
+ *   2. functions_en & indications_en: Aligned length-matched clean arrays to _zh, sourced from course PDF & eLotus.
  *   3. action_tags_zh & action_tags_en: Remove A13 disease system categories in 1-to-1 parallel alignment.
- *   4. point_identity_zh & point_identity_en: Five-Shu, Yuan, Luo, Xi, Confluent, Window of Sky, etc.
+ *   4. point_identity_zh & point_identity_en: Jing-Well, Ying-Spring, Shu-Stream, Yuan-Source, Luo-Connecting, Xi-Cleft, He-Sea, Confluent of Yang Wei Mai, Window of Sky, etc.
  *   5. exam_star & exam_pearl / exam_pearl_en for key board exam points.
  *   6. field_sources & review_status = "draft".
  *
@@ -21,102 +21,102 @@ const APPLY = process.argv.includes('--apply');
 
 // Key needle methods and safety notes for TE channel (TE1–TE23)
 const TE_NEEDLING_EN = {
-  TE1:  'Subcutaneous insertion 0.1 cun at ulnar side of ring finger tip, or prick to bleed. Jing-Well (Metal) point.',
-  TE2:  'Oblique insertion 0.3–0.5 cun toward palm. Ying-Spring (Water) point.',
-  TE3:  'Perpendicular or oblique insertion 0.5–1.0 cun in depression proximal to 4th & 5th metacarpal heads. Shu-Stream (Wood, Mother) point. Primary point for ear disorders & hand pain.',
-  TE4:  'Perpendicular insertion 0.3–0.5 cun in wrist joint depression. Yuan-Source point of San Jiao.',
-  TE5:  'Perpendicular insertion 0.5–1.0 cun between radius and ulna, 2 cun proximal to wrist crease. Luo-Connecting & Confluent point of Yang Wei Mai. Paired with GB41 for Shao Yang headache & eye disorders.',
-  TE6:  'Perpendicular insertion 0.8–1.0 cun between radius and ulna, 3 cun proximal to wrist crease. Jing-River (Fire, Horary) point. Primary point for constipation & hypochondriac pain (Zhigou).',
-  TE7:  'Perpendicular insertion 0.5–1.0 cun on radial border of ulna. Xi-Cleft point of San Jiao channel.',
-  TE8:  'Perpendicular insertion 0.5–1.0 cun 4 cun proximal to wrist crease.',
-  TE9:  'Perpendicular insertion 0.5–1.0 cun 5 cun distal to olecranon.',
-  TE10: 'Perpendicular insertion 0.5–1.0 cun in depression 1 cun superior to olecranon. He-Sea (Earth, Son/Sedation) point. Key point for transforming phlegm & nodules (Tianjing).',
-  TE11: 'Perpendicular insertion 0.5–1.0 cun 2 cun superior to olecranon.',
-  TE12: 'Perpendicular insertion 0.7–1.0 cun.',
-  TE13: 'Perpendicular insertion 0.7–1.0 cun on posterior border of deltoid.',
-  TE14: 'Perpendicular or oblique downward insertion 0.8–1.5 cun in depression posterior and inferior to acromion. Key point for shoulder joint periarthritis.',
-  TE15: 'Perpendicular insertion 0.5–0.8 cun in midpoint between GB21 and SI13. CAUTION: Deep perpendicular insertion risks pneumothorax.',
-  TE16: 'Perpendicular insertion 0.5–0.8 cun posterior to mastoid process. Window of Sky point (Tianyou).',
-  TE17: 'Perpendicular insertion 0.5–1.0 cun behind ear lobe in depression between mastoid process and mandible. Primary point for facial paralysis, tinnitus & otitis. CAUTION: Avoid deep anterior direction toward internal carotid/jugular vessels.',
-  TE18: 'Subcutaneous insertion 0.1–0.3 cun along curve of ear, or prick to bleed.',
-  TE19: 'Subcutaneous insertion 0.1–0.3 cun along curve of ear.',
-  TE20: 'Subcutaneous insertion 0.3–0.5 cun directly above ear apex.',
-  TE21: 'Perpendicular insertion 0.5–1.0 cun in depression anterior to supra-tragic notch with mouth open. Primary ear point.',
-  TE22: 'Subcutaneous insertion 0.3–0.5 cun anterior to ear helix root. CAUTION: Avoid superficial temporal artery.',
-  TE23: 'Subcutaneous insertion 0.3–0.5 cun laterally along eyebrow. CAUTION: MOXIBUSTION IS CONTRAINDICATED.'
+  TE1:  'Subcutaneous insertion 0.1 cun at ulnar side of ring fingernail corner, or prick to bleed. Jing-Well (Metal, Horary) point. Primary point for acute sore throat, fever & earache (Guanchong).',
+  TE2:  'Perpendicular insertion 0.2–0.3 cun in web space between ring & little fingers. Ying-Spring (Water, Child/Sedation) point (Yemen). Primary point for earache & toothache.',
+  TE3:  'Perpendicular insertion 0.5–0.8 cun in depression proximal to 4th metacarpophalangeal joint between 4th & 5th metacarpal bones. Shu-Stream (Wood, Mother) point (Zhongzhu). Primary point for temporal headache, tinnitus & deafness.',
+  TE4:  'Perpendicular insertion 0.3–0.5 cun in wrist crease depression between tendons of extensor digitorum communis and extensor digiti minimi. Yuan-Source point of Triple Burner channel (Yangchi).',
+  TE5:  'Perpendicular or oblique insertion 0.5–1.0 cun 2 cun proximal to wrist crease between radius & ulna. Luo-Connecting point & Confluent point of Yang Wei Mai. Primary point on the body for common cold, fever, migraine, tinnitus & frozen shoulder (Waiguan).',
+  TE6:  'Perpendicular insertion 0.8–1.0 cun 3 cun proximal to wrist crease between radius & ulna. Primary point on the body for constipation, hypochondriac pain & sudden loss of voice (Zhigou).',
+  TE7:  'Perpendicular insertion 0.5–0.8 cun 3 cun proximal to wrist crease level with TE6 on ulnar side of EDC tendon. Xi-Cleft point of Triple Burner channel (Huizong).',
+  TE8:  'Perpendicular insertion 0.8–1.0 cun 4 cun proximal to wrist crease between radius & ulna.',
+  TE9:  'Perpendicular insertion 0.8–1.2 cun 5 cun distal to olecranon of ulna.',
+  TE10: 'Perpendicular insertion 0.5–0.8 cun 1 cun superior to olecranon in depression when elbow is flexed. He-Sea (Earth) point. Primary point for scrofula, migraine & elbow pain (Tianjing).',
+  TE11: 'Perpendicular insertion 0.5–0.8 cun 1 cun superior to TE10.',
+  TE12: 'Perpendicular or oblique insertion 0.5–0.8 cun midway between olecranon & TE14.',
+  TE13: 'Perpendicular or oblique insertion 0.8–1.2 cun on posterior border of deltoid muscle level with TE14.',
+  TE14: 'Perpendicular or oblique downward insertion 0.8–1.5 cun in depression posterior and inferior to acromion when arm is abducted. Primary point for shoulder joint pain & frozen shoulder (Jianliao).',
+  TE15: 'Perpendicular or oblique insertion 0.5–0.8 cun midway between GB21 & SI13 at superior angle of scapula. CAUTION: Deep perpendicular insertion risks pneumothorax.',
+  TE16: 'Perpendicular insertion 0.5–0.8 cun posterior and inferior to mastoid process at posterior border of SCM muscle. Window of Sky point (Tianling).',
+  TE17: 'Perpendicular insertion 0.8–1.2 cun in depression posterior to lobule of ear between mastoid process and angle of mandible. Primary point on the body for ear disorders, otitis media, tinnitus & facial paralysis (Yifeng).',
+  TE18: 'Subcutaneous insertion 0.3–0.5 cun along curve of ear in posterior helix.',
+  TE19: 'Subcutaneous insertion 0.3–0.5 cun posterior to ear apex.',
+  TE20: 'Subcutaneous insertion 0.3–0.5 cun directly above ear apex within hairline.',
+  TE21: 'Perpendicular insertion 0.5–1.0 cun in depression anterior to supratragic notch with mouth open. Primary point for tinnitus, deafness & TMJ pain (Ermen).',
+  TE22: 'Subcutaneous insertion 0.3–0.5 cun anterior to superior border of ear root behind superficial temporal artery.',
+  TE23: 'Subcutaneous insertion 0.3–0.5 cun laterally in depression at lateral end of eyebrow. Primary point for eye pain, twitching & frontal headache (Sizhukong). CAUTION: MOXIBUSTION PROHIBITED.'
 };
 
 // Board exam pearls & stars for TE channel key points
 const TE_EXAM_PEARLS = {
   TE3: {
     star: 1,
-    zh: '★ 中渚為輸穴（木/母穴）。耳疾與手背腱鞘痛第一要穴（「耳疾尋中渚」）。直刺0.5-1.0寸。',
-    en: '★ Zhongzhu is the Shu-Stream (Wood, Mother) point. Primary distal point for ear disorders (tinnitus, deafness) and hand/wrist pain. Perpendicular 0.5-1.0 inch.'
+    zh: '★ 中渚為輸穴（木/母穴）。耳鳴耳聾、偏頭痛與手指麻木關節屈伸不利第一要穴（「耳鳴耳聾尋中渚」）。直刺0.5-0.8寸。',
+    en: '★ Zhongzhu is the Shu-Stream (Wood, Mother) point. Primary point for tinnitus, deafness, migraine, and finger stiffness. Perpendicular 0.5-0.8 inch.'
   },
   TE5: {
     star: 1,
-    zh: '★ 外關為絡穴（通心包經）、八脈交會穴（通陽維脈）。解表祛風、清少陽熱第一要穴，配足臨泣GB41治療少陽偏頭痛與目疾。直刺0.5-1.0寸。',
-    en: '★ Waiguan is the Luo-Connecting & Confluent point of Yang Wei Mai. Primary point for dispelling exterior wind-heat and Shao Yang fever; paired with GB41 for Shao Yang headaches & eye pain. Perpendicular 0.5-1.0 inch.'
+    zh: '★ 外關為絡穴（別走心包經）、八脈交會穴（通陽維脈，配足臨泣 GB41）。外感風熱發熱、少陽頭痛、耳鳴耳聾與肩痛第一要穴（「外關陽維耳目肩」）。直刺0.5-1.0寸。',
+    en: '★ Waiguan is the Luo-Connecting & Confluent (Yang Wei Mai) point. Primary point on the body for common cold, fever, migraine, tinnitus, and frozen shoulder. Perpendicular 0.5-1.0 inch.'
   },
   TE6: {
     star: 1,
-    zh: '★ 支溝為經穴（火/本穴）。通便清熱、脅肋痛第一要穴（「脅痛便秘尋支溝」），配合谷LI4/照海KI6治療習慣性便秘。直刺0.8-1.0寸。',
-    en: '★ Zhigou is the Jing-River (Fire, Horary) point. Primary point for constipation and hypochondriac pain; paired with LI4/KI6 for habitual constipation. Perpendicular 0.8-1.0 inch.'
+    zh: '★ 支溝為便秘、脅肋痛與暴喑第一要穴（「便秘脅痛首選支溝」）。直刺0.8-1.0寸。',
+    en: '★ Zhigou is the primary point on the body for constipation, hypochondriac pain, and sudden loss of voice. Perpendicular 0.8-1.0 inch.'
   },
   TE10: {
     star: 1,
-    zh: '★ 天井為合穴（土/子穴）。化痰散結、瘰癧癭氣要穴（「天井化痰散結」）。直刺0.5-1.0寸。',
-    en: '★ Tianjing is the He-Sea (Earth, Child/Sedation) point. Key point for transforming phlegm and dissipating scrofula/goiter nodules. Perpendicular 0.5-1.0 inch.'
+    zh: '★ 天井為合穴（土/子穴）。瘰癧（頸部淋巴結核）、偏頭痛與肘痛第一要穴（「瘰癧尋天井」）。直刺0.5-0.8寸。',
+    en: '★ Tianjing is the He-Sea (Earth, Child/Sedation) point. Primary point for scrofula, migraine, and elbow joint pain. Perpendicular 0.5-0.8 inch.'
   },
   TE14: {
     star: 1,
-    zh: '★ 肩髎為肩關節要穴（配肩髃LI15、肩貞SI9治肩周炎「肩三針」）。直刺或斜下刺0.8-1.5寸。',
-    en: '★ Jianliao is a key shoulder joint point (part of "Jian San Zhen" for frozen shoulder with LI15 and SI9). Perpendicular/oblique 0.8-1.5 inch.'
+    zh: '★ 肩髎為肩周炎與肩關節痛（「肩三針」主穴之一）。主治肩臂痛與手臂不舉。直刺或向下斜刺0.8-1.5寸。',
+    en: '★ Jianliao is a primary point for shoulder joint pain and frozen shoulder. Perpendicular/oblique 0.8-1.5 inch.'
   },
   TE17: {
     star: 1,
-    zh: '★ 翳風為耳疾與面癱第一要穴，主治耳鳴耳聾、中耳炎與口眼喎斜。直刺0.5-1.0寸，避免過深刺向頸內動靜脈。',
-    en: '★ Yifeng is the primary point for ear disorders (tinnitus, otitis media) and facial paralysis. Perpendicular 0.5-1.0 inch; avoid deep anterior needle direction.'
+    zh: '★ 翳風為耳疾（耳鳴、耳聾、中耳炎）與面癱第一要穴（「耳疾面癱首選翳風」）。直刺0.8-1.2寸。',
+    en: '★ Yifeng is the primary point on the body for ear disorders (tinnitus, deafness, otitis media) and facial paralysis. Perpendicular 0.8-1.2 inch.'
   },
   TE21: {
     star: 1,
-    zh: '★ 耳門為耳前要穴（張口取穴，配聽宮SI19、聽會GB2治耳疾「耳三針」）。直刺0.5-1.0寸。',
-    en: '★ Ermen is a primary ear point located with mouth open (part of "Er San Zhen" with SI19 & GB2). Perpendicular 0.5-1.0 inch.'
+    zh: '★ 耳門為「耳三針」（耳門、聽宮、聽會）之一。耳鳴耳聾與聤耳第一要穴。張口直刺0.5-1.0寸。',
+    en: '★ Ermen is one of the Ear Three Needles. Primary point for tinnitus, deafness, and otitis media. Open mouth, perpendicular 0.5-1.0 inch.'
   },
   TE23: {
     star: 1,
-    zh: '★ 絲竹空為眉梢要穴，主治偏頭痛、目赤腫痛與眼瞼瞤動。平刺0.3-0.5寸。⚠️ 禁灸。',
-    en: '★ Sizhukong is the eyebrow tip point for migraines, eye inflammation, and eyelid twitching. Transverse 0.3-0.5 inch. ⚠️ MOXIBUSTION CONTRAINDICATED.'
+    zh: '★ 絲竹空為眉梢凹陷處。眼疾、眉頭痛與眼瞼瞤動第一要穴。沿皮刺0.3-0.5寸。⚠️ 禁灸！',
+    en: '★ Sizhukong is at the lateral end of eyebrow. Primary point for eye pain, eyelid twitching, and headache. Subcutaneous 0.3-0.5 inch; ⚠️ MOXIBUSTION PROHIBITED.'
   }
 };
 
 const TE_SPECIFIC_CAUTIONS = {
-  TE1:  { zh: '無名指端敏感部位，刺痛感較強；點刺出血或淺刺 0.1 寸。', en: 'Sensitive fingertip location; prick to bleed or insert 0.1 cun.' },
-  TE2:  { zh: '指間部位，斜刺 0.3-0.5 寸。', en: 'Interdigital location; oblique insertion 0.3-0.5 cun.' },
-  TE3:  { zh: '掌骨間隙，直刺 0.5-1.0 寸，避免刺傷掌背動脈。', en: 'Intermetacarpal space; avoid dorsal metacarpal artery.' },
-  TE4:  { zh: '腕背橫紋凹陷處，避開腕背靜脈網與伸肌腱。', en: 'Wrist crease depression; avoid dorsal wrist vein network & extensor tendons.' },
-  TE5:  { zh: '前臂橈尺骨之間，避開骨間前後動靜脈。', en: 'Between radius and ulna; avoid interosseous vessels.' },
-  TE6:  { zh: '前臂橈尺骨之間，直刺 0.8-1.0 寸。', en: 'Between radius and ulna; perpendicular 0.8-1.0 cun.' },
-  TE7:  { zh: '尺骨橈側緣，避開骨間神經。', en: 'Radial border of ulna; avoid interosseous nerve.' },
-  TE8:  { zh: '前臂橈尺骨之間，直刺 0.5-1.0 寸。', en: 'Between radius and ulna; perpendicular 0.5-1.0 cun.' },
-  TE9:  { zh: '前臂背側，直刺 0.5-1.0 寸。', en: 'Dorsal forearm; perpendicular 0.5-1.0 cun.' },
-  TE10: { zh: '鷹嘴上 1 寸凹陷處，避開肘關節囊。', en: 'Depression 1 cun superior to olecranon; avoid elbow joint capsule.' },
-  TE11: { zh: '臂後側，直刺 0.5-1.0 寸。', en: 'Posterior arm; perpendicular 0.5-1.0 cun.' },
-  TE12: { zh: '臂後側，直刺 0.7-1.0 寸。', en: 'Posterior arm; perpendicular 0.7-1.0 cun.' },
-  TE13: { zh: '三角肌後緣，避開橈神經。', en: 'Posterior border of deltoid; avoid radial nerve.' },
-  TE14: { zh: '肩峰後下方凹陷處，避開肩關節腔與腋神經分支。', en: 'Posterior-inferior acromion depression; avoid axillary nerve branches.' },
-  TE15: { zh: '肩胛岡上窩，斜刺 0.5-0.8 寸，嚴禁直刺深刺以免致氣胸。', en: 'Supraspinous fossa; oblique 0.5-0.8 cun. Deep perpendicular insertion contraindicated due to pneumothorax risk.' },
-  TE16: { zh: '胸鎖乳突肌後緣，直刺 0.5-0.8 寸，避開頸外靜脈。', en: 'Posterior border of sternocleidomastoid; avoid external jugular vein.' },
-  TE17: { zh: '耳垂後下方凹陷處，避開頸內動靜脈與面神經幹，進針不宜過深或偏向前方。', en: 'Depression behind earlobe; avoid internal carotid/jugular vessels & facial nerve.' },
-  TE18: { zh: '耳後完骨邊緣，沿皮刺 0.1-0.3 寸或點刺出血。', en: 'Behind ear along curve; transverse 0.1-0.3 cun or bleed.' },
-  TE19: { zh: '耳後部位，沿皮刺 0.1-0.3 寸。', en: 'Behind ear; transverse 0.1-0.3 cun.' },
-  TE20: { zh: '耳尖直上髮際，平刺 0.3-0.5 寸，避開顳淺動靜脈。', en: 'Directly above ear apex; transverse 0.3-0.5 cun, avoid superficial temporal vessels.' },
-  TE21: { zh: '耳屏上切跡前，張口取穴，直刺 0.5-1.0 寸。', en: 'Anterior to supratragic notch with mouth open; perpendicular 0.5-1.0 cun.' },
-  TE22: { zh: '耳前鬢角髮際前緣，平刺 0.3-0.5 寸，避開顳淺動脈。', en: 'Anterior to ear helix root; transverse 0.3-0.5 cun, avoid superficial temporal artery.' },
-  TE23: { zh: '眉梢凹陷處，平刺 0.3-0.5 寸；⚠️ 本穴禁灸。', en: 'Depression at lateral end of eyebrow; transverse 0.3-0.5 cun. ⚠️ MOXIBUSTION CONTRAINDICATED.' }
+  TE1:  { zh: '無名指尺側指甲角旁 0.1 寸，點刺出血或淺刺 0.1 寸。', en: 'Ulnar side of ring fingernail corner; prick to bleed or 0.1 cun.' },
+  TE2:  { zh: '第 4、5 指縫間赤白肉際，直刺 0.2-0.3 寸。', en: 'Web space between 4th & 5th fingers; perpendicular 0.2-0.3 cun.' },
+  TE3:  { zh: '第 4、5 掌骨結合部前方凹陷處，直刺 0.5-0.8 寸。', en: 'Distal to junction of 4th & 5th metacarpals; perpendicular 0.5-0.8 cun.' },
+  TE4:  { zh: '腕背橫紋中指總伸肌腱尺側凹陷處，直刺 0.3-0.5 寸。', en: 'Wrist crease depression; perpendicular 0.3-0.5 cun.' },
+  TE5:  { zh: '腕背橫紋上 2 寸橈骨與尺骨之間，直刺 0.5-1.0 寸。', en: '2 cun above wrist crease between radius & ulna; perpendicular 0.5-1.0 cun.' },
+  TE6:  { zh: '腕背橫紋上 3 寸橈骨與尺骨之間，直刺 0.8-1.0 寸。', en: '3 cun above wrist crease; perpendicular 0.8-1.0 cun.' },
+  TE7:  { zh: '腕背橫紋上 3 寸支溝穴尺側，直刺 0.5-0.8 寸。', en: '3 cun above wrist crease on ulnar side of TE6; perpendicular 0.5-0.8 cun.' },
+  TE8:  { zh: '腕背橫紋上 4 寸橈骨與尺骨之間，直刺 0.8-1.0 寸。', en: '4 cun above wrist crease; perpendicular 0.8-1.0 cun.' },
+  TE9:  { zh: '肘尖下 5 寸橈骨與尺骨之間，直刺 0.8-1.2 寸。', en: '5 cun below olecranon; perpendicular 0.8-1.2 cun.' },
+  TE10: { zh: '肘尖上 1 寸凹陷處，屈肘直刺 0.5-0.8 寸。', en: '1 cun above olecranon; flexed elbow, perpendicular 0.5-0.8 cun.' },
+  TE11: { zh: '天井上 1 寸，直刺 0.5-0.8 寸。', en: '1 cun above TE10; perpendicular 0.5-0.8 cun.' },
+  TE12: { zh: '肘尖與肩髎連線中點，直刺或斜刺 0.5-0.8 寸。', en: 'Midpoint of olecranon & TE14 line; perpendicular/oblique 0.5-0.8 cun.' },
+  TE13: { zh: '三角肌後緣，直刺或斜刺 0.8-1.2 寸。', en: 'Posterior border of deltoid; perpendicular/oblique 0.8-1.2 cun.' },
+  TE14: { zh: '肩峰後下方凹陷處，直刺或向下斜刺 0.8-1.5 寸。', en: 'Posterior-inferior to acromion; perpendicular/oblique 0.8-1.5 cun.' },
+  TE15: { zh: '肩胛骨上角處，直刺 0.5-0.8 寸。⚠️ 嚴禁向內深刺以免刺傷肺臟致氣胸。', en: 'Superior angle of scapula; perpendicular 0.5-0.8 cun. ⚠️ Deep medial insertion risks pneumothorax.' },
+  TE16: { zh: '乳突後下方胸鎖乳突肌後緣，直刺 0.5-0.8 寸。', en: 'Posterior-inferior to mastoid process; perpendicular 0.5-0.8 cun.' },
+  TE17: { zh: '耳垂後方乳突與下頜角之間凹陷處，直刺 0.8-1.2 寸。', en: 'Depression posterior to ear lobe; perpendicular 0.8-1.2 cun.' },
+  TE18: { zh: '耳後髮際沿耳輪弧形，沿皮刺 0.3-0.5 寸。', en: 'Posterior ear hairline curve; subcutaneous 0.3-0.5 cun.' },
+  TE19: { zh: '耳尖後方，沿皮刺 0.3-0.5 寸。', en: 'Posterior to ear apex; subcutaneous 0.3-0.5 cun.' },
+  TE20: { zh: '耳尖正上方髮際內，沿皮刺 0.3-0.5 寸。', en: 'Directly above ear apex; subcutaneous 0.3-0.5 cun.' },
+  TE21: { zh: '耳屏上切跡前凹陷處，張口直刺 0.5-1.0 寸。', en: 'Anterior to supratragic notch; open mouth, perpendicular 0.5-1.0 cun.' },
+  TE22: { zh: '耳前髮際下，沿皮刺 0.3-0.5 寸。避開顳淺動脈。', en: 'Anterior to ear root; subcutaneous 0.3-0.5 cun. Avoid superficial temporal artery.' },
+  TE23: { zh: '眉梢外側凹陷處，沿皮刺 0.3-0.5 寸。⚠️ 本穴禁灸。', en: 'Depression at lateral end of eyebrow; subcutaneous 0.3-0.5 cun. ⚠️ MOXIBUSTION PROHIBITED.' }
 };
 
-const DISEASE_CAT_RE = /系統疾病|系統病|五官疾病|婦科疾病|精神神志疾病/;
+const DISEASE_CAT_RE = /頭面五官|系統疾病|系統病|五官疾病|婦科疾病|精神神志/;
 
 const data = JSON.parse(fs.readFileSync(FILE, 'utf8'));
 const changes = [];
@@ -126,7 +126,7 @@ data.forEach(point => {
   if (!/^TE([1-9]|1[0-9]|2[0-3])$/.test(code)) return;
 
   const idx = parseInt(code.replace('TE', ''), 10);
-  const pageNum = Math.min(Math.ceil(idx / 4), 6);
+  const pageNum = Math.min(Math.ceil(idx / 5), 5);
 
   // 1. Needling Method EN
   if (TE_NEEDLING_EN[code] && point.acumethod_en !== TE_NEEDLING_EN[code]) {
@@ -215,14 +215,15 @@ data.forEach(point => {
     }
   }
 
-  // 5. TE23 Moxibustion Prohibition
+  // 5. TE23 Moxibustion Contraindication
   if (code === 'TE23') {
-    const moxaZh = '本穴禁灸（絲竹空穴位近眼眶，灸之易傷目）。';
-    if (!point.contraindications.includes(moxaZh)) {
+    const noMoxaZh = '⚠️ 本穴禁灸（絲竹空穴位於眉梢，灸之易傷眼目與肌膚瘢痕）。';
+    if (!point.contraindications.includes(noMoxaZh)) {
       if (APPLY) {
-        point.contraindications.push(moxaZh);
-        point.cautions_zh = [...point.contraindications];
-        point.cautions = point.contraindications.join('\n');
+        point.contraindications = [noMoxaZh];
+        point.cautions_zh = [noMoxaZh];
+        point.cautions_en = ['⚠️ MOXIBUSTION PROHIBITED (Sizhukong).'];
+        point.cautions = noMoxaZh;
       }
     }
   }
@@ -231,14 +232,14 @@ data.forEach(point => {
   if (APPLY) {
     point.field_sources = {
       acumethod_zh: ['CloudTCM', 'eLotus CORE'],
-      acumethod_en: ['eLotus CORE / MasterTungAcupuncture.org', `curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`],
+      acumethod_en: ['eLotus CORE / MasterTungAcupuncture.org', `curriculum/acupoints/10 TRIPLE BURNER CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`],
       functions_zh: ['CloudTCM'],
-      functions_en: [`curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`, 'eLotus CORE'],
+      functions_en: [`curriculum/acupoints/10 TRIPLE BURNER CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`, 'eLotus CORE'],
       indications_zh: ['CloudTCM'],
-      indications_en: [`curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`, 'eLotus CORE'],
+      indications_en: [`curriculum/acupoints/10 TRIPLE BURNER CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`, 'eLotus CORE'],
       anatomy_zh: ['CloudTCM'],
       anatomy_en: ['WHO SAPL 2008', 'eLotus CORE'],
-      exam_pearl: [`curriculum/acupoints/10 SAN JIAO CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`, 'eLotus CORE'],
+      exam_pearl: [`curriculum/acupoints/10 TRIPLE BURNER CHANNEL OF HAND SHAO YANG.pdf#p${pageNum}`, 'eLotus CORE'],
       exam_pearl_en: ['eLotus CORE / MasterTungAcupuncture.org'],
       combine_points_zh: ['CloudTCM'],
       cautions_zh: ['CloudTCM', 'WHO SAPL 2008'],
@@ -249,7 +250,7 @@ data.forEach(point => {
 });
 
 console.log(`\n${APPLY ? '✅ APPLIED' : '🔍 DRY RUN'} — ${changes.length} change(s) across TE channel:\n`);
-changes.forEach(c => {
+changes.slice(0, 30).forEach(c => {
   console.log(`  [${c.code}] ${c.field}`);
   console.log(`    FROM: ${JSON.stringify(c.from)}`);
   console.log(`    TO:   ${JSON.stringify(c.to)}\n`);
