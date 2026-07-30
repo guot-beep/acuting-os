@@ -3051,7 +3051,6 @@ function renderCards(filtered) {
 }
 
 function pointTitle(point) {
-  // 中文名永遠在最前；英文名跟在後面（代碼另有 code-pill 顯示）。
   if (!point.nameZh || point.nameZh === point.nameEn) return `${point.nameEn}`;
   return `${point.nameZh} ${point.nameEn}`;
 }
@@ -3065,58 +3064,93 @@ function getCompactIdentityTags(point) {
   const tags = [];
 
   const rawIdentities = [
-    ...(isEn ? (point.point_identity_en || []) : (point.point_identity_zh || [])),
-    ...(isEn ? (point.point_identity_zh || []) : []),
+    ...(isEn ? (point.pointIdentityEn || point.point_identity_en || []) : (point.pointIdentityZh || point.point_identity_zh || [])),
     point.wushu_point || "",
     ...(point.point_categories || [])
   ];
 
   rawIdentities.forEach((idText) => {
-    const txt = String(idText);
+    const txt = String(idText).trim();
+    if (!txt || /^(可灸|不可灸|禁灸|待補)$/.test(txt)) return;
+
     if (!isEn) {
-      if (txt.includes("四總穴")) tags.push("四總穴");
-      if (txt.includes("八脈交會") || txt.includes("通陰蹻") || txt.includes("通陽蹻") || txt.includes("通任脈") || txt.includes("通督脈") || txt.includes("通帶脈") || txt.includes("通衝脈") || txt.includes("通陽維") || txt.includes("通陰維") || txt === "confluent") tags.push("八脈交會");
-      if (txt.includes("水谷之海")) tags.push("水谷之海");
+      if (txt.includes("四總穴")) tags.push(txt.length <= 25 ? txt : "四總穴");
+      else if (txt.includes("八脈交會") || txt.includes("通陰蹻") || txt.includes("通陽蹻") || txt.includes("通任脈") || txt.includes("通督脈") || txt.includes("通帶脈") || txt.includes("通衝脈") || txt.includes("通陽維") || txt.includes("通陰維")) tags.push(txt.length <= 25 ? txt : "八脈交會穴");
+      else if (txt.includes("水谷之海") || txt.includes("水穀之海")) tags.push("水穀之海");
       else if (txt.includes("血海")) tags.push("血海");
       else if (txt.includes("氣海")) tags.push("氣海");
       else if (txt.includes("髓海")) tags.push("髓海");
-      if (txt.includes("天窗") || txt.includes("天牖") || txt.includes("Window of Sky")) tags.push("天窗穴");
-      if (txt.includes("井穴") || txt.includes("jing_well")) tags.push("井穴");
-      else if (txt.includes("滎穴") || txt.includes("ying_spring")) tags.push("滎穴");
-      else if (txt.includes("輸穴") || txt.includes("shu_stream")) tags.push("輸穴");
-      else if (txt.includes("經穴") || txt.includes("jing_river")) tags.push("經穴");
+      else if (txt.includes("天窗") || txt.includes("天牖") || txt.includes("Window of Sky")) tags.push("天窗穴");
+      else if (txt.includes("井穴")) tags.push("井穴");
+      else if (txt.includes("滎穴")) tags.push("滎穴");
+      else if (txt.includes("輸穴")) tags.push("輸穴");
+      else if (txt.includes("經穴")) tags.push("經穴");
       else if (txt.includes("合穴") && !txt.includes("下合穴")) tags.push("合穴");
-      else if (txt.includes("下合穴") || txt.includes("lower_he")) tags.push("下合穴");
-      if (txt.includes("原穴") || txt === "yuan") tags.push("原穴");
-      if ((txt.includes("絡穴") && !txt.includes("大絡")) || txt === "luo") tags.push("絡穴");
+      else if (txt.includes("下合穴")) tags.push("下合穴");
+      else if (txt.includes("原穴")) tags.push("原穴");
+      else if (txt.includes("絡穴") && !txt.includes("大絡")) tags.push("絡穴");
       else if (txt.includes("大絡")) tags.push("脾之大絡");
-      if (txt.includes("郄穴") || txt === "xi") tags.push("郄穴");
-      if (txt.includes("募穴") || txt.includes("front_mu")) tags.push("募穴");
-      if (txt.includes("背俞穴") || txt.includes("back_shu")) tags.push("背俞穴");
-      if (txt.includes("十三鬼穴") || txt.includes("鬼穴")) tags.push("十三鬼穴");
+      else if (txt.includes("郄穴")) tags.push("郄穴");
+      else if (txt.includes("募穴")) tags.push("募穴");
+      else if (txt.includes("背俞穴") || txt.includes("俞穴")) tags.push("背俞穴");
+      else if (txt.includes("十三鬼穴") || txt.includes("鬼穴")) tags.push("十三鬼穴");
+      else if (txt.length <= 20) tags.push(txt);
     } else {
       if (txt.includes("Command Point") || txt.includes("Command point")) tags.push("Command Point");
-      if (txt.includes("Confluent") || txt.includes("Master point") || txt.includes("Master Point") || txt === "confluent" || txt.includes("Chong Mai") || txt.includes("Yin Qiao")) tags.push("Master Point");
-      if (txt.includes("Sea of Water")) tags.push("Sea of Grain");
+      else if (txt.includes("Confluent") || txt.includes("Master point") || txt.includes("Master Point")) tags.push("Master Point");
+      else if (txt.includes("Sea of Water") || txt.includes("Sea of Grain")) tags.push("Sea of Grain");
       else if (txt.includes("Sea of Blood") || txt.includes("Xuehai")) tags.push("Sea of Blood");
       else if (txt.includes("Sea of Qi")) tags.push("Sea of Qi");
       else if (txt.includes("Sea of Marrow")) tags.push("Sea of Marrow");
-      if (txt.includes("Window of Sky") || txt.includes("天窗") || txt.includes("天牖")) tags.push("Window of Sky");
-      if (txt.includes("Jing-Well") || txt.includes("jing_well")) tags.push("Jing-Well");
-      else if (txt.includes("Ying-Spring") || txt.includes("ying_spring")) tags.push("Ying-Spring");
-      else if (txt.includes("Shu-Stream") || txt.includes("shu_stream")) tags.push("Shu-Stream");
-      else if (txt.includes("Jing-River") || txt.includes("jing_river")) tags.push("Jing-River");
+      else if (txt.includes("Window of Sky")) tags.push("Window of Sky");
+      else if (txt.includes("Jing-Well")) tags.push("Jing-Well");
+      else if (txt.includes("Ying-Spring")) tags.push("Ying-Spring");
+      else if (txt.includes("Shu-Stream")) tags.push("Shu-Stream");
+      else if (txt.includes("Jing-River")) tags.push("Jing-River");
       else if (txt.includes("He-Sea") && !txt.includes("Lower He-Sea")) tags.push("He-Sea");
-      else if (txt.includes("Lower He-Sea") || cat === "lower_he") tags.push("Lower He-Sea");
-      if (txt.includes("Yuan-Source") || txt === "yuan") tags.push("Yuan-Source");
-      if (txt.includes("Luo-Connecting") || txt === "luo") tags.push("Luo-Connecting");
-      if (txt.includes("Xi-Cleft") || txt === "xi") tags.push("Xi-Cleft");
-      if (txt.includes("Front-Mu") || txt.includes("front_mu")) tags.push("Front-Mu");
-      if (txt.includes("Back-Shu") || txt.includes("back_shu")) tags.push("Back-Shu");
+      else if (txt.includes("Lower He-Sea")) tags.push("Lower He-Sea");
+      else if (txt.includes("Yuan-Source")) tags.push("Yuan-Source");
+      else if (txt.includes("Luo-Connecting")) tags.push("Luo-Connecting");
+      else if (txt.includes("Xi-Cleft")) tags.push("Xi-Cleft");
+      else if (txt.includes("Front-Mu")) tags.push("Front-Mu");
+      else if (txt.includes("Back-Shu")) tags.push("Back-Shu");
+      else if (txt.length <= 25) tags.push(txt);
     }
   });
 
   return [...new Set(tags)];
+}
+
+function isIdentityTagText(t) {
+  const str = String(t || "");
+  return /井穴|滎穴|輸穴|經穴|合穴|原穴|絡穴|郄穴|募穴|背俞穴|八脈交會|四總穴|下合穴|水谷之海|水穀之海|血海|氣海|髓海|十三鬼穴|鬼穴|天牖五穴|天窗穴|天窗|交會穴|脾之大絡|馬丹陽|回陽|神應|頭項|肚腹|面口|腰背|胸脅|少腹|本穴|母穴|子穴|Jing-Well|Ying-Spring|Shu-Stream|Jing-River|He-Sea|Lower He-Sea|Yuan-Source|Luo-Connecting|Xi-Cleft|Front-Mu|Back-Shu|Master Point|Command Point|Window of Sky|Sea of Grain|Sea of Blood|Sea of Qi|Sea of Marrow|Horary/.test(str);
+}
+
+function isShortCleanTag(t) {
+  const str = String(t || "").trim();
+  if (!str) return false;
+  if (str.length > 14) return false;
+  if (/──|─|：|:|註記|課件/.test(str)) return false;
+  return true;
+}
+
+function cardTags(point) {
+  const isEn = contentMode === "english";
+  const rawIdentities = isEn
+    ? (point.pointIdentityEn?.length ? point.pointIdentityEn : point.point_identity_en || [])
+    : (point.pointIdentityZh?.length ? point.pointIdentityZh : point.point_identity_zh || []);
+
+  const cleanIdentities = rawIdentities
+    .map((s) => String(s).trim())
+    .filter((s) => s && !/^(可灸|不可灸|禁灸|待補)$/.test(s) && s.length <= 35);
+
+  const finalIdentities = cleanIdentities.length > 0 ? cleanIdentities : getCompactIdentityTags(point);
+
+  const rawPatterns = isEn ? (point.patternsEn || []) : (point.patterns || []);
+  const cleanPatterns = rawPatterns.flatMap((p) => String(p).split(/[,，、]/)).map((s) => s.trim()).filter(isShortCleanTag);
+
+  const combined = [...finalIdentities.slice(0, 3), ...cleanPatterns];
+  return [...new Set(combined)].filter(Boolean).slice(0, 4);
 }
 
 function isIdentityTagText(t) {
