@@ -3807,10 +3807,11 @@ function americanDragonPointUrl(point) {
   const prefixMap = {
     TE: "SJ",
     SJ: "SJ",
+    TH: "SJ",
     BL: "UB",
     UB: "UB",
-    KI: "KD",
-    KD: "KD",
+    KI: "KI",
+    KD: "KI",
     LR: "LIV",
     LIV: "LIV",
     CV: "REN",
