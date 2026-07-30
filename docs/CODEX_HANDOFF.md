@@ -1,5 +1,46 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30] Antigravity Handoff — SP channel acumethod_en + tag cleanup & Source Hierarchy Standard
+
+- **Agent**: Antigravity (pair programming with Ting)
+- **Branch**: `antigravity/sp-acumethod` (branched from `origin/main`)
+- **Validation**: `node scripts/validate-acupoint-standard.js --worklist --channel SP --all`
+  - PASS — no blocking defects
+  - A10 (scaffold suffix in tags): **0** ✅
+  - A11 (CJK inside _en array): **0** ✅
+  - A12 (illegal review_status, template-grade only): 263 — full-library inherited
+  - A13 (病系分類 in action_tags): cleaned for SP channel (moved to disease_tags with 1-to-1 index-aligned _en tags)
+
+### Canonical Source Hierarchy Standard (Ting 2026-07-30)
+Every future acupoint content refinement MUST follow this exact 5-level source order and cite per-field provenance in `field_sources`:
+1. **Board Exam Outline** (`curriculum/board/NCBAHM_CH_Exam_Content_Outline...`): Framework & exam importance.
+2. **`curriculum/acupoints/` Course Files**: Parse with `python3 scripts/parse-channel-curriculum.py` to extract exact course text for `functions_en`, `indications_en`, `point_identity`, `needling`, `contraindications`, `exam_star`, and `exam_pearl`.
+3. **eLotus / MasterTung Acupuncture**: Clinical depth, needle technique details, and safety warnings.
+4. **American Dragon / AcuPoints.org**: English details, locations (`location_en`), and `visual_links`.
+5. **CloudTCM (雲端中醫)**: Chinese clinical depth, 4-column structured pairings (`combine_points_zh`), modern research (`modern_research_zh`), moxa (`moxa_zh`), and massage (`massage_zh`).
+6. **Per-field `field_sources`**: Must cite exact file/page (e.g. `curriculum/acupoints/4 SPLEEN...pdf#p3`) or URL for every single field. Never list unverified sources.
+
+### Files changed
+- `data/acupoints/361.json` — SP1–SP21
+- `scripts/refine-sp-channel.js` (new — reusable dry-run/apply script for SP channel)
+- `scripts/populate-point-identity.js` (new — populates point_identity_zh/en)
+
+### What changed
+1. **SP1–SP21 `acumethod_en`**: replaced global generic text with per-point anatomically-specific depth, angle, and safety precautions (WHO SAPL / eLotus CORE style).
+2. **SP1–SP21 `action_tags_zh` / `action_tags_en`**: cleaned A13 disease category strings (e.g. `消化系統疾病`, `呼吸系統疾病`, `神經系統疾病`, `運動系統疾病`, `泌尿生殖系統疾病`) in 1-to-1 index-aligned fashion, preserving `_zh` and `_en` array length equality for rule A4.
+3. **SP6 `contraindications`**: explicitly ensured pregnancy prohibition `孕婦禁針（可引產催生）` is recorded.
+4. **HT & SP `point_identity_zh` / `point_identity_en`**: populated Five-Shu points (井滎輸經合 + 五行屬性), Yuan, Luo, Xi, Front-Mu, Back-Shu, 8 Confluent, 8 Hui, and Intersection points.
+
+### Protected areas NOT touched
+- `app.js`, `js/`, `index.html`, `styles.css` — not touched
+- All non-SP/non-HT point records — not touched
+
+### Next recommended action
+- Ting: merge `antigravity/sp-acumethod` → `main` (PR on GitHub)
+- Next channel: SI channel (19 points) or BL channel (67 points) following the exact 5-level source hierarchy rule.
+
+---
+
 ## [2026-07-30] Antigravity Handoff — SP channel acumethod_en + tag cleanup
 
 - **Agent**: Antigravity (pair programming with Ting)
