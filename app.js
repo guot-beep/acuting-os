@@ -1525,11 +1525,11 @@ function renderActiveFilterSummary(filtered) {
   if (!activeFilterSummaryEl) return;
   const chips = getActiveFilterChips();
   if (!chips.length) {
-    activeFilterSummaryEl.innerHTML = `
-      <span class="active-filter-empty">${contentMode === "english" ? "No active filters." : "目前未套用篩選。"}</span>
-    `;
+    activeFilterSummaryEl.innerHTML = "";
+    activeFilterSummaryEl.style.display = "none";
     return;
   }
+  activeFilterSummaryEl.style.display = "grid";
 
   const summaryLabel = contentMode === "english"
     ? `Active filters, ${filtered.length} results`
@@ -1864,9 +1864,47 @@ function isStandardChannelPoint(point) {
 }
 
 function hydrateFilters() {
-  fillSelect(meridianFilter, "全部經絡", unique(points.map((point) => point.meridian)));
-  fillSelect(regionFilter, "全部部位", unique(points.map((point) => point.region)));
-  fillSelect(patternFilter, "全部證型", unique(points.flatMap((point) => point.patterns)));
+  let meridianList = unique(points.map((point) => point.meridian));
+  let regionList = unique(points.map((point) => point.region));
+
+  if (selectedSystem === "standard14") {
+    const stdPoints = points.filter(isStandardChannelPoint);
+    meridianList = unique(stdPoints.map((p) => p.meridian));
+    regionList = unique(stdPoints.map((p) => p.region));
+  } else if (selectedSystem === "tung") {
+    meridianList = tungZoneGroups.map((g) => g.zh);
+    regionList = ["手指", "手掌", "前臂", "上臂", "腳趾", "腳掌", "小腿", "大腿", "耳朵", "頭面", "軀幹"];
+  } else if (selectedSystem === "auricular") {
+    meridianList = [
+      "TF: 三角窩 (Triangular Fossa)",
+      "AH: 對耳輪 (Antihelix)",
+      "SAC: 對耳輪上腳 (Superior Antihelix Crus)",
+      "IAC: 對耳輪下腳 (Inferior Antihelix Crus)",
+      "AT: 對耳屏 (Antitragus)",
+      "TR: 耳屏 (Tragus)",
+      "CVC: 耳甲腔 (Cavum Concha)",
+      "CYC: 耳甲艇 (Cymba Concha)",
+      "EL: 耳垂 (Earlobe)",
+      "SC: 耳舟 (Scapha)",
+      "HX: 耳輪 (Helix)",
+      "HCS: 耳輪腳周圍 (Helix Crus)",
+      "IN: 屏間切跡 (Intertragic Notch)",
+      "POS: 耳背 (Posterior of Ear)"
+    ];
+    regionList = ["耳部 (Ear)"];
+  } else if (selectedSystem === "scalp") {
+    meridianList = [
+      "MS1 額中線", "MS2 額旁一線", "MS3 額旁二線", "MS4 額旁三線",
+      "MS5 頂中線", "MS6 頂中前斜線", "MS7 頂中後斜線", "MS8 頂旁一線", "MS9 頂旁二線",
+      "MS10 枕中線", "MS11 枕旁上線", "MS12 枕旁下線", "MS13 顳前線", "MS14 顳後線",
+      "焦氏舞蹈震顫區", "焦氏言語一區", "焦氏言語二區", "焦氏言語三區", "焦氏眩暈聽覺區"
+    ];
+    regionList = ["頭部 (Head/Scalp)"];
+  }
+
+  fillSelect(meridianFilter, contentMode === "english" ? "All channels/zones" : "全部經絡/部位", meridianList);
+  fillSelect(regionFilter, contentMode === "english" ? "All regions" : "全部身體部位", regionList);
+  fillSelect(patternFilter, contentMode === "english" ? "All patterns" : "全部證型", unique(points.flatMap((point) => point.patterns)));
 }
 
 function renderDirectoryFilters() {
@@ -5666,16 +5704,28 @@ function renderChannelsWorkspace() {
     </div>
 
     <div>
-      <div class="channels-launcher-title">📊 特定穴中英經典總表 / Point Charts & Master Matrices</div>
+      <div class="channels-launcher-title">📊 eLotus 經典七大特定穴總表 / 7 Major Point Charts & Master Matrices</div>
       <div class="charts-pills-row">
         <button type="button" class="chart-pill-btn ${activeChartMode === 'fiveshu' ? 'active' : ''}" data-chart-mode="fiveshu">
-          1. 五輸穴總表 (Five Shu: Jing-Well, Ying-Spring, Shu-Stream, Jing-River, He-Sea)
+          1. 五輸穴總表 (Five Shu Points)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'yuanluoxi' ? 'active' : ''}" data-chart-mode="yuanluoxi">
-          2. 原絡郄俞募穴總表 (Yuan Source, Luo Connection, Xi Cleft, Front Mu, Back Shu)
+          2. 原絡郄俞募穴總表 (Yuan, Luo, Xi, Front Mu, Back Shu)
+        </button>
+        <button type="button" class="chart-pill-btn ${activeChartMode === 'lowerhe' ? 'active' : ''}" data-chart-mode="lowerhe">
+          3. 下合穴/母子補瀉/出入穴 (Lower He Sea, Mother, Child, Entry, Exit)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'confluent' ? 'active' : ''}" data-chart-mode="confluent">
-          3. 八脈交會穴與配穴總表 (Master & Coupled Points for Extraordinary Channels)
+          4. 八脈交會穴與配穴 (Master & Coupled Points)
+        </button>
+        <button type="button" class="chart-pill-btn ${activeChartMode === 'groupluo' ? 'active' : ''}" data-chart-mode="groupluo">
+          5. 組絡穴/經筋交會穴 (Group Luo & Muscle Meridian Meeting)
+        </button>
+        <button type="button" class="chart-pill-btn ${activeChartMode === 'huicommand' ? 'active' : ''}" data-chart-mode="huicommand">
+          6. 八會穴與六總穴 (Hui Influential & Command Points)
+        </button>
+        <button type="button" class="chart-pill-btn ${activeChartMode === 'fourseaghost' ? 'active' : ''}" data-chart-mode="fourseaghost">
+          7. 四海穴與十三鬼穴 (Four Sea Points & 13 Ghost Points)
         </button>
       </div>
     </div>
@@ -5706,8 +5756,28 @@ function renderChannelsWorkspace() {
     bindMatrixPointLinks(content);
     return;
   }
+  if (activeChartMode === 'lowerhe') {
+    content.innerHTML = renderLowerHeMotherChildMatrixTable();
+    bindMatrixPointLinks(content);
+    return;
+  }
   if (activeChartMode === 'confluent') {
     content.innerHTML = renderConfluentPointsMatrixTable();
+    bindMatrixPointLinks(content);
+    return;
+  }
+  if (activeChartMode === 'groupluo') {
+    content.innerHTML = renderGroupLuoMatrixTable();
+    bindMatrixPointLinks(content);
+    return;
+  }
+  if (activeChartMode === 'huicommand') {
+    content.innerHTML = renderHuiAndCommandMatrixTable();
+    bindMatrixPointLinks(content);
+    return;
+  }
+  if (activeChartMode === 'fourseaghost') {
+    content.innerHTML = renderFourSeaAndGhostPointsMatrixTable();
     bindMatrixPointLinks(content);
     return;
   }
