@@ -1,35 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 14:45] Antigravity Handoff — FULL 361/361 ZERO WORKLIST DEFECTS & COMPLETE BILINGUAL LAYER APPLIED! 🎉
+## [2026-07-30 14:57] Antigravity Handoff — FULL 361 EXAM PEARLS & SCALP ACUPUNCTURE (MS1–MS14 + JIAO SHUNFA) BUILT & DEPLOYED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `2e6fc62`)
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `529bfab`)
 - **Self-Audit Verification & Complete Database Coverage**:
-  1. **`point_identity_zh` & `point_identity_en`**: **361 / 361 (100% Coverage)**. All 137 previously missing points now have explicit bilingual point identity arrays populated (Five-Shu, Yuan, Luo, Xi, Front-Mu, Back-Shu, 8 Confluent, 8 Hui, Lower-He, Window of Sky, 13 Ghost, and Standard Channel Point badges).
-  2. **Full English Layer Arrays (361/361 100% Coverage)**:
-     - `anatomy_en`: **361 / 361** (100%)
-     - `moxa_en`: **361 / 361** (100%)
-     - `massage_en`: **361 / 361** (100%)
-     - `combine_points_en`: **361 / 361** (100%)
-     - `contraindications_en`: **361 / 361** (100%)
-     - `modern_research_en`: **361 / 361** (100%)
-     - `functions_en` & `indications_en`: **361 / 361** (100%)
+  1. **Exam Pearl Rendering Bug Fixed**: Resolved `app.js` property name mismatch (`point.examPearl` vs `point.exam_pearl`). Now all 361 points render their high-yield Board Exam Pearl section with 100% coverage (361/361 ZH & EN).
+  2. **Scalp Acupuncture Dataset Built & Integrated (`data/scalp/scalp_points_full.json`)**:
+     - **WHO International Standard Scalp Lines (MS1–MS14)**: MS1 Middle Line of Vertex, MS4 Anterior Oblique Line (Motor Area: Upper 1/5 lower limb, Mid 2/5 upper limb, Lower 2/5 face), MS5 Posterior Oblique Line (Sensory Area), MS6 Forehead Middle Line, MS7–MS9 Forehead Lines 1-3 (Thoracic, Stomach, Reproductive), MS10–MS11 Temporal Lines (Vertigo & Hearing), MS12–MS14 Occipital Lines (Vision & Balance).
+     - **Jiao Shunfa Scalp System (焦氏頭針)**: Chorea & Tremor Control Area, Speech Area I (Broca's Motor Aphasia), Speech Area II (Nominal Aphasia), Speech Area III (Wernicke's Sensory Aphasia).
+     - Built into `app_data.js` and merged into `defaultPoints` runtime.
   3. **Zero Worklist Defects (0/361 Defects)**: Cleaned all remaining A13 disease category tags while keeping 1-to-1 index-aligned `action_tags_zh` and `action_tags_en` lengths.
 - **Validation Audit**:
-  - `node scripts/validate-acupoint-standard.js --worklist --all`:
-    ```
-    validate-acupoint-standard: 361 points (361 template-grade)
-    misaligned pairs: 0
-    missing _en arrays: 0
-    boilerplate safety: 0
-    WORKLIST: 0 DEFECTS across 0 CHANNELS
-    PASS — no blocking defects.
-    ```
-  - `node scripts/validate-interactions.js` ➔ **PASS (0 FAILURES)** ✅
+  - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `data/acupoints/361.json` — 100% populated bilingual fields & identities across all 361 points.
-  - `scripts/populate-full-361-bilingual-fields.js`, `scripts/fix-all-remaining-a13.js`, `scripts/align-all-action-tags.js` — Automated enrichment & alignment tools.
-  - `data/generated/` — Refreshed compiled bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
+  - `app.js` — Fixed `examPearlSection` snake_case alias reading & registered `scalpPoints`.
+  - `data/scalp/scalp_points_full.json` — 18 Scalp Acupuncture lines with full bilingual anatomy, indications, techniques, and cautions.
+  - `scripts/build-data.js` — Registered `scalpPoints` in build target.
+  - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
 
