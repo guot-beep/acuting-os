@@ -348,9 +348,10 @@
                   <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
                   <span data-mode-text data-bilingual="特色/微針" data-english="Special Systems">特色/微針</span>
                 </button>
-              </div>
+              <!-- eLotus-Style System Toggle Drawer (每個體系獨立折疊分支面板) -->
+              <div class="system-toggle-drawer" id="systemToggleDrawer" style="display: none;"></div>
 
-              <!-- Compact Single-Row Filters Bar -->
+              <!-- Compact Single-Row Secondary Filters Bar (經絡/部位/證型) -->
               <div class="filters filters-compact">
                 <select id="meridianFilter" aria-label="經絡/部位" data-mode-aria-label data-bilingual-aria-label="經絡/部位" data-english-aria-label="Channel/Zone">
                   <option value="" data-mode-text data-bilingual="全部經絡/部位" data-english="All channels/zones">全部經絡/部位</option>
@@ -361,7 +362,6 @@
                 <select id="patternFilter" aria-label="證型" data-mode-aria-label data-bilingual-aria-label="證型" data-english-aria-label="Pattern">
                   <option value="" data-mode-text data-bilingual="全部證型" data-english="All patterns">全部證型</option>
                 </select>
-                <a id="chartShortcutBtn" href="#ws/channels" class="chart-shortcut-btn" style="display: inline-flex;" data-mode-text data-bilingual="📊 經脈與特定穴圖表 ↗" data-english="📊 Channel & Point Charts ↗">📊 經脈與特定穴圖表 ↗</a>
               </div>
             </div>
 

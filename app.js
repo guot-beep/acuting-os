@@ -598,11 +598,23 @@ const tungZoneGroups = uiConfig.tungZoneGroups || [
 
 
 let selectedSystem = "";
+let selectedSystemBranch = "";
+
 document.querySelectorAll(".system-tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
-    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    selectedSystem = btn.dataset.system || "";
+    const sys = btn.dataset.system || "";
+    if (selectedSystem === sys && sys !== "") {
+      // Toggle off drawer if same tab clicked
+      selectedSystem = "";
+      selectedSystemBranch = "";
+      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+      document.querySelector('.system-tab-btn[data-system=""]')?.classList.add("active");
+    } else {
+      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedSystem = sys;
+      selectedSystemBranch = "";
+    }
     clearPointDetailHash();
     render();
   });
@@ -1459,6 +1471,7 @@ function render() {
   renderClinicalCases();
   renderBackupBanner();   // CS1
   renderDirectoryFilters();
+  renderSystemToggleDrawer();
   renderChannelsWorkspace();
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
@@ -2192,6 +2205,168 @@ function pointMatchesTungZone(point, zoneId) {
   return false;
 }
 
+function renderSystemToggleDrawer() {
+  const drawerEl = document.getElementById("systemToggleDrawer");
+  if (!drawerEl) return;
+
+  if (!selectedSystem) {
+    drawerEl.style.display = "none";
+    drawerEl.innerHTML = "";
+    return;
+  }
+
+  drawerEl.style.display = "block";
+
+  let titleZh = "";
+  let titleEn = "";
+  let chips = [];
+
+  if (selectedSystem === "standard14") {
+    titleZh = "☯️ 十四正經分支體系 (14 Principal Channels Branch Grid)";
+    titleEn = "☯️ 14 Principal Channels Branch Grid";
+    chips = [
+      { id: "LU", zh: "LU 肺經", en: "LU Lung" },
+      { id: "LI", zh: "LI 大腸經", en: "LI Large Intestine" },
+      { id: "ST", zh: "ST 胃經", en: "ST Stomach" },
+      { id: "SP", zh: "SP 脾經", en: "SP Spleen" },
+      { id: "HT", zh: "HT 心經", en: "HT Heart" },
+      { id: "SI", zh: "SI 小腸經", en: "SI Small Intestine" },
+      { id: "BL", zh: "BL 膀胱經", en: "BL Bladder" },
+      { id: "KI", zh: "KI 腎經", en: "KI Kidney" },
+      { id: "PC", zh: "PC 心包經", en: "PC Pericardium" },
+      { id: "TE", zh: "TE 三焦經", en: "TE Triple Burner" },
+      { id: "GB", zh: "GB 膽經", en: "GB Gallbladder" },
+      { id: "LR", zh: "LR 肝經", en: "LR Liver" },
+      { id: "CV", zh: "CV 任脈", en: "CV Ren Mai" },
+      { id: "GV", zh: "GV 督脈", en: "GV Du Mai" }
+    ];
+  } else if (selectedSystem === "tung") {
+    titleZh = "🪵 董氏奇穴 12 解剖部位分支 (Master Tung 12 Anatomical Zones Grid)";
+    titleEn = "🪵 Master Tung 12 Anatomical Zones Grid";
+    chips = tungZoneGroups.map(z => ({ id: z.id, zh: z.zh, en: z.en }));
+  } else if (selectedSystem === "auricular") {
+    titleZh = "👂 耳穴體系 14 解剖分區分支 (LCH Auricular 14 Anatomy Zones Grid)";
+    titleEn = "👂 LCH Auricular 14 Anatomy Zones Grid";
+    chips = [
+      { id: "TF", zh: "TF 三角窩", en: "TF Triangular Fossa" },
+      { id: "AH", zh: "AH 對耳輪", en: "AH Antihelix" },
+      { id: "SAC", zh: "SAC 對耳輪上腳", en: "SAC Superior Antihelix Crus" },
+      { id: "IAC", zh: "IAC 對耳輪下腳", en: "IAC Inferior Antihelix Crus" },
+      { id: "AT", zh: "AT 對耳屏", en: "AT Antitragus" },
+      { id: "TR", zh: "TR 耳屏", en: "TR Tragus" },
+      { id: "CVC", zh: "CVC 耳甲腔", en: "CVC Cavum Concha" },
+      { id: "CYC", zh: "CYC 耳甲艇", en: "CYC Cymba Concha" },
+      { id: "EL", zh: "EL 耳垂", en: "EL Earlobe" },
+      { id: "SC", zh: "SC 耳舟", en: "SC Scapha" },
+      { id: "HX", zh: "HX 耳輪", en: "HX Helix" },
+      { id: "HCS", zh: "HCS 耳輪腳周圍", en: "HCS Helix Crus" },
+      { id: "IN", zh: "IN 屏間切跡", en: "IN Intertragic Notch" },
+      { id: "POS", zh: "POS 耳背", en: "POS Posterior of Ear" }
+    ];
+  } else if (selectedSystem === "scalp") {
+    titleZh = "🧠 頭皮針 18 分區線條分支 (Scalp Acupuncture Lines & Zones Grid)";
+    titleEn = "🧠 Scalp Acupuncture Lines & Zones Grid";
+    chips = [
+      { id: "forehead", zh: "額區 (MS1-MS4)", en: "Forehead (MS1-MS4)" },
+      { id: "parietal", zh: "頂區 (MS5-MS9)", en: "Parietal (MS5-MS9)" },
+      { id: "occipital", zh: "枕區 (MS10-MS12)", en: "Occipital (MS10-MS12)" },
+      { id: "temporal", zh: "顳區 (MS13-MS14)", en: "Temporal (MS13-MS14)" },
+      { id: "jiao", zh: "焦氏頭針功能區", en: "Jiao Shunfa Functional Zones" }
+    ];
+  } else if (selectedSystem === "extra") {
+    titleZh = "⭐️ 經外奇穴 5 大解剖分區分支 (Extra Acupuncture Points Regional Grid)";
+    titleEn = "⭐️ Extra Acupuncture Points Regional Grid";
+    chips = [
+      { id: "EX-HN", zh: "EX-HN 頭頸部", en: "EX-HN Head & Neck" },
+      { id: "EX-CA", zh: "EX-CA 胸腹部", en: "EX-CA Chest & Abdomen" },
+      { id: "EX-B", zh: "EX-B 背部", en: "EX-B Back" },
+      { id: "EX-UE", zh: "EX-UE 上肢部", en: "EX-UE Upper Extremity" },
+      { id: "EX-LE", zh: "EX-LE 下肢部", en: "EX-LE Lower Extremity" }
+    ];
+  } else if (selectedSystem === "special") {
+    titleZh = "🌀 特色微針體系分支 (Special Microsystems Grid)";
+    titleEn = "🌀 Special Microsystems Grid";
+    chips = [
+      { id: "abdominal", zh: "腹針 Abdominal", en: "Abdominal Micro-acu" },
+      { id: "wrist-ankle", zh: "腕踝針 Wrist-Ankle", en: "Wrist-Ankle Acu" },
+      { id: "jins3", zh: "靳三針 Jin's 3 Needles", en: "Jin's 3 Needles" },
+      { id: "balance", zh: "平衡針 Balance Method", en: "Balance Method" }
+    ];
+  }
+
+  const isEn = contentMode === "english";
+  drawerEl.innerHTML = `
+    <div class="drawer-header">
+      <div class="drawer-title">${isEn ? titleEn : titleZh}</div>
+      <button type="button" class="drawer-close-btn" id="closeSystemDrawerBtn">${isEn ? "✕ Close Drawer" : "✕ 收合面板"}</button>
+    </div>
+    <div class="drawer-grid">
+      <button type="button" class="drawer-branch-chip ${selectedSystemBranch === "" ? "active" : ""}" data-branch="">
+        ${isEn ? "All Sub-Branches" : "全部子分支"}
+      </button>
+      ${chips.map(c => `
+        <button type="button" class="drawer-branch-chip ${selectedSystemBranch === c.id ? "active" : ""}" data-branch="${c.id}">
+          ${isEn ? c.en : c.zh}
+        </button>
+      `).join("")}
+      ${selectedSystem === "standard14" ? `
+        <a href="#ws/channels" class="chart-shortcut-btn" style="margin-left: auto;">
+          ${isEn ? "📊 Channel & Point Charts ↗" : "📊 經脈與特定穴圖表 ↗"}
+        </a>
+      ` : ""}
+    </div>
+  `;
+
+  drawerEl.querySelector("#closeSystemDrawerBtn")?.addEventListener("click", () => {
+    selectedSystem = "";
+    selectedSystemBranch = "";
+    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+    document.querySelector('.system-tab-btn[data-system=""]')?.classList.add("active");
+    render();
+  });
+
+  drawerEl.querySelectorAll(".drawer-branch-chip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      selectedSystemBranch = btn.dataset.branch || "";
+      render();
+    });
+  });
+}
+
+function pointMatchesSystemBranch(point) {
+  if (!selectedSystemBranch) return true;
+  const code = String(point.code || "").toUpperCase();
+  const m = String(point.meridian || "").toUpperCase();
+  const loc = [point.location, point.locationEn, point.region, ...(point.anatomy || []).flatMap(a => [a.zh, a.en])].join(" ").toUpperCase();
+
+  if (selectedSystem === "standard14") {
+    return code.startsWith(selectedSystemBranch) || m.includes(selectedSystemBranch);
+  }
+  if (selectedSystem === "tung") {
+    return pointMatchesTungZone(point, selectedSystemBranch);
+  }
+  if (selectedSystem === "auricular") {
+    return code.includes(selectedSystemBranch) || loc.includes(selectedSystemBranch);
+  }
+  if (selectedSystem === "scalp") {
+    if (selectedSystemBranch === "forehead") return code.startsWith("MS1") || code.startsWith("MS2") || code.startsWith("MS3") || code.startsWith("MS4") || loc.includes("額");
+    if (selectedSystemBranch === "parietal") return code.startsWith("MS5") || code.startsWith("MS6") || code.startsWith("MS7") || code.startsWith("MS8") || code.startsWith("MS9") || loc.includes("頂");
+    if (selectedSystemBranch === "occipital") return code.startsWith("MS10") || code.startsWith("MS11") || code.startsWith("MS12") || loc.includes("枕");
+    if (selectedSystemBranch === "temporal") return code.startsWith("MS13") || code.startsWith("MS14") || loc.includes("顳");
+    if (selectedSystemBranch === "jiao") return loc.includes("焦氏") || point.nameZh.includes("焦氏");
+  }
+  if (selectedSystem === "extra") {
+    return code.startsWith(selectedSystemBranch);
+  }
+  if (selectedSystem === "special") {
+    if (selectedSystemBranch === "abdominal") return loc.includes("腹針") || m.includes("腹針");
+    if (selectedSystemBranch === "wrist-ankle") return loc.includes("腕踝") || m.includes("腕踝");
+    if (selectedSystemBranch === "jins3") return loc.includes("靳三針") || m.includes("靳三針");
+    if (selectedSystemBranch === "balance") return loc.includes("平衡針") || m.includes("平衡針");
+  }
+  return true;
+}
+
 function getFilteredPoints() {
   const query = searchInput.value.trim().toLowerCase();
   return points.filter((point) => {
@@ -2222,6 +2397,7 @@ function getFilteredPoints() {
 
     return (!query || haystack.includes(query))
       && pointMatchesSystem(point, selectedSystem)
+      && pointMatchesSystemBranch(point)
       && (!meridianFilter.value || point.meridian === meridianFilter.value)
       && (!regionFilter.value || point.region === regionFilter.value)
       && (!patternFilter.value || point.patterns.includes(patternFilter.value))

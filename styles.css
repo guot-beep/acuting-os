@@ -748,6 +748,88 @@ textarea {
   box-shadow: 0 2px 5px rgba(31, 91, 61, 0.25);
 }
 
+/* ── eLotus-Style System Toggle Drawer (體系專屬折疊分支面板) ────── */
+.system-toggle-drawer {
+  background: #ffffff;
+  border: 1px solid #c7d8cc;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  margin-top: 0.35rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e3ebe5;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.drawer-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #1f5b3d;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.drawer-close-btn {
+  background: transparent;
+  border: 0;
+  color: #6a7d72;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.drawer-close-btn:hover {
+  background: #e8f2eb;
+  color: #1f5b3d;
+}
+
+.drawer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.drawer-branch-chip {
+  background: #f3f8f5;
+  border: 1px solid #cde0d3;
+  color: #274534;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.32rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.drawer-branch-chip:hover {
+  background: #e1f0e6;
+  color: #1f5b3d;
+  border-color: #1f5b3d;
+}
+
+.drawer-branch-chip.active {
+  background: #1f5b3d;
+  color: #ffffff;
+  border-color: #1f5b3d;
+}
+
+.drawer-branch-chip small {
+  opacity: 0.75;
+  font-size: 0.72rem;
+}
+
 .filters-compact {
   display: flex;
   flex-direction: row;
