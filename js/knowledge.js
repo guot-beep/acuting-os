@@ -940,7 +940,7 @@
             <div>
               <div class="k-detail-badges"><span>${esc(record.category || record.category_en || kind)}</span></div>
               ${kind === "formula" ? `<h2>${esc(record.name_zh || record.pinyin)} <small>${esc(record.pinyin)}</small></h2><p class="k-detail-en">${esc(record.name_en)}</p>` : `
-              <h2>${esc(record.name_zh || record.name_en)} <small style="font-size:0.8em;font-weight:bold;color:#ffffff;margin-left:8px;">${esc(record.pinyin_toned || record.pinyin || "")} · ${esc(record.name_en || "")}</small></h2>
+              <h2>${esc(record.name_zh || record.name_en)} <small style="font-size:0.8em;font-weight:bold;color:#ffffff;margin-left:8px;">${esc(record.pinyin || record.pinyin_toned || "")} · ${esc(record.name_en || "")}</small></h2>
               ${(record.pharmaceutical_latin || record.latin_name) ? `<p class="k-detail-en" style="color:#38bdf8;font-weight:600;margin:3px 0 0 0;font-size:0.95em;">${esc(record.pharmaceutical_latin || record.latin_name)}</p>` : ""}
               `}
             </div>
