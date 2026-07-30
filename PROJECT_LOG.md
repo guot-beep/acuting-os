@@ -1,5 +1,12 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Claude — NCBAHM CH missing herbs batch 13 (network-verified): Lu Lu Tong, Ou Jie, Qin Pi, Qing Dai, Sang Zhi
+
+- Built 5 more cards from curriculum + live American Dragon + live CloudTCM. Updated `docs/HERB_CARD_TEMPLATE.md` first to document the 10 record-level metadata fields the template's own field list had never listed (found while fixing batch12's gap) — batch13 was diffed key-for-key against `herb.he_tao_ren` before validating.
+- Real find: opened CloudTCM's Sang Zhi page directly and caught it contradicting itself — its "傳統功效" prose section describes a different herb's properties (reads like 桑葉/桑白皮) while its own "基本資訊" tab agrees with curriculum + American Dragon. Excluded the bad section explicitly rather than quietly folding it in.
+- Updated Quality herb-outline audit from 288/304 matched / 16 missing to 293/304 matched / 11 missing; local herb cards now 316.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; card-grade stamper graded all 5 `template`.
+
 ## 2026-07-29 Claude — NCBAHM CH missing herbs batch 12 (network-verified): Kun Bu, Lian Xu, Lian Zi Xin, Ling Zhi, Lu Dou
 
 - First re-confirmed the dedup trap in Ting's forwarded 23-item list: Sha Yuan Ji Li / Yin Chen were already fixed on this branch as `herb.sha_yuan_zi`/`herb.yin_chen_hao` (aliases added, no duplicates) — real gap was 21, not 23.

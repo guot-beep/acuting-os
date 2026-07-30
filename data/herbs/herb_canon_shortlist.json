@@ -75258,33 +75258,1162 @@
         ]
       },
       "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.lu_lu_tong",
+      "name_zh": "路路通",
+      "name_en": "Sweetgum Fruit",
+      "pinyin": "Lu Lu Tong",
+      "pinyin_toned": "Lù Lù Tōng",
+      "pharmaceutical_latin": "Fructus Liquidambaris",
+      "part_used_zh": "成熟果序（乾燥聚花果）",
+      "part_used_en": "dried mature infructescence (fruit ball)",
+      "category": "活血化瘀藥 / Invigorate Blood",
+      "properties_taste_temp": "苦，平",
+      "taste_temperature_zh": "苦，平",
+      "channels_zh": [
+        "肝經",
+        "胃經"
+      ],
+      "channels_en": [
+        "LV Liver",
+        "ST Stomach"
+      ],
+      "channels_entered": [
+        "肝經",
+        "胃經"
+      ],
+      "aliases_zh": [
+        "楓香果",
+        "九空子"
+      ],
+      "aliases_en": [
+        "Liquidamber Fruit",
+        "Taiwan Maple Fruit"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Bitter"
+        ],
+        "four_natures_zh": "平",
+        "four_natures_en": "Neutral",
+        "meridian_tropism_zh": [
+          "肝經",
+          "胃經"
+        ],
+        "meridian_tropism_en": [
+          "LV Liver",
+          "ST Stomach"
+        ],
+        "part_used_zh": "成熟果序（乾燥聚花果）",
+        "part_used_en": "dried mature infructescence (fruit ball)",
+        "source_note_zh": "課件(Materia Medica III-Extra Herbs)與 American Dragon 均列肝、胃經；CloudTCM 列肝、腎經。主欄採課件+AD 一致的肝、胃，腎經（CloudTCM）列 source_note 背景。AD 另註記「入十二經」，屬其自身補充說法，不當主欄依據。"
+      },
+      "property_channel_source_note_zh": "CloudTCM 以腎經替代胃經，與課件/AD 不同；未強行合併，主欄採課件+AD 交集。",
+      "functions_zh": [
+        "活血通絡",
+        "利水消腫",
+        "通經下乳",
+        "祛風"
+      ],
+      "actions_en": [
+        "Invigorates Blood and unblocks the channels/collaterals",
+        "Promotes urination and reduces edema",
+        "Unblocks menstruation and promotes lactation",
+        "Expels Wind"
+      ],
+      "indications_zh": [
+        "風濕痹痛，肢體麻木拘攣。",
+        "經行不暢、經閉，跌打瘀腫疼痛。",
+        "水腫、小便不利。",
+        "乳汁不下、乳絡不通。",
+        "皮膚癢疹、蕁麻疹（現代運用）。"
+      ],
+      "indications_en": [
+        "Wind-Damp Bi with joint pain and numbness or spasm of the limbs.",
+        "Irregular or blocked menstruation, and bruising/swelling pain from trauma.",
+        "Edema and difficult urination.",
+        "Insufficient lactation from blocked breast/milk collaterals.",
+        "Itchy rashes and urticaria (modern application)."
+      ],
+      "condition_tags_zh": [
+        "風濕痹痛",
+        "肢體麻木",
+        "經閉",
+        "跌打瘀腫",
+        "水腫",
+        "小便不利",
+        "乳汁不下",
+        "蕁麻疹"
+      ],
+      "condition_tags_en": [
+        "Wind-Damp Bi pain",
+        "Limb numbness",
+        "Amenorrhea",
+        "Traumatic swelling",
+        "Edema",
+        "Difficult urination",
+        "Insufficient lactation",
+        "Urticaria"
+      ],
+      "modern_functions_zh": [
+        "具廣譜抗菌能力，能抑制多種細菌與真菌生長（CloudTCM）",
+        "列抗病毒、抗發炎作用（CloudTCM）",
+        "American Dragon 記載現代用於過敏性鼻炎/皮膚過敏及輸卵管阻塞（濕阻）、慢性/急性骨盆腔炎、子宮內膜異位或術後沾黏的輔助應用"
+      ],
+      "modern_functions_en": [
+        "Broad-spectrum antibacterial activity, inhibiting bacterial and fungal growth (CloudTCM)",
+        "Antiviral and anti-inflammatory effects reported (CloudTCM)",
+        "American Dragon notes contemporary use for allergic rhinitis/skin allergy and Dampness-caused fallopian tube blockage, chronic/acute PID, endometriosis, or post-surgical adhesions"
+      ],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 10,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–10g（American Dragon）/ 5–10g 煎湯，食療 10–15g（CloudTCM）",
+        "course_dose_g": "5–10g（課件）",
+        "ad_dose_g": "3–10g；tincture 2–4mL",
+        "cloudtcm_dose_g": "煎湯 5–10g；食療 10–15g",
+        "source_note": "三源劑量集中在 3–10g，僅高低端略有差異，未強行取單一數字。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；活血化瘀藥考點：兼能利水、通乳的活血藥。",
+      "exam_pearl": "課件 Exam Pearl：「One of the herbs that both invigorates blood and promotes urination.」路路通=活血+利水+通乳三合一。",
+      "clinical_use_note": "路路通的核心定位是「活血通絡」兼「利水/通乳」，臨床常見於風濕痹痛肢體麻木、經閉跌打瘀腫，以及水腫、乳汁不下等證。孕婦禁用，經量過多者忌服；American Dragon 特別提醒可能誘發心悸。",
+      "contraindications_zh": [
+        "孕婦禁用。",
+        "經量過多者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated during pregnancy.",
+        "Contraindicated in heavy menstrual bleeding."
+      ],
+      "cautions_zh": [
+        "American Dragon 註明可能誘發心悸，需留意。",
+        "CloudTCM 提醒陰虛內熱者不宜、虛寒血崩者勿服。",
+        "CloudTCM 提醒孕婦及哺乳期婦女慎用。"
+      ],
+      "cautions_en": [
+        "American Dragon notes it may induce palpitations; use with caution.",
+        "CloudTCM notes it is not suitable for Yin deficiency with internal Heat, and contraindicated in Deficiency-Cold uterine bleeding.",
+        "CloudTCM notes caution in pregnancy and lactation."
+      ],
+      "safety_flags": [
+        "pregnancy_contraindication",
+        "heavy_menstruation_contraindication",
+        "palpitation_caution",
+        "yin_deficiency_heat_caution"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Materia Medica III-Extra Herbs",
+          "url": "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "scope": "課件段落：路路通性味歸經、功效主治、劑量、考點"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌、現代臨床應用"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1517",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+        "https://cloudtcm.com/herb/1517"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+          "https://cloudtcm.com/herb/1517"
+        ],
+        "category": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+          "https://cloudtcm.com/herb/1517"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+          "https://cloudtcm.com/herb/1517"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+          "https://cloudtcm.com/herb/1517"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1517",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html"
+        ],
+        "dosage": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+          "https://cloudtcm.com/herb/1517"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
+          "https://cloudtcm.com/herb/1517"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L74-L98",
+          "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.ou_jie",
+      "name_zh": "藕節",
+      "name_en": "Lotus Rhizome Node",
+      "pinyin": "Ou Jie",
+      "pinyin_toned": "Ǒu Jié",
+      "pharmaceutical_latin": "Nodus Nelumbinis Nuciferae Rhizomatis",
+      "part_used_zh": "根莖節部",
+      "part_used_en": "rhizome node",
+      "category": "止血藥 / Stop Bleeding",
+      "properties_taste_temp": "甘、澀，平",
+      "taste_temperature_zh": "甘、澀，平",
+      "channels_zh": [
+        "肺經",
+        "胃經",
+        "肝經"
+      ],
+      "channels_en": [
+        "LU Lung",
+        "ST Stomach",
+        "LV Liver"
+      ],
+      "channels_entered": [
+        "肺經",
+        "胃經",
+        "肝經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [
+        "Nodus Nelumbo Rhizomatis"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "甘",
+          "澀"
+        ],
+        "five_flavors_en": [
+          "Sweet",
+          "Astringent"
+        ],
+        "four_natures_zh": "平",
+        "four_natures_en": "Neutral",
+        "meridian_tropism_zh": [
+          "肺經",
+          "胃經",
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "LU Lung",
+          "ST Stomach",
+          "LV Liver"
+        ],
+        "part_used_zh": "根莖節部",
+        "part_used_en": "rhizome node",
+        "source_note_zh": "課件(Herbs_that_Stop_Bleeding)與 American Dragon 兩源性味歸經完全一致：甘、澀、平，肺胃肝三經，無需調解衝突。"
+      },
+      "property_channel_source_note_zh": "課件與 AD 一致，未見衝突。",
+      "functions_zh": [
+        "收斂止血",
+        "化瘀"
+      ],
+      "actions_en": [
+        "Astringes leakage of Blood and stops bleeding",
+        "Removes Blood Stasis without causing further stagnation"
+      ],
+      "indications_zh": [
+        "肺胃熱盛之吐血、咯血。",
+        "各種慢性出血證。",
+        "血熱妄行之出血。",
+        "衄血（外用/搗汁滴鼻）。"
+      ],
+      "indications_en": [
+        "Hematemesis and hemoptysis from Lung/Stomach Heat.",
+        "Various chronic bleeding conditions.",
+        "Bleeding from reckless movement of Heat in the Blood.",
+        "Epistaxis (fresh juice applied/instilled nasally)."
+      ],
+      "condition_tags_zh": [
+        "吐血",
+        "咯血",
+        "慢性出血",
+        "血熱",
+        "衄血"
+      ],
+      "condition_tags_en": [
+        "Hematemesis",
+        "Hemoptysis",
+        "Chronic bleeding",
+        "Blood Heat",
+        "Epistaxis"
+      ],
+      "modern_functions_zh": [
+        "課件與 American Dragon 均未列現代藥理研究資料，本次未找到可靠的獨立現代藥理來源"
+      ],
+      "modern_functions_en": [
+        "Neither the course material nor American Dragon lists modern pharmacology data; no independently verifiable modern-research source was found this pass"
+      ],
+      "dosage": {
+        "min_g": 9,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "9–15g，最大 30g；鮮品 30–60g（課件、American Dragon 一致）",
+        "course_dose_g": "10–15g，最大 30g；鮮品 30–60g（課件）",
+        "ad_dose_g": "乾品 9–30g；鮮品 30–60g；tincture 2–4mL",
+        "cloudtcm_dose_g": "CloudTCM 本次未找到精準頁，無獨立劑量核對",
+        "source_note": "課件與 AD 高度一致（皆列鮮品 30–60g）；生（未炮製）藕節活血兼止血，炭製（燒炭）藕節偏收澀止血，兩者不可互換使用。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；止血藥考點：止血不留瘀的代表藥，生用/炭用功效不同。",
+      "exam_pearl": "課件 Exam Pearl 呼應：生（Sheng）藕節止血兼化瘀；炭（Tan）藕節偏收澀純止血——考題常考生炭之別。",
+      "clinical_use_note": "藕節是「止血不留瘀」的代表藥：甘澀平和，藥力較溫和，臨床常作為止血方中的輔助藥而非主藥（American Dragon：not very strong, usually plays an adjunctive role）。生品兼能化瘀，炭製後偏收澀純止血；鮮品搗汁可外用或滴鼻治鼻衄。",
+      "contraindications_zh": [
+        "孕婦慎用。",
+        "經期婦女慎用。",
+        "脾胃虛寒者慎用。"
+      ],
+      "contraindications_en": [
+        "Caution in pregnancy.",
+        "Caution during menstruation.",
+        "Caution in Spleen-Stomach Deficiency-Cold."
+      ],
+      "cautions_zh": [
+        "課件與 American Dragon 均未列明確絕對禁忌，此為 Hong Kong TCM 資料補充來源（healthymatters.com.hk）所載的一般慎用族群，非 CloudTCM/AD 精準頁內容，特此標明來源層級差異。"
+      ],
+      "cautions_en": [
+        "Neither the course material nor American Dragon lists explicit contraindications; the caution groups above come from a supplementary Hong Kong TCM reference (healthymatters.com.hk), not from CloudTCM/AD, and are labeled at a lower source tier accordingly."
+      ],
+      "safety_flags": [
+        "pregnancy_caution",
+        "menstruation_caution",
+        "spleen_stomach_cold_caution"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/OuJie.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/OuJie.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Herbs that Stop Bleeding",
+          "url": "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "scope": "課件段落：藕節性味歸經、功效主治、劑量、生炭之別"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/OuJie.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、臨床用法"
+        },
+        {
+          "name": "香港中醫藥資料 healthymatters.com.hk（補充來源，非 Tier-2 正式站）",
+          "url": "https://www.healthymatters.com.hk/zh/chinese-medicines/%E8%97%95%E7%AF%80-lotus-rhizome-node-hong-kong/",
+          "scope": "補充：孕婦/經期/脾胃虛寒慎用族群（課件、AD、CloudTCM 均未列出此項）"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ],
+        "category": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ],
+        "dosage": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ],
+        "contraindications_zh": [
+          "https://www.healthymatters.com.hk/zh/chinese-medicines/%E8%97%95%E7%AF%80-lotus-rhizome-node-hong-kong/"
+        ],
+        "cautions_zh": [
+          "https://www.healthymatters.com.hk/zh/chinese-medicines/%E8%97%95%E7%AF%80-lotus-rhizome-node-hong-kong/"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Herbs_that_Stop_Bleeding.md#L373-L399",
+          "https://www.americandragon.com/Individualherbsupdate/OuJie.html"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.qin_pi",
+      "name_zh": "秦皮",
+      "name_en": "Ash Bark",
+      "pinyin": "Qin Pi",
+      "pinyin_toned": "Qín Pí",
+      "pharmaceutical_latin": "Cortex Fraxini",
+      "part_used_zh": "乾燥枝皮或幹皮",
+      "part_used_en": "dried branch or trunk bark",
+      "category": "清熱藥 / Clear Heat - Dry Damp",
+      "properties_taste_temp": "苦、澀，微寒",
+      "taste_temperature_zh": "苦、澀，微寒",
+      "channels_zh": [
+        "肝經",
+        "膽經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "LV Liver",
+        "GB Gallbladder",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "肝經",
+        "膽經",
+        "大腸經"
+      ],
+      "aliases_zh": [
+        "蠟樹皮",
+        "秦白皮",
+        "梣皮"
+      ],
+      "aliases_en": [
+        "Fraxinus Bark",
+        "Korean Ash Bark"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦",
+          "澀"
+        ],
+        "five_flavors_en": [
+          "Bitter",
+          "Astringent"
+        ],
+        "four_natures_zh": "微寒",
+        "four_natures_en": "Slightly Cold",
+        "meridian_tropism_zh": [
+          "肝經",
+          "膽經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "LV Liver",
+          "GB Gallbladder",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "乾燥枝皮或幹皮",
+        "part_used_en": "dried branch or trunk bark",
+        "source_note_zh": "課件本身只在清熱解毒藥比較表列一行（Clears Liver fire, treats bacterial dysentery），未給獨立性味歸經段落；American Dragon 列膽、大腸、肝經（另加括號次要之胃、肺）；CloudTCM 列大腸、肝、膽經。主欄採 AD 與 CloudTCM 交集的肝、膽、大腸三經。"
+      },
+      "property_channel_source_note_zh": "課件秦皮段落極簡（僅一行比較表），性味歸經主要依 AD + CloudTCM 交集認定，課件只提供功效方向（清肝火、治痢）背景佐證。",
+      "functions_zh": [
+        "清熱燥濕",
+        "收澀止痢",
+        "清肝明目"
+      ],
+      "actions_en": [
+        "Clears Heat and dries Dampness",
+        "Astringes the Intestines and stops dysenteric discharge",
+        "Clears Liver Heat and improves visual acuity"
+      ],
+      "indications_zh": [
+        "濕熱瀉痢，裡急後重（尤其細菌性痢疾）。",
+        "濕熱帶下。",
+        "肝經風熱之目赤腫痛、目生翳膜。",
+        "肺熱咳嗽、氣喘。"
+      ],
+      "indications_en": [
+        "Damp-Heat dysentery/diarrhea with tenesmus (especially bacterial dysentery).",
+        "Damp-Heat vaginal discharge.",
+        "Liver-channel Wind-Heat with red, swollen, painful eyes or corneal nebula.",
+        "Lung Heat cough and wheezing."
+      ],
+      "condition_tags_zh": [
+        "濕熱瀉痢",
+        "裡急後重",
+        "細菌性痢疾",
+        "濕熱帶下",
+        "目赤腫痛",
+        "目生翳膜",
+        "肺熱咳嗽"
+      ],
+      "condition_tags_en": [
+        "Damp-Heat dysentery",
+        "Tenesmus",
+        "Bacterial dysentery",
+        "Damp-Heat discharge",
+        "Red swollen painful eyes",
+        "Corneal nebula",
+        "Lung-Heat cough"
+      ],
+      "modern_functions_zh": [
+        "含七葉樹苷（秦皮甲素/乙素）等成分，列抗菌、抗發炎、促進尿酸排泄等現代藥理（American Dragon、CloudTCM）",
+        "CloudTCM 另列應用於細菌性痢疾、結膜炎"
+      ],
+      "modern_functions_en": [
+        "Contains aesculin-type constituents (秦皮甲素/乙素); reported antimicrobial, anti-inflammatory, and uric-acid-excretion-promoting effects (American Dragon, CloudTCM)",
+        "CloudTCM additionally notes application in bacterial dysentery and conjunctivitis"
+      ],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 16,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–16g（American Dragon）/ 6–12g（CloudTCM）",
+        "course_dose_g": "課件比較表未列精準劑量",
+        "ad_dose_g": "3–16g；tincture 1–3mL",
+        "cloudtcm_dose_g": "煎湯內服 6–12g；外用適量，煎水洗或濃煎滴眼",
+        "source_note": "AD 劑量範圍較寬（3–16g），CloudTCM 較窄（6–12g）；兩者重疊區間 6–12g 較穩妥，兩端數字並列標明來源。"
+      },
+      "related_formulas": [
+        "formula.bai_tou_weng_tang"
+      ],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；清熱燥濕藥考點：治細菌性痢疾要藥，兼清肝明目。",
+      "exam_pearl": "秦皮 = 白頭翁湯組成藥之一，清熱燥濕治痢，又能清肝明目治目赤翳障——一藥治「下痢」與「目疾」兩個看似不相關的病位。",
+      "clinical_use_note": "秦皮苦澀微寒，核心定位是清熱燥濕治濕熱痢疾（尤其細菌性痢疾，為白頭翁湯要藥），兼能清肝經風熱治目赤腫痛。炭製秦皮性較不寒，更易入血止血，可治崩漏及痢疾兼便血。脾胃虛寒者忌用；與吳茱萸相惡。",
+      "contraindications_zh": [
+        "脾胃虛寒者忌用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach Deficiency-Cold."
+      ],
+      "cautions_zh": [
+        "American Dragon 列與吳茱萸相惡，不宜同用。",
+        "CloudTCM 提醒孕婦及哺乳期婦女慎用。",
+        "CloudTCM 提醒高血壓患者慎用。"
+      ],
+      "cautions_en": [
+        "American Dragon lists antagonism with Wu Zhu Yu (Evodia); avoid combining.",
+        "CloudTCM notes caution in pregnancy and lactation.",
+        "CloudTCM notes caution in hypertensive patients."
+      ],
+      "safety_flags": [
+        "spleen_stomach_cold_contraindication",
+        "herb_incompatibility_wu_zhu_yu",
+        "pregnancy_lactation_caution",
+        "hypertension_caution"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 06 -Clear Heat Eliminate Toxins Herbs",
+          "url": "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L73-L74",
+          "scope": "課件比較表：秦皮清肝火、治細菌性痢疾（僅一行，性味歸經未獨立列出）"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌、配伍相惡"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1502",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+        "https://cloudtcm.com/herb/1502"
+      ],
+      "field_sources": {
+        "identity": [
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "category": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L73-L74",
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html"
+        ],
+        "properties_taste_temp": [
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "channels_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L73-L74",
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "indications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "modern_functions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "dosage": [
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
+          "https://cloudtcm.com/herb/1502"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L73-L74",
+          "https://www.americandragon.com/Individualherbsupdate/QinPi.html"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.qing_dai",
+      "name_zh": "青黛",
+      "name_en": "Indigo Naturalis",
+      "pinyin": "Qing Dai",
+      "pinyin_toned": "Qīng Dài",
+      "pharmaceutical_latin": "Indigo Naturalis",
+      "part_used_zh": "植物加工製成的乾燥粉末或團塊",
+      "part_used_en": "processed dried powder/paste extracted from indigo-yielding plants",
+      "category": "清熱藥 / Clear Heat - Resolve Toxicity",
+      "properties_taste_temp": "鹹，寒",
+      "taste_temperature_zh": "鹹，寒",
+      "channels_zh": [
+        "肝經",
+        "肺經",
+        "胃經"
+      ],
+      "channels_en": [
+        "LV Liver",
+        "LU Lung",
+        "ST Stomach"
+      ],
+      "channels_entered": [
+        "肝經",
+        "肺經",
+        "胃經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [
+        "Indigo",
+        "Natural Indigo"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "鹹"
+        ],
+        "five_flavors_en": [
+          "Salty"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [
+          "肝經",
+          "肺經",
+          "胃經"
+        ],
+        "meridian_tropism_en": [
+          "LV Liver",
+          "LU Lung",
+          "ST Stomach"
+        ],
+        "part_used_zh": "植物加工製成的乾燥粉末或團塊",
+        "part_used_en": "processed dried powder/paste extracted from indigo-yielding plants",
+        "source_note_zh": "課件、American Dragon、CloudTCM 三源歸經一致：肝、肺、胃經，無衝突。"
+      },
+      "property_channel_source_note_zh": "三源一致，無需調解。",
+      "functions_zh": [
+        "清熱解毒",
+        "涼血消斑",
+        "清肝瀉火",
+        "定驚"
+      ],
+      "actions_en": [
+        "Clears Heat and resolves Fire toxicity",
+        "Cools the Blood and reduces maculae",
+        "Drains Liver Fire and disperses Summerheat",
+        "Calms convulsions/tremors"
+      ],
+      "indications_zh": [
+        "溫毒發斑，血熱吐衄。",
+        "咽喉腫痛、痄腮（腮腺炎）、口瘡。",
+        "小兒驚癇抽搐（肝經風熱）。",
+        "肺熱咳嗽、痰中帶血。",
+        "瘡瘍腫毒、蛇蟲咬傷（外用）。"
+      ],
+      "indications_en": [
+        "Warm-toxin maculae and Blood-Heat hematemesis/epistaxis.",
+        "Sore throat, mumps (痄腮), and mouth sores.",
+        "Childhood convulsions/seizures from Liver-channel Wind-Heat.",
+        "Lung Heat cough with blood-streaked sputum.",
+        "Sores, ulcers, toxic swellings, and snake/insect bites (topical use)."
+      ],
+      "condition_tags_zh": [
+        "溫毒發斑",
+        "血熱吐衄",
+        "咽喉腫痛",
+        "痄腮",
+        "口瘡",
+        "小兒驚癇",
+        "肺熱咳嗽",
+        "瘡瘍腫毒"
+      ],
+      "condition_tags_en": [
+        "Warm-toxin maculae",
+        "Blood-Heat bleeding",
+        "Sore throat",
+        "Mumps",
+        "Mouth sores",
+        "Childhood convulsions",
+        "Lung-Heat cough",
+        "Sores and toxic swelling"
+      ],
+      "modern_functions_zh": [
+        "列抗腫瘤、保肝、免疫調節、抗菌、心血管保護等現代藥理（CloudTCM）",
+        "American Dragon 記載可能抑制癌細胞生長之背景研究"
+      ],
+      "modern_functions_en": [
+        "Reported antitumor, hepatoprotective, immune-regulating, antibacterial, and cardiovascular-protective effects (CloudTCM)",
+        "American Dragon notes background research suggesting inhibition of cancer cell growth"
+      ],
+      "dosage": {
+        "min_g": 1.5,
+        "max_g": 3,
+        "unit": "g/day",
+        "route": "pill_or_powder"
+      },
+      "dosage_g": {
+        "standard_daily_g": "1.5–3g，入丸散劑，不入湯劑直接煎煮（課件、American Dragon、CloudTCM 三源一致）",
+        "course_dose_g": "1.5–3克，研末（課件）",
+        "ad_dose_g": "1.5–3g；入丸劑或粉劑，加入濾過藥液中服用",
+        "cloudtcm_dose_g": "1.5–3克；入丸散劑，不入湯劑；外用適量",
+        "source_note": "三源劑量與用法完全一致：不可直接入煎劑久煮，需入丸散或加入濾過的藥液中。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；清熱解毒藥考點：礦物/加工類清熱藥，不入煎劑久煮。",
+      "exam_pearl": "青黛不入煎劑久煮（久煮破壞有效成分），需研末入丸散或兌入濾過藥液服用；小兒高熱驚癇、鼻衄尤其對證。",
+      "clinical_use_note": "青黛鹹寒，核心定位是清熱解毒＋涼血消斑，尤其適合溫毒發斑、小兒高熱驚癇及各類血熱出血（對鼻衄效果明確）。因加工特性不耐久煮，臨床劑型固定為丸散劑；孕婦禁用，脾胃虛寒者忌用，過量可致噁心嘔吐腹痛甚至便血。",
+      "contraindications_zh": [
+        "中寒者勿用。",
+        "孕婦禁用。",
+        "脾胃虛寒者忌用。",
+        "陰虛火旺（非血熱毒盛）者不宜用。"
+      ],
+      "contraindications_en": [
+        "Not for use in Interior Cold patterns.",
+        "Contraindicated in pregnancy.",
+        "Contraindicated in Spleen-Stomach Deficiency-Cold.",
+        "Not indicated for Yin-deficiency Fire that is not accompanied by Blood-Heat toxicity."
+      ],
+      "cautions_zh": [
+        "過量可能引起噁心、嘔吐、腹痛，甚至便血（American Dragon、CloudTCM）。",
+        "CloudTCM 提醒與抗凝血藥物併用需慎。"
+      ],
+      "cautions_en": [
+        "Overdose may cause nausea, vomiting, abdominal pain, and even hematochezia (American Dragon, CloudTCM).",
+        "CloudTCM notes caution when combined with anticoagulant medication."
+      ],
+      "safety_flags": [
+        "pregnancy_contraindication",
+        "spleen_stomach_cold_contraindication",
+        "yin_deficiency_no_heat_toxicity_contraindication",
+        "anticoagulant_interaction"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 06 -Clear Heat Eliminate Toxins Herbs",
+          "url": "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "scope": "課件段落：青黛性味歸經、功效主治、劑量、禁忌、配伍"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1343",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌、相關方劑"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+        "https://cloudtcm.com/herb/1343"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "https://cloudtcm.com/herb/1343"
+        ],
+        "category": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "https://cloudtcm.com/herb/1343"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "https://cloudtcm.com/herb/1343"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "https://cloudtcm.com/herb/1343"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "https://cloudtcm.com/herb/1343"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1343",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html"
+        ],
+        "dosage": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "https://cloudtcm.com/herb/1343"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1343",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
+          "https://cloudtcm.com/herb/1343"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378",
+          "https://www.americandragon.com/Individualherbsupdate/QingDai.html"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.sang_zhi",
+      "name_zh": "桑枝",
+      "name_en": "Mulberry Twig",
+      "pinyin": "Sang Zhi",
+      "pinyin_toned": "Sāng Zhī",
+      "pharmaceutical_latin": "Ramulus Mori",
+      "part_used_zh": "嫩枝",
+      "part_used_en": "young twig",
+      "category": "祛風濕藥 / Dispel Wind-Damp",
+      "properties_taste_temp": "苦，平",
+      "taste_temperature_zh": "苦，平",
+      "channels_zh": [
+        "肝經"
+      ],
+      "channels_en": [
+        "LV Liver"
+      ],
+      "channels_entered": [
+        "肝經"
+      ],
+      "aliases_zh": [
+        "桑條"
+      ],
+      "aliases_en": [
+        "Morus Twig"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Bitter"
+        ],
+        "four_natures_zh": "平",
+        "four_natures_en": "Neutral",
+        "meridian_tropism_zh": [
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "LV Liver"
+        ],
+        "part_used_zh": "嫩枝",
+        "part_used_en": "young twig",
+        "source_note_zh": "課件、American Dragon、CloudTCM「基本資訊」頁三源一致：苦、平，歸肝經。CloudTCM「傳統功效」段落文字寫「性微寒/性甘寒，歸肺肝/肝腎經」與其自身基本資訊頁矛盾——經比對疑似混入桑葉/桑白皮的內容，不採用，主欄仍以課件+AD+CloudTCM基本資訊一致的苦平肝經為準。"
+      },
+      "property_channel_source_note_zh": "CloudTCM 同一頁「基本資訊」與「傳統功效」對性味歸經的敘述互相矛盾（苦平歸肝 vs 甘寒歸肺肝/肝腎），判斷後者疑似頁面內容混入桑葉/桑白皮描述，不採信，已於下方功效欄排除該矛盾段落。",
+      "functions_zh": [
+        "祛風濕",
+        "利關節",
+        "利水消腫"
+      ],
+      "actions_en": [
+        "Dispels Wind-Dampness and unblocks the channels/collaterals",
+        "Benefits the joints",
+        "Promotes diuresis and reduces edema"
+      ],
+      "indications_zh": [
+        "風濕痹痛，尤其上肢肩臂關節痠痛、麻木、拘攣。",
+        "水腫。",
+        "中風後半身不遂、肢體麻木（現代運用）。"
+      ],
+      "indications_en": [
+        "Wind-Damp Bi pain, especially shoulder/arm joint soreness, numbness, and spasm.",
+        "Edema.",
+        "Post-stroke hemiplegia and limb numbness (modern application)."
+      ],
+      "condition_tags_zh": [
+        "風濕痹痛",
+        "肩臂關節痠痛",
+        "肢體麻木",
+        "水腫",
+        "中風後遺症"
+      ],
+      "condition_tags_en": [
+        "Wind-Damp Bi pain",
+        "Shoulder/arm joint soreness",
+        "Limb numbness",
+        "Edema",
+        "Post-stroke sequelae"
+      ],
+      "modern_functions_zh": [
+        "CloudTCM 列抗菌、抗病毒、抗氧化、抗炎、鎮痛、降血糖、降血脂、降血壓、抗腫瘤等背景藥理；因來源頁本身有性味歸經矛盾，此段現代藥理列為背景參考，非精準核讀共識"
+      ],
+      "modern_functions_en": [
+        "CloudTCM lists background pharmacology (antibacterial, antiviral, antioxidant, anti-inflammatory, analgesic, hypoglycemic, lipid-lowering, antihypertensive, antitumor); because the source page's own properties/channels text is internally inconsistent, this modern-pharmacology list is kept as background reference, not a fully verified consensus"
+      ],
+      "dosage": {
+        "min_g": 9,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "9–15g，重症可達 60g（American Dragon）/ 10–30g（課件）/ 一般 9–15g，食療 10–30g（CloudTCM）",
+        "course_dose_g": "10–30克（課件）",
+        "ad_dose_g": "9–15g；重症可達 60g；tincture 2–5mL",
+        "cloudtcm_dose_g": "一般 9–15克；食療用量 10–30克",
+        "source_note": "三源在 9–15g 標準區間一致，課件與 CloudTCM 食療上限達 30g，AD 重症上限達 60g，三者並列不合併。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；祛風濕藥考點：唯一明確定位「上肢」痹痛的祛風濕藥，常與桑寄生（下肢/補肝腎）鑑別。",
+      "exam_pearl": "課件 Review Question 呼應：桑枝 = 祛風濕、利關節、通經絡的「上肢」要藥，對比桑寄生/五加皮等「下肢」用藥。American Dragon 指出桑枝偏涼，較桂枝更適合風熱夾濕或有癢感者。",
+      "clinical_use_note": "桑枝性平偏涼，核心定位是祛風濕、利關節，尤其擅治上肢肩臂痹痛麻木，是與桑寄生（補肝腎、下肢）、五加皮等祛風濕藥鑑別的重點。CloudTCM 同頁「傳統功效」段落出現與桑葉/桑白皮混淆的描述（性寒、歸肺經、疏散風熱），已排除不採用，僅保留其「基本資訊」頁與課件、AD 一致的苦平歸肝經、祛風濕利關節主軸。",
+      "contraindications_zh": [
+        "孕婦慎用。"
+      ],
+      "contraindications_en": [
+        "Caution in pregnancy."
+      ],
+      "cautions_zh": [
+        "CloudTCM 提醒脾胃虛弱者慎服。",
+        "CloudTCM 提醒服用抗凝血藥物者不宜服用（含皁苷類成分，可能增加出血風險）。",
+        "CloudTCM 提醒服用降血壓/降血糖藥物者慎服（可能加強藥效）。",
+        "CloudTCM 提醒過敏體質者慎服；長期服用應諮詢中醫師。"
+      ],
+      "cautions_en": [
+        "CloudTCM notes caution in Spleen-Stomach weakness.",
+        "CloudTCM notes caution with anticoagulant medication (saponin-type constituents may increase bleeding risk).",
+        "CloudTCM notes caution with antihypertensive/hypoglycemic medication (may potentiate effect).",
+        "CloudTCM notes caution in allergy-prone individuals; consult a TCM practitioner before long-term use."
+      ],
+      "safety_flags": [
+        "pregnancy_caution",
+        "spleen_stomach_weak_caution",
+        "anticoagulant_interaction",
+        "antihypertensive_hypoglycemic_interaction"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 MM2-Module 1 Dispel Wind-Damp Herbs",
+          "url": "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "scope": "課件段落：桑枝性味歸經、功效主治、劑量"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、與桂枝之鑑別"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1157",
+          "scope": "精準頁基本資訊：性味歸經、別名；劑量與禁忌段落。傳統功效段落內容與基本資訊矛盾，判斷混入桑葉/桑白皮描述，不採用"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+        "https://cloudtcm.com/herb/1157"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "category": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "dosage": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1157"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L221-L236",
+          "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
+          "https://cloudtcm.com/herb/1157"
+        ]
+      },
+      "card_grade": "template"
     }
   ],
   "batch_summary": {
-    "total_records": 311,
+    "total_records": 316,
     "repaired_pending_utf8_records": 32,
     "draft_filled_this_batch": 127,
     "source_checked_records": 0,
     "safety_rule": "Search tags and clinical notes are documentation context only, not treatment claims.",
-    "last_batch": "NCBAHM missing herbs batch 12",
+    "last_batch": "NCBAHM missing herbs batch 13",
     "last_batch_cards": [
-      "昆布",
-      "蓮鬚",
-      "蓮子心",
-      "靈芝",
-      "綠豆"
+      "路路通",
+      "藕節",
+      "秦皮",
+      "青黛",
+      "桑枝"
     ],
-    "local_herb_cards": 311,
+    "local_herb_cards": 316,
     "latest_missing_card_batch": {
       "date": "2026-07-29",
       "agent": "Claude",
       "branch": "claude/acuting-os-rebuild-analysis-u0e82n",
       "added": [
-        "herb.kun_bu",
-        "herb.lian_xu",
-        "herb.lian_zi_xin",
-        "herb.ling_zhi",
-        "herb.lu_dou"
+        "herb.lu_lu_tong",
+        "herb.ou_jie",
+        "herb.qin_pi",
+        "herb.qing_dai",
+        "herb.sang_zhi"
       ],
       "rule": "NCBAHM 2026 CH Appendix A missing-card creation; source-layered draft; network-verified against American Dragon + CloudTCM."
     }

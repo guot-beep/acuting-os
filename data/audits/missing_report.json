@@ -26,15 +26,10 @@
     "scope_note": "Board-outline herb coverage audit; separate from the older 202 CloudTCM herb seed count.",
     "matching_method": "Normalized Appendix A pinyin against local name_zh AND aliases_zh/aliases_en. Sha Yuan Ji Li → 沙苑子 and Yin Chen → 茵陳蒿 were counted missing only because those two records had empty alias arrays; aliases added rather than new cards created, so no duplicate herb was introduced (E9).",
     "appendix_a_total": 304,
-    "local_herb_cards": 311,
-    "matched_to_local_cards": 288,
-    "missing_card_count": 16,
+    "local_herb_cards": 316,
+    "matched_to_local_cards": 293,
+    "missing_card_count": 11,
     "missing_cards": [
-      "Lu Lu Tong",
-      "Ou Jie",
-      "Qin Pi",
-      "Qing Dai",
-      "Sang Zhi",
       "She Chuang Zi",
       "Shi Wei",
       "Si Gua Luo",
@@ -68,29 +63,27 @@
     ],
     "last_updated": "2026-07-29",
     "last_completed_cards": [
-      "Kun Bu",
-      "Lian Xu",
-      "Lian Zi Xin",
-      "Ling Zhi",
-      "Lu Dou"
-    ],
-    "next_recommended_batch": [
       "Lu Lu Tong",
       "Ou Jie",
       "Qin Pi",
       "Qing Dai",
       "Sang Zhi"
+    ],
+    "next_recommended_batch": [
+      "She Chuang Zi",
+      "Shi Wei",
+      "Si Gua Luo",
+      "Suo Yang"
     ],
     "ncbahm_2026_ch_appendix_a_total": 304,
     "last_quality_update": "2026-07-29",
     "next_priority": [
-      "Lu Lu Tong",
-      "Ou Jie",
-      "Qin Pi",
-      "Qing Dai",
-      "Sang Zhi"
+      "She Chuang Zi",
+      "Shi Wei",
+      "Si Gua Luo",
+      "Suo Yang"
     ],
-    "note": "23 → 21 (dedup fix) → 16: batch 12 built Kun Bu/Lian Xu/Lian Zi Xin/Ling Zhi/Lu Dou against curriculum + American Dragon + CloudTCM (network-verified). 16 genuinely absent remain. 4 herb_pairs entries still point at herb ids outside Appendix A scope (橘核, 青葙子, 穀精草, 南沙參)."
+    "note": "16 -> 11 remaining. Batch13 built Lu Lu Tong/Ou Jie/Qin Pi/Qing Dai/Sang Zhi (network-verified). Caught a CloudTCM self-contradiction on Sang Zhi (its own '傳統功效' prose section didn't match its own '基本資訊' tab, or curriculum/AD) and excluded the bad section rather than silently including it. 11 genuinely absent remain. 4 herb_pairs entries still point at herb ids outside Appendix A scope (橘核, 青葙子, 穀精草, 南沙參)."
   },
   "channels": {
     "BL": {

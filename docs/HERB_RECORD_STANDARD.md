@@ -133,3 +133,32 @@ Rules:
 - AD / CloudTCM / other reviewed professional-source differences are preserved, not silently discarded.
 - Powder, pill, wine, topical, internal, severe-case, fresh-herb, dietary-use, and granule/product doses must be separated in `source_note` or `granule_note`.
 - Toxic herbs and internal/external medicines must never merge separate dose forms into one vague daily raw-herb dose.
+
+## 2026-07-29 two rendering bugs fixed (`js/knowledge.js`), affected every existing card
+
+Found while Ting was spot-checking batch12 live, not specific to any one herb —
+both existed on `herb.he_tao_ren` too and are now fixed in
+`js/knowledge.js`. Recorded here so a future content-only batch doesn't
+"fix" the data to work around them:
+
+1. **External-link tile picked the wrong citation.** The compact "外部參考
+   Sources" tile at the top of the card reads dedicated `record.cloudtcm_url`
+   / `record.american_dragon_url` fields, which no batch (Codex's or
+   Claude's) has ever set — those sources only ever go into
+   `source_citations`. Its fallback picked "the first `source_citations`
+   entry with a truthy `.url`", with no check that the value was an actual
+   `http(s)` URL — so it rendered the curriculum file path (always listed
+   first by convention, e.g. `curriculum/herbs/...md#L1-L2`) as if it were
+   the herb's external reference link. Fixed to derive both URLs from
+   `source_citations` by hostname when the dedicated fields are absent, and
+   to require `http(s)` before treating a citation as a generic link.
+2. **Indications never showed English**, even when `indications_zh` /
+   `indications_en` were fully populated and index-aligned. Every other
+   bilingual section (Actions, Modern Pharmacology, condition tags,
+   contraindications/cautions) pairs 中/英; this one rendered `indications_zh`
+   as a plain list and only ever touched `indications_en` as a broken
+   whole-array fallback when `indications_zh` was empty. Fixed to pair by
+   index using the same alignment check already used for actions.
+
+Neither needed a data change — both cards' JSON was correct, the renderer
+was dropping/misdirecting content it already had.

@@ -126,6 +126,31 @@ CloudTCM 本地 URL map 沒有匹配時，仍必須以中文藥名查找精確
 `safety_flags` `safety_review_pending` `related_formulas` `exam_importance`
 `exam_pearl` `clinical_use_note` `field_sources` `review_status`
 
+### 3.5 記錄層 metadata 欄位(必填,2026-07-29 補記)
+
+`he_tao_ren` 樣板實際還帶 10 個 metadata 欄位，排在記錄最前面，但 §3
+的清單一直沒寫出來 —— 這是 batch12 漏掉它們的直接原因（validator 不擋這些
+欄位，所以漏了也會 PASS，只有肉眼比對才抓得到）。往後每一筆新卡都必須帶
+齊，值照這裡填,不要自己發明:
+
+| 欄位 | 值 | 說明 |
+|---|---|---|
+| `review_status` | `"draft"` | AI 只能寫這個 |
+| `source_status` | `"source_layered_draft"` | 固定值 |
+| `ncbahm_2026_official` | `true` | 屬 Appendix A/B 正式考綱藥才填 true |
+| `public_safe` | `false` | 私人系統，固定 false |
+| `updated_at` | 建卡當天日期 | `"2026-07-29"` 格式 |
+| `authored_by` | 實際建卡的 AI 名稱 | `"Codex"` 或 `"Claude"`,不可留空 |
+| `name_header_note_zh` | `"中文/拼音旁為 common name；下一行拉丁藥名。"` | 固定值 |
+| `key_pairs` | `[]` | 有正式 `herb_pairs.json` 對藥時留空 |
+| `review_notes_zh` | 一句話說明依據哪些來源建卡、仍待 RV1 | 每筆可依實際來源微調文字 |
+| `source_type` | `"full_card_verified_multi_source"` | 固定值 |
+
+驗證新卡有沒有漏欄最快的方法：拿新記錄的 `Object.keys()` 跟
+`herb.he_tao_ren` 的 `Object.keys()` 比對，缺什麼、多什麼一次看清楚——
+不要只跑 `validate-herb-standard.js` 就當作做完了，那支只檢查它自己認得的
+欄位，不會告訴你漏了 metadata。
+
 `clinical_use_note` 不是把功效、主治重新貼一次，而是整理「這味藥如何辨識與記憶」：
 核心定位、與相似藥的鑑別、最重要配伍、炮製／安全提醒及 board 考點。內容必須
 由已核讀來源綜合而來，並在 `field_sources.clinical_use_note` 列出來源。
