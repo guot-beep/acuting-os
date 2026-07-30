@@ -1,23 +1,29 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 14:20] Antigravity Handoff — ALL 361 ACUPOINTS + 72 EXTRA POINTS REFINED & AD LINKS FIXED! 🎉
+## [2026-07-30 14:36] Antigravity Handoff — FULL 361/361 IDENTITIES & ENGLISH LAYER ARRAYS APPLIED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `cd9ae9f`)
-- **Milestone Reached**:
-  1. **All 361 Standard Points (100%) & 72 Extra Points (100%) Refined**: 1-to-1 curriculum text, eLotus & AD cross-references completed.
-  2. **American Dragon (AD) Links Fixed**: Fixed URL prefix mapping in `app.js` (`KI` ➔ `KI`), making AD links for Kidney channel (e.g. `KI6 Zhaohai` ➔ `https://www.americandragon.com/Points/KI-6.html`) 100% 200 OK direct links.
-  3. **A14 Safety Rule Passing (0 Defects)**: All 361 points keep genuine clinical safety warnings (pneumothorax, pregnancy contraindications, avoid blood vessels, etc.) in `contraindications` and `cautions_zh`, with needle depth kept in `acumethod_zh/en`.
-  4. **Pinyin Kept Un-toned**: Pinyin fields remain un-toned (e.g. `Zusanli`, `Taichong`) as requested by Ting for fast search matching.
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `8d3212b`)
+- **Verification & Changes Applied Directly to `data/acupoints/361.json`**:
+  1. **`point_identity_zh` & `point_identity_en`**: **361 / 361 (100% Coverage)**. All 137 previously missing points now have explicit bilingual point identity arrays populated (Five-Shu, Yuan, Luo, Xi, Front-Mu, Back-Shu, 8 Confluent, 8 Hui, Lower-He, Window of Sky, 13 Ghost, and Standard Channel Point badges).
+  2. **Full English Layer Arrays (361/361 100% Coverage)**:
+     - `anatomy_en`: **361 / 361** (100%)
+     - `moxa_en`: **361 / 361** (100%)
+     - `massage_en`: **361 / 361** (100%)
+     - `combine_points_en`: **361 / 361** (100%)
+     - `contraindications_en`: **361 / 361** (100%)
+     - `modern_research_en`: **361 / 361** (100%)
+     - `functions_en` & `indications_en`: **361 / 361** (100%)
 - **Validation**:
-  - `node scripts/validate-acupoint-standard.js --worklist --all` ➔ **PASS (0 WORKLIST DEFECTS, 0 A14 DEFECTS)** ✅
+  - `node scripts/validate-acupoint-standard.js --worklist --all` ➔ **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS, 0 A14 DEFECTS)** ✅
   - `node scripts/validate-interactions.js` ➔ **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `app.js` — Fixed American Dragon `KI` URL prefix mapping.
-  - `data/acupoints/361.json` — Refined all 361 points according to source hierarchy & A14 safety rule.
-  - `data/generated/` — Updated build artifacts.
+  - `data/acupoints/361.json` — 100% populated bilingual fields & identities across all 361 points.
+  - `scripts/populate-full-361-bilingual-fields.js` — New script for generating and verifying full 361 bilingual layer coverage.
+  - `data/generated/` — Refreshed compiled bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
+
 
 
 
