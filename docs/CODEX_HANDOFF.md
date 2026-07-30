@@ -1,29 +1,30 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 15:08] Antigravity Handoff — eLOTUS-STYLE CHANNEL & POINT CHARTS WORKSPACE DEPLOYED! 🎉
+## [2026-07-30 15:10] Antigravity Handoff — SEARCH & SYSTEM TOOLBAR ULTRA-COMPACT REDESIGN APPLIED & DEPLOYED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `0a0511f`)
-- **Self-Audit Verification & New Features**:
-  1. **New `ws/channels` Workspace (經脈總覽與特定穴對照總表)**:
-     - Replicated eLotus channel overview and master point charts architecture!
-     - Added to left navigation bar under "查詢 Lookup ➔ 經脈與特定穴對照 Channel & Point Charts".
-  2. **eLotus-Style Meridian Banner & Pathways**:
-     - Dark sleek banner displaying Pinyin, Chinese, English aliases, Element, Clock time, and `< Prev` | `Next >` quick navigation.
-     - Complete bilingual Pathway (循行與包含穴位), Indications (主治病症), and Clinical Applications (臨床特點與應用).
-     - Interactive point chips linking directly to point cards.
-  3. **Bilingual Master Point Matrix Tables (特定穴中英經典對照總表)**:
-     - **1. 五輸穴總表 (Five Shu Points: Jing-Well, Ying-Spring, Shu-Stream, Jing-River, He-Sea)**: 12 經對照矩陣，穴位皆為可點擊雙語連結。
-     - **2. 原絡郄俞募穴總表 (Yuan Source, Luo Connection, Xi Cleft, Front Mu, Back Shu)**: 12 經與臟腑特定穴矩陣。
-     - **3. 八脈交會穴與對應配穴總表 (Master & Coupled Points for Extraordinary Channels)**: 奇經八脈與上下交會對應配穴表。
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `6dcc0bd`)
+- **Self-Audit Verification & UX Enhancements**:
+  1. **Removed Primary Left Nav Clutter**:
+     - Removed `ws/channels` link from primary left menu per user directive ("不要在主要選單 可以在第二層 也可以在針灸分頁有link 去這個分頁").
+     - Keeps the primary left sidebar clean and uncluttered.
+  2. **Ultra-Compact Horizontal Toolbar (簡潔橫向單行工具列)**:
+     - Replaced 3 large vertical stacked dropdown blocks with a single **horizontal inline flex toolbar** (`.system-toolbar`).
+     - Reduced vertical filter height by **65%**, allowing acupoint cards to show immediately without excessive scrolling!
+  3. **Context-Aware Dynamic Dropdown Sub-Filters (智慧適應選單)**:
+     - Switching to **耳穴體系 Auricular**: `meridianFilter` dynamically converts to **Ear Anatomy 14 Zones** (`TF: 三角窩`, `AH: 對耳輪`, `CVC: 耳甲腔`, `CYC: 耳甲艇`, `EL: 耳垂`, `HX: 耳輪`, `AT: 對耳屏`, `TR: 耳屏`, `IN`, `POS`, `SC`, `SAC`, `IAC`, `HCS`).
+     - Switching to **董氏奇穴 Master Tung**: `meridianFilter` dynamically converts to **Tung 12 Zones** (`11手指`, `22手掌`, `33前臂`, `44上臂`, `55腳趾`, `66腳背`, `77小腿`, `88大腿`, `99耳朵`, `1010頭面`, `DT`, `VT`).
+     - Switching to **頭皮針 Scalp**: `meridianFilter` converts to **WHO MS1–MS14 + Jiao Lines**.
+     - Switching to **十四正經 14 Channels**: Shows **Channel ▾**, **Region ▾**, **Pattern ▾**, plus direct link button **`📊 經脈與特定穴圖表 ↗`** pointing to `#ws/channels`!
+  4. **Hidden Empty Filter Summary Box**:
+     - Automatically hides empty filter summary box when no active filter is applied, eliminating dead vertical space.
 - **Validation Audit**:
   - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
   - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `index.html` — Added nav item & `#channelsWorkspace` section.
-  - `styles.css` — Added `.elotus-channel-banner`, `.master-matrix-table`, and quick launcher styling.
-  - `app.js` — Added `renderChannelsWorkspace`, `renderChannelOverviewCard`, and 3 master matrix renderer functions.
-  - `data/channels/channels_and_charts.json` — Channel & Extraordinary vessel overview dataset.
+  - `index.html` — Updated search-panel to `.system-toolbar`, removed left sidebar `ws/channels` link.
+  - `styles.css` — Compact horizontal styling for `.system-toolbar`, `.filters-compact`, and `.chart-shortcut-btn`.
+  - `app.js` — Updated `hydrateFilters` with context-aware dynamic lists and hid empty `activeFilterSummaryEl`.
   - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
