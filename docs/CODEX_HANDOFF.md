@@ -1,23 +1,25 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 14:57] Antigravity Handoff — FULL 361 EXAM PEARLS & SCALP ACUPUNCTURE (MS1–MS14 + JIAO SHUNFA) BUILT & DEPLOYED! 🎉
+## [2026-07-30 15:00] Antigravity Handoff — AURICULAR POINTS 100% 200 OK LINKS & CLINICAL CONTENT REFINED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `529bfab`)
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `f7b5699`)
 - **Self-Audit Verification & Complete Database Coverage**:
-  1. **Exam Pearl Rendering Bug Fixed**: Resolved `app.js` property name mismatch (`point.examPearl` vs `point.exam_pearl`). Now all 361 points render their high-yield Board Exam Pearl section with 100% coverage (361/361 ZH & EN).
-  2. **Scalp Acupuncture Dataset Built & Integrated (`data/scalp/scalp_points_full.json`)**:
-     - **WHO International Standard Scalp Lines (MS1–MS14)**: MS1 Middle Line of Vertex, MS4 Anterior Oblique Line (Motor Area: Upper 1/5 lower limb, Mid 2/5 upper limb, Lower 2/5 face), MS5 Posterior Oblique Line (Sensory Area), MS6 Forehead Middle Line, MS7–MS9 Forehead Lines 1-3 (Thoracic, Stomach, Reproductive), MS10–MS11 Temporal Lines (Vertigo & Hearing), MS12–MS14 Occipital Lines (Vision & Balance).
-     - **Jiao Shunfa Scalp System (焦氏頭針)**: Chorea & Tremor Control Area, Speech Area I (Broca's Motor Aphasia), Speech Area II (Nominal Aphasia), Speech Area III (Wernicke's Sensory Aphasia).
-     - Built into `app_data.js` and merged into `defaultPoints` runtime.
-  3. **Zero Worklist Defects (0/361 Defects)**: Cleaned all remaining A13 disease category tags while keeping 1-to-1 index-aligned `action_tags_zh` and `action_tags_en` lengths.
+  1. **Auricular Links 100% 200 OK Fix**:
+     - Audited all 29 Auricular points in `data/auricular/embedded/auricular_points.json`.
+     - Fixed eLotus LCH slugs (`shenmen`, `nervous-subcortex`, `spleen`, `cervical-vertebrae`, `knee-joint`, `decrease-blood-pressure-point`), replacing all 404 links with 100% 200 OK URLs.
+     - Updated `getEarLotusSlug(record)` in `app.js` with exact code-to-slug mapping so runtime fallbacks never 404.
+  2. **Enriched Auricular Clinical Content**:
+     - Added explicit needle depth, ear-seed pressure instructions (`acumethod_zh`/`acumethod_en`), board exam pearls (`exam_pearl`/`exam_pearl_en`), cautions (`cautions_zh`/`cautions_en`), and 3D GB93 national standard reference links across all 29 ear points.
+  3. **Scalp Acupuncture Dataset (`data/scalp/scalp_points_full.json`)**:
+     - 18 Scalp acupuncture lines (WHO MS1–MS14 + Jiao Shunfa lines) fully integrated.
 - **Validation Audit**:
   - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
   - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `app.js` — Fixed `examPearlSection` snake_case alias reading & registered `scalpPoints`.
-  - `data/scalp/scalp_points_full.json` — 18 Scalp Acupuncture lines with full bilingual anatomy, indications, techniques, and cautions.
-  - `scripts/build-data.js` — Registered `scalpPoints` in build target.
+  - `app.js` — Updated `getEarLotusSlug` exact slug mapping.
+  - `data/auricular/embedded/auricular_points.json` — 100% 200 OK eLotus & GB93 links + enriched clinical fields across all 29 ear points.
+  - `scripts/fix-all-auricular-points-content-and-links.js` — Automated audit script.
   - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
