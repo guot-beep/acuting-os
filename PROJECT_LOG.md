@@ -1,5 +1,12 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Codex — Quality four-layer progress model
+
+- Updated the Quality progress table to separate four meanings that were previously conflated: framework/cards exist, made/content filled, grade/template-level, and verified/source-checked.
+- Added concrete current counts to `data/audits/missing_report.json.quality_layers`: acupoints 751 framework / 97 of 361 standard-channel template-grade; herbs 327 local cards / 304 of 304 NCBAHM Appendix A made / 79 template-grade / 248 partial; formulas 201 framework / 152 made with grade tracking not yet established.
+- Fixed stale top-level herb audit summary that still said 291 local herb cards and 266/304 coverage after the Appendix A gap had already closed.
+- Validation: build-data PASS; app.js syntax PASS; validate-interactions PASS; validate-acupoint-standard PASS; validate-herb-standard PASS; git diff --check PASS.
+
 ## 2026-07-29 Claude — NCBAHM CH missing herbs batch 16 (FINAL, network-verified): Zao Jiao Ci, Zhen Zhu — Appendix A gap CLOSED
 
 - Built the final 2 cards from curriculum + live American Dragon + live CloudTCM, closing the Appendix A missing-card gap opened 2026-07-28: **herb_outline_coverage is now 304/304 matched, 0 missing.** Local herb cards: 327.

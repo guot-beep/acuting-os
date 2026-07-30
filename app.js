@@ -167,6 +167,7 @@ function adapt361Record(record) {
     reviewStatus: record.review_status || "draft",
     sourceStatus: record.source_status || "sourced_cloudtcm_record",
     enrichmentStatus: record.enrichment_status || "",
+    fieldSources: record.field_sources || {},
     sources: record.sources || (record.cloudtcm_url ? [record.cloudtcm_url] : []),
     x: record.ui_map?.x ?? meta.x,
     y: record.ui_map?.y ?? meta.y
@@ -1645,26 +1646,27 @@ function getDataQualityAudit() {
   };
 }
 
-// Per-layer 製作 (content filled) vs 驗證 (source_checked applied + owner RV1
-// marks) so Ting can see, honestly, how much of each domain is made and how
-// much she/the sources have actually verified.
+// Per-layer progress, explicitly separated so Quality does not confuse
+// "record exists" with "content is template-grade" or "source-checked".
 function getDomainProgress() {
   const K = globalThis.ACUTING_KNOWLEDGE || {};
   const recs = (key) => (K[key] && K[key].records) || [];
   const herbCoverage = K.audit?.herb_outline_coverage || {};
+  const qualityLayers = K.audit?.quality_layers || {};
   const verdicts = window.AcuTingReview ? window.AcuTingReview.allVerdicts() : [];
   const byKind = (kind, verdict) => verdicts.filter((v) => v.kind === kind && v.verdict === verdict).length;
   const filled = (v) => Array.isArray(v) ? v.length > 0 : (v != null && String(v).trim() !== "");
   const madeCount = (arr, keys) => arr.filter((r) => keys.some((k) => filled(r[k]))).length;
   const scCount = (arr) => arr.filter((r) => (r.review_status || "") === "source_checked").length;
+  const hasFieldSource = (r, key) => r.field_sources && r.field_sources[key];
 
   const herbs = recs("herbs");
   const formulas = recs("formulas");
   const conditions = recs("conditionCanon");
   const comparisons = recs("comparisons");
 
-  const row = (label, kind, total, made, sourceChecked, extra = {}) => ({
-    label, total, made, sourceChecked, ...extra,
+  const row = (label, kind, total, framework, made, grade, sourceChecked, extra = {}) => ({
+    label, kind, total, framework, made, grade, sourceChecked, ...extra,
     reviewed: byKind(kind, "confirmed"),
     issues: byKind(kind, "issue")
   });
@@ -1673,32 +1675,47 @@ function getDomainProgress() {
   const herbMade = Number(herbCoverage.matched_to_local_cards) || madeCount(herbs, ["functions_zh", "functions", "modern_functions_zh", "actions_indications"]);
   const herbLocalCards = Number(herbCoverage.local_herb_cards) || herbs.length;
   const herbMissing = Number(herbCoverage.missing_card_count);
-  const herbProgressRow = row("中藥 Herbs", "herb", herbTotal, herbMade, scCount(herbs), {
+  const herbGrade = Number(qualityLayers.herbs?.template_grade)
+    || herbs.filter((r) => r.card_grade === "template").length;
+  const herbProgressRow = row("中藥 Herbs", "herb", herbTotal, herbLocalCards, herbMade, herbGrade, scCount(herbs), {
     totalNote: herbCoverage.appendix_a_total ? `NCBAHM ${herbTotal} · 本地卡 ${herbLocalCards}` : "",
+    frameworkNote: `${herbLocalCards} local cards`,
     madeNote: herbCoverage.appendix_a_total
       ? `${herbMade}/${herbTotal} NCBAHM 覆蓋 · 缺 ${Number.isFinite(herbMissing) ? herbMissing : Math.max(0, herbTotal - herbMade)}`
       : "",
+    gradeDenominator: herbLocalCards,
+    gradeNote: `${herbGrade}/${herbLocalCards} template-grade；其餘舊卡待重修`,
     verifiedDenominator: herbLocalCards,
     verifiedNote: herbCoverage.appendix_a_total ? `本地卡 ${herbLocalCards} 張；source_checked 仍按本地卡計` : ""
   });
+  const standardPoints = points.filter(isStandardChannelPoint);
+  const standardTemplate = standardPoints.filter((p) => p.fieldSources?.functions_zh).length;
 
   return [
-    row("穴位 Acupoints", "point", points.length,
+    row("穴位 Acupoints", "point", points.length, points.length,
       points.filter((p) => filled(p.functions) || filled(p.location) || filled(p.locationEn)).length,
-      points.filter((p) => (p.reviewStatus || "") === "source_checked").length),
-    row("中藥 Herbs", "herb", herbs.length,
-      madeCount(herbs, ["functions_zh", "functions", "modern_functions_zh", "actions_indications"]),
-      scCount(herbs)) && herbProgressRow,
-    row("方劑 Formulas", "formula", formulas.length,
+      standardTemplate,
+      points.filter((p) => (p.reviewStatus || "") === "source_checked").length, {
+        totalNote: `全部可查點 ${points.length}；標準經穴 ${standardPoints.length}`,
+        frameworkNote: `${points.length}/${points.length} cards exist`,
+        gradeDenominator: standardPoints.length,
+        gradeNote: `${standardTemplate}/${standardPoints.length} standard-channel template-grade`,
+        verifiedNote: "source_checked across all point records"
+      }),
+    herbProgressRow,
+    row("方劑 Formulas", "formula", formulas.length, formulas.length,
       madeCount(formulas, ["composition", "actions_zh", "pattern_indications_zh"]),
+      formulas.filter((r) => r.card_grade === "template").length,
       scCount(formulas)),
-    row("病症 Conditions", "condition", conditions.length,
+    row("病症 Conditions", "condition", conditions.length, conditions.length,
       madeCount(conditions, ["tcm_patterns", "summary_zh", "etiology_zh"]),
+      conditions.filter((r) => r.card_grade === "template").length,
       scCount(conditions)),
-    row("辨證鑑別 Comparisons", "comparison", comparisons.length,
+    row("辨證鑑別 Comparisons", "comparison", comparisons.length, comparisons.length,
       madeCount(comparisons, ["rows", "records", "discriminators", "cells"]),
+      comparisons.filter((r) => r.card_grade === "template").length,
       scCount(comparisons)),
-    row("病例 Cases", "case", clinicalCases.length, clinicalCases.length, 0)
+    row("病例 Cases", "case", clinicalCases.length, clinicalCases.length, clinicalCases.length, 0, 0)
   ];
 }
 
@@ -1707,30 +1724,48 @@ function renderProgressMatrix() {
   if (!host) return;
   const pct = (n, total) => (total ? Math.round((n / total) * 100) : 0);
   const rows = getDomainProgress().map((d) => {
+    const frameworkPct = pct(d.framework, d.total);
     const madePct = pct(d.made, d.total);
+    const gradeTotal = d.gradeDenominator || d.total;
+    const gradePct = pct(d.grade, gradeTotal);
     const verifiedTotal = d.verifiedDenominator || d.total;
     const verPct = pct(d.sourceChecked, verifiedTotal);
     const notes = [
       d.reviewed ? `你標正確 ${d.reviewed}（匯出後套用）` : "",
       d.issues ? `你標問題 ${d.issues}` : ""
     ].filter(Boolean).join(" · ");
+    const totalHtml = d.totalNote
+      ? `<div>${d.total}</div><small>${escapeHtml(d.totalNote)}</small>`
+      : `${d.total}`;
+    const frameworkLabel = d.frameworkNote || `${d.framework}/${d.total} · ${frameworkPct}%`;
+    const madeLabel = d.madeNote || `${d.made}/${d.total} · ${madePct}%`;
+    const gradeLabel = d.gradeNote || `${d.grade}/${gradeTotal} · ${gradePct}%`;
+    const verifiedLabel = `${d.sourceChecked}/${verifiedTotal} 已源審核${d.verifiedNote ? ` · ${escapeHtml(d.verifiedNote)}` : ""}${notes ? ` · ${escapeHtml(notes)}` : ""}`;
     return `
       <tr>
         <td class="pm-label">${escapeHtml(d.label)}</td>
-        <td class="pm-total">${d.total}</td>
+        <td class="pm-total">${totalHtml}</td>
+        <td>
+          <div class="pm-bar pm-framework"><i style="width:${frameworkPct}%"></i></div>
+          <small>${escapeHtml(frameworkLabel)}</small>
+        </td>
         <td>
           <div class="pm-bar"><i style="width:${madePct}%"></i></div>
-          <small>${d.made}/${d.total} · ${madePct}%</small>
+          <small>${escapeHtml(madeLabel)}</small>
+        </td>
+        <td>
+          <div class="pm-bar pm-grade"><i style="width:${gradePct}%"></i></div>
+          <small>${escapeHtml(gradeLabel)}</small>
         </td>
         <td>
           <div class="pm-bar pm-verify"><i style="width:${verPct}%"></i></div>
-          <small>${d.sourceChecked}/${d.total} 已源審核${notes ? ` · ${escapeHtml(notes)}` : ""}</small>
+          <small>${verifiedLabel}</small>
         </td>
       </tr>`;
   }).join("");
   host.innerHTML = `
     <table class="progress-matrix">
-      <thead><tr><th>層 Layer</th><th>總數</th><th>製作 Made</th><th>驗證 Verified</th></tr></thead>
+      <thead><tr><th>層 Layer</th><th>總數</th><th>框架 Framework</th><th>製作 Made</th><th>Grade level</th><th>驗證 Verified</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>`;
 }

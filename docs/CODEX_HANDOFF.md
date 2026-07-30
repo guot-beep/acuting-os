@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Codex Handoff - Quality four-layer progress model
+
+- **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
+- **Task**: Ting asked Quality to show a clearer completion model: framework exists, content made, grade-level reached, and verified/source-checked, each with counts.
+- **Files changed**: `app.js`, `index.html`, `styles.css`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **What changed**: Quality progress matrix now has columns `框架 Framework`, `製作 Made`, `Grade level`, and `驗證 Verified`. Acupoints show `97/361 standard-channel template-grade`; herbs show `304/304 NCBAHM coverage` and `79/327 template-grade`; formulas keep made coverage while explicitly showing grade tracking is not established.
+- **Audit correction**: fixed stale top-level `missing_report.json` herb summary that still said 291 local cards / 266 of 304 matched / 38 missing. Deep `herb_outline_coverage` was already correct at 304/304; now the top-level summary agrees.
+- **Validation**: `scripts/build-data.js` PASS; bundled Node `--check app.js` PASS; `scripts/validate-interactions.js` PASS; `scripts/validate-acupoint-standard.js` PASS; `scripts/validate-herb-standard.js` PASS; `git diff --check` PASS.
+- **Protected areas**: no herb/acupoint card content, formulas, clinical cases, schema, or source curriculum changed. Generated files were refreshed only via `scripts/build-data.js`.
+- **Known risks / manual checks**: browser spot-check Quality page after Ctrl+F5. Confirm the progress table is understandable and not too wide on mobile; if needed, make the table horizontally scroll more visibly.
+- **Next recommended action**: proceed with acupoint HT-channel template-grade pass, or ask Claude to formalize formula grade-level tracking before formula work.
+
 ## [2026-07-29] Claude Handoff - NCBAHM missing herbs batch 16 (FINAL): Zao Jiao Ci, Zhen Zhu — Appendix A gap closed 304/304
 
 - **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`

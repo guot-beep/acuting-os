@@ -5380,6 +5380,8 @@ html { scroll-padding-top: 92px; }
 .progress-matrix small { color: var(--muted); font-size: 0.78rem; }
 .pm-bar { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; margin-bottom: 0.25rem; min-width: 96px; }
 .pm-bar > i { display: block; height: 100%; background: var(--accent); }
+.pm-bar.pm-framework > i { background: #7b8d69; }
+.pm-bar.pm-grade > i { background: #8c4c70; }
 .pm-bar.pm-verify > i { background: var(--gold); }
 
 /* Category chips v2: small round 圖示 + bilingual label + active description */

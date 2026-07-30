@@ -1,25 +1,62 @@
 {
   "generated_on": "2026-07-29",
-  "scope": "AcuTing OS Quality snapshot: Acupoints 361/361 standard-channel layer complete; herb local cards 291; NCBAHM 2026 CH Appendix A herb coverage 266/304 with 38 missing; formulas 201; pathology conditions 150.",
+  "scope": "AcuTing OS Quality snapshot: Acupoints framework present, 97/361 standard-channel points at template-grade; herb local cards 327, NCBAHM 2026 CH Appendix A herb coverage 304/304 with 0 missing; formulas 201; pathology conditions 150.",
   "total_expected": 361,
   "total_present": 361,
   "total_missing": 0,
   "domain_summary": {
     "acupoints_sourced_cloudtcm": "361/361",
-    "herb_local_cards": "291",
+    "herb_local_cards": "327",
     "herbs_sourced_cloudtcm": "202/202 legacy CloudTCM seed layer; not the NCBAHM board-outline total",
     "formulas_sourced_cloudtcm": "201 local formula records; source-check still pending",
     "pathology_conditions_matched": "89/150",
-    "ncbahm_2026_ch_herb_cards": "266/304 matched; 38 missing"
+    "ncbahm_2026_ch_herb_cards": "304/304 matched; 0 missing"
   },
-  "next_recommended_batch": [
-    "Gua Lou Pi",
-    "Gua Lou Ren",
-    "Hai Piao Xiao",
-    "Hai Tong Pi",
-    "Hai Zao"
-  ],
-  "next_recommendation": "Quality finding 2026-07-29: NCBAHM 2026 CH Appendix A has 304 herbs; 271 matched local herb cards; 33 cards missing after adding Fu Pen Zi, Ge Jie, Gou Ji, Gu Sui Bu, and Gu Ya. Next priority: Gua Lou Pi, Gua Lou Ren, Hai Piao Xiao, Hai Tong Pi, Hai Zao.",
+  "quality_layers": {
+    "layer_definitions": {
+      "framework": "Record/card exists and is searchable; not equal to completed content.",
+      "made": "Core content is filled enough to function as a study card.",
+      "grade": "Record meets the current template-grade quality bar.",
+      "verified": "Record has been source_checked / owner-reviewed and applied."
+    },
+    "acupoints": {
+      "total_records": 751,
+      "standard_channel_total": 361,
+      "framework": 751,
+      "made": 751,
+      "template_grade_standard_channel": 97,
+      "verified_source_checked": 1,
+      "note": "Template-grade count follows validate-acupoint-standard.js: field_sources.functions_zh exists on 97/361 standard-channel points. LU, LI, ST, SP are the completed template batches."
+    },
+    "herbs": {
+      "local_herb_cards": 327,
+      "ncbahm_2026_ch_appendix_a_total": 304,
+      "framework": 327,
+      "made_appendix_a_coverage": 304,
+      "template_grade": 79,
+      "partial": 248,
+      "verified_source_checked": 0,
+      "note": "Appendix A missing cards are closed. Remaining herb work is quality revision of roughly 246 older partial cards, not missing-card creation."
+    },
+    "formulas": {
+      "total_records": 201,
+      "framework": 201,
+      "made": 152,
+      "template_grade": 0,
+      "verified_source_checked": 0,
+      "note": "Formula template-grade tracking is not yet established; current Quality should treat formula completion as draft coverage only."
+    },
+    "conditions": {
+      "total_records": 150,
+      "framework": 150,
+      "made": 150,
+      "template_grade": 0,
+      "verified_source_checked": 0,
+      "note": "Conditions are draft records; formal grade-level standard still needs a separate validator."
+    }
+  },
+  "next_recommended_batch": [],
+  "next_recommendation": "NCBAHM 2026 CH Appendix A herb missing-card gap is closed: 304/304 matched, 0 missing. Next herb work is quality revision of older partial cards; near-term priority can shift to acupoint template-grade improvement.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",
