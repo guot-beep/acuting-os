@@ -1,8 +1,8 @@
 /**
  * parse-ki-curriculum.js
- * Parses the 8 KIDNEY CHANNEL OF FOOT SHAO YIN curriculum text
- * to extract exact functions and indications, creating 1-to-1 aligned _zh and _en arrays
- * for all 27 Kidney channel points (KI1–KI27).
+ * Parses all 27 points of Foot Shao Yin Kidney Channel (KI1–KI27)
+ * directly from curriculum PDF text and eLotus/AD sources,
+ * building 1-to-1 matched clean functions_zh/en and indications_zh/en.
  */
 
 const fs = require('fs');
@@ -12,166 +12,166 @@ const FILE_361 = path.join(__dirname, '..', 'data', 'acupoints', '361.json');
 
 const KI_CURRICULUM_DATA = {
   KI1: {
-    fnZh: ['滋陰降火', '醒腦開竅', '平肝息風', '引熱下行'],
-    fnEn: ['Nourish Yin & descend fire', 'Revive brain & open orifices', 'Pacify Liver & extinguish wind', 'Direct heat downwards'],
-    indZh: ['頭痛', '眩暈', '咽喉腫痛', '小便不利', '便秘', '昏迷', '小兒驚風'],
-    indEn: ['Headache', 'Dizziness', 'Sore throat', 'Difficult urination', 'Constipation', 'Coma / fainting', 'Infantile convulsions']
+    fnZh: ['滋陰降火', '醒腦開竅', '平肝熄風', '安神定志'],
+    fnEn: ['Nourish Yin & descend Fire', 'Revive brain & open orifices', 'Pacify Liver & extinguish wind', 'Calm spirit & settle mind'],
+    indZh: ['頭痛眩暈', '咽喉腫痛', '熱病昏迷 / 中風', '癲狂癲癇', '小便不利', '足心熱 / 奔豚氣'],
+    indEn: ['Headache & dizziness', 'Sore throat', 'Febrile coma / Stroke', 'Mania & epilepsy', 'Difficult urination', 'Heat in soles / Running piglet Qi']
   },
   KI2: {
-    fnZh: ['滋陰清熱', '調經止血'],
-    fnEn: ['Nourish Yin & clear heat', 'Regulate menses & stop bleeding'],
-    indZh: ['陰虛潮熱', '咽喉腫痛', '月經不調', '小便不利', '陰癢'],
-    indEn: ['Yin deficiency tidal fever', 'Sore throat', 'Irregular menses', 'Difficult urination', 'Pudendal itching']
+    fnZh: ['滋陰降火', '清熱利濕', '調經止帶'],
+    fnEn: ['Nourish Yin & descend Fire', 'Clear heat & drain dampness', 'Regulate menses & arrest leukorrhea'],
+    indZh: ['月經不調 / 痛經', '陰挺 / 帶下', '遺精 / 陽痿', '咽喉腫痛', '足跗腫痛'],
+    indEn: ['Irregular menses / Dysmenorrhea', 'Uterine prolapse / Leukorrhea', 'Spermatorrhea / Impotence', 'Sore throat', 'Dorsal foot swelling & pain']
   },
   KI3: {
-    fnZh: ['滋陰補腎', '培元固本', '清熱利尿', '納氣平喘'],
-    fnEn: ['Nourish Yin & tonify Kidney', 'Fortify Yuan Qi & consolidate root', 'Clear heat & promote urination', 'Grasp Qi & relieve asthma'],
-    indZh: ['頭痛眩暈', '咽喉腫痛', '齒痛', '耳鳴耳聾', '腰痛', '陽痿遺精', '消渴', '小便頻數'],
-    indEn: ['Headache & dizziness', 'Sore throat', 'Toothache', 'Tinnitus & deafness', 'Lumbar pain', 'Impotence & spermatorrhea', 'Wasting-thirst', 'Frequent urination']
+    fnZh: ['滋陰益腎', '壯陽固本', '調經止帶', '納氣平喘', '清熱明目'],
+    fnEn: ['Nourish Yin & tonify Kidney', 'Strengthen Yang & consolidate root', 'Regulate menses & arrest leukorrhea', 'Grasp Qi & calm asthma', 'Clear heat & brighten eyes'],
+    indZh: ['頭痛眩暈', '耳鳴耳聾', '腰膝酸痛', '月經不調 / 痛經', '遺精 / 陽痿', '消渴', '氣喘', '失眠 / 健忘'],
+    indEn: ['Headache & dizziness', 'Tinnitus & deafness', 'Lumbar & knee soreness/pain', 'Irregular menses / Dysmenorrhea', 'Spermatorrhea / Impotence', 'Wasting-thirst', 'Asthma', 'Insomnia & forgetfulness']
   },
   KI4: {
-    fnZh: ['調補腎氣', '固精平喘', '安神定志'],
-    fnEn: ['Regulate & tonify Kidney Qi', 'Secure essence & relieve asthma', 'Calm spirit & settle mind'],
-    indZh: ['腰脊強痛', '氣喘', '月經不調', '小便不利', '嗜臥', '癡呆'],
-    indEn: ['Lumbar spinal rigidity & pain', 'Asthma', 'Irregular menses', 'Difficult urination', 'Somnolence / lethargy', 'Dementia / memory loss']
+    fnZh: ['納氣平喘', '調理腰腎', '固本止血'],
+    fnEn: ['Grasp Qi & calm asthma', 'Regulate lumbar & Kidney', 'Consolidate root & stop bleeding'],
+    indZh: ['氣喘咳嗽', '咯血', '腰脊強痛', '小便不利 / 癡呆'],
+    indEn: ['Asthma & cough', 'Hemoptysis', 'Lumbar & spinal stiffness/pain', 'Difficult urination / Dementia']
   },
   KI5: {
-    fnZh: ['清熱利濕', '通經止痛', '調經活血'],
-    fnEn: ['Clear heat & drain dampness', 'Unblock channels & stop pain', 'Regulate menses & invigorate blood'],
-    indZh: ['痛經', '月經不調', '小便不利', '足跟痛'],
-    indEn: ['Dysmenorrhea', 'Irregular menses', 'Difficult urination', 'Heel pain']
+    fnZh: ['調經止痛', '清熱利濕'],
+    fnEn: ['Regulate menses & stop pain', 'Clear heat & drain dampness'],
+    indZh: ['月經不調 / 痛經 / 崩漏', '小便不利', '疝氣'],
+    indEn: ['Irregular menses / Dysmenorrhea / Uterine bleeding', 'Difficult urination', 'Hernia']
   },
   KI6: {
-    fnZh: ['滋陰清熱', '利咽明目', '寧神定志', '通調二便'],
-    fnEn: ['Nourish Yin & clear heat', 'Benefit throat & brighten eyes', 'Calm spirit & settle mind', 'Regulate urination & defecation'],
-    indZh: ['咽喉乾痛', '失眠', '癲癇', '月經不調', '帶下', '小便頻數', '便秘'],
-    indEn: ['Dry sore throat', 'Insomnia', 'Epilepsy', 'Irregular menses', 'Leukorrhea', 'Frequent urination', 'Constipation']
+    fnZh: ['滋陰清熱', '通調陰蹻', '安神利咽', '調經通便'],
+    fnEn: ['Nourish Yin & clear heat', 'Unblock Yin Qiao Mai', 'Calm spirit & benefit throat', 'Regulate menses & unblock constipation'],
+    indZh: ['咽喉乾痛 / 失音', '失眠 / 癲癇', '月經不調 / 痛經', '小便頻數 / 癃閉', '便秘', '腳氣 / 足踝痛'],
+    indEn: ['Dry sore throat / Loss of voice', 'Insomnia / Epilepsy', 'Irregular menses / Dysmenorrhea', 'Frequent urination / Anuria', 'Constipation', 'Beriberi / Ankle pain']
   },
   KI7: {
-    fnZh: ['調節汗液', '益腎利水', '清熱止瀉'],
-    fnEn: ['Regulate sweat / anhidrosis', 'Benefit Kidney & promote urination', 'Clear heat & arrest diarrhea'],
-    indZh: ['盜汗無汗', '水腫', '腹脹', '腹瀉', '腰脊強痛'],
-    indEn: ['Night sweats / anhidrosis', 'Edema', 'Abdominal distension', 'Diarrhea', 'Lumbar spinal rigidity']
+    fnZh: ['益腎興陽', '清熱利濕', '固表止汗', '利水消腫'],
+    fnEn: ['Tonify Kidney & arouse Yang', 'Clear heat & drain dampness', 'Consolidate exterior & arrest sweating', 'Promote urination & reduce swelling'],
+    indZh: ['水腫 / 小便不利', '自汗 / 盜汗', '腹脹腹瀉', '腰脊強痛', '下肢痿痺'],
+    indEn: ['Edema / Difficult urination', 'Spontaneous sweating / Night sweating', 'Abdominal distension & diarrhea', 'Lumbar & spinal pain', 'Lower limb weakness']
   },
   KI8: {
-    fnZh: ['調經止血', '清熱利濕'],
-    fnEn: ['Regulate menses & stop bleeding', 'Clear heat & drain dampness'],
-    indZh: ['崩漏', '月經不調', '陰挺', '睾丸腫痛'],
-    indEn: ['Uterine bleeding', 'Irregular menses', 'Uterine prolapse', 'Testicular swelling & pain']
+    fnZh: ['清熱利濕', '調經止帶'],
+    fnEn: ['Clear heat & drain dampness', 'Regulate menses & arrest leukorrhea'],
+    indZh: ['崩漏 / 帶下', '陰挺 / 疝氣', '小便不利'],
+    indEn: ['Uterine bleeding / Leukorrhea', 'Uterine prolapse / Hernia', 'Difficult urination']
   },
   KI9: {
-    fnZh: ['寧神定志', '清熱解毒', '理氣止痛'],
-    fnEn: ['Calm spirit & settle mind', 'Clear heat & relieve toxicity', 'Regulate Qi & stop pain'],
-    indZh: ['癲狂', '疝氣', '小腿痛', '胎毒 / 毒素'],
-    indEn: ['Mania / mental clouding', 'Hernia', 'Lower leg pain', 'Fetal toxicity / poisoning']
+    fnZh: ['寧心安神', '清熱開竅', '理氣止痛'],
+    fnEn: ['Calm Heart & spirit', 'Clear heat & open orifices', 'Regulate Qi & stop pain'],
+    indZh: ['癲狂 / 疝氣', '嘔吐', '小痛疝氣', '下肢腫痛'],
+    indEn: ['Mania / Hernia', 'Vomiting', 'Lower abdominal hernia pain', 'Lower limb swelling & pain']
   },
   KI10: {
-    fnZh: ['滋陰清熱', '利尿通淋', '舒筋活絡'],
-    fnEn: ['Nourish Yin & clear heat', 'Promote urination & unblock Strangury', 'Relax sinews & invigorate channels'],
-    indZh: ['小便不利', '陰癢', '陽痿', '膝膕酸痛'],
-    indEn: ['Difficult urination', 'Pudendal itching', 'Impotence', 'Knee & popliteal pain']
+    fnZh: ['滋陰清熱', '利濕通淋', '健膝止痛'],
+    fnEn: ['Nourish Yin & clear heat', 'Drain dampness & unblock strangury', 'Strengthen knees & stop pain'],
+    indZh: ['小便不利 / 遺尿', '陰痛 / 陽痿', '膝關節痛', '崩漏 / 腹痛'],
+    indEn: ['Difficult urination / Enuresis', 'Pudendal pain / Impotence', 'Knee joint pain', 'Uterine bleeding / Abdominal pain']
   },
   KI11: {
-    fnZh: ['益腎清熱', '通利下焦'],
-    fnEn: ['Benefit Kidney & clear heat', 'Unblock lower jiao'],
-    indZh: ['小腹脹痛', '小便不利', '遺精', '陰痛'],
-    indEn: ['Lower abdominal pain', 'Difficult urination', 'Spermatorrhea', 'Genital pain']
+    fnZh: ['益腎固精', '調經止帶'],
+    fnEn: ['Tonify Kidney & consolidate essence', 'Regulate menses & arrest leukorrhea'],
+    indZh: ['少腹痛', '小便不利', '遺精', '月經不調'],
+    indEn: ['Lower abdominal pain', 'Difficult urination', 'Spermatorrhea', 'Irregular menses']
   },
   KI12: {
-    fnZh: ['益腎補虛', '固精止帶'],
-    fnEn: ['Benefit Kidney & tonify deficiency', 'Secure essence & arrest leukorrhea'],
-    indZh: ['遺精', '陽痿', '帶下', '陰挺'],
-    indEn: ['Spermatorrhea', 'Impotence', 'Leukorrhea', 'Uterine prolapse']
+    fnZh: ['益腎固精', '理氣止痛'],
+    fnEn: ['Tonify Kidney & consolidate essence', 'Regulate Qi & stop pain'],
+    indZh: ['少腹痛', '遺精 / 陽痿', '帶下'],
+    indEn: ['Lower abdominal pain', 'Spermatorrhea / Impotence', 'Leukorrhea']
   },
   KI13: {
-    fnZh: ['調經止帶', '益腎固精'],
-    fnEn: ['Regulate menses & arrest leukorrhea', 'Benefit Kidney & secure essence'],
-    indZh: ['月經不調', '帶下', '奔豚氣', '小便不利'],
-    indEn: ['Irregular menses', 'Leukorrhea', 'Running piglet Qi', 'Difficult urination']
+    fnZh: ['調經理氣', '補腎固精'],
+    fnEn: ['Regulate menses & Qi', 'Tonify Kidney & consolidate essence'],
+    indZh: ['月經不調 / 痛經', '帶下 / 不孕', '遺精'],
+    indEn: ['Irregular menses / Dysmenorrhea', 'Leukorrhea / Infertility', 'Spermatorrhea']
   },
   KI14: {
-    fnZh: ['理氣活血', '調經止痛', '通利水濕'],
-    fnEn: ['Regulate Qi & invigorate blood', 'Regulate menses & stop pain', 'Promote water transformation'],
-    indZh: ['月經不調', '痛經', '小腹痛', '水腫', '小便不利'],
-    indEn: ['Irregular menses', 'Dysmenorrhea', 'Lower abdominal pain', 'Edema', 'Difficult urination']
+    fnZh: ['調經止痛', '健脾利濕'],
+    fnEn: ['Regulate menses & stop pain', 'Fortify Spleen & drain dampness'],
+    indZh: ['月經不調 / 痛經', '少腹痛 / 腹瀉', '小便不利'],
+    indEn: ['Irregular menses / Dysmenorrhea', 'Lower abdominal pain / Diarrhea', 'Difficult urination']
   },
   KI15: {
-    fnZh: ['和胃理氣', '通利水濕'],
-    fnEn: ['Harmonize Stomach & regulate Qi', 'Promote water transformation'],
-    indZh: ['腹痛', '便秘', '月經不調', '小便不利'],
-    indEn: ['Abdominal pain', 'Constipation', 'Irregular menses', 'Difficult urination']
+    fnZh: ['健脾和胃', '調經理氣'],
+    fnEn: ['Fortify Spleen & harmonize Stomach', 'Regulate menses & Qi'],
+    indZh: ['腹痛腹瀉', '便秘', '月經不調'],
+    indEn: ['Abdominal pain & diarrhea', 'Constipation', 'Irregular menses']
   },
   KI16: {
-    fnZh: ['和胃消脹', '潤腸通便'],
-    fnEn: ['Harmonize Stomach & relieve distension', 'Moisten intestines & unblock bowels'],
-    indZh: ['腹痛', '腹脹', '便秘', '嘔吐'],
-    indEn: ['Abdominal pain', 'Abdominal distension', 'Constipation', 'Vomiting']
+    fnZh: ['和胃理腸', '健脾止瀉'],
+    fnEn: ['Harmonize Stomach & Intestines', 'Fortify Spleen & arrest diarrhea'],
+    indZh: ['腹痛腹脹', '腹瀉 / 便秘', '嘔吐'],
+    indEn: ['Abdominal pain & distension', 'Diarrhea / Constipation', 'Vomiting']
   },
   KI17: {
     fnZh: ['和胃降逆', '理氣止痛'],
-    fnEn: ['Harmonize Stomach & descend adverse Qi', 'Regulate Qi & stop pain'],
-    indZh: ['腹痛', '腹脹', '嘔吐', '便秘'],
-    indEn: ['Abdominal pain', 'Abdominal distension', 'Vomiting', 'Constipation']
+    fnEn: ['Harmonize Stomach & descend Qi', 'Regulate Qi & stop pain'],
+    indZh: ['腹痛腹脹', '嘔吐', '便秘'],
+    indEn: ['Abdominal pain & distension', 'Vomiting', 'Constipation']
   },
   KI18: {
-    fnZh: ['和胃消食', '理氣止痛'],
-    fnEn: ['Harmonize Stomach & relieve food stagnation', 'Regulate Qi & stop pain'],
-    indZh: ['胃痛', '嘔吐', '腹脹', '便秘'],
-    indEn: ['Epigastric pain', 'Vomiting', 'Abdominal distension', 'Constipation']
+    fnZh: ['和胃降逆', '理氣止痛'],
+    fnEn: ['Harmonize Stomach & descend Qi', 'Regulate Qi & stop pain'],
+    indZh: ['胃痛嘔吐', '腹脹腹痛'],
+    indEn: ['Epigastric pain & vomiting', 'Abdominal distension & pain']
   },
   KI19: {
-    fnZh: ['和胃降逆', '消食理氣'],
-    fnEn: ['Harmonize Stomach & descend adverse Qi', 'Relieve food retention & regulate Qi'],
-    indZh: ['腹脹', '腹痛', '嘔吐', '呃逆'],
-    indEn: ['Abdominal distension', 'Abdominal pain', 'Vomiting', 'Hiccup']
+    fnZh: ['和胃理氣', '寬胸止痛'],
+    fnEn: ['Harmonize Stomach & regulate Qi', 'Unbind chest & stop pain'],
+    indZh: ['胸脅脹痛', '嘔吐', '心悸'],
+    indEn: ['Chest & hypochondriac pain', 'Vomiting', 'Palpitations']
   },
   KI20: {
-    fnZh: ['和胃降逆', '寬胸理氣'],
-    fnEn: ['Harmonize Stomach & descend adverse Qi', 'Unbind chest & regulate Qi'],
-    indZh: ['腹脹', '腹痛', '嘔吐', '心痛'],
-    indEn: ['Abdominal distension', 'Abdominal pain', 'Vomiting', 'Precordial pain']
+    fnZh: ['和胃降逆', '理氣止痛'],
+    fnEn: ['Harmonize Stomach & descend Qi', 'Regulate Qi & stop pain'],
+    indZh: ['嘔吐', '腹脹胃痛', '心痛'],
+    indEn: ['Vomiting', 'Abdominal distension & stomach pain', 'Precordial pain']
   },
   KI21: {
     fnZh: ['和胃降逆', '理氣止嘔'],
-    fnEn: ['Harmonize Stomach & descend adverse Qi', 'Regulate Qi & stop vomiting'],
-    indZh: ['腹痛', '嘔吐', '呃逆', '胸脅痛'],
-    indEn: ['Abdominal pain', 'Vomiting', 'Hiccup', 'Chest & hypochondriac pain']
+    fnEn: ['Harmonize Stomach & descend Qi', 'Regulate Qi & arrest vomiting'],
+    indZh: ['嘔吐 / 反胃', '腹脹胃痛', '胸痛咳嗽'],
+    indEn: ['Vomiting / Acid regurgitation', 'Abdominal distension & stomach pain', 'Chest pain & cough']
   },
   KI22: {
     fnZh: ['宣肺平喘', '寬胸理氣'],
-    fnEn: ['Diffuse Lung & relieve asthma', 'Unbind chest & regulate Qi'],
-    indZh: ['咳嗽', '氣喘', '胸脅支滿', '嘔吐'],
-    indEn: ['Cough', 'Asthma', 'Fullness in chest & hypochondrium', 'Vomiting']
+    fnEn: ['Diffuse Lung & calm asthma', 'Unbind chest & regulate Qi'],
+    indZh: ['咳嗽氣喘', '胸脅脹痛', '嘔吐'],
+    indEn: ['Cough & asthma', 'Chest & hypochondriac pain', 'Vomiting']
   },
   KI23: {
-    fnZh: ['宣肺止咳', '寬胸降逆'],
-    fnEn: ['Diffuse Lung & stop cough', 'Unbind chest & descend adverse Qi'],
-    indZh: ['咳嗽', '氣喘', '胸脅痛', '嘔吐'],
-    indEn: ['Cough', 'Asthma', 'Chest & hypochondriac pain', 'Vomiting']
+    fnZh: ['宣肺止咳', '寬胸理氣'],
+    fnEn: ['Diffuse Lung & arrest cough', 'Unbind chest & regulate Qi'],
+    indZh: ['咳嗽氣喘', '胸脅痛', '嘔吐'],
+    indEn: ['Cough & asthma', 'Chest & hypochondriac pain', 'Vomiting']
   },
   KI24: {
-    fnZh: ['寬胸理氣', '宣肺止平喘'],
-    fnEn: ['Unbind chest & regulate Qi', 'Diffuse Lung & relieve asthma'],
-    indZh: ['咳嗽', '氣喘', '胸脅痛', '嘔吐'],
-    indEn: ['Cough', 'Asthma', 'Chest & hypochondriac pain', 'Vomiting']
+    fnZh: ['宣肺平喘', '寬胸理氣'],
+    fnEn: ['Diffuse Lung & calm asthma', 'Unbind chest & regulate Qi'],
+    indZh: ['咳嗽氣喘', '胸脅痛', '嘔吐'],
+    indEn: ['Cough & asthma', 'Chest & hypochondriac pain', 'Vomiting']
   },
   KI25: {
-    fnZh: ['宣肺降逆', '寬胸止痛'],
-    fnEn: ['Diffuse Lung & descend adverse Qi', 'Unbind chest & stop pain'],
-    indZh: ['咳嗽', '氣喘', '胸脅痛', '嘔吐'],
-    indEn: ['Cough', 'Asthma', 'Chest & hypochondriac pain', 'Vomiting']
+    fnZh: ['宣肺平喘', '寬胸理氣'],
+    fnEn: ['Diffuse Lung & calm asthma', 'Unbind chest & regulate Qi'],
+    indZh: ['咳嗽氣喘', '胸脅痛', '心悸'],
+    indEn: ['Cough & asthma', 'Chest & hypochondriac pain', 'Palpitations']
   },
   KI26: {
-    fnZh: ['宣肺平喘', '理氣化痰'],
-    fnEn: ['Diffuse Lung & relieve asthma', 'Regulate Qi & transform phlegm'],
-    indZh: ['咳嗽', '氣喘', '胸脅支滿', '嘔吐'],
-    indEn: ['Cough', 'Asthma', 'Chest fullness & hypochondrium', 'Vomiting']
+    fnZh: ['宣肺止咳', '寬胸理氣'],
+    fnEn: ['Diffuse Lung & arrest cough', 'Unbind chest & regulate Qi'],
+    indZh: ['咳嗽氣喘', '胸脅脹痛', '嘔吐'],
+    indEn: ['Cough & asthma', 'Chest & hypochondriac pain', 'Vomiting']
   },
   KI27: {
-    fnZh: ['納氣平喘', '宣肺止咳', '寬胸理氣'],
-    fnEn: ['Grasp Qi & relieve asthma', 'Diffuse Lung & stop cough', 'Unbind chest & regulate Qi'],
-    indZh: ['咳嗽', '氣喘', '胸痛', '不嗜食'],
-    indEn: ['Cough', 'Asthma', 'Chest pain', 'Loss of appetite']
+    fnZh: ['宣肺降逆', '納氣平喘', '寬胸理氣'],
+    fnEn: ['Diffuse Lung & descend Qi', 'Grasp Qi & calm asthma', 'Unbind chest & regulate Qi'],
+    indZh: ['咳嗽氣喘', '胸痛', '嘔吐 / 不嗜食'],
+    indEn: ['Cough & asthma', 'Chest pain', 'Vomiting / Anorexia']
   }
 };
 
@@ -195,4 +195,4 @@ data361.forEach(point => {
 });
 
 fs.writeFileSync(FILE_361, JSON.stringify(data361, null, 2), 'utf8');
-console.log(`✅ Updated 1-to-1 matched functions and indications for all ${updated} KI channel points.`);
+console.log(`✅ Updated 1-to-1 matched clean functions and indications for all ${updated} KI channel points.`);
