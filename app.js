@@ -3209,8 +3209,6 @@ function renderDetail(point) {
             </div>
             <div class="hero-actions">
               ${sourceLinks.map((link) => `<a class="${escapeAttribute(link.kind)}" href="${escapeAttribute(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
-              <button class="hero-copy-btn" type="button" id="copyPointLinkBtn">${contentMode === "english" ? "Copy page link" : "複製分頁連結"}</button>
-              <button class="hero-edit-btn" type="button" id="editBtn">${contentMode === "english" ? "Edit" : "編輯資料"}</button>
             </div>
           </div>
           <div class="hero-fact-grid">
@@ -3792,12 +3790,37 @@ function heroSubtitle(point) {
   return fn && !isPendingContent(fn) ? `${base} · ${fn}` : base;
 }
 
+function americanDragonPointUrl(point) {
+  const code = String(point.code || "").trim().toUpperCase();
+  const match = code.match(/^([A-Z]+)(\d+)$/);
+  if (!match) return "https://www.americandragon.com/";
+
+  const prefix = match[1];
+  const num = match[2];
+
+  const prefixMap = {
+    TE: "SJ",
+    SJ: "SJ",
+    BL: "UB",
+    UB: "UB",
+    KI: "KD",
+    KD: "KD",
+    LR: "LIV",
+    LIV: "LIV",
+    CV: "REN",
+    REN: "REN",
+    GV: "DU",
+    DU: "DU"
+  };
+
+  const adPrefix = prefixMap[prefix] || prefix;
+  return `https://www.americandragon.com/Points/${adPrefix}-${num}.html`;
+}
+
 function externalPointLinks(point) {
   const sources = point.sources || [];
   const visualLinks = normalizeVisualLinks(point.visualLinks || []);
   const code = String(point.code || "").trim();
-  const nameEnSlug = (point.nameEn || point.pinyin || code).toLowerCase().replace(/\s+/g, "-");
-  const codeLower = code.toLowerCase();
 
   if (isAuricularPoint(point)) {
     const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
@@ -3811,31 +3834,26 @@ function externalPointLinks(point) {
   const storedChinese = sources.find((source) => /cloudtcm\.com\/acupoint\/\d+/.test(source));
   const chinese = storedChinese || chinesePointReference(point);
 
-  // 2. American Dragon (AD)
-  const adUrl = /^([A-Z]{1,2}\d{1,2})$/i.test(code)
-    ? `https://www.americandragon.com/AcupunctionPoints/${code.toUpperCase()}.html`
-    : `https://www.americandragon.com/`;
+  // 2. American Dragon (AD) — Direct 1-to-1 point page
+  const adUrl = americanDragonPointUrl(point);
 
   // 3. eLotus / Master Tung Acupuncture
-  const eLotusUrl = `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${nameEnSlug}-${codeLower}`;
-
-  // 4. AcuPoints.org
-  const english = sources.find((source) => source.includes("acupoints.org")) || `https://www.acupoints.org/${codeLower}-acupuncture-point/`;
+  const eLotusUrl = isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")
+    ? (visualLinks[0]?.url || sources[0] || `https://www.mastertungacupuncture.org/acupuncture/traditional/points`)
+    : `https://www.mastertungacupuncture.org/search?q=${encodeURIComponent(code + " " + (point.nameZh || ""))}`;
 
   if (contentMode === "english") {
     return [
       { label: "CloudTCM", url: chinese, kind: "chinese" },
-      { label: "American Dragon", url: adUrl, kind: "english" },
-      { label: "eLotus CORE", url: eLotusUrl, kind: "english" },
-      { label: "AcuPoints.org", url: english, kind: "english" }
+      { label: "American Dragon (AD)", url: adUrl, kind: "english" },
+      { label: "eLotus CORE", url: eLotusUrl, kind: "english" }
     ];
   }
 
   return [
     { label: "雲端中醫", url: chinese, kind: "chinese" },
-    { label: "American Dragon", url: adUrl, kind: "english" },
-    { label: "eLotus 權威圖解", url: eLotusUrl, kind: "english" },
-    { label: "AcuPoints.org", url: english, kind: "english" }
+    { label: "American Dragon (AD)", url: adUrl, kind: "english" },
+    { label: "eLotus 權威圖解", url: eLotusUrl, kind: "english" }
   ];
 }
 
