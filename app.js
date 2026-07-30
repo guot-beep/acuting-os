@@ -3515,8 +3515,12 @@ function pointLinkSection(point) {
   const conds = (point.relatedConditions || []).map((id) => condById.get(id)).filter(Boolean);
   const pats = (point.tcmPatternIds || []).map((id) => patById.get(id)).filter(Boolean);
 
-  const condChip = (c) =>
-    `<button type="button" class="point-link point-link--cond" data-kind="condition" data-id="${escapeAttribute(c.id)}">${escapeHtml(c.name_zh || c.name_en || c.id)}</button>`;
+  const condChip = (c) => {
+    const zh = c.name_zh || c.id;
+    const en = c.name_en || c.icd10_en || "";
+    const enHtml = en && en !== zh ? ` <span class="pl-en">${escapeHtml(en)}</span>` : "";
+    return `<button type="button" class="point-link point-link--cond" data-kind="condition" data-id="${escapeAttribute(c.id)}"><span class="pl-zh">${escapeHtml(zh)}</span>${enHtml}</button>`;
+  };
 
   // A point like LI4 carries 100+ related conditions; a flat chip wall past a
   // dozen is unreadable and doesn't say anything about WHY those conditions

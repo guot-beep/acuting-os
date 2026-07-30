@@ -5835,8 +5835,9 @@ html { scroll-padding-top: 92px; }
   transition: transform 0.08s ease;
 }
 .point-link:hover, .point-link:focus-visible { transform: translateY(-1px); outline: none; }
-.point-link--cond { background: #eef2fb; color: #1f3a68; border-color: #c4d2ec; }
+.point-link--cond { background: #eef2fb; color: #1f3a68; border-color: #c4d2ec; display: inline-flex; align-items: baseline; gap: 0.35em; }
 .point-link--pat { background: #f6eef7; color: #5b2a66; border-color: #ddc4e3; display: inline-flex; align-items: baseline; gap: 0.35em; }
+.point-link .pl-en { font-size: 0.8rem; opacity: 0.82; font-weight: 500; }
 .point-link .pl-formula { font-size: 0.74rem; opacity: 0.72; }
 
 @media (max-width: 640px) {
