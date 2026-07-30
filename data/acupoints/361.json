@@ -25918,7 +25918,7 @@
   {
     "code": "SI1",
     "chinese": "少澤",
-    "pinyin": "Shaoze",
+    "pinyin": "Shào Zé",
     "english": "Lesser Marsh",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -25926,30 +25926,24 @@
     "location_en": "On the ulnar side of the distal phalanx of the little finger, about 0.1 cun from the corner of the nail.",
     "cun_measurement": "0.1 cun from the ulnar nail corner of the little finger.",
     "functions_zh": [
-      "井穴",
-      "通乳",
-      "瀉火",
-      "頭面五官疾病"
+      "清熱利竅",
+      "通乳通絡",
+      "醒腦復甦"
     ],
     "functions_en": [
-      "Clears heat",
-      "Opens the orifices",
-      "Promotes lactation",
-      "Benefits the throat"
+      "Clears heat and benefits sensory orifices",
+      "Promotes lactation and activates channel",
+      "Revives consciousness"
     ],
     "indications_zh": [
-      "乳少",
-      "乳癰",
-      "咽喉腫痛",
-      "昏厥",
-      "熱病"
+      "乳汁不足、乳腺炎",
+      "頭痛、目赤、咽喉腫痛",
+      "昏迷急救"
     ],
     "indications_en": [
-      "Insufficient lactation",
-      "Breast abscess pattern",
-      "Sore throat",
-      "Fainting",
-      "Febrile disease"
+      "Insufficient lactation and mastitis",
+      "Headache, red eyes, sore throat",
+      "Loss of consciousness and emergency"
     ],
     "muscles": [],
     "bones": [],
@@ -25987,7 +25981,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI1",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.jing_well"
     ],
@@ -26016,10 +26010,8 @@
       }
     ],
     "acu_tags": [
-      "井穴",
       "通乳",
-      "瀉火",
-      "頭面五官疾病"
+      "瀉火"
     ],
     "other_names_zh": "小吉,少吉",
     "name_intro_zh": "少，小之意。澤，潤之意。本穴為手少陽小腸經之井穴，小腸之脈主液，穴具潤澤身體之功，在小指，井穴脈氣始出而微小，故名。",
@@ -26055,47 +26047,105 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/227"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Subcutaneous insertion 0.1 cun, or prick to bleed with a three-edged needle. Jing-Well (Metal) point.",
     "name_zh": "少澤",
     "name_en": "Lesser Marsh",
     "action_tags_zh": [
       "通乳",
-      "瀉火",
-      "頭面五官疾病"
+      "瀉火"
     ],
     "action_tags_en": [
       "Promote Lactation",
-      "Drain Fire",
-      "Head, Face & Sensory Disorders"
+      "Drain Fire"
     ],
     "disease_tags_zh": [
       "乳少",
       "乳癰",
       "咽喉腫痛",
       "昏厥",
-      "熱病"
+      "熱病",
+      "頭面五官疾病"
     ],
     "disease_tags_en": [
       "Insufficient Lactation",
       "Mastitis",
       "Sore & Swollen Throat",
       "Fainting / Loss of Consciousness",
-      "Febrile Disease / Fever"
+      "Febrile Disease / Fever",
+      "Head, Face & Sensory Disorders"
     ],
     "related_conditions": [
       "cond.palpitations",
       "cond.heart_failure"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "井穴",
+      "金穴（五輸穴/本經少澤）",
+      "通乳急救要穴"
+    ],
+    "point_identity_en": [
+      "Jing-Well point",
+      "Metal point (Five-Shu)",
+      "Key point for lactation & emergency resuscitation"
+    ],
+    "action_tags": [
+      "Promote Lactation",
+      "Drain Fire"
+    ]
   },
   {
     "code": "SI2",
     "chinese": "前谷",
-    "pinyin": "Qiangu",
+    "pinyin": "Qián Gǔ",
     "english": "Front Valley",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -26103,34 +26153,24 @@
     "location_en": "On the ulnar side of the hand, distal to the fifth metacarpophalangeal joint at the junction of red and white skin, with a loose fist.",
     "cun_measurement": "Distal to the fifth metacarpophalangeal joint.",
     "functions_zh": [
-      "滎穴",
-      "清熱",
-      "醒腦",
-      "活絡",
-      "利尿通淋",
-      "頭面五官疾病",
-      "神經系統疾病",
-      "婦科疾病"
+      "清風熱",
+      "消腫止痛",
+      "通利耳目咽喉"
     ],
     "functions_en": [
-      "Clears heat",
-      "Benefits the throat",
-      "Activates the channel",
-      "Stops pain"
+      "Clears wind-heat",
+      "Reduces swelling and alleviates pain",
+      "Benefits eyes, ears and throat"
     ],
     "indications_zh": [
-      "頭項痛",
-      "目赤",
-      "耳鳴",
-      "咽喉痛",
-      "手指痛"
+      "熱病無汗、頭痛",
+      "目赤、耳鳴、咽喉腫痛",
+      "手指麻木拘急"
     ],
     "indications_en": [
-      "Head and neck pain",
-      "Red eyes",
-      "Tinnitus",
-      "Sore throat",
-      "Finger pain"
+      "Febrile disease without sweating, headache",
+      "Red eyes, tinnitus, sore throat",
+      "Numbness and stiffness of fingers"
     ],
     "muscles": [],
     "bones": [],
@@ -26169,7 +26209,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI2",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.ying_spring"
     ],
@@ -26198,13 +26238,10 @@
       }
     ],
     "acu_tags": [
-      "滎穴",
       "清熱",
       "醒腦",
       "活絡",
       "利尿通淋",
-      "頭面五官疾病",
-      "神經系統疾病",
       "婦科疾病"
     ],
     "name_intro_zh": "前，與後相對而言。本穴屬手太陽小腸經之榮水，位於手小指本節前外側陷中(即第五掌指關節前方)，恰與後溪相對，穴處凹陷如谷，故名。",
@@ -26239,7 +26276,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/228"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.3–0.5 cun at the ulnar end of the transverse crease proximal to the 5th metacarpophalangeal joint. Ying-Spring (Water) point.",
     "name_zh": "前谷",
     "name_en": "Front Valley",
     "action_tags_zh": [
@@ -26247,8 +26284,6 @@
       "醒腦",
       "活絡",
       "利尿通淋",
-      "頭面五官疾病",
-      "神經系統疾病",
       "婦科疾病"
     ],
     "action_tags_en": [
@@ -26256,8 +26291,6 @@
       "Awaken Brain / Mind",
       "Activate Collaterals",
       "Promote Urination & Relieve Strangury",
-      "Head, Face & Sensory Disorders",
-      "Neurological Disorders",
       "Gynecological Disorders"
     ],
     "disease_tags_zh": [
@@ -26265,20 +26298,88 @@
       "目赤",
       "耳鳴",
       "咽喉痛",
-      "手指痛"
+      "手指痛",
+      "頭面五官疾病",
+      "神經系統疾病"
     ],
     "disease_tags_en": [
       "Head & Neck Pain",
       "Red Eyes",
       "Tinnitus",
       "Sore Throat",
-      "Finger Pain"
-    ]
+      "Finger Pain",
+      "Head, Face & Sensory Disorders",
+      "Neurological Disorders"
+    ],
+    "point_identity_zh": [
+      "滎穴",
+      "水穴（五輸穴）"
+    ],
+    "point_identity_en": [
+      "Ying-Spring point",
+      "Water point (Five-Shu)"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Awaken Brain / Mind",
+      "Activate Collaterals",
+      "Promote Urination & Relieve Strangury",
+      "Gynecological Disorders"
+    ],
+    "field_sources": {
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ]
+    }
   },
   {
     "code": "SI3",
     "chinese": "後谿",
-    "pinyin": "Houxi",
+    "pinyin": "Hòu Xī",
     "english": "Back Ravine",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -26286,28 +26387,26 @@
     "location_en": "On the ulnar side of the hand, proximal to the head of the 5th metacarpal bone, at the end of the proximal transverse crease when the hand is loosely clenched.",
     "cun_measurement": "",
     "functions_zh": [
-      "輸穴",
-      "八脈交會穴",
-      "止嘔",
-      "利尿通淋",
-      "頭面五官疾病"
+      "通督脈",
+      "舒筋利節",
+      "清神志熱症",
+      "通絡止痛"
     ],
     "functions_en": [
-      "Benefits the occiput, neck and back, clears wind and heat. Shu-stream point and confluent point of the Governing Vessel."
+      "Regulates Governing Vessel",
+      "Relaxes sinews and benefits joints",
+      "Clears heat and calms spirit",
+      "Activates channel and alleviates pain"
     ],
     "indications_zh": [
-      "頸項強痛",
-      "腰背痛",
-      "督脈不利",
-      "癲癇",
-      "盜汗"
+      "頭項強痛、脊背痛",
+      "急性腰扭傷",
+      "癲狂、熱病、夜汗"
     ],
     "indications_en": [
-      "Headache",
-      "Neck stiffness",
-      "Low back pain",
-      "Epilepsy study context",
-      "Pain of the fingers and elbow"
+      "Stiff neck, headache, spinal pain",
+      "Acute lumbar sprain",
+      "Mania, febrile diseases, night sweats"
     ],
     "muscles": [],
     "bones": [],
@@ -26345,7 +26444,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI3",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "confluent",
       "five_shu.shu_stream"
@@ -26385,11 +26484,8 @@
       }
     ],
     "acu_tags": [
-      "輸穴",
-      "八脈交會穴",
       "止嘔",
-      "利尿通淋",
-      "頭面五官疾病"
+      "利尿通淋"
     ],
     "other_names_zh": "后溪,後谿",
     "name_intro_zh": "後，後方；溪，溪谷，《素問‧氣穴論》：「肉之小會為溪。」穴居小指本節後赤白肉際處，故名。",
@@ -26424,40 +26520,81 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/229"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.5–0.7 cun with a loose fist made, at the ulnar end of the transverse crease proximal to the 5th metacarpophalangeal joint. Shu-Stream (Wood) point & Master point of Du Mai.",
     "name_zh": "後谿",
     "name_en": "Back Ravine",
     "action_tags_zh": [
       "止嘔",
-      "利尿通淋",
-      "頭面五官疾病"
+      "利尿通淋"
     ],
     "action_tags_en": [
       "Stop Vomiting",
-      "Promote Urination & Relieve Strangury",
-      "Head, Face & Sensory Disorders"
+      "Promote Urination & Relieve Strangury"
     ],
     "disease_tags_zh": [
       "頸項強痛",
       "腰背痛",
       "督脈不利",
       "癲癇",
-      "盜汗"
+      "盜汗",
+      "頭面五官疾病"
     ],
     "disease_tags_en": [
       "Stiff Neck & Nape Pain",
       "Lumbar & Back Pain",
       "Impaired Du Vessel",
       "Epilepsy",
-      "Night Sweats"
+      "Night Sweats",
+      "Head, Face & Sensory Disorders"
     ],
     "exam_star": 1,
     "field_sources": {
-      "exam_star": [
-        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
       ],
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
     },
     "related_conditions": [
@@ -26480,12 +26617,30 @@
       "cond.overactive_bladder",
       "cond.hearing_loss",
       "cond.eye_strain"
-    ]
+    ],
+    "point_identity_zh": [
+      "輸穴",
+      "木穴（五輸穴/本經母穴 Tonification Point）",
+      "八脈交會穴（通督脈）",
+      "配 UB62 申脈治頭項脊背病症"
+    ],
+    "point_identity_en": [
+      "Shu-Stream point",
+      "Wood point (Five-Shu, Mother/Tonification point)",
+      "Master/Confluent point of Du Mai (Governing Vessel)",
+      "Paired with UB62 (Shenmai) for neck, spine & back disorders"
+    ],
+    "action_tags": [
+      "Stop Vomiting",
+      "Promote Urination & Relieve Strangury"
+    ],
+    "exam_pearl": "★ 輸穴（木）。八脈交會穴之一（通督脈），配足太陽申脈UB62治療頭項強痛、脊背痛與急性腰扭傷。通督脈第一要穴。",
+    "exam_pearl_en": "★ Shu-Stream (Wood) point. Master point of Du Mai (Governing Vessel). Paired with UB62 (Shenmai) for stiff neck, spinal pain, and acute lumbar sprain. Primary point for Governing Vessel."
   },
   {
     "code": "SI4",
     "chinese": "腕骨",
-    "pinyin": "Wangu",
+    "pinyin": "Wàn Gǔ",
     "english": "Wrist Bone",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -26493,36 +26648,24 @@
     "location_en": "On the ulnar side of the hand, in the depression between the base of the fifth metacarpal bone and the triquetral bone, at the junction of red and white skin.",
     "cun_measurement": "Between the fifth metacarpal base and triquetral bone.",
     "functions_zh": [
-      "原穴",
-      "清熱",
-      "健脾",
-      "止痛",
-      "活血",
-      "利膽",
-      "定驚",
-      "利尿通淋",
-      "頭面五官疾病",
-      "消化系統疾病"
+      "舒筋通絡",
+      "清熱瀉火",
+      "退黃祛濕"
     ],
     "functions_en": [
-      "Clears heat",
-      "Resolves dampness",
-      "Activates the channel",
-      "Stops pain"
+      "Activates channel and alleviates pain",
+      "Clears heat and reduces swelling",
+      "Clears heat and treats jaundice"
     ],
     "indications_zh": [
-      "黃疸",
-      "熱病",
-      "頭項痛",
-      "腕痛",
-      "耳鳴"
+      "頭痛、項強、腕痛",
+      "黃疸、膽囊炎",
+      "熱病無汗"
     ],
     "indications_en": [
-      "Jaundice",
-      "Febrile disease",
-      "Head and neck pain",
-      "Wrist pain",
-      "Tinnitus"
+      "Headache, neck rigidity, wrist pain",
+      "Jaundice and cholecystitis",
+      "Febrile disease without sweating"
     ],
     "muscles": [],
     "bones": [],
@@ -26559,7 +26702,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI4",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "yuan"
     ],
@@ -26597,16 +26740,13 @@
       }
     ],
     "acu_tags": [
-      "原穴",
       "清熱",
       "健脾",
       "止痛",
       "活血",
       "利膽",
       "定驚",
-      "利尿通淋",
-      "頭面五官疾病",
-      "消化系統疾病"
+      "利尿通淋"
     ],
     "other_names_zh": "腕谷",
     "name_intro_zh": "本穴屬手太陽小腸經之「原穴」，位於手外側腕骨前起骨(豌豆骨)下凹陷處，故名。",
@@ -26641,7 +26781,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/230"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.3–0.5 cun in the depression between the base of the 5th metacarpal bone and the triquetral bone. Yuan-Source point.",
     "name_zh": "腕骨",
     "name_en": "Wrist Bone",
     "action_tags_zh": [
@@ -26651,9 +26791,7 @@
       "活血",
       "利膽",
       "定驚",
-      "利尿通淋",
-      "頭面五官疾病",
-      "消化系統疾病"
+      "利尿通淋"
     ],
     "action_tags_en": [
       "Clear Heat",
@@ -26662,23 +26800,25 @@
       "Invigorate Blood",
       "Benefit the Gallbladder",
       "Settle Fright",
-      "Promote Urination & Relieve Strangury",
-      "Head, Face & Sensory Disorders",
-      "Digestive System Disorders"
+      "Promote Urination & Relieve Strangury"
     ],
     "disease_tags_zh": [
       "黃疸",
       "熱病",
       "頭項痛",
       "腕痛",
-      "耳鳴"
+      "耳鳴",
+      "頭面五官疾病",
+      "消化系統疾病"
     ],
     "disease_tags_en": [
       "Jaundice",
       "Febrile Disease / Fever",
       "Head & Neck Pain",
       "Wrist Pain",
-      "Tinnitus"
+      "Tinnitus",
+      "Head, Face & Sensory Disorders",
+      "Digestive System Disorders"
     ],
     "related_conditions": [
       "cond.endometriosis",
@@ -26698,15 +26838,76 @@
       "cond.aphthous_ulcers"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "原穴",
+      "小腸經原穴（黃疸要穴）"
+    ],
+    "point_identity_en": [
+      "Yuan-Source point of Small Intestine channel",
+      "Primary point for jaundice & bilious disorders"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Tonify Spleen",
+      "Relieve Pain / Analgesic",
+      "Invigorate Blood",
+      "Benefit the Gallbladder",
+      "Settle Fright",
+      "Promote Urination & Relieve Strangury"
+    ]
   },
   {
     "code": "SI5",
     "chinese": "陽谷",
-    "pinyin": "Yanggu",
+    "pinyin": "Yáng Gǔ",
     "english": "Yang Valley",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -26714,37 +26915,24 @@
     "location_en": "On the ulnar side of the dorsal wrist, in the depression between the styloid process of the ulna and the triquetral bone.",
     "cun_measurement": "Between ulnar styloid process and triquetral bone.",
     "functions_zh": [
-      "經穴",
-      "清熱",
-      "止痛",
-      "醒腦",
-      "活絡",
-      "舒筋",
-      "明目",
-      "通經絡",
-      "頭面五官疾病",
-      "神經系統疾病",
-      "精神神志疾病"
+      "清熱解毒",
+      "消腫止痛",
+      "安神定志"
     ],
     "functions_en": [
-      "Clears heat",
-      "Calms the spirit",
-      "Activates the channel",
-      "Stops pain"
+      "Clears heat and toxins",
+      "Reduces swelling and alleviates pain",
+      "Calms the spirit"
     ],
     "indications_zh": [
-      "頭痛",
-      "目眩",
-      "耳鳴",
-      "腕痛",
+      "頭痛、項強、腕痛",
+      "目赤、耳鳴、齒痛",
       "癲狂"
     ],
     "indications_en": [
-      "Headache",
-      "Dizziness",
-      "Tinnitus",
-      "Wrist pain",
-      "Mania pattern"
+      "Headache, neck rigidity, wrist pain",
+      "Red eyes, tinnitus, toothache",
+      "Mania"
     ],
     "muscles": [],
     "bones": [],
@@ -26778,7 +26966,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI5",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.jing_river"
     ],
@@ -26817,7 +27005,6 @@
       }
     ],
     "acu_tags": [
-      "經穴",
       "清熱",
       "止痛",
       "醒腦",
@@ -26825,8 +27012,6 @@
       "舒筋",
       "明目",
       "通經絡",
-      "頭面五官疾病",
-      "神經系統疾病",
       "精神神志疾病"
     ],
     "name_intro_zh": "本穴屬手太陽小腸經火穴，位於腕背凹陷處(即手外側豌豆骨與尺骨間凹陷中)，以腕背為陽，其處形如山谷，故名。",
@@ -26861,7 +27046,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/231"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.3–0.5 cun in the depression between the styloid process of the ulna and the triquetral bone. Jing-River (Fire) point.",
     "name_zh": "陽谷",
     "name_en": "Yang Valley",
     "action_tags_zh": [
@@ -26872,8 +27057,6 @@
       "舒筋",
       "明目",
       "通經絡",
-      "頭面五官疾病",
-      "神經系統疾病",
       "精神神志疾病"
     ],
     "action_tags_en": [
@@ -26884,8 +27067,6 @@
       "Relax Tendons & Muscles",
       "Brighten Eyes / Improve Vision",
       "Unblock Channels & Collaterals",
-      "Head, Face & Sensory Disorders",
-      "Neurological Disorders",
       "Mental & Psychiatric Disorders"
     ],
     "disease_tags_zh": [
@@ -26893,20 +27074,91 @@
       "目眩",
       "耳鳴",
       "腕痛",
-      "癲狂"
+      "癲狂",
+      "頭面五官疾病",
+      "神經系統疾病"
     ],
     "disease_tags_en": [
       "Headache",
       "Dizziness & Blurred Vision",
       "Tinnitus",
       "Wrist Pain",
-      "Mania & Withdrawal"
-    ]
+      "Mania & Withdrawal",
+      "Head, Face & Sensory Disorders",
+      "Neurological Disorders"
+    ],
+    "point_identity_zh": [
+      "經穴",
+      "火穴（五輸穴/本經本穴 Horary Point）"
+    ],
+    "point_identity_en": [
+      "Jing-River point",
+      "Fire point (Five-Shu, Horary point of Small Intestine channel)"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Relieve Pain / Analgesic",
+      "Awaken Brain / Mind",
+      "Activate Collaterals",
+      "Relax Tendons & Muscles",
+      "Brighten Eyes / Improve Vision",
+      "Unblock Channels & Collaterals",
+      "Mental & Psychiatric Disorders"
+    ],
+    "field_sources": {
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ]
+    }
   },
   {
     "code": "SI6",
     "chinese": "養老",
-    "pinyin": "Yanglao",
+    "pinyin": "Yǎng Lǎo",
     "english": "Nursing the Aged",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -26914,37 +27166,24 @@
     "location_en": "On the dorsal ulnar aspect of the forearm, in the depression on the radial side of the proximal end of the head of the ulna.",
     "cun_measurement": "Near the head of the ulna.",
     "functions_zh": [
-      "郄穴",
-      "止痛",
-      "祛風疏風",
-      "活絡",
-      "舒筋",
-      "明目",
-      "聰耳",
-      "潛陽熄風",
-      "神經系統疾病",
-      "眼科疾病",
-      "運動系統疾病"
+      "舒筋活絡",
+      "明目止痛",
+      "緩急止痛"
     ],
     "functions_en": [
-      "Relaxes sinews",
-      "Activates the channel",
-      "Benefits the eyes",
-      "Stops pain"
+      "Activates channel and alleviates pain",
+      "Benefits shoulder, arm and eyes",
+      "Moderates acute pain conditions"
     ],
     "indications_zh": [
-      "肩臂痛",
-      "腰痛",
-      "目視不明",
-      "急性腰扭傷",
-      "落枕"
+      "肩臂腰腿急性疼痛",
+      "目視不明、老年性眼疾",
+      "項強、肘臂拘急"
     ],
     "indications_en": [
-      "Shoulder and arm pain",
-      "Low back pain",
-      "Blurred vision",
-      "Acute lumbar sprain pattern",
-      "Stiff neck"
+      "Acute pain of shoulder, arm and lower back",
+      "Blurry vision and failing vision in elderly",
+      "Neck rigidity and elbow contracture"
     ],
     "muscles": [],
     "bones": [],
@@ -26980,7 +27219,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI6",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "xi"
     ],
@@ -27003,7 +27242,6 @@
       }
     ],
     "acu_tags": [
-      "郄穴",
       "止痛",
       "祛風疏風",
       "活絡",
@@ -27011,9 +27249,7 @@
       "明目",
       "聰耳",
       "潛陽熄風",
-      "神經系統疾病",
-      "眼科疾病",
-      "運動系統疾病"
+      "眼科疾病"
     ],
     "name_intro_zh": "養，含益之意。老，指老年人。養老即奉養老人之謂，本穴主治目視不明、耳閉不聞、肩臂疼痛等老年人疾患，針此穴有益老年人之健康，為調治老年人疾病要穴，故名。",
     "wushu_point": "郄穴",
@@ -27047,7 +27283,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/232"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.3–0.5 cun in the bony cleft radial to the styloid process of the ulna when the palm faces the chest. Xi-Cleft point.",
     "name_zh": "養老",
     "name_en": "Nursing the Aged",
     "action_tags_zh": [
@@ -27058,9 +27294,7 @@
       "明目",
       "聰耳",
       "潛陽熄風",
-      "神經系統疾病",
-      "眼科疾病",
-      "運動系統疾病"
+      "眼科疾病"
     ],
     "action_tags_en": [
       "Relieve Pain / Analgesic",
@@ -27070,31 +27304,74 @@
       "Brighten Eyes / Improve Vision",
       "Benefit Hearing",
       "Subdue Yang & Extinguish Wind",
-      "Neurological Disorders",
-      "Ophthalmological Disorders",
-      "Locomotor & Musculoskeletal Disorders"
+      "Ophthalmological Disorders"
     ],
     "disease_tags_zh": [
       "肩臂痛",
       "腰痛",
       "目視不明",
       "急性腰扭傷",
-      "落枕"
+      "落枕",
+      "神經系統疾病",
+      "運動系統疾病"
     ],
     "disease_tags_en": [
       "Shoulder & Arm Pain",
       "Low Back Pain",
       "Blurred Vision",
       "Acute Lumbar Sprain",
-      "Stiff Neck"
+      "Stiff Neck",
+      "Neurological Disorders",
+      "Locomotor & Musculoskeletal Disorders"
     ],
     "exam_star": 1,
     "field_sources": {
-      "exam_star": [
-        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
       ],
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
     },
     "related_conditions": [
@@ -27106,12 +27383,30 @@
       "cond.chronic_diarrhea",
       "cond.migraine_vestibular",
       "cond.overactive_bladder"
-    ]
+    ],
+    "point_identity_zh": [
+      "郄穴（小腸經急症與老年病要穴）"
+    ],
+    "point_identity_en": [
+      "Xi-Cleft point (key point for acute pain & geriatric conditions)"
+    ],
+    "action_tags": [
+      "Relieve Pain / Analgesic",
+      "Dispel Wind",
+      "Activate Collaterals",
+      "Relax Tendons & Muscles",
+      "Brighten Eyes / Improve Vision",
+      "Benefit Hearing",
+      "Subdue Yang & Extinguish Wind",
+      "Ophthalmological Disorders"
+    ],
+    "exam_pearl": "★ 郄穴。養老穴善治急性痛證與老年眼疾（目視不明、視力減退）。配柱骨穴治療急性項強肩臂痛。",
+    "exam_pearl_en": "★ Xi-Cleft point. Yanglao treats acute pain and eye disorders of the elderly (blurry/failing vision). Combines with local points for acute neck/shoulder strain."
   },
   {
     "code": "SI7",
     "chinese": "支正",
-    "pinyin": "Zhizheng",
+    "pinyin": "Zhī Zhèng",
     "english": "Branch to the Correct",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -27119,35 +27414,24 @@
     "location_en": "On the dorsal ulnar aspect of the forearm, 5 cun proximal to the dorsal wrist crease, between the ulna and flexor carpi ulnaris.",
     "cun_measurement": "5 cun above the dorsal wrist crease.",
     "functions_zh": [
-      "絡穴",
-      "清熱",
-      "活絡",
-      "舒筋",
-      "養心安神鎮靜",
-      "通經絡",
-      "解表",
-      "神經系統疾病",
-      "精神神志疾病"
+      "清熱解表",
+      "安神定志",
+      "通絡止痛"
     ],
     "functions_en": [
-      "Activates the channel",
-      "Stops pain",
-      "Calms the spirit",
-      "Clears heat"
+      "Clears heat and releases exterior",
+      "Calms spirit",
+      "Activates channel and alleviates pain"
     ],
     "indications_zh": [
-      "頭項強痛",
-      "肩臂痛",
-      "癲狂",
-      "熱病",
-      "肘臂拘急"
+      "頭痛、項強、肘臂痛",
+      "癲狂、熱病",
+      "疣目、皮膚贅疣"
     ],
     "indications_en": [
-      "Stiff neck and headache",
-      "Shoulder and arm pain",
-      "Mania pattern",
-      "Febrile disease",
-      "Elbow and arm tension"
+      "Headache, neck rigidity, arm pain",
+      "Mania and febrile diseases",
+      "Warts and skin excrescences"
     ],
     "muscles": [],
     "bones": [],
@@ -27182,7 +27466,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI7",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "luo"
     ],
@@ -27215,14 +27499,12 @@
       }
     ],
     "acu_tags": [
-      "絡穴",
       "清熱",
       "活絡",
       "舒筋",
       "養心安神鎮靜",
       "通經絡",
       "解表",
-      "神經系統疾病",
       "精神神志疾病"
     ],
     "name_intro_zh": "支，指離開、絡脈之意。正，指下經。本穴為手太陽之絡，正經由此別走少陰經，絡人心經，故名。",
@@ -27257,7 +27539,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/233"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.5–0.8 cun on the line joining SI5 and SI8, 5 cun proximal to the dorsal wrist crease. Luo-Connecting point (connects to Heart channel).",
     "name_zh": "支正",
     "name_en": "Branch to the Correct",
     "action_tags_zh": [
@@ -27267,7 +27549,6 @@
       "養心安神鎮靜",
       "通經絡",
       "解表",
-      "神經系統疾病",
       "精神神志疾病"
     ],
     "action_tags_en": [
@@ -27277,7 +27558,6 @@
       "Nourish Heart & Calm Mind",
       "Unblock Channels & Collaterals",
       "Relieve Exterior",
-      "Neurological Disorders",
       "Mental & Psychiatric Disorders"
     ],
     "disease_tags_zh": [
@@ -27285,28 +27565,91 @@
       "肩臂痛",
       "癲狂",
       "熱病",
-      "肘臂拘急"
+      "肘臂拘急",
+      "神經系統疾病"
     ],
     "disease_tags_en": [
       "Stiff & Painful Head and Neck",
       "Shoulder & Arm Pain",
       "Mania & Withdrawal",
       "Febrile Disease / Fever",
-      "Elbow & Arm Contracture"
+      "Elbow & Arm Contracture",
+      "Neurological Disorders"
     ],
     "related_conditions": [
       "cond.knee_osteoarthritis"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "絡穴（小腸經別絡，通心經）",
+      "疣目皮膚病要穴"
+    ],
+    "point_identity_en": [
+      "Luo-Connecting point (connects to Heart channel)",
+      "Key point for warts & dermatological conditions"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Activate Collaterals",
+      "Relax Tendons & Muscles",
+      "Nourish Heart & Calm Mind",
+      "Unblock Channels & Collaterals",
+      "Relieve Exterior",
+      "Mental & Psychiatric Disorders"
+    ]
   },
   {
     "code": "SI8",
     "chinese": "小海",
-    "pinyin": "Xiaohai",
+    "pinyin": "Xiǎo Hǎi",
     "english": "Small Sea",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -27314,33 +27657,24 @@
     "location_en": "On the medial aspect of the elbow, in the depression between the olecranon of the ulna and the medial epicondyle of the humerus.",
     "cun_measurement": "Between olecranon and medial epicondyle.",
     "functions_zh": [
-      "合穴",
-      "清熱",
-      "活血",
-      "舒筋",
-      "養心安神鎮靜",
-      "通經絡",
-      "頭面五官疾病",
-      "神經系統疾病",
-      "精神神志疾病"
+      "清熱散結",
+      "安神定志",
+      "通絡舒筋"
     ],
     "functions_en": [
-      "Clears heat",
-      "Calms the spirit",
-      "Activates the channel",
-      "Stops pain"
+      "Clears heat and dissipates swelling",
+      "Calms spirit",
+      "Activates channel and relaxes sinews"
     ],
     "indications_zh": [
-      "清熱止痛",
-      "安神定志",
-      "清熱祛風"
+      "肘臂痛、肘關節攣急",
+      "癲癇、精神病",
+      "瘰癧、頸頷腫痛"
     ],
     "indications_en": [
-      "Elbow and arm pain",
-      "Seizure pattern",
-      "Head and neck pain",
-      "Tinnitus",
-      "Swollen painful gums"
+      "Elbow pain and joint contracture",
+      "Epilepsy and mental disorders",
+      "Scrofula and submandibular swelling"
     ],
     "muscles": [],
     "bones": [],
@@ -27384,7 +27718,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI8",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "point_categories": [
       "five_shu.he_sea"
     ],
@@ -27396,15 +27730,15 @@
     "moxa_zh": "艾灸或遠紅外線加熱小海穴方法\n\n艾灸:\n\n準備艾條或艾灸盒。\n\n將艾條點燃，並調整至適合的溫度。\n\n將艾條懸停在小海穴上方約1-2釐米處。\n\n保持溫熱感，以皮膚可耐受的溫度爲宜，避免燙傷。\n\n灸治時間約5-10分鐘，可根據個人體質調整時間。\n\n艾灸結束後，用溫水擦拭皮膚。\n\n遠紅外線加熱:\n\n準備遠紅外線神燈或其他遠紅外線加熱裝置。\n\n將神燈或裝置放置距離小海穴約15-20釐米處。\n\n啟動神燈或裝置，將溫度調整至舒適的溫度。\n\n保持溫熱感，以皮膚可耐受的溫度爲宜，避免燙傷。\n\n加熱時間約10-15分鐘，可根據個人體質調整時間。\n\n加熱結束後，讓皮膚自然冷卻。\n\n注意事項:\n\n艾灸:\n\n避免過度灸灼，以免造成皮膚燙傷。\n\n艾灸後，應注意休息，避免勞累。\n\n孕婦、皮膚破損者、心臟病患者、血糖過高者慎用艾灸。\n\n遠紅外線加熱:\n\n注意保持安全距離，避免過近造成灼傷。\n\n加熱過程中，應密切觀察皮膚狀況，如有不適應立即停止。\n\n有皮膚病者，應避免使用遠紅外線加熱。\n\n提醒: 以上方法僅供參考，請在專業人士指導下進行。若有任何疑問，請諮詢專業醫生。",
     "massage_zh": "小海穴按摩方法\n\n準備\n\n將手臂自然垂下，掌心朝上。\n\n步驟\n\n找到小海穴位置：肘內側部，尺骨鷹嘴與肱骨內上髁之間凹陷處。\n\n用拇指指腹按壓小海穴：輕輕地按壓穴位，力度適中，不要過於用力。\n\n順時針方向旋轉按壓：以拇指指腹為中心，順時針方向旋轉按壓，每次旋轉1-2圈。\n\n持續按壓3-5分鐘：保持輕柔的力度，持續按壓3-5分鐘，直到感覺到穴位處微微發熱。\n\n重複步驟2-4，反覆按摩3-5次。\n\n注意事項\n\n按摩時，避免用力過猛，以免造成肌肉損傷。\n\n按摩過程中，如果感到疼痛，應立即停止。\n\n孕婦、患有嚴重疾病者，在按摩前請諮詢醫生。\n\n按摩後，請用熱毛巾敷在手臂上，促進血液循環。\n\n其他方法\n\n也可以用指節或手掌根部按壓小海穴，效果類似。\n\n可配合使用艾灸、刮痧等方法，增強按摩效果。\n\n建議每天按摩小海穴1-2次，堅持一段時間，可收到良好效果。",
     "acu_tags": [
-      "合穴",
       "清熱",
       "活血",
       "舒筋",
       "養心安神鎮靜",
       "通經絡",
-      "頭面五官疾病",
-      "神經系統疾病",
-      "精神神志疾病"
+      "精神神志疾病",
+      "清熱止痛",
+      "安神定志",
+      "清熱祛風"
     ],
     "name_intro_zh": "「小海穴」。「小」，與大相對，為孝為陰也。「海」，穴內氣血場覆蓋的範圍廣闊如海也。該穴名意指小腸經氣血在此匯合，氣血場範圍巨大。",
     "wushu_point": "合穴",
@@ -27439,7 +27773,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/234"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.3–0.5 cun in the depression between the olecranon process of the ulna and the medial epicondyle of the humerus with elbow flexed. He-Sea (Earth) point. Avoid ulnar nerve injury.",
     "name_zh": "小海",
     "name_en": "Small Sea",
     "action_tags_zh": [
@@ -27448,8 +27782,6 @@
       "舒筋",
       "養心安神鎮靜",
       "通經絡",
-      "頭面五官疾病",
-      "神經系統疾病",
       "精神神志疾病",
       "清熱止痛",
       "安神定志",
@@ -27461,15 +27793,19 @@
       "Relax Tendons & Muscles",
       "Nourish Heart & Calm Mind",
       "Unblock Channels & Collaterals",
-      "Head, Face & Sensory Disorders",
-      "Neurological Disorders",
       "Mental & Psychiatric Disorders",
       "Clear Heat & Relieve Pain",
       "Calm the Spirit & Settle the Mind",
       "Clear Heat & Dispel Wind"
     ],
-    "disease_tags_zh": [],
-    "disease_tags_en": [],
+    "disease_tags_zh": [
+      "頭面五官疾病",
+      "神經系統疾病"
+    ],
+    "disease_tags_en": [
+      "Head, Face & Sensory Disorders",
+      "Neurological Disorders"
+    ],
     "related_conditions": [
       "cond.sciatica",
       "cond.knee_osteoarthritis",
@@ -27477,15 +27813,80 @@
       "cond.chronic_diarrhea"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p1",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "合穴",
+      "土穴（五輸穴/本經子穴 Sedation Point）",
+      "肘部解剖要穴"
+    ],
+    "point_identity_en": [
+      "He-Sea point",
+      "Earth point (Five-Shu, Child/Sedation point)",
+      "Major elbow anatomical point"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Invigorate Blood",
+      "Relax Tendons & Muscles",
+      "Nourish Heart & Calm Mind",
+      "Unblock Channels & Collaterals",
+      "Mental & Psychiatric Disorders",
+      "Clear Heat & Relieve Pain",
+      "Calm the Spirit & Settle the Mind",
+      "Clear Heat & Dispel Wind"
+    ]
   },
   {
     "code": "SI9",
     "chinese": "肩貞",
-    "pinyin": "Jianzhen",
+    "pinyin": "Jiān Zhēn",
     "english": "True Shoulder",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -27493,31 +27894,20 @@
     "location_en": "Posterior and inferior to the shoulder joint, 1 cun superior to the posterior axillary fold when the arm is adducted.",
     "cun_measurement": "1 cun above the posterior axillary fold.",
     "functions_zh": [
-      "止痛",
-      "活血",
-      "活絡",
-      "舒筋",
-      "聰耳",
-      "鎮痛",
-      "潛陽熄風",
-      "頭面五官疾病"
+      "祛風通絡",
+      "利肩止痛"
     ],
     "functions_en": [
-      "Activates the channel",
-      "Benefits the shoulder and arm",
-      "Stops pain"
+      "Expels wind and activates channel",
+      "Benefits shoulder and alleviates pain"
     ],
     "indications_zh": [
-      "肩臂疼痛",
-      "瘰癘",
-      "耳鳴",
-      "耳聾"
+      "肩臂疼痛、運動障礙",
+      "肩關節周圍炎"
     ],
     "indications_en": [
-      "Shoulder and arm pain",
-      "Restricted shoulder movement",
-      "Upper limb numbness",
-      "Tinnitus"
+      "Shoulder pain and motor impairment",
+      "Periarthritis of shoulder"
     ],
     "muscles": [],
     "bones": [],
@@ -27558,7 +27948,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI9",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺 1-1.5寸",
     "cloudtcm_detail": "肩貞穴功效：清頭聰耳，通經活絡。主治：肩臂疼痛，瘰癘，耳鳴，耳聾。\n\n肩貞穴的功效\n\n舒筋活絡：肩貞穴是手太陽小腸經的穴位，刺激肩貞穴可以舒筋活絡，緩解肩臂疼痛等症狀。\n\n清頭聰耳：肩貞穴具有舒筋活絡的作用，可以有效緩解耳鳴、耳聾等症狀。",
     "combine_points_zh": "肩貞穴位於小腸經，屬手太陽小腸經，具有疏通經絡、活血止痛的功效。其配伍多樣，主要針對肩臂疼痛、耳鳴耳聾及上肢不遂等症狀。以下針對提供的配伍資訊作詳細分析：\n\n一、肩周炎：\n\n肩貞配肩髃、肩髎： 三穴皆位於肩部，共同作用於肩關節周圍，肩髃穴主治肩臂疼痛，肩髎穴擅長疏通經絡，緩解肩部肌肉緊張。肩貞穴則協同兩穴，加強疏通經絡、活血止痛的效果，從而緩解肩周炎引起的疼痛和活動受限。  原理是疏通經絡，改善局部血液循環，消除炎症。\n\n二、耳鳴耳聾：\n\n肩貞配手三里、合谷： 手三里、合谷為大腸經、陽明經的原穴和合穴，具有通經活絡、疏風清熱之效。耳鳴耳聾常與經絡不通、氣血瘀滯有關，肩貞穴則通過與手三里、合谷穴的配伍，疏通經絡，改善氣血運行，從而達到治療耳鳴耳聾的效果。  同樣，聽宮、翳風穴也屬於耳部穴位，與肩貞穴配合，可更直接的治療耳部疾病。\n\n三、上肢不遂：\n\n肩貞配肩髎、曲池、肩井、手三里、合谷： 此配伍組合涵蓋了手太陽小腸經、手太陰肺經、手陽明大腸經等多條經絡，作用範圍廣泛。曲池穴清熱瀉火，肩井穴疏通肩頸，手三里、合谷穴通經活絡。此配伍整體協同作用，疏通經絡氣血，改善上肢的運動功能，從而治療上肢不遂。\n\n四、其他配伍：\n\n肩貞配完骨：  完骨穴位於耳後，與耳鳴耳聾的治療相關，與肩貞穴配伍，可更有效地治療耳部疾病。\n\n肩貞配天宗、肩外俞： 天宗、肩外俞穴位於背部，與肩部經絡相通，此配伍主要針對肩痛，加強疏通經絡，緩解疼痛。\n\n肩貞配巨骨： 巨骨穴也參與肩部經絡的運行，與肩貞、天宗等穴位配合，可更全面地治療肩凝症。\n\n肩貞配天井： 天井穴擅長消腫散結，與肩貞配伍，可用於治療淋巴結炎。\n\n總之，肩貞穴的配伍應用十分靈活，其治療效果取決於所配穴位的功效及疾病的具體情況。  需注意，以上分析僅供參考，實際應用需根據患者的具體情況由專業的中醫師判斷。",
@@ -27572,8 +27962,7 @@
       "舒筋",
       "聰耳",
       "鎮痛",
-      "潛陽熄風",
-      "頭面五官疾病"
+      "潛陽熄風"
     ],
     "name_intro_zh": "貞，正。穴在肩後紋端，當後肩正中，故名。",
     "cloudtcm_url": "https://cloudtcm.com/acupoint/235",
@@ -27606,7 +27995,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/235"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.5–1.0 cun, 1 cun superior to the posterior end of the axillary fold when the arm is adducted.",
     "name_zh": "肩貞",
     "name_en": "True Shoulder",
     "action_tags_zh": [
@@ -27616,8 +28005,7 @@
       "舒筋",
       "聰耳",
       "鎮痛",
-      "潛陽熄風",
-      "頭面五官疾病"
+      "潛陽熄風"
     ],
     "action_tags_en": [
       "Relieve Pain / Analgesic",
@@ -27626,20 +28014,21 @@
       "Relax Tendons & Muscles",
       "Benefit Hearing",
       "Subdue Yang & Extinguish Wind",
-      "Head, Face & Sensory Disorders",
-      "Head, Face & Sense Organ Disorders"
+      "Head, Face & Sensory Disorders"
     ],
     "disease_tags_zh": [
       "肩臂疼痛",
       "瘰癘",
       "耳鳴",
-      "耳聾"
+      "耳聾",
+      "頭面五官疾病"
     ],
     "disease_tags_en": [
       "Shoulder & Arm Pain",
       "Scrofula",
       "Tinnitus",
-      "Deafness / Hearing Loss"
+      "Deafness / Hearing Loss",
+      "Head, Face & Sense Organ Disorders"
     ],
     "related_conditions": [
       "cond.cervical_spondylosis",
@@ -27650,15 +28039,74 @@
       "cond.cluster_headache"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "肩關節局部要穴"
+    ],
+    "point_identity_en": [
+      "Local point for posterior shoulder joint"
+    ],
+    "action_tags": [
+      "Relieve Pain / Analgesic",
+      "Invigorate Blood",
+      "Activate Collaterals",
+      "Relax Tendons & Muscles",
+      "Benefit Hearing",
+      "Subdue Yang & Extinguish Wind",
+      "Head, Face & Sensory Disorders"
+    ]
   },
   {
     "code": "SI10",
     "chinese": "臑俞",
-    "pinyin": "Naoshu",
+    "pinyin": "Nào Shū",
     "english": "Upper Arm Shu",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -27666,33 +28114,20 @@
     "location_en": "On the scapular region, directly superior to the posterior axillary fold, in the depression inferior to the scapular spine.",
     "cun_measurement": "Inferior to the scapular spine.",
     "functions_zh": [
-      "化痰",
-      "止痛",
-      "消腫",
-      "祛風疏風",
-      "軟堅散結",
-      "平喘",
-      "活絡",
-      "舒筋",
-      "通經絡",
-      "潛陽熄風"
+      "舒筋活絡",
+      "利肩止痛"
     ],
     "functions_en": [
-      "Relaxes sinews",
-      "Activates the channel",
-      "Benefits the shoulder and arm"
+      "Benefits shoulder and activates channel",
+      "Alleviates scapular pain"
     ],
     "indications_zh": [
-      "肩臂痛",
-      "肩胛痛",
-      "上肢不舉",
-      "頸項痛"
+      "肩臂疼痛、痠軟無力",
+      "肩胛痛"
     ],
     "indications_en": [
-      "Shoulder and arm pain",
-      "Scapular pain",
-      "Inability to raise the arm",
-      "Neck pain"
+      "Shoulder aching and weakness",
+      "Pain in scapular region"
     ],
     "muscles": [],
     "bones": [],
@@ -27735,7 +28170,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI10",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.5～1寸",
     "cloudtcm_detail": "臑俞穴主要是疏風化痰，舒筋活絡。主治肩臂疼痛、肩腫、乳房疾病、肩關節周圍炎。\n\n近代研發發現，溫針臑俞穴可以治療足跟痛，總有效率95.9%。",
     "combine_points_zh": "1.  治療肩周炎、上肢癱瘓：臑俞穴 + 肩髃穴 + 肩貞穴 + 肩髎穴 + 外關穴 (+ 曲池穴)\n\n此配伍以臑俞穴為核心，配合多個治療肩部及上肢疾患的穴位。肩髃、肩貞、肩髎穴皆位於肩部，直接作用於病竈區域，疏通經絡，緩解疼痛。外關穴屬手少陽三焦經，三焦經與上肢經絡密切相關，可通達上肢，改善氣血運行。曲池穴(於上肢癱瘓配伍中)為手陽明大腸經原穴，具有清熱解毒、通經活絡之效，能加強治療效果。整體配伍，標本兼治，通絡止痛，改善肩部及上肢活動功能。\n\n2. 治療肩臂疼痛不舉：臑俞穴 + 肩髃穴 + 臂臑穴 + 養老穴\n\n此配伍針對肩臂疼痛不舉，加入了臂臑穴(手陽明大腸經)和養老穴(手太陽小腸經)，更精準地作用於手臂經絡。臂臑穴擅長治療肩臂疼痛，養老穴則可加強通絡止痛，改善手臂氣血運行，使手臂功能恢復。\n\n3. 治療肩臂痠痛：臑俞穴 + 臂臑穴\n\n此配伍簡潔有效，針對肩臂痠痛，直接以臑俞穴疏通小腸經絡，並配合臂臑穴，雙管齊下，祛風通絡止痛。\n\n4. 治療肩部疼痛：臑俞穴 + 後溪穴 + 肩井穴\n\n此配伍加入了後溪穴(手太陽小腸經原穴)和肩井穴(督脈、膀胱經交會穴)，後溪穴具有疏通經絡、活血化瘀的作用，肩井穴是肩頸部的重要穴位，可舒緩肩頸肌肉緊張。此配伍從多個方面入手，治療肩部疼痛。\n\n5. 治療咳嗽、氣喘：臑俞穴 + 肺俞穴\n\n此配伍利用肺俞穴(足太陽膀胱經)調節肺部功能，與臑俞穴配合，達到降氣止咳平喘的效果。這反映了臟腑經絡之間的相互影響。\n\n6. 治療乳癰：臑俞穴 + 肩井穴 + 膻中穴\n\n此配伍針對乳癰，加入了膻中穴(任脈)，膻中穴為胸部氣機樞紐，具有理氣散結作用，配合肩井穴和臑俞穴，可有效散結消腫。\n\n7. 治療肩臂疼痛：臑俞穴 + 肩髃穴 + 曲池穴\n\n此配伍與治療肩周炎的配伍相似，但簡化了穴位組合，主要依靠臑俞穴、肩髃穴疏通局部經絡，並以曲池穴清熱解毒，通經活絡。",
@@ -27786,7 +28221,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/236"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.5–1.0 cun directly above SI9 in the depression inferior to the scapular spine.",
     "name_zh": "臑俞",
     "name_en": "Upper Arm Shu",
     "action_tags_zh": [
@@ -27824,12 +28259,69 @@
       "Scapular Pain",
       "Inability to Raise the Arm",
       "Neck Pain"
-    ]
+    ],
+    "point_identity_zh": [
+      "交會穴（手太陽、陽維脈、陽蹻脈）",
+      "肩胛上部要穴"
+    ],
+    "point_identity_en": [
+      "Intersection point (SI, Yang Wei & Yang Qiao Mai)",
+      "Upper scapular point"
+    ],
+    "field_sources": {
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ]
+    }
   },
   {
     "code": "SI11",
     "chinese": "天宗",
-    "pinyin": "Tianzong",
+    "pinyin": "Tiān Zōng",
     "english": "Celestial Gathering",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -27837,34 +28329,24 @@
     "location_en": "On the scapular region, in the depression at the junction of the upper third and lower two thirds of the line between the midpoint of the scapular spine and the inferior angle of the scapula.",
     "cun_measurement": "On the scapula, upper third/lower two thirds landmark line.",
     "functions_zh": [
-      "理氣",
-      "止痛",
-      "消腫",
-      "軟堅散結",
-      "舒筋",
-      "行氣",
-      "止嘔",
-      "鎮痛"
+      "寬胸理氣",
+      "通乳散結",
+      "通絡止痛"
     ],
     "functions_en": [
-      "Relaxes sinews",
-      "Activates the channel",
-      "Moves qi",
-      "Unbinds the chest"
+      "Unbinds chest and moves Qi",
+      "Benefits breasts and promotes lactation",
+      "Activates channel and alleviates pain"
     ],
     "indications_zh": [
-      "肩胛痛",
-      "肩臂痛",
-      "乳癰",
-      "胸脅痛",
-      "氣滯疼痛"
+      "肩胛疼痛、背痛",
+      "乳腺炎、乳汁不足、胸脅痛",
+      "咳嗽、喘息"
     ],
     "indications_en": [
-      "Scapular pain",
-      "Shoulder and arm pain",
-      "Breast abscess pattern",
-      "Chest and hypochondriac pain",
-      "Qi stagnation pain"
+      "Pain in scapular and back region",
+      "Mastitis, insufficient lactation, chest pain",
+      "Cough and asthma"
     ],
     "muscles": [],
     "bones": [],
@@ -27901,7 +28383,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI11",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺或斜刺0.5～1寸",
     "cloudtcm_detail": "天宗穴屬於手太陽小腸經，位於上背肩胛窩的中央凹陷處，對面正是胸部或乳房，因此按摩此穴道可以美體健胸、舒緩胸內氣滯，也可以緩解肩關節發炎、肩頸痠痛、落枕、五十肩...等等。\n\n有些專家發現，按摩此穴道還可以改善坐骨神經痛。",
     "combine_points_zh": "天宗穴配肩外俞穴治肩胛痛： 天宗穴疏通小腸經氣血，肩外俞穴疏通膀胱經氣血，二穴合用，標本兼治，能有效緩解肩胛部經絡不通所致的疼痛。原理是通過調節局部經氣，改善血液循環，消炎止痛。\n\n天宗穴配膻中穴、足三里穴治乳癰： 膻中穴為氣血匯聚之處，具有理氣寬胸的作用；足三里穴為強壯穴，具有補益脾胃，提升免疫力的功效；天宗穴則可疏通經絡，促進局部炎症消散。三穴合用，能理氣散結，消腫止痛，提高機體抵抗力，治療乳癰。\n\n天宗穴配肺俞穴治咳喘： 天宗穴與肺俞穴皆與肺臟關係密切。肺俞穴補益肺氣，天宗穴疏通小腸經，協同作用，可改善肺氣虛弱導致的咳喘。原理在於調節肺氣，宣降肺氣，平喘止咳。\n\n天宗穴配膻中穴，有理氣散結消腫的作用，用於乳癰、乳腺增生、乳房腫痛：  此配伍與前述類似，重點在於理氣散結，消腫止痛，改善乳房局部血液循環及淋巴循環。\n\n天宗穴配乳中穴、乳根穴、少澤穴治乳腺炎，並有催乳作用： 此配伍針對乳腺炎，直接作用於乳房經絡，乳中穴、乳根穴為局部穴位，少澤穴為小腸經原穴，具有通經活絡，消腫散結，並能促進乳汁分泌的作用。\n\n天宗穴配肩井穴、足三里穴、屋翳穴治乳少：  此配伍以疏通經絡，調和氣血，補益脾胃為主。肩井穴、屋翳穴疏通氣血，促進乳汁分泌；足三里穴益氣健脾，為根本之治。\n\n天宗穴配肩髃穴、肩髎穴、陽陵泉穴治肩周炎： 此配伍全面調理肩部經絡，肩髃穴、肩髎穴為肩部局部穴位，陽陵泉穴為膽經穴位，與肩部經絡關係密切，能有效舒緩肩周肌肉緊張，改善肩部活動度。\n\n需注意： 以上配伍僅供參考，具體施治需根據患者病情、體質等因素，由專業中醫師辨證論治。穴位刺激方法也包括針灸、按摩、艾灸等，強度及時間應遵醫囑。",
@@ -27950,7 +28432,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/237"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.5–1.0 cun in the center of the infraspinous fossa. CAUTION: Deep perpendicular insertion in thin patients risks pneumothorax.",
     "name_zh": "天宗",
     "name_en": "Celestial Gathering",
     "action_tags_zh": [
@@ -27989,11 +28471,52 @@
     ],
     "exam_star": 1,
     "field_sources": {
-      "exam_star": [
-        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
       ],
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
     },
     "related_conditions": [
@@ -28006,12 +28529,22 @@
       "cond.palpitations",
       "cond.heart_failure",
       "cond.eye_strain"
-    ]
+    ],
+    "point_identity_zh": [
+      "肩胛部要穴（天宗）",
+      "通乳、寬胸、止肩痛第一要穴"
+    ],
+    "point_identity_en": [
+      "Primary scapular point (Tianzong)",
+      "Essential point for breast disorders, lactation & shoulder pain"
+    ],
+    "exam_pearl": "★ 天宗在肩胛骨崗下窩中央。為治療肩胛痛、胸脅痛、乳腺炎與乳汁不足第一要穴。直刺0.5-1.0寸，薄弱患者注意避開氣胸。",
+    "exam_pearl_en": "★ Tianzong is in the center of the infraspinous fossa. Primary point for scapular pain, chest oppression, mastitis, and insufficient lactation. Perpendicular 0.5-1.0 inch; caution for pneumothorax in thin patients."
   },
   {
     "code": "SI12",
     "chinese": "秉風",
-    "pinyin": "Bingfeng",
+    "pinyin": "Bǐng Fēng",
     "english": "Grasping the Wind",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -28019,29 +28552,20 @@
     "location_en": "On the scapular region, in the center of the supraspinous fossa, directly superior to SI11, where a depression forms when the arm is raised.",
     "cun_measurement": "Center of supraspinous fossa.",
     "functions_zh": [
-      "化痰",
-      "活血",
-      "活絡",
-      "舒筋",
-      "通經絡",
-      "運動系統疾病"
+      "祛風通絡",
+      "利肩胛"
     ],
     "functions_en": [
-      "Dispels wind",
-      "Activates the channel",
-      "Benefits the shoulder and scapula"
+      "Expels wind and activates channel",
+      "Benefits shoulder and scapula"
     ],
     "indications_zh": [
-      "肩胛痛",
-      "肩臂痠痛",
-      "上肢麻木",
-      "頸項強痛"
+      "肩胛疼痛、肩膀僵硬",
+      "手臂麻木痛"
     ],
     "indications_en": [
-      "Scapular pain",
-      "Shoulder and arm soreness",
-      "Upper limb numbness",
-      "Stiff neck"
+      "Scapular pain and shoulder stiffness",
+      "Arm numbness and pain"
     ],
     "muscles": [],
     "bones": [],
@@ -28084,7 +28608,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI12",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.5～0.7寸",
     "cloudtcm_detail": "秉風穴主要功效是「舒筋通絡，散風止痛」。 主治肩臂疼痛、上肢麻痺、岡上肌炎、肩周炎。\n\n現代研究發現，針剌加火罐可以治療風濕背脊痛，取天宗、秉風、曲垣、大抒、風門、肺俞、大椎， 針刺待氣直達病所，留針 20~30 分鐘後出針，再取各部位的痛點施用閃火法拔罐，留罐 10~15 分鐘，有效率96.0%。",
     "combine_points_zh": "秉風穴配伍應用分析\n\n1. 項強：秉風穴配風池穴、天柱穴\n\n原理： 風池穴位於頸項部，是治療頸項疾患的重要穴位，具有疏散風寒、清熱解表的作用；天柱穴位於頸後，具有舒筋活絡、通經活絡的功效。秉風穴與此二穴合用，可共同疏通頸項部經絡，祛風散寒，緩解肌肉痙攣，從而治療項強。\n\n2. 肩胛部腫痛：秉風穴配肩井穴、臑俞穴、肩髃穴\n\n原理： 肩井穴為手足陽經交會穴，具有舒緩肩背疼痛的作用；臑俞穴是手太陽小腸經的背俞穴，具有治療肩臂疼痛的功效；肩髃穴位於肩關節附近，能直接作用於肩部肌肉。秉風穴與此三穴合用，可多角度、多層次地疏通肩胛部經絡，消腫止痛。\n\n3. 上肢痠麻、肩關節周圍炎：秉風穴配肩髃穴、外關穴\n\n原理： 外關穴是手少陽三焦經的原穴，具有通經活絡、祛風止痛的功效。此配伍通過秉風穴與肩髃穴、外關穴的協同作用，疏通手太陽小腸經及手少陽三焦經，改善上肢氣血循環，從而緩解上肢痠麻、肩關節周圍炎等症狀。\n\n4. 肩痛不可舉：秉風穴配天容穴、肩井穴\n\n原理： 天容穴位於面部，與肩頸部經絡相通，具有疏通經絡、緩解疼痛的作用。此配伍綜合作用於頸肩部，疏通經絡，改善氣血運行，緩解肩部疼痛，使肩關節活動恢復。\n\n5. 肩背疼痛：秉風穴配天宗穴、肩井穴、後溪穴\n\n原理： 天宗穴是手太陽小腸經的背俞穴，後溪穴是手太陽小腸經的原穴，都具有治療肩背疼痛的功效。此配伍多個穴位共同作用於肩背部經絡，具有明顯的舒筋活絡、止痛作用。\n\n6. 咳嗽咯痰：秉風穴配太淵穴、肺俞穴\n\n原理： 太淵穴是手太陰肺經的原穴，肺俞穴是肺的背俞穴，都具有理肺止咳化痰的功效。秉風穴雖然屬小腸經，但與肺經經絡相通，此配伍通過多個穴位共同作用，可以達到理肺止咳化痰的效果。\n\n綜上所述，秉風穴的配伍應用靈活多變，其治療效果取決於所選配穴位的功效以及疾病的具體情況。  需由專業中醫師根據患者實際情況進行診斷和治療。",
@@ -28096,8 +28620,7 @@
       "活血",
       "活絡",
       "舒筋",
-      "通經絡",
-      "運動系統疾病"
+      "通經絡"
     ],
     "other_names_zh": "肩解",
     "name_intro_zh": "秉，執掌之意。風，穴內氣血物質為運動著的風氣。該穴名意指小腸經的氣化之氣在此形成風氣。本穴物質為天宗穴傳來的天部之氣，上行至此後，因吸熱脹散而化為風氣，風氣循小腸經而運行，如被執掌指使一般，故名。此穴為手陽明太陽穴足少陽之會。",
@@ -28132,7 +28655,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/238"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Oblique or perpendicular insertion 0.5–0.7 cun in the center of the supraspinous fossa. CAUTION: Deep perpendicular insertion risks pneumothorax.",
     "name_zh": "秉風",
     "name_en": "Grasping the Wind",
     "action_tags_zh": [
@@ -28140,34 +28663,96 @@
       "活血",
       "活絡",
       "舒筋",
-      "通經絡",
-      "運動系統疾病"
+      "通經絡"
     ],
     "action_tags_en": [
       "Transform Phlegm",
       "Invigorate Blood",
       "Activate Collaterals",
       "Relax Tendons & Muscles",
-      "Unblock Channels & Collaterals",
-      "Locomotor & Musculoskeletal Disorders"
+      "Unblock Channels & Collaterals"
     ],
     "disease_tags_zh": [
       "肩胛痛",
       "肩臂痠痛",
       "上肢麻木",
-      "頸項強痛"
+      "頸項強痛",
+      "運動系統疾病"
     ],
     "disease_tags_en": [
       "Scapular Pain",
       "Aching Shoulder & Arm",
       "Numbness of the Upper Limb",
-      "Stiff Neck & Nape Pain"
-    ]
+      "Stiff Neck & Nape Pain",
+      "Locomotor & Musculoskeletal Disorders"
+    ],
+    "point_identity_zh": [
+      "交會穴（手太陽、手陽明、手少陽、足少陽）"
+    ],
+    "point_identity_en": [
+      "Intersection point (SI, LI, TE, GB channels)"
+    ],
+    "action_tags": [
+      "Transform Phlegm",
+      "Invigorate Blood",
+      "Activate Collaterals",
+      "Relax Tendons & Muscles",
+      "Unblock Channels & Collaterals"
+    ],
+    "field_sources": {
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ]
+    }
   },
   {
     "code": "SI13",
     "chinese": "曲垣",
-    "pinyin": "Quyuan",
+    "pinyin": "Qū Yuán",
     "english": "Crooked Wall",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -28175,27 +28760,20 @@
     "location_en": "On the scapular region, at the medial end of the supraspinous fossa, midway between SI10 and the spinous process of T2.",
     "cun_measurement": "Medial end of supraspinous fossa.",
     "functions_zh": [
-      "止痛",
-      "活血",
-      "活絡",
-      "舒筋"
+      "舒筋活絡",
+      "止痛"
     ],
     "functions_en": [
-      "Relaxes sinews",
-      "Stops pain",
-      "Benefits the shoulder and back"
+      "Benefits shoulder and scapula",
+      "Alleviates pain"
     ],
     "indications_zh": [
-      "肩胛痛",
-      "肩背拘急",
-      "頸項強痛",
-      "上肢痠痛"
+      "肩胛疼痛、背部僵硬",
+      "肩臂痛"
     ],
     "indications_en": [
-      "Scapular pain",
-      "Tight shoulder and back",
-      "Stiff neck",
-      "Upper limb soreness"
+      "Scapular pain and back stiffness",
+      "Shoulder and arm pain"
     ],
     "muscles": [],
     "bones": [],
@@ -28232,7 +28810,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI13",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.3～0.5寸",
     "cloudtcm_detail": "曲垣穴具有舒筋活絡、疏風止痛的作用。主治肩胛拘攣疼痛，肩背痛，肩關節周圍軟組織疾病。\n\n曲垣穴的功效\n\n舒筋活絡：曲垣穴是手太陽小腸經的穴位，刺激曲垣穴可以舒筋活絡，緩解肩胛拘攣疼痛等症狀。\n\n疏風止痛：曲垣穴具有舒筋活絡的作用，可以有效緩解肩背痛、肩關節周圍軟組織疾病引起的疼痛。",
     "combine_points_zh": "曲垣穴配伍詳解\n\n曲垣穴，屬手太陽小腸經，位於肩胛骨上角內緣，是治療肩背部疾患的重要穴位。其功效主要在於舒筋活絡，通經止痛。以下針對提供的配伍，詳細分析其原理：\n\n1.  肩周炎： 曲垣穴配肩髃穴、肩髎穴。此三穴均位於肩部，形成局部調理，曲垣穴疏通經絡，肩髃穴、肩髎穴則直接作用於肩關節周圍的肌肉和筋膜，共同達到舒筋活絡、消炎止痛的效果。\n\n2. 肩背痛：  曲垣穴與肩井穴、天宗穴、秉風穴、大椎穴、昆侖穴等穴位配伍，皆針對肩背部的經絡循行路線。肩井、天宗為督脈和手足太陽經的交會穴，大椎為督脈重要穴位，昆侖穴為足少陽經穴位，這些穴位與曲垣穴共同作用，能疏通督脈、手太陽小腸經、足太陽膀胱經等經絡之氣血，從而緩解肩背部的疼痛。\n\n3. 肩關節周圍軟組織疾病： 曲垣穴配肩貞穴、天宗穴，同樣是局部穴位組合，作用機理與肩周炎類似，針對肩關節周圍的肌肉、韌帶等軟組織炎症。\n\n4. 岡上肌腱炎： 曲垣穴配臂臑穴、陽陵泉穴。臂臑穴位於上臂外側，陽陵泉穴位於膝蓋外側，此配伍反映了經絡循行的整體觀。曲垣穴調理肩部經絡，臂臑穴針對上臂肌肉，陽陵泉穴則通過調和肝膽經氣，間接影響肩部的氣血運行，從而緩解岡上肌腱炎的疼痛和炎症。\n\n5. 偏癱： 曲垣穴配秉風穴、天宗穴、曲池穴。偏癱多因中風導致經絡不通，此配伍通過多個穴位協同作用，疏通手太陽小腸經、手少陽三焦經等經絡，促進氣血運行，恢復肢體功能。\n\n6. 腰背痛： 曲垣穴配天宗穴、後溪穴、昆侖穴。此配伍涉及到手太陽小腸經、督脈、足少陽膽經等經絡，通過多個穴位整體調理，達到舒筋活絡，緩解腰背疼痛的效果。",
@@ -28277,7 +28855,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/239"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Oblique or perpendicular insertion 0.3–0.5 cun on the medial extremity of the supraspinous fossa. CAUTION: Deep perpendicular insertion risks pneumothorax.",
     "name_zh": "曲垣",
     "name_en": "Crooked Wall",
     "action_tags_zh": [
@@ -28308,15 +28886,65 @@
       "cond.sciatica"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "肩胛崗上緣局部穴"
+    ],
+    "point_identity_en": [
+      "Local point on superior scapular fossa"
+    ]
   },
   {
     "code": "SI14",
     "chinese": "肩外俞",
-    "pinyin": "Jianwaishu",
+    "pinyin": "Jiān Wài Shū",
     "english": "Outer Shoulder Shu",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -28324,26 +28952,20 @@
     "location_en": "On the back, 3 cun lateral to the lower border of the spinous process of T1.",
     "cun_measurement": "3 cun lateral to T1.",
     "functions_zh": [
-      "止痛",
-      "舒筋",
-      "運動系統疾病"
+      "祛風散寒",
+      "通絡止痛"
     ],
     "functions_en": [
-      "Benefits the shoulder and back",
-      "Dispels cold",
-      "Stops pain"
+      "Expels wind and cold",
+      "Activates channel and alleviates pain"
     ],
     "indications_zh": [
-      "肩背痛",
-      "頸項強痛",
-      "肩胛拘急",
-      "咳嗽"
+      "肩背疼痛、頸項強痛",
+      "上肢麻木"
     ],
     "indications_en": [
-      "Shoulder and back pain",
-      "Stiff neck",
-      "Scapular tightness",
-      "Cough"
+      "Shoulder and back pain, neck rigidity",
+      "Upper extremity numbness"
     ],
     "muscles": [],
     "bones": [],
@@ -28380,7 +29002,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI14",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "斜刺0.5-0.8寸",
     "cloudtcm_detail": "肩外俞穴功效「舒筋活絡」。 主治肩背酸痛、頸項強急、肘臂痛。",
     "combine_points_zh": "一、 配大椎穴、後溪、天宗、曲池，治頸項強直，肩背肘痛\n\n大椎穴 (督脈):  位於頸部第七頸椎棘突下凹陷處，為督脈重要穴位，具有疏通督脈、調和氣血、散寒解表之效。此處配伍，主要針對頸項強直，因大椎穴可調節頸部肌肉緊張，改善氣血運行。\n\n後溪穴 (手太陽小腸經):  位於手背尺側，第5指掌指關節後尺側的凹陷中。具有通經活絡，舒緩經絡氣血瘀滯的作用。與肩外俞穴同屬小腸經，協同作用，加強疏通小腸經絡之效果。\n\n天宗穴 (手太陽小腸經): 位於肩胛岡下緣，腋後線與肩胛骨岡下緣交點處，與肩外俞穴相近，具有舒緩肩胛部肌肉，疏通經絡的作用。此處與肩外俞穴合用，加強治療肩背疼痛的功效。\n\n曲池穴 (手陽明大腸經): 位於肘橫紋外側端，肱橈肌腱與肱肌腱之間。具有清熱瀉火，利濕通痺的作用。此處加入，主要針對伴隨炎症或濕熱的肩背肘痛，起到清熱解毒的輔助作用。\n\n二、 肩外俞穴配大椎穴、肩中俞穴、列缺穴治肩背疼痛\n\n大椎穴 (督脈):  功能同前述。\n\n肩中俞穴 (足太陽膀胱經): 位於肩胛骨內上角，與肩外俞穴相鄰，共同作用於肩胛部，具有疏通膀胱經氣血，緩解肩背肌肉緊張的作用。\n\n列缺穴 (手太陰肺經): 位於手腕背側橈側，橈骨莖突與拇長展肌腱之間的凹陷處。具有疏肺解表，宣肺止咳的作用。此處配伍，可能針對因肺氣不足或外邪入侵引起的肩背疼痛，透過疏通肺經，間接改善肩背氣血運行。",
@@ -28401,8 +29023,7 @@
     ],
     "acu_tags": [
       "止痛",
-      "舒筋",
-      "運動系統疾病"
+      "舒筋"
     ],
     "name_intro_zh": "肩，指肩部。外，指外方。俞，指穴位。本穴位於肩中俞偏外下方，故名。",
     "cloudtcm_url": "https://cloudtcm.com/acupoint/240",
@@ -28435,44 +29056,98 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/240"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Oblique or perpendicular insertion 0.3–0.7 cun, 3 cun lateral to the lower border of the spinous process of T1. CAUTION: Deep perpendicular insertion risks pneumothorax.",
     "name_zh": "肩外俞",
     "name_en": "Outer Shoulder Shu",
     "action_tags_zh": [
       "止痛",
-      "舒筋",
-      "運動系統疾病"
+      "舒筋"
     ],
     "action_tags_en": [
       "Relieve Pain / Analgesic",
-      "Relax Tendons & Muscles",
-      "Locomotor & Musculoskeletal Disorders"
+      "Relax Tendons & Muscles"
     ],
     "disease_tags_zh": [
       "肩背痛",
       "頸項強痛",
       "肩胛拘急",
-      "咳嗽"
+      "咳嗽",
+      "運動系統疾病"
     ],
     "disease_tags_en": [
       "Shoulder & Back Pain",
       "Stiff Neck & Nape Pain",
       "Scapular Tension",
-      "Cough"
+      "Cough",
+      "Locomotor & Musculoskeletal Disorders"
     ],
     "related_conditions": [
       "cond.cervical_spondylosis"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "肩背部解剖穴（C7/T1旁開3寸）"
+    ],
+    "point_identity_en": [
+      "Upper back point (3 cun lateral to T1)"
+    ],
+    "action_tags": [
+      "Relieve Pain / Analgesic",
+      "Relax Tendons & Muscles"
+    ]
   },
   {
     "code": "SI15",
     "chinese": "肩中俞",
-    "pinyin": "Jianzhongshu",
+    "pinyin": "Jiān Zhōng Shū",
     "english": "Middle Shoulder Shu",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -28480,29 +29155,20 @@
     "location_en": "On the back, 2 cun lateral to the lower border of the spinous process of C7.",
     "cun_measurement": "2 cun lateral to C7.",
     "functions_zh": [
-      "止痛",
-      "活絡",
-      "舒筋",
-      "清肺宣肺",
-      "解表",
-      "呼吸系統疾病"
+      "宣肺止咳",
+      "通絡止痛"
     ],
     "functions_en": [
-      "Benefits the Lung",
-      "Stops cough",
-      "Relaxes the neck and back"
+      "Descends Lung Qi",
+      "Activates channel and alleviates pain"
     ],
     "indications_zh": [
-      "咳嗽",
-      "氣喘",
-      "頸項強痛",
-      "肩背痛"
+      "肩背疼痛、頸項強痛",
+      "咳嗽、氣喘"
     ],
     "indications_en": [
-      "Cough",
-      "Wheezing",
-      "Stiff neck",
-      "Shoulder and back pain"
+      "Shoulder and back pain, neck rigidity",
+      "Cough and asthma"
     ],
     "muscles": [],
     "bones": [],
@@ -28545,7 +29211,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI15",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.3～0.7寸",
     "cloudtcm_detail": "肩中俞穴功效「疏風解表、宣肺止咳」。 主治肩背疼痛、咳嗽、哮喘、發熱惡寒、唾血、目視不明。",
     "combine_points_zh": "肩中俞穴位於督脈與膀胱經交會處，屬膀胱經，具有疏通經絡、調和氣血、舒筋活絡的功效。其配穴多針對肩背痛及呼吸系統疾病，原理主要基於經絡循行及臟腑聯繫。\n\n1. 與肺俞、內關、足三里配伍治支氣管炎:\n\n原理:  肩中俞穴通調膀胱經，膀胱經與肺經相表裡；肺俞穴為肺經背俞穴，直接作用於肺臟；內關穴為心包經絡穴，心包經與肺經相表裡，具有寧心安神、寬胸理氣之效；足三里穴為胃經合穴，具有調理脾胃、增強免疫力之功。此配伍通過多個經絡穴位協同作用，從肺經、心包經、脾胃經等多個方面調整臟腑功能，以達到治療支氣管炎的目的。\n\n2. 與大杼、附分、肺俞、厥陰俞、心俞、膈俞配伍治肺結核:\n\n原理: 此配伍針對肺結核，以多個背俞穴為主，從肺、心、肝、腎等臟腑整體調理。大杼穴為肺經的起始穴，附分穴與肺的關係密切，配合肺俞穴直接作用於肺臟，厥陰俞、心俞、膈俞則分別調整肝、心、膈肌功能，提升機體免疫力，共同抵禦肺結核。肩中俞穴協同作用，疏通經絡，促進氣血運行，更好地將藥力輸送到病竈部位。\n\n3. 與大椎、後溪、委中配伍治肩背痛:\n\n原理: 大椎穴為督脈穴，為諸陽之會，具有疏通全身陽氣之效；後溪穴為手太陽小腸經原穴，具有通利經脈、舒筋活絡之功；委中穴為足太陽膀胱經合穴，具有通調氣血、瀉熱除濕之效。此配伍通過督脈、小腸經與膀胱經的共同作用，疏通經絡，調節氣血，從而緩解肩背疼痛。肩中俞穴則更精準地針對肩背部經絡循行路線進行調理。\n\n4. 與大椎、肩井、支溝配伍治肩背疼痛:\n\n原理:  與配伍3類似，大椎穴總督一身之陽氣，肩井穴為肩部重要的穴位，支溝穴屬於三焦經，三焦經與肩背部經絡關係密切。此配伍同樣通過疏通經絡、調和氣血來緩解肩背疼痛，肩中俞穴則更精確地作用於肩背部特定區域。\n\n5. 與肩髎、外關配伍治肩背疼痛、肩周炎:\n\n原理: 肩髎穴為肩部經穴，外關穴為小腸經絡穴，具有舒筋活絡、止痛之效。此配伍主要針對肩部經絡循行路線，通過局部經絡的疏通來緩解肩背疼痛和肩周炎。肩中俞穴的加入，則更全面地協同作用，提升治療效果。\n\n6. 與肩外俞、大椎配伍治肩背疼痛 (寒則補之灸之):\n\n原理:  肩外俞穴與肩中俞穴相鄰，共同作用於肩背部經絡；大椎穴總督一身陽氣。寒則補之灸之，說明此配伍針對寒邪引起的肩背痛，通過溫經散寒來治療。灸法可以溫通經絡，促進氣血運行，達到治療效果。\n\n總之，肩中俞穴的配伍多樣，其治療效果取決於疾病的性質和穴位的選擇，需根據具體情況進行調整。",
@@ -28569,8 +29235,7 @@
       "活絡",
       "舒筋",
       "清肺宣肺",
-      "解表",
-      "呼吸系統疾病"
+      "解表"
     ],
     "name_intro_zh": "肩，指肩部。中，指中間。俞，指穴位。本穴位於肩井與大椎連線中間，主治肩胛內臟疾病，故名。",
     "cloudtcm_url": "https://cloudtcm.com/acupoint/241",
@@ -28604,7 +29269,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/241"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Oblique or perpendicular insertion 0.3–0.6 cun, 2 cun lateral to the lower border of the spinous process of C7. CAUTION: Deep perpendicular insertion risks pneumothorax.",
     "name_zh": "肩中俞",
     "name_en": "Middle Shoulder Shu",
     "action_tags_zh": [
@@ -28612,42 +29277,99 @@
       "活絡",
       "舒筋",
       "清肺宣肺",
-      "解表",
-      "呼吸系統疾病"
+      "解表"
     ],
     "action_tags_en": [
       "Relieve Pain / Analgesic",
       "Activate Collaterals",
       "Relax Tendons & Muscles",
       "Clear & Diffuse the Lung",
-      "Relieve Exterior",
-      "Respiratory System Disorders"
+      "Relieve Exterior"
     ],
     "disease_tags_zh": [
       "咳嗽",
       "氣喘",
       "頸項強痛",
-      "肩背痛"
+      "肩背痛",
+      "呼吸系統疾病"
     ],
     "disease_tags_en": [
       "Cough",
       "Asthma / Wheezing",
       "Stiff Neck & Nape Pain",
-      "Shoulder & Back Pain"
+      "Shoulder & Back Pain",
+      "Respiratory System Disorders"
     ],
     "related_conditions": [
       "cond.myofascial_pain"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "肩頸交界部解剖穴（C7旁開2寸）"
+    ],
+    "point_identity_en": [
+      "Neck/shoulder boundary point (2 cun lateral to C7)"
+    ],
+    "action_tags": [
+      "Relieve Pain / Analgesic",
+      "Activate Collaterals",
+      "Relax Tendons & Muscles",
+      "Clear & Diffuse the Lung",
+      "Relieve Exterior"
+    ]
   },
   {
     "code": "SI16",
     "chinese": "天窗",
-    "pinyin": "Tianchuang",
+    "pinyin": "Tiān Chuāng",
     "english": "Celestial Window",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -28655,30 +29377,24 @@
     "location_en": "On the lateral aspect of the neck, posterior to sternocleidomastoid, about 3 cun lateral to the laryngeal prominence.",
     "cun_measurement": "About 3 cun lateral to the laryngeal prominence.",
     "functions_zh": [
-      "清熱",
-      "開竅醒神",
-      "聰耳",
-      "頭面五官疾病",
-      "神經系統疾病"
+      "利耳咽喉",
+      "理氣安神",
+      "通絡止痛"
     ],
     "functions_en": [
-      "Benefits the throat",
-      "Opens the orifices",
-      "Benefits the ears and eyes"
+      "Benefits ears, throat and voice",
+      "Regulates Qi and calms spirit",
+      "Activates channel and alleviates pain"
     ],
     "indications_zh": [
-      "耳鳴",
-      "咽喉腫痛",
-      "失音",
-      "頸項強痛",
-      "癲狂"
+      "耳鳴、耳聾、暴瘖失音",
+      "咽喉腫痛、癭氣頸腫",
+      "頸項強痛"
     ],
     "indications_en": [
-      "Tinnitus",
-      "Sore throat",
-      "Loss of voice",
-      "Stiff neck",
-      "Mania pattern"
+      "Tinnitus, deafness, sudden loss of voice",
+      "Sore throat, goiter, neck masses",
+      "Neck stiffness and pain"
     ],
     "muscles": [],
     "bones": [],
@@ -28717,7 +29433,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI16",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.3～0.7寸",
     "cloudtcm_detail": "天窗穴功效「聰耳利竅，熄風寧神」。 主治耳鳴、耳聾咽喉腫痛、頸項強痛、暴喑、癮疹、癲狂、中風、頸腫、甲狀腺腫大、扁祧體炎。",
     "combine_points_zh": "1.  與清熱瀉火相關配伍:\n\n天窗穴配少商穴、合谷穴:  少商穴屬手太陰肺經，合谷穴屬手陽明大腸經，三穴合用，能清瀉肺經、大腸經及小腸經的熱邪，適用於咽喉腫痛、口舌生瘡等上焦實熱證。原理是通過疏通經絡，清泄鬱熱，達到消腫止痛的效果。  天突穴的加入則更能強化清熱化痰的作用。\n\n天窗穴配天容穴、少商穴:  天容穴屬足陽明胃經，與天窗穴、少商穴合用，同樣具有清熱利咽的作用，針對咽喉腫痛，效果更佳。\n\n2. 與通竅開竅相關配伍:\n\n天窗穴配風池穴、後溪穴: 風池穴屬足少陽膽經，後溪穴屬手太陽小腸經，三穴合用，能疏通頸項經絡，改善氣血運行，適用於頸項痛、頭痛等症狀。\n\n天窗穴配外關穴、聽宮穴/耳門穴/翳風穴/中渚穴: 外關穴屬手少陽三焦經，聽宮、耳門、翳風、中渚穴均與耳部相關。此類配伍主要針對耳聾、耳鳴等耳部疾病。外關穴具有通利三焦之氣的作用，配合天窗穴及其他耳部穴位，可有效疏通經絡，改善聽力。  翳風、中渚穴的加入更能強化通利耳竅的作用。\n\n3.  與其他疾病相關配伍:\n\n天窗穴配人中穴、頰車穴: 人中穴屬任脈，頰車穴屬足陽明胃經，此配伍主要用於中風口噤，通過刺激穴位，改善神志，恢復言語功能。\n\n天窗穴配間使穴、通谷穴: 間使穴屬手少陰心經，通谷穴屬足厥陰肝經，此配伍用於暴喑不能言，原理是通過疏通經絡，調和氣血，改善言語功能。\n\n天窗穴配臑俞穴:  臑俞穴屬足太陽膀胱經，此配伍適用於甲狀腺腫大，但其機理需要更深入的研究。",
@@ -28739,9 +29455,7 @@
     "acu_tags": [
       "清熱",
       "開竅醒神",
-      "聰耳",
-      "頭面五官疾病",
-      "神經系統疾病"
+      "聰耳"
     ],
     "other_names_zh": "窗籠,窗聾,窗簧,天籠",
     "name_intro_zh": "天，指上部；窗，孔竅。穴在頸部近耳竅處，故名。",
@@ -28776,48 +29490,107 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/242"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.3–0.7 cun on the lateral aspect of the neck, posterior to the SCM muscle at the level of the laryngeal protuberance. Window of Sky point. CAUTION: Avoid carotid artery.",
     "name_zh": "天窗",
     "name_en": "Celestial Window",
     "action_tags_zh": [
       "清熱",
       "開竅醒神",
-      "聰耳",
-      "頭面五官疾病",
-      "神經系統疾病"
+      "聰耳"
     ],
     "action_tags_en": [
       "Clear Heat",
       "Open Orifices & Resuscitate",
-      "Benefit Hearing",
-      "Head, Face & Sensory Disorders",
-      "Neurological Disorders"
+      "Benefit Hearing"
     ],
     "disease_tags_zh": [
       "耳鳴",
       "咽喉腫痛",
       "失音",
       "頸項強痛",
-      "癲狂"
+      "癲狂",
+      "頭面五官疾病",
+      "神經系統疾病"
     ],
     "disease_tags_en": [
       "Tinnitus",
       "Sore & Swollen Throat",
       "Loss of Voice",
       "Stiff Neck & Nape Pain",
-      "Mania & Withdrawal"
+      "Mania & Withdrawal",
+      "Head, Face & Sensory Disorders",
+      "Neurological Disorders"
     ],
     "exam_star": 1,
     "field_sources": {
-      "exam_star": [
-        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "天牖五穴之天窗（Window of Sky Point）",
+      "頸部解剖要穴"
+    ],
+    "point_identity_en": [
+      "Window of Sky point (Tianchuang)",
+      "Essential neck anatomical point"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Open Orifices & Resuscitate",
+      "Benefit Hearing"
+    ],
+    "exam_pearl": "★ 天窗為天牖五穴之一（Window of Sky Point）。主治耳鳴、耳聾、暴瘖失音與咽喉腫痛。注意避開頸動脈。",
+    "exam_pearl_en": "★ Tianchuang is a Window of Sky point. Treats tinnitus, deafness, sudden loss of voice, and sore throat. Avoid carotid artery."
   },
   {
     "code": "SI17",
     "chinese": "天容",
-    "pinyin": "Tianrong",
+    "pinyin": "Tiān Róng",
     "english": "Celestial Appearance",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -28825,33 +29598,24 @@
     "location_en": "Posterior to the angle of the mandible, in the depression on the anterior border of sternocleidomastoid.",
     "cun_measurement": "Posterior to the angle of mandible.",
     "functions_zh": [
-      "清熱",
-      "理氣",
-      "止痛",
-      "消腫",
-      "開竅醒神",
-      "聰耳",
-      "鎮痛",
-      "頭面五官疾病"
+      "清熱利咽",
+      "消腫散結",
+      "利耳通竅"
     ],
     "functions_en": [
-      "Benefits the throat",
-      "Reduces swelling",
-      "Dissipates nodules"
+      "Clears heat and benefits neck and throat",
+      "Disperses swelling",
+      "Benefits ears and descends rebellious Qi"
     ],
     "indications_zh": [
-      "咽喉腫痛",
-      "頸項腫痛",
-      "耳鳴",
-      "牙關不利",
-      "甲狀腺腫大類辨證"
+      "咽喉腫痛、瘰癧癭氣",
+      "耳鳴、耳聾",
+      "梅核氣、氣逆"
     ],
     "indications_en": [
-      "Sore swollen throat",
-      "Neck swelling and pain",
-      "Tinnitus",
-      "Jaw difficulty",
-      "Goiter pattern support"
+      "Sore throat, scrofula, goiter",
+      "Tinnitus and deafness",
+      "Plum-pit Qi and rebellious Qi"
     ],
     "muscles": [],
     "bones": [],
@@ -28888,7 +29652,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI17",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.5～0.7寸",
     "cloudtcm_detail": "天容穴功效「利咽消腫、聰耳降逆」， 主治耳鳴、耳聾、咽喉腫痛、頸項強痛、頰腫、淋巴腫大、扁桃體炎。針刺天容穴可以改善偏頭痛。",
     "combine_points_zh": "天容穴，位於小腸經，具有疏通經絡、清熱解毒、通竅利咽等功效。其配伍應用多與耳、咽喉相關疾病有關，並常與手厥陰心包經及手太陰肺經穴位配合使用，以達到整體調理的效果。\n\n1. 天容穴配列缺穴治頸項強痛：\n\n原理： 天容穴屬小腸經，具有疏通頸部經絡的作用；列缺穴屬肺經，肺主氣，氣行則血行，頸項強痛多與局部氣血瘀滯有關。兩穴合用，可疏通頸部經絡，促進氣血運行，緩解肌肉痙攣，消除疼痛。\n\n2. 天容穴配聽宮穴、中渚穴（或加聽會穴）治耳鳴、耳聾：\n\n原理： 聽宮穴、中渚穴皆為手少陽三焦經穴位，三焦經與耳的關係密切，具有通利耳竅的作用；聽會穴為足少陽膽經穴，膽經與肝經相表裡，肝開竅於目，但與耳亦有聯繫，能調節肝氣。天容穴則能疏通經絡，輔助其他穴位更好地發揮作用。此配伍通過疏通三焦經、膽經經氣，以及小腸經的氣血，改善耳部血供，從而治療耳鳴、耳聾。\n\n3. 天容穴配魚際穴、少商穴治咽喉腫痛、扁桃體炎、頰腫：\n\n原理： 魚際穴屬肺經，少商穴屬肺經井穴，肺主氣司呼吸，肺氣宣降則咽喉通暢；咽喉腫痛、扁桃體炎等多與肺經熱邪有關。天容穴清熱解毒，與魚際穴、少商穴配合，能清瀉肺經之熱，消腫止痛，改善咽喉腫痛等症狀。此配伍主要針對熱邪引起的咽喉疾患。\n\n總之，天容穴配伍應用靈活多變，其治療作用主要依賴於與其他穴位的協同作用，通過整體調節經絡氣血，達到治療疾病的目的。  需注意的是，穴位配伍應根據患者的具體病情和體質進行調整，並在專業醫生的指導下進行。",
@@ -28919,8 +29683,7 @@
       "消腫",
       "開竅醒神",
       "聰耳",
-      "鎮痛",
-      "頭面五官疾病"
+      "鎮痛"
     ],
     "name_intro_zh": "天，指頭，容，指面容。本穴位在下頜角後方，其脈自此入面容，主治耳聾、耳鳴，故名。",
     "cloudtcm_url": "https://cloudtcm.com/acupoint/243",
@@ -28954,7 +29717,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/243"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.5–0.7 cun posterior to the angle of the mandible. Window of Sky point. CAUTION: Avoid internal jugular vein and carotid artery.",
     "name_zh": "天容",
     "name_en": "Celestial Appearance",
     "action_tags_zh": [
@@ -28964,8 +29727,7 @@
       "消腫",
       "開竅醒神",
       "聰耳",
-      "鎮痛",
-      "頭面五官疾病"
+      "鎮痛"
     ],
     "action_tags_en": [
       "Clear Heat",
@@ -28974,34 +29736,98 @@
       "Reduce Swelling",
       "Open Orifices & Resuscitate",
       "Benefit Hearing",
-      "Head, Face & Sensory Disorders",
-      "Head, Face & Sense Organ Disorders"
+      "Head, Face & Sensory Disorders"
     ],
     "disease_tags_zh": [
       "咽喉腫痛",
       "頸項腫痛",
       "耳鳴",
       "牙關不利",
-      "甲狀腺腫大"
+      "甲狀腺腫大",
+      "頭面五官疾病"
     ],
     "disease_tags_en": [
       "Sore & Swollen Throat",
       "Swelling & Pain of the Neck",
       "Tinnitus",
       "Difficulty Opening the Jaw",
-      "Thyroid Enlargement"
+      "Thyroid Enlargement",
+      "Head, Face & Sense Organ Disorders"
     ],
     "exam_star": 1,
     "field_sources": {
-      "exam_star": [
-        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "天牖五穴之天容（Window of Sky Point）",
+      "咽喉耳疾要穴"
+    ],
+    "point_identity_en": [
+      "Window of Sky point (Tianrong)",
+      "Key point for throat & ear disorders"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Regulate Qi",
+      "Relieve Pain / Analgesic",
+      "Reduce Swelling",
+      "Open Orifices & Resuscitate",
+      "Benefit Hearing",
+      "Head, Face & Sensory Disorders"
+    ],
+    "exam_pearl": "★ 天容為天牖五穴之一（Window of Sky Point）。主治咽喉腫痛、瘰癧癭氣、耳鳴耳聾。避開頸內靜脈與頸動脈。",
+    "exam_pearl_en": "★ Tianrong is a Window of Sky point. Treats sore throat, scrofula, goiter, and ear disorders. Avoid internal jugular vein and carotid artery."
   },
   {
     "code": "SI18",
     "chinese": "顴髎",
-    "pinyin": "Quanliao",
+    "pinyin": "Quán Liáo",
     "english": "Cheek Bone Crevice",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -29009,35 +29835,22 @@
     "location_en": "On the face, directly inferior to the outer canthus, in the depression at the lower border of the zygomatic bone.",
     "cun_measurement": "Below the outer canthus at the zygomatic bone.",
     "functions_zh": [
-      "清熱",
-      "止痛",
-      "消腫",
-      "活絡",
-      "舒筋",
-      "疏肝解鬱",
-      "鎮痛",
-      "頭面五官疾病",
-      "神經系統疾病"
+      "祛風止痛",
+      "清熱消腫"
     ],
     "functions_en": [
-      "Dispels wind",
-      "Activates the channel",
-      "Reduces swelling",
-      "Stops pain"
+      "Eliminates wind and alleviates pain",
+      "Clears heat and reduces swelling"
     ],
     "indications_zh": [
-      "面痛",
-      "面癱",
-      "三叉神經痛類辨證",
-      "牙痛",
-      "面頰腫"
+      "口眼喎斜、面肌痙攣",
+      "齒痛、頰腫",
+      "三叉神經痛"
     ],
     "indications_en": [
-      "Facial pain",
-      "Facial paralysis pattern",
-      "Trigeminal neuralgia pattern support",
-      "Toothache",
-      "Cheek swelling"
+      "Facial paralysis and eyelid twitching",
+      "Toothache and cheek swelling",
+      "Trigeminal neuralgia"
     ],
     "muscles": [],
     "bones": [],
@@ -29045,7 +29858,8 @@
     "vessels": [],
     "contraindications": [
       "面部淺刺，避開眼眶",
-      "急性面癱、腫脹感染或視覺症狀需醫療評估。"
+      "急性面癱、腫脹感染或視覺症狀需醫療評估。",
+      "禁灸（本穴古典禁灸，不宜使用艾灸）"
     ],
     "needling": "直刺0.5～0.8寸",
     "danger": [],
@@ -29068,14 +29882,14 @@
     "meridian_display": "Small Intestine / 小腸經",
     "region": "面部",
     "evidence": "顴髎穴功效「清熱消腫、祛風鎮痙」， 主治口眼歪斜、頰腫、眼瞼瞤動、牙齒痛、唇腫、目黃、面赤、面神經麻痺、面肌痙攣。\n\n近代運用此穴治療三叉神經痛，針尖朝風府力向，刺入約 2.5-2.8 寸，配合陽陵泉治療面肌痙攣效果顯著。針刺以可治療過敏性鼻炎。",
-    "cautions": "面部淺刺，避開眼眶\n急性面癱、腫脹感染或視覺症狀需醫療評估。",
+    "cautions": "面部淺刺，避開眼眶\n急性面癱、腫脹感染或視覺症狀需醫療評估。\n禁灸（本穴古典禁灸，不宜使用艾灸）",
     "ui_map": {
       "x": 192,
       "y": 78
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI18",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "直刺0.5～0.8寸",
     "cloudtcm_detail": "顴髎穴功效「清熱消腫、祛風鎮痙」， 主治口眼歪斜、頰腫、眼瞼瞤動、牙齒痛、唇腫、目黃、面赤、面神經麻痺、面肌痙攣。\n\n近代運用此穴治療三叉神經痛，針尖朝風府力向，刺入約 2.5-2.8 寸，配合陽陵泉治療面肌痙攣效果顯著。針刺以可治療過敏性鼻炎。",
     "combine_points_zh": "顴髎穴配穴分析\n\n1. 顴髎穴配地倉穴、頰車穴治口歪:  此配伍主要針對面癱或面肌痙攣導致的口歪。顴髎穴疏通小腸經經氣，頰車穴、地倉穴皆為面部經穴，能調理局部氣血運行，共同作用於面部肌肉，恢復其功能。原理是疏通經絡，平衡氣血，使面部肌肉恢復正常活動。\n\n2. 顴髎穴配合谷穴、二間穴治齒痛:  合谷穴為手陽明大腸經原穴，具有瀉熱止痛的功效；二間穴為手陽明大腸經經穴，同樣具有清熱止痛作用。此配伍通過合谷、二間穴瀉熱，再配合顴髎穴疏通局部經絡，從而緩解齒痛。原理是清熱瀉火，通經止痛。\n\n3. 顴髎穴配太陽穴、下關穴、頰車穴、合谷穴治三叉神經痛: 此配伍針對三叉神經痛，範圍較廣。太陽穴、下關穴均為頭面部重要穴位，能有效治療頭痛、面部疼痛；頰車穴調節面部肌肉；合谷穴具有強大的鎮痛作用。顴髎穴則協同其他穴位，疏通經絡，達到鎮痛的目的。原理是多個穴位協同作用，清熱解毒、通經活絡、鎮痛。\n\n4. 顴髎穴配大迎穴治目動: 大迎穴為足陽明胃經穴，具有疏通經絡、鎮靜安神的作用。此配伍通過調節肝經與胃經的氣血，緩解目動症狀(例如眼瞼痙攣)。原理是疏肝理氣，鎮靜安神。\n\n5. 顴髎穴配翳風穴、合谷穴清熱鎮痛: 翳風穴為足少陽膽經穴，具有清熱解毒、鎮痛的功效。此配伍結合合谷穴，清熱解毒、鎮痛效果更佳。顴髎穴協同作用，加強清熱鎮痛的效果。原理是清熱解毒，通經止痛。\n\n6. 顴髎穴配肝俞穴、太沖穴舒肝解痙止痛: 肝俞穴、太沖穴均為肝經穴位，具有疏肝理氣、解鬱止痛的作用。此配伍主要針對肝氣鬱結導致的面肌痙攣、眼瞼震顫、三叉神經痛等。顴髎穴則針對面部局部疼痛。原理是疏肝理氣，解鬱止痛，緩解肌肉痙攣。\n\n7. 顴髎穴配太陽穴、攢竹穴、下關穴、地倉穴、頰車穴治口眼斜: 此配伍與三叉神經痛配伍相似，但範圍更廣泛，涵蓋了口眼歪斜的整體調理，通過多個穴位協同作用，調節面部肌肉功能，恢復其平衡。\n\n綜上所述，顴髎穴的配伍多與其他頭面部或相關經絡穴位配合，發揮協同作用，達到治療目的。其作用機理主要在於疏通經絡，調和氣血，清熱解毒，鎮痛止痙。  需注意的是，穴位配伍需根據患者具體情況進行調整。",
@@ -29101,9 +29915,7 @@
       "活絡",
       "舒筋",
       "疏肝解鬱",
-      "鎮痛",
-      "頭面五官疾病",
-      "神經系統疾病"
+      "鎮痛"
     ],
     "other_names_zh": "兌骨,椎髎,權髎",
     "name_intro_zh": "顴，顴骨；髎，又作窌，骨孔。穴在顴骨下凹陷處，故名。",
@@ -29113,7 +29925,8 @@
     "source_type": "sourced_cloudtcm_and_elotus",
     "cautions_zh": [
       "面部淺刺，避開眼眶",
-      "急性面癱、腫脹感染或視覺症狀需醫療評估。"
+      "急性面癱、腫脹感染或視覺症狀需醫療評估。",
+      "禁灸（本穴古典禁灸，不宜使用艾灸）"
     ],
     "visual_links": [
       {
@@ -29138,7 +29951,7 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/244"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular or oblique insertion 0.5–0.8 cun directly below the outer canthus in the depression at the lower border of the zygomatic bone. CAUTION: NO MOXIBUSTION (classical prohibition).",
     "name_zh": "顴髎",
     "name_en": "Cheek Bone Crevice",
     "action_tags_zh": [
@@ -29148,9 +29961,7 @@
       "活絡",
       "舒筋",
       "疏肝解鬱",
-      "鎮痛",
-      "頭面五官疾病",
-      "神經系統疾病"
+      "鎮痛"
     ],
     "action_tags_en": [
       "Clear Heat",
@@ -29159,37 +29970,103 @@
       "Activate Collaterals",
       "Relax Tendons & Muscles",
       "Soothe the Liver & Relieve Constraint",
-      "Head, Face & Sensory Disorders",
-      "Neurological Disorders",
-      "Neurological Disorders"
+      "Head, Face & Sensory Disorders"
     ],
     "disease_tags_zh": [
       "面痛",
       "面癱",
       "三叉神經痛",
       "牙痛",
-      "面頰腫"
+      "面頰腫",
+      "頭面五官疾病",
+      "神經系統疾病"
     ],
     "disease_tags_en": [
       "Facial Pain",
       "Facial Paralysis (Bell's Palsy)",
       "Trigeminal Neuralgia",
       "Toothache",
-      "Cheek Swelling"
+      "Cheek Swelling",
+      "Head, Face & Sense Organ Disorders",
+      "Neurological Disorders"
     ],
     "related_conditions": [
       "cond.aphthous_ulcers"
     ],
     "field_sources": {
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
+      ],
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2"
+      ],
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p2",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
-    }
+    },
+    "point_identity_zh": [
+      "面部解剖要穴（顴髎）",
+      "⚠️ 古典禁灸（禁灸穴）"
+    ],
+    "point_identity_en": [
+      "Facial landmark point (Quanliao)",
+      "CONTRAINDICATED FOR MOXIBUSTION (classical prohibition)"
+    ],
+    "action_tags": [
+      "Clear Heat",
+      "Relieve Pain / Analgesic",
+      "Reduce Swelling",
+      "Activate Collaterals",
+      "Relax Tendons & Muscles",
+      "Soothe the Liver & Relieve Constraint",
+      "Head, Face & Sensory Disorders"
+    ],
+    "exam_star": 1,
+    "exam_pearl": "★ 顴髎為面部解剖標誌穴，主治口眼喎斜、面肌痙攣、齒痛與三叉神經痛。⚠️ 古典禁灸。",
+    "exam_pearl_en": "★ Quanliao is a facial landmark point for facial paralysis, twitching, toothache, and trigeminal neuralgia. ⚠️ CONTRAINDICATED FOR MOXIBUSTION."
   },
   {
     "code": "SI19",
     "chinese": "聽宮",
-    "pinyin": "Tinggong",
+    "pinyin": "Tīng Gōng",
     "english": "Hearing Palace",
     "channel_zh": "小腸經",
     "channel_en": "Small Intestine",
@@ -29197,30 +30074,22 @@
     "location_en": "On the face, anterior to the tragus and posterior to the condyloid process of the mandible, in the depression formed when the mouth is opened.",
     "cun_measurement": "Anterior to the tragus with mouth open.",
     "functions_zh": [
-      "開竅醒神",
-      "聰耳",
-      "消脹",
-      "頭面五官疾病"
+      "聰耳通竅",
+      "安神止痛"
     ],
     "functions_en": [
-      "Benefits the ears",
-      "Opens the orifices",
-      "Activates the channel",
-      "Stops pain"
+      "Benefits ears and opens orifices",
+      "Calms spirit and alleviates pain"
     ],
     "indications_zh": [
-      "耳鳴",
-      "耳聾",
-      "中耳炎類辨證",
-      "牙痛",
-      "下頜關節痛"
+      "耳鳴、耳聾、耳癤流膿",
+      "顳顎關節紊亂、齒痛",
+      "癲狂"
     ],
     "indications_en": [
-      "Tinnitus",
-      "Hearing loss",
-      "Otitis pattern support",
-      "Toothache",
-      "Temporomandibular joint pain"
+      "Tinnitus, deafness, otorrhea",
+      "Mandibular joint dysfunction, toothache",
+      "Mania"
     ],
     "muscles": [],
     "bones": [],
@@ -29254,7 +30123,7 @@
     },
     "enrichment_status": "model_draft_pending_source_review",
     "id": "SI19",
-    "review_status": "sourced_cloudtcm_and_elotus",
+    "review_status": "draft",
     "acumethod_zh": "張口，直刺 l～1.5寸",
     "cloudtcm_detail": "聽宮穴功效「開竅聰耳」，本穴道是手足少陽手太陽之會，可以改善膽經與三焦經的異常症狀，首要的就是耳朵相關問題，例如：耳鳴、耳聾、牙齒痛、癲狂病、中耳炎...等等。\n\n按摩聽宮穴也有緩解眼部疲勞的作用，每天都可以多按揉幾次。近代發現聽宮穴埋線，可以治療頑固性幻聽，針刺聽宮穴可治療顳下頜關節紊亂症。",
     "combine_points_zh": "聽宮穴，屬手太陽小腸經，位於耳屏前，下顎骨與耳垂之間的凹陷處。其功能主治與耳、咽喉、齒痛密切相關，因其位置靠近耳部，故常與其他穴位配伍治療耳部及相關疾病。\n\n一、配伍治耳鳴、耳聾：\n\n聽宮配耳門、翳風、外關、中渚:  此組配伍以疏通經絡，改善氣血運行為主。聽宮穴直達耳部，耳門、翳風皆位於耳周，共同作用於耳部經絡；外關穴為手少陽三焦經原穴，具有疏通三焦經，調和氣血的作用；中渚穴為手厥陰心包經經穴，心包經與耳鳴耳聾亦有密切關係，能清心火、瀉熱。整體配伍，可達到疏通經絡、活血通絡、清熱瀉火的效果，從而改善耳鳴、耳聾症狀。原理在於協同作用，全面調理與耳部相關的經絡氣血，以恢復聽力功能。\n\n二、配伍治齒痛：\n\n聽宮配頰車、合谷、下關: 此組配伍則以通經止痛為主。頰車穴位於下頜關節附近，是治療頰部疾患的重要穴位；合谷穴為手陽明大腸經原穴，具有疏通經絡、調和氣血、通經活絡止痛的功效；下關穴位於下頜角前下方，具有疏通經絡，鎮靜止痛的作用。聽宮穴與頰車穴協同作用於面部經絡，合谷穴則遠端調節，下關穴則直接作用於疼痛區域，形成由近及遠，由表及裡的治療策略，以達到止痛效果。原理是通過疏通經絡，調和氣血，消除導致齒痛的病因，從而緩解疼痛。",
@@ -29286,8 +30155,7 @@
     "acu_tags": [
       "開竅醒神",
       "聰耳",
-      "消脹",
-      "頭面五官疾病"
+      "消脹"
     ],
     "other_names_zh": "多所聞,多聞,聽多聞,窗籠",
     "name_intro_zh": "宮，五音之首也，義含要處之意。本穴當耳屏前方，針此穴能聰耳聽五音，主治耳聾耳鳴，故名。",
@@ -29322,45 +30190,83 @@
     "diagram_urls_zh": [
       "https://cloudtcm.com/acupoint/245"
     ],
-    "acumethod_en": "Perpendicular or oblique insertion 0.5-1.5 cun according to anatomical depth & safety precautions.",
+    "acumethod_en": "Perpendicular insertion 0.5–1.0 cun with the mouth slightly open, in the depression anterior to the tragus and posterior to the condyloid process of the mandible.",
     "name_zh": "聽宮",
     "name_en": "Hearing Palace",
     "action_tags_zh": [
       "開竅醒神",
       "聰耳",
-      "消脹",
-      "頭面五官疾病"
+      "消脹"
     ],
     "action_tags_en": [
       "Open Orifices & Resuscitate",
       "Benefit Hearing",
-      "Relieve Abdominal Distension",
-      "Head, Face & Sensory Disorders"
+      "Relieve Abdominal Distension"
     ],
     "disease_tags_zh": [
       "耳鳴",
       "耳聾",
       "中耳炎",
       "牙痛",
-      "下頜關節痛"
+      "下頜關節痛",
+      "頭面五官疾病"
     ],
     "disease_tags_en": [
       "Tinnitus",
       "Deafness / Hearing Loss",
       "Otitis Media",
       "Toothache",
-      "Temporomandibular Joint Pain"
+      "Temporomandibular Joint Pain",
+      "Head, Face & Sensory Disorders"
     ],
     "exam_star": 1,
     "field_sources": {
-      "exam_star": [
-        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf"
+      "acumethod_zh": [
+        "CloudTCM",
+        "eLotus CORE"
       ],
-      "related_conditions": [
-        "data/pathology/condition_canon_shortlist.json（acupoint_protocols 列出本穴）"
+      "acumethod_en": [
+        "eLotus CORE / MasterTungAcupuncture.org",
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p3"
       ],
-      "tcm_pattern_ids": [
-        "data/pathology/condition_canon_shortlist.json（tcm_patterns.acupoints_zh 列出本穴）"
+      "functions_zh": [
+        "CloudTCM"
+      ],
+      "functions_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p3",
+        "eLotus CORE"
+      ],
+      "indications_zh": [
+        "CloudTCM"
+      ],
+      "indications_en": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p3",
+        "eLotus CORE"
+      ],
+      "anatomy_zh": [
+        "CloudTCM"
+      ],
+      "anatomy_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
+      ],
+      "exam_pearl": [
+        "curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p3",
+        "eLotus CORE"
+      ],
+      "exam_pearl_en": [
+        "eLotus CORE / MasterTungAcupuncture.org"
+      ],
+      "combine_points_zh": [
+        "CloudTCM"
+      ],
+      "cautions_zh": [
+        "CloudTCM",
+        "WHO SAPL 2008"
+      ],
+      "cautions_en": [
+        "WHO SAPL 2008",
+        "eLotus CORE"
       ]
     },
     "related_conditions": [
@@ -29375,7 +30281,22 @@
     "tcm_pattern_ids": [
       "pat.肝膽火盛",
       "pat.腎精虧虛"
-    ]
+    ],
+    "point_identity_zh": [
+      "交會穴（手太陽、手少陽、足少陽）",
+      "耳疾急救第一要穴（聽宮）"
+    ],
+    "point_identity_en": [
+      "Intersection point (SI, TE, GB channels)",
+      "Primary ear point for tinnitus & deafness (Tinggong)"
+    ],
+    "action_tags": [
+      "Open Orifices & Resuscitate",
+      "Benefit Hearing",
+      "Relieve Abdominal Distension"
+    ],
+    "exam_pearl": "★ 聽宮為手太陽、手少陽、足少陽三經交會穴。耳門、聽宮、聽會為耳前三穴，聽宮為治療耳鳴耳聾第一要穴。張口取穴直刺0.5-1.0寸。",
+    "exam_pearl_en": "★ Tinggong is the meeting point of SI, TE, and GB channels. Primary point for tinnitus, deafness, and ear drainage. Locate and needle with mouth slightly open."
   },
   {
     "code": "SP1",

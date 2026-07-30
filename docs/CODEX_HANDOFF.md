@@ -1,5 +1,46 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30] Antigravity Handoff — SI channel (手太陽小腸經 19穴) 5-Level Source Template Refinement
+
+- **Agent**: Antigravity (pair programming with Ting)
+- **Branch**: `antigravity/si-channel` (branched from `origin/main`)
+- **Validation**: `node scripts/validate-acupoint-standard.js --worklist --channel SI --all`
+  - PASS — no blocking defects (0 errors across A1–A12)
+  - A10 (scaffold suffix in tags): **0** ✅
+  - A11 (CJK inside _en array): **0** ✅
+  - A12 (illegal review_status): all 19 SI records set to `"draft"`
+  - A4 (_en array length alignment): 100% matched for all 19 SI records
+
+### Canonical Source Hierarchy Used
+1. **Board Exam Outline**: Defined scope and marked 6 exam star points (`SI3*`, `SI6*`, `SI11*`, `SI16*`, `SI17*`, `SI19*`).
+2. **`curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf`**: Parsed course text for exact `functions_en`, `indications_en`, `point_identity`, `needling`, `exam_pearl`, and `exam_star`.
+3. **eLotus / MasterTung**: Anatomical depth, angle, and safety precautions in `acumethod_en`.
+4. **American Dragon / AcuPoints.org**: English details and locations.
+5. **CloudTCM (雲端中醫)**: Chinese clinical depth, functions, and indications.
+6. **Per-field `field_sources`**: Cited `curriculum/acupoints/6 SMALL INTESTINE CHANNEL OF HAND TAI YANG.pdf#p<N>`, `eLotus CORE`, and `CloudTCM` per field.
+
+### Files changed
+- `data/acupoints/361.json` — SI1–SI19
+- `scripts/refine-si-channel.js` (new — reusable dry-run/apply script for SI channel)
+- `scripts/fix-si18-tags.js` (new — tag alignment fix)
+
+### What changed
+1. **SI1–SI19 `acumethod_en`**: Replaced generic text with per-point specific anatomical depth, angle, and safety precautions (e.g. SI11/SI12/SI13/SI14/SI15 pneumothorax risk cautions, SI16/SI17 carotid artery cautions, SI18 moxibustion prohibition).
+2. **SI1–SI19 `point_identity_zh` & `point_identity_en`**: Populated Five-Shu points (井滎輸經合 + 五行屬性), Yuan-Source (SI4), Luo-Connecting (SI7), Xi-Cleft (SI6), Window of Sky (SI16, SI17), Master/Confluent point of Du Mai (SI3), Meeting points, etc.
+3. **SI1–SI19 `functions_en` & `indications_en`**: 1-to-1 index-aligned with Chinese functions and indications based on course PDF.
+4. **SI18 `contraindications`**: Added classical prohibition against moxibustion (`禁灸`).
+5. **Toned Pinyin**: Updated to standard toned pinyin (e.g. `Shào Zé`, `Hòu Xī`, `Tiān Zōng`, `Tīng Gōng`).
+
+### Protected areas NOT touched
+- `app.js`, `js/`, `index.html`, `styles.css` — not touched
+- All non-SI point records — not touched
+
+### Next recommended action
+- Ting: merge `antigravity/si-channel` → `main` (PR on GitHub)
+- Next channel: BL channel (足太陽膀胱經 67 穴) or KI channel (足少陰腎經 27 穴)
+
+---
+
 ## [2026-07-29] Codex Handoff - Quality four-layer progress model
 
 - **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
