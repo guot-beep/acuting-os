@@ -1453,6 +1453,7 @@ function render() {
   renderClinicalCases();
   renderBackupBanner();   // CS1
   renderDirectoryFilters();
+  renderChannelsWorkspace();
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
   // In detail mode the hash owns the selection. Clamping it to the browse
@@ -5605,4 +5606,341 @@ function escapeHtml(value) {
 
 function escapeAttribute(value) {
   return escapeHtml(value).replaceAll("`", "&#096;");
+}
+
+/* ── Channel & Point Charts Workspace (經脈總覽與特定穴對照圖表) ────── */
+let activeChannelCode = "LU";
+let activeChartMode = ""; // "" for channel overview, or "fiveshu", "yuanluoxi", "confluent"
+
+function renderChannelsWorkspace() {
+  const launcher = document.getElementById("channelsQuickLauncher");
+  const content = document.getElementById("channelsContentArea");
+  if (!launcher || !content) return;
+
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const channelRecords = K.channelsAndCharts || [];
+
+  const mainMeridians = [
+    { code: "LU", zh: "手太陰肺經", en: "Lung (LU)" },
+    { code: "LI", zh: "手陽明大腸經", en: "Large Intestine (LI)" },
+    { code: "ST", zh: "足陽明胃經", en: "Stomach (ST)" },
+    { code: "SP", zh: "足太陰脾經", en: "Spleen (SP)" },
+    { code: "HT", zh: "手少陰心經", en: "Heart (HT)" },
+    { code: "SI", zh: "手太陽小腸經", en: "Small Intestine (SI)" },
+    { code: "BL", zh: "足太陽膀胱經", en: "Bladder (BL)" },
+    { code: "KI", zh: "足少陰腎經", en: "Kidney (KI)" },
+    { code: "PC", zh: "手厥陰心包經", en: "Pericardium (PC)" },
+    { code: "TE", zh: "手少陽三焦經", en: "Triple Burner (TE/TH)" },
+    { code: "GB", zh: "足少陽膽經", en: "Gallbladder (GB)" },
+    { code: "LR", zh: "足厥陰肝經", en: "Liver (LR)" }
+  ];
+
+  const extraVessels = [
+    { code: "Du", zh: "督脈", en: "Du Mai (GV)" },
+    { code: "Ren", zh: "任脈", en: "Ren Mai (CV)" },
+    { code: "Chong", zh: "沖脈", en: "Chong Mai" },
+    { code: "Dai", zh: "帶脈", en: "Dai Mai" },
+    { code: "Yangqiao", zh: "陽蹻脈", en: "Yangqiao Mai" },
+    { code: "Yangwei", zh: "陽維脈", en: "Yangwei Mai" },
+    { code: "Yinqiao", zh: "陰蹻脈", en: "Yinqiao Mai" },
+    { code: "Yinwei", zh: "陰維脈", en: "Yinwei Mai" }
+  ];
+
+  launcher.innerHTML = `
+    <div>
+      <div class="channels-launcher-title">🌐 十四正經與奇經八脈速選 / Channels & Extraordinary Meridians</div>
+      <div class="meridian-pills-row">
+        ${mainMeridians.map(m => `
+          <button type="button" class="meridian-pill-btn ${activeChartMode === '' && activeChannelCode === m.code ? 'active' : ''}" data-ch-code="${m.code}">
+            ${m.code} <small>(${contentMode === 'english' ? m.en : m.zh})</small>
+          </button>
+        `).join('')}
+      </div>
+      <div class="meridian-pills-row" style="margin-top: 0.4rem;">
+        ${extraVessels.map(m => `
+          <button type="button" class="meridian-pill-btn pill-extra-vessel ${activeChartMode === '' && activeChannelCode === m.code ? 'active' : ''}" data-ch-code="${m.code}">
+            ${m.code} <small>(${contentMode === 'english' ? m.en : m.zh})</small>
+          </button>
+        `).join('')}
+      </div>
+    </div>
+
+    <div>
+      <div class="channels-launcher-title">📊 特定穴中英經典總表 / Point Charts & Master Matrices</div>
+      <div class="charts-pills-row">
+        <button type="button" class="chart-pill-btn ${activeChartMode === 'fiveshu' ? 'active' : ''}" data-chart-mode="fiveshu">
+          1. 五輸穴總表 (Five Shu: Jing-Well, Ying-Spring, Shu-Stream, Jing-River, He-Sea)
+        </button>
+        <button type="button" class="chart-pill-btn ${activeChartMode === 'yuanluoxi' ? 'active' : ''}" data-chart-mode="yuanluoxi">
+          2. 原絡郄俞募穴總表 (Yuan Source, Luo Connection, Xi Cleft, Front Mu, Back Shu)
+        </button>
+        <button type="button" class="chart-pill-btn ${activeChartMode === 'confluent' ? 'active' : ''}" data-chart-mode="confluent">
+          3. 八脈交會穴與配穴總表 (Master & Coupled Points for Extraordinary Channels)
+        </button>
+      </div>
+    </div>
+  `;
+
+  launcher.querySelectorAll('[data-ch-code]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeChartMode = '';
+      activeChannelCode = btn.dataset.chCode;
+      renderChannelsWorkspace();
+    });
+  });
+
+  launcher.querySelectorAll('[data-chart-mode]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeChartMode = btn.dataset.chartMode;
+      renderChannelsWorkspace();
+    });
+  });
+
+  if (activeChartMode === 'fiveshu') {
+    content.innerHTML = renderFiveShuMatrixTable();
+    bindMatrixPointLinks(content);
+    return;
+  }
+  if (activeChartMode === 'yuanluoxi') {
+    content.innerHTML = renderYuanLuoXiMuShuMatrixTable();
+    bindMatrixPointLinks(content);
+    return;
+  }
+  if (activeChartMode === 'confluent') {
+    content.innerHTML = renderConfluentPointsMatrixTable();
+    bindMatrixPointLinks(content);
+    return;
+  }
+
+  // Default: Meridian/Vessel Overview Card
+  const chData = channelRecords.find(c => c.code === activeChannelCode) || channelRecords[0] || {};
+  content.innerHTML = renderChannelOverviewCard(chData);
+  bindMatrixPointLinks(content);
+}
+
+function bindMatrixPointLinks(container) {
+  container.querySelectorAll('[data-point-code]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const code = el.dataset.pointCode;
+      if (code) {
+        selectedCode = code;
+        window.location.hash = `#point/${code}`;
+        render();
+      }
+    });
+  });
+}
+
+function renderChannelOverviewCard(ch) {
+  const en = contentMode === 'english';
+  const prevCode = ch.prev_code || 'LU';
+  const nextCode = ch.next_code || 'LI';
+
+  return `
+    <article class="elotus-channel-banner">
+      <div>
+        <span class="elotus-banner-brand">TCM Acupuncture · 經脈總覽</span>
+        <div class="elotus-banner-title">
+          <h1>${escapeHtml(ch.nameEn || ch.code)} <small>(${escapeHtml(ch.nameZh || '')})</small></h1>
+        </div>
+        <p class="elotus-banner-subtitle">
+          ${escapeHtml((ch.aliases_en || []).join(', '))} · 屬性 Element: ${escapeHtml(ch.element || 'Hand/Foot')} · 時辰 Clock: ${escapeHtml(ch.clock_time || '')}
+        </p>
+      </div>
+      <div class="elotus-banner-nav">
+        <button type="button" data-ch-code="${prevCode}">‹ ${prevCode}</button>
+        <button type="button" data-ch-code="${nextCode}">${nextCode} ›</button>
+      </div>
+    </article>
+
+    <section class="channel-article-section">
+      <h3>PATHWAY & POINTS / 循行與包含穴位 (${(ch.points_list || []).length} 穴)</h3>
+      <p style="margin-bottom: 0.75rem; color: #35473e; line-height: 1.6;">
+        ${escapeHtml(en ? (ch.pathway_en || ch.pathway_zh) : ch.pathway_zh)}
+      </p>
+      <div class="channel-points-grid">
+        ${(ch.points_list || []).map(p => `
+          <a class="channel-point-chip" href="#point/${p.code}" data-point-code="${p.code}">
+            <strong>${p.code}</strong> ${escapeHtml(p.nameZh)} <small>(${escapeHtml(p.nameEn)})</small>
+          </a>
+        `).join('')}
+      </div>
+    </section>
+
+    <section class="channel-article-section">
+      <h3>INDICATIONS / 主治病症</h3>
+      <ul style="padding-left: 1.2rem; color: #35473e; line-height: 1.6;">
+        ${(en ? (ch.indications_en || ch.indications_zh) : ch.indications_zh || []).map(item => `
+          <li>${escapeHtml(item)}</li>
+        `).join('')}
+      </ul>
+    </section>
+
+    <section class="channel-article-section">
+      <h3>CLINICAL APPLICATIONS / 臨床特點與應用</h3>
+      <ul style="padding-left: 1.2rem; color: #35473e; line-height: 1.6;">
+        ${(en ? (ch.applications_en || ch.applications_zh) : ch.applications_zh || []).map(item => `
+          <li>${escapeHtml(item)}</li>
+        `).join('')}
+      </ul>
+    </section>
+  `;
+}
+
+function renderFiveShuMatrixTable() {
+  const rows = [
+    { ch: "LU (手太陰肺經)", well: "LU11 少商", spring: "LU10 魚際", stream: "LU9 太淵", river: "LU8 經渠", sea: "LU5 尺澤" },
+    { ch: "LI (手陽明大腸經)", well: "LI1 商陽", spring: "LI2 二間", stream: "LI3 三間", river: "LI5 陽溪", sea: "LI11 曲池" },
+    { ch: "ST (足陽明胃經)", well: "ST45 厲兌", spring: "ST44 內庭", stream: "ST43 陷谷", river: "ST41 解溪", sea: "ST36 足三里" },
+    { ch: "SP (足太陰脾經)", well: "SP1 隱白", spring: "SP2 大都", stream: "SP3 太白", river: "SP5 商丘", sea: "SP9 陰陵泉" },
+    { ch: "HT (手少陰心經)", well: "HT9 少衝", spring: "HT8 少府", stream: "HT7 神門", river: "HT4 靈道", sea: "HT3 少海" },
+    { ch: "SI (手太陽小腸經)", well: "SI1 少澤", spring: "SI2 前谷", stream: "SI3 後谿", river: "SI5 陽谷", sea: "SI8 小海" },
+    { ch: "BL (足太陽膀胱經)", well: "BL67 至陰", spring: "BL66 足通谷", stream: "BL65 束骨", river: "BL60 崑崙", sea: "BL40 委中" },
+    { ch: "KI (足少陰腎經)", well: "KI1 湧泉", spring: "KI2 然谷", stream: "KI3 太溪", river: "KI7 復溜", sea: "KI10 陰谷" },
+    { ch: "PC (手厥陰心包經)", well: "PC9 中衝", spring: "PC8 勞宮", stream: "PC7 大陵", river: "PC5 間使", sea: "PC3 曲澤" },
+    { ch: "TE (手少陽三焦經)", well: "TE1 關衝", spring: "TE2 液門", stream: "TE3 中渚", river: "TE6 支溝", sea: "TE10 天井" },
+    { ch: "GB (足少陽膽經)", well: "GB44 足竅陰", spring: "GB43 俠溪", stream: "GB41 足臨泣", river: "GB38 陽輔", sea: "GB34 陽陵泉" },
+    { ch: "LR (足厥陰肝經)", well: "LR1 大敦", spring: "LR2 行間", stream: "LR3 太衝", river: "LR4 中封", river2: "", sea: "LR8 曲泉" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        1. 五輸穴中英總表 (Five Shu Points: Jing-Well, Ying-Spring, Shu-Stream, Jing-River, He-Sea)
+      </h3>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>經絡 Channel</th>
+            <th>井穴 Jing-Well (金/木)</th>
+            <th>滎穴 Ying-Spring (水/火)</th>
+            <th>輸穴 Shu-Stream (木/土)</th>
+            <th>經穴 Jing-River (火/金)</th>
+            <th>合穴 He-Sea (土/水)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.ch}</td>
+              <td>${formatCell(r.well)}</td>
+              <td>${formatCell(r.spring)}</td>
+              <td>${formatCell(r.stream)}</td>
+              <td>${formatCell(r.river)}</td>
+              <td>${formatCell(r.sea)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderYuanLuoXiMuShuMatrixTable() {
+  const rows = [
+    { ch: "LU 肺經", yuan: "LU9 太淵", luo: "LU7 列缺", xi: "LU6 孔最", mu: "LU1 中府", shu: "BL13 肺俞" },
+    { ch: "LI 大腸經", yuan: "LI4 合谷", luo: "LI6 偏歷", xi: "LI7 溫溜", mu: "ST25 天樞", shu: "BL25 大腸俞" },
+    { ch: "ST 胃經", yuan: "ST42 衝陽", luo: "ST40 豐隆", xi: "ST34 梁丘", mu: "CV12 中脘", shu: "BL21 胃俞" },
+    { ch: "SP 脾經", yuan: "SP3 太白", luo: "SP4 公孫", xi: "SP8 地機", mu: "LR13 章門", shu: "BL20 脾俞" },
+    { ch: "HT 心經", yuan: "HT7 神門", luo: "HT5 通里", xi: "HT6 陰郄", mu: "CV14 巨闕", shu: "BL15 心俞" },
+    { ch: "SI 小腸經", yuan: "SI4 腕骨", luo: "SI7 支正", xi: "SI6 養老", mu: "CV4 關元", shu: "BL27 小腸俞" },
+    { ch: "BL 膀胱經", yuan: "BL64 京骨", luo: "BL58 飛揚", xi: "BL63 金門", mu: "CV3 中極", shu: "BL28 膀胱俞" },
+    { ch: "KI 腎經", yuan: "KI3 太溪", luo: "KI4 大鐘", xi: "KI5 水泉", mu: "GB25 京門", shu: "BL23 腎俞" },
+    { ch: "PC 心包經", yuan: "PC7 大陵", luo: "PC6 內關", xi: "PC4 郄門", mu: "CV17 膻中", shu: "BL14 厥陰俞" },
+    { ch: "TE 三焦經", yuan: "TE4 陽池", luo: "TE5 外關", xi: "TE7 會宗", mu: "CV5 石門", shu: "BL22 三焦俞" },
+    { ch: "GB 膽經", yuan: "GB40 丘墟", luo: "GB37 光明", xi: "GB36 外丘", mu: "GB24 日月", shu: "BL19 膽俞" },
+    { ch: "LR 肝經", yuan: "LR3 太衝", luo: "LR5 蠡溝", xi: "LR6 中都", mu: "LR14 期門", shu: "BL18 肝俞" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        2. 原絡郄俞募穴總表 (Yuan Source, Luo Connection, Xi Cleft, Front Mu, & Back Shu Points)
+      </h3>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>經絡 Channel</th>
+            <th>原穴 Yuan-Source</th>
+            <th>絡穴 Luo-Connecting</th>
+            <th>郄穴 Xi-Cleft</th>
+            <th>募穴 Front-Mu</th>
+            <th>背俞穴 Back-Shu</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.ch}</td>
+              <td>${formatCell(r.yuan)}</td>
+              <td>${formatCell(r.luo)}</td>
+              <td>${formatCell(r.xi)}</td>
+              <td>${formatCell(r.mu)}</td>
+              <td>${formatCell(r.shu)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderConfluentPointsMatrixTable() {
+  const rows = [
+    { vessel: "任脈 (Conception Vessel)", master: "LU7 列缺", coupled: "KI6 照海", area: "胸、肺、膈、咽喉 (Chest, Lungs, Throat)" },
+    { vessel: "陰蹻脈 (Yin Heel Vessel)", master: "KI6 照海", coupled: "LU7 列缺", area: "喉嚨、胸膈、腹部 (Throat, Diaphragm, Abdomen)" },
+    { vessel: "督脈 (Governing Vessel)", master: "SI3 後谿", coupled: "BL62 申脈", area: "目內眥、頸項、耳、肩、脊柱 (Nape, Neck, Spine)" },
+    { vessel: "陽蹻脈 (Yang Heel Vessel)", master: "BL62 申脈", coupled: "SI3 後谿", area: "目內眥、項後、腰背、軀體外側 (Head, Back, Eyes)" },
+    { vessel: "沖脈 (Penetrating Vessel)", master: "SP4 公孫", coupled: "PC6 內關", area: "胃、心、胸腹 (Stomach, Heart, Abdomen)" },
+    { vessel: "陰維脈 (Yin Linking Vessel)", master: "PC6 內關", coupled: "SP4 公孫", area: "心痛、胸悶、胃痛、情志 (Heart, Stomach, Shen)" },
+    { vessel: "帶脈 (Belt Vessel)", master: "GB41 足臨泣", coupled: "TE5 外關", area: "目外眥、耳後、頸、肩、少腹 (Eyes, Ears, Hips)" },
+    { vessel: "陽維脈 (Yang Linking Vessel)", master: "TE5 外關", coupled: "GB41 足臨泣", area: "耳後、肩胛、軀體側外、寒熱往來 (Lateral Body, Chills/Fever)" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        3. 八脈交會穴與奇經對應配穴總表 (Master & Coupled Points for Extraordinary Channels)
+      </h3>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>奇經八脈 Extraordinary Vessel</th>
+            <th>主穴 Master Point</th>
+            <th>配穴 Coupled Point</th>
+            <th>主治交會區域 Target Anatomical Area</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.vessel}</td>
+              <td>${formatCell(r.master)}</td>
+              <td>${formatCell(r.coupled)}</td>
+              <td>${r.area}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
 }

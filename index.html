@@ -26,6 +26,7 @@
         <div class="nav-group">
           <p class="nav-group__title" data-mode-text data-bilingual="查詢 Lookup" data-english="Lookup">查詢 Lookup</p>
           <a href="#ws/acu" data-ws="acu" class="nav-sub" data-mode-text data-bilingual="針灸穴位 Acupoints" data-english="Acupoints">針灸穴位 Acupoints</a>
+          <a href="#ws/channels" data-ws="channels" class="nav-sub" data-mode-text data-bilingual="經脈與特定穴對照 Channel & Point Charts" data-english="Channel & Point Charts">經脈與特定穴對照 Channel & Point Charts</a>
           <a href="#ws/formula" data-ws="formula" class="nav-sub" data-mode-text data-bilingual="方劑 Formulas" data-english="Formulas">方劑 Formulas</a>
           <a href="#ws/herb" data-ws="herb" class="nav-sub" data-mode-text data-bilingual="中藥 Materia Medica" data-english="Materia Medica">中藥 Materia Medica</a>
           <a href="#ws/condition" data-ws="condition" class="nav-sub" data-mode-text data-bilingual="病症圖譜 Conditions" data-english="Conditions">病症圖譜 Conditions</a>
@@ -351,6 +352,20 @@
             </section>
           </section>
         </div>
+      </section>
+
+      <!-- Channel & Point Master Matrix Workspace (經脈總覽與特定穴對照總表) -->
+      <section class="channels-workspace" data-workspace="channels" id="channelsWorkspace" aria-label="經脈總覽與特定穴對照圖表" data-mode-aria-label data-bilingual-aria-label="經脈總覽與特定穴對照圖表" data-english-aria-label="Channel and Point Charts Workspace">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Meridian Pathways & Master Point Matrices · 經脈與特定穴</p>
+            <h2 data-mode-text data-bilingual="經脈總覽與特定穴對照總表 / Channel & Point Charts" data-english="Channel & Point Master Charts">經脈總覽與特定穴對照總表 / Channel & Point Charts</h2>
+            <p data-mode-text data-bilingual="十四正經、奇經八脈循行總覽與五輸穴、原絡郄俞募、八脈交會穴三大中英對照經典總表。" data-english="Master overview for 14 Channels, 8 Extraordinary Vessels, and bilingual Master Point Matrices (Five Shu, Yuan-Luo-Xi-Mu-Shu, and 8 Confluent Points).">十四正經、奇經八脈循行總覽與五輸穴、原絡郄俞募、八脈交會穴三大中英對照經典總表。</p>
+          </div>
+        </div>
+
+        <div id="channelsQuickLauncher" class="channels-quick-launcher"></div>
+        <div id="channelsContentArea" class="channels-content-area"></div>
       </section>
 
       <section class="formula-section" data-workspace="formula" id="formulaSection" aria-label="方劑資料庫" data-mode-aria-label data-bilingual-aria-label="方劑資料庫" data-english-aria-label="Formula database">

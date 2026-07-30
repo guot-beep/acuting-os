@@ -5990,6 +5990,255 @@ html { scroll-padding-top: 92px; }
 .kr-sw.kr-s1 { background: var(--kr-s1); }
 .kr-sw.kr-s2 { background: var(--kr-s2); }
 
+/* ── 經脈與特定穴對照總表 (Channel & Point Charts Workspace) ────────── */
+.channels-workspace {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+}
+
+.channels-quick-launcher {
+  background: #f7f9f7;
+  border: 1px solid #dce8e0;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.channels-launcher-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1f5b3d;
+  margin-bottom: 0.4rem;
+}
+
+.meridian-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.meridian-pill-btn {
+  background: #4a3e56;
+  color: #ffffff;
+  border: 0;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.4rem 0.65rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.meridian-pill-btn:hover {
+  background: #644a7a;
+  transform: translateY(-1px);
+}
+
+.meridian-pill-btn.active {
+  background: #1f5b3d;
+  box-shadow: 0 3px 8px rgba(31, 91, 61, 0.3);
+}
+
+.meridian-pill-btn.pill-du-ren { background: #3b5f8a; }
+.meridian-pill-btn.pill-extra-vessel { background: #4a6884; }
+.meridian-pill-btn.pill-extra-pts { background: #45824c; }
+
+.charts-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chart-pill-btn {
+  background: #ffffff;
+  border: 1px solid #7c628f;
+  color: #553e6b;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chart-pill-btn:hover,
+.chart-pill-btn.active {
+  background: #553e6b;
+  color: #ffffff;
+}
+
+/* eLotus-Style Sleek Dark Banner */
+.elotus-channel-banner {
+  background: #0d1117;
+  color: #ffffff;
+  border-radius: 9px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.elotus-banner-brand {
+  background: #1f6feb;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.elotus-banner-title h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.elotus-banner-title h1 small {
+  color: #a5d6ff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.elotus-banner-subtitle {
+  color: #8b949e;
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+.elotus-banner-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.elotus-banner-nav button {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.elotus-banner-nav button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Sections inside Channel Overview */
+.channel-article-section {
+  background: #ffffff;
+  border: 1px solid #e3ebe5;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 1.2rem;
+}
+
+.channel-article-section h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1f5b3d;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #e5f0e8;
+  padding-bottom: 0.4rem;
+
+}
+
+.channel-points-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.channel-point-chip {
+  background: #f2f7f4;
+  border: 1px solid #cce0d2;
+  color: #1b4b32;
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.channel-point-chip:hover {
+  background: #1f5b3d;
+  color: #ffffff;
+  border-color: #1f5b3d;
+}
+
+/* Master Matrix Table (Five Shu, Yuan-Luo-Xi-Mu-Shu) */
+.master-matrix-wrap {
+  margin-top: 1.2rem;
+  overflow-x: auto;
+}
+
+.master-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #dce8e0;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.master-matrix-table th {
+  background: #2d2638;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 0.75rem 0.85rem;
+  text-align: left;
+  border-bottom: 2px solid #1a1622;
+}
+
+.master-matrix-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid #e8f0ea;
+  color: #2c3833;
+}
+
+.master-matrix-table tr:nth-child(even) td {
+  background: #fbfdfc;
+}
+
+.master-matrix-table td.channel-name-cell {
+  font-weight: 800;
+  background: #f0f6f2 !important;
+  color: #1f5b3d;
+}
+
+.master-matrix-table a.matrix-point-link {
+  color: #1b5b3a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.master-matrix-table a.matrix-point-link:hover {
+  text-decoration: underline;
+  color: #8c4c70;
+}
+
 /* 對照方切換：篩選器放在圖的上方一列（不是散在圖裡） */
 .kr-picker { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-left: auto; }
 .kr-chip { font: inherit; font-size: 0.78rem; padding: 0.15rem 0.55rem; border-radius: 999px;

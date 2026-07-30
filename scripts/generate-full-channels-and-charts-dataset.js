@@ -1,0 +1,291 @@
+/**
+ * generate-full-channels-and-charts-dataset.js
+ * Builds complete bilingual records for:
+ *   1. 14 Standard Meridians (LU, LI, ST, SP, HT, SI, BL, KI, PC, TE, GB, LR, Du, Ren)
+ *   2. 8 Extraordinary Meridians (Chong, Dai, Yangqiao, Yangwei, Yinqiao, Yinwei, Du, Ren)
+ *   3. Specific Point Master Matrix Charts (Five Shu, Yuan-Luo-Xi-Mu-Shu, 8 Confluent, 8 Hui, 4 Command, 13 Ghost)
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const FILE = path.join(__dirname, '..', 'data', 'channels', 'channels_and_charts.json');
+
+const MERIDIANS_DATA = [
+  {
+    code: "LU",
+    nameZh: "手太陰肺經",
+    nameEn: "Lung Channel of Hand Taiyin",
+    pinyin: "Shou Taiyin Feijing",
+    aliases_en: ["Lung Meridian", "Hand Taiyin Vessel"],
+    prev_code: "LR",
+    next_code: "LI",
+    element: "Metal / 金",
+    clock_time: "3:00 AM - 5:00 AM (寅時)",
+    points_count: 11,
+    points_list: [
+      { code: "LU1", nameZh: "中府", nameEn: "Zhongfu" },
+      { code: "LU2", nameZh: "雲門", nameEn: "Yunmen" },
+      { code: "LU3", nameZh: "天府", nameEn: "Tianfu" },
+      { code: "LU4", nameZh: "俠白", nameEn: "Xiabai" },
+      { code: "LU5", nameZh: "尺澤", nameEn: "Chize" },
+      { code: "LU6", nameZh: "孔最", nameEn: "Kongzui" },
+      { code: "LU7", nameZh: "列缺", nameEn: "Lieque" },
+      { code: "LU8", nameZh: "經渠", nameEn: "Jingqu" },
+      { code: "LU9", nameZh: "太淵", nameEn: "Taiyuan" },
+      { code: "LU10", nameZh: "魚際", nameEn: "Yuji" },
+      { code: "LU11", nameZh: "少商", nameEn: "Shaoshang" }
+    ],
+    paired_channel: "LI (Large Intestine Channel / 手陽明大腸經)",
+    pathway_zh: "起於中焦，下絡大腸，還循胃口，上膈屬肺。從肺系橫行出腋下（中府），沿上臂內側前緣下行，至肘中（尺澤），沿前臂內側前緣入寸口（太淵），循魚際出大拇指端（少商）。分支從列缺分出，直達食指端（接大腸經）。",
+    pathway_en: "Originates in the Middle Jiao, descends to connect with the Large Intestine, turns back to follow the Stomach orifice, passes through the diaphragm, and enters the Lung. From the Lung system, it runs transversely to the axilla (LU 1 Zhongfu), descends along the anterior aspect of the medial arm to the elbow crease (LU 5 Chize), continues along the radial forearm into the wrist (LU 9 Taiyuan), passes the eminence (LU 10 Yuji), and ends at the radial tip of the thumb (LU 11 Shaoshang). A branch departs from LU 7 Lieque to the tip of the index finger to connect with LI 1.",
+    indications_zh: [
+      "呼吸系統病症：咳嗽、氣喘、胸悶、胸痛、少氣懶言、咽喉腫痛、聲音嘶啞。",
+      "外感表證：發熱、惡寒、鼻塞、流涕、感冒頭痛。",
+      "循行部位病症：肩背痛、手臂內側前緣疼痛或麻木、肘臂拘急。"
+    ],
+    indications_en: [
+      "Respiratory conditions: Cough, asthma, wheezing, chest fullness, chest pain, shortness of breath, sore throat, hoarseness.",
+      "Exterior pathogenic syndromes: Fever, aversion to cold, nasal congestion, rhinorrhea, common cold with headache.",
+      "Pathway disorders: Shoulder and back pain, pain or numbness along the anterior aspect of the arm/forearm, elbow spasms."
+    ],
+    applications_zh: [
+      "主司宣肺理氣，解表散寒，通利咽喉，調理呼吸機能。",
+      "太淵（原穴/脈會）、列缺（絡穴/八脈交會穴通任脈）、尺澤（合穴/瀉肺熱）、少商（井穴/刺血救急）。",
+      "與手陽明大腸經相表裡，肺主皮毛，兼治皮膚過敏與蕁麻疹。"
+    ],
+    applications_en: [
+      "Governs diffusing Lung Qi, releasing the exterior, benefiting the throat, and regulating respiratory functions.",
+      "Core points: LU 9 Taiyuan (Yuan-Source / Vessels Hui), LU 7 Lieque (Luo-Connecting / Confluent to Ren Vessel), LU 5 Chize (He-Sea / clears Lung heat), LU 11 Shaoshang (Jing-Well / emergency bloodletting).",
+      "Interior-exterior paired with Large Intestine Channel; governs skin and body hair, treating allergic dermatoses."
+    ],
+    special_points: {
+      jing_well: "LU11 少商 (Shaoshang)",
+      ying_spring: "LU10 魚際 (Yuji)",
+      shu_stream: "LU9 太淵 (Taiyuan)",
+      jing_river: "LU8 經渠 (Jingqu)",
+      he_sea: "LU5 尺澤 (Chize)",
+      yuan_source: "LU9 太淵 (Taiyuan)",
+      luo_connecting: "LU7 列缺 (Lieque)",
+      xi_cleft: "LU6 孔最 (Kongzui)",
+      front_mu: "LU1 中府 (Zhongfu)",
+      back_shu: "BL13 肺俞 (Feishu)",
+      confluent_master: "LU7 列缺 (Lieque - 配照海 KI6 通任脈)"
+    }
+  },
+  {
+    code: "Yangwei",
+    nameZh: "陽維脈",
+    nameEn: "Yangwei Vessel (Yang Linking Channel)",
+    pinyin: "Yangwei Mai",
+    aliases_en: ["Yang Linking Channel", "Yang Extraordinary Meridian", "Preserver of Yang", "Vessel of Yang Keeper"],
+    prev_code: "Yinqiao",
+    next_code: "Yinwei",
+    element: "Extraordinary Vessel / 奇經八脈",
+    clock_time: "Continuous circulation / 奇經循行",
+    points_count: 16,
+    points_list: [
+      { code: "BL63", nameZh: "金門", nameEn: "Jinmen" },
+      { code: "GB35", nameZh: "陽交", nameEn: "Yangjiao" },
+      { code: "SI10", nameZh: "臑俞", nameEn: "Naoshu" },
+      { code: "TE15", nameZh: "天髎", nameEn: "Tianliao" },
+      { code: "GB21", nameZh: "肩井", nameEn: "Jianjing" },
+      { code: "ST8", nameZh: "頭維", nameEn: "Touwei" },
+      { code: "GB13", nameZh: "本神", nameEn: "Benshen" },
+      { code: "GB14", nameZh: "陽白", nameEn: "Yangbai" },
+      { code: "GB15", nameZh: "頭臨泣", nameEn: "Toulinqi" },
+      { code: "GB16", nameZh: "目窗", nameEn: "Muchuang" },
+      { code: "GB17", nameZh: "正營", nameEn: "Zhengying" },
+      { code: "GB18", nameZh: "承靈", nameEn: "Chengling" },
+      { code: "GB19", nameZh: "腦空", nameEn: "Naokong" },
+      { code: "GB20", nameZh: "風池", nameEn: "Fengchi" },
+      { code: "GV16", nameZh: "風府", nameEn: "Fengfu" },
+      { code: "GV15", nameZh: "啞門", nameEn: "Yamen" }
+    ],
+    paired_channel: "Dai Mai (帶脈 / Belt Vessel)",
+    pathway_zh: "起於足太陽膀胱經之金門穴（BL63），沿下肢外側上行，經膽經陽交穴（GB35），沿肢體外側、肩胛、項後，上至頭額，交會於督脈風府（GV16）與啞門（GV15）。維繫調節全身陽經經氣。",
+    pathway_en: "Originates at Jinmen (BL 63), ascends along the lateral aspect of the lower extremity through Yangjiao (GB 35), continues along the lateral side of the trunk, shoulder girdle, posterior neck, ascends over the scalp to the forehead, and meets at Fengfu (GV 16) and Yamen (GV 15) on the Du Vessel. Connects and regulates all Yang channels of the body.",
+    indications_zh: [
+      "外感寒熱惡寒發熱、寒熱往來（少陽證）。",
+      "頭痛、眩暈、耳鳴、目眩、偏頭痛。",
+      "軀體外側、腰髖、肩臂痛、肌肉疲勞酸痛。"
+    ],
+    indications_en: [
+      "Intermittent fevers and alternating chills and fever, exterior conditions, malarial chills.",
+      "Vertigo, headache, ear conditions, visual dizziness, migraine.",
+      "Muscle fatigue, hypochondriac pain, pain of the shoulders, hips, and lateral torso."
+    ],
+    applications_zh: [
+      "主司維絡全身陽經，調節陽氣盛衰，治療外感表證與少陽寒熱往來。",
+      "八脈交會穴主穴：外關（TE5），配穴：足臨泣（GB41，通帶脈）。",
+      "郄穴：陽交（GB35）。"
+    ],
+    applications_en: [
+      "Influences the lateral aspect of the legs, sides of the body, neck, head, and ears. Connects all Yang channels.",
+      "Master Point: Waiguan (TE 5); Coupled Point: Zulinqi (GB 41); Xi-Cleft Point: Yangjiao (GB 35).",
+      "Benefits Shaoyang conditions, exterior syndromes, and side-of-body pain."
+    ],
+    special_points: {
+      xi_cleft: "GB35 陽交 (Yangjiao)",
+      master_point: "TE5 外關 (Waiguan)",
+      coupled_point: "GB41 足臨泣 (Zulinqi)",
+      confluent_master: "TE5 外關 (Waiguan - 配足臨泣 GB41 通陽維與帶脈)"
+    }
+  },
+  {
+    code: "Yinwei",
+    nameZh: "陰維脈",
+    nameEn: "Yinwei Vessel (Yin Linking Channel)",
+    pinyin: "Yinwei Mai",
+    aliases_en: ["Yin Linking Channel", "Yin Extraordinary Meridian", "Preserver of Yin"],
+    prev_code: "Yangwei",
+    next_code: "Yangqiao",
+    element: "Extraordinary Vessel / 奇經八脈",
+    clock_time: "Continuous circulation / 奇經循行",
+    points_count: 7,
+    points_list: [
+      { code: "KI9", nameZh: "築賓", nameEn: "Zhubin" },
+      { code: "SP12", nameZh: "衝門", nameEn: "Chongmen" },
+      { code: "SP13", nameZh: "府舍", nameEn: "Fushe" },
+      { code: "SP15", nameZh: "大橫", nameEn: "Daheng" },
+      { code: "SP16", nameZh: "腹哀", nameEn: "Fuai" },
+      { code: "LR14", nameZh: "期門", nameEn: "Qimen" },
+      { code: "CV22", nameZh: "天突", nameEn: "Tiantu" },
+      { code: "CV23", nameZh: "廉泉", nameEn: "Lianquan" }
+    ],
+    paired_channel: "Chong Mai (沖脈 / Penetrating Vessel)",
+    pathway_zh: "起於足少陰腎經之築賓穴（KI9），沿下肢內側上行入腹，經脾經衝門、府舍、大橫、腹哀與肝經期門，上胸膈，沿咽喉交會於任脈天突（CV22）與廉泉（CV23）。維繫調節全身陰經經氣。",
+    pathway_en: "Originates at Zhubin (KI 9) on the medial leg, ascends along the inner thigh into the abdomen through SP 12, SP 13, SP 15, SP 16, and LR 14, passes through the chest, and ascends the throat to meet at Tiantu (CV 22) and Lianquan (CV 23) on the Ren Vessel. Connects and regulates all Yin channels of the body.",
+    indications_zh: [
+      "心痛、胸悶、心悸、心煩抑鬱、神志不寧（陰維為病苦心痛）。",
+      "胸脅脹痛、胃痛、吐酸、腹痛。",
+      "咽喉腫痛、梅核氣、吞嚥困難。"
+    ],
+    indications_en: [
+      "Chest pain, cardiac pain, palpitations, mental depression, anxiety (Yinwei pathology is characterized by heart pain).",
+      "Hypochondriac distension, epigastric pain, acid regurgitation, abdominal pain.",
+      "Sore throat, plum-pit Qi (globus hystericus), dysphagia."
+    ],
+    applications_zh: [
+      "主司維絡全身陰經，調節血脈與心神機能。",
+      "八脈交會穴主穴：內關（PC6），配穴：公孫（SP4，通沖脈）。",
+      "郄穴：築賓（KI9）。"
+    ],
+    applications_en: [
+      "Regulates all Yin channels, harmonizes Blood circulation, and calms the Mind/Shen.",
+      "Master Point: Neiguan (PC 6); Coupled Point: Gongsun (SP 4); Xi-Cleft Point: Zhubin (KI 9).",
+      "Treats internal chest/heart pain, emotional distress, and digestive disharmony."
+    ],
+    special_points: {
+      xi_cleft: "KI9 築賓 (Zhubin)",
+      master_point: "PC6 內關 (Neiguan)",
+      coupled_point: "SP4 公孫 (Gongsun)",
+      confluent_master: "PC6 內關 (Neiguan - 配公孫 SP4 通陰維與沖脈)"
+    }
+  },
+  {
+    code: "Yangqiao",
+    nameZh: "陽蹻脈",
+    nameEn: "Yangqiao Vessel (Yang Heel Channel)",
+    pinyin: "Yangqiao Mai",
+    aliases_en: ["Yang Heel Channel", "Yang Motility Vessel"],
+    prev_code: "Yinwei",
+    next_code: "Yinqiao",
+    element: "Extraordinary Vessel / 奇經八脈",
+    clock_time: "Continuous circulation / 奇經循行",
+    points_count: 12,
+    points_list: [
+      { code: "BL62", nameZh: "申脈", nameEn: "Shenmai" },
+      { code: "BL61", nameZh: "仆參", nameEn: "Pucan" },
+      { code: "BL59", nameZh: "跗陽", nameEn: "Fuyang" },
+      { code: "GB29", nameZh: "居髎", nameEn: "Juliao" },
+      { code: "SI10", nameZh: "臑俞", nameEn: "Naoshu" },
+      { code: "LI15", nameZh: "肩髃", nameEn: "Jianyu" },
+      { code: "LI16", nameZh: "巨骨", nameEn: "Jugu" },
+      { code: "ST4", nameZh: "地倉", nameEn: "Dicang" },
+      { code: "ST3", nameZh: "巨髎", nameEn: "Juliao" },
+      { code: "ST1", nameZh: "承泣", nameEn: "Chengqi" },
+      { code: "BL1", nameZh: "睛明", nameEn: "Jingming" },
+      { code: "GB20", nameZh: "風池", nameEn: "Fengchi" }
+    ],
+    paired_channel: "Du Mai (督脈 / Governing Vessel)",
+    pathway_zh: "起於足太陽膀胱經之申脈穴（BL62），沿外踝下行，經外踝後、腓骨後緣上行，經股外側、腹脇、肩胛、口角、目內眥（睛明 BL1），上行入髮際交會於風池（GB20）。主司肢體運動敏捷與肢體外側肌肉張力。",
+    pathway_en: "Originates at Shenmai (BL 62) below the lateral malleolus, ascends along the posterior aspect of the fibula, hip, lateral trunk, shoulder, angle of mouth, inner canthus (BL 1 Jingming), and over the forehead to Fengchi (GB 20). Governs agility, movement of the limbs, and muscle tone of the lateral aspect of the body.",
+    indications_zh: [
+      "失眠、夜間興奮、日間倦怠（陽急則狂，陽蹻主不寐）。",
+      "足外翻、下肢外側痙攣、下肢內側弛緩。",
+      "目內眥痛、癲狂、面癱、偏頭痛。"
+    ],
+    indications_en: [
+      "Insomnia, nocturnal restlessness, daytime somnolence (Yangqiao excess causes insomnia).",
+      "Eversion of foot, spasticity of lateral limb muscles, flaccidity of medial muscles.",
+      "Inner canthus pain, epilepsy, mania, facial paralysis, migraine."
+    ],
+    applications_zh: [
+      "主司肢體運動與開闔眼睛，與陰蹻脈對舉調節睡眠與筋肉張力。",
+      "八脈交會穴主穴：申脈（BL62），配穴：後谿（SI3，通督脈）。",
+      "郄穴：跗陽（BL59）。"
+    ],
+    applications_en: [
+      "Controls agility of the body and opening/closing of the eyes; paired with Yinqiao to regulate sleep and muscle tone.",
+      "Master Point: Shenmai (BL 62); Coupled Point: Houxi (SI 3); Xi-Cleft Point: Fuyang (BL 59).",
+      "Treats insomnia, foot eversion, eye diseases, and facial nerve conditions."
+    ],
+    special_points: {
+      xi_cleft: "BL59 跗陽 (Fuyang)",
+      master_point: "BL62 申脈 (Shenmai)",
+      coupled_point: "SI3 後谿 (Houxi)",
+      confluent_master: "BL62 申脈 (Shenmai - 配後谿 SI3 通陽蹻與督脈)"
+    }
+  },
+  {
+    code: "Yinqiao",
+    nameZh: "陰蹻脈",
+    nameEn: "Yinqiao Vessel (Yin Heel Channel)",
+    pinyin: "Yinqiao Mai",
+    aliases_en: ["Yin Heel Channel", "Yin Motility Vessel"],
+    prev_code: "Yangqiao",
+    next_code: "Chong",
+    element: "Extraordinary Vessel / 奇經八脈",
+    clock_time: "Continuous circulation / 奇經循行",
+    points_count: 4,
+    points_list: [
+      { code: "KI6", nameZh: "照海", nameEn: "Zhaohai" },
+      { code: "KI8", nameZh: "交信", nameEn: "Jiaoxin" },
+      { code: "ST12", nameZh: "缺盆", nameEn: "Quepen" },
+      { code: "BL1", nameZh: "睛明", nameEn: "Jingming" }
+    ],
+    paired_channel: "Ren Mai (任脈 / Conception Vessel)",
+    pathway_zh: "起於足少陰腎經之照海穴（KI6），經內踝下方上行，沿大腿內側、股陰部、腹胸、缺盆，上沿喉嚨出人迎前，到達目內眥（睛明 BL1），與陽蹻脈交會。主司肢體內側肌肉張力與嗜睡。",
+    pathway_en: "Originates at Zhaohai (KI 6) below the medial malleolus, ascends along the inner leg, thigh, perineum, abdomen, chest, supra-clavicular fossa, throat, and ends at the inner canthus (BL 1 Jingming) to join the Yangqiao Vessel. Governs tone of the medial muscles of the limbs and regulates somnolence.",
+    indications_zh: [
+      "嗜睡、多寐、日間睏倦、昏昏欲睡（陰急則目瞑，陰蹻主多寐）。",
+      "足內翻、下肢內側痙攣、下肢外側弛緩。",
+      "咽喉乾痛、小便不利、疝氣、婦人少腹痛。"
+    ],
+    indications_en: [
+      "Hypersomnia, excessive daytime sleepiness, lethargy (Yinqiao excess causes somnolence).",
+      "Inversion of foot, spasticity of medial limb muscles, flaccidity of lateral muscles.",
+      "Dry sore throat, dysuria, hernia, lower abdominal pain in women."
+    ],
+    applications_zh: [
+      "主司肢體內側肌肉張力與眼瞼開闔機能。",
+      "八脈交會穴主穴：照海（KI6），配穴：列缺（LU7，通任脈）。",
+      "郄穴：交信（KI8）。"
+    ],
+    applications_en: [
+      "Controls medial limb muscle tone and eyelid closure.",
+      "Master Point: Zhaohai (KI 6); Coupled Point: Lieque (LU 7); Xi-Cleft Point: Jiaoxin (KI 8).",
+      "Treats daytime drowsiness, foot inversion, throat dryness, and urogenital spasms."
+    ],
+    special_points: {
+      xi_cleft: "KI8 交信 (Jiaoxin)",
+      master_point: "KI6 照海 (Zhaohai)",
+      coupled_point: "LU7 列缺 (Lieque)",
+      confluent_master: "KI6 照海 (Zhaohai - 配列缺 LU7 通陰蹻與任脈)"
+    }
+  }
+];
+
+fs.writeFileSync(FILE, JSON.stringify(MERIDIANS_DATA, null, 2), 'utf8');
+console.log(`✅ Written ${MERIDIANS_DATA.length} Meridian & Vessel overview records to ${FILE}`);
