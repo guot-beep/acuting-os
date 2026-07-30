@@ -1,6 +1,43 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30] Antigravity Handoff — BL, KI, PC Channels + Full 361 Point Identity Badges & UI Auto-Clear
+## [2026-07-30] Antigravity Handoff — FULL 361 ACUPOINT DATABASE TEMPLATE-GRADE MILESTONE COMPLETED! 🎉
+
+- **Agent**: Antigravity (pair programming with Ting)
+- **Milestone Reached**: **361/361 points (100%) REACHED TEMPLATE-GRADE QUALITY with ZERO WORKLIST DEFECTS across all 14 channels!**
+- **Channels Refined in this Session**:
+  - `antigravity/te-channel` (TE1–TE23, 23 points)
+  - `antigravity/gb-channel` (GB1–GB44, 44 points)
+  - `antigravity/lr-channel` (LR1–LR14, 14 points)
+  - `antigravity/ht-channel` (HT1–HT9, 9 points — cleaned appended English text)
+  - `antigravity/cv-channel` (CV1–CV24, 24 points)
+  - `antigravity/gv-channel` (GV1–GV28, 28 points)
+- **Validation Audit**:
+  - `node scripts/validate-acupoint-standard.js --worklist --all`:
+    ```
+    validate-acupoint-standard: 361 points (361 template-grade)
+    misaligned pairs: 0
+    missing _en arrays: 0
+    boilerplate safety: 0
+    review_status illegal: 0
+    WORKLIST: 0 DEFECTS across 0 CHANNELS
+    PASS — no blocking defects.
+    ```
+  - `node scripts/validate-interactions.js` -> **PASS** ✅
+
+### Key UI & Usability Enhancements Delivered
+1. **Collapsible Needling & Safety Section**:
+   - The **Needling, Moxibustion & Safety (針法・艾灸・安全)** section on point detail pages is now collapsed by default with a clean toggle pill (`點擊展開 / 折疊 針法安全`), expanding on click for seamless readability.
+2. **Direct 1-to-1 American Dragon (AD) & eLotus Links**:
+   - Header action toolbar updated to feature 3 clean, direct source buttons:
+     - **雲端中醫 (CloudTCM)**
+     - **American Dragon (AD)** (1-to-1 direct point URLs e.g. `SJ-5.html`, `ST-36.html`, `UB-40.html`, `LIV-3.html`)
+     - **eLotus 權威圖解**
+   - Removed clutter buttons (`複製分頁連結` and `編輯資料`).
+3. **Bilingual Western Condition Tags (病症標籤)**:
+   - All Western medical condition tags across all 361 points now display bilingual Chinese + English medical terminology (e.g. `消化性潰瘍 Peptic Ulcer`, `氣喘 Asthma`, `前庭性偏頭痛 Vestibular Migraine`, `帶狀疱疹 Herpes Zoster`), vital for US Board Exam preparation & clinical reference.
+4. **Full 361 Specific Point Identity Badges**:
+   - Compact small cards and detail headers highlight all Five-Shu points (井滎輸經合 + 五行), Yuan-Source, Luo-Connecting, Xi-Cleft, Back-Shu, Front-Mu, 8 Confluent, 4 Command, Sea points, 10 Window of Sky points, 13 Ghost points in warm gold pills.
+
 
 - **Agent**: Antigravity (pair programming with Ting)
 - **Branches Pushed & Merged to `origin/main`**:
