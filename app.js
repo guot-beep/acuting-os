@@ -954,7 +954,18 @@ function loadPoints() {
       localStorage.removeItem("acuting-acupoint-v2");
       console.info("AcuTing: Purged legacy acuting-acupoint-v2 cache");
     }
+    if (localStorage.getItem("acuting-acupoint-v3")) {
+      const parsed = JSON.parse(localStorage.getItem("acuting-acupoint-v3"));
+      if (Array.isArray(parsed)) {
+        const ht5 = parsed.find((p) => p.code === "HT5");
+        if (ht5 && (!ht5.point_identity_zh || !ht5.point_identity_zh.length)) {
+          localStorage.removeItem("acuting-acupoint-v3");
+          console.info("AcuTing: Purged stale acuting-acupoint-v3 cache to load updated point_identity fields");
+        }
+      }
+    }
   } catch (e) {}
+
 
   const saved = localStorage.getItem(STORAGE_KEY);
   if (!saved) return defaultPoints;
@@ -3068,6 +3079,8 @@ function getCompactIdentityTags(point) {
       if (txt.includes("水谷之海")) tags.push("水谷之海");
       else if (txt.includes("血海")) tags.push("血海");
       else if (txt.includes("氣海")) tags.push("氣海");
+      else if (txt.includes("髓海")) tags.push("髓海");
+      if (txt.includes("天窗") || txt.includes("天牖") || txt.includes("Window of Sky")) tags.push("天窗穴");
       if (txt.includes("井穴") || txt.includes("jing_well")) tags.push("井穴");
       else if (txt.includes("滎穴") || txt.includes("ying_spring")) tags.push("滎穴");
       else if (txt.includes("輸穴") || txt.includes("shu_stream")) tags.push("輸穴");
@@ -3081,13 +3094,14 @@ function getCompactIdentityTags(point) {
       if (txt.includes("募穴") || txt.includes("front_mu")) tags.push("募穴");
       if (txt.includes("背俞穴") || txt.includes("back_shu")) tags.push("背俞穴");
       if (txt.includes("十三鬼穴") || txt.includes("鬼穴")) tags.push("十三鬼穴");
-      if (txt.includes("Window of Sky") || txt.includes("天牖")) tags.push("天牖五穴");
     } else {
       if (txt.includes("Command Point") || txt.includes("Command point")) tags.push("Command Point");
       if (txt.includes("Confluent") || txt.includes("Master point") || txt.includes("Master Point") || txt === "confluent" || txt.includes("Chong Mai") || txt.includes("Yin Qiao")) tags.push("Master Point");
       if (txt.includes("Sea of Water")) tags.push("Sea of Grain");
       else if (txt.includes("Sea of Blood") || txt.includes("Xuehai")) tags.push("Sea of Blood");
       else if (txt.includes("Sea of Qi")) tags.push("Sea of Qi");
+      else if (txt.includes("Sea of Marrow")) tags.push("Sea of Marrow");
+      if (txt.includes("Window of Sky") || txt.includes("天窗") || txt.includes("天牖")) tags.push("Window of Sky");
       if (txt.includes("Jing-Well") || txt.includes("jing_well")) tags.push("Jing-Well");
       else if (txt.includes("Ying-Spring") || txt.includes("ying_spring")) tags.push("Ying-Spring");
       else if (txt.includes("Shu-Stream") || txt.includes("shu_stream")) tags.push("Shu-Stream");
@@ -3099,7 +3113,6 @@ function getCompactIdentityTags(point) {
       if (txt.includes("Xi-Cleft") || txt === "xi") tags.push("Xi-Cleft");
       if (txt.includes("Front-Mu") || txt.includes("front_mu")) tags.push("Front-Mu");
       if (txt.includes("Back-Shu") || txt.includes("back_shu")) tags.push("Back-Shu");
-      if (txt.includes("Window of Sky")) tags.push("Window of Sky");
     }
   });
 
@@ -3107,8 +3120,9 @@ function getCompactIdentityTags(point) {
 }
 
 function isIdentityTagText(t) {
-  return /井穴|滎穴|輸穴|經穴|合穴|原穴|絡穴|郄穴|募穴|背俞穴|八脈交會|四總穴|下合穴|水谷之海|血海|氣海|十三鬼穴|天牖五穴|交會穴|脾之大絡|Jing-Well|Ying-Spring|Shu-Stream|Jing-River|He-Sea|Lower He-Sea|Yuan-Source|Luo-Connecting|Xi-Cleft|Front-Mu|Back-Shu|Master Point|Command Point|Window of Sky|Sea of Grain|Sea of Blood|Sea of Qi/.test(t);
+  return /井穴|滎穴|輸穴|經穴|合穴|原穴|絡穴|郄穴|募穴|背俞穴|八脈交會|四總穴|下合穴|水谷之海|血海|氣海|髓海|十三鬼穴|天牖五穴|天窗穴|交會穴|脾之大絡|Jing-Well|Ying-Spring|Shu-Stream|Jing-River|He-Sea|Lower He-Sea|Yuan-Source|Luo-Connecting|Xi-Cleft|Front-Mu|Back-Shu|Master Point|Command Point|Window of Sky|Sea of Grain|Sea of Blood|Sea of Qi|Sea of Marrow/.test(t);
 }
+
 
 function isShortCleanTag(t) {
   const str = String(t || "").trim();
