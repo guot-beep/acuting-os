@@ -3394,16 +3394,16 @@ function boldMarkers(text) {
 }
 
 function examPearlSection(point) {
-  if (!point.examPearl && !point.examImportance) return "";
-  const star = Number(point.examStar) || 0;
+  const pearlZh = point.exam_pearl || point.examPearl;
+  const scopeZh = point.exam_importance || point.examImportance;
+  const pearlEn = point.exam_pearl_en || point.examPearlEn;
+  const scopeEn = point.exam_importance_en || point.examImportanceEn;
+  if (!pearlZh && !scopeZh && !pearlEn && !scopeEn) return "";
+  const star = Number(point.exam_star || point.examStar) || 0;
   const en = contentMode === "english";
   const heading = en ? "Exam Pearl" : "考試重點";
-  // English mode printed the Chinese pearl verbatim, because only the section
-  // heading was translated and there was nowhere for an English pearl to live.
-  // Prefer the _en field, fall back to 中文 so points that have not been given
-  // an English pearl yet still show the content rather than an empty box.
-  const pearl = en ? (point.examPearlEn || point.examPearl) : point.examPearl;
-  const scope = en ? (point.examImportanceEn || point.examImportance) : point.examImportance;
+  const pearl = en ? (pearlEn || pearlZh) : pearlZh;
+  const scope = en ? (scopeEn || scopeZh) : scopeZh;
   return `<section class="point-exam-pearl${star >= 2 ? " is-high" : ""}">
     <h3>${star ? (star >= 2 ? "★★ " : "★ ") : "💡 "}${escapeHtml(heading)}</h3>
     ${pearl ? `<p class="pep-body">${boldMarkers(pearl)}</p>` : ""}
