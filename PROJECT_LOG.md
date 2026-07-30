@@ -1,5 +1,11 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Claude — NCBAHM CH missing herbs batch 14 (network-verified): She Chuang Zi, Shi Wei, Si Gua Luo, Suo Yang
+
+- Built 4 more cards from curriculum + live American Dragon + live CloudTCM. She Chuang Zi and Si Gua Luo have no exact canon category match (dual topical/internal use, and cross-framing between sources respectively) — classified into the closest existing bucket with the reasoning recorded in each card.
+- Updated Quality herb-outline audit from 293/304 matched / 11 missing to 297/304 matched / 7 missing; local herb cards now 320.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; card-grade stamper graded all 4 `template`.
+
 ## 2026-07-29 Claude — NCBAHM CH missing herbs batch 13 (network-verified): Lu Lu Tong, Ou Jie, Qin Pi, Qing Dai, Sang Zhi
 
 - Built 5 more cards from curriculum + live American Dragon + live CloudTCM. Updated `docs/HERB_CARD_TEMPLATE.md` first to document the 10 record-level metadata fields the template's own field list had never listed (found while fixing batch12's gap) — batch13 was diffed key-for-key against `herb.he_tao_ren` before validating.

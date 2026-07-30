@@ -76387,33 +76387,924 @@
         ]
       },
       "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.she_chuang_zi",
+      "name_zh": "蛇床子",
+      "name_en": "Cnidium Fruit",
+      "pinyin": "She Chuang Zi",
+      "pinyin_toned": "Shé Chuáng Zǐ",
+      "pharmaceutical_latin": "Fructus Cnidii",
+      "part_used_zh": "成熟果實",
+      "part_used_en": "dried ripe fruit",
+      "category": "驅蟲藥 / Expel Parasites",
+      "properties_taste_temp": "辛、苦，溫，有毒",
+      "taste_temperature_zh": "辛、苦，溫，有毒",
+      "channels_zh": [
+        "腎經",
+        "脾經"
+      ],
+      "channels_en": [
+        "KD Kidney",
+        "SP Spleen"
+      ],
+      "channels_entered": [
+        "腎經",
+        "脾經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [
+        "Cnidium Seed"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "辛",
+          "苦"
+        ],
+        "five_flavors_en": [
+          "Acrid",
+          "Bitter"
+        ],
+        "four_natures_zh": "溫",
+        "four_natures_en": "Warm",
+        "meridian_tropism_zh": [
+          "腎經",
+          "脾經"
+        ],
+        "meridian_tropism_en": [
+          "KD Kidney",
+          "SP Spleen"
+        ],
+        "part_used_zh": "成熟果實",
+        "part_used_en": "dried ripe fruit",
+        "source_note_zh": "American Dragon 與 CloudTCM 一致列腎、脾經；課件(Materia Medica III-Topical & Expel Parasite Herbs)僅列腎經一經，較簡化。主欄採 AD+CloudTCM 一致的腎、脾二經。毒性方面 AD 標「Slightly Toxic」，CloudTCM 直接標「有毒」，安全欄採較保守的 CloudTCM 用語。"
+      },
+      "property_channel_source_note_zh": "課件僅列腎經，AD+CloudTCM 一致加列脾經；主欄採後者。",
+      "functions_zh": [
+        "溫腎壯陽（內服）",
+        "燥濕殺蟲止癢（外用為主）",
+        "祛風"
+      ],
+      "actions_en": [
+        "Warms the Kidney and strengthens Yang (internal use)",
+        "Dries Dampness, kills parasites, and stops itching (primarily topical)",
+        "Expels Wind"
+      ],
+      "indications_zh": [
+        "腎陽虛之陽痿、不孕、宮冷。",
+        "寒濕帶下、濕痹腰痛。",
+        "外治：外陰濕疹、婦人陰癢、滴蟲性陰道炎、疥癬。"
+      ],
+      "indications_en": [
+        "Kidney Yang deficiency with impotence, infertility, or uterine cold.",
+        "Cold-Damp vaginal discharge and Damp-Bi low back pain.",
+        "Topical use for genital eczema, vaginal itching, trichomonal vaginitis, and scabies/tinea."
+      ],
+      "condition_tags_zh": [
+        "腎陽虛",
+        "陽痿",
+        "不孕",
+        "宮冷",
+        "寒濕帶下",
+        "濕痹腰痛",
+        "陰癢",
+        "滴蟲性陰道炎"
+      ],
+      "condition_tags_en": [
+        "Kidney Yang deficiency",
+        "Impotence",
+        "Infertility",
+        "Uterine cold",
+        "Cold-Damp discharge",
+        "Damp-Bi low back pain",
+        "Genital itching",
+        "Trichomonal vaginitis"
+      ],
+      "modern_functions_zh": [
+        "含豐富生物鹼，列抗菌、抗病毒、抗炎、抗腫瘤等現代藥理（CloudTCM）"
+      ],
+      "modern_functions_en": [
+        "Rich in alkaloids; reported antimicrobial, antiviral, anti-inflammatory, and antitumor effects (CloudTCM)"
+      ],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 9,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "內服 3–9g（CloudTCM）/ 3–10g（課件），外用煎水洗 15–30g（課件）",
+        "course_dose_g": "內服 3–10g；外用洗劑 15–30g",
+        "ad_dose_g": "3–30g（未區分內服/外用）；tincture 2–4mL",
+        "cloudtcm_dose_g": "內服 3–9g；食療 3–6g",
+        "source_note": "AD 的 3–30g 未區分內服與外用；課件與 CloudTCM 均明確區分內服（3–9/10g）與外用（15–30g）較安全，主欄採課件+CloudTCM 的內服劑量，外用另列。因有毒性，內服宜慎，以外用為主軸（課件、CloudTCM 一致提醒）。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；驅蟲/外用藥考點：生殖器搔癢要藥，兼有內服補腎陽功能。",
+      "exam_pearl": "課件 Exam Pearl：「She Chuang Zi = genital itching herb」。特殊之處：同時是外用殺蟲止癢藥又是內服腎陽藥，臨床常與苦參相配治外陰濕疹/陰癢。",
+      "clinical_use_note": "蛇床子的核心定位是外用燥濕殺蟲止癢（治外陰/陰道濕疹搔癢的代表藥），兼有內服溫腎壯陽之效，是少數兼具外用皮膚科用途與內服補陽用途的藥。因有毒性，內服需嚴格控制劑量並避開陰虛火旺、下焦濕熱者；外用為主較安全。與牡丹皮、巴豆、川貝母、浙貝母相惡，不宜同用。",
+      "contraindications_zh": [
+        "陰虛火旺者禁用。",
+        "下焦濕熱者禁用。",
+        "腎陰不足者忌服。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with Fire blazing.",
+        "Contraindicated in Damp-Heat in the Lower Jiao.",
+        "Contraindicated in Kidney Yin insufficiency."
+      ],
+      "cautions_zh": [
+        "American Dragon 列與牡丹皮、巴豆、川貝母、浙貝母相惡，不宜同用。",
+        "CloudTCM 提醒內服宜慎，以外用為主。",
+        "本品有毒，內服劑量不可任意增加。"
+      ],
+      "cautions_en": [
+        "American Dragon lists mutual antagonism with Mu Dan Pi, Ba Dou, Chuan Bei Mu, and Zhe Bei Mu; avoid combining.",
+        "CloudTCM notes internal use requires caution; topical application is preferred.",
+        "This herb is toxic; internal dosage must not be increased casually."
+      ],
+      "safety_flags": [
+        "yin_deficiency_heat_contraindication",
+        "damp_heat_lower_jiao_contraindication",
+        "toxic_herb_internal_use_caution",
+        "herb_incompatibility_mu_dan_pi_ba_dou_bei_mu"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Materia Medica III-Topical & Expel Parasite Herbs",
+          "url": "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "scope": "課件段落：蛇床子性味歸經、功效主治、劑量、內外用區別"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌、配伍相惡"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1168",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+        "https://cloudtcm.com/herb/1168"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "category": [
+          "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "channels_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "dosage": [
+          "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
+          "https://cloudtcm.com/herb/1168"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L222-L260",
+          "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.shi_wei",
+      "name_zh": "石韋",
+      "name_en": "Pyrrosia Leaf",
+      "pinyin": "Shi Wei",
+      "pinyin_toned": "Shí Wéi",
+      "pharmaceutical_latin": "Folium Pyrrosiae",
+      "part_used_zh": "乾燥葉",
+      "part_used_en": "dried leaf",
+      "category": "利水滲濕藥 / Drain Dampness",
+      "properties_taste_temp": "苦、甘，微寒",
+      "taste_temperature_zh": "苦、甘，微寒",
+      "channels_zh": [
+        "膀胱經",
+        "肺經"
+      ],
+      "channels_en": [
+        "BL Bladder",
+        "LU Lung"
+      ],
+      "channels_entered": [
+        "膀胱經",
+        "肺經"
+      ],
+      "aliases_zh": [
+        "石葦"
+      ],
+      "aliases_en": [
+        "Pyrrosia Leaves",
+        "Felt Fern Leaf"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "苦",
+          "甘"
+        ],
+        "five_flavors_en": [
+          "Bitter",
+          "Sweet"
+        ],
+        "four_natures_zh": "微寒",
+        "four_natures_en": "Slightly Cold",
+        "meridian_tropism_zh": [
+          "膀胱經",
+          "肺經"
+        ],
+        "meridian_tropism_en": [
+          "BL Bladder",
+          "LU Lung"
+        ],
+        "part_used_zh": "乾燥葉",
+        "part_used_en": "dried leaf",
+        "source_note_zh": "課件與 American Dragon 一致列膀胱、肺經；CloudTCM 另加腎經。主欄採課件+AD 一致的膀胱、肺二經，腎經（CloudTCM）列背景。"
+      },
+      "property_channel_source_note_zh": "CloudTCM 多列腎經，課件與 AD 一致僅列膀胱肺二經，主欄採後者。",
+      "functions_zh": [
+        "利水通淋",
+        "清肺化痰止咳",
+        "涼血止血"
+      ],
+      "actions_en": [
+        "Promotes urination and unblocks painful urinary dysfunction (Lin syndrome)",
+        "Clears the Lung, transforms Phlegm, and stops cough",
+        "Cools the Blood and stops bleeding"
+      ],
+      "indications_zh": [
+        "濕熱、石淋、血淋等各種淋證。",
+        "肺熱咳嗽、氣喘，急慢性支氣管炎。",
+        "血熱妄行之吐血、崩漏、血淋。"
+      ],
+      "indications_en": [
+        "Damp-Heat, stone, or bloody Lin syndrome (painful urinary dysfunction).",
+        "Lung Heat cough and wheezing; acute or chronic bronchitis.",
+        "Bleeding from reckless movement of Heat in the Blood: hematemesis, uterine bleeding, bloody Lin."
+      ],
+      "condition_tags_zh": [
+        "石淋",
+        "血淋",
+        "濕熱淋證",
+        "肺熱咳嗽",
+        "支氣管炎",
+        "崩漏",
+        "吐血"
+      ],
+      "condition_tags_en": [
+        "Stone Lin syndrome",
+        "Bloody Lin syndrome",
+        "Damp-Heat Lin syndrome",
+        "Lung-Heat cough",
+        "Bronchitis",
+        "Uterine bleeding",
+        "Hematemesis"
+      ],
+      "modern_functions_zh": [
+        "列保肝利膽、防癌抗腫瘤、降血脂、抗發炎等現代藥理（CloudTCM）",
+        "American Dragon 記載化療/放療後白血球低下患者之輔助應用背景"
+      ],
+      "modern_functions_en": [
+        "Reported hepatoprotective/cholagogue, antitumor, lipid-lowering, and anti-inflammatory effects (CloudTCM)",
+        "American Dragon notes background use as an adjunct for low white blood cell counts after chemotherapy/radiation"
+      ],
+      "dosage": {
+        "min_g": 6,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "6–16g，重症可達 30g（American Dragon）/ 5–10g（課件）/ 9–15g（CloudTCM）",
+        "course_dose_g": "5–10克（課件）",
+        "ad_dose_g": "6–16g；重症up to 30g；tincture 2–4mL",
+        "cloudtcm_dose_g": "煎湯 9–15g；或研末",
+        "source_note": "三源劑量集中在 6–15g，AD 另列重症可達 30g；不合併為單一數字，各源範圍並列。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；利水滲濕藥考點：通淋要藥兼能止血，尤其擅治血淋。",
+      "exam_pearl": "American Dragon 註記：「very strong stone removing action」，且對「血淋」（bloody Lin）比純石淋更對證——考題可能考石韋與其他淋證藥（如海金沙）之鑑別。",
+      "clinical_use_note": "石韋苦甘微寒入膀胱肺經，核心定位是利水通淋，對血淋（帶血的淋證）尤其對證，兼能清肺化痰止咳及涼血止血。CloudTCM 提示的禁忌較嚴格（腎功能不良者不宜、不宜長期大量使用），課件與 AD 未特別列出，安全欄以 CloudTCM 為主要依據並標明來源層級。",
+      "contraindications_zh": [
+        "陰虛且無濕熱者忌服。",
+        "慢性腎功能衰竭、急性腎小球腎炎患者不宜使用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency without Damp-Heat.",
+        "Not suitable for chronic renal failure or acute glomerulonephritis patients."
+      ],
+      "cautions_zh": [
+        "CloudTCM 提醒孕婦、哺乳期婦女、小孩和老人應避免使用。",
+        "CloudTCM 提醒脾胃虛寒、體質虛弱者應慎用。",
+        "CloudTCM 提醒不宜長期大量使用。",
+        "課件與 American Dragon 均未列明確絕對禁忌，上列禁忌主要依 CloudTCM，來源層級標明。"
+      ],
+      "cautions_en": [
+        "CloudTCM notes pregnant/nursing women, children, and the elderly should avoid use.",
+        "CloudTCM notes caution in Spleen-Stomach Deficiency-Cold or general weakness.",
+        "CloudTCM notes it should not be used long-term at high doses.",
+        "Neither the course material nor American Dragon lists explicit contraindications; the above rely mainly on CloudTCM, labeled accordingly."
+      ],
+      "safety_flags": [
+        "yin_deficiency_no_damp_heat_contraindication",
+        "renal_impairment_contraindication",
+        "pregnancy_pediatric_elderly_caution"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 MM2 Module 3 Herbs That Drain Dampness",
+          "url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "scope": "課件段落：石韋性味歸經、功效主治、劑量"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、現代臨床應用"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1181",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+        "https://cloudtcm.com/herb/1181"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+          "https://cloudtcm.com/herb/1181"
+        ],
+        "category": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+          "https://cloudtcm.com/herb/1181"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+          "https://cloudtcm.com/herb/1181"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+          "https://cloudtcm.com/herb/1181"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1181",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html"
+        ],
+        "dosage": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+          "https://cloudtcm.com/herb/1181"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1181"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1181"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
+          "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
+          "https://cloudtcm.com/herb/1181"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.si_gua_luo",
+      "name_zh": "絲瓜絡",
+      "name_en": "Loofah Sponge",
+      "pinyin": "Si Gua Luo",
+      "pinyin_toned": "Sī Guā Luò",
+      "pharmaceutical_latin": "Retinervus Luffae Fructus",
+      "part_used_zh": "成熟果實的乾燥維管束",
+      "part_used_en": "dried vascular bundle (fiber network) of the ripe fruit",
+      "category": "活血化瘀藥 / Invigorate Blood",
+      "properties_taste_temp": "甘，涼",
+      "taste_temperature_zh": "甘，涼",
+      "channels_zh": [
+        "肺經",
+        "胃經",
+        "肝經"
+      ],
+      "channels_en": [
+        "LU Lung",
+        "ST Stomach",
+        "LV Liver"
+      ],
+      "channels_entered": [
+        "肺經",
+        "胃經",
+        "肝經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [
+        "Luffa",
+        "Dried Skeleton of the Vegetable Sponge",
+        "Spongegourd"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "甘"
+        ],
+        "five_flavors_en": [
+          "Sweet"
+        ],
+        "four_natures_zh": "涼",
+        "four_natures_en": "Cool",
+        "meridian_tropism_zh": [
+          "肺經",
+          "胃經",
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "LU Lung",
+          "ST Stomach",
+          "LV Liver"
+        ],
+        "part_used_zh": "成熟果實的乾燥維管束",
+        "part_used_en": "dried vascular bundle (fiber network) of the ripe fruit",
+        "source_note_zh": "課件列性味「甘、平」；American Dragon 列「甘，平（偏微寒至寒）」；CloudTCM 列「甘、涼」。三源歸經一致（肺胃肝）,溫度描述課件較溫和(平)、AD/CloudTCM 偏涼寒,主欄採 AD/CloudTCM 較常見的「涼」,並保留課件「平」的差異。"
+      },
+      "property_channel_source_note_zh": "歸經三源一致；溫度描述課件(平)與AD/CloudTCM(涼/微寒)略有差異，主欄採後者。",
+      "functions_zh": [
+        "通經活絡",
+        "清熱化痰",
+        "通乳"
+      ],
+      "actions_en": [
+        "Unblocks the channels and collaterals",
+        "Clears Heat and transforms Phlegm",
+        "Unblocks the breast/milk collaterals"
+      ],
+      "indications_zh": [
+        "胸脅腹痛、腰痛、跌打損傷。",
+        "風濕痹痛，肢體關節疼痛拘攣。",
+        "乳汁不下、乳絡不通、乳癰腫痛。",
+        "肺熱咳嗽、痰稠難咯。"
+      ],
+      "indications_en": [
+        "Chest/rib-side/abdominal pain, low-back pain, and traumatic injury.",
+        "Wind-Damp Bi with joint pain and stiffness of the limbs.",
+        "Insufficient lactation, blocked breast collaterals, and breast abscess with swelling/pain.",
+        "Lung-Heat cough with thick, difficult-to-expectorate sputum."
+      ],
+      "condition_tags_zh": [
+        "胸脅腹痛",
+        "跌打損傷",
+        "風濕痹痛",
+        "乳汁不下",
+        "乳癰",
+        "肺熱咳嗽"
+      ],
+      "condition_tags_en": [
+        "Chest/flank pain",
+        "Traumatic injury",
+        "Wind-Damp Bi pain",
+        "Insufficient lactation",
+        "Breast abscess",
+        "Lung-Heat cough"
+      ],
+      "modern_functions_zh": [
+        "列抗發炎、保肝利膽、降血糖、降血脂等現代藥理，所含多醣可抑制發炎細胞激素（CloudTCM）"
+      ],
+      "modern_functions_en": [
+        "Reported anti-inflammatory, hepatoprotective/cholagogue, hypoglycemic, and lipid-lowering effects; polysaccharide content reported to inhibit inflammatory cytokines (CloudTCM)"
+      ],
+      "dosage": {
+        "min_g": 5,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "5–10g（課件）/ 6–15g（American Dragon）/ 5–15g，食療 10–30g（CloudTCM）",
+        "course_dose_g": "5–10克（課件）",
+        "ad_dose_g": "6–15g；tincture 2–4mL",
+        "cloudtcm_dose_g": "煎湯 5–15g；食療用量 10–30g",
+        "source_note": "三源集中在 5–15g，取交集區間；食療用量另列。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；活血通絡藥考點：藥材結構如人體經絡網狀，取象比類記憶點。",
+      "exam_pearl": "American Dragon 特別記載：「Structure mirrors the body's channels and collaterals」——絲瓜絡的網狀結構是取象比類的經典考點；炒炭偏止血，生用/炒黃偏活血止痛。",
+      "clinical_use_note": "絲瓜絡甘涼入肺胃肝經，核心定位是通經活絡兼清熱化痰、通乳，臨床常見於胸脅腹痛、風濕痹痛及乳汁不下/乳癰。炒炭（絲瓜絡炭）偏收澀止血，生用或炒黃偏活血通絡止痛，兩種炮製功效不同不可混用。脾虛便溏者慎用。",
+      "contraindications_zh": [
+        "脾虛便溏者慎用。"
+      ],
+      "contraindications_en": [
+        "Caution in Spleen deficiency with loose stools."
+      ],
+      "cautions_zh": [
+        "American Dragon 提醒幼兒使用可能引起腹瀉。",
+        "CloudTCM 提醒過敏體質者、孕婦及哺乳期婦女慎用；正服藥者亦應留意。",
+        "CloudTCM 提醒兒童及老年人因藥性偏涼不宜過量使用。"
+      ],
+      "cautions_en": [
+        "American Dragon notes it may cause diarrhea in young children.",
+        "CloudTCM notes caution for allergy-prone individuals, and in pregnancy/lactation; those on medication should also take care.",
+        "CloudTCM notes children and the elderly should avoid excess use given its cooling nature."
+      ],
+      "safety_flags": [
+        "spleen_deficiency_loose_stool_caution",
+        "pediatric_diarrhea_caution",
+        "pregnancy_lactation_caution"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Materia Medica III-Extra Herbs",
+          "url": "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "scope": "課件段落：絲瓜絡性味歸經、功效主治、劑量、禁忌"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、炮製差異"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1824",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+        "https://cloudtcm.com/herb/1824"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "category": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "dosage": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
+          "https://cloudtcm.com/herb/1824"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III-Extra Herbs.md#L163-L184",
+          "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.suo_yang",
+      "name_zh": "鎖陽",
+      "name_en": "Cynomorium",
+      "pinyin": "Suo Yang",
+      "pinyin_toned": "Suǒ Yáng",
+      "pharmaceutical_latin": "Herba Cynomorii",
+      "part_used_zh": "乾燥肉質莖",
+      "part_used_en": "dried fleshy stem",
+      "category": "補虛藥 / Tonify Yang",
+      "properties_taste_temp": "甘，溫",
+      "taste_temperature_zh": "甘，溫",
+      "channels_zh": [
+        "腎經",
+        "肝經",
+        "大腸經"
+      ],
+      "channels_en": [
+        "KD Kidney",
+        "LV Liver",
+        "LI Large Intestine"
+      ],
+      "channels_entered": [
+        "腎經",
+        "肝經",
+        "大腸經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [
+        "Cynomorium Stem Flesh",
+        "Lock Yang Stem"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "甘"
+        ],
+        "five_flavors_en": [
+          "Sweet"
+        ],
+        "four_natures_zh": "溫",
+        "four_natures_en": "Warm",
+        "meridian_tropism_zh": [
+          "腎經",
+          "肝經",
+          "大腸經"
+        ],
+        "meridian_tropism_en": [
+          "KD Kidney",
+          "LV Liver",
+          "LI Large Intestine"
+        ],
+        "part_used_zh": "乾燥肉質莖",
+        "part_used_en": "dried fleshy stem",
+        "source_note_zh": "課件僅在補陽藥比較表列一行「Kidney, LI」二經，未提肝經；American Dragon 與 CloudTCM 均加列肝經。主欄採 AD+CloudTCM 一致的腎、肝、大腸三經。課件本身無獨立鎖陽段落，內容偏簡略。"
+      },
+      "property_channel_source_note_zh": "課件僅比較表一行，缺肝經；AD+CloudTCM 一致三經，主欄採後者。",
+      "functions_zh": [
+        "補腎陽",
+        "益精血",
+        "潤腸通便"
+      ],
+      "actions_en": [
+        "Tonifies Kidney Yang",
+        "Boosts Essence and Blood",
+        "Moistens the Intestines and unblocks the bowels"
+      ],
+      "indications_zh": [
+        "腎陽虛之陽痿滑精、腰膝痿軟。",
+        "精血不足之下肢痿軟無力。",
+        "腸燥便秘，尤其精血虧虛、年老體弱之便秘。"
+      ],
+      "indications_en": [
+        "Kidney Yang deficiency with impotence, seminal emission, and soreness/weakness of the low back and knees.",
+        "Essence-Blood deficiency with weakness/atrophy of the lower limbs.",
+        "Intestinal Dryness constipation, especially in Essence-Blood deficiency or the elderly/weak."
+      ],
+      "condition_tags_zh": [
+        "腎陽虛",
+        "陽痿",
+        "滑精",
+        "腰膝痿軟",
+        "下肢痿軟",
+        "腸燥便秘"
+      ],
+      "condition_tags_en": [
+        "Kidney Yang deficiency",
+        "Impotence",
+        "Seminal emission",
+        "Low back/knee weakness",
+        "Lower limb weakness",
+        "Intestinal-Dryness constipation"
+      ],
+      "modern_functions_zh": [
+        "含多醣、黃酮等活性成分，列抗氧化、預防心血管疾病、提升免疫力等現代藥理（CloudTCM）"
+      ],
+      "modern_functions_en": [
+        "Contains polysaccharides and flavonoids; reported antioxidant, cardiovascular-protective, and immune-enhancing effects (CloudTCM)"
+      ],
+      "dosage": {
+        "min_g": 6,
+        "max_g": 15,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "4.5–16g（American Dragon）/ 6–12g，食療 9–15g（CloudTCM）",
+        "course_dose_g": "課件比較表未列精準日服量",
+        "ad_dose_g": "4.5–16g；tincture 2–4mL",
+        "cloudtcm_dose_g": "一般 6–12g；食療用量 9–15g",
+        "source_note": "AD 劑量範圍較寬（4.5–16g），CloudTCM 較窄（6–12g，食療 9–15g）；交集區間 6–15g 較穩妥。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；補陽藥考點：可平價替代肉蓯蓉，潤腸力較弱。",
+      "exam_pearl": "American Dragon 明確記載：鎖陽是「an inexpensive substitute for Hb. Cistanches（肉蓯蓉）」，但潤腸力較弱；酒製後補陽力增強。",
+      "clinical_use_note": "鎖陽甘溫，核心定位是補腎陽、益精血兼潤腸通便，臨床角色類似肉蓯蓉但價格較低、潤腸力較弱，可視為肉蓯蓉的平價替代。適合腎陽虛陽痿滑精兼有腸燥便秘者。脾虛洩瀉、陰虛火旺、實熱便秘者禁用。",
+      "contraindications_zh": [
+        "脾虛洩瀉者禁用。",
+        "陰虛火旺者禁用。",
+        "實熱便秘者禁用。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen deficiency with diarrhea.",
+        "Contraindicated in Yin deficiency with Fire blazing.",
+        "Contraindicated in Excess-Heat constipation."
+      ],
+      "cautions_zh": [
+        "American Dragon 提醒性慾易亢奮或相火易動者慎用。"
+      ],
+      "cautions_en": [
+        "American Dragon notes caution in those prone to excessive sexual arousal or overactive Ministerial Fire."
+      ],
+      "safety_flags": [
+        "spleen_deficiency_diarrhea_contraindication",
+        "yin_deficiency_heat_contraindication",
+        "excess_heat_constipation_contraindication"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Materia Medica III - Yang Tonics Full",
+          "url": "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L88-L92",
+          "scope": "課件比較表：鎖陽性味歸經、核心定位一行（Tonifies Yang; moistens intestines）"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌、替代品比較"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1188",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+        "https://cloudtcm.com/herb/1188"
+      ],
+      "field_sources": {
+        "identity": [
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "category": [
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L88-L92",
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L88-L92",
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "channels_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L88-L92",
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "indications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "dosage": [
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
+          "https://cloudtcm.com/herb/1188"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html"
+        ],
+        "clinical_use_note": [
+          "https://www.americandragon.com/Individualherbsupdate/SuoYang.html"
+        ]
+      },
+      "card_grade": "template"
     }
   ],
   "batch_summary": {
-    "total_records": 316,
+    "total_records": 320,
     "repaired_pending_utf8_records": 32,
     "draft_filled_this_batch": 127,
     "source_checked_records": 0,
     "safety_rule": "Search tags and clinical notes are documentation context only, not treatment claims.",
-    "last_batch": "NCBAHM missing herbs batch 13",
+    "last_batch": "NCBAHM missing herbs batch 14",
     "last_batch_cards": [
-      "路路通",
-      "藕節",
-      "秦皮",
-      "青黛",
-      "桑枝"
+      "蛇床子",
+      "石韋",
+      "絲瓜絡",
+      "鎖陽"
     ],
-    "local_herb_cards": 316,
+    "local_herb_cards": 320,
     "latest_missing_card_batch": {
       "date": "2026-07-29",
       "agent": "Claude",
       "branch": "claude/acuting-os-rebuild-analysis-u0e82n",
       "added": [
-        "herb.lu_lu_tong",
-        "herb.ou_jie",
-        "herb.qin_pi",
-        "herb.qing_dai",
-        "herb.sang_zhi"
+        "herb.she_chuang_zi",
+        "herb.shi_wei",
+        "herb.si_gua_luo",
+        "herb.suo_yang"
       ],
       "rule": "NCBAHM 2026 CH Appendix A missing-card creation; source-layered draft; network-verified against American Dragon + CloudTCM."
     }

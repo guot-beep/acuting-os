@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Claude Handoff - NCBAHM missing herbs batch 14: She Chuang Zi, Shi Wei, Si Gua Luo, Suo Yang (network-verified)
+
+- **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
+- **Task**: Continuing the Appendix A missing-card sweep; per Ting's instruction, prioritizing clearing the Appendix A gap before any card-quality rework.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `docs/CODEX_TASK_QUEUE.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **Sources used**: Chenoweth course files — `Materia Medica III-Topical & Expel Parasite Herbs.md` (She Chuang Zi, full section), `MM2_Module 3_Herbs_That_Drain_Dampness.md` (Shi Wei, full section), `Materia Medica III-Extra Herbs.md` (Si Gua Luo, full section), `Materia Medica III - Yang Tonics Full.md` (Suo Yang — comparison-table line only, thin curriculum coverage noted explicitly); American Dragon exact pages SheChuangZi, ShiWei, SiGuaLuo, SuoYang (all fetched live); CloudTCM exact pages `/herb/1168` (蛇床子), `/herb/1181` (石韋), `/herb/1824` (絲瓜絡), `/herb/1188` (鎖陽), all confirmed by name match before use.
+- **Category note**: 絲瓜絡 has no exact canon category match — curriculum calls it "Herbs that Unblock Channels and Collaterals" and American Dragon calls it "Herbs that Clear Heat and Drain Dampness" (different framings); classified under `活血化瘀藥 / Invigorate Blood` (parallel to 路路通's classification, same functional family), noted in `property_channel_source_note_zh`. 蛇床子 similarly has no exact canon category (dual topical-antiparasitic + internal-yang-tonic herb, no "topical" bucket in canon); classified under `驅蟲藥 / Expel Parasites` with the dual-use noted in `clinical_use_note`.
+- **Source-conflict handling**: 蛇床子's channels — curriculum lists Kidney only, while American Dragon and CloudTCM both independently list Kidney+Spleen; took the 2-source agreement over the single thinner curriculum listing, noted the discrepancy. 鎖陽's curriculum coverage is a single comparison-table line missing the Liver channel that both AD and CloudTCM list; same resolution.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved from 293/304 matched / 11 missing to 297/304 matched / 7 missing. Local herb-card count is now 320. Next recommended batch (15): Tan Xiang, Tu Bie Chong, Tu Fu Ling, Xi Xian Cao, Ye Ju Hua.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; `stamp-herb-card-grade.js --apply` graded all 4 new cards `template`. Field-order diff against `herb.he_tao_ren` confirmed exact match before validating.
+- **Known risks / manual checks**: 蛇床子 is toxic (課件/AD/CloudTCM all agree) — internal-dose wording deliberately conservative, worth Ting's eye given the safety stakes. 絲瓜絡's category placement is a judgment call given no exact canon bucket exists for it.
+
 ## [2026-07-29] Claude Handoff - NCBAHM missing herbs batch 13: Lu Lu Tong, Ou Jie, Qin Pi, Qing Dai, Sang Zhi (network-verified)
 
 - **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
