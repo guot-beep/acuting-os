@@ -1,10 +1,13 @@
 {
   "dataset": "Clinical outcome metrics",
   "status": "starter_set",
+  "notes": "Vocabulary for visit_outcomes.metric_name / metric_category (schema.sql). CG6 of docs/CLINICAL_GRAPH_TRACK.md. Ids are opaque and immutable (DECISIONS D1) — add, never rename. Deliberately NOT here: 舌象 and 脈象 live on visits.tongue_* / pulse_* and soap_notes.objective_* (CG7 — one fact, one home); 疼痛 maps to metric.pain_score and 疲勞 maps to metric.energy_level rather than getting duplicate metrics.",
   "records": [
     {
       "id": "metric.pain_score",
       "name": "pain_score",
+      "label_zh": "疼痛(0 無痛 / 10 最痛)",
+      "label_en": "Pain score (0 none / 10 worst)",
       "category": "symptom",
       "unit": "0-10",
       "direction_good": "decrease"
@@ -12,27 +15,89 @@
     {
       "id": "metric.sleep_quality",
       "name": "sleep_quality",
+      "label_zh": "睡眠品質(0 最差 / 10 最好)",
+      "label_en": "Sleep quality (0 worst / 10 best)",
       "category": "symptom",
       "unit": "0-10",
       "direction_good": "increase"
     },
     {
+      "id": "metric.sleep_hours",
+      "name": "sleep_hours",
+      "label_zh": "睡眠時數",
+      "label_en": "Sleep hours",
+      "category": "symptom",
+      "unit": "hours",
+      "direction_good": "individualized"
+    },
+    {
+      "id": "metric.sleep_onset_minutes",
+      "name": "sleep_onset_minutes",
+      "label_zh": "入睡時間(躺下到睡著)",
+      "label_en": "Sleep onset latency",
+      "category": "symptom",
+      "unit": "minutes",
+      "direction_good": "decrease"
+    },
+    {
+      "id": "metric.night_wakings",
+      "name": "night_wakings",
+      "label_zh": "夜醒次數",
+      "label_en": "Night wakings",
+      "category": "symptom",
+      "unit": "count_per_night",
+      "direction_good": "decrease"
+    },
+    {
       "id": "metric.stress_level",
       "name": "stress_level",
+      "label_zh": "壓力(0 無 / 10 最大)",
+      "label_en": "Stress level (0 none / 10 highest)",
       "category": "symptom",
       "unit": "0-10",
       "direction_good": "decrease"
     },
     {
-      "id": "metric.energy_level",
-      "name": "energy_level",
+      "id": "metric.mood",
+      "name": "mood",
+      "label_zh": "情緒(0 最差 / 10 最好)。與 stress_level 分開:壓力是外在負荷,情緒是主觀狀態",
+      "label_en": "Mood (0 worst / 10 best). Kept separate from stress_level: stress is external load, mood is subjective state",
       "category": "symptom",
       "unit": "0-10",
       "direction_good": "increase"
     },
     {
+      "id": "metric.energy_level",
+      "name": "energy_level",
+      "label_zh": "精神體力(0 最差 / 10 最好)。疲勞記在這一項的低分,不另開 fatigue metric",
+      "label_en": "Energy level (0 worst / 10 best). Fatigue is recorded as a low value here rather than as a separate fatigue metric",
+      "category": "symptom",
+      "unit": "0-10",
+      "direction_good": "increase"
+    },
+    {
+      "id": "metric.bloating",
+      "name": "bloating",
+      "label_zh": "腹脹(0 無 / 10 最脹)",
+      "label_en": "Bloating (0 none / 10 worst)",
+      "category": "symptom",
+      "unit": "0-10",
+      "direction_good": "decrease"
+    },
+    {
+      "id": "metric.bowel_frequency",
+      "name": "bowel_frequency",
+      "label_zh": "排便頻率(每週次數)",
+      "label_en": "Bowel movement frequency",
+      "category": "symptom",
+      "unit": "count_per_week",
+      "direction_good": "individualized"
+    },
+    {
       "id": "metric.cycle_length",
       "name": "cycle_length",
+      "label_zh": "月經週期長度",
+      "label_en": "Menstrual cycle length",
       "category": "fertility",
       "unit": "days",
       "direction_good": "individualized"
@@ -40,13 +105,35 @@
     {
       "id": "metric.bleeding_days",
       "name": "bleeding_days",
+      "label_zh": "經期天數",
+      "label_en": "Bleeding days",
       "category": "fertility",
       "unit": "days",
       "direction_good": "individualized"
     },
     {
+      "id": "metric.menstrual_flow_volume",
+      "name": "menstrual_flow_volume",
+      "label_zh": "月經量(量少/正常/量多)",
+      "label_en": "Menstrual flow volume (scanty / normal / heavy)",
+      "category": "fertility",
+      "unit": "scanty/normal/heavy",
+      "direction_good": "individualized"
+    },
+    {
+      "id": "metric.menstrual_clots",
+      "name": "menstrual_clots",
+      "label_zh": "血塊(無/小/大)",
+      "label_en": "Menstrual clots (none / small / large)",
+      "category": "fertility",
+      "unit": "none/small/large",
+      "direction_good": "decrease"
+    },
+    {
       "id": "metric.ovulation_confirmed",
       "name": "ovulation_confirmed",
+      "label_zh": "確認排卵",
+      "label_en": "Ovulation confirmed",
       "category": "fertility",
       "unit": "yes/no/unknown",
       "direction_good": "yes"
@@ -54,6 +141,8 @@
     {
       "id": "metric.lh_surge",
       "name": "lh_surge",
+      "label_zh": "LH 高峰試紙",
+      "label_en": "LH surge test",
       "category": "fertility",
       "unit": "positive/negative/unknown",
       "direction_good": "contextual"
@@ -61,6 +150,8 @@
     {
       "id": "metric.bbt_pattern",
       "name": "basal_body_temperature_pattern",
+      "label_zh": "基礎體溫型態",
+      "label_en": "Basal body temperature pattern",
       "category": "fertility",
       "unit": "text",
       "direction_good": "contextual"
@@ -68,6 +159,8 @@
     {
       "id": "metric.endometrial_lining",
       "name": "endometrial_lining",
+      "label_zh": "內膜厚度",
+      "label_en": "Endometrial lining",
       "category": "fertility",
       "unit": "mm",
       "direction_good": "contextual"
@@ -75,13 +168,35 @@
     {
       "id": "metric.follicle_size",
       "name": "follicle_size",
+      "label_zh": "卵泡大小",
+      "label_en": "Follicle size",
       "category": "fertility",
       "unit": "mm",
       "direction_good": "contextual"
     },
     {
+      "id": "metric.post_treatment_reaction",
+      "name": "post_treatment_reaction",
+      "label_zh": "治療後反應(針後痠脹、疲倦、好轉反應等)。安全性事件記 adverse_reaction,不記這裡",
+      "label_en": "Post-treatment reaction (post-needling soreness, tiredness, healing reaction). Safety events go to adverse_reaction, not here",
+      "category": "treatment_response",
+      "unit": "text",
+      "direction_good": "contextual"
+    },
+    {
+      "id": "metric.effect_duration_days",
+      "name": "effect_duration_days",
+      "label_zh": "效果維持時間(天)。決定療程間隔的依據",
+      "label_en": "Effect duration in days. The basis for setting treatment intervals",
+      "category": "treatment_response",
+      "unit": "days",
+      "direction_good": "increase"
+    },
+    {
       "id": "metric.adverse_reaction",
       "name": "adverse_reaction",
+      "label_zh": "不良反應",
+      "label_en": "Adverse reaction",
       "category": "safety",
       "unit": "text",
       "direction_good": "none"

@@ -96,6 +96,24 @@ migration for Ting.
 - **Current state:** schema.sql + templates use `P-2026-001` ✓;
   `birth_year` only ✓. Free-text discipline is a habit, not enforceable in
   code — the SOAP UI may show a subtle reminder (CS-track), nothing more.
+- **Coarsen, never falsify** (added 2026-07-29 — Ting asked whether to record
+  sex reversed and age minus ten). **No.** De-identification means removing
+  or blurring identifiers, never writing a false clinical fact:
+  - Sex and age are **clinically load-bearing**. Sex flips whole reasoning
+    branches (月經/孕產/更年期 vs 前列腺); age sets 腎氣 stage, dosing, and
+    red-flag weight (new-onset back pain at 65 ≠ at 55; postmenopausal
+    bleeding is a red flag only if she is postmenopausal). Falsified, the
+    three-year dataset teaches Ting the wrong patterns — it destroys exactly
+    the asset the sequencing section says cannot be back-filled.
+  - It buys no privacy she needs. Sex + an age band identify nobody. What
+    identifies is name, full DOB, address, employer, school, MRN, and
+    identifying free text — all already handled above, and real cases live
+    in gitignored dirs / the future `.db` (D7), never in git.
+  - A remembered transform is itself a hazard: one forgotten reversal and the
+    dataset is silently half-reversed, which is worse than either choice.
+  - **If more protection is wanted, coarsen:** age band (35–39) or keep the
+    existing `birth_year`-only field; keep sex accurate; stay strict on free
+    text; and avoid recording rare identifying combinations in prose.
 - **Reconsider only if:** never. This is a HIPAA-posture door.
 
 ## D5 — Schema cardinality: choose MANY when in doubt  · LOCKED (principle)
@@ -168,6 +186,47 @@ migration for Ting.
 - **Reconsider only if:** never build a per-specialty container. Deciding
   this now is one second; retrofitting after per-specialty rooms exist is a
   full-DB merge. Source: docs/SPECIALTY_EDUCATION_TRACK.md (owner-endorsed).
+
+## D9 — Clinical usage stats: runtime by default; a snapshot may be committed, but NEVER as a field inside a canonical knowledge record  · LOCKED (2026-07-29, Ting)
+
+- **What:** the case↔knowledge reverse index ("SP6 — used in 18 cases / 42
+  visits / most common patterns…") is computed at render time from the
+  clinical store. Persisting a snapshot **is allowed** — Ting's call: these
+  are counts and approximations, they name nobody, and she records no names.
+  The snapshot goes in its own dated derived file
+  (`data/audits/clinical_usage_snapshot.json`, alongside
+  `missing_report.json`). What is **never** allowed is writing the aggregate
+  as a field *inside* a canonical knowledge record
+  (`used_in_cases` in `data/acupoints/361.json`, `case_count` on a herb, …).
+- **Why not inside the canonical record** (this is an engineering reason, not
+  a privacy one):
+  1. **It goes stale silently.** The number is wrong the moment the next
+     visit is recorded. A card reading "18 cases" when it is 25 is exactly
+     the fake-number failure AGENTS.md calls 最重罪. A dated snapshot file
+     cannot lie the same way — it says "as of 2026-07-29".
+  2. **It dirties canonical knowledge on every clinic day.** The knowledge
+     layer's value is that its diffs mean something (D7). Aggregates
+     recomputed weekly would bury real content diffs in churn.
+- **Privacy (corrected 2026-07-29 — the original draft of this decision
+  overstated it):** the aggregates are **not** identifying, and D4 still
+  holds where it matters (at entry: no names in free text, `P-YYYY-NNN`,
+  year-only dates). The residual risk is narrow and belongs to the FUTURE
+  PUBLIC export only (NORTH_STAR H3): a small-n cell on a public page
+  ("used in 1 case" + a condition) can re-identify. **Rule:** the public
+  export suppresses cells with n < 5; the private app shows every n, and
+  always displays the n itself.
+- **Current state:** no reverse index and no snapshot file exist yet. Panel
+  spec + snapshot shape live in `docs/CLINICAL_GRAPH_TRACK.md` (CG4/CG5).
+  Same shape applies to the clinical-layer search index (CG13): built at
+  runtime, never inside a knowledge record.
+- **Also settled by the same review (not a new door, a naming clarification):**
+  the Patient → Episode → Visit shape Ting wants is ALREADY
+  `patients → cases → visits` in `schema.sql`. "Episode" = an existing `case`
+  row. Do NOT add an `episodes` table or rename `cases` — that is a D1/D5
+  full-DB migration that buys no new capability.
+- **Reconsider only if:** never write clinical aggregates into git. If runtime
+  computation ever gets slow, the cache goes in the clinical (gitignored)
+  store, never in `data/`.
 
 ---
 

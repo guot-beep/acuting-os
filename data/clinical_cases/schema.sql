@@ -302,6 +302,12 @@ CREATE TABLE IF NOT EXISTS case_documents (
   FOREIGN KEY (case_id) REFERENCES cases(id)
 );
 
+-- CG9 (docs/CLINICAL_GRAPH_TRACK.md): the six reflection prompts Ting settled on
+-- 2026-07-29. what_worked / what_to_adjust already covered "what worked" and
+-- "what would I change next time"; outcome_verdict on visits covers "what did
+-- not work". The three columns below close the rest. All optional, collapsed by
+-- default, never model-prefilled (LL1 rule) — reflection is what turns recorded
+-- data into clinical ability, so it has to be Ting's own words.
 CREATE TABLE IF NOT EXISTS case_reflections (
   id TEXT PRIMARY KEY,
   case_id TEXT NOT NULL,
@@ -310,6 +316,12 @@ CREATE TABLE IF NOT EXISTS case_reflections (
   what_to_adjust TEXT,
   questions_for_supervisor TEXT,
   learning_tags TEXT,
+  -- What changed? — the episode-level delta, distinct from per-visit outcomes.
+  what_changed TEXT,
+  -- What surprised me? — episode-level counterpart of visits.reflection_note.
+  what_surprised TEXT,
+  -- What do I need to study? — every entry becomes a review-queue item (CG10 ③).
+  what_to_study TEXT,
   FOREIGN KEY (case_id) REFERENCES cases(id)
 );
 

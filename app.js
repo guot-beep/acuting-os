@@ -3097,9 +3097,35 @@ function renderDetail(point) {
           </div>
         </section>
 
-        ${pointIdentitySection(point)}
         ${window.AcuTingReview ? window.AcuTingReview.strip("point", point.code, point.reviewStatus) : ""}
+
+        ${/* ── Card order follows the clinical action sequence, not the order
+              the data happened to be added in. It used to run 特定穴 → 考點 →
+              功效 → 主治 → 標籤 → 連結 → 基本介紹 → 取穴方法 → …, which put
+              LOCATION 8th: you scrolled past seven blocks before learning
+              where the point is. 16 sections became 7, in the order you'd
+              actually use them: find it → needle it → why it matters → what
+              it does → what to combine → what it links to → sources. */""}
+
+        ${/* 1. 定位・取穴・解剖 — first, because it is the first thing you need. */""}
+        ${studySection(contentMode === "english" ? "Location & Point Finding" : "定位・取穴・解剖", pointLocationArticle(point), "location")}
+
+        ${/* 2. 針法・艾灸・安全 — adjacent to location: locating and needling
+              are one motion. Cautions fold in here instead of sitting alone
+              near the bottom of the card where a safety note is useless. */""}
+        ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", [
+          needlingArticle(point),
+          cautionText(point) ? `${contentMode === "english" ? "CAUTIONS:" : "【注意事項】"}\n${cautionText(point)}` : ""
+        ].filter(Boolean).join("\n\n"), "needle")}
+
+        ${/* 3. 特定穴・大局觀・考試重點 — the identity and the board framing
+              belong together; they answer "why does this point matter". */""}
+        ${pointIdentitySection(point)}
         ${examPearlSection(point)}
+
+        ${/* 4. 功效與主治 — functions, indications, and the searchable tag
+              layer merged into one block. They were three separate sections
+              repeating each other's content. */""}
         ${pointFunctionsSection(point)}
         ${(() => {
           // 待補 is the right word for a point nobody has filled yet, and the
@@ -3110,16 +3136,23 @@ function renderDetail(point) {
           return body ? studySection(contentMode === "english" ? "Indications" : "主治病症", body, "target") : "";
         })()}
         ${pointTagSection(point)}
-        ${pointCompareSection(point)}
-        ${pointLinkSection(point)}
-        ${studySection(contentMode === "english" ? "Overview" : "基本介紹", pointIntro(point))}
-        ${studySection(contentMode === "english" ? "Point Location" : "取穴方法", pointLocationArticle(point), "location")}
-        ${visualLinksSection(point)}
+
+        ${/* 5. 配穴與臨床應用 */""}
         ${combinePointsSection(point)}
-        ${studySection(contentMode === "english" ? "Needling and Moxibustion" : "針刺與艾灸", needlingArticle(point), "needle")}
-        ${studySection(contentMode === "english" ? "Clinical Notes and Evidence" : "現代研究 / 臨床提醒", evidenceText(point), "research")}
+
+        ${/* 6. 連結・鑑別 — condition/pattern links and the compare-with axis,
+              both collapsed-by-default reference layers rather than study
+              content, so they sit after the material you actually memorise. */""}
+        ${pointLinkSection(point)}
+        ${pointCompareSection(point)}
+
+        ${/* 7. 來源・圖像・古籍・沿革 — provenance last. 基本介紹 (name
+              etymology, aliases) moved here too: it is background, not the
+              lead. */""}
+        ${studySection(contentMode === "english" ? "Modern Research & Clinical Notes" : "現代研究 / 臨床提醒", evidenceText(point), "research")}
         ${classicalRefsSection(point)}
-        ${studySection(contentMode === "english" ? "Cautions" : "注意事項", cautionText(point), "warning")}
+        ${studySection(contentMode === "english" ? "Name, Aliases & Background" : "穴名沿革與別名", pointIntro(point))}
+        ${visualLinksSection(point)}
         ${studySection(contentMode === "english" ? "Sources" : "參考來源", formatSources(point.sources), "sources")}
       </main>
 
@@ -4104,19 +4137,59 @@ function formatAnatomy(anatomy = [], mode = contentMode) {
   return anatomy.map((item) => `${item.zh} = ${item.en}`).join("\n");
 }
 
+/* Every source is NAMED, never a bare URL. This section used to print
+   "English source: https://www.acupoints.org/st36-acupuncture-point/" as plain
+   text — the raw address is noise, and it wasn't even clickable. Same rule the
+   herb card already follows (HERB_RECORD_STANDARD §4.5「每個來源都要有名字」):
+   the site is identified by name, the URL only lives in the href. */
+function sourceSiteName(url) {
+  const u = String(url || "");
+  if (/mastertungacupuncture\.org/i.test(u)) return "eLotus CORE";
+  if (/acupoints\.org/i.test(u)) return "AcuPoints.org";
+  if (/americandragon\.com/i.test(u)) return "American Dragon";
+  if (/cloudtcm\.com/i.test(u)) return "雲端中醫 CloudTCM";
+  if (/chinesemedicineatlas\.com/i.test(u)) return "Chinese Medicine Atlas";
+  if (/acupun\.site/i.test(u)) return "acupun.site";
+  if (/a-hospital\.com/i.test(u)) return "A+醫學百科";
+  if (/yibian/i.test(u)) return "醫砭";
+  if (/who\.int/i.test(u)) return contentMode === "english" ? "WHO Standard" : "WHO 國際標準";
+  return safeHostname(u) || (contentMode === "english" ? "Source" : "來源");
+}
+
 function formatSources(sources = []) {
   if (!sources.length) return contentMode === "english" ? "Sources pending" : "尚未標註";
-  const visibleSources = contentMode === "english"
-    ? sources.filter((source) => !source.includes("cloudtcm.com") && !source.includes("a-hospital.com"))
-    : sources;
-  const rows = visibleSources.map((source) => {
-    if (source.includes("acupoints.org")) return `English source: ${source}`;
-    if (source.includes("cloudtcm.com")) return `中文來源: ${source}`;
-    if (source.includes("who.int") || source.toLowerCase().includes("who")) return `Core standard: ${source}`;
-    return `Reference: ${source}`;
+
+  const chips = [];
+  const seen = new Set();
+  sources.forEach((raw) => {
+    const src = String(raw || "").trim();
+    if (!src) return;
+
+    // Curriculum citations are not web links — show them as the course-file
+    // badge the herb card uses (📘 課件 <file> p<N>) rather than a dead link.
+    if (src.startsWith("curriculum/")) {
+      const page = (src.match(/#p(\d+)/) || [])[1];
+      const file = src.split("/").pop().split("#")[0].replace(/\.(pdf|md|csv|xlsx)$/i, "");
+      const label = `📘 ${contentMode === "english" ? "Course" : "課件"} ${file}${page ? ` p${page}` : ""}`;
+      if (seen.has(label)) return;
+      seen.add(label);
+      chips.push(`<span class="src-chip src-chip--course">${escapeHtml(label)}</span>`);
+      return;
+    }
+
+    if (!/^https?:\/\//i.test(src)) return;   // not a usable link, don't print an address
+    const name = sourceSiteName(src);
+    if (seen.has(name)) return;               // one chip per site, not per page
+    seen.add(name);
+    chips.push(`<a class="src-chip src-chip--link" href="${escapeAttribute(src)}" target="_blank" rel="noopener noreferrer">${escapeHtml(name)} ↗</a>`);
   });
-  if (contentMode === "english") rows.push("Public source rule: verify against WHO-style standards, professional textbooks, NCCAOM/NCCIH where relevant, and peer-reviewed evidence before publishing.");
-  return rows.join("\n");
+
+  if (!chips.length) return contentMode === "english" ? "Sources pending" : "尚未標註";
+
+  const note = contentMode === "english"
+    ? "Verify against professional textbooks and WHO-style standards before clinical use."
+    : "外部來源可在新分頁開啟；臨床使用仍需對照專業教材與安全規範。";
+  return `<div class="src-chip-row">${chips.join("")}</div><p class="src-chip-note">${escapeHtml(note)}</p>`;
 }
 
 function formatStandardMeta(point) {

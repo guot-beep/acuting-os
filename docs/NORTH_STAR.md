@@ -155,3 +155,9 @@ fires. The project's edge is curated data + discipline, not tech stack.
    patient education, or integrative TCM+biomed cases, read
    docs/SPECIALTY_EDUCATION_TRACK.md — specialty is a cross-cutting `domain`
    TAG, never a per-specialty container (DECISIONS D8).
+8. For case↔knowledge bidirectional links ("used in 18 cases" panels), the
+   patient/episode/visit hub UI, outcome-metric vocabulary, reflection
+   prompts, the review queue's seven sources, or clinical-layer search, read
+   docs/CLINICAL_GRAPH_TRACK.md — owner direction 2026-07-29. It also carries
+   the reverse-index guard rail (DECISIONS D9) and the new evaluation weights
+   (data structure 20% / search 18% / case-knowledge links 18% / visual 4%).
