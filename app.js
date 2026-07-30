@@ -329,24 +329,54 @@ function standardPointVisualLinks(code) {
 }
 
 function getEarLotusSlug(record = {}) {
+  const code = String(record.code || record.id || "").toUpperCase();
+  const EXACT_MAP = {
+    'EAR-SM': 'shenmen',
+    'EAR-SYM': 'sympathetic',
+    'EAR-P0': 'listall',
+    'EAR-END': 'endocrine',
+    'AT4': 'nervous-subcortex',
+    'EAR-ADR': 'adrenal-gland',
+    'EAR-LUNG': 'lung',
+    'EAR-HEART': 'groove-coronary-heart-disease',
+    'EAR-LIVER': 'liver',
+    'EAR-KIDNEY': 'kidney',
+    'EAR-SPLEEN': 'spleen',
+    'EAR-STOMACH': 'stomach',
+    'EAR-LI': 'large-intestine',
+    'EAR-MOUTH': 'mouth',
+    'EAR-HUNGER': 'hunger-point',
+    'EAR-OCC': 'occiput',
+    'EAR-EYE': 'eye',
+    'EAR-APEX': 'ear-apex',
+    'EAR-CSP': 'cervical-vertebrae',
+    'EAR-LSP': 'lumbar',
+    'EAR-KNEE': 'knee-joint',
+    'EAR-SHOULDER': 'shoulder',
+    'EAR-UTERUS': 'uterus',
+    'EAR-DIA': 'diaphragm',
+    'EAR-BLADDER': 'bladder',
+    'EAR-TRACHEA': 'trachea',
+    'EAR-THROAT': 'larynx',
+    'EAR-EXT-NOSE': 'external-nose',
+    'EAR-HTN-GROOVE': 'decrease-blood-pressure-point'
+  };
+
+  if (EXACT_MAP[code]) return EXACT_MAP[code];
+
   const nameZh = String(record.name_zh || record.nameZh || "");
   const nameEn = String(record.name_en || record.nameEn || "").toLowerCase();
-  const code = String(record.code || record.id || "").toUpperCase();
 
+  if (nameZh.includes("神門") || nameEn.includes("shenmen")) return "shenmen";
+  if (nameZh.includes("皮質下") || nameEn.includes("subcortex")) return "nervous-subcortex";
   if (nameZh.includes("腎上腺") || nameEn.includes("adrenal")) return "adrenal-gland";
-  if (nameZh.includes("零段") || code.includes("EAR-P0") || nameEn.includes("zero")) return "point-zero";
-  if (nameZh.includes("神門") || nameEn.includes("shenmen") || nameEn.includes("shen-men")) return "shen-men";
   if (nameZh.includes("交感") || nameEn.includes("sympathetic")) return "sympathetic";
-  if (nameZh.includes("皮質下") || nameEn.includes("subcortex")) return "subcortex";
   if (nameZh.includes("內分泌") || nameEn.includes("endocrine")) return "endocrine";
-  if (nameZh.includes("心") || nameEn === "heart") return "heart";
-  if (nameZh.includes("肺") || nameEn === "lung") return "lung";
-  if (nameZh.includes("脾") || nameEn === "spleen") return "spleen";
-  if (nameZh.includes("肝") || nameEn === "liver") return "liver";
-  if (nameZh.includes("腎") || nameEn === "kidney") return "kidney";
+  if (nameZh.includes("膝") || nameEn.includes("knee")) return "knee-joint";
+  if (nameZh.includes("降壓") || nameEn.includes("pressure")) return "decrease-blood-pressure-point";
 
   const slugClean = nameEn.replace(/[^a-z0-9\-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
-  return slugClean || "overview";
+  return slugClean || "listall";
 }
 
 function auricularPointVisualLinks(record = {}) {
