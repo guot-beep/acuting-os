@@ -3049,10 +3049,87 @@ function pointSubtitle(point) {
   return contentMode === "english" ? `${point.pinyin} · ${shortMeridianEn(point)}` : `${point.pinyin} · ${point.meridian}`;
 }
 
-function cardTags(point) {
-  if (contentMode === "english") return [regionEn(point), ...(point.patternsEn || [])].filter(Boolean).slice(0, 3);
-  return (point.patterns || []).slice(0, 3);
+function getCompactIdentityTags(point) {
+  const isEn = contentMode === "english";
+  const tags = [];
+
+  const identities = isEn ? (point.point_identity_en || []) : (point.point_identity_zh || []);
+  identities.forEach((idText) => {
+    const txt = String(idText);
+    if (!isEn) {
+      if (txt.includes("井穴")) tags.push("井穴");
+      else if (txt.includes("滎穴")) tags.push("滎穴");
+      else if (txt.includes("輸穴")) tags.push("輸穴");
+      else if (txt.includes("經穴")) tags.push("經穴");
+      else if (txt.includes("合穴") && !txt.includes("下合穴")) tags.push("合穴");
+      else if (txt.includes("下合穴")) tags.push("下合穴");
+      else if (txt.includes("原穴")) tags.push("原穴");
+      else if (txt.includes("絡穴") && !txt.includes("大絡")) tags.push("絡穴");
+      else if (txt.includes("大絡")) tags.push("脾之大絡");
+      else if (txt.includes("郄穴")) tags.push("郄穴");
+      else if (txt.includes("募穴")) tags.push("募穴");
+      else if (txt.includes("背俞穴") || txt.includes("俞穴")) tags.push("背俞穴");
+      else if (txt.includes("八脈交會")) tags.push("八脈交會");
+      else if (txt.includes("四總穴")) tags.push("四總穴");
+      else if (txt.includes("水谷之海")) tags.push("水谷之海");
+      else if (txt.includes("血海")) tags.push("血海");
+      else if (txt.includes("氣海")) tags.push("氣海");
+      else if (txt.includes("交會穴")) tags.push("交會穴");
+      else if (txt.includes("十三鬼穴") || txt.includes("鬼穴")) tags.push("十三鬼穴");
+      else if (txt.includes("Window of Sky") || txt.includes("天牖")) tags.push("天牖五穴");
+    } else {
+      if (txt.includes("Jing-Well")) tags.push("Jing-Well");
+      else if (txt.includes("Ying-Spring")) tags.push("Ying-Spring");
+      else if (txt.includes("Shu-Stream")) tags.push("Shu-Stream");
+      else if (txt.includes("Jing-River")) tags.push("Jing-River");
+      else if (txt.includes("He-Sea") && !txt.includes("Lower He-Sea")) tags.push("He-Sea");
+      else if (txt.includes("Lower He-Sea")) tags.push("Lower He-Sea");
+      else if (txt.includes("Yuan-Source")) tags.push("Yuan-Source");
+      else if (txt.includes("Luo-Connecting")) tags.push("Luo-Connecting");
+      else if (txt.includes("Xi-Cleft")) tags.push("Xi-Cleft");
+      else if (txt.includes("Front-Mu")) tags.push("Front-Mu");
+      else if (txt.includes("Back-Shu")) tags.push("Back-Shu");
+      else if (txt.includes("Confluent") || txt.includes("Master point")) tags.push("Master Point");
+      else if (txt.includes("Command point")) tags.push("Command Point");
+      else if (txt.includes("Window of Sky")) tags.push("Window of Sky");
+    }
+  });
+
+  if (tags.length === 0 && point.wushu_point) {
+    tags.push(...point.wushu_point.split(",").map((s) => s.trim()));
+  }
+
+  if (tags.length === 0 && Array.isArray(point.point_categories)) {
+    point.point_categories.forEach((cat) => {
+      if (cat.includes("jing_well")) tags.push(isEn ? "Jing-Well" : "井穴");
+      else if (cat.includes("ying_spring")) tags.push(isEn ? "Ying-Spring" : "滎穴");
+      else if (cat.includes("shu_stream")) tags.push(isEn ? "Shu-Stream" : "輸穴");
+      else if (cat.includes("jing_river")) tags.push(isEn ? "Jing-River" : "經穴");
+      else if (cat.includes("he_sea")) tags.push(isEn ? "He-Sea" : "合穴");
+      else if (cat.includes("yuan")) tags.push(isEn ? "Yuan-Source" : "原穴");
+      else if (cat.includes("luo")) tags.push(isEn ? "Luo-Connecting" : "絡穴");
+      else if (cat.includes("xi")) tags.push(isEn ? "Xi-Cleft" : "郄穴");
+      else if (cat.includes("front_mu")) tags.push(isEn ? "Front-Mu" : "募穴");
+      else if (cat.includes("back_shu")) tags.push(isEn ? "Back-Shu" : "背俞穴");
+      else if (cat.includes("confluent")) tags.push(isEn ? "Master Point" : "八脈交會");
+      else if (cat.includes("lower_he")) tags.push(isEn ? "Lower He-Sea" : "下合穴");
+    });
+  }
+
+  return [...new Set(tags)];
 }
+
+function isIdentityTagText(t) {
+  return /井穴|滎穴|輸穴|經穴|合穴|原穴|絡穴|郄穴|募穴|背俞穴|八脈交會|四總穴|下合穴|水谷之海|血海|氣海|十三鬼穴|天牖五穴|交會穴|脾之大絡|Jing-Well|Ying-Spring|Shu-Stream|Jing-River|He-Sea|Lower He-Sea|Yuan-Source|Luo-Connecting|Xi-Cleft|Front-Mu|Back-Shu|Master Point|Command Point|Window of Sky/.test(t);
+}
+
+function cardTags(point) {
+  const identities = getCompactIdentityTags(point);
+  const patterns = contentMode === "english" ? (point.patternsEn || []) : (point.patterns || []);
+  const combined = [...identities.slice(0, 2), ...patterns];
+  return [...new Set(combined)].filter(Boolean).slice(0, 4);
+}
+
 
 function renderDetail(point) {
   if (!point) {
@@ -3607,7 +3684,8 @@ function pairingSection(pairings) {
 }
 
 function tag(text) {
-  return `<span class="tag">${escapeHtml(text)}</span>`;
+  const isIdentity = typeof isIdentityTagText === "function" && isIdentityTagText(text);
+  return `<span class="tag ${isIdentity ? "identity-tag" : ""}">${escapeHtml(text)}</span>`;
 }
 
 function shortMeridian(point) {

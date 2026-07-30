@@ -1670,6 +1670,13 @@ button.pairing-row:hover {
   font-weight: 700;
 }
 
+.tag.identity-tag {
+  background: #fef3c7;
+  border-color: #fde68a;
+  color: #92400e;
+  font-weight: 800;
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
