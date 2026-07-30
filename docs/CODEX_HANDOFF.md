@@ -1,24 +1,29 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 15:13] Antigravity Handoff — SLEEK SVG LINE ICONS & FULL BILINGUAL/ENGLISH MODE SUPPORT DEPLOYED! 🎉
+## [2026-07-30 15:15] Antigravity Handoff — eLOTUS-STYLE SYSTEM TOGGLE BRANCH DRAWER ARCHITECTURE IMPLEMENTED & DEPLOYED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `c11610f`)
-- **Self-Audit Verification & Design Enhancements**:
-  1. **Replaced Emoji Icons with Sleek SVG Line Icons**:
-     - Removed amateurish emojis (`🌐`, `☯️`, `⭐️`, `🪵`, `👂`, `🧠`, `🌀`) per user directive ("那個圖示很醜 可以自己設計好一點的線條嗎 我不喜歡這種icon").
-     - Designed 7 crisp SVG line vector icons (`.sys-svg`) for `All Systems`, `14 Channels`, `Extra Points`, `Master Tung`, `Auricular Points`, `Scalp Acu`, and `Special Systems`.
-     - Smooth hover and active color transitions matching the clinic theme palette (`#2e6044` to `#ffffff`).
-  2. **Full Bilingual & English Mode Support Across Search & System Tabs**:
-     - Connected `data-mode-text` (`data-bilingual` and `data-english`) across all 7 system tabs.
-     - Dynamically updates tab labels and search placeholders when toggling between "中英版 (Bilingual)" and "Public EN (English)".
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `8e39c6d`)
+- **Self-Audit Verification & System Branch Redesign**:
+  1. **eLotus-Style System Toggle Branch Drawer (`#systemToggleDrawer`)**:
+     - Completely implemented dedicated System Toggle Branch Panels matching eLotus CORE model per user directive ("參考eLotus 每個體系應該有自己的toggle分支").
+     - Clicking any System Tab button (or clicking again to toggle off) expands/collapses a dedicated, structured **System Branch Grid Panel (`.system-toggle-drawer`)** with 中英雙語對照:
+       - **☯️ 十四正經 (14 Channels Branch)**: 14 經絡分支 (`LU`, `LI`, `ST`, `SP`, `HT`, `SI`, `BL`, `KI`, `PC`, `TE`, `GB`, `LR`, `CV`, `GV`) + `📊 經脈與特定穴圖表 ↗` 捷徑。
+       - **🪵 董氏奇穴 (Master Tung Branch)**: 12 解剖部位分支 (`11手指`, `22手掌`, `33前臂`, `44上臂`, `55腳趾`, `66腳背`, `77小腿`, `88大腿`, `99耳朵`, `1010頭面`, `DT`, `VT`)。
+       - **👂 耳穴體系 (Auricular LCH Branch)**: 14 耳郭解剖分區分支 (`TF三角窩`, `AH對耳輪`, `SAC`, `IAC`, `AT對耳屏`, `TR耳屏`, `CVC耳甲腔`, `CYC耳甲艇`, `EL耳垂`, `SC耳舟`, `HX`, `HCS`, `IN`, `POS`)。
+       - **🧠 頭皮針 (Scalp Acupuncture Branch)**: 18 分區與焦氏頭針功能區分支 (`額區 MS1-MS4`, `頂區 MS5-MS9`, `枕區 MS10-MS12`, `顳區 MS13-MS14`, `焦氏頭針功能區`)。
+       - **⭐️ 經外奇穴 (Extra Points Branch)**: 5 大解剖部位 (`EX-HN 頭頸`, `EX-CA 胸腹`, `EX-B 背部`, `EX-UE 上肢`, `EX-LE 下肢`)。
+       - **🌀 特色/微針 (Special Microsystems Branch)**: `腹針`, `腕踝針`, `靳三針`, `平衡針`。
+  2. **Seamless Sub-Branch Filtering & Full Internationalization**:
+     - Clicking any sub-branch chip instantly locks and filters points in real-time.
+     - Automatically adapts text in "中英版 (Bilingual)" and "Public EN (English)" modes.
 - **Validation Audit**:
   - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
   - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `index.html` — Updated `systemTabsBar` buttons with SVG line icons and bilingual attributes.
-  - `styles.css` — Styled `.sys-svg` vector line icons with stroke and active state transitions.
-  - `app.js` — Updated `updateContentModeUI()` for `searchInput` placeholder internationalization.
+  - `index.html` — Added `#systemToggleDrawer` container under system tabs.
+  - `styles.css` — Styled `.system-toggle-drawer`, `.drawer-header`, `.drawer-grid`, `.drawer-branch-chip`.
+  - `app.js` — Added `renderSystemToggleDrawer()`, `pointMatchesSystemBranch()`, and tab toggle logic.
   - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
