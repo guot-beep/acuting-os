@@ -1,30 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 15:10] Antigravity Handoff — SEARCH & SYSTEM TOOLBAR ULTRA-COMPACT REDESIGN APPLIED & DEPLOYED! 🎉
+## [2026-07-30 15:13] Antigravity Handoff — SLEEK SVG LINE ICONS & FULL BILINGUAL/ENGLISH MODE SUPPORT DEPLOYED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `6dcc0bd`)
-- **Self-Audit Verification & UX Enhancements**:
-  1. **Removed Primary Left Nav Clutter**:
-     - Removed `ws/channels` link from primary left menu per user directive ("不要在主要選單 可以在第二層 也可以在針灸分頁有link 去這個分頁").
-     - Keeps the primary left sidebar clean and uncluttered.
-  2. **Ultra-Compact Horizontal Toolbar (簡潔橫向單行工具列)**:
-     - Replaced 3 large vertical stacked dropdown blocks with a single **horizontal inline flex toolbar** (`.system-toolbar`).
-     - Reduced vertical filter height by **65%**, allowing acupoint cards to show immediately without excessive scrolling!
-  3. **Context-Aware Dynamic Dropdown Sub-Filters (智慧適應選單)**:
-     - Switching to **耳穴體系 Auricular**: `meridianFilter` dynamically converts to **Ear Anatomy 14 Zones** (`TF: 三角窩`, `AH: 對耳輪`, `CVC: 耳甲腔`, `CYC: 耳甲艇`, `EL: 耳垂`, `HX: 耳輪`, `AT: 對耳屏`, `TR: 耳屏`, `IN`, `POS`, `SC`, `SAC`, `IAC`, `HCS`).
-     - Switching to **董氏奇穴 Master Tung**: `meridianFilter` dynamically converts to **Tung 12 Zones** (`11手指`, `22手掌`, `33前臂`, `44上臂`, `55腳趾`, `66腳背`, `77小腿`, `88大腿`, `99耳朵`, `1010頭面`, `DT`, `VT`).
-     - Switching to **頭皮針 Scalp**: `meridianFilter` converts to **WHO MS1–MS14 + Jiao Lines**.
-     - Switching to **十四正經 14 Channels**: Shows **Channel ▾**, **Region ▾**, **Pattern ▾**, plus direct link button **`📊 經脈與特定穴圖表 ↗`** pointing to `#ws/channels`!
-  4. **Hidden Empty Filter Summary Box**:
-     - Automatically hides empty filter summary box when no active filter is applied, eliminating dead vertical space.
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `c11610f`)
+- **Self-Audit Verification & Design Enhancements**:
+  1. **Replaced Emoji Icons with Sleek SVG Line Icons**:
+     - Removed amateurish emojis (`🌐`, `☯️`, `⭐️`, `🪵`, `👂`, `🧠`, `🌀`) per user directive ("那個圖示很醜 可以自己設計好一點的線條嗎 我不喜歡這種icon").
+     - Designed 7 crisp SVG line vector icons (`.sys-svg`) for `All Systems`, `14 Channels`, `Extra Points`, `Master Tung`, `Auricular Points`, `Scalp Acu`, and `Special Systems`.
+     - Smooth hover and active color transitions matching the clinic theme palette (`#2e6044` to `#ffffff`).
+  2. **Full Bilingual & English Mode Support Across Search & System Tabs**:
+     - Connected `data-mode-text` (`data-bilingual` and `data-english`) across all 7 system tabs.
+     - Dynamically updates tab labels and search placeholders when toggling between "中英版 (Bilingual)" and "Public EN (English)".
 - **Validation Audit**:
   - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
   - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `index.html` — Updated search-panel to `.system-toolbar`, removed left sidebar `ws/channels` link.
-  - `styles.css` — Compact horizontal styling for `.system-toolbar`, `.filters-compact`, and `.chart-shortcut-btn`.
-  - `app.js` — Updated `hydrateFilters` with context-aware dynamic lists and hid empty `activeFilterSummaryEl`.
+  - `index.html` — Updated `systemTabsBar` buttons with SVG line icons and bilingual attributes.
+  - `styles.css` — Styled `.sys-svg` vector line icons with stroke and active state transitions.
+  - `app.js` — Updated `updateContentModeUI()` for `searchInput` placeholder internationalization.
   - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
