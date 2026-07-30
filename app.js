@@ -3795,39 +3795,47 @@ function heroSubtitle(point) {
 function externalPointLinks(point) {
   const sources = point.sources || [];
   const visualLinks = normalizeVisualLinks(point.visualLinks || []);
+  const code = String(point.code || "").trim();
+  const nameEnSlug = (point.nameEn || point.pinyin || code).toLowerCase().replace(/\s+/g, "-");
+  const codeLower = code.toLowerCase();
+
   if (isAuricularPoint(point)) {
     const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
-    return contentMode === "english"
-      ? [{ label: "Visual source", url: primary, kind: "english" }]
-      : [{ label: "耳穴圖源", url: primary, kind: "english" }];
-  }
-  if (String(point.meridian || "").includes("Master Tung")) {
-    const primary = visualLinks[0]?.url || sources[0] || "https://www.mastertungacupuncture.org/";
-    return contentMode === "english"
-      ? [{ label: "eLotus source", url: primary, kind: "english" }]
-      : [{ label: "董氏圖源", url: primary, kind: "english" }];
-  }
-  if (isExtraPoint(point)) {
-    const primary = visualLinks[0]?.url || sources[0] || `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${(point.nameEn || point.code).toLowerCase().replace(/\s+/g, "-")}-${point.code.toLowerCase()}`;
-    return contentMode === "english"
-      ? [{ label: "eLotus CORE source", url: primary, kind: "english" }]
-      : [{ label: "eLotus 經外奇穴圖源", url: primary, kind: "english" }];
-  }
-  const english = sources.find((source) => source.includes("acupoints.org")) || `https://www.acupoints.org/${String(point.code).toLowerCase()}-acupuncture-point/`;
-  // Only trust a stored CloudTCM URL if it uses the real numeric-id page
-  // (cloudtcm.com/acupoint/123). Slug-style ones like /acupoint/bl61 are
-  // fabricated and 404, so fall back to a reliable name search.
-  const storedChinese = sources.find((source) => /cloudtcm\.com\/acupoint\/\d+/.test(source));
-  const chinese = storedChinese || chinesePointReference(point);
-  if (contentMode === "english") {
     return [
-      { label: "English source", url: english, kind: "english" },
-      { label: "Source policy", url: "#sourceSection", kind: "chinese" }
+      { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
+      { label: contentMode === "english" ? "Visual Diagram" : "耳穴圖源", url: primary, kind: "english" }
     ];
   }
+
+  // 1. CloudTCM (中文)
+  const storedChinese = sources.find((source) => /cloudtcm\.com\/acupoint\/\d+/.test(source));
+  const chinese = storedChinese || chinesePointReference(point);
+
+  // 2. American Dragon (AD)
+  const adUrl = /^([A-Z]{1,2}\d{1,2})$/i.test(code)
+    ? `https://www.americandragon.com/AcupunctionPoints/${code.toUpperCase()}.html`
+    : `https://www.americandragon.com/`;
+
+  // 3. eLotus / Master Tung Acupuncture
+  const eLotusUrl = `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${nameEnSlug}-${codeLower}`;
+
+  // 4. AcuPoints.org
+  const english = sources.find((source) => source.includes("acupoints.org")) || `https://www.acupoints.org/${codeLower}-acupuncture-point/`;
+
+  if (contentMode === "english") {
+    return [
+      { label: "CloudTCM", url: chinese, kind: "chinese" },
+      { label: "American Dragon", url: adUrl, kind: "english" },
+      { label: "eLotus CORE", url: eLotusUrl, kind: "english" },
+      { label: "AcuPoints.org", url: english, kind: "english" }
+    ];
+  }
+
   return [
-    { label: "英文來源", url: english, kind: "english" },
-    { label: "中文來源", url: chinese, kind: "chinese" }
+    { label: "雲端中醫", url: chinese, kind: "chinese" },
+    { label: "American Dragon", url: adUrl, kind: "english" },
+    { label: "eLotus 權威圖解", url: eLotusUrl, kind: "english" },
+    { label: "AcuPoints.org", url: english, kind: "english" }
   ];
 }
 
