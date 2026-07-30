@@ -3118,7 +3118,13 @@ function renderDetail(point) {
           cautionText(point) ? `${contentMode === "english" ? "CAUTIONS:" : "【注意事項】"}\n${cautionText(point)}` : ""
         ].filter(Boolean).join("\n\n"), "needle")}
 
-        ${/* 3. 特定穴・大局觀・考試重點 — the identity and the board framing
+        ${/* 3. 我的臨床筆記 — placed right after location/needling/safety
+              because that is the context she is in when something is worth
+              writing down. Collapsed when empty (see js/notes.js), so it costs
+              one line on a card that is already dense. */""}
+        ${window.AcuTingNotes ? window.AcuTingNotes.panel("point", point.code, `${point.code} ${point.nameZh || point.nameEn || ""}`.trim()) : ""}
+
+        ${/* 4. 特定穴・大局觀・考試重點 — the identity and the board framing
               belong together; they answer "why does this point matter". */""}
         ${pointIdentitySection(point)}
         ${examPearlSection(point)}
@@ -3192,7 +3198,17 @@ function renderDetail(point) {
   });
 }
 
-const FIVE_SHU_ELEMENT_ZH = { wood: "木", fire: "火", earth: "土", metal: "金", water: "水" };
+/* A hoisted function, not a `const` table. As a const it sat at this line
+   (~3195) while renderPointCategoryBadges reads it at ~3468 — fine on a normal
+   click, but opening a five-shu point's URL DIRECTLY (#point/ST36, i.e. the
+   "複製分頁連結" path) renders the card during init before this line has run,
+   hit the temporal dead zone, and aborted the whole top-level script: the const
+   then stayed uninitialised, so every later click failed too and the page was
+   dead until reload-without-hash. Function declarations hoist, so load order
+   can no longer break it. */
+function fiveShuElementZh(element) {
+  return ({ wood: "木", fire: "火", earth: "土", metal: "金", water: "水" })[element] || element || "";
+}
 
 // PC5: 特定穴 badges on the point detail page (point → categories). Each badge
 // links to the directory filtered by that category (the bidirectional loop).
@@ -3465,7 +3481,7 @@ function renderPointCategoryBadges(point) {
     const label = c ? (contentMode === "english" ? c.label_en : c.label_zh) : id;
     let extra = "";
     if (id.startsWith("five_shu.") && point.fiveShuElement) {
-      extra = ` · ${FIVE_SHU_ELEMENT_ZH[point.fiveShuElement] || point.fiveShuElement}`;
+      extra = ` · ${fiveShuElementZh(point.fiveShuElement)}`;
     }
     return `<button type="button" class="point-cat-badge" data-category-jump="${escapeAttribute(id)}">${escapeHtml(label)}${escapeHtml(extra)}</button>`;
   }).join("");

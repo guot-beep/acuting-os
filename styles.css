@@ -5630,6 +5630,81 @@ html { scroll-padding-top: 92px; }
 .point-links__more > summary:hover { opacity: 1; }
 .point-links__more[open] > summary { margin-bottom: 0.35rem; }
 
+/* 我的臨床筆記 (js/notes.js). Visually distinct from every sourced block on
+   purpose: this is the one place on the card where the content is hers and has
+   no citation, and it must never be mistakable for sourced material. */
+.clinical-note {
+  margin: 0.9rem 0;
+  border: 1px solid #d8cfa8;
+  border-left: 4px solid #b8963f;
+  border-radius: 8px;
+  background: #fdfaf1;
+}
+.clinical-note__summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  font-family: "Noto Serif TC", serif;
+}
+.clinical-note__summary::-webkit-details-marker { display: none; }
+.clinical-note__summary:hover { background: #f9f3e2; }
+.clinical-note__title { font-weight: 600; color: #5c4a1a; font-size: 0.97rem; }
+.clinical-note__badge {
+  font-size: 0.76rem;
+  color: #7a6528;
+  background: #f2e8cd;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+}
+.clinical-note__badge.is-empty { color: #9a8c6a; background: #f4f1e6; font-style: italic; }
+.clinical-note__body { padding: 0 0.85rem 0.85rem; }
+.clinical-note__hint { font-size: 0.8rem; color: #8a7844; margin: 0 0 0.5rem; line-height: 1.5; }
+.clinical-note__input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #d8cfa8;
+  border-radius: 6px;
+  background: #fffdf7;
+  color: #33301f;
+  resize: vertical;
+}
+.clinical-note__input:focus { outline: 2px solid #b8963f; outline-offset: 1px; border-color: #b8963f; }
+.clinical-note__actions { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.55rem; flex-wrap: wrap; }
+.clinical-note__save {
+  font: inherit;
+  font-size: 0.87rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #a5842f;
+  background: #b8963f;
+  color: #fff;
+  cursor: pointer;
+}
+.clinical-note__save:hover { background: #a5842f; }
+.clinical-note__delete {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #d9c7c7;
+  background: transparent;
+  color: #9a5a5a;
+  cursor: pointer;
+  margin-left: auto;
+}
+.clinical-note__delete:hover { background: #fbeeee; }
+.clinical-note__status { font-size: 0.82rem; color: #4a7a4a; }
+.clinical-note__meta { font-size: 0.76rem; color: #9a8c6a; margin: 0.45rem 0 0; }
+
 /* Named source chips. The sources block used to print raw URLs as plain text
    ("English source: https://www.acupoints.org/st36-..."), which is both ugly
    and not clickable. Named chips only — the address lives in the href. */
