@@ -1,25 +1,25 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 15:00] Antigravity Handoff — AURICULAR POINTS 100% 200 OK LINKS & CLINICAL CONTENT REFINED! 🎉
+## [2026-07-30 15:04] Antigravity Handoff — SYSTEM-FIRST ARCHITECTURE REDESIGN (eLotus MODEL) APPLIED & DEPLOYED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
-- **Branch**: `main` (merged & pushed to `origin/main` at commit `f7b5699`)
-- **Self-Audit Verification & Complete Database Coverage**:
-  1. **Auricular Links 100% 200 OK Fix**:
-     - Audited all 29 Auricular points in `data/auricular/embedded/auricular_points.json`.
-     - Fixed eLotus LCH slugs (`shenmen`, `nervous-subcortex`, `spleen`, `cervical-vertebrae`, `knee-joint`, `decrease-blood-pressure-point`), replacing all 404 links with 100% 200 OK URLs.
-     - Updated `getEarLotusSlug(record)` in `app.js` with exact code-to-slug mapping so runtime fallbacks never 404.
-  2. **Enriched Auricular Clinical Content**:
-     - Added explicit needle depth, ear-seed pressure instructions (`acumethod_zh`/`acumethod_en`), board exam pearls (`exam_pearl`/`exam_pearl_en`), cautions (`cautions_zh`/`cautions_en`), and 3D GB93 national standard reference links across all 29 ear points.
-  3. **Scalp Acupuncture Dataset (`data/scalp/scalp_points_full.json`)**:
-     - 18 Scalp acupuncture lines (WHO MS1–MS14 + Jiao Shunfa lines) fully integrated.
+- **Branch**: `main` (merged & pushed to `origin/main` at commit `ffb3b0e`)
+- **Self-Audit Verification & Architecture Upgrades**:
+  1. **Removed `[新增穴位]` Button**:
+     - Removed green `addBtn` from search-panel per Ting's instruction ("上面是搜尋 不用新增").
+  2. **eLotus-Inspired System Tabs Architecture (第一層大體系頂部分類切換列)**:
+     - Added System Selector Tabs: `🌐 全庫體系`, `☯️ 十四正經`, `⭐️ 經外奇穴`, `🪵 董氏奇穴`, `👂 耳穴體系`, `🧠 頭皮針`, `🌀 特色/微針` (abdominal, wrist-ankle, Jin's 3 needles, balance method).
+     - Connected `pointMatchesSystem` filter in `app.js` and styled responsive pill tabs in `styles.css`.
+  3. **Multi-System Dynamic Filtering**:
+     - Keeps search input full-width and clean.
+     - Allows instant system-first filtering without cluttering secondary dropdowns.
 - **Validation Audit**:
   - `node scripts/validate-acupoint-standard.js --worklist --all`: **PASS (361/361 Template-Grade, 0 WORKLIST DEFECTS)** ✅
   - `node scripts/validate-interactions.js`: **PASS (0 FAILURES)** ✅
 - **Files Changed**:
-  - `app.js` — Updated `getEarLotusSlug` exact slug mapping.
-  - `data/auricular/embedded/auricular_points.json` — 100% 200 OK eLotus & GB93 links + enriched clinical fields across all 29 ear points.
-  - `scripts/fix-all-auricular-points-content-and-links.js` — Automated audit script.
+  - `index.html` — Updated search panel layout, removed `addBtn`, and added `systemTabsBar`.
+  - `styles.css` — Styled `.search-row-clean`, `.system-tabs-bar`, and `.system-tab-btn`.
+  - `app.js` — Implemented `selectedSystem` & `pointMatchesSystem(point, sys)`.
   - `data/generated/` — Refreshed compiled runtime bundles (`app_data.js`, `points_361.js`, `knowledge_data.js`).
 
 ---
