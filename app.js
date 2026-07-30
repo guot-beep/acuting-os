@@ -150,14 +150,25 @@ function adapt361Record(record) {
     // §6.5 linking layer. Without these three the work in
     // link-point-conditions.js and build-compare-with.js is invisible.
     relatedConditions: record.related_conditions || [],
+    // Curated lead conditions. related_conditions is auto-derived and unranked
+    // (ST36 lands 112 of 150 because it appears in that many protocols), so it
+    // can't answer "what is this point actually FOR". These are authored.
+    keyConditionsZh: record.key_conditions_zh || [],
+    keyConditionsEn: record.key_conditions_en || [],
     tcmPatternIds: record.tcm_pattern_ids || [],
     compareWith: record.compare_with || [],
     acumethodZh: record.acumethod_zh || "",
+    acumethodEn: record.acumethod_en || "",
     moxaZh: record.moxa_zh || "",
+    moxaEn: record.moxa_en || "",
     modernResearchZh: record.modern_research_zh || record.cloudtcm_detail || "",
+    modernResearchEn: record.modern_research_en || "",
     combinePointsZh: record.combine_points_zh || "",
+    combinePointsEn: record.combine_points_en || "",
     anatomyZh: record.anatomy_zh || "",
+    anatomyEn: record.anatomy_en || "",
     massageZh: record.massage_zh || "",
+    massageEn: record.massage_en || "",
     classicalRefs: record.classical_refs || [],
     acuTags: record.acu_tags || [],
     nameIntroZh: record.name_intro_zh || "",
@@ -3233,11 +3244,25 @@ function pointFunctionsSection(point) {
   const enList = point.functionsEnList && point.functionsEnList.length ? point.functionsEnList : en;
   if (!zhList.length && !enList.length) return "";
   const aligned = zhList.length === enList.length && zhList.length > 0;
+
+  // English mode used to still print both languages here — the section title
+  // was the only thing that translated. indicationArticle (the sibling
+  // section right below this one) already shows English-only in this mode;
+  // this now matches that behaviour instead of contradicting it.
+  if (contentMode === "english") {
+    const list = enList.length ? enList : zhList;
+    const rows = list.map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
+    return `<section class="study-section point-functions">
+      <h3>Functions & Actions</h3>
+      <ol class="point-functions__list">${rows}</ol>
+    </section>`;
+  }
+
   const rows = aligned
     ? zhList.map((z, i) => pairedRow(z, enList[i])).join("")
     : [...zhList, ...enList].map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
   return `<section class="study-section point-functions">
-    <h3>${contentMode === "english" ? "Functions & Actions" : "功效"}</h3>
+    <h3>功效</h3>
     <ol class="point-functions__list${aligned ? " is-paired" : ""}">${rows}</ol>
   </section>`;
 }
@@ -3298,12 +3323,12 @@ function pointLinkSection(point) {
   const patById = new Map((K.tcmPatternCanon?.records || []).map((p) => [p.id, p]));
   const CAP = 12;
 
-  const block = (label, items, render) => {
+  const block = (label, items, render, showLabel = true) => {
     if (!items.length) return "";
     const head = items.slice(0, CAP).map(render).join("");
     const rest = items.slice(CAP).map(render).join("");
     return `<div class="point-links__group">
-      <span class="point-links__label">${escapeHtml(label)} <b>${items.length}</b></span>
+      ${showLabel ? `<span class="point-links__label">${escapeHtml(label)} <b>${items.length}</b></span>` : ""}
       <div class="point-links__chips">${head}</div>
       ${rest ? `<details class="point-links__more"><summary>${contentMode === "english" ? `show all ${items.length}` : `其餘 ${items.length - CAP} 個`}</summary><div class="point-links__chips">${rest}</div></details>` : ""}
     </div>`;
@@ -3312,16 +3337,86 @@ function pointLinkSection(point) {
   const conds = (point.relatedConditions || []).map((id) => condById.get(id)).filter(Boolean);
   const pats = (point.tcmPatternIds || []).map((id) => patById.get(id)).filter(Boolean);
 
+  const condChip = (c) =>
+    `<button type="button" class="point-link point-link--cond" data-kind="condition" data-id="${escapeAttribute(c.id)}">${escapeHtml(c.name_zh || c.name_en || c.id)}</button>`;
+
+  // A point like LI4 carries 100+ related conditions; a flat chip wall past a
+  // dozen is unreadable and doesn't say anything about WHY those conditions
+  // are grouped. category lives only on the condition record (single source
+  // of truth) — this groups by it at render time, so recategorizing a
+  // condition regroups every point that links to it without touching the
+  // point's own data.
+  const categoryVocab = K.conditionCategoryVocabulary?.categories || [];
+  const categoryLabel = new Map(categoryVocab.map((c) => [c.id, c]));
+  const condsByCategory = new Map();
+  conds.forEach((c) => {
+    const key = c.category || "uncategorized";
+    if (!condsByCategory.has(key)) condsByCategory.set(key, []);
+    condsByCategory.get(key).push(c);
+  });
+  const orderedCategoryIds = [...categoryVocab.map((c) => c.id), "uncategorized"]
+    .filter((id) => condsByCategory.has(id));
+  // Each category is its own collapsed <details> drawer rather than an
+  // always-expanded block — a point like LI4/ST36 has 100+ conditions across
+  // 12 categories, and expanding all of them by default made this the
+  // longest section on the page before you'd read a single condition name.
+  const condGroupsHtml = orderedCategoryIds.map((catId) => {
+    const label = categoryLabel.get(catId);
+    const title = label
+      ? (contentMode === "english" ? label.name_en : label.name_zh)
+      : (contentMode === "english" ? "Uncategorized" : "未分類");
+    const items = condsByCategory.get(catId);
+    const inner = block(title, items, condChip, false);
+    if (!inner) return "";
+    return `<details class="point-links__category-drawer">
+      <summary>${escapeHtml(title)} <b>${items.length}</b></summary>
+      <div class="point-links__category-body">${inner}</div>
+    </details>`;
+  }).join("");
+  // The whole auto-derived list goes inside ONE collapsed drawer, clearly
+  // labeled as auto-derived and unranked, so it stops competing with the
+  // curated key-conditions block above it for attention.
+  const condsSection = condGroupsHtml
+    ? `<details class="point-links__auto-wrap">
+        <summary>${contentMode === "english"
+          ? `All linked conditions <b>${conds.length}</b> — auto-derived from condition protocols, not ranked by importance`
+          : `全部關聯病症 <b>${conds.length}</b> —— 由病症處方自動連結，未分主次`}</summary>
+        <div class="point-links__category-wrap">${condGroupsHtml}</div>
+      </details>`
+    : "";
+
+  // Curated lead conditions: what this point is actually FOR, in board terms.
+  // This answers the question the 112-item auto list cannot.
+  const keyZh = (point.keyConditionsZh || []).filter(Boolean);
+  const keyEn = (point.keyConditionsEn || []).filter(Boolean);
+  const keyAligned = keyZh.length && keyZh.length === keyEn.length;
+  let keySection = "";
+  if (keyZh.length || keyEn.length) {
+    const label = contentMode === "english" ? "Primary clinical uses" : "主要臨床應用（考試導向）";
+    let rows;
+    if (contentMode === "english") {
+      rows = (keyEn.length ? keyEn : keyZh).map((t) => `<li>${escapeHtml(t)}</li>`).join("");
+    } else if (keyAligned) {
+      rows = keyZh.map((z, i) => `<li><span class="pkc-zh">${escapeHtml(z)}</span><span class="pkc-en">${escapeHtml(keyEn[i])}</span></li>`).join("");
+    } else {
+      rows = [...keyZh, ...(keyZh.length ? [] : keyEn)].map((t) => `<li>${escapeHtml(t)}</li>`).join("");
+    }
+    keySection = `<div class="point-links__key">
+      <span class="point-links__label">${escapeHtml(label)} <b>${keyZh.length || keyEn.length}</b></span>
+      <ol class="point-links__key-list${keyAligned && contentMode !== "english" ? " is-paired" : ""}">${rows}</ol>
+    </div>`;
+  }
+
   const html = [
-    block(contentMode === "english" ? "Western conditions" : "相關西醫病名", conds, (c) =>
-      `<button type="button" class="point-link point-link--cond" data-kind="condition" data-id="${escapeAttribute(c.id)}">${escapeHtml(c.name_zh || c.name_en || c.id)}</button>`),
+    keySection,
     // Patterns have no page of their own yet, so the chip runs the site search
     // instead of pretending to navigate somewhere.
     // 方證 (桂枝湯證) and 證候 (肝氣鬱結) are different kinds of diagnosis; the
     // canon marks which, so the chip says so rather than presenting them as
     // one flat vocabulary.
     block(contentMode === "english" ? "TCM patterns" : "相關中醫證候", pats, (p) =>
-      `<button type="button" class="point-link point-link--pat${p.kind === "方證" ? " is-formula-pattern" : ""}" data-search-term="${escapeAttribute(p.name_zh)}">${escapeHtml(p.name_zh)}${p.formula_zh ? `<span class="pl-formula">${escapeHtml(p.formula_zh)}</span>` : ""}</button>`)
+      `<button type="button" class="point-link point-link--pat${p.kind === "方證" ? " is-formula-pattern" : ""}" data-search-term="${escapeAttribute(p.name_zh)}">${escapeHtml(p.name_zh)}${p.formula_zh ? `<span class="pl-formula">${escapeHtml(p.formula_zh)}</span>` : ""}</button>`),
+    condsSection
   ].join("");
   if (!html) return "";
   return `<section class="study-section point-links">
@@ -3466,13 +3561,28 @@ function shortMeridianEn(point) {
 }
 
 function regionEn(point) {
-  const text = `${point.region || ""} ${point.locationEn || ""} ${point.location || ""}`;
-  if (/head|face|scalp|eye|nose|頭|面|鼻|眼|眉|項|頸/i.test(text)) return "Head and face";
-  if (/chest|abdomen|thorax|腹|胸/i.test(text)) return "Chest and abdomen";
-  if (/back|lumbar|sacral|背|腰|骶/i.test(text)) return "Back";
-  if (/hand|wrist|elbow|forearm|arm|shoulder|手|腕|肘|臂|肩/i.test(text)) return "Upper limb";
-  if (/leg|knee|ankle|foot|lower limb|腿|膝|踝|足|下肢/i.test(text)) return "Lower limb";
-  if (/ear|auricular|耳/i.test(text)) return "Auricular";
+  // point.region ("小腿") is a clean curated value; check it first. Scanning
+  // raw location TEXT for Chinese keywords is unsafe on its own — ST36's
+  // location sentence names "犢鼻" (Dubi, a knee-area landmark) as its
+  // reference point, and 犢鼻 contains 鼻 ("nose"), which matched the
+  // head/face pattern and mislabeled every leg point that uses it as a
+  // landmark as "Head and face". Location text is now only a fallback, and
+  // only via English keywords once region itself is empty.
+  const region = String(point.region || "");
+  if (/頭|面|鼻|眼|眉|項|頸|head|face|scalp|eye|nose/i.test(region)) return "Head and face";
+  if (/胸|腹|chest|abdomen|thorax/i.test(region)) return "Chest and abdomen";
+  if (/背|腰|骶|back|lumbar|sacral/i.test(region)) return "Back";
+  if (/手|腕|肘|臂|肩|hand|wrist|elbow|forearm|arm|shoulder/i.test(region)) return "Upper limb";
+  if (/腿|膝|踝|足|下肢|leg|knee|ankle|foot|lower limb/i.test(region)) return "Lower limb";
+  if (/耳|ear|auricular/i.test(region)) return "Auricular";
+  if (region) return "Body region";
+  const text = `${point.locationEn || ""}`;
+  if (/head|face|scalp|eye|nose/i.test(text)) return "Head and face";
+  if (/chest|abdomen|thorax/i.test(text)) return "Chest and abdomen";
+  if (/back|lumbar|sacral/i.test(text)) return "Back";
+  if (/hand|wrist|elbow|forearm|arm|shoulder/i.test(text)) return "Upper limb";
+  if (/leg|knee|ankle|foot|lower limb/i.test(text)) return "Lower limb";
+  if (/ear|auricular/i.test(text)) return "Auricular";
   return "Body region";
 }
 
@@ -3537,14 +3647,22 @@ function primaryFunctionEn(point) {
 }
 
 function shortTechnique(point) {
-  if (point.acumethodZh) {
-    const first = point.acumethodZh.split('\n')[0].trim();
-    if (first) return first;
-  }
-  if (point.acumethodEn) {
-    const first = point.acumethodEn.split('\n')[0].trim();
-    if (first) return first;
-  }
+  // English mode used to still show this tile in Chinese (acumethodZh was
+  // checked unconditionally first) even when an English needling method was
+  // on record. Check the mode-matching field first, the other language only
+  // as a fallback when the preferred one is missing.
+  const zhFirst = () => {
+    if (point.acumethodZh) { const f = point.acumethodZh.split('\n')[0].trim(); if (f) return f; }
+    if (point.acumethodEn) { const f = point.acumethodEn.split('\n')[0].trim(); if (f) return f; }
+    return "";
+  };
+  const enFirst = () => {
+    if (point.acumethodEn) { const f = point.acumethodEn.split('\n')[0].trim(); if (f) return f; }
+    if (point.acumethodZh) { const f = point.acumethodZh.split('\n')[0].trim(); if (f) return f; }
+    return "";
+  };
+  const preferred = contentMode === "english" ? enFirst() : zhFirst();
+  if (preferred) return preferred;
   if (point.needling && typeof point.needling === "string") {
     const first = point.needling.split(/[\n。]/)[0].trim();
     if (first) return first;
@@ -3773,6 +3891,17 @@ function combinePointsSection(point) {
   const isTung = String(point.meridian || "").includes("Master Tung") || String(point.code).startsWith("T");
   const title = contentMode === "english" ? "Point Pairings & Clinical Combinations" : "🎯 常用配穴與臨床應用";
 
+  // English mode used to still parse combinePointsZh here (only the section
+  // TITLE was translated) — a card in "Public EN" mode showed Chinese combo
+  // text with an English heading. When an English version exists, render it
+  // directly instead of running it through the 中文 card parser below, which
+  // expects 一、二、三 / colon patterns that don't apply to English prose.
+  if (contentMode === "english" && point.combinePointsEn) {
+    const paragraphs = String(point.combinePointsEn).split(/\n{2,}/).filter(Boolean)
+      .map((p) => `<p>${escapeHtml(p).replace(/\n/g, "<br>")}</p>`).join("");
+    return studySection(title, paragraphs, "link");
+  }
+
   // 1. Structured cards present on record (e.g. Master Tung points)
   let cards = point.combinationsStructured || [];
 
@@ -3816,6 +3945,7 @@ function needlingArticle(point) {
   if (contentMode === "english") {
     if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
     else if (point.acumethodZh) parts.push(`TECHNIQUES:\n${point.acumethodZh}`);
+    if (point.moxaEn) parts.push(`MOXIBUSTION & HEAT THERAPY:\n${point.moxaEn}`);
     if (point.cautionsEn && point.cautionsEn.length) parts.push(`CONTRAINDICATIONS:\n${point.cautionsEn.join("\n")}`);
     else if (point.cautions) parts.push(`CONTRAINDICATIONS / SAFETY:\n${point.cautions}`);
   } else {
@@ -3831,10 +3961,14 @@ function needlingArticle(point) {
 }
 
 function evidenceText(point) {
+  // Anatomy has its own display in pointLocationArticle (right after
+  // Location, where Ting asked for it) — it used to also print here under
+  // 現代研究/臨床提醒, so every point showed its anatomy twice. This section is
+  // modern research / clinical notes only now.
   const parts = [];
   if (contentMode === "english") {
-    if (point.anatomyEn) parts.push(`【Anatomical Structure & Reaction Areas】\n${point.anatomyEn}`);
-    if (point.modernResearchZh) parts.push(`【Clinical Application Notes】\n${point.modernResearchZh}`);
+    const modernEn = point.modernResearchEn || point.modernResearchZh;
+    if (modernEn) parts.push(`【Clinical Application Notes】\n${modernEn}`);
     if (point.reviewStatus === "sourced_elotus_direct") {
       parts.push("【Source Provenance】This record is sourced directly from eLotus CORE Master Tung Standard Documentation.");
     } else {
@@ -3847,7 +3981,6 @@ function evidenceText(point) {
     parts.push(`【出處與文獻標註】\n${point.sourceProvenanceNoteZh}`);
   }
   if (point.modernResearchZh) parts.push(`【現代臨床與研究】\n${point.modernResearchZh}`);
-  if (point.anatomyZh) parts.push(`【穴位解剖構造】\n${point.anatomyZh}`);
   // The CloudTCM import wrote the same paragraph into both evidence and
   // modern_research_zh on 348 of 361 points, so this section printed it twice
   // under two different headings. The data keeps both fields (§0「只刪不加」);

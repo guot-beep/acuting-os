@@ -91,6 +91,7 @@ const knowledge = {
   modernApplicationVocabulary: readJson("data/config/modern_application_vocabulary.json"),  // bilingual labels + type for 現代運用 tags
   comparisonGroupVocabulary: readJson("data/config/comparison_group_vocabulary.json"),      // bilingual labels for 鑑別群組
   safetyFlagVocabulary: readJson("data/config/safety_flag_vocabulary.json"),                 // bilingual labels for safety_flags
+  conditionCategoryVocabulary: readJson("data/config/condition_category_vocabulary.json"),  // bilingual labels for condition_canon `category` — lets point/herb/formula cards group related_conditions by system without storing the category twice
   herbPairs: readJson("data/herbs/herb_pairs.json"),                                        // 藥對
   herbPairRelations: readJson("data/config/herb_pair_relations.json"),                       // 七情配伍
   herbUrlMap: readJson("data/imports/cloudtcm/herb_url_map.json"),                           // direct per-herb source URLs

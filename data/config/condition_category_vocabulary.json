@@ -1,0 +1,22 @@
+{
+  "vocabulary_version": "1.0",
+  "created_at": "2026-07-29",
+  "name_zh": "西醫病名分類",
+  "name_en": "Western condition categories",
+  "purpose": "Bilingual labels for condition_canon_shortlist.json's `category` field, so acupoint/herb/formula cards can group a record's related_conditions by system instead of printing a flat unsorted list. The category value lives only on the condition record itself (single source of truth) — this file only supplies the display label. If a condition's category changes, every card that links to it regroups automatically without touching the card's own data.",
+  "review_status": "draft",
+  "categories": [
+    { "id": "gyn_fertility", "name_zh": "婦科／生殖", "name_en": "Gynecology & Fertility" },
+    { "id": "pain_msk", "name_zh": "疼痛／骨科筋骨", "name_en": "Pain & Musculoskeletal" },
+    { "id": "gi", "name_zh": "消化系統", "name_en": "Gastrointestinal" },
+    { "id": "psych_sleep", "name_zh": "情志／睡眠", "name_en": "Psych & Sleep" },
+    { "id": "respiratory", "name_zh": "呼吸系統", "name_en": "Respiratory" },
+    { "id": "neuro", "name_zh": "神經系統", "name_en": "Neurological" },
+    { "id": "derm", "name_zh": "皮膚科", "name_en": "Dermatology" },
+    { "id": "endo_metabolic", "name_zh": "內分泌／代謝", "name_en": "Endocrine & Metabolic" },
+    { "id": "cardio", "name_zh": "心血管", "name_en": "Cardiovascular" },
+    { "id": "uro_renal", "name_zh": "泌尿／腎", "name_en": "Urology & Renal" },
+    { "id": "ent_eye", "name_zh": "耳鼻喉／眼科", "name_en": "ENT & Eye" },
+    { "id": "immune_misc", "name_zh": "免疫／其他", "name_en": "Immune & Miscellaneous" }
+  ]
+}
