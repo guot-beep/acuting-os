@@ -1,7 +1,14 @@
-# 穴位卡樣板【定案】 — ST36 足三里
+# 穴位卡樣板【定案】 — ST36 足三里 + PC6 內關
 
-**Status: FINAL(Ting 定案 2026-07-27)。** 每一個穴位都照這張做。
-樣板記錄:`ST36`(足三里)、`ST17`(乳中,絕對禁針的特例)。改樣板 = 先問 Ting。
+**Status: FINAL(Ting 定案 2026-07-27,版面與雙語層 2026-07-30 修訂)。**
+每一個穴位都照這張做。
+樣板記錄:**`ST36`(足三里)**= 五輸穴／強壯大穴代表、**`PC6`(內關)**= 絡穴／
+八脈交會、且有明確神經安全考點的代表、`ST17`(乳中)= 絕對禁針的特例。
+改樣板 = 先問 Ting。
+
+**為什麼樣板是兩個穴而不是一個**:ST36 是「功效極廣」型,PC6 是「特定穴屬性
+複雜 + 解剖風險明確」型。兩者需要的欄位組合不同,一個樣板蓋不住 361 穴的變化。
+做新卡時**挑性質相近的那一個對照**。
 
 與中藥卡(`docs/HERB_CARD_TEMPLATE.md`)**同一套邏輯**,只是欄位不同。
 機器檢查:`node scripts/validate-acupoint-standard.js`(A1–A8,`--worklist` 出清單)。
@@ -39,33 +46,44 @@ Ting 定案時的三句話:
 
 ---
 
-## 1. 卡片區塊(照這個順序,不多不少)
+## 1. 卡片區塊(照這個順序,不多不少)—— 2026-07-30 重排
 
-前 7 區是「掃一眼就能背」層,8 之後是「要細讀」層 —— 與中藥卡的
-Glance / Study 兩層邏輯一致。
+**順序原則:照臨床動作順序,不是照資料被加進來的順序。**
+先找到穴 → 下針 → 為什麼重要 → 治什麼 → 配什麼 → 連到哪 → 來源。
 
-| # | 區塊 | 來源欄位 | 必要性 |
+原本是 16 個獨立區塊,壓成 **7 個功能群**(Ting 2026-07-30:
+「整個介面跟欄位很亂 要重新整頓」「有點太亂太冗長」)。
+
+| # | 區塊群 | 來源欄位 | 必要性 |
 |---|---|---|---|
-| 1 | 標頭:代碼 · 中文名 · 拼音 · 英文 · **★考試星號** | `code` `chinese` `pinyin` `english` `exam_star` | 必 |
-| 2 | 速覽格:所屬經絡 / 部位 / 針刺手法 / 艾灸 | `channel_zh` `region` `needling` `moxa_zh` | 必 |
-| 3 | **特定穴身分**(一排:分類 badge + 課件身分) | `point_categories` + `point_identity_zh/en` | 必 |
-| 4 | **💡 考試重點**(★★ 轉紅底) | `exam_importance` `exam_pearl` | 必 |
-| 5 | **功效**(中文粗體 + 課件英文對照,逐項成對) | `functions_zh` + `functions_en` | 必 |
-| 6 | **主治病症**(同上成對;「標題 —— 細項」自動拆行) | `indications_zh` + `indications_en` | 必 |
-| 7 | **標籤**(短標籤,點擊全站搜尋) | `action_tags_zh/en` `disease_tags_zh/en` | 必 |
-| 8 | 基本介紹(穴名釋義、別名) | `name_intro_zh` `other_names_zh` | 有就填 |
-| 9 | 取穴方法(定位 / **骨度分寸** / 歸經部位 / 解剖) | `location_zh` `cun_measurement` `anatomy_zh` | 必 |
-| 10 | 圖像與取穴圖解(外部連結,**不存圖檔**) | `visual_links` `diagram_urls_*` | 有就填 |
-| 11 | **常用配穴與臨床應用** | `combine_points_zh` `clinical_pearls` | **必(Ting 指定保留)** |
-| 12 | 針刺與艾灸(**深度/角度數字**) | `needling` `acumethod_zh` `moxa_zh` `massage_zh` | 必 |
-| 13 | 現代研究 / 臨床提醒 | `modern_research_zh` `cloudtcm_detail` `evidence` | 有就填 |
-| 14 | 古籍記載 | `classical_refs` | 有就填 |
-| 15 | ⚠️ 注意事項與禁忌 | `contraindications` `cautions_zh/en` | 必 |
-| 16 | 參考來源 | `field_sources` `sources` | 必 |
+| **0** | 標頭 + 速覽格:代碼 · 中文名 · 拼音 · 英文 · ★星號 / 經絡 · 部位 · 針法 · 艾灸 | `code` `chinese` `pinyin` `english` `exam_star` `channel_zh` `region` | 必 |
+| **1** | **定位・取穴・解剖**(定位 / 骨度分寸 / 歸經部位 / **解剖層次**) | `location_zh/_en` `cun_measurement` `anatomy_zh/_en` | 必 |
+| **2** | **針法・艾灸・安全**(深度/角度數字 + **注意事項禁忌併入此區**) | `acumethod_zh/_en` `needling` `moxa_zh/_en` `contraindications` `cautions_zh/_en` | 必 |
+| **3** | **我的臨床筆記** | localStorage(`js/notes.js`),**不進 JSON** | 自動 |
+| **4** | **特定穴身分 + 💡考試重點**(Big picture 標註) | `point_categories` `five_shu_element` `point_identity_zh/_en` `exam_star` `exam_pearl(_en)` `exam_importance(_en)` | 必 |
+| **5** | **功效 → 主治病症 → 標籤**(三層,逐項中英成對) | `functions_zh/_en` `indications_zh/_en` `action_tags_zh/_en` `disease_tags_zh/_en` | 必 |
+| **6** | **常用配穴與臨床應用** | `combine_points_zh` **`combine_points_en`** `clinical_pearls` | **必(Ting 指定保留)** |
+| **7** | **連結・鑑別**(折疊;病症按系統分組) | `related_conditions` `tcm_pattern_ids` `compare_with` | 有就填 |
+| **8** | 現代研究 / 古籍 / 穴名沿革別名 / 圖像 / **參考來源** | `modern_research_zh/_en` `classical_refs` `name_intro_zh` `other_names_zh` `visual_links` `field_sources` `sources` | 必 |
 
-**絕對禁針的穴(ST17 乳中)是特例**:5、6、7 區**留空**,禁令只出現在
-3(紅色 chip)、4(考點)、15(禁忌)。空的區塊**不顯示**,不要印「待補」——
-「待補」是給還沒做的穴用的,對「絕不能治療」的穴是誤導。
+### 為什麼定位排第一(不要再改回去)
+舊版把定位排在**第 8 個**,前面塞了特定穴、考點、功效、主治、標籤、連結、
+基本介紹七個區塊。學一個穴第一件事永遠是「它在哪」;而且**取穴和下針是同一個
+動作**,所以針法必須緊接定位 —— 舊版針法排第 11,離定位很遠。
+
+### 為什麼注意事項併進針法(不要再拆出去)
+Ting 2026-07-30:「注意事項挺多重要的內容啊」。舊版把它排在**第 15 區**,
+接近卡片底部 —— 安全提醒放在沒人滑到的位置等於不存在。現在跟針法同一區,
+下針前一定看到。
+
+### 為什麼解剖從「現代研究」搬到「定位」
+Ting 2026-07-30:「現代研究/臨床提醒那裡資訊也很雜,居然還有穴位解剖構造,
+應該放前面 location 的地方才是」。解剖是取穴與安全的依據,不是研究文獻。
+**同一份解剖內容過去在兩個區塊各印一次**,現在只在定位區出現。
+
+**絕對禁針的穴(ST17 乳中)是特例**:第 5 區(功效/主治/標籤)**留空**,
+禁令只出現在 4(紅色 chip + 考點)與 2(針法安全區)。空的區塊**不顯示**,
+不要印「待補」—— 「待補」是給還沒做的穴用的,對「絕不能治療」的穴是誤導。
 
 ---
 
@@ -86,6 +104,83 @@ Glance / Study 兩層邏輯一致。
 **先加進去**再用;該欄寧可整個留空,也不要半翻 —— 半翻會讓後面所有標籤錯位。
 身分詞(井滎輸經合、原絡郄募、下合穴)**不可放進 `action_tags`**,
 「募穴」不是穴位做的事。
+
+---
+
+## 2.5 中英文都要有版面(Ting 定案 2026-07-30)
+
+Ting:「然後這張卡片沒有做英文版面」「中英文標籤好,而且英文版也好」。
+
+**「有 `_en` 欄位」不等於「有英文版面」。** 曾經的狀況是:資料裡有英文,
+但渲染器只翻譯區塊標題,內文照印中文;或者根本沒有對應的 `_en` 欄位可放。
+
+### 必須成對的欄位(全部)
+```
+location_zh/_en          anatomy_zh/_en           acumethod_zh/_en
+moxa_zh/_en              massage_zh/_en           combine_points_zh/_en
+modern_research_zh/_en   functions_zh/_en         indications_zh/_en
+action_tags_zh/_en       disease_tags_zh/_en      point_identity_zh/_en
+cautions_zh/_en          exam_pearl(_en)          exam_importance(_en)
+```
+
+⚠️ **英文欄位缺漏時渲染器會 fallback 顯示中文** —— 畫面不會壞,但等於沒有
+英文版。**不要靠看畫面判斷做完了沒**,要直接檢查欄位是否存在。
+
+### 英文內容來源優先序(Ting 2026-07-30 指定:eLotus/MasterTung 在 AcuPoints 前面)
+1. **eLotus / MasterTung**(`mastertungacupuncture.org`)
+2. **American Dragon**(`americandragon.com/Points/<CODE>.html`)—— Ting:
+   「AD 的 Point 也寫得極好而且工整,每一個位子都可以找到相對應的資訊」
+3. **AcuPoints.org**(`acupoints.org/<code>-acupuncture-point/`)
+4. 課件本身就是英文,可直接用作 `functions_en` / `indications_en` 主幹
+
+---
+
+## 2.6 我的臨床筆記(`js/notes.js`)—— Ting 定案 2026-07-30
+
+Ting:「注意事項挺多重要的內容啊,可不可以開一個欄位類似筆記之類的,
+中藥、穴位、方劑都有,這樣提供我自己做臨床筆記」。
+
+**絕對不寫進 `data/**.json`。** 三個理由:
+1. 那些檔案帶來源標註,個人臨床觀察沒有 source URL、也不該有
+2. `scripts/build-data.js` 會重新生成,寫進去會被蓋掉
+3. 有來源的內容和無來源的個人心得混在一起,以後分不出哪個可信
+
+存 localStorage(跟 RV1 驗證紀錄同一套機制),key 用 `kind:id`:
+`point:ST36`、`herb:herb.he_tao_ren`、`formula:formula.ma_huang_tang`。
+**id 不可變(DECISIONS D2),所以卡片內容被重寫時筆記照樣掛得住** ——
+這正是現在在做的事。
+
+有匯出/匯入:localStorage 會被「清除網站資料」清掉,累積幾個月的臨床觀察
+不能就這樣不見。匯出檔標明私人,**與 RV1 那份「可安心 commit」的驗證檔分開**。
+
+---
+
+## 2.7 來源一律具名,不露網址(Ting 定案 2026-07-30)
+
+Ting:「下面的參考來源應該要做成網站 link,然後只是指名哪個網站,
+不要露出醜醜的地址,跟中藥卡一樣才對」。
+
+- 顯示成**具名 chip**:`eLotus CORE` / `American Dragon` / `雲端中醫 CloudTCM`,
+  網址只放在 `href`,**不在畫面上出現**
+- 課件顯示成 `📘 課件 <檔名> p<頁>` badge,不做成死連結
+- **一個網站一個 chip**,不是一頁一個
+- 不准出現沒有實際核讀的來源名稱(同 `HERB_RECORD_STANDARD.md` §4.5)
+
+舊版印的是 `English source: https://www.acupoints.org/st36-acupuncture-point/`
+這種純文字,又長又不能點。
+
+---
+
+## 2.8 病症分類用查表,不寫進穴位記錄
+
+`related_conditions` 只存 `cond.*` id 陣列。分類(婦科/疼痛/消化…)
+**不寫進穴位記錄**,渲染時用 id 去查
+`data/pathology/condition_canon_shortlist.json` 的 `category`,
+標籤來自 `data/config/condition_category_vocabulary.json`(12 類)。
+
+**為什麼不寫進穴位記錄**:ST36 有 112 個關聯病症。若每個穴位各自存一份分類,
+以後病症模組改分類就要回頭改 361 筆,一定會有幾筆對不上。
+查表則自動同步。每類各自折疊,避免 112 個 chip 排成一面牆。
 
 ---
 
@@ -148,8 +243,15 @@ field_sources」。加考試星號會替 145 個還沒整理的穴寫入 `field_
 5. **逐欄 `field_sources`**:課件用 `curriculum/acupoints/<file>#p<N>`,
    網站用完整 URL。**沒實際核讀過的來源不得列名。**
 
-⚠️ 目前這個環境**讀不到 CloudTCM / American Dragon(403)**。讀不到就標
-「待對照」,**不准假裝查過**。既有的 CloudTCM 內容是先前抓好的,照樣可用。
+⚠️ **網路存取視環境而定,不要假設。** 2026-07-27 寫這份時的環境讀不到
+CloudTCM / American Dragon(403);2026-07-30 的環境**可以**,ST36/PC6 的英文層
+就是那時實際開頁抓的。**開工前先測一次**:抓得到就抓,抓不到就標「待對照」,
+**兩種情況都不准假裝查過**。既有的 CloudTCM 內容是先前抓好的,照樣可用。
+
+⚠️ **CloudTCM 有頁面自相矛盾的案例。** 桑枝(`/herb/1157`)的「基本資訊」頁寫
+苦平歸肝經(與課件、AD 一致),但同一頁的「傳統功效」段落卻寫疏散風熱、清肺潤燥、
+歸肺肝經 —— 讀起來是桑葉/桑白皮的內容。**同一個來源內部打架時,以與課件/AD
+一致的那一段為準,並在 `source_note` 寫明排除了哪一段、為什麼。**
 
 ### 董氏奇穴另一套來源
 1. <https://www.tungs-acupuncture.com/> 2. eLotus
@@ -263,6 +365,50 @@ other_names_zh                                ← 別名，「虎口」找得到
 
 **驗證**:三項都由 `validate-acupoint-standard.js` **報告而不擋**
 (覆蓋率會列在摘要),因為它們是「以後補」而不是「現在缺」。
+
+## 6.8 交給 Antigravity 做批次時的紅線(Ting 2026-07-30)
+
+Ting:「讓 Antigravity 大量把穴位資訊補下來,但要求它『每批小範圍、可驗證』,
+不要一次亂改 700 多筆。你可以一邊複習,一邊抓錯。」
+
+1. **一批一條經**(或半條)。做完跑驗證器 + 讓 Ting 抽查,再進下一批。
+2. **只碰 `data/acupoints/`**,絕不碰 `app.js`、`js/`、`index.html`、`scripts/`、
+   schema —— 已經發生過覆蓋事故(見 `AI_ROLES.md`)。
+3. **新欄位一律 `_zh`/`_en` 成對**,不要自創命名法。
+4. **驗證器全綠不等於做完。** validator 只檢查它認得的欄位,**不會**告訴你
+   英文欄位漏了、內容重複、或分類放錯。
+   **拿新卡的欄位清單跟 ST36/PC6 逐欄比對才算做完。**
+   > 前車之鑑:中藥卡 batch12 只跑了 validator 就當作完成,結果 10 個
+   > record-level metadata 欄位全部漏掉,validator 照樣全綠 —— 是 Ting 肉眼
+   > 比對才抓到的。
+
+### 已知的全庫問題(做批次時會遇到,不是你造成的)
+
+| 問題 | 規模 | 說明 |
+|---|---|---|
+| `evidence` = `modern_research_zh` 逐字重複 | 348/361 | CloudTCM 匯入造成;渲染器已擋住不重複印,資料層仍重複 |
+| 缺 `needling` | ~150 | 見 `CODEX_TASK_QUEUE.md` Track D5 |
+| 缺英文三欄 | ~35 | 同上 |
+| `action_tags_zh` 混入病系標籤 | 待統計 | 「消化系統疾病」不是功效;PC6/ST36 已清 |
+| 中英錯位 | 418 | `BLUEPRINT.md` §3 已記錄 |
+| 未帶聲調拼音 | 待統計 | glance 層要 `Zú Sān Lǐ` 不是 `Zusanli` |
+
+### 2026-07-30 修掉的渲染缺陷(不要在資料層繞過它們)
+
+這些是**程式**問題,已修;列出來是為了讓之後的內容批次不要為了「繞過畫面怪怪的」
+而去改資料:
+
+1. `regionEn()` 掃描定位全文找關鍵字,ST36 定位裡的「犢**鼻**」讓它判定成
+   Head and face —— **所有以犢鼻為標誌的腿部穴都會標錯區域**。已改成優先讀
+   `region` 欄位。
+2. `pointFunctionsSection()` 在英文模式仍印中英雙行(只有標題翻譯)。
+3. `shortTechnique()` 無條件先讀 `acumethod_zh`,英文模式的針法摘要永遠是中文。
+4. 解剖同時在「取穴方法」與「現代研究」兩區印出。
+5. `FIVE_SHU_ELEMENT_ZH` 是 `const` 且宣告位置在渲染之後 —— **直接用連結開啟
+   五輸穴頁面(`#point/ST36`,也就是「複製分頁連結」那條路)會撞 TDZ 並中斷整個
+   初始化,整頁死掉**,要重新載入不帶 hash 才會活。已改成 hoisted function。
+
+---
 
 ## 7. 批次順序與開工
 
