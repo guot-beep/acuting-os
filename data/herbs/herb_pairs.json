@@ -3473,8 +3473,90 @@
         "data/herbs/formulas.json",
         "https://www.americandragon.com/Individualherbsupdate/GengMi.html"
       ]
+    },
+    {
+      "id": "pair.ling_zhi__suan_zao_ren",
+      "herbs": [
+        "herb.ling_zhi",
+        "herb.suan_zao_ren"
+      ],
+      "name_zh": "靈芝配酸棗仁",
+      "name_en": "Ling Zhi with Suan Zao Ren",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "靈芝補氣安神，酸棗仁養心陰、斂心汗、安神。兩藥相須，補氣與養陰並行，加強安神助眠之力，尤適合氣虛兼陰血不足之失眠。American Dragon 註明柏子仁可作替代/並用選擇。",
+      "pair_meaning_en": "Ling Zhi tonifies Qi and calms the Shen; Suan Zao Ren nourishes Heart Yin and calms the Shen. Used together they mutually reinforce both Qi- and Yin-nourishing calming action, especially for insomnia from combined Qi deficiency and Yin-Blood insufficiency. American Dragon notes Bai Zi Ren as an interchangeable/adjunct option in the same combination.",
+      "indication_zh": "氣虛兼陰血不足之失眠、心悸、健忘",
+      "indication_en": "Insomnia, palpitations, and forgetfulness from combined Qi deficiency and Yin-Blood insufficiency",
+      "caution_zh": "實邪內盛者不宜單用補法；柏子仁可視體質替換或並用。",
+      "caution_en": "Not appropriate as sole treatment when Excess pathogens are present; Bai Zi Ren may substitute or be added depending on constitution.",
+      "found_in_formulas": [],
+      "sources": [
+        "american_dragon"
+      ]
+    },
+    {
+      "id": "pair.she_chuang_zi__ku_shen",
+      "herbs": [
+        "herb.she_chuang_zi",
+        "herb.ku_shen"
+      ],
+      "name_zh": "蛇床子配苦參",
+      "name_en": "She Chuang Zi with Ku Shen",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "蛇床子溫燥祛濕殺蟲止癢，苦參苦寒清熱燥濕殺蟲。一溫一寒相須為用，燥濕殺蟲止癢之力大增，為治外陰/皮膚濕疹搔癢的經典外用組合，寒熱互制減少單用蛇床子燥烈或苦參苦寒傷陽之偏。",
+      "pair_meaning_en": "She Chuang Zi warms and dries Dampness while killing parasites and stopping itching; Ku Shen is bitter and cold, clearing Heat and drying Dampness while also killing parasites. Combined, their warm and cold natures balance each other while their anti-parasitic/anti-itch actions reinforce — a classic external combination for genital/skin eczema with itching.",
+      "indication_zh": "外陰濕疹、婦人陰癢、皮膚濕疹搔癢（外用煎湯洗）",
+      "indication_en": "Genital eczema, vaginal itching, and itchy skin eczema (topical wash)",
+      "caution_zh": "僅供外用；蛇床子有毒，不可內服此組合。",
+      "caution_en": "For external use only; She Chuang Zi is toxic and this combination should not be taken internally.",
+      "found_in_formulas": [],
+      "sources": [
+        "american_dragon"
+      ]
+    },
+    {
+      "id": "pair.qing_dai__ce_bai_ye__bai_mao_gen",
+      "herbs": [
+        "herb.qing_dai",
+        "herb.ce_bai_ye",
+        "herb.bai_mao_gen"
+      ],
+      "name_zh": "青黛配側柏葉、白茅根",
+      "name_en": "Qing Dai with Ce Bai Ye and Bai Mao Gen",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "青黛鹹寒清熱涼血解毒，側柏葉苦澀微寒涼血止血，白茅根甘寒涼血止血兼利尿。三藥相須，涼血止血力加強，為血熱妄行之出血（尤其鼻衄）的組合用法，課件明確記載青黛可單用或與此二藥合用。",
+      "pair_meaning_en": "Qing Dai clears Heat, cools the Blood, and resolves toxicity; Ce Bai Ye and Bai Mao Gen both cool the Blood and stop bleeding, with Bai Mao Gen also promoting urination. Combined they reinforce blood-cooling hemostasis for bleeding from reckless movement of Heat in the Blood, especially epistaxis. Course material explicitly notes Qing Dai can be used alone or combined with these two.",
+      "indication_zh": "血熱妄行之出血，尤其鼻衄；溫毒發斑兼出血",
+      "indication_en": "Bleeding from reckless movement of Heat in the Blood, especially epistaxis; warm-toxin maculae with bleeding",
+      "caution_zh": "脾胃虛寒者慎用；青黛不入煎劑久煮。",
+      "caution_en": "Caution in Spleen-Stomach Deficiency-Cold; Qing Dai should not be decocted for a prolonged time.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L340-L378"
+      ]
+    },
+    {
+      "id": "pair.lu_dou__gan_cao",
+      "herbs": [
+        "herb.lu_dou",
+        "herb.gan_cao"
+      ],
+      "name_zh": "綠豆配甘草",
+      "name_en": "Lu Dou with Gan Cao",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "綠豆甘寒清熱解毒，甘草甘平調和解毒。兩藥相須，解毒力大增，為傳統解附子、川烏等烏頭類藥物中毒的經典組合；American Dragon 記載高劑量（綠豆120g配甘草60g）可對抗附子中毒。",
+      "pair_meaning_en": "Lu Dou is sweet and cold, clearing Heat and resolving toxicity; Gan Cao is sweet and neutral, harmonizing and resolving toxicity. Together they mutually reinforce detoxifying action — the classic combination for treating poisoning from aconite-type herbs (Fu Zi, Chuan Wu). American Dragon notes a high-dose combination (120g Lu Dou with 60g Gan Cao) counteracts aconite poisoning.",
+      "indication_zh": "附子、川烏等烏頭類藥物中毒之解毒",
+      "indication_en": "Detoxification for poisoning from aconite-type herbs (Fu Zi, Chuan Wu)",
+      "caution_zh": "解毒用量遠高於一般日常劑量，僅適用於中毒急救情境，不可套用一般劑量。",
+      "caution_en": "The detoxification dose is far higher than the usual daily dose and applies only to acute-poisoning emergency use, not routine dosing.",
+      "found_in_formulas": [],
+      "sources": [
+        "curriculum/herbs/Materia Medica Abbbreviated.md#L1245-L1247",
+        "american_dragon"
+      ]
     }
   ],
   "updated_at": "2026-07-29",
-  "total_pairs": 152
+  "total_pairs": 156
 }
