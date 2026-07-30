@@ -961,6 +961,12 @@ function updateContentModeUI() {
       "Search acupoints, formulas, herbs, conditions, or cases… e.g. SP6, Si Wu Tang, Dang Gui, Blood deficiency"
     );
   }
+  if (searchInput) {
+    searchInput.placeholder = modeText(
+      "搜尋：中文、英文、代碼、位置、功效、證型... (例：ST36, 太衝, 運動區, 神門)",
+      "Search: Name, Code, Location, Action, Pattern... (e.g. ST36, Taichong, MS6, Shenmen)"
+    );
+  }
   const navPanel = document.querySelector("#navPanel");
   if (navPanel) navPanel.setAttribute("aria-label", modeText("主選單", "Main navigation"));
   document.querySelector("#navClose")?.setAttribute("aria-label", modeText("關閉選單", "Close navigation"));
