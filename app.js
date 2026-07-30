@@ -3240,7 +3240,7 @@ function renderDetail(point) {
         ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", [
           needlingArticle(point),
           cautionText(point) ? `${contentMode === "english" ? "CAUTIONS:" : "【注意事項】"}\n${cautionText(point)}` : ""
-        ].filter(Boolean).join("\n\n"), "needle")}
+        ].filter(Boolean).join("\n\n"), "needle", true)}
 
         ${/* 3. 我的臨床筆記 — placed right after location/needling/safety
               because that is the context she is in when something is worth
@@ -3660,7 +3660,19 @@ function copyPointLink(point) {
   alert(url);
 }
 
-function studySection(title, body, tone = "book") {
+function studySection(title, body, tone = "book", collapsed = false) {
+  if (collapsed) {
+    const hintText = contentMode === "english" ? "Click to expand / collapse" : "點擊展開 / 折疊 針法安全";
+    return `
+      <details class="study-section ${escapeAttribute(tone)} collapsible-study-section">
+        <summary class="study-section-summary">
+          <h3>${escapeHtml(title)}</h3>
+          <span class="toggle-hint-pill">${hintText}</span>
+        </summary>
+        <div class="study-copy">${formatStudyText(body)}</div>
+      </details>
+    `;
+  }
   return `
     <section class="study-section ${escapeAttribute(tone)}">
       <h3>${escapeHtml(title)}</h3>

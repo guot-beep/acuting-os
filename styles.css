@@ -1346,6 +1346,61 @@ footer {
   padding-bottom: 0.5rem;
 }
 
+details.collapsible-study-section {
+  border-bottom: 2px solid #163126;
+  padding-bottom: 0.8rem;
+}
+
+details.collapsible-study-section .study-section-summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  list-style: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(140, 76, 112, 0.06);
+  transition: background 0.2s ease;
+}
+
+details.collapsible-study-section .study-section-summary::-webkit-details-marker {
+  display: none;
+}
+
+details.collapsible-study-section .study-section-summary:hover {
+  background: rgba(140, 76, 112, 0.12);
+}
+
+details.collapsible-study-section .study-section-summary h3 {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  color: #8c4c70;
+}
+
+details.collapsible-study-section .toggle-hint-pill {
+  font-size: 0.82rem;
+  color: #8c4c70;
+  background: #f4e8ef;
+  border: 1px solid #dcb8cc;
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+details.collapsible-study-section[open] .toggle-hint-pill {
+  background: #8c4c70;
+  color: #ffffff;
+  border-color: #8c4c70;
+}
+
+details.collapsible-study-section .study-copy {
+  margin-top: 0.8rem;
+  padding-left: 0.2rem;
+}
+
 .study-copy {
   color: #20362f;
   font-size: 1rem;
