@@ -441,6 +441,7 @@ const patternEnglishMap = globalThis.ACUTING_APP_DATA?.patternEnglishMap || {};
 
 // Migrated to data/: edit data/**/embedded/*.json, then run scripts/build-data.js
 const auricularPoints = globalThis.ACUTING_APP_DATA?.auricularPoints || [];
+const scalpPoints = globalThis.ACUTING_APP_DATA?.scalpPoints || [];
 const extraPoints72 = globalThis.ACUTING_APP_DATA?.extraPoints || [];
 
 // The embedded arrays stay loaded only to contribute records OUTSIDE the 361
@@ -452,7 +453,7 @@ const embeddedExtraPoints = [starterPoints, professionalPoints, lungMeridianExpa
   .filter((point) => !standard361Codes.has(point.code));
 
 const sourceByCode = Object.fromEntries(
-  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPoints361, embeddedExtraPoints, extraPoints72, auricularGb93Index, auricularPoints, tungPointIndex)])]
+  [...new Set([...Object.keys(locationEnglishByCode), ...defaultCodeList(standardPoints361, embeddedExtraPoints, extraPoints72, auricularGb93Index, auricularPoints, scalpPoints, tungPointIndex)])]
     .map((code) => [code, ["https://www.acupoints.org/", "https://cloudtcm.com/acupoint"]])
 );
 
@@ -460,7 +461,7 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, extraPoints72, auricularGb93Index, auricularPoints, tungPointIndex));
+const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, extraPoints72, auricularGb93Index, auricularPoints, scalpPoints, tungPointIndex));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";

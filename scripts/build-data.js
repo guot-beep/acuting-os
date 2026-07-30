@@ -39,6 +39,7 @@ const SOURCES = {
   bladderMeridianExpansion: "data/acupoints/embedded/meridian_bl.json",
   kidneyMeridianExpansion: "data/acupoints/embedded/meridian_ki.json",
   auricularPoints: "data/auricular/embedded/auricular_points.json",
+  scalpPoints: "data/scalp/scalp_points_full.json",
   extraPoints: "data/acupoints/extra_points.json",
 };
 const I18N_SOURCE = "data/acupoints/embedded/i18n_maps.json";
