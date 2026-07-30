@@ -1,5 +1,16 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Claude Handoff - NCBAHM missing herbs batch 15: Tan Xiang, Tu Bie Chong, Tu Fu Ling, Xi Xian Cao, Ye Ju Hua (network-verified)
+
+- **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
+- **Task**: Continuing the Appendix A missing-card sweep. Only 2 herbs remain after this batch.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `docs/CODEX_TASK_QUEUE.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **Sources used**: Chenoweth abbreviated materia medica (single source for all 5 — this file is a compact reference covering hundreds of herbs, so coverage per herb is brief but present for all 5); American Dragon exact pages TanXiang, TuBieChong, TuFuLing, XiXianCao, YeJuHua (all fetched live); CloudTCM exact pages `/herb/1189` (檀香), `/herb/1195` (土茯苓), `/herb/1209` (豨薟草), `/herb/12088` (野菊花), all confirmed by name match. **土鱉蟲 has no findable exact CloudTCM herb page this pass** — built from curriculum + American Dragon only, and `source_urls`/`source_citations` reflect only those two sources rather than guessing a CloudTCM URL.
+- **Source-conflict notes**: 土鱉蟲's channels — curriculum gives properties only (no channel), American Dragon lists Liver+Heart+Spleen; took Liver alone as the safe minimum since no second source confirms Heart/Spleen. 豨薟草's channels differ across all three sources (course: KD+LV; AD: KD+LV primary +HT+SP secondary; CloudTCM: LU+LV+KD) — took the course+AD 2-source agreement (KD+LV) as primary.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` moved from 297/304 matched / 7 missing to 302/304 matched / 2 missing. Local herb-card count is now 325. Next recommended batch (16, final): Zao Jiao Ci, Zhen Zhu.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; `stamp-herb-card-grade.js --apply` graded all 5 new cards `template`. Field-order diff against `herb.he_tao_ren` confirmed exact match before validating.
+- **Known risks / manual checks**: 土鱉蟲 is toxic and its curriculum-listed special placental-remnant dosage (30-45g) is far above its general dosage (3-12g) — the card explicitly warns this is a special-case dose, not a general one; worth Ting's eye given the safety stakes. 檀香's dosage differs notably between course (1-1.5g, powder/pill only) and AD/CloudTCM (1-5g) - kept both explicitly rather than picking one.
+
 ## [2026-07-29] Claude Handoff - NCBAHM missing herbs batch 14: She Chuang Zi, Shi Wei, Si Gua Luo, Suo Yang (network-verified)
 
 - **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`

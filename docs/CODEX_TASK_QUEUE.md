@@ -53,6 +53,8 @@ the id into `data/acupoints/point_id_manifest.json`.
 
 Status: OPEN. Source of truth for the live Quality page is `data/audits/missing_report.json.herb_outline_coverage`.
 
+Update 2026-07-29 (Claude, network-verified session) — batch15: Tan Xiang, Tu Bie Chong, Tu Fu Ling, Xi Xian Cao, Ye Ju Hua built (curriculum + live American Dragon + live CloudTCM; Tu Bie Chong has no findable exact CloudTCM page, built from curriculum+AD only, labeled honestly). Coverage 297/304 → 302/304 matched, 7 → 2 missing. Local herb cards 320 → 325. Next recommended batch (16, final): Zao Jiao Ci; Zhen Zhu.
+
 Update 2026-07-29 (Claude, network-verified session) — batch14: She Chuang Zi, Shi Wei, Si Gua Luo, Suo Yang built (curriculum + live American Dragon + live CloudTCM). Coverage 293/304 → 297/304 matched, 11 → 7 missing. Local herb cards 316 → 320. Next recommended batch (15): Tan Xiang; Tu Bie Chong; Tu Fu Ling; Xi Xian Cao; Ye Ju Hua.
 
 Update 2026-07-29 (Claude, network-verified session) — batch13: Lu Lu Tong, Ou Jie, Qin Pi, Qing Dai, Sang Zhi built (curriculum + live American Dragon + live CloudTCM). Caught a CloudTCM self-contradiction on Sang Zhi — its own "傳統功效" prose section (疏散風熱清肺潤燥…) didn't match its own "基本資訊" tab (苦平歸肝經) or curriculum/AD; excluded the mismatched section rather than including it as if verified. Coverage 288/304 → 293/304 matched, 16 → 11 missing. Local herb cards 311 → 316. Next recommended batch (14): She Chuang Zi; Shi Wei; Si Gua Luo; Suo Yang.

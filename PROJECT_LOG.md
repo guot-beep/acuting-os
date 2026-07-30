@@ -1,5 +1,11 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Claude — NCBAHM CH missing herbs batch 15 (network-verified): Tan Xiang, Tu Bie Chong, Tu Fu Ling, Xi Xian Cao, Ye Ju Hua
+
+- Built 5 more cards from curriculum + live American Dragon + live CloudTCM. Tu Bie Chong has no findable exact CloudTCM page this pass — built honestly from curriculum + AD only rather than guessing a URL.
+- Updated Quality herb-outline audit from 297/304 matched / 7 missing to 302/304 matched / 2 missing; local herb cards now 325. Only Zao Jiao Ci and Zhen Zhu remain to close the Appendix A gap entirely.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; card-grade stamper graded all 5 `template`.
+
 ## 2026-07-29 Claude — NCBAHM CH missing herbs batch 14 (network-verified): She Chuang Zi, Shi Wei, Si Gua Luo, Suo Yang
 
 - Built 4 more cards from curriculum + live American Dragon + live CloudTCM. She Chuang Zi and Si Gua Luo have no exact canon category match (dual topical/internal use, and cross-framing between sources respectively) — classified into the closest existing bucket with the reasoning recorded in each card.

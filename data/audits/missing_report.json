@@ -26,15 +26,10 @@
     "scope_note": "Board-outline herb coverage audit; separate from the older 202 CloudTCM herb seed count.",
     "matching_method": "Normalized Appendix A pinyin against local name_zh AND aliases_zh/aliases_en. Sha Yuan Ji Li → 沙苑子 and Yin Chen → 茵陳蒿 were counted missing only because those two records had empty alias arrays; aliases added rather than new cards created, so no duplicate herb was introduced (E9).",
     "appendix_a_total": 304,
-    "local_herb_cards": 320,
-    "matched_to_local_cards": 297,
-    "missing_card_count": 7,
+    "local_herb_cards": 325,
+    "matched_to_local_cards": 302,
+    "missing_card_count": 2,
     "missing_cards": [
-      "Tan Xiang",
-      "Tu Bie Chong",
-      "Tu Fu Ling",
-      "Xi Xian Cao",
-      "Ye Ju Hua",
       "Zao Jiao Ci",
       "Zhen Zhu"
     ],
@@ -59,28 +54,23 @@
     ],
     "last_updated": "2026-07-29",
     "last_completed_cards": [
-      "She Chuang Zi",
-      "Shi Wei",
-      "Si Gua Luo",
-      "Suo Yang"
-    ],
-    "next_recommended_batch": [
       "Tan Xiang",
       "Tu Bie Chong",
       "Tu Fu Ling",
       "Xi Xian Cao",
       "Ye Ju Hua"
+    ],
+    "next_recommended_batch": [
+      "Zao Jiao Ci",
+      "Zhen Zhu"
     ],
     "ncbahm_2026_ch_appendix_a_total": 304,
     "last_quality_update": "2026-07-29",
     "next_priority": [
-      "Tan Xiang",
-      "Tu Bie Chong",
-      "Tu Fu Ling",
-      "Xi Xian Cao",
-      "Ye Ju Hua"
+      "Zao Jiao Ci",
+      "Zhen Zhu"
     ],
-    "note": "11 -> 7 remaining. Batch14 built She Chuang Zi/Shi Wei/Si Gua Luo/Suo Yang (network-verified). 7 genuinely absent remain. 4 herb_pairs entries still point at herb ids outside Appendix A scope (橘核, 青葙子, 穀精草, 南沙參)."
+    "note": "7 -> 2 remaining (Zao Jiao Ci, Zhen Zhu). Batch15 built Tan Xiang/Tu Bie Chong/Tu Fu Ling/Xi Xian Cao/Ye Ju Hua (network-verified). Tu Bie Chong has no findable exact CloudTCM herb page this pass - built from curriculum + American Dragon only, labeled honestly. 4 herb_pairs entries still point at herb ids outside Appendix A scope (橘核, 青葙子, 穀精草, 南沙參)."
   },
   "channels": {
     "BL": {
