@@ -1,6 +1,40 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30] Antigravity Handoff — SI channel (手太陽小腸經 19穴) 5-Level Source Template Refinement
+## [2026-07-30] Antigravity Handoff — BL, KI, PC Channels + Full 361 Point Identity Badges & UI Auto-Clear
+
+- **Agent**: Antigravity (pair programming with Ting)
+- **Branches Pushed & Merged to `origin/main`**:
+  - `antigravity/bl-channel` (BL1–BL67, 67 points)
+  - `antigravity/ki-channel` (KI1–KI27, 27 points)
+  - `antigravity/pc-channel` (PC1–PC9, 9 points)
+- **Validation**:
+  - `node scripts/validate-acupoint-standard.js --worklist --all` -> **0 WORKLIST DEFECTS** across BL, KI, PC!
+  - `node scripts/validate-interactions.js` -> **PASS** ✅
+- **Files Changed**:
+  - `data/acupoints/361.json` — BL1–BL67, KI1–KI27, PC1–PC9
+  - `app.js` — Auto-clear stale `localStorage["acuting-acupoint-v3"]` cache on load; render full rich `point_identity_zh` pills directly on small cards (五輸, 八脈交會, 四總穴, 水穀之海, 馬丹陽等).
+  - `scripts/populate-full-361-identities.js` — Derive and populate `point_identity_zh` / `_en` across all 361 points.
+  - `scripts/refine-bl-channel.js`, `scripts/parse-bl-curriculum.js`, `scripts/fix-bl40-and-a13.js`
+  - `scripts/refine-ki-channel.js`, `scripts/parse-ki-curriculum.js`, `scripts/fix-ki-cautions-and-a13.js`
+  - `scripts/refine-pc-channel.js`, `scripts/parse-pc-curriculum.js`, `scripts/fix-pc-a13.js`
+
+### Canonical Source Hierarchy Used
+1. **Board Exam Outline**: Defined scope and marked key exam star points across BL, KI, PC.
+2. **Curriculum PDFs**: Parsed `7 URINARY BLADDER...pdf`, `8 KIDNEY...pdf`, `9 PERICARDIUM...pdf` for exact `functions_en`, `indications_en`, `point_identity`, `needling`, `exam_pearl`, and `exam_star`.
+3. **eLotus / MasterTung**: Per-point anatomical depth, angle, and safety precautions in `acumethod_en`.
+4. **American Dragon / AcuPoints.org**: English details and locations.
+5. **CloudTCM (雲端中醫)**: Chinese clinical depth, functions, and indications.
+6. **Per-field `field_sources`**: Cited `curriculum/acupoints/*.pdf#p<N>`, `eLotus CORE`, and `CloudTCM` per field.
+
+### What Changed
+1. **BL1–BL67, KI1–KI27, PC1–PC9 `acumethod_en`**: Replaced generic text with per-point anatomical depth, angle, and safety precautions (e.g. pneumothorax risk for thoracic back-shu points, popliteal vein bleeding for BL40, median nerve precautions for PC6/PC7, deep renal puncture warnings for BL23/KI5, sole of foot sensitivity for KI1).
+2. **Point Identities (`point_identity_zh` & `_en`)**: Populated for all 361 points (Back-Shu, Five-Shu, Yuan, Luo, Xi, Confluent, Four Command, Sea of Qi/Blood/Marrow/Grain, Window of Sky, 13 Ghost points).
+3. **Small Card UI Badges**: `app.js` now extracts and renders rich identity pills (e.g. `四總穴之「肚腹三里留」`, `合穴·土`, `八脈交會穴`, `水穀之海`) directly on small cards with warm gold highlight styling matching detail view.
+4. **Cache Auto-Clear**: `app.js` automatically clears stale `localStorage` caches on boot when new identity fields are present, ensuring browser loads updated dataset immediately.
+
+### Next Channel in Sequence
+- Next: **TE Channel (手少陽三焦經 San Jiao / TE Channel, 23 points: TE1–TE23)**
+
 
 - **Agent**: Antigravity (pair programming with Ting)
 - **Branch**: `antigravity/si-channel` (branched from `origin/main`)
