@@ -126,6 +126,26 @@ CloudTCM 本地 URL map 沒有匹配時，仍必須以中文藥名查找精確
 `safety_flags` `safety_review_pending` `related_formulas` `exam_importance`
 `exam_pearl` `clinical_use_note` `field_sources` `review_status`
 
+### 3.4a 建卡前必查兩份 Appendix(2026-07-29 補記,Ting 指示)
+
+建卡前，每一味藥都要**同時**查這兩份，不是查完 A 就開始寫卡：
+
+1. **Appendix A**(缺卡清單的來源)— 確認這味藥真的在考綱範圍內、真的缺卡
+   (先查重，見 `docs/ANTIGRAVITY_HERB_FETCH_BRIEF.md` 的沙苑子/茵陳蒿案例)。
+2. **Appendix B（Chinese Herbal Pairs / Dui Yao）**— `curriculum/board/
+   NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md` 的
+   "Appendix B" 段落，目前列 57 組對藥。**這味藥如果出現在裡面，那組對藥
+   優先寫進 `herb_pairs.json`**，來源標 `NCBAHM_2026_CH_Appendix_B`；
+   查完沒有才輪到課件配伍段落，再輪到 American Dragon /
+   CloudTCM 的常見配伍(見 §4 對藥寫法)。
+
+**batch12–15 的教訓**：建了 20 味新卡都只查了 Appendix A、完全沒查
+Appendix B，`key_pairs` 一律留空了事——不是因為真的沒有來源，是根本沒查。
+事後補查發現這 20 味都不在 Appendix B 裡（Appendix B 是偏經典配伍的 57 組
+小清單，不是每味藥都會列），但這是查證後才能下的結論，不是預設。
+往後每一批建卡，兩份 Appendix 都要查，查完的結果（有列/沒列）寫進
+`review_notes_zh` 或 handoff，不要略過不提。
+
 ### 3.5 記錄層 metadata 欄位(必填,2026-07-29 補記)
 
 `he_tao_ren` 樣板實際還帶 10 個 metadata 欄位，排在記錄最前面，但 §3

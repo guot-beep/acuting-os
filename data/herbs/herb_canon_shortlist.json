@@ -78396,35 +78396,466 @@
         ]
       },
       "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。已核對 NCBAHM 2026 CH Appendix B（對藥表），此藥未列於其中。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.zao_jiao_ci",
+      "name_zh": "皂角刺",
+      "name_en": "Gleditsia Thorn",
+      "pinyin": "Zao Jiao Ci",
+      "pinyin_toned": "Zào Jiǎo Cì",
+      "pharmaceutical_latin": "Spina Gleditsiae",
+      "part_used_zh": "乾燥棘刺",
+      "part_used_en": "dried thorn/spine",
+      "category": "化痰止咳平喘藥 / Transform Phlegm - Warm",
+      "properties_taste_temp": "辛，溫",
+      "taste_temperature_zh": "辛，溫",
+      "channels_zh": [
+        "肝經",
+        "肺經",
+        "胃經"
+      ],
+      "channels_en": [
+        "LV Liver",
+        "LU Lung",
+        "ST Stomach"
+      ],
+      "channels_entered": [
+        "肝經",
+        "肺經",
+        "胃經"
+      ],
+      "aliases_zh": [
+        "皂刺"
+      ],
+      "aliases_en": [
+        "Chinese Honey Locust Spine"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "辛"
+        ],
+        "five_flavors_en": [
+          "Acrid"
+        ],
+        "four_natures_zh": "溫",
+        "four_natures_en": "Warm",
+        "meridian_tropism_zh": [
+          "肝經",
+          "肺經",
+          "胃經"
+        ],
+        "meridian_tropism_en": [
+          "LV Liver",
+          "LU Lung",
+          "ST Stomach"
+        ],
+        "part_used_zh": "乾燥棘刺",
+        "part_used_en": "dried thorn/spine",
+        "source_note_zh": "課件與 American Dragon 一致列肝、肺、胃三經（AD 另加大腸為次要）；CloudTCM 列肺、大腸、肝三經（以大腸代胃）。主欄採課件+AD 一致的肝、肺、胃三經。"
+      },
+      "property_channel_source_note_zh": "CloudTCM 以大腸經替代胃經，與課件/AD 不同，主欄採課件+AD 交集。",
+      "functions_zh": [
+        "消腫排膿",
+        "祛風殺蟲"
+      ],
+      "actions_en": [
+        "Reduces swelling and discharges pus",
+        "Expels Wind and kills parasites"
+      ],
+      "indications_zh": [
+        "癰疽腫毒未潰或膿成不潰。",
+        "肺癰（肺膿瘍）。",
+        "痰核瘰癧。",
+        "疥癬、麻風（外治）。"
+      ],
+      "indications_en": [
+        "Early-stage or unruptured toxic swellings/abscesses.",
+        "Lung abscess.",
+        "Phlegm nodules and scrofula.",
+        "Tinea and leprosy (topical use)."
+      ],
+      "condition_tags_zh": [
+        "癰疽腫毒",
+        "肺癰",
+        "痰核瘰癧",
+        "疥癬",
+        "麻風"
+      ],
+      "condition_tags_en": [
+        "Toxic swelling/abscess",
+        "Lung abscess",
+        "Phlegm nodules/scrofula",
+        "Tinea",
+        "Leprosy"
+      ],
+      "modern_functions_zh": [
+        "列抗腫瘤、鎮痛、抗發炎、抗菌等現代藥理（CloudTCM）"
+      ],
+      "modern_functions_en": [
+        "Reported antitumor, analgesic, anti-inflammatory, and antimicrobial effects (CloudTCM)"
+      ],
+      "dosage": {
+        "min_g": 3,
+        "max_g": 9,
+        "unit": "g/day",
+        "route": "decoction"
+      },
+      "dosage_g": {
+        "standard_daily_g": "3–9g（課件、American Dragon 一致）/ 3–9g，食療 6–12g（CloudTCM）",
+        "course_dose_g": "3–9g",
+        "ad_dose_g": "3–10g",
+        "cloudtcm_dose_g": "3–9g；食療用量 6–12g",
+        "source_note": "三源標準劑量高度一致（3–9/10g）。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；化痰藥考點：癰疽未潰之要藥，力較皂莢更銳利直達病所。",
+      "exam_pearl": "American Dragon 註明：「similar to Fructus Gleditsiae [Zao Jiao] but is sharper and more directly penetrates to the site of the illness」——皂角刺與皂莢（果實）鑑別考點：刺（皂角刺）消腫排膿力更強更專一，莢（皂莢）偏化痰通竅。",
+      "clinical_use_note": "皂角刺辛溫，核心定位是消腫排膿，專用於癰疽腫毒未潰或膿成不潰階段（「透膿」要藥），力較同屬皂莢更銳利直達病所；已潰破者不宜再用（恐傷正）。孕婦禁用。外治疥癬麻風煎湯外洗。",
+      "contraindications_zh": [
+        "癰疽已潰者不宜服。",
+        "孕婦禁用。"
+      ],
+      "contraindications_en": [
+        "Not indicated once the abscess has already ruptured/drained.",
+        "Contraindicated during pregnancy."
+      ],
+      "cautions_zh": [
+        "American Dragon 提醒不宜與其他藥物同時服用，可能降低該藥物之吸收與血中濃度。"
+      ],
+      "cautions_en": [
+        "American Dragon notes it should not be taken concurrently with other medications, as it may decrease their absorption and blood concentration."
+      ],
+      "safety_flags": [
+        "ruptured_abscess_contraindication",
+        "pregnancy_contraindication",
+        "drug_absorption_interaction"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Materia Medica III-Herbs that Transform Phlegm",
+          "url": "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "scope": "課件段落：皂角刺性味歸經、功效主治、劑量、禁忌"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌、與皂莢之鑑別"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1270",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+        "https://cloudtcm.com/herb/1270"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "category": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "dosage": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "contraindications_zh": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://cloudtcm.com/herb/1270"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L202-L225",
+          "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html"
+        ]
+      },
+      "card_grade": "template"
+    },
+    {
+      "review_status": "draft",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "public_safe": false,
+      "updated_at": "2026-07-29",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "key_pairs": [],
+      "review_notes_zh": "AI draft：已依課件、NCBAHM 2026 CH Appendix A、American Dragon 與 CloudTCM（本 session 有網路，兩者皆即時開頁核對）建卡；仍待 Ting/RV1 源審核。已核對 NCBAHM 2026 CH Appendix B（對藥表），此藥未列於其中。",
+      "source_type": "full_card_verified_multi_source",
+      "id": "herb.zhen_zhu",
+      "name_zh": "珍珠",
+      "name_en": "Pearl",
+      "pinyin": "Zhen Zhu",
+      "pinyin_toned": "Zhēn Zhū",
+      "pharmaceutical_latin": "Margarita",
+      "part_used_zh": "珍珠層/珍珠",
+      "part_used_en": "pearl",
+      "category": "安神藥 / Calm Spirit",
+      "properties_taste_temp": "甘、鹹，寒",
+      "taste_temperature_zh": "甘、鹹，寒",
+      "channels_zh": [
+        "心經",
+        "肝經"
+      ],
+      "channels_en": [
+        "HT Heart",
+        "LV Liver"
+      ],
+      "channels_entered": [
+        "心經",
+        "肝經"
+      ],
+      "aliases_zh": [],
+      "aliases_en": [
+        "Margarita",
+        "Pteria"
+      ],
+      "tcm_properties": {
+        "five_flavors_zh": [
+          "甘",
+          "鹹"
+        ],
+        "five_flavors_en": [
+          "Sweet",
+          "Salty"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [
+          "心經",
+          "肝經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart",
+          "LV Liver"
+        ],
+        "part_used_zh": "珍珠層/珍珠",
+        "part_used_en": "pearl",
+        "source_note_zh": "課件、American Dragon、CloudTCM 三源歸經完全一致：心、肝二經，無需調解衝突。"
+      },
+      "property_channel_source_note_zh": "三源一致，無衝突。",
+      "functions_zh": [
+        "鎮心安神",
+        "清肝明目",
+        "解毒生肌"
+      ],
+      "actions_en": [
+        "Sedates the Heart and calms the Shen",
+        "Clears the Liver and improves vision",
+        "Resolves toxicity and generates flesh"
+      ],
+      "indications_zh": [
+        "心悸怔忡、驚悸失眠。",
+        "小兒驚風抽搐。",
+        "肝經風熱之目赤翳障。",
+        "口瘡、瘡瘍潰爛不斂（外用）。"
+      ],
+      "indications_en": [
+        "Palpitations and restlessness with insomnia.",
+        "Childhood convulsions and seizures.",
+        "Liver-channel Wind-Heat with red eyes and corneal nebula.",
+        "Mouth sores and non-healing ulcers (topical use)."
+      ],
+      "condition_tags_zh": [
+        "心悸",
+        "驚悸失眠",
+        "小兒驚風",
+        "目赤翳障",
+        "口瘡",
+        "瘡瘍不斂"
+      ],
+      "condition_tags_en": [
+        "Palpitations",
+        "Insomnia with restlessness",
+        "Childhood convulsions",
+        "Red eyes with nebula",
+        "Mouth sores",
+        "Non-healing sores"
+      ],
+      "modern_functions_zh": [
+        "含膠原胜肽、胺基酸與微量元素，列護膚、促進膠原蛋白合成、支持鈣質吸收預防骨質疏鬆等現代應用（CloudTCM）"
+      ],
+      "modern_functions_en": [
+        "Contains collagen peptides, amino acids, and trace elements; reported skincare/collagen-synthesis and bone-health/osteoporosis-prevention applications (CloudTCM)"
+      ],
+      "dosage": {
+        "min_g": 0.3,
+        "max_g": 1,
+        "unit": "g/day",
+        "route": "powder_only"
+      },
+      "dosage_g": {
+        "standard_daily_g": "0.3–1g，研極細末沖服，不入湯劑（課件、American Dragon、CloudTCM 三源一致）",
+        "course_dose_g": "0.3–1g",
+        "ad_dose_g": "0.3–1g",
+        "cloudtcm_dose_g": "0.3–1g；食療 0.3–0.6g；須研極細末沖服，不入湯劑",
+        "source_note": "三源劑量與用法完全一致：質地堅硬不入煎劑，需研極細末沖服或作丸。"
+      },
+      "related_formulas": [],
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；安神藥考點：質重鎮心安神，兼能明目生肌，須研粉不入煎劑。",
+      "exam_pearl": "課件 High-Yield Comparisons 提示：珍珠鎮心安神+生肌為其獨特定位，與其他鎮驚藥（龍骨牡蠣、石決明母貝）鑑別在於兼有生肌美容之外用價值。",
+      "clinical_use_note": "珍珠甘鹹寒入心肝經，核心定位是鎮心安神兼清肝明目，並能解毒生肌（外用治瘡瘍口瘡）。因質地堅硬,臨床一律研極細末沖服或入丸,不可入煎劑久煮。無實熱火證者不宜用,孕婦慎用。",
+      "contraindications_zh": [
+        "非實熱火證者不宜用。"
+      ],
+      "contraindications_en": [
+        "Not indicated in the absence of Excess-Heat/Fire patterns."
+      ],
+      "cautions_zh": [
+        "American Dragon 與 CloudTCM 均提醒孕婦慎用。",
+        "課件提醒因質地堅硬，主要以粉劑使用。"
+      ],
+      "cautions_en": [
+        "American Dragon and CloudTCM both note caution in pregnancy.",
+        "Course material notes it is primarily used in powder form due to its hardness."
+      ],
+      "safety_flags": [
+        "no_excess_heat_contraindication",
+        "pregnancy_caution",
+        "powder_form_only"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+      "source_citations": [
+        {
+          "name": "📘 課件 Materia Medica III-Wind-extinguishing Herbs",
+          "url": "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "scope": "課件段落：珍珠性味歸經、功效主治、劑量、高頻鑑別比較"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "scope": "精準頁：英文名、性味歸經、功效主治、劑量、禁忌"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1241",
+          "scope": "精準頁：性味歸經、傳統與現代功效、主治、劑量、禁忌"
+        }
+      ],
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+        "https://cloudtcm.com/herb/1241"
+      ],
+      "field_sources": {
+        "identity": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "category": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420"
+        ],
+        "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "functions_zh": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "indications_zh": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "dosage": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "contraindications_zh": [
+          "https://cloudtcm.com/herb/1241"
+        ],
+        "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
+          "https://cloudtcm.com/herb/1241",
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#L395-L420",
+          "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html"
+        ]
+      },
+      "card_grade": "template"
     }
   ],
   "batch_summary": {
-    "total_records": 325,
+    "total_records": 327,
     "repaired_pending_utf8_records": 32,
     "draft_filled_this_batch": 127,
     "source_checked_records": 0,
     "safety_rule": "Search tags and clinical notes are documentation context only, not treatment claims.",
-    "last_batch": "NCBAHM missing herbs batch 15",
+    "last_batch": "NCBAHM missing herbs batch 16 (final - Appendix A gap closed)",
     "last_batch_cards": [
-      "檀香",
-      "土鱉蟲",
-      "土茯苓",
-      "豨薟草",
-      "野菊花"
+      "皂角刺",
+      "珍珠"
     ],
-    "local_herb_cards": 325,
+    "local_herb_cards": 327,
     "latest_missing_card_batch": {
       "date": "2026-07-29",
       "agent": "Claude",
       "branch": "claude/acuting-os-rebuild-analysis-u0e82n",
       "added": [
-        "herb.tan_xiang",
-        "herb.tu_bie_chong",
-        "herb.tu_fu_ling",
-        "herb.xi_xian_cao",
-        "herb.ye_ju_hua"
+        "herb.zao_jiao_ci",
+        "herb.zhen_zhu"
       ],
-      "rule": "NCBAHM 2026 CH Appendix A missing-card creation; source-layered draft; network-verified against American Dragon + CloudTCM."
+      "rule": "NCBAHM 2026 CH Appendix A missing-card creation; source-layered draft; network-verified against American Dragon + CloudTCM. This batch closes the Appendix A gap (304/304 matched)."
     }
   },
   "updated_at": "2026-07-29"

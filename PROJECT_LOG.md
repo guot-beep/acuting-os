@@ -1,5 +1,12 @@
 # AcuTing OS Project Log
 
+## 2026-07-29 Claude — NCBAHM CH missing herbs batch 16 (FINAL, network-verified): Zao Jiao Ci, Zhen Zhu — Appendix A gap CLOSED
+
+- Built the final 2 cards from curriculum + live American Dragon + live CloudTCM, closing the Appendix A missing-card gap opened 2026-07-28: **herb_outline_coverage is now 304/304 matched, 0 missing.** Local herb cards: 327.
+- Ting caught mid-session that Appendix B (Chinese Herbal Pairs) hadn't been checked at all for batch12-15's 20 herbs — only `key_pairs: []` left by default, not by verification. Read the full Appendix B list (57 pairs) directly and confirmed none of the 20 herbs from batch12-16 appear in it. Updated `docs/HERB_CARD_TEMPLATE.md` §3.4a so both appendices are a required step before writing any future card.
+- Outstanding: a course/American-Dragon pairing sweep for batch12-15's 20 herbs (Appendix B being empty doesn't rule out a course- or AD-sourced pair — some were already mentioned in fetched AD text, e.g. Ling Zhi+Suan Zao Ren, but never turned into `herb_pairs.json` entries). Separate pass needed.
+- Validation: build-data PASS; herb-standard PASS; content-junk PASS; card-grade stamper graded both `template`.
+
 ## 2026-07-29 Claude — NCBAHM CH missing herbs batch 15 (network-verified): Tan Xiang, Tu Bie Chong, Tu Fu Ling, Xi Xian Cao, Ye Ju Hua
 
 - Built 5 more cards from curriculum + live American Dragon + live CloudTCM. Tu Bie Chong has no findable exact CloudTCM page this pass — built honestly from curriculum + AD only rather than guessing a URL.

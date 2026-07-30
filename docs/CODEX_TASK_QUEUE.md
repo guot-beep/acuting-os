@@ -51,7 +51,11 @@ the id into `data/acupoints/point_id_manifest.json`.
 
 ## Quality Capture - NCBAHM 2026 CH Appendix A herb-card gap (added 2026-07-28)
 
-Status: OPEN. Source of truth for the live Quality page is `data/audits/missing_report.json.herb_outline_coverage`.
+Status: **CLOSED 2026-07-29 (batch16)**. 304/304 Appendix A herbs now have local cards. Source of truth for the live Quality page is `data/audits/missing_report.json.herb_outline_coverage`.
+
+Update 2026-07-29 (Claude, network-verified session) — batch16 (final): Zao Jiao Ci, Zhen Zhu built (curriculum + live American Dragon + live CloudTCM), closing the Appendix A gap: 302/304 → 304/304 matched, 2 → 0 missing. Local herb cards 325 → 327. Both checked against NCBAHM 2026 CH Appendix B (Chinese Herbal Pairs, 57 entries) — neither is listed there.
+
+**Process gap found and fixed**: batch12–15 (20 herbs) were built checking only Appendix A, never Appendix B, and `key_pairs` was left empty by default rather than by verification. Retroactively checked all 20 against the full Appendix B list — none of them appear in it (Appendix B is a short classic-pairs list, not exhaustive per-herb). `docs/HERB_CARD_TEMPLATE.md` §3.4a now requires checking both appendices before writing any card, going forward. Still outstanding: a course/American-Dragon pairing sweep for these 20 herbs (Appendix B being empty for them doesn't mean no pair exists anywhere — course material or AD's own "commonly combined with" notes may still support a `herb_pairs.json` entry; this wasn't checked yet).
 
 Update 2026-07-29 (Claude, network-verified session) — batch15: Tan Xiang, Tu Bie Chong, Tu Fu Ling, Xi Xian Cao, Ye Ju Hua built (curriculum + live American Dragon + live CloudTCM; Tu Bie Chong has no findable exact CloudTCM page, built from curriculum+AD only, labeled honestly). Coverage 297/304 → 302/304 matched, 7 → 2 missing. Local herb cards 320 → 325. Next recommended batch (16, final): Zao Jiao Ci; Zhen Zhu.
 

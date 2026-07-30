@@ -1,5 +1,19 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-29] Claude Handoff - NCBAHM missing herbs batch 16 (FINAL): Zao Jiao Ci, Zhen Zhu — Appendix A gap closed 304/304
+
+- **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
+- **Task**: Final two cards closing the NCBAHM 2026 CH Appendix A missing-card gap opened 2026-07-28.
+- **Files changed**: `data/herbs/herb_canon_shortlist.json`, `data/audits/missing_report.json`, generated `data/generated/app_data.js`, generated `data/generated/knowledge_data.js`, `docs/HERB_CARD_TEMPLATE.md`, `docs/CODEX_TASK_QUEUE.md`, `PROJECT_LOG.md`, `docs/CODEX_HANDOFF.md`.
+- **Sources used**: Chenoweth course files — `Materia Medica III-Herbs that Transform Phlegm.md` (Zao Jiao Ci, full section) and `Materia Medica III-Wind-extinguishing Herbs.md` (Zhen Zhu, full section, plus its own high-yield-comparison note); American Dragon exact pages ZaoJiaoCi and ZhenZhu (fetched live); CloudTCM exact pages `/herb/1270` (皂角刺) and `/herb/1241` (珍珠), confirmed by name match.
+- **Appendix B check (Ting instructed mid-session)**: read the full NCBAHM 2026 CH Appendix B (Chinese Herbal Pairs, `curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md` lines 500-560, 57 pairs total) directly and confirmed neither Zao Jiao Ci nor Zhen Zhu — nor any of batch12-15's 20 herbs — appears in it. This was checked *before* writing these two cards, unlike batch12-15 where it wasn't checked at all until Ting asked. `docs/HERB_CARD_TEMPLATE.md` §3.4a now makes checking both appendices a stated step for every future card.
+- **Quality update**: `data/audits/missing_report.json.herb_outline_coverage` — **304/304 matched, 0 missing.** Local herb-card count is now 327. Status changed from OPEN to CLOSED in `docs/CODEX_TASK_QUEUE.md`.
+- **Validation**: `build-data.js` PASS; `validate-herb-standard.js` PASS; `validate-content-junk.js` PASS; `stamp-herb-card-grade.js --apply` graded both new cards `template`. Field-order diff against `herb.he_tao_ren` confirmed exact match before validating.
+- **Known follow-ups (not done in this batch)**:
+  1. **Pairing sweep for batch12-15's 20 herbs is still outstanding.** Appendix B being empty for them only means no *board-mandated* pair exists — course material or American Dragon's own "commonly combined with" notes may still support real `herb_pairs.json` entries (e.g. Ling Zhi + Suan Zao Ren/Bai Zi Ren and She Chuang Zi + Ku Shen were both mentioned in AD text already fetched for those cards but never turned into pair records). This needs a dedicated pass, not bundled into this handoff.
+  2. 4 pre-existing `herb_pairs.json` entries still point at herb ids outside Appendix A scope (橘核, 青葙子, 穀精草, 南沙參) and remain unbuilt — clearing Appendix A does not cover them; separate backlog item.
+  3. Ting flagged during batch12 review that ~24 pre-existing herb records (batch predates this session) pass structural validation but have zero recorded sources on their functions layer — listed in `scripts/stamp-herb-card-grade.js` output each run. Real quality work, not part of the Appendix A sweep.
+
 ## [2026-07-29] Claude Handoff - NCBAHM missing herbs batch 15: Tan Xiang, Tu Bie Chong, Tu Fu Ling, Xi Xian Cao, Ye Ju Hua (network-verified)
 
 - **Branch**: `claude/acuting-os-rebuild-analysis-u0e82n`
