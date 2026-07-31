@@ -61,7 +61,16 @@ function hydrateDirectoryTopic(topic) {
   return matchType && directoryTopicMatchers[matchType] ? { ...rest, match: directoryTopicMatchers[matchType] } : rest;
 }
 
-const directoryRegionGroups = (uiConfig.directoryRegionGroups || []).map(hydrateRegexMatch);
+const defaultDirectoryRegionGroups = [
+  { id: "head_face", zh: "頭面頸部", en: "Head, Face, Neck", matchPattern: "頭|面|頸|項|鼻|眼|耳|眉|口|頭皮|scalp|head|face|neck|nose|eye|ear", matchFlags: "i" },
+  { id: "chest_abdomen", zh: "胸腹部", en: "Chest & Abdomen", matchPattern: "胸|腹|脅|乳|肋|腹部|胸部|chest|abdomen|thorax|rib", matchFlags: "i" },
+  { id: "back", zh: "背腰骶部", en: "Back, Lumbar, Sacral", matchPattern: "背|腰|骶|俞|脊|腰椎|背部|back|lumbar|sacral|spine", matchFlags: "i" },
+  { id: "upper_limb", zh: "上肢", en: "Upper Limb", matchPattern: "手|腕|肘|前臂|臂|肩|上肢|upper limb|hand|wrist|elbow|forearm|arm|shoulder", matchFlags: "i" },
+  { id: "lower_limb", zh: "下肢", en: "Lower Limb", matchPattern: "足|腿|膝|踝|趾|下肢|股|脛|跟|lower limb|leg|knee|ankle|foot|toe|thigh", matchFlags: "i" },
+  { id: "auricular", zh: "耳穴", en: "Auricular", matchPattern: "耳|auricular|ear", matchFlags: "i" }
+];
+
+const directoryRegionGroups = ((uiConfig && Array.isArray(uiConfig.directoryRegionGroups) && uiConfig.directoryRegionGroups.length) ? uiConfig.directoryRegionGroups : defaultDirectoryRegionGroups).map(hydrateRegexMatch);
 const directoryTopics = (uiConfig.directoryTopics || []).map(hydrateDirectoryTopic);
 const earAnatomyLabelData = uiConfig.earAnatomyLabelData || [];
 const earPointAnchors = uiConfig.earPointAnchors || {};
@@ -2352,7 +2361,14 @@ function bindDirectoryButtons(scope) {
       if (action === "meridian") meridianFilter.value = value;
       if (action === "regionGroup") {
         directoryRegionGroup = value;
+        selectedSystem = "";
+        selectedSystemBranch = "";
+        meridianFilter.value = "";
+        directoryTungZone = "";
+        directoryPointCategory = "";
+        directoryTopic = "";
         regionFilter.value = "";
+        document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.toggle("active", b.dataset.system === ""));
       }
       if (action === "topic") {
         directoryTopic = value;
@@ -2678,9 +2694,22 @@ function pointMatchesCategory(point, categoryId) {
 }
 
 function pointMatchesRegionGroup(point, groupId) {
+  if (!groupId) return true;
+  if (groupId === "auricular") {
+    return isAuricularPoint(point);
+  }
   const group = directoryRegionGroups.find((item) => item.id === groupId);
   if (!group) return true;
-  return group.match.test([point.region, point.meridian, point.location, point.locationEn, point.nameZh, point.nameEn, point.code].join(" "));
+  const haystack = [
+    point.region,
+    point.standardRegion,
+    point.location,
+    point.locationEn,
+    point.nameZh,
+    point.nameEn,
+    point.code
+  ].join(" ");
+  return group.match ? group.match.test(haystack) : true;
 }
 
 function pointMatchesTopic(point, topicId) {
