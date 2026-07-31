@@ -6221,9 +6221,213 @@ function renderChannelsWorkspace() {
   }
 
   // Default: Meridian/Vessel Overview Card
-  const chData = channelRecords.find(c => c.code === activeChannelCode) || channelRecords[0] || {};
+  const chData = getChannelOverviewData(activeChannelCode);
   content.innerHTML = renderChannelOverviewCard(chData);
   bindMatrixPointLinks(content);
+  bindChannelNavButtons(content);
+}
+
+function bindChannelNavButtons(container) {
+  container.querySelectorAll('[data-ch-code]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeChartMode = '';
+      activeChannelCode = btn.dataset.chCode;
+      renderChannelsWorkspace();
+    });
+  });
+}
+
+function getChannelOverviewData(code) {
+  const dictionary = {
+    LU: {
+      code: "LU", nameZh: "手太陰肺經", nameEn: "Lung Channel of Hand Taiyin",
+      element: "Metal / 金", clock_time: "3:00 AM - 5:00 AM (寅時)",
+      prev_code: "LR", next_code: "LI",
+      pathway_zh: "起於中焦，下絡大腸，還循胃口，上膈屬肺。從肺系橫行出腋下（中府），沿上臂內側前緣下行，至肘中（尺澤），沿前臂內側前緣入寸口（太淵），循魚際出大拇指端（少商）。分支從列缺分出，直達食指端（接大腸經）。",
+      indications_zh: ["咳嗽、氣喘、胸痛、少氣、咽喉腫痛", "外感風寒、發熱惡寒、自汗、盜汗", "經脈循行部位疼痛（肘臂、肩背、寸口痛）"],
+      applications_zh: ["主治肺系疾患與表證，宣肺解表、止咳平喘", "太淵為原穴兼八會穴之脈會，主治脈疾與氣虛", "尺澤為合水穴，瀉肺熱與瀉肺實之要穴"]
+    },
+    LI: {
+      code: "LI", nameZh: "手陽明大腸經", nameEn: "Large Intestine Channel of Hand Yangming",
+      element: "Metal / 金", clock_time: "5:00 AM - 7:00 AM (卯時)",
+      prev_code: "LU", next_code: "ST",
+      pathway_zh: "起於食指橈側端（商陽），沿食指橈側上升，出合谷，入兩筋（陽溪）之間，沿前臂橈側、上臂外側前緣，上肩（肩髃），交會於督脈大椎，前入缺盆，絡肺，下膈，屬大腸。分支從缺盆上頸，貫俠口，交人中，止於對側鼻翼旁（迎香，接胃經）。",
+      indications_zh: ["頭面五官疾病：牙痛、咽喉腫痛、鼻塞流涕、口眼歪斜", "熱病與皮膚病：高熱、疹塊、風疹、蕁麻疹", "腸胃與經脈病：腹痛、腸鳴、便秘、瀉洩、臂肘肩痛"],
+      applications_zh: ["合谷為手陽明原穴，面口合谷收，五官痛症要穴", "曲池為合土穴，清熱瀉火、涼血祛風除濕要穴", "肩髃為肩部疼痛與中風半身不遂之要穴"]
+    },
+    ST: {
+      code: "ST", nameZh: "足陽明胃經", nameEn: "Stomach Channel of Foot Yangming",
+      element: "Earth / 土", clock_time: "7:00 AM - 9:00 AM (辰時)",
+      prev_code: "LI", next_code: "SP",
+      pathway_zh: "起於鼻翼兩旁（迎香），上行至鼻根部，旁納太陽經脈，向下沿鼻外側（承泣），入上齒中，還出挾口環唇，下交承漿，沿下頜後下角，上耳前，過客主人，沿髮際，至額顱。支脈從缺盆下乳內廉，挾臍下行，入氣衝中。下循股外前廉，下膝膝髕，沿脛骨外側，入足中趾外側端（厲兌，接脾經）。",
+      indications_zh: ["腸胃病症：胃痛、嘔吐、腹脹、噎膈、便秘", "頭面五官病症：頭痛、齒痛、面癱、眼疾、口角歪斜", "神志病與經脈病：狂躁、驚悸、熱病、下肢痿痺"],
+      applications_zh: ["足三里為合穴兼下合穴，肚腹三里留，強壯保健第一要穴", "天樞為大腸募穴，調理腸胃止瀉止痛", "內庭為滎水穴，清瀉胃火止牙痛口臭"]
+    },
+    SP: {
+      code: "SP", nameZh: "足太陰脾經", nameEn: "Spleen Channel of Foot Taiyin",
+      element: "Earth / 土", clock_time: "9:00 AM - 11:00 AM (巳時)",
+      prev_code: "ST", next_code: "HT",
+      pathway_zh: "起於大趾末端（隱白），沿大趾內側赤白肉際，過核骨後，上內踝前廉，沿小腿內側骨後緣，交出足厥陰經之前，上膝股內側前廉，入腹，屬脾，絡胃，上膈，俠咽，連舌本，散舌下。支脈從胃別上膈，注心中（接心經）。大包為脾之大絡，布胸脇。",
+      indications_zh: ["脾胃病症：胃脘痛、腹脹、嘔吐、便瀉、黃疸", "婦科與泌尿病症：月經不調、痛經、崩漏、帶下、尿頻", "水濕與血證：水腫、重著、崩漏、便血"],
+      applications_zh: ["三陰交為足三陰經交會穴，婦科與脾腎調理總穴", "太白為原穴兼輸土穴，健脾和胃、升清降濁", "陰陵泉為合水穴，利水滲濕、健脾祛濕第一要穴"]
+    },
+    HT: {
+      code: "HT", nameZh: "手少陰心經", nameEn: "Heart Channel of Hand Shaoyin",
+      element: "Fire / 火", clock_time: "11:00 AM - 1:00 PM (午時)",
+      prev_code: "SP", next_code: "SI",
+      pathway_zh: "起於心中，出屬心系，下膈，絡小腸。直行者從心系上挾咽，繫目系。外行者從心系卻上肺，下出腋下（極泉），沿上臂內側後緣，下肘內側（少海），沿前臂內側後緣，抵掌後銳骨之端（神門），入掌內，沿小指內側出其端（少沖，接小腸經）。",
+      indications_zh: ["心血管與神志病症：心悸、怔忡、心痛、失眠、健忘、狂躁", "發熱與咽舌病症：咽乾、渴飲、舌強不語、口舌生瘡", "經脈循行部位疼痛：臑臂內側後緣痛、掌心熱痛"],
+      applications_zh: ["神門為心經原穴兼輸土穴，寧心安神、治失眠心悸要穴", "少海為合水穴，清心瀉火、理氣通絡", "極泉為起穴，理氣寬胸、治腋脇疼痛與肩臂癱瘓"]
+    },
+    SI: {
+      code: "SI", nameZh: "手太陽小腸經", nameEn: "Small Intestine Channel of Hand Taiyang",
+      element: "Fire / 火", clock_time: "1:00 PM - 3:00 PM (未時)",
+      prev_code: "HT", next_code: "BL",
+      pathway_zh: "起於小指尺側端（少澤），沿手掌尺側邊緣，上腕出踝中，直上沿前臂尺側後緣，出肘內側兩骨之間（小海），沿上臂外側後緣，出肩解，繞肩胛，交脊上大椎，入缺盆，絡心，循咽，下膈，抵胃，屬小腸。支脈從缺盆循頸上頰，至目銳眥，入耳中（聽宮，接膀胱經）。",
+      indications_zh: ["頭面五官病症：耳鳴、耳聾、目赤、咽痛、頰腫", "神志與熱病：昏迷、高熱、痙攣、癲狂", "經脈循行部位疼痛：肩胛痛、頸項強痛、肘臂痛"],
+      applications_zh: ["後谿為輸木穴兼八脈交會穴通督脈，治項強、脊痛與頭痛要穴", "聽宮為耳部要穴，善治耳鳴耳聾", "養老為郄穴，清頭明目、舒筋活絡，治目昏眼花與肩臂痛"]
+    },
+    BL: {
+      code: "BL", nameZh: "足太陽膀胱經", nameEn: "Bladder Channel of Foot Taiyang",
+      element: "Water / 水", clock_time: "3:00 PM - 5:00 PM (申時)",
+      prev_code: "SI", next_code: "KI",
+      pathway_zh: "起於目內眥（睛明），上額，交巔頂。支脈從巔至耳上角。直行者從巔入絡腦，還出別下項，沿肩胛內側，挾脊柱兩旁下行至腰中，入循膂，絡腎，屬膀胱。腰部支脈下貫臀，入膕中（委中）。項部支脈下挾脊內，過股樞，沿股外後廉下合膕中，貫腨內，出外踝後（昆侖），沿京骨至小趾外側端（至陰，接腎經）。",
+      indications_zh: ["頭面五官病症：頭痛、目痛、目赤流淚、鼻塞流涕", "臟腑病症：五臟六腑背俞穴所在地，可治相應臟腑疾病", "腰背腿痛與神志病症：腰背痛、腰脊強痛、膕窩痛、下肢麻木、癲狂"],
+      applications_zh: ["委中為合土穴兼下合穴，腰背委中求，治腰背疼痛第一要穴", "昆侖為經火穴，舒筋活絡、順氣落胎", "至陰為井金穴，矯正胎位（灸法）與催產要穴"]
+    },
+    KI: {
+      code: "KI", nameZh: "足少陰腎經", nameEn: "Kidney Channel of Foot Shaoyin",
+      element: "Water / 水", clock_time: "5:00 PM - 7:00 PM (酉時)",
+      prev_code: "BL", next_code: "PC",
+      pathway_zh: "起於足小趾下，斜走足心（湧泉），出於舟骨粗隆下，沿內踝後（太溪），別入跟中，上小腿內側，出膕內廉，上股內後廉，貫脊屬腎，絡膀胱。直行者從腎上貫肝膈，入肺中，循喉嚨，俠舌本。支脈從肺出絡心，注胸中（接心包經）。",
+      indications_zh: ["腎虛與生殖病症：陽痿、遺精、月經不調、不孕、小便不利", "咽喉與肺系病症：咽喉腫痛、咳嗽、氣喘、咯血", "神志與骨骼病症：頭暈、耳鳴、腰膝酸軟、失眠、健忘"],
+      applications_zh: ["湧泉為井木穴，開竅醒腦、降逆下氣、急救要穴", "太溪為原穴兼輸土穴，滋陰補腎、清降虛火要穴", "照海為八脈交會穴通陰蹻脈，利咽安神、治咽痛失眠"]
+    },
+    PC: {
+      code: "PC", nameZh: "手厥陰心包經", nameEn: "Pericardium Channel of Hand Jueyin",
+      element: "Fire / 相火", clock_time: "7:00 PM - 9:00 PM (戌時)",
+      prev_code: "KI", next_code: "TE",
+      pathway_zh: "起於胸中，出屬心系，下膈，歷絡三焦。胸部支脈沿胸出脅，下腋三寸（天池），上抵腋下，沿上臂內側，行於手太陰、手少陰之間，入肘中（曲澤），下前臂行兩筋之間（內關、間使），入掌中（勞宮），循中指直出其端（中沖，接三焦經）。",
+      indications_zh: ["心血管與胸部病症：心痛、心悸、胸悶、心煩、狂躁", "胃腸病症：嘔吐、噁心、胃痛、打嗝", "神志與急症：高熱、昏迷、中暑、驚風"],
+      applications_zh: ["內關為絡穴兼八脈交會穴通陰維脈，內關心胸胃，理氣止痛降逆", "勞宮為滎火穴，清心瀉火、開竅安神", "曲澤為合水穴，清熱解毒、鎮驚止痛"]
+    },
+    TE: {
+      code: "TE", nameZh: "手少陽三焦經", nameEn: "Triple Burner Channel of Hand Shaoyang",
+      element: "Fire / 相火", clock_time: "9:00 PM - 11:00 PM (亥時)",
+      prev_code: "PC", next_code: "GB",
+      pathway_zh: "起於無名指尺側端（關沖），向上沿手背出手腕外側（陽池），沿前臂外側兩骨之間，上肘（天井），沿上臂外側上肩，交出足少陽之後，入缺盆，布膻中，散絡心包，下膈，遍屬三焦。胸部支脈從膻中上出缺盆，上項，連耳後，直上出耳上角，屈下頰至目下。耳部支脈入耳中，出走耳前，至目銳眥（絲竹空，接膽經）。",
+      indications_zh: ["頭面五官病症：耳鳴、耳聾、目赤腫痛、咽喉腫痛、頰腫", "熱病與少陽證：偏頭痛、發熱、寒熱往來", "經脈循行部位疼痛：肩背痛、肘臂痛、項強痛"],
+      applications_zh: ["外關為絡穴兼八脈交會穴通陽維脈，解表清熱、疏風止痛", "支溝為經火穴，清熱通便、理氣止脅痛要穴", "陽池為原穴，生發陽氣、通調三焦"]
+    },
+    GB: {
+      code: "GB", nameZh: "足少陽膽經", nameEn: "Gallbladder Channel of Foot Shaoyang",
+      element: "Wood / 木", clock_time: "11:00 PM - 1:00 AM (子時)",
+      prev_code: "TE", next_code: "LR",
+      pathway_zh: "起於目銳眥（瞳子髎），上抵角孫，下耳後（風池），沿頸行手少陽之前，至肩上，交出手少陽之後，入缺盆。耳部支脈從耳後入耳中，出走耳前，至目銳眥後。缺盆支脈下胸中，貫膈，絡肝，屬膽，沿脅裏，出氣衝，繞毛際，橫入股樞（環跳）。直行者從缺盆下腋，沿胸側，過季脅，下合股樞，下沿股外側，下膝外廉，下脛骨前方，下外踝前，沿足背入第四趾外側端（足竅陰，接肝經）。",
+      indications_zh: ["肝膽病症：黃疸、口苦、脅肋疼痛、嘔吐", "頭面五官病症：偏頭痛、目赤痛、耳鳴、耳聾、頸項強痛", "下肢與神志病症：股脛疼痛、下肢麻木痿痺、中風半身不遂"],
+      applications_zh: ["風池為祛風要穴，清利頭目、解表熄風", "環跳為股樞要穴，治腰腿痛、坐骨神經痛與中風癱瘓", "陽陵泉為合土穴兼八會穴之筋會，疏肝利膽、舒筋活絡總穴"]
+    },
+    LR: {
+      code: "LR", nameZh: "足厥陰肝經", nameEn: "Liver Channel of Foot Jueyin",
+      element: "Wood / 木", clock_time: "1:00 AM - 3:00 AM (丑時)",
+      prev_code: "GB", next_code: "LU",
+      pathway_zh: "起於大趾背毫毛部（大敦），向上沿足背要穴（太衝），上內踝前一寸（中封），上脛骨內側，交出足太陰脾經之後，上膕內廉，沿股內側入陰毛中，環陰器，抵小腹，俠胃，屬肝，絡膽，上貫膈，布脅肋，循喉嚨之後，上入亢顙，連目系，上出額，與督脈會於巔頂。目系支脈下頰裏，環唇內。肝部支脈復從肝別貫膈，上注肺（接肺經）。",
+      indications_zh: ["肝病與氣滯病症：脅肋疼痛、腹脹、黃疸、眩暈、癲癇", "婦科與前陰病症：月經不調、痛經、疝氣、遺尿、小便不利", "頭面與神志病症：頂頭痛、目赤腫痛、口苦、煩躁易怒"],
+      applications_zh: ["太衝為原穴兼輸土穴，平肝息風、疏肝理氣第一要穴", "期門為肝之募穴，疏肝理氣、和胃化痰", "行間為滎火穴，清瀉肝火、涼血息風"]
+    },
+    Du: {
+      code: "Du", nameZh: "督脈 (Du Mai)", nameEn: "Governor Vessel (Du Mai / GV)",
+      element: "Yang Vessel / 陽脈之海", clock_time: "Continuous / 貫脊行背",
+      prev_code: "LR", next_code: "Ren",
+      pathway_zh: "起於小腹內，下出會陰，沿脊柱裡面後行，至項後風府穴處進入腦內，上行巔頂（百會），沿前額下行至鼻柱，止於上唇繫帶處（齦交）。分支絡腎、貫心、入喉。督脈總督一身之陽經。",
+      indications_zh: ["神志與腦部病症：頭痛、項強、頭暈、昏迷、癲狂、癎證", "脊柱與腰背病症：腰脊強痛、背寒、下肢麻木痿痺", "熱病與陽氣虛弱：高熱、瘧疾、畏寒肢冷"],
+      applications_zh: ["百會為巔頂要穴，升陽舉陷、清熱開竅、安神定志", "大椎為諸陽之會，解表清熱、截瘧退燒要穴", "命門為培元固本要穴，溫補腎陽、壯腰健膝"]
+    },
+    Ren: {
+      code: "Ren", nameZh: "任脈 (Ren Mai)", nameEn: "Conception Vessel (Ren Mai / CV)",
+      element: "Yin Vessel / 陰脈之海", clock_time: "Continuous / 行胸腹正中",
+      prev_code: "Du", next_code: "Chong",
+      pathway_zh: "起於小腹內，下出會陰，向前經陰毛部，沿腹部及胸部正中線上行，過咽喉，上行至下唇內（承漿），環繞口唇，上行至兩眼下方（承泣）。任脈主一身之陰經，總任一身之陰血。",
+      indications_zh: ["婦科與生殖病症：月經不調、痛經、帶下、不孕、產後腹痛", "腹部與胃腸病症：腹脹、胃痛、嘔吐、腹瀉、疝氣", "胸肺與咽喉病症：胸悶、氣喘、咽喉腫痛、失音"],
+      applications_zh: ["關元為小腸募穴兼強壯要穴，培元固本、補氣回陽", "中脘為胃之募穴兼八會穴之腑會，和胃健脾、理氣止痛", "膻中為心包募穴兼八會穴之氣會，寬胸理氣、止咳平喘"]
+    },
+    Chong: {
+      code: "Chong", nameZh: "沖脈 (Chong Mai)", nameEn: "Chong Vessel (Thoroughfare Vessel)",
+      element: "Sea of Blood / 十二經脈之海", clock_time: "Continuous",
+      prev_code: "Ren", next_code: "Dai",
+      pathway_zh: "起於小腹內，下出會陰，並於足少陰腎經挾臍旁上行，散於胸中，再向上行至咽喉，環繞口唇。分支下行沿大腿內側入足大趾。為血海與十二經脈之海。",
+      indications_zh: ["婦科病症：月經不調、經閉、崩漏、不孕", "氣逆與胸腹病症：氣逆上衝（奔豚氣）、胸腹痛、嘔吐", "氣血虧虛：面色蒼白、頭暈心悸"],
+      applications_zh: ["公孫（SP4）為八脈交會穴通沖脈，主治心胸胃病症", "陰交、氣衝為沖脈循行要穴", "調血衝脈，專治婦科經產血病與氣逆症"]
+    },
+    Dai: {
+      code: "Dai", nameZh: "帶脈 (Dai Mai)", nameEn: "Dai Vessel (Girdling Vessel)",
+      element: "Girdle Vessel / 約束諸脈", clock_time: "Continuous",
+      prev_code: "Chong", next_code: "Yangqiao",
+      pathway_zh: "起於季脅部（章門），斜下行至帶脈穴、五樞穴、維道穴，環繞腰腹一圈，狀如束帶。約束縱行諸經脈。",
+      indications_zh: ["婦科帶下病：白帶增多、赤白帶下、月經不調", "腰腹病症：腰腹冷痛、腰重如帶五千錢、腹脹", "下肢痿軟：下肢無力、痿痺不收"],
+      applications_zh: ["足臨泣（GB41）為八脈交會穴通帶脈，主治目眩、脇痛與帶下病", "帶脈穴、五樞穴、維道穴為帶脈本穴", "約束諸經，主治婦科赤白帶下與腰胯疼痛"]
+    },
+    Yangqiao: {
+      code: "Yangqiao", nameZh: "陽蹻脈 (Yangqiao Mai)", nameEn: "Yangqiao Vessel (Yang Heel Vessel)",
+      element: "Yang Heel / 主一身左右之陽", clock_time: "Continuous",
+      prev_code: "Dai", next_code: "Yangwei",
+      pathway_zh: "起於足跟外側（申脈），沿外踝後直上，經過股外側、脅肋後，沿肩、頸、口角，至目內眥（睛明），與陰蹻脈會合，再沿膽經上行入風池。主肢體運動與睡眠。",
+      indications_zh: ["目疾與睡眠病症：失眠、目不合、目赤腫痛", "神志與運動病症：癲狂、癲癇、中風口眼歪斜、腰腿拘急", "下肢病症：外側拘急而內側弛緩"],
+      applications_zh: ["申脈（BL62）為八脈交會穴通陽蹻脈，主治失眠、頭痛與腰腿病", "睛明、風池為陽蹻脈會穴", "司眼目開合與下肢運動，主治陽急陰緩之症"]
+    },
+    Yangwei: {
+      code: "Yangwei", nameZh: "陽維脈 (Yangwei Mai)", nameEn: "Yangwei Vessel (Yang Linking Vessel)",
+      element: "Yang Linking / 維絡諸陽", clock_time: "Continuous",
+      prev_code: "Yangqiao", next_code: "Yinqiao",
+      pathway_zh: "起於足跗外側（金門），沿下肢外側、脅肋、肩部、頸部，上至額部（陽白），循頭後入風池。維絡一身陽經，主表、主發熱。",
+      indications_zh: ["表證與發熱病症：寒熱往來、惡寒發熱、瘧疾", "頭面與耳目病症：頭痛、目眩、耳聾、頸項強痛", "軀體外側疼痛：肩痛、脅肋痛、下肢外側痛"],
+      applications_zh: ["外關（TE5）為八脈交會穴通陽維脈，主治外感熱病與耳鳴頭痛", "金門、陽白、風池為陽維脈會穴", "維絡諸陽，主治寒熱往來與表證發熱"]
+    },
+    Yinqiao: {
+      code: "Yinqiao", nameZh: "陰蹻脈 (Yinqiao Mai)", nameEn: "Yinqiao Vessel (Yin Heel Vessel)",
+      element: "Yin Heel / 主一身左右之陰", clock_time: "Continuous",
+      prev_code: "Yangwei", next_code: "Yinwei",
+      pathway_zh: "起於足舟骨後方（照海），沿內踝前直上，循股內側，入陰部，沿胸腹正中旁、咽喉，上至目內眥（睛明），與陽蹻脈會合。主嗜睡與目睛開合。",
+      indications_zh: ["睡眠與眼疾：嗜睡、目睛不閉、目赤腫痛", "前陰與婦科病症：小便不利、疝氣、婦人腹痛、陰挺", "肢體病症：下肢內側拘急而外側弛緩"],
+      applications_zh: ["照海（KI6）為八脈交會穴通陰蹻脈，主治嗜睡、咽痛與月經不調", "交信為陰蹻脈之郄穴", "司眼目開合與下肢運動，主治陰急陽緩之症"]
+    },
+    Yinwei: {
+      code: "Yinwei", nameZh: "陰維脈 (Yinwei Mai)", nameEn: "Yinwei Vessel (Yin Linking Vessel)",
+      element: "Yin Linking / 維絡諸陰", clock_time: "Continuous",
+      prev_code: "Yinqiao", next_code: "LU",
+      pathway_zh: "起於小腿內側（築賓），沿下肢內側、腹部（期門），上行至頸部（天突、廉泉）。維絡一身陰經，主裏、主心痛心煩。",
+      indications_zh: ["心胸與精神病症：心痛、胸悶、心煩、狂躁、憂鬱", "胃腸與腹部病症：胃痛、嘔吐、腹痛、腹瀉", "咽喉與頸部病症：咽喉腫痛、梅核氣、失音"],
+      applications_zh: ["內關（PC6）為八脈交會穴通陰維脈，主治心痛、胸悶與胃痛", "築賓為陰維脈之郄穴", "維絡諸陰，主治心痛、心煩與裏證痛症"]
+    }
+  };
+
+  const info = dictionary[code] || dictionary["LU"];
+
+  let matchedPoints = (points || []).filter(p => {
+    if (code === "Du") return p.channel === "Du" || p.channel === "GV" || (p.code && (p.code.startsWith("GV") || p.code.startsWith("DU")));
+    if (code === "Ren") return p.channel === "Ren" || p.channel === "CV" || (p.code && (p.code.startsWith("CV") || p.code.startsWith("REN")));
+    if (["Chong", "Dai", "Yangqiao", "Yangwei", "Yinqiao", "Yinwei"].includes(code)) {
+      if (code === "Chong") return ["SP4", "KI11", "KI12", "KI13", "KI14", "KI15", "KI16", "KI17", "KI18", "KI19", "KI20", "KI21", "ST30", "CV1"].includes(p.code);
+      if (code === "Dai") return ["GB26", "GB27", "GB28", "GB41", "LR13"].includes(p.code);
+      if (code === "Yangqiao") return ["BL62", "BL61", "BL59", "GB29", "SI10", "LI15", "LI16", "ST4", "ST3", "ST1", "BL1", "GB20"].includes(p.code);
+      if (code === "Yangwei") return ["BL63", "GB35", "SI10", "TE15", "GB21", "ST8", "GB13", "GB14", "GB15", "GB16", "GB17", "GB18", "GB19", "GB20", "GV16", "GV15", "TE5"].includes(p.code);
+      if (code === "Yinqiao") return ["KI6", "KI8", "ST9", "BL1"].includes(p.code);
+      if (code === "Yinwei") return ["KI9", "SP12", "SP13", "SP15", "LR14", "CV22", "CV23", "PC6"].includes(p.code);
+    }
+    return p.channel === code || (p.code && p.code.startsWith(code));
+  });
+
+  if (!matchedPoints.length) {
+    matchedPoints = (points || []).filter(p => p.code && p.code.startsWith(code));
+  }
+
+  info.points_list = matchedPoints.map(p => ({
+    code: p.code,
+    nameZh: p.nameZh || p.code,
+    nameEn: p.nameEn || p.code
+  }));
+
+  return info;
 }
 
 function bindMatrixPointLinks(container) {
