@@ -1,113 +1,110 @@
 #!/usr/bin/env node
-/**
- * scripts/normalize-formula-category.js — formula category normalization & enforcement.
+/* normalize-formula-category.js — one naming convention for formula categories.
  *
- *   node scripts/normalize-formula-category.js          # dry run
- *   node scripts/normalize-formula-category.js --apply  # write
+ * The field drifted into two forms. Some records carry "清熱劑 / Clear Heat"
+ * with category_en either empty or "Clear Heat"; others carry a bare "清熱劑"
+ * with the Chinese copied into category_en. Category browsing therefore shows
+ * the same category twice, and any grouping report double-counts it.
+ *
+ * After this: category is always "中文 / English", category_en is always the
+ * English alone. Records with no category keep none — a category cannot be
+ * inferred from a formula name, and guessing one would be worse than a blank.
+ *
+ * DRY RUN BY DEFAULT. Pass --write to persist.
  */
+'use strict';
+const fs = require('fs');
+const path = require('path');
 
-const fs = require("fs");
-const path = require("path");
+const FORMULAS = path.join(path.resolve(__dirname, '..'), 'data/herbs/formulas.json');
 
-const ROOT = path.join(__dirname, "..");
-const APPLY = process.argv.includes("--apply") || process.argv.includes("--write");
-const FILE = path.join(ROOT, "data/herbs/formulas.json");
-
-const CANONICAL_CATEGORIES = [
-  "解表劑 / Release Exterior",
-  "清熱劑 / Clear Heat",
-  "瀉下劑 / Drain Downward",
-  "和解劑 / Harmonize",
-  "溫裡劑 / Warm Interior",
-  "補益劑 / Tonify",
-  "理氣劑 / Regulate Qi",
-  "理血劑 / Regulate Blood",
-  "固澀劑 / Stabilize and Bind",
-  "安神劑 / Calm Spirit",
-  "開竅劑 / Open Orifices",
-  "祛濕劑 / Dispel Dampness",
-  "祛痰劑 / Transform Phlegm",
-  "治風劑 / Expel Wind",
-  "治燥劑 / Treat Dryness",
-  "表裏雙解劑 / Release Exterior & Interior",
-  "消食劑 / Reduce Food Stagnation",
-  "驅蟲劑 / Expel Parasites",
-  "癰瘍劑 / Treat Sores & Carbuncles"
-];
-
-const ALIASES = {
-  "解表劑": "解表劑 / Release Exterior",
-  "解表劑 / Release the Exterior": "解表劑 / Release Exterior",
-  "清熱劑": "清熱劑 / Clear Heat",
-  "清熱劑 / Clear Heat": "清熱劑 / Clear Heat",
-  "瀉下劑": "瀉下劑 / Drain Downward",
-  "瀉下劑 / Drain Downward": "瀉下劑 / Drain Downward",
-  "和解劑": "和解劑 / Harmonize",
-  "和解劑 / Harmonize": "和解劑 / Harmonize",
-  "溫裡劑": "溫裡劑 / Warm Interior",
-  "溫裡劑 / Warm the Interior": "溫裡劑 / Warm Interior",
-  "補益劑": "補益劑 / Tonify",
-  "補益劑 / Tonify": "補益劑 / Tonify",
-  "理氣劑": "理氣劑 / Regulate Qi",
-  "理氣劑 / Regulate Qi": "理氣劑 / Regulate Qi",
-  "理血劑": "理血劑 / Regulate Blood",
-  "理血劑 / Regulate Blood": "理血劑 / Regulate Blood",
-  "固澀劑": "固澀劑 / Stabilize and Bind",
-  "固澀劑 / Stabilize and Bind": "固澀劑 / Stabilize and Bind",
-  "安神劑": "安神劑 / Calm Spirit",
-  "安神劑 / Calm the Spirit": "安神劑 / Calm Spirit",
-  "開竅劑": "開竅劑 / Open Orifices",
-  "開竅劑 / Open the Orifices": "開竅劑 / Open Orifices",
-  "祛濕劑": "祛濕劑 / Dispel Dampness",
-  "祛濕劑 / Dispel Dampness": "祛濕劑 / Dispel Dampness",
-  "祛痰劑": "祛痰劑 / Transform Phlegm",
-  "化痰劑": "祛痰劑 / Transform Phlegm",
-  "祛痰劑 / Transform Phlegm": "祛痰劑 / Transform Phlegm",
-  "治風劑": "治風劑 / Expel Wind",
-  "治風劑 / Expel or Extinguish Wind": "治風劑 / Expel Wind",
-  "治燥劑": "治燥劑 / Treat Dryness",
-  "治燥劑 / Treat Dryness": "治燥劑 / Treat Dryness",
-  "消食劑": "消食劑 / Reduce Food Stagnation",
-  "消食劑 / Reduce Food Stagnation": "消食劑 / Reduce Food Stagnation",
-  "驅蟲劑": "驅蟲劑 / Expel Parasites",
-  "驅蟲劑 / Expel Parasites": "驅蟲劑 / Expel Parasites",
-  "癰瘍劑": "癰瘍劑 / Treat Sores & Carbuncles",
-  "癰瘍劑 / Treat Sores & Carbuncles": "癰瘍劑 / Treat Sores & Carbuncles"
+/* The 18 categories of the standard 方劑學 syllabus. Keyed by the Chinese
+ * stem, which is what both conventions share. 化痰劑 folds into 祛痰劑: the
+ * two names are the same category in different textbooks, and keeping both
+ * splits one formula off on its own. */
+const CANON = {
+  解表劑: 'Release the Exterior',
+  清熱劑: 'Clear Heat',
+  瀉下劑: 'Drain Downward',
+  和解劑: 'Harmonize',
+  溫裡劑: 'Warm the Interior',
+  補益劑: 'Tonify',
+  固澀劑: 'Stabilize and Bind',
+  安神劑: 'Calm the Spirit',
+  開竅劑: 'Open the Orifices',
+  理氣劑: 'Regulate Qi',
+  理血劑: 'Regulate Blood',
+  治風劑: 'Expel or Extinguish Wind',
+  治燥劑: 'Treat Dryness',
+  祛濕劑: 'Dispel Dampness',
+  祛痰劑: 'Transform Phlegm',
+  消食劑: 'Reduce Food Stagnation',
+  驅蟲劑: 'Expel Parasites',
+  癰瘍劑: 'Treat Abscesses and Sores',
+  表裏雙解劑: 'Release Both Exterior and Interior',
 };
+const MERGE = { 化痰劑: '祛痰劑' };
 
-const CANON_SET = new Set(CANONICAL_CATEGORIES);
+function stemOf(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return null;
+  const zh = raw.split('/')[0].trim();          // "清熱劑 / Clear Heat" -> "清熱劑"
+  const merged = MERGE[zh] || zh;
+  return CANON[merged] ? merged : null;
+}
 
-const raw = fs.readFileSync(FILE, "utf8");
-const data = JSON.parse(raw);
-const records = data.records || data;
+function main() {
+  const write = process.argv.includes('--write');
+  const F = JSON.parse(fs.readFileSync(FORMULAS, 'utf8'));
+  const records = F.records || F;
 
-let untouched = 0, rewritten = 0, unmappable = [];
+  let changed = 0; let already = 0; let blank = 0; const unknown = [];
+  const merged = [];
 
-for (const r of records) {
-  if (r.category && CANON_SET.has(r.category)) {
-    untouched++;
-    continue;
-  }
-  if (r.category && ALIASES[r.category]) {
-    console.log(`  rewrite ${r.id}: "${r.category}" -> "${ALIASES[r.category]}"`);
-    if (APPLY) r.category = ALIASES[r.category];
-    rewritten++;
-    continue;
-  }
-  if (r.category) {
-    unmappable.push(`${r.id}: category="${r.category}"`);
+  records.forEach((f) => {
+    const stem = stemOf(f.category) || stemOf(f.category_en);
+    if (!stem) {
+      if (String(f.category || '').trim() || String(f.category_en || '').trim()) {
+        unknown.push(`${f.id}: category="${f.category || ''}" category_en="${f.category_en || ''}"`);
+      } else {
+        blank += 1;
+      }
+      return;
+    }
+    if (MERGE[String(f.category || '').split('/')[0].trim()]) merged.push(f.id);
+
+    const canonical = `${stem} / ${CANON[stem]}`;
+    if (f.category === canonical && f.category_en === CANON[stem]) { already += 1; return; }
+    f.category = canonical;
+    f.category_en = CANON[stem];
+    changed += 1;
+  });
+
+  const counts = new Map();
+  records.forEach((f) => {
+    const k = f.category || '（未分類）';
+    counts.set(k, (counts.get(k) || 0) + 1);
+  });
+
+  console.log('===== 方劑分類正規化 =====\n');
+  console.log(`方劑總數      ${records.length}`);
+  console.log(`已正規        ${already}`);
+  console.log(`本次修正      ${changed}`);
+  console.log(`無分類        ${blank}  (保持空白,分類無法從方名推斷)`);
+  console.log(`無法辨識      ${unknown.length}`);
+  if (merged.length) console.log(`化痰劑 → 祛痰劑  ${merged.length}  (${merged.join(', ')})`);
+  if (unknown.length) { console.log('\n--- 無法辨識 ---'); unknown.forEach((u) => console.log('  ' + u)); }
+
+  console.log(`\n--- 正規化後分類 (${counts.size} 類) ---`);
+  [...counts.entries()].sort((a, b) => b[1] - a[1])
+    .forEach(([k, v]) => console.log(`  ${String(v).padStart(3)}  ${k}`));
+
+  if (write) {
+    fs.writeFileSync(FORMULAS, JSON.stringify(F, null, 2) + '\n');
+    console.log(`\n已寫入 ${FORMULAS}`);
+  } else {
+    console.log('\n（dry run：未寫入。加 --write 才落地。）');
   }
 }
 
-console.log(`\nSummary: ${untouched} canonical, ${rewritten} rewritten, ${unmappable.length} unmappable.`);
-if (unmappable.length) {
-  console.log("Unmappable categories:");
-  unmappable.forEach((u) => console.log("  " + u));
-}
-
-if (APPLY) {
-  fs.writeFileSync(FILE, JSON.stringify(data, null, 2) + "\n", "utf8");
-  console.log("\nApplied category normalization to formulas.json.");
-} else {
-  console.log("\nDry run completed. Run with --apply to save changes.");
-}
+main();
