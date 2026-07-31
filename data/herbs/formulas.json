@@ -12193,6 +12193,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 256,
@@ -12220,7 +12223,9 @@
             "大棗 6g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "當歸四逆桂芍細，甘草木通大棗齊。\n手足厥寒脈微細，溫經通脈血虛宜。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.si_jun_zi_tang",
@@ -12454,6 +12459,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 75,
@@ -12493,7 +12501,9 @@
             "甘草 6g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "四君子湯中和義，人參朮苓甘草隨。\n益氣健脾基礎劑，脾胃氣虛服之宜。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.liu_jun_zi_tang",
@@ -12784,6 +12794,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 54,
@@ -12835,7 +12848,9 @@
             "半夏 12g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "六君子湯即四君，半夏陳皮二味尋。\n益氣健脾兼化痰，脾虛痰濕服之靈。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.xiang_sha_liu_jun_zi_tang",
@@ -12899,6 +12914,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/150",
@@ -12911,7 +12929,9 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "formula_song_zh": "香砂六君即六君，木香砂仁兩味增。\n行氣化痰兼健脾，脾虛氣滯胃痛平。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.shen_ling_bai_zhu_san",
@@ -13307,6 +13327,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 194,
@@ -13345,7 +13368,9 @@
             "蓮子 30g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "參苓白朮扁豆陳，山藥砂仁薏苡仁。\n蓮子桔梗甘草合，脾虛洩瀉肺虛尋。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.bu_zhong_yi_qi_tang",
@@ -13677,6 +13702,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 262,
@@ -13724,7 +13752,9 @@
             "甘草 6g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "補中益氣芪參朮，昇柴陳草當歸錄。\n升陽舉陷清氣上升，氣虛下陷此方足。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.yu_ping_feng_san",
@@ -13911,6 +13941,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 86,
@@ -13931,7 +13964,9 @@
             "黃耆 30g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "玉屏風散用防風，黃芪白朮三般同。\n表虛自汗易感冒，固表止汗功效雄。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.sheng_mai_san",
@@ -14047,9 +14082,14 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
+      "formula_song_zh": "生脈麥味與人參，氣少汗多久咳尋。\n補氣斂陰復脈氣，氣陰兩虛服之欣。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.ren_shen_yang_rong_tang",
@@ -14448,6 +14488,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 77,
@@ -14491,7 +14534,9 @@
             "當歸 12g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "四物湯地芍當歸，川芎配合功無匹。\n調經養血婦科劑，血虛血瘀服之宜。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.tao_hong_si_wu_tang",
@@ -14786,6 +14831,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 171,
@@ -14829,7 +14877,9 @@
             "當歸 12g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "桃紅四物即四物，桃仁紅花兩味加。\n活血化瘀調經水，經閉腹痛痛能袪。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.jiao_ai_tang",
@@ -14948,6 +14998,9 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -14959,7 +15012,9 @@
       ],
       "pattern_tags_zh": [],
       "pattern_tags_en": [],
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
+      "formula_song_zh": "膠艾湯中用四物，阿膠艾葉甘草俱。\n婦人崩漏下血證，滋陰養血止血殊。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.dang_gui_bu_xue_tang",
@@ -15143,6 +15198,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 251,
@@ -15159,7 +15217,9 @@
             "當歸 6g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "當歸補血重黃芪，當歸一分黃芪五。\n血虛發熱面色白，肌熱煩渴此方取。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.ba_zhen_tang",
@@ -15481,6 +15541,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 18,
@@ -15527,7 +15590,9 @@
             "甘草 5g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "八珍湯合四君四，四物相配八般施。\n氣血雙虧面色白，補益氣血此方宜。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.shi_quan_da_bu_tang",
@@ -15681,6 +15746,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/20",
@@ -15724,7 +15792,9 @@
             "甘草 3g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "十全大補即八珍，肉桂黃芪兩味增。\n氣血大虧虛勞症，溫補氣血效能高。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -15788,6 +15858,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/570",
@@ -15800,7 +15873,9 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "formula_song_zh": "泰山磐石八珍湯，去芎加芪續砂糯。\n胎動不安氣血弱，安胎固本母子康。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.liu_wei_di_huang_wan",
@@ -16081,6 +16156,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 55,
@@ -16130,7 +16208,9 @@
             "山茱萸 12g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "六味地黃山茱萸，山藥澤瀉丹茯苓。\n滋補肝腎陰虛證，腰膝酸軟頭暈清。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.zuo_gui_wan",
@@ -16941,6 +17021,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/115",
@@ -16953,7 +17036,9 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "formula_song_zh": "杞菊地黃即六味，枸杞菊花兩味加。\n肝腎陰虛目昏花，滋補肝腎明目誇。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.zhi_bai_di_huang_wan",
@@ -17017,6 +17102,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/137",
@@ -17029,7 +17117,9 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "formula_song_zh": "知柏地黃六味基，知母黃柏兩般施。\n陰虛火旺潮熱汗，滋陰降火效尤奇。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.shen_qi_wan",
@@ -17090,6 +17180,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -17100,7 +17193,9 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "formula_song_zh": "金匱腎氣六味丸，桂枝附子八般兼。\n溫補腎陽化氣水，腰膝冷痛小便消。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.jin_gui_shen_qi_wan",
@@ -17625,6 +17720,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_id": 136,
@@ -17654,7 +17752,9 @@
             "大棗 4g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "炙甘草湯參桂薑，麥冬麻仁大棗香。\n生地阿膠清酒服，脈結代兮心悸康。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.yi_guan_jian",
@@ -17887,6 +17987,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "formula_song_zh": [
+          "柳洲醫話（柳寶詒）"
         ]
       },
       "cloudtcm_id": 359,
@@ -17913,7 +18016,9 @@
             "沙參 10g"
           ]
         }
-      }
+      },
+      "formula_song_zh": "一貫煎中用枸杞，沙參麥冬當歸杞。\n川楝生地陰虛痛，疏肝滋陰效無比。",
+      "formula_song_source_zh": "出自柳寶詒《柳洲醫話》"
     },
     {
       "id": "formula.mu_li_san",
@@ -18037,9 +18142,14 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
+      "formula_song_zh": "牡蠣散用麻黃根，黃芪小麥四般存。\n體虛自汗盜汗症，固表斂汗功效尊。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.zhen_ren_yang_zang_tang",
@@ -18122,8 +18232,13 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
-      }
+      },
+      "formula_song_zh": "真人養臟罌粟殼，訶子肉豆當歸芍。\n木香朮桂甘草參，久瀉久痢澀腸卓。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.si_shen_wan",
@@ -18247,9 +18362,14 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
+      "formula_song_zh": "四神丸用肉豆蔻，補骨脂與五味求。\n吳茱萸生薑棗合，脾腎虛寒五更瀉。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.jin_suo_gu_jing_wan",
@@ -18344,6 +18464,9 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "formula_song_zh": [
+          "湯頭歌訣（汪昂）"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/138",
@@ -18357,7 +18480,9 @@
       ],
       "pattern_tags_zh": [],
       "pattern_tags_en": [],
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
+      "formula_song_zh": "金鎖固精沙苑蒺，芡實蓮須龍牡疾。\n蓮子粉糊鹽湯下，腎虛遺精精氣固。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.sang_piao_xiao_san",
