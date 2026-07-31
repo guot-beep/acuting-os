@@ -59,15 +59,48 @@ const NAME_ZH = {
   'pattern.yang_deficiency': '陽虛',
   'pattern.qi_deficiency': '氣虛',
   'pattern.blood_deficiency': '血虛',
+  'pattern.kidney_deficiency': '腎虛',
 };
 
-/* Ids that look like a vaguer restatement of a more specific pattern already
- * in use. Not merged automatically — which one was meant in each card is a
- * clinical call, so they are flagged for Ting. */
-const SUSPECTED_DUPES = {
-  'pattern.kidney_deficiency': ['pattern.kidney_yang_deficiency', 'pattern.kidney_yin_deficiency', 'pattern.kidney_essence_deficiency'],
-  'pattern.blood_deficiency': ['pattern.liver_blood_deficiency', 'pattern.heart_blood_deficiency', 'pattern.qi_blood_deficiency'],
+/* Category-level patterns. 腎虛 is not a vague way of saying 腎陽虛 — it is the
+ * class that 腎陽虛, 腎陰虛 and 腎精不足 belong to, and those three are exactly
+ * what a differentiation table for it compares. So these ids are legitimate
+ * and stay; they are marked level=category rather than merged away.
+ *
+ * Membership is deliberately many-to-many. 腎陰虛 belongs to BOTH 腎虛 (by
+ * organ) and 陰虛 (by nature), because TCM patterns are classified on two
+ * crossing axes, not one tree. A single parent field cannot say that. */
+const CATEGORIES = {
+  'pattern.kidney_deficiency': {
+    axis: 'zang_fu',
+    members: ['pattern.kidney_yang_deficiency', 'pattern.kidney_yin_deficiency',
+      'pattern.kidney_essence_deficiency', 'pattern.kidney_qi_not_firm', 'pattern.kidney_not_grasping_qi'],
+  },
+  'pattern.blood_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.liver_blood_deficiency', 'pattern.heart_blood_deficiency'],
+  },
+  'pattern.qi_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.spleen_qi_deficiency', 'pattern.lung_qi_deficiency', 'pattern.heart_qi_deficiency'],
+  },
+  'pattern.yin_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.kidney_yin_deficiency', 'pattern.lung_yin_deficiency', 'pattern.heart_yin_deficiency',
+      'pattern.stomach_yin_deficiency', 'pattern.liver_yin_deficiency'],
+  },
+  'pattern.yang_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.kidney_yang_deficiency', 'pattern.spleen_yang_deficiency',
+      'pattern.heart_yang_deficiency', 'pattern.spleen_kidney_yang_deficiency'],
+  },
 };
+
+// id -> the categories it belongs to (a pattern may belong to several)
+const MEMBER_OF = new Map();
+Object.entries(CATEGORIES).forEach(([cat, def]) => def.members.forEach((m) => {
+  MEMBER_OF.set(m, [...(MEMBER_OF.get(m) || []), cat]);
+}));
 
 const arr = (o, k) => (Array.isArray(o) ? o : (o && o[k]) || []);
 
@@ -86,6 +119,14 @@ function main() {
     (Array.isArray(l) ? l : []).forEach((p) => touch(typeof p === 'string' ? p : p && p.id, 'conditions', c.id))));
   comparisons.forEach((m) => (m.compares || []).forEach((p) => touch(p, 'comparisons', m.id)));
 
+  /* A registry defines the vocabulary, not just the parts of it currently in
+   * use. Category ids are registered even with zero references — otherwise
+   * 腎陽虛 would point at 陽虛 as a parent that exists nowhere, which is the
+   * dangling-reference problem this file was created to end. */
+  Object.keys(CATEGORIES).forEach((id) => {
+    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
+  });
+
   const records = [...use.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([id, u]) => {
     const rec = {
       id,
@@ -97,24 +138,42 @@ function main() {
       source_type: 'derived_from_usage',
     };
     if (!rec.name_zh) rec.needs_name_zh = true;
-    if (!u.conditions.length) {
-      rec.orphan_note_zh = '僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤或應併入更具體的證型。';
+
+    const cat = CATEGORIES[id];
+    if (cat) {
+      rec.level = 'category';
+      rec.classified_by = cat.axis;              // zang_fu 臟腑軸 / bing_xing 病性軸
+      rec.members = cat.members;
+      rec.category_note_zh = '上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。';
+    } else {
+      rec.level = 'pattern';
+      const parents = MEMBER_OF.get(id);
+      if (parents) rec.member_of = parents;      // 可能同時屬於臟腑軸與病性軸
     }
-    if (SUSPECTED_DUPES[id]) {
-      rec.suspected_duplicate_of = SUSPECTED_DUPES[id];
-      rec.needs_owner_decision_zh = '此 id 較籠統,可能應併入上列較具體的證型。合併與否屬臨床判斷,待 Ting 決定。';
+
+    if (!u.conditions.length && !cat) {
+      rec.orphan_note_zh = '僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤,待確認。';
     }
     return rec;
   });
 
   const named = records.filter((r) => r.name_zh).length;
   const orphans = records.filter((r) => r.orphan_note_zh);
+  const cats = records.filter((r) => r.level === 'category');
+  const multi = records.filter((r) => (r.member_of || []).length > 1);
   console.log('===== 證型登錄檔 =====\n');
   console.log(`證型總數        ${records.length}`);
+  console.log(`  上位分類      ${cats.length}`);
+  console.log(`  具體證型      ${records.length - cats.length}`);
   console.log(`  已有中文名    ${named}`);
   console.log(`  待補中文名    ${records.length - named}`);
-  console.log(`  僅見於鑑別卡  ${orphans.length}`);
-  if (orphans.length) { console.log('\n--- 孤兒 id（需要你判斷）---'); orphans.forEach((o) => console.log(`  ${o.id}${o.suspected_duplicate_of ? '  疑似應併入: ' + o.suspected_duplicate_of.join(' / ') : ''}`)); }
+  console.log(`  孤兒          ${orphans.length}`);
+
+  console.log('\n--- 上位分類與成員 ---');
+  cats.forEach((c) => console.log(`  ${(c.name_zh || c.id).padEnd(6)} [${c.classified_by}]  ${c.members.length} 個成員`));
+  console.log(`\n--- 同時屬於兩軸的證型（單一 parent 表達不了）---`);
+  multi.forEach((m) => console.log(`  ${(m.name_zh || m.id).padEnd(22)} → ${m.member_of.join(' + ')}`));
+  if (orphans.length) { console.log('\n--- 孤兒 id ---'); orphans.forEach((o) => console.log('  ' + o.id)); }
 
   const noName = records.filter((r) => !r.name_zh);
   if (noName.length) { console.log('\n--- 待補中文名 ---'); noName.forEach((r) => console.log(`  ${r.id.padEnd(44)} 引用 ${r.used_by_conditions + r.used_by_comparisons}`)); }

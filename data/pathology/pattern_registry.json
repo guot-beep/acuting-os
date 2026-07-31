@@ -11,13 +11,13 @@
       "used_by_comparisons": 1,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "orphan_note_zh": "僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤或應併入更具體的證型。",
-      "suspected_duplicate_of": [
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
         "pattern.liver_blood_deficiency",
-        "pattern.heart_blood_deficiency",
-        "pattern.qi_blood_deficiency"
+        "pattern.heart_blood_deficiency"
       ],
-      "needs_owner_decision_zh": "此 id 較籠統,可能應併入上列較具體的證型。合併與否屬臨床判斷,待 Ting 決定。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
     },
     {
       "id": "pattern.blood_heat",
@@ -26,7 +26,8 @@
       "used_by_conditions": 10,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.blood_stasis",
@@ -35,7 +36,8 @@
       "used_by_conditions": 36,
       "used_by_comparisons": 4,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.chong_ren_disharmony",
@@ -45,7 +47,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.cold_stagnation_liver_channel",
@@ -55,7 +58,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.damp_heat_lower_burner",
@@ -64,7 +68,8 @@
       "used_by_conditions": 12,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.damp_heat_spleen_stomach",
@@ -73,7 +78,8 @@
       "used_by_conditions": 12,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.food_stagnation",
@@ -83,7 +89,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.heart_blood_deficiency",
@@ -92,7 +99,11 @@
       "used_by_conditions": 3,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.blood_deficiency"
+      ]
     },
     {
       "id": "pattern.heart_blood_stasis",
@@ -102,7 +113,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.heart_fire",
@@ -112,7 +124,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.heart_kidney_not_communicating",
@@ -121,7 +134,8 @@
       "used_by_conditions": 6,
       "used_by_comparisons": 1,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.heart_qi_deficiency",
@@ -131,7 +145,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ]
     },
     {
       "id": "pattern.heart_spleen_deficiency",
@@ -140,7 +158,8 @@
       "used_by_conditions": 10,
       "used_by_comparisons": 1,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.heart_yang_deficiency",
@@ -150,7 +169,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.yang_deficiency"
+      ]
     },
     {
       "id": "pattern.heart_yin_deficiency",
@@ -160,7 +183,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.yin_deficiency"
+      ]
     },
     {
       "id": "pattern.heat_bi",
@@ -170,24 +197,27 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.kidney_deficiency",
-      "name_zh": "",
+      "name_zh": "腎虛",
       "name_en": "Kidney Deficiency",
       "used_by_conditions": 0,
       "used_by_comparisons": 8,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
-      "orphan_note_zh": "僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤或應併入更具體的證型。",
-      "suspected_duplicate_of": [
+      "level": "category",
+      "classified_by": "zang_fu",
+      "members": [
         "pattern.kidney_yang_deficiency",
         "pattern.kidney_yin_deficiency",
-        "pattern.kidney_essence_deficiency"
+        "pattern.kidney_essence_deficiency",
+        "pattern.kidney_qi_not_firm",
+        "pattern.kidney_not_grasping_qi"
       ],
-      "needs_owner_decision_zh": "此 id 較籠統,可能應併入上列較具體的證型。合併與否屬臨床判斷,待 Ting 決定。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
     },
     {
       "id": "pattern.kidney_essence_deficiency",
@@ -196,7 +226,11 @@
       "used_by_conditions": 15,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency"
+      ]
     },
     {
       "id": "pattern.kidney_not_grasping_qi",
@@ -206,7 +240,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency"
+      ]
     },
     {
       "id": "pattern.kidney_qi_not_firm",
@@ -216,7 +254,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency"
+      ]
     },
     {
       "id": "pattern.kidney_yang_deficiency",
@@ -225,7 +267,12 @@
       "used_by_conditions": 27,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency",
+        "pattern.yang_deficiency"
+      ]
     },
     {
       "id": "pattern.kidney_yin_deficiency",
@@ -234,7 +281,12 @@
       "used_by_conditions": 19,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.kidney_deficiency",
+        "pattern.yin_deficiency"
+      ]
     },
     {
       "id": "pattern.liver_blood_deficiency",
@@ -243,7 +295,11 @@
       "used_by_conditions": 9,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.blood_deficiency"
+      ]
     },
     {
       "id": "pattern.liver_fire",
@@ -252,7 +308,8 @@
       "used_by_conditions": 10,
       "used_by_comparisons": 1,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.liver_gallbladder_damp_heat",
@@ -262,7 +319,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.liver_qi_stagnation",
@@ -271,7 +329,8 @@
       "used_by_conditions": 26,
       "used_by_comparisons": 6,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.liver_spleen_disharmony",
@@ -281,7 +340,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.liver_stomach_disharmony",
@@ -291,7 +351,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.liver_wind",
@@ -301,7 +362,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.liver_yang_rising",
@@ -310,7 +372,8 @@
       "used_by_conditions": 10,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.liver_yin_deficiency",
@@ -320,7 +383,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.yin_deficiency"
+      ]
     },
     {
       "id": "pattern.lung_qi_deficiency",
@@ -329,7 +396,11 @@
       "used_by_conditions": 8,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ]
     },
     {
       "id": "pattern.lung_yin_deficiency",
@@ -338,7 +409,11 @@
       "used_by_conditions": 5,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.yin_deficiency"
+      ]
     },
     {
       "id": "pattern.phlegm_damp",
@@ -347,7 +422,8 @@
       "used_by_conditions": 31,
       "used_by_comparisons": 3,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.phlegm_damp_in_lung",
@@ -357,7 +433,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.phlegm_heat_in_lung",
@@ -367,7 +444,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.phlegm_misting_heart",
@@ -377,7 +455,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.qi_blood_deficiency",
@@ -386,7 +465,25 @@
       "used_by_conditions": 32,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
+    },
+    {
+      "id": "pattern.qi_deficiency",
+      "name_zh": "氣虛",
+      "name_en": "Qi Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.spleen_qi_deficiency",
+        "pattern.lung_qi_deficiency",
+        "pattern.heart_qi_deficiency"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
     },
     {
       "id": "pattern.qi_stagnation_blood_stasis",
@@ -395,7 +492,8 @@
       "used_by_conditions": 27,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.spleen_kidney_yang_deficiency",
@@ -405,7 +503,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.yang_deficiency"
+      ]
     },
     {
       "id": "pattern.spleen_not_governing_blood",
@@ -415,7 +517,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.spleen_qi_deficiency",
@@ -424,7 +527,11 @@
       "used_by_conditions": 29,
       "used_by_comparisons": 4,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.qi_deficiency"
+      ]
     },
     {
       "id": "pattern.spleen_qi_sinking",
@@ -434,7 +541,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.spleen_yang_deficiency",
@@ -443,7 +551,11 @@
       "used_by_conditions": 2,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.yang_deficiency"
+      ]
     },
     {
       "id": "pattern.stomach_heat",
@@ -452,7 +564,8 @@
       "used_by_conditions": 8,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.stomach_yin_deficiency",
@@ -462,7 +575,11 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern",
+      "member_of": [
+        "pattern.yin_deficiency"
+      ]
     },
     {
       "id": "pattern.wind_cold_invading_lung",
@@ -472,7 +589,8 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
     },
     {
       "id": "pattern.wind_damp_bi",
@@ -481,7 +599,8 @@
       "used_by_conditions": 19,
       "used_by_comparisons": 0,
       "review_status": "draft",
-      "source_type": "derived_from_usage"
+      "source_type": "derived_from_usage",
+      "level": "pattern"
     },
     {
       "id": "pattern.wind_heat_invading_lung",
@@ -491,7 +610,45 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true
+      "needs_name_zh": true,
+      "level": "pattern"
+    },
+    {
+      "id": "pattern.yang_deficiency",
+      "name_zh": "陽虛",
+      "name_en": "Yang Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.kidney_yang_deficiency",
+        "pattern.spleen_yang_deficiency",
+        "pattern.heart_yang_deficiency",
+        "pattern.spleen_kidney_yang_deficiency"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+    },
+    {
+      "id": "pattern.yin_deficiency",
+      "name_zh": "陰虛",
+      "name_en": "Yin Deficiency",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.kidney_yin_deficiency",
+        "pattern.lung_yin_deficiency",
+        "pattern.heart_yin_deficiency",
+        "pattern.stomach_yin_deficiency",
+        "pattern.liver_yin_deficiency"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
     }
   ]
 }

@@ -14,10 +14,10 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const CMP = path.join(ROOT, 'data/knowledge/comparisons.json');
-/* Patterns referenced by comparisons use `pattern.*` ids and live in the
- * pathology canon. tcm_pattern_canon.json is a different vocabulary keyed
- * `pat.<中文>` — checking against that one reports every link as broken. */
-const PATTERNS = path.join(ROOT, 'data/pathology/condition_canon_shortlist.json');
+/* `pattern.*` ids are owned by pattern_registry.json. Note that
+ * tcm_pattern_canon.json is a different vocabulary keyed `pat.<中文>` —
+ * validating against that one reports every link as broken. */
+const REGISTRY = path.join(ROOT, 'data/pathology/pattern_registry.json');
 const FORMULAS = path.join(ROOT, 'data/herbs/formulas.json');
 
 const ID_RE = /^cmp\.[a-z0-9_]+$/;
@@ -33,21 +33,11 @@ function loadArray(file, ...keys) {
 function main() {
   const records = loadArray(CMP, 'records', 'comparisons');
 
-  /* There is no standalone registry of `pattern.*` ids — they exist only as
-   * references inside each condition's related_patterns / tcm_patterns. The
-   * union of those references is the de-facto pattern vocabulary, so that is
-   * what a compared id has to be a member of. Worth fixing properly later:
-   * a vocabulary with no owning file cannot carry names, aliases, or sources. */
-  const conditions = loadArray(PATTERNS, 'records');
-  const patternIds = new Set();
-  conditions.forEach((c) => {
-    [c.related_patterns, c.tcm_patterns].forEach((list) => {
-      (Array.isArray(list) ? list : []).forEach((p) => {
-        const id = typeof p === 'string' ? p : (p && p.id);
-        if (id && String(id).startsWith('pattern.')) patternIds.add(id);
-      });
-    });
-  });
+  /* pattern_registry.json now owns the vocabulary, so membership is a lookup
+   * rather than a union of references scraped from other files. */
+  const registry = loadArray(REGISTRY, 'records');
+  const patternIds = new Set(registry.map((p) => p.id));
+  const categoryIds = new Set(registry.filter((p) => p.level === 'category').map((p) => p.id));
   const formulaIds = new Set(loadArray(FORMULAS, 'records').map((f) => f.id));
 
   const defects = []; const warnings = [];
@@ -75,6 +65,15 @@ function main() {
       } else if (!wantFormula && !isPattern) {
         defects.push(`C3 ${id}: type=comparison 但 ${cid} 不是證型`);
       }
+    });
+
+    /* C9 — a category and one of its own members must not be compared side by
+     * side. 腎虛 contains 腎陽虛; putting both in one row asks how a class
+     * differs from a thing inside it, which has no answer. */
+    compares.filter((c) => categoryIds.has(c)).forEach((cat) => {
+      const def = registry.find((p) => p.id === cat);
+      const clash = (def && def.members || []).filter((m) => compares.includes(m));
+      if (clash.length) defects.push(`C9 ${id}: ${cat} 是上位分類,不能與自己的成員 ${clash.join('、')} 並列比較`);
     });
 
     const cells = r.cells && typeof r.cells === 'object' ? r.cells : {};
