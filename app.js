@@ -6119,6 +6119,9 @@ function renderChannelsWorkspace() {
   launcher.querySelectorAll('[data-ctab]').forEach(btn => {
     btn.addEventListener('click', () => {
       activeChannelsTab = btn.dataset.ctab || 'meridians';
+      if (activeChannelsTab === 'charts' && !activeChartMode) {
+        activeChartMode = 'fiveshu';
+      }
       renderChannelsWorkspace();
     });
   });
@@ -6399,6 +6402,251 @@ function renderConfluentPointsMatrixTable() {
               <td>${formatCell(r.master)}</td>
               <td>${formatCell(r.coupled)}</td>
               <td>${r.area}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderLowerHeMotherChildMatrixTable() {
+  const rows = [
+    { organ: "大腸 Large Intestine", lowerHe: "ST37 上巨虛", mother: "LI11 曲池 (土)", child: "LI2 二間 (水)", entry: "LI4 合谷", exit: "LI7 溫溜" },
+    { organ: "小腸 Small Intestine", lowerHe: "ST39 下巨虛", mother: "SI3 後谿 (木)", child: "SI8 小海 (土)", entry: "SI1 少澤", exit: "SI7 支正" },
+    { organ: "三焦 Triple Burner", lowerHe: "BL39 委陽", mother: "TE4 陽池 (土)", child: "TE2 液門 (水)", entry: "TE1 關衝", exit: "TE5 外關" },
+    { organ: "胃 Stomach", lowerHe: "ST36 足三里", mother: "ST41 解溪 (火)", child: "ST45 厲兌 (金)", entry: "ST1 承泣", exit: "ST42 衝陽" },
+    { organ: "膽 Gallbladder", lowerHe: "GB34 陽陵泉", mother: "GB43 俠溪 (水)", child: "GB38 陽輔 (火)", entry: "GB1 瞳子髎", exit: "GB41 足臨泣" },
+    { organ: "膀胱 Bladder", lowerHe: "BL40 委中", mother: "BL67 至陰 (金)", child: "BL65 束骨 (木)", entry: "BL1 睛明", exit: "BL58 飛揚" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        3. 下合穴、母子補瀉與出入穴總表 (Lower He-Sea, Mother-Child Tonification/Sedation, Entry/Exit Points)
+      </h3>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>六腑 Organ</th>
+            <th>下合穴 Lower He-Sea</th>
+            <th>母穴 (補) Mother Point</th>
+            <th>子穴 (瀉) Child Point</th>
+            <th>出穴 Entry Point</th>
+            <th>入穴 Exit Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.organ}</td>
+              <td>${formatCell(r.lowerHe)}</td>
+              <td>${formatCell(r.mother)}</td>
+              <td>${formatCell(r.child)}</td>
+              <td>${formatCell(r.entry)}</td>
+              <td>${formatCell(r.exit)}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderGroupLuoMatrixTable() {
+  const rows = [
+    { group: "足三陰經交會 (Three Yin of Foot)", point: "SP6 三陰交", area: "脾、肝、腎三經交會，主治生殖、婦科、脾胃與水腫" },
+    { group: "手三陰經交會 (Three Yin of Hand)", point: "PC6 內關", area: "心包、心、肺交會，主治心胸、胃痛與情志病" },
+    { group: "足三陽經交會 (Three Yang of Foot)", point: "GB39 懸鐘/絕骨", area: "膽、胃、膀胱交會，主治髓海、頸項與下肢麻痺" },
+    { group: "手三陽經交會 (Three Yang of Hand)", point: "TE8 三陽絡", area: "三焦、大腸、小腸交會，主治耳聾、臂痛與胸脇痛" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        5. 組絡穴與三陰三陽交會穴總表 (Group Luo & Three Yin/Yang Meeting Points)
+      </h3>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>交會組別 Group Name</th>
+            <th>代表組絡穴 Group Luo Point</th>
+            <th>臨床主治範圍 Clinical Indications</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.group}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.area}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderHuiAndCommandMatrixTable() {
+  const huiRows = [
+    { type: "臟會 (Zang/Solid Organs)", point: "LR13 章門", note: "脾之募穴，主治五臟病變與腹脹" },
+    { type: "腑會 (Fu/Hollow Organs)", point: "CV12 中脘", note: "胃之募穴，主治六腑病變與消化疾病" },
+    { type: "氣會 (Qi/Energy)", point: "CV17 膻中", note: "胸中氣海，主治氣病、喘咳與胸痛" },
+    { type: "血會 (Blood)", point: "BL17 膈俞", note: "血之會穴，主治血瘀、血虛與出血症" },
+    { type: "筋會 (Tendon/Muscles)", point: "GB34 陽陵泉", note: "膽經合穴，主治筋急、抽搐與關節拘攣" },
+    { type: "脈會 (Vessel/Pulse)", point: "LU9 太淵", note: "肺經原穴，主治脈痺、無脈症與血管疾病" },
+    { type: "骨會 (Bone)", point: "BL11 大杼", note: "膀胱經穴，主治骨痛、頸項強痛與脊柱病" },
+    { type: "髓會 (Marrow)", point: "GB39 懸鐘", note: "膽經穴，主治髓空、中風半身不遂與頭暈" }
+  ];
+
+  const commandRows = [
+    { song: "肚腹三里留", point: "ST36 足三里", area: "腹部、腸胃消化系統疾病" },
+    { song: "腰背委中求", point: "BL40 委中", area: "腰背部痛、坐骨神經痛、膝關節痛" },
+    { song: "頭項尋列缺", point: "LU7 列缺", area: "頭痛、項強、感冒、咽喉病症" },
+    { song: "面口合谷收", point: "LI4 合谷", area: "顏面部病症、牙痛、口眼喎斜" },
+    { song: "胸脇內關謀", point: "PC6 內關", area: "心胸痛、嘔吐、胸悶、情志病" },
+    { song: "急救水溝求", point: "GV26 水溝/人中", area: "昏迷、中風、休克急救醒腦" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        6. 八會穴與六總穴總表 (Eight Hui-Influential Points & Six Command Points)
+      </h3>
+
+      <h4 style="color: #2b4c3b; margin: 0.8rem 0 0.3rem; font-size: 1rem;">【八會穴 Eight Hui-Influential Points】</h4>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>八會類別 Category</th>
+            <th>代表穴位 Point</th>
+            <th>臨床特徵與主治 Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${huiRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.type}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.note}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <h4 style="color: #2b4c3b; margin: 1.2rem 0 0.3rem; font-size: 1rem;">【六總穴 Six Command Points】</h4>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>歌訣即口訣 Rhyme</th>
+            <th>代表穴位 Command Point</th>
+            <th>主治區域範圍 Target Area</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${commandRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.song}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.area}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderFourSeaAndGhostPointsMatrixTable() {
+  const seaRows = [
+    { sea: "髓海 (Sea of Marrow)", master: "GV20 百會, GV16 風府", note: "充髓養腦，主治頭暈、目眩、耳鳴、足軟" },
+    { sea: "氣海 (Sea of Qi)", master: "CV17 膻中, GV15 啞門, ST9 人迎", note: "調節全身氣機，主治胸悶、喘咳、少氣懶言" },
+    { sea: "水穀之海 (Sea of Nourishment)", master: "ST30 氣衝, ST36 足三里", note: "充養脾胃受納，主治腹脹、腸鳴、消化不良" },
+    { sea: "血海/十二經之海 (Sea of Blood)", master: "BL11 大杼, ST37 上巨虛, ST39 下巨虛", note: "調節全身氣血行止，主治血病、月經不調" }
+  ];
+
+  const ghostRows = [
+    { rank: "鬼宮 (1st Ghost)", point: "GV26 水溝/人中", note: "人中溝上1/3與中1/3交界處" },
+    { rank: "鬼信 (2nd Ghost)", point: "LU11 少商", note: "手大拇指末節顈側，距指甲角0.1寸" },
+    { rank: "鬼壘 (3rd Ghost)", point: "SP1 隱白", note: "足大趾末節內側，距指甲角0.1寸" },
+    { rank: "鬼心 (4th Ghost)", point: "PC7 大陵", note: "腕掌側遠端橫紋中，掌長肌腱與橈側腕屈肌腱之間" },
+    { rank: "鬼路 (5th Ghost)", point: "BL62 申脈", note: "外踝直下，外踝下緣與跟骨滑車突之間凹陷處" },
+    { rank: "鬼枕 (6th Ghost)", point: "GV16 風府", note: "後髮際正中直上1寸，枕外隆凸直下凹陷中" },
+    { rank: "鬼牀 (7th Ghost)", point: "ST6 頰車", note: "咬肌隆起處，下頜角前上方一橫指" },
+    { rank: "鬼市 (8th Ghost)", point: "CV24 承漿", note: "頦唇溝正中凹陷處" },
+    { rank: "鬼窟 (9th Ghost)", point: "PC8 勞宮", note: "掌心第2、3掌骨之間，握拳中指尖下" },
+    { rank: "鬼堂 (10th Ghost)", point: "GV23 上星", note: "前髮際正中直上1寸" },
+    { rank: "鬼藏 (11th Ghost)", point: "CV1 會陰", note: "會陰部正中" },
+    { rank: "鬼腿 (12th Ghost)", point: "LI11 曲池", note: "肘橫紋外側端，屈肘時尺澤與肱骨外上髁連線中點" },
+    { rank: "鬼封 (13th Ghost)", point: "EX-HN12 舌下間/海泉", note: "舌下繫帶中點" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9\-]+)\s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        7. 四海穴與孫真人十三鬼穴總表 (Four Seas & Sun Simiao 13 Ghost Points)
+      </h3>
+
+      <h4 style="color: #2b4c3b; margin: 0.8rem 0 0.3rem; font-size: 1rem;">【四海穴 Four Seas】</h4>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>四海名稱 Sea Name</th>
+            <th>代表穴位 Points</th>
+            <th>生理功能與主治 Function & Indications</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${seaRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.sea}</td>
+              <td>${r.master.split(',').map(formatCell).join(', ')}</td>
+              <td>${r.note}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <h4 style="color: #2b4c3b; margin: 1.2rem 0 0.3rem; font-size: 1rem;">【孫真人十三鬼穴 13 Ghost Points for Mental/Psychiatric Disorders】</h4>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>鬼穴名稱 Ghost Point</th>
+            <th>對應穴位 Standard Point</th>
+            <th>取穴位置與說明 Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${ghostRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.rank}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.note}</td>
             </tr>
           `).join('')}
         </tbody>
