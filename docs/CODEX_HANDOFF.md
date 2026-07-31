@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 21:21] Antigravity Handoff — LEFT SIDEBAR TWO-COLUMN LAYOUT RESTORED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `688d28b`
+- **Root Cause & Fix**:
+  - **Issue**: A legacy media query rule (`@media (max-width: 1024px)`) set `.directory-layout { grid-template-columns: 1fr; }` and `.directory-main { order: -1; }`. This caused `.directory-main` (the 361 cards) to stack ABOVE `.directory-sidebar` on screens <= 1024px, pushing the left sidebar all the way below 361 cards so it appeared "missing".
+  - **Fix**: Removed `.directory-layout` collapse and `.directory-main { order: -1; }` from the media query. The left sidebar (`.directory-sidebar`) now stays permanently pinned to the left side in its dedicated two-column layout (`230px 1fr`) alongside the cards grid.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 21:17] Antigravity Handoff — FINAL CARD RENDER & TDZ REFERENCE ERROR RESOLVED 🎉
 
 - **Agent**: Antigravity
