@@ -29,6 +29,7 @@ const CANONICAL_CATEGORIES = [
   "祛痰劑 / Transform Phlegm",
   "治風劑 / Expel Wind",
   "治燥劑 / Treat Dryness",
+  "表裏雙解劑 / Release Exterior & Interior",
   "消食劑 / Reduce Food Stagnation",
   "驅蟲劑 / Expel Parasites",
   "癰瘍劑 / Treat Sores & Carbuncles"
