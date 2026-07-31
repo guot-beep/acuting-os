@@ -60,6 +60,24 @@ const NAME_ZH = {
   'pattern.qi_deficiency': '氣虛',
   'pattern.blood_deficiency': '血虛',
   'pattern.kidney_deficiency': '腎虛',
+  'pattern.fire': '火',
+  'pattern.heat': '熱',
+  'pattern.damp_heat': '濕熱',
+  'pattern.phlegm': '痰',
+  'pattern.wind_external': '外風',
+  'pattern.heart_fire': '心火亢盛',
+  'pattern.heart_yang_deficiency': '心陽虛',
+  'pattern.heart_yin_deficiency': '心陰虛',
+  'pattern.heart_qi_deficiency': '心氣虛',
+  'pattern.spleen_yang_deficiency': '脾陽虛',
+  'pattern.spleen_kidney_yang_deficiency': '脾腎陽虛',
+  'pattern.stomach_yin_deficiency': '胃陰虛',
+  'pattern.liver_yin_deficiency': '肝陰虛',
+  'pattern.liver_gallbladder_damp_heat': '肝膽濕熱',
+  'pattern.phlegm_damp_in_lung': '痰濕阻肺',
+  'pattern.phlegm_heat_in_lung': '痰熱壅肺',
+  'pattern.wind_cold_invading_lung': '風寒犯肺',
+  'pattern.wind_heat_invading_lung': '風熱犯肺',
 };
 
 /* Category-level patterns. 腎虛 is not a vague way of saying 腎陽虛 — it is the
@@ -94,6 +112,43 @@ const CATEGORIES = {
     members: ['pattern.kidney_yang_deficiency', 'pattern.spleen_yang_deficiency',
       'pattern.heart_yang_deficiency', 'pattern.spleen_kidney_yang_deficiency'],
   },
+
+  /* The excess patterns work the same way, per Ting: 心火, 肝火 and 胃火 are
+   * all fire and all different, and the difference is the differentiation. */
+  'pattern.fire': {
+    axis: 'bing_xing',
+    members: ['pattern.liver_fire', 'pattern.heart_fire'],
+    note_zh: '胃火在本庫目前記為 pattern.stomach_heat,歸在熱之下;胃火與胃熱是否分立待 Ting 決定。',
+  },
+  'pattern.heat': {
+    axis: 'bing_xing',
+    members: ['pattern.blood_heat', 'pattern.stomach_heat'],
+  },
+  'pattern.damp_heat': {
+    axis: 'bing_xing',
+    members: ['pattern.damp_heat_lower_burner', 'pattern.damp_heat_spleen_stomach',
+      'pattern.liver_gallbladder_damp_heat'],
+  },
+  'pattern.phlegm': {
+    axis: 'bing_xing',
+    members: ['pattern.phlegm_damp', 'pattern.phlegm_damp_in_lung',
+      'pattern.phlegm_heat_in_lung', 'pattern.phlegm_misting_heart'],
+  },
+  'pattern.wind_external': {
+    axis: 'bing_xing',
+    members: ['pattern.wind_cold', 'pattern.wind_heat',
+      'pattern.wind_cold_invading_lung', 'pattern.wind_heat_invading_lung'],
+  },
+};
+
+/* Ids that are used as a concrete pattern AND read as a class. 血瘀 is
+ * referenced 40 times as a diagnosis in its own right, yet 心血瘀阻 and
+ * 氣滯血瘀 are plainly kinds of it. Making it a category would invalidate
+ * those 40 uses; leaving it flat loses the relationship. Flagged rather than
+ * decided — which way to go is Ting's call. */
+const AMBIGUOUS_LEVEL = {
+  'pattern.blood_stasis': ['pattern.heart_blood_stasis', 'pattern.qi_stagnation_blood_stasis'],
+  'pattern.liver_qi_stagnation': ['pattern.liver_spleen_disharmony', 'pattern.liver_stomach_disharmony'],
 };
 
 // id -> the categories it belongs to (a pattern may belong to several)
@@ -151,6 +206,10 @@ function main() {
       if (parents) rec.member_of = parents;      // 可能同時屬於臟腑軸與病性軸
     }
 
+    if (AMBIGUOUS_LEVEL[id]) {
+      rec.possible_members = AMBIGUOUS_LEVEL[id];
+      rec.needs_owner_decision_zh = '此證型既被當作具體診斷使用,底下又有更細的證型。要升為上位分類（會影響既有引用）還是維持平行,待 Ting 決定。';
+    }
     if (!u.conditions.length && !cat) {
       rec.orphan_note_zh = '僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤,待確認。';
     }

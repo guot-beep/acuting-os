@@ -27,7 +27,10 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.heat"
+      ]
     },
     {
       "id": "pattern.blood_stasis",
@@ -37,7 +40,12 @@
       "used_by_comparisons": 4,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "possible_members": [
+        "pattern.heart_blood_stasis",
+        "pattern.qi_stagnation_blood_stasis"
+      ],
+      "needs_owner_decision_zh": "此證型既被當作具體診斷使用,底下又有更細的證型。要升為上位分類（會影響既有引用）還是維持平行,待 Ting 決定。"
     },
     {
       "id": "pattern.chong_ren_disharmony",
@@ -62,6 +70,23 @@
       "level": "pattern"
     },
     {
+      "id": "pattern.damp_heat",
+      "name_zh": "濕熱",
+      "name_en": "Damp Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.damp_heat_lower_burner",
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.liver_gallbladder_damp_heat"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+    },
+    {
       "id": "pattern.damp_heat_lower_burner",
       "name_zh": "下焦濕熱",
       "name_en": "Damp Heat Lower Burner",
@@ -69,7 +94,10 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.damp_heat"
+      ]
     },
     {
       "id": "pattern.damp_heat_spleen_stomach",
@@ -79,7 +107,26 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.damp_heat"
+      ]
+    },
+    {
+      "id": "pattern.fire",
+      "name_zh": "火",
+      "name_en": "Fire",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.liver_fire",
+        "pattern.heart_fire"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
     },
     {
       "id": "pattern.food_stagnation",
@@ -118,14 +165,16 @@
     },
     {
       "id": "pattern.heart_fire",
-      "name_zh": "",
+      "name_zh": "心火亢盛",
       "name_en": "Heart Fire",
       "used_by_conditions": 1,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.fire"
+      ]
     },
     {
       "id": "pattern.heart_kidney_not_communicating",
@@ -139,13 +188,12 @@
     },
     {
       "id": "pattern.heart_qi_deficiency",
-      "name_zh": "",
+      "name_zh": "心氣虛",
       "name_en": "Heart Qi Deficiency",
       "used_by_conditions": 1,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
       "level": "pattern",
       "member_of": [
         "pattern.qi_deficiency"
@@ -163,13 +211,12 @@
     },
     {
       "id": "pattern.heart_yang_deficiency",
-      "name_zh": "",
+      "name_zh": "心陽虛",
       "name_en": "Heart Yang Deficiency",
       "used_by_conditions": 5,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
       "level": "pattern",
       "member_of": [
         "pattern.yang_deficiency"
@@ -177,17 +224,32 @@
     },
     {
       "id": "pattern.heart_yin_deficiency",
-      "name_zh": "",
+      "name_zh": "心陰虛",
       "name_en": "Heart Yin Deficiency",
       "used_by_conditions": 4,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
       "level": "pattern",
       "member_of": [
         "pattern.yin_deficiency"
       ]
+    },
+    {
+      "id": "pattern.heat",
+      "name_zh": "熱",
+      "name_en": "Heat",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.blood_heat",
+        "pattern.stomach_heat"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
     },
     {
       "id": "pattern.heat_bi",
@@ -309,18 +371,23 @@
       "used_by_comparisons": 1,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.fire"
+      ]
     },
     {
       "id": "pattern.liver_gallbladder_damp_heat",
-      "name_zh": "",
+      "name_zh": "肝膽濕熱",
       "name_en": "Liver Gallbladder Damp Heat",
       "used_by_conditions": 5,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.damp_heat"
+      ]
     },
     {
       "id": "pattern.liver_qi_stagnation",
@@ -330,7 +397,12 @@
       "used_by_comparisons": 6,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "possible_members": [
+        "pattern.liver_spleen_disharmony",
+        "pattern.liver_stomach_disharmony"
+      ],
+      "needs_owner_decision_zh": "此證型既被當作具體診斷使用,底下又有更細的證型。要升為上位分類（會影響既有引用）還是維持平行,待 Ting 決定。"
     },
     {
       "id": "pattern.liver_spleen_disharmony",
@@ -377,13 +449,12 @@
     },
     {
       "id": "pattern.liver_yin_deficiency",
-      "name_zh": "",
+      "name_zh": "肝陰虛",
       "name_en": "Liver Yin Deficiency",
       "used_by_conditions": 1,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
       "level": "pattern",
       "member_of": [
         "pattern.yin_deficiency"
@@ -416,6 +487,24 @@
       ]
     },
     {
+      "id": "pattern.phlegm",
+      "name_zh": "痰",
+      "name_en": "Phlegm",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.phlegm_damp",
+        "pattern.phlegm_damp_in_lung",
+        "pattern.phlegm_heat_in_lung",
+        "pattern.phlegm_misting_heart"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+    },
+    {
       "id": "pattern.phlegm_damp",
       "name_zh": "痰濕",
       "name_en": "Phlegm Damp",
@@ -423,29 +512,36 @@
       "used_by_comparisons": 3,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm"
+      ]
     },
     {
       "id": "pattern.phlegm_damp_in_lung",
-      "name_zh": "",
+      "name_zh": "痰濕阻肺",
       "name_en": "Phlegm Damp In Lung",
       "used_by_conditions": 3,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm"
+      ]
     },
     {
       "id": "pattern.phlegm_heat_in_lung",
-      "name_zh": "",
+      "name_zh": "痰熱壅肺",
       "name_en": "Phlegm Heat In Lung",
       "used_by_conditions": 3,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm"
+      ]
     },
     {
       "id": "pattern.phlegm_misting_heart",
@@ -456,7 +552,10 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.phlegm"
+      ]
     },
     {
       "id": "pattern.qi_blood_deficiency",
@@ -497,13 +596,12 @@
     },
     {
       "id": "pattern.spleen_kidney_yang_deficiency",
-      "name_zh": "",
+      "name_zh": "脾腎陽虛",
       "name_en": "Spleen Kidney Yang Deficiency",
       "used_by_conditions": 5,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
       "level": "pattern",
       "member_of": [
         "pattern.yang_deficiency"
@@ -565,17 +663,19 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.heat"
+      ]
     },
     {
       "id": "pattern.stomach_yin_deficiency",
-      "name_zh": "",
+      "name_zh": "胃陰虛",
       "name_en": "Stomach Yin Deficiency",
       "used_by_conditions": 4,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
       "level": "pattern",
       "member_of": [
         "pattern.yin_deficiency"
@@ -583,14 +683,16 @@
     },
     {
       "id": "pattern.wind_cold_invading_lung",
-      "name_zh": "",
+      "name_zh": "風寒犯肺",
       "name_en": "Wind Cold Invading Lung",
       "used_by_conditions": 2,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.wind_external"
+      ]
     },
     {
       "id": "pattern.wind_damp_bi",
@@ -603,15 +705,35 @@
       "level": "pattern"
     },
     {
+      "id": "pattern.wind_external",
+      "name_zh": "外風",
+      "name_en": "Wind External",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "category",
+      "classified_by": "bing_xing",
+      "members": [
+        "pattern.wind_cold",
+        "pattern.wind_heat",
+        "pattern.wind_cold_invading_lung",
+        "pattern.wind_heat_invading_lung"
+      ],
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+    },
+    {
       "id": "pattern.wind_heat_invading_lung",
-      "name_zh": "",
+      "name_zh": "風熱犯肺",
       "name_en": "Wind Heat Invading Lung",
       "used_by_conditions": 6,
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "member_of": [
+        "pattern.wind_external"
+      ]
     },
     {
       "id": "pattern.yang_deficiency",
