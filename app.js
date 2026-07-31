@@ -938,12 +938,9 @@ searchInput?.addEventListener("keydown", (event) => {
   if (matches.length === 1) selectPoint(matches[0].code);
 });
 
-[searchInput, meridianFilter, regionFilter, patternFilter].forEach((el) => {
-  el.addEventListener("input", () => {
-    if (el === regionFilter) directoryRegionGroup = "";
-    if (el === patternFilter) directoryTopic = "";
-    render();
-  });
+searchInput?.addEventListener("input", () => {
+  clearPointDetailHash();
+  render();
 });
 
 applyPointHash();
@@ -1539,6 +1536,21 @@ function getActiveFilterChips() {
       value: labelForDirectoryValue(tungZoneGroups, directoryTungZone)
     });
   }
+  if (directoryPointCategory) {
+    const cat = pointCategoryCatalog.find((c) => c.id === directoryPointCategory);
+    chips.push({
+      kind: "pointCategory",
+      label: contentMode === "english" ? "Specific Group" : "特定穴類別",
+      value: cat ? (contentMode === "english" ? cat.label_en : cat.label_zh) : directoryPointCategory
+    });
+  }
+  if (selectedSystemBranch) {
+    chips.push({
+      kind: "systemBranch",
+      label: contentMode === "english" ? "Sub-branch" : "子分支",
+      value: selectedSystemBranch
+    });
+  }
   return chips;
 }
 
@@ -1587,7 +1599,10 @@ function clearActiveFilter(kind) {
   if (kind === "all" || kind === "pattern") patternFilter.value = "";
   if (kind === "all" || kind === "regionGroup") directoryRegionGroup = "";
   if (kind === "all" || kind === "topic") directoryTopic = "";
+  if (kind === "all" || kind === "tungZone") directoryTungZone = "";
   if (kind === "all" || kind === "pointCategory") directoryPointCategory = "";
+  if (kind === "all" || kind === "systemBranch") selectedSystemBranch = "";
+}
   if (kind === "all" || kind === "tungZone") directoryTungZone = "";
 }
 
