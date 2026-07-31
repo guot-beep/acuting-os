@@ -1603,8 +1603,6 @@ function clearActiveFilter(kind) {
   if (kind === "all" || kind === "pointCategory") directoryPointCategory = "";
   if (kind === "all" || kind === "systemBranch") selectedSystemBranch = "";
 }
-  if (kind === "all" || kind === "tungZone") directoryTungZone = "";
-}
 
 function isPointDetailMode() {
   return /^#point\/.+/.test(window.location.hash);
