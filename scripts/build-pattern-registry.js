@@ -79,6 +79,21 @@ const NAME_ZH = {
   'pattern.wind_cold_invading_lung': '風寒犯肺',
   'pattern.wind_heat_invading_lung': '風熱犯肺',
   'pattern.stomach_fire': '胃火熾盛',
+
+  // Antigravity 2026-07-31 補,教材標準名,已核對
+  'pattern.chong_ren_disharmony': '衝任不調',
+  'pattern.cold_stagnation_liver_channel': '寒凝肝脈',
+  'pattern.food_stagnation': '飲食積滯',
+  'pattern.heart_blood_stasis': '心血瘀阻',
+  'pattern.heat_bi': '熱痺',
+  'pattern.kidney_not_grasping_qi': '腎不納氣',
+  'pattern.kidney_qi_not_firm': '腎氣不固',
+  'pattern.liver_spleen_disharmony': '肝脾不和',
+  'pattern.liver_stomach_disharmony': '肝胃不和',
+  'pattern.liver_wind': '肝風內動',
+  'pattern.phlegm_misting_heart': '痰迷心竅',
+  'pattern.spleen_not_governing_blood': '脾不統血',
+  'pattern.spleen_qi_sinking': '中氣下陷',
 };
 
 /* Category-level patterns. 腎虛 is not a vague way of saying 腎陽虛 — it is the
@@ -224,6 +239,11 @@ function main() {
    * dangling-reference problem this file was created to end. */
   Object.keys(CATEGORIES).forEach((id) => {
     if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
+    // Members too — a category listing a member that owns no record is the
+    // same dangling reference this file exists to prevent.
+    CATEGORIES[id].members.forEach((m) => {
+      if (!use.has(m)) use.set(m, { conditions: [], comparisons: [] });
+    });
   });
 
   /* 胃火 registered alongside 胃熱, per Ting. Sources genuinely disagree —
