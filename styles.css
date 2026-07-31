@@ -687,22 +687,50 @@ textarea {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.system-toolbar {
-  background: #f6faf7;
-  border: 1px solid #d4e3d8;
-  border-radius: 9px;
-  padding: 0.5rem 0.6rem;
-  margin-top: 0.5rem;
+/* ── Acupoint search header (full-width above two-column layout) ── */
+.acu-search-header {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+  padding: 1rem 1rem 0.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.55rem;
+}
+.acu-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.acu-search-header #searchInput {
+  width: 100%;
+  border: 1.5px solid #c8dcd0;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.75rem;
+  background: #f9fcfa;
+  color: #1a3328;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+.acu-search-header #searchInput:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(31,91,61,0.12);
+  background: #ffffff;
 }
 
 .system-tabs-bar {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 0.3rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 0.1rem;
 }
+.system-tabs-bar::-webkit-scrollbar { display: none; }
 
 .system-tab-btn {
   background: #ffffff;
@@ -749,14 +777,8 @@ textarea {
 }
 
 /* ── eLotus-Style System Toggle Drawer (體系專屬折疊分支面板) ────── */
-.system-toggle-drawer {
-  background: #ffffff;
-  border: 1px solid #c7d8cc;
-  border-radius: 8px;
-  padding: 0.75rem 0.85rem;
-  margin-top: 0.35rem;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
-}
+/* system-toggle-drawer kept for JS compat but hidden — sidebar handles sub-branches */
+.system-toggle-drawer { display: none !important; }
 
 .drawer-header {
   display: flex;
@@ -903,26 +925,6 @@ textarea {
   background-color: #ffffff;
 }
 
-.chart-shortcut-btn {
-  background: #553e6b;
-  color: #ffffff !important;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 0.38rem 0.7rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  white-space: nowrap;
-  transition: all 0.15s ease;
-}
-
-.chart-shortcut-btn:hover {
-  background: #6a4f85;
-  color: #ffffff !important;
-}
-
 .filters {
   margin-top: 0.7rem;
   flex-wrap: wrap;
@@ -1033,15 +1035,62 @@ footer {
 .directory-layout {
   align-items: start;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 0;
+  grid-template-columns: 230px minmax(0, 1fr);
+  border: 1px solid var(--line);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
 }
 
 .directory-sidebar {
-  display: grid;
-  gap: 0.85rem;
+  background: #f4f8f5;
+  border-right: 1px solid #dce9e0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
   position: sticky;
-  top: 98px;
+  top: 160px;
+}
+
+.sidebar-section {
+  border-bottom: 1px solid #dce9e0;
+}
+.sidebar-section-header {
+  background: #eaf3ec;
+  color: #1f5b3d;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0.75rem 0.35rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: background 0.13s;
+}
+.sidebar-section-header:hover { background: #ddeee2; }
+.sidebar-section-header .chevron {
+  font-size: 0.7rem;
+  transition: transform 0.15s ease;
+  color: #5a8068;
+}
+.sidebar-section.collapsed .chevron { transform: rotate(-90deg); }
+.sidebar-section-body {
+  padding: 0.3rem 0.4rem 0.45rem;
+}
+.sidebar-section.collapsed .sidebar-section-body { display: none; }
+
+.directory-main {
+  background: var(--panel);
+  min-width: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .directory-filter-box {
@@ -4119,25 +4168,20 @@ footer {
   grid-column: 1 / -1;
 }
 
-body.point-detail-mode .directory-layout {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-body.point-detail-mode .directory-sidebar,
-body.point-detail-mode .search-panel {
+/* In detail mode: hide sidebar + header, show detail card full width */
+body.point-detail-mode .acu-search-header,
+body.point-detail-mode .directory-sidebar {
   display: none;
 }
-
+body.point-detail-mode .directory-layout {
+  grid-template-columns: minmax(0, 1fr);
+  border-radius: 8px;
+}
 body.point-detail-mode .directory-main {
   margin-inline: auto;
   max-width: 1120px;
   width: 100%;
 }
-
-body.point-detail-mode .content-grid {
-  grid-template-columns: minmax(0, 1fr);
-}
-
 body.point-detail-mode .detail-card {
   overflow: visible;
 }

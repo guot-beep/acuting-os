@@ -274,95 +274,83 @@
         </div>
       </section>
 
-      <section class="directory-layout" data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫" data-mode-aria-label data-bilingual-aria-label="穴位資料庫" data-english-aria-label="Acupoint directory">
-        <aside class="directory-sidebar" aria-label="穴道分類" data-mode-aria-label data-bilingual-aria-label="穴道分類" data-english-aria-label="Acupoint categories">
-          <!-- 1. 特定穴類別 (Collapsible Accordion, Default Open) -->
-          <details class="directory-filter-accordion" open>
-            <summary class="accordion-summary">
-              <span data-mode-text data-bilingual="⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)" data-english="⭐️ Specific Point Groups">⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)</span>
-            </summary>
-            <div id="pointCategoryList" class="directory-filter-list"></div>
-          </details>
+      <!-- ═══ Acupoint Directory: Full-width header → two-column layout ═══ -->
+      <section data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫" data-mode-aria-label data-bilingual-aria-label="穴位資料庫" data-english-aria-label="Acupoint directory">
 
-          <!-- 2. 常用臨床主題與證型 (Collapsible Accordion) -->
-          <details class="directory-filter-accordion">
-            <summary class="accordion-summary">
-              <span data-mode-text data-bilingual="🩺 臨床主題與證型" data-english="🩺 Clinical Topics & Patterns">🩺 臨床主題與證型</span>
-            </summary>
-            <div id="topicCategoryList" class="directory-filter-list"></div>
-          </details>
-
-          <!-- 3. 身體解剖部位 (Collapsible Accordion) -->
-          <details class="directory-filter-accordion">
-            <summary class="accordion-summary">
-              <span data-mode-text data-bilingual="📍 身體部位" data-english="📍 Body Regions">📍 身體部位</span>
-            </summary>
-            <div id="regionCategoryList" class="directory-filter-list"></div>
-          </details>
-        </aside>
-
-        <div class="directory-main">
-          <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選" data-mode-aria-label data-bilingual-aria-label="搜尋與篩選" data-english-aria-label="Search and filters">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Acupuncture Layer · 針灸大體系</p>
-                <h2 data-mode-text data-bilingual="穴位資料庫" data-english="Acupoint Directory">穴位資料庫</h2>
-              </div>
-              <span class="data-pill"><strong id="directoryTotal">--</strong> <span data-mode-text data-bilingual="個穴道" data-english="points">個穴道</span></span>
+        <!-- ── Full-width search + system tabs header ── -->
+        <div class="acu-search-header" id="acupunctureWorkspace" aria-label="搜尋與篩選">
+          <div class="acu-header-row">
+            <div>
+              <p class="eyebrow">Acupuncture Layer · 針灸大體系</p>
+              <h2 data-mode-text data-bilingual="穴位資料庫" data-english="Acupoint Directory">穴位資料庫</h2>
             </div>
+            <span class="data-pill"><strong id="directoryTotal">--</strong> <span data-mode-text data-bilingual="個穴道" data-english="points">個穴道</span></span>
+          </div>
 
-            <!-- Top Search Row (Full width) -->
-            <div class="search-row search-row-clean">
-              <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型... (例：ST36, 太衝, 運動區, 神門)" />
-            </div>
+          <input id="searchInput" type="search"
+            data-mode-placeholder
+            data-bilingual-placeholder="搜尋：中文、英文、代碼、位置、功效、證型… (例：ST36, 太衝, 神門)"
+            data-english-placeholder="Search: name, code, location, function, pattern… (e.g. ST36, Taichong, Shenmen)"
+            placeholder="搜尋：中文、英文、代碼、位置、功效、證型… (例：ST36, 太衝, 神門)" />
 
-            <!-- System Tabs Bar & Sub-Filters Toolbar (Clean System Selector Layout) -->
-            <div class="system-toolbar">
-              <div class="system-tabs-bar" id="systemTabsBar" aria-label="針灸體系分類">
-                <button type="button" class="system-tab-btn active" data-system="">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-                  <span data-mode-text data-bilingual="全庫體系" data-english="All Systems">全庫體系</span>
-                </button>
-                <button type="button" class="system-tab-btn" data-system="standard14">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18 4.5 4.5 0 0 1 0-9 4.5 4.5 0 0 0 0-9z"/><circle cx="12" cy="7.5" r="1.5" fill="currentColor"/><circle cx="12" cy="16.5" r="1.5" fill="currentColor"/></svg>
-                  <span data-mode-text data-bilingual="十四正經" data-english="14 Channels">十四正經</span>
-                </button>
-                <button type="button" class="system-tab-btn" data-system="extra">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  <span data-mode-text data-bilingual="經外奇穴" data-english="Extra Points">經外奇穴</span>
-                </button>
-                <button type="button" class="system-tab-btn" data-system="tung">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  <span data-mode-text data-bilingual="董氏奇穴" data-english="Master Tung">董氏奇穴</span>
-                </button>
-                <button type="button" class="system-tab-btn" data-system="auricular">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8.5C6 5.46 8.69 3 12 3s6 2.46 6 5.5c0 5-4 7.5-4 10.5a2 2 0 0 1-4 0c0-2.5 1.5-4.5 1.5-6.5a2 2 0 0 0-4 0"/></svg>
-                  <span data-mode-text data-bilingual="耳穴體系" data-english="Auricular Points">耳穴體系</span>
-                </button>
-                <button type="button" class="system-tab-btn" data-system="scalp">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 0 0-9 9c0 3.5 2 6.5 5 8v2h8v-2c3-1.5 5-4.5 5-8a9 9 0 0 0-9-9z"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="12" y1="6" x2="12" y2="12"/></svg>
-                  <span data-mode-text data-bilingual="頭皮針" data-english="Scalp Acu">頭皮針</span>
-                </button>
-                <button type="button" class="system-tab-btn" data-system="special">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
-                  <span data-mode-text data-bilingual="特色/微針" data-english="Special Systems">特色/微針</span>
-                </button>
-              </div>
+          <!-- System Tabs — single row, no wrap -->
+          <div class="system-tabs-bar" id="systemTabsBar" aria-label="針灸體系分類">
+            <button type="button" class="system-tab-btn active" data-system="">
+              <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+              <span data-mode-text data-bilingual="全庫體系" data-english="All Systems">全庫體系</span>
+            </button>
+            <button type="button" class="system-tab-btn" data-system="standard14">
+              <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18 4.5 4.5 0 0 1 0-9 4.5 4.5 0 0 0 0-9z"/><circle cx="12" cy="7.5" r="1.5" fill="currentColor"/><circle cx="12" cy="16.5" r="1.5" fill="currentColor"/></svg>
+              <span data-mode-text data-bilingual="十四正經" data-english="14 Channels">十四正經</span>
+            </button>
+            <button type="button" class="system-tab-btn" data-system="extra">
+              <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span data-mode-text data-bilingual="經外奇穴" data-english="Extra Points">經外奇穴</span>
+            </button>
+            <button type="button" class="system-tab-btn" data-system="tung">
+              <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span data-mode-text data-bilingual="董氏奇穴" data-english="Master Tung">董氏奇穴</span>
+            </button>
+            <button type="button" class="system-tab-btn" data-system="auricular">
+              <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8.5C6 5.46 8.69 3 12 3s6 2.46 6 5.5c0 5-4 7.5-4 10.5a2 2 0 0 1-4 0c0-2.5 1.5-4.5 1.5-6.5a2 2 0 0 0-4 0"/></svg>
+              <span data-mode-text data-bilingual="耳穴體系" data-english="Auricular Points">耳穴體系</span>
+            </button>
+            <button type="button" class="system-tab-btn" data-system="scalp">
+              <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 0 0-9 9c0 3.5 2 6.5 5 8v2h8v-2c3-1.5 5-4.5 5-8a9 9 0 0 0-9-9z"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="12" y1="6" x2="12" y2="12"/></svg>
+              <span data-mode-text data-bilingual="頭皮針" data-english="Scalp Acu">頭皮針</span>
+            </button>
+            <button type="button" class="system-tab-btn" data-system="special">
+              <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+              <span data-mode-text data-bilingual="特色/微針" data-english="Special Systems">特色/微針</span>
+            </button>
+            <a href="#ws/channels" class="system-tab-link" data-mode-text data-bilingual="經脈與特定穴圖表 ↗" data-english="Channel Charts ↗">經脈與特定穴圖表 ↗</a>
+          </div>
 
-              <!-- eLotus-Style System Toggle Drawer (每個體系獨立折疊分支面板) -->
-              <div class="system-toggle-drawer" id="systemToggleDrawer" style="display: none;"></div>
-            </div>
+          <div id="activeFilterSummary" class="active-filter-summary" aria-live="polite"></div>
+          <p id="resultCount" class="count"></p>
+        </div>
 
-            <div id="activeFilterSummary" class="active-filter-summary" aria-live="polite"></div>
-            <p id="resultCount" class="count"></p>
-          </section>
+        <!-- ── Two-column: context-aware sidebar | cards ── -->
+        <div class="directory-layout">
 
-          <section class="content-grid acupoint-browser">
-            <section class="details-panel" aria-live="polite">
-              <article id="detailCard" class="detail-card"></article>
-              <div id="cards" class="cards" aria-label="穴位列表" data-mode-aria-label data-bilingual-aria-label="穴位列表" data-english-aria-label="Acupoint list"></div>
-            </section>
-          </section>
+          <!-- LEFT: context-aware sidebar (JS renders based on selectedSystem) -->
+          <aside class="directory-sidebar" id="directorySidebar"
+            aria-label="穴道分類" data-mode-aria-label
+            data-bilingual-aria-label="穴道分類"
+            data-english-aria-label="Acupoint categories">
+            <!-- rendered by renderDirectoryFilters() in app.js -->
+          </aside>
+
+          <!-- RIGHT: point cards grid — always visible -->
+          <div class="directory-main" id="directoryMain">
+            <div id="cards" class="cards"
+              aria-label="穴位列表"
+              data-mode-aria-label
+              data-bilingual-aria-label="穴位列表"
+              data-english-aria-label="Acupoint list"></div>
+            <article id="detailCard" class="detail-card" hidden></article>
+          </div>
+
         </div>
       </section>
 
