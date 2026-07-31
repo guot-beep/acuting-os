@@ -47,8 +47,8 @@
           "代表方": "學習錨點：formula.long_dan_xie_gan_tang（龍膽瀉肝湯）。 Study anchor: Long Dan Xie Gan Tang."
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_zh": "骨架：格子由 Ting 依教材／臨床填寫；模型不代筆辨證鑑別內容。",
       "seed_basis": "Source-assisted draft approved by Ting: biomedical insomnia context from NHLBI/NIH and NCCIH; TCM pattern discriminators from Ting's Notion/Bastyr insomnia, Zang-Fu, Gui Pi Tang, and CAM5300 course-case notes. Draft study comparison only; not medical advice.",
@@ -65,7 +65,8 @@
       "last_reviewed": "2026-07-18",
       "public_safe": false,
       "medical_disclaimer_en": "Study comparison only. This table does not diagnose insomnia, recommend treatment, or replace evaluation for sleep apnea, medication effects, mood disorders, or other causes of sleep difficulty.",
-      "notes_en": "Official medical sources support only the biomedical insomnia context. TCM pattern discriminators are synthesized from Ting's own Notion/Bastyr notes and remain draft. Do not infer a pattern from one symptom alone."
+      "notes_en": "Official medical sources support only the biomedical insomnia context. TCM pattern discriminators are synthesized from Ting's own Notion/Bastyr notes and remain draft. Do not infer a pattern from one symptom alone.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.pcos_patterns",
@@ -122,8 +123,8 @@
           "Representative formula / 代表方": "Study anchors: formula.tao_hong_si_wu_tang, formula.gui_zhi_fu_ling_wan, formula.xue_fu_zhu_yu_tang, formula.wen_jing_tang when cold-stasis signs are present. 學習錨點：桃紅四物湯、桂枝茯苓丸、血府逐瘀湯；寒瘀時參考溫經湯。"
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "Source-assisted draft approved by Ting. Biomedical PCOS context is from official medical sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr diagnosis and pathology notes. Keep draft until Ting or Claude reviews against class materials.",
       "source_urls": [
@@ -140,7 +141,8 @@
       "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-14",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not diagnose PCOS, replace biomedical diagnosis, or recommend treatment."
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose PCOS, replace biomedical diagnosis, or recommend treatment.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.unexplained_infertility_patterns",
@@ -188,8 +190,8 @@
           "Representative formula / 代表方": "Study anchors: formula.tao_hong_si_wu_tang, formula.gui_zhi_fu_ling_wan, formula.xue_fu_zhu_yu_tang, formula.wen_jing_tang when cold-stasis signs are present. 學習錨點：桃紅四物湯、桂枝茯苓丸、血府逐瘀湯；寒瘀時參考溫經湯。"
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "Source-assisted draft approved by Ting. Biomedical infertility context is from official medical sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes. Keep draft until Ting or Claude reviews against class materials.",
       "source_urls": [
@@ -208,7 +210,8 @@
       "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-14",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not diagnose infertility, replace biomedical fertility evaluation, or recommend treatment."
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose infertility, replace biomedical fertility evaluation, or recommend treatment.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.ovulatory_factor_patterns",
@@ -256,8 +259,8 @@
           "Representative formula / 代表方": "Study anchors: formula.er_chen_tang, formula.liu_jun_zi_tang, formula.wen_dan_tang when phlegm-heat or Gallbladder phlegm disturbance cues are present. 學習錨點：二陳湯、六君子湯；若見痰熱或膽鬱痰擾線索，可比較溫膽湯。"
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "Source-assisted draft approved by Ting. Biomedical context is from official/professional fertility education sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes and prior accepted LL3 draft language. Keep draft until Ting or Claude reviews against class materials.",
       "source_urls": [
@@ -277,7 +280,8 @@
       "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-17",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not diagnose ovulatory dysfunction, replace fertility evaluation, or recommend treatment."
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose ovulatory dysfunction, replace fertility evaluation, or recommend treatment.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.ivf_cycle_patterns",
@@ -325,8 +329,8 @@
           "Representative formula / 代表方": "Study anchors: formula.xiao_yao_san, formula.jia_wei_xiao_yao_san, formula.chai_hu_shu_gan_san. 學習錨點：逍遙散、加味逍遙散、柴胡疏肝散。"
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "Source-assisted draft approved by Ting. IVF cycle language is documentation context only. TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes and prior accepted LL3 draft language. Keep draft until Ting or Claude reviews against class materials.",
       "source_urls": [
@@ -348,7 +352,8 @@
       "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-17",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not guide IVF decisions, replace reproductive endocrinology care, or recommend treatment."
+      "medical_disclaimer_en": "Study comparison only. This table does not guide IVF decisions, replace reproductive endocrinology care, or recommend treatment.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.luteal_support_patterns",
@@ -396,8 +401,8 @@
           "Representative formula / 代表方": "學習錨點：formula.si_wu_tang（四物湯）；氣血兩虛並見可比較 formula.ba_zhen_tang（八珍湯）。 Study anchor: Si Wu Tang; compare Ba Zhen Tang when both Qi and Blood deficiency are present."
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "ASRM states that no clinical diagnostic test for luteal phase deficiency has proven reliable and that a single progesterone value cannot assess luteal quality. TCM cells are a separate study framework synthesized from Ting's notes; no one-to-one biomedical-to-TCM mapping is intended.",
       "source_urls": [
@@ -415,7 +420,8 @@
       "source_type": "source_assisted_draft_official_reproductive_medicine_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-18",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not diagnose luteal phase deficiency, interpret progesterone testing, recommend progesterone or fertility treatment, or replace reproductive evaluation."
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose luteal phase deficiency, interpret progesterone testing, recommend progesterone or fertility treatment, or replace reproductive evaluation.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.anovulation_patterns",
@@ -454,8 +460,8 @@
           "Representative formula / 代表方": "Study anchors: formula.xiao_yao_san, formula.jia_wei_xiao_yao_san, formula.chai_hu_shu_gan_san. 學習錨點：逍遙散、加味逍遙散、柴胡疏肝散。"
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "Source-assisted draft approved by Ting. Biomedical ovulation context is from official medical sources; TCM pattern discriminators are synthesized from Ting's Notion/Bastyr notes. Keep draft until Ting or Claude reviews against class materials.",
       "source_urls": [
@@ -474,7 +480,8 @@
       "source_type": "source_assisted_draft_official_medical_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-17",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not diagnose anovulation, replace fertility evaluation, or recommend treatment."
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose anovulation, replace fertility evaluation, or recommend treatment.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.endometriosis_context_patterns",
@@ -513,8 +520,8 @@
           "Representative formula / 代表方": "學習鑑別可比較 formula.xiao_yao_san（逍遙散；肝鬱兼脾虛血虛傾向）與 formula.chai_hu_shu_gan_san（柴胡疏肝散；氣滯脹痛較突出）。不可視為 endometriosis 的自動處方。 Study anchors: compare Xiao Yao San when Liver constraint coexists with Spleen/Blood deficiency tendencies and Chai Hu Shu Gan San when Qi-stagnation distending pain is prominent; neither is an automatic endometriosis prescription."
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "WHO and ACOG describe endometriosis as a chronic disease with variable symptoms that may include severe menstrual pain, chronic pelvic pain, heavy bleeding, pain with sex, bowel or urinary pain, and infertility; diagnosis uses clinical evaluation and may include imaging or surgery. Those biomedical features do not identify a TCM pattern. The cells below compare only the separate course-note pattern framework.",
       "source_urls": [
@@ -532,7 +539,8 @@
       "source_type": "source_assisted_draft_official_endometriosis_context_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-18",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not diagnose endometriosis, grade disease severity, recommend a formula or treatment, or replace gynecologic evaluation. Severe or worsening pelvic pain, heavy bleeding, pregnancy-related pain, fever, fainting, or other urgent symptoms require medical assessment."
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose endometriosis, grade disease severity, recommend a formula or treatment, or replace gynecologic evaluation. Severe or worsening pelvic pain, heavy bleeding, pregnancy-related pain, fever, fainting, or other urgent symptoms require medical assessment.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.recurrent_pregnancy_loss_context_patterns",
@@ -613,8 +621,8 @@
           "Representative formula / 代表方": "學習鑑別：formula.si_jun_zi_tang（四君子湯）作脾氣虛基本錨點；便溏、濕象較明顯可比較 formula.shen_ling_bai_zhu_san（參苓白朮散）。不可視為 insulin resistance 的自動處方。 Study anchors: Si Jun Zi Tang for basic Spleen Qi deficiency; compare Shen Ling Bai Zhu San when loose stool and Damp signs are more prominent. Neither is an automatic insulin-resistance prescription."
         }
       },
-      "authored_by": "model_draft",
-      "status": "draft",
+      "authored_by": "owner",
+      "status": "owner_filled",
       "review_status": "draft",
       "notes_en": "NIDDK notes that insulin resistance and prediabetes usually have no symptoms, that direct insulin-resistance testing is mainly used in research, and that clinicians use history and blood tests to evaluate prediabetes. Body size, fatigue, tongue, pulse, or a TCM pattern cannot establish the biomedical condition. The cells below compare only a separate course-note TCM framework.",
       "source_urls": [
@@ -628,7 +636,8 @@
       "source_type": "source_assisted_draft_official_metabolic_context_plus_ting_notion_course_notes",
       "last_reviewed": "2026-07-18",
       "public_safe": false,
-      "medical_disclaimer_en": "Study comparison only. This table does not diagnose insulin resistance, prediabetes, diabetes, or metabolic syndrome; interpret glucose or A1C results; recommend medication, supplements, formulas, or diet; or replace medical evaluation."
+      "medical_disclaimer_en": "Study comparison only. This table does not diagnose insulin resistance, prediabetes, diabetes, or metabolic syndrome; interpret glucose or A1C results; recommend medication, supplements, formulas, or diet; or replace medical evaluation.",
+      "authored_by_note_zh": "Ting 依可靠課件撰寫；原 model_draft 標記為誤植,2026-07-31 更正。"
     },
     {
       "id": "cmp.embryo_transfer_patterns",
@@ -671,6 +680,779 @@
       "status": "draft",
       "review_status": "draft",
       "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
+    },
+    {
+      "id": "cmp.exterior_wind_cold",
+      "type": "formula_comparison",
+      "title_zh": "桂枝湯、麻黃湯、小青龍湯等 鑑別",
+      "title_en": "exterior wind cold — formula differentiation",
+      "compares": [
+        "formula.gui_zhi_tang",
+        "formula.ma_huang_tang",
+        "formula.xiao_qing_long_tang",
+        "formula.jiu_wei_qiang_huo_tang",
+        "formula.bai_du_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = exterior_wind_cold",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.exterior_wind_heat",
+      "type": "formula_comparison",
+      "title_zh": "銀翹散、桑菊飲、麻杏石甘湯 鑑別",
+      "title_en": "exterior wind heat — formula differentiation",
+      "compares": [
+        "formula.yin_qiao_san",
+        "formula.sang_ju_yin",
+        "formula.ma_xing_shi_gan_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = exterior_wind_heat",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.heat_qi_ying_blood",
+      "type": "formula_comparison",
+      "title_zh": "白虎湯、竹葉石膏湯、清營湯等 鑑別",
+      "title_en": "heat qi ying blood — formula differentiation",
+      "compares": [
+        "formula.bai_hu_tang",
+        "formula.zhu_ye_shi_gao_tang",
+        "formula.qing_ying_tang",
+        "formula.xi_jiao_di_huang_tang",
+        "formula.qing_hao_bie_jia_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = heat_qi_ying_blood",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.heat_toxin_fire",
+      "type": "formula_comparison",
+      "title_zh": "黃連解毒湯、導赤散、清胃散等 鑑別",
+      "title_en": "heat toxin fire — formula differentiation",
+      "compares": [
+        "formula.huang_lian_jie_du_tang",
+        "formula.dao_chi_san",
+        "formula.qing_wei_san",
+        "formula.pu_ji_xiao_du_yin",
+        "formula.yu_nu_jian"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = heat_toxin_fire",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.calm_spirit",
+      "type": "formula_comparison",
+      "title_zh": "黃連阿膠湯、酸棗仁湯、天王補心丹等 鑑別",
+      "title_en": "calm spirit — formula differentiation",
+      "compares": [
+        "formula.huang_lian_e_jiao_tang",
+        "formula.suan_zao_ren_tang",
+        "formula.tian_wang_bu_xin_dan",
+        "formula.gan_mai_da_zao_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = calm_spirit",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.liver_gallbladder_damp_heat",
+      "type": "formula_comparison",
+      "title_zh": "龍膽瀉肝湯、左金丸 鑑別",
+      "title_en": "liver gallbladder damp heat — formula differentiation",
+      "compares": [
+        "formula.long_dan_xie_gan_tang",
+        "formula.zuo_jin_wan"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = liver_gallbladder_damp_heat",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.drain_downward",
+      "type": "formula_comparison",
+      "title_zh": "大承氣湯、小承氣湯、調胃承氣湯等 鑑別",
+      "title_en": "drain downward — formula differentiation",
+      "compares": [
+        "formula.da_cheng_qi_tang",
+        "formula.xiao_cheng_qi_tang",
+        "formula.tiao_wei_cheng_qi_tang",
+        "formula.ma_zi_ren_wan"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = drain_downward",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.shaoyang_harmonize",
+      "type": "formula_comparison",
+      "title_zh": "小柴胡湯、大柴胡湯、半夏瀉心湯 鑑別",
+      "title_en": "shaoyang harmonize — formula differentiation",
+      "compares": [
+        "formula.xiao_chai_hu_tang",
+        "formula.da_chai_hu_tang",
+        "formula.ban_xia_xie_xin_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = shaoyang_harmonize",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.liver_spleen",
+      "type": "formula_comparison",
+      "title_zh": "逍遙散、加味逍遙散、痛瀉要方等 鑑別",
+      "title_en": "liver spleen — formula differentiation",
+      "compares": [
+        "formula.xiao_yao_san",
+        "formula.jia_wei_xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.yue_ju_wan",
+        "formula.chai_hu_shu_gan_san",
+        "formula.si_ni_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = liver_spleen",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.warm_interior_middle",
+      "type": "formula_comparison",
+      "title_zh": "理中丸、小建中湯、吳茱萸湯 鑑別",
+      "title_en": "warm interior middle — formula differentiation",
+      "compares": [
+        "formula.li_zhong_wan",
+        "formula.xiao_jian_zhong_tang",
+        "formula.wu_zhu_yu_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = warm_interior_middle",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.rescue_yang_warm_channels",
+      "type": "formula_comparison",
+      "title_zh": "四逆湯、當歸四逆湯 鑑別",
+      "title_en": "rescue yang warm channels — formula differentiation",
+      "compares": [
+        "formula.si_ni_tang",
+        "formula.dang_gui_si_ni_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = rescue_yang_warm_channels",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.qi_tonify",
+      "type": "formula_comparison",
+      "title_zh": "四君子湯、六君子湯、參苓白朮散等 鑑別",
+      "title_en": "qi tonify — formula differentiation",
+      "compares": [
+        "formula.si_jun_zi_tang",
+        "formula.liu_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.yu_ping_feng_san",
+        "formula.sheng_mai_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = qi_tonify",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.blood_tonify",
+      "type": "formula_comparison",
+      "title_zh": "四物湯、當歸補血湯 鑑別",
+      "title_en": "blood tonify — formula differentiation",
+      "compares": [
+        "formula.si_wu_tang",
+        "formula.dang_gui_bu_xue_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = blood_tonify",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.blood_stasis",
+      "type": "formula_comparison",
+      "title_zh": "桃紅四物湯、血府逐瘀湯、補陽還五湯等 鑑別",
+      "title_en": "blood stasis — formula differentiation",
+      "compares": [
+        "formula.tao_hong_si_wu_tang",
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.bu_yang_huan_wu_tang",
+        "formula.gui_zhi_fu_ling_wan",
+        "formula.shi_xiao_san",
+        "formula.tao_he_cheng_qi_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = blood_stasis",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.qi_blood_tonify",
+      "type": "formula_comparison",
+      "title_zh": "八珍湯、炙甘草湯、歸脾湯 鑑別",
+      "title_en": "qi blood tonify — formula differentiation",
+      "compares": [
+        "formula.ba_zhen_tang",
+        "formula.zhi_gan_cao_tang",
+        "formula.gui_pi_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = qi_blood_tonify",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.yin_tonify",
+      "type": "formula_comparison",
+      "title_zh": "六味地黃丸、左歸丸、一貫煎 鑑別",
+      "title_en": "yin tonify — formula differentiation",
+      "compares": [
+        "formula.liu_wei_di_huang_wan",
+        "formula.zuo_gui_wan",
+        "formula.yi_guan_jian"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = yin_tonify",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.yang_tonify",
+      "type": "formula_comparison",
+      "title_zh": "右歸丸、金匱腎氣丸 鑑別",
+      "title_en": "yang tonify — formula differentiation",
+      "compares": [
+        "formula.you_gui_wan",
+        "formula.jin_gui_shen_qi_wan"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = yang_tonify",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.stabilize_bind",
+      "type": "formula_comparison",
+      "title_zh": "牡蠣散、真人養臟湯、四神丸等 鑑別",
+      "title_en": "stabilize bind — formula differentiation",
+      "compares": [
+        "formula.mu_li_san",
+        "formula.zhen_ren_yang_zang_tang",
+        "formula.si_shen_wan",
+        "formula.gu_chong_tang",
+        "formula.wan_dai_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = stabilize_bind",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.qi_regulation",
+      "type": "formula_comparison",
+      "title_zh": "半夏厚朴湯、蘇子降氣湯、定喘湯等 鑑別",
+      "title_en": "qi regulation — formula differentiation",
+      "compares": [
+        "formula.ban_xia_hou_po_tang",
+        "formula.su_zi_jiang_qi_tang",
+        "formula.ding_chuan_tang",
+        "formula.xuan_fu_dai_zhe_tang",
+        "formula.zhi_shi_xie_bai_gui_zhi_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = qi_regulation",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.gynecology_blood",
+      "type": "formula_comparison",
+      "title_zh": "生化湯、溫經湯 鑑別",
+      "title_en": "gynecology blood — formula differentiation",
+      "compares": [
+        "formula.sheng_hua_tang",
+        "formula.wen_jing_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = gynecology_blood",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.bleeding",
+      "type": "formula_comparison",
+      "title_zh": "十灰散、槐花散、黃土湯 鑑別",
+      "title_en": "bleeding — formula differentiation",
+      "compares": [
+        "formula.shi_hui_san",
+        "formula.huai_hua_san",
+        "formula.huang_tu_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = bleeding",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.damp_middle_jiao",
+      "type": "formula_comparison",
+      "title_zh": "平胃散、藿香正氣散 鑑別",
+      "title_en": "damp middle jiao — formula differentiation",
+      "compares": [
+        "formula.ping_wei_san",
+        "formula.huo_xiang_zheng_qi_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = damp_middle_jiao",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.damp_water",
+      "type": "formula_comparison",
+      "title_zh": "五苓散、豬苓湯、真武湯等 鑑別",
+      "title_en": "damp water — formula differentiation",
+      "compares": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.zhen_wu_tang",
+        "formula.fang_ji_huang_qi_tang",
+        "formula.shi_pi_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = damp_water",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.damp_heat",
+      "type": "formula_comparison",
+      "title_zh": "三仁湯、茵陳蒿湯、八正散等 鑑別",
+      "title_en": "damp heat — formula differentiation",
+      "compares": [
+        "formula.san_ren_tang",
+        "formula.yin_chen_hao_tang",
+        "formula.ba_zheng_san",
+        "formula.gan_lu_xiao_du_dan",
+        "formula.lian_po_yin"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = damp_heat",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.phlegm_damp",
+      "type": "formula_comparison",
+      "title_zh": "二陳湯、溫膽湯、半夏白朮天麻湯等 鑑別",
+      "title_en": "phlegm damp — formula differentiation",
+      "compares": [
+        "formula.er_chen_tang",
+        "formula.wen_dan_tang",
+        "formula.ban_xia_bai_zhu_tian_ma_tang",
+        "formula.qing_qi_hua_tan_wan",
+        "formula.xiao_xian_xiong_tang",
+        "formula.bei_mu_gua_lou_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = phlegm_damp",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.wind_external_skin",
+      "type": "formula_comparison",
+      "title_zh": "川芎茶調散、消風散、牽正散 鑑別",
+      "title_en": "wind external skin — formula differentiation",
+      "compares": [
+        "formula.chuan_xiong_cha_tiao_san",
+        "formula.xiao_feng_san",
+        "formula.qian_zheng_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = wind_external_skin",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.internal_wind",
+      "type": "formula_comparison",
+      "title_zh": "天麻鉤藤飲、鎮肝熄風湯、大定風珠等 鑑別",
+      "title_en": "internal wind — formula differentiation",
+      "compares": [
+        "formula.tian_ma_gou_teng_yin",
+        "formula.zhen_gan_xi_feng_tang",
+        "formula.da_ding_feng_zhu",
+        "formula.ling_jiao_gou_teng_tang"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = internal_wind",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.food_stagnation",
+      "type": "formula_comparison",
+      "title_zh": "保和丸、健脾丸 鑑別",
+      "title_en": "food stagnation — formula differentiation",
+      "compares": [
+        "formula.bao_he_wan",
+        "formula.jian_pi_wan"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = food_stagnation",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.open_orifices",
+      "type": "formula_comparison",
+      "title_zh": "安宮牛黃丸、至寶丹、蘇合香丸 鑑別",
+      "title_en": "open orifices — formula differentiation",
+      "compares": [
+        "formula.an_gong_niu_huang_wan",
+        "formula.zhi_bao_dan",
+        "formula.su_he_xiang_wan"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = open_orifices",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
+    },
+    {
+      "id": "cmp.dryness_lung",
+      "type": "formula_comparison",
+      "title_zh": "百合固金湯、麥門冬湯、清燥救肺湯等 鑑別",
+      "title_en": "dryness lung — formula differentiation",
+      "compares": [
+        "formula.bai_he_gu_jin_tang",
+        "formula.mai_men_dong_tang",
+        "formula.qing_zao_jiu_fei_tang",
+        "formula.xing_su_san"
+      ],
+      "dimensions": [
+        "組成差異",
+        "功效側重",
+        "主治",
+        "舌",
+        "脈",
+        "辨證要點"
+      ],
+      "cells": {},
+      "authored_by": "model_draft",
+      "status": "draft",
+      "review_status": "draft",
+      "seed_basis": "formula.comparison_group = dryness_lung",
+      "notes_zh": "骨架由模型建立（僅結構）。鑑別點 cells 待 Ting 依課件填寫——見 docs/COMPARISON_CARD_TEMPLATE.md §0。"
     }
   ],
   "comparisons": [
@@ -1344,6 +2126,6 @@
       "notes_en": "Skeleton only. Ting fills discriminator cells from class notes, textbooks, or source-reviewed clinical notes."
     }
   ],
-  "updated_at": "2026-07-23",
+  "updated_at": "2026-07-31",
   "total_count": 11
 }
