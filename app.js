@@ -600,6 +600,9 @@ const tungZoneGroups = uiConfig.tungZoneGroups || [
 
 let selectedSystem = "";
 let selectedSystemBranch = "";
+let activeChannelCode = "LU";
+let activeChartMode = "";
+let activeChannelsTab = "meridians";
 
 document.querySelectorAll(".system-tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -6005,8 +6008,6 @@ function escapeAttribute(value) {
 }
 
 /* ── Channel & Point Charts Workspace (經脈總覽與特定穴對照圖表) ────── */
-let activeChannelCode = "LU";
-let activeChartMode = ""; // "" for channel overview, or "fiveshu", "yuanluoxi", "confluent"
 
 function renderChannelsWorkspace() {
   const launcher = document.getElementById("channelsQuickLauncher");
@@ -6096,6 +6097,13 @@ function renderChannelsWorkspace() {
       </div>
     `}
   `;
+
+  launcher.querySelectorAll('[data-ctab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeChannelsTab = btn.dataset.ctab || 'meridians';
+      renderChannelsWorkspace();
+    });
+  });
 
   launcher.querySelectorAll('[data-ch-code]').forEach(btn => {
     btn.addEventListener('click', () => {
