@@ -3602,8 +3602,54 @@
         "NCBAHM_2026_CH_Appendix_B",
         "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312"
       ]
+    },
+    {
+      "id": "pair.sheng_jiang__da_zao",
+      "herbs": [
+        "herb.sheng_jiang",
+        "herb.da_zao"
+      ],
+      "name_zh": "生薑配大棗",
+      "name_en": "Sheng Jiang with Da Zao",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "生薑辛溫發散，走衛分而助衛氣外達；大棗甘平補中，走營分而益營血。一辛一甘、一散一補，相須為用，是「調和營衛」的標準藥對，桂枝湯即用此二味以成其和法。",
+      "pair_meaning_en": "Sheng Jiang is acrid and dispersing, reaching the Wei level; Da Zao is sweet and supplementing, nourishing the Ying level. Acrid paired with sweet, dispersing paired with tonifying — the standard pairing for harmonizing Ying and Wei, as used in Gui Zhi Tang.",
+      "indication_zh": "營衛不和：發熱汗出惡風、脈浮緩；亦用於補益方中護胃調和",
+      "indication_en": "Ying-Wei disharmony: fever with sweating and aversion to wind, floating moderate pulse; also used in tonifying formulas to protect the Stomach",
+      "caution_zh": "陰虛內熱、實熱者不宜；大棗濕熱痰熱者忌。",
+      "caution_en": "Not for Yin deficiency with Heat or Excess Heat; Da Zao is contraindicated in Damp-Heat and Phlegm-Heat.",
+      "found_in_formulas": [
+        "formula.gui_zhi_tang"
+      ],
+      "sources": [
+        "NCBAHM_2026_CH_Appendix_B",
+        "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L413-L432"
+      ]
+    },
+    {
+      "id": "pair.ting_li_zi__da_zao",
+      "herbs": [
+        "herb.ting_li_zi",
+        "herb.da_zao"
+      ],
+      "name_zh": "葶藶子配大棗",
+      "name_en": "Ting Li Zi with Da Zao",
+      "relation": "pair.rel.xiang_wei",
+      "pair_meaning_zh": "葶藶子苦寒峻烈，瀉肺平喘、行水消腫，力猛易傷胃氣；大棗甘平補中護胃，緩其峻烈。以大棗之甘緩制葶藶之峻瀉，使攻邪而不傷正（葶藶大棗瀉肺湯）。",
+      "pair_meaning_en": "Ting Li Zi is bitter, cold and drastic — draining Lung fullness and moving water, but harsh on Stomach Qi. Da Zao is sweet and moderating, restraining that harshness so the pathogen is attacked without injuring the upright Qi (Ting Li Da Zao Xie Fei Tang).",
+      "indication_zh": "痰涎壅盛之肺癰、咳逆喘滿不得臥、胸腔積液、水腫",
+      "indication_en": "Phlegm congestion in the Lung: lung abscess, cough and wheezing with fullness preventing lying flat, pleural effusion, edema",
+      "caution_zh": "葶藶子峻瀉，肺虛喘促、脾虛便溏及孕婦忌用；非實證不可用。",
+      "caution_en": "Ting Li Zi is drastic: contraindicated in Lung-deficiency wheezing, Spleen deficiency with loose stools, and pregnancy; use only for Excess patterns.",
+      "found_in_formulas": [
+        "formula.ting_li_da_zao_xie_fei_tang"
+      ],
+      "sources": [
+        "NCBAHM_2026_CH_Appendix_B",
+        "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L413-L432"
+      ]
     }
   ],
   "updated_at": "2026-07-30",
-  "total_pairs": 158
+  "total_pairs": 160
 }
