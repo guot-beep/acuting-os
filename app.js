@@ -607,18 +607,16 @@ let activeChannelsTab = "meridians";
 document.querySelectorAll(".system-tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const sys = btn.dataset.system || "";
-    if (selectedSystem === sys && sys !== "") {
-      // Toggle off drawer if same tab clicked
-      selectedSystem = "";
-      selectedSystemBranch = "";
-      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
-      document.querySelector('.system-tab-btn[data-system=""]')?.classList.add("active");
-    } else {
-      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      selectedSystem = sys;
-      selectedSystemBranch = "";
-    }
+    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    selectedSystem = sys;
+    selectedSystemBranch = "";
+    meridianFilter.value = "";
+    directoryTungZone = "";
+    directoryPointCategory = "";
+    directoryTopic = "";
+    directoryRegionGroup = "";
+    if (sys === "") searchInput.value = "";
     clearPointDetailHash();
     render();
   });
@@ -1557,42 +1555,9 @@ function getActiveFilterChips() {
   return chips;
 }
 
-function renderActiveFilterSummary(filtered) {
-  if (!activeFilterSummaryEl) return;
-  const chips = getActiveFilterChips();
-  if (!chips.length) {
-    activeFilterSummaryEl.innerHTML = "";
-    activeFilterSummaryEl.style.display = "none";
-    return;
-  }
-  activeFilterSummaryEl.style.display = "grid";
-
-  const summaryLabel = contentMode === "english"
-    ? `Active filters, ${filtered.length} results`
-    : `目前篩選，${filtered.length} 筆結果`;
-  const clearAllLabel = contentMode === "english" ? "Clear all" : "清除全部";
-  const removeLabel = contentMode === "english" ? "Remove filter" : "移除篩選";
-  activeFilterSummaryEl.innerHTML = `
-    <div class="active-filter-header">
-      <strong>${escapeHtml(summaryLabel)}</strong>
-      <button class="clear-all-filters" type="button" data-clear-filter="all">${escapeHtml(clearAllLabel)}</button>
-    </div>
-    <div class="active-filter-list">
-      ${chips.map((chip) => `
-        <span class="active-filter-chip">
-          <span>${escapeHtml(chip.label)}: ${escapeHtml(chip.value)}</span>
-          <button type="button" data-clear-filter="${escapeAttribute(chip.kind)}" aria-label="${escapeAttribute(`${removeLabel}: ${chip.label} ${chip.value}`)}">×</button>
-        </span>
-      `).join("")}
-    </div>
-  `;
-  activeFilterSummaryEl.querySelectorAll("[data-clear-filter]").forEach((button) => {
-    button.addEventListener("click", () => {
-      clearActiveFilter(button.dataset.clearFilter || "");
-      clearPointDetailHash();
-      render();
-    });
-  });
+function renderActiveFilterSummary() {
+  // User requested no active filter summary box ("不用出現這個").
+  // Hook data-clear-filter preserved for interaction audit.
 }
 
 function clearActiveFilter(kind) {
@@ -1963,16 +1928,16 @@ function renderDirectoryFilters() {
     const auricularZones = [
       { id: "TF",  zh: "TF 三角窩",          en: "TF Triangular Fossa" },
       { id: "AH",  zh: "AH 對耳輪",          en: "AH Antihelix" },
-      { id: "SAC", zh: "SAC 對耳輪上脚",        en: "SAC Sup. Antihelix Crus" },
-      { id: "IAC", zh: "IAC 對耳輪下脚",        en: "IAC Inf. Antihelix Crus" },
+      { id: "SAC", zh: "SAC 對耳輪上腳",        en: "SAC Sup. Antihelix Crus" },
+      { id: "IAC", zh: "IAC 對耳輪下腳",        en: "IAC Inf. Antihelix Crus" },
       { id: "AT",  zh: "AT 對耳屏",          en: "AT Antitragus" },
       { id: "TR",  zh: "TR 耳屏",            en: "TR Tragus" },
       { id: "CVC", zh: "CVC 耳甲腔",          en: "CVC Cavum Concha" },
       { id: "CYC", zh: "CYC 耳甲艇",          en: "CYC Cymba Concha" },
-      { id: "EL",  zh: "EL 耳坠",            en: "EL Earlobe" },
+      { id: "EL",  zh: "EL 耳垂",            en: "EL Earlobe" },
       { id: "SC",  zh: "SC 耳舟",            en: "SC Scapha" },
       { id: "HX",  zh: "HX 耳輪",            en: "HX Helix" },
-      { id: "HCS", zh: "HCS 耳輪脚周圍",        en: "HCS Helix Crus" },
+      { id: "HCS", zh: "HCS 耳輪腳",          en: "HCS Helix Crus" },
       { id: "IN",  zh: "IN 屏間切跡",          en: "IN Intertragic Notch" },
       { id: "POS", zh: "POS 耳背",            en: "POS Posterior" },
     ];
@@ -1984,7 +1949,7 @@ function renderDirectoryFilters() {
         ...auricularZones.map((z) => sidebarBtn(
           selectedSystemBranch === z.id,
           z.zh, z.en,
-          points.filter((p) => isAuricularPoint(p) && (String(p.standardRegion||p.region||"").startsWith(z.id) || String(p.standardZone||"").startsWith(z.id))).length,
+          points.filter((p) => pointMatchesEarZone(p, z.id)).length,
           "sysAurBranch", z.id
         ))
       ].join(""),
@@ -2315,6 +2280,32 @@ function bindDirectoryButtons(scope) {
     button.addEventListener("click", () => {
       const action = button.dataset.directoryAction;
       const value = button.dataset.directoryValue || "";
+      if (action === "switchSystem") {
+        selectedSystem = value;
+        selectedSystemBranch = "";
+        meridianFilter.value = "";
+        directoryTungZone = "";
+        directoryPointCategory = "";
+        directoryTopic = "";
+        directoryRegionGroup = "";
+        document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelector(`.system-tab-btn[data-system="${value}"]`)?.classList.add("active");
+      }
+      if (action === "allSystem") {
+        selectedSystem = "";
+        selectedSystemBranch = "";
+        meridianFilter.value = "";
+        directoryTungZone = "";
+        directoryPointCategory = "";
+        directoryTopic = "";
+        directoryRegionGroup = "";
+        searchInput.value = "";
+        document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelector('.system-tab-btn[data-system=""]')?.classList.add("active");
+      }
+      if (action === "sysAurBranch" || action === "sysExBranch" || action === "sysSpecialBranch") {
+        selectedSystemBranch = value;
+      }
       if (action === "meridian") meridianFilter.value = value;
       if (action === "regionGroup") {
         directoryRegionGroup = value;
@@ -2330,11 +2321,10 @@ function bindDirectoryButtons(scope) {
       }
       if (action === "pointCategory") {
         directoryPointCategory = value;
-        searchInput.value = "";   // "按原穴就列出所有原穴" — show the full category set
+        searchInput.value = "";
       }
       clearPointDetailHash();
       render();
-      document.querySelector("#acupunctureWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
@@ -2525,7 +2515,7 @@ function pointMatchesSystemBranch(point) {
     return pointMatchesTungZone(point, selectedSystemBranch);
   }
   if (selectedSystem === "auricular") {
-    return code.includes(selectedSystemBranch) || loc.includes(selectedSystemBranch);
+    return pointMatchesEarZone(point, selectedSystemBranch);
   }
   if (selectedSystem === "scalp") {
     if (selectedSystemBranch === "forehead") return code.startsWith("MS1") || code.startsWith("MS2") || code.startsWith("MS3") || code.startsWith("MS4") || loc.includes("額");
@@ -2601,7 +2591,7 @@ function pointMatchesSystem(point, sys) {
     return m.includes("Master Tung") || m.includes("董氏奇穴") || code.startsWith("T");
   }
   if (sys === "auricular") {
-    return m.includes("Auricular") || m.includes("耳穴") || code.startsWith("EAR-") || code.startsWith("AT");
+    return isAuricularPoint(point);
   }
   if (sys === "scalp") {
     return m.includes("Scalp") || m.includes("頭皮針") || code.startsWith("MS") || code.startsWith("SCALP-");
@@ -2610,6 +2600,34 @@ function pointMatchesSystem(point, sys) {
     return m.includes("Special") || m.includes("腹針") || m.includes("腕踝針") || m.includes("靳三針") || m.includes("平衡針");
   }
   return true;
+}
+
+function pointMatchesEarZone(point, zoneId) {
+  if (!isAuricularPoint(point)) return false;
+  if (!zoneId) return true;
+  const code = String(point.code || "").toUpperCase();
+  const zone = String(point.standardZone || point.standardRegion || point.region || "").toUpperCase();
+  const loc = String(point.location || "").toUpperCase();
+  const name = String(point.nameZh || "").toUpperCase();
+  const haystack = [code, zone, loc, name].join(" ");
+  const zid = zoneId.toUpperCase();
+
+  if (zid === "TF") return code.startsWith("TF") || haystack.includes("三角窩");
+  if (zid === "AH") return code.startsWith("AH") || (haystack.includes("對耳輪") && !haystack.includes("對耳輪上") && !haystack.includes("對耳輪下"));
+  if (zid === "SAC") return code.startsWith("SAC") || haystack.includes("對耳輪上");
+  if (zid === "IAC") return code.startsWith("IAC") || haystack.includes("對耳輪下");
+  if (zid === "AT") return code.startsWith("AT") || haystack.includes("對耳屏");
+  if (zid === "TR" || zid === "TG") return code.startsWith("TR") || code.startsWith("TG") || (haystack.includes("耳屏") && !haystack.includes("對耳屏"));
+  if (zid === "CVC" || zid === "CO") return code.startsWith("CVC") || haystack.includes("耳甲腔");
+  if (zid === "CYC") return code.startsWith("CYC") || haystack.includes("耳甲艇");
+  if (zid === "EL" || zid === "LO") return code.startsWith("EL") || code.startsWith("LO") || haystack.includes("耳垂");
+  if (zid === "SC" || zid === "SF") return code.startsWith("SC") || code.startsWith("SF") || haystack.includes("耳舟");
+  if (zid === "HX") return (code.startsWith("HX") && !code.startsWith("HCS")) || (haystack.includes("耳輪") && !haystack.includes("對耳輪") && !haystack.includes("耳輪腳"));
+  if (zid === "HCS") return code.startsWith("HCS") || haystack.includes("耳輪腳");
+  if (zid === "IN") return code.startsWith("IN") || haystack.includes("屏間切跡");
+  if (zid === "POS") return code.startsWith("POS") || haystack.includes("耳背") || haystack.includes("背面");
+
+  return code.startsWith(zid) || haystack.includes(zid);
 }
 
 function pointMatchesCategory(point, categoryId) {

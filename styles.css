@@ -947,6 +947,10 @@ textarea {
   padding: 0.72rem 0.82rem;
 }
 
+.active-filter-summary {
+  display: none !important;
+}
+
 .active-filter-header {
   align-items: center;
   display: flex;
