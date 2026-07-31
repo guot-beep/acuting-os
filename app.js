@@ -604,13 +604,13 @@ let activeChannelCode = "LU";
 let activeChartMode = "";
 let activeChannelsTab = "meridians";
 
-document.querySelectorAll(".system-tab-btn, .system-tab-link, [href='#channelsWorkspace'], [href='#ws/channels']").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
+document.querySelectorAll(".system-tab-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
     const sys = btn.dataset.system || "";
-    const href = btn.getAttribute("href") || "";
-    if (sys === "channels_chart" || btn.classList.contains("system-tab-link") || href.includes("channels")) {
-      e.preventDefault();
-      selectedSystem = "channels_chart";
+    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    selectedSystem = sys;
+    if (sys === "channels_chart") {
       activeChannelsTab = "charts";
       if (!activeChartMode) activeChartMode = "fiveshu";
       window.history.pushState(null, "", "#channelsWorkspace");
@@ -618,9 +618,6 @@ document.querySelectorAll(".system-tab-btn, .system-tab-link, [href='#channelsWo
       document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
-    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    selectedSystem = sys;
     selectedSystemBranch = "";
     meridianFilter.value = "";
     directoryTungZone = "";
@@ -1505,13 +1502,16 @@ function render() {
       channelsWorkspaceEl.hidden = false;
       channelsWorkspaceEl.style.display = "block";
       directoryLayoutEl.style.display = "none";
-      if (channelsLinkEl) channelsLinkEl.classList.add("active");
-      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+      document.querySelectorAll(".system-tab-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.system === "channels_chart");
+      });
     } else {
       channelsWorkspaceEl.hidden = true;
       channelsWorkspaceEl.style.display = "none";
       directoryLayoutEl.style.display = "grid";
-      if (channelsLinkEl) channelsLinkEl.classList.remove("active");
+      document.querySelectorAll(".system-tab-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.system === (selectedSystem || ""));
+      });
     }
   }
 
