@@ -4230,23 +4230,96 @@
       "pattern_indications_en": [
         "Pattern Indications of Cool the Diaphragm Powder"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "連翹",
+          "herb_en": null,
+          "pinyin": "Lian Qiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": null,
+          "herb_id": "herb.lian_qiao"
+        },
+        {
+          "herb_zh": "大黃",
+          "herb_en": null,
+          "pinyin": "Da Huang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "600g",
+          "herb_id": "herb.da_huang"
+        },
+        {
+          "herb_zh": "芒硝",
+          "herb_en": null,
+          "pinyin": "Mang Xiao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "600g",
+          "herb_id": "herb.mang_xiao"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "300g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "梔子",
+          "herb_en": null,
+          "pinyin": "Zhi Zi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "300g",
+          "herb_id": "herb.zhi_zi"
+        },
+        {
+          "herb_zh": "淡竹葉",
+          "herb_en": null,
+          "pinyin": "Dan Zhu Ye",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "7g",
+          "herb_id": "herb.dan_zhu_ye"
+        },
+        {
+          "herb_zh": "薄荷",
+          "herb_en": null,
+          "pinyin": "Bo He",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "300g",
+          "herb_id": "herb.bo_he"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "600g",
+          "herb_id": "herb.gan_cao"
+        }
+      ],
       "clinical_use_note": "【涼膈散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Cool the Diaphragm Powder",
@@ -4266,6 +4339,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/204",
@@ -4278,7 +4354,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.qing_ying_tang",
@@ -4309,7 +4386,89 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "水牛角",
+          "herb_en": null,
+          "pinyin": "Shui Niu Jiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30-120g",
+          "herb_id": "herb.shui_niu_jiao"
+        },
+        {
+          "herb_zh": "玄參",
+          "herb_en": null,
+          "pinyin": "Xuan Shen",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.xuan_shen"
+        },
+        {
+          "herb_zh": "生地黃",
+          "herb_en": null,
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "15g",
+          "herb_id": "herb.sheng_di_huang"
+        },
+        {
+          "herb_zh": "麥門冬",
+          "herb_en": null,
+          "pinyin": "Mai Men Dong",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.mai_men_dong"
+        },
+        {
+          "herb_zh": "金銀花",
+          "herb_en": null,
+          "pinyin": "Jin Yin Hua",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.jin_yin_hua"
+        },
+        {
+          "herb_zh": "連翹",
+          "herb_en": null,
+          "pinyin": "Lian Qiao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "6g",
+          "herb_id": "herb.lian_qiao"
+        },
+        {
+          "herb_zh": "黃連",
+          "herb_en": null,
+          "pinyin": "Huang Lian",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "4.5g",
+          "herb_id": "herb.huang_lian"
+        },
+        {
+          "herb_zh": "淡竹葉",
+          "herb_en": null,
+          "pinyin": "Dan Zhu Ye",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3g",
+          "herb_id": "herb.dan_zhu_ye"
+        },
+        {
+          "herb_zh": "丹參",
+          "herb_en": null,
+          "pinyin": "Dan Shen",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.dan_shen"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -4320,7 +4479,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -4361,8 +4521,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.xi_jiao_di_huang_tang",
@@ -4393,7 +4557,44 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "水牛角",
+          "herb_en": null,
+          "pinyin": "Shui Niu Jiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30-120g",
+          "herb_id": "herb.shui_niu_jiao"
+        },
+        {
+          "herb_zh": "生地黃",
+          "herb_en": null,
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "24g",
+          "herb_id": "herb.sheng_di_huang"
+        },
+        {
+          "herb_zh": "赤芍",
+          "herb_en": null,
+          "pinyin": "Chi Shao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.chi_shao"
+        },
+        {
+          "herb_zh": "牡丹皮",
+          "herb_en": null,
+          "pinyin": "Mu Dan Pi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.mu_dan_pi"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -4404,7 +4605,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -4441,8 +4643,12 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.huang_lian_e_jiao_tang",
@@ -5641,23 +5847,60 @@
       "pattern_indications_en": [
         "Pattern Indications of Drain the White Powder"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "桑白皮",
+          "herb_en": null,
+          "pinyin": "Sang Bai Pi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.sang_bai_pi"
+        },
+        {
+          "herb_zh": "地骨皮",
+          "herb_en": null,
+          "pinyin": "Di Gu Pi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.di_gu_pi"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3g",
+          "herb_id": "herb.gan_cao",
+          "preparation_zh": "炙"
+        },
+        {
+          "herb_zh": "粳米",
+          "herb_en": null,
+          "pinyin": "Geng Mi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "15-30g"
+        }
+      ],
       "clinical_use_note": "【瀉白散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Drain the White Powder",
@@ -5677,6 +5920,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/295",
@@ -5689,7 +5935,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.yu_nv_jian",
@@ -5875,23 +6122,60 @@
       "pattern_indications_en": [
         "Pattern Indications of Pulsatilla Decoction"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "白頭翁",
+          "herb_en": null,
+          "pinyin": "Bai Tou Weng",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.bai_tou_weng"
+        },
+        {
+          "herb_zh": "黃連",
+          "herb_en": null,
+          "pinyin": "Huang Lian",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "4-9g",
+          "herb_id": "herb.huang_lian"
+        },
+        {
+          "herb_zh": "黃柏",
+          "herb_en": null,
+          "pinyin": "Huang Bai",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "12g",
+          "herb_id": "herb.huang_bai"
+        },
+        {
+          "herb_zh": "秦皮",
+          "herb_en": null,
+          "pinyin": "Qin Pi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "12g",
+          "herb_id": "herb.qin_pi"
+        }
+      ],
       "clinical_use_note": "【白頭翁湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Pulsatilla Decoction",
@@ -5911,6 +6195,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/97",
@@ -5923,7 +6210,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.qing_hao_bie_jia_tang",
@@ -6177,23 +6465,96 @@
       "pattern_indications_en": [
         "Pattern Indications of Cool Bones Powder"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "銀柴胡",
+          "herb_en": null,
+          "pinyin": "Yin Chai Hu",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "4.5g",
+          "herb_id": "herb.yin_chai_hu"
+        },
+        {
+          "herb_zh": "知母",
+          "herb_en": null,
+          "pinyin": "Zhi Mu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g",
+          "herb_id": "herb.zhi_mu"
+        },
+        {
+          "herb_zh": "胡黃連",
+          "herb_en": null,
+          "pinyin": "Hu huang lian",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g"
+        },
+        {
+          "herb_zh": "地骨皮",
+          "herb_en": null,
+          "pinyin": "Di Gu Pi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g",
+          "herb_id": "herb.di_gu_pi"
+        },
+        {
+          "herb_zh": "青蒿",
+          "herb_en": null,
+          "pinyin": "Qing Hao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3g",
+          "herb_id": "herb.qing_hao"
+        },
+        {
+          "herb_zh": "秦艽",
+          "herb_en": null,
+          "pinyin": "Qin Jiao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3g",
+          "herb_id": "herb.qin_jiao"
+        },
+        {
+          "herb_zh": "鱉甲",
+          "herb_en": null,
+          "pinyin": "Bie Jia",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3g",
+          "herb_id": "herb.bie_jia",
+          "preparation_zh": "炙"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "1.5g",
+          "herb_id": "herb.gan_cao"
+        }
+      ],
       "clinical_use_note": "【清骨散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Cool the Bones Powder",
@@ -6210,6 +6571,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -6220,7 +6584,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.dang_gui_liu_huang_tang",
@@ -6530,23 +6895,150 @@
       "pattern_indications_en": [
         "Pattern Indications of Clear Epidemics and Overcome Toxicity Decoction"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "石膏",
+          "herb_en": null,
+          "pinyin": "Shi Gao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "60-120g",
+          "herb_id": "herb.shi_gao"
+        },
+        {
+          "herb_zh": "知母",
+          "herb_en": null,
+          "pinyin": "Zhi Mu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.zhi_mu"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3-6g",
+          "herb_id": "herb.gan_cao"
+        },
+        {
+          "herb_zh": "淡竹葉",
+          "herb_en": null,
+          "pinyin": "Dan Zhu Ye",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "3-6g",
+          "herb_id": "herb.dan_zhu_ye"
+        },
+        {
+          "herb_zh": "水牛角",
+          "herb_en": null,
+          "pinyin": "Shui Niu Jiao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "30-120g",
+          "herb_id": "herb.shui_niu_jiao"
+        },
+        {
+          "herb_zh": "生地黃",
+          "herb_en": null,
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "9-15g",
+          "herb_id": "herb.sheng_di_huang"
+        },
+        {
+          "herb_zh": "牡丹皮",
+          "herb_en": null,
+          "pinyin": "Mu Dan Pi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.mu_dan_pi"
+        },
+        {
+          "herb_zh": "赤芍",
+          "herb_en": null,
+          "pinyin": "Chi Shao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.chi_shao"
+        },
+        {
+          "herb_zh": "玄參",
+          "herb_en": null,
+          "pinyin": "Xuan Shen",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.xuan_shen"
+        },
+        {
+          "herb_zh": "黃連",
+          "herb_en": null,
+          "pinyin": "Huang Lian",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.huang_lian"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "3-9g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "梔子",
+          "herb_en": null,
+          "pinyin": "Zhi Zi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.zhi_zi"
+        },
+        {
+          "herb_zh": "連翹",
+          "herb_en": null,
+          "pinyin": "Lian Qiao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.lian_qiao"
+        },
+        {
+          "herb_zh": "桔梗",
+          "herb_en": null,
+          "pinyin": "Jie Geng",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "3-6g",
+          "herb_id": "herb.jie_geng"
+        }
+      ],
       "clinical_use_note": "【清瘟敗毒飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Clear Epidemics and Overcome Toxicity Drink",
@@ -6563,6 +7055,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -6573,7 +7068,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.da_cheng_qi_tang",
@@ -10089,7 +10585,45 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "乾薑",
+          "herb_en": null,
+          "pinyin": "Gan Jiang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "9g",
+          "herb_id": "herb.gan_jiang"
+        },
+        {
+          "herb_zh": "人參",
+          "herb_en": null,
+          "pinyin": "Ren Shen",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.ren_shen"
+        },
+        {
+          "herb_zh": "白朮",
+          "herb_en": null,
+          "pinyin": "Bai Zhu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.bai_zhu"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "9g",
+          "herb_id": "herb.gan_cao",
+          "preparation_zh": "炙"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -10100,7 +10634,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -10141,8 +10676,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.fu_zi_li_zhong_wan",
@@ -13164,7 +13703,35 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "人參",
+          "herb_en": null,
+          "pinyin": "Ren Shen",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "9-15g",
+          "herb_id": "herb.ren_shen"
+        },
+        {
+          "herb_zh": "麥門冬",
+          "herb_en": null,
+          "pinyin": "Mai Men Dong",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9-12g",
+          "herb_id": "herb.mai_men_dong"
+        },
+        {
+          "herb_zh": "五味子",
+          "herb_en": null,
+          "pinyin": "Wu Wei Zi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3-6g",
+          "herb_id": "herb.wu_wei_zi"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -13175,7 +13742,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -13216,8 +13784,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.ren_shen_yang_rong_tang",
@@ -14025,23 +14597,78 @@
       "pattern_indications_en": [
         "Pattern Indications of Ass-Hide Gelatin and Mugwort Decoction"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "阿膠",
+          "herb_en": null,
+          "pinyin": "E Jiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "9g",
+          "herb_id": "herb.e_jiao"
+        },
+        {
+          "herb_zh": "艾葉",
+          "herb_en": null,
+          "pinyin": "Ai Ye",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "9g",
+          "herb_id": "herb.ai_ye"
+        },
+        {
+          "herb_zh": "川芎",
+          "herb_en": null,
+          "pinyin": "Chuan Xiong",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.chuan_xiong"
+        },
+        {
+          "herb_zh": "當歸",
+          "herb_en": null,
+          "pinyin": "Dang Gui",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.dang_gui"
+        },
+        {
+          "herb_zh": "生地黃",
+          "herb_en": null,
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "12g",
+          "herb_id": "herb.sheng_di_huang"
+        },
+        {
+          "herb_zh": "白芍",
+          "herb_en": null,
+          "pinyin": "Bai Shao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "12g",
+          "herb_id": "herb.bai_shao"
+        }
+      ],
       "clinical_use_note": "【膠艾湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Ass-Hide Gelatin and Mugwort Decoction",
@@ -14058,6 +14685,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -14068,7 +14698,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.dang_gui_bu_xue_tang",
@@ -16242,11 +16873,86 @@
         "https://library.hkbu.edu.hk/electronic/libdbs/cmfid/index.html",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
       "last_reviewed": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "熟地黃",
+          "herb_en": null,
+          "pinyin": "Shu Di Huang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "240g",
+          "herb_id": "herb.shu_di_huang"
+        },
+        {
+          "herb_zh": "山茱萸",
+          "herb_en": null,
+          "pinyin": "Shan Zhu Yu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "120g",
+          "herb_id": "herb.shan_zhu_yu"
+        },
+        {
+          "herb_zh": "山藥",
+          "herb_en": null,
+          "pinyin": "Shan Yao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "120g",
+          "herb_id": "herb.shan_yao"
+        },
+        {
+          "herb_zh": "附子",
+          "herb_en": null,
+          "pinyin": "Fu Zi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30g",
+          "herb_id": "herb.fu_zi",
+          "preparation_zh": "炙"
+        },
+        {
+          "herb_zh": "桂枝",
+          "herb_en": null,
+          "pinyin": "Gui Zhi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30g",
+          "herb_id": "herb.gui_zhi"
+        },
+        {
+          "herb_zh": "澤瀉",
+          "herb_en": null,
+          "pinyin": "Ze Xie",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "90g",
+          "herb_id": "herb.ze_xie"
+        },
+        {
+          "herb_zh": "茯苓",
+          "herb_en": null,
+          "pinyin": "Fu Ling",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "90g",
+          "herb_id": "herb.fu_ling"
+        },
+        {
+          "herb_zh": "牡丹皮",
+          "herb_en": null,
+          "pinyin": "Mu Dan Pi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "90g",
+          "herb_id": "herb.mu_dan_pi"
+        }
+      ],
       "actions_en": [
         "Warm and tonify Kidney yang",
         "Support water metabolism pattern context"
@@ -16361,6 +17067,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "condition_tags_zh": [
@@ -16382,7 +17091,8 @@
       "pattern_tags_en": [
         "Kidney Yang Deficiency",
         "Water Metabolism"
-      ]
+      ],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.zhi_gan_cao_tang",
@@ -16974,7 +17684,44 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "牡蠣",
+          "herb_en": null,
+          "pinyin": "Mu Li",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.mu_li"
+        },
+        {
+          "herb_zh": "黃耆",
+          "herb_en": null,
+          "pinyin": "Huang Qi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.huang_qi"
+        },
+        {
+          "herb_zh": "麻黃根",
+          "herb_en": null,
+          "pinyin": "Ma Huang Gen",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30g",
+          "herb_id": "herb.ma_huang_gen"
+        },
+        {
+          "herb_zh": "浮小麥",
+          "herb_en": null,
+          "pinyin": "Fu Xiao Mai",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "30g",
+          "herb_id": "herb.fu_xiao_mai"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -16985,7 +17732,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -17026,8 +17774,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.zhen_ren_yang_zang_tang",
@@ -17142,7 +17894,44 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "補骨脂",
+          "herb_en": null,
+          "pinyin": "Bu Gu Zhi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "120g",
+          "herb_id": "herb.bu_gu_zhi"
+        },
+        {
+          "herb_zh": "肉豆蔻",
+          "herb_en": null,
+          "pinyin": "Rou Dou Kou",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "60g",
+          "herb_id": "herb.rou_dou_kou"
+        },
+        {
+          "herb_zh": "吳茱萸",
+          "herb_en": null,
+          "pinyin": "Wu Zhu Yu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30g",
+          "herb_id": "herb.wu_zhu_yu"
+        },
+        {
+          "herb_zh": "五味子",
+          "herb_en": null,
+          "pinyin": "Wu Wei Zi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "60g",
+          "herb_id": "herb.wu_wei_zi"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -17153,7 +17942,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -17194,8 +17984,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.jin_suo_gu_jing_wan",
@@ -17223,23 +18017,51 @@
       "pattern_indications_en": [
         "Pattern Indications of Metal Lock Pill to Stabilize Essence"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "沙苑子",
+          "herb_en": null,
+          "pinyin": "Sha Yuan Zi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": null,
+          "herb_id": "herb.sha_yuan_zi"
+        },
+        {
+          "herb_zh": "蓮子",
+          "herb_en": null,
+          "pinyin": "Lian Zi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": null,
+          "herb_id": "herb.lian_zi"
+        },
+        {
+          "herb_zh": "蓮鬚",
+          "herb_en": null,
+          "pinyin": "Lian Xu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": null,
+          "herb_id": "herb.lian_xu"
+        }
+      ],
       "clinical_use_note": "【金鎖固精丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Metal Lock Pill to Stabilize the Essence",
@@ -17259,6 +18081,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/138",
@@ -17271,7 +18096,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.sang_piao_xiao_san",
@@ -17375,23 +18201,51 @@
       "pattern_indications_en": [
         "Pattern Indications of Shut the Sluice Pill"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "益智仁",
+          "herb_en": null,
+          "pinyin": "Yi Zhi Ren",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "9-12g",
+          "herb_id": "herb.yi_zhi_ren"
+        },
+        {
+          "herb_zh": "烏藥",
+          "herb_en": null,
+          "pinyin": "Wu Yao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "6-12g",
+          "herb_id": "herb.wu_yao"
+        },
+        {
+          "herb_zh": "山藥",
+          "herb_en": null,
+          "pinyin": "Shan Yao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9-15g",
+          "herb_id": "herb.shan_yao"
+        }
+      ],
       "clinical_use_note": "【縮泉丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -17404,6 +18258,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -17414,7 +18271,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.shou_tai_wan",
@@ -23477,23 +24335,42 @@
       "pattern_indications_en": [
         "Pattern Indications of Two Miracle Powder"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "黃柏",
+          "herb_en": null,
+          "pinyin": "Huang Bai",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.huang_bai"
+        },
+        {
+          "herb_zh": "蒼朮",
+          "herb_en": null,
+          "pinyin": "Cang Zhu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "15g",
+          "herb_id": "herb.cang_zhu"
+        }
+      ],
       "clinical_use_note": "【二妙散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Two-Marvel Powder",
@@ -23513,6 +24390,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/368",
@@ -23525,7 +24405,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.si_miao_wan",
@@ -24793,23 +25674,61 @@
       "pattern_indications_en": [
         "Pattern Indications of Poria, Cinnamon Twig, Atractylodes and Licorice Decoction"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "茯苓",
+          "herb_en": null,
+          "pinyin": "Fu Ling",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "12g",
+          "herb_id": "herb.fu_ling"
+        },
+        {
+          "herb_zh": "桂枝",
+          "herb_en": null,
+          "pinyin": "Gui Zhi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.gui_zhi"
+        },
+        {
+          "herb_zh": "白朮",
+          "herb_en": null,
+          "pinyin": "Bai Zhu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "6g",
+          "herb_id": "herb.bai_zhu"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.gan_cao",
+          "preparation_zh": "炙"
+        }
+      ],
       "clinical_use_note": "【苓桂朮甘湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Poria, Cinnamon Twig, Atractylodes, and Licorice Decoction",
@@ -24829,6 +25748,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/151",
@@ -24841,7 +25763,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.er_chen_tang",
@@ -26012,7 +26935,53 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "天南星",
+          "herb_en": null,
+          "pinyin": "Tian Nan Xing",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "45g",
+          "herb_id": "herb.tian_nan_xing"
+        },
+        {
+          "herb_zh": "栝樓仁",
+          "herb_en": null,
+          "pinyin": "Gua Lou Ren",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.gua_lou_ren"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "枳實",
+          "herb_en": null,
+          "pinyin": "Zhi Shi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "30g",
+          "herb_id": "herb.zhi_shi"
+        },
+        {
+          "herb_zh": "杏仁",
+          "herb_en": null,
+          "pinyin": "Xing Ren",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "30g",
+          "herb_id": "herb.xing_ren"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -26023,7 +26992,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -26064,8 +27034,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.xiao_xian_xiong_tang",
@@ -27443,7 +28417,116 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "牛膝",
+          "herb_en": null,
+          "pinyin": "Niu Xi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.niu_xi"
+        },
+        {
+          "herb_zh": "代赭石",
+          "herb_en": null,
+          "pinyin": "Dai Zhe Shi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.dai_zhe_shi"
+        },
+        {
+          "herb_zh": "龍骨",
+          "herb_en": null,
+          "pinyin": "Long Gu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "15g",
+          "herb_id": "herb.long_gu"
+        },
+        {
+          "herb_zh": "牡蠣",
+          "herb_en": null,
+          "pinyin": "Mu Li",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "15g",
+          "herb_id": "herb.mu_li"
+        },
+        {
+          "herb_zh": "龜板",
+          "herb_en": null,
+          "pinyin": "Gui Ban",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "15g",
+          "herb_id": "herb.gui_ban"
+        },
+        {
+          "herb_zh": "玄參",
+          "herb_en": null,
+          "pinyin": "Xuan Shen",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "15g",
+          "herb_id": "herb.xuan_shen"
+        },
+        {
+          "herb_zh": "天門冬",
+          "herb_en": null,
+          "pinyin": "Tian Men Dong",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "15g",
+          "herb_id": "herb.tian_men_dong"
+        },
+        {
+          "herb_zh": "白芍",
+          "herb_en": null,
+          "pinyin": "Bai Shao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "15g",
+          "herb_id": "herb.bai_shao"
+        },
+        {
+          "herb_zh": "茵陳蒿",
+          "herb_en": null,
+          "pinyin": "Yin Chen Hao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.yin_chen_hao"
+        },
+        {
+          "herb_zh": "川楝子",
+          "herb_en": null,
+          "pinyin": "Chuan Lian Zi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.chuan_lian_zi"
+        },
+        {
+          "herb_zh": "麥芽",
+          "herb_en": null,
+          "pinyin": "Mai Ya",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.mai_ya"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "4.5g",
+          "herb_id": "herb.gan_cao"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -27454,7 +28537,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -27495,8 +28579,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.xiao_huo_luo_dan",
@@ -27524,23 +28612,80 @@
       "pattern_indications_en": [
         "Pattern Indications of Minor Invigorate the Collaterals Special Pill"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "制草烏",
+          "herb_en": null,
+          "pinyin": "Zhi Cao Wu / Cao Wu",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "180g",
+          "herb_id": "herb.cao_wu",
+          "preparation_zh": "炙"
+        },
+        {
+          "herb_zh": "制川烏",
+          "herb_en": null,
+          "pinyin": "Zhi Chuan Wu / Chuan Wu",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "180g",
+          "herb_id": "herb.chuan_wu",
+          "preparation_zh": "炙"
+        },
+        {
+          "herb_zh": "天南星",
+          "herb_en": null,
+          "pinyin": "Tian Nan Xing",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "180g",
+          "herb_id": "herb.tian_nan_xing"
+        },
+        {
+          "herb_zh": "沒藥",
+          "herb_en": null,
+          "pinyin": "Mo Yao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "66g",
+          "herb_id": "herb.mo_yao"
+        },
+        {
+          "herb_zh": "乳香",
+          "herb_en": null,
+          "pinyin": "Ru Xiang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "66g",
+          "herb_id": "herb.ru_xiang"
+        },
+        {
+          "herb_zh": "地龍",
+          "herb_en": null,
+          "pinyin": "Di Long",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "180g",
+          "herb_id": "herb.di_long"
+        }
+      ],
       "clinical_use_note": "【小活絡丹】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Minor Invigorate the Collaterals Special Pill",
@@ -27557,6 +28702,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -27567,7 +28715,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.bao_he_wan",
@@ -28214,23 +29363,86 @@
       "pattern_indications_en": [
         "Pattern Indications of Mulberry Leaf and Apricot Kernel Decoction"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "桑葉",
+          "herb_en": null,
+          "pinyin": "Sang Ye",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "3g",
+          "herb_id": "herb.sang_ye"
+        },
+        {
+          "herb_zh": "杏仁",
+          "herb_en": null,
+          "pinyin": "Xing Ren",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "4.5g",
+          "herb_id": "herb.xing_ren"
+        },
+        {
+          "herb_zh": "梔子",
+          "herb_en": null,
+          "pinyin": "Zhi Zi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g",
+          "herb_id": "herb.zhi_zi"
+        },
+        {
+          "herb_zh": "淡豆豉",
+          "herb_en": null,
+          "pinyin": "Dan Dou Chi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g",
+          "herb_id": "herb.dan_dou_chi"
+        },
+        {
+          "herb_zh": "浙貝母",
+          "herb_en": null,
+          "pinyin": "Zhe Bei Mu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g",
+          "herb_id": "herb.zhe_bei_mu"
+        },
+        {
+          "herb_zh": "沙參",
+          "herb_en": null,
+          "pinyin": "Sha Shen",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "6g",
+          "herb_id": "herb.sha_shen"
+        },
+        {
+          "herb_zh": "梨皮",
+          "herb_en": null,
+          "pinyin": "Li Pi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3g"
+        }
+      ],
       "clinical_use_note": "【桑杏湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Mulberry Leaf and Apricot Kernel Decoction",
@@ -28250,6 +29462,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/327",
@@ -28262,7 +29477,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.sha_shen_mai_men_dong_tang",
@@ -28371,23 +29587,69 @@
       "pattern_indications_en": [
         "Pattern Indications of Stop Coughing Powder"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "紫菀",
+          "herb_en": null,
+          "pinyin": "Zi Wan",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "1g",
+          "herb_id": "herb.zi_wan"
+        },
+        {
+          "herb_zh": "桔梗",
+          "herb_en": null,
+          "pinyin": "Jie Geng",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "1g",
+          "herb_id": "herb.jie_geng"
+        },
+        {
+          "herb_zh": "陳皮",
+          "herb_en": null,
+          "pinyin": "Chen Pi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "500g",
+          "herb_id": "herb.chen_pi"
+        },
+        {
+          "herb_zh": "荊芥",
+          "herb_en": null,
+          "pinyin": "Jing Jie",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "1g",
+          "herb_id": "herb.jing_jie"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "375g",
+          "herb_id": "herb.gan_cao"
+        }
+      ],
       "clinical_use_note": "【止嗽散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Stop Coughing Powder",
@@ -28407,6 +29669,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/60",
@@ -28419,7 +29684,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.an_gong_niu_huang_wan",
@@ -28448,7 +29714,109 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "牛黃",
+          "herb_en": null,
+          "pinyin": "Niu Huang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.niu_huang"
+        },
+        {
+          "herb_zh": "水牛角",
+          "herb_en": null,
+          "pinyin": "Shui Niu Jiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "150-300g",
+          "herb_id": "herb.shui_niu_jiao"
+        },
+        {
+          "herb_zh": "麝香",
+          "herb_en": null,
+          "pinyin": "She Xiang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "7.5g",
+          "herb_id": "herb.she_xiang"
+        },
+        {
+          "herb_zh": "黃連",
+          "herb_en": null,
+          "pinyin": "Huang Lian",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.huang_lian"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "梔子",
+          "herb_en": null,
+          "pinyin": "Zhi Zi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.zhi_zi"
+        },
+        {
+          "herb_zh": "雄黃",
+          "herb_en": null,
+          "pinyin": "Xiong Huang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "us_clinical_status": "not_used_in_us",
+          "us_clinical_note_zh": "含硫化砷，具砷毒性，美國臨床不用。"
+        },
+        {
+          "herb_zh": "冰片",
+          "herb_en": null,
+          "pinyin": "Bing Pian",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "7.5g",
+          "herb_id": "herb.bing_pian"
+        },
+        {
+          "herb_zh": "鬱金",
+          "herb_en": null,
+          "pinyin": "Yu Jin",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.yu_jin"
+        },
+        {
+          "herb_zh": "硃砂",
+          "herb_en": null,
+          "pinyin": "Zhu Sha",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30g",
+          "us_clinical_status": "not_used_in_us",
+          "us_clinical_note_zh": "硫化汞，具汞毒性，美國臨床不用。"
+        },
+        {
+          "herb_zh": "珍珠",
+          "herb_en": null,
+          "pinyin": "Zhen Zhu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "15g",
+          "herb_id": "herb.zhen_zhu"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -28459,7 +29827,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -28512,8 +29881,12 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.zi_xue_dan",
@@ -28541,23 +29914,178 @@
       "pattern_indications_en": [
         "Pattern Indications of Purple Snow Special Pill"
       ],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "石膏",
+          "herb_en": null,
+          "pinyin": "Shi Gao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "1500g",
+          "herb_id": "herb.shi_gao"
+        },
+        {
+          "herb_zh": "寒水石",
+          "herb_en": null,
+          "pinyin": "Han shui shi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "1500g"
+        },
+        {
+          "herb_zh": "滑石",
+          "herb_en": null,
+          "pinyin": "Hua Shi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "1500g",
+          "herb_id": "herb.hua_shi"
+        },
+        {
+          "herb_zh": "水牛角",
+          "herb_en": null,
+          "pinyin": "Shui Niu Jiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "150g",
+          "herb_id": "herb.shui_niu_jiao"
+        },
+        {
+          "herb_zh": "羚羊角",
+          "herb_en": null,
+          "pinyin": "Ling Yang Jiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "150g",
+          "herb_id": "herb.ling_yang_jiao"
+        },
+        {
+          "herb_zh": "麝香",
+          "herb_en": null,
+          "pinyin": "She Xiang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "37.5g",
+          "herb_id": "herb.she_xiang"
+        },
+        {
+          "herb_zh": "玄參",
+          "herb_en": null,
+          "pinyin": "Xuan Shen",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "500g",
+          "herb_id": "herb.xuan_shen"
+        },
+        {
+          "herb_zh": "升麻",
+          "herb_en": null,
+          "pinyin": "Sheng Ma",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "500g",
+          "herb_id": "herb.sheng_ma"
+        },
+        {
+          "herb_zh": "磁石",
+          "herb_en": null,
+          "pinyin": "Ci Shi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "1500g",
+          "herb_id": "herb.ci_shi"
+        },
+        {
+          "herb_zh": "硃砂",
+          "herb_en": null,
+          "pinyin": "Zhu sha",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "90g",
+          "us_clinical_status": "not_used_in_us",
+          "us_clinical_note_zh": "硫化汞，具汞毒性，美國臨床不用。"
+        },
+        {
+          "herb_zh": "芒硝",
+          "herb_en": null,
+          "pinyin": "Mang Xiao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "5000g",
+          "herb_id": "herb.mang_xiao"
+        },
+        {
+          "herb_zh": "硝石",
+          "herb_en": null,
+          "pinyin": "Xiao shi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "96g"
+        },
+        {
+          "herb_zh": "青木香",
+          "herb_en": null,
+          "pinyin": "Qing mu xiang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "150g",
+          "us_clinical_status": "not_used_in_us",
+          "us_clinical_note_zh": "含馬兜鈴酸，具腎毒性，美國禁用。"
+        },
+        {
+          "herb_zh": "沉香",
+          "herb_en": null,
+          "pinyin": "Chen Xiang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "150g",
+          "herb_id": "herb.chen_xiang"
+        },
+        {
+          "herb_zh": "丁香",
+          "herb_en": null,
+          "pinyin": "Ding Xiang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "30g",
+          "herb_id": "herb.ding_xiang"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "240g",
+          "herb_id": "herb.gan_cao",
+          "preparation_zh": "炙"
+        },
+        {
+          "herb_zh": "黃金",
+          "herb_en": null,
+          "pinyin": "Huang jin",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "3000g",
+          "note_zh": "安宮牛黃丸原方以金箔為衣，現代成藥多已省略。"
+        }
+      ],
       "clinical_use_note": "【紫雪丹】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
       "source_type": "sourced_cloudtcm_record",
-      "review_status": "sourced_cloudtcm_record",
+      "review_status": "draft",
       "public_safe": true,
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "composition_cleared_note": "原本的組成是方名去掉劑型後綴，並非真實藥材（scripts/fix-formula-name-as-ingredient.js）",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -28570,6 +30098,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -28580,7 +30111,8 @@
         "Constitutional Regulation"
       ],
       "pattern_tags_zh": [],
-      "pattern_tags_en": []
+      "pattern_tags_en": [],
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.zhi_bao_dan",
@@ -29845,7 +31377,62 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "川貝母",
+          "herb_en": null,
+          "pinyin": "Chuan Bei Mu",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "5g",
+          "herb_id": "herb.chuan_bei_mu"
+        },
+        {
+          "herb_zh": "瓜蔞",
+          "herb_en": null,
+          "pinyin": "Gua Lou",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g",
+          "herb_id": "herb.gua_lou"
+        },
+        {
+          "herb_zh": "天花粉",
+          "herb_en": null,
+          "pinyin": "Tian Hua Fen",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "2.5g",
+          "herb_id": "herb.tian_hua_fen"
+        },
+        {
+          "herb_zh": "茯苓",
+          "herb_en": null,
+          "pinyin": "Fu Ling",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "2.5g",
+          "herb_id": "herb.fu_ling"
+        },
+        {
+          "herb_zh": "橘紅",
+          "herb_en": null,
+          "pinyin": "Ju Hong",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "2.5g",
+          "herb_id": "herb.ju_hong"
+        },
+        {
+          "herb_zh": "桔梗",
+          "herb_en": null,
+          "pinyin": "Jie Geng",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "2.5g",
+          "herb_id": "herb.jie_geng"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -29856,7 +31443,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -29897,8 +31485,12 @@
         ],
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.da_ding_feng_zhu",
@@ -31031,7 +32623,100 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "白朮",
+          "herb_en": null,
+          "pinyin": "Bai Zhu",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.bai_zhu",
+          "preparation_zh": "炒"
+        },
+        {
+          "herb_zh": "黃耆",
+          "herb_en": null,
+          "pinyin": "Huang Qi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "18g",
+          "herb_id": "herb.huang_qi"
+        },
+        {
+          "herb_zh": "山茱萸",
+          "herb_en": null,
+          "pinyin": "Shan Zhu Yu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "24g",
+          "herb_id": "herb.shan_zhu_yu"
+        },
+        {
+          "herb_zh": "白芍",
+          "herb_en": null,
+          "pinyin": "Bai Shao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "12g",
+          "herb_id": "herb.bai_shao"
+        },
+        {
+          "herb_zh": "龍骨",
+          "herb_en": null,
+          "pinyin": "Long Gu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "24g",
+          "herb_id": "herb.long_gu",
+          "preparation_zh": "煅"
+        },
+        {
+          "herb_zh": "牡蠣",
+          "herb_en": null,
+          "pinyin": "Mu Li",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "24g",
+          "herb_id": "herb.mu_li",
+          "preparation_zh": "煅"
+        },
+        {
+          "herb_zh": "海螵蛸",
+          "herb_en": null,
+          "pinyin": "Hai Piao Xiao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "12g",
+          "herb_id": "herb.hai_piao_xiao"
+        },
+        {
+          "herb_zh": "棕櫚炭",
+          "herb_en": null,
+          "pinyin": "Zong Lu Tan",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "6g"
+        },
+        {
+          "herb_zh": "五倍子",
+          "herb_en": null,
+          "pinyin": "Wu Bei Zi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "1.5g",
+          "herb_id": "herb.wu_bei_zi"
+        },
+        {
+          "herb_zh": "茜草根",
+          "herb_en": null,
+          "pinyin": "Qian Cao Gen",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.qian_cao_gen"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -31042,7 +32727,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -31079,8 +32765,12 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.huai_hua_san",
@@ -31335,7 +33025,62 @@
       "pattern_focus_en": "",
       "actions_en": [],
       "actions_zh": [],
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "灶心土",
+          "herb_en": null,
+          "pinyin": "Zao Xin Tu",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g"
+        },
+        {
+          "herb_zh": "白朮",
+          "herb_en": null,
+          "pinyin": "Bai Zhu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.bai_zhu"
+        },
+        {
+          "herb_zh": "附子",
+          "herb_en": null,
+          "pinyin": "Fu Zi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.fu_zi",
+          "preparation_zh": "炙"
+        },
+        {
+          "herb_zh": "生地黃",
+          "herb_en": null,
+          "pinyin": "Sheng Di Huang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.sheng_di_huang"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "9g",
+          "herb_id": "herb.gan_cao"
+        }
+      ],
       "pattern_indications_en": [],
       "pattern_indications_zh": [],
       "modifications_en": [],
@@ -31346,7 +33091,8 @@
       "source_urls": [
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -31383,8 +33129,12 @@
       "field_sources": {
         "on_board_list": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.lian_po_yin",
@@ -36049,7 +37799,45 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "熟地黃",
+          "herb_en": null,
+          "pinyin": "Shu Di Huang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "180g",
+          "herb_id": "herb.shu_di_huang"
+        },
+        {
+          "herb_zh": "酥炙龜板",
+          "herb_en": null,
+          "pinyin": "Su Zhi Gui Ban",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "180g"
+        },
+        {
+          "herb_zh": "黃柏",
+          "herb_en": null,
+          "pinyin": "Huang Bai",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "120g",
+          "herb_id": "herb.huang_bai",
+          "preparation_zh": "炒"
+        },
+        {
+          "herb_zh": "知母",
+          "herb_en": null,
+          "pinyin": "Zhi Mu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "120g",
+          "herb_id": "herb.zhi_mu",
+          "preparation_zh": "酒炒"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36057,10 +37845,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36076,8 +37866,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Formulations Summary Chart.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.da_jian_zhong_tang",
@@ -36163,7 +37957,35 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "丹參",
+          "herb_en": null,
+          "pinyin": "Dan Shen",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.dan_shen"
+        },
+        {
+          "herb_zh": "檀香",
+          "herb_en": null,
+          "pinyin": "Tan Xiang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "5g",
+          "herb_id": "herb.tan_xiang"
+        },
+        {
+          "herb_zh": "砂仁",
+          "herb_en": null,
+          "pinyin": "Sha Ren",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "5g",
+          "herb_id": "herb.sha_ren"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36171,10 +37993,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36190,8 +38014,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.dang_gui_shao_yao_san",
@@ -36394,7 +38222,26 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "女貞子",
+          "herb_en": null,
+          "pinyin": "Nu Zhen Zi",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": null,
+          "herb_id": "herb.nu_zhen_zi"
+        },
+        {
+          "herb_zh": "旱蓮草",
+          "herb_en": null,
+          "pinyin": "Han Lian Cao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": null,
+          "herb_id": "herb.han_lian_cao"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36402,10 +38249,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36424,10 +38273,14 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/345",
-      "cloudtcm_id": 345
+      "cloudtcm_id": 345,
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.fang_feng_tong_sheng_san",
@@ -36439,7 +38292,170 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "防風",
+          "herb_en": null,
+          "pinyin": "Fang Feng",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.fang_feng"
+        },
+        {
+          "herb_zh": "麻黃",
+          "herb_en": null,
+          "pinyin": "Ma Huang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.ma_huang"
+        },
+        {
+          "herb_zh": "大黃",
+          "herb_en": null,
+          "pinyin": "Da Huang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.da_huang"
+        },
+        {
+          "herb_zh": "芒硝",
+          "herb_en": null,
+          "pinyin": "Mang Xiao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.mang_xiao"
+        },
+        {
+          "herb_zh": "荊芥",
+          "herb_en": null,
+          "pinyin": "Jing Jie",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "15g",
+          "herb_id": "herb.jing_jie"
+        },
+        {
+          "herb_zh": "薄荷",
+          "herb_en": null,
+          "pinyin": "Bo He",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "15g",
+          "herb_id": "herb.bo_he"
+        },
+        {
+          "herb_zh": "梔子",
+          "herb_en": null,
+          "pinyin": "Zhi Zi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "15g",
+          "herb_id": "herb.zhi_zi"
+        },
+        {
+          "herb_zh": "滑石",
+          "herb_en": null,
+          "pinyin": "Hua Shi",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "90g",
+          "herb_id": "herb.hua_shi"
+        },
+        {
+          "herb_zh": "石膏",
+          "herb_en": null,
+          "pinyin": "Shi Gao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.shi_gao"
+        },
+        {
+          "herb_zh": "連翹",
+          "herb_en": null,
+          "pinyin": "Lian Qiao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "15g",
+          "herb_id": "herb.lian_qiao"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "桔梗",
+          "herb_en": null,
+          "pinyin": "Jie Geng",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.jie_geng"
+        },
+        {
+          "herb_zh": "川芎",
+          "herb_en": null,
+          "pinyin": "Chuan Xiong",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "15g",
+          "herb_id": "herb.chuan_xiong"
+        },
+        {
+          "herb_zh": "當歸",
+          "herb_en": null,
+          "pinyin": "Dang Gui",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "15g",
+          "herb_id": "herb.dang_gui"
+        },
+        {
+          "herb_zh": "白芍",
+          "herb_en": null,
+          "pinyin": "Bai Shao",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "15g",
+          "herb_id": "herb.bai_shao"
+        },
+        {
+          "herb_zh": "白朮",
+          "herb_en": null,
+          "pinyin": "Bai Zhu",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "15g",
+          "herb_id": "herb.bai_zhu"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "60g",
+          "herb_id": "herb.gan_cao"
+        },
+        {
+          "herb_zh": "生薑",
+          "herb_en": null,
+          "pinyin": "Sheng Jiang",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "3g",
+          "herb_id": "herb.sheng_jiang"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36447,10 +38463,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36466,8 +38484,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.fu_yuan_huo_xue_tang",
@@ -36479,7 +38501,81 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "大黃",
+          "herb_en": null,
+          "pinyin": "Da Huang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.da_huang"
+        },
+        {
+          "herb_zh": "柴胡",
+          "herb_en": null,
+          "pinyin": "Chai Hu",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.chai_hu"
+        },
+        {
+          "herb_zh": "當歸",
+          "herb_en": null,
+          "pinyin": "Dang Gui",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.dang_gui"
+        },
+        {
+          "herb_zh": "桃仁",
+          "herb_en": null,
+          "pinyin": "Tao Ren",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.tao_ren"
+        },
+        {
+          "herb_zh": "紅花",
+          "herb_en": null,
+          "pinyin": "Hong Hua",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "6g",
+          "herb_id": "herb.hong_hua"
+        },
+        {
+          "herb_zh": "穿山甲",
+          "herb_en": null,
+          "pinyin": "Chuan Shan Jia",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "6g",
+          "us_clinical_status": "not_used_in_us",
+          "us_clinical_note_zh": "穿山甲為 CITES 保育類，美國禁用；臨床多以王不留行、皂角刺替代。"
+        },
+        {
+          "herb_zh": "天花粉",
+          "herb_en": null,
+          "pinyin": "Tian Hua Fen",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.tian_hua_fen"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.gan_cao"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36487,10 +38583,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36506,8 +38604,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.ge_gen_huang_qin_huang_lian_tang",
@@ -36519,7 +38621,45 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "《Shang Han Lun》",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "葛根",
+          "herb_en": null,
+          "pinyin": "Ge Gen",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "15g",
+          "herb_id": "herb.ge_gen"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "9g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "黃連",
+          "herb_en": null,
+          "pinyin": "Huang Lian",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.huang_lian"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "6g",
+          "herb_id": "herb.gan_cao",
+          "preparation_zh": "炙"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36527,10 +38667,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36549,8 +38691,12 @@
         ],
         "source_classic": [
           "curriculum/formulas/（課件標註出典）"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.gu_jing_wan",
@@ -36562,7 +38708,61 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "龜板",
+          "herb_en": null,
+          "pinyin": "Gui Ban",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.gui_ban"
+        },
+        {
+          "herb_zh": "白芍",
+          "herb_en": null,
+          "pinyin": "Bai Shao",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "30g",
+          "herb_id": "herb.bai_shao"
+        },
+        {
+          "herb_zh": "黃芩",
+          "herb_en": null,
+          "pinyin": "Huang Qin",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "30g",
+          "herb_id": "herb.huang_qin"
+        },
+        {
+          "herb_zh": "黃柏",
+          "herb_en": null,
+          "pinyin": "Huang Bai",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.huang_bai"
+        },
+        {
+          "herb_zh": "椿根皮",
+          "herb_en": null,
+          "pinyin": "Chun Gen Pi",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "21g"
+        },
+        {
+          "herb_zh": "香附",
+          "herb_en": null,
+          "pinyin": "Xiang Fu",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "7.5g",
+          "herb_id": "herb.xiang_fu"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36570,10 +38770,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36589,8 +38791,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.gui_zhi_shao_yao_zhi_mu_tang",
@@ -36676,7 +38882,26 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "高良薑",
+          "herb_en": null,
+          "pinyin": "Gao Liang Jiang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": null,
+          "herb_id": "herb.gao_liang_jiang"
+        },
+        {
+          "herb_zh": "香附",
+          "herb_en": null,
+          "pinyin": "Xiang Fu",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": null,
+          "herb_id": "herb.xiang_fu"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36684,10 +38909,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36703,8 +38930,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.ling_jiao_gou_teng_yin",
@@ -36753,7 +38984,80 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "小茴香",
+          "herb_en": null,
+          "pinyin": "Xiao Hui Xiang",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "6g",
+          "herb_id": "herb.xiao_hui_xiang"
+        },
+        {
+          "herb_zh": "烏藥",
+          "herb_en": null,
+          "pinyin": "Wu Yao",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "6g",
+          "herb_id": "herb.wu_yao"
+        },
+        {
+          "herb_zh": "沉香",
+          "herb_en": null,
+          "pinyin": "Chen Xiang",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "3g",
+          "herb_id": "herb.chen_xiang"
+        },
+        {
+          "herb_zh": "當歸",
+          "herb_en": null,
+          "pinyin": "Dang Gui",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "6-9g",
+          "herb_id": "herb.dang_gui"
+        },
+        {
+          "herb_zh": "茯苓",
+          "herb_en": null,
+          "pinyin": "Fu Ling",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "6g",
+          "herb_id": "herb.fu_ling"
+        },
+        {
+          "herb_zh": "肉桂",
+          "herb_en": null,
+          "pinyin": "Rou Gui",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3-6g",
+          "herb_id": "herb.rou_gui"
+        },
+        {
+          "herb_zh": "枸杞子",
+          "herb_en": null,
+          "pinyin": "Gou Qi Zi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "9g",
+          "herb_id": "herb.gou_qi_zi"
+        },
+        {
+          "herb_zh": "生薑",
+          "herb_en": null,
+          "pinyin": "Sheng Jiang",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "3-5g",
+          "herb_id": "herb.sheng_jiang"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36761,10 +39065,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36780,8 +39086,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.qiang_huo_sheng_shi_tang",
@@ -36793,7 +39103,72 @@
       "exam_star": 1,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "source_classic": "",
-      "composition": [],
+      "composition": [
+        {
+          "herb_zh": "羌活",
+          "herb_en": null,
+          "pinyin": "Qiang Huo",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "6g",
+          "herb_id": "herb.qiang_huo"
+        },
+        {
+          "herb_zh": "獨活",
+          "herb_en": null,
+          "pinyin": "Du Huo",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "dose_range": "6g",
+          "herb_id": "herb.du_huo"
+        },
+        {
+          "herb_zh": "藁本",
+          "herb_en": null,
+          "pinyin": "Gao Ben",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "4g",
+          "herb_id": "herb.gao_ben"
+        },
+        {
+          "herb_zh": "防風",
+          "herb_en": null,
+          "pinyin": "Fang Feng",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "dose_range": "4g",
+          "herb_id": "herb.fang_feng"
+        },
+        {
+          "herb_zh": "川芎",
+          "herb_en": null,
+          "pinyin": "Chuan Xiong",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "4g",
+          "herb_id": "herb.chuan_xiong"
+        },
+        {
+          "herb_zh": "蔓荊子",
+          "herb_en": null,
+          "pinyin": "Man Jing Zi",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "dose_range": "2g",
+          "herb_id": "herb.man_jing_zi"
+        },
+        {
+          "herb_zh": "甘草",
+          "herb_en": null,
+          "pinyin": "Gan Cao",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "dose_range": "4g",
+          "herb_id": "herb.gan_cao",
+          "preparation_zh": "炙"
+        }
+      ],
       "actions_zh": [],
       "actions_en": [],
       "pattern_indications_zh": [],
@@ -36801,10 +39176,12 @@
       "contraindications_zh": [],
       "contraindications_en": [],
       "formula_family": [],
-      "review_status": "skeleton",
+      "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
-      "source_urls": [],
+      "source_urls": [
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+      ],
       "field_sources": {
         "name_en": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C）"
@@ -36820,8 +39197,12 @@
         ],
         "name_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
         ]
-      }
+      },
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
     },
     {
       "id": "formula.shao_yao_gan_cao_tang",

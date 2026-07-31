@@ -119,6 +119,14 @@ function loadHerbIndex() {
     const aliased = ALIAS[plain];
     if (aliased) return { id: aliased };
 
+    // The export annotates some names in brackets — "Zi Su Zi [Seeds]",
+    // "Niu Xi [Huai]". Drop the bracketed aside and retry before giving up.
+    const deBracketed = String(raw || '').replace(/[[(][^\])]*[\])]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+    if (deBracketed && deBracketed !== plain) {
+      const viaBracket = idx.get(norm(deBracketed)) || ALIAS[deBracketed];
+      if (viaBracket) return { id: viaBracket };
+    }
+
     for (const [re, label] of PREP) {
       if (!re.test(plain)) continue;
       const base = plain.replace(re, '').trim();
@@ -184,15 +192,35 @@ function parse() {
     if (!head || i - head.line > 60) return;
 
     const composition = [];
-    for (let j = i + 1; j < Math.min(i + 30, lines.length); j += 1) {
+    let rank = null;      // the rank word is written once and then inherited
+    let rankEn = null;
+    for (let j = i + 1; j < Math.min(i + 60, lines.length); j += 1) {
       const line = lines[j].trim();
       if (!line) continue;
       if (STOP.test(line) || TABLE_HEAD.test(line) || HEADER.test(line)) break;
+
+      let body = null;
       const m = line.match(ROW);
-      if (!m) continue;
-      const { herb, amount, note } = splitRow(m[2].trim());
+      if (m) {
+        rankEn = m[1];
+        rank = RANKS[m[1].toLowerCase()] || m[1];
+        body = m[2].trim();
+      } else if (rank) {
+        // A continuation ingredient under the same rank: the curriculum writes
+        // the rank once and lists the rest of that group beneath it without
+        // repeating it. Such a row is a Title-Case name followed by a dose.
+        // Requiring the dose is what keeps wrapped prose lines out.
+        const cont = line.match(/^([A-Z][a-z']+(?:\s+[A-Za-z][a-z']+){0,3})\s+(\d[\d.\s\-–~]*)(?:\s|$)/);
+        // Prose sometimes opens Title-Case and happens to carry a number
+        // ("Comparison of ... 3 ..."). A herb name never starts with these.
+        const PROSE = /^(For|Comparison|Complementary|Note|Both|All|Plus|Minus|With|Take|Use|This|These|When|If|In|The|A|An|Compare|Differences?|Similar)\b/i;
+        if (cont && !PROSE.test(line)) body = line;
+      }
+      if (!body) continue;
+
+      const { herb, amount, note } = splitRow(body);
       if (!herb) continue;
-      composition.push({ role: RANKS[m[1].toLowerCase()] || m[1], role_en: m[1], herb, amount, note });
+      composition.push({ role: rank, role_en: rankEn, herb, amount, note });
     }
     if (composition.length) {
       const src = (head.raw.match(/Source:\s*([^[]+)/) || [])[1];
