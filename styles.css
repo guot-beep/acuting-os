@@ -3957,7 +3957,6 @@ footer {
   }
 
   .content-grid,
-  .directory-layout,
   .case-grid,
   .point-study-layout,
   .soap-grid,
@@ -3971,16 +3970,6 @@ footer {
 
   .map-panel {
     position: static;
-  }
-
-  .directory-sidebar {
-    position: static;
-  }
-
-  /* Stacked, the sidebar's filter boxes would push 穴位資料庫 off the first
-     screen. The search box is what the page is for — it goes first. */
-  .directory-main {
-    order: -1;
   }
 
   .directory-filter-box {
