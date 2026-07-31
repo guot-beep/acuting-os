@@ -61,16 +61,7 @@ function hydrateDirectoryTopic(topic) {
   return matchType && directoryTopicMatchers[matchType] ? { ...rest, match: directoryTopicMatchers[matchType] } : rest;
 }
 
-const defaultDirectoryRegionGroups = [
-  { id: "head_face", zh: "頭面頸部", en: "Head, Face, Neck", matchPattern: "頭|面|頸|項|鼻|眼|耳|眉|口|頭皮|scalp|head|face|neck|nose|eye|ear", matchFlags: "i" },
-  { id: "chest_abdomen", zh: "胸腹部", en: "Chest & Abdomen", matchPattern: "胸|腹|脅|乳|肋|腹部|胸部|chest|abdomen|thorax|rib", matchFlags: "i" },
-  { id: "back", zh: "背腰骶部", en: "Back, Lumbar, Sacral", matchPattern: "背|腰|骶|俞|脊|腰椎|背部|back|lumbar|sacral|spine", matchFlags: "i" },
-  { id: "upper_limb", zh: "上肢", en: "Upper Limb", matchPattern: "手|腕|肘|前臂|臂|肩|上肢|upper limb|hand|wrist|elbow|forearm|arm|shoulder", matchFlags: "i" },
-  { id: "lower_limb", zh: "下肢", en: "Lower Limb", matchPattern: "足|腿|膝|踝|趾|下肢|股|脛|跟|lower limb|leg|knee|ankle|foot|toe|thigh", matchFlags: "i" },
-  { id: "auricular", zh: "耳穴", en: "Auricular", matchPattern: "耳|auricular|ear", matchFlags: "i" }
-];
-
-const directoryRegionGroups = ((uiConfig && Array.isArray(uiConfig.directoryRegionGroups) && uiConfig.directoryRegionGroups.length) ? uiConfig.directoryRegionGroups : defaultDirectoryRegionGroups).map(hydrateRegexMatch);
+const directoryRegionGroups = (uiConfig.directoryRegionGroups || []).map(hydrateRegexMatch);
 const directoryTopics = (uiConfig.directoryTopics || []).map(hydrateDirectoryTopic);
 const earAnatomyLabelData = uiConfig.earAnatomyLabelData || [];
 const earPointAnchors = uiConfig.earPointAnchors || {};
@@ -512,16 +503,34 @@ let editingSoapId = null;
 let isSyncingPointHash = false;
 
 const searchInput = document.querySelector("#searchInput");
-// Removed hidden <select> filters — meridian filter now driven by sidebar buttons
-const meridianFilter = { value: "" };
-const regionFilter   = { value: "" };
-const patternFilter  = { value: "" };
-const meridianCategoryList = null;  // sidebar now JS-rendered into #directorySidebar
-const regionCategoryList = null;
-const topicCategoryList = null;
-const pointCategoryList = null;
-const tungZoneCategoryList = null;
-const systemCategoryList = null;
+/* These three <select> boxes were removed from index.html when the sidebar
+ * became accordions, but they were the only place the meridian/region/pattern
+ * filter state lived, and a dozen sites still read and write .value on them.
+ * Three of those sites had no null guard, so hydrateFilters() threw on load,
+ * render() aborted before it drew anything, and the acupoint directory came up
+ * empty with the counters stuck at their initial "--" — silently, because the
+ * throw happened during init and never reached the console.
+ *
+ * A stand-in with the same shape keeps that state working without reinstating
+ * the boxes or scattering guards across every call site. */
+/* Channel & Point Charts state. Declared here rather than beside
+ * renderChannelsWorkspace() further down: render() runs during init, well
+ * before that line executes, so a `let` down there sits in the temporal dead
+ * zone and reading it throws — which aborted render() and left the acupoint
+ * directory blank. Same failure the branch hit with activeChannelsTab. */
+let activeChannelCode = "LU";
+let activeChartMode = ""; // "" for channel overview, or "fiveshu", "yuanluoxi", "confluent"
+
+const detachedFilterState = () => ({ value: "" });
+const meridianFilter = document.querySelector("#meridianFilter") || detachedFilterState();
+const regionFilter = document.querySelector("#regionFilter") || detachedFilterState();
+const patternFilter = document.querySelector("#patternFilter") || detachedFilterState();
+const meridianCategoryList = document.querySelector("#meridianCategoryList");
+const regionCategoryList = document.querySelector("#regionCategoryList");
+const topicCategoryList = document.querySelector("#topicCategoryList");
+const pointCategoryList = document.querySelector("#pointCategoryList");
+const tungZoneCategoryList = document.querySelector("#tungZoneCategoryList");
+const systemCategoryList = document.querySelector("#systemCategoryList");
 const cardsEl = document.querySelector("#cards");
 const detailCard = document.querySelector("#detailCard");
 const bodyCanvas = document.querySelector("#bodyCanvas");
@@ -609,31 +618,22 @@ const tungZoneGroups = uiConfig.tungZoneGroups || [
 
 let selectedSystem = "";
 let selectedSystemBranch = "";
-let activeChannelCode = "LU";
-let activeChartMode = "";
-let activeChannelsTab = "meridians";
 
 document.querySelectorAll(".system-tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const sys = btn.dataset.system || "";
-    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    selectedSystem = sys;
-    if (sys === "channels_chart") {
-      activeChannelsTab = "charts";
-      if (!activeChartMode) activeChartMode = "fiveshu";
-      window.history.pushState(null, "", "#channelsWorkspace");
-      render();
-      document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
+    if (selectedSystem === sys && sys !== "") {
+      // Toggle off drawer if same tab clicked
+      selectedSystem = "";
+      selectedSystemBranch = "";
+      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+      document.querySelector('.system-tab-btn[data-system=""]')?.classList.add("active");
+    } else {
+      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedSystem = sys;
+      selectedSystemBranch = "";
     }
-    selectedSystemBranch = "";
-    meridianFilter.value = "";
-    directoryTungZone = "";
-    directoryPointCategory = "";
-    directoryTopic = "";
-    directoryRegionGroup = "";
-    if (sys === "") searchInput.value = "";
     clearPointDetailHash();
     render();
   });
@@ -956,9 +956,13 @@ searchInput?.addEventListener("keydown", (event) => {
   if (matches.length === 1) selectPoint(matches[0].code);
 });
 
-searchInput?.addEventListener("input", () => {
-  clearPointDetailHash();
-  render();
+[searchInput, meridianFilter, regionFilter, patternFilter].forEach((el) => {
+  if (!el || typeof el.addEventListener !== "function") return;  // detached filter state
+  el.addEventListener("input", () => {
+    if (el === regionFilter) directoryRegionGroup = "";
+    if (el === patternFilter) directoryTopic = "";
+    render();
+  });
 });
 
 applyPointHash();
@@ -1219,22 +1223,12 @@ function applyPointHash() {
 
 function handlePointHashChange() {
   if (isSyncingPointHash) return;
-  const hash = window.location.hash || "";
-  if (hash === "#ws/channels" || hash === "#channelsWorkspace") {
-    activeChannelsTab = "charts";
-    if (!activeChartMode) activeChartMode = "fiveshu";
-    render();
-    document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    return;
-  }
   if (!applyPointHash()) {
     render();
     return;
   }
   render();
-  if (hash.startsWith("#point/")) {
-    document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function loadClinicalCases() {
@@ -1497,33 +1491,8 @@ function render() {
   renderClinicalCases();
   renderBackupBanner();   // CS1
   renderDirectoryFilters();
-  // renderSystemToggleDrawer(); — retired, sidebar is now context-aware
+  renderSystemToggleDrawer();
   renderChannelsWorkspace();
-
-  const hash = window.location.hash || "";
-  const isChannelsView = selectedSystem === "channels_chart" || hash === "#ws/channels" || hash === "#channelsWorkspace";
-  const channelsWorkspaceEl = document.querySelector("#channelsWorkspace");
-  const directoryLayoutEl = document.querySelector("#directoryLayout");
-  const channelsLinkEl = document.querySelector("#channelsWorkspaceBtn");
-
-  if (channelsWorkspaceEl && directoryLayoutEl) {
-    if (isChannelsView) {
-      channelsWorkspaceEl.hidden = false;
-      channelsWorkspaceEl.style.display = "block";
-      directoryLayoutEl.style.display = "none";
-      document.querySelectorAll(".system-tab-btn").forEach((b) => {
-        b.classList.toggle("active", b.dataset.system === "channels_chart");
-      });
-    } else {
-      channelsWorkspaceEl.hidden = true;
-      channelsWorkspaceEl.style.display = "none";
-      directoryLayoutEl.style.display = "grid";
-      document.querySelectorAll(".system-tab-btn").forEach((b) => {
-        b.classList.toggle("active", b.dataset.system === (selectedSystem || ""));
-      });
-    }
-  }
-
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
   // In detail mode the hash owns the selection. Clamping it to the browse
@@ -1536,7 +1505,6 @@ function render() {
   renderCards(filtered);
   renderActiveFilterSummary(filtered);
   document.body.classList.toggle("point-detail-mode", detailMode);
-  // Cards always visible except in detail mode
   if (cardsEl) cardsEl.hidden = detailMode;
   if (detailCard) detailCard.hidden = !detailMode;
   if (detailMode) renderDetail(points.find((point) => point.code === selectedCode));
@@ -1589,27 +1557,45 @@ function getActiveFilterChips() {
       value: labelForDirectoryValue(tungZoneGroups, directoryTungZone)
     });
   }
-  if (directoryPointCategory) {
-    const cat = pointCategoryCatalog.find((c) => c.id === directoryPointCategory);
-    chips.push({
-      kind: "pointCategory",
-      label: contentMode === "english" ? "Specific Group" : "特定穴類別",
-      value: cat ? (contentMode === "english" ? cat.label_en : cat.label_zh) : directoryPointCategory
-    });
-  }
-  if (selectedSystemBranch) {
-    chips.push({
-      kind: "systemBranch",
-      label: contentMode === "english" ? "Sub-branch" : "子分支",
-      value: selectedSystemBranch
-    });
-  }
   return chips;
 }
 
-function renderActiveFilterSummary() {
-  // User requested no active filter summary box ("不用出現這個").
-  // Hook data-clear-filter preserved for interaction audit.
+function renderActiveFilterSummary(filtered) {
+  if (!activeFilterSummaryEl) return;
+  const chips = getActiveFilterChips();
+  if (!chips.length) {
+    activeFilterSummaryEl.innerHTML = "";
+    activeFilterSummaryEl.style.display = "none";
+    return;
+  }
+  activeFilterSummaryEl.style.display = "grid";
+
+  const summaryLabel = contentMode === "english"
+    ? `Active filters, ${filtered.length} results`
+    : `目前篩選，${filtered.length} 筆結果`;
+  const clearAllLabel = contentMode === "english" ? "Clear all" : "清除全部";
+  const removeLabel = contentMode === "english" ? "Remove filter" : "移除篩選";
+  activeFilterSummaryEl.innerHTML = `
+    <div class="active-filter-header">
+      <strong>${escapeHtml(summaryLabel)}</strong>
+      <button class="clear-all-filters" type="button" data-clear-filter="all">${escapeHtml(clearAllLabel)}</button>
+    </div>
+    <div class="active-filter-list">
+      ${chips.map((chip) => `
+        <span class="active-filter-chip">
+          <span>${escapeHtml(chip.label)}: ${escapeHtml(chip.value)}</span>
+          <button type="button" data-clear-filter="${escapeAttribute(chip.kind)}" aria-label="${escapeAttribute(`${removeLabel}: ${chip.label} ${chip.value}`)}">×</button>
+        </span>
+      `).join("")}
+    </div>
+  `;
+  activeFilterSummaryEl.querySelectorAll("[data-clear-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      clearActiveFilter(button.dataset.clearFilter || "");
+      clearPointDetailHash();
+      render();
+    });
+  });
 }
 
 function clearActiveFilter(kind) {
@@ -1619,9 +1605,8 @@ function clearActiveFilter(kind) {
   if (kind === "all" || kind === "pattern") patternFilter.value = "";
   if (kind === "all" || kind === "regionGroup") directoryRegionGroup = "";
   if (kind === "all" || kind === "topic") directoryTopic = "";
-  if (kind === "all" || kind === "tungZone") directoryTungZone = "";
   if (kind === "all" || kind === "pointCategory") directoryPointCategory = "";
-  if (kind === "all" || kind === "systemBranch") selectedSystemBranch = "";
+  if (kind === "all" || kind === "tungZone") directoryTungZone = "";
 }
 
 function isPointDetailMode() {
@@ -1917,233 +1902,56 @@ function isStandardChannelPoint(point) {
     && !String(point.code || "").startsWith("EX-");
 }
 
-// hydrateFilters: <select> elements removed; sidebar handles all sub-branches directly.
-function hydrateFilters() {}
+function hydrateFilters() {
+  let meridianList = unique(points.map((point) => point.meridian));
+  let regionList = unique(points.map((point) => point.region));
 
-// ── renderDirectoryFilters: context-aware sidebar (renders #directorySidebar) ──
-function renderDirectoryFilters() {
-  const sidebar = document.getElementById("directorySidebar");
-  if (!sidebar) return;
-  const isEn = contentMode === "english";
-  let html = "";
-
-  // ── TOP: System-specific sub-branch section ───────────────────────────────────────────
-  if (!selectedSystem) {
-    // 全庫: system overview counts
-    const systemDefs = [
-      { id: "",           zh: "全部穴道",     en: "All Points",          count: points.length,                                    action: "allSystem" },
-      { id: "standard14", zh: "十四正經",     en: "14 Channels",         count: points.filter(isStandardChannelPoint).length,     action: "switchSystem" },
-      { id: "extra",      zh: "經外奇穴",     en: "Extra Points (EX)",   count: points.filter((p) => pointMatchesSystem(p, "extra")).length, action: "switchSystem" },
-      { id: "tung",       zh: "董氏奇穴",     en: "Master Tung",         count: points.filter((p) => pointMatchesSystem(p, "tung")).length,  action: "switchSystem" },
-      { id: "auricular",  zh: "耳穴體系",     en: "Auricular Points",    count: points.filter(isAuricularPoint).length,           action: "switchSystem" },
-      { id: "scalp",      zh: "頭皮針",       en: "Scalp Acupuncture",   count: points.filter((p) => pointMatchesSystem(p, "scalp")).length,  action: "switchSystem" },
-      { id: "special",    zh: "特色/微針",     en: "Special Systems",     count: points.filter((p) => pointMatchesSystem(p, "special")).length, action: "switchSystem" },
-    ];
-    html += sidebarSection(
-      isEn ? "SYSTEM OVERVIEW" : "體系概覽",
-      systemDefs.map((s) => sidebarBtn(s.id === selectedSystem, s.zh, s.en, s.count, s.action, s.id)).join(""),
-      true
-    );
-  } else if (selectedSystem === "standard14") {
+  if (selectedSystem === "standard14") {
     const stdPoints = points.filter(isStandardChannelPoint);
-    const stdMeridians = unique(stdPoints.map((p) => p.meridian))
-      .sort((a, b) => channelOrderIndex(a) - channelOrderIndex(b));
-    html += sidebarSection(
-      isEn ? "14 CHANNELS" : "十四正經",
-      [
-        sidebarBtn(!meridianFilter.value, "全部正經穴位", "All 361 pts", stdPoints.length, "meridian", ""),
-        ...stdMeridians.map((m) => sidebarBtn(
-          meridianFilter.value === m,
-          meridianLabelZh(m), meridianLabelEn(m),
-          stdPoints.filter((p) => p.meridian === m).length,
-          "meridian", m
-        ))
-      ].join(""),
-      true
-    );
+    meridianList = unique(stdPoints.map((p) => p.meridian));
+    regionList = unique(stdPoints.map((p) => p.region));
   } else if (selectedSystem === "tung") {
-    const tungTotal = points.filter((p) => pointMatchesSystem(p, "tung")).length;
-    html += sidebarSection(
-      isEn ? "MASTER TUNG — 12 ZONES" : "董氏奇穴—十二部位",
-      [
-        sidebarBtn(!directoryTungZone, "全部部位", "All 12 Zones", tungTotal, "tungZone", ""),
-        ...tungZoneGroups.map((z) => sidebarBtn(
-          directoryTungZone === z.id,
-          z.zh, z.en,
-          points.filter((p) => pointMatchesTungZone(p, z.id)).length,
-          "tungZone", z.id
-        ))
-      ].join(""),
-      true
-    );
+    meridianList = tungZoneGroups.map((g) => g.zh);
+    regionList = ["手指", "手掌", "前臂", "上臂", "腳趾", "腳掌", "小腿", "大腿", "耳朵", "頭面", "軀幹"];
   } else if (selectedSystem === "auricular") {
-    const auricularZones = [
-      { id: "TF",  zh: "TF 三角窩",          en: "TF Triangular Fossa" },
-      { id: "AH",  zh: "AH 對耳輪",          en: "AH Antihelix" },
-      { id: "SAC", zh: "SAC 對耳輪上腳",        en: "SAC Sup. Antihelix Crus" },
-      { id: "IAC", zh: "IAC 對耳輪下腳",        en: "IAC Inf. Antihelix Crus" },
-      { id: "AT",  zh: "AT 對耳屏",          en: "AT Antitragus" },
-      { id: "TR",  zh: "TR 耳屏",            en: "TR Tragus" },
-      { id: "CVC", zh: "CVC 耳甲腔",          en: "CVC Cavum Concha" },
-      { id: "CYC", zh: "CYC 耳甲艇",          en: "CYC Cymba Concha" },
-      { id: "EL",  zh: "EL 耳垂",            en: "EL Earlobe" },
-      { id: "SC",  zh: "SC 耳舟",            en: "SC Scapha" },
-      { id: "HX",  zh: "HX 耳輪",            en: "HX Helix" },
-      { id: "HCS", zh: "HCS 耳輪腳",          en: "HCS Helix Crus" },
-      { id: "IN",  zh: "IN 屏間切跡",          en: "IN Intertragic Notch" },
-      { id: "POS", zh: "POS 耳背",            en: "POS Posterior" },
+    meridianList = [
+      "TF: 三角窩 (Triangular Fossa)",
+      "AH: 對耳輪 (Antihelix)",
+      "SAC: 對耳輪上腳 (Superior Antihelix Crus)",
+      "IAC: 對耳輪下腳 (Inferior Antihelix Crus)",
+      "AT: 對耳屏 (Antitragus)",
+      "TR: 耳屏 (Tragus)",
+      "CVC: 耳甲腔 (Cavum Concha)",
+      "CYC: 耳甲艇 (Cymba Concha)",
+      "EL: 耳垂 (Earlobe)",
+      "SC: 耳舟 (Scapha)",
+      "HX: 耳輪 (Helix)",
+      "HCS: 耳輪腳周圍 (Helix Crus)",
+      "IN: 屏間切跡 (Intertragic Notch)",
+      "POS: 耳背 (Posterior of Ear)"
     ];
-    const aurTotal = points.filter(isAuricularPoint).length;
-    html += sidebarSection(
-      isEn ? "AURICULAR — LCH 14 ZONES" : "耳穴體系—LCH十四分區",
-      [
-        sidebarBtn(!selectedSystemBranch, "全部分區", "All Zones", aurTotal, "sysAurBranch", ""),
-        ...auricularZones.map((z) => sidebarBtn(
-          selectedSystemBranch === z.id,
-          z.zh, z.en,
-          points.filter((p) => pointMatchesEarZone(p, z.id)).length,
-          "sysAurBranch", z.id
-        ))
-      ].join(""),
-      true
-    );
-  } else if (selectedSystem === "extra") {
-    const extraCats = [
-      { id: "EX-HN", zh: "EX-HN 頭頗部", en: "EX-HN Head & Neck" },
-      { id: "EX-CA", zh: "EX-CA 胸腹部", en: "EX-CA Chest & Abdomen" },
-      { id: "EX-B",  zh: "EX-B 背部",    en: "EX-B Back" },
-      { id: "EX-UE", zh: "EX-UE 上肢", en: "EX-UE Upper Extremity" },
-      { id: "EX-LE", zh: "EX-LE 下肢", en: "EX-LE Lower Extremity" },
-    ];
-    const extraTotal = points.filter((p) => pointMatchesSystem(p, "extra")).length;
-    html += sidebarSection(
-      isEn ? "EXTRA POINTS (EX)" : "經外奇穴 (EX)",
-      [
-        sidebarBtn(!selectedSystemBranch, "全部奇穴", "All Extra", extraTotal, "sysExBranch", ""),
-        ...extraCats.map((c) => sidebarBtn(
-          selectedSystemBranch === c.id,
-          c.zh, c.en,
-          points.filter((p) => String(p.code||"").startsWith(c.id)).length,
-          "sysExBranch", c.id
-        ))
-      ].join(""),
-      true
-    );
+    regionList = ["耳部 (Ear)"];
   } else if (selectedSystem === "scalp") {
-    const scalpTotal = points.filter((p) => pointMatchesSystem(p, "scalp")).length;
-    html += sidebarSection(
-      isEn ? "SCALP ACUPUNCTURE" : "頭皮針",
-      sidebarBtn(true, "全部線區", "All Scalp Lines", scalpTotal, "tungZone", ""),
-      true
-    );
-  } else if (selectedSystem === "special") {
-    const specialDefs = [
-      { id: "abdominal", zh: "腹針系統",   en: "Abdominal" },
-      { id: "wrist-ankle", zh: "腕踝針",     en: "Wrist-Ankle" },
-      { id: "jins3",    zh: "靱三針",       en: "Jin's 3 Needles" },
-      { id: "balance",  zh: "平衡針法",     en: "Balance Method" },
+    meridianList = [
+      "MS1 額中線", "MS2 額旁一線", "MS3 額旁二線", "MS4 額旁三線",
+      "MS5 頂中線", "MS6 頂中前斜線", "MS7 頂中後斜線", "MS8 頂旁一線", "MS9 頂旁二線",
+      "MS10 枕中線", "MS11 枕旁上線", "MS12 枕旁下線", "MS13 顳前線", "MS14 顳後線",
+      "焦氏舞蹈震顫區", "焦氏言語一區", "焦氏言語二區", "焦氏言語三區", "焦氏眩暈聽覺區"
     ];
-    const specialTotal = points.filter((p) => pointMatchesSystem(p, "special")).length;
-    html += sidebarSection(
-      isEn ? "SPECIAL SYSTEMS" : "特色/微針體系",
-      [
-        sidebarBtn(!selectedSystemBranch, "全部", "All", specialTotal, "sysSpecialBranch", ""),
-        ...specialDefs.map((s) => sidebarBtn(
-          selectedSystemBranch === s.id,
-          s.zh, s.en,
-          points.filter((p) => String(p.meridian||"").toLowerCase().includes(s.id.replace(/-/g," "))).length,
-          "sysSpecialBranch", s.id
-        ))
-      ].join(""),
-      true
-    );
+    regionList = ["頭部 (Head/Scalp)"];
   }
 
-  // ── CROSS-CUTTING: always shown ────────────────────────────────────────────────
-  // ★ 特定穴類別
-  const withCounts = pointCategoryCatalog
-    .map((c) => ({ c, n: points.filter((p) => pointMatchesCategory(p, c.id)).length }))
-    .filter((x) => x.n > 0);
-  if (withCounts.length > 0) {
-    html += sidebarSection(
-      isEn ? "★ SPECIFIC POINT GROUPS" : "★ 特定穴類別",
-      [
-        sidebarBtn(!directoryPointCategory, "全部", "All", points.length, "pointCategory", ""),
-        ...withCounts.map(({ c, n }) => sidebarBtn(
-          directoryPointCategory === c.id,
-          c.label_zh, c.label_en, n, "pointCategory", c.id
-        ))
-      ].join(""),
-      false  // collapsed by default when a system is active
-    );
-  }
-
-  // 🩺 臨床主題
-  const clinicalTopics = directoryTopics.filter((t) => (t.group || "clinical") === "clinical");
-  if (clinicalTopics.length > 0) {
-    html += sidebarSection(
-      isEn ? "🩺 CLINICAL TOPICS" : "🩺 臨床主題與證型",
-      [
-        sidebarBtn(!directoryTopic, "全部", "All", points.length, "topic", ""),
-        ...clinicalTopics.map((t) => sidebarBtn(
-          directoryTopic === t.id,
-          t.zh, t.en,
-          points.filter((p) => pointMatchesTopic(p, t.id)).length,
-          "topic", t.id
-        ))
-      ].join(""),
-      false
-    );
-  }
-
-  // 📍 身體部位
-  if (directoryRegionGroups.length > 0) {
-    html += sidebarSection(
-      isEn ? "📍 BODY REGIONS" : "📍 身體部位",
-      [
-        sidebarBtn(!directoryRegionGroup, "全部", "All", points.length, "regionGroup", ""),
-        ...directoryRegionGroups.map((g) => sidebarBtn(
-          directoryRegionGroup === g.id,
-          g.zh, g.en,
-          points.filter((p) => pointMatchesRegionGroup(p, g.id)).length,
-          "regionGroup", g.id
-        ))
-      ].join(""),
-      false
-    );
-  }
-
-  sidebar.innerHTML = html;
-  bindDirectoryButtons(sidebar);
-
-  // Collapsible section headers
-  sidebar.querySelectorAll(".sidebar-section-header").forEach((hdr) => {
-    hdr.addEventListener("click", () => {
-      hdr.closest(".sidebar-section").classList.toggle("collapsed");
-    });
-  });
+  fillSelect(meridianFilter, contentMode === "english" ? "All channels/zones" : "全部經絡/部位", meridianList);
+  fillSelect(regionFilter, contentMode === "english" ? "All regions" : "全部身體部位", regionList);
+  fillSelect(patternFilter, contentMode === "english" ? "All patterns" : "全部證型", unique(points.flatMap((point) => point.patterns)));
 }
 
-// Helpers for context-aware sidebar
-function sidebarSection(title, bodyHtml, openByDefault) {
-  const cls = openByDefault ? "sidebar-section" : "sidebar-section collapsed";
-  return `<div class="${cls}">
-    <div class="sidebar-section-header">
-      <span>${escapeHtml(title)}</span>
-      <span class="chevron">▾</span>
-    </div>
-    <div class="sidebar-section-body">${bodyHtml}</div>
-  </div>`;
-}
-
-function sidebarBtn(isActive, labelZh, labelEn, count, action, value) {
-  const label = contentMode === "english" ? labelEn : labelZh;
-  return `<button class="directory-filter-btn ${isActive ? "active" : ""}" type="button"
-    data-directory-action="${escapeAttribute(action)}"
-    data-directory-value="${escapeAttribute(value)}">
-    <span>${escapeHtml(label)}</span>
-    <small>${count}</small>
-  </button>`;
+function renderDirectoryFilters() {
+  renderMeridianCategories();
+  renderRegionCategories();
+  renderTopicCategories();
+  renderTungZoneCategories();
+  renderPointCategories();
 }
 
 function renderTungZoneCategories() {
@@ -2332,43 +2140,10 @@ function bindDirectoryButtons(scope) {
     button.addEventListener("click", () => {
       const action = button.dataset.directoryAction;
       const value = button.dataset.directoryValue || "";
-      if (action === "switchSystem") {
-        selectedSystem = value;
-        selectedSystemBranch = "";
-        meridianFilter.value = "";
-        directoryTungZone = "";
-        directoryPointCategory = "";
-        directoryTopic = "";
-        directoryRegionGroup = "";
-        document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
-        document.querySelector(`.system-tab-btn[data-system="${value}"]`)?.classList.add("active");
-      }
-      if (action === "allSystem") {
-        selectedSystem = "";
-        selectedSystemBranch = "";
-        meridianFilter.value = "";
-        directoryTungZone = "";
-        directoryPointCategory = "";
-        directoryTopic = "";
-        directoryRegionGroup = "";
-        searchInput.value = "";
-        document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
-        document.querySelector('.system-tab-btn[data-system=""]')?.classList.add("active");
-      }
-      if (action === "sysAurBranch" || action === "sysExBranch" || action === "sysSpecialBranch") {
-        selectedSystemBranch = value;
-      }
       if (action === "meridian") meridianFilter.value = value;
       if (action === "regionGroup") {
         directoryRegionGroup = value;
-        selectedSystem = "";
-        selectedSystemBranch = "";
-        meridianFilter.value = "";
-        directoryTungZone = "";
-        directoryPointCategory = "";
-        directoryTopic = "";
         regionFilter.value = "";
-        document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.toggle("active", b.dataset.system === ""));
       }
       if (action === "topic") {
         directoryTopic = value;
@@ -2380,10 +2155,11 @@ function bindDirectoryButtons(scope) {
       }
       if (action === "pointCategory") {
         directoryPointCategory = value;
-        searchInput.value = "";
+        searchInput.value = "";   // "按原穴就列出所有原穴" — show the full category set
       }
       clearPointDetailHash();
       render();
+      document.querySelector("#acupunctureWorkspace").scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
@@ -2410,6 +2186,12 @@ function meridianLabelEn(value) {
 }
 
 function fillSelect(select, firstLabel, values) {
+  // The filter may be the detached stand-in rather than a real <select>; there
+  // are no options to build then, but the retained value must still be valid.
+  if (!select || typeof select.append !== "function") {
+    if (select && !values.includes(select.value)) select.value = "";
+    return;
+  }
   const current = select.value;
   select.innerHTML = `<option value="">${firstLabel}</option>`;
   values.forEach((value) => {
@@ -2542,6 +2324,11 @@ function renderSystemToggleDrawer() {
           ${isEn ? c.en : c.zh}
         </button>
       `).join("")}
+      ${selectedSystem === "standard14" ? `
+        <a href="#ws/channels" class="chart-shortcut-btn" style="margin-left: auto;">
+          ${isEn ? "📊 Channel & Point Charts ↗" : "📊 經脈與特定穴圖表 ↗"}
+        </a>
+      ` : ""}
     </div>
   `;
 
@@ -2574,7 +2361,7 @@ function pointMatchesSystemBranch(point) {
     return pointMatchesTungZone(point, selectedSystemBranch);
   }
   if (selectedSystem === "auricular") {
-    return pointMatchesEarZone(point, selectedSystemBranch);
+    return code.includes(selectedSystemBranch) || loc.includes(selectedSystemBranch);
   }
   if (selectedSystem === "scalp") {
     if (selectedSystemBranch === "forehead") return code.startsWith("MS1") || code.startsWith("MS2") || code.startsWith("MS3") || code.startsWith("MS4") || loc.includes("額");
@@ -2650,7 +2437,7 @@ function pointMatchesSystem(point, sys) {
     return m.includes("Master Tung") || m.includes("董氏奇穴") || code.startsWith("T");
   }
   if (sys === "auricular") {
-    return isAuricularPoint(point);
+    return m.includes("Auricular") || m.includes("耳穴") || code.startsWith("EAR-") || code.startsWith("AT");
   }
   if (sys === "scalp") {
     return m.includes("Scalp") || m.includes("頭皮針") || code.startsWith("MS") || code.startsWith("SCALP-");
@@ -2661,55 +2448,14 @@ function pointMatchesSystem(point, sys) {
   return true;
 }
 
-function pointMatchesEarZone(point, zoneId) {
-  if (!isAuricularPoint(point)) return false;
-  if (!zoneId) return true;
-  const code = String(point.code || "").toUpperCase();
-  const zone = String(point.standardZone || point.standardRegion || point.region || "").toUpperCase();
-  const loc = String(point.location || "").toUpperCase();
-  const name = String(point.nameZh || "").toUpperCase();
-  const haystack = [code, zone, loc, name].join(" ");
-  const zid = zoneId.toUpperCase();
-
-  if (zid === "TF") return code.startsWith("TF") || haystack.includes("三角窩");
-  if (zid === "AH") return code.startsWith("AH") || (haystack.includes("對耳輪") && !haystack.includes("對耳輪上") && !haystack.includes("對耳輪下"));
-  if (zid === "SAC") return code.startsWith("SAC") || haystack.includes("對耳輪上");
-  if (zid === "IAC") return code.startsWith("IAC") || haystack.includes("對耳輪下");
-  if (zid === "AT") return code.startsWith("AT") || haystack.includes("對耳屏");
-  if (zid === "TR" || zid === "TG") return code.startsWith("TR") || code.startsWith("TG") || (haystack.includes("耳屏") && !haystack.includes("對耳屏"));
-  if (zid === "CVC" || zid === "CO") return code.startsWith("CVC") || haystack.includes("耳甲腔");
-  if (zid === "CYC") return code.startsWith("CYC") || haystack.includes("耳甲艇");
-  if (zid === "EL" || zid === "LO") return code.startsWith("EL") || code.startsWith("LO") || haystack.includes("耳垂");
-  if (zid === "SC" || zid === "SF") return code.startsWith("SC") || code.startsWith("SF") || haystack.includes("耳舟");
-  if (zid === "HX") return (code.startsWith("HX") && !code.startsWith("HCS")) || (haystack.includes("耳輪") && !haystack.includes("對耳輪") && !haystack.includes("耳輪腳"));
-  if (zid === "HCS") return code.startsWith("HCS") || haystack.includes("耳輪腳");
-  if (zid === "IN") return code.startsWith("IN") || haystack.includes("屏間切跡");
-  if (zid === "POS") return code.startsWith("POS") || haystack.includes("耳背") || haystack.includes("背面");
-
-  return code.startsWith(zid) || haystack.includes(zid);
-}
-
 function pointMatchesCategory(point, categoryId) {
   return (point.pointCategories || []).includes(categoryId);
 }
 
 function pointMatchesRegionGroup(point, groupId) {
-  if (!groupId) return true;
-  if (groupId === "auricular") {
-    return isAuricularPoint(point);
-  }
   const group = directoryRegionGroups.find((item) => item.id === groupId);
   if (!group) return true;
-  const haystack = [
-    point.region,
-    point.standardRegion,
-    point.location,
-    point.locationEn,
-    point.nameZh,
-    point.nameEn,
-    point.code
-  ].join(" ");
-  return group.match ? group.match.test(haystack) : true;
+  return group.match.test([point.region, point.meridian, point.location, point.locationEn, point.nameZh, point.nameEn, point.code].join(" "));
 }
 
 function pointMatchesTopic(point, topicId) {
@@ -4354,12 +4100,9 @@ function heroSubtitle(point) {
 }
 
 function americanDragonPointUrl(point) {
-  if (point.american_dragon_url && /^https?:\/\//.test(point.american_dragon_url)) {
-    return point.american_dragon_url;
-  }
   const code = String(point.code || "").trim().toUpperCase();
   const match = code.match(/^([A-Z]+)(\d+)$/);
-  if (!match) return "";
+  if (!match) return "https://www.americandragon.com/";
 
   const prefix = match[1];
   const num = match[2];
@@ -4386,16 +4129,16 @@ function americanDragonPointUrl(point) {
 
 function eLotusPointUrl(point) {
   const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
-  const directVisual = visualLinks.find((v) => v && v.url && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\/.+/.test(v.url));
+  const directVisual = visualLinks.find((v) => v && v.url && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(v.url));
   if (directVisual) return directVisual.url;
 
   const sources = Array.isArray(point.sources) ? point.sources : [];
-  const directSource = sources.find((s) => typeof s === "string" && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\/.+/.test(s));
+  const directSource = sources.find((s) => typeof s === "string" && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(s));
   if (directSource) return directSource;
 
   let code = String(point.code || point.id || "").toLowerCase().trim();
   if (isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")) {
-    return "";
+    return visualLinks[0]?.url || (typeof sources[0] === "string" && sources[0].startsWith("http") ? sources[0] : "https://www.mastertungacupuncture.org/acupuncture/traditional/points");
   }
 
   code = code.replace(/^te/, "th").replace(/^sj/, "th");
@@ -6138,70 +5881,52 @@ function renderChannelsWorkspace() {
     { code: "Yinwei", zh: "陰維脈", en: "Yinwei Mai" }
   ];
 
-  const isEn = contentMode === 'english';
-
-  // ── Tab bar ───────────────────────────────────────────────────────────────
   launcher.innerHTML = `
-    <div class="channels-tabs-bar" id="channelsTabsBar">
-      <button type="button" class="channels-tab-btn ${activeChannelsTab === 'meridians' ? 'active' : ''}" data-ctab="meridians">
-        ${isEn ? '14 Channels & Extraordinary Vessels' : '十四正經・奇經八脈'}
-      </button>
-      <button type="button" class="channels-tab-btn ${activeChannelsTab === 'charts' ? 'active' : ''}" data-ctab="charts">
-        ${isEn ? '7 Major Point Charts (eLotus)' : '七大特定穴總表'}
-      </button>
-    </div>
-
-    ${activeChannelsTab === 'meridians' ? `
+    <div>
+      <div class="channels-launcher-title">🌐 十四正經與奇經八脈速選 / Channels & Extraordinary Meridians</div>
       <div class="meridian-pills-row">
         ${mainMeridians.map(m => `
           <button type="button" class="meridian-pill-btn ${activeChartMode === '' && activeChannelCode === m.code ? 'active' : ''}" data-ch-code="${m.code}">
-            ${m.code} <small>${isEn ? m.en : m.zh}</small>
+            ${m.code} <small>(${contentMode === 'english' ? m.en : m.zh})</small>
           </button>
         `).join('')}
       </div>
       <div class="meridian-pills-row" style="margin-top: 0.4rem;">
         ${extraVessels.map(m => `
           <button type="button" class="meridian-pill-btn pill-extra-vessel ${activeChartMode === '' && activeChannelCode === m.code ? 'active' : ''}" data-ch-code="${m.code}">
-            ${m.code} <small>${isEn ? m.en : m.zh}</small>
+            ${m.code} <small>(${contentMode === 'english' ? m.en : m.zh})</small>
           </button>
         `).join('')}
       </div>
-    ` : `
+    </div>
+
+    <div>
+      <div class="channels-launcher-title">📊 eLotus 經典七大特定穴總表 / 7 Major Point Charts & Master Matrices</div>
       <div class="charts-pills-row">
         <button type="button" class="chart-pill-btn ${activeChartMode === 'fiveshu' ? 'active' : ''}" data-chart-mode="fiveshu">
-          ${isEn ? '1. Five Shu Points (五輸穴)' : '1. 五輸穴總表 (Five Shu Points)'}
+          1. 五輸穴總表 (Five Shu Points)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'yuanluoxi' ? 'active' : ''}" data-chart-mode="yuanluoxi">
-          ${isEn ? '2. Yuan, Luo, Xi, Front-Mu, Back-Shu' : '2. 原絡郄俞募穴總表'}
+          2. 原絡郄俞募穴總表 (Yuan, Luo, Xi, Front Mu, Back Shu)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'lowerhe' ? 'active' : ''}" data-chart-mode="lowerhe">
-          ${isEn ? '3. Lower He-Sea / Mother-Child / Entry-Exit' : '3. 下合穴/母子補瀉/出入穴'}
+          3. 下合穴/母子補瀉/出入穴 (Lower He Sea, Mother, Child, Entry, Exit)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'confluent' ? 'active' : ''}" data-chart-mode="confluent">
-          ${isEn ? '4. Master & Coupled Points (Eight Confluent)' : '4. 八脈交會穴與配穴'}
+          4. 八脈交會穴與配穴 (Master & Coupled Points)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'groupluo' ? 'active' : ''}" data-chart-mode="groupluo">
-          ${isEn ? '5. Group Luo & Muscle Meridian Meeting' : '5. 組絡穴/經筋交會穴'}
+          5. 組絡穴/經筋交會穴 (Group Luo & Muscle Meridian Meeting)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'huicommand' ? 'active' : ''}" data-chart-mode="huicommand">
-          ${isEn ? '6. Hui Influential & Command Points' : '6. 八會穴與六總穴'}
+          6. 八會穴與六總穴 (Hui Influential & Command Points)
         </button>
         <button type="button" class="chart-pill-btn ${activeChartMode === 'fourseaghost' ? 'active' : ''}" data-chart-mode="fourseaghost">
-          ${isEn ? '7. Four Sea & 13 Ghost Points' : '7. 四海穴與十三鬼穴'}
+          7. 四海穴與十三鬼穴 (Four Sea Points & 13 Ghost Points)
         </button>
       </div>
-    `}
+    </div>
   `;
-
-  launcher.querySelectorAll('[data-ctab]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      activeChannelsTab = btn.dataset.ctab || 'meridians';
-      if (activeChannelsTab === 'charts' && !activeChartMode) {
-        activeChartMode = 'fiveshu';
-      }
-      renderChannelsWorkspace();
-    });
-  });
 
   launcher.querySelectorAll('[data-ch-code]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -6255,213 +5980,9 @@ function renderChannelsWorkspace() {
   }
 
   // Default: Meridian/Vessel Overview Card
-  const chData = getChannelOverviewData(activeChannelCode);
+  const chData = channelRecords.find(c => c.code === activeChannelCode) || channelRecords[0] || {};
   content.innerHTML = renderChannelOverviewCard(chData);
   bindMatrixPointLinks(content);
-  bindChannelNavButtons(content);
-}
-
-function bindChannelNavButtons(container) {
-  container.querySelectorAll('[data-ch-code]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      activeChartMode = '';
-      activeChannelCode = btn.dataset.chCode;
-      renderChannelsWorkspace();
-    });
-  });
-}
-
-function getChannelOverviewData(code) {
-  const dictionary = {
-    LU: {
-      code: "LU", nameZh: "手太陰肺經", nameEn: "Lung Channel of Hand Taiyin",
-      element: "Metal / 金", clock_time: "3:00 AM - 5:00 AM (寅時)",
-      prev_code: "LR", next_code: "LI",
-      pathway_zh: "起於中焦，下絡大腸，還循胃口，上膈屬肺。從肺系橫行出腋下（中府），沿上臂內側前緣下行，至肘中（尺澤），沿前臂內側前緣入寸口（太淵），循魚際出大拇指端（少商）。分支從列缺分出，直達食指端（接大腸經）。",
-      indications_zh: ["咳嗽、氣喘、胸痛、少氣、咽喉腫痛", "外感風寒、發熱惡寒、自汗、盜汗", "經脈循行部位疼痛（肘臂、肩背、寸口痛）"],
-      applications_zh: ["主治肺系疾患與表證，宣肺解表、止咳平喘", "太淵為原穴兼八會穴之脈會，主治脈疾與氣虛", "尺澤為合水穴，瀉肺熱與瀉肺實之要穴"]
-    },
-    LI: {
-      code: "LI", nameZh: "手陽明大腸經", nameEn: "Large Intestine Channel of Hand Yangming",
-      element: "Metal / 金", clock_time: "5:00 AM - 7:00 AM (卯時)",
-      prev_code: "LU", next_code: "ST",
-      pathway_zh: "起於食指橈側端（商陽），沿食指橈側上升，出合谷，入兩筋（陽溪）之間，沿前臂橈側、上臂外側前緣，上肩（肩髃），交會於督脈大椎，前入缺盆，絡肺，下膈，屬大腸。分支從缺盆上頸，貫俠口，交人中，止於對側鼻翼旁（迎香，接胃經）。",
-      indications_zh: ["頭面五官疾病：牙痛、咽喉腫痛、鼻塞流涕、口眼歪斜", "熱病與皮膚病：高熱、疹塊、風疹、蕁麻疹", "腸胃與經脈病：腹痛、腸鳴、便秘、瀉洩、臂肘肩痛"],
-      applications_zh: ["合谷為手陽明原穴，面口合谷收，五官痛症要穴", "曲池為合土穴，清熱瀉火、涼血祛風除濕要穴", "肩髃為肩部疼痛與中風半身不遂之要穴"]
-    },
-    ST: {
-      code: "ST", nameZh: "足陽明胃經", nameEn: "Stomach Channel of Foot Yangming",
-      element: "Earth / 土", clock_time: "7:00 AM - 9:00 AM (辰時)",
-      prev_code: "LI", next_code: "SP",
-      pathway_zh: "起於鼻翼兩旁（迎香），上行至鼻根部，旁納太陽經脈，向下沿鼻外側（承泣），入上齒中，還出挾口環唇，下交承漿，沿下頜後下角，上耳前，過客主人，沿髮際，至額顱。支脈從缺盆下乳內廉，挾臍下行，入氣衝中。下循股外前廉，下膝膝髕，沿脛骨外側，入足中趾外側端（厲兌，接脾經）。",
-      indications_zh: ["腸胃病症：胃痛、嘔吐、腹脹、噎膈、便秘", "頭面五官病症：頭痛、齒痛、面癱、眼疾、口角歪斜", "神志病與經脈病：狂躁、驚悸、熱病、下肢痿痺"],
-      applications_zh: ["足三里為合穴兼下合穴，肚腹三里留，強壯保健第一要穴", "天樞為大腸募穴，調理腸胃止瀉止痛", "內庭為滎水穴，清瀉胃火止牙痛口臭"]
-    },
-    SP: {
-      code: "SP", nameZh: "足太陰脾經", nameEn: "Spleen Channel of Foot Taiyin",
-      element: "Earth / 土", clock_time: "9:00 AM - 11:00 AM (巳時)",
-      prev_code: "ST", next_code: "HT",
-      pathway_zh: "起於大趾末端（隱白），沿大趾內側赤白肉際，過核骨後，上內踝前廉，沿小腿內側骨後緣，交出足厥陰經之前，上膝股內側前廉，入腹，屬脾，絡胃，上膈，俠咽，連舌本，散舌下。支脈從胃別上膈，注心中（接心經）。大包為脾之大絡，布胸脇。",
-      indications_zh: ["脾胃病症：胃脘痛、腹脹、嘔吐、便瀉、黃疸", "婦科與泌尿病症：月經不調、痛經、崩漏、帶下、尿頻", "水濕與血證：水腫、重著、崩漏、便血"],
-      applications_zh: ["三陰交為足三陰經交會穴，婦科與脾腎調理總穴", "太白為原穴兼輸土穴，健脾和胃、升清降濁", "陰陵泉為合水穴，利水滲濕、健脾祛濕第一要穴"]
-    },
-    HT: {
-      code: "HT", nameZh: "手少陰心經", nameEn: "Heart Channel of Hand Shaoyin",
-      element: "Fire / 火", clock_time: "11:00 AM - 1:00 PM (午時)",
-      prev_code: "SP", next_code: "SI",
-      pathway_zh: "起於心中，出屬心系，下膈，絡小腸。直行者從心系上挾咽，繫目系。外行者從心系卻上肺，下出腋下（極泉），沿上臂內側後緣，下肘內側（少海），沿前臂內側後緣，抵掌後銳骨之端（神門），入掌內，沿小指內側出其端（少沖，接小腸經）。",
-      indications_zh: ["心血管與神志病症：心悸、怔忡、心痛、失眠、健忘、狂躁", "發熱與咽舌病症：咽乾、渴飲、舌強不語、口舌生瘡", "經脈循行部位疼痛：臑臂內側後緣痛、掌心熱痛"],
-      applications_zh: ["神門為心經原穴兼輸土穴，寧心安神、治失眠心悸要穴", "少海為合水穴，清心瀉火、理氣通絡", "極泉為起穴，理氣寬胸、治腋脇疼痛與肩臂癱瘓"]
-    },
-    SI: {
-      code: "SI", nameZh: "手太陽小腸經", nameEn: "Small Intestine Channel of Hand Taiyang",
-      element: "Fire / 火", clock_time: "1:00 PM - 3:00 PM (未時)",
-      prev_code: "HT", next_code: "BL",
-      pathway_zh: "起於小指尺側端（少澤），沿手掌尺側邊緣，上腕出踝中，直上沿前臂尺側後緣，出肘內側兩骨之間（小海），沿上臂外側後緣，出肩解，繞肩胛，交脊上大椎，入缺盆，絡心，循咽，下膈，抵胃，屬小腸。支脈從缺盆循頸上頰，至目銳眥，入耳中（聽宮，接膀胱經）。",
-      indications_zh: ["頭面五官病症：耳鳴、耳聾、目赤、咽痛、頰腫", "神志與熱病：昏迷、高熱、痙攣、癲狂", "經脈循行部位疼痛：肩胛痛、頸項強痛、肘臂痛"],
-      applications_zh: ["後谿為輸木穴兼八脈交會穴通督脈，治項強、脊痛與頭痛要穴", "聽宮為耳部要穴，善治耳鳴耳聾", "養老為郄穴，清頭明目、舒筋活絡，治目昏眼花與肩臂痛"]
-    },
-    BL: {
-      code: "BL", nameZh: "足太陽膀胱經", nameEn: "Bladder Channel of Foot Taiyang",
-      element: "Water / 水", clock_time: "3:00 PM - 5:00 PM (申時)",
-      prev_code: "SI", next_code: "KI",
-      pathway_zh: "起於目內眥（睛明），上額，交巔頂。支脈從巔至耳上角。直行者從巔入絡腦，還出別下項，沿肩胛內側，挾脊柱兩旁下行至腰中，入循膂，絡腎，屬膀胱。腰部支脈下貫臀，入膕中（委中）。項部支脈下挾脊內，過股樞，沿股外後廉下合膕中，貫腨內，出外踝後（昆侖），沿京骨至小趾外側端（至陰，接腎經）。",
-      indications_zh: ["頭面五官病症：頭痛、目痛、目赤流淚、鼻塞流涕", "臟腑病症：五臟六腑背俞穴所在地，可治相應臟腑疾病", "腰背腿痛與神志病症：腰背痛、腰脊強痛、膕窩痛、下肢麻木、癲狂"],
-      applications_zh: ["委中為合土穴兼下合穴，腰背委中求，治腰背疼痛第一要穴", "昆侖為經火穴，舒筋活絡、順氣落胎", "至陰為井金穴，矯正胎位（灸法）與催產要穴"]
-    },
-    KI: {
-      code: "KI", nameZh: "足少陰腎經", nameEn: "Kidney Channel of Foot Shaoyin",
-      element: "Water / 水", clock_time: "5:00 PM - 7:00 PM (酉時)",
-      prev_code: "BL", next_code: "PC",
-      pathway_zh: "起於足小趾下，斜走足心（湧泉），出於舟骨粗隆下，沿內踝後（太溪），別入跟中，上小腿內側，出膕內廉，上股內後廉，貫脊屬腎，絡膀胱。直行者從腎上貫肝膈，入肺中，循喉嚨，俠舌本。支脈從肺出絡心，注胸中（接心包經）。",
-      indications_zh: ["腎虛與生殖病症：陽痿、遺精、月經不調、不孕、小便不利", "咽喉與肺系病症：咽喉腫痛、咳嗽、氣喘、咯血", "神志與骨骼病症：頭暈、耳鳴、腰膝酸軟、失眠、健忘"],
-      applications_zh: ["湧泉為井木穴，開竅醒腦、降逆下氣、急救要穴", "太溪為原穴兼輸土穴，滋陰補腎、清降虛火要穴", "照海為八脈交會穴通陰蹻脈，利咽安神、治咽痛失眠"]
-    },
-    PC: {
-      code: "PC", nameZh: "手厥陰心包經", nameEn: "Pericardium Channel of Hand Jueyin",
-      element: "Fire / 相火", clock_time: "7:00 PM - 9:00 PM (戌時)",
-      prev_code: "KI", next_code: "TE",
-      pathway_zh: "起於胸中，出屬心系，下膈，歷絡三焦。胸部支脈沿胸出脅，下腋三寸（天池），上抵腋下，沿上臂內側，行於手太陰、手少陰之間，入肘中（曲澤），下前臂行兩筋之間（內關、間使），入掌中（勞宮），循中指直出其端（中沖，接三焦經）。",
-      indications_zh: ["心血管與胸部病症：心痛、心悸、胸悶、心煩、狂躁", "胃腸病症：嘔吐、噁心、胃痛、打嗝", "神志與急症：高熱、昏迷、中暑、驚風"],
-      applications_zh: ["內關為絡穴兼八脈交會穴通陰維脈，內關心胸胃，理氣止痛降逆", "勞宮為滎火穴，清心瀉火、開竅安神", "曲澤為合水穴，清熱解毒、鎮驚止痛"]
-    },
-    TE: {
-      code: "TE", nameZh: "手少陽三焦經", nameEn: "Triple Burner Channel of Hand Shaoyang",
-      element: "Fire / 相火", clock_time: "9:00 PM - 11:00 PM (亥時)",
-      prev_code: "PC", next_code: "GB",
-      pathway_zh: "起於無名指尺側端（關沖），向上沿手背出手腕外側（陽池），沿前臂外側兩骨之間，上肘（天井），沿上臂外側上肩，交出足少陽之後，入缺盆，布膻中，散絡心包，下膈，遍屬三焦。胸部支脈從膻中上出缺盆，上項，連耳後，直上出耳上角，屈下頰至目下。耳部支脈入耳中，出走耳前，至目銳眥（絲竹空，接膽經）。",
-      indications_zh: ["頭面五官病症：耳鳴、耳聾、目赤腫痛、咽喉腫痛、頰腫", "熱病與少陽證：偏頭痛、發熱、寒熱往來", "經脈循行部位疼痛：肩背痛、肘臂痛、項強痛"],
-      applications_zh: ["外關為絡穴兼八脈交會穴通陽維脈，解表清熱、疏風止痛", "支溝為經火穴，清熱通便、理氣止脅痛要穴", "陽池為原穴，生發陽氣、通調三焦"]
-    },
-    GB: {
-      code: "GB", nameZh: "足少陽膽經", nameEn: "Gallbladder Channel of Foot Shaoyang",
-      element: "Wood / 木", clock_time: "11:00 PM - 1:00 AM (子時)",
-      prev_code: "TE", next_code: "LR",
-      pathway_zh: "起於目銳眥（瞳子髎），上抵角孫，下耳後（風池），沿頸行手少陽之前，至肩上，交出手少陽之後，入缺盆。耳部支脈從耳後入耳中，出走耳前，至目銳眥後。缺盆支脈下胸中，貫膈，絡肝，屬膽，沿脅裏，出氣衝，繞毛際，橫入股樞（環跳）。直行者從缺盆下腋，沿胸側，過季脅，下合股樞，下沿股外側，下膝外廉，下脛骨前方，下外踝前，沿足背入第四趾外側端（足竅陰，接肝經）。",
-      indications_zh: ["肝膽病症：黃疸、口苦、脅肋疼痛、嘔吐", "頭面五官病症：偏頭痛、目赤痛、耳鳴、耳聾、頸項強痛", "下肢與神志病症：股脛疼痛、下肢麻木痿痺、中風半身不遂"],
-      applications_zh: ["風池為祛風要穴，清利頭目、解表熄風", "環跳為股樞要穴，治腰腿痛、坐骨神經痛與中風癱瘓", "陽陵泉為合土穴兼八會穴之筋會，疏肝利膽、舒筋活絡總穴"]
-    },
-    LR: {
-      code: "LR", nameZh: "足厥陰肝經", nameEn: "Liver Channel of Foot Jueyin",
-      element: "Wood / 木", clock_time: "1:00 AM - 3:00 AM (丑時)",
-      prev_code: "GB", next_code: "LU",
-      pathway_zh: "起於大趾背毫毛部（大敦），向上沿足背要穴（太衝），上內踝前一寸（中封），上脛骨內側，交出足太陰脾經之後，上膕內廉，沿股內側入陰毛中，環陰器，抵小腹，俠胃，屬肝，絡膽，上貫膈，布脅肋，循喉嚨之後，上入亢顙，連目系，上出額，與督脈會於巔頂。目系支脈下頰裏，環唇內。肝部支脈復從肝別貫膈，上注肺（接肺經）。",
-      indications_zh: ["肝病與氣滯病症：脅肋疼痛、腹脹、黃疸、眩暈、癲癇", "婦科與前陰病症：月經不調、痛經、疝氣、遺尿、小便不利", "頭面與神志病症：頂頭痛、目赤腫痛、口苦、煩躁易怒"],
-      applications_zh: ["太衝為原穴兼輸土穴，平肝息風、疏肝理氣第一要穴", "期門為肝之募穴，疏肝理氣、和胃化痰", "行間為滎火穴，清瀉肝火、涼血息風"]
-    },
-    Du: {
-      code: "Du", nameZh: "督脈 (Du Mai)", nameEn: "Governor Vessel (Du Mai / GV)",
-      element: "Yang Vessel / 陽脈之海", clock_time: "Continuous / 貫脊行背",
-      prev_code: "LR", next_code: "Ren",
-      pathway_zh: "起於小腹內，下出會陰，沿脊柱裡面後行，至項後風府穴處進入腦內，上行巔頂（百會），沿前額下行至鼻柱，止於上唇繫帶處（齦交）。分支絡腎、貫心、入喉。督脈總督一身之陽經。",
-      indications_zh: ["神志與腦部病症：頭痛、項強、頭暈、昏迷、癲狂、癎證", "脊柱與腰背病症：腰脊強痛、背寒、下肢麻木痿痺", "熱病與陽氣虛弱：高熱、瘧疾、畏寒肢冷"],
-      applications_zh: ["百會為巔頂要穴，升陽舉陷、清熱開竅、安神定志", "大椎為諸陽之會，解表清熱、截瘧退燒要穴", "命門為培元固本要穴，溫補腎陽、壯腰健膝"]
-    },
-    Ren: {
-      code: "Ren", nameZh: "任脈 (Ren Mai)", nameEn: "Conception Vessel (Ren Mai / CV)",
-      element: "Yin Vessel / 陰脈之海", clock_time: "Continuous / 行胸腹正中",
-      prev_code: "Du", next_code: "Chong",
-      pathway_zh: "起於小腹內，下出會陰，向前經陰毛部，沿腹部及胸部正中線上行，過咽喉，上行至下唇內（承漿），環繞口唇，上行至兩眼下方（承泣）。任脈主一身之陰經，總任一身之陰血。",
-      indications_zh: ["婦科與生殖病症：月經不調、痛經、帶下、不孕、產後腹痛", "腹部與胃腸病症：腹脹、胃痛、嘔吐、腹瀉、疝氣", "胸肺與咽喉病症：胸悶、氣喘、咽喉腫痛、失音"],
-      applications_zh: ["關元為小腸募穴兼強壯要穴，培元固本、補氣回陽", "中脘為胃之募穴兼八會穴之腑會，和胃健脾、理氣止痛", "膻中為心包募穴兼八會穴之氣會，寬胸理氣、止咳平喘"]
-    },
-    Chong: {
-      code: "Chong", nameZh: "沖脈 (Chong Mai)", nameEn: "Chong Vessel (Thoroughfare Vessel)",
-      element: "Sea of Blood / 十二經脈之海", clock_time: "Continuous",
-      prev_code: "Ren", next_code: "Dai",
-      pathway_zh: "起於小腹內，下出會陰，並於足少陰腎經挾臍旁上行，散於胸中，再向上行至咽喉，環繞口唇。分支下行沿大腿內側入足大趾。為血海與十二經脈之海。",
-      indications_zh: ["婦科病症：月經不調、經閉、崩漏、不孕", "氣逆與胸腹病症：氣逆上衝（奔豚氣）、胸腹痛、嘔吐", "氣血虧虛：面色蒼白、頭暈心悸"],
-      applications_zh: ["公孫（SP4）為八脈交會穴通沖脈，主治心胸胃病症", "陰交、氣衝為沖脈循行要穴", "調血衝脈，專治婦科經產血病與氣逆症"]
-    },
-    Dai: {
-      code: "Dai", nameZh: "帶脈 (Dai Mai)", nameEn: "Dai Vessel (Girdling Vessel)",
-      element: "Girdle Vessel / 約束諸脈", clock_time: "Continuous",
-      prev_code: "Chong", next_code: "Yangqiao",
-      pathway_zh: "起於季脅部（章門），斜下行至帶脈穴、五樞穴、維道穴，環繞腰腹一圈，狀如束帶。約束縱行諸經脈。",
-      indications_zh: ["婦科帶下病：白帶增多、赤白帶下、月經不調", "腰腹病症：腰腹冷痛、腰重如帶五千錢、腹脹", "下肢痿軟：下肢無力、痿痺不收"],
-      applications_zh: ["足臨泣（GB41）為八脈交會穴通帶脈，主治目眩、脇痛與帶下病", "帶脈穴、五樞穴、維道穴為帶脈本穴", "約束諸經，主治婦科赤白帶下與腰胯疼痛"]
-    },
-    Yangqiao: {
-      code: "Yangqiao", nameZh: "陽蹻脈 (Yangqiao Mai)", nameEn: "Yangqiao Vessel (Yang Heel Vessel)",
-      element: "Yang Heel / 主一身左右之陽", clock_time: "Continuous",
-      prev_code: "Dai", next_code: "Yangwei",
-      pathway_zh: "起於足跟外側（申脈），沿外踝後直上，經過股外側、脅肋後，沿肩、頸、口角，至目內眥（睛明），與陰蹻脈會合，再沿膽經上行入風池。主肢體運動與睡眠。",
-      indications_zh: ["目疾與睡眠病症：失眠、目不合、目赤腫痛", "神志與運動病症：癲狂、癲癇、中風口眼歪斜、腰腿拘急", "下肢病症：外側拘急而內側弛緩"],
-      applications_zh: ["申脈（BL62）為八脈交會穴通陽蹻脈，主治失眠、頭痛與腰腿病", "睛明、風池為陽蹻脈會穴", "司眼目開合與下肢運動，主治陽急陰緩之症"]
-    },
-    Yangwei: {
-      code: "Yangwei", nameZh: "陽維脈 (Yangwei Mai)", nameEn: "Yangwei Vessel (Yang Linking Vessel)",
-      element: "Yang Linking / 維絡諸陽", clock_time: "Continuous",
-      prev_code: "Yangqiao", next_code: "Yinqiao",
-      pathway_zh: "起於足跗外側（金門），沿下肢外側、脅肋、肩部、頸部，上至額部（陽白），循頭後入風池。維絡一身陽經，主表、主發熱。",
-      indications_zh: ["表證與發熱病症：寒熱往來、惡寒發熱、瘧疾", "頭面與耳目病症：頭痛、目眩、耳聾、頸項強痛", "軀體外側疼痛：肩痛、脅肋痛、下肢外側痛"],
-      applications_zh: ["外關（TE5）為八脈交會穴通陽維脈，主治外感熱病與耳鳴頭痛", "金門、陽白、風池為陽維脈會穴", "維絡諸陽，主治寒熱往來與表證發熱"]
-    },
-    Yinqiao: {
-      code: "Yinqiao", nameZh: "陰蹻脈 (Yinqiao Mai)", nameEn: "Yinqiao Vessel (Yin Heel Vessel)",
-      element: "Yin Heel / 主一身左右之陰", clock_time: "Continuous",
-      prev_code: "Yangwei", next_code: "Yinwei",
-      pathway_zh: "起於足舟骨後方（照海），沿內踝前直上，循股內側，入陰部，沿胸腹正中旁、咽喉，上至目內眥（睛明），與陽蹻脈會合。主嗜睡與目睛開合。",
-      indications_zh: ["睡眠與眼疾：嗜睡、目睛不閉、目赤腫痛", "前陰與婦科病症：小便不利、疝氣、婦人腹痛、陰挺", "肢體病症：下肢內側拘急而外側弛緩"],
-      applications_zh: ["照海（KI6）為八脈交會穴通陰蹻脈，主治嗜睡、咽痛與月經不調", "交信為陰蹻脈之郄穴", "司眼目開合與下肢運動，主治陰急陽緩之症"]
-    },
-    Yinwei: {
-      code: "Yinwei", nameZh: "陰維脈 (Yinwei Mai)", nameEn: "Yinwei Vessel (Yin Linking Vessel)",
-      element: "Yin Linking / 維絡諸陰", clock_time: "Continuous",
-      prev_code: "Yinqiao", next_code: "LU",
-      pathway_zh: "起於小腿內側（築賓），沿下肢內側、腹部（期門），上行至頸部（天突、廉泉）。維絡一身陰經，主裏、主心痛心煩。",
-      indications_zh: ["心胸與精神病症：心痛、胸悶、心煩、狂躁、憂鬱", "胃腸與腹部病症：胃痛、嘔吐、腹痛、腹瀉", "咽喉與頸部病症：咽喉腫痛、梅核氣、失音"],
-      applications_zh: ["內關（PC6）為八脈交會穴通陰維脈，主治心痛、胸悶與胃痛", "築賓為陰維脈之郄穴", "維絡諸陰，主治心痛、心煩與裏證痛症"]
-    }
-  };
-
-  const info = dictionary[code] || dictionary["LU"];
-
-  let matchedPoints = (points || []).filter(p => {
-    if (code === "Du") return p.channel === "Du" || p.channel === "GV" || (p.code && (p.code.startsWith("GV") || p.code.startsWith("DU")));
-    if (code === "Ren") return p.channel === "Ren" || p.channel === "CV" || (p.code && (p.code.startsWith("CV") || p.code.startsWith("REN")));
-    if (["Chong", "Dai", "Yangqiao", "Yangwei", "Yinqiao", "Yinwei"].includes(code)) {
-      if (code === "Chong") return ["SP4", "KI11", "KI12", "KI13", "KI14", "KI15", "KI16", "KI17", "KI18", "KI19", "KI20", "KI21", "ST30", "CV1"].includes(p.code);
-      if (code === "Dai") return ["GB26", "GB27", "GB28", "GB41", "LR13"].includes(p.code);
-      if (code === "Yangqiao") return ["BL62", "BL61", "BL59", "GB29", "SI10", "LI15", "LI16", "ST4", "ST3", "ST1", "BL1", "GB20"].includes(p.code);
-      if (code === "Yangwei") return ["BL63", "GB35", "SI10", "TE15", "GB21", "ST8", "GB13", "GB14", "GB15", "GB16", "GB17", "GB18", "GB19", "GB20", "GV16", "GV15", "TE5"].includes(p.code);
-      if (code === "Yinqiao") return ["KI6", "KI8", "ST9", "BL1"].includes(p.code);
-      if (code === "Yinwei") return ["KI9", "SP12", "SP13", "SP15", "LR14", "CV22", "CV23", "PC6"].includes(p.code);
-    }
-    return p.channel === code || (p.code && p.code.startsWith(code));
-  });
-
-  if (!matchedPoints.length) {
-    matchedPoints = (points || []).filter(p => p.code && p.code.startsWith(code));
-  }
-
-  info.points_list = matchedPoints.map(p => ({
-    code: p.code,
-    nameZh: p.nameZh || p.code,
-    nameEn: p.nameEn || p.code
-  }));
-
-  return info;
 }
 
 function bindMatrixPointLinks(container) {
@@ -6683,251 +6204,6 @@ function renderConfluentPointsMatrixTable() {
               <td>${formatCell(r.master)}</td>
               <td>${formatCell(r.coupled)}</td>
               <td>${r.area}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-}
-
-function renderLowerHeMotherChildMatrixTable() {
-  const rows = [
-    { organ: "大腸 Large Intestine", lowerHe: "ST37 上巨虛", mother: "LI11 曲池 (土)", child: "LI2 二間 (水)", entry: "LI4 合谷", exit: "LI7 溫溜" },
-    { organ: "小腸 Small Intestine", lowerHe: "ST39 下巨虛", mother: "SI3 後谿 (木)", child: "SI8 小海 (土)", entry: "SI1 少澤", exit: "SI7 支正" },
-    { organ: "三焦 Triple Burner", lowerHe: "BL39 委陽", mother: "TE4 陽池 (土)", child: "TE2 液門 (水)", entry: "TE1 關衝", exit: "TE5 外關" },
-    { organ: "胃 Stomach", lowerHe: "ST36 足三里", mother: "ST41 解溪 (火)", child: "ST45 厲兌 (金)", entry: "ST1 承泣", exit: "ST42 衝陽" },
-    { organ: "膽 Gallbladder", lowerHe: "GB34 陽陵泉", mother: "GB43 俠溪 (水)", child: "GB38 陽輔 (火)", entry: "GB1 瞳子髎", exit: "GB41 足臨泣" },
-    { organ: "膀胱 Bladder", lowerHe: "BL40 委中", mother: "BL67 至陰 (金)", child: "BL65 束骨 (木)", entry: "BL1 睛明", exit: "BL58 飛揚" }
-  ];
-
-  const formatCell = (txt) => {
-    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
-    if (!m) return txt;
-    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
-  };
-
-  return `
-    <div class="master-matrix-wrap">
-      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
-        3. 下合穴、母子補瀉與出入穴總表 (Lower He-Sea, Mother-Child Tonification/Sedation, Entry/Exit Points)
-      </h3>
-      <table class="master-matrix-table">
-        <thead>
-          <tr>
-            <th>六腑 Organ</th>
-            <th>下合穴 Lower He-Sea</th>
-            <th>母穴 (補) Mother Point</th>
-            <th>子穴 (瀉) Child Point</th>
-            <th>出穴 Entry Point</th>
-            <th>入穴 Exit Point</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${rows.map(r => `
-            <tr>
-              <td class="channel-name-cell">${r.organ}</td>
-              <td>${formatCell(r.lowerHe)}</td>
-              <td>${formatCell(r.mother)}</td>
-              <td>${formatCell(r.child)}</td>
-              <td>${formatCell(r.entry)}</td>
-              <td>${formatCell(r.exit)}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-}
-
-function renderGroupLuoMatrixTable() {
-  const rows = [
-    { group: "足三陰經交會 (Three Yin of Foot)", point: "SP6 三陰交", area: "脾、肝、腎三經交會，主治生殖、婦科、脾胃與水腫" },
-    { group: "手三陰經交會 (Three Yin of Hand)", point: "PC6 內關", area: "心包、心、肺交會，主治心胸、胃痛與情志病" },
-    { group: "足三陽經交會 (Three Yang of Foot)", point: "GB39 懸鐘/絕骨", area: "膽、胃、膀胱交會，主治髓海、頸項與下肢麻痺" },
-    { group: "手三陽經交會 (Three Yang of Hand)", point: "TE8 三陽絡", area: "三焦、大腸、小腸交會，主治耳聾、臂痛與胸脇痛" }
-  ];
-
-  const formatCell = (txt) => {
-    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
-    if (!m) return txt;
-    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
-  };
-
-  return `
-    <div class="master-matrix-wrap">
-      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
-        5. 組絡穴與三陰三陽交會穴總表 (Group Luo & Three Yin/Yang Meeting Points)
-      </h3>
-      <table class="master-matrix-table">
-        <thead>
-          <tr>
-            <th>交會組別 Group Name</th>
-            <th>代表組絡穴 Group Luo Point</th>
-            <th>臨床主治範圍 Clinical Indications</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${rows.map(r => `
-            <tr>
-              <td class="channel-name-cell">${r.group}</td>
-              <td>${formatCell(r.point)}</td>
-              <td>${r.area}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-}
-
-function renderHuiAndCommandMatrixTable() {
-  const huiRows = [
-    { type: "臟會 (Zang/Solid Organs)", point: "LR13 章門", note: "脾之募穴，主治五臟病變與腹脹" },
-    { type: "腑會 (Fu/Hollow Organs)", point: "CV12 中脘", note: "胃之募穴，主治六腑病變與消化疾病" },
-    { type: "氣會 (Qi/Energy)", point: "CV17 膻中", note: "胸中氣海，主治氣病、喘咳與胸痛" },
-    { type: "血會 (Blood)", point: "BL17 膈俞", note: "血之會穴，主治血瘀、血虛與出血症" },
-    { type: "筋會 (Tendon/Muscles)", point: "GB34 陽陵泉", note: "膽經合穴，主治筋急、抽搐與關節拘攣" },
-    { type: "脈會 (Vessel/Pulse)", point: "LU9 太淵", note: "肺經原穴，主治脈痺、無脈症與血管疾病" },
-    { type: "骨會 (Bone)", point: "BL11 大杼", note: "膀胱經穴，主治骨痛、頸項強痛與脊柱病" },
-    { type: "髓會 (Marrow)", point: "GB39 懸鐘", note: "膽經穴，主治髓空、中風半身不遂與頭暈" }
-  ];
-
-  const commandRows = [
-    { song: "肚腹三里留", point: "ST36 足三里", area: "腹部、腸胃消化系統疾病" },
-    { song: "腰背委中求", point: "BL40 委中", area: "腰背部痛、坐骨神經痛、膝關節痛" },
-    { song: "頭項尋列缺", point: "LU7 列缺", area: "頭痛、項強、感冒、咽喉病症" },
-    { song: "面口合谷收", point: "LI4 合谷", area: "顏面部病症、牙痛、口眼喎斜" },
-    { song: "胸脇內關謀", point: "PC6 內關", area: "心胸痛、嘔吐、胸悶、情志病" },
-    { song: "急救水溝求", point: "GV26 水溝/人中", area: "昏迷、中風、休克急救醒腦" }
-  ];
-
-  const formatCell = (txt) => {
-    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
-    if (!m) return txt;
-    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
-  };
-
-  return `
-    <div class="master-matrix-wrap">
-      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
-        6. 八會穴與六總穴總表 (Eight Hui-Influential Points & Six Command Points)
-      </h3>
-
-      <h4 style="color: #2b4c3b; margin: 0.8rem 0 0.3rem; font-size: 1rem;">【八會穴 Eight Hui-Influential Points】</h4>
-      <table class="master-matrix-table">
-        <thead>
-          <tr>
-            <th>八會類別 Category</th>
-            <th>代表穴位 Point</th>
-            <th>臨床特徵與主治 Note</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${huiRows.map(r => `
-            <tr>
-              <td class="channel-name-cell">${r.type}</td>
-              <td>${formatCell(r.point)}</td>
-              <td>${r.note}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-
-      <h4 style="color: #2b4c3b; margin: 1.2rem 0 0.3rem; font-size: 1rem;">【六總穴 Six Command Points】</h4>
-      <table class="master-matrix-table">
-        <thead>
-          <tr>
-            <th>歌訣即口訣 Rhyme</th>
-            <th>代表穴位 Command Point</th>
-            <th>主治區域範圍 Target Area</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${commandRows.map(r => `
-            <tr>
-              <td class="channel-name-cell">${r.song}</td>
-              <td>${formatCell(r.point)}</td>
-              <td>${r.area}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-}
-
-function renderFourSeaAndGhostPointsMatrixTable() {
-  const seaRows = [
-    { sea: "髓海 (Sea of Marrow)", master: "GV20 百會, GV16 風府", note: "充髓養腦，主治頭暈、目眩、耳鳴、足軟" },
-    { sea: "氣海 (Sea of Qi)", master: "CV17 膻中, GV15 啞門, ST9 人迎", note: "調節全身氣機，主治胸悶、喘咳、少氣懶言" },
-    { sea: "水穀之海 (Sea of Nourishment)", master: "ST30 氣衝, ST36 足三里", note: "充養脾胃受納，主治腹脹、腸鳴、消化不良" },
-    { sea: "血海/十二經之海 (Sea of Blood)", master: "BL11 大杼, ST37 上巨虛, ST39 下巨虛", note: "調節全身氣血行止，主治血病、月經不調" }
-  ];
-
-  const ghostRows = [
-    { rank: "鬼宮 (1st Ghost)", point: "GV26 水溝/人中", note: "人中溝上1/3與中1/3交界處" },
-    { rank: "鬼信 (2nd Ghost)", point: "LU11 少商", note: "手大拇指末節顈側，距指甲角0.1寸" },
-    { rank: "鬼壘 (3rd Ghost)", point: "SP1 隱白", note: "足大趾末節內側，距指甲角0.1寸" },
-    { rank: "鬼心 (4th Ghost)", point: "PC7 大陵", note: "腕掌側遠端橫紋中，掌長肌腱與橈側腕屈肌腱之間" },
-    { rank: "鬼路 (5th Ghost)", point: "BL62 申脈", note: "外踝直下，外踝下緣與跟骨滑車突之間凹陷處" },
-    { rank: "鬼枕 (6th Ghost)", point: "GV16 風府", note: "後髮際正中直上1寸，枕外隆凸直下凹陷中" },
-    { rank: "鬼牀 (7th Ghost)", point: "ST6 頰車", note: "咬肌隆起處，下頜角前上方一橫指" },
-    { rank: "鬼市 (8th Ghost)", point: "CV24 承漿", note: "頦唇溝正中凹陷處" },
-    { rank: "鬼窟 (9th Ghost)", point: "PC8 勞宮", note: "掌心第2、3掌骨之間，握拳中指尖下" },
-    { rank: "鬼堂 (10th Ghost)", point: "GV23 上星", note: "前髮際正中直上1寸" },
-    { rank: "鬼藏 (11th Ghost)", point: "CV1 會陰", note: "會陰部正中" },
-    { rank: "鬼腿 (12th Ghost)", point: "LI11 曲池", note: "肘橫紋外側端，屈肘時尺澤與肱骨外上髁連線中點" },
-    { rank: "鬼封 (13th Ghost)", point: "EX-HN12 舌下間/海泉", note: "舌下繫帶中點" }
-  ];
-
-  const formatCell = (txt) => {
-    const m = txt.match(/^([A-Z0-9\-]+)\s+(.+)$/);
-    if (!m) return txt;
-    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
-  };
-
-  return `
-    <div class="master-matrix-wrap">
-      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
-        7. 四海穴與孫真人十三鬼穴總表 (Four Seas & Sun Simiao 13 Ghost Points)
-      </h3>
-
-      <h4 style="color: #2b4c3b; margin: 0.8rem 0 0.3rem; font-size: 1rem;">【四海穴 Four Seas】</h4>
-      <table class="master-matrix-table">
-        <thead>
-          <tr>
-            <th>四海名稱 Sea Name</th>
-            <th>代表穴位 Points</th>
-            <th>生理功能與主治 Function & Indications</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${seaRows.map(r => `
-            <tr>
-              <td class="channel-name-cell">${r.sea}</td>
-              <td>${r.master.split(',').map(formatCell).join(', ')}</td>
-              <td>${r.note}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-
-      <h4 style="color: #2b4c3b; margin: 1.2rem 0 0.3rem; font-size: 1rem;">【孫真人十三鬼穴 13 Ghost Points for Mental/Psychiatric Disorders】</h4>
-      <table class="master-matrix-table">
-        <thead>
-          <tr>
-            <th>鬼穴名稱 Ghost Point</th>
-            <th>對應穴位 Standard Point</th>
-            <th>取穴位置與說明 Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${ghostRows.map(r => `
-            <tr>
-              <td class="channel-name-cell">${r.rank}</td>
-              <td>${formatCell(r.point)}</td>
-              <td>${r.note}</td>
             </tr>
           `).join('')}
         </tbody>
