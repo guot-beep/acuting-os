@@ -1,5 +1,19 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 22:35] Antigravity Handoff — GUI ZHI TANG & MA HUANG TANG CURATED & BODY REGION FILTER FIXED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `4b3e6a2`
+- **Root Cause & Fix**:
+  - **Gui Zhi Tang & Ma Huang Tang Template-Grade Curation**: Fully curated `formula.gui_zhi_tang` and `formula.ma_huang_tang` according to `docs/FORMULA_CARD_TEMPLATE.md` and `data/herbs/reference/formula.ma_huang_tang.json`. Included full bilingual fields, `formula_song_zh`, `glance`, `composition` with exact roles (`君臣佐使`) and per-herb doses, `key_pairs`, `fang_yi_zh`/`fang_yi_en`, `actions_zh`/`actions_en`, `indications` (pattern, clinical picture, tongue, pulse), `modifications`, `contraindications_zh`/`contraindications_en`, `comparisons`, `formula_family`, and `field_sources`.
+  - **Body Region Filters Fix**: Added `defaultDirectoryRegionGroups` fallback in `app.js` and updated `bindDirectoryButtons` for `action === "regionGroup"` to clear conflicting sub-filters (`selectedSystem`, `selectedSystemBranch`, `meridianFilter`, `directoryTungZone`, `directoryPointCategory`, `directoryTopic`). Body region buttons (`頭面頸部` 244 穴, `胸腹部` 139 穴, `背腰骶部` 108 穴, `上肢` 99 穴, `下肢` 100 穴, `耳穴` 29 穴) now filter cards cleanly and accurately!
+- **Validation**:
+  - `scripts/validate-formula-standard.js`: **PASS (0 blocking defects)** ✅
+  - `scripts/validate-formula-song.js`: **PASS (102 formulas with songs, 0 defects)** ✅
+  - `scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 21:47] Antigravity Handoff — CHANNEL CHARTS LINK & SCROLL ROUTER RESOLVED 🎉
 
 - **Agent**: Antigravity
