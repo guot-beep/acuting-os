@@ -58,42 +58,161 @@ const NAME_ZH = {
   'pattern.yin_deficiency': '陰虛',
   'pattern.yang_deficiency': '陽虛',
   'pattern.qi_deficiency': '氣虛',
+  'pattern.blood_deficiency': '血虛',
+  'pattern.kidney_deficiency': '腎虛',
+  'pattern.fire': '火',
+  'pattern.heat': '熱',
+  'pattern.damp_heat': '濕熱',
+  'pattern.phlegm': '痰',
+  'pattern.wind_external': '外風',
+  'pattern.heart_fire': '心火亢盛',
+  'pattern.heart_yang_deficiency': '心陽虛',
+  'pattern.heart_yin_deficiency': '心陰虛',
+  'pattern.heart_qi_deficiency': '心氣虛',
+  'pattern.spleen_yang_deficiency': '脾陽虛',
+  'pattern.spleen_kidney_yang_deficiency': '脾腎陽虛',
+  'pattern.stomach_yin_deficiency': '胃陰虛',
+  'pattern.liver_yin_deficiency': '肝陰虛',
+  'pattern.liver_gallbladder_damp_heat': '肝膽濕熱',
+  'pattern.phlegm_damp_in_lung': '痰濕阻肺',
+  'pattern.phlegm_heat_in_lung': '痰熱壅肺',
+  'pattern.wind_cold_invading_lung': '風寒犯肺',
+  'pattern.wind_heat_invading_lung': '風熱犯肺',
+  'pattern.stomach_fire': '胃火熾盛',
   'pattern.chong_ren_disharmony': '衝任不調',
   'pattern.cold_stagnation_liver_channel': '寒凝肝脈',
   'pattern.food_stagnation': '飲食積滯',
   'pattern.heart_blood_stasis': '心血瘀阻',
-  'pattern.heart_fire': '心火亢盛',
-  'pattern.heart_qi_deficiency': '心氣虛',
-  'pattern.heart_yang_deficiency': '心陽虛',
-  'pattern.heart_yin_deficiency': '心陰虛',
   'pattern.heat_bi': '熱痺',
-  'pattern.kidney_deficiency': '腎虛',
   'pattern.kidney_not_grasping_qi': '腎不納氣',
   'pattern.kidney_qi_not_firm': '腎氣不固',
-  'pattern.liver_gallbladder_damp_heat': '肝膽濕熱',
   'pattern.liver_spleen_disharmony': '肝脾不和',
   'pattern.liver_stomach_disharmony': '肝胃不和',
   'pattern.liver_wind': '肝風內動',
-  'pattern.liver_yin_deficiency': '肝陰虛',
-  'pattern.phlegm_damp_in_lung': '痰濕阻肺',
-  'pattern.phlegm_heat_in_lung': '痰熱阻肺',
   'pattern.phlegm_misting_heart': '痰迷心竅',
-  'pattern.spleen_kidney_yang_deficiency': '脾腎陽虛',
   'pattern.spleen_not_governing_blood': '脾不統血',
   'pattern.spleen_qi_sinking': '中氣下陷',
-  'pattern.stomach_yin_deficiency': '胃陰虛',
-  'pattern.wind_cold_invading_lung': '風寒犯肺',
-  'pattern.wind_heat_invading_lung': '風熱犯肺',
-  'pattern.blood_deficiency': '血虛',
 };
 
-/* Ids that look like a vaguer restatement of a more specific pattern already
- * in use. Not merged automatically — which one was meant in each card is a
- * clinical call, so they are flagged for Ting. */
-const SUSPECTED_DUPES = {
-  'pattern.kidney_deficiency': ['pattern.kidney_yang_deficiency', 'pattern.kidney_yin_deficiency', 'pattern.kidney_essence_deficiency'],
-  'pattern.blood_deficiency': ['pattern.liver_blood_deficiency', 'pattern.heart_blood_deficiency', 'pattern.qi_blood_deficiency'],
+/* Category-level patterns. 腎虛 is not a vague way of saying 腎陽虛 — it is the
+ * class that 腎陽虛, 腎陰虛 and 腎精不足 belong to, and those three are exactly
+ * what a differentiation table for it compares. So these ids are legitimate
+ * and stay; they are marked level=category rather than merged away.
+ *
+ * Membership is deliberately many-to-many. 腎陰虛 belongs to BOTH 腎虛 (by
+ * organ) and 陰虛 (by nature), because TCM patterns are classified on two
+ * crossing axes, not one tree. A single parent field cannot say that. */
+const CATEGORIES = {
+  'pattern.kidney_deficiency': {
+    axis: 'zang_fu',
+    members: ['pattern.kidney_yang_deficiency', 'pattern.kidney_yin_deficiency',
+      'pattern.kidney_essence_deficiency', 'pattern.kidney_qi_not_firm', 'pattern.kidney_not_grasping_qi'],
+  },
+  'pattern.blood_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.liver_blood_deficiency', 'pattern.heart_blood_deficiency'],
+  },
+  'pattern.qi_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.spleen_qi_deficiency', 'pattern.lung_qi_deficiency', 'pattern.heart_qi_deficiency'],
+  },
+  'pattern.yin_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.kidney_yin_deficiency', 'pattern.lung_yin_deficiency', 'pattern.heart_yin_deficiency',
+      'pattern.stomach_yin_deficiency', 'pattern.liver_yin_deficiency'],
+  },
+  'pattern.yang_deficiency': {
+    axis: 'bing_xing',
+    members: ['pattern.kidney_yang_deficiency', 'pattern.spleen_yang_deficiency',
+      'pattern.heart_yang_deficiency', 'pattern.spleen_kidney_yang_deficiency'],
+  },
+
+  /* The excess patterns work the same way, per Ting: 心火, 肝火 and 胃火 are
+   * all fire and all different, and the difference is the differentiation. */
+  'pattern.fire': {
+    axis: 'bing_xing',
+    members: ['pattern.liver_fire', 'pattern.heart_fire', 'pattern.stomach_fire'],
+    note_zh: '胃火與胃熱分立（Ting 2026-07-31 定案）。來源不一:部分教材視二者為同義,部分依「火為熱之極」區分——胃火熾盛症狀更劇（消谷善飢、牙齦腫痛出血、口臭、便秘、舌紅苔黃燥）。NCBAHM 用 Stomach Fire Blazing。兩說並記,不擇一。',
+  },
+  'pattern.heat': {
+    axis: 'bing_xing',
+    members: ['pattern.blood_heat', 'pattern.stomach_heat'],
+  },
+  'pattern.damp_heat': {
+    axis: 'bing_xing',
+    members: ['pattern.damp_heat_lower_burner', 'pattern.damp_heat_spleen_stomach',
+      'pattern.liver_gallbladder_damp_heat'],
+  },
+  'pattern.phlegm': {
+    axis: 'bing_xing',
+    members: ['pattern.phlegm_damp', 'pattern.phlegm_damp_in_lung',
+      'pattern.phlegm_heat_in_lung', 'pattern.phlegm_misting_heart'],
+  },
+  'pattern.wind_external': {
+    axis: 'bing_xing',
+    members: ['pattern.wind_cold', 'pattern.wind_heat',
+      'pattern.wind_cold_invading_lung', 'pattern.wind_heat_invading_lung'],
+  },
 };
+
+/* Ting's ruling: 肝脾不和 and 肝胃不和 are different situations, not subtypes
+ * of 肝氣鬱結 — treating them as one thing was the mis-tagging, and the cost
+ * showed up here. So these stay separate patterns and the relationship is
+ * recorded as "may develop into", not as class membership. Same for 血瘀. */
+const RELATED = {
+  'pattern.liver_qi_stagnation': {
+    develops_into: ['pattern.liver_spleen_disharmony', 'pattern.liver_stomach_disharmony'],
+    note_zh: '肝氣鬱結久則橫逆犯脾或犯胃,但肝脾不和、肝胃不和各是獨立的證,不是肝鬱的下位分類——三者需鑑別。',
+  },
+  'pattern.blood_stasis': {
+    develops_into: ['pattern.heart_blood_stasis', 'pattern.qi_stagnation_blood_stasis'],
+    note_zh: '血瘀是獨立診斷;心血瘀阻、氣滯血瘀各有其病機重點,需鑑別而非包含。',
+  },
+};
+
+/* 辨證體系 — the third dimension. 八綱, 臟腑, 六經 and the rest are not axes
+ * of one classification; they are separate diagnostic systems that describe
+ * the same patient from different angles. A pattern belongs to the system it
+ * was formulated in. */
+const SYSTEMS = {
+  ba_gang: '八綱辨證',
+  zang_fu: '臟腑辨證',
+  qi_xue_jin_ye: '氣血津液辨證',
+  liu_jing: '六經辨證',
+  wei_qi_ying_xue: '衛氣營血辨證',
+  san_jiao: '三焦辨證',
+  bing_yin: '病因辨證',
+};
+
+/* Explicit assignment. Anything not listed ships with needs_system=true
+ * rather than a guess — the system a pattern belongs to is a textbook fact,
+ * not something to infer from its name. */
+const SYSTEM_OF = {
+  'pattern.yin_deficiency': 'ba_gang',
+  'pattern.yang_deficiency': 'ba_gang',
+  'pattern.qi_deficiency': 'qi_xue_jin_ye',
+  'pattern.blood_deficiency': 'qi_xue_jin_ye',
+  'pattern.qi_blood_deficiency': 'qi_xue_jin_ye',
+  'pattern.blood_stasis': 'qi_xue_jin_ye',
+  'pattern.qi_stagnation_blood_stasis': 'qi_xue_jin_ye',
+  'pattern.blood_heat': 'qi_xue_jin_ye',
+  'pattern.phlegm': 'qi_xue_jin_ye',
+  'pattern.phlegm_damp': 'qi_xue_jin_ye',
+  'pattern.wind_cold': 'bing_yin',
+  'pattern.wind_heat': 'bing_yin',
+  'pattern.cold_damp': 'bing_yin',
+  'pattern.wind_damp_bi': 'bing_yin',
+  'pattern.wind_external': 'bing_yin',
+  'pattern.heat': 'ba_gang',
+  'pattern.fire': 'ba_gang',
+  'pattern.damp_heat': 'bing_yin',
+};
+
+// id -> the categories it belongs to (a pattern may belong to several)
+const MEMBER_OF = new Map();
+Object.entries(CATEGORIES).forEach(([cat, def]) => def.members.forEach((m) => {
+  MEMBER_OF.set(m, [...(MEMBER_OF.get(m) || []), cat]);
+}));
 
 const arr = (o, k) => (Array.isArray(o) ? o : (o && o[k]) || []);
 
@@ -112,6 +231,20 @@ function main() {
     (Array.isArray(l) ? l : []).forEach((p) => touch(typeof p === 'string' ? p : p && p.id, 'conditions', c.id))));
   comparisons.forEach((m) => (m.compares || []).forEach((p) => touch(p, 'comparisons', m.id)));
 
+  /* A registry defines the vocabulary, not just the parts of it currently in
+   * use. Category ids are registered even with zero references — otherwise
+   * 腎陽虛 would point at 陽虛 as a parent that exists nowhere, which is the
+   * dangling-reference problem this file was created to end. */
+  Object.keys(CATEGORIES).forEach((id) => {
+    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
+  });
+
+  /* 胃火 registered alongside 胃熱, per Ting. Sources genuinely disagree —
+   * some texts treat 胃熱 and 胃火 as one thing, others hold 火為熱之極 and
+   * reserve 胃火熾盛 for the severe presentation, which is the name the board
+   * uses. Both readings are recorded rather than one being picked. */
+  if (!use.has('pattern.stomach_fire')) use.set('pattern.stomach_fire', { conditions: [], comparisons: [] });
+
   const records = [...use.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([id, u]) => {
     const rec = {
       id,
@@ -123,24 +256,62 @@ function main() {
       source_type: 'derived_from_usage',
     };
     if (!rec.name_zh) rec.needs_name_zh = true;
-    if (!u.conditions.length) {
-      rec.orphan_note_zh = '僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤或應併入更具體的證型。';
+
+    const cat = CATEGORIES[id];
+    if (cat) {
+      rec.level = 'category';
+      rec.classified_by = cat.axis;              // zang_fu 臟腑軸 / bing_xing 病性軸
+      rec.members = cat.members;
+      rec.category_note_zh = '上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。';
+    } else {
+      rec.level = 'pattern';
+      const parents = MEMBER_OF.get(id);
+      if (parents) rec.member_of = parents;      // 可能同時屬於臟腑軸與病性軸
     }
-    if (SUSPECTED_DUPES[id]) {
-      rec.suspected_duplicate_of = SUSPECTED_DUPES[id];
-      rec.needs_owner_decision_zh = '此 id 較籠統,可能應併入上列較具體的證型。合併與否屬臨床判斷,待 Ting 決定。';
+
+    if (RELATED[id]) {
+      rec.develops_into = RELATED[id].develops_into;
+      rec.relation_note_zh = RELATED[id].note_zh;
+    }
+
+    // 辨證體系 — the third dimension
+    const sys = SYSTEM_OF[id] || (rec.level === 'pattern' && MEMBER_OF.has(id) ? null : null);
+    if (sys) {
+      rec.system = sys;
+      rec.system_zh = SYSTEMS[sys];
+    } else if (/^pattern\.(heart|liver|spleen|lung|kidney|stomach|gallbladder|bladder|intestine)/.test(id)) {
+      // Organ-named patterns are 臟腑辨證 by construction — that is what the
+      // system is: patterns stated in terms of a Zang-Fu organ.
+      rec.system = 'zang_fu';
+      rec.system_zh = SYSTEMS.zang_fu;
+    } else {
+      rec.needs_system = true;
+    }
+    if (!u.conditions.length && !u.comparisons.length && !cat) {
+      rec.newly_registered_note_zh = '登錄為正式詞彙,尚未被任何病症或鑑別卡引用。';
+    } else if (!u.conditions.length && !cat) {
+      rec.orphan_note_zh = '僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤,待確認。';
     }
     return rec;
   });
 
   const named = records.filter((r) => r.name_zh).length;
   const orphans = records.filter((r) => r.orphan_note_zh);
+  const cats = records.filter((r) => r.level === 'category');
+  const multi = records.filter((r) => (r.member_of || []).length > 1);
   console.log('===== 證型登錄檔 =====\n');
   console.log(`證型總數        ${records.length}`);
+  console.log(`  上位分類      ${cats.length}`);
+  console.log(`  具體證型      ${records.length - cats.length}`);
   console.log(`  已有中文名    ${named}`);
   console.log(`  待補中文名    ${records.length - named}`);
-  console.log(`  僅見於鑑別卡  ${orphans.length}`);
-  if (orphans.length) { console.log('\n--- 孤兒 id（需要你判斷）---'); orphans.forEach((o) => console.log(`  ${o.id}${o.suspected_duplicate_of ? '  疑似應併入: ' + o.suspected_duplicate_of.join(' / ') : ''}`)); }
+  console.log(`  孤兒          ${orphans.length}`);
+
+  console.log('\n--- 上位分類與成員 ---');
+  cats.forEach((c) => console.log(`  ${(c.name_zh || c.id).padEnd(6)} [${c.classified_by}]  ${c.members.length} 個成員`));
+  console.log(`\n--- 同時屬於兩軸的證型（單一 parent 表達不了）---`);
+  multi.forEach((m) => console.log(`  ${(m.name_zh || m.id).padEnd(22)} → ${m.member_of.join(' + ')}`));
+  if (orphans.length) { console.log('\n--- 孤兒 id ---'); orphans.forEach((o) => console.log('  ' + o.id)); }
 
   const noName = records.filter((r) => !r.name_zh);
   if (noName.length) { console.log('\n--- 待補中文名 ---'); noName.forEach((r) => console.log(`  ${r.id.padEnd(44)} 引用 ${r.used_by_conditions + r.used_by_comparisons}`)); }
