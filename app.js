@@ -503,9 +503,28 @@ let editingSoapId = null;
 let isSyncingPointHash = false;
 
 const searchInput = document.querySelector("#searchInput");
-const meridianFilter = document.querySelector("#meridianFilter");
-const regionFilter = document.querySelector("#regionFilter");
-const patternFilter = document.querySelector("#patternFilter");
+/* These three <select> boxes were removed from index.html when the sidebar
+ * became accordions, but they were the only place the meridian/region/pattern
+ * filter state lived, and a dozen sites still read and write .value on them.
+ * Three of those sites had no null guard, so hydrateFilters() threw on load,
+ * render() aborted before it drew anything, and the acupoint directory came up
+ * empty with the counters stuck at their initial "--" — silently, because the
+ * throw happened during init and never reached the console.
+ *
+ * A stand-in with the same shape keeps that state working without reinstating
+ * the boxes or scattering guards across every call site. */
+/* Channel & Point Charts state. Declared here rather than beside
+ * renderChannelsWorkspace() further down: render() runs during init, well
+ * before that line executes, so a `let` down there sits in the temporal dead
+ * zone and reading it throws — which aborted render() and left the acupoint
+ * directory blank. Same failure the branch hit with activeChannelsTab. */
+let activeChannelCode = "LU";
+let activeChartMode = ""; // "" for channel overview, or "fiveshu", "yuanluoxi", "confluent"
+
+const detachedFilterState = () => ({ value: "" });
+const meridianFilter = document.querySelector("#meridianFilter") || detachedFilterState();
+const regionFilter = document.querySelector("#regionFilter") || detachedFilterState();
+const patternFilter = document.querySelector("#patternFilter") || detachedFilterState();
 const meridianCategoryList = document.querySelector("#meridianCategoryList");
 const regionCategoryList = document.querySelector("#regionCategoryList");
 const topicCategoryList = document.querySelector("#topicCategoryList");
@@ -938,6 +957,7 @@ searchInput?.addEventListener("keydown", (event) => {
 });
 
 [searchInput, meridianFilter, regionFilter, patternFilter].forEach((el) => {
+  if (!el || typeof el.addEventListener !== "function") return;  // detached filter state
   el.addEventListener("input", () => {
     if (el === regionFilter) directoryRegionGroup = "";
     if (el === patternFilter) directoryTopic = "";
@@ -2166,6 +2186,12 @@ function meridianLabelEn(value) {
 }
 
 function fillSelect(select, firstLabel, values) {
+  // The filter may be the detached stand-in rather than a real <select>; there
+  // are no options to build then, but the retained value must still be valid.
+  if (!select || typeof select.append !== "function") {
+    if (select && !values.includes(select.value)) select.value = "";
+    return;
+  }
   const current = select.value;
   select.innerHTML = `<option value="">${firstLabel}</option>`;
   values.forEach((value) => {
@@ -5818,8 +5844,6 @@ function escapeAttribute(value) {
 }
 
 /* ── Channel & Point Charts Workspace (經脈總覽與特定穴對照圖表) ────── */
-let activeChannelCode = "LU";
-let activeChartMode = ""; // "" for channel overview, or "fiveshu", "yuanluoxi", "confluent"
 
 function renderChannelsWorkspace() {
   const launcher = document.getElementById("channelsQuickLauncher");
