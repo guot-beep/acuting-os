@@ -3648,8 +3648,31 @@
         "NCBAHM_2026_CH_Appendix_B",
         "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L413-L432"
       ]
+    },
+    {
+      "id": "pair.ban_xia__chen_pi",
+      "herbs": [
+        "herb.ban_xia",
+        "herb.chen_pi"
+      ],
+      "name_zh": "半夏配陳皮",
+      "name_en": "Ban Xia with Chen Pi",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "半夏辛溫燥濕化痰、降逆止嘔，長於治已成之痰；陳皮理氣健脾、燥濕化痰，長於斷生痰之源。兩藥相須，一化痰一理氣——「治痰先治氣，氣順則痰消」，且二者皆以陳久者為佳，故名二陳湯，為燥濕化痰的基本方根。",
+      "pair_meaning_en": "Ban Xia dries Damp, transforms Phlegm and descends rebellion, acting on phlegm already formed; Chen Pi regulates Qi and strengthens the Spleen, cutting off phlegm at its source. Treating Qi to treat phlegm — and since both are best aged (chen), the pair names Er Chen Tang, the root formula for Damp-Phlegm.",
+      "indication_zh": "痰濕證：咳嗽痰多色白、胸膈痞悶、噁心嘔吐、頭暈心悸、舌苔白膩",
+      "indication_en": "Damp-Phlegm: cough with profuse white sputum, chest oppression, nausea and vomiting, dizziness and palpitations, white greasy tongue coating",
+      "caution_zh": "燥性偏強，陰虛燥咳、痰中帶血、津傷口渴者忌用；半夏反烏頭類，內服須用炮製品。",
+      "caution_en": "Drying: avoid in Yin-deficiency dry cough, blood-streaked sputum, or fluid damage with thirst. Ban Xia is incompatible with aconite-family herbs and only processed forms are taken internally.",
+      "found_in_formulas": [
+        "formula.er_chen_tang"
+      ],
+      "sources": [
+        "NCBAHM_2026_CH_Appendix_B",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400"
+      ]
     }
   ],
   "updated_at": "2026-07-30",
-  "total_pairs": 160
+  "total_pairs": 161
 }

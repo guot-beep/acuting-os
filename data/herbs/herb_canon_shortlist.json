@@ -26536,7 +26536,7 @@
     {
       "id": "herb.chen_pi",
       "name_zh": "陳皮",
-      "name_en": "Tangerine Peel",
+      "name_en": "Aged Tangerine Peel",
       "pinyin": "Chen Pi",
       "category": "理氣藥 / Regulate Qi",
       "channels_entered": [
@@ -26545,7 +26545,7 @@
       ],
       "source_hint": "Bensky Materia Medica: Regulate Qi",
       "review_status": "draft",
-      "properties_taste_temp": "辛、苦、溫",
+      "properties_taste_temp": "辛、苦，溫，芳香",
       "functions": [
         "理氣行氣",
         "止咳化痰",
@@ -26590,9 +26590,13 @@
       ],
       "safety_flags": [
         "pregnancy_review",
-        "dryness_review"
+        "dryness_review",
+        "yin_deficiency_dry_cough_contraindication",
+        "stomach_fire_contraindication",
+        "excess_heat_caution",
+        "fluid_deficiency_caution"
       ],
-      "clinical_use_note": "陳皮是中藥，別名:橘葉,橘核,橘皮,橘絡,橘紅, 功效:理氣健脾，燥濕化痰理氣行氣,止咳化痰,抗潰瘍作用,抗菌、抗病毒,利水滲濕,健脾胃,保肝利膽,升高血壓,抗氧化,本品辛行溫通，有行氣止痛、健脾和中之功，又因味苦燥濕，故寒濕阻中的脾胃氣滯，脘腹脹痛、噁心嘔吐、泄瀉者，用之尤為適宜",
+      "clinical_use_note": "陳皮的臨床價值在「一藥兩用」：既理氣健脾（治脹滿噯氣），又燥濕化痰（治痰多咳嗽），所以脾虛生痰這種本虛標實的證候特別對證。它大量出現在方劑裡還有第二個原因——當佐藥防止補藥滋膩礙胃，這是 AD 特別列出的一條功效。與青皮的鑑別要記：陳皮和緩走中焦、青皮峻烈走肝膽。乾咳無痰或胃火嘔吐者忌用。",
       "modern_use_tags": [
         "bloating_context",
         "gerd_context",
@@ -26665,31 +26669,25 @@
       "dosage": "{\r\n  \"一般建議\": \"3-10克\",\r\n  \"食療用量範圍\": \"3-9克\",\r\n  \"特殊說明\": \"入湯劑常規煎煮即可；陳久者藥效更佳；氣虛證者慎用\"\r\n}",
       "cautions": "陳皮注意事項\n脾胃虛寒者不宜過量食用，因其溫熱辛辣，易刺激脾胃，加重症狀。\n孕婦和哺乳期婦女不宜過度食用，因其刺激性，可能影響胎兒或嬰兒。\n使用血液稀釋藥、抗血小板藥等藥物者不宜過量食用，因其抗凝血作用，會影響藥效。\n胃腸功能不良者應避免過量食用，因其味辛，易刺激胃腸，引起不適。\n陳皮可能會引起過敏反應，如皮膚發紅、發癢、呼吸困難，應立即停止使用並就醫。",
       "source_urls": [
-        "https://cloudtcm.com/herb/986"
+        "https://cloudtcm.com/herb/986",
+        "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
       ],
-      "exact_source_url": "https://cloudtcm.com/herb/986",
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
       "fetched_at": "2026-07-23T07:20:19.982Z",
       "public_safe": false,
-      "source_type": "sourced_cloudtcm_record",
+      "source_type": "full_card_verified_multi_source",
       "cautions_zh": [
-        "脾胃虛寒者不宜過量食用，因其溫熱辛辣，易刺激脾胃，加重症狀。",
-        "孕婦和哺乳期婦女不宜過度食用，因其刺激性，可能影響胎兒或嬰兒。",
-        "使用血液稀釋藥、抗血小板藥等藥物者不宜過量食用，因其抗凝血作用，會影響藥效。",
-        "胃腸功能不良者應避免過量食用，因其味辛，易刺激胃腸，引起不適。",
-        "陳皮可能會引起過敏反應，如皮膚發紅、發癢、呼吸困難，應立即停止使用並就醫。"
+        "American Dragon：實熱、熱痰、燥熱咳嗽或津液不足者慎用。",
+        "辛香走竄，久服或大量易耗氣傷陰。"
       ],
-      "safety_source_url": "https://cloudtcm.com/herb/986",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
       "safety_fetched_at": "2026-07-23T07:25:18.044Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "理氣行氣",
-        "止咳化痰",
-        "健脾胃",
-        "消食化積",
-        "燥濕",
-        "活絡止痛",
-        "保肝",
-        "利膽"
+        "理氣健脾",
+        "燥濕化痰",
+        "降氣止嘔",
+        "防補藥滯膩"
       ],
       "modern_functions_zh": [
         "抗潰瘍作用",
@@ -26751,11 +26749,16 @@
       ],
       "category_zh": "理氣藥",
       "channels_zh": [
+        "肺經",
         "脾經",
-        "肺經"
+        "胃經"
       ],
       "indications_zh": [
-        "理氣健脾；燥濕化痰"
+        "脾胃氣滯之脘腹脹滿、噯氣、食少。",
+        "痰濕壅肺之咳嗽痰多、胸膈痞悶。",
+        "胃氣上逆之噁心嘔吐（配生薑、竹茹，橘皮湯）。",
+        "肝木乘脾之腹痛泄瀉（配白朮、白芍、防風，痛瀉要方）。",
+        "補益方中佐用，防補藥滋膩礙胃。"
       ],
       "study_tags": [
         "單味中藥",
@@ -26765,7 +26768,15 @@
       ],
       "tags_fetched_at": "2026-07-23",
       "condition_tags_zh": [
-        "理氣健脾燥濕化痰"
+        "脾胃氣滯",
+        "脘腹脹滿",
+        "噯氣",
+        "食少",
+        "痰濕咳嗽",
+        "痰多",
+        "胸膈痞悶",
+        "噁心嘔吐",
+        "腹痛泄瀉"
       ],
       "cloudtcm_url": "https://cloudtcm.com/herb/986",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
@@ -26774,19 +26785,26 @@
       "atlas_link_status": "index",
       "field_sources": {
         "properties_taste_temp": [
-          "https://cloudtcm.com/herb/986"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
         ],
         "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
           "https://cloudtcm.com/herb/986"
         ],
         "functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
           "https://cloudtcm.com/herb/986"
         ],
         "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
           "https://cloudtcm.com/herb/986"
         ],
         "dosage": [
-          "https://cloudtcm.com/herb/986"
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
         ],
         "condition_tags_zh": [
           "https://cloudtcm.com/herb/986"
@@ -26804,10 +26822,135 @@
           "https://cloudtcm.com/herb/986"
         ],
         "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
+        ],
+        "identity": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
+          "https://cloudtcm.com/herb/986"
+        ],
+        "actions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
+        ],
+        "indications_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
+        ],
+        "contraindications_en": [
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
+        ],
+        "cautions_en": [
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "https://www.americandragon.com/Individualherbsupdate/ChenPi.html"
+        ],
+        "exam_pearl": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "modern_functions_en": [
           "https://cloudtcm.com/herb/986"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "template",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "updated_at": "2026-07-30",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "review_notes_zh": "AI draft：五源核讀（Appendix A 在範圍內；Appendix B 有 1 組對藥：半夏+陳皮；課件列肺脾二經，AD 與 CloudTCM 加胃經，已並記）。禁忌由 cautions 升級。仍待 Ting/RV1 源審核。",
+      "pharmaceutical_latin": "Pericarpium Citri Reticulatae",
+      "pinyin_toned": "Chén Pí",
+      "part_used_zh": "乾燥成熟果皮",
+      "part_used_en": "dried ripe pericarp",
+      "property_channel_source_note_zh": "課件列肺、脾二經（標註走上、中焦）；American Dragon 與 CloudTCM 均加胃經。主欄採三源聯集，課件的二經寫法列於此。",
+      "key_pairs": [],
+      "actions_en": [
+        "Regulates Qi, adjusts the Middle and strengthens Spleen transportation",
+        "Dries Dampness and transforms Phlegm",
+        "Descends Qi and stops nausea and vomiting",
+        "Prevents stagnation caused by tonifying herbs"
+      ],
+      "indications_en": [
+        "Spleen-Stomach Qi stagnation with epigastric fullness, belching and poor appetite.",
+        "Phlegm-Damp congesting the Lung with cough, profuse sputum and chest oppression.",
+        "Rebellious Stomach Qi with nausea and vomiting (with Sheng Jiang and Zhu Ru, Ju Pi Tang).",
+        "Liver overacting on Spleen with abdominal pain and diarrhea (with Bai Zhu, Bai Shao, Fang Feng — Tong Xie Yao Fang).",
+        "Used as an assistant in tonifying formulas to prevent cloying herbs from obstructing the Stomach."
+      ],
+      "condition_tags_en": [
+        "Spleen-Stomach Qi stagnation",
+        "Epigastric fullness",
+        "Belching",
+        "Poor appetite",
+        "Phlegm-Damp cough",
+        "Profuse sputum",
+        "Chest oppression",
+        "Nausea and vomiting",
+        "Abdominal pain with diarrhea"
+      ],
+      "contraindications_zh": [
+        "陰虛或氣虛之乾咳無痰者忌服。",
+        "胃火熾盛之噁心嘔吐者忌服。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in dry cough without phlegm from Yin or Qi deficiency.",
+        "Contraindicated in nausea and vomiting caused by Stomach Fire."
+      ],
+      "cautions_en": [
+        "American Dragon: use cautiously with Excess Heat, Hot Phlegm, dry-heat cough, or fluid deficiency.",
+        "Acrid and aromatic — prolonged or high-dose use may consume Qi and injure Yin."
+      ],
+      "dosage_g": {
+        "standard_daily_g": "3–9g（American Dragon）",
+        "ad_dose_g": "3–9g；tincture 1–4mL；精油 2–3 滴",
+        "source_note": "陳久者良（故名「陳」皮）。理氣宜生用，化痰可炒用。"
+      },
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；Appendix B 收錄一組對藥（半夏配陳皮）。",
+      "exam_pearl": "★★ 二陳湯之「二陳」＝半夏＋陳皮，兩者皆以陳久者為佳，是燥濕化痰的基本方根（Appendix B 對藥）。考點：① 理氣藥中唯一兼能燥濕化痰者，故脾胃氣滯兼痰濕最宜 ② 補益方中常佐陳皮防滋膩礙胃——這是它出現在 16 首方的主因 ③ 乾咳無痰、胃火嘔吐者忌用。與青皮鑑別：陳皮理氣偏中焦而和緩，青皮破氣偏肝膽而峻烈。",
+      "source_citations": [
+        {
+          "name": "📘 NCBAHM 2026 CH 考綱 Appendix A/B",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "scope": "考試範圍；Appendix B 半夏配陳皮"
+        },
+        {
+          "name": "📘 課件 Chenoweth abbreviated materia medica",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L2366-L2400",
+          "scope": "課件段落：性味歸經、功效、主治與配伍（橘皮湯、痛瀉要方、二陳湯）"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ChenPi.html",
+          "scope": "精準頁：拉丁藥名、性味歸經、四大功效（含防補藥滯膩）、劑量、禁忌"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/986",
+          "scope": "精準頁：理氣健脾燥濕化痰、主治、現代藥理（揮發油促消化液分泌、祛痰）"
+        }
+      ],
+      "modern_functions_en": [
+        "Anti-ulcer",
+        "Hepatoprotective and cholagogue",
+        "Raises blood pressure",
+        "Antibacterial and antiviral",
+        "Antioxidant",
+        "Antitumor / cancer-preventive",
+        "Antimutagenic",
+        "Antibacterial",
+        "Anti-ulcer"
+      ]
     },
     {
       "id": "herb.zhi_ke",
