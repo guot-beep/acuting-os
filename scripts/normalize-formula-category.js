@@ -10,7 +10,7 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
-const APPLY = process.argv.includes("--apply");
+const APPLY = process.argv.includes("--apply") || process.argv.includes("--write");
 const FILE = path.join(ROOT, "data/herbs/formulas.json");
 
 const CANONICAL_CATEGORIES = [
