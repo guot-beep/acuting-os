@@ -1,5 +1,18 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 21:34] Antigravity Handoff — AURICULAR LCH 14 ZONES & ALL-SYSTEM RESET FIXED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `57b7139`
+- **Root Cause & Fix**:
+  - **Ear Zone Counts = 0 Issue**: `renderDirectoryFilters()` was previously checking `p.standardRegion.startsWith(z.id)`, which returned `0` for all ear zones because ear points use prefixes like `AT4`, `EAR-SM`, `EAR-LUNG`, or contain zone keywords in `p.location`. Created `pointMatchesEarZone(point, zoneId)` matching `code`, `location`, `nameZh`, and `standardZone`. All 14 LCH ear zones (TF 三角窩, AH 對耳輪, SAC 上腳, IAC 下腳, AT 對耳屏, TR 耳屏, CVC 耳甲腔, CYC 耳甲艇, EL 耳垂, SC 耳舟, HX 耳輪, HCS 耳輪腳, IN 屏間切跡, POS 耳背) now report accurate non-zero counts and filter correctly!
+  - **全庫體系 Reset**: Updated `.system-tab-btn` and `bindDirectoryButtons` (`allSystem` / `switchSystem`) to clear all sub-filter states (`meridianFilter`, `directoryTungZone`, `directoryPointCategory`, `directoryTopic`, `directoryRegionGroup`, `searchInput`) when switching tabs or clicking `全庫體系`.
+  - **Active Filter Summary Removal**: Removed `#activeFilterSummary` display box as requested by user ("不用出現這個").
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 21:26] Antigravity Handoff — SIDEBAR WHITESPACE GAP & SCROLL TRAP FIXED 🎉
 
 - **Agent**: Antigravity
