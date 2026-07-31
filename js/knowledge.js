@@ -270,6 +270,37 @@
   const COMPARE_VOCAB = new Map(
     ((K && K.comparisonGroupVocabulary && K.comparisonGroupVocabulary.groups) || []).map((g) => [g.id, g])
   );
+  /* 方歌 — the rhymed mnemonic for the formula. Not every formula has one, and
+   * Ting asked for it to appear only when we actually have it, so this renders
+   * nothing at all rather than a 待補 placeholder. */
+  function formulaSongSection(record) {
+    const song = usableText(record.formula_song_zh || record.fang_ge_zh);
+    if (!song) return "";
+    const note = usableText(record.formula_song_source_zh);
+    return `
+      <section class="k-detail-block k-formula-song">
+        <h3>方歌 <span class="k-detail-en">Mnemonic verse</span></h3>
+        <p class="k-song-text">${esc(song).replace(/\n/g, "<br>")}</p>
+        ${note ? `<p class="k-detail-note">${esc(note)}</p>` : ""}
+      </section>`;
+  }
+
+  /* The herb names for the summary tile. Long formulas would overflow it, so
+   * past a dozen ingredients the rest collapse into a count — the full list is
+   * still rendered in the composition section below. */
+  function compositionSummary(composition) {
+    const items = Array.isArray(composition) ? composition : [];
+    if (!items.length) return "待補";
+    const names = items
+      .map((item) => item?.herb_zh || item?.pinyin || item?.herb_en)
+      .filter(Boolean);
+    if (!names.length) return `${items.length} 味`;
+    const shown = names.slice(0, 12).join("、");
+    return names.length > 12
+      ? `${shown} … 共 ${names.length} 味`
+      : `${shown}（${names.length} 味）`;
+  }
+
   function comparisonGroupLabel(id) {
     if (!id) return "";
     const g = COMPARE_VOCAB.get(String(id).trim());
@@ -914,7 +945,10 @@
           record.cloudtcm_url
             ? ["雲端中醫 CloudTCM", `<a href="${esc(record.cloudtcm_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">開啟方劑頁面 ↗</a>`, true]
             : ["學習層級 Tier", record.tier || "draft"],
-          ["組成 Composition", `${(record.composition || []).length} 味`],
+          // Ting wants the herbs themselves here, not a count — the tile is
+          // the first thing she reads on a formula card. Falls back to pinyin
+          // when a curriculum ingredient has no Chinese name yet.
+          ["組成 Composition", compositionSummary(record.composition)],
           ["鑑別群組 Comparison", comparisonGroupLabel(record.comparison_group) || "—"]
         ]
       : [
@@ -1016,7 +1050,7 @@
     const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
