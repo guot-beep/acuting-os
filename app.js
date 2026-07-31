@@ -604,16 +604,17 @@ let activeChannelCode = "LU";
 let activeChartMode = "";
 let activeChannelsTab = "meridians";
 
-document.querySelectorAll(".system-tab-btn, .system-tab-link").forEach((btn) => {
-  btn.addEventListener("click", () => {
+document.querySelectorAll(".system-tab-btn, .system-tab-link, [href='#channelsWorkspace'], [href='#ws/channels']").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
     const sys = btn.dataset.system || "";
-    if (sys === "channels_chart" || btn.classList.contains("system-tab-link")) {
+    const href = btn.getAttribute("href") || "";
+    if (sys === "channels_chart" || btn.classList.contains("system-tab-link") || href.includes("channels")) {
+      e.preventDefault();
       activeChannelsTab = "charts";
       if (!activeChartMode) activeChartMode = "fiveshu";
       renderChannelsWorkspace();
-      setTimeout(() => {
-        document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 50);
+      window.history.pushState(null, "", "#channelsWorkspace");
+      document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
     document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
