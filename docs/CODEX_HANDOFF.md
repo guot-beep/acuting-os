@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 21:47] Antigravity Handoff — CHANNEL CHARTS LINK & SCROLL ROUTER RESOLVED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `d9d68ac`
+- **Root Cause & Fix**:
+  - **Issue**: Previously, `handlePointHashChange()` unconditionally ran `document.querySelector("#acupunctureWorkspace")?.scrollIntoView()` on every `hashchange` event. When the user clicked `經脈與特定穴圖表 ↗` (`href="#ws/channels"`), the browser started scrolling down, but `hashchange` immediately pulled the page back up to `#acupunctureWorkspace` at the top, preventing the user from ever seeing the chart section.
+  - **Fix**: Updated `handlePointHashChange()` to recognize `#ws/channels` and `#channelsWorkspace`, auto-selecting `charts` + `fiveshu` mode, and smooth-scrolling directly down to `#channelsWorkspace`.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 21:44] Antigravity Handoff — BODY REGION FILTERS & 7 ELOTUS CHART MATRICES COMPLETE 🎉
 
 - **Agent**: Antigravity
