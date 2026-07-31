@@ -4354,9 +4354,12 @@ function heroSubtitle(point) {
 }
 
 function americanDragonPointUrl(point) {
+  if (point.american_dragon_url && /^https?:\/\//.test(point.american_dragon_url)) {
+    return point.american_dragon_url;
+  }
   const code = String(point.code || "").trim().toUpperCase();
   const match = code.match(/^([A-Z]+)(\d+)$/);
-  if (!match) return "https://www.americandragon.com/";
+  if (!match) return "";
 
   const prefix = match[1];
   const num = match[2];
@@ -4383,16 +4386,16 @@ function americanDragonPointUrl(point) {
 
 function eLotusPointUrl(point) {
   const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
-  const directVisual = visualLinks.find((v) => v && v.url && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(v.url));
+  const directVisual = visualLinks.find((v) => v && v.url && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\/.+/.test(v.url));
   if (directVisual) return directVisual.url;
 
   const sources = Array.isArray(point.sources) ? point.sources : [];
-  const directSource = sources.find((s) => typeof s === "string" && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(s));
+  const directSource = sources.find((s) => typeof s === "string" && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\/.+/.test(s));
   if (directSource) return directSource;
 
   let code = String(point.code || point.id || "").toLowerCase().trim();
   if (isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")) {
-    return visualLinks[0]?.url || (typeof sources[0] === "string" && sources[0].startsWith("http") ? sources[0] : "https://www.mastertungacupuncture.org/acupuncture/traditional/points");
+    return "";
   }
 
   code = code.replace(/^te/, "th").replace(/^sj/, "th");
@@ -4403,12 +4406,20 @@ function externalPointLinks(point) {
   const sources = point.sources || [];
   const visualLinks = normalizeVisualLinks(point.visualLinks || []);
 
+  const isValidUrl = (u) => {
+    if (!u || typeof u !== "string" || !/^https?:\/\//.test(u)) return false;
+    if (u === "https://www.americandragon.com/" || u === "https://www.americandragon.com") return false;
+    if (u === "https://cloudtcm.com/acupoint" || u === "https://cloudtcm.com/acupoint/") return false;
+    if (u === "https://www.mastertungacupuncture.org/acupuncture/traditional/points" || u === "https://www.mastertungacupuncture.org/acupuncture/traditional/points/") return false;
+    return true;
+  };
+
   if (isAuricularPoint(point)) {
     const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
     return [
       { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
       { label: contentMode === "english" ? "Visual Diagram" : "耳穴圖源", url: primary, kind: "english" }
-    ];
+    ].filter(link => isValidUrl(link.url));
   }
 
   // 1. CloudTCM (中文)
@@ -4421,19 +4432,13 @@ function externalPointLinks(point) {
   // 3. eLotus / Master Tung Acupuncture — Direct 1-to-1 point page
   const eLotusUrl = eLotusPointUrl(point);
 
-  if (contentMode === "english") {
-    return [
-      { label: "CloudTCM", url: chinese, kind: "chinese" },
-      { label: "American Dragon (AD)", url: adUrl, kind: "english" },
-      { label: "eLotus CORE", url: eLotusUrl, kind: "english" }
-    ];
-  }
-
-  return [
-    { label: "雲端中醫", url: chinese, kind: "chinese" },
+  const links = [
+    { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinese, kind: "chinese" },
     { label: "American Dragon (AD)", url: adUrl, kind: "english" },
-    { label: "eLotus 權威圖解", url: eLotusUrl, kind: "english" }
+    { label: contentMode === "english" ? "eLotus CORE" : "eLotus 權威圖解", url: eLotusUrl, kind: "english" }
   ];
+
+  return links.filter(link => isValidUrl(link.url));
 }
 
 function primaryFunction(point) {
