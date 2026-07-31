@@ -610,10 +610,11 @@ document.querySelectorAll(".system-tab-btn, .system-tab-link, [href='#channelsWo
     const href = btn.getAttribute("href") || "";
     if (sys === "channels_chart" || btn.classList.contains("system-tab-link") || href.includes("channels")) {
       e.preventDefault();
+      selectedSystem = "channels_chart";
       activeChannelsTab = "charts";
       if (!activeChartMode) activeChartMode = "fiveshu";
-      renderChannelsWorkspace();
       window.history.pushState(null, "", "#channelsWorkspace");
+      render();
       document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
     }
@@ -1492,6 +1493,28 @@ function render() {
   renderDirectoryFilters();
   // renderSystemToggleDrawer(); — retired, sidebar is now context-aware
   renderChannelsWorkspace();
+
+  const hash = window.location.hash || "";
+  const isChannelsView = selectedSystem === "channels_chart" || hash === "#ws/channels" || hash === "#channelsWorkspace";
+  const channelsWorkspaceEl = document.querySelector("#channelsWorkspace");
+  const directoryLayoutEl = document.querySelector("#directoryLayout");
+  const channelsLinkEl = document.querySelector("#channelsWorkspaceBtn");
+
+  if (channelsWorkspaceEl && directoryLayoutEl) {
+    if (isChannelsView) {
+      channelsWorkspaceEl.hidden = false;
+      channelsWorkspaceEl.style.display = "block";
+      directoryLayoutEl.style.display = "none";
+      if (channelsLinkEl) channelsLinkEl.classList.add("active");
+      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+    } else {
+      channelsWorkspaceEl.hidden = true;
+      channelsWorkspaceEl.style.display = "none";
+      directoryLayoutEl.style.display = "grid";
+      if (channelsLinkEl) channelsLinkEl.classList.remove("active");
+    }
+  }
+
   const filtered = getFilteredPoints();
   const detailMode = isPointDetailMode();
   // In detail mode the hash owns the selection. Clamping it to the browse
