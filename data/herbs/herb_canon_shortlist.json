@@ -40029,7 +40029,7 @@
     {
       "id": "herb.bai_zhu",
       "name_zh": "白朮",
-      "name_en": "Atractylodes Macrocephala",
+      "name_en": "White Atractylodes Rhizome",
       "pinyin": "Bai Zhu",
       "category": "補虛藥 / Tonify Qi",
       "channels_entered": [
@@ -40038,7 +40038,7 @@
       ],
       "source_hint": "Bensky Materia Medica: Tonify Qi",
       "review_status": "draft",
-      "properties_taste_temp": "甘、苦、溫",
+      "properties_taste_temp": "苦、甘，溫",
       "functions": [
         "補氣",
         "利水滲濕",
@@ -40086,9 +40086,14 @@
       ],
       "safety_flags": [
         "pregnancy_review",
-        "dryness_review"
+        "dryness_review",
+        "yin_deficiency_heat_contraindication",
+        "qi_stagnation_contraindication",
+        "anticoagulant_interaction",
+        "antiplatelet_interaction",
+        "diuretic_interaction"
       ],
-      "clinical_use_note": "白朮是中藥,別名:山精,山連,山芥,白術,冬朮, 功效:健脾益氣,燥濕利水,止汗,安胎。用於脾虛食少,腹脹泄瀉,痰飲眩悸,水腫,自汗,胎動不安。健脾益氣；燥濕利水；止汗；安胎。主脾氣虛弱；神疲補氣,固表止汗,生津止渴,溫裡溫中,健脾胃,提升免疫力,利水滲濕,清熱利尿,燥濕,安胎,降血糖...等等\n安胎",
+      "clinical_use_note": "白朮是補氣健脾的核心藥，特別之處在於它同時「補」與「燥」——既補脾氣又燥濕利水，所以脾虛兼濕的證候非它不可。與蒼朮的鑑別是必考：白朮偏補、蒼朮偏燥，記「補用白、燥用蒼」。炮製差異臨床意義大（生／炒／焦三者用途不同），開方時要指明。陰虛內熱、氣滯脹滿者忌用。",
       "modern_use_tags": [
         "fatigue_context",
         "poor_appetite_context",
@@ -40152,35 +40157,26 @@
       "dosage": "{\r\n  \"一般建議\": \"6-12克\",\r\n  \"食療用量範圍\": \"6-15克（藥膳或茶飲）\",\r\n  \"特殊說明\": \"健脾止瀉宜炒用，燥濕利水宜生用；大劑量可用至30克用於水腫\"\r\n}",
       "cautions": "白朮注意事項重點：\n陰虛燥渴，氣滯脹悶者忌服。\n忌桃、李、菘菜、雀肉、青魚。\n《本草經集註》：防風、地榆為之使。\n《藥品化義》：凡鬱結氣滯，脹悶積聚，吼喘壅塞，胃痛由火，癰疽多膿，黑瘦人氣實作脹，皆宜忌用。\n脾虛泄瀉：白朮具有固表止汗功效，但脾虛泄瀉者使用可能會加重症狀。\n食慾不振、胃脘滿悶：白朮具有健脾開胃作用，但食慾不振、胃脘滿悶者使用可能會引起胃部不適。\n懷孕期間：孕婦不宜大量使用白朮，以免影響胎兒。\n出血性疾病：白朮具有止血作用，出血性疾病患者使用可能會加重症狀。\n高血壓：白朮具有降血壓作用，血壓偏低者使用可能會造成血壓過低。",
       "source_urls": [
-        "https://cloudtcm.com/herb/963"
+        "https://cloudtcm.com/herb/963",
+        "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
       ],
-      "exact_source_url": "https://cloudtcm.com/herb/963",
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
       "fetched_at": "2026-07-23T07:20:34.815Z",
       "public_safe": false,
-      "source_type": "sourced_cloudtcm_record",
+      "source_type": "full_card_verified_multi_source",
       "cautions_zh": [
-        "陰虛燥渴，氣滯脹悶者忌服。",
-        "忌桃、李、菘菜、雀肉、青魚。",
-        "《本草經集註》：防風、地榆為之使。",
-        "《藥品化義》：凡鬱結氣滯，脹悶積聚，吼喘壅塞，胃痛由火，癰疽多膿，黑瘦人氣實作脹，皆宜忌用。",
-        "脾虛泄瀉：白朮具有固表止汗功效，但脾虛泄瀉者使用可能會加重症狀。",
-        "食慾不振、胃脘滿悶：白朮具有健脾開胃作用，但食慾不振、胃脘滿悶者使用可能會引起胃部不適。",
-        "懷孕期間：孕婦不宜大量使用白朮，以免影響胎兒。",
-        "出血性疾病：白朮具有止血作用，出血性疾病患者使用可能會加重症狀。",
-        "高血壓：白朮具有降血壓作用，血壓偏低者使用可能會造成血壓過低。"
+        "American Dragon：與抗凝血藥（warfarin、heparin）及抗血小板藥（aspirin、Plavix）併用需慎。",
+        "American Dragon：可能增強 omeprazole 的抑制作用。",
+        "American Dragon：與利尿劑併用可能增加水分與電解質流失。"
       ],
-      "safety_source_url": "https://cloudtcm.com/herb/963",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
       "safety_fetched_at": "2026-07-23T07:25:32.680Z",
       "safety_source": "cloudtcm_caution_field",
       "functions_zh": [
-        "補氣",
-        "利水滲濕",
+        "健脾益氣",
+        "燥濕利水",
         "固表止汗",
-        "生津止渴",
-        "安胎",
-        "健脾胃",
-        "祛風除濕",
-        "止瀉"
+        "安胎"
       ],
       "modern_functions_zh": [
         "降血糖",
@@ -40224,7 +40220,10 @@
         "胃經"
       ],
       "indications_zh": [
-        "健脾益氣；燥濕利水；止汗；安胎"
+        "脾氣虛之倦怠乏力、食少腹脹、便溏泄瀉。",
+        "脾虛失運、水濕內停之痰飲眩悸、水腫、小便不利。",
+        "氣虛自汗、表虛不固。",
+        "脾虛胎動不安。"
       ],
       "study_tags": [
         "單味中藥",
@@ -40233,7 +40232,18 @@
         "白朮"
       ],
       "tags_fetched_at": "2026-07-23",
-      "condition_tags_zh": [],
+      "condition_tags_zh": [
+        "脾氣虛",
+        "倦怠乏力",
+        "食少腹脹",
+        "便溏泄瀉",
+        "痰飲眩悸",
+        "水腫",
+        "小便不利",
+        "自汗",
+        "表虛",
+        "胎動不安"
+      ],
       "cloudtcm_url": "https://cloudtcm.com/herb/963",
       "american_dragon_url": "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
       "american_dragon_link_status": "derived",
@@ -40241,19 +40251,28 @@
       "atlas_link_status": "index",
       "field_sources": {
         "properties_taste_temp": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
           "https://cloudtcm.com/herb/963"
         ],
         "channels_zh": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
           "https://cloudtcm.com/herb/963"
         ],
         "functions_zh": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
           "https://cloudtcm.com/herb/963"
         ],
         "indications_zh": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
           "https://cloudtcm.com/herb/963"
         ],
         "dosage": [
-          "https://cloudtcm.com/herb/963"
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
         ],
         "category_zh": [
           "https://cloudtcm.com/herb/963"
@@ -40265,10 +40284,141 @@
           "https://cloudtcm.com/herb/963"
         ],
         "cautions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
+        ],
+        "identity": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
+          "https://cloudtcm.com/herb/963"
+        ],
+        "actions_en": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
+        ],
+        "indications_en": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
+        ],
+        "contraindications_zh": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
+        ],
+        "contraindications_en": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
+        ],
+        "cautions_en": [
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
+        ],
+        "pao_zhi_notes_zh": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html"
+        ],
+        "exam_pearl": [
+          "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "exam_importance": [
+          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ],
+        "modern_functions_en": [
           "https://cloudtcm.com/herb/963"
         ]
       },
-      "card_grade": "partial"
+      "card_grade": "template",
+      "source_status": "source_layered_draft",
+      "ncbahm_2026_official": true,
+      "updated_at": "2026-07-30",
+      "authored_by": "Claude",
+      "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+      "review_notes_zh": "AI draft：五源核讀（Appendix A 在範圍內；Appendix B 有 2 組對藥：白朮+茯苓、乾薑+白朮；課件、American Dragon、CloudTCM 三源性味歸經與四大功效一致，無衝突）。禁忌由 cautions 升級。仍待 Ting/RV1 源審核。",
+      "pharmaceutical_latin": "Rhizoma Atractylodis Macrocephalae",
+      "pinyin_toned": "Bái Zhú",
+      "part_used_zh": "乾燥根莖",
+      "part_used_en": "dried rhizome",
+      "property_channel_source_note_zh": "課件、American Dragon、CloudTCM 三源一致：苦甘溫、歸脾胃經。AD 另以括號列辛味為次要。",
+      "key_pairs": [],
+      "actions_en": [
+        "Tonifies the Spleen and augments Qi",
+        "Dries Dampness and promotes water metabolism",
+        "Stabilizes the exterior and stops sweating",
+        "Calms the fetus"
+      ],
+      "indications_en": [
+        "Spleen Qi deficiency with fatigue, poor appetite, bloating and loose stools or diarrhea.",
+        "Water and Damp retention from failed transformation: phlegm-fluid with dizziness and palpitations, edema, difficult urination.",
+        "Spontaneous sweating from Qi deficiency with an insecure exterior.",
+        "Restless fetus due to Spleen deficiency."
+      ],
+      "condition_tags_en": [
+        "Spleen Qi deficiency",
+        "Fatigue",
+        "Poor appetite with bloating",
+        "Loose stools and diarrhea",
+        "Phlegm-fluid with dizziness and palpitations",
+        "Edema",
+        "Difficult urination",
+        "Spontaneous sweating",
+        "Exterior deficiency",
+        "Restless fetus"
+      ],
+      "contraindications_zh": [
+        "陰虛內熱、津液虧耗者忌服。",
+        "氣滯脹滿者忌服。",
+        "American Dragon：口渴甚者忌服。"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with internal Heat or fluid depletion.",
+        "Contraindicated in Qi stagnation with distention and fullness.",
+        "American Dragon: contraindicated in extreme thirst."
+      ],
+      "cautions_en": [
+        "American Dragon: use cautiously with anticoagulants (warfarin, heparin) and antiplatelet drugs (aspirin, Plavix).",
+        "American Dragon: may enhance the inhibitory effect of omeprazole.",
+        "American Dragon: concurrent diuretic use may increase water and electrolyte loss."
+      ],
+      "dosage_g": {
+        "standard_daily_g": "5–15g（課件）/ 3–15g（American Dragon）",
+        "course_dose_g": "5–15g",
+        "ad_dose_g": "3–15g；tincture 1–4mL",
+        "source_note": "炮製決定用途（課件明列）：生白朮燥濕利水力強；炒白朮補氣、安胎、止汗力強；焦白朮止瀉。三者不可互換。"
+      },
+      "pao_zhi_notes_zh": "生白朮：燥濕利水為主。炒白朮：補氣、固表止汗、安胎為主。焦白朮：止瀉為主。（課件 Processing Differences）",
+      "exam_importance": "★ NCBAHM 2026 CH Appendix A 單味藥；Appendix B 收錄兩組對藥（白朮配茯苓、乾薑配白朮）。",
+      "exam_pearl": "★★ 補氣健脾第一要藥，四大功效同時涵蓋「補、燥、固、安」。考點：① 炮製決定用途——生燥濕、炒補氣安胎、焦止瀉 ② 與蒼朮鑑別：白朮偏補（健脾益氣），蒼朮偏燥（燥濕發汗），補用白、燥用蒼 ③ Appendix B 白朮配茯苓＝健脾滲濕的基礎組合。",
+      "source_citations": [
+        {
+          "name": "📘 NCBAHM 2026 CH 考綱 Appendix A/B",
+          "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
+          "scope": "考試範圍；Appendix B 兩組對藥"
+        },
+        {
+          "name": "📘 課件 Materia Medica III – Qi-tonifying Herbs",
+          "url": "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312",
+          "scope": "課件段落：性味歸經、四大功效、主治、劑量、禁忌、炮製差異"
+        },
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/BaiZhu.html",
+          "scope": "精準頁：拉丁藥名、性味歸經、功效、劑量、禁忌、藥物交互作用"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/963",
+          "scope": "精準頁：性味歸經、健脾益氣燥濕利水止汗安胎、主治"
+        }
+      ],
+      "modern_functions_en": [
+        "Blood-glucose lowering",
+        "Immune-enhancing",
+        "Anti-inflammatory",
+        "Antitumor / cancer-preventive",
+        "Hepatoprotective and cholagogue"
+      ]
     },
     {
       "id": "herb.shan_yao",

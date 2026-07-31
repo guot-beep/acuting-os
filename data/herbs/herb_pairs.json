@@ -3555,8 +3555,55 @@
         "curriculum/herbs/Materia Medica Abbbreviated.md#L1245-L1247",
         "american_dragon"
       ]
+    },
+    {
+      "id": "pair.bai_zhu__fu_ling",
+      "herbs": [
+        "herb.bai_zhu",
+        "herb.fu_ling"
+      ],
+      "name_zh": "白朮配茯苓",
+      "name_en": "Bai Zhu with Fu Ling",
+      "relation": "pair.rel.xiang_xu",
+      "pair_meaning_zh": "白朮健脾益氣、苦溫燥濕，從中焦運化著手；茯苓甘淡滲濕、健脾寧心，從下焦利水著手。一燥一滲、一補一利，相須為用，是健脾祛濕最基礎的組合（四君子湯、參苓白朮散、苓桂朮甘湯皆用）。",
+      "pair_meaning_en": "Bai Zhu tonifies the Spleen and dries Damp from the middle jiao; Fu Ling is bland and percolates Damp downward while quieting the Heart. Drying paired with percolating, tonifying paired with draining — the base combination for Spleen deficiency with Dampness.",
+      "indication_zh": "脾虛濕盛：食少便溏、腹脹、水腫、痰飲眩悸",
+      "indication_en": "Spleen deficiency with Dampness: poor appetite, loose stools, bloating, edema, phlegm-fluid with dizziness and palpitations",
+      "caution_zh": "陰虛津虧、無濕邪者不宜；白朮氣滯脹滿者忌。",
+      "caution_en": "Not for Yin/fluid deficiency or where no Dampness is present; Bai Zhu is contraindicated in Qi stagnation with distention.",
+      "found_in_formulas": [
+        "formula.si_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san"
+      ],
+      "sources": [
+        "NCBAHM_2026_CH_Appendix_B",
+        "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312"
+      ]
+    },
+    {
+      "id": "pair.gan_jiang__bai_zhu",
+      "herbs": [
+        "herb.gan_jiang",
+        "herb.bai_zhu"
+      ],
+      "name_zh": "乾薑配白朮",
+      "name_en": "Gan Jiang with Bai Zhu",
+      "relation": "pair.rel.xiang_shi",
+      "pair_meaning_zh": "乾薑辛熱溫中散寒、回陽通脈，白朮甘溫健脾益氣燥濕。乾薑溫其陽、白朮補其氣，相使為用，專治中焦虛寒兼濕（理中湯、苓薑朮甘湯）。",
+      "pair_meaning_en": "Gan Jiang is acrid and hot, warming the middle and dispersing Cold; Bai Zhu tonifies Spleen Qi and dries Damp. Gan Jiang warms the Yang while Bai Zhu supplements the Qi — for Deficiency-Cold of the middle jiao with Dampness (Li Zhong Tang).",
+      "indication_zh": "脾胃虛寒：脘腹冷痛、嘔吐下利、四肢不溫、寒濕腰痛",
+      "indication_en": "Spleen-Stomach Deficiency-Cold: cold epigastric pain, vomiting and diarrhea, cold limbs, Cold-Damp low back pain",
+      "caution_zh": "乾薑辛熱，陰虛內熱、實熱及孕婦慎用；血熱妄行者忌。",
+      "caution_en": "Gan Jiang is hot: caution in Yin deficiency with Heat, Excess Heat, and pregnancy; avoid in Heat-driven bleeding.",
+      "found_in_formulas": [
+        "formula.li_zhong_tang"
+      ],
+      "sources": [
+        "NCBAHM_2026_CH_Appendix_B",
+        "curriculum/herbs/Materia Medica III – Qi-tonifying Herbs.md#L282-L312"
+      ]
     }
   ],
-  "updated_at": "2026-07-29",
-  "total_pairs": 156
+  "updated_at": "2026-07-30",
+  "total_pairs": 158
 }
