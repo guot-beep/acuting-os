@@ -1,5 +1,21 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 22:36] Antigravity Handoff — 3 CLASSICAL FORMULAS CURATED (XIAO QING LONG TANG, GE GEN TANG, XIANG SU SAN) 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `946c50e`
+- **Root Cause & Fix**:
+  - **3 Classical Formulas Curated**: Completed template-grade curation for 3 core Release Exterior formulas (`formula.xiao_qing_long_tang`, `formula.ge_gen_tang`, `formula.xiang_su_san`).
+  - **Xiao Qing Long Tang (小青龍湯)**: Restored 8-herb composition with exact roles (`麻黃/桂枝` 君, `細辛/乾薑/半夏` 臣, `白芍/五味子` 佐, `甘草` 使), key pair (`細辛+乾薑+五味子` 溫肺化飲三角對), modifications, contraindications, comparisons.
+  - **Ge Gen Tang (葛根湯)**: Resolved composition truncation warning (`composition_suspect: false`), restoring full 7-herb composition (`葛根` 君, `麻黃/桂枝` 臣, `白芍/生薑/大棗` 佐, `甘草` 使), neck stiffness indications and modifications.
+  - **Xiang Su San (香蘇散)**: Curated 4-herb composition (`紫蘇葉` 君, `香附` 臣, `陳皮` 佐, `甘草` 使), key pair (`紫蘇葉+香附` 疏肝解表對藥), indications for exterior wind-cold with qi stagnation.
+- **Validation**:
+  - `scripts/validate-formula-standard.js`: **PASS (5 template-grade formulas, 0 blocking defects)** ✅
+  - `scripts/validate-formula-song.js`: **PASS (102 formulas with songs, 0 defects)** ✅
+  - `scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 22:35] Antigravity Handoff — GUI ZHI TANG & MA HUANG TANG CURATED & BODY REGION FILTER FIXED 🎉
 
 - **Agent**: Antigravity
