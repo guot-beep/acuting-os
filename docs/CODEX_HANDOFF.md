@@ -1,5 +1,38 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 20:40] Antigravity Handoff — CONTEXT-AWARE SIDEBAR + FULL-WIDTH SEARCH HEADER REDESIGN COMPLETED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `f9015bf`
+- **Task Summary**:
+  1. **Full-Width Search & System Header (`.acu-search-header`)**:
+     - Moved search input and system tabs (`.system-tabs-bar`) into a clean, full-width top header spanning above the main two-column view.
+     - Single-line horizontally scrollable system tabs (nowrap), avoiding messy two-row wrapping.
+     - Right-aligned `經脈與特定穴圖表 ↗` link in the system tabs bar (removed redundant emoji).
+  2. **Context-Aware Left Sidebar (`.directory-sidebar`)**:
+     - Left sidebar dynamically updates its top section based on the currently selected system tab (`selectedSystem`):
+       - **全庫體系**: Displays System Overview counts for all 7 systems.
+       - **十四正經**: Displays 14 channel listing with point counts (LU, LI, ST... in classical order).
+       - **董氏奇穴**: Displays Master Tung 12-zone selector.
+       - **耳穴體系**: Displays LCH 14 ear zone selector.
+       - **經外奇穴**: Displays EX-HN, EX-CA, EX-B, EX-UE, EX-LE zone selector.
+       - **頭皮針 / 特色微針**: Displays dedicated sub-branch selectors.
+     - Lower section retains cross-cutting collapsible sections:
+       - **★ 特定穴類別** (Five-Shu, Yuan, Luo, Xi, Front-Mu, Back-Shu, 8 Confluent, 13 Ghost, 4 Seas...)
+       - **🩺 臨床主題與證型**
+       - **📍 身體部位**
+  3. **Direct Grid Visibility**:
+     - Stripped middle drawer and body model canvas from primary browsing flow.
+     - Cards grid (`#cards`) is always directly visible in the right column, updating live on every filter/search input.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+- **Files Changed**:
+  - `index.html` — Restructured search header and sidebar/main grid structure.
+  - `styles.css` — Added `.acu-search-header`, updated `.system-tabs-bar`, `.directory-layout`, `.directory-sidebar`, `.directory-main`, and sidebar collapsible section styles.
+  - `app.js` — Rewrote `renderDirectoryFilters()` for context-aware rendering; added new sidebar button handlers (`switchSystem`, `sysAurBranch`, `sysExBranch`, `sysSpecialBranch`); updated `render()` flow.
+
+---
+
 ## [2026-07-30 15:20] Antigravity Handoff — REDUNDANT DROPDOWNS REMOVED, SIDEBAR DE-DUPLICATED, QA BUCKETS STRIPPED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)
