@@ -6164,6 +6164,19 @@ html { scroll-padding-top: 92px; }
 .k-src-host.is-none { font-family: inherit; font-style: italic; }
 .k-card.has-link { border-color: rgba(56, 189, 248, 0.35); }
 
+/* Formula fact-grid: CloudTCM + American Dragon pill buttons side by side */
+.k-src-btn {
+  display: inline-block; margin: 2px 4px 2px 0; padding: 4px 10px;
+  background: rgba(56,189,248,0.12); border: 1px solid rgba(56,189,248,0.4);
+  border-radius: 20px; font-size: 0.8em; font-weight: 700; white-space: nowrap;
+  color: #38bdf8; text-decoration: none; transition: background 0.18s, border-color 0.18s;
+}
+.k-src-btn:hover { background: rgba(56,189,248,0.22); border-color: #38bdf8; text-decoration: none; }
+.k-src-btn-ad {
+  background: rgba(251,146,60,0.12); border-color: rgba(251,146,60,0.4); color: #fb923c;
+}
+.k-src-btn-ad:hover { background: rgba(251,146,60,0.22); border-color: #fb923c; }
+
 /* Formula card: the exam banner leads, because Ting asked for board emphasis
    to be the first thing on the card, and the outline names 方劑 as its own
    examined domain. */
