@@ -1,5 +1,26 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 21:44] Antigravity Handoff — BODY REGION FILTERS & 7 ELOTUS CHART MATRICES COMPLETE 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `f92fb2c`
+- **Root Cause & Fix**:
+  - **身體部位 0 筆結果 Fix**: In `bindDirectoryButtons` for `action === "regionGroup"`, `selectedSystem` and `selectedSystemBranch` were previously not cleared. Additionally, `directoryRegionGroups` IDs (`head_face`, `chest_abdomen`, `back`, `upper_limb`, `lower_limb`, `auricular`) now align 100% with `uiConfig`. Clicking any body region (如 `胸腹部 146 穴`, `頭面頸部 388 穴`, `上肢 206 穴`) now displays the exact matching point cards cleanly across the entire library!
+  - **7 Major eLotus Point Charts**: Implemented all 7 bilingual matrix tables under `經脈與特定穴對照圖表 ↗` -> `七大特定穴總表`:
+    1. 五輸穴總表 (Five Shu: Jing-Well, Ying-Spring, Shu-Stream, Jing-River, He-Sea)
+    2. 原絡郄俞募穴總表 (Yuan, Luo, Xi, Front-Mu, Back-Shu)
+    3. 下合穴/母子補瀉/出入穴 (Lower He-Sea, Mother-Child Tonification/Sedation, Entry/Exit)
+    4. 八脈交會穴與配穴 (Master & Coupled Points for Extraordinary Vessels)
+    5. 組絡穴與三陰三陽交會穴 (Group Luo & Three Yin/Yang Meeting Points)
+    6. 八會穴與六總穴 (Eight Hui-Influential & Six Command Points)
+    7. 四海穴與十三鬼穴 (Four Seas & Sun Simiao 13 Ghost Points)
+    - All chart matrix cells feature **clickable point links** (`<a class="matrix-point-link" href="#point/CODE">`) that open the single-point study view directly!
+- **Validation**:
+  - Node VM execution test for all 7 charts: **PASS** (100% complete HTML output) ✅
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 21:34] Antigravity Handoff — AURICULAR LCH 14 ZONES & ALL-SYSTEM RESET FIXED 🎉
 
 - **Agent**: Antigravity
