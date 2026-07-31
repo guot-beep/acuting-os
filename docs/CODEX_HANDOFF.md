@@ -1,5 +1,21 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 20:45] Antigravity Handoff — SEARCH & CARD GRID RENDER RESTORED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `91b781f`
+- **Root Cause & Fix**:
+  - **Issue**: Page initialization halted due to a `TypeError` when calling `.addEventListener("input")` on plain object filter fallbacks (`meridianFilter`, `regionFilter`, `patternFilter`), preventing `render()` from running on initial page load and leaving `#cards` blank.
+  - **Fix**: Replaced the input loop with a clean `searchInput?.addEventListener("input", ...)` listener.
+  - **Live Search & Cards Grid**:
+    - Typing in `#searchInput` now triggers live filtering and restores `#cards` grid instantly below.
+    - Card selection (`selectPoint`) opens the standalone `#point/CODE` detail view with full breadcrumb navigation and `[返回穴位列表]` button.
+    - Category chips (`directoryPointCategory`, `selectedSystemBranch`) now appear in `activeFilterSummary` with one-click clear `×` buttons.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 20:40] Antigravity Handoff — CONTEXT-AWARE SIDEBAR + FULL-WIDTH SEARCH HEADER REDESIGN COMPLETED 🎉
 
 - **Agent**: Antigravity
