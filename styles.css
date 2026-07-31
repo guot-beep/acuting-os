@@ -1033,10 +1033,10 @@ footer {
 }
 
 .directory-layout {
-  align-items: start;
+  align-items: stretch;
   display: grid;
   gap: 0;
-  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-columns: 240px minmax(0, 1fr);
   border: 1px solid var(--line);
   border-radius: 0 0 8px 8px;
   overflow: hidden;
@@ -1048,10 +1048,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0;
-  overflow-y: auto;
-  max-height: calc(100vh - 160px);
-  position: sticky;
-  top: 160px;
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar-section {
@@ -1142,11 +1140,7 @@ footer {
   font-weight: 900;
 }
 
-.directory-main {
-  display: grid;
-  gap: 1rem;
-  min-width: 0;
-}
+
 
 .map-panel,
 .detail-card,
