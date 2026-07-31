@@ -1,5 +1,17 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-07-30 21:26] Antigravity Handoff — SIDEBAR WHITESPACE GAP & SCROLL TRAP FIXED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `b26ad7a`
+- **Root Cause & Fix**:
+  - **Whitespace Gap**: `.directory-sidebar` had legacy `top: 160px;` which offset the sidebar downwards by 160px when scroll position was at top, creating an unnatural blank space above `十四正經 ▾`. Removed `position: sticky; top: 160px` and set `.directory-layout { align-items: stretch }` so the sidebar starts flush at the top border.
+  - **Scroll Trap**: Removed `max-height: calc(100vh - 160px); overflow-y: auto` which caused double scrollbar lag inside the sidebar. The entire directory view now scrolls fluidly without lag ("不卡頓").
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-07-30 21:21] Antigravity Handoff — LEFT SIDEBAR TWO-COLUMN LAYOUT RESTORED 🎉
 
 - **Agent**: Antigravity
