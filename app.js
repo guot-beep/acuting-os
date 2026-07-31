@@ -604,9 +604,18 @@ let activeChannelCode = "LU";
 let activeChartMode = "";
 let activeChannelsTab = "meridians";
 
-document.querySelectorAll(".system-tab-btn").forEach((btn) => {
+document.querySelectorAll(".system-tab-btn, .system-tab-link").forEach((btn) => {
   btn.addEventListener("click", () => {
     const sys = btn.dataset.system || "";
+    if (sys === "channels_chart" || btn.classList.contains("system-tab-link")) {
+      activeChannelsTab = "charts";
+      if (!activeChartMode) activeChartMode = "fiveshu";
+      renderChannelsWorkspace();
+      setTimeout(() => {
+        document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+      return;
+    }
     document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
     selectedSystem = sys;
@@ -1202,12 +1211,22 @@ function applyPointHash() {
 
 function handlePointHashChange() {
   if (isSyncingPointHash) return;
+  const hash = window.location.hash || "";
+  if (hash === "#ws/channels" || hash === "#channelsWorkspace") {
+    activeChannelsTab = "charts";
+    if (!activeChartMode) activeChartMode = "fiveshu";
+    render();
+    document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
   if (!applyPointHash()) {
     render();
     return;
   }
   render();
-  document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (hash.startsWith("#point/")) {
+    document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function loadClinicalCases() {
