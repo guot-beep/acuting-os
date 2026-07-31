@@ -78,6 +78,7 @@ const NAME_ZH = {
   'pattern.phlegm_heat_in_lung': '痰熱壅肺',
   'pattern.wind_cold_invading_lung': '風寒犯肺',
   'pattern.wind_heat_invading_lung': '風熱犯肺',
+  'pattern.stomach_fire': '胃火熾盛',
 };
 
 /* Category-level patterns. 腎虛 is not a vague way of saying 腎陽虛 — it is the
@@ -117,8 +118,8 @@ const CATEGORIES = {
    * all fire and all different, and the difference is the differentiation. */
   'pattern.fire': {
     axis: 'bing_xing',
-    members: ['pattern.liver_fire', 'pattern.heart_fire'],
-    note_zh: '胃火在本庫目前記為 pattern.stomach_heat,歸在熱之下;胃火與胃熱是否分立待 Ting 決定。',
+    members: ['pattern.liver_fire', 'pattern.heart_fire', 'pattern.stomach_fire'],
+    note_zh: '胃火與胃熱分立（Ting 2026-07-31 定案）。來源不一:部分教材視二者為同義,部分依「火為熱之極」區分——胃火熾盛症狀更劇（消谷善飢、牙齦腫痛出血、口臭、便秘、舌紅苔黃燥）。NCBAHM 用 Stomach Fire Blazing。兩說並記,不擇一。',
   },
   'pattern.heat': {
     axis: 'bing_xing',
@@ -141,14 +142,57 @@ const CATEGORIES = {
   },
 };
 
-/* Ids that are used as a concrete pattern AND read as a class. 血瘀 is
- * referenced 40 times as a diagnosis in its own right, yet 心血瘀阻 and
- * 氣滯血瘀 are plainly kinds of it. Making it a category would invalidate
- * those 40 uses; leaving it flat loses the relationship. Flagged rather than
- * decided — which way to go is Ting's call. */
-const AMBIGUOUS_LEVEL = {
-  'pattern.blood_stasis': ['pattern.heart_blood_stasis', 'pattern.qi_stagnation_blood_stasis'],
-  'pattern.liver_qi_stagnation': ['pattern.liver_spleen_disharmony', 'pattern.liver_stomach_disharmony'],
+/* Ting's ruling: 肝脾不和 and 肝胃不和 are different situations, not subtypes
+ * of 肝氣鬱結 — treating them as one thing was the mis-tagging, and the cost
+ * showed up here. So these stay separate patterns and the relationship is
+ * recorded as "may develop into", not as class membership. Same for 血瘀. */
+const RELATED = {
+  'pattern.liver_qi_stagnation': {
+    develops_into: ['pattern.liver_spleen_disharmony', 'pattern.liver_stomach_disharmony'],
+    note_zh: '肝氣鬱結久則橫逆犯脾或犯胃,但肝脾不和、肝胃不和各是獨立的證,不是肝鬱的下位分類——三者需鑑別。',
+  },
+  'pattern.blood_stasis': {
+    develops_into: ['pattern.heart_blood_stasis', 'pattern.qi_stagnation_blood_stasis'],
+    note_zh: '血瘀是獨立診斷;心血瘀阻、氣滯血瘀各有其病機重點,需鑑別而非包含。',
+  },
+};
+
+/* 辨證體系 — the third dimension. 八綱, 臟腑, 六經 and the rest are not axes
+ * of one classification; they are separate diagnostic systems that describe
+ * the same patient from different angles. A pattern belongs to the system it
+ * was formulated in. */
+const SYSTEMS = {
+  ba_gang: '八綱辨證',
+  zang_fu: '臟腑辨證',
+  qi_xue_jin_ye: '氣血津液辨證',
+  liu_jing: '六經辨證',
+  wei_qi_ying_xue: '衛氣營血辨證',
+  san_jiao: '三焦辨證',
+  bing_yin: '病因辨證',
+};
+
+/* Explicit assignment. Anything not listed ships with needs_system=true
+ * rather than a guess — the system a pattern belongs to is a textbook fact,
+ * not something to infer from its name. */
+const SYSTEM_OF = {
+  'pattern.yin_deficiency': 'ba_gang',
+  'pattern.yang_deficiency': 'ba_gang',
+  'pattern.qi_deficiency': 'qi_xue_jin_ye',
+  'pattern.blood_deficiency': 'qi_xue_jin_ye',
+  'pattern.qi_blood_deficiency': 'qi_xue_jin_ye',
+  'pattern.blood_stasis': 'qi_xue_jin_ye',
+  'pattern.qi_stagnation_blood_stasis': 'qi_xue_jin_ye',
+  'pattern.blood_heat': 'qi_xue_jin_ye',
+  'pattern.phlegm': 'qi_xue_jin_ye',
+  'pattern.phlegm_damp': 'qi_xue_jin_ye',
+  'pattern.wind_cold': 'bing_yin',
+  'pattern.wind_heat': 'bing_yin',
+  'pattern.cold_damp': 'bing_yin',
+  'pattern.wind_damp_bi': 'bing_yin',
+  'pattern.wind_external': 'bing_yin',
+  'pattern.heat': 'ba_gang',
+  'pattern.fire': 'ba_gang',
+  'pattern.damp_heat': 'bing_yin',
 };
 
 // id -> the categories it belongs to (a pattern may belong to several)
@@ -182,6 +226,12 @@ function main() {
     if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
   });
 
+  /* 胃火 registered alongside 胃熱, per Ting. Sources genuinely disagree —
+   * some texts treat 胃熱 and 胃火 as one thing, others hold 火為熱之極 and
+   * reserve 胃火熾盛 for the severe presentation, which is the name the board
+   * uses. Both readings are recorded rather than one being picked. */
+  if (!use.has('pattern.stomach_fire')) use.set('pattern.stomach_fire', { conditions: [], comparisons: [] });
+
   const records = [...use.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([id, u]) => {
     const rec = {
       id,
@@ -206,11 +256,27 @@ function main() {
       if (parents) rec.member_of = parents;      // 可能同時屬於臟腑軸與病性軸
     }
 
-    if (AMBIGUOUS_LEVEL[id]) {
-      rec.possible_members = AMBIGUOUS_LEVEL[id];
-      rec.needs_owner_decision_zh = '此證型既被當作具體診斷使用,底下又有更細的證型。要升為上位分類（會影響既有引用）還是維持平行,待 Ting 決定。';
+    if (RELATED[id]) {
+      rec.develops_into = RELATED[id].develops_into;
+      rec.relation_note_zh = RELATED[id].note_zh;
     }
-    if (!u.conditions.length && !cat) {
+
+    // 辨證體系 — the third dimension
+    const sys = SYSTEM_OF[id] || (rec.level === 'pattern' && MEMBER_OF.has(id) ? null : null);
+    if (sys) {
+      rec.system = sys;
+      rec.system_zh = SYSTEMS[sys];
+    } else if (/^pattern\.(heart|liver|spleen|lung|kidney|stomach|gallbladder|bladder|intestine)/.test(id)) {
+      // Organ-named patterns are 臟腑辨證 by construction — that is what the
+      // system is: patterns stated in terms of a Zang-Fu organ.
+      rec.system = 'zang_fu';
+      rec.system_zh = SYSTEMS.zang_fu;
+    } else {
+      rec.needs_system = true;
+    }
+    if (!u.conditions.length && !u.comparisons.length && !cat) {
+      rec.newly_registered_note_zh = '登錄為正式詞彙,尚未被任何病症或鑑別卡引用。';
+    } else if (!u.conditions.length && !cat) {
       rec.orphan_note_zh = '僅出現於鑑別卡,病症庫從未使用——可能是打字錯誤,待確認。';
     }
     return rec;

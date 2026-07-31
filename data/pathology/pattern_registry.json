@@ -17,7 +17,9 @@
         "pattern.liver_blood_deficiency",
         "pattern.heart_blood_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.blood_heat",
@@ -30,7 +32,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.heat"
-      ]
+      ],
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.blood_stasis",
@@ -41,11 +45,13 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "level": "pattern",
-      "possible_members": [
+      "develops_into": [
         "pattern.heart_blood_stasis",
         "pattern.qi_stagnation_blood_stasis"
       ],
-      "needs_owner_decision_zh": "此證型既被當作具體診斷使用,底下又有更細的證型。要升為上位分類（會影響既有引用）還是維持平行,待 Ting 決定。"
+      "relation_note_zh": "血瘀是獨立診斷;心血瘀阻、氣滯血瘀各有其病機重點,需鑑別而非包含。",
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.chong_ren_disharmony",
@@ -56,7 +62,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "needs_system": true
     },
     {
       "id": "pattern.cold_stagnation_liver_channel",
@@ -67,7 +74,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "needs_system": true
     },
     {
       "id": "pattern.damp_heat",
@@ -84,7 +92,9 @@
         "pattern.damp_heat_spleen_stomach",
         "pattern.liver_gallbladder_damp_heat"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "bing_yin",
+      "system_zh": "病因辨證"
     },
     {
       "id": "pattern.damp_heat_lower_burner",
@@ -97,7 +107,8 @@
       "level": "pattern",
       "member_of": [
         "pattern.damp_heat"
-      ]
+      ],
+      "needs_system": true
     },
     {
       "id": "pattern.damp_heat_spleen_stomach",
@@ -110,7 +121,8 @@
       "level": "pattern",
       "member_of": [
         "pattern.damp_heat"
-      ]
+      ],
+      "needs_system": true
     },
     {
       "id": "pattern.fire",
@@ -124,9 +136,12 @@
       "classified_by": "bing_xing",
       "members": [
         "pattern.liver_fire",
-        "pattern.heart_fire"
+        "pattern.heart_fire",
+        "pattern.stomach_fire"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "ba_gang",
+      "system_zh": "八綱辨證"
     },
     {
       "id": "pattern.food_stagnation",
@@ -137,7 +152,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "needs_system": true
     },
     {
       "id": "pattern.heart_blood_deficiency",
@@ -150,7 +166,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.blood_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heart_blood_stasis",
@@ -161,7 +179,9 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heart_fire",
@@ -174,7 +194,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.fire"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heart_kidney_not_communicating",
@@ -184,7 +206,9 @@
       "used_by_comparisons": 1,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heart_qi_deficiency",
@@ -197,7 +221,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.qi_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heart_spleen_deficiency",
@@ -207,7 +233,9 @@
       "used_by_comparisons": 1,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heart_yang_deficiency",
@@ -220,7 +248,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.yang_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heart_yin_deficiency",
@@ -233,7 +263,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.yin_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.heat",
@@ -249,7 +281,9 @@
         "pattern.blood_heat",
         "pattern.stomach_heat"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "ba_gang",
+      "system_zh": "八綱辨證"
     },
     {
       "id": "pattern.heat_bi",
@@ -260,7 +294,8 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "needs_system": true
     },
     {
       "id": "pattern.kidney_deficiency",
@@ -279,7 +314,9 @@
         "pattern.kidney_qi_not_firm",
         "pattern.kidney_not_grasping_qi"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.kidney_essence_deficiency",
@@ -292,7 +329,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.kidney_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.kidney_not_grasping_qi",
@@ -306,7 +345,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.kidney_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.kidney_qi_not_firm",
@@ -320,7 +361,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.kidney_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.kidney_yang_deficiency",
@@ -334,7 +377,9 @@
       "member_of": [
         "pattern.kidney_deficiency",
         "pattern.yang_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.kidney_yin_deficiency",
@@ -348,7 +393,9 @@
       "member_of": [
         "pattern.kidney_deficiency",
         "pattern.yin_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_blood_deficiency",
@@ -361,7 +408,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.blood_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_fire",
@@ -374,7 +423,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.fire"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_gallbladder_damp_heat",
@@ -387,7 +438,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.damp_heat"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_qi_stagnation",
@@ -398,11 +451,13 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "level": "pattern",
-      "possible_members": [
+      "develops_into": [
         "pattern.liver_spleen_disharmony",
         "pattern.liver_stomach_disharmony"
       ],
-      "needs_owner_decision_zh": "此證型既被當作具體診斷使用,底下又有更細的證型。要升為上位分類（會影響既有引用）還是維持平行,待 Ting 決定。"
+      "relation_note_zh": "肝氣鬱結久則橫逆犯脾或犯胃,但肝脾不和、肝胃不和各是獨立的證,不是肝鬱的下位分類——三者需鑑別。",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_spleen_disharmony",
@@ -413,7 +468,9 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_stomach_disharmony",
@@ -424,7 +481,9 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_wind",
@@ -435,7 +494,9 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_yang_rising",
@@ -445,7 +506,9 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.liver_yin_deficiency",
@@ -458,7 +521,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.yin_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.lung_qi_deficiency",
@@ -471,7 +536,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.qi_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.lung_yin_deficiency",
@@ -484,7 +551,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.yin_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.phlegm",
@@ -502,7 +571,9 @@
         "pattern.phlegm_heat_in_lung",
         "pattern.phlegm_misting_heart"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.phlegm_damp",
@@ -515,7 +586,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.phlegm"
-      ]
+      ],
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.phlegm_damp_in_lung",
@@ -528,7 +601,8 @@
       "level": "pattern",
       "member_of": [
         "pattern.phlegm"
-      ]
+      ],
+      "needs_system": true
     },
     {
       "id": "pattern.phlegm_heat_in_lung",
@@ -541,7 +615,8 @@
       "level": "pattern",
       "member_of": [
         "pattern.phlegm"
-      ]
+      ],
+      "needs_system": true
     },
     {
       "id": "pattern.phlegm_misting_heart",
@@ -555,7 +630,8 @@
       "level": "pattern",
       "member_of": [
         "pattern.phlegm"
-      ]
+      ],
+      "needs_system": true
     },
     {
       "id": "pattern.qi_blood_deficiency",
@@ -565,7 +641,9 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.qi_deficiency",
@@ -582,7 +660,9 @@
         "pattern.lung_qi_deficiency",
         "pattern.heart_qi_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.qi_stagnation_blood_stasis",
@@ -592,7 +672,9 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "system": "qi_xue_jin_ye",
+      "system_zh": "氣血津液辨證"
     },
     {
       "id": "pattern.spleen_kidney_yang_deficiency",
@@ -605,7 +687,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.yang_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.spleen_not_governing_blood",
@@ -616,7 +700,9 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.spleen_qi_deficiency",
@@ -629,7 +715,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.qi_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.spleen_qi_sinking",
@@ -640,7 +728,9 @@
       "review_status": "draft",
       "source_type": "derived_from_usage",
       "needs_name_zh": true,
-      "level": "pattern"
+      "level": "pattern",
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.spleen_yang_deficiency",
@@ -653,7 +743,25 @@
       "level": "pattern",
       "member_of": [
         "pattern.yang_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
+    },
+    {
+      "id": "pattern.stomach_fire",
+      "name_zh": "胃火熾盛",
+      "name_en": "Stomach Fire",
+      "used_by_conditions": 0,
+      "used_by_comparisons": 0,
+      "review_status": "draft",
+      "source_type": "derived_from_usage",
+      "level": "pattern",
+      "member_of": [
+        "pattern.fire"
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證",
+      "newly_registered_note_zh": "登錄為正式詞彙,尚未被任何病症或鑑別卡引用。"
     },
     {
       "id": "pattern.stomach_heat",
@@ -666,7 +774,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.heat"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.stomach_yin_deficiency",
@@ -679,7 +789,9 @@
       "level": "pattern",
       "member_of": [
         "pattern.yin_deficiency"
-      ]
+      ],
+      "system": "zang_fu",
+      "system_zh": "臟腑辨證"
     },
     {
       "id": "pattern.wind_cold_invading_lung",
@@ -692,7 +804,8 @@
       "level": "pattern",
       "member_of": [
         "pattern.wind_external"
-      ]
+      ],
+      "needs_system": true
     },
     {
       "id": "pattern.wind_damp_bi",
@@ -702,7 +815,9 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "pattern"
+      "level": "pattern",
+      "system": "bing_yin",
+      "system_zh": "病因辨證"
     },
     {
       "id": "pattern.wind_external",
@@ -720,7 +835,9 @@
         "pattern.wind_cold_invading_lung",
         "pattern.wind_heat_invading_lung"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "bing_yin",
+      "system_zh": "病因辨證"
     },
     {
       "id": "pattern.wind_heat_invading_lung",
@@ -733,7 +850,8 @@
       "level": "pattern",
       "member_of": [
         "pattern.wind_external"
-      ]
+      ],
+      "needs_system": true
     },
     {
       "id": "pattern.yang_deficiency",
@@ -751,7 +869,9 @@
         "pattern.heart_yang_deficiency",
         "pattern.spleen_kidney_yang_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "ba_gang",
+      "system_zh": "八綱辨證"
     },
     {
       "id": "pattern.yin_deficiency",
@@ -770,7 +890,9 @@
         "pattern.stomach_yin_deficiency",
         "pattern.liver_yin_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。"
+      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "system": "ba_gang",
+      "system_zh": "八綱辨證"
     }
   ]
 }
