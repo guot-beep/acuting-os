@@ -15,7 +15,10 @@
  * This file deliberately does not touch app.js internals.
  */
 (function () {
-  const WORKSPACES = ["home", "acu", "formula", "herb", "condition", "comparison", "cases", "quality", "sources"];
+  // "channels" is the Channel & Point Charts workspace. It was missing here,
+  // so #ws/channels failed the membership test and fell back to home — the
+  // section exists and renders its content, but was never shown.
+  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "condition", "comparison", "cases", "quality", "sources"];
   const DEFAULT_WS = "home";
   const sections = Array.from(document.querySelectorAll("section[data-workspace]"));
   const navLinks = Array.from(document.querySelectorAll(".workspace-nav a[data-ws]"));

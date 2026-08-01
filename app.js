@@ -2324,11 +2324,9 @@ function renderSystemToggleDrawer() {
           ${isEn ? c.en : c.zh}
         </button>
       `).join("")}
-      ${selectedSystem === "standard14" ? `
-        <a href="#ws/channels" class="chart-shortcut-btn" style="margin-left: auto;">
-          ${isEn ? "📊 Channel & Point Charts ↗" : "📊 經脈與特定穴圖表 ↗"}
-        </a>
-      ` : ""}
+      <!-- The Channel & Point Charts shortcut used to live here, visible only
+           while 十四正經 was selected. It is now a top-level tab in
+           #systemTabsBar, so it is not repeated inside the drawer. -->
     </div>
   `;
 
@@ -5977,8 +5975,27 @@ function renderChannelsWorkspace() {
     return;
   }
 
-  // Default: Meridian/Vessel Overview Card
-  const chData = channelRecords.find(c => c.code === activeChannelCode) || channelRecords[0] || {};
+  // Default: Meridian/Vessel Overview Card.
+  // Only 5 of the 20 channels have records so far. Falling back to
+  // channelRecords[0] meant clicking ST highlighted ST and then showed the
+  // Lung channel — the reader has no way to tell they are looking at the
+  // wrong meridian. Say so instead.
+  const chData = channelRecords.find(c => c.code === activeChannelCode);
+  if (!chData) {
+    const label = [...mainMeridians, ...extraVessels].find(m => m.code === activeChannelCode);
+    const isEn = contentMode === "english";
+    content.innerHTML = `
+      <div class="channel-empty-state">
+        <h3>${escapeHtml(label ? (isEn ? label.en : label.zh) : activeChannelCode)}</h3>
+        <p>${isEn
+          ? "No channel record yet. Only 5 of 20 channels have been entered; this one is still pending."
+          : "此經脈尚無資料。目前 20 條經脈中只有 5 條建檔，這一條還沒做。"}</p>
+        <p class="channel-empty-note">${isEn
+          ? "Pathway, point count and clock time are factual data and are not inferred."
+          : "循行、穴數與流注時辰屬事實資料，不做推測填補。"}</p>
+      </div>`;
+    return;
+  }
   content.innerHTML = renderChannelOverviewCard(chData);
   bindMatrixPointLinks(content);
 }
