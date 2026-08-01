@@ -769,6 +769,19 @@ textarea {
   color: #1f5b3d;
 }
 
+.chart-shortcut-btn {
+  background: #5c4475 !important;
+  border-color: #4a3461 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+}
+
+.chart-shortcut-btn:hover {
+  background: #46315c !important;
+  color: #ffffff !important;
+}
+
 .system-tab-btn.active {
   background: #1f5b3d;
   color: #ffffff;
