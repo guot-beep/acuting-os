@@ -319,10 +319,9 @@
             <!-- System Tabs Bar & Sub-Filters Toolbar (Clean System Selector Layout) -->
             <div class="system-toolbar">
               <div class="system-tabs-bar" id="systemTabsBar" aria-label="針灸體系分類">
-                <button type="button" class="system-tab-btn active" data-system="">
-                  <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-                  <span data-mode-text data-bilingual="全庫體系" data-english="All Systems">全庫體系</span>
-                </button>
+                <!-- 全庫體系 removed: no system selected already means the whole
+                     library, and clicking an active tab clears it. The button
+                     only ever restated the default state. -->
                 <button type="button" class="system-tab-btn" data-system="standard14">
                   <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18 4.5 4.5 0 0 1 0-9 4.5 4.5 0 0 0 0-9z"/><circle cx="12" cy="7.5" r="1.5" fill="currentColor"/><circle cx="12" cy="16.5" r="1.5" fill="currentColor"/></svg>
                   <span data-mode-text data-bilingual="十四正經" data-english="14 Channels">十四正經</span>
