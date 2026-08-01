@@ -491,7 +491,8 @@ const auricularSupplementSources = [
   "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95"
 ];
 
-const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, extraPoints72, auricularGb93Index, auricularPoints, scalpPoints, tungPointIndex));
+const validGb93Index = auricularGb93Index.filter(p => p.nameZh && !p.nameZh.includes("待校對") && p.nameZh !== p.code);
+const defaultPoints = enrichPoints(mergeByCode(standardPoints361, embeddedExtraPoints, extraPoints72, auricularPoints, validGb93Index, scalpPoints, tungPointIndex));
 
 let points = loadPoints();
 let selectedCode = points[0]?.code || "";
