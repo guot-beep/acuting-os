@@ -275,6 +275,32 @@
       </section>
 
       <section class="directory-layout" data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫" data-mode-aria-label data-bilingual-aria-label="穴位資料庫" data-english-aria-label="Acupoint directory">
+        <aside class="directory-sidebar" aria-label="穴道分類" data-mode-aria-label data-bilingual-aria-label="穴道分類" data-english-aria-label="Acupoint categories">
+          <!-- 1. 特定穴類別 (Collapsible Accordion, Default Open) -->
+          <details class="directory-filter-accordion" open>
+            <summary class="accordion-summary">
+              <span data-mode-text data-bilingual="⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)" data-english="⭐️ Specific Point Groups">⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)</span>
+            </summary>
+            <div id="pointCategoryList" class="directory-filter-list"></div>
+          </details>
+
+          <!-- 2. 常用臨床主題與證型 (Collapsible Accordion) -->
+          <details class="directory-filter-accordion">
+            <summary class="accordion-summary">
+              <span data-mode-text data-bilingual="🩺 臨床主題與證型" data-english="🩺 Clinical Topics & Patterns">🩺 臨床主題與證型</span>
+            </summary>
+            <div id="topicCategoryList" class="directory-filter-list"></div>
+          </details>
+
+          <!-- 3. 身體解剖部位 (Collapsible Accordion) -->
+          <details class="directory-filter-accordion">
+            <summary class="accordion-summary">
+              <span data-mode-text data-bilingual="📍 身體部位" data-english="📍 Body Regions">📍 身體部位</span>
+            </summary>
+            <div id="regionCategoryList" class="directory-filter-list"></div>
+          </details>
+        </aside>
+
         <div class="directory-main">
           <section class="search-panel" id="acupunctureWorkspace" aria-label="搜尋與篩選" data-mode-aria-label data-bilingual-aria-label="搜尋與篩選" data-english-aria-label="Search and filters">
             <div class="section-heading">
@@ -290,7 +316,7 @@
               <input id="searchInput" type="search" placeholder="搜尋：中文、英文、代碼、位置、功效、證型... (例：ST36, 太衝, 運動區, 神門)" />
             </div>
 
-            <!-- System Tabs Bar & Integrated Sub-Filters Toolbar -->
+            <!-- System Tabs Bar & Sub-Filters Toolbar (Clean System Selector Layout) -->
             <div class="system-toolbar">
               <div class="system-tabs-bar" id="systemTabsBar" aria-label="針灸體系分類">
                 <button type="button" class="system-tab-btn active" data-system="">
@@ -321,30 +347,6 @@
                   <svg class="sys-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
                   <span data-mode-text data-bilingual="特色/微針" data-english="Special Systems">特色/微針</span>
                 </button>
-              </div>
-
-              <!-- Clean Integrated Category Drawer (特定穴, 臨床主題, 身體部位, 十四正經) -->
-              <div class="integrated-filter-drawer" id="integratedFilterDrawer">
-                <details class="directory-filter-accordion" open>
-                  <summary class="accordion-summary">
-                    <span data-mode-text data-bilingual="⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)" data-english="⭐️ Specific Point Groups">⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)</span>
-                  </summary>
-                  <div id="pointCategoryList" class="directory-filter-list"></div>
-                </details>
-
-                <details class="directory-filter-accordion">
-                  <summary class="accordion-summary">
-                    <span data-mode-text data-bilingual="🩺 臨床主題與證型" data-english="🩺 Clinical Topics & Patterns">🩺 臨床主題與證型</span>
-                  </summary>
-                  <div id="topicCategoryList" class="directory-filter-list"></div>
-                </details>
-
-                <details class="directory-filter-accordion">
-                  <summary class="accordion-summary">
-                    <span data-mode-text data-bilingual="📍 身體部位" data-english="📍 Body Regions">📍 身體部位</span>
-                  </summary>
-                  <div id="regionCategoryList" class="directory-filter-list"></div>
-                </details>
               </div>
 
               <!-- eLotus-Style System Toggle Drawer (每個體系獨立折疊分支面板) -->
