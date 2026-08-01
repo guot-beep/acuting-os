@@ -776,9 +776,15 @@ textarea {
   box-shadow: 0 2px 5px rgba(31, 91, 61, 0.25);
 }
 
-/* ── eLotus-Style System Toggle Drawer (體系專屬折疊分支面板) ────── */
-/* system-toggle-drawer kept for JS compat but hidden — sidebar handles sub-branches */
-.system-toggle-drawer { display: none !important; }
+/* ── eLotus-Style System Toggle Drawer (體系與分類二級 Index 分頁抽屜) ────── */
+.system-toggle-drawer {
+  background: #f7fbf8;
+  border: 1px solid #cde0d3;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  margin-top: 0.6rem;
+  box-shadow: 0 4px 14px rgba(31, 91, 61, 0.06);
+}
 
 .drawer-header {
   display: flex;
@@ -1040,20 +1046,14 @@ footer {
   align-items: stretch;
   display: grid;
   gap: 0;
-  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-columns: 1fr;
   border: 1px solid var(--line);
   border-radius: 0 0 8px 8px;
   overflow: hidden;
 }
 
 .directory-sidebar {
-  background: #f4f8f5;
-  border-right: 1px solid #dce9e0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin: 0;
-  padding: 0;
+  display: none !important;
 }
 
 .sidebar-section {

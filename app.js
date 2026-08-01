@@ -2222,19 +2222,30 @@ function renderSystemToggleDrawer() {
   const drawerEl = document.getElementById("systemToggleDrawer");
   if (!drawerEl) return;
 
-  if (!selectedSystem) {
-    drawerEl.style.display = "none";
-    drawerEl.innerHTML = "";
-    return;
-  }
-
   drawerEl.style.display = "block";
 
   let titleZh = "";
   let titleEn = "";
   let chips = [];
+  let isCategoryListMode = false;
+  let categoryListTargetId = "";
 
-  if (selectedSystem === "standard14") {
+  if (!selectedSystem || selectedSystem === "pointCategory") {
+    titleZh = "⭐️ 特定穴類別分支 (Specific Point Groups Grid)";
+    titleEn = "⭐️ Specific Point Groups Grid";
+    categoryListTargetId = "pointCategoryList";
+    isCategoryListMode = true;
+  } else if (selectedSystem === "topic") {
+    titleZh = "🩺 臨床主題與證型分支 (Clinical Topics & Patterns Grid)";
+    titleEn = "🩺 Clinical Topics & Patterns Grid";
+    categoryListTargetId = "topicCategoryList";
+    isCategoryListMode = true;
+  } else if (selectedSystem === "region") {
+    titleZh = "📍 身體解剖部位分支 (Body Regions Grid)";
+    titleEn = "📍 Body Regions Grid";
+    categoryListTargetId = "regionCategoryList";
+    isCategoryListMode = true;
+  } else if (selectedSystem === "standard14") {
     titleZh = "☯️ 十四正經分支體系 (14 Principal Channels Branch Grid)";
     titleEn = "☯️ 14 Principal Channels Branch Grid";
     chips = [
@@ -2308,16 +2319,33 @@ function renderSystemToggleDrawer() {
   }
 
   const isEn = contentMode === "english";
-  drawerEl.innerHTML = `
-    <div class="drawer-header">
-      <div class="drawer-title">${isEn ? titleEn : titleZh}</div>
-      <button type="button" class="drawer-close-btn" id="closeSystemDrawerBtn">${isEn ? "✕ Close Drawer" : "✕ 收合面板"}</button>
-    </div>
-    <div class="drawer-grid">
-      <button type="button" class="drawer-branch-chip ${selectedSystemBranch === "" ? "active" : ""}" data-branch="">
-        ${isEn ? "All Sub-Branches" : "全部子分支"}
-      </button>
-      ${chips.map(c => `
+  if (isCategoryListMode) {
+    drawerEl.innerHTML = `
+      <div class="drawer-header">
+        <div class="drawer-title">${isEn ? titleEn : titleZh}</div>
+        <button type="button" class="drawer-close-btn" id="closeSystemDrawerBtn">${isEn ? "✕ Close Drawer" : "✕ 收合面板"}</button>
+      </div>
+      <div id="${categoryListTargetId}" class="directory-filter-list drawer-filter-list"></div>
+    `;
+    renderDirectoryFilters();
+  } else {
+    drawerEl.innerHTML = `
+      <div class="drawer-header">
+        <div class="drawer-title">${isEn ? titleEn : titleZh}</div>
+        <button type="button" class="drawer-close-btn" id="closeSystemDrawerBtn">${isEn ? "✕ Close Drawer" : "✕ 收合面板"}</button>
+      </div>
+      <div class="drawer-grid">
+        <button type="button" class="drawer-branch-chip ${selectedSystemBranch === "" ? "active" : ""}" data-branch="">
+          ${isEn ? "All Sub-Branches" : "全部子分支"}
+        </button>
+        ${chips.map(c => `
+          <button type="button" class="drawer-branch-chip ${selectedSystemBranch === c.id ? "active" : ""}" data-branch="${escapeAttribute(c.id)}">
+            ${escapeHtml(isEn ? c.en : c.zh)}
+          </button>
+        `).join("")}
+      </div>
+    `;
+  }
         <button type="button" class="drawer-branch-chip ${selectedSystemBranch === c.id ? "active" : ""}" data-branch="${c.id}">
           ${isEn ? c.en : c.zh}
         </button>
