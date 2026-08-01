@@ -3551,10 +3551,14 @@ function renderDetail(point) {
             </div>
           </div>
           <div class="hero-fact-grid">
-            ${heroFact(contentMode === "english" ? "Channel" : "所屬經絡", contentMode === "english" ? shortMeridianEn(point) : shortMeridian(point), point.code)}
-            ${heroFact(contentMode === "english" ? "Region" : "身體部位", contentMode === "english" ? regionEn(point) : (point.region || "未分類"), contentMode === "english" ? (point.locationEn || point.location) : point.location)}
-            ${heroFact(contentMode === "english" ? "Needling" : "針刺/手法", shortTechnique(point), contentMode === "english" ? "Verify with professional sources and clinical training" : "依專業來源與臨床訓練判斷")}
-            ${heroFact(contentMode === "english" ? "Moxibustion" : "艾灸", contentMode === "english" ? moxaTextEn(moxaText) : moxaText, contentMode === "english" ? "Based on presentation and contraindications" : (point.cautions || "依體質與病勢判斷"))}
+            ${isAuricularPoint(point) ? `
+              ${heroFact(contentMode === "english" ? "Ear Anatomy Zone" : "耳區解剖分區", contentMode === "english" ? regionEn(point) : (point.region || "耳穴分區"), contentMode === "english" ? (point.locationEn || point.location) : point.location)}
+            ` : `
+              ${heroFact(contentMode === "english" ? "Channel" : "所屬經絡", contentMode === "english" ? shortMeridianEn(point) : shortMeridian(point), point.code)}
+              ${heroFact(contentMode === "english" ? "Region" : "身體部位", contentMode === "english" ? regionEn(point) : (point.region || "未分類"), contentMode === "english" ? (point.locationEn || point.location) : point.location)}
+              ${heroFact(contentMode === "english" ? "Needling" : "針刺/手法", shortTechnique(point), contentMode === "english" ? "Verify with professional sources and clinical training" : "依專業來源與臨床訓練判斷")}
+              ${heroFact(contentMode === "english" ? "Moxibustion" : "艾灸", contentMode === "english" ? moxaTextEn(moxaText) : moxaText, contentMode === "english" ? "Based on presentation and contraindications" : (point.cautions || "依體質與病勢判斷"))}
+            `}
           </div>
         </section>
 
@@ -4177,10 +4181,11 @@ function externalPointLinks(point) {
   const visualLinks = normalizeVisualLinks(point.visualLinks || []);
 
   if (isAuricularPoint(point)) {
-    const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
+    const elotusLink = visualLinks.find(l => (l.url || '').includes('mastertungacupuncture.org'))?.url || sources.find(s => s.includes('mastertungacupuncture.org')) || `https://www.mastertungacupuncture.org/acupuncture/auricular/lch/points/${(point.code||'').toLowerCase().replace('ear-lch-', '').replace('ear-', '')}`;
+    const acupunLink = visualLinks.find(l => (l.url || '').includes('acupun.site'))?.url || `https://acupun.site/point_list_Ear93GB.aspx?pointId=${(point.code || '').replace(/^EAR-/, '')}`;
     return [
-      { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
-      { label: contentMode === "english" ? "Visual Diagram" : "耳穴圖源", url: primary, kind: "english" }
+      { label: contentMode === "english" ? "Chinese Ear Map" : "中華針灸網 3D耳穴", url: acupunLink, kind: "chinese" },
+      { label: contentMode === "english" ? "eLotus CORE (Dr. Huang)" : "eLotus 黃麗春圖解", url: elotusLink, kind: "english" }
     ];
   }
 
