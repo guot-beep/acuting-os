@@ -4170,10 +4170,12 @@ function externalPointLinks(point) {
   };
 
   if (isAuricularPoint(point)) {
-    const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
+    const elotus = visualLinks.find(v => v && v.url && v.url.includes("mastertungacupuncture"))?.url || sources.find(s => typeof s === "string" && s.includes("mastertungacupuncture"));
+    const gb3d = visualLinks.find(v => v && v.url && v.url.includes("acupun.site"))?.url || sources.find(s => typeof s === "string" && s.includes("acupun.site"));
     return [
       { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
-      { label: contentMode === "english" ? "Visual Diagram" : "耳穴圖源", url: primary, kind: "english" }
+      { label: contentMode === "english" ? "eLotus CORE (Dr. Huang)" : "eLotus CORE (黃麗春耳針)", url: elotus, kind: "english" },
+      { label: contentMode === "english" ? "GB 3D Auricular Map" : "國際標準耳穴 3D", url: gb3d, kind: "english" }
     ].filter(link => isValidUrl(link.url));
   }
 
