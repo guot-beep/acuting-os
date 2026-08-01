@@ -1955,7 +1955,8 @@ function renderDirectoryFilters() {
 }
 
 function renderTungZoneCategories() {
-  if (!tungZoneCategoryList) return;
+  const el = tungZoneCategoryList || document.querySelector("#tungZoneCategoryList");
+  if (!el) return;
   const tungPointsTotal = points.filter((p) => String(p.meridian || "").includes("Master Tung") || String(p.code).startsWith("T")).length;
   const rows = [
     directoryButton({
@@ -1975,13 +1976,14 @@ function renderTungZoneCategories() {
       value: zone.id
     }))
   ];
-  tungZoneCategoryList.innerHTML = rows.join("");
-  bindDirectoryButtons(tungZoneCategoryList);
+  el.innerHTML = rows.join("");
+  bindDirectoryButtons(el);
 }
 
 // PC5: 特定穴 filter group — click a category → list all points in it.
 function renderPointCategories() {
-  if (!pointCategoryList) return;
+  const el = pointCategoryList || document.querySelector("#pointCategoryList");
+  if (!el) return;
   const withCounts = pointCategoryCatalog
     .map((c) => ({ c, count: points.filter((p) => pointMatchesCategory(p, c.id)).length }))
     .filter((x) => x.count > 0);
@@ -1996,8 +1998,8 @@ function renderPointCategories() {
       value: c.id
     }))
   ];
-  pointCategoryList.innerHTML = rows.join("");
-  bindDirectoryButtons(pointCategoryList);
+  el.innerHTML = rows.join("");
+  bindDirectoryButtons(el);
 }
 
 // 經外奇穴, 耳穴 and 董氏奇穴 are not channels — they are separate point systems
@@ -2036,7 +2038,8 @@ function meridianCategoryRows(list, activeValue) {
 }
 
 function renderMeridianCategories() {
-  if (!meridianCategoryList) return;
+  const el = meridianCategoryList || document.querySelector("#meridianCategoryList");
+  if (!el) return;
   const stdPoints = points.filter(isStandardChannelPoint);
   const stdMeridians = unique(stdPoints.map((point) => point.meridian))
     .sort((a, b) => channelOrderIndex(a) - channelOrderIndex(b));
@@ -2060,10 +2063,10 @@ function renderMeridianCategories() {
     }))
   ];
 
-  meridianCategoryList.innerHTML = rows.join("");
-  bindDirectoryButtons(meridianCategoryList);
+  el.innerHTML = rows.join("");
+  bindDirectoryButtons(el);
 
-  const accordionSummary = meridianCategoryList.closest("details")?.querySelector(".accordion-summary span");
+  const accordionSummary = el.closest("details")?.querySelector(".accordion-summary span");
   if (accordionSummary) {
     const isEn = contentMode === "english";
     accordionSummary.textContent = isEn ? `☯️ 14 Channels (${stdPoints.length} Points)` : `☯️ 十四正經 (${stdPoints.length}正穴)`;
@@ -2071,7 +2074,8 @@ function renderMeridianCategories() {
 }
 
 function renderRegionCategories() {
-  if (!regionCategoryList) return;
+  const el = regionCategoryList || document.querySelector("#regionCategoryList");
+  if (!el) return;
   const rows = [
     directoryButton({
       labelZh: "全部",
@@ -2090,12 +2094,13 @@ function renderRegionCategories() {
       value: group.id
     }))
   ];
-  regionCategoryList.innerHTML = rows.join("");
-  bindDirectoryButtons(regionCategoryList);
+  el.innerHTML = rows.join("");
+  bindDirectoryButtons(el);
 }
 
 function renderTopicCategories() {
-  if (!topicCategoryList) return;
+  const el = topicCategoryList || document.querySelector("#topicCategoryList");
+  if (!el) return;
   const rows = [
     directoryButton({
       labelZh: "全部",
@@ -2105,12 +2110,6 @@ function renderTopicCategories() {
       action: "topic",
       value: ""
     }),
-    // Clinical themes only. The list also carries index buckets (董氏索引,
-    // 耳穴索引) and eight data-quality buckets (缺針刺手法, GB93待校對,
-    // 缺資料來源…). Those are build state, not a way to look up a point, and
-    // mixing them into 常用臨床主題 made the clinical surface read like a QA
-    // dashboard. They stay reachable below, grouped and labelled for what they
-    // are, so nothing is lost.
     ...directoryTopics.filter((t) => (t.group || "clinical") === "clinical").map((topic) => directoryButton({
       labelZh: topic.zh,
       labelEn: topic.en,
@@ -2118,11 +2117,8 @@ function renderTopicCategories() {
       active: directoryTopic === topic.id,
       action: "topic",
       value: topic.id
-    }))
-  ];
-
-  topicCategoryList.innerHTML = rows.join("");
-  bindDirectoryButtons(topicCategoryList);
+  el.innerHTML = rows.join("");
+  bindDirectoryButtons(el);
 }
 
 function directoryButton({ labelZh, labelEn, count, active, action, value }) {
@@ -4159,7 +4155,7 @@ function eLotusPointUrl(point) {
 
 function externalPointLinks(point) {
   const sources = point.sources || [];
-  const visualLinks = normalizeVisualLinks(point.visualLinks || []);
+  const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
 
   const isValidUrl = (u) => {
     if (!u || typeof u !== "string" || !/^https?:\/\//.test(u)) return false;

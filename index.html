@@ -340,7 +340,26 @@
             aria-label="穴道分類" data-mode-aria-label
             data-bilingual-aria-label="穴道分類"
             data-english-aria-label="Acupoint categories">
-            <!-- rendered by renderDirectoryFilters() in app.js -->
+            <details class="directory-filter-accordion" open>
+              <summary class="accordion-summary"><span data-mode-text data-bilingual="☯️ 十四正經" data-english="☯️ 14 Channels">☯️ 十四正經</span></summary>
+              <div id="meridianCategoryList" class="directory-filter-list"></div>
+            </details>
+            <details class="directory-filter-accordion" open>
+              <summary class="accordion-summary"><span data-mode-text data-bilingual="📍 身體部位" data-english="📍 Body Regions">📍 身體部位</span></summary>
+              <div id="regionCategoryList" class="directory-filter-list"></div>
+            </details>
+            <details class="directory-filter-accordion">
+              <summary class="accordion-summary"><span data-mode-text data-bilingual="💡 特定穴類別" data-english="💡 Master Point Categories">💡 特定穴類別</span></summary>
+              <div id="pointCategoryList" class="directory-filter-list"></div>
+            </details>
+            <details class="directory-filter-accordion">
+              <summary class="accordion-summary"><span data-mode-text data-bilingual="🔥 董氏奇穴部位" data-english="🔥 Tung 12 Zones">🔥 董氏奇穴部位</span></summary>
+              <div id="tungZoneCategoryList" class="directory-filter-list"></div>
+            </details>
+            <details class="directory-filter-accordion">
+              <summary class="accordion-summary"><span data-mode-text data-bilingual="🎯 常用臨床主題" data-english="🎯 Clinical Topics">🎯 常用臨床主題</span></summary>
+              <div id="topicCategoryList" class="directory-filter-list"></div>
+            </details>
           </aside>
 
           <!-- RIGHT: point cards grid — always visible -->
