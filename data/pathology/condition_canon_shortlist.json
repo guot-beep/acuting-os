@@ -26593,6 +26593,48 @@
       "exact_source_url": "https://cloudtcm.com/disease/tcm/1659",
       "fetched_at": "2026-07-23T07:46:19.476Z",
       "source_type": "sourced_cloudtcm_record"
+    },
+    {
+      "id": "cond.glaucoma",
+      "name_zh": "青光眼（青風內障）",
+      "name_en": "Glaucoma",
+      "icd10": "H40",
+      "tcm_name_zh": "青風內障",
+      "category": "五官眼科 / Ophthalmology",
+      "description_zh": "房水排出受阻導致眼壓升高 (IOP)，造成視神經損傷與視野缺損。",
+      "description_en": "Increased intraocular pressure due to blocked aqueous humor drainage, leading to optic nerve damage and vision loss.",
+      "related_patterns": [
+        "pattern.liver_fire",
+        "pattern.phlegm_damp",
+        "pattern.yin_deficiency"
+      ],
+      "formulas_zh": [
+        "丹梔逍遙丸",
+        "黃連上清丸",
+        "杞菊地黃丸",
+        "知柏地黃丸"
+      ],
+      "acupoints": [
+        "TAIYANG",
+        "UB2",
+        "GB1",
+        "ST2",
+        "SJ23",
+        "GB20",
+        "UB10",
+        "ST36",
+        "SP6",
+        "LR2",
+        "LR3"
+      ],
+      "auricular_points": [
+        "EAR-LIVER",
+        "EAR-KIDNEY",
+        "EAR-EYE",
+        "EAR-SYM",
+        "AT4",
+        "EAR-FOREHEAD"
+      ]
     }
   ]
 }
