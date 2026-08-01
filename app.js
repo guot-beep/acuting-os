@@ -2386,7 +2386,8 @@ function pointMatchesSystemBranch(point) {
     return pointMatchesRegionGroup(point, selectedSystemBranch);
   }
   if (selectedSystem === "auricular") {
-    return code.includes(selectedSystemBranch) || loc.includes(selectedSystemBranch);
+    const zone = String(point.zone || "").toUpperCase();
+    return zone === selectedSystemBranch || code.includes(selectedSystemBranch) || loc.includes(selectedSystemBranch);
   }
   if (selectedSystem === "scalp") {
     if (selectedSystemBranch === "forehead") return code.startsWith("MS1") || code.startsWith("MS2") || code.startsWith("MS3") || code.startsWith("MS4") || loc.includes("額");
