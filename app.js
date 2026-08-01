@@ -4164,6 +4164,7 @@ function externalPointLinks(point) {
     if (u === "https://www.americandragon.com/" || u === "https://www.americandragon.com") return false;
     if (u === "https://cloudtcm.com/acupoint" || u === "https://cloudtcm.com/acupoint/") return false;
     if (u === "https://www.mastertungacupuncture.org/acupuncture/traditional/points" || u === "https://www.mastertungacupuncture.org/acupuncture/traditional/points/") return false;
+    if (u.includes("/acupuncture/scalp/overview")) return false;
     return true;
   };
 
@@ -4187,10 +4188,10 @@ function externalPointLinks(point) {
   }
 
   if (String(point.meridian || "").includes("Scalp") || String(point.code || "").startsWith("MS")) {
-    const elotus = visualLinks.find(v => v && v.url && v.url.includes("mastertungacupuncture"))?.url || sources.find(s => typeof s === "string" && s.includes("mastertungacupuncture"));
+    const scalpLink = visualLinks.find(v => v && v.url && isValidUrl(v.url))?.url || sources.find(s => typeof s === "string" && isValidUrl(s)) || "https://www.itmonline.org/arts/scalp.htm";
     return [
       { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
-      { label: contentMode === "english" ? "WHO Scalp Standard (eLotus)" : "eLotus 國際標準頭皮針", url: elotus, kind: "english" }
+      { label: contentMode === "english" ? "WHO Scalp Standard Guide" : "WHO 國際標準頭皮針指南", url: scalpLink, kind: "english" }
     ].filter(link => isValidUrl(link.url));
   }
 
