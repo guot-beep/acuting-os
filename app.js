@@ -2346,17 +2346,6 @@ function renderSystemToggleDrawer() {
       </div>
     `;
   }
-        <button type="button" class="drawer-branch-chip ${selectedSystemBranch === c.id ? "active" : ""}" data-branch="${c.id}">
-          ${isEn ? c.en : c.zh}
-        </button>
-      `).join("")}
-      ${selectedSystem === "standard14" ? `
-        <a href="#ws/channels" class="chart-shortcut-btn" style="margin-left: auto;">
-          ${isEn ? "📊 Channel & Point Charts ↗" : "📊 經脈與特定穴圖表 ↗"}
-        </a>
-      ` : ""}
-    </div>
-  `;
 
   drawerEl.querySelector("#closeSystemDrawerBtn")?.addEventListener("click", () => {
     selectedSystem = "";
