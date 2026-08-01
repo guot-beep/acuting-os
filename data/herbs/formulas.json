@@ -180,6 +180,7 @@
           "herb_id": "herb.gui_zhi",
           "name_zh": "桂枝",
           "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
           "dosage": "9g",
           "role_zh": "君",
           "role_en": "Chief",
@@ -189,6 +190,7 @@
           "herb_id": "herb.bai_shao",
           "name_zh": "白芍",
           "name_en": "White Peony Root",
+          "pinyin": "Bai Shao",
           "dosage": "9g",
           "role_zh": "臣",
           "role_en": "Deputy",
@@ -198,6 +200,7 @@
           "herb_id": "herb.sheng_jiang",
           "name_zh": "生薑",
           "name_en": "Fresh Ginger",
+          "pinyin": "Sheng Jiang",
           "dosage": "9g",
           "role_zh": "佐",
           "role_en": "Assistant",
@@ -207,6 +210,7 @@
           "herb_id": "herb.da_zao",
           "name_zh": "大棗",
           "name_en": "Jujube Date",
+          "pinyin": "Da Zao",
           "dosage": "6g (12枚)",
           "role_zh": "佐",
           "role_en": "Assistant",
@@ -216,22 +220,15 @@
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
+          "pinyin": "Zhi Gan Cao",
           "dosage": "6g",
           "role_zh": "使",
           "role_en": "Envoy",
           "in_formula_zh": "甘溫調和諸藥，益氣和中"
         }
       ],
-      "actions_en": [
-        "Releases the muscle layer and exterior",
-        "Harmonizes ying (nutritive) and wei (protective) levels",
-        "Dispels wind-cold and relieves pain"
-      ],
-      "actions_zh": [
-        "解肌發表",
-        "調和營衛",
-        "散風寒、止痛"
-      ],
+      "actions_en": "Releases the Muscle Layer and Exterior, Harmonizes Ying and Wei Levels",
+      "actions_zh": "解肌發表，調和營衛。",
       "modifications_en": [
         "With neck stiffness: add Ge Gen (Ge Gen Tang)",
         "With cough and wheezing: add Hou Po and Xing Ren",
@@ -274,11 +271,7 @@
         "Thin white tongue coating and floating, moderate pulse"
       ],
       "pattern_indications_zh": [
-        "太陽中風 —— 風寒表虛證",
-        "發熱、惡風、汗出",
-        "頭痛、項強",
-        "鼻鳴、乾嘔",
-        "苔薄白、脈浮緩"
+        "1. 太陽中風證（風寒表虛證）：惡風發熱，汗出頭痛，鼻鳴乾嘔，苔薄白，脈浮緩。"
       ],
       "related_conditions": [
         "pattern.spleen_qi_deficiency"
@@ -313,7 +306,7 @@
         "zhu_zhi_zh": ""
       },
       "tier": "core",
-      "category": "解表劑 / Release the Exterior",
+      "category": "解表劑 / 辛溫解表",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
       "comparison_group": "exterior_wind_cold",
       "related_formulas": [
@@ -326,7 +319,7 @@
       "source_classic": "《傷寒論》",
       "exact_source_url": "https://cloudtcm.com/formula/2",
       "fetched_at": "2026-07-23T07:08:37.898Z",
-      "cautions_zh": "表實無汗者禁用；溫病初起、熱盛發汗過多者禁用；陰虛火旺或溫熱病邪在氣分者避用。",
+      "cautions_zh": "表實無汗者禁用（太陽傷寒，當用麻黃湯）；溫病初起、風熱表證者禁用；陰虛火旺、內有濕熱者禁用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/2",
       "safety_fetched_at": "2026-07-23T07:32:44.476Z",
@@ -629,32 +622,32 @@
         }
       ],
       "applications_zh": [
-        "普通感冒、流行性感冒（表虛自汗型）",
-        "自主神經功能紊亂、自汗症",
-        "蕁麻疹、皮膚搔癢症（風寒或營衛不和）",
-        "過敏性鼻炎",
-        "胃腸型感冒、妊娠惡阻（調和脾胃）"
+        "普通感冒、流行性感冒（風寒表虛型）",
+        "產後發熱、病後體虛自汗、植物神經功能紊亂",
+        "蕁麻疹、皮膚瘙癢症、多形性紅斑",
+        "痛經、腹痛（桂枝加芍藥湯證）",
+        "喘息性支氣管炎（桂枝加厚朴杏子湯證）"
       ],
       "applications_en": [
-        "Common cold / influenza (exterior deficiency with spontaneous sweating)",
-        "Autonomic dysfunction, spontaneous sweating (hidrosis)",
-        "Urticaria, pruritus (wind-cold or Ying-Wei disharmony)",
-        "Allergic rhinitis",
-        "Gastrointestinal flu, morning sickness (harmonizing Spleen and Stomach)"
+        "Common cold / flu (wind-cold exterior deficiency pattern)",
+        "Postpartum fever, spontaneous sweating due to debility, dysautonomia",
+        "Urticaria, pruritus, erythema multiforme",
+        "Dysmenorrhea, abdominal pain (Gui Zhi Jia Shao Yao Tang pattern)",
+        "Asthmatic bronchitis (Gui Zhi Jia Hou Po Xing Ren Tang pattern)"
       ],
       "modern_research_zh": [
-        "調節體溫與汗腺分泌（雙向調節作用）",
-        "解熱、鎮痛、抗炎",
-        "調節自主神經功能",
-        "增強免疫力",
-        "胃腸平滑肌雙向調節作用"
+        "發汗解熱、雙向調節體溫中樞",
+        "調節汗腺分泌、調節自主神經",
+        "抗炎、鎮痛、抗過敏作用",
+        "改善周圍血液循環、抗心律失常",
+        "調節胃腸平滑肌運動與免疫功能"
       ],
       "modern_research_en": [
-        "Dual-directional regulation of body temperature and sweat glands",
-        "Antipyretic, analgesic, and anti-inflammatory",
-        "Regulates autonomic nervous system function",
-        "Enhances immune response",
-        "Dual-directional regulation of gastrointestinal smooth muscle"
+        "Diaphoretic and antipyretic, bidirectional regulation of thermoregulation center",
+        "Regulates sweat gland secretion and autonomic nervous system",
+        "Anti-inflammatory, analgesic, and antiallergic effects",
+        "Improves peripheral blood circulation, antiarrhythmic",
+        "Modulates gastrointestinal smooth muscle motility and immune function"
       ],
       "preparation_zh": "水煎服，啜熱稀粥一升餘，溫覆取微汗",
       "preparation_en": "Decoct with water; take warm followed by a bowl of hot thin rice porridge, cover warmly to induce mild sweat",
@@ -712,7 +705,8 @@
         {
           "herb_id": "herb.ma_huang",
           "name_zh": "麻黃",
-          "name_en": "Ephedra Stem",
+          "name_en": "Ephedra",
+          "pinyin": "Ma Huang",
           "dosage": "9g",
           "role_zh": "君",
           "role_en": "Chief",
@@ -722,15 +716,17 @@
           "herb_id": "herb.gui_zhi",
           "name_zh": "桂枝",
           "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
           "dosage": "6g",
           "role_zh": "臣",
           "role_en": "Deputy",
-          "in_formula_zh": "溫通經脈，助麻黃發汗"
+          "in_formula_zh": "溫經解肌，助麻黃發汗"
         },
         {
           "herb_id": "herb.xing_ren",
           "name_zh": "杏仁",
-          "name_en": "Apricot Seed",
+          "name_en": "Apricot Kernel",
+          "pinyin": "Xing Ren",
           "dosage": "9g",
           "role_zh": "佐",
           "role_en": "Assistant",
@@ -740,22 +736,15 @@
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
+          "pinyin": "Zhi Gan Cao",
           "dosage": "3g",
           "role_zh": "使",
           "role_en": "Envoy",
           "in_formula_zh": "調和諸藥，緩和麻桂峻烈之性"
         }
       ],
-      "actions_en": [
-        "Releases the exterior by inducing sweating and dispelling wind-cold",
-        "Diffuses Lung qi and arrests wheezing",
-        "Dispels cold and relieves body aches and joint pain"
-      ],
-      "actions_zh": [
-        "發汗解表、散風寒",
-        "宣肺平喘",
-        "散寒止痛"
-      ],
+      "actions_en": "Induces Diaphoresis, Releases the Exterior, Diffuses Lungs, Calms Wheezing",
+      "actions_zh": "發汗解表，宣肺平喘。",
       "modifications_en": [
         "Differentiate from Gui Zhi Tang when sweating is present",
         "Review Ma Huang safety in cardiovascular or stimulant-sensitive contexts"
@@ -789,11 +778,7 @@
         "Nasal congestion and clear rhinorrhea"
       ],
       "pattern_indications_zh": [
-        "太陽傷寒 —— 風寒表實證",
-        "惡寒發熱、無汗",
-        "頭痛、身痛、腰痛、骨節疼痛",
-        "咳嗽氣喘",
-        "鼻塞流涕"
+        "1. 太陽傷寒證（風寒表實證）：惡寒發熱，無汗而喘，頭痛身痛，骨節酸痛，苔薄白，脈浮緊。"
       ],
       "related_conditions": [],
       "source_status": "bensky_review_pending_chinese_source_draft",
@@ -826,7 +811,7 @@
         "zhu_zhi_zh": ""
       },
       "tier": "core",
-      "category": "解表劑 / Release the Exterior",
+      "category": "解表劑 / 辛溫解表",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
       "comparison_group": "exterior_wind_cold",
       "related_formulas": [
@@ -847,7 +832,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/1",
       "fetched_at": "2026-07-23T07:08:38.180Z",
-      "cautions_zh": "表虛有汗者、陰虛發熱者、衄血吐血者、高血壓及心悸失眠者禁用；瘡家、衄家、亡血家慎用。",
+      "cautions_zh": "表虛自汗、陰虛盜汗、瘡家、衄家、亡血家忌用；高血壓、心臟病及嚴重失眠者慎用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/1",
       "safety_fetched_at": "2026-07-23T07:32:44.785Z",
@@ -1088,34 +1073,32 @@
         "Pregnancy, hypertension, palpitations, insomnia, stimulant medication, or profuse sweating require review"
       ],
       "applications_zh": [
-        "感冒／流感／急性支氣管炎；氣喘以寒性喘鳴為主",
-        "風寒濕痺",
-        "鼻衄 —— 無汗、脈浮緊者",
-        "急性腎小球腎炎",
-        "風寒型皮膚病"
+        "流行性感冒、普通感冒（風寒表實型）",
+        "支氣管哮喘急性發作、喘息性支氣管炎",
+        "急性風濕性關節炎、全身骨節酸痛",
+        "小兒遺尿（肺氣不宣型）",
+        "過敏性鼻炎、急性蕁麻疹"
       ],
       "applications_en": [
-        "Cold/flu/acute bronchitis, asthma mainly manifesting as wheezing due to cold",
-        "Bi Sx due to wind cold damp",
-        "Nosebleeds w/o sweating and with a floating/tight pulse",
-        "Acute glomerulonephritis",
-        "Skin disorders due to wind cold"
+        "Influenza, common cold (wind-cold exterior excess pattern)",
+        "Acute asthma attack, asthmatic bronchitis",
+        "Acute rheumatic arthritis, generalized joint pain",
+        "Pediatric enuresis (un-diffused Lung Qi pattern)",
+        "Allergic rhinitis, acute urticaria"
       ],
       "modern_research_zh": [
-        "解熱",
-        "促進腺體分泌（尤其發汗與流淚）",
-        "止咳",
-        "平喘",
-        "祛痰",
-        "抗菌、抗病毒"
+        "強效發汗解熱作用",
+        "鬆弛支氣管平滑肌、顯著平喘作用",
+        "抗炎、抗過敏、抑制組織胺釋放",
+        "抗病毒、抑制流感病毒增殖",
+        "興奮心血管與中樞神經系統"
       ],
       "modern_research_en": [
-        "Antipyretic",
-        "Promotes glandular secretion, esp. sweating & tearing",
-        "Antitussive",
-        "Antiasthmatic",
-        "Expectorant",
-        "Antibacterial, antiviral"
+        "Potent diaphoretic and antipyretic actions",
+        "Relaxes bronchial smooth muscle, marked antiasthmatic effect",
+        "Anti-inflammatory, antiallergic, inhibits histamine release",
+        "Antiviral, inhibits influenza virus proliferation",
+        "Stimulates cardiovascular and central nervous systems"
       ],
       "administration_zh": "熱服，以助發汗。得汗即停後服。",
       "administration_en": "taken hot to induce sweating",
@@ -1188,7 +1171,7 @@
       "source_type": "sourced_cloudtcm_record",
       "category_id": "",
       "category_en": "Release the Exterior",
-      "category": "解表劑 / Release the Exterior",
+      "category": "解表劑 / 辛溫解表",
       "tier": "core",
       "source_hint": "Bensky F&S: Release the Exterior; add to AcuTing formulas after Ting approval",
       "comparison_group": "exterior_wind_cold",
@@ -1205,143 +1188,88 @@
       "public_safe": false,
       "study_tags": [],
       "pattern_focus_en": "",
-      "actions_en": [
-        "Releases the exterior and dispels cold",
-        "Warms the Lungs and transforms thin fluid retention",
-        "Stops coughing and calms wheezing"
-      ],
-      "actions_zh": [
-        "解表散寒",
-        "溫肺化飲",
-        "止咳平喘"
-      ],
+      "actions_en": "Releases the Exterior, Dispels Cold, Warms Lungs, Transforms Thin Mucus",
+      "actions_zh": "解表散寒，溫肺化飲。",
       "composition": [
         {
           "herb_id": "herb.ma_huang",
-          "herb_zh": "麻黃",
-          "herb_en": "Ephedra",
-          "pinyin_toned": "Má Huáng",
-          "dose_range": "9g",
-          "dose_g": "9",
+          "name_zh": "麻黃",
+          "name_en": "Ephedra",
+          "pinyin": "Ma Huang",
+          "dosage": "9g",
           "role_zh": "君",
           "role_en": "Chief",
-          "role_reason_zh": "發汗解表，宣肺平喘",
-          "role_reason_en": "Releases exterior and diffuses Lung qi",
-          "elucidation_zh": "發汗解表、宣肺平喘",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
           "in_formula_zh": "發汗解表，宣肺平喘"
         },
         {
           "herb_id": "herb.gui_zhi",
-          "herb_zh": "桂枝",
-          "herb_en": "Cinnamon Twig",
-          "pinyin_toned": "Guì Zhī",
-          "dose_range": "9g",
-          "dose_g": "9",
+          "name_zh": "桂枝",
+          "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
+          "dosage": "9g",
           "role_zh": "君",
           "role_en": "Chief",
-          "role_reason_zh": "溫經解肌，助麻黃解表散寒",
-          "role_reason_en": "Warms channels and assists Ma Huang in releasing exterior",
-          "elucidation_zh": "溫經解肌、散寒通脈",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
           "in_formula_zh": "解肌發表，溫陽化氣"
         },
         {
           "herb_id": "herb.xi_xin",
-          "herb_zh": "細辛",
-          "herb_en": "Asarum",
-          "pinyin_toned": "Xì Xīn",
-          "dose_range": "3g",
-          "dose_g": "3",
+          "name_zh": "細辛",
+          "name_en": "Asarum",
+          "pinyin": "Xi Xin",
+          "dosage": "3g",
           "role_zh": "臣",
           "role_en": "Deputy",
-          "role_reason_zh": "溫肺化飲，散寒止痛",
-          "role_reason_en": "Warms Lungs and transforms fluid retention",
-          "elucidation_zh": "溫肺化飲、散寒止痛",
-          "decoction_reference_g": "3g",
-          "granule_reference_g": "0.6g",
           "in_formula_zh": "散寒止痛，溫肺化飲"
         },
         {
           "herb_id": "herb.gan_jiang",
-          "herb_zh": "乾薑",
-          "herb_en": "Dried Ginger",
-          "pinyin_toned": "Gān Jiāng",
-          "dose_range": "9g",
-          "dose_g": "9",
+          "name_zh": "乾薑",
+          "name_en": "Dried Ginger",
+          "pinyin": "Gan Jiang",
+          "dosage": "9g",
           "role_zh": "臣",
           "role_en": "Deputy",
-          "role_reason_zh": "溫中暖脾，化痰飲",
-          "role_reason_en": "Warms spleen and transforms phlegm-fluid",
-          "elucidation_zh": "溫中散寒、溫肺化飲",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
           "in_formula_zh": "溫脾肺之陽，溫化水飲"
         },
         {
           "herb_id": "herb.ban_xia",
-          "herb_zh": "半夏",
-          "herb_en": "Pinellia",
-          "pinyin_toned": "Bàn Xià",
-          "dose_range": "9g",
-          "dose_g": "9",
+          "name_zh": "半夏",
+          "name_en": "Pinellia Rhizome",
+          "pinyin": "Ban Xia",
+          "dosage": "9g",
           "role_zh": "佐",
           "role_en": "Assistant",
-          "role_reason_zh": "燥濕化痰，降逆和胃",
-          "role_reason_en": "Dries dampness and transforms phlegm",
-          "elucidation_zh": "燥濕化痰、降逆止嘔",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "in_formula_zh": "燥濕化痰，降逆和胃"
-        },
-        {
-          "herb_id": "herb.bai_shao",
-          "herb_zh": "白芍",
-          "herb_en": "White Peony Root",
-          "pinyin_toned": "Bái Sháo",
-          "dose_range": "9g",
-          "dose_g": "9",
-          "role_zh": "佐",
-          "role_en": "Assistant",
-          "role_reason_zh": "和營斂陰，防止發汗散氣傷正",
-          "role_reason_en": "Harmonizes ying and preserves yin against over-sweating",
-          "elucidation_zh": "養血柔肝、斂陰和營",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "in_formula_zh": "養血斂陰，防大汗傷陰"
+          "in_formula_zh": "燥濕化痰，降逆止嘔"
         },
         {
           "herb_id": "herb.wu_wei_zi",
-          "herb_zh": "五味子",
-          "herb_en": "Schisandra",
-          "pinyin_toned": "Wǔ Wèi Zǐ",
-          "dose_range": "6g",
-          "dose_g": "6",
+          "name_zh": "五味子",
+          "name_en": "Schisandra Berry",
+          "pinyin": "Wu Wei Zi",
+          "dosage": "6g",
           "role_zh": "佐",
           "role_en": "Assistant",
-          "role_reason_zh": "斂肺止咳，收斂肺氣",
-          "role_reason_en": "Astringes Lung qi to stop cough",
-          "elucidation_zh": "斂肺止咳、滋腎生津",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
           "in_formula_zh": "斂肺止咳，收耗散之肺氣"
         },
         {
-          "herb_id": "herb.gan_cao",
-          "herb_zh": "甘草",
-          "herb_en": "Licorice",
-          "pinyin_toned": "Gān Cǎo",
-          "dose_range": "6g",
-          "dose_g": "6",
+          "herb_id": "herb.bai_shao",
+          "name_zh": "白芍",
+          "name_en": "White Peony Root",
+          "pinyin": "Bai Shao",
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "養血斂陰，防大汗傷陰"
+        },
+        {
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "pinyin": "Zhi Gan Cao",
+          "dosage": "6g",
           "role_zh": "使",
           "role_en": "Envoy",
-          "role_reason_zh": "益氣和中，調和諸藥",
-          "role_reason_en": "Harmonizes all herbs and tonifies qi",
-          "elucidation_zh": "調和諸藥、緩急止痛",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g"
+          "in_formula_zh": "益氣和中，調和諸藥"
         }
       ],
       "pattern_indications_en": [
@@ -1352,11 +1280,7 @@
         "White slippery tongue coating and floating, tight pulse"
       ],
       "pattern_indications_zh": [
-        "外寒內飲證",
-        "惡寒發熱、無汗",
-        "咳嗽喘急、痰多稀白",
-        "胸痞乾嘔、或嘔吐",
-        "苔白滑、脈浮緊"
+        "1. 外感風寒，水飲內停證：惡寒發熱，無汗，咳嗽，氣喘，痰多清稀，或乾嘔，或頭面四肢浮腫，舌苔白滑，脈浮緊。"
       ],
       "modifications_en": [
         "With interior heat and restlessness: add Shi Gao",
@@ -1412,9 +1336,7 @@
       "source_classic": "《傷寒論》",
       "exact_source_url": "https://cloudtcm.com/formula/41",
       "fetched_at": "2026-07-23T07:08:59.172Z",
-      "cautions_zh": [
-        "因本方多溫燥之品，故陰虛乾咳無痰或痰熱證者，不宜使用。"
-      ],
+      "cautions_zh": "陰虛乾咳、無痰者忌用；肺熱咳喘、痰黃者忌用；高血壓及嚴重心臟病者慎用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/41",
       "safety_fetched_at": "2026-07-23T07:33:05.806Z",
@@ -1697,30 +1619,32 @@
         }
       ],
       "applications_zh": [
-        "急性／慢性支氣管炎、支氣管哮喘（風寒束表、內停水飲）",
-        "過敏性鼻炎、鼻竇炎（大量清稀鼻涕）",
-        "肺氣腫、肺原性心臟病發作期",
-        "百日咳、滲出性胸膜炎",
-        "流行性感冒（表寒裏飲證）"
+        "慢性支氣管炎、肺氣腫、肺原性心臟病（肺寒水飲型）",
+        "支氣管哮喘急性發作（水飲射肺型）",
+        "過敏性鼻炎、鼻竇炎（流大量清涕）",
+        "老年性慢性咳嗽、卡他性中耳炎",
+        "百日咳、小兒喘息性肺炎"
       ],
       "applications_en": [
-        "Acute/chronic bronchitis, bronchial asthma (exterior wind-cold with interior fluid retention)",
-        "Allergic rhinitis, sinusitis (copious clear watery nasal discharge)",
-        "Emphysema, pulmonary heart disease exacerbation",
-        "Whooping cough, exudative pleurisy",
-        "Influenza (exterior cold with interior congested fluids)"
+        "Chronic bronchitis, emphysema, cor pulmonale (cold fluid retention)",
+        "Acute bronchial asthma attack (fluid overflowing to Lung)",
+        "Allergic rhinitis, sinusitis (copious clear watery discharge)",
+        "Senile chronic cough, secretory otitis media",
+        "Pertussis (whooping cough), pediatric asthmatic pneumonia"
       ],
       "modern_research_zh": [
-        "平喘抗過敏（抗乙醯膽鹼、抗組織胺）",
-        "促進呼吸道分泌物排出與血液循環",
-        "解熱、鎮痛、鎮靜",
-        "抑制氣道高反應性與肥大細胞釋放"
+        "顯著解除支氣管平滑肌痙攣、舒張氣道",
+        "鎮咳、袪痰、減少氣道高分泌與充血",
+        "抗過敏、抑制 IgE 介導之肥大細胞脫顆粒",
+        "抗炎、減輕肺組織與氣道黏膜水腫",
+        "強心、利尿、促進體內水飲排出"
       ],
       "modern_research_en": [
-        "Antiasthmatic and antiallergic (anti-acetylcholine, antihistaminic)",
-        "Promotes respiratory secretion clearance and blood circulation",
-        "Antipyretic, analgesic, and sedative",
-        "Inhibits airway hyperresponsiveness and mast cell degranulation"
+        "Marked relaxation of bronchial smooth muscle spasm, airway dilation",
+        "Antitussive, expectorant, reduces airway hypersecretion & congestion",
+        "Antiallergic, inhibits IgE-mediated mast cell degranulation",
+        "Anti-inflammatory, reduces lung tissue & airway mucosal edema",
+        "Cardiotonic, diuretic, accelerates fluid retention excretion"
       ],
       "preparation_zh": "水煎時間不宜過長（< 20分鐘），先煎麻黃去上沫",
       "preparation_en": "Decoct for no more than 20 minutes; skim foam from Ma Huang first",
@@ -3920,7 +3844,7 @@
       "name_zh": "葛根湯",
       "name_en": "Kudzu Decoction",
       "pinyin": "Ge Gen Tang",
-      "category": "解表劑 / Release the Exterior",
+      "category": "解表劑 / 辛溫解表",
       "category_en": "Release the Exterior",
       "ncbahm_2026_official": true,
       "nccaom_high_yield": true,
@@ -3929,22 +3853,10 @@
       "clinical_frequency": "臨床極高頻常用處方",
       "study_tags": [],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
-      "actions_zh": [
-        "解表解肌",
-        "生津舒筋",
-        "散寒止痛"
-      ],
-      "actions_en": [
-        "Releases the exterior and muscle layer",
-        "Generates fluids and relaxes stiff tendons",
-        "Dispels cold and relieves pain"
-      ],
+      "actions_zh": "解肌發表，升津舒筋。",
+      "actions_en": "Releases Muscle Layer and Exterior, Generates Fluids, Relaxes Tendons",
       "pattern_indications_zh": [
-        "太陽中風兼項背強几几",
-        "惡風、無汗、發熱",
-        "項背強痛、肩頸酸痛",
-        "太陽下利（外感協熱下利）",
-        "苔薄白、脈浮緊"
+        "1. 太陽病，項背強痛：惡寒發熱，無汗或有汗，項背僵硬不舒，苔薄白，脈浮緊或浮緩。"
       ],
       "pattern_indications_en": [
         "Taiyang Wind-strike with severe neck and upper back stiffness",
@@ -3958,43 +3870,71 @@
           "herb_id": "herb.ge_gen",
           "name_zh": "葛根",
           "name_en": "Kudzu Root",
-          "dosage": "12g"
+          "pinyin": "Ge Gen",
+          "dosage": "12g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "解肌發表，升津舒筋"
         },
         {
           "herb_id": "herb.ma_huang",
           "name_zh": "麻黃",
-          "name_en": "Ephedra Stem",
-          "dosage": "9g"
+          "name_en": "Ephedra",
+          "pinyin": "Ma Huang",
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "發汗解表，宣肺散寒"
         },
         {
           "herb_id": "herb.gui_zhi",
           "name_zh": "桂枝",
           "name_en": "Cinnamon Twig",
-          "dosage": "6g"
+          "pinyin": "Gui Zhi",
+          "dosage": "6g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "溫經解肌，助麻黃解表"
+        },
+        {
+          "herb_id": "herb.bai_shao",
+          "name_zh": "白芍",
+          "name_en": "White Peony Root",
+          "pinyin": "Bai Shao",
+          "dosage": "6g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "養血柔肝，舒筋止痛"
         },
         {
           "herb_id": "herb.sheng_jiang",
           "name_zh": "生薑",
           "name_en": "Fresh Ginger",
-          "dosage": "9g"
-        },
-        {
-          "herb_id": "herb.zhi_gan_cao",
-          "name_zh": "炙甘草",
-          "name_en": "Honey-fried Licorice Root",
-          "dosage": "6g"
-        },
-        {
-          "herb_id": "herb.bai_shao",
-          "name_zh": "芍藥",
-          "name_en": "Peony Root",
-          "dosage": "6g"
+          "pinyin": "Sheng Jiang",
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "辛溫散寒，溫胃止嘔"
         },
         {
           "herb_id": "herb.da_zao",
           "name_zh": "大棗",
           "name_en": "Jujube Date",
-          "dosage": "4枚"
+          "pinyin": "Da Zao",
+          "dosage": "6g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "益氣健脾，養血和營"
+        },
+        {
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "pinyin": "Zhi Gan Cao",
+          "dosage": "6g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "甘溫調和諸藥，緩急止痛"
         }
       ],
       "clinical_use_note": "【葛根湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -4259,36 +4199,32 @@
         }
       ],
       "applications_zh": [
-        "感冒／流感／急性支氣管炎，以發熱、無汗、頸背僵痛為主",
-        "頸椎病、落枕、肩頸肌肉緊張、肩周炎（五十肩）",
-        "面神經麻痺（周圍性面癱）",
-        "過敏性鼻炎、慢性鼻竇炎",
-        "胃腸型感冒：感冒合併腹瀉（太陽陽明合病下利）",
-        "麻疹透發不暢（配合升麻、牛蒡子）"
+        "頸椎病、落枕、肩周炎（項背強痛型）",
+        "普通感冒、流行性感冒（伴頸項僵硬）",
+        "急性腸炎、細菌性痢疾表證未解",
+        "面神經麻痺初起、突發性耳聾",
+        "蕁麻疹、過敏性鼻炎"
       ],
       "applications_en": [
-        "Cold/flu/acute bronchitis presenting with fever, anhidrosis, and cervical-dorsal rigidity",
-        "Cervical spondylosis, wry neck, cervicothoracic muscle tension, frozen shoulder",
-        "Peripheral facial nerve palsy (Bell's palsy)",
-        "Allergic rhinitis, chronic sinusitis",
-        "Gastrointestinal flu: cold with concurrent diarrhea (Taiyang–Yangming concurrent disease)",
-        "Measles failing to erupt (with Sheng Ma, Niu Bang Zi)"
+        "Cervical spondylosis, stiff neck, frozen shoulder",
+        "Common cold, flu (accompanied by neck stiffness)",
+        "Acute enteritis, bacillary dysentery with exterior pattern",
+        "Early-stage facial nerve palsy, sudden sensorineural hearing loss",
+        "Urticaria, allergic rhinitis"
       ],
       "modern_research_zh": [
-        "解熱抗炎（葛根、麻黃協同作用）",
-        "鎮痛、緩解肌肉痙攣",
-        "改善肩頸局部血液循環",
-        "抗病毒、抑菌（流感、上呼吸道感染）",
-        "抗抽動、調節腸道蠕動（葛根素有抗腸痙攣作用）",
-        "免疫調節"
+        "改善椎基底動脈血流、擴張腦及頸部血管",
+        "解痙止痛、緩解骨骼肌與項背肌肉痙攣",
+        "解熱、鎮痛、抗炎作用",
+        "調節免疫反應、抗過敏",
+        "抗突發性缺血與缺氧保護作用"
       ],
       "modern_research_en": [
-        "Antipyretic and anti-inflammatory (synergy of Ge Gen and Ma Huang)",
-        "Analgesic and antispasmodic — relaxes cervical and dorsal musculature",
-        "Improves local blood circulation in neck and shoulder region",
-        "Antiviral and antibacterial (influenza, upper respiratory infections)",
-        "Anti-spasmodic effect on intestines (puerarin); regulates gut motility",
-        "Immune-modulating"
+        "Improves vertebrobasilar blood flow, dilates cerebral/cervical vessels",
+        "Antispasmodic and analgesic, relieves skeletal and neck muscle spasm",
+        "Antipyretic, analgesic, and anti-inflammatory effects",
+        "Regulates immune response, antiallergic action",
+        "Protective effect against acute ischemia and hypoxia"
       ],
       "preparation_zh": "煎煮時間不超過 20 分鐘（先煎麻黃，去上沫）",
       "preparation_en": "Decoct for no more than 20 minutes; skim foam from Ma Huang",
@@ -4302,7 +4238,7 @@
       ],
       "exam_pearl": "【考試重點】葛根湯 = 桂枝湯底 + 葛根（君）+ 麻黃（臣）。核心辨識：項背強几几 + 無汗（表實）。有汗改用桂枝加葛根湯（去麻黃）。兼下利（太陽陽明合病）仍用葛根湯。考綱明確列名：Ge Gen Tang (NCBAHM 2026 CH Outline p.19)。",
       "formula_song": "葛根湯內麻黃黃，桂芍甘草薑棗當。\n太陽項背幾几急，無汗惡風服之良。",
-      "cautions_zh": "表虛自汗、惡風脈浮緩者禁用；陰虛火旺或高血壓慎用。"
+      "cautions_zh": "瘡家、衄家、亡血家及表虛多汗者慎用；陰虛陽亢者慎用。"
     },
     {
       "id": "formula.sheng_ma_ge_gen_tang",
