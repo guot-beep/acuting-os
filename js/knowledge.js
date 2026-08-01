@@ -292,11 +292,13 @@
     const items = Array.isArray(composition) ? composition : [];
     if (!items.length) return "待補";
     const names = items
-      .map((item) => item?.name_zh || item?.herb_zh || item?.pinyin || item?.name_en || item?.herb_en)
+      .map((item) => item?.herb_zh || item?.pinyin || item?.herb_en)
       .filter(Boolean);
     if (!names.length) return `${items.length} 味`;
-    const shown = names.join("、");
-    return shown;
+    const shown = names.slice(0, 12).join("、");
+    return names.length > 12
+      ? `${shown} … 共 ${names.length} 味`
+      : `${shown}（${names.length} 味）`;
   }
 
   function comparisonGroupLabel(id) {
@@ -891,11 +893,11 @@
   function formulaModernSection(record) {
     const out = [];
     const app = cleanList(record.applications_zh), appEn = cleanList(record.applications_en);
-    if (app.length) out.push(detailSection("現代應用 Modern Applications", "課件來源 · Clinical Applications from Curriculum", detailPairedList(app, appEn)));
+    if (app.length) out.push(detailSection("現代應用", "What this formula treats today（課件 Applications）", detailPairedList(app, appEn)));
     const res = cleanList(record.modern_research_zh), resEn = cleanList(record.modern_research_en);
-    if (res.length) out.push(detailSection("現代藥理 Modern Pharmacology", "實證藥理作用 · Evidence-based Pharmacological Actions（課件）", detailPairedList(res, resEn)));
+    if (res.length) out.push(detailSection("現代藥理", "Modern research（課件）", detailPairedList(res, resEn)));
     const dis = cleanList(record.modern_diseases_zh);
-    if (dis.length) out.push(detailSection("CloudTCM 關聯疾病索引 Modern Disease Associations", "關鍵字關聯索引，非臨床應用建議；仍需辨證 · Keyword associations only — always differentiate before prescribing", `<div class="k-chip-cloud">${dis.map(tag).join("")}</div>`));
+    if (dis.length) out.push(detailSection("CloudTCM 可改善疾病", "關聯疾病索引（來源為關鍵字關聯，非臨床應用，需自行判讀）", `<div class="k-chip-cloud">${dis.map(tag).join("")}</div>`));
     return out.join("");
   }
 
@@ -933,24 +935,15 @@
       ? "雲端中醫 CloudTCM"
       : (preferredCitation?.name || "外部藥材參考 Source");
     const herbDragonUrl = record.american_dragon_url || citedAmericanDragonUrl;
-    // Build side-by-side source link HTML for the fact grid tile
-    const formulaSourceLinks = (() => {
-      const links = [];
-      if (record.cloudtcm_url) {
-        links.push(`<a href="${esc(record.cloudtcm_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title k-src-btn">雲端中醫 CloudTCM ↗</a>`);
-      }
-      if (record.american_dragon_url) {
-        links.push(`<a href="${esc(record.american_dragon_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title k-src-btn k-src-btn-ad">American Dragon ↗</a>`);
-      }
-      return links.join("");
-    })();
     const facts = kind === "formula"
       ? [
           ["分類 Category", record.category || record.category_en || "待補"],
-          // Show CloudTCM + American Dragon side by side. Falls back to tier
-          // when neither link exists so the tile is never empty.
-          (record.cloudtcm_url || record.american_dragon_url)
-            ? ["參考資料庫 References", formulaSourceLinks, true]
+          // Ting removed the Tier tile long ago and wants this slot to be the
+          // CloudTCM link instead — it is the page she actually opens from a
+          // formula card. Falls back to the tier only when no link exists, so
+          // the tile is never empty.
+          record.cloudtcm_url
+            ? ["雲端中醫 CloudTCM", `<a href="${esc(record.cloudtcm_url)}" target="_blank" rel="noopener noreferrer" class="k-src-title">開啟方劑頁面 ↗</a>`, true]
             : ["學習層級 Tier", record.tier || "draft"],
           // Ting wants the herbs themselves here, not a count — the tile is
           // the first thing she reads on a formula card. Falls back to pinyin
@@ -1028,13 +1021,14 @@
       : (cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : record.pattern_indications_en);
     const modifications = cleanList(exam.modifications_en).length ? exam.modifications_en : record.modifications_en;
     const composition = (record.composition || []).map((item) => {
-      const nameZh = usableText(item.name_zh || item.herb_zh || item.herbZh);
-      const nameEn = usableText(item.name_en || item.herb_en);
-      const pinyin = usableText(item.pinyin);
-      const herb = (pinyin && herbByPinyin.get(normalizeKey(pinyin))) || (nameZh && herbByNameZh.get(nameZh)) || (item.herb_id && herbById.get(item.herb_id));
-      const label = [nameZh, pinyin, nameEn].filter(Boolean).join(" · ") || "Composition item pending";
+      const herb = (item.pinyin && herbByPinyin.get(normalizeKey(item.pinyin))) || (item.herb_zh && herbByNameZh.get(usableText(item.herb_zh))) || (item.herbZh && herbByNameZh.get(usableText(item.herbZh)));
+      const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" · ") || "Composition item pending";
       const role = [usableText(item.role_zh), usableText(item.role_en)].filter(Boolean).join(" · ");
-      const decoctionDose = doseValue(item.dosage || item.decoction_reference_g || item.decoction_dose_g || item.dose_range);
+      // 原典用量 dropped from the table on Ting's call (「原典用量不用，全部
+      // 用生藥煎劑就好」). Only 22 of 201 formulas carry one and the rest
+      // printed a column of 待補. The field is NOT deleted from the data —
+      // §0 — it simply no longer occupies a column on the card.
+      const decoctionDose = doseValue(item.decoction_reference_g || item.decoction_dose_g || item.dose_range);
       const granuleDose = doseValue(item.granule_reference_g || item.granule_dose_g);
       const granuleContext = [usableText(item.granule_concentration_ratio), usableText(item.granule_brand)].filter(Boolean).join(" · ");
       // What this herb does IN THIS FORMULA (Ting: 加上每一味要在這個方劑的功效, 中文就好).

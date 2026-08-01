@@ -26,6 +26,17 @@ const COMPARISONS = path.join(ROOT, 'data/knowledge/comparisons.json');
 const CANON = path.join(ROOT, 'data/config/tcm_pattern_canon.json');
 const OUT = path.join(ROOT, 'data/pathology/pattern_registry.json');
 
+/* Agent-editable overlay. Names and systems belong in data, not in this file.
+ * The registry is generated, so an agent that edits this script from an older
+ * copy and runs --write regenerates an older registry and destroys whatever
+ * the newer one added — which is exactly what happened on 2026-07-31. The
+ * overlay decouples "fill in a name" from "own the structure". */
+const OVERLAY = path.join(ROOT, 'data/pathology/pattern_overlay.json');
+const overlay = fs.existsSync(OVERLAY) ? JSON.parse(fs.readFileSync(OVERLAY, 'utf8')) : {};
+const ovName = overlay.name_zh || {};
+const ovSystem = overlay.system || {};
+const ovSources = overlay.field_sources || {};
+
 /* Explicit id → 中文 mapping. Every entry here was matched against a name that
  * actually appears in tcm_pattern_canon.json; nothing is transliterated. */
 const NAME_ZH = {
@@ -79,6 +90,8 @@ const NAME_ZH = {
   'pattern.wind_cold_invading_lung': '風寒犯肺',
   'pattern.wind_heat_invading_lung': '風熱犯肺',
   'pattern.stomach_fire': '胃火熾盛',
+
+  // Antigravity 2026-07-31 補,教材標準名,已核對
   'pattern.chong_ren_disharmony': '衝任不調',
   'pattern.cold_stagnation_liver_channel': '寒凝肝脈',
   'pattern.food_stagnation': '飲食積滯',
@@ -237,6 +250,11 @@ function main() {
    * dangling-reference problem this file was created to end. */
   Object.keys(CATEGORIES).forEach((id) => {
     if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
+    // Members too — a category listing a member that owns no record is the
+    // same dangling reference this file exists to prevent.
+    CATEGORIES[id].members.forEach((m) => {
+      if (!use.has(m)) use.set(m, { conditions: [], comparisons: [] });
+    });
   });
 
   /* 胃火 registered alongside 胃熱, per Ting. Sources genuinely disagree —
@@ -248,7 +266,9 @@ function main() {
   const records = [...use.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([id, u]) => {
     const rec = {
       id,
-      name_zh: NAME_ZH[id] || '',
+      // Script map first, then the agent overlay. The script wins so a curated
+      // name cannot be silently replaced by an overlay entry.
+      name_zh: NAME_ZH[id] || ovName[id] || '',
       name_en: id.replace(/^pattern\./, '').replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
       used_by_conditions: u.conditions.length,
       used_by_comparisons: u.comparisons.length,
@@ -275,7 +295,7 @@ function main() {
     }
 
     // 辨證體系 — the third dimension
-    const sys = SYSTEM_OF[id] || (rec.level === 'pattern' && MEMBER_OF.has(id) ? null : null);
+    const sys = SYSTEM_OF[id] || ovSystem[id] || null;
     if (sys) {
       rec.system = sys;
       rec.system_zh = SYSTEMS[sys];
@@ -286,6 +306,11 @@ function main() {
       rec.system_zh = SYSTEMS.zang_fu;
     } else {
       rec.needs_system = true;
+    }
+
+    // Overlay-supplied provenance travels with the value it justifies.
+    if (ovSources[id]) {
+      rec.field_sources = Object.assign({}, rec.field_sources, ovSources[id]);
     }
     if (!u.conditions.length && !u.comparisons.length && !cat) {
       rec.newly_registered_note_zh = '登錄為正式詞彙,尚未被任何病症或鑑別卡引用。';

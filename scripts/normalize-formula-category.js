@@ -41,7 +41,6 @@ const CANON = {
   消食劑: 'Reduce Food Stagnation',
   驅蟲劑: 'Expel Parasites',
   癰瘍劑: 'Treat Abscesses and Sores',
-  表裏雙解劑: 'Release Both Exterior and Interior',
 };
 const MERGE = { 化痰劑: '祛痰劑' };
 

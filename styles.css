@@ -687,50 +687,22 @@ textarea {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* ── Acupoint search header (full-width above two-column layout) ── */
-.acu-search-header {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px 8px 0 0;
-  border-bottom: none;
-  padding: 1rem 1rem 0.6rem;
+.system-toolbar {
+  background: #f6faf7;
+  border: 1px solid #d4e3d8;
+  border-radius: 9px;
+  padding: 0.5rem 0.6rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-}
-.acu-header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-.acu-search-header #searchInput {
-  width: 100%;
-  border: 1.5px solid #c8dcd0;
-  border-radius: 7px;
-  font-size: 0.9rem;
-  padding: 0.55rem 0.75rem;
-  background: #f9fcfa;
-  color: #1a3328;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  outline: none;
-}
-.acu-search-header #searchInput:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(31,91,61,0.12);
-  background: #ffffff;
+  gap: 0.4rem;
 }
 
 .system-tabs-bar {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  flex-wrap: wrap;
   gap: 0.3rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-bottom: 0.1rem;
 }
-.system-tabs-bar::-webkit-scrollbar { display: none; }
 
 .system-tab-btn {
   background: #ffffff;
@@ -777,8 +749,14 @@ textarea {
 }
 
 /* ── eLotus-Style System Toggle Drawer (體系專屬折疊分支面板) ────── */
-/* system-toggle-drawer kept for JS compat but hidden — sidebar handles sub-branches */
-.system-toggle-drawer { display: none !important; }
+.system-toggle-drawer {
+  background: #ffffff;
+  border: 1px solid #c7d8cc;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  margin-top: 0.35rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+}
 
 .drawer-header {
   display: flex;
@@ -925,6 +903,26 @@ textarea {
   background-color: #ffffff;
 }
 
+.chart-shortcut-btn {
+  background: #553e6b;
+  color: #ffffff !important;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.38rem 0.7rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.chart-shortcut-btn:hover {
+  background: #6a4f85;
+  color: #ffffff !important;
+}
+
 .filters {
   margin-top: 0.7rem;
   flex-wrap: wrap;
@@ -945,10 +943,6 @@ textarea {
   gap: 0.6rem;
   margin-top: 0.75rem;
   padding: 0.72rem 0.82rem;
-}
-
-.active-filter-summary {
-  display: none !important;
 }
 
 .active-filter-header {
@@ -1037,62 +1031,17 @@ footer {
 }
 
 .directory-layout {
-  align-items: stretch;
+  align-items: start;
   display: grid;
-  gap: 0;
-  grid-template-columns: 240px minmax(0, 1fr);
-  border: 1px solid var(--line);
-  border-radius: 0 0 8px 8px;
-  overflow: hidden;
+  gap: 1rem;
+  grid-template-columns: 260px minmax(0, 1fr);
 }
 
 .directory-sidebar {
-  background: #f4f8f5;
-  border-right: 1px solid #dce9e0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.sidebar-section {
-  border-bottom: 1px solid #dce9e0;
-}
-.sidebar-section-header {
-  background: #eaf3ec;
-  color: #1f5b3d;
-  font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  padding: 0.5rem 0.75rem 0.35rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  user-select: none;
-  transition: background 0.13s;
-}
-.sidebar-section-header:hover { background: #ddeee2; }
-.sidebar-section-header .chevron {
-  font-size: 0.7rem;
-  transition: transform 0.15s ease;
-  color: #5a8068;
-}
-.sidebar-section.collapsed .chevron { transform: rotate(-90deg); }
-.sidebar-section-body {
-  padding: 0.3rem 0.4rem 0.45rem;
-}
-.sidebar-section.collapsed .sidebar-section-body { display: none; }
-
-.directory-main {
-  background: var(--panel);
-  min-width: 0;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 0.85rem;
+  position: sticky;
+  top: 98px;
 }
 
 .directory-filter-box {
@@ -1144,7 +1093,11 @@ footer {
   font-weight: 900;
 }
 
-
+.directory-main {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
 
 .map-panel,
 .detail-card,
@@ -3955,6 +3908,7 @@ footer {
   }
 
   .content-grid,
+  .directory-layout,
   .case-grid,
   .point-study-layout,
   .soap-grid,
@@ -3968,6 +3922,16 @@ footer {
 
   .map-panel {
     position: static;
+  }
+
+  .directory-sidebar {
+    position: static;
+  }
+
+  /* Stacked, the sidebar's filter boxes would push 穴位資料庫 off the first
+     screen. The search box is what the page is for — it goes first. */
+  .directory-main {
+    order: -1;
   }
 
   .directory-filter-box {
@@ -4155,20 +4119,25 @@ footer {
   grid-column: 1 / -1;
 }
 
-/* In detail mode: hide sidebar + header, show detail card full width */
-body.point-detail-mode .acu-search-header,
-body.point-detail-mode .directory-sidebar {
-  display: none;
-}
 body.point-detail-mode .directory-layout {
   grid-template-columns: minmax(0, 1fr);
-  border-radius: 8px;
 }
+
+body.point-detail-mode .directory-sidebar,
+body.point-detail-mode .search-panel {
+  display: none;
+}
+
 body.point-detail-mode .directory-main {
   margin-inline: auto;
   max-width: 1120px;
   width: 100%;
 }
+
+body.point-detail-mode .content-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 body.point-detail-mode .detail-card {
   overflow: visible;
 }
@@ -6164,19 +6133,6 @@ html { scroll-padding-top: 92px; }
 .k-src-host.is-none { font-family: inherit; font-style: italic; }
 .k-card.has-link { border-color: rgba(56, 189, 248, 0.35); }
 
-/* Formula fact-grid: CloudTCM + American Dragon pill buttons side by side */
-.k-src-btn {
-  display: inline-block; margin: 2px 4px 2px 0; padding: 4px 10px;
-  background: rgba(56,189,248,0.12); border: 1px solid rgba(56,189,248,0.4);
-  border-radius: 20px; font-size: 0.8em; font-weight: 700; white-space: nowrap;
-  color: #38bdf8; text-decoration: none; transition: background 0.18s, border-color 0.18s;
-}
-.k-src-btn:hover { background: rgba(56,189,248,0.22); border-color: #38bdf8; text-decoration: none; }
-.k-src-btn-ad {
-  background: rgba(251,146,60,0.12); border-color: rgba(251,146,60,0.4); color: #fb923c;
-}
-.k-src-btn-ad:hover { background: rgba(251,146,60,0.22); border-color: #fb923c; }
-
 /* Formula card: the exam banner leads, because Ting asked for board emphasis
    to be the first thing on the card, and the outline names 方劑 as its own
    examined domain. */
@@ -6234,7 +6190,6 @@ html { scroll-padding-top: 92px; }
 
 /* ── 經脈與特定穴對照總表 (Channel & Point Charts Workspace) ────────── */
 .channels-workspace {
-  scroll-margin-top: 100px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -6550,3 +6505,31 @@ html { scroll-padding-top: 92px; }
   background: rgba(140, 90, 120, 0.07);
   border-radius: 0 6px 6px 0;
 }
+
+/* The Channel & Point Charts tab is an <a>, not a <button>, because it
+   navigates to another workspace rather than filtering this one. It has to
+   sit flush with the buttons beside it, so it inherits their box and drops
+   the anchor defaults. */
+.system-tab-btn.system-tab-link {
+  text-decoration: none;
+}
+
+/* Shown when a channel has no record yet. Deliberately plain — it is an
+   honest gap, not an error state to alarm anyone. */
+.channel-empty-state {
+  padding: 1.4rem 1.2rem;
+  border: 1px dashed #c7d6cb;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #3b5044;
+}
+.channel-empty-state h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+.channel-empty-state p { margin: 0.3rem 0; font-size: 0.9rem; }
+.channel-empty-note { opacity: 0.75; font-size: 0.82rem !important; }
+
+/* The three sidebar accordions (特定穴 / 臨床主題 / 身體部位) are now tabs in
+   #systemTabsBar, so the sidebar would just repeat them. The markup stays —
+   app.js writes into those lists and guards on their absence, but keeping them
+   avoids a null-check sweep for no gain — and the column collapses. */
+.directory-layout > .directory-sidebar { display: none; }
+.directory-layout { grid-template-columns: minmax(0, 1fr); }

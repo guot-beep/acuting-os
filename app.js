@@ -1955,8 +1955,7 @@ function renderDirectoryFilters() {
 }
 
 function renderTungZoneCategories() {
-  const el = tungZoneCategoryList || document.querySelector("#tungZoneCategoryList");
-  if (!el) return;
+  if (!tungZoneCategoryList) return;
   const tungPointsTotal = points.filter((p) => String(p.meridian || "").includes("Master Tung") || String(p.code).startsWith("T")).length;
   const rows = [
     directoryButton({
@@ -1976,14 +1975,13 @@ function renderTungZoneCategories() {
       value: zone.id
     }))
   ];
-  el.innerHTML = rows.join("");
-  bindDirectoryButtons(el);
+  tungZoneCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(tungZoneCategoryList);
 }
 
 // PC5: 特定穴 filter group — click a category → list all points in it.
 function renderPointCategories() {
-  const el = pointCategoryList || document.querySelector("#pointCategoryList");
-  if (!el) return;
+  if (!pointCategoryList) return;
   const withCounts = pointCategoryCatalog
     .map((c) => ({ c, count: points.filter((p) => pointMatchesCategory(p, c.id)).length }))
     .filter((x) => x.count > 0);
@@ -1998,8 +1996,8 @@ function renderPointCategories() {
       value: c.id
     }))
   ];
-  el.innerHTML = rows.join("");
-  bindDirectoryButtons(el);
+  pointCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(pointCategoryList);
 }
 
 // 經外奇穴, 耳穴 and 董氏奇穴 are not channels — they are separate point systems
@@ -2038,8 +2036,7 @@ function meridianCategoryRows(list, activeValue) {
 }
 
 function renderMeridianCategories() {
-  const el = meridianCategoryList || document.querySelector("#meridianCategoryList");
-  if (!el) return;
+  if (!meridianCategoryList) return;
   const stdPoints = points.filter(isStandardChannelPoint);
   const stdMeridians = unique(stdPoints.map((point) => point.meridian))
     .sort((a, b) => channelOrderIndex(a) - channelOrderIndex(b));
@@ -2063,10 +2060,10 @@ function renderMeridianCategories() {
     }))
   ];
 
-  el.innerHTML = rows.join("");
-  bindDirectoryButtons(el);
+  meridianCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(meridianCategoryList);
 
-  const accordionSummary = el.closest("details")?.querySelector(".accordion-summary span");
+  const accordionSummary = meridianCategoryList.closest("details")?.querySelector(".accordion-summary span");
   if (accordionSummary) {
     const isEn = contentMode === "english";
     accordionSummary.textContent = isEn ? `☯️ 14 Channels (${stdPoints.length} Points)` : `☯️ 十四正經 (${stdPoints.length}正穴)`;
@@ -2074,8 +2071,7 @@ function renderMeridianCategories() {
 }
 
 function renderRegionCategories() {
-  const el = regionCategoryList || document.querySelector("#regionCategoryList");
-  if (!el) return;
+  if (!regionCategoryList) return;
   const rows = [
     directoryButton({
       labelZh: "全部",
@@ -2094,13 +2090,12 @@ function renderRegionCategories() {
       value: group.id
     }))
   ];
-  el.innerHTML = rows.join("");
-  bindDirectoryButtons(el);
+  regionCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(regionCategoryList);
 }
 
 function renderTopicCategories() {
-  const el = topicCategoryList || document.querySelector("#topicCategoryList");
-  if (!el) return;
+  if (!topicCategoryList) return;
   const rows = [
     directoryButton({
       labelZh: "全部",
@@ -2110,6 +2105,12 @@ function renderTopicCategories() {
       action: "topic",
       value: ""
     }),
+    // Clinical themes only. The list also carries index buckets (董氏索引,
+    // 耳穴索引) and eight data-quality buckets (缺針刺手法, GB93待校對,
+    // 缺資料來源…). Those are build state, not a way to look up a point, and
+    // mixing them into 常用臨床主題 made the clinical surface read like a QA
+    // dashboard. They stay reachable below, grouped and labelled for what they
+    // are, so nothing is lost.
     ...directoryTopics.filter((t) => (t.group || "clinical") === "clinical").map((topic) => directoryButton({
       labelZh: topic.zh,
       labelEn: topic.en,
@@ -2119,8 +2120,9 @@ function renderTopicCategories() {
       value: topic.id
     }))
   ];
-  el.innerHTML = rows.join("");
-  bindDirectoryButtons(el);
+
+  topicCategoryList.innerHTML = rows.join("");
+  bindDirectoryButtons(topicCategoryList);
 }
 
 function directoryButton({ labelZh, labelEn, count, active, action, value }) {
@@ -2234,7 +2236,25 @@ function renderSystemToggleDrawer() {
   let titleEn = "";
   let chips = [];
 
-  if (selectedSystem === "standard14") {
+  /* 特定穴, 臨床主題 and 身體部位 classify points across every channel rather
+   * than beside them, so Ting wants all three at tab level instead of buried
+   * in the sidebar under whichever system is open. Each drawer is built from
+   * the same catalog its sidebar accordion uses, so the two cannot drift. */
+  if (selectedSystem === "specific") {
+    titleZh = "⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)";
+    titleEn = "⭐️ Specific Point Groups";
+    chips = pointCategoryCatalog.map((c) => ({ id: c.id, zh: c.label_zh, en: c.label_en }));
+  } else if (selectedSystem === "topic") {
+    titleZh = "🩺 臨床主題與證型";
+    titleEn = "🩺 Clinical Topics & Patterns";
+    chips = directoryTopics
+      .filter((t) => (t.group || "clinical") === "clinical")
+      .map((t) => ({ id: t.id, zh: t.zh, en: t.en }));
+  } else if (selectedSystem === "region") {
+    titleZh = "📍 身體部位";
+    titleEn = "📍 Body Regions";
+    chips = directoryRegionGroups.map((g) => ({ id: g.id, zh: g.zh, en: g.en }));
+  } else if (selectedSystem === "standard14") {
     titleZh = "☯️ 十四正經分支體系 (14 Principal Channels Branch Grid)";
     titleEn = "☯️ 14 Principal Channels Branch Grid";
     chips = [
@@ -2322,11 +2342,9 @@ function renderSystemToggleDrawer() {
           ${isEn ? c.en : c.zh}
         </button>
       `).join("")}
-      ${selectedSystem === "standard14" ? `
-        <a href="#ws/channels" class="chart-shortcut-btn" style="margin-left: auto;">
-          ${isEn ? "📊 Channel & Point Charts ↗" : "📊 經脈與特定穴圖表 ↗"}
-        </a>
-      ` : ""}
+      <!-- The Channel & Point Charts shortcut used to live here, visible only
+           while 十四正經 was selected. It is now a top-level tab in
+           #systemTabsBar, so it is not repeated inside the drawer. -->
     </div>
   `;
 
@@ -2357,6 +2375,15 @@ function pointMatchesSystemBranch(point) {
   }
   if (selectedSystem === "tung") {
     return pointMatchesTungZone(point, selectedSystemBranch);
+  }
+  if (selectedSystem === "specific") {
+    return pointMatchesCategory(point, selectedSystemBranch);
+  }
+  if (selectedSystem === "topic") {
+    return pointMatchesTopic(point, selectedSystemBranch);
+  }
+  if (selectedSystem === "region") {
+    return pointMatchesRegionGroup(point, selectedSystemBranch);
   }
   if (selectedSystem === "auricular") {
     return code.includes(selectedSystemBranch) || loc.includes(selectedSystemBranch);
@@ -2443,6 +2470,16 @@ function pointMatchesSystem(point, sys) {
   if (sys === "special") {
     return m.includes("Special") || m.includes("腹針") || m.includes("腕踝針") || m.includes("靳三針") || m.includes("平衡針");
   }
+  // 特定穴 cuts across the channels rather than sitting beside them: a point is
+  // a 井穴 or a 原穴 whichever channel it belongs to. Selecting this system
+  // narrows to points carrying any 特定穴 tag; the drawer then picks which.
+  if (sys === "specific") {
+    return (point.pointCategories || []).length > 0;
+  }
+  // 臨床主題 and 身體部位 apply to any point, so the tab itself narrows nothing
+  // — the drawer chip does. Returning true keeps the full set visible until a
+  // chip is picked, rather than showing an empty directory on tab click.
+  if (sys === "topic" || sys === "region") return true;
   return true;
 }
 
@@ -4098,17 +4135,9 @@ function heroSubtitle(point) {
 }
 
 function americanDragonPointUrl(point) {
-  if (point.american_dragon_url) return point.american_dragon_url;
-  const sources = Array.isArray(point.sources) ? point.sources : [];
-  const adSource = sources.find((s) => typeof s === "string" && s.includes("americandragon.com/Points/"));
-  if (adSource) return adSource;
-  const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
-  const adVisual = visualLinks.find((v) => v && v.url && v.url.includes("americandragon.com/Points/"));
-  if (adVisual) return adVisual.url;
-
   const code = String(point.code || "").trim().toUpperCase();
   const match = code.match(/^([A-Z]+)(\d+)$/);
-  if (!match) return null;
+  if (!match) return "https://www.americandragon.com/";
 
   const prefix = match[1];
   const num = match[2];
@@ -4142,56 +4171,25 @@ function eLotusPointUrl(point) {
   const directSource = sources.find((s) => typeof s === "string" && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(s));
   if (directSource) return directSource;
 
-  if (isExtraPoint && isExtraPoint(point)) {
-    const validVisual = visualLinks.find(v => v && v.url && /^https?:\/\//.test(v.url) && !v.url.endsWith("/points") && !v.url.endsWith("/points/"));
-    if (validVisual) return validVisual.url;
-    const validSource = sources.find(s => typeof s === "string" && /^https?:\/\//.test(s) && !s.endsWith("/points") && !s.endsWith("/points/"));
-    if (validSource) return validSource;
-    return null;
+  let code = String(point.code || point.id || "").toLowerCase().trim();
+  if (isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")) {
+    return visualLinks[0]?.url || (typeof sources[0] === "string" && sources[0].startsWith("http") ? sources[0] : "https://www.mastertungacupuncture.org/acupuncture/traditional/points");
   }
 
-  let code = String(point.code || point.id || "").toLowerCase().trim();
   code = code.replace(/^te/, "th").replace(/^sj/, "th");
   return `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${code}`;
 }
 
 function externalPointLinks(point) {
   const sources = point.sources || [];
-  const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
-
-  const isValidUrl = (u) => {
-    if (!u || typeof u !== "string" || !/^https?:\/\//.test(u)) return false;
-    if (u === "https://www.americandragon.com/" || u === "https://www.americandragon.com") return false;
-    if (u === "https://cloudtcm.com/acupoint" || u === "https://cloudtcm.com/acupoint/") return false;
-    if (u === "https://www.mastertungacupuncture.org/acupuncture/traditional/points" || u === "https://www.mastertungacupuncture.org/acupuncture/traditional/points/") return false;
-    return true;
-  };
+  const visualLinks = normalizeVisualLinks(point.visualLinks || []);
 
   if (isAuricularPoint(point)) {
-    const elotus = visualLinks.find(v => v && v.url && v.url.includes("mastertungacupuncture"))?.url || sources.find(s => typeof s === "string" && s.includes("mastertungacupuncture"));
-    const gb3d = visualLinks.find(v => v && v.url && v.url.includes("acupun.site"))?.url || sources.find(s => typeof s === "string" && s.includes("acupun.site"));
+    const primary = visualLinks[0]?.url || sources[0] || "https://cht.a-hospital.com/w/%E9%92%88%E7%81%B8%E5%AD%A6/%E8%80%B3%E9%92%88%E7%96%97%E6%B3%95";
     return [
       { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
-      { label: contentMode === "english" ? "eLotus CORE (Dr. Huang)" : "eLotus CORE (黃麗春耳針)", url: elotus, kind: "english" },
-      { label: contentMode === "english" ? "GB 3D Auricular Map" : "國際標準耳穴 3D", url: gb3d, kind: "english" }
-    ].filter(link => isValidUrl(link.url));
-  }
-
-  if (String(point.system || point.meridian || "").includes("master_tung") || String(point.meridian || "").includes("Master Tung") || String(point.code || "").startsWith("T")) {
-    const elotus = visualLinks.find(v => v && v.url && v.url.includes("mastertungacupuncture"))?.url || sources.find(s => typeof s === "string" && s.includes("mastertungacupuncture"));
-    const heritage = visualLinks.find(v => v && v.url && v.url.includes("tungs-acupuncture.com"))?.url || sources.find(s => typeof s === "string" && s.includes("tungs-acupuncture.com"));
-    return [
-      { label: contentMode === "english" ? "Tung Heritage (ZH)" : "董氏心氣神針傳承網", url: heritage, kind: "chinese" },
-      { label: contentMode === "english" ? "eLotus CORE (Master Tung)" : "eLotus CORE (董氏奇穴)", url: elotus, kind: "english" }
-    ].filter(link => isValidUrl(link.url));
-  }
-
-  if (String(point.meridian || "").includes("Scalp") || String(point.code || "").startsWith("MS")) {
-    const scalpUrl = visualLinks.find(v => v && v.url && !v.url.includes("/acupuncture/scalp/overview"))?.url || "https://www.itmonline.org/arts/scalp.htm";
-    return [
-      { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
-      { label: contentMode === "english" ? "WHO Scalp Standard Guide" : "WHO 國際標準頭皮針指南", url: scalpUrl, kind: "english" }
-    ].filter(link => isValidUrl(link.url));
+      { label: contentMode === "english" ? "Visual Diagram" : "耳穴圖源", url: primary, kind: "english" }
+    ];
   }
 
   // 1. CloudTCM (中文)
@@ -4204,13 +4202,19 @@ function externalPointLinks(point) {
   // 3. eLotus / Master Tung Acupuncture — Direct 1-to-1 point page
   const eLotusUrl = eLotusPointUrl(point);
 
-  const links = [
-    { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinese, kind: "chinese" },
-    { label: "American Dragon (AD)", url: adUrl, kind: "english" },
-    { label: contentMode === "english" ? "eLotus CORE" : "eLotus 權威圖解", url: eLotusUrl, kind: "english" }
-  ];
+  if (contentMode === "english") {
+    return [
+      { label: "CloudTCM", url: chinese, kind: "chinese" },
+      { label: "American Dragon (AD)", url: adUrl, kind: "english" },
+      { label: "eLotus CORE", url: eLotusUrl, kind: "english" }
+    ];
+  }
 
-  return links.filter(link => isValidUrl(link.url));
+  return [
+    { label: "雲端中醫", url: chinese, kind: "chinese" },
+    { label: "American Dragon (AD)", url: adUrl, kind: "english" },
+    { label: "eLotus 權威圖解", url: eLotusUrl, kind: "english" }
+  ];
 }
 
 function primaryFunction(point) {
@@ -6008,8 +6012,27 @@ function renderChannelsWorkspace() {
     return;
   }
 
-  // Default: Meridian/Vessel Overview Card
-  const chData = channelRecords.find(c => c.code === activeChannelCode) || channelRecords[0] || {};
+  // Default: Meridian/Vessel Overview Card.
+  // Only 5 of the 20 channels have records so far. Falling back to
+  // channelRecords[0] meant clicking ST highlighted ST and then showed the
+  // Lung channel — the reader has no way to tell they are looking at the
+  // wrong meridian. Say so instead.
+  const chData = channelRecords.find(c => c.code === activeChannelCode);
+  if (!chData) {
+    const label = [...mainMeridians, ...extraVessels].find(m => m.code === activeChannelCode);
+    const isEn = contentMode === "english";
+    content.innerHTML = `
+      <div class="channel-empty-state">
+        <h3>${escapeHtml(label ? (isEn ? label.en : label.zh) : activeChannelCode)}</h3>
+        <p>${isEn
+          ? "No channel record yet. Only 5 of 20 channels have been entered; this one is still pending."
+          : "此經脈尚無資料。目前 20 條經脈中只有 5 條建檔，這一條還沒做。"}</p>
+        <p class="channel-empty-note">${isEn
+          ? "Pathway, point count and clock time are factual data and are not inferred."
+          : "循行、穴數與流注時辰屬事實資料，不做推測填補。"}</p>
+      </div>`;
+    return;
+  }
   content.innerHTML = renderChannelOverviewCard(chData);
   bindMatrixPointLinks(content);
 }
