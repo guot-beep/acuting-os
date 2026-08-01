@@ -68,7 +68,6 @@ const ALIAS = {
   'jiang ban xia': 'herb.ban_xia',       // 薑半夏
   'dang gui wei': 'herb.dang_gui',       // 當歸尾 — the tail, moves blood
   'quan dang gui': 'herb.dang_gui',      // 全當歸 — the whole root
-  'pao jiang': 'herb.gan_jiang',         // 炮薑（候選獨立卡,待 Ting 決定） — blast-fried
   'jiu da huang': 'herb.da_huang',       // 酒大黃
   'huai niu xi': 'herb.niu_xi',
 };
@@ -100,11 +99,13 @@ const AMBIGUOUS = new Set(['da ji']);
  * get their own card; the rest stay as base herb plus a preparation note. So
  * 炒白朮, 酒大黃, 煅龍骨, 薑半夏 and 酒炒黃柏 continue to resolve to their base.
  *
- * 炮薑 is a candidate — it warms the middle and stops bleeding where 乾薑
- * rescues devastated Yang — but opening a card is Ting's call, so it stays
- * collapsed until she says otherwise. */
+ * The ginger family is the other confirmed case (Ting, 2026-08-01): 生薑
+ * releases the exterior and stops vomiting, 乾薑 rescues devastated Yang and
+ * warms the Lung, 炮薑 warms the channels and stops bleeding. Three herbs, not
+ * three preparations of one. */
 const DISTINCT_PREPARATION = {
   'zhi gan cao': 'herb.zhi_gan_cao',
+  'pao jiang': 'herb.pao_jiang',
 };
 
 function loadHerbIndex() {
