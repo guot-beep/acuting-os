@@ -79727,8 +79727,6 @@
       "name_en": "Honey-fried Licorice Root",
       "pinyin": "Zhi Gan Cao",
       "category": "補虛藥 / Tonify Qi",
-      "category_en": "Tonify Qi",
-      "properties_taste_temp": "甘，溫",
       "channels_entered": [
         "脾經",
         "胃經",
@@ -79737,7 +79735,7 @@
       ],
       "source_hint": "American Dragon & Bensky Materia Medica: Tonify Qi (Prepared)",
       "review_status": "reviewed",
-      "source_type": "sourced_american_dragon",
+      "properties_taste_temp": "甘，溫",
       "functions": [
         "補脾和胃",
         "益氣復脈",
@@ -79745,14 +79743,144 @@
         "緩急止痛",
         "調和諸藥"
       ],
-      "functions_zh": "補脾和胃，益氣復脈，潤肺止咳，緩急止痛，調和諸藥。",
-      "functions_en": "Tonifies Spleen, harmonizes Stomach, restores pulse and Qi, moistens Lungs, stops cough, relieves spasms and pain, harmonizes all herbs.",
+      "related_formulas": [
+        "formula.zhi_gan_cao_tang",
+        "formula.gui_zhi_tang",
+        "formula.si_ni_san",
+        "formula.xiao_jian_zhong_tang",
+        "formula.gan_mai_da_zao_tang",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.si_jun_zi_tang",
+        "formula.shao_yao_gan_cao_tang"
+      ],
+      "safety_flags": [
+        "hypertension_review",
+        "edema_review",
+        "incompatibilities_review"
+      ],
+      "clinical_use_note": "炙甘草為甘草蜜炙而成，性偏溫，長於補脾和胃、益氣復脈。用於心氣虛之心悸脈結代（炙甘草湯）及脾胃虛弱、倦怠乏力。",
+      "modern_use_tags": [
+        "palpitations",
+        "arrhythmia",
+        "gastritis",
+        "fatigue"
+      ],
+      "english_exam_track": {},
+      "chinese_depth_track": {},
+      "dosage": "3-9g (high dose up to 15-30g for Zhi Gan Cao Tang)",
+      "cautions": "",
+      "source_urls": [
+        "https://www.americandragon.com/IndividualHerbs/ZhiGanCao.html"
+      ],
+      "exact_source_url": "https://www.americandragon.com/IndividualHerbs/ZhiGanCao.html",
+      "fetched_at": "",
+      "public_safe": false,
+      "source_type": "sourced_american_dragon",
+      "cautions_zh": [
+        "濕盛中滿、嘔吐忌服。",
+        "水腫、高血壓患者不宜大量或長期單獨服用（因水鈉滯留）。",
+        "不可與甘遂、大戟、海藻、芫花同用（十八反）。"
+      ],
+      "safety_source_url": "",
+      "safety_fetched_at": "",
+      "safety_source": "",
+      "functions_zh": [
+        "補脾和胃",
+        "益氣復脈",
+        "潤肺止咳",
+        "緩急止痛",
+        "調和諸藥"
+      ],
+      "modern_functions_zh": [],
+      "modern_functions_source": "",
+      "modern_functions_source_url": "",
+      "modern_functions_detail_zh": [],
+      "aliases_zh": [],
+      "category_zh": "補虛藥 / 補氣藥",
+      "channels_zh": [
+        "脾經",
+        "胃經",
+        "心經",
+        "肺經"
+      ],
       "indications_zh": [
         "脾胃氣虛，倦怠乏力，食少便溏",
         "心氣虛，心悸怔忡，脈結代（如炙甘草湯證）",
         "肺陰虛或肺氣虛之乾咳少痰、氣喘",
         "脘腹及四肢急痛、肌肉痙攣"
       ],
+      "study_tags": [],
+      "tags_fetched_at": "",
+      "condition_tags_zh": [
+        "心悸",
+        "心律失常",
+        "脾胃虛弱",
+        "慢性胃炎",
+        "疲勞"
+      ],
+      "cloudtcm_url": "",
+      "american_dragon_url": "",
+      "american_dragon_link_status": "200_ok",
+      "atlas_url": "",
+      "atlas_link_status": "",
+      "field_sources": {},
+      "card_grade": "gold",
+      "source_status": "",
+      "ncbahm_2026_official": false,
+      "updated_at": "",
+      "authored_by": "",
+      "name_header_note_zh": "",
+      "review_notes_zh": "",
+      "pharmaceutical_latin": "Radix et Rhizoma Glycyrrhizae Praeparata cum Melle",
+      "part_used_zh": "",
+      "part_used_en": "",
+      "key_pairs": [],
+      "actions_en": [
+        "Tonifies the Spleen and harmonizes the Stomach",
+        "Tonifies Qi and restores the pulse",
+        "Moistens Lungs and stops cough",
+        "Relieves spasms and alleviates pain",
+        "Harmonizes the characteristics of all other herbs"
+      ],
+      "indications_en": [
+        "Spleen and Stomach Qi deficiency, lassitude, fatigue, poor appetite, loose stools",
+        "Heart Qi deficiency, palpitations, irregular or intermittent pulse (e.g. Zhi Gan Cao Tang pattern)",
+        "Lung Qi or Yin deficiency with dry cough, scanty sputum, shortness of breath",
+        "Spasmodic abdominal pain, muscle cramps in extremities"
+      ],
+      "modern_functions_en": [],
+      "contraindications_zh": [
+        "濕盛中滿者",
+        "嘔吐噁心者",
+        "高血壓水腫者（長服大劑量）",
+        "同用甘遂、大戟、海藻、芫花（十八反）"
+      ],
+      "contraindications_en": [
+        "Excessive dampness with abdominal fullness",
+        "Nausea and vomiting",
+        "Hypertension and edema (long-term high dose)",
+        "Incompatible with Kansui, Knoxia, Sargassum, Genkwa"
+      ],
+      "cautions_en": [
+        "Contraindicated in cases of excessive dampness with abdominal fullness or vomiting.",
+        "Caution in patients with edema or hypertension (may cause sodium and water retention).",
+        "Incompatible with Gansui, Daji, Haizao, and Yuanhua (Eighteen Incompatibilities)."
+      ],
+      "condition_tags_en": [
+        "Palpitations",
+        "Arrhythmia",
+        "Spleen Qi Deficiency",
+        "Chronic Gastritis",
+        "Fatigue"
+      ],
+      "dosage_g": {
+        "standard_daily_g": "3–9g；炙甘草湯重用至 15–30g",
+        "ad_dose_g": "3–9g（炙甘草湯 15–30g）",
+        "source_note": "炙甘草為甘草蜜炙而成，性溫，長於補脾和胃、益氣復脈。用於心氣虛心悸脈結代及脾胃氣虛。"
+      },
+      "exam_importance": "",
+      "exam_pearl": "",
+      "source_citations": [],
       "applications_zh": [
         "心律失常、心悸、期外收縮（心氣血兩虛型）",
         "脾胃虛寒、慢性胃炎、胃潰瘍疼痛",
@@ -79784,26 +79912,6 @@
         "Anti-ulcer, promotes gastric mucosal repair and mucus secretion",
         "Hepatoprotective, detoxifying, accelerates toxin metabolism",
         "Antitussive, expectorant, lubricates respiratory mucosa"
-      ],
-      "cautions_zh": "濕盛中滿、嘔吐忌服；水腫、高血壓患者不宜大量或長期單獨服用（因水鈉滯留）。不可與甘遂、大戟、海藻、芫花同用（十八反）。",
-      "cautions_en": "Contraindicated in cases of excessive dampness with fullness or vomiting. Caution with edema and hypertension (causes sodium retention). Incompatible with Gansui, Daji, Haizao, Yuanhua (Eighteen Incompatibilities).",
-      "dosage_range": "3-9g (high dose up to 15-30g for Zhi Gan Cao Tang)",
-      "american_dragon_url": "https://www.americandragon.com/IndividualHerbs/ZhiGanCao.html",
-      "cloudtcm_url": "https://cloudtcm.com/herb/263",
-      "field_sources": {
-        "functions_zh": "American Dragon & Bensky Materia Medica",
-        "applications_zh": "American Dragon & Curriculum Notes",
-        "modern_research_zh": "American Dragon Evidence-Based Pharmacology"
-      },
-      "related_formulas": [
-        "formula.zhi_gan_cao_tang",
-        "formula.gui_zhi_tang",
-        "formula.si_ni_san",
-        "formula.xiao_jian_zhong_tang",
-        "formula.gan_mai_da_zao_tang",
-        "formula.bu_zhong_yi_qi_tang",
-        "formula.si_jun_zi_tang",
-        "formula.shao_yao_gan_cao_tang"
       ]
     }
   ],
