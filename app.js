@@ -3689,11 +3689,15 @@ function pairedRow(zhText, enText) {
   const zhDetail = zhTail.join(" — ");
   const [enHead, ...enTail] = String(enText || "").split(/\s*(?:——|—|:|à)\s*/);
   const enDetail = enTail.join(" — ");
+  
+  const isDuplicate = enHead.trim() === zhHead.trim() || /[\u4e00-\u9fa5]/.test(enHead);
+  const renderEn = enText && !isDuplicate;
+
   return `<li>
     <span class="pf-zh">${escapeHtml(zhHead)}</span>
     ${zhDetail ? `<span class="pf-detail">${escapeHtml(zhDetail)}</span>` : ""}
-    ${enText ? `<span class="pf-en">${escapeHtml(enHead)}</span>` : ""}
-    ${enText && enDetail ? `<span class="pf-detail pf-detail--en">${escapeHtml(enDetail)}</span>` : ""}
+    ${renderEn ? `<span class="pf-en">${escapeHtml(enHead)}</span>` : ""}
+    ${renderEn && enDetail ? `<span class="pf-detail pf-detail--en">${escapeHtml(enDetail)}</span>` : ""}
   </li>`;
 }
 
@@ -3701,11 +3705,6 @@ function pointIdentitySection(point) {
   const zh = point.pointIdentityZh || [];
   const en = point.pointIdentityEn || [];
   const list = contentMode === "english" ? (en.length ? en : zh) : zh;
-  // One identity row, not two. The structured category badges (clickable, they
-  // jump to the category listing) and the curriculum's identity text were
-  // rendering as separate strips saying nearly the same thing — the duplicate
-  // entry point Ting has flagged before. Categories lead, curriculum text
-  // follows, and terms already covered by a badge are not repeated.
   const cats = renderPointCategoryBadges(point);
   if (!list.length) return cats;
   const catText = cats.replace(/<[^>]+>/g, " ");
@@ -3714,8 +3713,6 @@ function pointIdentitySection(point) {
     return core.length < 2 || !catText.includes(core);
   });
   if (!extra.length) return cats;
-  // A safety line in the identity list is not a badge — it is a warning, and
-  // ST17's 「絕對禁針禁灸」 must not look like 「合穴」.
   const chips = extra.map((t) => {
     const danger = /⚠|禁針|禁灸|NEVER|deep needling|Avoid/i.test(t);
     return `<span class="point-identity-chip${danger ? " is-danger" : ""}">${escapeHtml(t)}</span>`;
@@ -3725,9 +3722,6 @@ function pointIdentitySection(point) {
   </div>`;
 }
 
-// Exam pearls mark the one phrase worth memorising with **…**. Escape first,
-// then promote the markers — so the text is still fully escaped and only the
-// marker pairs this function produced ever become tags.
 function boldMarkers(text) {
   return escapeHtml(String(text || "")).replace(/\*\*([^*]+)\*\*/g, '<strong class="pep-key">$1</strong>');
 }
@@ -3750,12 +3744,7 @@ function examPearlSection(point) {
   </section>`;
 }
 
-// Functions get their own block. Bilingual side by side, because the course
-// notes are English and the 中文 is the structured reading of them — seeing both
-// rows is the point of the four-layer split.
 function pointFunctionsSection(point) {
-  // Belt and braces: normalisers should hand strings in, but a single
-  // array-shaped source used to throw here and blank the whole point page.
   const asText = (v) => (Array.isArray(v) ? v.join(" ") : String(v || ""));
   const zh = asText(point.functions).split(/[，、]/).map((x) => x.trim()).filter(Boolean);
   const en = asText(point.functionsEn).split(/\s{2,}|(?<=[a-z])\s(?=[A-Z])/).map((x) => x.trim()).filter(Boolean);
@@ -3764,10 +3753,6 @@ function pointFunctionsSection(point) {
   if (!zhList.length && !enList.length) return "";
   const aligned = zhList.length === enList.length && zhList.length > 0;
 
-  // English mode used to still print both languages here — the section title
-  // was the only thing that translated. indicationArticle (the sibling
-  // section right below this one) already shows English-only in this mode;
-  // this now matches that behaviour instead of contradicting it.
   if (contentMode === "english") {
     const list = enList.length ? enList : zhList;
     const rows = list.map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
@@ -3779,10 +3764,16 @@ function pointFunctionsSection(point) {
 
   const rows = aligned
     ? zhList.map((z, i) => pairedRow(z, enList[i])).join("")
-    : [...zhList, ...enList].map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
+    : zhList.map((t) => `<li><span class="pf-zh">${escapeHtml(t)}</span></li>`).join("");
+
+  const enBlock = (!aligned && enList.length)
+    ? `<div class="pf-en-block" style="margin-top:8px;font-style:italic;color:#4a5568;">${enList.map(t => escapeHtml(t)).join("<br>")}</div>`
+    : "";
+
   return `<section class="study-section point-functions">
     <h3>功效</h3>
     <ol class="point-functions__list${aligned ? " is-paired" : ""}">${rows}</ol>
+    ${enBlock}
   </section>`;
 }
 
