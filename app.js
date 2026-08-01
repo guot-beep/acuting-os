@@ -4100,9 +4100,17 @@ function heroSubtitle(point) {
 }
 
 function americanDragonPointUrl(point) {
+  if (point.american_dragon_url) return point.american_dragon_url;
+  const sources = Array.isArray(point.sources) ? point.sources : [];
+  const adSource = sources.find((s) => typeof s === "string" && s.includes("americandragon.com/Points/"));
+  if (adSource) return adSource;
+  const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
+  const adVisual = visualLinks.find((v) => v && v.url && v.url.includes("americandragon.com/Points/"));
+  if (adVisual) return adVisual.url;
+
   const code = String(point.code || "").trim().toUpperCase();
   const match = code.match(/^([A-Z]+)(\d+)$/);
-  if (!match) return "https://www.americandragon.com/";
+  if (!match) return null;
 
   const prefix = match[1];
   const num = match[2];
@@ -4136,11 +4144,15 @@ function eLotusPointUrl(point) {
   const directSource = sources.find((s) => typeof s === "string" && /mastertungacupuncture\.org\/acupuncture\/traditional\/points\//.test(s));
   if (directSource) return directSource;
 
-  let code = String(point.code || point.id || "").toLowerCase().trim();
-  if (isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")) {
-    return visualLinks[0]?.url || (typeof sources[0] === "string" && sources[0].startsWith("http") ? sources[0] : "https://www.mastertungacupuncture.org/acupuncture/traditional/points");
+  if (isExtraPoint && isExtraPoint(point)) {
+    const validVisual = visualLinks.find(v => v && v.url && /^https?:\/\//.test(v.url) && !v.url.endsWith("/points") && !v.url.endsWith("/points/"));
+    if (validVisual) return validVisual.url;
+    const validSource = sources.find(s => typeof s === "string" && /^https?:\/\//.test(s) && !s.endsWith("/points") && !s.endsWith("/points/"));
+    if (validSource) return validSource;
+    return null;
   }
 
+  let code = String(point.code || point.id || "").toLowerCase().trim();
   code = code.replace(/^te/, "th").replace(/^sj/, "th");
   return `https://www.mastertungacupuncture.org/acupuncture/traditional/points/${code}`;
 }
