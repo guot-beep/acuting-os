@@ -12975,13 +12975,58 @@
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "composition": [
         {
-          "herb_zh": "柴胡",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：柴胡為本方核心主藥。"
+          "herb_id": "herb.chai_hu",
+          "name_zh": "柴胡",
+          "name_en": "Bupleurum Root",
+          "dosage": "12g"
+        },
+        {
+          "herb_id": "herb.gui_zhi",
+          "name_zh": "桂枝",
+          "name_en": "Cinnamon Twig",
+          "dosage": "4.5g"
+        },
+        {
+          "herb_id": "herb.huang_qin",
+          "name_zh": "黃芩",
+          "name_en": "Scutellaria Root",
+          "dosage": "4.5g"
+        },
+        {
+          "herb_id": "herb.ren_shen",
+          "name_zh": "人參",
+          "name_en": "Ginseng Root",
+          "dosage": "4.5g"
+        },
+        {
+          "herb_id": "herb.bai_shao",
+          "name_zh": "芍藥",
+          "name_en": "Peony Root",
+          "dosage": "4.5g"
+        },
+        {
+          "herb_id": "herb.ban_xia",
+          "name_zh": "半夏",
+          "name_en": "Pinellia Rhizome",
+          "dosage": "7.5g"
+        },
+        {
+          "herb_id": "herb.sheng_jiang",
+          "name_zh": "生薑",
+          "name_en": "Fresh Ginger",
+          "dosage": "4.5g"
+        },
+        {
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "dosage": "3g"
+        },
+        {
+          "herb_id": "herb.da_zao",
+          "name_zh": "大棗",
+          "name_en": "Jujube Date",
+          "dosage": "6枚"
         }
       ],
       "clinical_use_note": "【柴胡桂枝湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -13061,7 +13106,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Chai Hu Gui Zhi Tang Cautions)",
+        "composition": "American Dragon (Chai Hu Gui Zhi Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/170",
       "cloudtcm_id": 170,
@@ -13114,7 +13161,8 @@
         "Harmonization / Diaphoresis — harmonize Shaoyang and release muscle layer"
       ],
       "exam_pearl": "【考綱重點】太陽少陽合病（表裏同病）首選方。小柴胡湯（和少陽）與桂枝湯（解太陽）合方。發熱惡寒、關節酸痛、胸脅苦滿、心煩喜嘔。NCBAHM 2026 CH Outline p.18。",
-      "formula_song": "柴胡桂枝合兩方，柴芩半夏人參薑。\n桂枝芍藥甘草棗，少陽太陽雙解良。"
+      "formula_song": "柴胡桂枝合兩方，柴芩半夏人參薑。\n桂枝芍藥甘草棗，少陽太陽雙解良。",
+      "cautions_zh": "陰虛熱盛或真熱假寒者禁用；表實無汗者慎用。"
     },
     {
       "id": "formula.xiao_yao_san",
@@ -20296,28 +20344,16 @@
       ],
       "composition": [
         {
-          "herb_zh": "黃耆",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "30g",
-          "elucidation_zh": "當歸補血湯中加入黃耆，主要有兩大原因：\n一、補氣：黃耆性溫，味甘，具有補氣固表、託毒生肌的作用。當歸補血湯以補血為主，但血為氣之母，氣為血之帥，氣虛則血行不暢，難以達到補血效果。黃耆補氣，能促進血液運行，使補血效果更佳。\n二、協同補血：黃耆能促進骨髓造血功能，增強血紅蛋白含量，與當歸共同作用，達到更佳的補血效果。同時，黃耆亦能提高機體免疫力，有助於抵抗疾病，進一步提升補血的效果。",
-          "decoction_reference_g": "30g",
-          "granule_reference_g": "6.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.huang_qi",
+          "name_zh": "黃芪",
+          "name_en": "Astragalus Root",
+          "dosage": "30g"
         },
         {
-          "herb_zh": "當歸",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "「當歸補血湯」中包含「當歸」，乃因其藥性溫和，兼具補血、活血、調經之效，為方劑中不可或缺的主藥。\n當歸味甘辛，性溫，入心、肝、脾經，能補血養血，潤燥滑腸，行血止痛，對於血虛所致的頭暈目眩、面色蒼白、心悸失眠、月經不調等症狀皆有療效。\n因此，將當歸納入「當歸補血湯」中，可有效改善血虛症狀，達到補血益氣、調和氣血之目的。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.dang_gui",
+          "name_zh": "當歸",
+          "name_en": "Chinese Angelica",
+          "dosage": "6g"
         }
       ],
       "pattern_indications_zh": [
@@ -20384,9 +20420,7 @@
       "source_classic": "《內外傷辨惑論》",
       "exact_source_url": "https://cloudtcm.com/formula/251",
       "fetched_at": "2026-07-23T07:08:46.808Z",
-      "cautions_zh": [
-        "陰虛潮熱者，慎用本方。"
-      ],
+      "cautions_zh": "陰虛火旺、真熱假寒或外感實熱者禁用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/251",
       "safety_fetched_at": "2026-07-23T07:32:53.263Z",
@@ -20490,7 +20524,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Dang Gui Bu Xue Tang Cautions)",
+        "composition": "American Dragon (Dang Gui Bu Xue Tang Cautions)"
       },
       "cloudtcm_id": 251,
       "action_profile": {
@@ -24104,76 +24140,40 @@
       ],
       "composition": [
         {
-          "herb_zh": "生地黃",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "30g",
-          "elucidation_zh": "一貫煎中加入生地黃，主要基於以下兩點原因：\n清熱涼血: 生地黃性寒，味甘，入心、肝、腎經，具有清熱涼血、滋陰潤燥的功效。一貫煎主治血熱妄行，導致的各種出血症狀，如吐血、衄血、便血等，生地黃能清熱涼血，止血止痛，緩解出血癥狀。\n滋陰養血: 生地黃具有滋陰養血的作用，可以改善因血熱耗傷陰液而導致的口乾舌燥、心煩不寐等症狀。一貫煎中加入生地黃，可以滋陰養血，促進血液生成，改善血液循環，達到整體的療效。",
-          "decoction_reference_g": "30g",
-          "granule_reference_g": "6.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.bei_sha_shen",
+          "name_zh": "北沙參",
+          "name_en": "Glehnia Root",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "枸杞子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "一貫煎中加入枸杞子，主要基於以下兩點原因：\n滋補肝腎，益精明目：枸杞子性甘平，入肝腎經，具有滋陰補腎、益精明目之效。一貫煎以滋補肝腎為主要功效，枸杞子能增強其補益之力，並可緩解由肝腎陰虛所致的視力下降、頭暈耳鳴等症狀。\n配伍相宜，協調藥性：一貫煎中多用滋陰補腎藥，枸杞子性溫和，可緩解藥性偏寒之弊，使藥性更為平和，提高藥效的發揮。同時，枸杞子與其他藥材搭配，如生地黃、熟地黃等，能起到相輔相成的作用，共同促進肝腎陰陽的平衡。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.mai_men_dong",
+          "name_zh": "麥門冬",
+          "name_en": "Ophiopogon Tuber",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "當歸",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "10g",
-          "elucidation_zh": "一貫煎是傳統中醫中常見的一種方劑，其主要作用是養血調經、修復脾胃。方中的當歸是重要的藥材之一，具有活血補血、調經的功效。當歸被譽為“血中之聖藥”，因為它能有效促進血液循環，改善因血虛造成的各種症狀，如面色蒼白、心悸頭暈等。當歸還能增強脾胃消化功能，進一步提升人體的整體健康。\n此外，當歸富含多種營養成分，如維生素、氨基酸及揮發油，能增強身體的免疫力，對支持女性的生理週期有著重要的調理作用。在一貫煎的組閤中，當歸不僅能改善血虛的情況，還能配合其他成分增強整體療效。因此，當歸的加入使得一貫煎更具全面性，有助於調理女性的健康，達到事半功倍的效果。這也是傳統中醫方劑設計中，講究組方協同作用的重要體現。",
-          "decoction_reference_g": "10g",
-          "granule_reference_g": "2.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.dang_gui",
+          "name_zh": "當歸",
+          "name_en": "Chinese Angelica",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "麥門冬",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "10g",
-          "elucidation_zh": "一貫煎中包含麥門冬，主要基於以下兩點原因：\n1. 滋陰潤肺：麥門冬性寒，味甘，入肺、心經，具滋陰潤肺之效。一貫煎主要針對陰虛肺燥所致的咳嗽、咯血等症，麥門冬可滋陰潤肺，生津止渴，緩解肺燥症狀，有助於改善患者的肺功能。\n2. 協調藥性：一貫煎中包含多種藥材，如生地黃、玄參等，這些藥材多偏寒涼，而麥門冬則相對溫和，能協調藥性，避免寒涼過度，保護患者的脾胃功能，更好地發揮整體療效。",
-          "decoction_reference_g": "10g",
-          "granule_reference_g": "2.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sheng_di_huang",
+          "name_zh": "生地黃",
+          "name_en": "Rehmannia Root",
+          "dosage": "18-30g"
         },
         {
-          "herb_zh": "沙參",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "10g",
-          "elucidation_zh": "一貫煎中加入沙參，主要基於以下兩點：\n滋陰潤肺，生津止渴：沙參性涼味甘，入肺、胃經，具有滋陰潤肺、生津止渴的功效。一貫煎主要用於治療陰虛肺燥，津液不足所致的咳嗽、咯血、口乾咽燥等症狀，沙參可以滋陰潤肺，補充津液，緩解這些症狀。\n配伍增效：沙參與一貫煎中其他藥材如麥冬、生地等，共同滋陰養肺，協同作用，增強療效。沙參與麥冬同為滋陰潤肺的藥材，兩者相輔相成，更能達到滋陰潤肺的效果。",
-          "decoction_reference_g": "10g",
-          "granule_reference_g": "2.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.gou_qi_zi",
+          "name_zh": "枸杞子",
+          "name_en": "Lycium Fruit",
+          "dosage": "9-12g"
         },
         {
-          "herb_zh": "川楝子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "5g",
-          "elucidation_zh": "一貫煎中包含川楝子，主要原因如下：\n疏肝理氣: 川楝子味苦性寒，入肝經，能疏肝理氣，消積止痛。一貫煎主治肝鬱氣滯所致的胸脅脹痛、胃脘痞滿、消化不良等症，而川楝子能有效緩解肝氣鬱結，促進氣血運行，達到舒肝止痛的效果。\n消積化滯: 川楝子具有消積化滯的作用，可促進消化，緩解食積不消、腹脹腹痛等症。一貫煎中其他藥物如柴胡、香附等也具有疏肝理氣、消積止痛的作用，川楝子的加入，可增強方劑的消積化滯功效，使療效更加顯著。",
-          "decoction_reference_g": "5g",
-          "granule_reference_g": "1.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.chuan_lian_zi",
+          "name_zh": "川楝子",
+          "name_en": "Toosendan Fruit",
+          "dosage": "4.5g"
         }
       ],
       "pattern_indications_zh": [
@@ -24244,9 +24244,7 @@
       "source_classic": "《柳州醫話》",
       "exact_source_url": "https://cloudtcm.com/formula/359",
       "fetched_at": "2026-07-23T07:09:00.218Z",
-      "cautions_zh": [
-        "這個處方主要著重於滋養身體，雖然能夠調動身體內的無形能量，但是無法驅除有形的疾病因素。因為藥材大多甜膩，所以如果患者有痰飲停滯的情況，表現為舌苔白膩和脈象沉緊，則不適合使用這個方子。\n\n特別需要注意的是，如果患者的舌頭沒有唾液，這幾個字非常關鍵。如果舌苔出現濁垢，這個方子就不適用。\n\n對於那些氣滯、血滯、火旺、飲食不化、痰濕等各種狀態，如果不伴有陰虛的情況，則應避免使用。由於這個方子中的藥材較為滋膩，因此對於那些有痰飲停滯且舌苔白膩、脈象沉緊的人來說，不宜使用。"
-      ],
+      "cautions_zh": "停痰積飲、舌苔厚膩、脾虛便溏者禁用；氣鬱停滯而無陰虛者不宜服用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/359",
       "safety_fetched_at": "2026-07-23T07:33:06.819Z",
@@ -24346,7 +24344,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Yi Guan Jian Cautions)",
+        "composition": "American Dragon (Yi Guan Jian Cautions)"
       },
       "cloudtcm_id": 359,
       "action_profile": {
@@ -24521,9 +24521,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": "實熱汗出（高熱、面赤、口渴、脈數）者禁用；陰虛火旺盜汗無氣虛者慎用。",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Oyster Shell Powder",
@@ -24579,7 +24577,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Mu Li San Cautions)"
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
       "formula_song_zh": "牡蠣散用麻黃根，黃芪小麥四般存。\n體虛自汗盜汗症，固表斂汗功效尊。",
@@ -24688,9 +24687,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": "濕熱痢疾、積滯未盡或初起瀉痢者禁用；本方含罌粟殼，收澀力強，不可過服。",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "True Man’s Decoction to Nourish the Organs",
@@ -24743,7 +24740,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Zhen Ren Yang Zang Tang Cautions)"
       },
       "formula_song_zh": "真人養臟罌粟殼，訶子肉豆當歸芍。\n木香朮桂甘草參，久瀉久痢澀腸卓。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
@@ -24889,9 +24887,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": "濕熱積滯之腹痛泄瀉者禁用；陰虛火旺者慎用。",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Four-Miracle Pill",
@@ -24947,7 +24943,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Si Shen Wan Cautions)"
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
       "formula_song_zh": "四神丸用肉豆蔻，補骨脂與五味求。\n吳茱萸生薑棗合，脾腎虛寒五更瀉。",
@@ -25433,7 +25430,8 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Suo Quan Wan Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -25486,7 +25484,8 @@
       "exam_pearl": "【考綱重點】下元虛冷尿頻遺尿代表方。益智仁（君，考綱官方藥對：Yi Zhi Ren + Wu Yao, Appendix B p.17）溫脾腎止唾縮尿；烏藥（臣）溫腎散寒止痛；山藥（佐）健脾固腎。三藥合用，溫下元、縮泉尿。NCBAHM 2026 CH Outline p.21。",
       "formula_song": "縮泉丸治小便多，益智烏藥山藥和。\n下元虛冷尿頻發，溫腎縮尿功最多。",
       "formula_song_zh": "縮泉丸治小便多，益智烏藥山藥和。\n下元虛冷尿頻發，溫腎縮尿功最多。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "cautions_zh": "濕熱下注之尿頻尿急或陰虛火旺者禁用。"
     },
     {
       "id": "formula.shou_tai_wan",
@@ -25577,7 +25576,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Shou Tai Wan Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -25629,7 +25629,8 @@
         "Retention / Tonification — tonify Kidney, stabilize Chong vessel and calm fetus"
       ],
       "exam_pearl": "【考綱重點】腎虛先兆流產習慣性流產（張錫純《醫學衷中參西錄》名方）。菟絲子（君，重用）補腎益精固沖；桑寄生、續斷（臣）補肝腎固胎元；阿膠（佐使）養血止血。純補無毒、安胎名方。NCBAHM 2026 CH Outline p.20。",
-      "formula_song": "壽胎丸中用菟絲，桑寄阿膠續斷施。\n固腎安胎補脾腎，胎動不安服之宜。"
+      "formula_song": "壽胎丸中用菟絲，桑寄阿膠續斷施。\n固腎安胎補脾腎，胎動不安服之宜。",
+      "cautions_zh": "濕熱下注或熱伏衝任之胎動不安者禁用。"
     },
     {
       "id": "formula.suan_zao_ren_tang",
@@ -26870,64 +26871,34 @@
       ],
       "composition": [
         {
-          "herb_zh": "蒼朮",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "越鞠丸中加入蒼朮，主要是為了其 燥濕健脾、祛風化濕 的功效。\n蒼朮性溫味苦，入脾、胃經，具有燥濕化痰、健脾消食、祛風止痛的功效。而越鞠丸主治濕濁內阻、氣機鬱滯所致的胸悶、心悸、嘔吐、腹脹等症。\n蒼朮在此方中，一方面可以燥濕健脾，祛除脾胃濕氣，促進脾胃運化功能，改善濕濁內阻的病症；另一方面，蒼朮還可以祛風化濕，解除氣機鬱滯，使心氣通暢，從而達到治療胸悶、心悸等症的效果。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.cang_zhu",
+          "name_zh": "蒼朮",
+          "name_en": "Atractylodes Rhizome",
+          "dosage": "10g"
         },
         {
-          "herb_zh": "香附",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "越鞠丸中包含香附，其原因主要為以下兩點：\n疏肝解鬱，理氣止痛：香附味辛、苦，性溫，入肝、脾經。其具有疏肝解鬱、理氣止痛的功效，可緩解肝鬱氣滯所致的胸脅脹痛、脘腹脹滿、食慾不振等症狀。而越鞠丸主治肝鬱氣滯所致的胸脅脹痛、脅肋作痛、脘腹脹滿、食慾不振、口苦咽乾、舌苔薄白等症狀，故以香附疏肝解鬱，理氣止痛。\n調和脾胃，行氣消脹：香附還能調和脾胃，行氣消脹，有助於改善脾胃功能，促進消化吸收，緩解腹脹、腹痛等症狀。\n因此，香附的加入，不僅能疏肝解鬱，理氣止痛，更能調和脾胃，行氣消脹，與越鞠丸中其他藥材相互配合，共同起到治療肝鬱氣滯所致的諸多症狀的作用。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.xiang_fu",
+          "name_zh": "香附",
+          "name_en": "Cyperus Rhizome",
+          "dosage": "10g"
         },
         {
-          "herb_zh": "川芎",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "越鞠丸中包含川芎，主要原因有二：\n一、 疏肝解鬱，行氣止痛: 川芎味辛性溫，入肝經，能疏肝解鬱，行氣止痛。越鞠丸主治肝鬱氣滯，胸脅脹痛，脘腹痞滿等症，川芎的疏肝解鬱作用有助於緩解肝氣鬱結，從而達到止痛的效果。\n二、 活血化瘀，通經止痛: 川芎亦具有活血化瘀的作用，能促進血液循環，改善局部血流，對於因氣血瘀滯引起的疼痛也具有緩解作用。越鞠丸中其他藥材如香附、鬱金等也具有行氣活血之效，與川芎相輔相成，共同發揮止痛作用。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.chuan_xiong",
+          "name_zh": "川芎",
+          "name_en": "Szechuan Lovage Root",
+          "dosage": "10g"
         },
         {
-          "herb_zh": "神麴",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "越鞠丸的組成中，包含神麴，主要原因有二：\n理氣和胃：神麴性溫，入脾胃經，具有消食化積、理氣和胃之效。越鞠丸主治胸膈滿悶，脘腹脹痛，食積不消，脾胃氣滯等症，神麴可助其消食導滯，理氣和中，改善脾胃功能。\n解鬱除濕：神麴還具有解鬱除濕的功效。越鞠丸中包含鬱金、香附等具有理氣解鬱、行氣疏肝作用的藥材，神麴可協同它們共同作用，幫助患者解除鬱悶之氣，改善濕困脾胃之症。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.shen_qu",
+          "name_zh": "神曲",
+          "name_en": "Massa Medicata Fermentata",
+          "dosage": "10g"
         },
         {
-          "herb_zh": "梔子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "越鞠丸中加入梔子，主要出於以下兩點原因：\n清熱瀉火，涼血解毒：梔子味苦寒，具有清熱瀉火、涼血解毒之效。方中因有鬱金、柴胡等藥性偏燥，容易引起肝火上炎、心煩不寐等症狀。梔子可中和燥熱之性，防止藥性偏燥，起到清熱瀉火，涼血解毒的作用。\n疏肝解鬱，利膽退黃：梔子入肝膽經，能疏肝解鬱、利膽退黃，與方中其他藥物協同作用，可有效改善肝鬱氣滯、脾胃不和所致的黃疸、脅痛、腹脹等症狀，達到治療目的。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_zi",
+          "name_zh": "梔子",
+          "name_en": "Cape Jasmine Fruit",
+          "dosage": "10g"
         }
       ],
       "pattern_indications_zh": [
@@ -26988,9 +26959,7 @@
       "source_classic": "《丹溪心法》",
       "exact_source_url": "https://cloudtcm.com/formula/238",
       "fetched_at": "2026-07-23T07:09:01.579Z",
-      "cautions_zh": [
-        "因虛引起的鬱症不適用"
-      ],
+      "cautions_zh": "氣血陰陽虛衰之鬱證者禁用；無鬱滯者不宜過服。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/238",
       "safety_fetched_at": "2026-07-23T07:33:08.190Z",
@@ -27092,7 +27061,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Yue Ju Wan Cautions)",
+        "composition": "American Dragon (Yue Ju Wan Cautions)"
       },
       "cloudtcm_id": 238,
       "action_profile": {
@@ -27243,9 +27214,7 @@
         "情志抑鬱",
         "喜太息"
       ],
-      "cautions_zh": [
-        "陰虛火旺者慎用"
-      ],
+      "cautions_zh": "陰虛火旺、胃熱腹痛者慎用；本方行氣力量較強，不宜長期單獨過服。",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Bupleurum Powder to Dredge the Liver",
@@ -27298,7 +27267,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Chai Hu Shu Gan San Cautions)"
       },
       "formula_song_zh": "柴胡疏肝芍川芎，陳皮枳殼甘草同。\n疏肝理氣止脅痛，肝鬱氣滯服之通。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
@@ -27441,7 +27411,8 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Gua Lou Xie Bai Ban Xia Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/258",
       "cloudtcm_id": 357,
@@ -27492,7 +27463,8 @@
       "exam_pearl": "【考綱重點】胸陽不振、痰濁胸痹重證（胸痛徹背、不能平臥）首選專方。瓜蔞配薤白（考綱官方藥對 Appendix B p.16）行氣散結通痺；半夏燥濕化痰降逆。加黃酒煎以助藥力通胸陽。NCBAHM 2026 CH Outline p.19。",
       "formula_song": "瓜蔞薤白半夏湯，黃酒同煎胸痹康。\n通陽散結化痰飲，胸痛徹背服之良。",
       "formula_song_zh": "瓜蔞薤白半夏湯，黃酒同煎胸痹康。\n通陽散結化痰飲，胸痛徹背服之良。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "cautions_zh": "心痛屬熱證、陰虛火旺者禁用；孕婦慎用。"
     },
     {
       "id": "formula.ban_xia_hou_po_tang",
@@ -27534,64 +27506,34 @@
       ],
       "composition": [
         {
-          "herb_zh": "半夏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "半夏厚朴湯中包含半夏，是基於其 燥濕化痰 的功效。半夏味辛、苦，性微溫，入脾、肺經，具有 降逆止嘔、燥濕化痰 的功效。方中以半夏配伍厚朴，厚朴性燥，善於 行氣燥濕，兩者相配，相輔相成，可 溫中散寒，燥濕化痰，降逆止嘔，對於寒濕阻滯，脾胃不和，胸悶脘痞，嘔吐泛酸等症狀有良好的療效。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ban_xia",
+          "name_zh": "半夏",
+          "name_en": "Pinellia Rhizome",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "茯苓",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "半夏厚朴湯中加入茯苓，主要基於以下兩點原因：\n1. 燥濕健脾：茯苓味甘淡，性平和，具有利水滲溼、健脾和胃的功效。半夏厚朴湯以燥溼化痰爲主，但脾胃虛弱者，溼邪難除。茯苓的加入，可健脾利溼，增強脾胃運化水溼的能力，幫助半夏厚朴湯更好地發揮燥溼作用。\n2. 和中降逆：茯苓還能和中降逆，緩解半夏厚朴湯中半夏、厚朴等藥物可能帶來的嘔逆之弊。茯苓與半夏、厚朴協同作用，既能燥溼化痰，又能和胃降逆，使藥效更加全面。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.hou_po",
+          "name_zh": "厚朴",
+          "name_en": "Magnolia Bark",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "厚朴",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "10g",
-          "elucidation_zh": "半夏厚朴湯中包含厚朴，主要原因有二：\n厚朴燥濕化痰，行氣止痛：  厚朴味辛性溫，善於燥濕化痰，且能行氣止痛，對於脾胃濕阻、氣滯痰凝所致的胸悶、脘腹脹痛、噁心嘔吐等症狀有很好的療效。\n厚朴配伍半夏，相輔相成： 半夏燥濕化痰，偏重於止嘔，而厚朴則能行氣止痛，兩者相配，既能化痰止嘔，又能理氣止痛，更能增強其治療效果。",
-          "decoction_reference_g": "10g",
-          "granule_reference_g": "2.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.fu_ling",
+          "name_zh": "茯苓",
+          "name_en": "Poria Sclerotium",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "紫蘇葉",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "半夏厚朴湯為中醫常用方劑之一，主要治療因痰阻氣滯所致的咽喉異物感、胸悶等症狀。此方由半夏、厚朴、茯苓、生薑、紫蘇葉五味藥材組成。其中，紫蘇葉的加入，對於調節氣機、寬中解表具有重要意義。紫蘇葉性溫味辛，歸肺脾經，能行氣寬中、解魚蟹毒，並有助於發汗解表。在本方中，紫蘇葉與其它藥物協同作用，不僅增強了行氣化痰之功，還能疏風散寒，使整個方劑更趨完善，適用於痰濕內阻兼有外感風寒的情況，從而達到順氣降逆、化痰散結的療效。紫蘇葉在半夏厚朴湯中的應用，充分體現了中醫辨證施治的原則，以及藥物間相輔相成的配伍智慧。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sheng_jiang",
+          "name_zh": "生薑",
+          "name_en": "Fresh Ginger",
+          "dosage": "15g"
         },
         {
-          "herb_zh": "生薑",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "半夏厚朴湯中加入生薑，主要有兩大原因：\n和胃降逆：半夏厚朴湯主治痰飲阻滯，氣逆上衝所致的胸悶、嘔吐等症。生薑性溫，能溫中降逆，協同半夏、厚朴化痰降逆，使氣機下降，減輕嘔吐症狀。\n調和藥性：半夏、厚朴性寒，容易傷脾胃。生薑性溫，能調和藥性，避免藥物寒涼對脾胃造成損傷，使藥性溫和，更易於服用。\n因此，生薑的加入既能增強藥效，又能保護脾胃，是半夏厚朴湯中不可或缺的藥材。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zi_su_ye",
+          "name_zh": "紫蘇葉",
+          "name_en": "Perilla Leaf",
+          "dosage": "6g"
         }
       ],
       "pattern_indications_zh": [
@@ -27648,9 +27590,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/71",
       "fetched_at": "2026-07-23T07:08:45.155Z",
-      "cautions_zh": [
-        "方中多辛溫苦燥之品，僅適宜於痰氣互結而無熱者。若見顴紅口苦、舌紅少苔屬於氣鬱化火，陰傷津少者，雖具梅核氣之特徵，亦不宜使用本方。陰虛津虧或火旺者不宜使用。"
-      ],
+      "cautions_zh": "陰虛津傷、舌紅少苔者禁用；氣鬱化火屬實熱證者不宜單獨使用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/71",
       "safety_fetched_at": "2026-07-23T07:32:51.646Z",
@@ -27752,7 +27692,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Ban Xia Hou Po Tang Cautions)",
+        "composition": "American Dragon (Ban Xia Hou Po Tang Cautions)"
       },
       "cloudtcm_id": 71,
       "action_profile": {
@@ -28221,13 +28163,40 @@
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
       "composition": [
         {
-          "herb_zh": "橘皮",
-          "role_zh": "君",
-          "classical_amount_text": "原典份量",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
-          "role_reason_zh": "君藥：橘皮為本方核心主藥。"
+          "herb_id": "herb.chen_pi",
+          "name_zh": "橘皮",
+          "name_en": "Tangerine Peel",
+          "dosage": "12g"
+        },
+        {
+          "herb_id": "herb.zhu_ru",
+          "name_zh": "竹茹",
+          "name_en": "Bamboo Shavings",
+          "dosage": "12g"
+        },
+        {
+          "herb_id": "herb.ren_shen",
+          "name_zh": "人參",
+          "name_en": "Ginseng Root",
+          "dosage": "3g"
+        },
+        {
+          "herb_id": "herb.sheng_jiang",
+          "name_zh": "生薑",
+          "name_en": "Fresh Ginger",
+          "dosage": "9g"
+        },
+        {
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "dosage": "5g"
+        },
+        {
+          "herb_id": "herb.da_zao",
+          "name_zh": "大棗",
+          "name_en": "Jujube Date",
+          "dosage": "5枚"
         }
       ],
       "clinical_use_note": "【橘皮竹茹湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -28307,7 +28276,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Ju Pi Zhu Ru Tang Cautions)",
+        "composition": "American Dragon (Ju Pi Zhu Ru Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/46",
       "cloudtcm_id": 283,
@@ -28360,7 +28331,8 @@
         "Qi-regulating / Heat-clearing — direct rebellious Qi downward, stop vomiting, clear heat and augment Qi"
       ],
       "exam_pearl": "【考綱重點】胃虛有熱呃逆嘔吐首選專方。橘皮（君）理氣和胃止嘔；竹茹（君）清熱降逆止嘔；生薑（臣）溫胃止嘔（生薑配竹茹：一寒一熱、降逆止嘔）；人參、甘草、大棗（佐使）益氣補虛和中。NCBAHM 2026 CH Outline p.19。",
-      "formula_song": "橘皮竹茹用人參，甘草生薑大棗尋。\n胃虛有熱嘔逆呃，降逆止呃效能深。"
+      "formula_song": "橘皮竹茹用人參，甘草生薑大棗尋。\n胃虛有熱嘔逆呃，降逆止呃效能深。",
+      "cautions_zh": "胃寒呃逆、胃瀉虛寒者禁用；無熱象者不宜使用。"
     },
     {
       "id": "formula.xue_fu_zhu_yu_tang",
@@ -30592,64 +30564,34 @@
       ],
       "composition": [
         {
-          "herb_zh": "桂枝",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "桂枝茯苓丸中加入桂枝，主要有以下兩個原因：\n溫經通絡，活血化瘀: 桂枝性溫，入心、脾、膀胱經，具有溫經通絡、活血化瘀的作用。對於婦女經期不調、痛經、血瘀等症狀，桂枝可溫通經絡，促進血液循環，緩解疼痛。\n配合茯苓，利水消腫: 桂枝與茯苓相配，可起到利水消腫的作用。茯苓能利水滲濕，桂枝則能溫陽化氣，二者相輔相成，可促進體內水液代謝，減輕水腫。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.gui_zhi",
+          "name_zh": "桂枝",
+          "name_en": "Cinnamon Twig",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "赤芍",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "桂枝茯苓丸中加入赤芍，主要基於以下兩點原因：\n活血化瘀： 赤芍性苦寒，入肝經，具有活血化瘀、涼血止痛的功效。桂枝茯苓丸主治血瘀阻滯所致的月經不調、痛經、經閉等症，赤芍可有效改善血瘀癥狀，促進血液循環，緩解疼痛。\n清熱解毒： 赤芍亦具清熱解毒之效，可輔助桂枝茯苓丸清熱解毒，緩解因血瘀阻滯所致的局部發熱、腫痛等症狀。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.fu_ling",
+          "name_zh": "茯苓",
+          "name_en": "Poria Sclerotium",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "茯苓",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "桂枝茯苓丸中包含茯苓，主要基於以下兩點：\n1. 利水滲濕： 茯苓味甘淡，性平，入脾、肺經，具有利水滲濕、健脾寧心的功效。方中桂枝溫通血脈，桃仁活血化瘀，但若體內濕氣重，會阻礙藥效發揮。茯苓可利水滲濕，使藥物更易於到達病竈，提高藥效。\n2. 和中健脾： 方中桃仁、紅花等藥性偏寒，容易損傷脾胃。茯苓健脾益氣，可緩解藥物對脾胃的刺激，使藥性更平和，減少副作用。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.mu_dan_pi",
+          "name_zh": "牡丹皮",
+          "name_en": "Moutan Cortex",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "牡丹皮",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "桂枝茯苓丸中加入牡丹皮，主要基於以下兩點原因：\n一、 活血化瘀: 牡丹皮性寒，味苦，入心、肝經，具有清熱涼血、活血化瘀之效。桂枝茯苓丸以活血化瘀為主要功效，牡丹皮可助其更好地疏通血脈，改善血液循環，促進瘀血消散。\n二、 疏肝解鬱: 牡丹皮可疏肝解鬱，緩解肝氣鬱結，這對於女性常見的肝氣鬱結、血瘀經閉等症狀，有輔助治療作用。桂枝茯苓丸主要針對女性血瘀經閉、痛經等症狀，牡丹皮的加入，可加強疏肝解鬱之效，提高整體療效。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.chi_shao",
+          "name_zh": "桃仁",
+          "name_en": "Peach Kernel",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "桃仁",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "桂枝茯苓丸中加入桃仁，主要源於其活血化瘀、消腫止痛的功效。桃仁性味苦甘，入心、肝、肺經，具有破血行瘀、潤腸通便之效。\n方中以桂枝、茯苓等溫補氣血之品為主，而桃仁則作為引血下行、活血化瘀的藥物，與桂枝茯苓相配合，有助於改善氣血運行不暢，達到溫經散寒、活血化瘀、消腫止痛的功效。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.bai_shao",
+          "name_zh": "芍藥",
+          "name_en": "Peony Root",
+          "dosage": "9g"
         }
       ],
       "pattern_indications_zh": [
@@ -30718,9 +30660,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/189",
       "fetched_at": "2026-07-23T07:08:48.925Z",
-      "cautions_zh": [
-        "本方爲活血化淤消癥之方，如正常妊娠下血者則當慎之，孕婦及產後必須格外小心。僅用於有血瘀者 。\n如婦人宿有癥病又懷孕者，用本方爲良益之法，但用法應從小晝開始，不知漸加，使之下癥而不傷胎。\n臨證運用本方，雖屬有故無須，但仍需注意中病即止，不可過服。若陰道下血反多，腰痠腹痛較甚，則非本方所宜，當辨而治之。"
-      ],
+      "cautions_zh": "孕婦慎用或禁用（因含桂枝、桃仁、牡丹皮活血化瘀通經之品）；無瘀血阻滯者不宜服用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/189",
       "safety_fetched_at": "2026-07-23T07:32:55.733Z",
@@ -30819,7 +30759,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Gui Zhi Fu Ling Wan Cautions)",
+        "composition": "American Dragon (Gui Zhi Fu Ling Wan Cautions)"
       },
       "cloudtcm_id": 189,
       "action_profile": {
@@ -33614,7 +33556,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Si Miao Wan Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -33666,7 +33609,8 @@
         "Dampness-dispelling / Heat-clearing — clear heat, dry dampness, strengthen tendons/bones, unblock collaterals and stop pain"
       ],
       "exam_pearl": "【考綱重點】痛風及下肢濕熱腫痛第一要方。二妙散（黃柏蒼朮）加牛膝（引藥下行、強筋骨）、薏苡仁（清熱利濕舒筋）。NCBAHM 2026 CH Outline p.21。",
-      "formula_song": "四妙丸即二妙基，牛膝薏苡兩般施。\n濕熱下注痿痺症，清熱利濕強筋宜。"
+      "formula_song": "四妙丸即二妙基，牛膝薏苡兩般施。\n濕熱下注痿痺症，清熱利濕強筋宜。",
+      "cautions_zh": "陰虛津傷或無濕熱者禁用；孕婦慎用。"
     },
     {
       "id": "formula.zhen_wu_tang",
@@ -35440,64 +35384,40 @@
       "last_reviewed": "",
       "composition": [
         {
-          "herb_zh": "陳皮",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "二陳湯中加入陳皮，主要基於以下兩點原因：\n理氣燥濕： 陳皮味辛、性溫，入脾、肺經，具有理氣燥濕、化痰止咳的功效。二陳湯主治痰濕阻滯，咳嗽氣喘，胸悶腹脹等症，而陳皮的理氣燥濕作用，有助於消解痰濕，通暢氣機，緩解胸悶氣喘。\n行氣開胃： 陳皮亦能行氣開胃，有助於改善脾胃功能，促進消化吸收。二陳湯中常加入半夏、茯苓等藥材，這些藥材容易造成脾胃不適，陳皮的開胃作用，能協調脾胃，避免藥物對脾胃的負面影響。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ban_xia",
+          "name_zh": "半夏",
+          "name_en": "Pinellia Rhizome",
+          "dosage": "15g"
         },
         {
-          "herb_zh": "半夏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "二陳湯中包含半夏，主要原因如下：\n燥濕化痰: 二陳湯主治痰濕阻肺之咳嗽，半夏性辛溫，入脾胃經，善於燥濕化痰，可將肺部的痰濕排出體外，達到止咳化痰的效果。\n降逆止嘔: 半夏還有降逆止嘔之功效，可緩解痰濕阻滯所致的噁心嘔吐，與陳皮、茯苓等藥物協同作用，更加強了止嘔化痰之效。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.chen_pi",
+          "name_zh": "橘紅 (陳皮)",
+          "name_en": "Tangerine Peel",
+          "dosage": "15g"
         },
         {
-          "herb_zh": "茯苓",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "二陳湯中加入茯苓，主要基於以下兩個原因：\n健脾利濕: 茯苓性平味甘，入脾、肺經，具有健脾利濕、寧心安神之效。二陳湯主治痰濕阻肺、咳嗽痰多、胸悶氣短等症，茯苓能健脾祛濕，有助於化解痰濕，改善呼吸道症狀。\n助藥力: 茯苓能利水滲濕，有助於其他藥材的藥力發揮。二陳湯中的陳皮、半夏等藥材，需要藉助茯苓的利水作用，才能更好地發揮其化痰止咳、理氣和胃的功效。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.fu_ling",
+          "name_zh": "茯苓",
+          "name_en": "Poria Sclerotium",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "生薑",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "二陳湯中加入生薑，主要有以下兩個原因：\n和胃降逆，止嘔止呃： 生薑性溫，味辛，入肺、脾、胃經，具有溫中散寒、降逆止嘔之效。二陳湯主治痰濕阻肺，氣機鬱滯所致的咳嗽、痰多、胸悶等症，而生薑可以溫胃降逆，化解痰濕，止嘔止呃，協同陳皮、半夏等藥物，更好地達到止咳化痰的效果。\n助藥力，增效作用： 生薑可以促進藥物吸收，並增強藥效。與二陳湯中的其他藥物配伍，可以更好地發揮各藥物的作用，提高療效。例如，生薑可以助陳皮理氣降逆，助半夏燥濕化痰。\n總之，二陳湯中加入生薑，既能和胃降逆，止嘔止呃，又能助藥力，增效作用，起到重要的輔助治療作用。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "dosage": "4.5g"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "5g",
-          "elucidation_zh": "二陳湯中加入甘草，主要基於以下兩個原因：\n調和藥性： 二陳湯以陳皮、半夏為主，性偏燥溫，容易傷及脾胃。甘草性甘平，入脾胃經，能調和藥性，避免藥物燥烈傷胃，使藥力更為平和，更好地發揮療效。\n緩解副作用： 半夏性溫，可引起口乾、咽燥等不適，甘草性涼，可緩解半夏引起的副作用，使患者更易接受治療。同時，甘草還能增強藥物的療效，使二陳湯的止咳化痰、健脾和胃功效更佳。",
-          "decoction_reference_g": "5g",
-          "granule_reference_g": "1.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sheng_jiang",
+          "name_zh": "生薑",
+          "name_en": "Fresh Ginger",
+          "dosage": "7片"
+        },
+        {
+          "herb_id": "herb.wu_mei",
+          "name_zh": "烏梅",
+          "name_en": "Mume Fruit",
+          "dosage": "1枚"
         }
       ],
       "actions_en": [
@@ -35638,9 +35558,7 @@
       "source_classic": "《太平惠民和劑局方》",
       "exact_source_url": "https://cloudtcm.com/formula/7",
       "fetched_at": "2026-07-23T07:08:42.776Z",
-      "cautions_zh": [
-        "使用不當會引起口渴 咽燥忌\n肺陰虛咳嗽忌"
-      ],
+      "cautions_zh": "陰虛乾咳少痰、血熱吐血者禁用；燥痰咳嗽者不宜使用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/7",
       "safety_fetched_at": "2026-07-23T07:32:49.295Z",
@@ -35751,7 +35669,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Er Chen Tang Cautions)",
+        "composition": "American Dragon (Er Chen Tang Cautions)"
       },
       "cloudtcm_id": 7,
       "condition_tags_zh": [
@@ -35920,88 +35840,52 @@
       ],
       "composition": [
         {
-          "herb_zh": "茯苓",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "5g",
-          "elucidation_zh": "溫膽湯中加入茯苓，主要基於以下兩點原因：\n利水滲濕，健脾化痰： 茯苓性平味甘，入脾、肺經，具有利水滲濕、健脾和胃、寧心安神的功效。溫膽湯以燥濕化痰為主要功效，茯苓可幫助清除痰濕，同時健脾利濕，增強脾胃運化功能，從根本上預防痰濕的生成。\n配伍增效： 茯苓與溫膽湯其他藥物如半夏、陳皮等配伍，可以協同作用，增強藥效。例如，茯苓與半夏共同作用，可加強利水滲濕、化痰止咳的效果，與陳皮配伍，則能促進脾胃運化，消除痰濕。",
-          "decoction_reference_g": "5g",
-          "granule_reference_g": "1.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ban_xia",
+          "name_zh": "半夏",
+          "name_en": "Pinellia Rhizome",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "半夏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "溫膽湯中加入半夏，主要有以下兩個原因：\n燥濕化痰： 半夏性溫，味辛，歸脾、胃經，具有燥濕化痰、降逆止嘔的功效。溫膽湯主治痰濕阻滯，氣機不利，症狀如胸悶、心悸、咳嗽痰多、噁心嘔吐等。半夏能有效化解痰濕，使氣機通暢，緩解上述症狀。\n降逆止嘔： 半夏還能降逆止嘔，對於痰濕阻滯胃氣導致的嘔吐，能起到緩解作用。溫膽湯中加入半夏，除了化痰外，還能有效控制嘔吐，使患者更容易接受治療。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhu_ru",
+          "name_zh": "竹茹",
+          "name_en": "Bamboo Shavings",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "陳皮",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "溫膽湯中加入陳皮，主要有兩方面原因：\n理氣燥濕：陳皮性溫，味辛，歸脾、肺經，具有理氣健脾、燥濕化痰的功效。溫膽湯以溫化痰飲為主，而陳皮能疏肝理氣，健脾燥濕，有助於痰飲的消散，並改善胸悶、嘔吐等症狀。\n調和藥性：溫膽湯中其他藥物如半夏、茯苓等，性偏寒涼，而陳皮性溫，加入後能調和藥性，避免寒涼之性傷及脾胃，也使藥物更加溫和有效。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_shi",
+          "name_zh": "枳實",
+          "name_en": "Immature Bitter Orange",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "枳實",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "溫膽湯中加入枳實，主要基於以下兩個原因：\n疏肝理氣，降逆止嘔：枳實味苦性寒，具有行氣消積、降逆止嘔的功效。溫膽湯主要針對痰濕阻肺、肝氣鬱結所致的胸悶、心悸、嘔吐等症狀，枳實可疏肝理氣，降逆止嘔，緩解氣機鬱滯所致的胸悶不適和嘔吐症狀，協同其他藥物共同達到治療目的。\n助濕化痰，利氣降逆：枳實具有促進水液代謝、化痰利氣的作用。溫膽湯中加入枳實，可助濕化痰，利氣降逆，將痰濕向下引導，使痰液更容易排出，並促進氣機下降，消除氣逆所致的胸悶、心悸等症狀，進一步提升藥效。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.chen_pi",
+          "name_zh": "陳皮",
+          "name_en": "Tangerine Peel",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "竹茹",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "溫膽湯中加入竹茹，主要基於以下兩個原因：\n清熱化痰： 竹茹味甘、微寒，具有清熱化痰、止嘔的作用。溫膽湯主要用於治療痰熱鬱結所致的胸悶、咳嗽、痰多、嘔吐等症狀，竹茹的清熱化痰作用可以有效緩解這些症狀。\n降逆止嘔： 竹茹能降逆氣，止嘔吐。溫膽湯中常伴有胃氣上逆的症狀，如嘔吐、噯氣等，竹茹的降逆止嘔作用可以配合其他藥物，共同改善胃氣上逆的症狀。\n總之，竹茹在溫膽湯中起到清熱化痰、降逆止嘔的作用，配合其他藥物，共同達到治療痰熱鬱結、胃氣上逆的功效。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.fu_ling",
+          "name_zh": "茯苓",
+          "name_en": "Poria Sclerotium",
+          "dosage": "4.5g"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "3g",
-          "elucidation_zh": "溫膽湯中加入甘草，主要出於以下兩點原因：\n一、調和藥性：溫膽湯以燥濕化痰為主，但方中亦有辛溫燥烈的藥物，如半夏、陳皮等，甘草味甘性平，可調和諸藥，避免藥性過燥傷陰。\n二、增強療效：甘草具有補脾益氣、緩解疼痛的作用，能增強溫膽湯的化痰止咳、理氣止痛之效。同時，甘草還可協同半夏，加強其燥濕化痰之力，使整體療效更佳。",
-          "decoction_reference_g": "3g",
-          "granule_reference_g": "0.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "dosage": "3g"
         },
         {
-          "herb_zh": "生薑",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "溫膽湯中加入生薑，主要基於以下兩點原因：\n一、和胃降逆： 生薑性溫，味辛，具有溫中散寒、和胃降逆之功效。溫膽湯主要用於治療痰濁阻肺、脾胃氣虛、胸悶氣短等症，生薑可溫和脾胃，助消化，降逆氣，使痰濁易於排出，減輕胸悶氣短症狀。\n二、助藥力： 生薑辛溫，可助其他藥材發揮藥效，例如，生薑可促進半夏、陳皮的燥濕化痰作用，使藥效更顯著。\n總之，溫膽湯中加入生薑，既能和胃降逆，又能助藥力，使療效更加顯著。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sheng_jiang",
+          "name_zh": "生薑",
+          "name_en": "Fresh Ginger",
+          "dosage": "5片"
+        },
+        {
+          "herb_id": "herb.da_zao",
+          "name_zh": "大棗",
+          "name_en": "Jujube Date",
+          "dosage": "1枚"
         }
       ],
       "pattern_indications_zh": [
@@ -36086,10 +35970,7 @@
       "source_classic": "《三因極一病證方論》",
       "exact_source_url": "https://cloudtcm.com/formula/250",
       "fetched_at": "2026-07-23T07:08:57.097Z",
-      "cautions_zh": [
-        "溫膽湯具有理氣化痰、清膽和胃的功效，但不宜長期服用。服用本方期間，應注意飲食清淡，避免辛辣刺激、油膩生冷的食物。",
-        "對陰虛血少之眩暈、失眠、心悸等不適用"
-      ],
+      "cautions_zh": "陰虛火旺失眠或外感熱病者禁用；無痰濕內擾者不宜服用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/250",
       "safety_fetched_at": "2026-07-23T07:33:03.971Z",
@@ -36195,7 +36076,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Wen Dan Tang Cautions)",
+        "composition": "American Dragon (Wen Dan Tang Cautions)"
       },
       "cloudtcm_id": 250,
       "action_profile": {
@@ -38350,136 +38233,64 @@
       ],
       "composition": [
         {
-          "herb_zh": "夜交藤",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "30g",
-          "elucidation_zh": "天麻鉤藤飲中加入夜交藤，主要原因有二：\n相輔相成，增強降壓功效：天麻鉤藤飲以天麻、鉤藤等藥材為主，具有平肝熄風、清熱降壓的作用。夜交藤則擅長補益肝腎，寧心安神，與天麻鉤藤配合，可增強降壓功效，並緩解因高血壓引起的頭暈、失眠等症狀。\n緩解藥物副作用：部分藥材如鉤藤，長期服用可能存在一定的肝腎毒性。夜交藤可補益肝腎，起到保護肝腎的作用，降低藥物副作用，提高藥物安全性。",
-          "decoction_reference_g": "30g",
-          "granule_reference_g": "6.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.tian_ma",
+          "name_zh": "天麻",
+          "name_en": "Gastrodia Rhizome",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "桑寄生",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "24g",
-          "elucidation_zh": "天麻鉤藤飲中加入桑寄生，是基於其舒筋活絡、止痛安神的功效，與方劑整體作用相輔相成。\n桑寄生性味甘平，入肝、腎經，具有祛風濕、通經絡、補肝腎的功效。其舒筋活絡之效能，可協同天麻、鉤藤等藥物，共同改善頭暈目眩、肢體麻木等症狀。而桑寄生止痛安神的特性，可進一步緩解患者頭部疼痛、失眠多夢等不適。\n因此，桑寄生作為天麻鉤藤飲的組成藥物，有助於提升整體療效，更全面地改善患者症狀。",
-          "decoction_reference_g": "24g",
-          "granule_reference_g": "4.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.gou_teng",
+          "name_zh": "鉤藤",
+          "name_en": "Uncaria Vine",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "石決明",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "24g",
-          "elucidation_zh": "天麻鉤藤飲中加入石決明，主要基於以下兩點原因：\n平肝潛陽，熄風止痙：石決明性寒，味甘鹹，入肝經，具有平肝潛陽、熄風止痙的作用。與天麻、鉤藤等藥材協同作用，能有效緩解肝陽上亢、風火上炎引起的頭暈目眩、頭痛、痙攣等症狀。\n清熱明目，鎮靜安神：石決明亦有清熱明目、鎮靜安神之效。其能清肝火，改善視力模糊，並配合天麻、鉤藤等藥材，起到鎮靜安神的作用，有助於緩解失眠、多夢等症狀。",
-          "decoction_reference_g": "24g",
-          "granule_reference_g": "4.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.shi_jue_ming",
+          "name_zh": "石決明",
+          "name_en": "Abalone Shell",
+          "dosage": "18g"
         },
         {
-          "herb_zh": "茯神",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "天麻鉤藤飲中加入茯神，主要有以下兩個原因：\n安神定志，寧心安神：茯神性味甘平，���心脾經，具有寧心安神、益智健脾的功效。天麻鉤藤飲主要用於治療肝陽上亢、風火內動所致的頭痛眩暈、心悸失眠等症狀。茯神可與天麻、鉤藤等藥物相輔相成，共同起到安神定志、平肝熄風的作用，使患者的頭暈、失眠等症狀得到緩解。\n健脾益氣，輔助治療：茯神還能健脾益氣，增強機體免疫力。一些肝陽上亢患者同時伴有脾胃虛弱，導致氣血不足，影響藥效的發揮。加入茯神可以健脾益氣，改善患者的整體體質，有利於更好地吸收藥物，提高療效。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_zi",
+          "name_zh": "梔子",
+          "name_en": "Cape Jasmine Fruit",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "鉤藤",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "天麻鉤藤飲中包含鉤藤，主要基於以下兩點原因：\n平肝熄風： 鉤藤性味苦寒，入肝經，具有平肝熄風、清熱解毒的功效。可有效緩解肝陽上亢、風火上炎引起的頭暈目眩、頭痛、失眠等症狀，與天麻的息風止痙作用相輔相成，共同達到平肝熄風的目的。\n活血通絡： 鉤藤還具有一定的活血通絡作用，有助於改善血液循環，緩解頭部供血不足導致的頭暈頭疼。同時，配合天麻的舒筋活絡功效，可更有效地改善因風邪阻絡引起的肢體麻木、痙攣等症狀。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.huang_qin",
+          "name_zh": "黃芩",
+          "name_en": "Scutellaria Root",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "川牛膝",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "天麻鉤藤飲中加入川牛膝，主要基於以下兩點原因：\n引血下行，平肝熄風： 川牛膝性寒，入肝腎經，具有引血下行，平肝熄風的功效。可配合天麻、鉤藤等藥材，增強其平肝熄風、止痙止痛之效，尤其適用於肝陽上亢、頭痛眩暈、肢體麻木等症。\n活血化瘀，通絡止痛： 川牛膝還具有活血化瘀、通絡止痛的作用。對於因血瘀阻滯而導致的頭痛、頭暈、肢體麻木等症，可起到輔助治療的作用。\n綜上所述，川牛膝的加入，不僅增強了天麻鉤藤飲的平肝熄風之效，還兼具活血化瘀、通絡止痛的功效，使之成爲治療肝陽上亢、頭痛眩暈等症的有效方劑。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.chuan_niu_xi",
+          "name_zh": "川牛膝",
+          "name_en": "Cyathula Root",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "杜仲",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "天麻鉤藤飲中加入杜仲，主要基於以下兩點原因：\n補肝腎，強筋骨: 杜仲性溫，味甘，入肝腎經，具有補肝腎、強筋骨、安胎的作用。天麻鉤藤飲主治肝陽上亢、風熱內盛引起的頭痛眩暈、肢體麻木、高血壓等症狀，而杜仲可補益肝腎，加強藥效，有助於改善肝腎功能，從而緩解眩暈、肢體麻木等症狀。\n降血壓，安神: 杜仲具有降血壓、安神的作用。對於高血壓患者，杜仲可輔助降低血壓，穩定血壓波動，減少頭暈、頭痛等症狀。同時，杜仲安神作用有助於緩解患者失眠、心悸等症狀，配合天麻、鉤藤等藥物，增強整體治療效果。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.du_zhong",
+          "name_zh": "杜仲",
+          "name_en": "Eucommia Bark",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "益母草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "天麻鉤藤飲中加入益母草，主要基於以下兩點原因：\n活血化瘀：益母草具有活血化瘀的功效，可改善因肝風內動引發的頭風頭痛及肢體麻木等症狀。配合天麻、鉤藤等藥物，能更有效地平息肝風，疏通經絡，緩解頭痛、眩暈等症狀。\n涼血止血：益母草亦有涼血止血的功效，可輔助天麻、鉤藤等藥物，降低因肝風內動引起的頭部血管破裂出血的風險，進一步保護患者安全。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sang_ji_sheng",
+          "name_zh": "桑寄生",
+          "name_en": "Taxillus Herb",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "黃芩",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "天麻鉤藤飲中加入黃芩，主要是因為其清熱瀉火、涼血止血的功效。\n清熱瀉火: 天麻鉤藤飲主要針對肝陽上亢、風火內動所致的頭痛眩暈，而黃芩能清熱瀉火，平息肝陽，有助於緩解頭痛、眩暈等症狀。\n涼血止血:  黃芩亦有涼血止血的作用，可抑制因肝火上炎導致的出血症狀，例如鼻衄、牙齦出血等。\n總而言之，黃芩加入天麻鉤藤飲，可協同其他藥物，達到清熱瀉火、涼血止血的功效，進一步改善頭痛眩暈等症狀。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ye_jiao_teng",
+          "name_zh": "夜交藤",
+          "name_en": "Fo-Ti Stem",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "天麻",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "天麻鉤藤飲方劑中包含天麻，主要基於以下兩點原因：\n平肝熄風，止痙止痛： 天麻性平味甘，入肝經，具有平肝熄風、止痙止痛的功效。對於肝陽上亢、風火內動所致的頭痛、眩暈、肢體麻木、痙攣抽搐等症狀，天麻能有效緩解。\n相輔相成，增強療效： 鉤藤善於清熱平肝，而天麻則以平肝熄風見長。二者相輔相成，共同發揮清熱平肝、熄風止痙的作用，對於治療高血壓、腦血管疾病、中風後遺症等疾病，起到協同增效的作用。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "梔子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "天麻鉤藤飲中加入梔子，主要有兩方面原因：\n清熱瀉火，涼血止血：梔子味苦寒，入肝、胃經，具有清熱瀉火、涼血止血之效。對於因肝火上炎、心火亢盛導致的頭暈目眩、頭痛、煩躁、失眠等症狀，梔子可以起到清熱降火的作用，同時也能抑制出血，改善頭暈目眩的症狀。\n緩解藥物毒性：天麻鉤藤飲中的天麻、鉤藤等藥物，部分存在一定的毒副作用，梔子可以起到緩解藥物毒性的作用，使藥物更安全有效。\n總之，梔子在天麻鉤藤飲中，不僅可以清熱降火，緩解肝火上炎引起的頭暈目眩，同時也能起到緩解藥物毒性的作用，提高藥物的安全性。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.fu_shen",
+          "name_zh": "茯神",
+          "name_en": "Poria Spirit",
+          "dosage": "9g"
         }
       ],
       "pattern_indications_zh": [
@@ -38544,9 +38355,7 @@
       "source_classic": "《中醫內科雜病證治新義》",
       "exact_source_url": "https://cloudtcm.com/formula/314",
       "fetched_at": "2026-07-23T07:08:56.017Z",
-      "cautions_zh": [
-        "陰虛風動證，本方慎用"
-      ],
+      "cautions_zh": "陰虛陽亢而無肝火者慎用；陰陽兩虛肢冷脈微者禁用。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/314",
       "safety_fetched_at": "2026-07-23T07:33:02.853Z",
@@ -38646,7 +38455,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Tian Ma Gou Teng Yin Cautions)",
+        "composition": "American Dragon (Tian Ma Gou Teng Yin Cautions)"
       },
       "cloudtcm_id": 314,
       "action_profile": {
@@ -41769,148 +41580,64 @@
       "last_reviewed": "",
       "composition": [
         {
-          "herb_zh": "白朮",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "歸脾湯中加入白朮，主要源於其兩大功效：\n健脾益氣: 白朮味甘性溫，入脾經，能補脾氣，健脾胃，增強脾胃運化功能，提升身體對營養的吸收和利用。歸脾湯主要治療心脾兩虛，白朮健脾益氣，有助於改善心脾虛弱導致的乏力、食慾不振等症狀，為心脾提供充足的能量。\n燥濕利水: 白朮具有燥濕利水的功效，能去除脾胃濕氣，改善脾胃功能，促進水液代謝，有助於治療心脾兩虛所致的痰濕、水腫等症狀，改善整體身體狀況。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ren_shen",
+          "name_zh": "人參",
+          "name_en": "Ginseng Root",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "當歸",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "歸脾湯中加入當歸，主要基於以下兩個原因：\n補血養心: 當歸為補血要藥，能養血活血，改善心血不足所致的心悸、失眠、面色蒼白等症狀。歸脾湯主治心脾兩虛，症狀多為心神不安、面色萎黃、失眠多夢、體倦乏力等，而當歸的補血功效可以改善這些症狀。\n調和氣血: 當歸具有活血化瘀的功效，能促進血液循環，調和氣血，改善心脾氣血失調所致的脾胃不健、食慾不振、腹脹等症狀。歸脾湯中其他藥材如茯苓、龍眼肉、酸棗仁等也具有健脾養心之效，與當歸相輔相成，共奏補心益脾、寧心安神之功效。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.long_yan_rou",
+          "name_zh": "龍眼肉",
+          "name_en": "Longan Aril",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "黃耆",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "歸脾湯中加入黃耆，主要基於以下兩點原因：\n補氣升陽，益脾健脾: 黃耆味甘性溫，入脾經，具有補氣升陽、益脾健脾的功效。歸脾湯主要針對心脾兩虛、氣血不足所致的失眠、心悸、健忘、面色蒼白等症狀。黃耆的補氣作用能扶正固本，增強脾胃運化功能，進而改善氣血不足，達到改善心脾兩虛症狀的效果。\n協同其他藥物，增強療效: 黃耆與歸脾湯中的其他藥物，如茯苓、酸棗仁等，共同作用，能更好地改善心脾兩虛的症狀。例如，黃耆與茯苓一同使用，能加強健脾利濕的作用；與酸棗仁一同使用，能更好地安神寧心。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.huang_qi",
+          "name_zh": "黃芪",
+          "name_en": "Astragalus Root",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "龍眼肉",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "歸脾湯中加入龍眼肉，主要基於以下兩點原因：\n補益心脾，安神定志： 龍眼肉性溫味甘，入心脾經，具有補益心脾、養血安神之效。歸脾湯主治心脾兩虛，氣血不足所致的心悸、失眠、健忘、面色萎黃等症，龍眼肉能與其他藥材相輔相成，增強補益心脾、安神定志的作用，使療效更佳。\n改善血虛，促進氣血生化： 龍眼肉富含鐵、磷、鉀等微量元素，以及葡萄糖、蛋白質等營養物質，能補益氣血，促進氣血生化。歸脾湯中加入龍眼肉，可改善血虛，促進氣血生化，使患者面色紅潤，精神飽滿，增強體質。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.bai_zhu",
+          "name_zh": "白朮",
+          "name_en": "White Atractylodes Rhizome",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "遠志",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "歸脾湯中包含遠志，乃因其具有解鬱安神之效。\n遠志味甘、辛，性溫，入心、肺經，可行氣解鬱，安神定志。歸脾湯主治心脾兩虛，氣血不足，心神不安等症狀，而遠志則可疏解鬱結之氣，平復心神，使氣血流通，心神安寧，故列入方中，以助其功效。\n此外，遠志亦可益智健腦，有助於改善心脾兩虛所致的記憶力減退、思維遲鈍等症狀。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.fu_shen",
+          "name_zh": "伏神",
+          "name_en": "Poria Spirit",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "酸棗仁",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "歸脾湯中加入酸棗仁，主要基於以下兩點原因：\n安神定志： 酸棗仁性平味甘，入心、脾經，具有養心安神、斂汗止汗之功效。歸脾湯本身以益氣養血、健脾安神為主，加入酸棗仁可以加強安神定志的效果，改善心神不安、失眠多夢、驚悸等症狀。\n緩解脾虛： 酸棗仁還能補脾益氣，有助於緩解歸脾湯治療的脾虛症狀。脾虛易導致心神不安、失眠、健忘等問題，酸棗仁可以補脾益氣，促進脾胃運化，進一步增強安神定志的效果。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.suan_zao_ren",
+          "name_zh": "酸棗仁",
+          "name_en": "Sour Date Seed",
+          "dosage": "12g"
         },
         {
-          "herb_zh": "木香",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "歸脾湯中加入木香，主要有以下兩個原因：\n疏肝理氣，健脾和胃： 木香性溫味苦，入脾、胃、肝經，能行氣止痛，疏肝解鬱，健脾和胃。歸脾湯主治心脾兩虛，心神不安，脾胃不健，氣血不足等症。加入木香可助於理氣解鬱，使脾胃氣機通暢，更易於吸收營養，改善心脾兩虛之症。\n緩解心悸失眠： 木香能安神定志，緩解心悸失眠。歸脾湯中加入木香，可增強其安神定志之效，有助於改善心神不安、失眠多夢等症狀。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "dosage": "3g"
         },
         {
-          "herb_zh": "人參",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "歸脾湯中加入人參，主要基於以下兩點：\n補氣益血：歸脾湯主治心脾兩虛，症狀包括心悸、失眠、面色蒼白、神疲乏力等。人參性溫，味甘，具有大補元氣、益氣養血的功效，可補益心脾之氣，改善心悸、失眠等症狀。\n健脾和胃：人參亦可健脾和胃，促進脾胃運化，改善脾虛所致的乏力、面色蒼白等症狀。歸脾湯中加入人參，有助於增強整體療效，使補益心脾的效果更加顯著。\n總而言之，人參在歸脾湯中起著補氣益血、健脾和胃的功效，有助於改善心脾兩虛的各種症狀。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.dang_gui",
+          "name_zh": "當歸",
+          "name_en": "Chinese Angelica",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "茯神",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "歸脾湯中加入茯神，主要因其具有以下兩項功效：\n安神定志：茯神性味甘平，入心、脾經，具有寧心安神、健脾益氣之效。歸脾湯以補心脾為主，而心脾兩虛則易心神不安、失眠多夢，茯神可助其安神定志，穩定心神，改善失眠等症狀。\n益脾健胃：茯神亦可健脾胃，促進脾胃運化，增進食慾。歸脾湯中多用於治療心脾兩虛所致的氣血不足、心悸失眠、面色萎黃、食少便溏等症，茯神有助於補益脾胃，進而改善氣血生化不足的問題。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.yuan_zhi",
+          "name_zh": "遠志",
+          "name_en": "Polygala Root",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "歸脾湯中包含甘草，主要基於以下兩點原因：\n一、 調和諸藥：甘草味甘性平，具有調和藥性、緩解藥物毒性、增強藥效的作用。歸脾湯中包含多種藥材，性質各異，甘草可協調各藥材的功效，使藥力相輔相成，發揮最佳療效。\n二、 補脾益氣：甘草具有補脾益氣、緩解脾虛乏力、心悸失眠等症狀的作用。歸脾湯主治心脾兩虛，甘草可增強補益心脾之效，使藥效更加全面，更利於患者恢復健康。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "大棗",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "歸脾湯中加入大棗，主要基於以下兩點：\n補益脾氣，和中緩急：大棗味甘性溫，入脾經，具有補中益氣、養血安神之效。歸脾湯主治心脾兩虛，氣血不足，心悸失眠，健忘等症，大棗能補脾益氣，促進脾胃運化，改善氣血生成，從而緩解心悸失眠等症狀。\n調和藥性，增強功效：歸脾湯中多用甘涼藥物，如生地黃、當歸、白芍等，大棗的甘溫之性可以調和藥性，避免寒涼藥物過於寒涼，損傷脾胃，同時也能增強藥物的補益效果，使藥效更加溫和，更容易被人體吸收。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "生薑",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "歸脾湯中加入生薑，主要基於以下兩個原因：\n溫中和胃，助脾運化：生薑性溫，味辛，入肺、脾、胃經，具有溫中散寒、和胃止嘔的功效。歸脾湯主治心脾兩虛、氣血不足所致的失眠、健忘、心悸、面色蒼白等症，生薑溫中和胃，有助於脾胃運化，使藥物更好地吸收和發揮效用。\n調和藥性，防止寒涼過甚：歸脾湯中包含多味滋陰補血的藥材，如茯苓、遠志、酸棗仁等，性偏涼。生薑加入其中，可以調和藥性，防止寒涼過甚，避免對脾胃造成損害，使藥效更加平和。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.mu_xiang",
+          "name_zh": "木香",
+          "name_en": "Costus Root",
+          "dosage": "6g"
         }
       ],
       "actions_en": [
@@ -42009,11 +41736,7 @@
       "source_classic": "《濟生方》",
       "exact_source_url": "https://cloudtcm.com/formula/293",
       "fetched_at": "2026-07-23T07:08:40.680Z",
-      "cautions_zh": [
-        "忌生冷食物",
-        "勿思慮過度及過勞",
-        "陰虛內熱或實熱證者勿用"
-      ],
+      "cautions_zh": "陰虛火旺、痰熱內擾或實熱證失眠者禁用；服藥期間忌生冷辣物。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/293",
       "safety_fetched_at": "2026-07-23T07:32:47.308Z",
@@ -42133,7 +41856,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Gui Pi Tang Cautions)",
+        "composition": "American Dragon (Gui Pi Tang Cautions)"
       },
       "cloudtcm_id": 293,
       "condition_tags_zh": [
@@ -43242,112 +42967,58 @@
       ],
       "composition": [
         {
-          "herb_zh": "麻黃",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "定喘湯中包含麻黃，主要是利用其發汗解表、宣肺平喘的功效。麻黃性溫，味辛，入肺經，能發散風寒，宣通肺氣，使痰液易於排出，達到止咳平喘的效果。\n同時，麻黃也能溫肺化飲，對於因寒邪客肺、肺氣不利而引起的咳嗽、喘息、痰多等症狀有較好的療效。因此，在治療寒性哮喘、肺寒咳嗽等病症時，定喘湯中常加入麻黃，以發揮其宣肺平喘、溫肺化飲的作用。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.bai_guo",
+          "name_zh": "白果",
+          "name_en": "Ginkgo Nut",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "銀杏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "定喘湯為治療喘息、咳嗽等呼吸系統疾病的中醫方劑，其組成包括麻黃、杏仁、半夏、厚朴、甘草、生薑、細辛以及銀杏等多種中藥材。銀杏在此方中扮演著關鍵角色，其主要功效在於宣肺平喘、化痰止咳。根據中醫理論，喘息之病往往因外感風寒或內傷飲食而致肺氣上逆，銀杏葉能清熱解毒、擴張支氣管，有助於改善肺部微循環，促進氣道暢通，從而緩解喘息症狀。此外，銀杏還具有抗氧化和抗炎作用，可減少氣道炎症，對慢性呼吸道疾病患者尤為適用。因此，在定喘湯的配方中加入銀杏，旨在增強整體療效，達到了解表散寒、宣肺定喘的目的。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ma_huang",
+          "name_zh": "麻黃",
+          "name_en": "Ephedra Stem",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "半夏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "定喘湯中加入半夏，主要出於以下兩方面原因：\n降逆止嘔： 半夏味辛、苦，性溫，入肺、脾經。具有降逆止嘔、化痰止咳之功效。定喘湯的組成中，通常會含有麻黃等辛溫之品，容易導致氣上逆，出現嘔吐等症狀。半夏能降逆止嘔，防止藥物副作用的產生。\n燥濕化痰： 定喘湯的主要功效是止咳平喘，而痰濕阻肺是導致咳嗽哮喘的重要病因之一。半夏具有燥濕化痰的功效，能將痰濕化解，有利於改善呼吸道症狀，提高治療效果。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ku_xing_ren",
+          "name_zh": "杏仁",
+          "name_en": "Apricot Seed",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "款冬花",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "定喘湯中加入款冬花，主要基於其潤肺止咳，化痰平喘的功效。\n款冬花性味甘溫，入肺經，具有溫肺化痰、止咳平喘的功效，適用於寒性咳嗽、痰多喘咳等症狀。\n在定喘湯中，款冬花與其他藥物配伍，可以增強藥效，達到更好的治療效果。例如，款冬花與杏仁、紫菀等藥物配伍，可以更有效地化痰止咳，緩解呼吸道炎症；與黃芪、甘草等藥物配伍，可以補氣益肺，提高機體抵抗力。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sang_bai_pi",
+          "name_zh": "桑白皮",
+          "name_en": "Mulberry Bark",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "桑白皮",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "定喘湯中加入桑白皮，主要基於以下兩點原因：\n一、 宣肺止咳：桑白皮性寒，味苦，歸肺經，具有宣肺止咳、降氣化痰的功效。它可以疏散肺氣，宣通肺竅，對於風寒束肺、痰濁壅肺所致的咳嗽、喘息等症狀有很好的療效。\n二、 利水消腫：桑白皮還具有一定的利水消腫作用，可以幫助排除體內多餘的水分，緩解肺部積水引起的呼吸困難。\n因此，定喘湯中加入桑白皮，可以起到宣肺止咳、利水消腫的作用，對於治療咳嗽、喘息等呼吸道疾病具有重要的意義。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.kuan_dong_hua",
+          "name_zh": "款冬花",
+          "name_en": "Coltsfoot Flower",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "紫蘇子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "定喘湯中加入蘇子，主要基於其以下兩點功效：\n降氣平喘： 蘇子味辛性溫，入肺經，具有降氣平喘之效。其能降肺氣之逆，平息喘咳，適用於痰多、氣喘、咳喘等症狀。\n潤肺止咳： 蘇子含有豐富的脂肪油及揮髮油，具有潤肺止咳的作用。能滋潤乾燥的肺部，緩解因燥熱引起的咳嗽、咽喉乾癢等症狀。\n因此，定喘湯中加入蘇子，可有效緩解氣喘、咳嗽等症狀，達到止咳平喘的效果。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ban_xia",
+          "name_zh": "半夏",
+          "name_en": "Pinellia Rhizome",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "杏仁",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "4.5g",
-          "elucidation_zh": "定喘湯中加入杏仁，主要有以下兩個原因：\n宣肺止咳：杏仁性味苦甘，入肺經，具有宣肺止咳之效。對於因肺氣閉塞、痰濁壅肺而導致的喘咳症狀，杏仁能疏通肺氣，化痰止咳，使呼吸通暢。\n潤肺止燥：杏仁亦具潤肺止燥之功。在哮喘發作時，肺氣耗傷，易出現燥熱症狀，杏仁能滋潤肺燥，緩解哮喘發作時的燥熱不適，使患者更容易平穩呼吸。",
-          "decoction_reference_g": "4.5g",
-          "granule_reference_g": "0.9g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.su_zi",
+          "name_zh": "紫蘇子",
+          "name_en": "Perilla Fruit",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "黃芩",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "4.5g",
-          "elucidation_zh": "定喘湯中加入黃芩，主要基於以下兩點原因：\n清熱瀉火，降氣平喘： 黃芩味苦寒，入肺經，具有清熱瀉火、降氣平喘的功效。對於因肺熱壅盛、氣逆上衝所致的咳嗽喘息，黃芩可以清熱降火，使肺氣宣降，達到平喘止咳之效。\n抑制痰液生成，利於化痰： 黃芩還具有利濕化痰的作用。對於痰熱壅肺、痰多粘稠的患者，黃芩可以抑制痰液的生成，並促進痰液的排出，有助於改善呼吸道症狀。\n因此，定喘湯中加入黃芩，可以有效改善因肺熱、痰熱所致的咳嗽喘息，達到清熱降火、平喘止咳的治療目的。",
-          "decoction_reference_g": "4.5g",
-          "granule_reference_g": "0.9g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.huang_qin",
+          "name_zh": "黃芩",
+          "name_en": "Scutellaria Root",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "3g",
-          "elucidation_zh": "定喘湯中加入甘草，主要有以下兩點原因：\n調和藥性: 定喘湯中多用辛溫燥烈之藥，容易傷肺氣。甘草性甘平，能調和諸藥，緩解藥性過於猛烈對肺部的刺激，避免燥熱傷肺。\n增強療效: 甘草具有潤肺止咳、緩解氣喘的作用，與其他藥材協同作用，增強定喘湯的整體療效，使止咳平喘效果更佳。\n甘草在方劑中扮演著重要角色，不僅調和藥性，更能增強療效，使其成為定喘湯不可或缺的藥材之一。",
-          "decoction_reference_g": "3g",
-          "granule_reference_g": "0.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.gan_cao",
+          "name_zh": "甘草",
+          "name_en": "Licorice Root",
+          "dosage": "3g"
         }
       ],
       "pattern_indications_zh": [
@@ -43401,9 +43072,7 @@
       "source_classic": "《攝生眾妙方》",
       "exact_source_url": "https://cloudtcm.com/formula/130",
       "fetched_at": "2026-07-23T07:08:47.608Z",
-      "cautions_zh": [
-        "外感風寒、無汗、沒有痰者不宜用\n氣虛脈弱不宜用\n若新感風寒，雖惡寒發熱、無汗而喘，但內無痰熱者；或哮喘日久，肺腎陰虛者，皆不宜使用。"
-      ],
+      "cautions_zh": "風寒無汗之表實哮喘或陰虛虛勞哮喘者禁用；本方含白果有小毒，不宜超量。",
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/130",
       "safety_fetched_at": "2026-07-23T07:32:54.163Z",
@@ -43502,7 +43171,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Ding Chuan Tang Cautions)",
+        "composition": "American Dragon (Ding Chuan Tang Cautions)"
       },
       "cloudtcm_id": 130,
       "action_profile": {
@@ -47746,9 +47417,7 @@
       "syndromes_zh": [],
       "modern_diseases_zh": [],
       "symptoms_zh": [],
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": "陰虛水腫、濕熱水腫者禁用；孕婦慎用。",
       "on_board_list": false,
       "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
       "exam_star": 0,
@@ -47797,7 +47466,8 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Shi Pi San Cautions)"
       },
       "american_dragon_url": "https://www.americandragon.com/HerbFormulas/ShiPiYin.html",
       "cloudtcm_url": "https://cloudtcm.com/formula/260",
@@ -50286,88 +49956,46 @@
       ],
       "composition": [
         {
-          "herb_zh": "半夏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "旋覆代赭湯中加入半夏，主要考量其以下兩點：\n降逆止嘔： 半夏性溫，味辛，入脾、胃經，具有降逆止嘔之效。旋覆代赭湯主治痰飲阻肺、氣逆上衝所致的咳嗽、氣喘、嘔吐等症，半夏可與旋覆花、代赭石等藥物協同作用，降逆止嘔，使痰飲下降，氣逆消除。\n燥濕化痰： 半夏性燥，善於燥濕化痰。旋覆代赭湯中常伴隨痰飲阻滯，半夏可以幫助燥濕化痰，進一步解除痰飲對肺氣的阻礙，使咳嗽、氣喘等症狀得到改善。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.xuan_fu_hua",
+          "name_zh": "旋覆花",
+          "name_en": "Inula Flower",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "代赭石",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "旋覆代赭湯中包含代赭石，主要原因有二：\n一、 止嘔降逆： 代赭石性寒，味甘苦，入肝脾經，具有鎮靜、止嘔的作用。旋覆代赭湯主要用於治療痰熱壅肺所致的咳嗽、氣喘、胸悶，而代赭石可降逆止嘔，緩解因痰熱上逆所引起的噁心嘔吐。\n二、 降逆止呃： 代赭石可平降胃氣，止呃逆。旋覆代赭湯中旋覆花、半夏等藥物亦有止咳化痰的作用，代赭石的加入可協同止呃，使療效更佳。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.dai_zhe_shi",
+          "name_zh": "代赭石",
+          "name_en": "Hematite",
+          "dosage": "30g"
         },
         {
-          "herb_zh": "旋覆花",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "旋覆代赭湯中包含旋覆花，主要原因如下：\n降逆止嘔： 旋覆花味辛、性溫，入肺、脾經，具有降逆止嘔的功效。其能降胃氣上逆，止嘔吐呃逆，對於痰涎壅盛、胃氣上逆引起的嘔吐，具有較好的治療作用。\n化痰止咳： 旋覆花亦有化痰止咳之效。其能宣肺利氣，降逆化痰，對於痰多咳嗽，痰涎壅盛，呼吸不暢等症，能起到一定的改善作用。\n旋覆花在旋覆代赭湯中，與代赭石、半夏等藥物配伍，起到降逆止嘔、化痰止咳的功效，對於痰涎壅盛、胃氣上逆引起的嘔吐、咳嗽等症，具有較好的療效。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ban_xia",
+          "name_zh": "半夏",
+          "name_en": "Pinellia Rhizome",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "人參",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "旋覆代赭湯為治療胃虛痰阻，氣逆不降之主方，方中含有人參，其目的在於補益脾胃，增強中氣。人參味甘性溫，歸脾肺經，擅長補五臟、安精神、定魂魄、止驚悸、除邪氣，尤為健脾益氣之上品。在本方中，人參與旋覆花、代赭石等藥物相配，既可增強脾胃功能，促進消化吸收，又可協同其他藥物下降逆氣，使全方具有升降調和、健脾益氣、和胃降逆之功。對於因脾胃虛弱導致的噯氣、嘔吐、脘腹脹滿等症狀，旋覆代赭湯通過人參的補益作用，能夠達到固本培元、調和氣機之效，從而改善症狀，恢復健康。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ren_shen",
+          "name_zh": "人參",
+          "name_en": "Ginseng Root",
+          "dosage": "6g"
         },
         {
-          "herb_zh": "生薑",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "10g",
-          "elucidation_zh": "旋覆代赭湯中加入生薑，主要是基於以下兩點原因：\n和胃降逆： 生薑性溫，味辛，能溫中散寒，和胃降逆，可以緩解旋覆代赭湯中赭石、半夏等藥物對胃的刺激，防止其寒涼之性損傷脾胃。\n調和藥性： 生薑的辛溫之性，可以調和旋覆代赭湯中諸藥的寒涼之性，使藥性更加平和，更好地發揮治療效果。\n因此，生薑的加入，可以有效地減輕旋覆代赭湯對胃的刺激，並使藥性更加協調，從而提高治療效果。",
-          "decoction_reference_g": "10g",
-          "granule_reference_g": "2.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sheng_jiang",
+          "name_zh": "生薑",
+          "name_en": "Fresh Ginger",
+          "dosage": "15g"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "旋覆代赭湯中加入甘草，主要有以下兩大原因：\n調和藥性: 旋覆花、代赭石等藥材性寒，甘草性甘溫，能調和藥性，避免寒性過於強烈，以免損傷脾胃。\n緩解副作用:  甘草具備解毒和緩解藥物副作用的作用。旋覆代赭湯治療的是嘔吐、呃逆等症狀，甘草可以減輕藥物對胃腸道的刺激，提高患者的耐受性，使藥效更平穩。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "dosage": "9g"
         },
         {
-          "herb_zh": "大棗",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "4g",
-          "elucidation_zh": "旋覆代赭湯中加入大棗，主要有兩方面原因：\n緩和藥性，調和脾胃：旋覆代赭湯以旋覆花、代赭石等藥物為主，其性偏寒涼，容易損傷脾胃。大棗味甘性溫，入脾胃經，能補中益氣，緩和藥性，防止寒涼之品損傷脾胃，使藥力更易於吸收利用。\n和中健脾，助藥力達效：旋覆代赭湯主要用於治療痰飲停滯、胸悶氣喘等症，脾胃虛弱者更易感受外邪，導致痰飲停滯。大棗能健脾和胃，增強脾胃運化水濕的能力，進一步促進藥物療效。",
-          "decoction_reference_g": "4g",
-          "granule_reference_g": "0.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.da_zao",
+          "name_zh": "大棗",
+          "name_en": "Jujube Date",
+          "dosage": "12枚"
         }
       ],
       "pattern_indications_zh": [
@@ -50417,9 +50045,7 @@
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/62",
       "fetched_at": "2026-07-23T07:08:59.949Z",
-      "cautions_zh": [
-        "孕婦及體虛者請遵醫囑使用。"
-      ],
+      "cautions_zh": "胃熱嘔吐、實熱呃逆及陰虛火旺者禁用；孕婦慎用（含代赭石重鎮）。",
       "pharmacology_zh": "旋覆代赭湯的現代藥理研究尚較缺少，旋覆花所含旋覆花黃酮能緩解組織胺引起的豚鼠支氣管痙攣，故能平喘。對離體豚鼠氣管亦有抗組織胺作用，但較氨茶撿發生的作用慢而弱。旋覆花中含有大量的綠原酶與咖啡酸，而綠原酶則能顯著增強大鼠、小鼠的腸蠕動功能，還可提高大鼠的中取興奮性。代栳石主要含三氧化二鐵，含鐵量約占40%~60%，另含少量鎂、鈣、鋁、砷等雜質。\n\n生薑含有人體必需的十幾種氨基酸成分，對胃液的分泌有明顯的促進作用，能促進消化機能。半夏中含有豐富的生物驗性物質，這些物質對嘔吐有明顯的抑制作用，此外還具有鎮咳作用。\n\n人參能興奮中樞，使紅細胞及血色素增加，提高動物與人的體力與智力活動能力，並能增強機體對各種有害刺激的非特異性抵抗力，是一種全身性的強壯滋補藥。大棗含營養物質，有助千滋養。甘草有去痰止咳作用。綜觀全方，具有明顯的鎮吐作用、止咳平喘作用及滋補強壯作用。",
       "modern_diseases_zh": [
         "胃潰瘍",
@@ -50514,7 +50140,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Xuan Fu Dai Zhe Tang Cautions)",
+        "composition": "American Dragon (Xuan Fu Dai Zhe Tang Cautions)"
       },
       "cloudtcm_id": 62,
       "action_profile": {
