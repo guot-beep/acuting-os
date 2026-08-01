@@ -292,13 +292,11 @@
     const items = Array.isArray(composition) ? composition : [];
     if (!items.length) return "待補";
     const names = items
-      .map((item) => item?.herb_zh || item?.pinyin || item?.herb_en)
+      .map((item) => item?.name_zh || item?.herb_zh || item?.pinyin || item?.name_en || item?.herb_en)
       .filter(Boolean);
     if (!names.length) return `${items.length} 味`;
-    const shown = names.slice(0, 12).join("、");
-    return names.length > 12
-      ? `${shown} … 共 ${names.length} 味`
-      : `${shown}（${names.length} 味）`;
+    const shown = names.join("、");
+    return shown;
   }
 
   function comparisonGroupLabel(id) {
@@ -1030,14 +1028,13 @@
       : (cleanList(exam.pattern_indications_en).length ? exam.pattern_indications_en : record.pattern_indications_en);
     const modifications = cleanList(exam.modifications_en).length ? exam.modifications_en : record.modifications_en;
     const composition = (record.composition || []).map((item) => {
-      const herb = (item.pinyin && herbByPinyin.get(normalizeKey(item.pinyin))) || (item.herb_zh && herbByNameZh.get(usableText(item.herb_zh))) || (item.herbZh && herbByNameZh.get(usableText(item.herbZh)));
-      const label = [usableText(item.herb_zh), usableText(item.pinyin), usableText(item.herb_en)].filter(Boolean).join(" · ") || "Composition item pending";
+      const nameZh = usableText(item.name_zh || item.herb_zh || item.herbZh);
+      const nameEn = usableText(item.name_en || item.herb_en);
+      const pinyin = usableText(item.pinyin);
+      const herb = (pinyin && herbByPinyin.get(normalizeKey(pinyin))) || (nameZh && herbByNameZh.get(nameZh)) || (item.herb_id && herbById.get(item.herb_id));
+      const label = [nameZh, pinyin, nameEn].filter(Boolean).join(" · ") || "Composition item pending";
       const role = [usableText(item.role_zh), usableText(item.role_en)].filter(Boolean).join(" · ");
-      // 原典用量 dropped from the table on Ting's call (「原典用量不用，全部
-      // 用生藥煎劑就好」). Only 22 of 201 formulas carry one and the rest
-      // printed a column of 待補. The field is NOT deleted from the data —
-      // §0 — it simply no longer occupies a column on the card.
-      const decoctionDose = doseValue(item.decoction_reference_g || item.decoction_dose_g || item.dose_range);
+      const decoctionDose = doseValue(item.dosage || item.decoction_reference_g || item.decoction_dose_g || item.dose_range);
       const granuleDose = doseValue(item.granule_reference_g || item.granule_dose_g);
       const granuleContext = [usableText(item.granule_concentration_ratio), usableText(item.granule_brand)].filter(Boolean).join(" · ");
       // What this herb does IN THIS FORMULA (Ting: 加上每一味要在這個方劑的功效, 中文就好).
