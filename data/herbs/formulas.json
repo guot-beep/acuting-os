@@ -3077,7 +3077,8 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Xiang Su San Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/317",
       "cloudtcm_id": 317,
@@ -3282,7 +3283,8 @@
         "Diaphoresis / Qi-regulating — disperse wind-cold, regulate Qi and harmonize middle burner"
       ],
       "exam_pearl": "【考綱重點】外感風寒兼脾胃氣滯（惡寒發熱無汗、胸脘痞悶、噫氣食少）首選方。紫蘇葉（君）解表散寒、行氣和中；香附（臣）理氣解鬱。藥性平和，適用於體質較弱或兼氣滯者。NCBAHM 2026 CH Outline p.21。",
-      "formula_song": "香蘇散內用陳皮，香附蘇葉甘草隨。\n外感風寒兼氣滯，理氣解表服之宜。"
+      "formula_song": "香蘇散內用陳皮，香附蘇葉甘草隨。\n外感風寒兼氣滯，理氣解表服之宜。",
+      "cautions_zh": "氣虛表虛、自汗或風熱感冒者禁用；陰虛發熱者不宜使用。"
     },
     {
       "id": "formula.jing_fang_bai_du_san",
@@ -3471,7 +3473,8 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Jing Fang Bai Du San Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/183",
       "cloudtcm_id": 183,
@@ -3559,7 +3562,8 @@
       "exam_pearl": "【考綱重點】外感風寒濕邪重證及外科瘡瘍初起（表寒濕重、惡寒發熱無汗、肢體酸痛、癰疽初起）首選方。人參敗毒散去人參、加荊芥、防風增強祛風散寒解表之力。NCBAHM 2026 CH Outline p.19。",
       "formula_song": "荊防敗毒羌獨活，川芎柴前枳桔括。\n茯苓甘草薄荷參，表寒風濕服之脫。",
       "formula_song_zh": "荊防敗毒羌獨活，川芎柴前枳桔括。\n茯苓甘草薄荷參，表寒風濕服之脫。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "cautions_zh": "陰虛發熱、表虛自汗或熱毒極盛者不宜使用。"
     },
     {
       "id": "formula.chai_ge_jie_ji_tang",
@@ -3734,7 +3738,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Chai Ge Jie Ji Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/173",
       "cloudtcm_id": 173,
@@ -3819,7 +3824,8 @@
         "Diaphoresis / Heat-clearing — release muscle layer, clear interior heat, harmonize exterior and interior"
       ],
       "exam_pearl": "【考綱重點】太陽陽明合病（外感風寒、鬱而化熱，症見發熱漸重、惡寒漸輕、無汗頭痛、目痛鼻乾、項背強痛、眼眶痛）首選方。柴胡、葛根（君）解肌發表；黃芩、石膏清陽明裏熱。NCBAHM 2026 CH Outline p.18。",
-      "formula_song": "柴葛解肌羌膏芷，芍藥桔甘柴石施。\n肌熱目痛鼻乾苦，表裡清解最為宜。"
+      "formula_song": "柴葛解肌羌膏芷，芍藥桔甘柴石施。\n肌熱目痛鼻乾苦，表裡清解最為宜。",
+      "cautions_zh": "風寒表實無汗者不宜使用；太陽中風表虛自汗者禁用。"
     },
     {
       "id": "formula.ge_gen_tang",
@@ -3862,108 +3868,45 @@
       "composition": [
         {
           "herb_id": "herb.ge_gen",
-          "herb_zh": "葛根",
-          "herb_en": "Kudzu Root",
-          "pinyin_toned": "Gé Gēn",
-          "dose_range": "12g",
-          "dose_g": "12",
-          "role_zh": "君",
-          "role_en": "Chief",
-          "role_reason_zh": "解肌發表、升津舒筋——專解項背強痛",
-          "role_reason_en": "Releases muscle layer, generates fluid and relaxes neck tendons",
-          "elucidation_zh": "解肌發表、升津舒筋",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g"
+          "name_zh": "葛根",
+          "name_en": "Kudzu Root",
+          "dosage": "12g"
         },
         {
           "herb_id": "herb.ma_huang",
-          "herb_zh": "麻黃",
-          "herb_en": "Ephedra",
-          "pinyin_toned": "Má Huáng",
-          "dose_range": "9g",
-          "dose_g": "9",
-          "role_zh": "臣",
-          "role_en": "Deputy",
-          "role_reason_zh": "發汗解表、助葛根透達表邪",
-          "role_reason_en": "Promotes sweating and assists Ge Gen to release exterior",
-          "elucidation_zh": "發汗解表、宣肺散寒",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g"
+          "name_zh": "麻黃",
+          "name_en": "Ephedra Stem",
+          "dosage": "9g"
         },
         {
           "herb_id": "herb.gui_zhi",
-          "herb_zh": "桂枝",
-          "herb_en": "Cinnamon Twig",
-          "pinyin_toned": "Guì Zhī",
-          "dose_range": "6g",
-          "dose_g": "6",
-          "role_zh": "臣",
-          "role_en": "Deputy",
-          "role_reason_zh": "溫經解肌、助葛根舒筋脈",
-          "role_reason_en": "Warms channels and assists Ge Gen in relaxing muscles",
-          "elucidation_zh": "溫經解肌、散寒通脈",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g"
-        },
-        {
-          "herb_id": "herb.bai_shao",
-          "herb_zh": "白芍",
-          "herb_en": "White Peony Root",
-          "pinyin_toned": "Bái Sháo",
-          "dose_range": "6g",
-          "dose_g": "6",
-          "role_zh": "佐",
-          "role_en": "Assistant",
-          "role_reason_zh": "養血柔筋、緩急止痛",
-          "role_reason_en": "Nourishes blood and relaxes tight tendons",
-          "elucidation_zh": "養血柔肝、緩急止痛",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g"
+          "name_zh": "桂枝",
+          "name_en": "Cinnamon Twig",
+          "dosage": "6g"
         },
         {
           "herb_id": "herb.sheng_jiang",
-          "herb_zh": "生薑",
-          "herb_en": "Fresh Ginger",
-          "pinyin_toned": "Shēng Jiāng",
-          "dose_range": "9g",
-          "dose_g": "9",
-          "role_zh": "佐",
-          "role_en": "Assistant",
-          "role_reason_zh": "辛溫解表、溫胃止嘔",
-          "role_reason_en": "Warms interior and assists in releasing exterior",
-          "elucidation_zh": "溫中散寒、發汗解表",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g"
+          "name_zh": "生薑",
+          "name_en": "Fresh Ginger",
+          "dosage": "9g"
+        },
+        {
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice Root",
+          "dosage": "6g"
+        },
+        {
+          "herb_id": "herb.bai_shao",
+          "name_zh": "芍藥",
+          "name_en": "Peony Root",
+          "dosage": "6g"
         },
         {
           "herb_id": "herb.da_zao",
-          "herb_zh": "大棗",
-          "herb_en": "Jujube Date",
-          "pinyin_toned": "Dà Zǎo",
-          "dose_range": "6g",
-          "dose_g": "6",
-          "role_zh": "佐",
-          "role_en": "Assistant",
-          "role_reason_zh": "補中益氣、養血和營",
-          "role_reason_en": "Tonifies qi and nourishes blood",
-          "elucidation_zh": "補中益氣、養血安神",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g"
-        },
-        {
-          "herb_id": "herb.gan_cao",
-          "herb_zh": "甘草",
-          "herb_en": "Licorice",
-          "pinyin_toned": "Gān Cǎo",
-          "dose_range": "6g",
-          "dose_g": "6",
-          "role_zh": "使",
-          "role_en": "Envoy",
-          "role_reason_zh": "調和諸藥、緩急止痛",
-          "role_reason_en": "Harmonizes all herbs and relieves cramps",
-          "elucidation_zh": "調和諸藥、緩急止痛",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g"
+          "name_zh": "大棗",
+          "name_en": "Jujube Date",
+          "dosage": "4枚"
         }
       ],
       "clinical_use_note": "【葛根湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
@@ -4045,7 +3988,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Ge Gen Tang Cautions)",
+        "composition": "American Dragon (Ge Gen Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/260",
       "cloudtcm_id": 260,
@@ -4269,7 +4214,8 @@
         "Diaphoresis (Sweating method) — acrid-warm exterior release, raises fluids"
       ],
       "exam_pearl": "【考試重點】葛根湯 = 桂枝湯底 + 葛根（君）+ 麻黃（臣）。核心辨識：項背強几几 + 無汗（表實）。有汗改用桂枝加葛根湯（去麻黃）。兼下利（太陽陽明合病）仍用葛根湯。考綱明確列名：Ge Gen Tang (NCBAHM 2026 CH Outline p.19)。",
-      "formula_song": "葛根湯內麻黃黃，桂芍甘草薑棗當。\n太陽項背幾几急，無汗惡風服之良。"
+      "formula_song": "葛根湯內麻黃黃，桂芍甘草薑棗當。\n太陽項背幾几急，無汗惡風服之良。",
+      "cautions_zh": "表虛自汗、惡風脈浮緩者禁用；陰虛火旺或高血壓慎用。"
     },
     {
       "id": "formula.sheng_ma_ge_gen_tang",
@@ -4373,7 +4319,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Sheng Ma Ge Gen Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/57",
       "cloudtcm_id": 57,
@@ -4422,7 +4369,8 @@
         "Diaphoresis / Rash-venting — release muscle layer, vent rashes, clear heat and resolve toxicity"
       ],
       "exam_pearl": "【考綱重點】麻疹初起透發不暢首選方。升麻（君）、葛根（君）解肌透疹、升舉陽氣；芍藥、甘草養血和營。考綱官方藥對：Ge Gen + Sheng Ma (Appendix B p.16)。NCBAHM 2026 CH Outline p.21。",
-      "formula_song": "升麻葛根芍甘草，麻疹初起出不快。\n解肌透疹清熱毒，陽明疹毒用之良。"
+      "formula_song": "升麻葛根芍甘草，麻疹初起出不快。\n解肌透疹清熱毒，陽明疹毒用之良。",
+      "cautions_zh": "麻疹已透或疹出不暢因於風寒表實者禁用；陰虛火旺者慎用。"
     },
     {
       "id": "formula.cang_er_zi_san",
@@ -4552,7 +4500,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Cang Er Zi San Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/269",
       "cloudtcm_id": 269,
@@ -4617,7 +4566,8 @@
         "Orifice-unblocking / Diffusing — disperse wind, relieve pain, open nasal passages"
       ],
       "exam_pearl": "【考綱重點】鼻淵（鼻塞、流濁涕、頭痛）首選專方。蒼耳子、辛夷花（考綱官方藥對 Appendix B p.16）散風通竅；白芷宣通陽明頭面鼻竅；薄荷疏散風熱。注意：蒼耳子有小毒，不宜過量或長期服用。NCBAHM 2026 CH Outline p.18。",
-      "formula_song": "蒼耳子散辛夷花，白芷薄荷茶調下。\n鼻淵頭痛流濁涕，疏風通竅此方誇。"
+      "formula_song": "蒼耳子散辛夷花，白芷薄荷茶調下。\n鼻淵頭痛流濁涕，疏風通竅此方誇。",
+      "cautions_zh": "蒼耳子有小毒，不宜過量或長期服用；鼻窒因於氣虛陰虛者慎用。"
     },
     {
       "id": "formula.ren_shen_bai_du_san",
@@ -4721,7 +4671,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Ren Shen Bai Du San Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/12",
       "cloudtcm_id": 12,
@@ -4772,7 +4723,8 @@
         "Diaphoresis / Tonification — augment Qi, release exterior, dispel wind and dampness"
       ],
       "exam_pearl": "【考綱重點】氣虛外感風寒濕證（高熱惡寒無汗、肢體酸重痛、咳嗽有痰、脈浮大無力）首選方。人參（君）補氣扶正以助祛邪（「扶正祛邪」典範）；羌活、獨活散風勝濕；柴胡、前胡宣降肺氣。亦用於痢疾初起兼表證（逆流挽舟）。NCBAHM 2026 CH Outline p.20。",
-      "formula_song": "人參敗毒草苓川，羌獨柴前枳桔共。\n肢體痛楚風濕熱，扶正祛邪汗宜通。"
+      "formula_song": "人參敗毒草苓川，羌獨柴前枳桔共。\n肢體痛楚風濕熱，扶正祛邪汗宜通。",
+      "cautions_zh": "外感風熱或陰虛發熱者禁用；熱毒極盛者不宜使用。"
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -4926,7 +4878,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Jia Jian Wei Rui Tang Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -5005,7 +4958,8 @@
         "Diaphoresis / Yin-nourishing — nourish Yin, clear heat, smooth Qi and release exterior"
       ],
       "exam_pearl": "【考綱重點】素體陰虛、外感風熱證（頭痛身熱、微惡風寒、無汗或少汗、咳嗽咽幹、口渴、舌紅脈數）首選方。葳蕤/玉竹（君）滋陰潤燥；蔥白、豆豉、薄荷疏散風熱。滋陰而不滯邪，解表而不傷陰。NCBAHM 2026 CH Outline p.20。",
-      "formula_song": "加減葳蕤用玉竹，蔥白豆豉薄荷促。\n桔梗甘草白薇合，陰虛感冒此方足。"
+      "formula_song": "加減葳蕤用玉竹，蔥白豆豉薄荷促。\n桔梗甘草白薇合，陰虛感冒此方足。",
+      "cautions_zh": "風寒感冒者禁用；陽虛表虛者慎用。"
     },
     {
       "id": "formula.bai_hu_tang",
@@ -6118,7 +6072,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Xie Xin Tang Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -6170,7 +6125,8 @@
         "Heat-clearing / Purgation — drain fire, resolve toxicity, dry dampness, stop bleeding"
       ],
       "exam_pearl": "【考綱重點】三焦熱盛迫血妄行之「邪火內攻、上衝吐衄」主方（大黃、黃連、黃芩，即三黃瀉心湯）。瀉火通便、導熱下行。NCBAHM 2026 CH Outline p.21。",
-      "formula_song": "瀉心湯用大黃連，黃芩三味三黃先。\n邪火內攻心煩躁，吐衄便秘火盛宣。"
+      "formula_song": "瀉心湯用大黃連，黃芩三味三黃先。\n邪火內攻心煩躁，吐衄便秘火盛宣。",
+      "cautions_zh": "脾胃虛寒嘔吐便溏者禁用；陰虛津傷者慎用。"
     },
     {
       "id": "formula.liang_ge_san",
@@ -6340,7 +6296,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Liang Ge San Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/204",
       "cloudtcm_id": 204,
@@ -6393,7 +6350,8 @@
         "Heat-clearing / Purgation — clear upper burner and purge downward, clear diaphragm fire"
       ],
       "exam_pearl": "【考綱重點】上中二焦火熱證（「以瀉代清」代表方）。梔子、連翹、黃芩（清上焦火）；大黃、芒硝（瀉中焦熱）；薄荷、竹葉（疏散上焦火）。透上瀉下、上下分消。NCBAHM 2026 CH Outline p.19。",
-      "formula_song": "涼膈硝黃梔子翹，黃芩薄荷甘竹調。\n上中二焦邪熱盛，清膈瀉火病俱消。"
+      "formula_song": "涼膈硝黃梔子翹，黃芩薄荷甘竹調。\n上中二焦邪熱盛，清膈瀉火病俱消。",
+      "cautions_zh": "脾胃虛寒、便溏者禁用；孕婦慎用（因含大黃、芒硝下瀉之品）。"
     },
     {
       "id": "formula.qing_ying_tang",
@@ -8434,7 +8392,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Xie Bai San Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/295",
       "cloudtcm_id": 295,
@@ -8487,7 +8446,8 @@
         "Heat-clearing / Lung-diffusing — clear and drain Lung Heat, arrest cough and calm wheezing"
       ],
       "exam_pearl": "【考綱重點】肺有伏火喘咳（瀉肺中伏火而不傷正氣）。桑白皮（君）清瀉肺熱止咳平喘；地骨皮（臣）清伏熱退虛熱；甘草、粳米（佐使）養胃和中。NCBAHM 2026 CH Outline p.21。",
-      "formula_song": "瀉白桑皮地骨皮，甘草粳米四物宜。\n肺熱咳嗽喘急症，清瀉肺熱此方奇。"
+      "formula_song": "瀉白桑皮地骨皮，甘草粳米四物宜。\n肺熱咳嗽喘急症，清瀉肺熱此方奇。",
+      "cautions_zh": "風寒咳嗽、肺寒痰飲或脾胃虛寒者禁用。"
     },
     {
       "id": "formula.yu_nv_jian",
@@ -8503,7 +8463,38 @@
       "clinical_frequency": "臨床極高頻常用處方",
       "study_tags": [],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
-      "composition": [],
+      "composition": [
+        {
+          "herb_id": "herb.shi_gao",
+          "name_zh": "石膏",
+          "name_en": "Gypsum",
+          "dosage": "15-30g"
+        },
+        {
+          "herb_id": "herb.shu_di_huang",
+          "name_zh": "熟地黃",
+          "name_en": "Prepared Rehmannia",
+          "dosage": "15-30g"
+        },
+        {
+          "herb_id": "herb.mai_men_dong",
+          "name_zh": "麥門冬",
+          "name_en": "Ophiopogon Tuber",
+          "dosage": "6g"
+        },
+        {
+          "herb_id": "herb.zhi_mu",
+          "name_zh": "知母",
+          "name_en": "Anemarrhena Rhizome",
+          "dosage": "4.5g"
+        },
+        {
+          "herb_id": "herb.niu_xi",
+          "name_zh": "牛膝",
+          "name_en": "Achyranthes Root",
+          "dosage": "4.5g"
+        }
+      ],
       "clinical_use_note": "【玉女煎】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -8577,7 +8568,9 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Yu Nv Jian Cautions)",
+        "composition": "American Dragon (Yu Nv Jian Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/82",
       "cloudtcm_id": 82,
@@ -8628,7 +8621,8 @@
       "exam_pearl": "【考綱重點】胃熱陰虛證（「清胃熱、滋腎陰」代表方）。石膏（君）清胃大熱；熟地黃（君/臣）滋補腎陰（「壯水之主，以制陽光」）；知母、麥冬（臣）助石膏清熱兼助熟地滋陰；牛膝（使）導熱下行兼引藥入腎。NCBAHM 2026 CH Outline p.21。",
       "formula_song": "玉女煎用石膏地，麥冬知母牛膝利。\n胃火陰虛牙齒痛，清熱滋陰功效異。",
       "formula_song_zh": "玉女煎用石膏地，麥冬知母牛膝利。\n胃火陰虛牙齒痛，清熱滋陰功效異。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "cautions_zh": "脾虛便溏、胃寒嘔吐者禁用；無實火者不宜服用。"
     },
     {
       "id": "formula.shao_yao_tang",
@@ -8732,7 +8726,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Shao Yao Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/119",
       "cloudtcm_id": 119,
@@ -8783,7 +8778,8 @@
         "Heat-clearing / Qi-Blood regulating — clear heat, dry dampness, regulate Qi and Blood, stop dysentery and pain"
       ],
       "exam_pearl": "【考綱重點】濕熱痢疾第一要方（「行血則便膿自愈，調氣則後重自除」名言出處）。白芍（君）重用緩急止痛；黃連、黃芩（臣）清熱燥濕解毒；木香、檳榔（佐）行氣導滯以除里急後重；當歸（佐）養血和血；大黃（佐）瀉熱導滯；官桂（佐）反佐溫通；甘草調和。NCBAHM 2026 CH Outline p.20。",
-      "formula_song": "芍藥湯中用當歸，黃連黃芩大黃隨。\n木香檳榔官桂草，痢疾腹痛下重宜。"
+      "formula_song": "芍藥湯中用當歸，黃連黃芩大黃隨。\n木香檳榔官桂草，痢疾腹痛下重宜。",
+      "cautions_zh": "痢疾初起表證未解者禁用；脾胃虛寒瀉痢者禁用。"
     },
     {
       "id": "formula.bai_tou_weng_tang",
@@ -8917,7 +8913,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Bai Tou Weng Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/97",
       "cloudtcm_id": 97,
@@ -8967,7 +8964,8 @@
         "Heat-clearing — clear heat, resolve toxicity, cool Blood and stop dysentery"
       ],
       "exam_pearl": "【考綱重點】熱毒痢疾首選專方。白頭翁（君）清熱解毒、涼血止痢（專治血分熱毒）；黃連、黃柏（臣）清熱燥濕、瀉三焦火毒；秦皮（佐使）清熱燥濕、收澀止瀉。NCBAHM 2026 CH Outline p.18。",
-      "formula_song": "白頭翁湯連柏秦，熱毒下痢痛難忍。\n赤多白少血痢疾，清熱解毒止痢神。"
+      "formula_song": "白頭翁湯連柏秦，熱毒下痢痛難忍。\n赤多白少血痢疾，清熱解毒止痢神。",
+      "cautions_zh": "虛寒阿米巴痢疾或脾胃虛寒瀉痢者禁用。"
     },
     {
       "id": "formula.qing_hao_bie_jia_tang",
@@ -9441,7 +9439,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Qing Gu San Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -9493,7 +9492,8 @@
         "Heat-clearing / Yin-nourishing — clear deficient heat, relieve steamy bone fever"
       ],
       "exam_pearl": "【考綱重點】肝腎陰虛骨蒸潮熱首選方。銀柴胡（君）清虛熱、退骨蒸；知母、胡黃連、地骨皮（臣）清熱降火退虛熱；青蒿、秦艽（佐）清熱透邪；鱉甲（佐）滋陰退熱；甘草調和。NCBAHM 2026 CH Outline p.20。",
-      "formula_song": "清骨散用青蒿鱉，知母地骨胡黃連。\n秦艽柴胡甘草合，骨蒸勞熱此方先。"
+      "formula_song": "清骨散用青蒿鱉，知母地骨胡黃連。\n秦艽柴胡甘草合，骨蒸勞熱此方先。",
+      "cautions_zh": "氣血兩虛或外感發熱者禁用；脾胃虛寒者慎用。"
     },
     {
       "id": "formula.dang_gui_liu_huang_tang",
@@ -9597,7 +9597,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Dang Gui Liu Huang Tang Cautions)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/253",
       "cloudtcm_id": 253,
@@ -9648,7 +9649,8 @@
         "Heat-clearing / Exterior-stabilizing — nourish Yin, drain Fire, stabilize exterior, stop night sweats"
       ],
       "exam_pearl": "【考綱重點】陰虛火旺盜汗第一要方。當歸、生地、熟地（君）滋陰養血；黃連、黃芩、黃柏（臣）瀉火清熱；重用黃芪（倍於諸藥，佐使）固表止汗。瀉火與固表兼施，滋陰與補氣並用。NCBAHM 2026 CH Outline p.18。",
-      "formula_song": "當歸六黃二地黃，黃芩黃連黃柏強。\n黃芪倍用固肌表，陰虛盜汗此方良。"
+      "formula_song": "當歸六黃二地黃，黃芩黃連黃柏強。\n黃芪倍用固肌表，陰虛盜汗此方良。",
+      "cautions_zh": "脾胃虛寒、食少便溏者慎用；表虛自汗者不宜單獨使用。"
     },
     {
       "id": "formula.liu_yi_san",
@@ -9868,7 +9870,38 @@
       "clinical_frequency": "臨床極高頻常用處方",
       "study_tags": [],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
-      "composition": [],
+      "composition": [
+        {
+          "herb_id": "herb.jin_yin_hua",
+          "name_zh": "金銀花",
+          "name_en": "Honeysuckle Flower",
+          "dosage": "15g"
+        },
+        {
+          "herb_id": "herb.ye_ju_hua",
+          "name_zh": "野菊花",
+          "name_en": "Wild Chrysanthemum Flower",
+          "dosage": "6g"
+        },
+        {
+          "herb_id": "herb.pu_gong_ying",
+          "name_zh": "蒲公英",
+          "name_en": "Dandelion",
+          "dosage": "6g"
+        },
+        {
+          "herb_id": "herb.zi_hua_di_ding",
+          "name_zh": "紫花地丁",
+          "name_en": "Tokyo Violet Herb",
+          "dosage": "6g"
+        },
+        {
+          "herb_id": "herb.zi_bei_tian_kui",
+          "name_zh": "紫背天葵",
+          "name_en": "Semiaquilegia Root",
+          "dosage": "6g"
+        }
+      ],
       "clinical_use_note": "【五味消毒飲】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -9943,7 +9976,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Wu Wei Xiao Du Yin Cautions)",
+        "composition": "American Dragon (Wu Wei Xiao Du Yin Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -9993,7 +10028,8 @@
         "Heat-clearing / Swelling-reducing — clear heat, resolve toxicity, disperse toxic boils"
       ],
       "exam_pearl": "【考綱重點】外科疔瘡腫毒第一要方。金銀花（君）為清熱解毒要藥；野菊花、蒲公英、紫花地丁、紫背天葵（臣）清熱解毒消腫。加酒煎服以通絡助藥力。NCBAHM 2026 CH Outline p.21。",
-      "formula_song": "五味消毒菊地丁，金銀花葵野菊花。\n紫背天葵兼紫花，清熱解毒疔瘡誇。"
+      "formula_song": "五味消毒菊地丁，金銀花葵野菊花。\n紫背天葵兼紫花，清熱解毒疔瘡誇。",
+      "cautions_zh": "陰證瘡瘍（漫腫無頭、皮色不變者）禁用；脾胃虛寒者慎用。"
     },
     {
       "id": "formula.qing_wen_bai_du_yin",
@@ -10214,7 +10250,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Qing Wen Bai Du Yin Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -10271,7 +10308,8 @@
         "Heat-clearing / Blood-cooling — clear heat, resolve toxicity, cool Blood and drain Fire (dual clearing of Qi & Blood)"
       ],
       "exam_pearl": "【考綱重點】溫疫氣血兩燔首選方。集合白虎湯（清氣分熱）、犀角地黃湯（涼血散瘀）、黃連解毒湯（瀉三焦火毒）三方精華。石膏、水牛角重用為君。氣血雙清、直折火毒。NCBAHM 2026 CH Outline p.20。",
-      "formula_song": "清瘟敗毒膏知連，犀角丹皮地地全。\n桔梗玄參翹芍草，清熱解毒涼血先。"
+      "formula_song": "清瘟敗毒膏知連，犀角丹皮地地全。\n桔梗玄參翹芍草，清熱解毒涼血先。",
+      "cautions_zh": "陽虛畏寒、脾胃虛寒及陰證瘡瘍者禁用；孕婦慎用。"
     },
     {
       "id": "formula.da_cheng_qi_tang",
@@ -11496,7 +11534,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Da Huang Mu Dan Tang Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -11544,7 +11583,8 @@
         "Purgation / Swelling-reducing — purge heat, break stasis, disperse clumping, reduce swelling"
       ],
       "exam_pearl": "【考綱重點】腸癰（急性闌尾炎）未潰期首選方。大黃、芒硝瀉熱通便；牡丹皮、桃仁涼血破瘀散結；冬瓜子清熱排膿。右少腹痛拒按、按之濡腫、發熱惡寒。NCBAHM 2026 CH Outline p.18。",
-      "formula_song": "大黃牡丹桃仁硝，冬瓜子配合威力高。\n腸癰初起腹痛痛，瀉熱破瘀腫能消。"
+      "formula_song": "大黃牡丹桃仁硝，冬瓜子配合威力高。\n腸癰初起腹痛痛，瀉熱破瘀腫能消。",
+      "cautions_zh": "腸癰潰後體虛、孕婦及老人脾弱者禁用。"
     },
     {
       "id": "formula.ma_zi_ren_wan",
@@ -15047,7 +15087,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Fu Zi Li Zhong Wan Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -15097,7 +15138,8 @@
         "Warming / Tonification — warm Yang, dispel cold, augment Qi and strengthen Spleen"
       ],
       "exam_pearl": "【考綱重點】理中丸加製附子。專治脾腎陽虛、陰寒內盛（脘腹冷痛更加劇烈、手足厥逆）。附子大辛大熱溫腎暖脾，配合乾薑共奏溫陽散寒之功。NCBAHM 2026 CH Outline p.19。",
-      "formula_song": "附子理中即理中，加附溫陽威力雄。\n脾腎陽虛寒甚症，溫陽祛寒腹痛通。"
+      "formula_song": "附子理中即理中，加附溫陽威力雄。\n脾腎陽虛寒甚症，溫陽祛寒腹痛通。",
+      "cautions_zh": "陰虛火旺、真熱假寒者禁用；孕婦禁用（含附子小毒）；服藥期間忌食生冷。"
     },
     {
       "id": "formula.xiao_jian_zhong_tang",
@@ -15568,7 +15610,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Huang Qi Jian Zhong Tang Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -15619,7 +15662,8 @@
         "Warming / Tonification — warm middle, tonify Qi, harmonize interior, relieve urgency/spasms"
       ],
       "exam_pearl": "【考綱重點】小建中湯加黃芪。專治中焦虛寒、氣虛偏重（兼見少氣懶言、自汗乏力）。黃芪大補脾胃之氣，增強溫中補虛之力。NCBAHM 2026 CH Outline p.19。",
-      "formula_song": "黃芪建中即小建，加黃芪補氣效更彰。\n虛勞裡急腹痛甚，益氣溫中補虛強。"
+      "formula_song": "黃芪建中即小建，加黃芪補氣效更彰。\n虛勞裡急腹痛甚，益氣溫中補虛強。",
+      "cautions_zh": "陰虛內熱、胃火熾盛腹痛者禁用；濕熱中阻者不宜使用。"
     },
     {
       "id": "formula.si_ni_tang",
@@ -20295,7 +20339,8 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Jiao Ai Tang Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -20352,7 +20397,8 @@
         "Tonification / Hemostasis — warm channels, stop bleeding, nourish Blood and calm fetus"
       ],
       "exam_pearl": "【考綱重點】沖任虛寒崩漏、胎漏首選方。四物湯（養血和血）合阿膠（養血止血）、艾葉（溫經止血安胎）、甘草。官方藥對：Ai Ye + E Jiao (Appendix B p.16)。NCBAHM 2026 CH Outline p.19。",
-      "formula_song": "膠艾湯中用四物，阿膠艾葉甘草俱。\n婦人崩漏下血證，滋陰養血止血殊。"
+      "formula_song": "膠艾湯中用四物，阿膠艾葉甘草俱。\n婦人崩漏下血證，滋陰養血止血殊。",
+      "cautions_zh": "血熱妄行之出血者禁用；陰虛火旺者慎用。"
     },
     {
       "id": "formula.dang_gui_bu_xue_tang",
@@ -22411,7 +22457,8 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Zuo Gui Yin Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -22459,7 +22506,8 @@
       "exam_pearl": "【考綱重點】左歸丸之輕劑（水煎湯劑）。熟地、山藥、山茱萸、枸杞補陰；茯苓、甘草健脾和中。藥力較左歸丸平和。NCBAHM 2026 CH Outline p.21。",
       "formula_song": "左歸飲用熟地黃，山藥山茱枸杞香。\n茯苓甘草甘溫補，真陰不足此方彰。",
       "formula_song_zh": "左歸飲用熟地黃，山藥山茱枸杞香。\n茯苓甘草甘溫補，真陰不足此方彰。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "cautions_zh": "脾胃虛寒、食少便溏、濕濁中阻者慎用。"
     },
     {
       "id": "formula.you_gui_wan",
@@ -22930,7 +22978,8 @@
         ],
         "formula_song_zh": [
           "tang_tou_ge_jue"
-        ]
+        ],
+        "cautions_zh": "American Dragon (You Gui Yin Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -22978,7 +23027,8 @@
       "exam_pearl": "【考綱重點】右歸丸之輕劑（水煎湯劑）。去鹿角膠、當歸、菟絲子。溫補腎陽，藥力較右歸丸緩和。NCBAHM 2026 CH Outline p.21。",
       "formula_song": "右歸飲用附桂杞，熟地山茱山藥喜。\n杜仲甘草溫命門，腎陽不足服之起。",
       "formula_song_zh": "右歸飲用附桂杞，熟地山茱山藥喜。\n杜仲甘草溫命門，腎陽不足服之起。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "cautions_zh": "陰虛火旺、濕熱內蘊者禁用；孕婦慎用。"
     },
     {
       "id": "formula.qi_ju_di_huang_wan",
@@ -23288,7 +23338,56 @@
       "clinical_frequency": "臨床極高頻常用處方",
       "study_tags": [],
       "image_url": "https://www.zhongyifangji.com/upload/202303/20230323112201303.jpg",
-      "composition": [],
+      "composition": [
+        {
+          "herb_id": "herb.gan_di_huang",
+          "name_zh": "干地黃",
+          "name_en": "Rehmannia Root",
+          "dosage": "24g"
+        },
+        {
+          "herb_id": "herb.shan_zhu_yu",
+          "name_zh": "山茱萸",
+          "name_en": "Asiatic Dogwood Fruit",
+          "dosage": "12g"
+        },
+        {
+          "herb_id": "herb.shan_yao",
+          "name_zh": "山藥",
+          "name_en": "Chinese Yam",
+          "dosage": "12g"
+        },
+        {
+          "herb_id": "herb.ze_xie",
+          "name_zh": "澤瀉",
+          "name_en": "Alisma Rhizome",
+          "dosage": "9g"
+        },
+        {
+          "herb_id": "herb.fu_ling",
+          "name_zh": "茯苓",
+          "name_en": "Poria Sclerotium",
+          "dosage": "9g"
+        },
+        {
+          "herb_id": "herb.mu_dan_pi",
+          "name_zh": "牡丹皮",
+          "name_en": "Moutan Cortex",
+          "dosage": "9g"
+        },
+        {
+          "herb_id": "herb.gui_zhi",
+          "name_zh": "桂枝",
+          "name_en": "Cinnamon Twig",
+          "dosage": "3g"
+        },
+        {
+          "herb_id": "herb.fu_zi",
+          "name_zh": "附子",
+          "name_en": "Aconite Accessory Root",
+          "dosage": "3g"
+        }
+      ],
       "clinical_use_note": "【腎氣丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
         "https://cloudtcm.com/formula/99",
@@ -23363,7 +23462,9 @@
         "exam_pearl": [
           "ncbahm_2026_outline",
           "curriculum"
-        ]
+        ],
+        "cautions_zh": "American Dragon (Shen Qi Wan Cautions)",
+        "composition": "American Dragon (Shen Qi Wan Cautions)"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -23415,7 +23516,8 @@
         "Tonification / Warming — tonify Kidney, assist Yang, transform Qi and move water"
       ],
       "exam_pearl": "【考綱重點】補腎助陽代表方（張仲景《金匱要略》名方，亦稱八味地黃丸）。六味地黃丸祖方加桂枝、附子（少用，各30g，微生少許火以生無窮之陽氣，「少火生氣」）。NCBAHM 2026 CH Outline p.20。",
-      "formula_song": "金匱腎氣六味丸，桂枝附子八般兼。\n溫補腎陽化氣水，腰膝冷痛小便消。"
+      "formula_song": "金匱腎氣六味丸，桂枝附子八般兼。\n溫補腎陽化氣水，腰膝冷痛小便消。",
+      "cautions_zh": "陰虛火旺、咽乾口燥、咽痛者禁用；實熱證者禁用。"
     },
     {
       "id": "formula.jin_gui_shen_qi_wan",
