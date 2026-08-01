@@ -6,11 +6,17 @@
     "pinyin": "Dingzhongxian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭頂部 / Vertex Region",
-    "location": "頭頂正中線，自百會穴（GV20）向前至前頂穴（GV21）的連線，長1寸。",
+    "location": {
+      "zh": "頭頂正中線。從百會穴（DU-20）向前至前頂穴（DU-21）連線，長約 1.5 寸。",
+      "en": "Midline of vertex. Line connecting Baihui (DU-20) to Qianding (DU-21), 1.5 cun long."
+    },
     "locationEn": "Along the midline of the vertex, extending 1 cun forward from Baihui (GV 20) to Qianding (GV 21).",
     "anatomy_zh": "帽狀腱膜、額動靜脈與枕動靜脈吻合網、督脈與足太陽膀胱經交會處大腦頂葉皮層發育區。",
     "anatomy_en": "Galea aponeurotica, anastomotic network of frontal & occipital vessels, sensory/motor projection area of the vertex cortex.",
-    "functions": "通經活絡，鎮靜安神，升陽舉陷，調理下肢與腰骶神經。",
+    "functions": [
+      "通經活絡，升陽固脫",
+      "清腦開竅，調理下焦"
+    ],
     "functionsEn": "Unblock channels and collaterals, calm the spirit, raise Yang Qi, and regulate lower limb and lumbosacral nerve functions.",
     "indications_zh": [
       "腰腿痛",
@@ -46,7 +52,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "腰腿麻木、下肢癱瘓、中風後遺症",
+      "脫肛、子宮脫垂、遺尿、夜尿頻多",
+      "頭痛、頭暈、神經衰弱"
+    ],
+    "needling": {
+      "zh": "沿皮平刺（帽狀腱膜下層）0.8-1.5 寸，針尖向前或向後，快速捻針（200次/分）。",
+      "en": "Subcutaneous transverse insertion (sub-aponeurotic layer) 0.8-1.5 cun, tip forward or backward, rapid twirling (200 rpm).",
+      "depth": "0.8 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm for 1-2 minutes",
+      "cautions": "Avoid puncturing scalp blood vessels; press firmly with cotton ball after needle removal."
+    }
   },
   {
     "code": "MS2",
@@ -55,11 +74,17 @@
     "pinyin": "Dingpangxian I",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭頂部 / Vertex Region",
-    "location": "頂中線旁開1.5寸，自承光穴（BL6）向前至通天穴（BL7）的連線，長1.5寸。",
+    "location": {
+      "zh": "頭頂旁一線。在頂中線旁開 1.5 寸，自通天穴（BL-7）向後至絡卻穴（BL-8）連線，長約 1.5 寸。",
+      "en": "First lateral line of vertex. 1.5 cun lateral to midline, from Tongtian (BL-7) backward to Luoque (BL-8), 1.5 cun long."
+    },
     "locationEn": "1.5 cun lateral to the Middle Line of Vertex, connecting Chengguang (BL 6) forward to Tongtian (BL 7), 1.5 cun in length.",
     "anatomy_zh": "帽狀腱膜、顳淺動靜脈頂支、枕大神經與額神經交會區。",
     "anatomy_en": "Galea aponeurotica, parietal branch of superficial temporal vessels, overlap of greater occipital and frontal nerves.",
-    "functions": "通絡止痛，健脾和胃，調理下肢與腰部機能。",
+    "functions": [
+      "補腎強腰，清利下焦",
+      "舒筋活絡，止痛止麻"
+    ],
     "functionsEn": "Unblock collaterals, relieve pain, fortify Spleen and Stomach, and regulate lumbar and lower extremity motor functions.",
     "indications_zh": [
       "腰腿痛",
@@ -90,7 +115,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "腰腿痛、腰椎間盤突出症、下肢麻木癱瘓",
+      "遺尿、小便不利、前列腺炎、生殖系統疾患",
+      "頂痛、頭暈"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.8-1.5 寸，針尖向後，快速捻轉法。",
+      "en": "Subcutaneous insertion 0.8-1.5 cun, tip backward, rapid twirling.",
+      "depth": "0.8 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "High-frequency twirling 1-2 minutes",
+      "cautions": "Contralateral needle selection for unilateral limb weakness."
+    }
   },
   {
     "code": "MS3",
@@ -99,11 +137,17 @@
     "pinyin": "Dingpangxian II",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭頂部 / Vertex Region",
-    "location": "頂中線旁開2.25寸，自正營穴（GB17）向前至目窗穴（GB16）的連線，長1.5寸。",
+    "location": {
+      "zh": "頭頂旁二線。在頂中線旁開 2.25 寸，自正營穴（GB-17）向後至承靈穴（GB-18）連線，長約 1.5 寸。",
+      "en": "Second lateral line of vertex. 2.25 cun lateral to midline, from Zhengying (GB-17) backward to Chengling (GB-18), 1.5 cun long."
+    },
     "locationEn": "2.25 cun lateral to the Middle Line of Vertex, connecting Zhengying (GB 17) forward to Muchuang (GB 16), 1.5 cun in length.",
     "anatomy_zh": "帽狀腱膜、顳淺動靜脈頂支、耳顳神經分支。",
     "anatomy_en": "Galea aponeurotica, parietal branch of superficial temporal vessels, auriculotemporal nerve branches.",
-    "functions": "疏肝理氣，清頭明目，通絡止痛，調理肩臂手部機能。",
+    "functions": [
+      "疏肝理氣，和胃止痛",
+      "通絡止痛，降逆止嘔"
+    ],
     "functionsEn": "Course Liver Qi, clear head and eyes, unblock collaterals, and regulate shoulder, arm, and hand functions.",
     "indications_zh": [
       "肩臂痛",
@@ -134,7 +178,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "肩臂痛、胸脇脹痛、肋間神經痛",
+      "慢性胃炎、胃潰瘍、膽囊炎、胃痛",
+      "肝氣鬱結症、脅肋痛"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.8-1.5 寸，針尖向後，快速捻針。",
+      "en": "Subcutaneous insertion 0.8-1.5 cun, tip backward, rapid twirling.",
+      "depth": "0.8 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "High-frequency twirling",
+      "cautions": "Avoid heavy pressure on temporal artery."
+    }
   },
   {
     "code": "MS4",
@@ -143,11 +200,17 @@
     "pinyin": "Dingnie Qianxielian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭頂顳部 / Vertex-Temporal Region",
-    "location": "自前頂穴（GV21）旁開0.5寸（上點）至懸釐穴（GB6，下點）的連線。分三等份：上1/5治下肢，中2/5治上肢，下2/5治面部。",
+    "location": {
+      "zh": "頂顳前斜線（運動區）。從前神聰穴（百會前 1 寸）至懸釐穴（GB-6）連線。分上1/5（下肢軀幹區）、中2/5（上肢區）、下2/5（面部區）。",
+      "en": "Anterior oblique line of vertex-temporal (Motor Area). Line from Qianshencong to Xuanli (GB-6). Upper 1/5: Lower limb/trunk; Middle 2/5: Upper limb; Lower 2/5: Facial area."
+    },
     "locationEn": "From 0.5 cun posterior to the midpoint of the anterior hairline (or 0.5 cun anterior to GV 20, upper point) extending obliquely to Xuanli (GB 6, lower point). Divided into 3 zones: Upper 1/5 for lower limbs, Middle 2/5 for upper limbs, Lower 2/5 for facial paralysis.",
     "anatomy_zh": "帽狀腱膜、顳肌、顳淺動靜脈、大腦皮層中央前溝（運動中樞）投影區。",
     "anatomy_en": "Galea aponeurotica, temporalis muscle, superficial temporal vessels, cortical projection of the precentral gyrus (primary motor cortex).",
-    "functions": "通經活絡，醒腦開竅，主治中風偏癱、面癱、肢體運動障礙第一要穴。",
+    "functions": [
+      "通經活絡，熄風開竅",
+      "調理運動中樞，促進偏癱康復"
+    ],
     "functionsEn": "Primary scalp line for post-stroke hemiplegia, facial paralysis, motor deficits, and muscle spasticity.",
     "indications_zh": [
       "中風偏癱",
@@ -183,7 +246,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "上1/5：對側下肢癱瘓、中風偏癱、足內翻",
+      "中2/5：對側上肢癱瘓、手部動作不靈活、肩臂麻木",
+      "下2/5：對側中風面癱、運動性失語、流涎、發音困難"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 1.0-2.0 寸，貫穿目標分區帽狀腱膜下層，高頻快速捻針（200次/分，留針30分鐘，間歇捻針）。",
+      "en": "Subcutaneous insertion 1.0-2.0 cun along the line, high frequency twirling (200 rpm, retain 30 min with intermittent twirling).",
+      "depth": "1.0 - 2.0 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "CNT contralateral selection rule for stroke hemiplegia; twirling at 200 rpm",
+      "cautions": "Contraindicated in acute cerebral hemorrhage with severe high blood pressure prior to stabilization."
+    }
   },
   {
     "code": "MS5",
@@ -192,11 +268,17 @@
     "pinyin": "Dingnie Houxielian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭頂顳部 / Vertex-Temporal Region",
-    "location": "平行於頂顳前斜線（MS4）後方0.5寸，自百會穴（GV20）旁開0.5寸至曲鬢穴（GB7）的連線。分三等份：上1/5治下肢麻木，中2/5治上肢麻木，下2/5治面部麻木。",
+    "location": {
+      "zh": "頂顳後斜線（感覺區）。在頂顳前斜線（運動區）後方 1.5 寸，自百會穴（DU-20）至曲鬢穴（GB-7）連線。分上1/5、中2/5、下2/5。",
+      "en": "Posterior oblique line of vertex-temporal (Sensory Area). 1.5 cun posterior to Motor Area, line from Baihui (DU-20) to Qubin (GB-7)."
+    },
     "locationEn": "Parallel to and 0.5 cun posterior to MS4, extending from 0.5 cun lateral to Baihui (GV 20) down to Qubin (GB 7). Divided into 3 zones: Upper 1/5 for lower limb sensory loss/pain, Middle 2/5 for upper limb sensory loss, Lower 2/5 for facial numbness.",
     "anatomy_zh": "帽狀腱膜、顳肌、顳淺動靜脈頂支、大腦皮層中央後溝（體感中樞）投影區。",
     "anatomy_en": "Galea aponeurotica, temporalis muscle, superficial temporal vessels, cortical projection of the postcentral gyrus (primary somatosensory cortex).",
-    "functions": "通絡止痛，調理感覺障礙，主治肢體麻木、疼痛、感覺異常、肢體中樞性疼痛第一要穴。",
+    "functions": [
+      "通絡止痛，鎮靜安神",
+      "調理感覺中樞，消除麻木疼痛"
+    ],
     "functionsEn": "Primary scalp line for sensory disturbances, numbness, central pain syndromes, paresthesia, and radiculopathy.",
     "indications_zh": [
       "肢體麻木",
@@ -232,7 +314,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "上1/5：對側下肢麻木、腰腿痛、後頭痛",
+      "中2/5：對側上肢麻木、疼痛、感覺異常",
+      "下2/5：對側面部麻木、偏頭痛、三叉神經痛、牙痛"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 1.0-2.0 寸，快速捻轉法。",
+      "en": "Subcutaneous insertion 1.0-2.0 cun, rapid twirling.",
+      "depth": "1.0 - 2.0 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm",
+      "cautions": "Do not insert into hair follicles or infected scalp tissue."
+    }
   },
   {
     "code": "MS6",
@@ -241,11 +336,17 @@
     "pinyin": "Ezhongxian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "前額部 / Forehead Region",
-    "location": "在前額正中，自神庭穴（GV24）向下延伸1寸的直線。",
+    "location": {
+      "zh": "額中線。在前額正中，自神庭穴（DU-24）向下引一直線，長 1 寸。",
+      "en": "Forehead midline. From Shenting (DU-24) straight down 1 cun."
+    },
     "locationEn": "Along the midline of the forehead, extending 1 cun straight down from Shenting (GV 24).",
     "anatomy_zh": "額肌、額動靜脈吻合支、額神經內側支、大腦前額葉皮層投影區。",
     "anatomy_en": "Frontalis muscle, frontal vessels, medial branch of frontal nerve, prefrontal cortex projection area.",
-    "functions": "鎮靜安神，清頭明目，通鼻開竅，調理神志與精神疾病。",
+    "functions": [
+      "寧心安神，清腦開竅",
+      "寬胸理氣，和胃止痛"
+    ],
     "functionsEn": "Calm the spirit, clear the head and eyes, unblock nasal passages, and treat neuropsychiatric conditions.",
     "indications_zh": [
       "頭痛",
@@ -280,7 +381,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "頭痛、頭暈、失眠、神經衰弱",
+      "心悸、胸悶、氣短",
+      "胃痛、嘔吐、打嗝"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.5-1.0 寸，針尖向下。",
+      "en": "Subcutaneous insertion 0.5-1.0 cun, tip pointing downward.",
+      "depth": "0.5 - 1.0 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling or lifting-thrusting with small amplitude",
+      "cautions": "Avoid puncturing supraorbital vessels."
+    }
   },
   {
     "code": "MS7",
@@ -289,11 +403,17 @@
     "pinyin": "Epangxian I",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "前額部 / Forehead Region",
-    "location": "在額中線旁開1.5寸，自眉衝穴（BL3）向下延伸1寸的直線。",
+    "location": {
+      "zh": "額旁一線（心肺區）。在前額部，自眉衝穴（BL-6）向下引一直線，長 1 寸。",
+      "en": "First lateral line of forehead (Heart-Lung Area). From Meichong (BL-6) straight down 1 cun."
+    },
     "locationEn": "1.5 cun lateral to the Middle Line of Forehead, extending 1 cun straight down from Meichong (BL 3).",
     "anatomy_zh": "額肌、額動靜脈、額神經內側支、大腦前額葉與胸腔內臟反射區。",
     "anatomy_en": "Frontalis muscle, frontal vessels, frontal nerve, prefrontal and thoracic autonomic reflex area.",
-    "functions": "宣肺平喘，寬胸理氣，寧心安神，主治上焦心肺病症。",
+    "functions": [
+      "宣肺平喘，寧心安神",
+      "理氣寬胸，通絡止痛"
+    ],
     "functionsEn": "Diffuse Lung Qi, relieve asthma, unbind the chest, calm the Heart, and treat Upper Jiao cardiac and respiratory disorders.",
     "indications_zh": [
       "咳嗽",
@@ -326,7 +446,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "冠心病、心絞痛、心悸、胸悶",
+      "支氣管哮喘、慢性咳嗽、感冒鼻塞",
+      "失眠、焦慮症"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.5-1.0 寸，針尖向下。",
+      "en": "Subcutaneous insertion 0.5-1.0 cun, tip downward.",
+      "depth": "0.5 - 1.0 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Rapid twirling",
+      "cautions": "Press after needle withdrawal to prevent hematoma."
+    }
   },
   {
     "code": "MS8",
@@ -335,11 +468,17 @@
     "pinyin": "Epangxian II",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "前額部 / Forehead Region",
-    "location": "在額中線旁開2.25寸，自頭臨泣穴（GB15）向下延伸1寸的直線。",
+    "location": {
+      "zh": "額旁二線（脾胃區）。在前額部，自頭臨泣穴（GB-15）向下引一直線，長 1 寸。",
+      "en": "Second lateral line of forehead (Spleen-Stomach Area). From Toulinqi (GB-15) straight down 1 cun."
+    },
     "locationEn": "2.25 cun lateral to the Middle Line of Forehead, extending 1 cun straight down from Toulinqi (GB 15).",
     "anatomy_zh": "額肌、額動靜脈、額神經外側支、中焦脾胃反射區。",
     "anatomy_en": "Frontalis muscle, frontal vessels, lateral branch of frontal nerve, Middle Jiao gastrointestinal reflex area.",
-    "functions": "健脾和胃，理氣止痛，降逆止嘔，主治中焦消化系統病症。",
+    "functions": [
+      "健脾和胃，降逆止嘔",
+      "理氣止痛，助消化"
+    ],
     "functionsEn": "Fortify Spleen, harmonize Stomach, regulate Qi, relieve pain, and treat Middle Jiao gastrointestinal disorders.",
     "indications_zh": [
       "胃痛",
@@ -372,7 +511,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "慢性胃炎、胃潰瘍、胃痛、胃脹",
+      "噁心嘔吐、食欲不振、腹瀉",
+      "前額頭痛"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.5-1.0 寸，針尖向下。",
+      "en": "Subcutaneous insertion 0.5-1.0 cun, tip downward.",
+      "depth": "0.5 - 1.0 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Rapid twirling",
+      "cautions": "Maintain sterile field on forehead."
+    }
   },
   {
     "code": "MS9",
@@ -381,11 +533,17 @@
     "pinyin": "Epangxian III",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "前額部 / Forehead Region",
-    "location": "自本神穴（GB13）向下延伸1寸的直線（頭臨泣旁開0.75寸）。",
+    "location": {
+      "zh": "額旁三線（生殖區）。在前額部，自本神穴（GB-13）內側 0.75 寸處向下引一直線，長 1 寸。",
+      "en": "Third lateral line of forehead (Reproductive Area). From 0.75 cun medial to Benshen (GB-13) straight down 1 cun."
+    },
     "locationEn": "Extending 1 cun straight down from Benshen (GB 13), 0.75 cun lateral to Toulinqi (GB 15).",
     "anatomy_zh": "額肌、顳淺動靜脈額支、耳顳神經分支、下焦生殖泌尿反射區。",
     "anatomy_en": "Frontalis muscle, frontal branch of superficial temporal vessels, auriculotemporal nerve, Lower Jiao genitourinary reflex area.",
-    "functions": "補腎固精，調經止帶，通利下焦，主治下焦生殖泌尿系統病症。",
+    "functions": [
+      "調經止帶，補腎培元",
+      "清利下焦，通絡止痛"
+    ],
     "functionsEn": "Tonify Kidney Essence, regulate menstruation, stop leukorrhea, and treat Lower Jiao genitourinary disorders.",
     "indications_zh": [
       "痛經",
@@ -420,7 +578,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "月經不調、痛經、功能性子宮出血",
+      "盆腔炎、尿路感染、遺尿",
+      "男性前列腺炎、陽痿、早泄"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.5-1.0 寸，針尖向下。",
+      "en": "Subcutaneous insertion 0.5-1.0 cun, tip downward.",
+      "depth": "0.5 - 1.0 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Rapid twirling",
+      "cautions": "Avoid deep needle penetration."
+    }
   },
   {
     "code": "MS10",
@@ -429,11 +600,17 @@
     "pinyin": "Nieqianxian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "顳部 / Temporal Region",
-    "location": "在顳部，自頷厭穴（GB4）至懸釐穴（GB6）的連線。",
+    "location": {
+      "zh": "顳前線。在顳部顬髮際內，自頷厭穴（GB-4）至懸釐穴（GB-6）連線。",
+      "en": "Anterior temporal line. From Hanyan (GB-4) to Xuanli (GB-6) within temporal hairline."
+    },
     "locationEn": "On the temporal region, connecting Hanyan (GB 4) downward to Xuanli (GB 6).",
     "anatomy_zh": "顳肌、顳淺動靜脈頂支、耳顳神經與面神經顳支。",
     "anatomy_en": "Temporalis muscle, parietal branch of superficial temporal vessels, auriculotemporal and facial nerve branches.",
-    "functions": "清頭散風，通絡止痛，主治偏頭痛、面癱、眼疾與五官病症。",
+    "functions": [
+      "清頭明目，疏風通絡",
+      "利咽開音，止痛止麻"
+    ],
     "functionsEn": "Clear the head, dispel wind, unblock collaterals, and treat migraines, facial paralysis, and eye/sensory disorders.",
     "indications_zh": [
       "偏頭痛",
@@ -466,7 +643,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "偏頭痛、三叉神經痛、面神經麻痺",
+      "運動性失語、口眼歪斜",
+      "牙痛、眼疾"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.8-1.5 寸，針尖向下。",
+      "en": "Subcutaneous insertion 0.8-1.5 cun, tip downward.",
+      "depth": "0.8 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm",
+      "cautions": "Avoid superficial temporal artery."
+    }
   },
   {
     "code": "MS11",
@@ -475,11 +665,17 @@
     "pinyin": "Niehouxielian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "顳部 / Temporal Region",
-    "location": "在顳部，自率谷穴（GB8）至曲鬢穴（GB7）的連線（耳尖直上1.5寸向前向後各擴展2厘米的水平線）。",
+    "location": {
+      "zh": "顳後線（暈聽區）。在耳尖直上 0.5 寸處，向前及向後各引 2 釐米之水平線，長約 4 釐米。",
+      "en": "Posterior temporal line (Vertigo & Hearing Area). Horizontal line 0.5 cun directly above ear apex, 2 cm anterior and 2 cm posterior."
+    },
     "locationEn": "Connecting Shuaigu (GB 8) to Qubin (GB 7), or horizontal line 1.5 cun directly above the ear apex extending 2 cm anteriorly and 2 cm posteriorly (4 cm total).",
     "anatomy_zh": "顳肌、耳後動靜脈、枕小神經分支、大腦皮層顳葉聽覺與前庭中樞投影區。",
     "anatomy_en": "Temporalis muscle, posterior auricular vessels, lesser occipital nerve, temporal lobe auditory and vestibular cortex projection.",
-    "functions": "聰耳利竅，平肝息風，止眩定暈，主治耳鳴、耳聾、眩暈第一要穴。",
+    "functions": [
+      "平肝息風，清頭聰耳",
+      "止眩暈，通耳竅"
+    ],
     "functionsEn": "Primary scalp line for vertigo, Meniere's disease, tinnitus, hearing loss, and auditory cortical dysfunction.",
     "indications_zh": [
       "眩暈",
@@ -513,7 +709,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "美尼爾氏綜合症、眩暈症、頭暈目眩",
+      "耳鳴、聽力減退、耳聾",
+      "皮質性聽力障礙"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 1.0-1.5 寸，沿水平線向後刺，快速高頻捻針。",
+      "en": "Subcutaneous insertion 1.0-1.5 cun horizontally, rapid high-frequency twirling.",
+      "depth": "1.0 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm for 2 minutes",
+      "cautions": "Do not pierce temporal cartilage or ear artery."
+    }
   },
   {
     "code": "MS12",
@@ -522,11 +731,17 @@
     "pinyin": "Zhenshang Zhengzhongxian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "枕部 / Occipital Region",
-    "location": "在枕部，自強間穴（GV18）至腦戶穴（GV17）的連線，長1.5寸。",
+    "location": {
+      "zh": "枕上正中線。在枕部，自強間穴（DU-18）向下至腦戶穴（DU-17）連線，長約 1.5 寸。",
+      "en": "Upper occipital midline. From Qiangjian (DU-18) straight down to Naohu (DU-17), 1.5 cun long."
+    },
     "locationEn": "On the occipital region, connecting Qiangjian (GV 18) down to Naohu (GV 17), 1.5 cun in length.",
     "anatomy_zh": "枕肌、枕動靜脈分支、枕大神經、大腦枕葉視覺中樞投影區。",
     "anatomy_en": "Occipitalis muscle, occipital vessels, greater occipital nerve, visual cortex (occipital lobe) projection area.",
-    "functions": "清頭明目，通絡止痛，主治眼疾、視力障礙與枕部頭痛。",
+    "functions": [
+      "平肝熄風，清頭明目",
+      "通經活絡，安神止痛"
+    ],
     "functionsEn": "Clear the head, brighten the eyes, unblock collaterals, and treat eye disorders, visual impairment, and occipital headache.",
     "indications_zh": [
       "眼痛",
@@ -557,7 +772,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "枕大神經痛、後頭痛、項強僵硬",
+      "眼疾、腰背痛",
+      "小腦萎縮、平衡障礙"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.8-1.5 寸，針尖向下。",
+      "en": "Subcutaneous insertion 0.8-1.5 cun, tip downward.",
+      "depth": "0.8 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Rapid twirling",
+      "cautions": "Avoid puncturing external occipital protuberance periosteum."
+    }
   },
   {
     "code": "MS13",
@@ -566,11 +794,17 @@
     "pinyin": "Zhenshang Pangxian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "枕部 / Occipital Region",
-    "location": "平行於枕上正中線（MS12）旁開0.5寸的直線，長1.5寸。",
+    "location": {
+      "zh": "枕上旁線（視區）。在枕部，距枕上正中線旁開 0.5 寸，引一平行於枕上正中線之直線，長約 1.5 寸。",
+      "en": "Upper occipital lateral line (Vision Area). Parallel to and 0.5 cun lateral to upper occipital midline, 1.5 cun long."
+    },
     "locationEn": "Parallel to and 0.5 cun lateral to MS12 (Upper Middle Line of Occiput), 1.5 cun in length.",
     "anatomy_zh": "枕肌、枕動靜脈分支、枕大神經、大腦皮層枕葉視覺第一皮質投影區。",
     "anatomy_en": "Occipitalis muscle, occipital vessels, greater occipital nerve, primary visual cortex (V1) projection.",
-    "functions": "清熱明目，養肝明目，主治皮層性失明、白內障、近視與各類眼疾第一要穴。",
+    "functions": [
+      "清肝明目，調理視中樞",
+      "通絡止痛，改善視力"
+    ],
     "functionsEn": "Primary scalp line for cortical blindness, visual field defects, cataracts, myopia, optic neuropathy, and eye diseases.",
     "indications_zh": [
       "皮層性失明",
@@ -606,7 +840,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "皮質性失明、青光眼、白內障、視力減退",
+      "近視、視物模糊、復視",
+      "後頭痛"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.8-1.5 寸，針尖向下，高頻捻針。",
+      "en": "Subcutaneous insertion 0.8-1.5 cun, tip downward, rapid twirling.",
+      "depth": "0.8 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm",
+      "cautions": "Protect scalp capillaries."
+    }
   },
   {
     "code": "MS14",
@@ -615,11 +862,17 @@
     "pinyin": "Zhenxia Pangxian",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "枕部 / Occipital Region",
-    "location": "在枕部，自玉枕穴（BL9）向下延伸1.5寸的直線（腦戶穴旁開1.5寸向下）。",
+    "location": {
+      "zh": "枕下旁線（平衡區）。在枕部，自玉枕穴（BL-9）向下引一直線，長約 1.5 寸。",
+      "en": "Lower occipital lateral line (Balance Area). From Yuzhen (BL-9) straight down 1.5 cun."
+    },
     "locationEn": "On the occipital region, extending 1.5 cun straight down from Yuzhen (BL 9), 1.5 cun lateral to Naohu (GV 17).",
     "anatomy_zh": "枕肌、斜方肌起始部、枕動靜脈、枕大神經、小腦皮層平衡投影區。",
     "anatomy_en": "Occipitalis muscle, trapezius muscle origin, occipital vessels, greater occipital nerve, cerebellar cortex balance projection.",
-    "functions": "平肝息風，通絡止暈，主治小腦性共濟失調、平衡障礙與腦幹眩暈第一要穴。",
+    "functions": [
+      "平肝息風，調節小腦平衡",
+      "通絡止痛，止眩暈"
+    ],
     "functionsEn": "Primary scalp line for cerebellar ataxia, equilibrium loss, motion incoordination, and brainstem vertigo.",
     "indications_zh": [
       "小腦性共濟失調",
@@ -653,7 +906,20 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "WHO Scalp Standard / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "小腦疾患引起的平衡障礙、共濟失調、步態不穩",
+      "美尼爾氏症、後頭痛、頸椎病",
+      "腦幹功能障礙"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 0.8-1.5 寸，針尖向下，高頻捻針。",
+      "en": "Subcutaneous insertion 0.8-1.5 cun, tip downward, rapid twirling.",
+      "depth": "0.8 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm",
+      "cautions": "Avoid entering foramen magnum region."
+    }
   },
   {
     "code": "SCALP-CHOREA",
@@ -662,11 +928,17 @@
     "pinyin": "Wudao Zhencan Kongzhi Qu",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭頂顳部 / Vertex-Temporal Region",
-    "location": "平行於頂顳前斜線（運動區 MS4）前方1.5寸的斜線。",
+    "location": {
+      "zh": "舞蹈震顫控制區。在運動區（MS4）平行向前移 1.5 寸之連線。",
+      "en": "Chorea and Tremor Control Area. Parallel line 1.5 cun anterior to Motor Area (MS4)."
+    },
     "locationEn": "Parallel line 1.5 cun anterior to the Anterior Oblique Line of Vertex-Temporal (MS4 Motor Area).",
     "anatomy_zh": "帽狀腱膜、額肌、顳肌、大腦前運動區與基底節神經環路投影區。",
     "anatomy_en": "Galea aponeurotica, frontalis, temporalis muscle, premotor cortex and basal ganglia motor loop projection.",
-    "functions": "熄風止顫，通絡舒筋，主治帕金森病、舞蹈症、手足徐動症與不自主運動障礙第一要穴。",
+    "functions": [
+      "平肝熄風，舒筋止震",
+      "調理錐體外系運動機能"
+    ],
     "functionsEn": "Primary scalp area for Parkinson's disease, tremors, chorea, athetosis, and involuntary movement disorders.",
     "indications_zh": [
       "帕金森病",
@@ -699,7 +971,19 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "Jiao Shunfa Scalp Acupuncture / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "帕金森氏症（震顫麻痺）、舞蹈病",
+      "手足徐動症、不自主震顫、肌肉肢體抽搐"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 1.0-2.0 寸，高頻快速捻針（200次/分）。",
+      "en": "Subcutaneous insertion 1.0-2.0 cun, high frequency twirling (200 rpm).",
+      "depth": "1.0 - 2.0 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling 200 rpm for 2-3 minutes",
+      "cautions": "Contralateral needle selection."
+    }
   },
   {
     "code": "SCALP-SPEECH1",
@@ -708,11 +992,17 @@
     "pinyin": "Yanyu Yiqu",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭顳部 / Temporal Region",
-    "location": "在頂顳前斜線（MS4）下1/5段向前水平延伸4厘米的區域。",
+    "location": {
+      "zh": "言語一區。運動區（MS4）下 2/5 後方 1.5 寸處，長約 4 釐米。",
+      "en": "Speech Area 1 (Motor Aphasia Area). 1.5 cun posterior to lower 2/5 of Motor Area (MS4), 4 cm long."
+    },
     "locationEn": "Horizontal line extending 4 cm anteriorly from the lower 1/5 of MS4 (Anterior Oblique Line of Vertex-Temporal).",
     "anatomy_zh": "顳肌、大腦額下回後部（Broca 運動性言語中樞）投影區。",
     "anatomy_en": "Temporalis muscle, inferior frontal gyrus (Broca's motor speech area) cortical projection.",
-    "functions": "醒腦開竅，利咽通絡，主治運動性失語（能聽懂但無法說話）第一要穴。",
+    "functions": [
+      "清腦開竅，利咽通絡",
+      "調理語言表達中樞"
+    ],
     "functionsEn": "Primary scalp area for motor aphasia (Broca's aphasia: patient understands speech but cannot speak).",
     "indications_zh": [
       "運動性失語",
@@ -741,7 +1031,19 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "Jiao Shunfa Scalp Acupuncture / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "運動性失語（能聽懂但無法表達）、發音困難",
+      "中風後遺症言語障礙"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 1.0-1.5 寸，快速捻針。",
+      "en": "Subcutaneous insertion 1.0-1.5 cun, rapid twirling.",
+      "depth": "1.0 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm",
+      "cautions": "Needle contralateral side to affected speech center."
+    }
   },
   {
     "code": "SCALP-SPEECH2",
@@ -750,11 +1052,17 @@
     "pinyin": "Yanyu Erqu",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭頂顳部 / Vertex-Temporal Region",
-    "location": "自頂骨結節後下方2厘米處向下引一長3厘米的平行線。",
+    "location": {
+      "zh": "言語二區。頂骨結節後下方 2 釐米處引一平行於前後正中線之直線，長約 3 釐米。",
+      "en": "Speech Area 2 (Sensory Aphasia Area). Vertical line 2 cm posterior/inferior to parietal eminence, 3 cm long."
+    },
     "locationEn": "Vertical line 3 cm in length, located 2 cm posterior and inferior to the parietal eminence.",
     "anatomy_zh": "帽狀腱膜、大腦頂葉與顳葉交界區（命名性言語中樞）投影區。",
     "anatomy_en": "Galea aponeurotica, parieto-temporal junction (anomic/nominal speech area) cortical projection.",
-    "functions": "通絡開竅，強記復聰，主治命名性失語（能說話但叫不出物體名稱）第一要穴。",
+    "functions": [
+      "清腦開竅，聰耳理解",
+      "調理感覺性語言中樞"
+    ],
     "functionsEn": "Primary scalp area for anomic/nominal aphasia (patient can speak fluently but cannot name objects).",
     "indications_zh": [
       "命名性失語",
@@ -781,7 +1089,19 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "Jiao Shunfa Scalp Acupuncture / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "感覺性失語（能說話但聽不懂他人意思）、理解障礙",
+      "腦血管意外後遺症"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 1.0-1.5 寸，快速捻針。",
+      "en": "Subcutaneous insertion 1.0-1.5 cun, rapid twirling.",
+      "depth": "1.0 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm",
+      "cautions": "Contralateral insertion."
+    }
   },
   {
     "code": "SCALP-SPEECH3",
@@ -790,11 +1110,17 @@
     "pinyin": "Yanyu Sanqu",
     "meridian": "Scalp Acupuncture / 頭皮針",
     "region": "頭顳部 / Temporal Region",
-    "location": "自暈聽區（MS11）中點向後延伸4厘米的水平線。",
+    "location": {
+      "zh": "言語三區。暈聽區（MS11）中點向後引一水平線，長約 4 釐米。",
+      "en": "Speech Area 3 (Amnestic Aphasia Area). Horizontal line extending 4 cm backward from midpoint of Vertigo & Hearing Area (MS11)."
+    },
     "locationEn": "Horizontal line extending 4 cm posteriorly from the midpoint of the Vertigo & Hearing Area (MS11).",
     "anatomy_zh": "顳肌、大腦顳上回後部（Wernicke 感覺性言語中樞）投影區。",
     "anatomy_en": "Temporalis muscle, superior temporal gyrus (Wernicke's sensory speech area) cortical projection.",
-    "functions": "清音開竅，聰耳醒腦，主治感覺性失語（聽不懂別人說話內容）第一要穴。",
+    "functions": [
+      "清腦開竅，增強記憶",
+      "調理命名性語言中樞"
+    ],
     "functionsEn": "Primary scalp area for sensory/receptive aphasia (Wernicke's aphasia: patient cannot comprehend spoken language).",
     "indications_zh": [
       "感覺性失語",
@@ -821,6 +1147,18 @@
         "url": "https://www.mastertungacupuncture.org/acupuncture/scalp/overview",
         "source": "Jiao Shunfa Scalp Acupuncture / eLotus"
       }
-    ]
+    ],
+    "indications": [
+      "命名性失語（知道物體用途但叫不出名稱）、記憶力減退",
+      "老年癡呆症言語障礙"
+    ],
+    "needling": {
+      "zh": "沿皮平刺 1.0-1.5 寸，向後刺，快速捻針。",
+      "en": "Subcutaneous insertion 1.0-1.5 cun backward, rapid twirling.",
+      "depth": "1.0 - 1.5 cun",
+      "angle": "Subcutaneous (15 degrees)",
+      "technique": "Twirling at 200 rpm",
+      "cautions": "Avoid temporal vein."
+    }
   }
 ]
