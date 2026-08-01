@@ -4159,10 +4159,8 @@ function externalPointLinks(point) {
 
   if (isAuricularPoint(point)) {
     const elotusLink = visualLinks.find(l => (l.url || '').includes('mastertungacupuncture.org'))?.url || sources.find(s => s.includes('mastertungacupuncture.org')) || `https://www.mastertungacupuncture.org/acupuncture/auricular/lch/points/${(point.code||'').toLowerCase().replace('ear-lch-', '').replace('ear-', '')}`;
-    const acupunLink = visualLinks.find(l => (l.url || '').includes('acupun.site'))?.url || `https://acupun.site/point_list_Ear93GB.aspx?pointId=${(point.code || '').replace(/^EAR-/, '')}`;
     return [
-      { label: contentMode === "english" ? "Chinese Ear Map" : "中華針灸網 3D耳穴", url: acupunLink, kind: "chinese" },
-      { label: contentMode === "english" ? "eLotus CORE (Dr. Huang)" : "eLotus 黃麗春圖解", url: elotusLink, kind: "english" }
+      { label: contentMode === "english" ? "eLotus CORE (Dr. Huang)" : "eLotus 權威圖解", url: elotusLink, kind: "english" }
     ];
   }
 
