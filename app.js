@@ -3573,60 +3573,36 @@ function renderDetail(point) {
               it does → what to combine → what it links to → sources. */""}
 
         ${/* 1. 定位・取穴・解剖 — first, because it is the first thing you need. */""}
-        ${studySection(contentMode === "english" ? "Location & Point Finding" : "定位・取穴・解剖", pointLocationArticle(point), "location")}
-
-        ${/* 2. 針法・艾灸・安全 — adjacent to location: locating and needling
-              are one motion. Cautions fold in here instead of sitting alone
-              near the bottom of the card where a safety note is useless. */""}
-        ${/* needlingArticle already emits the cautions block from point.cautions,
-              and cautionText() reads that same field — appending it printed the
-              identical safety text twice, under 【安全提醒】 then 【注意事項】.
-              Folding cautions into this section was the point of the
-              restructure; doing it once is enough. */""}
-        ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", needlingArticle(point), "needle", true)}
-
-        ${/* 3. 我的臨床筆記 — placed right after location/needling/safety
-              because that is the context she is in when something is worth
-              writing down. Collapsed when empty (see js/notes.js), so it costs
-              one line on a card that is already dense. */""}
-        ${window.AcuTingNotes ? window.AcuTingNotes.panel("point", point.code, `${point.code} ${point.nameZh || point.nameEn || ""}`.trim()) : ""}
-
-        ${/* 4. 特定穴・大局觀・考試重點 — the identity and the board framing
-              belong together; they answer "why does this point matter". */""}
-        ${pointIdentitySection(point)}
-        ${examPearlSection(point)}
-
-        ${/* 4. 功效與主治 — functions, indications, and the searchable tag
-              layer merged into one block. They were three separate sections
-              repeating each other's content. */""}
-        ${pointFunctionsSection(point)}
-        ${(() => {
-          // 待補 is the right word for a point nobody has filled yet, and the
-          // wrong word for ST17 乳中, which has no indications because it must
-          // never be treated. Drop the section when there is genuinely nothing
-          // rather than printing a placeholder that reads as an omission.
-          const body = indicationArticle(point);
-          return body ? studySection(contentMode === "english" ? "Indications" : "主治病症", body, "target") : "";
-        })()}
-        ${pointTagSection(point)}
-
-        ${/* 5. 配穴與臨床應用 */""}
-        ${combinePointsSection(point)}
-
-        ${/* 6. 連結・鑑別 — condition/pattern links and the compare-with axis,
-              both collapsed-by-default reference layers rather than study
-              content, so they sit after the material you actually memorise. */""}
-        ${pointLinkSection(point)}
-        ${pointCompareSection(point)}
-
-        ${/* 7. 來源・圖像・古籍・沿革 — provenance last. 基本介紹 (name
-              etymology, aliases) moved here too: it is background, not the
-              lead. */""}
-        ${studySection(contentMode === "english" ? "Modern Research & Clinical Notes" : "現代研究 / 臨床提醒", evidenceText(point), "research")}
-        ${classicalRefsSection(point)}
-        ${studySection(contentMode === "english" ? "Name, Aliases & Background" : "穴名沿革與別名", pointIntro(point))}
-        ${visualLinksSection(point)}
-        ${studySection(contentMode === "english" ? "Sources" : "參考來源", formatSources(point.sources), "sources")}
+        ${isAuricularPoint(point) ? `
+          ${studySection(contentMode === "english" ? "Location & Anatomy Zone" : "身體部位 / 耳區解剖", pointLocationArticle(point), "location")}
+          ${pointFunctionsSection(point)}
+          ${(() => {
+            const body = indicationArticle(point);
+            return body ? studySection(contentMode === "english" ? "Indications" : "主治病症", body, "target") : "";
+          })()}
+          ${combinePointsSection(point)}
+          ${visualLinksSection(point)}
+        ` : `
+          ${studySection(contentMode === "english" ? "Location & Point Finding" : "定位・取穴・解剖", pointLocationArticle(point), "location")}
+          ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", needlingArticle(point), "needle", true)}
+          ${window.AcuTingNotes ? window.AcuTingNotes.panel("point", point.code, `${point.code} ${point.nameZh || point.nameEn || ""}`.trim()) : ""}
+          ${pointIdentitySection(point)}
+          ${examPearlSection(point)}
+          ${pointFunctionsSection(point)}
+          ${(() => {
+            const body = indicationArticle(point);
+            return body ? studySection(contentMode === "english" ? "Indications" : "主治病症", body, "target") : "";
+          })()}
+          ${pointTagSection(point)}
+          ${combinePointsSection(point)}
+          ${pointLinkSection(point)}
+          ${pointCompareSection(point)}
+          ${studySection(contentMode === "english" ? "Modern Research & Clinical Notes" : "現代研究 / 臨床提醒", evidenceText(point), "research")}
+          ${classicalRefsSection(point)}
+          ${studySection(contentMode === "english" ? "Name, Aliases & Background" : "穴名沿革與別名", pointIntro(point))}
+          ${visualLinksSection(point)}
+          ${studySection(contentMode === "english" ? "Sources" : "參考來源", formatSources(point.sources), "sources")}
+        `}
       </main>
 
       <aside class="point-sidebar" aria-label="相關穴道與常用配穴">
