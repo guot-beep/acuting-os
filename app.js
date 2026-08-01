@@ -2117,6 +2117,8 @@ function renderTopicCategories() {
       active: directoryTopic === topic.id,
       action: "topic",
       value: topic.id
+    }))
+  ];
   el.innerHTML = rows.join("");
   bindDirectoryButtons(el);
 }
