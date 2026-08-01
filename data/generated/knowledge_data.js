@@ -1,5 +1,5 @@
 // GENERATED FILE - DO NOT EDIT.
-// Built by scripts/build-data.js on 2026-08-01T00:39:51.081Z
+// Built by scripts/build-data.js on 2026-08-01T00:48:12.192Z
 // Source of truth: data/herbs/formulas.json, data/herbs/herb_canon_shortlist.json,
 //                  data/pathology/conditions.json, data/sources/source_registry.json,
 //                  data/audits/missing_report.json, data/knowledge/comparisons.json
