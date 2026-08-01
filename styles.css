@@ -6526,3 +6526,10 @@ html { scroll-padding-top: 92px; }
 .channel-empty-state h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
 .channel-empty-state p { margin: 0.3rem 0; font-size: 0.9rem; }
 .channel-empty-note { opacity: 0.75; font-size: 0.82rem !important; }
+
+/* The three sidebar accordions (特定穴 / 臨床主題 / 身體部位) are now tabs in
+   #systemTabsBar, so the sidebar would just repeat them. The markup stays —
+   app.js writes into those lists and guards on their absence, but keeping them
+   avoids a null-check sweep for no gain — and the column collapses. */
+.directory-layout > .directory-sidebar { display: none; }
+.directory-layout { grid-template-columns: minmax(0, 1fr); }

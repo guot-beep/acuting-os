@@ -2236,7 +2236,25 @@ function renderSystemToggleDrawer() {
   let titleEn = "";
   let chips = [];
 
-  if (selectedSystem === "standard14") {
+  /* 特定穴, 臨床主題 and 身體部位 classify points across every channel rather
+   * than beside them, so Ting wants all three at tab level instead of buried
+   * in the sidebar under whichever system is open. Each drawer is built from
+   * the same catalog its sidebar accordion uses, so the two cannot drift. */
+  if (selectedSystem === "specific") {
+    titleZh = "⭐️ 特定穴類別 (五輸/原絡/郄/俞募/鬼穴)";
+    titleEn = "⭐️ Specific Point Groups";
+    chips = pointCategoryCatalog.map((c) => ({ id: c.id, zh: c.label_zh, en: c.label_en }));
+  } else if (selectedSystem === "topic") {
+    titleZh = "🩺 臨床主題與證型";
+    titleEn = "🩺 Clinical Topics & Patterns";
+    chips = directoryTopics
+      .filter((t) => (t.group || "clinical") === "clinical")
+      .map((t) => ({ id: t.id, zh: t.zh, en: t.en }));
+  } else if (selectedSystem === "region") {
+    titleZh = "📍 身體部位";
+    titleEn = "📍 Body Regions";
+    chips = directoryRegionGroups.map((g) => ({ id: g.id, zh: g.zh, en: g.en }));
+  } else if (selectedSystem === "standard14") {
     titleZh = "☯️ 十四正經分支體系 (14 Principal Channels Branch Grid)";
     titleEn = "☯️ 14 Principal Channels Branch Grid";
     chips = [
@@ -2358,6 +2376,15 @@ function pointMatchesSystemBranch(point) {
   if (selectedSystem === "tung") {
     return pointMatchesTungZone(point, selectedSystemBranch);
   }
+  if (selectedSystem === "specific") {
+    return pointMatchesCategory(point, selectedSystemBranch);
+  }
+  if (selectedSystem === "topic") {
+    return pointMatchesTopic(point, selectedSystemBranch);
+  }
+  if (selectedSystem === "region") {
+    return pointMatchesRegionGroup(point, selectedSystemBranch);
+  }
   if (selectedSystem === "auricular") {
     return code.includes(selectedSystemBranch) || loc.includes(selectedSystemBranch);
   }
@@ -2443,6 +2470,16 @@ function pointMatchesSystem(point, sys) {
   if (sys === "special") {
     return m.includes("Special") || m.includes("腹針") || m.includes("腕踝針") || m.includes("靳三針") || m.includes("平衡針");
   }
+  // 特定穴 cuts across the channels rather than sitting beside them: a point is
+  // a 井穴 or a 原穴 whichever channel it belongs to. Selecting this system
+  // narrows to points carrying any 特定穴 tag; the drawer then picks which.
+  if (sys === "specific") {
+    return (point.pointCategories || []).length > 0;
+  }
+  // 臨床主題 and 身體部位 apply to any point, so the tab itself narrows nothing
+  // — the drawer chip does. Returning true keeps the full set visible until a
+  // chip is picked, rather than showing an empty directory on tab click.
+  if (sys === "topic" || sys === "region") return true;
   return true;
 }
 
