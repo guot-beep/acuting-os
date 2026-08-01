@@ -79720,6 +79720,91 @@
         ]
       },
       "card_grade": "template"
+    },
+    {
+      "id": "herb.zhi_gan_cao",
+      "name_zh": "炙甘草",
+      "name_en": "Honey-fried Licorice Root",
+      "pinyin": "Zhi Gan Cao",
+      "category": "補虛藥 / Tonify Qi",
+      "category_en": "Tonify Qi",
+      "properties_taste_temp": "甘，溫",
+      "channels_entered": [
+        "脾經",
+        "胃經",
+        "心經",
+        "肺經"
+      ],
+      "source_hint": "American Dragon & Bensky Materia Medica: Tonify Qi (Prepared)",
+      "review_status": "reviewed",
+      "source_type": "sourced_american_dragon",
+      "functions": [
+        "補脾和胃",
+        "益氣復脈",
+        "潤肺止咳",
+        "緩急止痛",
+        "調和諸藥"
+      ],
+      "functions_zh": "補脾和胃，益氣復脈，潤肺止咳，緩急止痛，調和諸藥。",
+      "functions_en": "Tonifies Spleen, harmonizes Stomach, restores pulse and Qi, moistens Lungs, stops cough, relieves spasms and pain, harmonizes all herbs.",
+      "indications_zh": [
+        "脾胃氣虛，倦怠乏力，食少便溏",
+        "心氣虛，心悸怔忡，脈結代（如炙甘草湯證）",
+        "肺陰虛或肺氣虛之乾咳少痰、氣喘",
+        "脘腹及四肢急痛、肌肉痙攣"
+      ],
+      "applications_zh": [
+        "心律失常、心悸、期外收縮（心氣血兩虛型）",
+        "脾胃虛寒、慢性胃炎、胃潰瘍疼痛",
+        "慢性支氣管炎、肺氣腫、乾咳無痰",
+        "腓腸肌痙攣、胃腸平滑肌痙攣腹痛",
+        "慢性疲勞綜合症、體虛乏力",
+        "阿狄森氏病（腎上腺皮質功能減退症）"
+      ],
+      "applications_en": [
+        "Cardiac arrhythmia, palpitations, premature beats (Heart Qi & Blood deficiency)",
+        "Spleen-Stomach deficiency-cold, chronic gastritis, gastric ulcer pain",
+        "Chronic bronchitis, emphysema, dry cough without sputum",
+        "Gastrocnemius muscle spasm, gastrointestinal smooth muscle spasm",
+        "Chronic fatigue syndrome, debility and physical exhaustion",
+        "Addison's disease (Adrenocortical insufficiency)"
+      ],
+      "modern_research_zh": [
+        "腎上腺皮質激素樣作用（甘草甜素、甘草次酸）",
+        "抗心律失常、改善心肌供血、穩定心電",
+        "解痙止痛（抑制胃腸及骨骼肌平滑肌痙攣）",
+        "抗潰瘍、促進胃黏膜上皮修復與黏液分泌",
+        "保肝、解毒、促進毒素代謝與化解",
+        "鎮咳、袪痰、潤滑呼吸道黏膜"
+      ],
+      "modern_research_en": [
+        "Adrenocortical hormone-like effects (glycyrrhizin, glycyrrhetinic acid)",
+        "Anti-arrhythmic, improves myocardial blood supply, stabilizes ECG",
+        "Antispasmodic and analgesic (relieves GI and skeletal smooth muscle spasms)",
+        "Anti-ulcer, promotes gastric mucosal repair and mucus secretion",
+        "Hepatoprotective, detoxifying, accelerates toxin metabolism",
+        "Antitussive, expectorant, lubricates respiratory mucosa"
+      ],
+      "cautions_zh": "濕盛中滿、嘔吐忌服；水腫、高血壓患者不宜大量或長期單獨服用（因水鈉滯留）。不可與甘遂、大戟、海藻、芫花同用（十八反）。",
+      "cautions_en": "Contraindicated in cases of excessive dampness with fullness or vomiting. Caution with edema and hypertension (causes sodium retention). Incompatible with Gansui, Daji, Haizao, Yuanhua (Eighteen Incompatibilities).",
+      "dosage_range": "3-9g (high dose up to 15-30g for Zhi Gan Cao Tang)",
+      "american_dragon_url": "https://www.americandragon.com/IndividualHerbs/ZhiGanCao.html",
+      "cloudtcm_url": "https://cloudtcm.com/herb/263",
+      "field_sources": {
+        "functions_zh": "American Dragon & Bensky Materia Medica",
+        "applications_zh": "American Dragon & Curriculum Notes",
+        "modern_research_zh": "American Dragon Evidence-Based Pharmacology"
+      },
+      "related_formulas": [
+        "formula.zhi_gan_cao_tang",
+        "formula.gui_zhi_tang",
+        "formula.si_ni_san",
+        "formula.xiao_jian_zhong_tang",
+        "formula.gan_mai_da_zao_tang",
+        "formula.bu_zhong_yi_qi_tang",
+        "formula.si_jun_zi_tang",
+        "formula.shao_yao_gan_cao_tang"
+      ]
     }
   ],
   "batch_summary": {
