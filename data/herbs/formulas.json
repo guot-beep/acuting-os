@@ -180,31 +180,46 @@
           "herb_id": "herb.gui_zhi",
           "name_zh": "桂枝",
           "name_en": "Cinnamon Twig",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "解肌發表，溫通經脈"
         },
         {
           "herb_id": "herb.bai_shao",
           "name_zh": "白芍",
           "name_en": "White Peony Root",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "斂陰和營，益陰止汗"
         },
         {
           "herb_id": "herb.sheng_jiang",
           "name_zh": "生薑",
           "name_en": "Fresh Ginger",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "辛溫散寒，溫胃止嘔"
         },
         {
           "herb_id": "herb.da_zao",
           "name_zh": "大棗",
           "name_en": "Jujube Date",
-          "dosage": "6g (12枚)"
+          "dosage": "6g (12枚)",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "甘平補脾，益氣養血"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "甘溫調和諸藥，益氣和中"
         }
       ],
       "actions_en": [
@@ -698,25 +713,37 @@
           "herb_id": "herb.ma_huang",
           "name_zh": "麻黃",
           "name_en": "Ephedra Stem",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "發汗解表，宣肺平喘"
         },
         {
           "herb_id": "herb.gui_zhi",
           "name_zh": "桂枝",
           "name_en": "Cinnamon Twig",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "溫通經脈，助麻黃發汗"
         },
         {
           "herb_id": "herb.xing_ren",
           "name_zh": "杏仁",
           "name_en": "Apricot Seed",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "降利肺氣，助麻黃平喘"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
-          "dosage": "3g"
+          "dosage": "3g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "調和諸藥，緩和麻桂峻烈之性"
         }
       ],
       "actions_en": [
@@ -1202,7 +1229,8 @@
           "role_reason_en": "Releases exterior and diffuses Lung qi",
           "elucidation_zh": "發汗解表、宣肺平喘",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g"
+          "granule_reference_g": "1.8g",
+          "in_formula_zh": "發汗解表，宣肺平喘"
         },
         {
           "herb_id": "herb.gui_zhi",
@@ -1217,7 +1245,8 @@
           "role_reason_en": "Warms channels and assists Ma Huang in releasing exterior",
           "elucidation_zh": "溫經解肌、散寒通脈",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g"
+          "granule_reference_g": "1.8g",
+          "in_formula_zh": "解肌發表，溫陽化氣"
         },
         {
           "herb_id": "herb.xi_xin",
@@ -1232,7 +1261,8 @@
           "role_reason_en": "Warms Lungs and transforms fluid retention",
           "elucidation_zh": "溫肺化飲、散寒止痛",
           "decoction_reference_g": "3g",
-          "granule_reference_g": "0.6g"
+          "granule_reference_g": "0.6g",
+          "in_formula_zh": "散寒止痛，溫肺化飲"
         },
         {
           "herb_id": "herb.gan_jiang",
@@ -1247,7 +1277,8 @@
           "role_reason_en": "Warms spleen and transforms phlegm-fluid",
           "elucidation_zh": "溫中散寒、溫肺化飲",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g"
+          "granule_reference_g": "1.8g",
+          "in_formula_zh": "溫脾肺之陽，溫化水飲"
         },
         {
           "herb_id": "herb.ban_xia",
@@ -1256,13 +1287,14 @@
           "pinyin_toned": "Bàn Xià",
           "dose_range": "9g",
           "dose_g": "9",
-          "role_zh": "臣",
-          "role_en": "Deputy",
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "role_reason_zh": "燥濕化痰，降逆和胃",
           "role_reason_en": "Dries dampness and transforms phlegm",
           "elucidation_zh": "燥濕化痰、降逆止嘔",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g"
+          "granule_reference_g": "1.8g",
+          "in_formula_zh": "燥濕化痰，降逆和胃"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -1277,7 +1309,8 @@
           "role_reason_en": "Harmonizes ying and preserves yin against over-sweating",
           "elucidation_zh": "養血柔肝、斂陰和營",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g"
+          "granule_reference_g": "1.8g",
+          "in_formula_zh": "養血斂陰，防大汗傷陰"
         },
         {
           "herb_id": "herb.wu_wei_zi",
@@ -1292,7 +1325,8 @@
           "role_reason_en": "Astringes Lung qi to stop cough",
           "elucidation_zh": "斂肺止咳、滋腎生津",
           "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g"
+          "granule_reference_g": "1.2g",
+          "in_formula_zh": "斂肺止咳，收耗散之肺氣"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -2113,31 +2147,46 @@
           "herb_id": "herb.jin_yin_hua",
           "name_zh": "金銀花",
           "name_en": "Honeysuckle Flower",
-          "dosage": "30g"
+          "dosage": "30g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "清熱解毒，辟穢化濁"
         },
         {
           "herb_id": "herb.lian_qiao",
           "name_zh": "連翹",
           "name_en": "Forsythia Fruit",
-          "dosage": "30g"
+          "dosage": "30g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "清熱解毒，透表散結"
         },
         {
           "herb_id": "herb.jie_geng",
           "name_zh": "桔梗",
           "name_en": "Platycodon Root",
-          "dosage": "18g"
+          "dosage": "18g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "宣肺利咽，載藥上行"
         },
         {
           "herb_id": "herb.bo_he",
           "name_zh": "薄荷",
           "name_en": "Field Mint",
-          "dosage": "18g"
+          "dosage": "18g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "疏散風熱，清利頭目"
         },
         {
           "herb_id": "herb.zhu_ye",
           "name_zh": "竹葉",
           "name_en": "Lophatherum Stem & Leaves",
-          "dosage": "12g"
+          "dosage": "12g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "清熱除煩，導熱下行"
         },
         {
           "herb_id": "herb.gan_cao",
@@ -2155,13 +2204,19 @@
           "herb_id": "herb.dan_dou_chi",
           "name_zh": "淡豆豉",
           "name_en": "Prepared Soybean",
-          "dosage": "15g"
+          "dosage": "15g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "解表透熱，疏散風熱"
         },
         {
           "herb_id": "herb.niu_bang_zi",
           "name_zh": "牛蒡子",
           "name_en": "Burdock Fruit",
-          "dosage": "18g"
+          "dosage": "18g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "疏散風熱，宣肺利咽"
         },
         {
           "herb_id": "herb.lu_gen",
@@ -2510,49 +2565,73 @@
           "herb_id": "herb.sang_ye",
           "name_zh": "桑葉",
           "name_en": "Mulberry Leaf",
-          "dosage": "7.5g"
+          "dosage": "7.5g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "疏散風熱，清宣肺熱"
         },
         {
           "herb_id": "herb.ju_hua",
           "name_zh": "菊花",
           "name_en": "Chrysanthemum Flower",
-          "dosage": "3g"
+          "dosage": "3g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "疏散風熱，清利頭目"
         },
         {
           "herb_id": "herb.lian_qiao",
           "name_zh": "連翹",
           "name_en": "Forsythia Fruit",
-          "dosage": "4.5g"
+          "dosage": "4.5g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "清熱解毒"
         },
         {
           "herb_id": "herb.bo_he",
           "name_zh": "薄荷",
           "name_en": "Field Mint",
-          "dosage": "2.5g"
+          "dosage": "2.5g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "助桑菊疏散上焦風熱"
         },
         {
           "herb_id": "herb.jie_geng",
           "name_zh": "桔梗",
           "name_en": "Platycodon Root",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "宣肺利咽止咳"
         },
         {
           "herb_id": "herb.xing_ren",
           "name_zh": "杏仁",
           "name_en": "Apricot Seed",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "降氣止咳平喘"
         },
         {
           "herb_id": "herb.lu_gen",
           "name_zh": "蘆根",
           "name_en": "Reed Rhizome",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "清熱生津止渴"
         },
         {
           "herb_id": "herb.gan_cao",
           "name_zh": "甘草",
           "name_en": "Licorice Root",
-          "dosage": "2.5g"
+          "dosage": "2.5g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "調和諸藥"
         }
       ],
       "actions_en": [
@@ -5026,25 +5105,37 @@
           "herb_id": "herb.shi_gao",
           "name_zh": "石膏",
           "name_en": "Gypsum",
-          "dosage": "30g"
+          "dosage": "30g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "辛甘大寒，清熱瀉火，除煩止渴"
         },
         {
           "herb_id": "herb.zhi_mu",
           "name_zh": "知母",
           "name_en": "Anemarrhena Rhizome",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "苦甘寒質潤，助石膏清熱，滋陰潤燥"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
-          "dosage": "3g"
+          "dosage": "3g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "益胃和中，防止大寒傷胃"
         },
         {
           "herb_id": "herb.jing_mi",
           "name_zh": "粳米",
           "name_en": "Nonglutinous Rice",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "健脾益胃，護胃保津"
         }
       ],
       "pattern_indications_zh": [
@@ -5686,49 +5777,53 @@
           "herb_zh": "黃芩",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "黃連解毒湯中加入黃芩，主要有以下兩個原因：\n清熱瀉火、燥濕止痢： 黃芩味苦寒，入肺、心、膽經，擅長清熱瀉火，尤其對於濕熱所致的痢疾、腹痛、發熱、口苦等症狀有顯著療效。\n解毒消腫： 黃芩具備解毒消腫之效，能有效抑制細菌病毒，並清除體內毒素，對於各種熱毒所導致的瘡瘍、腫痛、咽喉腫痛等症狀，都有較好的療效。\n因此，黃芩在黃連解毒湯中起到清熱解毒、燥濕止痢的重要作用，與其他藥材共同發揮協同作用，達到更好的治療效果。",
           "decoction_reference_g": "12g",
           "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "清上焦肺火及肌表熱邪"
         },
         {
           "herb_zh": "梔子",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "12g",
           "elucidation_zh": "黃連解毒湯中加入梔子，主要基於以下兩點原因：\n清熱瀉火，涼血解毒： 梔子性寒，味苦，入心、肝、胃經，具有清熱瀉火、涼血解毒的功效。可輔助黃連、黃柏等藥物，更有效地清除體內熱毒，治療熱毒壅盛、心煩不寧、口舌生瘡、目赤腫痛等症狀。\n緩解黃連、黃柏的燥性： 黃連、黃柏等藥性寒涼，容易傷胃，而梔子性寒而不燥，可緩解其燥性，保護脾胃，避免藥物過於寒涼，對胃腸造成不良影響。",
           "decoction_reference_g": "12g",
           "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "通瀉三焦火邪，引熱下行"
         },
         {
           "herb_zh": "黃連",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "9g",
           "elucidation_zh": "黃連解毒湯中包含黃連，主要源於其 清熱解毒 的功效。黃連味苦寒，入心、肝、胃經，具有 瀉心火、清肝火、燥濕止瀉 等作用。\n方劑中以黃連為主藥，可 針對熱毒熾盛、心煩躁熱、口渴便祕、舌苔黃膩等症狀，起到清熱解毒、瀉火通便的功效。因此，黃連是黃連解毒湯中不可或缺的藥材，其清熱解毒的功效對於治療熱毒熾盛之證至關重要。",
           "decoction_reference_g": "9g",
           "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "瀉心火，清中焦濕熱"
         },
         {
           "herb_zh": "黃柏",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "黃連解毒湯中加入黃柏，主要基於以下兩點原因：\n1. 清熱燥濕，瀉火解毒：黃柏性寒，味苦，入腎、膀胱經，具有清熱燥濕、瀉火解毒之效。與黃連、梔子等藥物搭配，可增強清熱解毒之力，對於熱毒蘊結所致的各種疾病，如咽喉腫痛、口舌生瘡、濕熱下注等，具有較好的治療效果。\n2. 抑制細菌感染：現代研究表明，黃柏中含有多種抗菌成分，對金黃色葡萄球菌、大腸桿菌、綠膿桿菌等多種致病菌具有抑制作用。在黃連解毒湯中，黃柏可與其他藥物協同作用，抑制細菌感染，促進傷口癒合。",
           "decoction_reference_g": "6g",
           "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "瀉下焦腎火及濕熱"
         }
       ],
       "pattern_indications_zh": [
@@ -7439,121 +7534,131 @@
           "herb_zh": "車前子",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "15g",
           "elucidation_zh": "龍膽瀉肝湯中加入車前子，主要基於其利水滲濕、清熱解毒的功效，與方劑整體清熱利濕、瀉火解毒的功效相輔相成。\n車前子性寒，味甘，入肝、腎經，能利水滲濕，清熱解毒，並能清肝熱而明目。龍膽瀉肝湯中常因肝膽濕熱、濕熱下注而引起泌尿系統感染，車前子利水滲濕，可促進體內濕熱排出，緩解尿路感染症狀，同時也能清熱解毒，進一步減輕肝膽濕熱，達到標本兼治的效果。",
           "decoction_reference_g": "15g",
           "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "清熱利尿，滲濕通淋"
         },
         {
           "herb_zh": "生地黃",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "15g",
           "elucidation_zh": "龍膽瀉肝湯中加入生地黃，主要有以下兩方面原因：\n清熱涼血： 生地黃性寒，味甘苦，入心、肝、腎經，具有清熱涼血、滋陰潤燥的作用。龍膽瀉肝湯主治肝膽濕熱，而生地黃可清瀉肝火，涼血止血，緩解因肝火上炎引起的目赤腫痛、口苦咽乾、皮膚發紅等症狀。\n滋陰降火： 龍膽瀉肝湯中使用黃芩、梔子等清熱燥濕藥物，可能導致陰液虧損。生地黃可滋陰降火，與其他藥物協同作用，平衡藥性，防止藥物過於燥烈，避免對人��造成不良影響。",
           "decoction_reference_g": "15g",
           "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "滋陰養血，清熱涼血"
         },
         {
           "herb_zh": "當歸",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "龍膽瀉肝湯中加入當歸，主要原因有二：\n緩解肝火上炎之症: 當歸味甘辛，性溫，入心、肝、脾經，具有補血活血、養血潤燥之效。肝火上炎常伴隨頭暈目眩、口苦咽乾等症，當歸可滋陰養血，緩解肝火，達到清熱解毒之效。\n促進藥物流通: 龍膽瀉肝湯以清熱瀉火為主，但部分藥物性寒，容易傷及脾胃。當歸可調節氣血運行，促進藥物流通，避免藥物寒涼直達脾胃，減輕其副作用。\n因此，當歸在龍膽瀉肝湯中扮演著重要角色，既能緩解肝火上炎，又能保護脾胃，使整體方劑達到更好的療效。",
           "decoction_reference_g": "12g",
           "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "養血活血，防苦燥傷陰"
         },
         {
           "herb_zh": "黃芩",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "龍膽瀉肝湯中加入黃芩，主要基於以下兩點原因：\n清熱瀉火： 黃芩性寒，味苦，入肺、心、膽、胃經，具有清熱瀉火、燥濕止痢、止咳化痰的功效。龍膽瀉肝湯主治肝膽濕熱，因此需要黃芩來清泄肝膽之火，達到清熱解毒的作用。\n瀉肝膽火： 黃芩能瀉肝膽之火，與龍膽草、柴胡、梔子等藥物配合，共同達到瀉肝膽實火，降肝火，解鬱熱，消炎止痛的功效。\n因此，黃芩在龍膽瀉肝湯中扮演著重要的角色，是藥方清熱瀉火、瀉肝膽火的重要組成部分。",
           "decoction_reference_g": "12g",
           "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "苦寒清熱，助龍膽草瀉肝膽火"
         },
         {
           "herb_zh": "澤瀉",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "12g",
           "elucidation_zh": "龍膽瀉肝湯中加入澤瀉，主要基於以下兩點原因：\n清熱利濕： 澤瀉味甘淡，性寒，入膀胱、腎經，具有清熱利濕、瀉火除煩的功效。龍膽瀉肝湯主治肝膽濕熱，而澤瀉可以清熱利濕，幫助疏泄肝膽之火，緩解溼熱症狀。\n利水通淋： 澤瀉亦能利水通淋，促進水液代謝，對於肝膽濕熱所致的尿路感染、小便不利等症狀，具有輔助治療作用。\n因此，澤瀉在龍膽瀉肝湯中扮演着重要的角色，能有效地配合其他藥材，達到清熱利濕、疏肝利膽的功效。",
           "decoction_reference_g": "12g",
           "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "利水滲濕，引濕熱下行"
         },
         {
           "herb_zh": "梔子",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "臣",
+          "role_en": "Deputy",
           "dose_range": "12g",
           "elucidation_zh": "龍膽瀉肝湯中加入梔子，主要基於以下兩點原因：\n清熱瀉火，涼血解毒：梔子味苦寒，入肝、胃經，具有清熱瀉火、涼血解毒之效。龍膽瀉肝湯主治肝膽濕熱，症見目赤腫痛、口苦咽乾、脅肋脹痛等，梔子可有效清瀉肝膽之火，減輕炎症反應。\n緩解肝鬱氣滯：梔子亦能疏肝理氣，緩解肝鬱氣滯所致的胸悶、脅痛、煩躁等症狀。龍膽瀉肝湯中加入梔子，不僅能清熱瀉火，還能調節肝氣，促進肝臟功能的恢復。",
           "decoction_reference_g": "12g",
           "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "清熱利濕，導熱從小便出"
         },
         {
           "herb_zh": "柴胡",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "9g",
           "elucidation_zh": "龍膽瀉肝湯中加入柴胡，主要有以下兩個原因：\n疏肝解鬱，調和肝脾：柴胡性微寒，味苦，善於疏肝解鬱，和解肝脾。龍膽瀉肝湯主治肝膽濕熱，常伴有胸脅脹滿、口苦咽乾、煩躁易怒等肝鬱氣滯之症。柴胡的加入，可疏解肝氣鬱結，使肝氣條達，脾胃和暢，達到調和肝脾的作用。\n配合龍膽草，清熱利濕：柴胡與龍膽草相配，清熱利濕的效果更佳。龍膽草性寒，味苦，善於清熱瀉火，利濕退黃。柴胡則以疏肝解鬱為主，兩者合用，既能清熱利濕，又能疏肝解鬱，對於肝膽濕熱所致的各種症狀都有很好的治療效果。",
           "decoction_reference_g": "9g",
           "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "引藥入肝膽經"
         },
         {
           "herb_zh": "龍膽草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "君",
+          "role_en": "Chief",
           "dose_range": "9g",
           "elucidation_zh": "龍膽瀉肝湯中包含龍膽草，主要因其具有以下兩大功效：\n清熱瀉火: 龍膽草味苦寒，能清泄肝膽之火，對於肝火上炎所致的目赤腫痛、口苦咽乾、脅肋脹痛等症狀，有明顯的療效。\n利濕退黃: 龍膽草亦可利濕退黃，對於濕熱蘊結所導致的黃疸、小便不利、腹脹腹痛等症狀，亦有治療效果。\n龍膽草的清熱瀉火與利濕退黃功效，與龍膽瀉肝湯主治的肝膽濕熱證相吻合，因此成為方中重要組成藥物之一。",
           "decoction_reference_g": "9g",
           "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "大苦大寒，瀉肝膽實火，清下焦濕熱"
         },
         {
           "herb_zh": "木通",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "佐",
+          "role_en": "Assistant",
           "dose_range": "6g",
           "elucidation_zh": "龍膽瀉肝湯中包含木通，主要原因有二：\n清熱利濕: 木通性寒，味甘，具有清熱利濕、通淋止痛的功效。龍膽瀉肝湯用於治療濕熱下注所致的目赤腫痛、耳聾、口苦咽乾、小便不利等症，而木通的清熱利濕作用有助於消除濕熱，改善上述症狀。\n通利水道: 木通能通利水道，促進水液代謝，有助於排出體內濕熱，進一步達到清熱利濕的效果。龍膽瀉肝湯中其他藥材如龍膽草、黃芩等也具有清熱利濕作用，而木通的通利水道作用可促進藥效發揮，使藥物更有效地作用於病竈。",
           "decoction_reference_g": "6g",
           "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "清熱利尿，導火下行"
         },
         {
           "herb_zh": "甘草",
           "herb_en": null,
           "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
+          "role_zh": "使",
+          "role_en": "Envoy",
           "dose_range": "6g",
           "elucidation_zh": "龍膽瀉肝湯中加入甘草，主要原因有二：\n一、 緩和藥性：龍膽瀉肝湯以龍膽草、柴胡等苦寒藥為主，性寒烈，易傷脾胃。甘草性甘溫，味甘緩和藥性，保護脾胃，避免藥物過於寒涼，損傷正氣。\n二、 調和藥性：甘草味甘，能調和諸藥，使藥性協調，發揮最佳療效。龍膽瀉肝湯中各藥材性質各異，甘草能調和各藥，使藥性相輔相成，達到治療目的。",
           "decoction_reference_g": "6g",
           "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)",
+          "in_formula_zh": "調和諸藥，和中"
         }
       ],
       "actions_en": [
@@ -13304,43 +13409,64 @@
           "herb_id": "herb.chai_hu",
           "name_zh": "柴胡",
           "name_en": "Bupleurum Root",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "疏肝解鬱，透熱外達"
         },
         {
           "herb_id": "herb.dang_gui",
           "name_zh": "當歸",
           "name_en": "Chinese Angelica",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "養血和血，柔肝止痛"
         },
         {
           "herb_id": "herb.bai_shao",
           "name_zh": "白芍",
           "name_en": "White Peony Root",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "養血斂陰，柔肝緩急"
         },
         {
           "herb_id": "herb.bai_zhu",
           "name_zh": "白朮",
           "name_en": "White Atractylodes Rhizome",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "健脾燥濕，益氣健脾"
         },
         {
           "herb_id": "herb.fu_ling",
           "name_zh": "茯苓",
           "name_en": "Poria Sclerotium",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "健脾利濕，寧心安神"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
-          "dosage": "4.5g"
+          "dosage": "4.5g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "益氣補中，緩急止痛"
         },
         {
           "herb_id": "herb.bo_he",
           "name_zh": "薄荷",
           "name_en": "Field Mint",
-          "dosage": "3g"
+          "dosage": "3g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "助柴胡疏散肝鬱之熱"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -18421,43 +18547,64 @@
           "herb_id": "herb.ren_shen",
           "name_zh": "人參",
           "name_en": "Ginseng Root",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "大補元氣，補脾益肺"
         },
         {
           "herb_id": "herb.bai_zhu",
           "name_zh": "白朮",
           "name_en": "White Atractylodes Rhizome",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "健脾燥濕，加強補脾之力"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "補中益氣，調和諸藥"
         },
         {
           "herb_id": "herb.dang_gui",
           "name_zh": "當歸",
           "name_en": "Chinese Angelica",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "養血和營，協同補氣"
         },
         {
           "herb_id": "herb.chen_pi",
           "name_zh": "陳皮",
           "name_en": "Tangerine Peel",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "理氣和胃，使補而不滯"
         },
         {
           "herb_id": "herb.sheng_ma",
           "name_zh": "升麻",
           "name_en": "Cimicifuga Rhizome",
-          "dosage": "3g"
+          "dosage": "3g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "引清氣上行，升提中氣"
         },
         {
           "herb_id": "herb.chai_hu",
           "name_zh": "柴胡",
           "name_en": "Bupleurum Root",
-          "dosage": "3g"
+          "dosage": "3g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "引少陽之氣上行，升陽舉陷"
         }
       ],
       "actions_en": [
@@ -21596,37 +21743,55 @@
           "herb_id": "herb.shu_di_huang",
           "name_zh": "熟地黃",
           "name_en": "Prepared Rehmannia",
-          "dosage": "24g"
+          "dosage": "24g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "滋陰補腎，填精益髓"
         },
         {
           "herb_id": "herb.shan_zhu_yu",
           "name_zh": "山茱萸",
           "name_en": "Asiatic Dogwood Fruit",
-          "dosage": "12g"
+          "dosage": "12g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "補益肝腎，澀精固脫"
         },
         {
           "herb_id": "herb.shan_yao",
           "name_zh": "山藥",
           "name_en": "Chinese Yam",
-          "dosage": "12g"
+          "dosage": "12g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "健脾固腎，益氣養陰"
         },
         {
           "herb_id": "herb.ze_xie",
           "name_zh": "澤瀉",
           "name_en": "Alisma Rhizome",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "瀉腎火，利濕濁，防熟地滋膩"
         },
         {
           "herb_id": "herb.fu_ling",
           "name_zh": "茯苓",
           "name_en": "Poria Sclerotium",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "淡滲脾濕，助山藥健脾"
         },
         {
           "herb_id": "herb.mu_dan_pi",
           "name_zh": "牡丹皮",
           "name_en": "Moutan Cortex",
-          "dosage": "9g"
+          "dosage": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "in_formula_zh": "清肝火，涼血熱，防山茱萸溫燥"
         }
       ],
       "actions_en": [
@@ -47457,13 +47622,19 @@
           "herb_id": "herb.chai_hu",
           "name_zh": "柴胡",
           "name_en": "Bupleurum Root",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "in_formula_zh": "透解鬱熱，疏肝理氣"
         },
         {
           "herb_id": "herb.zhi_shi",
           "name_zh": "枳實",
           "name_en": "Immature Bitter Orange",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "in_formula_zh": "破氣消積，行氣導滯，理脾和胃"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -47475,7 +47646,10 @@
           "herb_id": "herb.zhi_gan_cao",
           "name_zh": "炙甘草",
           "name_en": "Honey-fried Licorice Root",
-          "dosage": "6g"
+          "dosage": "6g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "in_formula_zh": "益氣和中，調和諸藥，緩急止痛"
         }
       ],
       "pattern_indications_zh": [
