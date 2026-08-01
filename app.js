@@ -4179,6 +4179,23 @@ function externalPointLinks(point) {
     ].filter(link => isValidUrl(link.url));
   }
 
+  if (String(point.system || point.meridian || "").includes("master_tung") || String(point.meridian || "").includes("Master Tung") || String(point.code || "").startsWith("T")) {
+    const elotus = visualLinks.find(v => v && v.url && v.url.includes("mastertungacupuncture"))?.url || sources.find(s => typeof s === "string" && s.includes("mastertungacupuncture"));
+    const heritage = visualLinks.find(v => v && v.url && v.url.includes("tungs-acupuncture.com"))?.url || sources.find(s => typeof s === "string" && s.includes("tungs-acupuncture.com"));
+    return [
+      { label: contentMode === "english" ? "Tung Heritage (ZH)" : "董氏心氣神針傳承網", url: heritage, kind: "chinese" },
+      { label: contentMode === "english" ? "eLotus CORE (Master Tung)" : "eLotus CORE (董氏奇穴)", url: elotus, kind: "english" }
+    ].filter(link => isValidUrl(link.url));
+  }
+
+  if (String(point.meridian || "").includes("Scalp") || String(point.code || "").startsWith("MS")) {
+    const elotus = visualLinks.find(v => v && v.url && v.url.includes("mastertungacupuncture"))?.url || sources.find(s => typeof s === "string" && s.includes("mastertungacupuncture"));
+    return [
+      { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
+      { label: contentMode === "english" ? "WHO Scalp Standard (eLotus)" : "eLotus 國際標準頭皮針", url: elotus, kind: "english" }
+    ].filter(link => isValidUrl(link.url));
+  }
+
   // 1. CloudTCM (中文)
   const storedChinese = sources.find((source) => /cloudtcm\.com\/acupoint\/\d+/.test(source));
   const chinese = storedChinese || chinesePointReference(point);
