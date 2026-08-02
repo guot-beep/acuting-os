@@ -2692,3 +2692,9 @@ Current repo state as of this log:
 - Added controlled 行氣 / Move Qi and 活血 / Invigorate Blood tags while preserving all existing clinical indications, safety notes, and pairings.
 - Extended the extra-point validator to flag mismatched `functionsZhList` / `functionsEnList` pairs when structured function rows are present.
 - Validation PASS: exact-source HTTP re-checks, four-row function-render behavior test, build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, JSON parse, and diff check.
+# 2026-08-02 Codex — Restart 72 extra-point audit and complete EX-HN1 Sishencong
+- Reset extra-point completion to Ting's strict four-source contract: NCBAHM Board Outline, course curriculum, eLotus, and American Dragon pinyin-index lookup, plus paired bilingual card layers and live exact-link checks.
+- EX-HN1 四神聰 is the first full-contract card: Board Appendix A scope, curriculum p.12 content, exact eLotus page, exact AD index/page, systematic functions, complete AD indications, source-variant needling, moxa, safety/source gaps, bilingual tags, pairings, identities, exam fields, aliases, and field provenance.
+- Verified WHO's proposed international nomenclature: extra points use `EX` plus region (`HN`, `CA`, `B`, `UE`, `LE`); Sishencong is retained as `EX-HN1`, while curriculum/AD `M-HN-1` is stored as a source-specific alternate code.
+- Validator baseline is intentionally now 1/72 strict-template complete and 1/72 four-source-audit complete; 71 records return to the worklist rather than inheriting the earlier narrow 48/72 issue count.
+- Validation PASS: live source/link checks, four-row functions render, exact hero-link behavior, build-data, extra audit, validate-data (769 runtime), interactions, point IDs, content-junk, app syntax, JSON parse, and diff check.

@@ -7,37 +7,105 @@
     "pinyin": "Sishencong",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "頭部，百會穴（GV20）前後左右各旁開1寸處，共4個穴位。",
-    "locationEn": "A group of 4 points at the vertex of the head, 1 cun respectively posterior, anterior, and lateral to Baihui (GV 20).",
-    "techniqueNotes": "皮下平刺0.5~1.0寸。可灸。\nSubcutaneous insertion 0.5-1.0 cun. Moxibustion applicable.",
-    "functions": "鎮靜安神，清頭明目，平肝熄風",
-    "functionsEn": "Calms the spirit; Pacifies wind; Clears the head and brightens the eyes",
+    "location": "頭頂部，以百會穴（GV20）為中心，前、後、左、右各1寸，共4個穴位。",
+    "locationEn": "A group of four points at the vertex, located 1 cun anterior, posterior, and to each side of Baihui (GV20).",
+    "cunMeasurement": "先定百會（GV20），再向前、後、左、右各量1寸；四點呈十字形環繞百會。",
+    "anatomyZh": "四點均位於頭頂頭皮區並環繞百會。Board Outline、現有課件、eLotus 與 American Dragon 均未提供逐層神經血管解剖，本卡不自行補造深層結構。",
+    "anatomyEn": "All four points lie in the vertex scalp region surrounding Baihui. The Board Outline, current course material, eLotus, and American Dragon do not provide layer-by-layer neurovascular anatomy, so deeper structures are not inferred here.",
+    "techniqueNotes": "課件與 eLotus：皮下刺0.5~1.0寸；課件另強調四針均朝中心。American Dragon：皮下刺0.5~1.0寸，另列斜刺0.5~1.0寸或橫刺0.5~1.5寸；可將四穴成組針刺，或由百會透刺。eLotus 與 AD 均記艾灸適用。\nCurriculum and eLotus: subcutaneous insertion 0.5-1.0 cun; the curriculum additionally directs all needles toward the center. American Dragon: subcutaneous 0.5-1.0 cun, with additional slanted 0.5-1.0 cun or transverse 0.5-1.5 cun methods; the four points may be needled as a group or through-needled from Baihui. eLotus and AD state that moxibustion is applicable.",
+    "acumethodZh": "課件／eLotus：皮下刺0.5~1.0寸，課件要求針尖朝中心。AD：皮下刺0.5~1.0寸；另列斜刺0.5~1.0寸、橫刺0.5~1.5寸，以及四穴成組或由百會透刺。不同方法不視為單一共識。",
+    "acumethodEn": "Curriculum/eLotus: subcutaneous insertion 0.5-1.0 cun, with the curriculum directing the needles toward the center. AD: subcutaneous 0.5-1.0 cun; it additionally lists slanted 0.5-1.0 cun, transverse 0.5-1.5 cun, and group needling or through-needling from Baihui. These methods are retained as source variants, not a single consensus.",
+    "moxaZh": "eLotus 與 American Dragon 均記艾灸適用，但未提供時間或壯數；不補造劑量。",
+    "moxaEn": "eLotus and American Dragon state that moxibustion is applicable but give no duration or cone count; no dose is inferred.",
+    "functions": "安神，平肝，熄內風，明目聰耳",
+    "functionsEn": "Calms the Shen; Pacifies the Liver; Subdues Interior Wind; Benefits the Eyes and Ears",
+    "functionsZhList": [
+      "安神",
+      "平肝",
+      "熄內風",
+      "明目聰耳"
+    ],
+    "functionsEnList": [
+      "Calms the Shen",
+      "Pacifies the Liver",
+      "Subdues Interior Wind",
+      "Benefits the Eyes and Ears"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "四穴一組，環繞百會（GV20）",
+      "WHO 國際參考碼 EX-HN1；課件與 AD 另用 M-HN-1"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Four-point group surrounding Baihui (GV20)",
+      "WHO international reference code EX-HN1; curriculum and AD use M-HN-1"
+    ],
+    "exam_star": 0,
+    "exam_importance": "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴範圍；課件未以星號標記，因此不自行加星。",
+    "exam_importance_en": "Listed in the NCBAHM 2026 ACPL Appendix A extra-point scope; the course handout does not mark it with an exam star, so none is inferred.",
+    "exam_pearl": "四穴以百會為中心前後左右各1寸；課件強調針尖朝中心。功效核心為安神、平肝熄風，AD 另列明目聰耳。",
+    "exam_pearl_en": "Four points lie 1 cun anterior, posterior, and lateral to Baihui; the curriculum directs the needles toward the center. Core actions are calming the Shen and pacifying Liver/Wind, with AD additionally listing benefits to the eyes and ears.",
     "patterns": [
       "頭痛",
       "眩暈",
       "失眠",
       "健忘",
-      "癲癇"
+      "癲癇",
+      "偏側頭痛",
+      "全頭痛",
+      "眼病",
+      "巔頂腫脹感",
+      "神經衰弱（AD 歷史用語）",
+      "抽搐發作",
+      "中風",
+      "躁鬱（AD 原頁 mania-depression）",
+      "耳聾"
     ],
     "patternsEn": [
       "Headache",
       "Vertigo",
       "Insomnia",
       "Poor memory",
-      "Epilepsy"
+      "Epilepsy",
+      "One-sided headache",
+      "Generalized headache",
+      "Disorders of the eyes",
+      "Swollen sensation at the vertex",
+      "Neurasthenia (historical wording in AD)",
+      "Seizures",
+      "Windstroke",
+      "Mania-depression (wording used by AD)",
+      "Deafness"
     ],
-    "cautions": "顱骨未閉合嬰幼兒慎用。",
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
+    "action_tags_zh": ["安神定志", "平肝熄風", "明目", "聰耳"],
+    "action_tags_en": ["Calm the Spirit & Settle the Mind", "Pacify the Liver & Extinguish Wind", "Benefit the Eyes", "Benefit Hearing"],
+    "disease_tags_zh": ["頭痛", "眩暈", "失眠", "健忘", "癲癇", "中風"],
+    "disease_tags_en": ["Headache", "Vertigo", "Insomnia", "Poor Memory", "Epilepsy", "Windstroke"],
+    "cautions": "課件、eLotus 與 American Dragon 均未列四神聰穴位專屬禁忌；不可把來源沉默解讀為無風險。課件／eLotus 的皮下刺0.5~1.0寸及朝中心取向，與 AD 另列的橫刺0.5~1.5寸、四穴成組或由百會透刺並非完全相同；須由持照針灸師依頭皮解剖與所受訓練選擇，不得合併成單一標準。原卡『顱骨未閉合嬰幼兒慎用』予以保留，但本輪四來源未找到直接支持，故標為尚待兒科／解剖來源核實。",
+    "cautionsEn": [
+      "The curriculum, eLotus, and American Dragon state no point-specific contraindication for Sishencong; source silence must not be interpreted as absence of risk.",
+      "The curriculum/eLotus subcutaneous 0.5-1.0-cun method and center-directed orientation are not identical to AD's additional transverse 0.5-1.5-cun, group-needling, or Baihui through-needling methods. A licensed acupuncturist must select among these source variants using scalp anatomy and formal training; they are not merged into one standard.",
+      "The legacy caution for infants with an unclosed skull is retained, but direct support was not found in the four sources reviewed in this pass; it remains pending pediatric/anatomical verification."
+    ],
+    "evidence": "四來源整合：NCBAHM Appendix A 確認考試範圍；課件提供四穴環繞百會、針尖朝中心、安神平肝及五項核心主治；eLotus 補安神、熄風、皮下刺與可灸；American Dragon 補明目聰耳、更多主治、不同針法版本與成組／百會透刺註記。WHO 國際命名文件僅作代碼依據：本庫主碼 EX-HN1，課件與 AD 的 M-HN-1 作來源別碼。Actions、Indications 與未證實安全敘述分層保留。",
     "acuTags": [
       "頭部",
       "神志",
       "頭痛",
       "失眠"
     ],
-    "combinePointsZh": "【失眠】四神聰配神門（HT7）、安眠穴：鎮靜安神助眠。\n【頭痛眩暈】四神聰配百會（GV20）、風池（GB20）：清頭明目，止痛定眩。",
-    "reviewStatus": "sourced_elotus_direct",
+    "combinePointsZh": "【既有學習配伍；本輪四來源未列】失眠：四神聰配神門（HT7）、安眠穴，取鎮靜安神助眠之意。\n【既有學習配伍；本輪四來源未列】頭痛眩暈：四神聰配百會（GV20）、風池（GB20），取清利頭目、止痛定眩之意。",
+    "combinePointsEn": "Legacy study pairing not listed in the four sources reviewed: for insomnia, Sishencong with Shenmen (HT7) and Anmian, intended to calm the Shen and support sleep.\nLegacy study pairing not listed in the four sources reviewed: for headache and vertigo, Sishencong with Baihui (GV20) and Fengchi (GB20), intended to clear the head, relieve pain, and settle vertigo.",
+    "nameIntroZh": "American Dragon 將四神聰英譯為 Four Alert Spirit，另列 Four Intelligence、Four Mind Hearing；本庫保留標準拼音 Sishencong，不把英文別稱改作中文正名。",
+    "nameIntroEn": "American Dragon translates the name as Four Alert Spirit and also lists Four Intelligence and Four Mind Hearing. The database retains the standard pinyin Sishencong as its English display name.",
+    "otherNamesZh": ["AD 英譯：Four Alert Spirit", "AD 別稱：Four Intelligence", "AD 別稱：Four Mind Hearing"],
+    "otherNamesEn": ["Four Alert Spirit", "Four Intelligence", "Four Mind Hearing"],
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
+      "https://www.americandragon.com/Points/Sishencong.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -45,10 +113,32 @@
         "labelEn": "Extra Point · Sishencong EX-HN1 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 四神聰 M-HN-1",
+        "labelEn": "American Dragon · Sishencong M-HN-1",
+        "url": "https://www.americandragon.com/Points/Sishencong.html",
+        "source": "American Dragon"
       }
     ],
     "x": 178,
-    "y": 100
+    "y": 100,
+    "field_sources": {
+      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Sishencong listed"],
+      "curriculum": ["curriculum/acupoints/Techniques 3 points.md p.12: Sishencong (M-HN-1)"],
+      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1"],
+      "american_dragon": ["https://www.americandragon.com/Points/Sishencong.html"],
+      "location": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
+      "anatomy": ["source-gap note: the four reviewed sources provide vertex/scalp location but no layer-by-layer neurovascular anatomy"],
+      "technique": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
+      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
+      "functions": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
+      "indications": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
+      "combinations": ["source-gap note: current pairings are preserved legacy study content; no combinations are listed in the four reviewed Sishencong source entries"],
+      "cautions": ["source-gap note: curriculum, eLotus, and American Dragon list no point-specific contraindication; legacy pediatric caution remains unverified"],
+      "nomenclature": ["https://iris.who.int/handle/10665/40001: EX prefix + HN region code; Sishencong is EX-HN1", "curriculum/acupoints/Techniques 3 points.md p.12: M-HN-1", "https://www.americandragon.com/Points/Sishencong.html: M-HN-1"],
+      "link_check": ["2026-08-02 HTTP 200: eLotus exact Sishencong page", "2026-08-02 HTTP 200: American Dragon index and exact Sishencong page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record and text layer"]
+    }
   },
   {
     "code": "EX-HN2",

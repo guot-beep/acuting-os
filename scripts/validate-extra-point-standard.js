@@ -26,6 +26,22 @@ const hasMoxibustionTechnique = (v) => /(?:\d+(?:\.\d+)?\s*[-~–]\s*\d+(?:\.\d+
 const hasMeasurableTechnique = (v) => hasDepth(v) || hasBloodlettingTechnique(v) || hasMoxibustionTechnique(v);
 const isGenericSourceUrl = (v) => /^https?:\/\/(?:www\.)?cloudtcm\.com\/acupoint\/?(?:[?#].*)?$/i.test(String(v || "").trim());
 const filled = (v) => text(v).trim() !== "";
+const pairedLength = (r, zhKey, enKey) => arr(r[zhKey]).length === arr(r[enKey]).length;
+const STRICT_TEMPLATE_FIELDS = [
+  "anatomyZh", "anatomyEn",
+  "acumethodZh", "acumethodEn",
+  "moxaZh", "moxaEn",
+  "pointIdentityZh", "pointIdentityEn",
+  "exam_importance", "exam_importance_en",
+  "exam_pearl", "exam_pearl_en",
+  "functionsZhList", "functionsEnList",
+  "action_tags_zh", "action_tags_en",
+  "disease_tags_zh", "disease_tags_en",
+  "cautionsEn",
+  "combinePointsZh", "combinePointsEn",
+  "visualLinks", "field_sources", "reviewStatus"
+];
+const FOUR_SOURCE_AUDIT_KEYS = ["board_scope", "curriculum", "elotus", "american_dragon", "link_check"];
 
 const issueMap = new Map();
 function flag(record, issue) {
@@ -39,6 +55,9 @@ for (const r of records) {
   for (const key of required) {
     if (!filled(r[key])) flag(r, `missing ${key}`);
   }
+  for (const key of STRICT_TEMPLATE_FIELDS) {
+    if (!filled(r[key])) flag(r, `strict template missing ${key}`);
+  }
   for (const key of ["nameZh", "region", "location", "functions", "patterns", "cautions", "combinePointsZh", "visualLinks"]) {
     if (filled(r[key]) && hasMojibake(r[key])) flag(r, `mojibake suspected in ${key}`);
   }
@@ -50,6 +69,20 @@ for (const r of records) {
   }
   if ((arr(r.functionsZhList).length || arr(r.functionsEnList).length) && arr(r.functionsZhList).length !== arr(r.functionsEnList).length) {
     flag(r, `functionsZhList/functionsEnList length mismatch ${arr(r.functionsZhList).length} vs ${arr(r.functionsEnList).length}`);
+  }
+  for (const [zhKey, enKey] of [
+    ["pointIdentityZh", "pointIdentityEn"],
+    ["action_tags_zh", "action_tags_en"],
+    ["disease_tags_zh", "disease_tags_en"]
+  ]) {
+    if ((arr(r[zhKey]).length || arr(r[enKey]).length) && !pairedLength(r, zhKey, enKey)) {
+      flag(r, `${zhKey}/${enKey} length mismatch ${arr(r[zhKey]).length} vs ${arr(r[enKey]).length}`);
+    }
+  }
+  if (arr(r.functionsZhList).length > 8) flag(r, `functionsZhList exceeds 8 rows (${arr(r.functionsZhList).length})`);
+  const fieldSources = r.field_sources && typeof r.field_sources === "object" ? r.field_sources : {};
+  for (const key of FOUR_SOURCE_AUDIT_KEYS) {
+    if (!filled(fieldSources[key])) flag(r, `four-source audit missing field_sources.${key}`);
   }
   if (!hasMeasurableTechnique(r.techniqueNotes)) flag(r, "techniqueNotes lacks measurable needling, bloodletting, or moxibustion method");
   if (!arr(r.sources).some((s) => /^https?:\/\//.test(String(s)))) flag(r, "no external source URL");
@@ -65,6 +98,11 @@ const mojibakeRecords = records.filter((r) => ["nameZh", "region", "location", "
 const noDepth = records.filter((r) => !hasMeasurableTechnique(r.techniqueNotes)).length;
 const sourceMissing = records.filter((r) => !arr(r.sources).some((s) => /^https?:\/\//.test(String(s)))).length;
 const genericSourceRecords = records.filter((r) => arr(r.sources).some(isGenericSourceUrl)).length;
+const strictTemplateComplete = records.filter((r) => !STRICT_TEMPLATE_FIELDS.some((key) => !filled(r[key]))).length;
+const fourSourceAuditComplete = records.filter((r) => {
+  const fieldSources = r.field_sources && typeof r.field_sources === "object" ? r.field_sources : {};
+  return FOUR_SOURCE_AUDIT_KEYS.every((key) => filled(fieldSources[key]));
+}).length;
 
 console.log("validate-extra-point-standard");
 console.log(`  records                 ${total}`);
@@ -73,6 +111,8 @@ console.log(`  mojibake suspected      ${mojibakeRecords}/${total}`);
 console.log(`  missing measurable method ${noDepth}/${total}`);
 console.log(`  missing source URL      ${sourceMissing}/${total}`);
 console.log(`  generic source URL      ${genericSourceRecords}/${total}`);
+console.log(`  strict template complete ${strictTemplateComplete}/${total}`);
+console.log(`  four-source audit complete ${fourSourceAuditComplete}/${total}`);
 
 if (issueRecords.length) {
   console.log("\n===== EXTRA POINT WORKLIST =====");

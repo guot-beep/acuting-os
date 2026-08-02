@@ -931,3 +931,27 @@
 - Next: return to EX-CA2 提托, then EX-B1/EX-B2/EX-B4.
 
 ---
+## [2026-08-02] Codex Handoff - Restart all 72 extra points; EX-HN1 complete
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: this handoff commit
+- Task: Restart all 72 extra-point cards under Ting's strict four-source contract and complete the first card, EX-HN1 四神聰.
+- Files changed: `data/acupoints/extra_points.json`; `scripts/validate-extra-point-standard.js`; `data/audits/missing_report.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
+- Contract now enforced:
+  1. NCBAHM 2026 ACPL Appendix A records exam scope; curriculum is the course-content backbone.
+  2. eLotus exact page plus American Dragon pinyin-index/exact page supply full Applications/Actions, Indications, Techniques, notes, aliases, and combinations when present.
+  3. Every completed card requires paired bilingual anatomy/source-gap, needling, moxa, identity, exam, functions, tags, cautions, combinations, visual links, review status, and field provenance.
+  4. `field_sources` must record `board_scope`, `curriculum`, `elotus`, `american_dragon`, and dated `link_check`; a source gap must be explicit rather than replaced with a generic link.
+- EX-HN1 result:
+  1. Added four aligned Functions rows: 安神 / Calms the Shen; 平肝 / Pacifies the Liver; 熄內風 / Subdues Interior Wind; 明目聰耳 / Benefits the Eyes and Ears.
+  2. Added all AD indications and labelled historical wording; retained legacy pairings but explicitly marked that none of the four reviewed entries lists combinations.
+  3. Kept curriculum/eLotus 0.5–1.0-cun subcutaneous method and center direction separate from AD's added slanted/transverse/through-needling variants. No contraindication or moxa dose was invented.
+  4. Live links verified: AD index maps Sishencong to `Points/Sishencong.html`; exact AD and eLotus pages return HTTP 200.
+  5. WHO nomenclature source confirms `EX` + region codes; database code remains EX-HN1, while curriculum/AD M-HN-1 is stored as an alternate source code.
+- Validation: audit mode PASS (72 records; 71 issue records; 1/72 strict-template complete; 1/72 four-source complete; 0 missing measurable methods); build PASS; validate-data PASS (769 runtime); interactions PASS; point IDs PASS; content-junk PASS; function/link render behavior PASS; JSON/app syntax/diff check PASS.
+- Protected areas not touched: no existing IDs renamed; no standard-channel/Tung/auricular data or untracked `curriculum/conditions/*` uploads changed.
+- Known risks / manual checks: Ting should inspect EX-HN1's four bilingual function rows, full indication list, source-variant needling warning, and exact AD/eLotus buttons. The legacy infant/open-skull caution remains present but explicitly unverified by the four sources.
+- Next: continue sequentially with EX-HN2 當陽 using pinyin `Dangyang` in the AD index, then EX-HN3 印堂.
+
+---
