@@ -1,5 +1,34 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-01] Codex Handoff — Rechecked latest updates and corrected Quality acupoint grade count
+
+- **Agent**: Codex
+- **Branch**: `main`
+- **Task**: Ting asked Codex to check updates and take over work.
+- **Repo state before work**: `main` is aligned with `origin/main`; tracked tree was clean. Many untracked `curriculum/conditions/` files are present and were treated as Ting source uploads; they were not modified.
+- **Files changed**:
+  - `data/audits/missing_report.json`
+  - `data/herbs/formulas.json`
+  - `docs/SCHEDULE_2026-08.md`
+  - `docs/ANTIGRAVITY_VALIDATION_PROTOCOL.md`
+  - `PROJECT_LOG.md`
+  - `docs/CODEX_HANDOFF.md`
+  - generated `data/generated/*` after build
+- **What changed**: Updated Quality's acupoint grade count from the stale 97/361 to the validator-rechecked 361/361 standard-channel template-grade. Added a schedule note that the old "264 acupoints remaining" August plan is obsolete; current acupoint work is RV1/manual review and later relationship refinement, not missing template-grade card production. Added the Antigravity validation protocol Claude requested: validator pass + content-loss audit + correct domain source lanes. Fixed the three formula F7 blocking defects by normalizing role hierarchy only; composition and doses were preserved.
+- **Validation run**:
+  - `validate-acupoint-standard.js --worklist --all`: PASS, 361/361 template-grade, 0 worklist defects.
+  - `validate-interactions.js`: PASS.
+  - `validate-herb-standard.js`: PASS structurally; still reports broad content-quality gaps in bilingual/contraindication/modern-function fields.
+  - `validate-formula-standard.js`: initially failed 3 F7 defects; after data fix, PASS with 0 blocking defects.
+- **Protected areas explicitly not touched**: no herb-card content, formula-card content, acupoint records, scripts, or UI logic were hand-edited in this pass.
+- **Known risks / manual checks needed**:
+  1. Browser Quality page should be refreshed with Ctrl+F5 and checked that Acupoints now show 361/361 Grade but Verified remains 1.
+  2. The F7 formula defects are structurally fixed, but the three formulas still need full template-grade content enrichment: Exam Core, actions/indications, contraindications, formula family, and source cross-checking.
+  3. `curriculum/conditions/` untracked uploads should be intentionally committed or ignored in a later source-material task.
+- **Next recommended action**: run the new Antigravity validation protocol on the next 20-30 record batch. For formulas, build the formula grade/Appendix C coverage tooling before mass formula refinement; for individual weak cards, enrich by template from NCBAHM outline + curriculum + exact external sources.
+
+---
+
 ## [2026-07-30 15:20] Antigravity Handoff — REDUNDANT DROPDOWNS REMOVED, SIDEBAR DE-DUPLICATED, QA BUCKETS STRIPPED! 🎉
 
 - **Agent**: Antigravity (pair programming with Ting)

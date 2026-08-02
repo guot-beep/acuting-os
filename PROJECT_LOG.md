@@ -1,5 +1,17 @@
 # AcuTing OS Project Log
 
+## 2026-08-01 Codex — 接手後實測 Quality 進度，修正穴位 Grade 數字
+
+- Pull/接手檢查：`main` 與 `origin/main` 同步；tracked 工作樹乾淨。只看到一批 `curriculum/conditions/` untracked 課件，視為 Ting 新增來源資料，本次未碰。
+- 重新實測 Antigravity/Claude handoff 宣稱：`validate-acupoint-standard.js --worklist --all` PASS，**361/361 standard-channel points template-grade，0 worklist defects**；`validate-interactions.js` PASS。
+- 中藥現況：`validate-herb-standard.js` PASS 結構檢查，327 records；但 bilingual tags / contraindications / modern_functions 等內容品質缺口仍存在，不能視為 327 張都已精修完成。
+- 方劑現況：`validate-formula-standard.js` FAIL，3 個 blocking defects：`formula.an_gong_niu_huang_wan`、`formula.zi_xue_dan`、`formula.fang_feng_tong_sheng_san` 的君藥數量超過 validator 允許範圍。方劑仍是下一個明顯阻塞點。
+- 更新 `data/audits/missing_report.json` 與 `docs/SCHEDULE_2026-08.md`，把穴位 Grade 從舊的 97/361 改成實測 361/361；Verified 仍維持 1，因為那是 Ting/RV1 人工源審核，不由 AI validator 自動推進。
+- 依 Claude 指示新增 `docs/ANTIGRAVITY_VALIDATION_PROTOCOL.md`：Antigravity 批量輸出要做 content-loss audit，不只看 validator；精修時中藥/方劑走 NCBAHM outline → 課件 → American Dragon → CloudTCM，針灸走 NCBAHM outline → 課件，課件不足再補 eLotus / American Dragon。
+- 修正 3 首方 F7：安宮牛黃丸、紫雪丹、防風通聖散只調整 `composition[].role_zh/en`，保留組成與劑量，並在 `composition_source_note_zh` 記錄角色正規化依據。重跑 `validate-formula-standard.js` 後 PASS，0 blocking defects。
+- 依 Claude 指示新增 `docs/ANTIGRAVITY_VALIDATION_PROTOCOL.md`：Antigravity 批量輸出要做 content-loss audit，不只看 validator；精修時以 NCBAHM outline → 課件 → CloudTCM / American Dragon / eLotus 的來源階層補 Exam Core 與結構化欄位。
+- 修正 3 首方 F7：安宮牛黃丸、紫雪丹、防風通聖散只調整 `composition[].role_zh/en`，保留組成與劑量，並在 `composition_source_note_zh` 記錄角色正規化依據。重跑 `validate-formula-standard.js` 後 PASS，0 blocking defects。
+
 ## 2026-07-29 Claude — Aug→Dec schedule written for parallel AI dispatch (`docs/SCHEDULE_2026-08.md`)
 
 - Ting is dispatching other AIs to sprint through August (穴位卡優化 + 方劑卡建立) and asked what comes after. Wrote the Aug→Dec schedule against the honest `quality_layers` numbers rather than the BLUEPRINT week counts, since the herb sprint finished ahead of the Phase 1 estimate.
