@@ -1675,34 +1675,79 @@
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
     "location": "口腔內，舌下靜脈左側。",
-    "locationEn": "In the oral cavity, on the left sublingual vein.",
-    "techniqueNotes": "三稜針點刺出血。\nPrick to bleed.",
+    "locationEn": "In the oral cavity, on the left-side vein beside the lingual frenulum when the tongue is rolled back; paired with Yuye on the right.",
+    "cunMeasurement": "不用寸量；捲舌後取舌下繫帶左側靜脈，與右側玉液成對。",
+    "anatomyZh": "定位來源直接指向舌下繫帶左側靜脈，屬口底血管性點刺區。四來源未提供逐層神經血管圖譜、目標靜脈選擇標準、可接受出血量或止血流程。",
+    "anatomyEn": "The source-defined target is the left-side vein beside the lingual frenulum, making this a vascular bloodletting region in the floor of the mouth. The four sources provide no layer-by-layer neurovascular map, target-vein selection standard, acceptable bleeding quantity, or hemostasis protocol.",
+    "techniqueNotes": "eLotus 與 AD 均僅列點刺出血，未提供針具、刺入深度、出血量、重複次數或止血流程。既有『三稜針』器具說法保留為本輪四來源未確認的細節；一般不留針的舊警語亦保留但未獲四來源直接支持。\neLotus and AD list bloodletting only, without specifying instrument, insertion depth, blood quantity, repetition, or hemostasis protocol. The legacy three-edged-needle wording and general no-retention caution are retained as details not directly confirmed by the four-source review.",
+    "acumethodZh": "eLotus／AD：點刺出血；未列針具、深度、滴數、重複次數或止血流程。",
+    "acumethodEn": "eLotus/AD: prick to bleed; no instrument, depth, drop count, repetition, or hemostasis protocol is specified.",
+    "moxaZh": "eLotus 金津與 AD 金津玉液條目均未說明艾灸；NCBAHM 與現有課件無專條。故不推定可灸、禁灸或灸量。",
+    "moxaEn": "Neither the eLotus Jinjin entry nor the AD Jinjin-Yuye entry addresses moxibustion, and NCBAHM/current course material provide no dedicated entry. Applicability, contraindication, and dose are not inferred.",
     "functions": "清熱生津，消腫利舌，開音利咽",
     "functionsEn": "Clears Heat; Generates fluids; Reduces swelling; Benefits the tongue and throat",
+    "functionsZhList": [
+      "清熱",
+      "生津",
+      "消腫（AD）",
+      "利舌（既有內容；由舌病主治支持，但 eLotus／AD 功效欄未直接列）",
+      "開音利咽（既有內容；AD 主治失音、喉痹，但功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Clears Heat",
+      "Generates fluids",
+      "Reduces swelling (AD)",
+      "Benefits the tongue (legacy action supported by indications but not directly listed in the eLotus/AD action fields)",
+      "Benefits the voice and throat (legacy action supported by AD indications but not directly listed as an action)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "舌下左側靜脈點刺出血穴",
+      "eLotus／本庫分列 EX-HN12 金津；AD 將金津玉液合併為 M-HN-20",
+      "NCBAHM Appendix A 與現有課件未找到金津專條"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Bloodletting point on the left-side sublingual vein",
+      "eLotus/database list Jinjin separately as EX-HN12; AD combines Jinjin-Yuye as M-HN-20",
+      "No dedicated Jinjin entry was found in NCBAHM Appendix A or current course material"
+    ],
+    "exam_star": 0,
     "patterns": [
-      "口瘡",
-      "舌腫痛",
-      "咽喉腫痛",
-      "中風失語",
-      "消渴",
+      "口腔炎／口瘡",
+      "舌炎、舌強、舌腫痛",
+      "小兒蓮花舌",
+      "扁桃體炎／喉痹",
+      "失音",
+      "失語／中風後失語",
+      "消瘦、口渴與消渴口乾",
+      "急性胃炎",
       "嘔吐",
-      "劇烈噁心"
+      "晨吐／妊娠嘔吐",
+      "劇烈持續噁心",
+      "腹瀉"
     ],
     "patternsEn": [
-      "Mouth ulcers",
-      "Painful swollen tongue",
-      "Sore swollen throat",
-      "Post-stroke aphasia",
-      "Wasting-thirst",
+      "Stomatitis / mouth ulcers",
+      "Glossitis and stiff, painful, swollen tongue",
+      "Pediatric lotus-flower tongue",
+      "Tonsillitis / throat Bi",
+      "Loss of voice",
+      "Aphasia / loss of voice after Windstroke",
+      "Emaciation, thirst, and parched mouth with wasting-thirst",
+      "Acute gastritis",
       "Vomiting",
-      "Severe nausea"
+      "Morning sickness / vomiting of pregnancy",
+      "Severe and unremitting nausea",
+      "Diarrhea"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "draft_source_checked",
+    "evidence": "四層查核：NCBAHM Appendix A 與現有課件未找到金津專條；eLotus 精確頁／索引提供 EX-HN12、舌下繫帶左側靜脈、點刺出血、清熱生津、失語／舌強腫痛與嘔吐；AD 精確 M-HN-20 合併頁補清熱消腫生津、完整口舌咽喉／消渴／胃腸／妊娠嘔吐主治，但未列配穴或禁忌。AD 重複定位句第二句疑將右側誤寫 Jinjin，故左右以其第一句與 eLotus 雙頁交叉校正。WHO IRIS 僅作命名框架。",
+    "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12",
       "https://www.americandragon.com/Points/Jinjin-Yuye.html",
-      "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -1710,6 +1755,12 @@
         "labelEn": "Extra Point · Jinjin EX-HN12 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 金津玉液 M-HN-20",
+        "labelEn": "American Dragon · Jinjin-Yuye M-HN-20",
+        "url": "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "source": "American Dragon"
       }
     ],
     "x": 175,
@@ -1749,26 +1800,52 @@
       "點刺出血",
       "經外奇穴"
     ],
-    "cautions": "舌下左側靜脈點刺出血，禁深刺；需避開舌下中央繫帶與大血管，控制出血。凝血異常、服抗凝藥、口腔感染或無法配合捲舌者慎用。一般不作留針。",
+    "cautions": "eLotus 與 AD 只寫點刺出血，未給針具、深度、滴數、重複次數、消毒或止血流程，且未列本穴禁忌。定位本身即為舌下左側靜脈，因此舊卡『避開大血管』不能當成可操作的精確指令；本輪改為『只處理已確認的目標點，避免中央繫帶與非目標舌下結構』。既有禁深刺、控制出血、凝血異常／抗凝藥／口腔感染／無法配合者慎用、一般不留針等警語保留為 Me & Qi／解剖程序提示，不冒充四來源共識。AD 列晨吐與妊娠嘔吐是主治，不等於妊娠安全許可；四來源未提供孕婦或兒童專屬操作規則，不猜。",
     "cautionsEn": [
-      "Prick to bleed on the left sublingual vein; deep needling is contraindicated.",
-      "Avoid the central frenulum and major sublingual vessels; control bleeding. Use caution with bleeding disorders, anticoagulant therapy, oral infection, or inability to roll the tongue. Generally do not retain the needle."
+      "eLotus and AD only state bloodletting; they give no instrument, depth, drop count, repetition, antisepsis, or hemostasis protocol and list no point-specific contraindication.",
+      "Because the defined target is itself the left sublingual vein, the legacy phrase 'avoid major vessels' is not operationally precise. The card instead says to act only on the confirmed target and avoid the central frenulum and non-target sublingual structures.",
+      "Legacy cautions on no deep insertion, bleeding control, bleeding disorders/anticoagulants/oral infection/inability to cooperate, and no needle retention are retained as Me & Qi/anatomical procedural notes, not four-source consensus.",
+      "AD's morning-sickness and pregnancy-vomiting indications are not pregnancy safety clearance. The four sources provide no point-specific pregnancy or pediatric procedure rule; none is guessed."
     ],
-    "exam_importance": "金津為舌下左側靜脈，常與玉液成對使用。主軸：清熱、生津、消腫、利舌；舌腫、口瘡、喉痹、消渴與中風失語要能連起來。",
-    "exam_pearl": "金津左、玉液右；多成對點刺出血。位置與海泉不同：海泉在舌下繫帶中央。",
+    "exam_importance": "NCBAHM Appendix A 與現有課件未列金津，不標 Board 核心。辨位與編碼重點：金津左、玉液右、海泉中央；eLotus 分列 EX-HN12／13，AD 合併為 M-HN-20。",
+    "exam_importance_en": "Jinjin is not listed in NCBAHM Appendix A and has no dedicated current course entry, so it is not marked as Board core. Location and nomenclature: Jinjin left, Yuye right, Haiquan midline; eLotus separates EX-HN12/13, while AD combines them as M-HN-20.",
+    "exam_pearl": "金津左、玉液右、海泉中；金津玉液多成對點刺出血。AD 的妊娠嘔吐是主治，不是孕期安全背書；任何滴數或深度都未由本輪四來源提供。",
+    "exam_pearl_en": "Jinjin is left, Yuye right, and Haiquan midline; Jinjin-Yuye are commonly treated as a bloodletting pair. AD's pregnancy-vomiting indication is not pregnancy safety approval, and the reviewed four sources provide no depth or drop count.",
     "combinePointsZh": "【舌腫痛／喉痹】金津配玉液（EX-HN13）、海泉（EX-HN11）：舌下點刺出血，清熱消腫利咽。\n【中風失語】金津玉液配聚泉（EX-HN10）、廉泉（CV23）、內關（PC6）：利舌開音、醒神通絡。\n【消渴口乾】金津玉液配承漿（CV24）、曲池（LI11）、太衝（LR3）：清熱生津，改善口乾煩渴。",
     "combinePointsEn": "Swollen tongue / throat obstruction: Jinjin with Yuye (EX-HN13) and Haiquan (EX-HN11), often by sublingual bloodletting, clears Heat and reduces swelling.\nPost-stroke aphasia: Jinjin-Yuye with Juquan (EX-HN10), Lianquan (CV23), and Neiguan (PC6) benefits the tongue, opens speech, and unblocks collaterals.\nWasting-thirst with dry mouth: Jinjin-Yuye with Chengjiang (CV24), Quchi (LI11), and Taichong (LR3) clears Heat and generates fluids.",
-    "clinical_pearls": "American Dragon 合併列 Jinjin-Yuye，主治比本地舊卡更完整：口瘡、舌腫、喉痹、失音、中風後失語、消渴、嘔吐與劇烈噁心。Me & Qi 對舌下出血風險寫得更細，安全欄保留其警告方向。",
+    "clinical_pearls": "American Dragon 合併列 Jinjin-Yuye，主治比舊卡更完整，並把妊娠嘔吐放在 indication 而非 safety。其第二條定位句疑有 Jinjin／Yuye 文字誤植；本卡以 AD 第一條與 eLotus 左右雙頁校正。Me & Qi 安全內容保留，但明確標為四來源契約外的既有來源。",
+    "nameIntroZh": "eLotus 將金津英譯 Golden Liquid／Gold Fluid；AD 與玉液合稱 Golden Liquid–Jade Fluid。名稱可作左右成對與津液主題助記，不自行外推安全性。",
+    "nameIntroEn": "eLotus translates Jinjin as 'Golden Liquid' or 'Gold Fluid'; AD pairs it with Yuye as 'Golden Liquid–Jade Fluid.' The name aids pair/fluid recall but does not establish procedural safety.",
     "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Jinjin not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Jinjin/金津 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html"
+      ],
       "location": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12",
         "https://www.americandragon.com/Points/Jinjin-Yuye.html",
         "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
       ],
+      "anatomy": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12: left-side vein of lingual frenulum",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html: veins on both sides of lingual frenulum",
+        "source-gap note: no full layer-by-layer sublingual neurovascular map, target-vein selection standard, blood quantity, or hemostasis protocol"
+      ],
       "technique": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12",
         "https://www.americandragon.com/Points/Jinjin-Yuye.html",
         "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "moxibustion": [
+        "source-gap note: eLotus and AD entries do not address moxa; no Board/course detail entry found"
       ],
       "functions": [
         "https://www.americandragon.com/Points/Jinjin-Yuye.html",
@@ -1779,10 +1856,21 @@
         "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
       ],
       "cautions": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13: retained legacy safety source outside the current four-source contract",
+        "source-gap note: eLotus/AD list bloodletting but no instrument, depth, quantity, antisepsis, hemostasis, pregnancy, or pediatric protocol"
       ],
       "combinations": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13: existing combinations retained; eLotus and AD entries list none"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12: EX-HN12 Jinjin; Golden Liquid/Gold Fluid",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html: paired M-HN-20 Jinjin-Yuye",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 eLotus exact Jinjin page indexed and search-readable; direct open served a challenge page",
+        "2026-08-02 American Dragon pinyin index and exact Jinjin-Yuye page opened; duplicated location sentence contains a likely Jinjin/Yuye typo disclosed in card",
+        "2026-08-02 WHO IRIS nomenclature record opened"
       ]
     }
   },
@@ -1795,34 +1883,79 @@
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
     "location": "口腔內，舌下靜脈右側。",
-    "locationEn": "In the oral cavity, on the right sublingual vein.",
-    "techniqueNotes": "三稜針點刺出血。\nPrick to bleed.",
+    "locationEn": "In the oral cavity, on the right-side vein beside the lingual frenulum when the tongue is rolled back; paired with Jinjin on the left.",
+    "cunMeasurement": "不用寸量；捲舌後取舌下繫帶右側靜脈，與左側金津成對。",
+    "anatomyZh": "定位來源直接指向舌下繫帶右側靜脈，屬口底血管性點刺區。四來源未提供逐層神經血管圖譜、目標靜脈選擇標準、可接受出血量或止血流程。",
+    "anatomyEn": "The source-defined target is the right-side vein beside the lingual frenulum, making this a vascular bloodletting region in the floor of the mouth. The four sources provide no layer-by-layer neurovascular map, target-vein selection standard, acceptable bleeding quantity, or hemostasis protocol.",
+    "techniqueNotes": "eLotus 與 AD 均僅列點刺出血，未提供針具、刺入深度、出血量、重複次數或止血流程。既有『三稜針』器具說法保留為本輪四來源未確認的細節；一般不留針的舊警語亦保留但未獲四來源直接支持。\neLotus and AD list bloodletting only, without specifying instrument, insertion depth, blood quantity, repetition, or hemostasis protocol. The legacy three-edged-needle wording and general no-retention caution are retained as details not directly confirmed by the four-source review.",
+    "acumethodZh": "eLotus／AD：點刺出血；未列針具、深度、滴數、重複次數或止血流程。",
+    "acumethodEn": "eLotus/AD: prick to bleed; no instrument, depth, drop count, repetition, or hemostasis protocol is specified.",
+    "moxaZh": "eLotus 玉液與 AD 金津玉液條目均未說明艾灸；NCBAHM 與現有課件無專條。既有『禁灸』保留為待核實警語，但不冒充 eLotus／AD 共識，也不補造灸量。",
+    "moxaEn": "Neither the eLotus Yuye entry nor the AD Jinjin-Yuye entry addresses moxibustion, and NCBAHM/current course material provide no dedicated entry. The legacy 'moxibustion contraindicated' warning is retained pending verification, not presented as eLotus/AD consensus; no moxa dose is inferred.",
     "functions": "清熱生津，消腫利舌，開音利咽",
     "functionsEn": "Clears Heat; Generates fluids; Reduces swelling; Benefits the tongue and throat",
+    "functionsZhList": [
+      "清熱",
+      "生津",
+      "消腫（AD）",
+      "利舌（既有內容；由舌病主治支持，但 eLotus／AD 功效欄未直接列）",
+      "開音利咽（既有內容；AD 主治失音、喉痹，但功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Clears Heat",
+      "Generates fluids",
+      "Reduces swelling (AD)",
+      "Benefits the tongue (legacy action supported by indications but not directly listed in the eLotus/AD action fields)",
+      "Benefits the voice and throat (legacy action supported by AD indications but not directly listed as an action)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "舌下右側靜脈點刺出血穴",
+      "eLotus／本庫分列 EX-HN13 玉液；AD 將金津玉液合併為 M-HN-20",
+      "NCBAHM Appendix A 與現有課件未找到玉液專條"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Bloodletting point on the right-side sublingual vein",
+      "eLotus/database list Yuye separately as EX-HN13; AD combines Jinjin-Yuye as M-HN-20",
+      "No dedicated Yuye entry was found in NCBAHM Appendix A or current course material"
+    ],
+    "exam_star": 0,
     "patterns": [
-      "口瘡",
-      "舌腫痛",
-      "咽喉腫痛",
-      "中風失語",
-      "消渴",
+      "口腔炎／口瘡",
+      "舌炎、舌強、舌腫痛",
+      "小兒蓮花舌",
+      "扁桃體炎／喉痹",
+      "失音",
+      "失語／中風後失語",
+      "消瘦、口渴與消渴口乾",
+      "急性胃炎",
       "嘔吐",
-      "劇烈噁心"
+      "晨吐／妊娠嘔吐",
+      "劇烈持續噁心",
+      "腹瀉"
     ],
     "patternsEn": [
-      "Mouth ulcers",
-      "Painful swollen tongue",
-      "Sore swollen throat",
-      "Post-stroke aphasia",
-      "Wasting-thirst",
+      "Stomatitis / mouth ulcers",
+      "Glossitis and stiff, painful, swollen tongue",
+      "Pediatric lotus-flower tongue",
+      "Tonsillitis / throat Bi",
+      "Loss of voice",
+      "Aphasia / loss of voice after Windstroke",
+      "Emaciation, thirst, and parched mouth with wasting-thirst",
+      "Acute gastritis",
       "Vomiting",
-      "Severe nausea"
+      "Morning sickness / vomiting of pregnancy",
+      "Severe and unremitting nausea",
+      "Diarrhea"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "draft_source_checked",
+    "evidence": "四層查核：NCBAHM Appendix A 與現有課件未找到玉液專條；eLotus 精確頁提供 EX-HN13、舌下繫帶右側靜脈、點刺出血、清熱生津、失語／舌強腫痛與嘔吐；AD 精確 M-HN-20 合併頁補清熱消腫生津、完整口舌咽喉／消渴／胃腸／妊娠嘔吐主治，但未列配穴或禁忌。AD 重複定位句第二句疑將右側誤寫 Jinjin，故左右以其第一句與 eLotus 雙頁交叉校正。既有禁灸不刪，但標為本輪未直接支持。WHO IRIS 僅作命名框架。",
+    "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
       "https://www.americandragon.com/Points/Jinjin-Yuye.html",
-      "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -1830,6 +1963,12 @@
         "labelEn": "Extra Point · Yuye EX-HN13 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 金津玉液 M-HN-20",
+        "labelEn": "American Dragon · Jinjin-Yuye M-HN-20",
+        "url": "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "source": "American Dragon"
       }
     ],
     "x": 181,
@@ -1869,26 +2008,52 @@
       "點刺出血",
       "經外奇穴"
     ],
-    "cautions": "舌下右側靜脈點刺出血，禁深刺，禁灸；需避開舌下中央繫帶與大血管，控制出血。凝血異常、服抗凝藥、口腔感染或無法配合捲舌者慎用。一般不作留針。",
+    "cautions": "eLotus 與 AD 只寫點刺出血，未給針具、深度、滴數、重複次數、消毒或止血流程，且未列本穴禁忌。定位本身即為舌下右側靜脈，因此舊卡『避開大血管』不能當成可操作的精確指令；本輪改為『只處理已確認的目標點，避免中央繫帶與非目標舌下結構』。既有禁深刺、禁灸、控制出血、凝血異常／抗凝藥／口腔感染／無法配合者慎用、一般不留針等警語保留；其中禁灸未獲 eLotus／AD 支持，其他為 Me & Qi／解剖程序提示，不冒充四來源共識。AD 列晨吐與妊娠嘔吐是主治，不等於妊娠安全許可；四來源未提供孕婦或兒童專屬操作規則，不猜。",
     "cautionsEn": [
-      "Prick to bleed on the right sublingual vein; deep needling and moxibustion are contraindicated.",
-      "Avoid the central frenulum and major sublingual vessels; control bleeding. Use caution with bleeding disorders, anticoagulant therapy, oral infection, or inability to roll the tongue. Generally do not retain the needle."
+      "eLotus and AD only state bloodletting; they give no instrument, depth, drop count, repetition, antisepsis, or hemostasis protocol and list no point-specific contraindication.",
+      "Because the defined target is itself the right sublingual vein, the legacy phrase 'avoid major vessels' is not operationally precise. The card instead says to act only on the confirmed target and avoid the central frenulum and non-target sublingual structures.",
+      "Legacy cautions on no deep insertion, no moxa, bleeding control, bleeding disorders/anticoagulants/oral infection/inability to cooperate, and no retention are preserved. The no-moxa statement is not supported by eLotus/AD; the others remain Me & Qi/anatomical procedural notes, not four-source consensus.",
+      "AD's morning-sickness and pregnancy-vomiting indications are not pregnancy safety clearance. The four sources provide no point-specific pregnancy or pediatric procedure rule; none is guessed."
     ],
-    "exam_importance": "玉液為舌下右側靜脈，與金津成對。主軸：清熱、生津、消腫、利舌；常用於舌腫痛、口瘡、喉痹、消渴與失語。",
-    "exam_pearl": "金津左、玉液右；多成對點刺出血。玉液安全重點是舌下靜脈出血風險，不能寫成一般皮膚感染套話。",
+    "exam_importance": "NCBAHM Appendix A 與現有課件未列玉液，不標 Board 核心。辨位與編碼重點：金津左、玉液右、海泉中央；eLotus 分列 EX-HN12／13，AD 合併為 M-HN-20。",
+    "exam_importance_en": "Yuye is not listed in NCBAHM Appendix A and has no dedicated current course entry, so it is not marked as Board core. Location and nomenclature: Jinjin left, Yuye right, Haiquan midline; eLotus separates EX-HN12/13, while AD combines them as M-HN-20.",
+    "exam_pearl": "金津左、玉液右、海泉中；金津玉液多成對點刺出血。玉液舊卡禁灸尚未由 eLotus／AD 證實；AD 的妊娠嘔吐是主治，不是孕期安全背書。",
+    "exam_pearl_en": "Jinjin is left, Yuye right, and Haiquan midline; Jinjin-Yuye are commonly treated as a bloodletting pair. Yuye's legacy no-moxa warning is not confirmed by eLotus/AD, and AD's pregnancy-vomiting indication is not pregnancy safety approval.",
     "combinePointsZh": "【舌腫痛／喉痹】玉液配金津（EX-HN12）、海泉（EX-HN11）：舌下點刺出血，清熱消腫利咽。\n【中風失語】金津玉液配聚泉（EX-HN10）、廉泉（CV23）、內關（PC6）：利舌開音、醒神通絡。\n【消渴口乾】金津玉液配承漿（CV24）、曲池（LI11）、太衝（LR3）：清熱生津，改善口乾煩渴。",
     "combinePointsEn": "Swollen tongue / throat obstruction: Yuye with Jinjin (EX-HN12) and Haiquan (EX-HN11), often by sublingual bloodletting, clears Heat and reduces swelling.\nPost-stroke aphasia: Jinjin-Yuye with Juquan (EX-HN10), Lianquan (CV23), and Neiguan (PC6) benefits the tongue, opens speech, and unblocks collaterals.\nWasting-thirst with dry mouth: Jinjin-Yuye with Chengjiang (CV24), Quchi (LI11), and Taichong (LR3) clears Heat and generates fluids.",
-    "clinical_pearls": "eLotus 將玉液主治收斂為失語/舌強痛腫與嘔吐；AD 與 Me & Qi 補入口瘡、喉痹、消渴、失音、劇烈噁心等。卡片保留來源差異，不把單一來源當共識。",
+    "clinical_pearls": "eLotus 將玉液主治收斂為失語／舌強痛腫與嘔吐；AD 擴充口瘡、喉痹、消渴、失音、胃炎、妊娠嘔吐與劇烈噁心。AD 第二條定位句疑有 Jinjin／Yuye 文字誤植；本卡以其第一條與 eLotus 左右雙頁校正。Me & Qi 安全內容保留但標為四來源契約外。",
+    "nameIntroZh": "eLotus 將玉液英譯 Jade Humor／Jade Fluid；AD 與金津合稱 Golden Liquid–Jade Fluid。名稱可作左右成對與津液主題助記，不自行外推安全性。",
+    "nameIntroEn": "eLotus translates Yuye as 'Jade Humor' or 'Jade Fluid'; AD pairs it with Jinjin as 'Golden Liquid–Jade Fluid.' The name aids pair/fluid recall but does not establish procedural safety.",
     "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Yuye not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Yuye/玉液 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html"
+      ],
       "location": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
         "https://www.americandragon.com/Points/Jinjin-Yuye.html",
         "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
       ],
+      "anatomy": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13: right-side vein of lingual frenulum",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html: veins on both sides of lingual frenulum",
+        "source-gap note: no full layer-by-layer sublingual neurovascular map, target-vein selection standard, blood quantity, or hemostasis protocol"
+      ],
       "technique": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
         "https://www.americandragon.com/Points/Jinjin-Yuye.html",
         "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "moxibustion": [
+        "source-gap note: eLotus and AD entries do not address moxa; legacy prohibition retained pending verification"
       ],
       "functions": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
@@ -1901,10 +2066,21 @@
         "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
       ],
       "cautions": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13: retained legacy safety source outside the current four-source contract",
+        "source-gap note: eLotus/AD list bloodletting but no instrument, depth, quantity, antisepsis, hemostasis, pregnancy, or pediatric protocol"
       ],
       "combinations": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13: existing combinations retained; eLotus and AD entries list none"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13: EX-HN13 Yuye; Jade Humor/Jade Fluid",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html: paired M-HN-20 Jinjin-Yuye",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Yuye page",
+        "2026-08-02 American Dragon pinyin index and exact Jinjin-Yuye page opened; duplicated location sentence contains a likely Jinjin/Yuye typo disclosed in card",
+        "2026-08-02 WHO IRIS nomenclature record opened"
       ]
     }
   },
