@@ -3159,54 +3159,121 @@
     "pinyin": "Xinshe",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "頸部，風池穴直下，鎖骨乳突肌後緣，第3頸椎橫突旁。",
-    "locationEn": "On the neck, directly below Fengchi (GB 20), posterior border of SCM.",
-    "techniqueNotes": "直刺0.5~0.8寸。\nPerpendicular 0.5-0.8 cun.",
+    "location": "既有卡片：頸部，風池（GB20）直下、胸鎖乳突肌後緣、第3頸椎橫突旁。eLotus 現行頁：C3與C4之間水平、後正中線旁開1.5寸、GB20下方。兩定位版本並列。",
+    "locationEn": "Legacy card: on the neck directly below GB20, at the posterior border of the sternocleidomastoid near the C3 transverse process. Current eLotus page: at the C3-C4 level, 1.5 cun lateral to the posterior midline, below GB20. Both versions are retained.",
+    "cunMeasurement": "eLotus：C3-C4間水平、後正中線旁開1.5寸；既有：GB20直下、胸鎖乳突肌後緣、第3頸椎橫突旁。",
+    "anatomyZh": "位於上頸部 C3-C4 水平／GB20 下方區域；既有卡片另以胸鎖乳突肌後緣與C3橫突作地標。四來源未提供逐層肌肉、神經血管、椎動脈／脊柱深部界線或體型差異，不能由『C3-C4』或『橫突旁』自行推定深刺安全。",
+    "anatomyEn": "This is an upper-neck region at the C3-C4 level below GB20; the legacy card additionally uses the posterior SCM border and C3 transverse-process region. The four sources provide no layer-by-layer muscle, neurovascular, vertebral-artery/spinal-depth boundary, or body-build variation; deeper safety must not be inferred from 'C3-C4' or 'near the transverse process.'",
+    "techniqueNotes": "eLotus：直刺0.3~0.8寸；艾灸5~15分鐘。既有卡片：直刺0.5~0.8寸。兩針刺範圍逐源保留；0.5~0.8是交集但不改寫成唯一共識。灸時來自 eLotus，但頁面未交代直接／間接灸、熱源距離、皮膚保護或停止規則。\neLotus: perpendicular insertion 0.3-0.8 cun and moxa for 5-15 minutes. Legacy card: perpendicular 0.5-0.8 cun. Both needling ranges are retained; their 0.5-0.8-cun overlap is not rewritten as the sole consensus. The moxa time is from eLotus, but the page gives no direct/indirect method, heat-source distance, skin protection, or stopping rule.",
+    "acumethodZh": "eLotus：直刺0.3~0.8寸。既有：直刺0.5~0.8寸。",
+    "acumethodEn": "eLotus: perpendicular 0.3-0.8 cun. Legacy: perpendicular 0.5-0.8 cun.",
+    "moxaZh": "eLotus：艾灸5~15分鐘。原頁未說明直接／間接灸、器材、距離、皮膚保護、燙傷處理或特殊族群；只保存時間數值，不擴寫成完整操作流程。",
+    "moxaEn": "eLotus states moxa for 5-15 minutes. The page does not specify direct versus indirect moxa, equipment, distance, skin protection, burn management, or special populations; the time is retained without expanding it into a complete procedure.",
     "functions": "疏風通絡，利頸止痛",
-    "functionsEn": "Dispels wind; Benefits neck and relieves pain",
+    "functionsEn": "Dispels Wind pathogen; Benefits the neck; Unblocks the collaterals; Relieves pain",
+    "functionsZhList": [
+      "祛風",
+      "利頸",
+      "通絡（既有內容；eLotus 未另列）",
+      "止痛（依頸肩胛痛主治與既有內容整理）"
+    ],
+    "functionsEnList": [
+      "Dispels Wind pathogen",
+      "Benefits the neck",
+      "Unblocks the collaterals (legacy; not separately listed by eLotus)",
+      "Relieves pain (legacy/indication-derived from neck-shoulder-scapular pain)"
+    ],
+    "pointIdentityZh": [
+      "本庫不可變 ID：EX-HN20 新設",
+      "eLotus：EX-HN23 Xinshe",
+      "別名：新識（Xinshi）、下風池（Xiafengchi）",
+      "eLotus 註許多文獻認為本穴與安眠 EX-HN16 是同一穴",
+      "NCBAHM Appendix A 與 AD 拼音索引均不列 Xinshe"
+    ],
+    "pointIdentityEn": [
+      "Immutable database ID: EX-HN20 Xinshe",
+      "eLotus: EX-HN23 Xinshe",
+      "Aliases: Xinshi and Xiafengchi",
+      "eLotus notes that many references consider this the same point as Anmian EX-HN16",
+      "Neither NCBAHM Appendix A nor the AD pinyin index lists Xinshe"
+    ],
+    "exam_star": 0,
     "patterns": [
-      "落枕",
-      "頸椎病",
-      "角弓反張"
+      "頸、肩與肩胛軟組織／神經／骨性疼痛（含既有落枕、頸椎病）",
+      "支氣管炎、咳嗽、哮喘",
+      "過敏性鼻炎",
+      "頭痛、眩暈",
+      "失眠、歇斯底里、精神／神經疾患",
+      "心悸、高血壓",
+      "耳聾、耳鳴",
+      "淋巴腫大、咽喉痛",
+      "角弓反張／頸背反張"
     ],
     "patternsEn": [
-      "Stiff neck",
-      "Cervical spondylosis",
-      "Opisthotonos"
+      "Neck, shoulder, and scapular soft-tissue/nerve/bone pain (including legacy stiff neck and cervical spondylosis)",
+      "Bronchitis, cough, and asthma",
+      "Allergic rhinitis",
+      "Headache and dizziness",
+      "Insomnia, hysteria, mental and nervous disorders",
+      "Palpitations and hypertension",
+      "Deafness and tinnitus",
+      "Lymphatic swelling and sore throat",
+      "Opisthotonus / arched back and neck"
     ],
     "action_tags_zh": ["祛風疏風", "通絡", "止痛"],
     "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Alleviate Pain"],
-    "disease_tags_zh": ["落枕", "頸項痛"],
-    "disease_tags_en": ["Stiff Neck", "Neck Pain"],
-    "cautions": "eLotus 的新設精確頁記載直刺 0.3~0.8 寸，但未列穴位專屬禁忌；不可把來源沉默解讀為無風險。本穴位於上頸部，現有安全資料不足，須由持照針灸師優先複核後才可視為安全欄完成。eLotus 將新設編為 EX-HN23，與本庫既有 EX-HN20 顯示碼不同。",
+    "disease_tags_zh": ["落枕", "頸肩胛痛", "咳嗽與哮喘", "過敏性鼻炎", "頭痛與眩暈", "失眠", "耳聾與耳鳴", "角弓反張"],
+    "disease_tags_en": ["Stiff Neck", "Neck, Shoulder & Scapular Pain", "Cough & Asthma", "Allergic Rhinitis", "Headache & Dizziness", "Insomnia", "Deafness & Tinnitus", "Opisthotonus"],
+    "cautions": "【來源沉默】eLotus 新設精確頁未列穴位專屬禁忌；不可解讀為無風險。【上頸部解剖缺口】四來源沒有逐層肌肉、神經血管、椎動脈／脊柱深部界線、異常感覺停止規則、體型差異、孕婦、兒童或其他高風險規範；不得由 C3-C4、GB20下方或『橫突旁』自行推定深刺安全。【針刺版本】eLotus 直刺0.3~0.8寸；既有卡片直刺0.5~0.8寸，逐源保留而不假定為共識。【灸法】eLotus 列5~15分鐘，但無直接／間接灸、熱源距離、皮膚保護或停止規則。【身份】eLotus 為 EX-HN23，並註許多文獻視為安眠 EX-HN16 同穴；本庫不可變 ID 是 EX-HN20，不能只按號碼或同穴說互換。AD 拼音索引未列 Xinshe。",
     "cautionsEn": [
-      "The exact eLotus Xinshe page gives perpendicular needling at 0.3-0.8 cun but states no point-specific contraindication; source silence must not be interpreted as absence of risk.",
-      "Because this is an upper-neck point and the current safety evidence is incomplete, priority review by a licensed acupuncturist is required before the safety field can be considered complete.",
-      "eLotus numbers Xinshe as EX-HN23, differing from this record's legacy EX-HN20 display code."
+      "The exact eLotus Xinshe page states no point-specific contraindication; source silence must not be interpreted as absence of risk.",
+      "The four sources provide no layer-by-layer muscle, neurovascular, vertebral-artery/spinal-depth boundary, abnormal-sensation stopping rule, body-build variation, pregnancy, pediatric, or other high-risk protocol for this upper-neck point.",
+      "eLotus gives perpendicular 0.3-0.8 cun, while the legacy card gives perpendicular 0.5-0.8 cun; both are retained by source rather than presented as a consensus range.",
+      "eLotus lists moxa for 5-15 minutes but provides no direct/indirect method, heat-source distance, skin protection, or stopping rule.",
+      "eLotus numbers Xinshe EX-HN23 and notes that many references equate it with Anmian EX-HN16; this database retains immutable EX-HN20, and AD's pinyin index does not list Xinshe."
     ],
-    "evidence": "eLotus CORE exact Xinshe page; nomenclature conflict retained.",
+    "combinePointsZh": "四來源未找到新設的專屬配穴組合；不以一般頸痛、咳喘或失眠配穴自行填充。",
+    "combinePointsEn": "No Xinshe-specific point combination was found in the four sources; general combinations for neck pain, cough/asthma, or insomnia are not inserted by inference.",
+    "evidence": "四層查核：NCBAHM Appendix A 不列 Xinshe；現有 curriculum/acupoints 未找到新設專條；eLotus 現行精確頁提供 EX-HN23、C3-C4間／後正中線旁1.5寸、直刺0.3~0.8寸、灸5~15分鐘、祛風利頸及廣泛主治，並註許多文獻視新設與安眠同穴；American Dragon 拼音索引未列 Xinshe。既有 C3橫突／胸鎖乳突肌後緣定位、0.5~0.8寸、通絡止痛與落枕／頸椎病內容保留為 legacy，未冒充四源驗證。WHO IRIS 僅作國際命名框架。",
     "reviewStatus": "draft",
     "sources": [
-      "https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 新設 EX-HN20",
-        "labelEn": "Extra Point · Xinshe EX-HN20",
-      "url": "https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
-        "url": "https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
+        "labelZh": "eLotus · 新設 EX-HN23（本庫 EX-HN20）",
+        "labelEn": "eLotus · Xinshe EX-HN23 (database EX-HN20)",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
       }
     ],
     "x": 165,
     "y": 195,
+    "exam_importance": "NCBAHM Appendix A 未列 Xinshe，故不標 Board 核心。仍應辨識 C3-C4水平、後正中線旁1.5寸／GB20下方，以及本庫 EX-HN20、eLotus EX-HN23 與安眠同穴說的編碼差異。",
+    "exam_importance_en": "NCBAHM Appendix A does not list Xinshe, so it is not marked Board core. Still distinguish its C3-C4 level, 1.5-cun lateral/below-GB20 location and the database EX-HN20, eLotus EX-HN23, and Anmian-equivalence nomenclature issue.",
+    "exam_pearl": "新設抓『GB20下方／C3-C4水平、旁開1.5寸』與頸肩胛痛；不要把 eLotus EX-HN23、安眠同穴說及本庫 EX-HN20 當成可按號碼直接互換。",
+    "exam_pearl_en": "Remember Xinshe as below GB20 at the C3-C4 level, 1.5 cun lateral, with neck-shoulder-scapular pain. Do not interchange database EX-HN20, eLotus EX-HN23, and the reported Anmian equivalence by number alone.",
+    "clinical_pearls": "eLotus 的明列功效只有祛風、利頸；通絡、止痛來自既有卡與頸肩胛痛主治整理。該頁另列呼吸、鼻、神志、心耳與淋巴咽喉主治，但未給專屬配穴或分證，故不擴寫機理。",
+    "clinical_pearls_en": "eLotus explicitly lists only dispelling Wind and benefiting the neck; unblocking collaterals and relieving pain are retained from the legacy card/neck-pain indications. Its respiratory, nasal, neuropsychiatric, cardiac-ear, and lymphatic-throat indications have no point-specific combinations or differentiation, so mechanisms are not extrapolated.",
+    "nameIntroZh": "新設另見新識、下風池；eLotus 英譯 New Set，並記載許多文獻視其與安眠為同一穴。",
+    "nameIntroEn": "Xinshe is also called Xinshi and Xiafengchi; eLotus translates it as 'New Set' and notes that many references regard it as the same point as Anmian.",
     "field_sources": {
-      "location": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
-      "technique": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
-      "functions": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
-      "indications": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
-      "cautions": ["source-gap note: exact eLotus page states no point-specific contraindication"],
-      "nomenclature": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"]
+      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Xinshe not listed"],
+      "curriculum": ["source-gap note: no dedicated Xinshe/新設 entry found under curriculum/acupoints"],
+      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
+      "american_dragon": ["https://www.americandragon.com/PointsIndex2.html: Xinshe absent from pinyin index"],
+      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23", "legacy location retained separately: below GB20 at posterior SCM border near C3 transverse process"],
+      "anatomy": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: C3-C4 level and 1.5-cun lateral landmarks", "source-gap note: no layered upper-neck anatomy or vertebral-artery/spinal safety boundary"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: perpendicular 0.3-0.8 cun", "legacy perpendicular 0.5-0.8-cun version retained separately"],
+      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: 5-15 minutes", "source-gap note: no method, distance, skin-protection, or stopping protocol"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: dispels Wind pathogen and benefits the neck", "legacy unblocks-collaterals and relieves-pain content retained with attribution"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23", "legacy stiff-neck and cervical-spondylosis indications retained"],
+      "combinations": ["source-gap note: no Xinshe-specific combinations found in the four sources"],
+      "cautions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: technique and moxa values; contraindication field blank", "source-gap note: no layered anatomy, stopping rule, pregnancy, pediatric, or other high-risk protocol"],
+      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: EX-HN23 Xinshe, aliases, and Anmian-equivalence note", "https://iris.who.int/handle/10665/40001: international nomenclature framework", "immutable database ID retained as EX-HN20"],
+      "link_check": ["2026-08-02 HTTP 200: eLotus production Xinshe detail page", "2026-08-02 HTTP 200: American Dragon pinyin index; Xinshe absent", "2026-08-02 WHO IRIS nomenclature record opened"]
     }
   },
   {
@@ -3219,9 +3286,41 @@
     "region": "頭頸部 / Head and Neck",
     "location": "面部，鼻唇溝溝底與鼻翼下緣平齊處。",
     "locationEn": "On the face, in the nasolabial groove at the level of the lower border of the nasal ala.",
-    "techniqueNotes": "斜刺0.3~0.5寸。\nOblique 0.3-0.5 cun.",
+    "cunMeasurement": "既有卡片未給旁開寸數；以鼻唇溝溝底及鼻翼下緣水平作地標。四來源未找到可核讀精確頁，定位尚未完成外部驗證。",
+    "anatomyZh": "既有卡片定位於鼻翼下緣水平的鼻唇溝面部軟組織區。四來源未提供逐層肌肉、面動脈／靜脈、面神經分支、眶下或鼻腔界線、體型差異，不能由表面溝紋自行推定針向與安全深度。",
+    "anatomyEn": "The legacy card places the point in facial soft tissue at the nasolabial groove level with the lower nasal ala. The four sources provide no layer-by-layer muscle, facial artery/vein, facial-nerve branch, infraorbital or nasal-cavity boundary, or body-build variation; direction and safe depth cannot be inferred from the surface groove.",
+    "techniqueNotes": "既有卡片：斜刺0.3~0.5寸；本批未在 Board、課件、eLotus 或 American Dragon 找到散笑精確穴位頁驗證此數值。只作 legacy 值保存，不得視為已核實操作指引。\nLegacy card: oblique insertion 0.3-0.5 cun. No exact Sanxiao point page was found in the Board outline, course materials, eLotus, or American Dragon to verify this value; it is retained only as a legacy value, not validated procedural guidance.",
+    "acumethodZh": "既有：斜刺0.3~0.5寸；方向、深度與適應技法均未找到四來源驗證。",
+    "acumethodEn": "Legacy: oblique 0.3-0.5 cun; direction, depth, and indication-specific technique were not verified in the four sources.",
+    "moxaZh": "既有卡片與四來源均未提供散笑灸法資料；不得補造可灸、禁灸、時間或壯數。",
+    "moxaEn": "Neither the legacy card nor the four sources provides Sanxiao moxibustion data; permission, prohibition, time, and cone count are not inferred.",
     "functions": "袪風通絡，宣肺開竅",
-    "functionsEn": "Dispels wind; Opens nasal orifices",
+    "functionsEn": "Dispels Wind; Unblocks the collaterals; Diffuses the Lung and opens the nasal orifices",
+    "functionsZhList": [
+      "祛風",
+      "通絡",
+      "宣肺開竅"
+    ],
+    "functionsEnList": [
+      "Dispels Wind",
+      "Unblocks the collaterals",
+      "Diffuses the Lung and opens the nasal orifices"
+    ],
+    "pointIdentityZh": [
+      "本庫不可變 ID：EX-HN21 散笑",
+      "NCBAHM Appendix A 不列 Sanxiao",
+      "現有 curriculum/acupoints 未找到散笑專條",
+      "eLotus 穴位索引未列 Sanxiao；其 EX-HN21 是上廉泉，不是散笑",
+      "American Dragon 拼音索引未列 Sanxiao"
+    ],
+    "pointIdentityEn": [
+      "Immutable database ID: EX-HN21 Sanxiao",
+      "NCBAHM Appendix A does not list Sanxiao",
+      "No dedicated Sanxiao entry was found in the current curriculum/acupoints materials",
+      "The eLotus point index does not list Sanxiao; its EX-HN21 is Shanglianquan, not Sanxiao",
+      "The American Dragon pinyin index does not list Sanxiao"
+    ],
+    "exam_star": 0,
     "patterns": [
       "面肌痙攣",
       "面癱",
@@ -3234,32 +3333,63 @@
     ],
     "action_tags_zh": ["祛風疏風", "通絡", "通鼻竅"],
     "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Open the Nasal Orifices"],
-    "disease_tags_zh": ["面癱", "鼻塞"],
-    "disease_tags_en": ["Facial Paralysis", "Nasal Congestion"],
-    "cautions": "⚠️ 來源缺口：NCBAHM 2026 ACPL Appendix A 未列散笑，現有課件亦無命中；本批在 eLotus、American Dragon、CloudTCM 未找到可核讀的精確穴位頁。現有斜刺 0.3~0.5 寸與安全性尚未完成來源驗證，不得視為已核實操作指引。",
+    "disease_tags_zh": ["面肌痙攣", "面癱", "鼻塞"],
+    "disease_tags_en": ["Facial Spasm", "Facial Paralysis", "Nasal Congestion"],
+    "cautions": "【來源缺口】NCBAHM Appendix A 未列散笑，現有課件無專條，eLotus 與 American Dragon 拼音索引均未列 Sanxiao；既有定位、功效、主治與斜刺0.3~0.5寸尚無四來源精確頁驗證。【面部解剖缺口】未取得逐層肌肉、面血管／神經、眶下或鼻腔界線、異常感覺與出血停止規則、體型差異資料。【高風險缺口】無孕婦、兒童、抗凝／出血風險、感染或其他特殊族群規範。【灸法】無來源，不補造。eLotus 的 EX-HN21 是上廉泉，不是散笑；不能按代碼移植內容。所有 legacy 內容只供待核對學習，不得視為已核實臨床操作指引。",
     "cautionsEn": [
-      "⚠️ Source gap: Sanxiao is not listed in the NCBAHM 2026 ACPL Appendix A and was not found in the current course materials; no exact, reviewable point page was found in eLotus, American Dragon, or CloudTCM during this pass.",
-      "The existing oblique 0.3-0.5 cun method and its safety have not been source-verified and must not be treated as validated procedural guidance."
+      "Sanxiao is absent from NCBAHM Appendix A and the current course materials, and neither the eLotus nor American Dragon pinyin index lists it; no exact four-source detail page was found to verify the legacy location, actions, indications, or oblique 0.3-0.5-cun value.",
+      "No layer-by-layer facial anatomy, facial vessel/nerve, infraorbital or nasal-cavity boundary, abnormal-sensation or bleeding stopping rule, body-build variation, pregnancy, pediatric, anticoagulation/bleeding-risk, infection, or other high-risk protocol was located.",
+      "No moxibustion source was found, so permission, prohibition, and dose are not inferred.",
+      "eLotus uses EX-HN21 for Shanglianquan, not Sanxiao; content must not be transferred by code. All legacy content remains study material pending verification, not validated procedural guidance."
     ],
-    "evidence": "Unverified legacy textbook attribution; exact professional source not located in this pass.",
+    "combinePointsZh": "四來源未找到散笑的專屬配穴組合；不以一般面癱、面肌痙攣或鼻塞配穴自行填充。",
+    "combinePointsEn": "No Sanxiao-specific combination was found in the four sources; general combinations for facial paralysis, facial spasm, or nasal congestion are not inserted by inference.",
+    "evidence": "四層查核結果為來源缺口：NCBAHM Appendix A 不列 Sanxiao；現有 curriculum/acupoints 無散笑專條；eLotus 穴位索引無 Sanxiao，且其 EX-HN21 對應上廉泉；American Dragon 拼音索引亦無 Sanxiao。既有鼻唇溝定位、斜刺0.3~0.5寸、祛風通絡／宣肺開竅與面肌痙攣／面癱／鼻塞全部保留，但不得冒充已由四來源證實。WHO IRIS 僅作國際命名框架。",
     "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 散笑 EX-HN21",
-        "labelEn": "Extra Point · Sanxiao EX-HN21",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "labelZh": "eLotus 穴位索引 · 未列散笑",
+        "labelEn": "eLotus Point Index · Sanxiao Not Listed",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points",
+        "source": "MasterTungAcupuncture.org / eLotus CORE index audit"
+      },
+      {
+        "labelZh": "American Dragon 拼音索引 · 未列散笑",
+        "labelEn": "American Dragon Pinyin Index · Sanxiao Not Listed",
+        "url": "https://www.americandragon.com/PointsIndex2.html",
+        "source": "American Dragon index audit"
       }
     ],
     "x": 174,
     "y": 168,
+    "exam_importance": "NCBAHM Appendix A 未列 Sanxiao，故不標 Board 核心。本卡目前重點是辨識來源缺口與代碼衝突：本庫 EX-HN21 散笑，eLotus EX-HN21 則為上廉泉。",
+    "exam_importance_en": "NCBAHM Appendix A does not list Sanxiao, so it is not marked Board core. The current priority is recognizing the source gap and code conflict: database EX-HN21 is Sanxiao, whereas eLotus EX-HN21 is Shanglianquan.",
+    "exam_pearl": "散笑舊卡記作鼻翼下緣水平的鼻唇溝穴、用於面肌痙攣／面癱／鼻塞；但四來源均無精確頁，斜刺0.3~0.5寸不可當成已核實數值。",
+    "exam_pearl_en": "The legacy Sanxiao card places it in the nasolabial groove at the lower-ala level for facial spasm, facial paralysis, and nasal congestion, but no exact four-source page was found; oblique 0.3-0.5 cun is not a validated value.",
+    "clinical_pearls": "現階段最重要的臨床品質訊息是『不要移植』：不能把 eLotus EX-HN21 上廉泉的咽喉／舌下內容搬到散笑，也不能因索引無結果便推論散笑不存在。保留舊卡，等待可核讀專業原典。",
+    "clinical_pearls_en": "The key quality rule is non-transfer: do not copy eLotus EX-HN21 Shanglianquan throat/sublingual content into Sanxiao, and do not infer that Sanxiao does not exist merely because the indexes lack it. Preserve the legacy card pending a reviewable professional source.",
+    "nameIntroZh": "散笑的名稱字義與別名未在四來源中找到可核讀說明；不自行推衍命名含義。",
+    "nameIntroEn": "No reviewable explanation of the name Sanxiao or its aliases was found in the four sources; the name meaning is not inferred.",
     "field_sources": {
-      "scope_check": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md#p.5"],
-      "content_status": ["unverified legacy record; exact professional point page not located in this pass"],
-      "cautions": ["source-gap warning; not a validated needling instruction"]
+      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Sanxiao not listed"],
+      "curriculum": ["source-gap note: no dedicated Sanxiao/散笑 entry found under curriculum/acupoints"],
+      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points: Sanxiao absent; EX-HN21 maps to Shanglianquan"],
+      "american_dragon": ["https://www.americandragon.com/PointsIndex2.html: Sanxiao absent from pinyin index"],
+      "location": ["unverified legacy record: nasolabial groove at lower-nasal-ala level; no exact four-source page located"],
+      "anatomy": ["source-gap note: no layered facial anatomy, vessel/nerve boundary, nasal boundary, or body-variation protocol"],
+      "technique": ["unverified legacy value: oblique 0.3-0.5 cun; not confirmed by an exact four-source page"],
+      "moxibustion": ["source-gap note: no Sanxiao-specific moxa statement found"],
+      "functions": ["unverified legacy actions retained: dispel Wind, unblock collaterals, diffuse Lung/open nasal orifices"],
+      "indications": ["unverified legacy indications retained: facial spasm, facial paralysis, nasal congestion"],
+      "combinations": ["source-gap note: no Sanxiao-specific combinations found in the four sources"],
+      "cautions": ["source-gap warning: no validated anatomy, needling, moxa, pregnancy, pediatric, anticoagulation/bleeding-risk, infection, or other high-risk protocol"],
+      "nomenclature": ["immutable database ID EX-HN21 Sanxiao retained", "https://www.mastertungacupuncture.org/acupuncture/traditional/points: eLotus EX-HN21 is Shanglianquan, not Sanxiao", "https://iris.who.int/handle/10665/40001: international nomenclature framework"],
+      "link_check": ["2026-08-02 HTTP 200: eLotus point index; Sanxiao absent", "2026-08-02 HTTP 200: American Dragon pinyin index; Sanxiao absent", "2026-08-02 WHO IRIS nomenclature record opened"]
     }
   },
   {
