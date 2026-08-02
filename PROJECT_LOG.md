@@ -1,3 +1,11 @@
+# 2026-08-02 Codex — EX-HN10 聚泉 + EX-HN11 海泉嚴格四來源卡
+- 完成 EX-HN10、EX-HN11；經外奇穴進度更新為 11/72 嚴格完成、61/72 仍在 worklist。
+- 聚泉補齊 eLotus 的舌背中點、0.1~0.2寸或點刺出血、舌運動／味覺／慢性咳喘／消渴架構；歷史隔薑黃豆大艾炷3~7壯保留「現今少用」限定，不改寫成一般灸法。
+- 海泉補齊舌下繫帶正中、金津玉液之間、點刺出血、清熱生津利舌、完整舌病／面癱／消渴／胃腸主治、Sea Spring 與鬼封別名。
+- AD 拼音索引均無 Juquan／Haiquan，因此只記來源缺口；未猜口腔點刺的針具、深度、滴數、止血及孕婦／兒童規則。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`1eaad9d`。
+
 # 2026-08-02 Codex — EX-HN8 上迎香 + EX-HN9 內迎香嚴格四來源卡
 - 完成 EX-HN8、EX-HN9 的 Board Outline／課件／eLotus／American Dragon 四層查核與中英成對模板；經外奇穴進度更新為 9/72 嚴格完成、63/72 仍在 worklist。
 - 上迎香保留 EX-HN8 Shangyingxiang 與課件／AD M-HN-14 Bitong 的編碼差異；課件0.2~0.3寸、eLotus 0.3~0.5寸、AD 0.3~0.8寸的方向與深度逐源並列，不製造假共識。補入 eLotus／AD 全部鼻病、眼病、面部主治架構、AD 配穴及精確 `Points/Bitong.html`。

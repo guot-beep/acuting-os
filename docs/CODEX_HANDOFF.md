@@ -1,5 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN10 Juquan + EX-HN11 Haiquan strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `1eaad9d` (`Complete Juquan and Haiquan cards`)
+- Task: Continue sequential extra-point completion with strict intraoral safety, exact pinyin-link checks, and explicit source gaps.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN10 聚泉 and EX-HN11 海泉; audit is now 61/72 issue records and 11/72 strict/four-source complete.
+  2. Juquan now reflects eLotus's full structure: dorsal tongue midpoint, 0.1-0.2-cun perpendicular insertion or bloodletting, tongue/taste/cough/asthma/diabetes indications, and the historical 3-7 soybean-sized ginger-moxa cones for chronic cough explicitly labeled rarely used today.
+  3. Haiquan now includes the complete eLotus structure: midline frenulum between Jinjin/Yuye, bloodletting, Heat/fluid/tongue actions, tongue/facial-paralysis/wasting-thirst/GI indications, Sea Spring translation, and Guifeng alias.
+  4. Neither point exists in the AD pinyin index; no fabricated detail link was added. Both bloodletting cards explicitly state that instrument, depth/quantity, antisepsis, hemostasis, pregnancy, pediatric, and other high-risk procedures are not supplied by the four-source set.
+  5. Preserved all legacy actions, indications, safety notes, and combinations with support or source-gap labels rather than deleting them.
+- Source basis: NCBAHM 2026 ACPL Appendix A negative search; negative exact-name search under `curriculum/acupoints`; exact/indexed eLotus Juquan and exact eLotus Haiquan pages; American Dragon pinyin index; WHO IRIS nomenclature record. Existing Me & Qi provenance for Juquan was retained but identified as outside the current four-source contract.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (11/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
+- Known risks / manual checks: Ting should verify the historical qualifier remains attached to Juquan's 3-7-cone moxa note and that Haiquan does not render any invented blood quantity. These intraoral entries remain draft study content, not standalone procedural protocols.
+- Next recommended action: continue EX-HN12 金津 and EX-HN13 玉液 as a paired sublingual-bloodletting batch.
+
 ## [2026-08-02] Codex Handoff — EX-HN8 Shangyingxiang + EX-HN9 Neiyingxiang strict cards
 
 - Agent: Codex
