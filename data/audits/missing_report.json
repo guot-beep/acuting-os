@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 67,
+        "records_with_issues": 65,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
         "generic_source_url": 20,
-        "strict_template_complete": 5,
-        "four_source_audit_complete": 5,
+        "strict_template_complete": 7,
+        "four_source_audit_complete": 7,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Audit reset to Ting's full four-source card contract: Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link check, safety, combinations, and field-level provenance. EX-HN1 through EX-HN5 are complete under this contract; 67/72 remain on the worklist. All 72 still have a measurable needling/bloodletting/moxibustion method; 20 retain generic CloudTCM directory URLs pending replacement or explicit source-gap review."
+        "note": "Audit reset to Ting's full four-source card contract: Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link check, safety, combinations, and field-level provenance. EX-HN1 through EX-HN7 are complete under this contract; 65/72 remain on the worklist. All 72 still have a measurable needling/bloodletting/moxibustion method; 20 retain generic CloudTCM directory URLs pending replacement or explicit source-gap review."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Continue the 72-record restart sequentially from EX-HN6 Erjian. Each record must integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup from the AD index; preserve source differences and legacy content, add paired bilingual strict-template fields, and record live exact-link checks or explicit source gaps. Current baseline: 5/72 strict-template and four-source complete (EX-HN1 through EX-HN5).",
+  "next_recommendation": "Continue the 72-record restart sequentially from EX-HN8 Shangyingxiang. Each record must integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup from the AD index; preserve source differences and legacy content, add paired bilingual strict-template fields, and record live exact-link checks or explicit source gaps. Current baseline: 7/72 strict-template and four-source complete (EX-HN1 through EX-HN7).",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",
