@@ -2496,10 +2496,44 @@
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
     "location": "頸部，翳風穴（TE17）與風池穴（GB20）連線中點。",
-    "locationEn": "On the neck, midpoint between Yifeng (TE 17) and Fengchi (GB 20).",
-    "techniqueNotes": "直刺0.8~1.2寸。可灸。\nPerpendicular 0.8-1.2 cun. Moxa applicable.",
+    "locationEn": "Behind the ear at the midpoint between Yifeng (TE17) and Fengchi (GB20). AD additionally says it lies close to GB12, posterior and slightly superior to it.",
+    "cunMeasurement": "不用固定寸量；取翳風（TE17）與風池（GB20）連線中點。AD 另以近 GB12、在其後上方作輔助地標。",
+    "anatomyZh": "位於耳後、TE17 與 GB20 中點的上頸部區，AD 另描述靠近 GB12 後上方。四來源未提供逐層神經血管、顱底界線或體型差異；不能由兩點中點自行推定深刺安全。",
+    "anatomyEn": "This is an upper-neck/posterior-auricular region at the midpoint between TE17 and GB20; AD also places it near and posteriosuperior to GB12. The four sources provide no layer-by-layer neurovascular anatomy, skull-base boundary, or body-build variation; deeper safety must not be inferred from the midpoint landmark.",
+    "techniqueNotes": "eLotus：直刺0.5~0.8寸。AD：垂直刺0.5~1寸、直刺1~1.5寸（可有局部脹痛並延及同側面部），另列垂直刺0.5~0.8寸。既有卡片0.8~1.2寸保留為第四個版本。深度差異顯著，逐源並列，不以『保守深度』掩蓋衝突；AD 感覺描述不是追求向面部放電感的指令。\neLotus: perpendicular insertion 0.5-0.8 cun. AD: perpendicular 0.5-1 cun, straight 1-1.5 cun (with local distention/soreness sometimes extending over the ipsilateral face), and another perpendicular 0.5-0.8-cun version. The legacy 0.8-1.2-cun range is retained as a fourth version. The discrepancy is explicit rather than hidden under a single 'conservative' range; AD's sensation description is not an instruction to pursue facial electric sensation.",
+    "acumethodZh": "eLotus：直刺0.5~0.8寸。AD：垂直0.5~1寸、直刺1~1.5寸，另列垂直0.5~0.8寸。既有：直刺0.8~1.2寸。",
+    "acumethodEn": "eLotus: perpendicular 0.5-0.8 cun. AD: perpendicular 0.5-1 cun, straight 1-1.5 cun, and another perpendicular 0.5-0.8-cun version. Legacy: perpendicular 0.8-1.2 cun.",
+    "moxaZh": "既有卡片寫『可灸』；eLotus 安眠與 AD Anmian 條目均未說明艾灸。保留為待核實內容，不補造灸量，也不標成兩來源共識。",
+    "moxaEn": "The legacy card says moxibustion is applicable, but neither the eLotus Anmian nor AD Anmian entry addresses moxa. It is retained pending verification; no dose is inferred and it is not presented as two-source consensus.",
     "functions": "安神定志，疏肝寧心，鎮靜助眠",
     "functionsEn": "Calms the spirit; Soothes the Liver; Tranquilizes and promotes sleep",
+    "functionsZhList": [
+      "安神定志",
+      "疏肝／平肝",
+      "鎮靜助眠（既有內容；由穴名與失眠主治支持，但來源功效欄未另列）",
+      "寧心（既有內容；心悸主治支持，但來源功效欄未另列）"
+    ],
+    "functionsEnList": [
+      "Calms the Shen",
+      "Soothes / pacifies the Liver",
+      "Tranquilizes and promotes sleep (legacy action supported by name/insomnia indication but not separately listed in source action fields)",
+      "Calms the Heart (legacy action supported by palpitation indication but not separately listed in source action fields)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "失眠與神志病要穴",
+      "eLotus／本庫用 EX-HN16；AD 頁面用 N-HN-54",
+      "NCBAHM Appendix A 列 Anmian",
+      "AD 稱其為現代新增、主要用於失眠的經外穴"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Key point for insomnia and Shen-related presentations",
+      "eLotus/database use EX-HN16; the AD page uses N-HN-54",
+      "NCBAHM Appendix A lists Anmian",
+      "AD describes it as a modern extra point used primarily for insomnia"
+    ],
+    "exam_star": 0,
     "patterns": [
       "失眠",
       "心悸",
@@ -2507,7 +2541,12 @@
       "眩暈",
       "頭痛",
       "耳鳴",
-      "精神疾患"
+      "精神疾患／歇斯底里／躁狂",
+      "癲癇與驚厥",
+      "高血壓伴失眠或躁動",
+      "甲狀腺功能亢進伴多夢睡眠",
+      "耳聾",
+      "藥物成癮戒斷症狀"
     ],
     "patternsEn": [
       "Insomnia",
@@ -2516,22 +2555,34 @@
       "Vertigo",
       "Headache",
       "Tinnitus",
-      "Mental disorders"
+      "Mental illness / hysteria / mania",
+      "Epilepsy and convulsions",
+      "Hypertension with insomnia or restlessness",
+      "Hyperthyroidism with dream-disturbed sleep",
+      "Deafness",
+      "Withdrawal symptoms from drug addiction"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【失眠】安眠配神門（HT7）、三陰交（SP6）：寧心安神、交通心腎。\n【躁動／精神疾患】安眠配水溝（GV26）、大椎（GV14）、陶道（GV13）：AD 記載方向，偏清熱醒神、鎮靜安定。\n【眩暈】安眠配曲池（LI11）、豐隆（ST40）：清熱化痰、平肝降逆。",
-    "reviewStatus": "draft_source_checked",
-    "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
-      "https://www.americandragon.com/Points/Anmian.html"
+    "evidence": "四層查核：NCBAHM Appendix A 列 Anmian，現有課件未找到安眠專條；eLotus 提供 EX-HN16、TE17 與 GB20 中點、直刺0.5~0.8寸、不灸、安神疏肝與失眠／眩暈／頭痛／心悸／精神疾患；AD 提供 N-HN-54、GB12 輔助地標、三個0.5~1.5寸刺法版本、安神平肝、較完整神志／耳科／高血壓／甲亢／戒斷主治及三組配穴。既有0.8~1.2寸、可灸與 HT7 配伍不刪，但分別標成未核實或 legacy。WHO IRIS 僅作國際命名框架。",
+    "combinePointsZh": "【失眠・AD】安眠配內關（PC6）、三陰交（SP6）：AD 原列配伍；用於寧心安神與調和睡眠。\n【失眠・既有卡片】安眠配神門（HT7）、三陰交（SP6）：原卡配伍保留，與 AD 的 PC6 版本分開標示。\n【精神疾患・AD】安眠配水溝（GV26）、大椎（GV14）、陶道（GV13）：AD 原列配伍。\n【眩暈・AD】安眠配曲池（LI11）、豐隆（ST40）：AD 原列配伍。",
+    "reviewStatus": "draft",
+  "sources": [
+    "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+    "https://www.americandragon.com/Points/Anmian.html",
+    "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 安眠 EX-HN16 (eLotus CORE)",
         "labelEn": "Extra Point · Anmian EX-HN16 (eLotus CORE)",
-        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
-        "source": "MasterTungAcupuncture.org / eLotus CORE"
-      }
+      "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+      "source": "MasterTungAcupuncture.org / eLotus CORE"
+    },
+    {
+      "labelZh": "American Dragon · 安眠 N-HN-54",
+      "labelEn": "American Dragon · Anmian N-HN-54",
+      "url": "https://www.americandragon.com/Points/Anmian.html",
+      "source": "American Dragon"
+    }
     ],
     "x": 163,
     "y": 188,
@@ -2570,23 +2621,48 @@
       "頭痛",
       "經外奇穴"
     ],
-    "cautions": "後頸近乳突、風池區與上頸部深層結構；eLotus 列直刺 0.5~0.8 寸，AD 有 0.5~1 寸與 1~1.5 寸不同記載，卡片以保守深度為主並標來源差異。避免深刺或向顱底深部進針；眩暈、體弱或強刺激敏感者慎用。",
-    "cautionsEn": [
-      "Posterior-neck point near the mastoid/Fengchi region and deep upper-cervical structures. eLotus lists perpendicular 0.5-0.8 cun, while American Dragon includes broader depths; use the conservative range and document the discrepancy.",
-      "Avoid deep insertion or needling toward the skull base. Use caution in frail, dizzy, or strong-stimulation-sensitive patients."
+  "cautions": "【深度差異】eLotus 列直刺0.5~0.8寸；AD 同頁列垂直0.5~1寸、直刺1~1.5寸及另一個垂直0.5~0.8寸版本；既有卡片另為0.8~1.2寸。四版本並列，不合併成共識深度。【感覺界線】AD 記局部脹痛有時延及同側面部，僅是來源中的感覺描述，不是刻意追求向面部放電感的操作目標。【解剖缺口】四來源均未給逐層神經血管、顱底安全界線、孕婦、兒童或其他高風險操作規範；本卡不據中點定位自行推定深刺安全。既有『避免向顱底深刺、眩暈／體弱／強刺激敏感者慎用』保留為程序性保守提醒，但非四來源明載禁忌。【灸法】既有『可灸』缺乏 eLotus／AD 支持，不補造灸量。",
+  "cautionsEn": [
+    "Depth discrepancy: eLotus lists perpendicular 0.5-0.8 cun; the AD page lists perpendicular 0.5-1 cun, straight 1-1.5 cun, and another perpendicular 0.5-0.8-cun version; the legacy card adds 0.8-1.2 cun. These four versions are not merged into a consensus range.",
+    "AD's local distention/soreness sometimes extending over the ipsilateral face is a reported sensation, not an instruction to deliberately seek an electrical sensation into the face.",
+    "The four sources do not provide layer-by-layer neurovascular anatomy, a skull-base safety boundary, or pregnancy, pediatric, or other high-risk protocols. The legacy advice to avoid deep insertion toward the skull base and use procedural caution in frail, dizzy, or stimulation-sensitive patients is retained but is not a source-stated contraindication.",
+    "The legacy card says moxa is applicable, but eLotus and AD do not support or quantify it; no moxa dose is inferred."
+  ],
+  "exam_importance": "NCBAHM Appendix A 明列 Anmian，屬 Board 範圍。定位抓 TE17 與 GB20 連線中點；主軸安神助眠，兼眩暈、頭痛、心悸與精神躁動。",
+  "exam_importance_en": "NCBAHM Appendix A explicitly lists Anmian, placing it in Board scope. Locate the midpoint between TE17 and GB20; its core is calming the Shen for sleep, with additional vertigo, headache, palpitation, and agitation indications.",
+  "exam_pearl": "安眠＝TE17—GB20 連線中點的睡眠要穴。AD 的失眠配伍是 PC6＋SP6；原卡的 HT7＋SP6 是另一 legacy 版本。與翳明相近但用途不同：安眠偏失眠／神志，翳明偏眼耳。",
+  "exam_pearl_en": "Anmian is the sleep-focused point at the midpoint of the TE17-GB20 line. AD pairs it with PC6 + SP6 for insomnia; the legacy HT7 + SP6 combination is a separate version. Distinguish nearby Yiming, which emphasizes eye and ear disorders.",
+  "combinePointsEn": "Insomnia (AD): Anmian with Neiguan (PC6) and Sanyinjiao (SP6), the pairing listed by AD, for calming the Heart/Shen and regulating sleep.\nInsomnia (legacy card): Anmian with Shenmen (HT7) and Sanyinjiao (SP6); retained separately from AD's PC6 version.\nMental disorders (AD): Anmian with Shuigou (GV26), Dazhui (GV14), and Taodao (GV13).\nVertigo (AD): Anmian with Quchi (LI11) and Fenglong (ST40).",
+  "clinical_pearls": "AD 補出失眠以外的應用：躁動、心悸、癲癇、歇斯底里、躁狂、高血壓伴失眠／躁動、甲亢伴多夢睡眠、耳聾、驚厥與藥物戒斷。本卡完整保留，但這些是來源列示主治，不等於以安眠替代病因評估或常規治療。AD 定位文字把 SJ17 誤寫成『Sifeng』，其超連結與標準穴名實為 Yifeng（TE17／SJ17）。",
+  "clinical_pearls_en": "AD extends the indication structure beyond insomnia to agitation, palpitations, epilepsy, hysteria, mania, hypertension with insomnia/restlessness, hyperthyroidism with dream-disturbed sleep, deafness, convulsions, and drug-withdrawal symptoms. These are source-listed indications, not a claim that Anmian replaces etiologic assessment or standard care. AD's location prose mislabels SJ17 as 'Sifeng'; its link and the standard point name indicate Yifeng (TE17/SJ17).",
+  "nameIntro": "安眠（Anmian，意為 Peaceful Sleep）是耳後的經外奇穴；本庫與 eLotus 用 EX-HN16，American Dragon 用 N-HN-54。",
+  "field_sources": {
+    "board_scope": [
+      "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Anmian listed"
     ],
-    "exam_importance": "安眠是經外失眠要穴。定位抓 TE17 與 GB20 連線中點；主軸安神助眠，兼眩暈、頭痛、心悸與精神躁動。",
-    "exam_pearl": "安眠 = 睡眠專穴；與神門、三陰交常配。和翳明位置相近但用途不同：安眠偏失眠/神志，翳明偏眼耳。",
-    "combinePointsEn": "Insomnia: Anmian with Shenmen (HT7) and Sanyinjiao (SP6) calms the spirit and supports Heart-Kidney communication.\nAgitation / mental disorders: Anmian with Shuigou (GV26), Dazhui (GV14), and Taodao (GV13), as listed by American Dragon, emphasizes clearing Heat, restoring consciousness, and calming agitation.\nVertigo: Anmian with Quchi (LI11) and Fenglong (ST40) clears Heat, transforms Phlegm, and anchors rebellious Qi.",
-    "clinical_pearls": "AD 補出失眠以外的應用：agitation、palpitations、epilepsy、hypertension with insomnia/restlessness、drug withdrawal 等；本卡將其歸為精神/神志與眩暈頭痛線，不塞進單一「失眠」標籤。",
-    "field_sources": {
+    "curriculum": [
+      "source-gap note: no dedicated Anmian/安眠 entry found under curriculum/acupoints"
+    ],
+    "elotus": [
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16"
+    ],
+    "american_dragon": [
+      "https://www.americandragon.com/Points/Anmian.html"
+    ],
       "location": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
         "https://www.americandragon.com/Points/Anmian.html"
       ],
-      "technique": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
-        "https://www.americandragon.com/Points/Anmian.html"
+    "technique": [
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+      "https://www.americandragon.com/Points/Anmian.html",
+      "legacy 0.8-1.2-cun range retained as a distinct unverified version"
+    ],
+    "anatomy": [
+      "source-gap note: no full layer-by-layer posterior-auricular/upper-neck neurovascular anatomy or skull-base safety boundary"
+    ],
+    "moxibustion": [
+      "source-gap note: eLotus and AD Anmian entries do not address moxa; legacy applicability retained pending verification"
       ],
       "functions": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
@@ -2596,14 +2672,26 @@
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
         "https://www.americandragon.com/Points/Anmian.html"
       ],
-      "cautions": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
-        "https://www.americandragon.com/Points/Anmian.html"
+    "cautions": [
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16: perpendicular 0.5-0.8 cun",
+      "https://www.americandragon.com/Points/Anmian.html: multiple 0.5-1.5-cun variants and ipsilateral facial sensation description",
+      "source-gap note: no full anatomy, pregnancy, pediatric, or other high-risk protocol"
       ],
-      "combinations": [
-        "https://www.americandragon.com/Points/Anmian.html"
-      ]
-    }
+    "combinations": [
+      "https://www.americandragon.com/Points/Anmian.html",
+      "legacy HT7 + SP6 insomnia combination retained separately"
+    ],
+    "nomenclature": [
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16: EX-HN16 Anmian",
+      "https://www.americandragon.com/Points/Anmian.html: N-HN-54 Anmian",
+      "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+    ],
+    "link_check": [
+      "2026-08-02 HTTP 200: eLotus exact Anmian page",
+      "2026-08-02 HTTP 200: American Dragon pinyin index and exact Anmian page",
+      "2026-08-02 WHO IRIS nomenclature record opened"
+    ]
+  }
   },
   {
     "code": "EX-HN17",
@@ -2613,39 +2701,184 @@
     "pinyin": "Shangming",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "面部，眉弓中點下緣，眶上緣下。",
-    "locationEn": "On the face, below the midpoint of the eyebrow arch, beneath the supraorbital margin.",
-    "techniqueNotes": "沿眶上緣向後上方平刺0.5~1.0寸。\nSubcutaneous 0.5-1.0 cun.",
+    "location": "面部，眉弓中點正下方、眶上緣稍下。AD：directly below the arch of the eyebrow, just under the superior border of the orbit。",
+    "locationEn": "On the face directly below the midpoint/arch of the eyebrow, just under the superior border of the orbit.",
+    "cunMeasurement": "不用固定寸量；以眉弓中點與眶上緣為骨性地標。",
+    "anatomyZh": "位於眉弓中點下方、眶上緣稍下的眶周區。四來源未提供逐層組織、神經血管、眼球／眶內容物安全界線或體型差異；不能僅由『沿眶上緣』自行推定深部安全。",
+    "anatomyEn": "This is a periorbital site below the midpoint of the eyebrow and just under the superior orbital border. The four sources provide no layer-by-layer anatomy, neurovascular detail, globe/orbital-content safety boundary, or body-build variation; deeper safety must not be inferred from the phrase 'along the superior orbital border.'",
+    "techniqueNotes": "AD：沿眶上緣直刺1~1.5寸，感覺可為眼球周圍脹感。既有卡片：沿眶上緣向後上方平／皮下刺0.5~1.0寸。方向、深度與術語不同，逐源並列；AD 的眼周脹感是來源描述，不是刻意追求刺向眼球的操作目標。eLotus 未收 Shangming，本網站的 EX-HN17 是 Bailao，故不能拿 Bailao 的0.3~0.5寸直刺／可灸套用於上明。\nAD: straight insertion along the superior border of the orbit, 1-1.5 cun, with distention around the eyeball. Legacy card: posterior-superior transverse/subcutaneous insertion along the superior orbital border, 0.5-1.0 cun. Direction, depth, and terminology differ and remain source-separated; AD's periorbital distention is descriptive, not an instruction to aim toward the globe. eLotus has no Shangming entry—its EX-HN17 is Bailao—so Bailao's 0.3-0.5-cun perpendicular technique and moxa statement must not be transferred to Shangming.",
+    "acumethodZh": "AD：沿眶上緣直刺1~1.5寸。既有：沿眶上緣向後上方平／皮下刺0.5~1.0寸。兩版本並列，未裁定共識深度。",
+    "acumethodEn": "AD: straight insertion along the superior orbital border, 1-1.5 cun. Legacy: posterior-superior transverse/subcutaneous insertion along the superior orbital border, 0.5-1.0 cun. Both versions are retained without claiming a consensus depth.",
+    "moxaZh": "既有卡片記『禁灸』；AD Shangming 頁面未說明灸法。eLotus EX-HN17 Bailao 的『可灸』屬另一個頸後穴，不能移植到本卡。禁灸暫保留為 legacy 待核實，不補造灸量。",
+    "moxaEn": "The legacy card states that moxibustion is contraindicated, while the AD Shangming page does not address moxa. eLotus EX-HN17 Bailao's statement that moxa is applicable belongs to a different posterior-neck point and cannot be transferred here. The no-moxa statement remains a legacy item pending verification; no dose is inferred.",
     "functions": "明目退翳，疏風清熱",
-    "functionsEn": "Brightens eyes; Removes visual obstruction",
+    "functionsEn": "Brightens the eyes; Removes visual obstruction; Dispels Wind; Clears Heat",
+    "functionsZhList": [
+      "明目",
+      "退翳",
+      "疏風（既有內容；AD 功效欄空白）",
+      "清熱（既有內容；AD 功效欄空白）"
+    ],
+    "functionsEnList": [
+      "Brightens the eyes",
+      "Removes visual obstruction",
+      "Dispels Wind (legacy content; AD action field is blank)",
+      "Clears Heat (legacy content; AD action field is blank)"
+    ],
+    "pointIdentityZh": [
+      "本庫不可變 ID：EX-HN17 上明",
+      "American Dragon：N-HN-4 Shangming／Upper Brightness",
+      "eLotus：EX-HN17 是 Bailao（百勞），不是上明",
+      "NCBAHM Appendix A 列 Bailao，不列 Shangming",
+      "現有課件未找到上明專條"
+    ],
+    "pointIdentityEn": [
+      "Immutable database ID: EX-HN17 Shangming",
+      "American Dragon: N-HN-4 Shangming / Upper Brightness",
+      "eLotus: EX-HN17 is Bailao, not Shangming",
+      "NCBAHM Appendix A lists Bailao, not Shangming",
+      "No dedicated Shangming entry was found in the current course materials"
+    ],
+    "exam_star": 0,
     "patterns": [
-      "近視",
-      "角膜炎",
+      "屈光不正（含既有近視項）",
+      "角膜白斑／角膜翳",
       "視神經萎縮",
+      "角膜炎（既有內容；AD 未列）",
       "白內障"
     ],
     "patternsEn": [
-      "Myopia",
-      "Keratitis",
+      "Ametropia (including the legacy myopia item)",
+      "Keratoleukoma / corneal opacity",
       "Optic atrophy",
+      "Keratitis (legacy; not listed by AD)",
       "Cataract"
     ],
-    "cautions": "手法宜輕，防止出血。禁灸。",
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "cautions": "【眶周來源缺口】AD 提供沿眶上緣直刺1~1.5寸與眼周脹感，但未列禁忌，也未提供逐層神經血管、眼球／眶內容物界線、異常感覺停止規則、孕婦、兒童或其他高風險規範；本卡不自行補造。【技法衝突】既有0.5~1.0寸平／皮下刺與 AD 1~1.5寸直刺不同，不合併成單一深度。【既有提醒】『手法宜輕、防止出血、禁灸』完整保留，但尚未由四來源中的 Shangming 專頁確認；eLotus Bailao 的可灸不能用來反駁或支持上明灸法。",
+    "cautionsEn": [
+      "Periorbital source gap: AD gives straight insertion along the superior orbital border at 1-1.5 cun and reports distention around the eyeball, but lists no contraindication and provides no layer-by-layer neurovascular anatomy, globe/orbital-content boundary, abnormal-sensation stopping rule, pregnancy, pediatric, or other high-risk protocol. None is invented here.",
+      "Technique discrepancy: the legacy 0.5-1.0-cun transverse/subcutaneous version differs from AD's 1-1.5-cun straight version; they are not merged into one range.",
+      "The legacy instructions to use gentle technique, prevent bleeding, and avoid moxa are retained but are not confirmed by the four-source Shangming review. eLotus Bailao's moxa applicability belongs to a different point and neither supports nor refutes Shangming moxa practice."
+    ],
+    "evidence": "四層查核：NCBAHM Appendix A 列 Bailao 而非 Shangming；現有課件未找到上明專條；eLotus 的 EX-HN17 是頸後 Bailao，沒有可安全移植到本卡的 Shangming 內容；AD 提供 N-HN-4 Shangming、眉弓／眶上緣定位、沿眶上緣直刺1~1.5寸、眼周脹感、屈光不正／角膜白斑／視神經萎縮及兩組配穴。既有0.5~1寸平刺、明目退翳／疏風清熱、角膜炎／白內障與禁灸均保留並標 legacy。WHO IRIS 僅作命名框架，未用來證明本庫 EX-HN17＝Shangming。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.americandragon.com/Points/Shangming.html",
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list",
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/bailao-ex-hn17",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
-        "labelZh": "經外奇穴 · 上明 EX-HN17",
-        "labelEn": "Extra Point · Shangming EX-HN17",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "labelZh": "American Dragon · 上明 N-HN-4",
+        "labelEn": "American Dragon · Shangming N-HN-4",
+        "url": "https://www.americandragon.com/Points/Shangming.html",
+        "source": "American Dragon"
       }
     ],
     "x": 175,
-    "y": 145
+    "y": 145,
+    "action_tags_zh": [
+      "明目",
+      "退翳",
+      "疏風",
+      "清熱"
+    ],
+    "action_tags_en": [
+      "Brighten eyes",
+      "Remove visual obstruction",
+      "Dispel Wind",
+      "Clear Heat"
+    ],
+    "disease_tags_zh": [
+      "屈光不正",
+      "角膜翳",
+      "視神經萎縮",
+      "角膜炎",
+      "白內障"
+    ],
+    "disease_tags_en": [
+      "Ametropia",
+      "Corneal opacity",
+      "Optic atrophy",
+      "Keratitis",
+      "Cataract"
+    ],
+    "acuTags": [
+      "眼科",
+      "屈光不正",
+      "角膜翳",
+      "視神經萎縮",
+      "經外奇穴",
+      "代碼衝突"
+    ],
+    "exam_importance": "NCBAHM Appendix A 未列 Shangming，但列 Bailao；eLotus 也把 EX-HN17 定為 Bailao。本庫 EX-HN17 上明因此不是可直接當成國際一致碼的對應，考試時須按題目來源辨識。",
+    "exam_importance_en": "NCBAHM Appendix A does not list Shangming but does list Bailao, and eLotus also assigns EX-HN17 to Bailao. Therefore the database's EX-HN17 Shangming mapping must not be treated as a universally consistent code; follow the nomenclature source specified by the exam item.",
+    "exam_pearl": "上明抓『眉弓中點正下、眶上緣稍下』與眼科主治；AD 碼是 N-HN-4。不要把 eLotus EX-HN17 百勞的頸後定位、0.3~0.5寸直刺與可灸套到本穴。",
+    "exam_pearl_en": "For Shangming, remember the point just below the midpoint of the eyebrow and under the superior orbital border, with ophthalmic indications; AD codes it N-HN-4. Do not transfer the posterior-neck location, 0.3-0.5-cun technique, or moxa statement from eLotus EX-HN17 Bailao.",
+    "combinePointsZh": "【角膜白斑／角膜翳・AD】上明配球後（M-HN-8）、上睛明（N-HN-1）、合谷（LI4）。\n【視神經萎縮・AD】上明配健明一（N-HN-3a）、健明二（N-HN-3b）、風池（GB20）、光明（GB37）、足三里（ST36）。",
+    "combinePointsEn": "Keratoleukoma / corneal opacity (AD): Shangming with Qiuhou (M-HN-8), Shangjingming (N-HN-1), and Hegu (LI4).\nOptic-nerve atrophy (AD): Shangming with Jianming #1 (N-HN-3a), Jianming #2 (N-HN-3b), Fengchi (GB20), Guangming (GB37), and Zusanli (ST36).",
+    "clinical_pearls": "AD 的功效欄與禁忌欄均空白，因此本卡不把既有『明目退翳、疏風清熱』或『禁灸』寫成 AD 共識。兩組 AD 配伍依原表分成角膜白斑與視神經萎縮，沒有把整串穴位混成一組。",
+    "clinical_pearls_en": "AD's action and contraindication fields are blank, so the legacy actions and no-moxa statement are not presented as AD consensus. The two AD combinations are kept as separate keratoleukoma and optic-atrophy groups rather than merged into one long prescription.",
+    "nameIntroZh": "上明意為『上方之明』，AD 英譯 Upper Brightness；本庫用 EX-HN17，但 AD 用 N-HN-4，eLotus 的 EX-HN17 則另指百勞。",
+    "nameIntroEn": "Shangming means 'Upper Brightness.' The database uses EX-HN17, AD uses N-HN-4, and eLotus uses EX-HN17 for the different point Bailao.",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Bailao listed; Shangming not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Shangming/上明 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list: EX-HN17 is Bailao; no Shangming entry",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/bailao-ex-hn17: identity-conflict evidence only; content not transferred to Shangming"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Shangming.html"
+      ],
+      "location": [
+        "https://www.americandragon.com/Points/Shangming.html",
+        "legacy card location retained"
+      ],
+      "anatomy": [
+        "source-gap note: no layer-by-layer periorbital neurovascular anatomy or globe/orbital-content safety boundary in the four reviewed layers"
+      ],
+      "technique": [
+        "https://www.americandragon.com/Points/Shangming.html: straight along superior orbital border, 1-1.5 cun",
+        "legacy 0.5-1-cun transverse/subcutaneous version retained separately"
+      ],
+      "moxibustion": [
+        "source-gap note: AD Shangming does not address moxa; legacy no-moxa statement retained pending verification",
+        "eLotus EX-HN17 Bailao moxa statement explicitly excluded because it is a different point"
+      ],
+      "functions": [
+        "legacy actions retained; AD Shangming action field is blank",
+        "https://www.americandragon.com/Points/Shangming.html: ophthalmic indications support identity but are not rewritten as explicit AD actions"
+      ],
+      "indications": [
+        "https://www.americandragon.com/Points/Shangming.html",
+        "legacy keratitis and cataract retained as source gaps"
+      ],
+      "cautions": [
+        "https://www.americandragon.com/Points/Shangming.html: 1-1.5 cun and periorbital distention; contraindication field blank",
+        "source-gap note: no full anatomy, stopping rule, pregnancy, pediatric, or other high-risk protocol",
+        "legacy gentle-technique, bleeding-prevention, and no-moxa cautions retained pending verification"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Shangming.html"
+      ],
+      "nomenclature": [
+        "database: immutable EX-HN17 Shangming mapping",
+        "https://www.americandragon.com/Points/Shangming.html: N-HN-4 Shangming",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/bailao-ex-hn17: EX-HN17 Bailao",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework; not used to assert Shangming equivalence"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Shangming page",
+        "2026-08-02 HTTP 200: eLotus point index and exact EX-HN17 Bailao mismatch page",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    }
   },
   {
     "code": "EX-HN18",
