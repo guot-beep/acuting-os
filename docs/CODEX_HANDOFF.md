@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN4 Yuyao + EX-HN5 Taiyang strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `9dd21e5` (`Complete Yuyao and Taiyang cards`)
+- Task: Continue the 72-record extra-point restart with Board scope, course structure, exact eLotus/AD pages, bilingual strict-template content, and source-specific safety.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN4 魚腰 and EX-HN5 太陽; the audit is now 67/72 issue records, 5/72 strict-template complete, 5/72 four-source-audit complete, 0 missing measurable method, and 20 generic CloudTCM links.
+  2. Yuyao integrates course p.9, exact eLotus, and AD `Points/Yuyao.html`, including AD's supraorbital-notch/nerve note and source-specific 0.5-1-cun through-needling. The 0.3-0.5-cun baseline remains distinct.
+  3. Taiyang integrates course p.9, exact eLotus, and AD `Points/Taiyang.html`, including avoid-vein guidance, prick-to-bleed, full indications, combinations, and the large 0.5-3-cun variation across source-specific advanced techniques.
+  4. Preserved all legacy functions, indications, pairings, bleeding/moxa cautions, and hemostasis text, with explicit support or source-gap labels.
+- Source basis: NCBAHM 2026 ACPL Appendix A; `curriculum/acupoints/Techniques 3 points.md` p.9; exact eLotus Yuyao/Taiyang pages; American Dragon pinyin index and exact Yuyao/Taiyang pages; WHO IRIS nomenclature record.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode; `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; runtime card/link assertions PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
+- Known risks / manual checks: Ting should open EX-HN4 and EX-HN5, verify both exact source buttons, bilingual function rows, long technique variants, and caution blocks. AD's table formatting for several Taiyang combinations is imperfect; uncertain row grouping is disclosed instead of forced.
+- Next recommended action: continue EX-HN6 耳尖, then EX-HN7 球後, with the same exact-link and no-guessed-safety rules.
+
 ## [2026-08-02] Codex Handoff — EX-HN2 Dangyang + EX-HN3 Yintang strict cards
 
 - Agent: Codex

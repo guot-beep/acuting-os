@@ -2707,5 +2707,15 @@ Current repo state as of this log:
 - Added bilingual action/indication tags, identity/exam fields, aliases, combinations, moxa, anatomy source gaps, cautions, exact links, and field-level provenance for both cards.
 - Commit: `a607e2e` (`Complete Dangyang and Yintang cards`).
 - Validation: build-data, extra-point audit, validate-data, interaction audit, point-ID validation, content-junk validation, app.js syntax, runtime card/link assertions, and `git diff --check` all PASS.
+
+# 2026-08-02 Codex — Complete EX-HN4 Yuyao and EX-HN5 Taiyang
+
+- Completed 魚腰 and 太陽 under the strict Board + course + eLotus + American Dragon contract; extra-point audit advanced from 3/72 to 5/72 complete, leaving 67/72 on the worklist.
+- Both are listed in NCBAHM Appendix A and course p.9. Exact eLotus and AD pinyin pages were read and stored; source code differences remain explicit: Yuyao EX-HN4 vs M-HN-6, Taiyang EX-HN5 vs M-HN-9.
+- Yuyao now preserves the 0.3-0.5-cun baseline separately from 0.5-1-cun eyebrow-parallel / BL2 / TE23 / GB14 through-needling variants, with AD's supraorbital-notch/nerve note and the course's sensitivity warning.
+- Taiyang now preserves the 0.3-0.5-cun or prick-to-bleed baseline separately from course/AD 0.5-3-cun variants; the course's avoid-vein warning and AD's danger note are visible without converting them into invented depth rules.
+- Legacy Yuyao bloodletting/moxa cautions and Taiyang Clears-brain/hemostasis content remain visible with explicit source status rather than being silently deleted.
+- Commit: `9dd21e5` (`Complete Yuyao and Taiyang cards`).
+- Validation: build-data, extra-point audit, validate-data, interaction audit, point-ID validation, content-junk validation, app.js syntax, runtime link/function assertions, and `git diff --check` all PASS.
 - Validator baseline is intentionally now 1/72 strict-template complete and 1/72 four-source-audit complete; 71 records return to the worklist rather than inheriting the earlier narrow 48/72 issue count.
 - Validation PASS: live source/link checks, four-row functions render, exact hero-link behavior, build-data, extra audit, validate-data (769 runtime), interactions, point IDs, content-junk, app syntax, JSON parse, and diff check.
