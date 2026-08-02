@@ -869,28 +869,88 @@
     "pinyin": "Shangyingxiang",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "面部，鼻骨下凹陷中，鼻唇溝上端盡處。",
-    "locationEn": "On the face, upper end of nasolabial groove, below nasal bone.",
-    "techniqueNotes": "斜刺0.3~0.5寸。\nOblique 0.3-0.5 cun.",
+    "location": "面部，鼻唇溝上端、鼻骨下方凹陷處；eLotus 描述為迎香（LI20）上內方約0.5寸。課件與 AD 稱鼻通（M-HN-14），取鼻唇溝最高點／上端凹陷。",
+    "locationEn": "On the face at the upper end of the nasolabial groove in the depression below the nasal bone; eLotus places it approximately 0.5 cun superior and medial to Yingxiang (LI20). The course and AD call it Bitong (M-HN-14) and locate it at the highest point or upper-end depression of the nasolabial groove.",
+    "cunMeasurement": "約在迎香（LI20）上內方0.5寸；亦可依鼻唇溝最高點與鼻骨下凹陷作地標定位。",
+    "anatomyZh": "位於鼻唇溝上端、鼻骨下方的鼻旁面部區。四來源未提供逐層神經血管解剖或眼眶安全界線；不可由表面定位自行推定更深的安全進針路徑。",
+    "anatomyEn": "This is a paranasal facial region at the upper end of the nasolabial groove below the nasal bone. The four sources do not provide layer-by-layer neurovascular anatomy or an orbital safety boundary; a deeper safe path must not be inferred from surface landmarks.",
+    "techniqueNotes": "課件：直刺0.2~0.3寸，或沿皮下向鼻根方向透刺。eLotus：向上斜刺／皮下刺0.3~0.5寸。AD：列向鼻部橫刺0.5~0.8寸、向鼻樑橫刺0.3~0.5寸，或向上皮下刺0.3~0.5寸。三來源深度與方向並不完全一致，卡片並列保留，不合併成單一共識數字。\nCourse: perpendicular insertion 0.2-0.3 cun or subcutaneous insertion toward the nasal root. eLotus: oblique upward/subcutaneous insertion 0.3-0.5 cun. AD lists transverse insertion toward the nose 0.5-0.8 cun, transverse insertion toward the bridge 0.3-0.5 cun, or subcutaneous upward insertion 0.3-0.5 cun. The sources differ in depth and direction; the variants are retained rather than merged into a false consensus.",
+    "acumethodZh": "課件：直刺0.2~0.3寸，或皮下向鼻根方向透刺。eLotus：向上斜刺／皮下0.3~0.5寸。AD：向鼻部橫刺0.5~0.8寸、向鼻樑橫刺0.3~0.5寸，或向上皮下0.3~0.5寸。",
+    "acumethodEn": "Course: perpendicular 0.2-0.3 cun or subcutaneous toward the nasal root. eLotus: oblique upward/subcutaneous 0.3-0.5 cun. AD: transverse toward the nose 0.5-0.8 cun, transverse toward the bridge 0.3-0.5 cun, or subcutaneous upward 0.3-0.5 cun.",
+    "moxaZh": "eLotus 記載艾灸5~10分鐘；課件與 AD 鼻通條目未說明艾灸。此為單一來源數值，不標成跨來源共識。",
+    "moxaEn": "eLotus lists moxibustion for 5-10 minutes; the course and AD Bitong entries do not address moxa. This is a single-source value, not a cross-source consensus.",
     "functions": "清熱通鼻，散風止痛",
-    "functionsEn": "Clears heat and unblocks the nose; Dispels wind",
+    "functionsEn": "Clears Heat and opens the nasal orifice; Dispels Wind; Relieves pain (legacy content)",
+    "functionsZhList": [
+      "清熱",
+      "散風",
+      "通鼻竅",
+      "止痛（既有內容；eLotus／AD 功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Clears Heat",
+      "Dispels Wind",
+      "Opens the nasal orifice",
+      "Relieves pain (legacy content; not directly listed in the eLotus/AD action fields)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "鼻病／通鼻竅用穴",
+      "本庫與 eLotus 用 EX-HN8 上迎香；課件與 AD 用 M-HN-14 鼻通",
+      "NCBAHM Appendix A 以 Bitong 列入考綱"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Point used for nasal disorders and opening the nasal orifice",
+      "Database/eLotus use EX-HN8 Shangyingxiang; course/AD use M-HN-14 Bitong",
+      "NCBAHM Appendix A lists the point as Bitong"
+    ],
+    "exam_star": 0,
     "patterns": [
-      "急慢性鼻炎",
-      "鼻竇炎",
-      "鼻塞",
-      "嗅覺減退"
+      "過敏性鼻炎",
+      "肥厚性鼻炎",
+      "萎縮性鼻炎",
+      "鼻竇炎／鼻竇病",
+      "鼻塞、鼻分泌物",
+      "鼻衄",
+      "鼻息肉",
+      "鼻癤",
+      "嗅覺喪失／減退",
+      "各類鼻病（eLotus／AD 廣義表述）",
+      "頭痛",
+      "頭部癤腫",
+      "面癱",
+      "迎風流淚",
+      "慢性結膜炎／眼部感染",
+      "眼瞼跳動",
+      "淚管阻塞或感染"
     ],
     "patternsEn": [
-      "Rhinitis",
-      "Sinusitis",
-      "Nasal congestion",
-      "Hyposmia"
+      "Allergic rhinitis",
+      "Hypertrophic rhinitis",
+      "Atrophic rhinitis",
+      "Sinusitis / nasosinusitis",
+      "Nasal obstruction and discharge",
+      "Epistaxis",
+      "Nasal polyps",
+      "Nasal boils",
+      "Loss or reduction of smell",
+      "All nasal disorders (broad wording in eLotus/AD)",
+      "Headache",
+      "Boils on the head",
+      "Facial paralysis",
+      "Tearing on exposure to wind",
+      "Chronic conjunctivitis / eye infection",
+      "Eyelid twitching",
+      "Blocked or infected lacrimal duct"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【過敏性鼻炎／鼻塞】上迎香配迎香（LI20）、合谷（LI4）：局部通鼻竅，遠端疏風通絡。\n【慢性鼻炎／鼻竇炎】上迎香配印堂（EX-HN3）、上星（GV23）：加強鼻竅與前額鼻竇區宣通。",
-    "reviewStatus": "draft_source_checked",
+    "evidence": "四層查核：NCBAHM Appendix A 列 Bitong；課件列 M-HN-14 Bitong 的定位與0.2~0.3寸／皮下向鼻根法；eLotus 列 EX-HN8 Shangyingxiang、別名、0.5寸定位、功效、完整鼻眼面部主治、0.3~0.5寸與艾灸5~10分鐘；AD 列 M-HN-14 Bitong、三種針刺版本、鼻病主治與配穴。編碼與針法差異均保留。WHO IRIS 僅作標準命名框架，不充當本穴臨床內容來源。",
+    "combinePointsZh": "【過敏性鼻炎／鼻塞；既有卡片】上迎香配迎香（LI20）、合谷（LI4）：局部通鼻竅，遠端疏風通絡。\n【慢性鼻炎；AD】鼻通配上星（GV23）、印堂（EX-HN3）、合谷（LI4）；AD 表格另呈一組合谷（LI4）、上星（GV23）、攢竹（BL2），原頁排版使分組關係略有歧義。\n【鼻竇炎；AD】鼻通配攢竹（BL2）、列缺（LU7）。\n【慢性鼻炎／鼻竇炎；既有卡片】上迎香配印堂（EX-HN3）、上星（GV23）：加強鼻竅與前額鼻竇區宣通。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8",
+      "https://www.americandragon.com/Points/Bitong.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -898,6 +958,12 @@
         "labelEn": "Extra Point · Shangyingxiang EX-HN8 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 鼻通 M-HN-14",
+        "labelEn": "American Dragon · Bitong M-HN-14",
+        "url": "https://www.americandragon.com/Points/Bitong.html",
+        "source": "American Dragon"
       }
     ],
     "x": 172,
@@ -945,39 +1011,82 @@
       "面部",
       "經外奇穴"
     ],
-    "cautions": "鼻旁面部血管神經較密；依 eLotus/AD 以向上斜刺或皮下刺 0.3~0.5 寸為主，避免深刺或向眼眶方向進針。鼻衄、鼻息肉或局部感染時需先判斷出血與感染風險。",
+    "cautions": "課件、eLotus 與 AD 的進針方向及深度不同：課件0.2~0.3寸或向鼻根皮下透刺；eLotus 向上0.3~0.5寸；AD 另列向鼻部0.5~0.8寸及向鼻樑0.3~0.5寸。不得把最大深度與其他來源方向任意拼接。四來源未提供逐層鼻旁神經血管圖譜，也未列本穴特定禁忌、孕婦、兒童、抗凝或出血性疾病規則；既有『鼻旁血管神經較密、避免深刺或向眼眶方向、鼻衄／鼻息肉／局部感染先評估』保留為解剖與程序性風險提示，但不冒充來源原文或完整安全規範。eLotus 的艾灸5~10分鐘為單一來源。",
     "cautionsEn": [
-      "Dense facial vessels and nerves are nearby. Use shallow oblique/subcutaneous needling, usually 0.3-0.5 cun upward per eLotus/AD; avoid deep insertion or needling toward the orbit.",
-      "Assess bleeding and infection risk when epistaxis, nasal polyps, or local infection is present."
+      "Course, eLotus, and AD differ in direction and depth: the course gives 0.2-0.3 cun or subcutaneous toward the nasal root; eLotus gives 0.3-0.5 cun upward; AD additionally gives 0.5-0.8 cun toward the nose and 0.3-0.5 cun toward the bridge. Do not combine the greatest depth from one source with a direction from another.",
+      "The four sources provide no layer-by-layer paranasal neurovascular map and no point-specific contraindication, pregnancy, pediatric, anticoagulant, or bleeding-disorder rule.",
+      "The legacy cautions about dense facial vessels and nerves, avoiding deep/orbital direction, and assessing epistaxis, nasal polyps, or local infection are retained as anatomical/procedural risk notes, not as quoted source rules or a complete safety protocol.",
+      "The eLotus moxa duration of 5-10 minutes is a single-source value."
     ],
     "exam_importance": "經外鼻病要穴。定位抓「迎香 LI20 上內方約0.5寸、鼻唇溝上端」；主軸是通鼻竅，常與迎香、合谷配伍治鼻炎/鼻塞。",
-    "exam_pearl": "上迎香 = 鼻通。考點不是一般面痛穴，而是鼻竅專穴：過敏性鼻炎、鼻塞、鼻竇炎、嗅覺減退優先想到。",
-    "combinePointsEn": "Allergic rhinitis / nasal obstruction: Shangyingxiang with Yingxiang (LI20) and Hegu (LI4) opens the nasal passages locally and dispels Wind distally.\nChronic rhinitis / sinusitis: combine with Yintang (EX-HN3) and Shangxing (GV23) to emphasize the nasal and frontal-sinus region.",
+    "exam_importance_en": "NCBAHM Appendix A lists Bitong. Recognize the code-system difference: the database/eLotus use EX-HN8 Shangyingxiang, while the course and AD use M-HN-14 Bitong. The core location is the upper nasolabial groove, approximately 0.5 cun superior and medial to LI20.",
+    "exam_pearl": "上迎香 = 鼻通。考點不只鼻病主治，還要辨認編碼差異：eLotus／本庫 EX-HN8，課件／AD M-HN-14；針刺深度與方向亦有來源差異，不可混成單一數字。",
+    "exam_pearl_en": "Shangyingxiang is also Bitong. Know both the nomenclature difference—EX-HN8 in eLotus/database versus M-HN-14 in the course/AD—and the source-specific needling variants rather than memorizing a fabricated single depth.",
+    "combinePointsEn": "Allergic rhinitis / nasal obstruction (legacy card): Shangyingxiang with Yingxiang (LI20) and Hegu (LI4) opens the nasal passages locally and dispels Wind distally.\nChronic rhinitis (AD): Bitong with Shangxing (GV23), Yintang (EX-HN3), and Hegu (LI4); AD's table also displays Hegu (LI4), Shangxing (GV23), and Zanzhu (BL2), but the grouping is somewhat ambiguous because of page formatting.\nNasosinusitis (AD): Bitong with Zanzhu (BL2) and Lieque (LU7).\nChronic rhinitis / sinusitis (legacy card): combine with Yintang (EX-HN3) and Shangxing (GV23) to emphasize the nasal and frontal-sinus region.",
     "clinical_pearls": "又名鼻通，臨床定位可沿鼻唇溝向上摸到鼻骨下凹陷；鼻塞、嗅覺減退、過敏性鼻炎常與 LI20 形成局部鼻竅對穴。",
+    "nameIntroZh": "上迎香意指位於迎香（LI20）上方的鼻旁穴；eLotus 另列鼻通、鼻穿、穿鼻等名，AD 主頁使用 Bitong（鼻通）。",
+    "nameIntroEn": "Shangyingxiang means 'Upper Welcome Fragrance,' indicating its relation superior to Yingxiang (LI20). eLotus also lists Bitong, Bichuan, and Chuanbi; AD uses Bitong as the primary name.",
     "field_sources": {
-      "location": [
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Bitong listed"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Techniques 3 points.md p.9: M-HN-14 Bitong location and 0.2-0.3-cun/percutaneous-toward-nasal-root methods"
+      ],
+      "elotus": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Bitong.html"
+      ],
+      "location": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8",
+        "https://www.americandragon.com/Points/Bitong.html"
+      ],
+      "anatomy": [
+        "source-gap note: four sources provide surface landmarks but no full layer-by-layer paranasal neurovascular anatomy or orbital safety boundary"
       ],
       "technique": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8",
+        "https://www.americandragon.com/Points/Bitong.html"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8: 5-10 minutes",
+        "source-gap note: course and AD Bitong entries do not address moxa"
       ],
       "functions": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8",
+        "https://www.americandragon.com/Points/Bitong.html",
+        "legacy source-gap note: pain-relieving action retained without direct action-field support"
       ],
       "indications": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8",
+        "https://www.americandragon.com/Points/Bitong.html"
       ],
       "aliases": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8",
+        "https://www.americandragon.com/Points/Bitong.html"
       ],
       "cautions": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+        "source-gap note: reviewed sources do not state point-specific contraindications, pregnancy, pediatric, anticoagulant, or bleeding-disorder rules",
+        "legacy anatomy/procedure cautions retained and explicitly labeled"
       ],
       "combinations": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+        "https://www.americandragon.com/Points/Bitong.html",
+        "legacy card combinations retained; AD table grouping ambiguity noted"
       ],
-      "safety_note": [
-        "anatomy-based note from facial/nasal location + eLotus/AD needling direction"
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8: EX-HN8 Shangyingxiang",
+        "curriculum/acupoints/Techniques 3 points.md p.9: M-HN-14 Bitong",
+        "https://www.americandragon.com/Points/Bitong.html: M-HN-14 Bitong",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 exact eLotus Shangyingxiang page opened",
+        "2026-08-02 exact American Dragon Bitong page opened and matched the pinyin index",
+        "2026-08-02 WHO IRIS nomenclature record opened"
       ]
     }
   },
@@ -989,28 +1098,122 @@
     "pinyin": "Neiyingxiang",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "鼻孔內，鼻翼軟骨與鼻甲交界處的粘膜上。",
-    "locationEn": "Inside the nostril, on the mucosa at the junction of nasal cartilage and concha.",
-    "techniqueNotes": "三稜針點刺出血。\nPrick to bleed with lancet.",
-    "functions": "清熱宣肺，解毒通竅",
-    "functionsEn": "Clears heat and disperses Lung; Detoxifies and opens orifices",
+    "location": "來源定位衝突，不能視為同一點位版本：eLotus 定位在迎香（LI20）內側、鼻翼上；既有卡片定位在鼻孔內、鼻翼軟骨與鼻甲交界處黏膜。NCBAHM Appendix A、現有課件與 AD 未找到可裁決此差異的內迎香專條，操作前須先確認所採標準。",
+    "locationEn": "The sources contain a non-equivalent location conflict: eLotus places the point medial to Yingxiang (LI20) on the ala nasi, while the legacy card places it inside the nostril on the mucosa at the junction of the alar cartilage and nasal concha. No dedicated Neiyingxiang entry was found in NCBAHM Appendix A, current course material, or AD to resolve the discrepancy; verify the chosen standard before any procedure.",
+    "cunMeasurement": "不用寸量；依所採版本取迎香（LI20）內側鼻翼，或鼻孔內鼻翼軟骨與鼻甲交界黏膜。兩版本不可互換。",
+    "anatomyZh": "eLotus 版本屬鼻翼表面區；既有版本屬鼻腔黏膜與鼻翼軟骨／鼻甲交界區，解剖層次與出血風險不同。四來源未提供逐層神經血管解剖、止血標準或兩定位版本的對照。",
+    "anatomyEn": "The eLotus version is on the external alar region, whereas the legacy version is on intranasal mucosa at the alar cartilage/concha junction; these involve different tissue layers and bleeding risks. The four sources provide no layer-by-layer neurovascular anatomy, hemostasis standard, or reconciliation of the two locations.",
+    "techniqueNotes": "eLotus 僅列點刺出血（blood-letting only），未提供針具、刺入深度、出血量或止血流程。既有卡片的『三稜針點刺出血』保留，但三稜針器具細節未由本輪四來源確認。因定位版本衝突，不可在未確認點位標準時直接操作。\neLotus lists bloodletting only, without specifying instrument, insertion depth, blood volume, or hemostasis protocol. The legacy three-edged-needle wording is retained, but the instrument detail was not confirmed by the four-source review. Because the location versions conflict, do not operationalize the method until the intended point standard is verified.",
+    "acumethodZh": "eLotus：僅點刺出血；未列針具、深度、滴數或止血流程。既有『三稜針』器具說法保留為未核實細節。",
+    "acumethodEn": "eLotus: bloodletting only; no instrument, depth, drop count, or hemostasis protocol is given. The legacy three-edged-needle instrument wording is retained as an unverified detail.",
+    "moxaZh": "eLotus 明列禁灸。NCBAHM、現有課件與 AD 無內迎香專條可交叉確認。",
+    "moxaEn": "eLotus explicitly contraindicates moxibustion. NCBAHM, current course material, and AD provide no dedicated Neiyingxiang entry for cross-checking.",
+    "functions": "開竅醒神，清熱瀉火；清熱宣肺、解毒通竅（既有內容）",
+    "functionsEn": "Opens the orifices and resuscitates Shen; Clears Heat and purges Fire; Clears Heat and disperses the Lung, detoxifies, and opens the orifices (legacy content)",
+    "functionsZhList": [
+      "開竅醒神",
+      "清熱瀉火",
+      "宣肺（既有內容；eLotus 功效欄未直接列）",
+      "解毒（既有內容；eLotus 功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Opens the orifices and resuscitates Shen",
+      "Clears Heat and purges Fire",
+      "Disperses the Lung (legacy content; not directly listed in the eLotus action field)",
+      "Resolves toxicity (legacy content; not directly listed in the eLotus action field)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "點刺出血用急症／五官穴",
+      "eLotus 使用 EX-HN9 Neiyingxiang",
+      "NCBAHM Appendix A、現有課件與 AD 拼音索引未找到內迎香專條",
+      "eLotus 與既有卡片定位不等同，待標準核實"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Bloodletting point used for acute and sensory-orifice presentations",
+      "eLotus uses EX-HN9 Neiyingxiang",
+      "No dedicated Neiyingxiang entry was found in NCBAHM Appendix A, current course material, or the AD pinyin index",
+      "The eLotus and legacy-card locations are non-equivalent and require standard verification"
+    ],
+    "exam_star": 0,
     "patterns": [
       "目赤腫痛",
-      "鼻塞鼻淵",
-      "喉痹",
-      "中暑"
+      "喉部腫痛／喉閉",
+      "突然昏厥／昏迷",
+      "癲癇發作",
+      "中暑／暑厥",
+      "頭痛",
+      "眩暈",
+      "嗅覺喪失",
+      "鼻塞鼻淵（既有內容；eLotus 本條未直接列）"
     ],
     "patternsEn": [
       "Red swollen eyes",
-      "Rhinitis",
-      "Sore throat",
-      "Heatstroke"
+      "Throat swelling and pain / throat closure",
+      "Sudden unconsciousness / coma",
+      "Seizures",
+      "Summer stroke / heatstroke",
+      "Headache",
+      "Dizziness and vertigo",
+      "Loss of smell",
+      "Nasal obstruction / rhinitis (legacy content; not directly listed in the eLotus entry)"
     ],
-    "cautions": "點刺出血，注意消毒。",
-    "evidence": "WHO Extra Points Standard; Traditional canon.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": [
+      "開竅醒神",
+      "清熱瀉火",
+      "點刺出血"
+    ],
+    "action_tags_en": [
+      "Open the Orifices and Resuscitate Shen",
+      "Clear Heat and Purge Fire",
+      "Bloodletting"
+    ],
+    "disease_tags_zh": [
+      "昏厥",
+      "喉閉",
+      "癲癇",
+      "中暑",
+      "目赤腫痛",
+      "眩暈"
+    ],
+    "disease_tags_en": [
+      "Syncope",
+      "Throat Closure",
+      "Seizures",
+      "Heatstroke",
+      "Red Swollen Eyes",
+      "Vertigo"
+    ],
+    "acuTags": [
+      "點刺出血",
+      "開竅醒神",
+      "鼻翼／鼻腔",
+      "定位衝突",
+      "經外奇穴"
+    ],
+    "cautions": "eLotus 僅允許點刺出血並明列禁灸，但未提供針具、深度、出血滴數、消毒、止血或感染控制流程；既有『三稜針、注意消毒』只能保留為未完整的程序提示，不能視為完整安全規範。eLotus 外側鼻翼定位與既有鼻腔內黏膜定位不等同，未核實採用標準前不得操作。四來源未提供孕婦、兒童、抗凝用藥、出血性疾病、免疫低下或局部感染的本穴專屬規則，不猜。",
+    "cautionsEn": [
+      "eLotus permits bloodletting only and explicitly contraindicates moxibustion, but gives no instrument, depth, blood-drop quantity, antisepsis, hemostasis, or infection-control protocol.",
+      "The legacy 'three-edged needle; observe disinfection' wording is retained only as an incomplete procedural note, not a complete safety standard.",
+      "The external alar eLotus location and intranasal-mucosal legacy location are non-equivalent; do not perform the procedure until the intended standard is verified.",
+      "The four sources provide no point-specific pregnancy, pediatric, anticoagulant, bleeding-disorder, immunocompromised, or local-infection rule; none is guessed."
+    ],
+    "evidence": "四層查核：NCBAHM Appendix A 未列內迎香；現有 curriculum/acupoints 未找到專條；eLotus 精確頁提供 EX-HN9 名稱、鼻翼定位、點刺出血、禁灸、開竅醒神／清熱瀉火及急症與五官主治；American Dragon 拼音索引未找到 Neiyingxiang，故明列來源缺口，不建立假詳情頁。eLotus 與既有鼻腔內定位衝突，未裁決。WHO IRIS 僅作標準命名框架。",
+    "exam_importance": "NCBAHM 2026 ACPL Appendix A 未列內迎香，現有課件亦無專條；不標 Board 核心。需記住本輪最重要的資料品質問題是定位版本衝突，以及 eLotus 的『只點刺出血、禁灸』。",
+    "exam_importance_en": "Neiyingxiang is not listed in NCBAHM 2026 ACPL Appendix A and has no dedicated current course entry, so it is not marked as a Board-core point. The key data-quality issue is the location conflict, together with eLotus's bloodletting-only and no-moxa instructions.",
+    "exam_pearl": "內迎香不是可以用名稱自行定位的穴。eLotus 取 LI20 內側鼻翼；舊卡取鼻孔內黏膜，兩者不同。未先確認所採標準，不可把『點刺出血』直接變成操作指令。",
+    "exam_pearl_en": "Do not infer Neiyingxiang's location from its name. eLotus places it medial to LI20 on the ala; the legacy card places it on intranasal mucosa. Because these are different, 'bloodletting' must not be operationalized before the location standard is resolved.",
+    "combinePointsZh": "本輪查閱的 eLotus 內迎香條目未列配穴；AD 無專條，NCBAHM 與現有課件亦無可補配伍。保留來源缺口，不自造配穴。",
+    "combinePointsEn": "The reviewed eLotus Neiyingxiang entry lists no combinations; AD has no dedicated entry, and NCBAHM/current course material provide none. The source gap is retained rather than inventing a pairing.",
+    "nameIntroZh": "內迎香意為迎香之內；但名稱不能解決目前『鼻翼表面』與『鼻孔內黏膜』兩種非等同定位版本。",
+    "nameIntroEn": "Neiyingxiang means 'Inner Welcome Fragrance,' but the name does not resolve the current non-equivalent external-ala versus intranasal-mucosa location versions.",
+    "clinical_pearls": "此穴目前應視為需先做定位標準核實的高敏感資料卡。eLotus 支持點刺出血與禁灸，但沒有完整操作安全參數；AD 索引亦未提供可交叉核對的專頁。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -1021,7 +1224,59 @@
       }
     ],
     "x": 173,
-    "y": 162
+    "y": 162,
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Neiyingxiang not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Neiyingxiang/內迎香 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Neiyingxiang not found in pinyin index; no exact detail page stored"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9: medial to LI20 on ala nasi",
+        "legacy source-gap note: intranasal mucosa at alar cartilage/concha junction; conflicts with eLotus and remains unresolved"
+      ],
+      "anatomy": [
+        "source-gap note: external-ala and intranasal-mucosa versions involve different tissue layers; no full neurovascular map or crosswalk found"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9: bloodletting only",
+        "legacy source-gap note: three-edged-needle instrument detail retained but not confirmed"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9: contraindicated"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9",
+        "legacy source-gap note: dispersing Lung and resolving toxicity retained without direct action-field support"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9",
+        "legacy source-gap note: nasal obstruction/rhinitis retained but not directly listed in reviewed eLotus entry"
+      ],
+      "combinations": [
+        "source-gap note: no combinations in reviewed eLotus entry; no AD detail entry"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9: bloodletting only; moxa contraindicated",
+        "source-gap note: no instrument, depth, blood volume, antisepsis, hemostasis, pregnancy, pediatric, anticoagulant, or bleeding-disorder protocol"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/neiyingxiang-ex-hn9: EX-HN9 Neiyingxiang",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 eLotus exact Neiyingxiang page indexed and search-readable; direct open served a challenge page",
+        "2026-08-02 American Dragon pinyin index opened; Neiyingxiang absent and no exact detail URL verified",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    }
   },
   {
     "code": "EX-HN10",
