@@ -1396,8 +1396,20 @@
     "location": "面部，承漿穴（CV24）旁開1寸，地倉穴（ST4）直下；American Dragon 另以可觸及下頜骨頦孔為定位標誌。",
     "locationEn": "On the face, 1 cun lateral to Chengjiang (CV24), directly below Dicang (ST4); American Dragon additionally identifies the palpable mental foramen of the mandible as the landmark.",
     "techniqueNotes": "本庫舊值：斜刺0.3~0.5寸。eLotus：斜刺0.5~1.0寸。American Dragon：直刺0.2~0.5寸；或向內下方斜刺入頦孔0.3~0.5寸；另列橫刺0.5~1.5寸及斜刺0.5~1.0寸。\nLegacy database value: oblique 0.3-0.5 cun. eLotus: oblique 0.5-1.0 cun. American Dragon: perpendicular 0.2-0.5 cun; or medial-inferior oblique insertion into the mental foramen 0.3-0.5 cun; it also lists transverse 0.5-1.5 cun and oblique 0.5-1.0 cun.",
-    "functions": "疏風通絡，止痛解痙",
-    "functionsEn": "Dispels wind and unblocks collaterals; Relieves pain and spasms",
+    "functions": "祛風，通經活絡，行氣活血，止痛",
+    "functionsEn": "Eliminates Wind; Activates the Channel; Activates Qi and Blood; Alleviates Pain",
+    "functionsZhList": [
+      "祛風",
+      "通經活絡",
+      "行氣活血",
+      "止痛"
+    ],
+    "functionsEnList": [
+      "Eliminates Wind",
+      "Activates the Channel",
+      "Activates Qi and Blood",
+      "Alleviates Pain"
+    ],
     "patterns": [
       "面癱",
       "三叉神經痛",
@@ -1416,8 +1428,8 @@
       "Deviation of the mouth and eyes",
       "Jaundice (listed by American Dragon)"
     ],
-    "action_tags_zh": ["祛風疏風", "通絡", "止痛", "解痙"],
-    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Alleviate Pain", "Relieve Spasm"],
+    "action_tags_zh": ["祛風疏風", "通絡", "行氣", "活血", "止痛", "解痙"],
+    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Move Qi", "Invigorate Blood", "Alleviate Pain", "Relieve Spasm"],
     "disease_tags_zh": ["面癱", "面部痛", "齒齦腫痛", "牙痛", "面肌痙攣", "口眼歪斜"],
     "disease_tags_en": ["Facial Paralysis", "Facial Pain", "Swollen & Painful Gums", "Toothache", "Facial Spasm", "Deviation of the Mouth and Eyes"],
     "cautions": "eLotus 與 American Dragon 的夾承漿精確頁均未列穴位專屬禁忌；不可把來源沉默解讀為無風險。兩來源列出的針刺方向與深度並不單一：eLotus 為斜刺0.5~1.0寸；American Dragon 列直刺0.2~0.5寸、向內下方斜刺入頦孔0.3~0.5寸、橫刺0.5~1.5寸及斜刺0.5~1.0寸。AD 並記述三叉神經痛取法可能出現延伸至下唇的觸電樣麻感；涉及頦孔定位的操作不得由本卡自行統一，須由持照針灸師依解剖與訓練裁決。American Dragon 將本穴編為 M-HN-18，與本庫既有 EX-HN19 顯示碼不同。CloudTCM 未找到可核實的夾承漿獨立頁，因此不顯示雲端中醫按鈕。",
@@ -1429,7 +1441,7 @@
     ],
     "combinePointsZh": "【面肌痙攣】夾承漿配攢竹（BL2）、四白（ST2）：American Dragon 列載配伍。\n【三叉神經痛】夾承漿配下關（ST7）、合谷（LI4）：American Dragon 列載配伍。",
     "combinePointsEn": "Facial spasm: Jiachengjiang with Zanzhu (BL2) and Sibai (ST2), as listed by American Dragon.\nTrigeminal neuralgia: Jiachengjiang with Xiaguan (ST7) and Hegu (LI4), as listed by American Dragon.",
-    "evidence": "eLotus CORE and American Dragon exact Jiachengjiang pages; location, technique, and nomenclature differences retained. No exact CloudTCM point page located.",
+    "evidence": "功效逐項分層：eLotus 明列祛風、行氣活血；American Dragon 明列祛風、通經活絡、止痛。『解痙』保留於面肌痙攣主治與功效標籤，屬依來源主治整理的臨床效果，未冒充兩頁明列的核心 Action。定位、針法與編號差異仍保留；未找到 CloudTCM 夾承漿精確頁。",
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",

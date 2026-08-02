@@ -912,3 +912,22 @@
 - Next: return to EX-CA2 提托, then the NCBAHM back-point priority group EX-B1/EX-B2/EX-B4.
 
 ---
+## [2026-08-02] Codex Handoff - Systematize EX-HN19 sourced functions
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: this handoff commit
+- Task: Respond to Ting's review that the EX-HN19 夾承漿 Functions section was not systematic enough; align eLotus and American Dragon Actions without conflating indications.
+- Files changed: `data/acupoints/extra_points.json`; `scripts/validate-extra-point-standard.js`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
+- What changed:
+  1. Added explicit paired `functionsZhList` / `functionsEnList` rows: 祛風 / Eliminates Wind; 通經活絡 / Activates the Channel; 行氣活血 / Activates Qi and Blood; 止痛 / Alleviates Pain.
+  2. Source alignment is explicit: eLotus supports Eliminates Wind + Activates Qi and Blood; American Dragon supports Eliminates Wind + Activates the Channel + Alleviates Pain.
+  3. Preserved 解痙 in the action-tag and facial-spasm indication layers, but no longer presents it as an Action directly stated by either page. Added 行氣 and 活血 controlled bilingual tags.
+  4. Validator now reports a worklist issue if structured Chinese/English function rows have unequal lengths.
+- Source basis: live HTTP 200 re-read of the exact eLotus Jiachengjiang page and Ting's exact American Dragon Jiachengjiang page.
+- Validation: four-row paired rendering behavior test PASS; JSON parse PASS; `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (48/72 stricter-rule issue records; EX-HN19 clear); `validate-data.js` PASS (769 runtime); `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
+- Protected areas not touched: no IDs/codes renamed; no `app.js`, schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
+- Known risks / manual checks: Ting should inspect EX-HN19's Functions block and confirm it renders exactly four bilingual paired rows. 解痙 should remain visible in tags/indications, not as a fifth sourced core Action.
+- Next: return to EX-CA2 提托, then EX-B1/EX-B2/EX-B4.
+
+---

@@ -2686,3 +2686,9 @@ Current repo state as of this log:
 - Added American Dragon's mental-foramen landmark, source-labelled needling variants, indications, pairings, M-HN-18 nomenclature difference, and bilingual safety context without deleting the legacy 0.3–0.5-cun value.
 - No exact CloudTCM Jiachengjiang page was located in the direct-name checks, so the card explicitly records that source gap and does not claim a CloudTCM detail source.
 - Validation PASS: build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, app.js syntax, JSON parse, and diff check.
+# 2026-08-02 Codex — Systematize EX-HN19 functions from eLotus and American Dragon
+- Reworked the 夾承漿 Functions section into four aligned bilingual rows: 祛風 / Eliminates Wind; 通經活絡 / Activates the Channel; 行氣活血 / Activates Qi and Blood; 止痛 / Alleviates Pain.
+- Kept 解痙 in the indication-derived tag and facial-spasm indication rather than presenting it as a core Action explicitly listed by either source; the card's evidence note now explains this Action-versus-Indication distinction.
+- Added controlled 行氣 / Move Qi and 活血 / Invigorate Blood tags while preserving all existing clinical indications, safety notes, and pairings.
+- Extended the extra-point validator to flag mismatched `functionsZhList` / `functionsEnList` pairs when structured function rows are present.
+- Validation PASS: exact-source HTTP re-checks, four-row function-render behavior test, build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, JSON parse, and diff check.

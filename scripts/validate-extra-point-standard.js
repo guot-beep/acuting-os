@@ -48,6 +48,9 @@ for (const r of records) {
   if (arr(r.patterns).length !== arr(r.patternsEn).length) {
     flag(r, `patterns/patternsEn length mismatch ${arr(r.patterns).length} vs ${arr(r.patternsEn).length}`);
   }
+  if ((arr(r.functionsZhList).length || arr(r.functionsEnList).length) && arr(r.functionsZhList).length !== arr(r.functionsEnList).length) {
+    flag(r, `functionsZhList/functionsEnList length mismatch ${arr(r.functionsZhList).length} vs ${arr(r.functionsEnList).length}`);
+  }
   if (!hasMeasurableTechnique(r.techniqueNotes)) flag(r, "techniqueNotes lacks measurable needling, bloodletting, or moxibustion method");
   if (!arr(r.sources).some((s) => /^https?:\/\//.test(String(s)))) flag(r, "no external source URL");
   if (arr(r.sources).some(isGenericSourceUrl)) flag(r, "generic CloudTCM directory URL; exact detail source or explicit source gap required");
