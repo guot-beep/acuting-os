@@ -873,3 +873,23 @@
 - Next: continue with EX-CA3/EX-CA4 or prioritize NCBAHM Appendix A points; EX-CA3 still lacks a measurable technique and caution, so it requires exact-source review before editing.
 
 ---
+## [2026-08-02] Codex Handoff - Extra Points EX-CA3/4 and measurable-method validator pass
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: this handoff commit
+- Task: Continue one-record-at-a-time review with EX-CA3 三角灸 and EX-CA4 胃上; correct the audit model where it incorrectly demanded needle depth for a moxa-only point.
+- Files changed: `data/acupoints/extra_points.json`; `scripts/validate-extra-point-standard.js`; `data/audits/missing_report.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
+- What changed:
+  1. Added paired bilingual action/disease tags, exact source links, field-level provenance, and source-conflict safety notes for EX-CA3/4 without deleting legacy indications or technique text.
+  2. Marked 三角灸 as moxibustion-only from eLotus plus a professional moxibustion history article; retained 5–7 cones and the differing classical fourteen-cone account with source labels rather than inventing needle depth.
+  3. Recorded 胃上 disagreements: legacy 3-cun lateral/downward 1.0–1.5 cun versus eLotus/AD 4-cun lateral (AD also 2.5-cun alternative) and transverse/subcutaneous 2–3 cun toward the umbilicus/ST25.
+  4. Preserved immutable legacy display codes while disclosing eLotus EX-CA6 for 三角灸 and EX-CA7 / AD N-CA-18 for 胃上.
+  5. Validator now accepts quantified moxibustion (cones/minutes) as a measurable technique and reports generic CloudTCM directory URLs as non-detail sources.
+- Source basis: NCBAHM 2026 ACPL Appendix A scope check (neither EX-CA3/4 name is listed); `curriculum/acupoints/` exact-name search; exact eLotus Sanjiaojiu/Weishang pages; exact American Dragon Weishang page; Journal of Chinese Medicine moxibustion history; a separately labelled 5–7 cone clinical reference.
+- Validation: JSON parse PASS; `validate-extra-point-standard.js --all` PASS audit mode (0/72 missing measurable method; 20/72 generic-source records; 48/72 issue records under stricter source rules); `build-data.js` PASS; `validate-data.js` PASS (769 runtime); `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
+- Protected areas not touched: no IDs/codes renamed; no `app.js`, `js/`, `index.html`, schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
+- Known risks / manual checks: Ting should confirm 三角灸 visibly reads as moxa-only and inspect its dose-source difference. 胃上 location/direction/depth remain unresolved source conflicts and must not be treated as consensus.
+- Next: prioritize the NCBAHM Appendix A generic-source records EX-CA2 提托 and then EX-B1 定喘 / EX-B2 華佗夾脊 / EX-B4 痞根; exact-source replacement is now a visible audit requirement.
+
+---

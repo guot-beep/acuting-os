@@ -33,11 +33,13 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 50,
-        "missing_numeric_depth": 4,
+        "records_with_issues": 48,
+        "missing_numeric_depth": 0,
+        "missing_measurable_method": 0,
         "missing_source_url": 0,
+        "generic_source_url": 20,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Extra-point layer now has a repeatable audit. First EX-HN source-backed cleanup batch reduced issues from 60 to 50 and missing numeric-depth/bloodletting-method gaps from 16 to 4; remaining work is mostly point-specific cautions."
+        "note": "Current stricter audit: 48/72 records have issues, 0 lack a measurable needling/bloodletting/moxibustion method, and 20 still cite the generic CloudTCM directory instead of an exact detail page. EX-CA3 is correctly accepted as measurable moxibustion-only content rather than being forced to carry an invented needle depth. Remaining work is mostly point-specific cautions and exact source replacement."
       }
     },
     "herbs": {
@@ -76,7 +78,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Short term: continue acupoint content QA now that runtime adapter checks pass. Completed in this pass: TE branch filter now matches point-code channel prefix only; standard-point contraindications are preserved in runtime cautions; validate-data.js recognizes the current 769-point expanded runtime. Extra-point audit added: 72 records, 60 with issues, mostly missing point-specific cautions and 16 lacking numeric depth. Next acupoint content priority: start extra-point cleanup in source-backed groups while preserving all existing indications and pairings.",
+  "next_recommendation": "Continue source-backed extra-point cleanup while preserving existing indications and pairings. The current stricter audit reports 48/72 records with issues: no record lacks a measurable needling, bloodletting, or moxibustion method, but 20 still use a generic CloudTCM directory URL and many lack point-specific cautions. Next priority: replace generic links with exact pages in NCBAHM Appendix A points, then continue the back and upper-extremity safety batches.",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",

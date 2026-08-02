@@ -22,7 +22,9 @@ const hasHan = (v) => /[\u3400-\u9fff]/.test(text(v));
 const hasMojibake = (v) => /Ã|Â|�|å[^\x00-\x7f]|ç[^\x00-\x7f]|é[^\x00-\x7f]/.test(text(v));
 const hasDepth = (v) => /(\d+(\.\d+)?\s*[-~–]\s*\d+(\.\d+)?|\d+(\.\d+)?)\s*(cun|寸|吋)/i.test(text(v));
 const hasBloodlettingTechnique = (v) => /(prick\s+to\s+bleed|bloodletting|點刺出血|點刺.*出血|三稜針|三棱针|出血|drops?|滴)/i.test(text(v));
-const hasMeasurableTechnique = (v) => hasDepth(v) || hasBloodlettingTechnique(v);
+const hasMoxibustionTechnique = (v) => /(?:\d+(?:\.\d+)?\s*[-~–]\s*\d+(?:\.\d+)?|\d+(?:\.\d+)?)\s*(?:壯|壮|cones?|minutes?|mins?|分鐘|分钟)/i.test(text(v));
+const hasMeasurableTechnique = (v) => hasDepth(v) || hasBloodlettingTechnique(v) || hasMoxibustionTechnique(v);
+const isGenericSourceUrl = (v) => /^https?:\/\/(?:www\.)?cloudtcm\.com\/acupoint\/?(?:[?#].*)?$/i.test(String(v || "").trim());
 const filled = (v) => text(v).trim() !== "";
 
 const issueMap = new Map();
@@ -46,8 +48,9 @@ for (const r of records) {
   if (arr(r.patterns).length !== arr(r.patternsEn).length) {
     flag(r, `patterns/patternsEn length mismatch ${arr(r.patterns).length} vs ${arr(r.patternsEn).length}`);
   }
-  if (!hasMeasurableTechnique(r.techniqueNotes)) flag(r, "techniqueNotes lacks numeric depth or bloodletting method");
+  if (!hasMeasurableTechnique(r.techniqueNotes)) flag(r, "techniqueNotes lacks measurable needling, bloodletting, or moxibustion method");
   if (!arr(r.sources).some((s) => /^https?:\/\//.test(String(s)))) flag(r, "no external source URL");
+  if (arr(r.sources).some(isGenericSourceUrl)) flag(r, "generic CloudTCM directory URL; exact detail source or explicit source gap required");
   if (/local skin|skin lesion/i.test(text(r.cautions)) || /局部皮膚破損|皮膚破損|皮损/.test(text(r.cautions))) {
     flag(r, "generic local-skin caution; needs point-specific safety review");
   }
@@ -58,13 +61,15 @@ const issueRecords = [...issueMap.entries()];
 const mojibakeRecords = records.filter((r) => ["nameZh", "region", "location", "functions", "patterns", "cautions", "combinePointsZh", "visualLinks"].some((k) => hasMojibake(r[k]))).length;
 const noDepth = records.filter((r) => !hasMeasurableTechnique(r.techniqueNotes)).length;
 const sourceMissing = records.filter((r) => !arr(r.sources).some((s) => /^https?:\/\//.test(String(s)))).length;
+const genericSourceRecords = records.filter((r) => arr(r.sources).some(isGenericSourceUrl)).length;
 
 console.log("validate-extra-point-standard");
 console.log(`  records                 ${total}`);
 console.log(`  records with issues     ${issueRecords.length}/${total}`);
 console.log(`  mojibake suspected      ${mojibakeRecords}/${total}`);
-console.log(`  missing numeric depth   ${noDepth}/${total}`);
+console.log(`  missing measurable method ${noDepth}/${total}`);
 console.log(`  missing source URL      ${sourceMissing}/${total}`);
+console.log(`  generic source URL      ${genericSourceRecords}/${total}`);
 
 if (issueRecords.length) {
   console.log("\n===== EXTRA POINT WORKLIST =====");

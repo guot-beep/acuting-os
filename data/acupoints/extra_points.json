@@ -1715,21 +1715,41 @@
       "Chronic diarrhea",
       "Infertility"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["止痛", "止瀉"],
+    "action_tags_en": ["Alleviate Pain", "Stop Diarrhea"],
+    "disease_tags_zh": ["疝氣", "腹痛"],
+    "disease_tags_en": ["Hernia", "Abdominal Pain"],
+    "cautions": "本穴為灸法專用點：eLotus 僅列患側對側施灸，灸法專業文獻亦指出傳統對三角灸只討論艾灸、未討論針刺；不得為符合深度欄而補造針刺數字。現有『艾炷灸 5~7 壯』有後續文獻記載，但 eLotus 未給壯數；《世醫得效方》引文另記二七壯，屬來源差異，須保留來源標籤。eLotus 將三角灸編為 EX-CA6，與本庫既有 EX-CA3 顯示碼不同。",
+    "cautionsEn": [
+      "This is a moxibustion-only point: eLotus lists contralateral moxa only, and a professional history of moxibustion notes that traditional descriptions discuss moxa, not needling. A needle-depth value must not be invented to satisfy a validator.",
+      "The existing 5-7 cone method is supported by a later reference but is not quantified by eLotus; a quoted classical source separately records fourteen cones, so the source difference must remain visible.",
+      "eLotus numbers Sanjiaojiu as EX-CA6, differing from this record's legacy EX-CA3 display code."
+    ],
+    "evidence": "eLotus CORE exact Sanjiaojiu page; Journal of Chinese Medicine moxibustion history; later 5-7 cone reference. Nomenclature and dose differences retained.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6",
+      "https://www.cstcm.edu/wp-content/uploads/2021/01/Additional-Moxibustion-articles.pdf",
+      "https://shenyaozi.com/en/shu/?sid=7601"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 三角灸 EX-CA3",
         "labelEn": "Extra Point · Sanjiaojiu EX-CA3",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
       }
     ],
     "x": 178,
-    "y": 320
+    "y": 320,
+    "field_sources": {
+      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6", "https://www.cstcm.edu/wp-content/uploads/2021/01/Additional-Moxibustion-articles.pdf", "https://shenyaozi.com/en/shu/?sid=7601"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"],
+      "cautions": ["https://www.cstcm.edu/wp-content/uploads/2021/01/Additional-Moxibustion-articles.pdf"],
+      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"]
+    }
   },
   {
     "code": "EX-CA4",
@@ -1756,21 +1776,41 @@
       "Indigestion",
       "Abdominal distension"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["健脾", "和胃調胃"],
+    "action_tags_en": ["Tonify the Spleen", "Harmonize the Stomach"],
+    "disease_tags_zh": ["胃下垂", "胃痛", "消化不良", "腹脹"],
+    "disease_tags_en": ["Gastroptosis", "Stomach Pain", "Indigestion", "Abdominal Distension"],
+    "cautions": "eLotus 與 American Dragon 的胃上精確頁均未列穴位專屬禁忌；不可把來源沉默解讀為無風險。兩來源主版本均記臍上 2 寸、旁開 4 寸，AD 另列旁開 2.5 寸的異說，與本庫既有旁開 3 寸不同。兩來源針法為朝臍或天樞方向橫刺／皮下刺 2~3 寸，與本庫既有向下斜刺 1.0~1.5 寸不同；定位、方向與深度須由持照針灸師裁決，現階段不得視為共識。eLotus 將胃上編為 EX-CA7，AD 為 N-CA-18，均與本庫 EX-CA4 不同。",
+    "cautionsEn": [
+      "Neither the exact eLotus nor American Dragon Weishang page states a point-specific contraindication; source silence must not be interpreted as absence of risk.",
+      "Both primary descriptions locate the point 2 cun above and 4 cun lateral to the umbilicus, while American Dragon also reports a 2.5-cun lateral alternative; these differ from this record's legacy 3-cun lateral location.",
+      "Both exact pages describe transverse/subcutaneous needling 2-3 cun toward the umbilicus or ST25, differing from this record's legacy downward oblique 1.0-1.5 cun. Location, direction, and depth require adjudication by a licensed acupuncturist and are not presented as consensus.",
+      "eLotus numbers Weishang as EX-CA7 and American Dragon as N-CA-18, both differing from this record's legacy EX-CA4 display code."
+    ],
+    "evidence": "eLotus CORE and American Dragon exact Weishang pages; location, technique, and nomenclature conflicts retained.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+      "https://www.americandragon.com/Points/Weishangxue.html"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 胃上 EX-CA4",
         "labelEn": "Extra Point · Weishang EX-CA4",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
       }
     ],
     "x": 180,
-    "y": 300
+    "y": 300,
+    "field_sources": {
+      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"],
+      "cautions": ["source-gap note: exact eLotus and American Dragon pages state no point-specific contraindication"],
+      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"]
+    }
   },
   {
     "code": "EX-CA5",

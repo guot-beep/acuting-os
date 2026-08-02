@@ -2674,3 +2674,9 @@ Current repo state as of this log:
 - Preserved and explicitly disclosed nomenclature conflicts: eLotus numbers 牽正 as EX-HN20 and 新設 as EX-HN23, while this database retains its immutable legacy display codes EX-HN18 and EX-HN20.
 - EX-HN21/22 exact professional pages were not located; their technique/safety text remains draft and now carries an explicit source-gap warning. EX-HN22 tongue-root needling is flagged high-risk and unvalidated.
 - Validation PASS: extra-point audit 50 → 45 issue records, build-data, validate-data (769 runtime), validate-interactions, JSON parse, and git diff check.
+# 2026-08-02 Codex — Extra Points EX-CA3/4 and measurable-method validator pass
+- Refined EX-CA3 三角灸 and EX-CA4 胃上 with paired bilingual tags, exact field sources, safety/source-conflict notes, and immutable-code disclosures.
+- EX-CA3 is now explicitly moxibustion-only; no needle depth was invented. Its 5–7 cone legacy method and differing classical fourteen-cone record remain source-labelled.
+- EX-CA4 retains the legacy location/technique while recording eLotus/AD conflicts in lateral distance, direction, depth, and numbering for licensed review.
+- Updated the extra-point validator to accept measurable moxibustion and flag generic CloudTCM directory links; measurable-method gaps are now 0/72, while 20 generic-source records are honestly reported.
+- Validation PASS: build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, JSON parse, and diff check.
