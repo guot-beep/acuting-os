@@ -1288,27 +1288,71 @@
     "region": "頭頸部 / Head and Neck",
     "location": "口腔內，舌背正中縫的中點。",
     "locationEn": "In the oral cavity, at the midpoint of the median dorsum of the tongue.",
-    "techniqueNotes": "直刺0.1~0.2寸，或點刺出血。\nPerpendicular 0.1-0.2 cun; or prick to bleed.",
+    "cunMeasurement": "不用體表寸量；沿舌背正中線，取舌尖至舌根之間的中點。",
+    "anatomyZh": "位於舌背正中線中點的舌體區。四來源未提供舌體逐層神經血管解剖、可接受出血量或止血流程；不可由『正中』自行推定深刺安全。",
+    "anatomyEn": "This is a tongue-body region at the midpoint of the dorsal midline. The four sources provide no layer-by-layer lingual neurovascular anatomy, acceptable bleeding quantity, or hemostasis protocol; 'midline' must not be interpreted as permission for deep insertion.",
+    "techniqueNotes": "eLotus：直刺0.1~0.2寸，或點刺出血。eLotus 未列點刺針具、出血量或止血流程。其另記古代曾以薑作隔物、用黃豆大小艾炷灸3~7壯治慢性咳嗽，但現今很少使用。\neLotus: perpendicular insertion 0.1-0.2 cun or bloodletting. It does not specify the bloodletting instrument, quantity, or hemostasis protocol. It also records a historical method of 3-7 soybean-sized moxa cones over ginger for chronic cough, rarely used today.",
+    "acumethodZh": "eLotus：直刺0.1~0.2寸，或點刺出血；未列點刺針具、出血滴數或止血流程。",
+    "acumethodEn": "eLotus: perpendicular insertion 0.1-0.2 cun or bloodletting; no bloodletting instrument, drop count, or hemostasis protocol is specified.",
+    "moxaZh": "eLotus 記載歷史用法：隔薑，以黃豆大小艾炷灸3~7壯治慢性咳嗽；現今很少使用。此為歷史性單一來源記載，不作一般常規灸法。",
+    "moxaEn": "eLotus records a historical method: 3-7 soybean-sized moxa cones over ginger for chronic cough, rarely used today. This is a historical single-source note, not a routine general moxa protocol.",
     "functions": "袪痰開竅，調脾和胃，利舌降氣",
-    "functionsEn": "Transforms phlegm; Harmonizes spleen/stomach; Benefits tongue",
+    "functionsEn": "Opens the orifices; Stops cough and arrests wheezing; Transforms Phlegm, harmonizes the Spleen/Stomach, benefits the tongue, and descends Qi (legacy content)",
+    "functionsZhList": [
+      "開竅",
+      "止咳平喘",
+      "袪痰（既有內容；eLotus 功效欄未直接列）",
+      "調脾和胃（既有內容；eLotus 功效欄未直接列）",
+      "利舌（既有內容；eLotus 功效欄未直接列）",
+      "降氣（既有內容；eLotus 功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Opens the orifices",
+      "Stops cough and arrests wheezing",
+      "Transforms Phlegm (legacy content; not directly listed in the eLotus action field)",
+      "Harmonizes the Spleen and Stomach (legacy content; not directly listed in the eLotus action field)",
+      "Benefits the tongue (legacy content; not directly listed in the eLotus action field)",
+      "Descends Qi (legacy content; not directly listed in the eLotus action field)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "舌背正中口舌／咳喘用穴",
+      "eLotus 使用 EX-HN10 Juquan",
+      "NCBAHM Appendix A、現有課件與 American Dragon 拼音索引未找到聚泉專條"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Dorsal-midline tongue point used for tongue and cough/wheezing presentations",
+      "eLotus uses EX-HN10 Juquan",
+      "No dedicated Juquan entry was found in NCBAHM Appendix A, current course material, or the American Dragon pinyin index"
+    ],
+    "exam_star": 0,
     "patterns": [
       "舌強不語",
+      "舌運動遲緩",
+      "味覺減退",
       "中風失語",
+      "慢性咳嗽",
       "哮喘",
       "消渴",
-      "食欲不振"
+      "食欲不振（既有內容；eLotus 本條未直接列）"
     ],
     "patternsEn": [
       "Tongue stiffness",
+      "Slow tongue movement",
+      "Diminished taste",
       "Stroke aphasia",
+      "Chronic cough",
       "Asthma",
       "Diabetes",
-      "Poor appetite"
+      "Poor appetite (legacy content; not directly listed in the eLotus entry)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "draft_source_checked",
+    "evidence": "四層查核：NCBAHM Appendix A 與現有課件均未找到聚泉專條；eLotus 精確頁／索引內容提供 EX-HN10、舌背正中定位、0.1~0.2寸或點刺出血、開竅／止咳平喘、完整主治，以及歷史隔薑3~7壯但現今少用；American Dragon 拼音索引未找到 Juquan，故不建立假詳情頁。既有袪痰、調脾和胃、利舌降氣、失語、食慾不振與配穴不刪，但標示來源缺口。WHO IRIS 僅作命名框架。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -1353,36 +1397,72 @@
       "口腔",
       "經外奇穴"
     ],
-    "cautions": "舌體穴位，僅宜淺刺 0.1~0.2 寸或點刺出血；避免深刺。口腔內操作需嚴格消毒，凝血異常、服抗凝藥或舌部感染者慎用；施術後確認止血。",
+    "cautions": "eLotus 僅支持直刺0.1~0.2寸或點刺出血，未提供點刺針具、出血量、消毒或止血流程。既有『避免深刺、嚴格口腔消毒、凝血異常／抗凝用藥／舌部感染慎用、施術後確認止血』保留為解剖與程序性風險提示，但不冒充四來源的完整規範。歷史隔薑灸3~7壯現今少用，不宜去掉其歷史限定。四來源未提供孕婦、兒童或其他高風險族群的本穴專屬規則，不猜。",
     "cautionsEn": [
-      "Tongue-body point: use only shallow insertion 0.1-0.2 cun or prick to bleed; avoid deep needling.",
-      "Strict intraoral sterilization is required. Use caution with bleeding disorders, anticoagulant therapy, or local tongue infection; confirm hemostasis after treatment."
+      "eLotus supports only perpendicular insertion 0.1-0.2 cun or bloodletting and gives no bloodletting instrument, quantity, antisepsis, or hemostasis protocol.",
+      "The legacy cautions to avoid deep insertion, use strict intraoral infection control, exercise caution with bleeding disorders/anticoagulants/local tongue infection, and confirm hemostasis are retained as anatomical and procedural risk notes, not as a complete four-source protocol.",
+      "The 3-7-cone ginger-moxa method is explicitly historical and rarely used today; that limitation must remain attached to the number.",
+      "The four sources provide no point-specific pregnancy, pediatric, or other high-risk-population rule; none is guessed."
     ],
-    "exam_importance": "口舌經外穴。定位在伸舌時舌背正中；主治舌強、失語、舌麻痺，與金津玉液/海泉同屬口舌急症與津液相關穴群。",
-    "exam_pearl": "聚泉抓「舌背中央」；金津玉液抓「舌下兩側靜脈」。舌強失語可把聚泉放在口舌穴群核心。",
+    "exam_importance": "NCBAHM Appendix A 與現有課件未列聚泉，不標 Board 核心。辨位重點是舌背正中、舌尖至舌根中點；與舌下正中海泉及舌下兩側金津／玉液分開。",
+    "exam_importance_en": "Juquan is not listed in NCBAHM Appendix A and has no dedicated current course entry, so it is not marked as Board core. Locate it on the dorsal midline halfway from tongue tip to root, distinct from midline sublingual Haiquan and bilateral sublingual Jinjin/Yuye.",
+    "exam_pearl": "聚泉抓『舌背中央』；海泉抓『舌下繫帶中央』；金津／玉液抓『舌下左右』。eLotus 的3~7壯是少用的歷史隔薑灸，不是現代常規。",
+    "exam_pearl_en": "Juquan is at the center of the tongue dorsum; Haiquan is at the center of the sublingual frenulum; Jinjin/Yuye are bilateral beneath the tongue. The eLotus 3-7-cone method is historical ginger moxa, not routine modern practice.",
     "combinePointsZh": "【舌強失語】聚泉配廉泉（CV23）、金津（EX-HN12）、玉液（EX-HN13）：局部利舌開音，兼清熱生津。\n【中風後失語】聚泉配風池（GB20）、曲池（LI11）、內關（PC6）：息風通絡、醒神開音。",
     "combinePointsEn": "Tongue stiffness / aphasia: Juquan with Lianquan (CV23), Jinjin (EX-HN12), and Yuye (EX-HN13) benefits the tongue, opens speech, clears Heat, and generates fluids.\nPost-stroke aphasia: combine with Fengchi (GB20), Quchi (LI11), and Neiguan (PC6) to extinguish Wind, unblock collaterals, and support speech recovery.",
-    "clinical_pearls": "Me & Qi 記載此穴安全重點是避免深刺、淺刺為主；古籍與現代資料都把它放在舌強、失語、消渴與舌體病變脈絡中。eLotus 頁面目前可讀性不穩，已保留連結但未把無法開出的頁面當唯一依據。",
+    "clinical_pearls": "eLotus 把聚泉主軸放在舌運動／味覺與慢性咳喘，而不只失語。精確頁目前直接開啟會出現驗證頁，但搜尋索引仍可讀到完整條目內容；此可讀性狀態已在 link_check 誠實記錄。",
+    "nameIntroZh": "聚泉可作『泉液匯聚』的字面記憶，對應舌體與口腔位置；此為名稱助記，不當作來源證實的功效。",
+    "nameIntroEn": "Juquan may be remembered literally as 'Gathering Spring,' fitting its tongue/oral location; this is a name mnemonic, not source proof of an action.",
     "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Juquan not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Juquan/聚泉 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Juquan not found in pinyin index; no exact detail page stored"
+      ],
       "location": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10",
         "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
       ],
+      "anatomy": [
+        "source-gap note: no full layer-by-layer lingual neurovascular anatomy or hemostasis protocol in the four sources"
+      ],
       "technique": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10",
-        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10: historical 3-7 soybean-sized cones over ginger for chronic cough; rarely used today"
       ],
       "functions": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10",
+        "legacy source-gap note: transforms Phlegm, harmonizes Spleen/Stomach, benefits tongue, and descends Qi retained without direct eLotus action-field support"
       ],
       "indications": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10",
+        "legacy source-gap note: stroke aphasia and poor appetite retained without direct listing in reviewed eLotus entry"
       ],
       "cautions": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10: 0.1-0.2 cun or bloodletting; historical moxa limitation",
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/: retained legacy safety source outside the current four-source contract",
+        "source-gap note: no blood quantity, antisepsis, hemostasis, pregnancy, pediatric, or high-risk protocol in the four-source review"
       ],
       "combinations": [
-        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/: existing combinations retained; not independently confirmed by Board/course/eLotus/AD this pass"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10: EX-HN10 Juquan",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 eLotus exact Juquan page indexed and search-readable; direct open served a challenge page",
+        "2026-08-02 American Dragon pinyin index opened; Juquan absent and no exact detail URL verified",
+        "2026-08-02 WHO IRIS nomenclature record opened"
       ]
     }
   },
@@ -1395,28 +1475,76 @@
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
     "location": "口腔內，舌下繫帶中點處。",
-    "locationEn": "In the oral cavity, at the midpoint of the frenulum of the tongue.",
-    "techniqueNotes": "三稜針點刺出血。\nPrick to bleed.",
+    "locationEn": "In the oral cavity, at the midpoint of the lingual frenulum, between Jinjin (EX-HN12) and Yuye (EX-HN13).",
+    "cunMeasurement": "不用寸量；伸舌後取舌下繫帶正中，位於金津與玉液之間。",
+    "anatomyZh": "位於舌下繫帶正中、金津與玉液之間的口底區。四來源未提供舌下逐層神經血管解剖、可接受出血量或止血流程；不能由『正中』自行推定深刺安全。",
+    "anatomyEn": "This is the floor-of-mouth region at the center of the lingual frenulum between Jinjin and Yuye. The four sources provide no layer-by-layer sublingual neurovascular anatomy, acceptable bleeding quantity, or hemostasis protocol; 'midline' must not be interpreted as permission for deep insertion.",
+    "techniqueNotes": "eLotus 僅列點刺出血，未提供針具、刺入深度、出血量、重複次數或止血流程。既有『三稜針』器具說法保留為未由四來源確認的細節。\neLotus lists bloodletting only, without specifying instrument, insertion depth, blood quantity, repetition, or hemostasis protocol. The legacy three-edged-needle wording is retained as an instrument detail not confirmed by the four-source review.",
+    "acumethodZh": "eLotus：點刺出血；未列針具、深度、滴數、重複次數或止血流程。",
+    "acumethodEn": "eLotus: prick to bleed; no instrument, depth, drop count, repetition, or hemostasis protocol is specified.",
+    "moxaZh": "eLotus 海泉條目未說明艾灸；NCBAHM、現有課件與 AD 均無專條可補。故不推定可灸、禁灸或灸量。",
+    "moxaEn": "The eLotus Haiquan entry does not address moxibustion, and NCBAHM, current course material, and AD provide no dedicated entry. Applicability, contraindication, and dose are therefore not inferred.",
     "functions": "清熱生津，消腫止痛，利咽開音",
-    "functionsEn": "Clears heat and generates fluids; Reduces swelling; Benefits throat",
+    "functionsEn": "Clears Heat; Generates fluids; Benefits the tongue; Reduces swelling, relieves pain, and benefits the throat/voice (legacy content)",
+    "functionsZhList": [
+      "清熱",
+      "生津",
+      "利舌",
+      "消腫（既有內容；eLotus 功效欄未單列）",
+      "止痛（既有內容；eLotus 功效欄未單列）",
+      "利咽開音（既有內容；eLotus 功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Clears Heat",
+      "Generates fluids",
+      "Benefits the tongue",
+      "Reduces swelling (legacy content; not separately listed in the eLotus action field)",
+      "Relieves pain (legacy content; not separately listed in the eLotus action field)",
+      "Benefits the throat and voice (legacy content; not directly listed in the eLotus action field)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "舌下正中點刺出血用穴",
+      "eLotus 使用 EX-HN11 Haiquan，英譯 Sea Spring，別名鬼封",
+      "NCBAHM Appendix A、現有課件與 American Dragon 拼音索引未找到海泉專條"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Midline sublingual bloodletting point",
+      "eLotus uses EX-HN11 Haiquan, translates it as Sea Spring, and lists Guifeng as an alias",
+      "No dedicated Haiquan entry was found in NCBAHM Appendix A, current course material, or the American Dragon pinyin index"
+    ],
+    "exam_star": 0,
     "patterns": [
       "消渴（糖尿病）",
-      "舌炎",
-      "舌腫",
+      "舌體沉重",
+      "舌腫痛／舌炎",
+      "小兒蓮花舌",
+      "面癱",
       "嘔吐",
-      "失語"
+      "腹脹腹痛",
+      "腹瀉",
+      "呃逆",
+      "失語（既有內容；eLotus 本條未直接列）"
     ],
     "patternsEn": [
       "Diabetes",
-      "Glossitis",
-      "Swollen tongue",
+      "Heaviness of the tongue",
+      "Swollen painful tongue / glossitis",
+      "Pediatric lotus-flower tongue",
+      "Facial paralysis",
       "Vomiting",
-      "Aphasia"
+      "Abdominal distention and pain",
+      "Diarrhea",
+      "Hiccup",
+      "Aphasia (legacy content; not directly listed in the eLotus entry)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "draft_source_checked",
+    "evidence": "四層查核：NCBAHM Appendix A 與現有課件均未找到海泉專條；eLotus 精確頁提供 EX-HN11、舌下繫帶正中／金津玉液之間、點刺出血、清熱生津利舌、完整舌病／面癱／消渴／胃腸主治，以及別名鬼封；American Dragon 拼音索引未找到 Haiquan，故不建立假詳情頁。既有失語、消腫止痛、利咽開音與配穴不刪，但標示來源缺口。WHO IRIS 僅作命名框架。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -1428,6 +1556,12 @@
     ],
     "x": 178,
     "y": 175,
+    "otherNamesZh": [
+      "鬼封"
+    ],
+    "otherNamesEn": [
+      "Guifeng"
+    ],
     "action_tags_zh": [
       "清熱",
       "生津",
@@ -1463,37 +1597,72 @@
       "口腔",
       "經外奇穴"
     ],
-    "cautions": "舌下繫帶正中點刺出血，需嚴格消毒並控制出血量；凝血異常、服抗凝藥、口腔/舌下感染或無法配合伸舌者慎用。避免深刺與反覆強刺激。",
+    "cautions": "eLotus 僅列點刺出血，沒有針具、深度、出血量、重複次數、消毒或止血流程；也未說明艾灸。既有『嚴格消毒、控制出血、凝血異常／抗凝藥／口腔或舌下感染／無法配合者慎用、避免深刺與反覆強刺激』保留為舌下解剖與程序性風險提示，但不冒充四來源的完整規範。四來源未提供孕婦、兒童（雖列小兒主治）或其他高風險族群的本穴專屬操作規則，不猜；小兒主治不等於兒童安全許可。",
     "cautionsEn": [
-      "Prick to bleed at the midline frenulum; use strict sterilization and control bleeding volume.",
-      "Use caution with bleeding disorders, anticoagulant therapy, oral/sublingual infection, or patients unable to cooperate with tongue positioning. Avoid deep needling and repeated strong stimulation."
+      "eLotus lists bloodletting but gives no instrument, depth, blood quantity, repetition, antisepsis, or hemostasis protocol; it also does not address moxa.",
+      "The legacy cautions on strict infection control, bleeding control, bleeding disorders/anticoagulants/oral or sublingual infection/inability to cooperate, and avoidance of deep or repeated strong stimulation are retained as sublingual anatomical and procedural risk notes, not as a complete four-source protocol.",
+      "The sources provide no point-specific pregnancy, pediatric, or other high-risk-population procedure rule. A pediatric indication does not constitute pediatric safety clearance."
     ],
-    "exam_importance": "海泉位於舌下繫帶中央，在金津、玉液之間。主軸：清熱生津、利舌；與金津玉液同屬口舌腫痛、失語、消渴相關穴群。",
-    "exam_pearl": "海泉 = 舌下繫帶中央；金津/玉液 = 舌下左右靜脈。考試容易把三者位置混在一起。",
+    "exam_importance": "NCBAHM Appendix A 與現有課件未列海泉，不標 Board 核心。定位是舌下繫帶中央、金津與玉液之間；主軸為清熱、生津、利舌。",
+    "exam_importance_en": "Haiquan is not listed in NCBAHM Appendix A and has no dedicated current course entry, so it is not marked as Board core. It lies at the center of the sublingual frenulum between Jinjin and Yuye; its supported actions are clearing Heat, generating fluids, and benefiting the tongue.",
+    "exam_pearl": "海泉 = 舌下繫帶中央；聚泉 = 舌背中央；金津／玉液 = 舌下左右。點刺出血有來源，但針具、深度、滴數與止血流程都沒有來源數字。",
+    "exam_pearl_en": "Haiquan is at the center of the sublingual frenulum; Juquan is at the center of the tongue dorsum; Jinjin/Yuye are bilateral beneath the tongue. Bloodletting is sourced, but instrument, depth, drop count, and hemostasis parameters are not.",
     "combinePointsZh": "【舌腫痛／蓮花舌】海泉配金津（EX-HN12）、玉液（EX-HN13）、十宣（EX-UE11）：點刺出血以清熱消腫。\n【消渴口乾】海泉配廉泉（CV23）、金津玉液：清熱生津、利舌潤燥。",
     "combinePointsEn": "Swollen painful tongue / lotus-flower tongue: Haiquan with Jinjin (EX-HN12), Yuye (EX-HN13), and Shixuan (EX-UE11), usually by bloodletting, clears Heat and reduces swelling.\nWasting-thirst with dry mouth: combine Haiquan with Lianquan (CV23) and Jinjin-Yuye to clear Heat, generate fluids, and benefit the tongue.",
-    "clinical_pearls": "eLotus 明確列出 heaviness/swelling/pain of tongue、xiao ke、vomiting、abdominal symptoms，故不應只寫「舌炎」；此穴是口舌局部 + 津液/消渴兩條線。",
+    "clinical_pearls": "eLotus 明確列出舌體沉重、腫痛、小兒蓮花舌、面癱、消渴、嘔吐、腹脹腹痛、腹瀉與呃逆，故卡片不能只縮成『舌炎』；其架構是口舌局部、津液／消渴與胃腸症狀三條線。",
+    "nameIntroZh": "eLotus 將海泉英譯 Sea Spring，並列別名鬼封（Guifeng）；名稱可作舌下津液相關位置助記，不自行外推療效。",
+    "nameIntroEn": "eLotus translates Haiquan as 'Sea Spring' and lists Guifeng as an alias. The name may aid recall of its sublingual/fluid context but does not independently prove an action.",
     "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Haiquan not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Haiquan/海泉 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Haiquan not found in pinyin index; no exact detail page stored"
+      ],
       "location": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "anatomy": [
+        "source-gap note: no full layer-by-layer sublingual neurovascular anatomy or hemostasis protocol in the four sources"
       ],
       "technique": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
       ],
+      "moxibustion": [
+        "source-gap note: eLotus does not address moxa; no Board, course, or AD detail entry found"
+      ],
       "functions": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11",
+        "legacy source-gap note: reducing swelling, relieving pain, and benefiting throat/voice retained without direct eLotus action-field support"
       ],
       "indications": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11",
+        "legacy source-gap note: aphasia retained without direct listing in reviewed eLotus entry"
       ],
       "aliases": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
       ],
       "cautions": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11: prick to bleed; no quantitative protocol",
+        "source-gap note: no instrument, depth, blood volume, repetition, antisepsis, hemostasis, pregnancy, pediatric, or high-risk protocol"
       ],
-      "safety_note": [
-        "anatomy-based note from sublingual bloodletting location"
+      "combinations": [
+        "legacy source-gap note: existing combinations retained; reviewed eLotus entry lists none and AD has no detail entry"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11: EX-HN11 Haiquan; Sea Spring; alias Guifeng",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Haiquan page",
+        "2026-08-02 American Dragon pinyin index opened; Haiquan absent and no exact detail URL verified",
+        "2026-08-02 WHO IRIS nomenclature record opened"
       ]
     }
   },
