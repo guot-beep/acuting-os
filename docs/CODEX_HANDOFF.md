@@ -1,5 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN12 Jinjin + EX-HN13 Yuye strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `d8ba546` (`Complete Jinjin and Yuye cards`)
+- Task: Complete the paired sublingual bloodletting cards with eLotus/AD nomenclature reconciliation and non-invented safety parameters.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN12 金津 and EX-HN13 玉液; audit is now 59/72 issue records and 13/72 strict/four-source complete.
+  2. Reconciled the code systems: eLotus/database list separate EX-HN12 Jinjin (left) and EX-HN13 Yuye (right), while AD combines them as M-HN-20 Jinjin-Yuye.
+  3. Integrated AD's full paired indication architecture: stomatitis, glossitis, tonsillitis, acute gastritis, emaciation/thirst, aphasia, vomiting, morning sickness/vomiting of pregnancy, severe nausea, lotus-flower tongue, mouth ulcers, throat Bi, loss of voice after Windstroke, wasting-thirst, and diarrhea.
+  4. Disclosed an apparent AD duplicated-location typo: the first line correctly states Jinjin left/Yuye right, while the second labels both sides Jinjin. Left/right was cross-checked against both eLotus pages.
+  5. Bloodletting remains non-quantitative because eLotus/AD provide no instrument, depth, drop count, repetition, antisepsis, or hemostasis protocol. AD's pregnancy-vomiting indication is explicitly not pregnancy safety clearance. Yuye's legacy no-moxa warning is preserved but labeled unsupported by eLotus/AD.
+- Source basis: NCBAHM 2026 ACPL Appendix A negative search; negative exact-name search under `curriculum/acupoints`; exact/indexed eLotus Jinjin and exact eLotus Yuye pages; American Dragon pinyin index and exact `Points/Jinjin-Yuye.html`; WHO IRIS nomenclature record. Existing Me & Qi provenance remains clearly outside the four-source contract.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (13/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
+- Known risks / manual checks: Ting should confirm both cards render paired nomenclature, AD source buttons, the source-page typo disclosure, and no invented bleeding quantity. Yuye's no-moxa line remains a legacy verification gap.
+- Next recommended action: continue EX-HN14 翳明 and EX-HN15 頸百勞.
+
 ## [2026-08-02] Codex Handoff — EX-HN10 Juquan + EX-HN11 Haiquan strict cards
 
 - Agent: Codex

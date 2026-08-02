@@ -1,3 +1,11 @@
+# 2026-08-02 Codex — EX-HN12 金津 + EX-HN13 玉液嚴格四來源卡
+- 完成 EX-HN12、EX-HN13；經外奇穴進度更新為 13/72 嚴格完成、59/72 仍在 worklist。
+- 整合編碼：eLotus／本庫分列 EX-HN12 金津左、EX-HN13 玉液右；AD 合併為 M-HN-20 Jinjin-Yuye。補齊 AD 口舌咽喉、消渴、胃腸、晨吐／妊娠嘔吐與劇烈噁心等完整主治。
+- 揭露 AD 重複定位句疑似把右側也誤寫 Jinjin；左右以 AD 第一條及兩張 eLotus 精確頁交叉校正。
+- 點刺出血未補造針具、深度、滴數、重複次數、消毒或止血參數；妊娠嘔吐主治不當成孕期安全背書。玉液舊卡禁灸保留但標明 eLotus／AD 未證實。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`d8ba546`。
+
 # 2026-08-02 Codex — EX-HN10 聚泉 + EX-HN11 海泉嚴格四來源卡
 - 完成 EX-HN10、EX-HN11；經外奇穴進度更新為 11/72 嚴格完成、61/72 仍在 worklist。
 - 聚泉補齊 eLotus 的舌背中點、0.1~0.2寸或點刺出血、舌運動／味覺／慢性咳喘／消渴架構；歷史隔薑黃豆大艾炷3~7壯保留「現今少用」限定，不改寫成一般灸法。
