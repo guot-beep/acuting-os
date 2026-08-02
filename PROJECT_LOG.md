@@ -2680,3 +2680,9 @@ Current repo state as of this log:
 - EX-CA4 retains the legacy location/technique while recording eLotus/AD conflicts in lateral distance, direction, depth, and numbering for licensed review.
 - Updated the extra-point validator to accept measurable moxibustion and flag generic CloudTCM directory links; measurable-method gaps are now 0/72, while 20 generic-source records are honestly reported.
 - Validation PASS: build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, JSON parse, and diff check.
+# 2026-08-02 Codex — Correct EX-HN19 source buttons and deepen American Dragon content
+- Replaced the broken American Dragon fallback for 夾承漿 with Ting's verified direct page: `https://www.americandragon.com/Points/Jiachengjiang.html`.
+- External point buttons now prefer exact American Dragon URLs stored on the record and omit empty/unverified CloudTCM buttons instead of linking an extra point to a homepage or blank target.
+- Added American Dragon's mental-foramen landmark, source-labelled needling variants, indications, pairings, M-HN-18 nomenclature difference, and bilingual safety context without deleting the legacy 0.3–0.5-cun value.
+- No exact CloudTCM Jiachengjiang page was located in the direct-name checks, so the card explicitly records that source gap and does not claim a CloudTCM detail source.
+- Validation PASS: build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, app.js syntax, JSON parse, and diff check.

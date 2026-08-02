@@ -893,3 +893,22 @@
 - Next: prioritize the NCBAHM Appendix A generic-source records EX-CA2 提托 and then EX-B1 定喘 / EX-B2 華佗夾脊 / EX-B4 痞根; exact-source replacement is now a visible audit requirement.
 
 ---
+## [2026-08-02] Codex Handoff - Correct EX-HN19 source buttons and deepen AD content
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: this handoff commit
+- Task: Correct Ting-reported CloudTCM/American Dragon link failures on EX-HN19 夾承漿 and use the verified American Dragon page to deepen the card.
+- Files changed: `data/acupoints/extra_points.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `app.js`; `PROJECT_LOG.md`; this handoff.
+- What changed:
+  1. Added the verified direct American Dragon page `https://www.americandragon.com/Points/Jiachengjiang.html` to `sources`, `visualLinks`, and per-field provenance; removed a duplicate JSON `url` key.
+  2. Added AD's location landmark (directly below ST4 at the mental foramen), multiple source-labelled needling variants, toothache/facial spasm/mouth-eye deviation and AD-listed jaundice indications, plus facial-spasm and trigeminal-neuralgia pairings.
+  3. Retained the legacy 0.3–0.5-cun method and recorded eLotus/AD technique disagreement instead of collapsing the ranges. Added AD code M-HN-18 versus immutable database display code EX-HN19.
+  4. Updated `americanDragonPointUrl()` to prefer exact record URLs. Extra points without a verified AD page no longer fall back to the AD homepage; external source buttons now omit empty URLs, so EX-HN19 no longer shows an invalid CloudTCM button when no exact CloudTCM page exists.
+- Source basis: live HTTP 200 read of Ting's American Dragon Jiachengjiang page; live HTTP 200 re-check of the exact eLotus Jiachengjiang page; exact Chinese-name CloudTCM/domain searches found no reviewable independent Jiachengjiang page.
+- Validation: JSON parse PASS; `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (48/72 stricter-rule issue records; EX-HN19 clear); `validate-data.js` PASS (769 runtime); `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas not touched: no IDs/codes renamed; no schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
+- Known risks / manual checks: Ting should click the EX-HN19 hero buttons and diagram links. Expected: American Dragon opens the exact Jiachengjiang page, eLotus opens its exact page, and CloudTCM is omitted. The listed needling approaches remain source variants, not consensus.
+- Next: return to EX-CA2 提托, then the NCBAHM back-point priority group EX-B1/EX-B2/EX-B4.
+
+---

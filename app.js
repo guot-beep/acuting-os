@@ -4158,9 +4158,17 @@ function heroSubtitle(point) {
 }
 
 function americanDragonPointUrl(point) {
+  const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
+  const directVisual = visualLinks.find((v) => v && v.url && /americandragon\.com\/Points\//i.test(v.url));
+  if (directVisual) return directVisual.url;
+
+  const sources = Array.isArray(point.sources) ? point.sources : [];
+  const directSource = sources.find((s) => typeof s === "string" && /americandragon\.com\/Points\//i.test(s));
+  if (directSource) return directSource;
+
   const code = String(point.code || "").trim().toUpperCase();
   const match = code.match(/^([A-Z]+)(\d+)$/);
-  if (!match) return "https://www.americandragon.com/";
+  if (!match) return "";
 
   const prefix = match[1];
   const num = match[2];
@@ -4212,7 +4220,7 @@ function externalPointLinks(point) {
     return [
       { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
       { label: contentMode === "english" ? "Visual Diagram" : "耳穴圖源", url: primary, kind: "english" }
-    ];
+    ].filter((link) => /^https?:\/\//.test(link.url));
   }
 
   // 1. CloudTCM (中文)
@@ -4230,14 +4238,14 @@ function externalPointLinks(point) {
       { label: "CloudTCM", url: chinese, kind: "chinese" },
       { label: "American Dragon (AD)", url: adUrl, kind: "english" },
       { label: "eLotus CORE", url: eLotusUrl, kind: "english" }
-    ];
+    ].filter((link) => /^https?:\/\//.test(link.url));
   }
 
   return [
     { label: "雲端中醫", url: chinese, kind: "chinese" },
     { label: "American Dragon (AD)", url: adUrl, kind: "english" },
     { label: "eLotus 權威圖解", url: eLotusUrl, kind: "english" }
-  ];
+  ].filter((link) => /^https?:\/\//.test(link.url));
 }
 
 function primaryFunction(point) {

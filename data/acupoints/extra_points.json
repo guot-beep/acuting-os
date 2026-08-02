@@ -1393,52 +1393,72 @@
     "pinyin": "Jiachengjiang",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "面部，承漿穴（CV24）旁開1寸處。",
-    "locationEn": "On the face, 1 cun lateral to Chengjiang (CV 24).",
-    "techniqueNotes": "斜刺0.3~0.5寸。\nOblique 0.3-0.5 cun.",
+    "location": "面部，承漿穴（CV24）旁開1寸，地倉穴（ST4）直下；American Dragon 另以可觸及下頜骨頦孔為定位標誌。",
+    "locationEn": "On the face, 1 cun lateral to Chengjiang (CV24), directly below Dicang (ST4); American Dragon additionally identifies the palpable mental foramen of the mandible as the landmark.",
+    "techniqueNotes": "本庫舊值：斜刺0.3~0.5寸。eLotus：斜刺0.5~1.0寸。American Dragon：直刺0.2~0.5寸；或向內下方斜刺入頦孔0.3~0.5寸；另列橫刺0.5~1.5寸及斜刺0.5~1.0寸。\nLegacy database value: oblique 0.3-0.5 cun. eLotus: oblique 0.5-1.0 cun. American Dragon: perpendicular 0.2-0.5 cun; or medial-inferior oblique insertion into the mental foramen 0.3-0.5 cun; it also lists transverse 0.5-1.5 cun and oblique 0.5-1.0 cun.",
     "functions": "疏風通絡，止痛解痙",
-    "functionsEn": "Dispels wind and unblocks collaterals; Relieves pain",
+    "functionsEn": "Dispels wind and unblocks collaterals; Relieves pain and spasms",
     "patterns": [
       "面癱",
       "三叉神經痛",
-      "齒齦腫痛"
+      "齒齦腫痛",
+      "牙痛",
+      "面肌痙攣",
+      "口眼歪斜",
+      "黃疸（American Dragon 列載）"
     ],
     "patternsEn": [
       "Facial paralysis",
       "Trigeminal neuralgia",
-      "Gingivitis"
+      "Gingivitis",
+      "Toothache",
+      "Facial spasm",
+      "Deviation of the mouth and eyes",
+      "Jaundice (listed by American Dragon)"
     ],
-    "action_tags_zh": ["祛風疏風", "通絡", "止痛"],
-    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Alleviate Pain"],
-    "disease_tags_zh": ["面癱", "面部痛", "齒齦腫痛"],
-    "disease_tags_en": ["Facial Paralysis", "Facial Pain", "Swollen & Painful Gums"],
-    "cautions": "eLotus 的夾承漿精確頁未列穴位專屬禁忌；不可把來源沉默解讀為無風險。斜刺 0.5~1.0 寸是該頁記載，與本庫原 0.3~0.5 寸不同，兩個範圍均保留為待持照針灸師裁決的來源差異。",
+    "action_tags_zh": ["祛風疏風", "通絡", "止痛", "解痙"],
+    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Alleviate Pain", "Relieve Spasm"],
+    "disease_tags_zh": ["面癱", "面部痛", "齒齦腫痛", "牙痛", "面肌痙攣", "口眼歪斜"],
+    "disease_tags_en": ["Facial Paralysis", "Facial Pain", "Swollen & Painful Gums", "Toothache", "Facial Spasm", "Deviation of the Mouth and Eyes"],
+    "cautions": "eLotus 與 American Dragon 的夾承漿精確頁均未列穴位專屬禁忌；不可把來源沉默解讀為無風險。兩來源列出的針刺方向與深度並不單一：eLotus 為斜刺0.5~1.0寸；American Dragon 列直刺0.2~0.5寸、向內下方斜刺入頦孔0.3~0.5寸、橫刺0.5~1.5寸及斜刺0.5~1.0寸。AD 並記述三叉神經痛取法可能出現延伸至下唇的觸電樣麻感；涉及頦孔定位的操作不得由本卡自行統一，須由持照針灸師依解剖與訓練裁決。American Dragon 將本穴編為 M-HN-18，與本庫既有 EX-HN19 顯示碼不同。CloudTCM 未找到可核實的夾承漿獨立頁，因此不顯示雲端中醫按鈕。",
     "cautionsEn": [
-      "The exact eLotus Jiachengjiang page gives no point-specific contraindication; source silence must not be interpreted as absence of risk.",
-      "Its oblique 0.5-1.0 cun range differs from this record's legacy 0.3-0.5 cun range; both are retained as a source discrepancy requiring adjudication by a licensed acupuncturist."
+      "Neither the exact eLotus nor American Dragon Jiachengjiang page states a point-specific contraindication; source silence must not be interpreted as absence of risk.",
+      "The sources list multiple directions and depths: eLotus gives oblique 0.5-1.0 cun; American Dragon gives perpendicular 0.2-0.5 cun, medial-inferior oblique insertion into the mental foramen 0.3-0.5 cun, transverse 0.5-1.5 cun, and oblique 0.5-1.0 cun.",
+      "American Dragon notes that its trigeminal-neuralgia technique may produce an electric, numb sensation extending to the lower lip. Techniques involving the mental foramen are not harmonized by this card and require licensed anatomical and clinical judgment.",
+      "American Dragon numbers the point M-HN-18, differing from this record's legacy EX-HN19 display code. No verifiable point-specific CloudTCM page was located, so no CloudTCM button is shown."
     ],
-    "evidence": "eLotus CORE exact Jiachengjiang page; depth discrepancy retained.",
+    "combinePointsZh": "【面肌痙攣】夾承漿配攢竹（BL2）、四白（ST2）：American Dragon 列載配伍。\n【三叉神經痛】夾承漿配下關（ST7）、合谷（LI4）：American Dragon 列載配伍。",
+    "combinePointsEn": "Facial spasm: Jiachengjiang with Zanzhu (BL2) and Sibai (ST2), as listed by American Dragon.\nTrigeminal neuralgia: Jiachengjiang with Xiaguan (ST7) and Hegu (LI4), as listed by American Dragon.",
+    "evidence": "eLotus CORE and American Dragon exact Jiachengjiang pages; location, technique, and nomenclature differences retained. No exact CloudTCM point page located.",
     "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
+      "https://www.americandragon.com/Points/Jiachengjiang.html"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 夾承漿 EX-HN19",
         "labelEn": "Extra Point · Jiachengjiang EX-HN19",
-      "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 夾承漿 M-HN-18",
+        "labelEn": "American Dragon · Jiachengjiang M-HN-18",
+        "url": "https://www.americandragon.com/Points/Jiachengjiang.html",
+        "source": "American Dragon"
       }
     ],
     "x": 178,
     "y": 185,
     "field_sources": {
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
-      "cautions": ["source-gap note: exact eLotus page states no point-specific contraindication"]
+      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
+      "combinations": ["https://www.americandragon.com/Points/Jiachengjiang.html"],
+      "cautions": ["source-gap note: exact eLotus and American Dragon pages state no point-specific contraindication"],
+      "nomenclature": ["https://www.americandragon.com/Points/Jiachengjiang.html"]
     }
   },
   {
