@@ -4373,8 +4373,8 @@
       "name_en": "Clear the Nutritive Level Decoction",
       "pinyin": "Qing Ying Tang",
       "review_status": "draft",
-      "source_status": "source_review_pending",
-      "source_type": "formula_canon_shortlist_skeleton",
+      "source_status": "curriculum_cloudtcm_reviewed_ad_formula_not_found",
+      "source_type": "curriculum_cloudtcm_formula_draft",
       "category_id": "",
       "category_en": "Clear Heat",
       "category": "清熱劑 / Clear Heat",
@@ -29714,16 +29714,32 @@
       "modern_clinical_use_tags": [],
       "related_conditions": [],
       "related_formulas": [
+        "formula.zi_xue_dan",
         "formula.zhi_bao_dan",
         "formula.su_he_xiang_wan"
       ],
-      "clinical_use_note": "",
+      "clinical_use_note": "涼開三寶之一，屬熱閉神昏急救方；內含雄黃、硃砂等毒性礦物，僅作內部學習與來源追蹤，不作自行用藥建議。",
       "nccaom_high_yield": true,
       "public_safe": false,
-      "study_tags": [],
-      "pattern_focus_en": "",
-      "actions_en": [],
-      "actions_zh": [],
+      "study_tags": [
+        "open_orifices",
+        "heat_enters_pericardium",
+        "phlegm_heat_orifices",
+        "warm_disease",
+        "emergency_formula",
+        "toxicity_review"
+      ],
+      "pattern_focus_en": "Heat toxin entering the Pericardium or phlegm-heat veiling the sensory orifices",
+      "actions_en": [
+        "Clears Heat and Relieves Toxicity",
+        "Dislodges Phlegm and Opens the Orifices",
+        "Calms the Spirit"
+      ],
+      "actions_zh": [
+        "清熱解毒",
+        "豁痰開竅",
+        "鎮驚安神"
+      ],
       "composition": [
         {
           "herb_zh": "牛黃",
@@ -29827,20 +29843,53 @@
           "herb_id": "herb.zhen_zhu"
         }
       ],
-      "pattern_indications_en": [],
-      "pattern_indications_zh": [],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [],
-      "contraindications_zh": [],
-      "safety_flags": [],
+      "pattern_indications_en": [
+        "Heat toxin entering the Pericardium, or turbid phlegm / phlegm-heat veiling the sensory orifices",
+        "High fever, irritability or restlessness, delirious speech, impaired consciousness, deep-red or red tongue, and rapid pulse",
+        "Coma from wind-stroke or childhood convulsions when the presentation matches a heat-closed orifice pattern"
+      ],
+      "pattern_indications_zh": [
+        "熱毒內陷心包，或濁痰／痰熱蒙蔽清竅",
+        "高熱、煩躁不安、神昏譫語、意識障礙，舌紅或深紅、脈數",
+        "中風昏迷或小兒驚厥見熱閉清竅證候者"
+      ],
+      "modifications_en": [
+        "Niu Huang Cheng Qi Tang: add Da Huang 9g when Yangming Fu-organ excess accompanies the heat-closed orifice pattern",
+        "Niu Huang Qing Xin Wan: related milder formula; weaker than An Gong Niu Huang Wan for severe heat-toxin closed orifices"
+      ],
+      "modifications_zh": [
+        "牛黃承氣湯：安宮牛黃丸加大黃 9g，用於熱閉神昏兼陽明腑實證",
+        "牛黃清心丸：同類較輕方，清熱開竅力較安宮牛黃丸弱"
+      ],
+      "contraindications_en": [
+        "Contraindicated for collapse-type loss of consciousness; this is a closed-orifice formula, not a rescue formula for collapse",
+        "Contraindicated or inappropriate for cold-closed orifices; differentiate from warming aromatic-opening formulas such as Su He Xiang Wan",
+        "Contraindicated during pregnancy",
+        "Contains toxic mineral ingredients such as realgar and cinnabar; not for unsupervised modern clinical use"
+      ],
+      "contraindications_zh": [
+        "脫證神昏者禁用；本方治閉證，不是亡陽脫證救逆方",
+        "寒閉神昏者禁用或不宜；應與蘇合香丸等溫開方辨別",
+        "孕婦禁用",
+        "含雄黃、硃砂等毒性礦物，不可自行使用或長期使用"
+      ],
+      "safety_flags": [
+        "toxic_mineral_review",
+        "realgar_arsenic_review",
+        "cinnabar_mercury_review",
+        "pregnancy_contraindicated",
+        "emergency_formula",
+        "professional_supervision_required"
+      ],
       "source_urls": [
-        "https://www.sunten.com.tw/",
-        "https://www.zhongyifangji.com",
-        "https://cloudtcm.com",
+        "https://cloudtcm.com/formula/4361",
         "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
       ],
-      "clinical_pearls": [],
+      "clinical_pearls": [
+        "安宮牛黃丸是涼開三寶中偏「清熱解毒、豁痰開竅」的代表；課件比較列為三寶中寒性最重、清熱解毒力最強。",
+        "考試辨別重點：安宮偏熱毒閉竅；紫雪丹偏高熱動風、痙厥抽搐；至寶丹偏痰濁蒙閉、神昏痰盛。",
+        "安全重點：含雄黃、硃砂，美國臨床須視為毒性礦物審核項。"
+      ],
       "fertility_notes": [],
       "herb_drug_cautions": [],
       "acupoint_links": [],
@@ -29848,21 +29897,55 @@
       "western_condition_links": [],
       "english_exam_track": {
         "review_status": "draft",
-        "source_status": "bensky_review_pending",
-        "actions": [],
-        "indications": [],
+        "source_status": "curriculum_cloudtcm_reviewed_ad_formula_not_found",
+        "actions": [
+          "Clears Heat and relieves toxicity",
+          "Dislodges Phlegm and opens the orifices",
+          "Calms the Spirit"
+        ],
+        "indications": [
+          "Heat toxin entering the Pericardium",
+          "Phlegm-Heat veiling the sensory orifices with delirium or impaired consciousness",
+          "Wind-stroke coma or childhood convulsions when the heat-closed pattern is present"
+        ],
         "modifications": [],
-        "contraindications": [],
-        "notes": []
+        "contraindications": [
+          "Collapse-type coma",
+          "Cold-closed orifices",
+          "Pregnancy",
+          "Unsupervised or prolonged use because the formula contains realgar and cinnabar"
+        ],
+        "notes": [
+          "American Dragon exact formula page not found in this review pass; do not cite AD as a formula source for this card.",
+          "Formula role hierarchy follows app F7 normalization: Niu Huang is retained as Chief; Shui Niu Jiao and She Xiang are recorded as Deputies to keep Chief count within the template rule."
+        ]
       },
       "chinese_depth_track": {
         "review_status": "draft",
-        "source_status": "cloudtcm_or_institution_review_pending",
-        "fang_yi_zh": "",
-        "zhu_zhi_zh": "",
-        "notes_zh": []
+        "source_status": "curriculum_cloudtcm_reviewed_ad_formula_not_found",
+        "fang_yi_zh": "溫病熱毒內陷心包，或痰熱、濁痰蒙蔽清竅，神明被擾而見高熱、煩躁、神昏譫語、驚厥。",
+        "zhu_zhi_zh": "清熱解毒、豁痰開竅、鎮驚安神；主治熱閉神昏，不治寒閉或脫證。",
+        "notes_zh": [
+          "課件列出原方為蜜丸，每丸約 3g，依病情每日 2–3 次；此為課件記載，不等同現代自行用藥建議。",
+          "CloudTCM 配方列犀角；本資料庫 composition 依現代替代與課件整理列水牛角。",
+          "American Dragon 未找到安宮牛黃丸精確方頁，本卡不引用 AD 方劑頁。"
+        ]
       },
-      "last_reviewed": "",
+      "last_reviewed": "2026-08-01",
+      "tongue_zh": [
+        "舌紅",
+        "舌深紅"
+      ],
+      "tongue_en": [
+        "Red tongue",
+        "Deep-red tongue"
+      ],
+      "pulse_zh": [
+        "脈數"
+      ],
+      "pulse_en": [
+        "Rapid pulse"
+      ],
       "syndromes_zh": [
         "熱入心包",
         "熱陷心包",
@@ -29882,21 +29965,178 @@
         "驚厥抽搐"
       ],
       "cautions_zh": [
-        "本方為涼開重劑，脫證神昏者忌用",
-        "孕婦禁用"
+        "本方為涼開重劑，中病即止，不可長期服用",
+        "含雄黃、硃砂等毒性礦物，需專業監管並追蹤安全性",
+        "神昏屬閉證或脫證、熱閉或寒閉必須先辨證"
       ],
-      "on_board_list": false,
-      "exam_importance": "非 NCBAHM 2026 CH 考綱 Appendix C 列表方劑 —— 臨床與課程用，不在應試範圍",
-      "exam_star": 0,
+      "on_board_list": true,
+      "exam_importance": "★ NCBAHM 2026 CH Appendix C 相關高優先方劑；開竅劑重點考組成、君臣佐使、涼開三寶鑑別、熱閉 vs 寒閉／脫證，以及雄黃、硃砂等毒性安全。",
+      "exam_star": 1,
+      "source_classic": "溫病條辨 / Wen Bing Tiao Bian",
+      "exact_source_url": "https://cloudtcm.com/formula/4361",
+      "cloudtcm_url": "https://cloudtcm.com/formula/4361",
+      "cloudtcm_id": 4361,
+      "board_name_en": "An Gong Niu Huang Wan",
+      "exam_pearl": "安宮牛黃丸＝熱毒內陷心包／痰熱蒙蔽清竅的涼開重方。三寶鑑別：安宮最重清熱解毒與豁痰開竅；紫雪丹更偏高熱動風、痙厥抽搐；至寶丹更偏痰濁蒙閉、神昏痰盛。考試安全點是含雄黃、硃砂，且只治閉證，脫證神昏與寒閉神昏不可混用。",
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "牛黃承氣湯",
+          "change": [
+            "安宮牛黃丸＋大黃 9g"
+          ],
+          "indication_zh": "熱閉神昏兼陽明腑實證",
+          "source": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        },
+        {
+          "relation": "同類",
+          "name_zh": "牛黃清心丸",
+          "change": [
+            "牛黃、硃砂、黃連、黃芩、梔子、鬱金、白蜜"
+          ],
+          "indication_zh": "較輕的熱閉、痰熱擾心或神志不寧；清熱開竅力較安宮牛黃丸弱",
+          "source": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        }
+      ],
+      "compare_with": [
+        {
+          "codes": [
+            "formula.an_gong_niu_huang_wan",
+            "formula.zi_xue_dan",
+            "formula.zhi_bao_dan"
+          ],
+          "axis": "涼開三寶鑑別",
+          "note": "三方皆治熱入心包、痰熱蒙閉清竅；安宮牛黃丸偏清熱解毒與豁痰開竅，紫雪丹偏清熱熄風止痙，至寶丹偏化濁豁痰開竅。"
+        },
+        {
+          "codes": [
+            "formula.an_gong_niu_huang_wan",
+            "formula.su_he_xiang_wan"
+          ],
+          "axis": "涼開 vs 溫開",
+          "note": "安宮牛黃丸治熱閉神昏；蘇合香丸治寒閉神昏。神昏不是看到就用開竅方，必須先分寒熱與閉脫。"
+        }
+      ],
+      "applications_zh": [
+        "熱病高熱神昏、譫語",
+        "急性腦炎或腦膜炎見熱閉證候",
+        "中風昏迷見痰熱閉竅",
+        "小兒高熱驚厥見熱閉清竅",
+        "肝昏迷、尿毒症等神志障礙見痰熱／熱毒閉竅證候"
+      ],
+      "applications_en": [
+        "High fever with delirium or impaired consciousness in warm disease",
+        "Acute encephalitis or meningitis when a heat-closed orifice pattern is present",
+        "Wind-stroke coma with phlegm-heat blocking the orifices",
+        "Childhood high-fever convulsions when the heat-closed pattern is present",
+        "Altered consciousness such as hepatic coma or uremia when the TCM pattern matches phlegm-heat or heat toxin closing the orifices"
+      ],
+      "modern_research_zh": [
+        "鎮靜",
+        "抗驚厥",
+        "促醒／復甦相關作用",
+        "腦細胞保護",
+        "解熱",
+        "抗發炎",
+        "降血壓"
+      ],
+      "modern_research_en": [
+        "Sedative activity",
+        "Anticonvulsant activity",
+        "Arousal or resuscitation-related activity",
+        "Brain-cell protective activity",
+        "Antipyretic activity",
+        "Anti-inflammatory activity",
+        "Antihypertensive activity"
+      ],
+      "administration_zh": "課件記載：研末為蜜丸，每丸約 3g，金箔為衣；依病情可每日 2–3 次。現代臨床因含毒性礦物，只能作專業監管下的急症方概念，不可自行服用。",
+      "administration_en": "Course note: ground into powder and made into honey pills, about 3g per pill, traditionally coated with gold leaf; taken two to three times daily depending on severity. In modern practice this is an emergency/professional-use concept because the formula contains toxic mineral ingredients.",
+      "condition_tags_zh": [
+        "神昏",
+        "高熱",
+        "中風",
+        "驚厥"
+      ],
+      "condition_tags_en": [
+        "Impaired Consciousness",
+        "High Fever",
+        "Wind-Stroke",
+        "Convulsions"
+      ],
+      "pattern_tags_zh": [
+        "熱閉",
+        "熱入心包",
+        "痰熱蒙竅"
+      ],
+      "pattern_tags_en": [
+        "Heat-Closed Orifices",
+        "Heat Entering the Pericardium",
+        "Phlegm-Heat Veiling the Orifices"
+      ],
       "field_sources": {
         "on_board_list": [
+          "docs/FORMULA_CONTENT_FILL_QUEUE.md",
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
         ],
-        "composition": [
+        "actions_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "actions_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "pattern_indications_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+          "https://cloudtcm.com/formula/4361"
+        ],
+        "pattern_indications_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+          "https://cloudtcm.com/formula/4361"
+        ],
+        "contraindications_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+          "composition toxicity review: Xiong Huang / Zhu Sha"
+        ],
+        "contraindications_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+          "composition toxicity review: Xiong Huang / Zhu Sha"
+        ],
+        "exam_pearl": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "formula_family": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "compare_with": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "applications_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "applications_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "modern_research_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "modern_research_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "administration_zh": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "administration_en": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "composition": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+          "https://cloudtcm.com/formula/4361"
+        ],
+        "source_urls": [
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+          "https://cloudtcm.com/formula/4361"
         ]
       },
-      "composition_source_note_zh": "組成與劑量取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表。2026-08-01 依 FORMULA_CARD_TEMPLATE F7（君藥 1–2 味）正規化角色層級：牛黃保留為君，水牛角、麝香列臣以呈現清熱涼血與芳香開竅相助；未改組成或劑量。尚未經 AD / CloudTCM 交叉核對。"
+      "composition_source_note_zh": "組成與劑量以課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表為主；CloudTCM formula/4361 用於交叉核對組成與功用。CloudTCM 仍列犀角，本資料庫依現代替代與課件整理列水牛角。2026-08-01 依 FORMULA_CARD_TEMPLATE F7（君藥 1–2 味）正規化角色層級：牛黃保留為君，水牛角、麝香列臣以呈現清熱涼血與芳香開竅相助；未改組成或劑量。American Dragon 未找到精確安宮牛黃丸方頁，未列為本方來源。"
     },
     {
       "id": "formula.zi_xue_dan",

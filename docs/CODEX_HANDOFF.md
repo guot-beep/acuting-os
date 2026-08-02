@@ -1,5 +1,43 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-01] Codex Handoff — 安宮牛黃丸 template-grade 修整；補雄黃／硃砂安全連結卡
+
+- **Agent**: Codex
+- **Branch**: `codex/antigravity-validation-quality`
+- **Task**: Continue strict template work after Antigravity/Claude validation; start Open the Orifices formula refinement with high-risk `formula.an_gong_niu_huang_wan`.
+- **Repo state before work**: tracked tree was clean on `codex/antigravity-validation-quality`; many untracked `curriculum/conditions/` files remain present and were not modified.
+- **Files changed**:
+  - `data/herbs/formulas.json`
+  - `data/herbs/herb_canon_shortlist.json`
+  - generated `data/generated/app_data.js`
+  - generated `data/generated/knowledge_data.js`
+  - `PROJECT_LOG.md`
+  - `docs/CODEX_HANDOFF.md`
+- **What changed**:
+  1. Reworked `formula.an_gong_niu_huang_wan` from skeleton into source-tracked template content: actions, indications, contraindications, cautions, safety flags, source URLs, Exam Pearl, Three Treasures comparison, formula family, modifications, tongue/pulse, modern applications, modern research, administration, and `field_sources`.
+  2. Corrected `on_board_list` from false to true based on formula queue / NCBAHM Appendix C handling. Exact CloudTCM formula URL is now `https://cloudtcm.com/formula/4361`.
+  3. Did not cite American Dragon as an An Gong Niu Huang Wan formula source: exact AD formula page was not found. AD was used only for the newly added individual herbs below.
+  4. Added `herb.xiong_huang` and `herb.zhu_sha` as safety-link herb cards because formula validator F12 requires all composition herbs to exist in `herb_canon_shortlist` once a formula becomes template-grade. These are not claimed as full final herb cards; they are source-backed toxicity/safety link records from American Dragon + CloudTCM.
+  5. Runtime count after build: herbs 329, formulas 201.
+- **Validation run and results**:
+  - `node scripts/build-data.js`: PASS.
+  - `node scripts/validate-formula-standard.js --worklist --category "開竅劑 / Open the Orifices" --all`: PASS, no blocking defects. `formula.an_gong_niu_huang_wan` no longer appears in the worklist. Remaining Open Orifices worklist: `formula.zi_xue_dan`, `formula.zhi_bao_dan`, `formula.su_he_xiang_wan`.
+  - `node scripts/validate-herb-standard.js --worklist --category "驅蟲藥 / Expel Parasites" --all`: PASS structural. `herb.xiong_huang` still appears as non-template full card because it needs tone-mark pinyin and full `field_sources.actions_en` grade treatment later.
+  - `node scripts/validate-content-junk.js`: PASS.
+  - `node scripts/validate-interactions.js`: PASS.
+  - `git diff --check`: PASS.
+  - `node scripts/validate-data.js`: FAIL, pre-existing acupoint runtime safety/defaultPoints issues; not caused by this formula/herb patch.
+  - `node scripts/validate-encoding.js`: FAIL, pre-existing mojibake / URL-in-zh-field / import issues; target records added/modified in this task were spot-checked clean.
+- **Protected areas explicitly not touched**: no UI files, scripts, acupoint records, conditions source uploads, or unrelated formula/herb records were intentionally edited. One accidental patch initially landed An Gong modification text in an earlier formula record; it was identified immediately and reverted before validation.
+- **Known risks / manual checks needed**:
+  1. Browser-check An Gong Niu Huang Wan detail page: source buttons, Exam Pearl, contraindication rendering, Three Treasures compare, and formula family display.
+  2. Decide later whether `雄黃` should get a new canonical category such as External Application / Obsolete Toxic Substances. For now it is placed in the existing `驅蟲藥 / Expel Parasites` bucket with source-discrepancy note because validator rejects non-canon categories.
+  3. Open Orifices next targets: `紫雪丹` needs full template organization plus missing herb canon links for 寒水石／硝石／青木香; `至寶丹` lacks English actions/indications/contraindications; `蘇合香丸` lacks composition and roles.
+  4. Separate Quality task needed for existing `validate-data.js` acupoint safety-line loss and `validate-encoding.js` mojibake/import noise.
+- **Next recommended action**: Continue Open Orifices formulas in this order: `formula.zi_xue_dan` → `formula.zhi_bao_dan` → `formula.su_he_xiang_wan`, creating only required missing herb safety-link cards when validator F12 requires them.
+
+---
+
 ## [2026-08-01] Codex Handoff — Rechecked latest updates and corrected Quality acupoint grade count
 
 - **Agent**: Codex

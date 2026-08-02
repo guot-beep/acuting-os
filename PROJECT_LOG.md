@@ -1,5 +1,14 @@
 # AcuTing OS Project Log
 
+## 2026-08-01 Codex — 安宮牛黃丸 template-grade 修整 + 雄黃／硃砂安全連結卡
+
+- 依最新來源規則重修 `formula.an_gong_niu_huang_wan`：中藥／方劑只用 NCBAHM/隊列線索、課件、American Dragon、CloudTCM；本方未找到 American Dragon 精確方劑頁，因此不列 AD formula source。
+- 安宮牛黃丸補齊 actions、pattern indications、contraindications、cautions、exam pearl、三寶鑑別、方劑家族、加減、舌脈、現代應用／藥理、administration 與逐欄 `field_sources`。CloudTCM 精確頁改為 `https://cloudtcm.com/formula/4361`；課件為 `curriculum/formulas/Herbal Formulations Comprehensive.docx.md`。
+- 因方劑 template-grade 後 validator F12 會要求 composition 的每味藥存在於中藥 canon，新增 `herb.xiong_huang`、`herb.zhu_sha` 兩張「安全連結卡」：以 American Dragon + CloudTCM 精確頁補性味、歸經、劑量、禁忌、毒性安全與安宮／紫雪丹關聯；不假裝已做完整課件精修。
+- `data/herbs/herb_canon_shortlist.json` local herb cards 327 → 329；`build-data.js` 後 runtime 顯示 herbs 329、formulas 201。
+- Validation：`build-data.js` PASS；`validate-formula-standard.js --worklist --category "開竅劑 / Open the Orifices" --all` PASS，安宮牛黃丸已退出 worklist，該分類剩紫雪丹、至寶丹、蘇合香丸；`validate-herb-standard.js --worklist --category "驅蟲藥 / Expel Parasites" --all` PASS structural；`validate-content-junk.js` PASS；`validate-interactions.js` PASS；`git diff --check` PASS。
+- Known existing validation failures：`validate-data.js` 仍 FAIL 於穴位 runtime safety lines/defaultPoints total；`validate-encoding.js` 仍 FAIL 於既有 CloudTCM import mojibake、`diagram_urls_zh` URL 欄位誤報與既有資料。這些不是本次安宮／雄黃／硃砂改動新增；本次 target records 已做 mojibake 快檢為 clean。
+
 ## 2026-08-01 Codex — 接手後實測 Quality 進度，修正穴位 Grade 數字
 
 - Pull/接手檢查：`main` 與 `origin/main` 同步；tracked 工作樹乾淨。只看到一批 `curriculum/conditions/` untracked 課件，視為 Ting 新增來源資料，本次未碰。

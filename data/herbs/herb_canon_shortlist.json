@@ -79720,10 +79720,301 @@
         ]
       },
       "card_grade": "template"
+    },
+    {
+      "id": "herb.xiong_huang",
+      "name_zh": "雄黃",
+      "name_en": "Realgar",
+      "pinyin": "Xiong Huang",
+      "latin_name": "Realgar",
+      "category": "驅蟲藥 / Expel Parasites",
+      "review_status": "draft",
+      "source_status": "american_dragon_cloudtcm_reviewed_curriculum_pending",
+      "source_type": "missing_formula_link_safety_card",
+      "properties_taste_temp": "辛、苦，溫，有毒／大毒",
+      "channels_entered": [
+        "心經",
+        "肝經",
+        "胃經"
+      ],
+      "channels_entered_en": [
+        "Heart channel",
+        "Liver channel",
+        "Stomach channel"
+      ],
+      "functions": [
+        "解毒殺蟲",
+        "燥濕祛痰",
+        "截瘧定驚"
+      ],
+      "functions_en": [
+        "Resolves toxicity and kills parasites",
+        "Dries Dampness and expels Phlegm",
+        "Stops malarial disorders and settles Wind"
+      ],
+      "indications_zh": [
+        "癰腫疔瘡、蛇蟲咬傷等毒邪瘡瘍，多作外用",
+        "疥癬、濕疹、皮膚瘙癢等濕毒蟲證，多作外用",
+        "蟲積腹痛、瘧疾、痰涎壅盛或驚癇抽搐等需嚴格辨證與安全監管者"
+      ],
+      "indications_en": [
+        "Toxic sores, abscesses, suppurative lesions, and snake or insect bites, primarily topical use",
+        "Scabies, tinea, damp rashes, eczema, and pruritus, primarily topical use",
+        "Parasitic accumulation, malarial disorders, phlegm obstruction, or convulsions when strictly pattern-matched and safety-supervised"
+      ],
+      "dose_raw_zh": "0.15–0.36g（AD）；內服與外用皆屬毒性礦物安全審核項，不可自行使用。",
+      "dose_raw_en": "0.15–0.36g (American Dragon); internal and topical use both require toxic-mineral safety review and professional supervision.",
+      "contraindications_zh": [
+        "孕婦禁用",
+        "陰虛或血虛者禁用",
+        "不可長期使用，亦不可大面積外用",
+        "不可入湯劑或以熱水沖服"
+      ],
+      "contraindications_en": [
+        "Contraindicated during pregnancy",
+        "Contraindicated in Yin deficiency or Blood deficiency",
+        "Do not use long term or topically over a large area",
+        "Do not use in decoction or mix with hot water"
+      ],
+      "cautions_zh": [
+        "雄黃為含砷礦物，資料庫中所有含雄黃方劑均需毒性安全標記。",
+        "美國臨床使用需視為高風險或 obsolete substance；本卡供內部學習與方劑連結完整性使用。"
+      ],
+      "cautions_en": [
+        "Realgar is an arsenic-containing mineral; formulas containing it require toxic-mineral safety flags.",
+        "Modern U.S. clinical use should be treated as high-risk or obsolete; this card is for internal study and formula-link integrity."
+      ],
+      "safety_flags": [
+        "toxic_mineral",
+        "arsenic_review",
+        "pregnancy_contraindicated",
+        "no_decoction",
+        "professional_supervision_required"
+      ],
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan"
+      ],
+      "clinical_use_note": "雄黃在安宮牛黃丸中屬毒性礦物安全重點。AD 將其列入外用／obsolete substances，CloudTCM 列有毒與大毒；因本資料庫目前無外用藥 canon 分類，先歸入驅蟲藥並保留來源差異。AD 明確提醒孕婦禁用、陰血虛禁用、不可久用或熱水／湯劑處理。",
+      "condition_tags_zh": [
+        "瘡瘍",
+        "寄生蟲",
+        "驚厥"
+      ],
+      "condition_tags_en": [
+        "Toxic Sores",
+        "Parasites",
+        "Convulsions"
+      ],
+      "pattern_tags_zh": [
+        "濕毒",
+        "痰閉"
+      ],
+      "pattern_tags_en": [
+        "Damp-Toxin",
+        "Phlegm Obstruction"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+        "https://cloudtcm.com/herb/1339"
+      ],
+      "source_citations": [
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+          "scope": "精準頁：性味歸經、劑量、功效主治、禁忌與毒性安全"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1339",
+          "scope": "精準頁：性味歸經、來源、傳統功效與毒性標記"
+        }
+      ],
+      "field_sources": {
+        "identity": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+          "https://cloudtcm.com/herb/1339"
+        ],
+        "properties_taste_temp": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+          "https://cloudtcm.com/herb/1339"
+        ],
+        "channels_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+          "https://cloudtcm.com/herb/1339"
+        ],
+        "functions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+          "https://cloudtcm.com/herb/1339"
+        ],
+        "indications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+          "https://cloudtcm.com/herb/1339"
+        ],
+        "dosage": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html"
+        ],
+        "clinical_use_note": [
+          "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+          "https://cloudtcm.com/herb/1339"
+        ]
+      },
+      "card_grade": "safety_link"
+    },
+    {
+      "id": "herb.zhu_sha",
+      "name_zh": "硃砂",
+      "name_en": "Cinnabar",
+      "pinyin": "Zhu Sha",
+      "latin_name": "Cinnabaris",
+      "category": "安神藥 / Calm Spirit",
+      "review_status": "draft",
+      "source_status": "american_dragon_cloudtcm_reviewed_curriculum_pending",
+      "source_type": "missing_formula_link_safety_card",
+      "properties_taste_temp": "甘，涼，有毒",
+      "channels_entered": [
+        "心經",
+        "脾經",
+        "肺經",
+        "腎經"
+      ],
+      "channels_entered_en": [
+        "Heart channel",
+        "Spleen channel",
+        "Lung channel",
+        "Kidney channel"
+      ],
+      "functions": [
+        "鎮心安神",
+        "清熱解毒",
+        "鎮驚止痙"
+      ],
+      "functions_en": [
+        "Settles the Heart and calms the Spirit",
+        "Clears Heat and resolves toxicity",
+        "Calms fright and stops convulsions"
+      ],
+      "indications_zh": [
+        "心神不寧、心悸、失眠、多夢、易驚",
+        "癲癇、驚風、抽搐等痰火擾心或熱閉心包相關證候",
+        "瘡瘍腫毒、口舌生瘡、咽喉腫痛等，多作外用或丸散中極低量使用"
+      ],
+      "indications_en": [
+        "Restlessness, palpitations, insomnia, dream-disturbed sleep, and easy fright",
+        "Epilepsy, childhood convulsions, or tremors associated with phlegm-fire disturbing the Heart or heat blocking the Pericardium",
+        "Toxic sores, mouth sores, and sore throat, usually topical or in very small pill/powder doses"
+      ],
+      "dose_raw_zh": "丸散 0.1–2.7g（AD）；因含汞，不可長期或大劑量使用，不可加熱。",
+      "dose_raw_en": "Pills and powders: 0.1–2.7g (American Dragon); mercury-containing mineral, not for prolonged or high-dose use and must not be heated.",
+      "contraindications_zh": [
+        "不可大劑量或長期使用",
+        "不可加熱，以避免汞毒性風險",
+        "肝腎功能不全者極慎或避免使用"
+      ],
+      "contraindications_en": [
+        "Do not use in large amounts or for prolonged periods",
+        "Do not heat, due to mercury-poisoning risk",
+        "Use extreme caution or avoid in impaired Liver or Kidney function"
+      ],
+      "cautions_zh": [
+        "硃砂為含汞礦物，資料庫中所有含硃砂方劑均需毒性安全標記。",
+        "現代美國臨床應視為 high-risk / obsolete substance；本卡先作安宮牛黃丸等方劑連結完整性與安全提示。"
+      ],
+      "cautions_en": [
+        "Cinnabar is a mercury-containing mineral; formulas containing it require toxic-mineral safety flags.",
+        "Modern U.S. clinical use should be treated as high-risk or obsolete; this card supports formula-link integrity and safety display."
+      ],
+      "safety_flags": [
+        "toxic_mineral",
+        "mercury_review",
+        "do_not_heat",
+        "no_long_term_use",
+        "professional_supervision_required"
+      ],
+      "related_formulas": [
+        "formula.an_gong_niu_huang_wan",
+        "formula.zi_xue_dan"
+      ],
+      "clinical_use_note": "硃砂在安宮牛黃丸、紫雪丹等方中是安全審核重點。AD 明確列為 obsolete / unacceptable toxicity 相關物質，並提醒不可久用、大量用或加熱；CloudTCM 精確頁亦列有毒與歸經。",
+      "condition_tags_zh": [
+        "失眠",
+        "心悸",
+        "驚厥"
+      ],
+      "condition_tags_en": [
+        "Insomnia",
+        "Palpitations",
+        "Convulsions"
+      ],
+      "pattern_tags_zh": [
+        "心火",
+        "痰火擾心",
+        "熱閉心包"
+      ],
+      "pattern_tags_en": [
+        "Heart Fire",
+        "Phlegm-Fire Disturbing the Heart",
+        "Heat Blocking the Pericardium"
+      ],
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+      "source_urls": [
+        "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+        "https://cloudtcm.com/herb/1250"
+      ],
+      "source_citations": [
+        {
+          "name": "American Dragon",
+          "url": "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+          "scope": "精準頁：性味歸經、劑量、功效主治、禁忌與毒性安全"
+        },
+        {
+          "name": "雲端中醫 CloudTCM",
+          "url": "https://cloudtcm.com/herb/1250",
+          "scope": "精準頁：性味歸經、來源、傳統功效與毒性標記"
+        }
+      ],
+      "field_sources": {
+        "identity": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+          "https://cloudtcm.com/herb/1250"
+        ],
+        "properties_taste_temp": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+          "https://cloudtcm.com/herb/1250"
+        ],
+        "channels_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+          "https://cloudtcm.com/herb/1250"
+        ],
+        "functions_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+          "https://cloudtcm.com/herb/1250"
+        ],
+        "indications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+          "https://cloudtcm.com/herb/1250"
+        ],
+        "dosage": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html"
+        ],
+        "contraindications_zh": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html"
+        ],
+        "clinical_use_note": [
+          "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+          "https://cloudtcm.com/herb/1250"
+        ]
+      },
+      "card_grade": "safety_link"
     }
   ],
   "batch_summary": {
-    "total_records": 327,
+    "total_records": 329,
     "repaired_pending_utf8_records": 32,
     "draft_filled_this_batch": 127,
     "source_checked_records": 0,
@@ -79733,7 +80024,7 @@
       "皂角刺",
       "珍珠"
     ],
-    "local_herb_cards": 327,
+    "local_herb_cards": 329,
     "latest_missing_card_batch": {
       "date": "2026-07-29",
       "agent": "Claude",
