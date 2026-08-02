@@ -2890,18 +2890,58 @@
     "region": "頭頸部 / Head and Neck",
     "location": "面部，耳垂前0.5~1.0寸處。",
     "locationEn": "On the face, 0.5-1.0 cun anterior to the earlobe.",
-    "techniqueNotes": "斜刺0.5~1.0寸。\nOblique 0.5-1.0 cun.",
+    "cunMeasurement": "耳垂前0.5~1.0寸；AD 另列0.5寸前方與0.5~1寸前方兩種定位敘述。",
+    "anatomyZh": "位於耳垂前方的面頰區。四來源未提供逐層肌肉、腮腺／導管、神經血管或個體差異資料；AD 的面頰傳感描述不能代替解剖安全界線。",
+    "anatomyEn": "This is a cheek-region point anterior to the earlobe. The four sources provide no layer-by-layer muscle, parotid/duct, neurovascular, or body-variation detail; AD's cheek sensation description is not an anatomical safety boundary.",
+    "techniqueNotes": "eLotus：斜刺0.5~1.0寸。AD：針尖朝前斜刺0.5~1寸，局部脹痛有時延及整個面頰。既有卡片斜刺0.5~1寸與深度相合；AD 補出朝前方向與傳感。傳感僅作來源描述，不改寫成刻意追求廣泛面頰感的操作目標。\neLotus: oblique insertion 0.5-1.0 cun. AD: slanted insertion directed forward, 0.5-1 cun, with local distention/soreness sometimes extending throughout the cheek. The legacy depth agrees; AD adds the forward direction and sensation. The sensation is source documentation, not an instruction to deliberately pursue widespread cheek sensation.",
+    "acumethodZh": "斜刺0.5~1.0寸；AD 指針尖朝前。",
+    "acumethodEn": "Oblique/slanted insertion 0.5-1.0 cun; AD specifies directing the needle forward.",
+    "moxaZh": "eLotus 與 AD 牽正專頁均未說明艾灸；既有卡片也無灸法數值。不得由來源沉默補造可灸、禁灸或灸量。",
+    "moxaEn": "Neither the eLotus nor AD Qianzheng page addresses moxibustion, and the legacy card provides no moxa quantity. Source silence is not converted into permission, prohibition, or a dose.",
     "functions": "袪風清熱，通絡止痛",
-    "functionsEn": "Dispels wind; Unblocks collaterals and relieves pain",
+    "functionsEn": "Extinguishes/dispels Wind; Clears Heat; Unblocks the collaterals; Relieves pain",
+    "functionsZhList": [
+      "息風／祛風",
+      "止痛",
+      "清熱（既有內容；eLotus／AD 功效欄未列）",
+      "通絡（既有內容；依面癱主治整理，來源功效欄未列）"
+    ],
+    "functionsEnList": [
+      "Extinguishes / dispels Wind",
+      "Relieves pain",
+      "Clears Heat (legacy; not listed in the eLotus/AD action fields)",
+      "Unblocks the collaterals (legacy/indication-derived; not listed in the source action fields)"
+    ],
+    "pointIdentityZh": [
+      "本庫不可變 ID：EX-HN18 牽正",
+      "eLotus：EX-HN20 Qianzheng",
+      "American Dragon：N-HN-20 Qianzheng／Pull Aright",
+      "eLotus 的 EX-HN18 是 Bitong，不是牽正",
+      "NCBAHM Appendix A 不列 Qianzheng，但列 Bitong"
+    ],
+    "pointIdentityEn": [
+      "Immutable database ID: EX-HN18 Qianzheng",
+      "eLotus: EX-HN20 Qianzheng",
+      "American Dragon: N-HN-20 Qianzheng / Pull Aright",
+      "eLotus EX-HN18 is Bitong, not Qianzheng",
+      "NCBAHM Appendix A does not list Qianzheng but does list Bitong"
+    ],
+    "exam_star": 0,
     "patterns": [
       "面神經麻痹（面癱）",
-      "口腔炎",
-      "下頷關節痛"
+      "口眼歪斜",
+      "舌潰瘍／口腔潰瘍",
+      "腮腺炎",
+      "口腔炎（既有內容）",
+      "下頷關節痛（既有內容）"
     ],
     "patternsEn": [
       "Facial paralysis",
-      "Stomatitis",
-      "TMJ pain"
+      "Deviation of the eyes and mouth",
+      "Tongue / oral ulcers",
+      "Parotitis",
+      "Stomatitis (legacy)",
+      "TMJ pain (legacy)"
     ],
     "action_tags_zh": [
       "祛風疏風",
@@ -2915,43 +2955,73 @@
     ],
     "disease_tags_zh": [
       "面癱",
+      "口眼歪斜",
+      "口舌潰瘍",
+      "腮腺炎",
       "顳顎關節痛"
     ],
     "disease_tags_en": [
       "Facial Paralysis",
+      "Deviation of the Eyes and Mouth",
+      "Oral and Tongue Ulcers",
+      "Parotitis",
       "Temporomandibular Joint Pain"
     ],
-    "cautions": "eLotus 與 American Dragon 的牽正穴頁均未列穴位專屬禁忌；不可把『未列禁忌』解讀為無風險。現有斜刺 0.5~1.0 寸僅代表兩來源記載的操作範圍，安全欄仍需持照針灸師優先複核。另兩來源將牽正編為 EX-HN20／N-HN20，與本庫既有 EX-HN18 顯示碼不同。",
+    "cautions": "【來源沉默】eLotus 與 AD 牽正頁均未列專屬禁忌；不能解讀為無風險。【技法】兩頁均為斜刺0.5~1寸，AD 另指朝前並記面頰脹痛可擴散；擴散感不是必須追求的終點。【解剖缺口】四來源未提供面頰逐層、腮腺／導管、神經血管、異常感覺停止規則、孕婦、兒童或其他高風險規範；不由本卡自行補造。【灸法】兩專頁均未說明，不推定可灸或禁灸。【身份】eLotus／AD 用 EX-HN20／N-HN-20，本庫顯示 EX-HN18；選穴前須按來源辨識，不能以號碼單獨互換。",
     "cautionsEn": [
-      "Neither the eLotus nor American Dragon Qianzheng page states a point-specific contraindication; absence of a listed contraindication must not be interpreted as absence of risk.",
-      "The existing oblique 0.5-1.0 cun range reflects those sources, while the safety field still requires priority review by a licensed acupuncturist.",
-      "Both sources number Qianzheng as EX-HN20/N-HN20, which differs from this record's legacy EX-HN18 display code."
+      "Neither the eLotus nor AD Qianzheng page states a point-specific contraindication; source silence must not be interpreted as absence of risk.",
+      "Both pages use oblique insertion at 0.5-1 cun; AD additionally directs the needle forward and reports cheek-spreading distention/soreness. That spread is not a required endpoint to pursue.",
+      "The four sources provide no layer-by-layer cheek, parotid/duct, neurovascular, abnormal-sensation stopping, pregnancy, pediatric, or other high-risk protocol; none is invented here. Neither detail page addresses moxa.",
+      "eLotus/AD code Qianzheng as EX-HN20/N-HN-20, while this immutable database record displays EX-HN18. Identify the point by source and name rather than interchanging codes alone."
     ],
-    "evidence": "eLotus CORE and American Dragon exact Qianzheng pages; nomenclature conflict retained.",
-    "combinePointsZh": "【面癱】牽正配地倉（ST4）、頰車（ST6）、合谷（LI4）：疏風通絡。",
+    "evidence": "四層查核：NCBAHM Appendix A 不列 Qianzheng、但列 Bitong；現有課件未找到牽正專條；eLotus 提供 EX-HN20、耳垂前0.5~1寸、斜刺0.5~1寸、息風止痛與口眼歪斜／口舌潰瘍；AD 提供 N-HN-20、朝前斜刺0.5~1寸及面頰傳感、面癱／腮腺炎／口舌潰瘍／口眼歪斜與三組配穴。既有清熱通絡、口腔炎、顳顎關節痛及 ST4-ST6-LI4 配伍不刪，但標 legacy。WHO IRIS 僅作命名框架，未用來證明本庫 EX-HN18＝Qianzheng。",
+    "combinePointsZh": "【面癱・AD】牽正配地倉（ST4）、風池（GB20）、陽白（GB14）。\n【腮腺炎・AD】牽正配翳風（SJ17）、合谷（LI4）。\n【口腔潰瘍・AD】牽正配承漿（CV24）、齦交（GV28）、地倉（ST4）、合谷（LI4）。\n【面癱・既有卡片】牽正配地倉（ST4）、頰車（ST6）、合谷（LI4）：原卡配伍保留，與 AD 三組分開。",
+    "combinePointsEn": "Facial paralysis (AD): Qianzheng with Dicang (ST4), Fengchi (GB20), and Yangbai (GB14).\nParotitis (AD): Qianzheng with Yifeng (SJ17) and Hegu (LI4).\nMouth ulcers (AD): Qianzheng with Chengjiang (CV24), Yinjiao (GV28), Dicang (ST4), and Hegu (LI4).\nFacial paralysis (legacy card): Qianzheng with Dicang (ST4), Jiache (ST6), and Hegu (LI4), retained separately from the three AD groups.",
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
-      "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"
+      "https://www.americandragon.com/Points/Qianzheng%2Chtml.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 牽正 EX-HN18",
         "labelEn": "Extra Point · Qianzheng EX-HN18",
-      "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 牽正 N-HN-20",
+        "labelEn": "American Dragon · Qianzheng N-HN-20",
+        "url": "https://www.americandragon.com/Points/Qianzheng%2Chtml.html",
+        "source": "American Dragon"
       }
     ],
     "x": 168,
     "y": 170,
+    "exam_importance": "NCBAHM Appendix A 未列 Qianzheng，故不標 Board 核心；但它列 Bitong，而 eLotus 的 EX-HN18 正是 Bitong。本庫 EX-HN18 牽正與 eLotus／AD 的 EX-HN20／N-HN-20 是必須主動辨識的編碼差異。",
+    "exam_importance_en": "NCBAHM Appendix A does not list Qianzheng, so it is not marked Board core; it does list Bitong, which eLotus assigns to EX-HN18. The database EX-HN18 Qianzheng versus eLotus/AD EX-HN20/N-HN-20 mapping is an explicit nomenclature distinction.",
+    "exam_pearl": "牽正＝耳垂前0.5~1寸、朝前斜刺0.5~1寸，抓面癱／口眼歪斜；不要只背本庫 EX-HN18，eLotus／AD 都把牽正編在 HN20。",
+    "exam_pearl_en": "Qianzheng is 0.5-1 cun anterior to the earlobe, needled obliquely forward 0.5-1 cun, and strongly associated with facial paralysis/deviation. Do not rely on the database EX-HN18 code alone; eLotus/AD place it at HN20.",
+    "clinical_pearls": "AD 把三組配伍分別對應面癱、腮腺炎與口腔潰瘍；本卡照原表分組。既有 ST4-ST6-LI4 面癱配伍另列，不取代 AD 的 ST4-GB20-GB14 組。",
+    "clinical_pearls_en": "AD presents separate combinations for facial paralysis, parotitis, and mouth ulcers, and the card preserves that grouping. The legacy ST4-ST6-LI4 facial-paralysis combination remains separate from AD's ST4-GB20-GB14 group.",
+    "nameIntroZh": "牽正意為牽引偏斜使之復正；eLotus 英譯 Pull Uprightness，AD 英譯 Pull Aright。名稱有助記面癱／口眼歪斜，但不決定針刺強度。",
+    "nameIntroEn": "Qianzheng means pulling a deviation upright; eLotus translates it as 'Pull Uprightness' and AD as 'Pull Aright.' The name cues facial deviation but does not determine stimulation intensity.",
     "field_sources": {
+      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Qianzheng not listed; Bitong listed"],
+      "curriculum": ["source-gap note: no dedicated Qianzheng/牽正 entry found under curriculum/acupoints"],
+      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20"],
+      "american_dragon": ["https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
       "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
+      "anatomy": ["source-gap note: no layer-by-layer cheek/parotid/duct/neurovascular anatomy in the four reviewed layers"],
       "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
-      "cautions": ["source-gap note: exact eLotus and American Dragon pages state no point-specific contraindication"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"]
+      "moxibustion": ["source-gap note: eLotus and AD Qianzheng entries do not address moxa"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "legacy clear-Heat and unblock-collaterals actions retained separately"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html", "legacy stomatitis and TMJ-pain indications retained separately"],
+      "cautions": ["https://www.americandragon.com/Points/Qianzheng%2Chtml.html: forward 0.5-1-cun slanted insertion and cheek-spreading sensation; contraindication field blank", "source-gap note: no full anatomy, stopping rule, moxa, pregnancy, pediatric, or other high-risk protocol"],
+      "combinations": ["https://www.americandragon.com/Points/Qianzheng%2Chtml.html", "legacy ST4-ST6-LI4 facial-paralysis combination retained separately"],
+      "nomenclature": ["database: immutable EX-HN18 Qianzheng mapping", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20: EX-HN20 Qianzheng", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html: N-HN-20 Qianzheng", "https://iris.who.int/handle/10665/40001: international nomenclature framework; not used to assert database equivalence"],
+      "link_check": ["2026-08-02 HTTP 200: eLotus exact Qianzheng page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Qianzheng page; irregular encoded-comma filename is the site's live detail URL", "2026-08-02 WHO IRIS nomenclature record opened"]
     }
   },
   {
@@ -2964,7 +3034,14 @@
     "region": "頭頸部 / Head and Neck",
     "location": "面部，承漿穴（CV24）旁開1寸，地倉穴（ST4）直下；American Dragon 另以可觸及下頜骨頦孔為定位標誌。",
     "locationEn": "On the face, 1 cun lateral to Chengjiang (CV24), directly below Dicang (ST4); American Dragon additionally identifies the palpable mental foramen of the mandible as the landmark.",
+    "cunMeasurement": "承漿（CV24）旁開1寸；AD 另以地倉（ST4）直下、下頜骨頦孔上方／可觸及頦孔作定位。",
+    "anatomyZh": "位於頦唇溝外側、下頜骨頦孔區。AD 明確以可觸及頦孔為地標，但四來源未提供逐層軟組織、頦神經／血管走行、孔內進針界線或個體差異；『入頦孔』版本不能在缺少解剖規範下自行與其他刺法合併。",
+    "anatomyEn": "This point lies lateral to the mentolabial groove over the mental-foramen region of the mandible. AD explicitly uses the palpable mental foramen as a landmark, but the four sources give no layer-by-layer soft-tissue anatomy, mental nerve/vessel course, insertion boundary within the foramen, or body variation. The 'into the mental foramen' version must not be merged with other techniques without anatomical protocol.",
     "techniqueNotes": "本庫舊值：斜刺0.3~0.5寸。eLotus：斜刺0.5~1.0寸。American Dragon：直刺0.2~0.5寸；或向內下方斜刺入頦孔0.3~0.5寸；另列橫刺0.5~1.5寸及斜刺0.5~1.0寸。\nLegacy database value: oblique 0.3-0.5 cun. eLotus: oblique 0.5-1.0 cun. American Dragon: perpendicular 0.2-0.5 cun; or medial-inferior oblique insertion into the mental foramen 0.3-0.5 cun; it also lists transverse 0.5-1.5 cun and oblique 0.5-1.0 cun.",
+    "acumethodZh": "既有：斜刺0.3~0.5寸。eLotus：斜刺0.5~1.0寸。AD：直刺0.2~0.5寸；三叉神經痛取頦孔後向內下斜刺0.5寸；另列向內下斜刺入頦孔0.3~0.5寸、橫刺0.5~1.5寸、斜刺0.5~1.0寸。",
+    "acumethodEn": "Legacy: oblique 0.3-0.5 cun. eLotus: oblique 0.5-1.0 cun. AD: straight 0.2-0.5 cun; for trigeminal neuralgia, locate the mental foramen and insert medially/inferiorly 0.5 cun; it also lists medial-inferior oblique insertion into the foramen 0.3-0.5 cun, transverse 0.5-1.5 cun, and oblique 0.5-1.0 cun.",
+    "moxaZh": "eLotus 與 AD 夾承漿專頁均未說明艾灸；既有卡片也無灸法數值。不得補造可灸、禁灸或灸量。",
+    "moxaEn": "Neither the eLotus nor AD Jiachengjiang detail page addresses moxibustion, and the legacy card provides no moxa quantity. Permission, prohibition, and dose are not inferred.",
     "functions": "祛風，通經活絡，行氣活血，止痛",
     "functionsEn": "Eliminates Wind; Activates the Channel; Activates Qi and Blood; Alleviates Pain",
     "functionsZhList": [
@@ -2979,6 +3056,21 @@
       "Activates Qi and Blood",
       "Alleviates Pain"
     ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "本庫／eLotus：EX-HN19 Jiachengjiang",
+      "American Dragon：M-HN-18 Jiachengjiang",
+      "NCBAHM Appendix A 不列 Jiachengjiang",
+      "頦孔區面痛、面癱與口齒病相關穴"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Database/eLotus: EX-HN19 Jiachengjiang",
+      "American Dragon: M-HN-18 Jiachengjiang",
+      "NCBAHM Appendix A does not list Jiachengjiang",
+      "Mental-foramen-region point associated with facial pain/paralysis and oral-dental disorders"
+    ],
+    "exam_star": 0,
     "patterns": [
       "面癱",
       "三叉神經痛",
@@ -3001,20 +3093,22 @@
     "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Move Qi", "Invigorate Blood", "Alleviate Pain", "Relieve Spasm"],
     "disease_tags_zh": ["面癱", "面部痛", "齒齦腫痛", "牙痛", "面肌痙攣", "口眼歪斜"],
     "disease_tags_en": ["Facial Paralysis", "Facial Pain", "Swollen & Painful Gums", "Toothache", "Facial Spasm", "Deviation of the Mouth and Eyes"],
-    "cautions": "eLotus 與 American Dragon 的夾承漿精確頁均未列穴位專屬禁忌；不可把來源沉默解讀為無風險。兩來源列出的針刺方向與深度並不單一：eLotus 為斜刺0.5~1.0寸；American Dragon 列直刺0.2~0.5寸、向內下方斜刺入頦孔0.3~0.5寸、橫刺0.5~1.5寸及斜刺0.5~1.0寸。AD 並記述三叉神經痛取法可能出現延伸至下唇的觸電樣麻感；涉及頦孔定位的操作不得由本卡自行統一，須由持照針灸師依解剖與訓練裁決。American Dragon 將本穴編為 M-HN-18，與本庫既有 EX-HN19 顯示碼不同。CloudTCM 未找到可核實的夾承漿獨立頁，因此不顯示雲端中醫按鈕。",
+    "cautions": "【來源沉默】eLotus 與 AD 夾承漿精確頁均未列專屬禁忌；不能解讀為無風險。【多技法衝突】既有斜刺0.3~0.5寸、eLotus 斜刺0.5~1寸，AD 又列直刺0.2~0.5寸、向內下斜刺入頦孔0.3~0.5／0.5寸、橫刺0.5~1.5寸與斜刺0.5~1寸；全部逐源保存，不統一成一個範圍。【感覺界線】AD 的三叉神經痛取法可有延至下唇的觸電樣麻感，僅作來源描述，不寫成必須追求的放電終點。【解剖缺口】涉及頦孔，但四來源未提供頦神經／血管界線、異常感覺停止規則、孕婦、兒童或其他高風險規範；不由本卡補造。【灸法】兩專頁均未說明。【身份】AD 為 M-HN-18，本庫／eLotus 為 EX-HN19；不可只按號碼互換。CloudTCM 未找到可核實獨立頁，因此不顯示其按鈕。",
     "cautionsEn": [
       "Neither the exact eLotus nor American Dragon Jiachengjiang page states a point-specific contraindication; source silence must not be interpreted as absence of risk.",
       "The sources list multiple directions and depths: eLotus gives oblique 0.5-1.0 cun; American Dragon gives perpendicular 0.2-0.5 cun, medial-inferior oblique insertion into the mental foramen 0.3-0.5 cun, transverse 0.5-1.5 cun, and oblique 0.5-1.0 cun.",
-      "American Dragon notes that its trigeminal-neuralgia technique may produce an electric, numb sensation extending to the lower lip. Techniques involving the mental foramen are not harmonized by this card and require licensed anatomical and clinical judgment.",
-      "American Dragon numbers the point M-HN-18, differing from this record's legacy EX-HN19 display code. No verifiable point-specific CloudTCM page was located, so no CloudTCM button is shown."
+      "AD notes that its trigeminal-neuralgia technique may produce an electric, numb sensation extending to the lower lip. This is source documentation, not a required electrical endpoint to pursue.",
+      "The point involves the mental foramen, but the four sources provide no mental nerve/vessel boundary, abnormal-sensation stopping rule, pregnancy, pediatric, or other high-risk protocol. Neither detail page addresses moxa.",
+      "AD numbers the point M-HN-18, while the database/eLotus use EX-HN19; do not interchange by number alone. No verifiable point-specific CloudTCM page was located, so no CloudTCM button is shown."
     ],
     "combinePointsZh": "【面肌痙攣】夾承漿配攢竹（BL2）、四白（ST2）：American Dragon 列載配伍。\n【三叉神經痛】夾承漿配下關（ST7）、合谷（LI4）：American Dragon 列載配伍。",
     "combinePointsEn": "Facial spasm: Jiachengjiang with Zanzhu (BL2) and Sibai (ST2), as listed by American Dragon.\nTrigeminal neuralgia: Jiachengjiang with Xiaguan (ST7) and Hegu (LI4), as listed by American Dragon.",
-    "evidence": "功效逐項分層：eLotus 明列祛風、行氣活血；American Dragon 明列祛風、通經活絡、止痛。『解痙』保留於面肌痙攣主治與功效標籤，屬依來源主治整理的臨床效果，未冒充兩頁明列的核心 Action。定位、針法與編號差異仍保留；未找到 CloudTCM 夾承漿精確頁。",
+    "evidence": "四層查核：NCBAHM Appendix A 不列 Jiachengjiang；現有課件未找到夾承漿專條；eLotus 提供 EX-HN19、CV24旁1寸、斜刺0.5~1寸、祛風／行氣活血與口眼歪斜／面痛痙攣／牙痛／齦腫；AD 提供 M-HN-18、ST4直下與頦孔地標、五個0.2~1.5寸刺法版本、祛風通絡止痛、完整面癱／三叉神經痛／口齒／黃疸主治及兩組配穴。『解痙』只作主治衍生標籤。未找到 CloudTCM 精確頁；WHO IRIS 僅作命名框架。",
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
-      "https://www.americandragon.com/Points/Jiachengjiang.html"
+      "https://www.americandragon.com/Points/Jiachengjiang.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -3032,14 +3126,29 @@
     ],
     "x": 178,
     "y": 185,
+    "exam_importance": "NCBAHM Appendix A 未列 Jiachengjiang，因此不標 Board 核心。仍須辨識定位與代碼：CV24旁1寸、ST4直下／頦孔區；本庫／eLotus EX-HN19，AD M-HN-18。",
+    "exam_importance_en": "NCBAHM Appendix A does not list Jiachengjiang, so it is not marked Board core. Still distinguish its location and codes: 1 cun lateral to CV24, directly below ST4 over the mental-foramen region; database/eLotus EX-HN19 versus AD M-HN-18.",
+    "exam_pearl": "夾承漿＝承漿旁1寸、頦孔區，抓面癱／三叉神經痛／面肌痙攣／牙齦牙痛。最大風險不是背錯一個深度，而是把 AD 多個不同方向與『入頦孔』版本混成單一常規。",
+    "exam_pearl_en": "Jiachengjiang is 1 cun lateral to Chengjiang over the mental-foramen region, with facial paralysis, trigeminal neuralgia, facial spasm, and dental/gum indications. The key safety distinction is not to collapse AD's multiple directions—including foramen-directed versions—into one routine method.",
+    "clinical_pearls": "eLotus 的功效重點是祛風、行氣活血；AD 是祛風、通經、止痛。兩組 AD 配伍分別對應面肌痙攣（BL2＋ST2）與三叉神經痛（ST7＋LI4）。AD 另列黃疸，但未提供配伍或機理解釋，故保留為來源主治而不擴寫。",
+    "clinical_pearls_en": "eLotus emphasizes eliminating Wind and activating Qi/Blood; AD emphasizes eliminating Wind, activating the channel, and relieving pain. AD separates facial-spasm (BL2 + ST2) and trigeminal-neuralgia (ST7 + LI4) combinations. AD also lists jaundice without a combination or explanatory mechanism, so it remains a source indication without extrapolation.",
+    "nameIntroZh": "夾承漿意為在承漿兩旁；eLotus 英譯 Adjacent to Container of Fluids／Along Saliva Receiver，AD 另稱 Grasping Contain Fluid。",
+    "nameIntroEn": "Jiachengjiang means lying beside Chengjiang; eLotus translates it as 'Adjacent to Container of Fluids / Along Saliva Receiver,' and AD also gives 'Grasping Contain Fluid.'",
     "field_sources": {
+      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Jiachengjiang not listed"],
+      "curriculum": ["source-gap note: no dedicated Jiachengjiang/夾承漿 entry found under curriculum/acupoints"],
+      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
+      "american_dragon": ["https://www.americandragon.com/Points/Jiachengjiang.html"],
       "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
+      "anatomy": ["https://www.americandragon.com/Points/Jiachengjiang.html: mental-foramen landmark", "source-gap note: no mental nerve/vessel boundary, foramen insertion limit, or body-variation protocol"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html", "legacy 0.3-0.5-cun oblique version retained separately"],
+      "moxibustion": ["source-gap note: eLotus and AD Jiachengjiang entries do not address moxa"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html", "relieve-spasm tag is indication-derived, not a source action field"],
       "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
       "combinations": ["https://www.americandragon.com/Points/Jiachengjiang.html"],
-      "cautions": ["source-gap note: exact eLotus and American Dragon pages state no point-specific contraindication"],
-      "nomenclature": ["https://www.americandragon.com/Points/Jiachengjiang.html"]
+      "cautions": ["https://www.americandragon.com/Points/Jiachengjiang.html: mental-foramen techniques and lower-lip electric/numb sensation; contraindication field blank", "source-gap note: no full anatomy, stopping rule, moxa, pregnancy, pediatric, or other high-risk protocol"],
+      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19: EX-HN19 Jiachengjiang", "https://www.americandragon.com/Points/Jiachengjiang.html: M-HN-18 Jiachengjiang", "https://iris.who.int/handle/10665/40001: international nomenclature framework"],
+      "link_check": ["2026-08-02 HTTP 200: eLotus exact Jiachengjiang page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Jiachengjiang page supplied by Ting", "2026-08-02 WHO IRIS nomenclature record opened"]
     }
   },
   {

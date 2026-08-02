@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 55,
+        "records_with_issues": 53,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
         "generic_source_url": 19,
-        "strict_template_complete": 17,
-        "four_source_audit_complete": 17,
+        "strict_template_complete": 19,
+        "four_source_audit_complete": 19,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Audit reset to Ting's full four-source card contract: Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link check, safety, combinations, and field-level provenance. EX-HN1 through EX-HN17 are complete under this contract; 55/72 remain on the worklist. All 72 still have a measurable needling/bloodletting/moxibustion method; 19 retain generic CloudTCM directory URLs pending replacement or explicit source-gap review. EX-HN16 preserves four source-specific 0.5-1.5-cun depth versions and separates AD's PC6-SP6 pairing from the legacy HT7-SP6 pairing. EX-HN17 preserves the immutable database EX-HN17 Shangming ID while disclosing that eLotus maps EX-HN17 to Bailao and AD maps Shangming to N-HN-4; no Bailao technique or moxa content is transferred to Shangming."
+        "note": "Audit reset to Ting's full four-source card contract: Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link check, safety, combinations, and field-level provenance. EX-HN1 through EX-HN19 are complete under this contract; 53/72 remain on the worklist. All 72 still have a measurable needling/bloodletting/moxibustion method; 19 retain generic CloudTCM directory URLs pending replacement or explicit source-gap review. EX-HN18 preserves the immutable database Qianzheng ID while disclosing eLotus EX-HN20 and AD N-HN-20, and separates three AD combinations from the legacy facial-paralysis pairing. EX-HN19 uses Ting's corrected exact AD link, preserves five source-specific 0.2-1.5-cun technique variants, and records the mental-foramen anatomy and stopping-rule gaps without inventing a unified procedure."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Continue the 72-record restart sequentially from EX-HN18 Qianzheng and EX-HN19 Jiachengjiang. Each record must integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup from the AD index; preserve source differences and legacy content, add paired bilingual strict-template fields, and record live exact-link checks or explicit source gaps. Current baseline: 17/72 strict-template and four-source complete (EX-HN1 through EX-HN17, with EX-HN17's Shangming/Bailao identity conflict explicitly recorded).",
+  "next_recommendation": "Continue the 72-record restart sequentially from EX-HN20 Xinshe and EX-HN21 Sanxiao. Each record must integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup from the AD index; preserve source differences and legacy content, add paired bilingual strict-template fields, and record live exact-link checks or explicit source gaps. Current baseline: 19/72 strict-template and four-source complete (EX-HN1 through EX-HN19, with HN18 Qianzheng/HN20 mapping and HN19 mental-foramen technique variants explicitly recorded).",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",
