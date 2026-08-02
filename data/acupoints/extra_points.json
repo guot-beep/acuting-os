@@ -148,28 +148,85 @@
     "pinyin": "Dangyang",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "頭前部，瞳孔直上，前髮際上1寸處。",
-    "locationEn": "On the head, 1 cun directly above the midpoint of the anterior hairline, above the pupil.",
-    "techniqueNotes": "平刺0.5~0.8寸。\nSubcutaneous insertion 0.5-0.8 cun.",
-    "functions": "清熱袪風，明目止痛",
-    "functionsEn": "Clears heat and dispels wind; Benefits the eyes; Relieves pain",
+    "location": "正視時，瞳孔中央直上，前髮際內1寸。",
+    "locationEn": "With the eyes looking straight ahead, on the line directly superior to the center of the pupil, 1 cun within the anterior hairline.",
+    "cunMeasurement": "先以正視時的瞳孔中央定垂直線，再由前髮際向頭皮內量1寸。",
+    "anatomyZh": "位於額頂交界附近的頭皮區。Board Outline、現有課件與 eLotus 未提供逐層神經血管解剖；American Dragon 索引未收錄本穴，因此不自行補造深層結構。",
+    "anatomyEn": "The point lies in the scalp near the frontal-vertex transition. The Board Outline, current course material, and eLotus do not provide layer-by-layer neurovascular anatomy, and the American Dragon index does not list the point; deeper structures are therefore not inferred.",
+    "techniqueNotes": "eLotus：皮下刺0.5~0.8寸，並記艾灸適用。既有卡片『請勿直接灸』與 eLotus 的可灸記載並不等同；因來源未交代直接灸、間接灸或劑量，本卡保留差異，不自行裁決。\neLotus: subcutaneous insertion 0.5-0.8 cun; moxibustion is applicable. The legacy note 'do not apply direct moxibustion' is not equivalent to eLotus's general statement that moxa is applicable. Because the sources do not distinguish direct from indirect moxa or give a dose, the discrepancy is retained without inference.",
+    "acumethodZh": "eLotus：皮下刺0.5~0.8寸。Board Outline 不提供操作法；現有課件未找到當陽條目；American Dragon 拼音索引未收錄 Dangyang。",
+    "acumethodEn": "eLotus: subcutaneous insertion 0.5-0.8 cun. The Board Outline gives no technique, no Dangyang entry was found in the current course material, and the American Dragon pinyin index does not list Dangyang.",
+    "moxaZh": "eLotus 記艾灸適用，但未提供時間或壯數。既有『請勿直接灸』警語保留為未核實的直接灸限制；不可由此推定間接灸劑量。",
+    "moxaEn": "eLotus states that moxibustion is applicable but gives no duration or cone count. The legacy 'do not apply direct moxibustion' warning is retained as an unverified direct-moxa restriction; no indirect-moxa dose is inferred.",
+    "functions": "袪風通絡，清頭明目，清熱，止痛",
+    "functionsEn": "Dispels Wind and opens the channels; Clears the head and brightens the eyes; Clears Heat; Relieves pain",
+    "functionsZhList": [
+      "袪風通絡",
+      "清頭明目",
+      "清熱（既有內容；四來源未直接列）",
+      "止痛（既有內容；四來源未直接列）"
+    ],
+    "functionsEnList": [
+      "Dispels Wind and opens the channels",
+      "Clears the head and brightens the eyes",
+      "Clears Heat (legacy content; not directly listed by the four sources)",
+      "Relieves pain (legacy content; not directly listed by the four sources)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "頭頸部奇穴，正視瞳孔直上、前髮際內1寸",
+      "本庫及 eLotus 使用 EX-HN2；AD 拼音索引未收錄"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Head-and-neck extra point 1 cun within the anterior hairline on the vertical pupil line",
+      "The database and eLotus use EX-HN2; the AD pinyin index does not list it"
+    ],
+    "exam_star": 0,
+    "exam_importance": "NCBAHM 2026 ACPL Appendix A 未列當陽；現有課件亦未找到專條，因此不自行標為 Board 核心考點。",
+    "exam_importance_en": "Dangyang is not listed in the NCBAHM 2026 ACPL Appendix A, and no dedicated entry was found in the current course material; it is therefore not labeled as a core Board point.",
+    "exam_pearl": "正視時取瞳孔中央直上、前髮際內1寸；eLotus 的核心是袪風通絡、清頭明目，並用於偏頭痛／頭痛、眩暈、眼紅腫與鼻炎。",
+    "exam_pearl_en": "Locate it 1 cun within the anterior hairline on the vertical line through the pupil while the patient looks straight ahead. eLotus emphasizes dispersing Wind, opening the channels, clearing the head, and brightening the eyes for migraine/headache, dizziness/vertigo, red swollen eyes, and rhinitis.",
     "patterns": [
       "頭痛",
+      "偏頭痛",
       "眩暈",
+      "旋轉性眩暈",
       "目赤腫痛",
-      "鼻塞"
+      "鼻炎",
+      "鼻塞（既有內容；eLotus 僅列鼻炎）"
     ],
     "patternsEn": [
       "Headache",
+      "Migraine",
       "Dizziness",
+      "Vertigo",
       "Red swollen eyes",
-      "Nasal congestion"
+      "Rhinitis",
+      "Nasal congestion (legacy content; eLotus lists rhinitis only)"
     ],
-    "cautions": "請勿直接灸。",
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["袪風", "通絡", "清頭", "明目"],
+    "action_tags_en": ["Dispel Wind", "Open the Channels", "Clear the Head", "Brighten the Eyes"],
+    "disease_tags_zh": ["頭痛", "偏頭痛", "眩暈", "目赤腫痛", "鼻炎"],
+    "disease_tags_en": ["Headache", "Migraine", "Vertigo", "Red Swollen Eyes", "Rhinitis"],
+    "cautions": "Board Outline 不提供安全操作資料；現有課件未找到當陽專條；eLotus 僅列皮下刺0.5~0.8寸及艾灸適用，未列穴位專屬禁忌；American Dragon 索引未收錄。不可把來源沉默解讀為無風險。既有『請勿直接灸』警語予以保留，但與 eLotus 的『艾灸適用』形成需要進一步查原典的差異；在未核實直接／間接灸法之前，不把任一說法擴充為通用安全規則。",
+    "cautionsEn": [
+      "The Board Outline provides no safety technique, no dedicated Dangyang entry was found in the current course material, eLotus lists only subcutaneous insertion 0.5-0.8 cun and that moxibustion is applicable, and the American Dragon index does not list the point. Source silence must not be interpreted as absence of risk.",
+      "The legacy 'do not apply direct moxibustion' warning is retained, but it differs from eLotus's general statement that moxibustion is applicable. Neither statement is expanded into a universal safety rule until direct versus indirect moxa is verified from an additional professional source."
+    ],
+    "evidence": "四層查核：NCBAHM Appendix A 未列當陽；現有 curriculum/acupoints 未找到 Dangyang／當陽專條；eLotus 提供本輪可核實的定位、功效、主治、皮下刺深度與可灸記載；American Dragon 拼音索引與站內精確搜尋均未找到 Dangyang。既有清熱、止痛、鼻塞與『請勿直接灸』均保留，但明確標為本輪四來源未直接支持或與 eLotus 有差異。",
+    "acuTags": ["頭部", "頭痛", "眼病", "鼻病"],
+    "combinePointsZh": "本輪 Board Outline、現有課件與 eLotus 當陽條目均未列配穴，American Dragon 又未收錄本穴；目前沒有可據四層來源寫入的當陽專屬配伍。",
+    "combinePointsEn": "The Board Outline, current course material, and eLotus Dangyang entry list no combinations, and American Dragon does not index the point; no Dangyang-specific pairing can presently be entered from the four source layers.",
+    "nameIntroZh": "eLotus 將當陽釋為 Towards Yang；本庫保留標準拼音 Dangyang 作英文顯示名。",
+    "nameIntroEn": "eLotus translates Dangyang as 'Towards Yang.' The database retains the standard pinyin Dangyang as the English display name.",
+    "otherNamesZh": ["eLotus 英譯：Towards Yang"],
+    "otherNamesEn": ["Towards Yang"],
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2",
+      "https://www.americandragon.com/PointsIndex2.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -180,7 +237,23 @@
       }
     ],
     "x": 178,
-    "y": 120
+    "y": 120,
+    "field_sources": {
+      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Dangyang not listed"],
+      "curriculum": ["source-gap note: no Dangyang/當陽 entry found under curriculum/acupoints"],
+      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"],
+      "american_dragon": ["source-gap note: Dangyang not present in https://www.americandragon.com/PointsIndex2.html and no exact point page was found by site search"],
+      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"],
+      "anatomy": ["source-gap note: the reviewed sources provide scalp location but no layer-by-layer neurovascular anatomy"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"],
+      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2", "legacy source-gap note: prior direct-moxa prohibition retained but not supported by the four reviewed sources"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2", "legacy source-gap note: prior Clears Heat and Relieves pain actions retained but not directly listed by the four reviewed sources"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2", "legacy source-gap note: prior nasal congestion retained; eLotus lists rhinitis"],
+      "combinations": ["source-gap note: no combinations listed by the available reviewed sources"],
+      "cautions": ["source-gap/conflict note: eLotus says moxa applicable but gives no contraindications or dose; legacy direct-moxa warning remains unverified"],
+      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2: EX-HN2", "https://iris.who.int/handle/10665/40001: EX prefix and HN regional nomenclature framework"],
+      "link_check": ["2026-08-02 HTTP 200: eLotus exact Dangyang page", "2026-08-02 HTTP 200: American Dragon pinyin index; Dangyang absent", "2026-08-02 American Dragon exact Dangyang page not found; no detail link stored"]
+    }
   },
   {
     "code": "EX-HN3",
@@ -190,33 +263,124 @@
     "pinyin": "Yintang",
     "meridian": "Extra Points / 經外奇穴",
     "region": "頭頸部 / Head and Neck",
-    "location": "額部，兩眉頭連線中點。",
-    "locationEn": "On the forehead, at the midpoint between the two medial ends of the eyebrows.",
-    "techniqueNotes": "提皮向下平刺0.3~0.5寸；或三稜針點刺出血。\nSubcutaneous insertion 0.3-0.5 cun downward; or prick to bleed.",
-    "functions": "安神定志，通鼻開竅，清頭明目",
-    "functionsEn": "Calms the mind; Unblocks the nose; Clears the head and brightens the eyes",
+    "location": "眉間區，兩眉內側端連線的中點，即眉間（glabella）中央。",
+    "locationEn": "At the glabella, on the midline at the midpoint between the medial ends of the eyebrows.",
+    "cunMeasurement": "不以寸量為主；以兩眉內側端的連線中點與眉間正中線定位。",
+    "anatomyZh": "位於眉間正中線的皮膚與皮下組織區。Board Outline、課件、eLotus 與 American Dragon 均未提供逐層神經血管解剖；AD 所列向攢竹（BL2）或睛明（BL1）方向的透刺版本只作技法差異保留，不據此推定安全層次。",
+    "anatomyEn": "The point lies in the skin and subcutaneous tissues of the glabellar midline. The Board Outline, curriculum, eLotus, and American Dragon do not provide layer-by-layer neurovascular anatomy. AD's variants directed toward Zanzhu (BL2) or Jingming (BL1) are retained only as technique variants and are not used to infer a safe anatomical plane.",
+    "techniqueNotes": "課件：提皮，向下斜刺或皮下刺0.3~0.5寸。eLotus：皮下刺0.3~0.5寸，艾灸適用。American Dragon：一組版本為提皮後向下或側方橫刺0.3~0.5寸；另列向下或向攢竹（BL2）／睛明（BL1）方向0.5~1寸，可能出現局部脹痠並延至鼻尖；記艾灸適用。既有三稜針點刺出血法保留，但本輪三個內容來源未列，故不得視為四來源共識。\nCurriculum: pinch the skin and insert obliquely downward or subcutaneously 0.3-0.5 cun. eLotus: subcutaneous insertion 0.3-0.5 cun; moxibustion is applicable. American Dragon: one version uses a pinched-skin transverse insertion inferiorly or laterally 0.3-0.5 cun; another directs the needle inferiorly or toward Zanzhu (BL2)/Jingming (BL1), 0.5-1 cun, with possible local distention and soreness extending to the tip of the nose; moxibustion is applicable. The legacy three-edged-needle bleeding method is retained, but none of the three content sources reviewed lists it, so it is not treated as four-source consensus.",
+    "acumethodZh": "課件：提皮向下斜刺或皮下刺0.3~0.5寸。eLotus：皮下刺0.3~0.5寸。AD：提皮後向下／側方橫刺0.3~0.5寸；另列向下或朝 BL2／BL1 方向0.5~1寸。深度與方向有來源差異，分列而不合併。既有三稜針點刺出血法待另源核實。",
+    "acumethodEn": "Curriculum: pinch the skin and insert obliquely downward or subcutaneously 0.3-0.5 cun. eLotus: subcutaneous insertion 0.3-0.5 cun. AD: pinched-skin transverse insertion inferiorly/laterally 0.3-0.5 cun, plus a separate 0.5-1-cun variant directed inferiorly or toward BL2/BL1. The depth and direction variants are kept separate rather than merged. The legacy three-edged-needle bleeding method awaits another source.",
+    "moxaZh": "eLotus 與 American Dragon 均記艾灸適用，但未提供時間或壯數；不補造劑量。",
+    "moxaEn": "eLotus and American Dragon state that moxibustion is applicable but give no duration or cone count; no dose is inferred.",
+    "functions": "安神定志，疏風清熱，通鼻開竅，熄風止痙，通絡止痛",
+    "functionsEn": "Calms the Shen; Dispels Wind and clears Heat; Opens the nose; Pacifies Wind and stops convulsions; Activates the channel and alleviates pain",
+    "functionsZhList": [
+      "安神定志",
+      "疏風清熱",
+      "通鼻開竅",
+      "熄風止痙",
+      "通絡止痛"
+    ],
+    "functionsEnList": [
+      "Calms the Shen",
+      "Dispels Wind and clears Heat",
+      "Opens the nose",
+      "Pacifies Wind and stops convulsions",
+      "Activates the channel and alleviates pain"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "眉間正中線定位",
+      "NCBAHM Appendix A 列名；本庫／eLotus 用 EX-HN3，課件／AD 用 M-HN-3",
+      "既有『已歸入 GV／督脈』註記保留待命名標準專項核實，不更動穩定代碼"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Midline glabellar point",
+      "Named in NCBAHM Appendix A; database/eLotus use EX-HN3, while curriculum/AD use M-HN-3",
+      "The legacy note that it has been incorporated into the GV/Du channel is retained pending nomenclature-specific verification; the stable code is unchanged"
+    ],
+    "exam_star": 0,
+    "exam_importance": "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴範圍；課件列為 Extra Point (M-HN-3)，但未見星號，故不自行加星。",
+    "exam_importance_en": "Listed in the NCBAHM 2026 ACPL Appendix A extra-point scope and in the course handout as Extra Point (M-HN-3); no exam star is shown, so none is inferred.",
+    "exam_pearl": "眉間兩眉內側端連線中點；課件、eLotus 與 AD 的共同基線為皮下／橫刺0.3~0.5寸。辨識核心為安神、通鼻、止痛與熄風止痙；AD 另列較深0.5~1寸透向版本，不能當作一致標準。",
+    "exam_pearl_en": "Locate it at the glabellar midpoint between the medial eyebrow ends. The shared curriculum/eLotus/AD baseline is subcutaneous or transverse insertion 0.3-0.5 cun. Key actions are calming the Shen, opening the nose, relieving pain, and pacifying Wind/convulsions; AD's additional 0.5-1-cun directed variants are not a consensus standard.",
     "patterns": [
       "頭痛",
+      "額頭痛",
+      "頭重",
       "眩暈",
+      "旋轉性眩暈",
       "鼻塞",
       "鼻淵",
+      "鼻炎",
+      "流鼻水",
+      "鼻出血",
       "失眠",
-      "小兒驚風"
+      "小兒驚風",
+      "熱性驚厥",
+      "妊娠期抽搐（AD 列為主治；非安全許可）",
+      "狂證（AD 原文 insanity）",
+      "躁動不安",
+      "面痛",
+      "眼痠目赤",
+      "感冒",
+      "高血壓",
+      "嘔吐",
+      "產後血虛昏厥／暈眩（AD 原頁表述）",
+      "酒後頭風（AD 配穴表述）"
     ],
     "patternsEn": [
       "Headache",
+      "Frontal headache",
+      "Heaviness of the head",
       "Dizziness",
+      "Vertigo",
       "Nasal congestion",
       "Sinusitis",
+      "Rhinitis",
+      "Rhinorrhea",
+      "Epistaxis",
       "Insomnia",
-      "Infantile convulsion"
+      "Infantile convulsion",
+      "Febrile convulsions",
+      "Convulsions during pregnancy (listed by AD as an indication, not safety clearance)",
+      "Insanity (historical wording in AD)",
+      "Restlessness or agitation",
+      "Facial pain",
+      "Eye soreness and redness",
+      "Common cold",
+      "Hypertension",
+      "Vomiting",
+      "Postpartum fainting/dizziness associated with Blood loss (AD wording)",
+      "Head Wind following intoxication (AD combination-table wording)"
     ],
-    "cautions": "已歸入GV督脈（GV/DU）。",
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【失眠】印堂配神門（HT7）、四神聰（EX-HN1）：寧心安神。\n【鼻炎】印堂配迎香（LI20）、合谷（LI4）：通鼻開竅。",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["安神", "疏風清熱", "通鼻開竅", "熄風止痙", "通絡止痛"],
+    "action_tags_en": ["Calm the Shen", "Dispel Wind & Clear Heat", "Open the Nose", "Pacify Wind & Stop Convulsions", "Activate the Channel & Relieve Pain"],
+    "disease_tags_zh": ["頭痛", "鼻炎鼻塞", "失眠", "眩暈", "驚厥", "鼻出血"],
+    "disease_tags_en": ["Headache", "Rhinitis & Nasal Congestion", "Insomnia", "Vertigo", "Convulsions", "Epistaxis"],
+    "cautions": "課件、eLotus 與 American Dragon 均未列印堂穴位專屬禁忌；不可把來源沉默解讀為無風險。AD 同時列0.3~0.5寸與0.5~1寸、並有朝 BL2／BL1 方向的版本，深度和方向不得合併為單一標準。AD 將『妊娠期抽搐』列在主治中，這不是孕期針刺安全許可；本輪來源未提供孕婦專屬操作注意。既有三稜針點刺出血法未獲課件、eLotus 或 AD 本頁支持，僅保留待另源核實。既有『已歸入 GV／督脈』屬命名分類問題，移至穴位身分註記，不作臨床禁忌。",
+    "cautionsEn": [
+      "The curriculum, eLotus, and American Dragon list no point-specific contraindication for Yintang; source silence must not be interpreted as absence of risk.",
+      "AD lists both 0.3-0.5-cun and 0.5-1-cun methods, including directions toward BL2/BL1. These depth and direction variants must not be merged into a single standard.",
+      "AD lists convulsions during pregnancy under indications; this is not pregnancy needling clearance. The sources reviewed provide no pregnancy-specific technique caution.",
+      "The legacy three-edged-needle bleeding method is retained pending another source because it is not supported by the curriculum, eLotus, or AD Yintang entries reviewed here.",
+      "The legacy statement that Yintang has been incorporated into the GV/Du channel is a nomenclature issue, not a clinical contraindication, and is recorded under point identity."
+    ],
+    "evidence": "四來源整合：NCBAHM Appendix A 確認考試範圍；課件提供 M-HN-3 身分、眉間定位、提皮向下／皮下刺0.3~0.5寸及核心主治；eLotus 補安神熄風、通鼻止痛、0.3~0.5寸與可灸；American Dragon 補多層功效、完整主治、配穴、0.3~0.5與0.5~1寸不同技法及別名。既有鼻淵、三稜針出血與 GV／督脈註記均保留，但分別標出來源狀態，不混入已核實共識。",
+    "acuTags": ["頭部", "神志", "鼻病", "頭痛", "驚風"],
+    "combinePointsZh": "【鼻炎；AD】印堂配迎香（LI20）、合谷（LI4）：通鼻開竅。\n【頭痛；AD】印堂配太陽（M-HN-9）、風池（GB20）、合谷（LI4）。\n【高血壓；AD】印堂配曲池（LI11）、豐隆（ST40）；AD 表格另列曲池（LI11）、足三里（ST36）作替代組。\n【失眠；AD】印堂配神門（HT7）、三陰交（SP6）。\n【酒後頭風；AD 原頁用語】印堂配攢竹（BL2）、足三里（ST36）。\n【既有學習配伍；部分重疊 AD】印堂配神門（HT7）、四神聰（EX-HN1）治失眠；AD 支持 HT7，但未列四神聰。",
+    "combinePointsEn": "Rhinitis (AD): Yintang with Yingxiang (LI20) and Hegu (LI4) to open the nasal passages.\nHeadache (AD): Yintang with Taiyang (M-HN-9), Fengchi (GB20), and Hegu (LI4).\nHypertension (AD): Yintang with Quchi (LI11) and Fenglong (ST40); the AD table also gives Quchi (LI11) with Zusanli (ST36) as an alternative group.\nInsomnia (AD): Yintang with Shenmen (HT7) and Sanyinjiao (SP6).\nHead Wind following intoxication (AD wording): Yintang with Zanzhu (BL2) and Zusanli (ST36).\nLegacy study pairing, partially overlapping AD: Yintang with Shenmen (HT7) and Sishencong (EX-HN1) for insomnia; AD supports HT7 but does not list Sishencong in this combination.",
+    "nameIntroZh": "eLotus 與 AD 英譯 Hall of Impression，並列 Seal Hall；本庫保留標準拼音 Yintang。",
+    "nameIntroEn": "eLotus and AD translate Yintang as 'Hall of Impression' and also give 'Seal Hall.' The database retains the standard pinyin Yintang.",
+    "otherNamesZh": ["英譯：Hall of Impression", "別稱：Seal Hall"],
+    "otherNamesEn": ["Hall of Impression", "Seal Hall"],
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
+      "https://www.americandragon.com/Points/Yintang.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -224,10 +388,32 @@
         "labelEn": "Extra Point · Yintang EX-HN3 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 印堂 M-HN-3",
+        "labelEn": "American Dragon · Yintang M-HN-3",
+        "url": "https://www.americandragon.com/Points/Yintang.html",
+        "source": "American Dragon"
       }
     ],
     "x": 178,
-    "y": 140
+    "y": 140,
+    "field_sources": {
+      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Yintang listed"],
+      "curriculum": ["curriculum/acupoints/Techniques 3 points.md p.8: Yintang (M-HN-3)"],
+      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3"],
+      "american_dragon": ["https://www.americandragon.com/Points/Yintang.html"],
+      "location": ["curriculum/acupoints/Techniques 3 points.md p.8", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html"],
+      "anatomy": ["source-gap note: the four reviewed sources provide glabellar location but no layer-by-layer neurovascular anatomy"],
+      "technique": ["curriculum/acupoints/Techniques 3 points.md p.8", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html", "legacy source-gap note: prior three-edged-needle bleeding method retained but not found in the three content entries"],
+      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html"],
+      "indications": ["curriculum/acupoints/Techniques 3 points.md p.8", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html", "legacy source-gap note: prior sinusitis/nasopharyngeal wording retained where not stated verbatim"],
+      "combinations": ["https://www.americandragon.com/Points/Yintang.html", "legacy note: Sishencong insomnia pairing retained but not listed in AD Yintang combinations"],
+      "cautions": ["source-gap note: curriculum, eLotus, and AD state no point-specific contraindication", "https://www.americandragon.com/Points/Yintang.html: pregnancy appears only as an indication, not a safety instruction"],
+      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3: EX-HN3", "curriculum/acupoints/Techniques 3 points.md p.8: M-HN-3", "https://www.americandragon.com/Points/Yintang.html: M-HN-3", "legacy source-gap note: prior GV/Du incorporation claim retained pending a nomenclature-specific source"],
+      "link_check": ["2026-08-02 HTTP 200: eLotus exact Yintang page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Yintang page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record"]
+    }
   },
   {
     "code": "EX-HN4",
