@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN20 Xinshe + EX-HN21 Sanxiao strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `4d4b366` (`Complete Xinshe and Sanxiao cards`)
+- Task: Continue strict four-source extra-point completion with Xinshe identity reconciliation and an evidence-honest Sanxiao source-gap card.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN20 新設 and EX-HN21 散笑; audit is now 51/72 issue records and 21/72 strict/four-source complete.
+  2. Xinshe integrates the live eLotus EX-HN23 page: C3-C4/1.5-cun-lateral location, 0.3-0.8-cun perpendicular insertion, 5-15-minute moxa statement, aliases, full actions/indications, and the note that many references equate it with Anmian. Legacy C3/SCM location and 0.5-0.8-cun value remain separately attributed.
+  3. Sanxiao has no exact entry in Board, current course materials, eLotus, or the AD pinyin index. Its legacy location, actions, indications, and 0.3-0.5-cun oblique value are preserved but explicitly unverified; no false detail link was added.
+  4. Disclosed that eLotus EX-HN21 is Shanglianquan, not Sanxiao, so no code-based content transfer is permitted. Both cards explicitly record anatomy, stopping-rule, pregnancy, pediatric, and high-risk gaps rather than guessing.
+- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Xinshe page and eLotus point-index audit; American Dragon pinyin-index audit; WHO IRIS nomenclature record.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (21/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema source content.
+- Known risks / manual checks: Ting should verify that Xinshe visibly separates database EX-HN20 from eLotus EX-HN23/Anmian equivalence, and that Sanxiao displays its unverified legacy method and source-gap labels rather than appearing source-verified.
+- Next recommended action: continue EX-HN22 扁桃體, with special care around its tongue-root/intraoral location and currently unverified technique.
+
 ## [2026-08-02] Codex Handoff — EX-HN18 Qianzheng + EX-HN19 Jiachengjiang strict cards
 
 - Agent: Codex

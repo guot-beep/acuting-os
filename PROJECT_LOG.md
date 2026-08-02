@@ -1,3 +1,11 @@
+# 2026-08-02 Codex — EX-HN20 新設 + EX-HN21 散笑嚴格四來源卡
+- 完成 EX-HN20、EX-HN21；經外奇穴進度更新為 21/72 嚴格完成、51/72 仍在 worklist。
+- 新設整合 eLotus 現行 EX-HN23 精確頁：C3-C4水平／後正中線旁1.5寸、直刺0.3~0.8寸、灸5~15分鐘、別名、完整功效主治及許多文獻視為安眠同穴之說；本庫 EX-HN20 與舊卡 C3／胸鎖乳突肌後緣、0.5~0.8寸版本分源保留。
+- 散笑在 Board、現有課件、eLotus 與 AD 拼音索引均無精確條目；完整模板保留舊卡鼻唇溝定位、功效主治與斜刺0.3~0.5寸，但逐欄標示未驗證，並揭露 eLotus EX-HN21 是上廉泉，不能按碼移植。
+- 兩卡均補齊中英成對標籤、解剖／針灸／配穴／考點／來源欄；上頸與面部深層解剖、停止規則、孕婦、兒童及高風險缺口沒有猜填。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`4d4b366`。
+
 # 2026-08-02 Codex — EX-HN18 牽正 + EX-HN19 夾承漿嚴格四來源卡
 - 完成 EX-HN18、EX-HN19；經外奇穴進度更新為 19/72 嚴格完成、53/72 仍在 worklist。
 - 牽正保留本庫 EX-HN18 與 eLotus EX-HN20／AD N-HN-20 的映射差異，補齊朝前斜刺0.5~1寸、完整口舌潰瘍／腮腺炎／口眼歪斜主治及三組 AD 配穴；舊卡 ST4-ST6-LI4 另列。
