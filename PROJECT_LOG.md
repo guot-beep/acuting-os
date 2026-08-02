@@ -1,3 +1,11 @@
+# 2026-08-02 Codex — EX-HN14 翳明 + EX-HN15 頸百勞嚴格四來源卡
+- 完成 EX-HN14、EX-HN15；經外奇穴進度更新為 15/72 嚴格完成、57/72 仍在 worklist。
+- 翳明並列 eLotus 0.5~0.8寸、AD 1~1.5寸、舊卡0.5~1寸，不製造假共識；AD 同側頭部電感僅作感覺描述，不改成追求電擊感的指令。補精確 AD 頁、完整主治及三組配穴。
+- 頸百勞整合補肺陰／舒筋通絡與 AD 化痰散結止咳平喘、完整虛勞／肺系／頸項主治、多個0.3~1寸版本及可灸。
+- 揭露 Board Bailao、eLotus EX-HN15 Jingbailao／EX-HN17 Bailao 同定位疑義、AD M-HN-30 Bailao 的命名差異；AD 配肘尖100壯只作來源記錄，因缺艾炷大小與皮膚安全流程不轉成一般指令。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`e710836`。
+
 # 2026-08-02 Codex — EX-HN12 金津 + EX-HN13 玉液嚴格四來源卡
 - 完成 EX-HN12、EX-HN13；經外奇穴進度更新為 13/72 嚴格完成、59/72 仍在 worklist。
 - 整合編碼：eLotus／本庫分列 EX-HN12 金津左、EX-HN13 玉液右；AD 合併為 M-HN-20 Jinjin-Yuye。補齊 AD 口舌咽喉、消渴、胃腸、晨吐／妊娠嘔吐與劇烈噁心等完整主治。

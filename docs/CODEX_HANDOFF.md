@@ -1,5 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN14 Yiming + EX-HN15 Jingbailao strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `e710836` (`Complete Yiming and Jingbailao cards`)
+- Task: Continue strict extra-point completion with posterior-auricular/cervical depth reconciliation and nomenclature audit.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN14 翳明 and EX-HN15 頸百勞; audit is now 57/72 issue records and 15/72 strict/four-source complete.
+  2. Yiming preserves the material technique conflict: eLotus perpendicular 0.5-0.8 cun, AD straight 1-1.5 cun, and legacy 0.5-1 cun. AD's ipsilateral electric-sensation description is not framed as a target to pursue. Added exact AD `Points/Yiming.html`, full indications, and all three AD combinations.
+  3. Jingbailao integrates eLotus's Lung-Yin/sinew actions and AD's Phlegm/nodule/cough/dyspnea structure, full pulmonary/consumption/neck indications, multiple 0.3-1-cun variants, and moxa applicability.
+  4. Disclosed the nomenclature issue: Board lists Bailao; eLotus uses EX-HN15 Jingbailao and says it appears to share a location with EX-HN17 Bailao; AD uses M-HN-30 Bailao. No silent one-to-one mapping was asserted.
+  5. AD's Bailao-Zhoujian 100-cone scrofula combination is retained only as source documentation because cone size, scheduling, skin protection, burn management, and population criteria are absent.
+- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Yiming/Jingbailao pages; American Dragon pinyin index and exact Yiming/Bailao pages; WHO IRIS nomenclature record.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (15/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
+- Known risks / manual checks: Ting should inspect Yiming's three source-specific depth ranges and Jingbailao's EX-HN15/EX-HN17 duplication note. The 100-cone AD statement must remain visibly non-operational.
+- Next recommended action: continue EX-HN16 安眠, then investigate the database's EX-HN17 上明 versus eLotus EX-HN17 Bailao mismatch before editing.
+
 ## [2026-08-02] Codex Handoff — EX-HN12 Jinjin + EX-HN13 Yuye strict cards
 
 - Agent: Codex
