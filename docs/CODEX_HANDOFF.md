@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN18 Qianzheng + EX-HN19 Jiachengjiang strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `19efa59` (`Complete Qianzheng and Jiachengjiang cards`)
+- Task: Continue strict extra-point completion with Qianzheng code reconciliation and Ting's corrected American Dragon Jiachengjiang detail source.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN18 牽正 and EX-HN19 夾承漿; audit is now 53/72 issue records and 19/72 strict/four-source complete.
+  2. Qianzheng preserves the immutable database EX-HN18 while disclosing eLotus EX-HN20 and AD N-HN-20. Integrated the forward 0.5-1-cun AD technique, complete ulcer/parotitis/facial-deviation indications, and three separately parsed AD combinations; the legacy ST4-ST6-LI4 combination remains distinct.
+  3. Jiachengjiang now uses Ting's corrected exact AD `Points/Jiachengjiang.html` link and integrates the CV24/ST4/mental-foramen location, all five AD 0.2-1.5-cun technique variants, full action/indication structure, and both AD combinations.
+  4. Mental-foramen techniques and the lower-lip electric/numb sensation are documented as source-specific, not converted into a unified procedure or a stimulation endpoint. Missing nerve/vessel boundary, stopping rule, moxa, pregnancy, pediatric, and high-risk protocols remain explicit source gaps.
+- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Qianzheng/Jiachengjiang pages; American Dragon pinyin index and exact Qianzheng/Jiachengjiang pages; WHO IRIS nomenclature record.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (19/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema source content.
+- Known risks / manual checks: Ting should verify Qianzheng's database/standard code warning and confirm that Jiachengjiang's multiple foramen-related techniques remain visibly separated in the rendered card.
+- Next recommended action: continue EX-HN20 新設 and EX-HN21 散笑, both requiring identity/source-gap review before content expansion.
+
 ## [2026-08-02] Codex Handoff — EX-HN16 Anmian + EX-HN17 Shangming strict cards
 
 - Agent: Codex

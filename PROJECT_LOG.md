@@ -1,3 +1,10 @@
+# 2026-08-02 Codex — EX-HN18 牽正 + EX-HN19 夾承漿嚴格四來源卡
+- 完成 EX-HN18、EX-HN19；經外奇穴進度更新為 19/72 嚴格完成、53/72 仍在 worklist。
+- 牽正保留本庫 EX-HN18 與 eLotus EX-HN20／AD N-HN-20 的映射差異，補齊朝前斜刺0.5~1寸、完整口舌潰瘍／腮腺炎／口眼歪斜主治及三組 AD 配穴；舊卡 ST4-ST6-LI4 另列。
+- 夾承漿採 Ting 更正的 AD `Points/Jiachengjiang.html`，整合 CV24／ST4／頦孔定位、五個0.2~1.5寸技法版本、完整功效主治與兩組配穴。頦孔進針與下唇觸電樣麻感只作逐源記錄，不合併成一般操作指令；解剖界線、停止規則與特殊族群缺口明示。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`19efa59`。
+
 # 2026-08-02 Codex — EX-HN16 安眠 + EX-HN17 上明嚴格四來源卡
 - 完成 EX-HN16、EX-HN17；經外奇穴進度更新為 17/72 嚴格完成、55/72 仍在 worklist，泛用 CloudTCM 連結降至19。
 - 安眠逐源保留 eLotus 0.5~0.8寸、AD 三個0.5~1.5寸版本與舊卡0.8~1.2寸；AD 的 PC6＋SP6 與舊卡 HT7＋SP6 分開，不製造假共識。並揭露 AD 將 SJ17 文字誤標 Sifeng、實際連結／標準穴名為 Yifeng。
