@@ -342,8 +342,8 @@
       "Hyposmia"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【過敏性鼻炎】上迎香配迎香（LI20）、合谷（LI4）：宣肺通鼻。",
-    "reviewStatus": "sourced_elotus_direct",
+    "combinePointsZh": "【過敏性鼻炎／鼻塞】上迎香配迎香（LI20）、合谷（LI4）：局部通鼻竅，遠端疏風通絡。\n【慢性鼻炎／鼻竇炎】上迎香配印堂（EX-HN3）、上星（GV23）：加強鼻竅與前額鼻竇區宣通。",
+    "reviewStatus": "draft_source_checked",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
     ],
@@ -356,7 +356,85 @@
       }
     ],
     "x": 172,
-    "y": 160
+    "y": 160,
+    "otherNamesZh": [
+      "鼻通",
+      "鼻穿",
+      "穿鼻"
+    ],
+    "otherNamesEn": [
+      "Bitong",
+      "Bichuan",
+      "Chuanbi"
+    ],
+    "action_tags_zh": [
+      "清熱",
+      "散風",
+      "通鼻竅"
+    ],
+    "action_tags_en": [
+      "Clear Heat",
+      "Dispel Wind",
+      "Open nasal orifices"
+    ],
+    "disease_tags_zh": [
+      "過敏性鼻炎",
+      "鼻塞",
+      "鼻竇炎",
+      "鼻衄",
+      "嗅覺減退",
+      "面癱"
+    ],
+    "disease_tags_en": [
+      "Allergic rhinitis",
+      "Nasal obstruction",
+      "Sinusitis",
+      "Epistaxis",
+      "Loss of smell",
+      "Facial paralysis"
+    ],
+    "acuTags": [
+      "鼻病",
+      "鼻塞",
+      "過敏性鼻炎",
+      "面部",
+      "經外奇穴"
+    ],
+    "cautions": "鼻旁面部血管神經較密；依 eLotus/AD 以向上斜刺或皮下刺 0.3~0.5 寸為主，避免深刺或向眼眶方向進針。鼻衄、鼻息肉或局部感染時需先判斷出血與感染風險。",
+    "cautionsEn": [
+      "Dense facial vessels and nerves are nearby. Use shallow oblique/subcutaneous needling, usually 0.3-0.5 cun upward per eLotus/AD; avoid deep insertion or needling toward the orbit.",
+      "Assess bleeding and infection risk when epistaxis, nasal polyps, or local infection is present."
+    ],
+    "exam_importance": "經外鼻病要穴。定位抓「迎香 LI20 上內方約0.5寸、鼻唇溝上端」；主軸是通鼻竅，常與迎香、合谷配伍治鼻炎/鼻塞。",
+    "exam_pearl": "上迎香 = 鼻通。考點不是一般面痛穴，而是鼻竅專穴：過敏性鼻炎、鼻塞、鼻竇炎、嗅覺減退優先想到。",
+    "combinePointsEn": "Allergic rhinitis / nasal obstruction: Shangyingxiang with Yingxiang (LI20) and Hegu (LI4) opens the nasal passages locally and dispels Wind distally.\nChronic rhinitis / sinusitis: combine with Yintang (EX-HN3) and Shangxing (GV23) to emphasize the nasal and frontal-sinus region.",
+    "clinical_pearls": "又名鼻通，臨床定位可沿鼻唇溝向上摸到鼻骨下凹陷；鼻塞、嗅覺減退、過敏性鼻炎常與 LI20 形成局部鼻竅對穴。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "aliases": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "combinations": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shangyingxiang-ex-hn8"
+      ],
+      "safety_note": [
+        "anatomy-based note from facial/nasal location + eLotus/AD needling direction"
+      ]
+    }
   },
   {
     "code": "EX-HN9",
@@ -428,7 +506,7 @@
       "Poor appetite"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "reviewStatus": "draft_source_checked",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10"
     ],
@@ -441,7 +519,72 @@
       }
     ],
     "x": 176,
-    "y": 170
+    "y": 170,
+    "action_tags_zh": [
+      "利舌",
+      "開音",
+      "清熱",
+      "化痰"
+    ],
+    "action_tags_en": [
+      "Benefit tongue",
+      "Open speech",
+      "Clear Heat",
+      "Transform Phlegm"
+    ],
+    "disease_tags_zh": [
+      "舌強",
+      "中風失語",
+      "舌麻痺",
+      "哮喘",
+      "消渴"
+    ],
+    "disease_tags_en": [
+      "Tongue stiffness",
+      "Post-stroke aphasia",
+      "Tongue paralysis",
+      "Asthma",
+      "Wasting-thirst"
+    ],
+    "acuTags": [
+      "舌病",
+      "失語",
+      "中風",
+      "口腔",
+      "經外奇穴"
+    ],
+    "cautions": "舌體穴位，僅宜淺刺 0.1~0.2 寸或點刺出血；避免深刺。口腔內操作需嚴格消毒，凝血異常、服抗凝藥或舌部感染者慎用；施術後確認止血。",
+    "cautionsEn": [
+      "Tongue-body point: use only shallow insertion 0.1-0.2 cun or prick to bleed; avoid deep needling.",
+      "Strict intraoral sterilization is required. Use caution with bleeding disorders, anticoagulant therapy, or local tongue infection; confirm hemostasis after treatment."
+    ],
+    "exam_importance": "口舌經外穴。定位在伸舌時舌背正中；主治舌強、失語、舌麻痺，與金津玉液/海泉同屬口舌急症與津液相關穴群。",
+    "exam_pearl": "聚泉抓「舌背中央」；金津玉液抓「舌下兩側靜脈」。舌強失語可把聚泉放在口舌穴群核心。",
+    "combinePointsZh": "【舌強失語】聚泉配廉泉（CV23）、金津（EX-HN12）、玉液（EX-HN13）：局部利舌開音，兼清熱生津。\n【中風後失語】聚泉配風池（GB20）、曲池（LI11）、內關（PC6）：息風通絡、醒神開音。",
+    "combinePointsEn": "Tongue stiffness / aphasia: Juquan with Lianquan (CV23), Jinjin (EX-HN12), and Yuye (EX-HN13) benefits the tongue, opens speech, clears Heat, and generates fluids.\nPost-stroke aphasia: combine with Fengchi (GB20), Quchi (LI11), and Neiguan (PC6) to extinguish Wind, unblock collaterals, and support speech recovery.",
+    "clinical_pearls": "Me & Qi 記載此穴安全重點是避免深刺、淺刺為主；古籍與現代資料都把它放在舌強、失語、消渴與舌體病變脈絡中。eLotus 頁面目前可讀性不穩，已保留連結但未把無法開出的頁面當唯一依據。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10",
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/juquan-ex-hn10",
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+      ],
+      "functions": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+      ],
+      "indications": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+      ],
+      "cautions": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+      ],
+      "combinations": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/juquan-ex-hn-10/"
+      ]
+    }
   },
   {
     "code": "EX-HN11",
@@ -471,7 +614,7 @@
       "Aphasia"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "reviewStatus": "draft_source_checked",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
     ],
@@ -484,7 +627,75 @@
       }
     ],
     "x": 178,
-    "y": 175
+    "y": 175,
+    "action_tags_zh": [
+      "清熱",
+      "生津",
+      "利舌",
+      "降逆"
+    ],
+    "action_tags_en": [
+      "Clear Heat",
+      "Generate fluids",
+      "Benefit tongue",
+      "Redirect rebellious Qi"
+    ],
+    "disease_tags_zh": [
+      "舌腫痛",
+      "小兒蓮花舌",
+      "面癱",
+      "消渴",
+      "嘔吐",
+      "腹瀉"
+    ],
+    "disease_tags_en": [
+      "Swollen painful tongue",
+      "Pediatric lotus-flower tongue",
+      "Facial paralysis",
+      "Wasting-thirst",
+      "Vomiting",
+      "Diarrhea"
+    ],
+    "acuTags": [
+      "舌病",
+      "生津",
+      "消渴",
+      "口腔",
+      "經外奇穴"
+    ],
+    "cautions": "舌下繫帶正中點刺出血，需嚴格消毒並控制出血量；凝血異常、服抗凝藥、口腔/舌下感染或無法配合伸舌者慎用。避免深刺與反覆強刺激。",
+    "cautionsEn": [
+      "Prick to bleed at the midline frenulum; use strict sterilization and control bleeding volume.",
+      "Use caution with bleeding disorders, anticoagulant therapy, oral/sublingual infection, or patients unable to cooperate with tongue positioning. Avoid deep needling and repeated strong stimulation."
+    ],
+    "exam_importance": "海泉位於舌下繫帶中央，在金津、玉液之間。主軸：清熱生津、利舌；與金津玉液同屬口舌腫痛、失語、消渴相關穴群。",
+    "exam_pearl": "海泉 = 舌下繫帶中央；金津/玉液 = 舌下左右靜脈。考試容易把三者位置混在一起。",
+    "combinePointsZh": "【舌腫痛／蓮花舌】海泉配金津（EX-HN12）、玉液（EX-HN13）、十宣（EX-UE11）：點刺出血以清熱消腫。\n【消渴口乾】海泉配廉泉（CV23）、金津玉液：清熱生津、利舌潤燥。",
+    "combinePointsEn": "Swollen painful tongue / lotus-flower tongue: Haiquan with Jinjin (EX-HN12), Yuye (EX-HN13), and Shixuan (EX-UE11), usually by bloodletting, clears Heat and reduces swelling.\nWasting-thirst with dry mouth: combine Haiquan with Lianquan (CV23) and Jinjin-Yuye to clear Heat, generate fluids, and benefit the tongue.",
+    "clinical_pearls": "eLotus 明確列出 heaviness/swelling/pain of tongue、xiao ke、vomiting、abdominal symptoms，故不應只寫「舌炎」；此穴是口舌局部 + 津液/消渴兩條線。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "aliases": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/haiquan-ex-hn11"
+      ],
+      "safety_note": [
+        "anatomy-based note from sublingual bloodletting location"
+      ]
+    }
   },
   {
     "code": "EX-HN12",
@@ -497,26 +708,32 @@
     "location": "口腔內，舌下靜脈左側。",
     "locationEn": "In the oral cavity, on the left sublingual vein.",
     "techniqueNotes": "三稜針點刺出血。\nPrick to bleed.",
-    "functions": "清熱生津，消腫止痛，解熱瀉火",
-    "functionsEn": "Clears heat and generates fluids; Drains fire",
+    "functions": "清熱生津，消腫利舌，開音利咽",
+    "functionsEn": "Clears Heat; Generates fluids; Reduces swelling; Benefits the tongue and throat",
     "patterns": [
-      "口腔炎",
-      "扁桃腺炎",
+      "口瘡",
+      "舌腫痛",
       "咽喉腫痛",
+      "中風失語",
       "消渴",
-      "中風失語"
+      "嘔吐",
+      "劇烈噁心"
     ],
     "patternsEn": [
-      "Stomatitis",
-      "Tonsillitis",
-      "Sore throat",
-      "Diabetes",
-      "Stroke aphasia"
+      "Mouth ulcers",
+      "Painful swollen tongue",
+      "Sore swollen throat",
+      "Post-stroke aphasia",
+      "Wasting-thirst",
+      "Vomiting",
+      "Severe nausea"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "reviewStatus": "draft_source_checked",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12",
+      "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+      "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
     ],
     "visualLinks": [
       {
@@ -527,7 +744,78 @@
       }
     ],
     "x": 175,
-    "y": 178
+    "y": 178,
+    "action_tags_zh": [
+      "清熱",
+      "生津",
+      "消腫",
+      "利舌"
+    ],
+    "action_tags_en": [
+      "Clear Heat",
+      "Generate fluids",
+      "Reduce swelling",
+      "Benefit tongue"
+    ],
+    "disease_tags_zh": [
+      "口瘡",
+      "舌腫痛",
+      "咽喉腫痛",
+      "失語",
+      "消渴",
+      "嘔吐"
+    ],
+    "disease_tags_en": [
+      "Mouth ulcers",
+      "Swollen tongue",
+      "Sore throat",
+      "Aphasia",
+      "Wasting-thirst",
+      "Vomiting"
+    ],
+    "acuTags": [
+      "舌病",
+      "咽喉腫痛",
+      "消渴",
+      "點刺出血",
+      "經外奇穴"
+    ],
+    "cautions": "舌下左側靜脈點刺出血，禁深刺；需避開舌下中央繫帶與大血管，控制出血。凝血異常、服抗凝藥、口腔感染或無法配合捲舌者慎用。一般不作留針。",
+    "cautionsEn": [
+      "Prick to bleed on the left sublingual vein; deep needling is contraindicated.",
+      "Avoid the central frenulum and major sublingual vessels; control bleeding. Use caution with bleeding disorders, anticoagulant therapy, oral infection, or inability to roll the tongue. Generally do not retain the needle."
+    ],
+    "exam_importance": "金津為舌下左側靜脈，常與玉液成對使用。主軸：清熱、生津、消腫、利舌；舌腫、口瘡、喉痹、消渴與中風失語要能連起來。",
+    "exam_pearl": "金津左、玉液右；多成對點刺出血。位置與海泉不同：海泉在舌下繫帶中央。",
+    "combinePointsZh": "【舌腫痛／喉痹】金津配玉液（EX-HN13）、海泉（EX-HN11）：舌下點刺出血，清熱消腫利咽。\n【中風失語】金津玉液配聚泉（EX-HN10）、廉泉（CV23）、內關（PC6）：利舌開音、醒神通絡。\n【消渴口乾】金津玉液配承漿（CV24）、曲池（LI11）、太衝（LR3）：清熱生津，改善口乾煩渴。",
+    "combinePointsEn": "Swollen tongue / throat obstruction: Jinjin with Yuye (EX-HN13) and Haiquan (EX-HN11), often by sublingual bloodletting, clears Heat and reduces swelling.\nPost-stroke aphasia: Jinjin-Yuye with Juquan (EX-HN10), Lianquan (CV23), and Neiguan (PC6) benefits the tongue, opens speech, and unblocks collaterals.\nWasting-thirst with dry mouth: Jinjin-Yuye with Chengjiang (CV24), Quchi (LI11), and Taichong (LR3) clears Heat and generates fluids.",
+    "clinical_pearls": "American Dragon 合併列 Jinjin-Yuye，主治比本地舊卡更完整：口瘡、舌腫、喉痹、失音、中風後失語、消渴、嘔吐與劇烈噁心。Me & Qi 對舌下出血風險寫得更細，安全欄保留其警告方向。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jinjin-ex-hn12",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "functions": [
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "indications": [
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "cautions": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "combinations": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ]
+    }
   },
   {
     "code": "EX-HN13",
@@ -540,26 +828,32 @@
     "location": "口腔內，舌下靜脈右側。",
     "locationEn": "In the oral cavity, on the right sublingual vein.",
     "techniqueNotes": "三稜針點刺出血。\nPrick to bleed.",
-    "functions": "清熱生津，消腫止痛",
-    "functionsEn": "Clears heat and generates fluids; Reduces swelling",
+    "functions": "清熱生津，消腫利舌，開音利咽",
+    "functionsEn": "Clears Heat; Generates fluids; Reduces swelling; Benefits the tongue and throat",
     "patterns": [
-      "口腔炎",
-      "扁桃腺炎",
+      "口瘡",
+      "舌腫痛",
       "咽喉腫痛",
+      "中風失語",
       "消渴",
-      "失語"
+      "嘔吐",
+      "劇烈噁心"
     ],
     "patternsEn": [
-      "Stomatitis",
-      "Tonsillitis",
-      "Sore throat",
-      "Diabetes",
-      "Aphasia"
+      "Mouth ulcers",
+      "Painful swollen tongue",
+      "Sore swollen throat",
+      "Post-stroke aphasia",
+      "Wasting-thirst",
+      "Vomiting",
+      "Severe nausea"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "reviewStatus": "draft_source_checked",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
+      "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+      "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
     ],
     "visualLinks": [
       {
@@ -570,7 +864,80 @@
       }
     ],
     "x": 181,
-    "y": 178
+    "y": 178,
+    "action_tags_zh": [
+      "清熱",
+      "生津",
+      "消腫",
+      "利舌"
+    ],
+    "action_tags_en": [
+      "Clear Heat",
+      "Generate fluids",
+      "Reduce swelling",
+      "Benefit tongue"
+    ],
+    "disease_tags_zh": [
+      "口瘡",
+      "舌腫痛",
+      "咽喉腫痛",
+      "失語",
+      "消渴",
+      "嘔吐"
+    ],
+    "disease_tags_en": [
+      "Mouth ulcers",
+      "Swollen tongue",
+      "Sore throat",
+      "Aphasia",
+      "Wasting-thirst",
+      "Vomiting"
+    ],
+    "acuTags": [
+      "舌病",
+      "咽喉腫痛",
+      "消渴",
+      "點刺出血",
+      "經外奇穴"
+    ],
+    "cautions": "舌下右側靜脈點刺出血，禁深刺，禁灸；需避開舌下中央繫帶與大血管，控制出血。凝血異常、服抗凝藥、口腔感染或無法配合捲舌者慎用。一般不作留針。",
+    "cautionsEn": [
+      "Prick to bleed on the right sublingual vein; deep needling and moxibustion are contraindicated.",
+      "Avoid the central frenulum and major sublingual vessels; control bleeding. Use caution with bleeding disorders, anticoagulant therapy, oral infection, or inability to roll the tongue. Generally do not retain the needle."
+    ],
+    "exam_importance": "玉液為舌下右側靜脈，與金津成對。主軸：清熱、生津、消腫、利舌；常用於舌腫痛、口瘡、喉痹、消渴與失語。",
+    "exam_pearl": "金津左、玉液右；多成對點刺出血。玉液安全重點是舌下靜脈出血風險，不能寫成一般皮膚感染套話。",
+    "combinePointsZh": "【舌腫痛／喉痹】玉液配金津（EX-HN12）、海泉（EX-HN11）：舌下點刺出血，清熱消腫利咽。\n【中風失語】金津玉液配聚泉（EX-HN10）、廉泉（CV23）、內關（PC6）：利舌開音、醒神通絡。\n【消渴口乾】金津玉液配承漿（CV24）、曲池（LI11）、太衝（LR3）：清熱生津，改善口乾煩渴。",
+    "combinePointsEn": "Swollen tongue / throat obstruction: Yuye with Jinjin (EX-HN12) and Haiquan (EX-HN11), often by sublingual bloodletting, clears Heat and reduces swelling.\nPost-stroke aphasia: Jinjin-Yuye with Juquan (EX-HN10), Lianquan (CV23), and Neiguan (PC6) benefits the tongue, opens speech, and unblocks collaterals.\nWasting-thirst with dry mouth: Jinjin-Yuye with Chengjiang (CV24), Quchi (LI11), and Taichong (LR3) clears Heat and generates fluids.",
+    "clinical_pearls": "eLotus 將玉液主治收斂為失語/舌強痛腫與嘔吐；AD 與 Me & Qi 補入口瘡、喉痹、消渴、失音、劇烈噁心等。卡片保留來源差異，不把單一來源當共識。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuye-ex-hn13",
+        "https://www.americandragon.com/Points/Jinjin-Yuye.html",
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "cautions": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ],
+      "combinations": [
+        "https://www.meandqi.com/knowledge-base/acupuncture/yuye-ex-hn-13"
+      ]
+    }
   },
   {
     "code": "EX-HN14",
@@ -600,7 +967,7 @@
       "Insomnia"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "reviewStatus": "draft_source_checked",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
     ],
@@ -613,7 +980,64 @@
       }
     ],
     "x": 163,
-    "y": 185
+    "y": 185,
+    "action_tags_zh": [
+      "明目",
+      "聰耳",
+      "安神"
+    ],
+    "action_tags_en": [
+      "Benefit eyes",
+      "Benefit hearing",
+      "Calm spirit"
+    ],
+    "disease_tags_zh": [
+      "眼病",
+      "耳鳴",
+      "失眠"
+    ],
+    "disease_tags_en": [
+      "Eye disorders",
+      "Tinnitus",
+      "Insomnia"
+    ],
+    "acuTags": [
+      "眼病",
+      "耳鳴",
+      "失眠",
+      "頸部",
+      "經外奇穴"
+    ],
+    "cautions": "頸部近乳突、耳後與上頸部結構，依 eLotus 以直刺 0.5~0.8 寸為準；避免過深或向顱底/咽喉深部方向進針。局部感染、腫塊或術後瘢痕處慎用。",
+    "cautionsEn": [
+      "Posterior-auricular/upper-neck structures are nearby. Use perpendicular insertion 0.5-0.8 cun per eLotus; avoid deep insertion or directing the needle toward the skull base or deep throat.",
+      "Use caution with local infection, masses, or postsurgical scarring."
+    ],
+    "exam_importance": "眼耳與安神相關經外穴。定位在翳風 TE17 後 1 寸；與安眠、風池區域接近，但主軸偏眼病/耳鳴。",
+    "exam_pearl": "翳明不要和安眠混：翳明在 TE17 後 1 寸，主眼病與耳鳴；安眠在 TE17-GB20 中點，主失眠。",
+    "combinePointsZh": "【眼病／視力問題】翳明配睛明（BL1）、光明（GB37）、太陽（EX-HN5）：明目退翳。\n【耳鳴】翳明配翳風（TE17）、聽宮（SI19）、中渚（TE3）：疏通耳周少陽經氣。",
+    "combinePointsEn": "Eye disorders / visual problems: Yiming with Jingming (BL1), Guangming (GB37), and Taiyang (EX-HN5) benefits the eyes and clears visual obstruction.\nTinnitus: Yiming with Yifeng (TE17), Tinggong (SI19), and Zhongzhu (TE3) unblocks the Shaoyang channel network around the ear.",
+    "clinical_pearls": "eLotus 對翳明的內容很精簡：眼病、耳鳴、失眠；技法 0.5~0.8 寸。原本本地卡 0.5~1.0 寸與可灸需要後續用課件/其他來源再確認。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+      ],
+      "safety_note": [
+        "anatomy-based note from posterior-auricular/upper-neck location"
+      ]
+    }
   },
   {
     "code": "EX-HN15",
@@ -641,9 +1065,10 @@
       "Asthma"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "sourced_elotus_direct",
+    "reviewStatus": "draft_source_checked",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
+      "https://www.americandragon.com/Points/Bailao.html"
     ],
     "visualLinks": [
       {
@@ -654,7 +1079,77 @@
       }
     ],
     "x": 178,
-    "y": 200
+    "y": 200,
+    "action_tags_zh": [
+      "補肺",
+      "化痰",
+      "止咳平喘",
+      "舒筋通絡"
+    ],
+    "action_tags_en": [
+      "Tonify Lung",
+      "Transform Phlegm",
+      "Stop cough and calm wheezing",
+      "Relax sinews and unblock collaterals"
+    ],
+    "disease_tags_zh": [
+      "咳嗽",
+      "哮喘",
+      "百日咳",
+      "肺癆",
+      "頸項強痛",
+      "瘰癧"
+    ],
+    "disease_tags_en": [
+      "Cough",
+      "Asthma",
+      "Pertussis",
+      "Lung consumption",
+      "Stiff neck",
+      "Scrofula"
+    ],
+    "acuTags": [
+      "咳喘",
+      "頸項痛",
+      "肺病",
+      "經外奇穴"
+    ],
+    "cautions": "後頸近頸椎與椎旁肌群；依本地/eLotus/AD 多列直刺或垂直刺約 0.5~0.8 寸，避免深刺、強刺激或向椎管方向進針。頸椎不穩、局部腫塊、感染或嚴重骨質問題者慎用。",
+    "cautionsEn": [
+      "Posterior-neck point near cervical vertebrae and paraspinal tissues. Use shallow perpendicular needling, commonly about 0.5-0.8 cun; avoid deep needling, strong stimulation, or directing the needle toward the spinal canal.",
+      "Use caution with cervical instability, local masses, infection, or severe bony pathology."
+    ],
+    "exam_importance": "頸百勞/百勞偏肺癆、久咳、咳喘與頸項強痛；AD 額外列化痰、散結、止咳平喘與瘰癧，應比舊卡更完整。",
+    "exam_pearl": "頸百勞的「勞」不是單純頸痛；要連到肺癆、久咳、骨蒸潮熱、盜汗這條虛勞/肺系線。",
+    "combinePointsZh": "【久咳／哮喘】頸百勞配肺俞（BL13）、定喘（EX-B1）、膻中（CV17）：補肺化痰，降氣平喘。\n【瘰癧／頸部結節】頸百勞配肘尖（EX-UE1）：AD 記載可用灸法於瘰癧方向，實作需依個案安全評估。",
+    "combinePointsEn": "Chronic cough / asthma: Jingbailao with Feishu (BL13), Dingchuan (EX-B1), and Shanzhong (CV17) supports Lung Qi, transforms Phlegm, and calms wheezing.\nScrofula / neck nodules: Jingbailao with Zhoujian (EX-UE1) appears in American Dragon as a moxa-oriented scrofula combination; clinical use requires case-specific safety judgment.",
+    "clinical_pearls": "AD 的 Bailao 頁比 eLotus 補充更多：transforms Phlegm、dissipates nodules、stops cough、calms dyspnea；主治含 spontaneous sweating、night sweats、steaming bone disorder，這些不應被簡化掉。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
+        "https://www.americandragon.com/Points/Bailao.html"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
+        "https://www.americandragon.com/Points/Bailao.html"
+      ],
+      "functions": [
+        "https://www.americandragon.com/Points/Bailao.html"
+      ],
+      "indications": [
+        "https://www.americandragon.com/Points/Bailao.html"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
+        "https://www.americandragon.com/Points/Bailao.html"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Bailao.html"
+      ],
+      "safety_note": [
+        "anatomy-based note from posterior cervical location"
+      ]
+    }
   },
   {
     "code": "EX-HN16",
@@ -667,27 +1162,32 @@
     "location": "頸部，翳風穴（TE17）與風池穴（GB20）連線中點。",
     "locationEn": "On the neck, midpoint between Yifeng (TE 17) and Fengchi (GB 20).",
     "techniqueNotes": "直刺0.8~1.2寸。可灸。\nPerpendicular 0.8-1.2 cun. Moxa applicable.",
-    "functions": "安神定志，鎮靜催眠",
-    "functionsEn": "Calms the mind; Tranquilizes and promotes sleep",
+    "functions": "安神定志，疏肝寧心，鎮靜助眠",
+    "functionsEn": "Calms the spirit; Soothes the Liver; Tranquilizes and promotes sleep",
     "patterns": [
       "失眠",
-      "神經衰弱",
-      "精神病",
+      "心悸",
+      "煩躁不安",
       "眩暈",
-      "頭痛"
+      "頭痛",
+      "耳鳴",
+      "精神疾患"
     ],
     "patternsEn": [
       "Insomnia",
-      "Neurasthenia",
-      "Psychosis",
-      "Dizziness",
-      "Headache"
+      "Palpitations",
+      "Agitation and restlessness",
+      "Vertigo",
+      "Headache",
+      "Tinnitus",
+      "Mental disorders"
     ],
     "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "combinePointsZh": "【失眠】安眠配神門（HT7）、三陰交（SP6）：鎮靜安神助眠。",
-    "reviewStatus": "sourced_elotus_direct",
+    "combinePointsZh": "【失眠】安眠配神門（HT7）、三陰交（SP6）：寧心安神、交通心腎。\n【躁動／精神疾患】安眠配水溝（GV26）、大椎（GV14）、陶道（GV13）：AD 記載方向，偏清熱醒神、鎮靜安定。\n【眩暈】安眠配曲池（LI11）、豐隆（ST40）：清熱化痰、平肝降逆。",
+    "reviewStatus": "draft_source_checked",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+      "https://www.americandragon.com/Points/Anmian.html"
     ],
     "visualLinks": [
       {
@@ -698,7 +1198,76 @@
       }
     ],
     "x": 163,
-    "y": 188
+    "y": 188,
+    "action_tags_zh": [
+      "安神",
+      "疏肝",
+      "鎮靜",
+      "助眠"
+    ],
+    "action_tags_en": [
+      "Calm spirit",
+      "Soothe Liver",
+      "Tranquilize",
+      "Promote sleep"
+    ],
+    "disease_tags_zh": [
+      "失眠",
+      "心悸",
+      "眩暈",
+      "頭痛",
+      "耳鳴",
+      "躁動"
+    ],
+    "disease_tags_en": [
+      "Insomnia",
+      "Palpitations",
+      "Vertigo",
+      "Headache",
+      "Tinnitus",
+      "Agitation"
+    ],
+    "acuTags": [
+      "失眠",
+      "安神",
+      "眩暈",
+      "頭痛",
+      "經外奇穴"
+    ],
+    "cautions": "後頸近乳突、風池區與上頸部深層結構；eLotus 列直刺 0.5~0.8 寸，AD 有 0.5~1 寸與 1~1.5 寸不同記載，卡片以保守深度為主並標來源差異。避免深刺或向顱底深部進針；眩暈、體弱或強刺激敏感者慎用。",
+    "cautionsEn": [
+      "Posterior-neck point near the mastoid/Fengchi region and deep upper-cervical structures. eLotus lists perpendicular 0.5-0.8 cun, while American Dragon includes broader depths; use the conservative range and document the discrepancy.",
+      "Avoid deep insertion or needling toward the skull base. Use caution in frail, dizzy, or strong-stimulation-sensitive patients."
+    ],
+    "exam_importance": "安眠是經外失眠要穴。定位抓 TE17 與 GB20 連線中點；主軸安神助眠，兼眩暈、頭痛、心悸與精神躁動。",
+    "exam_pearl": "安眠 = 睡眠專穴；與神門、三陰交常配。和翳明位置相近但用途不同：安眠偏失眠/神志，翳明偏眼耳。",
+    "combinePointsEn": "Insomnia: Anmian with Shenmen (HT7) and Sanyinjiao (SP6) calms the spirit and supports Heart-Kidney communication.\nAgitation / mental disorders: Anmian with Shuigou (GV26), Dazhui (GV14), and Taodao (GV13), as listed by American Dragon, emphasizes clearing Heat, restoring consciousness, and calming agitation.\nVertigo: Anmian with Quchi (LI11) and Fenglong (ST40) clears Heat, transforms Phlegm, and anchors rebellious Qi.",
+    "clinical_pearls": "AD 補出失眠以外的應用：agitation、palpitations、epilepsy、hypertension with insomnia/restlessness、drug withdrawal 等；本卡將其歸為精神/神志與眩暈頭痛線，不塞進單一「失眠」標籤。",
+    "field_sources": {
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+        "https://www.americandragon.com/Points/Anmian.html"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+        "https://www.americandragon.com/Points/Anmian.html"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+        "https://www.americandragon.com/Points/Anmian.html"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+        "https://www.americandragon.com/Points/Anmian.html"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+        "https://www.americandragon.com/Points/Anmian.html"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Anmian.html"
+      ]
+    }
   },
   {
     "code": "EX-HN17",

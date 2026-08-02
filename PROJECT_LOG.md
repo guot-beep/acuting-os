@@ -1,3 +1,17 @@
+# 2026-08-02 Codex - Quality snapshot refresh + TE filter fix
+- Scanned current status: Acupoints 361/361 standard-channel template-grade; Herbs 329 local cards, NCBAHM Appendix A 304/304 closed, 93 template-grade, 37 source_checked; Formulas 201 total, 153 with composition, 2 template-grade; Conditions 150; Comparisons 41.
+- Updated `data/audits/missing_report.json` so Quality distinguishes framework / made / grade / verified and no longer shows stale 327/79 herb numbers.
+- Updated `app.js` Quality progress logic to read audit-layer counts and use formula composition count for Made.
+- Fixed Acupoint 14-channel branch filtering: TE now matches exact point-code prefix only, preventing LI points from appearing because "Large InTEstine" contains `TE`.
+- Fixed the acupoint runtime adapter / validation mismatch: `validate-data.js` now matches the current 769-point runtime layer and confirms contraindication / safety lines survive adaptation.
+- Added `scripts/validate-extra-point-standard.js` for repeatable 經外奇穴 audit: 72 records, 60 with issues, 16 missing numeric depth, 0 missing source URL; this backlog is now recorded in Quality data.
+- Validation: build-data, app.js syntax, interaction audit, acupoint-standard, comparison-standard, herb-standard, formula-standard, validate-data, and extra-point audit PASS.
+# 2026-08-02 Codex — Tian Hua Fen + renderer guard
+- Reworked `herb.tian_hua_fen` to template-grade draft from Chenoweth curriculum + NCBAHM 2026 CH Appendix A + American Dragon + CloudTCM.
+- Separated actions, indications, contraindications, cautions, modern pharmacology, dose notes, Exam Pearl, and field-level sources.
+- Added `js/knowledge.js` `asList()` guards so Herbs / Formulas / Conditions do not all fail when one record has a string where an array is expected.
+- Validation: build-data, herb-standard Clear Heat worklist, content-junk, interaction audit, JS syntax, and diff-check PASS.
+- Manual check needed: Ctrl+F5 then open `#ws/herb`, `#ws/formula`, `#ws/condition` and confirm cards render.
 # AcuTing OS Project Log
 
 ## 2026-08-01 Codex — 安宮牛黃丸 template-grade 修整 + 雄黃／硃砂安全連結卡
@@ -2648,3 +2662,9 @@ Current repo state as of this log:
 - Added the rule that every herb, formula or point named by the exam outline/course materials must have a record even when no template exists.
 - Validation: build-data, herb-standard, content-junk, pair delta and diff checks PASS.
 - Existing full-repo blockers remain: validate-data 751/681 count mismatch and legacy encoding findings outside this batch.
+# 2026-08-02 Codex - Clear Heat Drain Fire remaining 4-card parity pass
+- Reworked `herb.xia_ku_cao`, `herb.dan_zhu_ye`, `herb.he_ye`, and `herb.lian_zi_xin` to template-grade draft quality.
+- Separated actions vs indications, added bilingual labels, board focus, Exam Pearl, clinical-use synthesis, dose/source notes, part used, contraindications/cautions, modern notes, and field-level sources.
+- Added formal `herb_pairs.json` records for Xia Ku Cao eye/nodule pairs, Dan Zhu Ye Heart/Small Intestine Heat pairs, He Ye raw/charred preparation pairs, and Lian Zi Xin Heart-Fire/Heart-Kidney pairs.
+- Fixed Xia Ku Cao legacy render fields so unsupported old boilerplate actions no longer appear in generated data.
+- Validation: build-data, Clear Heat herb worklist, content-junk, interaction audit, JS syntax, focused mojibake scan, and diff-check PASS; known unrelated validate-data / validate-encoding failures remain.

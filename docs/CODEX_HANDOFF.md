@@ -1,5 +1,117 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff - Quality snapshot refresh and TE branch filter fix
+
+- Agent: Codex
+- Branch: codex/antigravity-validation-quality
+- Task: Scan current Herbs / Formulas / Acupoints / Comparisons status, update the Quality dashboard source, and fix Ting's report that TE branch filtering shows wrong LI points.
+- Files changed: app.js; scripts/validate-data.js; scripts/validate-extra-point-standard.js; data/audits/missing_report.json; generated app_data.js and knowledge_data.js.
+- What changed:
+  1. Fixed the 14-channel branch filter bug: standard-channel filtering now compares the exact point-code channel prefix via channelCodeFromPointCode(code), instead of substring matching the English meridian name. This prevents TE from matching Large InTEstine.
+  2. Updated Quality audit snapshot to 2026-08-02 current counts: Acupoints runtime 769, standard-channel template-grade 361/361; Herbs 329 local cards, NCBAHM Appendix A 304/304 closed, 93 template-grade, 37 source_checked; Formulas 201 total, 153 with composition, 2 template-grade by validator; Conditions 150; Comparisons 41.
+  3. Updated getDomainProgress() so Quality reads audit-layer counts when available. Formula Made now uses the stricter composition count instead of loose action/pattern presence; formula grade can use the validator-like field_sources count.
+  4. Fixed the acupoint runtime adapter / validator mismatch: validate-data.js now expects the current 769-point runtime layer and confirms contraindication / safety lines survive adaptation.
+  5. Added scripts/validate-extra-point-standard.js as the repeatable extra-point QA worklist: 72 records, 60 with issues, 16 missing numeric depth, 0 missing source URL. Quality now records this backlog so extra-point cleanup can be tracked separately from the already-strong 361 standard-channel layer.
+- Validation:
+  - build-data.js PASS.
+  - node --check app.js PASS.
+  - validate-interactions.js PASS.
+  - validate-acupoint-standard.js --worklist --all PASS: 361/361, 0 blocking defects.
+  - validate-comparison-standard.js --worklist --all PASS.
+  - validate-herb-standard.js --worklist --all PASS structural; worklist remains 329 because old cards still need template-quality revision and toneless pinyin is intentionally tolerated by Ting for now.
+  - validate-formula-standard.js --worklist --all PASS structural; reports 201 formulas, 153 with composition, 2 template-grade, plus known quality gaps.
+  - validate-data.js PASS.
+  - validate-extra-point-standard.js --all PASS audit mode; reports extra-point backlog for staged cleanup.
+- Protected areas not touched: no acupoint content records were rewritten; no formula/herb content was changed in this pass; untracked curriculum/conditions uploads were not touched.
+- Manual checks: Ctrl+F5, open Acupoints, select 14 Principal Channels -> TE. The list should start with TE/SJ points, not LI1/LI2. Then open Quality and confirm updated counts.
+- Next: continue acupoint work from the new extra-point audit list. Priority is source-backed cleanup of EX-HN / EX-B / EX-UE / EX-LE cautions and missing numeric technique depth, without deleting existing main functions or indications.
+
+---
+
+## [2026-08-02] Codex Handoff - Clear Heat Drain Fire remaining 4-card parity pass
+
+- Agent: Codex
+- Branch: codex/antigravity-validation-quality
+- Task: Continue Ting's Ma Huang-level herb-card refinement for Xia Ku Cao, Dan Zhu Ye, He Ye, and Lian Zi Xin.
+- Files changed: data/herbs/herb_canon_shortlist.json; data/herbs/herb_pairs.json; generated app_data.js and knowledge_data.js.
+- What changed:
+  1. Reworked Xia Ku Cao, Dan Zhu Ye, He Ye, and Lian Zi Xin from skeleton/mixed legacy content into template-grade draft cards with actions vs indications separated, bilingual aligned labels, board focus, exam pearl, clinical-use synthesis, dose notes, part used, contraindications/cautions, modern notes, and field sources.
+  2. Removed old Xia Ku Cao boilerplate from render-facing fields: no more unsupported "strengthens sinews/bones" or "tonifies Blood/nourishes Liver" as core actions.
+  3. Added formal herb-pair records for the 4-card pass, including Xia Ku Cao eye/nodule pairs, Dan Zhu Ye Heat-to-urine pairs, He Ye raw/charred preparation pairs, and Lian Zi Xin Heart-Fire/Heart-Kidney pairs.
+  4. Synced card_grade/content_quality plus legacy functions/actions/indications fields so the app renders the curated content, not old raw dump fields.
+- Source basis: NCBAHM 2026 CH Appendix A scope; Chenoweth course files; American Dragon exact pages; CloudTCM exact pages where found. He Ye CloudTCM exact page was not found/used; He Ye relies on course + AD + NCBAHM.
+- Validation:
+  - build-data.js PASS.
+  - validate-herb-standard.js --worklist --category Clear Heat - Drain Fire --all PASS structural; only toneless pinyin remains, which Ting currently accepts.
+  - validate-content-junk.js PASS.
+  - validate-interactions.js PASS.
+  - node --check js/knowledge.js PASS.
+  - git diff --check on herb files PASS.
+  - Focused mojibake scan on the 4 herb records and their pair records PASS.
+  - Existing unrelated failures remain: validate-data.js acupoint runtime safety/defaultPoints; global validate-encoding.js old acupoint/import/formula encoding noise.
+- Protected areas not touched: curriculum/conditions uploads, acupoint content, formula content, scripts, UI renderer.
+- Manual checks: Ctrl+F5, open Xia Ku Cao, Dan Zhu Ye, He Ye, Lian Zi Xin; confirm dose/part-used, Exam Core, Sources, and full Herb Pair cards render.
+- Next: continue Clear Heat category or switch to the next herb category after Ting visual review.
+
+---
+
+## [2026-08-02] Codex Handoff - Clear Heat Drain Fire 5-card parity + renderer dose/part fix
+
+- Agent: Codex
+- Branch: codex/antigravity-validation-quality
+- Task: Ting flagged Tian Hua Fen, Zhi Zi, Shi Gao, Zhi Mu, and Lu Gen as below Ma Huang-level note quality, and caught wrong generic dose / part-used fallback in the UI.
+- Files changed: data/herbs/herb_canon_shortlist.json; data/herbs/herb_pairs.json; js/knowledge.js; generated app_data.js and knowledge_data.js.
+- What changed:
+  1. Upgraded the five Clear Heat - Drain Fire herb cards toward Ma Huang parity: board focus, Exam Pearl, clinical-use note, source-specific dose note, and part_used_zh/en.
+  2. Moved simplified key_pairs out of the five records and into formal herb_pairs.json where appropriate, so full colored Herb Pair cards can render relation, rationale, indication, caution, formulas, and sources.
+  3. Added/updated formal pairs: Tian Hua Fen + Lu Gen; Tian Hua Fen + Mai Men Dong; Zhi Zi + Yin Chen Hao + Da Huang; Huang Lian + Huang Qin + Zhi Zi; and upgraded Ma Huang + Shi Gao, Shi Gao + Zhi Mu, Zhi Mu + Huang Bai with NCBAHM/course provenance.
+  4. Fixed js/knowledge.js renderer: dose now reads record.dosage / record.dosage_g correctly and no longer falls back to generic 6~15g; part used now reads top-level part_used_zh/en and no longer falls back to generic root/fruit/whole herb.
+- Validation:
+  - build-data.js PASS.
+  - validate-herb-standard.js --worklist --category Clear Heat - Drain Fire --all PASS structural.
+  - node --check js/knowledge.js PASS.
+  - validate-interactions.js PASS.
+  - git diff --check on touched files PASS.
+  - Focused mojibake scan on the five herb records and new/updated pair records PASS.
+  - Existing unrelated failures remain: validate-data.js acupoint runtime safety/defaultPoints; global validate-encoding.js old import/acupoint noise.
+- Protected areas not touched: curriculum/conditions uploads, acupoint content, formula content, scripts.
+- Manual checks: Ctrl+F5, open the five herb cards, confirm dose/part-used and full Herb Pairs render correctly.
+- Next: wait for Ting visual acceptance before continuing Xia Ku Cao, Dan Zhu Ye, He Ye, Lian Zi Xin.
+
+---
+
+## [2026-08-02 00:53 -07:00] Codex Handoff — Tian Hua Fen template pass + Herbs/Formulas/Conditions renderer guard
+
+- **Agent**: Codex
+- **Branch**: `codex/antigravity-validation-quality`
+- **Task**: Finish one more source-checked herb card, then address Ting's report that Herbs / Formulas / Conditions pages could show only the intro/header with no record cards.
+- **Repo state before work**: branch already had tracked herb-card changes in progress; many untracked `curriculum/conditions/` files remain user source uploads and were not touched.
+- **Files changed**:
+  - `data/herbs/herb_canon_shortlist.json`
+  - `js/knowledge.js`
+  - generated `data/generated/app_data.js`
+  - generated `data/generated/knowledge_data.js`
+- **What changed**:
+  1. Reworked `herb.tian_hua_fen` from mixed CloudTCM/raw-tag content into a source-tracked template card using Chenoweth curriculum, NCBAHM 2026 CH Appendix A inclusion, American Dragon, CloudTCM, and the local Pinyin/Latin list.
+  2. Separated traditional actions from indications and modern pharmacology. Added aligned `functions_zh` / `actions_en`, aligned `indications_zh` / `indications_en`, strict `contraindications_zh/en`, `cautions_zh/en`, `modern_functions_zh/en`, dose note, Exam Pearl, board focus, key pairs, and `field_sources.actions_en`.
+  3. Preserved source discrepancy: CloudTCM lists pregnancy contraindication and Wu Tou incompatibility; American Dragon gives deficiency-cold caution and notes injection abortifacient risk rather than listing oral pregnancy contraindication as a formal contraindication.
+  4. Fixed the likely shared UI crash path for Herbs / Formulas / Conditions by adding `asList()` guards in `js/knowledge.js`. The renderer now tolerates string-vs-array fields instead of throwing before later sections render. Confirmed the problematic current data point: `formula.an_gong_niu_huang_wan.pattern_focus_en` is a string; this could stop formula rendering and prevent herb/condition grids from mounting.
+  5. Restored `js/knowledge.js` text encoding to readable UTF-8 while applying the guard patch.
+- **Validation run and results**:
+  - `node scripts/build-data.js`: PASS.
+  - `node scripts/validate-herb-standard.js --worklist --category "清熱藥 / Clear Heat - Drain Fire" --all`: PASS structural. `herb.tian_hua_fen` now only appears for the ignored tone-mark pinyin warning.
+  - `node scripts/validate-content-junk.js`: PASS.
+  - `node scripts/validate-interactions.js`: PASS.
+  - `node --check js/knowledge.js`: PASS.
+  - `git diff --check`: PASS.
+- **Protected areas explicitly not touched**: no `curriculum/conditions/` uploads, no scripts, no formula/herb mass rewrite outside the active herb batch, and no manual edits to generated files except via `build-data.js`.
+- **Known risks / manual checks needed**:
+  1. Browser refresh with Ctrl+F5 and manually check `#ws/herb`, `#ws/formula`, and `#ws/condition` now show search/filter controls and cards.
+  2. Headless browser verification could not be run because bundled Playwright has no browser binary installed in this environment.
+  3. The renderer guard prevents page-wide crashes, but individual data fields that are strings where arrays are expected should still be normalized later.
+- **Next recommended action**: After Ting confirms UI cards render again, continue the Clear Heat - Drain Fire review with `herb.zhi_zi`, `herb.xia_ku_cao`, `herb.dan_zhu_ye`, and `herb.he_ye`, then return to formula-card refinement.
+
+---
 ## [2026-08-01] Codex Handoff — 安宮牛黃丸 template-grade 修整；補雄黃／硃砂安全連結卡
 
 - **Agent**: Codex

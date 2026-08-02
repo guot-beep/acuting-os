@@ -1,4 +1,4 @@
-/**
+﻿/**
  * knowledge.js — renders real records from data/generated/knowledge_data.js
  * into the Formula, Condition, Sources, and Quality sections.
  *
@@ -41,6 +41,11 @@
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
+  function asList(values) {
+    if (Array.isArray(values)) return values;
+    if (values == null || values === "") return [];
+    return [values];
+  }
   function tag(t) { return `<span class="k-tag">${esc(t)}</span>`; }
 
   /* Modern application tags were rendering as raw snake_case keys — common_cold,
@@ -73,7 +78,7 @@
   }
   function recordHasConcept(tags, conceptId) {
     if (!conceptId) return true;
-    return (tags || []).some((t) => resolveModernTag(t).id === conceptId);
+    return asList(tags).some((t) => resolveModernTag(t).id === conceptId);
   }
   function conceptLabel(id) {
     const c = MODERN_VOCAB.get(id);
@@ -104,7 +109,7 @@
      not modern applications; internal workflow states never render at all. */
   function modernTagChips(values) {
     const groups = { condition: [], symptom: [], pattern: [], unmapped: [] };
-    (values || []).forEach((raw) => {
+    asList(values).forEach((raw) => {
       const c = resolveModernTag(raw);
       if (c.type === "internal") return;
       (groups[c.type] || groups.unmapped).push(c);
@@ -132,7 +137,7 @@
   function modernInlineChips(values, limit = 6) {
     const seen = new Set();
     const chips = [];
-    (values || []).forEach((raw) => {
+    asList(values).forEach((raw) => {
       const c = resolveModernTag(raw);
       if (c.type === "internal" || seen.has(c.id) || chips.length >= limit) return;
       seen.add(c.id);
@@ -192,24 +197,24 @@
       record.category,
       record.category_zh,
       record.category_en,
-      ...(record.condition_tags_zh || []),
-      ...(record.condition_tags_en || []),
-      ...(record.indications_zh || []),
-      ...(record.indications_en || []),
-      ...(record.pattern_focus_zh || []),
-      ...(record.pattern_focus_en || []),
-      ...(record.pattern_indications_zh || []),
-      ...(record.pattern_indications_en || []),
-      ...(record.syndromes_zh || []),
-      ...(record.syndromes_en || [])
+      ...asList(record.condition_tags_zh),
+      ...asList(record.condition_tags_en),
+      ...asList(record.indications_zh),
+      ...asList(record.indications_en),
+      ...asList(record.pattern_focus_zh),
+      ...asList(record.pattern_focus_en),
+      ...asList(record.pattern_indications_zh),
+      ...asList(record.pattern_indications_en),
+      ...asList(record.syndromes_zh),
+      ...asList(record.syndromes_en)
     ];
     return fields.filter(Boolean).join(" ").toLowerCase();
   }
 
   function exteriorContextChips(record) {
     const modern = [
-      ...(record.modern_use_tags || []),
-      ...(record.modern_clinical_use_tags || [])
+      ...asList(record.modern_use_tags),
+      ...asList(record.modern_clinical_use_tags)
     ].map((raw) => resolveModernTag(raw).id);
     const text = recordTextForContext(record);
     const hasColdSearchTag = modern.includes("common_cold") || /感冒|common cold|外感|表證|解表|release exterior/.test(text);
@@ -1098,7 +1103,7 @@
   function herbPanels(record) {
     const exam = record.english_exam_track || {};
     const props = record.tcm_properties || {};
-    const dose = record.dosage_g || {};
+    const dose = record.dosage && typeof record.dosage === "object" ? record.dosage : {};
     const safety = record.safety_info || {};
     const visual = record.visual_reference || {};
     
@@ -1191,12 +1196,16 @@
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
     const keyPairs = (record.key_pairs || []).map((p) => {
       if (typeof p === "string") return `<div class="k-pair-item"><strong>${linkifyHerbs(p, record.id)}</strong></div>`;
-      const zh = p.rationale_zh || p.rationale || "";
-      const en = p.rationale_en || "";
+      const pairName = p.pair || p.name_zh || (asList(p.herbs_zh).length ? asList(p.herbs_zh).join(" + ") : "");
+      const pairNameEn = p.name_en || (asList(p.herbs_en).length ? asList(p.herbs_en).join(" + ") : "");
+      const zh = p.rationale_zh || p.relation_zh || p.pair_meaning_zh || p.rationale || "";
+      const en = p.rationale_en || p.relation_en || p.pair_meaning_en || "";
+      const source = p.source || p.pair_id || "";
       return `<div class="k-pair-item" style="margin-bottom:8px;padding:8px 12px;background:#f8fafc;border-left:3px solid #0284c7;border-radius:4px;">
-        <strong>${linkifyHerbs(p.pair || "", record.id)}</strong>
+        <strong>${linkifyHerbs(pairName, record.id)}${pairNameEn ? ` <small>${esc(pairNameEn)}</small>` : ""}</strong>
         ${zh ? `<p style="margin:4px 0 0 0;font-size:0.92em;color:#334155;">${linkifyHerbs(zh, record.id)}</p>` : ""}
         ${en ? `<p style="margin:2px 0 0 0;font-size:0.88em;color:#64748b;">${esc(en)}</p>` : ""}
+        ${source ? `<small style="display:block;margin-top:4px;color:#64748b;">${esc(source)}</small>` : ""}
       </div>`;
     }).join("");
     
@@ -1216,6 +1225,16 @@
       cleanList(safety.cautions_zh).length ? cleanList(safety.cautions_zh) : cleanList(record.cautions_zh),
       cleanList(safety.cautions_en).length ? cleanList(safety.cautions_en) : cleanList(record.cautions_en)
     );
+    const examPearlZh = usableText(record.exam_pearl_zh || record.exam_pearl);
+    const examPearlEn = usableText(record.exam_pearl_en);
+    const boardFocusZh = cleanList(record.board_exam_focus_zh);
+    const boardFocusEn = cleanList(record.board_exam_focus_en);
+    const boardFocusHtml = boardFocusZh.length
+      ? `<ul class="k-detail-list">${boardFocusZh.map((zh, i) => {
+          const en = boardFocusEn[i] || "";
+          return `<li>${esc(zh)}${en ? `<br><small style="color:#64748b;">${esc(en)}</small>` : ""}</li>`;
+        }).join("")}</ul>`
+      : "";
 
     return [
       { 
@@ -1223,12 +1242,13 @@
         label: "考試與傳統核心 Exam Core", 
         content: `
           ${record.exam_importance ? `<p class="k-exam-badge" style="color:#d97706;font-weight:bold;margin-bottom:8px;">${esc(record.exam_importance)}</p>` : ""}
-          ${record.exam_pearl ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 考試重點 Exam Pearl:</strong> ${esc(record.exam_pearl)}</div>` : ""}
+          ${examPearlZh ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 考試重點 Exam Pearl:</strong> ${esc(examPearlZh)}${examPearlEn ? `<br><small>${esc(examPearlEn)}</small>` : ""}</div>` : ""}
+          ${boardFocusHtml ? detailSection("Board Exam 重點", "NCBAHM / board high-yield differentiation", boardFocusHtml) : ""}
           <div class="k-detail-columns">
             ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
             ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered || record.channels_zh))}
-            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "6~15g")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
-            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "根 / 果實 / 全草")}</p>`)}
+            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || dose.raw_herb_daily_zh || record.dosage_g || "待補")}</p>${dose.granule_dose_g || dose.granule_dose_zh ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g || dose.granule_dose_zh)}</p>` : ""}${record.dose_note_zh ? `<p class="k-detail-note">${esc(record.dose_note_zh)}</p>` : ""}`)}
+            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || record.part_used_zh || record.part_used_en || "待補")}</p>`)}
           </div>
           ${detailSection("功效 (Actions)", "傳統功效 · 中英對照", `<div class="k-chip-cloud">${bilingualFunctions}${actionsAligned ? "" : actionsEn.map((a) => `<span class="k-chip" style="background:#ecfdf5;color:#047857;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(a)}</span>`).join("")}</div>`)}
           ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
@@ -1429,7 +1449,7 @@
           f.comparison_group ? `group: ${f.comparison_group}` : "",
           f.nccaom_high_yield ? "NCCAOM high-yield" : ""
         ].filter(Boolean).join(" · ");
-        const searchTags = (f.modern_clinical_use_tags || []).slice(0, 5);
+        const searchTags = asList(f.modern_clinical_use_tags).slice(0, 5);
         const exteriorChips = exteriorContextChips(f);
         if (!contentReady) {
           return `
@@ -1454,8 +1474,8 @@
             </header>
             <p class="k-en">${esc(f.name_en)}</p>
             <p class="k-meta">${esc(meta)}</p>
-            <p class="k-tags">${(f.pattern_focus_en || []).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
-            ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+            <p class="k-tags">${asList(f.pattern_focus_en).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
+            ${asList(f.safety_flags).length ? `<p class="k-flags">! ${asList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
             <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
           </article>`;
       }).join("");
@@ -1493,8 +1513,8 @@
             f.category,
             f.category_en,
             f.comparison_group,
-            ...(f.study_tags || []),
-            ...(f.modern_clinical_use_tags || [])
+            ...asList(f.study_tags),
+            ...asList(f.modern_clinical_use_tags)
           ].join(" ").toLowerCase();
           return categoryHit && (!q || text.includes(q));
         });
@@ -1551,8 +1571,8 @@
         </header>
         <p class="k-en">${esc(f.name_en)}</p>
         <p class="k-meta">${esc(f.category_en)}${f.nccaom_high_yield ? " · NCCAOM high-yield" : ""}</p>
-        <p class="k-tags">${(f.pattern_focus_en || []).map(tag).join("")}</p>
-        ${(f.safety_flags || []).length ? `<p class="k-flags">⚠ ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+        <p class="k-tags">${asList(f.pattern_focus_en).map(tag).join("")}</p>
+        ${asList(f.safety_flags).length ? `<p class="k-flags">⚠ ${asList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
       </article>`).join("");
 
     const box = document.createElement("div");
@@ -1569,7 +1589,7 @@
       const q = e.target.value.trim().toLowerCase();
       const hit = q
         ? records.filter((f) =>
-            [f.name_zh, f.name_en, f.pinyin, f.category_en, ...(f.study_tags || [])]
+            [f.name_zh, f.name_en, f.pinyin, f.category_en, ...asList(f.study_tags)]
               .join(" ").toLowerCase().includes(q))
         : records;
       el("formulaGrid").innerHTML = render(hit) || '<p class="k-missing">沒有符合的方劑。</p>';
@@ -1584,9 +1604,9 @@
     const herbCategory = (h) => h.category || "uncategorized";
     const categories = [...new Set(herbs.map(herbCategory).filter(Boolean))].sort((a, b) => a.localeCompare(b));
     const renderHerbs = (list) => list.map((h) => {
-      const formulaLinks = (h.related_formulas || []).slice(0, 5);
-      const modernTags = (h.modern_use_tags || []).slice(0, 5);
-      const safetyFlags = (h.safety_flags || []).slice(0, 4);
+      const formulaLinks = asList(h.related_formulas).slice(0, 5);
+      const modernTags = asList(h.modern_use_tags).slice(0, 5);
+      const safetyFlags = asList(h.safety_flags).slice(0, 4);
       const exteriorChips = exteriorContextChips(h);
       return `
         <article class="k-card k-herb-card" data-record-id="${esc(h.id)}">
@@ -1596,7 +1616,7 @@
           </header>
           <p class="k-en">${esc(h.name_en)}</p>
           <p class="k-meta">${esc(herbCategory(h))}</p>
-          <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
+          <p class="k-meta">${esc(asList(h.channels_entered).join(" / "))}</p>
           <p class="k-tags">${modernInlineChips(modernTags, 5)}${exteriorChips}</p>
           ${formulaLinks.length ? `<p class="k-meta">${esc(modeText("相關方劑：", "Related formulas:"))} ${formulaChips(formulaLinks)}</p>` : ""}
           ${safetyFlags.length ? `<p class="k-flags">${esc(modeText("審核：", "Review:"))} ${safetyFlags.map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
@@ -1634,11 +1654,11 @@
           h.name_en,
           h.pinyin,
           h.category,
-          ...(h.channels_entered || []),
-          ...(h.functions || []),
-          ...(h.related_formulas || []),
-          ...(h.safety_flags || []),
-          ...(h.modern_use_tags || [])
+          ...asList(h.channels_entered),
+          ...asList(h.functions),
+          ...asList(h.related_formulas),
+          ...asList(h.safety_flags),
+          ...asList(h.modern_use_tags)
         ].join(" ").toLowerCase();
         return categoryHit && (!q || text.includes(q));
       });
@@ -1779,12 +1799,12 @@
     // CONDITIONS_MODULE_DESIGN gate: do not present a condition as study-ready
     // until its safety prompts exist. Skeleton-only records remain counted below.
     const conds = allConds.filter((record) =>
-      (record.red_flags_zh || []).length && (record.red_flags_en || []).length
+      asList(record.red_flags_zh).length && asList(record.red_flags_en).length
     );
-    const eastern = K.conditions.eastern_diseases || [];
-    const patterns = K.conditions.tcm_patterns || [];
+    const eastern = (K.conditions && K.conditions.eastern_diseases) || [];
+    const patterns = (K.conditions && K.conditions.tcm_patterns) || [];
     const conditionSources = (record) => {
-      const links = (record.source_links || []).filter((link) =>
+      const links = asList(record.source_links).filter((link) =>
         link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
       );
       if (!links.length) return "";
@@ -1796,10 +1816,10 @@
       </div>`;
     };
     const renderConditions = (list) => list.map((c) => {
-      const relatedSymptoms = (c.related_tcm_symptoms || []).map((item) =>
+      const relatedSymptoms = asList(c.related_tcm_symptoms).map((item) =>
         tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
       ).join("");
-      const aliases = [...(c.aliases_zh || []), ...(c.aliases_en || [])];
+      const aliases = [...asList(c.aliases_zh), ...asList(c.aliases_en)];
       return `
         <article class="k-card k-condition-card" data-record-id="${esc(c.id)}">
           <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}</header>
@@ -1807,8 +1827,8 @@
           ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
           ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
-          ${(c.related_eastern_diseases || []).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
-          ${(c.red_flags_zh || []).length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags</summary><p class="k-flags">⚠ ${(c.red_flags_zh || []).slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
+          ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
+          ${asList(c.red_flags_zh).length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags</summary><p class="k-flags">⚠ ${asList(c.red_flags_zh).slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
           ${conditionSources(c)}
         </article>`;
     }).join("");
@@ -1816,7 +1836,7 @@
       <article class="k-card k-cloud-disease-card" data-record-id="${esc(record.id)}">
         <header><strong>${esc(record.name_zh)} <small>${esc(record.name_en)}</small></strong>${statusPill(record.review_status)}</header>
         <p class="k-meta">${esc(record.id)}</p>
-        <p class="k-tags">${(record.category_ids || []).map((id) => {
+        <p class="k-tags">${asList(record.category_ids).map((id) => {
           const category = cloudDiseaseCategoryById.get(id);
           return tag(category ? `${category.name_zh} · ${category.name_en}` : id);
         }).join("")}</p>
@@ -1830,8 +1850,9 @@
     const renderCloudDiseaseDirectory = () => {
       const query = String(el("cloudtcmDiseaseFilter")?.value || "").trim().toLowerCase();
       const filtered = cloudDiseaseEntries.filter((record) => {
-        const matchesCategory = !activeCloudDiseaseCategory || (record.category_ids || []).includes(activeCloudDiseaseCategory);
-        const text = [record.id, record.name_zh, record.name_en, ...(record.category_ids || []).map((id) => {
+        const recordCategoryIds = asList(record.category_ids);
+        const matchesCategory = !activeCloudDiseaseCategory || recordCategoryIds.includes(activeCloudDiseaseCategory);
+        const text = [record.id, record.name_zh, record.name_en, ...recordCategoryIds.map((id) => {
           const category = cloudDiseaseCategoryById.get(id);
           return category ? `${category.name_zh} ${category.name_en}` : id;
         })].join(" ").toLowerCase();
@@ -1881,8 +1902,8 @@
       const q = event.target.value.trim().toLowerCase();
       const hits = conds.filter((record) => [
         record.id, record.name_zh, record.name_en, record.icd_hint, record.category,
-        ...(record.aliases_zh || []), ...(record.aliases_en || []),
-        ...(record.related_tcm_symptoms || []).flatMap((item) => [item.name_zh, item.name_en])
+        ...asList(record.aliases_zh), ...asList(record.aliases_en),
+        ...asList(record.related_tcm_symptoms).flatMap((item) => [item.name_zh, item.name_en])
       ].join(" ").toLowerCase().includes(q));
       el("conditionGrid").innerHTML = renderConditions(hits) || '<p class="k-missing">找不到相符病症 / No matching condition.</p>';
     });
