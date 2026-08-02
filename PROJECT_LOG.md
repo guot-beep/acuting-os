@@ -2668,3 +2668,9 @@ Current repo state as of this log:
 - Added formal `herb_pairs.json` records for Xia Ku Cao eye/nodule pairs, Dan Zhu Ye Heart/Small Intestine Heat pairs, He Ye raw/charred preparation pairs, and Lian Zi Xin Heart-Fire/Heart-Kidney pairs.
 - Fixed Xia Ku Cao legacy render fields so unsupported old boilerplate actions no longer appear in generated data.
 - Validation: build-data, Clear Heat herb worklist, content-junk, interaction audit, JS syntax, focused mojibake scan, and diff-check PASS; known unrelated validate-data / validate-encoding failures remain.
+# 2026-08-02 Codex — Extra Points EX-HN18–22 source and safety pass
+- Refined EX-HN18 牽正, EX-HN19 夾承漿, EX-HN20 新設, EX-HN21 散笑, and EX-HN22 扁桃體 without deleting existing indications, combinations, or legacy technique text.
+- Added paired bilingual search tags and field-level provenance; replaced generic CloudTCM attribution with exact eLotus/American Dragon pages where an exact page was verifiably available.
+- Preserved and explicitly disclosed nomenclature conflicts: eLotus numbers 牽正 as EX-HN20 and 新設 as EX-HN23, while this database retains its immutable legacy display codes EX-HN18 and EX-HN20.
+- EX-HN21/22 exact professional pages were not located; their technique/safety text remains draft and now carries an explicit source-gap warning. EX-HN22 tongue-root needling is flagged high-risk and unvalidated.
+- Validation PASS: extra-point audit 50 → 45 issue records, build-data, validate-data (769 runtime), validate-interactions, JSON parse, and git diff check.

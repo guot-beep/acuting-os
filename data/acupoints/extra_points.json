@@ -1334,22 +1334,56 @@
       "Stomatitis",
       "TMJ pain"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
+    "action_tags_zh": [
+      "祛風疏風",
+      "通絡",
+      "止痛"
+    ],
+    "action_tags_en": [
+      "Dispel & Disperse Wind",
+      "Unblock the Collaterals",
+      "Alleviate Pain"
+    ],
+    "disease_tags_zh": [
+      "面癱",
+      "顳顎關節痛"
+    ],
+    "disease_tags_en": [
+      "Facial Paralysis",
+      "Temporomandibular Joint Pain"
+    ],
+    "cautions": "eLotus 與 American Dragon 的牽正穴頁均未列穴位專屬禁忌；不可把『未列禁忌』解讀為無風險。現有斜刺 0.5~1.0 寸僅代表兩來源記載的操作範圍，安全欄仍需持照針灸師優先複核。另兩來源將牽正編為 EX-HN20／N-HN20，與本庫既有 EX-HN18 顯示碼不同。",
+    "cautionsEn": [
+      "Neither the eLotus nor American Dragon Qianzheng page states a point-specific contraindication; absence of a listed contraindication must not be interpreted as absence of risk.",
+      "The existing oblique 0.5-1.0 cun range reflects those sources, while the safety field still requires priority review by a licensed acupuncturist.",
+      "Both sources number Qianzheng as EX-HN20/N-HN20, which differs from this record's legacy EX-HN18 display code."
+    ],
+    "evidence": "eLotus CORE and American Dragon exact Qianzheng pages; nomenclature conflict retained.",
     "combinePointsZh": "【面癱】牽正配地倉（ST4）、頰車（ST6）、合谷（LI4）：疏風通絡。",
-    "reviewStatus": "sourced_elotus_direct",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
+      "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 牽正 EX-HN18",
         "labelEn": "Extra Point · Qianzheng EX-HN18",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+      "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
       }
     ],
     "x": 168,
-    "y": 170
+    "y": 170,
+    "field_sources": {
+      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
+      "cautions": ["source-gap note: exact eLotus and American Dragon pages state no point-specific contraindication"],
+      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"]
+    }
   },
   {
     "code": "EX-HN19",
@@ -1374,21 +1408,38 @@
       "Trigeminal neuralgia",
       "Gingivitis"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["祛風疏風", "通絡", "止痛"],
+    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Alleviate Pain"],
+    "disease_tags_zh": ["面癱", "面部痛", "齒齦腫痛"],
+    "disease_tags_en": ["Facial Paralysis", "Facial Pain", "Swollen & Painful Gums"],
+    "cautions": "eLotus 的夾承漿精確頁未列穴位專屬禁忌；不可把來源沉默解讀為無風險。斜刺 0.5~1.0 寸是該頁記載，與本庫原 0.3~0.5 寸不同，兩個範圍均保留為待持照針灸師裁決的來源差異。",
+    "cautionsEn": [
+      "The exact eLotus Jiachengjiang page gives no point-specific contraindication; source silence must not be interpreted as absence of risk.",
+      "Its oblique 0.5-1.0 cun range differs from this record's legacy 0.3-0.5 cun range; both are retained as a source discrepancy requiring adjudication by a licensed acupuncturist."
+    ],
+    "evidence": "eLotus CORE exact Jiachengjiang page; depth discrepancy retained.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 夾承漿 EX-HN19",
         "labelEn": "Extra Point · Jiachengjiang EX-HN19",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+      "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
       }
     ],
     "x": 178,
-    "y": 185
+    "y": 185,
+    "field_sources": {
+      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
+      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
+      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
+      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
+      "cautions": ["source-gap note: exact eLotus page states no point-specific contraindication"]
+    }
   },
   {
     "code": "EX-HN20",
@@ -1413,21 +1464,40 @@
       "Cervical spondylosis",
       "Opisthotonos"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["祛風疏風", "通絡", "止痛"],
+    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Alleviate Pain"],
+    "disease_tags_zh": ["落枕", "頸項痛"],
+    "disease_tags_en": ["Stiff Neck", "Neck Pain"],
+    "cautions": "eLotus 的新設精確頁記載直刺 0.3~0.8 寸，但未列穴位專屬禁忌；不可把來源沉默解讀為無風險。本穴位於上頸部，現有安全資料不足，須由持照針灸師優先複核後才可視為安全欄完成。eLotus 將新設編為 EX-HN23，與本庫既有 EX-HN20 顯示碼不同。",
+    "cautionsEn": [
+      "The exact eLotus Xinshe page gives perpendicular needling at 0.3-0.8 cun but states no point-specific contraindication; source silence must not be interpreted as absence of risk.",
+      "Because this is an upper-neck point and the current safety evidence is incomplete, priority review by a licensed acupuncturist is required before the safety field can be considered complete.",
+      "eLotus numbers Xinshe as EX-HN23, differing from this record's legacy EX-HN20 display code."
+    ],
+    "evidence": "eLotus CORE exact Xinshe page; nomenclature conflict retained.",
+    "reviewStatus": "draft",
     "sources": [
-      "https://cloudtcm.com/acupoint"
+      "https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 新設 EX-HN20",
         "labelEn": "Extra Point · Xinshe EX-HN20",
-        "url": "https://cloudtcm.com/acupoint",
-        "source": "CloudTCM"
+      "url": "https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
+        "url": "https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
       }
     ],
     "x": 165,
-    "y": 195
+    "y": 195,
+    "field_sources": {
+      "location": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
+      "technique": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
+      "functions": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
+      "indications": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
+      "cautions": ["source-gap note: exact eLotus page states no point-specific contraindication"],
+      "nomenclature": ["https://dev.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"]
+    }
   },
   {
     "code": "EX-HN21",
@@ -1452,8 +1522,17 @@
       "Facial paralysis",
       "Nasal congestion"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["祛風疏風", "通絡", "通鼻竅"],
+    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Open the Nasal Orifices"],
+    "disease_tags_zh": ["面癱", "鼻塞"],
+    "disease_tags_en": ["Facial Paralysis", "Nasal Congestion"],
+    "cautions": "⚠️ 來源缺口：NCBAHM 2026 ACPL Appendix A 未列散笑，現有課件亦無命中；本批在 eLotus、American Dragon、CloudTCM 未找到可核讀的精確穴位頁。現有斜刺 0.3~0.5 寸與安全性尚未完成來源驗證，不得視為已核實操作指引。",
+    "cautionsEn": [
+      "⚠️ Source gap: Sanxiao is not listed in the NCBAHM 2026 ACPL Appendix A and was not found in the current course materials; no exact, reviewable point page was found in eLotus, American Dragon, or CloudTCM during this pass.",
+      "The existing oblique 0.3-0.5 cun method and its safety have not been source-verified and must not be treated as validated procedural guidance."
+    ],
+    "evidence": "Unverified legacy textbook attribution; exact professional source not located in this pass.",
+    "reviewStatus": "draft",
     "sources": [
       "https://cloudtcm.com/acupoint"
     ],
@@ -1466,7 +1545,12 @@
       }
     ],
     "x": 174,
-    "y": 168
+    "y": 168,
+    "field_sources": {
+      "scope_check": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md#p.5"],
+      "content_status": ["unverified legacy record; exact professional point page not located in this pass"],
+      "cautions": ["source-gap warning; not a validated needling instruction"]
+    }
   },
   {
     "code": "EX-HN22",
@@ -1491,8 +1575,17 @@
       "Sore throat",
       "Laryngitis"
     ],
-    "evidence": "Chinese Acupuncture Textbooks.",
-    "reviewStatus": "sourced_elotus_direct",
+    "action_tags_zh": ["清熱", "解毒", "消腫"],
+    "action_tags_en": ["Clear Heat", "Resolve Toxicity", "Reduce Swelling"],
+    "disease_tags_zh": ["扁桃體炎", "咽喉腫痛", "喉痹"],
+    "disease_tags_en": ["Tonsillitis", "Sore & Swollen Throat", "Throat Bi (Painful Obstruction of the Throat)"],
+    "cautions": "⚠️ 高風險來源缺口：NCBAHM 2026 ACPL Appendix A 未列扁桃體，現有課件亦無命中；本批在 eLotus、American Dragon、CloudTCM 未找到可核讀的精確體針頁。現有『向舌根方向直刺 1.0~1.5 寸』涉及深部頸部／咽部方向，在取得權威解剖與安全來源並經持照針灸師複核前，不得視為已核實操作指引。",
+    "cautionsEn": [
+      "⚠️ High-risk source gap: Biantaoti is not listed in the NCBAHM 2026 ACPL Appendix A and was not found in the current course materials; no exact, reviewable body-acupuncture page was found in eLotus, American Dragon, or CloudTCM during this pass.",
+      "The existing instruction to needle 1.0-1.5 cun toward the tongue root is directed into the deep neck/pharyngeal region and must not be treated as validated procedural guidance until supported by an authoritative anatomical safety source and reviewed by a licensed acupuncturist."
+    ],
+    "evidence": "Unverified legacy textbook attribution; exact professional body-acupuncture source not located in this pass.",
+    "reviewStatus": "draft",
     "sources": [
       "https://cloudtcm.com/acupoint"
     ],
@@ -1505,7 +1598,12 @@
       }
     ],
     "x": 170,
-    "y": 180
+    "y": 180,
+    "field_sources": {
+      "scope_check": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md#p.5"],
+      "content_status": ["unverified legacy record; exact professional body-acupuncture page not located in this pass"],
+      "cautions": ["high-risk source-gap warning; existing tongue-root direction is not validated"]
+    }
   },
   {
     "code": "EX-CA1",

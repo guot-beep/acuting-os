@@ -854,3 +854,22 @@
 - **Protected areas**: no JS, HTML, scripts, acupoint source data or user-uploaded curriculum files were modified or staged.
 - **Known limits**: CloudTCM exact single-herb URL for 白附子 was not verified, so it is intentionally absent; full-repo data-count/encoding failures pre-exist.
 - **Next**: Ting reviews five rendered cards and colored pair cards; Claude may review safety wording and merge.
+## [2026-08-02] Codex Handoff - Extra Points EX-HN18–22 source and safety pass
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: this handoff commit
+- Task: Continue high-quality, one-record-at-a-time review of EX-HN18 牽正 through EX-HN22 扁桃體.
+- Files changed: `data/acupoints/extra_points.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
+- What changed:
+  1. Added paired bilingual action/disease tags and field-level provenance without deleting existing functions, indications, combinations, or legacy technique text.
+  2. Replaced generic CloudTCM links with exact eLotus/American Dragon pages for 牽正, 夾承漿, and 新設.
+  3. Preserved and disclosed numbering conflicts rather than changing immutable IDs/codes: eLotus uses EX-HN20 for 牽正 and EX-HN23 for 新設.
+  4. Marked 散笑 and 扁桃體 as honest source gaps after no exact page was found in the prescribed sources; the existing technique text is retained but explicitly not validated. 扁桃體's tongue-root direction is flagged as high-risk pending authoritative anatomy/safety review.
+- Source basis: NCBAHM 2026 ACPL Appendix A scope check; `curriculum/acupoints/` exact-name search; exact eLotus pages for Qianzheng/Jiachengjiang/Xinshe; exact American Dragon Qianzheng page. No exact professional source was claimed for Sanxiao/Biantaoti.
+- Validation: JSON parse PASS; `validate-extra-point-standard.js --all` PASS audit mode (issue records 50/72 → 45/72; numeric-method gap remains 4/72); `build-data.js` PASS; `validate-data.js` PASS (769 runtime points); `validate-interactions.js` PASS; `git diff --check` PASS.
+- Protected areas not touched: no point IDs/codes renamed; no `app.js`, `js/`, `index.html`, validator/schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
+- Known risks / manual checks: Ting should review the displayed numbering-conflict and source-gap warnings. Do not treat EX-HN22's legacy 1.0–1.5 cun tongue-root direction as verified. The extra-point backlog remains 45/72 records.
+- Next: continue with EX-CA3/EX-CA4 or prioritize NCBAHM Appendix A points; EX-CA3 still lacks a measurable technique and caution, so it requires exact-source review before editing.
+
+---
