@@ -33,15 +33,15 @@
       "note": "validate-acupoint-standard.js --worklist --all passes: 361/361 standard-channel points, 0 blocking defects. validate-data.js now passes after preserving contraindications in runtime cautions and updating EXPECTED_TOTAL to the current expanded 769-point runtime.",
       "extra_points_audit": {
         "total_records": 72,
-        "records_with_issues": 59,
+        "records_with_issues": 57,
         "missing_numeric_depth": 0,
         "missing_measurable_method": 0,
         "missing_source_url": 0,
         "generic_source_url": 20,
-        "strict_template_complete": 13,
-        "four_source_audit_complete": 13,
+        "strict_template_complete": 15,
+        "four_source_audit_complete": 15,
         "validator": "scripts/validate-extra-point-standard.js --all",
-        "note": "Audit reset to Ting's full four-source card contract: Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link check, safety, combinations, and field-level provenance. EX-HN1 through EX-HN13 are complete under this contract; 59/72 remain on the worklist. All 72 still have a measurable needling/bloodletting/moxibustion method; 20 retain generic CloudTCM directory URLs pending replacement or explicit source-gap review. EX-HN12/13 preserve eLotus's separate EX codes versus AD's paired M-HN-20 code, disclose AD's duplicated-location typo, keep bloodletting non-quantitative, and distinguish pregnancy-vomiting indications from pregnancy safety clearance."
+        "note": "Audit reset to Ting's full four-source card contract: Board Outline scope, curriculum content, eLotus, American Dragon, paired bilingual template layers, exact-link check, safety, combinations, and field-level provenance. EX-HN1 through EX-HN15 are complete under this contract; 57/72 remain on the worklist. All 72 still have a measurable needling/bloodletting/moxibustion method; 20 retain generic CloudTCM directory URLs pending replacement or explicit source-gap review. EX-HN14 preserves the material 0.5-0.8 versus 1-1.5-cun source conflict; EX-HN15 discloses the EX-HN15/EX-HN17 same-location nomenclature issue and treats AD's 100-cone scrofula combination as non-operational source documentation."
       }
     },
     "herbs": {
@@ -80,7 +80,7 @@
     }
   },
   "next_recommended_batch": [],
-  "next_recommendation": "Continue the 72-record restart sequentially from EX-HN14 Yiming. Each record must integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup from the AD index; preserve source differences and legacy content, add paired bilingual strict-template fields, and record live exact-link checks or explicit source gaps. Current baseline: 13/72 strict-template and four-source complete (EX-HN1 through EX-HN13).",
+  "next_recommendation": "Continue the 72-record restart sequentially from EX-HN16 Anmian. Each record must integrate Board Outline scope, curriculum, eLotus, and American Dragon using pinyin lookup from the AD index; preserve source differences and legacy content, add paired bilingual strict-template fields, and record live exact-link checks or explicit source gaps. Current baseline: 15/72 strict-template and four-source complete (EX-HN1 through EX-HN15).",
   "herb_outline_coverage": {
     "captured_on": "2026-07-28",
     "source": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A",

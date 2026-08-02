@@ -2094,27 +2094,73 @@
     "region": "頭頸部 / Head and Neck",
     "location": "頸部，翳風穴（TE17）後1寸。",
     "locationEn": "On the neck, 1 cun posterior to Yifeng (TE 17).",
-    "techniqueNotes": "直刺0.5~1.0寸。可灸。\nPerpendicular 0.5-1.0 cun. Moxa applicable.",
+    "cunMeasurement": "以翳風（TE17）為基準，向後1寸取穴。",
+    "anatomyZh": "位於耳後、翳風（TE17）後方1寸的上頸部區。eLotus 與 AD 未提供逐層神經血管、顱底界線或深部方向安全圖譜；不能從表面1寸定位自行推定深刺路徑。",
+    "anatomyEn": "This is an upper-neck/posterior-auricular region 1 cun posterior to Yifeng (TE17). eLotus and AD provide no layer-by-layer neurovascular map, skull-base boundary, or deep-direction safety anatomy; the surface landmark must not be used to infer a deep safe path.",
+    "techniqueNotes": "eLotus：直刺0.5~0.8寸。AD：直刺1~1.5寸，並記同側頭部脹感或電感。既有卡片0.5~1.0寸保留為第三個版本。三者深度差異顯著，逐源並列，不合併成單一共識；AD 的電感描述不是追求電擊感的指令。\neLotus: perpendicular insertion 0.5-0.8 cun. AD: straight insertion 1-1.5 cun with a distended or electric sensation on the ipsilateral side of the head. The legacy 0.5-1.0-cun range is retained as a third version. The ranges differ materially and are kept source-specific rather than merged; AD's sensation description is not an instruction to seek an electric shock.",
+    "acumethodZh": "eLotus：直刺0.5~0.8寸。AD：直刺1~1.5寸，記同側頭部脹感／電感。既有：直刺0.5~1.0寸。",
+    "acumethodEn": "eLotus: perpendicular 0.5-0.8 cun. AD: straight 1-1.5 cun, with ipsilateral head distention/electric sensation described. Legacy: perpendicular 0.5-1.0 cun.",
+    "moxaZh": "既有卡片寫『可灸』；eLotus 翳明與 AD Yiming 條目均未說明艾灸。保留為待核實內容，不補造灸量，也不標成兩來源共識。",
+    "moxaEn": "The legacy card says moxibustion is applicable, but neither the eLotus Yiming nor AD Yiming entry addresses moxa. It is retained pending verification; no dose is inferred and it is not presented as two-source consensus.",
     "functions": "明目聰耳，鎮靜安神",
-    "functionsEn": "Brightens eyes and sharpens hearing; Calms mind",
+    "functionsEn": "Benefits the eyes; Benefits hearing and calms the Shen (legacy content supported by indications but not listed in source action fields)",
+    "functionsZhList": [
+      "明目",
+      "聰耳（既有內容；耳鳴主治支持，但來源功效欄未直接列）",
+      "鎮靜安神（既有內容；失眠／精神疾患主治支持，但來源功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Benefits the eyes",
+      "Benefits hearing (legacy action supported by tinnitus indication but not directly listed in source action fields)",
+      "Calms the Shen (legacy action supported by insomnia/mental-illness indications but not directly listed in source action fields)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "耳後上頸部眼耳／失眠用穴",
+      "eLotus／本庫用 EX-HN14；AD 用 M-HN-13",
+      "NCBAHM Appendix A 與現有課件未找到翳明專條"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Posterior-auricular upper-neck point used for eye, ear, and insomnia presentations",
+      "eLotus/database use EX-HN14; AD uses M-HN-13",
+      "No dedicated Yiming entry was found in NCBAHM Appendix A or current course material"
+    ],
+    "exam_star": 0,
     "patterns": [
       "近視",
+      "遠視",
+      "夜盲",
       "白內障",
       "視神經萎縮",
+      "頭痛",
       "耳鳴",
-      "失眠"
+      "眩暈",
+      "腮腺炎",
+      "失眠",
+      "精神疾患（AD 廣義表述）",
+      "各類眼病（eLotus 廣義表述）"
     ],
     "patternsEn": [
       "Myopia",
+      "Hypermetropia / hyperopia",
+      "Night blindness",
       "Cataract",
       "Optic atrophy",
+      "Headache",
       "Tinnitus",
-      "Insomnia"
+      "Vertigo",
+      "Parotitis",
+      "Insomnia",
+      "Mental illness (broad wording in AD)",
+      "Eye diseases (broad wording in eLotus)"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "draft_source_checked",
+    "evidence": "四層查核：NCBAHM Appendix A 與現有課件未找到翳明專條；eLotus 提供 EX-HN14、TE17 後1寸、直刺0.5~0.8寸、明目及眼病／耳鳴／失眠；AD 提供 M-HN-13、直刺1~1.5寸、完整眼耳頭暈／失眠／精神主治及三組配穴。既有0.5~1寸與可灸不刪，但可灸仍為來源缺口。WHO IRIS 僅作命名框架。",
+    "reviewStatus": "draft",
     "sources": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14",
+      "https://www.americandragon.com/Points/Yiming.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -2122,6 +2168,12 @@
         "labelEn": "Extra Point · Yiming EX-HN14 (eLotus CORE)",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14",
         "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 翳明 M-HN-13",
+        "labelEn": "American Dragon · Yiming M-HN-13",
+        "url": "https://www.americandragon.com/Points/Yiming.html",
+        "source": "American Dragon"
       }
     ],
     "x": 163,
@@ -2153,34 +2205,76 @@
       "頸部",
       "經外奇穴"
     ],
-    "cautions": "頸部近乳突、耳後與上頸部結構，依 eLotus 以直刺 0.5~0.8 寸為準；避免過深或向顱底/咽喉深部方向進針。局部感染、腫塊或術後瘢痕處慎用。",
+    "cautions": "eLotus 直刺0.5~0.8寸，AD 直刺1~1.5寸，既有卡片0.5~1寸；不可把 AD 最大深度當成跨來源通則。AD 記同側頭部脹感／電感，但沒有神經定位或停止規則，不能把電感當成追求目標。四來源未提供耳後上頸逐層神經血管與顱底安全界線。既有『避免過深或朝顱底／咽喉深部、局部感染／腫塊／術後瘢痕慎用』保留為解剖程序提示，不冒充來源原文。四來源未提供孕婦、兒童或其他高風險族群規則。",
     "cautionsEn": [
-      "Posterior-auricular/upper-neck structures are nearby. Use perpendicular insertion 0.5-0.8 cun per eLotus; avoid deep insertion or directing the needle toward the skull base or deep throat.",
-      "Use caution with local infection, masses, or postsurgical scarring."
+      "eLotus gives 0.5-0.8 cun perpendicular, AD gives 1-1.5 cun straight, and the legacy card gives 0.5-1 cun; AD's maximum must not be treated as cross-source consensus.",
+      "AD describes ipsilateral head distention/electric sensation but provides no neural target or stopping rule; do not pursue an electric sensation.",
+      "The four sources provide no layer-by-layer posterior-auricular/upper-neck neurovascular anatomy or skull-base safety boundary. Legacy warnings to avoid excessive depth/skull-base or deep-throat direction and to use caution with infection, masses, or postsurgical scarring remain procedural notes, not quoted source rules.",
+      "No point-specific pregnancy, pediatric, or other high-risk-population rule is supplied."
     ],
-    "exam_importance": "眼耳與安神相關經外穴。定位在翳風 TE17 後 1 寸；與安眠、風池區域接近，但主軸偏眼病/耳鳴。",
-    "exam_pearl": "翳明不要和安眠混：翳明在 TE17 後 1 寸，主眼病與耳鳴；安眠在 TE17-GB20 中點，主失眠。",
-    "combinePointsZh": "【眼病／視力問題】翳明配睛明（BL1）、光明（GB37）、太陽（EX-HN5）：明目退翳。\n【耳鳴】翳明配翳風（TE17）、聽宮（SI19）、中渚（TE3）：疏通耳周少陽經氣。",
-    "combinePointsEn": "Eye disorders / visual problems: Yiming with Jingming (BL1), Guangming (GB37), and Taiyang (EX-HN5) benefits the eyes and clears visual obstruction.\nTinnitus: Yiming with Yifeng (TE17), Tinggong (SI19), and Zhongzhu (TE3) unblocks the Shaoyang channel network around the ear.",
-    "clinical_pearls": "eLotus 對翳明的內容很精簡：眼病、耳鳴、失眠；技法 0.5~0.8 寸。原本本地卡 0.5~1.0 寸與可灸需要後續用課件/其他來源再確認。",
+    "exam_importance": "NCBAHM Appendix A 與現有課件未列翳明，不標 Board 核心。定位在翳風 TE17 後1寸；需和 TE17–GB20 中點的安眠區分。",
+    "exam_importance_en": "Yiming is not listed in NCBAHM Appendix A and has no dedicated current course entry, so it is not marked as Board core. It is 1 cun posterior to TE17 and should be distinguished from Anmian at the midpoint between TE17 and GB20.",
+    "exam_pearl": "翳明在 TE17 後1寸，主眼病、耳鳴，也列失眠；安眠在 TE17–GB20 中點。eLotus 0.5~0.8寸與 AD 1~1.5寸差異大，不能背成同一深度。",
+    "exam_pearl_en": "Yiming is 1 cun posterior to TE17 and is used chiefly for eye disorders and tinnitus, with insomnia also listed; Anmian lies midway between TE17 and GB20. eLotus 0.5-0.8 cun and AD 1-1.5 cun are materially different source ranges.",
+    "combinePointsZh": "【失眠；AD】翳明配印堂（M-HN-3）、內關（PC6）、三陰交（SP6）。\n【早期白內障；AD】翳明配球後（M-HN-8）、睛明（BL1）。\n【耳源性眩暈；AD】翳明配四瀆（TE9）、風池（GB20）、啞門（GV15）、內關（PC6）、太衝（LR3）。\n【眼病／視力問題；既有卡片】翳明配睛明（BL1）、光明（GB37）、太陽（EX-HN5）。\n【耳鳴；既有卡片】翳明配翳風（TE17）、聽宮（SI19）、中渚（TE3）。",
+    "combinePointsEn": "Insomnia (AD): Yiming with Yintang (M-HN-3), Neiguan (PC6), and Sanyinjiao (SP6).\nEarly-stage cataract (AD): Yiming with Qiuhou (M-HN-8) and Jingming (BL1).\nAural vertigo (AD): Yiming with Sidu (TE9), Fengchi (GB20), Yamen (GV15), Neiguan (PC6), and Taichong (LR3).\nEye disorders / visual problems (legacy card): Yiming with Jingming (BL1), Guangming (GB37), and Taiyang (EX-HN5).\nTinnitus (legacy card): Yiming with Yifeng (TE17), Tinggong (SI19), and Zhongzhu (TE3).",
+    "clinical_pearls": "eLotus 只列明目為功效，但耳鳴、失眠已列在主治；AD 進一步補遠視、夜盲、視神經萎縮、頭痛、眩暈、腮腺炎與精神疾患，以及三組精確配穴。技法深度衝突與可灸來源缺口均保留。",
+    "nameIntroZh": "eLotus 與 AD 均將翳明英譯 Shielding Brightness；可用來記憶其眼病主軸，但名稱不決定針刺方向或深度。",
+    "nameIntroEn": "Both eLotus and AD translate Yiming as 'Shielding Brightness.' The name helps recall its eye-disorder emphasis but does not determine needling direction or depth.",
     "field_sources": {
-      "location": [
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Yiming not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Yiming/翳明 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Yiming.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14",
+        "https://www.americandragon.com/Points/Yiming.html"
+      ],
+      "anatomy": [
+        "source-gap note: no full layer-by-layer posterior-auricular/upper-neck neurovascular anatomy or skull-base safety boundary"
       ],
       "technique": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14",
+        "https://www.americandragon.com/Points/Yiming.html",
+        "legacy 0.5-1.0-cun range retained as a distinct unverified version"
+      ],
+      "moxibustion": [
+        "source-gap note: eLotus and AD Yiming entries do not address moxa; legacy applicability retained pending verification"
       ],
       "functions": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14",
+        "legacy source-gap note: benefits hearing and calms Shen are supported by indications but not directly listed in source action fields"
       ],
       "indications": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14",
+        "https://www.americandragon.com/Points/Yiming.html"
       ],
       "cautions": [
-        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14: 0.5-0.8 cun",
+        "https://www.americandragon.com/Points/Yiming.html: 1-1.5 cun and ipsilateral head sensation description",
+        "source-gap note: no full anatomy, stopping rule for electric sensation, pregnancy, pediatric, or other high-risk protocol"
       ],
-      "safety_note": [
-        "anatomy-based note from posterior-auricular/upper-neck location"
+      "combinations": [
+        "https://www.americandragon.com/Points/Yiming.html",
+        "legacy card combinations retained separately"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yiming-ex-hn14: EX-HN14 Yiming",
+        "https://www.americandragon.com/Points/Yiming.html: M-HN-13 Yiming",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Yiming page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Yiming page",
+        "2026-08-02 WHO IRIS nomenclature record opened"
       ]
     }
   },
@@ -2194,26 +2288,79 @@
     "region": "頭頸部 / Head and Neck",
     "location": "頸部，大椎穴（GV14）直上2寸，後正中線旁開1寸。",
     "locationEn": "On the neck, 2 cun above Dazhui (GV 14), 1 cun lateral to posterior midline.",
-    "techniqueNotes": "直刺0.5~0.8寸。可灸。\nPerpendicular 0.5-0.8 cun. Moxa applicable.",
+    "cunMeasurement": "以大椎（GV14）為基準，向上2寸，再向左右各旁開1寸；雙側取穴。",
+    "anatomyZh": "位於後頸、GV14 上2寸且後正中線旁開1寸的頸椎旁區。eLotus 與 AD 未提供逐層肌肉、神經血管、椎板／椎管距離或體型差異資料；不能由表面寸量自行推定深刺安全。",
+    "anatomyEn": "This is a posterior cervical paraspinal region 2 cun superior to GV14 and 1 cun lateral to the posterior midline. eLotus and AD provide no layer-by-layer muscle/neurovascular anatomy, lamina/spinal-canal distance, or body-build variation data; deeper safety must not be inferred from surface cun measurements.",
+    "techniqueNotes": "eLotus：直刺或斜刺0.5~1寸，可灸。AD 並列直刺0.5~1寸、直刺0.3~0.5寸及垂直刺0.5~0.8寸，可灸。既有卡片0.5~0.8寸屬 AD 其中一版。各版本逐源保留，不把最大值與任意方向拼接。\neLotus: perpendicular or oblique insertion 0.5-1 cun; moxa applicable. AD lists straight insertion 0.5-1 cun, perpendicular 0.3-0.5 cun, and perpendicular 0.5-0.8 cun; moxa applicable. The legacy 0.5-0.8-cun range matches one AD variant. Source-specific versions are retained without mixing maximum depth with an arbitrary direction.",
+    "acumethodZh": "eLotus：直刺或斜刺0.5~1寸。AD：直刺0.5~1寸、直刺0.3~0.5寸，或垂直刺0.5~0.8寸。",
+    "acumethodEn": "eLotus: perpendicular or oblique 0.5-1 cun. AD: straight 0.5-1 cun, perpendicular 0.3-0.5 cun, or perpendicular 0.5-0.8 cun.",
+    "moxaZh": "eLotus 與 AD 均記可灸。AD 另列百勞配肘尖、灸100壯治瘰癧；此為特定來源的高量配穴療法，原頁未提供艾炷大小、分次、皮膚保護、灼傷管理或適用族群，不能改寫成一般常規或自行操作指令。",
+    "moxaEn": "Both eLotus and AD state that moxibustion is applicable. AD additionally lists Bailao with Zhoujian and 100 moxa cones for scrofula; this is a source-specific high-dose combination regimen. The page gives no cone size, session schedule, skin protection, burn management, or population criteria, so it must not be presented as routine practice or a self-treatment instruction.",
     "functions": "滋陰補肺，益氣化痰，舒筋通絡",
-    "functionsEn": "Nourishes Yin and tonifies Lungs; Relaxes tendons",
+    "functionsEn": "Nourishes and tonifies Lung Yin; Relaxes the sinews and opens the channel; Transforms Phlegm, dissipates nodules, stops cough, and calms dyspnea",
+    "functionsZhList": [
+      "滋養補益肺陰",
+      "舒筋通絡",
+      "化痰",
+      "散結",
+      "止咳",
+      "平喘",
+      "益氣（既有內容；eLotus／AD 功效欄未直接列）"
+    ],
+    "functionsEnList": [
+      "Nourishes and tonifies Lung Yin",
+      "Relaxes the sinews and opens the channel",
+      "Transforms Phlegm",
+      "Dissipates nodules",
+      "Stops cough",
+      "Calms dyspnea",
+      "Tonifies Qi (legacy content; not directly listed in the eLotus/AD action fields)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "雙側後頸肺系／頸項用穴",
+      "本庫／eLotus 用 EX-HN15 Jingbailao；AD 用 M-HN-30 Bailao",
+      "NCBAHM Appendix A 列 Bailao，但未標本庫 EX-HN15／EX-HN17 對應",
+      "eLotus 備註 Jingbailao EX-HN15 與 Bailao EX-HN17 定位看似相同，存在命名／重複點問題"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Bilateral posterior-neck point used for Lung-system and neck presentations",
+      "Database/eLotus use EX-HN15 Jingbailao; AD uses M-HN-30 Bailao",
+      "NCBAHM Appendix A lists Bailao but does not specify the database EX-HN15/EX-HN17 mapping",
+      "eLotus remarks that Jingbailao EX-HN15 and Bailao EX-HN17 appear to share the same location, creating a nomenclature/duplication issue"
+    ],
+    "exam_star": 0,
     "patterns": [
+      "咳嗽／久咳",
+      "哮喘／呼吸困難",
       "肺結核",
-      "頸肩疼痛",
       "百日咳",
-      "哮喘"
+      "頸項僵硬疼痛",
+      "頸背反弓",
+      "瘰癧",
+      "自汗",
+      "盜汗",
+      "骨蒸潮熱"
     ],
     "patternsEn": [
+      "Cough / chronic cough",
+      "Asthma / dyspnea",
       "Pulmonary TB",
-      "Neck/shoulder pain",
       "Whooping cough",
-      "Asthma"
+      "Neck stiffness and pain",
+      "Arched neck and back",
+      "Scrofula",
+      "Spontaneous sweating",
+      "Night sweats",
+      "Steaming-bone disorder with tidal fever"
     ],
-    "evidence": "WHO Extra Points Standard; eLotus CORE.",
-    "reviewStatus": "draft_source_checked",
+    "evidence": "四層查核：NCBAHM Appendix A 列 Bailao，但未裁定本庫 EX-HN15／EX-HN17 對應；現有課件未找到專條；eLotus 提供 EX-HN15 Jingbailao、定位、0.5~1寸直／斜刺、可灸、補肺陰／舒筋通絡及肺病頸病主治，並註 EX-HN15 與 EX-HN17 定位似相同；AD 提供 M-HN-30 Bailao、多個0.3~1寸版本、可灸、化痰散結止咳平喘、完整虛勞／肺系／頸項主治及肘尖100壯配法。命名重複與高量灸法均明示。WHO IRIS 僅作命名框架。",
+    "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
-      "https://www.americandragon.com/Points/Bailao.html"
+      "https://www.americandragon.com/Points/Bailao.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
@@ -2221,6 +2368,12 @@
         "labelEn": "Extra Point · Jingbailao EX-HN15",
         "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
         "source": "MasterTungAcupuncture.org"
+      },
+      {
+        "labelZh": "American Dragon · 百勞 M-HN-30",
+        "labelEn": "American Dragon · Bailao M-HN-30",
+        "url": "https://www.americandragon.com/Points/Bailao.html",
+        "source": "American Dragon"
       }
     ],
     "x": 178,
@@ -2259,40 +2412,78 @@
       "肺病",
       "經外奇穴"
     ],
-    "cautions": "後頸近頸椎與椎旁肌群；依本地/eLotus/AD 多列直刺或垂直刺約 0.5~0.8 寸，避免深刺、強刺激或向椎管方向進針。頸椎不穩、局部腫塊、感染或嚴重骨質問題者慎用。",
+    "cautions": "eLotus 列直／斜刺0.5~1寸；AD 列0.3~0.5、0.5~0.8及0.5~1寸，均未提供逐層頸椎旁解剖或椎管安全界線。不可把最大深度與任意方向拼接。既有『避免深刺、強刺激或朝椎管方向；頸椎不穩、局部腫塊、感染或嚴重骨質問題慎用』保留為解剖程序提示，不冒充來源原文。AD 的100壯瘰癧配法缺少艾炷大小、分次、皮膚保護與灼傷管理，不能當作一般灸量。四來源未提供孕婦、兒童或其他高風險族群規則。",
     "cautionsEn": [
-      "Posterior-neck point near cervical vertebrae and paraspinal tissues. Use shallow perpendicular needling, commonly about 0.5-0.8 cun; avoid deep needling, strong stimulation, or directing the needle toward the spinal canal.",
-      "Use caution with cervical instability, local masses, infection, or severe bony pathology."
+      "eLotus lists perpendicular/oblique 0.5-1 cun; AD lists 0.3-0.5, 0.5-0.8, and 0.5-1 cun, but neither provides layer-by-layer paraspinal anatomy or a spinal-canal safety boundary. Do not combine a maximum depth with an arbitrary direction.",
+      "Legacy warnings to avoid deep insertion, strong stimulation, or spinal-canal direction and to use caution with cervical instability, masses, infection, or severe bony pathology are retained as anatomical/procedural notes, not quoted source rules.",
+      "AD's 100-cone scrofula combination lacks cone size, session schedule, skin protection, and burn management; it must not be treated as a general moxa dose.",
+      "No point-specific pregnancy, pediatric, or other high-risk-population rule is supplied."
     ],
-    "exam_importance": "頸百勞/百勞偏肺癆、久咳、咳喘與頸項強痛；AD 額外列化痰、散結、止咳平喘與瘰癧，應比舊卡更完整。",
-    "exam_pearl": "頸百勞的「勞」不是單純頸痛；要連到肺癆、久咳、骨蒸潮熱、盜汗這條虛勞/肺系線。",
-    "combinePointsZh": "【久咳／哮喘】頸百勞配肺俞（BL13）、定喘（EX-B1）、膻中（CV17）：補肺化痰，降氣平喘。\n【瘰癧／頸部結節】頸百勞配肘尖（EX-UE1）：AD 記載可用灸法於瘰癧方向，實作需依個案安全評估。",
-    "combinePointsEn": "Chronic cough / asthma: Jingbailao with Feishu (BL13), Dingchuan (EX-B1), and Shanzhong (CV17) supports Lung Qi, transforms Phlegm, and calms wheezing.\nScrofula / neck nodules: Jingbailao with Zhoujian (EX-UE1) appears in American Dragon as a moxa-oriented scrofula combination; clinical use requires case-specific safety judgment.",
-    "clinical_pearls": "AD 的 Bailao 頁比 eLotus 補充更多：transforms Phlegm、dissipates nodules、stops cough、calms dyspnea；主治含 spontaneous sweating、night sweats、steaming bone disorder，這些不應被簡化掉。",
+    "exam_importance": "NCBAHM Appendix A 列 Bailao，屬考綱範圍；但 eLotus 同時有 EX-HN15 Jingbailao 與 EX-HN17 Bailao 且註定位似相同，本庫代碼對應需作命名差異題而非假裝唯一標準。",
+    "exam_importance_en": "NCBAHM Appendix A lists Bailao, placing it in Board scope. However, eLotus has both EX-HN15 Jingbailao and EX-HN17 Bailao and says their locations appear the same; the database mapping should be learned as a nomenclature discrepancy, not a single undisputed standard.",
+    "exam_pearl": "頸百勞的『勞』不是單純頸痛：要連肺癆、久咳、骨蒸潮熱、盜汗。另記 Board/AD 寫 Bailao，而 eLotus EX-HN15 寫 Jingbailao，且與 EX-HN17 定位重複。",
+    "exam_pearl_en": "Jingbailao is not merely a neck-pain point: connect it with Lung consumption, chronic cough, steaming-bone tidal fever, and night sweats. Also remember the naming issue: Board/AD use Bailao, eLotus EX-HN15 uses Jingbailao, and eLotus notes overlap with EX-HN17.",
+    "combinePointsZh": "【久咳／哮喘；既有卡片】頸百勞配肺俞（BL13）、定喘（EX-B1）、膻中（CV17）：補肺化痰，降氣平喘。\n【瘰癧；AD】百勞配肘尖（M-UE-46 Zhoujian），原頁寫灸100壯。此高量數字只作來源記錄；因缺艾炷大小、分次與皮膚安全流程，不轉成一般實作指令。",
+    "combinePointsEn": "Chronic cough / asthma (legacy card): Jingbailao with Feishu (BL13), Dingchuan (EX-B1), and Shanzhong (CV17) supports Lung Qi, transforms Phlegm, and calms wheezing.\nScrofula (AD): Bailao with Zhoujian (M-UE-46), with the page stating 100 moxa cones. This high-dose number is retained only as source documentation; without cone size, session schedule, and skin-safety protocol, it is not converted into a general procedure.",
+    "clinical_pearls": "eLotus 給補肺陰、舒筋通絡與肺／頸病主軸；AD 補化痰、散結、止咳、平喘及自汗、盜汗、骨蒸潮熱。最重要的資料品質點是 EX-HN15／EX-HN17 重複定位與 AD 100壯缺乏操作上下文。",
+    "nameIntroZh": "eLotus 將頸百勞英譯 Neck Hundred Labors，AD 將百勞譯 Hundred Taxations／Hundred Labors；名稱反映久勞與頸部緊張脈絡，但不決定補瀉或灸量。",
+    "nameIntroEn": "eLotus translates Jingbailao as 'Neck Hundred Labors'; AD translates Bailao as 'Hundred Taxations/Hundred Labors.' The name reflects chronic taxation and neck tension but does not determine tonification, reduction, or moxa dose.",
     "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Bailao listed; EX-HN15/EX-HN17 mapping not specified"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Jingbailao/Bailao/頸百勞 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Bailao.html"
+      ],
       "location": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
         "https://www.americandragon.com/Points/Bailao.html"
+      ],
+      "anatomy": [
+        "source-gap note: no full layer-by-layer posterior-cervical anatomy, lamina/spinal-canal distance, or body-build variation"
       ],
       "technique": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
         "https://www.americandragon.com/Points/Bailao.html"
       ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15: applicable",
+        "https://www.americandragon.com/Points/Bailao.html: applicable; 100-cone Bailao-Zhoujian scrofula combination lacks procedural context"
+      ],
       "functions": [
-        "https://www.americandragon.com/Points/Bailao.html"
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
+        "https://www.americandragon.com/Points/Bailao.html",
+        "legacy source-gap note: tonifies Qi retained without direct action-field support"
       ],
       "indications": [
-        "https://www.americandragon.com/Points/Bailao.html"
-      ],
-      "cautions": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15",
         "https://www.americandragon.com/Points/Bailao.html"
       ],
-      "combinations": [
-        "https://www.americandragon.com/Points/Bailao.html"
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15: 0.5-1 cun, moxa applicable",
+        "https://www.americandragon.com/Points/Bailao.html: 0.3-1-cun variants, moxa applicable, 100-cone combination",
+        "source-gap note: no full cervical anatomy, pregnancy, pediatric, skin-protection, or burn-management protocol"
       ],
-      "safety_note": [
-        "anatomy-based note from posterior cervical location"
+      "combinations": [
+        "https://www.americandragon.com/Points/Bailao.html",
+        "legacy cough/asthma combination retained separately"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jingbailao-ex-hn15: EX-HN15 Jingbailao; remarks same location as Bailao EX-HN17",
+        "https://www.americandragon.com/Points/Bailao.html: M-HN-30 Bailao",
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Bailao",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Jingbailao page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Bailao page",
+        "2026-08-02 WHO IRIS nomenclature record opened"
       ]
     }
   },
