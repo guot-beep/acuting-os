@@ -2696,5 +2696,16 @@ Current repo state as of this log:
 - Reset extra-point completion to Ting's strict four-source contract: NCBAHM Board Outline, course curriculum, eLotus, and American Dragon pinyin-index lookup, plus paired bilingual card layers and live exact-link checks.
 - EX-HN1 四神聰 is the first full-contract card: Board Appendix A scope, curriculum p.12 content, exact eLotus page, exact AD index/page, systematic functions, complete AD indications, source-variant needling, moxa, safety/source gaps, bilingual tags, pairings, identities, exam fields, aliases, and field provenance.
 - Verified WHO's proposed international nomenclature: extra points use `EX` plus region (`HN`, `CA`, `B`, `UE`, `LE`); Sishencong is retained as `EX-HN1`, while curriculum/AD `M-HN-1` is stored as a source-specific alternate code.
+
+# 2026-08-02 Codex — Complete EX-HN2 Dangyang and EX-HN3 Yintang
+
+- Rebuilt 當陽 and 印堂 under the same strict four-source card contract as 四神聰; strict-template and four-source-complete count advanced from 1/72 to 3/72, leaving 69/72 on the worklist.
+- EX-HN2 當陽: NCBAHM Appendix A and current course material have no entry; eLotus is the available exact content page; American Dragon's pinyin index and exact-site search do not list Dangyang. The card records this gap instead of inventing an AD detail URL.
+- Preserved Dangyang's legacy Clears Heat, Relieves pain, nasal-congestion, and no-direct-moxa statements, but marked them as unverified or conflicting with eLotus's general "moxibustion applicable" statement.
+- EX-HN3 印堂: integrated Board scope, course p.8, exact eLotus, and exact American Dragon `Yintang.html`; separated the shared 0.3-0.5-cun method from AD's additional 0.5-1-cun directed variants.
+- Preserved the legacy bleeding-method and GV/Du-incorporation notes as pending source-specific verification; AD's pregnancy indication is explicitly not treated as pregnancy safety clearance.
+- Added bilingual action/indication tags, identity/exam fields, aliases, combinations, moxa, anatomy source gaps, cautions, exact links, and field-level provenance for both cards.
+- Commit: `a607e2e` (`Complete Dangyang and Yintang cards`).
+- Validation: build-data, extra-point audit, validate-data, interaction audit, point-ID validation, content-junk validation, app.js syntax, runtime card/link assertions, and `git diff --check` all PASS.
 - Validator baseline is intentionally now 1/72 strict-template complete and 1/72 four-source-audit complete; 71 records return to the worklist rather than inheriting the earlier narrow 48/72 issue count.
 - Validation PASS: live source/link checks, four-row functions render, exact hero-link behavior, build-data, extra audit, validate-data (769 runtime), interactions, point IDs, content-junk, app syntax, JSON parse, and diff check.

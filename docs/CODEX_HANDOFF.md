@@ -1,5 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN2 Dangyang + EX-HN3 Yintang strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `a607e2e` (`Complete Dangyang and Yintang cards`)
+- Task: Continue the full 72-record extra-point restart under Ting's Board Outline + curriculum + eLotus + American Dragon contract.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN2 當陽 and EX-HN3 印堂 with all strict bilingual card layers: anatomy/source gap, technique, moxa, functions, action/disease tags, indications, point identity, Board/exam fields, aliases, combinations, cautions, exact links, and per-field provenance.
+  2. Dangyang is honestly partial by source availability but template-complete: Board Appendix A and current course material do not list it; eLotus is exact and live; AD's pinyin index/site search has no Dangyang point, so no invented detail link is stored.
+  3. Yintang integrates Board scope, course p.8, eLotus, and AD `Points/Yintang.html`. Its 0.3-0.5-cun shared baseline and AD's additional 0.5-1-cun directed variants remain separate. The pregnancy indication is not interpreted as safety clearance.
+  4. Preserved legacy content without promoting unsupported claims: Dangyang's direct-moxa prohibition and extra actions/indication, plus Yintang's bleeding method and GV/Du note, remain visible with explicit verification status.
+  5. Extra-point audit is now 69/72 issue records, 3/72 strict-template complete, 3/72 four-source-audit complete, 0 missing measurable method, and 20 generic CloudTCM links.
+- Source basis: NCBAHM 2026 ACPL Appendix A; `curriculum/acupoints/Techniques 3 points.md` p.8 for Yintang; exact eLotus Dangyang/Yintang pages; American Dragon pinyin index and exact Yintang page; WHO IRIS extra-point nomenclature record. No AD Dangyang content page was claimed.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode; `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; runtime card/link assertions PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; app UI; standard-channel, herb, formula, patient, and schema content.
+- Known risks / manual checks: Ting should open EX-HN2 and confirm only the eLotus detail button appears (AD is an explicit gap), then open EX-HN3 and confirm both eLotus and AD buttons work and the five bilingual function rows/combinations render. The two legacy nomenclature/technique questions remain deliberately flagged.
+- Next recommended action: continue sequentially with EX-HN4 魚腰, using exact AD pinyin lookup and the same no-guessed-safety policy.
+
 ## [2026-08-02] Codex Handoff - Quality snapshot refresh and TE branch filter fix
 
 - Agent: Codex
