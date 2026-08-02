@@ -1,5 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN16 Anmian + EX-HN17 Shangming strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `daf377a` (`Complete Anmian and Shangming cards`)
+- Task: Continue strict extra-point completion, including Anmian technique reconciliation and the database EX-HN17 Shangming versus eLotus EX-HN17 Bailao identity conflict.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN16 安眠 and the immutable database record EX-HN17 上明; audit is now 55/72 issue records and 17/72 strict/four-source complete.
+  2. Anmian preserves eLotus 0.5-0.8 cun, three AD 0.5-1.5-cun variants, and legacy 0.8-1.2 cun without creating a false consensus. AD's PC6-SP6 insomnia pairing is separated from the legacy HT7-SP6 pairing; AD's extended Shen, neurologic, ear, hypertension, hyperthyroidism, and withdrawal indications are retained with scope language.
+  3. Disclosed AD Anmian's apparent SJ17 label typo: the prose says Sifeng, while the linked/standard point is Yifeng (TE17/SJ17).
+  4. Shangming preserves the database ID EX-HN17 but explicitly records that AD uses N-HN-4 Shangming while eLotus uses EX-HN17 for Bailao and provides no Shangming entry. No Bailao location, 0.3-0.5-cun technique, or moxa content was transferred to Shangming.
+  5. Added AD's exact Shangming page, 1-1.5-cun orbital-border technique, three direct indications, and two separately parsed combinations. Legacy 0.5-1-cun technique, actions, keratitis/cataract, gentle-technique/bleeding, and no-moxa statements remain labeled as source gaps.
+- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Anmian page and eLotus point-index/Bailao mismatch page; American Dragon pinyin index and exact Anmian/Shangming pages; WHO IRIS nomenclature record.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (17/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema source content.
+- Known risks / manual checks: Ting should inspect Anmian's four depth versions and the Shangming identity warning. The database ID remains EX-HN17 for compatibility, but must not be presented as an eLotus/WHO-confirmed universal Shangming code.
+- Next recommended action: continue EX-HN18 牽正 and EX-HN19 夾承漿 with exact eLotus/AD pages and source-specific safety.
+
 ## [2026-08-02] Codex Handoff — EX-HN14 Yiming + EX-HN15 Jingbailao strict cards
 
 - Agent: Codex

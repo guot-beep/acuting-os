@@ -1,3 +1,10 @@
+# 2026-08-02 Codex — EX-HN16 安眠 + EX-HN17 上明嚴格四來源卡
+- 完成 EX-HN16、EX-HN17；經外奇穴進度更新為 17/72 嚴格完成、55/72 仍在 worklist，泛用 CloudTCM 連結降至19。
+- 安眠逐源保留 eLotus 0.5~0.8寸、AD 三個0.5~1.5寸版本與舊卡0.8~1.2寸；AD 的 PC6＋SP6 與舊卡 HT7＋SP6 分開，不製造假共識。並揭露 AD 將 SJ17 文字誤標 Sifeng、實際連結／標準穴名為 Yifeng。
+- 上明保留本庫不可變 EX-HN17，但明示 AD 為 N-HN-4 Shangming、eLotus 的 EX-HN17 則是 Bailao；未把百勞的頸後定位、0.3~0.5寸技法或可灸移植到上明。補入 AD 精確頁、三項主治與兩組分開配穴，舊卡內容全數保留並標來源缺口。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`daf377a`。
+
 # 2026-08-02 Codex — EX-HN14 翳明 + EX-HN15 頸百勞嚴格四來源卡
 - 完成 EX-HN14、EX-HN15；經外奇穴進度更新為 15/72 嚴格完成、57/72 仍在 worklist。
 - 翳明並列 eLotus 0.5~0.8寸、AD 1~1.5寸、舊卡0.5~1寸，不製造假共識；AD 同側頭部電感僅作感覺描述，不改成追求電擊感的指令。補精確 AD 頁、完整主治及三組配穴。
