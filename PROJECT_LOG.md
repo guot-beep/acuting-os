@@ -2717,5 +2717,14 @@ Current repo state as of this log:
 - Legacy Yuyao bloodletting/moxa cautions and Taiyang Clears-brain/hemostasis content remain visible with explicit source status rather than being silently deleted.
 - Commit: `9dd21e5` (`Complete Yuyao and Taiyang cards`).
 - Validation: build-data, extra-point audit, validate-data, interaction audit, point-ID validation, content-junk validation, app.js syntax, runtime link/function assertions, and `git diff --check` all PASS.
+
+# 2026-08-02 Codex — Complete EX-HN6 Erjian and EX-HN7 Qiuhou
+
+- Completed 耳尖 and 球後 under the strict source contract; audit advanced from 5/72 to 7/72 complete, leaving 65/72 on the worklist.
+- Erjian: Board-listed, no dedicated course entry, exact eLotus/AD pages. Correctly recorded that both pages allow moxa and AD specifies 3-5 cones, directly conflicting with the legacy moxa prohibition. Legacy 3-5 drops, hypertension/hordeolum/conjunctivitis, and detoxification/BP actions remain visible but unverified by this pass.
+- Qiuhou: not Board-listed and no course entry; exact eLotus/AD pages supply the high-risk orbital technique. Added no-manipulation, cranial-depth, practitioner-experience, and hematoma-prevention cautions.
+- Corrected the unsafe legacy wording from pressing the eyeball after withdrawal to firm cotton-ball pressure over the needle site; retained the 1 vs 1-2 minute source-duration difference.
+- Commit: `7a34d97` (`Complete Erjian and Qiuhou cards`).
+- Validation: full build/data/interaction/ID/content checks PASS; first custom runtime assertion used the wrong capitalization and was rerun with the actual string, then PASS.
 - Validator baseline is intentionally now 1/72 strict-template complete and 1/72 four-source-audit complete; 71 records return to the worklist rather than inheriting the earlier narrow 48/72 issue count.
 - Validation PASS: live source/link checks, four-row functions render, exact hero-link behavior, build-data, extra audit, validate-data (769 runtime), interactions, point IDs, content-junk, app syntax, JSON parse, and diff check.

@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN6 Erjian + EX-HN7 Qiuhou strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `7a34d97` (`Complete Erjian and Qiuhou cards`)
+- Task: Continue strict sequential extra-point completion, with special attention to bloodletting and orbital safety.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN6 耳尖 and EX-HN7 球後; audit is now 65/72 issue records and 7/72 strict/four-source complete.
+  2. Erjian records the exact conflict: legacy moxa prohibition versus eLotus moxa applicable and AD 3-5 cones. It also distinguishes verified 0.1-0.2-cun/prick-to-bleed technique from an unverified legacy 3-5-drop quantity.
+  3. Qiuhou now carries the full exact-source high-risk safeguards: slow intra-orbital insertion, no lifting/thrusting/twisting/rotating, avoid excessive depth/cranial entry, immediate cotton pressure over the needle site, and appropriate clinical experience only.
+  4. Corrected the legacy instruction to press the eyeball after withdrawal; the rendered card now says to press the needle site, not the globe.
+- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name search under `curriculum/acupoints`; exact eLotus Erjian/Qiuhou pages; American Dragon pinyin index and exact Erjian/Qiuhou pages; WHO IRIS nomenclature record.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode; `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; runtime link/safety assertions PASS after correcting assertion capitalization; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
+- Known risks / manual checks: Ting should inspect the Erjian moxa conflict badge/text and the Qiuhou high-risk caution block. Qiuhou remains draft study content and not a substitute for formal supervised orbital-needling training.
+- Next recommended action: continue EX-HN8 上迎香 and EX-HN9 內迎香.
+
 ## [2026-08-02] Codex Handoff — EX-HN4 Yuyao + EX-HN5 Taiyang strict cards
 
 - Agent: Codex
