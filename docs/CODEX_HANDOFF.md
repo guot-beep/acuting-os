@@ -1,5 +1,24 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-02] Codex Handoff — EX-HN8 Shangyingxiang + EX-HN9 Neiyingxiang strict cards
+
+- Agent: Codex
+- Branch: `codex/antigravity-validation-quality`
+- Commit: `67e7df7` (`Complete Shangyingxiang and Neiyingxiang cards`)
+- Task: Continue the strict 72-record extra-point restart with full Board Outline, curriculum, eLotus, and American Dragon integration and exact-link auditing.
+- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
+- What changed:
+  1. Completed EX-HN8 上迎香 and EX-HN9 內迎香; audit is now 63/72 issue records and 9/72 strict/four-source complete.
+  2. Shangyingxiang preserves the code-system distinction (EX-HN8 Shangyingxiang in this database/eLotus versus M-HN-14 Bitong in course/AD) and keeps the three sources' different directions and depths separate instead of synthesizing an unsupported consensus.
+  3. Added the full eLotus/AD indication architecture for Shangyingxiang, eLotus 5-10-minute moxa as a single-source value, AD combinations, exact AD `Points/Bitong.html`, and explicit anatomy/pregnancy/pediatric/anticoagulant source gaps.
+  4. Neiyingxiang directly flags a non-equivalent location conflict: eLotus says medial to LI20 on the ala nasi, while the legacy card says intranasal mucosa at the alar-cartilage/concha junction. It retains eLotus bloodletting-only and moxa-contraindicated instructions but does not invent instrument, depth, blood quantity, or hemostasis parameters.
+  5. American Dragon's pinyin index contains no Neiyingxiang entry; only the verified index is recorded as gap evidence, and no fabricated AD detail link was added.
+- Source basis: NCBAHM 2026 ACPL Appendix A; `curriculum/acupoints/Techniques 3 points.md` p.9; exact eLotus Shangyingxiang/Neiyingxiang pages; American Dragon pinyin index and exact Bitong page; WHO IRIS nomenclature record.
+- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (9/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
+- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
+- Known risks / manual checks: Ting should verify the long bilingual source-variant display for EX-HN8 and the prominent location-conflict/safety block for EX-HN9. EX-HN9 remains non-operational study content until its location standard is resolved from an additional authoritative source.
+- Next recommended action: continue EX-HN10 聚泉 and EX-HN11 海泉 with special attention to intraoral anatomy, bloodletting, hemostasis, and missing AD/eLotus details.
+
 ## [2026-08-02] Codex Handoff — EX-HN6 Erjian + EX-HN7 Qiuhou strict cards
 
 - Agent: Codex

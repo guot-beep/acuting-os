@@ -1,3 +1,11 @@
+# 2026-08-02 Codex — EX-HN8 上迎香 + EX-HN9 內迎香嚴格四來源卡
+- 完成 EX-HN8、EX-HN9 的 Board Outline／課件／eLotus／American Dragon 四層查核與中英成對模板；經外奇穴進度更新為 9/72 嚴格完成、63/72 仍在 worklist。
+- 上迎香保留 EX-HN8 Shangyingxiang 與課件／AD M-HN-14 Bitong 的編碼差異；課件0.2~0.3寸、eLotus 0.3~0.5寸、AD 0.3~0.8寸的方向與深度逐源並列，不製造假共識。補入 eLotus／AD 全部鼻病、眼病、面部主治架構、AD 配穴及精確 `Points/Bitong.html`。
+- 內迎香揭露 eLotus「LI20 內側鼻翼」與舊卡「鼻孔內鼻翼軟骨／鼻甲交界黏膜」的非等同定位衝突；保留 eLotus 僅點刺出血、禁灸，但不猜針具、深度、滴數、止血或高風險族群規則。
+- American Dragon 拼音索引未找到 Neiyingxiang，故只記錄已查索引與來源缺口，不新增假詳情連結。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`67e7df7`。
+
 # 2026-08-02 Codex - Quality snapshot refresh + TE filter fix
 - Scanned current status: Acupoints 361/361 standard-channel template-grade; Herbs 329 local cards, NCBAHM Appendix A 304/304 closed, 93 template-grade, 37 source_checked; Formulas 201 total, 153 with composition, 2 template-grade; Conditions 150; Comparisons 41.
 - Updated `data/audits/missing_report.json` so Quality distinguishes framework / made / grade / verified and no longer shows stale 327/79 herb numbers.
