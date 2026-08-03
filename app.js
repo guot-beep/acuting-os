@@ -6132,6 +6132,38 @@ function renderChannelOverviewCard(ch) {
         `).join('')}
       </ul>
     </section>
+
+    ${(ch.special_points || ch.paired_channel) ? `
+      <section class="channel-article-section">
+        <h3>SPECIAL POINTS / 特定穴與配穴</h3>
+        <div class="channel-special-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 0.5rem;">
+          ${ch.paired_channel ? `
+            <div class="special-point-box" style="background: #f4f6f4; border: 1px solid #d4dfd4; border-radius: 6px; padding: 0.6rem 0.8rem;">
+              <div style="font-size: 0.8rem; color: #5a7566; font-weight: 700; text-transform: uppercase;">PAIRED CHANNEL / 表裡/相配經脈</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #1f5b3d; margin-top: 0.2rem;">${escapeHtml(ch.paired_channel)}</div>
+            </div>
+          ` : ''}
+          ${ch.special_points?.master_point ? `
+            <div class="special-point-box" style="background: #f4f6f4; border: 1px solid #d4dfd4; border-radius: 6px; padding: 0.6rem 0.8rem;">
+              <div style="font-size: 0.8rem; color: #5a7566; font-weight: 700; text-transform: uppercase;">MASTER POINT / 八脈交會主穴</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #1f5b3d; margin-top: 0.2rem;">${escapeHtml(ch.special_points.master_point)}</div>
+            </div>
+          ` : ''}
+          ${ch.special_points?.coupled_point ? `
+            <div class="special-point-box" style="background: #f4f6f4; border: 1px solid #d4dfd4; border-radius: 6px; padding: 0.6rem 0.8rem;">
+              <div style="font-size: 0.8rem; color: #5a7566; font-weight: 700; text-transform: uppercase;">COUPLED POINT / 八脈交會配穴</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #1f5b3d; margin-top: 0.2rem;">${escapeHtml(ch.special_points.coupled_point)}</div>
+            </div>
+          ` : ''}
+          ${ch.special_points?.xi_cleft ? `
+            <div class="special-point-box" style="background: #f4f6f4; border: 1px solid #d4dfd4; border-radius: 6px; padding: 0.6rem 0.8rem;">
+              <div style="font-size: 0.8rem; color: #5a7566; font-weight: 700; text-transform: uppercase;">XI CLEFT POINT / 郄穴</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #1f5b3d; margin-top: 0.2rem;">${escapeHtml(ch.special_points.xi_cleft)}</div>
+            </div>
+          ` : ''}
+        </div>
+      </section>
+    ` : ''}
   `;
 }
 

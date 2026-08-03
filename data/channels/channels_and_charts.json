@@ -2512,38 +2512,103 @@
     "next_code": "Dai",
     "element": "Yin/Yang / 十二經脈之海・血海",
     "clock_time": "奇經八脈 (Extraordinary Vessel)",
-    "points_count": 11,
+    "points_count": 14,
     "points_list": [
       {
         "code": "SP4",
-        "nameZh": "公孫 (通衝脈)",
-        "nameEn": "Gongsun (Master Point)"
+        "nameZh": "公孫 (主穴/Master)",
+        "nameEn": "Gongsun (SP 4)"
       },
       {
         "code": "PC6",
-        "nameZh": "內關 (配穴)",
-        "nameEn": "Neiguan (Coupled Point)"
+        "nameZh": "內關 (配穴/Coupled)",
+        "nameEn": "Neiguan (PC 6)"
+      },
+      {
+        "code": "ST30",
+        "nameZh": "氣衝",
+        "nameEn": "Qichong (ST 30)"
+      },
+      {
+        "code": "KI11",
+        "nameZh": "橫骨",
+        "nameEn": "Henggu (KI 11)"
+      },
+      {
+        "code": "KI12",
+        "nameZh": "大赫",
+        "nameEn": "Dahe (KI 12)"
+      },
+      {
+        "code": "KI13",
+        "nameZh": "氣穴",
+        "nameEn": "Qixue (KI 13)"
+      },
+      {
+        "code": "KI14",
+        "nameZh": "四滿",
+        "nameEn": "Siman (KI 14)"
+      },
+      {
+        "code": "KI15",
+        "nameZh": "中注",
+        "nameEn": "Zhongzhu (KI 15)"
+      },
+      {
+        "code": "KI16",
+        "nameZh": "肓俞",
+        "nameEn": "Huangshu (KI 16)"
+      },
+      {
+        "code": "KI17",
+        "nameZh": "商曲",
+        "nameEn": "Shangqu (KI 17)"
+      },
+      {
+        "code": "KI18",
+        "nameZh": "石關",
+        "nameEn": "Shiguan (KI 18)"
+      },
+      {
+        "code": "KI19",
+        "nameZh": "陰都",
+        "nameEn": "Yindu (KI 19)"
+      },
+      {
+        "code": "KI20",
+        "nameZh": "腹通谷",
+        "nameEn": "Futonggu (KI 20)"
+      },
+      {
+        "code": "KI21",
+        "nameZh": "幽門",
+        "nameEn": "Youmen (KI 21)"
       }
     ],
-    "paired_channel": "Yinwei (Yin Linking Vessel / 陰維脈)",
-    "pathway_zh": "起於小腹胞宮內，下出會陰，平行於足少陰腎經，沿腹部夾臍兩側上行，散於胸中。分支上循咽喉，環繞口唇。為「十二經脈之海」與「血海」。",
-    "pathway_en": "Originates in the uterus/lower abdomen, emerges at perineum, ascends parallel to the Kidney Channel on the abdomen, spreads in the chest, ascends along the throat around the lips. Known as the 'Sea of Twelve Channels' and 'Sea of Blood'.",
+    "paired_channel": "Yinwei Channel (陰維脈)",
+    "pathway_zh": "起於小腹胞宮內，下出會陰，經氣衝（ST30），平行於足少陰腎經（KI11-KI21），沿腹部夾臍兩側上行，散於胸中。分支上循咽喉，環繞口唇。為「十二經脈之海」與「血海」。",
+    "pathway_en": "Points of the Chong channel include: SP 4 Gongsun, ST 30 Qichong, KI 11 Henggu through KI 21 Youmen. Ascends parallel to Kidney Channel on abdomen to chest.",
     "indications_zh": [
-      "婦科病症：月經不調、痛經、崩漏、閉經、不孕。",
-      "腸胃與心胸病症：奔豚氣、胃痛、嘔吐、腹痛、胸悶、心悸。"
+      "婦科病症：月經不調、痛經、崩漏、閉經、不孕、產後血暈。",
+      "腸胃與心胸病症：奔豚氣、胃痛、嘔吐、腹痛、腹脹、胸悶、心悸。"
     ],
     "indications_en": [
-      "Gynecological disorders: Irregular menses, dysmenorrhea, metrorrhagia, amenorrhea, infertility.",
-      "GI & Chest disorders: Running piglet Qi syndrome, gastralgia, vomiting, abdominal pain, chest tightness, palpitations."
+      "Irregular menses, dysmenorrhea, metrorrhagia, amenorrhea, infertility, postpartum dizziness.",
+      "Running piglet syndrome, gastralgia, vomiting, abdominal pain/distension, chest tightness, palpitations."
     ],
     "applications_zh": [
-      "主司調節全身氣血，調理月經與妊娠，平降逆氣。",
-      "八脈交會穴：主穴公孫 (SP4)，配穴內關 (PC6)。主治心、胸、胃部疾病與婦科沖任不調。"
+      "調節全身十二經脈氣血，為「血海」與「十二經之海」。",
+      "調理婦科月經、胎產與生殖機能，平降上逆之氣。"
     ],
     "applications_en": [
-      "Governs regulating systemic Qi & Blood, regulating menses/pregnancy, lowering rebellious Qi.",
-      "Master & Coupled Points: Master SP 4 Gongsun, Coupled PC 6 Neiguan. Primary targets: Heart, Chest, Stomach, and gynecological disorders."
-    ]
+      "Regulates Qi and Blood of all 12 channels ('Sea of Blood' and 'Sea of 12 Meridians').",
+      "Regulates menses, pregnancy, fertility, and lowers rebellious Qi."
+    ],
+    "special_points": {
+      "master_point": "SP4 公孫 (Gongsun)",
+      "coupled_point": "PC6 內關 (Neiguan)",
+      "paired_channel": "Yinwei Channel (陰維脈)"
+    }
   },
   {
     "code": "Dai",
@@ -2559,53 +2624,63 @@
     "next_code": "Yangqiao",
     "element": "Yang / 約束諸經",
     "clock_time": "奇經八脈 (Extraordinary Vessel)",
-    "points_count": 3,
+    "points_count": 4,
     "points_list": [
       {
         "code": "GB41",
-        "nameZh": "足臨泣 (通帶脈)",
-        "nameEn": "Zulinqi (Master Point)"
+        "nameZh": "足臨泣 (主穴/Master)",
+        "nameEn": "Zulinqi (GB 41)"
       },
       {
         "code": "TE5",
-        "nameZh": "外關 (配穴)",
-        "nameEn": "Waiguan (Coupled Point)"
+        "nameZh": "外關 (配穴/Coupled)",
+        "nameEn": "Waiguan (TE 5)"
       },
       {
         "code": "GB26",
         "nameZh": "帶脈",
-        "nameEn": "Daimai"
+        "nameEn": "Daimai (GB 26)"
       },
       {
         "code": "GB27",
         "nameZh": "五樞",
-        "nameEn": "Wushu"
+        "nameEn": "Wushu (GB 27)"
       },
       {
         "code": "GB28",
         "nameZh": "維道",
-        "nameEn": "Weidao"
+        "nameEn": "Weidao (GB 28)"
+      },
+      {
+        "code": "LR13",
+        "nameZh": "章門",
+        "nameEn": "Zhangmen (LR 13)"
       }
     ],
-    "paired_channel": "Yangwei (Yang Linking Vessel / 陽維脈)",
-    "pathway_zh": "起於季脅下方（章門），斜下繞腰腹一圈（如束腰帶），行於帶脈、五樞、維道穴。總束全身縱行諸經脈。",
-    "pathway_en": "Originates below the free rib (LR 13 Zhangmen), circles horizontally around the waist like a belt, passing through GB 26 Daimai, GB 27 Wushu, GB 28 Weidao. Binds all vertical meridians.",
+    "paired_channel": "Yangwei Channel (陽維脈)",
+    "pathway_zh": "起於季脅下方（章門），斜下繞腰腹一圈（如束腰帶），行於帶脈（GB26）、五樞（GB27）、維道（GB28）穴。總束全身縱行諸經脈。",
+    "pathway_en": "Points of the Dai channel include: GB 41 Zulinqi, TE 5 Waiguan, GB 26 Daimai, GB 27 Wushu, GB 28 Weidao, LR 13 Zhangmen. Circles waist like a belt.",
     "indications_zh": [
-      "帶下與婦科病症：赤白帶下、子宮脫垂、月經不調、腰痛如折。",
-      "下肢與腹部病症：少腹痛、腰膝酸軟、下肢痿痺。"
+      "帶下與婦科病症：赤白帶下、子宮脫垂、月經不調、痛經、腰痛如折。",
+      "下肢與少腹病症：少腹痛、腰膝酸軟、下肢痿痺、疝氣。"
     ],
     "indications_en": [
-      "Leukorrhea & Gynecological disorders: Red/white leukorrhea, uterine prolapse, dysmenorrhea, waist pain.",
-      "Lower Limb & Abdominal disorders: Lower abdominal pain, lumbar soreness, weakness in lower limbs."
+      "Red and white leukorrhea, uterine prolapse, irregular menses, dysmenorrhea, severe lumbar pain.",
+      "Lower abdominal pain, lumbar/knee soreness, weakness in lower limbs, hernia."
     ],
     "applications_zh": [
-      "主司約束諸經，固攝帶下，調理婦科與腰腹機能。",
-      "八脈交會穴：主穴足臨泣 (GB41)，配穴外關 (TE5)。主治目外眥、耳後、頸、肩、少腹部病症。"
+      "總束全身縱行經脈，固攝帶下與胎孕。",
+      "調理婦科與腰腹機能。"
     ],
     "applications_en": [
-      "Governs binding all channels, restraining leukorrhea, regulating lower waist/abdomen.",
-      "Master & Coupled Points: Master GB 41 Zulinqi, Coupled TE 5 Waiguan. Primary targets: Outer canthus, ears, neck, shoulders, hips."
-    ]
+      "Binds all vertical meridians, restrains leukorrhea, supports pregnancy.",
+      "Regulates gynecological and waist/abdominal functions."
+    ],
+    "special_points": {
+      "master_point": "GB41 足臨泣 (Zulinqi)",
+      "coupled_point": "TE5 外關 (Waiguan)",
+      "paired_channel": "Yangwei Channel (陽維脈)"
+    }
   },
   {
     "code": "Yangqiao",
@@ -2624,34 +2699,96 @@
     "points_list": [
       {
         "code": "BL62",
-        "nameZh": "申脈 (通陽蹻脈)",
-        "nameEn": "Shenmai (Master Point)"
+        "nameZh": "申脈 (主穴/Master)",
+        "nameEn": "Shenmai (BL 62)"
       },
       {
-        "code": "SI3",
-        "nameZh": "後谿 (配穴)",
-        "nameEn": "Houxi (Coupled Point)"
+        "code": "BL61",
+        "nameZh": "仆參",
+        "nameEn": "Pucan (BL 61)"
+      },
+      {
+        "code": "BL59",
+        "nameZh": "跗陽 (郄穴/Xi-Cleft)",
+        "nameEn": "Fuyang (BL 59)"
+      },
+      {
+        "code": "GB29",
+        "nameZh": "居髎",
+        "nameEn": "Juliao (GB 29)"
+      },
+      {
+        "code": "LI16",
+        "nameZh": "巨骨",
+        "nameEn": "Jugu (LI 16)"
+      },
+      {
+        "code": "LI15",
+        "nameZh": "肩髃",
+        "nameEn": "Jianyu (LI 15)"
+      },
+      {
+        "code": "SI10",
+        "nameZh": "臑俞",
+        "nameEn": "Naoshu (SI 10)"
+      },
+      {
+        "code": "ST4",
+        "nameZh": "地倉",
+        "nameEn": "Dicang (ST 4)"
+      },
+      {
+        "code": "ST3",
+        "nameZh": "巨髎",
+        "nameEn": "Juliao (ST 3)"
+      },
+      {
+        "code": "ST1",
+        "nameZh": "承泣",
+        "nameEn": "Chengqi (ST 1)"
+      },
+      {
+        "code": "BL1",
+        "nameZh": "睛明",
+        "nameEn": "Jingming (BL 1)"
+      },
+      {
+        "code": "GB20",
+        "nameZh": "風池",
+        "nameEn": "Fengchi (GB 20)"
       }
     ],
-    "paired_channel": "Du (Governing Vessel / 督脈)",
-    "pathway_zh": "起於足跟外側（申脈），沿外踝上行，經腿外側、脇部、肩部、面頰，至目內眥（睛明），與陰蹻脈相會，入腦。主司人體動靜與睡眠。",
-    "pathway_en": "Originates at the lateral heel (BL 62 Shenmai), ascends the lateral malleolus, thigh, hip, shoulder, cheek to the inner canthus (BL 1 Jingming), entering the brain. Governs daytime activity and eye movement.",
+    "paired_channel": "Du Channel (督脈)",
+    "pathway_zh": "起於足跟外側（申脈），經仆參、跗陽，沿腿外側上行，經股骨大轉子（居髎）、肩胛（臑俞、肩髃、巨骨）、面頰（地倉、巨髎、承泣），至目內眥（睛明），與陰蹻脈相會，沿頭經風池入腦。",
+    "pathway_en": "Points of the Yangqiao channel include: BL 62 Shenmai, BL 61 Pucan, BL 59 Fuyang, GB 29 Juliao, LI 16 Jugu, LI 15 Jianyu, SI 10 Naoshu, ST 4 Dicang, ST 3 Juliao, ST 1 Chengqi, BL 1 Jingming, GB 20 Fengchi. Originates at lateral heel, ascends lateral leg, hip, shoulder, cheek to inner canthus and brain.",
     "indications_zh": [
-      "睡眠與神志病症：失眠（目張不暝）、癲狂、癎證。",
-      "肢體運動與頭面病症：下肢外側緊張拘急、中風偏癱、面癱、目赤腫痛。"
+      "神志與睡眠病症：失眠（目張不瞑）、日間癲癇、躁動不安、頭痛、眩暈。",
+      "運動與肌肉病症：下肢外側肌肉緊張拘急、內側肌肉鬆弛、足外翻、下肢麻木癱瘓、中風偏癱。",
+      "頭面五官病症：面癱、三叉神經痛、目赤腫痛、眼瞼瞤動、口眼歪斜。",
+      "背部與關節病症：腰背僵硬痛、肩臂痛、髖關節痛。"
     ],
     "indications_en": [
-      "Sleep & Shen disorders: Insomnia (eyes remaining open), epilepsy, mania.",
-      "Motor & Facial disorders: Lateral lower limb spasms, post-stroke hemiplegia, facial paralysis, eye pain."
+      "Insomnia (eyes remaining open), daytime epilepsy, agitation, severe headache, vertigo.",
+      "Motor impairment of legs, tightness and spasm along the lateral side of legs with medial side flaccid, eversion of foot, post-stroke hemiplegia.",
+      "Bell's palsy, trigeminal neuralgia, red/swollen eyes, eyelid twitching, facial paralysis.",
+      "Back stiffness & pain, shoulder pain, hip joint pain."
     ],
     "applications_zh": [
-      "主司司眼瞼開合、調節睡眠、主肢體外側運動機能。",
-      "八脈交會穴：主穴申脈 (BL62)，配穴後谿 (SI3)。主治目內眥、項後、腰背與軀體外側病症。"
+      "司眼瞼開合，調節晝夜睡眠節律（主日間興奮與睜眼）。",
+      "控制軀體外側運動機能與肌肉張力。",
+      "疏通太陽與陽明經氣，祛風清熱明目。"
     ],
     "applications_en": [
-      "Governs opening of eyelids, regulating sleep cycles, controlling lateral limb motor activity.",
-      "Master & Coupled Points: Master BL 62 Shenmai, Coupled SI 3 Houxi. Primary targets: Head, back, eyes, lateral body."
-    ]
+      "Controls eyelid opening and regulates sleep-wake cycles (daytime alertness).",
+      "Controls lateral limb movement and muscle tone.",
+      "Unblocks Taiyang and Yangming channel Qi, expels wind, and clears head and eyes."
+    ],
+    "special_points": {
+      "master_point": "BL62 申脈 (Shenmai)",
+      "coupled_point": "SI3 後谿 (Houxi)",
+      "xi_cleft": "BL59 跗陽 (Fuyang)",
+      "paired_channel": "Du Channel (督脈)"
+    }
   },
   {
     "code": "Yinqiao",
@@ -2666,38 +2803,69 @@
     "next_code": "Yangwei",
     "element": "Yin / 主肢體運動與司閉眼",
     "clock_time": "奇經八脈 (Extraordinary Vessel)",
-    "points_count": 4,
+    "points_count": 5,
     "points_list": [
       {
         "code": "KI6",
-        "nameZh": "照海 (通陰蹻脈)",
-        "nameEn": "Zhaohai (Master Point)"
+        "nameZh": "照海 (主穴/Master)",
+        "nameEn": "Zhaohai (KI 6)"
       },
       {
-        "code": "LU7",
-        "nameZh": "列缺 (配穴)",
-        "nameEn": "Lieque (Coupled Point)"
+        "code": "KI8",
+        "nameZh": "交信 (郄穴/Xi-Cleft)",
+        "nameEn": "Jiaoxin (KI 8)"
+      },
+      {
+        "code": "ST9",
+        "nameZh": "人迎",
+        "nameEn": "Renying (ST 9)"
+      },
+      {
+        "code": "ST12",
+        "nameZh": "缺盆",
+        "nameEn": "Quepen (ST 12)"
+      },
+      {
+        "code": "BL1",
+        "nameZh": "睛明",
+        "nameEn": "Jingming (BL 1)"
       }
     ],
-    "paired_channel": "Ren (Conception Vessel / 任脈)",
-    "pathway_zh": "起於足跟內側（照海），沿內踝上行，經腿內側、陰部、胸腹，至咽喉，上達目內眥（睛明），與陽蹻脈會合。主司陰氣與嗜睡。",
-    "pathway_en": "Originates at the medial heel (KI 6 Zhaohai), ascends the medial malleolus, inner leg, abdomen, chest to throat, ending at inner canthus (BL 1 Jingming). Governs sleepiness and Yin mobility.",
+    "paired_channel": "Ren Channel (任脈)",
+    "pathway_zh": "起於足跟內側（照海），沿內踝上行，經腿內側、陰部、小腹、胸部、過缺盆，沿喉嚨，上達目內眥（睛明），與陽蹻脈會合入腦。",
+    "pathway_en": "Points of the Yinqiao (movement) channel include: Zhaohai (KI 6), Jiaoxin (KI 8), Renying (ST 9), Quepen (ST 12), Jingming (BL 1). Originates at the medial heel, ascends the medial malleolus, inner leg, abdomen, chest to throat, ending at inner canthus (BL 1).",
     "indications_zh": [
-      "睡眠與神志病症：嗜睡（目瞑怠惰）、多寐、癲癇。",
-      "肢體運動與咽喉病症：下肢內側緊張拘急、咽喉腫痛、癃閉、小腹痛。"
+      "神志與睡眠病症：嗜睡（目瞑怠惰）、夜間癲癇、精神萎靡、失眠、多寐。",
+      "下肢與運動病症：下肢內側肌肉緊張拘急、外側鬆弛萎軟、足內翻（足下垂）、下肢痿痺。",
+      "少腹與生殖病症：小腹痛、髖關節痛、陰部痛、腰痛、帶下、不孕。",
+      "婦產科病症：習慣性流產、難產、崩漏、白帶過多。"
     ],
     "indications_en": [
-      "Sleep & Shen disorders: Somnolence / excessive sleepiness, epilepsy.",
-      "Motor & Throat disorders: Medial limb spasms, sore throat, dysuria, lower abdominal pain."
+      "Hypersomnia, nighttime epilepsy, lethargy, insomnia, somnolence.",
+      "Motor impairment of the legs, tightness and spasm along the medial side of the legs with the lateral side flaccid or atrophied, inversion of the foot.",
+      "Lower abdominal, hip and genital pain, lower back pain, leukorrhea, infertility.",
+      "Habitual miscarriage, difficult labor, vaginal discharge, uterine bleeding."
     ],
     "applications_zh": [
-      "主司司眼瞼閉合、調節陰氣、主肢體內側運動機能。",
-      "八脈交會穴：主穴照海 (KI6)，配穴列缺 (LU7)。主治喉嚨、胸膈、腹部病症。"
+      "影響下肢內側、腹部（多為單側症狀）及眼部。",
+      "調節下肢運動與陰陽張弛。",
+      "總控全身內側與外側之陰氣。",
+      "升提陰液，調節全身陰液代謝（陰精、血液、津液、汗液、淚液及結節病變）。",
+      "通利明目，清利頭目。"
     ],
     "applications_en": [
-      "Governs closing of eyelids, regulating Yin Energy, controlling medial limb motor activity.",
-      "Master & Coupled Points: Master KI 6 Zhaohai, Coupled LU 7 Lieque. Primary targets: Throat, diaphragm, abdomen."
-    ]
+      "Influences the medial aspect of the legs, abdomen (only unilateral symptoms), and eyes.",
+      "Regulates motion of the lower limbs.",
+      "Controls Yin on the medial and lateral aspects of the body.",
+      "Ascends Yin substances, influences all Yin substances (Yin, blood, fluids, sweat, tears, and nodules).",
+      "Benefits the eyes and clears head and vision."
+    ],
+    "special_points": {
+      "master_point": "KI6 照海 (Zhaohai)",
+      "coupled_point": "LU7 列缺 (Lieque)",
+      "xi_cleft": "KI8 交信 (Jiaoxin)",
+      "paired_channel": "Ren Channel (任脈)"
+    }
   },
   {
     "code": "Yangwei",
@@ -2715,35 +2883,113 @@
     "points_count": 16,
     "points_list": [
       {
-        "code": "TE5",
-        "nameZh": "外關 (通陽維脈)",
-        "nameEn": "Waiguan (Master Point)"
+        "code": "BL63",
+        "nameZh": "金門 (郄穴/Xi-Cleft)",
+        "nameEn": "Jinmen (BL 63)"
       },
       {
-        "code": "GB41",
-        "nameZh": "足臨泣 (配穴)",
-        "nameEn": "Zulinqi (Coupled Point)"
+        "code": "GB35",
+        "nameZh": "陽交",
+        "nameEn": "Yangjiao (GB 35)"
+      },
+      {
+        "code": "GB21",
+        "nameZh": "肩井",
+        "nameEn": "Jianjing (GB 21)"
+      },
+      {
+        "code": "TE15",
+        "nameZh": "天髎",
+        "nameEn": "Tianliao (TE 15)"
+      },
+      {
+        "code": "SI10",
+        "nameZh": "臑俞",
+        "nameEn": "Naoshu (SI 10)"
+      },
+      {
+        "code": "ST8",
+        "nameZh": "頭維",
+        "nameEn": "Touwei (ST 8)"
+      },
+      {
+        "code": "GB13",
+        "nameZh": "本神",
+        "nameEn": "Benshen (GB 13)"
+      },
+      {
+        "code": "GB14",
+        "nameZh": "陽白",
+        "nameEn": "Yangbai (GB 14)"
+      },
+      {
+        "code": "GB15",
+        "nameZh": "頭臨泣",
+        "nameEn": "Toulinqi (GB 15)"
+      },
+      {
+        "code": "GB16",
+        "nameZh": "目窗",
+        "nameEn": "Muchuang (GB 16)"
+      },
+      {
+        "code": "GB17",
+        "nameZh": "正營",
+        "nameEn": "Zhengying (GB 17)"
+      },
+      {
+        "code": "GB18",
+        "nameZh": "承靈",
+        "nameEn": "Chengling (GB 18)"
+      },
+      {
+        "code": "GB19",
+        "nameZh": "腦空",
+        "nameEn": "Naokong (GB 19)"
+      },
+      {
+        "code": "GB20",
+        "nameZh": "風池",
+        "nameEn": "Fengchi (GB 20)"
+      },
+      {
+        "code": "GV16",
+        "nameZh": "風府",
+        "nameEn": "Fengfu (GV 16)"
+      },
+      {
+        "code": "GV15",
+        "nameZh": "啞門",
+        "nameEn": "Yamen (GV 15)"
       }
     ],
-    "paired_channel": "Dai (Dai Vessel / 帶脈)",
-    "pathway_zh": "起於足跟外側（金門），沿外踝、腿外側、脅脇部、肩部、頸項，上至頭額，止於風池與啞門。維絡全身陽經。",
-    "pathway_en": "Originates at the lateral foot (BL 63 Jinmen), ascends the lateral leg, hypochondrium, shoulder, neck to forehead, ending at GV 16 Fengfu. Links all Yang meridians.",
+    "paired_channel": "Dai Channel (帶脈)",
+    "pathway_zh": "起於足外側（金門），經陽交，沿下肢外側、軀體側外、肩部、項後，上至額部（頭維、陽白），折入風池，會於風府與啞門。維絡全身陽經。",
+    "pathway_en": "Points of the Yangwei channel include: BL 63 Jinmen, GB 35 Yangjiao, GB 21 Jianjing, TE 15 Tianliao, SI 10 Naoshu, ST 8 Touwei, GB 13 Benshen, GB 14 Yangbai, GB 15 Toulinqi, GB 16 Muchuang, GV 16 Fengfu, GV 15 Yamen, GB 17 Zhengying, GB 18 Chengling, GB 19 Naokong, GB 20 Fengchi. Links all Yang channels.",
     "indications_zh": [
-      "外感與寒熱病症：寒熱往來、惡寒發熱、瘧疾。",
-      "頭面與體表病症：偏頭痛、腰脊疼痛、軀體側外痛。"
+      "外感與寒熱病症：寒熱往來、惡寒發熱、無汗或多汗、瘧疾。",
+      "頭面與少陽病症：偏頭痛、目赤腫痛、耳鳴耳聾、頸項強痛、面腫。",
+      "循行部位病症：腰脊痛、肩背痛、軀體側外肋間神經痛、下肢外側痛。"
     ],
     "indications_en": [
-      "Exterior & Febrile disorders: Alternating chills and fever, fever, malaria.",
-      "Head & Lateral Body disorders: Temporal migraine, spinal pain, lateral body pain."
+      "Alternating chills and fever, fever and aversion to cold, anhidrosis/hyperhidrosis, malaria.",
+      "Temporal migraine, red eyes, tinnitus, deafness, stiff neck, facial swelling.",
+      "Lumbar and spinal pain, shoulder and back pain, intercostal neuralgia along the lateral body, lateral leg pain."
     ],
     "applications_zh": [
-      "主司維絡全身陽經，調節表裡寒熱與全身陽氣。",
-      "八脈交會穴：主穴外關 (TE5)，配穴足臨泣 (GB41)。主治耳後、肩胛、軀體側外病症。"
+      "維絡全身陽經，調節表裡與全身陽氣。",
+      "主解表清熱，和解少陽，疏風止痛。"
     ],
     "applications_en": [
-      "Governs linking all Yang channels, regulating chills/fever, supporting Yang Qi.",
-      "Master & Coupled Points: Master TE 5 Waiguan, Coupled GB 41 Zulinqi. Primary targets: Posterior ear, shoulders, lateral body."
-    ]
+      "Links and connects all Yang meridians, regulating exterior/interior and Yang Qi.",
+      "Releases the exterior, clears heat, harmonizes Shaoyang, and expels wind to stop pain."
+    ],
+    "special_points": {
+      "master_point": "TE5 外關 (Waiguan)",
+      "coupled_point": "GB41 足臨泣 (Zulinqi)",
+      "xi_cleft": "BL63 金門 (Jinmen)",
+      "paired_channel": "Dai Channel (帶脈)"
+    }
   },
   {
     "code": "Yinwei",
@@ -2758,37 +3004,73 @@
     "next_code": "LU",
     "element": "Yin / 維絡諸陰經",
     "clock_time": "奇經八脈 (Extraordinary Vessel)",
-    "points_count": 7,
+    "points_count": 8,
     "points_list": [
       {
-        "code": "PC6",
-        "nameZh": "內關 (通陰維脈)",
-        "nameEn": "Neiguan (Master Point)"
+        "code": "KI9",
+        "nameZh": "築賓 (郄穴/Xi-Cleft)",
+        "nameEn": "Zhubin (KI 9)"
       },
       {
-        "code": "SP4",
-        "nameZh": "公孫 (配穴)",
-        "nameEn": "Gongsun (Coupled Point)"
+        "code": "SP12",
+        "nameZh": "沖門",
+        "nameEn": "Chongmen (SP 12)"
+      },
+      {
+        "code": "SP13",
+        "nameZh": "府舍",
+        "nameEn": "Fushe (SP 13)"
+      },
+      {
+        "code": "SP15",
+        "nameZh": "大橫",
+        "nameEn": "Daheng (SP 15)"
+      },
+      {
+        "code": "SP16",
+        "nameZh": "腹哀",
+        "nameEn": "Fuai (SP 16)"
+      },
+      {
+        "code": "LR14",
+        "nameZh": "期門",
+        "nameEn": "Qimen (LR 14)"
+      },
+      {
+        "code": "CV22",
+        "nameZh": "天突",
+        "nameEn": "Tiantu (CV 22)"
+      },
+      {
+        "code": "CV23",
+        "nameZh": "廉泉",
+        "nameEn": "Lianquan (CV 23)"
       }
     ],
-    "paired_channel": "Chong (Chong Vessel / 衝脈)",
-    "pathway_zh": "起於小腿內側（築賓），沿腿內側、腹部、胸部，上行至咽喉，與任脈會合於天突、廉泉。維絡全身陰經。",
-    "pathway_en": "Originates at the medial leg (KI 9 Zhubin), ascends the inner thigh, abdomen, chest to throat, meeting the Ren Vessel at CV 22 Tiantu and CV 23 Lianquan. Links all Yin meridians.",
+    "paired_channel": "Chong Channel (衝脈)",
+    "pathway_zh": "起於小腿內側（築賓），沿腿內側、少腹（沖門、府舍、大橫、腹哀）、胸脅（期門），上行至咽喉，與任脈會合於天突、廉泉。維絡全身陰經。",
+    "pathway_en": "Points of the Yinwei channel include: KI 9 Zhubin, SP 12 Chongmen, SP 13 Fushe, LR 14 Qimen, SP 15 Daheng, SP 16 Fuai, CV 22 Tiantu, CV 23 Lianquan. Links all Yin channels.",
     "indications_zh": [
-      "心神與胸腹病症：心痛、胸悶、胃痛、情志鬱結、心悸焦慮。",
-      "陰虛病症：內熱、盜汗、腹痛。"
+      "心神與胸腹病症：心痛、胸悶、心悸、胃痛、反胃嘔吐、情志鬱結、焦慮失眠。",
+      "陰虛與內熱病症：內熱發燒、盜汗、腹痛腹瀉、咽喉腫痛哽噎。"
     ],
     "indications_en": [
-      "Heart & Chest disorders: Cardiac pain, chest tightness, gastralgia, emotional depression, palpitations.",
-      "Yin Deficiency disorders: Internal heat, night sweats, abdominal pain."
+      "Cardiac pain, chest tightness, palpitations, gastralgia, nausea/vomiting, emotional depression, anxiety and insomnia.",
+      "Internal heat fever, night sweats, abdominal pain/diarrhea, sore throat and sensation of lump in throat."
     ],
     "applications_zh": [
-      "主司維絡全身陰經，調節心神與陰血氣機。",
-      "八脈交會穴：主穴內關 (PC6)，配穴公孫 (SP4)。主治心痛、胸悶、胃痛與情志疾病。"
+      "維絡全身陰經，調節心神與陰血氣機。",
+      "寬胸理氣，和胃降逆，寧心安神。"
     ],
     "applications_en": [
-      "Governs linking all Yin channels, regulating heart, mind, and Yin Blood.",
-      "Master & Coupled Points: Master PC 6 Neiguan, Coupled SP 4 Gongsun. Primary targets: Cardiac pain, chest tightness, gastralgia, emotional depression."
-    ]
+      "Links all Yin channels, regulating heart, spirit, and Yin Blood.",
+      "Expands the chest, harmonizes the Stomach to lower rebellious Qi, and calms the Shen."
+    ],
+    "special_points": {
+      "master_point": "PC6 內關 (Neiguan)",
+      "coupled_point": "SP4 公孫 (Gongsun)",
+      "xi_cleft": "KI9 築賓 (Zhubin)",
+      "paired_channel": "Chong Channel (衝脈)"
+    }
   }
 ]
