@@ -1782,7 +1782,7 @@
       (record.red_flags_zh || []).length && (record.red_flags_en || []).length
     );
     const eastern = K.conditions.eastern_diseases || [];
-    const patterns = K.conditions.tcm_patterns || [];
+    const patterns = (K.patternLibrary && K.patternLibrary.records) ? K.patternLibrary.records : (K.conditions.tcm_patterns || []);
     const conditionSources = (record) => {
       const links = (record.source_links || []).filter((link) =>
         link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
@@ -1794,6 +1794,181 @@
           <small>${esc(link.label_en || "Source")}</small>
         </a>`).join("")}
       </div>`;
+    };
+    let patternLangMode = "zh";
+
+    function openPatternBigCardModal(p, langMode = patternLangMode) {
+      let modal = document.getElementById("patternDetailModalOverlay");
+      if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "patternDetailModalOverlay";
+        modal.className = "k-modal-overlay";
+        document.body.appendChild(modal);
+      }
+
+      const isEn = langMode === "en";
+      const manifests = isEn
+        ? (p.key_manifestations_en || p.key_manifestations_zh || [])
+        : (p.key_manifestations_zh || p.key_signs_zh || []);
+
+      const tongueText = isEn
+        ? (p.tongue_preview?.en || p.tongue || "—")
+        : (p.tongue_preview?.zh || p.tongue || "—");
+
+      const pulseText = isEn
+        ? (p.pulse_preview?.en || p.pulse || "—")
+        : (p.pulse_preview?.zh || p.pulse || "—");
+
+      const summaryText = isEn
+        ? (p.short_summary_en || p.short_summary_zh || "")
+        : (p.short_summary_zh || p.short_summary_en || "");
+
+      const diffText = isEn
+        ? (p.differentiation_preview_en || p.differentiation_preview_zh || "")
+        : (p.differentiation_preview_zh || p.differentiation_preview_en || "");
+
+      const principleText = isEn
+        ? (p.treatment_principle_en || p.treatment_principle_zh || "")
+        : (p.treatment_principle_zh || p.treatment_principle_en || "");
+
+      const formulas = p.primary_formula_ids || p.typical_formulas || [];
+      const points = p.primary_acupoint_ids || p.typical_points || [];
+      const conditions = p.related_biomedical_condition_ids || [];
+
+      modal.innerHTML = `
+        <div class="k-big-card" role="dialog" aria-modal="true">
+          <button type="button" class="k-big-card-close" id="patternModalCloseBtn" aria-label="Close">&times;</button>
+          
+          <!-- Big Card Top Bar & Language Switcher -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e5dccb; padding-bottom: 0.6rem;">
+            <div id="bigCardLangSwitcher" class="k-cloud-disease-categories" style="margin: 0;">
+              <button type="button" class="${!isEn ? 'is-active' : ''}" data-modal-lang="zh">🇹🇼 中文大卡</button>
+              <button type="button" class="${isEn ? 'is-active' : ''}" data-modal-lang="en">🇺🇸 English Card</button>
+            </div>
+            <span class="k-status k-status-draft">${esc(p.review_status || p.status || "draft")}</span>
+          </div>
+
+          <div class="k-big-card-header">
+            <h2 class="k-big-card-title">${isEn ? esc(p.name_en) : esc(p.name_zh)} <small>${isEn ? esc(p.name_zh) : esc(p.name_en)} ${p.pinyin ? `(${esc(p.pinyin)})` : ""}</small></h2>
+            <p class="k-meta">ID: <code>${esc(p.id)}</code> · ${esc(p.pattern_category || "zang_fu")} ${p.eight_principles ? ` · ${esc(p.eight_principles.excess_deficiency || "")} · ${esc(p.eight_principles.heat_cold || "")}` : ""}</p>
+          </div>
+
+          <!-- 1. 病因與病理機轉 -->
+          <div class="k-big-card-section">
+            <h3>${isEn ? "1. Etiology & Pathomechanism" : "1. 病因與病理機轉 Etiology & Pathomechanism"}</h3>
+            ${summaryText ? `<p><strong>${isEn ? "[Pathomechanism]" : "【核心病機】"}</strong> ${esc(summaryText)}</p>` : ""}
+            ${(p.etiology_zh && !isEn) ? `<p><strong>【病因背景】</strong> ${esc(p.etiology_zh)}</p>` : ""}
+          </div>
+
+          <!-- 2. 系統化臨床表現 -->
+          <div class="k-big-card-section">
+            <h3>${isEn ? "2. Clinical Manifestations" : "2. 系統化臨床表現 Clinical Manifestations"}</h3>
+            ${manifests.length ? `<p><strong>${isEn ? "【Key Signs & Symptoms】" : "【主症表現 Key Signs】"}</strong> ${manifests.map(m => esc(m)).join(" · ")}</p>` : ""}
+            <ul>
+              <li><strong>👅 ${isEn ? "Tongue" : "舌象 Tongue"}：</strong> ${esc(tongueText)}</li>
+              <li><strong>💓 ${isEn ? "Pulse" : "脈象 Pulse"}：</strong> ${esc(pulseText)}</li>
+            </ul>
+          </div>
+
+          <!-- 3. 辨證要點與國考考點 -->
+          ${(diffText || principleText || p.exam_pearls_zh) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "3. Differential & Treatment Principles" : "3. 辨證要點與國考考點 Differential & Exam Pearls"}</h3>
+              ${diffText ? `<p><strong>${isEn ? "[Differentiation]" : "【辨證要點】"}</strong> ${esc(diffText)}</p>` : ""}
+              ${principleText ? `<p><strong>${isEn ? "[Treatment Principle]" : "【治則治法】"}</strong> ${esc(principleText)}</p>` : ""}
+              ${(!isEn && p.exam_pearls_zh) ? `<p><strong>💡 考點提示：</strong> ${esc(p.exam_pearls_zh)}</p>` : ""}
+            </div>
+          ` : ""}
+
+          <!-- 4. 代表方藥與針灸處方 -->
+          ${(formulas.length || points.length || conditions.length) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "4. Primary Treatment & Links" : "4. 代表方藥與針灸處方 Primary Treatment & Links"}</h3>
+              ${formulas.length ? `<p><strong>💊 ${isEn ? "Primary Formulas:" : "代表方劑："}</strong> ${formulas.map(id => `<a href="#formulaSection" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">💊 ${esc(id)}</a>`).join(" ")}</p>` : ""}
+              ${points.length ? `<p><strong>📌 ${isEn ? "Acupuncture Points:" : "針灸配穴："}</strong> ${points.map(code => `<a href="#point/${esc(code)}" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">📌 ${esc(code)}</a>`).join(" ")}</p>` : ""}
+              ${conditions.length ? `<p><strong>🏥 ${isEn ? "Biomedical Mapping:" : "西醫對應："}</strong> ${conditions.map(id => `<span class="k-tag">${esc(id)}</span>`).join(" ")}</p>` : ""}
+            </div>
+          ` : ""}
+
+          <!-- 5. 急症紅旗 (如有) -->
+          ${p.red_flags_zh?.length ? `
+            <div class="k-big-card-section">
+              <h3>5. 急症紅旗 Safety Red Flags</h3>
+              <div class="k-red-flag-box">
+                <strong>🚨 急症紅旗：</strong> ${p.red_flags_zh.map(esc).join(" · ")}
+              </div>
+            </div>
+          ` : ""}
+
+          <!-- 6. 出處標註 -->
+          <div class="k-big-card-section">
+            <h3>${isEn ? "6. Sources & Provenance" : "6. 資料來源 Sources & Provenance"}</h3>
+            <p>${(p.source_ids || ["NCBAHM CH Content Outline 2026", "CloudTCM"]).map(esc).join(" · ")}</p>
+          </div>
+        </div>
+      `;
+      modal.classList.add("is-open");
+
+      // Bind language switcher inside Big Card Modal
+      document.getElementById("bigCardLangSwitcher")?.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-modal-lang]");
+        if (!btn) return;
+        const newLang = btn.dataset.modalLang;
+        openPatternBigCardModal(p, newLang);
+      });
+
+      document.getElementById("patternModalCloseBtn").addEventListener("click", () => {
+        modal.classList.remove("is-open");
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("is-open");
+      });
+    }
+
+    const renderPatternCard = (p, langMode = patternLangMode) => {
+      const isEn = langMode === "en";
+      const manifests = isEn
+        ? (p.key_manifestations_en || p.key_manifestations_zh || [])
+        : (p.key_manifestations_zh || p.key_signs_zh || []);
+
+      const tongueText = isEn
+        ? (p.tongue_preview?.en || p.tongue || "—")
+        : (p.tongue_preview?.zh || p.tongue || "—");
+
+      const pulseText = isEn
+        ? (p.pulse_preview?.en || p.pulse || "—")
+        : (p.pulse_preview?.zh || p.pulse || "—");
+
+      return `
+        <article class="k-card k-pattern-card" data-record-id="${esc(p.id)}">
+          <header>
+            <strong>${isEn ? esc(p.name_en) : esc(p.name_zh)} <small>${isEn ? esc(p.name_zh) : esc(p.name_en)}</small></strong>
+            <span class="k-status k-status-draft">${esc(p.review_status || p.status || "draft")}</span>
+          </header>
+          ${manifests.length ? `
+            <div class="k-pattern-manifestations" style="margin-top: 0.4rem;">
+              <strong class="k-subhead">${isEn ? "Key Manifestations" : "核心症狀與辨徵 Key Manifestations"}</strong>
+              <div class="k-tags">
+                ${manifests.map((item) => `<span class="k-tag k-tag-manifestation">${esc(item)}</span>`).join("")}
+              </div>
+            </div>
+          ` : ""}
+          <div class="k-pattern-tp-grid">
+            <div class="k-tp-item">
+              <strong>👅 ${isEn ? "Tongue" : "舌象 Tongue"}</strong>
+              <p>${esc(tongueText)}</p>
+            </div>
+            <div class="k-tp-item">
+              <strong>💓 ${isEn ? "Pulse" : "脈象 Pulse"}</strong>
+              <p>${esc(pulseText)}</p>
+            </div>
+          </div>
+          <div style="margin-top: 0.75rem; text-align: right;">
+            <button type="button" class="k-entity-chip" data-open-big-pattern="${esc(p.id)}" style="background: #e2d2b8; border-color: #c8b598; cursor: pointer; padding: 0.35rem 0.75rem; font-size: 0.84rem;">
+              ${isEn ? "📖 Open Big Card &rarr;" : "📖 開啟證型大卡 · Open Big Card &rarr;"}
+            </button>
+          </div>
+        </article>`;
     };
     const renderConditions = (list) => list.map((c) => {
       const relatedSymptoms = (c.related_tcm_symptoms || []).map((item) =>
@@ -1850,6 +2025,19 @@
       });
     };
     condHost.innerHTML = `
+      <div class="mini-heading" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <strong>${esc(modeText(`TCM Pattern Library / 中醫證型預覽卡（${patterns.length} 筆）`, `TCM Pattern Library (${patterns.length})`))}</strong>
+          <span style="display: block;">${esc(modeText("依據 Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1 規格建置 Prototype 卡片", "Built according to Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1 specification."))}</span>
+        </div>
+        <div id="patternLangToggleBar" class="k-cloud-disease-categories" style="margin: 0;">
+          <button type="button" class="${patternLangMode === 'zh' ? 'is-active' : ''}" data-pattern-lang="zh">🇹🇼 中文版 · Chinese</button>
+          <button type="button" class="${patternLangMode === 'en' ? 'is-active' : ''}" data-pattern-lang="en">🇺🇸 English Version · 英文版</button>
+        </div>
+      </div>
+      <div class="k-grid k-grid-wide" id="tcmPatternGrid" style="margin-bottom: 1.5rem;">
+        ${patterns.map((p) => renderPatternCard(p, patternLangMode)).join("")}
+      </div>
       <div class="mini-heading">
         <strong>${esc(modeText(`Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）`, `Western Conditions (${conds.length} safety-filled · ${allConds.length} canon)`))}</strong>
         <span>${esc(modeText("來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。", "Source: condition_canon_shortlist.json · biomedical and TCM names are related mappings, not one-to-one translations."))}</span>
@@ -1875,8 +2063,18 @@
         </div>
         <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
       </section>
-      <p class="k-meta">Eastern：${eastern.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>
-      <p class="k-meta">Patterns：${patterns.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>`;
+      <p class="k-meta">Eastern：${eastern.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>`;
+    
+    el("patternLangToggleBar")?.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-pattern-lang]");
+      if (!btn) return;
+      patternLangMode = btn.dataset.patternLang || "zh";
+      el("patternLangToggleBar").querySelectorAll("[data-pattern-lang]").forEach((b) => {
+        b.classList.toggle("is-active", b.dataset.patternLang === patternLangMode);
+      });
+      el("tcmPatternGrid").innerHTML = patterns.map((p) => renderPatternCard(p, patternLangMode)).join("");
+    });
+
     el("conditionFilter").addEventListener("input", (event) => {
       const q = event.target.value.trim().toLowerCase();
       const hits = conds.filter((record) => [
@@ -1904,6 +2102,15 @@
     el("cloudtcmDiseaseNext").addEventListener("click", () => {
       cloudDiseasePage += 1;
       renderCloudDiseaseDirectory();
+    });
+    el("tcmPatternGrid")?.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-open-big-pattern]");
+      if (!btn) return;
+      const pid = btn.dataset.openBigPattern;
+      const found = patterns.find((r) => r.id === pid);
+      if (found) {
+        openPatternBigCardModal(found, patternLangMode);
+      }
     });
     renderCloudDiseaseDirectory();
   }
