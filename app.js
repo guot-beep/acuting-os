@@ -1243,8 +1243,11 @@ function handlePointHashChange() {
   if (hash === "#ws/channels" || hash === "#channelsWorkspace") {
     document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
     document.querySelector('.system-tab-btn[data-system-link="channels"]')?.classList.add("active");
-    render();
-    document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!activeChartMode && !activeChannelCode) activeChartMode = "fiveshu";
+    renderChannelsWorkspace();
+    requestAnimationFrame(() => {
+      document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
     return;
   }
   if (!applyPointHash()) {
