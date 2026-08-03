@@ -620,11 +620,26 @@ const tungZoneGroups = uiConfig.tungZoneGroups || [
 let selectedSystem = "";
 let selectedSystemBranch = "";
 
-document.querySelectorAll(".system-tab-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
+document.querySelectorAll(".system-tab-btn, [data-system-link='channels']").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const isChannelLink = btn.dataset.systemLink === "channels" || btn.getAttribute("href") === "#ws/channels";
+    if (isChannelLink) {
+      e.preventDefault();
+      selectedSystem = "";
+      selectedSystemBranch = "";
+      document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      if (!activeChartMode && !activeChannelCode) activeChartMode = "fiveshu";
+      if (window.location.hash !== "#ws/channels") {
+        window.location.hash = "#ws/channels";
+      } else {
+        render();
+        document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
     const sys = btn.dataset.system || "";
     if (selectedSystem === sys && sys !== "") {
-      // Toggle off drawer if same tab clicked
       selectedSystem = "";
       selectedSystemBranch = "";
       document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
@@ -1224,6 +1239,14 @@ function applyPointHash() {
 
 function handlePointHashChange() {
   if (isSyncingPointHash) return;
+  const hash = window.location.hash || "";
+  if (hash === "#ws/channels" || hash === "#channelsWorkspace") {
+    document.querySelectorAll(".system-tab-btn").forEach((b) => b.classList.remove("active"));
+    document.querySelector('.system-tab-btn[data-system-link="channels"]')?.classList.add("active");
+    render();
+    document.querySelector("#channelsWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
   if (!applyPointHash()) {
     render();
     return;
