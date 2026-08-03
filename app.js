@@ -3254,6 +3254,14 @@ function isAuricularPoint(point) {
     || /^(HX|AH|SC|TF|TG|AT|CO|LO)\d+/i.test(point.code);
 }
 
+function isScalpPoint(point) {
+  return String(point.meridian || "").includes("頭皮")
+    || String(point.meridian || "").includes("Scalp")
+    || String(point.region || "").includes("頭皮")
+    || String(point.code || "").startsWith("MS")
+    || String(point.code || "").startsWith("SCALP-");
+}
+
 function isExtraPoint(point) {
   return String(point.meridian || "").includes("Extra Points")
     || String(point.meridian || "").includes("經外奇穴")
@@ -4162,6 +4170,17 @@ function externalPointLinks(point) {
     return [
       { label: contentMode === "english" ? "eLotus CORE (Dr. Huang)" : "eLotus 權威圖解", url: elotusLink, kind: "english" }
     ];
+  }
+
+  if (isScalpPoint(point)) {
+    const verifiedLink = visualLinks.find(l => (l.url || '').includes('mastertungacupuncture.org'))?.url
+      || sources.find(s => typeof s === 'string' && s.includes('mastertungacupuncture.org') && !s.includes('/scalp/overview'));
+    if (verifiedLink) {
+      return [
+        { label: contentMode === "english" ? "eLotus CORE (Tai's Scalp)" : "eLotus 權威圖解", url: verifiedLink, kind: "english" }
+      ];
+    }
+    return [];
   }
 
   // 1. CloudTCM (中文)
