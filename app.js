@@ -6079,6 +6079,7 @@ function renderChannelOverviewCard(ch) {
   `;
 }
 
+
 function renderFiveShuMatrixTable() {
   const rows = [
     { ch: "LU (手太陰肺經)", well: "LU11 少商", spring: "LU10 魚際", stream: "LU9 太淵", river: "LU8 經渠", sea: "LU5 尺澤" },
@@ -6092,11 +6093,11 @@ function renderFiveShuMatrixTable() {
     { ch: "PC (手厥陰心包經)", well: "PC9 中衝", spring: "PC8 勞宮", stream: "PC7 大陵", river: "PC5 間使", sea: "PC3 曲澤" },
     { ch: "TE (手少陽三焦經)", well: "TE1 關衝", spring: "TE2 液門", stream: "TE3 中渚", river: "TE6 支溝", sea: "TE10 天井" },
     { ch: "GB (足少陽膽經)", well: "GB44 足竅陰", spring: "GB43 俠溪", stream: "GB41 足臨泣", river: "GB38 陽輔", sea: "GB34 陽陵泉" },
-    { ch: "LR (足厥陰肝經)", well: "LR1 大敦", spring: "LR2 行間", stream: "LR3 太衝", river: "LR4 中封", river2: "", sea: "LR8 曲泉" }
+    { ch: "LR (足厥陰肝經)", well: "LR1 大敦", spring: "LR2 行間", stream: "LR3 太衝", river: "LR4 中封", sea: "LR8 曲泉" }
   ];
 
   const formatCell = (txt) => {
-    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    const m = txt.match(/^([A-Z0-9]+)s+(.+)$/);
     if (!m) return txt;
     return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
   };
@@ -6151,7 +6152,7 @@ function renderYuanLuoXiMuShuMatrixTable() {
   ];
 
   const formatCell = (txt) => {
-    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    const m = txt.match(/^([A-Z0-9]+)s+(.+)$/);
     if (!m) return txt;
     return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
   };
@@ -6189,6 +6190,50 @@ function renderYuanLuoXiMuShuMatrixTable() {
   `;
 }
 
+function renderLowerHeMotherChildMatrixTable() {
+  const lowerHeRows = [
+    { fu: "ST (胃)", point: "ST36 足三里 (Zusanli)", channel: "足陽明胃經" },
+    { fu: "LI (大腸)", point: "ST37 上巨虛 (Shangjuxu)", channel: "足陽明胃經" },
+    { fu: "SI (小腸)", point: "ST39 下巨虛 (Xiajuxu)", channel: "足陽明胃經" },
+    { fu: "BL (膀胱)", point: "BL40 委中 (Weizhong)", channel: "足太陽膀胱經" },
+    { fu: "TE (三焦)", point: "BL39 委陽 (Weiyang)", channel: "足太陽膀胱經" },
+    { fu: "GB (膽)", point: "GB34 陽陵泉 (Yanglingquan)", channel: "足少陽膽經" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        3. 下合穴與母子補瀉穴總表 (Lower He-Sea & Mother-Child Tonification/Sedation Points)
+      </h3>
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">一、六腑下合穴 (Six Lower He-Sea Points)</h4>
+      <table class="master-matrix-table" style="margin-bottom: 1.5rem;">
+        <thead>
+          <tr>
+            <th>六腑 Organ</th>
+            <th>下合穴 Lower He-Sea Point</th>
+            <th>所屬經脈 Location Meridian</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${lowerHeRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.fu}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.channel}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
 function renderConfluentPointsMatrixTable() {
   const rows = [
     { vessel: "任脈 (Conception Vessel)", master: "LU7 列缺", coupled: "KI6 照海", area: "胸、肺、膈、咽喉 (Chest, Lungs, Throat)" },
@@ -6202,7 +6247,7 @@ function renderConfluentPointsMatrixTable() {
   ];
 
   const formatCell = (txt) => {
-    const m = txt.match(/^([A-Z0-9]+)\s+(.+)$/);
+    const m = txt.match(/^([A-Z0-9]+)s+(.+)$/);
     if (!m) return txt;
     return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
   };
@@ -6210,7 +6255,7 @@ function renderConfluentPointsMatrixTable() {
   return `
     <div class="master-matrix-wrap">
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
-        3. 八脈交會穴與奇經對應配穴總表 (Master & Coupled Points for Extraordinary Channels)
+        4. 八脈交會穴與奇經對應配穴總表 (Master & Coupled Points for Extraordinary Channels)
       </h3>
       <table class="master-matrix-table">
         <thead>
@@ -6228,6 +6273,212 @@ function renderConfluentPointsMatrixTable() {
               <td>${formatCell(r.master)}</td>
               <td>${formatCell(r.coupled)}</td>
               <td>${r.area}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderGroupLuoMatrixTable() {
+  const rows = [
+    { group: "手三陰組絡 (3 Arm Yin Group Luo)", point: "PC5 間使 (Jianshi)", desc: "統轄手太陰肺經、手少陰心經、手厥陰心包經" },
+    { group: "手三陽組絡 (3 Arm Yang Group Luo)", point: "TE8 三陽絡 (Sanyangluo)", desc: "統轄手陽明大腸經、手太陽小腸經、手少陽三焦經" },
+    { group: "足三陰組絡 (3 Leg Yin Group Luo)", point: "SP6 三陰交 (Sanyinjiao)", desc: "統轄足太陰脾經、足少陰腎經、足厥陰肝經" },
+    { group: "足三陽組絡 (3 Leg Yang Group Luo)", point: "GB39 懸鐘 (Xuanzhong / 絕骨)", desc: "統轄足陽明胃經、足太陽膀胱經、足少陽膽經" },
+    { group: "脾之大絡 (Great Luo of Spleen)", point: "SP21 大包 (Dabao)", desc: "總絡全身陰陽諸絡，主治全身疼痛與軟弱無力" },
+    { group: "胃之大絡 (Great Luo of Stomach)", point: "ST18 乳根 (Rugen / 虛里)", desc: "貫膈絡肺，宗氣之所出，主治心悸與呼吸喘促" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        5. 組絡穴與大絡總表 (Group Luo Points & Great Luo Vessels)
+      </h3>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>組絡種類 Group Luo Category</th>
+            <th>交會穴位 Group Luo Point</th>
+            <th>統轄經絡與臨床作用 Functions & Scope</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.group}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.desc}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderHuiAndCommandMatrixTable() {
+  const huiRows = [
+    { type: "臟會 (Zang Organs)", point: "LR13 章門 (Zhangmen)", note: "五臟精氣之所會，善治五臟積聚與脾虛腹脹" },
+    { type: "腑會 (Fu Organs)", point: "CV12 中脘 (Zhongwan)", note: "六腑氣血之所會，善治胃痛、嘔吐與消化不良" },
+    { type: "氣會 (Qi)", point: "CV17 膻中 (Danzhong)", note: "宗氣之所聚，善治胸悶、氣短、哮喘與心悸" },
+    { type: "血會 (Blood)", point: "BL17 膈俞 (Geshu)", note: "血之所會，善治血虛、血瘀、吐血與貧血" },
+    { type: "筋會 (Tendons)", point: "GB34 陽陵泉 (Yanglingquan)", note: "全身筋脈之所會，善治膝痛、筋攣與中風偏癱" },
+    { type: "脈會 (Vessels / Pulse)", point: "LU9 太淵 (Taiyuan)", note: "百脈之所會，善治無脈症、脈律不齊與血管病變" },
+    { type: "骨會 (Bones)", point: "BL11 大杼 (Dazhu)", note: "骨氣之所會，善治頸椎病、骨質增生與骨痛" },
+    { type: "髓會 (Marrow)", point: "GB39 懸鐘 (Xuanzhong / 絕骨)", note: "精髓之所會，善治髓海不足、頸項強痛與癡呆" }
+  ];
+
+  const commandRows = [
+    { song: "面口合谷收 (Face & Mouth)", point: "LI4 合谷 (Hegu)", region: "頭面五官、牙痛、面癱、鼻塞" },
+    { song: "肚腹三里留 (Abdomen & Stomach)", point: "ST36 足三里 (Zusanli)", region: "胃痛、腹脹、消化不良、腸胃疾病" },
+    { song: "腰背委中求 (Lumbar & Back)", point: "BL40 委中 (Weizhong)", region: "腰痛、坐骨神經痛、背痛、腿痛" },
+    { song: "頭項尋列缺 (Head & Neck)", point: "LU7 列缺 (Lieque)", region: "頭痛、頸項強痛、落枕、偏頭痛" },
+    { song: "心胸內關謀 (Chest & Heart)", point: "PC6 內關 (Neiguan)", region: "心悸、胸悶、心痛、嘔吐、失眠" },
+    { song: "少腹三陰交 (Lower Abdomen & Gynecological)", point: "SP6 三陰交 (Sanyinjiao)", region: "痛經、月經不調、少腹痛、泌尿生殖疾病" }
+  ];
+
+  const formatCell = (txt) => {
+    const m = txt.match(/^([A-Z0-9]+)s+(.+)$/);
+    if (!m) return txt;
+    return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        6. 八會穴與六總穴中英總表 (Eight Hui-Influential & Six Command Points)
+      </h3>
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">一、八會穴 (Eight Hui-Influential Points)</h4>
+      <table class="master-matrix-table" style="margin-bottom: 1.5rem;">
+        <thead>
+          <tr>
+            <th>八會類別 Hui Category</th>
+            <th>交會穴位 Hui Point</th>
+            <th>主治與臨床特徵 Clinical Indications</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${huiRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.type}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.note}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">二、六總穴 (Six Command Points)</h4>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>歌訣歌名 Command Song</th>
+            <th>總穴穴位 Command Point</th>
+            <th>主治部位 Target Region & Indications</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${commandRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.song}</td>
+              <td>${formatCell(r.point)}</td>
+              <td>${r.region}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderFourSeaAndGhostPointsMatrixTable() {
+  const fourSeaRows = [
+    { sea: "髓海 (Sea of Marrow)", points: "GV16 鳳府 (Fengfu) / GV20 百會 (Baihui)", desc: "髓海有餘則輕勁多力，自過其度；髓海不足則腦轉耳鳴，脛痠眩冒，目無所見，懈怠安臥。" },
+    { sea: "血海 (Sea of Blood)", points: "BL11 大杼 (Dazhu) / ST37 上巨虛 (Shangjuxu) / ST39 下巨虛 (Xiajuxu)", desc: "血海有餘則常想身大，茫然不知其所疾；血海不足則常想身小，狹狹不知其所病。" },
+    { sea: "氣海 (Sea of Qi)", points: "CV17 膻中 (Danzhong) / ST9 人迎 (Renying) / GV14 大椎 (Dazhui) / GV15 啞門 (Yamen)", desc: "氣海有餘則氣滿胸中，悗息面赤；氣海不足則氣少不足以言。" },
+    { sea: "水穀之海 (Sea of Nourishment)", points: "ST30 氣衝 (Qichong) / ST36 足三里 (Zusanli)", desc: "水穀之海有餘則腹滿；水穀之海不足則飢不受穀食。" }
+  ];
+
+  const ghostRows = [
+    { nameEn: "Palace", nameZh: "鬼宮", point: "GV26 人中 (Renzhong)" },
+    { nameEn: "Faith", nameZh: "鬼信", point: "LU11 少商 (Shaoshang)" },
+    { nameEn: "Fortress", nameZh: "鬼堡", point: "SP1 隱白 (Yinbai)" },
+    { nameEn: "Heart", nameZh: "鬼心", point: "PC7 大陵 (Daling)" },
+    { nameEn: "Road", nameZh: "鬼路", point: "BL62 申脈 (Shenmai)" },
+    { nameEn: "Pillow", nameZh: "鬼枕", point: "GV16 鳳府 (Fengfu)" },
+    { nameEn: "Bed", nameZh: "鬼床", point: "ST6 頰車 (Jiache)" },
+    { nameEn: "Market", nameZh: "鬼市", point: "CV24 承漿 (Chengjiang)" },
+    { nameEn: "Cave", nameZh: "鬼窟", point: "PC8 勞宮 (Laogong)" },
+    { nameEn: "Hall", nameZh: "鬼堂", point: "GV23 上星 (Shangxing)" },
+    { nameEn: "Store", nameZh: "鬼藏", point: "CV1 會陰 (Huiyin)" },
+    { nameEn: "Leg", nameZh: "鬼腿", point: "LI11 曲池 (Quchi)" },
+    { nameEn: "Seal", nameZh: "鬼封", point: "Ex-HN10 聚泉 (Juquan)" }
+  ];
+
+  const formatCell = (txt) => {
+    const parts = txt.split(' / ');
+    return parts.map(p => {
+      const m = p.match(/^([A-Za-z0-9-]+)s+(.+)$/);
+      if (!m) return p;
+      return `<a class="matrix-point-link" href="#point/${m[1]}" data-point-code="${m[1]}">${m[1]} ${m[2]}</a>`;
+    }).join(' / ');
+  };
+
+  return `
+    <div class="master-matrix-wrap">
+      <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
+        7. 四海穴與孫真人十三鬼穴中英總表 (Four Sea Points & Sun Simiao 13 Ghost Points)
+      </h3>
+      
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">一、四海穴總表 (Four Sea Points)</h4>
+      <p style="margin-bottom: 0.75rem; color: #35473e; line-height: 1.6; font-size: 0.92rem;">
+        In nature, there are east, west, north and south, thus the ancients believed the body should also have four points/seas that are pivotal for treating the four most important substances in the body: marrow, blood, qi and nourishment.
+      </p>
+      <table class="master-matrix-table" style="margin-bottom: 1.5rem;">
+        <thead>
+          <tr>
+            <th>四海名稱 Four Sea Name</th>
+            <th>包含穴位 Four Sea Points</th>
+            <th>黃帝內經虛實病理與臨床特徵 Pathological & Clinical Features</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${fourSeaRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.sea}</td>
+              <td>${formatCell(r.points)}</td>
+              <td>${r.desc}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">二、孫真人十三鬼穴總表 (Sun Simiao 13 Ghost Points)</h4>
+      <p style="margin-bottom: 0.75rem; color: #35473e; line-height: 1.6; font-size: 0.92rem;">
+        Originating from <i>Qian Jin Yao Fang</i> (Thousand Ducat Prescriptions) by Sun Si-Miao in 581-685 A.D., there are a total of 13 Ghost points used to treat psychological, neurological, or shen disturbance problems.
+      </p>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>Ghost Point Name (English)</th>
+            <th>鬼穴古名 Ghost Name (Chinese)</th>
+            <th>對應標準穴位 Standard Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${ghostRows.map(r => `
+            <tr>
+              <td class="channel-name-cell">${r.nameEn}</td>
+              <td><b>${r.nameZh}</b></td>
+              <td>${formatCell(r.point)}</td>
             </tr>
           `).join('')}
         </tbody>
