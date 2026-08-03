@@ -4154,7 +4154,7 @@ function eLotusPointUrl(point) {
 
   let code = String(point.code || point.id || "").toLowerCase().trim();
   if (isExtraPoint(point) || String(point.meridian || "").includes("Master Tung")) {
-    return visualLinks[0]?.url || (typeof sources[0] === "string" && sources[0].startsWith("http") ? sources[0] : "https://www.mastertungacupuncture.org/acupuncture/traditional/points");
+    return visualLinks[0]?.url || (typeof sources[0] === "string" && sources[0].startsWith("http") ? sources[0] : "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list");
   }
 
   code = code.replace(/^te/, "th").replace(/^sj/, "th");
@@ -5925,7 +5925,18 @@ function renderChannelsWorkspace() {
     </div>
 
     <div>
-      <div class="channels-launcher-title">📊 eLotus 經典七大特定穴總表 / 7 Major Point Charts & Master Matrices</div>
+      
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+    <div class="channels-launcher-title" style="margin-bottom: 0;">📊 eLotus 經典七大特定穴總表 / 7 Major Point Charts & Master Matrices</div>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <a href="https://www.mastertungacupuncture.org/acupuncture/traditional/points/list" target="_blank" rel="noreferrer" class="source-link-chip" style="font-size: 0.82rem; padding: 0.25rem 0.6rem; background: #1f5b3d; color: #ffffff; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.3rem;">
+        🔗 eLotus 權威穴位總表 ↗
+      </a>
+      <a href="https://www.mastertungacupuncture.org/acupuncture/traditional/system/pointcharts" target="_blank" rel="noreferrer" class="source-link-chip" style="font-size: 0.82rem; padding: 0.25rem 0.6rem; background: #2b704c; color: #ffffff; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.3rem;">
+        📊 eLotus 經脈圖表總攬 ↗
+      </a>
+    </div>
+  </div>
       <div class="charts-pills-row">
         <button type="button" class="chart-pill-btn ${activeChartMode === 'fiveshu' ? 'active' : ''}" data-chart-mode="fiveshu">
           1. 五輸穴總表 (Five Shu Points)
