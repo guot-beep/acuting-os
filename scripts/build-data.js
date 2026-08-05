@@ -13,6 +13,12 @@
  */
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
+
+// Short content digest for the generated-file banners. Provenance without
+// volatility: identical inputs produce identical bytes, so `git diff` on
+// data/generated means the DATA changed, not that someone re-ran the build.
+const digest = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const ROOT = path.join(__dirname, "..");
 
@@ -54,12 +60,19 @@ Object.assign(payload, i18n);
 payload.uiConfig = readJson(UI_CONFIG_SOURCE);
 payload.pointCategoryVocabulary = readJson("data/config/point_category_vocabulary.json");   // PC5 badge/filter labels
 
+// The banner used to carry `new Date()`. That made every build produce a diff
+// even when no data changed — noise in a repo whose knowledge layer is valuable
+// precisely because its diffs mean something (D7), and a permanent false
+// failure for the CI step that checks "did you forget to rebuild?". The content
+// digest keeps the provenance (it says exactly what this was built from) while
+// being deterministic: same inputs, same bytes.
+const body = "globalThis.ACUTING_APP_DATA = " + JSON.stringify(payload) + ";\n";
 const banner = `// GENERATED FILE - DO NOT EDIT.
-// Built by scripts/build-data.js on ${new Date().toISOString()}
+// Built by scripts/build-data.js · content ${digest(body)}
 // Source of truth: data/acupoints/embedded/*.json, data/auricular/embedded/*.json,
 //                  data/config/ui_config.json
 `;
-const out = banner + "globalThis.ACUTING_APP_DATA = " + JSON.stringify(payload) + ";\n";
+const out = banner + body;
 
 fs.mkdirSync(path.join(ROOT, "data/generated"), { recursive: true });
 fs.writeFileSync(path.join(ROOT, "data/generated/app_data.js"), out);
@@ -102,15 +115,17 @@ const knowledge = {
   // 而圖照樣畫得出來，只是軸錯位，畫面上看不出來。
   formulaActionGroups: readJson("data/config/formula_tag_glossary.json").action_groups,
 };
+// Deterministic banner — see the app_data.js note above.
+const kBody = "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n";
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
-// Built by scripts/build-data.js on ${new Date().toISOString()}
+// Built by scripts/build-data.js · content ${digest(kBody)}
 // Source of truth: data/herbs/formulas.json, data/herbs/herb_canon_shortlist.json,
 //                  data/pathology/conditions.json, data/sources/source_registry.json,
 //                  data/audits/missing_report.json, data/knowledge/comparisons.json
 `;
 fs.writeFileSync(
   path.join(ROOT, "data/generated/knowledge_data.js"),
-  kBanner + "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n"
+  kBanner + kBody
 );
 console.log("Built data/generated/knowledge_data.js");
 console.log(JSON.stringify({
