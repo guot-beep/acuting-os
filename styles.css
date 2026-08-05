@@ -6533,3 +6533,17 @@ html { scroll-padding-top: 92px; }
    avoids a null-check sweep for no gain — and the column collapses. */
 .directory-layout > .directory-sidebar { display: none; }
 .directory-layout { grid-template-columns: minmax(0, 1fr); }
+
+/* .content-grid declares two columns for a list-plus-map layout, but the
+   acupoint browser has only the list left — the panel that occupied the second
+   column is gone. The result was 769 cards squeezed into the 380px track with
+   789px sitting empty beside them.
+
+   Scoped with :only-child rather than by changing the column template: this can
+   only apply when there is nothing in the second column to displace, so a
+   workspace that still renders both panels is untouched. An earlier attempt
+   swapped the track widths globally and made things worse — the ratio was never
+   the problem, the empty column was. */
+.content-grid > .details-panel:only-child {
+  grid-column: 1 / -1;
+}
