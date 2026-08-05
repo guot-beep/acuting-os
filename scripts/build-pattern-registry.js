@@ -23,6 +23,12 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const CONDITIONS = path.join(ROOT, 'data/pathology/condition_canon_shortlist.json');
 const COMPARISONS = path.join(ROOT, 'data/knowledge/comparisons.json');
+/* Cases reference patterns too, and until this was added the registry could not
+ * see them: sample_deidentified_case.json cited pattern.phlegm_damp_obstruction
+ * and the pattern simply did not exist anywhere, which the case validator
+ * reported as a dangling key. A vocabulary built from usage has to read every
+ * place the vocabulary is used. */
+const CASES_DIR = path.join(ROOT, 'data/clinical_cases');
 const CANON = path.join(ROOT, 'data/config/tcm_pattern_canon.json');
 const OUT = path.join(ROOT, 'data/pathology/pattern_registry.json');
 
@@ -90,6 +96,7 @@ const NAME_ZH = {
   'pattern.wind_cold_invading_lung': '風寒犯肺',
   'pattern.wind_heat_invading_lung': '風熱犯肺',
   'pattern.stomach_fire': '胃火熾盛',
+  'pattern.phlegm_damp_obstruction': '痰濕內阻',   // Ting 2026-08-06
 
   // Antigravity 2026-07-31 補,教材標準名,已核對
   'pattern.chong_ren_disharmony': '衝任不調',
@@ -237,23 +244,40 @@ function main() {
   const use = new Map();
   const touch = (id, kind, ref) => {
     if (!String(id || '').startsWith('pattern.')) return;
-    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
+    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [], cases: [] });
     use.get(id)[kind].push(ref);
   };
   conditions.forEach((c) => [c.related_patterns, c.tcm_patterns].forEach((l) =>
     (Array.isArray(l) ? l : []).forEach((p) => touch(typeof p === 'string' ? p : p && p.id, 'conditions', c.id))));
   comparisons.forEach((m) => (m.compares || []).forEach((p) => touch(p, 'comparisons', m.id)));
 
+  // Tracked case files only — local/private/exports hold real records and are
+  // gitignored, so they are never read by a build that writes to data/.
+  if (fs.existsSync(CASES_DIR)) {
+    fs.readdirSync(CASES_DIR, { withFileTypes: true })
+      .filter((e) => e.isFile() && e.name.endsWith('.json'))
+      .forEach((e) => {
+        let json;
+        try { json = JSON.parse(fs.readFileSync(path.join(CASES_DIR, e.name), 'utf8')); } catch (err) { return; }
+        const scan = (node) => {
+          if (Array.isArray(node)) return node.forEach(scan);
+          if (node && typeof node === 'object') return Object.values(node).forEach(scan);
+          if (typeof node === 'string' && node.startsWith('pattern.')) touch(node, 'cases', e.name);
+        };
+        scan(json);
+      });
+  }
+
   /* A registry defines the vocabulary, not just the parts of it currently in
    * use. Category ids are registered even with zero references — otherwise
    * 腎陽虛 would point at 陽虛 as a parent that exists nowhere, which is the
    * dangling-reference problem this file was created to end. */
   Object.keys(CATEGORIES).forEach((id) => {
-    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
+    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [], cases: [] });
     // Members too — a category listing a member that owns no record is the
     // same dangling reference this file exists to prevent.
     CATEGORIES[id].members.forEach((m) => {
-      if (!use.has(m)) use.set(m, { conditions: [], comparisons: [] });
+      if (!use.has(m)) use.set(m, { conditions: [], comparisons: [], cases: [] });
     });
   });
 
@@ -261,7 +285,7 @@ function main() {
    * some texts treat 胃熱 and 胃火 as one thing, others hold 火為熱之極 and
    * reserve 胃火熾盛 for the severe presentation, which is the name the board
    * uses. Both readings are recorded rather than one being picked. */
-  if (!use.has('pattern.stomach_fire')) use.set('pattern.stomach_fire', { conditions: [], comparisons: [] });
+  if (!use.has('pattern.stomach_fire')) use.set('pattern.stomach_fire', { conditions: [], comparisons: [], cases: [] });
 
   const records = [...use.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([id, u]) => {
     const rec = {
@@ -272,6 +296,7 @@ function main() {
       name_en: id.replace(/^pattern\./, '').replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
       used_by_conditions: u.conditions.length,
       used_by_comparisons: u.comparisons.length,
+      used_by_cases: u.cases.length,
       review_status: 'draft',
       source_type: 'derived_from_usage',
     };

@@ -9,10 +9,27 @@
 > times — **do not reinvent it**. Architecture changes go through Claude;
 > direction changes come only from Ting.
 
+> ## AI CONSTITUTION 2026-08-05 — READ docs/AI_CONSTITUTION.md BEFORE TOUCHING ANYTHING
+> One page: **§A file ownership** (the only thing that prevents merge crises —
+> one file, one owner, at one time), **§B seven irreversible red lines**,
+> §C content discipline, §D validation discipline, §F role boundaries.
+> Paste it whole at the top of every dispatch. It is the summary card for the
+> other rule documents, not a twelfth one — the正本 stay in this file,
+> `docs/BLUEPRINT.md`, `DECISIONS.md`, and the CARD_TEMPLATEs.
+
 > ## EXTRA-POINT REFINEMENT WORKFLOW
 > For any `data/acupoints/extra_points.json` audit, correction, or enrichment task,
 > read and follow `skills/acuting-extra-point-refinement/SKILL.md`. When Ting supplies
 > school/library book pages, also follow that skill's `references/print-book-intake.md`.
+
+> ## CONDITION / PATTERN FILL WORKFLOW 2026-08-05
+> For any `data/pathology/**` condition (西醫病名 / 中醫病名) or pattern (證型)
+> task, read and follow `skills/acuting-condition-fill/SKILL.md`. Format lives in
+> `docs/CONDITION_CARD_TEMPLATE.md`; the machine wall is
+> `scripts/validate-condition-standard.js`. **Blocking prerequisite:** patterns
+> currently span two incompatible id namespaces — build
+> `data/config/pattern_alias_map.json` first (DECISIONS **D10**) before writing
+> any pattern link.
 
 > ## AI ROLES 2026-07-24 — READ docs/AI_ROLES.md FIRST
 > Antigravity = generation. Codex = QA/validation. Claude = command/architecture

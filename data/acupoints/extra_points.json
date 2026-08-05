@@ -78,10 +78,34 @@
       "Mania-depression (wording used by AD)",
       "Deafness"
     ],
-    "action_tags_zh": ["安神定志", "平肝熄風", "明目", "聰耳"],
-    "action_tags_en": ["Calm the Spirit & Settle the Mind", "Pacify the Liver & Extinguish Wind", "Benefit the Eyes", "Benefit Hearing"],
-    "disease_tags_zh": ["頭痛", "眩暈", "失眠", "健忘", "癲癇", "中風"],
-    "disease_tags_en": ["Headache", "Vertigo", "Insomnia", "Poor Memory", "Epilepsy", "Windstroke"],
+    "action_tags_zh": [
+      "安神定志",
+      "平肝熄風",
+      "明目",
+      "聰耳"
+    ],
+    "action_tags_en": [
+      "Calm the Spirit & Settle the Mind",
+      "Pacify the Liver & Extinguish Wind",
+      "Benefit the Eyes",
+      "Benefit Hearing"
+    ],
+    "disease_tags_zh": [
+      "頭痛",
+      "眩暈",
+      "失眠",
+      "健忘",
+      "癲癇",
+      "中風"
+    ],
+    "disease_tags_en": [
+      "Headache",
+      "Vertigo",
+      "Insomnia",
+      "Poor Memory",
+      "Epilepsy",
+      "Windstroke"
+    ],
     "cautions": "課件、eLotus 與 American Dragon 均未列四神聰穴位專屬禁忌；不可把來源沉默解讀為無風險。課件／eLotus 的皮下刺0.5~1.0寸及朝中心取向，與 AD 另列的橫刺0.5~1.5寸、四穴成組或由百會透刺並非完全相同；須由持照針灸師依頭皮解剖與所受訓練選擇，不得合併成單一標準。原卡『顱骨未閉合嬰幼兒慎用』予以保留，但本輪四來源未找到直接支持，故標為尚待兒科／解剖來源核實。",
     "cautionsEn": [
       "The curriculum, eLotus, and American Dragon state no point-specific contraindication for Sishencong; source silence must not be interpreted as absence of risk.",
@@ -99,8 +123,16 @@
     "combinePointsEn": "Legacy study pairing not listed in the four sources reviewed: for insomnia, Sishencong with Shenmen (HT7) and Anmian, intended to calm the Shen and support sleep.\nLegacy study pairing not listed in the four sources reviewed: for headache and vertigo, Sishencong with Baihui (GV20) and Fengchi (GB20), intended to clear the head, relieve pain, and settle vertigo.",
     "nameIntroZh": "American Dragon 將四神聰英譯為 Four Alert Spirit，另列 Four Intelligence、Four Mind Hearing；本庫保留標準拼音 Sishencong，不把英文別稱改作中文正名。",
     "nameIntroEn": "American Dragon translates the name as Four Alert Spirit and also lists Four Intelligence and Four Mind Hearing. The database retains the standard pinyin Sishencong as its English display name.",
-    "otherNamesZh": ["AD 英譯：Four Alert Spirit", "AD 別稱：Four Intelligence", "AD 別稱：Four Mind Hearing"],
-    "otherNamesEn": ["Four Alert Spirit", "Four Intelligence", "Four Mind Hearing"],
+    "otherNamesZh": [
+      "AD 英譯：Four Alert Spirit",
+      "AD 別稱：Four Intelligence",
+      "AD 別稱：Four Mind Hearing"
+    ],
+    "otherNamesEn": [
+      "Four Alert Spirit",
+      "Four Intelligence",
+      "Four Mind Hearing"
+    ],
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
@@ -124,21 +156,63 @@
     "x": 178,
     "y": 100,
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Sishencong listed"],
-      "curriculum": ["curriculum/acupoints/Techniques 3 points.md p.12: Sishencong (M-HN-1)"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1"],
-      "american_dragon": ["https://www.americandragon.com/Points/Sishencong.html"],
-      "location": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
-      "anatomy": ["source-gap note: the four reviewed sources provide vertex/scalp location but no layer-by-layer neurovascular anatomy"],
-      "technique": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
-      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
-      "functions": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
-      "indications": ["curriculum/acupoints/Techniques 3 points.md p.12", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1", "https://www.americandragon.com/Points/Sishencong.html"],
-      "combinations": ["source-gap note: current pairings are preserved legacy study content; no combinations are listed in the four reviewed Sishencong source entries"],
-      "cautions": ["source-gap note: curriculum, eLotus, and American Dragon list no point-specific contraindication; legacy pediatric caution remains unverified"],
-      "nomenclature": ["https://iris.who.int/handle/10665/40001: EX prefix + HN region code; Sishencong is EX-HN1", "curriculum/acupoints/Techniques 3 points.md p.12: M-HN-1", "https://www.americandragon.com/Points/Sishencong.html: M-HN-1"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Sishencong page", "2026-08-02 HTTP 200: American Dragon index and exact Sishencong page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record and text layer"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Sishencong listed"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Techniques 3 points.md p.12: Sishencong (M-HN-1)"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Sishencong.html"
+      ],
+      "location": [
+        "curriculum/acupoints/Techniques 3 points.md p.12",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
+        "https://www.americandragon.com/Points/Sishencong.html"
+      ],
+      "anatomy": [
+        "source-gap note: the four reviewed sources provide vertex/scalp location but no layer-by-layer neurovascular anatomy"
+      ],
+      "technique": [
+        "curriculum/acupoints/Techniques 3 points.md p.12",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
+        "https://www.americandragon.com/Points/Sishencong.html"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
+        "https://www.americandragon.com/Points/Sishencong.html"
+      ],
+      "functions": [
+        "curriculum/acupoints/Techniques 3 points.md p.12",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
+        "https://www.americandragon.com/Points/Sishencong.html"
+      ],
+      "indications": [
+        "curriculum/acupoints/Techniques 3 points.md p.12",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sishencong-ex-hn1",
+        "https://www.americandragon.com/Points/Sishencong.html"
+      ],
+      "combinations": [
+        "source-gap note: current pairings are preserved legacy study content; no combinations are listed in the four reviewed Sishencong source entries"
+      ],
+      "cautions": [
+        "source-gap note: curriculum, eLotus, and American Dragon list no point-specific contraindication; legacy pediatric caution remains unverified"
+      ],
+      "nomenclature": [
+        "https://iris.who.int/handle/10665/40001: EX prefix + HN region code; Sishencong is EX-HN1",
+        "curriculum/acupoints/Techniques 3 points.md p.12: M-HN-1",
+        "https://www.americandragon.com/Points/Sishencong.html: M-HN-1"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Sishencong page",
+        "2026-08-02 HTTP 200: American Dragon index and exact Sishencong page",
+        "2026-08-02 HTTP 200: WHO IRIS nomenclature record and text layer"
+      ]
+    },
+    "id": "ex.hn1"
   },
   {
     "code": "EX-HN2",
@@ -205,23 +279,54 @@
       "Rhinitis",
       "Nasal congestion (legacy content; eLotus lists rhinitis only)"
     ],
-    "action_tags_zh": ["袪風", "通絡", "清頭", "明目"],
-    "action_tags_en": ["Dispel Wind", "Open the Channels", "Clear the Head", "Brighten the Eyes"],
-    "disease_tags_zh": ["頭痛", "偏頭痛", "眩暈", "目赤腫痛", "鼻炎"],
-    "disease_tags_en": ["Headache", "Migraine", "Vertigo", "Red Swollen Eyes", "Rhinitis"],
+    "action_tags_zh": [
+      "袪風",
+      "通絡",
+      "清頭",
+      "明目"
+    ],
+    "action_tags_en": [
+      "Dispel Wind",
+      "Open the Channels",
+      "Clear the Head",
+      "Brighten the Eyes"
+    ],
+    "disease_tags_zh": [
+      "頭痛",
+      "偏頭痛",
+      "眩暈",
+      "目赤腫痛",
+      "鼻炎"
+    ],
+    "disease_tags_en": [
+      "Headache",
+      "Migraine",
+      "Vertigo",
+      "Red Swollen Eyes",
+      "Rhinitis"
+    ],
     "cautions": "Board Outline 不提供安全操作資料；現有課件未找到當陽專條；eLotus 僅列皮下刺0.5~0.8寸及艾灸適用，未列穴位專屬禁忌；American Dragon 索引未收錄。不可把來源沉默解讀為無風險。既有『請勿直接灸』警語予以保留，但與 eLotus 的『艾灸適用』形成需要進一步查原典的差異；在未核實直接／間接灸法之前，不把任一說法擴充為通用安全規則。",
     "cautionsEn": [
       "The Board Outline provides no safety technique, no dedicated Dangyang entry was found in the current course material, eLotus lists only subcutaneous insertion 0.5-0.8 cun and that moxibustion is applicable, and the American Dragon index does not list the point. Source silence must not be interpreted as absence of risk.",
       "The legacy 'do not apply direct moxibustion' warning is retained, but it differs from eLotus's general statement that moxibustion is applicable. Neither statement is expanded into a universal safety rule until direct versus indirect moxa is verified from an additional professional source."
     ],
     "evidence": "四層查核：NCBAHM Appendix A 未列當陽；現有 curriculum/acupoints 未找到 Dangyang／當陽專條；eLotus 提供本輪可核實的定位、功效、主治、皮下刺深度與可灸記載；American Dragon 拼音索引與站內精確搜尋均未找到 Dangyang。既有清熱、止痛、鼻塞與『請勿直接灸』均保留，但明確標為本輪四來源未直接支持或與 eLotus 有差異。",
-    "acuTags": ["頭部", "頭痛", "眼病", "鼻病"],
+    "acuTags": [
+      "頭部",
+      "頭痛",
+      "眼病",
+      "鼻病"
+    ],
     "combinePointsZh": "本輪 Board Outline、現有課件與 eLotus 當陽條目均未列配穴，American Dragon 又未收錄本穴；目前沒有可據四層來源寫入的當陽專屬配伍。",
     "combinePointsEn": "The Board Outline, current course material, and eLotus Dangyang entry list no combinations, and American Dragon does not index the point; no Dangyang-specific pairing can presently be entered from the four source layers.",
     "nameIntroZh": "eLotus 將當陽釋為 Towards Yang；本庫保留標準拼音 Dangyang 作英文顯示名。",
     "nameIntroEn": "eLotus translates Dangyang as 'Towards Yang.' The database retains the standard pinyin Dangyang as the English display name.",
-    "otherNamesZh": ["eLotus 英譯：Towards Yang"],
-    "otherNamesEn": ["Towards Yang"],
+    "otherNamesZh": [
+      "eLotus 英譯：Towards Yang"
+    ],
+    "otherNamesEn": [
+      "Towards Yang"
+    ],
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2",
@@ -239,21 +344,56 @@
     "x": 178,
     "y": 120,
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Dangyang not listed"],
-      "curriculum": ["source-gap note: no Dangyang/當陽 entry found under curriculum/acupoints"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"],
-      "american_dragon": ["source-gap note: Dangyang not present in https://www.americandragon.com/PointsIndex2.html and no exact point page was found by site search"],
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"],
-      "anatomy": ["source-gap note: the reviewed sources provide scalp location but no layer-by-layer neurovascular anatomy"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"],
-      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2", "legacy source-gap note: prior direct-moxa prohibition retained but not supported by the four reviewed sources"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2", "legacy source-gap note: prior Clears Heat and Relieves pain actions retained but not directly listed by the four reviewed sources"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2", "legacy source-gap note: prior nasal congestion retained; eLotus lists rhinitis"],
-      "combinations": ["source-gap note: no combinations listed by the available reviewed sources"],
-      "cautions": ["source-gap/conflict note: eLotus says moxa applicable but gives no contraindications or dose; legacy direct-moxa warning remains unverified"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2: EX-HN2", "https://iris.who.int/handle/10665/40001: EX prefix and HN regional nomenclature framework"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Dangyang page", "2026-08-02 HTTP 200: American Dragon pinyin index; Dangyang absent", "2026-08-02 American Dragon exact Dangyang page not found; no detail link stored"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Dangyang not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no Dangyang/當陽 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"
+      ],
+      "american_dragon": [
+        "source-gap note: Dangyang not present in https://www.americandragon.com/PointsIndex2.html and no exact point page was found by site search"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"
+      ],
+      "anatomy": [
+        "source-gap note: the reviewed sources provide scalp location but no layer-by-layer neurovascular anatomy"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2",
+        "legacy source-gap note: prior direct-moxa prohibition retained but not supported by the four reviewed sources"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2",
+        "legacy source-gap note: prior Clears Heat and Relieves pain actions retained but not directly listed by the four reviewed sources"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2",
+        "legacy source-gap note: prior nasal congestion retained; eLotus lists rhinitis"
+      ],
+      "combinations": [
+        "source-gap note: no combinations listed by the available reviewed sources"
+      ],
+      "cautions": [
+        "source-gap/conflict note: eLotus says moxa applicable but gives no contraindications or dose; legacy direct-moxa warning remains unverified"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dangyang-ex-hn2: EX-HN2",
+        "https://iris.who.int/handle/10665/40001: EX prefix and HN regional nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Dangyang page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index; Dangyang absent",
+        "2026-08-02 American Dragon exact Dangyang page not found; no detail link stored"
+      ]
+    },
+    "id": "ex.hn2"
   },
   {
     "code": "EX-HN3",
@@ -356,10 +496,36 @@
       "Postpartum fainting/dizziness associated with Blood loss (AD wording)",
       "Head Wind following intoxication (AD combination-table wording)"
     ],
-    "action_tags_zh": ["安神", "疏風清熱", "通鼻開竅", "熄風止痙", "通絡止痛"],
-    "action_tags_en": ["Calm the Shen", "Dispel Wind & Clear Heat", "Open the Nose", "Pacify Wind & Stop Convulsions", "Activate the Channel & Relieve Pain"],
-    "disease_tags_zh": ["頭痛", "鼻炎鼻塞", "失眠", "眩暈", "驚厥", "鼻出血"],
-    "disease_tags_en": ["Headache", "Rhinitis & Nasal Congestion", "Insomnia", "Vertigo", "Convulsions", "Epistaxis"],
+    "action_tags_zh": [
+      "安神",
+      "疏風清熱",
+      "通鼻開竅",
+      "熄風止痙",
+      "通絡止痛"
+    ],
+    "action_tags_en": [
+      "Calm the Shen",
+      "Dispel Wind & Clear Heat",
+      "Open the Nose",
+      "Pacify Wind & Stop Convulsions",
+      "Activate the Channel & Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "頭痛",
+      "鼻炎鼻塞",
+      "失眠",
+      "眩暈",
+      "驚厥",
+      "鼻出血"
+    ],
+    "disease_tags_en": [
+      "Headache",
+      "Rhinitis & Nasal Congestion",
+      "Insomnia",
+      "Vertigo",
+      "Convulsions",
+      "Epistaxis"
+    ],
     "cautions": "課件、eLotus 與 American Dragon 均未列印堂穴位專屬禁忌；不可把來源沉默解讀為無風險。AD 同時列0.3~0.5寸與0.5~1寸、並有朝 BL2／BL1 方向的版本，深度和方向不得合併為單一標準。AD 將『妊娠期抽搐』列在主治中，這不是孕期針刺安全許可；本輪來源未提供孕婦專屬操作注意。既有三稜針點刺出血法未獲課件、eLotus 或 AD 本頁支持，僅保留待另源核實。既有『已歸入 GV／督脈』屬命名分類問題，移至穴位身分註記，不作臨床禁忌。",
     "cautionsEn": [
       "The curriculum, eLotus, and American Dragon list no point-specific contraindication for Yintang; source silence must not be interpreted as absence of risk.",
@@ -369,13 +535,25 @@
       "The legacy statement that Yintang has been incorporated into the GV/Du channel is a nomenclature issue, not a clinical contraindication, and is recorded under point identity."
     ],
     "evidence": "四來源整合：NCBAHM Appendix A 確認考試範圍；課件提供 M-HN-3 身分、眉間定位、提皮向下／皮下刺0.3~0.5寸及核心主治；eLotus 補安神熄風、通鼻止痛、0.3~0.5寸與可灸；American Dragon 補多層功效、完整主治、配穴、0.3~0.5與0.5~1寸不同技法及別名。既有鼻淵、三稜針出血與 GV／督脈註記均保留，但分別標出來源狀態，不混入已核實共識。",
-    "acuTags": ["頭部", "神志", "鼻病", "頭痛", "驚風"],
+    "acuTags": [
+      "頭部",
+      "神志",
+      "鼻病",
+      "頭痛",
+      "驚風"
+    ],
     "combinePointsZh": "【鼻炎；AD】印堂配迎香（LI20）、合谷（LI4）：通鼻開竅。\n【頭痛；AD】印堂配太陽（M-HN-9）、風池（GB20）、合谷（LI4）。\n【高血壓；AD】印堂配曲池（LI11）、豐隆（ST40）；AD 表格另列曲池（LI11）、足三里（ST36）作替代組。\n【失眠；AD】印堂配神門（HT7）、三陰交（SP6）。\n【酒後頭風；AD 原頁用語】印堂配攢竹（BL2）、足三里（ST36）。\n【既有學習配伍；部分重疊 AD】印堂配神門（HT7）、四神聰（EX-HN1）治失眠；AD 支持 HT7，但未列四神聰。",
     "combinePointsEn": "Rhinitis (AD): Yintang with Yingxiang (LI20) and Hegu (LI4) to open the nasal passages.\nHeadache (AD): Yintang with Taiyang (M-HN-9), Fengchi (GB20), and Hegu (LI4).\nHypertension (AD): Yintang with Quchi (LI11) and Fenglong (ST40); the AD table also gives Quchi (LI11) with Zusanli (ST36) as an alternative group.\nInsomnia (AD): Yintang with Shenmen (HT7) and Sanyinjiao (SP6).\nHead Wind following intoxication (AD wording): Yintang with Zanzhu (BL2) and Zusanli (ST36).\nLegacy study pairing, partially overlapping AD: Yintang with Shenmen (HT7) and Sishencong (EX-HN1) for insomnia; AD supports HT7 but does not list Sishencong in this combination.",
     "nameIntroZh": "eLotus 與 AD 英譯 Hall of Impression，並列 Seal Hall；本庫保留標準拼音 Yintang。",
     "nameIntroEn": "eLotus and AD translate Yintang as 'Hall of Impression' and also give 'Seal Hall.' The database retains the standard pinyin Yintang.",
-    "otherNamesZh": ["英譯：Hall of Impression", "別稱：Seal Hall"],
-    "otherNamesEn": ["Hall of Impression", "Seal Hall"],
+    "otherNamesZh": [
+      "英譯：Hall of Impression",
+      "別稱：Seal Hall"
+    ],
+    "otherNamesEn": [
+      "Hall of Impression",
+      "Seal Hall"
+    ],
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
@@ -399,21 +577,67 @@
     "x": 178,
     "y": 140,
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Yintang listed"],
-      "curriculum": ["curriculum/acupoints/Techniques 3 points.md p.8: Yintang (M-HN-3)"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3"],
-      "american_dragon": ["https://www.americandragon.com/Points/Yintang.html"],
-      "location": ["curriculum/acupoints/Techniques 3 points.md p.8", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html"],
-      "anatomy": ["source-gap note: the four reviewed sources provide glabellar location but no layer-by-layer neurovascular anatomy"],
-      "technique": ["curriculum/acupoints/Techniques 3 points.md p.8", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html", "legacy source-gap note: prior three-edged-needle bleeding method retained but not found in the three content entries"],
-      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html"],
-      "indications": ["curriculum/acupoints/Techniques 3 points.md p.8", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3", "https://www.americandragon.com/Points/Yintang.html", "legacy source-gap note: prior sinusitis/nasopharyngeal wording retained where not stated verbatim"],
-      "combinations": ["https://www.americandragon.com/Points/Yintang.html", "legacy note: Sishencong insomnia pairing retained but not listed in AD Yintang combinations"],
-      "cautions": ["source-gap note: curriculum, eLotus, and AD state no point-specific contraindication", "https://www.americandragon.com/Points/Yintang.html: pregnancy appears only as an indication, not a safety instruction"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3: EX-HN3", "curriculum/acupoints/Techniques 3 points.md p.8: M-HN-3", "https://www.americandragon.com/Points/Yintang.html: M-HN-3", "legacy source-gap note: prior GV/Du incorporation claim retained pending a nomenclature-specific source"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Yintang page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Yintang page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Yintang listed"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Techniques 3 points.md p.8: Yintang (M-HN-3)"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Yintang.html"
+      ],
+      "location": [
+        "curriculum/acupoints/Techniques 3 points.md p.8",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
+        "https://www.americandragon.com/Points/Yintang.html"
+      ],
+      "anatomy": [
+        "source-gap note: the four reviewed sources provide glabellar location but no layer-by-layer neurovascular anatomy"
+      ],
+      "technique": [
+        "curriculum/acupoints/Techniques 3 points.md p.8",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
+        "https://www.americandragon.com/Points/Yintang.html",
+        "legacy source-gap note: prior three-edged-needle bleeding method retained but not found in the three content entries"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
+        "https://www.americandragon.com/Points/Yintang.html"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
+        "https://www.americandragon.com/Points/Yintang.html"
+      ],
+      "indications": [
+        "curriculum/acupoints/Techniques 3 points.md p.8",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3",
+        "https://www.americandragon.com/Points/Yintang.html",
+        "legacy source-gap note: prior sinusitis/nasopharyngeal wording retained where not stated verbatim"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Yintang.html",
+        "legacy note: Sishencong insomnia pairing retained but not listed in AD Yintang combinations"
+      ],
+      "cautions": [
+        "source-gap note: curriculum, eLotus, and AD state no point-specific contraindication",
+        "https://www.americandragon.com/Points/Yintang.html: pregnancy appears only as an indication, not a safety instruction"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yintang-ex-hn3: EX-HN3",
+        "curriculum/acupoints/Techniques 3 points.md p.8: M-HN-3",
+        "https://www.americandragon.com/Points/Yintang.html: M-HN-3",
+        "legacy source-gap note: prior GV/Du incorporation claim retained pending a nomenclature-specific source"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Yintang page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Yintang page",
+        "2026-08-02 HTTP 200: WHO IRIS nomenclature record"
+      ]
+    },
+    "id": "ex.hn3"
   },
   {
     "code": "EX-HN4",
@@ -435,10 +659,32 @@
     "moxaEn": "The curriculum, eLotus, and American Dragon Yuyao entries do not address moxibustion. The legacy 'moxibustion contraindicated' warning is retained pending verification; no duration, cone count, or alternative moxa method is inferred.",
     "functions": "疏風清熱，明目退翳，舒筋通絡，止痛",
     "functionsEn": "Dispels Wind and clears Heat; Benefits the eyes and removes visual obstruction; Relaxes the sinews and opens the channel; Relieves pain",
-    "functionsZhList": ["明目", "舒筋", "清熱", "通絡", "止痛", "疏風退翳（既有內容；四來源未直接列為功效）"],
-    "functionsEnList": ["Benefits the eyes", "Relaxes the sinews", "Clears Heat", "Opens the channel", "Relieves pain", "Dispels Wind and removes visual obstruction (legacy content; not directly listed as an action by the four sources)"],
-    "pointIdentityZh": ["經外奇穴", "眉毛正中、正視瞳孔直上", "NCBAHM Appendix A 列名；本庫／eLotus 用 EX-HN4，課件／AD 用 M-HN-6"],
-    "pointIdentityEn": ["Extra point", "Midpoint of the eyebrow directly above the pupil", "Named in NCBAHM Appendix A; database/eLotus use EX-HN4, while curriculum/AD use M-HN-6"],
+    "functionsZhList": [
+      "明目",
+      "舒筋",
+      "清熱",
+      "通絡",
+      "止痛",
+      "疏風退翳（既有內容；四來源未直接列為功效）"
+    ],
+    "functionsEnList": [
+      "Benefits the eyes",
+      "Relaxes the sinews",
+      "Clears Heat",
+      "Opens the channel",
+      "Relieves pain",
+      "Dispels Wind and removes visual obstruction (legacy content; not directly listed as an action by the four sources)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "眉毛正中、正視瞳孔直上",
+      "NCBAHM Appendix A 列名；本庫／eLotus 用 EX-HN4，課件／AD 用 M-HN-6"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Midpoint of the eyebrow directly above the pupil",
+      "Named in NCBAHM Appendix A; database/eLotus use EX-HN4, while curriculum/AD use M-HN-6"
+    ],
     "exam_star": 0,
     "exam_importance": "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴範圍；課件列作 Extra Point (M-HN-6)，未以星號標記。",
     "exam_importance_en": "Listed in the NCBAHM 2026 ACPL Appendix A extra-point scope and in the course handout as Extra Point (M-HN-6); the course does not mark it with an exam star.",
@@ -474,20 +720,64 @@
       "Ophthalmoplegia",
       "Floaters"
     ],
-    "action_tags_zh": ["明目", "舒筋", "清熱", "通絡", "止痛"],
-    "action_tags_en": ["Benefit the Eyes", "Relax the Sinews", "Clear Heat", "Open the Channel", "Relieve Pain"],
-    "disease_tags_zh": ["眼病", "上眶痛", "眼瞼瞤動", "眼瞼下垂", "眶上神經痛", "面癱"],
-    "disease_tags_en": ["Eye Disorders", "Supraorbital Pain", "Eyelid Twitching", "Ptosis", "Supraorbital Neuralgia", "Facial Paralysis"],
+    "action_tags_zh": [
+      "明目",
+      "舒筋",
+      "清熱",
+      "通絡",
+      "止痛"
+    ],
+    "action_tags_en": [
+      "Benefit the Eyes",
+      "Relax the Sinews",
+      "Clear Heat",
+      "Open the Channel",
+      "Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "眼病",
+      "上眶痛",
+      "眼瞼瞤動",
+      "眼瞼下垂",
+      "眶上神經痛",
+      "面癱"
+    ],
+    "disease_tags_en": [
+      "Eye Disorders",
+      "Supraorbital Pain",
+      "Eyelid Twitching",
+      "Ptosis",
+      "Supraorbital Neuralgia",
+      "Facial Paralysis"
+    ],
     "cautions": "課件提示魚腰非常敏感、可能疼痛，要求沿眉平行並輕柔進針；AD 指出眶上神經由附近眶上切跡穿出，且橫刺針感可延至眼球。三個內容來源均未列正式穴位禁忌，因此不可把來源沉默解讀為無風險。0.3~0.5寸基線與0.5~1寸橫刺／透刺版本不得合併，較長透刺須由具備眼眶周圍解剖與相應技法訓練的持照針灸師執行。既有『不宜直刺過深』『禁灸』及三稜針放血均保留，但本輪未找到直接來源支持。",
-    "cautionsEn": ["The curriculum describes Yuyao as very sensitive and potentially painful, directing gentle insertion parallel to the eyebrow. AD identifies the nearby supraorbital nerve exit and notes that transverse needling sensation may extend to the eyeball.", "The three content sources list no formal point-specific contraindication; source silence must not be interpreted as absence of risk.", "The 0.3-0.5-cun baseline must not be merged with the 0.5-1-cun transverse/through-needling variants. Longer through-needling requires a licensed acupuncturist trained in peri-orbital anatomy and the specific technique.", "The legacy cautions against deep perpendicular needling and moxibustion, plus the legacy three-edged-needle bleeding method, are retained but were not directly supported by the sources reviewed."],
+    "cautionsEn": [
+      "The curriculum describes Yuyao as very sensitive and potentially painful, directing gentle insertion parallel to the eyebrow. AD identifies the nearby supraorbital nerve exit and notes that transverse needling sensation may extend to the eyeball.",
+      "The three content sources list no formal point-specific contraindication; source silence must not be interpreted as absence of risk.",
+      "The 0.3-0.5-cun baseline must not be merged with the 0.5-1-cun transverse/through-needling variants. Longer through-needling requires a licensed acupuncturist trained in peri-orbital anatomy and the specific technique.",
+      "The legacy cautions against deep perpendicular needling and moxibustion, plus the legacy three-edged-needle bleeding method, are retained but were not directly supported by the sources reviewed."
+    ],
     "evidence": "四來源整合：NCBAHM Appendix A 確認範圍；課件 p.9 提供 M-HN-6、定位、沿眉輕柔0.5~1寸與眼病主治；eLotus 提供 EX-HN4、0.3~0.5寸基線、明目舒筋止痛與主治；AD 補眶上切跡／眶上神經提示、0.5~1寸橫刺／透刺版本、清熱通絡、完整主治與配穴。既有疏風退翳、放血、禁灸與深刺警語不刪除，但明確標示未獲本輪四來源直接支持。",
-    "acuTags": ["頭部", "眼病", "疼痛", "面癱"],
+    "acuTags": [
+      "頭部",
+      "眼病",
+      "疼痛",
+      "面癱"
+    ],
     "combinePointsZh": "【近視；AD】魚腰配合谷（LI4）。\n【眶上神經痛；AD】魚腰配攢竹（BL2）、四瀆（TE9）、內關（PC6）。\n【白內障；AD】魚腰配瞳子髎（GB1）、攢竹（BL2）、睛明（BL1）。\n【既有學習配伍；部分獲 AD 技法支持】眼瞼下垂：魚腰配攢竹（BL2）、陽白（GB14）；AD 記可由 BL2 或 GB14 透刺魚腰，但未把此組明列為眼瞼下垂配方。\n【既有學習配伍；本輪四來源未列】面癱：魚腰配地倉（ST4）、頰車（ST6）。",
     "combinePointsEn": "Myopia (AD): Yuyao with Hegu (LI4).\nSupraorbital neuralgia (AD): Yuyao with Zanzhu (BL2), Sidu (TE9), and Neiguan (PC6).\nCataracts (AD): Yuyao with Tongziliao (GB1), Zanzhu (BL2), and Jingming (BL1).\nLegacy study pairing, partially supported as technique by AD: for ptosis, Yuyao with Zanzhu (BL2) and Yangbai (GB14). AD notes through-needling from BL2 or GB14 but does not label this exact group as a ptosis combination.\nLegacy study pairing not listed by the four sources reviewed: for facial paralysis, Yuyao with Dicang (ST4) and Jiache (ST6).",
     "nameIntroZh": "eLotus 將魚腰英譯為 Fish Lumbus、Fish Waist、Fish Spine；AD 用 Fish Waist，並列 Fish spine。",
     "nameIntroEn": "eLotus gives Fish Lumbus, Fish Waist, and Fish Spine; AD uses Fish Waist and also lists Fish spine.",
-    "otherNamesZh": ["英譯：Fish Waist", "別稱：Fish Spine", "eLotus 另譯：Fish Lumbus"],
-    "otherNamesEn": ["Fish Waist", "Fish Spine", "Fish Lumbus"],
+    "otherNamesZh": [
+      "英譯：Fish Waist",
+      "別稱：Fish Spine",
+      "eLotus 另譯：Fish Lumbus"
+    ],
+    "otherNamesEn": [
+      "Fish Waist",
+      "Fish Spine",
+      "Fish Lumbus"
+    ],
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4",
@@ -511,21 +801,67 @@
     "x": 175,
     "y": 148,
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Yuyao listed"],
-      "curriculum": ["curriculum/acupoints/Techniques 3 points.md p.9: Yuyao (M-HN-6)"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4"],
-      "american_dragon": ["https://www.americandragon.com/Points/Yuyao.html"],
-      "location": ["curriculum/acupoints/Techniques 3 points.md p.9", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4", "https://www.americandragon.com/Points/Yuyao.html"],
-      "anatomy": ["https://www.americandragon.com/Points/Yuyao.html: supraorbital notch and supraorbital nerve note", "source-gap note: no layer-by-layer anatomy in the other reviewed sources"],
-      "technique": ["curriculum/acupoints/Techniques 3 points.md p.9", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4", "https://www.americandragon.com/Points/Yuyao.html", "legacy source-gap note: prior three-edged-needle bleeding method retained but not found in the reviewed entries"],
-      "moxibustion": ["source-gap note: curriculum, eLotus, and AD Yuyao entries do not address moxa; legacy prohibition retained pending verification"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4", "https://www.americandragon.com/Points/Yuyao.html", "legacy source-gap note: prior Dispels Wind/removes opacity wording retained without direct action support"],
-      "indications": ["curriculum/acupoints/Techniques 3 points.md p.9", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4", "https://www.americandragon.com/Points/Yuyao.html"],
-      "combinations": ["https://www.americandragon.com/Points/Yuyao.html", "legacy note: ptosis and facial-paralysis pairings preserved with support status stated"],
-      "cautions": ["curriculum/acupoints/Techniques 3 points.md p.9: sensitive/painful, gentle eyebrow-parallel insertion", "https://www.americandragon.com/Points/Yuyao.html: supraorbital nerve and sensation toward eyeball", "source-gap note: no formal contraindication; legacy deep-needling/moxa cautions remain unverified"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4: EX-HN4", "curriculum/acupoints/Techniques 3 points.md p.9: M-HN-6", "https://www.americandragon.com/Points/Yuyao.html: M-HN-6"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Yuyao page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Yuyao page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Yuyao listed"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Techniques 3 points.md p.9: Yuyao (M-HN-6)"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Yuyao.html"
+      ],
+      "location": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4",
+        "https://www.americandragon.com/Points/Yuyao.html"
+      ],
+      "anatomy": [
+        "https://www.americandragon.com/Points/Yuyao.html: supraorbital notch and supraorbital nerve note",
+        "source-gap note: no layer-by-layer anatomy in the other reviewed sources"
+      ],
+      "technique": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4",
+        "https://www.americandragon.com/Points/Yuyao.html",
+        "legacy source-gap note: prior three-edged-needle bleeding method retained but not found in the reviewed entries"
+      ],
+      "moxibustion": [
+        "source-gap note: curriculum, eLotus, and AD Yuyao entries do not address moxa; legacy prohibition retained pending verification"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4",
+        "https://www.americandragon.com/Points/Yuyao.html",
+        "legacy source-gap note: prior Dispels Wind/removes opacity wording retained without direct action support"
+      ],
+      "indications": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4",
+        "https://www.americandragon.com/Points/Yuyao.html"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Yuyao.html",
+        "legacy note: ptosis and facial-paralysis pairings preserved with support status stated"
+      ],
+      "cautions": [
+        "curriculum/acupoints/Techniques 3 points.md p.9: sensitive/painful, gentle eyebrow-parallel insertion",
+        "https://www.americandragon.com/Points/Yuyao.html: supraorbital nerve and sensation toward eyeball",
+        "source-gap note: no formal contraindication; legacy deep-needling/moxa cautions remain unverified"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yuyao-ex-hn4: EX-HN4",
+        "curriculum/acupoints/Techniques 3 points.md p.9: M-HN-6",
+        "https://www.americandragon.com/Points/Yuyao.html: M-HN-6"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Yuyao page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Yuyao page",
+        "2026-08-02 HTTP 200: WHO IRIS nomenclature record"
+      ]
+    },
+    "id": "ex.hn4"
   },
   {
     "code": "EX-HN5",
@@ -547,10 +883,34 @@
     "moxaEn": "The curriculum, eLotus, and American Dragon Taiyang entries do not address moxibustion; applicability, duration, and cone count are not inferred.",
     "functions": "袪風清熱，清頭明目，消腫，通絡止痛，醒腦",
     "functionsEn": "Dispels Wind and clears Heat; Clears the head and benefits the eyes; Reduces swelling; Activates the channel and alleviates pain; Clears the brain",
-    "functionsZhList": ["袪風清熱", "清頭明目", "消腫", "通絡", "止痛", "醒腦（既有內容；四來源未直接列）"],
-    "functionsEnList": ["Dispels Wind and clears Heat", "Clears the head and benefits the eyes", "Reduces swelling", "Activates the channel", "Relieves pain", "Clears the brain (legacy content; not directly listed by the four sources)"],
-    "pointIdentityZh": ["經外奇穴", "顳部壓痛凹陷常用局部穴", "NCBAHM Appendix A 列名；本庫／eLotus 用 EX-HN5，課件／AD 用 M-HN-9", "AD 稱其為最重要且常用的經外奇穴之一"],
-    "pointIdentityEn": ["Extra point", "Common local point in a tender temporal depression", "Named in NCBAHM Appendix A; database/eLotus use EX-HN5, while curriculum/AD use M-HN-9", "AD describes it as one of the most important and commonly used extra points"],
+    "functionsZhList": [
+      "袪風清熱",
+      "清頭明目",
+      "消腫",
+      "通絡",
+      "止痛",
+      "醒腦（既有內容；四來源未直接列）"
+    ],
+    "functionsEnList": [
+      "Dispels Wind and clears Heat",
+      "Clears the head and benefits the eyes",
+      "Reduces swelling",
+      "Activates the channel",
+      "Relieves pain",
+      "Clears the brain (legacy content; not directly listed by the four sources)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "顳部壓痛凹陷常用局部穴",
+      "NCBAHM Appendix A 列名；本庫／eLotus 用 EX-HN5，課件／AD 用 M-HN-9",
+      "AD 稱其為最重要且常用的經外奇穴之一"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Common local point in a tender temporal depression",
+      "Named in NCBAHM Appendix A; database/eLotus use EX-HN5, while curriculum/AD use M-HN-9",
+      "AD describes it as one of the most important and commonly used extra points"
+    ],
     "exam_star": 0,
     "exam_importance": "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴範圍；課件列作 Extra Point (M-HN-9)，未見星號。AD 強調其為最重要且常用的經外奇穴之一。",
     "exam_importance_en": "Listed in the NCBAHM 2026 ACPL Appendix A extra-point scope and in the course as Extra Point (M-HN-9), without an exam star. AD calls it one of the most important and commonly used extra points.",
@@ -596,20 +956,66 @@
       "Membrane over the eye / dim vision",
       "Eye pain"
     ],
-    "action_tags_zh": ["袪風清熱", "清頭明目", "消腫", "通絡", "止痛"],
-    "action_tags_en": ["Dispel Wind & Clear Heat", "Clear the Head & Benefit the Eyes", "Reduce Swelling", "Activate the Channel", "Relieve Pain"],
-    "disease_tags_zh": ["頭痛", "偏頭痛", "眼病", "面癱", "三叉神經痛", "牙痛"],
-    "disease_tags_en": ["Headache", "Migraine", "Eye Disorders", "Facial Paralysis", "Trigeminal Neuralgia", "Toothache"],
+    "action_tags_zh": [
+      "袪風清熱",
+      "清頭明目",
+      "消腫",
+      "通絡",
+      "止痛"
+    ],
+    "action_tags_en": [
+      "Dispel Wind & Clear Heat",
+      "Clear the Head & Benefit the Eyes",
+      "Reduce Swelling",
+      "Activate the Channel",
+      "Relieve Pain"
+    ],
+    "disease_tags_zh": [
+      "頭痛",
+      "偏頭痛",
+      "眼病",
+      "面癱",
+      "三叉神經痛",
+      "牙痛"
+    ],
+    "disease_tags_en": [
+      "Headache",
+      "Migraine",
+      "Eye Disorders",
+      "Facial Paralysis",
+      "Trigeminal Neuralgia",
+      "Toothache"
+    ],
     "cautions": "課件明確要求避開顳部血管並輕柔進針。eLotus 與 AD 均列點刺出血；AD 指急性結膜炎或頭痛時刺出數滴血，但三個內容來源未提供止血流程，因此既有『注意止血』保留為程序警語，不補造步驟。AD 的0.5~1.5／1~2寸向 GB8 透刺及3寸向 ST6 透刺，與共同基線0.3~0.5寸差異很大，僅限熟悉顳部解剖與該技法的持照針灸師依正式訓練選用。AD 的武術致命點註記是危險提示，不是可操作深度資料。來源未列孕婦、兒童或抗凝用藥者的專屬規則，本卡不猜。",
-    "cautionsEn": ["The curriculum explicitly directs the practitioner to avoid the temporal vein and insert gently.", "eLotus and AD list prick-to-bleed, and AD specifies a few drops for acute conjunctivitis or headache. The three content sources give no hemostasis protocol, so the legacy 'attend to hemostasis' warning is retained without invented steps.", "AD's 0.5-1.5/1-2-cun through-needling toward GB8 and 3-cun through-needling toward ST6 differ substantially from the shared 0.3-0.5-cun baseline. They are limited to licensed acupuncturists formally trained in temporal anatomy and those techniques.", "AD's martial-arts fatal-point note is a danger signal, not usable depth guidance.", "The sources reviewed give no point-specific pregnancy, pediatric, or anticoagulation rules; none are guessed."],
+    "cautionsEn": [
+      "The curriculum explicitly directs the practitioner to avoid the temporal vein and insert gently.",
+      "eLotus and AD list prick-to-bleed, and AD specifies a few drops for acute conjunctivitis or headache. The three content sources give no hemostasis protocol, so the legacy 'attend to hemostasis' warning is retained without invented steps.",
+      "AD's 0.5-1.5/1-2-cun through-needling toward GB8 and 3-cun through-needling toward ST6 differ substantially from the shared 0.3-0.5-cun baseline. They are limited to licensed acupuncturists formally trained in temporal anatomy and those techniques.",
+      "AD's martial-arts fatal-point note is a danger signal, not usable depth guidance.",
+      "The sources reviewed give no point-specific pregnancy, pediatric, or anticoagulation rules; none are guessed."
+    ],
     "evidence": "四來源整合：NCBAHM Appendix A 確認範圍；課件 p.9 提供 M-HN-9、定位、袪風清熱消腫止痛、0.5~1與1~2寸技法及避血管警語；eLotus 提供 EX-HN5、0.3~0.5寸／點刺放血共同基線、清頭明目與核心主治；AD 補多種來源別透刺、完整功效主治、配穴及常用局部穴註記。既有醒腦與止血警語不刪除，但分別標示未直接列為功效／未提供程序。",
-    "acuTags": ["頭部", "頭痛", "眼病", "面癱", "放血"],
+    "acuTags": [
+      "頭部",
+      "頭痛",
+      "眼病",
+      "面癱",
+      "放血"
+    ],
     "combinePointsZh": "【頭痛；AD】太陽配印堂（M-HN-3）、合谷（LI4）。\n【感冒；AD 表格】太陽配耳尖、攢竹（BL2），兩配穴均標點刺。\n【牙痛；AD】太陽配翳風（TE17）。\n【眼病；AD】太陽配睛明（BL1）、魚尾（M-HN-7）。\n【眼紅腫劇痛畏光；AD】太陽雙側放血；AD 同區另列 BL1、魚尾，表格排版未清楚交代是否同屬此組，故不強行合併。\n【既有學習配伍；部分獲 AD 技法支持】偏頭痛：太陽配率谷（GB8）、風池（GB20）；AD 明確列向 GB8 透刺，但未在配穴表列 GB20。",
     "combinePointsEn": "Headache (AD): Taiyang with Yintang (M-HN-3) and Hegu (LI4).\nCommon cold (AD table): Taiyang with Ear Apex and Zanzhu (BL2), both marked for pricking.\nToothache (AD): Taiyang with Yifeng (TE17).\nEye disorders (AD): Taiyang with Jingming (BL1) and Yuwei (M-HN-7).\nSevere bilateral red, swollen, painful eyes with photophobia (AD): bleed Taiyang bilaterally. AD lists BL1 and Yuwei in the same table region but the formatting does not clearly establish that they belong to this exact row, so they are not forcibly merged.\nLegacy study pairing, partially supported by AD technique: for migraine, Taiyang with Shuaigu (GB8) and Fengchi (GB20). AD explicitly lists through-needling toward GB8 but does not list GB20 in its combination table.",
     "nameIntroZh": "eLotus 與 AD 均將太陽譯為 Sun／Supreme Yang，並列 Greater Yang。",
     "nameIntroEn": "eLotus and AD translate Taiyang as Sun or Supreme Yang and also list Greater Yang.",
-    "otherNamesZh": ["英譯：Sun", "英譯：Supreme Yang", "別稱：Greater Yang"],
-    "otherNamesEn": ["Sun", "Supreme Yang", "Greater Yang"],
+    "otherNamesZh": [
+      "英譯：Sun",
+      "英譯：Supreme Yang",
+      "別稱：Greater Yang"
+    ],
+    "otherNamesEn": [
+      "Sun",
+      "Supreme Yang",
+      "Greater Yang"
+    ],
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5",
@@ -633,21 +1039,67 @@
     "x": 160,
     "y": 150,
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Taiyang listed"],
-      "curriculum": ["curriculum/acupoints/Techniques 3 points.md p.9: Taiyang (M-HN-9)"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5"],
-      "american_dragon": ["https://www.americandragon.com/Points/Taiyang.html"],
-      "location": ["curriculum/acupoints/Techniques 3 points.md p.9", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5", "https://www.americandragon.com/Points/Taiyang.html"],
-      "anatomy": ["curriculum/acupoints/Techniques 3 points.md p.9: avoid vein", "source-gap note: no layer-by-layer anatomy in the reviewed sources"],
-      "technique": ["curriculum/acupoints/Techniques 3 points.md p.9", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5", "https://www.americandragon.com/Points/Taiyang.html"],
-      "moxibustion": ["source-gap note: curriculum, eLotus, and AD Taiyang entries do not address moxa"],
-      "functions": ["curriculum/acupoints/Techniques 3 points.md p.9", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5", "https://www.americandragon.com/Points/Taiyang.html", "legacy source-gap note: prior Clears the brain action retained without direct support"],
-      "indications": ["curriculum/acupoints/Techniques 3 points.md p.9", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5", "https://www.americandragon.com/Points/Taiyang.html"],
-      "combinations": ["https://www.americandragon.com/Points/Taiyang.html", "legacy note: GB8/GB20 migraine pairing preserved with partial support stated"],
-      "cautions": ["curriculum/acupoints/Techniques 3 points.md p.9: avoid vein and insert gently", "https://www.americandragon.com/Points/Taiyang.html: bleeding/long through-needling variants and martial-arts danger note", "source-gap note: no pregnancy, pediatric, anticoagulation, or hemostasis protocol supplied"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5: EX-HN5", "curriculum/acupoints/Techniques 3 points.md p.9: M-HN-9", "https://www.americandragon.com/Points/Taiyang.html: M-HN-9"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Taiyang page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Taiyang page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Taiyang listed"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Techniques 3 points.md p.9: Taiyang (M-HN-9)"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Taiyang.html"
+      ],
+      "location": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5",
+        "https://www.americandragon.com/Points/Taiyang.html"
+      ],
+      "anatomy": [
+        "curriculum/acupoints/Techniques 3 points.md p.9: avoid vein",
+        "source-gap note: no layer-by-layer anatomy in the reviewed sources"
+      ],
+      "technique": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5",
+        "https://www.americandragon.com/Points/Taiyang.html"
+      ],
+      "moxibustion": [
+        "source-gap note: curriculum, eLotus, and AD Taiyang entries do not address moxa"
+      ],
+      "functions": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5",
+        "https://www.americandragon.com/Points/Taiyang.html",
+        "legacy source-gap note: prior Clears the brain action retained without direct support"
+      ],
+      "indications": [
+        "curriculum/acupoints/Techniques 3 points.md p.9",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5",
+        "https://www.americandragon.com/Points/Taiyang.html"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Taiyang.html",
+        "legacy note: GB8/GB20 migraine pairing preserved with partial support stated"
+      ],
+      "cautions": [
+        "curriculum/acupoints/Techniques 3 points.md p.9: avoid vein and insert gently",
+        "https://www.americandragon.com/Points/Taiyang.html: bleeding/long through-needling variants and martial-arts danger note",
+        "source-gap note: no pregnancy, pediatric, anticoagulation, or hemostasis protocol supplied"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taiyang-ex-hn5: EX-HN5",
+        "curriculum/acupoints/Techniques 3 points.md p.9: M-HN-9",
+        "https://www.americandragon.com/Points/Taiyang.html: M-HN-9"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Taiyang page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Taiyang page",
+        "2026-08-02 HTTP 200: WHO IRIS nomenclature record"
+      ]
+    },
+    "id": "ex.hn5"
   },
   {
     "code": "EX-HN6",
@@ -669,10 +1121,34 @@
     "moxaEn": "eLotus states that moxibustion is applicable. AD specifies 3-5 cones and five cones for superficial visual obstruction. The legacy 'moxibustion contraindicated' statement conflicts with both and is retained only as an unverified discrepant note.",
     "functions": "清熱瀉火，消腫，明目利咽，解毒，平肝降壓",
     "functionsEn": "Clears Heat and drains Fire; Reduces swelling; Benefits the eyes and throat; Resolves toxicity; Pacifies the Liver and lowers blood pressure",
-    "functionsZhList": ["清熱", "消腫", "明目", "利咽", "解毒（既有內容；四來源未直接列）", "平肝降壓（既有內容；四來源未直接列）"],
-    "functionsEnList": ["Clears Heat", "Reduces swelling", "Benefits the eyes", "Benefits the throat", "Resolves toxicity (legacy content; not directly listed by the four sources)", "Pacifies the Liver and lowers blood pressure (legacy content; not directly listed by the four sources)"],
-    "pointIdentityZh": ["經外奇穴", "耳廓折疊最高點", "NCBAHM Appendix A 列名；本庫／eLotus 用 EX-HN6，AD 用 M-HN-10", "現有 curriculum/acupoints 未找到耳尖專條"],
-    "pointIdentityEn": ["Extra point", "Highest point of the folded auricle", "Named in NCBAHM Appendix A; database/eLotus use EX-HN6, while AD uses M-HN-10", "No dedicated Erjian entry was found in the current curriculum/acupoints material"],
+    "functionsZhList": [
+      "清熱",
+      "消腫",
+      "明目",
+      "利咽",
+      "解毒（既有內容；四來源未直接列）",
+      "平肝降壓（既有內容；四來源未直接列）"
+    ],
+    "functionsEnList": [
+      "Clears Heat",
+      "Reduces swelling",
+      "Benefits the eyes",
+      "Benefits the throat",
+      "Resolves toxicity (legacy content; not directly listed by the four sources)",
+      "Pacifies the Liver and lowers blood pressure (legacy content; not directly listed by the four sources)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "耳廓折疊最高點",
+      "NCBAHM Appendix A 列名；本庫／eLotus 用 EX-HN6，AD 用 M-HN-10",
+      "現有 curriculum/acupoints 未找到耳尖專條"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "Highest point of the folded auricle",
+      "Named in NCBAHM Appendix A; database/eLotus use EX-HN6, while AD uses M-HN-10",
+      "No dedicated Erjian entry was found in the current curriculum/acupoints material"
+    ],
     "exam_star": 0,
     "exam_importance": "列入 NCBAHM 2026 ACPL Appendix A 經外奇穴範圍；現有課件未找到耳尖專條，因此不自行加課件星號。",
     "exam_importance_en": "Listed in the NCBAHM 2026 ACPL Appendix A extra-point scope. No dedicated Ear Apex entry was found in the current course material, so no course exam star is inferred.",
@@ -702,20 +1178,66 @@
       "Mumps",
       "High fever"
     ],
-    "action_tags_zh": ["清熱", "消腫", "明目", "利咽", "放血"],
-    "action_tags_en": ["Clear Heat", "Reduce Swelling", "Benefit the Eyes", "Benefit the Throat", "Bloodletting"],
-    "disease_tags_zh": ["發熱", "目赤腫痛", "角膜翳", "單側頭痛", "咽喉腫痛", "腮腺炎"],
-    "disease_tags_en": ["Fever", "Red Swollen Eyes", "Corneal Nebula", "One-sided Headache", "Sore Swollen Throat", "Mumps"],
+    "action_tags_zh": [
+      "清熱",
+      "消腫",
+      "明目",
+      "利咽",
+      "放血"
+    ],
+    "action_tags_en": [
+      "Clear Heat",
+      "Reduce Swelling",
+      "Benefit the Eyes",
+      "Benefit the Throat",
+      "Bloodletting"
+    ],
+    "disease_tags_zh": [
+      "發熱",
+      "目赤腫痛",
+      "角膜翳",
+      "單側頭痛",
+      "咽喉腫痛",
+      "腮腺炎"
+    ],
+    "disease_tags_en": [
+      "Fever",
+      "Red Swollen Eyes",
+      "Corneal Nebula",
+      "One-sided Headache",
+      "Sore Swollen Throat",
+      "Mumps"
+    ],
     "cautions": "eLotus 與 AD 均列點刺出血，但沒有提供消毒、止血、抗凝用藥、出血性疾病、兒童或孕婦的專屬流程；不可自行補造。既有『徹底消毒』作為程序警語保留，但不是四來源提供的完整 protocol。出血滴數亦未指定，故3~5滴不作已核實劑量。既有『禁灸』與 eLotus 的可灸及 AD 的3~5壯明確衝突；本卡依來源並列，不把禁灸寫成共識。",
-    "cautionsEn": ["eLotus and AD list prick-to-bleed but provide no point-specific protocol for antisepsis, hemostasis, anticoagulant use, bleeding disorders, children, or pregnancy; none is invented.", "The legacy 'thoroughly disinfect' statement is retained as a procedural warning but is not a complete protocol supplied by the four sources.", "Neither source specifies a number of drops, so the legacy 3-5-drop quantity is not treated as verified.", "The legacy moxa prohibition directly conflicts with eLotus's moxa-applicable statement and AD's 3-5-cone instruction; the discrepancy is shown rather than resolved by guesswork."],
+    "cautionsEn": [
+      "eLotus and AD list prick-to-bleed but provide no point-specific protocol for antisepsis, hemostasis, anticoagulant use, bleeding disorders, children, or pregnancy; none is invented.",
+      "The legacy 'thoroughly disinfect' statement is retained as a procedural warning but is not a complete protocol supplied by the four sources.",
+      "Neither source specifies a number of drops, so the legacy 3-5-drop quantity is not treated as verified.",
+      "The legacy moxa prohibition directly conflicts with eLotus's moxa-applicable statement and AD's 3-5-cone instruction; the discrepancy is shown rather than resolved by guesswork."
+    ],
     "evidence": "四來源整合：NCBAHM Appendix A 確認範圍；現有課件未找到耳尖專條；eLotus 提供 EX-HN6、折耳定位、0.1~0.2寸／點刺放血、可灸、清熱消腫明目利咽與三項主治；AD 補 M-HN-10、0.1寸版本、3~5壯、5壯適用情境及完整主治。既有高血壓、麥粒腫、結膜炎、解毒降壓、3~5滴與禁灸均不刪除，但逐項標明本輪來源缺口或衝突。",
-    "acuTags": ["耳部", "眼病", "發熱", "咽喉", "放血"],
+    "acuTags": [
+      "耳部",
+      "眼病",
+      "發熱",
+      "咽喉",
+      "放血"
+    ],
     "combinePointsZh": "【既有學習配伍；本輪四來源未列】麥粒腫：耳尖放血配大椎（GV14），取清熱解毒消腫之意。eLotus 與 AD 耳尖條目均未列配穴。",
     "combinePointsEn": "Legacy study pairing not listed by the four sources reviewed: for hordeolum, bleed Ear Apex with Dazhui (GV14), intended to clear Heat, resolve toxicity, and reduce swelling. The eLotus and AD Erjian entries list no combinations.",
     "nameIntroZh": "eLotus 英譯 Tip of the Ear、Ear Apex、Apex of Ear；AD 用 Tip of the Ear。注意勿與大腸經 LI2 二間（同拼音 Erjian）混淆。",
     "nameIntroEn": "eLotus gives Tip of the Ear, Ear Apex, and Apex of Ear; AD uses Tip of the Ear. Do not confuse this Erjian with Large Intestine 2 (Erjian), which shares the same toneless pinyin spelling.",
-    "otherNamesZh": ["耳尖穴", "英譯：Tip of the Ear", "英譯：Ear Apex", "英譯：Apex of Ear"],
-    "otherNamesEn": ["Ear Apex", "Tip of the Ear", "Apex of Ear"],
+    "otherNamesZh": [
+      "耳尖穴",
+      "英譯：Tip of the Ear",
+      "英譯：Ear Apex",
+      "英譯：Apex of Ear"
+    ],
+    "otherNamesEn": [
+      "Ear Apex",
+      "Tip of the Ear",
+      "Apex of Ear"
+    ],
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6",
@@ -739,21 +1261,62 @@
     "x": 158,
     "y": 155,
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Erjian listed"],
-      "curriculum": ["source-gap note: no dedicated Erjian/耳尖 extra-point entry found under curriculum/acupoints; LI2 Erjian is a different point"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6"],
-      "american_dragon": ["https://www.americandragon.com/Points/Erjian.html"],
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6", "https://www.americandragon.com/Points/Erjian.html"],
-      "anatomy": ["source-gap note: reviewed sources identify the auricular apex but provide no layer-by-layer neurovascular anatomy"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6", "https://www.americandragon.com/Points/Erjian.html", "legacy source-gap note: prior 3-5-drop quantity retained but not found"],
-      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6: applicable", "https://www.americandragon.com/Points/Erjian.html: 3-5 cones; 5 cones for superficial visual obstruction", "legacy conflict note: prior moxa prohibition retained but contradicted by both exact pages"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6", "https://www.americandragon.com/Points/Erjian.html", "legacy source-gap note: detoxification and blood-pressure actions retained without direct support"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6", "https://www.americandragon.com/Points/Erjian.html", "legacy source-gap note: hypertension, hordeolum, and conjunctivitis retained but not directly listed"],
-      "combinations": ["source-gap note: current GV14 pairing is preserved legacy content; eLotus and AD list no combinations"],
-      "cautions": ["source-gap/conflict note: bloodletting listed without a full risk protocol; moxa prohibition conflicts with eLotus and AD"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6: EX-HN6", "https://www.americandragon.com/Points/Erjian.html: M-HN-10"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Erjian page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Erjian page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Erjian listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Erjian/耳尖 extra-point entry found under curriculum/acupoints; LI2 Erjian is a different point"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Erjian.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6",
+        "https://www.americandragon.com/Points/Erjian.html"
+      ],
+      "anatomy": [
+        "source-gap note: reviewed sources identify the auricular apex but provide no layer-by-layer neurovascular anatomy"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6",
+        "https://www.americandragon.com/Points/Erjian.html",
+        "legacy source-gap note: prior 3-5-drop quantity retained but not found"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6: applicable",
+        "https://www.americandragon.com/Points/Erjian.html: 3-5 cones; 5 cones for superficial visual obstruction",
+        "legacy conflict note: prior moxa prohibition retained but contradicted by both exact pages"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6",
+        "https://www.americandragon.com/Points/Erjian.html",
+        "legacy source-gap note: detoxification and blood-pressure actions retained without direct support"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6",
+        "https://www.americandragon.com/Points/Erjian.html",
+        "legacy source-gap note: hypertension, hordeolum, and conjunctivitis retained but not directly listed"
+      ],
+      "combinations": [
+        "source-gap note: current GV14 pairing is preserved legacy content; eLotus and AD list no combinations"
+      ],
+      "cautions": [
+        "source-gap/conflict note: bloodletting listed without a full risk protocol; moxa prohibition conflicts with eLotus and AD"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/erjian-ex-hn6: EX-HN6",
+        "https://www.americandragon.com/Points/Erjian.html: M-HN-10"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Erjian page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Erjian page",
+        "2026-08-02 HTTP 200: WHO IRIS nomenclature record"
+      ]
+    },
+    "id": "ex.hn6"
   },
   {
     "code": "EX-HN7",
@@ -775,10 +1338,34 @@
     "moxaEn": "The eLotus and American Dragon Qiuhou entries do not address moxibustion. The legacy 'moxibustion contraindicated' warning is retained pending verification; no moxa dose is inferred.",
     "functions": "明目，清熱退翳，活血通竅",
     "functionsEn": "Benefits the eyes; Clears Heat and removes visual obstruction; Invigorates Blood and opens the orifices",
-    "functionsZhList": ["明目", "清熱（既有內容；四來源未直接列）", "退翳（既有內容；四來源未直接列）", "活血（既有內容；四來源未直接列）", "通竅（既有內容；四來源未直接列）"],
-    "functionsEnList": ["Benefits the eyes", "Clears Heat (legacy content; not directly listed by the four sources)", "Removes visual obstruction (legacy content; not directly listed by the four sources)", "Invigorates Blood (legacy content; not directly listed by the four sources)", "Opens the orifices (legacy content; not directly listed by the four sources)"],
-    "pointIdentityZh": ["經外奇穴", "高風險眶內眼病用穴", "本庫／eLotus 用 EX-HN7；AD 用 M-HN-8", "NCBAHM Appendix A 與現有課件未找到球後專條", "AD 稱其為現代新增的經外奇穴"],
-    "pointIdentityEn": ["Extra point", "High-risk intra-orbital point used for eye disorders", "Database/eLotus use EX-HN7; AD uses M-HN-8", "No Qiuhou entry was found in NCBAHM Appendix A or current course material", "AD describes it as a modern addition to the extra points"],
+    "functionsZhList": [
+      "明目",
+      "清熱（既有內容；四來源未直接列）",
+      "退翳（既有內容；四來源未直接列）",
+      "活血（既有內容；四來源未直接列）",
+      "通竅（既有內容；四來源未直接列）"
+    ],
+    "functionsEnList": [
+      "Benefits the eyes",
+      "Clears Heat (legacy content; not directly listed by the four sources)",
+      "Removes visual obstruction (legacy content; not directly listed by the four sources)",
+      "Invigorates Blood (legacy content; not directly listed by the four sources)",
+      "Opens the orifices (legacy content; not directly listed by the four sources)"
+    ],
+    "pointIdentityZh": [
+      "經外奇穴",
+      "高風險眶內眼病用穴",
+      "本庫／eLotus 用 EX-HN7；AD 用 M-HN-8",
+      "NCBAHM Appendix A 與現有課件未找到球後專條",
+      "AD 稱其為現代新增的經外奇穴"
+    ],
+    "pointIdentityEn": [
+      "Extra point",
+      "High-risk intra-orbital point used for eye disorders",
+      "Database/eLotus use EX-HN7; AD uses M-HN-8",
+      "No Qiuhou entry was found in NCBAHM Appendix A or current course material",
+      "AD describes it as a modern addition to the extra points"
+    ],
     "exam_star": 0,
     "exam_importance": "NCBAHM 2026 ACPL Appendix A 未列球後；現有課件亦未找到專條，因此不標 Board 核心或課件星號。",
     "exam_importance_en": "Qiuhou is not listed in the NCBAHM 2026 ACPL Appendix A, and no dedicated course entry was found; it is not labeled as a core Board or starred course point.",
@@ -808,20 +1395,59 @@
       "Esotropia / convergent strabismus",
       "All eye diseases (broad wording in eLotus/AD)"
     ],
-    "action_tags_zh": ["明目", "眼眶針刺", "退翳", "活血"],
-    "action_tags_en": ["Benefit the Eyes", "Orbital Needling", "Remove Visual Obstruction", "Invigorate Blood"],
-    "disease_tags_zh": ["視神經炎", "視神經萎縮", "青光眼", "近視", "黃斑部退化", "內斜視"],
-    "disease_tags_en": ["Optic Neuritis", "Optic Atrophy", "Glaucoma", "Myopia", "Macular Degeneration", "Esotropia"],
+    "action_tags_zh": [
+      "明目",
+      "眼眶針刺",
+      "退翳",
+      "活血"
+    ],
+    "action_tags_en": [
+      "Benefit the Eyes",
+      "Orbital Needling",
+      "Remove Visual Obstruction",
+      "Invigorate Blood"
+    ],
+    "disease_tags_zh": [
+      "視神經炎",
+      "視神經萎縮",
+      "青光眼",
+      "近視",
+      "黃斑部退化",
+      "內斜視"
+    ],
+    "disease_tags_en": [
+      "Optic Neuritis",
+      "Optic Atrophy",
+      "Glaucoma",
+      "Myopia",
+      "Macular Degeneration",
+      "Esotropia"
+    ],
     "cautions": "高風險眼眶穴。eLotus 明列禁提插、捻轉；AD 要求慢進針、不得提插捻轉，並警告過深可能進入顱腔。AD 明確表示本法只應由具適當臨床經驗者嘗試。出針後應立即用棉球牢固按壓針孔約1分鐘以防血腫；舊卡『按壓1~2分鐘防出血』保留為時長差異，但『壓迫眼球』已校正為按壓針孔。eLotus 與 AD 未談艾灸，故既有禁灸僅作待核實警語。來源未提供孕婦、兒童、抗凝用藥或出血性疾病的專屬規則，不猜。",
-    "cautionsEn": ["High-risk orbital point. eLotus prohibits lifting, thrusting, twisting, and rotating. AD requires slow insertion without manipulation and warns that excessive depth may enter the cranial cavity.", "AD explicitly states that this method should be attempted only by practitioners with appropriate clinical experience.", "Immediately after withdrawal, apply firm cotton-ball pressure over the needle site for about one minute to prevent hematoma. The legacy 1-2-minute pressure note is retained as a duration variant, but the unsafe wording 'press the eyeball' is corrected to pressure over the needle site.", "eLotus and AD do not address moxa, so the legacy prohibition remains pending verification.", "The sources provide no point-specific pregnancy, pediatric, anticoagulant, or bleeding-disorder rules; none are guessed."],
+    "cautionsEn": [
+      "High-risk orbital point. eLotus prohibits lifting, thrusting, twisting, and rotating. AD requires slow insertion without manipulation and warns that excessive depth may enter the cranial cavity.",
+      "AD explicitly states that this method should be attempted only by practitioners with appropriate clinical experience.",
+      "Immediately after withdrawal, apply firm cotton-ball pressure over the needle site for about one minute to prevent hematoma. The legacy 1-2-minute pressure note is retained as a duration variant, but the unsafe wording 'press the eyeball' is corrected to pressure over the needle site.",
+      "eLotus and AD do not address moxa, so the legacy prohibition remains pending verification.",
+      "The sources provide no point-specific pregnancy, pediatric, anticoagulant, or bleeding-disorder rules; none are guessed."
+    ],
     "evidence": "四層查核：NCBAHM Appendix A 與現有課件均未找到球後專條；eLotus 提供 EX-HN7、定位、0.5~1.2寸、禁提插捻轉、明目與廣義眼病主治；AD 補 M-HN-8、0.5~1及1~1.5寸眶內版本、不可過深／防顱腔穿入、棉球壓針孔防血腫、僅限有經驗者、完整眼病主治與配穴。既有清熱退翳活血通竅、早期白內障與禁灸不刪除，但標為本輪未直接支持。",
-    "acuTags": ["眼眶", "眼病", "高風險", "視神經"],
+    "acuTags": [
+      "眼眶",
+      "眼病",
+      "高風險",
+      "視神經"
+    ],
     "combinePointsZh": "【視神經炎；AD】球後配睛明（BL1）、風池（GB20）、養老（SI6）、光明（GB37）。eLotus 球後條目未列配穴。",
     "combinePointsEn": "Optic neuritis (AD): Qiuhou with Jingming (BL1), Fengchi (GB20), Yanglao (SI6), and Guangming (GB37). The eLotus Qiuhou entry lists no combinations.",
     "nameIntroZh": "eLotus 與 AD 均將球後譯為 Behind the Ball；名稱提示其位於眼球後／眶內操作區，但不等於自行決定進針方向。",
     "nameIntroEn": "eLotus and AD translate Qiuhou as 'Behind the Ball.' The name signals the orbital region but does not itself determine a needling direction.",
-    "otherNamesZh": ["英譯：Behind the Ball"],
-    "otherNamesEn": ["Behind the Ball"],
+    "otherNamesZh": [
+      "英譯：Behind the Ball"
+    ],
+    "otherNamesEn": [
+      "Behind the Ball"
+    ],
     "reviewStatus": "draft",
     "sources": [
       "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7",
@@ -845,21 +1471,61 @@
     "x": 165,
     "y": 150,
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Qiuhou not listed"],
-      "curriculum": ["source-gap note: no dedicated Qiuhou/球後 entry found under curriculum/acupoints"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7"],
-      "american_dragon": ["https://www.americandragon.com/Points/Qiuhou.html"],
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7", "https://www.americandragon.com/Points/Qiuhou.html"],
-      "anatomy": ["https://www.americandragon.com/Points/Qiuhou.html: between globe and inferior orbital wall; excessive depth may enter cranial cavity", "source-gap note: no full layer-by-layer neurovascular anatomy"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7", "https://www.americandragon.com/Points/Qiuhou.html"],
-      "moxibustion": ["source-gap note: eLotus and AD Qiuhou entries do not address moxa; legacy prohibition retained pending verification"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7", "https://www.americandragon.com/Points/Qiuhou.html", "legacy source-gap note: Clears Heat, removes obstruction, invigorates Blood, and opens orifices retained without direct action support"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7", "https://www.americandragon.com/Points/Qiuhou.html", "legacy source-gap note: early cataract retained without direct listing"],
-      "combinations": ["https://www.americandragon.com/Points/Qiuhou.html"],
-      "cautions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7: no needle manipulation", "https://www.americandragon.com/Points/Qiuhou.html: cranial-depth warning, no manipulation, needle-site pressure, experienced practitioners only"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7: EX-HN7", "https://www.americandragon.com/Points/Qiuhou.html: M-HN-8"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Qiuhou page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Qiuhou page", "2026-08-02 HTTP 200: WHO IRIS nomenclature record"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Qiuhou not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Qiuhou/球後 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Qiuhou.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7",
+        "https://www.americandragon.com/Points/Qiuhou.html"
+      ],
+      "anatomy": [
+        "https://www.americandragon.com/Points/Qiuhou.html: between globe and inferior orbital wall; excessive depth may enter cranial cavity",
+        "source-gap note: no full layer-by-layer neurovascular anatomy"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7",
+        "https://www.americandragon.com/Points/Qiuhou.html"
+      ],
+      "moxibustion": [
+        "source-gap note: eLotus and AD Qiuhou entries do not address moxa; legacy prohibition retained pending verification"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7",
+        "https://www.americandragon.com/Points/Qiuhou.html",
+        "legacy source-gap note: Clears Heat, removes obstruction, invigorates Blood, and opens orifices retained without direct action support"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7",
+        "https://www.americandragon.com/Points/Qiuhou.html",
+        "legacy source-gap note: early cataract retained without direct listing"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Qiuhou.html"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7: no needle manipulation",
+        "https://www.americandragon.com/Points/Qiuhou.html: cranial-depth warning, no manipulation, needle-site pressure, experienced practitioners only"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuhou-ex-hn7: EX-HN7",
+        "https://www.americandragon.com/Points/Qiuhou.html: M-HN-8"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Qiuhou page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Qiuhou page",
+        "2026-08-02 HTTP 200: WHO IRIS nomenclature record"
+      ]
+    },
+    "id": "ex.hn7"
   },
   {
     "code": "EX-HN8",
@@ -1088,7 +1754,8 @@
         "2026-08-02 exact American Dragon Bitong page opened and matched the pinyin index",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn8"
   },
   {
     "code": "EX-HN9",
@@ -1276,7 +1943,8 @@
         "2026-08-02 American Dragon pinyin index opened; Neiyingxiang absent and no exact detail URL verified",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn9"
   },
   {
     "code": "EX-HN10",
@@ -1464,7 +2132,8 @@
         "2026-08-02 American Dragon pinyin index opened; Juquan absent and no exact detail URL verified",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn10"
   },
   {
     "code": "EX-HN11",
@@ -1664,7 +2333,8 @@
         "2026-08-02 American Dragon pinyin index opened; Haiquan absent and no exact detail URL verified",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn11"
   },
   {
     "code": "EX-HN12",
@@ -1872,7 +2542,8 @@
         "2026-08-02 American Dragon pinyin index and exact Jinjin-Yuye page opened; duplicated location sentence contains a likely Jinjin/Yuye typo disclosed in card",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn12"
   },
   {
     "code": "EX-HN13",
@@ -2082,7 +2753,8 @@
         "2026-08-02 American Dragon pinyin index and exact Jinjin-Yuye page opened; duplicated location sentence contains a likely Jinjin/Yuye typo disclosed in card",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn13"
   },
   {
     "code": "EX-HN14",
@@ -2276,7 +2948,8 @@
         "2026-08-02 HTTP 200: American Dragon pinyin index and exact Yiming page",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn14"
   },
   {
     "code": "EX-HN15",
@@ -2485,7 +3158,8 @@
         "2026-08-02 HTTP 200: American Dragon pinyin index and exact Bailao page",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn15"
   },
   {
     "code": "EX-HN16",
@@ -2565,24 +3239,24 @@
     "evidence": "四層查核：NCBAHM Appendix A 列 Anmian，現有課件未找到安眠專條；eLotus 提供 EX-HN16、TE17 與 GB20 中點、直刺0.5~0.8寸、不灸、安神疏肝與失眠／眩暈／頭痛／心悸／精神疾患；AD 提供 N-HN-54、GB12 輔助地標、三個0.5~1.5寸刺法版本、安神平肝、較完整神志／耳科／高血壓／甲亢／戒斷主治及三組配穴。既有0.8~1.2寸、可灸與 HT7 配伍不刪，但分別標成未核實或 legacy。WHO IRIS 僅作國際命名框架。",
     "combinePointsZh": "【失眠・AD】安眠配內關（PC6）、三陰交（SP6）：AD 原列配伍；用於寧心安神與調和睡眠。\n【失眠・既有卡片】安眠配神門（HT7）、三陰交（SP6）：原卡配伍保留，與 AD 的 PC6 版本分開標示。\n【精神疾患・AD】安眠配水溝（GV26）、大椎（GV14）、陶道（GV13）：AD 原列配伍。\n【眩暈・AD】安眠配曲池（LI11）、豐隆（ST40）：AD 原列配伍。",
     "reviewStatus": "draft",
-  "sources": [
-    "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
-    "https://www.americandragon.com/Points/Anmian.html",
-    "https://iris.who.int/handle/10665/40001"
+    "sources": [
+      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+      "https://www.americandragon.com/Points/Anmian.html",
+      "https://iris.who.int/handle/10665/40001"
     ],
     "visualLinks": [
       {
         "labelZh": "經外奇穴 · 安眠 EX-HN16 (eLotus CORE)",
         "labelEn": "Extra Point · Anmian EX-HN16 (eLotus CORE)",
-      "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
-      "source": "MasterTungAcupuncture.org / eLotus CORE"
-    },
-    {
-      "labelZh": "American Dragon · 安眠 N-HN-54",
-      "labelEn": "American Dragon · Anmian N-HN-54",
-      "url": "https://www.americandragon.com/Points/Anmian.html",
-      "source": "American Dragon"
-    }
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+        "source": "MasterTungAcupuncture.org / eLotus CORE"
+      },
+      {
+        "labelZh": "American Dragon · 安眠 N-HN-54",
+        "labelEn": "American Dragon · Anmian N-HN-54",
+        "url": "https://www.americandragon.com/Points/Anmian.html",
+        "source": "American Dragon"
+      }
     ],
     "x": 163,
     "y": 188,
@@ -2621,48 +3295,48 @@
       "頭痛",
       "經外奇穴"
     ],
-  "cautions": "【深度差異】eLotus 列直刺0.5~0.8寸；AD 同頁列垂直0.5~1寸、直刺1~1.5寸及另一個垂直0.5~0.8寸版本；既有卡片另為0.8~1.2寸。四版本並列，不合併成共識深度。【感覺界線】AD 記局部脹痛有時延及同側面部，僅是來源中的感覺描述，不是刻意追求向面部放電感的操作目標。【解剖缺口】四來源均未給逐層神經血管、顱底安全界線、孕婦、兒童或其他高風險操作規範；本卡不據中點定位自行推定深刺安全。既有『避免向顱底深刺、眩暈／體弱／強刺激敏感者慎用』保留為程序性保守提醒，但非四來源明載禁忌。【灸法】既有『可灸』缺乏 eLotus／AD 支持，不補造灸量。",
-  "cautionsEn": [
-    "Depth discrepancy: eLotus lists perpendicular 0.5-0.8 cun; the AD page lists perpendicular 0.5-1 cun, straight 1-1.5 cun, and another perpendicular 0.5-0.8-cun version; the legacy card adds 0.8-1.2 cun. These four versions are not merged into a consensus range.",
-    "AD's local distention/soreness sometimes extending over the ipsilateral face is a reported sensation, not an instruction to deliberately seek an electrical sensation into the face.",
-    "The four sources do not provide layer-by-layer neurovascular anatomy, a skull-base safety boundary, or pregnancy, pediatric, or other high-risk protocols. The legacy advice to avoid deep insertion toward the skull base and use procedural caution in frail, dizzy, or stimulation-sensitive patients is retained but is not a source-stated contraindication.",
-    "The legacy card says moxa is applicable, but eLotus and AD do not support or quantify it; no moxa dose is inferred."
-  ],
-  "exam_importance": "NCBAHM Appendix A 明列 Anmian，屬 Board 範圍。定位抓 TE17 與 GB20 連線中點；主軸安神助眠，兼眩暈、頭痛、心悸與精神躁動。",
-  "exam_importance_en": "NCBAHM Appendix A explicitly lists Anmian, placing it in Board scope. Locate the midpoint between TE17 and GB20; its core is calming the Shen for sleep, with additional vertigo, headache, palpitation, and agitation indications.",
-  "exam_pearl": "安眠＝TE17—GB20 連線中點的睡眠要穴。AD 的失眠配伍是 PC6＋SP6；原卡的 HT7＋SP6 是另一 legacy 版本。與翳明相近但用途不同：安眠偏失眠／神志，翳明偏眼耳。",
-  "exam_pearl_en": "Anmian is the sleep-focused point at the midpoint of the TE17-GB20 line. AD pairs it with PC6 + SP6 for insomnia; the legacy HT7 + SP6 combination is a separate version. Distinguish nearby Yiming, which emphasizes eye and ear disorders.",
-  "combinePointsEn": "Insomnia (AD): Anmian with Neiguan (PC6) and Sanyinjiao (SP6), the pairing listed by AD, for calming the Heart/Shen and regulating sleep.\nInsomnia (legacy card): Anmian with Shenmen (HT7) and Sanyinjiao (SP6); retained separately from AD's PC6 version.\nMental disorders (AD): Anmian with Shuigou (GV26), Dazhui (GV14), and Taodao (GV13).\nVertigo (AD): Anmian with Quchi (LI11) and Fenglong (ST40).",
-  "clinical_pearls": "AD 補出失眠以外的應用：躁動、心悸、癲癇、歇斯底里、躁狂、高血壓伴失眠／躁動、甲亢伴多夢睡眠、耳聾、驚厥與藥物戒斷。本卡完整保留，但這些是來源列示主治，不等於以安眠替代病因評估或常規治療。AD 定位文字把 SJ17 誤寫成『Sifeng』，其超連結與標準穴名實為 Yifeng（TE17／SJ17）。",
-  "clinical_pearls_en": "AD extends the indication structure beyond insomnia to agitation, palpitations, epilepsy, hysteria, mania, hypertension with insomnia/restlessness, hyperthyroidism with dream-disturbed sleep, deafness, convulsions, and drug-withdrawal symptoms. These are source-listed indications, not a claim that Anmian replaces etiologic assessment or standard care. AD's location prose mislabels SJ17 as 'Sifeng'; its link and the standard point name indicate Yifeng (TE17/SJ17).",
-  "nameIntro": "安眠（Anmian，意為 Peaceful Sleep）是耳後的經外奇穴；本庫與 eLotus 用 EX-HN16，American Dragon 用 N-HN-54。",
-  "field_sources": {
-    "board_scope": [
-      "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Anmian listed"
+    "cautions": "【深度差異】eLotus 列直刺0.5~0.8寸；AD 同頁列垂直0.5~1寸、直刺1~1.5寸及另一個垂直0.5~0.8寸版本；既有卡片另為0.8~1.2寸。四版本並列，不合併成共識深度。【感覺界線】AD 記局部脹痛有時延及同側面部，僅是來源中的感覺描述，不是刻意追求向面部放電感的操作目標。【解剖缺口】四來源均未給逐層神經血管、顱底安全界線、孕婦、兒童或其他高風險操作規範；本卡不據中點定位自行推定深刺安全。既有『避免向顱底深刺、眩暈／體弱／強刺激敏感者慎用』保留為程序性保守提醒，但非四來源明載禁忌。【灸法】既有『可灸』缺乏 eLotus／AD 支持，不補造灸量。",
+    "cautionsEn": [
+      "Depth discrepancy: eLotus lists perpendicular 0.5-0.8 cun; the AD page lists perpendicular 0.5-1 cun, straight 1-1.5 cun, and another perpendicular 0.5-0.8-cun version; the legacy card adds 0.8-1.2 cun. These four versions are not merged into a consensus range.",
+      "AD's local distention/soreness sometimes extending over the ipsilateral face is a reported sensation, not an instruction to deliberately seek an electrical sensation into the face.",
+      "The four sources do not provide layer-by-layer neurovascular anatomy, a skull-base safety boundary, or pregnancy, pediatric, or other high-risk protocols. The legacy advice to avoid deep insertion toward the skull base and use procedural caution in frail, dizzy, or stimulation-sensitive patients is retained but is not a source-stated contraindication.",
+      "The legacy card says moxa is applicable, but eLotus and AD do not support or quantify it; no moxa dose is inferred."
     ],
-    "curriculum": [
-      "source-gap note: no dedicated Anmian/安眠 entry found under curriculum/acupoints"
-    ],
-    "elotus": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16"
-    ],
-    "american_dragon": [
-      "https://www.americandragon.com/Points/Anmian.html"
-    ],
+    "exam_importance": "NCBAHM Appendix A 明列 Anmian，屬 Board 範圍。定位抓 TE17 與 GB20 連線中點；主軸安神助眠，兼眩暈、頭痛、心悸與精神躁動。",
+    "exam_importance_en": "NCBAHM Appendix A explicitly lists Anmian, placing it in Board scope. Locate the midpoint between TE17 and GB20; its core is calming the Shen for sleep, with additional vertigo, headache, palpitation, and agitation indications.",
+    "exam_pearl": "安眠＝TE17—GB20 連線中點的睡眠要穴。AD 的失眠配伍是 PC6＋SP6；原卡的 HT7＋SP6 是另一 legacy 版本。與翳明相近但用途不同：安眠偏失眠／神志，翳明偏眼耳。",
+    "exam_pearl_en": "Anmian is the sleep-focused point at the midpoint of the TE17-GB20 line. AD pairs it with PC6 + SP6 for insomnia; the legacy HT7 + SP6 combination is a separate version. Distinguish nearby Yiming, which emphasizes eye and ear disorders.",
+    "combinePointsEn": "Insomnia (AD): Anmian with Neiguan (PC6) and Sanyinjiao (SP6), the pairing listed by AD, for calming the Heart/Shen and regulating sleep.\nInsomnia (legacy card): Anmian with Shenmen (HT7) and Sanyinjiao (SP6); retained separately from AD's PC6 version.\nMental disorders (AD): Anmian with Shuigou (GV26), Dazhui (GV14), and Taodao (GV13).\nVertigo (AD): Anmian with Quchi (LI11) and Fenglong (ST40).",
+    "clinical_pearls": "AD 補出失眠以外的應用：躁動、心悸、癲癇、歇斯底里、躁狂、高血壓伴失眠／躁動、甲亢伴多夢睡眠、耳聾、驚厥與藥物戒斷。本卡完整保留，但這些是來源列示主治，不等於以安眠替代病因評估或常規治療。AD 定位文字把 SJ17 誤寫成『Sifeng』，其超連結與標準穴名實為 Yifeng（TE17／SJ17）。",
+    "clinical_pearls_en": "AD extends the indication structure beyond insomnia to agitation, palpitations, epilepsy, hysteria, mania, hypertension with insomnia/restlessness, hyperthyroidism with dream-disturbed sleep, deafness, convulsions, and drug-withdrawal symptoms. These are source-listed indications, not a claim that Anmian replaces etiologic assessment or standard care. AD's location prose mislabels SJ17 as 'Sifeng'; its link and the standard point name indicate Yifeng (TE17/SJ17).",
+    "nameIntro": "安眠（Anmian，意為 Peaceful Sleep）是耳後的經外奇穴；本庫與 eLotus 用 EX-HN16，American Dragon 用 N-HN-54。",
+    "field_sources": {
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Anmian listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Anmian/安眠 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Anmian.html"
+      ],
       "location": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
         "https://www.americandragon.com/Points/Anmian.html"
       ],
-    "technique": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
-      "https://www.americandragon.com/Points/Anmian.html",
-      "legacy 0.8-1.2-cun range retained as a distinct unverified version"
-    ],
-    "anatomy": [
-      "source-gap note: no full layer-by-layer posterior-auricular/upper-neck neurovascular anatomy or skull-base safety boundary"
-    ],
-    "moxibustion": [
-      "source-gap note: eLotus and AD Anmian entries do not address moxa; legacy applicability retained pending verification"
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
+        "https://www.americandragon.com/Points/Anmian.html",
+        "legacy 0.8-1.2-cun range retained as a distinct unverified version"
+      ],
+      "anatomy": [
+        "source-gap note: no full layer-by-layer posterior-auricular/upper-neck neurovascular anatomy or skull-base safety boundary"
+      ],
+      "moxibustion": [
+        "source-gap note: eLotus and AD Anmian entries do not address moxa; legacy applicability retained pending verification"
       ],
       "functions": [
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
@@ -2672,26 +3346,27 @@
         "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16",
         "https://www.americandragon.com/Points/Anmian.html"
       ],
-    "cautions": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16: perpendicular 0.5-0.8 cun",
-      "https://www.americandragon.com/Points/Anmian.html: multiple 0.5-1.5-cun variants and ipsilateral facial sensation description",
-      "source-gap note: no full anatomy, pregnancy, pediatric, or other high-risk protocol"
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16: perpendicular 0.5-0.8 cun",
+        "https://www.americandragon.com/Points/Anmian.html: multiple 0.5-1.5-cun variants and ipsilateral facial sensation description",
+        "source-gap note: no full anatomy, pregnancy, pediatric, or other high-risk protocol"
       ],
-    "combinations": [
-      "https://www.americandragon.com/Points/Anmian.html",
-      "legacy HT7 + SP6 insomnia combination retained separately"
-    ],
-    "nomenclature": [
-      "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16: EX-HN16 Anmian",
-      "https://www.americandragon.com/Points/Anmian.html: N-HN-54 Anmian",
-      "https://iris.who.int/handle/10665/40001: international nomenclature framework"
-    ],
-    "link_check": [
-      "2026-08-02 HTTP 200: eLotus exact Anmian page",
-      "2026-08-02 HTTP 200: American Dragon pinyin index and exact Anmian page",
-      "2026-08-02 WHO IRIS nomenclature record opened"
-    ]
-  }
+      "combinations": [
+        "https://www.americandragon.com/Points/Anmian.html",
+        "legacy HT7 + SP6 insomnia combination retained separately"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/anmian-ex-hn16: EX-HN16 Anmian",
+        "https://www.americandragon.com/Points/Anmian.html: N-HN-54 Anmian",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Anmian page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Anmian page",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    },
+    "id": "ex.hn16"
   },
   {
     "code": "EX-HN17",
@@ -2878,7 +3553,8 @@
         "2026-08-02 HTTP 200: eLotus point index and exact EX-HN17 Bailao mismatch page",
         "2026-08-02 WHO IRIS nomenclature record opened"
       ]
-    }
+    },
+    "id": "ex.hn17"
   },
   {
     "code": "EX-HN18",
@@ -3008,21 +3684,62 @@
     "nameIntroZh": "牽正意為牽引偏斜使之復正；eLotus 英譯 Pull Uprightness，AD 英譯 Pull Aright。名稱有助記面癱／口眼歪斜，但不決定針刺強度。",
     "nameIntroEn": "Qianzheng means pulling a deviation upright; eLotus translates it as 'Pull Uprightness' and AD as 'Pull Aright.' The name cues facial deviation but does not determine stimulation intensity.",
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Qianzheng not listed; Bitong listed"],
-      "curriculum": ["source-gap note: no dedicated Qianzheng/牽正 entry found under curriculum/acupoints"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20"],
-      "american_dragon": ["https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
-      "anatomy": ["source-gap note: no layer-by-layer cheek/parotid/duct/neurovascular anatomy in the four reviewed layers"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"],
-      "moxibustion": ["source-gap note: eLotus and AD Qianzheng entries do not address moxa"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "legacy clear-Heat and unblock-collaterals actions retained separately"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html", "legacy stomatitis and TMJ-pain indications retained separately"],
-      "cautions": ["https://www.americandragon.com/Points/Qianzheng%2Chtml.html: forward 0.5-1-cun slanted insertion and cheek-spreading sensation; contraindication field blank", "source-gap note: no full anatomy, stopping rule, moxa, pregnancy, pediatric, or other high-risk protocol"],
-      "combinations": ["https://www.americandragon.com/Points/Qianzheng%2Chtml.html", "legacy ST4-ST6-LI4 facial-paralysis combination retained separately"],
-      "nomenclature": ["database: immutable EX-HN18 Qianzheng mapping", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20: EX-HN20 Qianzheng", "https://www.americandragon.com/Points/Qianzheng%2Chtml.html: N-HN-20 Qianzheng", "https://iris.who.int/handle/10665/40001: international nomenclature framework; not used to assert database equivalence"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Qianzheng page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Qianzheng page; irregular encoded-comma filename is the site's live detail URL", "2026-08-02 WHO IRIS nomenclature record opened"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Qianzheng not listed; Bitong listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Qianzheng/牽正 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
+        "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"
+      ],
+      "anatomy": [
+        "source-gap note: no layer-by-layer cheek/parotid/duct/neurovascular anatomy in the four reviewed layers"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
+        "https://www.americandragon.com/Points/Qianzheng%2Chtml.html"
+      ],
+      "moxibustion": [
+        "source-gap note: eLotus and AD Qianzheng entries do not address moxa"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
+        "legacy clear-Heat and unblock-collaterals actions retained separately"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20",
+        "https://www.americandragon.com/Points/Qianzheng%2Chtml.html",
+        "legacy stomatitis and TMJ-pain indications retained separately"
+      ],
+      "cautions": [
+        "https://www.americandragon.com/Points/Qianzheng%2Chtml.html: forward 0.5-1-cun slanted insertion and cheek-spreading sensation; contraindication field blank",
+        "source-gap note: no full anatomy, stopping rule, moxa, pregnancy, pediatric, or other high-risk protocol"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Qianzheng%2Chtml.html",
+        "legacy ST4-ST6-LI4 facial-paralysis combination retained separately"
+      ],
+      "nomenclature": [
+        "database: immutable EX-HN18 Qianzheng mapping",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianzheng-ex-hn20: EX-HN20 Qianzheng",
+        "https://www.americandragon.com/Points/Qianzheng%2Chtml.html: N-HN-20 Qianzheng",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework; not used to assert database equivalence"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Qianzheng page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Qianzheng page; irregular encoded-comma filename is the site's live detail URL",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    },
+    "id": "ex.hn18"
   },
   {
     "code": "EX-HN19",
@@ -3089,10 +3806,38 @@
       "Deviation of the mouth and eyes",
       "Jaundice (listed by American Dragon)"
     ],
-    "action_tags_zh": ["祛風疏風", "通絡", "行氣", "活血", "止痛", "解痙"],
-    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Move Qi", "Invigorate Blood", "Alleviate Pain", "Relieve Spasm"],
-    "disease_tags_zh": ["面癱", "面部痛", "齒齦腫痛", "牙痛", "面肌痙攣", "口眼歪斜"],
-    "disease_tags_en": ["Facial Paralysis", "Facial Pain", "Swollen & Painful Gums", "Toothache", "Facial Spasm", "Deviation of the Mouth and Eyes"],
+    "action_tags_zh": [
+      "祛風疏風",
+      "通絡",
+      "行氣",
+      "活血",
+      "止痛",
+      "解痙"
+    ],
+    "action_tags_en": [
+      "Dispel & Disperse Wind",
+      "Unblock the Collaterals",
+      "Move Qi",
+      "Invigorate Blood",
+      "Alleviate Pain",
+      "Relieve Spasm"
+    ],
+    "disease_tags_zh": [
+      "面癱",
+      "面部痛",
+      "齒齦腫痛",
+      "牙痛",
+      "面肌痙攣",
+      "口眼歪斜"
+    ],
+    "disease_tags_en": [
+      "Facial Paralysis",
+      "Facial Pain",
+      "Swollen & Painful Gums",
+      "Toothache",
+      "Facial Spasm",
+      "Deviation of the Mouth and Eyes"
+    ],
     "cautions": "【來源沉默】eLotus 與 AD 夾承漿精確頁均未列專屬禁忌；不能解讀為無風險。【多技法衝突】既有斜刺0.3~0.5寸、eLotus 斜刺0.5~1寸，AD 又列直刺0.2~0.5寸、向內下斜刺入頦孔0.3~0.5／0.5寸、橫刺0.5~1.5寸與斜刺0.5~1寸；全部逐源保存，不統一成一個範圍。【感覺界線】AD 的三叉神經痛取法可有延至下唇的觸電樣麻感，僅作來源描述，不寫成必須追求的放電終點。【解剖缺口】涉及頦孔，但四來源未提供頦神經／血管界線、異常感覺停止規則、孕婦、兒童或其他高風險規範；不由本卡補造。【灸法】兩專頁均未說明。【身份】AD 為 M-HN-18，本庫／eLotus 為 EX-HN19；不可只按號碼互換。CloudTCM 未找到可核實獨立頁，因此不顯示其按鈕。",
     "cautionsEn": [
       "Neither the exact eLotus nor American Dragon Jiachengjiang page states a point-specific contraindication; source silence must not be interpreted as absence of risk.",
@@ -3135,21 +3880,62 @@
     "nameIntroZh": "夾承漿意為在承漿兩旁；eLotus 英譯 Adjacent to Container of Fluids／Along Saliva Receiver，AD 另稱 Grasping Contain Fluid。",
     "nameIntroEn": "Jiachengjiang means lying beside Chengjiang; eLotus translates it as 'Adjacent to Container of Fluids / Along Saliva Receiver,' and AD also gives 'Grasping Contain Fluid.'",
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Jiachengjiang not listed"],
-      "curriculum": ["source-gap note: no dedicated Jiachengjiang/夾承漿 entry found under curriculum/acupoints"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"],
-      "american_dragon": ["https://www.americandragon.com/Points/Jiachengjiang.html"],
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
-      "anatomy": ["https://www.americandragon.com/Points/Jiachengjiang.html: mental-foramen landmark", "source-gap note: no mental nerve/vessel boundary, foramen insertion limit, or body-variation protocol"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html", "legacy 0.3-0.5-cun oblique version retained separately"],
-      "moxibustion": ["source-gap note: eLotus and AD Jiachengjiang entries do not address moxa"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html", "relieve-spasm tag is indication-derived, not a source action field"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19", "https://www.americandragon.com/Points/Jiachengjiang.html"],
-      "combinations": ["https://www.americandragon.com/Points/Jiachengjiang.html"],
-      "cautions": ["https://www.americandragon.com/Points/Jiachengjiang.html: mental-foramen techniques and lower-lip electric/numb sensation; contraindication field blank", "source-gap note: no full anatomy, stopping rule, moxa, pregnancy, pediatric, or other high-risk protocol"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19: EX-HN19 Jiachengjiang", "https://www.americandragon.com/Points/Jiachengjiang.html: M-HN-18 Jiachengjiang", "https://iris.who.int/handle/10665/40001: international nomenclature framework"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Jiachengjiang page", "2026-08-02 HTTP 200: American Dragon pinyin index and exact Jiachengjiang page supplied by Ting", "2026-08-02 WHO IRIS nomenclature record opened"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Jiachengjiang not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Jiachengjiang/夾承漿 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Jiachengjiang.html"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
+        "https://www.americandragon.com/Points/Jiachengjiang.html"
+      ],
+      "anatomy": [
+        "https://www.americandragon.com/Points/Jiachengjiang.html: mental-foramen landmark",
+        "source-gap note: no mental nerve/vessel boundary, foramen insertion limit, or body-variation protocol"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
+        "https://www.americandragon.com/Points/Jiachengjiang.html",
+        "legacy 0.3-0.5-cun oblique version retained separately"
+      ],
+      "moxibustion": [
+        "source-gap note: eLotus and AD Jiachengjiang entries do not address moxa"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
+        "https://www.americandragon.com/Points/Jiachengjiang.html",
+        "relieve-spasm tag is indication-derived, not a source action field"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19",
+        "https://www.americandragon.com/Points/Jiachengjiang.html"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Jiachengjiang.html"
+      ],
+      "cautions": [
+        "https://www.americandragon.com/Points/Jiachengjiang.html: mental-foramen techniques and lower-lip electric/numb sensation; contraindication field blank",
+        "source-gap note: no full anatomy, stopping rule, moxa, pregnancy, pediatric, or other high-risk protocol"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/jiachengjiang-ex-hn19: EX-HN19 Jiachengjiang",
+        "https://www.americandragon.com/Points/Jiachengjiang.html: M-HN-18 Jiachengjiang",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Jiachengjiang page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index and exact Jiachengjiang page supplied by Ting",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    },
+    "id": "ex.hn19"
   },
   {
     "code": "EX-HN20",
@@ -3220,10 +4006,36 @@
       "Lymphatic swelling and sore throat",
       "Opisthotonus / arched back and neck"
     ],
-    "action_tags_zh": ["祛風疏風", "通絡", "止痛"],
-    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Alleviate Pain"],
-    "disease_tags_zh": ["落枕", "頸肩胛痛", "咳嗽與哮喘", "過敏性鼻炎", "頭痛與眩暈", "失眠", "耳聾與耳鳴", "角弓反張"],
-    "disease_tags_en": ["Stiff Neck", "Neck, Shoulder & Scapular Pain", "Cough & Asthma", "Allergic Rhinitis", "Headache & Dizziness", "Insomnia", "Deafness & Tinnitus", "Opisthotonus"],
+    "action_tags_zh": [
+      "祛風疏風",
+      "通絡",
+      "止痛"
+    ],
+    "action_tags_en": [
+      "Dispel & Disperse Wind",
+      "Unblock the Collaterals",
+      "Alleviate Pain"
+    ],
+    "disease_tags_zh": [
+      "落枕",
+      "頸肩胛痛",
+      "咳嗽與哮喘",
+      "過敏性鼻炎",
+      "頭痛與眩暈",
+      "失眠",
+      "耳聾與耳鳴",
+      "角弓反張"
+    ],
+    "disease_tags_en": [
+      "Stiff Neck",
+      "Neck, Shoulder & Scapular Pain",
+      "Cough & Asthma",
+      "Allergic Rhinitis",
+      "Headache & Dizziness",
+      "Insomnia",
+      "Deafness & Tinnitus",
+      "Opisthotonus"
+    ],
     "cautions": "【來源沉默】eLotus 新設精確頁未列穴位專屬禁忌；不可解讀為無風險。【上頸部解剖缺口】四來源沒有逐層肌肉、神經血管、椎動脈／脊柱深部界線、異常感覺停止規則、體型差異、孕婦、兒童或其他高風險規範；不得由 C3-C4、GB20下方或『橫突旁』自行推定深刺安全。【針刺版本】eLotus 直刺0.3~0.8寸；既有卡片直刺0.5~0.8寸，逐源保留而不假定為共識。【灸法】eLotus 列5~15分鐘，但無直接／間接灸、熱源距離、皮膚保護或停止規則。【身份】eLotus 為 EX-HN23，並註許多文獻視為安眠 EX-HN16 同穴；本庫不可變 ID 是 EX-HN20，不能只按號碼或同穴說互換。AD 拼音索引未列 Xinshe。",
     "cautionsEn": [
       "The exact eLotus Xinshe page states no point-specific contraindication; source silence must not be interpreted as absence of risk.",
@@ -3260,21 +4072,61 @@
     "nameIntroZh": "新設另見新識、下風池；eLotus 英譯 New Set，並記載許多文獻視其與安眠為同一穴。",
     "nameIntroEn": "Xinshe is also called Xinshi and Xiafengchi; eLotus translates it as 'New Set' and notes that many references regard it as the same point as Anmian.",
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Xinshe not listed"],
-      "curriculum": ["source-gap note: no dedicated Xinshe/新設 entry found under curriculum/acupoints"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"],
-      "american_dragon": ["https://www.americandragon.com/PointsIndex2.html: Xinshe absent from pinyin index"],
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23", "legacy location retained separately: below GB20 at posterior SCM border near C3 transverse process"],
-      "anatomy": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: C3-C4 level and 1.5-cun lateral landmarks", "source-gap note: no layered upper-neck anatomy or vertebral-artery/spinal safety boundary"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: perpendicular 0.3-0.8 cun", "legacy perpendicular 0.5-0.8-cun version retained separately"],
-      "moxibustion": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: 5-15 minutes", "source-gap note: no method, distance, skin-protection, or stopping protocol"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: dispels Wind pathogen and benefits the neck", "legacy unblocks-collaterals and relieves-pain content retained with attribution"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23", "legacy stiff-neck and cervical-spondylosis indications retained"],
-      "combinations": ["source-gap note: no Xinshe-specific combinations found in the four sources"],
-      "cautions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: technique and moxa values; contraindication field blank", "source-gap note: no layered anatomy, stopping rule, pregnancy, pediatric, or other high-risk protocol"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: EX-HN23 Xinshe, aliases, and Anmian-equivalence note", "https://iris.who.int/handle/10665/40001: international nomenclature framework", "immutable database ID retained as EX-HN20"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus production Xinshe detail page", "2026-08-02 HTTP 200: American Dragon pinyin index; Xinshe absent", "2026-08-02 WHO IRIS nomenclature record opened"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Xinshe not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Xinshe/新設 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Xinshe absent from pinyin index"
+      ],
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
+        "legacy location retained separately: below GB20 at posterior SCM border near C3 transverse process"
+      ],
+      "anatomy": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: C3-C4 level and 1.5-cun lateral landmarks",
+        "source-gap note: no layered upper-neck anatomy or vertebral-artery/spinal safety boundary"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: perpendicular 0.3-0.8 cun",
+        "legacy perpendicular 0.5-0.8-cun version retained separately"
+      ],
+      "moxibustion": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: 5-15 minutes",
+        "source-gap note: no method, distance, skin-protection, or stopping protocol"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: dispels Wind pathogen and benefits the neck",
+        "legacy unblocks-collaterals and relieves-pain content retained with attribution"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23",
+        "legacy stiff-neck and cervical-spondylosis indications retained"
+      ],
+      "combinations": [
+        "source-gap note: no Xinshe-specific combinations found in the four sources"
+      ],
+      "cautions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: technique and moxa values; contraindication field blank",
+        "source-gap note: no layered anatomy, stopping rule, pregnancy, pediatric, or other high-risk protocol"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinshe-ex-hn23: EX-HN23 Xinshe, aliases, and Anmian-equivalence note",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework",
+        "immutable database ID retained as EX-HN20"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus production Xinshe detail page",
+        "2026-08-02 HTTP 200: American Dragon pinyin index; Xinshe absent",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    },
+    "id": "ex.hn20"
   },
   {
     "code": "EX-HN21",
@@ -3331,10 +4183,26 @@
       "Facial paralysis",
       "Nasal congestion"
     ],
-    "action_tags_zh": ["祛風疏風", "通絡", "通鼻竅"],
-    "action_tags_en": ["Dispel & Disperse Wind", "Unblock the Collaterals", "Open the Nasal Orifices"],
-    "disease_tags_zh": ["面肌痙攣", "面癱", "鼻塞"],
-    "disease_tags_en": ["Facial Spasm", "Facial Paralysis", "Nasal Congestion"],
+    "action_tags_zh": [
+      "祛風疏風",
+      "通絡",
+      "通鼻竅"
+    ],
+    "action_tags_en": [
+      "Dispel & Disperse Wind",
+      "Unblock the Collaterals",
+      "Open the Nasal Orifices"
+    ],
+    "disease_tags_zh": [
+      "面肌痙攣",
+      "面癱",
+      "鼻塞"
+    ],
+    "disease_tags_en": [
+      "Facial Spasm",
+      "Facial Paralysis",
+      "Nasal Congestion"
+    ],
     "cautions": "【來源缺口】NCBAHM Appendix A 未列散笑，現有課件無專條，eLotus 與 American Dragon 拼音索引均未列 Sanxiao；既有定位、功效、主治與斜刺0.3~0.5寸尚無四來源精確頁驗證。【面部解剖缺口】未取得逐層肌肉、面血管／神經、眶下或鼻腔界線、異常感覺與出血停止規則、體型差異資料。【高風險缺口】無孕婦、兒童、抗凝／出血風險、感染或其他特殊族群規範。【灸法】無來源，不補造。eLotus 的 EX-HN21 是上廉泉，不是散笑；不能按代碼移植內容。所有 legacy 內容只供待核對學習，不得視為已核實臨床操作指引。",
     "cautionsEn": [
       "Sanxiao is absent from NCBAHM Appendix A and the current course materials, and neither the eLotus nor American Dragon pinyin index lists it; no exact four-source detail page was found to verify the legacy location, actions, indications, or oblique 0.3-0.5-cun value.",
@@ -3376,21 +4244,54 @@
     "nameIntroZh": "散笑的名稱字義與別名未在四來源中找到可核讀說明；不自行推衍命名含義。",
     "nameIntroEn": "No reviewable explanation of the name Sanxiao or its aliases was found in the four sources; the name meaning is not inferred.",
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Sanxiao not listed"],
-      "curriculum": ["source-gap note: no dedicated Sanxiao/散笑 entry found under curriculum/acupoints"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points: Sanxiao absent; EX-HN21 maps to Shanglianquan"],
-      "american_dragon": ["https://www.americandragon.com/PointsIndex2.html: Sanxiao absent from pinyin index"],
-      "location": ["unverified legacy record: nasolabial groove at lower-nasal-ala level; no exact four-source page located"],
-      "anatomy": ["source-gap note: no layered facial anatomy, vessel/nerve boundary, nasal boundary, or body-variation protocol"],
-      "technique": ["unverified legacy value: oblique 0.3-0.5 cun; not confirmed by an exact four-source page"],
-      "moxibustion": ["source-gap note: no Sanxiao-specific moxa statement found"],
-      "functions": ["unverified legacy actions retained: dispel Wind, unblock collaterals, diffuse Lung/open nasal orifices"],
-      "indications": ["unverified legacy indications retained: facial spasm, facial paralysis, nasal congestion"],
-      "combinations": ["source-gap note: no Sanxiao-specific combinations found in the four sources"],
-      "cautions": ["source-gap warning: no validated anatomy, needling, moxa, pregnancy, pediatric, anticoagulation/bleeding-risk, infection, or other high-risk protocol"],
-      "nomenclature": ["immutable database ID EX-HN21 Sanxiao retained", "https://www.mastertungacupuncture.org/acupuncture/traditional/points: eLotus EX-HN21 is Shanglianquan, not Sanxiao", "https://iris.who.int/handle/10665/40001: international nomenclature framework"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus point index; Sanxiao absent", "2026-08-02 HTTP 200: American Dragon pinyin index; Sanxiao absent", "2026-08-02 WHO IRIS nomenclature record opened"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Sanxiao not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Sanxiao/散笑 entry found under curriculum/acupoints"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points: Sanxiao absent; EX-HN21 maps to Shanglianquan"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Sanxiao absent from pinyin index"
+      ],
+      "location": [
+        "unverified legacy record: nasolabial groove at lower-nasal-ala level; no exact four-source page located"
+      ],
+      "anatomy": [
+        "source-gap note: no layered facial anatomy, vessel/nerve boundary, nasal boundary, or body-variation protocol"
+      ],
+      "technique": [
+        "unverified legacy value: oblique 0.3-0.5 cun; not confirmed by an exact four-source page"
+      ],
+      "moxibustion": [
+        "source-gap note: no Sanxiao-specific moxa statement found"
+      ],
+      "functions": [
+        "unverified legacy actions retained: dispel Wind, unblock collaterals, diffuse Lung/open nasal orifices"
+      ],
+      "indications": [
+        "unverified legacy indications retained: facial spasm, facial paralysis, nasal congestion"
+      ],
+      "combinations": [
+        "source-gap note: no Sanxiao-specific combinations found in the four sources"
+      ],
+      "cautions": [
+        "source-gap warning: no validated anatomy, needling, moxa, pregnancy, pediatric, anticoagulation/bleeding-risk, infection, or other high-risk protocol"
+      ],
+      "nomenclature": [
+        "immutable database ID EX-HN21 Sanxiao retained",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points: eLotus EX-HN21 is Shanglianquan, not Sanxiao",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus point index; Sanxiao absent",
+        "2026-08-02 HTTP 200: American Dragon pinyin index; Sanxiao absent",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    },
+    "id": "ex.hn21"
   },
   {
     "code": "EX-HN22",
@@ -3449,10 +4350,26 @@
       "Sore throat",
       "Throat Bi"
     ],
-    "action_tags_zh": ["清熱", "解毒", "消腫"],
-    "action_tags_en": ["Clear Heat", "Resolve Toxicity", "Reduce Swelling"],
-    "disease_tags_zh": ["扁桃體炎", "咽喉腫痛", "喉痹"],
-    "disease_tags_en": ["Tonsillitis", "Sore & Swollen Throat", "Throat Bi (Painful Obstruction of the Throat)"],
+    "action_tags_zh": [
+      "清熱",
+      "解毒",
+      "消腫"
+    ],
+    "action_tags_en": [
+      "Clear Heat",
+      "Resolve Toxicity",
+      "Reduce Swelling"
+    ],
+    "disease_tags_zh": [
+      "扁桃體炎",
+      "咽喉腫痛",
+      "喉痹"
+    ],
+    "disease_tags_en": [
+      "Tonsillitis",
+      "Sore & Swollen Throat",
+      "Throat Bi (Painful Obstruction of the Throat)"
+    ],
     "cautions": "【高風險來源缺口】NCBAHM Appendix A 未列扁桃體，現有課件無專條，eLotus 與 American Dragon 索引均未列 Biantaoti／Tonsil point；既有定位、功效、主治與『向舌根方向直刺1.0~1.5寸』均無四來源精確頁驗證。【深部頸咽風險】未取得逐層肌肉、唾液腺、血管／神經、舌根／咽壁／氣道界線、吞嚥／咳嗽／出血／異常感覺停止規則或體型差異資料。【特殊族群缺口】無孕婦、兒童、抗凝／出血風險、感染、扁桃體周圍膿瘍或其他高風險規範。【灸法】無來源，不補造。所有 legacy 內容只供待核對學習，在取得權威解剖安全來源並經持照針灸師複核前，不得視為臨床操作指引。",
     "cautionsEn": [
       "Biantaoti is absent from NCBAHM Appendix A and the current course materials, and neither the eLotus nor American Dragon index lists Biantaoti/Tonsil point; no exact four-source detail page was found to verify the legacy location, actions, indications, or 1.0-1.5-cun method.",
@@ -3494,21 +4411,53 @@
     "nameIntroZh": "扁桃體為依治療部位命名的舊卡名稱；四來源未找到別名、英文譯名或命名沿革的精確條目，故不再擴寫。",
     "nameIntroEn": "Biantaoti is a legacy name based on the tonsillar treatment area; no exact four-source entry explaining aliases, English translation, or naming history was found, so the etymology is not expanded.",
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Biantaoti not listed"],
-      "curriculum": ["source-gap note: no dedicated Biantaoti/扁桃體穴 entry found under curriculum/acupoints; tonsillitis indications under other points were not transferred"],
-      "elotus": ["https://www.mastertungacupuncture.org/traditional_points: Biantaoti and Tonsil absent from traditional-point index"],
-      "american_dragon": ["https://www.americandragon.com/PointsIndex2.html: Biantaoti and Tonsil absent from pinyin index"],
-      "location": ["unverified legacy record: depression below mandibular angle; no exact four-source detail page located"],
-      "anatomy": ["source-gap note: no layered neck anatomy, salivary-gland/vessel/nerve, tongue-root/pharyngeal-wall/airway boundary, or body-variation protocol"],
-      "technique": ["unverified high-risk legacy value: perpendicular 1.0-1.5 cun toward tongue root; not confirmed by an exact four-source page"],
-      "moxibustion": ["source-gap note: no Biantaoti-specific moxa statement found"],
-      "functions": ["unverified legacy actions retained: clear Heat, resolve toxicity, benefit throat, reduce swelling"],
-      "indications": ["unverified legacy indications retained: acute tonsillitis, sore/swollen throat, throat Bi"],
-      "combinations": ["source-gap note: no Biantaoti-specific combinations found in the four sources"],
-      "cautions": ["high-risk source-gap warning: no validated deep-neck anatomy, tongue-root trajectory, stopping rule, moxa, pregnancy, pediatric, anticoagulation/bleeding-risk, infection, abscess, or other high-risk protocol"],
-      "nomenclature": ["immutable database ID EX-HN22 Biantaoti retained", "https://iris.who.int/handle/10665/40001: international nomenclature framework; not proof that Biantaoti has this universal code"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus traditional-point index; Biantaoti/Tonsil absent", "2026-08-02 HTTP 200: American Dragon pinyin index; Biantaoti/Tonsil absent", "2026-08-02 WHO IRIS nomenclature record opened"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Biantaoti not listed"
+      ],
+      "curriculum": [
+        "source-gap note: no dedicated Biantaoti/扁桃體穴 entry found under curriculum/acupoints; tonsillitis indications under other points were not transferred"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/traditional_points: Biantaoti and Tonsil absent from traditional-point index"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/PointsIndex2.html: Biantaoti and Tonsil absent from pinyin index"
+      ],
+      "location": [
+        "unverified legacy record: depression below mandibular angle; no exact four-source detail page located"
+      ],
+      "anatomy": [
+        "source-gap note: no layered neck anatomy, salivary-gland/vessel/nerve, tongue-root/pharyngeal-wall/airway boundary, or body-variation protocol"
+      ],
+      "technique": [
+        "unverified high-risk legacy value: perpendicular 1.0-1.5 cun toward tongue root; not confirmed by an exact four-source page"
+      ],
+      "moxibustion": [
+        "source-gap note: no Biantaoti-specific moxa statement found"
+      ],
+      "functions": [
+        "unverified legacy actions retained: clear Heat, resolve toxicity, benefit throat, reduce swelling"
+      ],
+      "indications": [
+        "unverified legacy indications retained: acute tonsillitis, sore/swollen throat, throat Bi"
+      ],
+      "combinations": [
+        "source-gap note: no Biantaoti-specific combinations found in the four sources"
+      ],
+      "cautions": [
+        "high-risk source-gap warning: no validated deep-neck anatomy, tongue-root trajectory, stopping rule, moxa, pregnancy, pediatric, anticoagulation/bleeding-risk, infection, abscess, or other high-risk protocol"
+      ],
+      "nomenclature": [
+        "immutable database ID EX-HN22 Biantaoti retained",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework; not proof that Biantaoti has this universal code"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus traditional-point index; Biantaoti/Tonsil absent",
+        "2026-08-02 HTTP 200: American Dragon pinyin index; Biantaoti/Tonsil absent",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    },
+    "id": "ex.hn22"
   },
   {
     "code": "EX-CA1",
@@ -3593,10 +4542,44 @@
       "Cystitis",
       "Appendicitis"
     ],
-    "action_tags_zh": ["升提", "調氣", "調經", "止痛", "溫補", "清熱", "化濕"],
-    "action_tags_en": ["Raise", "Regulate Qi", "Regulate Menstruation", "Alleviate Pain", "Warm & Tonify", "Clear Heat", "Transform Dampness"],
-    "disease_tags_zh": ["月經不調", "痛經", "帶下病", "子宮脫垂", "不孕症", "子宮出血", "盆腔炎", "泌尿系感染"],
-    "disease_tags_en": ["Irregular Menstruation", "Dysmenorrhea", "Leukorrhea", "Uterine Prolapse", "Infertility", "Uterine Bleeding", "Pelvic Inflammatory Disease", "Urinary Tract Infection"],
+    "action_tags_zh": [
+      "升提",
+      "調氣",
+      "調經",
+      "止痛",
+      "溫補",
+      "清熱",
+      "化濕"
+    ],
+    "action_tags_en": [
+      "Raise",
+      "Regulate Qi",
+      "Regulate Menstruation",
+      "Alleviate Pain",
+      "Warm & Tonify",
+      "Clear Heat",
+      "Transform Dampness"
+    ],
+    "disease_tags_zh": [
+      "月經不調",
+      "痛經",
+      "帶下病",
+      "子宮脫垂",
+      "不孕症",
+      "子宮出血",
+      "盆腔炎",
+      "泌尿系感染"
+    ],
+    "disease_tags_en": [
+      "Irregular Menstruation",
+      "Dysmenorrhea",
+      "Leukorrhea",
+      "Uterine Prolapse",
+      "Infertility",
+      "Uterine Bleeding",
+      "Pelvic Inflammatory Disease",
+      "Urinary Tract Infection"
+    ],
     "cautions": "【孕期】課件明列『No Needling in Pregnancy』，因此本卡維持孕期禁針。AD 雖列『Calms the fetus』但禁忌欄空白，不能解讀為孕期施針或灸法許可。【多技法差異】課件直刺0.5~1.2寸與向恥骨聯合皮下／斜刺1.5~2.5寸；eLotus直刺0.8~1.2寸；AD直刺0.5~1.2或0.8~1.2寸，逐源保存，不做假共識。【特殊提拉法】AD 的子宮脫垂肌層提拉、捻轉、向上外固定20~30分鐘缺乏力道、組織終點、固定材料、停止／出血／疼痛規則與高風險族群規範；不得視為完整操作流程。【腹部解剖缺口】四來源未提供腹膜、膀胱／盆腔臟器界線、膀胱充盈、術後／疝氣、感染、抗凝／出血風險或體型差異。【灸法】課件／AD僅說可灸，無劑量與孕期安全；不補造。",
     "cautionsEn": [
       "The curriculum explicitly states 'No Needling in Pregnancy,' so this card retains pregnancy as a needling contraindication. AD's action 'Calms the fetus' and blank contraindication field do not constitute permission for needling or moxa during pregnancy.",
@@ -3638,21 +4621,71 @@
     "nameIntroZh": "子宮穴又稱子宮；eLotus 英譯 Infant's Palace／Palace of Child／Womb，AD 為 Palace of the Child 並列 Uterus、Zigongxue、Womb。",
     "nameIntroEn": "Zigongxue is also called Zigong. eLotus gives 'Infant's Palace / Palace of Child / Womb'; AD gives 'Palace of the Child' with Uterus, Zigongxue, and Womb as alternate names.",
     "field_sources": {
-      "board_scope": ["curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Zigong listed"],
-      "curriculum": ["curriculum/acupoints/Techniques 3 points.md: M-CA-18 Zi Gong Xue/Uterus Point location, pregnancy prohibition, techniques, actions, and indications"],
-      "elotus": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1"],
-      "american_dragon": ["https://www.americandragon.com/Points/Zigong.html"],
-      "location": ["curriculum/acupoints/Techniques 3 points.md", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1", "https://www.americandragon.com/Points/Zigong.html"],
-      "anatomy": ["https://www.americandragon.com/Points/Zigong.html: muscle-layer and CV2-directed special technique", "source-gap note: no layered abdominal/peritoneal/bladder/pelvic-organ or body-variation protocol"],
-      "technique": ["curriculum/acupoints/Techniques 3 points.md: perpendicular 0.5-1.2 and pubic-directed subcutaneous/oblique 1.5-2.5 cun", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1: perpendicular 0.8-1.2 cun", "https://www.americandragon.com/Points/Zigong.html: perpendicular variants and prolapse lift/tape technique"],
-      "moxibustion": ["curriculum/acupoints/Techniques 3 points.md: moxibustion applicable", "https://www.americandragon.com/Points/Zigong.html: moxibustion applicable", "source-gap note: no dose, method, skin-safety, stopping, or pregnancy-moxa protocol"],
-      "functions": ["curriculum/acupoints/Techniques 3 points.md", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1", "https://www.americandragon.com/Points/Zigong.html", "legacy Chong/Ren and uterus-warming actions retained with attribution"],
-      "indications": ["curriculum/acupoints/Techniques 3 points.md", "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1", "https://www.americandragon.com/Points/Zigong.html", "legacy leukorrhea and infertility retained"],
-      "combinations": ["https://www.americandragon.com/Points/Zigong.html", "legacy CV4-SP6 dysmenorrhea combination retained as a source gap"],
-      "cautions": ["curriculum/acupoints/Techniques 3 points.md: no needling in pregnancy", "https://www.americandragon.com/Points/Zigong.html: special lift/tape technique and blank contraindication field", "source-gap note: no full anatomy, stopping, high-risk, or moxa-dose protocol"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1: EX-CA1 Zigongxue/Zigong", "curriculum/acupoints/Techniques 3 points.md: M-CA-18 Zi Gong Xue", "https://www.americandragon.com/Points/Zigong.html: M-CA-18 Zigong", "https://iris.who.int/handle/10665/40001: international nomenclature framework"],
-      "link_check": ["2026-08-02 HTTP 200: eLotus exact Zigongxue EX-CA1 page", "2026-08-02 HTTP 200: American Dragon exact Zigong M-CA-18 page", "2026-08-02 WHO IRIS nomenclature record opened"]
-    }
+      "board_scope": [
+        "curriculum/board/NCBAHM_ACPL_Exam_Content_Outline-w-Bibliography_Jan_2026.md Appendix A: Zigong listed"
+      ],
+      "curriculum": [
+        "curriculum/acupoints/Techniques 3 points.md: M-CA-18 Zi Gong Xue/Uterus Point location, pregnancy prohibition, techniques, actions, and indications"
+      ],
+      "elotus": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1"
+      ],
+      "american_dragon": [
+        "https://www.americandragon.com/Points/Zigong.html"
+      ],
+      "location": [
+        "curriculum/acupoints/Techniques 3 points.md",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1",
+        "https://www.americandragon.com/Points/Zigong.html"
+      ],
+      "anatomy": [
+        "https://www.americandragon.com/Points/Zigong.html: muscle-layer and CV2-directed special technique",
+        "source-gap note: no layered abdominal/peritoneal/bladder/pelvic-organ or body-variation protocol"
+      ],
+      "technique": [
+        "curriculum/acupoints/Techniques 3 points.md: perpendicular 0.5-1.2 and pubic-directed subcutaneous/oblique 1.5-2.5 cun",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1: perpendicular 0.8-1.2 cun",
+        "https://www.americandragon.com/Points/Zigong.html: perpendicular variants and prolapse lift/tape technique"
+      ],
+      "moxibustion": [
+        "curriculum/acupoints/Techniques 3 points.md: moxibustion applicable",
+        "https://www.americandragon.com/Points/Zigong.html: moxibustion applicable",
+        "source-gap note: no dose, method, skin-safety, stopping, or pregnancy-moxa protocol"
+      ],
+      "functions": [
+        "curriculum/acupoints/Techniques 3 points.md",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1",
+        "https://www.americandragon.com/Points/Zigong.html",
+        "legacy Chong/Ren and uterus-warming actions retained with attribution"
+      ],
+      "indications": [
+        "curriculum/acupoints/Techniques 3 points.md",
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1",
+        "https://www.americandragon.com/Points/Zigong.html",
+        "legacy leukorrhea and infertility retained"
+      ],
+      "combinations": [
+        "https://www.americandragon.com/Points/Zigong.html",
+        "legacy CV4-SP6 dysmenorrhea combination retained as a source gap"
+      ],
+      "cautions": [
+        "curriculum/acupoints/Techniques 3 points.md: no needling in pregnancy",
+        "https://www.americandragon.com/Points/Zigong.html: special lift/tape technique and blank contraindication field",
+        "source-gap note: no full anatomy, stopping, high-risk, or moxa-dose protocol"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zigongxue-ex-ca1: EX-CA1 Zigongxue/Zigong",
+        "curriculum/acupoints/Techniques 3 points.md: M-CA-18 Zi Gong Xue",
+        "https://www.americandragon.com/Points/Zigong.html: M-CA-18 Zigong",
+        "https://iris.who.int/handle/10665/40001: international nomenclature framework"
+      ],
+      "link_check": [
+        "2026-08-02 HTTP 200: eLotus exact Zigongxue EX-CA1 page",
+        "2026-08-02 HTTP 200: American Dragon exact Zigong M-CA-18 page",
+        "2026-08-02 WHO IRIS nomenclature record opened"
+      ]
+    },
+    "id": "ex.ca1"
   },
   {
     "code": "EX-CA2",
@@ -3692,7 +4725,8 @@
       }
     ],
     "x": 182,
-    "y": 325
+    "y": 325,
+    "id": "ex.ca2"
   },
   {
     "code": "EX-CA3",
@@ -3719,10 +4753,22 @@
       "Chronic diarrhea",
       "Infertility"
     ],
-    "action_tags_zh": ["止痛", "止瀉"],
-    "action_tags_en": ["Alleviate Pain", "Stop Diarrhea"],
-    "disease_tags_zh": ["疝氣", "腹痛"],
-    "disease_tags_en": ["Hernia", "Abdominal Pain"],
+    "action_tags_zh": [
+      "止痛",
+      "止瀉"
+    ],
+    "action_tags_en": [
+      "Alleviate Pain",
+      "Stop Diarrhea"
+    ],
+    "disease_tags_zh": [
+      "疝氣",
+      "腹痛"
+    ],
+    "disease_tags_en": [
+      "Hernia",
+      "Abdominal Pain"
+    ],
     "cautions": "本穴為灸法專用點：eLotus 僅列患側對側施灸，灸法專業文獻亦指出傳統對三角灸只討論艾灸、未討論針刺；不得為符合深度欄而補造針刺數字。現有『艾炷灸 5~7 壯』有後續文獻記載，但 eLotus 未給壯數；《世醫得效方》引文另記二七壯，屬來源差異，須保留來源標籤。eLotus 將三角灸編為 EX-CA6，與本庫既有 EX-CA3 顯示碼不同。",
     "cautionsEn": [
       "This is a moxibustion-only point: eLotus lists contralateral moxa only, and a professional history of moxibustion notes that traditional descriptions discuss moxa, not needling. A needle-depth value must not be invented to satisfy a validator.",
@@ -3747,13 +4793,28 @@
     "x": 178,
     "y": 320,
     "field_sources": {
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6", "https://www.cstcm.edu/wp-content/uploads/2021/01/Additional-Moxibustion-articles.pdf", "https://shenyaozi.com/en/shu/?sid=7601"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"],
-      "cautions": ["https://www.cstcm.edu/wp-content/uploads/2021/01/Additional-Moxibustion-articles.pdf"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"]
-    }
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6",
+        "https://www.cstcm.edu/wp-content/uploads/2021/01/Additional-Moxibustion-articles.pdf",
+        "https://shenyaozi.com/en/shu/?sid=7601"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"
+      ],
+      "cautions": [
+        "https://www.cstcm.edu/wp-content/uploads/2021/01/Additional-Moxibustion-articles.pdf"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sanjiaojiu-ex-ca6"
+      ]
+    },
+    "id": "ex.ca3"
   },
   {
     "code": "EX-CA4",
@@ -3780,10 +4841,26 @@
       "Indigestion",
       "Abdominal distension"
     ],
-    "action_tags_zh": ["健脾", "和胃調胃"],
-    "action_tags_en": ["Tonify the Spleen", "Harmonize the Stomach"],
-    "disease_tags_zh": ["胃下垂", "胃痛", "消化不良", "腹脹"],
-    "disease_tags_en": ["Gastroptosis", "Stomach Pain", "Indigestion", "Abdominal Distension"],
+    "action_tags_zh": [
+      "健脾",
+      "和胃調胃"
+    ],
+    "action_tags_en": [
+      "Tonify the Spleen",
+      "Harmonize the Stomach"
+    ],
+    "disease_tags_zh": [
+      "胃下垂",
+      "胃痛",
+      "消化不良",
+      "腹脹"
+    ],
+    "disease_tags_en": [
+      "Gastroptosis",
+      "Stomach Pain",
+      "Indigestion",
+      "Abdominal Distension"
+    ],
     "cautions": "eLotus 與 American Dragon 的胃上精確頁均未列穴位專屬禁忌；不可把來源沉默解讀為無風險。兩來源主版本均記臍上 2 寸、旁開 4 寸，AD 另列旁開 2.5 寸的異說，與本庫既有旁開 3 寸不同。兩來源針法為朝臍或天樞方向橫刺／皮下刺 2~3 寸，與本庫既有向下斜刺 1.0~1.5 寸不同；定位、方向與深度須由持照針灸師裁決，現階段不得視為共識。eLotus 將胃上編為 EX-CA7，AD 為 N-CA-18，均與本庫 EX-CA4 不同。",
     "cautionsEn": [
       "Neither the exact eLotus nor American Dragon Weishang page states a point-specific contraindication; source silence must not be interpreted as absence of risk.",
@@ -3808,13 +4885,30 @@
     "x": 180,
     "y": 300,
     "field_sources": {
-      "location": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"],
-      "technique": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"],
-      "functions": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7"],
-      "indications": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"],
-      "cautions": ["source-gap note: exact eLotus and American Dragon pages state no point-specific contraindication"],
-      "nomenclature": ["https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7", "https://www.americandragon.com/Points/Weishangxue.html"]
-    }
+      "location": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+        "https://www.americandragon.com/Points/Weishangxue.html"
+      ],
+      "technique": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+        "https://www.americandragon.com/Points/Weishangxue.html"
+      ],
+      "functions": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7"
+      ],
+      "indications": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+        "https://www.americandragon.com/Points/Weishangxue.html"
+      ],
+      "cautions": [
+        "source-gap note: exact eLotus and American Dragon pages state no point-specific contraindication"
+      ],
+      "nomenclature": [
+        "https://www.mastertungacupuncture.org/acupuncture/traditional/points/weishang-ex-ca7",
+        "https://www.americandragon.com/Points/Weishangxue.html"
+      ]
+    },
+    "id": "ex.ca4"
   },
   {
     "code": "EX-CA5",
@@ -3856,7 +4950,8 @@
       }
     ],
     "x": 178,
-    "y": 315
+    "y": 315,
+    "id": "ex.ca5"
   },
   {
     "code": "EX-B1",
@@ -3899,7 +4994,8 @@
       }
     ],
     "x": 180,
-    "y": 210
+    "y": 210,
+    "id": "ex.b1"
   },
   {
     "code": "EX-B2",
@@ -3940,7 +5036,8 @@
       }
     ],
     "x": 182,
-    "y": 240
+    "y": 240,
+    "id": "ex.b2"
   },
   {
     "code": "EX-B3",
@@ -3981,7 +5078,8 @@
       }
     ],
     "x": 183,
-    "y": 245
+    "y": 245,
+    "id": "ex.b3"
   },
   {
     "code": "EX-B4",
@@ -4022,7 +5120,8 @@
       }
     ],
     "x": 185,
-    "y": 260
+    "y": 260,
+    "id": "ex.b4"
   },
   {
     "code": "EX-B5",
@@ -4063,7 +5162,8 @@
       }
     ],
     "x": 180,
-    "y": 270
+    "y": 270,
+    "id": "ex.b5"
   },
   {
     "code": "EX-B6",
@@ -4102,7 +5202,8 @@
       }
     ],
     "x": 184,
-    "y": 275
+    "y": 275,
+    "id": "ex.b6"
   },
   {
     "code": "EX-B7",
@@ -4144,7 +5245,8 @@
       }
     ],
     "x": 185,
-    "y": 278
+    "y": 278,
+    "id": "ex.b7"
   },
   {
     "code": "EX-B8",
@@ -4187,7 +5289,8 @@
       }
     ],
     "x": 180,
-    "y": 285
+    "y": 285,
+    "id": "ex.b8"
   },
   {
     "code": "EX-B9",
@@ -4228,7 +5331,8 @@
       }
     ],
     "x": 180,
-    "y": 295
+    "y": 295,
+    "id": "ex.b9"
   },
   {
     "code": "EX-B10",
@@ -4269,7 +5373,8 @@
       }
     ],
     "x": 180,
-    "y": 225
+    "y": 225,
+    "id": "ex.b10"
   },
   {
     "code": "EX-B11",
@@ -4308,7 +5413,8 @@
       }
     ],
     "x": 180,
-    "y": 255
+    "y": 255,
+    "id": "ex.b11"
   },
   {
     "code": "EX-B12",
@@ -4347,7 +5453,8 @@
       }
     ],
     "x": 168,
-    "y": 310
+    "y": 310,
+    "id": "ex.b12"
   },
   {
     "code": "EX-UE1",
@@ -4386,7 +5493,8 @@
       }
     ],
     "x": 155,
-    "y": 290
+    "y": 290,
+    "id": "ex.ue1"
   },
   {
     "code": "EX-UE2",
@@ -4426,7 +5534,8 @@
       }
     ],
     "x": 155,
-    "y": 285
+    "y": 285,
+    "id": "ex.ue2"
   },
   {
     "code": "EX-UE3",
@@ -4469,7 +5578,8 @@
       }
     ],
     "x": 155,
-    "y": 305
+    "y": 305,
+    "id": "ex.ue3"
   },
   {
     "code": "EX-UE4",
@@ -4512,7 +5622,8 @@
       }
     ],
     "x": 155,
-    "y": 310
+    "y": 310,
+    "id": "ex.ue4"
   },
   {
     "code": "EX-UE5",
@@ -4553,7 +5664,8 @@
       }
     ],
     "x": 152,
-    "y": 312
+    "y": 312,
+    "id": "ex.ue5"
   },
   {
     "code": "EX-UE6",
@@ -4594,7 +5706,8 @@
       }
     ],
     "x": 160,
-    "y": 312
+    "y": 312,
+    "id": "ex.ue6"
   },
   {
     "code": "EX-UE7",
@@ -4634,7 +5747,8 @@
       }
     ],
     "x": 157,
-    "y": 315
+    "y": 315,
+    "id": "ex.ue7"
   },
   {
     "code": "EX-UE8",
@@ -4676,7 +5790,8 @@
       }
     ],
     "x": 157,
-    "y": 318
+    "y": 318,
+    "id": "ex.ue8"
   },
   {
     "code": "EX-UE9",
@@ -4717,7 +5832,8 @@
       }
     ],
     "x": 158,
-    "y": 320
+    "y": 320,
+    "id": "ex.ue9"
   },
   {
     "code": "EX-UE10",
@@ -4758,7 +5874,8 @@
       }
     ],
     "x": 158,
-    "y": 322
+    "y": 322,
+    "id": "ex.ue10"
   },
   {
     "code": "EX-UE11",
@@ -4799,7 +5916,8 @@
       }
     ],
     "x": 158,
-    "y": 325
+    "y": 325,
+    "id": "ex.ue11"
   },
   {
     "code": "EX-UE12",
@@ -4838,7 +5956,8 @@
       }
     ],
     "x": 157,
-    "y": 280
+    "y": 280,
+    "id": "ex.ue12"
   },
   {
     "code": "EX-UE13",
@@ -4877,7 +5996,8 @@
       }
     ],
     "x": 154,
-    "y": 270
+    "y": 270,
+    "id": "ex.ue13"
   },
   {
     "code": "EX-UE14",
@@ -4916,7 +6036,8 @@
       }
     ],
     "x": 156,
-    "y": 316
+    "y": 316,
+    "id": "ex.ue14"
   },
   {
     "code": "EX-UE15",
@@ -4955,7 +6076,8 @@
       }
     ],
     "x": 152,
-    "y": 295
+    "y": 295,
+    "id": "ex.ue15"
   },
   {
     "code": "EX-UE16",
@@ -4994,7 +6116,8 @@
       }
     ],
     "x": 157,
-    "y": 310
+    "y": 310,
+    "id": "ex.ue16"
   },
   {
     "code": "EX-UE17",
@@ -5033,7 +6156,8 @@
       }
     ],
     "x": 156,
-    "y": 319
+    "y": 319,
+    "id": "ex.ue17"
   },
   {
     "code": "EX-LE1",
@@ -5070,7 +6194,8 @@
       }
     ],
     "x": 178,
-    "y": 370
+    "y": 370,
+    "id": "ex.le1"
   },
   {
     "code": "EX-LE2",
@@ -5111,7 +6236,8 @@
       }
     ],
     "x": 178,
-    "y": 395
+    "y": 395,
+    "id": "ex.le2"
   },
   {
     "code": "EX-LE3",
@@ -5152,7 +6278,8 @@
       }
     ],
     "x": 175,
-    "y": 380
+    "y": 380,
+    "id": "ex.le3"
   },
   {
     "code": "EX-LE4",
@@ -5195,7 +6322,8 @@
       }
     ],
     "x": 175,
-    "y": 400
+    "y": 400,
+    "id": "ex.le4"
   },
   {
     "code": "EX-LE5",
@@ -5236,7 +6364,8 @@
       }
     ],
     "x": 180,
-    "y": 400
+    "y": 400,
+    "id": "ex.le5"
   },
   {
     "code": "EX-LE6",
@@ -5278,7 +6407,8 @@
       }
     ],
     "x": 183,
-    "y": 420
+    "y": 420,
+    "id": "ex.le6"
   },
   {
     "code": "EX-LE7",
@@ -5318,7 +6448,8 @@
       }
     ],
     "x": 183,
-    "y": 423
+    "y": 423,
+    "id": "ex.le7"
   },
   {
     "code": "EX-LE8",
@@ -5359,7 +6490,8 @@
       }
     ],
     "x": 177,
-    "y": 450
+    "y": 450,
+    "id": "ex.le8"
   },
   {
     "code": "EX-LE9",
@@ -5398,7 +6530,8 @@
       }
     ],
     "x": 182,
-    "y": 450
+    "y": 450,
+    "id": "ex.le9"
   },
   {
     "code": "EX-LE10",
@@ -5439,7 +6572,8 @@
       }
     ],
     "x": 178,
-    "y": 460
+    "y": 460,
+    "id": "ex.le10"
   },
   {
     "code": "EX-LE11",
@@ -5481,7 +6615,8 @@
       }
     ],
     "x": 178,
-    "y": 465
+    "y": 465,
+    "id": "ex.le11"
   },
   {
     "code": "EX-LE12",
@@ -5522,7 +6657,8 @@
       }
     ],
     "x": 178,
-    "y": 468
+    "y": 468,
+    "id": "ex.le12"
   },
   {
     "code": "EX-LE13",
@@ -5561,7 +6697,8 @@
       }
     ],
     "x": 184,
-    "y": 415
+    "y": 415,
+    "id": "ex.le13"
   },
   {
     "code": "EX-LE14",
@@ -5600,7 +6737,8 @@
       }
     ],
     "x": 174,
-    "y": 375
+    "y": 375,
+    "id": "ex.le14"
   },
   {
     "code": "EX-LE15",
@@ -5639,7 +6777,8 @@
       }
     ],
     "x": 178,
-    "y": 470
+    "y": 470,
+    "id": "ex.le15"
   },
   {
     "code": "EX-LE16",
@@ -5678,6 +6817,7 @@
       }
     ],
     "x": 176,
-    "y": 350
+    "y": 350,
+    "id": "ex.le16"
   }
 ]

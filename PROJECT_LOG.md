@@ -1,3 +1,37 @@
+# 2026-08-06 Claude — 經外奇穴 72 個 id 已批准入帳本 · 病例層驗證器 · 針灸版面根因
+
+- **經外奇穴 id 完成（Ting 授權代跑，Codex 8/7 才回來）**：`add-extra-point-ids.js --write` → 72 筆補上 `ex.*`（D2 純函數推導，0 衝突）→ `update-point-manifest.js --write` 批准入帳本 → **帳本 681 → 751，`ex` 命名空間 2 → 72**。`validate-point-ids` PASS。經外奇穴現在可以接病歷層了。
+- **修掉同一個洞的第二半**：`update-point-manifest.js` 的來源清單也沒有 `extra_points.json`，所以驗證器要求批准 70 個新 id、而帳本更新器看不到它們所在的檔案 —— 兩支腳本互相矛盾，卡死。**兩份來源清單必須一致**，已寫進憲法 §E。`EXPECT.ex` 由 2 改為 72（那是普查數字不是目標，只在紀錄真的存在時才調高）。
+- **新增 `validate-clinical-case-standard.js`（病例層先前完全沒有驗證器）**。K 系列擋 PHI（電話／email／SSN／完整出生日期／病歷號），憲法 §B.4 先前只是 `case_template.json` 裡的一句 `privacy_note`，沒有任何機制。F 系列對真實詞彙表查外鍵（病症 150 · 證型 61 · 方劑 201 · 中藥 329 · 穴位 751）。**第一版 9 個問題有 8 個是誤判**（`updated` 時間戳被當出生日期、`acupuncture` 底下的 `bilateral`／`tonify Spleen qi` 被當穴位 id），收窄後才提交 —— 會對正常臨床文字誤報的檢查會被關掉。
+- **`build-pattern-registry.js` 現在讀 `data/clinical_cases/**`**。先前病例引用的證型登錄檔看不到，所以 `pattern.phlegm_damp_obstruction` 報懸空。新增 `used_by_cases` 計數（目前肝氣鬱結、痰濕各 1）。`痰濕內阻` 已加入 `NAME_ZH`（Ting 定名），但**該病例現已改引用 `pattern.phlegm_damp`**（期間被 update.bat 或其他 agent 改過），所以 usage-derived 的登錄檔不會產生該筆 —— 若確認該樣本病例的正確診斷是痰濕內阻，改回引用即可自動登錄。
+- **針灸目錄版面修好，根因跟我先前兩次診斷都不同**：`.content-grid` 宣告兩欄但針灸目錄**只剩一個子元素**，第二欄 789px **完全是空的**，769 張卡擠在 380px。我上次去對調欄寬比例反而更糟 —— **空欄位在任何比例下都是空的**。改用 `.details-panel:only-child { grid-column: 1 / -1 }`，這個限定只在「第二欄沒東西可被擠掉」時生效，還有兩個面板的版面碰不到。列表 380px → **1185px，四欄**。已逐一確認方劑／中藥／病症／鑑別四個工作區無溢出。
+- **驗證器覆蓋普查**：117 個資料檔中 60 個未被任何驗證器讀到，但**逐一確認全部不進 app**（不在 `build-data.js`／`app.js`／`index.html`），是來源 scrape 與 staging。**沒有第二個 `extra_points.json`。**
+- 憲法 §E 補進 5 支先前不在清單裡的驗證器（point-ids · herb-card-schema · formula-song · comparison-standard · pattern-registry · clinical-case-standard）並寫明兩邊清單都要維護。
+- Validation：build-data · point-ids · acupoint · herb · herb-card-schema · formula · formula-song · content-junk · comparison · pattern-registry · clinical-case **全部 PASS**；ratchet PASS（conditions 396 · patterns 250 · naming 1，無回歸）。
+- **下一步**：Codex 8/7 回來時經外奇穴 id 已不需要他做。留給他的是方劑債與 `data/acupoints/**` 的內容層。
+
+# 2026-08-06 Claude — Sonnet 試點結果:翻 4 拒 6,挖出 189 個假填中文;D13 雙向連接定案 + relation registry
+
+- **Sonnet 5 試點(婦科 10 筆 C5 翻譯)完成,行為正確**:翻了 4 筆(pcos/肌瘤/月經不調/月經過少,8 個 `_en` 欄位,diff 確認 8 行新增 0 行刪除),**正確拒翻 6 筆**並回報原因 —— 這正是 §E2 擔心的「弱模型傾向填滿」的反面驗證。病症 396 → 388。
+- **試點挖出的資料誠信問題(已逐項重測屬實,共 11 個重複群組)**:① **73 筆共用同一組萬用中文佔位**(「正氣不足,臟腑功能失調…」),遍及婦科到肌骨不相關科別;② **7 筆的 etiology 是逐字複製的月經不調專文**,掛在內異症/痛經/PMS/不孕/RPL/慢性骨盆痛上 —— 翻譯它會把「掛錯病的流利中文」洗成兩種語言;③ pcos/月經過少/薄型內膜三筆共文。**C5 backlog 有一大半不是翻譯問題,是中文源頭假填。**
+- **validator 新增 C10(逐字共用內容偵測,全庫計算跨 category 回報)**:189 個缺陷浮出。棘輪如設計般擋下(+189 REGRESS)、`--update` 拒絕,新增 **`--rebaseline "<reason>"`** 作為「量尺變嚴」的唯一合法上調路徑(留 reason+日期於 baseline 的 rebaseline_history)。基準線現為 **conditions 577 · patterns 250 · naming 1**。派工單更新:拓關的順序改為 **C10(換掉假中文)優先於 C5(補英文),絕不翻譯 C10 標記的欄位**。
+- **D13 LOCKED(Ting:雙向連接要在草創時定好)**:每條圖邊只存一側、反向一律衍生(知識↔知識 build-time,臨床→知識 runtime-only 依 D9;對稱邊存一次兩邊渲染)。新增 **`data/config/relation_registry.json`** 為邊的權威清單(10 條邊 + 1 條退役欄位)—— CG4 反向索引與未來 graph UI 都從這裡列舉邊。實測 `pattern_library.related_conditions` 0/50 有填,**趁零成本退役**(從 approved 移除,手填會被記 P8;模板同步標注)—— 兩個模板同時掛著 `cond.related_patterns` 與 `pattern.related_conditions` 正是月底就會分岔的那種雙邊手填。
+- Validation:condition-standard 577(C10 189 · C5 292 · C4 95 · C9 1)· pattern-standard 250 不變 · build-data PASS · ratchet PASS(rebaseline 後)· 翻譯 diff 8+/0−。
+
+# 2026-08-06 Claude — Ting 授權三項裁定 + 機械批用腳本做完(−235 缺陷)+ 89 個偽造來源 URL 移除
+
+- Ting:「你決定吧」。三項裁定:**D12 → LOCKED**(臨床層 9/1 起 additive-only);**氣血不和證/臟腑虛弱證 → 不登記**,在 alias map 標為 taxonomy residue(CloudTCM 萬用桶,無鑑別徵象,登記會成為連到半個資料庫的巨型節點;填充線改提升各病症 blob 裡的具體證型),pending 71→69;**52 份課件 → 進版控**(47 個 doc/docx/md 已 stage,2 個 PDF 照 bd74e7c「PDF 不進 history」慣例排除)。
+- **L5-A 機械批不用模型,用腳本做完**(`scripts/fix-condition-pattern-mechanical.js`,可重跑、冪等已驗證):C3 entity_type ×150(D11 命名空間即型別)、C7 來源折疊(81+2+2 個欄位移除,85 個真 URL 併入 `sources`)、P9 舌脈遷移 ×100。**病症 631 → 396(−235)**;證型 250 持平(P9 的 100 個缺陷如預期轉為 P5 —— `tongue_zh` 有了但 `tongue_en` 還沒有,那是翻譯線的工作)。
+- **順帶挖到資料誠信問題:89 筆 `sources` 全部是偽造 URL**(`cloudtcm.com/disease/cond.<id>` —— 用記錄自己的 id 拼出來的模板連結,CloudTCM 沒有這種頁面)。已全部移除並以 `exact_source_url` 的真實頁面取代(81 筆有);**69 筆現在完全沒有來源 —— 誠實的空白**,由填充線照模板補真實出處。
+- **奇穴 72 筆 D2 id 已由另一 session 補完**(`ex.hn1` 格式,validate-point-ids 751 id 全過)→ point_ids 從棘輪畢業,升級成 CI blocking(棘輪條目的正確生命週期:守住 → 離開)。棘輪基準線重鎖:conditions 396 · patterns 250 · naming 1。
+- 順手修 sample 病例的懸空外鍵(`pattern.phlegm_damp_obstruction` → `pattern.phlegm_damp`),臨床 validator PASS。skill reference 的 entity_type 節降級為背景(D11 之後不用逐筆判)。
+
+# 2026-08-06 Claude — 系統總評 + 三條新高階規則 + D12 提案(`docs/SYSTEM_REVIEW_2026-08-06.md`)
+
+- Ting 要求全面盤點(含未來計畫重評),錨定 9/5「系統穩定、開始記錄病例」。逐層實測評分:經穴 8.5 / 中藥 7(RV1 唯一在動:37)/ 奇穴 6 / 病症 5 / 方劑 4 / 證型 4 / 鑑別 3(30 張空殼,missing_report 記 41 是假數字)。基礎設施:validator 牆 9(臨床層 PHI/FK validator 剛落地)、CI 9、棘輪 9。**唯一危險的缺口 = 病例層 5/10:功能一項不缺(CS1/CS4/CS6/LL1/LL2/CG6/CG9),但從未部署、從未 dry run —— 9/5 的重心是 S1–S8 驗證清單,不是更多卡片。**
+- 新高階規則:**D12(PROPOSED)** 臨床層 9/1 起 additive-only(UI 凍結管外觀,這條管資料;知識層不凍);憲法新增 **C2 優先序仲裁**(診所擋路 > 安全 > 假數字 > 考試 > 加深)與 **§C 21–23**(數字可一行指令重現、回報 7 天保鮮、一線一 agent)。
+- 未來計畫 delta:8/02 分診說「立刻做」的五件兩週完成四件(治理、D10、D11、大小卡);治理已不是最大問題,最大問題回到方劑債與病例層實戰。三個待決留給 Ting:D12 批准、氣血不和/臟腑虛弱登記與否、52 份課件 commit。
+
 # 2026-08-06 Claude — 經外奇穴 72 筆全部缺 D2 的 `id`，驗證器讀不到那個檔
 
 - **`data/acupoints/extra_points.json` 的 72 筆紀錄一個 `id` 都沒有**，只有 `code`。D2 規定臨床外鍵參照 `id`，所以這 72 個穴位目前**無法被任何病歷連結**。
@@ -7,6 +41,23 @@
 - **我沒有執行 `--write`**：憲法 §A `data/acupoints/**` 是 Codex 的路徑。請 Codex 跑 `--write` → `validate-point-ids.js` → `update-point-manifest.js --write`（帳本要補 **70** 個新 id）→ `build-data.js`。
 - Validation：`validate-point-ids` 72 failures（新暴露，非新損壞）· `build-data` PASS · `validate-acupoint-standard` PASS · `validate-herb-standard` PASS · `validate-formula-standard` PASS · `validate-content-junk` PASS · `validate-comparison-standard` PASS · `validate-pattern-registry` PASS · `validate-condition-standard` 631（基準未動）。
 - **下一步**：Codex 補 id 後，`ex` 命名空間會從 2 → 72，帳本 681 → 751。在那之前不要把經外奇穴接進病歷層。
+
+# 2026-08-06 Claude — Max 產能分層:低階模型的安全邊界寫進憲法 §E2
+
+- Ting 升級 Claude Max,要用低階模型跑其他卡片。**分界不是「哪種卡片」,是「這個欄位能不能被合理地編造出來」** —— 驗證器抓得到結構,抓不到「聽起來很對但是假的」(7/22 那 26 句共用模板通過 8 個 validator)。寫進 `docs/AI_CONSTITUTION.md` §E2 兩張表:✅ 安全(C7 折疊、C3 批次填、P9 欄位遷移、缺字修復、對來源翻譯 —— 全是 validator 直接確認的機械工作)/ ❌ 不安全(**紅旗、鑑別、劑量、刺深、孕期、交互**,以及最容易被忽略的**「查不到」的判斷** —— 弱模型傾向填滿而不是承認查不到)。
+- 派工包新增 **L5 兩條線**:L5-A 機械批(低階模型;C7 150 + C3 150 + P9 50 一次做完 = 從病症/證型基準線砍掉約 435 個缺陷,之後拓關只剩真正需要判斷的 C4 與 lift)/ L5-B 鑑別表(高階模型;30 張空殼 formula_comparison 的 cells —— LL3 的考前最高 CP 值,但是臨床鑑別內容不可下放)。
+- 標準句寫進派工包:「這一批是機械性轉換。若你發現任何一筆需要臨床判斷,停下來標記並回報,不要自己補。」
+
+# 2026-08-06 Claude — CI gate 上線(8/7 三線平行前)+ 修好 validate-relations + 抓到兩個既有缺口
+
+- **`.github/workflows/validate.yml` 建立** —— repo 先前完全沒有 CI。三個 agent 8/7 同時開工,而 CI 是**唯一同時管得到 Claude / Codex / 拓關的機制**(後兩者讀不到 `.claude/skills/`)。三個 job:**green**(直接擋:build-data · relations · runtime data · interactions · content-junk · 四個 card standard · `app.js --check` · `git diff --check` · **`data/generated` 必須是最新的**)、**ratchet**(擋退步)、**clinical-data-never-committed**(病人資料/`.db`/private 目錄被 track 就擋,D4/D7)。
+- **`scripts/check-validation-ratchet.js` + `data/audits/validation_baseline.json`** —— 兩層設計的理由寫在腳本開頭:要求歸零會讓每個 PR 都紅、gate 一週內就會被關掉;要求「不比已提交的基準線差」才是能留著的 gate,而且數字只會往下走。基準線:病症 631 · 證型 250 · naming 1 · point_ids 72。**實測驗證過會擋**:把基準線改成 600 後 CI FAIL 並印出 `+31`,`--update` 也拒絕記錄退步(棘輪只轉一個方向),還原後 PASS。
+- **修好 `validate-relations.js`(265 errors → PASS)**。根因是 validator 的設計落後於資料:LL3 當初設計 `comparison` 是比較**證型**,但這一層後來長出了同樣正當的第二種 —— **`formula_comparison` 比較方劑,而且佔 41 筆中的 30 筆**。validator 不認得這個 type、不接受 `compares` 裡的方劑 id、也不認得 `status: "owner_filled"`,於是吐出 265 個大多是設計落差的錯誤,把底下真正的發現埋掉了。改成兩種 kind 各自對自己的 universe 解析(所以「證型比較表裡混進方劑 id」仍然會被抓)。
+- **底下真正的發現:那 30 筆方劑鑑別表 `cells` 全部是空的。** compares 與 dimensions 都定義好了,內容一格都沒有。已降級成 `SKELETON` warning(參照整合性 = 擋;內容空洞 = 回報,由 quality_layers 追蹤),因為把它報成 error 只會讓 validator 一直紅著沒人看。**`missing_report` 目前把 comparisons 記成「made 41」,實際只有 11 筆有內容 —— 待修正。** 這 30 張表是 LL3 說的考前 CP 值最高的東西。
+- **抓到兩個既有缺口,都交給對應的線(不是我自己改,那正是這套 CI 要防的併發衝突)**:
+  1. **D2 id 缺口**:`data/acupoints/extra_points.json` 的 **72 筆全部只有 `code`、沒有 `id`**。這個檔案是在它從 2 筆長到 72 筆之後才進 `validate-point-ids` 掃描範圍的,所以一直沒被抓到。臨床外鍵指的是 `id` 不是 `code`。修法是機械性的(`scripts/add-point-ids.js`,adds-only)。**已確認與 HEAD 完全相同、重跑兩次一致,不是本次造成的。** 暫時放進 ratchet(上限 72),修好後升級成 blocking。
+  2. **玉女煎重複記錄**:`formula.yu_nv_jian`(composition 0,CloudTCM 匯入殘留)與 `formula.yu_nu_jian`(composition 5,draft)—— 不是 D3 的同名異方,是**拼音羅馬化(nv/nu)造成的匯入重複**。做法:先把獨有內容與來源搬到 `yu_nu_jian`,再把 `yu_nv_jian` 設 `deprecated`(D6 永不硬刪)。順序不能反。
+- 兩個缺口都寫進 `docs/DISPATCH_2026-08-07.md` 各自那條線的「第 0 件事」。`docs/AI_CONSTITUTION.md` §E 補上 CI 與 ratchet 的說明。
 
 # 2026-08-06 Claude — D10 收斂完成 · D11 四套命名空間 · 證型評分與模板 · 8/7 派工包
 

@@ -67,7 +67,12 @@ for (const f of FILES) {
 }
 
 // Expected totals (DECISIONS.md D2, locked 2026-07-13)
-const EXPECT = { standard: 361, ex: 2, tung: 277, ear: 41 };
+/* Census, not a target: it catches a family silently losing records. `ex` was 2
+ * while extra_points.json sat outside the FILES list; the file's 72 records now
+ * count, so the expectation moves with them. Raise a number here only when the
+ * records genuinely exist — lowering one to make a run pass would defeat the
+ * check entirely. */
+const EXPECT = { standard: 361, ex: 72, tung: 277, ear: 41 };
 for (const k of Object.keys(EXPECT)) {
   // standard counts include the professional-file dupes that also equal code;
   // dedupe by counting distinct ids per namespace instead.

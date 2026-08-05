@@ -35,6 +35,13 @@ Owners:**C** = Claude · **X** = Codex · **A** = Antigravity · **T** = Ting �
    有,但 **`stamp-formula-card-grade.js` 沒有**,而且 **Appendix C 的覆蓋報告
    也沒有**(中藥有 `herb_outline_coverage`,方劑沒有對應物)。
 
+> **2026-08-05 Claude 取代版:§1–§2 的穴位部分已作廢。** 標準經穴 361/361 已
+> 達 validator 樣板等級,八月的穴位線改成**經外奇穴 49/72**。八月重心從
+> 「量產」轉為「**裝護欄 + 清方劑債**」——因為 (a) 方劑 201 張卡而 grade 只有 2,
+> 且 validator 已明確指出 34 damaged text / 55 bilingual / 14 truncated /
+> 18 skeleton;(b) repo **完全沒有 CI**,三個 agent 平行寫入卻只靠人記得跑
+> validator。取代版排期與理由見 **`docs/EXTERNAL_REVIEW_2026-08-02.md` §6**。
+
 ## 1. 八月第 1 週:開路(C 做,**不要**派給量產 AI)
 
 > **為什麼這週不能跳過。** 2026-07-22 的事故是「202 味中藥共用 26 句模板、

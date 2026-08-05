@@ -1,0 +1,4 @@
+interface:
+  display_name: "AcuTing Dispatch Generator"
+  short_description: "Turn a validator worklist into a complete copy-paste brief for another agent"
+  default_prompt: "Use $acuting-dispatch to build the next brief. Take the batch ids from the relevant validator's --worklist output, include all seven required parts, and append docs/AI_CONSTITUTION.md in full."

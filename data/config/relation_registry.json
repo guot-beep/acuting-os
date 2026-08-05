@@ -1,0 +1,110 @@
+{
+  "dataset": "Relation registry — the knowledge graph's edge list (DECISIONS D13)",
+  "policy": [
+    "Every graph edge is STORED on exactly one side (the referencing side) and DERIVED on the other. Storing both directions by hand means the two sides drift within a year and no validator can say which one is right.",
+    "This file is the authority on which fields are edges. CG4's reverse index, the future graph UI, and validators all enumerate edges from here — adding a link field to any template without registering it here means the graph silently cannot see it.",
+    "Knowledge→knowledge reverses are derived at build time (e.g. pattern_registry.used_by_conditions). Clinical→knowledge reverses are derived at RUNTIME only, never persisted into knowledge records (D9).",
+    "Symmetric edges (differential_patterns, comparison membership) are stored once on one record and rendered on both — never mirrored by hand."
+  ],
+  "created": "2026-08-06",
+  "edges": [
+    {
+      "id": "edge.condition_patterns",
+      "stored_on": "cond.*",
+      "field": "related_patterns",
+      "target": "pattern.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": { "derived_field": "used_by_conditions", "on": "data/pathology/pattern_registry.json", "derived_by": "scripts/build-pattern-registry.js" },
+      "validated_by": "scripts/validate-condition-standard.js C6",
+      "semantics": "possible_overlap — never one-to-one equivalence (D11)"
+    },
+    {
+      "id": "edge.condition_tcm_diseases",
+      "stored_on": "cond.*",
+      "field": "related_eastern_diseases",
+      "target": "tdis.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": { "derived_field": null, "note": "render-time only for now" },
+      "validated_by": "scripts/validate-relations.js",
+      "semantics": "possible_overlap — 月經過多(cond) and 月經過多(tdis) are two entities (D11)"
+    },
+    {
+      "id": "edge.condition_formulas",
+      "stored_on": "cond.*",
+      "field": "herb_formulas",
+      "target": "formula.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": { "derived_field": null, "note": "formula cards derive related_conditions at render time" },
+      "validated_by": "scripts/validate-relations.js"
+    },
+    {
+      "id": "edge.condition_acupoint_protocols",
+      "stored_on": "cond.*",
+      "field": "acupoint_protocols",
+      "target": "point id (D2)",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": { "derived_field": null, "note": "point cards derive related_conditions at render time (already shipped in pointLinkSection)" },
+      "validated_by": "scripts/validate-relations.js"
+    },
+    {
+      "id": "edge.condition_medications",
+      "stored_on": "cond.*",
+      "field": "medication_links",
+      "target": "med.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": { "derived_field": null, "note": "medication layer not built yet — target namespace reserved" },
+      "validated_by": "scripts/validate-relations.js"
+    },
+    {
+      "id": "edge.pattern_formulas",
+      "stored_on": "pattern.*",
+      "field": "typical_formulas",
+      "target": "formula.*",
+      "file": "data/pathology/pattern_library.json",
+      "reverse": { "derived_field": null, "note": "formula cards derive at render time" },
+      "validated_by": "scripts/validate-pattern-standard.js P6 (N2 counts emptiness)"
+    },
+    {
+      "id": "edge.pattern_points",
+      "stored_on": "pattern.*",
+      "field": "typical_points",
+      "target": "point id (D2)",
+      "file": "data/pathology/pattern_library.json",
+      "reverse": { "derived_field": null, "note": "point cards derive at render time" },
+      "validated_by": "scripts/validate-pattern-standard.js P6 (N2 counts emptiness)"
+    },
+    {
+      "id": "edge.pattern_differentials",
+      "stored_on": "pattern.*",
+      "field": "differential_patterns",
+      "target": "pattern.*",
+      "file": "data/pathology/pattern_library.json",
+      "reverse": { "derived_field": null, "note": "SYMMETRIC: stored once on the record where it was authored, rendered on both patterns. Never hand-mirror onto the counterpart." },
+      "validated_by": "scripts/validate-pattern-standard.js P6"
+    },
+    {
+      "id": "edge.comparison_members",
+      "stored_on": "cmp.*",
+      "field": "compares",
+      "target": "pattern.* | formula.* (by record type)",
+      "file": "data/knowledge/comparisons.json",
+      "reverse": { "derived_field": null, "note": "member cards derive their comparison-table chips at render time" },
+      "validated_by": "scripts/validate-relations.js validateComparisons"
+    },
+    {
+      "id": "edge.clinical_case_links",
+      "stored_on": "clinical layer (localStorage → future SQLite)",
+      "field": "case_links.* / visit_* junctions",
+      "target": "cond.* | tdis.* | pattern.* | formula.* | herb.* | point id | med.*",
+      "file": "data/clinical_cases/schema.sql (+ acuting-clinical-cases-v1)",
+      "reverse": { "derived_field": null, "note": "RUNTIME ONLY (D9): the 'used in 18 cases' panel queries the clinical store at render; aggregates are never written into knowledge records. Dated snapshots go to data/audits/clinical_usage_snapshot.json only." },
+      "validated_by": "scripts/validate-clinical-case-standard.js F-series"
+    }
+  ],
+  "retired_hand_filled_fields": [
+    {
+      "field": "pattern_library.related_conditions",
+      "reason": "The reverse of edge.condition_patterns. 0/50 records had it filled when D13 locked (2026-08-06), so it was retired from hand-filling at zero cost — hand-maintaining both sides is exactly the drift D13 forbids. It is now derived-only (pattern_registry.used_by_conditions carries it)."
+    }
+  ]
+}

@@ -228,6 +228,138 @@ migration for Ting.
   computation ever gets slow, the cache goes in the clinical (gitignored)
   store, never in `data/`.
 
+## D10 — One pattern namespace: `pattern.<english_slug>`  · LOCKED (2026-08-05, before the conditions/patterns fill sprint)
+
+- **What:** every TCM pattern id is `pattern.<english_slug>` — lowercase, ASCII,
+  underscores. `data/pathology/pattern_registry.json` is the ID authority: a
+  pattern id must be registered there before anything may reference it.
+  `pattern_library.json` is the content layer keyed by the same id.
+  `data/config/tcm_pattern_canon.json` is **demoted to import staging** — it is
+  not canon despite the filename.
+- **The problem this closes (measured 2026-08-05):** the same clinical concept
+  exists three times in three shapes.
+  - `pattern_registry.json` — 61 ids, `pattern.blood_stasis`
+  - `pattern_library.json` — 50 ids, same namespace (48 overlap with registry)
+  - `tcm_pattern_canon.json` — 140 records / 134 unique ids, **`pat.氣血不和`**
+    (Chinese characters in the id, different prefix) — **0 overlap with the
+    registry namespace.** Two independent universes.
+  - and on the 150 condition records: `related_patterns` (445 links, 48 unique,
+    **all resolve**) coexists with `tcm_patterns` (728 **inline blobs**, no ids,
+    **none resolve** — raw scrape, not relations).
+- **Why now and not later:** the conditions/patterns fill sprint is starting.
+  Filling 150 conditions' pattern links across two namespaces means every link
+  is a coin flip; reconciling afterwards is a full-DB migration touching every
+  condition record. **One day now, one month later.**
+- **The rules:**
+  1. `pattern.<english_slug>` is the only namespace. No new `pat.*` records.
+  2. Chinese characters never go in an id — this repo has a documented mojibake
+     history (`docs/ENCODING_TRIAGE.md`); a Chinese id is a future encoding bug.
+  3. Existing `pat.*` records are **not deleted and not re-id'd** (D1/D6). They
+     get an alias map: `data/config/pattern_alias_map.json`
+     (`pat.氣滯血瘀 → pattern.qi_stagnation_blood_stasis`).
+  4. `tcm_patterns` inline blobs stay as provenance (§0 只加深不刪除) but are
+     **never** used for navigation. Navigation reads `related_patterns` only.
+     Lifting a blob into a registered pattern is the actual fill work; the
+     condition validator's N1 note counts what is left.
+  5. `方證` (桂枝湯證, 25 records in the canon file) is **not** the same entity
+     as `證候` (肝氣鬱結, 115 records). Formula-patterns belong to the formula
+     layer, not the pattern registry.
+- **Enforcement:** `scripts/validate-condition-standard.js` C6 fails when a
+  `related_patterns` id does not resolve in registry ∪ library.
+- **Reconsider only if:** never re-id an existing pattern. The alias map may
+  grow; the namespace is LOCKED.
+
+## D11 — Four canonical diagnostic namespaces; the namespace IS the entity type  · LOCKED (2026-08-06, Ting asked "是四套 ID 嗎?")
+
+- **What:** diagnosis-side knowledge has exactly **four** canonical namespaces.
+  An entity's namespace *is* its type — no record carries a type field that can
+  disagree with its own id.
+
+  | Namespace | 中文 | What it is | Today |
+  |---|---|---|---|
+  | `cond.*` | 西醫病名 | Biomedical condition — has diagnostic criteria, labs/imaging, an ICD position | **150** ✅ |
+  | `tdis.*` | 中醫病名 | TCM disease — a classical illness name defined by a symptom cluster (感冒·咳嗽·喘證·胃痛) | **75** ✅ |
+  | `pattern.*` | 證型 | Syndrome differentiation conclusion — a snapshot of the pathomechanism (肝陽上亢) | **61 registry / 50 library** ✅ |
+  | `sym.*` | 症狀/體徵 | Symptom or sign — a single observation (頭痛·口苦·惡寒) | **0 — not built** ❌ |
+
+- **Ting's framing was right with one correction.** She proposed
+  "condition = 西醫病名, pattern = 中醫". `cond.*` = 西醫病名 is correct. But
+  **`pattern` is not 中醫病名** — 中醫病名 is `tdis.*`, which already exists
+  with 75 records and `classical_source_hint` (中醫內科學·肺系 …), and the 150
+  conditions already link to it via `related_eastern_diseases` (70 unique ids).
+- **Why 病名 and 證型 must never share a namespace:** 辨證論治 is built on
+  一病多證 / 同證異病. 頭痛 has 肝陽上亢 / 血虛 / 痰濕 under it; 肝陽上亢 appears
+  under 頭痛 / 眩暈 / 高血壓 / 耳鳴. Collapsing them destroys that many-to-many
+  structure — and that structure *is* the diagnostic logic. This is the same
+  error as `Migraine = 肝陽上亢`, one level up.
+- **Symptoms are ONE namespace, not two.** 頭痛 and "headache" are one
+  observation in two languages, unlike 病名 (where the TCM and biomedical
+  entities are genuinely different concepts) and unlike 證型 (which has no
+  biomedical counterpart at all). Splitting `sym.*` by tradition would double
+  every mapping for no gain. TCM-specific observations (口苦, 舌淡, 脈弦) are
+  carried by a `tradition: biomedical | tcm | both` **tag**, not a second id space.
+- **Cross-namespace homonyms are two entities** (D3's rule, one level up). Three
+  Chinese names exist in both `cond.*` and `tdis.*` today — 月經過多, 月經過少,
+  痔瘡. Each keeps its own id in its own namespace and they are linked, never
+  merged. Same string ≠ same entity.
+- **Import layers are NOT namespaces.** `cloudtcm.disease_entry.*` (190),
+  `cloudtcm.disease_category.*` (14), and anything else harvested are
+  **provenance handles**. They may never appear in a relation field
+  (`related_patterns`, `related_eastern_diseases`, `differential_patterns`, …).
+  Their value is surfaced *on* the canonical card:
+  - the exact page URL → into `sources` (never deleted — it is the link Ting
+    wants kept),
+  - `image_url` → a `cloudtcm_ref` block on the card. **190/190 CloudTCM
+    entries carry an image**, which is the concrete visualisation Ting values.
+  - Ting's instruction, verbatim: 「可以整合入那個四套 不用單獨自己雲端中醫一套
+    只是雲端中醫有的 可以寫入訊息跟 link」.
+- **Consequence for the condition validator:** `entity_type` is derived from the
+  namespace and validated for agreement (`cond.*` → `biomedical_condition`,
+  `tdis.*` → `tcm_disease`), never chosen freely. A `cond.*` record labelled
+  `tcm_disease` would create a second home for TCM diseases and is a defect.
+- **Reconsider only if:** never merge two of the four. `sym.*` may be built when
+  a real consumer needs it (the symptom→pattern search); until then its absence
+  is honest, not a gap to paper over.
+
+## D12 — Clinical-layer stability contract: additive-only from 2026-09-01  · LOCKED (2026-08-06, Ting delegated the call to Claude: 「你決定吧」)
+
+- **What:** from 9/01, `data/clinical_cases/schema.sql`, the case localStorage
+  format (`acuting-clinical-cases-v1`), and the export-file format are
+  **additive-only**: fields may be added, never renamed, retyped, or removed.
+  A breaking change requires a migration script exercised on test data first.
+- **Why:** Ting starts at the clinic 9/05. From that day the localStorage holds
+  real (de-identified) cases — the asset the sequencing section calls the one
+  thing that cannot be back-filled. A renamed field is silent data loss. The
+  UI freeze (ROADMAP 9/01) protects the shell; this protects the data. Both.
+- **Scope note:** the knowledge layer is NOT frozen — content sprints continue
+  through September untouched. Only the case-data contract freezes.
+- **Reconsider only if:** the H2 localStorage→SQLite migration — which is
+  itself the planned, scripted exception this rule demands.
+
+## D13 — Every graph edge is stored on one side and derived on the other  · LOCKED (2026-08-06, Ting: 「雙向連接…最好在目前還算草創的時候就設定好」)
+
+- **What:** a bidirectional link is ONE stored edge plus a derived reverse —
+  never two hand-maintained fields. `data/config/relation_registry.json` is the
+  authority: it names every edge field, which side stores it, and how the
+  reverse is derived. CG4's reverse index, the future graph UI, and validators
+  enumerate edges from that file. A link field that is not registered there is
+  invisible to the graph — adding an edge = template + registry + validator.
+- **Why now (Ting's own reasoning):** both templates already carried both sides
+  (`cond.related_patterns` AND `pattern.related_conditions`). The moment agents
+  fill both, the two sides disagree within a batch and no validator can say
+  which is right. On 2026-08-06 exactly 0/50 patterns had `related_conditions`
+  filled — retiring the hand-filled reverse cost nothing. A month into the fill
+  sprint it would have been a reconciliation project.
+- **Direction rules:**
+  - knowledge → knowledge: reverse derived at BUILD time
+    (`pattern_registry.used_by_conditions` is the existing example).
+  - clinical → knowledge: reverse derived at RUNTIME only (D9). Never persisted
+    into knowledge records.
+  - symmetric edges (差異鑑別, comparison membership): stored once where
+    authored, rendered on both — never hand-mirrored.
+- **Reconsider only if:** never hand-maintain both sides. New derived fields may
+  be added freely; they are build artifacts, not authored content.
+
 ---
 
 ## Sequencing (from the review) — do the painful things NOW
