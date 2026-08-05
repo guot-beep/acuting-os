@@ -1,1707 +1,794 @@
-# 7 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-
-> 自動抽取自 `curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf`(engine: pdfplumber+xycut)。**這是原始文字,未經整理或校對。**
-> 
-> ℹ️ 原始版面是多欄,已依欄位逐欄由上往下重讀(XY-cut),分類歸屬正確。
-> 引用寫法:`curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p<頁碼>`。頁碼 = 下方 `## p.N` 標題。
-> ⚠️ PDF 的段落順序不等於視覺順序。跨欄位抓到的內容(尤其禁忌、劑量、
-> 針刺深度)一定要回頭確認它掛在哪一味藥/哪一個穴底下 —— 曾經在麻黃附近
-> 抓到的禁忌實際上屬於桂枝。
+<!-- Extracted from curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf by scripts/extract-curriculum-md.js.
+     Text layer only — figures, tables-as-images and formatting are NOT here.
+     Cite as curriculum/acupoints/7 URINARY BLADDER CHANNEL OF FOOT TAI YANG.pdf#p<N> and verify against the original before
+     using any number (dose, depth, lab value) from it. -->
 
 ## p.1
 
-Name
-UB-1
-Jing1 Ming2
-睛明
-Bright Eyes
-Association/Precautions
-Entry Point
-Intersection Point
-• Urinary Bladder
-• Small Intestine
-• Stomach
-• Yin Qiao
-• Yang Qiao
-• Gallbladder
-• San Jiao
-• Du
-No Moxibustion
-UB-2* Local Point
-Cuan2 Zhu2
-攢竹 No Moxibustion
-Bamboo
-Gathering
-UB-3
-Mei2 Chong1
-眉衝
-Eyebrow
-Ascension
-UB-4
-Qu1 Cha1
-曲差
-Deviating Turn
-Local Point
-No Moxibustion
-Local Point
-Moxibustion
-Applicable
-UB-5
-Wu3 Chu4
-五處
-Fifth Place
-UB-6
-Cheng4Guang3
-承光
-Light Guard
-UB-7*
-Tong1 Tian1
-通天
+URINARY BLADDER CHANNEL OF FOOT TAI YANG
+
+           Name  Association/Precautions  Location/Needling Method               Functions & Actions          Indications/Notes
+UB-1             Entry Point                                                                                  � Redness, swelling & pain of eye
+Jing1 Ming2      Intersection Point       � In depression slightly above inner � Benefits eyes                � Itching of canthus
+                 � Urinary Bladder                                                                            � Lacrimation, Night blindness, Color
+                 � Small Intestine        canthus                                � Expels Wind
+                 � Stomach                                                                                      blindness, Blurry vision, Myopia
+Bright Eyes      � Yin Qiao                                                      � Clears Heat                � Main point for all eye disorders (especially
+                 � Yang Qiao
+UB-2*            � Gallbladder            Needling Method:                                                      from wind (internal or external), excess or
+Cuan2 Zhu2       � San Jiao                                                                                     heat)
+                 � Du                     � Ask patient to close eyes while                                   � Eye pain, strain, redness, swelling, itching,
+                                                                                                                twitching, blurry vision)
+                 No Moxibustion           pushing eyeball gently to lateral
+Bamboo                                                                                                        � Headache, Blurring & failing of vision
+Gathering        Local Point              side. Puncture slowly,                                              � Pain in supraorbital region
+                                                                                                              � Lacrimation, Redness, swelling & pain of eye
+                 No Moxibustion           perpendicularly 0.3 � 0.7 inch                                      � Twitching eyelids, Glaucoma
+                                                                                                              � Sinus congestion/headache
+                                          along orbital wall. Do not                                          � Red, itchy, watery eyes
+                                                                                                              � Use in facial massage for headaches w/
+                                          vigorously twist, or lift & thrust
+                                                                                                                GB20, ST8, LI4, UB60
+                                          needle. To avoid bleeding, press                                    � Needle toward UB 1 for eye diseases or Yu
+
+                                          site for a few seconds after                                          Yao for supraorbital pain
+                                                                                                              � Headache, giddiness
+                                          needle removal.                                                     � Epilepsy
+                                                                                                              � Nasal obstruction
+                                          � On medial extremity of eyebrow � Eliminates wind
+                                                                                                              � Headache
+                                          or                                     � Clears Heat                � Nasal obstruction & epistaxis
+                                                                                                              � Blurring & failing of vision
+                                          � On supraorbital notch                � Benefits eyes
+                                                                                                              � Headache
+                                          Needling Method:                       � Clears head                � Blurring of vision
+                                          � Subcutaneously 0.3-0.5 inch, or      � Alleviates pain            � Epilepsy
+                                                                                                              � Convulsion
+                                          � Prick with 3 edged needle to
+                                                                                                              � Headache
+                                          cause bleeding                                                      � Blurring of vision
+                                                                                                              � Nasal obstruction
+UB-3             Local Point              � Directly above BL-2                  � Expels wind
+Mei2 Chong1      No Moxibustion           � 0.5 cun within the anterior          � Clears head                � Headache � Good for removing obstructions
+                                                                                 � Alleviates pain              causing Qi flow issues to head/brain (heavy
+                                            hairline                             � Benefits eyes & nose         head, vertex pain, distention, depression)
+                                          � Between DU-24 and UB-4
+Eyebrow                                   Needling Method:                       � Expels wind                � Giddiness
+Ascension                                 � Subcutaneously 0.3-0.5 inch          � Clears the head            � Nasal obstruction � open the nose
+                                          � 0.5 cun directly above midpoint      � Alleviates pain            � Main point for nasal issues (congestion,
+UB-4             Local Point                                                     � Benefits eyes & nose
+Qu1 Cha1                                    of anterior hairline                                                sinusitis, chronic nosebleeds, limited sense
+                 Moxibustion              � 1.5 cun lateral to midline           � Eliminates wind              of smell)
+                 Applicable               � At junction of medial 1/3 & lateral  � Descends yang              � Epistaxis, Rhinorrhea
+                                                                                 � Clears heat                � Useful in combination with LU-7, LI-4, LI-20,
+Deviating Turn                              2/3 of distance from DU-24 to ST-    � Clears head & nose           Yin Tang and/or DU-23
+                                            8                                                                 � Dizziness
+UB-5             Local Point              Needling Method:                       � Eliminates wind            � Blurring of vision
+Wu3 Chu4         Moxibustion              � Subcutaneously 0.3-0.5 inch          � Clears heat                � Tinnitus
+                 Applicable               � 1 cun directly above midpoint of     � Clears the head            � Mania
+                 Local Point                anterior hairline                    � Benefits eyes & nose
+                 No Moxibustion           � 1.5 cun lateral to midline
+Fifth Place                               Needling Method:                       � Benefits & regulates nose
+                 Local Point              � Subcutaneously 0.3-0.5 inch          � Clears the head
+UB-6             Moxibustion              � 2.5 cun directly above midpoint
+Cheng4Guang3     Applicable                 of anterior hairline
+                                          � 1.5 cun lateral to midline
+                                          Needling Method:
+                                          � Subcutaneously 0.3-0.5 inch
+Light Guard                               � 4 cun directly above midpoint of
+                                            anterior hairline
+UB-7*                                     � 1.5 cun lateral to midline
+Tong1 Tian1                               Needling Method:
+                                          � Subcutaneously 0.3-0.5 inch
+
+
 Celestial
 Connection
-Moxibustion
-Applicable
-Moxibustion
-Applicable
-UB-8* Local Point
-Luo4 Que4
-絡卻 No Moxibustion
-Declining
+
+UB-8*            Local Point              � 5.5 cun directly above midpoint      � Benefits sense organs
+Luo4 Que4        No Moxibustion             of anterior hairline                 � Pacifies wind
+                                                                                 � Transforms phlegm
+                                          � 1.5 cun lateral to midline           � Calms spirit
+                                          Needling Method:
+Declining                                 � Subcutaneously 0.3-0.5 inch
 Connection
-Kimberly Chenoweth
-URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• In depression slightly above inner • Benefits eyes
-canthus • Expels Wind
-• Clears Heat
-Needling Method:
-• Ask patient to close eyes while
-pushing eyeball gently to lateral
-side. Puncture slowly,
-perpendicularly 0.3 – 0.7 inch
-along orbital wall. Do not
-vigorously twist, or lift & thrust
-needle. To avoid bleeding, press
-site for a few seconds after
-needle removal.
-• On medial extremity of eyebrow • Eliminates wind
-or • Clears Heat
-• On supraorbital notch • Benefits eyes
-• Clears head
-Needling Method: • Alleviates pain
-• Subcutaneously 0.3-0.5 inch, or
-• Prick with 3 edged needle to
-cause bleeding
-• Directly above BL-2
-• 0.5 cun within the anterior
-hairline
-• Between DU-24 and UB-4
-Needling Method:
-• Subcutaneously 0.3-0.5 inch
-• 0.5 cun directly above midpoint
-of anterior hairline
-• 1.5 cun lateral to midline
-• At junction of medial 1/3 & lateral
-2/3 of distance from DU-24 to ST-
-8
-Needling Method:
-• Subcutaneously 0.3-0.5 inch
-• 1 cun directly above midpoint of
-anterior hairline
-• 1.5 cun lateral to midline
-Needling Method:
-• Subcutaneously 0.3-0.5 inch
-• 2.5 cun directly above midpoint
-of anterior hairline
-• 1.5 cun lateral to midline
-Needling Method:
-• Subcutaneously 0.3-0.5 inch
-• 4 cun directly above midpoint of
-anterior hairline
-• 1.5 cun lateral to midline
-Needling Method:
-• Subcutaneously 0.3-0.5 inch
-• Expels wind
-• Clears head
-• Alleviates pain
-• Benefits eyes & nose
-• Expels wind
-• Clears the head
-• Alleviates pain
-• Benefits eyes & nose
-• Eliminates wind
-• Descends yang
-• Clears heat
-• Clears head & nose
-• Eliminates wind
-• Clears heat
-• Clears the head
-• Benefits eyes & nose
-• Benefits & regulates nose
-• Clears the head
-• 5.5 cun directly above midpoint
-of anterior hairline
-• 1.5 cun lateral to midline
-Needling Method:
-• Subcutaneously 0.3-0.5 inch
-• Benefits sense organs
-• Pacifies wind
-• Transforms phlegm
-• Calms spirit
-Indications/Notes
-• Redness, swelling & pain of eye
-• Itching of canthus
-• Lacrimation, Night blindness, Color
-blindness, Blurry vision, Myopia
-• Main point for all eye disorders (especially
-from wind (internal or external), excess or
-heat)
-• Eye pain, strain, redness, swelling, itching,
-twitching, blurry vision)
-• Headache, Blurring & failing of vision
-• Pain in supraorbital region
-• Lacrimation, Redness, swelling & pain of eye
-• Twitching eyelids, Glaucoma
-• Sinus congestion/headache
-• Red, itchy, watery eyes
-• Use in facial massage for headaches w/
-GB20, ST8, LI4, UB60
-• Needle toward UB 1 for eye diseases or Yu
-Yao for supraorbital pain
-• Headache, giddiness
-• Epilepsy
-• Nasal obstruction
-• Headache
-• Nasal obstruction & epistaxis
-• Blurring & failing of vision
-• Headache
-• Blurring of vision
-• Epilepsy
-• Convulsion
-• Headache
-• Blurring of vision
-• Nasal obstruction
-• Headache – Good for removing obstructions
-causing Qi flow issues to head/brain (heavy
-head, vertex pain, distention, depression)
-• Giddiness
-• Nasal obstruction – open the nose
-• Main point for nasal issues (congestion,
-sinusitis, chronic nosebleeds, limited sense
-of smell)
-• Epistaxis, Rhinorrhea
-• Useful in combination with LU-7, LI-4, LI-20,
-Yin Tang and/or DU-23
-• Dizziness
-• Blurring of vision
-• Tinnitus
-• Mania
-1
+
+Kimberly Chenoweth                                                                                            1
 
 ## p.2
 
-Name
-UB-9
-Yu4 Zhen3
-玉枕
-Jade Pillow
-Association/Precautions
-Local Point
-Moxibustion
-Applicable
-UB-10*
-Tian1 Zhu4
-天柱
-Celestial Pillar
-Sea of Qi
-Window of Sky Point
-No Moxibustion
-UB-11*
-Da4 Zhu4
-大杼
-Great Shuttle
-Hui Meeting Points of
-Bones
-Sea of Blood Point
-(upper body)
-Intersecting Point
-• Urinary Bladder
-• Small Intestine
-• Du Meridian
-Moxibustion
-Applicable
-UB-12* Intersecting Point
-Feng1 Men2 • Urinary Bladder
-風門 • Du Meridian
-Wind Gate
-Moxibustion
-Applicable
-UB-13* Lung Shu
-Fei4 Shu1
-肺俞 Moxibustion
-Applicable
-Lung Shu
-UB-14*
-Jue2 Yin1 Shu1
-厥阴俞
-Pericardium
-Shu
-Pericardium Shu
-Moxibustion
-Applicable
-UB-15* Heart Shu
-Xin1 Shu1
-心俞 Moxibustion
-Applicable
-Heart Shu
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• 2.5 cun directly above midpoint • Expels wind & cold
-of posterior hairline • Alleviates pain
-• 1.3 cun lateral to midline, in • Benefits nose & eyes
-depression on level of upper
-border of external occipital
-protuberance
-Needling Method:
-• Subcutaneously 0.3-0.5 inch
-• 1.3 cun lateral to midpoint of • Regulates Qi & pacifies
-posterior hairline wind
-• In depression on lateral aspect of • Benefits head & sensory
-trapezius orifices
-Needling Method: • Calms spirit
-• Perpendicular 0.5-0.8 inch • Activates channel
-• Alleviates pain
-• 1.5 cun lateral to DU-13
-• Level with T-1 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Benefits bones & joints
-• Expels pathogenic factors
-• Firms exterior
-• Regulates Lung Qi
-• Alleviates cough
-• 1.5 cun lateral to Du meridian
-• Level with T-2 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Expels wind & releases
-exterior
-• Strenthens Defensive (Wei)
-Qi
-• Firms exterior
-• Disseminates & Descends
-Lung Qi
-• Benefits nose
-• 1.5 cun lateral to DU-12
-• Level with T-3 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Tonifies Lung Qi
-• Nourishes Lung Yin
-• Descends & disseminates
-Lung Qi
-• Clears heat from Lung
-• Releases exterior
-• 1.5 cun lateral to Du Meridian
-• Level with T-4 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Spreads Liver Qi
-• Unbinds chest
-• Regulates Heart
-• Regulates & Descends Qi
-• 1.5 cun lateral to DU-11
-• Level with T-5 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Tonifies & nourishes Heart
-• Regulates Heart Qi
-• Calms spirit
-• Unbinds chest
-• Resolves blood stasis
-• Clears Heart fire
-Indications/Notes
-• Headache & neck pain
-• Dizziness
-• Opthalmalgia
-• Nasal obstruction
-• Headache (occipital)
-• Nasal obstruction
-• Neck issues: sore throat, neck rigidity,
-stiffness, ROM
-• Stiffness on one side of neck: Combine with
-SI-3 on same side & GB-39 on opposite side
-• Pain in shoulder & back
-• Secondary point to release exterior in wind-
-cold conditions (Primary is GB-20)
-• Headache
-• Pain in neck & back, neck rigidity
-• Pain & soreness in scapular region
-• Cough, Fever, Wind disorders
-• Useful for any bone disorders (osteoporosis,
-arthritis, inflammation, sensation of heat in
-bones)
-• Adjunctive point to affect lungs (infections,
-colds, flu, asthma)
-• May be useful for leukemia, anemia, or
-tonify bone marrow
-• Sea of Blood Point w/ ST-37 & ST-39
-• Sea of Blood full: Patient has sensation that
-body is bigger than it is, feels uneasy
-• Sea of Blood insufficient: Patient feels body
-smaller than it is
-• Common cold
-• Cough, fever
-• Headache, neck rigidity
-• Backache
-• Main point to expel wind from Wei Qi level
-of body
-• Strengthen Wei Qi: Apply moxa here & on
-ST-36
-• Good for early stages of wind-cold
-• Main point for all Lung problems: Cough,
-asthma, bronchitis, sore throat, nasal
-congestion, shortness of breath, voice
-weakness
-• Chest pain, Spitting up blood
-• Afternoon fever, night sweating
-• Useful for skin disorders: itching, acne, hives
-• Lung related emotional imbalances: Grief &
-sadness
-• Cough, stuffy chest
-• All Heart conditions: Cardiac pain,
-palpitations, anxiety, stress
-• Combine with PC-6 to open chest
-• Vomiting
-• Can treat Liver related conditions (Liver Qi
-Stagnation, etc.)
-• Main point for all heart, blood & circulatory
-conditions of excess or deficient nature
-• Cardiac pain, palpitation
-• Main point for HT related emotional issues:
-palpitations, Memory loss, panic, anxiety,
-stress. Useful w/PC-6, HT-7, CV-14, UB-14
-• Cough, spitting up blood
-• Nocturnal emission, night sweating (Heart
-Qi or Yin Deficiency)
-• Mania (Heart fire), Epilepsy
-• Main point for insomnia
-2
+
+           Name   Association/Precautions  Location/Needling Method          Functions & Actions           Indications/Notes
+UB-9              Local Point                                                                              � Headache & neck pain
+Yu4 Zhen3         Moxibustion              � 2.5 cun directly above midpoint � Expels wind & cold          � Dizziness
+                  Applicable                                                                               � Opthalmalgia
+                                           of posterior hairline             � Alleviates pain             � Nasal obstruction
+                  Sea of Qi
+Jade Pillow       Window of Sky Point      � 1.3 cun lateral to midline, in  � Benefits nose & eyes        � Headache (occipital)
+                  No Moxibustion                                                                           � Nasal obstruction
+UB-10*                                     depression on level of upper                                    � Neck issues: sore throat, neck rigidity,
+Tian1 Zhu4
+                                           border of external occipital                                      stiffness, ROM
+                                                                                                           � Stiffness on one side of neck: Combine with
+                                           protuberance
+Celestial Pillar                                                                                             SI-3 on same side & GB-39 on opposite side
+                                           Needling Method:                                                � Pain in shoulder & back
+                                                                                                           � Secondary point to release exterior in wind-
+                                           � Subcutaneously 0.3-0.5 inch
+                                                                                                             cold conditions (Primary is GB-20)
+                                           � 1.3 cun lateral to midpoint of  � Regulates Qi & pacifies     � Headache
+                                                                                                           � Pain in neck & back, neck rigidity
+                                           posterior hairline                wind                          � Pain & soreness in scapular region
+                                                                                                           � Cough, Fever, Wind disorders
+                                           � In depression on lateral aspect of � Benefits head & sensory  � Useful for any bone disorders (osteoporosis,
+
+                                           trapezius                         orifices                        arthritis, inflammation, sensation of heat in
+                                                                                                             bones)
+                                           Needling Method:                  � Calms spirit                � Adjunctive point to affect lungs (infections,
+                                                                                                             colds, flu, asthma)
+                                           � Perpendicular 0.5-0.8 inch      � Activates channel           � May be useful for leukemia, anemia, or
+                                                                                                             tonify bone marrow
+                                                                             � Alleviates pain             � Sea of Blood Point w/ ST-37 & ST-39
+                                                                                                           � Sea of Blood full: Patient has sensation that
+UB-11*            Hui Meeting Points of    � 1.5 cun lateral to DU-13        � Benefits bones & joints       body is bigger than it is, feels uneasy
+Da4 Zhu4          Bones                    � Level with T-1 spinous process  � Expels pathogenic factors   � Sea of Blood insufficient: Patient feels body
+                  Sea of Blood Point                                         � Firms exterior                smaller than it is
+                  (upper body)               lower border                    � Regulates Lung Qi           � Common cold
+                  Intersecting Point                                         � Alleviates cough            � Cough, fever
+Great Shuttle     � Urinary Bladder        Needling Method:                                                � Headache, neck rigidity
+                  � Small Intestine        � Obliquely 0.5-0.7 inch                                        � Backache
+                  � Du Meridian                                                                            � Main point to expel wind from Wei Qi level
+                                                                                                             of body
+                  Moxibustion                                                                              � Strengthen Wei Qi: Apply moxa here & on
+                  Applicable                                                                                 ST-36
+                                                                                                           � Good for early stages of wind-cold
+UB-12*            Intersecting Point       � 1.5 cun lateral to Du meridian  � Expels wind & releases      � Main point for all Lung problems: Cough,
+Feng1 Men2        � Urinary Bladder        � Level with T-2 spinous process    exterior                      asthma, bronchitis, sore throat, nasal
+                  � Du Meridian                                                                              congestion, shortness of breath, voice
+                                             lower border                    � Strenthens Defensive (Wei)    weakness
+                  Moxibustion              Needling Method:                    Qi                          � Chest pain, Spitting up blood
+Wind Gate         Applicable               � Obliquely 0.5-0.7 inch                                        � Afternoon fever, night sweating
+                                                                             � Firms exterior              � Useful for skin disorders: itching, acne, hives
+UB-13*            Lung Shu                 � 1.5 cun lateral to DU-12        � Disseminates & Descends     � Lung related emotional imbalances: Grief &
+Fei4 Shu1                                  � Level with T-3 spinous process                                  sadness
+                  Moxibustion                                                  Lung Qi                     � Cough, stuffy chest
+                  Applicable                 lower border                    � Benefits nose               � All Heart conditions: Cardiac pain,
+                                           Needling Method:                                                  palpitations, anxiety, stress
+Lung Shu                                   � Obliquely 0.5-0.7 inch          � Tonifies Lung Qi            � Combine with PC-6 to open chest
+                                                                             � Nourishes Lung Yin          � Vomiting
+                                                                             � Descends & disseminates     � Can treat Liver related conditions (Liver Qi
+                                                                                                             Stagnation, etc.)
+                                                                               Lung Qi                     � Main point for all heart, blood & circulatory
+                                                                             � Clears heat from Lung         conditions of excess or deficient nature
+                                                                             � Releases exterior           � Cardiac pain, palpitation
+                                                                                                           � Main point for HT related emotional issues:
+UB-14*            Pericardium Shu          � 1.5 cun lateral to Du Meridian  � Spreads Liver Qi              palpitations, Memory loss, panic, anxiety,
+Jue2 Yin1 Shu1                             � Level with T-4 spinous process  � Unbinds chest                 stress. Useful w/PC-6, HT-7, CV-14, UB-14
+                  Moxibustion                                                � Regulates Heart             � Cough, spitting up blood
+                  Applicable                 lower border                    � Regulates & Descends Qi     � Nocturnal emission, night sweating (Heart
+                                           Needling Method:                                                  Qi or Yin Deficiency)
+Pericardium                                � Obliquely 0.5-0.7 inch                                        � Mania (Heart fire), Epilepsy
+Shu                                                                                                        � Main point for insomnia
+
+UB-15*            Heart Shu                � 1.5 cun lateral to DU-11        � Tonifies & nourishes Heart
+Xin1 Shu1                                  � Level with T-5 spinous process  � Regulates Heart Qi
+                  Moxibustion                                                � Calms spirit
+                  Applicable                 lower border                    � Unbinds chest
+                                           Needling Method:                  � Resolves blood stasis
+Heart Shu                                  � Obliquely 0.5-0.7 inch          � Clears Heart fire
+
+Kimberly Chenoweth                                                                                         2
 
 ## p.3
 
-Name
-UB-16
-Du1 Shu1
-督俞
-Governing Shu
-Association/Precautions
-Governing (Du) Shu
-Moxibustion
-Applicable
-UB-17* Diaphragm Shu
-Ge2 Shu1 Hui Meeting Point of
-膈俞 Blood
-Diaphragm
-Moxibustion
-Shu
-Applicable
-UB-18* Liver Shu
-Gan1 Shu1
-肝俞 Moxibustion
-Applicable
-Liver Shu
-UB-19* Gallbladder Shu
-Dan3 Shu1
-胆俞 Moxibustion
-Applicable
-Gallbladder
-Shu
-UB-20* Spleen Shu
-Pi2 Shu1
-脾俞 Moxibustion
-Applicable
-Spleen Shu
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• 1.5 cun lateral to DU-10 • Regulates Qi in chest &
-• Level with T-6 spinous process abdomen
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• 1.5 cun lateral to DU-9
-• Level with T-7 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Invigorates blood & dispels
-stasis
-• Cools blood heat
-• Stops bleeding
-• Nourishes & harmonizes
-blood
-• Harmonizes diaphragm
-• Descends rebellious Qi
-• 1.5 cun lateral to DU-8
-• Level with T-9 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Spreads Liver Qi
-• Regulates & nourishes Liver
-Blood
-• Pacifies Wind
-• Cools fire & clears Damp
-Heat
-• Benefits eyes & sinews
-• 1.5 cun lateral to DU-7
-• Level with T-10 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Clears Damp Heat from
-Liver & Gallbladder
-• Clears pathogenic factors
-from Shao Yang
-• Tonifies & Regulates
-Gallbladder Qi
-• Tonifies deficiency
-• 1.5 cun lateral to DU-6
-• Level with T-11 spinous process
-lower border
-Needling Method:
-• Obliquely 0.5-0.7 inch
-• Tonifies Spleen Qi & Yang
-• Resolves dampness
-• Raises Spleen Qi
-• Holds the Blood
-• Regulates & harmonizes
-Middle Jiao Qi
-Indications/Notes
-• Heart pain
-• Epigastric pain, abdominal distention,
-borborygmus
-• Chills & fever
-• Breast abcesses
-• Itching, psoriasis, alopecia
-• Hot or toxic skin conditions, especially on
-back (acne, boils)
-• Diaphragm problems: Asthma, cough,
-spitting of blood, shortness of breath
-• Vomiting, hiccups, belching
-• Difficulty swallowing, hiatal hernia
-• Afternoon fever, night sweats
-• Measles (promote rash, then no longer
-contagious)
-• Hui Meeting Point of Blood: Good for all
-Blood related conditions & menstrual
-problems (deficiency [scanty, light or
-amenorrhea] à stasis [dark clots,
-dysmenorrhea])
-• “Four Flowers” to nourish Blood: UB-17 &
-UB-19 (or UB-18 & UB-19)
-• Important for red, itchy skin disorders (heat
-in blood: eczema, carbuncles)
-• Main point for liver conditions: Jaundice,
-hepatitis, cirrhosis, hypochondriac pain,
-subcostal pain, blood & Qi stagnation, etc
-• Main point for eye problems: Redness of
-eye, blurry vision, pain, itching, dryness,
-visual dizziness, twitching, night blindness
-• Main point for liver related emotional issues
-& mental disorders (anger, depression,
-irritability, frustration, stress, PMS)
-• Epilepsy, backache, spitting of blood,
-epistaxis (nosebleeds)
-• Jaundice, bitter taste in mouth
-• Pain in chest & hypochondriac region
-• Pulmonary tuberculosis
-• Afternoon fever
-• Shao Yang level diseases: Alternating fever
-& chills
-• Main point for Damp Heat in Liver &
-Gallbladder: hepatitis, cholecystitis,
-jaundice, vomiting, flank pain & distention
-• Often combined with Liver Shu (UB-18)
-• “Four Flowers” to nourish/tonify Blood:
-UB-17 & UB-19 (or UB-18 & UB-19)
-• Pain along GB meridian (sides of body) from
-any etiology (intercostal neuralgia, rib pain,
-trauma, herpes zoster)
-• GB related emotional issues (indecision,
-timidity)
-• Epigastric pain, abdominal distention
-• Jaundice, vomiting, diarrhea, dysentery,
-bloody stool
-• Profuse menstruation, edema, anorexia,
-backache
-• Main point for all Spleen problems: Low
-energy, fatigue, prolapses, damp related
-conditions, bleeding disorders
-• Spleen Qi Deficiency: Fatigue, lack of
-appetite, abdominal bloating/distention,
-undigested food in stool, chronic diarrhea,
-belching (weak pulse)
-• Excess pulse à External pathogen
-3
+
+           Name  Association/Precautions  Location/Needling Method           Functions & Actions            Indications/Notes
+UB-16            Governing (Du) Shu
+Du1 Shu1                                  � 1.5 cun lateral to DU-10         � Regulates Qi in chest &      � Heart pain
+                 Moxibustion                                                                                � Epigastric pain, abdominal distention,
+                 Applicable               � Level with T-6 spinous process   abdomen
+                                                                                                              borborygmus
+Governing Shu                             lower border                                                      � Chills & fever
+                                                                                                            � Breast abcesses
+UB-17*                                    Needling Method:                                                  � Itching, psoriasis, alopecia
+Ge2 Shu1                                                                                                    � Hot or toxic skin conditions, especially on
+                                          � Obliquely 0.5-0.7 inch
+                                                                                                              back (acne, boils)
+                 Diaphragm Shu            � 1.5 cun lateral to DU-9          � Invigorates blood & dispels
+Diaphragm        Hui Meeting Point of     � Level with T-7 spinous process     stasis                       � Diaphragm problems: Asthma, cough,
+Shu              Blood                                                                                        spitting of blood, shortness of breath
+                                            lower border                     � Cools blood heat
+UB-18*           Moxibustion              Needling Method:                   � Stops bleeding               � Vomiting, hiccups, belching
+Gan1 Shu1        Applicable               � Obliquely 0.5-0.7 inch           � Nourishes & harmonizes       � Difficulty swallowing, hiatal hernia
+                                                                                                            � Afternoon fever, night sweats
+                                                                               blood                        � Measles (promote rash, then no longer
+                                                                             � Harmonizes diaphragm
+Liver Shu                                                                    � Descends rebellious Qi         contagious)
+                                                                                                            � Hui Meeting Point of Blood: Good for all
+UB-19*           Liver Shu                � 1.5 cun lateral to DU-8          � Spreads Liver Qi
+Dan3 Shu1                                 � Level with T-9 spinous process   � Regulates & nourishes Liver    Blood related conditions & menstrual
+                 Moxibustion                                                                                  problems (deficiency [scanty, light or
+                 Applicable                 lower border                       Blood                          amenorrhea] � stasis [dark clots,
+                                          Needling Method:                   � Pacifies Wind                  dysmenorrhea])
+Gallbladder                               � Obliquely 0.5-0.7 inch           � Cools fire & clears Damp     � "Four Flowers" to nourish Blood: UB-17 &
+Shu                                                                                                           UB-19 (or UB-18 & UB-19)
+                                                                               Heat                         � Important for red, itchy skin disorders (heat
+UB-20*                                                                       � Benefits eyes & sinews         in blood: eczema, carbuncles)
+Pi2 Shu1
+                 Gallbladder Shu          � 1.5 cun lateral to DU-7          � Clears Damp Heat from        � Main point for liver conditions: Jaundice,
+                                          � Level with T-10 spinous process    Liver & Gallbladder            hepatitis, cirrhosis, hypochondriac pain,
+                 Moxibustion                                                                                  subcostal pain, blood & Qi stagnation, etc
+Spleen Shu       Applicable                 lower border                     � Clears pathogenic factors
+                                          Needling Method:                     from Shao Yang               � Main point for eye problems: Redness of
+                                          � Obliquely 0.5-0.7 inch                                            eye, blurry vision, pain, itching, dryness,
+                                                                             � Tonifies & Regulates           visual dizziness, twitching, night blindness
+                                                                               Gallbladder Qi
+                                                                                                            � Main point for liver related emotional issues
+                                                                             � Tonifies deficiency            & mental disorders (anger, depression,
+                                                                                                              irritability, frustration, stress, PMS)
+                 Spleen Shu               � 1.5 cun lateral to DU-6          � Tonifies Spleen Qi & Yang
+                                          � Level with T-11 spinous process  � Resolves dampness            � Epilepsy, backache, spitting of blood,
+                 Moxibustion                                                 � Raises Spleen Qi               epistaxis (nosebleeds)
+                 Applicable                 lower border                     � Holds the Blood
+                                          Needling Method:                   � Regulates & harmonizes       � Jaundice, bitter taste in mouth
+                                          � Obliquely 0.5-0.7 inch                                          � Pain in chest & hypochondriac region
+                                                                               Middle Jiao Qi               � Pulmonary tuberculosis
+                                                                                                            � Afternoon fever
+                                                                                                            � Shao Yang level diseases: Alternating fever
+
+                                                                                                              & chills
+                                                                                                            � Main point for Damp Heat in Liver &
+
+                                                                                                              Gallbladder: hepatitis, cholecystitis,
+                                                                                                              jaundice, vomiting, flank pain & distention
+                                                                                                            � Often combined with Liver Shu (UB-18)
+                                                                                                            � "Four Flowers" to nourish/tonify Blood:
+                                                                                                              UB-17 & UB-19 (or UB-18 & UB-19)
+                                                                                                            � Pain along GB meridian (sides of body) from
+                                                                                                              any etiology (intercostal neuralgia, rib pain,
+                                                                                                              trauma, herpes zoster)
+                                                                                                            � GB related emotional issues (indecision,
+                                                                                                              timidity)
+
+                                                                                                            � Epigastric pain, abdominal distention
+                                                                                                            � Jaundice, vomiting, diarrhea, dysentery,
+
+                                                                                                              bloody stool
+                                                                                                            � Profuse menstruation, edema, anorexia,
+
+                                                                                                              backache
+                                                                                                            � Main point for all Spleen problems: Low
+
+                                                                                                              energy, fatigue, prolapses, damp related
+                                                                                                              conditions, bleeding disorders
+                                                                                                            � Spleen Qi Deficiency: Fatigue, lack of
+                                                                                                              appetite, abdominal bloating/distention,
+                                                                                                              undigested food in stool, chronic diarrhea,
+                                                                                                              belching (weak pulse)
+                                                                                                            � Excess pulse � External pathogen
+
+Kimberly Chenoweth                                                                                          3
 
 ## p.4
 
-Name
-UB-21
-Wei4 Shu1
-胃俞
-Stomach Shu
-Association/Precautions
-Stomach Shu
-Moxibustion
-Applicable
-UB-22
-San1 Jiao1 Shu1
-俞
-Triple Burner
-Shu
-Triple Burner (San Jiao)
-Shu
-Moxibustion
-Applicable
-UB-23* Kidney Shu
-Shen4 Shu1
-腎俞 Moxibustion
-Applicable
-Kidney Shu
-UB-24
-Qi4 Hai3 Shu1
-氣海俞
-Sea of Qi Shu
-UB-25*
-Da4 Chang2
-Shu1
-大肠俞
-Large Intestine
-Shu
-Moxibustion
-Applicable
-Moxibustion
-Applicable
-UB-26
-Guan1 Yuan2
-Shu1
-关元俞
-Origin Pass
-Shu
-Storage of Yuan Qi Shu
-Moxibustion
-Applicable
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• 1.5 cun lateral to DU Meridian • Regulates Stomach
-• Level with T-12 spinous process • Descends Rebellion
-lower border • Harmonizes Middle Jiao
-Needling Method:
-• Obliquely 0.5-0.8 inch
-• 1.5 cun lateral to DU-5
-• Level with L-1 spinous process
-lower border
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Moves & regulates San Jiao
-• Regulates Spleen &
-Stomach
-• Resolves dampness
-• Regulates water passages
-• Promotes urination
-• Resolves masses
-• 1.5 cun lateral to DU-4
-• Level with L-2 spinous process
-lower border
-Needling Method:
-• Perpendicular 1.0-1.2 inch
-• Tonifies Kidneys
-• Fortifies Yang
-• Benefits essence
-• Nourishes Kidney yin
-• Firms Kidney Qi
-• Regulates water passages
-• Benefits urination
-• Benefits & warms uterus
-(use moxa)
-• Benefits ears & eyes
-• Strengthens lumbar region
-• 1.5 cun lateral to DU Meridian
-• Level with L-3 spinous process
-lower border
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• 1.5 cun lateral to DU-3
-• Level with L-4 spinous process
-lower border
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Strengthens lumbar region
-& legs
-• Regulates Lower Jiao
-• Regulates Intestines
-• Transforms stagnation
-• Alleviates pain
-• Strengthens lumbar region
-& legs
-• 1.5 cun lateral to DU Meridian
-• Level with L-5 spinous process
-lower border
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Strengthens lumbar region
-• Regulates Lower Jiao
-Indications/Notes
-• Pain in chest, hypochondriac & epigastric
-regions, anorexia
-• Main point for Stomach issues: food
-stagnation, abdominal distention,
-borborygmus, diarrhea, nausea, vomiting,
-mouth ulcers, belching, nausea
-• To dissolve accumulations/lumps: Combine
-with Pi Gen (Extra Point for tumors, 3.5 cun
-lateral to lower border of L-1)
-• Harmonizes stomach from deficiency,
-excess, cold or heat
-• Borborygmus, abdominal distention,
-indigestion, vomiting, diarrhea, dysentery,
-edema
-• Pain & stiffness in lower back
-• Good for imbalances between upper &
-lower parts of body (esp. regarding water):
-edema, bloating, ascites (accumulation of
-fluid in abdominal cavity), borborygmus,
-difficult/painful urination, urinary retention
-• All Kidney related issues affecting brain,
-bone, hair, teeth or hearing
-• Male deficiency related sexual problems:
-nocturnal emission, impotence, premature
-ejaculation, spermatorrhea (excessive,
-involuntary ejaculation), sterility,
-exhaustion following ejaculation
-• Female sexual & reproductive disorders:
-dysmenorrhea, amenorrhea, irregular
-menstruation, cold uterus, frigidity,
-infertility, leucorrhea
-• Tonification point for deficiency conditions:
-exhaustion, weakness, chronic fatigue
-• Good for elderly because Kidney Jing is
-naturally depleted with age
-• Main point for acute or chronic low back
-pain, sprains, strains
-• Good for KD related ear issues: tinnitus,
-deafness, chronic ear infections
-• Eneuresis (involuntary urination, especially
-by children at night), knee weakness, blurry
-vision, dizziness, edema, asthma, diarrhea
-• Low back pain
-• Irregular menstruation, dysmenorrhea
-• Asthma
-• Main point for low back pain, especially
-when related to constipation or
-menstruation. Combine with tender points
-(DU-3, UB-26, Shi Qi Zhui [btwn L-5 & S-1],
-UB-31, UB-32, GB-30) & distal points (GB-
-34, GB-39, GB-41, UB-40, UB-57, UB-58, UB-
-60, UB-62)
-• Main point for intestine related issues:
-constipation, diarrhea, dysentery, colitis,
-IBS, borborygmus, abdominal distention
-• Pain, numbness & motor impairment of
-lower extremities, sciatica
-• Low back pain, abdominal distention
-• Diarrhea
-• Sciatica
-• Eneuresis (involuntary urination, especially
-by children at night), frequent urination
-4
+
+           Name  Association/Precautions   Location/Needling Method          Functions & Actions           Indications/Notes
+UB-21            Stomach Shu                                                                               � Pain in chest, hypochondriac & epigastric
+Wei4 Shu1                                  � 1.5 cun lateral to DU Meridian  � Regulates Stomach
+                 Moxibustion                                                                                 regions, anorexia
+                 Applicable                � Level with T-12 spinous process � Descends Rebellion          � Main point for Stomach issues: food
+
+Stomach Shu                                lower border                      � Harmonizes Middle Jiao        stagnation, abdominal distention,
+                                                                                                             borborygmus, diarrhea, nausea, vomiting,
+                                           Needling Method:                                                  mouth ulcers, belching, nausea
+                                                                                                           � To dissolve accumulations/lumps: Combine
+                                           � Obliquely 0.5-0.8 inch                                          with Pi Gen (Extra Point for tumors, 3.5 cun
+                                                                                                             lateral to lower border of L-1)
+UB-22            Triple Burner (San Jiao)  � 1.5 cun lateral to DU-5         � Moves & regulates San Jiao  � Harmonizes stomach from deficiency,
+San1 Jiao1 Shu1  Shu                       � Level with L-1 spinous process  � Regulates Spleen &            excess, cold or heat
+                                                                                                           � Borborygmus, abdominal distention,
+                 Moxibustion                 lower border                      Stomach                       indigestion, vomiting, diarrhea, dysentery,
+                 Applicable                Needling Method:                  � Resolves dampness             edema
+Triple Burner                              � Perpendicular 0.5-1.0 inch      � Regulates water passages    � Pain & stiffness in lower back
+Shu                                                                          � Promotes urination          � Good for imbalances between upper &
+                                                                             � Resolves masses               lower parts of body (esp. regarding water):
+UB-23*           Kidney Shu                � 1.5 cun lateral to DU-4                                         edema, bloating, ascites (accumulation of
+Shen4 Shu1                                 � Level with L-2 spinous process  � Tonifies Kidneys              fluid in abdominal cavity), borborygmus,
+                 Moxibustion                                                 � Fortifies Yang                difficult/painful urination, urinary retention
+                 Applicable                  lower border                    � Benefits essence            � All Kidney related issues affecting brain,
+                                           Needling Method:                  � Nourishes Kidney yin          bone, hair, teeth or hearing
+Kidney Shu                                 � Perpendicular 1.0-1.2 inch      � Firms Kidney Qi             � Male deficiency related sexual problems:
+                                                                             � Regulates water passages      nocturnal emission, impotence, premature
+                                                                             � Benefits urination            ejaculation, spermatorrhea (excessive,
+                                                                             � Benefits & warms uterus       involuntary ejaculation), sterility,
+                                                                                                             exhaustion following ejaculation
+                                                                               (use moxa)                  � Female sexual & reproductive disorders:
+                                                                             � Benefits ears & eyes          dysmenorrhea, amenorrhea, irregular
+                                                                             � Strengthens lumbar region     menstruation, cold uterus, frigidity,
+                                                                                                             infertility, leucorrhea
+UB-24            Sea of Qi Shu             � 1.5 cun lateral to DU Meridian  � Strengthens lumbar region   � Tonification point for deficiency conditions:
+Qi4 Hai3 Shu1                              � Level with L-3 spinous process    & legs                        exhaustion, weakness, chronic fatigue
+                 Moxibustion                                                                               � Good for elderly because Kidney Jing is
+                 Applicable                  lower border                    � Regulates Lower Jiao          naturally depleted with age
+                                           Needling Method:                                                � Main point for acute or chronic low back
+Sea of Qi Shu                              � Perpendicular 0.8-1.2 inch      � Regulates Intestines          pain, sprains, strains
+                                           � 1.5 cun lateral to DU-3         � Transforms stagnation       � Good for KD related ear issues: tinnitus,
+UB-25*           Large Intestine Shu       � Level with L-4 spinous process  � Alleviates pain               deafness, chronic ear infections
+Da4 Chang2                                                                   � Strengthens lumbar region   � Eneuresis (involuntary urination, especially
+Shu1             Moxibustion                 lower border                                                    by children at night), knee weakness, blurry
+                 Applicable                Needling Method:                    & legs                        vision, dizziness, edema, asthma, diarrhea
+                                           � Perpendicular 0.8-1.2 inch                                    � Low back pain
+                                                                                                           � Irregular menstruation, dysmenorrhea
+Large Intestine                                                                                            � Asthma
+Shu
+                                                                                                           � Main point for low back pain, especially
+UB-26            Storage of Yuan Qi Shu    � 1.5 cun lateral to DU Meridian  � Strengthens lumbar region     when related to constipation or
+Guan1 Yuan2                                � Level with L-5 spinous process  � Regulates Lower Jiao          menstruation. Combine with tender points
+Shu1             Moxibustion                                                                                 (DU-3, UB-26, Shi Qi Zhui [btwn L-5 & S-1],
+                 Applicable                  lower border                                                    UB-31, UB-32, GB-30) & distal points (GB-
+                                           Needling Method:                                                  34, GB-39, GB-41, UB-40, UB-57, UB-58, UB-
+                                           � Perpendicular 0.8-1.2 inch                                      60, UB-62)
+Origin Pass
+Shu                                                                                                        � Main point for intestine related issues:
+                                                                                                             constipation, diarrhea, dysentery, colitis,
+                                                                                                             IBS, borborygmus, abdominal distention
+
+                                                                                                           � Pain, numbness & motor impairment of
+                                                                                                             lower extremities, sciatica
+
+                                                                                                           � Low back pain, abdominal distention
+                                                                                                           � Diarrhea
+                                                                                                           � Sciatica
+                                                                                                           � Eneuresis (involuntary urination, especially
+
+                                                                                                             by children at night), frequent urination
+
+Kimberly Chenoweth                                                                                         4
 
 ## p.5
 
-Name
-UB-27*
-Xiao3 Chang2
-Shu1
-小肠俞
-Small
-Intestine Shu
-Association/Precautions
-Small Intestine Shu
-Moxibustion
-Applicable
-UB-28*
-Pang2 Guang1
-Shu1
-膀胱俞
-Bladder Shu
-Bladder Shu
-Moxibustion
-Applicable
-UB-29
-Zhong1 Lu3
-Shu1
-中膂俞
-Central
-Backbone Shu
-UB-30
-Bai2 Huan2
-Shu1
-白环俞
-White Ring
-Shu
-Center of Back Muscles
-Shu
-Moxibustion
-Applicable
-Moxibustion
-Applicable
-UB-31
-Shang4 Liao2
-上髎
-Upper Bone
-Hole
-UB-32*
-Ci4 Liao2
-次髎
-Second Bone
-Hole
-Moxibustion
-Applicable
-Contraindicated during
-pregnancy
-Local Point
-Moxibustion
-Applicable
-Contraindicated during
-pregnancy
-UB-33
-Zhong1 Liao2
-中髎
-Central Bone
-Hole
-Moxibustion
-Applicable
-Contraindicated during
-pregnancy
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• 1.5 cun lateral to DU Meridian • Separates pure from turbid
-• Level with 1st posterior sacral • Regulates intestines &
-foramen Bladder
-Needling Method: • Drains turbid Dampness
-• Perpendicular 0.8-1.2 inch • Clears Damp-Heat
-• Regulates Small Intestine Qi
-• 1.5 cun lateral to DU Meridian
-• Level with 2nd posterior sacral
-foramen
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Regulates Bladder
-• Clears Damp-Heat from
-Lower Jiao
-• Dispels stagnation
-• Resolves masses
-• Benefits lumbar region &
-legs
-• 1.5 cun lateral to DU Meridian
-• Level with 3rd posterior sacral
-foramen
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Benefits lumbar region
-• Dispels cold
-• Stops diarrhea
-• 1.5 cun lateral to DU Meridian
-• Level with 4th posterior sacral
-foramen
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Benefits lumbar region &
-legs
-• Regulates menstruation
-• Stops leucorrhoea &
-seminal emission
-• On sacrum
-• At midpoint btwn
-posterosuperior iliac spine (PSIS)
-& posterior midline
-• At 1st posterior sacral foramen
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• On sacrum
-• Medial & inferior to
-posterosuperior iliac spine (PSIS)
-& posterior midline
-• At 2nd posterior sacral foramen
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Regulates Lower Jiao
-• Facilitates urination &
-defecation
-• Regulates menstruation
-• Stops leucorrhoea
-• Benefits lumbar region &
-legs
-• Regulates Lower Jiao
-• Facilitates urination &
-defecation
-• Regulates menstruation
-• Stops leucorrhoea
-• Benefits lumbar region &
-legs
-• On sacrum
-• Medial & inferior to UB-32
-• At 3rd posterior sacral foramen
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Regulates Lower Jiao
-• Facilitates urination &
-defecation
-• Regulates menstruation
-• Stops leucorrhoea
-• Benefits lumbar region &
-legs
-Indications/Notes
-• Main point for all Small Intestine related
-issues: damp heat affecting Bladder
-(difficult or painful urination, hematuria
-(blood in urine), dark urine), damp heat
-affecting intestines (diarrhea, dysentery)
-• Lower abdominal pain & distention
-• Nocturnal emission, Eneuresis
-• Morbid leucorrhea
-• Low back pain, sciatica
-• Main point for Bladder issues: Damp-Heat
-(painful a/or dark urination), cold (frequent
-urination, incontinence)
-• For dampness anywhere in body, combine
-w/ SP-9 to expel dampness via urination
-• Very important for treating SI joint issues
-• Urine retention, eneuresis
-• Diarrhea, constipation
-• Stiffness & pain of lower back
-• Dysentery
-• Hernia
-• Stiffness & pain of lower back
-• Secondary point for KD related
-gynecological disorders (menstrual
-problems, leukorrhea, pelvic inflammatory
-disease, endometriosis)
-• Irregular menstruation, morbid leukorrhea
-• Eneuresis, dysuria
-• Hernia pain, cold sensation & pain of lower
-back, tenesmus (continual or recurrent
-inclination to evacuate the bowels, caused
-by disorder of the rectum or other illness)
-• Prolapsed rectum
-• Low back pain, dysuria, constipation
-• Irregular menstruation, morbid leucorrhea,
-uterine prolapse
-• Eight Liao Points: UB-31, UB-32, UB-33, &
-UB-34 à Good for local low back and/or
-sacrum problems & most genito-urinary
-problems. (UB-32 used most frequently)
-• Low back pain, hernia
-• OB/GYN issues: Irregular menstruation,
-leucorrhea, dysmenorrhea, blood
-stagnation
-• Important point for easing labor pain a/or
-inducing labor
-• Nocturnal emission, impotence
-• Eneuresis, dysuria
-• Muscular atrophy, pain, numbness & motor
-impairment of lower extremeties
-• Eight Liao Points: UB-31, UB-32, UB-33, &
-UB-34 à Good for local low back and/or
-sacrum problems & most genito-urinary
-problems. (UB-32 used most frequently)
-• Low back pain
-• Constipation, diarrhea, dysuria
-• Irregular menstruation, morbid leucorrhea
-• Eight Liao Points: UB-31, UB-32, UB-33, &
-UB-34 à Good for local low back and/or
-sacrum problems & most genito-urinary
-problems. (UB-32 used most frequently)
-5
+
+           Name  Association/Precautions  Location/Needling Method              Functions & Actions             Indications/Notes
+UB-27*           Small Intestine Shu                                                                            � Main point for all Small Intestine related
+Xiao3 Chang2     Moxibustion              � 1.5 cun lateral to DU Meridian      � Separates pure from turbid
+Shu1             Applicable               � Level with 1st posterior sacral     � Regulates intestines &          issues: damp heat affecting Bladder
+                                                                                                                  (difficult or painful urination, hematuria
+                 Bladder Shu              foramen                               Bladder                           (blood in urine), dark urine), damp heat
+                 Moxibustion                                                                                      affecting intestines (diarrhea, dysentery)
+Small            Applicable               Needling Method:                      � Drains turbid Dampness        � Lower abdominal pain & distention
+Intestine Shu                                                                                                   � Nocturnal emission, Eneuresis
+                 Center of Back Muscles   � Perpendicular 0.8-1.2 inch          � Clears Damp-Heat              � Morbid leucorrhea
+UB-28*           Shu                                                                                            � Low back pain, sciatica
+Pang2 Guang1     Moxibustion                                                    � Regulates Small Intestine Qi  � Main point for Bladder issues: Damp-Heat
+Shu1             Applicable                                                                                       (painful a/or dark urination), cold (frequent
+                 White Ring Shu           � 1.5 cun lateral to DU Meridian      � Regulates Bladder               urination, incontinence)
+                 Moxibustion              � Level with 2nd posterior sacral     � Clears Damp-Heat from         � For dampness anywhere in body, combine
+                 Applicable                                                                                       w/ SP-9 to expel dampness via urination
+Bladder Shu                                 foramen                               Lower Jiao                    � Very important for treating SI joint issues
+                 Local Point              Needling Method:                      � Dispels stagnation            � Urine retention, eneuresis
+UB-29            Moxibustion                                                    � Resolves masses               � Diarrhea, constipation
+Zhong1 Lu3       Applicable               � Perpendicular 0.8-1.2 inch          � Benefits lumbar region &      � Stiffness & pain of lower back
+Shu1             Contraindicated during                                                                         � Dysentery
+                 pregnancy                                                        legs                          � Hernia
+                 Local Point                                                                                    � Stiffness & pain of lower back
+                 Moxibustion              � 1.5 cun lateral to DU Meridian      � Benefits lumbar region
+Central          Applicable               � Level with 3rd posterior sacral     � Dispels cold                  � Secondary point for KD related
+Backbone Shu     Contraindicated during                                         � Stops diarrhea                  gynecological disorders (menstrual
+UB-30            pregnancy                  foramen                                                               problems, leukorrhea, pelvic inflammatory
+Bai2 Huan2                                Needling Method:                      � Benefits lumbar region &        disease, endometriosis)
+Shu1             Local Point              � Perpendicular 0.8-1.2 inch            legs
+                 Moxibustion                                                                                    � Irregular menstruation, morbid leukorrhea
+                 Applicable               � 1.5 cun lateral to DU Meridian      � Regulates menstruation        � Eneuresis, dysuria
+                 Contraindicated during   � Level with 4th posterior sacral     � Stops leucorrhoea &           � Hernia pain, cold sensation & pain of lower
+White Ring       pregnancy
+Shu                                         foramen                               seminal emission                back, tenesmus (continual or recurrent
+                                          Needling Method:                                                        inclination to evacuate the bowels, caused
+UB-31                                     � Perpendicular 0.8-1.2 inch                                            by disorder of the rectum or other illness)
+Shang4 Liao2                                                                                                    � Prolapsed rectum
+                                          � On sacrum                           � Regulates Lower Jiao          � Low back pain, dysuria, constipation
+                                          � At midpoint btwn                    � Facilitates urination &       � Irregular menstruation, morbid leucorrhea,
+                                                                                                                  uterine prolapse
+Upper Bone                                  posterosuperior iliac spine (PSIS)    defecation                    � Eight Liao Points: UB-31, UB-32, UB-33, &
+Hole                                        & posterior midline                 � Regulates menstruation          UB-34 � Good for local low back and/or
+                                          � At 1st posterior sacral foramen     � Stops leucorrhoea               sacrum problems & most genito-urinary
+UB-32*                                    Needling Method:                      � Benefits lumbar region &        problems. (UB-32 used most frequently)
+Ci4 Liao2                                 � Perpendicular 0.8-1.2 inch
+                                                                                  legs                          � Low back pain, hernia
+                                          � On sacrum                                                           � OB/GYN issues: Irregular menstruation,
+                                          � Medial & inferior to                � Regulates Lower Jiao
+Second Bone                                                                     � Facilitates urination &         leucorrhea, dysmenorrhea, blood
+Hole                                        posterosuperior iliac spine (PSIS)                                    stagnation
+                                            & posterior midline                   defecation                    � Important point for easing labor pain a/or
+UB-33                                     � At 2nd posterior sacral foramen     � Regulates menstruation          inducing labor
+Zhong1 Liao2                              Needling Method:                      � Stops leucorrhoea             � Nocturnal emission, impotence
+                                                                                � Benefits lumbar region &      � Eneuresis, dysuria
+                                          � Perpendicular 0.8-1.2 inch                                          � Muscular atrophy, pain, numbness & motor
+                                                                                  legs                            impairment of lower extremeties
+Central Bone                                                                                                    � Eight Liao Points: UB-31, UB-32, UB-33, &
+Hole                                      � On sacrum                           � Regulates Lower Jiao            UB-34 � Good for local low back and/or
+                                          � Medial & inferior to UB-32          � Facilitates urination &         sacrum problems & most genito-urinary
+                                          � At 3rd posterior sacral foramen                                       problems. (UB-32 used most frequently)
+                                          Needling Method:                        defecation                    � Low back pain
+                                                                                � Regulates menstruation        � Constipation, diarrhea, dysuria
+                                          � Perpendicular 0.8-1.2 inch          � Stops leucorrhoea             � Irregular menstruation, morbid leucorrhea
+                                                                                � Benefits lumbar region &      � Eight Liao Points: UB-31, UB-32, UB-33, &
+                                                                                                                  UB-34 � Good for local low back and/or
+                                                                                  legs                            sacrum problems & most genito-urinary
+                                                                                                                  problems. (UB-32 used most frequently)
+
+Kimberly Chenoweth                                                                                              5
 
 ## p.6
 
-Name
-UB-34
-Xia4 Liao2
-下髎
-Lower Bone
-Hole
-Association/Precautions
-Local Point
-Moxibustion
-Applicable
-Contraindicated during
-pregnancy
-UB-35 Local Point
-Hui4 Yang2
-会阳 Moxibustion
-Applicable
-Meeting of
-Yang
-UB-36* Local Point
-Cheng2 Fu2
-承扶 Moxibustion
-Applicable
-Support
-UB-37 Local Point
-Yin1 Men2
-殷门 Moxibustion
-Applicable
-Gate of
-Abundance
-UB-38 Local Point
-Fu2 Xi4
-浮㕁 Moxibustion
-Applicable
-Superficial
-Cleft
-UB-39* Lower He Sea Point of
-Wei3 Yang2 San Jiao
-委阳
-Moxibustion
-Bend Yang
-Applicable
-UB-40*
-Wei3 Zhong1
-委中
-Bend Middle
-He Sea Point
-Earth Point
-Lumbar Command
-Point
-Moxibustion
-Applicable
-UB-41 Local Point
-Fu4 Fen1
-附分 Moxibustion
-Applicable
-Attached
-Branch
-UB-42* Local Point
-Po4 Hu4
-魄户 Moxibustion
-Applicable
-Po Door
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• On sacrum • Regulates Lower Jiao
-• Medial & inferior to UB-33 • Facilitates urination &
-• At 4th posterior sacral foramen defecation
-Needling Method: • Regulates menstruation
-• Perpendicular 0.8-1.2 inch • Stops leucorrhoea
-• Benefits lumbar region &
-legs
-• On sacrum, 0.5 cun lateral to tip
-of coccyx
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Clears damp-heat
-• Regulates Lower Jiao
-• Benefits coccyx
-• Treats hemorrhoids
-• On posterior side of thigh
-• At midpoint of inferior gluteal
-crease
-Needling Method:
-• Perpendicular 1.0-1.5 inch
-• Activates channel
-• Relaxes sinews
-• Alleviates pain
-• Regulates Lower Jiao
-• Treats hemorrhoids
-• 6 cun below UB-36 on line joining
-UB-36 and UB-40
-Needling Method:
-• Perpendicular 1.0-2.0 inch
-• Activates channel
-• Alleviates pain
-• Benefits lumbar spine
-• 1 cun above UB-39
-• On medial side of biceps femoris
-tendon
-• Located with knee slightly flexed
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Lateral to UB-40
-• On medial border of biceps
-femoris tendon
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Relaxes sinews
-• Alleviates pain
-• Clears heat
-• Soothes contraction
-• Harmonizes San Jiao
-• Regulates urination
-• Activates channel
-• Alleviates pain
-• Midpoint of transverse crease of
-popliteal fossa
-• Between tendons of biceps
-femoris & semitendinosus
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Or prick popliteal vein with 3-
-edged needle to cause bleeding
-• Benefits lumbar region &
-knees
-• Activates channel
-• Alleviates pain
-• 3 cun lateral to Du Meridian
-• Level with T-2 spinous process
-lower border
-• On spinal border of scapula
-Needling Method:
-• Perpendicular 0.3-0.5 inch
-• 3 cun lateral to Du Meridian
-• Level with T-3 spinous process
-lower border
-• On spinal border of scapula
-Needling Method:
-• Oblique 0.3-0.5 inch
-• Activates channel
-• Alleviates pain
-• Expels wind & cold
-• Tonifies & nourishes Lung
-• Soothes dyspnea
-• Alleviates cough
-• Activates channel
-• Alleviates pain
-Indications/Notes
-• Low back pain
-• Lower abdominal pain
-• Dysuria, constipation
-• Morbid leukorrhea
-• Eight Liao Points: UB-31, UB-32, UB-33, &
-UB-34 à Good for local low back and/or
-sacrum problems & most genito-urinary
-problems. (UB-32 used most frequently)
-• Main point for hemorrhoids
-• Dysentery, bloody stools, diarrhea
-• Hemorrhoids, impotence
-• Morbid leukorrhea
-• Trauma or pain of coccyx, deviation
-• Pain in lower back & gluteal region
-• Constipation
-• Muscular atrophy, pain, numbness & motor
-impairment or weakness of lower
-extremities
-• Low back pain or sciatica where pain runs
-down posterior aspect of leg
-• Pain in lower back & thigh
-• Muscular atrophy
-• Pain, numbness & motor impairment of
-lower extremities
-• Hemiplegia
-• Numbness of gluteal & femoral regions
-• Contracture of tendons in popliteal fossa
-• Stiffness & pain of lower back
-• Distention & fullness of lower abdomen
-• Edema, dysuria
-• Cramps of leg & foot
-• Damp heat conditions affecting lower
-warmer à Disperse for difficult urination
-• Tonify for urinary incontinence
-• Lumbar Command Point: All lumbar related
-issues (Low back pain, sprain, muscle
-spasms)
-• Motor impairment of hip joint & lower
-extremities
-• Contracture of tendons in popliteal fossa
-• Muscular atrophy, hemiplegia
-• Pain, numbness & motor impairment of
-lower extremities
-• Abdominal pain, vomiting, diarrhea,
-erysipelas (large, raised red patches on skin
-from bacterial infection)
-• Main point for heat conditions: summer
-heat, heat stroke, heat exhaustion
-• Main point for all skin related issues:
-itching, oozing, inflammation
-• Good point for leg a/or knee pain
-• Stiffness & pain of shoulder, back & neck
-• Numbness of elbow & arm
-• Pulmonary tuberculosis
-• Hemoptysis, Neck rigidity
-• Reinforces UB-13 for Lung disorders: Cough,
-Asthma, etc.
-• Affects psycho-emotional aspects of Lung
-• Drains Heat from Lung
-6
+
+           Name  Association/Precautions  Location/Needling Method             Functions & Actions          Indications/Notes
+UB-34            Local Point                                                                                � Low back pain
+Xia4 Liao2                                � On sacrum                          � Regulates Lower Jiao       � Lower abdominal pain
+                 Moxibustion                                                                                � Dysuria, constipation
+                 Applicable               � Medial & inferior to UB-33         � Facilitates urination &    � Morbid leukorrhea
+                                          � At 4th posterior sacral foramen      defecation                 � Eight Liao Points: UB-31, UB-32, UB-33, &
+Lower Bone       Contraindicated during
+Hole             pregnancy                Needling Method:                     � Regulates menstruation       UB-34 � Good for local low back and/or
+                                                                                                              sacrum problems & most genito-urinary
+                                          � Perpendicular 0.8-1.2 inch         � Stops leucorrhoea            problems. (UB-32 used most frequently)
+                                                                                                            � Main point for hemorrhoids
+                                                                               � Benefits lumbar region &   � Dysentery, bloody stools, diarrhea
+                                                                                                            � Hemorrhoids, impotence
+                                                                               legs                         � Morbid leukorrhea
+                                                                                                            � Trauma or pain of coccyx, deviation
+UB-35            Local Point              � On sacrum, 0.5 cun lateral to tip  � Clears damp-heat
+Hui4 Yang2       Moxibustion                of coccyx                          � Regulates Lower Jiao       � Pain in lower back & gluteal region
+                 Applicable                                                    � Benefits coccyx            � Constipation
+                                          Needling Method:                     � Treats hemorrhoids         � Muscular atrophy, pain, numbness & motor
+                 Local Point              � Perpendicular 0.5-1.0 inch
+Meeting of       Moxibustion                                                                                  impairment or weakness of lower
+Yang             Applicable               � On posterior side of thigh         � Activates channel            extremities
+                                          � At midpoint of inferior gluteal    � Relaxes sinews             � Low back pain or sciatica where pain runs
+UB-36*                                                                         � Alleviates pain              down posterior aspect of leg
+Cheng2 Fu2                                  crease                             � Regulates Lower Jiao       � Pain in lower back & thigh
+                                          Needling Method:                     � Treats hemorrhoids         � Muscular atrophy
+                                          � Perpendicular 1.0-1.5 inch                                      � Pain, numbness & motor impairment of
+                                                                                                              lower extremities
+Support                                                                                                     � Hemiplegia
+
+UB-37            Local Point              � 6 cun below UB-36 on line joining  � Activates channel          � Numbness of gluteal & femoral regions
+Yin1 Men2                                   UB-36 and UB-40                    � Alleviates pain            � Contracture of tendons in popliteal fossa
+                 Moxibustion                                                   � Benefits lumbar spine
+                 Applicable               Needling Method:                                                  � Stiffness & pain of lower back
+                                          � Perpendicular 1.0-2.0 inch                                      � Distention & fullness of lower abdomen
+Gate of                                                                                                     � Edema, dysuria
+Abundance        Local Point              � 1 cun above UB-39                  � Relaxes sinews             � Cramps of leg & foot
+                                          � On medial side of biceps femoris   � Alleviates pain            � Damp heat conditions affecting lower
+UB-38            Moxibustion                                                   � Clears heat
+Fu2 Xi4          Applicable                 tendon                             � Soothes contraction          warmer � Disperse for difficult urination
+                                          � Located with knee slightly flexed                               � Tonify for urinary incontinence
+                 Lower He Sea Point of    Needling Method:                     � Harmonizes San Jiao        � Lumbar Command Point: All lumbar related
+                 San Jiao                 � Perpendicular 0.5-1.0 inch         � Regulates urination
+Superficial                               � Lateral to UB-40                   � Activates channel            issues (Low back pain, sprain, muscle
+Cleft            Moxibustion              � On medial border of biceps         � Alleviates pain              spasms)
+                 Applicable                                                                                 � Motor impairment of hip joint & lower
+UB-39*                                      femoris tendon                                                    extremities
+Wei3 Yang2                                Needling Method:                                                  � Contracture of tendons in popliteal fossa
+                                          � Perpendicular 0.5-1.0 inch                                      � Muscular atrophy, hemiplegia
+                                                                                                            � Pain, numbness & motor impairment of
+                                                                                                              lower extremities
+Bend Yang                                                                                                   � Abdominal pain, vomiting, diarrhea,
+                                                                                                              erysipelas (large, raised red patches on skin
+UB-40*           He Sea Point             � Midpoint of transverse crease of   � Benefits lumbar region &     from bacterial infection)
+Wei3 Zhong1      Earth Point                popliteal fossa                      knees                      � Main point for heat conditions: summer
+                 Lumbar Command                                                                               heat, heat stroke, heat exhaustion
+                 Point                    � Between tendons of biceps          � Activates channel          � Main point for all skin related issues:
+                                            femoris & semitendinosus           � Alleviates pain              itching, oozing, inflammation
+Bend Middle      Moxibustion                                                                                � Good point for leg a/or knee pain
+                 Applicable               Needling Method:                                                  � Stiffness & pain of shoulder, back & neck
+                                          � Perpendicular 0.5-1.0 inch                                      � Numbness of elbow & arm
+                                          � Or prick popliteal vein with 3-
+                                                                                                            � Pulmonary tuberculosis
+                                            edged needle to cause bleeding                                  � Hemoptysis, Neck rigidity
+                                                                                                            � Reinforces UB-13 for Lung disorders: Cough,
+UB-41            Local Point              � 3 cun lateral to Du Meridian       � Activates channel
+Fu4 Fen1         Moxibustion              � Level with T-2 spinous process     � Alleviates pain              Asthma, etc.
+                 Applicable                                                    � Expels wind & cold         � Affects psycho-emotional aspects of Lung
+                                            lower border                                                    � Drains Heat from Lung
+                 Local Point              � On spinal border of scapula        � Tonifies & nourishes Lung
+Attached         Moxibustion              Needling Method:                     � Soothes dyspnea
+Branch           Applicable               � Perpendicular 0.3-0.5 inch         � Alleviates cough
+                                          � 3 cun lateral to Du Meridian       � Activates channel
+UB-42*                                    � Level with T-3 spinous process     � Alleviates pain
+Po4 Hu4
+                                            lower border
+                                          � On spinal border of scapula
+                                          Needling Method:
+Po Door                                   � Oblique 0.3-0.5 inch
+
+Kimberly Chenoweth                                                                                          6
 
 ## p.7
 
-Name
-UB-43*
-Gao Huang
-Shu
-膏肓俞
-Gao Huang
-Shu
-Association/Precautions
-Local Point
-Moxibustion
-Applicable
-UB-44 Local Point
-Shen2 Tang2
-神堂 Moxibustion
-Applicable
-Spirit Hall
-UB-45 Local Point
-Yi4 Xi1
-譩嘻 Moxibustion
-Applicable
-Yi Xi
-UB-46 Local Point
-Ge2 Guan1
-膈关 Moxibustion
-Applicable
-Diaphragm
-Pass
-UB-47 Local Point
-Hun2 Men2
-魂门 Moxibustion
-Applicable
-Hun Gate
-UB-48
-Yang2 Gang1
-阳纲
-Yang
-Headrope
-UB-49
-Yi4 She4
-意舍
-Reflection
-Abode
-Moxibustion
-Applicable
-Moxibustion
-Applicable
-UB-50
-Wei4 Cang1
-胃仓
-Stomach
-Granary
-UB-51
-Huang1 Men2
-肓门
-Huang Gate
-UB-52*
-Zhi4 Shi4
-志室
-Will Chamber
-Moxibustion
-Applicable
-Moxibustion
-Applicable
-Moxibustion
-Applicable
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• 3 cun lateral to Du Meridian • Tonifies & nourishes Lung,
-• Level with T-4 spinous process Heart, Kidneys, Spleen &
-lower border Stomach
-• On spinal border of scapula • Nourishes Lung yin & clears
-Needling Method: heat
-• Perpendicular 0.3-0.5 inch • Strengthens deficiency
-conditions: Qi & Xue(Blood)
-• Calms spirit
-• Fosters original Qi
-• Resolves phlegm
-• 3 cun lateral to DU-11 • Unbinds chest
-• Level with T-5 spinous process • Regulates Qi
-lower border • Activates channel
-• On spinal border of scapula • Alleviates pain (back)
-Needling Method:
-• Oblique 0.3-0.5 inch
-• 3 cun lateral to DU-10 • Expels wind
-• Level with T-6 spinous process • Clears Heat
-lower border • Descends Lung Qi
-• On spinal border of scapula • Invigorates Qi & Blood
-Needling Method: • Alleviates pain
-• Oblique down 0.3-0.5 inch
-• 3 cun lateral to DU-9 • Regulates diaphragm
-• Level with T-7 spinous process • Benefits Middle Jiao
-lower border (SP & ST)
-• Approximately at level of inferior • Descends rebellion
-angle of scapula • Activates channel
-Needling Method: • Alleviates pain (locally)
-• Oblique 0.3-0.5 inch
-• 3 cun lateral to DU-8 • Spreads Liver Qi (especially
-• Level with T-9 spinous process with emotional aspects)
-lower border • Relaxes sinews
-Needling Method: • Harmonizes Middle Jiao
-• Oblique 0.3-0.5 inch (SP & ST, LV/SP)
-• 3 cun lateral to DU-7
-• Level with T-10 spinous process
-lower border
-Needling Method:
-• Oblique 0.3-0.5 inch
-• 3 cun lateral to DU-6
-• Level with T-11 spinous process
-lower border
-Needling Method:
-• Oblique 0.3-0.5 inch
-• Regulates Gallbladder
-• Clears Damp-Heat
-(from GB)
-• Harmonizes Middle Jiao
-• Clears Middle Jiao Damp
-Heat (jaundice)
-• Regulates Spleen &
-Stomach
-• 3 cun lateral to DU Meridian
-• Level with T-12 spinous process
-lower border
-Needling Method:
-• Oblique 0.3-0.5 inch
-• 3 cun lateral to DU-5
-• Level with L-1 spinous process
-lower border
-Needling Method:
-• Oblique 0.3-0.5 inch
-• 3 cun lateral to DU-4
-• Level with L-2 spinous process
-lower border
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Dispels stagnation (masses)
-• Benefits breasts
-• Tonifies Kidneys
-• Benefits essence
-• Reinforces will power
-• Regulates urination
-• Dispels damp
-• Strengthens lumbar region
-Indications/Notes
-• Pulmonary tuberculosis
-• Main point for all disorders of Lung & Upper
-Warmer: Cough, asthma, spitting of blood,
-dyspnea, tuberculosis
-• Night sweating, poor memory
-• Nocturnal emission
-• Tonification point for cases of weakness &
-deficiency especially from chronic illness
-(lingering pathogen)
-• Cardiac pain, palpitation
-• Asthma, stuffy chest, cough
-• Stiffness & pain of back
-• Reinforces Heart Shu (UB-15) & treats Heart
-related psycho-emotional issues: anxiety,
-insomnia, etc.
-• Cough, asthma
-• Pain of shoulder & back
-• Dysphagia (difficulty or discomfort in
-swallowing)
-• Hiccup, vomiting, belching
-• Pain & stiffness of back
-• Pain in chest & hypochondriac region
-• Back pain
-• Vomiting, Diarrhea
-• Reinforce the LV Back Shu (UB-18)
-• Helps treat psycho-emotional aspects of LV
-(depression, frustration)
-• Borborygmus, abdominal pain, diarrhea
-• Pain in hypochondriac region
-• Jaundice
-• Abdominal distention, borborygmus
-• Vomiting, diarrhea
-• Difficulty swallowing
-• Reinforces SP Shu (UB-20), especially with
-Damp Heat (hepatitis, cholecystitis, wasting
-& thirsting (diabetes))
-• Sometimes used for memorization &
-concentration w/SP-3
-• Abdominal distention
-• Pain in epigastric region & back
-• Infantile indigestion
-• Abdominal pain
-• Constipation
-• Abdominal masses
-• Nocturnal emission, impotence, edema
-• Eneuresis, frequent urination, dysuria
-• Irregular menstruation
-• Knee & back pain
-• Reinforce KD Back Shu (UB 23) for fertility
-issues (impotence, infertility), a/or urinary
-issues, especially from damp heat or KD Qi
-or Yang deficiency (incontinence, dribbling
-urine)
-7
+
+           Name  Association/Precautions  Location/Needling Method           Functions & Actions             Indications/Notes
+UB-43*           Local Point                                                                                 � Pulmonary tuberculosis
+Gao Huang        Moxibustion              � 3 cun lateral to Du Meridian     � Tonifies & nourishes Lung,    � Main point for all disorders of Lung & Upper
+Shu              Applicable
+                                          � Level with T-4 spinous process   Heart, Kidneys, Spleen &          Warmer: Cough, asthma, spitting of blood,
+                 Local Point                                                                                   dyspnea, tuberculosis
+                 Moxibustion              lower border                       Stomach                         � Night sweating, poor memory
+Gao Huang        Applicable                                                                                  � Nocturnal emission
+Shu                                       � On spinal border of scapula      � Nourishes Lung yin & clears   � Tonification point for cases of weakness &
+                 Local Point                                                                                   deficiency especially from chronic illness
+UB-44            Moxibustion              Needling Method:                   heat                              (lingering pathogen)
+Shen2 Tang2      Applicable
+                                          � Perpendicular 0.3-0.5 inch       � Strengthens deficiency        � Cardiac pain, palpitation
+                 Local Point                                                                                 � Asthma, stuffy chest, cough
+                 Moxibustion                                                 conditions: Qi & Xue(Blood)     � Stiffness & pain of back
+Spirit Hall      Applicable                                                                                  � Reinforces Heart Shu (UB-15) & treats Heart
+                                                                             � Calms spirit
+UB-45            Local Point                                                                                   related psycho-emotional issues: anxiety,
+Yi4 Xi1          Moxibustion                                                 � Fosters original Qi             insomnia, etc.
+                 Applicable                                                                                  � Cough, asthma
+                                                                             � Resolves phlegm               � Pain of shoulder & back
+                 Local Point
+Yi Xi            Moxibustion              � 3 cun lateral to DU-11           � Unbinds chest                 � Dysphagia (difficulty or discomfort in
+                 Applicable                                                                                    swallowing)
+UB-46                                     � Level with T-5 spinous process   � Regulates Qi
+Ge2 Guan1        Local Point                                                                                 � Hiccup, vomiting, belching
+                 Moxibustion              lower border                       � Activates channel             � Pain & stiffness of back
+                 Applicable
+                                          � On spinal border of scapula      � Alleviates pain (back)        � Pain in chest & hypochondriac region
+Diaphragm        Local Point                                                                                 � Back pain
+Pass             Moxibustion              Needling Method:                                                   � Vomiting, Diarrhea
+                 Applicable                                                                                  � Reinforce the LV Back Shu (UB-18)
+UB-47                                     � Oblique 0.3-0.5 inch                                             � Helps treat psycho-emotional aspects of LV
+Hun2 Men2        Local Point
+                 Moxibustion              � 3 cun lateral to DU-10           � Expels wind                     (depression, frustration)
+                 Applicable                                                                                  � Borborygmus, abdominal pain, diarrhea
+                 Local Point              � Level with T-6 spinous process   � Clears Heat                   � Pain in hypochondriac region
+Hun Gate         Moxibustion                                                                                 � Jaundice
+                 Applicable               lower border                       � Descends Lung Qi
+UB-48                                                                                                        � Abdominal distention, borborygmus
+Yang2 Gang1                               � On spinal border of scapula      � Invigorates Qi & Blood        � Vomiting, diarrhea
+                                                                                                             � Difficulty swallowing
+                                          Needling Method:                   � Alleviates pain               � Reinforces SP Shu (UB-20), especially with
+
+Yang                                      � Oblique down 0.3-0.5 inch                                          Damp Heat (hepatitis, cholecystitis, wasting
+Headrope                                                                                                       & thirsting (diabetes))
+UB-49                                     � 3 cun lateral to DU-9            � Regulates diaphragm           � Sometimes used for memorization &
+Yi4 She4                                                                                                       concentration w/SP-3
+                                          � Level with T-7 spinous process   � Benefits Middle Jiao          � Abdominal distention
+                                                                                                             � Pain in epigastric region & back
+                                          lower border                       (SP & ST)                       � Infantile indigestion
+Reflection
+Abode                                     � Approximately at level of inferior � Descends rebellion          � Abdominal pain
+                                                                                                             � Constipation
+UB-50                                     angle of scapula                   � Activates channel             � Abdominal masses
+Wei4 Cang1
+                                          Needling Method:                   � Alleviates pain (locally)     � Nocturnal emission, impotence, edema
+                                                                                                             � Eneuresis, frequent urination, dysuria
+                                          � Oblique 0.3-0.5 inch                                             � Irregular menstruation
+Stomach                                                                                                      � Knee & back pain
+Granary                                   � 3 cun lateral to DU-8            � Spreads Liver Qi (especially  � Reinforce KD Back Shu (UB 23) for fertility
+UB-51
+Huang1 Men2                               � Level with T-9 spinous process   with emotional aspects)           issues (impotence, infertility), a/or urinary
+                                                                                                               issues, especially from damp heat or KD Qi
+                                          lower border                       � Relaxes sinews                  or Yang deficiency (incontinence, dribbling
+                                                                                                               urine)
+Huang Gate                                Needling Method:                   � Harmonizes Middle Jiao
+
+UB-52*                                    � Oblique 0.3-0.5 inch             (SP & ST, LV/SP)
+Zhi4 Shi4
+                                          � 3 cun lateral to DU-7            � Regulates Gallbladder
+                                          � Level with T-10 spinous process  � Clears Damp-Heat
+
+Will Chamber                                lower border                       (from GB)
+                                          Needling Method:                   � Harmonizes Middle Jiao
+                                          � Oblique 0.3-0.5 inch
+                                                                             � Clears Middle Jiao Damp
+                                          � 3 cun lateral to DU-6              Heat (jaundice)
+                                          � Level with T-11 spinous process
+                                                                             � Regulates Spleen &
+                                            lower border                       Stomach
+                                          Needling Method:
+                                          � Oblique 0.3-0.5 inch
+
+                                          � 3 cun lateral to DU Meridian     � Harmonizes Middle Jiao
+                                          � Level with T-12 spinous process
+                                                                             � Dispels stagnation (masses)
+                                            lower border                     � Benefits breasts
+                                          Needling Method:
+                                          � Oblique 0.3-0.5 inch             � Tonifies Kidneys
+                                                                             � Benefits essence
+                                          � 3 cun lateral to DU-5            � Reinforces will power
+                                          � Level with L-1 spinous process   � Regulates urination
+                                                                             � Dispels damp
+                                            lower border                     � Strengthens lumbar region
+                                          Needling Method:
+                                          � Oblique 0.3-0.5 inch
+                                          � 3 cun lateral to DU-4
+                                          � Level with L-2 spinous process
+
+                                            lower border
+                                          Needling Method:
+                                          � Perpendicular 0.5-1.0 inch
+
+Kimberly Chenoweth                                                                                           7
 
 ## p.8
 
-Name
-UB-53
-Bao1 Huang1
-胞肓
-Bladder Huang
-Association/Precautions
-Local Point
-Moxibustion
-Applicable
-UB-54* Local Point
-Zhi4 Bian1
-秩边 Moxibustion
-Applicable
-Sequential
-Limit
-UB-55 Local Point
-He2 Yang2
-合阳 Moxibustion
-Applicable
-Yang Union
-UB-56
-Cheng2 Jin1
-承筋
-Sinew Support
-UB-57*
-Cheng2 Shan1
-承山
-Mountain
-Support
-Moxibustion
-Applicable
-Moxibustion
-Applicable
-UB-58*
-Fei1 Yang2
-飞扬
-Taking Flight
-Luo Connecting Point
-Moxibustion
-Applicable
-UB-59 Xi Cleft of Yang Qiao
-Fu1 Yang2
-跗阳 Moxibustion
-Applicable
-Instep Yang
-UB-60* Jing River Point
-Kun1 Lun2 Fire Point
-昆仑
-Moxibustion
-Kunlun
-Applicable
-Mountains
-Contraindicated during
-pregnancy
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• 3 cun lateral to median sacral • Benefits lumbar region
-crest • Activates channel
-• Level with 2nd posterior sacral • Alleviates pain
-foramen • Regulates Lower Jiao
-Needling Method: • Benefits urination
-• Perpendicular 0.8-1.2 inch
-• 3 cun lateral to median sacral • Benefits lumbar region
-crest • Activates channel
-• Level with 4th posterior sacral • Alleviates pain
-foramen • Regulates urination
-Needling Method: • Treats hemorrhoids
-• Perpendicular 1.5-2.0 inch
-• 2 cun directly below UB-40
-• Between medial & lateral heads
-of gastrocnemius
-• On line joining UB-40 & UB-57
-Needling Method:
-• Perpendicular 0.7-1.0 inch
-• On line joining UB-40 & UB-57
-• Center of belly of gastrocnemius
-• 5 cun below UB-40
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• On posterior midline of leg
-• Between UB-40 & UB-60
-• In pointed depression formed
-below gastrocnemius muscle belly
-• When leg stretched or heel lifted
-Needling Method:
-• Perpendicular 0.8-1.2 inch
-• Activates channel
-• Alleviates pain
-• Stops uterine bleeding
-• Treats genital pain
-• Relaxes sinews
-• Activates channel
-• Alleviates pain
-• Benefits foot & heel
-• Relaxes sinews
-• Activates channel
-• Alleviates pain
-• Benefits calf & heel
-• Treats hemorrhoids
-• 7 cun directly above UB-60
-• On posterior border of fibula
-• 1 cun lateral & inferior to UB-57
-Needling Method:
-• Perpendicular 0.7-1.0 inch
-• Harmonizes upper & lower
-• Expels wind from tai yang
-channel
-• Treats hemorrhoids
-• Activates channel
-• Alleviates pain
-• 3 cun directly above UB-60
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Benefits lumbar region &
-legs
-• Activates channel
-• Alleviates pain
-• In depression between tip of
-external malleolus & Achilles
-tendon
-Needling Method:
-• Perpendicular 0.5-1.0 inch
-• Clears heat & lowers yang
-• Pacifies wind & leads down
-excess
-• Activates entire Bladder
-channel
-• Alleviates pain
-• Relaxes sinews
-• Strengthens lumbar spine
-• Promotes labor
-Indications/Notes
-• Borborygmus, abdominal distention
-• Pain in lower back
-• Anuria (failure of kidneys to produce urine)
-• Pain in lumbosacral region, muscular
-atrophy, motor impairment of lower
-extremities
-• Dysuria, constipation, hemorrhoids
-• Swelling around external genitalia
-• Sciatica, especially if pain radiates along
-posterior aspect of leg
-• Five Lin (Painful Urination) disorders
-• Low back pain
-• Pain & paralysis of lower extremities
-• Spasm of gastrocnemius
-• Hemorrhoids
-• Acute lower back pain
-• Low back pain
-• Gastrocnemius spasm
-• Main point for Hemorrhoids, any etiology
-• Constipation, beriberi
-• Main point for pain, swelling a/or cramping
-of calf muscle
-• Heel a/or foot pain from trauma or paralysis
-a/or neurological disorders
-• Headache, blurry vision, nasal obstruction
-• Epistaxis, back pain, hemorrhoids
-• Weakness of leg
-• Releases exterior for wind or wind-cold
-conditions, especially useful when
-accompanied w/ neck stiffness a/or occipital
-headache
-• Luo Connecting Point (to KD): useful for
-chronic low back pain, especially w/ weak
-lower limbs & KD deficiency
-• “Excess above w/ deficiency below”: Weak
-low back w/tight, stiff neck a/or low back
-pain w/weak lower limbs
-• Heavy sensation of head, headache
-• Low back pain, lateral ankle sprain
-• Redness & swelling of external malleolus
-• Paralysis of lower extremities
-• Acute pain a/or spasm of Bladder a/or Yang
-Qiao meridians
-• Headache, blurry vision, neck rigidity
-• Epistaxis (nose bleed)
-• Pain in shoulder, back & arm
-• Swelling & pain of heel
-• Difficult labor
-• Epilepsy
-• Main point for pain anywhere along spine
-(UB-40 may be used more for pain in middle
-of spine)
-• Main point for chronic low back pain, pain
-a/or numbness in lower limbs
-• Main point for headache and other excesses
-affecting head
-• Induces labor or promotes discharge of
-retained placenta
-8
+
+           Name  Association/Precautions  Location/Needling Method             Functions & Actions           Indications/Notes
+UB-53            Local Point                                                                                 � Borborygmus, abdominal distention
+Bao1 Huang1                               � 3 cun lateral to median sacral     � Benefits lumbar region      � Pain in lower back
+                 Moxibustion                                                                                 � Anuria (failure of kidneys to produce urine)
+                 Applicable                 crest                              � Activates channel
+                                          � Level with 2nd posterior sacral    � Alleviates pain             � Pain in lumbosacral region, muscular
+Bladder Huang    Local Point                                                   � Regulates Lower Jiao          atrophy, motor impairment of lower
+                                            foramen                            � Benefits urination            extremities
+UB-54*           Moxibustion              Needling Method:
+Zhi4 Bian1       Applicable                                                                                  � Dysuria, constipation, hemorrhoids
+                                          � Perpendicular 0.8-1.2 inch                                       � Swelling around external genitalia
+                                                                                                             � Sciatica, especially if pain radiates along
+                                          � 3 cun lateral to median sacral     � Benefits lumbar region
+Sequential                                                                                                     posterior aspect of leg
+Limit                                       crest                              � Activates channel           � Five Lin (Painful Urination) disorders
+                                          � Level with 4th posterior sacral    � Alleviates pain             � Low back pain
+                                                                               � Regulates urination         � Pain & paralysis of lower extremities
+                                            foramen                            � Treats hemorrhoids
+                                          Needling Method:                                                   � Spasm of gastrocnemius
+                                                                                                             � Hemorrhoids
+                                          � Perpendicular 1.5-2.0 inch                                       � Acute lower back pain
+
+UB-55            Local Point              � 2 cun directly below UB-40         � Activates channel           � Low back pain
+He2 Yang2                                 � Between medial & lateral heads     � Alleviates pain             � Gastrocnemius spasm
+                 Moxibustion                                                   � Stops uterine bleeding      � Main point for Hemorrhoids, any etiology
+                 Applicable                 of gastrocnemius                   � Treats genital pain         � Constipation, beriberi
+                                          � On line joining UB-40 & UB-57                                    � Main point for pain, swelling a/or cramping
+Yang Union                                Needling Method:                     � Relaxes sinews
+                                          � Perpendicular 0.7-1.0 inch         � Activates channel             of calf muscle
+UB-56            Local Point              � On line joining UB-40 & UB-57      � Alleviates pain             � Heel a/or foot pain from trauma or paralysis
+Cheng2 Jin1                               � Center of belly of gastrocnemius   � Benefits foot & heel
+                 Moxibustion              � 5 cun below UB-40                                                  a/or neurological disorders
+                 Applicable               Needling Method:                     � Relaxes sinews              � Headache, blurry vision, nasal obstruction
+                                          � Perpendicular 0.8-1.2 inch         � Activates channel           � Epistaxis, back pain, hemorrhoids
+Sinew Support    Local Point              � On posterior midline of leg        � Alleviates pain             � Weakness of leg
+                                          � Between UB-40 & UB-60              � Benefits calf & heel        � Releases exterior for wind or wind-cold
+UB-57*           Moxibustion              � In pointed depression formed       � Treats hemorrhoids
+Cheng2 Shan1     Applicable                                                                                    conditions, especially useful when
+                                            below gastrocnemius muscle belly                                   accompanied w/ neck stiffness a/or occipital
+                                          � When leg stretched or heel lifted                                  headache
+                                          Needling Method:                                                   � Luo Connecting Point (to KD): useful for
+Mountain                                  � Perpendicular 0.8-1.2 inch                                         chronic low back pain, especially w/ weak
+Support                                                                                                        lower limbs & KD deficiency
+                                                                                                             � "Excess above w/ deficiency below": Weak
+UB-58*           Luo Connecting Point     � 7 cun directly above UB-60         � Harmonizes upper & lower      low back w/tight, stiff neck a/or low back
+Fei1 Yang2                                � On posterior border of fibula      � Expels wind from tai yang     pain w/weak lower limbs
+                 Moxibustion              � 1 cun lateral & inferior to UB-57                                � Heavy sensation of head, headache
+                 Applicable               Needling Method:                       channel                     � Low back pain, lateral ankle sprain
+                                          � Perpendicular 0.7-1.0 inch         � Treats hemorrhoids          � Redness & swelling of external malleolus
+Taking Flight                                                                  � Activates channel           � Paralysis of lower extremities
+                                                                               � Alleviates pain             � Acute pain a/or spasm of Bladder a/or Yang
+                                                                                                               Qiao meridians
+UB-59            Xi Cleft of Yang Qiao    � 3 cun directly above UB-60         � Benefits lumbar region &    � Headache, blurry vision, neck rigidity
+Fu1 Yang2                                 Needling Method:                       legs                        � Epistaxis (nose bleed)
+                 Moxibustion              � Perpendicular 0.5-1.0 inch                                       � Pain in shoulder, back & arm
+                 Applicable                                                    � Activates channel           � Swelling & pain of heel
+                                                                               � Alleviates pain             � Difficult labor
+Instep Yang                                                                                                  � Epilepsy
+                                                                               � Clears heat & lowers yang   � Main point for pain anywhere along spine
+UB-60*           Jing River Point         � In depression between tip of       � Pacifies wind & leads down    (UB-40 may be used more for pain in middle
+Kun1 Lun2        Fire Point                 external malleolus & Achilles                                      of spine)
+                                            tendon                               excess                      � Main point for chronic low back pain, pain
+                 Moxibustion                                                   � Activates entire Bladder      a/or numbness in lower limbs
+                 Applicable               Needling Method:                                                   � Main point for headache and other excesses
+Kunlun                                    � Perpendicular 0.5-1.0 inch           channel                       affecting head
+Mountains                                                                      � Alleviates pain             � Induces labor or promotes discharge of
+                                                                               � Relaxes sinews                retained placenta
+                 Contraindicated during                                        � Strengthens lumbar spine
+                 pregnancy                                                     � Promotes labor
+
+Kimberly Chenoweth                                                                                           8
 
 ## p.9
 
-Name
-UB-61
-Pu2 Can1
-仆参
-Subservient
-Visitor
-UB-62*
-Shen Mai
-申脉
-Extending
-Vessel
-Association/Precautions
-Intersection Point
-• Urinary Bladder
-• Yang Qiao
-Moxibustion
-Applicable
-Yang Qiao (Motility)
-Master Point (w/ SI-3
-Du Mai Master Point)
-Moxibustion
-Applicable
-UB-63
-Jin1 Men2
-金门
-Metal Gate
-UB-64
-Jing1 Gu3
-京骨
-Capital Bone
-Xi Cleft Point
-Intersection Point
-• Urinary Bladder
-• Yang Wei
-Moxibustion
-Applicable
-Yuan Source Point
-Moxibustion
-Applicable
-UB-65
-Shu4 Gu3
-束骨
-Bundle Bone
-UB-66
-Zu2 Tong1 Gu3
-足通谷
-Valley Passage
-UB-67*
-Zhi4 Yin1
-至阴
-Reaching Yin
-Shu Stream Point
-Wood Point
-Sedation Point
-Moxibustion
-Applicable
-Ying Spring Point
-Water Point
-Moxibustion
-Applicable
-Jing Well Point
-Metal Point
-Tonification Point
-Exit Point
-Moxibustion
-Applicable
-Contraindicated during
-pregnancy, except to
-turn breach
-Kimberly Chenoweth
 URINARY BLADDER CHANNEL OF FOOT TAI YANG
-Location/Needling Method Functions & Actions
-• Posterior & inferior to external • Relaxes sinews
-malleolus, directly below UB-60 • Activates channel
-• Lateral to calcaneum • Alleviates pain
-• At junction of red & white skin
-Needling Method:
-• Perpendicular 0.3-0.5 inch
-• In depression directly below • Pacifies interior wind
-external malleolus • Expels exterior wind
-Needling Method: • Calms spirit
-• Perpendicular 0.3-0.5 inch • Treats epilepsy
-• Benefits head & eyes
-• Opens & regulates Yang
-Motility vessel
-• Activates channel
-• Alleviates pain
-• On lateral side of foot • Pacifies wind
-• Directly below anterior border of • Moderates acute
-external malleolus conditions
-• On lower border of cuboid bone • Relaxes sinews
-Needling Method: • Activates channel
-• Perpendicular 0.3-0.5 inch • Alleviates pain
-• Below tuberosity of 5th metatarsal • Clears head & eyes
-bone • Eliminates wind
-• At junction of red & white skin • Calms spirit
-Needling Method: • Relaxes sinews
-• Perpendicular 0.3-0.5 inch • Activates channel
-• Alleviates pain
-• Posterior to 5th • Clears head & eyes
-metatarsophalangeal joint • Clears heat
-• At junction of red & white skin • Dissipates swelling
-Needling Method: • Activates channel
-• Perpendicular 0.3-0.5 inch • Alleviates pain
-• Anterior to 5th • Clears head
-metatarsophalangeal joint • Descends Lung & Stomach
-• At junction of red & white skin Qi
-Needling Method:
-• Perpendicular 0.2-0.3 inch
-• On lateral side of small toe • Expels wind
-• About 0.1 cun from corner of nail • Clears head & eyes
-• Turns fetus
-Needling Method: • Facilitates labor
-Superficial 0.1 inch
-Indications/Notes
-• Muscular atrophy & weakness in lower
-extremities
-• Pain in heel
-• Epilepsy, mania, headache, dizziness
-• Insomnia, backache, aching legs
-• Combine with SI-3 for low back pain,
-difficulty walking & spinal problems. Also
-for wind-cold affecting Tai Yang channels:
-Stiff neck a/or shoulders, occipital headache
-• Combine with KD-6 for insomnia,
-nervousness (especially late at night)
-• Mania, epilepsy, infantile convulsion
-• Backache, pain in external malleolus
-• Motor impairment & pain in lower
-extremities
-• Headache, neck rigidity, epilepsy
-• Pain in lower back & thigh
-• Relationship to Heart & Spirit
-• Good distal point for palpitations, chest
-pain, irritability, mental confusion
-• Mania, headache, neck rigidity, blurry vision
-• Backache, pain in lower extremities
-• Headache, neck rigidity, blurry vision
-• Epistaxis, mania
-• Headache, nasal obstruction
-• Epistaxis, ophthalmalgia (eyeball pain)
-• Malposition of fetus, difficult labor
-• Retention of placenta after birth
-• Feverish sensation in sole
-9
+
+           Name  Association/Precautions  Location/Needling Method            Functions & Actions        Indications/Notes
+UB-61            Intersection Point                                                                      � Muscular atrophy & weakness in lower
+Pu2 Can1         � Urinary Bladder        � Posterior & inferior to external  � Relaxes sinews
+                 � Yang Qiao                                                                               extremities
+                                          malleolus, directly below UB-60 � Activates channel            � Pain in heel
+                 Moxibustion
+Subservient      Applicable               � Lateral to calcaneum              � Alleviates pain          � Epilepsy, mania, headache, dizziness
+Visitor          Yang Qiao (Motility)                                                                    � Insomnia, backache, aching legs
+                 Master Point (w/ SI-3    � At junction of red & white skin                              � Combine with SI-3 for low back pain,
+UB-62*           Du Mai Master Point)
+Shen Mai                                  Needling Method:                                                 difficulty walking & spinal problems. Also
+                 Moxibustion                                                                               for wind-cold affecting Tai Yang channels:
+                 Applicable               � Perpendicular 0.3-0.5 inch                                     Stiff neck a/or shoulders, occipital headache
+                                                                                                         � Combine with KD-6 for insomnia,
+Extending        Xi Cleft Point           � In depression directly below      � Pacifies interior wind     nervousness (especially late at night)
+Vessel           Intersection Point
+                 � Urinary Bladder          external malleolus                � Expels exterior wind     � Mania, epilepsy, infantile convulsion
+UB-63            � Yang Wei               Needling Method:                    � Calms spirit             � Backache, pain in external malleolus
+Jin1 Men2        Moxibustion              � Perpendicular 0.3-0.5 inch        � Treats epilepsy          � Motor impairment & pain in lower
+                 Applicable
+                 Yuan Source Point                                            � Benefits head & eyes       extremities
+
+Metal Gate       Moxibustion                                                  � Opens & regulates Yang   � Headache, neck rigidity, epilepsy
+                 Applicable                                                                              � Pain in lower back & thigh
+UB-64                                                                         Motility vessel            � Relationship to Heart & Spirit
+Jing1 Gu3        Shu Stream Point                                                                        � Good distal point for palpitations, chest
+                 Wood Point                                                   � Activates channel
+                 Sedation Point                                                                            pain, irritability, mental confusion
+                 Moxibustion                                                  � Alleviates pain
+Capital Bone     Applicable                                                                              � Mania, headache, neck rigidity, blurry vision
+                 Ying Spring Point        � On lateral side of foot           � Pacifies wind            � Backache, pain in lower extremities
+UB-65            Water Point
+Shu4 Gu3         Moxibustion              � Directly below anterior border of � Moderates acute          � Headache, neck rigidity, blurry vision
+                 Applicable                                                                              � Epistaxis, mania
+                                          external malleolus                  conditions
+                 Jing Well Point                                                                         � Headache, nasal obstruction
+Bundle Bone      Metal Point              � On lower border of cuboid bone � Relaxes sinews              � Epistaxis, ophthalmalgia (eyeball pain)
+                 Tonification Point                                                                      � Malposition of fetus, difficult labor
+UB-66            Exit Point               Needling Method:                    � Activates channel        � Retention of placenta after birth
+Zu2 Tong1 Gu3                                                                                            � Feverish sensation in sole
+                 Moxibustion              � Perpendicular 0.3-0.5 inch        � Alleviates pain
+                 Applicable
+                                          � Below tuberosity of 5th metatarsal � Clears head & eyes
+Valley Passage
+                                          bone                                � Eliminates wind
+UB-67*
+Zhi4 Yin1                                 � At junction of red & white skin   � Calms spirit
+                                          Needling Method:                    � Relaxes sinews
+                                          � Perpendicular 0.3-0.5 inch        � Activates channel
+
+Reaching Yin                              � Posterior to 5th                  � Alleviates pain
+                                                                              � Clears head & eyes
+
+                                          metatarsophalangeal joint           � Clears heat
+
+                                          � At junction of red & white skin   � Dissipates swelling
+                                          Needling Method:                    � Activates channel
+                                                                              � Alleviates pain
+                                          � Perpendicular 0.3-0.5 inch        � Clears head
+                                          � Anterior to 5th
+
+                                          metatarsophalangeal joint           � Descends Lung & Stomach
+
+                                          � At junction of red & white skin   Qi
+
+                                          Needling Method:
+
+                                          � Perpendicular 0.2-0.3 inch
+
+                                          � On lateral side of small toe      � Expels wind
+
+                                          � About 0.1 cun from corner of nail � Clears head & eyes
+
+                                          Needling Method:                    � Turns fetus
+                                          Superficial 0.1 inch                � Facilitates labor
+
+                 Contraindicated during
+                 pregnancy, except to
+                 turn breach
+
+Kimberly Chenoweth                                                                                       9
 
 ## p.10
 
-Kimberly Chenoweth
-10
+Kimberly Chenoweth  10
 
 ## p.11
 
-Kimberly Chenoweth
-11
+Kimberly Chenoweth  11
 
 ## p.12
 
-Kimberly Chenoweth
-12
+Kimberly Chenoweth  12
+
