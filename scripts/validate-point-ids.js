@@ -23,6 +23,13 @@ const FILES = [
   { rel: "data/auricular/gb93_index.json", get: (d) => d.points || [], family: "ear" },
   { rel: "data/auricular/embedded/auricular_points.json", get: (d) => d, family: "ear" },
   { rel: "data/acupoints/embedded/professional_points.json", get: (d) => d, family: "auto" },
+  /* extra_points.json was outside this list while it grew from 2 records to 72,
+   * so 70 extra points reached the repo with a `code` and no `id` at all and
+   * this validator still passed — it was only ever looking at 361.json for the
+   * `ex.` namespace. A file the enforcer does not read is a file with no rule.
+   * Clinical foreign keys reference `id` (D2), so those records cannot be
+   * linked to a case until they have one. */
+  { rel: "data/acupoints/extra_points.json", get: (d) => d.records || d.points || (Array.isArray(d) ? d : []), family: "ex" },
 ];
 
 let failures = 0;

@@ -1,3 +1,54 @@
+# 2026-08-06 Claude — 經外奇穴 72 筆全部缺 D2 的 `id`，驗證器讀不到那個檔
+
+- **`data/acupoints/extra_points.json` 的 72 筆紀錄一個 `id` 都沒有**，只有 `code`。D2 規定臨床外鍵參照 `id`，所以這 72 個穴位目前**無法被任何病歷連結**。
+- **為什麼沒人發現**：`validate-point-ids.js` 的 `FILES` 清單裡從來沒有 `extra_points.json`。它驗的是 361/tung/ear 那幾個檔，`ex` 命名空間只看到 `361.json` 裡的 **2 筆**（`ex.hn3`/`ex.hn5`）。那個檔從 2 筆長到 72 筆的整段期間，驗證器一路 PASS。**enforcer 讀不到的檔案 = 沒有規則的檔案。**
+- **已修（Claude 範圍）**：`validate-point-ids.js` 加入 `extra_points.json`，現在正確報 **72 failures**。
+- **已備妥給 Codex**：`scripts/add-extra-point-ids.js`（dry run 預設）。D2 的 id 是 code 的純函數（`EX-HN1` → `ex.hn1`），所以**沒有判斷成分**：72 筆全可推導、**0 衝突**，且 `ex.hn3`/`ex.hn5` 正確辨識為帳本已有 —— 反證推導規則與 D2 一致。只加不改，既有 id 不覆寫，`code` 不動。
+- **我沒有執行 `--write`**：憲法 §A `data/acupoints/**` 是 Codex 的路徑。請 Codex 跑 `--write` → `validate-point-ids.js` → `update-point-manifest.js --write`（帳本要補 **70** 個新 id）→ `build-data.js`。
+- Validation：`validate-point-ids` 72 failures（新暴露，非新損壞）· `build-data` PASS · `validate-acupoint-standard` PASS · `validate-herb-standard` PASS · `validate-formula-standard` PASS · `validate-content-junk` PASS · `validate-comparison-standard` PASS · `validate-pattern-registry` PASS · `validate-condition-standard` 631（基準未動）。
+- **下一步**：Codex 補 id 後，`ex` 命名空間會從 2 → 72，帳本 681 → 751。在那之前不要把經外奇穴接進病歷層。
+
+# 2026-08-06 Claude — D10 收斂完成 · D11 四套命名空間 · 證型評分與模板 · 8/7 派工包
+
+- **D10 已做完**(不是提案,是資料):`scripts/build-pattern-alias-map.js`(可重跑、決定性)+ `data/config/pattern_alias_map.json`。canon 140 筆 / 134 unique id / **6 個重複 id** → **33 筆對應到既有 `pattern.*`**、**71 筆待登記**(依被病症引用次數排序)、**30 筆方證/類方證排除**(`kind` 欄位不可靠,`桂枝湯類方` 被標成證候,改用名稱啟發式)。刻意**不自動產生英文 slug** —— 英文證型名是有來源的術語,不是模型可以生成的東西,由填充 agent 帶出處登記。**回報一個判斷題給 Ting**:待登記前兩名 `氣血不和證`(74×)與 `臟腑虛弱證`(74×)是 CloudTCM 的萬用桶,登記會產生兩個連到半個資料庫的巨型節點,不由 AI 決定。
+- **D11 LOCKED — 四套診斷命名空間,而且「命名空間就是實體型別」**。Ting 問「是四套 ID 嗎?」,答案是對的但有一個關鍵修正:她提的「pattern = 中醫」不成立,**中醫病名是 `tdis.*`,而且已經有 75 筆**(帶 `classical_source_hint`,150 筆病症早已用 `related_eastern_diseases` 連過去,70 個 unique id)。四套是 `cond.*` 西醫病名 150 ✅ / `tdis.*` 中醫病名 75 ✅ / `pattern.*` 證型 61+50 ✅ / **`sym.*` 症狀 0 筆未建**。病名與證型不能同一套的理由:辨證論治建立在一病多證、同證異病,合併就把多對多結構壓掉,而那個結構就是中醫的診斷邏輯。**症狀只有一套不分中西**(頭痛與 headache 是同一觀察的兩種語言;中醫特有觀察用 `tradition` 標籤,不開第二命名空間)。跨命名空間同名(月經過多/月經過少/痔瘡,3 筆)＝兩個實體,各留 id 互相連結。
+- **雲端中醫依 Ting 指示整合而非獨立**:`cloudtcm.*`(190 disease entries + 14 categories)是**匯入層不是命名空間**,永不可出現在關係欄位。精確頁 URL 併進 `sources`(**永不刪除**),**190/190 筆都有 `image_url`** —— 那是 Ting 說的「很精緻的具象化理解」,之後在卡片上做 `cloudtcm_ref` 區塊。連帶修正 C7 的訊息:`exact_source_url` 裡就是雲端中醫連結,「折進 sources」是**搬移不是刪除**,先搬再刪。
+- **依 D11 修正 C3**:`entity_type` 不再是逐筆判斷題,而是照命名空間推導並檢查一致性(`cond.*` → `biomedical_condition`)。150 筆可一次改完,**從拓關的工作量裡拿掉一整批判斷**。
+- **證型資料評分(Ting 要求「自己做幾分」)**:骨架 6/10,臨床可用卡 2.5/10。好的部分不要動 —— 主症/舌/脈/治則 50/50 全有內容,`treatment_principle` **50 筆全不重複**,是逐筆寫的不是套模板,**比 2026-07 中藥那次好很多**。壞的是四件事:**來源 0/50**、`key_signs_en` **0/50**、`typical_points`/`typical_formulas` **0/50(欄位存在但全空陣列,證型連不到任何治療)**、安全與鑑別 0/50。`pattern_registry` 61 筆全部 `source_type: derived_from_usage` —— 從病症引用反推,沒有臨床權威,只能當索引。**結論是補不是重寫。**
+- 新增 `docs/PATTERN_CARD_TEMPLATE.md` + `scripts/validate-pattern-standard.js`(P1–P9 + N1/N2)。基準線:**50 筆 · 0 筆乾淨 · 250 缺陷**(P1 缺 pattern_family 50 · P4 無來源 50 · P5 雙語 50 · P9 舊 tongue/pulse 欄位 100;N1 無鑑別 50 · N2 無治療連結 50)。
+- **小卡/大卡分層**寫進兩份模板(Ting 要求「中醫西醫都來一份,大卡小卡」)。設計規則:**小卡欄位是大卡的子集,絕不為小卡新增專用欄位** —— 否則兩份 schema 必然分岔。小卡一定要顯示 red flag 數量與最高 urgency(安全不能只藏在大卡)。大卡段落順序把**安全排在治療之前**,對應 BLUEPRINT 臨床北極星。另加西醫/中醫欄位差異表與三條易錯規則(中醫病名卡不要變成證型卡;西醫病名卡不要用「腎虛痰濕」取代病理生理;**中醫病名更需要 red flags** —— 眩暈/頭痛/胸痺底下藏著中風、蜘蛛膜下腔出血、心肌梗塞)。
+- 新增 `docs/DISPATCH_2026-08-07.md`:三線可直接複製的派工單(拓關病症 + 拓關證型 + Codex 奇穴 + Codex 方劑)、8/07→9/05 週排程、Ting 派工前要做的兩件事。**Codex 的 8/7 提醒**:local commits `fd0d3a3`/`826f3a4` 未 push、兩份 handoff 未 commit、`extra_points.json` 那次是 +2403/**−521**(要自己 diff 確認 −521 是重構不是內容流失)、8/05–08/06 新增的規則他要照著繼續(憲法 §A 檔案所有權:他只能碰 `data/acupoints/**`)。
+- 另新增 `skills/acuting-dispatch/`(把 validator 的 worklist 轉成七段完整派工單,batch id 一律取自 worklist 不准用猜的)。
+- Validation:`build-data.js` PASS · `validate-condition-standard` 631 defects(基準)· `validate-pattern-standard` 250 defects(基準)· `validate-content-junk` PASS · alias map 可重跑且輸出穩定。
+
+# 2026-08-05 Claude — `acuting-condition-fill` skill(拓關本週可用)+ Skill Suite 評估
+
+- 新增 `skills/acuting-condition-fill/`(SKILL.md + references/entity-and-redflags.md + agents/openai.yaml),照既有 `acuting-extra-point-refinement` 的三檔結構,含 openai.yaml 轉接讓 Codex 也讀得到。`AGENTS.md` 加入兩個入口(AI_CONSTITUTION、condition/pattern workflow)。
+- **Skill 的黃金規則寫在 SKILL.md 開頭:這個 skill 只定義流程,格式的正本在 `docs/CONDITION_CARD_TEMPLATE.md`,兩者衝突以模板為準。** 理由:skill 裡複述欄位表 = 兩份 schema 定義 = 必然分岔,AI 照哪份都有理。
+- Skill 內容:檔案所有權(只准 `data/pathology/**` + `data/config/*pattern*`,其餘四個 data 資料夾明列禁止)· **D10 為 blocking prerequisite**(`pattern_alias_map.json` 不存在時那就是第一個任務)· 來源階層(NCBAHM scope → `curriculum/conditions/` 52 份 Tier-1 課件 → CloudTCM/AD 精確頁)· 修復順序 C4→C3→C7→C5 · 婦科 25 條垂直切片先於量產 · 批次 10–15 筆 · 「validator PASS ≠ 沒有損失,自己 diff」· handoff 格式要求逐碼數字。
+- reference 檔專攻兩個最容易做錯的判斷:**entity_type 判準**(看定義來源不是看有沒有中文;症狀不是病名時回報而非硬塞;不要用 category 自動推導)與 **red flags 補法**(五欄結構、五級 urgency、找不到時寫成明確 source_gap 而非留空或編造、四條禁令包含「不要從別的病症搬紅旗」與「不要用『若症狀持續請就醫』這種樣板句」)。
+- **Skill Suite 評估**(`docs/SKILL_SUITE_ASSESSMENT.md`):Ting 提的 15 個專屬 skill + 5 個通用市集 skill,結論是**做 3 個**。關鍵判斷:(a) Skill 是打包好的提示不是強制力,規則類做成 skill 是降級——「JSON Validator skill」比 27 個會 exit 1 的 validator 弱;(b) `.claude/skills/` 只有 Claude Code 讀得到,Codex 與拓關不讀,跨三工具的一致性只能靠 validator+CI 與可貼進任何 prompt 的憲法;(c) Task Observer = 既有 `--worklist` + `missing_report.json`,Claude Mem = 既有 repo 文件(還多了版控與跨工具),Database Architect / Card Generator / Refactor Guardian 都已存在。UI UX Pro Max 牴觸 9/01 UI 凍結;Literature Monitor 是產品不是 skill 且會每天產生沒空讀的東西;★★★★★ 證據星等明確否決(GRADE 有方法論,星等是感覺,標錯的證據等級比沒標更危險)。
+- 同時指出兩份清單上都沒有的三個真實瓶頸:**CI gate**(`.github/` 完全不存在,唯一跨工具強制力)、**`acuting-dispatch` 派工單產生器**(Ting 每週重複最多次的手工動作)、**RV1 加速**(唯一 AI 動不了的 bar,九月會更擠)。
+
+# 2026-08-05 Claude — 憲法 + 病症/證型量尺 + 錨定 9/5 進診所的排程
+
+- Ting 給了硬期限:**9/5 進診所(病例登入必須可用)、9/24 開學**,並要求先修高層架構、讓所有 AI 在同一認知下作業以免 merge 危機。拓關開始做 conditions/patterns,之後是藥理、頭皮穴/耳穴。
+- **查到必須在填充衝刺前修的架構問題(D10,已 LOCKED)**:證型有**兩套不相容的 id 命名空間** —— `pattern_registry.json` 61 筆 + `pattern_library.json` 50 筆用 `pattern.<english_slug>`(48 筆重疊),但 `data/config/tcm_pattern_canon.json` 140 筆(134 unique,6 個重複 id)用 **`pat.氣血不和`**(中文字進 id),**registry ∩ canon = 0**。而 150 筆病症上同時掛著 `related_patterns`(445 連結、48 unique、**全部解析得到**)與 `tcm_patterns`(728 個**內嵌 blob、無 id、全部解析不到**,是原始抓取)。現在開填 = 每條連結在兩套命名空間之間擲骰子;之後收斂 = 動到每筆病症的全庫遷移。規則:單一命名空間 `pattern.*`、`pat.*` 不刪不改 id 而是建 `pattern_alias_map.json`、canon 檔降級為匯入暫存、方證(25)不併入證候(115)。
+- **新增 `scripts/validate-condition-standard.js`(量尺先於量產)** + `docs/CONDITION_CARD_TEMPLATE.md`。實測基準線:**150 筆、0 筆乾淨、631 個缺陷** —— C3 entity_type 缺 150(西醫病名/中醫病名從未分類)、C5 `_zh` 有內容但 `_en` 空 300(etiology 與 western_pathology 在 150/150 都只有中文)、**C4 完全沒有 red flags 95 筆(安全缺口)**、C7 來源欄位漂移 85(`exact_source_url`/`source_urls`/`source_links` 三個欄位做同一件事)、C9 1、N1 未提升 blob 66 筆。修復順序:C4 安全 → C3 分類 → C7 合併 → C5 補英文。
+- **新增 `docs/AI_CONSTITUTION.md`** —— 一頁,可整段貼進派工 prompt。核心是 **§A 檔案所有權表**(防 merge 的唯一機制:一個檔案同一時間一個主人),四條線刻意沒有共用檔案:L1 病例上線(Claude:`app.js`/`js`/`dist`/`clinical_cases`)· L2 病症證型(拓關:`data/pathology`)· L3 穴位(Codex:`data/acupoints`)· L4 方劑中藥(Codex:`data/formulas`/`data/herbs`)。`scripts/validate-*.js` 只有 Claude 能改 —— 量尺只能有一個主人。刻意**沒有**採用外部文件建議的 11 份治理文件:repo 已有 10+ 份規則文件,再加只會更沒人讀。
+- **新增 `docs/ROADMAP_TO_CLINIC_2026-09-05.md`**。查核 app.js 的結論是好消息:**病例登入的基礎設施大部分已建好** —— CS4 自動完成 chip picker(`app.js:5061`,SOAP link 欄位不用手打 id,DECISIONS 說這是 CP 值最高的 UX)、CS1 匯出/匯入 + 7 天備份橫幅、CS6 分段對話框、RV1、LL1/LL2、CG6/CG9 都在。**9/5 的阻塞不是功能,是三件沒人做過的事**:`dist/` 從未 build、網站從未實際上線、Ting 從未完整走過一次 dry run,而診所是用手機、病人之間只有幾分鐘。八月 L1 的工作因此改成「部署 + 手機驗證 + dry run 修補」,並訂 **9/01 起 UI 凍結**。
+- 小瑕疵記錄:`build-data.js` 的摘要行報 `conditions: 12`(讀 `pathology/conditions.json` 的種子檔),實際 canon 是 150 筆並且有正常載入(`conditionCanon`)——測到錯的陣列,與 7/22 記錄的同一類錯誤,會誤導每一次狀態回報,待修。
+
+# 2026-08-05 Claude — ChatGPT 三份外部文件消化分診(`docs/EXTERNAL_REVIEW_2026-08-02.md`)
+
+- Ting 提供四個檔案,其中兩份 Vision/Governance 內容完全相同(重複下載),實際三份:Condition Card Framework、Vision/Roadmap/AI Governance、Parallel Clinical Curriculum。按 A(立刻做)/ B(形狀要改)/ C(現在不要做)/ D(不可以做)分診,不照抄。
+- **Grade D 先擋**:Vision §9.2 建議的 ID 格式 `herb:huang-qi` / `acupoint:st-36` 直接違反 DECISIONS D1/D2/D3(已鎖)+ `point_id_manifest.json` 681 id 帳本;`data/notes/` 讓個人筆記進 git,違反 D7/D4;資料夾大搬家在三 agent 平行期是 merge 地獄。已寫成 dispatch 否決清單第 4–7 條。
+- **Grade A 立刻做**:(G1) 一頁 `AI_CONSTITUTION.md` 而非 ChatGPT 建議的 11 份治理文件——repo 已有 10+ 份規則文件,再加只會更沒人讀,規則要進 code;(G2) **`.github/` 完全不存在,沒有任何 CI** 是目前最大單點失效,PR 不過 validator 就該擋;(G3) JSON Schema + `additionalProperties:false` 堵住 agent 發明欄位;(A2) Curriculum 的四大支柱正好是 **D8 鎖了但從未建立**的 `domain` 詞彙表的值;(A3) Collection 1 的 16 條北美核心取代「150 張病症都要做」;(A5) 查核發現**證型散在三個檔案**(pattern_registry 61 / pattern_library 50 / tcm_pattern_canon 140)——這是真實存在的 schema drift,病症垂直鏈開工前必須收斂。
+- **Grade B 形狀要改**:三實體分離的資料層**大半已存在**(condition_crosswalk 150 筆、clinical schema 已三分、pattern canon 140 筆)——ChatGPT 是看 UI 推理的,沒看到資料層,要補的只是 `entity_type` 標記;relationship 物件化採納但用決定性 id `rel.<source>__<type>__<target>`(流水號 `rel-001` 在三 agent 平行時會撞號),v1 只開 6 種 type;Evidence 用既有 LL4 的 `evidence` 欄位,整套 Evidence Card 是他們自己排的 2028 工作;垂直切片候選從 Migraine 改為**痛經**(gyn 25 條是唯一已填批次,ABORM 最接近,SOAP 已有 cycle 欄位)。
+- **Grade C 不做**:Condition 文件的三欄大卡 UI **與它自己 Vision 文件 §15 Priority 4 的 UI freeze 條款互相矛盾**,也牴觸 BLUEPRINT 定案與視覺 4% 權重——採納 Preview/Detail 分離的概念,拒絕三欄版面;Evidence Card / living literature 是 Level 5–6;外部學校與第二學位不進工程排期。
+- 現況實測(取代 7/29 數字):穴位 769 records,標準經穴 **361/361 template-grade**,活線已換成經外奇穴 **23/72**;中藥 329 卡 / grade 93 / **verified 37**(RV1 真的在動);方劑 grade **2/201** 仍是最大阻塞;新發現 `curriculum/conditions/` 有 **52 份課堂 handout** 未進版控,病症層現在有 Tier-1 料可做。
+- 八月排期改寫:重心從量產轉為裝護欄 + 清方劑債,`docs/SCHEDULE_2026-08.md` 頂部加了取代標記。
+
 # 2026-08-02 Codex — EX-HN22 扁桃體 + EX-CA1 子宮 + 經外奇穴工作包
 - 完成 EX-HN22、EX-CA1；經外奇穴進度更新為 23/72 嚴格完成、49/72 仍在 worklist。
 - 扁桃體在 Board／課件／eLotus／AD 均無精確體針專條，故完整保留舊卡下頜角定位與朝舌根1.0~1.5寸，同時明確標為未驗證的深部頸咽高風險 legacy 值；沒有把其他經穴的扁桃體炎主治移植過來。
