@@ -9,6 +9,11 @@
 > times — **do not reinvent it**. Architecture changes go through Claude;
 > direction changes come only from Ting.
 
+> ## EXTRA-POINT REFINEMENT WORKFLOW
+> For any `data/acupoints/extra_points.json` audit, correction, or enrichment task,
+> read and follow `skills/acuting-extra-point-refinement/SKILL.md`. When Ting supplies
+> school/library book pages, also follow that skill's `references/print-book-intake.md`.
+
 > ## AI ROLES 2026-07-24 — READ docs/AI_ROLES.md FIRST
 > Antigravity = generation. Codex = QA/validation. Claude = command/architecture
 > + escalation. Ting = final in-app review. Full standing prompts + copy-paste

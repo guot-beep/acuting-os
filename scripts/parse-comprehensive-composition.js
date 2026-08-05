@@ -106,7 +106,20 @@ const AMBIGUOUS = new Set(['da ji']);
 const DISTINCT_PREPARATION = {
   'zhi gan cao': 'herb.zhi_gan_cao',
   'pao jiang': 'herb.pao_jiang',
+  // 生石膏 clears heat and drains fire taken internally; 煅石膏 astringes damp
+  // and closes sores, and is applied topically. Not interchangeable.
+  'duan shi gao': 'herb.duan_shi_gao',
 };
+
+/* Already distinct in the library, listed so nobody "tidies" them into one:
+ *   赤芍 / 白芍   — herb.chi_shao cools blood and dispels stasis;
+ *                   herb.bai_shao nourishes blood and softens the Liver
+ *   生地黃 / 熟地黃 — herb.sheng_di_huang cools blood;
+ *                   herb.shu_di_huang tonifies blood and essence
+ *   生薑 / 乾薑    — herb.sheng_jiang releases the exterior;
+ *                   herb.gan_jiang rescues devastated Yang
+ * Ting's rule: not every processing method earns its own card, but the common
+ * ones where the clinical action genuinely changes do. */
 
 function loadHerbIndex() {
   const db = JSON.parse(fs.readFileSync(HERBS, 'utf8'));

@@ -100,6 +100,7 @@ function adapt361Record(record) {
   const prefix = channelCodeFromPointCode(record.code);
   const meta = channelPrefixMeta[prefix] || { meridian: "Standard Channel / 標準經穴", region: "待補", x: 180, y: 320 };
   const rawCautions = [
+    ...(Array.isArray(record.contraindications) ? record.contraindications : (typeof record.contraindications === "string" ? record.contraindications.split("\n") : [])),
     ...(Array.isArray(record.cautions_zh) ? record.cautions_zh : (typeof record.cautions_zh === "string" ? record.cautions_zh.split("\n") : [])),
     ...(Array.isArray(record.cautions) ? record.cautions : (typeof record.cautions === "string" ? record.cautions.split("\n") : [])),
     ...(Array.isArray(record.danger) ? record.danger : (typeof record.danger === "string" ? record.danger.split("\n") : []))
@@ -1763,7 +1764,6 @@ function getDomainProgress() {
   const filled = (v) => Array.isArray(v) ? v.length > 0 : (v != null && String(v).trim() !== "");
   const madeCount = (arr, keys) => arr.filter((r) => keys.some((k) => filled(r[k]))).length;
   const scCount = (arr) => arr.filter((r) => (r.review_status || "") === "source_checked").length;
-  const hasFieldSource = (r, key) => r.field_sources && r.field_sources[key];
 
   const herbs = recs("herbs");
   const formulas = recs("formulas");
@@ -1793,32 +1793,55 @@ function getDomainProgress() {
     verifiedDenominator: herbLocalCards,
     verifiedNote: herbCoverage.appendix_a_total ? `本地卡 ${herbLocalCards} 張；source_checked 仍按本地卡計` : ""
   });
+
   const standardPoints = points.filter(isStandardChannelPoint);
-  const standardTemplate = standardPoints.filter((p) => p.fieldSources?.functions_zh).length;
+  const acupointLayer = qualityLayers.acupoints || {};
+  const formulaLayer = qualityLayers.formulas || {};
+  const conditionLayer = qualityLayers.conditions || {};
+  const comparisonLayer = qualityLayers.comparisons || {};
+  const standardTemplate = Number(acupointLayer.template_grade_standard_channel)
+    || standardPoints.filter((p) => p.fieldSources?.functions_zh).length;
+  const acupointTotal = Number(acupointLayer.total_records) || points.length;
+  const acupointFramework = Number(acupointLayer.framework) || points.length;
+  const acupointMade = Number(acupointLayer.made)
+    || points.filter((p) => filled(p.functions) || filled(p.location) || filled(p.locationEn)).length;
+  const acupointSourceChecked = Number(acupointLayer.verified_source_checked)
+    || points.filter((p) => (p.reviewStatus || "") === "source_checked").length;
+  const standardTotal = Number(acupointLayer.standard_channel_total) || standardPoints.length;
+  const formulaMade = Number(formulaLayer.made)
+    || formulas.filter((r) => filled(r.composition)).length
+    || madeCount(formulas, ["composition", "actions_zh", "pattern_indications_zh"]);
+  const formulaGrade = Number(formulaLayer.template_grade)
+    || formulas.filter((r) => r.field_sources && r.field_sources.actions_zh).length
+    || formulas.filter((r) => r.card_grade === "template").length;
+  const conditionGrade = Number(conditionLayer.template_grade)
+    || conditions.filter((r) => r.card_grade === "template").length;
+  const comparisonGrade = Number(comparisonLayer.template_grade)
+    || comparisons.filter((r) => r.card_grade === "template").length;
 
   return [
-    row("穴位 Acupoints", "point", points.length, points.length,
-      points.filter((p) => filled(p.functions) || filled(p.location) || filled(p.locationEn)).length,
+    row("穴位 Acupoints", "point", acupointTotal, acupointFramework,
+      acupointMade,
       standardTemplate,
-      points.filter((p) => (p.reviewStatus || "") === "source_checked").length, {
-        totalNote: `全部可查點 ${points.length}；標準經穴 ${standardPoints.length}`,
-        frameworkNote: `${points.length}/${points.length} cards exist`,
-        gradeDenominator: standardPoints.length,
-        gradeNote: `${standardTemplate}/${standardPoints.length} standard-channel template-grade`,
-        verifiedNote: "source_checked across all point records"
+      acupointSourceChecked, {
+        totalNote: acupointLayer.total_note || `全部可查點 ${points.length}；標準經穴 ${standardPoints.length}`,
+        frameworkNote: `${acupointFramework}/${acupointTotal} cards exist`,
+        gradeDenominator: standardTotal,
+        gradeNote: `${standardTemplate}/${standardTotal} standard-channel template-grade`,
+        verifiedNote: acupointLayer.verified_note || "source_checked across all point records"
       }),
     herbProgressRow,
     row("方劑 Formulas", "formula", formulas.length, formulas.length,
-      madeCount(formulas, ["composition", "actions_zh", "pattern_indications_zh"]),
-      formulas.filter((r) => r.card_grade === "template").length,
+      formulaMade,
+      formulaGrade,
       scCount(formulas)),
     row("病症 Conditions", "condition", conditions.length, conditions.length,
       madeCount(conditions, ["tcm_patterns", "summary_zh", "etiology_zh"]),
-      conditions.filter((r) => r.card_grade === "template").length,
+      conditionGrade,
       scCount(conditions)),
     row("辨證鑑別 Comparisons", "comparison", comparisons.length, comparisons.length,
       madeCount(comparisons, ["rows", "records", "discriminators", "cells"]),
-      comparisons.filter((r) => r.card_grade === "template").length,
+      comparisonGrade,
       scCount(comparisons)),
     row("病例 Cases", "case", clinicalCases.length, clinicalCases.length, clinicalCases.length, 0, 0)
   ];
@@ -2371,7 +2394,7 @@ function pointMatchesSystemBranch(point) {
   const loc = [point.location, point.locationEn, point.region, ...(point.anatomy || []).flatMap(a => [a.zh, a.en])].join(" ").toUpperCase();
 
   if (selectedSystem === "standard14") {
-    return code.startsWith(selectedSystemBranch) || m.includes(selectedSystemBranch);
+    return channelCodeFromPointCode(code) === selectedSystemBranch;
   }
   if (selectedSystem === "tung") {
     return pointMatchesTungZone(point, selectedSystemBranch);
@@ -4135,9 +4158,17 @@ function heroSubtitle(point) {
 }
 
 function americanDragonPointUrl(point) {
+  const visualLinks = normalizeVisualLinks(point.visualLinks || point.visual_links || []);
+  const directVisual = visualLinks.find((v) => v && v.url && /americandragon\.com\/Points\//i.test(v.url));
+  if (directVisual) return directVisual.url;
+
+  const sources = Array.isArray(point.sources) ? point.sources : [];
+  const directSource = sources.find((s) => typeof s === "string" && /americandragon\.com\/Points\//i.test(s));
+  if (directSource) return directSource;
+
   const code = String(point.code || "").trim().toUpperCase();
   const match = code.match(/^([A-Z]+)(\d+)$/);
-  if (!match) return "https://www.americandragon.com/";
+  if (!match) return "";
 
   const prefix = match[1];
   const num = match[2];
@@ -4189,7 +4220,7 @@ function externalPointLinks(point) {
     return [
       { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: chinesePointReference(point), kind: "chinese" },
       { label: contentMode === "english" ? "Visual Diagram" : "耳穴圖源", url: primary, kind: "english" }
-    ];
+    ].filter((link) => /^https?:\/\//.test(link.url));
   }
 
   // 1. CloudTCM (中文)
@@ -4207,14 +4238,14 @@ function externalPointLinks(point) {
       { label: "CloudTCM", url: chinese, kind: "chinese" },
       { label: "American Dragon (AD)", url: adUrl, kind: "english" },
       { label: "eLotus CORE", url: eLotusUrl, kind: "english" }
-    ];
+    ].filter((link) => /^https?:\/\//.test(link.url));
   }
 
   return [
     { label: "雲端中醫", url: chinese, kind: "chinese" },
     { label: "American Dragon (AD)", url: adUrl, kind: "english" },
     { label: "eLotus 權威圖解", url: eLotusUrl, kind: "english" }
-  ];
+  ].filter((link) => /^https?:\/\//.test(link.url));
 }
 
 function primaryFunction(point) {

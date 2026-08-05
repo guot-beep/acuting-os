@@ -27,10 +27,13 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 
-// Expected layer totals (recorded 2026-07-12, Phase 2 landing):
-//   361 standard + 2 extra points (EX-HN3, EX-HN5) + 29 auricular embedded
-//   + 13 GB93 index (1 code overlaps auricular embedded) + 277 Tung = 681.
-const EXPECTED_TOTAL = 681;
+// Expected layer totals (updated 2026-08-02 after extra/scalp layers were
+// intentionally exposed in runtime):
+//   361 standard + 72 extra-point layer (includes EX-HN3/EX-HN5 already
+//   present in the retired embedded extras, deduped by code) + 29 auricular
+//   embedded + 18 scalp + 13 GB93 index (1 code overlaps auricular embedded)
+//   + 277 Tung = 769.
+const EXPECTED_TOTAL = 769;
 const EXPECTED_STANDARD = 361;
 const EXPECTED_TUNG = 277;
 const EXPECTED_GB93_INDEX = 13;

@@ -1,4 +1,101 @@
+# 2026-08-02 Codex — EX-HN22 扁桃體 + EX-CA1 子宮 + 經外奇穴工作包
+- 完成 EX-HN22、EX-CA1；經外奇穴進度更新為 23/72 嚴格完成、49/72 仍在 worklist。
+- 扁桃體在 Board／課件／eLotus／AD 均無精確體針專條，故完整保留舊卡下頜角定位與朝舌根1.0~1.5寸，同時明確標為未驗證的深部頸咽高風險 legacy 值；沒有把其他經穴的扁桃體炎主治移植過來。
+- 子宮整合 Board、課件 M-CA-18、eLotus EX-CA1 與 AD M-CA-18：補齊0.5~2.5寸各源技法、AD 子宮脫垂提拉固定法、八項功效、完整主治與四組配穴。課件孕期禁針優先保留；AD「安胎」功效與空白禁忌欄不視為孕期安全許可。
+- 新增 `skills/acuting-extra-point-refinement/` 可重複工作包及 `AGENTS.md` 入口，固定四來源、逐欄 provenance、精確 link、安全衝突、驗證／commit／handoff 規則；另設書本來源 intake，以書名、版次、出版社／年份、頁碼與逐欄引用作第五來源，不提交未授權掃描。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS；skill fallback 結構驗證 PASS。官方 quick validator 因 bundled Python 缺 `PyYAML` 未執行，未額外安裝套件。
+- Commits：`fd0d3a3`、`826f3a4`。
+
+# 2026-08-02 Codex — EX-HN20 新設 + EX-HN21 散笑嚴格四來源卡
+- 完成 EX-HN20、EX-HN21；經外奇穴進度更新為 21/72 嚴格完成、51/72 仍在 worklist。
+- 新設整合 eLotus 現行 EX-HN23 精確頁：C3-C4水平／後正中線旁1.5寸、直刺0.3~0.8寸、灸5~15分鐘、別名、完整功效主治及許多文獻視為安眠同穴之說；本庫 EX-HN20 與舊卡 C3／胸鎖乳突肌後緣、0.5~0.8寸版本分源保留。
+- 散笑在 Board、現有課件、eLotus 與 AD 拼音索引均無精確條目；完整模板保留舊卡鼻唇溝定位、功效主治與斜刺0.3~0.5寸，但逐欄標示未驗證，並揭露 eLotus EX-HN21 是上廉泉，不能按碼移植。
+- 兩卡均補齊中英成對標籤、解剖／針灸／配穴／考點／來源欄；上頸與面部深層解剖、停止規則、孕婦、兒童及高風險缺口沒有猜填。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`4d4b366`。
+
+# 2026-08-02 Codex — EX-HN18 牽正 + EX-HN19 夾承漿嚴格四來源卡
+- 完成 EX-HN18、EX-HN19；經外奇穴進度更新為 19/72 嚴格完成、53/72 仍在 worklist。
+- 牽正保留本庫 EX-HN18 與 eLotus EX-HN20／AD N-HN-20 的映射差異，補齊朝前斜刺0.5~1寸、完整口舌潰瘍／腮腺炎／口眼歪斜主治及三組 AD 配穴；舊卡 ST4-ST6-LI4 另列。
+- 夾承漿採 Ting 更正的 AD `Points/Jiachengjiang.html`，整合 CV24／ST4／頦孔定位、五個0.2~1.5寸技法版本、完整功效主治與兩組配穴。頦孔進針與下唇觸電樣麻感只作逐源記錄，不合併成一般操作指令；解剖界線、停止規則與特殊族群缺口明示。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`19efa59`。
+
+# 2026-08-02 Codex — EX-HN16 安眠 + EX-HN17 上明嚴格四來源卡
+- 完成 EX-HN16、EX-HN17；經外奇穴進度更新為 17/72 嚴格完成、55/72 仍在 worklist，泛用 CloudTCM 連結降至19。
+- 安眠逐源保留 eLotus 0.5~0.8寸、AD 三個0.5~1.5寸版本與舊卡0.8~1.2寸；AD 的 PC6＋SP6 與舊卡 HT7＋SP6 分開，不製造假共識。並揭露 AD 將 SJ17 文字誤標 Sifeng、實際連結／標準穴名為 Yifeng。
+- 上明保留本庫不可變 EX-HN17，但明示 AD 為 N-HN-4 Shangming、eLotus 的 EX-HN17 則是 Bailao；未把百勞的頸後定位、0.3~0.5寸技法或可灸移植到上明。補入 AD 精確頁、三項主治與兩組分開配穴，舊卡內容全數保留並標來源缺口。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`daf377a`。
+
+# 2026-08-02 Codex — EX-HN14 翳明 + EX-HN15 頸百勞嚴格四來源卡
+- 完成 EX-HN14、EX-HN15；經外奇穴進度更新為 15/72 嚴格完成、57/72 仍在 worklist。
+- 翳明並列 eLotus 0.5~0.8寸、AD 1~1.5寸、舊卡0.5~1寸，不製造假共識；AD 同側頭部電感僅作感覺描述，不改成追求電擊感的指令。補精確 AD 頁、完整主治及三組配穴。
+- 頸百勞整合補肺陰／舒筋通絡與 AD 化痰散結止咳平喘、完整虛勞／肺系／頸項主治、多個0.3~1寸版本及可灸。
+- 揭露 Board Bailao、eLotus EX-HN15 Jingbailao／EX-HN17 Bailao 同定位疑義、AD M-HN-30 Bailao 的命名差異；AD 配肘尖100壯只作來源記錄，因缺艾炷大小與皮膚安全流程不轉成一般指令。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`e710836`。
+
+# 2026-08-02 Codex — EX-HN12 金津 + EX-HN13 玉液嚴格四來源卡
+- 完成 EX-HN12、EX-HN13；經外奇穴進度更新為 13/72 嚴格完成、59/72 仍在 worklist。
+- 整合編碼：eLotus／本庫分列 EX-HN12 金津左、EX-HN13 玉液右；AD 合併為 M-HN-20 Jinjin-Yuye。補齊 AD 口舌咽喉、消渴、胃腸、晨吐／妊娠嘔吐與劇烈噁心等完整主治。
+- 揭露 AD 重複定位句疑似把右側也誤寫 Jinjin；左右以 AD 第一條及兩張 eLotus 精確頁交叉校正。
+- 點刺出血未補造針具、深度、滴數、重複次數、消毒或止血參數；妊娠嘔吐主治不當成孕期安全背書。玉液舊卡禁灸保留但標明 eLotus／AD 未證實。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`d8ba546`。
+
+# 2026-08-02 Codex — EX-HN10 聚泉 + EX-HN11 海泉嚴格四來源卡
+- 完成 EX-HN10、EX-HN11；經外奇穴進度更新為 11/72 嚴格完成、61/72 仍在 worklist。
+- 聚泉補齊 eLotus 的舌背中點、0.1~0.2寸或點刺出血、舌運動／味覺／慢性咳喘／消渴架構；歷史隔薑黃豆大艾炷3~7壯保留「現今少用」限定，不改寫成一般灸法。
+- 海泉補齊舌下繫帶正中、金津玉液之間、點刺出血、清熱生津利舌、完整舌病／面癱／消渴／胃腸主治、Sea Spring 與鬼封別名。
+- AD 拼音索引均無 Juquan／Haiquan，因此只記來源缺口；未猜口腔點刺的針具、深度、滴數、止血及孕婦／兒童規則。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`1eaad9d`。
+
+# 2026-08-02 Codex — EX-HN8 上迎香 + EX-HN9 內迎香嚴格四來源卡
+- 完成 EX-HN8、EX-HN9 的 Board Outline／課件／eLotus／American Dragon 四層查核與中英成對模板；經外奇穴進度更新為 9/72 嚴格完成、63/72 仍在 worklist。
+- 上迎香保留 EX-HN8 Shangyingxiang 與課件／AD M-HN-14 Bitong 的編碼差異；課件0.2~0.3寸、eLotus 0.3~0.5寸、AD 0.3~0.8寸的方向與深度逐源並列，不製造假共識。補入 eLotus／AD 全部鼻病、眼病、面部主治架構、AD 配穴及精確 `Points/Bitong.html`。
+- 內迎香揭露 eLotus「LI20 內側鼻翼」與舊卡「鼻孔內鼻翼軟骨／鼻甲交界黏膜」的非等同定位衝突；保留 eLotus 僅點刺出血、禁灸，但不猜針具、深度、滴數、止血或高風險族群規則。
+- American Dragon 拼音索引未找到 Neiyingxiang，故只記錄已查索引與來源缺口，不新增假詳情連結。
+- Validation：build-data、extra-point audit、runtime data、interactions、point IDs、content junk、app.js syntax、diff check 全數 PASS。
+- Commit：`67e7df7`。
+
+# 2026-08-02 Codex - Quality snapshot refresh + TE filter fix
+- Scanned current status: Acupoints 361/361 standard-channel template-grade; Herbs 329 local cards, NCBAHM Appendix A 304/304 closed, 93 template-grade, 37 source_checked; Formulas 201 total, 153 with composition, 2 template-grade; Conditions 150; Comparisons 41.
+- Updated `data/audits/missing_report.json` so Quality distinguishes framework / made / grade / verified and no longer shows stale 327/79 herb numbers.
+- Updated `app.js` Quality progress logic to read audit-layer counts and use formula composition count for Made.
+- Fixed Acupoint 14-channel branch filtering: TE now matches exact point-code prefix only, preventing LI points from appearing because "Large InTEstine" contains `TE`.
+- Fixed the acupoint runtime adapter / validation mismatch: `validate-data.js` now matches the current 769-point runtime layer and confirms contraindication / safety lines survive adaptation.
+- Added `scripts/validate-extra-point-standard.js` for repeatable 經外奇穴 audit: 72 records, 60 with issues, 16 missing numeric depth, 0 missing source URL; this backlog is now recorded in Quality data.
+- Validation: build-data, app.js syntax, interaction audit, acupoint-standard, comparison-standard, herb-standard, formula-standard, validate-data, and extra-point audit PASS.
+# 2026-08-02 Codex — Tian Hua Fen + renderer guard
+- Reworked `herb.tian_hua_fen` to template-grade draft from Chenoweth curriculum + NCBAHM 2026 CH Appendix A + American Dragon + CloudTCM.
+- Separated actions, indications, contraindications, cautions, modern pharmacology, dose notes, Exam Pearl, and field-level sources.
+- Added `js/knowledge.js` `asList()` guards so Herbs / Formulas / Conditions do not all fail when one record has a string where an array is expected.
+- Validation: build-data, herb-standard Clear Heat worklist, content-junk, interaction audit, JS syntax, and diff-check PASS.
+- Manual check needed: Ctrl+F5 then open `#ws/herb`, `#ws/formula`, `#ws/condition` and confirm cards render.
 # AcuTing OS Project Log
+
+## 2026-08-01 Codex — 安宮牛黃丸 template-grade 修整 + 雄黃／硃砂安全連結卡
+
+- 依最新來源規則重修 `formula.an_gong_niu_huang_wan`：中藥／方劑只用 NCBAHM/隊列線索、課件、American Dragon、CloudTCM；本方未找到 American Dragon 精確方劑頁，因此不列 AD formula source。
+- 安宮牛黃丸補齊 actions、pattern indications、contraindications、cautions、exam pearl、三寶鑑別、方劑家族、加減、舌脈、現代應用／藥理、administration 與逐欄 `field_sources`。CloudTCM 精確頁改為 `https://cloudtcm.com/formula/4361`；課件為 `curriculum/formulas/Herbal Formulations Comprehensive.docx.md`。
+- 因方劑 template-grade 後 validator F12 會要求 composition 的每味藥存在於中藥 canon，新增 `herb.xiong_huang`、`herb.zhu_sha` 兩張「安全連結卡」：以 American Dragon + CloudTCM 精確頁補性味、歸經、劑量、禁忌、毒性安全與安宮／紫雪丹關聯；不假裝已做完整課件精修。
+- `data/herbs/herb_canon_shortlist.json` local herb cards 327 → 329；`build-data.js` 後 runtime 顯示 herbs 329、formulas 201。
+- Validation：`build-data.js` PASS；`validate-formula-standard.js --worklist --category "開竅劑 / Open the Orifices" --all` PASS，安宮牛黃丸已退出 worklist，該分類剩紫雪丹、至寶丹、蘇合香丸；`validate-herb-standard.js --worklist --category "驅蟲藥 / Expel Parasites" --all` PASS structural；`validate-content-junk.js` PASS；`validate-interactions.js` PASS；`git diff --check` PASS。
+- Known existing validation failures：`validate-data.js` 仍 FAIL 於穴位 runtime safety lines/defaultPoints total；`validate-encoding.js` 仍 FAIL 於既有 CloudTCM import mojibake、`diagram_urls_zh` URL 欄位誤報與既有資料。這些不是本次安宮／雄黃／硃砂改動新增；本次 target records 已做 mojibake 快檢為 clean。
+
+## 2026-08-01 Codex — 接手後實測 Quality 進度，修正穴位 Grade 數字
+
+- Pull/接手檢查：`main` 與 `origin/main` 同步；tracked 工作樹乾淨。只看到一批 `curriculum/conditions/` untracked 課件，視為 Ting 新增來源資料，本次未碰。
+- 重新實測 Antigravity/Claude handoff 宣稱：`validate-acupoint-standard.js --worklist --all` PASS，**361/361 standard-channel points template-grade，0 worklist defects**；`validate-interactions.js` PASS。
+- 中藥現況：`validate-herb-standard.js` PASS 結構檢查，327 records；但 bilingual tags / contraindications / modern_functions 等內容品質缺口仍存在，不能視為 327 張都已精修完成。
+- 方劑現況：`validate-formula-standard.js` FAIL，3 個 blocking defects：`formula.an_gong_niu_huang_wan`、`formula.zi_xue_dan`、`formula.fang_feng_tong_sheng_san` 的君藥數量超過 validator 允許範圍。方劑仍是下一個明顯阻塞點。
+- 更新 `data/audits/missing_report.json` 與 `docs/SCHEDULE_2026-08.md`，把穴位 Grade 從舊的 97/361 改成實測 361/361；Verified 仍維持 1，因為那是 Ting/RV1 人工源審核，不由 AI validator 自動推進。
+- 依 Claude 指示新增 `docs/ANTIGRAVITY_VALIDATION_PROTOCOL.md`：Antigravity 批量輸出要做 content-loss audit，不只看 validator；精修時中藥/方劑走 NCBAHM outline → 課件 → American Dragon → CloudTCM，針灸走 NCBAHM outline → 課件，課件不足再補 eLotus / American Dragon。
+- 修正 3 首方 F7：安宮牛黃丸、紫雪丹、防風通聖散只調整 `composition[].role_zh/en`，保留組成與劑量，並在 `composition_source_note_zh` 記錄角色正規化依據。重跑 `validate-formula-standard.js` 後 PASS，0 blocking defects。
+- 依 Claude 指示新增 `docs/ANTIGRAVITY_VALIDATION_PROTOCOL.md`：Antigravity 批量輸出要做 content-loss audit，不只看 validator；精修時以 NCBAHM outline → 課件 → CloudTCM / American Dragon / eLotus 的來源階層補 Exam Core 與結構化欄位。
+- 修正 3 首方 F7：安宮牛黃丸、紫雪丹、防風通聖散只調整 `composition[].role_zh/en`，保留組成與劑量，並在 `composition_source_note_zh` 記錄角色正規化依據。重跑 `validate-formula-standard.js` 後 PASS，0 blocking defects。
 
 ## 2026-07-29 Claude — Aug→Dec schedule written for parallel AI dispatch (`docs/SCHEDULE_2026-08.md`)
 
@@ -2627,3 +2724,69 @@ Current repo state as of this log:
 - Added the rule that every herb, formula or point named by the exam outline/course materials must have a record even when no template exists.
 - Validation: build-data, herb-standard, content-junk, pair delta and diff checks PASS.
 - Existing full-repo blockers remain: validate-data 751/681 count mismatch and legacy encoding findings outside this batch.
+# 2026-08-02 Codex - Clear Heat Drain Fire remaining 4-card parity pass
+- Reworked `herb.xia_ku_cao`, `herb.dan_zhu_ye`, `herb.he_ye`, and `herb.lian_zi_xin` to template-grade draft quality.
+- Separated actions vs indications, added bilingual labels, board focus, Exam Pearl, clinical-use synthesis, dose/source notes, part used, contraindications/cautions, modern notes, and field-level sources.
+- Added formal `herb_pairs.json` records for Xia Ku Cao eye/nodule pairs, Dan Zhu Ye Heart/Small Intestine Heat pairs, He Ye raw/charred preparation pairs, and Lian Zi Xin Heart-Fire/Heart-Kidney pairs.
+- Fixed Xia Ku Cao legacy render fields so unsupported old boilerplate actions no longer appear in generated data.
+- Validation: build-data, Clear Heat herb worklist, content-junk, interaction audit, JS syntax, focused mojibake scan, and diff-check PASS; known unrelated validate-data / validate-encoding failures remain.
+# 2026-08-02 Codex — Extra Points EX-HN18–22 source and safety pass
+- Refined EX-HN18 牽正, EX-HN19 夾承漿, EX-HN20 新設, EX-HN21 散笑, and EX-HN22 扁桃體 without deleting existing indications, combinations, or legacy technique text.
+- Added paired bilingual search tags and field-level provenance; replaced generic CloudTCM attribution with exact eLotus/American Dragon pages where an exact page was verifiably available.
+- Preserved and explicitly disclosed nomenclature conflicts: eLotus numbers 牽正 as EX-HN20 and 新設 as EX-HN23, while this database retains its immutable legacy display codes EX-HN18 and EX-HN20.
+- EX-HN21/22 exact professional pages were not located; their technique/safety text remains draft and now carries an explicit source-gap warning. EX-HN22 tongue-root needling is flagged high-risk and unvalidated.
+- Validation PASS: extra-point audit 50 → 45 issue records, build-data, validate-data (769 runtime), validate-interactions, JSON parse, and git diff check.
+# 2026-08-02 Codex — Extra Points EX-CA3/4 and measurable-method validator pass
+- Refined EX-CA3 三角灸 and EX-CA4 胃上 with paired bilingual tags, exact field sources, safety/source-conflict notes, and immutable-code disclosures.
+- EX-CA3 is now explicitly moxibustion-only; no needle depth was invented. Its 5–7 cone legacy method and differing classical fourteen-cone record remain source-labelled.
+- EX-CA4 retains the legacy location/technique while recording eLotus/AD conflicts in lateral distance, direction, depth, and numbering for licensed review.
+- Updated the extra-point validator to accept measurable moxibustion and flag generic CloudTCM directory links; measurable-method gaps are now 0/72, while 20 generic-source records are honestly reported.
+- Validation PASS: build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, JSON parse, and diff check.
+# 2026-08-02 Codex — Correct EX-HN19 source buttons and deepen American Dragon content
+- Replaced the broken American Dragon fallback for 夾承漿 with Ting's verified direct page: `https://www.americandragon.com/Points/Jiachengjiang.html`.
+- External point buttons now prefer exact American Dragon URLs stored on the record and omit empty/unverified CloudTCM buttons instead of linking an extra point to a homepage or blank target.
+- Added American Dragon's mental-foramen landmark, source-labelled needling variants, indications, pairings, M-HN-18 nomenclature difference, and bilingual safety context without deleting the legacy 0.3–0.5-cun value.
+- No exact CloudTCM Jiachengjiang page was located in the direct-name checks, so the card explicitly records that source gap and does not claim a CloudTCM detail source.
+- Validation PASS: build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, app.js syntax, JSON parse, and diff check.
+# 2026-08-02 Codex — Systematize EX-HN19 functions from eLotus and American Dragon
+- Reworked the 夾承漿 Functions section into four aligned bilingual rows: 祛風 / Eliminates Wind; 通經活絡 / Activates the Channel; 行氣活血 / Activates Qi and Blood; 止痛 / Alleviates Pain.
+- Kept 解痙 in the indication-derived tag and facial-spasm indication rather than presenting it as a core Action explicitly listed by either source; the card's evidence note now explains this Action-versus-Indication distinction.
+- Added controlled 行氣 / Move Qi and 活血 / Invigorate Blood tags while preserving all existing clinical indications, safety notes, and pairings.
+- Extended the extra-point validator to flag mismatched `functionsZhList` / `functionsEnList` pairs when structured function rows are present.
+- Validation PASS: exact-source HTTP re-checks, four-row function-render behavior test, build-data, extra-point audit, validate-data (769 runtime), validate-interactions, validate-point-ids, content-junk, JSON parse, and diff check.
+# 2026-08-02 Codex — Restart 72 extra-point audit and complete EX-HN1 Sishencong
+- Reset extra-point completion to Ting's strict four-source contract: NCBAHM Board Outline, course curriculum, eLotus, and American Dragon pinyin-index lookup, plus paired bilingual card layers and live exact-link checks.
+- EX-HN1 四神聰 is the first full-contract card: Board Appendix A scope, curriculum p.12 content, exact eLotus page, exact AD index/page, systematic functions, complete AD indications, source-variant needling, moxa, safety/source gaps, bilingual tags, pairings, identities, exam fields, aliases, and field provenance.
+- Verified WHO's proposed international nomenclature: extra points use `EX` plus region (`HN`, `CA`, `B`, `UE`, `LE`); Sishencong is retained as `EX-HN1`, while curriculum/AD `M-HN-1` is stored as a source-specific alternate code.
+
+# 2026-08-02 Codex — Complete EX-HN2 Dangyang and EX-HN3 Yintang
+
+- Rebuilt 當陽 and 印堂 under the same strict four-source card contract as 四神聰; strict-template and four-source-complete count advanced from 1/72 to 3/72, leaving 69/72 on the worklist.
+- EX-HN2 當陽: NCBAHM Appendix A and current course material have no entry; eLotus is the available exact content page; American Dragon's pinyin index and exact-site search do not list Dangyang. The card records this gap instead of inventing an AD detail URL.
+- Preserved Dangyang's legacy Clears Heat, Relieves pain, nasal-congestion, and no-direct-moxa statements, but marked them as unverified or conflicting with eLotus's general "moxibustion applicable" statement.
+- EX-HN3 印堂: integrated Board scope, course p.8, exact eLotus, and exact American Dragon `Yintang.html`; separated the shared 0.3-0.5-cun method from AD's additional 0.5-1-cun directed variants.
+- Preserved the legacy bleeding-method and GV/Du-incorporation notes as pending source-specific verification; AD's pregnancy indication is explicitly not treated as pregnancy safety clearance.
+- Added bilingual action/indication tags, identity/exam fields, aliases, combinations, moxa, anatomy source gaps, cautions, exact links, and field-level provenance for both cards.
+- Commit: `a607e2e` (`Complete Dangyang and Yintang cards`).
+- Validation: build-data, extra-point audit, validate-data, interaction audit, point-ID validation, content-junk validation, app.js syntax, runtime card/link assertions, and `git diff --check` all PASS.
+
+# 2026-08-02 Codex — Complete EX-HN4 Yuyao and EX-HN5 Taiyang
+
+- Completed 魚腰 and 太陽 under the strict Board + course + eLotus + American Dragon contract; extra-point audit advanced from 3/72 to 5/72 complete, leaving 67/72 on the worklist.
+- Both are listed in NCBAHM Appendix A and course p.9. Exact eLotus and AD pinyin pages were read and stored; source code differences remain explicit: Yuyao EX-HN4 vs M-HN-6, Taiyang EX-HN5 vs M-HN-9.
+- Yuyao now preserves the 0.3-0.5-cun baseline separately from 0.5-1-cun eyebrow-parallel / BL2 / TE23 / GB14 through-needling variants, with AD's supraorbital-notch/nerve note and the course's sensitivity warning.
+- Taiyang now preserves the 0.3-0.5-cun or prick-to-bleed baseline separately from course/AD 0.5-3-cun variants; the course's avoid-vein warning and AD's danger note are visible without converting them into invented depth rules.
+- Legacy Yuyao bloodletting/moxa cautions and Taiyang Clears-brain/hemostasis content remain visible with explicit source status rather than being silently deleted.
+- Commit: `9dd21e5` (`Complete Yuyao and Taiyang cards`).
+- Validation: build-data, extra-point audit, validate-data, interaction audit, point-ID validation, content-junk validation, app.js syntax, runtime link/function assertions, and `git diff --check` all PASS.
+
+# 2026-08-02 Codex — Complete EX-HN6 Erjian and EX-HN7 Qiuhou
+
+- Completed 耳尖 and 球後 under the strict source contract; audit advanced from 5/72 to 7/72 complete, leaving 65/72 on the worklist.
+- Erjian: Board-listed, no dedicated course entry, exact eLotus/AD pages. Correctly recorded that both pages allow moxa and AD specifies 3-5 cones, directly conflicting with the legacy moxa prohibition. Legacy 3-5 drops, hypertension/hordeolum/conjunctivitis, and detoxification/BP actions remain visible but unverified by this pass.
+- Qiuhou: not Board-listed and no course entry; exact eLotus/AD pages supply the high-risk orbital technique. Added no-manipulation, cranial-depth, practitioner-experience, and hematoma-prevention cautions.
+- Corrected the unsafe legacy wording from pressing the eyeball after withdrawal to firm cotton-ball pressure over the needle site; retained the 1 vs 1-2 minute source-duration difference.
+- Commit: `7a34d97` (`Complete Erjian and Qiuhou cards`).
+- Validation: full build/data/interaction/ID/content checks PASS; first custom runtime assertion used the wrong capitalization and was rerun with the actual string, then PASS.
+- Validator baseline is intentionally now 1/72 strict-template complete and 1/72 four-source-audit complete; 71 records return to the worklist rather than inheriting the earlier narrow 48/72 issue count.
+- Validation PASS: live source/link checks, four-row functions render, exact hero-link behavior, build-data, extra audit, validate-data (769 runtime), interactions, point IDs, content-junk, app syntax, JSON parse, and diff check.
