@@ -6220,11 +6220,26 @@ function renderChannelOverviewCard(ch) {
               </div>
             ` : ''}
 
+            ${ch.luo_channel_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #8a2be2; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #e6d7ff; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #4b0082; margin-bottom: 0.4rem;">🔗 絡脈循行與病變 (Luo-Connecting Vessel)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.luo_channel_zh)}</pre>
+                ${ch.luo_channel_en ? `<div style="font-size: 0.82rem; color: #4b0082; line-height: 1.5; font-style: italic;">${escapeHtml(ch.luo_channel_en)}</div>` : ''}
+              </div>
+            ` : ''}
+
             ${ch.muscle_channel_zh ? `
               <div style="background: #ffffff; border-left: 4px solid #4682b4; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #d4e3f0; border-left-width: 4px;">
                 <div style="font-size: 0.98rem; font-weight: 800; color: #1c4966; margin-bottom: 0.4rem;">💪 經筋循行與病候 (Muscle Channel / Jing Jin)</div>
                 <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.muscle_channel_zh)}</pre>
                 ${ch.muscle_channel_en ? `<div style="font-size: 0.82rem; color: #2f4f4f; line-height: 1.5; font-style: italic;">${escapeHtml(ch.muscle_channel_en)}</div>` : ''}
+              </div>
+            ` : ''}
+
+            ${ch.dermatome_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #d2691e; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #f9ebdc; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #8b4513; margin-bottom: 0.4rem;">🛡️ 皮部與六經之闔 (Dermatome / Yangming He-Fei)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0;">${escapeHtml(ch.dermatome_zh)}</pre>
               </div>
             ` : ''}
           </div>
