@@ -147,6 +147,14 @@ CREATE TABLE IF NOT EXISTS soap_notes (
   subjective_medication_supplement_update TEXT,
   subjective_red_flags_screen TEXT,
   objective_observation TEXT,
+  -- localStorage soapNote.vitals (added to the UI 2026-07-03 at Ting's request,
+  -- index.html: "BP 120/80、HR 72、身高/體重、體溫"). It existed in the running app
+  -- for a month with no column to migrate into. FREE TEXT on purpose: this is the
+  -- additive alignment, not the structured measurement layer — see
+  -- docs/PROPOSAL_A_CLINICAL_MEASUREMENT_LAYER.md. Retyping this to a structured
+  -- form is a D12 breaking change after 2026-09-01, so if it is going to become
+  -- measurement.* rows, that decision has to land before then.
+  objective_vitals TEXT,
   objective_tongue_zh TEXT,
   objective_tongue_en TEXT,
   objective_pulse_zh TEXT,
@@ -165,6 +173,13 @@ CREATE TABLE IF NOT EXISTS soap_notes (
   plan_acupuncture_points TEXT,
   plan_needling_notes TEXT,
   plan_moxa_e_stim_notes TEXT,
+  -- localStorage soapNote.modalities (same 2026-07-03 batch, index.html:
+  -- "艾灸 / 電針 / 拔罐 / 刮痧 / 推拿"). Deliberately NOT folded into
+  -- plan_moxa_e_stim_notes above: that column covers moxa and e-stim only, so
+  -- 拔罐, 刮痧 and 推拿 had nowhere to land. Kept as free text rather than a
+  -- visit_modalities junction — a junction is a real table with its own
+  -- vocabulary, and nothing has been recorded yet to say which values recur.
+  plan_modalities TEXT,
   plan_formula_herb_notes TEXT,
   plan_western_medication_context TEXT,
   plan_patient_instructions TEXT,
