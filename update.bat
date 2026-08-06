@@ -47,63 +47,82 @@ if /i not "!CURBR!"=="main" (
     echo.
 )
 
-REM --- 2) 換到 main（此時工作區已乾淨，不會再被擋）---
-echo [2/4] 切換到 main...
-git checkout main
+REM --- 2) 抓 GitHub 最新（只抓，不改任何檔案）---
+REM 這台電腦現在有兩個工作資料夾共用同一個 repo：
+REM   C:\Projects\acupuncture-point-app  ←  Claude 用（claude/... 分支）
+REM   C:\Projects\acuting-antigravity    ←  Antigravity 用（main）
+REM git 規定同一條分支同時只能被一個資料夾 checkout，所以舊版的
+REM 「切換到 main」在 Claude 這邊必定失敗（main 被另一邊佔用）。
+REM 新做法：完全不切換分支。把 main 的最新合併「進來」，再把成果推「回去」。
+echo [2/4] 從 GitHub 抓最新...
+git fetch origin
 if errorlevel 1 (
-    echo [X] 切換到 main 失敗。請把這個畫面截圖給 Claude。
+    echo [X] 抓取失敗（可能是網路），等一下再雙擊跑一次就好。
     pause
     exit /b 1
 )
 echo.
 
-REM --- 3) 拉 GitHub 最新（合併，不覆蓋）---
-echo [3/4] 從 GitHub 拉最新...
-git pull origin main --no-edit
+REM --- 3) 把 main 的最新合併進目前分支（合併，不覆蓋）---
+echo [3/4] 把 main 的最新合併進 !CURBR!...
+git merge --no-edit origin/main
 if errorlevel 1 (
-    echo.
-    echo [!] 拉取時發生衝突 —— 已安全停下，沒有覆蓋任何東西。
-    echo     你的改動已經 commit 保住了，很安全。
-    echo     請「不要自己 reset」，把這個畫面截圖給 Claude 幫你合併。
     git merge --abort >nul 2>&1
     echo.
+    echo [!] 合併有衝突 —— 已安全停下，沒有覆蓋任何東西。
+    echo     你的改動已經 commit 而且備份到 GitHub 了，一點都不會少。
+    echo     最常見的原因：兩個 AI 改到同一個檔案的同一段。
+    echo     請「不要自己 reset」，把這個畫面截圖給 Claude 幫你合併。
+    echo.
     pause
     exit /b 1
 )
 echo.
 
-REM --- 3b) 剛剛不在 main 的話，把那個分支的工作併回 main ---
-REM 否則你在別的分支做的東西會留在原地，更新完看起來像「東西不見了」。
-if /i not "!CURBR!"=="main" (
-    echo [3b] 把分支 !CURBR! 還沒進 main 的工作合併進來...
-    git merge --no-edit "!CURBR!"
-    if errorlevel 1 (
-        REM 衝突「不是」失敗，不能在這裡結束。最常見的原因是這個分支已經被
-        REM squash 合併進 main 了：squash 會把整個分支壓成一顆新 commit，原本
-        REM 那些 commit 的編號不會出現在 main，git 認不出「已經合過」，再 merge
-        REM 一次就是同一份內容自己撞自己。舊版在這裡 exit /b 1，於是第 4 步的
-        REM push 永遠跑不到，看起來像同步壞掉，其實 main 早就是最新的了。
-        git merge --abort >nul 2>&1
-        echo.
-        echo [!] 合併有衝突 —— 已安全取消，main 沒有被改到。
-        echo     你的工作完整留在分支 !CURBR! 上，一點都沒少，
-        echo     而且剛剛已經備份到 GitHub 了。
-        echo     最常見的原因：這個分支之前已經被 squash 合併進 main 了，
-        echo     也就是「東西早就在 main 裡」，不需要再合一次。
-        echo     底下會繼續完成同步。如果你覺得真的少了東西，
-        echo     再把這個畫面截圖給 Claude —— 不要自己 reset。
-        echo.
-    )
-    echo.
-)
-
 REM --- 4) 推回 GitHub ---
-echo [4/4] 推回 GitHub...
-git push origin main
-if errorlevel 1 (
-    echo [X] 推送失敗（可能是網路），等一下再雙擊跑一次就好。
-    pause
-    exit /b 1
+if /i "!CURBR!"=="main" (
+    echo [4/4] 推回 GitHub...
+    git push origin main
+    if errorlevel 1 (
+        echo [X] 推送失敗：可能是網路，或另一個 AI 剛好也推了新東西。
+        echo     再雙擊跑一次就好 —— 它會先把對方的東西合進來再推。
+        pause
+        exit /b 1
+    )
+) else (
+    REM 目前分支的成果「落地」到 main：直接推 HEAD 到遠端 main，
+    REM 全程不需要在本機 checkout main，所以不會再撞到另一個資料夾。
+    echo [4/4] 把 !CURBR! 的成果推上 GitHub 的 main...
+    git push origin HEAD:main
+    if errorlevel 1 (
+        echo [X] 推送失敗：可能是網路，或另一個 AI 剛好也推了新東西。
+        echo     再雙擊跑一次就好 —— 它會先把對方的東西合進來再推。
+        pause
+        exit /b 1
+    )
+    REM 把剛剛的合併結果也更新到分支的雲端備份（失敗不擋流程）。
+    git push origin "!CURBR!" >nul 2>&1
+
+    REM --- 4b) 順手讓「佔著 main 的那個資料夾」快轉到最新（做不到就跳過）---
+    REM 只用 --ff-only 快轉：要嘛乾淨地前進，要嘛什麼都不動，絕不覆蓋。
+    set "WTPATH="
+    set "MAINWT="
+    for /f "tokens=1,* delims= " %%a in ('git worktree list --porcelain') do (
+        if "%%a"=="worktree" set "WTPATH=%%b"
+        if "%%a"=="branch" if "%%b"=="refs/heads/main" set "MAINWT=!WTPATH!"
+    )
+    if defined MAINWT (
+        echo [4b] 更新另一個資料夾（!MAINWT!）的 main...
+        git -C "!MAINWT!" merge --ff-only origin/main >nul 2>&1
+        if errorlevel 1 (
+            echo      那邊有還沒收尾的工作，先跳過 —— 等那邊自己跑 update 就會同步。
+        ) else (
+            echo      完成。
+        )
+    ) else (
+        REM main 沒被任何資料夾 checkout 時，直接快轉本機的 main 書籤。
+        git fetch origin main:main >nul 2>&1
+    )
 )
 
 echo.
