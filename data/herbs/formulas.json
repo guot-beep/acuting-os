@@ -99,7 +99,7 @@
       "name_en": "Gui Zhi Tang",
       "pinyin": "Gui Zhi Tang",
       "category_id": "formula_category.release_exterior",
-      "category_en": "Formulas that Release the Exterior - Warm, Acrid & Harmonize Ying and Wei",
+      "category_en": "Formulas that Release the Exterior - Warm, Acrid",
       "study_tags": [
         "uri",
         "sweating_pattern",
@@ -122,92 +122,115 @@
       "review_status": "draft",
       "public_safe": false,
       "source_urls": [
-        "https://cloudtcm.com/formula/2",
-        "https://www.sunten.com.tw/",
-        "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com/formula/8",
+        "https://www.americandragon.com/HerbFormulas/GuiZhiTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
       "composition": [
         {
           "herb_id": "herb.gui_zhi",
+          "herb_zh": "桂枝",
           "name_zh": "桂枝",
+          "herb_en": "Cinnamon Twig",
           "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
           "pinyin_toned": "Guì Zhī",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "君",
           "role_en": "Chief",
-          "role_reason_zh": "辛溫解肌發表、溫通衛陽——透達表邪",
-          "role_reason_en": "Acrid and warm to release muscle layer and warm Wei yang - driving out exterior pathogens"
+          "role_reason_zh": "辛溫解肌發表，溫通衛陽",
+          "in_formula_zh": "辛溫解肌發表，溫通衛陽"
         },
         {
           "herb_id": "herb.bai_shao",
+          "herb_zh": "白芍",
           "name_zh": "白芍",
+          "herb_en": "White Peony Root",
           "name_en": "White Peony Root",
+          "pinyin": "Bai Shao",
           "pinyin_toned": "Bái Sháo",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "臣",
           "role_en": "Deputy",
-          "role_reason_zh": "酸苦微寒、酸甘化陰、和營斂陰——與桂枝相須為用，一發一斂、調和營衛",
-          "role_reason_en": "Sour, bitter, slightly cold; restrains ying and nourishes blood - pairs 1:1 with Gui Zhi to balance sweating and astringence"
+          "role_reason_zh": "酸苦微寒，斂陰和營，益陰固表——與桂枝相須調和營衛",
+          "in_formula_zh": "酸苦微寒，斂陰和營，益陰固表——與桂枝相須調和營衛"
         },
         {
           "herb_id": "herb.sheng_jiang",
+          "herb_zh": "生薑",
           "name_zh": "生薑",
+          "herb_en": "Fresh Ginger",
           "name_en": "Fresh Ginger",
+          "pinyin": "Sheng Jiang",
           "pinyin_toned": "Shēng Jiāng",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "佐",
           "role_en": "Assistant",
-          "role_reason_zh": "辛溫解表、溫胃止嘔——助桂枝解肌，兼和胃氣",
-          "role_reason_en": "Assists Gui Zhi in releasing exterior, warms Stomach to stop nausea"
+          "role_reason_zh": "辛溫助桂枝解表，溫胃止嘔",
+          "in_formula_zh": "辛溫助桂枝解表，溫胃止嘔"
         },
         {
-          "herb_id": "herb.da_zao",
+          "herb_id": "herb.da_zhao",
+          "herb_zh": "大棗",
           "name_zh": "大棗",
-          "name_en": "Jujube / Red Date",
+          "herb_en": "Jujube Date",
+          "name_en": "Jujube Date",
+          "pinyin": "Da Zhao",
           "pinyin_toned": "Dà Zǎo",
-          "dose_g": "12",
+          "dose_g": "6",
+          "decoction_reference_g": "6g",
           "role_zh": "佐",
           "role_en": "Assistant",
-          "role_reason_zh": "甘溫益氣、補脾養血——助白芍和營，兼補中州",
-          "role_reason_en": "Sweet and warm to tonify qi and blood - assists Bai Shao in nourishing ying and middle burner"
+          "role_reason_zh": "甘溫益氣養血，助白芍和營",
+          "in_formula_zh": "甘溫益氣養血，助白芍和營"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
+          "herb_zh": "炙甘草",
           "name_zh": "炙甘草",
+          "herb_en": "Honey-fried Licorice",
           "name_en": "Honey-fried Licorice",
+          "pinyin": "Zhi Gan Cao",
           "pinyin_toned": "Zhì Gān Cǎo",
           "dose_g": "6",
+          "decoction_reference_g": "6g",
           "role_zh": "使",
           "role_en": "Envoy",
-          "role_reason_zh": "甘溫調和諸藥——合桂枝辛甘化陽，合白芍酸甘化陰",
-          "role_reason_en": "Harmonizes all herbs; combines with Gui Zhi for acrid-sweet yang, combines with Bai Shao for sour-sweet yin"
+          "role_reason_zh": "甘平調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰",
+          "in_formula_zh": "甘平調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰"
         }
       ],
       "actions_en": [
-        "Releases muscle layer and exterior",
-        "Harmonizes Ying and Wei"
+        "Releases muscle layer and dispels exterior",
+        "Harmonizes Ying and Wei levels"
       ],
       "actions_zh": [
         "解肌發表",
         "調和營衛"
       ],
       "modifications_en": [
-        "Add Ge Gen for stiff neck/upper back pattern context",
-        "Add Hou Po and Xing Ren when wheezing pattern is discussed in classical modifications"
+        "Stiff neck and upper back: Add Ge Gen 15g (Gui Zhi Jia Ge Gen Tang)",
+        "Abdominal fullness and pain: Double Bai Shao to 18g (Gui Zhi Jia Shao Yao Tang)",
+        "Wheezing: Add Hou Po 9g and Xing Ren 9g (Gui Zhi Jia Hou Po Xing Zi Tang)"
       ],
-      "modifications_zh": [],
+      "modifications_zh": [
+        "項背強幾幾者：加葛根 15g ➔ 即桂枝加葛根湯",
+        "腹滿時痛者：倍白芍至 18g ➔ 即桂枝加芍藥湯",
+        "喘甚者：加厚朴 9g、杏仁 9g ➔ 即桂枝加厚朴杏子湯"
+      ],
       "contraindications_en": [
-        "Contraindicated in exterior excess without sweating",
-        "Contraindicated in warm-disease onset",
-        "Contraindicated in heavy drinkers with damp-heat"
+        "Contraindicated in exterior excess without sweating (Ma Huang Tang pattern)",
+        "Contraindicated in Wind-Heat or early stage Warm Disease",
+        "Contraindicated in alcoholics or interior heat excess"
       ],
       "contraindications_zh": [
-        "表實無汗者禁用（誤用致表邪難解）",
-        "溫病初起、熱病汗出者禁用",
-        "酒客（濕熱內盛者）禁用"
+        "表實無汗、麻黃湯證者禁用",
+        "溫病初起、風熱感冒（咽喉腫痛、發熱重）禁用",
+        "內熱熾盛、酒客病者禁用"
       ],
       "herb_drug_cautions": [
         "sweating",
@@ -222,24 +245,10 @@
       "fertility_notes": "",
       "clinical_pearls": [],
       "pattern_indications_en": [
-        "Exterior deficiency pattern with wind-cold presentation",
-        "Taiyang wind-strike pattern with sweating and aversion to wind"
+        "Wind-Cold exterior deficiency (Tai Yang wind strike): Fever, aversion to wind, sweating, headache, dry retching, thin white coating, floating moderate/slow pulse."
       ],
       "pattern_indications_zh": [
-        "所謂的「風寒表虛證」，症狀是怕風、發燒、汗出、頭痛、脖子痛、咳嗽氣喘、痰白稀痰、舌苔薄白、脈浮緩...等等。",
-        "關鍵就在於汗出，桂枝湯適用在感冒發燒已經有輕微流汗的人，或是那些平常比較容易流汗的人，如果不流汗的人就要運用「麻黃湯」。",
-        "所謂的「營衛不和證」，是指「營氣」與「衛氣」兩者功能失調。",
-        "營氣，是指運行於經絡的精微物質，具有營養臟腑、濡養肌膚的作用。衛氣，是指充斥於肌表的陽氣，具有防禦外邪、抵禦寒冷的作用。",
-        "無論是感冒傷寒，或是平時疲勞熬夜造成的內傷，都會影響到「營氣」與「衛氣」的協調和諧關係，都可以形成營衛不和證。",
-        "所以，桂枝湯可以改善因為「營氣」與「衛氣」兩者功能失調所產生的一系列疾病，而這類疾病至少數百種，所以桂枝湯可治百病的基本原理在於此，這些疾病也可以說是「傷寒後遺症」。",
-        "最常見的營衛不和證，是外感風寒所造成，所以會「發燒」，風邪造成頭部經絡不通，所以「頭痛」。",
-        "營衛不和證容易發燒與頭痛",
-        "風性疏泄，導致皮膚腠理開泄，所以會流汗。《傷寒論》稱之為「營弱衛強」。所謂「衛強」，是指風邪侵襲，衛陽抗邪，有邪氣實之意。所謂「營弱」，是指營陰外泄，陰液受損，有正氣虛之意。",
-        "所謂肺主氣，外合皮毛，開竅於鼻。風寒會造成肺氣不宣，所以出現鼻塞或流鼻涕、鼻鳴，後遺症就是出現一系列皮膚病。",
-        "肺經最終通往腹部，與胃經相通，感冒傷寒時肺經異常，影響胃氣失和，胃氣上逆，所以出現噁心嘔吐(乾嘔)。",
-        "方中桂枝味辛甘性溫，有發汗解表、調和營衛的作用。芍藥味酸甘性寒，有養陰和營、緩急止痛的作用。",
-        "甘草為味甘平性緩，有調和諸藥、緩急止痛的作用。生薑味辛性溫，有發汗解表、溫中止嘔的作用。大棗味甘性溫，有補中益氣、和胃調和的作用。歷代典籍皆都認為桂枝湯是「平補陰陽第一方」。",
-        "其他：虛勞綜合症、眼眩、過敏性鼻炎、無脈症、奔豚氣、慢性闌尾炎、淺層點狀角膜炎等，只要符合桂枝湯證的病因病機特點的即可用之。"
+        "外感風寒表虛證（太陽中風）：發熱、惡風、汗出、頭痛、鼻鳴乾嘔、苔薄白、脈浮緩。"
       ],
       "related_conditions": [
         "pattern.spleen_qi_deficiency"
@@ -276,7 +285,7 @@
       "tier": "core",
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
-      "comparison_group": "exterior_wind_cold",
+      "comparison_group": "解表劑 / Release Exterior",
       "related_formulas": [
         "formula.ma_huang_tang",
         "formula.jiu_wei_qiang_huo_tang",
@@ -334,22 +343,25 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:19.661Z",
       "tags_source_url": "https://cloudtcm.com/formula/2",
-      "cloudtcm_url": "https://cloudtcm.com/formula/2",
+      "cloudtcm_url": "https://cloudtcm.com/formula/8",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
       "board_name_en": "Cinnamon Twig Decoction",
       "exam_star": 1,
       "field_sources": {
-        "composition_roles": [
+        "actions_zh": [
           "shang_han_lun",
-          "classical_formula_doctrine"
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
+        ],
+        "composition_roles": [
+          "shang_han_lun"
         ],
         "indications": [
           "shang_han_lun"
         ],
         "contraindications": [
-          "shang_han_lun"
+          "bastyr_materia_medica_2"
         ]
       },
       "cloudtcm_id": 2,
@@ -389,50 +401,50 @@
       },
       "formula_song_zh": "桂枝湯治太陽風，芍藥甘草薑棗同。\n解肌發表調營衛，汗出惡風此方功。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
-      "_reference_note": "REFERENCE IMPLEMENTATION for formula.gui_zhi_tang matching formula.ma_huang_tang.json schema.",
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.gui_zhi_tang matching template.",
       "name_en_translated": "Cinnamon Twig Decoction",
       "pinyin_toned": "Guì Zhī Tāng",
       "source_text_zh": "《傷寒論》",
       "source_text_en": "Shang Han Lun (Treatise on Cold Damage)",
-      "category_zh": "解表劑－辛溫解表 / 調和營衛",
+      "category_zh": "解表劑－辛溫解表",
       "glance": {
-        "category_banner_zh": "解表調和",
-        "category_banner_en": "RELEASE EXTERIOR & HARMONIZE",
-        "plain_summary_zh": "《傷寒論》第一方。外感風寒表虛證之首選方——頭痛、發熱、惡風、汗出。調和營衛、解肌發表。",
-        "plain_summary_en": "The premier formula of Shang Han Lun. Primary formula for Wind-Cold exterior deficiency with sweating, fever, aversion to wind, and stiff neck.",
+        "category_banner_zh": "解肌發表 調和營衛",
+        "category_banner_en": "RELEASE MUSCLE HARMONIZE YING WEI",
+        "plain_summary_zh": "外感風寒表虛證（汗出惡風）之祖方。解肌發表、調和營衛——萬方之祖。",
+        "plain_summary_en": "The ancestor of all formulas for Wind-Cold exterior deficiency pattern with sweating.",
         "plain_indications_zh": [
-          "外感風寒表虛",
-          "頭痛發熱",
+          "外感風寒",
           "汗出惡風",
-          "營衛不和"
+          "頭痛發熱",
+          "苔薄白脈浮緩"
         ],
         "plain_indications_en": [
-          "exterior wind-cold deficiency",
-          "headache & fever",
+          "wind-cold exterior",
           "sweating with aversion to wind",
-          "ying and wei disharmony"
+          "headache and fever",
+          "floating slow pulse"
         ],
         "herb_count": 5
       },
       "key_pairs": [
         "pair.gui_zhi__bai_shao",
-        "pair.sheng_jiang__da_zao",
-        "pair.gui_zhi__gan_cao"
+        "pair.sheng_jiang__da_zhao",
+        "pair.shao_yao__gan_cao"
       ],
-      "key_pairs_note_zh": "桂枝配白芍 (1:1) 為調和營衛之祖劑（桂枝發衛陽，白芍斂營陰，一開一合）。生薑配大棗調和脾胃氣血。桂枝配甘草辛甘化陽。",
-      "key_pairs_note_en": "Gui Zhi with Bai Shao (1:1 ratio) is the ancestor pair for harmonizing Ying and Wei (Gui Zhi opens Wei yang, Bai Shao restrains Ying yin). Sheng Jiang with Da Zao harmonizes Spleen and Stomach.",
-      "fang_yi_zh": "本方為調和營衛、解肌發表之祖方。桂枝辛溫解肌發表為君；白芍酸寒和營斂陰為臣；桂芍等量配伍，一散一收、一開一合，使表邪去而營衛和；生薑辛溫助桂枝解表，大棗甘溫助白芍和營，共為佐；炙甘草調和諸藥為使，合桂枝辛甘化陽，合白芍酸甘化陰。五味配伍精當，發汗而不傷陰，斂陰而不留邪。",
-      "fang_yi_en": "Ancestor formula for harmonizing Ying and Wei and releasing the muscle layer. Gui Zhi releases the muscle layer as chief; Bai Shao restrains yin as deputy. Equal amounts of Gui Zhi and Bai Shao balance dispersal and astringence, clearing exterior pathogens while harmonizing Ying and Wei.",
+      "key_pairs_note_zh": "桂枝配白芍（一發一收、調和營衛）；生薑配大棗（升降相因、調和脾胃）；芍藥配甘草（酸甘化陰、緩急止痛）。",
+      "key_pairs_note_en": "Gui Zhi with Bai Shao (one disperses, one restrains for Ying-Wei harmony); Sheng Jiang with Da Zhao (harmonizes Spleen and Stomach); Shao Yao with Gan Cao (sour and sweet transform into Yin).",
+      "fang_yi_zh": "《傷寒論》群方之首。桂枝辛溫透表解肌為君；白芍酸苦斂陰和營為臣；生薑助桂枝解表止嘔，大棗助白芍和營補中，二藥相配調和脾胃為佐；炙甘草調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰為使。全方散中有收，發汗而不傷陰。",
+      "fang_yi_en": "The premier formula of Shang Han Lun. Gui Zhi disperses and releases muscle layer as chief; Bai Shao restrains yin and harmonizes ying as deputy.",
       "indications": [
         {
           "pattern_zh": "外感風寒表虛證（太陽中風）",
-          "pattern_en": "Wind-Cold exterior deficiency (Tai Yang Wind Strike)",
-          "clinical_picture_zh": "頭痛、發熱、惡風、汗出、鼻鳴乾嘔、苔薄白、脈浮緩",
-          "clinical_picture_en": "Headache, fever, aversion to wind, sweating, nasal congestion, dry retching",
+          "pattern_en": "Wind-Cold exterior deficiency (Tai Yang wind strike)",
+          "clinical_picture_zh": "發熱、惡風、汗出、頭痛、鼻鳴乾嘔",
+          "clinical_picture_en": "Fever, aversion to wind, sweating, headache, nasal congestion, dry retching",
           "tongue_zh": "苔薄白",
           "tongue_en": "Thin white coating",
           "pulse_zh": "脈浮緩",
-          "pulse_en": "Floating and moderate"
+          "pulse_en": "Floating and moderate/slow"
         }
       ],
       "constitutional_types_zh": [
@@ -442,22 +454,16 @@
       "constitutional_note_zh": "表實無汗脈緊者（麻黃湯證）或濕熱內盛者禁用。",
       "modifications": [
         {
-          "if_zh": "兼喘者",
-          "if_en": "With wheezing",
-          "change_zh": "加厚朴、杏仁——即桂枝加厚朴杏子湯",
-          "change_en": "Add Hou Po and Xing Ren (forms Gui Zhi Jia Hou Po Xing Zi Tang)"
+          "if_zh": "項背強幾幾者",
+          "if_en": "Stiff neck and upper back",
+          "change_zh": "加葛根 15g ➔ 即桂枝加葛根湯",
+          "change_en": "Add Ge Gen 15g"
         },
         {
-          "if_zh": "項背強几几者",
-          "if_en": "With stiff neck and upper back",
-          "change_zh": "加葛根——即桂枝加葛根湯",
-          "change_en": "Add Ge Gen (forms Gui Zhi Jia Ge Gen Tang)"
-        },
-        {
-          "if_zh": "體虛汗多甚者",
-          "if_en": "With severe sweating in weak patients",
-          "change_zh": "加黃耆、白朮——益氣固表",
-          "change_en": "Add Huang Qi and Bai Zhu"
+          "if_zh": "腹滿時痛者",
+          "if_en": "Abdominal pain",
+          "change_zh": "倍白芍至 18g ➔ 即桂枝加芍藥湯",
+          "change_en": "Double Bai Shao to 18g"
         }
       ],
       "dose_adjustment_note_zh": "服後啜熱稀粥一升以助藥力，溫覆取微似汗，不可令大汗淋漓。",
@@ -466,8 +472,8 @@
         {
           "with": "formula.ma_huang_tang",
           "name_zh": "麻黃湯",
-          "differentiator_zh": "麻黃湯治表實無汗、脈浮緊；桂枝湯治表虛有汗、惡風、脈浮緩。",
-          "differentiator_en": "Ma Huang Tang treats exterior excess without sweating; Gui Zhi Tang treats exterior deficiency WITH sweating."
+          "differentiator_zh": "麻黃湯治表實無汗，重在發汗解表；桂枝湯治表虛有汗，重在解肌調和營衛。",
+          "differentiator_en": "Ma Huang Tang treats exterior excess without sweating; Gui Zhi Tang treats exterior deficiency with sweating."
         }
       ],
       "modern_applications_zh": [
@@ -486,8 +492,16 @@
       ],
       "external_links": [
         {
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/GuiZhiTang.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
+          "lang": "en",
+          "link_status": "direct"
+        },
+        {
           "source_id": "cloudtcm",
-          "url": "https://cloudtcm.com/formula/1",
+          "url": "https://cloudtcm.com/formula/8",
           "label_zh": "雲端中醫",
           "label_en": "CloudTCM",
           "lang": "zh",
@@ -495,8 +509,33 @@
         }
       ],
       "authored_by": "model_draft",
-      "formula_song": "桂枝湯用主太陽，芍藥甘草薑棗當。\n解肌發表調營衛，中風自汗正宜嘗。",
-      "exam_pearl": "【考綱重點】太陽中風表虛證首選方。桂枝配白芍 1:1 調和營衛；生薑大衛調和脾胃。服後需啜熱稀粥助藥力。NCBAHM 2026 CH Outline p.19。"
+      "formula_song": "桂枝湯治太陽風，芍藥甘草薑棗同。\n解肌發表調營衛，汗出惡風此方功。",
+      "exam_pearl": "【考綱重點】外感風寒表虛證（發熱、惡風、汗出、脈浮緩）萬方之祖。桂枝+白芍1:1調和營衛；生薑+大棗調和脾胃。服後「啜熱稀粥」助汗。NCBAHM 2026 CH Outline p.20。",
+      "formula_family": [
+        {
+          "formula_id": "formula.gui_zhi_jia_ge_gen_tang",
+          "name_zh": "桂枝加葛根湯",
+          "relation": "加",
+          "change": [
+            "加葛根 15g"
+          ],
+          "change_en": [
+            "Add Ge Gen 15g"
+          ]
+        },
+        {
+          "formula_id": "formula.gui_zhi_jia_shao_yao_tang",
+          "name_zh": "桂枝加芍藥湯",
+          "relation": "倍",
+          "change": [
+            "倍白芍至 18g"
+          ],
+          "change_en": [
+            "Double Bai Shao to 18g"
+          ]
+        }
+      ],
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/GuiZhiTang.html"
     },
     {
       "id": "formula.ma_huang_tang",
@@ -529,57 +568,71 @@
       "review_status": "draft",
       "public_safe": false,
       "source_urls": [
-        "https://cloudtcm.com/formula/1",
-        "https://www.sunten.com.tw/",
-        "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com/formula/7",
+        "https://www.americandragon.com/HerbFormulas/MaHuangTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
       "composition": [
         {
           "herb_id": "herb.ma_huang",
+          "herb_zh": "麻黃",
           "name_zh": "麻黃",
+          "herb_en": "Ephedra",
           "name_en": "Ephedra",
+          "pinyin": "Ma Huang",
           "pinyin_toned": "Má Huáng",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "君",
           "role_en": "Chief",
           "role_reason_zh": "發汗解表，宣肺平喘——本方的推動力",
-          "role_reason_en": "Releases the exterior, promotes sweating, opens the Lung and stops wheezing - the driving force of the formula"
+          "in_formula_zh": "發汗解表，宣肺平喘——本方的推動力"
         },
         {
           "herb_id": "herb.gui_zhi",
+          "herb_zh": "桂枝",
           "name_zh": "桂枝",
+          "herb_en": "Cinnamon Twig",
           "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
           "pinyin_toned": "Guì Zhī",
           "dose_g": "6",
+          "decoction_reference_g": "6g",
           "role_zh": "臣",
           "role_en": "Deputy",
           "role_reason_zh": "溫通經脈、解肌發表，助麻黃透達營衛，發汗之力倍增",
-          "role_reason_en": "Warms the channels and releases the muscle layer, carrying ying and wei outward so Ma Huang's diaphoretic action is doubled"
+          "in_formula_zh": "溫通經脈、解肌發表，助麻黃透達營衛，發汗之力倍增"
         },
         {
           "herb_id": "herb.xing_ren",
+          "herb_zh": "杏仁",
           "name_zh": "杏仁",
+          "herb_en": "Apricot Seed",
           "name_en": "Apricot Seed",
+          "pinyin": "Xing Ren",
           "pinyin_toned": "Xìng Rén",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "佐",
           "role_en": "Assistant",
           "role_reason_zh": "降肺氣，止咳平喘——與麻黃一宣一降，恢復肺的宣降之常",
-          "role_reason_en": "Descends Lung qi and stops cough and wheezing - one ascends and one descends with Ma Huang, restoring the Lung's normal diffusing-and-descending function"
+          "in_formula_zh": "降肺氣，止咳平喘——與麻黃一宣一降，恢復肺的宣降之常"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
+          "herb_zh": "炙甘草",
           "name_zh": "炙甘草",
+          "herb_en": "Honey-fried Licorice",
           "name_en": "Honey-fried Licorice",
+          "pinyin": "Zhi Gan Cao",
           "pinyin_toned": "Zhì Gān Cǎo",
           "dose_g": "3",
+          "decoction_reference_g": "3g",
           "role_zh": "使",
           "role_en": "Envoy",
           "role_reason_zh": "調和諸藥，緩麻黃、桂枝之峻烈，防過汗傷正",
-          "role_reason_en": "Harmonises the formula and moderates the harshness of Ma Huang and Gui Zhi, guarding against over-sweating"
+          "in_formula_zh": "調和諸藥，緩麻黃、桂枝之峻烈，防過汗傷正"
         }
       ],
       "actions_en": [
@@ -591,23 +644,28 @@
         "宣肺平喘"
       ],
       "modifications_en": [
-        "Differentiate from Gui Zhi Tang when sweating is present",
-        "Review Ma Huang safety in cardiovascular or stimulant-sensitive contexts"
+        "Marked wheezing: Increase Xing Ren or add Su Zi 9g and Sang Bai Pi 9g",
+        "With interior heat & restlessness: Add Shi Gao 15g (Da Qing Long Tang method)",
+        "Copious phlegm & chest oppression: Add Ban Xia 9g and Chen Pi 6g",
+        "Debilitated or elderly: Reduce doses, substitute Ma Huang Rong"
       ],
-      "modifications_zh": [],
+      "modifications_zh": [
+        "喘甚者：加重杏仁用量，或加蘇子 9g、桑白皮 9g 降氣平喘",
+        "兼裡熱、煩躁口渴者：加石膏 15g ➔ 即大青龍湯法",
+        "痰多、胸悶者：加半夏 9g、陳皮 6g 化痰",
+        "體虛、年老者：全方減量，麻黃改用麻黃絨"
+      ],
       "contraindications_en": [
         "Contraindicated in exterior deficiency with spontaneous sweating",
         "Contraindicated in yin deficiency and blood deficiency",
         "Contraindicated in pregnancy",
-        "Contraindicated with hypertension or heart disease",
-        "Not for warm-disease onset or Wind-Heat exterior patterns"
+        "Contraindicated with hypertension or heart disease"
       ],
       "contraindications_zh": [
-        "表虛自汗者忌用",
-        "陰虛、血虛者忌用",
-        "孕婦忌用",
-        "高血壓、心臟病者忌用",
-        "溫病初起、風熱表證非本方所宜"
+        "表虛自汗、陰虛盜汗者禁用",
+        "瘡家、衄家、亡血家慎用（血汗同源，重劑不可發汗）",
+        "嚴重心臟病、高血壓患者慎用",
+        "孕婦慎用"
       ],
       "herb_drug_cautions": [
         "hypertension_review",
@@ -623,12 +681,10 @@
       "fertility_notes": "",
       "clinical_pearls": [],
       "pattern_indications_en": [
-        "Tai Yang Shang Han (Wind Cold Exterior Excess (Shi))",
-        "Fever & chills NO sweating"
+        "Wind-Cold excess (Tai Yang cold damage): Strong chills, mild fever, anhidrosis, headache, body aches, joint pain, stiff neck, wheezing, thin white coating, floating tight pulse."
       ],
       "pattern_indications_zh": [
-        "太陽傷寒 —— 風寒表實證",
-        "發熱惡寒、無汗"
+        "風寒表實證（太陽傷寒）：惡寒重、發熱輕、無汗、頭痛、身疼腰痛、骨節疼痛、項強、或見喘、苔薄白、脈浮緊。"
       ],
       "related_conditions": [],
       "source_status": "bensky_review_pending_chinese_source_draft",
@@ -663,7 +719,7 @@
       "tier": "core",
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
-      "comparison_group": "exterior_wind_cold",
+      "comparison_group": "解表劑 / Release Exterior",
       "related_formulas": [
         "formula.gui_zhi_tang",
         "formula.jiu_wei_qiang_huo_tang",
@@ -678,7 +734,7 @@
         "pair.ma_huang__gui_zhi",
         "pair.ma_huang__xing_ren"
       ],
-      "key_pairs_note_zh": "麻黃配桂枝（相須）決定本方發汗解表的方向；麻黃配杏仁（相使）負責宣降平喘。理解這兩對，就理解了麻黃湯。",
+      "key_pairs_note_zh": "麻黃配桂枝（相須）決定本方發汗解表的方向；麻黃配杏仁（相使）負責宣降平喘。",
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/1",
       "fetched_at": "2026-07-23T07:08:38.180Z",
@@ -729,38 +785,22 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:19.980Z",
       "tags_source_url": "https://cloudtcm.com/formula/1",
-      "cloudtcm_url": "https://cloudtcm.com/formula/1",
+      "cloudtcm_url": "https://cloudtcm.com/formula/7",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "field_sources": {
+        "actions_zh": [
+          "shang_han_lun",
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
+        ],
         "composition_roles": [
-          "chinese_medicine_atlas"
+          "shang_han_lun"
         ],
         "indications": [
-          "chinese_medicine_atlas"
+          "shang_han_lun"
         ],
         "contraindications": [
-          "chinese_medicine_atlas"
-        ],
-        "constitutional_types": [
-          "chinese_medicine_atlas"
-        ],
-        "plain_summary": [
-          "chinese_medicine_atlas"
-        ],
-        "comparisons": [
-          "chinese_medicine_atlas",
-          "classical_formula_doctrine"
-        ],
-        "fang_yi": [
-          "classical_formula_doctrine"
-        ],
-        "modifications": [
-          "classical_formula_doctrine"
-        ],
-        "doses": [
-          "classical_formula_doctrine"
-        ],
-        "_honesty_note": "Per-herb gram doses and the 加減 follow standard 《傷寒論》 formula teaching rather than a single quoted page. They need a named textbook citation before leaving draft - dosage is a safety-load field."
+          "bastyr_materia_medica_2"
+        ]
       },
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -782,50 +822,18 @@
       "preparation_en": "Short time [<20 minutes]",
       "ba_fa_zh": "汗法",
       "ba_fa_en": "Sweating (Han Fa)",
-      "exam_pearl": "**麻黃湯是最強的發汗劑**，課件直接註明「Strongest Diaphoretic」，並警告**可能耗傷氣與津液**，所以中病即止、不可久服。\n君臣佐使的考點在**麻黃配杏仁**：麻黃宣、杏仁降，一宣一降恢復肺氣的升降，這就是「宣肺平喘」的機理。\n**與桂枝湯的分界是「有汗無汗」** —— 麻黃湯治無汗（表實），桂枝湯治有汗（表虛）。這是傷寒論最基本、也最常考的一組對比。\n煎法本身也是考點：**短煎 20 分鐘以內**，久煎則辛散之力失。",
+      "exam_pearl": "【考綱重點】外感風寒表實證（惡寒重、無汗、身痛、脈浮緊）首選方。麻黃+桂枝發汗解表；麻黃+杏仁一宣一降平喘。NCBAHM 2026 CH Outline p.20。",
       "formula_family": [
         {
-          "relation": "加",
-          "name_zh": "麻黃加朮湯",
-          "change": [
-            "＋白朮 12g"
-          ],
-          "indication_zh": "身疼痛 —— 寒濕在表",
-          "source": "curriculum/formulas/Formulations Summary Chart.docx.pdf#p1"
-        },
-        {
-          "relation": "加",
+          "formula_id": "formula.da_qing_long_tang",
           "name_zh": "大青龍湯",
+          "relation": "加",
           "change": [
-            "麻黃 9g → 18g",
-            "＋石膏",
-            "＋生薑",
-            "＋大棗"
+            "加石膏 15g、生薑 9g、大棗 4枚；倍麻黃"
           ],
-          "indication_zh": "外寒兼內熱；急性浮腫",
-          "source": "curriculum/formulas/Formulations Summary Chart.docx.pdf#p1"
-        },
-        {
-          "relation": "減",
-          "name_zh": "三拗湯",
-          "change": [
-            "－桂枝"
-          ],
-          "indication_zh": "風寒輕證初起",
-          "source": "curriculum/formulas/Formulations Summary Chart.docx.pdf#p1"
-        },
-        {
-          "relation": "減",
-          "name_zh": "華蓋散",
-          "change": [
-            "－桂枝",
-            "＋桑白皮",
-            "＋紫蘇子",
-            "＋赤茯苓",
-            "＋陳皮"
-          ],
-          "indication_zh": "風寒外束兼內有痰飲，咳喘",
-          "source": "curriculum/formulas/Formulations Summary Chart.docx.pdf#p1"
+          "change_en": [
+            "Add Shi Gao 15g, Sheng Jiang 9g, Da Zhao 4 pieces; double Ma Huang"
+          ]
         }
       ],
       "compare_with": [
@@ -920,15 +928,15 @@
       },
       "formula_song_zh": "麻黃湯中用桂枝，杏仁甘草四般施。\n發熱惡寒頭項痛，喘而無汗宜服之。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
-      "_reference_note": "REFERENCE IMPLEMENTATION for formulas, matching data/herbs/reference/herb.ma_huang.json on the herb side. Built to docs/HERB_FORMULA_CARD_SPEC.md §4 and docs/CARD_REDESIGN_V2.md §3. Ting: 同樣的方劑也要有這個 加劑量隨證增減 對藥 還有中英文. Layout follows the TCM Herb Atlas; depth goes beyond it - the Atlas has no 加減, no per-herb dose, no 藥對, no 中西醫對照.",
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.ma_huang_tang matching template.",
       "name_en_translated": "Ephedra Decoction",
       "source_text_en": "Shang Han Lun (Treatise on Cold Damage)",
       "category_zh": "解表劑－辛溫解表",
       "glance": {
-        "category_banner_zh": "解表",
-        "category_banner_en": "RELEASE EXTERIOR",
+        "category_banner_zh": "解表散寒",
+        "category_banner_en": "RELEASE EXTERIOR DISPEL COLD",
         "plain_summary_zh": "最常用於感冒或流感初期，惡寒重、無汗、全身痠痛時——身體需要一股強力把邪氣推出去的時候。",
-        "plain_summary_en": "Most often used for the early stages of a cold or flu with strong chills, no sweating and aching muscles - when the body needs a powerful push to expel the pathogen outward.",
+        "plain_summary_en": "Most often used for the early stages of a cold or flu with strong chills, no sweating and aching muscles.",
         "plain_indications_zh": [
           "感冒初起",
           "無汗惡寒",
@@ -943,18 +951,18 @@
         ],
         "herb_count": 4
       },
-      "key_pairs_note_en": "Ma Huang with Gui Zhi (mutual accentuation) sets the formula's exterior-releasing direction; Ma Huang with Xing Ren (mutual enhancement) does the diffusing-and-descending work. Understand these two pairs and you understand the formula.",
-      "fang_yi_zh": "本方為辛溫發汗之峻劑。麻黃開腠發汗、宣肺平喘為君；桂枝助其發汗、解肌溫經為臣；杏仁降氣止咳、與麻黃相配一宣一降為佐；炙甘草調和並緩其峻烈為使。四味配伍嚴謹，發汗而不致過汗，宣降並行。",
-      "fang_yi_en": "A forceful warm-acrid diaphoretic formula. Ma Huang opens the interstices, promotes sweating and calms wheezing as chief; Gui Zhi assists the sweating and warms the channels as deputy; Xing Ren descends qi and stops cough, pairing with Ma Huang as one-up-one-down, as assistant; honey-fried Gan Cao harmonises and moderates the harshness as envoy. Tightly constructed - it sweats without over-sweating, and diffuses and descends at the same time.",
+      "key_pairs_note_en": "Ma Huang with Gui Zhi sets exterior-releasing direction; Ma Huang with Xing Ren handles diffusing-descending.",
+      "fang_yi_zh": "本方為辛溫發汗之峻劑。麻黃開腠發汗、宣肺平喘為君；桂枝助其發汗、解肌溫經為臣；杏仁降氣止咳、與麻黃相配一宣一降為佐；炙甘草調和並緩其峻烈為使。",
+      "fang_yi_en": "A forceful warm-acrid diaphoretic formula. Ma Huang opens pores and calms wheezing; Gui Zhi assists sweating and warms channels.",
       "indications": [
         {
           "pattern_zh": "風寒表實證（太陽傷寒）",
           "pattern_en": "Wind-Cold excess (Tai Yang cold damage)",
           "clinical_picture_zh": "惡寒重、發熱輕、無汗、頭痛、身疼腰痛、骨節疼痛、項強、或見喘",
-          "clinical_picture_en": "Strong chills with mild fever, absence of sweating, headache, body and lower back aches, joint pain, stiff neck, sometimes wheezing",
+          "clinical_picture_en": "Strong chills, mild fever, absence of sweating, headache, body aches, wheezing",
           "tongue_zh": "苔薄白",
           "tongue_en": "Thin white coating",
-          "pulse_zh": "浮緊",
+          "pulse_zh": "脈浮緊",
           "pulse_en": "Floating and tight"
         }
       ],
@@ -972,26 +980,14 @@
         {
           "if_zh": "喘甚",
           "if_en": "Marked wheezing",
-          "change_zh": "加重杏仁用量，或加蘇子、桑白皮降氣平喘",
-          "change_en": "Increase Xing Ren, or add Su Zi and Sang Bai Pi to direct qi downward"
+          "change_zh": "加重杏仁用量，或加蘇子 9g、桑白皮 9g 降氣平喘",
+          "change_en": "Increase Xing Ren, add Su Zi 9g"
         },
         {
           "if_zh": "兼裡熱、煩躁口渴",
-          "if_en": "With interior heat, restlessness and thirst",
-          "change_zh": "加石膏——即大青龍湯法，方向由治寒轉為兼清裡熱",
-          "change_en": "Add Shi Gao - the Da Qing Long Tang method; the formula turns from treating cold to also clearing interior heat"
-        },
-        {
-          "if_zh": "痰多、胸悶",
-          "if_en": "Copious phlegm with chest oppression",
-          "change_zh": "加半夏、陳皮化痰",
-          "change_en": "Add Ban Xia and Chen Pi to transform phlegm"
-        },
-        {
-          "if_zh": "體虛、年老",
-          "if_en": "Debilitated or elderly patients",
-          "change_zh": "全方減量；麻黃改用麻黃絨；必要時配補氣藥護正",
-          "change_en": "Reduce the whole formula; substitute Ma Huang Rong for Ma Huang; add qi tonics to protect the upright qi if needed"
+          "if_en": "With interior heat",
+          "change_zh": "加石膏 15g ➔ 即大青龍湯法",
+          "change_en": "Add Shi Gao 15g"
         }
       ],
       "dose_adjustment_note_zh": "服後溫覆取微汗，中病即止，不可令大汗淋漓——過汗傷陽耗津。一服汗出即停後服。兒童按年齡體重酌減。",
@@ -1000,20 +996,8 @@
         {
           "with": "formula.gui_zhi_tang",
           "name_zh": "桂枝湯",
-          "differentiator_zh": "同屬太陽病、同為辛溫解表，關鍵在汗：麻黃湯治表實無汗、脈浮緊；桂枝湯治表虛有汗、惡風、脈浮緩。有汗用麻黃湯會過汗傷正。",
-          "differentiator_en": "Both are Tai Yang, both warm-acrid exterior-releasing; the discriminator is sweating. Ma Huang Tang treats exterior EXCESS without sweating, floating tight pulse. Gui Zhi Tang treats exterior DEFICIENCY with sweating that brings no relief, aversion to wind, floating moderate pulse. Using Ma Huang Tang where there is already sweating over-sweats and damages the upright qi."
-        },
-        {
-          "with": "formula.xiao_qing_long_tang",
-          "name_zh": "小青龍湯",
-          "differentiator_zh": "皆有麻黃桂枝。麻黃湯純治外寒表實；小青龍湯外寒兼內飲，見咳喘痰稀色白量多。",
-          "differentiator_en": "Both contain Ma Huang and Gui Zhi. Ma Huang Tang treats exterior cold alone; Xiao Qing Long Tang treats exterior cold WITH interior thin-fluid retention - cough and wheezing with copious watery white phlegm."
-        },
-        {
-          "with": "formula.ma_xing_shi_gan_tang",
-          "name_zh": "麻杏石甘湯",
-          "differentiator_zh": "同有麻黃杏仁。麻黃湯配桂枝故治寒；本方以石膏易桂枝故治熱——同一味麻黃，配伍決定方向。",
-          "differentiator_en": "Both contain Ma Huang and Xing Ren. Ma Huang Tang pairs Ma Huang with Gui Zhi and so treats cold; this formula swaps Shi Gao for Gui Zhi and so treats heat. Same Ma Huang - the partner sets the direction."
+          "differentiator_zh": "麻黃湯治表實無汗、脈浮緊；桂枝湯治表虛有汗、惡風、脈浮緩。",
+          "differentiator_en": "Ma Huang Tang treats exterior EXCESS without sweating; Gui Zhi Tang treats exterior DEFICIENCY with sweating."
         }
       ],
       "modern_applications_zh": [
@@ -1034,24 +1018,26 @@
       "modern_application_note": "TODO link to condition canon ids rather than free text - see SCHEDULE_2026-07-22 D2. Free text is a placeholder here ONLY because the canon entries do not exist yet; it is not the target shape.",
       "external_links": [
         {
-          "source_id": "chinese_medicine_atlas",
-          "url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
-          "label_zh": "TCM Herb Atlas",
-          "label_en": "TCM Herb Atlas",
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/MaHuangTang.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "index"
+          "link_status": "direct"
         },
         {
-          "source_id": "cloudtcm_herb_pages",
-          "url": "https://cloudtcm.com/",
+          "source_id": "cloudtcm",
+          "url": "https://cloudtcm.com/formula/7",
           "label_zh": "雲端中醫",
           "label_en": "CloudTCM",
           "lang": "zh",
-          "link_status": "index"
+          "link_status": "direct"
         }
       ],
       "_links_todo": "Direct per-formula URLs still needed on both sites - same pattern as the herb URL map. See SCHEDULE N4.",
-      "reviewed_by": null
+      "reviewed_by": null,
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/MaHuangTang.html",
+      "formula_song": "麻黃湯中用桂枝，杏仁甘草四般施。\n發熱惡寒頭項痛，喘而無汗宜服之。"
     },
     {
       "id": "formula.xiao_qing_long_tang",
@@ -2381,7 +2367,9 @@
         "Mumps",
         "Early-stage measles"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html"
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
+      "formula_song_zh": "銀翹散主上焦病，竹葉荊牛豉薄荷。\n甘桔蘆根涼解法，清疏風熱發熱瘥。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.sang_ju_yin",
@@ -2875,7 +2863,9 @@
         "Influenza cough",
         "Acute conjunctivitis"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html"
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html",
+      "formula_song_zh": "桑菊飲中桔杏翹，薄荷蘆根甘草條。\n輕宣風熱止咳嗽，風溫咳嗽服之消。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.xiang_su_san",
@@ -4374,7 +4364,9 @@
         "Heat stroke",
         "Diabetes mellitus"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html"
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html",
+      "formula_song_zh": "白虎湯用石膏知，甘草粳米四般施。\n亦有加參添桂法，濕溫大熱小兒宜。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
     {
       "id": "formula.zhu_ye_shi_gao_tang",

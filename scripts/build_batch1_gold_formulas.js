@@ -269,6 +269,8 @@ const yqs = {
   "review_status": "draft",
   "authored_by": "model_draft",
   "formula_song": "銀翹散主上焦病，竹葉荊牛豉薄荷。\n甘桔蘆根涼解法，清疏風熱發熱瘥。",
+  "formula_song_zh": "銀翹散主上焦病，竹葉荊牛豉薄荷。\n甘桔蘆根涼解法，清疏風熱發熱瘥。",
+  "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
   "exam_pearl": "【考綱重點】溫病初起衛分證（風熱感冒、咽喉腫痛）首選方。重用銀翹為君；荊芥、豆豉微溫透表；「香氣大出即取服，不可過煎」。NCBAHM 2026 CH Outline p.20。"
 };
 
@@ -490,6 +492,8 @@ const sjy = {
   "review_status": "draft",
   "authored_by": "model_draft",
   "formula_song": "桑菊飲中桔杏翹，薄荷蘆根甘草條。\n輕宣風熱止咳嗽，風溫咳嗽服之消。",
+  "formula_song_zh": "桑菊飲中桔杏翹，薄荷蘆根甘草條。\n輕宣風熱止咳嗽，風溫咳嗽服之消。",
+  "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
   "exam_pearl": "【考綱重點】風熱犯肺、咳嗽為主證首選方（辛涼輕劑）。桑葉+菊花輕宣風熱；杏仁+桔梗一宣一降止咳。NCBAHM 2026 CH Outline p.20。"
 };
 
@@ -702,6 +706,8 @@ const bht = {
   "review_status": "draft",
   "authored_by": "model_draft",
   "formula_song": "白虎湯用石膏知，甘草粳米四般施。\n亦有加參添桂法，濕溫大熱小兒宜。",
+  "formula_song_zh": "白虎湯用石膏知，甘草粳米四般施。\n亦有加參添桂法，濕溫大熱小兒宜。",
+  "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
   "exam_pearl": "【考綱重點】陽明氣分熱盛「四大證」（身大熱、口大渴、汗大出、脈洪大）首選方。石膏+知母相須清熱生津；粳米+甘草顧護胃氣。NCBAHM 2026 CH Outline p.21。"
 };
 
@@ -724,4 +730,4 @@ const mainData = JSON.parse(fs.readFileSync(formulaJsonPath, 'utf8'));
 });
 
 fs.writeFileSync(formulaJsonPath, JSON.stringify(mainData, null, 2), 'utf8');
-console.log('Updated data/herbs/formulas.json with Batch 1 Gold-Standard records!');
+console.log('Updated data/herbs/formulas.json with Batch 1 Gold-Standard records (including formula_song_zh & formula_song_source_zh)!');
