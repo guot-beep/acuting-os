@@ -6251,6 +6251,21 @@ function renderYuanLuoXiMuShuMatrixTable() {
     { ch: "LR 肝經", yuan: "LR3 太衝", luo: "LR5 蠡溝", xi: "LR6 中都", mu: "LR14 期門", shu: "BL18 肝俞" }
   ];
 
+  const guestHostRows = [
+    { pair: "LU9 太淵 (原/主) + LI6 偏歷 (絡/客)", scope: "胸悶、手掌發熱、咽喉腫痛、喘促、風熱犯肺與大腸水腫" },
+    { pair: "LI4 合谷 (原/主) + LU7 列缺 (絡/客)", scope: "牙痛、齒齦腫、鼻衄、目黃、口乾、外感風寒咳嗽、項強痛" },
+    { pair: "SP3 太白 (原/主) + ST40 豐隆 (絡/客)", scope: "脾虛為本、痰濕為標：健脾益氣治本、化痰降濁治標之黃金配穴" },
+    { pair: "ST42 衝陽 (原/主) + SP4 公孫 (絡/客)", scope: "胃痛、腹脹、心胸痞滿、鼻衄、足跗疼痛、消化不良" },
+    { pair: "HT7 神門 (原/主) + SI7 支正 (絡/客)", scope: "心痛、咽乾、目黃、心悸驚恐、嘔血、精神失眠" },
+    { pair: "SI4 腕骨 (原/主) + HT5 通里 (絡/客)", scope: "項強、咽喉腫痛、肩臂痛、耳聾、暴瘖失音" },
+    { pair: "KI3 太溪 (原/主) + BL58 飛揚 (絡/客)", scope: "腎虛腰痛、清涕、尿赤、腳跟痛、耳鳴眩暈" },
+    { pair: "BL64 京骨 (原/主) + KI4 大鐘 (絡/客)", scope: "鼻塞、頭痛、腰背痛、小便不利、情志鬱怒" },
+    { pair: "PC7 大陵 (原/主) + TE5 外關 (絡/客)", scope: "心痛、胸脅支滿、心煩、發熱、肘臂攣痛" },
+    { pair: "TE4 陽池 (原/主) + PC6 內關 (絡/客)", scope: "耳鳴、耳聾、咽喉腫痛、胸悶、嘔吐、心悸" },
+    { pair: "LR3 太衝 (原/主) + GB37 光明 (絡/客)", scope: "肝陽上亢、頭痛眩暈、目赤腫痛、夜盲、脅痛" },
+    { pair: "GB40 丘墟 (原/主) + LR5 蠡溝 (絡/客)", scope: "口苦、善太息、胸脅痛、少腹疝氣痛、陰癢" }
+  ];
+
   const formatCell = (txt) => {
     const m = txt.match(/^([A-Z0-9]+)s+(.+)$/);
     if (!m) return txt;
@@ -6274,7 +6289,8 @@ function renderYuanLuoXiMuShuMatrixTable() {
         </ul>
       </div>
 
-      <table class="master-matrix-table">
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">一、十二經原絡郄俞募總表</h4>
+      <table class="master-matrix-table" style="margin-bottom: 1.5rem;">
         <thead>
           <tr>
             <th>經絡 Channel</th>
@@ -6298,6 +6314,24 @@ function renderYuanLuoXiMuShuMatrixTable() {
           `).join('')}
         </tbody>
       </table>
+
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">二、主客原絡經典配穴與臨床應用 (Guest-Host Formulations)</h4>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>主客配穴對組合 Guest-Host Pair</th>
+            <th>臨床主治症狀與選穴要領 Target Clinical Indications</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${guestHostRows.map(g => `
+            <tr>
+              <td class="channel-name-cell" style="font-weight: 700;">${g.pair}</td>
+              <td>${g.scope}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
     </div>
   `;
 }
@@ -6310,6 +6344,21 @@ function renderLowerHeMotherChildMatrixTable() {
     { fu: "BL (膀胱)", point: "BL40 委中 (Weizhong)", channel: "足太陽膀胱經" },
     { fu: "TE (三焦)", point: "BL39 委陽 (Weiyang)", channel: "足太陽膀胱經" },
     { fu: "GB (膽)", point: "GB34 陽陵泉 (Yanglingquan)", channel: "足少陽膽經" }
+  ];
+
+  const entryExitRows = [
+    { ch: "LU 手太陰肺經", entry: "LU1 中府", exit: "LU7 列缺", next: "接手陽明大腸經 (LI4/LI1)" },
+    { ch: "LI 手陽明大腸經", entry: "LI4 合谷", exit: "LI20 迎香", next: "接足陽明胃經 (ST1)" },
+    { ch: "ST 足陽明胃經", entry: "ST1 承泣", exit: "ST42 衝陽", next: "接足太陰脾經 (SP1)" },
+    { ch: "SP 足太陰脾經", entry: "SP1 隱白", exit: "SP21 大包", next: "接手少陰心經 (HT1)" },
+    { ch: "HT 手少陰心經", entry: "HT1 極泉", exit: "HT9 少衝", next: "接手太陽小腸經 (SI1)" },
+    { ch: "SI 手太陽小腸經", entry: "SI1 少澤", exit: "SI19 聽宮", next: "接足太陽膀胱經 (BL1)" },
+    { ch: "BL 足太陽膀胱經", entry: "BL1 睛明", exit: "BL67 至陰", next: "接足少陰腎經 (KI1)" },
+    { ch: "KI 足少陰腎經", entry: "KI1 湧泉", exit: "KI22 步廊", next: "接手厥陰心包經 (PC1)" },
+    { ch: "PC 手厥陰心包經", entry: "PC1 天池", exit: "PC8 勞宮", next: "接手少陽三焦經 (TE1)" },
+    { ch: "TE 手少陽三焦經", entry: "TE1 關衝", exit: "TE22 和髎", next: "接足少陽膽經 (GB1)" },
+    { ch: "GB 足少陽膽經", entry: "GB1 瞳子髎", exit: "GB41 足臨泣", next: "接足厥陰肝經 (LR1)" },
+    { ch: "LR 足厥陰肝經", entry: "LR1 大敦", exit: "LR14 期門", next: "接手太陰肺經 (LU1 循環周天)" }
   ];
 
   const formatCell = (txt) => {
@@ -6329,6 +6378,7 @@ function renderLowerHeMotherChildMatrixTable() {
         <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
           <li><strong>六腑下合穴 (Six Lower He-Sea Points):</strong> 《靈樞·邪氣臟腑病形》「合治內腑」，六腑之氣皆下合於足三陽經。大腸下合上巨虛(ST37)、小腸下合下巨虛(ST39)、三焦下合委陽(BL39)，專治六腑急性積滯與傳化病變。</li>
           <li><strong>五行母子補瀉法則 (Mother-Child Law):</strong> 「虛則補其母，實則瀉其子」。如肺金虛取太淵(LU9 土生金/母穴)補之；肺金實取尺澤(LU5 金生水/子穴)瀉之。</li>
+          <li><strong>十二經氣血出入穴 (Entry & Exit Points):</strong> 經氣流注交接之門戶。若出入穴阻滯（如 LU7 列缺或 ST42 衝陽），氣血無法順利傳接至下一條經脈，會產生跨經疼痛與傳化障礙。</li>
         </ul>
       </div>
 
@@ -6347,6 +6397,28 @@ function renderLowerHeMotherChildMatrixTable() {
               <td class="channel-name-cell">${r.fu}</td>
               <td>${formatCell(r.point)}</td>
               <td>${r.channel}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">二、十二經脈氣血出入穴總表 (Entry & Exit Points)</h4>
+      <table class="master-matrix-table">
+        <thead>
+          <tr>
+            <th>經脈 Channel</th>
+            <th>出入穴 Entry Point</th>
+            <th>出口穴 Exit Point</th>
+            <th>氣血交接下一經脈 Next Meridian Handover</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${entryExitRows.map(e => `
+            <tr>
+              <td class="channel-name-cell">${e.ch}</td>
+              <td>${formatCell(e.entry)}</td>
+              <td>${formatCell(e.exit)}</td>
+              <td>${e.next}</td>
             </tr>
           `).join('')}
         </tbody>
