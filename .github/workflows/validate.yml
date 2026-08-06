@@ -16,101 +16,116 @@ name: validate
 
 on:
   pull_request:
-  push:
-    branches: [main]
-  workflow_dispatch:
+    push:
+        branches: [main]
+          workflow_dispatch:
 
-jobs:
-  green:
-    name: green validators (blocking)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+          jobs:
+            green:
+                name: green validators (blocking)
+                    runs-on: ubuntu-latest
+                        steps:
+                              - uses: actions/checkout@v4
+                                    - uses: actions/setup-node@v4
+                                            with:
+                                                      node-version: "20"
 
-      # build-data first: everything downstream reads data/generated/*.
-      - name: build data
-        run: node scripts/build-data.js
+                                                            # build-data first: everything downstream reads data/generated/*.
+                                                                  - name: build data
+                                                                          run: node scripts/build-data.js
 
-      # If build-data changed a generated file, the PR is missing a rebuild.
-      - name: generated data is committed and current
-        run: |
-          if ! git diff --quiet -- data/generated; then
-            echo "::error::data/generated is stale — run 'node scripts/build-data.js' and commit the result."
-            git --no-pager diff --stat -- data/generated
-            exit 1
-          fi
-
-      - name: app.js parses
-        run: node --check app.js
-
-      - name: referential integrity
-        run: node scripts/validate-relations.js
-
-      # Graduated from the ratchet 2026-08-06: the 72 extra-point D2 ids were
-      # backfilled (add-point-ids.js), validate-point-ids is green, so it now
-      # blocks like everything else.
-      - name: point ids and the id ledger (DECISIONS D2/D6)
-        run: node scripts/validate-point-ids.js
-
-      - name: runtime data
-        run: node scripts/validate-data.js
-
-      - name: interactions
-        run: node scripts/validate-interactions.js
-
-      - name: no scraped junk in content arrays
-        run: node scripts/validate-content-junk.js
-
-      - name: acupoint card standard
-        run: node scripts/validate-acupoint-standard.js
-
-      - name: extra point standard
-        run: node scripts/validate-extra-point-standard.js
-
-      - name: herb card standard
-        run: node scripts/validate-herb-standard.js
-
-      - name: formula card standard
-        run: node scripts/validate-formula-standard.js
-
-      - name: comparison standard
-        run: node scripts/validate-comparison-standard.js
-
-      - name: whitespace / conflict markers
-        run: git diff --check
-
-  ratchet:
-    name: defect ratchet (conditions · patterns · naming)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: no layer may get worse than its committed baseline
-        run: node scripts/check-validation-ratchet.js
-
-  clinical-data-never-committed:
-    name: no patient data in git (DECISIONS D4/D7)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: gitignored clinical stores must stay out of the tree
-        run: |
-          # D7: the clinical layer lives in a gitignored store, never in git.
-          # The template/sample files are de-identified and intentionally tracked,
-          # so this checks the private dirs and database files only.
-          bad=$(git ls-files \
-            'data/clinical_cases/local/*' \
-            'data/clinical_cases/private/*' \
-            'data/clinical_cases/exports/*' \
-            '*.db' '*.sqlite' '*.sqlite3' '*.phi.*')
-          if [ -n "$bad" ]; then
-            echo "::error::clinical/patient files are tracked in git:"
-            echo "$bad"
-            exit 1
-          fi
-          echo "clean — no clinical stores tracked."
+                                                                                # If build-data changed a generated file, the PR is missing a rebuild.
+                                                                                      - name: generated data is committed and current
+                                                                                              run: |
+                                                                                                        if ! git diff --quiet -- data/generated; then
+                                                                                                                    echo "::error::data/generated is stale — run 'node scripts/build-data.js' and commit the result."
+                                                                                                                                git --no-pager diff --stat -- data/generated
+                                                                                                                                            exit 1
+                                                                                                                                                      fi
+                                                                                                                                                      
+                                                                                                                                                            - name: app.js parses
+                                                                                                                                                                    run: node --check app.js
+                                                                                                                                                                    
+                                                                                                                                                                          - name: referential integrity
+                                                                                                                                                                                  run: node scripts/validate-relations.js
+                                                                                                                                                                                  
+                                                                                                                                                                                        # Graduated from the ratchet 2026-08-06: the 72 extra-point D2 ids were
+                                                                                                                                                                                              # backfilled (add-point-ids.js), validate-point-ids is green, so it now
+                                                                                                                                                                                                    # blocks like everything else.
+                                                                                                                                                                                                          - name: point ids and the id ledger (DECISIONS D2/D6)
+                                                                                                                                                                                                                  run: node scripts/validate-point-ids.js
+                                                                                                                                                                                                                  
+                                                                                                                                                                                                                        - name: runtime data
+                                                                                                                                                                                                                                run: node scripts/validate-data.js
+                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                      - name: interactions
+                                                                                                                                                                                                                                              run: node scripts/validate-interactions.js
+                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                    - name: no scraped junk in content arrays
+                                                                                                                                                                                                                                                            run: node scripts/validate-content-junk.js
+                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                  - name: acupoint card standard
+                                                                                                                                                                                                                                                                          run: node scripts/validate-acupoint-standard.js
+                                                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                                                - name: extra point standard
+                                                                                                                                                                                                                                                                                        run: node scripts/validate-extra-point-standard.js
+                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                              - name: herb card standard
+                                                                                                                                                                                                                                                                                                      run: node scripts/validate-herb-standard.js
+                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                            - name: formula card standard
+                                                                                                                                                                                                                                                                                                                    run: node scripts/validate-formula-standard.js
+                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                          - name: comparison standard
+                                                                                                                                                                                                                                                                                                                                  run: node scripts/validate-comparison-standard.js
+                                                                                                                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                        # sym.* has zero records by design (Batch A): the validator reports
+                                                                                                                                                                                                                                                                                                                                              # "namespace built, no records yet" and exits 0. It blocks here from day
+                                                                                                                                                                                                                                                                                                                                                    # one so the first pilot batch cannot land defects silently — the
+                                                                                                                                                                                                                                                                                                                                                          # yardstick is on the wall before the content arrives (D14).
+                                                                                                                                                                                                                                                                                                                                                                - name: symptom standard
+                                                                                                                                                                                                                                                                                                                                                                        run: node scripts/validate-symptom-standard.js
+                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                              # The edge registry had ZERO consumers until 2026-08-06 — D13 called it
+                                                                                                                                                                                                                                                                                                                                                                                    # "the authority on which fields are edges" while nothing parsed it. This
+                                                                                                                                                                                                                                                                                                                                                                                          # step is that consumer: every declared edge must resolve against real
+                                                                                                                                                                                                                                                                                                                                                                                                # data, including the nested form differentiation_zh[].points_to.
+                                                                                                                                                                                                                                                                                                                                                                                                      - name: relation registry is machine-resolvable
+                                                                                                                                                                                                                                                                                                                                                                                                              run: node scripts/validate-relation-registry.js
+                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                    - name: whitespace / conflict markers
+                                                                                                                                                                                                                                                                                                                                                                                                                            run: git diff --check
+                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                              ratchet:
+                                                                                                                                                                                                                                                                                                                                                                                                                                  name: defect ratchet (conditions · patterns · naming)
+                                                                                                                                                                                                                                                                                                                                                                                                                                      runs-on: ubuntu-latest
+                                                                                                                                                                                                                                                                                                                                                                                                                                          steps:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                - uses: actions/checkout@v4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      - uses: actions/setup-node@v4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              with:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        node-version: "20"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                              - name: no layer may get worse than its committed baseline
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      run: node scripts/check-validation-ratchet.js
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        clinical-data-never-committed:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            name: no patient data in git (DECISIONS D4/D7)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                runs-on: ubuntu-latest
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    steps:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          - uses: actions/checkout@v4
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                - name: gitignored clinical stores must stay out of the tree
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        run: |
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  # D7: the clinical layer lives in a gitignored store, never in git.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            # The template/sample files are de-identified and intentionally tracked,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      # so this checks the private dirs and database files only.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                bad=$(git ls-files \
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            'data/clinical_cases/local/*' \
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        'data/clinical_cases/private/*' \
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    'data/clinical_cases/exports/*' \
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                '*.db' '*.sqlite' '*.sqlite3' '*.phi.*')
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          if [ -n "$bad" ]; then
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      echo "::error::clinical/patient files are tracked in git:"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  echo "$bad"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              exit 1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        fi
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  echo "clean — no clinical stores tracked."
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
