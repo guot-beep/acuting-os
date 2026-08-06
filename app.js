@@ -6164,6 +6164,37 @@ function renderChannelOverviewCard(ch) {
         </div>
       </section>
     ` : ''}
+
+    ${(ch.points_curriculum && ch.points_curriculum.length) ? `
+      <section class="channel-article-section" style="margin-top: 1rem;">
+        <details open style="background: #ffffff; border: 1px solid #c2e0d3; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #164e32; outline: none; user-select: none;">
+            📚 課件 ${ch.points_curriculum.length} 穴位詳細臨床選穴與考綱精華 (Curriculum Point Notes)
+            <span style="font-size: 0.82rem; font-weight: 400; color: #5a7566; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
+          </summary>
+          <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
+            ${ch.points_curriculum.map(p => `
+              <div style="background: #f9fbf9; border-left: 4px solid #1f5b3d; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #e2ece7; border-left-width: 4px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.45rem;">
+                  <a class="matrix-point-link" href="#point/${p.code}" data-point-code="${p.code}" style="font-size: 1.08rem; font-weight: 800; color: #1f5b3d; text-decoration: none;">
+                    ${p.code} ${escapeHtml(p.nameZh)}
+                  </a>
+                  <span style="background: #e1efe8; color: #164e32; font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px;">
+                    ${escapeHtml(p.category)}
+                  </span>
+                </div>
+                <div style="font-size: 0.88rem; color: #35473e; line-height: 1.6; display: grid; gap: 0.35rem;">
+                  <div><strong>📍 定位與針法 Location & Needling:</strong> ${escapeHtml(p.location)} <em style="color: #8b2500; font-style: normal;">${escapeHtml(p.needling)}</em></div>
+                  <div><strong>✨ 功用 Functions:</strong> ${escapeHtml(p.actions)}</div>
+                  <div><strong>🎯 主治 Indications:</strong> ${escapeHtml(p.indications)}</div>
+                  ${p.notes ? `<div style="background: #fff9e6; border-radius: 6px; padding: 0.5rem 0.75rem; border: 1px solid #f0e2b6; color: #7a5c00; margin-top: 0.2rem;"><strong>💡 考綱精華與選穴要領:</strong> ${escapeHtml(p.notes)}</div>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </details>
+      </section>
+    ` : ''}
   `;
 }
 
