@@ -28,6 +28,7 @@
           <a href="#ws/acu" data-ws="acu" class="nav-sub" data-mode-text data-bilingual="針灸穴位 Acupoints" data-english="Acupoints">針灸穴位 Acupoints</a>
           <a href="#ws/formula" data-ws="formula" class="nav-sub" data-mode-text data-bilingual="方劑 Formulas" data-english="Formulas">方劑 Formulas</a>
           <a href="#ws/herb" data-ws="herb" class="nav-sub" data-mode-text data-bilingual="中藥 Materia Medica" data-english="Materia Medica">中藥 Materia Medica</a>
+          <a href="#ws/pharm" data-ws="pharm" class="nav-sub" data-mode-text data-bilingual="西藥 Pharmacology" data-english="Pharmacology">西藥 Pharmacology</a>
           <a href="#ws/condition" data-ws="condition" class="nav-sub" data-mode-text data-bilingual="病症圖譜 Conditions" data-english="Conditions">病症圖譜 Conditions</a>
           <a href="#ws/comparison" data-ws="comparison" class="nav-sub" data-mode-text data-bilingual="辨證鑑別 Comparisons" data-english="Comparisons">辨證鑑別 Comparisons</a>
         </div>
@@ -421,6 +422,19 @@
           </div>
         </div>
         <div id="herbRecords" class="k-records" aria-label="Herb records"></div>
+      </section>
+
+      <!-- 西藥。放在中藥正下方(Ting 2026-08-06)。六層架構見
+           docs/PHARM_CARD_TEMPLATE.md;安全欄位的來源規則見該檔 §0。 -->
+      <section class="formula-section pharm-section" data-workspace="pharm" id="pharmSection" aria-label="西藥藥理" data-mode-aria-label data-bilingual-aria-label="西藥藥理" data-english-aria-label="Pharmacology">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Pharmacology</p>
+            <h2 data-mode-text data-bilingual="西藥 / Pharmacology" data-english="Pharmacology">西藥 / Pharmacology</h2>
+            <p data-mode-text data-bilingual="作用機轉、作用部位、適應症、禁忌與考試重點。禁忌與交互作用一律引用官方標籤，課件沒有的欄位留空不補。" data-english="Mechanism, site of action, indications, contraindications and board-exam focus. Contraindications and interactions cite the official label; fields the course does not carry are left empty rather than filled.">作用機轉、作用部位、適應症、禁忌與考試重點。禁忌與交互作用一律引用官方標籤，課件沒有的欄位留空不補。</p>
+          </div>
+        </div>
+        <div id="pharmRecords" class="k-records" aria-label="Pharmacology records"></div>
       </section>
 
       <section class="formula-section comparison-section" data-workspace="comparison" id="comparisonSection" aria-label="辨證鑑別表" data-mode-aria-label data-bilingual-aria-label="辨證鑑別表" data-english-aria-label="Pattern comparison tables">

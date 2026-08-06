@@ -114,6 +114,12 @@ const knowledge = {
   // 同一份設定，不能在 knowledge.js 裡另抄一份 —— 抄第二份就會有一天不同步，
   // 而圖照樣畫得出來，只是軸錯位，畫面上看不出來。
   formulaActionGroups: readJson("data/config/formula_tag_glossary.json").action_groups,
+  // 藥理層(2026-08-06)。四層一起帶進來:單藥卡要顯示分類名、標的部位與系統,
+  // 而那三樣各住在自己的檔案 —— 少帶一個,卡片就只能印 id。
+  pharmDrugs: readJson("data/pharmacology/drugs.json"),
+  pharmDrugClasses: readJson("data/pharmacology/drug_classes.json"),
+  pharmDrugTargets: readJson("data/pharmacology/drug_targets.json"),
+  pharmDrugSystems: readJson("data/pharmacology/drug_systems.json"),
 };
 // Deterministic banner — see the app_data.js note above.
 const kBody = "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n";
