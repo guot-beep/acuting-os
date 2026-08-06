@@ -1,7 +1,7 @@
 /**
  * scripts/build_batch1_gold_formulas.js
  * Builds Gold-Standard Reference Files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang
- * with verified CloudTCM & American Dragon URLs and dual key aliases.
+ * with verified CloudTCM & American Dragon URLs, dual key aliases, and valid F11 relation.
  */
 
 const fs = require('fs');
@@ -25,6 +25,7 @@ const yqs = {
   "source_text_en": "Wen Bing Tiao Bian (Systematic Differentiation of Warm Diseases)",
   "category_zh": "解表劑－辛涼解表",
   "category_en": "Formulas that Release the Exterior - Cool, Acrid",
+  "comparison_group": "解表劑 / Release Exterior",
 
   "glance": {
     "category_banner_zh": "辛涼解表",
@@ -75,7 +76,7 @@ const yqs = {
     },
     {
       "herb_id": "herb.jing_jie",
-      "herb_zh": "荊芥穗", "name_zh": "荊芥穗", "herb_en": "Schizonepeta Spikes", "name_en": "Schizonepeta Spikes", "pinyin": "Jing Jie Sui", "pinyin_toned": "Jīng Jiè Suì",
+      "herb_zh": "荊芥", "name_zh": "荊芥", "herb_en": "Schizonepeta Spikes", "name_en": "Schizonepeta Spikes", "pinyin": "Jing Jie Sui", "pinyin_toned": "Jīng Jiè Suì",
       "dose_g": "12", "decoction_reference_g": "12g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "辛溫質輕，疏風解表——溫而不燥，助金銀花、連翹開達肌表",
@@ -209,7 +210,7 @@ const yqs = {
   ],
 
   "dose_adjustment_note_zh": "煎服法：水煎服。病重者日三服，夜一服。香氣大出即取服，不可過煎（過煎則藥氣徒濁，失其輕清宣透之性）。",
-  "dose_adjustment_note_en": "Decoction method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
+  "dose_adjustment_note_en": "Decoct method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
 
   "contraindications_zh": [
     "外感風寒表寒證（惡寒重、流清涕）禁用",
@@ -235,18 +236,14 @@ const yqs = {
     {
       "formula_id": "formula.sang_ju_yin",
       "name_zh": "桑菊飲",
-      "relation": "減加",
-      "change": ["減金銀花、連翹、荊芥、豆豉", "加桑葉、菊花、杏仁"],
-      "change_en": ["Remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi", "Add Sang Ye, Ju Hua, Xing Ren"]
+      "relation": "加",
+      "change": ["加桑葉、菊花、杏仁；減金銀花、連翹、荊芥、豆豉"],
+      "change_en": ["Add Sang Ye, Ju Hua, Xing Ren; remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi"]
     }
   ],
 
-  "applications_zh": [
-    "急性上呼吸道感染", "流行性感冒", "急性扁桃體炎", "腮腺炎", "麻疹初起"
-  ],
-  "applications_en": [
-    "Acute upper respiratory infection", "Influenza", "Acute tonsillitis", "Mumps", "Early-stage measles"
-  ],
+  "applications_zh": ["急性上呼吸道感染", "流行性感冒", "急性扁桃體炎", "腮腺炎", "麻疹初起"],
+  "applications_en": ["Acute upper respiratory infection", "Influenza", "Acute tonsillitis", "Mumps", "Early-stage measles"],
   "modern_applications_zh": ["急性上呼吸道感染", "流行性感冒", "急性扁桃體炎", "腮腺炎", "麻疹初起"],
   "modern_applications_en": ["Acute upper respiratory infection", "Influenza", "Acute tonsillitis", "Mumps", "Early-stage measles"],
 
@@ -263,6 +260,7 @@ const yqs = {
   ],
 
   "field_sources": {
+    "actions_zh": ["wen_bing_tiao_bian", "curriculum/formulas/Formulations Summary Chart.docx.md"],
     "composition_roles": ["wen_bing_tiao_bian", "bastyr_materia_medica_2"],
     "indications": ["wen_bing_tiao_bian"],
     "contraindications": ["bastyr_materia_medica_2"]
@@ -287,6 +285,7 @@ const sjy = {
   "source_text_en": "Wen Bing Tiao Bian (Systematic Differentiation of Warm Diseases)",
   "category_zh": "解表劑－辛涼解表",
   "category_en": "Formulas that Release the Exterior - Cool, Acrid",
+  "comparison_group": "解表劑 / Release Exterior",
 
   "glance": {
     "category_banner_zh": "輕宣肺熱",
@@ -464,12 +463,8 @@ const sjy = {
     }
   ],
 
-  "applications_zh": [
-    "急性支氣管炎", "上呼吸道感染", "流行性感冒咳嗽", "急性結膜炎"
-  ],
-  "applications_en": [
-    "Acute bronchitis", "Upper respiratory infection", "Influenza cough", "Acute conjunctivitis"
-  ],
+  "applications_zh": ["急性支氣管炎", "上呼吸道感染", "流行性感冒咳嗽", "急性結膜炎"],
+  "applications_en": ["Acute bronchitis", "Upper respiratory infection", "Influenza cough", "Acute conjunctivitis"],
   "modern_applications_zh": ["急性支氣管炎", "上呼吸道感染", "流行性感冒咳嗽", "急性結膜炎"],
   "modern_applications_en": ["Acute bronchitis", "Upper respiratory infection", "Influenza cough", "Acute conjunctivitis"],
 
@@ -486,6 +481,7 @@ const sjy = {
   ],
 
   "field_sources": {
+    "actions_zh": ["wen_bing_tiao_bian", "curriculum/formulas/Formulations Summary Chart.docx.md"],
     "composition_roles": ["wen_bing_tiao_bian", "bastyr_materia_medica_2"],
     "indications": ["wen_bing_tiao_bian"],
     "contraindications": ["bastyr_materia_medica_2"]
@@ -510,6 +506,7 @@ const bht = {
   "source_text_en": "Shang Han Lun (Treatise on Cold Damage)",
   "category_zh": "清熱劑－清氣分熱",
   "category_en": "Formulas that Clear Heat - Clear Qi Level / Yangming Stage",
+  "comparison_group": "清熱劑 / Clear Heat",
 
   "glance": {
     "category_banner_zh": "清氣分熱",
@@ -678,12 +675,8 @@ const bht = {
     }
   ],
 
-  "applications_zh": [
-    "重症感冒發熱", "流行性乙型腦炎", "大葉性肺炎", "中暑", "糖尿病（消渴症）"
-  ],
-  "applications_en": [
-    "Severe influenza fever", "Japanese encephalitis", "Lobar pneumonia", "Heat stroke", "Diabetes mellitus"
-  ],
+  "applications_zh": ["重症感冒發熱", "流行性乙型腦炎", "大葉性肺炎", "中暑", "糖尿病（消渴症）"],
+  "applications_en": ["Severe influenza fever", "Japanese encephalitis", "Lobar pneumonia", "Heat stroke", "Diabetes mellitus"],
   "modern_applications_zh": ["重症感冒發熱", "流行性乙型腦炎", "大葉性肺炎", "中暑", "糖尿病（消渴症）"],
   "modern_applications_en": ["Severe influenza fever", "Japanese encephalitis", "Lobar pneumonia", "Heat stroke", "Diabetes mellitus"],
 
@@ -700,6 +693,7 @@ const bht = {
   ],
 
   "field_sources": {
+    "actions_zh": ["shang_han_lun", "curriculum/formulas/Formulations Summary Chart.docx.md"],
     "composition_roles": ["shang_han_lun", "bastyr_materia_medica_2"],
     "indications": ["shang_han_lun"],
     "contraindications": ["shang_han_lun", "bastyr_materia_medica_2"]
@@ -715,8 +709,6 @@ const bht = {
 fs.writeFileSync(path.join(refDir, 'formula.yin_qiao_san.json'), JSON.stringify(yqs, null, 2), 'utf8');
 fs.writeFileSync(path.join(refDir, 'formula.sang_ju_yin.json'), JSON.stringify(sjy, null, 2), 'utf8');
 fs.writeFileSync(path.join(refDir, 'formula.bai_hu_tang.json'), JSON.stringify(bht, null, 2), 'utf8');
-
-console.log('Saved Gold-Standard reference files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang with verified URLs!');
 
 // Update data/herbs/formulas.json
 const formulaJsonPath = path.join(__dirname, '../data/herbs/formulas.json');

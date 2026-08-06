@@ -1066,7 +1066,7 @@
       "category": "解表劑 / Release the Exterior",
       "tier": "core",
       "source_hint": "Bensky F&S: Release the Exterior; add to AcuTing formulas after Ting approval",
-      "comparison_group": "exterior_wind_cold",
+      "comparison_group": "解表劑 / Release Exterior",
       "modern_clinical_use_tags": [],
       "related_conditions": [],
       "related_formulas": [
@@ -1081,139 +1081,159 @@
       "study_tags": [],
       "pattern_focus_en": [],
       "actions_en": [
-        "Releases the exterior and dispels cold",
-        "Warms the Lungs and transforms thin fluid retention"
+        "Releases exterior and dispels cold — relieves exterior Wind-Cold pathogen",
+        "Warms Lungs and transforms thin fluid retention — warms Lungs to transform internal fluids"
       ],
       "actions_zh": [
-        "解表散寒",
-        "溫肺化飲"
+        "解表散寒 — 疏散外感風寒邪氣",
+        "溫肺化飲 — 溫化內停之水飲痰液"
       ],
       "composition": [
         {
           "herb_id": "herb.ma_huang",
+          "herb_zh": "麻黃",
           "name_zh": "麻黃",
+          "herb_en": "Ephedra",
           "name_en": "Ephedra",
+          "pinyin": "Ma Huang",
           "pinyin_toned": "Má Huáng",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "君",
           "role_en": "Chief",
-          "role_reason_zh": "發汗解表，宣肺平喘——相須發揮解表主力",
-          "role_reason_en": "Promotes sweating, releases exterior, diffuses Lungs and calms wheezing - chief diaphoretic force"
+          "role_reason_zh": "發汗解表，宣肺平喘——與桂枝相須發揮解表主力",
+          "role_reason_en": "Promotes sweating, releases exterior, diffuses Lungs and calms wheezing - chief diaphoretic force",
+          "in_formula_zh": "發汗解表，宣肺平喘——與桂枝相須發揮解表主力"
         },
         {
           "herb_id": "herb.gui_zhi",
+          "herb_zh": "桂枝",
           "name_zh": "桂枝",
+          "herb_en": "Cinnamon Twig",
           "name_en": "Cinnamon Twig",
+          "pinyin": "Gui Zhi",
           "pinyin_toned": "Guì Zhī",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "君",
           "role_en": "Chief",
           "role_reason_zh": "助麻黃解表散寒、溫通經脈；化氣行水——與麻黃共為君",
-          "role_reason_en": "Assists Ma Huang in releasing exterior cold and warming channels; transforms qi and moves water"
+          "role_reason_en": "Assists Ma Huang in releasing exterior cold and warming channels; transforms qi and moves water",
+          "in_formula_zh": "助麻黃解表散寒、溫通經脈；化氣行水——與麻黃共為君"
         },
         {
           "herb_id": "herb.gan_jiang",
+          "herb_zh": "乾薑",
           "name_zh": "乾薑",
+          "herb_en": "Dried Ginger",
           "name_en": "Dried Ginger",
+          "pinyin": "Gan Jiang",
           "pinyin_toned": "Gān Jiāng",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "臣",
           "role_en": "Deputy",
-          "role_reason_zh": "溫脾肺之陽，化內停之水飲——溫肺化飲金三角",
-          "role_reason_en": "Warms Spleen and Lung yang to transform retained thin fluids - key component of fluid-warming trio"
+          "role_reason_zh": "溫脾肺之陽，化內停之水飲——溫肺化飲金三角核心",
+          "role_reason_en": "Warms Spleen and Lung yang to transform retained thin fluids - key component of fluid-warming trio",
+          "in_formula_zh": "溫脾肺之陽，化內停之水飲——溫肺化飲金三角核心"
         },
         {
           "herb_id": "herb.xi_xin",
+          "herb_zh": "細辛",
           "name_zh": "細辛",
-          "name_en": "Asarum / Manchurian Wild Ginger",
+          "herb_en": "Asarum",
+          "name_en": "Asarum",
+          "pinyin": "Xi Xin",
           "pinyin_toned": "Xì Xīn",
           "dose_g": "6",
+          "decoction_reference_g": "6g",
           "role_zh": "臣",
           "role_en": "Deputy",
           "role_reason_zh": "溫肺化飲、通竅止痛——助乾薑散內伏之水飲",
-          "role_reason_en": "Warms Lungs, transforms fluid retention and unblocks orifices - helps Gan Jiang dispel deep fluids"
+          "role_reason_en": "Warms Lungs, transforms fluid retention and unblocks orifices - helps Gan Jiang dispel deep fluids",
+          "in_formula_zh": "溫肺化飲、通竅止痛——助乾薑散內伏之水飲"
         },
         {
           "herb_id": "herb.ban_xia",
+          "herb_zh": "半夏",
           "name_zh": "半夏",
+          "herb_en": "Pinellia Rhizome",
           "name_en": "Pinellia Rhizome",
+          "pinyin": "Ban Xia",
           "pinyin_toned": "Bàn Xià",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "臣",
           "role_en": "Deputy",
           "role_reason_zh": "燥濕化痰，降逆和胃——降肺胃之逆氣以止嘔降逆",
-          "role_reason_en": "Dries dampness, transforms phlegm, directs rebellious qi downward to stop retching"
+          "role_reason_en": "Dries dampness, transforms phlegm, directs rebellious qi downward to stop retching",
+          "in_formula_zh": "燥濕化痰，降逆和胃——降肺胃之逆氣以止嘔降逆"
         },
         {
-          "herb_id": "herb.wubwei_zi",
+          "herb_id": "herb.wu_wei_zi",
+          "herb_zh": "五味子",
           "name_zh": "五味子",
+          "herb_en": "Schisandra Fruit",
           "name_en": "Schisandra Fruit",
+          "pinyin": "Wu Wei Zi",
           "pinyin_toned": "Wǔ Wèi Zǐ",
           "dose_g": "6",
+          "decoction_reference_g": "6g",
           "role_zh": "佐",
           "role_en": "Assistant",
           "role_reason_zh": "斂肺氣、止咳嗽——與麻、辛相配，收散結合，防耗散肺氣",
-          "role_reason_en": "Astringes Lung qi and stops cough - pairs with Ma Huang and Xi Xin to prevent over-dispersal of Lung qi"
+          "role_reason_en": "Astringes Lung qi and stops cough - pairs with Ma Huang and Xi Xin to prevent over-dispersal of Lung qi",
+          "in_formula_zh": "斂肺氣、止咳嗽——與麻、辛相配，收散結合，防耗散肺氣"
         },
         {
           "herb_id": "herb.bai_shao",
+          "herb_zh": "白芍",
           "name_zh": "白芍",
+          "herb_en": "White Peony Root",
           "name_en": "White Peony Root",
+          "pinyin": "Bai Shao",
           "pinyin_toned": "Bái Sháo",
           "dose_g": "9",
+          "decoction_reference_g": "9g",
           "role_zh": "佐",
           "role_en": "Assistant",
           "role_reason_zh": "和營斂陰、緩急止痛——養血斂陰，防大發其汗傷營陰",
-          "role_reason_en": "Harmonizes ying, restrains yin - prevents profuse sweating from damaging blood and ying fluids"
+          "role_reason_en": "Harmonizes ying, restrains yin - prevents profuse sweating from damaging blood and ying fluids",
+          "in_formula_zh": "和營斂陰、緩急止痛——養血斂陰，防大發其汗傷營陰"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
+          "herb_zh": "炙甘草",
           "name_zh": "炙甘草",
+          "herb_en": "Honey-fried Licorice",
           "name_en": "Honey-fried Licorice",
+          "pinyin": "Zhi Gan Cao",
           "pinyin_toned": "Zhì Gān Cǎo",
           "dose_g": "6",
+          "decoction_reference_g": "6g",
           "role_zh": "使",
           "role_en": "Envoy",
           "role_reason_zh": "益氣和中，調和諸藥——緩和辛燥峻烈之性",
-          "role_reason_en": "Tonifies qi, harmonizes middle burner and moderates acrid harshness of the formula"
+          "role_reason_en": "Tonifies qi, harmonizes middle burner and moderates acrid harshness of the formula",
+          "in_formula_zh": "益氣和中，調和諸藥——緩和辛燥峻烈之性"
         }
       ],
-      "pattern_indications_en": [],
-      "pattern_indications_zh": [
-        "本方是改善外感風寒，寒飲內停，氣喘咳嗽的常用方，是改善「形寒裡飲」的經典名方。",
-        "常見症狀包括：畏寒發熱、頭痛身痛、無汗、咳嗽、氣喘、痰涎清稀且量多、胸悶、乾嘔、痰飲咳喘導致無法平躺、肢體疼痛、頭面四肢浮腫、舌苔白滑、脈象浮...等。",
-        "每年在進入冬季及初春期間，這段期間有很多人會開始過敏，出現各種類似感冒症狀，運用此方改善感冒、鼻病與過敏很有效！",
-        "小青龍湯改善體內寒氣深重，水液消化障礙",
-        "小青龍湯是麻黃湯證的變化型，這裡提到的「發熱」是泛指太陽表實證的所有典型症狀，例如：惡寒、無汗、頭痛、身痛....等等證。",
-        "《傷寒論》中運用麻黃、桂枝就是感冒的表證，有麻黃主要就是用在「無汗」、「惡寒發熱」與「全身痛」上。因為有桂枝，所以臨床實務上，用於「有汗」或「不惡寒發熱」也有效果。",
-        "原本體內就有寒濕，所以這個痰會是白色的、泡沫的、粘稠的，很難咳出來，這就是「寒飲的痰」，一旦開始咳喘，躺下來就不舒服。既然是「寒飲」，就必須用「溫化」的策略。",
-        "本方目的在辛溫解表，以散外感之風寒。辛散溫化，而驅除體內之痰飲。小青龍湯可謂溫脾肺、去寒邪、化痰飲之極品！適合寒性陽虛體質的人，每年有一段期間必定需要運用！",
-        "寒冷季節感冒、咳嗽、流鼻涕，常用小青龍湯",
-        "小青龍湯也是改善體內水氣運化障礙的重要方劑。依照《傷寒論》描述，當一個人得到外感傷寒後，因為胃脘的部位(心下)有水氣，也就是中醫所說的痰飲停留在心下胃院部。",
-        "《難經/四十九難》提到：「形寒飲冷則傷肺」。當體內的「水氣」與「寒氣」互相交纏，內外影響，導致體內的水液流動不穩定。",
-        "寒氣侵犯肺部，使肺的正常功能受阻，無法順暢調節氣息，因此出現咳嗽、氣喘，痰液較多且稀薄。",
-        "當水分滯留在心口位置，阻礙氣的運行，便會導致胸口發悶不適。水液的異常流動還會使胃氣上逆，引發乾嘔。水分滲透到皮膚組織，則會導致浮腫和身體沉重，舌苔白滑，脈象浮動。",
-        "與外感之風寒相激盪，導致氣逆水升，上逆犯肺就會咳嗽，橫犯胃腑則乾嘔，這是主要症狀。有時候也會發喘，因此小青龍湯可以改善咳嗽與氣喘。",
-        "體內有痰飲者，通常是不會口渴的，但是如果因為水飲停聚阻礙體內氣機，導致「氣不化津」者，也會出現口渴，但不是很嚴重的渴，只是想要小喝一下水，不是那種體內有熱證的渴。",
-        "運用中藥改善肺臟寒冷的現象",
-        "因為體內水氣運作不暢，所以也會影響膀胱氣化功能，則小便不利，小腹脹滿。水氣上逆，咽喉部位有氣逆阻塞、梗塞感。",
-        "如果服用小青龍湯後反而開始口渴，這是體內津液調整，快要康復的正常狀況，等待正氣恢復之後，口渴就會消失。",
-        "本方從「藥對」的角度來看，「麻黃跟桂枝」是一對，「乾薑、細辛」為一對，「半夏，芍藥與五味子」為一對。",
-        "麻黃與桂枝搭配，以發汗散寒為主，同時兼顧水飲內停的問題，並能緩解喘咳與身體疼痛。",
-        "乾薑、細辛、半夏，可以溫肺化飲、燥濕祛痰，主要針對內飲問題。細辛還能輔助麻黃、桂枝解表祛邪，細辛去腎寒，以溫化水飲。飲為陰邪，耗損肺腎之陽氣。",
-        "小青龍湯中半夏與乾薑相配，乾薑溫中化飲，半夏降逆化痰止嘔，以燥化脾胃之寒飲，是治療乾嘔、吐涎沫的關鍵藥對。",
-        "五味子收斂肺氣，止咳。芍藥和營養血，與辛散藥物相配，使發散與收斂相互協調。這樣的搭配可增強止咳平喘的作用，同時避免過度發散導致耗氣傷陰。",
-        "小青龍湯中的乾薑、細辛、五味子在《神農本草經》中均可治「咳逆」。乾薑是張仲景止咳的常用藥物，常與細辛、五味子配伍，以增強止咳之效。",
-        "這些組合，就是要用來改善體內本來就有寒濕，又外感風寒，所產生的一種鼻病、咳嗽或氣喘。",
-        "有一點必須提出，有些人雖然體內寒氣深重，肺部卻嚴重化熱，這時候要運用小青龍湯加上「石膏」更加對證，這更適合不少現代人的體質。",
-        "若分析過去幾十年來超過2000篇中國大陸地區，真對小青龍湯的研究論文可以發現，確實主要集中在肺部相關疾病，簡易分類如下：",
-        "氣管與鼻炎疾病：新冠肺炎(COVID-19)、咳嗽變異性哮喘(CVA)、感冒後咳嗽(尤其是外寒內飲型或風寒型)、急慢性咳嗽、過敏性鼻炎、慢性氣管炎、肺氣腫、肺心病、小兒咳嗽氣喘、支氣管哮喘、支氣管肺炎、重症肺炎、大葉性肺炎、結核性胸膜炎、慢性鼻炎、老年氣喘肺炎、急性呼吸窘迫綜合徵(ARDS)、肺癌...等。",
-        "心肺及腎臟疾病：臨床曾用來治療肺源性心臟病、失音、心悸、氣胸、急慢性腎炎、腎病綜合徵、卡他性眼炎、慢性心力衰竭、腦卒中、腦血管疾病...等。",
-        "皮膚、泌尿系統疾病：蕁麻疹、泌尿系統感染、大腸易激綜合症、遺尿（老年遺尿）、閉經、痛經。",
-        "過敏疾病：過敏性疾病、過敏性結膜炎、過敏性鼻炎、花粉過敏、藥物過敏、氣候變化引發氣喘。"
+      "pattern_indications_en": [
+        "Exterior Wind-Cold with interior thin fluid retention: Chills, fever, anhidrosis, coughing and wheezing with copious thin white phlegm, chest fullness, dry retching, body pain, thin white slippery tongue coating, floating tight pulse."
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "pattern_indications_zh": [
+        "外寒內飲證（表寒裏飲）：惡寒發熱，無汗，咳嗽喘急，痰多稀白量多，胸痞，或乾嘔，或嘔吐，身體重痛，舌苔白滑，脈浮緊。"
+      ],
+      "modifications_en": [
+        "Fluid retention with heat and restlessness: Add Shi Gao 15g (forms Xiao Qing Long Jia Shi Gao Tang)",
+        "Severe wheezing with throat stridor: Add She Gan 9g, Kuan Dong Hua 9g, Zi Wan 9g",
+        "Edema and dysuria: Add Fu Ling 15g, Ze Xie 9g"
+      ],
+      "modifications_zh": [
+        "水飲內停兼有表鬱化熱、煩躁者：加石膏 15g ➔ 即小青龍加石膏湯（清熱除煩）",
+        "喉中水雞聲、氣喘甚者：加射干 9g、冬花 9g、紫菀 9g 降氣平喘",
+        "水腫、小便不利者：加茯苓 15g、澤瀉 9g 利水滲濕"
+      ],
       "contraindications_en": [
         "Contraindicated in dry cough from Yin deficiency without phlegm",
         "Contraindicated in Lung Heat cough with thick yellow phlegm",
@@ -1229,9 +1249,7 @@
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/41",
-        "https://www.sunten.com.tw/",
-        "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://www.americandragon.com/HerbFormulas/XiaoQingLongTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -1316,21 +1334,14 @@
       "exam_star": 1,
       "field_sources": {
         "composition_roles": [
-          "bastyr_materia_medica_2",
-          "classical_formula_doctrine"
+          "shang_han_lun",
+          "bastyr_materia_medica_2"
         ],
         "indications": [
-          "bastyr_materia_medica_2",
           "shang_han_lun"
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
-        ],
-        "fang_yi": [
-          "classical_formula_doctrine"
-        ],
-        "modifications": [
-          "shang_han_lun"
         ]
       },
       "cloudtcm_id": 41,
@@ -1428,20 +1439,20 @@
         {
           "if_zh": "水飲內停兼有表鬱化熱、煩躁者",
           "if_en": "With interior fluid retention turning into heat with restlessness",
-          "change_zh": "加石膏——即小青龍加石膏湯",
-          "change_en": "Add Shi Gao (forms Xiao Qing Long Jia Shi Gao Tang)"
+          "change_zh": "加石膏 15g ➔ 即小青龍加石膏湯（清熱除煩）",
+          "change_en": "Add Shi Gao 15g (forms Xiao Qing Long Jia Shi Gao Tang)"
         },
         {
           "if_zh": "喉中水雞聲、氣喘甚者",
           "if_en": "With severe wheezing and throat stridor",
-          "change_zh": "加射干、冬花、紫菀",
-          "change_en": "Add She Gan, Kuan Dong Hua, and Zi Wan"
+          "change_zh": "加射干 9g、冬花 9g、紫菀 9g 降氣平喘",
+          "change_en": "Add She Gan 9g, Kuan Dong Hua 9g, Zi Wan 9g"
         },
         {
           "if_zh": "水腫、小便不利者",
           "if_en": "With edema and dysuria",
-          "change_zh": "加茯苓、澤瀉",
-          "change_en": "Add Fu Ling and Ze Xie"
+          "change_zh": "加茯苓 15g、澤瀉 9g 利水滲濕",
+          "change_en": "Add Fu Ling 15g, Ze Xie 9g"
         }
       ],
       "dose_adjustment_note_zh": "水煎時間不宜過長（< 20分鐘），先煎麻黃去上沫。服藥後避風寒，忌生冷黏滑食物。",
@@ -1498,7 +1509,35 @@
       ],
       "authored_by": "model_draft",
       "formula_song": "小青龍湯細辛麻，桂芍乾薑半夏加。\n五味甘草同煎服，外寒內飲喘咳差。",
-      "exam_pearl": "【考綱重點】外感風寒、內停水飲證（表寒裏飲）首選方。麻黃、桂枝發汗解表；乾薑、細辛溫肺化飲；五味子收斂肺氣防耗散；半夏降逆化痰。NCBAHM 2026 CH Outline p.20。"
+      "exam_pearl": "【考綱重點】外感風寒、內停水飲證（表寒裏飲）首選方。麻黃、桂枝發汗解表；乾薑、細辛溫肺化飲；五味子收斂肺氣防耗散；半夏降逆化痰。NCBAHM 2026 CH Outline p.20。",
+      "formula_family": [
+        {
+          "formula_id": "formula.xiao_qing_long_jia_shi_gao_tang",
+          "name_zh": "小青龍加石膏湯",
+          "relation": "加",
+          "change": [
+            "加石膏 15g"
+          ],
+          "change_en": [
+            "Add Shi Gao 15g"
+          ]
+        }
+      ],
+      "applications_zh": [
+        "過敏性鼻炎",
+        "支氣管氣喘",
+        "慢性支氣管炎",
+        "肺氣腫",
+        "肺源性心臟病"
+      ],
+      "applications_en": [
+        "Allergic rhinitis",
+        "Bronchial asthma",
+        "Chronic bronchitis",
+        "Emphysema",
+        "Cor pulmonale"
+      ],
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/XiaoQingLongTang.html"
     },
     {
       "id": "formula.jiu_wei_qiang_huo_tang",
@@ -1890,8 +1929,8 @@
         },
         {
           "herb_id": "herb.jing_jie",
-          "herb_zh": "荊芥穗",
-          "name_zh": "荊芥穗",
+          "herb_zh": "荊芥",
+          "name_zh": "荊芥",
           "herb_en": "Schizonepeta Spikes",
           "name_en": "Schizonepeta Spikes",
           "pinyin": "Jing Jie Sui",
@@ -2066,7 +2105,7 @@
       "tier": "core",
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
-      "comparison_group": "exterior_wind_heat",
+      "comparison_group": "解表劑 / Release Exterior",
       "related_formulas": [
         "formula.sang_ju_yin",
         "formula.ma_xing_shi_gan_tang"
@@ -2128,6 +2167,10 @@
       "board_name_en": "Honeysuckle and Forsythia Powder",
       "exam_star": 1,
       "field_sources": {
+        "actions_zh": [
+          "wen_bing_tiao_bian",
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
+        ],
         "composition_roles": [
           "wen_bing_tiao_bian",
           "bastyr_materia_medica_2"
@@ -2265,7 +2308,7 @@
         }
       ],
       "dose_adjustment_note_zh": "煎服法：水煎服。病重者日三服，夜一服。香氣大出即取服，不可過煎（過煎則藥氣徒濁，失其輕清宣透之性）。",
-      "dose_adjustment_note_en": "Decoction method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
+      "dose_adjustment_note_en": "Decoct method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
       "comparisons": [
         {
           "with": "formula.sang_ju_yin",
@@ -2278,14 +2321,12 @@
         {
           "formula_id": "formula.sang_ju_yin",
           "name_zh": "桑菊飲",
-          "relation": "減加",
+          "relation": "加",
           "change": [
-            "減金銀花、連翹、荊芥、豆豉",
-            "加桑葉、菊花、杏仁"
+            "加桑葉、菊花、杏仁；減金銀花、連翹、荊芥、豆豉"
           ],
           "change_en": [
-            "Remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi",
-            "Add Sang Ye, Ju Hua, Xing Ren"
+            "Add Sang Ye, Ju Hua, Xing Ren; remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi"
           ]
         }
       ],
@@ -2576,7 +2617,7 @@
       "tier": "core",
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Release the Exterior; CloudTCM /formula lookup pending",
-      "comparison_group": "exterior_wind_heat",
+      "comparison_group": "解表劑 / Release Exterior",
       "related_formulas": [
         "formula.yin_qiao_san",
         "formula.ma_xing_shi_gan_tang"
@@ -2639,6 +2680,10 @@
       "board_name_en": "Mulberry Leaf and Chrysanthemum Drink",
       "exam_star": 1,
       "field_sources": {
+        "actions_zh": [
+          "wen_bing_tiao_bian",
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
+        ],
         "composition_roles": [
           "wen_bing_tiao_bian",
           "bastyr_materia_medica_2"
@@ -3918,7 +3963,7 @@
       "category": "清熱劑 / Clear Heat",
       "tier": "core",
       "source_hint": "Bensky F&S: Clear Heat; add to AcuTing formulas after Ting approval",
-      "comparison_group": "heat_qi_ying_blood",
+      "comparison_group": "清熱劑 / Clear Heat",
       "modern_clinical_use_tags": [],
       "related_conditions": [],
       "related_formulas": [
@@ -4122,6 +4167,10 @@
       "board_name_en": "White Tiger Decoction",
       "exam_star": 1,
       "field_sources": {
+        "actions_zh": [
+          "shang_han_lun",
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
+        ],
         "composition_roles": [
           "shang_han_lun",
           "bastyr_materia_medica_2"

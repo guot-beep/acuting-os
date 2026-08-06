@@ -10,6 +10,7 @@
   "source_text_en": "Wen Bing Tiao Bian (Systematic Differentiation of Warm Diseases)",
   "category_zh": "解表劑－辛涼解表",
   "category_en": "Formulas that Release the Exterior - Cool, Acrid",
+  "comparison_group": "解表劑 / Release Exterior",
   "glance": {
     "category_banner_zh": "辛涼解表",
     "category_banner_en": "COOL ACRID EXTERIOR RELEASE",
@@ -96,8 +97,8 @@
     },
     {
       "herb_id": "herb.jing_jie",
-      "herb_zh": "荊芥穗",
-      "name_zh": "荊芥穗",
+      "herb_zh": "荊芥",
+      "name_zh": "荊芥",
       "herb_en": "Schizonepeta Spikes",
       "name_en": "Schizonepeta Spikes",
       "pinyin": "Jing Jie Sui",
@@ -277,7 +278,7 @@
     }
   ],
   "dose_adjustment_note_zh": "煎服法：水煎服。病重者日三服，夜一服。香氣大出即取服，不可過煎（過煎則藥氣徒濁，失其輕清宣透之性）。",
-  "dose_adjustment_note_en": "Decoction method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
+  "dose_adjustment_note_en": "Decoct method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
   "contraindications_zh": [
     "外感風寒表寒證（惡寒重、流清涕）禁用",
     "脾胃虛寒、大便溏薄者慎用",
@@ -300,14 +301,12 @@
     {
       "formula_id": "formula.sang_ju_yin",
       "name_zh": "桑菊飲",
-      "relation": "減加",
+      "relation": "加",
       "change": [
-        "減金銀花、連翹、荊芥、豆豉",
-        "加桑葉、菊花、杏仁"
+        "加桑葉、菊花、杏仁；減金銀花、連翹、荊芥、豆豉"
       ],
       "change_en": [
-        "Remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi",
-        "Add Sang Ye, Ju Hua, Xing Ren"
+        "Add Sang Ye, Ju Hua, Xing Ren; remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi"
       ]
     }
   ],
@@ -364,6 +363,10 @@
     }
   ],
   "field_sources": {
+    "actions_zh": [
+      "wen_bing_tiao_bian",
+      "curriculum/formulas/Formulations Summary Chart.docx.md"
+    ],
     "composition_roles": [
       "wen_bing_tiao_bian",
       "bastyr_materia_medica_2"
