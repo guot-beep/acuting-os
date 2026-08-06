@@ -1,0 +1,276 @@
+{
+  "dataset": "TCM disease taxonomy (中醫病名科別分類)",
+  "policy": [
+    "Controlled vocabulary for tdis.* records' category/subcategory.",
+    "Replaces the free-text classical_source_hint on tdis_registry: those 75 records spell this same taxonomy 22 different ways (中醫內科學·脾胃, 中醫婦科學, 針灸治療學…).",
+    "This is a 中醫科別 axis. It does NOT replace condition_category_vocabulary.json, which is a 西醫系統別 axis for cond.* — a record can carry both.",
+    "Four branches (ENT, ophthalmology, stomatology, andrology) come from tdis_registry, not the 知源 capture — that capture has no top-level for them and adopting it wholesale would have dropped 7 existing records.",
+    "Classical provenance (金匱要略…) is NOT a category. It belongs in a classical_source field; mixing the two is what produced 22 spellings of classical_source_hint."
+  ],
+  "source": "知源中醫 app classification, cross-checked against the 中醫內科學 system names already implied by tdis_registry",
+  "created": "2026-08-06",
+  "categories": [
+    {
+      "id": "tdx.internal_medicine",
+      "level": "category",
+      "name_zh": "內科",
+      "name_en": "Internal Medicine",
+      "children": [
+        {
+          "id": "tdx.internal_medicine.externally_contracted_febrile",
+          "name_zh": "外感病症",
+          "name_en": "Externally Contracted and Febrile Disorders"
+        },
+        {
+          "id": "tdx.internal_medicine.respiratory_system_disorders",
+          "name_zh": "肺系病症",
+          "name_en": "Respiratory System Disorders"
+        },
+        {
+          "id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
+          "name_zh": "脾胃病症",
+          "name_en": "Spleen and Stomach / Gastrointestinal Disorders"
+        },
+        {
+          "id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+          "name_zh": "腎系病症",
+          "name_en": "Kidney and Genitourinary Disorders"
+        },
+        {
+          "id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+          "name_zh": "心系病症",
+          "name_en": "Cardiovascular and Neuropsychiatric Disorders"
+        },
+        {
+          "id": "tdx.internal_medicine.liver_gallbladder_disorders",
+          "name_zh": "肝膽病症",
+          "name_en": "Liver and Gallbladder Disorders"
+        },
+        {
+          "id": "tdx.internal_medicine.qi_blood_body",
+          "name_zh": "氣血津液病症",
+          "name_en": "Qi, Blood, and Body Fluid Disorders"
+        },
+        {
+          "id": "tdx.internal_medicine.channel_limb_neuromuscular",
+          "name_zh": "經絡肢體病症",
+          "name_en": "Channel, Limb, and Neuromuscular Disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.orthopedics_traumatology",
+      "level": "category",
+      "name_zh": "骨傷科",
+      "name_en": "Orthopedics and Traumatology",
+      "children": [
+        {
+          "id": "tdx.orthopedics_traumatology.spinal_disorders",
+          "name_zh": "脊柱類疾病",
+          "name_en": "Spinal Disorders"
+        },
+        {
+          "id": "tdx.orthopedics_traumatology.limb_joint_disorders",
+          "name_zh": "四肢與關節疾病",
+          "name_en": "Limb and Joint Disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.surgery_dermatology",
+      "level": "category",
+      "name_zh": "外科",
+      "name_en": "Surgery and Dermatology",
+      "children": [
+        {
+          "id": "tdx.surgery_dermatology.sores_abscesses_ulcers",
+          "name_zh": "瘡瘍",
+          "name_en": "Sores, Abscesses, and Ulcers"
+        },
+        {
+          "id": "tdx.surgery_dermatology.goiters_masses_tumors",
+          "name_zh": "瘿瘤",
+          "name_en": "Goiters, Masses, and Tumors"
+        },
+        {
+          "id": "tdx.surgery_dermatology.dermatologic_disorders",
+          "name_zh": "皮膚病",
+          "name_en": "Dermatologic Disorders"
+        },
+        {
+          "id": "tdx.surgery_dermatology.anorectal_disorders",
+          "name_zh": "肛腸病",
+          "name_en": "Anorectal Disorders"
+        },
+        {
+          "id": "tdx.surgery_dermatology.other_surgical_disorders",
+          "name_zh": "其他外科疾病",
+          "name_en": "Other Surgical Disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.other_disorders",
+      "level": "category",
+      "name_zh": "其他病症",
+      "name_en": "Other Disorders",
+      "children": [
+        {
+          "id": "tdx.other_disorders.miscellaneous_disorders",
+          "name_zh": "其他病症",
+          "name_en": "Miscellaneous Disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.emergency_conditions",
+      "level": "category",
+      "name_zh": "急症",
+      "name_en": "Emergency Conditions",
+      "children": [
+        {
+          "id": "tdx.emergency_conditions.acute_febrile_conditions",
+          "name_zh": "急性熱病",
+          "name_en": "Acute Febrile Conditions"
+        },
+        {
+          "id": "tdx.emergency_conditions.acute_pain_conditions",
+          "name_zh": "急性痛症",
+          "name_en": "Acute Pain Conditions"
+        },
+        {
+          "id": "tdx.emergency_conditions.acute_bleeding",
+          "name_zh": "急性出血",
+          "name_en": "Acute Bleeding"
+        },
+        {
+          "id": "tdx.emergency_conditions.coma_syncope",
+          "name_zh": "昏迷與昏厥",
+          "name_en": "Coma and Syncope"
+        }
+      ]
+    },
+    {
+      "id": "tdx.pediatrics",
+      "level": "category",
+      "name_zh": "兒科",
+      "name_en": "Pediatrics",
+      "children": [
+        {
+          "id": "tdx.pediatrics.pediatric_epidemic_infectious",
+          "name_zh": "時行疾病",
+          "name_en": "Pediatric Epidemic and Infectious Diseases"
+        },
+        {
+          "id": "tdx.pediatrics.common_miscellaneous_pediatric",
+          "name_zh": "小兒常見病症及雜症",
+          "name_en": "Common and Miscellaneous Pediatric Disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.gynecology_obstetrics",
+      "level": "category",
+      "name_zh": "婦科",
+      "name_en": "Gynecology and Obstetrics",
+      "children": [
+        {
+          "id": "tdx.gynecology_obstetrics.menstrual_disorders",
+          "name_zh": "月經病",
+          "name_en": "Menstrual Disorders"
+        },
+        {
+          "id": "tdx.gynecology_obstetrics.leukorrhea_disorders",
+          "name_zh": "帶下病",
+          "name_en": "Leukorrhea Disorders"
+        },
+        {
+          "id": "tdx.gynecology_obstetrics.pregnancy_disorders",
+          "name_zh": "妊娠病",
+          "name_en": "Pregnancy Disorders"
+        },
+        {
+          "id": "tdx.gynecology_obstetrics.postpartum_disorders",
+          "name_zh": "產後病",
+          "name_en": "Postpartum Disorders"
+        },
+        {
+          "id": "tdx.gynecology_obstetrics.vulvar_vaginal_disorders",
+          "name_zh": "前陰病",
+          "name_en": "Vulvar and Vaginal Disorders"
+        },
+        {
+          "id": "tdx.gynecology_obstetrics.miscellaneous_gynecologic_disorders",
+          "name_zh": "婦科雜病",
+          "name_en": "Miscellaneous Gynecologic Disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.ent",
+      "level": "category",
+      "name_zh": "耳鼻喉科",
+      "name_en": "ENT",
+      "source": "ours (tdis_registry)",
+      "children": [
+        {
+          "id": "tdx.ent.nose",
+          "name_zh": "鼻病",
+          "name_en": "Nasal disorders"
+        },
+        {
+          "id": "tdx.ent.ear",
+          "name_zh": "耳病",
+          "name_en": "Ear disorders"
+        },
+        {
+          "id": "tdx.ent.throat",
+          "name_zh": "咽喉病",
+          "name_en": "Throat disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.ophthalmology",
+      "level": "category",
+      "name_zh": "眼科",
+      "name_en": "Ophthalmology",
+      "source": "ours (tdis_registry)",
+      "children": [
+        {
+          "id": "tdx.ophthalmology.general",
+          "name_zh": "眼病",
+          "name_en": "Eye disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.stomatology",
+      "level": "category",
+      "name_zh": "口腔科",
+      "name_en": "Stomatology",
+      "source": "ours (tdis_registry)",
+      "children": [
+        {
+          "id": "tdx.stomatology.general",
+          "name_zh": "口腔病",
+          "name_en": "Oral disorders"
+        }
+      ]
+    },
+    {
+      "id": "tdx.andrology",
+      "level": "category",
+      "name_zh": "男科",
+      "name_en": "Andrology",
+      "source": "ours (tdis_registry)",
+      "children": [
+        {
+          "id": "tdx.andrology.general",
+          "name_zh": "男科病",
+          "name_en": "Andrological disorders"
+        }
+      ]
+    }
+  ]
+}
