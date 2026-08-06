@@ -67,15 +67,39 @@ REM --- 3) 把 main 的最新合併進目前分支（合併，不覆蓋）---
 echo [3/4] 把 main 的最新合併進 !CURBR!...
 git merge --no-edit origin/main
 if errorlevel 1 (
-    git merge --abort >nul 2>&1
-    echo.
-    echo [!] 合併有衝突 —— 已安全停下，沒有覆蓋任何東西。
-    echo     你的改動已經 commit 而且備份到 GitHub 了，一點都不會少。
-    echo     最常見的原因：兩個 AI 改到同一個檔案的同一段。
-    echo     請「不要自己 reset」，把這個畫面截圖給 Claude 幫你合併。
-    echo.
-    pause
-    exit /b 1
+    REM 兩個 AI 各自 commit 時，data\generated\ 底下的「產生檔」幾乎每次都會相撞——
+    REM 它們是 build-data.js 從 data\**.json 算出來的，不是手寫內容。
+    REM 如果衝突「只有」產生檔：拿哪一邊都無所謂，重跑 build 就是正確答案。
+    set "ONLYGEN=1"
+    for /f "delims=" %%f in ('git diff --name-only --diff-filter=U') do (
+        echo %%f | findstr /b "data/generated/" >nul || set "ONLYGEN="
+    )
+    if defined ONLYGEN (
+        echo     衝突只在 data\generated\ 產生檔 —— 自動重建...
+        git checkout --theirs -- data/generated/ 2>nul
+        set "PATH=C:\Program Files\nodejs;!PATH!"
+        node scripts\build-data.js >nul 2>&1
+        if errorlevel 1 (
+            REM 重建失敗（找不到 node 之類）就照樣安全停下，不硬上。
+            git merge --abort >nul 2>&1
+            echo [X] 自動重建失敗。請把這個畫面截圖給 Claude。
+            pause
+            exit /b 1
+        )
+        git add data/generated
+        git commit --no-edit
+        echo     完成，繼續同步。
+    ) else (
+        git merge --abort >nul 2>&1
+        echo.
+        echo [!] 合併有衝突 —— 已安全停下，沒有覆蓋任何東西。
+        echo     你的改動已經 commit 而且備份到 GitHub 了，一點都不會少。
+        echo     最常見的原因：兩個 AI 改到同一個檔案的同一段。
+        echo     請「不要自己 reset」，把這個畫面截圖給 Claude 幫你合併。
+        echo.
+        pause
+        exit /b 1
+    )
 )
 echo.
 
