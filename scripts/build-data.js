@@ -106,6 +106,11 @@ const knowledge = {
   comparisonGroupVocabulary: readJson("data/config/comparison_group_vocabulary.json"),      // bilingual labels for 鑑別群組
   safetyFlagVocabulary: readJson("data/config/safety_flag_vocabulary.json"),                 // bilingual labels for safety_flags
   conditionCategoryVocabulary: readJson("data/config/condition_category_vocabulary.json"),  // bilingual labels for condition_canon `category` — lets point/herb/formula cards group related_conditions by system without storing the category twice
+  // D11's four namespaces each group by their own controlled vocabulary. The
+  // Diagnosis tab needs all three in the bundle or it can only print raw ids —
+  // which is exactly why it used to render 中醫病名 and 證型 as two comma lines.
+  tcmDiseaseTaxonomy: readJson("data/config/tcm_disease_taxonomy.json"),
+  patternFamilyVocabulary: readJson("data/config/pattern_family_vocabulary.json"),
   channelsAndCharts: readJson("data/channels/channels_and_charts.json"),
   herbPairs: readJson("data/herbs/herb_pairs.json"),                                        // 藥對
   herbPairRelations: readJson("data/config/herb_pair_relations.json"),                       // 七情配伍

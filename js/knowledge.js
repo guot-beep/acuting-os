@@ -1886,13 +1886,32 @@
     const cloudDiseaseCategories = (K.cloudtcmDiseaseCategories && K.cloudtcmDiseaseCategories.records) || [];
     const cloudDiseaseEntries = (K.cloudtcmDiseaseEntries && K.cloudtcmDiseaseEntries.records) || [];
     const cloudDiseaseCategoryById = new Map(cloudDiseaseCategories.map((record) => [record.id, record]));
-    // CONDITIONS_MODULE_DESIGN gate: do not present a condition as study-ready
-    // until its safety prompts exist. Skeleton-only records remain counted below.
-    const conds = allConds.filter((record) =>
-      asList(record.red_flags_zh).length && asList(record.red_flags_en).length
-    );
-    const eastern = (K.conditions && K.conditions.eastern_diseases) || [];
-    const patterns = (K.conditions && K.conditions.tcm_patterns) || [];
+
+    // D11: three diagnostic namespaces, three sources. This tab used to read
+    // 中醫病名 and 證型 from data/pathology/conditions.json — the 12-record SEED
+    // file — and print them as two comma-separated lines: 6 names where 75 exist,
+    // 8 where 111 exist. The registries are the real sources.
+    const conds = allConds;
+    const tdisRecords = (K.tdisRegistry && K.tdisRegistry.records) || [];
+    const patternRecords = (K.patternLibrary && K.patternLibrary.records) || [];
+
+    // Grouping vocabularies (D14 part 1 for each namespace).
+    const condCategories = (K.conditionCategoryVocabulary && K.conditionCategoryVocabulary.categories) || [];
+    const condCategoryById = new Map(condCategories.map((c) => [c.id, c]));
+    const tdisTaxonomy = (K.tcmDiseaseTaxonomy && K.tcmDiseaseTaxonomy.categories) || [];
+    const tdisLeafById = new Map();
+    tdisTaxonomy.forEach((cat) => (cat.children || []).forEach((leaf) => {
+      tdisLeafById.set(leaf.id, { ...leaf, parent_zh: cat.name_zh, parent_en: cat.name_en });
+    }));
+    const patternFamilies = (K.patternFamilyVocabulary && K.patternFamilyVocabulary.records) || [];
+    const patternFamilyById = new Map(patternFamilies.map((f) => [f.id, f]));
+
+    // A record with no red flags is NOT hidden. The old gate filtered the grid
+    // to the 55 records that had them, so 95 conditions were invisible — search
+    // 眩暈 in clinic, get nothing, conclude it does not exist. Labelling the gap
+    // is honest; hiding it makes the gap itself invisible. Unflagged records
+    // sort last inside their group and carry a warning badge.
+    const hasRedFlags = (r) => asList(r.red_flags_zh).length > 0 || asList(r.red_flags_en).length > 0;
     const conditionSources = (record) => {
       const links = asList(record.source_links).filter((link) =>
         link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
@@ -1905,23 +1924,115 @@
         </a>`).join("")}
       </div>`;
     };
+    // Preview card (small card). One shape per namespace, but the same shell —
+    // the big card is the detail view, not a second schema.
+    const noFlagBadge = `<span class="k-pill k-pill-warn" title="尚未填入安全警訊">⚠ 無安全警訊</span>`;
+
     const renderConditions = (list) => list.map((c) => {
       const relatedSymptoms = asList(c.related_tcm_symptoms).map((item) =>
         tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
       ).join("");
       const aliases = [...asList(c.aliases_zh), ...asList(c.aliases_en)];
+      const flags = asList(c.red_flags_zh);
       return `
         <article class="k-card k-condition-card" data-record-id="${esc(c.id)}">
-          <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}</header>
-          <p class="k-meta">${esc(c.id)} · ${esc(c.category || "")} · ICD hint ${esc(c.icd_hint || "—")}</p>
+          <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}${hasRedFlags(c) ? "" : noFlagBadge}</header>
+          <p class="k-meta">${esc(c.id)} · ICD hint ${esc(c.icd_hint || "—")}</p>
           ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
           ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
           ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
-          ${asList(c.red_flags_zh).length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags</summary><p class="k-flags">⚠ ${asList(c.red_flags_zh).slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
+          ${flags.length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags (${flags.length})</summary><p class="k-flags">⚠ ${flags.slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
           ${conditionSources(c)}
         </article>`;
     }).join("");
+
+    const renderTdis = (list) => list.map((t) => `
+      <article class="k-card k-condition-card" data-record-id="${esc(t.id)}">
+        <header><strong>${esc(t.name_zh)} <small>${esc(t.name_en || "")}</small></strong>${statusPill(t.review_status)}${hasRedFlags(t) ? "" : noFlagBadge}</header>
+        <p class="k-meta">${esc(t.id)}${t.pinyin ? ` · ${esc(t.pinyin)}` : ""}${t.classical_source ? ` · ${esc(t.classical_source)}` : ""}</p>
+        ${t.definition_zh ? `<p>${esc(t.definition_zh)}</p>` : ""}
+        ${asList(t.related_patterns).length ? `<p class="k-tags">${entityChips(t.related_patterns)}</p>` : ""}
+      </article>`).join("");
+
+    const renderPatterns = (list) => list.map((p) => {
+      const signs = asList(p.key_signs_zh);
+      return `
+      <article class="k-card k-condition-card" data-record-id="${esc(p.id)}">
+        <header><strong>${esc(p.name_zh)} <small>${esc(p.name_en || "")}</small></strong>${statusPill(p.review_status)}</header>
+        <p class="k-meta">${esc(p.id)}</p>
+        ${signs.length ? `<p class="k-tags">${signs.slice(0, 4).map(tag).join("")}</p>` : ""}
+        ${(p.tongue_zh || p.pulse_zh) ? `<p class="k-meta">${esc([p.tongue_zh, p.pulse_zh].filter(Boolean).join(" · "))}</p>` : ""}
+        ${p.treatment_principle_zh ? `<p><strong>治則</strong> ${esc(p.treatment_principle_zh)}</p>` : ""}
+      </article>`;
+    }).join("");
+
+    // Group renderer shared by all three namespaces: one <details> per bucket,
+    // count in the summary, safety-incomplete records sorted last inside it.
+    const renderGroups = (buckets, renderer) => buckets
+      .filter((b) => b.items.length)
+      .map((b) => `
+        <details class="k-dx-group" open>
+          <summary>${esc(b.label_zh)} <small>${esc(b.label_en || "")}</small> <b>${b.items.length}</b>${b.gap ? ` <span class="k-dx-gap">⚠ ${b.gap}</span>` : ""}</summary>
+          <div class="k-grid k-grid-wide">${renderer(b.items)}</div>
+        </details>`).join("");
+
+    const bySafetyThenName = (a, b) => (hasRedFlags(b) - hasRedFlags(a))
+      || String(a.name_zh || "").localeCompare(String(b.name_zh || ""), "zh-Hant");
+
+    const condBuckets = () => {
+      const order = condCategories.map((c) => c.id);
+      const seen = new Set();
+      const buckets = order.map((id) => {
+        const items = conds.filter((c) => c.category === id).sort(bySafetyThenName);
+        items.forEach((c) => seen.add(c.id));
+        const missing = items.filter((c) => !hasRedFlags(c)).length;
+        const label = condCategoryById.get(id) || {};
+        return { label_zh: label.name_zh || id, label_en: label.name_en || "", items, gap: missing ? `${missing} 缺安全警訊` : "" };
+      });
+      const rest = conds.filter((c) => !seen.has(c.id)).sort(bySafetyThenName);
+      if (rest.length) buckets.push({ label_zh: "未分類", label_en: "Uncategorised", items: rest, gap: "" });
+      return buckets;
+    };
+
+    const tdisBuckets = () => {
+      const seen = new Set();
+      const buckets = [];
+      tdisTaxonomy.forEach((cat) => (cat.children || []).forEach((leaf) => {
+        const items = tdisRecords.filter((t) => t.taxonomy_id === leaf.id).sort(bySafetyThenName);
+        items.forEach((t) => seen.add(t.id));
+        const missing = items.filter((t) => !hasRedFlags(t)).length;
+        buckets.push({
+          label_zh: `${cat.name_zh}·${leaf.name_zh}`, label_en: leaf.name_en || "",
+          items, gap: missing ? `${missing} 缺安全警訊` : "",
+        });
+      }));
+      const rest = tdisRecords.filter((t) => !seen.has(t.id)).sort(bySafetyThenName);
+      if (rest.length) {
+        buckets.push({
+          label_zh: "待分類", label_en: "Awaiting classification",
+          items: rest, gap: `${rest.length} 筆仍用舊的 classical_source_hint`,
+        });
+      }
+      return buckets;
+    };
+
+    const patternBuckets = () => {
+      const seen = new Set();
+      const buckets = patternFamilies.map((f) => {
+        const items = patternRecords.filter((p) => p.pattern_family === f.id).sort(bySafetyThenName);
+        items.forEach((p) => seen.add(p.id));
+        return { label_zh: f.name_zh, label_en: f.name_en || "", items, gap: "" };
+      });
+      const rest = patternRecords.filter((p) => !seen.has(p.id)).sort(bySafetyThenName);
+      if (rest.length) {
+        buckets.push({
+          label_zh: "待分類", label_en: "Awaiting classification",
+          items: rest, gap: `${rest.length} 筆尚未指定辨證體系`,
+        });
+      }
+      return buckets;
+    };
     const cloudDiseaseCard = (record) => `
       <article class="k-card k-cloud-disease-card" data-record-id="${esc(record.id)}">
         <header><strong>${esc(record.name_zh)} <small>${esc(record.name_en)}</small></strong>${statusPill(record.review_status)}</header>
@@ -1960,17 +2071,66 @@
         button.classList.toggle("is-active", button.dataset.cloudDiseaseCategory === activeCloudDiseaseCategory);
       });
     };
+    // One search box across all three namespaces, one type filter. The user
+    // searches 眩暈 once — she should not have to know whether it is filed as a
+    // 西醫病名, a 中醫病名 or a 證型 to find it. (Two search boxes and two
+    // category bars on one page is what made this tab confusing.)
+    let activeDxType = "all";
+    const dxMatches = (record, q) => !q || [
+      record.id, record.name_zh, record.name_en, record.pinyin, record.icd_hint,
+      ...asList(record.aliases_zh), ...asList(record.aliases_en),
+      ...asList(record.key_signs_zh),
+      ...asList(record.related_tcm_symptoms).flatMap((i) => [i.name_zh, i.name_en]),
+    ].filter(Boolean).join(" ").toLowerCase().includes(q);
+
+    const renderDx = () => {
+      const q = String(el("conditionFilter")?.value || "").trim().toLowerCase();
+      const pick = (list) => list.filter((r) => dxMatches(r, q));
+      const sections = [];
+      if (activeDxType === "all" || activeDxType === "cond") {
+        const hits = pick(conds);
+        sections.push({ key: "cond", zh: "西醫病名", en: "Biomedical conditions", n: hits.length,
+          html: renderGroups(condBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderConditions) });
+      }
+      if (activeDxType === "all" || activeDxType === "tdis") {
+        const hits = pick(tdisRecords);
+        sections.push({ key: "tdis", zh: "中醫病名", en: "TCM diseases", n: hits.length,
+          html: renderGroups(tdisBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderTdis) });
+      }
+      if (activeDxType === "all" || activeDxType === "pattern") {
+        const hits = pick(patternRecords);
+        sections.push({ key: "pattern", zh: "證型", en: "TCM patterns", n: hits.length,
+          html: renderGroups(patternBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderPatterns) });
+      }
+      const body = sections.filter((s) => s.n).map((s) => `
+        <section class="k-dx-section">
+          <div class="mini-heading"><strong>${esc(s.zh)} <small>${esc(s.en)}</small> <b>${s.n}</b></strong></div>
+          ${s.html}
+        </section>`).join("");
+      el("conditionGrid").innerHTML = body || '<p class="k-missing">找不到相符診斷 / No matching diagnosis.</p>';
+      el("dxTypeBar")?.querySelectorAll("[data-dx-type]").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.dataset.dxType === activeDxType);
+      });
+    };
+
+    const condMissingFlags = conds.filter((c) => !hasRedFlags(c)).length;
     condHost.innerHTML = `
       <div class="mini-heading">
-        <strong>${esc(modeText(`Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）`, `Western Conditions (${conds.length} safety-filled · ${allConds.length} canon)`))}</strong>
-        <span>${esc(modeText("來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。", "Source: condition_canon_shortlist.json · biomedical and TCM names are related mappings, not one-to-one translations."))}</span>
+        <strong>${esc(modeText(`診斷 / Diagnosis（西醫病名 ${conds.length} · 中醫病名 ${tdisRecords.length} · 證型 ${patternRecords.length}）`, `Diagnosis (${conds.length} biomedical · ${tdisRecords.length} TCM diseases · ${patternRecords.length} patterns)`))}</strong>
+        <span>${esc(modeText(`三種是不同的實體，不是同義詞：一病多證、同證異病。中西醫名稱是相關映射，不是一對一翻譯。目前 ${condMissingFlags} 筆西醫病名尚無安全警訊，已標示但未隱藏。`, `Three distinct entity types, not synonyms. Biomedical and TCM names are related mappings, never one-to-one. ${condMissingFlags} biomedical conditions still have no red flags — flagged, not hidden.`))}</span>
       </div>
-      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD..."))}" class="k-filter" />
-      <div class="k-grid k-grid-wide" id="conditionGrid">${renderConditions(conds)}</div>
-      <section class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
+      <div id="dxTypeBar" class="k-dx-types" aria-label="${esc(modeText("診斷類型", "Diagnosis type"))}">
+        <button type="button" class="is-active" data-dx-type="all">${esc(modeText("全部 · All", "All"))}</button>
+        <button type="button" data-dx-type="cond">${esc(modeText("西醫病名", "Biomedical"))} ${conds.length}</button>
+        <button type="button" data-dx-type="tdis">${esc(modeText("中醫病名", "TCM disease"))} ${tdisRecords.length}</button>
+        <button type="button" data-dx-type="pattern">${esc(modeText("證型", "Pattern"))} ${patternRecords.length}</button>
+      </div>
+      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋病名、證型、別名、拼音、ICD...", "Search diagnosis names, patterns, aliases, pinyin, ICD..."))}" class="k-filter" />
+      <div id="conditionGrid"></div>
+      <details class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
+        <summary id="cloudtcmDiseaseHeading">${esc(modeText(`雲端中醫來源索引 / CloudTCM source index (${cloudDiseaseEntries.length})`, `CloudTCM source index (${cloudDiseaseEntries.length})`))}</summary>
         <div class="mini-heading">
-          <strong id="cloudtcmDiseaseHeading">${esc(modeText(`雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})`, `CloudTCM Disease & Symptom Index (${cloudDiseaseEntries.length})`))}</strong>
-          <span>${esc(modeText(`205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。`, `205 source cards are consolidated into ${cloudDiseaseEntries.length} stable page IDs; English labels are curated drafts.`))}</span>
+          <span>${esc(modeText(`匯入層，不是第四套命名空間（D11）：這裡的 ID 只作為來源把手，不會出現在任何關聯欄位。205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。`, `Import layer, not a namespace (D11): these ids are provenance handles only and never appear in a relation field. 205 source cards consolidated into ${cloudDiseaseEntries.length} stable page ids; English is a curated draft.`))}</span>
         </div>
         <div id="cloudtcmDiseaseCategoryBar" class="k-cloud-disease-categories" aria-label="症狀疾病分類">
           <button type="button" class="is-active" data-cloud-disease-category="">全部 · All</button>
@@ -1985,18 +2145,18 @@
           </div>
         </div>
         <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
-      </section>
-      <p class="k-meta">Eastern：${eastern.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>
-      <p class="k-meta">Patterns：${patterns.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>`;
-    el("conditionFilter").addEventListener("input", (event) => {
-      const q = event.target.value.trim().toLowerCase();
-      const hits = conds.filter((record) => [
-        record.id, record.name_zh, record.name_en, record.icd_hint, record.category,
-        ...asList(record.aliases_zh), ...asList(record.aliases_en),
-        ...asList(record.related_tcm_symptoms).flatMap((item) => [item.name_zh, item.name_en])
-      ].join(" ").toLowerCase().includes(q));
-      el("conditionGrid").innerHTML = renderConditions(hits) || '<p class="k-missing">找不到相符病症 / No matching condition.</p>';
+      </details>`;
+    // 中醫病名 and 證型 are now first-class sections above, rendered from their
+    // own registries — they used to be these two comma lines, reading the
+    // 12-record seed file.
+    el("conditionFilter").addEventListener("input", renderDx);
+    el("dxTypeBar").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-dx-type]");
+      if (!button) return;
+      activeDxType = button.dataset.dxType;
+      renderDx();
     });
+    renderDx();
     el("cloudtcmDiseaseFilter").addEventListener("input", () => {
       cloudDiseasePage = 1;
       renderCloudDiseaseDirectory();

@@ -6547,3 +6547,28 @@ html { scroll-padding-top: 92px; }
 .content-grid > .details-panel:only-child {
   grid-column: 1 / -1;
 }
+
+/* Diagnosis tab (D11): three namespaces, one search, grouped by each layer's
+   own controlled vocabulary. Replaces the old flat grid + parallel CloudTCM
+   directory that gave the page two search boxes and two category bars. */
+.k-dx-types { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0; }
+.k-dx-types button {
+  padding: .3rem .7rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line, #d5d5d5); background: transparent;
+  font: inherit; font-size: .85rem; color: inherit;
+}
+.k-dx-types button.is-active { background: var(--accent, #2f6f4f); color: #fff; border-color: transparent; }
+.k-dx-section { margin-block: 1.2rem; }
+.k-dx-group { margin-block: .5rem; }
+.k-dx-group > summary {
+  cursor: pointer; padding: .35rem 0; font-weight: 600;
+  border-bottom: 1px solid var(--line, #e3e3e3);
+}
+.k-dx-group > summary small { font-weight: 400; opacity: .7; }
+.k-dx-group > summary b { font-weight: 600; opacity: .55; margin-left: .25rem; }
+.k-dx-group > .k-grid { margin-top: .6rem; }
+/* The gap is stated in the group header, not hidden: a category that is 12
+   records short of safety text says so where you choose what to read. */
+.k-dx-gap { font-weight: 400; font-size: .8rem; color: var(--warn, #a15c00); margin-left: .4rem; }
+.k-pill-warn { background: var(--warn-bg, #fff3e0); color: var(--warn, #a15c00); }
+.k-cloud-disease-directory > summary { cursor: pointer; font-weight: 600; padding: .4rem 0; }
