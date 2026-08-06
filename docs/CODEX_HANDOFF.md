@@ -1,5 +1,23 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-06 04:26] Antigravity Handoff — XIAO QING LONG TANG 100% GOLD-STANDARD RESTORATION COMPLETE 🎉
+
+- **Agent**: Antigravity
+- **Commit/State**: `formula.xiao_qing_long_tang` (小青龍湯) restored to 100% template compliance and validated by `validate-formula-standard.js`!
+- **Restored Formula**:
+  - `formula.xiao_qing_long_tang` (小青龍湯 · Minor Blue-Green Dragon Decoction):
+    - Created `data/herbs/reference/formula.xiao_qing_long_tang.json`.
+    - 8-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`麻黃 9g` 君, `桂枝 9g` 君, `乾薑 9g` 臣, `細辛 6g` 臣, `半夏 9g` 臣, `五味子 6g` 佐, `白芍 9g` 佐, `炙甘草 6g` 使).
+    - 3 Herb Pairs (`麻黃+桂枝`, `細辛+乾薑+五味子` 化飲金三角, `桂枝+白芍`).
+    - 2 Actions, 1 Indications pattern (外寒內飲證／表寒裏飲，含舌 `苔白滑` 脈 `脈浮緊`), 3 Modifications, 2 Comparisons (vs 麻黃湯, vs 苓甘五味薑辛湯), 1 Formula Family (`小青龍加石膏湯`), 4 Contraindications, NCBAHM 2026 pearls.
+    - `comparison_group`: `"解表劑 / Release Exterior"`.
+    - Direct links: CloudTCM `https://cloudtcm.com/formula/41`, American Dragon `https://www.americandragon.com/HerbFormulas/XiaoQingLongTang.html`.
+- **Validation Run**:
+  - `node scripts/validate-formula-standard.js`: **PASS (4 template-grade, 0 blocking defects for restored formulas)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-08-06 04:12] Antigravity Handoff — BATCH 1 FORMULA RESTORATION COMPLETE (YIN QIAO SAN, SANG JU YIN, BAI HU TANG) 🎉
 
 - **Agent**: Antigravity
