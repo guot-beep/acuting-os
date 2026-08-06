@@ -7,29 +7,55 @@
       "id": "drug.furosemide",
       "name_en": "Furosemide",
       "name_zh": "呋塞米",
-      "brand_names_en": ["Lasix"],
+      "brand_names_en": [
+        "Lasix"
+      ],
       "drugclass_id": "drugclass.loop_diuretics",
-      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
       "drugtarget_id": "drugtarget.nkcc2",
       "rxnorm_rxcui": "4603",
-
       "mechanism_en": "Prevents reabsorption of sodium and chloride in the loop of Henle, enhancing diuresis.",
       "mechanism_zh": "阻止亨利氏環對鈉與氯的再吸收,增強利尿。",
       "site_of_action_en": "Thick ascending limb of the loop of Henle",
       "site_of_action_zh": "亨利氏環粗上行支",
       "physiologic_effect_en": "Very efficient and fast-acting diuresis",
       "physiologic_effect_zh": "利尿作用強且快",
-
-      "indications_en": ["Edema associated with chronic heart failure", "Liver cirrhosis", "Renal disease"],
-      "indications_zh": ["慢性心衰竭相關水腫", "肝硬化", "腎臟疾病"],
-
+      "indications_en": [
+        "Edema associated with chronic heart failure",
+        "Liver cirrhosis",
+        "Renal disease"
+      ],
+      "indications_zh": [
+        "慢性心衰竭相關水腫",
+        "肝硬化",
+        "腎臟疾病"
+      ],
       "boxed_warning_en": "Furosemide tablets are a potent diuretic which, if given in excessive amounts, can lead to a profound diuresis with water and electrolyte depletion. Therefore, careful medical supervision is required and dose and dose schedule must be adjusted to the individual patient needs.",
       "boxed_warning_zh": "呋塞米為強效利尿劑,劑量過大可導致大量利尿並造成水分與電解質耗竭。因此必須謹慎醫療監控,劑量與給藥間隔須依個別病人需求調整。",
-      "contraindications_en": ["Anuria", "History of hypersensitivity to furosemide"],
-      "contraindications_zh": ["無尿", "對呋塞米曾有過敏史"],
-      "adverse_effects_en": ["Anorexia", "Vomiting", "Dizziness", "Rash", "Postural (orthostatic) hypotension"],
-      "adverse_effects_zh": ["食慾不振", "嘔吐", "頭暈", "皮疹", "姿勢性低血壓"],
-
+      "contraindications_en": [
+        "Anuria",
+        "History of hypersensitivity to furosemide"
+      ],
+      "contraindications_zh": [
+        "無尿",
+        "對呋塞米曾有過敏史"
+      ],
+      "adverse_effects_en": [
+        "Anorexia",
+        "Vomiting",
+        "Dizziness",
+        "Rash",
+        "Postural (orthostatic) hypotension"
+      ],
+      "adverse_effects_zh": [
+        "食慾不振",
+        "嘔吐",
+        "頭暈",
+        "皮疹",
+        "姿勢性低血壓"
+      ],
       "dailymed_setid": "7cdcd001-ab4b-4210-a455-2e17a7bc4972",
       "dailymed_label_title": "FUROSEMIDE (FUROSEMIDE) TABLET [REMEDYREPACK INC.]",
       "dailymed_label_format": "old_format",
@@ -37,69 +63,103 @@
       "dailymed_url_kind": "verified_exact",
       "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a682858.html",
       "medlineplus_url_kind": "verified_exact",
-
       "board_priority": "high",
       "prototype_drug": true,
       "mnemonic_en": "Fast & Furious in the Loop [Hear No Evil]",
       "classic_association_en": "Loop diuretic to hypokalemia",
       "exam_trap_en": "Caution: tinnitus and permanent hearing loss.",
       "exam_trap_zh": "警告:耳鳴與永久性聽力喪失。",
-
       "clinical_use_note_zh": "課件強調袢利尿劑「非常有效且快速」,是急性水腫的首選。考試層的兩個抓手是記憶法(Fast & Furious in the Loop)與耳毒性警告。禁忌與黑框取自 DailyMed 標籤 —— 課件完全沒有這兩類內容。",
-
       "field_sources": {
-        "mechanism_en": ["course:W5-diuretics#L219-L220"],
-        "site_of_action_en": ["course:W5-diuretics#L203"],
-        "indications_en": ["course:W5-diuretics#L205-L206"],
-        "adverse_effects_en": ["course:W5-diuretics#L222-L224"],
-        "boxed_warning_en": ["dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNING"],
-        "contraindications_en": ["dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#CONTRAINDICATIONS"],
-        "mnemonic_en": ["course:Pharmacology Summary#L399-L400"],
-        "exam_trap_en": ["course:Pharmacology Summary#L399"]
+        "mechanism_en": [
+          "course:W5-diuretics#L219-L220"
+        ],
+        "site_of_action_en": [
+          "course:W5-diuretics#L203"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L205-L206"
+        ],
+        "adverse_effects_en": [
+          "course:W5-diuretics#L222-L224"
+        ],
+        "boxed_warning_en": [
+          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#CONTRAINDICATIONS"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L399-L400"
+        ],
+        "exam_trap_en": [
+          "course:Pharmacology Summary#L399"
+        ]
       },
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06"
     },
-
     {
       "id": "drug.hydrochlorothiazide",
       "name_en": "Hydrochlorothiazide",
       "name_zh": "氫氯噻嗪",
       "brand_names_en": [],
       "drugclass_id": "drugclass.thiazide_diuretics",
-      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
       "drugtarget_id": "drugtarget.ncc",
       "rxnorm_rxcui": "5487",
       "suffix_en": "-thiazide",
       "mechanism_en": "Inhibits the sodium-chloride symport in the ascending loop of Henle and distal convoluted tubule.",
       "mechanism_zh": "抑制亨利氏環上行支與遠曲小管的鈉氯共同轉運。",
-      "indications_en": ["Edema", "Hypertension", "Chronic heart failure", "Hepatic cirrhosis"],
-      "indications_zh": ["水腫", "高血壓", "慢性心衰竭", "肝硬化"],
+      "indications_en": [
+        "Edema",
+        "Hypertension",
+        "Chronic heart failure",
+        "Hepatic cirrhosis"
+      ],
+      "indications_zh": [
+        "水腫",
+        "高血壓",
+        "慢性心衰竭",
+        "肝硬化"
+      ],
       "board_priority": "high",
       "prototype_drug": true,
       "mnemonic_en": "See No Evil - Short THIAZ for hypertension, Long THIAZ for diabetes",
       "exam_trap_en": "Caution: secondary angle closure glaucoma.",
       "exam_trap_zh": "警告:續發性閉角型青光眼。",
       "field_sources": {
-        "mechanism_en": ["course:W5-diuretics#L308"],
-        "indications_en": ["course:W5-diuretics#L310-L311"],
-        "mnemonic_en": ["course:Pharmacology Summary#L401-L402"],
-        "exam_trap_en": ["course:Pharmacology Summary#L401"]
+        "mechanism_en": [
+          "course:W5-diuretics#L308"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L310-L311"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L401-L402"
+        ],
+        "exam_trap_en": [
+          "course:Pharmacology Summary#L401"
+        ]
       },
       "gap_note_zh": "禁忌、黑框、交互作用、孕期待補 —— 需 DailyMed setid。課件這四類為 0。",
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06"
     },
-
     {
       "id": "drug.spironolactone",
       "name_en": "Spironolactone",
       "name_zh": "螺內酯",
       "brand_names_en": [],
       "drugclass_id": "drugclass.potassium_sparing_diuretics",
-      "drugsystem_ids": ["drugsystem.cardiovascular_renal", "drugsystem.endocrine"],
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.endocrine"
+      ],
       "drugtarget_id": "drugtarget.aldosterone_receptor",
       "rxnorm_rxcui": "9997",
       "suffix_en": "-actone",
@@ -111,37 +171,74 @@
       "exam_trap_en": "Causes HYPERkalemia, the opposite of loop and thiazide diuretics.",
       "exam_trap_zh": "造成高血鉀,與袢利尿劑及 thiazide 方向相反。",
       "field_sources": {
-        "mechanism_en": ["course:Pharmacology Summary#L403"],
-        "mnemonic_en": ["course:Pharmacology Summary#L403-L404"],
-        "exam_trap_en": ["course:Pharmacology Summary#L403"]
+        "mechanism_en": [
+          "course:Pharmacology Summary#L403"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L403-L404"
+        ],
+        "exam_trap_en": [
+          "course:Pharmacology Summary#L403"
+        ]
       },
       "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06"
     },
-
     {
       "id": "drug.acetazolamide",
       "name_en": "Acetazolamide",
       "name_zh": "乙醯唑胺",
-      "brand_names_en": ["Diamox"],
+      "brand_names_en": [
+        "Diamox"
+      ],
       "drugclass_id": "drugclass.carbonic_anhydrase_inhibitors",
-      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
       "drugtarget_id": "drugtarget.carbonic_anhydrase",
       "rxnorm_rxcui": "167",
       "mechanism_en": "Inhibits carbonic anhydrase, causing excretion of sodium, potassium, bicarbonate and water; also decreases aqueous humor production and lowers intraocular pressure.",
       "mechanism_zh": "抑制碳酸酐酶,使鈉、鉀、碳酸氫根與水排出;並減少房水生成、降低眼壓。",
-      "indications_en": ["Glaucoma", "Raised intraocular pressure", "Altitude sickness"],
-      "indications_zh": ["青光眼", "眼壓升高", "高山症"],
-      "adverse_effects_en": ["Fever", "Rash", "Paresthesia", "Photosensitivity", "Anorexia", "Crystalluria"],
-      "adverse_effects_zh": ["發燒", "皮疹", "感覺異常", "光敏感", "食慾不振", "結晶尿"],
+      "indications_en": [
+        "Glaucoma",
+        "Raised intraocular pressure",
+        "Altitude sickness"
+      ],
+      "indications_zh": [
+        "青光眼",
+        "眼壓升高",
+        "高山症"
+      ],
+      "adverse_effects_en": [
+        "Fever",
+        "Rash",
+        "Paresthesia",
+        "Photosensitivity",
+        "Anorexia",
+        "Crystalluria"
+      ],
+      "adverse_effects_zh": [
+        "發燒",
+        "皮疹",
+        "感覺異常",
+        "光敏感",
+        "食慾不振",
+        "結晶尿"
+      ],
       "board_priority": "medium",
       "prototype_drug": true,
       "field_sources": {
-        "mechanism_en": ["course:W5-diuretics#L155-L158"],
-        "indications_en": ["course:W5-diuretics#L174"],
-        "adverse_effects_en": ["course:W5-diuretics#L192-L193"]
+        "mechanism_en": [
+          "course:W5-diuretics#L155-L158"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L174"
+        ],
+        "adverse_effects_en": [
+          "course:W5-diuretics#L192-L193"
+        ]
       },
       "adverse_effect_note_zh": "課件標明這些副作用見於慢性使用。",
       "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
@@ -149,31 +246,293 @@
       "authored_by": "Claude",
       "updated_at": "2026-08-06"
     },
-
     {
       "id": "drug.mannitol",
       "name_en": "Mannitol",
       "name_zh": "甘露醇",
       "brand_names_en": [],
       "drugclass_id": "drugclass.osmotic_diuretics",
-      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
       "drugtarget_id": null,
       "rxnorm_rxcui": "6628",
       "mechanism_en": "Filtered at the glomerulus but not reabsorbed, raising the osmolarity of the filtrate so water is retained in the urine and urine volume increases.",
       "mechanism_zh": "在腎絲球被過濾但不被再吸收,提高濾液滲透壓,使水留在尿中而增加尿量。",
-      "indications_en": ["Brain edema requiring rapid diuresis", "Edema of the eye (glaucoma)"],
-      "indications_zh": ["需快速利尿的腦水腫", "眼部水腫(青光眼)"],
+      "indications_en": [
+        "Brain edema requiring rapid diuresis",
+        "Edema of the eye (glaucoma)"
+      ],
+      "indications_zh": [
+        "需快速利尿的腦水腫",
+        "眼部水腫(青光眼)"
+      ],
       "board_priority": "medium",
       "prototype_drug": true,
       "field_sources": {
-        "mechanism_en": ["course:W5-diuretics#L237-L238"],
-        "indications_en": ["course:W5-diuretics#L28-L29"]
+        "mechanism_en": [
+          "course:W5-diuretics#L237-L238"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L28-L29"
+        ]
       },
       "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意為 null。",
       "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.warfarin",
+      "name_en": "Warfarin",
+      "name_zh": "華法林",
+      "brand_names_en": [
+        "Coumadin",
+        "Jantoven"
+      ],
+      "drugclass_id": "drugclass.vitamin_k_antagonists",
+      "drugtarget_id": "drugtarget.vkorc1",
+      "rxnorm_rxcui": "11289",
+      "boxed_warning_en": "Warfarin sodium can cause major or fatal bleeding. Perform regular monitoring of INR in all treated patients.",
+      "boxed_warning_zh": "華法林可造成重大或致命出血。所有用藥病人都須定期監測 INR。",
+      "contraindications_en": [
+        "Pregnancy (except in women with mechanical heart valves)",
+        "Hemorrhagic tendencies or blood dyscrasias",
+        "Recent or contemplated surgery of the central nervous system or eye",
+        "Active bleeding of the gastrointestinal, genitourinary or respiratory tract",
+        "Threatened abortion, eclampsia, preeclampsia",
+        "Unsupervised patients with conditions associated with potential high level of non-compliance",
+        "Spinal puncture and other diagnostic or therapeutic procedures with potential for uncontrollable bleeding",
+        "Hypersensitivity to warfarin",
+        "Major regional or lumbar block anesthesia",
+        "Malignant hypertension"
+      ],
+      "contraindications_zh": [
+        "孕婦(機械性心臟瓣膜者除外)",
+        "出血傾向或血液惡質",
+        "近期或計畫中的中樞神經或眼部手術",
+        "胃腸道、泌尿生殖道或呼吸道活動性出血",
+        "流產徵象、子癲、子癲前症",
+        "無人監督且順從性可能很差的病人",
+        "脊椎穿刺及其他有無法控制出血風險的診斷或治療操作",
+        "對華法林過敏",
+        "大範圍區域阻斷或腰椎阻斷麻醉",
+        "惡性高血壓"
+      ],
+      "acupuncture_note_zh": "禁忌明列「有無法控制出血風險的操作」—— 這一條直接涵蓋侵入性針刺的判斷。臨床上必須先確認 INR 與最近一次抽血日期。標籤未針對針灸給數值門檻,不要自行設一個。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
+      "dailymed_label_title": "WARFARIN SODIUM (WARFARIN) TABLET [A-S MEDICATION SOLUTIONS]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#CONTRAINDICATIONS"
+        ]
+      },
+      "gap_note_zh": "機轉、交互作用分級、孕期詳述待補。warfarin 的交互作用極多,必須逐條分級,不可概括。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.clopidogrel",
+      "name_en": "Clopidogrel",
+      "name_zh": "氯吡格雷",
+      "brand_names_en": [
+        "Plavix"
+      ],
+      "drugclass_id": "drugclass.p2y12_inhibitors",
+      "drugtarget_id": "drugtarget.p2y12",
+      "rxnorm_rxcui": "32968",
+      "boxed_warning_en": "Effectiveness of clopidogrel depends on conversion to an active metabolite by the cytochrome P450 (CYP) system, principally CYP2C19. Poor metabolizers show diminished antiplatelet effect; consider an alternative P2Y12 inhibitor.",
+      "boxed_warning_zh": "氯吡格雷須經 CYP450(主要為 CYP2C19)代謝為活性代謝物才有效。代謝不良者抗血小板效果減弱,應考慮改用其他 P2Y12 抑制劑。",
+      "contraindications_en": [
+        "Active pathological bleeding, such as peptic ulcer or intracranial hemorrhage",
+        "Hypersensitivity (e.g. anaphylaxis) to clopidogrel or any component of the product"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血,如胃潰瘍或顱內出血",
+        "對氯吡格雷或製劑任何成分過敏(如過敏性休克)"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
+      "dailymed_label_title": "CLOPIDOGREL (CLOPIDOGREL BISULFATE) TABLET, FILM COATED [PREFERRED PHARMACEUTICALS INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#CONTRAINDICATIONS"
+        ]
+      },
+      "gap_note_zh": "機轉、交互作用分級待補。CYP2C19 相關交互(如 omeprazole)是重點,要標 pharmacokinetic。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.apixaban",
+      "name_en": "Apixaban",
+      "name_zh": "阿哌沙班",
+      "brand_names_en": [
+        "Eliquis"
+      ],
+      "drugclass_id": "drugclass.factor_xa_inhibitors",
+      "drugtarget_id": "drugtarget.factor_xa",
+      "suffix_en": "-xaban",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+    },
+    {
+      "id": "drug.rivaroxaban",
+      "name_en": "Rivaroxaban",
+      "name_zh": "利伐沙班",
+      "brand_names_en": [
+        "Xarelto"
+      ],
+      "drugclass_id": "drugclass.factor_xa_inhibitors",
+      "drugtarget_id": "drugtarget.factor_xa",
+      "suffix_en": "-xaban",
+      "board_priority": "high",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+    },
+    {
+      "id": "drug.dabigatran",
+      "name_en": "Dabigatran",
+      "name_zh": "達比加群",
+      "brand_names_en": [
+        "Pradaxa"
+      ],
+      "drugclass_id": "drugclass.direct_thrombin_inhibitors",
+      "drugtarget_id": "drugtarget.thrombin",
+      "suffix_en": "-gatran",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+    },
+    {
+      "id": "drug.ticagrelor",
+      "name_en": "Ticagrelor",
+      "name_zh": "替格瑞洛",
+      "brand_names_en": [
+        "Brilinta"
+      ],
+      "drugclass_id": "drugclass.p2y12_inhibitors",
+      "drugtarget_id": "drugtarget.p2y12",
+      "board_priority": "high",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+    },
+    {
+      "id": "drug.prasugrel",
+      "name_en": "Prasugrel",
+      "name_zh": "普拉格雷",
+      "brand_names_en": [
+        "Effient"
+      ],
+      "drugclass_id": "drugclass.p2y12_inhibitors",
+      "drugtarget_id": "drugtarget.p2y12",
+      "board_priority": "high",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+    },
+    {
+      "id": "drug.aspirin",
+      "name_en": "Aspirin",
+      "name_zh": "阿斯匹靈",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.cox_antiplatelet",
+      "drugtarget_id": "drugtarget.cox1",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dual_role_note_zh": "低劑量抗血小板(本層),高劑量為 NSAID(P4)。同一分子兩種臨床角色,不要合併成一句。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+    },
+    {
+      "id": "drug.enoxaparin",
+      "name_en": "Enoxaparin",
+      "name_zh": "依諾肝素",
+      "brand_names_en": [
+        "Lovenox"
+      ],
+      "drugclass_id": "drugclass.heparins",
+      "drugtarget_id": "drugtarget.antithrombin_iii",
+      "board_priority": "high",
+      "migrated_from": "med.enoxaparin",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+    },
+    {
+      "id": "drug.heparin",
+      "name_en": "Heparin",
+      "name_zh": "肝素",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.heparins",
+      "drugtarget_id": "drugtarget.antithrombin_iii",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
     }
   ]
 }
