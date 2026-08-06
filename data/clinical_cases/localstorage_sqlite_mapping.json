@@ -1,0 +1,636 @@
+{
+  "dataset": "localStorage (acuting-clinical-cases-v1) -> data/clinical_cases/schema.sql field mapping",
+  "status": "design_only__migration_script_NOT_implemented",
+  "created": "2026-08-06",
+  "policy": [
+    "This file is a DESIGN, not a migration. No script reads it yet. It exists so the mapping is reviewable before it is executable — the H2 migration is a one-shot over real clinical data (D12), and a mapping decided inside a script is a mapping nobody reviewed.",
+    "Entries with status unresolved_needs_ting MUST NOT be resolved by a migration author. Each one destroys or fabricates clinical meaning, and Ting rejected the obvious merge for all three in 2026-08.",
+    "no_destination_yet means the field has real clinical value but no column. It is NOT the same as intentionally_not_migrated, and a migration must fail loudly rather than drop these.",
+    "Regenerate rather than hand-edit: this file is emitted from app.js's normalizers and validated against schema.sql, so a destination column that does not exist cannot be written into it.",
+    "Language slots: the app stores single-language free text while the schema has _zh/_en pairs. Everything lands in the _zh slot with _en NULL. That is a labelling assumption, not a translation — flagged as low risk on each affected row."
+  ],
+  "generated_from": {
+    "source_of_truth_fields": "app.js — normalizeClinicalCase() and normalizeSoapNote()",
+    "destination_schema": "data/clinical_cases/schema.sql",
+    "validation": "every destination table.column is asserted to exist in schema.sql before this file is written"
+  },
+  "counts": {
+    "total_fields": 67,
+    "by_status": {
+      "mapped": 61,
+      "unresolved_needs_ting": 4,
+      "no_destination_yet": 2
+    }
+  },
+  "status_meanings": {
+    "mapped": "destination column exists and the transformation is agreed",
+    "unresolved_needs_ting": "a destination was proposed and REJECTED; do not merge, do not guess",
+    "no_destination_yet": "real clinical value, no column yet — migration must halt, not drop",
+    "intentionally_not_migrated": "UI-only state. Currently EMPTY: every field carries clinical meaning."
+  },
+  "mappings": [
+    {
+      "source_scope": "case",
+      "source_field": "id",
+      "destination": "cases.id",
+      "transformation": "as-is",
+      "nullable": false,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "patientCode",
+      "destination": "patients.patient_code",
+      "transformation": "as-is (UNIQUE)",
+      "nullable": false,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "caseTitle",
+      "destination": "cases.case_title",
+      "transformation": "as-is",
+      "nullable": false,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "caseCategory",
+      "destination": "cases.case_category",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "status",
+      "destination": "cases.status",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "startDate",
+      "destination": "cases.start_date",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "birthYear",
+      "destination": "patients.birth_year",
+      "transformation": "Number(). Derived in the app from birthYearMonth.slice(0,4); write it anyway so age maths does not depend on the month column.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "birthYearMonth",
+      "destination": "patients.birth_year + patients.birth_month",
+      "transformation": "SPLIT \"1985-04\" -> year 1985, month 4. Empty string -> birth_year from birthYear, birth_month NULL. Never invent a month (D4 coarsen, never falsify).",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "sex",
+      "destination": "patients.sex_at_birth",
+      "transformation": "RENAME. Confirm the UI field means sex at birth and not gender identity — patients also has gender_identity and pronouns.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "occupation",
+      "destination": "patients.occupation_context",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "goals",
+      "destination": "cases.primary_goal_zh",
+      "transformation": "RENAME into the zh slot; primary_goal_en left NULL.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "chiefComplaint",
+      "destination": "case_intake_baseline.chief_complaint_zh",
+      "transformation": "RENAME into the zh slot.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "historyPresent",
+      "destination": "case_intake_baseline.history_present_illness",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "pastHistory",
+      "destination": "case_intake_baseline.biomedical_history",
+      "transformation": "RENAME. case_intake_baseline also has tcm_history; one free-text field feeding one of two columns is a judgement, not a rule.",
+      "nullable": true,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "allergies",
+      "destination": "(UNRESOLVED)",
+      "transformation": "There is no allergies column. Merging into red_flags was proposed and REJECTED by Ting (2026-08).",
+      "nullable": null,
+      "data_loss_risk": "high",
+      "status": "unresolved_needs_ting"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "currentMeds",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Medications are per-visit (visit_western_medications). There is no case-level current-medication column.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "menstrualObHistory",
+      "destination": "case_intake_baseline.menstrual_history + case_intake_baseline.pregnancy_history",
+      "transformation": "SPLIT one field into two. Where the split falls is a judgement; safest default is to write the whole value to menstrual_history and leave pregnancy_history NULL rather than guess.",
+      "nullable": true,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "lifestyle",
+      "destination": "case_intake_baseline.lifestyle_notes",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "westernConditions",
+      "destination": "case_western_conditions",
+      "transformation": "EXPLODE list -> one row per id",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "easternDiseases",
+      "destination": "case_eastern_diseases",
+      "transformation": "EXPLODE list -> one row per id",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "tcmPatterns",
+      "destination": "case_tcm_patterns",
+      "transformation": "EXPLODE list -> one row per id",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "safetyFlags",
+      "destination": "case_safety_flags",
+      "transformation": "EXPLODE list -> one row per id",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "summary",
+      "destination": "cases.summary_zh",
+      "transformation": "RENAME into the zh slot.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "soapNotes",
+      "destination": "visits + soap_notes",
+      "transformation": "EXPLODE 1:N. Each note becomes one visits row and one soap_notes row sharing the id.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "createdAt",
+      "destination": "cases.created_at",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "updatedAt",
+      "destination": "cases.updated_at",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "id",
+      "destination": "visits.id",
+      "transformation": "as-is; the same id keys visits and soap_notes.visit_id",
+      "nullable": false,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "visitDate",
+      "destination": "visits.visit_date",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "visitNumber",
+      "destination": "visits.visit_number",
+      "transformation": "Number()",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "cycleDay",
+      "destination": "visits.cycle_day",
+      "transformation": "Number()",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "fertilityPhase",
+      "destination": "visits.fertility_phase",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "workflowLink",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Holds a fertility.workflow.* id from fertility_workflow_seed.json — a registry reference, not a URL. Column deferred until the real values are inventoried (scripts/inventory-workflow-links.js).",
+      "nullable": null,
+      "data_loss_risk": "high",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "cyclePhase",
+      "destination": "visits.cycle_phase",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "tongueBody",
+      "destination": "(UNRESOLVED)",
+      "transformation": "Merging tongueBody + tongueCoating into visits.tongue_zh was proposed and REJECTED by Ting (2026-08). TCM_CASE_SPEC lists 舌質 and 舌苔 as two separate 最重要 fields.",
+      "nullable": null,
+      "data_loss_risk": "high",
+      "status": "unresolved_needs_ting"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "tongueCoating",
+      "destination": "(UNRESOLVED)",
+      "transformation": "See tongueBody. The two must not collapse into one column.",
+      "nullable": null,
+      "data_loss_risk": "high",
+      "status": "unresolved_needs_ting"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "pulse",
+      "destination": "visits.pulse_zh",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "vitals",
+      "destination": "soap_notes.objective_vitals",
+      "transformation": "RENAME (added 2026-08, A1 batch)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "tcmPattern",
+      "destination": "visit_tcm_patterns",
+      "transformation": "EXPLODE free text -> rows. Needs pattern-id resolution; unresolvable text has no column to fall back to.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "pathomechanism",
+      "destination": "soap_notes.assessment_pathomechanism_zh",
+      "transformation": "RENAME into the zh slot (added 2026-08, A1 batch); _en left NULL.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "treatmentPrinciple",
+      "destination": "soap_notes.assessment_treatment_principle_zh",
+      "transformation": "RENAME into the zh slot.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "modalities",
+      "destination": "soap_notes.plan_modalities",
+      "transformation": "RENAME (added 2026-08, A1 batch)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "advice",
+      "destination": "soap_notes.plan_patient_instructions",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "westernConditionLinks",
+      "destination": "soap_notes.assessment_western_condition_ids",
+      "transformation": "JOIN list into the text blob the column already holds.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "easternDiseaseLinks",
+      "destination": "soap_notes.assessment_eastern_disease_ids",
+      "transformation": "JOIN list into the text blob.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "tcmPatternLinks",
+      "destination": "visit_tcm_patterns",
+      "transformation": "EXPLODE list -> rows. D5 canonical home.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "safetyFlagLinks",
+      "destination": "case_safety_flags",
+      "transformation": "EXPLODE -> rows. NOTE: the destination is CASE-level, so per-visit flags lose the visit they were raised at.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "subjective",
+      "destination": "soap_notes.subjective_symptom_updates",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "objective",
+      "destination": "soap_notes.objective_observation",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "assessment",
+      "destination": "soap_notes.assessment_progress_note",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "plan",
+      "destination": "visits.plan_zh",
+      "transformation": "RENAME into the zh slot.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "pointsUsed",
+      "destination": "visit_acupuncture",
+      "transformation": "EXPLODE free text -> rows. Needs point-code resolution.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "acupointLinks",
+      "destination": "visit_acupuncture.acupoint_code",
+      "transformation": "EXPLODE list -> one row per point.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "retentionMinutes",
+      "destination": "visit_acupuncture.retention_minutes",
+      "transformation": "Number(), written to EVERY point row — the app holds one value per visit, the table one per point.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "technique",
+      "destination": "visit_acupuncture.technique",
+      "transformation": "Written to every point row. Same one-to-many flattening as retentionMinutes.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "formulaHerbs",
+      "destination": "visit_formulas.formula_name_text",
+      "transformation": "EXPLODE free text -> rows.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "formulaLinks",
+      "destination": "visit_formulas.formula_id",
+      "transformation": "EXPLODE list -> rows.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "westernMeds",
+      "destination": "visit_western_medications.medication_name_text",
+      "transformation": "EXPLODE free text -> rows.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "medicationLinks",
+      "destination": "visit_western_medications.medication_id",
+      "transformation": "EXPLODE list -> rows.",
+      "nullable": null,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "outcomes",
+      "destination": "visit_outcomes.notes",
+      "transformation": "Free text -> one row with notes set and no metric_name/value.",
+      "nullable": true,
+      "data_loss_risk": "medium",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "outcomeMetricLinks",
+      "destination": "(UNRESOLVED)",
+      "transformation": "These are metric ids with NO recorded values. Writing them as visit_outcomes rows was proposed and REJECTED by Ting (2026-08): a row with metric_name and null value reads as a measured outcome that was never measured.",
+      "nullable": null,
+      "data_loss_risk": "high",
+      "status": "unresolved_needs_ting"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "outcomeVerdict",
+      "destination": "visits.outcome_verdict",
+      "transformation": "as-is (LL2)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "followUp",
+      "destination": "visits.next_follow_up",
+      "transformation": "RENAME",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "differentialConsidered",
+      "destination": "visits.reflection_differential_considered",
+      "transformation": "RENAME (LL1)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "reflection",
+      "destination": "visits.reflection_note",
+      "transformation": "RENAME (LL1)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "ifIneffectivePlan",
+      "destination": "visits.reflection_if_ineffective_plan",
+      "transformation": "RENAME (LL1)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "createdAt",
+      "destination": "visits.created_at",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "updatedAt",
+      "destination": "visits.updated_at",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    }
+  ]
+}

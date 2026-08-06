@@ -9,6 +9,20 @@ CREATE TABLE IF NOT EXISTS patients (
   patient_code TEXT NOT NULL UNIQUE,
   display_label TEXT,
   birth_year INTEGER,
+  -- localStorage patient.birthYearMonth ("1985-04"), split into year + month.
+  -- D4 permits "year or year-month only, never full DOB" — the schema stored
+  -- only the year, which is COARSER than the rule allows and threw away a month
+  -- the app has been collecting since 2026-07-03.
+  --
+  -- NULL is required, not merely tolerated: records saved before that date have
+  -- a birthYear and no birthYearMonth, so NOT NULL would fail the migration on
+  -- exactly the oldest cases.
+  --
+  -- There is no birth_day and there will not be one. The input is
+  -- <input type="month"> (index.html), which cannot produce a day — the source
+  -- is coarse by construction, which is stronger than any CHECK. Coarsen, never
+  -- falsify (D4): an unknown month stays NULL rather than being filled with 1.
+  birth_month INTEGER CHECK (birth_month IS NULL OR birth_month BETWEEN 1 AND 12),
   sex_at_birth TEXT,
   gender_identity TEXT,
   pronouns TEXT,
@@ -166,6 +180,19 @@ CREATE TABLE IF NOT EXISTS soap_notes (
   assessment_eastern_disease_ids TEXT,
   assessment_tcm_pattern_ids TEXT,
   assessment_tcm_diagnosis_text TEXT,
+  -- localStorage soapNote.pathomechanism (index.html: "為什麼會這樣：如肝失疏泄，
+  -- 橫逆犯脾"). Per VISIT, not per case: it sits in the SOAP form beside
+  -- tcmPattern and treatmentPrinciple, and CASE_SOAP_FLOW_REVIEW calls it
+  -- "Today's pattern and pathomechanism". A follow-up genuinely restates it
+  -- (肝鬱減輕，但痰濕仍盛), so a single case-level value would erase the change
+  -- that makes the record worth keeping.
+  --
+  -- Placed on soap_notes rather than visits so it stays beside
+  -- assessment_treatment_principle_zh below: 病機 → 治則 is a derivation, and
+  -- splitting the two across tables separates the field from its own conclusion.
+  -- _en is nullable — most entries will be 中文 only.
+  assessment_pathomechanism_zh TEXT,
+  assessment_pathomechanism_en TEXT,
   assessment_treatment_principle_zh TEXT,
   assessment_treatment_principle_en TEXT,
   assessment_progress_note TEXT,
