@@ -6247,6 +6247,14 @@ function renderChannelOverviewCard(ch) {
       </section>
     ` : ''}
 
+    ${(ch.seam_anatomy_zh || ch.qihua_zh || ch.pathomechanism_zh || ch.preservation_zh) ? `
+      <section class="channel-article-section" style="margin-top: 1rem;">
+        <details open style="background: #f4f8f6; border: 1px solid #c8ded3; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #1b5e3a; outline: none; user-select: none;">
+            🩺 循行縫隙、氣化理論與常見經絡異常 (Anatomy, Qi Transformation & Pathomechanism)
+            <span style="font-size: 0.82rem; font-weight: 400; color: #3b7a57; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
+          </summary>
+          <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
             ${ch.seam_anatomy_zh ? `
               <div style="background: #ffffff; border-left: 4px solid #008080; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #cce6e6; border-left-width: 4px;">
                 <div style="font-size: 0.98rem; font-weight: 800; color: #004d4d; margin-bottom: 0.4rem;">🧭 體內循行與體表縫隙定位 (Seam Anatomy & Cavity Pathway)</div>
