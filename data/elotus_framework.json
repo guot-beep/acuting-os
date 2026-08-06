@@ -1,0 +1,123 @@
+{
+  "name": "eLotus CORE Clinical Taxonomy Framework",
+  "name_zh": "eLotus CORE 臨床中醫針灸方劑體系框架",
+  "version": "2026.1",
+  "source": "eLotus CORE / MasterTungAcupuncture.org",
+  "description_zh": "本框架作為 AcuTing OS 的權威分類骨架，涵蓋十四正經、特定穴、董氏奇穴、耳穴、頭皮針、方劑與臟腑辨證。會員付費內容上傳後將自動對齊此結構。",
+
+  "acupoints_framework": {
+    "standard_14_channels": [
+      { "code": "LU", "name_zh": "手太陰肺經", "name_en": "Lung Channel", "points_count": 11, "element": "Metal" },
+      { "code": "LI", "name_zh": "手陽明大腸經", "name_en": "Large Intestine Channel", "points_count": 20, "element": "Metal" },
+      { "code": "ST", "name_zh": "足陽明胃經", "name_en": "Stomach Channel", "points_count": 45, "element": "Earth" },
+      { "code": "SP", "name_zh": "足太陰脾經", "name_en": "Spleen Channel", "points_count": 21, "element": "Earth" },
+      { "code": "HT", "name_zh": "手少陰心經", "name_en": "Heart Channel", "points_count": 9, "element": "Fire" },
+      { "code": "SI", "name_zh": "手太陽小腸經", "name_en": "Small Intestine Channel", "points_count": 19, "element": "Fire" },
+      { "code": "BL", "name_zh": "足太陽膀胱經", "name_en": "Bladder Channel", "points_count": 67, "element": "Water" },
+      { "code": "KI", "name_zh": "足少陰腎經", "name_en": "Kidney Channel", "points_count": 27, "element": "Water" },
+      { "code": "PC", "name_zh": "手厥陰心包經", "name_en": "Pericardium Channel", "points_count": 9, "element": "Fire" },
+      { "code": "TE", "name_zh": "手少陽三焦經", "name_en": "Triple Burner Channel", "points_count": 23, "element": "Fire" },
+      { "code": "GB", "name_zh": "足少陽膽經", "name_en": "Gallbladder Channel", "points_count": 44, "element": "Wood" },
+      { "code": "LR", "name_zh": "足厥陰肝經", "name_en": "Liver Channel", "points_count": 14, "element": "Wood" },
+      { "code": "REN", "name_zh": "任脈", "name_en": "Conception Vessel (Ren Mai)", "points_count": 24, "type": "Extraordinary" },
+      { "code": "DU", "name_zh": "督脈", "name_en": "Governing Vessel (Du Mai)", "points_count": 28, "type": "Extraordinary" }
+    ],
+
+    "master_point_groups": [
+      {
+        "id": "five_shu",
+        "name_zh": "五輸穴 (井滎輸經合)",
+        "name_en": "Five Shu Points",
+        "description_zh": "肘膝以下井水發源、橈氣運行之五個重要穴位，結合五行相生相剋治則（補母瀉子）。"
+      },
+      {
+        "id": "yuan_luo",
+        "name_zh": "原穴與絡穴 (主客配穴)",
+        "name_en": "Yuan-Source & Luo-Connecting Points",
+        "description_zh": "原穴反映臟腑原氣，絡穴聯絡表裏兩經。主客配穴法為臨床治療表裏經同病之金鑰。"
+      },
+      {
+        "id": "xi_cleft",
+        "name_zh": "隙穴 (急痛與血證)",
+        "name_en": "Xi-Cleft Points",
+        "description_zh": "經氣深聚之處，主治本經急性劇痛與血證（陽經止痛、陰經止血）。"
+      },
+      {
+        "id": "back_shu_front_mu",
+        "name_zh": "背俞穴與募穴 (俞募配穴)",
+        "name_en": "Back-Shu & Front-Mu Points",
+        "description_zh": "背俞在背、前募在胸腹，陰陽相配，主治相應臟腑急性與慢性病變。"
+      },
+      {
+        "id": "eight_confluent",
+        "name_zh": "八脈交會穴 (奇經八脈)",
+        "name_en": "Eight Confluent Points",
+        "description_zh": "通達奇經八脈之八個穴位（如公孫通衝脈、內關通陰維）。"
+      },
+      {
+        "id": "eight_influential",
+        "name_zh": "八會穴 (組織器官特定會穴)",
+        "name_en": "Eight Influential / Hui-Meeting Points",
+        "description_zh": "臟會章門、腑會中脘、氣會膻中、血會膈俞、筋會陽陵泉、脈會太淵、骨會大杼、髓會絕骨。"
+      },
+      {
+        "id": "lower_he_sea",
+        "name_zh": "下合穴 (六腑下合)",
+        "name_en": "Lower He-Sea Points",
+        "description_zh": "六腑之氣下合於足太陽、足陽明、足少陽經之六個穴位，主治六腑疾病。"
+      }
+    ],
+
+    "master_tung_12_zones": [
+      { "id": "zone_11", "code": "11", "name_zh": "一十一部位 (手指)", "name_en": "Zone 11 (Fingers)" },
+      { "id": "zone_22", "code": "22", "name_zh": "二十二部位 (手掌手背)", "name_en": "Zone 22 (Palm & Dorsum)" },
+      { "id": "zone_33", "code": "33", "name_zh": "三十三部位 (前臂)", "name_en": "Zone 33 (Forearm)" },
+      { "id": "zone_44", "code": "44", "name_zh": "四十四部位 (後臂)", "name_en": "Zone 44 (Upper Arm)" },
+      { "id": "zone_55", "code": "55", "name_zh": "五十五部位 (足底)", "name_en": "Zone 55 (Plantar)" },
+      { "id": "zone_66", "code": "66", "name_zh": "六十六部位 (足跗)", "name_en": "Zone 66 (Dorsum of Foot)" },
+      { "id": "zone_77", "code": "77", "name_zh": "七十七部位 (小腿)", "name_en": "Zone 77 (Lower Leg)" },
+      { "id": "zone_88", "code": "88", "name_zh": "八十八部位 (大腿)", "name_en": "Zone 88 (Thigh)" },
+      { "id": "zone_99", "code": "99", "name_zh": "九十九部位 (耳朵)", "name_en": "Zone 99 (Ear)" },
+      { "id": "zone_1010", "code": "1010", "name_zh": "一十一致部位 (頭面)", "name_en": "Zone 1010 (Head & Face)" },
+      { "id": "zone_spinal", "code": "DT", "name_zh": "脊椎部位 (背部)", "name_en": "Dorsal Spinal Zone" },
+      { "id": "zone_ventral", "code": "VT", "name_zh": "胸腹部位 (前軀)", "name_en": "Ventral Chest/Abdomen Zone" }
+    ],
+
+    "auricular_framework": {
+      "system_name": "eLotus CORE / Dr. Li-Chun Huang Auricular Medicine",
+      "regions": ["Helix", "Antihelix", "Triangular Fossa", "Tragus", "Antitragus", "Cymba Conchae", "Cavum Conchae", "Earlobe", "Ear Back"],
+      "germ_layers": ["Endoderm (Internal Organs)", "Mesoderm (Musculoskeletal & Heart/Spleen)", "Ectoderm (Skin & Nervous System)"],
+      "diagnostic_phases": ["Red Filter (Acute)", "Blue Filter (Subacute)", "Green Filter (Chronic)"]
+    },
+
+    "scalp_framework": {
+      "system_name": "WHO International Standard & Jiao Shunfa Scalp Acupuncture",
+      "lines_count": 14,
+      "functional_areas": ["Motor Area", "Sensory Area", "Foot Motor & Sensory", "Chorea & Tremor", "Vertigo & Auditory", "Speech #1", "Speech #2", "Speech #3", "Vision", "Balance"]
+    }
+  },
+
+  "formulas_framework": {
+    "canonical_19_categories": [
+      "解表劑 / Release the Exterior",
+      "瀉下劑 / Purge Downward",
+      "和解劑 / Harmonize",
+      "清熱劑 / Clear Heat",
+      "祛暑劑 / Clear Summer-Heat",
+      "溫裏劑 / Warm the Interior",
+      "表裏雙解劑 / Release Both Exterior and Interior",
+      "補益劑 / Tonify",
+      "固澀劑 / Stabilize and Bind",
+      "安神劑 / Calm the Spirit",
+      "開竅劑 / Open the Orifices",
+      "理氣劑 / Regulate Qi",
+      "理血劑 / Regulate Blood",
+      "治風劑 / Expel or Extinguish Wind",
+      "治燥劑 / Treat Dryness",
+      "祛痰劑 / Transform Phlegm",
+      "消食劑 / Relieve Food Stagnation",
+      "驅蟲劑 / Expel Parasites",
+      "治瘍劑 / Treat Abscesses and Sores"
+    ]
+  }
+}

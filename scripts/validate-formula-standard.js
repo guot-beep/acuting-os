@@ -140,6 +140,15 @@ for (const r of recs) {
     seen.add(r.id);
   }
 
+  // F13 — Boilerplate / Placeholder string check
+  const badPatterns = [/經典功用/i, /主治證型/i, /功用：Action/i, /Actions of/i, /Action: Action/i, /Pattern Indications of/i];
+  const allTexts = [...arr(r.actions_zh), ...arr(r.actions_en), ...arr(r.pattern_indications_zh), ...arr(r.pattern_indications_en)];
+  allTexts.forEach(t => {
+    badPatterns.forEach(bp => {
+      if (bp.test(t)) errors.push(`F13 ${id}: boilerplate placeholder text "${t}" matches ${bp}`);
+    });
+  });
+
   // F9 — every record. Corrupt text is corrupt regardless of curation state.
   const mojiFields = [], damagedFields = [];
   const walk = (o, p) => {

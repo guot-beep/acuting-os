@@ -1,0 +1,273 @@
+{
+  "_reference_note": "REFERENCE IMPLEMENTATION for formula.dao_chi_san matching template.",
+  "id": "formula.dao_chi_san",
+  "name_zh": "導赤散",
+  "name_en": "Dao Chi San",
+  "name_en_translated": "Guide Out the Red Powder",
+  "pinyin": "Dao Chi San",
+  "pinyin_toned": "Dǎo Chì Sǎn",
+  "source_text_zh": "《小兒藥證直訣》",
+  "source_text_en": "Xiao Er Yao Zheng Zhi Jue (Key to Therapeutics of Children's Diseases)",
+  "category_zh": "清熱劑－清臟腑熱",
+  "category_en": "Formulas that Clear Heat - Clear Organ Heat",
+  "comparison_group": "清熱劑 / Clear Heat",
+  "glance": {
+    "category_banner_zh": "清心養陰 利水導熱",
+    "category_banner_en": "CLEAR HEART NOURISH YIN DRAIN HEAT",
+    "plain_summary_zh": "心經火熱及心火下移小腸證（口舌生瘡、心煩、小便赤澀痛）之名方。清心養陰、利水通淋——引火下行從小便出。",
+    "plain_summary_en": "Classic formula for Heart channel heat and Heart heat transferring to Small Intestine. Features mouth sores and painful urination.",
+    "plain_indications_zh": [
+      "心經火熱",
+      "心火下移小腸",
+      "心胸煩熱",
+      "口舌生瘡",
+      "小便赤澀刺痛"
+    ],
+    "plain_indications_en": [
+      "heart fire blazing",
+      "heart heat to small intestine",
+      "heart heat restlessness",
+      "mouth tongue sores",
+      "painful red urination"
+    ],
+    "herb_count": 4
+  },
+  "composition": [
+    {
+      "herb_id": "herb.sheng_di_huang",
+      "herb_zh": "生地黃",
+      "name_zh": "生地黃",
+      "herb_en": "Rehmannia Root",
+      "name_en": "Rehmannia Root",
+      "pinyin": "Sheng Di Huang",
+      "pinyin_toned": "Shēng Dì Huáng",
+      "dose_g": "15",
+      "decoction_reference_g": "15g",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "甘苦大寒，清熱涼血、滋陰生津，清心火——重用為君",
+      "in_formula_zh": "甘苦大寒，清熱涼血、滋陰生津，清心火——重用為君"
+    },
+    {
+      "herb_id": "herb.dan_zhu_ye",
+      "herb_zh": "淡竹葉",
+      "name_zh": "淡竹葉",
+      "herb_en": "Lophatherus Stem",
+      "name_en": "Lophatherus Stem",
+      "pinyin": "Dan Zhu Ye",
+      "pinyin_toned": "Dàn Zhú Yè",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "甘淡性寒，清心除煩、淡滲利濕，導熱下行",
+      "in_formula_zh": "甘淡性寒，清心除煩、淡滲利濕，導熱下行"
+    },
+    {
+      "herb_id": "herb.mu_tong",
+      "herb_zh": "木通",
+      "name_zh": "木通",
+      "herb_en": "Akebia Stem",
+      "name_en": "Akebia Stem",
+      "pinyin": "Mu Tong",
+      "pinyin_toned": "Mù Tōng",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "苦寒利水通淋，引心火從小腸而出",
+      "in_formula_zh": "苦寒利水通淋，引心火從小腸而出"
+    },
+    {
+      "herb_id": "herb.gan_cao",
+      "herb_zh": "甘草",
+      "name_zh": "甘草",
+      "herb_en": "Licorice Root",
+      "name_en": "Licorice Root",
+      "pinyin": "Gan Cao",
+      "pinyin_toned": "Gān Cǎo",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "使",
+      "role_en": "Envoy",
+      "role_reason_zh": "甘平，清熱瀉火、清利尿道、調和諸藥（用生甘草梢）",
+      "in_formula_zh": "甘平，清熱瀉火、清利尿道、調和諸藥（用生甘草梢）"
+    }
+  ],
+  "key_pairs": [
+    "pair.sheng_di_huang__dan_zhu_ye",
+    "pair.mu_tong__gan_cao"
+  ],
+  "key_pairs_note_zh": "生地配淡竹葉（滋陰清心，利水導熱）；木通配甘草梢（清利尿道，導熱下行止痛）。",
+  "key_pairs_note_en": "Sheng Di Huang with Dan Zhu Ye (nourishes Yin and clears Heart heat); Mu Tong with Gan Cao Shao (unblocks urinary tract and drains heat downward).",
+  "fang_yi_zh": "《小兒藥證直訣》清心利水之經典名方。重用生地黃甘苦大寒，清熱涼血、滋陰生津為君；淡竹葉甘淡性寒，清心除煩、淡滲利濕為臣；木通苦寒利水通淋，引心火從小腸而出為臣；生甘草梢清熱瀉火、清利尿道痛感、調和諸藥為使。水火相濟，導熱下行從小便解。",
+  "fang_yi_en": "Classic formula for clearing Heart heat and draining urination. Heavy Sheng Di Huang clears Heart heat and nourishes Yin as chief; Dan Zhu Ye clears Heart heat as deputy; Mu Tong drains heat downward via Small Intestine/urine as deputy; Licorice tip quenches urinary tract pain and harmonizes as envoy.",
+  "actions_zh": [
+    "清心養陰 — 清瀉心經實火、滋養心陰",
+    "利水通淋 — 引心火下行小腸、利尿通淋",
+    "清利口舌 — 降火消腫、治療口舌生瘡",
+    "導熱下行 — 水火相濟、使熱邪從小腸而出"
+  ],
+  "actions_en": [
+    "Clears Heart heat and nourishes Yin — drains Heart fire excess and moistens fluids",
+    "Promotes urination and unblocks dysuria — guides Heart heat downward out through Small Intestine",
+    "Clears mouth and tongue — quenches fire to relieve aphthous ulcers",
+    "Guides heat downward — balances water and fire to expel heat via urine"
+  ],
+  "pattern_indications_zh": [
+    "心經火熱證（心火下移小腸）：心胸煩熱、口渴面赤、意欲飲水、口舌生瘡、或小便赤澀刺痛、舌尖紅絳、脈數。"
+  ],
+  "pattern_indications_en": [
+    "Heart Channel Heat Excess / Heart Heat transferring to Small Intestine: Heart heat with irritability, thirst with desire for cold drinks, mouth and tongue sores, painful red urinary dribbling, red tongue tip, rapid pulse."
+  ],
+  "indications": [
+    {
+      "pattern_zh": "心經火熱證（心火下移小腸）",
+      "pattern_en": "Heart Channel Heat Excess / Heart Heat transferring to Small Intestine",
+      "clinical_picture_zh": "心胸煩熱、口渴面赤、口舌生瘡、小便赤澀刺痛",
+      "clinical_picture_en": "Heart heat with irritability, thirst, mouth sores, painful red urination",
+      "tongue_zh": "舌尖紅絳",
+      "tongue_en": "Red tongue tip",
+      "pulse_zh": "脈數",
+      "pulse_en": "Rapid pulse"
+    }
+  ],
+  "constitutional_types_zh": [
+    "脾胃虛弱",
+    "陰虛無火"
+  ],
+  "constitutional_types_en": [
+    "Spleen/Stomach weakness",
+    "Yin deficiency without fire"
+  ],
+  "constitutional_note_zh": "脾胃虛弱便溏者慎用。",
+  "modifications_zh": [
+    "血淋、小便尿血者：加小薊 15g、蒲黃 9g、藕節 12g（涼血止血通淋）",
+    "心火熾盛、煩躁不眠者：加黃連 6g（清心瀉火）",
+    "小便淋瀝澀痛甚者：加車前子 9g、滑石 15g（利水通淋）"
+  ],
+  "modifications_en": [
+    "Bloody urination: Add Xiao Ji 15g, Pu Huang 9g, Ou Jie 12g",
+    "Severe Heart fire & insomnia: Add Huang Lian 6g",
+    "Severe painful dysuria: Add Che Qian Zi 9g, Hua Shi 15g"
+  ],
+  "modifications": [
+    {
+      "if_zh": "血淋、小便尿血者",
+      "if_en": "Bloody urination",
+      "change_zh": "加小薊 15g、蒲黃 9g、藕節 12g（涼血止血通淋）",
+      "change_en": "Add Xiao Ji 15g, Pu Huang 9g, Ou Jie 12g"
+    },
+    {
+      "if_zh": "心火熾盛、煩躁不眠者",
+      "if_en": "Severe Heart fire & insomnia",
+      "change_zh": "加黃連 6g（清心瀉火）",
+      "change_en": "Add Huang Lian 6g"
+    }
+  ],
+  "dose_adjustment_note_zh": "水煎服。小兒按年齡體重減量。",
+  "dose_adjustment_note_en": "Decoct in water. Reduce dose for children.",
+  "contraindications_zh": [
+    "脾胃虛弱、食少便溏者慎用",
+    "陰虛無火、小便清長者禁用"
+  ],
+  "contraindications_en": [
+    "Use with caution in Spleen/Stomach weakness or loose stools",
+    "Contraindicated in Yin deficiency without fire or clear profuse urine"
+  ],
+  "comparisons": [
+    {
+      "with": "formula.xie_xin_tang",
+      "name_zh": "瀉心湯",
+      "differentiator_zh": "瀉心湯苦寒直折瀉心脾實火；導赤散清心滋陰利水，引火下行。",
+      "differentiator_en": "Xie Xin Tang purges Heart/Spleen fire with bitter-cold herbs; Dao Chi San clears Heart heat while nourishing Yin and guiding heat out via urine."
+    }
+  ],
+  "formula_family": [
+    {
+      "formula_id": "formula.dao_chi_san",
+      "name_zh": "導赤散",
+      "relation": "同類",
+      "change": [
+        "原方結構"
+      ],
+      "change_en": [
+        "Base formula structure"
+      ]
+    }
+  ],
+  "applications_zh": [
+    "急性口炎（嘴破）",
+    "口腔潰瘍",
+    "急性尿道炎",
+    "急性膀胱炎",
+    "小兒夜啼"
+  ],
+  "applications_en": [
+    "Acute stomatitis",
+    "Aphthous ulcers",
+    "Acute urethritis",
+    "Acute cystitis",
+    "Infantile night crying"
+  ],
+  "modern_applications_zh": [
+    "急性口炎（嘴破）",
+    "口腔潰瘍",
+    "急性尿道炎",
+    "急性膀胱炎",
+    "小兒夜啼"
+  ],
+  "modern_applications_en": [
+    "Acute stomatitis",
+    "Aphthous ulcers",
+    "Acute urethritis",
+    "Acute cystitis",
+    "Infantile night crying"
+  ],
+  "cloudtcm_url": "https://cloudtcm.com/formula/281",
+  "american_dragon_url": "https://www.americandragon.com/HerbFormulas/DaoChiSan.html",
+  "source_urls": [
+    "https://cloudtcm.com/formula/281",
+    "https://www.americandragon.com/HerbFormulas/DaoChiSan.html"
+  ],
+  "external_links": [
+    {
+      "source_id": "american_dragon",
+      "url": "https://www.americandragon.com/HerbFormulas/DaoChiSan.html",
+      "label_zh": "American Dragon",
+      "label_en": "American Dragon",
+      "lang": "en",
+      "link_status": "direct"
+    },
+    {
+      "source_id": "cloudtcm",
+      "url": "https://cloudtcm.com/formula/281",
+      "label_zh": "雲端中醫",
+      "label_en": "CloudTCM",
+      "lang": "zh",
+      "link_status": "direct"
+    }
+  ],
+  "field_sources": {
+    "actions_zh": [
+      "xiao_er_yao_zheng_zhi_jue",
+      "curriculum/formulas/Formulations Summary Chart.docx.md"
+    ],
+    "composition_roles": [
+      "xiao_er_yao_zheng_zhi_jue",
+      "bastyr_materia_medica_2"
+    ],
+    "indications": [
+      "xiao_er_yao_zheng_zhi_jue"
+    ],
+    "contraindications": [
+      "bastyr_materia_medica_2"
+    ]
+  },
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "formula_song": "導赤生地與木通，草梢竹葉四般功。\n口瘡尿赤莖中痛，心火下移小腸熱。",
+  "formula_song_zh": "導赤生地與木通，草梢竹葉四般功。\n口瘡尿赤莖中痛，心火下移小腸熱。",
+  "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+  "exam_pearl": "【考綱重點】心經火熱及心火下移小腸證（口舌生瘡、心煩、尿赤澀痛）首選方。生地為君滋陰清心；木通+竹葉導火下行從小便出；甘草梢清痛利尿。NCBAHM 2026 CH Outline p.21。"
+}

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * knowledge.js — renders real records from data/generated/knowledge_data.js
  * into the Formula, Condition, Sources, and Quality sections.
  *
@@ -12,7 +12,11 @@
 
   function el(id) { return document.getElementById(id); }
   function isEnglishMode() {
-    return document.body.dataset.contentMode === "english" || localStorage.getItem(CONTENT_MODE_KEY) === "english";
+    try {
+      return (document.body && document.body.dataset && document.body.dataset.contentMode === "english") || (typeof localStorage !== "undefined" && localStorage && localStorage.getItem(CONTENT_MODE_KEY) === "english");
+    } catch (e) {
+      return false;
+    }
   }
   function modeText(bilingual, english) {
     return isEnglishMode() ? english : bilingual;
@@ -32,17 +36,14 @@
     if (comparisonFilter) comparisonFilter.placeholder = modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes...");
     const conditionFilter = el("conditionFilter");
     if (conditionFilter) conditionFilter.placeholder = modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD...");
+    const cloudtcmDiseaseFilter = el("cloudtcmDiseaseFilter");
+    if (cloudtcmDiseaseFilter) cloudtcmDiseaseFilter.placeholder = modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID...");
   }
   document.addEventListener("acuting:content-mode", applyKnowledgeModeText);
   function esc(v) {
     return String(v == null ? "" : v)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
-  }
-  function asList(values) {
-    if (Array.isArray(values)) return values;
-    if (values == null || values === "") return [];
-    return [values];
   }
   function tag(t) { return `<span class="k-tag">${esc(t)}</span>`; }
 
@@ -76,7 +77,7 @@
   }
   function recordHasConcept(tags, conceptId) {
     if (!conceptId) return true;
-    return asList(tags).some((t) => resolveModernTag(t).id === conceptId);
+    return (tags || []).some((t) => resolveModernTag(t).id === conceptId);
   }
   function conceptLabel(id) {
     const c = MODERN_VOCAB.get(id);
@@ -107,7 +108,7 @@
      not modern applications; internal workflow states never render at all. */
   function modernTagChips(values) {
     const groups = { condition: [], symptom: [], pattern: [], unmapped: [] };
-    asList(values).forEach((raw) => {
+    (values || []).forEach((raw) => {
       const c = resolveModernTag(raw);
       if (c.type === "internal") return;
       (groups[c.type] || groups.unmapped).push(c);
@@ -135,7 +136,7 @@
   function modernInlineChips(values, limit = 6) {
     const seen = new Set();
     const chips = [];
-    asList(values).forEach((raw) => {
+    (values || []).forEach((raw) => {
       const c = resolveModernTag(raw);
       if (c.type === "internal" || seen.has(c.id) || chips.length >= limit) return;
       seen.add(c.id);
@@ -195,24 +196,24 @@
       record.category,
       record.category_zh,
       record.category_en,
-      ...asList(record.condition_tags_zh),
-      ...asList(record.condition_tags_en),
-      ...asList(record.indications_zh),
-      ...asList(record.indications_en),
-      ...asList(record.pattern_focus_zh),
-      ...asList(record.pattern_focus_en),
-      ...asList(record.pattern_indications_zh),
-      ...asList(record.pattern_indications_en),
-      ...asList(record.syndromes_zh),
-      ...asList(record.syndromes_en)
+      ...(record.condition_tags_zh || []),
+      ...(record.condition_tags_en || []),
+      ...(record.indications_zh || []),
+      ...(record.indications_en || []),
+      ...(record.pattern_focus_zh || []),
+      ...(record.pattern_focus_en || []),
+      ...(record.pattern_indications_zh || []),
+      ...(record.pattern_indications_en || []),
+      ...(record.syndromes_zh || []),
+      ...(record.syndromes_en || [])
     ];
     return fields.filter(Boolean).join(" ").toLowerCase();
   }
 
   function exteriorContextChips(record) {
     const modern = [
-      ...asList(record.modern_use_tags),
-      ...asList(record.modern_clinical_use_tags)
+      ...(record.modern_use_tags || []),
+      ...(record.modern_clinical_use_tags || [])
     ].map((raw) => resolveModernTag(raw).id);
     const text = recordTextForContext(record);
     const hasColdSearchTag = modern.includes("common_cold") || /感冒|common cold|外感|表證|解表|release exterior/.test(text);
@@ -226,84 +227,17 @@
      Spleen Qi Deficiency — they were simply never resolved at display time. */
   const ENTITY_NAMES = (() => {
     const map = new Map();
-    // The fallback below picks "the first array-valued key" in a dataset object.
-    // That heuristic is fine for datasets whose only array IS records, and it
-    // silently picked `policy` on data/symptoms/symptoms.json — so every sym.*
-    // chip rendered the humanised slug "Headache" instead of 頭痛 / Headache,
-    // while the detail view (which reads .records explicitly) looked correct.
-    // Pass .records explicitly for anything that carries prose arrays.
     const add = (list) => {
       const arr = Array.isArray(list) ? list : (list && Object.values(list).find(Array.isArray)) || [];
       arr.forEach((r) => { if (r && r.id) map.set(r.id, r); });
     };
     if (K) {
-      // Registry first, library second: both are keyed by the same id (D10) and
-      // the library carries the richer record, so it must win the overwrite.
-      // The registry is here for the 13 ids that exist ONLY in it.
-      add((K.patternRegistry || {}).records);
       add(K.patternLibrary);
       add(K.conditionCanon);
       add(K.conditions);
       add(K.tdisRegistry);
-      // D11's fourth namespace. Pilot 0 shipped cond/pattern/tdis records that
-      // reference sym.* ids; without this line entityLabel falls through to the
-      // "humanise the key" branch and the screen reads "headache" — the English
-      // slug — where the card holds 頭痛 / Headache.
-      add((K.symptoms || {}).records);
     }
     return map;
-  })();
-
-  const METRIC_LABEL = new Map(
-    (((K && K.outcomeMetrics && K.outcomeMetrics.records) || [])).map((m) =>
-      [m.id, displayLabel(m.label_zh || "", m.label_en || "", m.id)])
-  );
-
-  const SYMPTOM_BY_ID = new Map(
-    (((K && K.symptoms && K.symptoms.records) || [])).map((r) => [r.id, r])
-  );
-
-  /* seen_in_conditions / seen_in_patterns / seen_in_tdis are DERIVED (D13 §5.2,
-     and validate-symptom-standard Y8 rejects them if hand-filled). This is the
-     render-time join that earns them.
-
-     It is built by ENUMERATING data/config/relation_registry.json, not by a
-     second hardcoded list here — the registry calls itself "the authority on
-     which fields are edges", and a runtime that hardcodes the same three field
-     names makes that claim false the moment a fourth edge is registered.
-
-     The one translation the registry cannot supply: it names FILES
-     ("data/pathology/pattern_library.json") while the runtime has bundle keys
-     ("patternLibrary"). That map lives here because build-data.js decides the
-     key names. An edge whose file is unmapped is skipped and counted, so the
-     gap is visible instead of silent. */
-  const REGISTRY_FILE_TO_BUNDLE = {
-    "data/pathology/condition_canon_shortlist.json": { key: "conditionCanon", reverse_group: "seen_in_conditions", label_zh: "見於西醫病名", label_en: "Seen in biomedical conditions" },
-    "data/pathology/pattern_library.json": { key: "patternLibrary", reverse_group: "seen_in_patterns", label_zh: "見於證型", label_en: "Seen in patterns" },
-    "data/pathology/tdis_registry.json": { key: "tdisRegistry", reverse_group: "seen_in_tdis", label_zh: "見於中醫病名", label_en: "Seen in TCM disease names" },
-  };
-
-  const SYMPTOM_REVERSE = (() => {
-    const index = new Map();   // sym id -> { seen_in_conditions: [ids], ... }
-    const meta = { edges_read: 0, edges_skipped: [], from_registry: false };
-    const edges = (K && K.relationRegistry && K.relationRegistry.edges) || [];
-    if (!edges.length) return { index, meta };
-    meta.from_registry = true;
-    for (const edge of edges) {
-      if (edge.target !== "sym.*" || edge.edge_kind !== "descriptive") continue;
-      const mapped = REGISTRY_FILE_TO_BUNDLE[edge.file];
-      if (!mapped || !K[mapped.key]) { meta.edges_skipped.push(edge.id); continue; }
-      const records = (K[mapped.key].records) || [];
-      for (const rec of records) {
-        for (const symId of (rec[edge.field] || [])) {
-          if (!index.has(symId)) index.set(symId, {});
-          const bucket = index.get(symId);
-          (bucket[mapped.reverse_group] ||= []).push(rec.id);
-        }
-      }
-      meta.edges_read += 1;
-    }
-    return { index, meta };
   })();
 
   function entityLabel(id) {
@@ -320,9 +254,8 @@
 
   function entityKindLabel(id) {
     const p = String(id).split(".")[0];
-    return p === "pattern" ? "證型" : p === "eastern_disease" || p === "tdis" ? "中醫病名"
-      : p === "western_condition" || p === "cond" ? "西醫病名"
-      : p === "sym" ? "症狀" : "";
+    return p === "pattern" ? "證型" : p === "eastern_disease" ? "中醫病名"
+      : p === "western_condition" || p === "cond" ? "西醫病名" : "";
   }
 
   function entityChips(ids) {
@@ -331,24 +264,6 @@
     return list.map((id) => {
       const kind = entityKindLabel(id);
       return `<span class="k-entity-chip">${kind ? `<small>${esc(kind)}</small>` : ""}${esc(entityLabel(id))}</span>`;
-    }).join("");
-  }
-
-  /* Symptom chips are entityChips that OPEN something. The other namespaces
-     have no detail view yet, so their chips are deliberately inert labels; a
-     sym.* id resolves to a card, and a reference the reader cannot follow is
-     the ghost-node problem in a smaller form. */
-  function symptomChips(ids) {
-    const list = (ids || []).filter(Boolean);
-    if (!list.length) return "";
-    return list.map((id) => {
-      const known = SYMPTOM_BY_ID.has(id);
-      if (!known) {
-        // An id with no card behind it says so, rather than rendering as a
-        // working link that opens nothing.
-        return `<span class="k-entity-chip is-unresolved" title="${esc(id)} — 尚無症狀卡 / no symptom card yet"><small>症狀</small>${esc(entityLabel(id))} ⚠</span>`;
-      }
-      return `<button type="button" class="k-entity-chip k-entity-chip--link" data-detail-kind="symptom" data-detail-id="${esc(id)}"><small>症狀</small>${esc(entityLabel(id))}</button>`;
     }).join("");
   }
 
@@ -363,7 +278,7 @@
    * Ting asked for it to appear only when we actually have it, so this renders
    * nothing at all rather than a 待補 placeholder. */
   function formulaSongSection(record) {
-    const song = usableText(record.formula_song_zh || record.fang_ge_zh);
+    const song = usableText(record.formula_song_zh || record.formula_song || record.fang_ge_zh);
     if (!song) return "";
     const note = usableText(record.formula_song_source_zh);
     return `
@@ -474,7 +389,7 @@
   }
 
   if (!K) {
-    ["formulaRecords", "herbRecords", "pharmRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
+    ["formulaRecords", "herbRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
       const host = el(id);
       if (host) host.innerHTML = '<p class="k-missing">⚠ knowledge_data.js 未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
     });
@@ -483,11 +398,6 @@
 
   const formulas = (K.formulas && K.formulas.records) || [];
   const herbs = (K.herbs && K.herbs.records) || [];
-  // 藥理四層。分類/標的/系統各自成表,單藥卡要靠它們把 id 換成名字 ——
-  // 少帶一個,卡片上就會出現 drugclass.loop_diuretics 這種字串。
-  const pharmDrugs = (K.pharmDrugs && K.pharmDrugs.records) || [];
-  const pharmClassById = new Map(((K.pharmDrugClasses && K.pharmDrugClasses.records) || []).map((c) => [c.id, c]));
-  const pharmTargetById = new Map(((K.pharmDrugTargets && K.pharmDrugTargets.records) || []).map((t) => [t.id, t]));
   const formulaById = new Map(formulas.map((record) => [record.id, record]));
   const herbById = new Map(herbs.map((record) => [record.id, record]));
 
@@ -558,20 +468,28 @@
   }
 
   function sourceLinks(record) {
-    const citations = Array.isArray(record.source_citations) ? record.source_citations : [];
+    const cloudUrl = record.cloudtcm_url;
+    const adUrl = record.american_dragon_url;
     let html = '<div class="k-source-citations" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">';
 
-    // Web Links vs Textbook Citations
+    if (cloudUrl) {
+      html += `<a href="${esc(cloudUrl)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 14px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0284c7;font-weight:600;font-size:0.9em;">雲端中醫 CloudTCM ↗</a>`;
+    }
+    if (adUrl) {
+      html += `<a href="${esc(adUrl)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 14px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0284c7;font-weight:600;font-size:0.9em;">American Dragon ↗</a>`;
+    }
+
+    const citations = Array.isArray(record.source_citations) ? record.source_citations : [];
     if (citations.length) {
       citations.forEach(c => {
-        const isUrl = c.url && /^https?:\/\//.test(c.url);
+        const isUrl = c.url && /^https?:\/\//.test(c.url) && !/cloudtcm|americandragon/.test(c.url);
         if (isUrl) {
           html += `
             <a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#1e293b;font-size:0.85em;">
               <strong style="color:#0284c7;">${esc(c.name)} ↗</strong>
               ${c.scope ? `<span style="color:#64748b;margin-left:4px;">(${esc(c.scope)})</span>` : ""}
             </a>`;
-        } else {
+        } else if (c.name && !/cloudtcm|americandragon/i.test(c.name)) {
           html += `
             <div style="display:inline-block;padding:6px 12px;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#334155;font-size:0.85em;">
               <strong>${esc(c.name)}</strong>
@@ -581,21 +499,6 @@
       });
     }
 
-    /* Every source is named. "Source 1" told Ting nothing — a citation must say
-       what it is (Ting: 引用來源都要寫). URLs are named by host; curriculum
-       references collected from field_sources are shown as textbook citations. */
-    const hostName = (url) => {
-      if (/cloudtcm\.com/.test(url)) return "雲端中醫 CloudTCM";
-      if (/americandragon\.com/.test(url)) return "American Dragon";
-      if (/chinesemedicineatlas\.com/.test(url)) return "Chinese Medicine Atlas";
-      if (/acupun\.site/.test(url)) return "acupun.site";
-      try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return "來源 Source"; }
-    };
-    const links = [...new Set((record.source_urls || []).concat(record.exact_source_url || [], record.safety_source_url || [])
-      .filter((url) => typeof url === "string" && /^https?:\/\//.test(url)))];
-    if (!citations.length && links.length) {
-      html += links.map((url) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#0284c7;font-size:0.85em;">${esc(hostName(url))} ↗</a>`).join("");
-    }
     /* One chip per curriculum file+page. field_sources annotates the same page
        many ways ("...#p29（WM 行）"), which used to print the same course file
        three times (Ting: 課件部份就標註一兩個就好,不要重複). */
@@ -971,6 +874,14 @@
      derived one gave no hint it was a modification — which is the single most
      useful thing to know about 大青龍湯. Mirrored by
      scripts/link-formula-family-back.js, never authored twice. */
+  function formulaSourceLinks(record) {
+    const a = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link" style="margin-right:6px;display:inline-block;padding:2px 8px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:4px;color:#0284c7;font-size:0.85em;text-decoration:none;">${esc(label)} ↗</a>`;
+    const out = [];
+    if (record.cloudtcm_url) out.push(a(record.cloudtcm_url, "雲端中醫 CloudTCM"));
+    if (record.american_dragon_url) out.push(a(record.american_dragon_url, "American Dragon"));
+    return out.length ? out.join("") : `<span class="k-meta">${esc(record.tier || "draft")}</span>`;
+  }
+
   function formulaDerivedFrom(record) {
     const d = record.derived_from;
     if (!d) return "";
@@ -1143,12 +1054,17 @@
     const relatedConditions = entityChips(record.related_conditions);
     const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
+    const contraindicationsZh = cleanList(record.contraindications_zh || record.cautions_zh);
+    const contraindicationsEn = cleanList(record.contraindications_en || exam.contraindications_en);
+    const contraHtml = (contraindicationsZh.length || contraindicationsEn.length)
+      ? detailPairedList(contraindicationsZh, contraindicationsEn)
+      : detailList(safetyList(safety));
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("⚠️ 注意事項與禁忌", "Contraindications & Cautions", contraHtml)}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
-      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safetyList(safety)]))}${detailSection("來源", "Sources", sourceLinks(record))}` },
+      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
       { id: "notes", label: "我的筆記 My Notes", content: notesPanel("formula", record) }
@@ -1192,7 +1108,7 @@
   function herbPanels(record) {
     const exam = record.english_exam_track || {};
     const props = record.tcm_properties || {};
-    const dose = record.dosage && typeof record.dosage === "object" ? record.dosage : {};
+    const dose = record.dosage_g || {};
     const safety = record.safety_info || {};
     const visual = record.visual_reference || {};
     
@@ -1285,16 +1201,12 @@
     const relatedFormulas = (record.related_formulas || []).map((id) => relationButton(id, formulaLabel(id), "formula")).join("");
     const keyPairs = (record.key_pairs || []).map((p) => {
       if (typeof p === "string") return `<div class="k-pair-item"><strong>${linkifyHerbs(p, record.id)}</strong></div>`;
-      const pairName = p.pair || p.name_zh || (asList(p.herbs_zh).length ? asList(p.herbs_zh).join(" + ") : "");
-      const pairNameEn = p.name_en || (asList(p.herbs_en).length ? asList(p.herbs_en).join(" + ") : "");
-      const zh = p.rationale_zh || p.relation_zh || p.pair_meaning_zh || p.rationale || "";
-      const en = p.rationale_en || p.relation_en || p.pair_meaning_en || "";
-      const source = p.source || p.pair_id || "";
+      const zh = p.rationale_zh || p.rationale || "";
+      const en = p.rationale_en || "";
       return `<div class="k-pair-item" style="margin-bottom:8px;padding:8px 12px;background:#f8fafc;border-left:3px solid #0284c7;border-radius:4px;">
-        <strong>${linkifyHerbs(pairName, record.id)}${pairNameEn ? ` <small>${esc(pairNameEn)}</small>` : ""}</strong>
+        <strong>${linkifyHerbs(p.pair || "", record.id)}</strong>
         ${zh ? `<p style="margin:4px 0 0 0;font-size:0.92em;color:#334155;">${linkifyHerbs(zh, record.id)}</p>` : ""}
         ${en ? `<p style="margin:2px 0 0 0;font-size:0.88em;color:#64748b;">${esc(en)}</p>` : ""}
-        ${source ? `<small style="display:block;margin-top:4px;color:#64748b;">${esc(source)}</small>` : ""}
       </div>`;
     }).join("");
     
@@ -1314,16 +1226,6 @@
       cleanList(safety.cautions_zh).length ? cleanList(safety.cautions_zh) : cleanList(record.cautions_zh),
       cleanList(safety.cautions_en).length ? cleanList(safety.cautions_en) : cleanList(record.cautions_en)
     );
-    const examPearlZh = usableText(record.exam_pearl_zh || record.exam_pearl);
-    const examPearlEn = usableText(record.exam_pearl_en);
-    const boardFocusZh = cleanList(record.board_exam_focus_zh);
-    const boardFocusEn = cleanList(record.board_exam_focus_en);
-    const boardFocusHtml = boardFocusZh.length
-      ? `<ul class="k-detail-list">${boardFocusZh.map((zh, i) => {
-          const en = boardFocusEn[i] || "";
-          return `<li>${esc(zh)}${en ? `<br><small style="color:#64748b;">${esc(en)}</small>` : ""}</li>`;
-        }).join("")}</ul>`
-      : "";
 
     return [
       { 
@@ -1331,13 +1233,12 @@
         label: "考試與傳統核心 Exam Core", 
         content: `
           ${record.exam_importance ? `<p class="k-exam-badge" style="color:#d97706;font-weight:bold;margin-bottom:8px;">${esc(record.exam_importance)}</p>` : ""}
-          ${examPearlZh ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 考試重點 Exam Pearl:</strong> ${esc(examPearlZh)}${examPearlEn ? `<br><small>${esc(examPearlEn)}</small>` : ""}</div>` : ""}
-          ${boardFocusHtml ? detailSection("Board Exam 重點", "NCBAHM / board high-yield differentiation", boardFocusHtml) : ""}
+          ${record.exam_pearl ? `<div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:4px;color:#14532d;font-size:0.95em;"><strong>💡 考試重點 Exam Pearl:</strong> ${esc(record.exam_pearl)}</div>` : ""}
           <div class="k-detail-columns">
             ${detailSection("性味", "Properties & Temp", `<p><strong>${esc(props.four_natures_zh || usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補")}</strong> · ${esc(Array.isArray(props.five_flavors_zh) ? props.five_flavors_zh.join("、") : "")}</p>`)}
             ${detailSection("歸經", "Channels entered", detailList(props.meridian_tropism_zh || record.channels_entered || record.channels_zh))}
-            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || dose.raw_herb_daily_zh || record.dosage_g || "待補")}</p>${dose.granule_dose_g || dose.granule_dose_zh ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g || dose.granule_dose_zh)}</p>` : ""}${record.dose_note_zh ? `<p class="k-detail-note">${esc(record.dose_note_zh)}</p>` : ""}`)}
-            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || record.part_used_zh || record.part_used_en || "待補")}</p>`)}
+            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "6~15g")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
+            ${detailSection("使用部位", "Part used", `<p>${esc(props.part_used_zh || "根 / 果實 / 全草")}</p>`)}
           </div>
           ${detailSection("功效 (Actions)", "傳統功效 · 中英對照", `<div class="k-chip-cloud">${bilingualFunctions}${actionsAligned ? "" : actionsEn.map((a) => `<span class="k-chip" style="background:#ecfdf5;color:#047857;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(a)}</span>`).join("")}</div>`)}
           ${record.pao_zhi_notes_zh ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(record.pao_zhi_notes_zh)}</p>`) : ""}
@@ -1383,120 +1284,7 @@
     ];
   }
 
-  /* Minimal symptom detail (Batch C1). It shows the approved fields that exist
-     and nothing else — no new UI language, no fields the template has not
-     approved. Deliberately NOT routed through detailShell(): that shell is
-     built around formula/herb identity (category, tier, external herb image
-     links) and bending a symptom into it would be the redesign Ting excluded. */
-  function symptomDetail(record) {
-    const modes = asList(record.observation_modes).map((m) =>
-      m === "patient_reported" ? "病人自述 Patient-reported" : m === "examiner_observed" ? "醫者所見 Examiner-observed" : m);
-    const primary = record.primary_mode === "patient_reported" ? "病人自述 (SOAP S)"
-      : record.primary_mode === "examiner_observed" ? "醫者所見 (SOAP O)" : record.primary_mode || "—";
-
-    const attrs = record.clinical_attributes || {};
-    const attrRows = Object.entries(attrs).map(([dim, spec]) => {
-      const on = spec && spec.applicable === true;
-      const detail = on
-        ? esc(spec.vocabulary || "")
-        : `<span class="k-detail-empty">${esc(spec && spec.why ? spec.why : "不適用")}</span>`;
-      return `<tr><td>${esc(dim)}</td><td>${on ? "✓" : "—"}</td><td>${detail}</td>
-        ${spec && spec.diagnostic_note_zh ? `<td>${esc(spec.diagnostic_note_zh)}</td>` : "<td></td>"}</tr>`;
-    }).join("");
-
-    const inquiry = asList(record.inquiry_zh);
-    const inquiryEn = asList(record.inquiry_en);
-    const inquiryRows = inquiry.map((q, i) => `<li>
-      <span class="kp-zh"><strong>${esc(q.dimension || "")}</strong> ${esc(q.why || "")}</span>
-      ${inquiryEn[i] ? `<span class="kp-en"><strong>${esc(inquiryEn[i].dimension || "")}</strong> ${esc(inquiryEn[i].why || "")}</span>` : ""}
-    </li>`).join("");
-
-    const diff = asList(record.differentiation_zh);
-    const diffEn = asList(record.differentiation_en);
-    const diffRows = diff.map((d, i) => `<li>
-      <span class="kp-zh"><strong>${esc(d.variant || "")}</strong> ${esc(d.distinguishing || "")}</span>
-      ${diffEn[i] ? `<span class="kp-en"><strong>${esc(diffEn[i].variant || "")}</strong> ${esc(diffEn[i].distinguishing || "")}</span>` : ""}
-      <span class="k-tags">${entityChips(d.points_to)}</span>
-    </li>`).join("");
-
-    // The derived reverse. Empty is shown as empty — an "見於" block that
-    // silently disappears reads as "this symptom appears nowhere", which is a
-    // different claim from "no diagnosis card has linked it yet".
-    const rev = SYMPTOM_REVERSE.index.get(record.id) || {};
-    const revBlocks = Object.values(REGISTRY_FILE_TO_BUNDLE).map((m) => {
-      const ids = rev[m.reverse_group] || [];
-      return `<div class="k-detail-block">
-        <h4>${esc(m.label_zh)} <small>${esc(m.label_en)}</small> <b>${ids.length}</b></h4>
-        ${ids.length ? `<p class="k-tags">${entityChips(ids)}</p>`
-          : `<p class="k-detail-empty">尚無診斷卡連結此症狀 / no diagnosis card links this symptom yet</p>`}
-      </div>`;
-    }).join("");
-
-    const flags = asList(record.red_flags_zh);
-    const flagsEn = asList(record.red_flags_en);
-    const statusLabel = {
-      specific_red_flags_present: "本症狀有自己的紅旗 / specific red flags present",
-      shared_flags_linked: "由既有 safety_flag 涵蓋 / covered by shared flags",
-      no_specific_red_flags_identified: "已審查，確實沒有 / reviewed, none found",
-      needs_safety_review: "尚未安全審查 / not yet reviewed",
-    }[record.safety_review_status] || record.safety_review_status || "—";
-
-    return `<article class="k-detail k-symptom-detail">
-      <header class="k-detail-head">
-        <p class="k-detail-eyebrow">SYMPTOM CARD · sym.*</p>
-        <h2>${esc(record.name_zh || "")} <small>${esc(record.name_en || "")}</small></h2>
-        <p class="k-meta">${esc(record.id)}${record.pinyin ? ` · ${esc(record.pinyin)}` : ""}${record.pinyin_toned ? ` (${esc(record.pinyin_toned)})` : ""} · ${esc(record.tradition || "")}</p>
-        ${asList(record.aliases_zh).length ? `<p class="k-tags">${[...asList(record.aliases_zh), ...asList(record.aliases_en)].map(tag).join("")}</p>` : ""}
-        <button type="button" class="k-detail-close" data-detail-close>關閉 Close</button>
-      </header>
-
-      ${detailSection("定義", "Definition", `<p>${esc(record.definition_zh || "")}</p><p class="kp-en">${esc(record.definition_en || "")}</p>`)}
-
-      ${record.patient_words_zh ? detailSection("病人怎麼講", "How patients say it",
-        `<p>${esc(record.patient_words_zh)}</p><p class="kp-en">${esc(record.patient_words_en || "")}</p>`) : ""}
-
-      ${detailSection("取得型態", "Observation modes",
-        `<p class="k-tags">${modes.map(tag).join("")}</p><p class="k-meta">預設 SOAP 欄位 primary_mode: ${esc(primary)}</p>`)}
-
-      ${attrRows ? detailSection("問診維度", "Clinical attributes",
-        `<table class="k-detail-table"><thead><tr><th>維度</th><th>適用</th><th>詞彙表 / 不適用原因</th><th>辨證提示</th></tr></thead><tbody>${attrRows}</tbody></table>
-         <p class="k-detail-note">卡片宣告「該問哪些維度」，實際值屬病例層（模板 §8）。</p>`) : ""}
-
-      ${inquiryRows ? detailSection("問診", "Inquiry", `<ol class="k-paired-list">${inquiryRows}</ol>`) : ""}
-
-      ${diffRows ? detailSection("鑑別 → 指向證型", "Differentiation → patterns",
-        `<ol class="k-paired-list k-symptom-diff">${diffRows}</ol>
-         <p class="k-detail-note">推論邊（inferential），不是「證型有此症」的反向 —— 兩者是不同的主張（D13）。</p>`) : ""}
-
-      ${detailSection("安全", "Safety",
-        `<p class="k-meta">safety_review_status: ${esc(statusLabel)}</p>
-         ${asList(record.safety_flags).length ? `<p class="k-tags">${asList(record.safety_flags).map((f) => tag(safetyFlagLabel(f))).join("")}</p>` : ""}
-         ${flags.length ? `<ol class="k-paired-list">${flags.map((f, i) =>
-            `<li><span class="kp-zh">⚠ ${esc(f)}</span>${flagsEn[i] ? `<span class="kp-en">${esc(flagsEn[i])}</span>` : ""}</li>`).join("")}</ol>`
-          : `<p class="k-detail-empty">—</p>`}
-         ${asList(record.safety_review_sources).length ? `<p class="k-detail-note">審查來源：${esc(asList(record.safety_review_sources).join(" · "))}</p>` : ""}`)}
-
-      ${detailSection("見於（衍生）", "Seen in (derived)",
-        `${revBlocks}<p class="k-detail-note">由 data/config/relation_registry.json 的 descriptive 邊在渲染時 join 而成，不存在於症狀卡上（D13 §5.2）。</p>`)}
-
-      ${asList(record.supporting_measurements).length ? detailSection("相關測量", "Supporting measurements",
-        `<p class="k-tags">${asList(record.supporting_measurements).map((m) => tag(METRIC_LABEL.get(m) || m)).join("")}</p>`) : ""}
-
-      ${asList(record.sources).length ? detailSection("來源", "Sources", detailList(record.sources)) : ""}
-      <p class="k-meta">${esc(record.source_type || "")} · ${esc(record.review_status || "")} · ${esc(record.authored_by || "")}</p>
-    </article>`;
-  }
-
   function openKnowledgeDetail(kind, id) {
-    if (kind === "symptom") {
-      const symptom = SYMPTOM_BY_ID.get(id);
-      if (!symptom) return;
-      const dlg = ensureDetailDialog();
-      el("knowledgeDetailContent").innerHTML = symptomDetail(symptom);
-      if (!dlg.open) dlg.showModal();
-      dlg.scrollTop = 0;
-      return;
-    }
     const record = kind === "formula" ? formulaById.get(id) : herbById.get(id);
     if (!record) return;
     const dialog = ensureDetailDialog();
@@ -1651,7 +1439,7 @@
           f.comparison_group ? `group: ${f.comparison_group}` : "",
           f.nccaom_high_yield ? "NCCAOM high-yield" : ""
         ].filter(Boolean).join(" · ");
-        const searchTags = asList(f.modern_clinical_use_tags).slice(0, 5);
+        const searchTags = (f.modern_clinical_use_tags || []).slice(0, 5);
         const exteriorChips = exteriorContextChips(f);
         if (!contentReady) {
           return `
@@ -1676,8 +1464,8 @@
             </header>
             <p class="k-en">${esc(f.name_en)}</p>
             <p class="k-meta">${esc(meta)}</p>
-            <p class="k-tags">${asList(f.pattern_focus_en).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
-            ${asList(f.safety_flags).length ? `<p class="k-flags">! ${asList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+            <p class="k-tags">${cleanList(f.pattern_focus_en).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
+            ${cleanList(f.safety_flags).length ? `<p class="k-flags">! ${cleanList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
             <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
           </article>`;
       }).join("");
@@ -1715,8 +1503,8 @@
             f.category,
             f.category_en,
             f.comparison_group,
-            ...asList(f.study_tags),
-            ...asList(f.modern_clinical_use_tags)
+            ...(f.study_tags || []),
+            ...(f.modern_clinical_use_tags || [])
           ].join(" ").toLowerCase();
           return categoryHit && (!q || text.includes(q));
         });
@@ -1773,8 +1561,8 @@
         </header>
         <p class="k-en">${esc(f.name_en)}</p>
         <p class="k-meta">${esc(f.category_en)}${f.nccaom_high_yield ? " · NCCAOM high-yield" : ""}</p>
-        <p class="k-tags">${asList(f.pattern_focus_en).map(tag).join("")}</p>
-        ${asList(f.safety_flags).length ? `<p class="k-flags">⚠ ${asList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+        <p class="k-tags">${cleanList(f.pattern_focus_en).map(tag).join("")}</p>
+        ${cleanList(f.safety_flags).length ? `<p class="k-flags">⚠ ${cleanList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
       </article>`).join("");
 
     const box = document.createElement("div");
@@ -1791,7 +1579,7 @@
       const q = e.target.value.trim().toLowerCase();
       const hit = q
         ? records.filter((f) =>
-            [f.name_zh, f.name_en, f.pinyin, f.category_en, ...asList(f.study_tags)]
+            [f.name_zh, f.name_en, f.pinyin, f.category_en, ...(f.study_tags || [])]
               .join(" ").toLowerCase().includes(q))
         : records;
       el("formulaGrid").innerHTML = render(hit) || '<p class="k-missing">沒有符合的方劑。</p>';
@@ -1806,9 +1594,9 @@
     const herbCategory = (h) => h.category || "uncategorized";
     const categories = [...new Set(herbs.map(herbCategory).filter(Boolean))].sort((a, b) => a.localeCompare(b));
     const renderHerbs = (list) => list.map((h) => {
-      const formulaLinks = asList(h.related_formulas).slice(0, 5);
-      const modernTags = asList(h.modern_use_tags).slice(0, 5);
-      const safetyFlags = asList(h.safety_flags).slice(0, 4);
+      const formulaLinks = (h.related_formulas || []).slice(0, 5);
+      const modernTags = (h.modern_use_tags || []).slice(0, 5);
+      const safetyFlags = (h.safety_flags || []).slice(0, 4);
       const exteriorChips = exteriorContextChips(h);
       return `
         <article class="k-card k-herb-card" data-record-id="${esc(h.id)}">
@@ -1818,7 +1606,7 @@
           </header>
           <p class="k-en">${esc(h.name_en)}</p>
           <p class="k-meta">${esc(herbCategory(h))}</p>
-          <p class="k-meta">${esc(asList(h.channels_entered).join(" / "))}</p>
+          <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
           <p class="k-tags">${modernInlineChips(modernTags, 5)}${exteriorChips}</p>
           ${formulaLinks.length ? `<p class="k-meta">${esc(modeText("相關方劑：", "Related formulas:"))} ${formulaChips(formulaLinks)}</p>` : ""}
           ${safetyFlags.length ? `<p class="k-flags">${esc(modeText("審核：", "Review:"))} ${safetyFlags.map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
@@ -1856,11 +1644,11 @@
           h.name_en,
           h.pinyin,
           h.category,
-          ...asList(h.channels_entered),
-          ...asList(h.functions),
-          ...asList(h.related_formulas),
-          ...asList(h.safety_flags),
-          ...asList(h.modern_use_tags)
+          ...(h.channels_entered || []),
+          ...(h.functions || []),
+          ...(h.related_formulas || []),
+          ...(h.safety_flags || []),
+          ...(h.modern_use_tags || [])
         ].join(" ").toLowerCase();
         return categoryHit && (!q || text.includes(q));
       });
@@ -1877,91 +1665,6 @@
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
       if (button) openKnowledgeDetail("herb", button.dataset.detailId);
     });
-  }
-
-  // ---- Pharmacology --------------------------------------------------------
-  // Same shape as the herb list on purpose: search box, category drawer, chips.
-  // The category axis is the drug class, since that is how the course teaches
-  // it and how the board asks about it.
-  const pharmHost = el("pharmRecords");
-  if (pharmHost) {
-    /* Returns the combined "中文 / English" form rather than one language.
-     * buildCategoryChips splits on "/" to build a bilingual chip, the way
-     * formula categories already work (補益劑 / Tonify). Returning modeText()
-     * here gave it a single language frozen at render time, so the chips
-     * stayed Chinese while the rest of the page switched to English. */
-    const classLabelOf = (d) => {
-      const c = pharmClassById.get(d.drugclass_id);
-      if (!c) return d.drugclass_id || "uncategorized";
-      const zh = c.name_zh || "";
-      const en = c.name_en || "";
-      return zh && en ? `${zh} / ${en}` : (zh || en);
-    };
-    const classNameOf = classLabelOf;
-    const classes = [...new Set(pharmDrugs.map(classNameOf).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-
-    const renderPharm = (list) => list.map((d) => {
-      const target = pharmTargetById.get(d.drugtarget_id);
-      // A gap_note is the honest state of a field nobody could source yet, so
-      // it is shown rather than hidden — the card should not read as complete.
-      const gap = usableText(d.gap_note_zh);
-      return `
-        <article class="k-card k-pharm-card" data-record-id="${esc(d.id)}">
-          <header>
-            <strong>${esc(d.name_zh || d.name_en)} <small>${esc(d.name_en || "")}</small></strong>
-            ${statusPill(d.review_status)}
-          </header>
-          ${d.brand_names_en && d.brand_names_en.length ? `<p class="k-en">${esc(d.brand_names_en.join(" / "))}</p>` : ""}
-          <p class="k-meta">${esc(classNameOf(d))}${d.suffix_en ? ` · <code>${esc(d.suffix_en)}</code>` : ""}</p>
-          ${target ? `<p class="k-meta">${esc(modeText("作用標的：", "Target: "))}${esc(modeText(target.name_zh || target.name_en, target.name_en || target.name_zh))}</p>` : ""}
-          ${usableText(d.mechanism_zh) || usableText(d.mechanism_en) ? `<p class="k-meta">${esc(modeText(d.mechanism_zh || d.mechanism_en, d.mechanism_en || d.mechanism_zh))}</p>` : ""}
-          ${d.mnemonic_en ? `<p class="k-tags"><span class="k-chip k-chip--mnemonic">${esc(d.mnemonic_en)}</span></p>` : ""}
-          ${d.exam_trap_zh || d.exam_trap_en ? `<p class="k-flags">⚠️ ${esc(modeText(d.exam_trap_zh || d.exam_trap_en, d.exam_trap_en || d.exam_trap_zh))}</p>` : ""}
-          ${gap ? `<p class="k-meta k-pharm-gap">${esc(gap)}</p>` : ""}
-          <p class="k-meta">${esc(modeText("草稿 · 禁忌與交互作用引用官方標籤", "draft · contraindications and interactions cite the official label"))}</p>
-          <button type="button" class="k-open-detail" data-detail-kind="pharm" data-detail-id="${esc(d.id)}">${esc(modeText("查看西藥卡", "Open drug card"))}</button>
-        </article>`;
-    }).join("");
-
-    pharmHost.innerHTML = `
-      <div class="k-toolbar k-toolbar--single">
-        <input type="search" id="pharmFilter" placeholder="${esc(modeText("搜尋藥名、分類、機轉、適應症、記憶法… Search drug, class, mechanism, indication...", "Search drugs, class, mechanism, indications, mnemonics..."))}" class="k-filter" />
-      </div>
-      <details class="k-category-drawer">
-        <summary>
-          <span><span class="i18n-zh">分類篩選 </span><span class="i18n-en">Category filters</span></span>
-          <small id="pharmCategorySummary">${esc(modeText("全部 All", "All"))} · ${pharmDrugs.length}</small>
-        </summary>
-        <select id="pharmCategoryFilter" class="k-filter">
-          <option value="">All classes</option>
-          ${classes.map((c) => `<option value="${esc(c)}">${esc(c)}</option>`).join("")}
-        </select>
-        <div class="cat-chips" id="pharmCatChips" aria-label="西藥分類篩選"></div>
-      </details>
-      <div class="k-grid" id="pharmGrid">${renderPharm(pharmDrugs)}</div>`;
-
-    const updatePharmGrid = () => {
-      const q = el("pharmFilter").value.trim().toLowerCase();
-      const category = el("pharmCategoryFilter").value;
-      const hit = pharmDrugs.filter((d) => {
-        const categoryHit = !category || category.split("||").includes(classNameOf(d));
-        const text = [
-          d.id, d.name_zh, d.name_en, d.suffix_en, d.rxnorm_rxcui,
-          classNameOf(d), d.mechanism_zh, d.mechanism_en, d.mnemonic_en,
-          ...asList(d.brand_names_en),
-          ...asList(d.indications_zh), ...asList(d.indications_en),
-          ...asList(d.contraindications_zh), ...asList(d.adverse_effects_zh)
-        ].filter(Boolean).join(" ").toLowerCase();
-        return categoryHit && (!q || text.includes(q));
-      });
-      const summary = el("pharmCategorySummary");
-      if (summary) summary.textContent = `${categorySummaryLabel(category)} · ${hit.length}`;
-      el("pharmGrid").innerHTML = renderPharm(hit) || '<p class="k-missing">沒有符合的西藥 / No matching drugs.</p>';
-    };
-    el("pharmFilter").addEventListener("input", updatePharmGrid);
-    el("pharmCategoryFilter").addEventListener("change", updatePharmGrid);
-    document.addEventListener("acuting:content-mode", updatePharmGrid);
-    buildCategoryChips("pharmCatChips", "pharmCategoryFilter", pharmDrugs, classNameOf, updatePharmGrid);
   }
 
   // ---- Comparisons ---------------------------------------------------------
@@ -2080,55 +1783,18 @@
   const condHost = el("conditionRecords");
   if (condHost) {
     const allConds = (K.conditionCanon && K.conditionCanon.records) || [];
-    const cloudCounts = (K.cloudtcmRefMap && K.cloudtcmRefMap.counts) || {};
-    const cloudNote = modeText(
-      `雲端中醫 ${cloudCounts.source_entries || 0} 筆已融入：${cloudCounts.matched_to_canonical || 0} 筆的來源頁掛在下方對應的卡片上；${cloudCounts.symptom_seed_for_sym || 0} 筆其實是症狀，成為 sym.* 症狀軸的種子；${cloudCounts.disease_gap_for_cond || 0} 筆是尚未建卡的西醫病名。它不再有自己的分類。`,
-      `CloudTCM's ${cloudCounts.source_entries || 0} entries are dissolved: ${cloudCounts.matched_to_canonical || 0} source pages now sit on the matching cards below; ${cloudCounts.symptom_seed_for_sym || 0} were symptoms and seeded the sym.* axis; ${cloudCounts.disease_gap_for_cond || 0} are biomedical conditions not yet carded. It no longer has a classification of its own.`
+    const cloudDiseaseCategories = (K.cloudtcmDiseaseCategories && K.cloudtcmDiseaseCategories.records) || [];
+    const cloudDiseaseEntries = (K.cloudtcmDiseaseEntries && K.cloudtcmDiseaseEntries.records) || [];
+    const cloudDiseaseCategoryById = new Map(cloudDiseaseCategories.map((record) => [record.id, record]));
+    // CONDITIONS_MODULE_DESIGN gate: do not present a condition as study-ready
+    // until its safety prompts exist. Skeleton-only records remain counted below.
+    const conds = allConds.filter((record) =>
+      (record.red_flags_zh || []).length && (record.red_flags_en || []).length
     );
-
-    // D11: three diagnostic namespaces, three sources. This tab used to read
-    // 中醫病名 and 證型 from data/pathology/conditions.json — the 12-record SEED
-    // file — and print them as two comma-separated lines: 6 names where 75 exist,
-    // 8 where 111 exist. The registries are the real sources.
-    const conds = allConds;
-    const tdisRecords = (K.tdisRegistry && K.tdisRegistry.records) || [];
-    const patternRecords = (K.patternLibrary && K.patternLibrary.records) || [];
-
-    // Grouping vocabularies (D14 part 1 for each namespace).
-    const condCategories = (K.conditionCategoryVocabulary && K.conditionCategoryVocabulary.categories) || [];
-    const condCategoryById = new Map(condCategories.map((c) => [c.id, c]));
-    const tdisTaxonomy = (K.tcmDiseaseTaxonomy && K.tcmDiseaseTaxonomy.categories) || [];
-    const tdisLeafById = new Map();
-    tdisTaxonomy.forEach((cat) => (cat.children || []).forEach((leaf) => {
-      tdisLeafById.set(leaf.id, { ...leaf, parent_zh: cat.name_zh, parent_en: cat.name_en });
-    }));
-    const patternFamilies = (K.patternFamilyVocabulary && K.patternFamilyVocabulary.records) || [];
-    const patternFamilyById = new Map(patternFamilies.map((f) => [f.id, f]));
-
-    // CloudTCM keeps no classification of its own (Ting 2026-08-06). Its exact
-    // source pages and diagrams attach to whichever canonical record they
-    // describe; its own category bar is gone. The 129 symptom entries seeded
-    // data/config/symptom_taxonomy.json instead — they were never diseases,
-    // which is why only 20 of 190 matched a disease record.
-    const cloudRefs = (K.cloudtcmRefMap && K.cloudtcmRefMap.refs) || {};
-    const cloudRefBlock = (recordId) => {
-      const list = cloudRefs[recordId] || [];
-      if (!list.length) return "";
-      return `<div class="k-source-links k-condition-source-links">${list.map((r) => `
-        <a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">
-          <strong>雲端中醫 · ${esc(r.name_zh)}</strong>
-          <small>${esc(r.name_en_draft || "CloudTCM source page")}</small>
-        </a>`).join("")}</div>`;
-    };
-
-    // A record with no red flags is NOT hidden. The old gate filtered the grid
-    // to the 55 records that had them, so 95 conditions were invisible — search
-    // 眩暈 in clinic, get nothing, conclude it does not exist. Labelling the gap
-    // is honest; hiding it makes the gap itself invisible. Unflagged records
-    // sort last inside their group and carry a warning badge.
-    const hasRedFlags = (r) => asList(r.red_flags_zh).length > 0 || asList(r.red_flags_en).length > 0;
+    const eastern = K.conditions.eastern_diseases || [];
+    const patterns = (K.patternLibrary && K.patternLibrary.records) ? K.patternLibrary.records : (K.conditions.tcm_patterns || []);
     const conditionSources = (record) => {
-      const links = asList(record.source_links).filter((link) =>
+      const links = (record.source_links || []).filter((link) =>
         link && /^https?:\/\//.test(link.url || "") && !/google\./i.test(link.url)
       );
       if (!links.length) return "";
@@ -2139,194 +1805,324 @@
         </a>`).join("")}
       </div>`;
     };
-    // Preview card (small card). One shape per namespace, but the same shell —
-    // the big card is the detail view, not a second schema.
-    const noFlagBadge = `<span class="k-pill k-pill-warn" title="尚未填入安全警訊">⚠ 無安全警訊</span>`;
+    let patternLangMode = "zh";
 
+    function openPatternBigCardModal(p, langMode = patternLangMode) {
+      let modal = document.getElementById("patternDetailModalOverlay");
+      if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "patternDetailModalOverlay";
+        modal.className = "k-modal-overlay";
+        document.body.appendChild(modal);
+      }
+
+      const isEn = langMode === "en";
+      const manifests = isEn
+        ? (p.key_manifestations_en || p.key_manifestations_zh || [])
+        : (p.key_manifestations_zh || p.key_signs_zh || []);
+
+      const tongueText = isEn
+        ? (p.tongue_preview?.en || p.tongue || "—")
+        : (p.tongue_preview?.zh || p.tongue || "—");
+
+      const pulseText = isEn
+        ? (p.pulse_preview?.en || p.pulse || "—")
+        : (p.pulse_preview?.zh || p.pulse || "—");
+
+      const summaryText = isEn
+        ? (p.short_summary_en || p.short_summary_zh || "")
+        : (p.short_summary_zh || p.short_summary_en || "");
+
+      const diffText = isEn
+        ? (p.differentiation_preview_en || p.differentiation_preview_zh || "")
+        : (p.differentiation_preview_zh || p.differentiation_preview_en || "");
+
+      const principleText = isEn
+        ? (p.treatment_principle_en || p.treatment_principle_zh || "")
+        : (p.treatment_principle_zh || p.treatment_principle_en || "");
+
+      const formulas = p.primary_formula_ids || p.typical_formulas || [];
+      const points = p.primary_acupoint_ids || p.typical_points || [];
+      const conditions = p.related_biomedical_condition_ids || [];
+
+      modal.innerHTML = `
+        <div class="k-big-card" role="dialog" aria-modal="true">
+          <button type="button" class="k-big-card-close" id="patternModalCloseBtn" aria-label="Close">&times;</button>
+          
+          <!-- Big Card Top Bar & Language Switcher -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; border-bottom: 1px solid #e5dccb; padding-bottom: 0.6rem;">
+            <div id="bigCardLangSwitcher" class="k-cloud-disease-categories" style="margin: 0;">
+              <button type="button" class="${!isEn ? 'is-active' : ''}" data-modal-lang="zh">🇹🇼 中文大卡</button>
+              <button type="button" class="${isEn ? 'is-active' : ''}" data-modal-lang="en">🇺🇸 English Card</button>
+            </div>
+            <span class="k-status k-status-draft">${esc(p.review_status || p.status || "draft")}</span>
+          </div>
+
+          <div class="k-big-card-header">
+            <h2 class="k-big-card-title">${isEn ? esc(p.name_en) : esc(p.name_zh)} <small>${isEn ? esc(p.name_zh) : esc(p.name_en)} ${p.pinyin ? `(${esc(p.pinyin)})` : ""}</small></h2>
+            <p class="k-meta">ID: <code>${esc(p.id)}</code> · ${esc(p.pattern_category || "zang_fu")} ${p.eight_principles ? ` · ${esc(p.eight_principles.excess_deficiency || "")} · ${esc(p.eight_principles.heat_cold || "")}` : ""}</p>
+          </div>
+
+          <!-- 1. 病因與病理機轉 -->
+          <div class="k-big-card-section">
+            <h3>${isEn ? "1. Etiology & Pathomechanism" : "1. 病因與病理機轉 Etiology & Pathomechanism"}</h3>
+            ${summaryText ? `<p><strong>${isEn ? "[Pathomechanism]" : "【核心病機】"}</strong> ${esc(summaryText)}</p>` : ""}
+            ${(p.etiology_zh && !isEn) ? `<p><strong>【病因背景】</strong> ${esc(p.etiology_zh)}</p>` : ""}
+          </div>
+
+          <!-- 2. 系統化臨床表現 -->
+          <div class="k-big-card-section">
+            <h3>${isEn ? "2. Clinical Manifestations" : "2. 系統化臨床表現 Clinical Manifestations"}</h3>
+            ${manifests.length ? `<p><strong>${isEn ? "【Key Signs & Symptoms】" : "【主症表現 Key Signs】"}</strong> ${manifests.map(m => esc(m)).join(" · ")}</p>` : ""}
+            <ul>
+              <li><strong>👅 ${isEn ? "Tongue" : "舌象 Tongue"}：</strong> ${esc(tongueText)}</li>
+              <li><strong>💓 ${isEn ? "Pulse" : "脈象 Pulse"}：</strong> ${esc(pulseText)}</li>
+            </ul>
+          </div>
+
+          <!-- 3. 辨證要點與國考考點 -->
+          ${(diffText || principleText || p.exam_pearls_zh) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "3. Differential & Treatment Principles" : "3. 辨證要點與國考考點 Differential & Exam Pearls"}</h3>
+              ${diffText ? `<p><strong>${isEn ? "[Differentiation]" : "【辨證要點】"}</strong> ${esc(diffText)}</p>` : ""}
+              ${principleText ? `<p><strong>${isEn ? "[Treatment Principle]" : "【治則治法】"}</strong> ${esc(principleText)}</p>` : ""}
+              ${(!isEn && p.exam_pearls_zh) ? `<p><strong>💡 考點提示：</strong> ${esc(p.exam_pearls_zh)}</p>` : ""}
+            </div>
+          ` : ""}
+
+          <!-- 4. 代表方藥與針灸處方 -->
+          ${(formulas.length || points.length || conditions.length) ? `
+            <div class="k-big-card-section">
+              <h3>${isEn ? "4. Primary Treatment & Links" : "4. 代表方藥與針灸處方 Primary Treatment & Links"}</h3>
+              ${formulas.length ? `<p><strong>💊 ${isEn ? "Primary Formulas:" : "代表方劑："}</strong> ${formulas.map(id => `<a href="#formulaSection" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">💊 ${esc(id)}</a>`).join(" ")}</p>` : ""}
+              ${points.length ? `<p><strong>📌 ${isEn ? "Acupuncture Points:" : "針灸配穴："}</strong> ${points.map(code => `<a href="#point/${esc(code)}" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">📌 ${esc(code)}</a>`).join(" ")}</p>` : ""}
+              ${conditions.length ? `<p><strong>🏥 ${isEn ? "Biomedical Mapping:" : "西醫對應："}</strong> ${conditions.map(id => `<span class="k-tag">${esc(id)}</span>`).join(" ")}</p>` : ""}
+            </div>
+          ` : ""}
+
+          <!-- 5. 急症紅旗 (如有) -->
+          ${p.red_flags_zh?.length ? `
+            <div class="k-big-card-section">
+              <h3>5. 急症紅旗 Safety Red Flags</h3>
+              <div class="k-red-flag-box">
+                <strong>🚨 急症紅旗：</strong> ${p.red_flags_zh.map(esc).join(" · ")}
+              </div>
+            </div>
+          ` : ""}
+
+          <!-- 6. 出處標註 -->
+          <div class="k-big-card-section">
+            <h3>${isEn ? "6. Sources & Provenance" : "6. 資料來源 Sources & Provenance"}</h3>
+            <p>${(p.source_ids || ["NCBAHM CH Content Outline 2026", "CloudTCM"]).map(esc).join(" · ")}</p>
+          </div>
+        </div>
+      `;
+      modal.classList.add("is-open");
+
+      // Bind language switcher inside Big Card Modal
+      document.getElementById("bigCardLangSwitcher")?.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-modal-lang]");
+        if (!btn) return;
+        const newLang = btn.dataset.modalLang;
+        openPatternBigCardModal(p, newLang);
+      });
+
+      document.getElementById("patternModalCloseBtn").addEventListener("click", () => {
+        modal.classList.remove("is-open");
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("is-open");
+      });
+    }
+
+    const renderPatternCard = (p, langMode = patternLangMode) => {
+      const isEn = langMode === "en";
+      const manifests = isEn
+        ? (p.key_manifestations_en || p.key_manifestations_zh || [])
+        : (p.key_manifestations_zh || p.key_signs_zh || []);
+
+      const tongueText = isEn
+        ? (p.tongue_preview?.en || p.tongue || "—")
+        : (p.tongue_preview?.zh || p.tongue || "—");
+
+      const pulseText = isEn
+        ? (p.pulse_preview?.en || p.pulse || "—")
+        : (p.pulse_preview?.zh || p.pulse || "—");
+
+      return `
+        <article class="k-card k-pattern-card" data-record-id="${esc(p.id)}">
+          <header>
+            <strong>${isEn ? esc(p.name_en) : esc(p.name_zh)} <small>${isEn ? esc(p.name_zh) : esc(p.name_en)}</small></strong>
+            <span class="k-status k-status-draft">${esc(p.review_status || p.status || "draft")}</span>
+          </header>
+          ${manifests.length ? `
+            <div class="k-pattern-manifestations" style="margin-top: 0.4rem;">
+              <strong class="k-subhead">${isEn ? "Key Manifestations" : "核心症狀與辨徵 Key Manifestations"}</strong>
+              <div class="k-tags">
+                ${manifests.map((item) => `<span class="k-tag k-tag-manifestation">${esc(item)}</span>`).join("")}
+              </div>
+            </div>
+          ` : ""}
+          <div class="k-pattern-tp-grid">
+            <div class="k-tp-item">
+              <strong>👅 ${isEn ? "Tongue" : "舌象 Tongue"}</strong>
+              <p>${esc(tongueText)}</p>
+            </div>
+            <div class="k-tp-item">
+              <strong>💓 ${isEn ? "Pulse" : "脈象 Pulse"}</strong>
+              <p>${esc(pulseText)}</p>
+            </div>
+          </div>
+          <div style="margin-top: 0.75rem; text-align: right;">
+            <button type="button" class="k-entity-chip" data-open-big-pattern="${esc(p.id)}" style="background: #e2d2b8; border-color: #c8b598; cursor: pointer; padding: 0.35rem 0.75rem; font-size: 0.84rem;">
+              ${isEn ? "📖 Open Big Card &rarr;" : "📖 開啟證型大卡 · Open Big Card &rarr;"}
+            </button>
+          </div>
+        </article>`;
+    };
     const renderConditions = (list) => list.map((c) => {
-      const relatedSymptoms = asList(c.related_tcm_symptoms).map((item) =>
+      const relatedSymptoms = (c.related_tcm_symptoms || []).map((item) =>
         tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
       ).join("");
-      // edge.condition_symptoms (registry). related_tcm_symptoms below is the
-      // pre-D13 inline form and stays visible until it is migrated (§0).
-      const symptomIds = asList(c.sign_symptom_ids);
-      const aliases = [...asList(c.aliases_zh), ...asList(c.aliases_en)];
-      const flags = asList(c.red_flags_zh);
+      const aliases = [...(c.aliases_zh || []), ...(c.aliases_en || [])];
       return `
         <article class="k-card k-condition-card" data-record-id="${esc(c.id)}">
-          <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}${hasRedFlags(c) ? "" : noFlagBadge}</header>
-          <p class="k-meta">${esc(c.id)} · ICD hint ${esc(c.icd_hint || "—")}</p>
+          <header><strong>${esc(c.name_zh)} <small>${esc(c.name_en)}</small></strong>${statusPill(c.review_status)}</header>
+          <p class="k-meta">${esc(c.id)} · ${esc(c.category || "")} · ICD hint ${esc(c.icd_hint || "—")}</p>
           ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
           ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}
-          ${symptomIds.length ? `<div class="k-condition-related"><strong>症狀 <small>Symptoms</small></strong><p class="k-tags">${symptomChips(symptomIds)}</p></div>` : ""}
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
-          ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
-          ${flags.length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags (${flags.length})</summary><p class="k-flags">⚠ ${flags.slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
-          ${conditionSources(c)}${cloudRefBlock(c.id)}
+          ${(c.related_eastern_diseases || []).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
+          ${(c.red_flags_zh || []).length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags</summary><p class="k-flags">⚠ ${(c.red_flags_zh || []).slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
+          ${conditionSources(c)}
         </article>`;
     }).join("");
-
-    const renderTdis = (list) => list.map((t) => `
-      <article class="k-card k-condition-card" data-record-id="${esc(t.id)}">
-        <header><strong>${esc(t.name_zh)} <small>${esc(t.name_en || "")}</small></strong>${statusPill(t.review_status)}${hasRedFlags(t) ? "" : noFlagBadge}</header>
-        <p class="k-meta">${esc(t.id)}${t.pinyin ? ` · ${esc(t.pinyin)}` : ""}${t.classical_source ? ` · ${esc(t.classical_source)}` : ""}</p>
-        ${t.definition_zh ? `<p>${esc(t.definition_zh)}</p>` : ""}
-        ${asList(t.key_manifestation_ids).length ? `<p class="k-tags">${symptomChips(asList(t.key_manifestation_ids))}</p>` : ""}
-        ${asList(t.related_patterns).length ? `<p class="k-tags">${entityChips(t.related_patterns)}</p>` : ""}${cloudRefBlock(t.id)}
-      </article>`).join("");
-
-    const renderPatterns = (list) => list.map((p) => {
-      const signs = asList(p.key_signs_zh);
-      return `
-      <article class="k-card k-condition-card" data-record-id="${esc(p.id)}">
-        <header><strong>${esc(p.name_zh)} <small>${esc(p.name_en || "")}</small></strong>${statusPill(p.review_status)}</header>
-        <p class="k-meta">${esc(p.id)}</p>
-        ${signs.length ? `<p class="k-tags">${signs.slice(0, 4).map(tag).join("")}</p>` : ""}
-        ${asList(p.key_signs_ids).length ? `<p class="k-tags">${symptomChips(asList(p.key_signs_ids))}</p>` : ""}
-        ${(p.tongue_zh || p.pulse_zh) ? `<p class="k-meta">${esc([p.tongue_zh, p.pulse_zh].filter(Boolean).join(" · "))}</p>` : ""}
-        ${p.treatment_principle_zh ? `<p><strong>治則</strong> ${esc(p.treatment_principle_zh)}</p>` : ""}${cloudRefBlock(p.id)}
+    const cloudDiseaseCard = (record) => `
+      <article class="k-card k-cloud-disease-card" data-record-id="${esc(record.id)}">
+        <header><strong>${esc(record.name_zh)} <small>${esc(record.name_en)}</small></strong>${statusPill(record.review_status)}</header>
+        <p class="k-meta">${esc(record.id)}</p>
+        <p class="k-tags">${(record.category_ids || []).map((id) => {
+          const category = cloudDiseaseCategoryById.get(id);
+          return tag(category ? `${category.name_zh} · ${category.name_en}` : id);
+        }).join("")}</p>
+        <a class="k-cloud-disease-link" href="${esc(record.source_url)}" target="_blank" rel="noopener noreferrer">
+          <strong>雲端中醫原始頁</strong><small>Open exact CloudTCM source page</small>
+        </a>
       </article>`;
-    }).join("");
-
-    // Group renderer shared by all three namespaces: one <details> per bucket,
-    // count in the summary, safety-incomplete records sorted last inside it.
-    const renderGroups = (buckets, renderer) => buckets
-      .filter((b) => b.items.length)
-      .map((b) => `
-        <details class="k-dx-group" open>
-          <summary>${esc(b.label_zh)} <small>${esc(b.label_en || "")}</small> <b>${b.items.length}</b>${b.gap ? ` <span class="k-dx-gap">⚠ ${b.gap}</span>` : ""}</summary>
-          <div class="k-grid k-grid-wide">${renderer(b.items)}</div>
-        </details>`).join("");
-
-    const bySafetyThenName = (a, b) => (hasRedFlags(b) - hasRedFlags(a))
-      || String(a.name_zh || "").localeCompare(String(b.name_zh || ""), "zh-Hant");
-
-    const condBuckets = () => {
-      const order = condCategories.map((c) => c.id);
-      const seen = new Set();
-      const buckets = order.map((id) => {
-        const items = conds.filter((c) => c.category === id).sort(bySafetyThenName);
-        items.forEach((c) => seen.add(c.id));
-        const missing = items.filter((c) => !hasRedFlags(c)).length;
-        const label = condCategoryById.get(id) || {};
-        return { label_zh: label.name_zh || id, label_en: label.name_en || "", items, gap: missing ? `${missing} 缺安全警訊` : "" };
+    const cloudDiseasePageSize = 24;
+    let cloudDiseasePage = 1;
+    let activeCloudDiseaseCategory = "";
+    const renderCloudDiseaseDirectory = () => {
+      const query = String(el("cloudtcmDiseaseFilter")?.value || "").trim().toLowerCase();
+      const filtered = cloudDiseaseEntries.filter((record) => {
+        const matchesCategory = !activeCloudDiseaseCategory || (record.category_ids || []).includes(activeCloudDiseaseCategory);
+        const text = [record.id, record.name_zh, record.name_en, ...(record.category_ids || []).map((id) => {
+          const category = cloudDiseaseCategoryById.get(id);
+          return category ? `${category.name_zh} ${category.name_en}` : id;
+        })].join(" ").toLowerCase();
+        return matchesCategory && (!query || text.includes(query));
       });
-      const rest = conds.filter((c) => !seen.has(c.id)).sort(bySafetyThenName);
-      if (rest.length) buckets.push({ label_zh: "未分類", label_en: "Uncategorised", items: rest, gap: "" });
-      return buckets;
-    };
-
-    const tdisBuckets = () => {
-      const seen = new Set();
-      const buckets = [];
-      tdisTaxonomy.forEach((cat) => (cat.children || []).forEach((leaf) => {
-        const items = tdisRecords.filter((t) => t.taxonomy_id === leaf.id).sort(bySafetyThenName);
-        items.forEach((t) => seen.add(t.id));
-        const missing = items.filter((t) => !hasRedFlags(t)).length;
-        buckets.push({
-          label_zh: `${cat.name_zh}·${leaf.name_zh}`, label_en: leaf.name_en || "",
-          items, gap: missing ? `${missing} 缺安全警訊` : "",
-        });
-      }));
-      const rest = tdisRecords.filter((t) => !seen.has(t.id)).sort(bySafetyThenName);
-      if (rest.length) {
-        buckets.push({
-          label_zh: "待分類", label_en: "Awaiting classification",
-          items: rest, gap: `${rest.length} 筆仍用舊的 classical_source_hint`,
-        });
-      }
-      return buckets;
-    };
-
-    const patternBuckets = () => {
-      const seen = new Set();
-      const buckets = patternFamilies.map((f) => {
-        const items = patternRecords.filter((p) => p.pattern_family === f.id).sort(bySafetyThenName);
-        items.forEach((p) => seen.add(p.id));
-        return { label_zh: f.name_zh, label_en: f.name_en || "", items, gap: "" };
-      });
-      const rest = patternRecords.filter((p) => !seen.has(p.id)).sort(bySafetyThenName);
-      if (rest.length) {
-        buckets.push({
-          label_zh: "待分類", label_en: "Awaiting classification",
-          items: rest, gap: `${rest.length} 筆尚未指定辨證體系`,
-        });
-      }
-      return buckets;
-    };
-    // The CloudTCM directory (its own card, category bar, search box and
-    // pagination) is gone: it kept a parallel classification, and Ting asked
-    // for it to dissolve into the canonical namespaces. Its pages now render
-    // on the matching cards via cloudRefBlock(); its 13 symptom categories
-    // seeded data/config/symptom_taxonomy.json.
-    // One search box across all three namespaces, one type filter. The user
-    // searches 眩暈 once — she should not have to know whether it is filed as a
-    // 西醫病名, a 中醫病名 or a 證型 to find it. (Two search boxes and two
-    // category bars on one page is what made this tab confusing.)
-    let activeDxType = "all";
-    const dxMatches = (record, q) => !q || [
-      record.id, record.name_zh, record.name_en, record.pinyin, record.icd_hint,
-      ...asList(record.aliases_zh), ...asList(record.aliases_en),
-      ...asList(record.key_signs_zh),
-      ...asList(record.related_tcm_symptoms).flatMap((i) => [i.name_zh, i.name_en]),
-    ].filter(Boolean).join(" ").toLowerCase().includes(q);
-
-    const renderDx = () => {
-      const q = String(el("conditionFilter")?.value || "").trim().toLowerCase();
-      const pick = (list) => list.filter((r) => dxMatches(r, q));
-      const sections = [];
-      if (activeDxType === "all" || activeDxType === "cond") {
-        const hits = pick(conds);
-        sections.push({ key: "cond", zh: "西醫病名", en: "Biomedical conditions", n: hits.length,
-          html: renderGroups(condBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderConditions) });
-      }
-      if (activeDxType === "all" || activeDxType === "tdis") {
-        const hits = pick(tdisRecords);
-        sections.push({ key: "tdis", zh: "中醫病名", en: "TCM diseases", n: hits.length,
-          html: renderGroups(tdisBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderTdis) });
-      }
-      if (activeDxType === "all" || activeDxType === "pattern") {
-        const hits = pick(patternRecords);
-        sections.push({ key: "pattern", zh: "證型", en: "TCM patterns", n: hits.length,
-          html: renderGroups(patternBuckets().map((b) => ({ ...b, items: b.items.filter((r) => dxMatches(r, q)) })), renderPatterns) });
-      }
-      const body = sections.filter((s) => s.n).map((s) => `
-        <section class="k-dx-section">
-          <div class="mini-heading"><strong>${esc(s.zh)} <small>${esc(s.en)}</small> <b>${s.n}</b></strong></div>
-          ${s.html}
-        </section>`).join("");
-      el("conditionGrid").innerHTML = body || '<p class="k-missing">找不到相符診斷 / No matching diagnosis.</p>';
-      el("dxTypeBar")?.querySelectorAll("[data-dx-type]").forEach((btn) => {
-        btn.classList.toggle("is-active", btn.dataset.dxType === activeDxType);
+      const totalPages = Math.max(1, Math.ceil(filtered.length / cloudDiseasePageSize));
+      cloudDiseasePage = Math.min(Math.max(1, cloudDiseasePage), totalPages);
+      const start = (cloudDiseasePage - 1) * cloudDiseasePageSize;
+      el("cloudtcmDiseaseGrid").innerHTML = filtered.slice(start, start + cloudDiseasePageSize).map(cloudDiseaseCard).join("")
+        || '<p class="k-missing">找不到相符病症 / No matching source entry.</p>';
+      el("cloudtcmDiseasePageStatus").textContent = `${filtered.length} 筆 · 第 ${cloudDiseasePage} / ${totalPages} 頁`;
+      el("cloudtcmDiseasePrev").disabled = cloudDiseasePage <= 1;
+      el("cloudtcmDiseaseNext").disabled = cloudDiseasePage >= totalPages;
+      el("cloudtcmDiseaseCategoryBar").querySelectorAll?.("[data-cloud-disease-category]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.cloudDiseaseCategory === activeCloudDiseaseCategory);
       });
     };
-
-    const condMissingFlags = conds.filter((c) => !hasRedFlags(c)).length;
     condHost.innerHTML = `
+      <div class="mini-heading" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <strong>${esc(modeText(`TCM Pattern Library / 中醫證型預覽卡（${patterns.length} 筆）`, `TCM Pattern Library (${patterns.length})`))}</strong>
+          <span style="display: block;">${esc(modeText("依據 Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1 規格建置 Prototype 卡片", "Built according to Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1 specification."))}</span>
+        </div>
+        <div id="patternLangToggleBar" class="k-cloud-disease-categories" style="margin: 0;">
+          <button type="button" class="${patternLangMode === 'zh' ? 'is-active' : ''}" data-pattern-lang="zh">🇹🇼 中文版 · Chinese</button>
+          <button type="button" class="${patternLangMode === 'en' ? 'is-active' : ''}" data-pattern-lang="en">🇺🇸 English Version · 英文版</button>
+        </div>
+      </div>
+      <div class="k-grid k-grid-wide" id="tcmPatternGrid" style="margin-bottom: 1.5rem;">
+        ${patterns.map((p) => renderPatternCard(p, patternLangMode)).join("")}
+      </div>
       <div class="mini-heading">
-        <strong>${esc(modeText(`診斷 / Diagnosis（西醫病名 ${conds.length} · 中醫病名 ${tdisRecords.length} · 證型 ${patternRecords.length}）`, `Diagnosis (${conds.length} biomedical · ${tdisRecords.length} TCM diseases · ${patternRecords.length} patterns)`))}</strong>
-        <span>${esc(modeText(`三種是不同的實體，不是同義詞：一病多證、同證異病。中西醫名稱是相關映射，不是一對一翻譯。目前 ${condMissingFlags} 筆西醫病名尚無安全警訊，已標示但未隱藏。`, `Three distinct entity types, not synonyms. Biomedical and TCM names are related mappings, never one-to-one. ${condMissingFlags} biomedical conditions still have no red flags — flagged, not hidden.`))}</span>
+        <strong>${esc(modeText(`Western Conditions / 西醫病症（${conds.length} safety-filled · ${allConds.length} canon）`, `Western Conditions (${conds.length} safety-filled · ${allConds.length} canon)`))}</strong>
+        <span>${esc(modeText("來源：condition_canon_shortlist.json · 中西醫名稱是相關映射，不是一對一翻譯。", "Source: condition_canon_shortlist.json · biomedical and TCM names are related mappings, not one-to-one translations."))}</span>
       </div>
-      <div id="dxTypeBar" class="k-dx-types" aria-label="${esc(modeText("診斷類型", "Diagnosis type"))}">
-        <button type="button" class="is-active" data-dx-type="all">${esc(modeText("全部 · All", "All"))}</button>
-        <button type="button" data-dx-type="cond">${esc(modeText("西醫病名", "Biomedical"))} ${conds.length}</button>
-        <button type="button" data-dx-type="tdis">${esc(modeText("中醫病名", "TCM disease"))} ${tdisRecords.length}</button>
-        <button type="button" data-dx-type="pattern">${esc(modeText("證型", "Pattern"))} ${patternRecords.length}</button>
-      </div>
-      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋病名、證型、別名、拼音、ICD...", "Search diagnosis names, patterns, aliases, pinyin, ICD..."))}" class="k-filter" />
-      <div id="conditionGrid"></div>
-      <p class="k-meta">${esc(cloudNote)}</p>`;
-    // 中醫病名 and 證型 are now first-class sections above, rendered from their
-    // own registries — they used to be these two comma lines, reading the
-    // 12-record seed file.
-    el("conditionFilter").addEventListener("input", renderDx);
-    el("dxTypeBar").addEventListener("click", (event) => {
-      const button = event.target.closest("[data-dx-type]");
-      if (!button) return;
-      activeDxType = button.dataset.dxType;
-      renderDx();
+      <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD..."))}" class="k-filter" />
+      <div class="k-grid k-grid-wide" id="conditionGrid">${renderConditions(conds)}</div>
+      <section class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
+        <div class="mini-heading">
+          <strong id="cloudtcmDiseaseHeading">${esc(modeText(`雲端中醫症狀疾病索引 / Disease & Symptom Index (${cloudDiseaseEntries.length})`, `CloudTCM Disease & Symptom Index (${cloudDiseaseEntries.length})`))}</strong>
+          <span>${esc(modeText(`205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。`, `205 source cards are consolidated into ${cloudDiseaseEntries.length} stable page IDs; English labels are curated drafts.`))}</span>
+        </div>
+        <div id="cloudtcmDiseaseCategoryBar" class="k-cloud-disease-categories" aria-label="症狀疾病分類">
+          <button type="button" class="is-active" data-cloud-disease-category="">全部 · All</button>
+          ${cloudDiseaseCategories.map((category) => `<button type="button" data-cloud-disease-category="${esc(category.id)}">${esc(category.name_zh)} · ${esc(category.name_en)}</button>`).join("")}
+        </div>
+        <input type="search" id="cloudtcmDiseaseFilter" placeholder="${esc(modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID..."))}" class="k-filter" />
+        <div class="k-cloud-disease-toolbar">
+          <span id="cloudtcmDiseasePageStatus"></span>
+          <div>
+            <button type="button" id="cloudtcmDiseasePrev" aria-label="${esc(modeText("上一頁", "Previous page"))}">${esc(modeText("上一頁", "Previous"))}</button>
+            <button type="button" id="cloudtcmDiseaseNext" aria-label="${esc(modeText("下一頁", "Next page"))}">${esc(modeText("下一頁", "Next"))}</button>
+          </div>
+        </div>
+        <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
+      </section>
+      <p class="k-meta">Eastern：${eastern.map((d) => esc(d.name_zh + " " + (d.name_en || ""))).join("、")}</p>`;
+    
+    el("patternLangToggleBar")?.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-pattern-lang]");
+      if (!btn) return;
+      patternLangMode = btn.dataset.patternLang || "zh";
+      el("patternLangToggleBar").querySelectorAll("[data-pattern-lang]").forEach((b) => {
+        b.classList.toggle("is-active", b.dataset.patternLang === patternLangMode);
+      });
+      el("tcmPatternGrid").innerHTML = patterns.map((p) => renderPatternCard(p, patternLangMode)).join("");
     });
-    renderDx();
+
+    el("conditionFilter").addEventListener("input", (event) => {
+      const q = event.target.value.trim().toLowerCase();
+      const hits = conds.filter((record) => [
+        record.id, record.name_zh, record.name_en, record.icd_hint, record.category,
+        ...(record.aliases_zh || []), ...(record.aliases_en || []),
+        ...(record.related_tcm_symptoms || []).flatMap((item) => [item.name_zh, item.name_en])
+      ].join(" ").toLowerCase().includes(q));
+      el("conditionGrid").innerHTML = renderConditions(hits) || '<p class="k-missing">找不到相符病症 / No matching condition.</p>';
+    });
+    el("cloudtcmDiseaseFilter").addEventListener("input", () => {
+      cloudDiseasePage = 1;
+      renderCloudDiseaseDirectory();
+    });
+    el("cloudtcmDiseaseCategoryBar").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-cloud-disease-category]");
+      if (!button) return;
+      activeCloudDiseaseCategory = button.dataset.cloudDiseaseCategory || "";
+      cloudDiseasePage = 1;
+      renderCloudDiseaseDirectory();
+    });
+    el("cloudtcmDiseasePrev").addEventListener("click", () => {
+      cloudDiseasePage -= 1;
+      renderCloudDiseaseDirectory();
+    });
+    el("cloudtcmDiseaseNext").addEventListener("click", () => {
+      cloudDiseasePage += 1;
+      renderCloudDiseaseDirectory();
+    });
+    el("tcmPatternGrid")?.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-open-big-pattern]");
+      if (!btn) return;
+      const pid = btn.dataset.openBigPattern;
+      const found = patterns.find((r) => r.id === pid);
+      if (found) {
+        openPatternBigCardModal(found, patternLangMode);
+      }
+    });
+    renderCloudDiseaseDirectory();
   }
 
   // ---- Source registry -------------------------------------------------------
@@ -2379,24 +2175,9 @@
       <p class="k-meta">建議下一批：${esc(a.next_recommended_batch || "—")}</p>`;
   }
 
-  /* Symptom chips live in the Diagnosis grid, OUTSIDE the detail dialog, so the
-     dialog's own delegated handler never sees them. Without this the chips
-     render as buttons that do nothing — worse than a plain label, because they
-     look clickable. */
-  document.addEventListener("click", (event) => {
-    const chip = event.target.closest('[data-detail-kind="symptom"][data-detail-id]');
-    if (chip) openKnowledgeDetail("symptom", chip.dataset.detailId);
-  });
-
   // Expose the formula/herb study-card opener so unified search (app.js) can
   // open the exact card the user clicked, rather than dumping them in a section.
-  // symptomReverse lets a caller (and the C1 verification) ask whether the
-  // reverse index was really derived from the registry or from a hardcoded list.
   globalThis.ACUTING_KNOWLEDGE_API = Object.assign(globalThis.ACUTING_KNOWLEDGE_API || {}, {
-    openDetail: openKnowledgeDetail,
-    symptomReverse: () => ({
-      meta: SYMPTOM_REVERSE.meta,
-      index: Object.fromEntries(SYMPTOM_REVERSE.index),
-    }),
+    openDetail: openKnowledgeDetail
   });
 })();

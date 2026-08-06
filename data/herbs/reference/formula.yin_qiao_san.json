@@ -1,0 +1,389 @@
+{
+  "_reference_note": "REFERENCE IMPLEMENTATION for formula.yin_qiao_san matching formula.ma_huang_tang.json schema.",
+  "id": "formula.yin_qiao_san",
+  "name_zh": "銀翹散",
+  "name_en": "Yin Qiao San",
+  "name_en_translated": "Honeysuckle and Forsythia Powder",
+  "pinyin": "Yin Qiao San",
+  "pinyin_toned": "Yín Qiáo Sǎn",
+  "source_text_zh": "《溫病條辨》",
+  "source_text_en": "Wen Bing Tiao Bian (Systematic Differentiation of Warm Diseases)",
+  "category_zh": "解表劑－辛涼解表",
+  "category_en": "Formulas that Release the Exterior - Cool, Acrid",
+  "comparison_group": "解表劑 / Release Exterior",
+  "glance": {
+    "category_banner_zh": "辛涼解表",
+    "category_banner_en": "COOL ACRID EXTERIOR RELEASE",
+    "plain_summary_zh": "溫病初起、邪在衛分（風熱感冒）之首選方。發熱、微惡風寒、咽喉腫痛、口渴——辛涼宣透，清熱解毒。",
+    "plain_summary_en": "Premier formula for early-stage Warm Disease at the Wei/Exterior stage (Wind-Heat common cold). Features fever, mild aversion to wind, sore throat, and thirst.",
+    "plain_indications_zh": [
+      "風熱感冒初起",
+      "發熱微惡風寒",
+      "咽喉腫痛",
+      "口渴咳嗽"
+    ],
+    "plain_indications_en": [
+      "early wind-heat cold",
+      "fever with mild aversion to wind",
+      "sore swollen throat",
+      "thirst and cough"
+    ],
+    "herb_count": 10
+  },
+  "composition": [
+    {
+      "herb_id": "herb.jin_yin_hua",
+      "herb_zh": "金銀花",
+      "name_zh": "金銀花",
+      "herb_en": "Honeysuckle Flower",
+      "name_en": "Honeysuckle Flower",
+      "pinyin": "Jin Yin Hua",
+      "pinyin_toned": "Jīn Yín Huā",
+      "dose_g": "30",
+      "decoction_reference_g": "30g",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "甘寒質輕，芳香疏散，清熱解毒，辟穢化濁——重用為君",
+      "role_reason_en": "Sweet and cold, light texture; clears heat, relieves toxicity and dispels turbid pathogens",
+      "in_formula_zh": "甘寒質輕，芳香疏散，清熱解毒，辟穢化濁——重用為君"
+    },
+    {
+      "herb_id": "herb.lian_qiao",
+      "herb_zh": "連翹",
+      "name_zh": "連翹",
+      "herb_en": "Forsythia Fruit",
+      "name_en": "Forsythia Fruit",
+      "pinyin": "Lian Qiao",
+      "pinyin_toned": "Lián Qiáo",
+      "dose_g": "30",
+      "decoction_reference_g": "30g",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "苦辛微寒，輕清宣透，清熱解毒，散結消腫——與金銀花相須為君",
+      "role_reason_en": "Bitter, acrid, slightly cold; clears heat, dispels toxicity, and dissolves clumps - pairs as chief with Jin Yin Hua",
+      "in_formula_zh": "苦辛微寒，輕清宣透，清熱解毒，散結消腫——與金銀花相須為君"
+    },
+    {
+      "herb_id": "herb.bo_he",
+      "herb_zh": "薄荷",
+      "name_zh": "薄荷",
+      "herb_en": "Field Mint",
+      "name_en": "Field Mint",
+      "pinyin": "Bo He",
+      "pinyin_toned": "Bò He",
+      "dose_g": "18",
+      "decoction_reference_g": "18g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "辛涼質輕，疏散風熱，清利頭目，利咽喉",
+      "role_reason_en": "Acrid and cool; disperses Wind-Heat, clears head and eyes, benefits sore throat",
+      "in_formula_zh": "辛涼質輕，疏散風熱，清利頭目，利咽喉"
+    },
+    {
+      "herb_id": "herb.niu_bang_zi",
+      "herb_zh": "牛蒡子",
+      "name_zh": "牛蒡子",
+      "herb_en": "Burdock Fruit",
+      "name_en": "Burdock Fruit",
+      "pinyin": "Niu Bang Zi",
+      "pinyin_toned": "Niú Bàng Zǐ",
+      "dose_g": "18",
+      "decoction_reference_g": "18g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "辛苦性寒，宣肺祛痰，散結利咽解毒——助薄荷解表利咽",
+      "role_reason_en": "Acrid, bitter, cold; diffuses Lungs, clears phlegm, unblocks throat and dispels toxicity",
+      "in_formula_zh": "辛苦性寒，宣肺祛痰，散結利咽解毒——助薄荷解表利咽"
+    },
+    {
+      "herb_id": "herb.jing_jie",
+      "herb_zh": "荊芥",
+      "name_zh": "荊芥",
+      "herb_en": "Schizonepeta Spikes",
+      "name_en": "Schizonepeta Spikes",
+      "pinyin": "Jing Jie Sui",
+      "pinyin_toned": "Jīng Jiè Suì",
+      "dose_g": "12",
+      "decoction_reference_g": "12g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "辛溫質輕，疏風解表——溫而不燥，助金銀花、連翹開達肌表",
+      "role_reason_en": "Acrid and warm; dispels wind and releases exterior without drying, helping open the muscle layer",
+      "in_formula_zh": "辛溫質輕，疏風解表——溫而不燥，助金銀花、連翹開達肌表"
+    },
+    {
+      "herb_id": "herb.dan_dou_chi",
+      "herb_zh": "淡豆豉",
+      "name_zh": "淡豆豉",
+      "herb_en": "Prepared Fermented Soybeans",
+      "name_en": "Prepared Fermented Soybeans",
+      "pinyin": "Dan Dou Chi",
+      "pinyin_toned": "Dàn Dòu Chǐ",
+      "dose_g": "15",
+      "decoction_reference_g": "15g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "辛涼疏散，解表除煩——助君藥透邪解表",
+      "role_reason_en": "Acrid and cool; releases exterior and dispels irritability",
+      "in_formula_zh": "辛涼疏散，解表除煩——助君藥透邪解表"
+    },
+    {
+      "herb_id": "herb.jie_geng",
+      "herb_zh": "桔梗",
+      "name_zh": "桔梗",
+      "herb_en": "Platycodon Root",
+      "name_en": "Platycodon Root",
+      "pinyin": "Jie Geng",
+      "pinyin_toned": "Jié Gěng",
+      "dose_g": "18",
+      "decoction_reference_g": "18g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "苦辛性平，宣肺利咽，載藥上行——與牛蒡子相配清利咽喉",
+      "role_reason_en": "Bitter, acrid, neutral; diffuses Lungs, benefits throat, carries herbs upward",
+      "in_formula_zh": "苦辛性平，宣肺利咽，載藥上行——與牛蒡子相配清利咽喉"
+    },
+    {
+      "herb_id": "herb.gan_cao",
+      "herb_zh": "甘草",
+      "name_zh": "甘草",
+      "herb_en": "Licorice Root",
+      "name_en": "Licorice Root",
+      "pinyin": "Gan Cao",
+      "pinyin_toned": "Gān Cǎo",
+      "dose_g": "15",
+      "decoction_reference_g": "15g",
+      "role_zh": "使",
+      "role_en": "Envoy",
+      "role_reason_zh": "甘平，清熱解毒，調和諸藥——合桔梗即「甘桔湯」，清利咽喉",
+      "role_reason_en": "Sweet and neutral; clears heat, dispels toxicity, harmonizes formula; pairs with Jie Geng for throat",
+      "in_formula_zh": "甘平，清熱解毒，調和諸藥——合桔梗即「甘桔湯」，清利咽喉"
+    },
+    {
+      "herb_id": "herb.lu_gen",
+      "herb_zh": "蘆根",
+      "name_zh": "蘆根",
+      "herb_en": "Reed Rhizome",
+      "name_en": "Reed Rhizome",
+      "pinyin": "Lu Gen",
+      "pinyin_toned": "Lú Gēn",
+      "dose_g": "20",
+      "decoction_reference_g": "20g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "甘寒生津，清熱止渴——煎湯代水，清肺胃之熱",
+      "role_reason_en": "Sweet and cold; generates fluids, clears Lung and Stomach heat, quenches thirst",
+      "in_formula_zh": "甘寒生津，清熱止渴——煎湯代水，清肺胃之熱"
+    },
+    {
+      "herb_id": "herb.dan_zhu_ye",
+      "herb_zh": "淡竹葉",
+      "name_zh": "淡竹葉",
+      "herb_en": "Lophatherus Stem and Leaves",
+      "name_en": "Lophatherus Stem and Leaves",
+      "pinyin": "Dan Zhu Ye",
+      "pinyin_toned": "Dàn Zhú Yè",
+      "dose_g": "12",
+      "decoction_reference_g": "12g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "甘淡性寒，清熱除煩，導熱下行",
+      "role_reason_en": "Sweet, bland, cold; clears heat, dispels irritability, guides heat downward",
+      "in_formula_zh": "甘淡性寒，清熱除煩，導熱下行"
+    }
+  ],
+  "key_pairs": [
+    "pair.jin_yin_hua__lian_qiao",
+    "pair.bo_he__niu_bang_zi",
+    "pair.jie_geng__gan_cao",
+    "pair.jing_jie__dan_dou_chi"
+  ],
+  "key_pairs_note_zh": "金銀花配連翹（相須為用，辛涼清熱解毒之黃金雙星）；薄荷配牛蒡子（疏散風熱、清利咽喉）；桔梗配甘草（甘桔湯，宣肺利咽）；荊芥配豆豉（辛溫辛涼並用，透達衛分邪氣）。",
+  "key_pairs_note_en": "Jin Yin Hua with Lian Qiao (mutual reinforcement, classic duo for clearing Wind-Heat and toxicity); Bo He with Niu Bang Zi (disperses wind-heat, relieves throat); Jie Geng with Gan Cao (Gan Jie Tang duo for throat).",
+  "fang_yi_zh": "吳鞠通《溫病條辨》首方。本方重用金銀花、連翹為君，輕清宣透、清熱解毒；薄荷、牛蒡子為臣，疏散風熱、清利咽喉；荊芥穗、淡豆豉微溫辛散，透表散邪而不傷陰；桔梗、甘草、竹葉、蘆根為佐使，清熱生津、宣肺利咽、導熱下行。全方「去性取用」，香氣大出即取服，不可重煎。",
+  "fang_yi_en": "The premier formula of Wu Ju-tong's Wen Bing Tiao Bian. Uses heavy doses of Jin Yin Hua and Lian Qiao as chief herbs to clear heat and dispel toxicity. Bo He and Niu Bang Zi serve as deputies to clear Wind-Heat and unblock the throat. Jing Jie and Dan Dou Chi add a touch of warmth to open the pores without drying yin. Platycodon, Licorice, Lophatherus, and Reed Rhizome serve as assistants/envoys to generate fluids and direct heat downward.",
+  "actions_zh": [
+    "辛涼解表 — 疏散風熱、透邪外出",
+    "清熱解毒 — 清解上焦風熱毒邪",
+    "宣肺利咽 — 宣通肺氣、清利咽喉腫痛",
+    "芳香辟穢 — 清熱生津、辟穢化濁"
+  ],
+  "actions_en": [
+    "Releases exterior with cool acrid herbs — disperses Wind-Heat and vents pathogens",
+    "Clears heat and relieves toxicity — purges toxic heat in the upper burner",
+    "Diffuses Lung qi and benefits throat — unblocks Lung qi and relieves throat pain",
+    "Dispels cloudiness with aromatics — clears heat, generates fluids, and transforms turbidity"
+  ],
+  "pattern_indications_zh": [
+    "溫病初起、邪鬱衛分證（風熱感冒）：發熱、微惡風寒、無汗或有汗不暢、頭痛口渴、咳嗽咽痛、舌尖紅、苔薄白或薄黃、脈浮數。"
+  ],
+  "pattern_indications_en": [
+    "Early stage Warm Disease at Wei/Exterior level (Wind-Heat common cold): Fever, mild aversion to wind and cold, anhidrosis or incomplete sweating, headache, thirst, cough, painful swollen throat, red tongue tip with thin white/yellow coating, floating rapid pulse."
+  ],
+  "indications": [
+    {
+      "pattern_zh": "溫病初起、邪鬱衛分證（風熱感冒）",
+      "pattern_en": "Early stage Warm Disease at Wei/Exterior level (Wind-Heat common cold)",
+      "clinical_picture_zh": "發熱、微惡風寒、無汗或有汗不暢、頭痛口渴、咳嗽咽痛、舌尖紅、苔薄白或薄黃、脈浮數",
+      "clinical_picture_en": "Fever, mild aversion to wind and cold, anhidrosis or incomplete sweating, headache, thirst, cough, painful swollen throat",
+      "tongue_zh": "舌尖紅，苔薄白或薄黃",
+      "tongue_en": "Red tongue tip with thin white or thin yellow coating",
+      "pulse_zh": "脈浮數",
+      "pulse_en": "Floating and rapid"
+    }
+  ],
+  "constitutional_types_zh": [
+    "風寒感冒",
+    "濕熱內盛"
+  ],
+  "constitutional_types_en": [
+    "Wind-Cold exterior",
+    "Interior Damp-Heat"
+  ],
+  "constitutional_note_zh": "風寒感冒惡寒重無汗者禁用；脾胃虛寒便溏者慎用。",
+  "modifications_zh": [
+    "口渴甚者：加天花粉 15g 生津止渴",
+    "項腫咽痛甚者：加馬勃 9g、玄參 15g 清熱利咽解毒",
+    "咳嗽甚者：加杏仁 9g 降氣止咳",
+    "胸悶脘痞者：加藿香 9g、鬱金 9g 芳香化濕"
+  ],
+  "modifications_en": [
+    "Severe thirst: Add Tian Hua Fen 15g to generate fluids",
+    "Severe throat swelling & pain: Add Ma Bo 9g and Xuan Shen 15g",
+    "Severe cough: Add Xing Ren 9g to descend Lung qi",
+    "Chest oppression: Add Huo Xiang 9g and Yu Jin 9g"
+  ],
+  "modifications": [
+    {
+      "if_zh": "口渴甚者",
+      "if_en": "Severe thirst",
+      "change_zh": "加天花粉 15g 生津止渴",
+      "change_en": "Add Tian Hua Fen 15g to generate fluids"
+    },
+    {
+      "if_zh": "項腫咽痛甚者",
+      "if_en": "Severe throat swelling and pain",
+      "change_zh": "加馬勃 9g、玄參 15g 清熱利咽解毒",
+      "change_en": "Add Ma Bo 9g and Xuan Shen 15g to relieve toxic throat heat"
+    },
+    {
+      "if_zh": "咳嗽甚者",
+      "if_en": "Severe cough",
+      "change_zh": "加杏仁 9g 降氣止咳",
+      "change_en": "Add Xing Ren 9g to descend Lung qi"
+    },
+    {
+      "if_zh": "胸悶脘痞者",
+      "if_en": "Chest oppression and fullness",
+      "change_zh": "加藿香 9g、鬱金 9g 芳香化濕",
+      "change_en": "Add Huo Xiang 9g and Yu Jin 9g to transform dampness"
+    }
+  ],
+  "dose_adjustment_note_zh": "煎服法：水煎服。病重者日三服，夜一服。香氣大出即取服，不可過煎（過煎則藥氣徒濁，失其輕清宣透之性）。",
+  "dose_adjustment_note_en": "Decoct method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
+  "contraindications_zh": [
+    "外感風寒表寒證（惡寒重、流清涕）禁用",
+    "脾胃虛寒、大便溏薄者慎用",
+    "瘡瘍陰證無熱者禁用"
+  ],
+  "contraindications_en": [
+    "Contraindicated in Wind-Cold exterior cold patterns",
+    "Use with caution in Spleen/Stomach deficiency cold with loose stools",
+    "Contraindicated in Yin sores without heat"
+  ],
+  "comparisons": [
+    {
+      "with": "formula.sang_ju_yin",
+      "name_zh": "桑菊飲",
+      "differentiator_zh": "同為《溫病條辨》辛涼解表劑。銀翹散為「辛涼平劑」，解表清熱力強，主治發熱、咽喉腫痛；桑菊飲為「辛涼輕劑」，宣肺止咳力勝，主治咳嗽為主、身微熱。",
+      "differentiator_en": "Both are cool acrid formulas from Wen Bing Tiao Bian. Yin Qiao San is a balanced cool formula with stronger heat-clearing for fever and sore throat; Sang Ju Yin is a light cool formula prioritizing cough relief."
+    }
+  ],
+  "formula_family": [
+    {
+      "formula_id": "formula.sang_ju_yin",
+      "name_zh": "桑菊飲",
+      "relation": "加",
+      "change": [
+        "加桑葉、菊花、杏仁；減金銀花、連翹、荊芥、豆豉"
+      ],
+      "change_en": [
+        "Add Sang Ye, Ju Hua, Xing Ren; remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi"
+      ]
+    }
+  ],
+  "applications_zh": [
+    "急性上呼吸道感染",
+    "流行性感冒",
+    "急性扁桃體炎",
+    "腮腺炎",
+    "麻疹初起"
+  ],
+  "applications_en": [
+    "Acute upper respiratory infection",
+    "Influenza",
+    "Acute tonsillitis",
+    "Mumps",
+    "Early-stage measles"
+  ],
+  "modern_applications_zh": [
+    "急性上呼吸道感染",
+    "流行性感冒",
+    "急性扁桃體炎",
+    "腮腺炎",
+    "麻疹初起"
+  ],
+  "modern_applications_en": [
+    "Acute upper respiratory infection",
+    "Influenza",
+    "Acute tonsillitis",
+    "Mumps",
+    "Early-stage measles"
+  ],
+  "cloudtcm_url": "https://cloudtcm.com/formula/271",
+  "american_dragon_url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
+  "source_urls": [
+    "https://cloudtcm.com/formula/271",
+    "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html"
+  ],
+  "external_links": [
+    {
+      "source_id": "american_dragon",
+      "url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
+      "label_zh": "American Dragon",
+      "label_en": "American Dragon",
+      "lang": "en",
+      "link_status": "direct"
+    },
+    {
+      "source_id": "cloudtcm",
+      "url": "https://cloudtcm.com/formula/271",
+      "label_zh": "雲端中醫",
+      "label_en": "CloudTCM",
+      "lang": "zh",
+      "link_status": "direct"
+    }
+  ],
+  "field_sources": {
+    "actions_zh": [
+      "wen_bing_tiao_bian",
+      "curriculum/formulas/Formulations Summary Chart.docx.md"
+    ],
+    "composition_roles": [
+      "wen_bing_tiao_bian",
+      "bastyr_materia_medica_2"
+    ],
+    "indications": [
+      "wen_bing_tiao_bian"
+    ],
+    "contraindications": [
+      "bastyr_materia_medica_2"
+    ]
+  },
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "formula_song": "銀翹散主上焦病，竹葉荊牛豉薄荷。\n甘桔蘆根涼解法，清疏風熱發熱瘥。",
+  "formula_song_zh": "銀翹散主上焦病，竹葉荊牛豉薄荷。\n甘桔蘆根涼解法，清疏風熱發熱瘥。",
+  "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+  "exam_pearl": "【考綱重點】溫病初起衛分證（風熱感冒、咽喉腫痛）首選方。重用銀翹為君；荊芥、豆豉微溫透表；「香氣大出即取服，不可過煎」。NCBAHM 2026 CH Outline p.20。"
+}

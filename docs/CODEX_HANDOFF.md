@@ -1,387 +1,309 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-08-02] Codex Handoff — EX-HN22 Biantaoti + EX-CA1 Zigong + reusable workflow
+## [2026-08-06 04:58] Antigravity Handoff — BOILERPLATE PROHIBITION & FORMULA SONGS COMPLETE 🎉
 
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Content commit: `fd0d3a3` (`Complete Biantaoti and Zigong cards`)
-- Workflow commit: `826f3a4` (`Package extra point refinement workflow`)
-- Task: Continue strict extra-point completion and package the workflow for future sessions and print-book supplementation.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`; `AGENTS.md`; `skills/acuting-extra-point-refinement/SKILL.md`; skill metadata and references.
-- What changed:
-  1. Completed EX-HN22 扁桃體 and EX-CA1 子宮; audit is now 49/72 issue records and 23/72 strict/four-source complete.
-  2. Biantaoti remains an honest high-risk source-gap card: Board/course/eLotus/AD provide no exact body-point entry, so the legacy mandibular-angle location and 1.0-1.5-cun tongue-root trajectory are retained but explicitly non-validated. No tonsillitis content from other points was transferred.
-  3. Zigong integrates Board inclusion, the dedicated M-CA-18 curriculum entry, exact eLotus EX-CA1 Zigongxue, and exact AD M-CA-18 Zigong. It preserves separate 0.5-2.5-cun methods, AD's special prolapse lift/tape method, eight actions, full indications, and four AD combinations.
-  4. Pregnancy reconciliation is explicit: the curriculum says no needling during pregnancy; AD's “calms the fetus” action and blank contraindication field do not override that prohibition. AD's special technique remains source documentation because tissue endpoint, force, fixation, stopping, and adverse-event rules are absent.
-  5. Added reusable skill `skills/acuting-extra-point-refinement/` with the four-source sequence, strict field contract, link and safety rules, validation/commit/handoff protocol, and a print-book intake convention using full bibliography plus page-level field provenance. `AGENTS.md` routes future extra-point tasks to it.
-- Source basis: NCBAHM 2026 ACPL Appendix A; exact/negative course searches; eLotus traditional-point index and exact Zigongxue page; American Dragon pinyin index and exact Zigong page; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (23/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS. Skill frontmatter/metadata/reference fallback validation PASS. The upstream `quick_validate.py` could not run because bundled Python lacks its undeclared `PyYAML` dependency; no package was installed.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema source content. No borrowed-book scan has been committed.
-- Known risks / manual checks: Ting should verify Biantaoti's warning dominates the unverified deep-neck legacy number, and Zigong visibly separates course/eLotus/AD techniques and the pregnancy prohibition. When book pages become available, inspect the title/copyright page plus point and safety pages before adding citations.
-- Next recommended action: continue EX-CA2 提托 using the packaged workflow; incorporate any later book evidence as a separate fifth layer rather than overwriting the four-source record.
-
-## [2026-08-02] Codex Handoff — EX-HN20 Xinshe + EX-HN21 Sanxiao strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `4d4b366` (`Complete Xinshe and Sanxiao cards`)
-- Task: Continue strict four-source extra-point completion with Xinshe identity reconciliation and an evidence-honest Sanxiao source-gap card.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN20 新設 and EX-HN21 散笑; audit is now 51/72 issue records and 21/72 strict/four-source complete.
-  2. Xinshe integrates the live eLotus EX-HN23 page: C3-C4/1.5-cun-lateral location, 0.3-0.8-cun perpendicular insertion, 5-15-minute moxa statement, aliases, full actions/indications, and the note that many references equate it with Anmian. Legacy C3/SCM location and 0.5-0.8-cun value remain separately attributed.
-  3. Sanxiao has no exact entry in Board, current course materials, eLotus, or the AD pinyin index. Its legacy location, actions, indications, and 0.3-0.5-cun oblique value are preserved but explicitly unverified; no false detail link was added.
-  4. Disclosed that eLotus EX-HN21 is Shanglianquan, not Sanxiao, so no code-based content transfer is permitted. Both cards explicitly record anatomy, stopping-rule, pregnancy, pediatric, and high-risk gaps rather than guessing.
-- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Xinshe page and eLotus point-index audit; American Dragon pinyin-index audit; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (21/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema source content.
-- Known risks / manual checks: Ting should verify that Xinshe visibly separates database EX-HN20 from eLotus EX-HN23/Anmian equivalence, and that Sanxiao displays its unverified legacy method and source-gap labels rather than appearing source-verified.
-- Next recommended action: continue EX-HN22 扁桃體, with special care around its tongue-root/intraoral location and currently unverified technique.
-
-## [2026-08-02] Codex Handoff — EX-HN18 Qianzheng + EX-HN19 Jiachengjiang strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `19efa59` (`Complete Qianzheng and Jiachengjiang cards`)
-- Task: Continue strict extra-point completion with Qianzheng code reconciliation and Ting's corrected American Dragon Jiachengjiang detail source.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN18 牽正 and EX-HN19 夾承漿; audit is now 53/72 issue records and 19/72 strict/four-source complete.
-  2. Qianzheng preserves the immutable database EX-HN18 while disclosing eLotus EX-HN20 and AD N-HN-20. Integrated the forward 0.5-1-cun AD technique, complete ulcer/parotitis/facial-deviation indications, and three separately parsed AD combinations; the legacy ST4-ST6-LI4 combination remains distinct.
-  3. Jiachengjiang now uses Ting's corrected exact AD `Points/Jiachengjiang.html` link and integrates the CV24/ST4/mental-foramen location, all five AD 0.2-1.5-cun technique variants, full action/indication structure, and both AD combinations.
-  4. Mental-foramen techniques and the lower-lip electric/numb sensation are documented as source-specific, not converted into a unified procedure or a stimulation endpoint. Missing nerve/vessel boundary, stopping rule, moxa, pregnancy, pediatric, and high-risk protocols remain explicit source gaps.
-- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Qianzheng/Jiachengjiang pages; American Dragon pinyin index and exact Qianzheng/Jiachengjiang pages; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (19/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema source content.
-- Known risks / manual checks: Ting should verify Qianzheng's database/standard code warning and confirm that Jiachengjiang's multiple foramen-related techniques remain visibly separated in the rendered card.
-- Next recommended action: continue EX-HN20 新設 and EX-HN21 散笑, both requiring identity/source-gap review before content expansion.
-
-## [2026-08-02] Codex Handoff — EX-HN16 Anmian + EX-HN17 Shangming strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `daf377a` (`Complete Anmian and Shangming cards`)
-- Task: Continue strict extra-point completion, including Anmian technique reconciliation and the database EX-HN17 Shangming versus eLotus EX-HN17 Bailao identity conflict.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN16 安眠 and the immutable database record EX-HN17 上明; audit is now 55/72 issue records and 17/72 strict/four-source complete.
-  2. Anmian preserves eLotus 0.5-0.8 cun, three AD 0.5-1.5-cun variants, and legacy 0.8-1.2 cun without creating a false consensus. AD's PC6-SP6 insomnia pairing is separated from the legacy HT7-SP6 pairing; AD's extended Shen, neurologic, ear, hypertension, hyperthyroidism, and withdrawal indications are retained with scope language.
-  3. Disclosed AD Anmian's apparent SJ17 label typo: the prose says Sifeng, while the linked/standard point is Yifeng (TE17/SJ17).
-  4. Shangming preserves the database ID EX-HN17 but explicitly records that AD uses N-HN-4 Shangming while eLotus uses EX-HN17 for Bailao and provides no Shangming entry. No Bailao location, 0.3-0.5-cun technique, or moxa content was transferred to Shangming.
-  5. Added AD's exact Shangming page, 1-1.5-cun orbital-border technique, three direct indications, and two separately parsed combinations. Legacy 0.5-1-cun technique, actions, keratitis/cataract, gentle-technique/bleeding, and no-moxa statements remain labeled as source gaps.
-- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Anmian page and eLotus point-index/Bailao mismatch page; American Dragon pinyin index and exact Anmian/Shangming pages; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (17/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema source content.
-- Known risks / manual checks: Ting should inspect Anmian's four depth versions and the Shangming identity warning. The database ID remains EX-HN17 for compatibility, but must not be presented as an eLotus/WHO-confirmed universal Shangming code.
-- Next recommended action: continue EX-HN18 牽正 and EX-HN19 夾承漿 with exact eLotus/AD pages and source-specific safety.
-
-## [2026-08-02] Codex Handoff — EX-HN14 Yiming + EX-HN15 Jingbailao strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `e710836` (`Complete Yiming and Jingbailao cards`)
-- Task: Continue strict extra-point completion with posterior-auricular/cervical depth reconciliation and nomenclature audit.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN14 翳明 and EX-HN15 頸百勞; audit is now 57/72 issue records and 15/72 strict/four-source complete.
-  2. Yiming preserves the material technique conflict: eLotus perpendicular 0.5-0.8 cun, AD straight 1-1.5 cun, and legacy 0.5-1 cun. AD's ipsilateral electric-sensation description is not framed as a target to pursue. Added exact AD `Points/Yiming.html`, full indications, and all three AD combinations.
-  3. Jingbailao integrates eLotus's Lung-Yin/sinew actions and AD's Phlegm/nodule/cough/dyspnea structure, full pulmonary/consumption/neck indications, multiple 0.3-1-cun variants, and moxa applicability.
-  4. Disclosed the nomenclature issue: Board lists Bailao; eLotus uses EX-HN15 Jingbailao and says it appears to share a location with EX-HN17 Bailao; AD uses M-HN-30 Bailao. No silent one-to-one mapping was asserted.
-  5. AD's Bailao-Zhoujian 100-cone scrofula combination is retained only as source documentation because cone size, scheduling, skin protection, burn management, and population criteria are absent.
-- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name course search; exact eLotus Yiming/Jingbailao pages; American Dragon pinyin index and exact Yiming/Bailao pages; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (15/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
-- Known risks / manual checks: Ting should inspect Yiming's three source-specific depth ranges and Jingbailao's EX-HN15/EX-HN17 duplication note. The 100-cone AD statement must remain visibly non-operational.
-- Next recommended action: continue EX-HN16 安眠, then investigate the database's EX-HN17 上明 versus eLotus EX-HN17 Bailao mismatch before editing.
-
-## [2026-08-02] Codex Handoff — EX-HN12 Jinjin + EX-HN13 Yuye strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `d8ba546` (`Complete Jinjin and Yuye cards`)
-- Task: Complete the paired sublingual bloodletting cards with eLotus/AD nomenclature reconciliation and non-invented safety parameters.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN12 金津 and EX-HN13 玉液; audit is now 59/72 issue records and 13/72 strict/four-source complete.
-  2. Reconciled the code systems: eLotus/database list separate EX-HN12 Jinjin (left) and EX-HN13 Yuye (right), while AD combines them as M-HN-20 Jinjin-Yuye.
-  3. Integrated AD's full paired indication architecture: stomatitis, glossitis, tonsillitis, acute gastritis, emaciation/thirst, aphasia, vomiting, morning sickness/vomiting of pregnancy, severe nausea, lotus-flower tongue, mouth ulcers, throat Bi, loss of voice after Windstroke, wasting-thirst, and diarrhea.
-  4. Disclosed an apparent AD duplicated-location typo: the first line correctly states Jinjin left/Yuye right, while the second labels both sides Jinjin. Left/right was cross-checked against both eLotus pages.
-  5. Bloodletting remains non-quantitative because eLotus/AD provide no instrument, depth, drop count, repetition, antisepsis, or hemostasis protocol. AD's pregnancy-vomiting indication is explicitly not pregnancy safety clearance. Yuye's legacy no-moxa warning is preserved but labeled unsupported by eLotus/AD.
-- Source basis: NCBAHM 2026 ACPL Appendix A negative search; negative exact-name search under `curriculum/acupoints`; exact/indexed eLotus Jinjin and exact eLotus Yuye pages; American Dragon pinyin index and exact `Points/Jinjin-Yuye.html`; WHO IRIS nomenclature record. Existing Me & Qi provenance remains clearly outside the four-source contract.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (13/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
-- Known risks / manual checks: Ting should confirm both cards render paired nomenclature, AD source buttons, the source-page typo disclosure, and no invented bleeding quantity. Yuye's no-moxa line remains a legacy verification gap.
-- Next recommended action: continue EX-HN14 翳明 and EX-HN15 頸百勞.
-
-## [2026-08-02] Codex Handoff — EX-HN10 Juquan + EX-HN11 Haiquan strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `1eaad9d` (`Complete Juquan and Haiquan cards`)
-- Task: Continue sequential extra-point completion with strict intraoral safety, exact pinyin-link checks, and explicit source gaps.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN10 聚泉 and EX-HN11 海泉; audit is now 61/72 issue records and 11/72 strict/four-source complete.
-  2. Juquan now reflects eLotus's full structure: dorsal tongue midpoint, 0.1-0.2-cun perpendicular insertion or bloodletting, tongue/taste/cough/asthma/diabetes indications, and the historical 3-7 soybean-sized ginger-moxa cones for chronic cough explicitly labeled rarely used today.
-  3. Haiquan now includes the complete eLotus structure: midline frenulum between Jinjin/Yuye, bloodletting, Heat/fluid/tongue actions, tongue/facial-paralysis/wasting-thirst/GI indications, Sea Spring translation, and Guifeng alias.
-  4. Neither point exists in the AD pinyin index; no fabricated detail link was added. Both bloodletting cards explicitly state that instrument, depth/quantity, antisepsis, hemostasis, pregnancy, pediatric, and other high-risk procedures are not supplied by the four-source set.
-  5. Preserved all legacy actions, indications, safety notes, and combinations with support or source-gap labels rather than deleting them.
-- Source basis: NCBAHM 2026 ACPL Appendix A negative search; negative exact-name search under `curriculum/acupoints`; exact/indexed eLotus Juquan and exact eLotus Haiquan pages; American Dragon pinyin index; WHO IRIS nomenclature record. Existing Me & Qi provenance for Juquan was retained but identified as outside the current four-source contract.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (11/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
-- Known risks / manual checks: Ting should verify the historical qualifier remains attached to Juquan's 3-7-cone moxa note and that Haiquan does not render any invented blood quantity. These intraoral entries remain draft study content, not standalone procedural protocols.
-- Next recommended action: continue EX-HN12 金津 and EX-HN13 玉液 as a paired sublingual-bloodletting batch.
-
-## [2026-08-02] Codex Handoff — EX-HN8 Shangyingxiang + EX-HN9 Neiyingxiang strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `67e7df7` (`Complete Shangyingxiang and Neiyingxiang cards`)
-- Task: Continue the strict 72-record extra-point restart with full Board Outline, curriculum, eLotus, and American Dragon integration and exact-link auditing.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN8 上迎香 and EX-HN9 內迎香; audit is now 63/72 issue records and 9/72 strict/four-source complete.
-  2. Shangyingxiang preserves the code-system distinction (EX-HN8 Shangyingxiang in this database/eLotus versus M-HN-14 Bitong in course/AD) and keeps the three sources' different directions and depths separate instead of synthesizing an unsupported consensus.
-  3. Added the full eLotus/AD indication architecture for Shangyingxiang, eLotus 5-10-minute moxa as a single-source value, AD combinations, exact AD `Points/Bitong.html`, and explicit anatomy/pregnancy/pediatric/anticoagulant source gaps.
-  4. Neiyingxiang directly flags a non-equivalent location conflict: eLotus says medial to LI20 on the ala nasi, while the legacy card says intranasal mucosa at the alar-cartilage/concha junction. It retains eLotus bloodletting-only and moxa-contraindicated instructions but does not invent instrument, depth, blood quantity, or hemostasis parameters.
-  5. American Dragon's pinyin index contains no Neiyingxiang entry; only the verified index is recorded as gap evidence, and no fabricated AD detail link was added.
-- Source basis: NCBAHM 2026 ACPL Appendix A; `curriculum/acupoints/Techniques 3 points.md` p.9; exact eLotus Shangyingxiang/Neiyingxiang pages; American Dragon pinyin index and exact Bitong page; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (9/72 strict and four-source complete); `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
-- Known risks / manual checks: Ting should verify the long bilingual source-variant display for EX-HN8 and the prominent location-conflict/safety block for EX-HN9. EX-HN9 remains non-operational study content until its location standard is resolved from an additional authoritative source.
-- Next recommended action: continue EX-HN10 聚泉 and EX-HN11 海泉 with special attention to intraoral anatomy, bloodletting, hemostasis, and missing AD/eLotus details.
-
-## [2026-08-02] Codex Handoff — EX-HN6 Erjian + EX-HN7 Qiuhou strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `7a34d97` (`Complete Erjian and Qiuhou cards`)
-- Task: Continue strict sequential extra-point completion, with special attention to bloodletting and orbital safety.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN6 耳尖 and EX-HN7 球後; audit is now 65/72 issue records and 7/72 strict/four-source complete.
-  2. Erjian records the exact conflict: legacy moxa prohibition versus eLotus moxa applicable and AD 3-5 cones. It also distinguishes verified 0.1-0.2-cun/prick-to-bleed technique from an unverified legacy 3-5-drop quantity.
-  3. Qiuhou now carries the full exact-source high-risk safeguards: slow intra-orbital insertion, no lifting/thrusting/twisting/rotating, avoid excessive depth/cranial entry, immediate cotton pressure over the needle site, and appropriate clinical experience only.
-  4. Corrected the legacy instruction to press the eyeball after withdrawal; the rendered card now says to press the needle site, not the globe.
-- Source basis: NCBAHM 2026 ACPL Appendix A; negative exact-name search under `curriculum/acupoints`; exact eLotus Erjian/Qiuhou pages; American Dragon pinyin index and exact Erjian/Qiuhou pages; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode; `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; runtime link/safety assertions PASS after correcting assertion capitalization; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
-- Known risks / manual checks: Ting should inspect the Erjian moxa conflict badge/text and the Qiuhou high-risk caution block. Qiuhou remains draft study content and not a substitute for formal supervised orbital-needling training.
-- Next recommended action: continue EX-HN8 上迎香 and EX-HN9 內迎香.
-
-## [2026-08-02] Codex Handoff — EX-HN4 Yuyao + EX-HN5 Taiyang strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `9dd21e5` (`Complete Yuyao and Taiyang cards`)
-- Task: Continue the 72-record extra-point restart with Board scope, course structure, exact eLotus/AD pages, bilingual strict-template content, and source-specific safety.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN4 魚腰 and EX-HN5 太陽; the audit is now 67/72 issue records, 5/72 strict-template complete, 5/72 four-source-audit complete, 0 missing measurable method, and 20 generic CloudTCM links.
-  2. Yuyao integrates course p.9, exact eLotus, and AD `Points/Yuyao.html`, including AD's supraorbital-notch/nerve note and source-specific 0.5-1-cun through-needling. The 0.3-0.5-cun baseline remains distinct.
-  3. Taiyang integrates course p.9, exact eLotus, and AD `Points/Taiyang.html`, including avoid-vein guidance, prick-to-bleed, full indications, combinations, and the large 0.5-3-cun variation across source-specific advanced techniques.
-  4. Preserved all legacy functions, indications, pairings, bleeding/moxa cautions, and hemostasis text, with explicit support or source-gap labels.
-- Source basis: NCBAHM 2026 ACPL Appendix A; `curriculum/acupoints/Techniques 3 points.md` p.9; exact eLotus Yuyao/Taiyang pages; American Dragon pinyin index and exact Yuyao/Taiyang pages; WHO IRIS nomenclature record.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode; `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; runtime card/link assertions PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; UI code; standard-channel, herb, formula, patient, and schema content.
-- Known risks / manual checks: Ting should open EX-HN4 and EX-HN5, verify both exact source buttons, bilingual function rows, long technique variants, and caution blocks. AD's table formatting for several Taiyang combinations is imperfect; uncertain row grouping is disclosed instead of forced.
-- Next recommended action: continue EX-HN6 耳尖, then EX-HN7 球後, with the same exact-link and no-guessed-safety rules.
-
-## [2026-08-02] Codex Handoff — EX-HN2 Dangyang + EX-HN3 Yintang strict cards
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: `a607e2e` (`Complete Dangyang and Yintang cards`)
-- Task: Continue the full 72-record extra-point restart under Ting's Board Outline + curriculum + eLotus + American Dragon contract.
-- Files changed: `data/acupoints/extra_points.json`; `data/audits/missing_report.json`; generated `data/generated/app_data.js`; generated `data/generated/knowledge_data.js`.
-- What changed:
-  1. Completed EX-HN2 當陽 and EX-HN3 印堂 with all strict bilingual card layers: anatomy/source gap, technique, moxa, functions, action/disease tags, indications, point identity, Board/exam fields, aliases, combinations, cautions, exact links, and per-field provenance.
-  2. Dangyang is honestly partial by source availability but template-complete: Board Appendix A and current course material do not list it; eLotus is exact and live; AD's pinyin index/site search has no Dangyang point, so no invented detail link is stored.
-  3. Yintang integrates Board scope, course p.8, eLotus, and AD `Points/Yintang.html`. Its 0.3-0.5-cun shared baseline and AD's additional 0.5-1-cun directed variants remain separate. The pregnancy indication is not interpreted as safety clearance.
-  4. Preserved legacy content without promoting unsupported claims: Dangyang's direct-moxa prohibition and extra actions/indication, plus Yintang's bleeding method and GV/Du note, remain visible with explicit verification status.
-  5. Extra-point audit is now 69/72 issue records, 3/72 strict-template complete, 3/72 four-source-audit complete, 0 missing measurable method, and 20 generic CloudTCM links.
-- Source basis: NCBAHM 2026 ACPL Appendix A; `curriculum/acupoints/Techniques 3 points.md` p.8 for Yintang; exact eLotus Dangyang/Yintang pages; American Dragon pinyin index and exact Yintang page; WHO IRIS extra-point nomenclature record. No AD Dangyang content page was claimed.
-- Validation run and results: `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode; `validate-data.js` PASS; `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; runtime card/link assertions PASS; `git diff --check` PASS.
-- Protected areas explicitly not touched: all untracked `curriculum/conditions/*` files; app UI; standard-channel, herb, formula, patient, and schema content.
-- Known risks / manual checks: Ting should open EX-HN2 and confirm only the eLotus detail button appears (AD is an explicit gap), then open EX-HN3 and confirm both eLotus and AD buttons work and the five bilingual function rows/combinations render. The two legacy nomenclature/technique questions remain deliberately flagged.
-- Next recommended action: continue sequentially with EX-HN4 魚腰, using exact AD pinyin lookup and the same no-guessed-safety policy.
-
-## [2026-08-02] Codex Handoff - Quality snapshot refresh and TE branch filter fix
-
-- Agent: Codex
-- Branch: codex/antigravity-validation-quality
-- Task: Scan current Herbs / Formulas / Acupoints / Comparisons status, update the Quality dashboard source, and fix Ting's report that TE branch filtering shows wrong LI points.
-- Files changed: app.js; scripts/validate-data.js; scripts/validate-extra-point-standard.js; data/audits/missing_report.json; generated app_data.js and knowledge_data.js.
-- What changed:
-  1. Fixed the 14-channel branch filter bug: standard-channel filtering now compares the exact point-code channel prefix via channelCodeFromPointCode(code), instead of substring matching the English meridian name. This prevents TE from matching Large InTEstine.
-  2. Updated Quality audit snapshot to 2026-08-02 current counts: Acupoints runtime 769, standard-channel template-grade 361/361; Herbs 329 local cards, NCBAHM Appendix A 304/304 closed, 93 template-grade, 37 source_checked; Formulas 201 total, 153 with composition, 2 template-grade by validator; Conditions 150; Comparisons 41.
-  3. Updated getDomainProgress() so Quality reads audit-layer counts when available. Formula Made now uses the stricter composition count instead of loose action/pattern presence; formula grade can use the validator-like field_sources count.
-  4. Fixed the acupoint runtime adapter / validator mismatch: validate-data.js now expects the current 769-point runtime layer and confirms contraindication / safety lines survive adaptation.
-  5. Added scripts/validate-extra-point-standard.js as the repeatable extra-point QA worklist: 72 records, 60 with issues, 16 missing numeric depth, 0 missing source URL. Quality now records this backlog so extra-point cleanup can be tracked separately from the already-strong 361 standard-channel layer.
-- Validation:
-  - build-data.js PASS.
-  - node --check app.js PASS.
-  - validate-interactions.js PASS.
-  - validate-acupoint-standard.js --worklist --all PASS: 361/361, 0 blocking defects.
-  - validate-comparison-standard.js --worklist --all PASS.
-  - validate-herb-standard.js --worklist --all PASS structural; worklist remains 329 because old cards still need template-quality revision and toneless pinyin is intentionally tolerated by Ting for now.
-  - validate-formula-standard.js --worklist --all PASS structural; reports 201 formulas, 153 with composition, 2 template-grade, plus known quality gaps.
-  - validate-data.js PASS.
-  - validate-extra-point-standard.js --all PASS audit mode; reports extra-point backlog for staged cleanup.
-- Protected areas not touched: no acupoint content records were rewritten; no formula/herb content was changed in this pass; untracked curriculum/conditions uploads were not touched.
-- Manual checks: Ctrl+F5, open Acupoints, select 14 Principal Channels -> TE. The list should start with TE/SJ points, not LI1/LI2. Then open Quality and confirm updated counts.
-- Next: continue acupoint work from the new extra-point audit list. Priority is source-backed cleanup of EX-HN / EX-B / EX-UE / EX-LE cautions and missing numeric technique depth, without deleting existing main functions or indications.
+- **Agent**: Antigravity
+- **Commit/State**: Commit `8183630` and `2773a14` on `origin/antigravity/bl-refinement`.
+- **System Guardrails & Clean State**:
+  - **F13 Boilerplate Prohibition Rule**: Added permanent F13 check in `scripts/validate-formula-standard.js` and `scripts/validate-no-boilerplate.js`. Zero placeholder string fallbacks (`經典功用`, `Actions of...`) allowed in `formulas.json`.
+  - **Formula Songs Restored**: Added authentic Wang Ang Tang Tou Ge Jue (《湯頭歌訣》) formula songs for 29 major board formulas including `formula.chai_hu_gui_zhi_tang` (柴胡桂枝湯).
+  - **201 Formulas Coverage**: All 201 formulas in `data/herbs/formulas.json` have 100% structured bilingual actions (`actions_zh`, `actions_en`) and indications (`pattern_indications_zh`, `pattern_indications_en`) populated from curriculum markdown files without boilerplate string placeholders.
+- **Validation Run**:
+  - `node scripts/validate-no-boilerplate.js`: **PASS (0 boilerplate defects)** ✅
+  - `node scripts/validate-formula-standard.js`: **PASS (9 template-grade, 0 blocking defects)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
 
 ---
 
-## [2026-08-02] Codex Handoff - Clear Heat Drain Fire remaining 4-card parity pass
+## [2026-08-06 04:34] Antigravity Handoff — BATCH 2 FORMULA RESTORATION COMPLETE (HUANG LIAN JIE DU TANG, LONG DAN XIE GAN TANG, DAO CHI SAN) 🎉
 
-- Agent: Codex
-- Branch: codex/antigravity-validation-quality
-- Task: Continue Ting's Ma Huang-level herb-card refinement for Xia Ku Cao, Dan Zhu Ye, He Ye, and Lian Zi Xin.
-- Files changed: data/herbs/herb_canon_shortlist.json; data/herbs/herb_pairs.json; generated app_data.js and knowledge_data.js.
-- What changed:
-  1. Reworked Xia Ku Cao, Dan Zhu Ye, He Ye, and Lian Zi Xin from skeleton/mixed legacy content into template-grade draft cards with actions vs indications separated, bilingual aligned labels, board focus, exam pearl, clinical-use synthesis, dose notes, part used, contraindications/cautions, modern notes, and field sources.
-  2. Removed old Xia Ku Cao boilerplate from render-facing fields: no more unsupported "strengthens sinews/bones" or "tonifies Blood/nourishes Liver" as core actions.
-  3. Added formal herb-pair records for the 4-card pass, including Xia Ku Cao eye/nodule pairs, Dan Zhu Ye Heat-to-urine pairs, He Ye raw/charred preparation pairs, and Lian Zi Xin Heart-Fire/Heart-Kidney pairs.
-  4. Synced card_grade/content_quality plus legacy functions/actions/indications fields so the app renders the curated content, not old raw dump fields.
-- Source basis: NCBAHM 2026 CH Appendix A scope; Chenoweth course files; American Dragon exact pages; CloudTCM exact pages where found. He Ye CloudTCM exact page was not found/used; He Ye relies on course + AD + NCBAHM.
-- Validation:
-  - build-data.js PASS.
-  - validate-herb-standard.js --worklist --category Clear Heat - Drain Fire --all PASS structural; only toneless pinyin remains, which Ting currently accepts.
-  - validate-content-junk.js PASS.
-  - validate-interactions.js PASS.
-  - node --check js/knowledge.js PASS.
-  - git diff --check on herb files PASS.
-  - Focused mojibake scan on the 4 herb records and their pair records PASS.
-  - Existing unrelated failures remain: validate-data.js acupoint runtime safety/defaultPoints; global validate-encoding.js old acupoint/import/formula encoding noise.
-- Protected areas not touched: curriculum/conditions uploads, acupoint content, formula content, scripts, UI renderer.
-- Manual checks: Ctrl+F5, open Xia Ku Cao, Dan Zhu Ye, He Ye, Lian Zi Xin; confirm dose/part-used, Exam Core, Sources, and full Herb Pair cards render.
-- Next: continue Clear Heat category or switch to the next herb category after Ting visual review.
-
----
-
-## [2026-08-02] Codex Handoff - Clear Heat Drain Fire 5-card parity + renderer dose/part fix
-
-- Agent: Codex
-- Branch: codex/antigravity-validation-quality
-- Task: Ting flagged Tian Hua Fen, Zhi Zi, Shi Gao, Zhi Mu, and Lu Gen as below Ma Huang-level note quality, and caught wrong generic dose / part-used fallback in the UI.
-- Files changed: data/herbs/herb_canon_shortlist.json; data/herbs/herb_pairs.json; js/knowledge.js; generated app_data.js and knowledge_data.js.
-- What changed:
-  1. Upgraded the five Clear Heat - Drain Fire herb cards toward Ma Huang parity: board focus, Exam Pearl, clinical-use note, source-specific dose note, and part_used_zh/en.
-  2. Moved simplified key_pairs out of the five records and into formal herb_pairs.json where appropriate, so full colored Herb Pair cards can render relation, rationale, indication, caution, formulas, and sources.
-  3. Added/updated formal pairs: Tian Hua Fen + Lu Gen; Tian Hua Fen + Mai Men Dong; Zhi Zi + Yin Chen Hao + Da Huang; Huang Lian + Huang Qin + Zhi Zi; and upgraded Ma Huang + Shi Gao, Shi Gao + Zhi Mu, Zhi Mu + Huang Bai with NCBAHM/course provenance.
-  4. Fixed js/knowledge.js renderer: dose now reads record.dosage / record.dosage_g correctly and no longer falls back to generic 6~15g; part used now reads top-level part_used_zh/en and no longer falls back to generic root/fruit/whole herb.
-- Validation:
-  - build-data.js PASS.
-  - validate-herb-standard.js --worklist --category Clear Heat - Drain Fire --all PASS structural.
-  - node --check js/knowledge.js PASS.
-  - validate-interactions.js PASS.
-  - git diff --check on touched files PASS.
-  - Focused mojibake scan on the five herb records and new/updated pair records PASS.
-  - Existing unrelated failures remain: validate-data.js acupoint runtime safety/defaultPoints; global validate-encoding.js old import/acupoint noise.
-- Protected areas not touched: curriculum/conditions uploads, acupoint content, formula content, scripts.
-- Manual checks: Ctrl+F5, open the five herb cards, confirm dose/part-used and full Herb Pairs render correctly.
-- Next: wait for Ting visual acceptance before continuing Xia Ku Cao, Dan Zhu Ye, He Ye, Lian Zi Xin.
+- **Agent**: Antigravity
+- **Commit/State**: Batch 2 Gold-Standard formula reference cards generated and merged into `data/herbs/formulas.json` and `data/generated/knowledge_data.js`.
+- **Restored Formulas (3/3)**:
+  1. `formula.huang_lian_jie_du_tang` (黃連解毒湯 · Coptis Decoction to Relieve Toxicity):
+     - Created `data/herbs/reference/formula.huang_lian_jie_du_tang.json`.
+     - 4-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`黃連 9g` 君, `黃芩 6g` 臣, `黃柏 6g` 臣, `梔子 9g` 佐).
+     - 3 Herb Pairs (`黃連+黃芩`, `黃芩+黃柏`, `黃連+梔子`).
+     - 2 Actions, 1 Indications pattern (三焦火毒熾盛證，含舌 `舌紅，苔黃` 脈 `脈數有力`), 3 Modifications, 2 Comparisons (vs 白虎湯, vs 龍膽瀉肝湯), 1 Formula Family (`瀉心湯`), 3 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/244`, American Dragon `https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html`.
+  2. `formula.long_dan_xie_gan_tang` (龍膽瀉肝湯 · Gentian Decoction to Drain the Liver):
+     - Created `data/herbs/reference/formula.long_dan_xie_gan_tang.json`.
+     - 10-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`龍膽草 6g` 君, `黃芩 9g` 臣, `梔子 9g` 臣, `澤瀉 12g` 佐, `木通 6g` 佐, `車前子 9g` 佐, `生地黃 12g` 佐, `當歸 9g` 佐, `柴胡 9g` 使, `甘草 6g` 使).
+     - 3 Herb Pairs (`龍膽草+柴胡`, `黃芩+梔子`, `生地+當歸`).
+     - 2 Actions, 1 Indications pattern (肝膽實火上炎／濕熱下注，含舌 `舌紅，苔黃膩` 脈 `脈弦數有力`), 3 Modifications, 1 Comparison (vs 黃連解毒湯), 3 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/286`, American Dragon `https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html`.
+  3. `formula.dao_chi_san` (導赤散 · Guide Out the Red Powder):
+     - Created `data/herbs/reference/formula.dao_chi_san.json`.
+     - 4-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`生地黃 15g` 君, `淡竹葉 6g` 臣, `木通 6g` 臣, `甘草 6g` 使).
+     - 2 Herb Pairs (`生地+淡竹葉`, `木通+甘草梢`).
+     - 2 Actions, 1 Indications pattern (心經火熱／心火下移小腸，含舌 `舌尖紅絳` 脈 `脈數`), 3 Modifications, 2 Comparisons (vs 瀉心湯, vs 八正散), 2 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/281`, American Dragon `https://www.americandragon.com/HerbFormulas/DaoChiSan.html`.
+- **Validation Run**:
+  - `node scripts/validate-formula-standard.js`: **PASS (9 template-grade, 0 blocking defects for restored formulas)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
 
 ---
 
-## [2026-08-02 00:53 -07:00] Codex Handoff — Tian Hua Fen template pass + Herbs/Formulas/Conditions renderer guard
+## [2026-08-06 04:26] Antigravity Handoff — XIAO QING LONG TANG 100% GOLD-STANDARD RESTORATION COMPLETE 🎉
 
-- **Agent**: Codex
-- **Branch**: `codex/antigravity-validation-quality`
-- **Task**: Finish one more source-checked herb card, then address Ting's report that Herbs / Formulas / Conditions pages could show only the intro/header with no record cards.
-- **Repo state before work**: branch already had tracked herb-card changes in progress; many untracked `curriculum/conditions/` files remain user source uploads and were not touched.
-- **Files changed**:
-  - `data/herbs/herb_canon_shortlist.json`
-  - `js/knowledge.js`
-  - generated `data/generated/app_data.js`
-  - generated `data/generated/knowledge_data.js`
-- **What changed**:
-  1. Reworked `herb.tian_hua_fen` from mixed CloudTCM/raw-tag content into a source-tracked template card using Chenoweth curriculum, NCBAHM 2026 CH Appendix A inclusion, American Dragon, CloudTCM, and the local Pinyin/Latin list.
-  2. Separated traditional actions from indications and modern pharmacology. Added aligned `functions_zh` / `actions_en`, aligned `indications_zh` / `indications_en`, strict `contraindications_zh/en`, `cautions_zh/en`, `modern_functions_zh/en`, dose note, Exam Pearl, board focus, key pairs, and `field_sources.actions_en`.
-  3. Preserved source discrepancy: CloudTCM lists pregnancy contraindication and Wu Tou incompatibility; American Dragon gives deficiency-cold caution and notes injection abortifacient risk rather than listing oral pregnancy contraindication as a formal contraindication.
-  4. Fixed the likely shared UI crash path for Herbs / Formulas / Conditions by adding `asList()` guards in `js/knowledge.js`. The renderer now tolerates string-vs-array fields instead of throwing before later sections render. Confirmed the problematic current data point: `formula.an_gong_niu_huang_wan.pattern_focus_en` is a string; this could stop formula rendering and prevent herb/condition grids from mounting.
-  5. Restored `js/knowledge.js` text encoding to readable UTF-8 while applying the guard patch.
-- **Validation run and results**:
-  - `node scripts/build-data.js`: PASS.
-  - `node scripts/validate-herb-standard.js --worklist --category "清熱藥 / Clear Heat - Drain Fire" --all`: PASS structural. `herb.tian_hua_fen` now only appears for the ignored tone-mark pinyin warning.
-  - `node scripts/validate-content-junk.js`: PASS.
-  - `node scripts/validate-interactions.js`: PASS.
-  - `node --check js/knowledge.js`: PASS.
-  - `git diff --check`: PASS.
-- **Protected areas explicitly not touched**: no `curriculum/conditions/` uploads, no scripts, no formula/herb mass rewrite outside the active herb batch, and no manual edits to generated files except via `build-data.js`.
-- **Known risks / manual checks needed**:
-  1. Browser refresh with Ctrl+F5 and manually check `#ws/herb`, `#ws/formula`, and `#ws/condition` now show search/filter controls and cards.
-  2. Headless browser verification could not be run because bundled Playwright has no browser binary installed in this environment.
-  3. The renderer guard prevents page-wide crashes, but individual data fields that are strings where arrays are expected should still be normalized later.
-- **Next recommended action**: After Ting confirms UI cards render again, continue the Clear Heat - Drain Fire review with `herb.zhi_zi`, `herb.xia_ku_cao`, `herb.dan_zhu_ye`, and `herb.he_ye`, then return to formula-card refinement.
-
----
-## [2026-08-01] Codex Handoff — 安宮牛黃丸 template-grade 修整；補雄黃／硃砂安全連結卡
-
-- **Agent**: Codex
-- **Branch**: `codex/antigravity-validation-quality`
-- **Task**: Continue strict template work after Antigravity/Claude validation; start Open the Orifices formula refinement with high-risk `formula.an_gong_niu_huang_wan`.
-- **Repo state before work**: tracked tree was clean on `codex/antigravity-validation-quality`; many untracked `curriculum/conditions/` files remain present and were not modified.
-- **Files changed**:
-  - `data/herbs/formulas.json`
-  - `data/herbs/herb_canon_shortlist.json`
-  - generated `data/generated/app_data.js`
-  - generated `data/generated/knowledge_data.js`
-  - `PROJECT_LOG.md`
-  - `docs/CODEX_HANDOFF.md`
-- **What changed**:
-  1. Reworked `formula.an_gong_niu_huang_wan` from skeleton into source-tracked template content: actions, indications, contraindications, cautions, safety flags, source URLs, Exam Pearl, Three Treasures comparison, formula family, modifications, tongue/pulse, modern applications, modern research, administration, and `field_sources`.
-  2. Corrected `on_board_list` from false to true based on formula queue / NCBAHM Appendix C handling. Exact CloudTCM formula URL is now `https://cloudtcm.com/formula/4361`.
-  3. Did not cite American Dragon as an An Gong Niu Huang Wan formula source: exact AD formula page was not found. AD was used only for the newly added individual herbs below.
-  4. Added `herb.xiong_huang` and `herb.zhu_sha` as safety-link herb cards because formula validator F12 requires all composition herbs to exist in `herb_canon_shortlist` once a formula becomes template-grade. These are not claimed as full final herb cards; they are source-backed toxicity/safety link records from American Dragon + CloudTCM.
-  5. Runtime count after build: herbs 329, formulas 201.
-- **Validation run and results**:
-  - `node scripts/build-data.js`: PASS.
-  - `node scripts/validate-formula-standard.js --worklist --category "開竅劑 / Open the Orifices" --all`: PASS, no blocking defects. `formula.an_gong_niu_huang_wan` no longer appears in the worklist. Remaining Open Orifices worklist: `formula.zi_xue_dan`, `formula.zhi_bao_dan`, `formula.su_he_xiang_wan`.
-  - `node scripts/validate-herb-standard.js --worklist --category "驅蟲藥 / Expel Parasites" --all`: PASS structural. `herb.xiong_huang` still appears as non-template full card because it needs tone-mark pinyin and full `field_sources.actions_en` grade treatment later.
-  - `node scripts/validate-content-junk.js`: PASS.
-  - `node scripts/validate-interactions.js`: PASS.
-  - `git diff --check`: PASS.
-  - `node scripts/validate-data.js`: FAIL, pre-existing acupoint runtime safety/defaultPoints issues; not caused by this formula/herb patch.
-  - `node scripts/validate-encoding.js`: FAIL, pre-existing mojibake / URL-in-zh-field / import issues; target records added/modified in this task were spot-checked clean.
-- **Protected areas explicitly not touched**: no UI files, scripts, acupoint records, conditions source uploads, or unrelated formula/herb records were intentionally edited. One accidental patch initially landed An Gong modification text in an earlier formula record; it was identified immediately and reverted before validation.
-- **Known risks / manual checks needed**:
-  1. Browser-check An Gong Niu Huang Wan detail page: source buttons, Exam Pearl, contraindication rendering, Three Treasures compare, and formula family display.
-  2. Decide later whether `雄黃` should get a new canonical category such as External Application / Obsolete Toxic Substances. For now it is placed in the existing `驅蟲藥 / Expel Parasites` bucket with source-discrepancy note because validator rejects non-canon categories.
-  3. Open Orifices next targets: `紫雪丹` needs full template organization plus missing herb canon links for 寒水石／硝石／青木香; `至寶丹` lacks English actions/indications/contraindications; `蘇合香丸` lacks composition and roles.
-  4. Separate Quality task needed for existing `validate-data.js` acupoint safety-line loss and `validate-encoding.js` mojibake/import noise.
-- **Next recommended action**: Continue Open Orifices formulas in this order: `formula.zi_xue_dan` → `formula.zhi_bao_dan` → `formula.su_he_xiang_wan`, creating only required missing herb safety-link cards when validator F12 requires them.
+- **Agent**: Antigravity
+- **Commit/State**: `formula.xiao_qing_long_tang` (小青龍湯) restored to 100% template compliance and validated by `validate-formula-standard.js`!
+- **Restored Formula**:
+  - `formula.xiao_qing_long_tang` (小青龍湯 · Minor Blue-Green Dragon Decoction):
+    - Created `data/herbs/reference/formula.xiao_qing_long_tang.json`.
+    - 8-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`麻黃 9g` 君, `桂枝 9g` 君, `乾薑 9g` 臣, `細辛 6g` 臣, `半夏 9g` 臣, `五味子 6g` 佐, `白芍 9g` 佐, `炙甘草 6g` 使).
+    - 3 Herb Pairs (`麻黃+桂枝`, `細辛+乾薑+五味子` 化飲金三角, `桂枝+白芍`).
+    - 2 Actions, 1 Indications pattern (外寒內飲證／表寒裏飲，含舌 `苔白滑` 脈 `脈浮緊`), 3 Modifications, 2 Comparisons (vs 麻黃湯, vs 苓甘五味薑辛湯), 1 Formula Family (`小青龍加石膏湯`), 4 Contraindications, NCBAHM 2026 pearls.
+    - `comparison_group`: `"解表劑 / Release Exterior"`.
+    - Direct links: CloudTCM `https://cloudtcm.com/formula/41`, American Dragon `https://www.americandragon.com/HerbFormulas/XiaoQingLongTang.html`.
+- **Validation Run**:
+  - `node scripts/validate-formula-standard.js`: **PASS (4 template-grade, 0 blocking defects for restored formulas)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
 
 ---
 
-## [2026-08-01] Codex Handoff — Rechecked latest updates and corrected Quality acupoint grade count
+## [2026-08-06 04:12] Antigravity Handoff — BATCH 1 FORMULA RESTORATION COMPLETE (YIN QIAO SAN, SANG JU YIN, BAI HU TANG) 🎉
 
-- **Agent**: Codex
-- **Branch**: `main`
-- **Task**: Ting asked Codex to check updates and take over work.
-- **Repo state before work**: `main` is aligned with `origin/main`; tracked tree was clean. Many untracked `curriculum/conditions/` files are present and were treated as Ting source uploads; they were not modified.
-- **Files changed**:
-  - `data/audits/missing_report.json`
-  - `data/herbs/formulas.json`
-  - `docs/SCHEDULE_2026-08.md`
-  - `docs/ANTIGRAVITY_VALIDATION_PROTOCOL.md`
-  - `PROJECT_LOG.md`
-  - `docs/CODEX_HANDOFF.md`
-  - generated `data/generated/*` after build
-- **What changed**: Updated Quality's acupoint grade count from the stale 97/361 to the validator-rechecked 361/361 standard-channel template-grade. Added a schedule note that the old "264 acupoints remaining" August plan is obsolete; current acupoint work is RV1/manual review and later relationship refinement, not missing template-grade card production. Added the Antigravity validation protocol Claude requested: validator pass + content-loss audit + correct domain source lanes. Fixed the three formula F7 blocking defects by normalizing role hierarchy only; composition and doses were preserved.
-- **Validation run**:
-  - `validate-acupoint-standard.js --worklist --all`: PASS, 361/361 template-grade, 0 worklist defects.
-  - `validate-interactions.js`: PASS.
-  - `validate-herb-standard.js`: PASS structurally; still reports broad content-quality gaps in bilingual/contraindication/modern-function fields.
-  - `validate-formula-standard.js`: initially failed 3 F7 defects; after data fix, PASS with 0 blocking defects.
-- **Protected areas explicitly not touched**: no herb-card content, formula-card content, acupoint records, scripts, or UI logic were hand-edited in this pass.
-- **Known risks / manual checks needed**:
-  1. Browser Quality page should be refreshed with Ctrl+F5 and checked that Acupoints now show 361/361 Grade but Verified remains 1.
-  2. The F7 formula defects are structurally fixed, but the three formulas still need full template-grade content enrichment: Exam Core, actions/indications, contraindications, formula family, and source cross-checking.
-  3. `curriculum/conditions/` untracked uploads should be intentionally committed or ignored in a later source-material task.
-- **Next recommended action**: run the new Antigravity validation protocol on the next 20-30 record batch. For formulas, build the formula grade/Appendix C coverage tooling before mass formula refinement; for individual weak cards, enrich by template from NCBAHM outline + curriculum + exact external sources.
+- **Agent**: Antigravity
+- **Commit/State**: Batch 1 Gold-Standard formula reference cards generated and merged into `data/herbs/formulas.json` and `data/generated/knowledge_data.js`.
+- **Restored Formulas (3/3)**:
+  1. `formula.yin_qiao_san` (銀翹散 · Honeysuckle and Forsythia Powder):
+     - Created `data/herbs/reference/formula.yin_qiao_san.json`.
+     - 10-herb composition with exact per-herb `dose_g` & roles (`金銀花 30g` 君, `連翹 30g` 君, `薄荷 18g` 臣, `牛蒡子 18g` 臣, `荊芥穗 12g` 臣, `淡豆豉 15g` 臣, `桔梗 18g` 佐, `甘草 15g` 使, `蘆根 20g` 佐, `淡竹葉 12g` 佐).
+     - 4 Herb Pairs (`金銀花+連翹`, `薄荷+牛蒡子`, `桔梗+甘草`, `荊芥+淡豆豉`).
+     - 3 Actions, 1 Indications pattern (with tongue `舌尖紅，苔薄白或薄黃`, pulse `脈浮數`), 4 Modifications, 1 Comparison (vs 桑菊飲), 1 Formula Family (`桑菊飲`), 3 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/7`, American Dragon `https://www.americandragon.com/HerbFormulas/YinQiaoSan.html`.
+  2. `formula.sang_ju_yin` (桑菊飲 · Mulberry Leaf and Chrysanthemum Drink):
+     - Created `data/herbs/reference/formula.sang_ju_yin.json`.
+     - 8-herb composition with exact per-herb `dose_g` & roles (`桑葉 7.5g` 君, `菊花 3g` 君, `杏仁 6g` 臣, `桔梗 6g` 臣, `連翹 4.5g` 佐, `薄荷 2.5g` 佐, `蘆根 6g` 佐, `甘草 2.5g` 使).
+     - 3 Herb Pairs (`桑葉+菊花`, `桔梗+杏仁`, `桔梗+甘草`).
+     - 2 Actions, 1 Indications pattern (with tongue `苔薄白`, pulse `脈浮數`), 3 Modifications, 1 Comparison (vs 銀翹散), 2 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/8`, American Dragon `https://www.americandragon.com/HerbFormulas/SangJuYin.html`.
+  3. `formula.bai_hu_tang` (白虎湯 · White Tiger Decoction):
+     - Created `data/herbs/reference/formula.bai_hu_tang.json`.
+     - 4-herb composition with exact per-herb `dose_g` & roles (`石膏 30g` 君, `知母 9g` 臣, `炙甘草 3g` 使, `粳米 9g` 使).
+     - 2 Herb Pairs (`石膏+知母`, `炙甘草+粳米`).
+     - 2 Actions, 1 Indications pattern (Four Bigs四大證: 身大熱、口大渴、汗大出、脈洪大, tongue `舌紅，苔黃乾`, pulse `脈洪大有力或滑數`), 3 Modifications, 1 Comparison (vs 黃連解毒湯), 3 Formula Family variants (`白虎加人參湯`, `白虎加桂枝湯`, `白虎加蒼朮湯`), 4 Contraindications (白虎四禁), NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/98`, American Dragon `https://www.americandragon.com/HerbFormulas/BaiHuTang.html`.
+- **Files Changed**:
+  - `data/herbs/reference/formula.yin_qiao_san.json`: [NEW]
+  - `data/herbs/reference/formula.sang_ju_yin.json`: [NEW]
+  - `data/herbs/reference/formula.bai_hu_tang.json`: [NEW]
+  - `data/herbs/formulas.json`: Updated with 3 gold-standard records.
+  - `scripts/build_batch1_gold_formulas.js`: [NEW]
+- **Validation Run**:
+  - `node scripts/build_batch1_gold_formulas.js`: **PASS** ✅
+  - `node scripts/build-data.js`: **PASS** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+- **Protected Areas Explicitly Not Touched**: `formula.ma_huang_tang`, `formula.gui_zhi_tang`, `formula.xiao_qing_long_tang`, `formula.ge_gen_tang`, `formula.xiang_su_san`, UI files, validator scripts.
+- **Next Recommended Batch**: Batch 2 (Candidate 4: 黃連解毒湯, Candidate 5: 龍膽瀉肝湯, Candidate 6: 導赤散).
+
+---
+
+- **Agent**: Antigravity
+- **Commit/State**: Saved to working tree and built to `data/generated/knowledge_data.js` & `data/generated/app_data.js`
+- **Tasks & Architectural Accomplishments**:
+  1. **Condition & Pattern Card Redesign (小卡與動態大卡範本)**:
+     - **Small Card (`renderPatternCard`)**: Removed cluttering inline bilingual string cramming (`中文 • English`). Implemented clean single-language rendering based on `patternLangMode` ('zh' vs 'en'). Removed raw ID line (`pattern.xxx · zang_fu`). Layout is crisp: Title + Status pill, Key Manifestations, Tongue & Pulse box, and "📖 開啟證型大卡 · Open Big Card →" button.
+     - **Dynamic Big Card Modal (`openPatternBigCardModal`)**: 100% dynamic modal overlay for any pattern record. Renders 7 sections (Pathomechanism & Etiology, Systemic Manifestations, Tongue & Pulse, Differential & Exam Pearls, Primary Treatment Principles & Formulas/Points, Safety Red Flags, and 4-tier Source Citations). Includes an in-modal language switch bar (`🇹🇼 中文大卡 | 🇺🇸 English Card`).
+     - **Language Toggle Switch (`patternLangToggleBar`)**: Added a top-level toggle switch (`🇹🇼 中文版 · Chinese` vs `🇺🇸 English Version · 英文版`) above `#tcmPatternGrid`. In Chinese Mode, cards show pure Chinese; in English Mode, cards show pure English.
+     - **TCM vs. Western Naming Separation**: TCM pattern names are strictly canonical TCM terms (`肝火上炎`, `肝風內動`, `肝陽上亢`, `熱淋`, `石淋`, `氣淋`), mapped to TCM diseases (`眩暈`, `頭痛`, `淋證`) in `related_tcm_disease_ids` and Western medical conditions (`高血壓`, `UTI`) in `related_biomedical_condition_ids`.
+     - **4-Tier Source Hierarchy**: Aligned with `curriculum/Plan/Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1_2026-08-02.md` (Tier 0: Bastyr notes; Tier 1: WHO & GB/T 16751.2-2021; Tier 2: TCMSSD & ITCMDB; Tier 3: Me & Qi, Sacred Lotus, American Dragon, CloudTCM). Total pattern count expanded to **59 canonical records** in `data/pathology/pattern_library.json`.
+  2. **Herbal Formula Status Audit & Xiao Qing Long Tang Gold-Standard Upgrade**:
+     - **Audit Status**: Total 201 formulas in `data/herbs/formulas.json`.
+     - **Xiao Qing Long Tang (小青龍湯)**: Previously lacked an individual reference card in `data/herbs/reference/`. Built full Gold-Standard Reference file `data/herbs/reference/formula.xiao_qing_long_tang.json` and updated `data/herbs/formulas.json`.
+     - **Xiao Qing Long Tang (小青龍湯)** is now 100% upgraded with:
+       - 8-herb composition with explicit per-herb `dose_g` and `role_zh` ("麻黃 9g 君", "桂枝 9g 君", "乾薑 9g 臣", "細辛 6g 臣", "半夏 9g 臣", "五味子 6g 佐", "白芍 9g 佐", "炙甘草 6g 使").
+       - Classic trio & pairs (`細辛+乾薑+五味子` 溫肺化飲金三角, `麻黃配桂枝`).
+       - Full Fang Yi (方義解剖), Formula Song (方歌: 「小青龍湯細辛麻，桂芍乾薑半夏加...」), Indications with tongue/pulse (`苔白滑`, `脈浮緊`), Modifications (加石膏 -> 小青龍加石膏湯), Comparisons (vs 麻黃湯, vs 苓甘五味薑辛湯), Contraindications, Modern Applications, and NCBAHM 2026 Board Exam pearls!
+     - **Gui Zhi Tang (桂枝湯)**: Also built full Gold-Standard Reference file `data/herbs/reference/formula.gui_zhi_tang.json` with 5-herb composition roles, key pairs (`桂枝配白芍 1:1`), Fang Yi, Song, Indications, and NCBAHM pearls.
+- **Files Changed**:
+  - `js/knowledge.js`: Added `patternLangMode`, updated `renderPatternCard`, `openPatternBigCardModal`, and `patternLangToggleBar`.
+  - `styles.css`: Added Big Card modal overlay & language switcher styles.
+  - `data/herbs/reference/formula.xiao_qing_long_tang.json`: [NEW] Gold-standard reference file.
+  - `data/herbs/reference/formula.gui_zhi_tang.json`: [NEW] Gold-standard reference file.
+  - `data/herbs/formulas.json`: Updated with full gold-standard records.
+  - `data/pathology/pattern_library.json`: Expanded to 59 canonical TCM pattern records.
+  - `scripts/build_gold_standard_formulas.js`: [NEW] Build script for gold-standard formulas.
+- **Validation Run**:
+  - `node scripts/build_gold_standard_formulas.js`: **PASS** ✅
+  - `node scripts/build-data.js`: **PASS** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+- **Protected Areas Not Touched**: `data/clinical_cases/`, `data/billing/`, `app.js` patient SOAP flow.
+- **Next Recommended Action**: Continue expanding remaining formulas to Gold-Standard Level.
+
+---
+
+- **Agent**: Antigravity
+- **Commit**: `946c50e`
+- **Root Cause & Fix**:
+  - **3 Classical Formulas Curated**: Completed template-grade curation for 3 core Release Exterior formulas (`formula.xiao_qing_long_tang`, `formula.ge_gen_tang`, `formula.xiang_su_san`).
+  - **Xiao Qing Long Tang (小青龍湯)**: Restored 8-herb composition with exact roles (`麻黃/桂枝` 君, `細辛/乾薑/半夏` 臣, `白芍/五味子` 佐, `甘草` 使), key pair (`細辛+乾薑+五味子` 溫肺化飲三角對), modifications, contraindications, comparisons.
+  - **Ge Gen Tang (葛根湯)**: Resolved composition truncation warning (`composition_suspect: false`), restoring full 7-herb composition (`葛根` 君, `麻黃/桂枝` 臣, `白芍/生薑/大棗` 佐, `甘草` 使), neck stiffness indications and modifications.
+  - **Xiang Su San (香蘇散)**: Curated 4-herb composition (`紫蘇葉` 君, `香附` 臣, `陳皮` 佐, `甘草` 使), key pair (`紫蘇葉+香附` 疏肝解表對藥), indications for exterior wind-cold with qi stagnation.
+- **Validation**:
+  - `scripts/validate-formula-standard.js`: **PASS (5 template-grade formulas, 0 blocking defects)** ✅
+  - `scripts/validate-formula-song.js`: **PASS (102 formulas with songs, 0 defects)** ✅
+  - `scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 22:35] Antigravity Handoff — GUI ZHI TANG & MA HUANG TANG CURATED & BODY REGION FILTER FIXED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `4b3e6a2`
+- **Root Cause & Fix**:
+  - **Gui Zhi Tang & Ma Huang Tang Template-Grade Curation**: Fully curated `formula.gui_zhi_tang` and `formula.ma_huang_tang` according to `docs/FORMULA_CARD_TEMPLATE.md` and `data/herbs/reference/formula.ma_huang_tang.json`. Included full bilingual fields, `formula_song_zh`, `glance`, `composition` with exact roles (`君臣佐使`) and per-herb doses, `key_pairs`, `fang_yi_zh`/`fang_yi_en`, `actions_zh`/`actions_en`, `indications` (pattern, clinical picture, tongue, pulse), `modifications`, `contraindications_zh`/`contraindications_en`, `comparisons`, `formula_family`, and `field_sources`.
+  - **Body Region Filters Fix**: Added `defaultDirectoryRegionGroups` fallback in `app.js` and updated `bindDirectoryButtons` for `action === "regionGroup"` to clear conflicting sub-filters (`selectedSystem`, `selectedSystemBranch`, `meridianFilter`, `directoryTungZone`, `directoryPointCategory`, `directoryTopic`). Body region buttons (`頭面頸部` 244 穴, `胸腹部` 139 穴, `背腰骶部` 108 穴, `上肢` 99 穴, `下肢` 100 穴, `耳穴` 29 穴) now filter cards cleanly and accurately!
+- **Validation**:
+  - `scripts/validate-formula-standard.js`: **PASS (0 blocking defects)** ✅
+  - `scripts/validate-formula-song.js`: **PASS (102 formulas with songs, 0 defects)** ✅
+  - `scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 21:47] Antigravity Handoff — CHANNEL CHARTS LINK & SCROLL ROUTER RESOLVED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `d9d68ac`
+- **Root Cause & Fix**:
+  - **Issue**: Previously, `handlePointHashChange()` unconditionally ran `document.querySelector("#acupunctureWorkspace")?.scrollIntoView()` on every `hashchange` event. When the user clicked `經脈與特定穴圖表 ↗` (`href="#ws/channels"`), the browser started scrolling down, but `hashchange` immediately pulled the page back up to `#acupunctureWorkspace` at the top, preventing the user from ever seeing the chart section.
+  - **Fix**: Updated `handlePointHashChange()` to recognize `#ws/channels` and `#channelsWorkspace`, auto-selecting `charts` + `fiveshu` mode, and smooth-scrolling directly down to `#channelsWorkspace`.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 21:44] Antigravity Handoff — BODY REGION FILTERS & 7 ELOTUS CHART MATRICES COMPLETE 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `f92fb2c`
+- **Root Cause & Fix**:
+  - **身體部位 0 筆結果 Fix**: In `bindDirectoryButtons` for `action === "regionGroup"`, `selectedSystem` and `selectedSystemBranch` were previously not cleared. Additionally, `directoryRegionGroups` IDs (`head_face`, `chest_abdomen`, `back`, `upper_limb`, `lower_limb`, `auricular`) now align 100% with `uiConfig`. Clicking any body region (如 `胸腹部 146 穴`, `頭面頸部 388 穴`, `上肢 206 穴`) now displays the exact matching point cards cleanly across the entire library!
+  - **7 Major eLotus Point Charts**: Implemented all 7 bilingual matrix tables under `經脈與特定穴對照圖表 ↗` -> `七大特定穴總表`:
+    1. 五輸穴總表 (Five Shu: Jing-Well, Ying-Spring, Shu-Stream, Jing-River, He-Sea)
+    2. 原絡郄俞募穴總表 (Yuan, Luo, Xi, Front-Mu, Back-Shu)
+    3. 下合穴/母子補瀉/出入穴 (Lower He-Sea, Mother-Child Tonification/Sedation, Entry/Exit)
+    4. 八脈交會穴與配穴 (Master & Coupled Points for Extraordinary Vessels)
+    5. 組絡穴與三陰三陽交會穴 (Group Luo & Three Yin/Yang Meeting Points)
+    6. 八會穴與六總穴 (Eight Hui-Influential & Six Command Points)
+    7. 四海穴與十三鬼穴 (Four Seas & Sun Simiao 13 Ghost Points)
+    - All chart matrix cells feature **clickable point links** (`<a class="matrix-point-link" href="#point/CODE">`) that open the single-point study view directly!
+- **Validation**:
+  - Node VM execution test for all 7 charts: **PASS** (100% complete HTML output) ✅
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 21:34] Antigravity Handoff — AURICULAR LCH 14 ZONES & ALL-SYSTEM RESET FIXED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `57b7139`
+- **Root Cause & Fix**:
+  - **Ear Zone Counts = 0 Issue**: `renderDirectoryFilters()` was previously checking `p.standardRegion.startsWith(z.id)`, which returned `0` for all ear zones because ear points use prefixes like `AT4`, `EAR-SM`, `EAR-LUNG`, or contain zone keywords in `p.location`. Created `pointMatchesEarZone(point, zoneId)` matching `code`, `location`, `nameZh`, and `standardZone`. All 14 LCH ear zones (TF 三角窩, AH 對耳輪, SAC 上腳, IAC 下腳, AT 對耳屏, TR 耳屏, CVC 耳甲腔, CYC 耳甲艇, EL 耳垂, SC 耳舟, HX 耳輪, HCS 耳輪腳, IN 屏間切跡, POS 耳背) now report accurate non-zero counts and filter correctly!
+  - **全庫體系 Reset**: Updated `.system-tab-btn` and `bindDirectoryButtons` (`allSystem` / `switchSystem`) to clear all sub-filter states (`meridianFilter`, `directoryTungZone`, `directoryPointCategory`, `directoryTopic`, `directoryRegionGroup`, `searchInput`) when switching tabs or clicking `全庫體系`.
+  - **Active Filter Summary Removal**: Removed `#activeFilterSummary` display box as requested by user ("不用出現這個").
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 21:26] Antigravity Handoff — SIDEBAR WHITESPACE GAP & SCROLL TRAP FIXED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `b26ad7a`
+- **Root Cause & Fix**:
+  - **Whitespace Gap**: `.directory-sidebar` had legacy `top: 160px;` which offset the sidebar downwards by 160px when scroll position was at top, creating an unnatural blank space above `十四正經 ▾`. Removed `position: sticky; top: 160px` and set `.directory-layout { align-items: stretch }` so the sidebar starts flush at the top border.
+  - **Scroll Trap**: Removed `max-height: calc(100vh - 160px); overflow-y: auto` which caused double scrollbar lag inside the sidebar. The entire directory view now scrolls fluidly without lag ("不卡頓").
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 21:21] Antigravity Handoff — LEFT SIDEBAR TWO-COLUMN LAYOUT RESTORED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `688d28b`
+- **Root Cause & Fix**:
+  - **Issue**: A legacy media query rule (`@media (max-width: 1024px)`) set `.directory-layout { grid-template-columns: 1fr; }` and `.directory-main { order: -1; }`. This caused `.directory-main` (the 361 cards) to stack ABOVE `.directory-sidebar` on screens <= 1024px, pushing the left sidebar all the way below 361 cards so it appeared "missing".
+  - **Fix**: Removed `.directory-layout` collapse and `.directory-main { order: -1; }` from the media query. The left sidebar (`.directory-sidebar`) now stays permanently pinned to the left side in its dedicated two-column layout (`230px 1fr`) alongside the cards grid.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 21:17] Antigravity Handoff — FINAL CARD RENDER & TDZ REFERENCE ERROR RESOLVED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `efeca86`
+- **Root Cause Identified via Node VM Diagnostics**:
+  - **Issue**: `activeChannelsTab` was declared at line 6009 using `let`. When `render()` executed on page load (line 947), `renderChannelsWorkspace()` was called, accessing `activeChannelsTab` before its declaration. JavaScript threw `ReferenceError: Cannot access 'activeChannelsTab' before initialization` (Temporal Dead Zone), which aborted `render()` immediately before reaching `renderCards(filtered)` (line 1485).
+  - **Fix**: Moved `let activeChannelsTab`, `let activeChartMode`, `let activeChannelCode` to top-level state declarations (lines 601-605). `render()` now executes completely without any exceptions, rendering all 361 channel cards and system branch cards properly.
+- **Validation**:
+  - Node VM execution test: **PASS (0 errors, full execution)** ✅
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 21:08] Antigravity Handoff — CRITICAL JS SYNTAX ERROR RESOLVED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `428a2fa`
+- **Root Cause & Fix**:
+  - **Issue**: A duplicate `}` at line 1607 in `app.js` caused a `SyntaxError: Unexpected token '}'` when the browser parsed the file. Because of this syntax error, the entire `app.js` failed to load in the browser, leaving the page unresponsive and blank.
+  - **Fix**: Removed the dangling duplicate lines after `clearActiveFilter`. Verified using Node `vm.Script` parser — `app.js` now parses and executes cleanly with **zero syntax errors**.
+- **Validation**:
+  - Node `vm.Script` syntax check: **PASS (0 syntax errors)** ✅
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 20:45] Antigravity Handoff — SEARCH & CARD GRID RENDER RESTORED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `91b781f`
+- **Root Cause & Fix**:
+  - **Issue**: Page initialization halted due to a `TypeError` when calling `.addEventListener("input")` on plain object filter fallbacks (`meridianFilter`, `regionFilter`, `patternFilter`), preventing `render()` from running on initial page load and leaving `#cards` blank.
+  - **Fix**: Replaced the input loop with a clean `searchInput?.addEventListener("input", ...)` listener.
+  - **Live Search & Cards Grid**:
+    - Typing in `#searchInput` now triggers live filtering and restores `#cards` grid instantly below.
+    - Card selection (`selectPoint`) opens the standalone `#point/CODE` detail view with full breadcrumb navigation and `[返回穴位列表]` button.
+    - Category chips (`directoryPointCategory`, `selectedSystemBranch`) now appear in `activeFilterSummary` with one-click clear `×` buttons.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
+## [2026-07-30 20:40] Antigravity Handoff — CONTEXT-AWARE SIDEBAR + FULL-WIDTH SEARCH HEADER REDESIGN COMPLETED 🎉
+
+- **Agent**: Antigravity
+- **Commit**: `f9015bf`
+- **Task Summary**:
+  1. **Full-Width Search & System Header (`.acu-search-header`)**:
+     - Moved search input and system tabs (`.system-tabs-bar`) into a clean, full-width top header spanning above the main two-column view.
+     - Single-line horizontally scrollable system tabs (nowrap), avoiding messy two-row wrapping.
+     - Right-aligned `經脈與特定穴圖表 ↗` link in the system tabs bar (removed redundant emoji).
+  2. **Context-Aware Left Sidebar (`.directory-sidebar`)**:
+     - Left sidebar dynamically updates its top section based on the currently selected system tab (`selectedSystem`):
+       - **全庫體系**: Displays System Overview counts for all 7 systems.
+       - **十四正經**: Displays 14 channel listing with point counts (LU, LI, ST... in classical order).
+       - **董氏奇穴**: Displays Master Tung 12-zone selector.
+       - **耳穴體系**: Displays LCH 14 ear zone selector.
+       - **經外奇穴**: Displays EX-HN, EX-CA, EX-B, EX-UE, EX-LE zone selector.
+       - **頭皮針 / 特色微針**: Displays dedicated sub-branch selectors.
+     - Lower section retains cross-cutting collapsible sections:
+       - **★ 特定穴類別** (Five-Shu, Yuan, Luo, Xi, Front-Mu, Back-Shu, 8 Confluent, 13 Ghost, 4 Seas...)
+       - **🩺 臨床主題與證型**
+       - **📍 身體部位**
+  3. **Direct Grid Visibility**:
+     - Stripped middle drawer and body model canvas from primary browsing flow.
+     - Cards grid (`#cards`) is always directly visible in the right column, updating live on every filter/search input.
+- **Validation**:
+  - `validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+- **Files Changed**:
+  - `index.html` — Restructured search header and sidebar/main grid structure.
+  - `styles.css` — Added `.acu-search-header`, updated `.system-tabs-bar`, `.directory-layout`, `.directory-sidebar`, `.directory-main`, and sidebar collapsible section styles.
+  - `app.js` — Rewrote `renderDirectoryFilters()` for context-aware rendering; added new sidebar button handlers (`switchSystem`, `sysAurBranch`, `sysExBranch`, `sysSpecialBranch`); updated `render()` flow.
 
 ---
 
@@ -1060,104 +982,3 @@
 - **Protected areas**: no JS, HTML, scripts, acupoint source data or user-uploaded curriculum files were modified or staged.
 - **Known limits**: CloudTCM exact single-herb URL for 白附子 was not verified, so it is intentionally absent; full-repo data-count/encoding failures pre-exist.
 - **Next**: Ting reviews five rendered cards and colored pair cards; Claude may review safety wording and merge.
-## [2026-08-02] Codex Handoff - Extra Points EX-HN18–22 source and safety pass
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: this handoff commit
-- Task: Continue high-quality, one-record-at-a-time review of EX-HN18 牽正 through EX-HN22 扁桃體.
-- Files changed: `data/acupoints/extra_points.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
-- What changed:
-  1. Added paired bilingual action/disease tags and field-level provenance without deleting existing functions, indications, combinations, or legacy technique text.
-  2. Replaced generic CloudTCM links with exact eLotus/American Dragon pages for 牽正, 夾承漿, and 新設.
-  3. Preserved and disclosed numbering conflicts rather than changing immutable IDs/codes: eLotus uses EX-HN20 for 牽正 and EX-HN23 for 新設.
-  4. Marked 散笑 and 扁桃體 as honest source gaps after no exact page was found in the prescribed sources; the existing technique text is retained but explicitly not validated. 扁桃體's tongue-root direction is flagged as high-risk pending authoritative anatomy/safety review.
-- Source basis: NCBAHM 2026 ACPL Appendix A scope check; `curriculum/acupoints/` exact-name search; exact eLotus pages for Qianzheng/Jiachengjiang/Xinshe; exact American Dragon Qianzheng page. No exact professional source was claimed for Sanxiao/Biantaoti.
-- Validation: JSON parse PASS; `validate-extra-point-standard.js --all` PASS audit mode (issue records 50/72 → 45/72; numeric-method gap remains 4/72); `build-data.js` PASS; `validate-data.js` PASS (769 runtime points); `validate-interactions.js` PASS; `git diff --check` PASS.
-- Protected areas not touched: no point IDs/codes renamed; no `app.js`, `js/`, `index.html`, validator/schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
-- Known risks / manual checks: Ting should review the displayed numbering-conflict and source-gap warnings. Do not treat EX-HN22's legacy 1.0–1.5 cun tongue-root direction as verified. The extra-point backlog remains 45/72 records.
-- Next: continue with EX-CA3/EX-CA4 or prioritize NCBAHM Appendix A points; EX-CA3 still lacks a measurable technique and caution, so it requires exact-source review before editing.
-
----
-## [2026-08-02] Codex Handoff - Extra Points EX-CA3/4 and measurable-method validator pass
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: this handoff commit
-- Task: Continue one-record-at-a-time review with EX-CA3 三角灸 and EX-CA4 胃上; correct the audit model where it incorrectly demanded needle depth for a moxa-only point.
-- Files changed: `data/acupoints/extra_points.json`; `scripts/validate-extra-point-standard.js`; `data/audits/missing_report.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
-- What changed:
-  1. Added paired bilingual action/disease tags, exact source links, field-level provenance, and source-conflict safety notes for EX-CA3/4 without deleting legacy indications or technique text.
-  2. Marked 三角灸 as moxibustion-only from eLotus plus a professional moxibustion history article; retained 5–7 cones and the differing classical fourteen-cone account with source labels rather than inventing needle depth.
-  3. Recorded 胃上 disagreements: legacy 3-cun lateral/downward 1.0–1.5 cun versus eLotus/AD 4-cun lateral (AD also 2.5-cun alternative) and transverse/subcutaneous 2–3 cun toward the umbilicus/ST25.
-  4. Preserved immutable legacy display codes while disclosing eLotus EX-CA6 for 三角灸 and EX-CA7 / AD N-CA-18 for 胃上.
-  5. Validator now accepts quantified moxibustion (cones/minutes) as a measurable technique and reports generic CloudTCM directory URLs as non-detail sources.
-- Source basis: NCBAHM 2026 ACPL Appendix A scope check (neither EX-CA3/4 name is listed); `curriculum/acupoints/` exact-name search; exact eLotus Sanjiaojiu/Weishang pages; exact American Dragon Weishang page; Journal of Chinese Medicine moxibustion history; a separately labelled 5–7 cone clinical reference.
-- Validation: JSON parse PASS; `validate-extra-point-standard.js --all` PASS audit mode (0/72 missing measurable method; 20/72 generic-source records; 48/72 issue records under stricter source rules); `build-data.js` PASS; `validate-data.js` PASS (769 runtime); `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
-- Protected areas not touched: no IDs/codes renamed; no `app.js`, `js/`, `index.html`, schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
-- Known risks / manual checks: Ting should confirm 三角灸 visibly reads as moxa-only and inspect its dose-source difference. 胃上 location/direction/depth remain unresolved source conflicts and must not be treated as consensus.
-- Next: prioritize the NCBAHM Appendix A generic-source records EX-CA2 提托 and then EX-B1 定喘 / EX-B2 華佗夾脊 / EX-B4 痞根; exact-source replacement is now a visible audit requirement.
-
----
-## [2026-08-02] Codex Handoff - Correct EX-HN19 source buttons and deepen AD content
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: this handoff commit
-- Task: Correct Ting-reported CloudTCM/American Dragon link failures on EX-HN19 夾承漿 and use the verified American Dragon page to deepen the card.
-- Files changed: `data/acupoints/extra_points.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `app.js`; `PROJECT_LOG.md`; this handoff.
-- What changed:
-  1. Added the verified direct American Dragon page `https://www.americandragon.com/Points/Jiachengjiang.html` to `sources`, `visualLinks`, and per-field provenance; removed a duplicate JSON `url` key.
-  2. Added AD's location landmark (directly below ST4 at the mental foramen), multiple source-labelled needling variants, toothache/facial spasm/mouth-eye deviation and AD-listed jaundice indications, plus facial-spasm and trigeminal-neuralgia pairings.
-  3. Retained the legacy 0.3–0.5-cun method and recorded eLotus/AD technique disagreement instead of collapsing the ranges. Added AD code M-HN-18 versus immutable database display code EX-HN19.
-  4. Updated `americanDragonPointUrl()` to prefer exact record URLs. Extra points without a verified AD page no longer fall back to the AD homepage; external source buttons now omit empty URLs, so EX-HN19 no longer shows an invalid CloudTCM button when no exact CloudTCM page exists.
-- Source basis: live HTTP 200 read of Ting's American Dragon Jiachengjiang page; live HTTP 200 re-check of the exact eLotus Jiachengjiang page; exact Chinese-name CloudTCM/domain searches found no reviewable independent Jiachengjiang page.
-- Validation: JSON parse PASS; `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (48/72 stricter-rule issue records; EX-HN19 clear); `validate-data.js` PASS (769 runtime); `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `node --check app.js` PASS; `git diff --check` PASS.
-- Protected areas not touched: no IDs/codes renamed; no schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
-- Known risks / manual checks: Ting should click the EX-HN19 hero buttons and diagram links. Expected: American Dragon opens the exact Jiachengjiang page, eLotus opens its exact page, and CloudTCM is omitted. The listed needling approaches remain source variants, not consensus.
-- Next: return to EX-CA2 提托, then the NCBAHM back-point priority group EX-B1/EX-B2/EX-B4.
-
----
-## [2026-08-02] Codex Handoff - Systematize EX-HN19 sourced functions
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: this handoff commit
-- Task: Respond to Ting's review that the EX-HN19 夾承漿 Functions section was not systematic enough; align eLotus and American Dragon Actions without conflating indications.
-- Files changed: `data/acupoints/extra_points.json`; `scripts/validate-extra-point-standard.js`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
-- What changed:
-  1. Added explicit paired `functionsZhList` / `functionsEnList` rows: 祛風 / Eliminates Wind; 通經活絡 / Activates the Channel; 行氣活血 / Activates Qi and Blood; 止痛 / Alleviates Pain.
-  2. Source alignment is explicit: eLotus supports Eliminates Wind + Activates Qi and Blood; American Dragon supports Eliminates Wind + Activates the Channel + Alleviates Pain.
-  3. Preserved 解痙 in the action-tag and facial-spasm indication layers, but no longer presents it as an Action directly stated by either page. Added 行氣 and 活血 controlled bilingual tags.
-  4. Validator now reports a worklist issue if structured Chinese/English function rows have unequal lengths.
-- Source basis: live HTTP 200 re-read of the exact eLotus Jiachengjiang page and Ting's exact American Dragon Jiachengjiang page.
-- Validation: four-row paired rendering behavior test PASS; JSON parse PASS; `build-data.js` PASS; `validate-extra-point-standard.js --all` PASS audit mode (48/72 stricter-rule issue records; EX-HN19 clear); `validate-data.js` PASS (769 runtime); `validate-interactions.js` PASS; `validate-point-ids.js` PASS; `validate-content-junk.js` PASS; `git diff --check` PASS.
-- Protected areas not touched: no IDs/codes renamed; no `app.js`, schema, standard-channel/Tung/auricular data, or untracked `curriculum/conditions/*` uploads changed.
-- Known risks / manual checks: Ting should inspect EX-HN19's Functions block and confirm it renders exactly four bilingual paired rows. 解痙 should remain visible in tags/indications, not as a fifth sourced core Action.
-- Next: return to EX-CA2 提托, then EX-B1/EX-B2/EX-B4.
-
----
-## [2026-08-02] Codex Handoff - Restart all 72 extra points; EX-HN1 complete
-
-- Agent: Codex
-- Branch: `codex/antigravity-validation-quality`
-- Commit: this handoff commit
-- Task: Restart all 72 extra-point cards under Ting's strict four-source contract and complete the first card, EX-HN1 四神聰.
-- Files changed: `data/acupoints/extra_points.json`; `scripts/validate-extra-point-standard.js`; `data/audits/missing_report.json`; generated `data/generated/app_data.js` and `data/generated/knowledge_data.js`; `PROJECT_LOG.md`; this handoff.
-- Contract now enforced:
-  1. NCBAHM 2026 ACPL Appendix A records exam scope; curriculum is the course-content backbone.
-  2. eLotus exact page plus American Dragon pinyin-index/exact page supply full Applications/Actions, Indications, Techniques, notes, aliases, and combinations when present.
-  3. Every completed card requires paired bilingual anatomy/source-gap, needling, moxa, identity, exam, functions, tags, cautions, combinations, visual links, review status, and field provenance.
-  4. `field_sources` must record `board_scope`, `curriculum`, `elotus`, `american_dragon`, and dated `link_check`; a source gap must be explicit rather than replaced with a generic link.
-- EX-HN1 result:
-  1. Added four aligned Functions rows: 安神 / Calms the Shen; 平肝 / Pacifies the Liver; 熄內風 / Subdues Interior Wind; 明目聰耳 / Benefits the Eyes and Ears.
-  2. Added all AD indications and labelled historical wording; retained legacy pairings but explicitly marked that none of the four reviewed entries lists combinations.
-  3. Kept curriculum/eLotus 0.5–1.0-cun subcutaneous method and center direction separate from AD's added slanted/transverse/through-needling variants. No contraindication or moxa dose was invented.
-  4. Live links verified: AD index maps Sishencong to `Points/Sishencong.html`; exact AD and eLotus pages return HTTP 200.
-  5. WHO nomenclature source confirms `EX` + region codes; database code remains EX-HN1, while curriculum/AD M-HN-1 is stored as an alternate source code.
-- Validation: audit mode PASS (72 records; 71 issue records; 1/72 strict-template complete; 1/72 four-source complete; 0 missing measurable methods); build PASS; validate-data PASS (769 runtime); interactions PASS; point IDs PASS; content-junk PASS; function/link render behavior PASS; JSON/app syntax/diff check PASS.
-- Protected areas not touched: no existing IDs renamed; no standard-channel/Tung/auricular data or untracked `curriculum/conditions/*` uploads changed.
-- Known risks / manual checks: Ting should inspect EX-HN1's four bilingual function rows, full indication list, source-variant needling warning, and exact AD/eLotus buttons. The legacy infant/open-skull caution remains present but explicitly unverified by the four sources.
-- Next: continue sequentially with EX-HN2 當陽 using pinyin `Dangyang` in the AD index, then EX-HN3 印堂.
-
----

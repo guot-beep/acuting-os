@@ -1,0 +1,286 @@
+{
+  "_reference_note": "REFERENCE IMPLEMENTATION for formula.huang_lian_jie_du_tang matching template.",
+  "id": "formula.huang_lian_jie_du_tang",
+  "name_zh": "黃連解毒湯",
+  "name_en": "Huang Lian Jie Du Tang",
+  "name_en_translated": "Coptis Decoction to Relieve Toxicity",
+  "pinyin": "Huang Lian Jie Du Tang",
+  "pinyin_toned": "Huáng Lián Jiě Dú Tāng",
+  "source_text_zh": "《外台秘要》引崔氏方",
+  "source_text_en": "Wai Tai Mi Yao (Arcane Essentials from the Imperial Library)",
+  "category_zh": "清熱劑－清熱解毒",
+  "category_en": "Formulas that Clear Heat - Clear Heat & Relieve Toxicity",
+  "comparison_group": "清熱劑 / Clear Heat",
+  "glance": {
+    "category_banner_zh": "瀉火解毒",
+    "category_banner_en": "DRAIN FIRE RELIEVE TOXICITY",
+    "plain_summary_zh": "三焦實熱火毒熾盛證之代表方。大熱煩躁、口燥咽乾、錯語不眠、吐血衄血、發斑——大苦大寒直折火毒。",
+    "plain_summary_en": "Premier formula for severe blazing toxic fire in all three burners. Features high fever, delirium, insomnia, and bleeding.",
+    "plain_indications_zh": [
+      "三焦火毒熾盛",
+      "大熱煩躁",
+      "口燥咽乾",
+      "錯語不眠",
+      "吐血衄血"
+    ],
+    "plain_indications_en": [
+      "blazing heat toxicity",
+      "high fever restlessness",
+      "dry mouth throat",
+      "delirium insomnia",
+      "bleeding"
+    ],
+    "herb_count": 4
+  },
+  "composition": [
+    {
+      "herb_id": "herb.huang_lian",
+      "herb_zh": "黃連",
+      "name_zh": "黃連",
+      "herb_en": "Coptis Rhizome",
+      "name_en": "Coptis Rhizome",
+      "pinyin": "Huang Lian",
+      "pinyin_toned": "Huáng Lián",
+      "dose_g": "9",
+      "decoction_reference_g": "9g",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "大苦大寒，瀉心火，兼瀉上焦實熱火毒——重用為君",
+      "role_reason_en": "Bitter and very cold; drains Heart fire and purges upper burner heat toxicity",
+      "in_formula_zh": "大苦大寒，瀉心火，兼瀉上焦實熱火毒——重用為君"
+    },
+    {
+      "herb_id": "herb.huang_qin",
+      "herb_zh": "黃芩",
+      "name_zh": "黃芩",
+      "herb_en": "Baikal Skullcap Root",
+      "name_en": "Baikal Skullcap Root",
+      "pinyin": "Huang Qin",
+      "pinyin_toned": "Huáng Qín",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "苦寒清熱燥濕，專瀉中上焦肺胃火毒",
+      "role_reason_en": "Bitter and cold; clears heat, dries dampness, drains Lung and Stomach fire in upper/middle burners",
+      "in_formula_zh": "苦寒清熱燥濕，專瀉中上焦肺胃火毒"
+    },
+    {
+      "herb_id": "herb.huang_bai",
+      "herb_zh": "黃柏",
+      "name_zh": "黃柏",
+      "herb_en": "Phellodendron Bark",
+      "name_en": "Phellodendron Bark",
+      "pinyin": "Huang Bai",
+      "pinyin_toned": "Huáng Bǎi",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "苦寒瀉下焦相火與濕熱火毒",
+      "role_reason_en": "Bitter and cold; drains lower burner minister fire and damp-heat toxicity",
+      "in_formula_zh": "苦寒瀉下焦相火與濕熱火毒"
+    },
+    {
+      "herb_id": "herb.zhi_zi",
+      "herb_zh": "梔子",
+      "name_zh": "梔子",
+      "herb_en": "Gardenia Fruit",
+      "name_en": "Gardenia Fruit",
+      "pinyin": "Zhi Zi",
+      "pinyin_toned": "Zhī Zǐ",
+      "dose_g": "9",
+      "decoction_reference_g": "9g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "苦寒清熱瀉火，通瀉三焦火邪，導熱下行從小便出",
+      "role_reason_en": "Bitter and cold; clears heat, drains fire from all three burners and directs heat downward via urine",
+      "in_formula_zh": "苦寒清熱瀉火，通瀉三焦火邪，導熱下行從小便出"
+    }
+  ],
+  "key_pairs": [
+    "pair.huang_lian__huang_qin",
+    "pair.huang_qin__huang_bai",
+    "pair.huang_lian__zhi_zi"
+  ],
+  "key_pairs_note_zh": "黃連配黃芩（瀉中上二焦火毒）；黃芩配黃柏（清上中下三焦濕熱火毒）；黃連配梔子（上瀉心火，下導熱邪）。",
+  "key_pairs_note_en": "Huang Lian with Huang Qin (drains upper/middle burner fire); Huang Qin with Huang Bai (clears all three burners); Huang Lian with Zhi Zi (drains Heart fire and directs heat downward).",
+  "fang_yi_zh": "《外台秘要》瀉火解毒之總方。黃連大苦大寒，瀉心火、清上焦為君；黃芩清肺熱、瀉中焦為臣；黃柏清下焦濕熱為臣；梔子通瀉三焦火邪、導熱下行從小便出為佐使。四藥全用苦寒，直折火毒，使三焦實熱火毒得以分消。",
+  "fang_yi_en": "The master formula for draining fire and relieving toxicity. Huang Lian drains Heart fire as chief; Huang Qin clears Lung heat as deputy; Huang Bai drains lower burner damp-heat as deputy; Zhi Zi drains all three burners and guides heat downward as assistant.",
+  "actions_zh": [
+    "瀉火解毒 — 瀉透三焦實熱火毒",
+    "清熱燥濕 — 清瀉臟腑濕熱邪氣",
+    "涼血止血 — 清解血分熱毒、防熱迫血妄行",
+    "瀉火除煩 — 苦寒直折火毒、消除狂躁煩心"
+  ],
+  "actions_en": [
+    "Drains fire and relieves toxicity — purges toxic fire excess from all three burners",
+    "Clears heat and dries dampness — clears damp-heat pathogens from organs",
+    "Cools blood and stops bleeding — clears blood-level heat toxicity to prevent bleeding",
+    "Drains fire to ease agitation — purges toxic fire to calm restlessness and manic agitation"
+  ],
+  "pattern_indications_zh": [
+    "三焦火毒熾盛證（實熱火毒）：大熱煩躁、口燥咽乾、錯語不眠、或吐血衄血、發斑、身熱下利、舌紅苔黃、脈數有力。"
+  ],
+  "pattern_indications_en": [
+    "Blazing toxic fire in all three burners (excess heat toxicity): High fever, severe restlessness, dry mouth and throat, delirious speech, insomnia, hematemesis, epistaxis, maculae, red tongue with yellow coating, rapid forceful pulse."
+  ],
+  "indications": [
+    {
+      "pattern_zh": "三焦火毒熾盛證（實熱火毒）",
+      "pattern_en": "Blazing toxic fire in all three burners (excess heat toxicity)",
+      "clinical_picture_zh": "大熱煩躁、口燥咽乾、錯語不眠、或吐血衄血、發斑、身熱下利",
+      "clinical_picture_en": "High fever, severe restlessness, dry mouth and throat, delirious speech, insomnia, bleeding",
+      "tongue_zh": "舌紅，苔黃",
+      "tongue_en": "Red tongue with yellow coating",
+      "pulse_zh": "脈數有力",
+      "pulse_en": "Rapid and forceful pulse"
+    }
+  ],
+  "constitutional_types_zh": [
+    "陰虛火旺",
+    "脾胃虛寒"
+  ],
+  "constitutional_types_en": [
+    "Yin deficiency with fire",
+    "Spleen/Stomach deficiency cold"
+  ],
+  "constitutional_note_zh": "脾胃虛寒或陰虛乾熱者禁用。",
+  "modifications_zh": [
+    "便秘、大熱不解者：加大黃 9g ➔ 即瀉心湯／涼膈散意（通腑瀉熱）",
+    "吐血衄血甚者：加生地黃 15g、丹皮 9g、白茅根 30g（涼血止血）",
+    "發斑者：加玄參 15g、紫草 9g（涼血解毒）"
+  ],
+  "modifications_en": [
+    "Constipation with severe heat: Add Da Huang 9g (drains heat via stool)",
+    "Severe bleeding: Add Sheng Di Huang 15g, Dan Pi 9g, Bai Mao Gen 30g",
+    "Maculae: Add Xuan Shen 15g, Zi Cao 9g"
+  ],
+  "modifications": [
+    {
+      "if_zh": "便秘、大熱不解者",
+      "if_en": "Constipation with severe heat",
+      "change_zh": "加大黃 9g ➔ 即瀉心湯意（通腑瀉熱）",
+      "change_en": "Add Da Huang 9g to drain heat via stool"
+    },
+    {
+      "if_zh": "吐血衄血甚者",
+      "if_en": "Severe bleeding",
+      "change_zh": "加生地黃 15g、丹皮 9g、白茅根 30g（涼血止血）",
+      "change_en": "Add Sheng Di Huang 15g, Dan Pi 9g, Bai Mao Gen 30g"
+    }
+  ],
+  "dose_adjustment_note_zh": "水煎服。本方藥性苦寒大燥，中病即止，不可久服。",
+  "dose_adjustment_note_en": "Decoct in water. Highly bitter and cold; discontinue once heat is cleared.",
+  "contraindications_zh": [
+    "陰虛火旺者禁用",
+    "脾胃虛寒、食少便溏者禁用",
+    "本方苦寒燥烈傷陰，不可長期過量服用"
+  ],
+  "contraindications_en": [
+    "Contraindicated in dry heat from Yin deficiency",
+    "Contraindicated in Spleen/Stomach deficiency cold with poor appetite or loose stools",
+    "Contraindicated for long-term or excessive use due to harsh bitter-cold nature"
+  ],
+  "comparisons": [
+    {
+      "with": "formula.bai_hu_tang",
+      "name_zh": "白虎湯",
+      "differentiator_zh": "白虎湯清陽明無形氣分大熱，重在清熱生津；黃連解毒湯瀉三焦有形實熱火毒，重在苦寒直折。",
+      "differentiator_en": "Bai Hu Tang clears Qi-level formless heat and generates fluids; Huang Lian Jie Du Tang drains toxic fire in all three burners."
+    },
+    {
+      "with": "formula.long_dan_xie_gan_tang",
+      "name_zh": "龍膽瀉肝湯",
+      "differentiator_zh": "龍膽瀉肝湯專清肝膽實火與濕熱；黃連解毒湯通清三焦火毒。",
+      "differentiator_en": "Long Dan Xie Gan Tang specifically clears Liver/Gallbladder fire and damp-heat; Huang Lian Jie Du Tang clears three burners."
+    }
+  ],
+  "formula_family": [
+    {
+      "formula_id": "formula.xie_xin_tang",
+      "name_zh": "瀉心湯",
+      "relation": "加",
+      "change": [
+        "加大黃 9g"
+      ],
+      "change_en": [
+        "Add Da Huang 9g"
+      ]
+    }
+  ],
+  "applications_zh": [
+    "敗血症",
+    "重症肺炎",
+    "急性結膜炎",
+    "急性化膿性感染",
+    "急性菌痢"
+  ],
+  "applications_en": [
+    "Sepsis",
+    "Severe pneumonia",
+    "Acute conjunctivitis",
+    "Acute suppurative infection",
+    "Bacillary dysentery"
+  ],
+  "modern_applications_zh": [
+    "敗血症",
+    "重症肺炎",
+    "急性結膜炎",
+    "急性化膿性感染",
+    "急性菌痢"
+  ],
+  "modern_applications_en": [
+    "Sepsis",
+    "Severe pneumonia",
+    "Acute conjunctivitis",
+    "Acute suppurative infection",
+    "Bacillary dysentery"
+  ],
+  "cloudtcm_url": "https://cloudtcm.com/formula/244",
+  "american_dragon_url": "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html",
+  "source_urls": [
+    "https://cloudtcm.com/formula/244",
+    "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html"
+  ],
+  "external_links": [
+    {
+      "source_id": "american_dragon",
+      "url": "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html",
+      "label_zh": "American Dragon",
+      "label_en": "American Dragon",
+      "lang": "en",
+      "link_status": "direct"
+    },
+    {
+      "source_id": "cloudtcm",
+      "url": "https://cloudtcm.com/formula/244",
+      "label_zh": "雲端中醫",
+      "label_en": "CloudTCM",
+      "lang": "zh",
+      "link_status": "direct"
+    }
+  ],
+  "field_sources": {
+    "actions_zh": [
+      "wai_tai_mi_yao",
+      "curriculum/formulas/Formulations Summary Chart.docx.md"
+    ],
+    "composition_roles": [
+      "wai_tai_mi_yao",
+      "bastyr_materia_medica_2"
+    ],
+    "indications": [
+      "wai_tai_mi_yao"
+    ],
+    "contraindications": [
+      "bastyr_materia_medica_2"
+    ]
+  },
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "formula_song": "黃連解毒柏芝芩，三焦火毒熱盈盈。\n煩躁狂斑吐衄嘔，苦寒直折熱自平。",
+  "formula_song_zh": "黃連解毒柏芝芩，三焦火毒熱盈盈。\n煩躁狂斑吐衄嘔，苦寒直折熱自平。",
+  "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+  "exam_pearl": "【考綱重點】三焦實熱火毒熾盛證首選方。黃連（心）、黃芩（肺）、黃柏（腎）、梔子（通瀉三焦）。「苦寒直折」法代表方。NCBAHM 2026 CH Outline p.21。"
+}

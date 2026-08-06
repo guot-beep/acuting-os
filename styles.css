@@ -4540,6 +4540,230 @@ a { color: var(--accent-dark); }
 .k-status-draft { background: #f7efdc; }
 .k-status-fertility { background: #f3e2da; color: var(--warn); }
 .k-missing { color: var(--warn); font-weight: 600; }
+
+/* TCM Pattern Preview Card (curriculum/Plan Specification) */
+.k-pattern-card {
+  background: #fdfbf7;
+  border: 1px solid #e7dfd3;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(43, 32, 20, 0.04);
+  padding: 1rem 1.1rem;
+}
+.k-pattern-card header strong {
+  color: #3b2a1a;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.15rem;
+}
+.k-pattern-summary {
+  background: rgba(247, 243, 234, 0.6);
+  border-left: 3px solid #d4c5a9;
+  border-radius: 0 8px 8px 0;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+}
+.k-pattern-summary p {
+  color: #382d21;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.k-pattern-summary .k-summary-en {
+  color: #6b5a47;
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+}
+.k-subhead {
+  color: #5c4b38;
+  display: block;
+  font-size: 0.82rem;
+  margin: 0.5rem 0 0.2rem;
+}
+.k-tag-manifestation {
+  background: #f4ece0;
+  border: 1px solid #e2d5c1;
+  color: #4a3825;
+  font-weight: 500;
+}
+.k-pattern-tp-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  margin: 0.6rem 0;
+}
+.k-tp-item {
+  background: #f8f4ec;
+  border: 1px solid #e5dccb;
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+}
+.k-tp-item strong {
+  color: #634f3a;
+  display: block;
+  font-size: 0.78rem;
+  margin-bottom: 0.15rem;
+}
+.k-tp-item p {
+  color: #2b2014;
+  font-size: 0.84rem;
+  font-weight: 600;
+  margin: 0;
+}
+.k-tp-item small {
+  color: #756350;
+  display: block;
+  font-size: 0.76rem;
+}
+.k-pattern-details {
+  background: #faf6f0;
+  border: 1px solid #e9e0d1;
+  border-radius: 8px;
+  margin-top: 0.45rem;
+  padding: 0.4rem 0.6rem;
+}
+.k-pattern-details summary {
+  color: #594633;
+  cursor: pointer;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+.k-pattern-details .k-details-body {
+  font-size: 0.83rem;
+  margin-top: 0.4rem;
+  padding-top: 0.35rem;
+}
+.k-entity-chip {
+  background: #ede4d3;
+  border: 1px solid #dcd0ba;
+  border-radius: 6px;
+  color: #3b2a1a;
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0.15rem 0.2rem;
+  padding: 0.1rem 0.45rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.k-entity-chip:hover {
+  background: #e2d3b8;
+  border-color: #cbb99d;
+  color: #1a1005;
+}
+
+/* Big Card Modal Overlay (中醫證型大卡) */
+.k-modal-overlay {
+  align-items: center;
+  background: rgba(28, 22, 15, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.25s ease;
+  width: 100vw;
+  z-index: 9999;
+}
+.k-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.k-big-card {
+  background: #fdfbf7;
+  border: 1px solid #dfd5c3;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  max-width: 840px;
+  overflow-y: auto;
+  padding: 1.6rem 2rem;
+  position: relative;
+  width: 92%;
+}
+.k-big-card-close {
+  background: #f0e6d6;
+  border: 1px solid #d4c5ab;
+  border-radius: 50%;
+  color: #5c4731;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 32px;
+  line-height: 28px;
+  position: absolute;
+  right: 1.2rem;
+  text-align: center;
+  top: 1.2rem;
+  transition: all 0.2s ease;
+  width: 32px;
+}
+.k-big-card-close:hover {
+  background: #e2d2b9;
+  color: #1a0f05;
+}
+.k-big-card-header {
+  border-bottom: 2px solid #eae1d1;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+}
+.k-big-card-title {
+  color: #2c1d11;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+.k-big-card-title small {
+  color: #6e5c49;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+.k-big-card-section {
+  background: #f7f2e7;
+  border: 1px solid #e7ded0;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+}
+.k-big-card-section h3 {
+  border-bottom: 1px solid #e0d5c1;
+  color: #4a3826;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.35rem;
+}
+.k-big-card-section p {
+  color: #382c1f;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0.4rem 0;
+}
+.k-big-card-section ul {
+  margin: 0.4rem 0;
+  padding-left: 1.2rem;
+}
+.k-big-card-section li {
+  color: #382c1f;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 0.3rem;
+}
+.k-red-flag-box {
+  background: #fdf2f0;
+  border: 1px solid #f3c2bc;
+  border-radius: 10px;
+  color: #922b21;
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  padding: 0.65rem 0.9rem;
+}
+.k-red-flag-box strong {
+  color: #78281f;
+}
 .k-toolbar {
   display: grid;
   gap: 0.65rem;
@@ -6533,42 +6757,3 @@ html { scroll-padding-top: 92px; }
    avoids a null-check sweep for no gain — and the column collapses. */
 .directory-layout > .directory-sidebar { display: none; }
 .directory-layout { grid-template-columns: minmax(0, 1fr); }
-
-/* .content-grid declares two columns for a list-plus-map layout, but the
-   acupoint browser has only the list left — the panel that occupied the second
-   column is gone. The result was 769 cards squeezed into the 380px track with
-   789px sitting empty beside them.
-
-   Scoped with :only-child rather than by changing the column template: this can
-   only apply when there is nothing in the second column to displace, so a
-   workspace that still renders both panels is untouched. An earlier attempt
-   swapped the track widths globally and made things worse — the ratio was never
-   the problem, the empty column was. */
-.content-grid > .details-panel:only-child {
-  grid-column: 1 / -1;
-}
-
-/* Diagnosis tab (D11): three namespaces, one search, grouped by each layer's
-   own controlled vocabulary. Replaces the old flat grid + parallel CloudTCM
-   directory that gave the page two search boxes and two category bars. */
-.k-dx-types { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0; }
-.k-dx-types button {
-  padding: .3rem .7rem; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--line, #d5d5d5); background: transparent;
-  font: inherit; font-size: .85rem; color: inherit;
-}
-.k-dx-types button.is-active { background: var(--accent, #2f6f4f); color: #fff; border-color: transparent; }
-.k-dx-section { margin-block: 1.2rem; }
-.k-dx-group { margin-block: .5rem; }
-.k-dx-group > summary {
-  cursor: pointer; padding: .35rem 0; font-weight: 600;
-  border-bottom: 1px solid var(--line, #e3e3e3);
-}
-.k-dx-group > summary small { font-weight: 400; opacity: .7; }
-.k-dx-group > summary b { font-weight: 600; opacity: .55; margin-left: .25rem; }
-.k-dx-group > .k-grid { margin-top: .6rem; }
-/* The gap is stated in the group header, not hidden: a category that is 12
-   records short of safety text says so where you choose what to read. */
-.k-dx-gap { font-weight: 400; font-size: .8rem; color: var(--warn, #a15c00); margin-left: .4rem; }
-.k-pill-warn { background: var(--warn-bg, #fff3e0); color: var(--warn, #a15c00); }
-.k-cloud-disease-directory > summary { cursor: pointer; font-weight: 600; padding: .4rem 0; }

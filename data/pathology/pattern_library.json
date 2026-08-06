@@ -13,13 +13,13 @@
         "自汗畏風",
         "易感冒"
       ],
+      "tongue": "舌淡苔白",
+      "pulse": "脈弱",
       "treatment_principle_zh": "補益肺氣",
       "treatment_principle_en": "Tonify lung qi",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡苔白",
-      "pulse_zh": "脈弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.lung_yin_deficiency",
@@ -31,13 +31,103 @@
         "潮熱盜汗",
         "聲音嘶啞"
       ],
-      "treatment_principle_zh": "養陰潤肺",
-      "treatment_principle_en": "Nourish lung yin",
+      "tongue": "舌紅少苔",
+      "pulse": "脈細數",
+      "treatment_principle_zh": "養陰潤肺，清熱止咳",
+      "treatment_principle_en": "Nourish Yin, moisten the Lungs, clear Heat, stop cough",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "entity_type": "tcm_pattern",
+      "pinyin": "Fèi Yīn Xū",
+      "aliases_zh": [
+        "肺陰不足",
+        "燥熱傷肺"
+      ],
+      "aliases_en": [
+        "Lung Yin Depletion",
+        "Dry-Heat Injuring Lung Yin"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "deficiency",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "yin",
+        "fluid"
+      ],
+      "pathogenic_factor_ids": [
+        "dryness"
+      ],
+      "short_summary_zh": "肺陰虧虛，虛熱內生，肺失清肅。以乾咳少痰、痰中帶血、口乾咽燥、五心煩熱、午後潮熱、盜汗為特徵。",
+      "short_summary_en": "Depletion of Lung Yin leading to internal Deficiency-Heat and loss of Lung moistening function. Characterized by dry cough with little sputum, blood-streaked sputum, dry throat, tidal fever, and night sweats.",
+      "key_manifestations_zh": [
+        "乾咳無痰或少痰",
+        "痰中帶血絲",
+        "口乾咽燥形體消瘦",
+        "五心煩熱午後潮熱",
+        "盜汗顴紅"
+      ],
+      "key_manifestations_en": [
+        "Dry Cough with Scanty Sputum",
+        "Blood-Streaked Sputum",
+        "Dry Throat & Emaciation",
+        "Five-Center Heat & Tidal Fever",
+        "Night Sweats & Malar Flush"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，少苔少津",
+        "en": "Red tongue body with scanty coating and dry fluids"
+      },
+      "pulse_preview": {
+        "zh": "脈細數",
+        "en": "Fine and rapid pulse"
+      },
+      "differentiation_preview_zh": "肺系虛熱證：乾咳少痰、痰中帶血、潮熱盜汗為三大診斷要點。多由久咳傷陰、熱病後期傷津引發。",
+      "differentiation_preview_en": "Lung System Deficiency-Heat: Key features are dry cough, blood-streaked sputum, and night sweats. Caused by chronic cough or febrile fluid depletion.",
+      "exam_pearls_zh": "Bastyr Lung Pathology & NCCAOM 考點：代表方百合固金湯 (Bai He Gu Jin Tang) 或沙參麥冬湯。主穴：LU9 太淵、KI6 照海、LU5 尺澤、BL13 肺俞。",
+      "related_tcm_disease_ids": [
+        "tdis.ke_sou",
+        "tdis.fei_lao"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.bronchitis",
+        "cond.atypical_pneumonia",
+        "cond.tuberculosis"
+      ],
+      "primary_formula_ids": [
+        "formula.bai_he_gu_jin_tang",
+        "formula.sha_shen_mai_dong_tang"
+      ],
+      "primary_acupoint_ids": [
+        "LU9",
+        "KI6",
+        "LU5",
+        "BL13",
+        "CV17"
+      ],
+      "tag_ids": [
+        "肺陰虛",
+        "養陰潤肺",
+        "百合固金湯",
+        "咳嗽"
+      ],
+      "source_ids": [
+        "Bastyr_Lung_Pathology_Notes_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "https://cloudtcm.com/pattern/lung_yin_xu"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.wind_cold_invading_lung",
@@ -49,16 +139,13 @@
         "咳嗽痰白稀",
         "鼻塞流清涕"
       ],
+      "tongue": "舌苔薄白",
+      "pulse": "脈浮緊",
       "treatment_principle_zh": "辛溫解表，宣肺散寒",
       "treatment_principle_en": "Release the exterior with warm acrid herbs, diffuse the lung",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔薄白",
-      "pulse_zh": "脈浮緊",
-      "key_signs_ids": [
-        "sym.fever"
-      ]
+      "review_status": "draft"
     },
     {
       "id": "pattern.wind_heat_invading_lung",
@@ -70,16 +157,13 @@
         "咳嗽痰黃",
         "口渴"
       ],
+      "tongue": "舌尖紅苔薄黃",
+      "pulse": "脈浮數",
       "treatment_principle_zh": "辛涼解表，清宣肺熱",
       "treatment_principle_en": "Release the exterior with cool acrid herbs, clear lung heat",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌尖紅苔薄黃",
-      "pulse_zh": "脈浮數",
-      "key_signs_ids": [
-        "sym.fever"
-      ]
+      "review_status": "draft"
     },
     {
       "id": "pattern.phlegm_damp_in_lung",
@@ -90,13 +174,13 @@
         "胸悶",
         "痰易咯出"
       ],
+      "tongue": "舌苔白膩",
+      "pulse": "脈滑",
       "treatment_principle_zh": "燥濕化痰，宣肺止咳",
       "treatment_principle_en": "Dry damp, transform phlegm, diffuse the lung",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔白膩",
-      "pulse_zh": "脈滑"
+      "review_status": "draft"
     },
     {
       "id": "pattern.phlegm_heat_in_lung",
@@ -108,13 +192,13 @@
         "胸痛",
         "發熱口渴"
       ],
+      "tongue": "舌紅苔黃膩",
+      "pulse": "脈滑數",
       "treatment_principle_zh": "清熱化痰，宣肺平喘",
       "treatment_principle_en": "Clear heat, transform phlegm, calm wheezing",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈滑數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.spleen_qi_deficiency",
@@ -126,13 +210,102 @@
         "倦怠乏力",
         "面色萎黃"
       ],
-      "treatment_principle_zh": "健脾益氣",
-      "treatment_principle_en": "Fortify the spleen, boost qi",
+      "tongue": "舌淡苔白，或有齒痕",
+      "pulse": "脈緩弱",
+      "treatment_principle_zh": "健脾益氣，和胃助運",
+      "treatment_principle_en": "Tonify Spleen Qi, harmonize Stomach, assist transportation",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌淡苔白，或有齒痕",
-      "pulse_zh": "脈緩弱"
+      "entity_type": "tcm_pattern",
+      "pinyin": "Pí Qì Xū",
+      "aliases_zh": [
+        "脾胃氣虛",
+        "脾失健運"
+      ],
+      "aliases_en": [
+        "Spleen and Stomach Qi Deficiency",
+        "Impaired Spleen Transformation"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.spleen",
+        "organ.stomach"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "neutral",
+        "excess_deficiency": "deficiency",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "qi"
+      ],
+      "pathogenic_factor_ids": [],
+      "short_summary_zh": "脾氣虛弱，運化水谷失職。以食少腹脹、飯後尤甚、大便溏薄、神疲乏力、肢體倦怠、面色萎黃為特徵。",
+      "short_summary_en": "Weakness of Spleen Qi impairing transportation and transformation of food and water. Characterized by poor appetite, postprandial abdominal distension, loose stools, fatigue, and sallow complexion.",
+      "key_manifestations_zh": [
+        "食少納呆腹脹",
+        "食後腹脹加重",
+        "大便溏薄",
+        "神疲乏力肢體倦怠",
+        "面色萎黃舌邊齒痕"
+      ],
+      "key_manifestations_en": [
+        "Poor Appetite & Bloating",
+        "Postprandial Abdominal Fullness",
+        "Loose Stools",
+        "Mental Fatigue & Weak Limbs",
+        "Sallow Complexion & Teethmarks"
+      ],
+      "tongue_preview": {
+        "zh": "舌質淡胖，邊有齒痕，苔薄白",
+        "en": "Pale swollen tongue with teethmarks and thin white coating"
+      },
+      "pulse_preview": {
+        "zh": "脈緩無力或細弱",
+        "en": "Moderate, weak, or fine pulse"
+      },
+      "differentiation_preview_zh": "消化系本虛病機：食少、腹脹、便溏、氣虛為四大診斷要點。為多數脾胃病與氣血生化不足之根本。",
+      "differentiation_preview_en": "Digestive Root Deficiency: Key indicators are poor appetite, bloating, loose stools, and tiredness. Root cause of fluid/blood deficiency.",
+      "exam_pearls_zh": "Bastyr Spleen Pathology & NCCAOM 考點：代表方四君子湯 (Si Jun Zi Tang) 或參苓白朮散。主穴：ST36 足三里、SP6 三陰交、RN12 中脘、BL20 脾俞。",
+      "related_tcm_disease_ids": [
+        "tdis.xie_xie",
+        "tdis.fu_zhang",
+        "tdis.xu_lao"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.ibs",
+        "cond.chronic_gastritis",
+        "cond.anemia"
+      ],
+      "primary_formula_ids": [
+        "formula.si_jun_zi_tang",
+        "formula.shen_ling_bai_zhu_san"
+      ],
+      "primary_acupoint_ids": [
+        "ST36",
+        "SP6",
+        "RN12",
+        "BL20",
+        "RN6"
+      ],
+      "tag_ids": [
+        "脾氣虛",
+        "健脾益氣",
+        "四君子湯",
+        "腹脹便溏"
+      ],
+      "source_ids": [
+        "Bastyr_Spleen_Pathology_Notes_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "https://cloudtcm.com/pattern/spleen_qi_xu"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.spleen_yang_deficiency",
@@ -144,13 +317,13 @@
         "畏寒肢冷",
         "食少"
       ],
+      "tongue": "舌淡胖苔白滑",
+      "pulse": "脈沉遲無力",
       "treatment_principle_zh": "溫中健脾",
       "treatment_principle_en": "Warm the middle, fortify the spleen",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡胖苔白滑",
-      "pulse_zh": "脈沉遲無力"
+      "review_status": "draft"
     },
     {
       "id": "pattern.spleen_qi_sinking",
@@ -162,13 +335,13 @@
         "內臟下垂",
         "氣短乏力"
       ],
+      "tongue": "舌淡苔白",
+      "pulse": "脈弱",
       "treatment_principle_zh": "補中益氣，升陽舉陷",
       "treatment_principle_en": "Tonify middle qi, raise the sunken",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡苔白",
-      "pulse_zh": "脈弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.spleen_not_governing_blood",
@@ -180,13 +353,13 @@
         "皮下瘀斑",
         "食少乏力"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈細弱",
       "treatment_principle_zh": "健脾益氣攝血",
       "treatment_principle_en": "Fortify the spleen, boost qi to contain blood",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈細弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.damp_heat_spleen_stomach",
@@ -198,13 +371,13 @@
         "身重",
         "大便黏滯不爽"
       ],
+      "tongue": "舌紅苔黃膩",
+      "pulse": "脈濡數",
       "treatment_principle_zh": "清熱化濕",
       "treatment_principle_en": "Clear heat, transform damp",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈濡數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.cold_damp_encumbering_spleen",
@@ -216,13 +389,13 @@
         "頭身困重",
         "便溏"
       ],
+      "tongue": "舌淡胖苔白膩",
+      "pulse": "脈濡緩",
       "treatment_principle_zh": "溫中散寒化濕",
       "treatment_principle_en": "Warm the middle, dispel cold-damp",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡胖苔白膩",
-      "pulse_zh": "脈濡緩"
+      "review_status": "draft"
     },
     {
       "id": "pattern.stomach_heat",
@@ -235,13 +408,13 @@
         "牙齦腫痛",
         "便秘"
       ],
+      "tongue": "舌紅苔黃",
+      "pulse": "脈滑數",
       "treatment_principle_zh": "清胃瀉火",
       "treatment_principle_en": "Clear stomach fire",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅苔黃",
-      "pulse_zh": "脈滑數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.stomach_yin_deficiency",
@@ -253,13 +426,13 @@
         "口乾咽燥",
         "大便乾結"
       ],
+      "tongue": "舌紅少苔",
+      "pulse": "脈細數",
       "treatment_principle_zh": "養陰益胃",
       "treatment_principle_en": "Nourish stomach yin",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.food_stagnation",
@@ -271,13 +444,13 @@
         "厭食",
         "大便酸臭"
       ],
+      "tongue": "舌苔厚膩",
+      "pulse": "脈滑",
       "treatment_principle_zh": "消食導滯",
       "treatment_principle_en": "Reduce food stagnation, guide out accumulation",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔厚膩",
-      "pulse_zh": "脈滑"
+      "review_status": "draft"
     },
     {
       "id": "pattern.liver_qi_stagnation",
@@ -290,13 +463,13 @@
         "咽中如梗",
         "月經不調"
       ],
+      "tongue": "舌苔薄白",
+      "pulse": "脈弦",
       "treatment_principle_zh": "疏肝解鬱，理氣",
       "treatment_principle_en": "Course the liver, resolve depression, regulate qi",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔薄白",
-      "pulse_zh": "脈弦"
+      "review_status": "draft"
     },
     {
       "id": "pattern.liver_fire",
@@ -308,13 +481,13 @@
         "口苦咽乾",
         "耳鳴如潮"
       ],
+      "tongue": "舌紅苔黃",
+      "pulse": "脈弦數",
       "treatment_principle_zh": "清肝瀉火",
       "treatment_principle_en": "Clear liver fire",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅苔黃",
-      "pulse_zh": "脈弦數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.liver_yang_rising",
@@ -327,16 +500,109 @@
         "腰膝痠軟",
         "急躁易怒"
       ],
+      "tongue": "舌紅少津",
+      "pulse": "脈弦有力或弦細數",
       "treatment_principle_zh": "平肝潛陽，滋養肝腎",
       "treatment_principle_en": "Calm the liver, subdue yang, nourish liver-kidney",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌紅少津",
-      "pulse_zh": "脈弦有力或弦細數",
-      "key_signs_ids": [
-        "sym.headache"
-      ]
+      "entity_type": "tcm_pattern",
+      "pinyin": "Gān Yáng Shàng Kàng",
+      "aliases_zh": [
+        "肝陽上擾",
+        "水不涵木"
+      ],
+      "aliases_en": [
+        "Liver Yang Flaming Upward",
+        "Water Failing to Nourish Wood"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.liver",
+        "organ.kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "mixed_deficiency_excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "yin",
+        "yang"
+      ],
+      "pathogenic_factor_ids": [
+        "internal_wind"
+      ],
+      "short_summary_zh": "肝腎陰虛於下，水不涵木，致使肝陽偏亢、上擾清空。以頭痛眩暈、急躁易怒、面紅目赤、腰膝痠軟為主要臨床特徵。",
+      "short_summary_en": "Liver and Kidney Yin deficiency below failing to nourish Wood, allowing Liver Yang to become hyperactive and surge upward to disturb the head. Characterized by throbbing headache, dizziness, irritability, facial redness, and lumbar/knee weakness.",
+      "key_manifestation_ids": [
+        "symptom.headache",
+        "symptom.dizziness",
+        "symptom.irritability",
+        "symptom.facial_redness",
+        "symptom.lumbar_soreness"
+      ],
+      "key_manifestations_zh": [
+        "頭痛目眩",
+        "急躁易怒",
+        "面紅目赤",
+        "腰膝痠軟",
+        "耳鳴如潮"
+      ],
+      "key_manifestations_en": [
+        "Throbbing Headache & Dizziness",
+        "Irritability & Agitation",
+        "Facial Redness & Red Eyes",
+        "Weak or Sore Lumbar/Knees",
+        "Tinnitus Like Tides"
+      ],
+      "tongue_preview": {
+        "zh": "舌紅，苔少或薄黃",
+        "en": "Red tongue with scanty or thin yellow coating"
+      },
+      "pulse_preview": {
+        "zh": "脈弦有力，或弦細數",
+        "en": "Wiry and forceful pulse, or wiry, fine and rapid"
+      },
+      "differentiation_preview_zh": "本虛標實（上實下虛）：上焦呈現陽亢熱象（頭痛、眩暈、面紅目赤、急躁），下焦伴隨陰虛不足（腰膝痠軟、足脛無力）。多由情志所傷或久病傷陰引發。",
+      "differentiation_preview_en": "Root Deficiency with Branch Excess (Upper Excess, Lower Deficiency): Upper body shows Yang hyperactivity (headache, dizziness, facial redness), while lower body exhibits Yin deficiency (weak knees/lumbar). Often triggered by emotional stress or chronic Yin depletion.",
+      "related_tcm_disease_ids": [
+        "tdis.tou_tong",
+        "tdis.xuan_yun"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.migraine",
+        "cond.hypertension",
+        "cond.vertigo"
+      ],
+      "primary_formula_ids": [
+        "formula.tian_ma_gou_teng_yin"
+      ],
+      "primary_acupoint_ids": [
+        "GB20",
+        "LR3",
+        "GB8",
+        "GB43",
+        "SP6",
+        "KI3"
+      ],
+      "tag_ids": [
+        "肝經病變",
+        "本虛標實",
+        "清頭明目",
+        "平肝潛陽"
+      ],
+      "source_ids": [
+        "NCBAHM_2026_CH_Outline",
+        "https://cloudtcm.com/pattern/120"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.liver_wind",
@@ -348,13 +614,13 @@
         "抽搐",
         "言語不利，甚則卒然昏仆"
       ],
+      "tongue": "舌紅",
+      "pulse": "脈弦有力",
       "treatment_principle_zh": "平肝熄風",
       "treatment_principle_en": "Calm the liver, extinguish wind",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅",
-      "pulse_zh": "脈弦有力"
+      "review_status": "draft"
     },
     {
       "id": "pattern.liver_blood_deficiency",
@@ -367,13 +633,13 @@
         "月經量少色淡",
         "爪甲不榮"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈細",
       "treatment_principle_zh": "補血養肝",
       "treatment_principle_en": "Nourish blood, supplement the liver",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈細"
+      "review_status": "draft"
     },
     {
       "id": "pattern.liver_yin_deficiency",
@@ -385,13 +651,13 @@
         "五心煩熱",
         "眩暈"
       ],
+      "tongue": "舌紅少苔",
+      "pulse": "脈弦細數",
       "treatment_principle_zh": "滋陰養肝",
       "treatment_principle_en": "Enrich yin, nourish the liver",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈弦細數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.cold_stagnation_liver_channel",
@@ -402,13 +668,13 @@
         "得溫則減",
         "遇寒加重"
       ],
+      "tongue": "舌苔白滑",
+      "pulse": "脈沉弦或遲",
       "treatment_principle_zh": "暖肝散寒，行氣止痛",
       "treatment_principle_en": "Warm the liver, dispel cold, move qi",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔白滑",
-      "pulse_zh": "脈沉弦或遲"
+      "review_status": "draft"
     },
     {
       "id": "pattern.liver_gallbladder_damp_heat",
@@ -420,13 +686,13 @@
         "身目發黃",
         "陰部濕癢或帶下黃臭"
       ],
+      "tongue": "舌紅苔黃膩",
+      "pulse": "脈弦滑數",
       "treatment_principle_zh": "清利肝膽濕熱",
       "treatment_principle_en": "Clear and drain liver-gallbladder damp-heat",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈弦滑數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_qi_deficiency",
@@ -438,13 +704,13 @@
         "活動後加重",
         "自汗"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈虛",
       "treatment_principle_zh": "補益心氣",
       "treatment_principle_en": "Tonify heart qi",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈虛"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_yang_deficiency",
@@ -456,13 +722,13 @@
         "畏寒肢冷",
         "面色晄白"
       ],
+      "tongue": "舌淡胖",
+      "pulse": "脈弱或結代",
       "treatment_principle_zh": "溫補心陽",
       "treatment_principle_en": "Warm and supplement heart yang",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡胖",
-      "pulse_zh": "脈弱或結代"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_blood_deficiency",
@@ -475,13 +741,13 @@
         "面色淡白",
         "眩暈"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈細弱",
       "treatment_principle_zh": "養血安神",
       "treatment_principle_en": "Nourish blood, calm the spirit",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈細弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_yin_deficiency",
@@ -494,13 +760,13 @@
         "盜汗",
         "口乾"
       ],
+      "tongue": "舌紅少苔",
+      "pulse": "脈細數",
       "treatment_principle_zh": "滋陰養心安神",
       "treatment_principle_en": "Enrich yin, nourish the heart, calm the spirit",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_fire",
@@ -512,13 +778,13 @@
         "小便短赤",
         "面赤口渴"
       ],
+      "tongue": "舌尖紅絳",
+      "pulse": "脈數",
       "treatment_principle_zh": "清心瀉火",
       "treatment_principle_en": "Clear heart fire",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌尖紅絳",
-      "pulse_zh": "脈數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_blood_stasis",
@@ -530,13 +796,13 @@
         "痛引肩背內臂",
         "唇甲青紫"
       ],
+      "tongue": "舌暗或有瘀斑",
+      "pulse": "脈澀或結代",
       "treatment_principle_zh": "活血化瘀，通絡止痛",
       "treatment_principle_en": "Invigorate blood, dispel stasis, unblock the vessels",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌暗或有瘀斑",
-      "pulse_zh": "脈澀或結代"
+      "review_status": "draft"
     },
     {
       "id": "pattern.phlegm_misting_heart",
@@ -548,13 +814,13 @@
         "喉中痰鳴",
         "甚則昏不知人"
       ],
+      "tongue": "舌苔白膩",
+      "pulse": "脈滑",
       "treatment_principle_zh": "滌痰開竅",
       "treatment_principle_en": "Flush phlegm, open the portals",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔白膩",
-      "pulse_zh": "脈滑"
+      "review_status": "draft"
     },
     {
       "id": "pattern.kidney_yang_deficiency",
@@ -567,13 +833,103 @@
         "夜尿頻多",
         "五更泄瀉"
       ],
-      "treatment_principle_zh": "溫補腎陽",
-      "treatment_principle_en": "Warm and supplement kidney yang",
+      "tongue": "舌淡胖苔白",
+      "pulse": "脈沉遲無力，尺弱",
+      "treatment_principle_zh": "溫補腎陽，補益命門",
+      "treatment_principle_en": "Warm and tonify Kidney Yang, replenish Gate of Vitality",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌淡胖苔白",
-      "pulse_zh": "脈沉遲無力，尺弱"
+      "entity_type": "tcm_pattern",
+      "pinyin": "Shèn Yáng Xū",
+      "aliases_zh": [
+        "命門火衰",
+        "腎火不足"
+      ],
+      "aliases_en": [
+        "Decline of Mingmen Fire",
+        "Kidney Yang Depletion"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "cold",
+        "excess_deficiency": "deficiency",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "yang"
+      ],
+      "pathogenic_factor_ids": [
+        "cold"
+      ],
+      "short_summary_zh": "腎陽虧虛，命門火衰，溫煦失職。以腰膝酸冷、畏寒肢冷（下肢尤甚）、神疲乏力、小便清長夜尿多、陽痿或水腫為特徵。",
+      "short_summary_en": "Deficiency of Kidney Yang and decline of Gate of Vitality Fire. Characterized by cold soreness of lumbar/knees, aversion to cold with icy limbs, clear profuse nocturia, erectile dysfunction, or edema.",
+      "key_manifestations_zh": [
+        "腰膝酸冷畏寒肢冷",
+        "下肢冰冷尤甚",
+        "神疲乏力",
+        "小便清長夜尿頻多",
+        "陽痿早洩或下肢水腫"
+      ],
+      "key_manifestations_en": [
+        "Cold Soreness of Lumbar/Knees",
+        "Cold Limbs (Lower Limbs Worse)",
+        "Mental Fatigue",
+        "Clear Profuse Nocturia",
+        "Erectile Dysfunction or Edema"
+      ],
+      "tongue_preview": {
+        "zh": "舌質淡胖，苔白滑",
+        "en": "Pale swollen tongue with white slippery coating"
+      },
+      "pulse_preview": {
+        "zh": "脈沉細無力，尺脈沉微",
+        "en": "Deep, fine, and weak pulse, especially faint in Chi position"
+      },
+      "differentiation_preview_zh": "腎系虛寒病機：腰膝酸冷、畏寒肢冷、夜尿多、脈沉細為四大診斷要點。與腎陰虛（熱象、手足心熱）明確對照。",
+      "differentiation_preview_en": "Kidney Deficiency-Cold: Cold knees, aversion to cold, and nocturia are key diagnostic criteria. Clear contrast with Kidney Yin Deficiency.",
+      "exam_pearls_zh": "Bastyr TCM Pathology & NCCAOM 考點：代表方金匱腎氣丸 (Jin Kui Shen Qi Wan) 或右歸丸。主藥附子、肉桂溫補命門之火。",
+      "related_tcm_disease_ids": [
+        "tdis.yao_tong",
+        "tdis.shui_zhong",
+        "tdis.yang_wei"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.hypothyroidism",
+        "cond.chronic_nephritis",
+        "cond.erectile_dysfunction"
+      ],
+      "primary_formula_ids": [
+        "formula.jin_kui_shen_qi_wan",
+        "formula.you_gui_wan"
+      ],
+      "primary_acupoint_ids": [
+        "RN4",
+        "GV4",
+        "KI3",
+        "BL23",
+        "RN6"
+      ],
+      "tag_ids": [
+        "腎陽虛",
+        "溫補腎陽",
+        "金匱腎氣丸",
+        "畏寒肢冷"
+      ],
+      "source_ids": [
+        "Bastyr_TCM_Pathology_Notes_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "https://cloudtcm.com/pattern/kidney_yang_xu"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.kidney_yin_deficiency",
@@ -586,13 +942,100 @@
         "盜汗",
         "遺精或經少"
       ],
-      "treatment_principle_zh": "滋補腎陰",
-      "treatment_principle_en": "Enrich and supplement kidney yin",
+      "tongue": "舌紅少苔",
+      "pulse": "脈細數",
+      "treatment_principle_zh": "滋補腎陰，培元固本",
+      "treatment_principle_en": "Nourish Kidney Yin, enrich the root",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "entity_type": "tcm_pattern",
+      "pinyin": "Shèn Yīn Xū",
+      "aliases_zh": [
+        "腎水不足",
+        "真陰虧損"
+      ],
+      "aliases_en": [
+        "Kidney Yin Depletion",
+        "Kidney Water Deficiency"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "deficiency",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "yin"
+      ],
+      "pathogenic_factor_ids": [],
+      "short_summary_zh": "腎陰虧虛，髓海失充，虛熱內生。以腰膝痠軟、頭暈耳鳴、失眠多夢、五心煩熱、潮熱盜汗、咽乾口燥為特徵。",
+      "short_summary_en": "Deficiency of Kidney Yin failing to nourish the marrow and generating internal Deficiency-Heat. Characterized by lumbar/knee soreness, tinnitus, insomnia, five-center heat, and night sweats.",
+      "key_manifestations_zh": [
+        "腰膝痠軟無力",
+        "頭暈耳鳴健忘",
+        "失眠多夢",
+        "五心煩熱潮熱盜汗",
+        "咽乾口燥齒搖髮脫"
+      ],
+      "key_manifestations_en": [
+        "Sore & Weak Lumbar/Knees",
+        "Dizziness & Tinnitus",
+        "Insomnia & Dreamful Sleep",
+        "Five-Center Heat & Night Sweats",
+        "Dry Throat & Loose Teeth"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，少苔或無苔少津",
+        "en": "Red tongue with scanty or absent coating"
+      },
+      "pulse_preview": {
+        "zh": "脈細數，尺脈尤甚",
+        "en": "Fine and rapid pulse, especially in the Chi position"
+      },
+      "differentiation_preview_zh": "腎系本虛病機：腰膝痠軟、耳鳴、虛熱（潮熱盜汗手足心熱）為三大診斷要點。為更年期、慢性腎病核心。",
+      "differentiation_preview_en": "Kidney System Root Deficiency: Lumbar soreness, tinnitus, and deficiency-heat are key diagnostic features. Core pattern in menopausal syndrome.",
+      "exam_pearls_zh": "Bastyr TCM Pathology & NCCAOM 考點：代表方六味地黃丸 (Liu Wei Di Huang Wan)。君藥熟地黃滋補腎陰，臣藥山茱萸、山藥，佐藥澤瀉、丹皮、茯苓三瀉三補。",
+      "related_tcm_disease_ids": [
+        "tdis.yao_tong",
+        "tdis.xuan_yun",
+        "tdis.er_ming"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.menopausal_syndrome",
+        "cond.chronic_kidney_disease",
+        "cond.osteoporosis"
+      ],
+      "primary_formula_ids": [
+        "formula.liu_wei_di_huang_wan"
+      ],
+      "primary_acupoint_ids": [
+        "KI3",
+        "KI6",
+        "SP6",
+        "BL23",
+        "RN4"
+      ],
+      "tag_ids": [
+        "腎陰虛",
+        "滋補腎陰",
+        "六味地黃丸",
+        "腰膝痠軟"
+      ],
+      "source_ids": [
+        "Bastyr_TCM_Pathology_Notes_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "https://cloudtcm.com/pattern/kidney_yin_xu"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.kidney_essence_deficiency",
@@ -605,13 +1048,13 @@
         "不孕不育",
         "齒搖髮脫"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈弱",
       "treatment_principle_zh": "填精補髓",
       "treatment_principle_en": "Replenish essence and marrow",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.kidney_qi_not_firm",
@@ -623,13 +1066,13 @@
         "帶下清稀",
         "胎動易滑"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈沉弱",
       "treatment_principle_zh": "固攝腎氣",
       "treatment_principle_en": "Secure kidney qi",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈沉弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.kidney_not_grasping_qi",
@@ -641,13 +1084,13 @@
         "動則喘甚",
         "自汗"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈沉弱",
       "treatment_principle_zh": "補腎納氣",
       "treatment_principle_en": "Supplement the kidney to absorb qi",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈沉弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_kidney_not_communicating",
@@ -659,18 +1102,18 @@
         "腰膝痠軟",
         "潮熱盜汗"
       ],
+      "tongue": "舌紅少苔",
+      "pulse": "脈細數",
       "treatment_principle_zh": "交通心腎",
       "treatment_principle_en": "Restore heart-kidney communication",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heart_spleen_deficiency",
       "name_zh": "心脾兩虛",
-      "name_en": "Heart-Spleen Dual Deficiency",
+      "name_en": "Heart & Spleen Dual Deficiency",
       "key_signs_zh": [
         "心悸失眠",
         "多夢健忘",
@@ -678,13 +1121,98 @@
         "面色萎黃",
         "月經量少"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈細弱",
       "treatment_principle_zh": "補益心脾，養血安神",
       "treatment_principle_en": "Supplement heart and spleen, nourish blood, calm the spirit",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈細弱"
+      "entity_type": "tcm_pattern",
+      "pinyin": "Xīn Pí Liǎng Xū",
+      "aliases_zh": [
+        "心脾氣血兩虛"
+      ],
+      "aliases_en": [
+        "Heart and Spleen Deficiency of Qi and Blood"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.heart",
+        "organ.spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "neutral",
+        "excess_deficiency": "deficiency",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "qi",
+        "blood"
+      ],
+      "pathogenic_factor_ids": [],
+      "short_summary_zh": "心血不足，神失所養，脾氣虛弱，運化失職。以心悸怔忡、失眠多夢、健忘、食少體倦、面色萎黃為主要臨床特徵。",
+      "short_summary_en": "Deficiency of Heart Blood depriving the Spirit of nourishment, combined with Spleen Qi deficiency impairing transportation and transformation. Characterized by palpitations, insomnia, poor memory, fatigue, and sallow complexion.",
+      "key_manifestations_zh": [
+        "心悸怔忡",
+        "失眠多夢",
+        "健忘體倦",
+        "食少腹脹",
+        "面色萎黃"
+      ],
+      "key_manifestations_en": [
+        "Palpitations & Anxiety",
+        "Insomnia & Dreamful Sleep",
+        "Poor Memory & Fatigue",
+        "Poor Appetite & Bloating",
+        "Sallow Complexion"
+      ],
+      "tongue_preview": {
+        "zh": "舌淡，苔薄白",
+        "en": "Pale tongue with thin white coating"
+      },
+      "pulse_preview": {
+        "zh": "脈細弱",
+        "en": "Fine and weak pulse"
+      },
+      "differentiation_preview_zh": "雙重虛證：心不主血、脾不統血與生血不足並見。常用於心悸、失眠、月經過多、崩漏等氣血兩虛證候。",
+      "differentiation_preview_en": "Dual Deficiency: Failure of Heart to govern Blood and Spleen to produce/control Blood. Commonly seen in insomnia, palpitations, hypermenorrhea, and chronic bleeding.",
+      "related_tcm_disease_ids": [
+        "tdis.shi_mian",
+        "tdis.xin_ji"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.insomnia",
+        "cond.anemia",
+        "cond.anxiety"
+      ],
+      "primary_formula_ids": [
+        "formula.gui_pi_tang"
+      ],
+      "primary_acupoint_ids": [
+        "HT7",
+        "SP6",
+        "ST36",
+        "BL15",
+        "BL20",
+        "CV6"
+      ],
+      "tag_ids": [
+        "心脾兩虛",
+        "氣血雙補",
+        "養血安神",
+        "健脾益氣"
+      ],
+      "source_ids": [
+        "NCBAHM_2026_CH_Outline",
+        "https://cloudtcm.com/pattern/135"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.liver_spleen_disharmony",
@@ -696,13 +1224,13 @@
         "情緒波動時加重",
         "腸鳴矢氣"
       ],
+      "tongue": "舌苔白",
+      "pulse": "脈弦緩",
       "treatment_principle_zh": "疏肝健脾",
       "treatment_principle_en": "Course the liver, fortify the spleen",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔白",
-      "pulse_zh": "脈弦緩"
+      "review_status": "draft"
     },
     {
       "id": "pattern.liver_stomach_disharmony",
@@ -714,13 +1242,13 @@
         "情志不遂時加重",
         "嘔逆"
       ],
+      "tongue": "舌苔薄黃",
+      "pulse": "脈弦",
       "treatment_principle_zh": "疏肝和胃",
       "treatment_principle_en": "Course the liver, harmonize the stomach",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔薄黃",
-      "pulse_zh": "脈弦"
+      "review_status": "draft"
     },
     {
       "id": "pattern.lung_kidney_yin_deficiency",
@@ -732,13 +1260,13 @@
         "潮熱盜汗",
         "聲音嘶啞"
       ],
+      "tongue": "舌紅少苔",
+      "pulse": "脈細數",
       "treatment_principle_zh": "滋補肺腎之陰",
       "treatment_principle_en": "Enrich lung and kidney yin",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅少苔",
-      "pulse_zh": "脈細數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.spleen_kidney_yang_deficiency",
@@ -750,16 +1278,13 @@
         "腰膝痠冷",
         "下利清穀或水腫"
       ],
+      "tongue": "舌淡胖苔白滑",
+      "pulse": "脈沉遲無力",
       "treatment_principle_zh": "溫補脾腎",
       "treatment_principle_en": "Warm and supplement spleen and kidney yang",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡胖苔白滑",
-      "pulse_zh": "脈沉遲無力",
-      "key_signs_ids": [
-        "sym.edema"
-      ]
+      "review_status": "draft"
     },
     {
       "id": "pattern.qi_stagnation_blood_stasis",
@@ -771,13 +1296,13 @@
         "情志不舒",
         "經行血塊"
       ],
+      "tongue": "舌暗或有瘀點",
+      "pulse": "脈弦澀",
       "treatment_principle_zh": "行氣活血，化瘀止痛",
       "treatment_principle_en": "Move qi, invigorate blood, dispel stasis",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌暗或有瘀點",
-      "pulse_zh": "脈弦澀"
+      "review_status": "draft"
     },
     {
       "id": "pattern.qi_blood_deficiency",
@@ -789,18 +1314,18 @@
         "心悸失眠",
         "經少色淡"
       ],
+      "tongue": "舌淡",
+      "pulse": "脈細弱",
       "treatment_principle_zh": "益氣養血",
       "treatment_principle_en": "Boost qi and nourish blood",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌淡",
-      "pulse_zh": "脈細弱"
+      "review_status": "draft"
     },
     {
       "id": "pattern.blood_stasis",
       "name_zh": "瘀血內阻",
-      "name_en": "Blood Stasis (general)",
+      "name_en": "Blood Stasis Accumulation",
       "key_signs_zh": [
         "刺痛固定拒按",
         "夜間痛甚",
@@ -808,13 +1333,100 @@
         "肌膚甲錯",
         "唇舌紫暗"
       ],
+      "tongue": "舌紫暗或瘀斑",
+      "pulse": "脈澀",
       "treatment_principle_zh": "活血化瘀",
       "treatment_principle_en": "Invigorate blood, dispel stasis",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌紫暗或瘀斑",
-      "pulse_zh": "脈澀"
+      "entity_type": "tcm_pattern",
+      "pinyin": "Yū Xuè Nèi Zǔ",
+      "aliases_zh": [
+        "血瘀證",
+        "血脈瘀阻"
+      ],
+      "aliases_en": [
+        "Blood Stasis Pattern",
+        "Blood Vessel Obstruction"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "blood_level",
+      "zang_fu_ids": [
+        "organ.liver",
+        "organ.heart"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "neutral",
+        "excess_deficiency": "excess",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "blood"
+      ],
+      "pathogenic_factor_ids": [
+        "blood_stasis"
+      ],
+      "short_summary_zh": "血行不暢，瘀滯內阻，脈絡不通。以刺痛、痛有定處、夜間痛甚、拒按、唇舌紫暗或有瘀點瘀斑為特徵。",
+      "short_summary_en": "Blood circulation impaired, resulting in localized stasis obstructing collaterals. Characterized by fixed sharp stabbing pain, nocturnal aggravation, tenderness to touch, and purple lips/tongue with macules.",
+      "key_manifestations_zh": [
+        "刺痛固定拒按",
+        "夜間痛甚",
+        "唇舌紫暗瘀斑",
+        "局部腫塊固定",
+        "肌膚甲錯"
+      ],
+      "key_manifestations_en": [
+        "Fixed Sharp Stabbing Pain",
+        "Nocturnal Pain Aggravation",
+        "Purple Lips/Tongue with Spots",
+        "Fixed Masses/Lumps",
+        "Dry Scaly Skin"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紫暗，或有瘀點瘀斑",
+        "en": "Purple or dark tongue with stasis dots/macules"
+      },
+      "pulse_preview": {
+        "zh": "脈細澀，或結代",
+        "en": "Fine and choppy pulse, or bound/intermittent"
+      },
+      "differentiation_preview_zh": "血分實證：痛如針刺、痛有定處、夜間加重為三大診斷要點。可因氣滯、寒凝、熱灼或創傷引發。",
+      "differentiation_preview_en": "Blood Level Excess: Sharp stabbing pain, fixed location, and night aggravation are three key diagnostic indicators. Caused by Qi stagnation, Cold, Heat, or trauma.",
+      "related_tcm_disease_ids": [
+        "tdis.bi_zheng",
+        "tdis.tong_jing"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.dysmenorrhea",
+        "cond.thrombosis",
+        "cond.angina"
+      ],
+      "primary_formula_ids": [
+        "formula.xue_fu_zhu_yu_tang",
+        "formula.tao_he_cheng_qi_tang"
+      ],
+      "primary_acupoint_ids": [
+        "SP6",
+        "BL17",
+        "SP10",
+        "LI4",
+        "LR3"
+      ],
+      "tag_ids": [
+        "瘀血內阻",
+        "活血化瘀",
+        "通絡止痛"
+      ],
+      "source_ids": [
+        "NCBAHM_2026_CH_Outline",
+        "https://cloudtcm.com/pattern/150"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.blood_heat",
@@ -826,13 +1438,13 @@
         "月經先期量多",
         "心煩口渴"
       ],
+      "tongue": "舌紅絳",
+      "pulse": "脈數",
       "treatment_principle_zh": "清熱涼血",
       "treatment_principle_en": "Clear heat, cool the blood",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅絳",
-      "pulse_zh": "脈數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.damp_heat_lower_burner",
@@ -844,13 +1456,13 @@
         "帶下黃稠臭穢",
         "陰部濕癢"
       ],
+      "tongue": "舌紅苔黃膩",
+      "pulse": "脈滑數",
       "treatment_principle_zh": "清熱利濕",
       "treatment_principle_en": "Clear heat, drain damp from the lower burner",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅苔黃膩",
-      "pulse_zh": "脈滑數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.phlegm_damp",
@@ -863,13 +1475,101 @@
         "痰多",
         "頭暈"
       ],
+      "tongue": "舌胖苔白膩",
+      "pulse": "脈滑",
       "treatment_principle_zh": "燥濕化痰",
       "treatment_principle_en": "Dry damp, transform phlegm",
       "typical_points": [],
       "typical_formulas": [],
       "review_status": "draft",
-      "tongue_zh": "舌胖苔白膩",
-      "pulse_zh": "脈滑"
+      "entity_type": "tcm_pattern",
+      "pinyin": "Tán Shī Nèi Yùn",
+      "aliases_zh": [
+        "痰濕阻滯",
+        "濕痰內盛"
+      ],
+      "aliases_en": [
+        "Phlegm-Damp Obstruction",
+        "Internal Phlegm-Damp Retention"
+      ],
+      "status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.spleen",
+        "organ.lung"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "cold_neutral",
+        "excess_deficiency": "excess",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "fluid"
+      ],
+      "pathogenic_factor_ids": [
+        "phlegm",
+        "dampness"
+      ],
+      "short_summary_zh": "脾失健運，水濕不化，凝聚成痰，阻滯氣機。以形體肥胖、身重困倦、胸悶脘痞、咳嗽痰多白黏、口黏不渴為特徵。",
+      "short_summary_en": "Spleen failing to transform fluids, leading to moisture accumulating into phlegm and obstructing Qi movement. Characterized by heaviness, obesity, chest fullness, profuse white sticky sputum, and sticky mouth.",
+      "key_manifestations_zh": [
+        "身重困倦",
+        "胸悶脘痞",
+        "咳嗽痰多白黏",
+        "頭暈目眩如蒙",
+        "口黏不渴"
+      ],
+      "key_manifestations_en": [
+        "Body Heaviness & Fatigue",
+        "Chest Fullness & Distension",
+        "Profuse White Sticky Sputum",
+        "Heavy Dizziness Like Wrapped",
+        "Sticky Mouth Without Thirst"
+      ],
+      "tongue_preview": {
+        "zh": "舌體胖大，苔白膩",
+        "en": "Swollen tongue with thick white greasy coating"
+      },
+      "pulse_preview": {
+        "zh": "脈滑或濡",
+        "en": "Slippery or soggy pulse"
+      },
+      "differentiation_preview_zh": "實證病機：脾不運化為本，痰濕聚積為標。常表現為胸悶、噁心、咳嗽痰多、眩暈或肥胖症。",
+      "differentiation_preview_en": "Excess Pattern: Spleen dysfunction as root, phlegm-damp accumulation as branch. Commonly manifests as chest oppression, nausea, heavy cough, dizziness, or metabolic issues.",
+      "related_tcm_disease_ids": [
+        "tdis.ke_sou",
+        "tdis.xuan_yun"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.bronchitis",
+        "cond.hyperlipidemia",
+        "cond.metabolic_syndrome"
+      ],
+      "primary_formula_ids": [
+        "formula.er_chen_tang",
+        "formula.ban_xia_bai_zhu_tian_ma_tang"
+      ],
+      "primary_acupoint_ids": [
+        "ST40",
+        "ST36",
+        "SP9",
+        "RN12",
+        "PC6"
+      ],
+      "tag_ids": [
+        "痰濕內蘊",
+        "燥濕化痰",
+        "健脾理氣"
+      ],
+      "source_ids": [
+        "NCBAHM_2026_CH_Outline",
+        "https://cloudtcm.com/pattern/142"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     },
     {
       "id": "pattern.wind_damp_bi",
@@ -881,13 +1581,13 @@
         "痛處遊走或固定沉重",
         "屈伸不利"
       ],
+      "tongue": "舌苔白膩",
+      "pulse": "脈弦緊或濡緩",
       "treatment_principle_zh": "祛風散寒除濕，通絡止痛",
       "treatment_principle_en": "Dispel wind-cold-damp, unblock the channels",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌苔白膩",
-      "pulse_zh": "脈弦緊或濡緩"
+      "review_status": "draft"
     },
     {
       "id": "pattern.heat_bi",
@@ -899,13 +1599,13 @@
         "發熱口渴",
         "活動受限"
       ],
+      "tongue": "舌紅苔黃",
+      "pulse": "脈滑數",
       "treatment_principle_zh": "清熱通絡，祛風除濕",
       "treatment_principle_en": "Clear heat, unblock the channels, dispel wind-damp",
       "typical_points": [],
       "typical_formulas": [],
-      "review_status": "draft",
-      "tongue_zh": "舌紅苔黃",
-      "pulse_zh": "脈滑數"
+      "review_status": "draft"
     },
     {
       "id": "pattern.chong_ren_disharmony",
@@ -917,13 +1617,882 @@
         "不孕",
         "少腹症狀隨經期變化"
       ],
+      "tongue": "隨兼證而異",
+      "pulse": "脈細或弦",
       "treatment_principle_zh": "調理衝任",
       "treatment_principle_en": "Regulate the Chong and Ren vessels",
       "typical_points": [],
       "typical_formulas": [],
+      "review_status": "draft"
+    },
+    {
+      "id": "pattern.heat_lin",
+      "entity_type": "tcm_pattern",
+      "name_zh": "熱淋",
+      "name_en": "Heat Lin (Damp-Heat Bladder Pattern)",
+      "pinyin": "Rè Lín",
+      "aliases_zh": [
+        "膀胱濕熱證",
+        "熱淋證"
+      ],
+      "aliases_en": [
+        "Heat Dysuria Pattern",
+        "Bladder Damp-Heat Lin"
+      ],
+      "status": "draft",
       "review_status": "draft",
-      "tongue_zh": "隨兼證而異",
-      "pulse_zh": "脈細或弦"
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.bladder",
+        "organ.kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "fluid"
+      ],
+      "pathogenic_factor_ids": [
+        "damp_heat"
+      ],
+      "short_summary_zh": "濕熱蘊結下焦，膀胱氣化失司。以小便頻急刺痛、尿色黃赤短少、小腹急痛、發熱惡寒為特徵。",
+      "short_summary_en": "Damp-Heat accumulating in the Lower Burner, impairing Bladder Qi transformation. Characterized by frequent, urgent, burning urination with dark, scanty urine and lower abdominal distension.",
+      "key_manifestations_zh": [
+        "尿頻尿急灼熱刺痛",
+        "尿色黃赤短少",
+        "小腹脹痛拒按",
+        "口苦口渴",
+        "或伴發熱惡寒"
+      ],
+      "key_manifestations_en": [
+        "Frequent Urgent Burning Urination",
+        "Dark Scanty Reddish Urine",
+        "Lower Abdominal Pain/Distension",
+        "Bitter Taste & Thirst",
+        "Possible Fever & Chills"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，苔黃膩",
+        "en": "Red tongue body with yellow greasy coating"
+      },
+      "pulse_preview": {
+        "zh": "脈滑數",
+        "en": "Slippery and rapid pulse"
+      },
+      "differentiation_preview_zh": "下焦實熱證：以小便頻急灼熱、刺痛短赤為診斷要點。多因飲食不節（過食辛辣油脂飲酒）或外感濕熱下注引發。",
+      "differentiation_preview_en": "Lower Burner Excess Heat: Burning urgent dysuria is key diagnostic criteria. Triggered by greasy spicy food, alcohol, or external Damp-Heat invasion.",
+      "exam_pearls_zh": "Bastyr MM2 & NCCAOM 考點：代表方八正散（八正散 = 滑石、木通、車前子、萁麥、萁蓄、梔子、大黃、甘草）。核心草藥：滑石、木通、車前子、梔子、燈心草。",
+      "treatment_principle_zh": "清熱利濕，通淋止痛",
+      "treatment_principle_en": "Clear Heat, drain Dampness, unblock urination",
+      "related_tcm_disease_ids": [
+        "tdis.lin_zheng"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.uti",
+        "cond.cystitis",
+        "cond.prostatitis"
+      ],
+      "primary_formula_ids": [
+        "formula.ba_zheng_san"
+      ],
+      "primary_acupoint_ids": [
+        "BL28",
+        "CV3",
+        "SP9",
+        "BL60",
+        "SP6"
+      ],
+      "tag_ids": [
+        "熱淋",
+        "膀胱濕熱",
+        "清熱利濕",
+        "通淋止痛"
+      ],
+      "source_ids": [
+        "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "Maciocia_Practice_of_Chinese_Medicine_2nd",
+        "https://cloudtcm.com/pattern/re_lin"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.stone_lin",
+      "entity_type": "tcm_pattern",
+      "name_zh": "石淋",
+      "name_en": "Stone Lin (Urinary Calculus Pattern)",
+      "pinyin": "Shí Lín",
+      "aliases_zh": [
+        "砂淋",
+        "結石下注"
+      ],
+      "aliases_en": [
+        "Gravel Lin",
+        "Urolithiasis Pattern"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.bladder",
+        "organ.kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "fluid"
+      ],
+      "pathogenic_factor_ids": [
+        "damp_heat",
+        "stone"
+      ],
+      "short_summary_zh": "濕熱久蘊下焦，煎熬尿液，凝結成砂石。以腰腹絞痛、尿中夾砂石或血尿、尿道刺痛為特徵。",
+      "short_summary_en": "Damp-Heat long accumulating in the Lower Burner, condensing urine into sand or stones. Characterized by severe colicky flank/abdominal pain, sand in urine, or hematuria.",
+      "key_manifestations_zh": [
+        "腰腹劇烈絞痛",
+        "痛引少腹或陰部",
+        "尿中排出砂石",
+        "尿色紅赤或血尿",
+        "小便頻急難排"
+      ],
+      "key_manifestations_en": [
+        "Severe Colicky Flank/Abdominal Pain",
+        "Pain Radiating to Groin",
+        "Passage of Sand/Stones in Urine",
+        "Blood-Tinged Hematuria",
+        "Painful Dribbling Urination"
+      ],
+      "tongue_preview": {
+        "zh": "舌紅，苔黃膩或厚",
+        "en": "Red tongue with thick yellow greasy coating"
+      },
+      "pulse_preview": {
+        "zh": "脈弦數或滑數",
+        "en": "Wiry or slippery, rapid pulse"
+      },
+      "differentiation_preview_zh": "實證砂石病機：腰腹陣發性絞痛、痛引少腹、排出砂石為三大診斷要點。當加「軟堅散結排石」藥。",
+      "differentiation_preview_en": "Excess Stone Pathomechanism: Paroxysmal colicky flank pain radiating to groin and presence of gravel. Requires herbs that soften hardness and dissolve stones.",
+      "exam_pearls_zh": "Maciocia & Bastyr 考點：必加軟堅排石核心藥對「金錢草、海金沙、雞內金」。代表方三金湯、石韋散。",
+      "treatment_principle_zh": "清熱利濕，通淋排石，止痛",
+      "treatment_principle_en": "Clear Heat, drain Damp, promote urination, expel stones, relieve pain",
+      "related_tcm_disease_ids": [
+        "tdis.lin_zheng"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.urolithiasis",
+        "cond.nephrolithiasis"
+      ],
+      "primary_formula_ids": [
+        "formula.shi_wei_san"
+      ],
+      "primary_acupoint_ids": [
+        "BL28",
+        "CV3",
+        "KI5",
+        "BL23",
+        "SP9"
+      ],
+      "tag_ids": [
+        "石淋",
+        "通淋排石",
+        "三金藥對",
+        "腰痛"
+      ],
+      "source_ids": [
+        "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "Maciocia_Practice_of_Chinese_Medicine_2nd"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.qi_lin_excess",
+      "entity_type": "tcm_pattern",
+      "name_zh": "氣淋 (實證)",
+      "name_en": "Qi Lin - Excess Type (Liver Qi Stagnation)",
+      "pinyin": "Qì Lín Shí Zhèng",
+      "aliases_zh": [
+        "肝鬱氣滯氣淋"
+      ],
+      "aliases_en": [
+        "Dysuria from Liver Qi Stagnation"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.liver",
+        "organ.bladder"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "neutral",
+        "excess_deficiency": "excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "qi"
+      ],
+      "pathogenic_factor_ids": [
+        "qi_stagnation"
+      ],
+      "short_summary_zh": "肝氣鬱結，氣機阻滯，膀胱氣化失暢。以小便澀滯、滴瀝不暢、臍下急痛、脅肋脹滿、隨情志變化加重為特徵。",
+      "short_summary_en": "Liver Qi stagnation obstructing Qi movement and Bladder transformation. Characterized by hesitant dribbling urination, hypogastric distress, flank distension, and aggravation by emotional stress.",
+      "key_manifestations_zh": [
+        "小便澀滯滴瀝",
+        "少腹臍下急痛",
+        "脅肋脹滿",
+        "隨情志波動加重",
+        "情志抑鬱易怒"
+      ],
+      "key_manifestations_en": [
+        "Hesitant Dribbling Urination",
+        "Acute Hypogastric Distress",
+        "Flank Distension & Fullness",
+        "Aggravated by Stress/Emotions",
+        "Irritability & Emotional Stress"
+      ],
+      "tongue_preview": {
+        "zh": "舌苔薄白",
+        "en": "Thin white tongue coating"
+      },
+      "pulse_preview": {
+        "zh": "脈弦",
+        "en": "Wiry pulse"
+      },
+      "differentiation_preview_zh": "氣滯實證：排尿困難隨情緒焦慮或生氣加重，無明顯尿道灼熱，伴脅脹腹滿。治當疏肝理氣。",
+      "differentiation_preview_en": "Qi Stagnation Excess: Dysuria worsens with stress/anger, without severe burning heat. Accompanied by flank distension.",
+      "exam_pearls_zh": "Maciocia & Bastyr 考點：代表方沉香散 (Chen Xiang San)。疏肝理氣、利尿通淋。",
+      "treatment_principle_zh": "疏肝理氣，利尿通淋",
+      "treatment_principle_en": "Soothe the Liver, regulate Qi, unblock urination",
+      "related_tcm_disease_ids": [
+        "tdis.lin_zheng"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.prostatitis",
+        "cond.neurogenic_bladder"
+      ],
+      "primary_formula_ids": [
+        "formula.chen_xiang_san"
+      ],
+      "primary_acupoint_ids": [
+        "LR3",
+        "GB34",
+        "CV3",
+        "BL28",
+        "PC6"
+      ],
+      "tag_ids": [
+        "氣淋",
+        "實證氣淋",
+        "疏肝理氣",
+        "情志因素"
+      ],
+      "source_ids": [
+        "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "Maciocia_Practice_of_Chinese_Medicine_2nd"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.blood_lin_excess",
+      "entity_type": "tcm_pattern",
+      "name_zh": "血淋 (實熱證)",
+      "name_en": "Blood Lin - Excess Heat Pattern",
+      "pinyin": "Xuè Lín Shí Zhèng",
+      "aliases_zh": [
+        "熱灼血絡血淋"
+      ],
+      "aliases_en": [
+        "Dysuria with Hematuria from Blood Heat"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.bladder",
+        "organ.heart"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "blood"
+      ],
+      "pathogenic_factor_ids": [
+        "heat",
+        "blood_heat"
+      ],
+      "short_summary_zh": "實熱下注，灼傷血絡，迫血妄行。以小便頻急刺痛、尿色鮮紅或夾有血塊、心煩口渴為特徵。",
+      "short_summary_en": "Excess Heat pouring downward into Bladder, injuring Blood collaterals and forcing Blood to spill. Characterized by sharp pain, bright red urine or blood clots, and thirst.",
+      "key_manifestations_zh": [
+        "小便頻急熱痛",
+        "尿色鮮紅或夾血塊",
+        "尿道割痛難忍",
+        "心煩口渴",
+        "小腹脹痛"
+      ],
+      "key_manifestations_en": [
+        "Frequent Urgent Painful Urination",
+        "Bright Red Urine or Clots",
+        "Severe Stabbing Pain in Urethra",
+        "Irritability & Thirst",
+        "Lower Abdominal Pain"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，苔黃",
+        "en": "Red tongue body with yellow coating"
+      },
+      "pulse_preview": {
+        "zh": "脈數有力",
+        "en": "Rapid and forceful pulse"
+      },
+      "differentiation_preview_zh": "血分實熱證：尿血鮮紅、割痛難忍。與虛證血淋（尿色淡紅、微痛或無痛、體倦）相對照。",
+      "differentiation_preview_en": "Blood Level Excess Heat: Bright red urine with severe cutting pain. Contrasts with Deficiency Blood Lin (pale red urine, mild ache, fatigue).",
+      "exam_pearls_zh": "Bastyr MM2 & NCCAOM 考點：代表方小薊飲子 (Xiao Ji Yin Zi)。涼血止痛、清熱通淋。",
+      "treatment_principle_zh": "清熱涼血，通淋止血",
+      "treatment_principle_en": "Clear Heat, cool Blood, stop bleeding, unblock urination",
+      "related_tcm_disease_ids": [
+        "tdis.lin_zheng",
+        "tdis.niao_xue"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.hematuria",
+        "cond.acute_cystitis"
+      ],
+      "primary_formula_ids": [
+        "formula.xiao_ji_yin_zi"
+      ],
+      "primary_acupoint_ids": [
+        "SP10",
+        "BL17",
+        "BL28",
+        "CV3",
+        "SP6"
+      ],
+      "tag_ids": [
+        "血淋",
+        "涼血止血",
+        "小薊飲子",
+        "血尿"
+      ],
+      "source_ids": [
+        "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "Maciocia_Practice_of_Chinese_Medicine_2nd"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.cloudy_lin",
+      "entity_type": "tcm_pattern",
+      "name_zh": "膏淋",
+      "name_en": "Cloudy Lin (Chyluria Pattern)",
+      "pinyin": "Gāo Lín",
+      "aliases_zh": [
+        "乳溺",
+        "濁淋"
+      ],
+      "aliases_en": [
+        "Turbid Dysuria Pattern",
+        "Chylous Lin"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.spleen",
+        "organ.kidney",
+        "organ.bladder"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "damp_neutral",
+        "excess_deficiency": "mixed_deficiency_excess",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "fluid"
+      ],
+      "pathogenic_factor_ids": [
+        "dampness",
+        "turbidity"
+      ],
+      "short_summary_zh": "濕熱阻滯下焦，清濁不分，脂液下薛。以小便混濁如米泔水或如脂膏、尿道熱澀刺痛為特徵。",
+      "short_summary_en": "Damp-Heat obstructing Lower Burner, failing to separate clear from turbid, allowing fat/essence to spill into urine. Characterized by milky, turbid, or greasy urine with urethral discomfort.",
+      "key_manifestations_zh": [
+        "小便混濁如米泔水",
+        "小便浮油如脂膏",
+        "尿道熱澀疼痛",
+        "小腹沉重感",
+        "口黏不渴"
+      ],
+      "key_manifestations_en": [
+        "Milky Turbid Rice-Water Urine",
+        "Greasy Fatty Substance Floating in Urine",
+        "Urethral Burning & Pain",
+        "Lower Abdominal Heaviness",
+        "Sticky Mouth Without Thirst"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，苔白膩或黃膩",
+        "en": "Red tongue with white or yellow greasy coating"
+      },
+      "pulse_preview": {
+        "zh": "脈濡數或滑數",
+        "en": "Soggy, slippery, or rapid pulse"
+      },
+      "differentiation_preview_zh": "清濁不分病機：尿液渾濁呈米泔或脂膏狀。實證多由濕熱下注，虛證多由脾腎不固。",
+      "differentiation_preview_en": "Turbidity Separation Pathomechanism: Milky or greasy urine appearance. Excess is caused by Damp-Heat; Deficiency is caused by Spleen/Kidney unsteadiness.",
+      "exam_pearls_zh": "Bastyr MM2 & Maciocia 考點：代表方萆薢分清飲 (Bi Xie Fen Qing Yin)。分清別濁、萆薢清熱利濕。",
+      "treatment_principle_zh": "清熱利濕，分清泄濁",
+      "treatment_principle_en": "Clear Heat, drain Dampness, separate clear from turbid",
+      "related_tcm_disease_ids": [
+        "tdis.lin_zheng"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.chyluria",
+        "cond.lipiduria"
+      ],
+      "primary_formula_ids": [
+        "formula.bi_xie_fen_qing_yin"
+      ],
+      "primary_acupoint_ids": [
+        "CV3",
+        "BL28",
+        "SP9",
+        "ST40",
+        "KI3"
+      ],
+      "tag_ids": [
+        "膏淋",
+        "分清別濁",
+        "萆薢分清飲",
+        "尿濁"
+      ],
+      "source_ids": [
+        "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "Maciocia_Practice_of_Chinese_Medicine_2nd"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.fatigue_lin",
+      "entity_type": "tcm_pattern",
+      "name_zh": "勞淋",
+      "name_en": "Fatigue Lin (Exhaustion Dysuria Pattern)",
+      "pinyin": "Láo Lín",
+      "aliases_zh": [
+        "久淋",
+        "虛淋"
+      ],
+      "aliases_en": [
+        "Recurrent Chronic Lin Pattern"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.kidney",
+        "organ.spleen"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "cold_neutral",
+        "excess_deficiency": "deficiency",
+        "yin_yang": "yin"
+      },
+      "qi_blood_fluid_ids": [
+        "qi",
+        "yin"
+      ],
+      "pathogenic_factor_ids": [],
+      "short_summary_zh": "久病淋濁，脾腎虧虛，正氣耗傷。以小便淋漓不已、時作時止、遇勞即發、腰膝痠軟、神疲乏力為特徵。",
+      "short_summary_en": "Chronic Lin depleting Spleen and Kidney Qi/Yin. Characterized by recurrent dribbling dysuria triggered by physical or mental exertion, accompanied by fatigue and weak lumbar/knees.",
+      "key_manifestations_zh": [
+        "小便淋漓時作時止",
+        "遇勞累即發作加重",
+        "小腹墜脹隱痛",
+        "腰膝痠軟無力",
+        "神疲乏力面色少華"
+      ],
+      "key_manifestations_en": [
+        "Recurrent Dribbling Urination",
+        "Triggered/Worsened by Exertion",
+        "Bearing-Down Abdominal Discomfort",
+        "Weak Sore Lumbar & Knees",
+        "Mental Fatigue & Sallow Complexion"
+      ],
+      "tongue_preview": {
+        "zh": "舌質淡，苔薄白",
+        "en": "Pale tongue with thin white coating"
+      },
+      "pulse_preview": {
+        "zh": "脈沉細無力",
+        "en": "Deep, fine, and weak pulse"
+      },
+      "differentiation_preview_zh": "脾腎本虛病機：病程長，平時隱痛或微感不適，一有勞累或性生活即急性發作。治當補益脾腎。",
+      "differentiation_preview_en": "Spleen & Kidney Root Deficiency: Chronic course, low-grade discomfort flared up by fatigue or overwork. Tx: Tonify Spleen & Kidney.",
+      "exam_pearls_zh": "Bastyr MM2 & Maciocia 考點：代表方無比山藥丸 (Wu Bi Shan Yao Wan) 或補中益氣湯加減。益氣滋陰、固澀小便。",
+      "treatment_principle_zh": "健脾益氣，補腎固澀",
+      "treatment_principle_en": "Tonify Spleen Qi, strengthen Kidney, consolidate urination",
+      "related_tcm_disease_ids": [
+        "tdis.lin_zheng"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.recurrent_uti",
+        "cond.chronic_prostatitis"
+      ],
+      "primary_formula_ids": [
+        "formula.wu_bi_shan_yao_wan",
+        "formula.bu_zhong_yi_qi_tang"
+      ],
+      "primary_acupoint_ids": [
+        "BL23",
+        "BL20",
+        "RN6",
+        "ST36",
+        "KI3",
+        "SP6"
+      ],
+      "tag_ids": [
+        "勞淋",
+        "久淋",
+        "健脾補腎",
+        "遇勞即發"
+      ],
+      "source_ids": [
+        "Bastyr_MM2_Lin_Syndrome_Overview_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "Maciocia_Practice_of_Chinese_Medicine_2nd"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.liver_fire_flaring",
+      "entity_type": "tcm_pattern",
+      "name_zh": "肝火上炎",
+      "name_en": "Liver Fire Flaring Upward",
+      "pinyin": "Gān Huǒ Shàng Yán",
+      "aliases_zh": [
+        "肝火亢盛",
+        "肝經實火"
+      ],
+      "aliases_en": [
+        "Liver Fire Excess",
+        "Flaring Liver Fire"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "qi"
+      ],
+      "pathogenic_factor_ids": [
+        "fire"
+      ],
+      "short_summary_zh": "肝鬱化火，火性炎上，上擾清空。以頭痛脹裂、面紅目赤、口苦口乾、急躁易怒、項背緊繃、甚或鼻衄為特徵。",
+      "short_summary_en": "Liver Qi stagnation transforming into Fire, surging upward to agitate head and eyes. Characterized by flushed face, splitting headache, tight neck/trapezius, bitter taste, and epistaxis.",
+      "key_manifestations_zh": [
+        "面紅目赤",
+        "頭痛如裂項背緊繃",
+        "口苦口乾",
+        "急躁易怒",
+        "便秘尿黃或鼻衄"
+      ],
+      "key_manifestations_en": [
+        "Flushed Face & Red Eyes",
+        "Splitting Headache & Tight Neck",
+        "Bitter Taste & Dry Mouth",
+        "Irritability & Agitation",
+        "Constipation & Dark Urine"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，苔黃，邊尖紅",
+        "en": "Red tongue with yellow coating, red edges/tip"
+      },
+      "pulse_preview": {
+        "zh": "脈弦數有力",
+        "en": "Wiry and rapid, forceful pulse"
+      },
+      "differentiation_preview_zh": "肝經純實熱證：以頭痛脹裂、面紅目赤、口苦咽乾為診斷要點。與肝陽上亢區分——本證為純實無虛，無下焦腰膝痠軟。治當清肝瀉火。",
+      "differentiation_preview_en": "Pure Excess Heat of Liver: Characterized by splitting headache, flushed face, bitter taste without lower body Yin deficiency. Tx: Drain Liver Fire.",
+      "exam_pearls_zh": "Bastyr Therapeutics 5 & NCCAOM 考點：代表方龍膽瀉肝湯 (Long Dan Xie Gan Tang)。主穴：LR2 行間、LI4 合谷、LI11 曲池、GB20 風池、GV20 百會、ST44 內庭。",
+      "treatment_principle_zh": "清肝瀉火，清利頭目",
+      "treatment_principle_en": "Calm the Liver, drain Fire, clear head and eyes",
+      "related_tcm_disease_ids": [
+        "tdis.xuan_yun",
+        "tdis.tou_tong"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.hypertension",
+        "cond.migraine"
+      ],
+      "primary_formula_ids": [
+        "formula.long_dan_xie_gan_tang"
+      ],
+      "primary_acupoint_ids": [
+        "LR2",
+        "LI4",
+        "LI11",
+        "GB20",
+        "GV20",
+        "ST44",
+        "ST36",
+        "SP6"
+      ],
+      "tag_ids": [
+        "肝火上炎",
+        "清肝瀉火",
+        "龍膽瀉肝湯",
+        "眩暈",
+        "頭痛"
+      ],
+      "source_ids": [
+        "Bastyr_Therapeutics_5_Hypertension_Apichai_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "https://cloudtcm.com/pattern/liver_fire"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.liver_wind_stirring",
+      "entity_type": "tcm_pattern",
+      "name_zh": "肝風內動",
+      "name_en": "Liver Wind Stirring Internally",
+      "pinyin": "Gān Fēng Nèi Dòng",
+      "aliases_zh": [
+        "陽化風動",
+        "肝風上擾"
+      ],
+      "aliases_en": [
+        "Internal Liver Wind",
+        "Wind Stirring Pattern"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.liver"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "qi"
+      ],
+      "pathogenic_factor_ids": [
+        "internal_wind"
+      ],
+      "short_summary_zh": "肝陽化風，風氣上擾，氣血逆亂。以眩暈劇烈、頭痛、肢體麻木震顫、高調耳鳴、舌強語澀、甚或卒倒昏迷為特徵。",
+      "short_summary_en": "Hyperactive Liver Yang transforming into Wind, agitating upward and causing Qi/Blood chaos. Characterized by severe vertigo, limb numbness/tremors, tongue stiffness, or stroke/coma.",
+      "key_manifestations_zh": [
+        "頭暈目眩劇烈",
+        "肢體麻木震顫",
+        "高調耳鳴暈厥",
+        "舌強語澀口眼歪斜",
+        "半身不遂或突然昏倒"
+      ],
+      "key_manifestations_en": [
+        "Severe Vertigo & Headache",
+        "Limb Numbness & Trembling",
+        "High-Pitch Tinnitus & Fainting",
+        "Tongue Stiffness & Facial Palsy",
+        "Hemiplegia or Sudden Collapse"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，苔薄黃",
+        "en": "Red tongue with thin yellow coating"
+      },
+      "pulse_preview": {
+        "zh": "脈弦滑數",
+        "en": "Wiry, slippery, and rapid pulse"
+      },
+      "differentiation_preview_zh": "中風前兆急症病機：出現肢麻、震顫、言語蹇澀為肝風內動核心。須警惕中風 (Stroke) 發生！中醫診斷多歸屬於眩暈、頭痛或中風範疇。",
+      "differentiation_preview_en": "Stroke Precursor Warning: Numbness, tremors, or dysarthria indicates internal Wind. High alert for imminent stroke!",
+      "exam_pearls_zh": "Bastyr Therapeutics 5 & NCCAOM 考點：代表方鎮肝熄風湯 (Zhen Gan Xi Feng Tang)。主穴：GB20 風池、GV20 百會、LR14 期門、LR3 太衝、GB34 陽陵泉、PC7 大陵。",
+      "treatment_principle_zh": "鎮肝熄風，滋陰潛陽",
+      "treatment_principle_en": "Calm Liver Wind, subdue Yang, nourish Yin",
+      "related_tcm_disease_ids": [
+        "tdis.zhong_feng",
+        "tdis.xuan_yun",
+        "tdis.tou_tong"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.stroke",
+        "cond.hypertensive_crisis",
+        "cond.tia",
+        "cond.hypertension"
+      ],
+      "primary_formula_ids": [
+        "formula.zhen_gan_xi_feng_tang"
+      ],
+      "primary_acupoint_ids": [
+        "GB20",
+        "GV20",
+        "LR14",
+        "LR3",
+        "GB34",
+        "PC7"
+      ],
+      "tag_ids": [
+        "肝風內動",
+        "鎮肝熄風",
+        "中風前兆",
+        "急症紅旗",
+        "眩暈"
+      ],
+      "source_ids": [
+        "Bastyr_Therapeutics_5_Hypertension_Apichai_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
+    },
+    {
+      "id": "pattern.insomnia_heart_kidney_disharmony",
+      "entity_type": "tcm_pattern",
+      "name_zh": "心腎不交",
+      "name_en": "Heart and Kidney Disharmony",
+      "pinyin": "Xīn Shèn Bù Jiāo",
+      "aliases_zh": [
+        "水火未濟",
+        "心火亢盛腎陰不足"
+      ],
+      "aliases_en": [
+        "Non-Interaction of Heart and Kidney",
+        "Water and Fire Incompatibility"
+      ],
+      "status": "draft",
+      "review_status": "draft",
+      "schema_version": "v1.0",
+      "pattern_category": "zang_fu",
+      "zang_fu_ids": [
+        "organ.heart",
+        "organ.kidney"
+      ],
+      "eight_principles": {
+        "interior_exterior": "interior",
+        "heat_cold": "heat",
+        "excess_deficiency": "mixed_deficiency_excess",
+        "yin_yang": "yang"
+      },
+      "qi_blood_fluid_ids": [
+        "yin"
+      ],
+      "pathogenic_factor_ids": [
+        "fire"
+      ],
+      "short_summary_zh": "腎水不足，不能上濟心火；心火偏亢，不能下溫腎水。以心煩不寐、入睡困難、心悸健忘、頭暈耳鳴、腰膝痠軟、五心煩熱為特徵。",
+      "short_summary_en": "Kidney Water failing to rise to nourish Heart, while Heart Fire flares unrestrained. Characterized by severe insomnia, difficulty falling asleep, palpitations, tinnitus, lumbar soreness, and five-center heat.",
+      "key_manifestations_zh": [
+        "心煩不寐入睡困難",
+        "心悸健忘",
+        "頭暈耳鳴腰膝痠軟",
+        "五心煩熱潮熱盜汗",
+        "口舌生瘡口乾"
+      ],
+      "key_manifestations_en": [
+        "Severe Insomnia & Inability to Sleep",
+        "Palpitations & Memory Loss",
+        "Dizziness Tinnitus & Sore Knees",
+        "Five-Center Heat & Night Sweats",
+        "Mouth Ulcers & Dry Mouth"
+      ],
+      "tongue_preview": {
+        "zh": "舌質紅，舌尖紅，苔少",
+        "en": "Red tongue with red tip and scanty coating"
+      },
+      "pulse_preview": {
+        "zh": "脈細數",
+        "en": "Fine and rapid pulse"
+      },
+      "differentiation_preview_zh": "心腎失調病機：心火上炎（心煩失眠、舌尖紅）與腎陰下虛（腰膝痠軟、耳鳴）並見。治療強調「交通心腎、水火相濟」。",
+      "differentiation_preview_en": "Disharmony of Water and Fire: Heart Fire flaring (insomnia, red tip) coexisting with Kidney Yin deficiency (sore knees, tinnitus). Tx: Connect Heart and Kidney.",
+      "exam_pearls_zh": "Bastyr Insomnia Therapeutics & NCCAOM 考點：代表方黃連阿膠湯 (Huang Lian A Jiao Tang) 或交泰丸。主穴：HT7 神門、KI3 太溪、SP6 三陰交、Anmian 安眠。",
+      "treatment_principle_zh": "滋陰降火，交通心腎",
+      "treatment_principle_en": "Nourish Yin, clear Fire, harmonize Heart and Kidney",
+      "related_tcm_disease_ids": [
+        "tdis.shi_mian",
+        "tdis.xin_ji"
+      ],
+      "related_biomedical_condition_ids": [
+        "cond.insomnia",
+        "cond.anxiety"
+      ],
+      "primary_formula_ids": [
+        "formula.huang_lian_a_jiao_tang",
+        "formula.jiao_tai_wan"
+      ],
+      "primary_acupoint_ids": [
+        "HT7",
+        "KI3",
+        "SP6",
+        "EX-HN16",
+        "BL15",
+        "BL23"
+      ],
+      "tag_ids": [
+        "心腎不交",
+        "水火未濟",
+        "黃連阿膠湯",
+        "不寐"
+      ],
+      "source_ids": [
+        "Bastyr_Insomnia_Therapeutics_Notes_2025",
+        "NCBAHM_CH_Exam_Content_Outline_2026",
+        "https://cloudtcm.com/pattern/heart_kidney_disharmony"
+      ],
+      "created_at": "2026-08-02",
+      "updated_at": "2026-08-02",
+      "last_reviewed_at": "2026-08-02"
     }
   ]
 }
