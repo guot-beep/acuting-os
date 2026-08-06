@@ -501,8 +501,12 @@
       if (/acupun\.site/.test(url)) return "acupun.site";
       try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return "來源 Source"; }
     };
-    const links = [...new Set((record.source_urls || []).concat(record.exact_source_url || [], record.safety_source_url || [])
-      .filter((url) => typeof url === "string" && /^https?:\/\//.test(url)))];
+    const links = [...new Set((record.source_urls || []).concat(
+      record.exact_source_url || [],
+      record.safety_source_url || [],
+      record.cloudtcm_url || [],
+      record.american_dragon_url || []
+    ).filter((url) => typeof url === "string" && /^https?:\/\//.test(url)))];
     if (!citations.length && links.length) {
       html += links.map((url) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#0284c7;font-size:0.85em;">${esc(hostName(url))} ↗</a>`).join("");
     }

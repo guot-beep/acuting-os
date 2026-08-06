@@ -1,7 +1,7 @@
 /**
  * scripts/build_batch1_gold_formulas.js
  * Builds Gold-Standard Reference Files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang
- * with dual key aliases (herb_zh/name_zh, decoction_reference_g/dose_g) for 100% UI rendering compatibility.
+ * with verified CloudTCM & American Dragon URLs and dual key aliases.
  */
 
 const fs = require('fs');
@@ -250,12 +250,16 @@ const yqs = {
   "modern_applications_zh": ["急性上呼吸道感染", "流行性感冒", "急性扁桃體炎", "腮腺炎", "麻疹初起"],
   "modern_applications_en": ["Acute upper respiratory infection", "Influenza", "Acute tonsillitis", "Mumps", "Early-stage measles"],
 
-  "cloudtcm_url": "https://cloudtcm.com/formula/7",
+  "cloudtcm_url": "https://cloudtcm.com/formula/271",
   "american_dragon_url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
+  "source_urls": [
+    "https://cloudtcm.com/formula/271",
+    "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html"
+  ],
 
   "external_links": [
     { "source_id": "american_dragon", "url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html", "label_zh": "American Dragon", "label_en": "American Dragon", "lang": "en", "link_status": "direct" },
-    { "source_id": "cloudtcm", "url": "https://cloudtcm.com/formula/7", "label_zh": "雲端中醫", "label_en": "CloudTCM", "lang": "zh", "link_status": "direct" }
+    { "source_id": "cloudtcm", "url": "https://cloudtcm.com/formula/271", "label_zh": "雲端中醫", "label_en": "CloudTCM", "lang": "zh", "link_status": "direct" }
   ],
 
   "field_sources": {
@@ -469,12 +473,16 @@ const sjy = {
   "modern_applications_zh": ["急性支氣管炎", "上呼吸道感染", "流行性感冒咳嗽", "急性結膜炎"],
   "modern_applications_en": ["Acute bronchitis", "Upper respiratory infection", "Influenza cough", "Acute conjunctivitis"],
 
-  "cloudtcm_url": "https://cloudtcm.com/formula/8",
+  "cloudtcm_url": "https://cloudtcm.com/formula/162",
   "american_dragon_url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html",
+  "source_urls": [
+    "https://cloudtcm.com/formula/162",
+    "https://www.americandragon.com/HerbFormulas/SangJuYin.html"
+  ],
 
   "external_links": [
     { "source_id": "american_dragon", "url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html", "label_zh": "American Dragon", "label_en": "American Dragon", "lang": "en", "link_status": "direct" },
-    { "source_id": "cloudtcm", "url": "https://cloudtcm.com/formula/8", "label_zh": "雲端中醫", "label_en": "CloudTCM", "lang": "zh", "link_status": "direct" }
+    { "source_id": "cloudtcm", "url": "https://cloudtcm.com/formula/162", "label_zh": "雲端中醫", "label_en": "CloudTCM", "lang": "zh", "link_status": "direct" }
   ],
 
   "field_sources": {
@@ -681,6 +689,10 @@ const bht = {
 
   "cloudtcm_url": "https://cloudtcm.com/formula/98",
   "american_dragon_url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html",
+  "source_urls": [
+    "https://cloudtcm.com/formula/98",
+    "https://www.americandragon.com/HerbFormulas/BaiHuTang.html"
+  ],
 
   "external_links": [
     { "source_id": "american_dragon", "url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html", "label_zh": "American Dragon", "label_en": "American Dragon", "lang": "en", "link_status": "direct" },
@@ -704,7 +716,7 @@ fs.writeFileSync(path.join(refDir, 'formula.yin_qiao_san.json'), JSON.stringify(
 fs.writeFileSync(path.join(refDir, 'formula.sang_ju_yin.json'), JSON.stringify(sjy, null, 2), 'utf8');
 fs.writeFileSync(path.join(refDir, 'formula.bai_hu_tang.json'), JSON.stringify(bht, null, 2), 'utf8');
 
-console.log('Saved Gold-Standard reference files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang with dual keys!');
+console.log('Saved Gold-Standard reference files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang with verified URLs!');
 
 // Update data/herbs/formulas.json
 const formulaJsonPath = path.join(__dirname, '../data/herbs/formulas.json');
