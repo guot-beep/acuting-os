@@ -1,0 +1,1206 @@
+{
+  "dataset": "pharm_drugs",
+  "policy": "L4 單藥(成分層)。禁忌/黑框/交互作用課件為 0,必須引用官方標籤(validate-pharm-standard P0)。查不到就留空 —— 誠實的來源缺口優於編造。產品層不建卡,只記引用的 setid。",
+  "created": "2026-08-06",
+  "records": [
+    {
+      "id": "drug.furosemide",
+      "name_en": "Furosemide",
+      "name_zh": "呋塞米",
+      "brand_names_en": [
+        "Lasix"
+      ],
+      "drugclass_id": "drugclass.loop_diuretics",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.nkcc2",
+      "rxnorm_rxcui": "4603",
+      "mechanism_en": "Prevents reabsorption of sodium and chloride in the loop of Henle, enhancing diuresis.",
+      "mechanism_zh": "阻止亨利氏環對鈉與氯的再吸收,增強利尿。",
+      "site_of_action_en": "Thick ascending limb of the loop of Henle",
+      "site_of_action_zh": "亨利氏環粗上行支",
+      "physiologic_effect_en": "Very efficient and fast-acting diuresis",
+      "physiologic_effect_zh": "利尿作用強且快",
+      "indications_en": [
+        "Edema associated with chronic heart failure",
+        "Liver cirrhosis",
+        "Renal disease"
+      ],
+      "indications_zh": [
+        "慢性心衰竭相關水腫",
+        "肝硬化",
+        "腎臟疾病"
+      ],
+      "boxed_warning_en": "Furosemide tablets are a potent diuretic which, if given in excessive amounts, can lead to a profound diuresis with water and electrolyte depletion. Therefore, careful medical supervision is required and dose and dose schedule must be adjusted to the individual patient needs.",
+      "boxed_warning_zh": "呋塞米為強效利尿劑,劑量過大可導致大量利尿並造成水分與電解質耗竭。因此必須謹慎醫療監控,劑量與給藥間隔須依個別病人需求調整。",
+      "contraindications_en": [
+        "Anuria",
+        "History of hypersensitivity to furosemide"
+      ],
+      "contraindications_zh": [
+        "無尿",
+        "對呋塞米曾有過敏史"
+      ],
+      "adverse_effects_en": [
+        "Anorexia",
+        "Vomiting",
+        "Dizziness",
+        "Rash",
+        "Postural (orthostatic) hypotension"
+      ],
+      "adverse_effects_zh": [
+        "食慾不振",
+        "嘔吐",
+        "頭暈",
+        "皮疹",
+        "姿勢性低血壓"
+      ],
+      "dailymed_setid": "7cdcd001-ab4b-4210-a455-2e17a7bc4972",
+      "dailymed_label_title": "FUROSEMIDE (FUROSEMIDE) TABLET [REMEDYREPACK INC.]",
+      "dailymed_label_format": "old_format",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7cdcd001-ab4b-4210-a455-2e17a7bc4972",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a682858.html",
+      "medlineplus_url_kind": "verified_exact",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Fast & Furious in the Loop [Hear No Evil]",
+      "classic_association_en": "Loop diuretic to hypokalemia",
+      "exam_trap_en": "Caution: tinnitus and permanent hearing loss.",
+      "exam_trap_zh": "警告:耳鳴與永久性聽力喪失。",
+      "clinical_use_note_zh": "課件強調袢利尿劑「非常有效且快速」,是急性水腫的首選。考試層的兩個抓手是記憶法(Fast & Furious in the Loop)與耳毒性警告。禁忌與黑框取自 DailyMed 標籤 —— 課件完全沒有這兩類內容。",
+      "field_sources": {
+        "mechanism_en": [
+          "course:W5-diuretics#L219-L220"
+        ],
+        "site_of_action_en": [
+          "course:W5-diuretics#L203"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L205-L206"
+        ],
+        "adverse_effects_en": [
+          "course:W5-diuretics#L222-L224"
+        ],
+        "boxed_warning_en": [
+          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#CONTRAINDICATIONS"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L399-L400"
+        ],
+        "exam_trap_en": [
+          "course:Pharmacology Summary#L399"
+        ]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.hydrochlorothiazide",
+      "name_en": "Hydrochlorothiazide",
+      "name_zh": "氫氯噻嗪",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.thiazide_diuretics",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.ncc",
+      "rxnorm_rxcui": "5487",
+      "suffix_en": "-thiazide",
+      "mechanism_en": "Inhibits the sodium-chloride symport in the ascending loop of Henle and distal convoluted tubule.",
+      "mechanism_zh": "抑制亨利氏環上行支與遠曲小管的鈉氯共同轉運。",
+      "indications_en": [
+        "Edema",
+        "Hypertension",
+        "Chronic heart failure",
+        "Hepatic cirrhosis"
+      ],
+      "indications_zh": [
+        "水腫",
+        "高血壓",
+        "慢性心衰竭",
+        "肝硬化"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "See No Evil - Short THIAZ for hypertension, Long THIAZ for diabetes",
+      "exam_trap_en": "Caution: secondary angle closure glaucoma.",
+      "exam_trap_zh": "警告:續發性閉角型青光眼。",
+      "field_sources": {
+        "mechanism_en": [
+          "course:W5-diuretics#L308"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L310-L311"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L401-L402"
+        ],
+        "exam_trap_en": [
+          "course:Pharmacology Summary#L401"
+        ]
+      },
+      "gap_note_zh": "禁忌、黑框、交互作用、孕期待補 —— 需 DailyMed setid。課件這四類為 0。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.spironolactone",
+      "name_en": "Spironolactone",
+      "name_zh": "螺內酯",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.potassium_sparing_diuretics",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.aldosterone_receptor",
+      "rxnorm_rxcui": "9997",
+      "suffix_en": "-actone",
+      "mechanism_en": "Aldosterone receptor blocker.",
+      "mechanism_zh": "醛固酮受體阻斷劑。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "BANANAS - ACTONE is kind and spares Potassium",
+      "exam_trap_en": "Causes HYPERkalemia, the opposite of loop and thiazide diuretics.",
+      "exam_trap_zh": "造成高血鉀,與袢利尿劑及 thiazide 方向相反。",
+      "field_sources": {
+        "mechanism_en": [
+          "course:Pharmacology Summary#L403"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L403-L404"
+        ],
+        "exam_trap_en": [
+          "course:Pharmacology Summary#L403"
+        ]
+      },
+      "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.acetazolamide",
+      "name_en": "Acetazolamide",
+      "name_zh": "乙醯唑胺",
+      "brand_names_en": [
+        "Diamox"
+      ],
+      "drugclass_id": "drugclass.carbonic_anhydrase_inhibitors",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.carbonic_anhydrase",
+      "rxnorm_rxcui": "167",
+      "mechanism_en": "Inhibits carbonic anhydrase, causing excretion of sodium, potassium, bicarbonate and water; also decreases aqueous humor production and lowers intraocular pressure.",
+      "mechanism_zh": "抑制碳酸酐酶,使鈉、鉀、碳酸氫根與水排出;並減少房水生成、降低眼壓。",
+      "indications_en": [
+        "Glaucoma",
+        "Raised intraocular pressure",
+        "Altitude sickness"
+      ],
+      "indications_zh": [
+        "青光眼",
+        "眼壓升高",
+        "高山症"
+      ],
+      "adverse_effects_en": [
+        "Fever",
+        "Rash",
+        "Paresthesia",
+        "Photosensitivity",
+        "Anorexia",
+        "Crystalluria"
+      ],
+      "adverse_effects_zh": [
+        "發燒",
+        "皮疹",
+        "感覺異常",
+        "光敏感",
+        "食慾不振",
+        "結晶尿"
+      ],
+      "board_priority": "medium",
+      "prototype_drug": true,
+      "field_sources": {
+        "mechanism_en": [
+          "course:W5-diuretics#L155-L158"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L174"
+        ],
+        "adverse_effects_en": [
+          "course:W5-diuretics#L192-L193"
+        ]
+      },
+      "adverse_effect_note_zh": "課件標明這些副作用見於慢性使用。",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.mannitol",
+      "name_en": "Mannitol",
+      "name_zh": "甘露醇",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.osmotic_diuretics",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": null,
+      "rxnorm_rxcui": "6628",
+      "mechanism_en": "Filtered at the glomerulus but not reabsorbed, raising the osmolarity of the filtrate so water is retained in the urine and urine volume increases.",
+      "mechanism_zh": "在腎絲球被過濾但不被再吸收,提高濾液滲透壓,使水留在尿中而增加尿量。",
+      "indications_en": [
+        "Brain edema requiring rapid diuresis",
+        "Edema of the eye (glaucoma)"
+      ],
+      "indications_zh": [
+        "需快速利尿的腦水腫",
+        "眼部水腫(青光眼)"
+      ],
+      "board_priority": "medium",
+      "prototype_drug": true,
+      "field_sources": {
+        "mechanism_en": [
+          "course:W5-diuretics#L237-L238"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L28-L29"
+        ]
+      },
+      "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意為 null。",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+    {
+      "id": "drug.warfarin",
+      "name_en": "Warfarin",
+      "name_zh": "華法林",
+      "brand_names_en": [
+        "Coumadin",
+        "Jantoven"
+      ],
+      "drugclass_id": "drugclass.vitamin_k_antagonists",
+      "drugtarget_id": "drugtarget.vkorc1",
+      "rxnorm_rxcui": "11289",
+      "boxed_warning_en": "Warfarin sodium can cause major or fatal bleeding. Perform regular monitoring of INR in all treated patients.",
+      "boxed_warning_zh": "華法林可造成重大或致命出血。所有用藥病人都須定期監測 INR。",
+      "contraindications_en": [
+        "Pregnancy (except in women with mechanical heart valves)",
+        "Hemorrhagic tendencies or blood dyscrasias",
+        "Recent or contemplated surgery of the central nervous system or eye",
+        "Active bleeding of the gastrointestinal, genitourinary or respiratory tract",
+        "Threatened abortion, eclampsia, preeclampsia",
+        "Unsupervised patients with conditions associated with potential high level of non-compliance",
+        "Spinal puncture and other diagnostic or therapeutic procedures with potential for uncontrollable bleeding",
+        "Hypersensitivity to warfarin",
+        "Major regional or lumbar block anesthesia",
+        "Malignant hypertension"
+      ],
+      "contraindications_zh": [
+        "孕婦(機械性心臟瓣膜者除外)",
+        "出血傾向或血液惡質",
+        "近期或計畫中的中樞神經或眼部手術",
+        "胃腸道、泌尿生殖道或呼吸道活動性出血",
+        "流產徵象、子癲、子癲前症",
+        "無人監督且順從性可能很差的病人",
+        "脊椎穿刺及其他有無法控制出血風險的診斷或治療操作",
+        "對華法林過敏",
+        "大範圍區域阻斷或腰椎阻斷麻醉",
+        "惡性高血壓"
+      ],
+      "acupuncture_note_zh": "禁忌明列「有無法控制出血風險的操作」—— 這一條直接涵蓋侵入性針刺的判斷。臨床上必須先確認 INR 與最近一次抽血日期。標籤未針對針灸給數值門檻,不要自行設一個。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
+      "dailymed_label_title": "WARFARIN SODIUM (WARFARIN) TABLET [A-S MEDICATION SOLUTIONS]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#CONTRAINDICATIONS"
+        ]
+      },
+      "gap_note_zh": "交互作用已分級(19 條藥物 + 7 條植物藥,全部引用標籤)。仍待補:機轉、孕期詳述、以及丹參/當歸等標籤未提及之中藥的查證。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "drug_interactions_graded": [
+        {
+          "with": "drug.aspirin",
+          "with_label_en": "Aspirin",
+          "with_label_zh": "阿斯匹靈",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.clopidogrel",
+          "with_label_en": "Clopidogrel",
+          "with_label_zh": "氯吡格雷",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.prasugrel",
+          "with_label_en": "Prasugrel",
+          "with_label_zh": "普拉格雷",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.heparin",
+          "with_label_en": "Heparin",
+          "with_label_zh": "肝素",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.dabigatran",
+          "with_label_en": "Dabigatran",
+          "with_label_zh": "達比加群",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Antiplatelet agents (cilostazol, dipyridamole, ticlopidine)",
+          "with_label_zh": "抗血小板藥(西洛他唑、雙嘧達莫、噻氯匹定)",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.ibuprofen",
+          "with_label_en": "Ibuprofen",
+          "with_label_zh": "布洛芬",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.naproxen",
+          "with_label_en": "Naproxen",
+          "with_label_zh": "萘普生",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.celecoxib",
+          "with_label_en": "Celecoxib",
+          "with_label_zh": "塞來昔布",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.diclofenac",
+          "with_label_en": "Diclofenac",
+          "with_label_zh": "雙氯芬酸",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Other NSAIDs (indomethacin, ketorolac, piroxicam, sulindac and others named in the label)",
+          "with_label_zh": "其他 NSAID(吲哚美辛、酮咯酸、吡羅昔康、舒林酸等,標籤逐一列名)",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.sertraline",
+          "with_label_en": "Sertraline",
+          "with_label_zh": "舍曲林",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.fluoxetine",
+          "with_label_en": "Fluoxetine",
+          "with_label_zh": "氟西汀",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.escitalopram",
+          "with_label_en": "Escitalopram",
+          "with_label_zh": "艾司西酞普蘭",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.duloxetine",
+          "with_label_en": "Duloxetine",
+          "with_label_zh": "度洛西汀",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.venlafaxine",
+          "with_label_en": "Venlafaxine",
+          "with_label_zh": "文拉法辛",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Other SSRIs/SNRIs named in the label (citalopram, fluvoxamine, paroxetine, desvenlafaxine, milnacipran, vilazodone)",
+          "with_label_zh": "標籤列名的其他 SSRI/SNRI(西酞普蘭、氟伏沙明、帕羅西汀、去甲文拉法辛、米那普侖、維拉唑酮)",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Inhibitors of CYP2C9, 1A2 and/or 3A4 (label examples: amiodarone, fluconazole, metronidazole)",
+          "with_label_zh": "CYP2C9、1A2、3A4 抑制劑(標籤舉例:胺碘酮、氟康唑、甲硝唑)",
+          "effect_en": "Potential to increase the effect of warfarin (increase INR)",
+          "effect_zh": "可能增強華法林作用(INR 上升)",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "標籤的 Table 2 逐一列名,本筆為分類層摘要;個別藥物要單獨建條目時再引用該表。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Inducers of CYP2C9, 1A2 and/or 3A4 (label examples: carbamazepine, phenobarbital, rifampin)",
+          "with_label_zh": "CYP2C9、1A2、3A4 誘導劑(標籤舉例:卡馬西平、苯巴比妥、利福平)",
+          "effect_en": "Potential to decrease the effect of warfarin (decrease INR)",
+          "effect_zh": "可能減弱華法林作用(INR 下降)",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "方向與抑制劑相反 —— 這一組是療效不足而非出血,考題常對調。"
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": "herb.ren_shen",
+          "with_label_en": "Ginseng",
+          "with_label_zh": "人參",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "標籤寫 ginseng,未區分品種。藥庫另有西洋參(herb.xi_yang_shen)與三七(herb.san_qi),標籤未指明是否涵蓋 —— 不擴張解釋。"
+        },
+        {
+          "with": "herb.yin_xing",
+          "with_label_en": "Ginkgo biloba",
+          "with_label_zh": "銀杏",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "藥庫另有白果(herb.bai_guo,銀杏種子)。標籤寫 Ginkgo biloba,一般指葉萃取物 —— 兩者不等同,未合併。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Garlic",
+          "with_label_zh": "大蒜",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "St. John’s wort",
+          "with_label_zh": "聖約翰草",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "Echinacea",
+          "with_label_zh": "紫錐花",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "Goldenseal",
+          "with_label_zh": "白毛茛",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "Co-enzyme Q10",
+          "with_label_zh": "輔酶 Q10",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡(屬補充品)"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "以上七種全部是華法林標籤自己指名的,不是推論。標籤未逐一給機轉與方向,所以本層只記錄「標籤指名」這個事實 —— 要寫成臨床建議需再查 NCCIH 或原始文獻,不可從這一筆推導。中醫常用而標籤未提及的藥(丹參、當歸等)目前為 unknown,尚未查證,不列入以免看起來像已排除。"
+    },
+    {
+      "id": "drug.clopidogrel",
+      "name_en": "Clopidogrel",
+      "name_zh": "氯吡格雷",
+      "brand_names_en": [
+        "Plavix"
+      ],
+      "drugclass_id": "drugclass.p2y12_inhibitors",
+      "drugtarget_id": "drugtarget.p2y12",
+      "rxnorm_rxcui": "32968",
+      "boxed_warning_en": "Effectiveness of clopidogrel depends on conversion to an active metabolite by the cytochrome P450 (CYP) system, principally CYP2C19. Poor metabolizers show diminished antiplatelet effect; consider an alternative P2Y12 inhibitor.",
+      "boxed_warning_zh": "氯吡格雷須經 CYP450(主要為 CYP2C19)代謝為活性代謝物才有效。代謝不良者抗血小板效果減弱,應考慮改用其他 P2Y12 抑制劑。",
+      "contraindications_en": [
+        "Active pathological bleeding, such as peptic ulcer or intracranial hemorrhage",
+        "Hypersensitivity (e.g. anaphylaxis) to clopidogrel or any component of the product"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血,如胃潰瘍或顱內出血",
+        "對氯吡格雷或製劑任何成分過敏(如過敏性休克)"
+      ],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dailymed_setid": "c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
+      "dailymed_label_title": "CLOPIDOGREL (CLOPIDOGREL BISULFATE) TABLET, FILM COATED [PREFERRED PHARMACEUTICALS INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#CONTRAINDICATIONS"
+        ]
+      },
+      "gap_note_zh": "交互作用已分級(10 條,全部引用標籤)。植物藥標記為 unknown 並記錄已查來源。仍待補:機轉、不良反應、孕期。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "drug_interactions_graded": [
+        {
+          "with": "drug.omeprazole",
+          "with_label_en": "Omeprazole",
+          "with_label_zh": "奧美拉唑",
+          "effect_en": "Avoid concomitant use. Omeprazole significantly reduces the antiplatelet activity of clopidogrel, whether given together or 12 hours apart.",
+          "effect_zh": "避免併用。奧美拉唑顯著降低氯吡格雷的抗血小板活性,不論同時服用或間隔 12 小時。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "label_recommendation_en": "Avoid",
+          "note_zh": "這是本藥最重要的交互作用 —— 抗血小板效果減弱代表血栓風險上升,不是出血風險。方向與直覺相反。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Esomeprazole",
+          "with_label_zh": "埃索美拉唑",
+          "effect_en": "Avoid concomitant use, same as omeprazole.",
+          "effect_zh": "同奧美拉唑,避免併用。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "label_recommendation_en": "Avoid"
+        },
+        {
+          "with": "drug.pantoprazole",
+          "with_label_en": "Pantoprazole (and dexlansoprazole, lansoprazole)",
+          "with_label_zh": "泮托拉唑(以及右蘭索拉唑、蘭索拉唑)",
+          "effect_en": "Had less effect on the antiplatelet activity of clopidogrel than omeprazole or esomeprazole.",
+          "effect_zh": "對氯吡格雷抗血小板活性的影響小於奧美拉唑與埃索美拉唑。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "標籤明確區分 PPI 之間的差異 —— 不可當成一個分類一起處理。需要 PPI 時這幾個是標籤所指的較小影響選項。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Strong CYP2C19 inducers (e.g. rifampin)",
+          "with_label_zh": "強效 CYP2C19 誘導劑(如利福平)",
+          "effect_en": "Increase the level of the active metabolite; the label advises avoiding strong CYP2C19 inducers.",
+          "effect_zh": "提高活性代謝物濃度;標籤建議避免強效 CYP2C19 誘導劑。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "與 warfarin 方向相反 —— warfarin 遇誘導劑是效果減弱,氯吡格雷是前驅藥,遇誘導劑反而活性代謝物變多。考題常拿這兩個對照。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Repaglinide (CYP2C8 substrate)",
+          "with_label_zh": "瑞格列奈(CYP2C8 受質)",
+          "effect_en": "Avoid concomitant use of repaglinide with clopidogrel.",
+          "effect_zh": "避免與氯吡格雷併用。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "label_recommendation_en": "Avoid"
+        },
+        {
+          "with": null,
+          "with_label_en": "Opioids",
+          "with_label_zh": "鴉片類",
+          "effect_en": "Reduce clopidogrel absorption. The label suggests considering a parenteral antiplatelet agent.",
+          "effect_zh": "降低氯吡格雷吸收。標籤建議考慮改用非口服抗血小板藥。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "機轉是吸收而非代謝 —— 急性冠心症併用嗎啡時是真實情境。"
+        },
+        {
+          "with": null,
+          "with_label_en": "NSAIDs",
+          "with_label_zh": "NSAID 類",
+          "effect_en": "Coadministration increases the risk of gastrointestinal bleeding.",
+          "effect_zh": "併用增加胃腸道出血風險。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.warfarin",
+          "with_label_en": "Warfarin",
+          "with_label_zh": "華法林",
+          "effect_en": "Increases bleeding because of independent effects on hemostasis.",
+          "effect_zh": "兩者對止血的作用各自獨立,併用增加出血。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "SSRIs and SNRIs",
+          "with_label_zh": "SSRI 與 SNRI",
+          "effect_en": "Concomitant administration may increase the risk of bleeding.",
+          "effect_zh": "併用可能增加出血風險。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Other antiplatelet agents",
+          "with_label_zh": "其他抗血小板藥",
+          "effect_en": "Coadministration increases the risk of bleeding due to an additive effect.",
+          "effect_zh": "加成作用,併用增加出血風險。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Botanicals",
+          "with_label_zh": "植物藥",
+          "effect_en": "Not addressed in this label.",
+          "effect_zh": "本標籤未提及。",
+          "evidence": "unknown",
+          "sources_checked": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "已查標籤,未指名任何植物藥 —— 與 warfarin 標籤不同(那份指名七種)。這不代表沒有交互,只代表這份來源沒說。要下結論需再查 NCCIH 與原始文獻。"
+        }
+      ],
+      "exam_trap_zh": "⚠️ 方向陷阱:氯吡格雷是前驅藥。CYP2C19 抑制劑(奧美拉唑)使它變弱 → 血栓風險;誘導劑使它變強。華法林正好相反。",
+      "exam_trap_en": "Direction trap: clopidogrel is a prodrug. A CYP2C19 inhibitor (omeprazole) makes it weaker, raising thrombotic risk; an inducer makes it stronger. Warfarin behaves the opposite way."
+    },
+    {
+      "id": "drug.apixaban",
+      "name_en": "Apixaban",
+      "name_zh": "阿哌沙班",
+      "brand_names_en": [
+        "Eliquis"
+      ],
+      "drugclass_id": "drugclass.factor_xa_inhibitors",
+      "drugtarget_id": "drugtarget.factor_xa",
+      "suffix_en": "-xaban",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including ELIQUIS, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
+      "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含阿哌沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
+      "contraindications_en": [
+        "Active pathological bleeding",
+        "Severe hypersensitivity reaction to ELIQUIS (e.g. anaphylactic reactions)"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血",
+        "對阿哌沙班嚴重過敏反應(如過敏性休克)"
+      ],
+      "dailymed_setid": "a454cd24-0c6d-46e8-b1e4-197388606175",
+      "dailymed_label_title": "ELIQUIS (APIXABAN) TABLET, FILM COATED [CARDINAL HEALTH 107, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#CONTRAINDICATIONS"
+        ]
+      },
+      "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
+      "monitoring_note_zh": "無常規凝血監測指標 —— 不像 warfarin 有 INR。判斷依據是腎功能、劑量與末次服藥時間。"
+    },
+    {
+      "id": "drug.rivaroxaban",
+      "name_en": "Rivaroxaban",
+      "name_zh": "利伐沙班",
+      "brand_names_en": [
+        "Xarelto"
+      ],
+      "drugclass_id": "drugclass.factor_xa_inhibitors",
+      "drugtarget_id": "drugtarget.factor_xa",
+      "suffix_en": "-xaban",
+      "board_priority": "high",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including rivaroxaban, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
+      "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含利伐沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
+      "contraindications_en": [
+        "Active pathological bleeding",
+        "Severe hypersensitivity reaction to rivaroxaban (e.g. anaphylactic reactions)"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血",
+        "對利伐沙班嚴重過敏反應(如過敏性休克)"
+      ],
+      "dailymed_setid": "481b7802-5093-43e7-bbd9-1532197eb6e6",
+      "dailymed_label_title": "RIVAROXABAN (RIVAROXABAN) TABLET [MICRO LABS LIMITED]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=481b7802-5093-43e7-bbd9-1532197eb6e6",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#CONTRAINDICATIONS"
+        ]
+      },
+      "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
+      "monitoring_note_zh": "無常規凝血監測指標 —— 不像 warfarin 有 INR。判斷依據是腎功能、劑量與末次服藥時間。"
+    },
+    {
+      "id": "drug.dabigatran",
+      "name_en": "Dabigatran",
+      "name_zh": "達比加群",
+      "brand_names_en": [
+        "Pradaxa"
+      ],
+      "drugclass_id": "drugclass.direct_thrombin_inhibitors",
+      "drugtarget_id": "drugtarget.thrombin",
+      "suffix_en": "-gatran",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including dabigatran etexilate, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture.",
+      "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含達比加群酯)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫。",
+      "contraindications_en": [
+        "Active pathological bleeding",
+        "History of a serious hypersensitivity reaction to dabigatran, dabigatran etexilate, or to one of the excipients",
+        "Mechanical prosthetic heart valve"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血",
+        "對達比加群、達比加群酯或賦形劑曾有嚴重過敏反應",
+        "機械性人工心臟瓣膜"
+      ],
+      "dailymed_setid": "3a8ec82a-c367-40dc-9302-e1896fcb05ea",
+      "dailymed_label_title": "DABIGATRAN ETEXILATE CAPSULE, COATED PELLETS [ASCEND LABORATORIES, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3a8ec82a-c367-40dc-9302-e1896fcb05ea",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#CONTRAINDICATIONS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ 機械性人工心臟瓣膜:達比加群是禁忌,華法林是適應症 —— 方向完全相反。這是 DOAC 不能一律取代 warfarin 的具體例子。",
+      "exam_trap_en": "Mechanical prosthetic heart valve: contraindicated for dabigatran, but an indication for warfarin. DOACs do not simply replace warfarin.",
+      "acupuncture_note_zh": "黑框第二段指的是神經軸麻醉與脊椎穿刺,不是針灸。無常規凝血監測指標。",
+      "monitoring_note_zh": "無常規監測 —— 與其他 DOAC 相同,不像 warfarin 有 INR。"
+    },
+    {
+      "id": "drug.ticagrelor",
+      "name_en": "Ticagrelor",
+      "name_zh": "替格瑞洛",
+      "brand_names_en": [
+        "Brilinta"
+      ],
+      "drugclass_id": "drugclass.p2y12_inhibitors",
+      "drugtarget_id": "drugtarget.p2y12",
+      "board_priority": "high",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、不良反應、孕期待補。",
+      "boxed_warning_en": "Ticagrelor, like other antiplatelet agents, can cause significant, sometimes fatal bleeding. Do not use in patients with active pathological bleeding or a history of intracranial hemorrhage. Do not start in patients undergoing urgent coronary artery bypass graft surgery (CABG). If possible, manage bleeding without discontinuing ticagrelor: stopping it increases the risk of subsequent cardiovascular events.",
+      "boxed_warning_zh": "替格瑞洛如同其他抗血小板藥,可造成顯著、有時致命的出血。活動性病理性出血或有顱內出血病史者不可使用。正接受緊急冠狀動脈繞道手術者不可起始使用。若可能,處理出血時不要停藥 —— 停藥會增加後續心血管事件風險。",
+      "contraindications_en": [
+        "History of intracranial hemorrhage",
+        "Active pathological bleeding such as peptic ulcer or intracranial hemorrhage",
+        "Hypersensitivity (e.g. angioedema) to ticagrelor or any component of the product"
+      ],
+      "contraindications_zh": [
+        "曾有顱內出血病史",
+        "活動性病理性出血,如胃潰瘍或顱內出血",
+        "對替格瑞洛或製劑任何成分過敏(如血管性水腫)"
+      ],
+      "dailymed_setid": "557351f1-47b7-216d-e063-6394a90afb51",
+      "dailymed_label_title": "TICAGRELOR TABLET, FILM COATED [REDPHARM DRUG]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=557351f1-47b7-216d-e063-6394a90afb51",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#CONTRAINDICATIONS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ 禁忌是**顱內出血**病史,不是 TIA／中風 —— 那是普拉格雷。兩者常被對調。另外黑框特別寫「若可能不要停藥」,因為停藥本身會增加心血管事件。",
+      "exam_trap_en": "The contraindication is a history of intracranial hemorrhage, not TIA or stroke — that is prasugrel. The boxed warning also says to manage bleeding without stopping the drug where possible, since stopping raises cardiovascular risk.",
+      "acupuncture_note_zh": "黑框明寫「若可能不要停藥」—— 所以不要為了針灸建議病人停藥,那不是我們能決定的,要由開藥醫師判斷。"
+    },
+    {
+      "id": "drug.prasugrel",
+      "name_en": "Prasugrel",
+      "name_zh": "普拉格雷",
+      "brand_names_en": [
+        "Effient"
+      ],
+      "drugclass_id": "drugclass.p2y12_inhibitors",
+      "drugtarget_id": "drugtarget.p2y12",
+      "board_priority": "high",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、不良反應、孕期待補。",
+      "boxed_warning_en": "Prasugrel can cause significant, sometimes fatal, bleeding. Do not use in patients with active pathological bleeding or a history of transient ischemic attack or stroke. Do not start in patients likely to undergo urgent coronary artery bypass graft surgery (CABG).",
+      "boxed_warning_zh": "普拉格雷可造成顯著、有時致命的出血。活動性病理性出血或有短暫性腦缺血(TIA)／中風病史者不可使用。可能需接受緊急冠狀動脈繞道手術(CABG)者不可起始使用。",
+      "contraindications_en": [
+        "Active pathological bleeding such as peptic ulcer or intracranial hemorrhage",
+        "History of prior transient ischemic attack (TIA) or stroke",
+        "Hypersensitivity to prasugrel or any component of the product"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血,如胃潰瘍或顱內出血",
+        "曾有短暫性腦缺血(TIA)或中風病史",
+        "對普拉格雷或製劑任何成分過敏"
+      ],
+      "dailymed_setid": "f51e64e0-f556-65d0-a876-fb709aaeefea",
+      "dailymed_label_title": "PRASUGREL TABLET, FILM COATED [APOTEX CORP.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f51e64e0-f556-65d0-a876-fb709aaeefea",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#CONTRAINDICATIONS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ TIA／中風病史是普拉格雷的禁忌 —— 這一條 clopidogrel 與 ticagrelor 都沒有。三個 P2Y12 抑制劑不可互換。",
+      "exam_trap_en": "A history of TIA or stroke contraindicates prasugrel; clopidogrel and ticagrelor do not carry that. The three P2Y12 inhibitors are not interchangeable.",
+      "acupuncture_note_zh": "黑框直接寫「顯著、有時致命的出血」。針刺前需確認是否仍在服用及末次劑量;無常規監測指標。"
+    },
+    {
+      "id": "drug.aspirin",
+      "name_en": "Aspirin",
+      "name_zh": "阿斯匹靈",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.cox_antiplatelet",
+      "drugtarget_id": "drugtarget.cox1",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "dual_role_note_zh": "低劑量抗血小板(本層),高劑量為 NSAID(P4)。同一分子兩種臨床角色,不要合併成一句。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、高劑量 NSAID 角色(P4)待補。低劑量抗血小板與高劑量 NSAID 是同一分子的兩種角色,不要合併。",
+      "label_type": "OTC Drug Facts",
+      "contraindications_en": [
+        "Allergy to aspirin or any other pain reliever/fever reducer",
+        "Children and teenagers who have or are recovering from chicken pox or flu-like symptoms (Reye syndrome risk)",
+        "Three or more alcoholic drinks every day while using this product"
+      ],
+      "contraindications_zh": [
+        "對阿斯匹靈或任何其他止痛/退燒藥過敏",
+        "正在或剛從水痘或類流感症狀恢復的兒童與青少年(雷氏症候群風險)",
+        "用藥期間每日飲酒三杯以上"
+      ],
+      "warnings_en": [
+        "Aspirin may cause a severe allergic reaction including hives, facial swelling, shock, or asthma (wheezing)",
+        "Ask a doctor before use with stomach problems, age 60 or over, prior stomach ulcers or bleeding problems, or if taking blood thinning drugs",
+        "Stop use and seek immediate medical help for signs of stomach bleeding: feeling faint, bloody or black stools, vomiting blood, or unrelieved stomach pain"
+      ],
+      "warnings_zh": [
+        "可能引起嚴重過敏反應,包括蕁麻疹、顏面腫脹、休克或氣喘(喘鳴)",
+        "有胃部問題、年齡 60 歲以上、曾有胃潰瘍或出血問題、或正在服用抗凝血藥者,使用前應諮詢醫師",
+        "出現胃出血徵象時立即停用並就醫:頭暈欲昏、血便或黑便、吐血、持續不緩解的胃痛"
+      ],
+      "dailymed_setid": "ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
+      "dailymed_label_title": "ASPIRIN 81 MG (ASPIRIN) TABLET, COATED [HAWAII REPACK, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#DO_NOT_USE"
+        ],
+        "warnings_en": [
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#WARNINGS"
+        ]
+      },
+      "label_format_note_zh": "本筆引用的是 OTC「Drug Facts」格式標籤,不是處方藥的 PLR/舊格式 —— 沒有 BOXED WARNING 區段,對應內容在 Do not use 與 Warnings。欄位對照時要注意,不要因為沒有 boxed_warning 就以為漏查。",
+      "acupuncture_note_zh": "標籤明列「正在服用抗凝血藥者使用前應諮詢醫師」—— 病人自行買 OTC 阿斯匹靈加上處方抗凝劑是很常見的組合,問診時要主動問,因為病人常不把 OTC 當成「藥」。",
+      "exam_trap_zh": "⚠️ 雷氏症候群:兒童與青少年在水痘或類流感期間禁用 —— 這是 OTC 標籤上明列的,考題常出。",
+      "exam_trap_en": "Reye syndrome: contraindicated in children and teenagers with or recovering from chicken pox or flu-like symptoms."
+    },
+    {
+      "id": "drug.enoxaparin",
+      "name_en": "Enoxaparin",
+      "name_zh": "依諾肝素",
+      "brand_names_en": [
+        "Lovenox"
+      ],
+      "drugclass_id": "drugclass.heparins",
+      "drugtarget_id": "drugtarget.antithrombin_iii",
+      "board_priority": "high",
+      "migrated_from": "med.enoxaparin",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "Epidural or spinal hematomas may occur in patients anticoagulated with low molecular weight heparins (LMWH) or heparinoids who are receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis. Risk is increased by indwelling epidural catheters; concomitant drugs affecting hemostasis such as NSAIDs, platelet inhibitors and other anticoagulants; a history of traumatic or repeated epidural or spinal punctures; and a history of spinal deformity or spinal surgery.",
+      "boxed_warning_zh": "使用低分子量肝素或類肝素抗凝、且接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。風險增加因子:留置硬膜外導管;併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑);曾有創傷性或反覆的硬膜外／脊椎穿刺病史;脊椎變形或脊椎手術病史。",
+      "contraindications_en": [
+        "Active major bleeding",
+        "History of heparin-induced thrombocytopenia (HIT) within the past 100 days or in the presence of circulating antibodies",
+        "Known hypersensitivity to enoxaparin sodium",
+        "Known hypersensitivity to heparin or pork products"
+      ],
+      "contraindications_zh": [
+        "活動性大出血",
+        "過去 100 天內曾有肝素誘發血小板減少症(HIT),或體內有循環抗體",
+        "對依諾肝素鈉過敏",
+        "對肝素或豬類製品過敏"
+      ],
+      "dailymed_setid": "5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
+      "dailymed_label_title": "ENOXAPARIN SODIUM INJECTION [CARDINAL HEALTH 107, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#CONTRAINDICATIONS"
+        ]
+      },
+      "acupuncture_note_zh": "這是全 P1 層唯一列出**風險因子清單**的黑框,其中兩條值得注意:①「併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑)」——雙重抗凝／抗血小板的病人風險更高;②「曾有創傷性或反覆的硬膜外／脊椎穿刺病史」。第②條講的是硬膜外與脊椎穿刺,**不是針灸**,標籤沒有把針刺納入。但它說明了「反覆穿刺」本身是風險因子,近脊椎深刺時值得納入判斷。標籤未給任何針灸門檻,不要自行推導一個。",
+      "cultural_note_zh": "肝素為豬源 —— 對豬類製品過敏是明列禁忌,穆斯林、猶太教與素食病人也可能有非醫療考量,問診時值得主動提及。",
+      "exam_trap_zh": "⚠️ HIT(肝素誘發血小板減少症)是禁忌,而且標籤明訂「過去 100 天內」的時間窗。"
+    },
+    {
+      "id": "drug.heparin",
+      "name_en": "Heparin",
+      "name_zh": "肝素",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.heparins",
+      "drugtarget_id": "drugtarget.antithrombin_iii",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06",
+      "gap_note_zh": "交互作用、劑量、孕期待補。",
+      "contraindications_en": [
+        "Severe thrombocytopenia",
+        "Known hypersensitivity to heparin or pork products",
+        "When suitable blood coagulation tests cannot be performed at appropriate intervals",
+        "An uncontrolled active bleeding state, except when due to disseminated intravascular coagulation"
+      ],
+      "contraindications_zh": [
+        "嚴重血小板減少",
+        "對肝素或豬類製品過敏",
+        "無法在適當間隔進行合適凝血檢驗時",
+        "無法控制的活動性出血,但因瀰漫性血管內凝血(DIC)所致者除外"
+      ],
+      "warnings_en": [
+        "Heparin-induced thrombocytopenia (HIT) is a serious antibody-mediated reaction that may progress to venous and arterial thrombosis (HITT). If the platelet count falls below 100,000/mm3 or recurrent thrombosis develops, promptly discontinue heparin, evaluate for HIT and HITT, and administer an alternative anticoagulant.",
+        "Fatal hemorrhages have occurred in pediatric patients due to medication errors in which 1 mL heparin sodium injection vials were confused with catheter lock flush vials."
+      ],
+      "warnings_zh": [
+        "肝素誘發血小板減少症(HIT)是抗體媒介的嚴重反應,可能進展為靜脈與動脈血栓(HITT)。血小板降至 100,000/mm3 以下或再發血栓時,應立即停用肝素、評估 HIT 與 HITT,並改用其他抗凝劑。",
+        "曾發生兒科病人致命出血 —— 因 1 mL 肝素注射瓶與導管沖洗瓶混淆的給藥錯誤。"
+      ],
+      "has_boxed_warning": false,
+      "boxed_warning_checked_note_zh": "本標籤**沒有**黑框警告 —— 已查證,不是漏查。低分子量肝素(依諾肝素)反而有脊椎血腫黑框,兩者不同,不要互相套用。",
+      "dailymed_setid": "9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
+      "dailymed_label_title": "HEPARIN SODIUM INJECTION, SOLUTION [CARDINAL HEALTH 107, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#WARNINGS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ 禁忌明列「無法在適當間隔進行凝血檢驗時」—— 肝素需要監測(aPTT),這與 DOAC 無監測、warfarin 用 INR 各不相同。三種抗凝劑三種監測方式。",
+      "exam_trap_en": "Contraindicated when suitable coagulation tests cannot be performed at appropriate intervals. Heparin needs monitoring (aPTT), warfarin uses INR, DOACs have no routine monitor - three different answers.",
+      "acupuncture_note_zh": "靜脈/皮下給藥,住院情境為主,門診針灸較少遇到。若病人剛出院仍在用,出血風險高且需監測。豬源過敏同依諾肝素。"
+    }
+  ]
+}

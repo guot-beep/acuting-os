@@ -1,0 +1,46 @@
+{
+  "dataset": "Symptom crosswalk proposal — SCHEMA ONLY, no records yet",
+  "purpose": "Defines the shape of a proposal that maps existing free-text symptom strings onto future sym.* concepts. Batch A ships the schema; the proposals themselves are produced later by a Codex-built tool and reviewed by a human.",
+  "policy": [
+    "possible_id is ALWAYS null in this file. Ids are minted only after the vocabulary, template and validator are approved and a human has reviewed the proposal — never by the tool that generates it.",
+    "This is a proposal, never canon. Nothing here may appear in a relation field (D11: import layers are not namespaces).",
+    "source_text is preserved verbatim. A decomposition proposal never replaces or edits its source — pattern.key_signs_zh keeps its 182 strings regardless of what is proposed here (§0 只加深不刪除).",
+    "match_layer exists because the three layers have completely different reliability. L1 is mechanical; L2 needs confirmation; L3 is a per-item clinical judgement and CANNOT be automated. Mixing them in one list hides which rows are safe to batch.",
+    "Measured 2026-08-06: naive 2+2 splitting of the 112 four-character key_signs produces 192 atoms — MORE than the 182 inputs — and yields garbage like 面色+萎黃 and 痰易+咯出. Under a strict test (both halves independently attested as standalone keys) only 3 are certainly decomposable: 口苦咽乾, 心悸健忘, 心悸失眠. The other 109 need a human."
+  ],
+  "field_definitions": {
+    "source_text": "verbatim string as it appears in the source layer",
+    "source_layer": "pattern.key_signs_zh | cloudtcm.symptom_candidate | cond.related_tcm_symptoms",
+    "source_record_ids": "which records carry this string — without it a bad decomposition cannot be traced back to the patterns it would affect",
+    "proposal_type": "exact | alias | compound | location_variant | not_a_symptom | already_exists",
+    "match_layer": "L1_exact | L2_alias | L3_compound",
+    "proposed_concepts": "one entry per resulting concept; possible_id stays null",
+    "confidence": "high | medium | low",
+    "needs_human_review": "true for every L3 row without exception",
+    "reviewer_note": "why a proposal was rejected — without it the next pass re-proposes the same wrong split",
+    "reviewer_decision": "pending | accepted | rejected | deferred"
+  },
+  "example_only_not_a_record": {
+    "source_text": "氣短聲低",
+    "source_layer": "pattern.key_signs_zh",
+    "source_record_ids": ["pattern.lung_qi_deficiency"],
+    "proposal_type": "compound",
+    "match_layer": "L3_compound",
+    "proposed_concepts": [
+      { "preferred_label_zh": "氣短", "preferred_label_en": null, "possible_id": null },
+      { "preferred_label_zh": "聲低", "preferred_label_en": null, "possible_id": null }
+    ],
+    "confidence": "medium",
+    "needs_human_review": true,
+    "reviewer_decision": "pending",
+    "reviewer_note": null
+  },
+  "expected_volumes_measured_2026_08_06": {
+    "L1_exact": 2,
+    "L2_alias": "10 by containment today; 25-40 once an alias table exists",
+    "L3_compound": "3 certain, 109 requiring per-item human judgement",
+    "location_variant": "44 pain entries collapsing to ~15 base symptoms",
+    "not_a_symptom": 6
+  },
+  "proposals": []
+}

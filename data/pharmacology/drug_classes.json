@@ -1,0 +1,359 @@
+{
+  "dataset": "pharm_drug_classes",
+  "policy": "L3 藥物分類。課件(PPT)是這一層的主來源 —— PPT 教的正是機轉與作用部位。禁忌與交互作用課件為 0,不在這一層填。",
+  "created": "2026-08-06",
+  "records": [
+    {
+      "id": "drugclass.loop_diuretics",
+      "name_en": "Loop diuretics",
+      "name_zh": "袢利尿劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.nkcc2",
+      "suffix_en": null,
+      "mechanism_overview_en": "Prevent reabsorption of sodium and chloride in the loop of Henle, enhancing diuresis.",
+      "mechanism_overview_zh": "阻止亨利氏環對鈉與氯的再吸收,增強利尿。",
+      "site_of_action_en": "Thick ascending limb of the loop of Henle",
+      "site_of_action_zh": "亨利氏環粗上行支",
+      "physiologic_effect_en": "Very efficient and fast-acting diuresis",
+      "physiologic_effect_zh": "利尿作用強且快",
+      "indications_en": [
+        "Edema of chronic heart failure",
+        "Liver cirrhosis",
+        "Renal disease",
+        "Short-term use for ascites and lymphedema"
+      ],
+      "indications_zh": [
+        "慢性心衰竭之水腫",
+        "肝硬化",
+        "腎臟疾病",
+        "腹水與淋巴水腫短期使用"
+      ],
+      "shared_adverse_effects_en": [
+        "Anorexia",
+        "Vomiting",
+        "Dizziness",
+        "Rash",
+        "Postural (orthostatic) hypotension"
+      ],
+      "shared_adverse_effects_zh": [
+        "食慾不振",
+        "嘔吐",
+        "頭暈",
+        "皮疹",
+        "姿勢性低血壓"
+      ],
+      "representative_drug_ids": [
+        "drug.furosemide"
+      ],
+      "prototype_drug_id": "drug.furosemide",
+      "board_priority": "high",
+      "mnemonic_en": "Fast & Furious in the Loop [Hear No Evil]",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "course:W5-diuretics#L219-L220"
+        ],
+        "site_of_action_en": [
+          "course:W5-diuretics#L203"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L205-L207"
+        ],
+        "shared_adverse_effects_en": [
+          "course:W5-diuretics#L222-L224"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L399-L400"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.thiazide_diuretics",
+      "name_en": "Thiazide and thiazide-like diuretics",
+      "name_zh": "Thiazide 類利尿劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.ncc",
+      "suffix_en": "-thiazide",
+      "mechanism_overview_en": "Inhibit the sodium-chloride symport in the ascending loop of Henle and distal convoluted tubule, producing excretion of sodium, chloride and water.",
+      "mechanism_overview_zh": "抑制亨利氏環上行支與遠曲小管的鈉氯共同轉運,使鈉、氯與水排出而利尿。",
+      "site_of_action_en": "Ascending loop of Henle and distal convoluted tubule",
+      "site_of_action_zh": "亨利氏環上行支與遠曲小管",
+      "indications_en": [
+        "Edema",
+        "Hypertension",
+        "Chronic heart failure",
+        "Hepatic cirrhosis",
+        "Steroid and estrogen therapy"
+      ],
+      "indications_zh": [
+        "水腫",
+        "高血壓",
+        "慢性心衰竭",
+        "肝硬化",
+        "類固醇與雌激素治療相關水腫"
+      ],
+      "shared_adverse_effects_en": [
+        "Excessive fluid and electrolyte loss",
+        "Dehydration",
+        "Gastric irritation",
+        "Bloating",
+        "Reduced libido",
+        "Dizziness",
+        "Vertigo",
+        "Headache"
+      ],
+      "shared_adverse_effects_zh": [
+        "體液與電解質過度流失",
+        "脫水",
+        "胃部刺激",
+        "腹脹",
+        "性慾降低",
+        "頭暈",
+        "眩暈",
+        "頭痛"
+      ],
+      "representative_drug_ids": [
+        "drug.hydrochlorothiazide"
+      ],
+      "prototype_drug_id": "drug.hydrochlorothiazide",
+      "board_priority": "high",
+      "mnemonic_en": "See No Evil — Short THIAZ for hypertension, Long THIAZ for diabetes",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "course:W5-diuretics#L308-L309"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L310-L311"
+        ],
+        "shared_adverse_effects_en": [
+          "course:W5-diuretics#L329-L330"
+        ],
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L401-L402"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.potassium_sparing_diuretics",
+      "name_en": "Potassium-sparing diuretics",
+      "name_zh": "保鉀利尿劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal",
+        "drugsystem.endocrine"
+      ],
+      "drugtarget_id": "drugtarget.aldosterone_receptor",
+      "suffix_en": "-actone",
+      "representative_drug_ids": [
+        "drug.spironolactone"
+      ],
+      "prototype_drug_id": "drug.spironolactone",
+      "board_priority": "high",
+      "mnemonic_en": "BANANAS — DARONE's brother ACTONE is kind & spares Potassium",
+      "exam_trap_en": "Loop and thiazide diuretics cause hypokalemia; potassium-sparing diuretics cause HYPERkalemia. Do not confuse the two.",
+      "exam_trap_zh": "袢利尿劑與 thiazide 造成低血鉀,保鉀利尿劑造成高血鉀 —— 方向相反,考題最愛。",
+      "field_sources": {
+        "mnemonic_en": [
+          "course:Pharmacology Summary#L403-L404"
+        ],
+        "exam_trap_en": [
+          "course:Pharmacology Summary#L398-L404"
+        ]
+      },
+      "review_status": "draft",
+      "gap_note_zh": "課件對本類的機轉敘述較少,site_of_action 與 shared_adverse_effects 待官方標籤補。"
+    },
+    {
+      "id": "drugclass.carbonic_anhydrase_inhibitors",
+      "name_en": "Carbonic anhydrase inhibitors",
+      "name_zh": "碳酸酐酶抑制劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": "drugtarget.carbonic_anhydrase",
+      "mechanism_overview_en": "Inhibit carbonic anhydrase, causing excretion of sodium, potassium, bicarbonate and water. Also decrease production of aqueous humor and lower intraocular pressure.",
+      "mechanism_overview_zh": "抑制碳酸酐酶,使鈉、鉀、碳酸氫根與水排出;並減少房水生成、降低眼壓。",
+      "indications_en": [
+        "Glaucoma",
+        "Raised intraocular pressure",
+        "Altitude sickness"
+      ],
+      "indications_zh": [
+        "青光眼",
+        "眼壓升高",
+        "高山症"
+      ],
+      "shared_adverse_effects_en": [
+        "Fever",
+        "Rash",
+        "Paresthesia",
+        "Photosensitivity",
+        "Anorexia",
+        "Crystalluria"
+      ],
+      "shared_adverse_effects_zh": [
+        "發燒",
+        "皮疹",
+        "感覺異常",
+        "光敏感",
+        "食慾不振",
+        "結晶尿"
+      ],
+      "representative_drug_ids": [
+        "drug.acetazolamide"
+      ],
+      "prototype_drug_id": "drug.acetazolamide",
+      "board_priority": "medium",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "course:W5-diuretics#L155-L158"
+        ],
+        "indications_en": [
+          "course:W5-diuretics#L174"
+        ],
+        "shared_adverse_effects_en": [
+          "course:W5-diuretics#L192-L193"
+        ]
+      },
+      "adverse_effect_note_zh": "課件標明這些副作用見於「慢性使用」(chronic use)。",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.osmotic_diuretics",
+      "name_en": "Osmotic diuretics",
+      "name_zh": "滲透性利尿劑",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "drugtarget_id": null,
+      "mechanism_overview_en": "Filtered at the glomerulus but not reabsorbed, so they raise the osmolarity of the filtrate; water is retained in the urine and urine volume increases.",
+      "mechanism_overview_zh": "在腎絲球被過濾但不被再吸收,提高濾液滲透壓,使水留在尿中而增加尿量。",
+      "site_of_action_en": "Glomerulus and tubules (osmotic, not receptor-mediated)",
+      "site_of_action_zh": "腎絲球與腎小管(滲透作用,非受體媒介)",
+      "representative_drug_ids": [
+        "drug.mannitol"
+      ],
+      "prototype_drug_id": "drug.mannitol",
+      "board_priority": "medium",
+      "field_sources": {
+        "mechanism_overview_en": [
+          "course:W5-diuretics#L237-L238"
+        ]
+      },
+      "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意留 null,不是待補。",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.vitamin_k_antagonists",
+      "name_en": "Vitamin K antagonists",
+      "name_zh": "維生素 K 拮抗劑",
+      "drugtarget_id": "drugtarget.vkorc1",
+      "prototype_drug_id": "drug.warfarin",
+      "representative_drug_ids": [
+        "drug.warfarin"
+      ],
+      "board_priority": "high",
+      "bleeding_risk_zh": "極高 —— 需 INR 監測;針刺前必須確認。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.p2y12_inhibitors",
+      "name_en": "P2Y12 inhibitors",
+      "name_zh": "P2Y12 抑制劑",
+      "drugtarget_id": "drugtarget.p2y12",
+      "prototype_drug_id": "drug.clopidogrel",
+      "representative_drug_ids": [
+        "drug.clopidogrel",
+        "drug.ticagrelor",
+        "drug.prasugrel"
+      ],
+      "board_priority": "high",
+      "bleeding_risk_zh": "高 —— 抗血小板,無常規監測指標。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.factor_xa_inhibitors",
+      "name_en": "Direct factor Xa inhibitors (DOAC)",
+      "name_zh": "直接 Xa 因子抑制劑",
+      "drugtarget_id": "drugtarget.factor_xa",
+      "prototype_drug_id": "drug.apixaban",
+      "representative_drug_ids": [
+        "drug.apixaban",
+        "drug.rivaroxaban"
+      ],
+      "board_priority": "high",
+      "suffix_en": "-xaban",
+      "bleeding_risk_zh": "高 —— 無常規監測指標,不像 warfarin 有 INR。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft",
+      "class_boxed_warning_zh": "本類兩個藥(阿哌沙班、利伐沙班)的黑框警告結構相同:(A) 提早停藥增加血栓風險 (B) 神經軸麻醉/脊椎穿刺可能導致硬膜外或脊椎血腫與永久癱瘓。這是分類層級的事實,不是巧合。",
+      "monitoring_note_zh": "無常規監測指標 —— 這是 DOAC 與 warfarin 最大的臨床差別。看不到 INR 不代表出血風險較低。",
+      "field_sources": {
+        "class_boxed_warning_zh": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#BOXED_WARNING",
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#BOXED_WARNING"
+        ]
+      }
+    },
+    {
+      "id": "drugclass.direct_thrombin_inhibitors",
+      "name_en": "Direct thrombin inhibitors",
+      "name_zh": "直接凝血酶抑制劑",
+      "drugtarget_id": "drugtarget.thrombin",
+      "prototype_drug_id": "drug.dabigatran",
+      "representative_drug_ids": [
+        "drug.dabigatran"
+      ],
+      "board_priority": "high",
+      "suffix_en": "-gatran",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.cox_antiplatelet",
+      "name_en": "COX-inhibitor antiplatelets",
+      "name_zh": "環氧化酶抑制型抗血小板藥",
+      "drugtarget_id": "drugtarget.cox1",
+      "prototype_drug_id": "drug.aspirin",
+      "representative_drug_ids": [
+        "drug.aspirin"
+      ],
+      "board_priority": "high",
+      "note_zh": "低劑量作抗血小板;高劑量進入 NSAID 範疇(P4)。同一分子兩種角色。",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugclass.heparins",
+      "name_en": "Heparins",
+      "name_zh": "肝素類",
+      "drugtarget_id": "drugtarget.antithrombin_iii",
+      "prototype_drug_id": "drug.heparin",
+      "representative_drug_ids": [
+        "drug.heparin",
+        "drug.enoxaparin"
+      ],
+      "board_priority": "high",
+      "drugsystem_ids": [
+        "drugsystem.cardiovascular_renal"
+      ],
+      "review_status": "draft"
+    }
+  ]
+}

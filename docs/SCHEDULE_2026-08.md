@@ -12,21 +12,35 @@ Owners:**C** = Claude · **X** = Codex · **A** = Antigravity · **T** = Ting �
 
 ## 0. 誠實現況(來源:`data/audits/missing_report.json.quality_layers`)
 
+> **2026-08-01 Codex refresh:** Antigravity/Claude 已把標準 361 穴推到
+> `validate-acupoint-standard.js --worklist --all` 全綠，Codex 重新實測為
+> **361/361 template-grade、0 worklist defects**。所以下面原本 2026-07-29
+> 的「穴位剩 264 穴」已過期；目前穴位的下一層不是繼續建卡，而是 Ting
+> 的 RV1 人工源審核與之後臨床連結補強。方劑工具/量尺與方劑 validator
+> defects 仍是下一個工程阻塞點。
+
 | 層 | 卡片存在 | 內容已填 | **達樣板等級** | **已驗證** |
 |---|---|---|---|---|
-| 穴位 | 751(標準經穴 361) | 751 | **97 / 361**(LU·LI·ST·SP) | **1** |
+| 穴位 | 751(標準經穴 361) | 751 | **361 / 361**(validator 實測) | **1** |
 | 中藥 | 327 | Appendix A 304/304 | **79** | **0** |
 | 方劑 | 201 | 152 | **0**(無評分機制) | **0** |
 | 病症 | 150 | 150(draft) | 0(無 validator) | 0 |
 
 三個必須先看懂的數字:
 
-1. **穴位剩 264 穴**(361 − 97)。已完成的是 LU 11 + LI 20 + ST 45 + SP 21。
+1. **穴位標準 361 穴已達 validator template-grade**。這不等於 Ting 已人工源審核；Verified 仍只有 RV1 能推進。
 2. **中藥「304/304 齊」是卡片齊,不是內容合格** — 樣板等級只有 79,
    **248 張是 partial**。這是目前最大的隱形債。
 3. **方劑樣板等級 0,不是因為內容差,是因為沒有量尺。** `validate-formula-standard.js`
    有,但 **`stamp-formula-card-grade.js` 沒有**,而且 **Appendix C 的覆蓋報告
    也沒有**(中藥有 `herb_outline_coverage`,方劑沒有對應物)。
+
+> **2026-08-05 Claude 取代版:§1–§2 的穴位部分已作廢。** 標準經穴 361/361 已
+> 達 validator 樣板等級,八月的穴位線改成**經外奇穴 49/72**。八月重心從
+> 「量產」轉為「**裝護欄 + 清方劑債**」——因為 (a) 方劑 201 張卡而 grade 只有 2,
+> 且 validator 已明確指出 34 damaged text / 55 bilingual / 14 truncated /
+> 18 skeleton;(b) repo **完全沒有 CI**,三個 agent 平行寫入卻只靠人記得跑
+> validator。取代版排期與理由見 **`docs/EXTERNAL_REVIEW_2026-08-02.md` §6**。
 
 ## 1. 八月第 1 週:開路(C 做,**不要**派給量產 AI)
 

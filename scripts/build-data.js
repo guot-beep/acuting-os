@@ -13,6 +13,12 @@
  */
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
+
+// Short content digest for the generated-file banners. Provenance without
+// volatility: identical inputs produce identical bytes, so `git diff` on
+// data/generated means the DATA changed, not that someone re-ran the build.
+const digest = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const ROOT = path.join(__dirname, "..");
 
@@ -54,12 +60,19 @@ Object.assign(payload, i18n);
 payload.uiConfig = readJson(UI_CONFIG_SOURCE);
 payload.pointCategoryVocabulary = readJson("data/config/point_category_vocabulary.json");   // PC5 badge/filter labels
 
+// The banner used to carry `new Date()`. That made every build produce a diff
+// even when no data changed — noise in a repo whose knowledge layer is valuable
+// precisely because its diffs mean something (D7), and a permanent false
+// failure for the CI step that checks "did you forget to rebuild?". The content
+// digest keeps the provenance (it says exactly what this was built from) while
+// being deterministic: same inputs, same bytes.
+const body = "globalThis.ACUTING_APP_DATA = " + JSON.stringify(payload) + ";\n";
 const banner = `// GENERATED FILE - DO NOT EDIT.
-// Built by scripts/build-data.js on ${new Date().toISOString()}
+// Built by scripts/build-data.js · content ${digest(body)}
 // Source of truth: data/acupoints/embedded/*.json, data/auricular/embedded/*.json,
 //                  data/config/ui_config.json
 `;
-const out = banner + "globalThis.ACUTING_APP_DATA = " + JSON.stringify(payload) + ";\n";
+const out = banner + body;
 
 fs.mkdirSync(path.join(ROOT, "data/generated"), { recursive: true });
 fs.writeFileSync(path.join(ROOT, "data/generated/app_data.js"), out);
@@ -79,11 +92,31 @@ const knowledge = {
   audit: readJson("data/audits/missing_report.json"),
   // CS4-2: registries the SOAP link pickers offer (ids must exist to be picked)
   patternLibrary: readJson("data/pathology/pattern_library.json"),
+  // D10 names pattern_registry the ID AUTHORITY, but only the library (50) was
+  // bundled — so the 13 registry-only ids had no names at runtime. Pilot 0 made
+  // that visible: sym.headache points at pattern.wind_cold, and the chip read
+  // "Wind cold", the humanised slug, instead of 風寒 / Wind Cold.
+  patternRegistry: readJson("data/pathology/pattern_registry.json"),
   tdisRegistry: readJson("data/pathology/tdis_registry.json"),
   conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
   // §6.5 (B) — points carry tcm_pattern_ids; without the canon in the bundle
   // the card can only print "pat.肝氣鬱結" instead of the pattern's name.
   tcmPatternCanon: readJson("data/config/tcm_pattern_canon.json"),
+  // D11's fourth namespace. Without it the app has the EDGES but not the
+  // TARGETS: Pilot 0 put "key_signs_ids":["sym.headache"] into this bundle
+  // while symptoms.json stayed out, so a diagnosis card could only print the
+  // raw id and a click had nothing to open. A ghost node in the graph.
+  symptoms: readJson("data/symptoms/symptoms.json"),
+  // The edge list itself (D13). Bundled so the reverse index is DERIVED FROM
+  // the registry rather than from a second hand-written list in knowledge.js —
+  // a hardcoded copy is how the two sides drift, which is what D13 forbids.
+  relationRegistry: readJson("data/config/relation_registry.json"),
+  symptomTaxonomy: readJson("data/config/symptom_taxonomy.json"),
+  // LABELS ONLY. sym.headache references metric.pain_score, which rendered as
+  // the raw id. This is the existing 22-metric vocabulary, not the clinical
+  // measurement layer — that is a separate design review and nothing here
+  // prejudges it.
+  outcomeMetrics: readJson("data/clinical_cases/outcome_metrics.json"),
   cloudtcmDiseaseCategories: readJson("data/pathology/cloudtcm_disease_categories.json"),
   cloudtcmDiseaseEntries: readJson("data/pathology/cloudtcm_disease_entries.json"),
   medications: readJson("data/medications/western_medications.json"),
@@ -93,6 +126,14 @@ const knowledge = {
   comparisonGroupVocabulary: readJson("data/config/comparison_group_vocabulary.json"),      // bilingual labels for 鑑別群組
   safetyFlagVocabulary: readJson("data/config/safety_flag_vocabulary.json"),                 // bilingual labels for safety_flags
   conditionCategoryVocabulary: readJson("data/config/condition_category_vocabulary.json"),  // bilingual labels for condition_canon `category` — lets point/herb/formula cards group related_conditions by system without storing the category twice
+  // D11's four namespaces each group by their own controlled vocabulary. The
+  // Diagnosis tab needs all three in the bundle or it can only print raw ids —
+  // which is exactly why it used to render 中醫病名 and 證型 as two comma lines.
+  tcmDiseaseTaxonomy: readJson("data/config/tcm_disease_taxonomy.json"),
+  patternFamilyVocabulary: readJson("data/config/pattern_family_vocabulary.json"),
+  // CloudTCM's pages joined onto the canonical records (Ting: it keeps no
+  // classification of its own). Derived — see scripts/build-cloudtcm-ref-map.js.
+  cloudtcmRefMap: readJson("data/config/cloudtcm_ref_map.json"),
   channelsAndCharts: readJson("data/channels/channels_and_charts.json"),
   herbPairs: readJson("data/herbs/herb_pairs.json"),                                        // 藥對
   herbPairRelations: readJson("data/config/herb_pair_relations.json"),                       // 七情配伍
@@ -101,16 +142,24 @@ const knowledge = {
   // 同一份設定，不能在 knowledge.js 裡另抄一份 —— 抄第二份就會有一天不同步，
   // 而圖照樣畫得出來，只是軸錯位，畫面上看不出來。
   formulaActionGroups: readJson("data/config/formula_tag_glossary.json").action_groups,
+  // 藥理層(2026-08-06)。四層一起帶進來:單藥卡要顯示分類名、標的部位與系統,
+  // 而那三樣各住在自己的檔案 —— 少帶一個,卡片就只能印 id。
+  pharmDrugs: readJson("data/pharmacology/drugs.json"),
+  pharmDrugClasses: readJson("data/pharmacology/drug_classes.json"),
+  pharmDrugTargets: readJson("data/pharmacology/drug_targets.json"),
+  pharmDrugSystems: readJson("data/pharmacology/drug_systems.json"),
 };
+// Deterministic banner — see the app_data.js note above.
+const kBody = "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n";
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
-// Built by scripts/build-data.js on ${new Date().toISOString()}
+// Built by scripts/build-data.js · content ${digest(kBody)}
 // Source of truth: data/herbs/formulas.json, data/herbs/herb_canon_shortlist.json,
 //                  data/pathology/conditions.json, data/sources/source_registry.json,
 //                  data/audits/missing_report.json, data/knowledge/comparisons.json
 `;
 fs.writeFileSync(
   path.join(ROOT, "data/generated/knowledge_data.js"),
-  kBanner + "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n"
+  kBanner + kBody
 );
 console.log("Built data/generated/knowledge_data.js");
 console.log(JSON.stringify({
@@ -121,6 +170,8 @@ console.log(JSON.stringify({
   patterns: knowledge.conditions.tcm_patterns.length,
   sources: knowledge.sources.sources.length,
   comparisons: knowledge.comparisons.records.length,
+  symptoms: knowledge.symptoms.records.length,
+  relation_edges: knowledge.relationRegistry.edges.length,
   audit_missing: knowledge.audit.total_missing,
 }));
 

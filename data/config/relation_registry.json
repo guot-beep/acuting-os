@@ -1,0 +1,229 @@
+{
+  "dataset": "Relation registry — the knowledge graph's edge list (DECISIONS D13)",
+  "policy": [
+    "Every graph edge is STORED on exactly one side (the referencing side) and DERIVED on the other. Storing both directions by hand means the two sides drift within a year and no validator can say which one is right.",
+    "This file is the authority on which fields are edges. CG4's reverse index, the future graph UI, and validators all enumerate edges from here — adding a link field to any template without registering it here means the graph silently cannot see it.",
+    "Knowledge→knowledge reverses are derived at build time (e.g. pattern_registry.used_by_conditions). Clinical→knowledge reverses are derived at RUNTIME only, never persisted into knowledge records (D9).",
+    "Symmetric edges (differential_patterns, comparison membership) are stored once on one record and rendered on both — never mirrored by hand.",
+    "Edges come in two kinds and they are NOT reverses of each other. DESCRIPTIVE edges answer \"which symptoms does this diagnosis have?\" and are stored on the diagnostic entity. INFERENTIAL edges answer \"what does this observation point to?\" and are stored on the observation. sym.differentiation[].points_to is inferential; edge.pattern_symptoms is descriptive. Deleting one as a duplicate of the other is a misreading of D13.",
+    "Authored side is NOT decided by cardinality. It is decided by where the source material naturally puts the information and where an agent is already working when it fills the card. For symptoms all four tests agree: the diagnosis lists its symptoms."
+  ],
+  "created": "2026-08-06",
+  "edges": [
+    {
+      "id": "edge.condition_patterns",
+      "stored_on": "cond.*",
+      "field": "related_patterns",
+      "target": "pattern.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": {
+        "derived_field": "used_by_conditions",
+        "on": "data/pathology/pattern_registry.json",
+        "derived_by": "scripts/build-pattern-registry.js"
+      },
+      "validated_by": "scripts/validate-condition-standard.js C6",
+      "semantics": "possible_overlap — never one-to-one equivalence (D11)"
+    },
+    {
+      "id": "edge.condition_tcm_diseases",
+      "stored_on": "cond.*",
+      "field": "related_eastern_diseases",
+      "target": "tdis.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "render-time only for now"
+      },
+      "validated_by": "scripts/validate-relations.js",
+      "semantics": "possible_overlap — 月經過多(cond) and 月經過多(tdis) are two entities (D11)"
+    },
+    {
+      "id": "edge.condition_formulas",
+      "stored_on": "cond.*",
+      "field": "herb_formulas",
+      "target": "formula.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "formula cards derive related_conditions at render time"
+      },
+      "validated_by": "scripts/validate-relations.js"
+    },
+    {
+      "id": "edge.condition_acupoint_protocols",
+      "stored_on": "cond.*",
+      "field": "acupoint_protocols",
+      "target": "point id (D2)",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "point cards derive related_conditions at render time (already shipped in pointLinkSection)"
+      },
+      "validated_by": "scripts/validate-relations.js",
+      "stored_shape": "inline_objects",
+      "shape_note": "Measured 2026-08-06 by validate-relation-registry R4: this field holds inline objects ({name_zh, code}), not ids — e.g. cond.endometriosis carries {\"name_zh\":\"期門\",\"code\":\"LV14\"}. It is the same pre-id shape as cond.tcm_patterns. Declared honestly rather than aspirationally; migrating it to point ids is the condition line's work, not a registry edit.",
+      "migration": "inline objects -> point ids (D2). Until then this edge cannot be reverse-indexed."
+    },
+    {
+      "id": "edge.condition_medications",
+      "stored_on": "cond.*",
+      "field": "medication_links",
+      "target": "med.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "medication layer not built yet — target namespace reserved"
+      },
+      "validated_by": "scripts/validate-relations.js"
+    },
+    {
+      "id": "edge.pattern_formulas",
+      "stored_on": "pattern.*",
+      "field": "typical_formulas",
+      "target": "formula.*",
+      "file": "data/pathology/pattern_library.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "formula cards derive at render time"
+      },
+      "validated_by": "scripts/validate-pattern-standard.js P6 (N2 counts emptiness)"
+    },
+    {
+      "id": "edge.pattern_points",
+      "stored_on": "pattern.*",
+      "field": "typical_points",
+      "target": "point id (D2)",
+      "file": "data/pathology/pattern_library.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "point cards derive at render time"
+      },
+      "validated_by": "scripts/validate-pattern-standard.js P6 (N2 counts emptiness)"
+    },
+    {
+      "id": "edge.pattern_differentials",
+      "stored_on": "pattern.*",
+      "field": "differential_patterns",
+      "target": "pattern.*",
+      "file": "data/pathology/pattern_library.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "SYMMETRIC: stored once on the record where it was authored, rendered on both patterns. Never hand-mirror onto the counterpart."
+      },
+      "validated_by": "scripts/validate-pattern-standard.js P6"
+    },
+    {
+      "id": "edge.comparison_members",
+      "stored_on": "cmp.*",
+      "field": "compares",
+      "target": "pattern.* | formula.* (by record type)",
+      "file": "data/knowledge/comparisons.json",
+      "reverse": {
+        "derived_field": null,
+        "note": "member cards derive their comparison-table chips at render time"
+      },
+      "validated_by": "scripts/validate-relations.js validateComparisons"
+    },
+    {
+      "id": "edge.clinical_case_links",
+      "stored_on": "clinical layer (localStorage → future SQLite)",
+      "field": "case_links.* / visit_* junctions",
+      "target": "cond.* | tdis.* | pattern.* | formula.* | herb.* | point id | med.*",
+      "file": "data/clinical_cases/schema.sql (+ acuting-clinical-cases-v1)",
+      "reverse": {
+        "derived_field": null,
+        "note": "RUNTIME ONLY (D9): the 'used in 18 cases' panel queries the clinical store at render; aggregates are never written into knowledge records. Dated snapshots go to data/audits/clinical_usage_snapshot.json only."
+      },
+      "validated_by": "scripts/validate-clinical-case-standard.js F-series"
+    },
+    {
+      "id": "edge.condition_symptoms",
+      "stored_on": "cond.*",
+      "field": "sign_symptom_ids",
+      "target": "sym.*",
+      "file": "data/pathology/condition_canon_shortlist.json",
+      "edge_kind": "descriptive",
+      "reverse": {
+        "derived_field": "seen_in_conditions",
+        "on": "sym.* card (display only)",
+        "derived_by": "render-time join"
+      },
+      "validated_by": "scripts/validate-condition-standard.js (id resolution) + validate-symptom-standard.js Y8 (rejects hand-filled reverse)",
+      "rationale": "Any migraine source lists unilateral headache / nausea / photophobia. No source is organised as \"headache appears in which diseases\". Storing on sym.* would mean building one migraine card requires editing three symptom cards.",
+      "migration": "cond.related_tcm_symptoms (1/150 filled) is the pre-D13 form of this edge and is retired in favour of sign_symptom_ids."
+    },
+    {
+      "id": "edge.pattern_symptoms",
+      "stored_on": "pattern.*",
+      "field": "key_signs_ids",
+      "target": "sym.*",
+      "file": "data/pathology/pattern_library.json",
+      "edge_kind": "descriptive",
+      "reverse": {
+        "derived_field": "seen_in_patterns",
+        "on": "sym.* card (display only)",
+        "derived_by": "render-time join"
+      },
+      "validated_by": "scripts/validate-pattern-standard.js (id resolution) + validate-symptom-standard.js Y8",
+      "rationale": "中診 textbooks are organised as \"肺氣虛: 咳喘無力、氣短聲低、自汗畏風\". The fill line reads by pattern, not by symptom.",
+      "migration": "pattern_library.key_signs_zh holds 182 free-text strings. key_signs_ids is ADDITIVE — key_signs_zh stays as display fallback until sym.* coverage is sufficient. Never delete it (§0 只加深不刪除)."
+    },
+    {
+      "id": "edge.tdis_symptoms",
+      "stored_on": "tdis.*",
+      "field": "key_manifestation_ids",
+      "target": "sym.*",
+      "file": "data/pathology/tdis_registry.json",
+      "edge_kind": "descriptive",
+      "reverse": {
+        "derived_field": "seen_in_tdis",
+        "on": "sym.* card (display only)",
+        "derived_by": "render-time join"
+      },
+      "validated_by": "scripts/validate-tdis-standard.js (id resolution) + validate-symptom-standard.js Y8",
+      "rationale": "中醫內科學 is likewise organised from disease name down to manifestations.",
+      "migration": "tdis has no manifestation content yet — zero migration cost."
+    },
+    {
+      "id": "edge.symptom_pattern_inference",
+      "stored_on": "sym.*",
+      "field": "differentiation_zh[].points_to",
+      "target": "pattern.*",
+      "file": "data/symptoms/symptoms.json",
+      "file_note": "Created 2026-08-06 by Pilot 0 (3 records). The path carried the prose \"(not yet created)\" inside it until then, which meant the registry's own validator could not resolve the one relation a symptom card authors — machine-readable fields must not carry commentary.",
+      "edge_kind": "inferential",
+      "reverse": {
+        "derived_field": null,
+        "note": "No reverse. This is NOT the mirror of edge.pattern_symptoms — an inferential edge and a descriptive edge are different claims (see policy)."
+      },
+      "validated_by": "scripts/validate-symptom-standard.js Y6",
+      "rationale": "\"脹痛 points to 氣滯\" is clinical reasoning authored on the symptom card. \"氣滯證 presents with 脹痛\" is a textbook list authored on the pattern card. Different claims, different provenance, both needed.",
+      "path_form": "nested: differentiation_zh[].points_to — verified parseable by scripts/validate-relation-registry.js on a temporary fixture 2026-08-06 (2 variants yielded 3 pattern ids, not objects). A consumer using record[field] naively would get the object array instead."
+    }
+  ],
+  "retired_hand_filled_fields": [
+    {
+      "field": "pattern_library.related_conditions",
+      "reason": "The reverse of edge.condition_patterns. 0/50 records had it filled when D13 locked (2026-08-06), so it was retired from hand-filling at zero cost — hand-maintaining both sides is exactly the drift D13 forbids. It is now derived-only (pattern_registry.used_by_conditions carries it)."
+    },
+    {
+      "field": "sym.seen_in_conditions / seen_in_patterns / seen_in_tdis",
+      "reason": "All three are reverses of descriptive edges stored on the diagnostic entity. Derived at render time; hand-filling any of them is validate-symptom-standard Y8."
+    }
+  ],
+  "deprecated_but_temporarily_accepted": [
+    {
+      "field": "cond.related_tcm_symptoms",
+      "superseded_by": "cond.sign_symptom_ids (edge.condition_symptoms)",
+      "state": "deprecated_but_temporarily_accepted",
+      "rules": [
+        "NO new content may use it. New symptom links go in sign_symptom_ids.",
+        "The 1 existing record (cond.functional_dyspepsia) may keep its value until the fill line migrates it — deleting it now would lose the inline blob before its ids exist (§0 只加深不刪除).",
+        "It stays in validate-condition-standard APPROVED so that record is not a defect. It is removed from APPROVED only after migration.",
+        "A validator warning on the old value is acceptable; a blocking error is not, until migration is possible."
+      ],
+      "measured": "1/150 records filled, 2026-08-06",
+      "differs_from_retired": "A RETIRED field is one nobody may write and nothing holds. This one still holds data, so it needs a third state — calling it retired while a validator still approves it is the contradiction this entry exists to prevent."
+    }
+  ]
+}

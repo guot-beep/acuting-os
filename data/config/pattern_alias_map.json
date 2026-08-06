@@ -1,0 +1,953 @@
+{
+  "dataset": "Pattern alias map (DECISIONS D10)",
+  "policy": [
+    "pattern.<english_slug> is the ONLY pattern namespace. `pat.<中文>` ids are legacy.",
+    "Legacy ids are never re-id'd and never deleted (D1/D6) — they are mapped here.",
+    "Chinese characters never go in an id (this repo has a documented mojibake history).",
+    "pending_registration entries have NO proposed slug on purpose: an English pattern name is terminology that must come from a cited source, not from a model. Register them via skills/acuting-condition-fill.",
+    "excluded_formula_patterns are 方證/類方證 — a different diagnostic entity. Do not register them as patterns."
+  ],
+  "generated_by": "scripts/build-pattern-alias-map.js",
+  "source_files": {
+    "id_authority": "data/pathology/pattern_registry.json",
+    "content_layer": "data/pathology/pattern_library.json",
+    "import_staging": "data/config/tcm_pattern_canon.json"
+  },
+  "counts": {
+    "canon_records": 140,
+    "canon_unique_ids": 134,
+    "canon_duplicate_ids": 6,
+    "canonical_namespace_ids": 63,
+    "mapped": 33,
+    "pending_registration": 69,
+    "excluded_formula_patterns": 32
+  },
+  "aliases": {
+    "pat.肝氣鬱結": "pattern.liver_qi_stagnation",
+    "pat.氣滯血瘀": "pattern.qi_stagnation_blood_stasis",
+    "pat.腎陽虛": "pattern.kidney_yang_deficiency",
+    "pat.氣血兩虛": "pattern.qi_blood_deficiency",
+    "pat.心脾兩虛": "pattern.heart_spleen_deficiency",
+    "pat.脾腎陽虛": "pattern.spleen_kidney_yang_deficiency",
+    "pat.下焦濕熱": "pattern.damp_heat_lower_burner",
+    "pat.腎陰虛": "pattern.kidney_yin_deficiency",
+    "pat.腎精不足": "pattern.kidney_essence_deficiency",
+    "pat.肝血虛": "pattern.liver_blood_deficiency",
+    "pat.肝火上炎": "pattern.liver_fire",
+    "pat.血虛": "pattern.blood_deficiency",
+    "pat.寒凝肝脈": "pattern.cold_stagnation_liver_channel",
+    "pat.脾氣虛": "pattern.spleen_qi_deficiency",
+    "pat.心腎不交": "pattern.heart_kidney_not_communicating",
+    "pat.肝陽上亢": "pattern.liver_yang_rising",
+    "pat.濕熱": "pattern.damp_heat",
+    "pat.脾陽虛": "pattern.spleen_yang_deficiency",
+    "pat.腎氣不固": "pattern.kidney_qi_not_firm",
+    "pat.血瘀": "pattern.blood_stasis",
+    "pat.氣虛": "pattern.qi_deficiency",
+    "pat.肝胃不和": "pattern.liver_stomach_disharmony",
+    "pat.心血虛": "pattern.heart_blood_deficiency",
+    "pat.腎不納氣": "pattern.kidney_not_grasping_qi",
+    "pat.脾胃濕熱": "pattern.damp_heat_spleen_stomach",
+    "pat.心陽虛": "pattern.heart_yang_deficiency",
+    "pat.肝陰虛": "pattern.liver_yin_deficiency",
+    "pat.脾不統血": "pattern.spleen_not_governing_blood",
+    "pat.胃陰虛": "pattern.stomach_yin_deficiency",
+    "pat.胃熱": "pattern.stomach_heat",
+    "pat.心陰虛": "pattern.heart_yin_deficiency",
+    "pat.肺氣虛": "pattern.lung_qi_deficiency",
+    "pat.陰虛": "pattern.yin_deficiency"
+  },
+  "pending_registration": [
+    {
+      "legacy_id": "pat.脾胃陽虛",
+      "name_zh": "脾胃陽虛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 15,
+      "example_conditions": [
+        "cond.lumbar_disc_herniation",
+        "cond.myofascial_pain",
+        "cond.migraine",
+        "cond.chronic_gastritis",
+        "cond.peptic_ulcer",
+        "cond.circadian_disorder",
+        "cond.copd",
+        "cond.chronic_cough"
+      ]
+    },
+    {
+      "legacy_id": "pat.外感風濕",
+      "name_zh": "外感風濕",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 14,
+      "example_conditions": [
+        "cond.lumbar_disc_herniation",
+        "cond.sciatica",
+        "cond.cervical_spondylosis",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger",
+        "cond.knee_osteoarthritis",
+        "cond.plantar_fasciitis"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝脾不調",
+      "name_zh": "肝脾不調",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 13,
+      "example_conditions": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.de_quervain"
+      ]
+    },
+    {
+      "legacy_id": "pat.外感風寒",
+      "name_zh": "外感風寒",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 10,
+      "example_conditions": [
+        "cond.lumbar_disc_herniation",
+        "cond.fibromyalgia",
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.rheumatoid_arthritis",
+        "cond.asthma",
+        "cond.copd",
+        "cond.chronic_cough"
+      ]
+    },
+    {
+      "legacy_id": "pat.脾虛濕困",
+      "name_zh": "脾虛濕困",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 10,
+      "example_conditions": [
+        "cond.male_infertility",
+        "cond.sciatica",
+        "cond.myofascial_pain",
+        "cond.tmd",
+        "cond.chronic_diarrhea",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ]
+    },
+    {
+      "legacy_id": "pat.脾胃氣虛",
+      "name_zh": "脾胃氣虛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 9,
+      "example_conditions": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain",
+        "cond.peptic_ulcer"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝血瘀滯",
+      "name_zh": "肝血瘀滯",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 7,
+      "example_conditions": [
+        "cond.endometriosis",
+        "cond.primary_dysmenorrhea",
+        "cond.pms",
+        "cond.irregular_menstruation",
+        "cond.female_infertility",
+        "cond.recurrent_pregnancy_loss",
+        "cond.chronic_pelvic_pain"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝腎不足",
+      "name_zh": "肝腎不足",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 7,
+      "example_conditions": [
+        "cond.lumbar_disc_herniation",
+        "cond.frozen_shoulder",
+        "cond.de_quervain",
+        "cond.trigger_finger",
+        "cond.knee_osteoarthritis",
+        "cond.rheumatoid_arthritis",
+        "cond.eye_strain"
+      ]
+    },
+    {
+      "legacy_id": "pat.痰瘀互結",
+      "name_zh": "痰瘀互結",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 7,
+      "example_conditions": [
+        "cond.lumbar_disc_herniation",
+        "cond.fibromyalgia",
+        "cond.hemorrhoids",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.herpes_zoster"
+      ]
+    },
+    {
+      "legacy_id": "pat.外感風熱",
+      "name_zh": "外感風熱",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 6,
+      "example_conditions": [
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.hearing_loss"
+      ]
+    },
+    {
+      "legacy_id": "pat.腎氣虛",
+      "name_zh": "腎氣虛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 5,
+      "example_conditions": [
+        "cond.lumbar_disc_herniation",
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.overactive_bladder",
+        "cond.nocturnal_enuresis"
+      ]
+    },
+    {
+      "legacy_id": "pat.腎陽虛水泛",
+      "name_zh": "腎陽虛水泛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 5,
+      "example_conditions": [
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.hypothyroidism",
+        "cond.nocturnal_enuresis"
+      ]
+    },
+    {
+      "legacy_id": "pat.痰氣互結",
+      "name_zh": "痰氣互結",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 5,
+      "example_conditions": [
+        "cond.nausea_vomiting",
+        "cond.depression",
+        "cond.hearing_loss",
+        "cond.globus_pharyngitis",
+        "cond.cancer_supportive"
+      ]
+    },
+    {
+      "legacy_id": "pat.濕痰",
+      "name_zh": "濕痰",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 5,
+      "example_conditions": [
+        "cond.tension_headache",
+        "cond.cluster_headache",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ]
+    },
+    {
+      "legacy_id": "pat.燥氣傷肺",
+      "name_zh": "燥氣傷肺",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 5,
+      "example_conditions": [
+        "cond.asthma",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough",
+        "cond.post_covid"
+      ]
+    },
+    {
+      "legacy_id": "pat.少陰寒化",
+      "name_zh": "少陰寒化證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 4,
+      "example_conditions": [
+        "cond.rheumatoid_arthritis",
+        "cond.circadian_disorder",
+        "cond.asthma",
+        "cond.post_covid"
+      ]
+    },
+    {
+      "legacy_id": "pat.水飲內停",
+      "name_zh": "水飲內停",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 4,
+      "example_conditions": [
+        "cond.lumbar_disc_herniation",
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ]
+    },
+    {
+      "legacy_id": "pat.食傷脾胃",
+      "name_zh": "食傷脾胃",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 4,
+      "example_conditions": [
+        "cond.peptic_ulcer",
+        "cond.chronic_diarrhea",
+        "cond.asthma",
+        "cond.post_covid"
+      ]
+    },
+    {
+      "legacy_id": "pat.膀胱濕熱",
+      "name_zh": "膀胱濕熱",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 4,
+      "example_conditions": [
+        "cond.recurrent_uti",
+        "cond.overactive_bladder",
+        "cond.bph",
+        "cond.chronic_prostatitis"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝火犯肺",
+      "name_zh": "肝火犯肺",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 3,
+      "example_conditions": [
+        "cond.copd",
+        "cond.chronic_cough",
+        "cond.post_viral_cough"
+      ]
+    },
+    {
+      "legacy_id": "pat.大腸濕熱",
+      "name_zh": "大腸濕熱",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.chronic_diarrhea",
+        "cond.hemorrhoids"
+      ]
+    },
+    {
+      "legacy_id": "pat.心火旺盛",
+      "name_zh": "心火旺盛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.circadian_disorder",
+        "cond.aphthous_ulcers"
+      ]
+    },
+    {
+      "legacy_id": "pat.心胃火盛",
+      "name_zh": "心胃火盛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.chronic_gastritis",
+        "cond.aphthous_ulcers"
+      ]
+    },
+    {
+      "legacy_id": "pat.心脈瘀阻",
+      "name_zh": "心脈瘀阻",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.palpitations",
+        "cond.heart_failure"
+      ]
+    },
+    {
+      "legacy_id": "pat.血虛風燥",
+      "name_zh": "血虛風燥證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.eczema",
+        "cond.urticaria"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝腎陰虛",
+      "name_zh": "肝腎陰虛證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.hypertension",
+        "cond.dry_eye"
+      ]
+    },
+    {
+      "legacy_id": "pat.陰虛火旺",
+      "name_zh": "陰虛火旺證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.insomnia",
+        "cond.globus_pharyngitis"
+      ]
+    },
+    {
+      "legacy_id": "pat.脾胃虛弱",
+      "name_zh": "脾胃虛弱證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.ibs",
+        "cond.hearing_loss"
+      ]
+    },
+    {
+      "legacy_id": "pat.濕熱瀰漫三焦",
+      "name_zh": "濕熱瀰漫三焦",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 2,
+      "example_conditions": [
+        "cond.acne",
+        "cond.aphthous_ulcers"
+      ]
+    },
+    {
+      "legacy_id": "pat.1",
+      "name_zh": "1",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.psoriasis"
+      ]
+    },
+    {
+      "legacy_id": "pat.下焦血瘀",
+      "name_zh": "下焦血瘀",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.recurrent_uti"
+      ]
+    },
+    {
+      "legacy_id": "pat.太陽病輕",
+      "name_zh": "太陽病輕證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.psoriasis"
+      ]
+    },
+    {
+      "legacy_id": "pat.少陰陰虛火旺",
+      "name_zh": "少陰陰虛火旺",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.circadian_disorder"
+      ]
+    },
+    {
+      "legacy_id": "pat.水氣凌心",
+      "name_zh": "水氣凌心",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.hypothyroidism"
+      ]
+    },
+    {
+      "legacy_id": "pat.血瘀閉阻",
+      "name_zh": "血瘀閉阻",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.uterine_fibroids"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝火犯胃",
+      "name_zh": "肝火犯胃",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.peptic_ulcer"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝胃氣滯",
+      "name_zh": "肝胃氣滯證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.functional_dyspepsia"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝膽火盛",
+      "name_zh": "肝膽火盛證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.tinnitus"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝鬱化火",
+      "name_zh": "肝鬱化火證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.insomnia"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝鬱血虛",
+      "name_zh": "肝鬱血虛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.uterine_fibroids"
+      ]
+    },
+    {
+      "legacy_id": "pat.肝鬱脾虛",
+      "name_zh": "肝鬱脾虛證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.ibs"
+      ]
+    },
+    {
+      "legacy_id": "pat.肺胃燥熱",
+      "name_zh": "肺胃燥熱證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.t2dm"
+      ]
+    },
+    {
+      "legacy_id": "pat.肺氣虛寒",
+      "name_zh": "肺氣虛寒證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.allergic_rhinitis"
+      ]
+    },
+    {
+      "legacy_id": "pat.肺熱壅盛",
+      "name_zh": "肺熱壅盛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.acne"
+      ]
+    },
+    {
+      "legacy_id": "pat.胃寒",
+      "name_zh": "胃寒",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.nausea_vomiting"
+      ]
+    },
+    {
+      "legacy_id": "pat.風火上擾",
+      "name_zh": "風火上擾證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.trigeminal_neuralgia"
+      ]
+    },
+    {
+      "legacy_id": "pat.風寒濕痹",
+      "name_zh": "風寒濕痹",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.knee_osteoarthritis"
+      ]
+    },
+    {
+      "legacy_id": "pat.風寒襲絡",
+      "name_zh": "風寒襲絡證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.bells_palsy"
+      ]
+    },
+    {
+      "legacy_id": "pat.風熱相搏",
+      "name_zh": "風熱相搏證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.urticaria"
+      ]
+    },
+    {
+      "legacy_id": "pat.氣血虛弱",
+      "name_zh": "氣血虛弱證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.bells_palsy"
+      ]
+    },
+    {
+      "legacy_id": "pat.氣秘",
+      "name_zh": "氣秘證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.chronic_constipation"
+      ]
+    },
+    {
+      "legacy_id": "pat.氣陰兩虛",
+      "name_zh": "氣陰兩虛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.aphthous_ulcers"
+      ]
+    },
+    {
+      "legacy_id": "pat.清陽不升",
+      "name_zh": "清陽不升",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.aphthous_ulcers"
+      ]
+    },
+    {
+      "legacy_id": "pat.脾約",
+      "name_zh": "脾約證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.hypothyroidism"
+      ]
+    },
+    {
+      "legacy_id": "pat.脾胃虛寒",
+      "name_zh": "脾胃虛寒證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.gerd"
+      ]
+    },
+    {
+      "legacy_id": "pat.脾氣虛弱",
+      "name_zh": "脾氣虛弱證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.allergic_rhinitis"
+      ]
+    },
+    {
+      "legacy_id": "pat.脾虛濕阻",
+      "name_zh": "脾虛濕阻證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.functional_dyspepsia"
+      ]
+    },
+    {
+      "legacy_id": "pat.腎陰虧虛",
+      "name_zh": "腎陰虧虛證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.t2dm"
+      ]
+    },
+    {
+      "legacy_id": "pat.腎精虧虛",
+      "name_zh": "腎精虧虛證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.tinnitus"
+      ]
+    },
+    {
+      "legacy_id": "pat.虛秘",
+      "name_zh": "虛秘證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.chronic_constipation"
+      ]
+    },
+    {
+      "legacy_id": "pat.溼熱鬱滯經絡",
+      "name_zh": "溼熱鬱滯經絡證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.peptic_ulcer"
+      ]
+    },
+    {
+      "legacy_id": "pat.痰濕中阻",
+      "name_zh": "痰濕中阻證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.dizziness_vertigo"
+      ]
+    },
+    {
+      "legacy_id": "pat.瘀血阻絡",
+      "name_zh": "瘀血阻絡證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.trigeminal_neuralgia"
+      ]
+    },
+    {
+      "legacy_id": "pat.膀胱虛寒",
+      "name_zh": "膀胱虛寒",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.nocturnal_enuresis"
+      ]
+    },
+    {
+      "legacy_id": "pat.熱毒熾盛",
+      "name_zh": "熱毒熾盛",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.acne"
+      ]
+    },
+    {
+      "legacy_id": "pat.熱秘",
+      "name_zh": "熱秘證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.chronic_constipation"
+      ]
+    },
+    {
+      "legacy_id": "pat.熱擾胸膈",
+      "name_zh": "熱擾胸膈",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.circadian_disorder"
+      ]
+    },
+    {
+      "legacy_id": "pat.濕熱浸淫",
+      "name_zh": "濕熱浸淫證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.eczema"
+      ]
+    },
+    {
+      "legacy_id": "pat.膽熱犯胃",
+      "name_zh": "膽熱犯胃證",
+      "aliases_zh": [],
+      "used_by_condition_blobs": 1,
+      "example_conditions": [
+        "cond.gerd"
+      ]
+    }
+  ],
+  "excluded_formula_patterns": [
+    {
+      "legacy_id": "pat.氣血不和",
+      "name_zh": "氣血不和證",
+      "reason": "CloudTCM catch-all bucket, not a discriminating clinical pattern — never register (Ting-delegated decision 2026-08-06); lift the specific patterns inside each condition's blobs instead"
+    },
+    {
+      "legacy_id": "pat.臟腑虛弱",
+      "name_zh": "臟腑虛弱證",
+      "reason": "CloudTCM catch-all bucket, not a discriminating clinical pattern — never register (Ting-delegated decision 2026-08-06); lift the specific patterns inside each condition's blobs instead"
+    },
+    {
+      "legacy_id": "pat.當歸四逆湯",
+      "name_zh": "當歸四逆湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.麻黃附子細辛湯",
+      "name_zh": "麻黃附子細辛湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.小柴胡湯",
+      "name_zh": "小柴胡湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.[通脈]四逆湯",
+      "name_zh": "[通脈]四逆湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.真武湯",
+      "name_zh": "真武湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.黃耆桂枝五物湯",
+      "name_zh": "黃耆桂枝五物湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.葛根湯",
+      "name_zh": "葛根湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.柴胡桂枝湯",
+      "name_zh": "柴胡桂枝湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.半夏瀉心湯",
+      "name_zh": "半夏瀉心湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.桂枝湯",
+      "name_zh": "桂枝湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.吳茱萸湯",
+      "name_zh": "吳茱萸湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.小青龍湯",
+      "name_zh": "小青龍湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.五苓散",
+      "name_zh": "五苓散證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.小建中湯類方",
+      "name_zh": "小建中湯類方證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.桂枝加葛根湯",
+      "name_zh": "桂枝加葛根湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.大青龍湯",
+      "name_zh": "大青龍湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.桂枝湯類方",
+      "name_zh": "桂枝湯類方證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.麻黃湯類方",
+      "name_zh": "麻黃湯類方證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.柴胡湯類方",
+      "name_zh": "柴胡湯類方證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.雜病類方証",
+      "name_zh": "雜病類方証",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.四逆散",
+      "name_zh": "四逆散證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.柴胡桂枝乾薑湯",
+      "name_zh": "柴胡桂枝乾薑湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.麻黃湯",
+      "name_zh": "麻黃湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.麻杏石甘湯",
+      "name_zh": "麻杏石甘湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.承氣湯",
+      "name_zh": "承氣湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.炙甘草湯",
+      "name_zh": "炙甘草湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.理中湯",
+      "name_zh": "理中湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.苓桂朮甘湯",
+      "name_zh": "苓桂朮甘湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.越婢加朮湯",
+      "name_zh": "越婢加朮湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    },
+    {
+      "legacy_id": "pat.白虎湯",
+      "name_zh": "白虎湯證",
+      "reason": "方證 / 類方證 — belongs to the formula layer, not the pattern registry (D10 rule 5)"
+    }
+  ]
+}

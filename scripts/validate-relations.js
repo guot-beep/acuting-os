@@ -93,7 +93,21 @@ function collectFormulaIds(set, errors) {
   });
 }
 
-function validateComparisons(sets, counters, errors) {
+// LL3 designed `comparison` to contrast PATTERNS (失眠: 心脾兩虛 vs 心腎不交).
+// The layer since grew a second, equally legitimate kind: `formula_comparison`
+// contrasts FORMULAS (桂枝湯 vs 麻黃湯 vs 小青龍湯) — 30 of the 41 records. The
+// validator never learned about it, so it reported 265 errors that were mostly
+// design lag, and the real finding underneath was buried. Both kinds are valid;
+// each resolves `compares` against its own universe so a formula id inside a
+// pattern comparison is still caught.
+const COMPARISON_KINDS = {
+  comparison: { label: "pattern", universe: "patterns" },
+  formula_comparison: { label: "formula", universe: "formulas" },
+};
+// `owner_filled` is the status the owner-authored tables actually carry.
+const COMPARISON_STATUSES = new Set(["draft", "owner_filled"]);
+
+function validateComparisons(sets, counters, errors, warnings) {
   const rel = "data/knowledge/comparisons.json";
   if (!fs.existsSync(path.join(ROOT, rel))) return;
   // Comparisons reference the full pattern universe (pattern_library's 50 +
@@ -102,6 +116,7 @@ function validateComparisons(sets, counters, errors) {
   const patternUniverse = new Set(sets.patterns);
   asArray(readJson("data/pathology/pattern_library.json").records)
     .forEach((r) => { if (r.id) patternUniverse.add(r.id); });
+  const universes = { patterns: patternUniverse, formulas: sets.formulas };
   const data = readJson(rel);
   asArray(data.records).forEach((record, index) => {
     const base = `${rel}.records[${index}]`;
@@ -109,14 +124,15 @@ function validateComparisons(sets, counters, errors) {
     if (typeof record.id !== "string" || !record.id.startsWith("cmp.")) {
       errors.push(`${base}.id: "${record.id}" must start with "cmp."`);
     }
-    if (record.type !== "comparison") {
-      errors.push(`${base}.type: expected "comparison"`);
+    const kind = COMPARISON_KINDS[record.type];
+    if (!kind) {
+      errors.push(`${base}.type: expected one of ${Object.keys(COMPARISON_KINDS).join(" | ")}`);
     }
     if (!["owner", "model_draft"].includes(record.authored_by)) {
       errors.push(`${base}.authored_by: expected "owner" or "model_draft"`);
     }
-    if (record.status !== "draft" && record.review_status !== "deprecated") {
-      errors.push(`${base}.status: expected "draft" unless review_status is "deprecated"`);
+    if (!COMPARISON_STATUSES.has(record.status) && record.review_status !== "deprecated") {
+      errors.push(`${base}.status: expected ${[...COMPARISON_STATUSES].join(" or ")} unless review_status is "deprecated"`);
     }
     if (!["draft", "deprecated"].includes(record.review_status)) {
       errors.push(`${base}.review_status: expected "draft" or "deprecated"`);
@@ -128,12 +144,23 @@ function validateComparisons(sets, counters, errors) {
     const dimensions = asArray(record.dimensions);
     if (!dimensions.length) errors.push(`${base}.dimensions: a comparison needs at least one dimension`);
     const compares = asArray(record.compares);
-    if (compares.length < 2) errors.push(`${base}.compares: a comparison needs >= 2 patterns`);
+    const universe = kind ? universes[kind.universe] : patternUniverse;
+    const label = kind ? kind.label : "entity";
+    if (compares.length < 2) errors.push(`${base}.compares: a comparison needs >= 2 ${label}s`);
+    // A table with compares[] and dimensions[] but no cells is a SKELETON, not
+    // a broken reference. That is content emptiness (tracked by quality_layers),
+    // not referential integrity — reporting it as an error buried 30 records'
+    // worth of noise on top of the real findings and kept this validator red.
+    const cellsEmpty = !record.cells || Object.keys(record.cells).length === 0;
+    if (cellsEmpty && compares.length) {
+      warnings.push(`${base}: SKELETON — compares ${compares.length} ${label}s across ${dimensions.length} dimensions but cells is empty`);
+    }
     compares.forEach((id) => {
       counters.comparisonPatternLinks += 1;
-      checkRef(patternUniverse, id, `${base}.compares`, errors);
-      if (!record.cells || typeof record.cells[id] !== "object" || Array.isArray(record.cells[id])) {
-        errors.push(`${base}.cells.${id}: missing cell object for compared pattern`);
+      checkRef(universe, id, `${base}.compares`, errors);
+      if (cellsEmpty) return;
+      if (typeof record.cells[id] !== "object" || Array.isArray(record.cells[id])) {
+        errors.push(`${base}.cells.${id}: missing cell object for compared ${label}`);
       } else {
         dimensions.forEach((dimension) => {
           if (!Object.prototype.hasOwnProperty.call(record.cells[id], dimension)) {
@@ -144,7 +171,7 @@ function validateComparisons(sets, counters, errors) {
         });
       }
     });
-    // every cells key must be one of the compared patterns
+    // every cells key must be one of the compared entities
     Object.keys(record.cells || {}).forEach((key) => {
       if (!compares.includes(key)) errors.push(`${base}.cells: "${key}" is not in compares[]`);
     });
@@ -400,7 +427,7 @@ function main() {
   validateFormulaCanon(sets, counters, errors);
   validateWorkflows("data/clinical_cases/fertility_workflow_seed.json", sets, counters, errors);
   validateConditionCrosswalk(counters, errors, warnings);
-  validateComparisons(sets, counters, errors);
+  validateComparisons(sets, counters, errors, warnings);
 
   if (warnings.length) {
     console.warn("Relation validation warnings:");

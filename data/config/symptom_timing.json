@@ -1,0 +1,27 @@
+{
+  "dataset": "Symptom timing (症狀時間) controlled vocabulary",
+  "policy": [
+    "Values for a symptom card's clinical_attributes.timing — WHEN a symptom appears or worsens. Timing is diagnostic in TCM (午後潮熱 vs 晨起頭重) so it is a closed set.",
+    "This is the CARD axis: which timings are worth asking about for this symptom. The patient's actual answer on a given visit is a case observation, not a card value.",
+    "IDs are ASCII (D10)."
+  ],
+  "created": "2026-08-06",
+  "applies_to": "sym.* records via clinical_attributes.timing",
+  "records": [
+    { "id": "morning", "name_zh": "晨起", "name_en": "On waking" },
+    { "id": "daytime", "name_zh": "日間", "name_en": "Daytime" },
+    { "id": "afternoon", "name_zh": "午後", "name_en": "Afternoon" },
+    { "id": "evening", "name_zh": "傍晚", "name_en": "Evening" },
+    { "id": "night", "name_zh": "夜間", "name_en": "Night" },
+    { "id": "postprandial", "name_zh": "食後", "name_en": "After eating" },
+    { "id": "with_exertion", "name_zh": "勞累後", "name_en": "With exertion" },
+    { "id": "with_rest", "name_zh": "休息後", "name_en": "With rest" },
+    { "id": "premenstrual", "name_zh": "經前", "name_en": "Premenstrual" },
+    { "id": "menstrual", "name_zh": "經期", "name_en": "During menstruation" },
+    { "id": "postmenstrual", "name_zh": "經後", "name_en": "Postmenstrual" },
+    { "id": "seasonal", "name_zh": "季節相關", "name_en": "Seasonal" },
+    { "id": "weather_change", "name_zh": "天氣變化", "name_en": "With weather change" },
+    { "id": "continuous", "name_zh": "持續", "name_en": "Continuous" },
+    { "id": "intermittent", "name_zh": "陣發", "name_en": "Intermittent" }
+  ]
+}

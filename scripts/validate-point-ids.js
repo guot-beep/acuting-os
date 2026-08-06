@@ -23,6 +23,13 @@ const FILES = [
   { rel: "data/auricular/gb93_index.json", get: (d) => d.points || [], family: "ear" },
   { rel: "data/auricular/embedded/auricular_points.json", get: (d) => d, family: "ear" },
   { rel: "data/acupoints/embedded/professional_points.json", get: (d) => d, family: "auto" },
+  /* extra_points.json was outside this list while it grew from 2 records to 72,
+   * so 70 extra points reached the repo with a `code` and no `id` at all and
+   * this validator still passed — it was only ever looking at 361.json for the
+   * `ex.` namespace. A file the enforcer does not read is a file with no rule.
+   * Clinical foreign keys reference `id` (D2), so those records cannot be
+   * linked to a case until they have one. */
+  { rel: "data/acupoints/extra_points.json", get: (d) => d.records || d.points || (Array.isArray(d) ? d : []), family: "ex" },
 ];
 
 let failures = 0;
@@ -60,7 +67,12 @@ for (const f of FILES) {
 }
 
 // Expected totals (DECISIONS.md D2, locked 2026-07-13)
-const EXPECT = { standard: 361, ex: 2, tung: 277, ear: 41 };
+/* Census, not a target: it catches a family silently losing records. `ex` was 2
+ * while extra_points.json sat outside the FILES list; the file's 72 records now
+ * count, so the expectation moves with them. Raise a number here only when the
+ * records genuinely exist — lowering one to make a run pass would defeat the
+ * check entirely. */
+const EXPECT = { standard: 361, ex: 72, tung: 277, ear: 41 };
 for (const k of Object.keys(EXPECT)) {
   // standard counts include the professional-file dupes that also equal code;
   // dedupe by counting distinct ids per namespace instead.

@@ -1,0 +1,103 @@
+{
+  "dataset": "pharm_drug_targets",
+  "policy": "L2 作用標的。不同分類可打同一個標的,考題常考。一個 class 指一個主要標的;一個標的可被多個 class 引用。",
+  "created": "2026-08-06",
+  "records": [
+    {
+      "id": "drugtarget.nkcc2",
+      "name_en": "Na-K-2Cl cotransporter (NKCC2)",
+      "name_zh": "鈉鉀氯共同轉運體",
+      "location_en": "Thick ascending limb of the loop of Henle",
+      "location_zh": "亨利氏環粗上行支",
+      "field_sources": {
+        "location_en": [
+          "course:W5-diuretics#L203-L220"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.ncc",
+      "name_en": "Na-Cl cotransporter (NCC)",
+      "name_zh": "鈉氯共同轉運體",
+      "location_en": "Distal convoluted tubule",
+      "location_zh": "遠曲小管",
+      "field_sources": {
+        "location_en": [
+          "course:W5-diuretics#L308"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.aldosterone_receptor",
+      "name_en": "Aldosterone (mineralocorticoid) receptor",
+      "name_zh": "醛固酮受體",
+      "location_en": "Collecting tubule",
+      "location_zh": "集尿管",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.carbonic_anhydrase",
+      "name_en": "Carbonic anhydrase",
+      "name_zh": "碳酸酐酶",
+      "location_en": "Proximal tubule; also ciliary body of the eye",
+      "location_zh": "近曲小管;另見眼睫狀體",
+      "mechanism_note_en": "Produces protons from CO2 and H2O; in the nephron those hydrogen ions are exchanged for sodium to be reabsorbed.",
+      "field_sources": {
+        "mechanism_note_en": [
+          "course:W5-diuretics#L155-L158"
+        ]
+      },
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.vkorc1",
+      "name_en": "Vitamin K epoxide reductase (VKORC1)",
+      "name_zh": "維生素 K 環氧化物還原酶",
+      "location_en": "Hepatocyte",
+      "location_zh": "肝細胞",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.p2y12",
+      "name_en": "P2Y12 ADP receptor",
+      "name_zh": "P2Y12 ADP 受體",
+      "location_en": "Platelet surface",
+      "location_zh": "血小板表面",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.factor_xa",
+      "name_en": "Coagulation factor Xa",
+      "name_zh": "凝血因子 Xa",
+      "location_en": "Coagulation cascade, common pathway",
+      "location_zh": "凝血瀑布共同途徑",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.thrombin",
+      "name_en": "Thrombin (factor IIa)",
+      "name_zh": "凝血酶",
+      "location_en": "Coagulation cascade, common pathway",
+      "location_zh": "凝血瀑布共同途徑",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.cox1",
+      "name_en": "Cyclooxygenase-1 (COX-1)",
+      "name_zh": "環氧化酶-1",
+      "location_en": "Platelet; gastric mucosa",
+      "location_zh": "血小板;胃黏膜",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugtarget.antithrombin_iii",
+      "name_en": "Antithrombin III (potentiated)",
+      "name_zh": "抗凝血酶 III(增強)",
+      "location_en": "Plasma",
+      "location_zh": "血漿",
+      "review_status": "draft"
+    }
+  ]
+}

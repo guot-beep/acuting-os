@@ -1,0 +1,500 @@
+{
+  "dataset": "CloudTCM source pages joined to canonical records",
+  "policy": [
+    "Ting 2026-08-06: CloudTCM keeps no classification of its own. Its 現代疾病 entries join cond.*; its 13 symptom categories become the sym.* axis (data/config/symptom_taxonomy.json); its category bar is retired from the UI.",
+    "Derived — rebuilt by scripts/build-cloudtcm-ref-map.js. Never hand-edit. Never copy these values into the records themselves (D13: join at render time, store once).",
+    "cloudtcm.* ids stay provenance handles and never appear in a relation field (D11).",
+    "Exact-name matching only. Two systems can use similar names for different entities (濕疹/濕瘡, 氣喘/哮病) — those are candidates for human review, never auto-merged."
+  ],
+  "generated_by": "scripts/build-cloudtcm-ref-map.js",
+  "counts": {
+    "source_entries": 190,
+    "matched_to_canonical": 20,
+    "matched_by_namespace": {
+      "cond": 14,
+      "tdis": 6,
+      "pattern": 0
+    },
+    "canonical_records_with_a_source_page": 20,
+    "disease_gap_for_cond": 41,
+    "symptom_seed_for_sym": 129
+  },
+  "refs": {
+    "cond.irregular_menstruation": [
+      {
+        "source_id": "cloudtcm.disease_entry.11",
+        "name_zh": "月經不調",
+        "name_en_draft": "Menstrual Irregularity",
+        "source_url": "https://cloudtcm.com/disease/tcm/11",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E6%9C%88%E7%B6%93%E4%B8%8D%E8%AA%BF.jpg"
+      }
+    ],
+    "cond.acne": [
+      {
+        "source_id": "cloudtcm.disease_entry.19",
+        "name_zh": "痤瘡",
+        "name_en_draft": "Acne",
+        "source_url": "https://cloudtcm.com/disease/tcm/19",
+        "image_url": "https://media.cloudtcm.uk/disease/CD%E7%97%A4%E7%98%A1%E7%B2%89%E5%88%BA.jpeg"
+      }
+    ],
+    "cond.uterine_fibroids": [
+      {
+        "source_id": "cloudtcm.disease_entry.32",
+        "name_zh": "子宮肌瘤",
+        "name_en_draft": "Uterine Fibroids",
+        "source_url": "https://cloudtcm.com/disease/tcm/32",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E5%AD%90%E5%AE%AE%E8%82%8C%E7%98%A4.jpg"
+      }
+    ],
+    "cond.trigeminal_neuralgia": [
+      {
+        "source_id": "cloudtcm.disease_entry.36",
+        "name_zh": "三叉神經痛",
+        "name_en_draft": "Trigeminal Neuralgia",
+        "source_url": "https://cloudtcm.com/disease/tcm/36",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E4%B8%89%E5%8F%89%E7%A5%9E%E7%B6%93%E7%97%9B.jpg"
+      }
+    ],
+    "cond.tinnitus": [
+      {
+        "source_id": "cloudtcm.disease_entry.40",
+        "name_zh": "耳鳴",
+        "name_en_draft": "Tinnitus",
+        "source_url": "https://cloudtcm.com/disease/tcm/40",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E8%80%B3%E9%B3%B4%E8%80%B3%E8%81%BE.jpg"
+      }
+    ],
+    "cond.sciatica": [
+      {
+        "source_id": "cloudtcm.disease_entry.58",
+        "name_zh": "坐骨神經痛",
+        "name_en_draft": "Sciatica",
+        "source_url": "https://cloudtcm.com/disease/tcm/58",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E5%9D%90%E9%AA%A8%E7%A5%9E%E7%B6%93%E7%97%9B2.jpg"
+      }
+    ],
+    "cond.hemorrhoids": [
+      {
+        "source_id": "cloudtcm.disease_entry.143",
+        "name_zh": "痔瘡",
+        "name_en_draft": "Hemorrhoids",
+        "source_url": "https://cloudtcm.com/disease/tcm/143",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E7%97%94%E7%98%A1.jpg"
+      }
+    ],
+    "cond.functional_dyspepsia": [
+      {
+        "source_id": "cloudtcm.disease_entry.149",
+        "name_zh": "消化不良",
+        "name_en_draft": "Dyspepsia or Indigestion",
+        "source_url": "https://cloudtcm.com/disease/tcm/149",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E6%B6%88%E5%8C%96%E4%B8%8D%E8%89%AF.jpg"
+      }
+    ],
+    "cond.urticaria": [
+      {
+        "source_id": "cloudtcm.disease_entry.971",
+        "name_zh": "蕁麻疹",
+        "name_en_draft": "Urticaria (Hives)",
+        "source_url": "https://cloudtcm.com/disease/tcm/971",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E8%95%81%E9%BA%BB%E7%96%B9.jpg"
+      }
+    ],
+    "tdis.ou_tu": [
+      {
+        "source_id": "cloudtcm.disease_entry.1524",
+        "name_zh": "嘔吐",
+        "name_en_draft": "Vomiting",
+        "source_url": "https://cloudtcm.com/disease/tcm/1524",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E5%99%81%E5%BF%83%E5%98%94%E5%90%90.jpg"
+      }
+    ],
+    "tdis.fei_pang": [
+      {
+        "source_id": "cloudtcm.disease_entry.1657",
+        "name_zh": "肥胖",
+        "name_en_draft": "Obesity",
+        "source_url": "https://cloudtcm.com/disease/tcm/1657",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E8%82%A5%E8%83%96.jpg"
+      }
+    ],
+    "tdis.yao_tong": [
+      {
+        "source_id": "cloudtcm.disease_entry.9101",
+        "name_zh": "腰痛",
+        "name_en_draft": "Low Back Pain",
+        "source_url": "https://cloudtcm.com/disease/tcm/9101",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B0%E8%83%8C%E7%97%9B.jpg"
+      }
+    ],
+    "cond.trigger_finger": [
+      {
+        "source_id": "cloudtcm.disease_entry.9750",
+        "name_zh": "扳機指",
+        "name_en_draft": "Trigger Finger",
+        "source_url": "https://cloudtcm.com/disease/tcm/9750",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%B3%E6%A9%9F%E6%8C%87.jpg"
+      }
+    ],
+    "cond.fibromyalgia": [
+      {
+        "source_id": "cloudtcm.disease_entry.10578",
+        "name_zh": "纖維肌痛症",
+        "name_en_draft": "Fibromyalgia",
+        "source_url": "https://cloudtcm.com/disease/tcm/10578",
+        "image_url": "https://media.cloudtcm.uk/disease/CD%E5%85%A8%E8%BA%AB%E7%97%9B.jpg"
+      }
+    ],
+    "cond.migraine": [
+      {
+        "source_id": "cloudtcm.disease_entry.13850",
+        "name_zh": "偏頭痛",
+        "name_en_draft": "Migraine",
+        "source_url": "https://cloudtcm.com/disease/tcm/13850",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E5%81%8F%E9%A0%AD%E7%97%9B.jpg"
+      }
+    ],
+    "cond.dry_eye": [
+      {
+        "source_id": "cloudtcm.disease_entry.14813",
+        "name_zh": "乾眼症",
+        "name_en_draft": "Dry Eye Disease",
+        "source_url": "https://cloudtcm.com/disease/tcm/14813",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E4%B9%BE%E7%9C%BC%E7%97%87.jpg"
+      }
+    ],
+    "tdis.xin_ji": [
+      {
+        "source_id": "cloudtcm.disease_entry.28267",
+        "name_zh": "心悸",
+        "name_en_draft": "Palpitations",
+        "source_url": "https://cloudtcm.com/disease/tcm/28267",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E5%BF%83%E6%82%B8.jpg"
+      }
+    ],
+    "tdis.ke_sou": [
+      {
+        "source_id": "cloudtcm.disease_entry.28283",
+        "name_zh": "咳嗽",
+        "name_en_draft": "Cough",
+        "source_url": "https://cloudtcm.com/disease/tcm/28283",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E5%92%B3%E5%97%BD.jpg"
+      }
+    ],
+    "tdis.tou_tong": [
+      {
+        "source_id": "cloudtcm.disease_entry.28716",
+        "name_zh": "頭痛",
+        "name_en_draft": "Headache",
+        "source_url": "https://cloudtcm.com/disease/tcm/28716",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%AD%E7%97%9B.jpg"
+      }
+    ],
+    "cond.bells_palsy": [
+      {
+        "source_id": "cloudtcm.disease_entry.92483",
+        "name_zh": "顏面神經麻痺",
+        "name_en_draft": "Facial Nerve Palsy",
+        "source_url": "https://cloudtcm.com/disease/tcm/92483",
+        "image_url": "https://media.cloudtcm.uk/disease/D%E9%A1%8F%E9%9D%A2%E7%A5%9E%E7%B6%93%E9%BA%BB%E7%97%BA2.jpg"
+      }
+    ]
+  },
+  "disease_gap_candidates": [
+    {
+      "source_id": "cloudtcm.disease_entry.5",
+      "name_zh": "貧血",
+      "name_en_draft": "Anemia",
+      "source_url": "https://cloudtcm.com/disease/tcm/5",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%B2%A7%E8%A1%80.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.39",
+      "name_zh": "扁桃腺炎",
+      "name_en_draft": "Tonsillitis",
+      "source_url": "https://cloudtcm.com/disease/tcm/39",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%81%E6%A1%83%E8%85%BA%E7%99%BC%E7%82%8E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.56",
+      "name_zh": "帶狀疱疹",
+      "name_en_draft": "Shingles (Herpes Zoster)",
+      "source_url": "https://cloudtcm.com/disease/tcm/56",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%B8%B6%E7%8B%80%E7%96%B1%E7%96%B9.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.66",
+      "name_zh": "牛皮癬",
+      "name_en_draft": "Psoriasis",
+      "source_url": "https://cloudtcm.com/disease/tcm/66",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%89%9B%E7%9A%AE%E7%99%AC.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.88",
+      "name_zh": "糖尿病",
+      "name_en_draft": "Diabetes Mellitus",
+      "source_url": "https://cloudtcm.com/disease/tcm/88",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%B3%96%E5%B0%BF%E7%97%85.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.159",
+      "name_zh": "腦中風",
+      "name_en_draft": "Stroke",
+      "source_url": "https://cloudtcm.com/disease/tcm/159",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%A6%E4%B8%AD%E9%A2%A8.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.200",
+      "name_zh": "淋巴結腫大",
+      "name_en_draft": "Enlarged Lymph Nodes",
+      "source_url": "https://cloudtcm.com/disease/tcm/200",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%B7%8B%E5%B7%B4%E7%B5%90%E8%85%AB%E5%A4%A7.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.253",
+      "name_zh": "濕疹",
+      "name_en_draft": "Eczema",
+      "source_url": "https://cloudtcm.com/disease/tcm/253",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%BF%95%E7%96%B9.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.259",
+      "name_zh": "麥粒腫",
+      "name_en_draft": "Stye (Hordeolum)",
+      "source_url": "https://cloudtcm.com/disease/tcm/259",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%BA%A5%E7%B2%92%E8%85%AB.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.262",
+      "name_zh": "高血脂",
+      "name_en_draft": "Hyperlipidemia",
+      "source_url": "https://cloudtcm.com/disease/tcm/262",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%AB%98%E8%A1%80%E8%84%82.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.267",
+      "name_zh": "五十肩",
+      "name_en_draft": "Frozen Shoulder (Adhesive Capsulitis)",
+      "source_url": "https://cloudtcm.com/disease/tcm/267",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E4%BA%94%E5%8D%81%E8%82%A9.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.268",
+      "name_zh": "慢性肝炎",
+      "name_en_draft": "Chronic Hepatitis",
+      "source_url": "https://cloudtcm.com/disease/tcm/268",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%85%A2%E6%80%A7%E8%82%9D%E7%82%8E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.280",
+      "name_zh": "慢性鼻炎",
+      "name_en_draft": "Chronic Rhinitis",
+      "source_url": "https://cloudtcm.com/disease/tcm/280",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%BC%BB%E7%82%8E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.286",
+      "name_zh": "青光眼",
+      "name_en_draft": "Glaucoma",
+      "source_url": "https://cloudtcm.com/disease/tcm/286",
+      "image_url": "https://media.cloudtcm.uk/disease/CD%E9%9D%92%E5%85%89%E7%9C%BC.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.296",
+      "name_zh": "原發性高血壓",
+      "name_en_draft": "Primary Hypertension",
+      "source_url": "https://cloudtcm.com/disease/tcm/296",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%AB%98%E8%A1%80%E5%A3%93.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.313",
+      "name_zh": "類風濕性關節炎",
+      "name_en_draft": "Rheumatoid Arthritis",
+      "source_url": "https://cloudtcm.com/disease/tcm/313",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A1%9E%E9%A2%A8%E6%BF%95%E6%80%A7%E9%97%9C%E7%AF%80%E7%82%8E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.319",
+      "name_zh": "恐懼性焦慮障礙",
+      "name_en_draft": "Phobic Anxiety Disorder",
+      "source_url": "https://cloudtcm.com/disease/tcm/319",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%81%90%E6%85%8C%E7%97%87.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.710",
+      "name_zh": "心肌梗塞",
+      "name_en_draft": "Myocardial Infarction",
+      "source_url": "https://cloudtcm.com/disease/tcm/710",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%BF%83%E8%82%8C%E6%A2%97%E5%A1%9E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.720",
+      "name_zh": "心肌炎",
+      "name_en_draft": "Myocarditis",
+      "source_url": "https://cloudtcm.com/disease/tcm/720",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%BF%83%E8%82%8C%E7%82%8E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.753",
+      "name_zh": "低血壓",
+      "name_en_draft": "Hypotension",
+      "source_url": "https://cloudtcm.com/disease/tcm/753",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E4%BD%8E%E8%A1%80%E5%A3%93-1.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.865",
+      "name_zh": "腎及輸尿管結石",
+      "name_en_draft": "Kidney and Ureteral Stones",
+      "source_url": "https://cloudtcm.com/disease/tcm/865",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%8E%E8%BC%B8%E5%B0%BF%E7%AE%A1%E7%B5%90%E7%9F%B3.jpeg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.873",
+      "name_zh": "前列腺增生",
+      "name_en_draft": "Benign Prostatic Hyperplasia",
+      "source_url": "https://cloudtcm.com/disease/tcm/873",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%89%8D%E5%88%97%E8%85%BA%E5%A2%9E%E7%94%9F.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.897",
+      "name_zh": "更年期綜合症",
+      "name_en_draft": "Menopausal Syndrome",
+      "source_url": "https://cloudtcm.com/disease/tcm/897",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%9B%B4%E5%B9%B4%E6%9C%9F%E7%B6%9C%E5%90%88%E7%97%87.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.955",
+      "name_zh": "異位性皮膚炎",
+      "name_en_draft": "Atopic Dermatitis",
+      "source_url": "https://cloudtcm.com/disease/tcm/955",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%95%B0%E4%BD%8D%E6%80%A7%E7%9A%AE%E8%86%9A%E7%82%8E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1268",
+      "name_zh": "僵直性脊椎炎",
+      "name_en_draft": "Ankylosing Spondylitis",
+      "source_url": "https://cloudtcm.com/disease/tcm/1268",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%83%B5%E7%9B%B4%E6%80%A7%E8%84%8A%E6%A4%8E%E7%82%8E.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1373",
+      "name_zh": "甲狀腺機能減退",
+      "name_en_draft": "Hypothyroidism",
+      "source_url": "https://cloudtcm.com/disease/tcm/1373",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%94%B2%E7%8B%80%E8%85%BA%E6%A9%9F%E8%83%BD%E6%B8%9B%E9%80%80.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1400",
+      "name_zh": "痛風",
+      "name_en_draft": "Gout",
+      "source_url": "https://cloudtcm.com/disease/tcm/1400",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%97%9B%E9%A2%A8.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1406",
+      "name_zh": "嗜眠症(嗜睡症)",
+      "name_en_draft": "Hypersomnolence",
+      "source_url": "https://cloudtcm.com/disease/tcm/1406",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%97%9C%E7%9D%A1%E7%97%87.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1430",
+      "name_zh": "甲狀腺亢進",
+      "name_en_draft": "Hyperthyroidism",
+      "source_url": "https://cloudtcm.com/disease/tcm/1430",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%94%B2%E7%8B%80%E8%85%BA%E4%BA%A2%E9%80%B2.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1499",
+      "name_zh": "阿茲海默症",
+      "name_en_draft": "Alzheimer's Disease",
+      "source_url": "https://cloudtcm.com/disease/tcm/1499",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%B1%E6%99%BA%E7%97%87.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1529",
+      "name_zh": "膽結石",
+      "name_en_draft": "Gallstones",
+      "source_url": "https://cloudtcm.com/disease/tcm/1529",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%86%BD%E7%B5%90%E7%9F%B3.jpeg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1557",
+      "name_zh": "系統性紅斑性狼瘡",
+      "name_en_draft": "Systemic Lupus Erythematosus",
+      "source_url": "https://cloudtcm.com/disease/tcm/1557",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%B3%BB%E7%B5%B1%E6%80%A7%E7%B4%85%E6%96%91%E6%80%A7%E7%8B%BC%E7%98%A1.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1659",
+      "name_zh": "神經衰弱症",
+      "name_en_draft": "Neurasthenia (Historical Term)",
+      "source_url": "https://cloudtcm.com/disease/tcm/1659",
+      "image_url": "https://media.cloudtcm.uk/disease/BC%E7%A5%9E%E7%B6%93%E8%A1%B0%E5%BC%B1.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1670",
+      "name_zh": "胃酸食道逆流",
+      "name_en_draft": "Gastroesophageal Reflux Disease",
+      "source_url": "https://cloudtcm.com/disease/tcm/1670",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%83%E9%A3%9F%E9%81%93%E9%80%86%E6%B5%813.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1671",
+      "name_zh": "大腸激擾綜合症",
+      "name_en_draft": "Irritable Bowel Syndrome",
+      "source_url": "https://cloudtcm.com/disease/tcm/1671",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%A7%E8%85%B8%E6%BF%80%E6%93%BE%E7%B6%9C%E5%90%88%E7%97%87.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1683",
+      "name_zh": "腕管綜合症",
+      "name_en_draft": "Carpal Tunnel Syndrome",
+      "source_url": "https://cloudtcm.com/disease/tcm/1683",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%95%E7%AE%A1%E7%B6%9C%E5%90%88%E7%97%87.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1868",
+      "name_zh": "手汗症",
+      "name_en_draft": "Palmar Hyperhidrosis",
+      "source_url": "https://cloudtcm.com/disease/tcm/1868",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%8B%E6%B1%97.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.8371",
+      "name_zh": "顳顎關節痛",
+      "name_en_draft": "Temporomandibular Joint Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/8371",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A1%B3%E9%A1%8E%E9%97%9C%E7%AF%80%E7%97%9B25.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.13628",
+      "name_zh": "妥瑞氏症",
+      "name_en_draft": "Tourette Syndrome",
+      "source_url": "https://cloudtcm.com/disease/tcm/13628",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A6%A5%E7%91%9E%E6%B0%8F%E7%97%87.jpeg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.20451",
+      "name_zh": "胃脘不舒服",
+      "name_en_draft": "Epigastric Discomfort",
+      "source_url": "https://cloudtcm.com/disease/tcm/20451",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%83%E8%84%98%E4%B8%8D%E8%88%92%E6%9C%8D25.jpg"
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92568",
+      "name_zh": "容易焦慮恐懼",
+      "name_en_draft": "Anxiety and Fearfulness",
+      "source_url": "https://cloudtcm.com/disease/tcm/92568",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%AE%B9%E6%98%93%E7%84%A6%E6%85%AE.jpeg"
+    }
+  ],
+  "snapshot_verification": {
+    "checked_on": "2026-08-06",
+    "method": "fetched https://cloudtcm.com/disease/tcm",
+    "categories_match": "14/14 identical to the 2026-07-22 snapshot",
+    "entry_sample": "22 entries returned by the live page (it paginates); 22/22 present in the snapshot",
+    "conclusion": "snapshot still valid; total row count could not be reconfirmed online because the page paginates"
+  }
+}

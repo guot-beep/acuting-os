@@ -1,0 +1,196 @@
+{
+  "dataset": "Symptom quality (症狀性質) controlled vocabulary",
+  "policy": [
+    "Values for a symptom card clinical_attributes.quality. This axis carries the most diagnostic weight in TCM, so it is a closed set, not free text.",
+    "inference_hint is NEVER a rule. It is a direction to consider, and it is modulated by location, disease course and accompanying signs — 脹 in the hypochondrium and 脹 in the lower abdomen do not carry the same weight. The actual reasoning, with its own sources, lives in a symptom card differentiation[].",
+    "target_pattern_ids[] is left EMPTY in Batch A on purpose. Filling it now would mint pattern links from a vocabulary file rather than from a sourced clinical judgement — which is the failure this whole layer is built to avoid. The 15 pilot cards decide whether these hints hold.",
+    "inference_hint_only: true on every entry. No consumer may treat this file as a diagnosis rule.",
+    "IDs are ASCII (D10). Adding a value is a schema change: this file, then the validator, then data."
+  ],
+  "created": "2026-08-06",
+  "applies_to": "sym.* records via clinical_attributes.quality",
+  "records": [
+    {
+      "id": "distending",
+      "name_zh": "脹",
+      "name_en": "Distending",
+      "inference_hint": {
+        "hint_zh": "氣滯",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "stabbing",
+      "name_zh": "刺",
+      "name_en": "Stabbing",
+      "inference_hint": {
+        "hint_zh": "血瘀",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "dull",
+      "name_zh": "隱",
+      "name_en": "Dull",
+      "inference_hint": {
+        "hint_zh": "虛",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "empty",
+      "name_zh": "空",
+      "name_en": "Empty",
+      "inference_hint": {
+        "hint_zh": "精血虧虛",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "burning",
+      "name_zh": "灼",
+      "name_en": "Burning",
+      "inference_hint": {
+        "hint_zh": "熱",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "heavy",
+      "name_zh": "重",
+      "name_en": "Heavy",
+      "inference_hint": {
+        "hint_zh": "濕",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "wandering",
+      "name_zh": "竄",
+      "name_en": "Wandering",
+      "inference_hint": {
+        "hint_zh": "風／氣滯",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "cramping",
+      "name_zh": "絞",
+      "name_en": "Cramping",
+      "inference_hint": {
+        "hint_zh": "寒凝／實",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "sore",
+      "name_zh": "酸",
+      "name_en": "Sore",
+      "inference_hint": {
+        "hint_zh": "虛／濕",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "pulling",
+      "name_zh": "掣",
+      "name_en": "Pulling",
+      "inference_hint": {
+        "hint_zh": "筋脈失養",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "bearing_down",
+      "name_zh": "墜",
+      "name_en": "Bearing-down",
+      "inference_hint": {
+        "hint_zh": "氣陷",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "numb",
+      "name_zh": "麻",
+      "name_en": "Numb",
+      "inference_hint": {
+        "hint_zh": "氣血不榮",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "pricking_cold",
+      "name_zh": "冷",
+      "name_en": "Cold",
+      "inference_hint": {
+        "hint_zh": "寒",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    },
+    {
+      "id": "throbbing",
+      "name_zh": "跳",
+      "name_en": "Throbbing",
+      "inference_hint": {
+        "hint_zh": "肝陽／血分",
+        "target_pattern_ids": [],
+        "source": null,
+        "confidence": "unverified",
+        "review_status": "draft",
+        "inference_hint_only": true
+      }
+    }
+  ]
+}

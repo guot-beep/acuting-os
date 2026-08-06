@@ -1,0 +1,4 @@
+interface:
+  display_name: "AcuTing Condition & Pattern Fill"
+  short_description: "Entity-typed condition cards with sourced red flags and resolved pattern links"
+  default_prompt: "Use $acuting-condition-fill to clear the next condition batch. Start with gyn_fertility to zero defects; fix order is C4 red flags, C3 entity_type, C7 source drift, C5 bilingual. Build data/config/pattern_alias_map.json first if it does not exist (DECISIONS D10)."

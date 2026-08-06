@@ -25,6 +25,12 @@ const TARGETS = [
   { rel: "data/auricular/gb93_index.json", get: (d) => d.points || [] },
   { rel: "data/auricular/embedded/auricular_points.json", get: (d) => d },
   { rel: "data/acupoints/embedded/professional_points.json", get: (d) => d },
+  /* Kept in step with validate-point-ids.js. extra_points.json was missing from
+   * both lists, which left the two halves contradicting each other: the
+   * validator demanded the 72 new ids be ratified, and the ratifier could not
+   * see the file they live in. Add a source to one list and add it to the
+   * other. */
+  { rel: "data/acupoints/extra_points.json", get: (d) => d.records || d.points || (Array.isArray(d) ? d : []) },
 ];
 
 const ids = new Set();

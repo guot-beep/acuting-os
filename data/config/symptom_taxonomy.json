@@ -1,0 +1,1405 @@
+{
+  "dataset": "Symptom taxonomy (sym.* axis)",
+  "policy": [
+    "Controlled vocabulary for the fourth namespace (D11). Seeded from CloudTCM's 13 symptom categories, which are a body-region/system symptom axis — a genuinely professional one, and the axis this repo lacked.",
+    "A symptom is ONE namespace, not two: 頭痛 and headache are one observation in two languages (D11). TCM-only observations (口苦, 舌淡) carry a `tradition` tag rather than a second id space.",
+    "sym.* records do not exist yet. This is the vocabulary and the gap map; records are born when someone fills them from a real source (D14 build order)."
+  ],
+  "source": "CloudTCM 症狀分類 (13 categories, 144 entries), 2026-08-06",
+  "created": "2026-08-06",
+  "categories": [
+    {
+      "id": "sym.pain",
+      "name_zh": "疼痛症狀",
+      "name_en": "Pain Symptoms",
+      "source_category_id": "cloudtcm.disease_category.308",
+      "entry_count": 44
+    },
+    {
+      "id": "sym.general_limb",
+      "name_zh": "全身及四肢",
+      "name_en": "General and Limb Symptoms",
+      "source_category_id": "cloudtcm.disease_category.301",
+      "entry_count": 20
+    },
+    {
+      "id": "sym.eye",
+      "name_zh": "眼科專屬",
+      "name_en": "Eye-specific Symptoms",
+      "source_category_id": "cloudtcm.disease_category.304",
+      "entry_count": 8
+    },
+    {
+      "id": "sym.head_face_eye",
+      "name_zh": "頭面(眼耳)症狀",
+      "name_en": "Head and Face (Eye and Ear) Symptoms",
+      "source_category_id": "cloudtcm.disease_category.305",
+      "entry_count": 13
+    },
+    {
+      "id": "sym.dietary_gastrointestinal",
+      "name_zh": "飲食腸胃",
+      "name_en": "Dietary and Gastrointestinal Symptoms",
+      "source_category_id": "cloudtcm.disease_category.309",
+      "entry_count": 14
+    },
+    {
+      "id": "sym.head_face_nose",
+      "name_zh": "頭面(鼻口喉)症狀",
+      "name_en": "Head and Face (Nose, Mouth, and Throat) Symptoms",
+      "source_category_id": "cloudtcm.disease_category.317",
+      "entry_count": 17
+    },
+    {
+      "id": "sym.female",
+      "name_zh": "女性特屬症狀",
+      "name_en": "Female-specific Symptoms",
+      "source_category_id": "cloudtcm.disease_category.314",
+      "entry_count": 6
+    },
+    {
+      "id": "sym.chest_respiratory",
+      "name_zh": "胸部及呼吸",
+      "name_en": "Chest and Respiratory Symptoms",
+      "source_category_id": "cloudtcm.disease_category.311",
+      "entry_count": 7
+    },
+    {
+      "id": "sym.skin",
+      "name_zh": "皮膚症狀",
+      "name_en": "Skin Symptoms",
+      "source_category_id": "cloudtcm.disease_category.307",
+      "entry_count": 5
+    },
+    {
+      "id": "sym.male",
+      "name_zh": "男性特屬症狀",
+      "name_en": "Male-specific Symptoms",
+      "source_category_id": "cloudtcm.disease_category.315",
+      "entry_count": 2
+    },
+    {
+      "id": "sym.urinary_bowel",
+      "name_zh": "大小便症狀",
+      "name_en": "Urinary and Bowel Symptoms",
+      "source_category_id": "cloudtcm.disease_category.312",
+      "entry_count": 14
+    },
+    {
+      "id": "sym.mental_emotional",
+      "name_zh": "精神狀態",
+      "name_en": "Mental and Emotional Symptoms",
+      "source_category_id": "cloudtcm.disease_category.303",
+      "entry_count": 8
+    },
+    {
+      "id": "sym.back_lumbar",
+      "name_zh": "背部腰部狀態",
+      "name_en": "Back and Lumbar Symptoms",
+      "source_category_id": "cloudtcm.disease_category.310",
+      "entry_count": 1
+    }
+  ],
+  "ungrouped_note": "現代疾病 is deliberately absent: those 46 entries are 病名 and belong to cond.*, not to the symptom axis.",
+  "candidates": [
+    {
+      "source_id": "cloudtcm.disease_entry.2",
+      "name_zh": "氣喘",
+      "name_en_draft": "Asthma or Wheezing",
+      "source_url": "https://cloudtcm.com/disease/tcm/2",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%B0%A3%E5%96%98.jpg",
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.83",
+      "name_zh": "大便秘結",
+      "name_en_draft": "Constipation",
+      "source_url": "https://cloudtcm.com/disease/tcm/83",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E4%BE%BF%E7%A7%98.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.86",
+      "name_zh": "耳聾",
+      "name_en_draft": "Hearing Loss",
+      "source_url": "https://cloudtcm.com/disease/tcm/86",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%80%B3%E9%B3%B4%E8%80%B3%E8%81%BE.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.147",
+      "name_zh": "性冷感",
+      "name_en_draft": "Low Sexual Desire",
+      "source_url": "https://cloudtcm.com/disease/tcm/147",
+      "image_url": "https://media.cloudtcm.uk/disease/S%E6%80%A7%E6%85%BE%E8%A1%B0%E9%80%8025.jpg",
+      "taxonomy_ids": [
+        "sym.female"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.187",
+      "name_zh": "容易流眼淚",
+      "name_en_draft": "Excessive Tearing",
+      "source_url": "https://cloudtcm.com/disease/tcm/187",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%B5%81%E7%9C%BC%E6%B2%B9.jpg",
+      "taxonomy_ids": [
+        "sym.eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.195",
+      "name_zh": "白帶",
+      "name_en_draft": "Vaginal Discharge (Leukorrhea)",
+      "source_url": "https://cloudtcm.com/disease/tcm/195",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%99%BD%E5%B8%B6%E7%95%B0%E5%B8%B8.jpeg",
+      "taxonomy_ids": [
+        "sym.female"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.196",
+      "name_zh": "半身不遂",
+      "name_en_draft": "Hemiplegia",
+      "source_url": "https://cloudtcm.com/disease/tcm/196",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%8D%8A%E8%BA%AB%E4%B8%8D%E9%81%82.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.203",
+      "name_zh": "排尿困難",
+      "name_en_draft": "Difficulty Urinating",
+      "source_url": "https://cloudtcm.com/disease/tcm/203",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%8E%92%E5%B0%BF%E5%9B%B0%E9%9B%A3.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.210",
+      "name_zh": "腹中有鳴叫聲",
+      "name_en_draft": "Abdominal Rumbling (Borborygmi)",
+      "source_url": "https://cloudtcm.com/disease/tcm/210",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B9%E9%83%A8%E9%B3%B4%E5%8F%AB%E8%81%B2.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.233",
+      "name_zh": "鼻塞",
+      "name_en_draft": "Nasal Congestion",
+      "source_url": "https://cloudtcm.com/disease/tcm/233",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%BC%BB%E5%A1%9E26.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.251",
+      "name_zh": "牙齦腫脹痛",
+      "name_en_draft": "Painful Swollen Gums",
+      "source_url": "https://cloudtcm.com/disease/tcm/251",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%89%99%E9%BD%A6%E8%85%AB%E8%84%B9%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.254",
+      "name_zh": "子宮崩漏",
+      "name_en_draft": "Abnormal Uterine Bleeding (TCM Symptom)",
+      "source_url": "https://cloudtcm.com/disease/tcm/254",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%AD%90%E5%AE%AE%E5%B4%A9%E6%BC%8F.jpg",
+      "taxonomy_ids": [
+        "sym.female"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.290",
+      "name_zh": "心律不整",
+      "name_en_draft": "Cardiac Arrhythmia",
+      "source_url": "https://cloudtcm.com/disease/tcm/290",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%BF%83%E5%BE%8B%E4%B8%8D%E6%95%B4.jpg",
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.392",
+      "name_zh": "面部搔癢",
+      "name_en_draft": "Facial Itching",
+      "source_url": "https://cloudtcm.com/disease/tcm/392",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%9D%A2%E9%83%A8%E6%90%94%E7%99%A2.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1496",
+      "name_zh": "男性勃起障礙",
+      "name_en_draft": "Erectile Dysfunction",
+      "source_url": "https://cloudtcm.com/disease/tcm/1496",
+      "image_url": "https://media.cloudtcm.uk/postimg/D%E7%94%B7%E6%80%A7%E5%8B%83%E8%B5%B7%E9%9A%9C%E7%A4%99.jpg",
+      "taxonomy_ids": [
+        "sym.male"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1522",
+      "name_zh": "口瘡嘴破口角炎",
+      "name_en_draft": "Oral Ulcers and Angular Cheilitis",
+      "source_url": "https://cloudtcm.com/disease/tcm/1522",
+      "image_url": "https://media.cloudtcm.uk/disease/B%E5%8F%A3%E7%98%A1%E5%8F%A3%E8%A7%92%E7%82%8E.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1543",
+      "name_zh": "月經稀少閉經",
+      "name_en_draft": "Oligomenorrhea and Amenorrhea",
+      "source_url": "https://cloudtcm.com/disease/tcm/1543",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%9C%88%E7%B6%93%E7%A8%80%E5%B0%91%E9%96%89%E7%B6%93.jpg",
+      "taxonomy_ids": [
+        "sym.female"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1664",
+      "name_zh": "性慾亢進",
+      "name_en_draft": "Hypersexuality",
+      "source_url": "https://cloudtcm.com/disease/tcm/1664",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%80%A7%E6%85%BE%E4%BA%A2%E9%80%B225.jpg",
+      "taxonomy_ids": [
+        "sym.male"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1666",
+      "name_zh": "睡眠障礙",
+      "name_en_draft": "Sleep Disturbance",
+      "source_url": "https://cloudtcm.com/disease/tcm/1666",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9D%A1%E7%9C%A0%E9%9A%9C%E7%A4%99.jpg",
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1672",
+      "name_zh": "皮膚搔癢",
+      "name_en_draft": "Pruritus",
+      "source_url": "https://cloudtcm.com/disease/tcm/1672",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9A%AE%E8%86%9A%E6%90%94%E7%99%A2.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb",
+        "sym.skin"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1723",
+      "name_zh": "心胸煩熱",
+      "name_en_draft": "Chest Heat and Restlessness (TCM Symptom)",
+      "source_url": "https://cloudtcm.com/disease/tcm/1723",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%BF%83%E8%83%B8%E7%85%A9%E7%86%B1.jpg",
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.1946",
+      "name_zh": "膝蓋痛",
+      "name_en_draft": "Knee Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/1946",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%86%9D%E8%93%8B%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.4958",
+      "name_zh": "大腿前側外側疼痛",
+      "name_en_draft": "Anterolateral Thigh Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/4958",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%A7%E8%85%BF%E5%89%8D%E5%A4%96%E5%81%B4%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.8195",
+      "name_zh": "肩關節痛",
+      "name_en_draft": "Shoulder Joint Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/8195",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%82%A9%E7%97%9B_%E8%82%A9%E9%97%9C%E7%AF%80.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.9070",
+      "name_zh": "背痛",
+      "name_en_draft": "Back Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/9070",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%8C%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.9092",
+      "name_zh": "脖子頸項酸痛",
+      "name_en_draft": "Neck Pain and Stiffness",
+      "source_url": "https://cloudtcm.com/disease/tcm/9092",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%B8%E7%97%9B%E8%90%BD%E6%9E%95.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.10133",
+      "name_zh": "皮疹紅疹",
+      "name_en_draft": "Skin Rash",
+      "source_url": "https://cloudtcm.com/disease/tcm/10133",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9A%AE%E7%96%B9.jpg",
+      "taxonomy_ids": [
+        "sym.skin"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.10510",
+      "name_zh": "手肘外側痛",
+      "name_en_draft": "Lateral Elbow Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/10510",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%B6%B2%E7%90%83%E8%82%98.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.14066",
+      "name_zh": "睡眠時磨牙",
+      "name_en_draft": "Sleep Bruxism",
+      "source_url": "https://cloudtcm.com/disease/tcm/14066",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9D%A1%E7%9C%A0%E6%99%82%E7%A3%A8%E7%89%99.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.14284",
+      "name_zh": "上肢手部麻木",
+      "name_en_draft": "Upper Limb and Hand Numbness",
+      "source_url": "https://cloudtcm.com/disease/tcm/14284",
+      "image_url": "https://cloudtcm-assets.s3.amazonaws.com/disease/D%E4%B8%8A%E8%82%A2%E6%89%8B%E9%83%A8%E9%BA%BB%E6%9C%A8.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.17941",
+      "name_zh": "暈眩",
+      "name_en_draft": "Dizziness or Vertigo",
+      "source_url": "https://cloudtcm.com/disease/tcm/17941",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%9A%88%E7%9C%A9.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.20352",
+      "name_zh": "舌頭痛",
+      "name_en_draft": "Tongue Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/20352",
+      "image_url": "https://media.cloudtcm.uk/disease/CD%E8%88%8C%E9%A0%AD%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.21314",
+      "name_zh": "女陰搔癢",
+      "name_en_draft": "Vulvar Itching",
+      "source_url": "https://cloudtcm.com/disease/tcm/21314",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A5%B3%E9%99%B0%E6%90%94%E7%99%A2.jpg",
+      "taxonomy_ids": [
+        "sym.female"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28295",
+      "name_zh": "打嗝呃逆",
+      "name_en_draft": "Hiccups",
+      "source_url": "https://cloudtcm.com/disease/tcm/28295",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%93%E5%97%9D%E5%91%83%E9%80%86.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28304",
+      "name_zh": "咽喉痛",
+      "name_en_draft": "Sore Throat",
+      "source_url": "https://cloudtcm.com/disease/tcm/28304",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%92%BD%E5%96%89%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28309",
+      "name_zh": "肋間神經疼痛",
+      "name_en_draft": "Intercostal Neuralgia",
+      "source_url": "https://cloudtcm.com/disease/tcm/28309",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%82%8B%E9%96%93%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28311",
+      "name_zh": "胸悶胸痛",
+      "name_en_draft": "Chest Tightness and Chest Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/28311",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%B8%E6%82%B6%E8%83%B8%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28325",
+      "name_zh": "上腹胃脘痛",
+      "name_en_draft": "Upper Abdominal or Epigastric Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/28325",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%83%E8%84%98%E7%97%9B.jpeg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28381",
+      "name_zh": "胃腸脹氣",
+      "name_en_draft": "Abdominal Bloating and Gas",
+      "source_url": "https://cloudtcm.com/disease/tcm/28381",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%83%E8%85%B8%E8%84%B9%E6%B0%A32.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28419",
+      "name_zh": "口臭",
+      "name_en_draft": "Bad Breath (Halitosis)",
+      "source_url": "https://cloudtcm.com/disease/tcm/28419",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%8F%A3%E8%87%AD.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28420",
+      "name_zh": "腹瀉",
+      "name_en_draft": "Diarrhea",
+      "source_url": "https://cloudtcm.com/disease/tcm/28420",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B9%E7%80%89.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28505",
+      "name_zh": "無尿及少尿",
+      "name_en_draft": "Anuria and Oliguria",
+      "source_url": "https://cloudtcm.com/disease/tcm/28505",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%84%A1%E5%B0%BF%E5%B0%91%E5%B0%BF.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28507",
+      "name_zh": "頻尿",
+      "name_en_draft": "Urinary Frequency",
+      "source_url": "https://cloudtcm.com/disease/tcm/28507",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%BB%E5%B0%BF2.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28508",
+      "name_zh": "夜間頻尿多尿",
+      "name_en_draft": "Nocturia and Nocturnal Polyuria",
+      "source_url": "https://cloudtcm.com/disease/tcm/28508",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%9C%E9%96%93%E9%A0%BB%E5%B0%BF%E5%A4%9A%E5%B0%BF.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28518",
+      "name_zh": "排尿後有殘尿感",
+      "name_en_draft": "Sensation of Incomplete Bladder Emptying",
+      "source_url": "https://cloudtcm.com/disease/tcm/28518",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%B0%BF%E5%BE%8C%E9%A4%98%E7%80%9D.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28644",
+      "name_zh": "嗅覺減退喪失",
+      "name_en_draft": "Reduced or Lost Sense of Smell",
+      "source_url": "https://cloudtcm.com/disease/tcm/28644",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%97%85%E8%A6%BA%E6%B8%9B%E9%80%80.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28745",
+      "name_zh": "全身性水腫",
+      "name_en_draft": "Generalized Edema",
+      "source_url": "https://cloudtcm.com/disease/tcm/28745",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%85%A8%E8%BA%AB%E6%80%A7%E6%B0%B4%E8%85%AB.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.28763",
+      "name_zh": "身體消瘦",
+      "name_en_draft": "Body Wasting or Unintentional Weight Loss",
+      "source_url": "https://cloudtcm.com/disease/tcm/28763",
+      "image_url": "https://media.cloudtcm.uk/disease/BS%E8%BA%AB%E9%AB%94%E6%B6%88%E7%98%A6.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92237",
+      "name_zh": "手腳冰冷",
+      "name_en_draft": "Cold Hands and Feet",
+      "source_url": "https://cloudtcm.com/disease/tcm/92237",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%8B%E8%85%B3%E5%86%B0%E5%86%B7.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92238",
+      "name_zh": "潮熱",
+      "name_en_draft": "Hot Flashes",
+      "source_url": "https://cloudtcm.com/disease/tcm/92238",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%BD%AE%E7%86%B1.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92240",
+      "name_zh": "怕冷",
+      "name_en_draft": "Cold Intolerance",
+      "source_url": "https://cloudtcm.com/disease/tcm/92240",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%80%95%E5%86%B7.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92244",
+      "name_zh": "手腳容易出汗",
+      "name_en_draft": "Excessive Sweating of Hands and Feet",
+      "source_url": "https://cloudtcm.com/disease/tcm/92244",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%8B%E6%B1%97.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92245",
+      "name_zh": "夜間盜汗",
+      "name_en_draft": "Night Sweats",
+      "source_url": "https://cloudtcm.com/disease/tcm/92245",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%9C%E9%96%93%E7%9B%9C%E6%B1%97.jpeg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92247",
+      "name_zh": "後頭痛",
+      "name_en_draft": "Occipital Headache",
+      "source_url": "https://cloudtcm.com/disease/tcm/92247",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%BE%8C%E9%A0%AD%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92248",
+      "name_zh": "前額頭痛",
+      "name_en_draft": "Frontal Headache",
+      "source_url": "https://cloudtcm.com/disease/tcm/92248",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%89%8D%E9%A1%8D%E9%A0%AD%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92249",
+      "name_zh": "頭頂痛",
+      "name_en_draft": "Vertex Headache",
+      "source_url": "https://cloudtcm.com/disease/tcm/92249",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%AD%E9%A0%82%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92254",
+      "name_zh": "腳踝外側前側痛",
+      "name_en_draft": "Anterolateral Ankle Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92254",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B3%E8%B8%9D%E5%A4%96%E5%81%B4%E5%89%8D%E5%81%B4%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92255",
+      "name_zh": "腳背痛",
+      "name_en_draft": "Dorsal Foot Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92255",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B3%E8%83%8C%E7%97%9B1.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92257",
+      "name_zh": "腳跟痛",
+      "name_en_draft": "Heel Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92257",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%B6%B3%E8%B7%9F%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92258",
+      "name_zh": "右下腹側部痛",
+      "name_en_draft": "Right Lower Abdominal Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92258",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%8F%B3%E5%81%B4%E8%85%B9%E9%83%A8%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92260",
+      "name_zh": "大便次數頻繁",
+      "name_en_draft": "Frequent Bowel Movements",
+      "source_url": "https://cloudtcm.com/disease/tcm/92260",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%A7%E4%BE%BF%E9%A0%BB%E7%B9%81.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92265",
+      "name_zh": "大便非常臭",
+      "name_en_draft": "Foul-smelling Stool",
+      "source_url": "https://cloudtcm.com/disease/tcm/92265",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%A7%E4%BE%BF%E9%9D%9E%E5%B8%B8%E8%87%AD.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92266",
+      "name_zh": "經常放屁",
+      "name_en_draft": "Excessive Flatulence",
+      "source_url": "https://cloudtcm.com/disease/tcm/92266",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%B6%93%E5%B8%B8%E6%94%BE%E5%B1%81.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92267",
+      "name_zh": "小便顏色偏黃",
+      "name_en_draft": "Dark Yellow Urine",
+      "source_url": "https://cloudtcm.com/disease/tcm/92267",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%B0%8F%E4%BE%BF%E9%A1%8F%E8%89%B2%E5%81%8F%E9%BB%83.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92268",
+      "name_zh": "小便量多顏色像水",
+      "name_en_draft": "Polyuria with Pale Urine",
+      "source_url": "https://cloudtcm.com/disease/tcm/92268",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%B0%8F%E4%BE%BF%E6%B8%85%E6%BE%88%E5%A6%82%E6%B0%B4.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92269",
+      "name_zh": "食慾不振",
+      "name_en_draft": "Loss of Appetite",
+      "source_url": "https://cloudtcm.com/disease/tcm/92269",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A3%9F%E6%85%BE%E4%B8%8D%E6%8C%AF.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92273",
+      "name_zh": "嘴裡發苦",
+      "name_en_draft": "Bitter Taste in the Mouth",
+      "source_url": "https://cloudtcm.com/disease/tcm/92273",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%8F%A3%E8%8B%A6.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92276",
+      "name_zh": "口乾口渴",
+      "name_en_draft": "Dry Mouth and Thirst",
+      "source_url": "https://cloudtcm.com/disease/tcm/92276",
+      "image_url": "https://media.cloudtcm.uk/disease/D_%E5%8F%A3%E4%B9%BE%E5%8F%A3%E6%B8%B4.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92280",
+      "name_zh": "多痰",
+      "name_en_draft": "Excessive Phlegm or Sputum",
+      "source_url": "https://cloudtcm.com/disease/tcm/92280",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%97%B0%E5%A4%9A.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92281",
+      "name_zh": "呼吸氣短言語無力",
+      "name_en_draft": "Shortness of Breath and Weak Voice",
+      "source_url": "https://cloudtcm.com/disease/tcm/92281",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%91%BC%E5%90%B8%E6%B0%A3%E7%9F%AD%E8%A8%80%E8%AA%9E%E7%84%A1%E5%8A%9B.jpg",
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92295",
+      "name_zh": "眼睛紅痛",
+      "name_en_draft": "Eye Redness and Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92295",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9C%BC%E7%9D%9B%E7%B4%85%E7%97%9B.jpeg",
+      "taxonomy_ids": [
+        "sym.eye",
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92300",
+      "name_zh": "眼睛模糊",
+      "name_en_draft": "Blurred Vision",
+      "source_url": "https://cloudtcm.com/disease/tcm/92300",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9C%BC%E7%9D%9B%E6%A8%A1%E7%B3%8A26.jpg",
+      "taxonomy_ids": [
+        "sym.eye",
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92301",
+      "name_zh": "流鼻涕",
+      "name_en_draft": "Runny Nose (Rhinorrhea)",
+      "source_url": "https://cloudtcm.com/disease/tcm/92301",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%B5%81%E9%BC%BB%E6%B6%95.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92302",
+      "name_zh": "耳朵癢",
+      "name_en_draft": "Ear Itching",
+      "source_url": "https://cloudtcm.com/disease/tcm/92302",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%80%B3%E6%9C%B5%E7%99%A2.jpeg",
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92303",
+      "name_zh": "下肢水腫",
+      "name_en_draft": "Lower-extremity Edema",
+      "source_url": "https://cloudtcm.com/disease/tcm/92303",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E4%B8%8B%E8%82%A2%E6%B0%B4%E8%85%AB.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92307",
+      "name_zh": "味覺減退",
+      "name_en_draft": "Reduced Sense of Taste (Hypogeusia)",
+      "source_url": "https://cloudtcm.com/disease/tcm/92307",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%91%B3%E8%A6%BA%E5%96%AA%E5%A4%B1.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92309",
+      "name_zh": "發燒",
+      "name_en_draft": "Fever",
+      "source_url": "https://cloudtcm.com/disease/tcm/92309",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%99%BC%E7%87%92.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92317",
+      "name_zh": "耳朵痛",
+      "name_en_draft": "Ear Pain (Otalgia)",
+      "source_url": "https://cloudtcm.com/disease/tcm/92317",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%80%B3%E6%9C%B5%E7%97%9B.jpeg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92323",
+      "name_zh": "膏肓痛",
+      "name_en_draft": "Medial Scapular Pain (Gaohuang Region)",
+      "source_url": "https://cloudtcm.com/disease/tcm/92323",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%86%8F%E8%82%93%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92333",
+      "name_zh": "胸骨疼痛",
+      "name_en_draft": "Sternal Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92333",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%B8%E9%AA%A8%E7%96%BC%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92447",
+      "name_zh": "中背部疼痛",
+      "name_en_draft": "Mid-back Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92447",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E4%B8%AD%E8%83%8C%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92451",
+      "name_zh": "上半身側邊痛",
+      "name_en_draft": "Lateral Upper-body Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92451",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E4%B8%8A%E5%8D%8A%E8%BA%AB%E5%81%B4%E9%82%8A%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92461",
+      "name_zh": "腳踝內側後側痛",
+      "name_en_draft": "Posteromedial Ankle Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92461",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B3%E8%B8%9D%E5%85%A7%E5%81%B4%E5%BE%8C%E5%81%B4%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92469",
+      "name_zh": "腳內側痛",
+      "name_en_draft": "Medial Foot Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92469",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B3%E5%85%A7%E5%81%B4%E8%B6%B3%E5%BC%93%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92471",
+      "name_zh": "身體沉重",
+      "name_en_draft": "Body Heaviness (TCM Symptom)",
+      "source_url": "https://cloudtcm.com/disease/tcm/92471",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%BA%AB%E9%AB%94%E6%B2%89%E9%87%8D.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92472",
+      "name_zh": "全身酸痛",
+      "name_en_draft": "Generalized Body Aches",
+      "source_url": "https://cloudtcm.com/disease/tcm/92472",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%85%A8%E8%BA%AB%E9%85%B8%E7%97%9B.jpeg",
+      "taxonomy_ids": [
+        "sym.general_limb",
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92477",
+      "name_zh": "心情煩燥",
+      "name_en_draft": "Irritability and Restlessness",
+      "source_url": "https://cloudtcm.com/disease/tcm/92477",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%BF%83%E6%83%85%E7%85%A9%E8%BA%81.jpg",
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92478",
+      "name_zh": "容易健忘",
+      "name_en_draft": "Forgetfulness",
+      "source_url": "https://cloudtcm.com/disease/tcm/92478",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%AE%B9%E6%98%93%E5%81%A5%E5%BF%98.jpg",
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92479",
+      "name_zh": "夜間多夢",
+      "name_en_draft": "Vivid or Excessive Dreams",
+      "source_url": "https://cloudtcm.com/disease/tcm/92479",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%9C%E9%96%93%E5%A4%9A%E5%A4%A2.jpg",
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92481",
+      "name_zh": "頭脹痛",
+      "name_en_draft": "Distending Headache",
+      "source_url": "https://cloudtcm.com/disease/tcm/92481",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%AD%E8%84%B9%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92484",
+      "name_zh": "牙齒緊閉口張不開",
+      "name_en_draft": "Jaw Clenching and Limited Mouth Opening",
+      "source_url": "https://cloudtcm.com/disease/tcm/92484",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%89%99%E9%97%9C%E7%B7%8A%E9%96%89.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92487",
+      "name_zh": "牙齒痛",
+      "name_en_draft": "Toothache",
+      "source_url": "https://cloudtcm.com/disease/tcm/92487",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%89%99%E9%BD%92%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92498",
+      "name_zh": "腹股溝痛",
+      "name_en_draft": "Groin Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92498",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B9%E8%82%A1%E6%BA%9D%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92501",
+      "name_zh": "胸悶脹",
+      "name_en_draft": "Chest Tightness and Distention",
+      "source_url": "https://cloudtcm.com/disease/tcm/92501",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%83%B8%E6%82%B62.jpg",
+      "taxonomy_ids": [
+        "sym.chest_respiratory"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92502",
+      "name_zh": "眼皮水腫",
+      "name_en_draft": "Eyelid Edema",
+      "source_url": "https://cloudtcm.com/disease/tcm/92502",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9C%BC%E7%9A%AE%E6%B0%B4%E8%85%AB.jpg",
+      "taxonomy_ids": [
+        "sym.eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92507",
+      "name_zh": "媽媽手",
+      "name_en_draft": "De Quervain Tenosynovitis",
+      "source_url": "https://cloudtcm.com/disease/tcm/92507",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%AA%BD%E5%AA%BD%E6%89%8B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92511",
+      "name_zh": "膝蓋外側前側痛",
+      "name_en_draft": "Anterolateral Knee Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92511",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%86%9D%E8%93%8B%E5%A4%96%E5%81%B4%E5%89%8D%E5%81%B4%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92512",
+      "name_zh": "手肘內側痛",
+      "name_en_draft": "Medial Elbow Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92512",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%8B%E8%82%98%E5%85%A7%E5%81%B4%E7%97%9B2.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92513",
+      "name_zh": "膝蓋內側痛",
+      "name_en_draft": "Medial Knee Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92513",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%86%9D%E8%93%8B%E5%85%A7%E5%81%B4%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92515",
+      "name_zh": "手肘窩痛",
+      "name_en_draft": "Anterior Elbow Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92515",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%8B%E8%82%98%E7%AA%A9%E7%97%9B2.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92516",
+      "name_zh": "不易流汗",
+      "name_en_draft": "Reduced Sweating (Hypohidrosis)",
+      "source_url": "https://cloudtcm.com/disease/tcm/92516",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E4%B8%8D%E6%98%93%E6%B5%81%E6%B1%97.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92530",
+      "name_zh": "頭部發冷",
+      "name_en_draft": "Cold Sensation in the Head",
+      "source_url": "https://cloudtcm.com/disease/tcm/92530",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%AD%E9%83%A8%E7%99%BC%E5%86%B7.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92532",
+      "name_zh": "頭重",
+      "name_en_draft": "Heaviness of the Head",
+      "source_url": "https://cloudtcm.com/disease/tcm/92532",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%AD%E9%87%8D.jpeg",
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92534",
+      "name_zh": "唾液過多",
+      "name_en_draft": "Excessive Salivation",
+      "source_url": "https://cloudtcm.com/disease/tcm/92534",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%94%BE%E6%B6%B2%E9%81%8E%E5%A4%9A.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92547",
+      "name_zh": "小便疼痛",
+      "name_en_draft": "Painful Urination (Dysuria)",
+      "source_url": "https://cloudtcm.com/disease/tcm/92547",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%B0%8F%E4%BE%BF%E7%96%BC%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92548",
+      "name_zh": "眼睛癢",
+      "name_en_draft": "Eye Itching",
+      "source_url": "https://cloudtcm.com/disease/tcm/92548",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9C%BC%E7%9D%9B%E7%99%A2.jpg",
+      "taxonomy_ids": [
+        "sym.eye",
+        "sym.head_face_eye"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92552",
+      "name_zh": "眼窩前額眉稜骨痛",
+      "name_en_draft": "Orbital, Forehead, and Supraorbital Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92552",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9C%89%E7%A8%9C%E9%AA%A8%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92555",
+      "name_zh": "膝蓋後側痛",
+      "name_en_draft": "Posterior Knee Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92555",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%86%9D%E8%93%8B%E5%BE%8C%E5%81%B4%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92570",
+      "name_zh": "經常疲勞想睡",
+      "name_en_draft": "Persistent Fatigue and Sleepiness",
+      "source_url": "https://cloudtcm.com/disease/tcm/92570",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%B6%93%E5%B8%B8%E7%96%B2%E5%8B%9E%E6%83%B3%E7%9D%A1.jpg",
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92581",
+      "name_zh": "嘴中感到酸酸的",
+      "name_en_draft": "Sour Taste in the Mouth",
+      "source_url": "https://cloudtcm.com/disease/tcm/92581",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%98%B4%E5%B7%B4%E5%87%BA%E7%8F%BE%E9%85%B8%E5%91%B3.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92593",
+      "name_zh": "噁心反胃",
+      "name_en_draft": "Nausea",
+      "source_url": "https://cloudtcm.com/disease/tcm/92593",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%99%81%E5%BF%83%E5%8F%8D%E8%83%83.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92600",
+      "name_zh": "頭昏精神不佳",
+      "name_en_draft": "Lightheadedness and Low Energy",
+      "source_url": "https://cloudtcm.com/disease/tcm/92600",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A0%AD%E6%98%8F%E6%B2%92%E7%B2%BE%E7%A5%9E.jpg",
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92619",
+      "name_zh": "胡言亂語神志不清",
+      "name_en_draft": "Confusion and Disorganized Speech",
+      "source_url": "https://cloudtcm.com/disease/tcm/92619",
+      "image_url": "https://media.cloudtcm.uk/disease/IG%E8%83%A1%E8%A8%80%E4%BA%82%E8%AA%9E.jpg",
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92659",
+      "name_zh": "嘴唇紅腫痛",
+      "name_en_draft": "Painful Lip Swelling",
+      "source_url": "https://cloudtcm.com/disease/tcm/92659",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%98%B4%E5%94%87%E7%B4%85%E8%85%AB.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92670",
+      "name_zh": "小腿抽筋",
+      "name_en_draft": "Calf Cramps",
+      "source_url": "https://cloudtcm.com/disease/tcm/92670",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%B0%8F%E8%85%BF%E6%8A%BD%E7%AD%8B.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92676",
+      "name_zh": "手臂痛",
+      "name_en_draft": "Arm Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92676",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E6%89%8B%E8%87%82%E7%96%BC%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92678",
+      "name_zh": "四肢關節疼痛",
+      "name_en_draft": "Limb Joint Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92678",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%9B%9B%E8%82%A2%E9%97%9C%E7%AF%80%E7%96%BC%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb",
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92683",
+      "name_zh": "肩頸痠痛",
+      "name_en_draft": "Neck and Shoulder Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92683",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%82%A9%E9%A0%B8%E9%85%B8%E7%97%9B.jpeg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92692",
+      "name_zh": "食後疲倦想睡",
+      "name_en_draft": "Postprandial Fatigue and Sleepiness",
+      "source_url": "https://cloudtcm.com/disease/tcm/92692",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%A3%9F%E5%BE%8C%E5%9B%B0%E5%80%A6.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92702",
+      "name_zh": "腰部冷涼",
+      "name_en_draft": "Cold Sensation in the Lower Back",
+      "source_url": "https://cloudtcm.com/disease/tcm/92702",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%85%B0%E9%83%A8%E5%86%B7%E6%B6%BC.jpg",
+      "taxonomy_ids": [
+        "sym.general_limb",
+        "sym.back_lumbar"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92751",
+      "name_zh": "喝水之後吐水",
+      "name_en_draft": "Vomiting after Drinking Water",
+      "source_url": "https://cloudtcm.com/disease/tcm/92751",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%96%9D%E6%B0%B4%E5%BE%8C%E5%90%90%E6%B0%B4.jpg",
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92832",
+      "name_zh": "大腿內側疼痛",
+      "name_en_draft": "Medial Thigh Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92832",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%A4%A7%E8%85%BF%E5%85%A7%E5%81%B4%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92837",
+      "name_zh": "肚臍周圍腹痛",
+      "name_en_draft": "Periumbilical Abdominal Pain",
+      "source_url": "https://cloudtcm.com/disease/tcm/92837",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%82%9A%E8%87%8D%E5%91%A8%E5%9C%8D%E8%85%B9%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.pain",
+        "sym.dietary_gastrointestinal"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92945",
+      "name_zh": "鼻子癢",
+      "name_en_draft": "Nasal Itching",
+      "source_url": "https://cloudtcm.com/disease/tcm/92945",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E9%BC%BB%E5%AD%90%E7%99%A2.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92949",
+      "name_zh": "喉嚨發癢",
+      "name_en_draft": "Throat Itching",
+      "source_url": "https://cloudtcm.com/disease/tcm/92949",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%92%BD%E5%96%89%E7%99%BC%E7%99%A2.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92950",
+      "name_zh": "咽喉乾燥",
+      "name_en_draft": "Dry Throat",
+      "source_url": "https://cloudtcm.com/disease/tcm/92950",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%92%BD%E5%96%89%E4%B9%BE%E7%87%A52.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92952",
+      "name_zh": "聲音嘶啞",
+      "name_en_draft": "Hoarseness",
+      "source_url": "https://cloudtcm.com/disease/tcm/92952",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E8%81%B2%E9%9F%B3%E5%98%B6%E5%95%9E.jpg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92954",
+      "name_zh": "咽喉有異物感",
+      "name_en_draft": "Globus Sensation",
+      "source_url": "https://cloudtcm.com/disease/tcm/92954",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E5%92%BD%E5%96%89%E7%95%B0%E7%89%A9%E6%84%9F.jpeg",
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ]
+    },
+    {
+      "source_id": "cloudtcm.disease_entry.92969",
+      "name_zh": "眼睛乾澀",
+      "name_en_draft": "Dry Eyes",
+      "source_url": "https://cloudtcm.com/disease/tcm/92969",
+      "image_url": "https://media.cloudtcm.uk/disease/D%E7%9C%BC%E7%9D%9B%E6%BE%80%E7%97%9B.jpg",
+      "taxonomy_ids": [
+        "sym.eye",
+        "sym.head_face_eye"
+      ]
+    }
+  ]
+}
