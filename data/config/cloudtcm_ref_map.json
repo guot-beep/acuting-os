@@ -489,5 +489,12 @@
       "source_url": "https://cloudtcm.com/disease/tcm/92568",
       "image_url": "https://media.cloudtcm.uk/disease/D%E5%AE%B9%E6%98%93%E7%84%A6%E6%85%AE.jpeg"
     }
-  ]
+  ],
+  "snapshot_verification": {
+    "checked_on": "2026-08-06",
+    "method": "fetched https://cloudtcm.com/disease/tcm",
+    "categories_match": "14/14 identical to the 2026-07-22 snapshot",
+    "entry_sample": "22 entries returned by the live page (it paginates); 22/22 present in the snapshot",
+    "conclusion": "snapshot still valid; total row count could not be reconfirmed online because the page paginates"
+  }
 }

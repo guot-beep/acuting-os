@@ -39,6 +39,20 @@
  *      it is worse: it makes the C5 "translate the missing _en" backlog look
  *      like translation work when the Chinese source itself is fake-filled.
  *      Translation lines must SKIP any field flagged C10.
+ *   C11 risk_factors_zh filled but not structured (§5.5). Risk factors used to
+ *      live inside western_pathology_*, which merged two questions: how the
+ *      disease happens, and who gets it. `modifiable` is the field that earns
+ *      the split — it separates what to counsel on from background risk.
+ *   C12 acupuncture_scope_zh filled but not structured (§5.6). The only field
+ *      written for the practitioner, and the easiest place for an efficacy
+ *      claim to arrive ungraded, so `evidence` is required and "unknown" is a
+ *      valid value while absent is not. Also refuses a co_management that tells
+ *      a patient to stop a medication without routing it to the prescriber —
+ *      that is scope of practice, not just safety.
+ *
+ * C11 and C12 check SHAPE, not presence. Requiring both on all 150 records
+ * would add 300 defects to a layer already carrying 396, and a gate that fails
+ * every run is a gate that gets switched off.
  *
  * NOTES (reported, do not fail the build):
  *   N1 inline tcm_patterns blobs not yet lifted into related_patterns
@@ -69,7 +83,15 @@ const CONTENT_FIELDS = new Set([
   "western_context_zh", "western_context_en",
   "western_pathology_zh", "western_pathology_en",
   "etiology_zh", "etiology_en",
+  // Added 2026-08-06. Risk factors were living inside western_pathology_*,
+  // which conflated two different questions: how the disease happens, versus
+  // who gets it and therefore what to ask in intake.
+  "risk_factors_zh", "risk_factors_en",
   "red_flags_zh", "red_flags_en",
+  // Added 2026-08-06. red_flags says when to stop; this says how far treatment
+  // can go. Neither substitutes for the other, and this is the only field on
+  // the card written for the practitioner rather than about the disease.
+  "acupuncture_scope_zh", "acupuncture_scope_en",
   "classical_references_zh", "classical_references_en",
 ]);
 const RELATION_FIELDS = new Set([
@@ -102,9 +124,26 @@ const BILINGUAL_PAIRS = [
   ["western_context_zh", "western_context_en"],
   ["western_pathology_zh", "western_pathology_en"],
   ["etiology_zh", "etiology_en"],
+  ["risk_factors_zh", "risk_factors_en"],
   ["red_flags_zh", "red_flags_en"],
+  ["acupuncture_scope_zh", "acupuncture_scope_en"],
   ["aliases_zh", "aliases_en"],
 ];
+
+/* Structured sub-shapes for the two fields added 2026-08-06.
+ *
+ * Both are checked for shape rather than for presence. Requiring them on all
+ * 150 records would add 300 defects to a layer that already carries 396, and a
+ * gate that fails every run gets switched off — the same reason the herb schema
+ * validator reports thin cards instead of blocking them. What is enforced is
+ * that a filled field is not a paragraph of prose: one sentence repeated across
+ * 150 cards is the boilerplate §C.12 warns about, and it defeats every coverage
+ * measure while looking complete. */
+const RISK_DIRECTIONS = new Set(["increases", "decreases"]);
+const SCOPE_KEYS = new Set(["can_treat", "precautions", "co_management"]);
+const SCOPE_EVIDENCE = new Set([
+  "guideline", "label_derived", "course", "clinical_judgment", "unknown",
+]);
 
 // --- helpers ----------------------------------------------------------------
 function readJson(rel) {
@@ -189,6 +228,67 @@ for (const rec of scope) {
     add("C4", "no red_flags_zh and no red_flags_en");
   }
 
+  // C11 risk_factors shape (§5.5). Not required — checked only when filled, and
+  // checked on BOTH languages: a malformed entry is malformed whichever side it
+  // sits on, and the first version of this only looked at _zh, which let an
+  // illegal direction through on the English twin.
+  for (const field of ["risk_factors_zh", "risk_factors_en"]) {
+    if (isEmpty(rec[field])) continue;
+    if (!Array.isArray(rec[field])) {
+      add("C11", `${field} must be an array of structured entries, not prose (§5.5)`);
+      continue;
+    }
+    rec[field].forEach((f, i) => {
+      if (typeof f === "string") {
+        add("C11", `${field}[${i}] is a bare string — needs factor / direction / modifiable / source (§5.5)`);
+        return;
+      }
+      if (!f || isEmpty(f.factor)) add("C11", `${field}[${i}] missing factor`);
+      if (f && f.direction && !RISK_DIRECTIONS.has(f.direction)) {
+        add("C11", `${field}[${i}].direction "${f.direction}" not in ${[...RISK_DIRECTIONS].join(" | ")}`);
+      }
+      // modifiable decides whether this is a counselling target or background
+      // risk; omitting it collapses "worth worrying about" into "can act on".
+      if (f && typeof f.modifiable !== "boolean") {
+        add("C11", `${field}[${i}] missing modifiable (true|false) — it separates a counselling target from background risk`);
+      }
+    });
+  }
+
+  // C11 acupuncture_scope shape (§5.6). The one field written for the
+  // practitioner, and the one most likely to drift into a therapeutic claim.
+  if (!isEmpty(rec.acupuncture_scope_zh)) {
+    const s = rec.acupuncture_scope_zh;
+    if (typeof s === "string" || Array.isArray(s)) {
+      add("C12", "acupuncture_scope_zh must be an object with can_treat / precautions / co_management, not prose (§5.6)");
+    } else {
+      const keys = Object.keys(s).filter((k) => !k.startsWith("_"));
+      const unknown = keys.filter((k) => !SCOPE_KEYS.has(k) && k !== "evidence" && k !== "source" && k !== "note");
+      if (unknown.length) {
+        add("C12", `acupuncture_scope_zh has unknown keys ${unknown.join(", ")} — allowed: ${[...SCOPE_KEYS].join(" / ")} plus evidence / source / note`);
+      }
+      if (!keys.some((k) => SCOPE_KEYS.has(k))) {
+        add("C12", `acupuncture_scope_zh has none of ${[...SCOPE_KEYS].join(" / ")}`);
+      }
+      // An efficacy statement without a grade reads as settled. unknown is a
+      // valid grade and the correct starting value — absent is not.
+      if (isEmpty(s.evidence)) {
+        add("C12", "acupuncture_scope_zh missing evidence grade — use unknown if not yet checked, never leave it out (§5.6)");
+      } else if (!SCOPE_EVIDENCE.has(s.evidence)) {
+        add("C12", `acupuncture_scope_zh.evidence "${s.evidence}" not in ${[...SCOPE_EVIDENCE].join(" | ")}`);
+      } else if (s.evidence !== "unknown" && isEmpty(s.source)) {
+        add("C12", `acupuncture_scope_zh.evidence is "${s.evidence}" but no source — only "unknown" may omit one`);
+      }
+      // Scope of practice, not just safety: telling a patient to stop an
+      // anticoagulant is the prescriber's call. ticagrelor's own label says to
+      // manage bleeding without discontinuing where possible.
+      const co = String(s.co_management || "");
+      if (/停藥|停用|discontinu|stop taking/i.test(co) && !/聯絡|諮詢|contact|consult/i.test(co)) {
+        add("C12", "acupuncture_scope_zh.co_management suggests stopping a medication without routing it to the prescriber — out of scope (§5.6)");
+      }
+    }
+  }
+
   // C5 / C9 bilingual twins
   for (const [zh, en] of BILINGUAL_PAIRS) {
     const hasZh = !isEmpty(rec[zh]);
@@ -256,6 +356,8 @@ const CODE_LABEL = {
   C8: "unknown field",
   C9: "_en filled but _zh empty",
   C10: "content shared verbatim across records (boilerplate/misfiled)",
+  C11: "risk_factors shape (§5.5)",
+  C12: "acupuncture_scope shape (§5.6)",
 };
 
 const cleanRecords = scope.filter((r) => !defects.some((d) => d.id === r.id)).length;
