@@ -60,6 +60,14 @@ const RATCHETED = [
     doc: "docs/PATTERN_CARD_TEMPLATE.md",
   },
   {
+    key: "tdis",
+    script: "scripts/validate-tdis-standard.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    doc: "docs/TDIS_CARD_TEMPLATE.md",
+  },
+  {
     key: "naming",
     script: "scripts/validate-naming.js",
     args: [],

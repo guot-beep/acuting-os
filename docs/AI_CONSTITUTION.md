@@ -104,7 +104,8 @@ Last updated: 2026-08-05。修改這一頁 = 架構決定,只有 Claude + Ting �
 
 ```bash
 node scripts/build-data.js                     # 改了 data/**.json 一定要跑
-node scripts/validate-condition-standard.js    # 病症線
+node scripts/validate-condition-standard.js    # 西醫病名線
+node scripts/validate-tdis-standard.js         # 中醫病名線
 node scripts/validate-pattern-standard.js      # 證型線
 node scripts/validate-acupoint-standard.js     # 穴位線
 node scripts/validate-point-ids.js             # 穴位線 · D2 id 完整性

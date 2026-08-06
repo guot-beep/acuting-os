@@ -387,9 +387,12 @@ migration for Ting.
 - **Status 2026-08-06:**
   - `cond.*` ✅ all four
   - `pattern.*` ✅ all four (`pattern_family_vocabulary.json` closed the gap)
-  - `tdis.*` — vocabulary ✅ (`tcm_disease_taxonomy.json`), staging ✅
-    (`imports/zhiyuan`), **template ❌, validator ❌**
+  - `tdis.*` ✅ all four (`TDIS_CARD_TEMPLATE.md` + `validate-tdis-standard.js`
+    shipped; `classical_source_hint` split into `taxonomy_id` +
+    `classical_source`, 61/75 auto-assigned, 14 left for a human pass)
   - `sym.*` — nothing, deliberately (D11: build it when a real consumer needs it)
+- **All four ratchet layers are now in CI**: conditions 577 · patterns 250 ·
+  tdis 103 · naming 1.
 - **Reconsider only if:** never fill a namespace that is missing part 1, 2 or 3.
 
 ---
