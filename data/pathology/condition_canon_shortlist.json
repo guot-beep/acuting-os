@@ -11727,6 +11727,9 @@
       "entity_type": "biomedical_condition",
       "sources": [
         "https://cloudtcm.com/disease/tcm/13850"
+      ],
+      "sign_symptom_ids": [
+        "sym.headache"
       ]
     },
     {
@@ -16360,7 +16363,10 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "sign_symptom_ids": [
+        "sym.fever"
+      ]
     },
     {
       "id": "cond.influenza",
@@ -21280,7 +21286,10 @@
         "補中益氣湯",
         "柴胡疏肝散"
       ],
-      "entity_type": "biomedical_condition"
+      "entity_type": "biomedical_condition",
+      "sign_symptom_ids": [
+        "sym.edema"
+      ]
     },
     {
       "id": "cond.hypertension",

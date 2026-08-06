@@ -1,0 +1,313 @@
+{
+  "dataset": "Symptom cards (sym.*) — the fourth diagnostic namespace (D11)",
+  "status": "pilot_0",
+  "policy": [
+    "Pilot 0 is a STRESS TEST of Batch A, not the start of a symptom database. Three cards were chosen because each loads a different part of the design: headache exercises location/quality/laterality and the red-flag layer, edema exercises the two observation modes, fever exercises the boundary between a symptom and a measurement.",
+    "Records are born when someone fills them from a real source (D14). The 129 CloudTCM candidates are a gap map, not content, and are NOT imported here.",
+    "Ids are permanent (D1). A card is retired with review_status deprecated, never deleted (D6).",
+    "supporting_measurements is DELIBERATELY ABSENT from sym.edema and sym.fever. The measurements they need (body weight, body temperature) do not exist in data/clinical_cases/outcome_metrics.json, and that file is the vocabulary for visit_outcomes — outcome tracking over time, not a vital-sign register. Inventing metric.body_temperature there would put a vital sign into an outcome-tracking list because that was the only list available. Reported to Ting instead; see PROJECT_LOG 2026-08-06."
+  ],
+  "created": "2026-08-06",
+  "validator": "scripts/validate-symptom-standard.js",
+  "template": "docs/SYMPTOM_CARD_TEMPLATE.md",
+  "records": [
+    {
+      "id": "sym.headache",
+      "name_zh": "頭痛",
+      "name_en": "Headache",
+      "pinyin": "tou tong",
+      "pinyin_toned": "tóu tòng",
+      "aliases_zh": ["頭疼", "腦袋痛", "頭部脹痛"],
+      "aliases_en": ["Head pain", "Sore head", "Cephalalgia"],
+      "taxonomy_ids": ["sym.pain", "sym.head_face_eye"],
+      "tradition": "both",
+      "observation_modes": ["patient_reported"],
+      "primary_mode": "patient_reported",
+      "definition_zh": "頭部的疼痛，範圍含前額、兩側、巔頂、後枕與眼眶周圍。它是主訴，不是診斷 —— 同一個「頭痛」可以出現在數十個西醫病名與中醫病名之下，所以卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "Pain in the head, spanning the forehead, temples, vertex, occiput and the region around the orbits. It is a presenting complaint, not a diagnosis — the same headache appears under dozens of biomedical and TCM disease names, so this card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「一跳一跳的」「像被箍住、綁一條帶子」「頭很重，像戴著帽子」「痛到想吐、怕光」「只有一邊痛」「後腦勺緊緊的」「整個頭都是脹的」",
+      "patient_words_en": "\"Throbbing\", \"like a band tightened around my head\", \"heavy, as if I'm wearing a hat\", \"bad enough to make me sick, and light hurts\", \"only one side\", \"tight at the back of my head\", \"my whole head feels full\"",
+      "clinical_attributes": {
+        "location": { "applicable": true, "vocabulary": "symptom_taxonomy" },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "脹屬氣滯或肝陽 · 刺屬血瘀 · 隱屬虛 · 重屬濕痰 · 空屬精血虧虛 · 跳屬肝陽或血分"
+        },
+        "laterality": { "applicable": true, "vocabulary": "symptom_laterality" },
+        "timing": { "applicable": true, "vocabulary": "symptom_timing" },
+        "severity": { "applicable": false, "why": "實例值，屬病例層（§8）" },
+        "duration": { "applicable": false, "why": "實例值，屬病例層（§8）" }
+      },
+      "inquiry_zh": [
+        { "dimension": "部位", "why": "前額屬陽明 · 兩側屬少陽 · 巔頂屬厥陰 · 後枕屬太陽。部位直接決定循經取穴" },
+        { "dimension": "性質", "why": "脹痛、刺痛、隱痛、頭重如裹分屬四類病機，是本症最有辨證重量的一問" },
+        { "dimension": "時間", "why": "晨起、午後、夜間加重各有指向；經前發作提示衝任與肝" },
+        { "dimension": "誘因", "why": "情緒、月經、勞累、風寒、睡眠不足、飲酒與特定食物" },
+        { "dimension": "緩解", "why": "按之減輕屬虛、拒按屬實、得溫則減屬寒、靜臥暗室緩解提示偏頭痛" },
+        { "dimension": "伴隨症", "why": "噁心畏光畏聲提示偏頭痛；發熱頸僵、神經缺損、意識改變則進入紅旗流程" },
+        { "dimension": "病程", "why": "新發劇烈與長期反覆的處置完全不同 —— 這一問決定要不要先轉診" }
+      ],
+      "inquiry_en": [
+        { "dimension": "Location", "why": "Forehead = Yangming, temples = Shaoyang, vertex = Jueyin, occiput = Taiyang. Location drives channel-based point selection" },
+        { "dimension": "Quality", "why": "Distending, stabbing, dull and heavy-as-if-wrapped map to four different mechanisms — the highest-yield question on this symptom" },
+        { "dimension": "Timing", "why": "Worse on waking, in the afternoon or at night each point somewhere; premenstrual onset implicates the Chong/Ren and the Liver" },
+        { "dimension": "Triggers", "why": "Emotion, menses, exertion, wind-cold, poor sleep, alcohol and specific foods" },
+        { "dimension": "Relief", "why": "Better for pressure = deficiency, worse for pressure = excess, better for warmth = cold; relief in a dark quiet room suggests migraine" },
+        { "dimension": "Accompanying signs", "why": "Nausea, photophobia and phonophobia suggest migraine; fever with neck stiffness, focal deficit or altered consciousness enter the red-flag pathway" },
+        { "dimension": "Course", "why": "A new severe headache and a long-standing recurrent one are handled completely differently — this question decides whether to refer first" }
+      ],
+      "differentiation_zh": [
+        { "variant": "脹痛", "points_to": ["pattern.liver_yang_rising"], "distinguishing": "頭目脹痛，多在兩側或巔頂，情緒波動或熬夜後加重，兼面紅目赤、急躁易怒、腰膝痠軟" },
+        { "variant": "刺痛", "points_to": ["pattern.blood_stasis"], "distinguishing": "痛處固定不移、拒按，夜間痛甚，多有головache 久病或外傷史，唇舌紫暗" },
+        { "variant": "隱痛綿綿", "points_to": ["pattern.qi_blood_deficiency"], "distinguishing": "痛勢綿綿，勞累後加重，按之稍舒，兼神疲乏力、面色淡白或萎黃、心悸" },
+        { "variant": "頭重如裹", "points_to": ["pattern.phlegm_damp"], "distinguishing": "頭昏沉重如布包裹，胸悶脘痞、身重困倦、痰多，陰雨天加重" },
+        { "variant": "頭痛連項背，惡風寒", "points_to": ["pattern.wind_cold"], "distinguishing": "起病急，痛連項背，遇風加重，喜裹頭，多見於外感初起" },
+        { "variant": "頭空痛", "points_to": ["pattern.kidney_essence_deficiency"], "distinguishing": "頭腦空痛，兼耳鳴、健忘、腰膝痠軟、齒搖髮脫，多見於久病或年長者" }
+      ],
+      "differentiation_en": [
+        { "variant": "Distending pain", "points_to": ["pattern.liver_yang_rising"], "distinguishing": "Distending pain in head and eyes, usually temporal or at the vertex, worse with emotional swings or late nights, with red face and eyes, irritability and weak aching low back and knees" },
+        { "variant": "Stabbing pain", "points_to": ["pattern.blood_stasis"], "distinguishing": "Fixed, unmoving, worse for pressure and worse at night, often long-standing or post-traumatic, with dusky lips and tongue" },
+        { "variant": "Dull lingering pain", "points_to": ["pattern.qi_blood_deficiency"], "distinguishing": "Vague and continuous, worse after exertion, slightly better for pressure, with fatigue, pale or sallow complexion and palpitations" },
+        { "variant": "Heavy head, as if wrapped", "points_to": ["pattern.phlegm_damp"], "distinguishing": "Muzzy heaviness as though the head were bound in cloth, with chest and epigastric fullness, heavy tired limbs, copious phlegm, worse in damp weather" },
+        { "variant": "Pain extending to nape and back with aversion to wind-cold", "points_to": ["pattern.wind_cold"], "distinguishing": "Abrupt onset, pain running into the nape and upper back, worse in a draught, the patient wants the head covered; typical of early external contraction" },
+        { "variant": "Empty pain", "points_to": ["pattern.kidney_essence_deficiency"], "distinguishing": "A hollow ache inside the head with tinnitus, forgetfulness, weak aching low back and knees, loosening teeth and hair loss; usually chronic illness or older patients" }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "ICHD-3 — International Classification of Headache Disorders, 3rd edition",
+        "SNNOOP10 headache red-flag list (Do TP et al., Neurology 2019)"
+      ],
+      "safety_flags": ["neurologic_red_flags"],
+      "red_flags_zh": [
+        "霹靂性頭痛：數秒內達到最劇烈 → 立即排除蛛網膜下腔出血",
+        "發熱合併頸項僵硬、畏光 → 排除腦膜炎／腦炎",
+        "新發神經功能缺損、意識或人格改變、癲癇發作 → 需影像評估",
+        "50 歲後新發頭痛，或原有型態明顯改變、進行性加重 → 排除顱內病變、巨細胞動脈炎",
+        "咳嗽、用力、彎腰或平躺時加重 → 排除顱內壓異常",
+        "免疫低下、癌症病史、抗凝或抗血小板治療中新發頭痛 → 轉診評估"
+      ],
+      "red_flags_en": [
+        "Thunderclap headache reaching maximum intensity within seconds → rule out subarachnoid haemorrhage immediately",
+        "Fever with neck stiffness and photophobia → rule out meningitis/encephalitis",
+        "New focal neurological deficit, altered consciousness or personality, or seizure → imaging required",
+        "New headache after age 50, or a marked change in an established pattern with progressive worsening → rule out intracranial lesion and giant cell arteritis",
+        "Worse with cough, straining, bending or lying flat → rule out abnormal intracranial pressure",
+        "New headache in someone immunosuppressed, with a cancer history, or on anticoagulant/antiplatelet therapy → refer for assessment"
+      ],
+      "supporting_measurements": ["metric.pain_score"],
+      "sources": [
+        "ICHD-3 — International Classification of Headache Disorders, 3rd edition（分類與發作特徵）",
+        "SNNOOP10 headache red-flag list (Do TP et al., Neurology 2019)（紅旗清單）",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 頭痛的經絡分部（陽明／少陽／厥陰／太陽）與證型鑑別",
+        "本 repo 既有卡片：cond.migraine · cond.tension_headache · tdis.tou_tong · pattern_library 各證型 key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 頭痛章節 + ICHD-3 對 headache 作為主訴的界定",
+        "inquiry_zh/en 部位": "中醫內科學 頭痛的經絡分部（前額陽明・兩側少陽・巔頂厥陰・後枕太陽）",
+        "differentiation_zh/en": "中醫診斷學 疼痛性質辨證 + 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "SNNOOP10 (Do TP et al., Neurology 2019) 與 ICHD-3 續發性頭痛警示準則",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.pain_score（既有，未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.edema",
+      "name_zh": "水腫",
+      "name_en": "Edema",
+      "pinyin": "shui zhong",
+      "pinyin_toned": "shuǐ zhǒng",
+      "aliases_zh": ["浮腫", "腫脹", "積水"],
+      "aliases_en": ["Swelling", "Puffiness", "Fluid retention"],
+      "taxonomy_ids": ["sym.general_limb"],
+      "tradition": "both",
+      "observation_modes": ["patient_reported", "examiner_observed"],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "水液瀦留泛溢肌膚，使眼瞼、頭面、四肢、腹背甚至全身浮腫。病人先察覺的是「穿不下、戴不上」，醫者確認的是按之凹陷與否、分布與對稱性 —— 這是本症同時具備自述與他覺兩種取得型態的原因。",
+      "definition_en": "Retained fluid spilling into the tissues, puffing up the eyelids, face, limbs, abdomen and back, or the whole body. The patient notices it as things no longer fitting; the examiner confirms it by pressing for pitting and by reading the distribution and symmetry — which is why this symptom genuinely carries both observation modes.",
+      "patient_words_zh": "「鞋子突然穿不下」「早上起來眼皮腫腫的」「按下去有一個坑，很久才回來」「戒指拔不下來」「腳脹脹的，一整天下來更腫」「襪子的痕跡很深」",
+      "patient_words_en": "\"My shoes suddenly don't fit\", \"my eyelids are puffy when I wake up\", \"press it and there's a dent that takes ages to fill\", \"I can't get my ring off\", \"my feet feel tight, worse by the end of the day\", \"deep sock marks\"",
+      "clinical_attributes": {
+        "location": { "applicable": true, "vocabulary": "symptom_taxonomy" },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 是疼痛性質詞彙（脹刺隱空灼重竄絞酸掣墜麻冷跳）。水腫最關鍵的性質是「凹陷性／非凹陷性」與「皮膚繃急光亮／鬆軟」，該詞彙表沒有這個軸，因此不宣稱適用（見 Pilot 0 回報）"
+        },
+        "laterality": { "applicable": true, "vocabulary": "symptom_laterality" },
+        "timing": { "applicable": true, "vocabulary": "symptom_timing" },
+        "severity": { "applicable": false, "why": "實例值，屬病例層（§8）" },
+        "duration": { "applicable": false, "why": "實例值，屬病例層（§8）" }
+      },
+      "inquiry_zh": [
+        { "dimension": "部位", "why": "先腫眼瞼頭面多屬陽水、風水；先腫足踝而腰以下甚多屬陰水、脾腎陽虛" },
+        { "dimension": "時間", "why": "晨起眼瞼腫、午後與久站後下肢腫 —— 這一組時間差是分辨上下與虛實的關鍵" },
+        { "dimension": "誘因", "why": "外感、飲食鹹膩、久站久坐、經前、藥物（鈣離子阻斷劑、類固醇、NSAID）" },
+        { "dimension": "緩解", "why": "抬高患肢是否消退、臥床一夜是否減輕" },
+        { "dimension": "伴隨症", "why": "尿量、尿泡沫、呼吸困難、體重變化、單側疼痛熱感 —— 紅旗都掛在這一問上" },
+        { "dimension": "病程", "why": "突發數日與長期漸進，鑑別方向完全不同" }
+      ],
+      "inquiry_en": [
+        { "dimension": "Location", "why": "Starting at the eyelids and face suggests yang edema / wind edema; starting at the ankles and worst below the waist suggests yin edema with Spleen and Kidney yang deficiency" },
+        { "dimension": "Timing", "why": "Puffy eyelids on waking versus leg swelling in the afternoon and after long standing — this contrast is the key to upper/lower and deficiency/excess" },
+        { "dimension": "Triggers", "why": "External contraction, salty or rich food, prolonged standing or sitting, premenstrual phase, medication (calcium channel blockers, steroids, NSAIDs)" },
+        { "dimension": "Relief", "why": "Whether elevation reduces it, and whether a night lying flat improves it" },
+        { "dimension": "Accompanying signs", "why": "Urine volume, frothy urine, breathlessness, weight change, one-sided pain and warmth — every red flag hangs off this question" },
+        { "dimension": "Course", "why": "Days-old sudden swelling and slow chronic swelling point in completely different directions" }
+      ],
+      "differentiation_zh": [
+        { "variant": "腰以下腫甚，按之凹陷不易復", "points_to": ["pattern.kidney_yang_deficiency", "pattern.spleen_yang_deficiency"], "distinguishing": "下肢腫甚，按之凹陷久不回復，畏寒肢冷、腰膝痠冷、夜尿頻多或大便清稀，屬陰水" },
+        { "variant": "晨起眼瞼微腫，食少便溏", "points_to": ["pattern.spleen_qi_deficiency"], "distinguishing": "腫勢不甚而反覆，晨起眼瞼與面部為著，兼食少腹脹、便溏、倦怠乏力、面色萎黃" },
+        { "variant": "腫處皮膚繃急光亮，胸悶煩熱", "points_to": ["pattern.damp_heat"], "distinguishing": "腫勢較急，皮膚繃急光亮，胸腹痞悶、煩熱口苦、小便短赤，屬陽水濕熱壅盛" }
+      ],
+      "differentiation_en": [
+        { "variant": "Worst below the waist, pits deeply and refills slowly", "points_to": ["pattern.kidney_yang_deficiency", "pattern.spleen_yang_deficiency"], "distinguishing": "Legs most affected, pitting that is slow to refill, with cold aversion and cold limbs, cold aching low back and knees, frequent night urination or loose stool — yin edema" },
+        { "variant": "Slight puffy eyelids on waking, poor appetite and loose stool", "points_to": ["pattern.spleen_qi_deficiency"], "distinguishing": "Mild but recurrent, most marked in the eyelids and face on waking, with poor appetite, abdominal fullness, loose stool, fatigue and a sallow complexion" },
+        { "variant": "Skin taut and shiny over the swelling, chest fullness and vexing heat", "points_to": ["pattern.damp_heat"], "distinguishing": "Faster onset, skin stretched tight and glossy, fullness in chest and abdomen, vexing heat, bitter taste, scanty dark urine — yang edema with damp-heat" }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "常規內科學水腫鑑別診斷（心源性／腎源性／肝源性／靜脈與淋巴回流障礙／藥物性）",
+        "深層靜脈栓塞與子癇前症的通行臨床警示準則"
+      ],
+      "red_flags_zh": [
+        "單側下肢腫脹合併疼痛、皮溫升高、壓痛 → 排除深層靜脈栓塞（可致肺栓塞）",
+        "突發呼吸困難、端坐呼吸、夜間陣發性呼吸困難 → 排除心衰竭／肺水腫",
+        "眼瞼顏面浮腫合併泡沫尿、尿量明顯減少 → 排除腎病症候群／急性腎炎",
+        "妊娠 20 週後水腫合併高血壓、頭痛、視覺異常 → 排除子癇前症",
+        "顏面、頸部與雙上肢腫脹合併頸靜脈怒張 → 排除上腔靜脈症候群",
+        "局部紅、腫、熱、痛合併發熱 → 排除蜂窩性組織炎",
+        "短期內體重快速增加合併腹脹膨隆 → 評估腹水與肝腎功能"
+      ],
+      "red_flags_en": [
+        "One-sided leg swelling with pain, warmth and tenderness → rule out deep vein thrombosis (risk of pulmonary embolism)",
+        "Sudden breathlessness, orthopnoea or paroxysmal nocturnal dyspnoea → rule out heart failure / pulmonary oedema",
+        "Facial and eyelid puffiness with frothy urine and markedly reduced output → rule out nephrotic syndrome / acute nephritis",
+        "Oedema after 20 weeks of pregnancy with hypertension, headache or visual disturbance → rule out pre-eclampsia",
+        "Swelling of face, neck and both arms with distended neck veins → rule out superior vena cava syndrome",
+        "Localised redness, swelling, heat and pain with fever → rule out cellulitis",
+        "Rapid weight gain over a short period with abdominal distension → assess for ascites and hepatic/renal function"
+      ],
+      "sources": [
+        "常規內科學水腫鑑別診斷章節（心源性／腎源性／肝源性／靜脈淋巴回流障礙／藥物性）",
+        "中醫內科學 水腫篇 —— 陽水與陰水的分證（風水泛濫・濕熱壅盛・脾陽虛衰・腎陽衰微）",
+        "《金匱要略》水氣病脈證并治 —— 風水／皮水／正水／石水的古典分類",
+        "本 repo 既有卡片：cond.edema_fluid · tdis.shui_zhong · pattern.spleen_kidney_yang_deficiency key_signs_zh「下利清穀或水腫」"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 水腫篇 + 內科學水腫的體徵定義（凹陷性與分布）",
+        "inquiry_zh/en": "中醫內科學 水腫辨證要點（辨陽水陰水、辨腫勢部位先後）",
+        "differentiation_zh/en": "中醫內科學 水腫分證 + 本 repo pattern_library 對應證型 key_signs_zh",
+        "red_flags_zh/en": "內科學水腫鑑別診斷；DVT 與子癇前症通行臨床警示準則",
+        "supporting_measurements": "刻意留空 —— 體重 metric 不存在於 outcome_metrics.json，見 Pilot 0 回報第 4 點"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.fever",
+      "name_zh": "發熱",
+      "name_en": "Fever",
+      "pinyin": "fa re",
+      "pinyin_toned": "fā rè",
+      "aliases_zh": ["發燒", "身熱", "體溫升高"],
+      "aliases_en": ["Pyrexia", "Feverishness", "Raised body temperature"],
+      "taxonomy_ids": ["sym.general_limb"],
+      "tradition": "both",
+      "observation_modes": ["patient_reported", "examiner_observed"],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "體溫升高，或病人自覺身熱。中醫的「發熱」比西醫的 fever 更寬：它同時涵蓋捫之烙手的實際體溫升高（壯熱、潮熱）與體溫未必升高的自覺熱感（五心煩熱、身熱不揚）——兩者辨證意義不同，不可混為一談。體溫的「數值」屬測量層，不在本卡。",
+      "definition_en": "A raised body temperature, or the patient's own sense of being hot. The TCM concept is broader than biomedical fever: it covers both objectively hot skin (blazing heat, tidal heat) and a subjective sense of heat that may occur at a normal temperature (five-centre heat, unsurfaced heat). The two carry different diagnostic weight and must not be collapsed. The numeric temperature belongs to the measurement layer, not to this card.",
+      "patient_words_zh": "「燒起來了」「一陣冷一陣熱」「手心腳心發燙」「一到下午就開始熱」「熱但流不出汗」「身上悶熱，摸起來又不很燙」「晚上睡到一半熱醒、流汗」",
+      "patient_words_en": "\"I've come down with a temperature\", \"hot and cold in waves\", \"my palms and soles burn\", \"it starts every afternoon\", \"hot but I can't sweat\", \"I feel stifled and hot but don't feel that hot to the touch\", \"I wake up hot and sweating in the night\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "發熱為全身性，無病灶部位。惟「五心煩熱」的手足心與心胸是一種熱感分布，現有 symptom_taxonomy 是身體部位分類軸，承載不了這個維度（見 Pilot 0 回報）"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 是疼痛性質詞彙。發熱的性質軸是壯熱／潮熱／身熱不揚／五心煩熱／往來寒熱，屬熱型，不在該詞彙表中（見 Pilot 0 回報）"
+        },
+        "laterality": { "applicable": false, "why": "全身性症狀，無側性" },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "午後潮熱指向陰虛或濕熱 · 夜間發熱盜汗指向陰虛 · 勞累後發熱指向氣虛。時間是本症最有辨證重量的維度"
+        },
+        "severity": { "applicable": false, "why": "實例值，屬病例層（§8）" },
+        "duration": { "applicable": false, "why": "實例值，屬病例層（§8）" }
+      },
+      "inquiry_zh": [
+        { "dimension": "時間", "why": "午後潮熱屬陰虛或濕熱、夜熱早涼屬熱入營血、勞則熱甚屬氣虛 —— 本症辨證最重的一問" },
+        { "dimension": "性質", "why": "壯熱、潮熱、身熱不揚、五心煩熱、往來寒熱是五種不同熱型" },
+        { "dimension": "伴隨症", "why": "惡寒之有無與輕重定表裡；汗、渴、二便定寒熱虛實；頸僵、意識改變、瘀點進紅旗流程" },
+        { "dimension": "誘因", "why": "外感、勞累、情志、飲食積滯、近期旅遊與接觸史、用藥（含免疫抑制）" },
+        { "dimension": "病程", "why": "驟起數日屬外感發熱；反覆或遷延屬內傷發熱，兩條路徑完全不同" }
+      ],
+      "inquiry_en": [
+        { "dimension": "Timing", "why": "Afternoon tidal heat suggests yin deficiency or damp-heat; heat at night clearing by morning suggests heat in the nutritive and blood levels; heat worse with exertion suggests qi deficiency — the highest-yield question here" },
+        { "dimension": "Quality", "why": "Blazing heat, tidal heat, unsurfaced heat, five-centre heat and alternating chills and fever are five distinct heat types" },
+        { "dimension": "Accompanying signs", "why": "Presence and degree of chills separates exterior from interior; sweat, thirst and the two excretions separate cold/heat and deficiency/excess; neck stiffness, altered consciousness or petechiae enter the red-flag pathway" },
+        { "dimension": "Triggers", "why": "External contraction, exertion, emotion, food stagnation, recent travel and exposure history, medication including immunosuppressants" },
+        { "dimension": "Course", "why": "Abrupt onset over days is externally contracted fever; recurrent or lingering fever is internal-damage fever — two entirely different pathways" }
+      ],
+      "differentiation_zh": [
+        { "variant": "發熱惡寒並見，惡寒重", "points_to": ["pattern.wind_cold"], "distinguishing": "起病急，惡寒重而發熱輕，無汗，頭身疼痛，鼻塞流清涕，脈浮緊" },
+        { "variant": "發熱重惡寒輕", "points_to": ["pattern.wind_heat"], "distinguishing": "發熱明顯而惡寒輕微，咽喉腫痛，口渴，咳痰黃稠，脈浮數" },
+        { "variant": "午後潮熱，五心煩熱", "points_to": ["pattern.yin_deficiency"], "distinguishing": "午後或入夜熱甚，手足心與心胸煩熱，盜汗、顴紅、口乾咽燥，多見於久病或熱病後期" },
+        { "variant": "身熱不揚，午後熱甚，頭身困重", "points_to": ["pattern.damp_heat"], "distinguishing": "初捫不甚熱，久按灼手，午後轉甚，頭身困重、胸脘痞悶、口黏不渴或渴不欲飲" },
+        { "variant": "發熱勞則加重，熱勢或高或低", "points_to": ["pattern.qi_deficiency"], "distinguishing": "熱勢不定，勞累後發作或加重，倦怠氣短、自汗、食少，得臥稍減 —— 內傷發熱，非外感" }
+      ],
+      "differentiation_en": [
+        { "variant": "Fever and chills together, chills predominant", "points_to": ["pattern.wind_cold"], "distinguishing": "Abrupt onset, marked aversion to cold with mild fever, absence of sweating, aching head and body, blocked nose with clear discharge, floating tight pulse" },
+        { "variant": "Fever predominant, chills mild", "points_to": ["pattern.wind_heat"], "distinguishing": "Pronounced fever with only slight aversion to cold, sore swollen throat, thirst, thick yellow phlegm, floating rapid pulse" },
+        { "variant": "Afternoon tidal heat with five-centre heat", "points_to": ["pattern.yin_deficiency"], "distinguishing": "Worse in the afternoon or evening, burning palms, soles and chest, night sweats, malar flush, dry mouth and throat; typical of chronic illness or the late stage of a febrile disease" },
+        { "variant": "Unsurfaced heat, worse in the afternoon, heavy head and body", "points_to": ["pattern.damp_heat"], "distinguishing": "Skin not obviously hot at first touch but scorching on sustained pressure, worse in the afternoon, heavy head and limbs, stifling fullness in chest and epigastrium, sticky mouth with no thirst or thirst without desire to drink" },
+        { "variant": "Fever worse with exertion, fluctuating in intensity", "points_to": ["pattern.qi_deficiency"], "distinguishing": "Variable intensity, brought on or worsened by exertion, with fatigue, shortness of breath, spontaneous sweating and poor appetite, eased by rest — internal-damage fever, not an external contraction" }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "腦膜炎、敗血症與發熱性嗜中性白血球低下症的通行急症警示準則",
+        "不明原因發熱（FUO）的鑑別診斷架構（感染／惡性腫瘤／結締組織疾病）"
+      ],
+      "red_flags_zh": [
+        "發熱合併頸項僵硬、畏光、劇烈頭痛 → 排除腦膜炎／腦炎（急症）",
+        "發熱合併意識改變、譫妄或抽搐 → 立即送急診",
+        "發熱合併皮膚瘀點、瘀斑或紫斑 → 排除腦膜炎雙球菌敗血症（急症）",
+        "免疫低下、化療後、脾臟切除或長期類固醇使用者發熱 → 一律視為急症",
+        "發熱合併血壓下降、心跳過速、呼吸急促、尿量減少 → 疑敗血症，立即轉診",
+        "發熱持續逾三週原因不明，或反覆發熱伴體重減輕、盜汗 → 排除結核、淋巴瘤、感染性心內膜炎",
+        "三個月以下嬰兒發熱 → 不做針灸處置，立即轉診"
+      ],
+      "red_flags_en": [
+        "Fever with neck stiffness, photophobia and severe headache → rule out meningitis/encephalitis (emergency)",
+        "Fever with altered consciousness, delirium or seizure → send to emergency immediately",
+        "Fever with petechiae, purpura or ecchymoses → rule out meningococcal sepsis (emergency)",
+        "Fever in anyone immunosuppressed, post-chemotherapy, asplenic or on long-term steroids → treat as an emergency without exception",
+        "Fever with falling blood pressure, tachycardia, tachypnoea or reduced urine output → suspected sepsis, refer immediately",
+        "Unexplained fever lasting more than three weeks, or recurrent fever with weight loss and night sweats → rule out tuberculosis, lymphoma, infective endocarditis",
+        "Fever in an infant under three months → no acupuncture treatment, refer immediately"
+      ],
+      "sources": [
+        "中醫內科學 —— 外感發熱與內傷發熱兩篇；內傷發熱的氣虛／血虛／陰虛／濕鬱／血瘀分證",
+        "中醫診斷學 —— 熱型辨證（壯熱・潮熱・身熱不揚・五心煩熱・往來寒熱）",
+        "腦膜炎與敗血症通行急症警示準則；發熱性嗜中性白血球低下症處置原則",
+        "不明原因發熱（FUO）鑑別診斷架構",
+        "本 repo 既有卡片：cond.common_cold · cond.influenza · tdis.gan_mao · pattern.wind_cold_invading_lung／wind_heat_invading_lung key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫診斷學 熱型辨證 + 中醫內科學 發熱篇；中西醫「發熱」外延不同的界定",
+        "inquiry_zh/en": "中醫內科學 發熱辨證要點（辨外感內傷、辨熱型、辨兼夾）",
+        "differentiation_zh/en": "中醫內科學 外感發熱與內傷發熱分證 + 本 repo pattern_library 對應證型 key_signs_zh",
+        "red_flags_zh/en": "腦膜炎／敗血症／發熱性嗜中性白血球低下症急症準則；FUO 鑑別架構",
+        "supporting_measurements": "刻意留空並停止 —— metric.body_temperature 不存在，且 outcome_metrics.json 是療效追蹤詞彙而非生命徵象登記處。見 Pilot 0 回報第 4 點"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    }
+  ]
+}

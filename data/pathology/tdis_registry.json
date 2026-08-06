@@ -8,7 +8,10 @@
       "name_zh": "感冒",
       "pinyin": "Ganmao",
       "name_en": "Common Cold (TCM)",
-      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders"
+      "taxonomy_id": "tdx.internal_medicine.respiratory_system_disorders",
+      "key_manifestation_ids": [
+        "sym.fever"
+      ]
     },
     {
       "id": "tdis.ke_sou",
@@ -134,7 +137,10 @@
       "name_zh": "頭痛",
       "pinyin": "Toutong",
       "name_en": "Headache",
-      "classical_source_hint": "中醫內科學·氣血津液/腦系"
+      "classical_source_hint": "中醫內科學·氣血津液/腦系",
+      "key_manifestation_ids": [
+        "sym.headache"
+      ]
     },
     {
       "id": "tdis.xuan_yun",
@@ -268,7 +274,10 @@
       "name_zh": "水腫",
       "pinyin": "Shuizhong",
       "name_en": "Edema",
-      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders"
+      "taxonomy_id": "tdx.internal_medicine.kidney_genitourinary_disorders",
+      "key_manifestation_ids": [
+        "sym.edema"
+      ]
     },
     {
       "id": "tdis.yi_niao",

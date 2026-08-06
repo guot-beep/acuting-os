@@ -1,3 +1,32 @@
+# 2026-08-06 Claude — Pilot 0: three symptom cards as a stress test, not a database
+
+- Ting cut Batch B's 15 cards to **3** before any were built: 頭痛 · 水腫 · 發熱, each loading a different part of the design. The reason was right and this session proved it — the template is newborn, and first contact with real data is where over-design and gaps show. Minting 15 permanent ids before that check would have cost 15 ids instead of 3.
+- **`sym.headache` · `sym.edema` · `sym.fever` created. Validator: 3 records, 3 clean, PASS, no notes.** Ten authored descriptive edges added on the diagnostic side only (3 `cond.sign_symptom_ids`, 4 `pattern.key_signs_ids`, 3 `tdis.key_manifestation_ids`) — nothing written on the symptom side, D13 respected.
+
+## What the three cards actually proved
+
+- **`observation_modes` works.** Two values were enough for all three. 水腫 genuinely carries both (patient: 鞋子穿不下 / examiner: 按之凹陷) with `examiner_observed` primary, and 發熱's objective form resolved to 捫之烙手 — a palpation, not a thermometer — so the ban on `instrument_measured` never had to be argued around. `primary_mode` did the SOAP disambiguation it exists for.
+- **`safety_review_status` works, but `shared_flags_linked` is not yet usable.** All three took `specific_red_flags_present` with genuinely symptom-specific flags. However `safety_flag_vocabulary.json` entries are **label-only** (`{id, name_zh, name_en, kind}`) — no criteria, no action. So §6.6's promise "generic red flags → reference the flag id instead of repeating the sentence" **cannot be honoured**: there is no sentence behind the id to reference. Y15's whole enforcement path assumes substance the vocabulary does not carry. Reported rather than patched.
+- **`clinical_attributes` is over-designed for anything that is not pain.** Applicable dimensions: headache 4/4, edema 3/4, **fever 1/4**. `symptom_quality` is a *pain*-quality vocabulary (脹刺隱空灼重竄絞酸掣墜麻冷跳) — edema's decisive quality is 凹陷性/非凹陷性 and fever's is 壯熱/潮熱/身熱不揚/五心煩熱, neither of which the axis can express. Both were marked `applicable: false` with the reason recorded in the record instead of pretending.
+- **`location.vocabulary: "symptom_taxonomy"` is too coarse to carry what the location question is for.** For 頭痛 the whole clinical point is 前額陽明 · 兩側少陽 · 巔頂厥陰 · 後枕太陽, and `symptom_taxonomy` is a 13-category body-region axis that stops at 頭面. The declaration was filled per template anyway (rule: do not change the ruler mid-fill) and the gap is reported.
+
+## Two measurement halts, one of them Ting predicted exactly
+
+- **`metric.body_temperature` does not exist and was NOT created.** Ting's instruction was to stop the field and report which layer it belongs to. Checked first: `outcome_metrics.json` is the vocabulary for `visit_outcomes.metric_name`, every record carries `direction_good`, and the categories are symptom / fertility / treatment_response / safety. It is an **outcome-tracking** list. The clinical schema has **no vitals table at all** — `soap_notes` objective columns are observation, tongue, pulse, palpation, ROM, labs_imaging, and nothing else. So body temperature has no home, and putting it in `outcome_metrics.json` would have filed a vital sign into an outcome list because that was the only list available.
+- **The same hole swallowed 水腫's body weight** — and that one is in the template's own §4 example table ("水腫 … metric.*(體重)"). Two of the three pilot cards needed a measurement that does not exist. `supporting_measurements` is present only on `sym.headache` (`metric.pain_score`, which is real and already there).
+
+## Two things the pilot exposed that are not about symptoms
+
+- **`sym.*` has no UI or search consumer.** `build-data.js` does not read `data/symptoms/symptoms.json`. The ten new edges DID reach `data/generated/knowledge_data.js` — as **dangling ids**: `"key_signs_ids":["sym.headache"]` sits in the bundle with nothing to resolve it against. The graph now points at a namespace the app cannot see.
+- **The registry cannot check the one relation a symptom card authors.** `edge.symptom_pattern_inference.file` is the string `"data/symptoms/symptoms.json (not yet created)"` — the parenthetical prose is inside the path. The file exists now, so that annotation is stale and the edge still reports N1. Left unfixed and reported: Ting's rule was not to edit the registry mid-pilot.
+- **Cross-namespace red-flag duplication is invisible.** `cond.migraine` already carries 「霹靂性頭痛 → 排除蛛網膜下腔出血（急症）」 and `sym.headache` now carries the same clinical rule in its own words. N3 only compares symptom records with each other, so neither check sees it.
+
+## Numbers
+
+- Cards 3 · fields filled per card 29–31 of 31 approved · differentiation variants 6/3/5 · red flags 6/7/7 · inquiry dimensions 7/6/5 · all `points_to` ids resolve against `pattern_registry` (D10 authority).
+- Validation: green tier **14/14 PASS** · ratchet **flat** (conditions 577 · patterns 250 · tdis 103 · symptoms 0 · naming 1) · `git diff --check` clean · field-level diff of the three pathology files shows **0 fields shortened or emptied**, 150/50/75 records unchanged, 10 fields added.
+- **Not done, deliberately:** the remaining 12 cards. Recommendation is to fix the measurement layer and the `clinical_attributes` axis question first — filling 12 more cards against a template whose quality axis fails on 2 of 3 symptom types would bake the defect in twelve times over.
+
 # 2026-08-06 Claude — Batch A: symptom layer built with zero records (D14 order)
 
 - Ting approved the symptom layer in two batches. **Batch A only**: four vocabularies, template, validator, relation registry, crosswalk schema, CI. **No `sym.*` records** — Batch B (15 pilot cards) deliberately not started in the same session.
