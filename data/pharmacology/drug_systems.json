@@ -1,0 +1,14 @@
+{
+  "dataset": "pharm_drug_systems",
+  "policy": "L1 系統層。瀏覽入口,不放藥理內容。id 鎖定 drugsystem.<slug>(DECISIONS 待補)。",
+  "created": "2026-08-06",
+  "records": [
+    {
+      "id": "drugsystem.cardiovascular_renal",
+      "name_en": "Cardiovascular and Renal",
+      "name_zh": "心血管與腎臟",
+      "course_files": ["W5-diuretics", "WK4_Pharm_Cardiovascular", "WK5.2_Pharm_Anti-hyperlipidemics", "W6-anti-coagulants"],
+      "review_status": "draft"
+    }
+  ]
+}

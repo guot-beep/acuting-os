@@ -35,13 +35,22 @@ const FILES = {
 /* §0 — every one of these needs a verified_exact official-label source. A
  * fabricated contraindication is worse than a missing one: the missing one
  * sends you to look it up. */
-const SAFETY_FIELDS = [
-  'boxed_warning_en', 'contraindications_en', 'warnings_en', 'precautions_en',
-  'adverse_effects_en', 'drug_interactions_en', 'overdose_en',
-  'pregnancy_lactation_en', 'herb_drug_interactions_en', 'herb_drug_interactions_zh',
+/* Split by what the sources actually carry, measured rather than assumed.
+ * Across the PPT decks: contraindication 0, interaction 0, monitor 0,
+ * toxicity 0 — those four exist nowhere in the course and can only come from
+ * a label. Adverse effects the course does teach ("anorexia, vomiting,
+ * dizziness, postural hypotension" for loop diuretics), so requiring a label
+ * for them would throw away a real source to enforce a rule that was too
+ * broad. */
+const SAFETY_OFFICIAL_ONLY = [
+  'boxed_warning_en', 'contraindications_en', 'drug_interactions_en',
+  'pregnancy_lactation_en', 'overdose_en',
+  'herb_drug_interactions_en', 'herb_drug_interactions_zh',
 ];
+const SAFETY_SOURCED = ['warnings_en', 'precautions_en', 'adverse_effects_en'];
 
 const OFFICIAL_SOURCE = /^(dailymed|fda|official-label|official-database|nccih|pubmed):/i;
+const ANY_SOURCE = /^(dailymed|fda|official-label|official-database|nccih|pubmed|course|instructor-note|board-outline|textbook|systematic-review):/i;
 
 const ID_PATTERNS = {
   drugs: /^drug\.[a-z0-9_]+$/,
@@ -133,17 +142,19 @@ function main() {
       }
 
       // P0 — the rule this file exists for
-      SAFETY_FIELDS.forEach((f) => {
+      const checkSourced = (f, re, label) => {
         if (!len(r[f])) return;
         const srcs = (r.field_sources || {})[f];
         if (!Array.isArray(srcs) || !srcs.length) {
-          defects.push(`P0 ${where}.${f}: 安全欄位有內容但沒有 field_sources —— 官方標籤或留空`);
+          defects.push(`P0 ${where}.${f}: 安全欄位有內容但沒有 field_sources —— 標明來源或留空`);
           return;
         }
-        if (!srcs.some((s) => OFFICIAL_SOURCE.test(String(s)))) {
-          defects.push(`P0 ${where}.${f}: 來源沒有一個是官方標籤（${srcs.join(', ')}）`);
+        if (!srcs.some((s) => re.test(String(s)))) {
+          defects.push(`P0 ${where}.${f}: 來源沒有一個是${label}（${srcs.join(', ')}）`);
         }
-      });
+      };
+      SAFETY_OFFICIAL_ONLY.forEach((f) => checkSourced(f, OFFICIAL_SOURCE, '官方標籤'));
+      SAFETY_SOURCED.forEach((f) => checkSourced(f, ANY_SOURCE, '具名來源'));
 
       // P4 — a URL without its kind is a claim without its confidence
       Object.keys(r).filter((k) => k.endsWith('_url')).forEach((k) => {
