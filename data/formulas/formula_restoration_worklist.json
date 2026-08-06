@@ -1,0 +1,1659 @@
+{
+  "dataset": "Formula restoration worklist — course group 1 (detailed knowledge, 30 most important)",
+  "status": "audit_only__no_card_was_modified",
+  "created": "2026-08-06",
+  "policy": [
+    "READ-ONLY audit. Not one formula record was edited. Ting reviews this before any repair starts.",
+    "Scope is the course package’s OWN tier, not a subjective pick: 方剂学汇总 declares \"1st group: detailed knowledge of the formulas: 30 [Most Important]\" and names them. 麻黃湯 and 桂枝湯 are #1 and #2 of that list.",
+    "defect_score = missing_fields*2 + suspicious_fields*3. It ranks work, it does not measure clinical quality — a card can score low and still be wrong.",
+    "A validator PASS means nothing here: validate-formula-standard reports PASS on all 201 while 28 of these 30 lack 君臣佐使, tongue and pulse.",
+    "The two course packages are the source of record. American Dragon lookups are NOT included — this environment cannot reach it (FORMULA_CARD_TEMPLATE §4 gateway 403), so every american_dragon_url below is reported as missing, never guessed."
+  ],
+  "scope": "course group 1 — detailed knowledge, 30 most important",
+  "course_groups": {
+    "g1": 30,
+    "g2": 30,
+    "g3": 41
+  },
+  "source_files": [
+    "方剂学汇总_extracted.md",
+    "CHM_Formulation_2_course_package_extracted.md"
+  ],
+  "totals": {
+    "E_POSSIBLE_CORRUPTION": 1,
+    "C_CLAUDE_REVIEW_REQUIRED": 13,
+    "B_SAFE_FOR_ANTIGRAVITY": 14,
+    "A_PROTECTED": 2
+  },
+  "systemic_findings": {
+    "boilerplate_phrases": [
+      {
+        "phrase": "孕婦及體虛者請遵醫囑使用。",
+        "formulas": 25,
+        "sample": [
+          "formula.qing_ying_tang",
+          "formula.xi_jiao_di_huang_tang",
+          "formula.tiao_wei_cheng_qi_tang",
+          "formula.jia_wei_xiao_yao_san"
+        ]
+      },
+      {
+        "phrase": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+        "formulas": 23,
+        "sample": [
+          "formula.gui_zhi_tang",
+          "formula.ma_huang_tang",
+          "formula.yin_qiao_san",
+          "formula.sang_ju_yin"
+        ]
+      },
+      {
+        "phrase": "Strengthen Spleen",
+        "formulas": 3,
+        "sample": [
+          "formula.xiao_yao_san",
+          "formula.si_jun_zi_tang",
+          "formula.gui_pi_tang"
+        ]
+      }
+    ],
+    "misfiled_content_note": "10 of 30 carry 加減/藥理/現代疾病 prose inside actions_zh or pattern_indications_zh (template lesson 1, F10). The 加減 content is NOT missing — it is in the wrong field. Move first, then clear (§0).",
+    "protected_marker_unreliable": "桂枝湯 counts as template-grade only because field_sources.actions_zh exists (§3). It has 0/5 roles, no tongue/pulse, actions 16zh vs 2en, and 8 field_sources against 麻黃湯’s 32. This is template lesson 4 recurring."
+  },
+  "records": [
+    {
+      "formula_id": "formula.ren_shen_bai_du_san",
+      "name_zh": "人參敗毒散",
+      "name_en": "Ginseng Powder to Overcome Toxicity",
+      "pinyin": "Ren Shen Bai Du San",
+      "protected_status": "unprotected",
+      "group": "E_POSSIBLE_CORRUPTION",
+      "course_source": "方剂学汇总(8)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Indications",
+        "Applications",
+        "Modern Research",
+        "Source"
+      ],
+      "course_block_chars": 2756,
+      "defect_score": 37,
+      "missing_fields": [
+        "tongue_zh",
+        "pulse_zh",
+        "symptoms_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "comparison_group",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "contraindications / cautions",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "tcm_pattern_ids/syndromes_zh(證候連結)",
+        "source_classic(出典)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "composition_suspect：組成疑似方名截斷"
+      ],
+      "recoverable_from_course": [
+        "applications_zh",
+        "modern_research",
+        "source_classic"
+      ],
+      "safety_risk": "low",
+      "suitable_agent": "Claude (rewrite from source)",
+      "recommended_action": "Rebuild composition from the course table; do not trust the current single-herb value",
+      "evidence_summary": [
+        "課件:方剂学汇总(8)",
+        "組成 1 味 · 有角色 1 · 有劑量 1",
+        "actions 1zh/1en · indications 1zh/1en",
+        "review_status=sourced_cloudtcm_record"
+      ],
+      "composition_count": 1,
+      "roles_filled": 1,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.li_zhong_wan",
+      "name_zh": "理中丸",
+      "name_en": "Regulate the Middle Pill",
+      "pinyin": "Li Zhong Wan",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(15)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 1652,
+      "defect_score": 46,
+      "missing_fields": [
+        "actions_zh",
+        "actions_en",
+        "pattern_indications_zh",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "symptoms_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "tcm_pattern_ids/syndromes_zh(證候連結)",
+        "cloudtcm_url",
+        "source_classic(出典)"
+      ],
+      "suspicious_fields": [
+        "有安全內容但無來源標註",
+        "跨卡共用句 1 處(最廣 25 方共用)"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "pattern_indications_en",
+        "source_classic"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(15)",
+        "組成 4 味 · 有角色 4 · 有劑量 4",
+        "actions 0zh/0en · indications 0zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 4,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.sheng_mai_san",
+      "name_zh": "生脈散",
+      "name_en": "Generate the Pulse Powder",
+      "pinyin": "Sheng Mai San",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(5)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 2076,
+      "defect_score": 46,
+      "missing_fields": [
+        "actions_zh",
+        "actions_en",
+        "pattern_indications_zh",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "symptoms_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "tcm_pattern_ids/syndromes_zh(證候連結)",
+        "cloudtcm_url",
+        "source_classic(出典)"
+      ],
+      "suspicious_fields": [
+        "有安全內容但無來源標註",
+        "跨卡共用句 1 處(最廣 25 方共用)"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "pattern_indications_en",
+        "source_classic"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(5)",
+        "組成 3 味 · 有角色 3 · 有劑量 3",
+        "actions 0zh/0en · indications 0zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 3,
+      "roles_filled": 3,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.tiao_wei_cheng_qi_tang",
+      "name_zh": "調胃承氣湯",
+      "name_en": "Regulate the Stomach and Order the Qi Decoction",
+      "pinyin": "Tiao Wei Cheng Qi Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(10) + CHM Formulation 2(1)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [],
+      "course_block_chars": 1247,
+      "defect_score": 44,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 33 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "有安全內容但無來源標註",
+        "跨卡共用句 1 處(最廣 25 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(10) + CHM Formulation 2(1)",
+        "組成 3 味 · 有角色 0 · 有劑量 3",
+        "actions 33zh/0en · indications 8zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 3,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.gan_mai_da_zao_tang",
+      "name_zh": "甘麥大棗湯",
+      "name_en": "Licorice, Wheat, and Jujube Decoction",
+      "pinyin": "Gan Mai Da Zao Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(10) + CHM Formulation 2(2)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Applications",
+        "Source"
+      ],
+      "course_block_chars": 2849,
+      "defect_score": 44,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 25 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "有安全內容但無來源標註",
+        "跨卡共用句 1 處(最廣 25 方共用)"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "pattern_indications_en",
+        "applications_zh"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(10) + CHM Formulation 2(2)",
+        "組成 3 味 · 有角色 0 · 有劑量 3",
+        "actions 25zh/0en · indications 25zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 3,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.bai_hu_tang",
+      "name_zh": "白虎湯",
+      "name_en": "White Tiger Decoction",
+      "pinyin": "Bai Hu Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(12)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration"
+      ],
+      "course_block_chars": 2014,
+      "defect_score": 41,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 15 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "中藥庫查無:大米"
+      ],
+      "recoverable_from_course": [
+        "actions_en"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(12)",
+        "組成 4 味 · 有角色 0 · 有劑量 4",
+        "actions 15zh/0en · indications 14zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.qing_hao_bie_jia_tang",
+      "name_zh": "青蒿鱉甲湯",
+      "name_en": "Artemisia Annua and Soft-Shelled Turtle Shell Decoction",
+      "pinyin": "Qing Hao Bie Jia Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(5)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 1457,
+      "defect_score": 40,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "tcm_pattern_ids/syndromes_zh(證候連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 19 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "pattern_indications_en"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(5)",
+        "組成 5 味 · 有角色 0 · 有劑量 5",
+        "actions 19zh/0en · indications 12zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 5,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.xiao_cheng_qi_tang",
+      "name_zh": "小承氣湯",
+      "name_en": "Minor Order the Qi Decoction",
+      "pinyin": "Xiao Cheng Qi Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(5)",
+      "course_level": null,
+      "course_note": "course list says \"Xiao Cheng Tang\" (missing Qi); the same file writes \"Xiao Cheng Qi Tang\" correctly in two case discussions",
+      "course_provides": [],
+      "course_block_chars": 1458,
+      "defect_score": 38,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 34 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(5)",
+        "組成 3 味 · 有角色 0 · 有劑量 3",
+        "actions 34zh/0en · indications 34zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 3,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.si_ni_san",
+      "name_zh": "四逆散",
+      "name_en": "Frigid Extremities Powder",
+      "pinyin": "Si Ni San",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(8) + CHM Formulation 2(3)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Source"
+      ],
+      "course_block_chars": 2435,
+      "defect_score": 38,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 16 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用"
+      ],
+      "recoverable_from_course": [
+        "actions_en"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(8) + CHM Formulation 2(3)",
+        "組成 4 味 · 有角色 0 · 有劑量 4",
+        "actions 16zh/0en · indications 30zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.ma_xing_shi_gan_tang",
+      "name_zh": "麻杏石甘湯",
+      "name_en": "Ephedra, Apricot Kernel, Gypsum, and Licorice Decoction",
+      "pinyin": "Ma Xing Shi Gan Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(9)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [],
+      "course_block_chars": 24879,
+      "defect_score": 38,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 23 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(9)",
+        "組成 4 味 · 有角色 0 · 有劑量 4",
+        "actions 23zh/0en · indications 8zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.si_ni_tang",
+      "name_zh": "四逆湯",
+      "name_en": "Frigid Extremities Decoction",
+      "pinyin": "Si Ni Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(15)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 1981,
+      "defect_score": 38,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions_zh 13 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "pattern_indications_en"
+      ],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(15)",
+        "組成 3 味 · 有角色 0 · 有劑量 3",
+        "actions 13zh/0en · indications 11zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 3,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.suan_zao_ren_tang",
+      "name_zh": "酸棗仁湯",
+      "name_en": "Sour Jujube Decoction",
+      "pinyin": "Suan Zao Ren Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(5) + CHM Formulation 2(2)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Applications",
+        "Source"
+      ],
+      "course_block_chars": 1540,
+      "defect_score": 38,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "有安全內容但無來源標註"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "pattern_indications_en",
+        "applications_zh"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(5) + CHM Formulation 2(2)",
+        "組成 5 味 · 有角色 0 · 有劑量 5",
+        "actions 1zh/0en · indications 21zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 5,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.shi_quan_da_bu_tang",
+      "name_zh": "十全大補湯",
+      "name_en": "All-Inclusive Great Tonifying Decoction",
+      "pinyin": "Shi Quan Da Bu Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(3)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [],
+      "course_block_chars": 1052,
+      "defect_score": 37,
+      "missing_fields": [
+        "tongue_zh",
+        "pulse_zh",
+        "symptoms_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "comparison_group",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "contraindications / cautions",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "tcm_pattern_ids/syndromes_zh(證候連結)",
+        "source_classic(出典)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "中藥庫查無:黃芪"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "low",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(3)",
+        "組成 10 味 · 有角色 9 · 有劑量 10",
+        "actions 1zh/1en · indications 1zh/1en",
+        "review_status=sourced_cloudtcm_record"
+      ],
+      "composition_count": 10,
+      "roles_filled": 9,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.da_cheng_qi_tang",
+      "name_zh": "大承氣湯",
+      "name_en": "Major Order the Qi Decoction",
+      "pinyin": "Da Cheng Qi Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(7)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Applications",
+        "Source"
+      ],
+      "course_block_chars": 2974,
+      "defect_score": 35,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "applications_zh"
+      ],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(7)",
+        "組成 4 味 · 有角色 0 · 有劑量 4",
+        "actions 2zh/0en · indications 32zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.huang_lian_jie_du_tang",
+      "name_zh": "黃連解毒湯",
+      "name_en": "Coptis Decoction to Relieve Toxicity",
+      "pinyin": "Huang Lian Jie Du Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(9)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 2397,
+      "defect_score": 35,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "actions_en",
+        "pattern_indications_en",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "condition_tags_zh/condition_tags_en(標籤層)",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用"
+      ],
+      "recoverable_from_course": [
+        "actions_en",
+        "pattern_indications_en"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(9)",
+        "組成 4 味 · 有角色 0 · 有劑量 4",
+        "actions 5zh/0en · indications 32zh/0en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.chai_ge_jie_ji_tang",
+      "name_zh": "柴葛解肌湯",
+      "name_en": "Bupleurum and Kudzu Decoction to Release the Muscle Layer",
+      "pinyin": "Chai Ge Jie Ji Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(3)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Applications",
+        "Source"
+      ],
+      "course_block_chars": 1169,
+      "defect_score": 34,
+      "missing_fields": [
+        "tongue_zh",
+        "pulse_zh",
+        "symptoms_zh",
+        "formula_family",
+        "modifications(加減變化)",
+        "comparison_group",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "contraindications / cautions",
+        "pattern_tags_zh/pattern_tags_en(標籤層)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "related_conditions(病證連結)",
+        "tcm_pattern_ids/syndromes_zh(證候連結)",
+        "source_classic(出典)",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [],
+      "recoverable_from_course": [
+        "applications_zh",
+        "source_classic"
+      ],
+      "safety_risk": "low",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(3)",
+        "組成 9 味 · 有角色 8 · 有劑量 9",
+        "actions 1zh/1en · indications 1zh/1en",
+        "review_status=sourced_cloudtcm_record"
+      ],
+      "composition_count": 9,
+      "roles_filled": 8,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.gui_zhi_tang",
+      "name_zh": "桂枝湯",
+      "name_en": "Cinnamon Twig Decoction",
+      "pinyin": "Gui Zhi Tang",
+      "protected_status": "protected_polished",
+      "group": "A_PROTECTED",
+      "course_source": "方剂学汇总(20) + CHM Formulation 2(1)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications"
+      ],
+      "course_block_chars": 2273,
+      "defect_score": 33,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 16/2",
+        "actions_zh 16 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)",
+        "疑似缺字/亂碼"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "medium",
+      "suitable_agent": "Claude (light reinforcement only)",
+      "recommended_action": "Reinforce only — never overwrite with shorter course text (§0)",
+      "evidence_summary": [
+        "課件:方剂学汇总(20) + CHM Formulation 2(1)",
+        "組成 5 味 · 有角色 0 · 有劑量 5",
+        "actions 16zh/2en · indications 14zh/2en",
+        "review_status=draft"
+      ],
+      "composition_count": 5,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.si_wu_tang",
+      "name_zh": "四物湯",
+      "name_en": "Four-Substance Decoction",
+      "pinyin": "Si Wu Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(17) + CHM Formulation 2(1)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Applications",
+        "Source"
+      ],
+      "course_block_chars": 1850,
+      "defect_score": 33,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 36/2",
+        "actions_zh 36 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)",
+        "疑似缺字/亂碼"
+      ],
+      "recoverable_from_course": [
+        "applications_zh"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(17) + CHM Formulation 2(1)",
+        "組成 4 味 · 有角色 0 · 有劑量 4",
+        "actions 36zh/2en · indications 36zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.si_jun_zi_tang",
+      "name_zh": "四君子湯",
+      "name_en": "Four Gentlemen Decoction",
+      "pinyin": "Si Jun Zi Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(19)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Applications",
+        "Source"
+      ],
+      "course_block_chars": 1575,
+      "defect_score": 32,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "study_tags",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 1/2",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "有安全內容但無來源標註",
+        "跨卡共用句 3 處(最廣 25 方共用)"
+      ],
+      "recoverable_from_course": [
+        "applications_zh"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(19)",
+        "組成 4 味 · 有角色 0 · 有劑量 4",
+        "actions 1zh/2en · indications 5zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 4,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.jin_gui_shen_qi_wan",
+      "name_zh": "金匱腎氣丸",
+      "name_en": "Kidney Qi Pill from the Golden Cabinet",
+      "pinyin": "Jin Gui Shen Qi Wan",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(7)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 2349,
+      "defect_score": 31,
+      "missing_fields": [
+        "actions_zh",
+        "pattern_indications_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "cloudtcm_url",
+        "source_classic(出典)"
+      ],
+      "suspicious_fields": [
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "有安全內容但無來源標註",
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [
+        "source_classic"
+      ],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(7)",
+        "組成 8 味 · 有角色 8 · 有劑量 8",
+        "actions 0zh/2en · indications 0zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 8,
+      "roles_filled": 8,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.sang_ju_yin",
+      "name_zh": "桑菊飲",
+      "name_en": "Mulberry Leaf and Chrysanthemum Drink",
+      "pinyin": "Sang Ju Yin",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(8)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Indications",
+        "Applications",
+        "Modern Research",
+        "Source"
+      ],
+      "course_block_chars": 1457,
+      "defect_score": 30,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 30/2",
+        "actions_zh 30 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [
+        "applications_zh",
+        "modern_research"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(8)",
+        "組成 8 味 · 有角色 0 · 有劑量 8",
+        "actions 30zh/2en · indications 31zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 8,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.yin_qiao_san",
+      "name_zh": "銀翹散",
+      "name_en": "Honeysuckle and Forsythia Powder",
+      "pinyin": "Yin Qiao San",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(11)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Applications",
+        "Modern Research",
+        "Source"
+      ],
+      "course_block_chars": 2367,
+      "defect_score": 30,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 1/2",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)",
+        "疑似缺字/亂碼"
+      ],
+      "recoverable_from_course": [
+        "applications_zh",
+        "modern_research"
+      ],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(11)",
+        "組成 9 味 · 有角色 0 · 有劑量 9",
+        "actions 1zh/2en · indications 19zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 9,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.xiao_yao_san",
+      "name_zh": "逍遙散",
+      "name_en": "Free and Easy Wanderer Powder",
+      "pinyin": "Xiao Yao San",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(20)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Source"
+      ],
+      "course_block_chars": 3024,
+      "defect_score": 30,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 13/3",
+        "actions_zh 13 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 2 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(20)",
+        "組成 8 味 · 有角色 0 · 有劑量 8",
+        "actions 13zh/3en · indications 14zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 8,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.ban_xia_xie_xin_tang",
+      "name_zh": "半夏瀉心湯",
+      "name_en": "Pinellia Decoction to Drain the Epigastrium",
+      "pinyin": "Ban Xia Xie Xin Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(7)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Source"
+      ],
+      "course_block_chars": 2665,
+      "defect_score": 30,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 9/3",
+        "actions_zh 9 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(7)",
+        "組成 7 味 · 有角色 0 · 有劑量 7",
+        "actions 9zh/3en · indications 4zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 7,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.long_dan_xie_gan_tang",
+      "name_zh": "龍膽瀉肝湯",
+      "name_en": "Gentiana Decoction to Drain the Liver",
+      "pinyin": "Long Dan Xie Gan Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(7)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 2707,
+      "defect_score": 30,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 53/2",
+        "actions_zh 53 條(F8 上限 8)",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(7)",
+        "組成 10 味 · 有角色 0 · 有劑量 10",
+        "actions 53zh/2en · indications 55zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 10,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.xiao_chai_hu_tang",
+      "name_zh": "小柴胡湯",
+      "name_en": "Minor Bupleurum Decoction",
+      "pinyin": "Xiao Chai Hu Tang",
+      "protected_status": "unprotected",
+      "group": "C_CLAUDE_REVIEW_REQUIRED",
+      "course_source": "方剂学汇总(15)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Preparation",
+        "Administration",
+        "Applications",
+        "Source"
+      ],
+      "course_block_chars": 2579,
+      "defect_score": 27,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 1/2",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [
+        "applications_zh"
+      ],
+      "safety_risk": "high",
+      "suitable_agent": "Claude",
+      "recommended_action": "Claude: high-risk herbs or unsourced safety content — needs judgement, not field completion",
+      "evidence_summary": [
+        "課件:方剂学汇总(15)",
+        "組成 7 味 · 有角色 0 · 有劑量 7",
+        "actions 1zh/2en · indications 27zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 7,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.bu_zhong_yi_qi_tang",
+      "name_zh": "補中益氣湯",
+      "name_en": "Tonify the Middle and Augment the Qi Decoction",
+      "pinyin": "Bu Zhong Yi Qi Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(9)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 1454,
+      "defect_score": 27,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 1/3",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(9)",
+        "組成 9 味 · 有角色 0 · 有劑量 9",
+        "actions 1zh/3en · indications 22zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 9,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.gui_pi_tang",
+      "name_zh": "歸脾湯",
+      "name_en": "Restore the Spleen Decoction",
+      "pinyin": "Gui Pi Tang",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(10)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [
+        "Actions",
+        "Administration",
+        "Indications",
+        "Source"
+      ],
+      "course_block_chars": 1938,
+      "defect_score": 27,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "actions 中英不對齊 1/4",
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 2 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(10)",
+        "組成 12 味 · 有角色 0 · 有劑量 12",
+        "actions 1zh/4en · indications 9zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 12,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.liu_wei_di_huang_wan",
+      "name_zh": "六味地黃丸",
+      "name_en": "Six-Ingredient Pill with Rehmannia",
+      "pinyin": "Liu Wei Di Huang Wan",
+      "protected_status": "unprotected",
+      "group": "B_SAFE_FOR_ANTIGRAVITY",
+      "course_source": "方剂学汇总(13)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [],
+      "course_block_chars": 0,
+      "defect_score": 24,
+      "missing_fields": [
+        "君臣佐使 role_zh",
+        "tongue_zh",
+        "pulse_zh",
+        "formula_family",
+        "compare_with",
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "applications_zh(現代應用)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "只有 CloudTCM modern_diseases_zh、無 applications_zh —— 模板 §7 警告:關鍵字關聯不是臨床應用",
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "medium",
+      "suitable_agent": "Antigravity (field completion under a fixed dispatch)",
+      "recommended_action": "Field completion against the named course sections, under a fixed dispatch",
+      "evidence_summary": [
+        "課件:方剂学汇总(13)",
+        "組成 6 味 · 有角色 0 · 有劑量 6",
+        "actions 1zh/1en · indications 13zh/1en",
+        "review_status=draft"
+      ],
+      "composition_count": 6,
+      "roles_filled": 0,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    },
+    {
+      "formula_id": "formula.ma_huang_tang",
+      "name_zh": "麻黃湯",
+      "name_en": "Ephedra Decoction",
+      "pinyin": "Ma Huang Tang",
+      "protected_status": "protected_polished",
+      "group": "A_PROTECTED",
+      "course_source": "方剂学汇总(15)",
+      "course_level": "detailed knowledge",
+      "course_note": null,
+      "course_provides": [],
+      "course_block_chars": 30173,
+      "defect_score": 9,
+      "missing_fields": [
+        "chinese_depth_track.fang_yi_zh(方義)",
+        "modern_clinical_use_tags",
+        "composition[].herb_id"
+      ],
+      "suspicious_fields": [
+        "跨卡共用句 1 處(最廣 23 方共用)"
+      ],
+      "recoverable_from_course": [],
+      "safety_risk": "high",
+      "suitable_agent": "Claude (light reinforcement only)",
+      "recommended_action": "Reinforce only — never overwrite with shorter course text (§0)",
+      "evidence_summary": [
+        "課件:方剂学汇总(15)",
+        "組成 4 味 · 有角色 4 · 有劑量 4",
+        "actions 2zh/2en · indications 2zh/2en",
+        "review_status=draft",
+        "field_sources.actions_zh 存在 → 模板等級(§3 已整理)"
+      ],
+      "composition_count": 4,
+      "roles_filled": 4,
+      "handoff_reference": "docs/FORMULA_RESTORATION_AUDIT.md"
+    }
+  ],
+  "batches_applied": [
+    {
+      "batch": "F1",
+      "date": "2026-08-06",
+      "change": "american_dragon_url + field_sources for all 30, read from the AD index and fetched HTTP 200"
+    }
+  ]
+}
