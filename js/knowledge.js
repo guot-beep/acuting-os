@@ -32,8 +32,6 @@
     if (comparisonFilter) comparisonFilter.placeholder = modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes...");
     const conditionFilter = el("conditionFilter");
     if (conditionFilter) conditionFilter.placeholder = modeText("搜尋中英文病名、別名、ICD...", "Search Chinese/English names, aliases, ICD...");
-    const cloudtcmDiseaseFilter = el("cloudtcmDiseaseFilter");
-    if (cloudtcmDiseaseFilter) cloudtcmDiseaseFilter.placeholder = modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID...");
   }
   document.addEventListener("acuting:content-mode", applyKnowledgeModeText);
   function esc(v) {
@@ -1883,9 +1881,11 @@
   const condHost = el("conditionRecords");
   if (condHost) {
     const allConds = (K.conditionCanon && K.conditionCanon.records) || [];
-    const cloudDiseaseCategories = (K.cloudtcmDiseaseCategories && K.cloudtcmDiseaseCategories.records) || [];
-    const cloudDiseaseEntries = (K.cloudtcmDiseaseEntries && K.cloudtcmDiseaseEntries.records) || [];
-    const cloudDiseaseCategoryById = new Map(cloudDiseaseCategories.map((record) => [record.id, record]));
+    const cloudCounts = (K.cloudtcmRefMap && K.cloudtcmRefMap.counts) || {};
+    const cloudNote = modeText(
+      `雲端中醫 ${cloudCounts.source_entries || 0} 筆已融入：${cloudCounts.matched_to_canonical || 0} 筆的來源頁掛在下方對應的卡片上；${cloudCounts.symptom_seed_for_sym || 0} 筆其實是症狀，成為 sym.* 症狀軸的種子；${cloudCounts.disease_gap_for_cond || 0} 筆是尚未建卡的西醫病名。它不再有自己的分類。`,
+      `CloudTCM's ${cloudCounts.source_entries || 0} entries are dissolved: ${cloudCounts.matched_to_canonical || 0} source pages now sit on the matching cards below; ${cloudCounts.symptom_seed_for_sym || 0} were symptoms and seeded the sym.* axis; ${cloudCounts.disease_gap_for_cond || 0} are biomedical conditions not yet carded. It no longer has a classification of its own.`
+    );
 
     // D11: three diagnostic namespaces, three sources. This tab used to read
     // 中醫病名 and 證型 from data/pathology/conditions.json — the 12-record SEED
@@ -1905,6 +1905,22 @@
     }));
     const patternFamilies = (K.patternFamilyVocabulary && K.patternFamilyVocabulary.records) || [];
     const patternFamilyById = new Map(patternFamilies.map((f) => [f.id, f]));
+
+    // CloudTCM keeps no classification of its own (Ting 2026-08-06). Its exact
+    // source pages and diagrams attach to whichever canonical record they
+    // describe; its own category bar is gone. The 129 symptom entries seeded
+    // data/config/symptom_taxonomy.json instead — they were never diseases,
+    // which is why only 20 of 190 matched a disease record.
+    const cloudRefs = (K.cloudtcmRefMap && K.cloudtcmRefMap.refs) || {};
+    const cloudRefBlock = (recordId) => {
+      const list = cloudRefs[recordId] || [];
+      if (!list.length) return "";
+      return `<div class="k-source-links k-condition-source-links">${list.map((r) => `
+        <a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">
+          <strong>雲端中醫 · ${esc(r.name_zh)}</strong>
+          <small>${esc(r.name_en_draft || "CloudTCM source page")}</small>
+        </a>`).join("")}</div>`;
+    };
 
     // A record with no red flags is NOT hidden. The old gate filtered the grid
     // to the 55 records that had them, so 95 conditions were invisible — search
@@ -1943,7 +1959,7 @@
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
           ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
           ${flags.length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags (${flags.length})</summary><p class="k-flags">⚠ ${flags.slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
-          ${conditionSources(c)}
+          ${conditionSources(c)}${cloudRefBlock(c.id)}
         </article>`;
     }).join("");
 
@@ -1952,7 +1968,7 @@
         <header><strong>${esc(t.name_zh)} <small>${esc(t.name_en || "")}</small></strong>${statusPill(t.review_status)}${hasRedFlags(t) ? "" : noFlagBadge}</header>
         <p class="k-meta">${esc(t.id)}${t.pinyin ? ` · ${esc(t.pinyin)}` : ""}${t.classical_source ? ` · ${esc(t.classical_source)}` : ""}</p>
         ${t.definition_zh ? `<p>${esc(t.definition_zh)}</p>` : ""}
-        ${asList(t.related_patterns).length ? `<p class="k-tags">${entityChips(t.related_patterns)}</p>` : ""}
+        ${asList(t.related_patterns).length ? `<p class="k-tags">${entityChips(t.related_patterns)}</p>` : ""}${cloudRefBlock(t.id)}
       </article>`).join("");
 
     const renderPatterns = (list) => list.map((p) => {
@@ -1963,7 +1979,7 @@
         <p class="k-meta">${esc(p.id)}</p>
         ${signs.length ? `<p class="k-tags">${signs.slice(0, 4).map(tag).join("")}</p>` : ""}
         ${(p.tongue_zh || p.pulse_zh) ? `<p class="k-meta">${esc([p.tongue_zh, p.pulse_zh].filter(Boolean).join(" · "))}</p>` : ""}
-        ${p.treatment_principle_zh ? `<p><strong>治則</strong> ${esc(p.treatment_principle_zh)}</p>` : ""}
+        ${p.treatment_principle_zh ? `<p><strong>治則</strong> ${esc(p.treatment_principle_zh)}</p>` : ""}${cloudRefBlock(p.id)}
       </article>`;
     }).join("");
 
@@ -2033,44 +2049,11 @@
       }
       return buckets;
     };
-    const cloudDiseaseCard = (record) => `
-      <article class="k-card k-cloud-disease-card" data-record-id="${esc(record.id)}">
-        <header><strong>${esc(record.name_zh)} <small>${esc(record.name_en)}</small></strong>${statusPill(record.review_status)}</header>
-        <p class="k-meta">${esc(record.id)}</p>
-        <p class="k-tags">${asList(record.category_ids).map((id) => {
-          const category = cloudDiseaseCategoryById.get(id);
-          return tag(category ? `${category.name_zh} · ${category.name_en}` : id);
-        }).join("")}</p>
-        <a class="k-cloud-disease-link" href="${esc(record.source_url)}" target="_blank" rel="noopener noreferrer">
-          <strong>雲端中醫原始頁</strong><small>Open exact CloudTCM source page</small>
-        </a>
-      </article>`;
-    const cloudDiseasePageSize = 24;
-    let cloudDiseasePage = 1;
-    let activeCloudDiseaseCategory = "";
-    const renderCloudDiseaseDirectory = () => {
-      const query = String(el("cloudtcmDiseaseFilter")?.value || "").trim().toLowerCase();
-      const filtered = cloudDiseaseEntries.filter((record) => {
-        const recordCategoryIds = asList(record.category_ids);
-        const matchesCategory = !activeCloudDiseaseCategory || recordCategoryIds.includes(activeCloudDiseaseCategory);
-        const text = [record.id, record.name_zh, record.name_en, ...recordCategoryIds.map((id) => {
-          const category = cloudDiseaseCategoryById.get(id);
-          return category ? `${category.name_zh} ${category.name_en}` : id;
-        })].join(" ").toLowerCase();
-        return matchesCategory && (!query || text.includes(query));
-      });
-      const totalPages = Math.max(1, Math.ceil(filtered.length / cloudDiseasePageSize));
-      cloudDiseasePage = Math.min(Math.max(1, cloudDiseasePage), totalPages);
-      const start = (cloudDiseasePage - 1) * cloudDiseasePageSize;
-      el("cloudtcmDiseaseGrid").innerHTML = filtered.slice(start, start + cloudDiseasePageSize).map(cloudDiseaseCard).join("")
-        || '<p class="k-missing">找不到相符病症 / No matching source entry.</p>';
-      el("cloudtcmDiseasePageStatus").textContent = `${filtered.length} 筆 · 第 ${cloudDiseasePage} / ${totalPages} 頁`;
-      el("cloudtcmDiseasePrev").disabled = cloudDiseasePage <= 1;
-      el("cloudtcmDiseaseNext").disabled = cloudDiseasePage >= totalPages;
-      el("cloudtcmDiseaseCategoryBar").querySelectorAll?.("[data-cloud-disease-category]").forEach((button) => {
-        button.classList.toggle("is-active", button.dataset.cloudDiseaseCategory === activeCloudDiseaseCategory);
-      });
-    };
+    // The CloudTCM directory (its own card, category bar, search box and
+    // pagination) is gone: it kept a parallel classification, and Ting asked
+    // for it to dissolve into the canonical namespaces. Its pages now render
+    // on the matching cards via cloudRefBlock(); its 13 symptom categories
+    // seeded data/config/symptom_taxonomy.json.
     // One search box across all three namespaces, one type filter. The user
     // searches 眩暈 once — she should not have to know whether it is filed as a
     // 西醫病名, a 中醫病名 or a 證型 to find it. (Two search boxes and two
@@ -2127,25 +2110,7 @@
       </div>
       <input type="search" id="conditionFilter" placeholder="${esc(modeText("搜尋病名、證型、別名、拼音、ICD...", "Search diagnosis names, patterns, aliases, pinyin, ICD..."))}" class="k-filter" />
       <div id="conditionGrid"></div>
-      <details class="k-cloud-disease-directory" aria-labelledby="cloudtcmDiseaseHeading">
-        <summary id="cloudtcmDiseaseHeading">${esc(modeText(`雲端中醫來源索引 / CloudTCM source index (${cloudDiseaseEntries.length})`, `CloudTCM source index (${cloudDiseaseEntries.length})`))}</summary>
-        <div class="mini-heading">
-          <span>${esc(modeText(`匯入層，不是第四套命名空間（D11）：這裡的 ID 只作為來源把手，不會出現在任何關聯欄位。205 張來源卡合併為 ${cloudDiseaseEntries.length} 個穩定頁面 ID；英文為 curated draft。`, `Import layer, not a namespace (D11): these ids are provenance handles only and never appear in a relation field. 205 source cards consolidated into ${cloudDiseaseEntries.length} stable page ids; English is a curated draft.`))}</span>
-        </div>
-        <div id="cloudtcmDiseaseCategoryBar" class="k-cloud-disease-categories" aria-label="症狀疾病分類">
-          <button type="button" class="is-active" data-cloud-disease-category="">全部 · All</button>
-          ${cloudDiseaseCategories.map((category) => `<button type="button" data-cloud-disease-category="${esc(category.id)}">${esc(category.name_zh)} · ${esc(category.name_en)}</button>`).join("")}
-        </div>
-        <input type="search" id="cloudtcmDiseaseFilter" placeholder="${esc(modeText("搜尋中文、English 或來源 ID...", "Search Chinese, English, or source ID..."))}" class="k-filter" />
-        <div class="k-cloud-disease-toolbar">
-          <span id="cloudtcmDiseasePageStatus"></span>
-          <div>
-            <button type="button" id="cloudtcmDiseasePrev" aria-label="${esc(modeText("上一頁", "Previous page"))}">${esc(modeText("上一頁", "Previous"))}</button>
-            <button type="button" id="cloudtcmDiseaseNext" aria-label="${esc(modeText("下一頁", "Next page"))}">${esc(modeText("下一頁", "Next"))}</button>
-          </div>
-        </div>
-        <div class="k-grid k-grid-wide" id="cloudtcmDiseaseGrid"></div>
-      </details>`;
+      <p class="k-meta">${esc(cloudNote)}</p>`;
     // 中醫病名 and 證型 are now first-class sections above, rendered from their
     // own registries — they used to be these two comma lines, reading the
     // 12-record seed file.
@@ -2157,26 +2122,6 @@
       renderDx();
     });
     renderDx();
-    el("cloudtcmDiseaseFilter").addEventListener("input", () => {
-      cloudDiseasePage = 1;
-      renderCloudDiseaseDirectory();
-    });
-    el("cloudtcmDiseaseCategoryBar").addEventListener("click", (event) => {
-      const button = event.target.closest("[data-cloud-disease-category]");
-      if (!button) return;
-      activeCloudDiseaseCategory = button.dataset.cloudDiseaseCategory || "";
-      cloudDiseasePage = 1;
-      renderCloudDiseaseDirectory();
-    });
-    el("cloudtcmDiseasePrev").addEventListener("click", () => {
-      cloudDiseasePage -= 1;
-      renderCloudDiseaseDirectory();
-    });
-    el("cloudtcmDiseaseNext").addEventListener("click", () => {
-      cloudDiseasePage += 1;
-      renderCloudDiseaseDirectory();
-    });
-    renderCloudDiseaseDirectory();
   }
 
   // ---- Source registry -------------------------------------------------------

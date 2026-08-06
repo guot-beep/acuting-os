@@ -111,6 +111,9 @@ const knowledge = {
   // which is exactly why it used to render 中醫病名 and 證型 as two comma lines.
   tcmDiseaseTaxonomy: readJson("data/config/tcm_disease_taxonomy.json"),
   patternFamilyVocabulary: readJson("data/config/pattern_family_vocabulary.json"),
+  // CloudTCM's pages joined onto the canonical records (Ting: it keeps no
+  // classification of its own). Derived — see scripts/build-cloudtcm-ref-map.js.
+  cloudtcmRefMap: readJson("data/config/cloudtcm_ref_map.json"),
   channelsAndCharts: readJson("data/channels/channels_and_charts.json"),
   herbPairs: readJson("data/herbs/herb_pairs.json"),                                        // 藥對
   herbPairRelations: readJson("data/config/herb_pair_relations.json"),                       // 七情配伍

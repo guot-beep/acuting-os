@@ -971,7 +971,34 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、不良反應、孕期待補。",
+      "boxed_warning_en": "Ticagrelor, like other antiplatelet agents, can cause significant, sometimes fatal bleeding. Do not use in patients with active pathological bleeding or a history of intracranial hemorrhage. Do not start in patients undergoing urgent coronary artery bypass graft surgery (CABG). If possible, manage bleeding without discontinuing ticagrelor: stopping it increases the risk of subsequent cardiovascular events.",
+      "boxed_warning_zh": "替格瑞洛如同其他抗血小板藥,可造成顯著、有時致命的出血。活動性病理性出血或有顱內出血病史者不可使用。正接受緊急冠狀動脈繞道手術者不可起始使用。若可能,處理出血時不要停藥 —— 停藥會增加後續心血管事件風險。",
+      "contraindications_en": [
+        "History of intracranial hemorrhage",
+        "Active pathological bleeding such as peptic ulcer or intracranial hemorrhage",
+        "Hypersensitivity (e.g. angioedema) to ticagrelor or any component of the product"
+      ],
+      "contraindications_zh": [
+        "曾有顱內出血病史",
+        "活動性病理性出血,如胃潰瘍或顱內出血",
+        "對替格瑞洛或製劑任何成分過敏(如血管性水腫)"
+      ],
+      "dailymed_setid": "557351f1-47b7-216d-e063-6394a90afb51",
+      "dailymed_label_title": "TICAGRELOR TABLET, FILM COATED [REDPHARM DRUG]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=557351f1-47b7-216d-e063-6394a90afb51",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#CONTRAINDICATIONS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ 禁忌是**顱內出血**病史,不是 TIA／中風 —— 那是普拉格雷。兩者常被對調。另外黑框特別寫「若可能不要停藥」,因為停藥本身會增加心血管事件。",
+      "exam_trap_en": "The contraindication is a history of intracranial hemorrhage, not TIA or stroke — that is prasugrel. The boxed warning also says to manage bleeding without stopping the drug where possible, since stopping raises cardiovascular risk.",
+      "acupuncture_note_zh": "黑框明寫「若可能不要停藥」—— 所以不要為了針灸建議病人停藥,那不是我們能決定的,要由開藥醫師判斷。"
     },
     {
       "id": "drug.prasugrel",
@@ -989,7 +1016,34 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、不良反應、孕期待補。",
+      "boxed_warning_en": "Prasugrel can cause significant, sometimes fatal, bleeding. Do not use in patients with active pathological bleeding or a history of transient ischemic attack or stroke. Do not start in patients likely to undergo urgent coronary artery bypass graft surgery (CABG).",
+      "boxed_warning_zh": "普拉格雷可造成顯著、有時致命的出血。活動性病理性出血或有短暫性腦缺血(TIA)／中風病史者不可使用。可能需接受緊急冠狀動脈繞道手術(CABG)者不可起始使用。",
+      "contraindications_en": [
+        "Active pathological bleeding such as peptic ulcer or intracranial hemorrhage",
+        "History of prior transient ischemic attack (TIA) or stroke",
+        "Hypersensitivity to prasugrel or any component of the product"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血,如胃潰瘍或顱內出血",
+        "曾有短暫性腦缺血(TIA)或中風病史",
+        "對普拉格雷或製劑任何成分過敏"
+      ],
+      "dailymed_setid": "f51e64e0-f556-65d0-a876-fb709aaeefea",
+      "dailymed_label_title": "PRASUGREL TABLET, FILM COATED [APOTEX CORP.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f51e64e0-f556-65d0-a876-fb709aaeefea",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#CONTRAINDICATIONS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ TIA／中風病史是普拉格雷的禁忌 —— 這一條 clopidogrel 與 ticagrelor 都沒有。三個 P2Y12 抑制劑不可互換。",
+      "exam_trap_en": "A history of TIA or stroke contraindicates prasugrel; clopidogrel and ticagrelor do not carry that. The three P2Y12 inhibitors are not interchangeable.",
+      "acupuncture_note_zh": "黑框直接寫「顯著、有時致命的出血」。針刺前需確認是否仍在服用及末次劑量;無常規監測指標。"
     },
     {
       "id": "drug.aspirin",
