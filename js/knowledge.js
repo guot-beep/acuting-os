@@ -278,7 +278,7 @@
    * Ting asked for it to appear only when we actually have it, so this renders
    * nothing at all rather than a 待補 placeholder. */
   function formulaSongSection(record) {
-    const song = usableText(record.formula_song_zh || record.fang_ge_zh);
+    const song = usableText(record.formula_song_zh || record.formula_song || record.fang_ge_zh);
     if (!song) return "";
     const note = usableText(record.formula_song_source_zh);
     return `
@@ -1065,12 +1065,17 @@
     const relatedConditions = entityChips(record.related_conditions);
     const modern = modernTagChips(record.modern_clinical_use_tags);
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
+    const contraindicationsZh = cleanList(record.contraindications_zh || record.cautions_zh);
+    const contraindicationsEn = cleanList(record.contraindications_en || exam.contraindications_en);
+    const contraHtml = (contraindicationsZh.length || contraindicationsEn.length)
+      ? detailPairedList(contraindicationsZh, contraindicationsEn)
+      : detailList(safetyList(safety));
     return [
-      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
+      { id: "core", label: "考試核心 Exam Core", content: `${formulaExamBanner(record)}${formulaSongSection(record)}${formulaDerivedFrom(record)}${formulaGlanceRow(record)}<div class="k-detail-columns">${detailSection("功用", "Actions", detailPairedList(record.actions_zh, actions))}${detailSection("主治證型", "Pattern indications", detailPairedList(record.pattern_indications_zh, indications))}${detailSection("常見加減與鑑別", "Modifications & differentiation", detailList(modifications))}${detailSection("方劑群組", "Comparison group", usableText(record.comparison_group) ? `<p>${esc(comparisonGroupLabel(record.comparison_group))}</p>` : '<p class="k-detail-empty">—</p>')}</div>${detailSection("⚠️ 注意事項與禁忌", "Contraindications & Cautions", contraHtml)}${detailSection("方劑家族 加減變化", "Base formula → what changed → what it treats", formulaFamilySection(record))}${detailSection("類方鑑別", "How this differs from its neighbours", formulaRadarSection(record) + formulaCompareSection(record))}` },
       { id: "composition", label: "組成中藥 Composition", content: detailSection("組成與君臣佐使 · 方劑分析", "角色 · 本方功效 · 原方用量 · 科學中藥用量；點選中藥可進入單味藥卡", composition ? `${record.composition_suspect ? `<p class="k-comp-suspect">⚠️ 這個方的組成只有一味，而且那一味就是方名的開頭 —— 很可能是匯入時被截斷，<strong>不要當成完整組成</strong>。待由課件補齊。</p>` : ""}<div class="k-dose-table-wrap"><table class="k-dose-table"><thead><tr><th>中藥 Herb</th><th>本方功效</th><th>生藥煎劑參考 g</th><th>濃縮藥粉參考 g</th></tr></thead><tbody>${composition}</tbody></table></div>${usableText(record.administration_zh) ? `<p class="k-admin">服法 Administration：${esc(record.administration_zh)}</p>` : ""}<p class="k-dose-caution">濃縮藥粉克數受廠牌、濃縮倍率、劑型與處方情境影響；必須保留來源，不由生藥克數自動換算。</p>` : `<p class="k-detail-empty">組成待補 / Composition pending</p>${record.composition_cleared_note ? `<p class="k-comp-suspect">⚠️ 原本這裡有一筆「組成」，其實是方名去掉劑型後綴被當成藥材（例：瀉心湯 → 瀉心），已清除。真正的組成待由課件補齊。</p>` : ""}`) },
       { id: "pairs", label: "藥對 Herb pairs", content: detailSection("藥對與配伍意義", "Herb pairs and why they are paired", formulaPairsSection(record)) },
       { id: "clinical", label: "臨床理解 Clinical", content: `${formulaModernSection(record)}${detailSection("現代運用索引", "Modern application tags", modern ? `<div class="k-chip-cloud">${modern}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關病名與證型", "Condition & pattern IDs", relatedConditions ? `<div class="k-chip-cloud">${relatedConditions}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("相關方劑", "Compare, differentiate, continue studying", relatedFormulas ? `<div class="k-chip-cloud">${relatedFormulas}</div>` : '<p class="k-detail-empty">待補</p>')}${detailSection("學習備註", "Study context", `<p>${esc(usableText(record.clinical_use_note) || "待補 / Content pending source review")}</p>`)}` },
-      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("禁忌與注意", "Contraindications & review prompts", detailList([...(exam.contraindications_en || []), ...safetyList(safety)]))}${detailSection("來源", "Sources", sourceLinks(record))}` },
+      { id: "safety", label: "安全與來源 Safety", content: `${detailSection("⚠️ 禁忌與注意事項", "Contraindications & Cautions", contraHtml)}${detailSection("來源", "Sources", sourceLinks(record))}` },
       // 我的臨床筆記 — her own layer, deliberately its own tab so it is never
       // confused with sourced content (see js/notes.js header).
       { id: "notes", label: "我的筆記 My Notes", content: notesPanel("formula", record) }
