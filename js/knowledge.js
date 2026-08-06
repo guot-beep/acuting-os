@@ -12,7 +12,11 @@
 
   function el(id) { return document.getElementById(id); }
   function isEnglishMode() {
-    return document.body.dataset.contentMode === "english" || localStorage.getItem(CONTENT_MODE_KEY) === "english";
+    try {
+      return (document.body && document.body.dataset && document.body.dataset.contentMode === "english") || (typeof localStorage !== "undefined" && localStorage && localStorage.getItem(CONTENT_MODE_KEY) === "english");
+    } catch (e) {
+      return false;
+    }
   }
   function modeText(bilingual, english) {
     return isEnglishMode() ? english : bilingual;
@@ -1454,8 +1458,8 @@
             </header>
             <p class="k-en">${esc(f.name_en)}</p>
             <p class="k-meta">${esc(meta)}</p>
-            <p class="k-tags">${(f.pattern_focus_en || []).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
-            ${(f.safety_flags || []).length ? `<p class="k-flags">! ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+            <p class="k-tags">${cleanList(f.pattern_focus_en).slice(0, 3).map(tag).join("")}${modernInlineChips(searchTags, 5)}${exteriorChips}</p>
+            ${cleanList(f.safety_flags).length ? `<p class="k-flags">! ${cleanList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
             <button type="button" class="k-open-detail" data-detail-kind="formula" data-detail-id="${esc(f.id)}">${esc(modeText("查看方劑卡", "Open formula card"))}</button>
           </article>`;
       }).join("");
@@ -1551,8 +1555,8 @@
         </header>
         <p class="k-en">${esc(f.name_en)}</p>
         <p class="k-meta">${esc(f.category_en)}${f.nccaom_high_yield ? " · NCCAOM high-yield" : ""}</p>
-        <p class="k-tags">${(f.pattern_focus_en || []).map(tag).join("")}</p>
-        ${(f.safety_flags || []).length ? `<p class="k-flags">⚠ ${(f.safety_flags || []).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
+        <p class="k-tags">${cleanList(f.pattern_focus_en).map(tag).join("")}</p>
+        ${cleanList(f.safety_flags).length ? `<p class="k-flags">⚠ ${cleanList(f.safety_flags).map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
       </article>`).join("");
 
     const box = document.createElement("div");
