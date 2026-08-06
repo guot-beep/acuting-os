@@ -6195,6 +6195,42 @@ function renderChannelOverviewCard(ch) {
         </details>
       </section>
     ` : ''}
+
+    ${(ch.divergent_channel_zh || ch.muscle_channel_zh || ch.channel_rhyme_zh || ch.point_song_zh) ? `
+      <section class="channel-article-section" style="margin-top: 1rem;">
+        <details open style="background: #fdfbf7; border: 1px solid #e8dbb8; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #7a5c00; outline: none; user-select: none;">
+            📖 經典歌訣、經別與經筋理論 (Divergent, Muscle Channel & Songs)
+            <span style="font-size: 0.82rem; font-weight: 400; color: #8c732b; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
+          </summary>
+          <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
+            ${(ch.channel_rhyme_zh || ch.point_song_zh) ? `
+              <div style="background: #ffffff; border-left: 4px solid #b8860b; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #eee2be; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #7a5c00; margin-bottom: 0.4rem;">📜 經脈循行歌與穴位歌括 (Classic Channel Rhymes & Songs)</div>
+                ${ch.channel_rhyme_zh ? `<pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.9rem; color: #2c3e50; line-height: 1.6; margin: 0 0 0.5rem 0;">${escapeHtml(ch.channel_rhyme_zh)}</pre>` : ''}
+                ${ch.point_song_zh ? `<pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.9rem; color: #2c3e50; line-height: 1.6; margin: 0;">${escapeHtml(ch.point_song_zh)}</pre>` : ''}
+              </div>
+            ` : ''}
+
+            ${ch.divergent_channel_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #2e8b57; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #d0e7d8; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #1e5e3a; margin-bottom: 0.4rem;">🔀 經別循行與深層臟腑連繫 (Divergent Channel / Jing Bie)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.divergent_channel_zh)}</pre>
+                ${ch.divergent_channel_en ? `<div style="font-size: 0.82rem; color: #556b2f; line-height: 1.5; font-style: italic;">${escapeHtml(ch.divergent_channel_en)}</div>` : ''}
+              </div>
+            ` : ''}
+
+            ${ch.muscle_channel_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #4682b4; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #d4e3f0; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #1c4966; margin-bottom: 0.4rem;">💪 經筋循行與病候 (Muscle Channel / Jing Jin)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.muscle_channel_zh)}</pre>
+                ${ch.muscle_channel_en ? `<div style="font-size: 0.82rem; color: #2f4f4f; line-height: 1.5; font-style: italic;">${escapeHtml(ch.muscle_channel_en)}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        </details>
+      </section>
+    ` : ''}
   `;
 }
 

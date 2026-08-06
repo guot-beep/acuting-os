@@ -1,7 +1,10 @@
 /**
  * scratch/enrich_lung_channel_curriculum.js
- * Comprehensive enrichment of Lung Channel (LU) in data/channels/channels_and_charts.json
- * with 100% complete Chenoweth course note details for all 11 points.
+ * 100% comprehensive enrichment for Lung Channel (LU) including:
+ * - 11 Points detailed notes
+ * - Divergent Channel (經別)
+ * - Muscle Channel (經筋)
+ * - Channel Rhymes & Songs (循行歌、十一穴總歌、經別經筋歌)
  */
 
 const fs = require('fs');
@@ -17,6 +20,22 @@ if (!luChannel) {
   process.exit(1);
 }
 
+// 1. 經別 Divergent Channel
+luChannel.divergent_channel_zh = "【手太陰肺經經別 (Lung Divergent Channel)】\n• 循行路線：從手太陰肺經別出，別於淵腋（腋下），入走腋前，巡行入胸中，散絡於肺，上循喉嚨，出缺盆（鎖骨上窩），複合於手陽明大腸經經別，上結於頸部扶突穴（LI18 - 天窗穴）。\n• 臨床意義：肺與大腸經別在胸腹深層完全貫通交織（Integrates LU & LI in deep interior）。解釋了為何肺經與大腸經穴位（如 LU7 列缺、LI4 合谷）能互相標本兼治，且經別與天窗穴 LI18 相合，能調節頭身陰陽氣血升降與氣逆。";
+
+luChannel.divergent_channel_en = "【Lung Divergent Channel (Jing Bie)】\n• Trajectory: Branches from the main Lung channel in the axilla (near GB22/LU1), enters the chest, communicates with the Lung organ and diffuses in the chest, ascends along the throat, emerges at the supraclavicular fossa (ST12), joins the Large Intestine Divergent channel, and ascends to connect at LI18 (Futu / Window of the Sky point on the lateral neck).\n• Clinical Significance: Deeply connects and integrates the Lung (Yin) and Large Intestine (Yang) internal organs. Explains why LU7 and LI4 treat head, neck, and throat disorders. Conjoins at LI18 (Window of the Sky) to balance head-body Qi flow.";
+
+// 2. 經筋 Muscle Channel / Tendino-Muscular
+luChannel.muscle_channel_zh = "【手太陰經筋 (Lung Muscle Channel / Sinew Channel)】\n• 循行路線：起於手大拇指端（少商），沿拇指上行，結於魚際，行寸口外側，沿前臂上行結於肘中（尺澤），向上沿上臂內側，入腋下，出缺盆，結於肩前髃（肩髃部），上結於缺盆，下散貫賁門，下合於脅下，抵季脅。\n• 病候與臨床應用：經筋所過之處扭傷、轉筋、肘臂拘急疼痛、肩前痛、胸脅支滿拘急、吐血積聚。臨床可用阿是穴、刺絡與循經針刺治療肌筋膜疼痛。";
+
+luChannel.muscle_channel_en = "【Lung Muscle Channel (Jing Jin)】\n• Trajectory: Originates at the tip of the thumb (LU11), binds at the thenar eminence (LU10), ascends radial forearm to bind at the cubital crease (LU5), continues up anterior arm into axilla, emerges at supraclavicular fossa, binds at anterior shoulder (LI15 region), descends internally through diaphragm to spread over the cardia of Stomach and hypochondrium.\n• Pathology: Cramping, pain, or stiffness along the sinew path: thumb pain, elbow/forearm spasm, anterior shoulder pain, fullness or cramping in chest/hypochondrium, spitting blood. Treated via Ashi points and channel needling.";
+
+// 3. 經脈歌訣與穴位歌括 Channel Rhymes & Classic Point Songs
+luChannel.channel_rhyme_zh = "【手太陰肺經循行歌】\n「手太陰肺中焦起，下絡大腸還循胃，上膈屬肺系橫行，出腋下循臑臂內，歷寸口入大指端，交手陽明食指內。」";
+
+luChannel.point_song_zh = "【手太陰肺經十一穴總歌】\n「手太陰肺十一穴，中府雲門天府列，俠白尺澤孔最存，列缺經渠太淵涉，魚際少商如數斯，次第宣導肺氣泄。」\n\n【經別經筋歌】\n「肺經經別入胸膈，散絡肺臟上喉嗌，合於陽明扶突位，天窗調理頭身氣；經筋起於大指端，結於魚際與肘灣，下散賁門合季脅，經筋攣急胸脅滿。」";
+
+// 4. 全11穴位詳細課件精華
 luChannel.points_curriculum = [
   {
     code: "LU1",
@@ -142,4 +161,4 @@ luChannel.points_curriculum = [
 ];
 
 fs.writeFileSync(channelsFile, JSON.stringify(channels, null, 2), 'utf8');
-console.log('Successfully updated LU channel with 100% complete curriculum notes for all 11 points!');
+console.log('Successfully updated LU channel with Divergent, Muscle Channels, Point Songs and 11-point notes!');
