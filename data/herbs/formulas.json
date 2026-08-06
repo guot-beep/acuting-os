@@ -1792,10 +1792,10 @@
     {
       "id": "formula.yin_qiao_san",
       "name_zh": "銀翹散",
-      "name_en": "Honeysuckle and Forsythia Powder",
+      "name_en": "Yin Qiao San",
       "pinyin": "Yin Qiao San",
       "category_id": "formula_category.release_exterior",
-      "category_en": "Release the Exterior",
+      "category_en": "Formulas that Release the Exterior - Cool, Acrid",
       "study_tags": [
         "uri",
         "sore_throat",
@@ -1827,120 +1827,125 @@
       "last_reviewed": "",
       "composition": [
         {
-          "herb_zh": "金銀花",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "30g",
-          "elucidation_zh": "銀翹散中包含金銀花，主要是因為金銀花具有清熱解毒、疏散風熱的功效，與銀翹散的功效相輔相成。\n金銀花味甘性寒，能清熱解毒，善於治療外感風熱所致的發熱、咽痛、咳嗽等症狀。而銀翹散主治風熱感冒，其症狀包括發熱、頭痛、咽喉腫痛、鼻塞流涕等，金銀花正好能針對這些症狀起到緩解作用。\n此外，金銀花與銀翹散中其他藥材，如連翹、桔梗等，協同作用，能更有效地清熱解毒，疏散風熱，達到治療風熱感冒的目的。",
-          "decoction_reference_g": "30g",
-          "granule_reference_g": "6.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.jin_yin_hua",
+          "name_zh": "金銀花",
+          "name_en": "Honeysuckle Flower / Lonicera",
+          "pinyin_toned": "Jīn Yín Huā",
+          "dose_g": "30",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "甘寒質輕，芳香疏散，清熱解毒，辟穢化濁——重用為君",
+          "role_reason_en": "Sweet and cold, light texture; clears heat, relieves toxicity and dispels turbid pathogens"
         },
         {
-          "herb_zh": "連翹",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "30g",
-          "elucidation_zh": "銀翹散中加入連翹，乃因其清熱解毒之功效，針對外感風熱所致的發熱、咽痛、咳嗽等症狀，具有顯著療效。\n連翹性寒，味苦，入肺、心經，能清熱解毒，消腫散結。其對於外感風熱所致的邪熱壅滯於肺衛，造成發熱、咽痛、咳嗽等症狀，能有效疏散熱邪，清熱解毒，使邪氣外解，症狀緩解。\n因此，連翹作為銀翹散的組成成分，能夠有效發揮其清熱解毒之功效，並與其他藥材相輔相成，達到治療外感風熱的功效。",
-          "decoction_reference_g": "30g",
-          "granule_reference_g": "6.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.lian_qiao",
+          "name_zh": "連翹",
+          "name_en": "Forsythia Fruit",
+          "pinyin_toned": "Lián Qiáo",
+          "dose_g": "30",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "苦辛微寒，輕清宣透，清熱解毒，散結消腫——與金銀花相須為君",
+          "role_reason_en": "Bitter, acrid, slightly cold; clears heat, dispels toxicity, and dissolves clumps - pairs as chief with Jin Yin Hua"
         },
         {
-          "herb_zh": "薄荷",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "18g",
-          "elucidation_zh": "銀翹散中加入薄荷，主要基於以下兩點原因：\n疏散風熱，清利頭目：薄荷性涼，味辛，入肺經，具有疏散風熱、清利頭目之效。銀翹散主治風熱感冒，症見發熱、頭痛、鼻塞、流涕等。薄荷可清熱解表，宣肺透邪，使風邪、熱邪得以散發，達到清熱解表的效果。\n宣通鼻竅，止痛止癢：薄荷具有芳香開竅的作用，可宣通鼻竅，使鼻塞、流涕等症狀得到緩解。同時，薄荷的止痛止癢作用，可緩解感冒引起的鼻癢、咽癢等不適。\n因此，薄荷作為銀翹散的組成藥物，可有效地發揮疏散風熱、清利頭目、宣通鼻竅等功效，達到治療風熱感冒的目的。",
-          "decoction_reference_g": "18g",
-          "granule_reference_g": "3.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.bo_he",
+          "name_zh": "薄荷",
+          "name_en": "Field Mint / Peppermint",
+          "pinyin_toned": "Bò He",
+          "dose_g": "18",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "辛涼質輕，疏散風熱，清利頭目，利咽喉",
+          "role_reason_en": "Acrid and cool; disperses Wind-Heat, clears head and eyes, benefits sore throat"
         },
         {
-          "herb_zh": "桔梗",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "18g",
-          "elucidation_zh": "銀翹散中加入桔梗，主要是因為其具有宣肺利咽的功效，與方劑中其他藥材相輔相成，共同發揮治療外感風熱的療效。\n桔梗味苦辛，性平，入肺經，能宣肺利咽，排膿消腫。其宣肺利咽之效，能幫助疏散風熱，打開肺氣，使氣機通暢，從而緩解咽喉腫痛、聲音嘶啞等症狀。同時，桔梗還能促進痰液排出，緩解因風熱引起的咳嗽、痰多等症狀。\n因此，銀翹散中加入桔梗，能有效增強方劑的宣肺利咽功效，進一步提升療效。",
-          "decoction_reference_g": "18g",
-          "granule_reference_g": "3.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.niu_bang_zi",
+          "name_zh": "牛蒡子",
+          "name_en": "Burdock Fruit",
+          "pinyin_toned": "Niú Bàng Zǐ",
+          "dose_g": "18",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "辛苦性寒，宣肺祛痰，散結利咽解毒——助薄荷解表利咽",
+          "role_reason_en": "Acrid, bitter, cold; diffuses Lungs, clears phlegm, unblocks throat and dispels toxicity"
         },
         {
-          "herb_zh": "牛蒡子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "18g",
-          "elucidation_zh": "銀翹散中加入牛蒡子，主要基於其以下兩點功效：\n1. 清熱解毒： 牛蒡子性寒，味苦，入肺經，具有清熱解毒、消腫散結的功效，可有效抑制風熱邪毒，與銀翹散中其他清熱解毒藥物如金銀花、連翹等協同作用，共同達到清熱解毒、宣肺止咳的效果。\n2. 抗炎止痛： 牛蒡子具有抗炎作用，可減輕風熱邪毒引起的咽喉腫痛、咳嗽等症狀，與銀翹散中其他抗炎藥物如桔梗、薄荷等協同作用，共同達到消炎止痛、緩解不適的效果。",
-          "decoction_reference_g": "18g",
-          "granule_reference_g": "3.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.jing_jie",
+          "name_zh": "荊芥穗",
+          "name_en": "Schizonepeta Spikes",
+          "pinyin_toned": "Jīng Jiè Suì",
+          "dose_g": "12",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "辛溫質輕，疏風解表——溫而不燥，助金銀花、連翹開達肌表",
+          "role_reason_en": "Acrid and warm; dispels wind and releases exterior without drying, helping open the muscle layer"
         },
         {
-          "herb_zh": "淡豆豉",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "銀翹散中包含淡豆豉，主要基於以下兩點：\n清熱解表，透疹生津：淡豆豉性寒，味甘，入肺、胃經。其具有清熱解表、透疹生津的功效，可以幫助疏散外感風熱，促進疹出，同時滋潤津液，緩解發熱、口渴等症狀。\n解毒消腫，利尿通便：淡豆豉還具有一定的解毒消腫、利尿通便的功效，可以幫助清除體內熱毒，減少炎症反應，促進排泄，利於疾病的康復。\n總而言之，淡豆豉在銀翹散中發揮著重要的清熱解表、透疹生津、解毒消腫的作用，是該方劑不可或缺的一味藥材。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.dan_dou_chi",
+          "name_zh": "淡豆豉",
+          "name_en": "Prepared Fermented Soybeans",
+          "pinyin_toned": "Dàn Dòu Chǐ",
+          "dose_g": "15",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "辛涼疏散，解表除煩——助君藥透邪解表",
+          "role_reason_en": "Acrid and cool; releases exterior and dispels irritability"
         },
         {
-          "herb_zh": "淡竹葉",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "銀翹散中添加淡竹葉，主要考量其清熱解暑、利尿生津的功效。淡竹葉性寒涼，入心、肺、胃經，能清泄心肺之熱，並利尿通淋，有助於消除暑熱引起的口渴、煩躁、小便短赤等症狀。同時，淡竹葉還具有生津止渴的作用，能緩解因熱邪損傷津液引起的口乾舌燥等症狀。因此，在銀翹散中添加淡竹葉，不僅能增強清熱解毒之效，還能兼顧利尿生津，更全面地緩解外感風熱引起的各種不適。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.jie_geng",
+          "name_zh": "桔梗",
+          "name_en": "Platycodon Root / Balloon Flower",
+          "pinyin_toned": "Jié Gěng",
+          "dose_g": "18",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "苦辛性平，宣肺利咽，載藥上行——與牛蒡子相配清利咽喉",
+          "role_reason_en": "Bitter, acrid, neutral; diffuses Lungs, benefits throat, carries herbs upward"
         },
         {
-          "herb_zh": "荊芥",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "銀翹散中加入荊芥，主要是基於其疏散風熱的功效。\n荊芥味辛、性微溫，入肺經，具有解表散風、透疹止癢的功效。它能疏解外感風熱，並能宣通肺氣，使表邪得以降解，達到退熱解表的效果。\n此外，荊芥還能兼治風疹，與銀翹散中其他藥物如牛蒡子、連翹等，共同起到 清熱解毒、消腫散結 的作用，使方劑更能全面治療風熱感冒。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.gan_cao",
+          "name_zh": "甘草",
+          "name_en": "Licorice Root",
+          "pinyin_toned": "Gān Cǎo",
+          "dose_g": "15",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "role_reason_zh": "甘平，清熱解毒，調和諸藥——合桔梗即「甘桔湯」，清利咽喉",
+          "role_reason_en": "Sweet and neutral; clears heat, dispels toxicity, harmonizes formula; pairs with Jie Geng for throat"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "銀翹散中加入甘草，主要原因有二：\n一、調和藥性: 銀翹散藥性偏寒，甘草性甘平，加入甘草可調和藥性，避免寒涼之性過甚，避免損傷脾胃。\n二、增強療效: 甘草具有解毒、緩和藥性、增強免疫力等作用，可輔助銀翹散清熱解毒、宣肺透表，提高治療效果。\n此外，甘草還能增強銀翹散中其他藥材的藥效，使藥效更佳，更能達到治療目的。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.lu_gen",
+          "name_zh": "蘆根",
+          "name_en": "Reed Rhizome",
+          "pinyin_toned": "Lú Gēn",
+          "dose_g": "20",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "甘寒生津，清熱止渴——煎湯代水，清肺胃之熱",
+          "role_reason_en": "Sweet and cold; generates fluids, clears Lung and Stomach heat, quenches thirst"
+        },
+        {
+          "herb_id": "herb.dan_zhu_ye",
+          "name_zh": "淡竹葉",
+          "name_en": "Lophatherus Stem and Leaves",
+          "pinyin_toned": "Dàn Zhú Yè",
+          "dose_g": "12",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "甘淡性寒，清熱除煩，導熱下行",
+          "role_reason_en": "Sweet, bland, cold; clears heat, dispels irritability, guides heat downward"
         }
       ],
       "actions_en": [
-        "Release wind-heat",
-        "Clear heat and support throat pattern differentiation"
+        "Releases exterior with cool acrid herbs — disperses Wind-Heat and vents pathogens",
+        "Clears heat and relieves toxicity — purges toxic heat in the upper burner",
+        "Diffuses Lung qi and benefits throat — unblocks Lung qi and soothes sore throat"
       ],
       "actions_zh": [
-        "銀翹散原本在網路上並不是一個熱門方劑，自從香港地區從2022年2月疫情爆發之後，隨著疫情量在Google的搜尋爆增。在3月初時，香港地區一日確診高達七萬多人時，也到達搜尋量的最高峰，可見多數人在當時，許多香港人們試圖運用此方劑來改善染疫症狀。"
+        "辛涼解表 — 疏散風熱、透邪外出",
+        "清熱解毒 — 清解上焦風熱毒邪",
+        "宣肺利咽 — 宣通肺氣、清利咽喉"
       ],
       "modifications_en": [
         "Differentiate from Sang Ju Yin when cough is the leading presentation",
@@ -1948,11 +1953,14 @@
       ],
       "modifications_zh": [],
       "contraindications_en": [
-        "Not for unreviewed severe infection, high fever, dehydration, or pediatric red flags"
+        "Contraindicated in Wind-Cold exterior cold patterns",
+        "Use with caution in Spleen/Stomach deficiency cold with loose stools",
+        "Contraindicated in Yin sores without heat"
       ],
       "contraindications_zh": [
-        "有溼熱時，此方無效。凡外感風寒及濕熱病初起者禁用。因方中藥物多為芳香輕宣之品，不宜久煎。",
-        "陽虛體質的人不宜長期服用"
+        "外感風寒表寒證（惡寒重、流清涕）禁用",
+        "脾胃虛寒、大便溏薄者慎用",
+        "瘡瘍陰證無熱者禁用"
       ],
       "herb_drug_cautions": [
         "febrile_illness",
@@ -2083,26 +2091,15 @@
       "board_name_en": "Honeysuckle and Forsythia Powder",
       "exam_star": 1,
       "field_sources": {
-        "exam_importance": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "composition_roles": [
+          "wen_bing_tiao_bian",
+          "bastyr_materia_medica_2"
         ],
-        "on_board_list": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "indications": [
+          "wen_bing_tiao_bian"
         ],
-        "cloudtcm_url": [
-          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
-        ],
-        "condition_tags_zh": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "condition_tags_en": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "pattern_tags_zh": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "pattern_tags_en": [
-          "data/config/formula_tag_glossary.json"
+        "contraindications": [
+          "bastyr_materia_medica_2"
         ]
       },
       "cloudtcm_id": 271,
@@ -2147,15 +2144,157 @@
             "桔梗 18g"
           ]
         }
-      }
+      },
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.yin_qiao_san matching formula.ma_huang_tang.json schema.",
+      "name_en_translated": "Honeysuckle and Forsythia Powder",
+      "pinyin_toned": "Yín Qiáo Sǎn",
+      "source_text_zh": "《溫病條辨》",
+      "source_text_en": "Wen Bing Tiao Bian (Systematic Differentiation of Warm Diseases)",
+      "category_zh": "解表劑－辛涼解表",
+      "glance": {
+        "category_banner_zh": "辛涼解表",
+        "category_banner_en": "COOL ACRID EXTERIOR RELEASE",
+        "plain_summary_zh": "溫病初起、邪在衛分（風熱感冒）之首選方。發熱、微惡風寒、咽喉腫痛、口渴——辛涼宣透，清熱解毒。",
+        "plain_summary_en": "Premier formula for early-stage Warm Disease at the Wei/Exterior stage (Wind-Heat common cold). Features fever, mild aversion to wind, sore throat, and thirst.",
+        "plain_indications_zh": [
+          "風熱感冒初起",
+          "發熱微惡風寒",
+          "咽喉腫痛",
+          "口渴咳嗽"
+        ],
+        "plain_indications_en": [
+          "early wind-heat cold",
+          "fever with mild aversion to wind",
+          "sore swollen throat",
+          "thirst and cough"
+        ],
+        "herb_count": 10
+      },
+      "key_pairs": [
+        "pair.jin_yin_hua__lian_qiao",
+        "pair.bo_he__niu_bang_zi",
+        "pair.jie_geng__gan_cao",
+        "pair.jing_jie__dan_dou_chi"
+      ],
+      "key_pairs_note_zh": "金銀花配連翹（相須為用，辛涼清熱解毒之黃金雙星）；薄荷配牛蒡子（疏散風熱、清利咽喉）；桔梗配甘草（甘桔湯，宣肺利咽）；荊芥配豆豉（辛溫辛涼並用，透達衛分邪氣）。",
+      "key_pairs_note_en": "Jin Yin Hua with Lian Qiao (mutual reinforcement, classic duo for clearing Wind-Heat and toxicity); Bo He with Niu Bang Zi (disperses wind-heat, relieves throat); Jie Geng with Gan Cao (Gan Jie Tang duo for throat).",
+      "fang_yi_zh": "吳鞠通《溫病條辨》首方。本方重用金銀花、連翹為君，輕清宣透、清熱解毒；薄荷、牛蒡子為臣，疏散風熱、清利咽喉；荊芥穗、淡豆豉微溫辛散，透表散邪而不傷陰；桔梗、甘草、竹葉、蘆根為佐使，清熱生津、宣肺利咽、導熱下行。全方「去性取用」，香氣大出即取服，不可重煎。",
+      "fang_yi_en": "The premier formula of Wu Ju-tong's Wen Bing Tiao Bian. Uses heavy doses of Jin Yin Hua and Lian Qiao as chief herbs to clear heat and dispel toxicity. Bo He and Niu Bang Zi serve as deputies to clear Wind-Heat and unblock the throat. Jing Jie and Dan Dou Chi add a touch of warmth to open the pores without drying yin. Platycodon, Licorice, Lophatherus, and Reed Rhizome serve as assistants/envoys to generate fluids and direct heat downward.",
+      "indications": [
+        {
+          "pattern_zh": "溫病初起、邪鬱衛分證（風熱感冒）",
+          "pattern_en": "Early stage Warm Disease at Wei/Exterior level (Wind-Heat common cold)",
+          "clinical_picture_zh": "發熱、微惡風寒、無汗或有汗不暢、頭痛口渴、咳嗽咽痛、舌尖紅、苔薄白或薄黃、脈浮數",
+          "clinical_picture_en": "Fever, mild aversion to wind and cold, anhidrosis or incomplete sweating, headache, thirst, cough, painful swollen throat",
+          "tongue_zh": "舌尖紅，苔薄白或薄黃",
+          "tongue_en": "Red tongue tip with thin white or thin yellow coating",
+          "pulse_zh": "脈浮數",
+          "pulse_en": "Floating and rapid"
+        }
+      ],
+      "constitutional_types_zh": [
+        "風寒感冒",
+        "濕熱內盛"
+      ],
+      "constitutional_types_en": [
+        "Wind-Cold exterior",
+        "Interior Damp-Heat"
+      ],
+      "constitutional_note_zh": "風寒感冒惡寒重無汗者禁用；脾胃虛寒便溏者慎用。",
+      "modifications": [
+        {
+          "if_zh": "口渴甚者",
+          "if_en": "Severe thirst",
+          "change_zh": "加天花粉 15g 生津止渴",
+          "change_en": "Add Tian Hua Fen 15g to generate fluids"
+        },
+        {
+          "if_zh": "項腫咽痛甚者",
+          "if_en": "Severe throat swelling and pain",
+          "change_zh": "加馬勃 9g、玄參 15g 清熱利咽解毒",
+          "change_en": "Add Ma Bo 9g and Xuan Shen 15g to relieve toxic throat heat"
+        },
+        {
+          "if_zh": "咳嗽甚者",
+          "if_en": "Severe cough",
+          "change_zh": "加杏仁 9g 降氣止咳",
+          "change_en": "Add Xing Ren 9g to descend Lung qi"
+        },
+        {
+          "if_zh": "胸悶脘痞者",
+          "if_en": "Chest oppression and fullness",
+          "change_zh": "加藿香 9g、鬱金 9g 芳香化濕",
+          "change_en": "Add Huo Xiang 9g and Yu Jin 9g to transform dampness"
+        }
+      ],
+      "dose_adjustment_note_zh": "煎服法：水煎服。病重者日三服，夜一服。香氣大出即取服，不可過煎（過煎則藥氣徒濁，失其輕清宣透之性）。",
+      "dose_adjustment_note_en": "Decoction method: Decoct briefly until fragrant aroma emerges; do not over-boil, or light aromatic qualities are lost.",
+      "comparisons": [
+        {
+          "with": "formula.sang_ju_yin",
+          "name_zh": "桑菊飲",
+          "differentiator_zh": "同為《溫病條辨》辛涼解表劑。銀翹散為「辛涼平劑」，解表清熱力強，主治發熱、咽喉腫痛；桑菊飲為「辛涼輕劑」，宣肺止咳力勝，主治咳嗽為主、身微熱。",
+          "differentiator_en": "Both are cool acrid formulas from Wen Bing Tiao Bian. Yin Qiao San is a balanced cool formula with stronger heat-clearing for fever and sore throat; Sang Ju Yin is a light cool formula prioritizing cough relief."
+        }
+      ],
+      "formula_family": [
+        {
+          "formula_id": "formula.sang_ju_yin",
+          "name_zh": "桑菊飲",
+          "relation": "減加",
+          "change": [
+            "減金銀花、連翹、荊芥、豆豉",
+            "加桑葉、菊花、杏仁"
+          ],
+          "change_en": [
+            "Remove Jin Yin Hua, Lian Qiao, Jing Jie, Dou Chi",
+            "Add Sang Ye, Ju Hua, Xing Ren"
+          ]
+        }
+      ],
+      "modern_applications_zh": [
+        "急性上呼吸道感染",
+        "流行性感冒",
+        "急性扁桃體炎",
+        "腮腺炎",
+        "麻疹初起"
+      ],
+      "modern_applications_en": [
+        "Acute upper respiratory infection",
+        "Influenza",
+        "Acute tonsillitis",
+        "Mumps",
+        "Early-stage measles"
+      ],
+      "external_links": [
+        {
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
+          "lang": "en",
+          "link_status": "direct"
+        },
+        {
+          "source_id": "cloudtcm",
+          "url": "https://cloudtcm.com/formula/7",
+          "label_zh": "雲端中醫",
+          "label_en": "CloudTCM",
+          "lang": "zh",
+          "link_status": "direct"
+        }
+      ],
+      "authored_by": "model_draft",
+      "formula_song": "銀翹散主上焦病，竹葉荊牛豉薄荷。\n甘桔蘆根涼解法，清疏風熱發熱瘥。",
+      "exam_pearl": "【考綱重點】溫病初起衛分證（風熱感冒、咽喉腫痛）首選方。重用銀翹為君；荊芥、豆豉微溫透表；「香氣大出即取服，不可過煎」。NCBAHM 2026 CH Outline p.20。"
     },
     {
       "id": "formula.sang_ju_yin",
       "name_zh": "桑菊飲",
-      "name_en": "Mulberry Leaf and Chrysanthemum Drink",
+      "name_en": "Sang Ju Yin",
       "pinyin": "Sang Ju Yin",
       "category_id": "formula_category.release_exterior",
-      "category_en": "Release the Exterior",
+      "category_en": "Formulas that Release the Exterior - Cool, Acrid",
       "study_tags": [
         "uri"
       ],
@@ -2184,137 +2323,101 @@
       "last_reviewed": "",
       "composition": [
         {
-          "herb_zh": "桑葉",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "7.5g",
-          "elucidation_zh": "桑菊飲中包含桑葉，主要原因有二：\n一、清熱解表： 桑葉性寒，味甘，入肺經，具有清熱解表、疏散風熱之效。對於風熱感冒所致的發熱、咳嗽、咽喉腫痛等症狀，桑葉能有效緩解。\n二、宣肺止咳： 桑葉能宣肺氣，利咽喉，對肺熱咳嗽、痰多難咳等症狀也有很好的療效。桑葉與菊花搭配使用，可增強清熱解表、宣肺止咳的效果，使藥效更佳。",
-          "decoction_reference_g": "7.5g",
-          "granule_reference_g": "1.5g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.sang_ye",
+          "name_zh": "桑葉",
+          "name_en": "Mulberry Leaf",
+          "pinyin_toned": "Sāng Yè",
+          "dose_g": "7.5",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "甘苦微寒，輕宣上焦風熱，清肺絡之熱",
+          "role_reason_en": "Sweet, bitter, slightly cold; lightly diffuses Wind-Heat in upper burner and clears Lung collaterals"
         },
         {
-          "herb_zh": "杏仁",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "桑菊飲中加入杏仁，主要是因為其 潤肺止咳 的功效。杏仁性味甘苦，入肺經，具有潤肺、止咳、降氣的功效。在桑菊飲中，杏仁與桑葉、菊花等藥材共同作用，可以 清熱解表、宣肺止咳，用於治療風熱犯肺所致的咳嗽、咽喉腫痛等症狀。杏仁的加入，可以 緩解肺燥、潤肺止咳，使藥效更加全面。此外，杏仁還有 化痰 的作用，可以幫助痰液排出，進一步緩解咳嗽症狀。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.ju_hua",
+          "name_zh": "菊花",
+          "name_en": "Chrysanthemum Flower",
+          "pinyin_toned": "Jú Huā",
+          "dose_g": "3",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "甘苦微寒，清利頭目，疏散風熱——與桑葉相須為君",
+          "role_reason_en": "Sweet, bitter, slightly cold; clears eyes and head, disperses wind-heat - pairs as chief with Sang Ye"
         },
         {
-          "herb_zh": "桔梗",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "桑菊飲中加入桔梗，主要有以下兩點原因：\n宣肺利咽：桔梗具有宣肺利咽、祛痰止咳之功效。桑菊飲主治風熱犯肺、肺氣不宣所致的咳嗽、咽喉腫痛等症，桔梗的加入可助於宣肺利氣，使肺氣通暢，痰液易於排出，從而緩解咽喉腫痛、咳嗽等症狀。\n引藥入肺：桔梗味苦辛，性微寒，具有開宣肺氣，引藥入肺的作用。桑菊飲中其他藥物如桑葉、菊花等，多偏於清熱解毒，桔梗的加入可以引導這些藥物直達肺部，發揮更佳的治療效果。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.xing_ren",
+          "name_zh": "杏仁",
+          "name_en": "Apricot Seed",
+          "pinyin_toned": "Xìng Rén",
+          "dose_g": "6",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "苦溫降氣，止咳平喘——降肺氣以止咳嗽",
+          "role_reason_en": "Bitter and warm; descends Lung qi to arrest cough and wheezing"
         },
         {
-          "herb_zh": "蘆根",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "桑菊飲中加入蘆根，主要基於以下兩點原因：\n清熱利濕，宣肺止咳： 蘆根性寒，味甘，具有清熱利濕、宣肺止咳的功效。桑菊飲以清熱解毒、宣肺止咳爲主，蘆根的加入可增強其清熱利濕之效，進一步促進肺氣宣暢，緩解因熱邪、濕邪所致的咳嗽、痰多等症狀。\n配合桑葉、菊花清熱解毒： 桑葉、菊花均為清熱解毒之品，蘆根則能清熱利濕，三者相輔相成，協同作用，可更好地清解肺熱，化解濕邪，達到宣肺止咳、清熱利濕的功效。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.jie_geng",
+          "name_zh": "桔梗",
+          "name_en": "Platycodon Root",
+          "pinyin_toned": "Jié Gěng",
+          "dose_g": "6",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "苦辛宣肺，載藥上行——與杏仁一宣一降，恢復肺氣宣降",
+          "role_reason_en": "Bitter and acrid; diffuses Lung qi upward - pairs with Xing Ren as one ascending and one descending"
         },
         {
-          "herb_zh": "連翹",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "5g",
-          "elucidation_zh": "桑菊飲中加入連翹，主要基於以下兩點原因：\n清熱解毒： 連翹性寒，味苦，具有清熱解毒的功效，可散風熱、消腫痛，對於外感風熱所致的咽喉腫痛、咳嗽有痰等症狀，有很好的輔助治療作用。\n疏散風熱： 桑菊飲以疏散風熱為主，連翹的加入，可增強方劑疏散風熱的效果，並與其他藥物協同作用，達到更好的治療效果。",
-          "decoction_reference_g": "5g",
-          "granule_reference_g": "1.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.lian_qiao",
+          "name_zh": "連翹",
+          "name_en": "Forsythia Fruit",
+          "pinyin_toned": "Lián Qiáo",
+          "dose_g": "4.5",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "苦寒清熱解毒，透達上焦",
+          "role_reason_en": "Bitter and cold; clears heat, dispels toxicity, vents upper burner heat"
         },
         {
-          "herb_zh": "菊花",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "3g",
-          "elucidation_zh": "桑菊飲中包含菊花，主要有以下兩點原因：\n清熱解毒: 菊花性涼，味甘苦，具有清熱解毒、疏散風熱的功效。桑菊飲主要用於治療風熱感冒，而菊花可以清熱解表，緩解發熱、頭痛、咽痛等症狀。\n平肝明目: 菊花還有平肝明目的功效，可用於治療目赤腫痛、頭暈目眩等症狀。桑菊飲中加入菊花，除了治療風熱感冒，還能兼顧眼部問題，達到標本兼治的效果。",
-          "decoction_reference_g": "3g",
-          "granule_reference_g": "0.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.bo_he",
+          "name_zh": "薄荷",
+          "name_en": "Field Mint",
+          "pinyin_toned": "Bò He",
+          "dose_g": "2.5",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "辛涼疏散風熱，清利頭目",
+          "role_reason_en": "Acrid and cool; assists in dispersing wind-heat and benefiting eyes"
         },
         {
-          "herb_zh": "薄荷",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "2.5g",
-          "elucidation_zh": "桑菊飲中加入薄荷，主要基於以下兩點原因：\n清熱解表，疏風散熱： 薄荷性涼，味辛，具有清熱解表、疏風散熱之效，可輔助桑葉、菊花清熱解毒，緩解風熱感冒引起的發熱、頭痛、咽痛等症狀。\n宣肺利咽，通鼻竅： 薄荷辛涼通竅，可促進鼻腔分泌物排出，緩解鼻塞、流涕等症狀。同時，薄荷的揮發油能刺激呼吸道，使呼吸道通暢，改善咳嗽等症狀。",
-          "decoction_reference_g": "2.5g",
-          "granule_reference_g": "0.5g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.lu_gen",
+          "name_zh": "蘆根",
+          "name_en": "Reed Rhizome",
+          "pinyin_toned": "Lú Gēn",
+          "dose_g": "6",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "甘寒清熱生津止渴",
+          "role_reason_en": "Sweet and cold; clears heat, generates fluids and quenches thirst"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "2.5g",
-          "elucidation_zh": "桑菊飲中加入甘草，主要基於以下兩點：\n調和藥性: 桑菊飲以桑葉、菊花為主，清熱解表，性偏寒涼。甘草性甘平，能調和藥性，避免寒涼過度，減輕藥物對脾胃的刺激。\n增強療效: 甘草味甘，入脾肺經，能緩解藥物苦味，提高患者服藥的順應性。同時，甘草具有解毒、潤肺、止咳的功效，與桑葉、菊花相輔相成，共同達到清熱解表、宣肺止咳的效果。",
-          "decoction_reference_g": "2.5g",
-          "granule_reference_g": "0.5g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.gan_cao",
+          "name_zh": "甘草",
+          "name_en": "Licorice Root",
+          "pinyin_toned": "Gān Cǎo",
+          "dose_g": "2.5",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "role_reason_zh": "甘平調和諸藥，合桔梗利咽",
+          "role_reason_en": "Sweet and neutral; harmonizes herbs, pairs with Jie Geng to soothe throat"
         }
       ],
       "actions_en": [
-        "Release wind-heat",
-        "Diffuse Lung qi and support cough pattern differentiation"
+        "Disperses wind and clears heat — clears upper burner Wind-Heat",
+        "Diffuses Lung qi and arrests cough — restores Lung ascending-descending qi movement"
       ],
       "actions_zh": [
-        "桑菊飲這個方劑是由清代名醫吳鞠通所創造的，當時有很多人咳嗽，服用溫熱性的中藥效果不好，因此研發新的中藥方劑。",
-        "他在著作《溫病條辨》中提到，風熱溫引起的咳嗽雖然是小病，但常見於誤用熱藥治療，這可能會消耗肺液，導致患者長期咳嗽，轉變成慢性肺病。",
-        "吳鞠通算是對於傳統《傷寒論》的反動者，根據《溫病條辨》中「肺為清虛之臟，微苦則降，辛涼則平」的原則創造了桑菊飲，這是一個辛涼微苦的方劑，避免使用辛溫(熱性)的藥物。",
-        "吳鞠通認為風熱引起的咳嗽不能用辛溫中藥",
-        "肺部位於人體的最高位置，傳統中醫認為這是非常脆弱的器官，不耐冷熱。病邪通常從口鼻進入人體，首先影響到的是肺部，導致肺部功能失常，主要的表現就是咳嗽。",
-        "風熱病邪影響到肺部，主要的症狀是咳嗽。吴鞠通認為：「咳嗽是因為熱氣傷害了肺絡，身體不是很熱，表示病情不重；感到口渴但不強烈，表示熱度也不高。」",
-        "有些人的咳嗽是由風熱造成，關鍵在於伴隨輕微的「發熱」和「口渴」兩種症狀，沒有寒冷感，這是風熱引起的咳嗽，而非風寒的咳嗽。",
-        "由於受到的風溫的邪氣很輕微，所以身體的溫度並不會太高。溫熱的邪氣最容易傷害肺部，但由於這種邪氣的火熱程度不高，所以口渴也只是輕微。",
-        "綜合以上情況，這個病狀應該是溫病剛開始時，肺部失去了正常的功能，但表現的熱性症狀輕微。",
-        "治療時應該清除肺部的熱邪，並且使肺部功能恢復，讓咳嗽停止，因此治療的方法是散風清熱以來止咳。",
-        "服用散發風熱中藥清除肺部的熱氣",
-        "運用桑葉散發上焦的風熱，清除肺部的熱氣，從而止咳。古書《重慶堂隨筆》中提到，飲用桑葉可以清理肺氣，讓身體感到舒適。",
-        "菊花被認為是清除風熱的重要中藥，專門散發風熱，清理頭部、眼睛以及肺部的熱氣。",
-        "薄荷則是主要的藥物，因其辛涼特性，可以散熱並清理體內的熱氣，增強藥效。",
-        "杏仁具有降低肺氣的作用，而桔梗則能夠開闊和提升肺氣，這兩種藥物合用，一個用於降低，一個用於提升，從而恢復肺部的正常功能，幫助止咳。",
-        "連翹能夠透過解毒功能來排除體內的邪氣，蘆根則具有清熱生津的效果，可以用來止渴，這些都是輔助治療的藥物。",
-        "甘草則用來調和所有藥材，使它們的效果更均衡，同時與桔梗一起使用可以舒緩咽喉不適。",
-        "所有這些藥物的結合使用，可以有效地散發身體上部的風熱，使肺氣流通更暢順，從而有效解除症状及止咳。",
-        "提到桑菊飲，就一定要討論「銀翹散」，這都是用來治療溫病初期的辛涼解表藥方，它們的組成都包括了連翹、桔梗、甘草、薄荷和蘆根這五種藥物。",
-        "銀翹散、桑菊飲適合中國南方濕熱地區的感冒",
-        "銀翹散中還加入了銀花、荊芥、豆豉、牛蒡和竹葉，這使得它在解表清熱方面的效果特別強。症狀是：發熱、輕微惡寒、咽喉痛、口渴。",
-        "桑菊飲解表清熱的作用相比銀翹散較弱，這兩種中藥都是合中國南方濕熱地區的感冒。",
-        "桑菊飲這在現代常被用來治療感冒、急性支氣管炎、上呼吸道感染、肺炎、急性結膜炎和角膜炎等疾病。",
-        "桑菊飲適用於治療風熱侵犯肺絡的情況，並且也適用於治療秋燥引起的咳嗽。",
-        "附註：桑菊飲加減法",
-        "熱勢過旺可以加入石膏和知母。如果舌頭發紅且傍晚時分發熱，可以加入犀角和玄參來清營涼血。",
-        "如果熱邪進入血分，舌質變得深紅，患者出現煩躁或神志不清的症狀，應去掉薄荷、蘆根，加入生地、丹皮、地黃、玉竹來涼血、散熱和養陰。",
-        "如果肺部的熱特別重，可以加入黃芩來清肺熱。如果口渴特別嚴重，加入天花粉以生津止渴。咽喉紅腫疼痛的情況，可以加入玄參和板藍根。",
-        "如果咳嗽伴有黃色稠密的痰，且咳痰不暢，應加入瓜蔞、黃芩、桑白皮、貝母來清熱化痰。",
-        "若咳嗽中帶血，可以加入白茅根、茜草根、丹皮來涼血止血。對於眼睛紅腫疼痛的治療，應加入刺蒺藜、蟬蛻、木賊、決明子來祛風清熱明目。"
+        "疏風清熱 — 疏散上焦風熱邪氣",
+        "宣肺止咳 — 宣通肺氣、降氣止咳"
       ],
       "modifications_en": [
         "Compare with Yin Qiao San when throat/heat signs dominate",
@@ -2322,11 +2425,12 @@
       ],
       "modifications_zh": [],
       "contraindications_en": [
-        "Persistent or severe respiratory symptoms require medical review"
+        "Contraindicated in Wind-Cold cough",
+        "Contraindicated in dry cough from Yin deficiency"
       ],
       "contraindications_zh": [
-        "這個方劑屬於「辛涼輕劑」，如果患者肺熱很重，應該在調整藥方後使用，否則藥物的效力太輕，可能不足以對抗嚴重的病情；同時，風寒引起的咳嗽不適合使用這個方劑。",
-        "由於這個方劑中的藥物都是輕清的成分，因此不宜長時間煎煮。這樣的煎煮方法可以避免破壞藥物的有效成分，保持其治療效果。"
+        "風寒咳嗽忌用",
+        "陰虛肺燥乾咳忌用"
       ],
       "herb_drug_cautions": [
         "respiratory_red_flags",
@@ -2470,26 +2574,15 @@
       "board_name_en": "Mulberry Leaf and Chrysanthemum Drink",
       "exam_star": 1,
       "field_sources": {
-        "exam_importance": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "composition_roles": [
+          "wen_bing_tiao_bian",
+          "bastyr_materia_medica_2"
         ],
-        "on_board_list": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "indications": [
+          "wen_bing_tiao_bian"
         ],
-        "cloudtcm_url": [
-          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
-        ],
-        "condition_tags_zh": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "condition_tags_en": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "pattern_tags_zh": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "pattern_tags_en": [
-          "data/config/formula_tag_glossary.json"
+        "contraindications": [
+          "bastyr_materia_medica_2"
         ]
       },
       "cloudtcm_id": 162,
@@ -2539,7 +2632,125 @@
             "桔梗 6g"
           ]
         }
-      }
+      },
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.sang_ju_yin matching formula.ma_huang_tang.json schema.",
+      "name_en_translated": "Mulberry Leaf and Chrysanthemum Drink",
+      "pinyin_toned": "Sāng Jú Yǐn",
+      "source_text_zh": "《溫病條辨》",
+      "source_text_en": "Wen Bing Tiao Bian (Systematic Differentiation of Warm Diseases)",
+      "category_zh": "解表劑－辛涼解表",
+      "glance": {
+        "category_banner_zh": "輕宣肺熱",
+        "category_banner_en": "LIGHT COOL LUNG DIFFUSING",
+        "plain_summary_zh": "風熱感冒初起、咳嗽為主症之代表方（辛涼輕劑）。桑葉、菊花輕宣上焦風熱；杏仁、桔梗一宣一降止咳平喘。",
+        "plain_summary_en": "Light cool acrid formula for early Wind-Heat cough. Features mild fever, cough, mild thirst, thin white tongue coating.",
+        "plain_indications_zh": [
+          "風熱感冒初起",
+          "咳嗽為主",
+          "身微熱",
+          "口微渴"
+        ],
+        "plain_indications_en": [
+          "early wind-heat cold",
+          "cough as primary symptom",
+          "mild fever",
+          "slight thirst"
+        ],
+        "herb_count": 8
+      },
+      "key_pairs": [
+        "pair.sang_ye__ju_hua",
+        "pair.jie_geng__xing_ren",
+        "pair.jie_geng__gan_cao"
+      ],
+      "key_pairs_note_zh": "桑葉配菊花（桑菊相須，輕宣上焦風熱、清利頭目）；桔梗配杏仁（一宣一降，開宣肺氣、降氣止咳）；桔梗配甘草（甘桔湯，利咽喉）。",
+      "key_pairs_note_en": "Sang Ye with Ju Hua (mutual accentuation, light cool pair for upper burner); Jie Geng with Xing Ren (one ascends, one descends for Lung qi restoration); Jie Geng with Gan Cao (throat duo).",
+      "fang_yi_zh": "吳鞠通辛涼輕劑。桑葉、菊花輕宣上焦風熱為君；杏仁降氣、桔梗宣肺，二藥一宣一降，恢復肺宣降之常為臣；薄荷助桑菊疏散風熱，連翹清熱解毒，蘆根清熱生津共為佐；生甘草調和諸藥為使。本方比銀翹散更偏於「宣肺止咳」，解表發汗之力較輕。",
+      "fang_yi_en": "Wu Ju-tong's light cool formula. Sang Ye and Ju Hua lightly diffuse upper burner Wind-Heat as chief; Xing Ren descends qi while Platycodon diffuses Lungs as deputies, restoring normal Lung qi dynamics. Bo He, Lian Qiao, and Lu Gen serve as assistants to clear heat and generate fluids. Licorice harmonizes as envoy.",
+      "indications": [
+        {
+          "pattern_zh": "風熱犯肺證（風熱感冒咳嗽）",
+          "pattern_en": "Wind-Heat attacking Lungs (Wind-Heat cough)",
+          "clinical_picture_zh": "咳嗽、身微熱、口微渴、舌苔薄白、脈浮數",
+          "clinical_picture_en": "Cough, slight fever, slight thirst, thin white tongue coating, floating rapid pulse",
+          "tongue_zh": "苔薄白",
+          "tongue_en": "Thin white coating",
+          "pulse_zh": "脈浮數",
+          "pulse_en": "Floating and rapid"
+        }
+      ],
+      "constitutional_types_zh": [
+        "風寒咳嗽",
+        "陰虛乾咳"
+      ],
+      "constitutional_types_en": [
+        "Wind-Cold cough",
+        "Yin deficiency dry cough"
+      ],
+      "constitutional_note_zh": "風寒咳嗽（痰白稀、惡寒重）者禁用；陰虛乾咳無痰者不宜服用。",
+      "modifications": [
+        {
+          "if_zh": "咳嗽頻作、肺熱甚者",
+          "if_en": "Frequent cough with Lung heat",
+          "change_zh": "加黃芩 9g 清肺熱",
+          "change_en": "Add Huang Qin 9g to clear Lung heat"
+        },
+        {
+          "if_zh": "口渴甚者",
+          "if_en": "Marked thirst",
+          "change_zh": "加天花粉 12g 生津止渴",
+          "change_en": "Add Tian Hua Fen 12g to generate fluids"
+        },
+        {
+          "if_zh": "咽喉腫痛甚者",
+          "if_en": "Severe sore throat",
+          "change_zh": "加玄參 12g、板藍根 15g 清熱解毒利咽",
+          "change_en": "Add Xuan Shen 12g and Ban Lan Gen 15g for throat"
+        }
+      ],
+      "dose_adjustment_note_zh": "水煎服，煮取二杯，日二服。不可過煎。",
+      "dose_adjustment_note_en": "Decoct briefly; take twice daily.",
+      "comparisons": [
+        {
+          "with": "formula.yin_qiao_san",
+          "name_zh": "銀翹散",
+          "differentiator_zh": "銀翹散清熱解表力強，主治發熱咽痛；桑菊飲輕宣肺熱力勝，主治咳嗽為主、身微熱。",
+          "differentiator_en": "Yin Qiao San has stronger heat-clearing for fever/throat; Sang Ju Yin is lighter and focuses on cough."
+        }
+      ],
+      "modern_applications_zh": [
+        "急性支氣管炎",
+        "上呼吸道感染",
+        "流行性感冒咳嗽",
+        "急性結膜炎"
+      ],
+      "modern_applications_en": [
+        "Acute bronchitis",
+        "Upper respiratory infection",
+        "Influenza cough",
+        "Acute conjunctivitis"
+      ],
+      "external_links": [
+        {
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
+          "lang": "en",
+          "link_status": "direct"
+        },
+        {
+          "source_id": "cloudtcm",
+          "url": "https://cloudtcm.com/formula/8",
+          "label_zh": "雲端中醫",
+          "label_en": "CloudTCM",
+          "lang": "zh",
+          "link_status": "direct"
+        }
+      ],
+      "authored_by": "model_draft",
+      "formula_song": "桑菊飲中桔杏翹，薄荷蘆根甘草條。\n輕宣風熱止咳嗽，風溫咳嗽服之消。",
+      "exam_pearl": "【考綱重點】風熱犯肺、咳嗽為主證首選方（辛涼輕劑）。桑葉+菊花輕宣風熱；杏仁+桔梗一宣一降止咳。NCBAHM 2026 CH Outline p.20。"
     },
     {
       "id": "formula.xiang_su_san",
@@ -3619,13 +3830,13 @@
     {
       "id": "formula.bai_hu_tang",
       "name_zh": "白虎湯",
-      "name_en": "White Tiger Decoction",
+      "name_en": "Bai Hu Tang",
       "pinyin": "Bai Hu Tang",
       "review_status": "draft",
       "source_status": "source_review_pending",
       "source_type": "sourced_cloudtcm_record",
       "category_id": "",
-      "category_en": "Clear Heat",
+      "category_en": "Formulas that Clear Heat - Clear Qi Level / Yangming Stage",
       "category": "清熱劑 / Clear Heat",
       "tier": "core",
       "source_hint": "Bensky F&S: Clear Heat; add to AcuTing formulas after Ting approval",
@@ -3643,72 +3854,58 @@
       "public_safe": false,
       "study_tags": [],
       "pattern_focus_en": "",
-      "actions_en": [],
+      "actions_en": [
+        "Clears Qi-level heat and generates fluids — purges Yangming Qi-stage heat and quenches thirst",
+        "Drains fire and eliminates irritability — clears Stomach fire and rests agitation"
+      ],
       "actions_zh": [
-        "在中醫臨床上，白虎湯通常不會單純這樣運用，因為現實生活中這種體內大熱的人其實不多。",
-        "曾經有一位會員曾經回報，某位工頭在熱浪天氣下工作幾天之後，出現全身發熱、大口渴的現象，確實服用一次「白虎湯」之後就快速改善。",
-        "臨床較常運用的是加上人參，成為「白虎加人參湯」，被運用來治療糖尿病。由於現在人很少出現單純實熱證，通常都是「寒熱錯雜」或是「上熱下寒」，所以有時候會加上「附子」這類的熱性藥物。",
-        "現代藥理研究表明，白虎湯不僅具有顯著的解熱效果，還能增強免疫功能。基於這些作用，後代醫學家在原有的白虎湯基礎上進行了加減調整，使其適用範圍進一步擴大。",
-        "白虎湯現已被廣泛應用於治療多種疾病，包括：病毒性感冒、大葉性肺炎、流行性乙型腦炎、糖尿病、腦中風、急性痛風性關節炎、流行性出血熱、麻疹、牙齦炎、中暑、周圍神經痛、腎移植術後感染、銀屑病、手足口病、病毒性角膜炎、老年口腔乾燥症、急性虹膜睫狀體炎、鼻咽癌等。這些應用的療效得到了相關文獻的支持和證實。",
-        "白虎湯加減法：",
-        "出現高熱且身體虛弱、微感寒意、脈搏洪大且感到煩躁不安時，可以加人參以清熱、增強體力和促進體內水分的生成。",
-        "若是出現高熱、嚴重口渴、意識不清、言語不清楚和抽搐等症狀，則可加入羚羊角和犀角以達到清熱、涼血、止風和止痙的效果。",
-        "體熱且有風寒的狀況時，可以加入蔥白、豆豉和細辛以增強驅散風寒的效果。",
-        "胃火旺盛、高熱煩躁、大量出汗、口渴且多喝水、便秘、尿少且顏色偏紅，甚至出現昏迷不認人的狀態，舌苔黃厚且有刺激感、脈搏緊張有力，那麼可加入生大黃和玄明粉以瀉熱和軟化堅硬的糞便、潤滑乾燥。",
-        "寒熱交替、寒感較輕而熱感較重、心煩出汗、口渴喜飲的情況，則可以加入柴胡、黃芩、天花粉和鮮荷葉來調和體內的少陽症狀。",
-        "胃腸或身體感到燥熱和口渴、胃氣上逆和心下悶滿的情況，則需要去掉甘草和粳米，改用半夏、竹茹以和胃止嘔。",
-        "出現發熱但不感到寒冷、出汗未能解熱、心煩口渴、脈搏滑快有力、尿少且呈紅色，甚至煩熱到昏迷、皮膚有時出現斑疹，則應去掉甘草，加入薄荷、荷葉、益元散、鮮竹葉和桑枝。",
-        "在消渴症狀中，特別是屬於胃熱型的病患，出現煩渴引飲的情況，則可加入天花粉、蘆根和麥門冬等藥材來治療。",
-        "《傷寒論》原文是：「傷寒，脈浮滑，此以表有熱，裡有寒，白虎湯主之」、「三陽合病，腹滿身重，難以轉側，口不仁面垢，譫語遺尿。發汗則譫語。下之則額上生汗，手足逆冷。若自汗出者，白虎湯主之」、「傷寒脈滑而厥者，裡有熱，白虎湯主之」、「若渴欲飲水，口乾舌燥者，白虎加人參湯主之」。"
+        "清熱生津 — 清瀉陽明氣分大熱、生津止渴",
+        "瀉火除煩 — 瀉透胃火、消除心煩躁熱"
       ],
       "composition": [
         {
-          "herb_zh": "知母",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "30g",
-          "elucidation_zh": "白虎湯中加入知母，主要考量其清熱瀉火的功效。\n知母味苦寒，入肺、胃經，擅長清肺熱、降胃火。白虎湯以石膏為君藥，清熱瀉火之力強勁，但若單用石膏，容易傷津耗氣，而知母的寒涼之性，可以輔助石膏清熱，同時滋陰潤燥，防止燥烈傷陰。\n此外，知母還兼具利尿的功效，可助於排泄體內熱毒，更有效地達到清熱解毒的治療目的。因此，知母在白虎湯中的加入，既能增強清熱瀉火之效，又能保護津液，使藥力更加平和。",
-          "decoction_reference_g": "30g",
-          "granule_reference_g": "6.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.shi_gao",
+          "name_zh": "石膏",
+          "name_en": "Gypsum",
+          "pinyin_toned": "Shí Gāo",
+          "dose_g": "30",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "辛甘大寒，清瀉肺胃大熱，兼能透熱外達——重用為君",
+          "role_reason_en": "Acrid, sweet, very cold; clears Lung and Stomach heat, vents heat outward - heavy dose chief"
         },
         {
-          "herb_zh": "石膏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "30g",
-          "elucidation_zh": "白虎湯中加入石膏，主要是因為其 寒涼解熱 的功效。石膏性寒，入肺經，能清熱瀉火，降解體內熱邪，對於外感熱病引起的發熱、口渴、咽痛、煩躁等症狀有顯著效果。\n白虎湯的組成中，除了石膏外，還包含知母、甘草、粳米等藥物，共同發揮清熱解毒、生津止渴、和胃降逆的作用。石膏作為方劑中的主藥，其寒涼性質與其他藥材相輔相成，共同達到清熱解表、涼血解毒的效果，是治療熱病的重要方劑之一。",
-          "decoction_reference_g": "30g",
-          "granule_reference_g": "6.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_mu",
+          "name_zh": "知母",
+          "name_en": "Anemarrhena Rhizome",
+          "pinyin_toned": "Zhī Mǔ",
+          "dose_g": "9",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "苦寒質潤，清熱瀉火，滋陰潤燥——與石膏相須為用，增強清熱生津之力",
+          "role_reason_en": "Bitter, cold, moistening; clears heat, drains fire, nourishes yin - pairs as deputy with Shi Gao"
         },
         {
-          "herb_zh": "大米",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "白虎湯中加入大米，主要是為了緩解燥熱症狀，滋養脾胃。\n大米性味甘平，入脾胃經，具有健脾益胃，和中緩急的功效。白虎湯屬於寒涼方劑，藥性偏寒，容易損傷脾胃，而大米可以起到保護脾胃，防止寒涼藥物對脾胃造成損傷的作用。\n此外，大米還有清熱解毒，生津止渴之效，可以輔助白虎湯清熱瀉火，緩解燥熱症狀。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.zhi_gan_cao",
+          "name_zh": "炙甘草",
+          "name_en": "Honey-fried Licorice",
+          "pinyin_toned": "Zhì Gān Cǎo",
+          "dose_g": "3",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "role_reason_zh": "甘溫益胃和中，緩石膏大寒之性，防傷脾胃",
+          "role_reason_en": "Sweet and warm; tonifies Stomach and Middle Burner, moderates harsh coldness of Shi Gao"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "3g",
-          "elucidation_zh": "白虎湯中加入甘草，主要有以下兩點原因：\n調和藥性: 白虎湯以石膏為主，性寒涼，易傷脾胃。甘草味甘性平，能緩解石膏的寒性，防止其過度寒涼，減輕對脾胃的損傷，使藥性更平和，更易於被人體吸收。\n增強藥效: 甘草具有調和諸藥、解毒、緩解疼痛等作用，能協調白虎湯中其他藥物的功效，增強其清熱解毒、生津止渴的療效，使藥效更加顯著。",
-          "decoction_reference_g": "3g",
-          "granule_reference_g": "0.6g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "herb_id": "herb.geng_mi",
+          "name_zh": "粳米",
+          "name_en": "Nonglutinous Rice",
+          "pinyin_toned": "Gēng Mǐ",
+          "dose_g": "9",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "role_reason_zh": "甘平益胃生津，與甘草同為使，顧護胃氣、防止寒藥傷中",
+          "role_reason_en": "Sweet and neutral; nourishes Stomach qi and fluids, protecting middle burner against cold herbs"
         }
       ],
       "pattern_indications_en": [],
@@ -3730,12 +3927,17 @@
       ],
       "modifications_en": [],
       "modifications_zh": [],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated if exterior pattern is not yet released",
+        "Contraindicated in White Tiger Four Cautions (submerged/fine pulse, no thirst, no sweating)",
+        "Contraindicated in Spleen/Stomach deficiency cold",
+        "Contraindicated in true cold with false heat"
+      ],
       "contraindications_zh": [
-        "《傷寒論》指出，若傷寒脈浮，發熱無汗，表證未解，則不宜使用白虎湯。",
-        "《溫病條辨》提到白虎湯四禁：脈浮弦而細者、脈沉者、不渴者、汗不出者均不宜使用。",
-        "陽虛發熱、暑，由於脾胃虛弱，陽氣外越，身熱自汗、倦怠懶言、惡風、脈浮無力者應避免使用，以免傷害陽氣。",
-        "真寒假熱現象，即陰盛格陽，也禁用白虎湯。"
+        "表證未解、無汗惡寒者禁用",
+        "脈浮細、脈沉、不渴、汗不出者禁用（白虎四禁）",
+        "脾胃虛寒、大便溏薄者禁用",
+        "真寒假熱（陰盛格陽）者禁用"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -3827,14 +4029,16 @@
       "board_name_en": "White Tiger Decoction",
       "exam_star": 1,
       "field_sources": {
-        "exam_importance": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "composition_roles": [
+          "shang_han_lun",
+          "bastyr_materia_medica_2"
         ],
-        "on_board_list": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "indications": [
+          "shang_han_lun"
         ],
-        "cloudtcm_url": [
-          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        "contraindications": [
+          "shang_han_lun",
+          "bastyr_materia_medica_2"
         ]
       },
       "cloudtcm_id": 98,
@@ -3855,7 +4059,163 @@
             "甘草 3g"
           ]
         }
-      }
+      },
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.bai_hu_tang matching formula.ma_huang_tang.json schema.",
+      "name_en_translated": "White Tiger Decoction",
+      "pinyin_toned": "Bái Hǔ Tāng",
+      "source_text_zh": "《傷寒論》",
+      "source_text_en": "Shang Han Lun (Treatise on Cold Damage)",
+      "category_zh": "清熱劑－清氣分熱",
+      "glance": {
+        "category_banner_zh": "清氣分熱",
+        "category_banner_en": "CLEAR QI LEVEL HEAT",
+        "plain_summary_zh": "陽明經熱盛、熱入氣分四大證（身大熱、口大渴、汗大出、脈洪大）之代表方。石膏清熱透表，知母滋陰潤燥。",
+        "plain_summary_en": "Premier formula for Yangming Stage / Qi-Level Heat featuring the Four Bigs (Big Fever, Big Thirst, Big Sweating, Big Pulse).",
+        "plain_indications_zh": [
+          "身大熱",
+          "口大渴",
+          "汗大出",
+          "脈洪大"
+        ],
+        "plain_indications_en": [
+          "high fever",
+          "profuse thirst",
+          "profuse sweating",
+          "flooding large pulse"
+        ],
+        "herb_count": 4
+      },
+      "key_pairs": [
+        "pair.shi_gao__zhi_mu",
+        "pair.zhi_gan_cao__geng_mi"
+      ],
+      "key_pairs_note_zh": "石膏配知母（相須為用，辛甘大寒清氣分大熱、滋陰潤燥之黃金藥對）；炙甘草配粳米（甘溫和中、顧護胃氣、防寒傷中）。",
+      "key_pairs_note_en": "Shi Gao with Zhi Mu (mutual accentuation, premier duo for Qi-level heat and nourishing fluids); Zhi Gan Cao with Geng Mi (protects Spleen and Stomach against extreme cold).",
+      "fang_yi_zh": "《傷寒論》清氣分大熱之祖方。重用石膏辛甘大寒，直達肺胃清透大熱為君；知母苦寒滋陰潤燥，協助石膏清熱兼護陰液為臣；炙甘草、粳米甘溫和中，顧護胃氣，防止大寒之藥損傷脾胃為使。四味相配，清熱而不傷陰，瀉火而不傷胃。",
+      "fang_yi_en": "Ancestor formula for clearing Qi-level heat in Shang Han Lun. Uses heavy Shi Gao as chief to purge Lung and Stomach fire. Zhi Mu serves as deputy to moisten dryness and assist Shi Gao. Zhi Gan Cao and Geng Mi serve as envoys to protect the Stomach qi from harsh cold.",
+      "indications": [
+        {
+          "pattern_zh": "陽明氣分熱盛證（白虎湯四大證）",
+          "pattern_en": "Yangming Stage / Qi-Level Heat Excess (The Four Bigs)",
+          "clinical_picture_zh": "身大熱、口大渴引飲、汗大出、心煩躁熱、面赤惡熱、舌紅苔黃乾、脈洪大有力或滑數",
+          "clinical_picture_en": "High fever, severe thirst for ice water, profuse sweating, extreme restlessness, red face, aversion to heat",
+          "tongue_zh": "舌紅，苔黃乾",
+          "tongue_en": "Red tongue with dry yellow coating",
+          "pulse_zh": "脈洪大有力或滑數",
+          "pulse_en": "Flooding, large, forceful, or slippery rapid pulse"
+        }
+      ],
+      "constitutional_types_zh": [
+        "表未解者",
+        "真寒假熱",
+        "脾胃虛寒"
+      ],
+      "constitutional_types_en": [
+        "Exterior pattern unreleased",
+        "True cold false heat",
+        "Spleen/Stomach deficiency cold"
+      ],
+      "constitutional_note_zh": "《傷寒論》白虎四禁：脈浮弦細、脈沉、不渴、汗不出者禁用。",
+      "modifications": [
+        {
+          "if_zh": "氣陰兩傷、汗大出、脈大而無力者",
+          "if_en": "Qi and Yin injury with profuse sweating and weak pulse",
+          "change_zh": "加人參 9g ➔ 即白虎加人參湯（益氣生津）",
+          "change_en": "Add Ren Shen 9g (Bai Hu Jia Ren Shen Tang) to tonify qi and fluids"
+        },
+        {
+          "if_zh": "兼風濕熱痹、關節紅腫熱痛者",
+          "if_en": "With Wind-Damp-Heat Bi syndrome and swollen painful joints",
+          "change_zh": "加桂枝 9g ➔ 即白虎加桂枝湯（清熱通絡）",
+          "change_en": "Add Gui Zhi 9g (Bai Hu Jia Gui Zhi Tang) to clear heat and unblock channels"
+        },
+        {
+          "if_zh": "兼濕熱身重、脘痞者",
+          "if_en": "With Damp-Heat, heavy body, and epigastric fullness",
+          "change_zh": "加蒼朮 9g ➔ 即白虎加蒼朮湯（燥濕清熱）",
+          "change_en": "Add Cang Zhu 9g (Bai Hu Jia Cang Zhu Tang) to dry dampness"
+        }
+      ],
+      "dose_adjustment_note_zh": "水煎服。先煎石膏 20-30 分鐘，後下知母。煮米熟湯成，去滓溫服。",
+      "dose_adjustment_note_en": "Decoct Shi Gao first for 20-30 minutes before adding other herbs.",
+      "comparisons": [
+        {
+          "with": "formula.huang_lian_jie_du_tang",
+          "name_zh": "黃連解毒湯",
+          "differentiator_zh": "白虎湯清陽明氣分無形大熱，重在清熱生津；黃連解毒湯瀉三焦有形火毒，重在苦寒直折瀉火。",
+          "differentiator_en": "Bai Hu Tang clears Qi-level formless heat and generates fluids; Huang Lian Jie Du Tang drains toxic fire in all three burners with bitter-cold herbs."
+        }
+      ],
+      "formula_family": [
+        {
+          "formula_id": "formula.bai_hu_jia_ren_shen_tang",
+          "name_zh": "白虎加人參湯",
+          "relation": "加",
+          "change": [
+            "加人參 9g"
+          ],
+          "change_en": [
+            "Add Ren Shen 9g"
+          ]
+        },
+        {
+          "formula_id": "formula.bai_hu_jia_gui_zhi_tang",
+          "name_zh": "白虎加桂枝湯",
+          "relation": "加",
+          "change": [
+            "加桂枝 9g"
+          ],
+          "change_en": [
+            "Add Gui Zhi 9g"
+          ]
+        },
+        {
+          "formula_id": "formula.bai_hu_jia_cang_zhu_tang",
+          "name_zh": "白虎加蒼朮湯",
+          "relation": "加",
+          "change": [
+            "加蒼朮 9g"
+          ],
+          "change_en": [
+            "Add Cang Zhu 9g"
+          ]
+        }
+      ],
+      "modern_applications_zh": [
+        "重症感冒發熱",
+        "流行性乙型腦炎",
+        "大葉性肺炎",
+        "中暑",
+        "糖尿病（消渴症）"
+      ],
+      "modern_applications_en": [
+        "Severe influenza fever",
+        "Japanese encephalitis",
+        "Lobar pneumonia",
+        "Heat stroke",
+        "Diabetes mellitus"
+      ],
+      "external_links": [
+        {
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
+          "lang": "en",
+          "link_status": "direct"
+        },
+        {
+          "source_id": "cloudtcm",
+          "url": "https://cloudtcm.com/formula/98",
+          "label_zh": "雲端中醫",
+          "label_en": "CloudTCM",
+          "lang": "zh",
+          "link_status": "direct"
+        }
+      ],
+      "authored_by": "model_draft",
+      "formula_song": "白虎湯用石膏知，甘草粳米四般施。\n亦有加參添桂法，濕溫大熱小兒宜。",
+      "exam_pearl": "【考綱重點】陽明氣分熱盛「四大證」（身大熱、口大渴、汗大出、脈洪大）首選方。石膏+知母相須清熱生津；粳米+甘草顧護胃氣。NCBAHM 2026 CH Outline p.21。"
     },
     {
       "id": "formula.zhu_ye_shi_gao_tang",

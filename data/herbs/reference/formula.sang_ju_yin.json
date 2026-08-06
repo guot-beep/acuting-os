@@ -1,0 +1,244 @@
+{
+  "_reference_note": "REFERENCE IMPLEMENTATION for formula.sang_ju_yin matching formula.ma_huang_tang.json schema.",
+  "id": "formula.sang_ju_yin",
+  "name_zh": "桑菊飲",
+  "name_en": "Sang Ju Yin",
+  "name_en_translated": "Mulberry Leaf and Chrysanthemum Drink",
+  "pinyin": "Sang Ju Yin",
+  "pinyin_toned": "Sāng Jú Yǐn",
+  "source_text_zh": "《溫病條辨》",
+  "source_text_en": "Wen Bing Tiao Bian (Systematic Differentiation of Warm Diseases)",
+  "category_zh": "解表劑－辛涼解表",
+  "category_en": "Formulas that Release the Exterior - Cool, Acrid",
+  "glance": {
+    "category_banner_zh": "輕宣肺熱",
+    "category_banner_en": "LIGHT COOL LUNG DIFFUSING",
+    "plain_summary_zh": "風熱感冒初起、咳嗽為主症之代表方（辛涼輕劑）。桑葉、菊花輕宣上焦風熱；杏仁、桔梗一宣一降止咳平喘。",
+    "plain_summary_en": "Light cool acrid formula for early Wind-Heat cough. Features mild fever, cough, mild thirst, thin white tongue coating.",
+    "plain_indications_zh": [
+      "風熱感冒初起",
+      "咳嗽為主",
+      "身微熱",
+      "口微渴"
+    ],
+    "plain_indications_en": [
+      "early wind-heat cold",
+      "cough as primary symptom",
+      "mild fever",
+      "slight thirst"
+    ],
+    "herb_count": 8
+  },
+  "composition": [
+    {
+      "herb_id": "herb.sang_ye",
+      "name_zh": "桑葉",
+      "name_en": "Mulberry Leaf",
+      "pinyin_toned": "Sāng Yè",
+      "dose_g": "7.5",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "甘苦微寒，輕宣上焦風熱，清肺絡之熱",
+      "role_reason_en": "Sweet, bitter, slightly cold; lightly diffuses Wind-Heat in upper burner and clears Lung collaterals"
+    },
+    {
+      "herb_id": "herb.ju_hua",
+      "name_zh": "菊花",
+      "name_en": "Chrysanthemum Flower",
+      "pinyin_toned": "Jú Huā",
+      "dose_g": "3",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "甘苦微寒，清利頭目，疏散風熱——與桑葉相須為君",
+      "role_reason_en": "Sweet, bitter, slightly cold; clears eyes and head, disperses wind-heat - pairs as chief with Sang Ye"
+    },
+    {
+      "herb_id": "herb.xing_ren",
+      "name_zh": "杏仁",
+      "name_en": "Apricot Seed",
+      "pinyin_toned": "Xìng Rén",
+      "dose_g": "6",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "苦溫降氣，止咳平喘——降肺氣以止咳嗽",
+      "role_reason_en": "Bitter and warm; descends Lung qi to arrest cough and wheezing"
+    },
+    {
+      "herb_id": "herb.jie_geng",
+      "name_zh": "桔梗",
+      "name_en": "Platycodon Root",
+      "pinyin_toned": "Jié Gěng",
+      "dose_g": "6",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "苦辛宣肺，載藥上行——與杏仁一宣一降，恢復肺氣宣降",
+      "role_reason_en": "Bitter and acrid; diffuses Lung qi upward - pairs with Xing Ren as one ascending and one descending"
+    },
+    {
+      "herb_id": "herb.lian_qiao",
+      "name_zh": "連翹",
+      "name_en": "Forsythia Fruit",
+      "pinyin_toned": "Lián Qiáo",
+      "dose_g": "4.5",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "苦寒清熱解毒，透達上焦",
+      "role_reason_en": "Bitter and cold; clears heat, dispels toxicity, vents upper burner heat"
+    },
+    {
+      "herb_id": "herb.bo_he",
+      "name_zh": "薄荷",
+      "name_en": "Field Mint",
+      "pinyin_toned": "Bò He",
+      "dose_g": "2.5",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "辛涼疏散風熱，清利頭目",
+      "role_reason_en": "Acrid and cool; assists in dispersing wind-heat and benefiting eyes"
+    },
+    {
+      "herb_id": "herb.lu_gen",
+      "name_zh": "蘆根",
+      "name_en": "Reed Rhizome",
+      "pinyin_toned": "Lú Gēn",
+      "dose_g": "6",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "甘寒清熱生津止渴",
+      "role_reason_en": "Sweet and cold; clears heat, generates fluids and quenches thirst"
+    },
+    {
+      "herb_id": "herb.gan_cao",
+      "name_zh": "甘草",
+      "name_en": "Licorice Root",
+      "pinyin_toned": "Gān Cǎo",
+      "dose_g": "2.5",
+      "role_zh": "使",
+      "role_en": "Envoy",
+      "role_reason_zh": "甘平調和諸藥，合桔梗利咽",
+      "role_reason_en": "Sweet and neutral; harmonizes herbs, pairs with Jie Geng to soothe throat"
+    }
+  ],
+  "key_pairs": [
+    "pair.sang_ye__ju_hua",
+    "pair.jie_geng__xing_ren",
+    "pair.jie_geng__gan_cao"
+  ],
+  "key_pairs_note_zh": "桑葉配菊花（桑菊相須，輕宣上焦風熱、清利頭目）；桔梗配杏仁（一宣一降，開宣肺氣、降氣止咳）；桔梗配甘草（甘桔湯，利咽喉）。",
+  "key_pairs_note_en": "Sang Ye with Ju Hua (mutual accentuation, light cool pair for upper burner); Jie Geng with Xing Ren (one ascends, one descends for Lung qi restoration); Jie Geng with Gan Cao (throat duo).",
+  "fang_yi_zh": "吳鞠通辛涼輕劑。桑葉、菊花輕宣上焦風熱為君；杏仁降氣、桔梗宣肺，二藥一宣一降，恢復肺宣降之常為臣；薄荷助桑菊疏散風熱，連翹清熱解毒，蘆根清熱生津共為佐；生甘草調和諸藥為使。本方比銀翹散更偏於「宣肺止咳」，解表發汗之力較輕。",
+  "fang_yi_en": "Wu Ju-tong's light cool formula. Sang Ye and Ju Hua lightly diffuse upper burner Wind-Heat as chief; Xing Ren descends qi while Platycodon diffuses Lungs as deputies, restoring normal Lung qi dynamics. Bo He, Lian Qiao, and Lu Gen serve as assistants to clear heat and generate fluids. Licorice harmonizes as envoy.",
+  "actions_zh": [
+    "疏風清熱 — 疏散上焦風熱邪氣",
+    "宣肺止咳 — 宣通肺氣、降氣止咳"
+  ],
+  "actions_en": [
+    "Disperses wind and clears heat — clears upper burner Wind-Heat",
+    "Diffuses Lung qi and arrests cough — restores Lung ascending-descending qi movement"
+  ],
+  "indications": [
+    {
+      "pattern_zh": "風熱犯肺證（風熱感冒咳嗽）",
+      "pattern_en": "Wind-Heat attacking Lungs (Wind-Heat cough)",
+      "clinical_picture_zh": "咳嗽、身微熱、口微渴、舌苔薄白、脈浮數",
+      "clinical_picture_en": "Cough, slight fever, slight thirst, thin white tongue coating, floating rapid pulse",
+      "tongue_zh": "苔薄白",
+      "tongue_en": "Thin white coating",
+      "pulse_zh": "脈浮數",
+      "pulse_en": "Floating and rapid"
+    }
+  ],
+  "constitutional_types_zh": [
+    "風寒咳嗽",
+    "陰虛乾咳"
+  ],
+  "constitutional_types_en": [
+    "Wind-Cold cough",
+    "Yin deficiency dry cough"
+  ],
+  "constitutional_note_zh": "風寒咳嗽（痰白稀、惡寒重）者禁用；陰虛乾咳無痰者不宜服用。",
+  "modifications": [
+    {
+      "if_zh": "咳嗽頻作、肺熱甚者",
+      "if_en": "Frequent cough with Lung heat",
+      "change_zh": "加黃芩 9g 清肺熱",
+      "change_en": "Add Huang Qin 9g to clear Lung heat"
+    },
+    {
+      "if_zh": "口渴甚者",
+      "if_en": "Marked thirst",
+      "change_zh": "加天花粉 12g 生津止渴",
+      "change_en": "Add Tian Hua Fen 12g to generate fluids"
+    },
+    {
+      "if_zh": "咽喉腫痛甚者",
+      "if_en": "Severe sore throat",
+      "change_zh": "加玄參 12g、板藍根 15g 清熱解毒利咽",
+      "change_en": "Add Xuan Shen 12g and Ban Lan Gen 15g for throat"
+    }
+  ],
+  "dose_adjustment_note_zh": "水煎服，煮取二杯，日二服。不可過煎。",
+  "dose_adjustment_note_en": "Decoct briefly; take twice daily.",
+  "contraindications_zh": [
+    "風寒咳嗽忌用",
+    "陰虛肺燥乾咳忌用"
+  ],
+  "contraindications_en": [
+    "Contraindicated in Wind-Cold cough",
+    "Contraindicated in dry cough from Yin deficiency"
+  ],
+  "comparisons": [
+    {
+      "with": "formula.yin_qiao_san",
+      "name_zh": "銀翹散",
+      "differentiator_zh": "銀翹散清熱解表力強，主治發熱咽痛；桑菊飲輕宣肺熱力勝，主治咳嗽為主、身微熱。",
+      "differentiator_en": "Yin Qiao San has stronger heat-clearing for fever/throat; Sang Ju Yin is lighter and focuses on cough."
+    }
+  ],
+  "modern_applications_zh": [
+    "急性支氣管炎",
+    "上呼吸道感染",
+    "流行性感冒咳嗽",
+    "急性結膜炎"
+  ],
+  "modern_applications_en": [
+    "Acute bronchitis",
+    "Upper respiratory infection",
+    "Influenza cough",
+    "Acute conjunctivitis"
+  ],
+  "external_links": [
+    {
+      "source_id": "american_dragon",
+      "url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html",
+      "label_zh": "American Dragon",
+      "label_en": "American Dragon",
+      "lang": "en",
+      "link_status": "direct"
+    },
+    {
+      "source_id": "cloudtcm",
+      "url": "https://cloudtcm.com/formula/8",
+      "label_zh": "雲端中醫",
+      "label_en": "CloudTCM",
+      "lang": "zh",
+      "link_status": "direct"
+    }
+  ],
+  "field_sources": {
+    "composition_roles": [
+      "wen_bing_tiao_bian",
+      "bastyr_materia_medica_2"
+    ],
+    "indications": [
+      "wen_bing_tiao_bian"
+    ],
+    "contraindications": [
+      "bastyr_materia_medica_2"
+    ]
+  },
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "formula_song": "桑菊飲中桔杏翹，薄荷蘆根甘草條。\n輕宣風熱止咳嗽，風溫咳嗽服之消。",
+  "exam_pearl": "【考綱重點】風熱犯肺、咳嗽為主證首選方（辛涼輕劑）。桑葉+菊花輕宣風熱；杏仁+桔梗一宣一降止咳。NCBAHM 2026 CH Outline p.20。"
+}

@@ -1,6 +1,42 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-08-06 03:50] Antigravity Handoff — TCM PATTERN CARD TEMPLATE, DYNAMIC BIG CARD, SINGLE-LANG TOGGLE & XIAO QING LONG TANG GOLD-STANDARD UPGRADE 🎉
+## [2026-08-06 04:12] Antigravity Handoff — BATCH 1 FORMULA RESTORATION COMPLETE (YIN QIAO SAN, SANG JU YIN, BAI HU TANG) 🎉
+
+- **Agent**: Antigravity
+- **Commit/State**: Batch 1 Gold-Standard formula reference cards generated and merged into `data/herbs/formulas.json` and `data/generated/knowledge_data.js`.
+- **Restored Formulas (3/3)**:
+  1. `formula.yin_qiao_san` (銀翹散 · Honeysuckle and Forsythia Powder):
+     - Created `data/herbs/reference/formula.yin_qiao_san.json`.
+     - 10-herb composition with exact per-herb `dose_g` & roles (`金銀花 30g` 君, `連翹 30g` 君, `薄荷 18g` 臣, `牛蒡子 18g` 臣, `荊芥穗 12g` 臣, `淡豆豉 15g` 臣, `桔梗 18g` 佐, `甘草 15g` 使, `蘆根 20g` 佐, `淡竹葉 12g` 佐).
+     - 4 Herb Pairs (`金銀花+連翹`, `薄荷+牛蒡子`, `桔梗+甘草`, `荊芥+淡豆豉`).
+     - 3 Actions, 1 Indications pattern (with tongue `舌尖紅，苔薄白或薄黃`, pulse `脈浮數`), 4 Modifications, 1 Comparison (vs 桑菊飲), 1 Formula Family (`桑菊飲`), 3 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/7`, American Dragon `https://www.americandragon.com/HerbFormulas/YinQiaoSan.html`.
+  2. `formula.sang_ju_yin` (桑菊飲 · Mulberry Leaf and Chrysanthemum Drink):
+     - Created `data/herbs/reference/formula.sang_ju_yin.json`.
+     - 8-herb composition with exact per-herb `dose_g` & roles (`桑葉 7.5g` 君, `菊花 3g` 君, `杏仁 6g` 臣, `桔梗 6g` 臣, `連翹 4.5g` 佐, `薄荷 2.5g` 佐, `蘆根 6g` 佐, `甘草 2.5g` 使).
+     - 3 Herb Pairs (`桑葉+菊花`, `桔梗+杏仁`, `桔梗+甘草`).
+     - 2 Actions, 1 Indications pattern (with tongue `苔薄白`, pulse `脈浮數`), 3 Modifications, 1 Comparison (vs 銀翹散), 2 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/8`, American Dragon `https://www.americandragon.com/HerbFormulas/SangJuYin.html`.
+  3. `formula.bai_hu_tang` (白虎湯 · White Tiger Decoction):
+     - Created `data/herbs/reference/formula.bai_hu_tang.json`.
+     - 4-herb composition with exact per-herb `dose_g` & roles (`石膏 30g` 君, `知母 9g` 臣, `炙甘草 3g` 使, `粳米 9g` 使).
+     - 2 Herb Pairs (`石膏+知母`, `炙甘草+粳米`).
+     - 2 Actions, 1 Indications pattern (Four Bigs四大證: 身大熱、口大渴、汗大出、脈洪大, tongue `舌紅，苔黃乾`, pulse `脈洪大有力或滑數`), 3 Modifications, 1 Comparison (vs 黃連解毒湯), 3 Formula Family variants (`白虎加人參湯`, `白虎加桂枝湯`, `白虎加蒼朮湯`), 4 Contraindications (白虎四禁), NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/98`, American Dragon `https://www.americandragon.com/HerbFormulas/BaiHuTang.html`.
+- **Files Changed**:
+  - `data/herbs/reference/formula.yin_qiao_san.json`: [NEW]
+  - `data/herbs/reference/formula.sang_ju_yin.json`: [NEW]
+  - `data/herbs/reference/formula.bai_hu_tang.json`: [NEW]
+  - `data/herbs/formulas.json`: Updated with 3 gold-standard records.
+  - `scripts/build_batch1_gold_formulas.js`: [NEW]
+- **Validation Run**:
+  - `node scripts/build_batch1_gold_formulas.js`: **PASS** ✅
+  - `node scripts/build-data.js`: **PASS** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+- **Protected Areas Explicitly Not Touched**: `formula.ma_huang_tang`, `formula.gui_zhi_tang`, `formula.xiao_qing_long_tang`, `formula.ge_gen_tang`, `formula.xiang_su_san`, UI files, validator scripts.
+- **Next Recommended Batch**: Batch 2 (Candidate 4: 黃連解毒湯, Candidate 5: 龍膽瀉肝湯, Candidate 6: 導赤散).
+
+---
 
 - **Agent**: Antigravity
 - **Commit/State**: Saved to working tree and built to `data/generated/knowledge_data.js` & `data/generated/app_data.js`
