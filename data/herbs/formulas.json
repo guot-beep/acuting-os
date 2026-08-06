@@ -141,7 +141,10 @@
           "role_zh": "君",
           "role_en": "Chief",
           "role_reason_zh": "辛溫解肌發表，溫通衛陽",
-          "in_formula_zh": "辛溫解肌發表，溫通衛陽"
+          "in_formula_zh": "解肌發表，散肌表風寒，調暢衛陽。與白芍相配為本方君臣藥對，一散一收，共調營衛。",
+          "dose_range": "9g（AD 4-9g）",
+          "properties_zh": "辛、溫",
+          "channels_zh": "肺、膀胱"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -156,7 +159,10 @@
           "role_zh": "臣",
           "role_en": "Deputy",
           "role_reason_zh": "酸苦微寒，斂陰和營，益陰固表——與桂枝相須調和營衛",
-          "in_formula_zh": "酸苦微寒，斂陰和營，益陰固表——與桂枝相須調和營衛"
+          "in_formula_zh": "斂陰和營，制桂枝辛散之過。汗出為腠理不固、當閉不閉，白芍收之。",
+          "dose_range": "9g（AD 4-9g）",
+          "properties_zh": "苦、酸、微寒",
+          "channels_zh": "肝、脾"
         },
         {
           "herb_id": "herb.sheng_jiang",
@@ -171,7 +177,10 @@
           "role_zh": "佐",
           "role_en": "Assistant",
           "role_reason_zh": "辛溫助桂枝解表，溫胃止嘔",
-          "in_formula_zh": "辛溫助桂枝解表，溫胃止嘔"
+          "in_formula_zh": "助桂枝解表，兼和胃降逆止乾嘔。與大棗為次要藥對，協助君臣藥對調和營衛。",
+          "dose_range": "9g（AD 3-9g）",
+          "properties_zh": "辛、溫",
+          "channels_zh": "肺、胃"
         },
         {
           "herb_id": "herb.da_zhao",
@@ -186,7 +195,10 @@
           "role_zh": "佐",
           "role_en": "Assistant",
           "role_reason_zh": "甘溫益氣養血，助白芍和營",
-          "in_formula_zh": "甘溫益氣養血，助白芍和營"
+          "in_formula_zh": "補中益氣，助白芍和營。與生薑相配，一辛一甘，調和脾胃而資營衛生化之源。",
+          "dose_range": "3 枚（AD 3-12g）",
+          "properties_zh": "甘、平",
+          "channels_zh": "脾、胃"
         },
         {
           "herb_id": "herb.zhi_gan_cao",
@@ -201,7 +213,10 @@
           "role_zh": "使",
           "role_en": "Envoy",
           "role_reason_zh": "甘平調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰",
-          "in_formula_zh": "甘平調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰"
+          "in_formula_zh": "調和諸藥。配桂枝辛甘化陽以助衛，配白芍酸甘化陰以和營 —— 一味藥同時參與兩組配伍，是本方結構的關鍵。",
+          "dose_range": "6g（AD 2-6g）",
+          "properties_zh": "甘、溫",
+          "channels_zh": "肺、脾"
         }
       ],
       "actions_en": [
@@ -217,24 +232,30 @@
         "發汗解表 — 微發其汗、散斜而不傷正"
       ],
       "modifications_en": [
-        "Stiff neck and upper back: Add Ge Gen 15g (Gui Zhi Jia Ge Gen Tang)",
-        "Abdominal fullness and pain: Double Bai Shao to 18g (Gui Zhi Jia Shao Yao Tang)",
-        "Wheezing: Add Hou Po 9g and Xing Ren 9g (Gui Zhi Jia Hou Po Xing Zi Tang)"
+        "Stiffness of the neck and upper back → add Ge Gen (Gui Zhi Jia Ge Gen Tang)",
+        "With wheezing and rebellious cough → add Hou Po and Xing Ren (Gui Zhi Jia Hou Po Xing Zi Tang)",
+        "Profuse unremitting sweating → increase Bai Shao, add Wei Ling Xian",
+        "Fever greater than chills → add Shi Gao and Zhi Mu",
+        "Swollen, heavy sensation in the head → add Ju Hua and Chan Tui",
+        "With Wind-Cold-Damp Bi → add Jiang Huang and Xi Xin"
       ],
       "modifications_zh": [
-        "項背強幾幾者：加葛根 15g ➔ 即桂枝加葛根湯",
-        "腹滿時痛者：倍白芍至 18g ➔ 即桂枝加芍藥湯",
-        "喘甚者：加厚朴 9g、杏仁 9g ➔ 即桂枝加厚朴杏子湯"
+        "項背強几几 → 加葛根（桂枝加葛根湯）",
+        "兼喘咳氣逆 → 加厚朴、杏仁（桂枝加厚朴杏子湯）",
+        "汗出過多不止 → 重用白芍，加威靈仙",
+        "發熱重於惡寒 → 加石膏、知母",
+        "頭重如裹 → 加菊花、蟬蛻",
+        "兼風寒濕痺 → 加薑黃、細辛"
       ],
       "contraindications_en": [
-        "Contraindicated in exterior excess without sweating (Ma Huang Tang pattern)",
-        "Contraindicated in Wind-Heat or early stage Warm Disease",
-        "Contraindicated in alcoholics or interior heat excess"
+        "Contraindicated in exterior-excess WITHOUT sweating — that is the Ma Huang Tang pattern; Shang Han Lun states it explicitly: with a floating tight pulse, fever and no sweating, this formula must not be given.",
+        "Not for early-stage warm disease with constrained heat, thirst and a rapid pulse — the acrid-warm action aggravates heat.",
+        "Not suitable where damp-heat is retained internally; it tends to provoke vomiting."
       ],
       "contraindications_zh": [
-        "表實無汗、麻黃湯證者禁用",
-        "溫病初起、風熱感冒（咽喉腫痛、發熱重）禁用",
-        "內熱熾盛、酒客病者禁用"
+        "表實無汗者禁用 —— 此為麻黃湯證，誤用桂枝湯則邪無出路。《傷寒論》：「桂枝本為解肌，若其人脈浮緊、發熱汗不出者，不可與之也。」",
+        "溫病初起、表有鬱熱而見發熱口渴、脈數者不宜 —— 辛溫助熱。",
+        "酒客（濕熱內蘊者）不宜，服之易致嘔。"
       ],
       "herb_drug_cautions": [
         "sweating",
@@ -249,10 +270,14 @@
       "fertility_notes": "",
       "clinical_pearls": [],
       "pattern_indications_en": [
-        "Wind-Cold exterior deficiency (Tai Yang wind strike): Fever, aversion to wind, sweating, headache, nasal congestion, dry retching, thin white coating, floating moderate/slow pulse."
+        "Wind-Cold attacking the exterior with Ying-Wei deficiency (Tai Yang Zhong Feng): fever, aversion to wind, sweating, headache, nasal congestion, dry heaves, thin white coating, floating moderate pulse.",
+        "Spontaneous sweating from Ying-Wei disharmony: sweating that does not resolve the exterior, or recurrent fever and sweating with no external contraction.",
+        "Ying-Wei weakness after serious illness or childbirth, with fever, aversion to wind, sweating and a floating moderate pulse."
       ],
       "pattern_indications_zh": [
-        "外感風寒表虛證（太陽中風）：發熱、惡風、汗出、頭痛、鼻鳴乾嘔、苔薄白、脈浮緩。"
+        "外感風寒表虛證（太陽中風）：發熱、惡風、汗出、頭痛、鼻鳴乾嘔、苔薄白、脈浮緩。",
+        "營衛不和之自汗：汗出而表證不解，或無外感而時發熱自汗出。",
+        "病後、產後營衛虛弱，見發熱惡風、汗出、脈浮緩者。"
       ],
       "related_conditions": [
         "pattern.spleen_qi_deficiency"
@@ -296,11 +321,13 @@
         "formula.xiao_qing_long_tang",
         "formula.bai_du_san"
       ],
-      "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
+      "clinical_use_note": "桂枝湯與麻黃湯的分界只有一個字：汗。有汗用桂枝，無汗用麻黃。脈浮緩對浮緊。這一組是《傷寒論》太陽病的入門對比，也是考試最常出的一組。",
       "source_classic": "《傷寒雜病論》",
       "exact_source_url": "https://cloudtcm.com/formula/2",
       "fetched_at": "2026-07-23T07:08:37.898Z",
       "cautions_zh": [
+        "服後宜啜熱稀粥以助藥力，溫覆取微汗 —— 汗出當「遍身漐漐微似有汗」，不可令如水淋漓，大汗則病必不除。",
+        "得汗即停後服，不必盡劑。",
         "服藥期間禁食生冷、黏滑、肉麵、五辛、酒酪、臭惡等物。\n凡外感風寒表實無汗者禁用。不正確用此方，會產生高熱，自汗，口干，心悸，煩躁等證。\n雖有汗出，若伴見發熱口渴，咽痛、脈數或胸悶、苔黃膩、脈滑數，證為溫病初起，或濕溫為患者，禁用本方。\n汗出惡風若與倦怠乏力、氣短懶言等症並見，屬肺衛氣虛、表衛不固證，亦不宜使用。"
       ],
       "safety_source": "cloudtcm_cautions_field",
@@ -329,6 +356,14 @@
         "四肢麻痺癱瘓"
       ],
       "symptoms_zh": [
+        "發熱",
+        "惡風",
+        "汗出",
+        "頭痛",
+        "項強",
+        "鼻鳴",
+        "乾嘔",
+        "不渴",
         "發燒及發冷",
         "怕冷",
         "身體容易出汗",
@@ -366,6 +401,72 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
+        ],
+        "composition": [
+          "curriculum 方剂学汇总 Table 15 (Rank/Herb/Amount/Properties/Channels/Notes)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "tongue_zh": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "pulse_zh": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "symptoms_zh": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "pattern_indications_zh": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "pattern_indications_en": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "applications_zh": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "applications_en": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "modern_research_zh": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)"
+        ],
+        "modern_research_en": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)"
+        ],
+        "modifications_zh": [
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html",
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)"
+        ],
+        "modifications_en": [
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "contraindications_zh": [
+          "《傷寒論》桂枝湯禁例",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "contraindications_en": [
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "cautions_zh": [
+          "《傷寒論》桂枝湯服法（啜熱稀粥、溫覆取微汗）"
+        ],
+        "formula_family": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "source_classic": [
+          "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+          "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
         ]
       },
       "cloudtcm_id": 2,
@@ -435,7 +536,7 @@
         "pair.sheng_jiang__da_zhao",
         "pair.shao_yao__gan_cao"
       ],
-      "key_pairs_note_zh": "桂枝配白芍（一發一收、調和營衛）；生薑配大棗（升降相因、調和脾胃）；芍藥配甘草（酸甘化陰、緩急止痛）。",
+      "key_pairs_note_zh": "君臣藥對：桂枝配白芍（一散一收，調和營衛，是本方的核心結構）。次要藥對：生薑配大棗（辛甘化陽、調和脾胃，資營衛生化之源）。炙甘草同時參與兩組 —— 配桂枝辛甘化陽，配白芍酸甘化陰。",
       "key_pairs_note_en": "Gui Zhi with Bai Shao (one disperses, one restrains for Ying-Wei harmony); Sheng Jiang with Da Zhao (harmonizes Spleen and Stomach); Shao Yao with Gan Cao (sour and sweet transform into Yin).",
       "fang_yi_zh": "《傷寒論》群方之首。桂枝辛溫透表解肌為君；白芍酸苦斂陰和營為臣；生薑助桂枝解表止嘔，大棗助白芍和營補中，二藥相配調和脾胃為佐；炙甘草調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰為使。全方散中有收，發汗而不傷陰。",
       "fang_yi_en": "The premier formula of Shang Han Lun. Gui Zhi disperses and releases muscle layer as chief; Bai Shao restrains yin and harmonizes ying as deputy.",
@@ -517,29 +618,95 @@
       "exam_pearl": "【考綱重點】外感風寒表虛證（發熱、惡風、汗出、脈浮緩）萬方之祖。桂枝+白芍1:1調和營衛；生薑+大棗調和脾胃。服後「啜熱稀粥」助汗。NCBAHM 2026 CH Outline p.20。",
       "formula_family": [
         {
+          "relation": "加",
           "formula_id": "formula.gui_zhi_jia_ge_gen_tang",
           "name_zh": "桂枝加葛根湯",
-          "relation": "加",
           "change": [
-            "加葛根 15g"
+            "+葛根 12g"
           ],
-          "change_en": [
-            "Add Ge Gen 15g"
-          ]
+          "indication_zh": "太陽中風兼項背強几几",
+          "source": "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)"
         },
         {
-          "formula_id": "formula.gui_zhi_jia_shao_yao_tang",
-          "name_zh": "桂枝加芍藥湯",
-          "relation": "倍",
+          "relation": "加",
+          "name_zh": "桂枝加厚朴杏子湯",
           "change": [
-            "倍白芍至 18g"
+            "+厚朴 6g",
+            "+杏仁 9g"
           ],
-          "change_en": [
-            "Double Bai Shao to 18g"
-          ]
+          "indication_zh": "太陽中風兼喘咳",
+          "source": "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        },
+        {
+          "relation": "倍",
+          "name_zh": "桂枝加芍藥湯",
+          "change": [
+            "芍藥 9g → 18g"
+          ],
+          "indication_zh": "太陽病誤下，腹滿時痛",
+          "source": "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)"
+        },
+        {
+          "relation": "加",
+          "name_zh": "桂枝加附子湯",
+          "change": [
+            "+附子 3g"
+          ],
+          "indication_zh": "發汗太過，漏汗不止、惡風、小便難、四肢微急",
+          "source": "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)"
         }
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/GuiZhiTang.html"
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html",
+      "tongue_zh": "舌淡紅，苔薄白而潤",
+      "tongue_en": "Pale-red tongue with a thin, white, moist coating",
+      "pulse_zh": "脈浮緩（或浮弱）",
+      "pulse_en": "Floating and moderate, or floating and weak",
+      "symptoms_en": [
+        "Fever",
+        "Aversion to wind",
+        "Sweating",
+        "Headache",
+        "Stiff neck",
+        "Nasal congestion",
+        "Dry heaves",
+        "No thirst"
+      ],
+      "applications_zh": [
+        "感冒、流行性感冒、上呼吸道感染 —— 屬表虛有汗者",
+        "產後發熱、慢性低熱",
+        "慢性鼻炎、過敏性鼻炎",
+        "濕疹、蕁麻疹、皮膚搔癢",
+        "凍瘡",
+        "神經痛、坐骨神經痛",
+        "妊娠惡阻（晨吐）"
+      ],
+      "applications_en": [
+        "Common cold, influenza, upper respiratory tract infection — the exterior-deficient pattern WITH sweating",
+        "Postpartum fever; chronic low-grade fever",
+        "Chronic and allergic rhinitis",
+        "Eczema, urticaria, pruritus",
+        "Frostbite",
+        "Neuralgia, sciatica",
+        "Morning sickness"
+      ],
+      "modern_research_zh": [
+        "體溫雙向調節作用（發熱時降溫、體溫偏低時回升）",
+        "調節汗腺分泌",
+        "抗發炎",
+        "鎮痛",
+        "鎮靜",
+        "抑菌",
+        "祛痰"
+      ],
+      "modern_research_en": [
+        "Dual-direction temperature regulation",
+        "Regulates sweat secretion",
+        "Anti-inflammatory",
+        "Analgesic",
+        "Sedative",
+        "Bacterio-inhibitory",
+        "Expectorant"
+      ]
     },
     {
       "id": "formula.ma_huang_tang",
@@ -808,6 +975,9 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "on_board_list": true,
@@ -1044,7 +1214,7 @@
       ],
       "_links_todo": "Direct per-formula URLs still needed on both sites - same pattern as the herb URL map. See SCHEDULE N4.",
       "reviewed_by": null,
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/MaHuangTang.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/MaHuangTang.html",
       "formula_song": "麻黃湯中用桂枝，杏仁甘草四般施。\n發熱惡寒頭項痛，喘而無汗宜服之。"
     },
     {
@@ -1340,6 +1510,9 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 41,
@@ -1535,7 +1708,7 @@
         "Emphysema",
         "Cor pulmonale"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/XiaoQingLongTang.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoQingLongTang.html",
       "formula_song_zh": "小青龍湯細辛麻，桂芍乾薑半夏加。\n五味甘草同煎服，外寒內飲喘咳差。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
@@ -2205,6 +2378,9 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 271,
@@ -2404,7 +2580,7 @@
         "Mumps",
         "Early-stage measles"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/YinQiaoSan.html",
       "formula_song_zh": "銀翹散主上焦病，竹葉荊牛豉薄荷。\n甘桔蘆根涼解法，清疏風熱發熱瘥。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
@@ -2724,6 +2900,9 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 162,
@@ -2904,7 +3083,7 @@
         "Influenza cough",
         "Acute conjunctivitis"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SangJuYin.html",
       "formula_song_zh": "桑菊飲中桔杏翹，薄荷蘆根甘草條。\n輕宣風熱止咳嗽，風溫咳嗽服之消。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
@@ -3374,6 +3553,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/173",
@@ -3419,7 +3601,8 @@
       },
       "formula_song": "柴葛解肌桔膏芩，羌膏白芷芍甘尋。\n太陽陽明陽經病，目痛鼻乾膝楚沉。",
       "formula_song_zh": "柴葛解肌桔膏芩，羌膏白芷芍甘尋。\n太陽陽明陽經病，目痛鼻乾膝楚沉。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/ChaiGeJieJiTang.html"
     },
     {
       "id": "formula.ge_gen_tang",
@@ -3768,6 +3951,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/12",
@@ -3783,7 +3969,8 @@
       "pattern_tags_en": [],
       "formula_song": "人參敗毒草苓芎，羌獨柴前枳桔同。\n生薑薄荷煎服勝，氣虛外感風濕功。",
       "formula_song_zh": "人參敗毒草苓芎，羌獨柴前枳桔同。\n生薑薄荷煎服勝，氣虛外感風濕功。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/RenShenBaiDuSan.html"
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -4174,6 +4361,9 @@
         "contraindications": [
           "shang_han_lun",
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 98,
@@ -4365,7 +4555,7 @@
         "Heat stroke",
         "Diabetes mellitus"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/BaiHuTang.html",
       "formula_song_zh": "白虎湯用石膏知，甘草粳米四般施。\n亦有加參添桂法，濕溫大熱小兒宜。",
       "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
     },
@@ -4938,6 +5128,9 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 244,
@@ -5085,7 +5278,7 @@
         "Acute suppurative infection",
         "Bacillary dysentery"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/HuangLianJieDuTang.html",
       "external_links": [
         {
           "source_id": "american_dragon",
@@ -6103,6 +6296,9 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 281,
@@ -6249,7 +6445,7 @@
         "Acute cystitis",
         "Infantile night crying"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/DaoChiSan.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html",
       "external_links": [
         {
           "source_id": "american_dragon",
@@ -6625,6 +6821,9 @@
         ],
         "contraindications": [
           "bastyr_materia_medica_2"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 286,
@@ -6805,7 +7004,7 @@
         "Vaginitis",
         "Hypertension (Liver Fire)"
       ],
-      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/LongDanXieGanTang.html",
       "external_links": [
         {
           "source_id": "american_dragon",
@@ -7674,6 +7873,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 567,
@@ -7696,7 +7898,8 @@
             "鱉甲 15g"
           ]
         }
-      }
+      },
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/QingHaoBieJiaTang.html"
     },
     {
       "id": "formula.qing_gu_san",
@@ -8557,6 +8760,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 32,
@@ -8584,7 +8790,8 @@
       },
       "formula_song": "大承氣湯用硝黃，厚朴枳實四般瀉。\n峻下熱結陽明實，痞滿燥實堅皆下。",
       "formula_song_zh": "大承氣湯用硝黃，厚朴枳實四般瀉。\n峻下熱結陽明實，痞滿燥實堅皆下。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
     },
     {
       "id": "formula.xiao_cheng_qi_tang",
@@ -8896,6 +9103,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 40,
@@ -8919,7 +9129,8 @@
             "枳實 9g"
           ]
         }
-      }
+      },
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoChengQiTang.html"
     },
     {
       "id": "formula.tiao_wei_cheng_qi_tang",
@@ -9169,6 +9380,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 277,
@@ -9189,7 +9403,8 @@
             "甘草 6g"
           ]
         }
-      }
+      },
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/TiaoWeiChengQiTang.html"
     },
     {
       "id": "formula.zeng_ye_cheng_qi_tang",
@@ -10123,6 +10338,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 43,
@@ -10172,7 +10390,8 @@
       },
       "formula_song": "小柴胡湯和解供，半夏人參甘草同。\n黃芩生薑大棗合，少陽百病此方宗。",
       "formula_song_zh": "小柴胡湯和解供，半夏人參甘草同。\n黃芩生薑大棗合，少陽百病此方宗。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoChaiHuTang.html"
     },
     {
       "id": "formula.da_chai_hu_tang",
@@ -10883,6 +11102,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 219,
@@ -10936,7 +11158,8 @@
       },
       "formula_song": "逍遙散用當歸芍，柴苓朮草薄荷偎。\n煨薑同煎肝脾調，氣鬱血虛脅痛消。",
       "formula_song_zh": "逍遙散用當歸芍，柴苓朮草薄荷偎。\n煨薑同煎肝脾調，氣鬱血虛脅痛消。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoYaoSan.html"
     },
     {
       "id": "formula.jia_wei_xiao_yao_san",
@@ -12007,6 +12230,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 67,
@@ -12058,7 +12284,8 @@
       },
       "formula_song": "半夏瀉心黃連芩，乾薑人參甘棗尋。\n辛開苦降調脾胃，寒熱錯雜痞滿平。",
       "formula_song_zh": "半夏瀉心黃連芩，乾薑人參甘棗尋。\n辛開苦降調脾胃，寒熱錯雜痞滿平。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/BanXiaXieXinTang.html"
     },
     {
       "id": "formula.li_zhong_wan",
@@ -12189,12 +12416,16 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
       "formula_song": "理中丸主溫中氣，人參乾薑朮草劑。\n脾胃虛寒嘔吐瀉，理中安胃功最奇。",
       "formula_song_zh": "理中丸主溫中氣，人參乾薑朮草劑。\n脾胃虛寒嘔吐瀉，理中安胃功最奇。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/LiZhongTang.html"
     },
     {
       "id": "formula.fu_zi_li_zhong_wan",
@@ -12904,6 +13135,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 483,
@@ -12927,7 +13161,8 @@
       },
       "formula_song": "四逆湯中附子薑，炙甘草配救回陽。\n陽虛厥逆脈微細，回陽救逆第一方。",
       "formula_song_zh": "四逆湯中附子薑，炙甘草配救回陽。\n陽虛厥逆脈微細，回陽救逆第一方。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiNiTang.html"
     },
     {
       "id": "formula.shen_fu_tang",
@@ -13852,6 +14087,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 75,
@@ -13894,7 +14132,8 @@
       },
       "formula_song": "四君子湯中和義，人參朮茯甘草炙。\n益氣健脾基礎方，脾胃氣虛服之宜。",
       "formula_song_zh": "四君子湯中和義，人參朮茯甘草炙。\n益氣健脾基礎方，脾胃氣虛服之宜。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiJunZiTang.html"
     },
     {
       "id": "formula.liu_jun_zi_tang",
@@ -15179,6 +15418,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 262,
@@ -15229,7 +15471,8 @@
       },
       "formula_song": "補中益氣芪參朮，炙草升柴當歸陳。\n升陽舉陷清氣上，甘溫除熱名不虛。",
       "formula_song_zh": "補中益氣芪參朮，炙草升柴當歸陳。\n升陽舉陷清氣上，甘溫除熱名不虛。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/BuZhongYiQiTang.html"
     },
     {
       "id": "formula.yu_ping_feng_san",
@@ -15576,9 +15819,13 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
-      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。"
+      "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/ShengMaiSan.html"
     },
     {
       "id": "formula.ren_shen_yang_rong_tang",
@@ -15969,6 +16216,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 77,
@@ -16015,7 +16265,8 @@
       },
       "formula_song": "四物湯主調經血，芎歸地芍四般施。\n營血虛滯諸般疾，補血和血此方奇。",
       "formula_song_zh": "四物湯主調經血，芎歸地芍四般施。\n營血虛滯諸般疾，補血和血此方奇。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiWuTang.html"
     },
     {
       "id": "formula.tao_hong_si_wu_tang",
@@ -17217,6 +17468,9 @@
         ],
         "condition_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/20",
@@ -17263,7 +17517,8 @@
       },
       "formula_song": "十全大補八珍合，黃芪肉桂十般多。\n溫補氣血虛勞疾，潰瘍不斂效無過。",
       "formula_song_zh": "十全大補八珍合，黃芪肉桂十般多。\n溫補氣血虛勞疾，潰瘍不斂效無過。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/ShiQuanDaBuTang.html"
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -17612,6 +17867,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 55,
@@ -17664,7 +17922,8 @@
       },
       "formula_song": "六味地黃山茱萸，山藥澤瀉丹茯苓。\n三補三瀉配伍妙，腎陰不足服之靈。",
       "formula_song_zh": "六味地黃山茱萸，山藥澤瀉丹茯苓。\n三補三瀉配伍妙，腎陰不足服之靈。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/LiuWeiDiHuangWan.html"
     },
     {
       "id": "formula.zuo_gui_wan",
@@ -18906,6 +19165,9 @@
         ],
         "composition": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "condition_tags_zh": [
@@ -18931,7 +19193,8 @@
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
       "formula_song": "金匱腎氣地黃丸，桂附加入八味全。\n溫補腎陽化氣水，陽虛水腫腰酸痊。",
       "formula_song_zh": "金匱腎氣地黃丸，桂附加入八味全。\n溫補腎陽化氣水，陽虛水腫腰酸痊。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/ShenQiWan.html"
     },
     {
       "id": "formula.zhi_gan_cao_tang",
@@ -20468,6 +20731,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 270,
@@ -20502,7 +20768,8 @@
       },
       "formula_song": "酸棗 popular 湯茯苓知，川芎甘草五般施。\n虛勞虛煩不得眠，養心安神肝血滋。",
       "formula_song_zh": "酸棗 popular 湯茯苓知，川芎甘草五般施。\n虛勞虛煩不得眠，養心安神肝血滋。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SuanZaoRenTang.html"
     },
     {
       "id": "formula.tian_wang_bu_xin_dan",
@@ -21201,6 +21468,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 89,
@@ -21221,7 +21491,8 @@
             "浮小麥 15g"
           ]
         }
-      }
+      },
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/GanMaiDaZaoTang.html"
     },
     {
       "id": "formula.chai_hu_jia_long_gu_mu_li_tang",
@@ -34117,6 +34388,9 @@
         ],
         "pattern_tags_en": [
           "data/config/formula_tag_glossary.json"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 293,
@@ -34180,7 +34454,8 @@
       },
       "formula_song": "歸脾湯用術參芪，歸草茯神遠志隨。\n酸棗木香龍眼肉，心脾兩虛血不歸。",
       "formula_song_zh": "歸脾湯用術參芪，歸草茯神遠志隨。\n酸棗木香龍眼肉，心脾兩虛血不歸。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/GuiPiTang.html"
     },
     {
       "id": "formula.bai_du_san",
@@ -37244,6 +37519,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 224,
@@ -37271,7 +37549,8 @@
             "杏仁 9g"
           ]
         }
-      }
+      },
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/MaXingShiGanTang.html"
     },
     {
       "id": "formula.mai_men_dong_tang",
@@ -39307,6 +39586,9 @@
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        ],
+        "american_dragon_url": [
+          "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
         ]
       },
       "cloudtcm_id": 78,
@@ -39334,7 +39616,8 @@
       },
       "formula_song": "四逆散中用柴胡，芍藥枳實甘草俱。\n透熱舒肝和脾胃，陽鬱厥逆此方圖。",
       "formula_song_zh": "四逆散中用柴胡，芍藥枳實甘草俱。\n透熱舒肝和脾胃，陽鬱厥逆此方圖。",
-      "formula_song_source_zh": "出自汪昂《湯頭歌訣》"
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "american_dragon_url": "https://americandragon.com/Herb%20Formulas%20copy/SiNiSan.html"
     },
     {
       "id": "formula.su_he_xiang_wan",
