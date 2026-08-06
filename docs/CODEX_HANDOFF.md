@@ -1,5 +1,34 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-06 04:34] Antigravity Handoff — BATCH 2 FORMULA RESTORATION COMPLETE (HUANG LIAN JIE DU TANG, LONG DAN XIE GAN TANG, DAO CHI SAN) 🎉
+
+- **Agent**: Antigravity
+- **Commit/State**: Batch 2 Gold-Standard formula reference cards generated and merged into `data/herbs/formulas.json` and `data/generated/knowledge_data.js`.
+- **Restored Formulas (3/3)**:
+  1. `formula.huang_lian_jie_du_tang` (黃連解毒湯 · Coptis Decoction to Relieve Toxicity):
+     - Created `data/herbs/reference/formula.huang_lian_jie_du_tang.json`.
+     - 4-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`黃連 9g` 君, `黃芩 6g` 臣, `黃柏 6g` 臣, `梔子 9g` 佐).
+     - 3 Herb Pairs (`黃連+黃芩`, `黃芩+黃柏`, `黃連+梔子`).
+     - 2 Actions, 1 Indications pattern (三焦火毒熾盛證，含舌 `舌紅，苔黃` 脈 `脈數有力`), 3 Modifications, 2 Comparisons (vs 白虎湯, vs 龍膽瀉肝湯), 1 Formula Family (`瀉心湯`), 3 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/244`, American Dragon `https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html`.
+  2. `formula.long_dan_xie_gan_tang` (龍膽瀉肝湯 · Gentian Decoction to Drain the Liver):
+     - Created `data/herbs/reference/formula.long_dan_xie_gan_tang.json`.
+     - 10-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`龍膽草 6g` 君, `黃芩 9g` 臣, `梔子 9g` 臣, `澤瀉 12g` 佐, `木通 6g` 佐, `車前子 9g` 佐, `生地黃 12g` 佐, `當歸 9g` 佐, `柴胡 9g` 使, `甘草 6g` 使).
+     - 3 Herb Pairs (`龍膽草+柴胡`, `黃芩+梔子`, `生地+當歸`).
+     - 2 Actions, 1 Indications pattern (肝膽實火上炎／濕熱下注，含舌 `舌紅，苔黃膩` 脈 `脈弦數有力`), 3 Modifications, 1 Comparison (vs 黃連解毒湯), 3 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/286`, American Dragon `https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html`.
+  3. `formula.dao_chi_san` (導赤散 · Guide Out the Red Powder):
+     - Created `data/herbs/reference/formula.dao_chi_san.json`.
+     - 4-herb composition with exact per-herb `dose_g` & `decoction_reference_g`, roles, and `in_formula_zh` (`生地黃 15g` 君, `淡竹葉 6g` 臣, `木通 6g` 臣, `甘草 6g` 使).
+     - 2 Herb Pairs (`生地+淡竹葉`, `木通+甘草梢`).
+     - 2 Actions, 1 Indications pattern (心經火熱／心火下移小腸，含舌 `舌尖紅絳` 脈 `脈數`), 3 Modifications, 2 Comparisons (vs 瀉心湯, vs 八正散), 2 Contraindications, NCBAHM 2026 pearls.
+     - Direct links: CloudTCM `https://cloudtcm.com/formula/281`, American Dragon `https://www.americandragon.com/HerbFormulas/DaoChiSan.html`.
+- **Validation Run**:
+  - `node scripts/validate-formula-standard.js`: **PASS (9 template-grade, 0 blocking defects for restored formulas)** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+
+---
+
 ## [2026-08-06 04:26] Antigravity Handoff — XIAO QING LONG TANG 100% GOLD-STANDARD RESTORATION COMPLETE 🎉
 
 - **Agent**: Antigravity

@@ -4664,17 +4664,17 @@
     {
       "id": "formula.huang_lian_jie_du_tang",
       "name_zh": "黃連解毒湯",
-      "name_en": "Coptis Decoction to Relieve Toxicity",
+      "name_en": "Huang Lian Jie Du Tang",
       "pinyin": "Huang Lian Jie Du Tang",
       "review_status": "draft",
       "source_status": "source_review_pending",
       "source_type": "sourced_cloudtcm_record",
       "category_id": "",
-      "category_en": "Clear Heat",
+      "category_en": "Formulas that Clear Heat - Clear Heat & Relieve Toxicity",
       "category": "清熱劑 / Clear Heat",
       "tier": "core",
       "source_hint": "Bensky F&S: Clear Heat; add to AcuTing formulas after Ting approval",
-      "comparison_group": "heat_toxin_fire",
+      "comparison_group": "清熱劑 / Clear Heat",
       "modern_clinical_use_tags": [],
       "related_conditions": [],
       "related_formulas": [
@@ -4688,112 +4688,110 @@
       "public_safe": false,
       "study_tags": [],
       "pattern_focus_en": [],
-      "actions_en": [],
+      "actions_en": [
+        "Drains fire and relieves toxicity — purges toxic fire excess from all three burners",
+        "Clears heat and dries dampness — clears damp-heat pathogens from organs"
+      ],
       "actions_zh": [
-        "常見症狀包括：高燒、煩躁不安、口乾舌燥、喉嚨乾痛、眼睛紅腫疼痛、失眠、神智不清或說胡話；嚴重時還可能出現吐血、流鼻血、大便帶血，以及皮膚出現紅色斑點等情形。",
-        "此外，也常見身體發熱合併腹瀉、濕熱型黃疸、小便黃赤、舌頭紅、舌苔黃、脈搏快速有力等表現。對於外科常見的癰瘍、疔瘡等化膿性感染，也具有良好的清熱解毒作用。",
-        "中醫認為，這些症狀大多是因為外來的風、寒、暑、濕、燥、火等邪氣侵入人體後化熱，或是體內原本就累積過多熱邪，導致邪熱長期鬱積，最後形成「火毒」。當火毒充斥全身三焦時，就會影響各個臟腑與組織。",
-        "火熱向上擾亂心神，因此容易出現高燒、煩躁、失眠、譫語等症狀；火熱消耗體內津液，所以會感到口乾、咽喉乾燥；火熱迫使血液妄行，便可能出現吐血、流鼻血或便血",
-        "若火熱傷害血管，使血液滲出皮下，就會形成皮膚紅斑；如果火毒積聚在肌肉與皮膚，就容易形成癰瘍、疔瘡等化膿性病灶。而舌紅、苔黃、脈數有力，都是體內火熱旺盛、熱毒熾盛的典型表現。"
+        "瀉火解毒 — 瀉透三焦實熱火毒",
+        "清熱燥濕 — 清瀉臟腑濕熱邪氣"
       ],
       "composition": [
         {
-          "herb_zh": "黃芩",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "黃連解毒湯中加入黃芩，主要有以下兩個原因：\n清熱瀉火、燥濕止痢： 黃芩味苦寒，入肺、心、膽經，擅長清熱瀉火，尤其對於濕熱所致的痢疾、腹痛、發熱、口苦等症狀有顯著療效。\n解毒消腫： 黃芩具備解毒消腫之效，能有效抑制細菌病毒，並清除體內毒素，對於各種熱毒所導致的瘡瘍、腫痛、咽喉腫痛等症狀，都有較好的療效。\n因此，黃芩在黃連解毒湯中起到清熱解毒、燥濕止痢的重要作用，與其他藥材共同發揮協同作用，達到更好的治療效果。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "梔子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "黃連解毒湯中加入梔子，主要基於以下兩點原因：\n清熱瀉火，涼血解毒： 梔子性寒，味苦，入心、肝、胃經，具有清熱瀉火、涼血解毒的功效。可輔助黃連、黃柏等藥物，更有效地清除體內熱毒，治療熱毒壅盛、心煩不寧、口舌生瘡、目赤腫痛等症狀。\n緩解黃連、黃柏的燥性： 黃連、黃柏等藥性寒涼，容易傷胃，而梔子性寒而不燥，可緩解其燥性，保護脾胃，避免藥物過於寒涼，對胃腸造成不良影響。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
+          "herb_id": "herb.huang_lian",
           "herb_zh": "黃連",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "黃連解毒湯中包含黃連，主要源於其 清熱解毒 的功效。黃連味苦寒，入心、肝、胃經，具有 瀉心火、清肝火、燥濕止瀉 等作用。\n方劑中以黃連為主藥，可 針對熱毒熾盛、心煩躁熱、口渴便祕、舌苔黃膩等症狀，起到清熱解毒、瀉火通便的功效。因此，黃連是黃連解毒湯中不可或缺的藥材，其清熱解毒的功效對於治療熱毒熾盛之證至關重要。",
+          "name_zh": "黃連",
+          "herb_en": "Coptis Rhizome",
+          "name_en": "Coptis Rhizome",
+          "pinyin": "Huang Lian",
+          "pinyin_toned": "Huáng Lián",
+          "dose_g": "9",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "大苦大寒，瀉心火，兼瀉上焦實熱火毒——重用為君",
+          "role_reason_en": "Bitter and very cold; drains Heart fire and purges upper burner heat toxicity",
+          "in_formula_zh": "大苦大寒，瀉心火，兼瀉上焦實熱火毒——重用為君"
         },
         {
-          "herb_zh": "黃柏",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "黃連解毒湯中加入黃柏，主要基於以下兩點原因：\n1. 清熱燥濕，瀉火解毒：黃柏性寒，味苦，入腎、膀胱經，具有清熱燥濕、瀉火解毒之效。與黃連、梔子等藥物搭配，可增強清熱解毒之力，對於熱毒蘊結所致的各種疾病，如咽喉腫痛、口舌生瘡、濕熱下注等，具有較好的治療效果。\n2. 抑制細菌感染：現代研究表明，黃柏中含有多種抗菌成分，對金黃色葡萄球菌、大腸桿菌、綠膿桿菌等多種致病菌具有抑制作用。在黃連解毒湯中，黃柏可與其他藥物協同作用，抑制細菌感染，促進傷口癒合。",
+          "herb_id": "herb.huang_qin",
+          "herb_zh": "黃芩",
+          "name_zh": "黃芩",
+          "herb_en": "Baikal Skullcap Root",
+          "name_en": "Baikal Skullcap Root",
+          "pinyin": "Huang Qin",
+          "pinyin_toned": "Huáng Qín",
+          "dose_g": "6",
           "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "苦寒清熱燥濕，專瀉中上焦肺胃火毒",
+          "role_reason_en": "Bitter and cold; clears heat, dries dampness, drains Lung and Stomach fire in upper/middle burners",
+          "in_formula_zh": "苦寒清熱燥濕，專瀉中上焦肺胃火毒"
+        },
+        {
+          "herb_id": "herb.huang_bai",
+          "herb_zh": "黃柏",
+          "name_zh": "黃柏",
+          "herb_en": "Phellodendron Bark",
+          "name_en": "Phellodendron Bark",
+          "pinyin": "Huang Bai",
+          "pinyin_toned": "Huáng Bǎi",
+          "dose_g": "6",
+          "decoction_reference_g": "6g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "苦寒瀉下焦相火與濕熱火毒",
+          "role_reason_en": "Bitter and cold; drains lower burner minister fire and damp-heat toxicity",
+          "in_formula_zh": "苦寒瀉下焦相火與濕熱火毒"
+        },
+        {
+          "herb_id": "herb.zhi_zi",
+          "herb_zh": "梔子",
+          "name_zh": "梔子",
+          "herb_en": "Gardenia Fruit",
+          "name_en": "Gardenia Fruit",
+          "pinyin": "Zhi Zi",
+          "pinyin_toned": "Zhī Zǐ",
+          "dose_g": "9",
+          "decoction_reference_g": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "苦寒清熱瀉火，通瀉三焦火邪，導熱下行從小便出",
+          "role_reason_en": "Bitter and cold; clears heat, drains fire from all three burners and directs heat downward via urine",
+          "in_formula_zh": "苦寒清熱瀉火，通瀉三焦火邪，導熱下行從小便出"
         }
       ],
-      "pattern_indications_en": [],
-      "pattern_indications_zh": [
-        "「黃連解毒湯」組成只有4味中藥，要理解「黃連解毒湯」的組成，可以想像成一支專業的滅火團隊，體內如果出現嚴重的「火災」：發高燒、煩躁、皮膚紅疹、出血、口乾舌燥等，這四味藥就是各司其職的救火員，聯手把全身上下的「火毒」迅速撲滅。工作分析如下：",
-        "黃連：核心滅火器，專攻心、胃的火",
-        "黃連極苦，苦味在中藥裡通常代表強力的清熱瀉火作用。現代研究發現它富含小檗鹼（berberine），有很強的抗菌、抗炎效果。在團隊裡，它主要瞄準「心火」和「胃火」，比如心煩失眠、口瘡、噁心、胸口灼熱。",
-        "這是是四味藥中最重的之一，等於它就是第一個衝進火場的隊長，先控制住中央區域最兇猛的火勢。",
-        "黃芩：上身散熱片，主清肺與上焦的熱",
-        "黃芩的專長在「上焦」，你可以理解為胸腔以上，尤其是肺、咽喉、頭面。如果火災伴隨咳嗽、喉嚨痛、皮膚出疹或上半身發燙，就由它來壓制。藥理上它含有黃芩苷等成分，有很好的抗發炎、抗過敏和解熱作用。",
-        "它的比例稍輕一點，因為主要處理上半身的火勢，不需要像黃連那樣重兵，但作用方向明確。",
-        "「黃連解毒湯」組成",
-        "黃柏：下身排水管，清下焦濕熱",
-        "黃柏擅長處理下半身的問題，比如尿赤澀痛、腸炎腹瀉、黃疸、婦女帶下等。它同樣含小檗鹼等抗菌成分，但性質走下，能把積在下部的濕熱透過排尿路徑一併帶走。",
-        "劑量比例與黃芩一樣，剛好配合把火勢向下引導，避免火毒竄到膀胱、大腸等處。",
-        "梔子：全身上下通風降溫，導熱從小便出",
-        "梔子的作用非常特別，它號稱能「通瀉三焦」，意思是不管火在哪一層，它都能清，而且會把熱氣化成小便排出去。",
-        "這相當於團隊裡的後勤清理員，除了自己可以滅火（清熱除煩），還打開排泄管道，讓前面幾味藥清出來的「廢熱」透過小便離開身體。",
-        "現代藥理發現梔子苷有護肝、利膽、抗發炎的作用，還能促進膽紅素排出。比例與黃連同等份量，因為引導排毒的路徑暢通，對整體退火極其關鍵。",
-        "這四味聯手，就像是廣譜清熱消炎 + 排毒通道。從現代角度看，這個組合就像是同時部署了多種天然抗菌消炎藥（黃連、黃芩、黃柏都含多種抗微生物與抗發炎成分），並且加上一個利尿排出代謝廢物的幫手（梔子）。",
-        "它們覆蓋的範圍從頭到腳，從心、肺、胃、腸到泌尿系統，幾乎沒有遺漏，所以對全身性的急性發炎、高熱、紅腫、出血傾向的「火毒證」特別有效。",
-        "簡單說，黃連解毒湯的組成，就是一組協同作戰的滅火、散熱、清運系統：黃連滅心胃火、黃芩散肺熱、黃柏清下焦濕熱、梔子引熱外出三焦通治。",
-        "四味藥合力，把身體這棟大樓從頂樓到地下室的火勢全部撲滅，並打掃乾淨，讓機能恢復正常。",
-        "本方最早見於葛洪《肘後備急方》，但有方而無名。而有方有名的書籍記載，則以《外台柲要》開始。此方相傳為伊尹的三黃湯或倉公的火劑湯，亦可視作《傷寒論》之瀉心湯之變化而成，即去大黃加黃柏、梔子。",
-        "近代中醫對於「黃連解毒湯」的臨床與實驗非常多，歸納將近2000篇期刊論文之後，統計可改善以下疾病清單：",
-        "神經與精神系統疾病：阿茲海默症（老年期癡呆、老年癡呆症）、血管性癡呆、帕金森氏症（及其認知功能障礙）、缺血性腦卒中（腦梗死、急性腦梗塞、中風後遺症）、腦出血（高血壓性腦出血）、多發性腦梗死、腦膠質細胞瘤（腦膠質瘤）、孤獨症（自閉症）、精神分裂症（及其失眠症狀）、抑鬱症、焦慮症、創傷後應激障礙（PTSD、創傷後應激紊亂）、癲癇。",
-        "代謝與內分泌系統疾病：2型糖尿病（及其合併肥胖、胰島素抵抗）、糖尿病腦病、糖尿病腎病、糖尿病足（及其重度感染、潰瘍）、肥胖症、高脂血症（血脂異常）、代謝綜合症",
-        "心血管系統疾病：動脈粥樣硬化（包括頸動脈斑塊）、冠狀動脈性心臟病（冠心病、不穩定型心絞痛、急性冠脈綜合症）、急性ST段抬高型心肌梗死、自發性高傷血壓（高血壓病）、心肌缺血再灌注損傷、心律失常、左心室肥厚、血管內皮損傷、雷諾氏現象、急性感染性心內膜炎。",
-        "消化與肛腸系統疾病：胃潰瘍（包括幽門螺杆菌感染、胃火熾盛證胃潰瘍）、急性胃粘膜損害、胃炎（慢性胃炎）、上消化道出血、下消化道出血、胃腸功能障礙（腦梗死/腦出血合併胃腸損傷、胃動力障礙）、非酒精性脂肪性肝炎（脂肪肝、肝脂肪變性和纖維化）、急性膽汁淤積、肛周膿腫（肛癰、肛周感染）、肛瘘（低位肛瘘、濕熱下注型肛瘘）、混合痔（痔瘡）、潰瘍性結腸炎（慢性結腸炎）、肛竇炎、結腸梗阻。",
-        "呼吸與耳鼻喉系統疾病：新型冠狀病毒肺炎（COVID-19）、金黃色葡萄球菌肺炎、銅綠假單胞菌肺炎、重症肺炎支原體肺炎（難難治性支原體肺炎）、急性肺損傷、急性鼻竇炎、變應性鼻炎、急性扁桃體炎、鼻咽癌放療後鼻咽組織壞死、鼻腔粘連、反覆鼻出血。",
-        "皮膚與免疫系統疾病：特應性皮炎（小兒特應性皮炎）、銀屑病（血熱型銀屑病）、濕疹（頑固性濕疹皮炎、外耳道濕疹、肛門濕疹）、帶狀皰疹、慢性蕁麻疹、酒渣鼻、丹毒（下肢丹毒、面部丹毒）、尖銳濕疣、隱翅蟲皮炎、稻田皮炎、類風濕性關節炎、急性痛風性關節炎、骨關節炎。",
-        "腫瘤與血液系統疾病：乳腺癌、結直腸癌（結直腸腺瘤）、胃癌、原發性肝癌、舌癌、皮膚鱗狀細胞癌、慢性粒細胞性白血病、多發性骨髓瘤、惡性淋巴瘤、白細胞減少症、彌散性血管內凝血（DIC）。",
-        "外傷、感染與全身性急重症：膿毒症（膿毒血症、敗血症）、多器官功能障礙綜合症（MODS、早期腎損傷、心臟/肺臟/胃腸道損害）、全身炎症反應綜合症（SIRS）、內毒素血症、百草枯中毒、有機磷中毒、燒燙傷（燒傷殘餘創面、Ⅱ度燒傷）、四肢創面損傷（創口感染、骨折術前腫脹、骨科傷口感染）、慢性骨髓炎、化膿性骨髓炎、竹葉青蛇咬傷（火毒證）、小兒高熱、慢性腎衰竭氮質血症、血液透析併發症（皮膚瘙癢、不定愁訴、多動腿綜合征、上腹不適、口腔乾燥）。",
-        "獸醫臨床疾病：雞大腸桿菌病、雞傳染性法氏囊病（IBDV感染）、雛雞/仔鴨大腸桿菌內毒素發熱、雛鴨霍亂、羊腸毒血症、幼駒膿毒敗血症、豬高熱病、豬痘、禽傷寒、鴨出敗症、牛黃症",
-        "近代中醫對於黃連解毒湯研究非常豐富",
-        "本方加減法：便秘者，加大黃以瀉下實熱，使熱毒前後分消而解。吐血、衄血，發斑者，酌加玄參、生地、丹皮或合犀角地黃湯以清熱涼血化斑，熱清血自寧，不止血而血自止。積熱發黃者，加茵陳，大黃，以清熱利濕退黃。若下痢膿肌，里急後重者，加木香、檳榔以調氣，氣順則後重自除。濕熱下注，尿頻尿急者，加車前子、木通、澤瀉以增強清熱利濕作用。"
+      "pattern_indications_en": [
+        "Blazing toxic fire in all three burners (excess heat toxicity): High fever, severe restlessness, dry mouth and throat, delirious speech, insomnia, hematemesis, epistaxis, maculae, red tongue with yellow coating, rapid forceful pulse."
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [],
+      "pattern_indications_zh": [
+        "三焦火毒熾盛證（實熱火毒）：大熱煩躁、口燥咽乾、錯語不眠、或吐血衄血、發斑、身熱下利、舌紅苔黃、脈數有力。"
+      ],
+      "modifications_en": [
+        "Constipation with severe heat: Add Da Huang 9g (drains heat via stool)",
+        "Severe bleeding: Add Sheng Di Huang 15g, Dan Pi 9g, Bai Mao Gen 30g",
+        "Maculae: Add Xuan Shen 15g, Zi Cao 9g"
+      ],
+      "modifications_zh": [
+        "便秘、大熱不解者：加大黃 9g ➔ 即瀉心湯／涼膈散意（通腑瀉熱）",
+        "吐血衄血甚者：加生地黃 15g、丹皮 9g、白茅根 30g（涼血止血）",
+        "發斑者：加玄參 15g、紫草 9g（涼血解毒）"
+      ],
+      "contraindications_en": [
+        "Contraindicated in dry heat from Yin deficiency",
+        "Contraindicated in Spleen/Stomach deficiency cold with poor appetite or loose stools",
+        "Contraindicated for long-term or excessive use due to harsh bitter-cold nature"
+      ],
       "contraindications_zh": [
-        "此藥苦寒傷陰，不宜長期使用，僅用於實症體強壯者。",
-        "本方為大苦大寒之劑，久服或過量易傷脾胃，非火盛者不宜使用。"
+        "陰虛火旺者禁用",
+        "脾胃虛寒、食少便溏者禁用",
+        "本方苦寒燥烈傷陰，不可長期過量服用"
       ],
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/244",
-        "https://www.sunten.com.tw/",
-        "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -4876,14 +4874,19 @@
       "board_name_en": "Coptis Decoction to Resolve Toxicity",
       "exam_star": 1,
       "field_sources": {
-        "exam_importance": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "actions_zh": [
+          "wai_tai_mi_yao",
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
         ],
-        "on_board_list": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "composition_roles": [
+          "wai_tai_mi_yao",
+          "bastyr_materia_medica_2"
         ],
-        "cloudtcm_url": [
-          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        "indications": [
+          "wai_tai_mi_yao"
+        ],
+        "contraindications": [
+          "bastyr_materia_medica_2"
         ]
       },
       "cloudtcm_id": 244,
@@ -4902,7 +4905,159 @@
             "黃柏 6g"
           ]
         }
-      }
+      },
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.huang_lian_jie_du_tang matching template.",
+      "name_en_translated": "Coptis Decoction to Relieve Toxicity",
+      "pinyin_toned": "Huáng Lián Jiě Dú Tāng",
+      "source_text_zh": "《外台秘要》引崔氏方",
+      "source_text_en": "Wai Tai Mi Yao (Arcane Essentials from the Imperial Library)",
+      "category_zh": "清熱劑－清熱解毒",
+      "glance": {
+        "category_banner_zh": "瀉火解毒",
+        "category_banner_en": "DRAIN FIRE RELIEVE TOXICITY",
+        "plain_summary_zh": "三焦實熱火毒熾盛證之代表方。大熱煩躁、口燥咽乾、錯語不眠、吐血衄血、發斑——大苦大寒直折火毒。",
+        "plain_summary_en": "Premier formula for severe blazing toxic fire in all three burners. Features high fever, delirium, insomnia, and bleeding.",
+        "plain_indications_zh": [
+          "三焦火毒熾盛",
+          "大熱煩躁",
+          "口燥咽乾",
+          "錯語不眠",
+          "吐血衄血"
+        ],
+        "plain_indications_en": [
+          "blazing heat toxicity",
+          "high fever restlessness",
+          "dry mouth throat",
+          "delirium insomnia",
+          "bleeding"
+        ],
+        "herb_count": 4
+      },
+      "key_pairs": [
+        "pair.huang_lian__huang_qin",
+        "pair.huang_qin__huang_bai",
+        "pair.huang_lian__zhi_zi"
+      ],
+      "key_pairs_note_zh": "黃連配黃芩（瀉中上二焦火毒）；黃芩配黃柏（清上中下三焦濕熱火毒）；黃連配梔子（上瀉心火，下導熱邪）。",
+      "key_pairs_note_en": "Huang Lian with Huang Qin (drains upper/middle burner fire); Huang Qin with Huang Bai (clears all three burners); Huang Lian with Zhi Zi (drains Heart fire and directs heat downward).",
+      "fang_yi_zh": "《外台秘要》瀉火解毒之總方。黃連大苦大寒，瀉心火、清上焦為君；黃芩清肺熱、瀉中焦為臣；黃柏清下焦濕熱為臣；梔子通瀉三焦火邪、導熱下行從小便出為佐使。四藥全用苦寒，直折火毒，使三焦實熱火毒得以分消。",
+      "fang_yi_en": "The master formula for draining fire and relieving toxicity. Huang Lian drains Heart fire as chief; Huang Qin clears Lung heat as deputy; Huang Bai drains lower burner damp-heat as deputy; Zhi Zi drains all three burners and guides heat downward as assistant.",
+      "indications": [
+        {
+          "pattern_zh": "三焦火毒熾盛證（實熱火毒）",
+          "pattern_en": "Blazing toxic fire in all three burners (excess heat toxicity)",
+          "clinical_picture_zh": "大熱煩躁、口燥咽乾、錯語不眠、或吐血衄血、發斑、身熱下利",
+          "clinical_picture_en": "High fever, severe restlessness, dry mouth and throat, delirious speech, insomnia, bleeding",
+          "tongue_zh": "舌紅，苔黃",
+          "tongue_en": "Red tongue with yellow coating",
+          "pulse_zh": "脈數有力",
+          "pulse_en": "Rapid and forceful pulse"
+        }
+      ],
+      "constitutional_types_zh": [
+        "陰虛火旺",
+        "脾胃虛寒"
+      ],
+      "constitutional_types_en": [
+        "Yin deficiency with fire",
+        "Spleen/Stomach deficiency cold"
+      ],
+      "constitutional_note_zh": "脾胃虛寒或陰虛乾熱者禁用。",
+      "modifications": [
+        {
+          "if_zh": "便秘、大熱不解者",
+          "if_en": "Constipation with severe heat",
+          "change_zh": "加大黃 9g ➔ 即瀉心湯意（通腑瀉熱）",
+          "change_en": "Add Da Huang 9g to drain heat via stool"
+        },
+        {
+          "if_zh": "吐血衄血甚者",
+          "if_en": "Severe bleeding",
+          "change_zh": "加生地黃 15g、丹皮 9g、白茅根 30g（涼血止血）",
+          "change_en": "Add Sheng Di Huang 15g, Dan Pi 9g, Bai Mao Gen 30g"
+        }
+      ],
+      "dose_adjustment_note_zh": "水煎服。本方藥性苦寒大燥，中病即止，不可久服。",
+      "dose_adjustment_note_en": "Decoct in water. Highly bitter and cold; discontinue once heat is cleared.",
+      "comparisons": [
+        {
+          "with": "formula.bai_hu_tang",
+          "name_zh": "白虎湯",
+          "differentiator_zh": "白虎湯清陽明無形氣分大熱，重在清熱生津；黃連解毒湯瀉三焦有形實熱火毒，重在苦寒直折。",
+          "differentiator_en": "Bai Hu Tang clears Qi-level formless heat and generates fluids; Huang Lian Jie Du Tang drains toxic fire in all three burners."
+        },
+        {
+          "with": "formula.long_dan_xie_gan_tang",
+          "name_zh": "龍膽瀉肝湯",
+          "differentiator_zh": "龍膽瀉肝湯專清肝膽實火與濕熱；黃連解毒湯通清三焦火毒。",
+          "differentiator_en": "Long Dan Xie Gan Tang specifically clears Liver/Gallbladder fire and damp-heat; Huang Lian Jie Du Tang clears three burners."
+        }
+      ],
+      "formula_family": [
+        {
+          "formula_id": "formula.xie_xin_tang",
+          "name_zh": "瀉心湯",
+          "relation": "加",
+          "change": [
+            "加大黃 9g"
+          ],
+          "change_en": [
+            "Add Da Huang 9g"
+          ]
+        }
+      ],
+      "applications_zh": [
+        "敗血症",
+        "重症肺炎",
+        "急性結膜炎",
+        "急性化膿性感染",
+        "急性菌痢"
+      ],
+      "applications_en": [
+        "Sepsis",
+        "Severe pneumonia",
+        "Acute conjunctivitis",
+        "Acute suppurative infection",
+        "Bacillary dysentery"
+      ],
+      "modern_applications_zh": [
+        "敗血症",
+        "重症肺炎",
+        "急性結膜炎",
+        "急性化膿性感染",
+        "急性菌痢"
+      ],
+      "modern_applications_en": [
+        "Sepsis",
+        "Severe pneumonia",
+        "Acute conjunctivitis",
+        "Acute suppurative infection",
+        "Bacillary dysentery"
+      ],
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html",
+      "external_links": [
+        {
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
+          "lang": "en",
+          "link_status": "direct"
+        },
+        {
+          "source_id": "cloudtcm",
+          "url": "https://cloudtcm.com/formula/244",
+          "label_zh": "雲端中醫",
+          "label_en": "CloudTCM",
+          "lang": "zh",
+          "link_status": "direct"
+        }
+      ],
+      "authored_by": "model_draft",
+      "formula_song": "黃連解毒柏芝芩，三焦火毒熱盈盈。\n煩躁狂斑吐衄嘔，苦寒直折熱自平。",
+      "formula_song_zh": "黃連解毒柏芝芩，三焦火毒熱盈盈。\n煩躁狂斑吐衄嘔，苦寒直折熱自平。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "exam_pearl": "【考綱重點】三焦實熱火毒熾盛證首選方。黃連（心）、黃芩（肺）、黃柏（腎）、梔子（通瀉三焦）。「苦寒直折」法代表方。NCBAHM 2026 CH Outline p.21。"
     },
     {
       "id": "formula.xie_xin_tang",
@@ -5658,17 +5813,17 @@
     {
       "id": "formula.dao_chi_san",
       "name_zh": "導赤散",
-      "name_en": "Guide Out the Red Powder",
+      "name_en": "Dao Chi San",
       "pinyin": "Dao Chi San",
       "review_status": "draft",
       "source_status": "source_review_pending",
       "source_type": "sourced_cloudtcm_record",
       "category_id": "",
-      "category_en": "Clear Heat",
+      "category_en": "Formulas that Clear Heat - Clear Organ Heat",
       "category": "清熱劑 / Clear Heat",
       "tier": "core",
       "source_hint": "Bensky F&S: Clear Heat; expanded NCCAOM candidate",
-      "comparison_group": "heat_toxin_fire",
+      "comparison_group": "清熱劑 / Clear Heat",
       "modern_clinical_use_tags": [],
       "related_conditions": [],
       "related_formulas": [
@@ -5682,91 +5837,104 @@
       "public_safe": false,
       "study_tags": [],
       "pattern_focus_en": [],
-      "actions_en": [],
+      "actions_en": [
+        "Clears Heart heat and nourishes Yin — drains Heart fire excess and moistens fluids",
+        "Promotes urination and unblocks dysuria — guides Heart heat downward out through Small Intestine"
+      ],
       "actions_zh": [
-        "現代常用於治療心經有熱的疾病，如急性膀胱炎、尿道炎、血尿、慢性前列腺炎、口腔潰瘍、角膜炎、眼角瞼緣炎及病毒性心肌炎。",
-        "此外還包括治療口腔炎、口瘡、小兒夜啼、溫熱病、熱淋澀痛、月經不調、閉經、痛經、乳汁不通、膿瘡膿腫、瘡癤、乳癰、腎臟病水腫、急性腎炎導致的小便不利、濕熱癃閉、淋病、婦女經閉與乳閉、急性泌尿系統感染等疾病。"
+        "清心養陰 — 清瀉心經實火、滋養心陰",
+        "利水通淋 — 引心火下行小腸、利尿通淋"
       ],
       "composition": [
         {
-          "herb_zh": "淡竹葉",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "導赤散中包含淡竹葉，主要原因有二：\n清熱瀉火：淡竹葉性寒，味甘淡，入心、肺經，具有清熱瀉火、利尿解毒之效。其清熱力較強，且不傷脾胃，能有效緩解心火上炎所致的口舌生瘡、心煩失眠、小便短赤等症狀。\n利尿解毒：淡竹葉能利尿排泄，有助於將體內熱毒排出，並可改善因熱毒壅滯所導致的口渴、咽喉腫痛等症狀。\n因此，淡竹葉在導赤散中可謂是不可或缺的藥材，其清熱瀉火、利尿解毒的功效，為導赤散的療效發揮了重要作用。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "木通",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "導赤散方中，加入木通主要基於以下兩點原因：\n清熱瀉火：木通性寒，味甘，入膀胱經，具有清熱利尿、瀉火通淋之功效。導赤散主治熱入營血，症見發熱口渴、神昏譫語、舌紅絳、脈數等，木通可清熱瀉火，利尿排毒，輔助主藥清熱解毒，達到清熱瀉火之效。\n通淋利尿：木通能通利水道，有利於熱毒的排出。導赤散除了清熱解毒外，還需利尿排泄毒素，木通有助於促進尿液生成，利於毒素的排出，配合其他藥物，達到利尿通淋之效。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
+          "herb_id": "herb.sheng_di_huang",
           "herb_zh": "生地黃",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "導赤散中包含生地黃，主要原因有二：\n一、 清熱涼血： 生地黃性寒，味甘苦，入心、肝、腎經，具有清熱涼血、滋陰潤燥的功效。導赤散主治熱毒壅盛，心煩不寐，口渴咽乾，舌紅苔黃等症狀，生地黃可清熱解毒，涼血止渴，改善患者的熱證表現。\n二、 滋陰生津： 生地黃亦可滋陰生津，潤燥止渴。熱證耗傷津液，導致口渴咽乾，生地黃可補充津液，緩解患者的燥熱症狀。\n因此，導赤散中使用生地黃，既可清熱涼血，又可滋陰生津，使藥效更趨完善。",
-          "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "name_zh": "生地黃",
+          "herb_en": "Rehmannia Root",
+          "name_en": "Rehmannia Root",
+          "pinyin": "Sheng Di Huang",
+          "pinyin_toned": "Shēng Dì Huáng",
+          "dose_g": "15",
+          "decoction_reference_g": "15g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "甘苦大寒，清熱涼血、滋陰生津，清心火——重用為君",
+          "in_formula_zh": "甘苦大寒，清熱涼血、滋陰生津，清心火——重用為君"
         },
         {
-          "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "導赤散中包含甘草，主要原因如下：\n調和藥性： 導赤散以清熱解毒為主要功效，藥性偏寒涼。甘草味甘性平，具有調和諸藥的作用，能緩和藥性，防止寒涼藥性過於猛烈，避免傷及脾胃。\n增強療效： 甘草能增強其他藥物的療效，並能保護脾胃，避免藥物對脾胃造成損害，使其更好地發揮清熱解毒的功效。\n總之，甘草在導赤散中起著調和藥性、增強療效的作用，使其藥效更佳，使用更安全。",
+          "herb_id": "herb.dan_zhu_ye",
+          "herb_zh": "淡竹葉",
+          "name_zh": "淡竹葉",
+          "herb_en": "Lophatherus Stem",
+          "name_en": "Lophatherus Stem",
+          "pinyin": "Dan Zhu Ye",
+          "pinyin_toned": "Dàn Zhú Yè",
+          "dose_g": "6",
           "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "甘淡性寒，清心除煩、淡滲利濕，導熱下行",
+          "in_formula_zh": "甘淡性寒，清心除煩、淡滲利濕，導熱下行"
+        },
+        {
+          "herb_id": "herb.mu_tong",
+          "herb_zh": "木通",
+          "name_zh": "木通",
+          "herb_en": "Akebia Stem",
+          "name_en": "Akebia Stem",
+          "pinyin": "Mu Tong",
+          "pinyin_toned": "Mù Tōng",
+          "dose_g": "6",
+          "decoction_reference_g": "6g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "苦寒利水通淋，引心火從小腸而出",
+          "in_formula_zh": "苦寒利水通淋，引心火從小腸而出"
+        },
+        {
+          "herb_id": "herb.gan_cao",
+          "herb_zh": "甘草",
+          "name_zh": "甘草",
+          "herb_en": "Licorice Root",
+          "name_en": "Licorice Root",
+          "pinyin": "Gan Cao",
+          "pinyin_toned": "Gān Cǎo",
+          "dose_g": "6",
+          "decoction_reference_g": "6g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "role_reason_zh": "甘平，清熱瀉火、清利尿道、調和諸藥（用生甘草梢）",
+          "in_formula_zh": "甘平，清熱瀉火、清利尿道、調和諸藥（用生甘草梢）"
         }
       ],
-      "pattern_indications_en": [],
-      "pattern_indications_zh": [
-        "小孩因為心火熱，會出睡眠不安、睡眠時眼球上翻、面部肌肉緊縮，面部表情緊張、牙關緊咬、夜間磨牙...等等。",
-        "後代醫家不斷實踐，應用範圍從治療心經有熱，擴展至「心火下移熱於小腸證」，從兒科擴展至內科運用。",
-        "導赤散在最原始被設計用來治療小兒心熱",
-        "此方主要是用來治療「心火旺盛」的問題，傳統中醫認為「心主神明」，心臟位於胸腔中心，當心火旺盛時，會引起心煩意亂和胸悶。",
-        "心經路線經過喉嚨，如果心臟的火氣太旺，會向上燒灼喉嚨的體液，造成喉嚨乾燥、臉紅，以及喜愛喝冷飲。",
-        "古人認為「舌為心之苗」，當心臟的火氣太盛時，會讓舌頭出現潰瘍，嘴瘡口破。",
-        "中醫的心臟和小腸相互連接，心臟的熱會傳至小腸，如果心火下移至小腸，會導致小便時有刺痛感和尿液呈現赤澀的情況。舌頭呈紅色和脈搏快速都是心火熱的徵兆。",
-        "這個方劑主要用來治療心火旺盛，熱氣轉移到小腸的情況，治療的目標是清除心臟的熱氣，幫助小便順暢，並引導體內的熱氣通過小便排出體外。",
-        "中醫認為心火會下移小腸",
-        "方劑中的木通作用於心臟和小腸，其味道苦而性質寒冷，可以清除心臟的熱氣，並有助於利尿和通淋。",
-        "生地黃則作用於心臟和腎臟，味道甘甜且具有滋潤作用，能夠清除心臟的熱氣，降低胃部的熱感，並有助於滋養身體。",
-        "甘草味甘性平，可以和諧各種藥材，避免木通和生地黃的寒涼性質傷害到胃部，起到輔助作用。",
-        "竹葉能夠清心除煩，引導體內的熱氣向下排出。這四種藥材共同使用，可以達到清熱利水的效果。",
-        "這個方劑的特點在於它能夠同時清除體內的熱氣和滋養體內的陰液。它有助於促進排尿但不會損害體內的陰液。",
-        "可以排除體內的過熱而不會加劇病情，非常適合那些體質虛弱的小孩。"
+      "pattern_indications_en": [
+        "Heart Channel Heat Excess / Heart Heat transferring to Small Intestine: Heart heat with irritability, thirst with desire for cold drinks, mouth and tongue sores, painful red urinary dribbling, red tongue tip, rapid pulse."
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
-      "contraindications_en": [],
+      "pattern_indications_zh": [
+        "心經火熱證（心火下移小腸）：心胸煩熱、口渴面赤、意欲飲水、口舌生瘡、或小便赤澀刺痛、舌尖紅絳、脈數。"
+      ],
+      "modifications_en": [
+        "Bloody urination: Add Xiao Ji 15g, Pu Huang 9g, Ou Jie 12g",
+        "Severe Heart fire & insomnia: Add Huang Lian 6g",
+        "Severe painful dysuria: Add Che Qian Zi 9g, Hua Shi 15g"
+      ],
+      "modifications_zh": [
+        "血淋、小便尿血者：加小薊 15g、蒲黃 9g、藕節 12g（涼血止血通淋）",
+        "心火熾盛、煩躁不眠者：加黃連 6g（清心瀉火）",
+        "小便淋瀝澀痛甚者：加車前子 9g、滑石 15g（利水通淋）"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen/Stomach weakness or loose stools",
+        "Contraindicated in Yin deficiency without fire or clear profuse urine"
+      ],
       "contraindications_zh": [
-        "方中木通苦寒，生地陰柔寒涼，故脾胃虛弱者慎用。"
+        "脾胃虛弱、食少便溏者慎用",
+        "陰虛無火、小便清長者禁用"
       ],
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/281",
-        "https://www.sunten.com.tw/",
-        "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://www.americandragon.com/HerbFormulas/DaoChiSan.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -5846,14 +6014,19 @@
       "board_name_en": "Guide Out the Red Powder",
       "exam_star": 1,
       "field_sources": {
-        "exam_importance": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "actions_zh": [
+          "xiao_er_yao_zheng_zhi_jue",
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
         ],
-        "on_board_list": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "composition_roles": [
+          "xiao_er_yao_zheng_zhi_jue",
+          "bastyr_materia_medica_2"
         ],
-        "cloudtcm_url": [
-          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        "indications": [
+          "xiao_er_yao_zheng_zhi_jue"
+        ],
+        "contraindications": [
+          "bastyr_materia_medica_2"
         ]
       },
       "cloudtcm_id": 281,
@@ -5878,15 +6051,160 @@
             "甘草 6g"
           ]
         }
-      }
+      },
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.dao_chi_san matching template.",
+      "name_en_translated": "Guide Out the Red Powder",
+      "pinyin_toned": "Dǎo Chì Sǎn",
+      "source_text_zh": "《小兒藥證直訣》",
+      "source_text_en": "Xiao Er Yao Zheng Zhi Jue (Key to Therapeutics of Children's Diseases)",
+      "category_zh": "清熱劑－清臟腑熱",
+      "glance": {
+        "category_banner_zh": "清心養陰 利水導熱",
+        "category_banner_en": "CLEAR HEART NOURISH YIN DRAIN HEAT",
+        "plain_summary_zh": "心經火熱及心火下移小腸證（口舌生瘡、心煩、小便赤澀痛）之名方。清心養陰、利水通淋——引火下行從小便出。",
+        "plain_summary_en": "Classic formula for Heart channel heat and Heart heat transferring to Small Intestine. Features mouth sores and painful urination.",
+        "plain_indications_zh": [
+          "心經火熱",
+          "心火下移小腸",
+          "心胸煩熱",
+          "口舌生瘡",
+          "小便赤澀刺痛"
+        ],
+        "plain_indications_en": [
+          "heart fire blazing",
+          "heart heat to small intestine",
+          "heart heat restlessness",
+          "mouth tongue sores",
+          "painful red urination"
+        ],
+        "herb_count": 4
+      },
+      "key_pairs": [
+        "pair.sheng_di_huang__dan_zhu_ye",
+        "pair.mu_tong__gan_cao"
+      ],
+      "key_pairs_note_zh": "生地配淡竹葉（滋陰清心，利水導熱）；木通配甘草梢（清利尿道，導熱下行止痛）。",
+      "key_pairs_note_en": "Sheng Di Huang with Dan Zhu Ye (nourishes Yin and clears Heart heat); Mu Tong with Gan Cao Shao (unblocks urinary tract and drains heat downward).",
+      "fang_yi_zh": "《小兒藥證直訣》清心利水之經典名方。重用生地黃甘苦大寒，清熱涼血、滋陰生津為君；淡竹葉甘淡性寒，清心除煩、淡滲利濕為臣；木通苦寒利水通淋，引心火從小腸而出為臣；生甘草梢清熱瀉火、清利尿道痛感、調和諸藥為使。水火相濟，導熱下行從小便解。",
+      "fang_yi_en": "Classic formula for clearing Heart heat and draining urination. Heavy Sheng Di Huang clears Heart heat and nourishes Yin as chief; Dan Zhu Ye clears Heart heat as deputy; Mu Tong drains heat downward via Small Intestine/urine as deputy; Licorice tip quenches urinary tract pain and harmonizes as envoy.",
+      "indications": [
+        {
+          "pattern_zh": "心經火熱證（心火下移小腸）",
+          "pattern_en": "Heart Channel Heat Excess / Heart Heat transferring to Small Intestine",
+          "clinical_picture_zh": "心胸煩熱、口渴面赤、口舌生瘡、小便赤澀刺痛",
+          "clinical_picture_en": "Heart heat with irritability, thirst, mouth sores, painful red urination",
+          "tongue_zh": "舌尖紅絳",
+          "tongue_en": "Red tongue tip",
+          "pulse_zh": "脈數",
+          "pulse_en": "Rapid pulse"
+        }
+      ],
+      "constitutional_types_zh": [
+        "脾胃虛弱",
+        "陰虛無火"
+      ],
+      "constitutional_types_en": [
+        "Spleen/Stomach weakness",
+        "Yin deficiency without fire"
+      ],
+      "constitutional_note_zh": "脾胃虛弱便溏者慎用。",
+      "modifications": [
+        {
+          "if_zh": "血淋、小便尿血者",
+          "if_en": "Bloody urination",
+          "change_zh": "加小薊 15g、蒲黃 9g、藕節 12g（涼血止血通淋）",
+          "change_en": "Add Xiao Ji 15g, Pu Huang 9g, Ou Jie 12g"
+        },
+        {
+          "if_zh": "心火熾盛、煩躁不眠者",
+          "if_en": "Severe Heart fire & insomnia",
+          "change_zh": "加黃連 6g（清心瀉火）",
+          "change_en": "Add Huang Lian 6g"
+        }
+      ],
+      "dose_adjustment_note_zh": "水煎服。小兒按年齡體重減量。",
+      "dose_adjustment_note_en": "Decoct in water. Reduce dose for children.",
+      "comparisons": [
+        {
+          "with": "formula.xie_xin_tang",
+          "name_zh": "瀉心湯",
+          "differentiator_zh": "瀉心湯苦寒直折瀉心脾實火；導赤散清心滋陰利水，引火下行。",
+          "differentiator_en": "Xie Xin Tang purges Heart/Spleen fire with bitter-cold herbs; Dao Chi San clears Heart heat while nourishing Yin and guiding heat out via urine."
+        }
+      ],
+      "formula_family": [
+        {
+          "formula_id": "formula.dao_chi_san",
+          "name_zh": "導赤散",
+          "relation": "同類",
+          "change": [
+            "原方結構"
+          ],
+          "change_en": [
+            "Base formula structure"
+          ]
+        }
+      ],
+      "applications_zh": [
+        "急性口炎（嘴破）",
+        "口腔潰瘍",
+        "急性尿道炎",
+        "急性膀胱炎",
+        "小兒夜啼"
+      ],
+      "applications_en": [
+        "Acute stomatitis",
+        "Aphthous ulcers",
+        "Acute urethritis",
+        "Acute cystitis",
+        "Infantile night crying"
+      ],
+      "modern_applications_zh": [
+        "急性口炎（嘴破）",
+        "口腔潰瘍",
+        "急性尿道炎",
+        "急性膀胱炎",
+        "小兒夜啼"
+      ],
+      "modern_applications_en": [
+        "Acute stomatitis",
+        "Aphthous ulcers",
+        "Acute urethritis",
+        "Acute cystitis",
+        "Infantile night crying"
+      ],
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/DaoChiSan.html",
+      "external_links": [
+        {
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/DaoChiSan.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
+          "lang": "en",
+          "link_status": "direct"
+        },
+        {
+          "source_id": "cloudtcm",
+          "url": "https://cloudtcm.com/formula/281",
+          "label_zh": "雲端中醫",
+          "label_en": "CloudTCM",
+          "lang": "zh",
+          "link_status": "direct"
+        }
+      ],
+      "authored_by": "model_draft",
+      "formula_song": "導赤生地與木通，草梢竹葉四般功。\n口瘡尿赤莖中痛，心火下移小腸熱。",
+      "formula_song_zh": "導赤生地與木通，草梢竹葉四般功。\n口瘡尿赤莖中痛，心火下移小腸熱。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "exam_pearl": "【考綱重點】心經火熱及心火下移小腸證（口舌生瘡、心煩、尿赤澀痛）首選方。生地為君滋陰清心；木通+竹葉導火下行從小便出；甘草梢清痛利尿。NCBAHM 2026 CH Outline p.21。"
     },
     {
       "id": "formula.long_dan_xie_gan_tang",
       "name_zh": "龍膽瀉肝湯",
-      "name_en": "Gentiana Decoction to Drain the Liver",
+      "name_en": "Long Dan Xie Gan Tang",
       "pinyin": "Long Dan Xie Gan Tang",
       "category_id": "formula_category.clear_heat",
-      "category_en": "Clear Heat",
+      "category_en": "Formulas that Clear Heat - Clear Organ Heat",
       "study_tags": [
         "urinary_symptoms",
         "damp_heat_context"
@@ -5910,204 +6228,189 @@
       "public_safe": false,
       "source_urls": [
         "https://cloudtcm.com/formula/286",
-        "https://www.sunten.com.tw/",
-        "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
       "composition": [
         {
-          "herb_zh": "車前子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "龍膽瀉肝湯中加入車前子，主要基於其利水滲濕、清熱解毒的功效，與方劑整體清熱利濕、瀉火解毒的功效相輔相成。\n車前子性寒，味甘，入肝、腎經，能利水滲濕，清熱解毒，並能清肝熱而明目。龍膽瀉肝湯中常因肝膽濕熱、濕熱下注而引起泌尿系統感染，車前子利水滲濕，可促進體內濕熱排出，緩解尿路感染症狀，同時也能清熱解毒，進一步減輕肝膽濕熱，達到標本兼治的效果。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "生地黃",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "15g",
-          "elucidation_zh": "龍膽瀉肝湯中加入生地黃，主要有以下兩方面原因：\n清熱涼血： 生地黃性寒，味甘苦，入心、肝、腎經，具有清熱涼血、滋陰潤燥的作用。龍膽瀉肝湯主治肝膽濕熱，而生地黃可清瀉肝火，涼血止血，緩解因肝火上炎引起的目赤腫痛、口苦咽乾、皮膚發紅等症狀。\n滋陰降火： 龍膽瀉肝湯中使用黃芩、梔子等清熱燥濕藥物，可能導致陰液虧損。生地黃可滋陰降火，與其他藥物協同作用，平衡藥性，防止藥物過於燥烈，避免對人��造成不良影響。",
-          "decoction_reference_g": "15g",
-          "granule_reference_g": "3.0g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "當歸",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "龍膽瀉肝湯中加入當歸，主要原因有二：\n緩解肝火上炎之症: 當歸味甘辛，性溫，入心、肝、脾經，具有補血活血、養血潤燥之效。肝火上炎常伴隨頭暈目眩、口苦咽乾等症，當歸可滋陰養血，緩解肝火，達到清熱解毒之效。\n促進藥物流通: 龍膽瀉肝湯以清熱瀉火為主，但部分藥物性寒，容易傷及脾胃。當歸可調節氣血運行，促進藥物流通，避免藥物寒涼直達脾胃，減輕其副作用。\n因此，當歸在龍膽瀉肝湯中扮演著重要角色，既能緩解肝火上炎，又能保護脾胃，使整體方劑達到更好的療效。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "黃芩",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "龍膽瀉肝湯中加入黃芩，主要基於以下兩點原因：\n清熱瀉火： 黃芩性寒，味苦，入肺、心、膽、胃經，具有清熱瀉火、燥濕止痢、止咳化痰的功效。龍膽瀉肝湯主治肝膽濕熱，因此需要黃芩來清泄肝膽之火，達到清熱解毒的作用。\n瀉肝膽火： 黃芩能瀉肝膽之火，與龍膽草、柴胡、梔子等藥物配合，共同達到瀉肝膽實火，降肝火，解鬱熱，消炎止痛的功效。\n因此，黃芩在龍膽瀉肝湯中扮演著重要的角色，是藥方清熱瀉火、瀉肝膽火的重要組成部分。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "澤瀉",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "龍膽瀉肝湯中加入澤瀉，主要基於以下兩點原因：\n清熱利濕： 澤瀉味甘淡，性寒，入膀胱、腎經，具有清熱利濕、瀉火除煩的功效。龍膽瀉肝湯主治肝膽濕熱，而澤瀉可以清熱利濕，幫助疏泄肝膽之火，緩解溼熱症狀。\n利水通淋： 澤瀉亦能利水通淋，促進水液代謝，對於肝膽濕熱所致的尿路感染、小便不利等症狀，具有輔助治療作用。\n因此，澤瀉在龍膽瀉肝湯中扮演着重要的角色，能有效地配合其他藥材，達到清熱利濕、疏肝利膽的功效。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "梔子",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "12g",
-          "elucidation_zh": "龍膽瀉肝湯中加入梔子，主要基於以下兩點原因：\n清熱瀉火，涼血解毒：梔子味苦寒，入肝、胃經，具有清熱瀉火、涼血解毒之效。龍膽瀉肝湯主治肝膽濕熱，症見目赤腫痛、口苦咽乾、脅肋脹痛等，梔子可有效清瀉肝膽之火，減輕炎症反應。\n緩解肝鬱氣滯：梔子亦能疏肝理氣，緩解肝鬱氣滯所致的胸悶、脅痛、煩躁等症狀。龍膽瀉肝湯中加入梔子，不僅能清熱瀉火，還能調節肝氣，促進肝臟功能的恢復。",
-          "decoction_reference_g": "12g",
-          "granule_reference_g": "2.4g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
-          "herb_zh": "柴胡",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "龍膽瀉肝湯中加入柴胡，主要有以下兩個原因：\n疏肝解鬱，調和肝脾：柴胡性微寒，味苦，善於疏肝解鬱，和解肝脾。龍膽瀉肝湯主治肝膽濕熱，常伴有胸脅脹滿、口苦咽乾、煩躁易怒等肝鬱氣滯之症。柴胡的加入，可疏解肝氣鬱結，使肝氣條達，脾胃和暢，達到調和肝脾的作用。\n配合龍膽草，清熱利濕：柴胡與龍膽草相配，清熱利濕的效果更佳。龍膽草性寒，味苦，善於清熱瀉火，利濕退黃。柴胡則以疏肝解鬱為主，兩者合用，既能清熱利濕，又能疏肝解鬱，對於肝膽濕熱所致的各種症狀都有很好的治療效果。",
-          "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
-        },
-        {
+          "herb_id": "herb.long_dan_cao",
           "herb_zh": "龍膽草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "9g",
-          "elucidation_zh": "龍膽瀉肝湯中包含龍膽草，主要因其具有以下兩大功效：\n清熱瀉火: 龍膽草味苦寒，能清泄肝膽之火，對於肝火上炎所致的目赤腫痛、口苦咽乾、脅肋脹痛等症狀，有明顯的療效。\n利濕退黃: 龍膽草亦可利濕退黃，對於濕熱蘊結所導致的黃疸、小便不利、腹脹腹痛等症狀，亦有治療效果。\n龍膽草的清熱瀉火與利濕退黃功效，與龍膽瀉肝湯主治的肝膽濕熱證相吻合，因此成為方中重要組成藥物之一。",
+          "name_zh": "龍膽草",
+          "herb_en": "Gentian Root",
+          "name_en": "Gentian Root",
+          "pinyin": "Long Dan Cao",
+          "pinyin_toned": "Lóng Dǎn Cǎo",
+          "dose_g": "6",
+          "decoction_reference_g": "6g",
+          "role_zh": "君",
+          "role_en": "Chief",
+          "role_reason_zh": "大苦大寒，專瀉肝膽實火，清下焦濕熱——為君藥",
+          "in_formula_zh": "大苦大寒，專瀉肝膽實火，清下焦濕熱——為君藥"
+        },
+        {
+          "herb_id": "herb.huang_qin",
+          "herb_zh": "黃芩",
+          "name_zh": "黃芩",
+          "herb_en": "Baikal Skullcap Root",
+          "name_en": "Baikal Skullcap Root",
+          "pinyin": "Huang Qin",
+          "pinyin_toned": "Huáng Qín",
+          "dose_g": "9",
           "decoction_reference_g": "9g",
-          "granule_reference_g": "1.8g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "苦寒清熱燥濕，助龍膽草瀉肝膽實火",
+          "in_formula_zh": "苦寒清熱燥濕，助龍膽草瀉肝膽實火"
         },
         {
+          "herb_id": "herb.zhi_zi",
+          "herb_zh": "梔子",
+          "name_zh": "梔子",
+          "herb_en": "Gardenia Fruit",
+          "name_en": "Gardenia Fruit",
+          "pinyin": "Zhi Zi",
+          "pinyin_toned": "Zhī Zǐ",
+          "dose_g": "9",
+          "decoction_reference_g": "9g",
+          "role_zh": "臣",
+          "role_en": "Deputy",
+          "role_reason_zh": "清熱利濕，導肝膽火熱下行從小便出",
+          "in_formula_zh": "清熱利濕，導肝膽火熱下行從小便出"
+        },
+        {
+          "herb_id": "herb.ze_xie",
+          "herb_zh": "澤瀉",
+          "name_zh": "澤瀉",
+          "herb_en": "Alisma Rhizome",
+          "name_en": "Alisma Rhizome",
+          "pinyin": "Ze Xie",
+          "pinyin_toned": "Zé Xiè",
+          "dose_g": "12",
+          "decoction_reference_g": "12g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "淡滲利濕，清瀉下焦濕熱",
+          "in_formula_zh": "淡滲利濕，清瀉下焦濕熱"
+        },
+        {
+          "herb_id": "herb.mu_tong",
           "herb_zh": "木通",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "龍膽瀉肝湯中包含木通，主要原因有二：\n清熱利濕: 木通性寒，味甘，具有清熱利濕、通淋止痛的功效。龍膽瀉肝湯用於治療濕熱下注所致的目赤腫痛、耳聾、口苦咽乾、小便不利等症，而木通的清熱利濕作用有助於消除濕熱，改善上述症狀。\n通利水道: 木通能通利水道，促進水液代謝，有助於排出體內濕熱，進一步達到清熱利濕的效果。龍膽瀉肝湯中其他藥材如龍膽草、黃芩等也具有清熱利濕作用，而木通的通利水道作用可促進藥效發揮，使藥物更有效地作用於病竈。",
+          "name_zh": "木通",
+          "herb_en": "Akebia Stem",
+          "name_en": "Akebia Stem",
+          "pinyin": "Mu Tong",
+          "pinyin_toned": "Mù Tōng",
+          "dose_g": "6",
           "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "清熱利尿，通利水道與血脈",
+          "in_formula_zh": "清熱利尿，通利水道與血脈"
         },
         {
+          "herb_id": "herb.che_qian_zi",
+          "herb_zh": "車前子",
+          "name_zh": "車前子",
+          "herb_en": "Plantain Seed",
+          "name_en": "Plantain Seed",
+          "pinyin": "Che Qian Zi",
+          "pinyin_toned": "Chē Qián Zǐ",
+          "dose_g": "9",
+          "decoction_reference_g": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "利水通淋，清瀉下焦濕熱",
+          "in_formula_zh": "利水通淋，清瀉下焦濕熱"
+        },
+        {
+          "herb_id": "herb.sheng_di_huang",
+          "herb_zh": "生地黃",
+          "name_zh": "生地黃",
+          "herb_en": "Rehmannia Root",
+          "name_en": "Rehmannia Root",
+          "pinyin": "Sheng Di Huang",
+          "pinyin_toned": "Shēng Dì Huáng",
+          "dose_g": "12",
+          "decoction_reference_g": "12g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "養陰涼血，防苦寒燥濕藥傷陰",
+          "in_formula_zh": "養陰涼血，防苦寒燥濕藥傷陰"
+        },
+        {
+          "herb_id": "herb.dang_gui",
+          "herb_zh": "當歸",
+          "name_zh": "當歸",
+          "herb_en": "Chinese Angelica Root",
+          "name_en": "Chinese Angelica Root",
+          "pinyin": "Dang Gui",
+          "pinyin_toned": "Dāng Guī",
+          "dose_g": "9",
+          "decoction_reference_g": "9g",
+          "role_zh": "佐",
+          "role_en": "Assistant",
+          "role_reason_zh": "養血和血，柔肝舒脈",
+          "in_formula_zh": "養血和血，柔肝舒脈"
+        },
+        {
+          "herb_id": "herb.chai_hu",
+          "herb_zh": "柴胡",
+          "name_zh": "柴胡",
+          "herb_en": "Bupleurum Root",
+          "name_en": "Bupleurum Root",
+          "pinyin": "Chai Hu",
+          "pinyin_toned": "Chái Hú",
+          "dose_g": "9",
+          "decoction_reference_g": "9g",
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "role_reason_zh": "疏肝理氣，引諸藥直達肝膽經",
+          "in_formula_zh": "疏肝理氣，引諸藥直達肝膽經"
+        },
+        {
+          "herb_id": "herb.gan_cao",
           "herb_zh": "甘草",
-          "herb_en": null,
-          "pinyin": null,
-          "role_zh": null,
-          "role_en": null,
-          "dose_range": "6g",
-          "elucidation_zh": "龍膽瀉肝湯中加入甘草，主要原因有二：\n一、 緩和藥性：龍膽瀉肝湯以龍膽草、柴胡等苦寒藥為主，性寒烈，易傷脾胃。甘草性甘溫，味甘緩和藥性，保護脾胃，避免藥物過於寒涼，損傷正氣。\n二、 調和藥性：甘草味甘，能調和諸藥，使藥性協調，發揮最佳療效。龍膽瀉肝湯中各藥材性質各異，甘草能調和各藥，使藥性相輔相成，達到治療目的。",
+          "name_zh": "甘草",
+          "herb_en": "Licorice Root",
+          "name_en": "Licorice Root",
+          "pinyin": "Gan Cao",
+          "pinyin_toned": "Gān Cǎo",
+          "dose_g": "6",
           "decoction_reference_g": "6g",
-          "granule_reference_g": "1.2g",
-          "granule_concentration_ratio": "5:1 濃縮顆粒 (順天堂 官網: https://www.sunten.com.tw/)"
+          "role_zh": "使",
+          "role_en": "Envoy",
+          "role_reason_zh": "調和諸藥，緩急和中",
+          "in_formula_zh": "調和諸藥，緩急和中"
         }
       ],
       "actions_en": [
-        "Clear Liver/Gallbladder excess heat",
-        "Drain damp-heat from lower burner pattern context"
+        "Drains Liver and Gallbladder fire — purges excess fire from Liver/GB channels",
+        "Clears Lower Burner damp-heat — clears and drains damp-heat in the lower burner"
       ],
       "actions_zh": [
-        "主要改善以下兩大類因「肝膽有熱」引起的症狀（共同特徵為：舌頭紅、苔黃、脈搏弦硬且快速有力）：",
-        "肝膽實火「往上衝」：頭痛（尤其是顛頂或兩側偏頭痛）、眼睛紅赤腫痛。胸悶肋骨痛、口苦。耳鳴、耳聾、耳朵紅腫流膿。",
-        "肝膽濕熱「往下流」：生殖器部位腫脹、發癢、異常出汗。小便時有灼熱、刺痛、頻尿或尿色混濁。女性帶下量多、顏色偏黃且有惡臭。",
-        "中醫認為「足厥陰肝經」和「足少陽膽經」這兩條經絡的走向，往上會通到頭、眼、耳、胸肋，往下則繞過生殖器與小腹。",
-        "當肝膽的火氣太旺順著經絡往上衝時，就會引發頭痛、口苦、眼睛紅、耳朵腫等上半身症狀。",
-        "當濕熱的毒邪順著經絡往下灌注時，就會在下半身引發泌尿道感染、生殖器發炎或白帶異常。",
-        "依照《黃帝內經》的記載「肝足厥陰之脈，起於大趾叢毛之際」起於腳大趾，沿著小腿、大腿往上走，與脾經路線類似。",
-        "接下來重點來了：「循股陰，入毛中，過陰器，抵小腹，挾胃，屬肝，絡膽」。肝經通過陰部，所有春夏季節時出現的泌尿生殖系統的問題都可能與肝經異常有關。",
-        "進入夏季之後，天氣濕熱，這種濕熱之氣容易造成肝火，循著肝經遊走，造成陰部腫大、陰部發癢、小便疼痛、女性出現黃帶，味道很臭，男性性功能障礙(陽痿)。",
-        "肝經往上走之後，「上貫膈，布脅肋，循喉嚨之後，上入頏顙，連目系，上出額，與督脈會於巔」會出現胸痛、肋間神經痛、咽喉痛，頭痛(尤其是頭頂痛)。",
-        "這時候還會出現眼睛痛、眼睛癢、嘴巴苦苦的，耳聾、耳鳴等症狀。同時舌紅苔黃，脈弦數有力。",
-        "最後還有分支「從目系下頰裏，環唇內」、「別貫膈，上注肺」出現口舌生瘡、咳嗽...等等症狀。",
-        "如果火熱之氣沿著肝經行走，就會出現以上的症狀，這在炎熱的夏季是經常發生的，因此很多人在夏季都需要這個中藥。",
-        "由於「龍膽草」大苦大寒，人肝、膽經，為「涼肝猛將」，所以龍膽瀉肝湯效果很快也很好！",
-        "從經絡的角度理解龍膽瀉肝湯",
-        "龍膽瀉肝湯的配伍非常嚴謹。它「瀉火的同時有補血，降火的同時有升散氣機」。既能強力驅逐病毒與熱邪，又不會傷害人體正氣與脾胃功能，是中醫臨床上非常經典的清肝瀉火良方。",
-        "我們把人體想像成一座繁忙的沿海城市，肝膽系統就是「市中心能源調度中心兼下水道主幹管」。當這個區域同時發生「大火」與「污水內澇」，就是龍膽瀉肝湯登場的時候。",
-        "這張方子，可以看作是一支「特種清污救火隊」，裡面每個成員都有清晰的現代角色：",
-        "龍膽草：重裝消防車，直攻火場核心",
-        "它味道極苦、性子大寒，就像一輛裝滿高效滅火泡沫的重型消防車，第一時間直接衝進火勢最猛的肝膽區，把熊熊「實火」壓下去，同時也對地面積聚的「濕熱污水」做第一輪沖洗。",
-        "梔子、黃芩:雙塔式水霧降溫組",
-        "梔子像一架能「穿透樓層」的水霧炮，把堵在胸口、心裡的煩熱悶火澆透，並引導熱從管線排出；黃芩則專門負責中上樓層（肺、胸膈區）的悶燒餘火。兩者一上一下，把龍膽草沒撲到的零星火點全面清除，防止復燃。",
-        "古人說此藥是「厥陰、少陽之正藥」「諸火皆治」，又加上黃芩、梔子兩藥苦寒藥，同時瀉火解毒，燥濕清熱。",
-        "澤瀉、木通、車前子:排水管線緊急疏通隊",
-        "由於濕熱累積在下焦，運用滲濕瀉熱的車前子、澤瀉導濕熱下行，使邪有出路。火燒的同時，體內「下水道」積滿了油膩的濕濁廢水，這三味藥就是三台不同尺寸的疏通機。",
-        "澤瀉是主力抽水馬達，大排量把濕濁抽往小便出口。",
-        "木通像通管條，打通被濕熱黏垢堵住的小口徑管線。",
-        "車前子則像高效率的掃地排水機器人，把殘留的污水掃進排水口，讓「水患」迅速從小便退去。",
-        "生地、當歸：消防栓補水與建材養護組",
-        "大火和排澇會大量消耗城市的「水庫存水」，甚至烤乾木質管線。為了不讓城市在救災後變成乾裂廢墟。生地黃就像打開地下備用水庫，大量補充被燒掉的陰液，為管線降溫。",
-        "當歸像專業養護油，塗刷在乾裂的木質結構上，潤滑氣血通道，防止管道脆裂。兩者合在一起，確保「救火排水」的同時，不把身體的家底抽乾。",
-        "由於肝經有火氣，容易耗傷陰血，古人怕傷到陰血，所以用生地養陰、當歸補血。由於肝氣不舒，運用柴胡疏暢氣機，並能引諸藥歸經肝膽。",
-        "柴胡：交通指揮與區域調度官",
-        "肝膽區遇到災難，氣機交通一定大打結。柴胡不直接滅火，但像一個站在指揮台上的調度員，把亂成一團的「氣」重新理順，打開被堵塞的通道，讓所有救援車輛（藥力）能精準抵達肝膽作業區，不會在路上擠成一團。",
-        "生甘草：安全監督兼後勤協調員",
-        "最後，生甘草像駐場的安全督導，一邊盯著各隊行動不要太過猛烈而傷及無辜的脾胃（保護腸胃黏膜），一邊協調所有隊員，讓寒涼消防組和溫潤養護組能和諧分工，聯手完成任務。",
-        "在近代中醫臨床，許多中醫師都把此方定位成為「瀉肝火」主方，以此為基礎加減，用以治療各式各樣的疑難雜症。必須要注意一點的是，此中藥不能久服，並不是平時養生用藥！",
-        "自從2022年4月台灣本土大規模爆發新冠疫情開始，醫療界吃驚地發現自從SARS出現之後，台灣地區每次都是在3月之後開始大流行，而這個季節就是肝經能量開始旺盛的季節，從肝經的異常症狀看來，也是會出現喉嚨痛、咳嗽與疲勞，從經絡看來這應該不是巧合。",
-        "近代中醫對於龍膽瀉肝湯的研究非常深入，透過歸納分析超過2000篇期刊論文之後，歸納可以改善以下疾病清單：",
-        "婦科疾病：細菌性陰道炎，多囊卵巢症候群，宮頸炎合併HPV感染，帶下病（濕熱下注），黴菌性陰道炎，外陰陰道假絲酵母菌病，陰癢，盆腔炎，子宮積膿，前庭大腺炎，子宮脫垂，女性生殖道解脲支原體感染，青春期閉經，溢乳症，女陰潰瘍，妊娠病，倒經，帶環後出血",
-        "皮膚科疾病：濕疹，銀屑病，痤瘡，帶狀皰疹，生殖器疱疹，特應性皮炎，面部激素依賴性皮炎，肛周濕疹，陰囊濕疹，扁平疣，丹毒，蕁麻疹，神經性皮炎，白癜風，脂溢性皮炎，傳染性軟疣，結節性紅斑，股癬，手足癬，紅斑性肢痛症，接觸性皮炎，疥瘡結節，硬化性淋巴管炎，膿皰瘡",
-        "泌尿生殖系統疾病（男科）：慢性前列腺炎/慢性骨盆疼痛綜合徵，急性附睪炎，睪丸炎，陽痿，早泄，不射精，男性免疫性不育，淋病，非淋菌性尿道炎，尖銳濕疣，陰莖硬化性淋巴管炎，精索靜脈曲張",
-        "耳鼻喉科疾病：突發性耳聾，分泌性中耳炎，慢性鼻竇炎，急性化膿性中耳炎，鼻咽癌放射性分泌性中耳炎，耳部帶狀皰疹，耳鳴，慢性鼻-鼻竇炎，過敏性鼻炎（間接），咽炎，鼻出血",
-        "眼科疾病：原發性青光眼，葡萄膜炎，單純皰疹性角膜炎，細菌性角膜炎，流行性角結膜炎，瞼板腺囊腫，虹膜睫狀體炎，翼狀胬肉，聚星障（皰疹性角膜炎），中漿病，乾眼症",
-        "消化系統疾病：肝損傷（藥物性、酒精性），慢性胃炎，膽囊結石，急性膽囊炎，胃食道反流病，酒精性肝病，非酒精性脂肪肝，慢性乙型肝炎，急性胰腺炎，膽汁返流性胃炎，消化性潰瘍（間接），潰瘍性結腸炎，肛竇炎，混合痔術後便秘，肛周膿腫（汗腺炎），腸躁症",
-        "神經系統疾病：偏頭痛，三叉神經痛，失眠（肝鬱化火型），癲癇，腦梗塞（急性），中風後抑鬱，帶狀皰疹後遺神經痛，坐骨神經痛，周圍性面癱，震顫，不寧腿",
-        "心血管系統疾病：原發性高血壓，動脈斑塊（肥胖型未鈣化），高血壓危象，心絞痛，室上性心動過速",
-        "內分泌代謝疾病：多囊卵巢症候群（胰島素抵抗），糖尿病周圍神經病變，痛風性關節炎，高脂血症（間接），甲狀腺炎（亞急性），真性紅細胞增多症",
-        "感染性疾病：愛滋病皮膚瘙癢，尖銳濕疣，淋菌性結膜炎，沙眼衣原體感染，真菌性角膜潰瘍，病毒性角膜炎，愛滋病帶狀皰疹，愛滋病相關炎症性皮膚病",
-        "精神心理疾病：失眠（肝鬱化火型），躁狂症，精神分裂症，抑鬱症（伴帶狀皰疹），夜遊症",
-        "風濕免疫疾病：類風濕性關節炎，白塞氏病，過敏性紫癜（間接）",
-        "其他：肝癌TACE術後栓塞綜合徵，急性肝性腦病，放射性分泌性中耳炎，兒童髋關節一過性滑膜炎，小兒遺尿，小兒情感交叉摩擦症，口瘡（復發性口腔潰瘍），牙痛（間接），頸椎病（椎動脈型），疲勞性亞健康，盜汗，黃汗。",
-        "龍膽瀉肝湯的現代臨床研究"
+        "瀉肝膽實火 — 清瀉肝膽經實熱火毒",
+        "清下焦濕熱 — 疏利下焦肝膽濕熱"
       ],
       "modifications_en": [
-        "Review infection rule-out, urinary/genital symptoms, pregnancy, liver disease, and medication context"
+        "Severe Liver fire & red eyes: Add Xia Ku Cao 12g, Ju Hua 9g",
+        "Severe pudendal itching & foul discharge: Add Ku Shen 9g, Huang Bai 6g",
+        "Bloody dysuria: Add Xiao Ji 15g, Pu Huang 9g"
       ],
-      "modifications_zh": [],
+      "modifications_zh": [
+        "肝火甚、頭痛目赤甚者：加夏枯草 12g、菊花 9g（清肝明目）",
+        "濕熱下注、陰癢帶下黃臭者：加苦參 9g、黃柏 6g（清熱燥濕止癢）",
+        "小便血淋者：加小薊 15g、蒲黃 9g（涼血止血通淋）"
+      ],
       "contraindications_en": [
-        "Not for self-treatment of suspected infection, severe pain, fever, pregnancy bleeding, or liver disease without review"
+        "Contraindicated in Spleen/Stomach deficiency cold with poor appetite or loose stools",
+        "Use with caution in Yin deficiency without damp-heat",
+        "Contraindicated for prolonged use"
       ],
       "contraindications_zh": [
-        "此中藥不能久服，不是平時養生用藥！",
-        "此方傷脾，不可大劑量或長期使用。脾虛或津傷慎用",
-        "本力藥性苦寒，易傷脾胃，且以清瀉肝膽實火為主，故不宜用於脾胃虛寒和陰虛陽兒者"
+        "脾胃虛寒、食少便溏者禁用",
+        "陰虛陽亢而無濕熱者慎用",
+        "本方大苦大寒，中病即止，切不可過服久服"
       ],
       "herb_drug_cautions": [
         "cold_digestive_weakness",
@@ -6124,64 +6427,10 @@
       "fertility_notes": "",
       "clinical_pearls": [],
       "pattern_indications_en": [
-        "Liver/Gallbladder damp-heat or excess heat pattern context"
+        "Blazing Liver and Gallbladder Fire / Lower Burner Damp-Heat: Headache, red eyes, hypochondriac pain, bitter taste, tinnitus, deafness, pudendal swelling and itching, foul turbid leukorrhea/urination, red tongue with yellow greasy coating, wiry rapid forceful pulse."
       ],
       "pattern_indications_zh": [
-        "主要改善以下兩大類因「肝膽有熱」引起的症狀（共同特徵為：舌頭紅、苔黃、脈搏弦硬且快速有力）：",
-        "肝膽實火「往上衝」：頭痛（尤其是顛頂或兩側偏頭痛）、眼睛紅赤腫痛。胸悶肋骨痛、口苦。耳鳴、耳聾、耳朵紅腫流膿。",
-        "肝膽濕熱「往下流」：生殖器部位腫脹、發癢、異常出汗。小便時有灼熱、刺痛、頻尿或尿色混濁。女性帶下量多、顏色偏黃且有惡臭。",
-        "中醫認為「足厥陰肝經」和「足少陽膽經」這兩條經絡的走向，往上會通到頭、眼、耳、胸肋，往下則繞過生殖器與小腹。",
-        "當肝膽的火氣太旺順著經絡往上衝時，就會引發頭痛、口苦、眼睛紅、耳朵腫等上半身症狀。",
-        "當濕熱的毒邪順著經絡往下灌注時，就會在下半身引發泌尿道感染、生殖器發炎或白帶異常。",
-        "龍膽瀉肝湯的主要功效",
-        "依照《黃帝內經》的記載「肝足厥陰之脈，起於大趾叢毛之際」起於腳大趾，沿著小腿、大腿往上走，與脾經路線類似。",
-        "接下來重點來了：「循股陰，入毛中，過陰器，抵小腹，挾胃，屬肝，絡膽」。肝經通過陰部，所有春夏季節時出現的泌尿生殖系統的問題都可能與肝經異常有關。",
-        "進入夏季之後，天氣濕熱，這種濕熱之氣容易造成肝火，循著肝經遊走，造成陰部腫大、陰部發癢、小便疼痛、女性出現黃帶，味道很臭，男性性功能障礙(陽痿)。",
-        "肝經往上走之後，「上貫膈，布脅肋，循喉嚨之後，上入頏顙，連目系，上出額，與督脈會於巔」會出現胸痛、肋間神經痛、咽喉痛，頭痛(尤其是頭頂痛)。",
-        "這時候還會出現眼睛痛、眼睛癢、嘴巴苦苦的，耳聾、耳鳴等症狀。同時舌紅苔黃，脈弦數有力。",
-        "最後還有分支「從目系下頰裏，環唇內」、「別貫膈，上注肺」出現口舌生瘡、咳嗽...等等症狀。",
-        "如果火熱之氣沿著肝經行走，就會出現以上的症狀，這在炎熱的夏季是經常發生的，因此很多人在夏季都需要這個中藥。",
-        "由於「龍膽草」大苦大寒，人肝、膽經，為「涼肝猛將」，所以龍膽瀉肝湯效果很快也很好！",
-        "從經絡的角度理解龍膽瀉肝湯",
-        "龍膽瀉肝湯的配伍非常嚴謹。它「瀉火的同時有補血，降火的同時有升散氣機」。既能強力驅逐病毒與熱邪，又不會傷害人體正氣與脾胃功能，是中醫臨床上非常經典的清肝瀉火良方。",
-        "我們把人體想像成一座繁忙的沿海城市，肝膽系統就是「市中心能源調度中心兼下水道主幹管」。當這個區域同時發生「大火」與「污水內澇」，就是龍膽瀉肝湯登場的時候。",
-        "這張方子，可以看作是一支「特種清污救火隊」，裡面每個成員都有清晰的現代角色：",
-        "1.龍膽草：重裝消防車，直攻火場核心",
-        "它味道極苦、性子大寒，就像一輛裝滿高效滅火泡沫的重型消防車，第一時間直接衝進火勢最猛的肝膽區，把熊熊「實火」壓下去，同時也對地面積聚的「濕熱污水」做第一輪沖洗。",
-        "2.梔子、黃芩:雙塔式水霧降溫組",
-        "梔子像一架能「穿透樓層」的水霧炮，把堵在胸口、心裡的煩熱悶火澆透，並引導熱從管線排出；黃芩則專門負責中上樓層（肺、胸膈區）的悶燒餘火。兩者一上一下，把龍膽草沒撲到的零星火點全面清除，防止復燃。",
-        "古人說此藥是「厥陰、少陽之正藥」「諸火皆治」，又加上黃芩、梔子兩藥苦寒藥，同時瀉火解毒，燥濕清熱。",
-        "3.澤瀉、木通、車前子:排水管線緊急疏通隊",
-        "由於濕熱累積在下焦，運用滲濕瀉熱的車前子、澤瀉導濕熱下行，使邪有出路。火燒的同時，體內「下水道」積滿了油膩的濕濁廢水，這三味藥就是三台不同尺寸的疏通機。",
-        "澤瀉是主力抽水馬達，大排量把濕濁抽往小便出口。",
-        "木通像通管條，打通被濕熱黏垢堵住的小口徑管線。",
-        "車前子則像高效率的掃地排水機器人，把殘留的污水掃進排水口，讓「水患」迅速從小便退去。",
-        "4.生地、當歸：消防栓補水與建材養護組",
-        "大火和排澇會大量消耗城市的「水庫存水」，甚至烤乾木質管線。為了不讓城市在救災後變成乾裂廢墟。生地黃就像打開地下備用水庫，大量補充被燒掉的陰液，為管線降溫。",
-        "當歸像專業養護油，塗刷在乾裂的木質結構上，潤滑氣血通道，防止管道脆裂。兩者合在一起，確保「救火排水」的同時，不把身體的家底抽乾。",
-        "由於肝經有火氣，容易耗傷陰血，古人怕傷到陰血，所以用生地養陰、當歸補血。由於肝氣不舒，運用柴胡疏暢氣機，並能引諸藥歸經肝膽。",
-        "龍膽瀉肝湯的組成與功效",
-        "5.柴胡：交通指揮與區域調度官",
-        "肝膽區遇到災難，氣機交通一定大打結。柴胡不直接滅火，但像一個站在指揮台上的調度員，把亂成一團的「氣」重新理順，打開被堵塞的通道，讓所有救援車輛（藥力）能精準抵達肝膽作業區，不會在路上擠成一團。",
-        "6.生甘草：安全監督兼後勤協調員",
-        "最後，生甘草像駐場的安全督導，一邊盯著各隊行動不要太過猛烈而傷及無辜的脾胃（保護腸胃黏膜），一邊協調所有隊員，讓寒涼消防組和溫潤養護組能和諧分工，聯手完成任務。",
-        "在近代中醫臨床，許多中醫師都把此方定位成為「瀉肝火」主方，以此為基礎加減，用以治療各式各樣的疑難雜症。必須要注意一點的是，此中藥不能久服，並不是平時養生用藥！",
-        "自從2022年4月台灣本土大規模爆發新冠疫情開始，醫療界吃驚地發現自從SARS出現之後，台灣地區每次都是在3月之後開始大流行，而這個季節就是肝經能量開始旺盛的季節，從肝經的異常症狀看來，也是會出現喉嚨痛、咳嗽與疲勞，從經絡看來這應該不是巧合。",
-        "近代中醫對於龍膽瀉肝湯的研究非常深入，透過歸納分析超過2000篇期刊論文之後，歸納可以改善以下疾病清單：",
-        "婦科疾病：細菌性陰道炎，多囊卵巢症候群，宮頸炎合併HPV感染，帶下病（濕熱下注），黴菌性陰道炎，外陰陰道假絲酵母菌病，陰癢，盆腔炎，子宮積膿，前庭大腺炎，子宮脫垂，女性生殖道解脲支原體感染，青春期閉經，溢乳症，女陰潰瘍，妊娠病，倒經，帶環後出血",
-        "皮膚科疾病：濕疹，銀屑病，痤瘡，帶狀皰疹，生殖器疱疹，特應性皮炎，面部激素依賴性皮炎，肛周濕疹，陰囊濕疹，扁平疣，丹毒，蕁麻疹，神經性皮炎，白癜風，脂溢性皮炎，傳染性軟疣，結節性紅斑，股癬，手足癬，紅斑性肢痛症，接觸性皮炎，疥瘡結節，硬化性淋巴管炎，膿皰瘡",
-        "泌尿生殖系統疾病（男科）：慢性前列腺炎/慢性骨盆疼痛綜合徵，急性附睪炎，睪丸炎，陽痿，早泄，不射精，男性免疫性不育，淋病，非淋菌性尿道炎，尖銳濕疣，陰莖硬化性淋巴管炎，精索靜脈曲張",
-        "耳鼻喉科疾病：突發性耳聾，分泌性中耳炎，慢性鼻竇炎，急性化膿性中耳炎，鼻咽癌放射性分泌性中耳炎，耳部帶狀皰疹，耳鳴，慢性鼻-鼻竇炎，過敏性鼻炎（間接），咽炎，鼻出血",
-        "眼科疾病：原發性青光眼，葡萄膜炎，單純皰疹性角膜炎，細菌性角膜炎，流行性角結膜炎，瞼板腺囊腫，虹膜睫狀體炎，翼狀胬肉，聚星障（皰疹性角膜炎），中漿病，乾眼症",
-        "消化系統疾病：肝損傷（藥物性、酒精性），慢性胃炎，膽囊結石，急性膽囊炎，胃食道反流病，酒精性肝病，非酒精性脂肪肝，慢性乙型肝炎，急性胰腺炎，膽汁返流性胃炎，消化性潰瘍（間接），潰瘍性結腸炎，肛竇炎，混合痔術後便秘，肛周膿腫（汗腺炎），腸躁症",
-        "神經系統疾病：偏頭痛，三叉神經痛，失眠（肝鬱化火型），癲癇，腦梗塞（急性），中風後抑鬱，帶狀皰疹後遺神經痛，坐骨神經痛，周圍性面癱，震顫，不寧腿",
-        "心血管系統疾病：原發性高血壓，動脈斑塊（肥胖型未鈣化），高血壓危象，心絞痛，室上性心動過速",
-        "內分泌代謝疾病：多囊卵巢症候群（胰島素抵抗），糖尿病周圍神經病變，痛風性關節炎，高脂血症（間接），甲狀腺炎（亞急性），真性紅細胞增多症",
-        "感染性疾病：愛滋病皮膚瘙癢，尖銳濕疣，淋菌性結膜炎，沙眼衣原體感染，真菌性角膜潰瘍，病毒性角膜炎，愛滋病帶狀皰疹，愛滋病相關炎症性皮膚病",
-        "精神心理疾病：失眠（肝鬱化火型），躁狂症，精神分裂症，抑鬱症（伴帶狀皰疹），夜遊症",
-        "風濕免疫疾病：類風濕性關節炎，白塞氏病，過敏性紫癜（間接）",
-        "其他：肝癌TACE術後栓塞綜合徵，急性肝性腦病，放射性分泌性中耳炎，兒童髋關節一過性滑膜炎，小兒遺尿，小兒情感交叉摩擦症，口瘡（復發性口腔潰瘍），牙痛（間接），頸椎病（椎動脈型），疲勞性亞健康，盜汗，黃汗。",
-        "龍膽瀉肝湯的現代臨床研究"
+        "肝膽實火上炎證／肝膽濕熱下注證：頭痛目赤、脅痛口苦、耳鳴耳聾、陰腫陰癢、筋痿陰汗、小便淋濁、舌紅苔黃膩、脈弦數有力。"
       ],
       "related_conditions": [
         "pattern.damp_heat"
@@ -6215,7 +6464,7 @@
       "tier": "core",
       "category": "清熱劑 / Clear Heat",
       "source_hint": "Existing AcuTing seed; Bensky F&S: Clear Heat; CloudTCM /formula lookup pending",
-      "comparison_group": "liver_gallbladder_damp_heat",
+      "comparison_group": "清熱劑 / Clear Heat",
       "related_formulas": [
         "formula.zuo_jin_wan"
       ],
@@ -6283,26 +6532,19 @@
       "board_name_en": "Gentian Decoction to Drain the Liver",
       "exam_star": 1,
       "field_sources": {
-        "exam_importance": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "actions_zh": [
+          "yi_zong_jin_jian",
+          "curriculum/formulas/Formulations Summary Chart.docx.md"
         ],
-        "on_board_list": [
-          "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf（Appendix C 官方應試方劑表）"
+        "composition_roles": [
+          "yi_zong_jin_jian",
+          "bastyr_materia_medica_2"
         ],
-        "cloudtcm_url": [
-          "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
+        "indications": [
+          "yi_zong_jin_jian"
         ],
-        "condition_tags_zh": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "condition_tags_en": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "pattern_tags_zh": [
-          "data/config/formula_tag_glossary.json"
-        ],
-        "pattern_tags_en": [
-          "data/config/formula_tag_glossary.json"
+        "contraindications": [
+          "bastyr_materia_medica_2"
         ]
       },
       "cloudtcm_id": 286,
@@ -6356,7 +6598,157 @@
             "甘草 6g"
           ]
         }
-      }
+      },
+      "_reference_note": "REFERENCE IMPLEMENTATION for formula.long_dan_xie_gan_tang matching template.",
+      "name_en_translated": "Gentian Decoction to Drain the Liver",
+      "pinyin_toned": "Lóng Dǎn Xiè Gān Tāng",
+      "source_text_zh": "《醫宗金鑑》引《古今醫鑑》",
+      "source_text_en": "Yi Zong Jin Jian (Golden Mirror of Medical Orthodoxy)",
+      "category_zh": "清熱劑－清臟腑熱",
+      "glance": {
+        "category_banner_zh": "瀉肝膽火 清下焦濕熱",
+        "category_banner_en": "DRAIN LIVER FIRE CLEAR DAMP HEAT",
+        "plain_summary_zh": "肝膽實火上炎（頭痛目赤口苦）與肝膽濕熱下注（陰腫陰癢淋濁）之代表方。大苦大寒，清瀉肝膽實火與下焦濕熱。",
+        "plain_summary_en": "Premier formula for Liver/Gallbladder blazing fire and lower burner damp-heat. Features headache, bitter taste, and pudendal itching.",
+        "plain_indications_zh": [
+          "肝膽實火上炎",
+          "頭痛目赤",
+          "脅痛口苦",
+          "濕熱下注",
+          "陰腫陰癢"
+        ],
+        "plain_indications_en": [
+          "liver fire blazing",
+          "headache red eyes",
+          "hypochondriac pain bitter taste",
+          "damp-heat downward",
+          "pudendal itching"
+        ],
+        "herb_count": 10
+      },
+      "key_pairs": [
+        "pair.long_dan_cao__chai_hu",
+        "pair.huang_qin__zhi_zi",
+        "pair.sheng_di_huang__dang_gui"
+      ],
+      "key_pairs_note_zh": "龍膽草配柴胡（一清一疏，瀉火不鬱）；黃芩配梔子（清熱瀉火，導熱下行）；生地配當歸（養血滋陰，防苦寒傷陰）。",
+      "key_pairs_note_en": "Long Dan Cao with Chai Hu (drains fire without causing stagnation); Huang Qin with Zhi Zi (clears heat and guides downward); Sheng Di Huang with Dang Gui (nourishes blood/yin to prevent drying).",
+      "fang_yi_zh": "《醫宗金鑑》清瀉肝膽實火與下焦濕熱之主方。龍膽草大苦大寒，專瀉肝膽實火、清下焦濕熱為君；黃芩、梔子苦寒瀉火、清熱利濕為臣；澤瀉、木通、車前子滲濕利尿，導濕熱下行從小便出；生地黃、當歸滋陰養血，防止苦寒燥濕藥傷陰；柴胡疏肝理氣，引諸藥直達肝膽經為使；生甘草調和諸藥。全方瀉中有補，清中有養。",
+      "fang_yi_en": "Premier formula for draining Liver/Gallbladder fire and lower burner damp-heat. Long Dan Cao purges Liver fire as chief; Huang Qin and Zhi Zi clear heat as deputies; Ze Xie, Mu Tong, Che Qian Zi drain dampness via urine; Sheng Di Huang and Dang Gui nourish blood to protect yin; Chai Hu acts as envoy to direct herbs into Liver/GB channels.",
+      "indications": [
+        {
+          "pattern_zh": "肝膽實火上炎證 / 肝膽濕熱下注證",
+          "pattern_en": "Blazing Liver and Gallbladder Fire / Lower Burner Damp-Heat",
+          "clinical_picture_zh": "頭痛目赤、脅痛口苦、耳鳴耳聾、陰腫陰癢、小便淋濁",
+          "clinical_picture_en": "Headache, red eyes, hypochondriac pain, bitter taste, tinnitus, pudendal itching, turbid urination",
+          "tongue_zh": "舌紅，苔黃膩",
+          "tongue_en": "Red tongue with yellow greasy coating",
+          "pulse_zh": "脈弦數有力",
+          "pulse_en": "Wiry, rapid, forceful pulse"
+        }
+      ],
+      "constitutional_types_zh": [
+        "陰虛陽亢",
+        "脾胃虛寒"
+      ],
+      "constitutional_types_en": [
+        "Yin deficiency with Yang rising",
+        "Spleen/Stomach deficiency cold"
+      ],
+      "constitutional_note_zh": "脾胃虛寒或陰虛無濕熱者禁用。",
+      "modifications": [
+        {
+          "if_zh": "肝火甚、頭痛目赤甚者",
+          "if_en": "Severe Liver fire & red eyes",
+          "change_zh": "加夏枯草 12g、菊花 9g（清肝明目）",
+          "change_en": "Add Xia Ku Cao 12g, Ju Hua 9g"
+        },
+        {
+          "if_zh": "濕熱下注、陰癢帶下黃臭者",
+          "if_en": "Severe pudendal itching & foul discharge",
+          "change_zh": "加苦參 9g、黃柏 6g（清熱燥濕止癢）",
+          "change_en": "Add Ku Shen 9g, Huang Bai 6g"
+        }
+      ],
+      "dose_adjustment_note_zh": "水煎服。本方大苦大寒，中病即止，不可過服久服。",
+      "dose_adjustment_note_en": "Decoct in water. Discontinue once symptoms subside due to harsh bitter-cold nature.",
+      "comparisons": [
+        {
+          "with": "formula.huang_lian_jie_du_tang",
+          "name_zh": "黃連解毒湯",
+          "differentiator_zh": "黃連解毒湯通瀉三焦火毒；龍膽瀉肝湯專清肝膽實火與下焦濕熱。",
+          "differentiator_en": "Huang Lian Jie Du Tang purges fire from all three burners; Long Dan Xie Gan Tang targets Liver/GB fire and lower burner damp-heat."
+        }
+      ],
+      "formula_family": [
+        {
+          "formula_id": "formula.long_dan_xie_gan_tang",
+          "name_zh": "龍膽瀉肝湯",
+          "relation": "同類",
+          "change": [
+            "原方結構"
+          ],
+          "change_en": [
+            "Base formula structure"
+          ]
+        }
+      ],
+      "applications_zh": [
+        "急性膽囊炎",
+        "急性中耳炎",
+        "帶狀疱疹",
+        "前列腺炎",
+        "陰道炎",
+        "高血壓肝火型"
+      ],
+      "applications_en": [
+        "Acute cholecystitis",
+        "Acute otitis media",
+        "Herpes zoster",
+        "Prostatitis",
+        "Vaginitis",
+        "Hypertension (Liver Fire)"
+      ],
+      "modern_applications_zh": [
+        "急性膽囊炎",
+        "急性中耳炎",
+        "帶狀疱疹",
+        "前列腺炎",
+        "陰道炎",
+        "高血壓肝火型"
+      ],
+      "modern_applications_en": [
+        "Acute cholecystitis",
+        "Acute otitis media",
+        "Herpes zoster",
+        "Prostatitis",
+        "Vaginitis",
+        "Hypertension (Liver Fire)"
+      ],
+      "american_dragon_url": "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html",
+      "external_links": [
+        {
+          "source_id": "american_dragon",
+          "url": "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html",
+          "label_zh": "American Dragon",
+          "label_en": "American Dragon",
+          "lang": "en",
+          "link_status": "direct"
+        },
+        {
+          "source_id": "cloudtcm",
+          "url": "https://cloudtcm.com/formula/286",
+          "label_zh": "雲端中醫",
+          "label_en": "CloudTCM",
+          "lang": "zh",
+          "link_status": "direct"
+        }
+      ],
+      "authored_by": "model_draft",
+      "formula_song": "龍膽瀉肝梔芩柴，木通澤瀉車前偕。\n生地當歸甘草合，肝家實火濕熱消除。",
+      "formula_song_zh": "龍膽瀉肝梔芩柴，木通澤瀉車前偕。\n生地當歸甘草合，肝家實火濕熱消除。",
+      "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+      "exam_pearl": "【考綱重點】肝膽實火上炎（頭痛目赤口苦）與肝膽濕熱下注（陰腫陰癢淋濁）首選方。龍膽草為君；柴胡引藥入肝經；當歸+生地養血防苦寒傷陰。NCBAHM 2026 CH Outline p.21。"
     },
     {
       "id": "formula.qing_wei_san",

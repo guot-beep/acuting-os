@@ -1,0 +1,366 @@
+{
+  "_reference_note": "REFERENCE IMPLEMENTATION for formula.long_dan_xie_gan_tang matching template.",
+  "id": "formula.long_dan_xie_gan_tang",
+  "name_zh": "龍膽瀉肝湯",
+  "name_en": "Long Dan Xie Gan Tang",
+  "name_en_translated": "Gentian Decoction to Drain the Liver",
+  "pinyin": "Long Dan Xie Gan Tang",
+  "pinyin_toned": "Lóng Dǎn Xiè Gān Tāng",
+  "source_text_zh": "《醫宗金鑑》引《古今醫鑑》",
+  "source_text_en": "Yi Zong Jin Jian (Golden Mirror of Medical Orthodoxy)",
+  "category_zh": "清熱劑－清臟腑熱",
+  "category_en": "Formulas that Clear Heat - Clear Organ Heat",
+  "comparison_group": "清熱劑 / Clear Heat",
+  "glance": {
+    "category_banner_zh": "瀉肝膽火 清下焦濕熱",
+    "category_banner_en": "DRAIN LIVER FIRE CLEAR DAMP HEAT",
+    "plain_summary_zh": "肝膽實火上炎（頭痛目赤口苦）與肝膽濕熱下注（陰腫陰癢淋濁）之代表方。大苦大寒，清瀉肝膽實火與下焦濕熱。",
+    "plain_summary_en": "Premier formula for Liver/Gallbladder blazing fire and lower burner damp-heat. Features headache, bitter taste, and pudendal itching.",
+    "plain_indications_zh": [
+      "肝膽實火上炎",
+      "頭痛目赤",
+      "脅痛口苦",
+      "濕熱下注",
+      "陰腫陰癢"
+    ],
+    "plain_indications_en": [
+      "liver fire blazing",
+      "headache red eyes",
+      "hypochondriac pain bitter taste",
+      "damp-heat downward",
+      "pudendal itching"
+    ],
+    "herb_count": 10
+  },
+  "composition": [
+    {
+      "herb_id": "herb.long_dan_cao",
+      "herb_zh": "龍膽草",
+      "name_zh": "龍膽草",
+      "herb_en": "Gentian Root",
+      "name_en": "Gentian Root",
+      "pinyin": "Long Dan Cao",
+      "pinyin_toned": "Lóng Dǎn Cǎo",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "大苦大寒，專瀉肝膽實火，清下焦濕熱——為君藥",
+      "in_formula_zh": "大苦大寒，專瀉肝膽實火，清下焦濕熱——為君藥"
+    },
+    {
+      "herb_id": "herb.huang_qin",
+      "herb_zh": "黃芩",
+      "name_zh": "黃芩",
+      "herb_en": "Baikal Skullcap Root",
+      "name_en": "Baikal Skullcap Root",
+      "pinyin": "Huang Qin",
+      "pinyin_toned": "Huáng Qín",
+      "dose_g": "9",
+      "decoction_reference_g": "9g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "苦寒清熱燥濕，助龍膽草瀉肝膽實火",
+      "in_formula_zh": "苦寒清熱燥濕，助龍膽草瀉肝膽實火"
+    },
+    {
+      "herb_id": "herb.zhi_zi",
+      "herb_zh": "梔子",
+      "name_zh": "梔子",
+      "herb_en": "Gardenia Fruit",
+      "name_en": "Gardenia Fruit",
+      "pinyin": "Zhi Zi",
+      "pinyin_toned": "Zhī Zǐ",
+      "dose_g": "9",
+      "decoction_reference_g": "9g",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "清熱利濕，導肝膽火熱下行從小便出",
+      "in_formula_zh": "清熱利濕，導肝膽火熱下行從小便出"
+    },
+    {
+      "herb_id": "herb.ze_xie",
+      "herb_zh": "澤瀉",
+      "name_zh": "澤瀉",
+      "herb_en": "Alisma Rhizome",
+      "name_en": "Alisma Rhizome",
+      "pinyin": "Ze Xie",
+      "pinyin_toned": "Zé Xiè",
+      "dose_g": "12",
+      "decoction_reference_g": "12g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "淡滲利濕，清瀉下焦濕熱",
+      "in_formula_zh": "淡滲利濕，清瀉下焦濕熱"
+    },
+    {
+      "herb_id": "herb.mu_tong",
+      "herb_zh": "木通",
+      "name_zh": "木通",
+      "herb_en": "Akebia Stem",
+      "name_en": "Akebia Stem",
+      "pinyin": "Mu Tong",
+      "pinyin_toned": "Mù Tōng",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "清熱利尿，通利水道與血脈",
+      "in_formula_zh": "清熱利尿，通利水道與血脈"
+    },
+    {
+      "herb_id": "herb.che_qian_zi",
+      "herb_zh": "車前子",
+      "name_zh": "車前子",
+      "herb_en": "Plantain Seed",
+      "name_en": "Plantain Seed",
+      "pinyin": "Che Qian Zi",
+      "pinyin_toned": "Chē Qián Zǐ",
+      "dose_g": "9",
+      "decoction_reference_g": "9g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "利水通淋，清瀉下焦濕熱",
+      "in_formula_zh": "利水通淋，清瀉下焦濕熱"
+    },
+    {
+      "herb_id": "herb.sheng_di_huang",
+      "herb_zh": "生地黃",
+      "name_zh": "生地黃",
+      "herb_en": "Rehmannia Root",
+      "name_en": "Rehmannia Root",
+      "pinyin": "Sheng Di Huang",
+      "pinyin_toned": "Shēng Dì Huáng",
+      "dose_g": "12",
+      "decoction_reference_g": "12g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "養陰涼血，防苦寒燥濕藥傷陰",
+      "in_formula_zh": "養陰涼血，防苦寒燥濕藥傷陰"
+    },
+    {
+      "herb_id": "herb.dang_gui",
+      "herb_zh": "當歸",
+      "name_zh": "當歸",
+      "herb_en": "Chinese Angelica Root",
+      "name_en": "Chinese Angelica Root",
+      "pinyin": "Dang Gui",
+      "pinyin_toned": "Dāng Guī",
+      "dose_g": "9",
+      "decoction_reference_g": "9g",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "養血和血，柔肝舒脈",
+      "in_formula_zh": "養血和血，柔肝舒脈"
+    },
+    {
+      "herb_id": "herb.chai_hu",
+      "herb_zh": "柴胡",
+      "name_zh": "柴胡",
+      "herb_en": "Bupleurum Root",
+      "name_en": "Bupleurum Root",
+      "pinyin": "Chai Hu",
+      "pinyin_toned": "Chái Hú",
+      "dose_g": "9",
+      "decoction_reference_g": "9g",
+      "role_zh": "使",
+      "role_en": "Envoy",
+      "role_reason_zh": "疏肝理氣，引諸藥直達肝膽經",
+      "in_formula_zh": "疏肝理氣，引諸藥直達肝膽經"
+    },
+    {
+      "herb_id": "herb.gan_cao",
+      "herb_zh": "甘草",
+      "name_zh": "甘草",
+      "herb_en": "Licorice Root",
+      "name_en": "Licorice Root",
+      "pinyin": "Gan Cao",
+      "pinyin_toned": "Gān Cǎo",
+      "dose_g": "6",
+      "decoction_reference_g": "6g",
+      "role_zh": "使",
+      "role_en": "Envoy",
+      "role_reason_zh": "調和諸藥，緩急和中",
+      "in_formula_zh": "調和諸藥，緩急和中"
+    }
+  ],
+  "key_pairs": [
+    "pair.long_dan_cao__chai_hu",
+    "pair.huang_qin__zhi_zi",
+    "pair.sheng_di_huang__dang_gui"
+  ],
+  "key_pairs_note_zh": "龍膽草配柴胡（一清一疏，瀉火不鬱）；黃芩配梔子（清熱瀉火，導熱下行）；生地配當歸（養血滋陰，防苦寒傷陰）。",
+  "key_pairs_note_en": "Long Dan Cao with Chai Hu (drains fire without causing stagnation); Huang Qin with Zhi Zi (clears heat and guides downward); Sheng Di Huang with Dang Gui (nourishes blood/yin to prevent drying).",
+  "fang_yi_zh": "《醫宗金鑑》清瀉肝膽實火與下焦濕熱之主方。龍膽草大苦大寒，專瀉肝膽實火、清下焦濕熱為君；黃芩、梔子苦寒瀉火、清熱利濕為臣；澤瀉、木通、車前子滲濕利尿，導濕熱下行從小便出；生地黃、當歸滋陰養血，防止苦寒燥濕藥傷陰；柴胡疏肝理氣，引諸藥直達肝膽經為使；生甘草調和諸藥。全方瀉中有補，清中有養。",
+  "fang_yi_en": "Premier formula for draining Liver/Gallbladder fire and lower burner damp-heat. Long Dan Cao purges Liver fire as chief; Huang Qin and Zhi Zi clear heat as deputies; Ze Xie, Mu Tong, Che Qian Zi drain dampness via urine; Sheng Di Huang and Dang Gui nourish blood to protect yin; Chai Hu acts as envoy to direct herbs into Liver/GB channels.",
+  "actions_zh": [
+    "瀉肝膽實火 — 清瀉肝膽經實熱火毒",
+    "清下焦濕熱 — 疏利下焦肝膽濕熱"
+  ],
+  "actions_en": [
+    "Drains Liver and Gallbladder fire — purges excess fire from Liver/GB channels",
+    "Clears Lower Burner damp-heat — clears and drains damp-heat in the lower burner"
+  ],
+  "pattern_indications_zh": [
+    "肝膽實火上炎證／肝膽濕熱下注證：頭痛目赤、脅痛口苦、耳鳴耳聾、陰腫陰癢、筋痿陰汗、小便淋濁、舌紅苔黃膩、脈弦數有力。"
+  ],
+  "pattern_indications_en": [
+    "Blazing Liver and Gallbladder Fire / Lower Burner Damp-Heat: Headache, red eyes, hypochondriac pain, bitter taste, tinnitus, deafness, pudendal swelling and itching, foul turbid leukorrhea/urination, red tongue with yellow greasy coating, wiry rapid forceful pulse."
+  ],
+  "indications": [
+    {
+      "pattern_zh": "肝膽實火上炎證 / 肝膽濕熱下注證",
+      "pattern_en": "Blazing Liver and Gallbladder Fire / Lower Burner Damp-Heat",
+      "clinical_picture_zh": "頭痛目赤、脅痛口苦、耳鳴耳聾、陰腫陰癢、小便淋濁",
+      "clinical_picture_en": "Headache, red eyes, hypochondriac pain, bitter taste, tinnitus, pudendal itching, turbid urination",
+      "tongue_zh": "舌紅，苔黃膩",
+      "tongue_en": "Red tongue with yellow greasy coating",
+      "pulse_zh": "脈弦數有力",
+      "pulse_en": "Wiry, rapid, forceful pulse"
+    }
+  ],
+  "constitutional_types_zh": [
+    "陰虛陽亢",
+    "脾胃虛寒"
+  ],
+  "constitutional_types_en": [
+    "Yin deficiency with Yang rising",
+    "Spleen/Stomach deficiency cold"
+  ],
+  "constitutional_note_zh": "脾胃虛寒或陰虛無濕熱者禁用。",
+  "modifications_zh": [
+    "肝火甚、頭痛目赤甚者：加夏枯草 12g、菊花 9g（清肝明目）",
+    "濕熱下注、陰癢帶下黃臭者：加苦參 9g、黃柏 6g（清熱燥濕止癢）",
+    "小便血淋者：加小薊 15g、蒲黃 9g（涼血止血通淋）"
+  ],
+  "modifications_en": [
+    "Severe Liver fire & red eyes: Add Xia Ku Cao 12g, Ju Hua 9g",
+    "Severe pudendal itching & foul discharge: Add Ku Shen 9g, Huang Bai 6g",
+    "Bloody dysuria: Add Xiao Ji 15g, Pu Huang 9g"
+  ],
+  "modifications": [
+    {
+      "if_zh": "肝火甚、頭痛目赤甚者",
+      "if_en": "Severe Liver fire & red eyes",
+      "change_zh": "加夏枯草 12g、菊花 9g（清肝明目）",
+      "change_en": "Add Xia Ku Cao 12g, Ju Hua 9g"
+    },
+    {
+      "if_zh": "濕熱下注、陰癢帶下黃臭者",
+      "if_en": "Severe pudendal itching & foul discharge",
+      "change_zh": "加苦參 9g、黃柏 6g（清熱燥濕止癢）",
+      "change_en": "Add Ku Shen 9g, Huang Bai 6g"
+    }
+  ],
+  "dose_adjustment_note_zh": "水煎服。本方大苦大寒，中病即止，不可過服久服。",
+  "dose_adjustment_note_en": "Decoct in water. Discontinue once symptoms subside due to harsh bitter-cold nature.",
+  "contraindications_zh": [
+    "脾胃虛寒、食少便溏者禁用",
+    "陰虛陽亢而無濕熱者慎用",
+    "本方大苦大寒，中病即止，切不可過服久服"
+  ],
+  "contraindications_en": [
+    "Contraindicated in Spleen/Stomach deficiency cold with poor appetite or loose stools",
+    "Use with caution in Yin deficiency without damp-heat",
+    "Contraindicated for prolonged use"
+  ],
+  "comparisons": [
+    {
+      "with": "formula.huang_lian_jie_du_tang",
+      "name_zh": "黃連解毒湯",
+      "differentiator_zh": "黃連解毒湯通瀉三焦火毒；龍膽瀉肝湯專清肝膽實火與下焦濕熱。",
+      "differentiator_en": "Huang Lian Jie Du Tang purges fire from all three burners; Long Dan Xie Gan Tang targets Liver/GB fire and lower burner damp-heat."
+    }
+  ],
+  "formula_family": [
+    {
+      "formula_id": "formula.long_dan_xie_gan_tang",
+      "name_zh": "龍膽瀉肝湯",
+      "relation": "同類",
+      "change": [
+        "原方結構"
+      ],
+      "change_en": [
+        "Base formula structure"
+      ]
+    }
+  ],
+  "applications_zh": [
+    "急性膽囊炎",
+    "急性中耳炎",
+    "帶狀疱疹",
+    "前列腺炎",
+    "陰道炎",
+    "高血壓肝火型"
+  ],
+  "applications_en": [
+    "Acute cholecystitis",
+    "Acute otitis media",
+    "Herpes zoster",
+    "Prostatitis",
+    "Vaginitis",
+    "Hypertension (Liver Fire)"
+  ],
+  "modern_applications_zh": [
+    "急性膽囊炎",
+    "急性中耳炎",
+    "帶狀疱疹",
+    "前列腺炎",
+    "陰道炎",
+    "高血壓肝火型"
+  ],
+  "modern_applications_en": [
+    "Acute cholecystitis",
+    "Acute otitis media",
+    "Herpes zoster",
+    "Prostatitis",
+    "Vaginitis",
+    "Hypertension (Liver Fire)"
+  ],
+  "cloudtcm_url": "https://cloudtcm.com/formula/286",
+  "american_dragon_url": "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html",
+  "source_urls": [
+    "https://cloudtcm.com/formula/286",
+    "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html"
+  ],
+  "external_links": [
+    {
+      "source_id": "american_dragon",
+      "url": "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html",
+      "label_zh": "American Dragon",
+      "label_en": "American Dragon",
+      "lang": "en",
+      "link_status": "direct"
+    },
+    {
+      "source_id": "cloudtcm",
+      "url": "https://cloudtcm.com/formula/286",
+      "label_zh": "雲端中醫",
+      "label_en": "CloudTCM",
+      "lang": "zh",
+      "link_status": "direct"
+    }
+  ],
+  "field_sources": {
+    "actions_zh": [
+      "yi_zong_jin_jian",
+      "curriculum/formulas/Formulations Summary Chart.docx.md"
+    ],
+    "composition_roles": [
+      "yi_zong_jin_jian",
+      "bastyr_materia_medica_2"
+    ],
+    "indications": [
+      "yi_zong_jin_jian"
+    ],
+    "contraindications": [
+      "bastyr_materia_medica_2"
+    ]
+  },
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "formula_song": "龍膽瀉肝梔芩柴，木通澤瀉車前偕。\n生地當歸甘草合，肝家實火濕熱消除。",
+  "formula_song_zh": "龍膽瀉肝梔芩柴，木通澤瀉車前偕。\n生地當歸甘草合，肝家實火濕熱消除。",
+  "formula_song_source_zh": "出自汪昂《湯頭歌訣》",
+  "exam_pearl": "【考綱重點】肝膽實火上炎（頭痛目赤口苦）與肝膽濕熱下注（陰腫陰癢淋濁）首選方。龍膽草為君；柴胡引藥入肝經；當歸+生地養血防苦寒傷陰。NCBAHM 2026 CH Outline p.21。"
+}
