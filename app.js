@@ -6195,6 +6195,18 @@ function renderFiveShuMatrixTable() {
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
         1. 五輸穴中英總表 (Five Shu Points: Jing-Well, Ying-Spring, Shu-Stream, Jing-River, He-Sea)
       </h3>
+      
+      <div style="background: #f0f7f4; border: 1px solid #c2e0d3; border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+        <h4 style="color: #164e32; margin: 0 0 0.5rem; font-size: 0.98rem; font-weight: 700;">💡 eLotus & Point Selection 核心知識點與選穴原理：</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
+          <li><strong>井穴 (Jing-Well - 出):</strong> 氣血所出，主治「心下滿」、急救開竅、熱病昏迷、精神神志暴疾。位於手足末端。</li>
+          <li><strong>滎穴 (Ying-Spring - 溜):</strong> 氣血所溜，主治「身熱」、清瀉本經實熱與急性發炎（如魚際瀉肺熱、行間瀉肝火）。</li>
+          <li><strong>輸穴 (Shu-Stream - 注):</strong> 氣血所注，主治「體重節痛」、風濕痺痛、脾胃重滯。陰經之輸穴即本經原穴。</li>
+          <li><strong>經穴 (Jing-River - 行):</strong> 氣血所行，主治「喘呼吸寒熱」、咽喉音啞、咳嗽發熱。</li>
+          <li><strong>合穴 (He-Sea - 入):</strong> 氣血所入，主治「逆氣而泄」、腸胃腑病、水飲停聚與氣血上逆。位於肘膝關節附近。</li>
+        </ul>
+      </div>
+
       <table class="master-matrix-table">
         <thead>
           <tr>
@@ -6250,6 +6262,18 @@ function renderYuanLuoXiMuShuMatrixTable() {
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
         2. 原絡郄俞募穴總表 (Yuan Source, Luo Connection, Xi Cleft, Front Mu, & Back Shu Points)
       </h3>
+
+      <div style="background: #f0f7f4; border: 1px solid #c2e0d3; border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+        <h4 style="color: #164e32; margin: 0 0 0.5rem; font-size: 0.98rem; font-weight: 700;">💡 eLotus & Point Selection 核心知識點與選穴原理：</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
+          <li><strong>原穴 (Yuan-Source):</strong> 五臟六腑原氣深聚處，主治本臟本腑之虛實極症。</li>
+          <li><strong>絡穴 (Luo-Connecting):</strong> 聯絡表裏兩經，善治表裏兩經相兼病變及慢性絡脈瘀血。</li>
+          <li><strong>主客原絡配穴法 (Host-Guest Pairing):</strong> 先病為「主」（取先病經之原穴），後病為「客」（取後病經之絡穴）。如肺先病取 LU9 太淵(原)，大腸後病取 LI6 偏歷(絡)。</li>
+          <li><strong>郄穴 (Xi-Cleft):</strong> 氣血深聚之隙縫，專治本經本臟之「急性劇痛」與「急性出血」（如陰郄止心痛血暴、孔最止咯血）。</li>
+          <li><strong>俞募配穴法 (Back-Shu & Front-Mu):</strong> 陰病行陽（取背俞穴治臟病、寒病、慢性病）；陽病行陰（取胸腹募穴治腑病、熱病、急性病）。</li>
+        </ul>
+      </div>
+
       <table class="master-matrix-table">
         <thead>
           <tr>
@@ -6299,6 +6323,15 @@ function renderLowerHeMotherChildMatrixTable() {
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
         3. 下合穴與母子補瀉穴總表 (Lower He-Sea & Mother-Child Tonification/Sedation Points)
       </h3>
+
+      <div style="background: #f0f7f4; border: 1px solid #c2e0d3; border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+        <h4 style="color: #164e32; margin: 0 0 0.5rem; font-size: 0.98rem; font-weight: 700;">💡 eLotus & Point Selection 核心知識點與選穴原理：</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
+          <li><strong>六腑下合穴 (Six Lower He-Sea Points):</strong> 《靈樞·邪氣臟腑病形》「合治內腑」，六腑之氣皆下合於足三陽經。大腸下合上巨虛(ST37)、小腸下合下巨虛(ST39)、三焦下合委陽(BL39)，專治六腑急性積滯與傳化病變。</li>
+          <li><strong>五行母子補瀉法則 (Mother-Child Law):</strong> 「虛則補其母，實則瀉其子」。如肺金虛取太淵(LU9 土生金/母穴)補之；肺金實取尺澤(LU5 金生水/子穴)瀉之。</li>
+        </ul>
+      </div>
+
       <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">一、六腑下合穴 (Six Lower He-Sea Points)</h4>
       <table class="master-matrix-table" style="margin-bottom: 1.5rem;">
         <thead>
@@ -6345,6 +6378,18 @@ function renderConfluentPointsMatrixTable() {
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
         4. 八脈交會穴與奇經對應配穴總表 (Master & Coupled Points for Extraordinary Channels)
       </h3>
+
+      <div style="background: #f0f7f4; border: 1px solid #c2e0d3; border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+        <h4 style="color: #164e32; margin: 0 0 0.5rem; font-size: 0.98rem; font-weight: 700;">💡 eLotus & Point Selection 核心知識點與選穴原理：</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
+          <li><strong>八脈交會穴 (Master & Coupled Points):</strong> 奇經八脈與十二正經相通的 8 個特定穴，臨床採「上下相配」法：</li>
+          <li><strong>公孫(SP4) + 內關(PC6):</strong> 主治心、胸、胃部疾病（胃痛、噁心、心悸、胸悶、安神）。</li>
+          <li><strong>後溪(SI3) + 申脈(BL62):</strong> 主治目內眥、頸項、耳後、肩胛與督脈脊柱痛。</li>
+          <li><strong>臨泣(GB41) + 外關(TE5):</strong> 主治目銳眥、耳後、少腹與帶脈偏頭痛、膽經疾患。</li>
+          <li><strong>列缺(LU7) + 照海(KI6):</strong> 主治咽喉、胸膈、肺系疾病與陰虛咽乾。</li>
+        </ul>
+      </div>
+
       <table class="master-matrix-table">
         <thead>
           <tr>
@@ -6390,6 +6435,18 @@ function renderGroupLuoMatrixTable() {
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
         5. 組絡穴與大絡總表 (Group Luo Points & Great Luo Vessels)
       </h3>
+
+      <div style="background: #f0f7f4; border: 1px solid #c2e0d3; border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+        <h4 style="color: #164e32; margin: 0 0 0.5rem; font-size: 0.98rem; font-weight: 700;">💡 eLotus & Point Selection 核心知識點與選穴原理：</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
+          <li><strong>組絡穴 (Group Luo Points):</strong> 一穴同時交會統轄同肢同陰陽屬性的三條經脈。</li>
+          <li><strong>手三陰組絡 PC5 (間使):</strong> 一穴兼通肺、心、心包三經，主治心痛、心悸、胃熱嘔吐、精神神志障礙。</li>
+          <li><strong>手三陽組絡 TE8 (三陽絡):</strong> 一穴兼通大腸、小腸、三焦三經，主治頭面五官熱疾、耳聾、咽痛、手手臂痛。</li>
+          <li><strong>足三陰組絡 SP6 (三陰交):</strong> 一穴兼通脾、肝、腎三經，婦科、男科、消化、生殖與水腫第一要穴。</li>
+          <li><strong>足三陽組絡 GB39 (懸鐘/絕骨):</strong> 一穴兼通胃、膀胱、膽三經，主治頸項強痛、下肢痿痺、髓海不足。</li>
+          <li><strong>脾之大絡 SP21 (大包):</strong> 總絡全身陰陽諸絡，主治全身疼痛與周身軟弱無力。</li>
+        </ul>
+      </div>
       <table class="master-matrix-table">
         <thead>
           <tr>
@@ -6444,6 +6501,14 @@ function renderHuiAndCommandMatrixTable() {
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
         6. 八會穴與六總穴中英總表 (Eight Hui-Influential & Six Command Points)
       </h3>
+
+      <div style="background: #f0f7f4; border: 1px solid #c2e0d3; border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+        <h4 style="color: #164e32; margin: 0 0 0.5rem; font-size: 0.98rem; font-weight: 700;">💡 eLotus & Point Selection 核心知識點與選穴原理：</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
+          <li><strong>八會穴 (Hui-Influential Points):</strong> 臟腑、氣血、筋脈、骨髓等精氣聚會之 8 特殊穴。器官或組織有病即取該會穴（如骨疾取 BL11、筋疾取 GB34、血疾取 BL17）。</li>
+          <li><strong>六總穴 (Six Command Points):</strong> 臨床區域特效穴口訣：面口合谷(LI4)、肚腹三里(ST36)、腰背委中(BL40)、頭項列缺(LU7)、心胸內關(PC6)、少腹三陰交(SP6)。</li>
+        </ul>
+      </div>
       <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">一、八會穴 (Eight Hui-Influential Points)</h4>
       <table class="master-matrix-table" style="margin-bottom: 1.5rem;">
         <thead>
@@ -6525,7 +6590,15 @@ function renderFourSeaAndGhostPointsMatrixTable() {
       <h3 style="color: #1f5b3d; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;">
         7. 四海穴與孫真人十三鬼穴中英總表 (Four Sea Points & Sun Simiao 13 Ghost Points)
       </h3>
-      
+
+      <div style="background: #f0f7f4; border: 1px solid #c2e0d3; border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+        <h4 style="color: #164e32; margin: 0 0 0.5rem; font-size: 0.98rem; font-weight: 700;">💡 eLotus & Point Selection 核心知識點與選穴原理：</h4>
+        <ul style="margin: 0; padding-left: 1.2rem; color: #2d4a3b; font-size: 0.88rem; line-height: 1.6;">
+          <li><strong>四海穴 (Four Seas - 靈樞·海論):</strong> 人體髓海、氣海、血海、水穀之海，為精氣血津液匯聚之四大總樞紐。</li>
+          <li><strong>孫真人十三鬼穴 (Sun Simiao's 13 Ghost Points):</strong> 唐代孫思邈《千金要方》專治狂癲、重度精神神志異常、卒中昏迷之古代特定十三名穴。</li>
+        </ul>
+      </div>
+
       <h4 style="color: #2b704c; margin: 0.75rem 0 0.4rem; font-size: 1.05rem;">一、四海穴總表 (Four Sea Points)</h4>
       <p style="margin-bottom: 0.75rem; color: #35473e; line-height: 1.6; font-size: 0.92rem;">
         In nature, there are east, west, north and south, thus the ancients believed the body should also have four points/seas that are pivotal for treating the four most important substances in the body: marrow, blood, qi and nourishment.
