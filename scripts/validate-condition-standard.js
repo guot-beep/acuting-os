@@ -255,37 +255,40 @@ for (const rec of scope) {
     });
   }
 
-  // C11 acupuncture_scope shape (§5.6). The one field written for the
+  // C12 acupuncture_scope shape (§5.6). The one field written for the
   // practitioner, and the one most likely to drift into a therapeutic claim.
-  if (!isEmpty(rec.acupuncture_scope_zh)) {
-    const s = rec.acupuncture_scope_zh;
+  // Checked on both languages for the same reason as C11 — a malformed entry is
+  // malformed whichever side it sits on.
+  for (const field of ["acupuncture_scope_zh", "acupuncture_scope_en"]) {
+    if (isEmpty(rec[field])) continue;
+    const s = rec[field];
     if (typeof s === "string" || Array.isArray(s)) {
-      add("C12", "acupuncture_scope_zh must be an object with can_treat / precautions / co_management, not prose (§5.6)");
-    } else {
-      const keys = Object.keys(s).filter((k) => !k.startsWith("_"));
-      const unknown = keys.filter((k) => !SCOPE_KEYS.has(k) && k !== "evidence" && k !== "source" && k !== "note");
-      if (unknown.length) {
-        add("C12", `acupuncture_scope_zh has unknown keys ${unknown.join(", ")} — allowed: ${[...SCOPE_KEYS].join(" / ")} plus evidence / source / note`);
-      }
-      if (!keys.some((k) => SCOPE_KEYS.has(k))) {
-        add("C12", `acupuncture_scope_zh has none of ${[...SCOPE_KEYS].join(" / ")}`);
-      }
-      // An efficacy statement without a grade reads as settled. unknown is a
-      // valid grade and the correct starting value — absent is not.
-      if (isEmpty(s.evidence)) {
-        add("C12", "acupuncture_scope_zh missing evidence grade — use unknown if not yet checked, never leave it out (§5.6)");
-      } else if (!SCOPE_EVIDENCE.has(s.evidence)) {
-        add("C12", `acupuncture_scope_zh.evidence "${s.evidence}" not in ${[...SCOPE_EVIDENCE].join(" | ")}`);
-      } else if (s.evidence !== "unknown" && isEmpty(s.source)) {
-        add("C12", `acupuncture_scope_zh.evidence is "${s.evidence}" but no source — only "unknown" may omit one`);
-      }
-      // Scope of practice, not just safety: telling a patient to stop an
-      // anticoagulant is the prescriber's call. ticagrelor's own label says to
-      // manage bleeding without discontinuing where possible.
-      const co = String(s.co_management || "");
-      if (/停藥|停用|discontinu|stop taking/i.test(co) && !/聯絡|諮詢|contact|consult/i.test(co)) {
-        add("C12", "acupuncture_scope_zh.co_management suggests stopping a medication without routing it to the prescriber — out of scope (§5.6)");
-      }
+      add("C12", `${field} must be an object with can_treat / precautions / co_management, not prose (§5.6)`);
+      continue;
+    }
+    const keys = Object.keys(s).filter((k) => !k.startsWith("_"));
+    const unknown = keys.filter((k) => !SCOPE_KEYS.has(k) && k !== "evidence" && k !== "source" && k !== "note");
+    if (unknown.length) {
+      add("C12", `${field} has unknown keys ${unknown.join(", ")} — allowed: ${[...SCOPE_KEYS].join(" / ")} plus evidence / source / note`);
+    }
+    if (!keys.some((k) => SCOPE_KEYS.has(k))) {
+      add("C12", `${field} has none of ${[...SCOPE_KEYS].join(" / ")}`);
+    }
+    // An efficacy statement without a grade reads as settled. unknown is a
+    // valid grade and the correct starting value — absent is not.
+    if (isEmpty(s.evidence)) {
+      add("C12", `${field} missing evidence grade — use unknown if not yet checked, never leave it out (§5.6)`);
+    } else if (!SCOPE_EVIDENCE.has(s.evidence)) {
+      add("C12", `${field}.evidence "${s.evidence}" not in ${[...SCOPE_EVIDENCE].join(" | ")}`);
+    } else if (s.evidence !== "unknown" && isEmpty(s.source)) {
+      add("C12", `${field}.evidence is "${s.evidence}" but no source — only "unknown" may omit one`);
+    }
+    // Scope of practice, not just safety: telling a patient to stop an
+    // anticoagulant is the prescriber's call. Ticagrelor's own label says to
+    // manage bleeding without discontinuing where possible.
+    const co = String(s.co_management || "");
+    if (/停藥|停用|discontinu|stop taking/i.test(co) && !/聯絡|諮詢|contact|consult/i.test(co)) {
+      add("C12", `${field}.co_management suggests stopping a medication without routing it to the prescriber — out of scope (§5.6)`);
     }
   }
 
