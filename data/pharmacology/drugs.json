@@ -677,13 +677,148 @@
           "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#CONTRAINDICATIONS"
         ]
       },
-      "gap_note_zh": "機轉、交互作用分級待補。CYP2C19 相關交互(如 omeprazole)是重點,要標 pharmacokinetic。",
+      "gap_note_zh": "交互作用已分級(10 條,全部引用標籤)。植物藥標記為 unknown 並記錄已查來源。仍待補:機轉、不良反應、孕期。",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06"
+      "updated_at": "2026-08-06",
+      "drug_interactions_graded": [
+        {
+          "with": "drug.omeprazole",
+          "with_label_en": "Omeprazole",
+          "with_label_zh": "奧美拉唑",
+          "effect_en": "Avoid concomitant use. Omeprazole significantly reduces the antiplatelet activity of clopidogrel, whether given together or 12 hours apart.",
+          "effect_zh": "避免併用。奧美拉唑顯著降低氯吡格雷的抗血小板活性,不論同時服用或間隔 12 小時。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "label_recommendation_en": "Avoid",
+          "note_zh": "這是本藥最重要的交互作用 —— 抗血小板效果減弱代表血栓風險上升,不是出血風險。方向與直覺相反。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Esomeprazole",
+          "with_label_zh": "埃索美拉唑",
+          "effect_en": "Avoid concomitant use, same as omeprazole.",
+          "effect_zh": "同奧美拉唑,避免併用。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "label_recommendation_en": "Avoid"
+        },
+        {
+          "with": "drug.pantoprazole",
+          "with_label_en": "Pantoprazole (and dexlansoprazole, lansoprazole)",
+          "with_label_zh": "泮托拉唑(以及右蘭索拉唑、蘭索拉唑)",
+          "effect_en": "Had less effect on the antiplatelet activity of clopidogrel than omeprazole or esomeprazole.",
+          "effect_zh": "對氯吡格雷抗血小板活性的影響小於奧美拉唑與埃索美拉唑。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "標籤明確區分 PPI 之間的差異 —— 不可當成一個分類一起處理。需要 PPI 時這幾個是標籤所指的較小影響選項。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Strong CYP2C19 inducers (e.g. rifampin)",
+          "with_label_zh": "強效 CYP2C19 誘導劑(如利福平)",
+          "effect_en": "Increase the level of the active metabolite; the label advises avoiding strong CYP2C19 inducers.",
+          "effect_zh": "提高活性代謝物濃度;標籤建議避免強效 CYP2C19 誘導劑。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "與 warfarin 方向相反 —— warfarin 遇誘導劑是效果減弱,氯吡格雷是前驅藥,遇誘導劑反而活性代謝物變多。考題常拿這兩個對照。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Repaglinide (CYP2C8 substrate)",
+          "with_label_zh": "瑞格列奈(CYP2C8 受質)",
+          "effect_en": "Avoid concomitant use of repaglinide with clopidogrel.",
+          "effect_zh": "避免與氯吡格雷併用。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "label_recommendation_en": "Avoid"
+        },
+        {
+          "with": null,
+          "with_label_en": "Opioids",
+          "with_label_zh": "鴉片類",
+          "effect_en": "Reduce clopidogrel absorption. The label suggests considering a parenteral antiplatelet agent.",
+          "effect_zh": "降低氯吡格雷吸收。標籤建議考慮改用非口服抗血小板藥。",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "機轉是吸收而非代謝 —— 急性冠心症併用嗎啡時是真實情境。"
+        },
+        {
+          "with": null,
+          "with_label_en": "NSAIDs",
+          "with_label_zh": "NSAID 類",
+          "effect_en": "Coadministration increases the risk of gastrointestinal bleeding.",
+          "effect_zh": "併用增加胃腸道出血風險。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.warfarin",
+          "with_label_en": "Warfarin",
+          "with_label_zh": "華法林",
+          "effect_en": "Increases bleeding because of independent effects on hemostasis.",
+          "effect_zh": "兩者對止血的作用各自獨立,併用增加出血。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "SSRIs and SNRIs",
+          "with_label_zh": "SSRI 與 SNRI",
+          "effect_en": "Concomitant administration may increase the risk of bleeding.",
+          "effect_zh": "併用可能增加出血風險。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Other antiplatelet agents",
+          "with_label_zh": "其他抗血小板藥",
+          "effect_en": "Coadministration increases the risk of bleeding due to an additive effect.",
+          "effect_zh": "加成作用,併用增加出血風險。",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ]
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": null,
+          "with_label_en": "Botanicals",
+          "with_label_zh": "植物藥",
+          "effect_en": "Not addressed in this label.",
+          "effect_zh": "本標籤未提及。",
+          "evidence": "unknown",
+          "sources_checked": [
+            "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "已查標籤,未指名任何植物藥 —— 與 warfarin 標籤不同(那份指名七種)。這不代表沒有交互,只代表這份來源沒說。要下結論需再查 NCCIH 與原始文獻。"
+        }
+      ],
+      "exam_trap_zh": "⚠️ 方向陷阱:氯吡格雷是前驅藥。CYP2C19 抑制劑(奧美拉唑)使它變弱 → 血栓風險;誘導劑使它變強。華法林正好相反。",
+      "exam_trap_en": "Direction trap: clopidogrel is a prodrug. A CYP2C19 inhibitor (omeprazole) makes it weaker, raising thrombotic risk; an inducer makes it stronger. Warfarin behaves the opposite way."
     },
     {
       "id": "drug.apixaban",
