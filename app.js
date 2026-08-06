@@ -6220,6 +6220,14 @@ function renderChannelOverviewCard(ch) {
               </div>
             ` : ''}
 
+            ${ch.luo_channel_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #8a2be2; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #e6d7ff; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #4b0082; margin-bottom: 0.4rem;">🔗 絡脈循行與病變 (Luo-Connecting Vessel)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.luo_channel_zh)}</pre>
+                ${ch.luo_channel_en ? `<div style="font-size: 0.82rem; color: #4b0082; line-height: 1.5; font-style: italic;">${escapeHtml(ch.luo_channel_en)}</div>` : ''}
+              </div>
+            ` : ''}
+
             ${ch.muscle_channel_zh ? `
               <div style="background: #ffffff; border-left: 4px solid #4682b4; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #d4e3f0; border-left-width: 4px;">
                 <div style="font-size: 0.98rem; font-weight: 800; color: #1c4966; margin-bottom: 0.4rem;">💪 經筋循行與病候 (Muscle Channel / Jing Jin)</div>
@@ -6227,19 +6235,40 @@ function renderChannelOverviewCard(ch) {
                 ${ch.muscle_channel_en ? `<div style="font-size: 0.82rem; color: #2f4f4f; line-height: 1.5; font-style: italic;">${escapeHtml(ch.muscle_channel_en)}</div>` : ''}
               </div>
             ` : ''}
+
+            ${ch.dermatome_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #d2691e; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #f9ebdc; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #8b4513; margin-bottom: 0.4rem;">🛡️ 皮部與六經之闔 (Dermatome / Yangming He-Fei)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0;">${escapeHtml(ch.dermatome_zh)}</pre>
+              </div>
+            ` : ''}
           </div>
         </details>
       </section>
     ` : ''}
 
-    ${(ch.pathomechanism_zh || ch.preservation_zh) ? `
+    ${(ch.seam_anatomy_zh || ch.qihua_zh || ch.pathomechanism_zh || ch.preservation_zh) ? `
       <section class="channel-article-section" style="margin-top: 1rem;">
         <details open style="background: #f4f8f6; border: 1px solid #c8ded3; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
           <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #1b5e3a; outline: none; user-select: none;">
-            🩺 常見經絡異常與日常養生保健 (Pathomechanism & Preservation)
+            🩺 循行縫隙、氣化理論與常見經絡異常 (Anatomy, Qi Transformation & Pathomechanism)
             <span style="font-size: 0.82rem; font-weight: 400; color: #3b7a57; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
           </summary>
           <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
+            ${ch.seam_anatomy_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #008080; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #cce6e6; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #004d4d; margin-bottom: 0.4rem;">🧭 體內循行與體表縫隙定位 (Seam Anatomy & Cavity Pathway)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0;">${escapeHtml(ch.seam_anatomy_zh)}</pre>
+              </div>
+            ` : ''}
+
+            ${ch.qihua_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #6f42c1; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #e2d9f3; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #452484; margin-bottom: 0.4rem;">🔮 氣化理論與臟腑解剖考證 (Qi Transformation & Organ Physiology)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0;">${escapeHtml(ch.qihua_zh)}</pre>
+              </div>
+            ` : ''}
+
             ${ch.pathomechanism_zh ? `
               <div style="background: #ffffff; border-left: 4px solid #d9534f; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #f2dede; border-left-width: 4px;">
                 <div style="font-size: 0.98rem; font-weight: 800; color: #a94442; margin-bottom: 0.4rem;">⚠️ 常見經絡異常：是動病、所生病與虛實病理 (Pathomechanism)</div>
