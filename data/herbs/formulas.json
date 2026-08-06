@@ -122,8 +122,8 @@
       "review_status": "draft",
       "public_safe": false,
       "source_urls": [
-        "https://cloudtcm.com/formula/8",
-        "https://www.americandragon.com/HerbFormulas/GuiZhiTang.html"
+        "https://cloudtcm.com/formula/2",
+        "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -382,7 +382,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:19.661Z",
       "tags_source_url": "https://cloudtcm.com/formula/2",
-      "cloudtcm_url": "https://cloudtcm.com/formula/8",
+      "cloudtcm_url": "https://cloudtcm.com/formula/2",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -467,6 +467,9 @@
         "source_classic": [
           "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
           "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html"
+        ],
+        "cloudtcm_url": [
+          "cloudtcm.com/formula/<id> loaded 2026-08-06; page title confirms the formula name. Matches the record's own cloudtcm_id."
         ]
       },
       "cloudtcm_id": 2,
@@ -598,15 +601,16 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/GuiZhiTang.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/GuiZhiTang.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
-          "url": "https://cloudtcm.com/formula/8",
+          "url": "https://cloudtcm.com/formula/2",
           "label_zh": "雲端中醫",
           "label_en": "CloudTCM",
           "lang": "zh",
@@ -739,8 +743,8 @@
       "review_status": "draft",
       "public_safe": false,
       "source_urls": [
-        "https://cloudtcm.com/formula/7",
-        "https://www.americandragon.com/HerbFormulas/MaHuangTang.html"
+        "https://cloudtcm.com/formula/1",
+        "https://americandragon.com/Herb%20Formulas%20copy/MaHuangTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -960,7 +964,7 @@
       ],
       "tags_fetched_at": "2026-07-23T07:43:19.980Z",
       "tags_source_url": "https://cloudtcm.com/formula/1",
-      "cloudtcm_url": "https://cloudtcm.com/formula/7",
+      "cloudtcm_url": "https://cloudtcm.com/formula/1",
       "mojibake_repaired": "匯入時編碼遺失，內容無法還原，已清空待補（見 scripts/clean-formula-mojibake.js）",
       "field_sources": {
         "actions_zh": [
@@ -978,6 +982,9 @@
         ],
         "american_dragon_url": [
           "American Dragon HerbFormulaIndex (A-G/H-N/O-T/U-Z), link read from the index and fetched: HTTP 200, 2026-08-06"
+        ],
+        "cloudtcm_url": [
+          "cloudtcm.com/formula/<id> loaded 2026-08-06; page title confirms the formula name. Matches the record's own cloudtcm_id."
         ]
       },
       "on_board_list": true,
@@ -1197,15 +1204,16 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/MaHuangTang.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/MaHuangTang.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
-          "url": "https://cloudtcm.com/formula/7",
+          "url": "https://cloudtcm.com/formula/1",
           "label_zh": "雲端中醫",
           "label_en": "CloudTCM",
           "lang": "zh",
@@ -1417,7 +1425,7 @@
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/41",
-        "https://www.americandragon.com/HerbFormulas/XiaoQingLongTang.html"
+        "https://americandragon.com/Herb%20Formulas%20copy/XiaoQingLongTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -1663,11 +1671,12 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/XiaoQingLongTang.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/XiaoQingLongTang.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
@@ -2054,7 +2063,7 @@
       "public_safe": false,
       "source_urls": [
         "https://cloudtcm.com/formula/271",
-        "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html"
+        "https://americandragon.com/Herb%20Formulas%20copy/YinQiaoSan.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -2548,11 +2557,12 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/YinQiaoSan.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
@@ -2611,7 +2621,7 @@
       "public_safe": false,
       "source_urls": [
         "https://cloudtcm.com/formula/162",
-        "https://www.americandragon.com/HerbFormulas/SangJuYin.html"
+        "https://americandragon.com/Herb%20Formulas%20copy/SangJuYin.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -3053,11 +3063,12 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/SangJuYin.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
@@ -3149,7 +3160,7 @@
       ],
       "clinical_use_note": "【香蘇散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/317",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -3338,7 +3349,7 @@
       ],
       "clinical_use_note": "【荊防敗毒散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/183",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -3521,10 +3532,11 @@
       ],
       "clinical_use_note": "【柴葛解肌湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/173",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/ChaiGeJieJiTang.html"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
@@ -3635,7 +3647,7 @@
       ],
       "clinical_use_note": "【葛根湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/260",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -3716,7 +3728,7 @@
       ],
       "clinical_use_note": "【升麻葛根湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/57",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -3821,7 +3833,7 @@
       ],
       "clinical_use_note": "【蒼耳子散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/269",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -3918,10 +3930,11 @@
       ],
       "clinical_use_note": "【人參敗毒散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/12",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/RenShenBaiDuSan.html"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
@@ -4262,7 +4275,7 @@
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/98",
-        "https://www.americandragon.com/HerbFormulas/BaiHuTang.html"
+        "https://americandragon.com/Herb%20Formulas%20copy/BaiHuTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -4523,11 +4536,12 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/BaiHuTang.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
@@ -5032,7 +5046,7 @@
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/244",
-        "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html"
+        "https://americandragon.com/Herb%20Formulas%20copy/HuangLianJieDuTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -5282,11 +5296,12 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/HuangLianJieDuTang.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/HuangLianJieDuTang.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
@@ -5464,7 +5479,7 @@
       ],
       "clinical_use_note": "【涼膈散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/204",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -6203,7 +6218,7 @@
       "safety_flags": [],
       "source_urls": [
         "https://cloudtcm.com/formula/281",
-        "https://www.americandragon.com/HerbFormulas/DaoChiSan.html"
+        "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -6449,11 +6464,12 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/DaoChiSan.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/DaoChi(Re)San.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
@@ -6500,7 +6516,7 @@
       "public_safe": false,
       "source_urls": [
         "https://cloudtcm.com/formula/286",
-        "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html"
+        "https://americandragon.com/Herb%20Formulas%20copy/LongDanXieGanTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -7008,11 +7024,12 @@
       "external_links": [
         {
           "source_id": "american_dragon",
-          "url": "https://www.americandragon.com/HerbFormulas/LongDanXieGanTang.html",
+          "url": "https://americandragon.com/Herb%20Formulas%20copy/LongDanXieGanTang.html",
           "label_zh": "American Dragon",
           "label_en": "American Dragon",
           "lang": "en",
-          "link_status": "direct"
+          "link_status": "direct",
+          "verified": "HTTP 200, 2026-08-06"
         },
         {
           "source_id": "cloudtcm",
@@ -7336,7 +7353,7 @@
       ],
       "clinical_use_note": "【瀉白散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/295",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -7408,7 +7425,7 @@
       "composition": [],
       "clinical_use_note": "【玉女煎】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/82",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -7482,7 +7499,7 @@
       ],
       "clinical_use_note": "【芍藥湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/119",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -7587,7 +7604,7 @@
       ],
       "clinical_use_note": "【白頭翁湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/97",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -7808,7 +7825,8 @@
         "https://cloudtcm.com/formula/567",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/QingHaoBieJiaTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -8072,7 +8090,7 @@
       ],
       "clinical_use_note": "【當歸六黃湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/253",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -8669,7 +8687,8 @@
         "https://cloudtcm.com/formula/32",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/DaChengQiTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -9013,7 +9032,8 @@
         "https://cloudtcm.com/formula/40",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/XiaoChengQiTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -9295,7 +9315,8 @@
         "https://cloudtcm.com/formula/277",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/TiaoWeiChengQiTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -9427,7 +9448,7 @@
       "composition": [],
       "clinical_use_note": "【增液承氣湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/557",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -9924,7 +9945,7 @@
       "composition": [],
       "clinical_use_note": "【潤腸丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/278",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -9992,7 +10013,7 @@
       "composition": [],
       "clinical_use_note": "【濟川煎】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/559",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -10066,7 +10087,8 @@
         "https://cloudtcm.com/formula/43",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/XiaoChaiHuTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -10730,7 +10752,7 @@
       ],
       "clinical_use_note": "【柴胡桂枝湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/170",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -10810,7 +10832,8 @@
         "https://cloudtcm.com/formula/219",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/XiaoYaoSan.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -11972,7 +11995,8 @@
         "https://cloudtcm.com/formula/67",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/BanXiaXieXinTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -12372,7 +12396,8 @@
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://cloudtcm.com",
-        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+        "https://americandragon.com/Herb%20Formulas%20copy/LiZhongTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -13040,7 +13065,8 @@
         "https://cloudtcm.com/formula/483",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/SiNiTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -13185,7 +13211,7 @@
       "composition": [],
       "clinical_use_note": "【參附湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/568",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -13881,7 +13907,8 @@
         "https://cloudtcm.com/formula/75",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/SiJunZiTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -14498,7 +14525,7 @@
       "composition": [],
       "clinical_use_note": "【香砂六君子湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/150",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -15119,7 +15146,8 @@
         "https://cloudtcm.com/formula/262",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/BuZhongYiQiTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -15775,7 +15803,8 @@
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://cloudtcm.com",
-        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+        "https://americandragon.com/Herb%20Formulas%20copy/ShengMaiSan.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -15858,7 +15887,7 @@
       ],
       "clinical_use_note": "【人參養榮湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/10",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -15931,7 +15960,8 @@
         "https://cloudtcm.com/formula/77",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/SiWuTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -17436,10 +17466,11 @@
       ],
       "clinical_use_note": "【十全大補湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/20",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://www.americandragon.com"
+        "https://www.americandragon.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/ShiQuanDaBuTang.html"
       ],
       "safety_source": "American Dragon (Dr. Joel Penner), Zhongyifangji.com (HKBU), CloudTCM & 2026 NCBAHM Outline",
       "exact_source_url": "https://cloudtcm.com/formula/99",
@@ -17541,7 +17572,7 @@
       "composition": [],
       "clinical_use_note": "【泰山磐石散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/570",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -17618,7 +17649,8 @@
         "https://cloudtcm.com/formula/55",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/LiuWeiDiHuangWan.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -18754,7 +18786,7 @@
       "composition": [],
       "clinical_use_note": "【杞菊地黃丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/115",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -18822,7 +18854,7 @@
       "composition": [],
       "clinical_use_note": "【知柏地黃丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/137",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -18964,7 +18996,8 @@
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://cloudtcm.com",
-        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md"
+        "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+        "https://americandragon.com/Herb%20Formulas%20copy/ShenQiWan.html"
       ],
       "source_type": "draft_dual_track_hkbu_cloudtcm_bensky_pending",
       "last_reviewed": "",
@@ -20221,7 +20254,7 @@
       ],
       "clinical_use_note": "【金鎖固精丸】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/138",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -20293,7 +20326,7 @@
       "composition": [],
       "clinical_use_note": "【桑螵蛸散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/160",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -20643,7 +20676,8 @@
         "https://cloudtcm.com/formula/270",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/SuanZaoRenTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -21381,7 +21415,8 @@
         "https://cloudtcm.com/formula/89",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/GanMaiDaZaoTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -21525,7 +21560,7 @@
       ],
       "clinical_use_note": "【柴胡加龍骨牡蠣湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/168",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -21969,7 +22004,7 @@
       ],
       "clinical_use_note": "【瓜蔞薤白半夏湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/357",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -22634,7 +22669,7 @@
       ],
       "clinical_use_note": "【橘皮竹茹湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/283",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -24911,7 +24946,7 @@
       "composition": [],
       "clinical_use_note": "【膈下逐瘀湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/571",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -24979,7 +25014,7 @@
       "composition": [],
       "clinical_use_note": "【少腹逐瘀湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/441",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -25047,7 +25082,7 @@
       "composition": [],
       "clinical_use_note": "【身痛逐瘀湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/120",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -27043,7 +27078,7 @@
       ],
       "clinical_use_note": "【二妙散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/368",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -28543,7 +28578,7 @@
       ],
       "clinical_use_note": "【苓桂朮甘湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/151",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -30431,7 +30466,7 @@
       ],
       "clinical_use_note": "【三子養親湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/25",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com"
@@ -32683,7 +32718,7 @@
       ],
       "clinical_use_note": "【桑杏湯】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/327",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -32874,7 +32909,7 @@
       ],
       "clinical_use_note": "【止嗽散】收錄於 2026 NCBAHM 官方最新大綱與臨床常用方劑庫。順天堂濃縮顆粒（官網：https://www.sunten.com.tw/）參考成人日服量：6.0g～12.0g，分次開水送服。",
       "source_urls": [
-        "https://cloudtcm.com/formula/99",
+        "https://cloudtcm.com/formula/60",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
         "https://www.americandragon.com",
@@ -34060,7 +34095,8 @@
         "https://cloudtcm.com/formula/293",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/GuiPiTang.html"
       ],
       "source_type": "sourced_cloudtcm_record",
       "last_reviewed": "",
@@ -37423,7 +37459,8 @@
         "https://cloudtcm.com/formula/224",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/MaXingShiGanTang.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
@@ -39491,7 +39528,8 @@
         "https://cloudtcm.com/formula/78",
         "https://www.sunten.com.tw/",
         "https://www.zhongyifangji.com",
-        "https://cloudtcm.com"
+        "https://cloudtcm.com",
+        "https://americandragon.com/Herb%20Formulas%20copy/SiNiSan.html"
       ],
       "clinical_pearls": [],
       "fertility_notes": [],
