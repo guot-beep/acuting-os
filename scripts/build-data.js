@@ -92,11 +92,31 @@ const knowledge = {
   audit: readJson("data/audits/missing_report.json"),
   // CS4-2: registries the SOAP link pickers offer (ids must exist to be picked)
   patternLibrary: readJson("data/pathology/pattern_library.json"),
+  // D10 names pattern_registry the ID AUTHORITY, but only the library (50) was
+  // bundled — so the 13 registry-only ids had no names at runtime. Pilot 0 made
+  // that visible: sym.headache points at pattern.wind_cold, and the chip read
+  // "Wind cold", the humanised slug, instead of 風寒 / Wind Cold.
+  patternRegistry: readJson("data/pathology/pattern_registry.json"),
   tdisRegistry: readJson("data/pathology/tdis_registry.json"),
   conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
   // §6.5 (B) — points carry tcm_pattern_ids; without the canon in the bundle
   // the card can only print "pat.肝氣鬱結" instead of the pattern's name.
   tcmPatternCanon: readJson("data/config/tcm_pattern_canon.json"),
+  // D11's fourth namespace. Without it the app has the EDGES but not the
+  // TARGETS: Pilot 0 put "key_signs_ids":["sym.headache"] into this bundle
+  // while symptoms.json stayed out, so a diagnosis card could only print the
+  // raw id and a click had nothing to open. A ghost node in the graph.
+  symptoms: readJson("data/symptoms/symptoms.json"),
+  // The edge list itself (D13). Bundled so the reverse index is DERIVED FROM
+  // the registry rather than from a second hand-written list in knowledge.js —
+  // a hardcoded copy is how the two sides drift, which is what D13 forbids.
+  relationRegistry: readJson("data/config/relation_registry.json"),
+  symptomTaxonomy: readJson("data/config/symptom_taxonomy.json"),
+  // LABELS ONLY. sym.headache references metric.pain_score, which rendered as
+  // the raw id. This is the existing 22-metric vocabulary, not the clinical
+  // measurement layer — that is a separate design review and nothing here
+  // prejudges it.
+  outcomeMetrics: readJson("data/clinical_cases/outcome_metrics.json"),
   cloudtcmDiseaseCategories: readJson("data/pathology/cloudtcm_disease_categories.json"),
   cloudtcmDiseaseEntries: readJson("data/pathology/cloudtcm_disease_entries.json"),
   medications: readJson("data/medications/western_medications.json"),
@@ -150,6 +170,8 @@ console.log(JSON.stringify({
   patterns: knowledge.conditions.tcm_patterns.length,
   sources: knowledge.sources.sources.length,
   comparisons: knowledge.comparisons.records.length,
+  symptoms: knowledge.symptoms.records.length,
+  relation_edges: knowledge.relationRegistry.edges.length,
   audit_missing: knowledge.audit.total_missing,
 }));
 

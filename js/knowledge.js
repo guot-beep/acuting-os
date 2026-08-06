@@ -226,17 +226,84 @@
      Spleen Qi Deficiency — they were simply never resolved at display time. */
   const ENTITY_NAMES = (() => {
     const map = new Map();
+    // The fallback below picks "the first array-valued key" in a dataset object.
+    // That heuristic is fine for datasets whose only array IS records, and it
+    // silently picked `policy` on data/symptoms/symptoms.json — so every sym.*
+    // chip rendered the humanised slug "Headache" instead of 頭痛 / Headache,
+    // while the detail view (which reads .records explicitly) looked correct.
+    // Pass .records explicitly for anything that carries prose arrays.
     const add = (list) => {
       const arr = Array.isArray(list) ? list : (list && Object.values(list).find(Array.isArray)) || [];
       arr.forEach((r) => { if (r && r.id) map.set(r.id, r); });
     };
     if (K) {
+      // Registry first, library second: both are keyed by the same id (D10) and
+      // the library carries the richer record, so it must win the overwrite.
+      // The registry is here for the 13 ids that exist ONLY in it.
+      add((K.patternRegistry || {}).records);
       add(K.patternLibrary);
       add(K.conditionCanon);
       add(K.conditions);
       add(K.tdisRegistry);
+      // D11's fourth namespace. Pilot 0 shipped cond/pattern/tdis records that
+      // reference sym.* ids; without this line entityLabel falls through to the
+      // "humanise the key" branch and the screen reads "headache" — the English
+      // slug — where the card holds 頭痛 / Headache.
+      add((K.symptoms || {}).records);
     }
     return map;
+  })();
+
+  const METRIC_LABEL = new Map(
+    (((K && K.outcomeMetrics && K.outcomeMetrics.records) || [])).map((m) =>
+      [m.id, displayLabel(m.label_zh || "", m.label_en || "", m.id)])
+  );
+
+  const SYMPTOM_BY_ID = new Map(
+    (((K && K.symptoms && K.symptoms.records) || [])).map((r) => [r.id, r])
+  );
+
+  /* seen_in_conditions / seen_in_patterns / seen_in_tdis are DERIVED (D13 §5.2,
+     and validate-symptom-standard Y8 rejects them if hand-filled). This is the
+     render-time join that earns them.
+
+     It is built by ENUMERATING data/config/relation_registry.json, not by a
+     second hardcoded list here — the registry calls itself "the authority on
+     which fields are edges", and a runtime that hardcodes the same three field
+     names makes that claim false the moment a fourth edge is registered.
+
+     The one translation the registry cannot supply: it names FILES
+     ("data/pathology/pattern_library.json") while the runtime has bundle keys
+     ("patternLibrary"). That map lives here because build-data.js decides the
+     key names. An edge whose file is unmapped is skipped and counted, so the
+     gap is visible instead of silent. */
+  const REGISTRY_FILE_TO_BUNDLE = {
+    "data/pathology/condition_canon_shortlist.json": { key: "conditionCanon", reverse_group: "seen_in_conditions", label_zh: "見於西醫病名", label_en: "Seen in biomedical conditions" },
+    "data/pathology/pattern_library.json": { key: "patternLibrary", reverse_group: "seen_in_patterns", label_zh: "見於證型", label_en: "Seen in patterns" },
+    "data/pathology/tdis_registry.json": { key: "tdisRegistry", reverse_group: "seen_in_tdis", label_zh: "見於中醫病名", label_en: "Seen in TCM disease names" },
+  };
+
+  const SYMPTOM_REVERSE = (() => {
+    const index = new Map();   // sym id -> { seen_in_conditions: [ids], ... }
+    const meta = { edges_read: 0, edges_skipped: [], from_registry: false };
+    const edges = (K && K.relationRegistry && K.relationRegistry.edges) || [];
+    if (!edges.length) return { index, meta };
+    meta.from_registry = true;
+    for (const edge of edges) {
+      if (edge.target !== "sym.*" || edge.edge_kind !== "descriptive") continue;
+      const mapped = REGISTRY_FILE_TO_BUNDLE[edge.file];
+      if (!mapped || !K[mapped.key]) { meta.edges_skipped.push(edge.id); continue; }
+      const records = (K[mapped.key].records) || [];
+      for (const rec of records) {
+        for (const symId of (rec[edge.field] || [])) {
+          if (!index.has(symId)) index.set(symId, {});
+          const bucket = index.get(symId);
+          (bucket[mapped.reverse_group] ||= []).push(rec.id);
+        }
+      }
+      meta.edges_read += 1;
+    }
+    return { index, meta };
   })();
 
   function entityLabel(id) {
@@ -253,8 +320,9 @@
 
   function entityKindLabel(id) {
     const p = String(id).split(".")[0];
-    return p === "pattern" ? "證型" : p === "eastern_disease" ? "中醫病名"
-      : p === "western_condition" || p === "cond" ? "西醫病名" : "";
+    return p === "pattern" ? "證型" : p === "eastern_disease" || p === "tdis" ? "中醫病名"
+      : p === "western_condition" || p === "cond" ? "西醫病名"
+      : p === "sym" ? "症狀" : "";
   }
 
   function entityChips(ids) {
@@ -263,6 +331,24 @@
     return list.map((id) => {
       const kind = entityKindLabel(id);
       return `<span class="k-entity-chip">${kind ? `<small>${esc(kind)}</small>` : ""}${esc(entityLabel(id))}</span>`;
+    }).join("");
+  }
+
+  /* Symptom chips are entityChips that OPEN something. The other namespaces
+     have no detail view yet, so their chips are deliberately inert labels; a
+     sym.* id resolves to a card, and a reference the reader cannot follow is
+     the ghost-node problem in a smaller form. */
+  function symptomChips(ids) {
+    const list = (ids || []).filter(Boolean);
+    if (!list.length) return "";
+    return list.map((id) => {
+      const known = SYMPTOM_BY_ID.has(id);
+      if (!known) {
+        // An id with no card behind it says so, rather than rendering as a
+        // working link that opens nothing.
+        return `<span class="k-entity-chip is-unresolved" title="${esc(id)} — 尚無症狀卡 / no symptom card yet"><small>症狀</small>${esc(entityLabel(id))} ⚠</span>`;
+      }
+      return `<button type="button" class="k-entity-chip k-entity-chip--link" data-detail-kind="symptom" data-detail-id="${esc(id)}"><small>症狀</small>${esc(entityLabel(id))}</button>`;
     }).join("");
   }
 
@@ -1297,7 +1383,120 @@
     ];
   }
 
+  /* Minimal symptom detail (Batch C1). It shows the approved fields that exist
+     and nothing else — no new UI language, no fields the template has not
+     approved. Deliberately NOT routed through detailShell(): that shell is
+     built around formula/herb identity (category, tier, external herb image
+     links) and bending a symptom into it would be the redesign Ting excluded. */
+  function symptomDetail(record) {
+    const modes = asList(record.observation_modes).map((m) =>
+      m === "patient_reported" ? "病人自述 Patient-reported" : m === "examiner_observed" ? "醫者所見 Examiner-observed" : m);
+    const primary = record.primary_mode === "patient_reported" ? "病人自述 (SOAP S)"
+      : record.primary_mode === "examiner_observed" ? "醫者所見 (SOAP O)" : record.primary_mode || "—";
+
+    const attrs = record.clinical_attributes || {};
+    const attrRows = Object.entries(attrs).map(([dim, spec]) => {
+      const on = spec && spec.applicable === true;
+      const detail = on
+        ? esc(spec.vocabulary || "")
+        : `<span class="k-detail-empty">${esc(spec && spec.why ? spec.why : "不適用")}</span>`;
+      return `<tr><td>${esc(dim)}</td><td>${on ? "✓" : "—"}</td><td>${detail}</td>
+        ${spec && spec.diagnostic_note_zh ? `<td>${esc(spec.diagnostic_note_zh)}</td>` : "<td></td>"}</tr>`;
+    }).join("");
+
+    const inquiry = asList(record.inquiry_zh);
+    const inquiryEn = asList(record.inquiry_en);
+    const inquiryRows = inquiry.map((q, i) => `<li>
+      <span class="kp-zh"><strong>${esc(q.dimension || "")}</strong> ${esc(q.why || "")}</span>
+      ${inquiryEn[i] ? `<span class="kp-en"><strong>${esc(inquiryEn[i].dimension || "")}</strong> ${esc(inquiryEn[i].why || "")}</span>` : ""}
+    </li>`).join("");
+
+    const diff = asList(record.differentiation_zh);
+    const diffEn = asList(record.differentiation_en);
+    const diffRows = diff.map((d, i) => `<li>
+      <span class="kp-zh"><strong>${esc(d.variant || "")}</strong> ${esc(d.distinguishing || "")}</span>
+      ${diffEn[i] ? `<span class="kp-en"><strong>${esc(diffEn[i].variant || "")}</strong> ${esc(diffEn[i].distinguishing || "")}</span>` : ""}
+      <span class="k-tags">${entityChips(d.points_to)}</span>
+    </li>`).join("");
+
+    // The derived reverse. Empty is shown as empty — an "見於" block that
+    // silently disappears reads as "this symptom appears nowhere", which is a
+    // different claim from "no diagnosis card has linked it yet".
+    const rev = SYMPTOM_REVERSE.index.get(record.id) || {};
+    const revBlocks = Object.values(REGISTRY_FILE_TO_BUNDLE).map((m) => {
+      const ids = rev[m.reverse_group] || [];
+      return `<div class="k-detail-block">
+        <h4>${esc(m.label_zh)} <small>${esc(m.label_en)}</small> <b>${ids.length}</b></h4>
+        ${ids.length ? `<p class="k-tags">${entityChips(ids)}</p>`
+          : `<p class="k-detail-empty">尚無診斷卡連結此症狀 / no diagnosis card links this symptom yet</p>`}
+      </div>`;
+    }).join("");
+
+    const flags = asList(record.red_flags_zh);
+    const flagsEn = asList(record.red_flags_en);
+    const statusLabel = {
+      specific_red_flags_present: "本症狀有自己的紅旗 / specific red flags present",
+      shared_flags_linked: "由既有 safety_flag 涵蓋 / covered by shared flags",
+      no_specific_red_flags_identified: "已審查，確實沒有 / reviewed, none found",
+      needs_safety_review: "尚未安全審查 / not yet reviewed",
+    }[record.safety_review_status] || record.safety_review_status || "—";
+
+    return `<article class="k-detail k-symptom-detail">
+      <header class="k-detail-head">
+        <p class="k-detail-eyebrow">SYMPTOM CARD · sym.*</p>
+        <h2>${esc(record.name_zh || "")} <small>${esc(record.name_en || "")}</small></h2>
+        <p class="k-meta">${esc(record.id)}${record.pinyin ? ` · ${esc(record.pinyin)}` : ""}${record.pinyin_toned ? ` (${esc(record.pinyin_toned)})` : ""} · ${esc(record.tradition || "")}</p>
+        ${asList(record.aliases_zh).length ? `<p class="k-tags">${[...asList(record.aliases_zh), ...asList(record.aliases_en)].map(tag).join("")}</p>` : ""}
+        <button type="button" class="k-detail-close" data-detail-close>關閉 Close</button>
+      </header>
+
+      ${detailSection("定義", "Definition", `<p>${esc(record.definition_zh || "")}</p><p class="kp-en">${esc(record.definition_en || "")}</p>`)}
+
+      ${record.patient_words_zh ? detailSection("病人怎麼講", "How patients say it",
+        `<p>${esc(record.patient_words_zh)}</p><p class="kp-en">${esc(record.patient_words_en || "")}</p>`) : ""}
+
+      ${detailSection("取得型態", "Observation modes",
+        `<p class="k-tags">${modes.map(tag).join("")}</p><p class="k-meta">預設 SOAP 欄位 primary_mode: ${esc(primary)}</p>`)}
+
+      ${attrRows ? detailSection("問診維度", "Clinical attributes",
+        `<table class="k-detail-table"><thead><tr><th>維度</th><th>適用</th><th>詞彙表 / 不適用原因</th><th>辨證提示</th></tr></thead><tbody>${attrRows}</tbody></table>
+         <p class="k-detail-note">卡片宣告「該問哪些維度」，實際值屬病例層（模板 §8）。</p>`) : ""}
+
+      ${inquiryRows ? detailSection("問診", "Inquiry", `<ol class="k-paired-list">${inquiryRows}</ol>`) : ""}
+
+      ${diffRows ? detailSection("鑑別 → 指向證型", "Differentiation → patterns",
+        `<ol class="k-paired-list k-symptom-diff">${diffRows}</ol>
+         <p class="k-detail-note">推論邊（inferential），不是「證型有此症」的反向 —— 兩者是不同的主張（D13）。</p>`) : ""}
+
+      ${detailSection("安全", "Safety",
+        `<p class="k-meta">safety_review_status: ${esc(statusLabel)}</p>
+         ${asList(record.safety_flags).length ? `<p class="k-tags">${asList(record.safety_flags).map((f) => tag(safetyFlagLabel(f))).join("")}</p>` : ""}
+         ${flags.length ? `<ol class="k-paired-list">${flags.map((f, i) =>
+            `<li><span class="kp-zh">⚠ ${esc(f)}</span>${flagsEn[i] ? `<span class="kp-en">${esc(flagsEn[i])}</span>` : ""}</li>`).join("")}</ol>`
+          : `<p class="k-detail-empty">—</p>`}
+         ${asList(record.safety_review_sources).length ? `<p class="k-detail-note">審查來源：${esc(asList(record.safety_review_sources).join(" · "))}</p>` : ""}`)}
+
+      ${detailSection("見於（衍生）", "Seen in (derived)",
+        `${revBlocks}<p class="k-detail-note">由 data/config/relation_registry.json 的 descriptive 邊在渲染時 join 而成，不存在於症狀卡上（D13 §5.2）。</p>`)}
+
+      ${asList(record.supporting_measurements).length ? detailSection("相關測量", "Supporting measurements",
+        `<p class="k-tags">${asList(record.supporting_measurements).map((m) => tag(METRIC_LABEL.get(m) || m)).join("")}</p>`) : ""}
+
+      ${asList(record.sources).length ? detailSection("來源", "Sources", detailList(record.sources)) : ""}
+      <p class="k-meta">${esc(record.source_type || "")} · ${esc(record.review_status || "")} · ${esc(record.authored_by || "")}</p>
+    </article>`;
+  }
+
   function openKnowledgeDetail(kind, id) {
+    if (kind === "symptom") {
+      const symptom = SYMPTOM_BY_ID.get(id);
+      if (!symptom) return;
+      const dlg = ensureDetailDialog();
+      el("knowledgeDetailContent").innerHTML = symptomDetail(symptom);
+      if (!dlg.open) dlg.showModal();
+      dlg.scrollTop = 0;
+      return;
+    }
     const record = kind === "formula" ? formulaById.get(id) : herbById.get(id);
     if (!record) return;
     const dialog = ensureDetailDialog();
@@ -1948,6 +2147,9 @@
       const relatedSymptoms = asList(c.related_tcm_symptoms).map((item) =>
         tag(`${item.name_zh || ""}${item.name_en ? ` · ${item.name_en}` : ""}`)
       ).join("");
+      // edge.condition_symptoms (registry). related_tcm_symptoms below is the
+      // pre-D13 inline form and stays visible until it is migrated (§0).
+      const symptomIds = asList(c.sign_symptom_ids);
       const aliases = [...asList(c.aliases_zh), ...asList(c.aliases_en)];
       const flags = asList(c.red_flags_zh);
       return `
@@ -1956,6 +2158,7 @@
           <p class="k-meta">${esc(c.id)} · ICD hint ${esc(c.icd_hint || "—")}</p>
           ${aliases.length ? `<p class="k-tags">${aliases.map(tag).join("")}</p>` : ""}
           ${c.summary_zh ? `<p>${esc(c.summary_zh)}</p>` : ""}
+          ${symptomIds.length ? `<div class="k-condition-related"><strong>症狀 <small>Symptoms</small></strong><p class="k-tags">${symptomChips(symptomIds)}</p></div>` : ""}
           ${relatedSymptoms ? `<div class="k-condition-related"><strong>相關中醫症狀 <small>Related TCM symptom</small></strong><p class="k-tags">${relatedSymptoms}</p><small>相關概念，不代表一對一診斷對照。</small></div>` : ""}
           ${asList(c.related_eastern_diseases).length ? `<p class="k-tags">${entityChips(c.related_eastern_diseases)}</p>` : ""}
           ${flags.length ? `<details class="k-condition-flags"><summary>安全警訊 / Red flags (${flags.length})</summary><p class="k-flags">⚠ ${flags.slice(0, 8).map(esc).join(" · ")}</p></details>` : ""}
@@ -1968,6 +2171,7 @@
         <header><strong>${esc(t.name_zh)} <small>${esc(t.name_en || "")}</small></strong>${statusPill(t.review_status)}${hasRedFlags(t) ? "" : noFlagBadge}</header>
         <p class="k-meta">${esc(t.id)}${t.pinyin ? ` · ${esc(t.pinyin)}` : ""}${t.classical_source ? ` · ${esc(t.classical_source)}` : ""}</p>
         ${t.definition_zh ? `<p>${esc(t.definition_zh)}</p>` : ""}
+        ${asList(t.key_manifestation_ids).length ? `<p class="k-tags">${symptomChips(asList(t.key_manifestation_ids))}</p>` : ""}
         ${asList(t.related_patterns).length ? `<p class="k-tags">${entityChips(t.related_patterns)}</p>` : ""}${cloudRefBlock(t.id)}
       </article>`).join("");
 
@@ -1978,6 +2182,7 @@
         <header><strong>${esc(p.name_zh)} <small>${esc(p.name_en || "")}</small></strong>${statusPill(p.review_status)}</header>
         <p class="k-meta">${esc(p.id)}</p>
         ${signs.length ? `<p class="k-tags">${signs.slice(0, 4).map(tag).join("")}</p>` : ""}
+        ${asList(p.key_signs_ids).length ? `<p class="k-tags">${symptomChips(asList(p.key_signs_ids))}</p>` : ""}
         ${(p.tongue_zh || p.pulse_zh) ? `<p class="k-meta">${esc([p.tongue_zh, p.pulse_zh].filter(Boolean).join(" · "))}</p>` : ""}
         ${p.treatment_principle_zh ? `<p><strong>治則</strong> ${esc(p.treatment_principle_zh)}</p>` : ""}${cloudRefBlock(p.id)}
       </article>`;
@@ -2174,9 +2379,24 @@
       <p class="k-meta">建議下一批：${esc(a.next_recommended_batch || "—")}</p>`;
   }
 
+  /* Symptom chips live in the Diagnosis grid, OUTSIDE the detail dialog, so the
+     dialog's own delegated handler never sees them. Without this the chips
+     render as buttons that do nothing — worse than a plain label, because they
+     look clickable. */
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest('[data-detail-kind="symptom"][data-detail-id]');
+    if (chip) openKnowledgeDetail("symptom", chip.dataset.detailId);
+  });
+
   // Expose the formula/herb study-card opener so unified search (app.js) can
   // open the exact card the user clicked, rather than dumping them in a section.
+  // symptomReverse lets a caller (and the C1 verification) ask whether the
+  // reverse index was really derived from the registry or from a hardcoded list.
   globalThis.ACUTING_KNOWLEDGE_API = Object.assign(globalThis.ACUTING_KNOWLEDGE_API || {}, {
-    openDetail: openKnowledgeDetail
+    openDetail: openKnowledgeDetail,
+    symptomReverse: () => ({
+      meta: SYMPTOM_REVERSE.meta,
+      index: Object.fromEntries(SYMPTOM_REVERSE.index),
+    }),
   });
 })();

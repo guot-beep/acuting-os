@@ -189,7 +189,8 @@
       "stored_on": "sym.*",
       "field": "differentiation_zh[].points_to",
       "target": "pattern.*",
-      "file": "data/symptoms/symptoms.json (not yet created)",
+      "file": "data/symptoms/symptoms.json",
+      "file_note": "Created 2026-08-06 by Pilot 0 (3 records). The path carried the prose \"(not yet created)\" inside it until then, which meant the registry's own validator could not resolve the one relation a symptom card authors — machine-readable fields must not carry commentary.",
       "edge_kind": "inferential",
       "reverse": {
         "derived_field": null,

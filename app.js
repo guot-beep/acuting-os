@@ -717,6 +717,11 @@ function unifiedSearch(rawQuery) {
       txt(h.modern_functions_zh), txt(h.actions_en)]),
     conditions: pick(knowledgeRecords("conditionCanon"), (c) => [c.name_zh, c.name_en, c.id, c.category,
       txt(c.tcm_patterns)]),
+    // D11's fourth namespace. Aliases matter more here than anywhere else: the
+    // patient says 頭疼 and 發燒, the card is titled 頭痛 and 發熱, and a symptom
+    // you cannot find by the word the patient used is not searchable in clinic.
+    symptoms: pick(knowledgeRecords("symptoms"), (s) => [s.name_zh, s.name_en, s.pinyin, s.id,
+      txt(s.aliases_zh), txt(s.aliases_en), txt(s.patient_words_zh), txt(s.patient_words_en)]),
     cases: pick(clinicalCases, (c) => [c.patientCode, c.caseTitle, c.chiefComplaint,
       txt(c.westernConditions), txt(c.tcmPatterns)]),
   };
@@ -785,14 +790,17 @@ function renderGlobalResults(rawQuery) {
   group(modeText("病症 Conditions", "Conditions"), res.conditions, (c) =>
     grItem("condition", modeText("病症", "Condition"), "", `${c.name_zh || c.name_en || c.id}`,
       [c.name_en, c.category].filter(Boolean).join(" · "), { id: c.id }));
+  group(modeText("症狀 Symptoms", "Symptoms"), res.symptoms, (s) =>
+    grItem("symptom", modeText("症狀", "Symptom"), "", `${s.name_zh || s.name_en || s.id}`,
+      [s.name_en, s.pinyin].filter(Boolean).join(" · "), { id: s.id }));
   group(modeText("病例 Cases", "Cases"), res.cases, (c) =>
     grItem("case", modeText("病例", "Case"), c.patientCode || "", `${c.caseTitle || c.patientCode || ""}`,
       c.chiefComplaint || "", { code: c.patientCode || "" }));
 
   if (!groups.length) {
     globalResultsEl.innerHTML = `<p class="gr-empty">${escapeHtml(modeText(
-      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症或病例。`,
-      `No acupoints, formulas, herbs, conditions, or cases found for “${rawQuery.trim()}”.`
+      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症、症狀或病例。`,
+      `No acupoints, formulas, herbs, conditions, symptoms, or cases found for “${rawQuery.trim()}”.`
     ))}</p>`;
   } else {
     globalResultsEl.innerHTML = groups.join("");
@@ -814,9 +822,10 @@ function openGlobalResult(btn) {
     selectPoint(btn.dataset.code);
     return;
   }
-  if (kind === "formula" || kind === "herb") {
+  if (kind === "formula" || kind === "herb" || kind === "symptom") {
     const api = globalThis.ACUTING_KNOWLEDGE_API;
     if (api && api.openDetail) { api.openDetail(kind, btn.dataset.id); return; }
+    if (kind === "symptom") { goToSection("conditionGraph"); return; }
     goToSection(kind === "formula" ? "ws/formula" : "ws/herb");
     return;
   }
