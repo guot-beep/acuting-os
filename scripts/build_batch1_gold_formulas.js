@@ -145,12 +145,14 @@ const yqs = {
   "actions_zh": [
     "辛涼解表 — 疏散風熱、透邪外出",
     "清熱解毒 — 清解上焦風熱毒邪",
-    "宣肺利咽 — 宣通肺氣、清利咽喉"
+    "宣肺利咽 — 宣通肺氣、清利咽喉腫痛",
+    "芳香辟穢 — 清熱生津、辟穢化濁"
   ],
   "actions_en": [
     "Releases exterior with cool acrid herbs — disperses Wind-Heat and vents pathogens",
     "Clears heat and relieves toxicity — purges toxic heat in the upper burner",
-    "Diffuses Lung qi and benefits throat — unblocks Lung qi and soothes sore throat"
+    "Diffuses Lung qi and benefits throat — unblocks Lung qi and relieves throat pain",
+    "Dispels cloudiness with aromatics — clears heat, generates fluids, and transforms turbidity"
   ],
 
   "pattern_indications_zh": [
@@ -388,12 +390,14 @@ const sjy = {
   "actions_zh": [
     "疏風清熱 — 疏散上焦風熱邪氣",
     "宣肺止咳 — 宣通肺氣、降氣止咳",
-    "清利頭目 — 輕清上浮、清利頭面目疾"
+    "清利頭目 — 輕清上浮、清利頭面目疾",
+    "生津止渴 — 清解肺胃熱邪、生津潤燥"
   ],
   "actions_en": [
     "Disperses wind and clears heat — clears upper burner Wind-Heat",
     "Diffuses Lung qi and arrests cough — restores Lung ascending-descending qi movement",
-    "Clears head and eyes — light and ascending to benefit eyes and head"
+    "Clears head and eyes — light and ascending to benefit eyes and head",
+    "Generates fluids and quenches thirst — clears Lung/Stomach heat and moistens dryness"
   ],
 
   "pattern_indications_zh": [
@@ -576,12 +580,14 @@ const bht = {
   "actions_zh": [
     "清熱生津 — 清瀉陽明氣分大熱、生津止渴",
     "瀉火除煩 — 瀉透胃火、消除心煩躁熱",
-    "透熱外達 — 宣透內鬱熱邪外出"
+    "透熱外達 — 宣透內鬱熱邪外出",
+    "顧護胃氣 — 益胃生津、防寒藥傷中"
   ],
   "actions_en": [
     "Clears Qi-level heat and generates fluids — purges Yangming Qi-stage heat and quenches thirst",
     "Drains fire and eliminates irritability — clears Stomach fire and rests agitation",
-    "Vents heat outward — diffuses trapped interior heat outward"
+    "Vents heat outward — diffuses trapped interior heat outward",
+    "Protects Stomach qi — nourishes Stomach fluids and guards against cold herbs"
   ],
 
   "pattern_indications_zh": [

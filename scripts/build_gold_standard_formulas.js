@@ -1,19 +1,12 @@
 /**
  * scripts/build_gold_standard_formulas.js
- * Restores and synchronizes all 6 Gold-Standard formulas:
+ * Restores and synchronizes all 6 Gold-Standard formulas with 4-bullet-point actions:
  * 1. 麻黃湯 (formula.ma_huang_tang)
  * 2. 桂枝湯 (formula.gui_zhi_tang)
  * 3. 銀翹散 (formula.yin_qiao_san)
  * 4. 桑菊飲 (formula.sang_ju_yin)
  * 5. 白虎湯 (formula.bai_hu_tang)
  * 6. 小青龍湯 (formula.xiao_qing_long_tang)
- *
- * Ensures 100% template compliance:
- * - formula_song, formula_song_zh, formula_song_source_zh
- * - contraindications_zh, contraindications_en
- * - composition items with herb_zh, name_zh, dose_g, decoction_reference_g, role_zh, role_reason_zh, in_formula_zh
- * - comparison_group
- * - verified CloudTCM & American Dragon direct URLs
  */
 
 const fs = require('fs');
@@ -91,8 +84,18 @@ const mht = {
   "fang_yi_zh": "本方為辛溫發汗之峻劑。麻黃開腠發汗、宣肺平喘為君；桂枝助其發汗、解肌溫經為臣；杏仁降氣止咳、與麻黃相配一宣一降為佐；炙甘草調和並緩其峻烈為使。",
   "fang_yi_en": "A forceful warm-acrid diaphoretic formula. Ma Huang opens pores and calms wheezing; Gui Zhi assists sweating and warms channels.",
 
-  "actions_zh": ["發汗解表 — 宣透太陽經風寒邪氣", "宣肺平喘 — 宣通肺氣、止咳嗽平喘急", "溫通經脈 — 溫散寒邪、通利關節止痛"],
-  "actions_en": ["Releases exterior by inducing sweating — vents Taiyang Wind-Cold", "Diffuses Lung qi and calms wheezing — restores Lung diffusing", "Warms channels and unblocks collateral pain — dispels cold for joint pain"],
+  "actions_zh": [
+    "發汗解表 — 宣透太陽經風寒表邪",
+    "宣肺平喘 — 宣通肺氣、止咳嗽平喘急",
+    "溫通經脈 — 溫散寒邪、通利關節止身痛",
+    "開腠發汗 — 宣開毛竅腠理、透達肌表"
+  ],
+  "actions_en": [
+    "Releases exterior by inducing sweating — vents Taiyang Wind-Cold exterior pathogen",
+    "Diffuses Lung qi and calms wheezing — restores Lung diffusing to arrest wheezing",
+    "Warms channels and unblocks collateral pain — dispels cold to relieve body and joint pain",
+    "Opens pores to promote diaphoresis — opens striae and pores to vent muscle layer"
+  ],
 
   "pattern_indications_zh": ["風寒表實證（太陽傷寒）：惡寒重、發熱輕、無汗、頭痛、身疼腰痛、骨節疼痛、項強、或見喘、苔薄白、脈浮緊。"],
   "pattern_indications_en": ["Wind-Cold excess (Tai Yang cold damage): Strong chills, mild fever, anhidrosis, headache, body aches, joint pain, stiff neck, wheezing, thin white coating, floating tight pulse."],
@@ -258,11 +261,21 @@ const gzt = {
   "fang_yi_zh": "《傷寒論》群方之首。桂枝辛溫透表解肌為君；白芍酸苦斂陰和營為臣；生薑助桂枝解表止嘔，大棗助白芍和營補中，二藥相配調和脾胃為佐；炙甘草調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰為使。全方散中有收，發汗而不傷陰。",
   "fang_yi_en": "The premier formula of Shang Han Lun. Gui Zhi disperses and releases muscle layer as chief; Bai Shao restrains yin and harmonizes ying as deputy.",
 
-  "actions_zh": ["解肌發表 — 疏散太陽肌表風寒", "調和營衛 — 助衛陽而固營陰", "溫中和胃 — 溫脾胃、降逆氣止嘔"],
-  "actions_en": ["Releases muscle layer and dispels exterior — vents Wind-Cold in muscle layer", "Harmonizes Ying and Wei levels — supports Wei yang while preserving Ying yin", "Warms middle burner and harmonizes stomach — warms Spleen/Stomach to descend rebellious qi"],
+  "actions_zh": [
+    "解肌發表 — 疏散太陽肌表風寒",
+    "調和營衛 — 助衛陽而固營陰",
+    "溫中和胃 — 溫脾胃、降逆氣止乾嘔",
+    "發汗解表 — 微發其汗、散斜而不傷正"
+  ],
+  "actions_en": [
+    "Releases muscle layer and dispels exterior — vents Wind-Cold in muscle layer",
+    "Harmonizes Ying and Wei levels — supports Wei yang while preserving Ying yin",
+    "Warms middle burner and harmonizes stomach — warms Spleen/Stomach to arrest dry retching",
+    "Induces mild sweating safely — induces mild sweat to dispel pathogens without damaging upright qi"
+  ],
 
   "pattern_indications_zh": ["外感風寒表虛證（太陽中風）：發熱、惡風、汗出、頭痛、鼻鳴乾嘔、苔薄白、脈浮緩。"],
-  "pattern_indications_en": ["Wind-Cold exterior deficiency (Tai Yang wind strike): Fever, aversion to wind, sweating, headache, dry retching, thin white coating, floating moderate/slow pulse."],
+  "pattern_indications_en": ["Wind-Cold exterior deficiency (Tai Yang wind strike): Fever, aversion to wind, sweating, headache, nasal congestion, dry retching, thin white coating, floating moderate/slow pulse."],
 
   "indications": [
     {
@@ -353,11 +366,12 @@ const gzt = {
   "exam_pearl": "【考綱重點】外感風寒表虛證（發熱、惡風、汗出、脈浮緩）萬方之祖。桂枝+白芍1:1調和營衛；生薑+大棗調和脾胃。服後「啜熱稀粥」助汗。NCBAHM 2026 CH Outline p.20。"
 };
 
-// Load batch 1 & Xiao Qing Long Tang generator scripts
+// Load batch 1 & Xiao Qing Long Tang & batch 2 generator scripts
 require('./build_batch1_gold_formulas.js');
 require('./build_xiao_qing_long_tang_gold.js');
+require('./build_batch2_gold_formulas.js');
 
-// Now read formulas.json and ensure all 6 reference files exist and are synced
+// Now read formulas.json and ensure all 9 reference files exist and are synced
 const formulaJsonPath = path.join(__dirname, '../data/herbs/formulas.json');
 const mainData = JSON.parse(fs.readFileSync(formulaJsonPath, 'utf8'));
 
@@ -372,4 +386,4 @@ const mainData = JSON.parse(fs.readFileSync(formulaJsonPath, 'utf8'));
 });
 
 fs.writeFileSync(formulaJsonPath, JSON.stringify(mainData, null, 2), 'utf8');
-console.log('Successfully built and updated ALL 6 Gold-Standard formulas in formulas.json!');
+console.log('Successfully built and updated ALL 9 Gold-Standard formulas in formulas.json with 4-bullet-point actions!');

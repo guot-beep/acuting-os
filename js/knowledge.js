@@ -468,20 +468,28 @@
   }
 
   function sourceLinks(record) {
-    const citations = Array.isArray(record.source_citations) ? record.source_citations : [];
+    const cloudUrl = record.cloudtcm_url;
+    const adUrl = record.american_dragon_url;
     let html = '<div class="k-source-citations" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">';
 
-    // Web Links vs Textbook Citations
+    if (cloudUrl) {
+      html += `<a href="${esc(cloudUrl)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 14px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0284c7;font-weight:600;font-size:0.9em;">雲端中醫 CloudTCM ↗</a>`;
+    }
+    if (adUrl) {
+      html += `<a href="${esc(adUrl)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 14px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0284c7;font-weight:600;font-size:0.9em;">American Dragon ↗</a>`;
+    }
+
+    const citations = Array.isArray(record.source_citations) ? record.source_citations : [];
     if (citations.length) {
       citations.forEach(c => {
-        const isUrl = c.url && /^https?:\/\//.test(c.url);
+        const isUrl = c.url && /^https?:\/\//.test(c.url) && !/cloudtcm|americandragon/.test(c.url);
         if (isUrl) {
           html += `
             <a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#1e293b;font-size:0.85em;">
               <strong style="color:#0284c7;">${esc(c.name)} ↗</strong>
               ${c.scope ? `<span style="color:#64748b;margin-left:4px;">(${esc(c.scope)})</span>` : ""}
             </a>`;
-        } else {
+        } else if (c.name && !/cloudtcm|americandragon/i.test(c.name)) {
           html += `
             <div style="display:inline-block;padding:6px 12px;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;color:#334155;font-size:0.85em;">
               <strong>${esc(c.name)}</strong>
@@ -491,25 +499,6 @@
       });
     }
 
-    /* Every source is named. "Source 1" told Ting nothing — a citation must say
-       what it is (Ting: 引用來源都要寫). URLs are named by host; curriculum
-       references collected from field_sources are shown as textbook citations. */
-    const hostName = (url) => {
-      if (/cloudtcm\.com/.test(url)) return "雲端中醫 CloudTCM";
-      if (/americandragon\.com/.test(url)) return "American Dragon";
-      if (/chinesemedicineatlas\.com/.test(url)) return "Chinese Medicine Atlas";
-      if (/acupun\.site/.test(url)) return "acupun.site";
-      try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return "來源 Source"; }
-    };
-    const links = [...new Set((record.source_urls || []).concat(
-      record.exact_source_url || [],
-      record.safety_source_url || [],
-      record.cloudtcm_url || [],
-      record.american_dragon_url || []
-    ).filter((url) => typeof url === "string" && /^https?:\/\//.test(url)))];
-    if (!citations.length && links.length) {
-      html += links.map((url) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:6px 12px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;text-decoration:none;color:#0284c7;font-size:0.85em;">${esc(hostName(url))} ↗</a>`).join("");
-    }
     /* One chip per curriculum file+page. field_sources annotates the same page
        many ways ("...#p29（WM 行）"), which used to print the same course file
        three times (Ting: 課件部份就標註一兩個就好,不要重複). */
