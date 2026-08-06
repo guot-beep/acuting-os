@@ -414,7 +414,12 @@
   }
 
   function cleanList(values) {
-    return (Array.isArray(values) ? values : []).map(usableText).filter(Boolean);
+    // Field shape drifts between sources: tongue_zh/pulse_zh are arrays on 麻黃湯
+    // but strings on 桂枝湯 and the 2026-08 舌脈 batch. A string here used to
+    // render as empty ("待補") while the content sat in the record — the Dong-point
+    // tab broke the same way. Wrap instead of drop.
+    const list = Array.isArray(values) ? values : (values ? [values] : []);
+    return list.map(usableText).filter(Boolean);
   }
 
   function doseValue(value, suffix = "g") {
