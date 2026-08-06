@@ -7,7 +7,23 @@
       "id": "drugsystem.cardiovascular_renal",
       "name_en": "Cardiovascular and Renal",
       "name_zh": "心血管與腎臟",
-      "course_files": ["W5-diuretics", "WK4_Pharm_Cardiovascular", "WK5.2_Pharm_Anti-hyperlipidemics", "W6-anti-coagulants"],
+      "course_files": [
+        "W5-diuretics",
+        "WK4_Pharm_Cardiovascular",
+        "WK5.2_Pharm_Anti-hyperlipidemics",
+        "W6-anti-coagulants"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugsystem.endocrine",
+      "name_en": "Endocrine",
+      "name_zh": "內分泌",
+      "course_files": [
+        "W9-Diabetes",
+        "Thyroid+and+thyroid+medication"
+      ],
+      "note_zh": "spironolactone 同屬本系統與心血管腎臟 —— drugsystem_ids 是陣列不是單值,沒有主次。",
       "review_status": "draft"
     }
   ]

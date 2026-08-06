@@ -1,0 +1,179 @@
+{
+  "dataset": "pharm_drugs",
+  "policy": "L4 單藥(成分層)。禁忌/黑框/交互作用課件為 0,必須引用官方標籤(validate-pharm-standard P0)。查不到就留空 —— 誠實的來源缺口優於編造。產品層不建卡,只記引用的 setid。",
+  "created": "2026-08-06",
+  "records": [
+    {
+      "id": "drug.furosemide",
+      "name_en": "Furosemide",
+      "name_zh": "呋塞米",
+      "brand_names_en": ["Lasix"],
+      "drugclass_id": "drugclass.loop_diuretics",
+      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugtarget_id": "drugtarget.nkcc2",
+      "rxnorm_rxcui": "4603",
+
+      "mechanism_en": "Prevents reabsorption of sodium and chloride in the loop of Henle, enhancing diuresis.",
+      "mechanism_zh": "阻止亨利氏環對鈉與氯的再吸收,增強利尿。",
+      "site_of_action_en": "Thick ascending limb of the loop of Henle",
+      "site_of_action_zh": "亨利氏環粗上行支",
+      "physiologic_effect_en": "Very efficient and fast-acting diuresis",
+      "physiologic_effect_zh": "利尿作用強且快",
+
+      "indications_en": ["Edema associated with chronic heart failure", "Liver cirrhosis", "Renal disease"],
+      "indications_zh": ["慢性心衰竭相關水腫", "肝硬化", "腎臟疾病"],
+
+      "boxed_warning_en": "Furosemide tablets are a potent diuretic which, if given in excessive amounts, can lead to a profound diuresis with water and electrolyte depletion. Therefore, careful medical supervision is required and dose and dose schedule must be adjusted to the individual patient needs.",
+      "boxed_warning_zh": "呋塞米為強效利尿劑,劑量過大可導致大量利尿並造成水分與電解質耗竭。因此必須謹慎醫療監控,劑量與給藥間隔須依個別病人需求調整。",
+      "contraindications_en": ["Anuria", "History of hypersensitivity to furosemide"],
+      "contraindications_zh": ["無尿", "對呋塞米曾有過敏史"],
+      "adverse_effects_en": ["Anorexia", "Vomiting", "Dizziness", "Rash", "Postural (orthostatic) hypotension"],
+      "adverse_effects_zh": ["食慾不振", "嘔吐", "頭暈", "皮疹", "姿勢性低血壓"],
+
+      "dailymed_setid": "7cdcd001-ab4b-4210-a455-2e17a7bc4972",
+      "dailymed_label_title": "FUROSEMIDE (FUROSEMIDE) TABLET [REMEDYREPACK INC.]",
+      "dailymed_label_format": "old_format",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7cdcd001-ab4b-4210-a455-2e17a7bc4972",
+      "dailymed_url_kind": "verified_exact",
+      "medlineplus_url": "https://medlineplus.gov/druginfo/meds/a682858.html",
+      "medlineplus_url_kind": "verified_exact",
+
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "Fast & Furious in the Loop [Hear No Evil]",
+      "classic_association_en": "Loop diuretic to hypokalemia",
+      "exam_trap_en": "Caution: tinnitus and permanent hearing loss.",
+      "exam_trap_zh": "警告:耳鳴與永久性聽力喪失。",
+
+      "clinical_use_note_zh": "課件強調袢利尿劑「非常有效且快速」,是急性水腫的首選。考試層的兩個抓手是記憶法(Fast & Furious in the Loop)與耳毒性警告。禁忌與黑框取自 DailyMed 標籤 —— 課件完全沒有這兩類內容。",
+
+      "field_sources": {
+        "mechanism_en": ["course:W5-diuretics#L219-L220"],
+        "site_of_action_en": ["course:W5-diuretics#L203"],
+        "indications_en": ["course:W5-diuretics#L205-L206"],
+        "adverse_effects_en": ["course:W5-diuretics#L222-L224"],
+        "boxed_warning_en": ["dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#WARNING"],
+        "contraindications_en": ["dailymed:7cdcd001-ab4b-4210-a455-2e17a7bc4972#CONTRAINDICATIONS"],
+        "mnemonic_en": ["course:Pharmacology Summary#L399-L400"],
+        "exam_trap_en": ["course:Pharmacology Summary#L399"]
+      },
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+
+    {
+      "id": "drug.hydrochlorothiazide",
+      "name_en": "Hydrochlorothiazide",
+      "name_zh": "氫氯噻嗪",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.thiazide_diuretics",
+      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugtarget_id": "drugtarget.ncc",
+      "rxnorm_rxcui": "5487",
+      "suffix_en": "-thiazide",
+      "mechanism_en": "Inhibits the sodium-chloride symport in the ascending loop of Henle and distal convoluted tubule.",
+      "mechanism_zh": "抑制亨利氏環上行支與遠曲小管的鈉氯共同轉運。",
+      "indications_en": ["Edema", "Hypertension", "Chronic heart failure", "Hepatic cirrhosis"],
+      "indications_zh": ["水腫", "高血壓", "慢性心衰竭", "肝硬化"],
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "See No Evil - Short THIAZ for hypertension, Long THIAZ for diabetes",
+      "exam_trap_en": "Caution: secondary angle closure glaucoma.",
+      "exam_trap_zh": "警告:續發性閉角型青光眼。",
+      "field_sources": {
+        "mechanism_en": ["course:W5-diuretics#L308"],
+        "indications_en": ["course:W5-diuretics#L310-L311"],
+        "mnemonic_en": ["course:Pharmacology Summary#L401-L402"],
+        "exam_trap_en": ["course:Pharmacology Summary#L401"]
+      },
+      "gap_note_zh": "禁忌、黑框、交互作用、孕期待補 —— 需 DailyMed setid。課件這四類為 0。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+
+    {
+      "id": "drug.spironolactone",
+      "name_en": "Spironolactone",
+      "name_zh": "螺內酯",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.potassium_sparing_diuretics",
+      "drugsystem_ids": ["drugsystem.cardiovascular_renal", "drugsystem.endocrine"],
+      "drugtarget_id": "drugtarget.aldosterone_receptor",
+      "rxnorm_rxcui": "9997",
+      "suffix_en": "-actone",
+      "mechanism_en": "Aldosterone receptor blocker.",
+      "mechanism_zh": "醛固酮受體阻斷劑。",
+      "board_priority": "high",
+      "prototype_drug": true,
+      "mnemonic_en": "BANANAS - ACTONE is kind and spares Potassium",
+      "exam_trap_en": "Causes HYPERkalemia, the opposite of loop and thiazide diuretics.",
+      "exam_trap_zh": "造成高血鉀,與袢利尿劑及 thiazide 方向相反。",
+      "field_sources": {
+        "mechanism_en": ["course:Pharmacology Summary#L403"],
+        "mnemonic_en": ["course:Pharmacology Summary#L403-L404"],
+        "exam_trap_en": ["course:Pharmacology Summary#L403"]
+      },
+      "gap_note_zh": "本藥在 W5-diuretics 課件出現 0 次,全部內容來自 Pharmacology Summary。適應症、禁忌、副作用待 DailyMed 補。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+
+    {
+      "id": "drug.acetazolamide",
+      "name_en": "Acetazolamide",
+      "name_zh": "乙醯唑胺",
+      "brand_names_en": ["Diamox"],
+      "drugclass_id": "drugclass.carbonic_anhydrase_inhibitors",
+      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugtarget_id": "drugtarget.carbonic_anhydrase",
+      "rxnorm_rxcui": "167",
+      "mechanism_en": "Inhibits carbonic anhydrase, causing excretion of sodium, potassium, bicarbonate and water; also decreases aqueous humor production and lowers intraocular pressure.",
+      "mechanism_zh": "抑制碳酸酐酶,使鈉、鉀、碳酸氫根與水排出;並減少房水生成、降低眼壓。",
+      "indications_en": ["Glaucoma", "Raised intraocular pressure", "Altitude sickness"],
+      "indications_zh": ["青光眼", "眼壓升高", "高山症"],
+      "adverse_effects_en": ["Fever", "Rash", "Paresthesia", "Photosensitivity", "Anorexia", "Crystalluria"],
+      "adverse_effects_zh": ["發燒", "皮疹", "感覺異常", "光敏感", "食慾不振", "結晶尿"],
+      "board_priority": "medium",
+      "prototype_drug": true,
+      "field_sources": {
+        "mechanism_en": ["course:W5-diuretics#L155-L158"],
+        "indications_en": ["course:W5-diuretics#L174"],
+        "adverse_effects_en": ["course:W5-diuretics#L192-L193"]
+      },
+      "adverse_effect_note_zh": "課件標明這些副作用見於慢性使用。",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    },
+
+    {
+      "id": "drug.mannitol",
+      "name_en": "Mannitol",
+      "name_zh": "甘露醇",
+      "brand_names_en": [],
+      "drugclass_id": "drugclass.osmotic_diuretics",
+      "drugsystem_ids": ["drugsystem.cardiovascular_renal"],
+      "drugtarget_id": null,
+      "rxnorm_rxcui": "6628",
+      "mechanism_en": "Filtered at the glomerulus but not reabsorbed, raising the osmolarity of the filtrate so water is retained in the urine and urine volume increases.",
+      "mechanism_zh": "在腎絲球被過濾但不被再吸收,提高濾液滲透壓,使水留在尿中而增加尿量。",
+      "indications_en": ["Brain edema requiring rapid diuresis", "Edema of the eye (glaucoma)"],
+      "indications_zh": ["需快速利尿的腦水腫", "眼部水腫(青光眼)"],
+      "board_priority": "medium",
+      "prototype_drug": true,
+      "field_sources": {
+        "mechanism_en": ["course:W5-diuretics#L237-L238"],
+        "indications_en": ["course:W5-diuretics#L28-L29"]
+      },
+      "target_note_zh": "無分子標的 —— 滲透作用不經受體,drugtarget_id 刻意為 null。",
+      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 補。",
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "updated_at": "2026-08-06"
+    }
+  ]
+}
