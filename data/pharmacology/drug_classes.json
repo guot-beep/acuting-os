@@ -297,7 +297,15 @@
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
-      "review_status": "draft"
+      "review_status": "draft",
+      "class_boxed_warning_zh": "本類兩個藥(阿哌沙班、利伐沙班)的黑框警告結構相同:(A) 提早停藥增加血栓風險 (B) 神經軸麻醉/脊椎穿刺可能導致硬膜外或脊椎血腫與永久癱瘓。這是分類層級的事實,不是巧合。",
+      "monitoring_note_zh": "無常規監測指標 —— 這是 DOAC 與 warfarin 最大的臨床差別。看不到 INR 不代表出血風險較低。",
+      "field_sources": {
+        "class_boxed_warning_zh": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#BOXED_WARNING",
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#BOXED_WARNING"
+        ]
+      }
     },
     {
       "id": "drugclass.direct_thrombin_inhibitors",

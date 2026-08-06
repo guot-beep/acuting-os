@@ -838,7 +838,31 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including ELIQUIS, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
+      "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含阿哌沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
+      "contraindications_en": [
+        "Active pathological bleeding",
+        "Severe hypersensitivity reaction to ELIQUIS (e.g. anaphylactic reactions)"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血",
+        "對阿哌沙班嚴重過敏反應(如過敏性休克)"
+      ],
+      "dailymed_setid": "a454cd24-0c6d-46e8-b1e4-197388606175",
+      "dailymed_label_title": "ELIQUIS (APIXABAN) TABLET, FILM COATED [CARDINAL HEALTH 107, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a454cd24-0c6d-46e8-b1e4-197388606175",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#CONTRAINDICATIONS"
+        ]
+      },
+      "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
+      "monitoring_note_zh": "無常規凝血監測指標 —— 不像 warfarin 有 INR。判斷依據是腎功能、劑量與末次服藥時間。"
     },
     {
       "id": "drug.rivaroxaban",
@@ -857,7 +881,31 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including rivaroxaban, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis.",
+      "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含利伐沙班)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。",
+      "contraindications_en": [
+        "Active pathological bleeding",
+        "Severe hypersensitivity reaction to rivaroxaban (e.g. anaphylactic reactions)"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血",
+        "對利伐沙班嚴重過敏反應(如過敏性休克)"
+      ],
+      "dailymed_setid": "481b7802-5093-43e7-bbd9-1532197eb6e6",
+      "dailymed_label_title": "RIVAROXABAN (RIVAROXABAN) TABLET [MICRO LABS LIMITED]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=481b7802-5093-43e7-bbd9-1532197eb6e6",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#CONTRAINDICATIONS"
+        ]
+      },
+      "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
+      "monitoring_note_zh": "無常規凝血監測指標 —— 不像 warfarin 有 INR。判斷依據是腎功能、劑量與末次服藥時間。"
     },
     {
       "id": "drug.dabigatran",
@@ -877,7 +925,35 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "(A) Premature discontinuation of any oral anticoagulant, including dabigatran etexilate, increases the risk of thrombotic events. (B) Epidural or spinal hematomas may occur in patients receiving neuraxial anesthesia or undergoing spinal puncture.",
+      "boxed_warning_zh": "(A) 提早停用任何口服抗凝劑(含達比加群酯)會增加血栓事件風險。(B) 接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫。",
+      "contraindications_en": [
+        "Active pathological bleeding",
+        "History of a serious hypersensitivity reaction to dabigatran, dabigatran etexilate, or to one of the excipients",
+        "Mechanical prosthetic heart valve"
+      ],
+      "contraindications_zh": [
+        "活動性病理性出血",
+        "對達比加群、達比加群酯或賦形劑曾有嚴重過敏反應",
+        "機械性人工心臟瓣膜"
+      ],
+      "dailymed_setid": "3a8ec82a-c367-40dc-9302-e1896fcb05ea",
+      "dailymed_label_title": "DABIGATRAN ETEXILATE CAPSULE, COATED PELLETS [ASCEND LABORATORIES, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3a8ec82a-c367-40dc-9302-e1896fcb05ea",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#CONTRAINDICATIONS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ 機械性人工心臟瓣膜:達比加群是禁忌,華法林是適應症 —— 方向完全相反。這是 DOAC 不能一律取代 warfarin 的具體例子。",
+      "exam_trap_en": "Mechanical prosthetic heart valve: contraindicated for dabigatran, but an indication for warfarin. DOACs do not simply replace warfarin.",
+      "acupuncture_note_zh": "黑框第二段指的是神經軸麻醉與脊椎穿刺,不是針灸。無常規凝血監測指標。",
+      "monitoring_note_zh": "無常規監測 —— 與其他 DOAC 相同,不像 warfarin 有 INR。"
     },
     {
       "id": "drug.ticagrelor",
