@@ -187,7 +187,15 @@ function main() {
         }
         entries.forEach((e, i) => {
           const at = `${where}.${base}_graded[${i}]`;
-          if (!e || !e.with) defects.push(`P8 ${at}: 缺 with（跟什麼交互）`);
+          /* `with` holds an id when we have a card for the other side, and is
+           * null when we do not — garlic and St John's wort are named in the
+           * warfarin label but have no herb card, and a whole drug class has
+           * no single id. Requiring an id would force either an invented one
+           * or dropping a real interaction, so a human-readable label is the
+           * actual requirement and the id is the optional link. */
+          if (!e || !(e.with || e.with_label_en || e.with_label_zh)) {
+            defects.push(`P8 ${at}: 缺 with 或 with_label —— 至少要說得出跟什麼交互`);
+          }
           if (!INTERACTION_GRADES.has(e.evidence)) {
             defects.push(`P8 ${at}: evidence「${e.evidence}」不在 ${[...INTERACTION_GRADES].join('/')}`);
           }

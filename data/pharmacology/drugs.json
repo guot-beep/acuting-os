@@ -335,13 +335,313 @@
           "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#CONTRAINDICATIONS"
         ]
       },
-      "gap_note_zh": "機轉、交互作用分級、孕期詳述待補。warfarin 的交互作用極多,必須逐條分級,不可概括。",
+      "gap_note_zh": "交互作用已分級(19 條藥物 + 7 條植物藥,全部引用標籤)。仍待補:機轉、孕期詳述、以及丹參/當歸等標籤未提及之中藥的查證。",
       "drugsystem_ids": [
         "drugsystem.cardiovascular_renal"
       ],
       "review_status": "draft",
       "authored_by": "Claude",
-      "updated_at": "2026-08-06"
+      "updated_at": "2026-08-06",
+      "drug_interactions_graded": [
+        {
+          "with": "drug.aspirin",
+          "with_label_en": "Aspirin",
+          "with_label_zh": "阿斯匹靈",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.clopidogrel",
+          "with_label_en": "Clopidogrel",
+          "with_label_zh": "氯吡格雷",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.prasugrel",
+          "with_label_en": "Prasugrel",
+          "with_label_zh": "普拉格雷",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.heparin",
+          "with_label_en": "Heparin",
+          "with_label_zh": "肝素",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.dabigatran",
+          "with_label_en": "Dabigatran",
+          "with_label_zh": "達比加群",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Antiplatelet agents (cilostazol, dipyridamole, ticlopidine)",
+          "with_label_zh": "抗血小板藥(西洛他唑、雙嘧達莫、噻氯匹定)",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.ibuprofen",
+          "with_label_en": "Ibuprofen",
+          "with_label_zh": "布洛芬",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.naproxen",
+          "with_label_en": "Naproxen",
+          "with_label_zh": "萘普生",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.celecoxib",
+          "with_label_en": "Celecoxib",
+          "with_label_zh": "塞來昔布",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.diclofenac",
+          "with_label_en": "Diclofenac",
+          "with_label_zh": "雙氯芬酸",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Other NSAIDs (indomethacin, ketorolac, piroxicam, sulindac and others named in the label)",
+          "with_label_zh": "其他 NSAID(吲哚美辛、酮咯酸、吡羅昔康、舒林酸等,標籤逐一列名)",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.sertraline",
+          "with_label_en": "Sertraline",
+          "with_label_zh": "舍曲林",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.fluoxetine",
+          "with_label_en": "Fluoxetine",
+          "with_label_zh": "氟西汀",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.escitalopram",
+          "with_label_en": "Escitalopram",
+          "with_label_zh": "艾司西酞普蘭",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.duloxetine",
+          "with_label_en": "Duloxetine",
+          "with_label_zh": "度洛西汀",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": "drug.venlafaxine",
+          "with_label_en": "Venlafaxine",
+          "with_label_zh": "文拉法辛",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Other SSRIs/SNRIs named in the label (citalopram, fluvoxamine, paroxetine, desvenlafaxine, milnacipran, vilazodone)",
+          "with_label_zh": "標籤列名的其他 SSRI/SNRI(西酞普蘭、氟伏沙明、帕羅西汀、去甲文拉法辛、米那普侖、維拉唑酮)",
+          "effect_en": "Increased risk of bleeding",
+          "effect_zh": "出血風險增加",
+          "evidence": "pharmacodynamic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ]
+        },
+        {
+          "with": null,
+          "with_label_en": "Inhibitors of CYP2C9, 1A2 and/or 3A4 (label examples: amiodarone, fluconazole, metronidazole)",
+          "with_label_zh": "CYP2C9、1A2、3A4 抑制劑(標籤舉例:胺碘酮、氟康唑、甲硝唑)",
+          "effect_en": "Potential to increase the effect of warfarin (increase INR)",
+          "effect_zh": "可能增強華法林作用(INR 上升)",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "標籤的 Table 2 逐一列名,本筆為分類層摘要;個別藥物要單獨建條目時再引用該表。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Inducers of CYP2C9, 1A2 and/or 3A4 (label examples: carbamazepine, phenobarbital, rifampin)",
+          "with_label_zh": "CYP2C9、1A2、3A4 誘導劑(標籤舉例:卡馬西平、苯巴比妥、利福平)",
+          "effect_en": "Potential to decrease the effect of warfarin (decrease INR)",
+          "effect_zh": "可能減弱華法林作用(INR 下降)",
+          "evidence": "pharmacokinetic",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "方向與抑制劑相反 —— 這一組是療效不足而非出血,考題常對調。"
+        }
+      ],
+      "herb_drug_interactions_graded": [
+        {
+          "with": "herb.ren_shen",
+          "with_label_en": "Ginseng",
+          "with_label_zh": "人參",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "標籤寫 ginseng,未區分品種。藥庫另有西洋參(herb.xi_yang_shen)與三七(herb.san_qi),標籤未指明是否涵蓋 —— 不擴張解釋。"
+        },
+        {
+          "with": "herb.yin_xing",
+          "with_label_en": "Ginkgo biloba",
+          "with_label_zh": "銀杏",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "note_zh": "藥庫另有白果(herb.bai_guo,銀杏種子)。標籤寫 Ginkgo biloba,一般指葉萃取物 —— 兩者不等同,未合併。"
+        },
+        {
+          "with": null,
+          "with_label_en": "Garlic",
+          "with_label_zh": "大蒜",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "St. John’s wort",
+          "with_label_zh": "聖約翰草",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "Echinacea",
+          "with_label_zh": "紫錐花",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "Goldenseal",
+          "with_label_zh": "白毛茛",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡"
+        },
+        {
+          "with": null,
+          "with_label_en": "Co-enzyme Q10",
+          "with_label_zh": "輔酶 Q10",
+          "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
+          "effect_zh": "華法林標籤指名可能影響抗凝作用的植物藥",
+          "evidence": "documented_clinical",
+          "sources": [
+            "dailymed:541c9a70-adaf-4ef3-94ba-ad4e70dfa057#DRUG_INTERACTIONS"
+          ],
+          "herb_card_status_zh": "藥庫無此卡(屬補充品)"
+        }
+      ],
+      "herb_drug_interaction_note_zh": "以上七種全部是華法林標籤自己指名的,不是推論。標籤未逐一給機轉與方向,所以本層只記錄「標籤指名」這個事實 —— 要寫成臨床建議需再查 NCCIH 或原始文獻,不可從這一筆推導。中醫常用而標籤未提及的藥(丹參、當歸等)目前為 unknown,尚未查證,不列入以免看起來像已排除。"
     },
     {
       "id": "drug.clopidogrel",
