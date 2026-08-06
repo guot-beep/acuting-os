@@ -123,11 +123,13 @@ const xql = {
 
   "actions_zh": [
     "解表散寒 — 疏散外感風寒邪氣",
-    "溫肺化飲 — 溫化內停之水飲痰液"
+    "溫肺化飲 — 溫化內停之水飲痰液",
+    "降氣平喘 — 降逆平喘、止咳嗽吐痰"
   ],
   "actions_en": [
     "Releases exterior and dispels cold — relieves exterior Wind-Cold pathogen",
-    "Warms Lungs and transforms thin fluid retention — warms Lungs to transform internal fluids"
+    "Warms Lungs and transforms thin fluid retention — warms Lungs to transform internal fluids",
+    "Descends qi and calms wheezing — directs rebellious qi downward to arrest cough"
   ],
 
   "pattern_indications_zh": [

@@ -98,11 +98,13 @@ const hljdt = {
 
   "actions_zh": [
     "瀉火解毒 — 瀉透三焦實熱火毒",
-    "清熱燥濕 — 清瀉臟腑濕熱邪氣"
+    "清熱燥濕 — 清瀉臟腑濕熱邪氣",
+    "涼血止血 — 清解血分熱毒、防熱迫血妄行"
   ],
   "actions_en": [
     "Drains fire and relieves toxicity — purges toxic fire excess from all three burners",
-    "Clears heat and dries dampness — clears damp-heat pathogens from organs"
+    "Clears heat and dries dampness — clears damp-heat pathogens from organs",
+    "Cools blood and stops bleeding — clears blood-level heat toxicity to prevent bleeding"
   ],
 
   "pattern_indications_zh": [
@@ -337,11 +339,13 @@ const ldxgt = {
 
   "actions_zh": [
     "瀉肝膽實火 — 清瀉肝膽經實熱火毒",
-    "清下焦濕熱 — 疏利下焦肝膽濕熱"
+    "清下焦濕熱 — 疏利下焦肝膽濕熱",
+    "養血柔肝 — 滋陰養血、防苦寒藥傷陰"
   ],
   "actions_en": [
     "Drains Liver and Gallbladder fire — purges excess fire from Liver/GB channels",
-    "Clears Lower Burner damp-heat — clears and drains damp-heat in the lower burner"
+    "Clears Lower Burner damp-heat — clears and drains damp-heat in lower burner",
+    "Nourishes blood and softens Liver — nourishes Yin/blood to protect against bitter-cold herbs"
   ],
 
   "pattern_indications_zh": [
@@ -521,11 +525,13 @@ const dcs = {
 
   "actions_zh": [
     "清心養陰 — 清瀉心經實火、滋養心陰",
-    "利水通淋 — 引心火下行小腸、利尿通淋"
+    "利水通淋 — 引心火下行小腸、利尿通淋",
+    "清利口舌 — 降火消腫、治療口舌生瘡"
   ],
   "actions_en": [
     "Clears Heart heat and nourishes Yin — drains Heart fire excess and moistens fluids",
-    "Promotes urination and unblocks dysuria — guides Heart heat downward out through Small Intestine"
+    "Promotes urination and unblocks dysuria — guides Heart heat downward out through Small Intestine",
+    "Clears mouth and tongue — quenches fire to relieve aphthous ulcers"
   ],
 
   "pattern_indications_zh": [

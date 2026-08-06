@@ -91,8 +91,8 @@ const mht = {
   "fang_yi_zh": "本方為辛溫發汗之峻劑。麻黃開腠發汗、宣肺平喘為君；桂枝助其發汗、解肌溫經為臣；杏仁降氣止咳、與麻黃相配一宣一降為佐；炙甘草調和並緩其峻烈為使。",
   "fang_yi_en": "A forceful warm-acrid diaphoretic formula. Ma Huang opens pores and calms wheezing; Gui Zhi assists sweating and warms channels.",
 
-  "actions_zh": ["發汗解表", "宣肺平喘"],
-  "actions_en": ["Releases the exterior by inducing sweating", "Diffuses Lung qi and calms wheezing"],
+  "actions_zh": ["發汗解表 — 宣透太陽經風寒邪氣", "宣肺平喘 — 宣通肺氣、止咳嗽平喘急", "溫通經脈 — 溫散寒邪、通利關節止痛"],
+  "actions_en": ["Releases exterior by inducing sweating — vents Taiyang Wind-Cold", "Diffuses Lung qi and calms wheezing — restores Lung diffusing", "Warms channels and unblocks collateral pain — dispels cold for joint pain"],
 
   "pattern_indications_zh": ["風寒表實證（太陽傷寒）：惡寒重、發熱輕、無汗、頭痛、身疼腰痛、骨節疼痛、項強、或見喘、苔薄白、脈浮緊。"],
   "pattern_indications_en": ["Wind-Cold excess (Tai Yang cold damage): Strong chills, mild fever, anhidrosis, headache, body aches, joint pain, stiff neck, wheezing, thin white coating, floating tight pulse."],
@@ -258,8 +258,8 @@ const gzt = {
   "fang_yi_zh": "《傷寒論》群方之首。桂枝辛溫透表解肌為君；白芍酸苦斂陰和營為臣；生薑助桂枝解表止嘔，大棗助白芍和營補中，二藥相配調和脾胃為佐；炙甘草調和諸藥，合桂枝辛甘化陽，合白芍酸甘化陰為使。全方散中有收，發汗而不傷陰。",
   "fang_yi_en": "The premier formula of Shang Han Lun. Gui Zhi disperses and releases muscle layer as chief; Bai Shao restrains yin and harmonizes ying as deputy.",
 
-  "actions_zh": ["解肌發表", "調和營衛"],
-  "actions_en": ["Releases muscle layer and dispels exterior", "Harmonizes Ying and Wei levels"],
+  "actions_zh": ["解肌發表 — 疏散太陽肌表風寒", "調和營衛 — 助衛陽而固營陰", "溫中和胃 — 溫脾胃、降逆氣止嘔"],
+  "actions_en": ["Releases muscle layer and dispels exterior — vents Wind-Cold in muscle layer", "Harmonizes Ying and Wei levels — supports Wei yang while preserving Ying yin", "Warms middle burner and harmonizes stomach — warms Spleen/Stomach to descend rebellious qi"],
 
   "pattern_indications_zh": ["外感風寒表虛證（太陽中風）：發熱、惡風、汗出、頭痛、鼻鳴乾嘔、苔薄白、脈浮緩。"],
   "pattern_indications_en": ["Wind-Cold exterior deficiency (Tai Yang wind strike): Fever, aversion to wind, sweating, headache, dry retching, thin white coating, floating moderate/slow pulse."],

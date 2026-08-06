@@ -387,11 +387,13 @@ const sjy = {
 
   "actions_zh": [
     "疏風清熱 — 疏散上焦風熱邪氣",
-    "宣肺止咳 — 宣通肺氣、降氣止咳"
+    "宣肺止咳 — 宣通肺氣、降氣止咳",
+    "清利頭目 — 輕清上浮、清利頭面目疾"
   ],
   "actions_en": [
     "Disperses wind and clears heat — clears upper burner Wind-Heat",
-    "Diffuses Lung qi and arrests cough — restores Lung ascending-descending qi movement"
+    "Diffuses Lung qi and arrests cough — restores Lung ascending-descending qi movement",
+    "Clears head and eyes — light and ascending to benefit eyes and head"
   ],
 
   "pattern_indications_zh": [
@@ -573,11 +575,13 @@ const bht = {
 
   "actions_zh": [
     "清熱生津 — 清瀉陽明氣分大熱、生津止渴",
-    "瀉火除煩 — 瀉透胃火、消除心煩躁熱"
+    "瀉火除煩 — 瀉透胃火、消除心煩躁熱",
+    "透熱外達 — 宣透內鬱熱邪外出"
   ],
   "actions_en": [
     "Clears Qi-level heat and generates fluids — purges Yangming Qi-stage heat and quenches thirst",
-    "Drains fire and eliminates irritability — clears Stomach fire and rests agitation"
+    "Drains fire and eliminates irritability — clears Stomach fire and rests agitation",
+    "Vents heat outward — diffuses trapped interior heat outward"
   ],
 
   "pattern_indications_zh": [
