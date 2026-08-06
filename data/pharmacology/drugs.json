@@ -1061,7 +1061,44 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、高劑量 NSAID 角色(P4)待補。低劑量抗血小板與高劑量 NSAID 是同一分子的兩種角色,不要合併。",
+      "label_type": "OTC Drug Facts",
+      "contraindications_en": [
+        "Allergy to aspirin or any other pain reliever/fever reducer",
+        "Children and teenagers who have or are recovering from chicken pox or flu-like symptoms (Reye syndrome risk)",
+        "Three or more alcoholic drinks every day while using this product"
+      ],
+      "contraindications_zh": [
+        "對阿斯匹靈或任何其他止痛/退燒藥過敏",
+        "正在或剛從水痘或類流感症狀恢復的兒童與青少年(雷氏症候群風險)",
+        "用藥期間每日飲酒三杯以上"
+      ],
+      "warnings_en": [
+        "Aspirin may cause a severe allergic reaction including hives, facial swelling, shock, or asthma (wheezing)",
+        "Ask a doctor before use with stomach problems, age 60 or over, prior stomach ulcers or bleeding problems, or if taking blood thinning drugs",
+        "Stop use and seek immediate medical help for signs of stomach bleeding: feeling faint, bloody or black stools, vomiting blood, or unrelieved stomach pain"
+      ],
+      "warnings_zh": [
+        "可能引起嚴重過敏反應,包括蕁麻疹、顏面腫脹、休克或氣喘(喘鳴)",
+        "有胃部問題、年齡 60 歲以上、曾有胃潰瘍或出血問題、或正在服用抗凝血藥者,使用前應諮詢醫師",
+        "出現胃出血徵象時立即停用並就醫:頭暈欲昏、血便或黑便、吐血、持續不緩解的胃痛"
+      ],
+      "dailymed_setid": "ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
+      "dailymed_label_title": "ASPIRIN 81 MG (ASPIRIN) TABLET, COATED [HAWAII REPACK, INC.]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#DO_NOT_USE"
+        ],
+        "warnings_en": [
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#WARNINGS"
+        ]
+      },
+      "label_format_note_zh": "本筆引用的是 OTC「Drug Facts」格式標籤,不是處方藥的 PLR/舊格式 —— 沒有 BOXED WARNING 區段,對應內容在 Do not use 與 Warnings。欄位對照時要注意,不要因為沒有 boxed_warning 就以為漏查。",
+      "acupuncture_note_zh": "標籤明列「正在服用抗凝血藥者使用前應諮詢醫師」—— 病人自行買 OTC 阿斯匹靈加上處方抗凝劑是很常見的組合,問診時要主動問,因為病人常不把 OTC 當成「藥」。",
+      "exam_trap_zh": "⚠️ 雷氏症候群:兒童與青少年在水痘或類流感期間禁用 —— 這是 OTC 標籤上明列的,考題常出。",
+      "exam_trap_en": "Reye syndrome: contraindicated in children and teenagers with or recovering from chicken pox or flu-like symptoms."
     },
     {
       "id": "drug.enoxaparin",
@@ -1126,7 +1163,44 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、劑量、孕期待補。",
+      "contraindications_en": [
+        "Severe thrombocytopenia",
+        "Known hypersensitivity to heparin or pork products",
+        "When suitable blood coagulation tests cannot be performed at appropriate intervals",
+        "An uncontrolled active bleeding state, except when due to disseminated intravascular coagulation"
+      ],
+      "contraindications_zh": [
+        "嚴重血小板減少",
+        "對肝素或豬類製品過敏",
+        "無法在適當間隔進行合適凝血檢驗時",
+        "無法控制的活動性出血,但因瀰漫性血管內凝血(DIC)所致者除外"
+      ],
+      "warnings_en": [
+        "Heparin-induced thrombocytopenia (HIT) is a serious antibody-mediated reaction that may progress to venous and arterial thrombosis (HITT). If the platelet count falls below 100,000/mm3 or recurrent thrombosis develops, promptly discontinue heparin, evaluate for HIT and HITT, and administer an alternative anticoagulant.",
+        "Fatal hemorrhages have occurred in pediatric patients due to medication errors in which 1 mL heparin sodium injection vials were confused with catheter lock flush vials."
+      ],
+      "warnings_zh": [
+        "肝素誘發血小板減少症(HIT)是抗體媒介的嚴重反應,可能進展為靜脈與動脈血栓(HITT)。血小板降至 100,000/mm3 以下或再發血栓時,應立即停用肝素、評估 HIT 與 HITT,並改用其他抗凝劑。",
+        "曾發生兒科病人致命出血 —— 因 1 mL 肝素注射瓶與導管沖洗瓶混淆的給藥錯誤。"
+      ],
+      "has_boxed_warning": false,
+      "boxed_warning_checked_note_zh": "本標籤**沒有**黑框警告 —— 已查證,不是漏查。低分子量肝素(依諾肝素)反而有脊椎血腫黑框,兩者不同,不要互相套用。",
+      "dailymed_setid": "9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
+      "dailymed_label_title": "HEPARIN SODIUM INJECTION, SOLUTION [CARDINAL HEALTH 107, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "contraindications_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#CONTRAINDICATIONS"
+        ],
+        "warnings_en": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#WARNINGS"
+        ]
+      },
+      "exam_trap_zh": "⚠️ 禁忌明列「無法在適當間隔進行凝血檢驗時」—— 肝素需要監測(aPTT),這與 DOAC 無監測、warfarin 用 INR 各不相同。三種抗凝劑三種監測方式。",
+      "exam_trap_en": "Contraindicated when suitable coagulation tests cannot be performed at appropriate intervals. Heparin needs monitoring (aPTT), warfarin uses INR, DOACs have no routine monitor - three different answers.",
+      "acupuncture_note_zh": "靜脈/皮下給藥,住院情境為主,門診針灸較少遇到。若病人剛出院仍在用,出血風險高且需監測。豬源過敏同依諾肝素。"
     }
   ]
 }
