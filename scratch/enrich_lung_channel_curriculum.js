@@ -1,0 +1,176 @@
+/**
+ * scratch/enrich_lung_channel_curriculum.js
+ * Comprehensive enrichment for Lung Channel (LU) including:
+ * - 11 Points detailed notes
+ * - Divergent Channel (經別)
+ * - Muscle Channel (經筋)
+ * - Channel Rhymes & Songs (循行歌、十一穴總歌、經別經筋歌)
+ * - Common Meridian Pathomechanism (常見經絡異常：是動病與所生病)
+ * - Meridian Care & Preservation (經絡保養與日常養生導引)
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const channelsFile = path.join(__dirname, '../data/channels/channels_and_charts.json');
+const channels = JSON.parse(fs.readFileSync(channelsFile, 'utf8'));
+
+const luChannel = channels.find(c => c.code === 'LU');
+
+if (!luChannel) {
+  console.error('LU channel not found!');
+  process.exit(1);
+}
+
+// 1. 常見經絡異常 Common Meridian Pathomechanism
+luChannel.pathomechanism_zh = "【《靈樞·經脈》肺經是動病與所生病 (Common Meridian Pathomechanism)】\n• 是動病 (Shi Dong Pathologies / 經氣變動): 肺脹滿，膨膨而喘咳，缺盆中痛，輓兩手而交瞀（兩手交握目眩頭暈），此為臂厥。\n• 所生病 (Suo Sheng Pathologies / 臟腑所生病): 咳嗽，上氣喘渴，煩心，胸滿，臑臂內前廉痛厥，掌中熱。\n• 實證 (Excess): 氣盛有餘，肩背痛，風寒汗出，小便數而欠。\n• 虛證 (Deficiency): 氣虛不足，肩背痛寒，少氣不足以息，溺色變（小便顏色異常）。";
+
+luChannel.pathomechanism_en = "【Lung Channel Pathomechanism (Shi Dong & Suo Sheng)】\n• Shi Dong Pathologies (Channel Reactivity): Lung fullness, wheezing, cough, pain in the supraclavicular fossa, crossed hands with dizziness/visual confusion, arm Bi-syndrome (臂厥).\n• Suo Sheng Pathologies (Organ/Channel Disorders): Cough, dyspnea, thirst, anxiety, chest fullness, pain/coldness along the anterior aspect of arm/forearm, heat in palms.\n• Excess Symptoms: Shoulder and back pain, aversion to wind/cold with sweating, frequent short urination.\n• Deficiency Symptoms: Shoulder/back pain with cold sensations, shortness of breath/shallow respiration, altered urine color.";
+
+// 2. 經絡保養與日常養生 Meridian Care & Preservation
+luChannel.preservation_zh = "【肺經日常保健與養生導引 (Meridian Care & Preservation)】\n• 時辰養生 (Clock Time 3:00-5:00 AM 寅時): 寅時肺經當令，氣血注入肺臟分配全身。此時宜保持深沉睡眠，順應肺氣肅降與宗氣布散。忌熬夜、抽菸或暴飲暴食。\n• 季節與五行潤燥 (Autumn & Metal Element): 肺主秋，屬金，性喜潤惡燥。秋季宜食用白木耳、百合、雪梨、蓮子等潤肺養陰之品；防範秋燥邪氣傷肺。\n• 導引按揉與保養穴位 (Daoyin & Self-Care Points):\n  1. 沿上臂至前臂內側前緣（尺澤至太淵）循經輕拍或順擦，宣通肺氣。\n  2. 按揉 LU7 列缺（宣肺利咽、防感冒）、LU9 太淵（補肺益氣培土生金）。\n  3. 腹式深呼吸吐納：每日早晨做深呼吸，宣暢肺氣、充沛衛氣（衛外防禦機能）。";
+
+luChannel.preservation_en = "【Lung Meridian Health Preservation & Self-Care】\n• Clock Time Alignment (3:00 - 5:00 AM Yin Hour): Lung meridian is most active. Blood and Qi distribute throughout the 100 vessels. Deep sleep is recommended to support Lung descending and Zong Qi distribution. Avoid smoking or late-night exposure to cold.\n• Seasonal Care (Autumn / Metal): Lung corresponds to Autumn and Metal element; dislikes dryness. Consume moistening foods such as snow pear, lily bulb, white wood ear mushroom, and lotus seeds during autumn.\n• Self-Massage & Acupoint Preservation:\n  1. Gently pat or stroke along the radial aspect of arm/forearm to unblock Lung Qi.\n  2. Press LU7 Lieque (boosts immunity, prevents common colds, benefits throat) and LU9 Taiyuan (tonifies Lung Qi & Yin).\n  3. Diaphragmatic Deep Breathing: Practice morning deep breathing to expand Lung capacity and strengthen Wei Qi (defensive immune function).";
+
+// 3. 經別 Divergent Channel
+luChannel.divergent_channel_zh = "【手太陰肺經經別 (Lung Divergent Channel)】\n• 循行路線：從手太陰肺經別出，別於淵腋（腋下），入走腋前，巡行入胸中，散絡於肺，上循喉嚨，出缺盆（鎖骨上窩），複合於手陽明大腸經經別，上結於頸部扶突穴（LI18 - 天窗穴）。\n• 臨床意義：肺與大腸經別在胸腹深層完全貫通交織（Integrates LU & LI in deep interior）。解釋了為何肺經與大腸經穴位（如 LU7 列缺、LI4 合谷）能互相標本兼治，且經別與天窗穴 LI18 相合，能調節頭身陰陽氣血升降與氣逆。";
+
+luChannel.divergent_channel_en = "【Lung Divergent Channel (Jing Bie)】\n• Trajectory: Branches from the main Lung channel in the axilla (near GB22/LU1), enters the chest, communicates with the Lung organ and diffuses in the chest, ascends along the throat, emerges at the supraclavicular fossa (ST12), joins the Large Intestine Divergent channel, and ascends to connect at LI18 (Futu / Window of the Sky point on the lateral neck).\n• Clinical Significance: Deeply connects and integrates the Lung (Yin) and Large Intestine (Yang) internal organs. Explains why LU7 and LI4 treat head, neck, and throat disorders. Conjoins at LI18 (Window of the Sky) to balance head-body Qi flow.";
+
+// 4. 經筋 Muscle Channel / Tendino-Muscular
+luChannel.muscle_channel_zh = "【手太陰經筋 (Lung Muscle Channel / Sinew Channel)】\n• 循行路線：起於手大拇指端（少商），沿拇指上行，結於魚際，行寸口外側，沿前臂上行結於肘中（尺澤），向上沿上臂內側，入腋下，出缺盆，結於肩前髃（肩髃部），上結於缺盆，下散貫門，下合於脅下，抵季脅。\n• 病候與臨床應用：經筋所過之處扭傷、轉筋、肘臂拘急疼痛、肩前痛、胸脅支滿拘急、吐血積聚。臨床可用阿是穴、刺絡與循經針刺治療肌筋膜疼痛。";
+
+luChannel.muscle_channel_en = "【Lung Muscle Channel (Jing Jin)】\n• Trajectory: Originates at the tip of the thumb (LU11), binds at the thenar eminence (LU10), ascends radial forearm to bind at the cubital crease (LU5), continues up anterior arm into axilla, emerges at supraclavicular fossa, binds at anterior shoulder (LI15 region), descends internally through diaphragm to spread over the cardia of Stomach and hypochondrium.\n• Pathology: Cramping, pain, or stiffness along the sinew path: thumb pain, elbow/forearm spasm, anterior shoulder pain, fullness or cramping in chest/hypochondrium, spitting blood. Treated via Ashi points and channel needling.";
+
+// 5. 經脈歌訣與穴位歌括 Channel Rhymes & Classic Point Songs
+luChannel.channel_rhyme_zh = "【手太陰肺經循行歌】\n「手太陰肺中焦起，下絡大腸還循胃，上膈屬肺系橫行，出腋下循臑臂內，歷寸口入大指端，交手陽明食指內。」";
+
+luChannel.point_song_zh = "【手太陰肺經十一穴總歌】\n「手太陰肺十一穴，中府雲門天府列，俠白尺澤孔最存，列缺經渠太淵涉，魚際少商如數斯，次第宣導肺氣泄。」\n\n【經別經筋歌】\n「肺經經別入胸膈，散絡肺臟上喉嗌，合於陽明扶突位，天窗調理頭身氣；經筋起於大指端，結於魚際與肘彎，下散賁門合季脅，經筋攣急胸脅滿。」";
+
+// 6. 全11穴位詳細課件精華
+luChannel.points_curriculum = [
+  {
+    code: "LU1",
+    nameZh: "中府 (Zhongfu)",
+    nameEn: "Central Treasury",
+    category: "肺之募穴 (Front-Mu) · 脾肺經交會穴 · 肺經起點 (Entry Point)",
+    location: "胸前壁外上方，鎖骨下窩外側1寸，第一肋間隙，距前正中線6寸 (Latero-superior to sternum, 1 cun below LU-2, 1st intercostal space).",
+    needling: "斜刺 0.5 - 0.8 寸向胸壁外側 (Obliquely toward lateral aspect)。⚠️ 嚴禁向內側直刺或深刺，防止氣胸危險 (Pneumothorax danger)。可灸。",
+    actions: "宣肺降氣 (Disseminates & Descends LU Qi)、化痰止咳 (Transforms Phlegm)、清瀉肺熱 (Clears Heat)、通調水道 (Regulates Water Passages)、降胃逆氣 (Descends Stomach Qi)。",
+    indications: "咳嗽、氣喘、哮喘、胸痛、肩背痛、胸中煩滿、短氣促氣、嘔吐、飲食不下。",
+    notes: "【課件考綱精華】① 肺經起點與營氣周天流注起點（與脾經交會，Ying Qi cycle begins here）。② 肺之募穴，專治一切肺經實證（咳嗽、喘息、痰熱積聚）。③ 中焦脾濕化熱上犯於肺之嘔吐與咽下困難。"
+  },
+  {
+    code: "LU2",
+    nameZh: "雲門 (Yunmen)",
+    nameEn: "Cloud Gate",
+    category: "局部要穴 (Local Point)",
+    location: "胸前壁外上方，鎖骨下凹陷中，喙突上方，距前正中線6寸 (Infra-clavicular fossa, superior to coracoid process).",
+    needling: "斜刺 0.5 - 0.8 寸向胸壁外側。⚠️ 嚴禁向內側深刺，防止氣胸危險。可灸。",
+    actions: "清瀉肺熱 (Clears LU Heat)、宣肺理氣 (Disseminates LU Qi)、除煩排鬱 (Dispels Anxiety & Agitation)、瀉關節熱 (Drains Heat in Joints)。",
+    indications: "咳嗽、氣喘、胸痛、胸中煩熱、胸部張緊感、肩背疼痛發炎。",
+    notes: "【課件考綱精華】主治與 LU1 中府相似，但臨床更常作為肩關節局部疼痛與發炎之治療要穴。"
+  },
+  {
+    code: "LU3",
+    nameZh: "天府 (Tianfu)",
+    nameEn: "Celestial Storehouse",
+    category: "天牖五部/天窗穴 (Window of the Sky Point)",
+    location: "上臂前外側，腋前紋頭下3寸，肱二頭肌橈側緣 (3 cun below axillary fold, radial side of biceps brachii).",
+    needling: "直刺 0.5 - 1.0 寸 (Perpendicular 0.5-1.0 inch)。古籍有云不宜灸 (Some say no moxa)。",
+    actions: "清肺熱降肺氣 (Clears LU Heat & Descends Qi)、涼血止血 (Cools Blood & Stops Bleeding)、安魄鎮魂 (Calms the Corporeal Soul / Po)。",
+    indications: "哮喘、氣喘、咳嗽、咯血、鼻衄（鼻出血）、口渴、上臂內側痛、癭氣（甲狀腺腫大）、頸部腫塊、悲傷欲哭、精神恍惚、失眠不安。",
+    notes: "【課件考綱精華】① 天窗穴：調節頭身氣血上逆，治療癭氣與頸部腫脹。② 涼血止血：治虛實肺熱引致之衄血與咳血。③ 肺魄精神症：情志型哮喘、記憶力減退、思緒混亂、長期哀悼亡親、悲傷哭泣（古籍稱「飛屍鬼語」、「屍厥鬼語」）。④ 肝火犯肺（LV invading LU）之病理。"
+  },
+  {
+    code: "LU4",
+    nameZh: "俠白 (Xiabai)",
+    nameEn: "Guarding White",
+    category: "局部要穴 (Local Point)",
+    location: "上臂前外側，腋前紋頭下4寸（或肘橫紋上5寸），肱二頭肌橈側緣 (4 cun below axillary fold / 5 cun above cubital crease).",
+    needling: "直刺 0.5 - 1.0 寸。可灸。",
+    actions: "降肺氣 (Descends LU Qi)、理胸中氣血 (Regulates Qi & Blood in Chest)、清肺熱 (Clears LU Heat)、舒筋通絡止痛 (Relaxes Sinews & Alleviates Pain)。",
+    indications: "咳嗽、氣喘、短氣、胸滿痛、心痛、上臂內側前緣疼痛拘急。",
+    notes: "【課件考綱精華】循經與局部配穴，可用於咳嗽伴胸痛、心痛與上臂內側橈側疼痛。"
+  },
+  {
+    code: "LU5",
+    nameZh: "尺澤 (Chize)",
+    nameEn: "Cubit Marsh",
+    category: "五輸穴之合穴 (He-Sea Point - 水穴 Water Point)",
+    location: "肘橫紋上，肱二頭肌肌腱橈側凹陷中，微屈肘取穴 (In depression on radial side of biceps brachii tendon, elbow slightly flexed).",
+    needling: "直刺 0.5 - 1.0 寸。或點刺出血。古籍有云不宜灸。",
+    actions: "清瀉肺熱降逆氣 (Clears LU Heat & Descends Rebellious Qi)、舒筋利節止痛 (Relaxes Sinews & Alleviates Pain)、通調水道 (Regulates Water Passages)。",
+    indications: "咳嗽、咯血、氣喘、咽喉腫痛、上肢水腫、潮熱、遺尿、胸滿、小兒驚風、乳癰、網球肘、肱二頭肌腱炎、肘臂痙攣疼痛、腰痛。",
+    notes: "【課件考綱精華】① 合穴治逆氣而泄：清瀉肺經實熱與痰熱，兼治急性/慢性與表證/裏證。② 肘部局部痛：網球肘、肌腱炎。③ 經典古籍特別記載可治「五種腰痛」（堪稱上肢之委中 BL40 等效穴）。"
+  },
+  {
+    code: "LU6",
+    nameZh: "孔最 (Kongzui)",
+    nameEn: "Collection Hole",
+    category: "郄穴 (Xi-Cleft Point of Lung Channel)",
+    location: "前臂掌側橈側，太淵與尺澤連線上，腕橫紋上7寸 (Palmar aspect of forearm, 7 cun above wrist crease).",
+    needling: "直刺 0.5 - 1.0 寸。可灸。",
+    actions: "宣肺降氣 (Disseminates & Descends LU Qi)、清熱潤肺 (Clears Heat & Moistens LU)、涼血止血 (Clears Heat & Stops Bleeding)、緩急止痛 (Moderates Acute Conditions)。",
+    indications: "咳嗽、氣喘、胸痛、咯血（咳血）、急性咽喉腫痛、夜間乾咳、肘臂痙攣疼痛、沿經關節痛。",
+    notes: "【課件考綱精華】① 郄穴：專治外感風熱/風燥引致之急性發作與急性出血（急性哮喘、劇烈咳嗽、咯血）。② 夜間乾咳（Dry hacking cough at night）。"
+  },
+  {
+    code: "LU7",
+    nameZh: "列缺 (Lieque)",
+    nameEn: "Broken Sequence",
+    category: "絡穴 (to LI4) · 八脈交會穴通任脈 (Master of Ren, coupled w/ KI6) · 頭項六總穴 · 經穴 (Jing-River - 金)",
+    location: "前臂橈側，橈骨莖突上方，腕橫紋上1.5寸，肱橈肌與拇長展肌腱之間 (Superior to styloid process of radius, 1.5 cun above wrist crease).",
+    needling: "向上斜刺 0.3 - 0.5 寸 (Oblique 0.3-0.5 inches upward)。可灸。",
+    actions: "疏風解表 (Releases Exterior)、宣肺平喘 (Promotes LU Descending)、平息內風與痰 (Pacifies Wind & Phlegm)、通調任脈 (Opens Ren Vessel)、通調水道與淋巴 (Regulates Water Passages & Lymph)、通絡止痛 (Activates Channel & Alleviates Pain)。",
+    indications: "頭痛、偏頭痛、項強痛、落枕、面癱、牙痛、咳嗽、氣喘、咽喉腫痛、手腕疼痛無力、外感風寒（惡寒發熱、流涕、打噴嚏）、內風（面肌痙攣、口噤）、婦科與泌尿生殖病症、陰虛咽乾、大魚際/手拇指痛。",
+    notes: "【課件考綱精華】① 頭項六總穴（頭項尋列缺）：頭面項背風邪之主穴。② 外感風寒第一要穴：發汗解表驅風。③ 平息內風：面癱、抽搐、口噤。④ 任脈主穴：治婦科、泌尿生殖與陰虛咽乾。⑤ 絡穴：絡脈散於大魚際，專治拇指與手腕痛。"
+  },
+  {
+    code: "LU8",
+    nameZh: "經渠 (Jingqu)",
+    nameEn: "Channel Ditch",
+    category: "五輸穴之經穴 (Jing-River Point - 金穴 Metal / 本穴)",
+    location: "前臂掌側，腕橫紋上1寸，橈動脈橈側凹陷中 (1 cun above wrist crease, in depression radial to radial artery).",
+    needling: "直刺 0.1 - 0.3 寸。⚠️ 避開橈動脈 (Avoid Radial Artery)。",
+    actions: "宣肺降氣 (Descends LU Qi)、止咳平喘 (Alleviates Cough & Wheezing)、祛風補氣陰 (Expels Wind, Tonifies Qi & Yin)。",
+    indications: "咳嗽、氣喘、發熱、胸痛、咽喉腫痛、手腕痛、足底筋膜炎痛（湧泉 KI1 區域疼痛）。",
+    notes: "【課件考綱精華】① 肺經本穴（金中金）：清瀉風熱與補益肺氣陰。② 特殊遠道主治：足底筋膜炎與湧泉穴區域疼痛 (Pain in KD-1 area / plantar fasciitis)。"
+  },
+  {
+    code: "LU9",
+    nameZh: "太淵 (Taiyuan)",
+    nameEn: "Great Abyss",
+    category: "原穴 · 輸穴 (Shu-Stream - 土/母穴) · 八會穴之脈會 (Hui Meeting of Vessels)",
+    location: "腕掌側橫紋橈側，橈動脈搏動處橈側凹陷中 (Radial end of wrist crease, lateral to radial artery).",
+    needling: "直刺 0.2 - 0.3 寸。⚠️ 避開橈動脈。可灸。",
+    actions: "補肺益氣養陰 (Tonifies LU Qi & Yin)、培土生金 (Earth/Mother Point)、化痰止咳 (Transforms Phlegm)、通利百脈 (Harmonizes 100 Vessels)、通絡止痛 (Activates Channel)。",
+    indications: "久咳虛喘、氣短乏力、咯血、咽喉腫痛、心悸、無脈症、脈律不齊、慢性水樣鼻涕、手腕及手臂疼痛。",
+    notes: "【課件考綱精華】① 培土生金第一要穴（母穴）：補肺氣與肺陰之首選。② 八會穴之脈會：調理一百脈、血液循環障礙、診脈時脈象微弱模糊不清之澄清要穴 (Clarifying indiscernible pulse)。③ 主客原絡 LU9 (原/主) + LI6 (絡/客) 配穴。"
+  },
+  {
+    code: "LU10",
+    nameZh: "魚際 (Yuji)",
+    nameEn: "Fish Border",
+    category: "五輸穴之滎穴 (Ying-Spring Point - 火穴 Fire Point)",
+    location: "手掌橈側，第一掌骨中點橈側，赤白肉際處 (Midpoint of 1st metacarpal bone, junction of red & white skin).",
+    needling: "直刺 0.5 - 0.8 寸。古籍有云不宜灸。",
+    actions: "清瀉肺熱 (Clears LU Heat)、利咽清音 (Benefits Throat & Voice)、降逆和胃心 (Harmonizes Stomach & Heart)。",
+    indications: "咳嗽、咯血、氣喘、發熱、急性咽喉腫痛、失音（聲音嘶啞）、掌心發熱、乳癰、小兒疳積、熱邪妄行出血。",
+    notes: "【課件考綱精華】① 滎穴主身熱：清瀉肺經實熱與虛熱（清除肺臟與經絡熱邪）。② 利咽清音：急性咽喉腫痛與失音（Loss of voice）特效穴。③ 涼血止血：血熱妄行之出血症。"
+  },
+  {
+    code: "LU11",
+    nameZh: "少商 (Shaoshang)",
+    nameEn: "Lesser Shang",
+    category: "五輸穴之井穴 (Jing-Well - 木穴) · 刺血救急要穴",
+    location: "手大拇指橈側，指甲角旁0.1寸 (Radial side of thumb, 0.1 cun posterior to nail corner).",
+    needling: "淺刺 0.1 寸，或點刺出血 (Prick to bleed)。",
+    actions: "醒腦開竅 (Revives Consciousness)、清熱利咽 (Clears Heat & Benefits Throat)、蘇厥救逆 (Revival Point)。",
+    indications: "急性扁桃體炎、喉痺劇痛、咳嗽、氣喘、鼻衄、發熱、中風昏迷、高熱抽搐、癲狂、拇指抽搐疼痛。",
+    notes: "【課件考綱精華】① 井穴急救開竅：中風急救與高熱昏迷甦醒穴。② 點刺出血（Prick to bleed）：治急性劇烈咽喉腫痛與扁桃體炎（Tonsillitis）第一要穴。"
+  }
+];
+
+fs.writeFileSync(channelsFile, JSON.stringify(channels, null, 2), 'utf8');
+console.log('Successfully updated LU channel with Pathomechanism and Preservation!');

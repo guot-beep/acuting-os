@@ -6164,6 +6164,101 @@ function renderChannelOverviewCard(ch) {
         </div>
       </section>
     ` : ''}
+
+    ${(ch.points_curriculum && ch.points_curriculum.length) ? `
+      <section class="channel-article-section" style="margin-top: 1rem;">
+        <details open style="background: #ffffff; border: 1px solid #c2e0d3; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #164e32; outline: none; user-select: none;">
+            📚 課件 ${ch.points_curriculum.length} 穴位詳細臨床選穴與考綱精華 (Curriculum Point Notes)
+            <span style="font-size: 0.82rem; font-weight: 400; color: #5a7566; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
+          </summary>
+          <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
+            ${ch.points_curriculum.map(p => `
+              <div style="background: #f9fbf9; border-left: 4px solid #1f5b3d; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #e2ece7; border-left-width: 4px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.45rem;">
+                  <a class="matrix-point-link" href="#point/${p.code}" data-point-code="${p.code}" style="font-size: 1.08rem; font-weight: 800; color: #1f5b3d; text-decoration: none;">
+                    ${p.code} ${escapeHtml(p.nameZh)}
+                  </a>
+                  <span style="background: #e1efe8; color: #164e32; font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px;">
+                    ${escapeHtml(p.category)}
+                  </span>
+                </div>
+                <div style="font-size: 0.88rem; color: #35473e; line-height: 1.6; display: grid; gap: 0.35rem;">
+                  <div><strong>📍 定位與針法 Location & Needling:</strong> ${escapeHtml(p.location)} <em style="color: #8b2500; font-style: normal;">${escapeHtml(p.needling)}</em></div>
+                  <div><strong>✨ 功用 Functions:</strong> ${escapeHtml(p.actions)}</div>
+                  <div><strong>🎯 主治 Indications:</strong> ${escapeHtml(p.indications)}</div>
+                  ${p.notes ? `<div style="background: #fff9e6; border-radius: 6px; padding: 0.5rem 0.75rem; border: 1px solid #f0e2b6; color: #7a5c00; margin-top: 0.2rem;"><strong>💡 考綱精華與選穴要領:</strong> ${escapeHtml(p.notes)}</div>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </details>
+      </section>
+    ` : ''}
+
+    ${(ch.divergent_channel_zh || ch.muscle_channel_zh || ch.channel_rhyme_zh || ch.point_song_zh) ? `
+      <section class="channel-article-section" style="margin-top: 1rem;">
+        <details open style="background: #fdfbf7; border: 1px solid #e8dbb8; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #7a5c00; outline: none; user-select: none;">
+            📖 經典歌訣、經別與經筋理論 (Divergent, Muscle Channel & Songs)
+            <span style="font-size: 0.82rem; font-weight: 400; color: #8c732b; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
+          </summary>
+          <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
+            ${(ch.channel_rhyme_zh || ch.point_song_zh) ? `
+              <div style="background: #ffffff; border-left: 4px solid #b8860b; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #eee2be; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #7a5c00; margin-bottom: 0.4rem;">📜 經脈循行歌與穴位歌括 (Classic Channel Rhymes & Songs)</div>
+                ${ch.channel_rhyme_zh ? `<pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.9rem; color: #2c3e50; line-height: 1.6; margin: 0 0 0.5rem 0;">${escapeHtml(ch.channel_rhyme_zh)}</pre>` : ''}
+                ${ch.point_song_zh ? `<pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.9rem; color: #2c3e50; line-height: 1.6; margin: 0;">${escapeHtml(ch.point_song_zh)}</pre>` : ''}
+              </div>
+            ` : ''}
+
+            ${ch.divergent_channel_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #2e8b57; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #d0e7d8; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #1e5e3a; margin-bottom: 0.4rem;">🔀 經別循行與深層臟腑連繫 (Divergent Channel / Jing Bie)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.divergent_channel_zh)}</pre>
+                ${ch.divergent_channel_en ? `<div style="font-size: 0.82rem; color: #556b2f; line-height: 1.5; font-style: italic;">${escapeHtml(ch.divergent_channel_en)}</div>` : ''}
+              </div>
+            ` : ''}
+
+            ${ch.muscle_channel_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #4682b4; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #d4e3f0; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #1c4966; margin-bottom: 0.4rem;">💪 經筋循行與病候 (Muscle Channel / Jing Jin)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.muscle_channel_zh)}</pre>
+                ${ch.muscle_channel_en ? `<div style="font-size: 0.82rem; color: #2f4f4f; line-height: 1.5; font-style: italic;">${escapeHtml(ch.muscle_channel_en)}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        </details>
+      </section>
+    ` : ''}
+
+    ${(ch.pathomechanism_zh || ch.preservation_zh) ? `
+      <section class="channel-article-section" style="margin-top: 1rem;">
+        <details open style="background: #f4f8f6; border: 1px solid #c8ded3; border-radius: 8px; padding: 0.85rem 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+          <summary style="cursor: pointer; font-size: 1.05rem; font-weight: 800; color: #1b5e3a; outline: none; user-select: none;">
+            🩺 常見經絡異常與日常養生保健 (Pathomechanism & Preservation)
+            <span style="font-size: 0.82rem; font-weight: 400; color: #3b7a57; margin-left: 0.5rem;">(點擊可展開 / 折疊 Toggle)</span>
+          </summary>
+          <div style="display: grid; gap: 0.85rem; margin-top: 1rem;">
+            ${ch.pathomechanism_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #d9534f; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #f2dede; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #a94442; margin-bottom: 0.4rem;">⚠️ 常見經絡異常：是動病、所生病與虛實病理 (Pathomechanism)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.pathomechanism_zh)}</pre>
+                ${ch.pathomechanism_en ? `<div style="font-size: 0.82rem; color: #737373; line-height: 1.5; font-style: italic;">${escapeHtml(ch.pathomechanism_en)}</div>` : ''}
+              </div>
+            ` : ''}
+
+            ${ch.preservation_zh ? `
+              <div style="background: #ffffff; border-left: 4px solid #5cb85c; border-radius: 6px; padding: 0.85rem 1.1rem; border: 1px solid #dff0d8; border-left-width: 4px;">
+                <div style="font-size: 0.98rem; font-weight: 800; color: #3c763d; margin-bottom: 0.4rem;">🌿 經絡保養與日常養生導引 (Meridian Care & Preservation)</div>
+                <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; color: #2c3e50; line-height: 1.65; margin: 0 0 0.4rem 0;">${escapeHtml(ch.preservation_zh)}</pre>
+                ${ch.preservation_en ? `<div style="font-size: 0.82rem; color: #4f7942; line-height: 1.5; font-style: italic;">${escapeHtml(ch.preservation_en)}</div>` : ''}
+              </div>
+            ` : ''}
+          </div>
+        </details>
+      </section>
+    ` : ''}
   `;
 }
 
