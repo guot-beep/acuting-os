@@ -885,6 +885,14 @@
      derived one gave no hint it was a modification — which is the single most
      useful thing to know about 大青龍湯. Mirrored by
      scripts/link-formula-family-back.js, never authored twice. */
+  function formulaSourceLinks(record) {
+    const a = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="k-src-link" style="margin-right:6px;display:inline-block;padding:2px 8px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:4px;color:#0284c7;font-size:0.85em;text-decoration:none;">${esc(label)} ↗</a>`;
+    const out = [];
+    if (record.cloudtcm_url) out.push(a(record.cloudtcm_url, "雲端中醫 CloudTCM"));
+    if (record.american_dragon_url) out.push(a(record.american_dragon_url, "American Dragon"));
+    return out.length ? out.join("") : `<span class="k-meta">${esc(record.tier || "draft")}</span>`;
+  }
+
   function formulaDerivedFrom(record) {
     const d = record.derived_from;
     if (!d) return "";
