@@ -1,0 +1,203 @@
+{
+  "_reference_note": "REFERENCE IMPLEMENTATION for formula.gui_zhi_tang matching formula.ma_huang_tang.json schema.",
+  "id": "formula.gui_zhi_tang",
+  "name_zh": "桂枝湯",
+  "name_en": "Gui Zhi Tang",
+  "name_en_translated": "Cinnamon Twig Decoction",
+  "pinyin": "Gui Zhi Tang",
+  "pinyin_toned": "Guì Zhī Tāng",
+  "source_text_zh": "《傷寒論》",
+  "source_text_en": "Shang Han Lun (Treatise on Cold Damage)",
+  "category_zh": "解表劑－辛溫解表 / 調和營衛",
+  "category_en": "Formulas that Release the Exterior - Warm, Acrid & Harmonize Ying and Wei",
+  "glance": {
+    "category_banner_zh": "解表調和",
+    "category_banner_en": "RELEASE EXTERIOR & HARMONIZE",
+    "plain_summary_zh": "《傷寒論》第一方。外感風寒表虛證之首選方——頭痛、發熱、惡風、汗出。調和營衛、解肌發表。",
+    "plain_summary_en": "The premier formula of Shang Han Lun. Primary formula for Wind-Cold exterior deficiency with sweating, fever, aversion to wind, and stiff neck.",
+    "plain_indications_zh": [
+      "外感風寒表虛",
+      "頭痛發熱",
+      "汗出惡風",
+      "營衛不和"
+    ],
+    "plain_indications_en": [
+      "exterior wind-cold deficiency",
+      "headache & fever",
+      "sweating with aversion to wind",
+      "ying and wei disharmony"
+    ],
+    "herb_count": 5
+  },
+  "composition": [
+    {
+      "herb_id": "herb.gui_zhi",
+      "name_zh": "桂枝",
+      "name_en": "Cinnamon Twig",
+      "pinyin_toned": "Guì Zhī",
+      "dose_g": "9",
+      "role_zh": "君",
+      "role_en": "Chief",
+      "role_reason_zh": "辛溫解肌發表、溫通衛陽——透達表邪",
+      "role_reason_en": "Acrid and warm to release muscle layer and warm Wei yang - driving out exterior pathogens"
+    },
+    {
+      "herb_id": "herb.bai_shao",
+      "name_zh": "白芍",
+      "name_en": "White Peony Root",
+      "pinyin_toned": "Bái Sháo",
+      "dose_g": "9",
+      "role_zh": "臣",
+      "role_en": "Deputy",
+      "role_reason_zh": "酸苦微寒、酸甘化陰、和營斂陰——與桂枝相須為用，一發一斂、調和營衛",
+      "role_reason_en": "Sour, bitter, slightly cold; restrains ying and nourishes blood - pairs 1:1 with Gui Zhi to balance sweating and astringence"
+    },
+    {
+      "herb_id": "herb.sheng_jiang",
+      "name_zh": "生薑",
+      "name_en": "Fresh Ginger",
+      "pinyin_toned": "Shēng Jiāng",
+      "dose_g": "9",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "辛溫解表、溫胃止嘔——助桂枝解肌，兼和胃氣",
+      "role_reason_en": "Assists Gui Zhi in releasing exterior, warms Stomach to stop nausea"
+    },
+    {
+      "herb_id": "herb.da_zao",
+      "name_zh": "大棗",
+      "name_en": "Jujube / Red Date",
+      "pinyin_toned": "Dà Zǎo",
+      "dose_g": "12",
+      "role_zh": "佐",
+      "role_en": "Assistant",
+      "role_reason_zh": "甘溫益氣、補脾養血——助白芍和營，兼補中州",
+      "role_reason_en": "Sweet and warm to tonify qi and blood - assists Bai Shao in nourishing ying and middle burner"
+    },
+    {
+      "herb_id": "herb.zhi_gan_cao",
+      "name_zh": "炙甘草",
+      "name_en": "Honey-fried Licorice",
+      "pinyin_toned": "Zhì Gān Cǎo",
+      "dose_g": "6",
+      "role_zh": "使",
+      "role_en": "Envoy",
+      "role_reason_zh": "甘溫調和諸藥——合桂枝辛甘化陽，合白芍酸甘化陰",
+      "role_reason_en": "Harmonizes all herbs; combines with Gui Zhi for acrid-sweet yang, combines with Bai Shao for sour-sweet yin"
+    }
+  ],
+  "key_pairs": [
+    "pair.gui_zhi__bai_shao",
+    "pair.sheng_jiang__da_zao",
+    "pair.gui_zhi__gan_cao"
+  ],
+  "key_pairs_note_zh": "桂枝配白芍 (1:1) 為調和營衛之祖劑（桂枝發衛陽，白芍斂營陰，一開一合）。生薑配大棗調和脾胃氣血。桂枝配甘草辛甘化陽。",
+  "key_pairs_note_en": "Gui Zhi with Bai Shao (1:1 ratio) is the ancestor pair for harmonizing Ying and Wei (Gui Zhi opens Wei yang, Bai Shao restrains Ying yin). Sheng Jiang with Da Zao harmonizes Spleen and Stomach.",
+  "fang_yi_zh": "本方為調和營衛、解肌發表之祖方。桂枝辛溫解肌發表為君；白芍酸寒和營斂陰為臣；桂芍等量配伍，一散一收、一開一合，使表邪去而營衛和；生薑辛溫助桂枝解表，大棗甘溫助白芍和營，共為佐；炙甘草調和諸藥為使，合桂枝辛甘化陽，合白芍酸甘化陰。五味配伍精當，發汗而不傷陰，斂陰而不留邪。",
+  "fang_yi_en": "Ancestor formula for harmonizing Ying and Wei and releasing the muscle layer. Gui Zhi releases the muscle layer as chief; Bai Shao restrains yin as deputy. Equal amounts of Gui Zhi and Bai Shao balance dispersal and astringence, clearing exterior pathogens while harmonizing Ying and Wei.",
+  "actions_zh": [
+    "解肌發表",
+    "調和營衛"
+  ],
+  "actions_en": [
+    "Releases muscle layer and exterior",
+    "Harmonizes Ying and Wei"
+  ],
+  "indications": [
+    {
+      "pattern_zh": "外感風寒表虛證（太陽中風）",
+      "pattern_en": "Wind-Cold exterior deficiency (Tai Yang Wind Strike)",
+      "clinical_picture_zh": "頭痛、發熱、惡風、汗出、鼻鳴乾嘔、苔薄白、脈浮緩",
+      "clinical_picture_en": "Headache, fever, aversion to wind, sweating, nasal congestion, dry retching",
+      "tongue_zh": "苔薄白",
+      "tongue_en": "Thin white coating",
+      "pulse_zh": "脈浮緩",
+      "pulse_en": "Floating and moderate"
+    }
+  ],
+  "constitutional_types_zh": [
+    "表實無汗",
+    "濕熱內盛"
+  ],
+  "constitutional_note_zh": "表實無汗脈緊者（麻黃湯證）或濕熱內盛者禁用。",
+  "modifications": [
+    {
+      "if_zh": "兼喘者",
+      "if_en": "With wheezing",
+      "change_zh": "加厚朴、杏仁——即桂枝加厚朴杏子湯",
+      "change_en": "Add Hou Po and Xing Ren (forms Gui Zhi Jia Hou Po Xing Zi Tang)"
+    },
+    {
+      "if_zh": "項背強几几者",
+      "if_en": "With stiff neck and upper back",
+      "change_zh": "加葛根——即桂枝加葛根湯",
+      "change_en": "Add Ge Gen (forms Gui Zhi Jia Ge Gen Tang)"
+    },
+    {
+      "if_zh": "體虛汗多甚者",
+      "if_en": "With severe sweating in weak patients",
+      "change_zh": "加黃耆、白朮——益氣固表",
+      "change_en": "Add Huang Qi and Bai Zhu"
+    }
+  ],
+  "dose_adjustment_note_zh": "服後啜熱稀粥一升以助藥力，溫覆取微似汗，不可令大汗淋漓。",
+  "dose_adjustment_note_en": "Drink warm thin rice porridge after taking to assist formula strength; cover warmly for slight sweating.",
+  "contraindications_zh": [
+    "表實無汗者禁用（誤用致表邪難解）",
+    "溫病初起、熱病汗出者禁用",
+    "酒客（濕熱內盛者）禁用"
+  ],
+  "contraindications_en": [
+    "Contraindicated in exterior excess without sweating",
+    "Contraindicated in warm-disease onset",
+    "Contraindicated in heavy drinkers with damp-heat"
+  ],
+  "comparisons": [
+    {
+      "with": "formula.ma_huang_tang",
+      "name_zh": "麻黃湯",
+      "differentiator_zh": "麻黃湯治表實無汗、脈浮緊；桂枝湯治表虛有汗、惡風、脈浮緩。",
+      "differentiator_en": "Ma Huang Tang treats exterior excess without sweating; Gui Zhi Tang treats exterior deficiency WITH sweating."
+    }
+  ],
+  "modern_applications_zh": [
+    "感冒",
+    "流行性感冒",
+    "過敏性鼻炎",
+    "蕁麻疹",
+    "原因不明低熱"
+  ],
+  "modern_applications_en": [
+    "Common cold",
+    "Influenza",
+    "Allergic rhinitis",
+    "Urticaria",
+    "Unexplained low-grade fever"
+  ],
+  "external_links": [
+    {
+      "source_id": "cloudtcm",
+      "url": "https://cloudtcm.com/formula/1",
+      "label_zh": "雲端中醫",
+      "label_en": "CloudTCM",
+      "lang": "zh",
+      "link_status": "direct"
+    }
+  ],
+  "field_sources": {
+    "composition_roles": [
+      "shang_han_lun",
+      "classical_formula_doctrine"
+    ],
+    "indications": [
+      "shang_han_lun"
+    ],
+    "contraindications": [
+      "shang_han_lun"
+    ]
+  },
+  "review_status": "draft",
+  "authored_by": "model_draft",
+  "formula_song": "桂枝湯用主太陽，芍藥甘草薑棗當。\n解肌發表調營衛，中風自汗正宜嘗。",
+  "exam_pearl": "【考綱重點】太陽中風表虛證首選方。桂枝配白芍 1:1 調和營衛；生薑大衛調和脾胃。服後需啜熱稀粥助藥力。NCBAHM 2026 CH Outline p.19。"
+}

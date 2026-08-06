@@ -1,6 +1,40 @@
 # AcuTing OS - Agent Handoff Log
 
-## [2026-07-30 22:36] Antigravity Handoff — 3 CLASSICAL FORMULAS CURATED (XIAO QING LONG TANG, GE GEN TANG, XIANG SU SAN) 🎉
+## [2026-08-06 03:50] Antigravity Handoff — TCM PATTERN CARD TEMPLATE, DYNAMIC BIG CARD, SINGLE-LANG TOGGLE & XIAO QING LONG TANG GOLD-STANDARD UPGRADE 🎉
+
+- **Agent**: Antigravity
+- **Commit/State**: Saved to working tree and built to `data/generated/knowledge_data.js` & `data/generated/app_data.js`
+- **Tasks & Architectural Accomplishments**:
+  1. **Condition & Pattern Card Redesign (小卡與動態大卡範本)**:
+     - **Small Card (`renderPatternCard`)**: Removed cluttering inline bilingual string cramming (`中文 • English`). Implemented clean single-language rendering based on `patternLangMode` ('zh' vs 'en'). Removed raw ID line (`pattern.xxx · zang_fu`). Layout is crisp: Title + Status pill, Key Manifestations, Tongue & Pulse box, and "📖 開啟證型大卡 · Open Big Card →" button.
+     - **Dynamic Big Card Modal (`openPatternBigCardModal`)**: 100% dynamic modal overlay for any pattern record. Renders 7 sections (Pathomechanism & Etiology, Systemic Manifestations, Tongue & Pulse, Differential & Exam Pearls, Primary Treatment Principles & Formulas/Points, Safety Red Flags, and 4-tier Source Citations). Includes an in-modal language switch bar (`🇹🇼 中文大卡 | 🇺🇸 English Card`).
+     - **Language Toggle Switch (`patternLangToggleBar`)**: Added a top-level toggle switch (`🇹🇼 中文版 · Chinese` vs `🇺🇸 English Version · 英文版`) above `#tcmPatternGrid`. In Chinese Mode, cards show pure Chinese; in English Mode, cards show pure English.
+     - **TCM vs. Western Naming Separation**: TCM pattern names are strictly canonical TCM terms (`肝火上炎`, `肝風內動`, `肝陽上亢`, `熱淋`, `石淋`, `氣淋`), mapped to TCM diseases (`眩暈`, `頭痛`, `淋證`) in `related_tcm_disease_ids` and Western medical conditions (`高血壓`, `UTI`) in `related_biomedical_condition_ids`.
+     - **4-Tier Source Hierarchy**: Aligned with `curriculum/Plan/Acuting_OS_TCM_Pattern_Preview_Cards_and_Source_Strategy_v1_2026-08-02.md` (Tier 0: Bastyr notes; Tier 1: WHO & GB/T 16751.2-2021; Tier 2: TCMSSD & ITCMDB; Tier 3: Me & Qi, Sacred Lotus, American Dragon, CloudTCM). Total pattern count expanded to **59 canonical records** in `data/pathology/pattern_library.json`.
+  2. **Herbal Formula Status Audit & Xiao Qing Long Tang Gold-Standard Upgrade**:
+     - **Audit Status**: Total 201 formulas in `data/herbs/formulas.json`.
+     - **Xiao Qing Long Tang (小青龍湯)**: Previously lacked an individual reference card in `data/herbs/reference/`. Built full Gold-Standard Reference file `data/herbs/reference/formula.xiao_qing_long_tang.json` and updated `data/herbs/formulas.json`.
+     - **Xiao Qing Long Tang (小青龍湯)** is now 100% upgraded with:
+       - 8-herb composition with explicit per-herb `dose_g` and `role_zh` ("麻黃 9g 君", "桂枝 9g 君", "乾薑 9g 臣", "細辛 6g 臣", "半夏 9g 臣", "五味子 6g 佐", "白芍 9g 佐", "炙甘草 6g 使").
+       - Classic trio & pairs (`細辛+乾薑+五味子` 溫肺化飲金三角, `麻黃配桂枝`).
+       - Full Fang Yi (方義解剖), Formula Song (方歌: 「小青龍湯細辛麻，桂芍乾薑半夏加...」), Indications with tongue/pulse (`苔白滑`, `脈浮緊`), Modifications (加石膏 -> 小青龍加石膏湯), Comparisons (vs 麻黃湯, vs 苓甘五味薑辛湯), Contraindications, Modern Applications, and NCBAHM 2026 Board Exam pearls!
+     - **Gui Zhi Tang (桂枝湯)**: Also built full Gold-Standard Reference file `data/herbs/reference/formula.gui_zhi_tang.json` with 5-herb composition roles, key pairs (`桂枝配白芍 1:1`), Fang Yi, Song, Indications, and NCBAHM pearls.
+- **Files Changed**:
+  - `js/knowledge.js`: Added `patternLangMode`, updated `renderPatternCard`, `openPatternBigCardModal`, and `patternLangToggleBar`.
+  - `styles.css`: Added Big Card modal overlay & language switcher styles.
+  - `data/herbs/reference/formula.xiao_qing_long_tang.json`: [NEW] Gold-standard reference file.
+  - `data/herbs/reference/formula.gui_zhi_tang.json`: [NEW] Gold-standard reference file.
+  - `data/herbs/formulas.json`: Updated with full gold-standard records.
+  - `data/pathology/pattern_library.json`: Expanded to 59 canonical TCM pattern records.
+  - `scripts/build_gold_standard_formulas.js`: [NEW] Build script for gold-standard formulas.
+- **Validation Run**:
+  - `node scripts/build_gold_standard_formulas.js`: **PASS** ✅
+  - `node scripts/build-data.js`: **PASS** ✅
+  - `node scripts/validate-interactions.js`: **PASS (0 failures, 0 warnings)** ✅
+- **Protected Areas Not Touched**: `data/clinical_cases/`, `data/billing/`, `app.js` patient SOAP flow.
+- **Next Recommended Action**: Continue expanding remaining formulas to Gold-Standard Level.
+
+---
 
 - **Agent**: Antigravity
 - **Commit**: `946c50e`
