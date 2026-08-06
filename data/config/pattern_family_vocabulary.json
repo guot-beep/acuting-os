@@ -1,0 +1,69 @@
+{
+  "dataset": "TCM pattern family (辨證體系) controlled vocabulary",
+  "policy": [
+    "Controlled vocabulary for pattern.* records' `pattern_family` — the 辨證體系 a pattern belongs to. Enforced by scripts/validate-pattern-standard.js P1.",
+    "Built from what pattern_registry already uses (its `system`/`system_zh` fields, 50/61 records) plus the classical systems the template names, so no existing record has to be re-labelled to fit a newly invented scheme.",
+    "One pattern, one family. A pattern that genuinely sits in two systems (痰熱壅肺 is both 臟腑 and 病因) takes the system its DIAGNOSIS is made in — the one whose questions you ask to reach it — and records the other in `secondary_family`.",
+    "IDs are ASCII (D10). Do not add a family without adding it here first: an unlisted value is a P1 defect, which is the point."
+  ],
+  "created": "2026-08-06",
+  "note": "The registry's 11 unlabelled records (衝任不調, 寒凝肝脈, 下焦濕熱, 脾胃濕熱, 飲食積滯, 熱痺, 痰濕阻肺, 痰熱壅肺, 痰迷心竅, 風寒犯肺, 風熱犯肺) are the fill line's first batch — each needs a family assigned from this list, not invented.",
+  "records": [
+    {
+      "id": "ba_gang",
+      "name_zh": "八綱辨證",
+      "name_en": "Eight Principles",
+      "in_use_count": 4,
+      "scope_zh": "表裡・寒熱・虛實・陰陽。所有辨證的底層座標,通常與其他體系並用而非單獨成證。"
+    },
+    {
+      "id": "zang_fu",
+      "name_zh": "臟腑辨證",
+      "name_en": "Zang-Fu Organ",
+      "in_use_count": 33,
+      "scope_zh": "定位到臟腑的證型(肝氣鬱結・脾氣虛・腎陽虛)。本庫最大宗。"
+    },
+    {
+      "id": "qi_xue_jin_ye",
+      "name_zh": "氣血津液辨證",
+      "name_en": "Qi, Blood and Body Fluids",
+      "in_use_count": 8,
+      "scope_zh": "氣虛・氣滯・血虛・血瘀・痰飲・津液虧損等,不以臟腑為主軸者。"
+    },
+    {
+      "id": "bing_yin",
+      "name_zh": "病因辨證",
+      "name_en": "Etiological",
+      "in_use_count": 5,
+      "scope_zh": "六淫・七情・飲食勞倦所致(外風・寒濕・飲食積滯)。"
+    },
+    {
+      "id": "liu_jing",
+      "name_zh": "六經辨證",
+      "name_en": "Six Channels",
+      "in_use_count": 0,
+      "scope_zh": "傷寒論體系:太陽・陽明・少陽・太陰・少陰・厥陰。本庫尚未使用,方證多屬此系。"
+    },
+    {
+      "id": "wei_qi_ying_xue",
+      "name_zh": "衛氣營血辨證",
+      "name_en": "Four Levels",
+      "in_use_count": 0,
+      "scope_zh": "溫病體系:衛分・氣分・營分・血分。本庫尚未使用。"
+    },
+    {
+      "id": "san_jiao",
+      "name_zh": "三焦辨證",
+      "name_en": "Three Burners",
+      "in_use_count": 0,
+      "scope_zh": "溫病體系:上焦・中焦・下焦。本庫尚未使用。"
+    },
+    {
+      "id": "jing_luo",
+      "name_zh": "經絡辨證",
+      "name_en": "Channel and Collateral",
+      "in_use_count": 0,
+      "scope_zh": "以經絡循行定位(足太陽經證・經筋病)。針灸科最常用,本庫尚未使用。"
+    }
+  ]
+}

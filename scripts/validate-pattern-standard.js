@@ -44,6 +44,7 @@ const ROOT = path.resolve(__dirname, "..");
 const LIBRARY = "data/pathology/pattern_library.json";
 const REGISTRY = "data/pathology/pattern_registry.json";
 const CONDITIONS = "data/pathology/condition_canon_shortlist.json";
+const FAMILY_VOCAB = "data/config/pattern_family_vocabulary.json";
 
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
 const isEmpty = (v) => v === undefined || v === null
@@ -55,7 +56,7 @@ const isEmpty = (v) => v === undefined || v === null
 const APPROVED = new Set([
   // 4.1 identity
   "id", "name_zh", "name_en", "pinyin", "pinyin_toned", "aliases_zh", "aliases_en",
-  "pattern_family", "review_status", "authored_by", "legacy_ids",
+  "pattern_family", "secondary_family", "review_status", "authored_by", "legacy_ids",
   // 4.2 positioning
   "eight_principles", "zang_fu", "qi_blood_fluid", "root_or_branch",
   // 4.3 mechanism
@@ -117,6 +118,7 @@ const library = readJson(LIBRARY).records || [];
 const registry = readJson(REGISTRY).records || [];
 const knownPatternIds = new Set([...library, ...registry].map((r) => r.id));
 const knownConditionIds = new Set((readJson(CONDITIONS).records || []).map((r) => r.id));
+const FAMILY_IDS = new Set((readJson(FAMILY_VOCAB).records || []).map((r) => r.id));
 
 const scope = ONLY_FAMILY ? library.filter((r) => r.pattern_family === ONLY_FAMILY) : library;
 
@@ -130,9 +132,15 @@ for (const rec of scope) {
   const fam = rec.pattern_family || "(no family)";
   const add = (code, detail) => defects.push({ code, id, family: fam, detail });
 
-  // P1
+  // P1 — identity, and pattern_family must come from the controlled vocabulary
+  // (data/config/pattern_family_vocabulary.json). An unlisted value is a defect
+  // by design: 辨證體系 is a closed set, and a free-text one is how tdis ended
+  // up with 22 spellings of the same taxonomy.
   const missing = ["id", "name_zh", "name_en", "pattern_family"].filter((f) => isEmpty(rec[f]));
   if (missing.length) add("P1", `missing ${missing.join(", ")}`);
+  if (!isEmpty(rec.pattern_family) && !FAMILY_IDS.has(rec.pattern_family)) {
+    add("P1", `pattern_family "${rec.pattern_family}" is not in ${FAMILY_VOCAB} (allowed: ${[...FAMILY_IDS].join(" | ")})`);
+  }
 
   // P2
   if (rec.id) {

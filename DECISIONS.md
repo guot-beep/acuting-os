@@ -360,6 +360,38 @@ migration for Ting.
 - **Reconsider only if:** never hand-maintain both sides. New derived fields may
   be added freely; they are build artifacts, not authored content.
 
+## D14 — Every namespace is built the same four ways  · LOCKED (2026-08-06, Ting: 「那四套也可以依照這樣建構」)
+
+- **What:** each of the four diagnostic namespaces (D11) — and any namespace
+  added later — is complete only when it has all four of:
+
+  | # | Part | Answers | Enforced by |
+  |---|---|---|---|
+  | 1 | **Controlled vocabulary** | how are these records classified? | the validator rejects an unlisted value |
+  | 2 | **Card template** | what fields exist, what do they mean? | it IS the approved-field list |
+  | 3 | **Standard validator** | which records fall short, by which code? | `--worklist` + CI ratchet |
+  | 4 | **Import/staging layer** | what exists in the world that we lack? | source-tiered, never canon |
+
+- **Why the four are inseparable:** each one fails without the others. A
+  vocabulary nobody validates becomes free text — `tdis_registry` spelled one
+  taxonomy 22 ways. A template with no validator is advisory, and advisory
+  rules produced 202 herbs sharing 26 sentences. A validator with no template
+  has no authority to point at. And an import layer with no staging discipline
+  becomes 535 empty records (the 知源 index, had it been imported as canon).
+- **The import layer's job is a gap map, not content.** It is source-tiered,
+  its translations stay `*_draft`, and it may never appear in a relation field
+  (D11). Records are born when someone fills them from a real source.
+- **Build order matters:** vocabulary → template → validator → *then* content.
+  Every incident in `PROJECT_LOG` traces to content arriving before its
+  yardstick.
+- **Status 2026-08-06:**
+  - `cond.*` ✅ all four
+  - `pattern.*` ✅ all four (`pattern_family_vocabulary.json` closed the gap)
+  - `tdis.*` — vocabulary ✅ (`tcm_disease_taxonomy.json`), staging ✅
+    (`imports/zhiyuan`), **template ❌, validator ❌**
+  - `sym.*` — nothing, deliberately (D11: build it when a real consumer needs it)
+- **Reconsider only if:** never fill a namespace that is missing part 1, 2 or 3.
+
 ---
 
 ## Sequencing (from the review) — do the painful things NOW
