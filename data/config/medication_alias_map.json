@@ -1,0 +1,50 @@
+{
+  "dataset": "Medication alias map (DECISIONS D15)",
+  "policy": [
+    "drug.<generic_slug> is the only ingredient-level medication namespace (docs/PHARM_CARD_TEMPLATE.md L4).",
+    "med.* ids are legacy. They are never re-issued and never deleted (D1/D6) — they resolve through this map, so a case written before the migration keeps working.",
+    "data/medications/western_medications.json is an import/staging file, not canon: its 12 records have major_contraindications and common_adverse_effects empty 12/12 — a name list, not cards.",
+    "Written 2026-08-06, before clinic opens 2026-09-05. The whole referencing surface is 13 ids in template/sample files and 0 in a real case; after 9/5 the same change edits real patient records."
+  ],
+  "generated_by": "scripts/build-medication-alias-map.js",
+  "counts": {
+    "staging_records": 12,
+    "aliased": 12,
+    "rejected": 0,
+    "referencing_ids_in_repo": 13
+  },
+  "aliases": {
+    "med.letrozole": "drug.letrozole",
+    "med.clomiphene_citrate": "drug.clomiphene_citrate",
+    "med.metformin": "drug.metformin",
+    "med.progesterone": "drug.progesterone",
+    "med.estradiol": "drug.estradiol",
+    "med.follitropin_alfa": "drug.follitropin_alfa",
+    "med.menotropins": "drug.menotropins",
+    "med.ganirelix": "drug.ganirelix",
+    "med.leuprolide": "drug.leuprolide",
+    "med.human_chorionic_gonadotropin": "drug.human_chorionic_gonadotropin",
+    "med.low_dose_aspirin": "drug.low_dose_aspirin",
+    "med.enoxaparin": "drug.enoxaparin"
+  },
+  "rejected_ids": [],
+  "referencing_surface": {
+    "data/clinical_cases/fertility_workflow_seed.json": [
+      "med.clomiphene_citrate",
+      "med.enoxaparin",
+      "med.estradiol",
+      "med.follitropin_alfa",
+      "med.ganirelix",
+      "med.human_chorionic_gonadotropin",
+      "med.letrozole",
+      "med.leuprolide",
+      "med.low_dose_aspirin",
+      "med.menotropins",
+      "med.metformin",
+      "med.progesterone"
+    ],
+    "data/clinical_cases/sample_deidentified_case.json": [
+      "med.letrozole"
+    ]
+  }
+}

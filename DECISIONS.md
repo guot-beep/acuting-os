@@ -395,6 +395,46 @@ migration for Ting.
   tdis 103 · naming 1.
 - **Reconsider only if:** never fill a namespace that is missing part 1, 2 or 3.
 
+## D15 — `drug.*` is the medication namespace; the 12 `med.*` records are migrated into it now  · LOCKED (2026-08-06, before pharmacology content starts)
+
+- **What:** the pharmacology layer's ingredient-level namespace is
+  `drug.<generic_slug>` (`docs/PHARM_CARD_TEMPLATE.md` L4). The 12 existing
+  `med.*` records in `data/medications/western_medications.json` are **not** a
+  second namespace — they are re-issued as `drug.*` and `med.*` is retired via
+  an alias map, exactly as `pat.*` was under D10.
+- **Why this had to be decided today:** the pharmacology template landed
+  (77327f8) proposing `drug.*` while `med.*` already existed and was already
+  referenced. Two namespaces for one concept is precisely the defect D10 spent
+  a day undoing for patterns — and the window to fix it costs nothing right
+  now for a measured reason:
+
+  | Referencing surface | `med.*` refs | Cost to migrate |
+  |---|---|---|
+  | `data/clinical_cases/fertility_workflow_seed.json` | 12 | seed/template file, no real cases |
+  | `data/clinical_cases/sample_deidentified_case.json` | 1 | sample record |
+  | `cond.*` `medication_links` | **0/150** | none |
+  | real clinical cases | **0** — clinic starts 2026-09-05 | none |
+
+  **Total: 13 references, all in template/sample files, none in a real case.**
+  After 9/5 every migration touches Ting's actual patient records.
+- **The rules:**
+  1. `drug.<generic_slug>` — ingredient level, ASCII, one card per generic
+     (D1: never re-id once issued).
+  2. `med.*` ids are **not deleted** (D6). `data/config/medication_alias_map.json`
+     maps `med.letrozole → drug.letrozole`; the clinical layer resolves through
+     it so any record written before the migration keeps working.
+  3. `data/medications/western_medications.json` becomes an **import/staging
+     file** for the pharmacology layer, not canon — its 12 records have
+     `major_contraindications` and `common_adverse_effects` empty 12/12, so
+     they are a name list, not cards.
+  4. `drugclass.*` and `drugtarget.*` follow the same ASCII rule.
+- **Ownership** (the other open question in that commit): `data/pharmacology/**`
+  belongs to the pharmacology line, added to `AI_CONSTITUTION.md` §A. It is a
+  separate path from `data/medications/**` (staging) and from every other
+  line's directory, so it can run in parallel without a merge surface.
+- **Reconsider only if:** never. A second medication namespace after 9/5 is a
+  migration of real clinical records.
+
 ---
 
 ## Sequencing (from the review) — do the painful things NOW

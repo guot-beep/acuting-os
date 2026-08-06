@@ -20,6 +20,7 @@ Last updated: 2026-08-05。修改這一頁 = 架構決定,只有 Claude + Ting �
 | `scripts/validate-*.js` · `scripts/build-data.js` | **Claude only** | 量尺只能有一個主人。改了驗證器,兩邊標準就不一樣,資料再怎麼跑都對不齊 |
 | `scripts/` 其他 | Codex 可**新增**檔案 | 不可改別人的既有腳本 |
 | `data/pathology/**` · `data/config/tcm_pattern_canon.json` · `data/config/pattern_alias_map.json` | **病症/證型線** | 目前是拓關 |
+| `data/pharmacology/**` · `data/medications/**` | **藥理線** | 卡片走 `drug.*`(D15);`data/medications/` 是暫存不是正典 |
 | `data/acupoints/**` | **穴位線** | 目前是 Codex(經外奇穴 49/72) |
 | `data/formulas/**` · `data/herbs/**` | **方劑/中藥線** | 目前是 Codex(清方劑債) |
 | `data/clinical_cases/**` | **Claude only** | schema + 病例層 |
