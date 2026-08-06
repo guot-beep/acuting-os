@@ -1080,7 +1080,36 @@
       "review_status": "draft",
       "authored_by": "Claude",
       "updated_at": "2026-08-06",
-      "gap_note_zh": "禁忌、黑框、交互作用待 DailyMed 引用。骨架階段刻意留空 —— 這一層絕不從模型知識填。"
+      "gap_note_zh": "交互作用、腎功能調整、孕期待補。",
+      "boxed_warning_en": "Epidural or spinal hematomas may occur in patients anticoagulated with low molecular weight heparins (LMWH) or heparinoids who are receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis. Risk is increased by indwelling epidural catheters; concomitant drugs affecting hemostasis such as NSAIDs, platelet inhibitors and other anticoagulants; a history of traumatic or repeated epidural or spinal punctures; and a history of spinal deformity or spinal surgery.",
+      "boxed_warning_zh": "使用低分子量肝素或類肝素抗凝、且接受神經軸麻醉或脊椎穿刺的病人可能發生硬膜外或脊椎血腫,可能導致長期或永久癱瘓。風險增加因子:留置硬膜外導管;併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑);曾有創傷性或反覆的硬膜外／脊椎穿刺病史;脊椎變形或脊椎手術病史。",
+      "contraindications_en": [
+        "Active major bleeding",
+        "History of heparin-induced thrombocytopenia (HIT) within the past 100 days or in the presence of circulating antibodies",
+        "Known hypersensitivity to enoxaparin sodium",
+        "Known hypersensitivity to heparin or pork products"
+      ],
+      "contraindications_zh": [
+        "活動性大出血",
+        "過去 100 天內曾有肝素誘發血小板減少症(HIT),或體內有循環抗體",
+        "對依諾肝素鈉過敏",
+        "對肝素或豬類製品過敏"
+      ],
+      "dailymed_setid": "5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
+      "dailymed_label_title": "ENOXAPARIN SODIUM INJECTION [CARDINAL HEALTH 107, LLC]",
+      "dailymed_url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
+      "dailymed_url_kind": "verified_exact",
+      "field_sources": {
+        "boxed_warning_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#BOXED_WARNING"
+        ],
+        "contraindications_en": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#CONTRAINDICATIONS"
+        ]
+      },
+      "acupuncture_note_zh": "這是全 P1 層唯一列出**風險因子清單**的黑框,其中兩條值得注意:①「併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑)」——雙重抗凝／抗血小板的病人風險更高;②「曾有創傷性或反覆的硬膜外／脊椎穿刺病史」。第②條講的是硬膜外與脊椎穿刺,**不是針灸**,標籤沒有把針刺納入。但它說明了「反覆穿刺」本身是風險因子,近脊椎深刺時值得納入判斷。標籤未給任何針灸門檻,不要自行推導一個。",
+      "cultural_note_zh": "肝素為豬源 —— 對豬類製品過敏是明列禁忌,穆斯林、猶太教與素食病人也可能有非醫療考量,問診時值得主動提及。",
+      "exam_trap_zh": "⚠️ HIT(肝素誘發血小板減少症)是禁忌,而且標籤明訂「過去 100 天內」的時間窗。"
     },
     {
       "id": "drug.heparin",
