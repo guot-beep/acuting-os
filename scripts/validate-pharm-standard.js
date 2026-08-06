@@ -61,6 +61,20 @@ const ID_PATTERNS = {
 
 const URL_KINDS = new Set(['verified_exact', 'derived_search', 'verified_none']);
 
+/* Interaction evidence grades (2026-08-06 rule). "可能有交互" is not a finding —
+ * it reads as a warning while committing to nothing, and in clinic that is
+ * indistinguishable from a real one. Every interaction states how well it is
+ * established, and `unknown` is a legitimate answer that must record which
+ * sources were searched: a documented gap is worth more than an invention. */
+const INTERACTION_GRADES = new Set([
+  'documented_clinical',   // case reports / trials in humans
+  'pharmacokinetic',       // absorption, metabolism, clearance
+  'pharmacodynamic',       // additive or opposing effect
+  'theoretical',           // mechanism suggests it; not observed
+  'unknown',               // searched, nothing found — sources_checked required
+]);
+const INTERACTION_FIELDS = ['drug_interactions', 'herb_drug_interactions', 'food_interactions'];
+
 const REQUIRED_DRUG = ['id', 'name_en', 'name_zh', 'drugclass_id', 'drugsystem_ids'];
 
 /* Pairs that must match in length or leave the second entirely empty
@@ -155,6 +169,36 @@ function main() {
       };
       SAFETY_OFFICIAL_ONLY.forEach((f) => checkSourced(f, OFFICIAL_SOURCE, '官方標籤'));
       SAFETY_SOURCED.forEach((f) => checkSourced(f, ANY_SOURCE, '具名來源'));
+
+      // P8 — interactions must be graded, and "unknown" must show its work
+      INTERACTION_FIELDS.forEach((base) => {
+        const entries = r[`${base}_graded`];
+        if (entries === undefined) {
+          // Prose-only interaction text is allowed for now but cannot stay:
+          // it is the shape that hides "possibly interacts" as if it were a finding.
+          if (len(r[`${base}_en`]) || len(r[`${base}_zh`])) {
+            notes.push(`P8 ${where}.${base}: 只有散文,尚未分級 —— 之後要轉成 ${base}_graded`);
+          }
+          return;
+        }
+        if (!Array.isArray(entries)) {
+          defects.push(`P8 ${where}.${base}_graded: 必須是陣列`);
+          return;
+        }
+        entries.forEach((e, i) => {
+          const at = `${where}.${base}_graded[${i}]`;
+          if (!e || !e.with) defects.push(`P8 ${at}: 缺 with（跟什麼交互）`);
+          if (!INTERACTION_GRADES.has(e.evidence)) {
+            defects.push(`P8 ${at}: evidence「${e.evidence}」不在 ${[...INTERACTION_GRADES].join('/')}`);
+          }
+          if (e.evidence === 'unknown' && !(Array.isArray(e.sources_checked) && e.sources_checked.length)) {
+            defects.push(`P8 ${at}: evidence=unknown 必須列出 sources_checked —— 查過哪些來源才是這一筆的價值`);
+          }
+          if (e.evidence !== 'unknown' && !(Array.isArray(e.sources) && e.sources.length)) {
+            defects.push(`P8 ${at}: 非 unknown 的分級必須有 sources`);
+          }
+        });
+      });
 
       // P4 — a URL without its kind is a claim without its confidence
       Object.keys(r).filter((k) => k.endsWith('_url')).forEach((k) => {
