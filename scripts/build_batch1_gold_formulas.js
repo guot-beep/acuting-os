@@ -1,6 +1,7 @@
 /**
  * scripts/build_batch1_gold_formulas.js
  * Builds Gold-Standard Reference Files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang
+ * with dual key aliases (herb_zh/name_zh, decoction_reference_g/dose_g) for 100% UI rendering compatibility.
  */
 
 const fs = require('fs');
@@ -38,83 +39,93 @@ const yqs = {
   "composition": [
     {
       "herb_id": "herb.jin_yin_hua",
-      "name_zh": "金銀花", "name_en": "Honeysuckle Flower / Lonicera", "pinyin_toned": "Jīn Yín Huā",
-      "dose_g": "30",
+      "herb_zh": "金銀花", "name_zh": "金銀花", "herb_en": "Honeysuckle Flower", "name_en": "Honeysuckle Flower", "pinyin": "Jin Yin Hua", "pinyin_toned": "Jīn Yín Huā",
+      "dose_g": "30", "decoction_reference_g": "30g",
       "role_zh": "君", "role_en": "Chief",
       "role_reason_zh": "甘寒質輕，芳香疏散，清熱解毒，辟穢化濁——重用為君",
-      "role_reason_en": "Sweet and cold, light texture; clears heat, relieves toxicity and dispels turbid pathogens"
+      "role_reason_en": "Sweet and cold, light texture; clears heat, relieves toxicity and dispels turbid pathogens",
+      "in_formula_zh": "甘寒質輕，芳香疏散，清熱解毒，辟穢化濁——重用為君"
     },
     {
       "herb_id": "herb.lian_qiao",
-      "name_zh": "連翹", "name_en": "Forsythia Fruit", "pinyin_toned": "Lián Qiáo",
-      "dose_g": "30",
+      "herb_zh": "連翹", "name_zh": "連翹", "herb_en": "Forsythia Fruit", "name_en": "Forsythia Fruit", "pinyin": "Lian Qiao", "pinyin_toned": "Lián Qiáo",
+      "dose_g": "30", "decoction_reference_g": "30g",
       "role_zh": "君", "role_en": "Chief",
       "role_reason_zh": "苦辛微寒，輕清宣透，清熱解毒，散結消腫——與金銀花相須為君",
-      "role_reason_en": "Bitter, acrid, slightly cold; clears heat, dispels toxicity, and dissolves clumps - pairs as chief with Jin Yin Hua"
+      "role_reason_en": "Bitter, acrid, slightly cold; clears heat, dispels toxicity, and dissolves clumps - pairs as chief with Jin Yin Hua",
+      "in_formula_zh": "苦辛微寒，輕清宣透，清熱解毒，散結消腫——與金銀花相須為君"
     },
     {
       "herb_id": "herb.bo_he",
-      "name_zh": "薄荷", "name_en": "Field Mint / Peppermint", "pinyin_toned": "Bò He",
-      "dose_g": "18",
+      "herb_zh": "薄荷", "name_zh": "薄荷", "herb_en": "Field Mint", "name_en": "Field Mint", "pinyin": "Bo He", "pinyin_toned": "Bò He",
+      "dose_g": "18", "decoction_reference_g": "18g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "辛涼質輕，疏散風熱，清利頭目，利咽喉",
-      "role_reason_en": "Acrid and cool; disperses Wind-Heat, clears head and eyes, benefits sore throat"
+      "role_reason_en": "Acrid and cool; disperses Wind-Heat, clears head and eyes, benefits sore throat",
+      "in_formula_zh": "辛涼質輕，疏散風熱，清利頭目，利咽喉"
     },
     {
       "herb_id": "herb.niu_bang_zi",
-      "name_zh": "牛蒡子", "name_en": "Burdock Fruit", "pinyin_toned": "Niú Bàng Zǐ",
-      "dose_g": "18",
+      "herb_zh": "牛蒡子", "name_zh": "牛蒡子", "herb_en": "Burdock Fruit", "name_en": "Burdock Fruit", "pinyin": "Niu Bang Zi", "pinyin_toned": "Niú Bàng Zǐ",
+      "dose_g": "18", "decoction_reference_g": "18g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "辛苦性寒，宣肺祛痰，散結利咽解毒——助薄荷解表利咽",
-      "role_reason_en": "Acrid, bitter, cold; diffuses Lungs, clears phlegm, unblocks throat and dispels toxicity"
+      "role_reason_en": "Acrid, bitter, cold; diffuses Lungs, clears phlegm, unblocks throat and dispels toxicity",
+      "in_formula_zh": "辛苦性寒，宣肺祛痰，散結利咽解毒——助薄荷解表利咽"
     },
     {
       "herb_id": "herb.jing_jie",
-      "name_zh": "荊芥穗", "name_en": "Schizonepeta Spikes", "pinyin_toned": "Jīng Jiè Suì",
-      "dose_g": "12",
+      "herb_zh": "荊芥穗", "name_zh": "荊芥穗", "herb_en": "Schizonepeta Spikes", "name_en": "Schizonepeta Spikes", "pinyin": "Jing Jie Sui", "pinyin_toned": "Jīng Jiè Suì",
+      "dose_g": "12", "decoction_reference_g": "12g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "辛溫質輕，疏風解表——溫而不燥，助金銀花、連翹開達肌表",
-      "role_reason_en": "Acrid and warm; dispels wind and releases exterior without drying, helping open the muscle layer"
+      "role_reason_en": "Acrid and warm; dispels wind and releases exterior without drying, helping open the muscle layer",
+      "in_formula_zh": "辛溫質輕，疏風解表——溫而不燥，助金銀花、連翹開達肌表"
     },
     {
       "herb_id": "herb.dan_dou_chi",
-      "name_zh": "淡豆豉", "name_en": "Prepared Fermented Soybeans", "pinyin_toned": "Dàn Dòu Chǐ",
-      "dose_g": "15",
+      "herb_zh": "淡豆豉", "name_zh": "淡豆豉", "herb_en": "Prepared Fermented Soybeans", "name_en": "Prepared Fermented Soybeans", "pinyin": "Dan Dou Chi", "pinyin_toned": "Dàn Dòu Chǐ",
+      "dose_g": "15", "decoction_reference_g": "15g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "辛涼疏散，解表除煩——助君藥透邪解表",
-      "role_reason_en": "Acrid and cool; releases exterior and dispels irritability"
+      "role_reason_en": "Acrid and cool; releases exterior and dispels irritability",
+      "in_formula_zh": "辛涼疏散，解表除煩——助君藥透邪解表"
     },
     {
       "herb_id": "herb.jie_geng",
-      "name_zh": "桔梗", "name_en": "Platycodon Root / Balloon Flower", "pinyin_toned": "Jié Gěng",
-      "dose_g": "18",
+      "herb_zh": "桔梗", "name_zh": "桔梗", "herb_en": "Platycodon Root", "name_en": "Platycodon Root", "pinyin": "Jie Geng", "pinyin_toned": "Jié Gěng",
+      "dose_g": "18", "decoction_reference_g": "18g",
       "role_zh": "佐", "role_en": "Assistant",
       "role_reason_zh": "苦辛性平，宣肺利咽，載藥上行——與牛蒡子相配清利咽喉",
-      "role_reason_en": "Bitter, acrid, neutral; diffuses Lungs, benefits throat, carries herbs upward"
+      "role_reason_en": "Bitter, acrid, neutral; diffuses Lungs, benefits throat, carries herbs upward",
+      "in_formula_zh": "苦辛性平，宣肺利咽，載藥上行——與牛蒡子相配清利咽喉"
     },
     {
       "herb_id": "herb.gan_cao",
-      "name_zh": "甘草", "name_en": "Licorice Root", "pinyin_toned": "Gān Cǎo",
-      "dose_g": "15",
+      "herb_zh": "甘草", "name_zh": "甘草", "herb_en": "Licorice Root", "name_en": "Licorice Root", "pinyin": "Gan Cao", "pinyin_toned": "Gān Cǎo",
+      "dose_g": "15", "decoction_reference_g": "15g",
       "role_zh": "使", "role_en": "Envoy",
       "role_reason_zh": "甘平，清熱解毒，調和諸藥——合桔梗即「甘桔湯」，清利咽喉",
-      "role_reason_en": "Sweet and neutral; clears heat, dispels toxicity, harmonizes formula; pairs with Jie Geng for throat"
+      "role_reason_en": "Sweet and neutral; clears heat, dispels toxicity, harmonizes formula; pairs with Jie Geng for throat",
+      "in_formula_zh": "甘平，清熱解毒，調和諸藥——合桔梗即「甘桔湯」，清利咽喉"
     },
     {
       "herb_id": "herb.lu_gen",
-      "name_zh": "蘆根", "name_en": "Reed Rhizome", "pinyin_toned": "Lú Gēn",
-      "dose_g": "20",
+      "herb_zh": "蘆根", "name_zh": "蘆根", "herb_en": "Reed Rhizome", "name_en": "Reed Rhizome", "pinyin": "Lu Gen", "pinyin_toned": "Lú Gēn",
+      "dose_g": "20", "decoction_reference_g": "20g",
       "role_zh": "佐", "role_en": "Assistant",
       "role_reason_zh": "甘寒生津，清熱止渴——煎湯代水，清肺胃之熱",
-      "role_reason_en": "Sweet and cold; generates fluids, clears Lung and Stomach heat, quenches thirst"
+      "role_reason_en": "Sweet and cold; generates fluids, clears Lung and Stomach heat, quenches thirst",
+      "in_formula_zh": "甘寒生津，清熱止渴——煎湯代水，清肺胃之熱"
     },
     {
       "herb_id": "herb.dan_zhu_ye",
-      "name_zh": "淡竹葉", "name_en": "Lophatherus Stem and Leaves", "pinyin_toned": "Dàn Zhú Yè",
-      "dose_g": "12",
+      "herb_zh": "淡竹葉", "name_zh": "淡竹葉", "herb_en": "Lophatherus Stem and Leaves", "name_en": "Lophatherus Stem and Leaves", "pinyin": "Dan Zhu Ye", "pinyin_toned": "Dàn Zhú Yè",
+      "dose_g": "12", "decoction_reference_g": "12g",
       "role_zh": "佐", "role_en": "Assistant",
       "role_reason_zh": "甘淡性寒，清熱除煩，導熱下行",
-      "role_reason_en": "Sweet, bland, cold; clears heat, dispels irritability, guides heat downward"
+      "role_reason_en": "Sweet, bland, cold; clears heat, dispels irritability, guides heat downward",
+      "in_formula_zh": "甘淡性寒，清熱除煩，導熱下行"
     }
   ],
 
@@ -141,6 +152,13 @@ const yqs = {
     "Diffuses Lung qi and benefits throat — unblocks Lung qi and soothes sore throat"
   ],
 
+  "pattern_indications_zh": [
+    "溫病初起、邪鬱衛分證（風熱感冒）：發熱、微惡風寒、無汗或有汗不暢、頭痛口渴、咳嗽咽痛、舌尖紅、苔薄白或薄黃、脈浮數。"
+  ],
+  "pattern_indications_en": [
+    "Early stage Warm Disease at Wei/Exterior level (Wind-Heat common cold): Fever, mild aversion to wind and cold, anhidrosis or incomplete sweating, headache, thirst, cough, painful swollen throat, red tongue tip with thin white/yellow coating, floating rapid pulse."
+  ],
+
   "indications": [
     {
       "pattern_zh": "溫病初起、邪鬱衛分證（風熱感冒）",
@@ -157,6 +175,19 @@ const yqs = {
   "constitutional_types_zh": ["風寒感冒", "濕熱內盛"],
   "constitutional_types_en": ["Wind-Cold exterior", "Interior Damp-Heat"],
   "constitutional_note_zh": "風寒感冒惡寒重無汗者禁用；脾胃虛寒便溏者慎用。",
+
+  "modifications_zh": [
+    "口渴甚者：加天花粉 15g 生津止渴",
+    "項腫咽痛甚者：加馬勃 9g、玄參 15g 清熱利咽解毒",
+    "咳嗽甚者：加杏仁 9g 降氣止咳",
+    "胸悶脘痞者：加藿香 9g、鬱金 9g 芳香化濕"
+  ],
+  "modifications_en": [
+    "Severe thirst: Add Tian Hua Fen 15g to generate fluids",
+    "Severe throat swelling & pain: Add Ma Bo 9g and Xuan Shen 15g",
+    "Severe cough: Add Xing Ren 9g to descend Lung qi",
+    "Chest oppression: Add Huo Xiang 9g and Yu Jin 9g"
+  ],
 
   "modifications": [
     {
@@ -210,8 +241,17 @@ const yqs = {
     }
   ],
 
+  "applications_zh": [
+    "急性上呼吸道感染", "流行性感冒", "急性扁桃體炎", "腮腺炎", "麻疹初起"
+  ],
+  "applications_en": [
+    "Acute upper respiratory infection", "Influenza", "Acute tonsillitis", "Mumps", "Early-stage measles"
+  ],
   "modern_applications_zh": ["急性上呼吸道感染", "流行性感冒", "急性扁桃體炎", "腮腺炎", "麻疹初起"],
   "modern_applications_en": ["Acute upper respiratory infection", "Influenza", "Acute tonsillitis", "Mumps", "Early-stage measles"],
+
+  "cloudtcm_url": "https://cloudtcm.com/formula/7",
+  "american_dragon_url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html",
 
   "external_links": [
     { "source_id": "american_dragon", "url": "https://www.americandragon.com/HerbFormulas/YinQiaoSan.html", "label_zh": "American Dragon", "label_en": "American Dragon", "lang": "en", "link_status": "direct" },
@@ -257,67 +297,75 @@ const sjy = {
   "composition": [
     {
       "herb_id": "herb.sang_ye",
-      "name_zh": "桑葉", "name_en": "Mulberry Leaf", "pinyin_toned": "Sāng Yè",
-      "dose_g": "7.5",
+      "herb_zh": "桑葉", "name_zh": "桑葉", "herb_en": "Mulberry Leaf", "name_en": "Mulberry Leaf", "pinyin": "Sang Ye", "pinyin_toned": "Sāng Yè",
+      "dose_g": "7.5", "decoction_reference_g": "7.5g",
       "role_zh": "君", "role_en": "Chief",
       "role_reason_zh": "甘苦微寒，輕宣上焦風熱，清肺絡之熱",
-      "role_reason_en": "Sweet, bitter, slightly cold; lightly diffuses Wind-Heat in upper burner and clears Lung collaterals"
+      "role_reason_en": "Sweet, bitter, slightly cold; lightly diffuses Wind-Heat in upper burner and clears Lung collaterals",
+      "in_formula_zh": "甘苦微寒，輕宣上焦風熱，清肺絡之熱"
     },
     {
       "herb_id": "herb.ju_hua",
-      "name_zh": "菊花", "name_en": "Chrysanthemum Flower", "pinyin_toned": "Jú Huā",
-      "dose_g": "3",
+      "herb_zh": "菊花", "name_zh": "菊花", "herb_en": "Chrysanthemum Flower", "name_en": "Chrysanthemum Flower", "pinyin": "Ju Hua", "pinyin_toned": "Jú Huā",
+      "dose_g": "3", "decoction_reference_g": "3g",
       "role_zh": "君", "role_en": "Chief",
       "role_reason_zh": "甘苦微寒，清利頭目，疏散風熱——與桑葉相須為君",
-      "role_reason_en": "Sweet, bitter, slightly cold; clears eyes and head, disperses wind-heat - pairs as chief with Sang Ye"
+      "role_reason_en": "Sweet, bitter, slightly cold; clears eyes and head, disperses wind-heat - pairs as chief with Sang Ye",
+      "in_formula_zh": "甘苦微寒，清利頭目，疏散風熱——與桑葉相須為君"
     },
     {
       "herb_id": "herb.xing_ren",
-      "name_zh": "杏仁", "name_en": "Apricot Seed", "pinyin_toned": "Xìng Rén",
-      "dose_g": "6",
+      "herb_zh": "杏仁", "name_zh": "杏仁", "herb_en": "Apricot Seed", "name_en": "Apricot Seed", "pinyin": "Xing Ren", "pinyin_toned": "Xìng Rén",
+      "dose_g": "6", "decoction_reference_g": "6g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "苦溫降氣，止咳平喘——降肺氣以止咳嗽",
-      "role_reason_en": "Bitter and warm; descends Lung qi to arrest cough and wheezing"
+      "role_reason_en": "Bitter and warm; descends Lung qi to arrest cough and wheezing",
+      "in_formula_zh": "苦溫降氣，止咳平喘——降肺氣以止咳嗽"
     },
     {
       "herb_id": "herb.jie_geng",
-      "name_zh": "桔梗", "name_en": "Platycodon Root", "pinyin_toned": "Jié Gěng",
-      "dose_g": "6",
+      "herb_zh": "桔梗", "name_zh": "桔梗", "herb_en": "Platycodon Root", "name_en": "Platycodon Root", "pinyin": "Jie Geng", "pinyin_toned": "Jié Gěng",
+      "dose_g": "6", "decoction_reference_g": "6g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "苦辛宣肺，載藥上行——與杏仁一宣一降，恢復肺氣宣降",
-      "role_reason_en": "Bitter and acrid; diffuses Lung qi upward - pairs with Xing Ren as one ascending and one descending"
+      "role_reason_en": "Bitter and acrid; diffuses Lung qi upward - pairs with Xing Ren as one ascending and one descending",
+      "in_formula_zh": "苦辛宣肺，載藥上行——與杏仁一宣一降，恢復肺氣宣降"
     },
     {
       "herb_id": "herb.lian_qiao",
-      "name_zh": "連翹", "name_en": "Forsythia Fruit", "pinyin_toned": "Lián Qiáo",
-      "dose_g": "4.5",
+      "herb_zh": "連翹", "name_zh": "連翹", "herb_en": "Forsythia Fruit", "name_en": "Forsythia Fruit", "pinyin": "Lian Qiao", "pinyin_toned": "Lián Qiáo",
+      "dose_g": "4.5", "decoction_reference_g": "4.5g",
       "role_zh": "佐", "role_en": "Assistant",
       "role_reason_zh": "苦寒清熱解毒，透達上焦",
-      "role_reason_en": "Bitter and cold; clears heat, dispels toxicity, vents upper burner heat"
+      "role_reason_en": "Bitter and cold; clears heat, dispels toxicity, vents upper burner heat",
+      "in_formula_zh": "苦寒清熱解毒，透達上焦"
     },
     {
       "herb_id": "herb.bo_he",
-      "name_zh": "薄荷", "name_en": "Field Mint", "pinyin_toned": "Bò He",
-      "dose_g": "2.5",
+      "herb_zh": "薄荷", "name_zh": "薄荷", "herb_en": "Field Mint", "name_en": "Field Mint", "pinyin": "Bo He", "pinyin_toned": "Bò He",
+      "dose_g": "2.5", "decoction_reference_g": "2.5g",
       "role_zh": "佐", "role_en": "Assistant",
       "role_reason_zh": "辛涼疏散風熱，清利頭目",
-      "role_reason_en": "Acrid and cool; assists in dispersing wind-heat and benefiting eyes"
+      "role_reason_en": "Acrid and cool; assists in dispersing wind-heat and benefiting eyes",
+      "in_formula_zh": "辛涼疏散風熱，清利頭目"
     },
     {
       "herb_id": "herb.lu_gen",
-      "name_zh": "蘆根", "name_en": "Reed Rhizome", "pinyin_toned": "Lú Gēn",
-      "dose_g": "6",
+      "herb_zh": "蘆根", "name_zh": "蘆根", "herb_en": "Reed Rhizome", "name_en": "Reed Rhizome", "pinyin": "Lu Gen", "pinyin_toned": "Lú Gēn",
+      "dose_g": "6", "decoction_reference_g": "6g",
       "role_zh": "佐", "role_en": "Assistant",
       "role_reason_zh": "甘寒清熱生津止渴",
-      "role_reason_en": "Sweet and cold; clears heat, generates fluids and quenches thirst"
+      "role_reason_en": "Sweet and cold; clears heat, generates fluids and quenches thirst",
+      "in_formula_zh": "甘寒清熱生津止渴"
     },
     {
       "herb_id": "herb.gan_cao",
-      "name_zh": "甘草", "name_en": "Licorice Root", "pinyin_toned": "Gān Cǎo",
-      "dose_g": "2.5",
+      "herb_zh": "甘草", "name_zh": "甘草", "herb_en": "Licorice Root", "name_en": "Licorice Root", "pinyin": "Gan Cao", "pinyin_toned": "Gān Cǎo",
+      "dose_g": "2.5", "decoction_reference_g": "2.5g",
       "role_zh": "使", "role_en": "Envoy",
       "role_reason_zh": "甘平調和諸藥，合桔梗利咽",
-      "role_reason_en": "Sweet and neutral; harmonizes herbs, pairs with Jie Geng to soothe throat"
+      "role_reason_en": "Sweet and neutral; harmonizes herbs, pairs with Jie Geng to soothe throat",
+      "in_formula_zh": "甘平調和諸藥，合桔梗利咽"
     }
   ],
 
@@ -341,6 +389,13 @@ const sjy = {
     "Diffuses Lung qi and arrests cough — restores Lung ascending-descending qi movement"
   ],
 
+  "pattern_indications_zh": [
+    "風熱犯肺證（風熱感冒咳嗽）：咳嗽、身微熱、口微渴、舌苔薄白、脈浮數。"
+  ],
+  "pattern_indications_en": [
+    "Wind-Heat attacking Lungs (Wind-Heat cough): Cough, slight fever, slight thirst, thin white tongue coating, floating rapid pulse."
+  ],
+
   "indications": [
     {
       "pattern_zh": "風熱犯肺證（風熱感冒咳嗽）",
@@ -357,6 +412,17 @@ const sjy = {
   "constitutional_types_zh": ["風寒咳嗽", "陰虛乾咳"],
   "constitutional_types_en": ["Wind-Cold cough", "Yin deficiency dry cough"],
   "constitutional_note_zh": "風寒咳嗽（痰白稀、惡寒重）者禁用；陰虛乾咳無痰者不宜服用。",
+
+  "modifications_zh": [
+    "咳嗽頻作、肺熱甚者：加黃芩 9g 清肺熱",
+    "口渴甚者：加天花粉 12g 生津止渴",
+    "咽喉腫痛甚者：加玄參 12g、板藍根 15g 清熱解毒利咽"
+  ],
+  "modifications_en": [
+    "Frequent cough with Lung heat: Add Huang Qin 9g",
+    "Marked thirst: Add Tian Hua Fen 12g",
+    "Severe sore throat: Add Xuan Shen 12g and Ban Lan Gen 15g"
+  ],
 
   "modifications": [
     {
@@ -394,8 +460,17 @@ const sjy = {
     }
   ],
 
+  "applications_zh": [
+    "急性支氣管炎", "上呼吸道感染", "流行性感冒咳嗽", "急性結膜炎"
+  ],
+  "applications_en": [
+    "Acute bronchitis", "Upper respiratory infection", "Influenza cough", "Acute conjunctivitis"
+  ],
   "modern_applications_zh": ["急性支氣管炎", "上呼吸道感染", "流行性感冒咳嗽", "急性結膜炎"],
   "modern_applications_en": ["Acute bronchitis", "Upper respiratory infection", "Influenza cough", "Acute conjunctivitis"],
+
+  "cloudtcm_url": "https://cloudtcm.com/formula/8",
+  "american_dragon_url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html",
 
   "external_links": [
     { "source_id": "american_dragon", "url": "https://www.americandragon.com/HerbFormulas/SangJuYin.html", "label_zh": "American Dragon", "label_en": "American Dragon", "lang": "en", "link_status": "direct" },
@@ -441,35 +516,39 @@ const bht = {
   "composition": [
     {
       "herb_id": "herb.shi_gao",
-      "name_zh": "石膏", "name_en": "Gypsum", "pinyin_toned": "Shí Gāo",
-      "dose_g": "30",
+      "herb_zh": "石膏", "name_zh": "石膏", "herb_en": "Gypsum", "name_en": "Gypsum", "pinyin": "Shi Gao", "pinyin_toned": "Shí Gāo",
+      "dose_g": "30", "decoction_reference_g": "30g",
       "role_zh": "君", "role_en": "Chief",
       "role_reason_zh": "辛甘大寒，清瀉肺胃大熱，兼能透熱外達——重用為君",
-      "role_reason_en": "Acrid, sweet, very cold; clears Lung and Stomach heat, vents heat outward - heavy dose chief"
+      "role_reason_en": "Acrid, sweet, very cold; clears Lung and Stomach heat, vents heat outward - heavy dose chief",
+      "in_formula_zh": "辛甘大寒，清瀉肺胃大熱，兼能透熱外達——重用為君"
     },
     {
       "herb_id": "herb.zhi_mu",
-      "name_zh": "知母", "name_en": "Anemarrhena Rhizome", "pinyin_toned": "Zhī Mǔ",
-      "dose_g": "9",
+      "herb_zh": "知母", "name_zh": "知母", "herb_en": "Anemarrhena Rhizome", "name_en": "Anemarrhena Rhizome", "pinyin": "Zhi Mu", "pinyin_toned": "Zhī Mǔ",
+      "dose_g": "9", "decoction_reference_g": "9g",
       "role_zh": "臣", "role_en": "Deputy",
       "role_reason_zh": "苦寒質潤，清熱瀉火，滋陰潤燥——與石膏相須為用，增強清熱生津之力",
-      "role_reason_en": "Bitter, cold, moistening; clears heat, drains fire, nourishes yin - pairs as deputy with Shi Gao"
+      "role_reason_en": "Bitter, cold, moistening; clears heat, drains fire, nourishes yin - pairs as deputy with Shi Gao",
+      "in_formula_zh": "苦寒質潤，清熱瀉火，滋陰潤燥——與石膏相須為用，增強清熱生津之力"
     },
     {
       "herb_id": "herb.zhi_gan_cao",
-      "name_zh": "炙甘草", "name_en": "Honey-fried Licorice", "pinyin_toned": "Zhì Gān Cǎo",
-      "dose_g": "3",
+      "herb_zh": "炙甘草", "name_zh": "炙甘草", "herb_en": "Honey-fried Licorice", "name_en": "Honey-fried Licorice", "pinyin": "Zhi Gan Cao", "pinyin_toned": "Zhì Gān Cǎo",
+      "dose_g": "3", "decoction_reference_g": "3g",
       "role_zh": "使", "role_en": "Envoy",
       "role_reason_zh": "甘溫益胃和中，緩石膏大寒之性，防傷脾胃",
-      "role_reason_en": "Sweet and warm; tonifies Stomach and Middle Burner, moderates harsh coldness of Shi Gao"
+      "role_reason_en": "Sweet and warm; tonifies Stomach and Middle Burner, moderates harsh coldness of Shi Gao",
+      "in_formula_zh": "甘溫益胃和中，緩石膏大寒之性，防傷脾胃"
     },
     {
       "herb_id": "herb.geng_mi",
-      "name_zh": "粳米", "name_en": "Nonglutinous Rice", "pinyin_toned": "Gēng Mǐ",
-      "dose_g": "9",
+      "herb_zh": "粳米", "name_zh": "粳米", "herb_en": "Nonglutinous Rice", "name_en": "Nonglutinous Rice", "pinyin": "Geng Mi", "pinyin_toned": "Gēng Mǐ",
+      "dose_g": "9", "decoction_reference_g": "9g",
       "role_zh": "使", "role_en": "Envoy",
       "role_reason_zh": "甘平益胃生津，與甘草同為使，顧護胃氣、防止寒藥傷中",
-      "role_reason_en": "Sweet and neutral; nourishes Stomach qi and fluids, protecting middle burner against cold herbs"
+      "role_reason_en": "Sweet and neutral; nourishes Stomach qi and fluids, protecting middle burner against cold herbs",
+      "in_formula_zh": "甘平益胃生津，與甘草同為使，顧護胃氣、防止寒藥傷中"
     }
   ],
 
@@ -492,6 +571,13 @@ const bht = {
     "Drains fire and eliminates irritability — clears Stomach fire and rests agitation"
   ],
 
+  "pattern_indications_zh": [
+    "陽明氣分熱盛證（白虎湯四大證）：身大熱、口大渴引飲、汗大出、心煩躁熱、面赤惡熱、舌紅苔黃乾、脈洪大有力或滑數。"
+  ],
+  "pattern_indications_en": [
+    "Yangming Stage / Qi-Level Heat Excess (The Four Bigs): High fever, severe thirst for ice water, profuse sweating, extreme restlessness, red face, aversion to heat, red tongue with dry yellow coating, flooding large rapid pulse."
+  ],
+
   "indications": [
     {
       "pattern_zh": "陽明氣分熱盛證（白虎湯四大證）",
@@ -508,6 +594,17 @@ const bht = {
   "constitutional_types_zh": ["表未解者", "真寒假熱", "脾胃虛寒"],
   "constitutional_types_en": ["Exterior pattern unreleased", "True cold false heat", "Spleen/Stomach deficiency cold"],
   "constitutional_note_zh": "《傷寒論》白虎四禁：脈浮弦細、脈沉、不渴、汗不出者禁用。",
+
+  "modifications_zh": [
+    "氣陰兩傷、汗大出、脈大而無力者：加人參 9g ➔ 即白虎加人參湯（益氣生津）",
+    "兼風濕熱痹、關節紅腫熱痛者：加桂枝 9g ➔ 即白虎加桂枝湯（清熱通絡）",
+    "兼濕熱身重、脘痞者：加蒼朮 9g ➔ 即白虎加蒼朮湯（燥濕清熱）"
+  ],
+  "modifications_en": [
+    "Qi and Yin injury with weak pulse: Add Ren Shen 9g (Bai Hu Jia Ren Shen Tang)",
+    "With Wind-Damp-Heat Bi syndrome: Add Gui Zhi 9g (Bai Hu Jia Gui Zhi Tang)",
+    "With Damp-Heat and heavy body: Add Cang Zhu 9g (Bai Hu Jia Cang Zhu Tang)"
+  ],
 
   "modifications": [
     {
@@ -573,8 +670,17 @@ const bht = {
     }
   ],
 
+  "applications_zh": [
+    "重症感冒發熱", "流行性乙型腦炎", "大葉性肺炎", "中暑", "糖尿病（消渴症）"
+  ],
+  "applications_en": [
+    "Severe influenza fever", "Japanese encephalitis", "Lobar pneumonia", "Heat stroke", "Diabetes mellitus"
+  ],
   "modern_applications_zh": ["重症感冒發熱", "流行性乙型腦炎", "大葉性肺炎", "中暑", "糖尿病（消渴症）"],
   "modern_applications_en": ["Severe influenza fever", "Japanese encephalitis", "Lobar pneumonia", "Heat stroke", "Diabetes mellitus"],
+
+  "cloudtcm_url": "https://cloudtcm.com/formula/98",
+  "american_dragon_url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html",
 
   "external_links": [
     { "source_id": "american_dragon", "url": "https://www.americandragon.com/HerbFormulas/BaiHuTang.html", "label_zh": "American Dragon", "label_en": "American Dragon", "lang": "en", "link_status": "direct" },
@@ -598,7 +704,7 @@ fs.writeFileSync(path.join(refDir, 'formula.yin_qiao_san.json'), JSON.stringify(
 fs.writeFileSync(path.join(refDir, 'formula.sang_ju_yin.json'), JSON.stringify(sjy, null, 2), 'utf8');
 fs.writeFileSync(path.join(refDir, 'formula.bai_hu_tang.json'), JSON.stringify(bht, null, 2), 'utf8');
 
-console.log('Saved Gold-Standard reference files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang!');
+console.log('Saved Gold-Standard reference files for Yin Qiao San, Sang Ju Yin, and Bai Hu Tang with dual keys!');
 
 // Update data/herbs/formulas.json
 const formulaJsonPath = path.join(__dirname, '../data/herbs/formulas.json');
