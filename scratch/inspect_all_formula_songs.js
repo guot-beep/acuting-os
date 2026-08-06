@@ -1,28 +1,31 @@
 /**
  * scratch/inspect_all_formula_songs.js
- * Inspects formula_song_zh / formula_song on all restored gold-standard formulas.
+ * Inspects formula_song and formula_song_zh across all 201 formulas in formulas.json.
  */
 
 const fs = require('fs');
 const path = require('path');
 
 const formulaPath = path.join(__dirname, '../data/herbs/formulas.json');
-const data = JSON.parse(fs.readFileSync(formulaPath, 'utf8'));
+const formulaData = JSON.parse(fs.readFileSync(formulaPath, 'utf8'));
 
-const targets = [
-  'formula.ma_huang_tang',
-  'formula.gui_zhi_tang',
-  'formula.yin_qiao_san',
-  'formula.sang_ju_yin',
-  'formula.bai_hu_tang',
-  'formula.xiao_qing_long_tang'
-];
+const missingSong = [];
+const hasSong = [];
 
-console.log('Inspecting formula songs for key restored formulas:');
-targets.forEach(id => {
-  const r = data.records.find(item => item.id === id);
-  console.log(`\nID: ${id} (${r?.name_zh})`);
-  console.log('  formula_song_zh:', JSON.stringify(r?.formula_song_zh));
-  console.log('  formula_song:', JSON.stringify(r?.formula_song));
-  console.log('  formula_song_source_zh:', JSON.stringify(r?.formula_song_source_zh));
+formulaData.records.forEach(r => {
+  const song = r.formula_song_zh || r.formula_song || r.fang_ge_zh;
+  if (song && song.trim()) {
+    hasSong.push({ id: r.id, name_zh: r.name_zh, song });
+  } else {
+    missingSong.push({ id: r.id, name_zh: r.name_zh });
+  }
 });
+
+console.log(`Formulas WITH formula song: ${hasSong.length}`);
+console.log(`Formulas MISSING formula song: ${missingSong.length}`);
+
+console.log('\nSample formulas WITH song:');
+hasSong.slice(0, 10).forEach(h => console.log(` - ${h.id} (${h.name_zh}): ${h.song.replace(/\n/g, ' / ')}`));
+
+console.log('\nSample formulas MISSING song (first 15):');
+missingSong.slice(0, 15).forEach(m => console.log(` - ${m.id} (${m.name_zh})`));
